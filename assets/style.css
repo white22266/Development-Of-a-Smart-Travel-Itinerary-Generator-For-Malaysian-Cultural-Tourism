@@ -1,0 +1,157 @@
+/* assets/style.css */
+
+/* 全局 */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0A1A4F; /* Deep Navy Blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 主容器，用于 Login / Register / 选择页面 */
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    display: flex;
+    overflow: hidden;
+}
+
+/* 左侧展示区（Title / 简介） */
+.left-panel {
+    background: #0A1A4F; /* Navy */
+    color: #FFFFFF;
+    padding: 40px 30px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-panel h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #F5C542; /* Gold */
+}
+
+.left-panel p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #EAEAEA;
+}
+
+/* 右侧表单区域 */
+.right-panel {
+    padding: 40px 30px;
+    width: 60%;
+}
+
+/* 表单 */
+.form-title {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #0A1A4F;
+}
+
+.form-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #666666;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #DDDDDD;
+    background: #F8F8F8;
+    font-size: 14px;
+}
+
+/* 按钮 */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s all;
+}
+
+.btn-primary {
+    background: #F5C542; /* Gold */
+    color: #0A1A4F;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background: #E67E22; /* Cultural Orange */
+    color: #FFFFFF;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #F5C542;
+    border: 1px solid #F5C542;
+}
+
+.btn-outline:hover {
+    background: #F5C542;
+    color: #0A1A4F;
+}
+
+/* 底部小链接 */
+.form-footer {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #666666;
+}
+
+.form-footer a {
+    color: #E67E22;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* 中心对齐按钮区域（角色选择用） */
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.button-row .btn {
+    flex: 1 1 45%;
+}

@@ -2,101 +2,58 @@
 // auth/login.php
 session_start();
 require_once "../config/db_connect.php";
-
-$errors = [];
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email    = trim($_POST["email"]);
-    $password = $_POST["password"];
-    $role     = $_POST["role"]; // 'admin' or 'traveller'
-
-    if ($email === "" || $password === "") {
-        $errors[] = "Email and password are required.";
-    }
-
-    if (empty($errors)) {
-        if ($role === "admin") {
-            $stmt = $conn->prepare("SELECT admin_id, username, password_hash FROM admins WHERE email = ?");
-        } else {
-            $stmt = $conn->prepare("SELECT traveller_id, full_name, password_hash FROM travellers WHERE email = ?");
-        }
-
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($row = $result->fetch_assoc()) {
-            if (password_verify($password, $row["password_hash"])) {
-                // login OK
-                $_SESSION["logged_in"] = true;
-                $_SESSION["role"]      = $role;
-
-                if ($role === "admin") {
-                    $_SESSION["admin_id"]  = $row["admin_id"];
-                    $_SESSION["admin_name"] = $row["username"];
-                    header("Location: ../dashboard/admin_dashboard.php");
-                } else {
-                    $_SESSION["traveller_id"]   = $row["traveller_id"];
-                    $_SESSION["traveller_name"] = $row["full_name"];
-                    header("Location: ../dashboard/traveller_dashboard.php");
-                }
-                exit;
-            } else {
-                $errors[] = "Incorrect password.";
-            }
-        } else {
-            $errors[] = "Account not found.";
-        }
-
-        $stmt->close();
-    }
-}
+// optional: 通过 ?role=admin / ?role=traveller 预选角色
+$defaultRole = isset($_GET['role']) ? $_GET['role'] : 'traveller';
 ?>
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>System Login</title>
+    <title>Login - Smart Travel Itinerary Generator</title>
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
-
 <body>
-    <h2>Login</h2>
+<div class="main-container">
+    <div class="left-panel">
+        <h1>Welcome Back</h1>
+        <p>
+            Sign in to continue managing cultural information (Admin) or 
+            to access your personalised travel itinerary (Traveller).
+        </p>
+    </div>
+    <div class="right-panel">
+        <h2 class="form-title">Login</h2>
+        <p class="form-subtitle">Please enter your email and password to login.</p>
 
-    <?php
-    if (isset($_SESSION["success_message"])) {
-        echo "<p style='color:green;'>" . htmlspecialchars($_SESSION["success_message"]) . "</p>";
-        unset($_SESSION["success_message"]);
-    }
+        <!-- 在这里插入你的 PHP 错误消息逻辑（如果有） -->
 
-    if (!empty($errors)) {
-        echo "<ul style='color:red;'>";
-        foreach ($errors as $e) {
-            echo "<li>" . htmlspecialchars($e) . "</li>";
-        }
-        echo "</ul>";
-    }
-    ?>
+        <form method="post" action="login_process.php">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-    <form method="post" action="">
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+            <div class="form-group">
+                <label for="role">Login as</label>
+                <select id="role" name="role">
+                    <option value="traveller" <?php echo $defaultRole === 'traveller' ? 'selected' : ''; ?>>Traveller</option>
+                    <option value="admin" <?php echo $defaultRole === 'admin' ? 'selected' : ''; ?>>Admin</option>
+                </select>
+            </div>
 
-        <label>Login as:</label><br>
-        <select name="role">
-            <option value="traveller">Traveller</option>
-            <option value="admin">Admin</option>
-        </select><br><br>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
 
-        <button type="submit">Login</button>
-    </form>
-
-    <p>No traveller account? <a href="traveller_register.php">Register here</a></p>
-
+        <div class="form-footer">
+            Haven’t registered?
+            <a href="register.php">Create an account</a>
+        </div>
+    </div>
+</div>
 </body>
-
 </html>
