@@ -188,7 +188,7 @@ $oldStates = $old["preferred_states"] ?? [];
                 <p class="meta" style="margin-top:0;">Leave empty to allow nationwide recommendations.</p>
 
 
-                <div style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px;">
+                <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;">
                   <?php foreach ($stateOptions as $s): ?>
                     <label style="display:flex; gap:8px; align-items:center; font-size:13px;">
                       <input type="checkbox"
