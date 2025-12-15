@@ -324,17 +324,3 @@ hr.sep{
   .col-3{ grid-column: span 12; }
 }
 
-/* ===== Select placeholder grey text ===== */
-select {
-    color: #9CA3AF; /* grey when placeholder selected */
-}
-
-/* When a valid option is selected, text turns normal */
-select:valid {
-    color: #0F172A; /* normal dark text */
-}
-
-/* Disabled option itself (for dropdown list appearance) */
-select option[disabled] {
-    color: #9CA3AF;
-}
