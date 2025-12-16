@@ -324,3 +324,22 @@ hr.sep{
   .col-3{ grid-column: span 12; }
 }
 
+input::placeholder,
+textarea::placeholder{
+  color: rgba(100, 116, 139, 0.80); /* muted */
+}
+
+select:invalid{
+  color: rgba(100, 116, 139, 0.85); /* muted */
+}
+
+/* When user selects an option, text becomes normal */
+select option{
+  color: var(--text);
+}
+
+/* Improve focus */
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(10, 26, 79, 0.35);
+  box-shadow: 0 0 0 3px rgba(10, 26, 79, 0.08);
+}

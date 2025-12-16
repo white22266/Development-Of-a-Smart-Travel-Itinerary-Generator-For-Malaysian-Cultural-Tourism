@@ -75,7 +75,7 @@ $oldStates = $old["preferred_states"] ?? [];
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Traveler Preference Analyzer | Smart Travel Itinerary Generator</title>
+  <title>Traveller Preference Analyzer | Smart Travel Itinerary Generator</title>
   <link rel="stylesheet" href="../assets/dashboard_style.css">
 </head>
 
@@ -92,10 +92,11 @@ $oldStates = $old["preferred_states"] ?? [];
 
       <nav class="nav" aria-label="Sidebar Navigation">
         <a href="../dashboard/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-        <a class="active" href="preference_form.php"><span class="dot"></span> Traveler Preference Analyzer</a>
-        <a href="my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary Module</a>
+        <a class="active" href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
+        <a href="../itinerary/generate_itinerary.php"><span class="dot"></span> Smart Itinerary Generator</a>
+        <a href="my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
         <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-        <a href="../profile/profile.php"><span class="dot"></span> Profile</a>
+        <a class="active" href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
         <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
       </nav>
 
@@ -109,7 +110,7 @@ $oldStates = $old["preferred_states"] ?? [];
     <main class="content">
       <div class="topbar">
         <div class="page-title">
-          <h1>Traveler Preference Analyzer</h1>
+          <h1>Traveller Preference Analyzer</h1>
           <p>Enter your duration, budget and interests. The system will use these preferences to generate a structured cultural itinerary.</p>
         </div>
         <div class="actions">
@@ -149,7 +150,7 @@ $oldStates = $old["preferred_states"] ?? [];
 
                 <label style="font-size:13px; font-weight:700;">Budget (RM) *</label><br>
                 <input type="number" name="budget" min="1" step="0.01" required
-                  placeholder="Insert estimated budget(RM)"
+                  placeholder="Insert estimated budget (RM)"
                   value="<?php echo htmlspecialchars($oldBudget); ?>"
                   style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
 
