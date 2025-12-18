@@ -1,0 +1,77 @@
+/* assets/user_manage_style.css */
+/* Reuse dashboard_style.css (DO NOT edit dashboard_style.css) */
+@import url("dashboard_style.css");
+
+/* User management specific */
+.filters{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.filters input[type="text"],
+.filters select{
+  width:auto;
+  min-width: 180px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-size:13px;
+}
+
+.notice{
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background: rgba(2,6,23,0.02);
+  font-size:13px;
+  margin-bottom:14px;
+}
+.notice.success{ border-color: rgba(34,197,94,0.35); background: rgba(34,197,94,0.08); }
+.notice.error{ border-color: rgba(239,68,68,0.35); background: rgba(239,68,68,0.08); }
+
+.actions-inline{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.btn-danger{
+  color:#7F1D1D;
+  background: rgba(239,68,68,0.10);
+  border: 1px solid rgba(239,68,68,0.25);
+}
+.btn-danger:hover{ background: rgba(239,68,68,0.14); }
+
+.form-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+}
+.form-grid .field{ grid-column: span 6; }
+.form-grid .field.full{ grid-column: span 12; }
+
+.field label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+.field input, .field select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-size:13px;
+}
+.helper{
+  margin-top:6px;
+  font-size:12px;
+  color: var(--muted);
+}
+
+@media (max-width: 720px){
+  .form-grid .field{ grid-column: span 12; }
+}
