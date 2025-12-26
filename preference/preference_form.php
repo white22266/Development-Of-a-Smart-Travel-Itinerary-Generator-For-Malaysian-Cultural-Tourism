@@ -141,8 +141,8 @@ $oldStates = $old["preferred_states"] ?? [];
                 <h3 style="margin-bottom:8px;">Trip Details</h3>
 
                 <label style="font-size:13px; font-weight:700;">Travel Duration (Days) *</label><br>
-                <input type="number" name="trip_days" min="1" max="30" required
-                  placeholder="Insert duration between 1 to 30 days"
+                <input type="number" name="trip_days" min="1" max="7" required
+                  placeholder="Insert duration between 1 to 7 days"
                   value="<?php echo htmlspecialchars($oldTripDays); ?>"
                   style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
 
