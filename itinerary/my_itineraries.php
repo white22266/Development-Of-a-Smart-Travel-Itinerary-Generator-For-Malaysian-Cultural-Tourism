@@ -12,6 +12,9 @@ if ($travellerId <= 0) {
     exit;
 }
 $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$success = $_SESSION["success_message"] ?? "";
+$errors  = $_SESSION["form_errors"] ?? [];
+unset($_SESSION["success_message"], $_SESSION["form_errors"]);
 
 $stmt = $conn->prepare("
   SELECT itinerary_id, title, total_days, total_estimated_cost, status, created_at
@@ -31,6 +34,17 @@ $stmt->close();
     <meta charset="UTF-8">
     <title>My Itineraries</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <style>
+        .btn-danger {
+            border: 1px solid rgba(220, 38, 38, 0.25);
+            background: rgba(220, 38, 38, 0.08);
+            color: #991B1B;
+        }
+
+        .btn-danger:hover {
+            background: rgba(220, 38, 38, 0.12);
+        }
+    </style>
 </head>
 
 <body>
@@ -41,14 +55,14 @@ $stmt->close();
                     <div class="brand-badge">ST</div>
                     <div class="brand-title">
                         <strong>Smart Travel Itinerary Generator</strong>
-                        <span>Traveller Preference Analyzer</span>
+                        <span>Cost Estimation & Trip Summary</span>
                     </div>
                 </div>
 
                 <nav class="nav" aria-label="Sidebar Navigation">
                     <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
                     <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                    <a href="../itinerary/smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
+                    <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
                     <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
                     <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
                     <a href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
@@ -73,6 +87,23 @@ $stmt->close();
                         <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
                     </div>
                 </div>
+
+                <?php if ($success): ?>
+                    <div class="card" style="margin-bottom:12px; border-color: rgba(16,185,129,0.25); background: rgba(16,185,129,0.06); color: rgb(6,95,70); font-weight:800;">
+                        <?php echo htmlspecialchars($success); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($errors)): ?>
+                    <div class="card" style="margin-bottom:12px; border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.06); color: rgb(127,29,29);">
+                        <ul style="margin:0 0 0 18px;">
+                            <?php foreach ($errors as $e): ?>
+                                <li><?php echo htmlspecialchars($e); ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
 
                 <div class="card">
                     <h3>My Itineraries</h3>
@@ -99,6 +130,13 @@ $stmt->close();
                                         <td>
                                             <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">View</a>
                                             <a class="btn btn-ghost" href="trip_summary.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">Summary</a>
+                                            <form method="post"
+                                                action="itinerary_delete.php"
+                                                style="display:inline;"
+                                                onsubmit="return confirm('Delete this itinerary? This action cannot be undone.');">
+                                                <input type="hidden" name="itinerary_id" value="<?php echo (int)$r["itinerary_id"]; ?>">
+                                                <button type="submit" class="btn btn-ghost btn-danger">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>

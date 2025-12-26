@@ -56,7 +56,7 @@ $stateOptions = [
             </div>
 
             <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../dashboard/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a href="../cultural/cultural_guide.php" class="active"><span class="dot"></span> Cultural Guide Presentation</a>
                 <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>

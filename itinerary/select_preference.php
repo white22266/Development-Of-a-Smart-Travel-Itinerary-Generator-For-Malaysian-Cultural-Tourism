@@ -38,11 +38,44 @@ $stmt->close();
 </head>
 
 <body>
-    <div class="app">
-        <main class="content" style="padding:24px;">
-            <h1>Smart Itinerary Generator</h1>
-            <p class="meta">You must select a saved preference before generating.</p>
 
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-badge">ST</div>
+                <div class="brand-title">
+                    <strong>Smart Travel Itinerary Generator</strong>
+                    <span>Traveller</span>
+                </div>
+            </div>
+
+            <nav class="nav" aria-label="Sidebar Navigation">
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
+                <a class="active" href="smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
+                <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
+                <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
+                <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
+                <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="small">Logged in as:</div>
+                <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
+                <div class="chip">Role: Traveller</div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Smart Itinerary Generator</h1>
+                    <p>You must select a saved preference before generating. Weather will adjust outdoor activities.</p>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
+                </div>
+            </div>
             <?php if (!empty($errors)): ?>
                 <div class="card" style="border-left:6px solid rgba(239,68,68,.7);">
                     <strong style="color:rgba(239,68,68,1);"><?php echo htmlspecialchars($errors[0]); ?></strong>
@@ -78,7 +111,7 @@ $stmt->close();
 
                         <div style="margin-top:12px;">
                             <button class="btn btn-primary" type="submit">Generate Itinerary</button>
-                            <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
+
                         </div>
                     </form>
                 <?php endif; ?>

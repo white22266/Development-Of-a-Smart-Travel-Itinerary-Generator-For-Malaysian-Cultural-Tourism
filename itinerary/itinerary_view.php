@@ -89,6 +89,37 @@ $totalDays = (int)$it["total_days"];
       border: 1px solid rgba(15, 23, 42, 0.12);
     }
   </style>
+  <div id="route-status" style="margin-top:8px;font-weight:700;"></div>
+
+  <script>
+    fetch("route_save.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+          item_id: itemId,
+          distance_km: distanceKm,
+          travel_time_min: travelTime
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        const el = document.getElementById("route-status");
+        if (data.status === "success") {
+          el.style.color = "green";
+          el.textContent =
+            `✔ ${data.distance_km} km · ${data.travel_time_min} min saved`;
+        } else {
+          el.style.color = "red";
+          el.textContent = data.message;
+        }
+      })
+      .catch(() => {
+        document.getElementById("route-status").textContent = "Network error";
+      });
+  </script>
+
 </head>
 
 <body>
@@ -105,77 +136,78 @@ $totalDays = (int)$it["total_days"];
         </div>
       </div>
 
-      <div class="card">
-        <h3>Map & Route</h3>
-        <div id="map"></div>
+      <section class="grid">
+        <div class="card col-12">
+          <h3>Map & Route</h3>
+          <div id="map"></div>
 
-        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="btn btn-primary" type="button" onclick="optimizeRoute()">Optimize Route (Day)</button>
-          <span class="badge" id="weatherBadge">Weather: —</span>
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="btn btn-primary" type="button" onclick="optimizeRoute()">Optimize Route (Day)</button>
+            <span class="badge" id="weatherBadge">Weather: —</span>
+          </div>
+
+          <p class="meta" style="margin-top:10px;">
+            Notes: The system will calculate A → B → C route distance/time and save into database.
+          </p>
         </div>
 
-        <p class="meta" style="margin-top:10px;">
-          Notes: The system will calculate A → B → C route distance/time and save into database.
-        </p>
-      </div>
+        <div class="card" style="margin-top:14px;">
+          <h3>Daily Schedule</h3>
 
-      <div class="card" style="margin-top:14px;">
-        <h3>Daily Schedule</h3>
+          <div class="day-tabs">
+            <?php for ($d = 1; $d <= $totalDays; $d++): ?>
+              <button type="button" class="<?php echo $d === 1 ? 'active' : ''; ?>" onclick="showDay(<?php echo $d; ?>)">
+                Day <?php echo $d; ?>
+              </button>
+            <?php endfor; ?>
+          </div>
 
-        <div class="day-tabs">
           <?php for ($d = 1; $d <= $totalDays; $d++): ?>
-            <button type="button" class="<?php echo $d === 1 ? 'active' : ''; ?>" onclick="showDay(<?php echo $d; ?>)">
-              Day <?php echo $d; ?>
-            </button>
+            <div class="day-box" id="day-<?php echo $d; ?>" style="<?php echo $d === 1 ? '' : 'display:none;'; ?>">
+              <h4>Day <?php echo $d; ?></h4>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Title</th>
+                      <th>Type</th>
+                      <th>Cost (RM)</th>
+                      <th>Distance (km)</th>
+                      <th>Time (min)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php if (!empty($days[$d])): ?>
+                      <?php foreach ($days[$d] as $row): ?>
+                        <tr data-item-id="<?php echo (int)$row["item_id"]; ?>"
+                          data-lat="<?php echo htmlspecialchars($row["latitude"] ?? ""); ?>"
+                          data-lng="<?php echo htmlspecialchars($row["longitude"] ?? ""); ?>"
+                          data-title="<?php echo htmlspecialchars($row["item_title"]); ?>"
+                          data-category="<?php echo htmlspecialchars($row["category"] ?? ""); ?>">
+                          <td><?php echo (int)$row["sequence_no"]; ?></td>
+                          <td><strong><?php echo htmlspecialchars($row["item_title"]); ?></strong></td>
+                          <td><?php echo htmlspecialchars($row["item_type"]); ?></td>
+                          <td><?php echo number_format((float)$row["estimated_cost"], 2); ?></td>
+                          <td class="dist"><?php echo $row["distance_km"] !== null ? number_format((float)$row["distance_km"], 2) : "-"; ?></td>
+                          <td class="tmin"><?php echo $row["travel_time_min"] !== null ? (int)$row["travel_time_min"] : "-"; ?></td>
+                        </tr>
+                      <?php endforeach; ?>
+                    <?php else: ?>
+                      <tr>
+                        <td colspan="6">No items.</td>
+                      </tr>
+                    <?php endif; ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           <?php endfor; ?>
         </div>
 
-        <?php for ($d = 1; $d <= $totalDays; $d++): ?>
-          <div class="day-box" id="day-<?php echo $d; ?>" style="<?php echo $d === 1 ? '' : 'display:none;'; ?>">
-            <h4>Day <?php echo $d; ?></h4>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Title</th>
-                    <th>Type</th>
-                    <th>Cost (RM)</th>
-                    <th>Distance (km)</th>
-                    <th>Time (min)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php if (!empty($days[$d])): ?>
-                    <?php foreach ($days[$d] as $row): ?>
-                      <tr data-item-id="<?php echo (int)$row["item_id"]; ?>"
-                        data-lat="<?php echo htmlspecialchars($row["latitude"] ?? ""); ?>"
-                        data-lng="<?php echo htmlspecialchars($row["longitude"] ?? ""); ?>"
-                        data-title="<?php echo htmlspecialchars($row["item_title"]); ?>"
-                        data-category="<?php echo htmlspecialchars($row["category"] ?? ""); ?>">
-                        <td><?php echo (int)$row["sequence_no"]; ?></td>
-                        <td><strong><?php echo htmlspecialchars($row["item_title"]); ?></strong></td>
-                        <td><?php echo htmlspecialchars($row["item_type"]); ?></td>
-                        <td><?php echo number_format((float)$row["estimated_cost"], 2); ?></td>
-                        <td class="dist"><?php echo $row["distance_km"] !== null ? number_format((float)$row["distance_km"], 2) : "-"; ?></td>
-                        <td class="tmin"><?php echo $row["travel_time_min"] !== null ? (int)$row["travel_time_min"] : "-"; ?></td>
-                      </tr>
-                    <?php endforeach; ?>
-                  <?php else: ?>
-                    <tr>
-                      <td colspan="6">No items.</td>
-                    </tr>
-                  <?php endif; ?>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        <?php endfor; ?>
-      </div>
-
     </main>
   </div>
-
+  </section>
   <script>
     let currentDay = 1;
 

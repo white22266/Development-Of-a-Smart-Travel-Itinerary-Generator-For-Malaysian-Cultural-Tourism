@@ -124,7 +124,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             </div>
 
             <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../dashboard/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
                 <a href="../itinerary/smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
                 <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>

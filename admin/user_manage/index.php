@@ -89,7 +89,7 @@ function page_link(int $p, string $role, string $q): string
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>User Management | Admin</title>
-  <link rel="stylesheet" href="../../assets/user_manage_style.css">
+  <link rel="stylesheet" href="../../assets/admin_user_manage_style.css">
 </head>
 
 <body>

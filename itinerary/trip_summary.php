@@ -65,7 +65,7 @@ while ($r = $res->fetch_assoc()) {
         </div>
       </div>
 
-      <div class="card">
+      <div class="card col-12">
         <h3>Total Estimated Cost: RM <?php echo number_format($grand, 2); ?></h3>
         <p class="meta">This total is calculated from itinerary_items.</p>
       </div>
