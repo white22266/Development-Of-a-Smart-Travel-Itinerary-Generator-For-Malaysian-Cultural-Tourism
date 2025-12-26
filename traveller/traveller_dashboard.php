@@ -1,5 +1,5 @@
 <?php
-// dashboard/traveller_dashboard.php
+// traveller/traveller_dashboard.php
 session_start();
 
 // Access control aligned with login_process.php
@@ -48,9 +48,9 @@ $recentItineraries = [
       </div>
 
       <nav class="nav" aria-label="Sidebar Navigation">
-        <a class="active" href="traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+        <a class="active" href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
         <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-        <a href="../itinerary/generate_itinerary.php"><span class="dot"></span> Smart Itinerary Generator</a>
+        <a href="../itinerary/smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
         <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
         <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
         <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
@@ -144,7 +144,7 @@ $recentItineraries = [
           <p class="meta">Use the modules below to generate, optimise, and review your travel itinerary.</p>
 
           <div style="margin-top:12px;">
-            <a class="btn btn-primary" href="../itinerary/preference_form.php">Go to Preference Analyzer</a>
+            <a class="btn btn-primary" href="../preference/preference_form.php">Go to Preference Analyzer</a>
             <a class="btn btn-ghost" href="../cultural/cultural_guide.php">Browse Cultural Guide</a>
           </div>
         </div>

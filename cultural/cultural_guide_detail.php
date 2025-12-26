@@ -126,7 +126,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             <nav class="nav" aria-label="Sidebar Navigation">
                 <a href="../dashboard/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../itinerary/generate_itinerary.php"><span class="dot"></span> Smart Itinerary Generator</a>
+                <a href="../itinerary/smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
                 <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
                 <a class="active" href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
                 <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
@@ -190,9 +190,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <hr class="sep">
 
                     <h3>Cultural Background</h3>
-                    <p class="meta">
-                        This section supports your Chapter 1 scope: cultural context, heritage significance, and traditions.
-                    </p>
+
                     <div style="color:var(--navy); line-height:1.7;">
                         <?php echo nl2br(htmlspecialchars($p["description"] ?? "No description provided.")); ?>
                     </div>

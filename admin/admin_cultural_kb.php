@@ -106,7 +106,7 @@ $stmt->close();
             </div>
 
             <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../dashboard/admin_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../admin/admin_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a class="active" href="admin_cultural_kb.php"><span class="dot"></span> State Cultural Knowledge Base</a>
                 <a href="../admin/admin_pending.php"><span class="dot"></span> Content Validation</a>
                 <a href="../admin/admin_users.php"><span class="dot"></span> User Management</a>
@@ -127,7 +127,7 @@ $stmt->close();
                     <p>Manage verified cultural places by state. These records will be used by Smart Itinerary Generator.</p>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-ghost" href="../dashboard/admin_dashboard.php">Back</a>
+                    <a class="btn btn-ghost" href="../admin/admin_dashboard.php">Back</a>
                 </div>
             </div>
 

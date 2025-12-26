@@ -1,5 +1,5 @@
 <?php
-// cultural/cultural_guide.php
+// cultural/cultural_guide.php  (CHANGE: add pagination, 12 per page)
 session_start();
 require_once "../config/db_connect.php";
 
@@ -10,7 +10,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 
 $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
 
-// CHANGE: Traveller cultural guide supports search/filter and shows images from cultural_places.image_url
+// filters
 $q = trim($_GET["q"] ?? "");
 $state = trim($_GET["state"] ?? "");
 $category = trim($_GET["category"] ?? "");
@@ -35,14 +35,19 @@ $stateOptions = [
     "Labuan"
 ];
 
-$sql = "SELECT place_id, state, category, name, description, address, opening_hours, estimated_cost, image_url
-        FROM cultural_places
-        WHERE is_active = 1";
+// CHANGE: pagination
+$perPage = 12;
+$page = (int)($_GET["page"] ?? 1);
+if ($page < 1) $page = 1;
+$offset = ($page - 1) * $perPage;
+
+// Build WHERE + params
+$where = "is_active = 1";
 $params = [];
 $types = "";
 
 if ($q !== "") {
-    $sql .= " AND (name LIKE ? OR description LIKE ? OR address LIKE ?)";
+    $where .= " AND (name LIKE ? OR description LIKE ? OR address LIKE ?)";
     $like = "%{$q}%";
     $params[] = $like;
     $params[] = $like;
@@ -50,39 +55,61 @@ if ($q !== "") {
     $types .= "sss";
 }
 if ($state !== "" && in_array($state, $stateOptions, true)) {
-    $sql .= " AND state = ?";
+    $where .= " AND state = ?";
     $params[] = $state;
     $types .= "s";
 }
 if ($category !== "" && in_array($category, $categoryOptions, true)) {
-    $sql .= " AND category = ?";
+    $where .= " AND category = ?";
     $params[] = $category;
     $types .= "s";
 }
 
-$sql .= " ORDER BY updated_at DESC, place_id DESC LIMIT 200";
+// CHANGE: total count for pagination
+$countSql = "SELECT COUNT(*) AS total FROM cultural_places WHERE $where";
+$countStmt = $conn->prepare($countSql);
+if (!$countStmt) die("Count prepare failed: " . htmlspecialchars($conn->error));
+if ($types !== "") $countStmt->bind_param($types, ...$params);
+$countStmt->execute();
+$total = (int)($countStmt->get_result()->fetch_assoc()["total"] ?? 0);
+$countStmt->close();
 
-$stmt = $conn->prepare($sql);
-if (!$stmt) {
-    die("SQL prepare failed: " . htmlspecialchars($conn->error));
-}
-if ($types !== "") $stmt->bind_param($types, ...$params);
-$stmt->execute();
-$res = $stmt->get_result();
+$totalPages = max(1, (int)ceil($total / $perPage));
+if ($page > $totalPages) $page = $totalPages; // normalize
+$offset = ($page - 1) * $perPage;
+
+// List query
+$listSql = "
+  SELECT place_id, state, category, name, description, address, opening_hours, estimated_cost, image_url
+  FROM cultural_places
+  WHERE $where
+  ORDER BY updated_at DESC, place_id DESC
+  LIMIT ? OFFSET ?
+";
+
+$listStmt = $conn->prepare($listSql);
+if (!$listStmt) die("List prepare failed: " . htmlspecialchars($conn->error));
+
+// CHANGE: bind params + limit/offset
+$bindParams = $params;
+$bindTypes = $types . "ii";
+$bindParams[] = $perPage;
+$bindParams[] = $offset;
+
+$listStmt->bind_param($bindTypes, ...$bindParams);
+$listStmt->execute();
+$res = $listStmt->get_result();
 
 $places = [];
 while ($row = $res->fetch_assoc()) $places[] = $row;
-$stmt->close();
+$listStmt->close();
 
 function safe_img_src($imageUrl)
 {
-    // CHANGE: normalize stored path to browser path
-    // If DB stores: uploads/places/xxx.jpg -> from /cultural page use ../uploads/places/xxx.jpg
     if (!$imageUrl) return "";
     $imageUrl = ltrim($imageUrl, "/");
     return "../" . $imageUrl;
 }
-
 function excerpt($text, $len = 120)
 {
     $t = trim((string)$text);
@@ -90,6 +117,36 @@ function excerpt($text, $len = 120)
     if (mb_strlen($t) <= $len) return $t;
     return mb_substr($t, 0, $len) . "...";
 }
+
+// CHANGE: build pagination link with current filters
+function page_link($p)
+{
+    $qs = $_GET;
+    $qs["page"] = $p;
+    return "cultural_guide.php?" . http_build_query($qs);
+}
+
+// CHANGE: window of page numbers (1..N with truncation)
+function page_window($current, $total)
+{
+    $window = [];
+    if ($total <= 7) {
+        for ($i = 1; $i <= $total; $i++) $window[] = $i;
+        return $window;
+    }
+    $window[] = 1;
+    $left = max(2, $current - 1);
+    $right = min($total - 1, $current + 1);
+
+    if ($left > 2) $window[] = "...";
+    for ($i = $left; $i <= $right; $i++) $window[] = $i;
+    if ($right < $total - 1) $window[] = "...";
+
+    $window[] = $total;
+    return $window;
+}
+
+$pageItems = page_window($page, $totalPages);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +157,6 @@ function excerpt($text, $len = 120)
     <title>Cultural Guide Presentation | Traveller</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css">
     <style>
-        /* minimal local styles (optional) */
         .place-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -173,6 +229,42 @@ function excerpt($text, $len = 120)
             gap: 8px;
             flex-wrap: wrap;
         }
+
+        /* CHANGE: pagination style */
+        .pager {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .pager a,
+        .pager span {
+            padding: 8px 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 13px;
+            color: var(--navy);
+            background: #fff;
+        }
+
+        .pager .active {
+            background: rgba(10, 26, 79, 0.08);
+        }
+
+        .pager .disabled {
+            opacity: .45;
+            pointer-events: none;
+        }
+
+        .pager .dots {
+            border: none;
+            background: transparent;
+        }
     </style>
 </head>
 
@@ -211,7 +303,6 @@ function excerpt($text, $len = 120)
                     <p>Explore verified cultural places with background information and local context.</p>
                 </div>
                 <div class="actions" style="display:flex;gap:10px;flex-wrap:wrap;">
-                    <!-- CHANGE: add suggestion entry (submodule) -->
                     <a class="btn btn-primary" href="suggest_place.php">Suggest New Place</a>
                     <a class="btn btn-ghost" href="../dashboard/traveller_dashboard.php">Back</a>
                 </div>
@@ -259,16 +350,17 @@ function excerpt($text, $len = 120)
 
                 <div class="card col-12">
                     <h3>Verified Places</h3>
-                    <p class="meta">Showing up to 200 active places.</p>
+                    <p class="meta">
+                        Total: <?php echo (int)$total; ?> records |
+                        Page <?php echo (int)$page; ?> / <?php echo (int)$totalPages; ?>
+                    </p>
 
                     <?php if (count($places) === 0): ?>
                         <div style="padding:12px; color:var(--muted);">No places found with the current filters.</div>
                     <?php else: ?>
                         <div class="place-grid">
                             <?php foreach ($places as $p): ?>
-                                <?php
-                                $img = safe_img_src($p["image_url"] ?? "");
-                                ?>
+                                <?php $img = safe_img_src($p["image_url"] ?? ""); ?>
                                 <div class="place-card">
                                     <div class="place-thumb">
                                         <?php if ($img !== ""): ?>
@@ -288,6 +380,7 @@ function excerpt($text, $len = 120)
                                         <div style="font-weight:900; color:var(--navy);">
                                             <?php echo htmlspecialchars($p["name"]); ?>
                                         </div>
+
                                         <div class="meta2" style="margin-top:6px;">
                                             <?php echo htmlspecialchars(excerpt($p["description"] ?? "")); ?>
                                         </div>
@@ -299,7 +392,26 @@ function excerpt($text, $len = 120)
                                 </div>
                             <?php endforeach; ?>
                         </div>
+
+                        <!-- CHANGE: Pagination UI -->
+                        <div class="pager">
+                            <a class="<?php echo ($page <= 1) ? "disabled" : ""; ?>" href="<?php echo htmlspecialchars(page_link(max(1, $page - 1))); ?>">Previous</a>
+
+                            <?php foreach ($pageItems as $it): ?>
+                                <?php if ($it === "..."): ?>
+                                    <span class="dots">...</span>
+                                <?php else: ?>
+                                    <a class="<?php echo ((int)$it === (int)$page) ? "active" : ""; ?>"
+                                        href="<?php echo htmlspecialchars(page_link((int)$it)); ?>">
+                                        <?php echo (int)$it; ?>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+
+                            <a class="<?php echo ($page >= $totalPages) ? "disabled" : ""; ?>" href="<?php echo htmlspecialchars(page_link(min($totalPages, $page + 1))); ?>">Next</a>
+                        </div>
                     <?php endif; ?>
+
                 </div>
             </section>
         </main>

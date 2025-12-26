@@ -63,9 +63,11 @@ if (!in_array($category, $categoryOptions, true)) back("Invalid category.", true
 if (!in_array($state, $stateOptions, true)) back("Invalid state.", true);
 if ($cost < 0) back("Estimated cost cannot be negative.", true);
 
+if ($latitude === "" || $longitude === "") back("Latitude and Longitude are required.", true);
 if ($latitude !== "" && !is_numeric($latitude)) back("Latitude must be numeric.", true);
 if ($longitude !== "" && !is_numeric($longitude)) back("Longitude must be numeric.", true);
-
+if ($latitude < -90 || $latitude > 90) back("Latitude must be between -90 and 90.", true);
+if ($longitude < -180 || $longitude > 180) back("Longitude must be between -180 and 180.", true);
 // ================= IMAGE UPLOAD (store URL string) =================
 $imageUrl = null;
 
@@ -105,7 +107,7 @@ if (!$stmt) back("System error: cannot submit suggestion. (" . $conn->error . ")
 // traveller_id(i), state(s), category(s), name(s), description(s), address(s),
 // latitude(s), longitude(s), opening_hours(s), estimated_cost(d), image_url(s)
 $stmt->bind_param(
-    "issssssssds",
+    "isssssddsds",
     $travellerId,
     $state,
     $category,

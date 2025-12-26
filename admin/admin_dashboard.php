@@ -1,5 +1,5 @@
 <?php
-// dashboard/admin_dashboard.php
+// admin/admin_dashboard.php
 session_start();
 
 // Access control aligned with login_process.php
@@ -7,25 +7,49 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || !isset(
   header("Location: ../auth/login.php?role=admin");
   exit;
 }
-
+require_once '../config/db_connect.php';
 $adminName = $_SESSION["admin_name"] ?? "Administrator";
 
-// (Optional) placeholder KPIs - you can replace with DB queries later
-$kpiTotalUsers = 128;
-$kpiPendingSubmissions = 6;
-$kpiCulturalItems = 412;
+$resUsers = $conn->query("SELECT (SELECT COUNT(*) FROM travellers) + (SELECT COUNT(*) FROM admins) AS total");
+$kpiTotalUsers = $resUsers->fetch_assoc()['total'] ?? 0;
 
-$recentActivities = [
-  ["title" => "New cultural item submitted", "desc" => "A traveller submitted a new heritage site suggestion (Pending verification).", "badge" => "Pending"],
-  ["title" => "Cultural data updated", "desc" => "Admin updated traditional food entries for a selected state.", "badge" => "Updated"],
-  ["title" => "User record reviewed", "desc" => "A traveller profile was reviewed for system integrity.", "badge" => "Checked"],
-];
+// Pending Content: Count items in 'cultural_place_suggestions' with status 'pending'
+$resPending = $conn->query("SELECT COUNT(*) AS total FROM cultural_place_suggestions WHERE status = 'pending'");
+$kpiPendingSubmissions = $resPending->fetch_assoc()['total'] ?? 0;
 
-$pendingList = [
-  ["type" => "Heritage Site", "name" => "Example: Old Town Walk", "state" => "Penang", "by" => "Traveller#1042", "status" => "Pending"],
-  ["type" => "Traditional Food", "name" => "Example: Local Kuih", "state" => "Kelantan", "by" => "Traveller#1011", "status" => "Pending"],
-  ["type" => "Festival", "name" => "Example: Cultural Festival", "state" => "Sabah", "by" => "Traveller#1066", "status" => "Pending"],
-];
+// Cultural Records: Count active items in 'cultural_places'
+$resRecords = $conn->query("SELECT COUNT(*) AS total FROM cultural_places WHERE is_active = 1");
+$kpiCulturalItems = $resRecords->fetch_assoc()['total'] ?? 0;
+
+// 4. Fetch Recent Activity: Display the last 3 generated itineraries
+$recentActivities = [];
+$activitySql = "SELECT title, created_at FROM itineraries ORDER BY created_at DESC LIMIT 3";
+$resActivity = $conn->query($activitySql);
+while ($row = $resActivity->fetch_assoc()) {
+  $recentActivities[] = [
+    "title" => $row['title'],
+    "desc" => "Itinerary created on " . date('M d, Y', strtotime($row['created_at'])),
+    "badge" => "Recent"
+  ];
+}
+
+// 5. Fetch Real Pending Validation List
+$pendingList = [];
+$pendingSql = "SELECT s.category, s.name, s.state, t.full_name, s.status 
+               FROM cultural_place_suggestions s 
+               JOIN travellers t ON s.traveller_id = t.traveller_id 
+               WHERE s.status = 'pending' 
+               ORDER BY s.created_at DESC LIMIT 5";
+$resList = $conn->query($pendingSql);
+while ($row = $resList->fetch_assoc()) {
+  $pendingList[] = [
+    "type" => ucfirst($row['category']),
+    "name" => $row['name'],
+    "state" => $row['state'],
+    "by" => $row['full_name'],
+    "status" => ucfirst($row['status'])
+  ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +102,7 @@ $pendingList = [
       <section class="grid">
         <div class="card col-4">
           <h3>Total Users</h3>
-          <p class="meta">Number of registered travellers and administrators (sample).</p>
+          <p class="meta">Number of registered travellers and administrators.</p>
           <div class="kpi">
             <div class="value"><?php echo (int)$kpiTotalUsers; ?></div>
             <div class="tag">Users</div>
@@ -87,7 +111,7 @@ $pendingList = [
 
         <div class="card col-4">
           <h3>Pending Content</h3>
-          <p class="meta">Submitted items waiting for admin validation (sample).</p>
+          <p class="meta">Submitted items waiting for admin validation.</p>
           <div class="kpi">
             <div class="value"><?php echo (int)$kpiPendingSubmissions; ?></div>
             <div class="tag">To Validate</div>
@@ -96,7 +120,7 @@ $pendingList = [
 
         <div class="card col-4">
           <h3>Cultural Records</h3>
-          <p class="meta">Heritage sites, foods, and festivals stored in database (sample).</p>
+          <p class="meta">Heritage sites, foods, and festivals stored in database.</p>
           <div class="kpi">
             <div class="value"><?php echo (int)$kpiCulturalItems; ?></div>
             <div class="tag">Records</div>
@@ -105,7 +129,7 @@ $pendingList = [
 
         <div class="card col-6">
           <h3>Recent Activity</h3>
-          <p class="meta">Latest actions in the system (sample; connect to DB logs later).</p>
+          <p class="meta">Latest actions in the system.</p>
           <div class="list">
             <?php foreach ($recentActivities as $a): ?>
               <div class="item">
@@ -131,7 +155,7 @@ $pendingList = [
 
         <div class="card col-12">
           <h3>Pending Validation List</h3>
-          <p class="meta">Sample table. Replace with real records from submitted cultural content.</p>
+          <p class="meta"> Table records from submitted cultural content.</p>
 
           <div class="table-wrap">
             <table>
@@ -145,15 +169,24 @@ $pendingList = [
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($pendingList as $p): ?>
+                <?php if (!empty($pendingList)): ?>
+                  <?php foreach ($pendingList as $p): ?>
+                    <tr>
+                      <td><?php echo htmlspecialchars($p["type"]); ?></td>
+                      <td><?php echo htmlspecialchars($p["name"]); ?></td>
+                      <td><?php echo htmlspecialchars($p["state"]); ?></td>
+                      <td><?php echo htmlspecialchars($p["by"]); ?></td>
+                      <td><span class="badge"><?php echo htmlspecialchars($p["status"]); ?></span></td>
+                    </tr>
+                  <?php endforeach; ?>
+                <?php else: ?>
                   <tr>
-                    <td><?php echo htmlspecialchars($p["type"]); ?></td>
-                    <td><?php echo htmlspecialchars($p["name"]); ?></td>
-                    <td><?php echo htmlspecialchars($p["state"]); ?></td>
-                    <td><?php echo htmlspecialchars($p["by"]); ?></td>
-                    <td><span class="badge"><?php echo htmlspecialchars($p["status"]); ?></span></td>
+                    <td colspan="5" style="text-align: center; padding: 40px; color: #666;">
+                      <strong>No pending records found.</strong><br>
+                      All traveller submissions have been processed.
+                    </td>
                   </tr>
-                <?php endforeach; ?>
+                <?php endif; ?>
               </tbody>
             </table>
           </div>

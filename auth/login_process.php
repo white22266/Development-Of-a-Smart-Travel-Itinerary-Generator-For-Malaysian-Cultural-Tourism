@@ -62,13 +62,13 @@ try {
                 $_SESSION["admin_id"]   = (int)$row["admin_id"];
                 $_SESSION["admin_name"] = $row["username"];
                 $stmt->close();
-                header("Location: ../dashboard/admin_dashboard.php");
+                header("Location: ../admin/admin_dashboard.php");
                 exit;
             } else {
                 $_SESSION["traveller_id"]   = (int)$row["traveller_id"];
                 $_SESSION["traveller_name"] = $row["full_name"];
                 $stmt->close();
-                header("Location: ../dashboard/traveller_dashboard.php");
+                header("Location: ../traveller/traveller_dashboard.php");
                 exit;
             }
         } else {
@@ -88,7 +88,6 @@ try {
     ];
     header("Location: login.php?role=" . urlencode($role));
     exit;
-
 } catch (Exception $e) {
     $_SESSION["form_errors"] = ["Login failed due to a system error. Please try again."];
     $_SESSION["old_input"] = [

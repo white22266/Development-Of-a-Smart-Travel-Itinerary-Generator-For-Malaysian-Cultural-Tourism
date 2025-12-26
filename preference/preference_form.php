@@ -91,12 +91,12 @@ $oldStates = $old["preferred_states"] ?? [];
       </div>
 
       <nav class="nav" aria-label="Sidebar Navigation">
-        <a href="../dashboard/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+        <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
         <a class="active" href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-        <a href="../itinerary/generate_itinerary.php"><span class="dot"></span> Smart Itinerary Generator</a>
-        <a href="my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
+        <a href="../itinerary/smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
+        <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
         <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-        <a class="active" href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
+        <a href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
         <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
       </nav>
 
@@ -114,7 +114,7 @@ $oldStates = $old["preferred_states"] ?? [];
           <p>Enter your duration, budget and interests. The system will use these preferences to generate a structured cultural itinerary.</p>
         </div>
         <div class="actions">
-          <a class="btn btn-ghost" href="../dashboard/traveller_dashboard.php">Back to Dashboard</a>
+          <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back to Dashboard</a>
         </div>
       </div>
 
@@ -206,7 +206,7 @@ $oldStates = $old["preferred_states"] ?? [];
 
             <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
               <button class="btn btn-primary" type="submit">Save Preferences</button>
-              <a class="btn btn-ghost" href="../dashboard/traveller_dashboard.php">Cancel</a>
+              <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Cancel</a>
             </div>
           </form>
         </div>

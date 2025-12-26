@@ -64,10 +64,10 @@ $stmt->close();
             </div>
 
             <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../dashboard/admin_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="admin_cultural_kb.php"><span class="dot"></span> State Cultural Knowledge Base</a>
-                <a class="active" href="admin_pending.php"><span class="dot"></span> Content Validation</a>
-                <a href="admin_users.php"><span class="dot"></span> User Management</a>
+                <a href="../admin/admin_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../admin/admin_cultural_kb.php"><span class="dot"></span> State Cultural Knowledge Base</a>
+                <a class="active" href="../admin/admin_pending.php"><span class="dot"></span> Content Validation</a>
+                <a href="../admin/user_manage/index.php"><span class="dot"></span> User Management</a>
                 <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>
 
@@ -85,7 +85,7 @@ $stmt->close();
                     <p>Review traveller suggestions before publishing to Knowledge Base.</p>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-ghost" href="../dashboard/admin_dashboard.php">Back</a>
+                    <a class="btn btn-ghost" href="../admin/admin_dashboard.php">Back</a>
                 </div>
             </div>
 
@@ -104,7 +104,7 @@ $stmt->close();
             <?php endif; ?>
 
             <section class="grid">
-                <div class="card col-6">
+                <div class="card col-12">
                     <h3>Pending Suggestions</h3>
                     <div class="table-wrap">
                         <table>
@@ -141,7 +141,7 @@ $stmt->close();
                     </div>
                 </div>
 
-                <div class="card col-6">
+                <div class="card col-12">
                     <h3>Review Detail</h3>
 
                     <?php if (!$viewRow): ?>
@@ -168,10 +168,6 @@ $stmt->close();
 
                         <form method="post" action="admin_pending_process.php" style="display:grid; gap:10px;">
                             <input type="hidden" name="suggestion_id" value="<?php echo (int)$viewRow["suggestion_id"]; ?>">
-
-                            <label style="font-size:13px; font-weight:800;">Admin Note (optional)</label>
-                            <input type="text" name="admin_note"
-                                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
 
                             <div style="display:flex; gap:10px; flex-wrap:wrap;">
                                 <button class="btn btn-primary" type="submit" name="action" value="approve"

@@ -31,7 +31,7 @@ $user = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 
 if (!$user) {
-    header("Location: ../dashboard/traveller_dashboard.php");
+    header("Location: ../traveller/traveller_dashboard.php");
     exit;
 }
 
@@ -124,14 +124,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
 
             <nav class="nav">
-                <a href="../../dashboard/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="../../preference/preference_form.php"><span class="dot"></span> Traveler Preference Analyzer</a>
+                <a href="../../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
                 <a href="../../itinerary/smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
-                <a href="../../itinerary/my_itineraries.php"><span class="dot"></span> Trip Summary</a>
-                <a href="../../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide</a>
-                <a class="active" href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
+                <a href="../../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
+                <a href="../../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
+                <a class="active" href="../../auth/profile/profile.php"><span class="dot"></span>Profile</a>
                 <a href="../../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>
+
+
+
+
+
 
             <div class="sidebar-footer">
                 <div class="small">Logged in as:</div>
@@ -147,7 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <p>Update your personal and login information.</p>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-ghost" href="../dashboard/traveller_dashboard.php">Back to Dashboard</a>
+                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back to Dashboard</a>
                 </div>
             </div>
 
