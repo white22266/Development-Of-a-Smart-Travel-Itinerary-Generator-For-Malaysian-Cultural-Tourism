@@ -109,7 +109,7 @@ $stmt->close();
                 <a href="../admin/admin_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a class="active" href="admin_cultural_kb.php"><span class="dot"></span> State Cultural Knowledge Base</a>
                 <a href="../admin/admin_pending.php"><span class="dot"></span> Content Validation</a>
-                <a href="../admin/admin_users.php"><span class="dot"></span> User Management</a>
+                <a href="../admin/user_manage/index.php"><span class="dot"></span> User Management</a>
                 <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>
 

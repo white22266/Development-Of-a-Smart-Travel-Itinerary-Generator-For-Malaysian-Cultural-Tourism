@@ -57,14 +57,14 @@ while ($row = $res->fetch_assoc()) {
 $stmt->close();
 $kpiFavouriteStates = count($stateCounts);
 
-// 4) Recent Itineraries (latest 5)
+// 4) Recent Itineraries (latest 3)
 $recentItineraries = [];
 $stmt = $conn->prepare("
   SELECT itinerary_id, title, status, created_at
   FROM itineraries
   WHERE traveller_id = ?
   ORDER BY created_at DESC, itinerary_id DESC
-  LIMIT 5
+  LIMIT 4
 ");
 $stmt->bind_param("i", $travellerId);
 $stmt->execute();
