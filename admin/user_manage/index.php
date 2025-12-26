@@ -160,7 +160,7 @@ function page_link(int $p, string $role, string $q): string
                     <td>
                       <div class="actions-inline">
                         <a class="btn btn-ghost" href="edit.php?role=<?php echo h($role); ?>&id=<?php echo (int)$r['id']; ?>">Edit</a>
-                        <a class="btn btn-primary" href="edit.php?role=<?php echo h($role); ?>&id=<?php echo (int)$r['id']; ?>#password">Reset Password</a>
+                        <a class="btn btn-primary" href="edit2.php?role=<?php echo h($role); ?>&id=<?php echo (int)$r['id']; ?>#password">Reset Password</a>
                         <form method="post" action="process.php" onsubmit="return confirm('Delete this user? This cannot be undone.');" style="display:inline;">
                           <input type="hidden" name="action" value="delete">
                           <input type="hidden" name="role" value="<?php echo h($role); ?>">

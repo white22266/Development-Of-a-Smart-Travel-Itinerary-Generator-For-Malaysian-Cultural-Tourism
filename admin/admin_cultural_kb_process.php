@@ -33,7 +33,6 @@ if ($action === "delete") {
 
 // ================= IMAGE UPLOAD =================
 $imageUrl = null;
-
 if (!empty($_FILES['image']['name']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 
     $uploadDir = "../uploads/places/";
@@ -125,7 +124,7 @@ if ($action === "create" || $action === "update") {
     WHERE place_id=?
   ");
         $stmt->bind_param(
-            "sssssssdssii",
+            "ssssssddssii",
             $state,
             $name,
             $category,
@@ -140,7 +139,7 @@ if ($action === "create" || $action === "update") {
             $placeId
         );
     } else {
-        // 不换图
+        // not change photo
         $stmt = $conn->prepare("
             UPDATE cultural_places
             SET state=?,name=?,category=?,description=?,address=?,latitude=?,longitude=?,
@@ -149,7 +148,7 @@ if ($action === "create" || $action === "update") {
         ");
 
         $stmt->bind_param(
-            "sssssssdsi",
+            "sssssdddsii",
             $state,
             $name,
             $category,

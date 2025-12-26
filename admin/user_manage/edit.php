@@ -119,34 +119,6 @@ if (!empty($old)) {
       </section>
 
       <div style="height:16px"></div>
-
-      <section class="card" id="password">
-        <h3>Reset Password</h3>
-        <p class="meta">Set a new password for this user (leave blank if you don't want to change).</p>
-
-        <form method="post" action="process.php">
-          <input type="hidden" name="action" value="reset_password">
-          <input type="hidden" name="role" value="<?php echo h($role); ?>">
-          <input type="hidden" name="id" value="<?php echo (int)$user['id']; ?>">
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="new_password">New Password</label>
-              <input id="new_password" type="password" name="new_password" minlength="6" required>
-            </div>
-
-            <div class="field">
-              <label for="confirm_password">Confirm New Password</label>
-              <input id="confirm_password" type="password" name="confirm_password" minlength="6" required>
-            </div>
-
-            <div class="field full">
-              <button class="btn btn-primary" type="submit">Update Password</button>
-            </div>
-          </div>
-        </form>
-      </section>
-
     </main>
   </div>
 </body>
