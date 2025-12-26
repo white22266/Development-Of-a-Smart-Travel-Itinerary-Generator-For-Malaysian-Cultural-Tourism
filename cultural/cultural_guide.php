@@ -280,9 +280,9 @@ $pageItems = page_window($page, $totalPages);
             </div>
 
             <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../dashboard/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../itinerary/generate_itinerary.php"><span class="dot"></span> Smart Itinerary Generator</a>
+                <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
                 <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
                 <a class="active" href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
                 <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
@@ -304,7 +304,7 @@ $pageItems = page_window($page, $totalPages);
                 </div>
                 <div class="actions" style="display:flex;gap:10px;flex-wrap:wrap;">
                     <a class="btn btn-primary" href="suggest_place.php">Suggest New Place</a>
-                    <a class="btn btn-ghost" href="../dashboard/traveller_dashboard.php">Back</a>
+                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
                 </div>
             </div>
 

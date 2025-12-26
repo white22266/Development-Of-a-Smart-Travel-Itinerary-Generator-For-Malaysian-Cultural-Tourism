@@ -45,14 +45,14 @@ $stmt->close();
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Traveller</span>
+                    <span>Smart Itinerary Generator</span>
                 </div>
             </div>
 
             <nav class="nav" aria-label="Sidebar Navigation">
                 <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a class="active" href="smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
+                <a class="active" href="select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
                 <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
                 <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
                 <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
@@ -108,7 +108,30 @@ $stmt->close();
                                 </option>
                             <?php endwhile; ?>
                         </select>
+                        <div style="margin-top:12px;">
+                            <label style="font-weight:800; font-size:13px;">Start Date</label><br>
+                            <input type="date" name="start_date" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px;">
+                            <div class="meta" style="margin-top:6px;">If empty, weather will show current only.</div>
+                        </div>
 
+                        <div style="margin-top:12px;">
+                            <label style="font-weight:800; font-size:13px;">Items Per Day</label><br>
+                            <select name="items_per_day" required style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px;">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3" selected>3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+
+                        <div style="margin-top:12px;">
+                            <label style="font-weight:800; font-size:13px;">Route Strategy</label><br>
+                            <select name="route_strategy" required style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px;">
+                                <option value="google_optimize" selected>Google Optimize (recommended)</option>
+                                <option value="nearest_next">Nearest Next (greedy)</option>
+                            </select>
+                        </div>
                         <div style="margin-top:12px;">
                             <button class="btn btn-primary" type="submit">Generate Itinerary</button>
 

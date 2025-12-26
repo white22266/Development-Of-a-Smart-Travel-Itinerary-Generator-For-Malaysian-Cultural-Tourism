@@ -49,45 +49,46 @@ $stmt->close();
 
 <body>
     <div class="app">
-        <div class="app">
-            <aside class="sidebar">
-                <div class="brand">
-                    <div class="brand-badge">ST</div>
-                    <div class="brand-title">
-                        <strong>Smart Travel Itinerary Generator</strong>
-                        <span>Cost Estimation & Trip Summary</span>
-                    </div>
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-badge">ST</div>
+                <div class="brand-title">
+                    <strong>Smart Travel Itinerary Generator</strong>
+                    <span>Cost Estimation & Trip Summary</span>
                 </div>
+            </div>
 
-                <nav class="nav" aria-label="Sidebar Navigation">
-                    <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                    <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                    <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-                    <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-                    <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                    <a href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
-                    <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
-                </nav>
+            <nav class="nav" aria-label="Sidebar Navigation">
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+                <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
+                <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
+                <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
+                <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
+                <a href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
+                <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+            </nav>
 
-                <div class="sidebar-footer">
-                    <div class="small">Logged in as:</div>
-                    <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-                    <div class="chip">Role: Traveller</div>
+            <div class="sidebar-footer">
+                <div class="small">Logged in as:</div>
+                <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
+                <div class="chip">Role: Traveller</div>
+            </div>
+        </aside>
+
+        <main class="content" style="padding:24px;">
+
+            <div class="topbar">
+                <div class="page-title">
+                    <h1>Cost Estimation & Trip Summary</h1>
+                    <p class="meta">View saved itineraries and open details.</p>
                 </div>
-            </aside>
-
-            <main class="content" style="padding:24px;">
-                <div class="topbar">
-                    <div class="page-title">
-                        <h1>Cost Estimation & Trip Summary</h1>
-                        <p class="meta">View saved itineraries and open details.</p>
-                    </div>
-                    <div class="actions">
-                        <a class="btn btn-primary" href="select_preference.php">Generate New</a>
-                        <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
-                    </div>
+                <div class="actions">
+                    <a class="btn btn-primary" href="select_preference.php">Generate New</a>
+                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
                 </div>
-
+            </div>
+            <section class="grid">
                 <?php if ($success): ?>
                     <div class="card" style="margin-bottom:12px; border-color: rgba(16,185,129,0.25); background: rgba(16,185,129,0.06); color: rgb(6,95,70); font-weight:800;">
                         <?php echo htmlspecialchars($success); ?>
@@ -105,7 +106,7 @@ $stmt->close();
                 <?php endif; ?>
 
 
-                <div class="card">
+                <div class="card col-12">
                     <h3>My Itineraries</h3>
                     <div class="table-wrap">
                         <table>
@@ -142,15 +143,17 @@ $stmt->close();
                                 <?php endwhile; ?>
                                 <?php if ($res->num_rows === 0): ?>
                                     <tr>
-                                        <td colspan="6">No itineraries yet.</td>
+                                        <td colspan="12">No itineraries yet.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-            </main>
-        </div>
+            </section>
+        </main>
+
+    </div>
 </body>
 
 </html>

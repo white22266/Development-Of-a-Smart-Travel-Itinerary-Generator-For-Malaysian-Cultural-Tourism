@@ -24,6 +24,75 @@ if ($preferenceId <= 0) {
     header("Location: select_preference.php");
     exit;
 }
+//rule-based $title
+function normalize_list(string $csv): array
+{
+    $csv = trim($csv);
+    if ($csv === "") return [];
+    $parts = array_map("trim", explode(",", $csv));
+    $parts = array_values(array_filter($parts, fn($x) => $x !== ""));
+    return $parts;
+}
+
+function map_category_label(string $cat): string
+{
+    $map = [
+        "culture" => "Culture",
+        "heritage" => "Heritage",
+        "museum" => "Museums",
+        "food" => "Food",
+        "festival" => "Festivals",
+        "nature" => "Nature",
+        "shopping" => "Shopping"
+    ];
+    $cat = strtolower(trim($cat));
+    return $map[$cat] ?? ucfirst($cat);
+}
+
+function pick_top(array $items, int $max): array
+{
+    $out = [];
+    foreach ($items as $x) {
+        if (!in_array($x, $out, true)) $out[] = $x;
+        if (count($out) >= $max) break;
+    }
+    return $out;
+}
+
+function build_itinerary_title(
+    int $tripDays,
+    string $preferredStatesCsv,
+    string $interestsCsv,
+    int $seed
+): string {
+    $states = normalize_list($preferredStatesCsv);
+    $catsRaw = normalize_list($interestsCsv);
+    $cats = array_map("map_category_label", $catsRaw);
+
+    $statesTop = pick_top($states, 2);
+    $catsTop = pick_top($cats, 2);
+
+    $statesText = "Malaysia";
+    if (count($statesTop) === 1) $statesText = $statesTop[0];
+    if (count($statesTop) === 2) $statesText = $statesTop[0] . " & " . $statesTop[1];
+    if (count($states) > 2) $statesText .= " + More";
+
+    $themeText = "Cultural";
+    if (count($catsTop) === 1) $themeText = $catsTop[0];
+    if (count($catsTop) === 2) $themeText = $catsTop[0] . " & " . $catsTop[1];
+
+    $templates = [
+        "%dD %s Trail — %s",
+        "%dD %s Escape: %s",
+        "%dD %s Highlights | %s",
+        "%dD %s Explorer Route — %s",
+        "%dD %s Journey: %s",
+        "%dD %s Getaway — %s"
+    ];
+
+    $idx = $seed % count($templates);
+    return sprintf($templates[$idx], $tripDays, $themeText, $statesText);
+}
 
 // 1) Load preference (must belong to traveller)
 $stmt = $conn->prepare("
@@ -100,14 +169,15 @@ if (count($places) === 0) {
 }
 
 // 3) Create itinerary record
-$titleStates = !empty($states) ? implode(", ", $states) : "Malaysia";
-$title = $tripDays . "D Cultural Itinerary - " . $titleStates;
+$seed = crc32($travellerId . "|" . $preferenceId . "|" . date("Y-m-d H:i:s"));
+$title = build_itinerary_title($tripDays, $statesCsv, $interestsCsv, $seed);
 
 $stmt = $conn->prepare("
-  INSERT INTO itineraries (traveller_id, preference_id, title, total_days, total_estimated_cost, status)
-  VALUES (?,?,?,?,0.00,'saved')
+  INSERT INTO itineraries (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost, status)
+  VALUES (?,?,?,?,?,?,0.00,'saved')
 ");
-$stmt->bind_param("iisi", $travellerId, $preferenceId, $title, $tripDays);
+$sd = ($startDate !== "") ? $startDate : null;
+$stmt->bind_param("iissii", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay);
 if (!$stmt->execute()) {
     $_SESSION["form_errors"] = ["Failed to create itinerary."];
     header("Location: select_preference.php");
@@ -125,8 +195,17 @@ foreach ($places as $p) {
 }
 $stateKeys = array_keys($byState);
 sort($stateKeys);
+$startDate = trim((string)($_POST["start_date"] ?? ""));  // may be empty
+$itemsPerDay = (int)($_POST["items_per_day"] ?? 3);
+$allowed = [1, 2, 3, 4, 5];
+if (!in_array($itemsPerDay, $allowed, true)) $itemsPerDay = 3;
 
-$itemsPerDay = 3;
+
+$routeStrategy = trim((string)($_POST["route_strategy"] ?? "google_optimize"));
+if (!in_array($routeStrategy, ["google_optimize", "nearest_next"], true)) {
+    $routeStrategy = "google_optimize";
+}
+
 $totalCost = 0.0;
 $used = [];
 

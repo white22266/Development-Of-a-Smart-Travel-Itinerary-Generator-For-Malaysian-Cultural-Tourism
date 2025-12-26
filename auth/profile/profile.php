@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <nav class="nav">
                 <a href="../../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
                 <a href="../../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../../itinerary/smart_generator.php"><span class="dot"></span> Smart Itinerary Generator</a>
+                <a href="../../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
                 <a href="../../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
                 <a href="../../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
                 <a class="active" href="../../auth/profile/profile.php"><span class="dot"></span>Profile</a>
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
 
             <section class="grid">
-                <div class="card col-6">
+                <div class="card col-12">
                     <h3>Profile Details</h3>
 
                     <?php if ($success): ?>

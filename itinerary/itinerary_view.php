@@ -7,6 +7,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
   header("Location: ../auth/login.php?role=traveller");
   exit;
 }
+$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 
 $itineraryId = (int)($_GET["itinerary_id"] ?? 0);
@@ -89,138 +90,154 @@ $totalDays = (int)$it["total_days"];
       border: 1px solid rgba(15, 23, 42, 0.12);
     }
   </style>
-  <div id="route-status" style="margin-top:8px;font-weight:700;"></div>
-
-  <script>
-    fetch("route_save.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: new URLSearchParams({
-          item_id: itemId,
-          distance_km: distanceKm,
-          travel_time_min: travelTime
-        })
-      })
-      .then(res => res.json())
-      .then(data => {
-        const el = document.getElementById("route-status");
-        if (data.status === "success") {
-          el.style.color = "green";
-          el.textContent =
-            `✔ ${data.distance_km} km · ${data.travel_time_min} min saved`;
-        } else {
-          el.style.color = "red";
-          el.textContent = data.message;
-        }
-      })
-      .catch(() => {
-        document.getElementById("route-status").textContent = "Network error";
-      });
-  </script>
-
 </head>
 
 <body>
-  <div class="app">
-    <main class="content" style="padding:24px;">
-      <div class="topbar">
-        <div class="page-title">
-          <h1><?php echo htmlspecialchars($it["title"]); ?></h1>
-          <p class="meta">Route optimization uses Google Maps.</p>
-        </div>
-        <div class="actions">
-          <a class="btn btn-ghost" href="my_itineraries.php">Back</a>
-          <a class="btn btn-primary" href="trip_summary.php?itinerary_id=<?php echo $itineraryId; ?>">Trip Summary</a>
-        </div>
-      </div>
 
-      <section class="grid">
-        <div class="card col-12">
-          <h3>Map & Route</h3>
-          <div id="map"></div>
+  <body>
+    <div class="app">
 
-          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn btn-primary" type="button" onclick="optimizeRoute()">Optimize Route (Day)</button>
-            <span class="badge" id="weatherBadge">Weather: —</span>
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-badge">ST</div>
+          <div class="brand-title">
+            <strong>Smart Travel Itinerary Generator</strong>
+            <span>Itinerary View</span>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Sidebar Navigation">
+          <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+          <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
+          <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
+          <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
+          <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
+          <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
+          <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="small">Logged in as:</div>
+          <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
+          <div class="chip">Role: Traveller</div>
+        </div>
+      </aside>
+
+      <main class="content" style="padding:24px;">
+
+        <div class="topbar">
+          <div class="page-title">
+            <h1><?php echo htmlspecialchars($it["title"]); ?></h1>
+            <p class="meta">View daily schedule, map route and optimize travel time.</p>
           </div>
 
-          <p class="meta" style="margin-top:10px;">
-            Notes: The system will calculate A → B → C route distance/time and save into database.
-          </p>
+          <div class="actions">
+            <a class="btn btn-ghost" href="../itinerary/my_itineraries.php">Back</a>
+            <a class="btn btn-primary" href="trip_summary.php?itinerary_id=<?php echo (int)$itineraryId; ?>">Trip Summary</a>
+          </div>
         </div>
 
-        <div class="card" style="margin-top:14px;">
-          <h3>Daily Schedule</h3>
+        <section class="grid">
 
-          <div class="day-tabs">
+          <!-- Card 1: Map & Route -->
+          <div class="card col-12">
+            <h3>Map & Route</h3>
+            <div id="map"></div>
+
+            <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+              <button class="btn btn-primary" type="button" onclick="optimizeRoute()">Optimize Route (Day)</button>
+              <span class="badge" id="weatherBadge">Weather: —</span>
+              <span class="meta" id="route-status" style="font-weight:700;"></span>
+            </div>
+
+            <p class="meta" style="margin-top:10px;">
+              Notes: The system will calculate A → B → C route distance/time and save into database.
+            </p>
+          </div>
+
+          <!-- Card 2: Daily Schedule -->
+          <div class="card col-12">
+            <h3>Daily Schedule</h3>
+
+            <div class="day-tabs">
+              <?php for ($d = 1; $d <= $totalDays; $d++): ?>
+                <button type="button" class="<?php echo $d === 1 ? 'active' : ''; ?>" onclick="showDay(<?php echo $d; ?>)">
+                  Day <?php echo $d; ?>
+                </button>
+              <?php endfor; ?>
+            </div>
+
             <?php for ($d = 1; $d <= $totalDays; $d++): ?>
-              <button type="button" class="<?php echo $d === 1 ? 'active' : ''; ?>" onclick="showDay(<?php echo $d; ?>)">
-                Day <?php echo $d; ?>
-              </button>
+              <div class="day-box" id="day-<?php echo $d; ?>" style="<?php echo $d === 1 ? '' : 'display:none;'; ?>">
+                <h4>Day <?php echo $d; ?></h4>
+
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Cost (RM)</th>
+                        <th>Distance (km)</th>
+                        <th>Time (min)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php if (!empty($days[$d])): ?>
+                        <?php foreach ($days[$d] as $row): ?>
+                          <tr
+                            data-item-id="<?php echo (int)$row["item_id"]; ?>"
+                            data-lat="<?php echo htmlspecialchars($row["latitude"] ?? ""); ?>"
+                            data-lng="<?php echo htmlspecialchars($row["longitude"] ?? ""); ?>"
+                            data-title="<?php echo htmlspecialchars($row["item_title"]); ?>"
+                            data-category="<?php echo htmlspecialchars($row["category"] ?? ""); ?>">
+                            <td><?php echo (int)$row["sequence_no"]; ?></td>
+                            <td><strong><?php echo htmlspecialchars($row["item_title"]); ?></strong></td>
+                            <td><?php echo htmlspecialchars($row["item_type"]); ?></td>
+                            <td><?php echo number_format((float)$row["estimated_cost"], 2); ?></td>
+                            <td class="dist"><?php echo $row["distance_km"] !== null ? number_format((float)$row["distance_km"], 2) : "-"; ?></td>
+                            <td class="tmin"><?php echo $row["travel_time_min"] !== null ? (int)$row["travel_time_min"] : "-"; ?></td>
+                          </tr>
+                        <?php endforeach; ?>
+                      <?php else: ?>
+                        <tr>
+                          <td colspan="6">No items.</td>
+                        </tr>
+                      <?php endif; ?>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
             <?php endfor; ?>
           </div>
 
-          <?php for ($d = 1; $d <= $totalDays; $d++): ?>
-            <div class="day-box" id="day-<?php echo $d; ?>" style="<?php echo $d === 1 ? '' : 'display:none;'; ?>">
-              <h4>Day <?php echo $d; ?></h4>
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>#</th>
-                      <th>Title</th>
-                      <th>Type</th>
-                      <th>Cost (RM)</th>
-                      <th>Distance (km)</th>
-                      <th>Time (min)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php if (!empty($days[$d])): ?>
-                      <?php foreach ($days[$d] as $row): ?>
-                        <tr data-item-id="<?php echo (int)$row["item_id"]; ?>"
-                          data-lat="<?php echo htmlspecialchars($row["latitude"] ?? ""); ?>"
-                          data-lng="<?php echo htmlspecialchars($row["longitude"] ?? ""); ?>"
-                          data-title="<?php echo htmlspecialchars($row["item_title"]); ?>"
-                          data-category="<?php echo htmlspecialchars($row["category"] ?? ""); ?>">
-                          <td><?php echo (int)$row["sequence_no"]; ?></td>
-                          <td><strong><?php echo htmlspecialchars($row["item_title"]); ?></strong></td>
-                          <td><?php echo htmlspecialchars($row["item_type"]); ?></td>
-                          <td><?php echo number_format((float)$row["estimated_cost"], 2); ?></td>
-                          <td class="dist"><?php echo $row["distance_km"] !== null ? number_format((float)$row["distance_km"], 2) : "-"; ?></td>
-                          <td class="tmin"><?php echo $row["travel_time_min"] !== null ? (int)$row["travel_time_min"] : "-"; ?></td>
-                        </tr>
-                      <?php endforeach; ?>
-                    <?php else: ?>
-                      <tr>
-                        <td colspan="6">No items.</td>
-                      </tr>
-                    <?php endif; ?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          <?php endfor; ?>
-        </div>
+        </section>
+      </main>
+    </div>
+  </body>
 
-    </main>
-  </div>
-  </section>
+
   <script>
     let currentDay = 1;
+    let map, directionsService, directionsRenderer, markers = [];
 
     function showDay(d) {
       currentDay = d;
+
       document.querySelectorAll(".day-box").forEach(el => el.style.display = "none");
-      document.getElementById("day-" + d).style.display = "block";
-      document.querySelectorAll(".day-tabs button").forEach((b, i) => b.classList.toggle("active", (i + 1) === d));
+      const box = document.getElementById("day-" + d);
+      if (box) box.style.display = "block";
+
+      document.querySelectorAll(".day-tabs button").forEach((b, i) => {
+        b.classList.toggle("active", (i + 1) === d);
+      });
       renderMapForDay(d);
       loadWeatherForDay(d);
     }
 
-    let map, directionsService, directionsRenderer, markers = [];
+
 
     function initMap() {
       map = new google.maps.Map(document.getElementById("map"), {
@@ -234,8 +251,7 @@ $totalDays = (int)$it["total_days"];
       directionsRenderer = new google.maps.DirectionsRenderer({
         map
       });
-      renderMapForDay(1);
-      loadWeatherForDay(1);
+      showDay(1);
     }
 
     function clearMarkers() {
@@ -244,10 +260,16 @@ $totalDays = (int)$it["total_days"];
     }
 
     function getDayRows(day) {
-      return Array.from(document.querySelectorAll("#day-" + day + " tbody tr")).filter(tr => tr.dataset.lat && tr.dataset.lng);
+      return Array.from(document.querySelectorAll("#day-" + day + " tbody tr")).filter(tr => {
+        const lat = parseFloat(tr.dataset.lat);
+        const lng = parseFloat(tr.dataset.lng);
+        return Number.isFinite(lat) && Number.isFinite(lng) && !(lat === 0 && lng === 0);
+      });
     }
 
+
     function renderMapForDay(day) {
+      if (!map || !directionsRenderer) return;
       clearMarkers();
       directionsRenderer.set("directions", null);
 
@@ -259,7 +281,10 @@ $totalDays = (int)$it["total_days"];
         lng: parseFloat(r.dataset.lng),
         title: r.dataset.title
       }));
-      map.setCenter(points[0]);
+      map.setCenter({
+        lat: points[0].lat,
+        lng: points[0].lng
+      });
 
       // markers with labels A, B, C...
       points.forEach((p, idx) => {
@@ -295,11 +320,20 @@ $totalDays = (int)$it["total_days"];
     }
 
     async function optimizeRoute() {
+      if (!directionsService || !directionsRenderer) {
+        alert("Map is still loading. Please try again.");
+        return;
+      }
+
       const rows = getDayRows(currentDay);
       if (rows.length < 2) {
         alert("Need at least 2 places to optimize route.");
         return;
       }
+
+      const statusEl = document.getElementById("route-status");
+      statusEl.style.color = "";
+      statusEl.textContent = "Saving route segments...";
 
       const points = rows.map(r => ({
         lat: parseFloat(r.dataset.lat),
@@ -321,33 +355,51 @@ $totalDays = (int)$it["total_days"];
       }, async (result, status) => {
         if (status !== "OK") {
           alert("Route optimization failed: " + status);
+          statusEl.style.color = "red";
+          statusEl.textContent = "Route optimization failed: " + status;
           return;
         }
+
         directionsRenderer.setDirections(result);
 
-        // compute legs distance/time, save back to DB
         const legs = result.routes[0].legs;
-        // legs[i] is segment from i -> i+1
-        // We'll save distance/time into the NEXT item row (sequence 2..n)
+
         for (let i = 0; i < legs.length; i++) {
           const distKm = legs[i].distance.value / 1000.0;
           const timeMin = Math.round(legs[i].duration.value / 60.0);
 
-          const targetRow = rows[i + 1]; // save into B,C,D...
+          const targetRow = rows[i + 1]; // save to B,C,D...
           targetRow.querySelector(".dist").textContent = distKm.toFixed(2);
           targetRow.querySelector(".tmin").textContent = String(timeMin);
 
-          await fetch("route_save.php", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded"
-            },
-            body: new URLSearchParams({
-              item_id: targetRow.dataset.itemId,
-              distance_km: distKm.toFixed(2),
-              travel_time_min: timeMin
-            })
-          });
+          try {
+            const resp = await fetch("route_save.php", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: new URLSearchParams({
+                item_id: targetRow.dataset.itemId,
+                distance_km: distKm.toFixed(2),
+                travel_time_min: timeMin
+              })
+            });
+
+            const data = await resp.json();
+            if (!resp.ok || data.status !== "success") {
+              statusEl.style.color = "red";
+              statusEl.textContent = "Save failed: " + (data.message || "unknown error");
+              return;
+            }
+
+            // Show latest saved segment
+            statusEl.style.color = "green";
+            statusEl.textContent = `Saved: ${data.distance_km} km · ${data.travel_time_min} min`;
+          } catch (e) {
+            statusEl.style.color = "red";
+            statusEl.textContent = "Network error while saving route.";
+            return;
+          }
         }
 
         alert("Route saved to database.");
@@ -387,8 +439,6 @@ $totalDays = (int)$it["total_days"];
         badge.textContent = "Weather: error";
       }
     }
-
-    showDay(1);
   </script>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&callback=initMap" async defer></script>
