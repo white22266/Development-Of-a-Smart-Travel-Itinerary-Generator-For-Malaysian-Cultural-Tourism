@@ -112,7 +112,7 @@ try {
   ");
     if (!$stmt) throw new Exception("Prepare update suggestion failed: " . $conn->error);
 
-    $stmt->bind_param("iiis", $adminId, $placeId, $suggestionId, $now);
+    $stmt->bind_param("iisi", $adminId, $placeId, $now, $suggestionId);
 
     if (!$stmt->execute()) {
         $err = $stmt->error;

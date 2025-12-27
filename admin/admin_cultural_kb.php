@@ -101,7 +101,7 @@ $stmt->close();
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Admin Dashboard</span>
+                    <span>State Cultural Knowledge Base</span>
                 </div>
             </div>
 

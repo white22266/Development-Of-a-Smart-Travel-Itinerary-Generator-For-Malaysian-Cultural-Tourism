@@ -73,8 +73,8 @@ $imageUrl = null;
 
 if (!empty($_FILES["image"]["name"]) && ($_FILES["image"]["error"] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_OK) {
 
-    // CHANGE: Use uploads/suggestions for traveller submissions
-    $uploadDir = "../uploads/suggestions/";
+    // CHANGE: Use uploads/places for traveller submissions
+    $uploadDir = "../uploads/places/";
     if (!is_dir($uploadDir)) {
         if (!mkdir($uploadDir, 0777, true)) back("Cannot create upload directory.", true);
     }
@@ -91,7 +91,7 @@ if (!empty($_FILES["image"]["name"]) && ($_FILES["image"]["error"] ?? UPLOAD_ERR
     }
 
     // CHANGE: Save relative web path into DB (varchar)
-    $imageUrl = "uploads/suggestions/" . $fileName;
+    $imageUrl = "uploads/places/" . $fileName;
 }
 // ===================================================================
 

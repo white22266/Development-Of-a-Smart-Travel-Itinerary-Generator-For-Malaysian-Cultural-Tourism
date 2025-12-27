@@ -74,7 +74,7 @@ function base_admin_sidebar(string $active): void
       <div class="brand-badge">ST</div>
       <div class="brand-title">
         <strong>Smart Travel Itinerary Generator</strong>
-        <span>Admin</span>
+        <span>User Management</span>
       </div>
     </div>
 

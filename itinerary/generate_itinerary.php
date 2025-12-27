@@ -179,7 +179,7 @@ $stmt = $conn->prepare("
 $sd = ($startDate !== "") ? $startDate : null;
 $stmt->bind_param("iissii", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay);
 if (!$stmt->execute()) {
-    $_SESSION["form_errors"] = ["Failed to create itinerary."];
+    $_SESSION["form_errors"] = ["Failed to create itinerary." . $stmt->error];
     header("Location: select_preference.php");
     exit;
 }
