@@ -19,6 +19,11 @@ unset($_SESSION["success_message"], $_SESSION["form_errors"]);
 $q = trim($_GET["q"] ?? "");
 $state = trim($_GET["state"] ?? "");
 $category = trim($_GET["category"] ?? "");
+// pagination
+$perPage = 6;
+$page = (int)($_GET["page"] ?? 1);
+if ($page < 1) $page = 1;
+$offset = ($page - 1) * $perPage;
 
 $categoryOptions = ['culture', 'heritage', 'museum', 'food', 'festival', 'nature', 'shopping'];
 
@@ -51,15 +56,13 @@ if ($editId > 0) {
     $editRow = $stmt->get_result()->fetch_assoc();
     $stmt->close();
 }
-
-// list query
-$sql = "SELECT place_id, state, name, category, estimated_cost, is_active, image_url, updated_at, created_at
-        FROM cultural_places WHERE 1=1";
+// list query + pagination
+$baseSql = " FROM cultural_places WHERE 1=1";
 $params = [];
 $types = "";
 
 if ($q !== "") {
-    $sql .= " AND (name LIKE ? OR description LIKE ? OR address LIKE ?)";
+    $baseSql .= " AND (name LIKE ? OR description LIKE ? OR address LIKE ?)";
     $like = "%" . $q . "%";
     $params[] = $like;
     $params[] = $like;
@@ -67,23 +70,47 @@ if ($q !== "") {
     $types .= "sss";
 }
 if ($state !== "") {
-    $sql .= " AND state = ?";
+    $baseSql .= " AND state = ?";
     $params[] = $state;
     $types .= "s";
 }
 if ($category !== "" && in_array($category, $categoryOptions, true)) {
-    $sql .= " AND category = ?";
+    $baseSql .= " AND category = ?";
     $params[] = $category;
     $types .= "s";
 }
-$sql .= " ORDER BY place_id DESC";
 
+// 1) COUNT total rows (for total pages)
+$countSql = "SELECT COUNT(*) AS total" . $baseSql;
+$stmtC = $conn->prepare($countSql);
+if ($types !== "") $stmtC->bind_param($types, ...$params);
+$stmtC->execute();
+$totalRows = (int)($stmtC->get_result()->fetch_assoc()["total"] ?? 0);
+$stmtC->close();
 
-//image url support url resolver(local or online source) 
+$totalPages = (int)ceil($totalRows / $perPage);
+if ($totalPages < 1) $totalPages = 1;
+if ($page > $totalPages) {
+    $page = $totalPages;
+    $offset = ($page - 1) * $perPage;
+}
+
+// 2) LIST with LIMIT/OFFSET
+$sql = "SELECT place_id, state, name, category, estimated_cost, is_active, image_url, updated_at, created_at"
+    . $baseSql
+    . " ORDER BY place_id DESC LIMIT ? OFFSET ?";
+
+$params2 = $params;
+$types2 = $types . "ii";
+$params2[] = $perPage;
+$params2[] = $offset;
+
 $stmt = $conn->prepare($sql);
-if ($types !== "") $stmt->bind_param($types, ...$params);
+$stmt->bind_param($types2, ...$params2);
 $stmt->execute();
 $list = $stmt->get_result();
+
+
 
 function resolve_img_src($imageUrl)
 {
@@ -104,9 +131,6 @@ function resolve_img_src($imageUrl)
     $imageUrl = ltrim($imageUrl, '/');
     return "../" . $imageUrl; // admin/ -> project root
 }
-
-
-
 $stmt->close();
 ?>
 <!DOCTYPE html>
@@ -257,7 +281,7 @@ $stmt->close();
 
                             <div class="col-12">
                                 <label style="font-size:13px; font-weight:800;">Description</label><br>
-                                <textarea name="description" rows="3"
+                                <textarea name="description" rows="6"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"><?php echo htmlspecialchars($editRow["description"] ?? ""); ?></textarea>
                             </div>
 
@@ -372,22 +396,89 @@ $stmt->close();
                                     const urlInput = document.getElementById('image_url');
                                     const fileInput = document.getElementById('image_file');
                                     const preview = document.getElementById('imgPreview');
+                                    const noImg = document.getElementById('imgNoImage');
+                                    const removeChk = document.querySelector('input[name="remove_image"]');
 
+                                    let objectUrl = null;
+
+                                    function showNoImage() {
+                                        if (preview) preview.style.display = 'none';
+                                        if (noImg) noImg.style.display = 'flex';
+                                    }
+
+                                    function showImage(src) {
+                                        if (!src) return showNoImage();
+                                        if (noImg) noImg.style.display = 'none';
+                                        if (preview) {
+                                            preview.style.display = 'block';
+                                            preview.src = src;
+                                        }
+                                    }
+
+                                    // If the image fails to load, fallback to "No image"
+                                    if (preview) {
+                                        preview.addEventListener('error', showNoImage);
+                                    }
+
+                                    // URL typing preview
                                     if (urlInput) {
                                         urlInput.addEventListener('input', function() {
                                             const v = (urlInput.value || '').trim();
-                                            if (v.startsWith('http://') || v.startsWith('https://')) {
-                                                preview.src = v;
+
+                                            // if user starts typing URL, it means they are not removing
+                                            if (removeChk) removeChk.checked = false;
+
+                                            // clear file selection if user uses URL
+                                            if (fileInput) fileInput.value = '';
+                                            if (objectUrl) {
+                                                URL.revokeObjectURL(objectUrl);
+                                                objectUrl = null;
                                             }
+
+                                            if (v === "") return showNoImage();
+                                            if (v.startsWith('http://') || v.startsWith('https://')) return showImage(v);
+
+                                            // invalid URL -> show placeholder
+                                            showNoImage();
                                         });
                                     }
 
+                                    // File upload preview (before submit)
                                     if (fileInput) {
                                         fileInput.addEventListener('change', function() {
                                             const f = fileInput.files && fileInput.files[0];
-                                            if (!f) return;
-                                            const u = URL.createObjectURL(f);
-                                            preview.src = u;
+
+                                            // if user selects file, it means they are not removing
+                                            if (removeChk) removeChk.checked = false;
+
+                                            // clear URL if using file
+                                            if (urlInput) urlInput.value = '';
+
+                                            if (objectUrl) {
+                                                URL.revokeObjectURL(objectUrl);
+                                                objectUrl = null;
+                                            }
+
+                                            if (!f) return showNoImage();
+
+                                            objectUrl = URL.createObjectURL(f);
+                                            showImage(objectUrl);
+                                        });
+                                    }
+
+                                    // If "remove image" checked, immediately show No image preview
+                                    if (removeChk) {
+                                        removeChk.addEventListener('change', function() {
+                                            if (!removeChk.checked) return;
+
+                                            if (urlInput) urlInput.value = '';
+                                            if (fileInput) fileInput.value = '';
+                                            if (objectUrl) {
+                                                URL.revokeObjectURL(objectUrl);
+                                                objectUrl = null;
+                                            }
+
+                                            showNoImage();
                                         });
                                     }
                                 })();
@@ -443,7 +534,7 @@ $stmt->close();
                                             $thumb = $raw !== "" ? resolve_img_src($raw) : "";
                                             ?>
                                             <?php if ($thumb === ""): ?>
-                                                <span style="align:center;">—</span>
+                                                <span style="opacity:.5;">-</span>
                                             <?php else: ?>
                                                 <img
                                                     src="<?php echo htmlspecialchars($thumb); ?>"
@@ -473,8 +564,31 @@ $stmt->close();
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        <?php if ($totalPages > 1): ?>
+                            <div style="display:flex; gap:10px; align-items:center; justify-content:center; margin-top:12px; flex-wrap:wrap; width:100%;">
+                                <?php
+                                $qs = $_GET;
+                                unset($qs["page"]);
+                                ?>
+
+                                <?php if ($page > 1): ?>
+                                    <?php $qs["page"] = $page - 1; ?>
+                                    <a class="btn btn-ghost" href="admin_cultural_kb.php?<?php echo htmlspecialchars(http_build_query($qs)); ?>">Prev</a>
+                                <?php else: ?>
+                                    <span class="btn btn-ghost" style="pointer-events:none; opacity:.5;">Prev</span>
+                                <?php endif; ?>
+
+                                <span style="font-weight:800;">Page <?php echo (int)$page; ?> / <?php echo (int)$totalPages; ?></span>
+
+                                <?php if ($page < $totalPages): ?>
+                                    <?php $qs["page"] = $page + 1; ?>
+                                    <a class="btn btn-ghost" href="admin_cultural_kb.php?<?php echo htmlspecialchars(http_build_query($qs)); ?>">Next</a>
+                                <?php else: ?>
+                                    <span class="btn btn-ghost" style="pointer-events:none; opacity:.5;">Next</span>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
-                </div>
             </section>
         </main>
     </div>

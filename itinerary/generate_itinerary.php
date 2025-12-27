@@ -199,8 +199,20 @@ $tripDays = (int)$pref["trip_days"];
 $budget = (float)$pref["budget"];
 $transport = (string)$pref["transport_type"];
 $interestsCsv = trim((string)$pref["interests"]);
+
 $statesCsv = trim((string)($pref["preferred_states"] ?? ""));
-if ($statesCsv === "") $statesCsv = "Malaysia";
+
+// For title display only
+$titleStatesCsv = ($statesCsv === "") ? "Malaysia" : $statesCsv;
+
+// Build states filter list
+$states = $statesCsv !== "" ? array_values(array_unique(array_filter(array_map("trim", explode(",", $statesCsv))))) : [];
+
+// If user saved "Malaysia" (or empty), do NOT filter by state
+$statesLower = array_map("strtolower", $states);
+if ($statesCsv === "" || in_array("malaysia", $statesLower, true)) {
+    $states = []; // no state filter => all states
+}
 
 
 $allowedCategories = ["culture", "heritage", "museum", "food", "festival", "nature", "shopping"];
@@ -208,7 +220,7 @@ $categories = $interestsCsv !== "" ? array_values(array_unique(array_filter(arra
 $categories = array_values(array_intersect($categories, $allowedCategories));
 if (empty($categories)) $categories = $allowedCategories;
 
-$states = $statesCsv !== "" ? array_values(array_unique(array_filter(array_map("trim", explode(",", $statesCsv))))) : [];
+
 
 // 2) Fetch candidate places
 $where = "is_active = 1";
@@ -263,7 +275,7 @@ if (count($places) === 0) {
 
 // 3) Create itinerary record
 $seed = crc32($travellerId . "|" . $preferenceId . "|" . date("Y-m-d H:i:s"));
-$title = build_itinerary_title($tripDays, $statesCsv, $interestsCsv, $seed);
+$title = build_itinerary_title($tripDays, $titlestatesCsv, $interestsCsv, $seed);
 
 $stmt = $conn->prepare("
   INSERT INTO itineraries (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost, status)
