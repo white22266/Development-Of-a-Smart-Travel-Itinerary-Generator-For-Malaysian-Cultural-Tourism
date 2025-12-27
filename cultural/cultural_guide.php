@@ -36,7 +36,7 @@ $stateOptions = [
 ];
 
 // CHANGE: pagination
-$perPage = 12;
+$perPage = 6;
 $page = (int)($_GET["page"] ?? 1);
 if ($page < 1) $page = 1;
 $offset = ($page - 1) * $perPage;
@@ -106,10 +106,24 @@ $listStmt->close();
 
 function safe_img_src($imageUrl)
 {
-    if (!$imageUrl) return "";
-    $imageUrl = ltrim($imageUrl, "/");
+    $imageUrl = trim((string)$imageUrl);
+    if ($imageUrl === "") return "";
+
+    // If it's an absolute URL (http/https) or protocol-relative URL, use it directly
+    if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) {
+        return $imageUrl;
+    }
+
+    // If it's a data URI, use it directly
+    if (strpos($imageUrl, 'data:image/') === 0) {
+        return $imageUrl;
+    }
+
+    // Otherwise treat as local relative path
+    $imageUrl = ltrim($imageUrl, '/');
     return "../" . $imageUrl;
 }
+
 function excerpt($text, $len = 120)
 {
     $t = trim((string)$text);

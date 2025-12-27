@@ -53,7 +53,7 @@ if ($editId > 0) {
 }
 
 // list query
-$sql = "SELECT place_id, state, name, category, estimated_cost, is_active, updated_at, created_at
+$sql = "SELECT place_id, state, name, category, estimated_cost, is_active, image_url, updated_at, created_at
         FROM cultural_places WHERE 1=1";
 $params = [];
 $types = "";
@@ -78,10 +78,35 @@ if ($category !== "" && in_array($category, $categoryOptions, true)) {
 }
 $sql .= " ORDER BY place_id DESC";
 
+
+//image url support url resolver(local or online source) 
 $stmt = $conn->prepare($sql);
 if ($types !== "") $stmt->bind_param($types, ...$params);
 $stmt->execute();
 $list = $stmt->get_result();
+
+function resolve_img_src($imageUrl)
+{
+    $imageUrl = trim((string)$imageUrl);
+    if ($imageUrl === "") return "";
+
+    // absolute URL
+    if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) {
+        return $imageUrl;
+    }
+
+    // data URI
+    if (strpos($imageUrl, 'data:image/') === 0) {
+        return $imageUrl;
+    }
+
+    // local relative path saved like "uploads/places/xxx.jpg"
+    $imageUrl = ltrim($imageUrl, '/');
+    return "../" . $imageUrl; // admin/ -> project root
+}
+
+
+
 $stmt->close();
 ?>
 <!DOCTYPE html>
@@ -277,20 +302,96 @@ $stmt->close();
                             <div class="col-12">
                                 <label style="font-size:13px; font-weight:800;">Place Image</label><br>
 
-                                <?php if (!empty($editRow["image_url"])): ?>
-                                    <div style="margin-bottom:8px;">
-                                        <img src="<?php echo htmlspecialchars($editRow["image_url"]); ?>"
-                                            alt="Place Image"
-                                            style="max-height:120px; border-radius:12px; border:1px solid rgba(15,23,42,0.15);">
-                                    </div>
-                                <?php endif; ?>
+                                <?php
+                                $currentImgRaw = $editRow["image_url"] ?? "";
+                                $currentImg = resolve_img_src($currentImgRaw);
+                                ?>
 
-                                <input type="file" name="image"
-                                    accept="image/*"
-                                    style="width:100%; padding:8px;">
-                                <div class="meta">Upload JPG / PNG image (optional)</div>
+                                <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-start; margin:8px 0 10px;">
+                                    <div style="width:180px;">
+                                        <div class="meta" style="margin-bottom:6px;">Preview</div>
+
+                                        <!-- No image placeholder -->
+                                        <div
+                                            id="imgNoImage"
+                                            style="width:180px; height:120px; border-radius:12px; border:1px dashed rgba(15,23,42,0.25);
+                                            background:#f1f5f9; display:flex; align-items:center; justify-content:center;
+                                            font-weight:800; color:rgba(15,23,42,0.65);
+                                            <?php echo ($currentImg !== "" ? "display:none;" : ""); ?>">
+                                            No image
+                                        </div>
+
+                                        <!-- Actual image -->
+                                        <img
+                                            id="imgPreview"
+                                            src="<?php echo htmlspecialchars($currentImg); ?>"
+                                            alt="Place Image"
+                                            style="width:180px; height:120px; object-fit:cover; border-radius:12px;
+                                            border:1px solid rgba(15,23,42,0.15); background:#f1f5f9;
+                                            <?php echo ($currentImg === "" ? "display:none;" : ""); ?>">
+                                    </div>
+
+
+                                    <div style="flex:1; min-width:240px;">
+                                        <div style="margin-bottom:10px;">
+                                            <div class="meta" style="margin-bottom:6px;">Option A: Paste Image URL (https://...)</div>
+                                            <input
+                                                type="url"
+                                                id="image_url"
+                                                name="image_url"
+                                                value="<?php echo htmlspecialchars((preg_match('#^https?://#i', $currentImgRaw) ? $currentImgRaw : "")); ?>"
+                                                placeholder="https://example.com/photo.jpg"
+                                                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                        </div>
+
+                                        <div style="margin-bottom:10px;">
+                                            <div class="meta" style="margin-bottom:6px;">Option B: Upload Image (JPG/PNG/WEBP)</div>
+                                            <input type="file" id="image_file" name="image" accept="image/*" style="width:100%; padding:8px;">
+                                        </div>
+
+                                        <?php if (!empty($editRow)): ?>
+                                            <label style="display:flex; gap:8px; align-items:center;">
+                                                <input type="checkbox" name="remove_image" value="1">
+                                                Remove current image
+                                            </label>
+                                        <?php endif; ?>
+
+                                        <?php if (!empty($currentImgRaw) && !preg_match('#^https?://#i', $currentImgRaw)): ?>
+                                            <div class="meta" style="margin-top:8px;">
+                                                Current stored path: <code><?php echo htmlspecialchars($currentImgRaw); ?></code>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+
+                                <div class="meta">Tip: If you upload a file, it will override the URL field.</div>
                             </div>
 
+                            <script>
+                                (function() {
+                                    const urlInput = document.getElementById('image_url');
+                                    const fileInput = document.getElementById('image_file');
+                                    const preview = document.getElementById('imgPreview');
+
+                                    if (urlInput) {
+                                        urlInput.addEventListener('input', function() {
+                                            const v = (urlInput.value || '').trim();
+                                            if (v.startsWith('http://') || v.startsWith('https://')) {
+                                                preview.src = v;
+                                            }
+                                        });
+                                    }
+
+                                    if (fileInput) {
+                                        fileInput.addEventListener('change', function() {
+                                            const f = fileInput.files && fileInput.files[0];
+                                            if (!f) return;
+                                            const u = URL.createObjectURL(f);
+                                            preview.src = u;
+                                        });
+                                    }
+                                })();
+                            </script>
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Active</label><br>
@@ -322,6 +423,7 @@ $stmt->close();
                                 <tr>
                                     <th>ID</th>
                                     <th>State</th>
+                                    <th>Image</th>
                                     <th>Name</th>
                                     <th>Category</th>
                                     <th>Cost (RM)</th>
@@ -335,6 +437,23 @@ $stmt->close();
                                     <tr>
                                         <td><?php echo (int)$r["place_id"]; ?></td>
                                         <td><?php echo htmlspecialchars($r["state"]); ?></td>
+                                        <td>
+                                            <?php
+                                            $raw = trim((string)($r["image_url"] ?? ""));
+                                            $thumb = $raw !== "" ? resolve_img_src($raw) : "";
+                                            ?>
+                                            <?php if ($thumb === ""): ?>
+                                                <span style="align:center;">—</span>
+                                            <?php else: ?>
+                                                <img
+                                                    src="<?php echo htmlspecialchars($thumb); ?>"
+                                                    alt="thumb"
+                                                    style="width:56px; height:40px; object-fit:cover; border-radius:10px; border:1px solid rgba(15,23,42,0.12); background:#f1f5f9;"
+                                                    onerror="this.onerror=null; this.replaceWith(document.createTextNode('-'));"
+                                                    loading="lazy">
+                                            <?php endif; ?>
+                                        </td>
+
                                         <td><strong><?php echo htmlspecialchars($r["name"]); ?></strong></td>
                                         <td><?php echo htmlspecialchars($r["category"]); ?></td>
                                         <td><?php echo number_format((float)$r["estimated_cost"], 2); ?></td>
@@ -349,7 +468,7 @@ $stmt->close();
                                 <?php endwhile; ?>
                                 <?php if ($list->num_rows === 0): ?>
                                     <tr>
-                                        <td colspan="8">No records found.</td>
+                                        <td colspan="9">No records found.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>

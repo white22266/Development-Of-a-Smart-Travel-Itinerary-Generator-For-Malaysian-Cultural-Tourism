@@ -77,6 +77,25 @@ if ($action === "create" || $action === "update") {
     $cost = (float)($_POST["estimated_cost"] ?? 0);
     $isActive = (int)($_POST["is_active"] ?? 1);
     $isActive = ($isActive === 0) ? 0 : 1;
+    // --- NEW: handle remove checkbox + pasted URL ---
+    $removeImage = (int)($_POST["remove_image"] ?? 0) === 1;
+    $imageUrlInput = trim($_POST["image_url"] ?? "");
+
+    // If no upload, allow external URL
+    if ($imageUrl === null && $imageUrlInput !== "") {
+        if (!preg_match('#^https?://#i', $imageUrlInput)) {
+            back("Image URL must start with http:// or https://", true);
+        }
+        $imageUrl = $imageUrlInput;
+    }
+
+    // Normalize lat/lng (allow NULL)
+    $latVal = ($latitude === "") ? null : (float)$latitude;
+    $lngVal = ($longitude === "") ? null : (float)$longitude;
+
+    // Decide whether image_url should be changed on UPDATE
+    $changeImage = ($imageUrl !== null) || $removeImage;     // upload/url OR remove checked
+    $newImageVal = ($imageUrl !== null) ? $imageUrl : null;  // if removing => NULL
 
     if ($name === "" || $state === "" || $category === "") back("Name, state and category are required.", true);
     if (!in_array($category, $categoryOptions, true)) back("Invalid category.", true);
@@ -95,7 +114,7 @@ if ($action === "create" || $action === "update") {
         $lngVal = ($longitude === "") ? null : (float)$longitude;
 
         $stmt->bind_param(
-            "sssssssdssi",
+            "sssssdddssi",
             $state,
             $name,
             $category,
@@ -116,37 +135,41 @@ if ($action === "create" || $action === "update") {
         back("Place added successfully.");
     }
     /* ===== UPDATE ===== */
+    /* ===== UPDATE ===== */
     if ($placeId <= 0) back("Invalid place id for update.", true);
-    if ($imageUrl !== null) {
+
+    if ($changeImage) {
+        // change image_url (either set new url/path OR set NULL if remove checked)
         $stmt = $conn->prepare("
-    UPDATE cultural_places
-    SET state=?, name=?, category=?, description=?, address=?, latitude=?, longitude=?, estimated_cost=?, opening_hours=?, image_url=?, is_active=?
-    WHERE place_id=?
-  ");
+        UPDATE cultural_places
+        SET state=?, name=?, category=?, description=?, address=?,
+            latitude=?, longitude=?, estimated_cost=?, opening_hours=?,
+            image_url=?, is_active=?
+        WHERE place_id=?
+    ");
         $stmt->bind_param(
-            "ssssssddssii",
+            "sssssdddssii",
             $state,
             $name,
             $category,
             $description,
             $address,
-            $latitude,
-            $longitude,
+            $latVal,
+            $lngVal,
             $cost,
             $opening,
-            $imageUrl,
+            $newImageVal,  // can be NULL if remove checked
             $isActive,
             $placeId
         );
     } else {
-        // not change photo
+        // keep old image_url
         $stmt = $conn->prepare("
-            UPDATE cultural_places
-            SET state=?,name=?,category=?,description=?,address=?,latitude=?,longitude=?,
-                estimated_cost=?,opening_hours=?,is_active=?
-            WHERE place_id=?
-        ");
-
+        UPDATE cultural_places
+        SET state=?, name=?, category=?, description=?, address=?,
+            latitude=?, longitude=?, estimated_cost=?, opening_hours=?, is_active=?
+        WHERE place_id=?
+    ");
         $stmt->bind_param(
             "sssssdddsii",
             $state,
@@ -154,14 +177,15 @@ if ($action === "create" || $action === "update") {
             $category,
             $description,
             $address,
-            $latitude,
-            $longitude,
+            $latVal,
+            $lngVal,
             $cost,
             $opening,
             $isActive,
             $placeId
         );
     }
+
 
     $stmt->execute();
     $stmt->close();

@@ -34,10 +34,21 @@ if (!$p) {
 
 function img_src($imageUrl)
 {
-    if (!$imageUrl) return "";
-    $imageUrl = ltrim($imageUrl, "/");
+    $imageUrl = trim((string)$imageUrl);
+    if ($imageUrl === "") return "";
+
+    if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) {
+        return $imageUrl;
+    }
+
+    if (strpos($imageUrl, 'data:image/') === 0) {
+        return $imageUrl;
+    }
+
+    $imageUrl = ltrim($imageUrl, '/');
     return "../" . $imageUrl;
 }
+
 
 $img = img_src($p["image_url"] ?? "");
 
