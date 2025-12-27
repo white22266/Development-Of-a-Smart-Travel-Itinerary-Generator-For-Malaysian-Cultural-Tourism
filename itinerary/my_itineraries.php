@@ -90,13 +90,13 @@ $stmt->close();
             </div>
             <section class="grid">
                 <?php if ($success): ?>
-                    <div class="card" style="margin-bottom:12px; border-color: rgba(16,185,129,0.25); background: rgba(16,185,129,0.06); color: rgb(6,95,70); font-weight:800;">
+                    <div class="card col-12" style="margin-bottom:12px; border-color: rgba(16,185,129,0.25); background: rgba(16,185,129,0.06); color: rgb(6,95,70); font-weight:800;">
                         <?php echo htmlspecialchars($success); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php if (!empty($errors)): ?>
-                    <div class="card" style="margin-bottom:12px; border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.06); color: rgb(127,29,29);">
+                    <div class="card col-12" style="margin-bottom:12px; border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.06); color: rgb(127,29,29);">
                         <ul style="margin:0 0 0 18px;">
                             <?php foreach ($errors as $e): ?>
                                 <li><?php echo htmlspecialchars($e); ?></li>

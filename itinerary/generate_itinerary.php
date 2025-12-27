@@ -25,6 +25,27 @@ if ($preferenceId <= 0) {
     exit;
 }
 //rule-based $title
+// ===== Read generator options from POST (MUST be before INSERT) =====
+$startDate = trim((string)($_POST["start_date"] ?? ""));   // may be empty
+$itemsPerDay = (int)($_POST["items_per_day"] ?? 3);
+$allowedItems = [1, 2, 3, 4, 5];
+if (!in_array($itemsPerDay, $allowedItems, true)) $itemsPerDay = 3;
+
+$routeStrategy = trim((string)($_POST["route_strategy"] ?? "google_optimize"));
+if (!in_array($routeStrategy, ["google_optimize", "nearest_next"], true)) {
+    $routeStrategy = "google_optimize";
+}
+
+// Validate start date format (optional but safer)
+$sd = null;
+if ($startDate !== "") {
+    $dt = DateTime::createFromFormat("Y-m-d", $startDate);
+    if ($dt && $dt->format("Y-m-d") === $startDate) {
+        $sd = $startDate; // valid date
+    }
+}
+
+
 function normalize_list(string $csv): array
 {
     $csv = trim($csv);
@@ -94,6 +115,68 @@ function build_itinerary_title(
     return sprintf($templates[$idx], $tripDays, $themeText, $statesText);
 }
 
+function haversine_km($lat1, $lon1, $lat2, $lon2): float
+{
+    $R = 6371.0;
+    $dLat = deg2rad($lat2 - $lat1);
+    $dLon = deg2rad($lon2 - $lon1);
+    $a = sin($dLat / 2) * sin($dLat / 2) +
+        cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
+        sin($dLon / 2) * sin($dLon / 2);
+    $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+    return $R * $c;
+}
+
+function valid_coord($lat, $lng): bool
+{
+    if ($lat === null || $lng === null) return false;
+    $lat = (float)$lat;
+    $lng = (float)$lng;
+    return is_finite($lat) && is_finite($lng) && !($lat == 0.0 && $lng == 0.0);
+}
+
+function order_nearest_next(array $selected): array
+{
+    $with = [];
+    $without = [];
+
+    foreach ($selected as $p) {
+        if (valid_coord($p["latitude"] ?? null, $p["longitude"] ?? null)) $with[] = $p;
+        else $without[] = $p;
+    }
+
+    if (count($with) <= 2) return array_merge($with, $without);
+
+    $ordered = [];
+    $ordered[] = array_shift($with);
+
+    while (!empty($with)) {
+        $last = $ordered[count($ordered) - 1];
+
+        $bestIdx = 0;
+        $bestD = PHP_FLOAT_MAX;
+
+        foreach ($with as $i => $cand) {
+            $d = haversine_km(
+                (float)$last["latitude"],
+                (float)$last["longitude"],
+                (float)$cand["latitude"],
+                (float)$cand["longitude"]
+            );
+            if ($d < $bestD) {
+                $bestD = $d;
+                $bestIdx = $i;
+            }
+        }
+
+        $ordered[] = $with[$bestIdx];
+        array_splice($with, $bestIdx, 1);
+    }
+
+    return array_merge($ordered, $without);
+}
+
+
 // 1) Load preference (must belong to traveller)
 $stmt = $conn->prepare("
   SELECT preference_id, trip_days, budget, transport_type, interests, preferred_states
@@ -116,7 +199,9 @@ $tripDays = (int)$pref["trip_days"];
 $budget = (float)$pref["budget"];
 $transport = (string)$pref["transport_type"];
 $interestsCsv = trim((string)$pref["interests"]);
-$statesCsv = trim((string)$pref["preferred_states"]);
+$statesCsv = trim((string)($pref["preferred_states"] ?? ""));
+if ($statesCsv === "") $statesCsv = "Malaysia";
+
 
 $allowedCategories = ["culture", "heritage", "museum", "food", "festival", "nature", "shopping"];
 $categories = $interestsCsv !== "" ? array_values(array_unique(array_filter(array_map("trim", explode(",", $interestsCsv))))) : [];
@@ -154,9 +239,17 @@ if (!$stmt) {
     header("Location: select_preference.php");
     exit;
 }
-$stmt->bind_param($types, ...$params);
+// bind_param needs references
+$bind = [];
+$bind[] = $types;
+for ($i = 0; $i < count($params); $i++) {
+    $bind[] = &$params[$i];
+}
+call_user_func_array([$stmt, 'bind_param'], $bind);
+
 $stmt->execute();
 $res = $stmt->get_result();
+
 
 $places = [];
 while ($row = $res->fetch_assoc()) $places[] = $row;
@@ -176,13 +269,15 @@ $stmt = $conn->prepare("
   INSERT INTO itineraries (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost, status)
   VALUES (?,?,?,?,?,?,0.00,'saved')
 ");
-$sd = ($startDate !== "") ? $startDate : null;
+
 $stmt->bind_param("iissii", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay);
+
 if (!$stmt->execute()) {
-    $_SESSION["form_errors"] = ["Failed to create itinerary." . $stmt->error];
+    $_SESSION["form_errors"] = ["Failed to create itinerary. " . $stmt->error];
     header("Location: select_preference.php");
     exit;
 }
+
 $itineraryId = (int)$stmt->insert_id;
 $stmt->close();
 
@@ -195,16 +290,6 @@ foreach ($places as $p) {
 }
 $stateKeys = array_keys($byState);
 sort($stateKeys);
-$startDate = trim((string)($_POST["start_date"] ?? ""));  // may be empty
-$itemsPerDay = (int)($_POST["items_per_day"] ?? 3);
-$allowed = [1, 2, 3, 4, 5];
-if (!in_array($itemsPerDay, $allowed, true)) $itemsPerDay = 3;
-
-
-$routeStrategy = trim((string)($_POST["route_strategy"] ?? "google_optimize"));
-if (!in_array($routeStrategy, ["google_optimize", "nearest_next"], true)) {
-    $routeStrategy = "google_optimize";
-}
 
 $totalCost = 0.0;
 $used = [];
@@ -248,7 +333,10 @@ for ($day = 1; $day <= $tripDays; $day++) {
             if (count($selected) >= $itemsPerDay) break;
         }
     }
-
+    // APPLY ROUTE STRATEGY HERE
+    if ($routeStrategy === "nearest_next") {
+        $selected = order_nearest_next($selected);
+    }
     // insert items
     $seq = 1;
     foreach ($selected as $p) {

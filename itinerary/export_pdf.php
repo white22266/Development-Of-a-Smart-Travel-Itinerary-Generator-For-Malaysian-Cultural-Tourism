@@ -60,9 +60,7 @@ if (!file_exists($autoload)) {
 
 require_once $autoload;
 
-use Dompdf\Dompdf;
-
-$dompdf = new Dompdf();
+$dompdf = new \Dompdf\Dompdf();
 $dompdf->loadHtml("<html><body>" . $html . "</body></html>");
 $dompdf->setPaper("A4", "portrait");
 $dompdf->render();

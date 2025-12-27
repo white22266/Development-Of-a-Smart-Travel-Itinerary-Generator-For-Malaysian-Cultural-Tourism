@@ -104,7 +104,10 @@ $stmt->close();
                                     RM<?php echo number_format((float)$p["budget"], 2); ?> |
                                     <?php echo htmlspecialchars($p["transport_type"]); ?> |
                                     <?php echo htmlspecialchars($p["interests"]); ?> |
-                                    <?php echo htmlspecialchars($p["preferred_states"] ?? "Malaysia"); ?>
+                                    <?php
+                                    $ps = trim((string)($p["preferred_states"] ?? ""));
+                                    echo htmlspecialchars($ps !== "" ? $ps : "Malaysia");
+                                    ?>
                                 </option>
                             <?php endwhile; ?>
                         </select>
@@ -115,7 +118,7 @@ $stmt->close();
                         </div>
 
                         <div style="margin-top:12px;">
-                            <label style="font-weight:800; font-size:13px;">Items Per Day</label><br>
+                            <label style="font-weight:800; font-size:13px;">Places Per Day</label><br>
                             <select name="items_per_day" required style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px;">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -128,8 +131,8 @@ $stmt->close();
                         <div style="margin-top:12px;">
                             <label style="font-weight:800; font-size:13px;">Route Strategy</label><br>
                             <select name="route_strategy" required style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px;">
-                                <option value="google_optimize" selected>Google Optimize (recommended)</option>
-                                <option value="nearest_next">Nearest Next (greedy)</option>
+                                <option value="google_optimize" selected>Google Optimize (Auto-generated)</option>
+                                <option value="nearest_next">Nearest Next (Shortest Path)</option>
                             </select>
                         </div>
                         <div style="margin-top:12px;">

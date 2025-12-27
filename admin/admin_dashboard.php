@@ -148,7 +148,7 @@ while ($row = $resList->fetch_assoc()) {
           <p class="meta">Shortcuts aligned to admin modules in the project scope.</p>
           <a class="btn btn-primary" href="../admin/admin_pending.php" style="width:100%; justify-content:center;">Validate Submissions</a>
           <hr class="sep">
-          <a class="btn btn-ghost" href="../admin/admin_users.php" style="width:100%; justify-content:center;">Manage Users</a>
+          <a class="btn btn-ghost" href="../admin/user_manage/index.php" style="width:100%; justify-content:center;">Manage Users</a>
           <div style="height:10px;"></div>
           <a class="btn btn-ghost" href="../admin/admin_cultural_kb.php" style="width:100%; justify-content:center;">Update Cultural Data</a>
         </div>
