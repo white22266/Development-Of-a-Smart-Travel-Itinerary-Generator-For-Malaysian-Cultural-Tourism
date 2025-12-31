@@ -109,8 +109,8 @@ function sendResetPasswordEmail(string $toEmail, string $toName, string $newPass
   // ===== SMTP CONFIG (EDIT THESE) =====
   $SMTP_HOST  = "smtp.gmail.com";
   $SMTP_PORT  = 587; // 587 TLS, 465 SSL
-  $SMTP_USER  = "YOUR_GMAIL@gmail.com";
-  $SMTP_PASS  = "YOUR_APP_PASSWORD"; // Gmail App Password (not normal password)
+  $SMTP_USER  = "peckjianhao0226@gmail.com";
+  $SMTP_PASS  = "itbn jnok xcvo wmna"; // Gmail App Password (not normal password)
   $FROM_EMAIL = $SMTP_USER;
   $FROM_NAME  = "Smart Travel Itinerary Generator";
   // ===================================
