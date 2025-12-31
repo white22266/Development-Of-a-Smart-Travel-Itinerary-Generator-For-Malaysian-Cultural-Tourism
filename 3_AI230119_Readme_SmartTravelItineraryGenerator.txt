@@ -3,10 +3,9 @@ Matric No: AI230119
 Student: Jianhao
 System Type: Web-based (PHP + MySQL)
 
-1) System URL (if provided)
-[PASTE YOUR URL HERE]
+1) System URL
 Example (local):
-http://localhost/FYP_1/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/
+http://localhost/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/
 
 2) How to run the system (Localhost / XAMPP)
 A) Requirements
@@ -23,7 +22,7 @@ B) Setup steps
 3. Import database:
    - Open http://localhost/phpmyadmin
    - Create database: travel_itinerary_db
-   - Import SQL: [PUT YOUR SQL FILE NAME HERE, e.g. travel_itinerary_db.sql]
+   - Import SQL: [ travel_itinerary_db.sql]
 4. Update database connection:
    - File: config/db_connect.php
    - Ensure host/user/password are correct.
@@ -37,15 +36,12 @@ Traveller account:
 - Password: [FILL]
 
 Admin account:
-- Email/Username: [FILL]
-- Password: [FILL]
+- Email/Username: [ai230119@student.uthm.edu.my]
+- Password: [123456]
 
 4) How to view the Demonstration Video
-Option A (Google Drive/YouTube link):
-[PASTE VIDEO LINK HERE]
-
-Option B (Local video file):
-Open file: [PUT FILE NAME, e.g. demo_video.mp4] using any media player.
+Option (Local video file):
+Open file: [demo_video.mp4] using any media player.
 
 5) Key Modules to test
 A) Traveller Preference Analyzer
