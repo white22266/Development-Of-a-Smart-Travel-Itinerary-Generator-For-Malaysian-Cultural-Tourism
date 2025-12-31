@@ -1,17 +1,18 @@
 <?php
-// profile/profile.php
+// auth/profile/profile.php
 session_start();
 require_once "../../config/db_connect.php";
 
 // Access control
+// CHANGED: fix path (was ../auth/login.php which becomes /auth/auth/login.php)
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
-    header("Location: ../auth/login.php?role=traveller");
+    header("Location: ../login.php?role=traveller");
     exit;
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 if ($travellerId <= 0) {
-    header("Location: ../auth/login.php?role=traveller");
+    header("Location: ../login.php?role=traveller");
     exit;
 }
 
@@ -19,8 +20,9 @@ $errors = [];
 $success = "";
 
 /* ---------- Load current profile ---------- */
+// CHANGED: load must_change_password
 $stmt = $conn->prepare("
-    SELECT full_name, email, phone
+    SELECT full_name, email, phone, must_change_password
     FROM travellers
     WHERE traveller_id = ?
     LIMIT 1
@@ -31,74 +33,114 @@ $user = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 
 if (!$user) {
-    header("Location: ../traveller/traveller_dashboard.php");
+    header("Location: ../../traveller/traveller_dashboard.php");
     exit;
 }
 
+// ADDED: force mode when flag=1 or URL force=1
+$forceMode = ((int)($user["must_change_password"] ?? 0) === 1) || (($_GET["force"] ?? "") === "1");
+
 /* ---------- Handle update ---------- */
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
     $fullName = trim($_POST["full_name"] ?? "");
     $email = trim($_POST["email"] ?? "");
     $phone = trim($_POST["phone"] ?? "");
     $newPassword = $_POST["new_password"] ?? "";
     $confirmPassword = $_POST["confirm_password"] ?? "";
 
-    if ($fullName === "") $errors[] = "Full name is required.";
-    if ($email === "") $errors[] = "Email is required.";
-
-    if ($newPassword !== "" || $confirmPassword !== "") {
-        if (strlen($newPassword) < 6) {
-            $errors[] = "Password must be at least 6 characters.";
+    // ADDED: in force mode, require password change
+    if ($forceMode) {
+        if ($newPassword === "" || $confirmPassword === "") {
+            $errors[] = "You must set a new password before continuing.";
+        } else {
+            if (strlen($newPassword) < 6) $errors[] = "Password must be at least 6 characters.";
+            if ($newPassword !== $confirmPassword) $errors[] = "Password confirmation does not match.";
         }
-        if ($newPassword !== $confirmPassword) {
-            $errors[] = "Password confirmation does not match.";
-        }
-    }
 
-    if (empty($errors)) {
-        // check email uniqueness (exclude self)
-        $stmt = $conn->prepare("
-            SELECT traveller_id
-            FROM travellers
-            WHERE email = ? AND traveller_id != ?
-            LIMIT 1
-        ");
-        $stmt->bind_param("si", $email, $travellerId);
-        $stmt->execute();
-        if ($stmt->get_result()->fetch_assoc()) {
-            $errors[] = "Email is already in use.";
-        }
-        $stmt->close();
-    }
-
-    if (empty($errors)) {
-        if ($newPassword !== "") {
+        if (empty($errors)) {
             $hash = password_hash($newPassword, PASSWORD_DEFAULT);
+
+            // ADDED: clear must_change_password after successful update
             $stmt = $conn->prepare("
                 UPDATE travellers
-                SET full_name=?, email=?, phone=?, password_hash=?
-                WHERE traveller_id=?
+                SET password_hash = ?, must_change_password = 0
+                WHERE traveller_id = ?
             ");
-            $stmt->bind_param("ssssi", $fullName, $email, $phone, $hash, $travellerId);
-        } else {
-            $stmt = $conn->prepare("
-                UPDATE travellers
-                SET full_name=?, email=?, phone=?
-                WHERE traveller_id=?
-            ");
-            $stmt->bind_param("sssi", $fullName, $email, $phone, $travellerId);
+            $stmt->bind_param("si", $hash, $travellerId);
+
+            if ($stmt->execute()) {
+                $_SESSION["must_change_password"] = 0;
+                $stmt->close();
+
+                // CHANGED: after forced change, redirect to dashboard (or same profile page)
+                header("Location: ../../traveller/traveller_dashboard.php");
+                exit;
+            } else {
+                $errors[] = "Failed to update password.";
+            }
+            $stmt->close();
+        }
+    } else {
+        // Normal profile update mode (not forced)
+
+        if ($fullName === "") $errors[] = "Full name is required.";
+        if ($email === "") $errors[] = "Email is required.";
+
+        if ($newPassword !== "" || $confirmPassword !== "") {
+            if (strlen($newPassword) < 6) $errors[] = "Password must be at least 6 characters.";
+            if ($newPassword !== $confirmPassword) $errors[] = "Password confirmation does not match.";
         }
 
-        if ($stmt->execute()) {
-            $success = "Profile updated successfully.";
-            $_SESSION["traveller_name"] = $fullName; // update sidebar name
-            $user["full_name"] = $fullName;
-            $user["email"] = $email;
-            $user["phone"] = $phone;
-        } else {
-            $errors[] = "Failed to update profile.";
+        if (empty($errors)) {
+            // check email uniqueness (exclude self)
+            $stmt = $conn->prepare("
+                SELECT traveller_id
+                FROM travellers
+                WHERE email = ? AND traveller_id != ?
+                LIMIT 1
+            ");
+            $stmt->bind_param("si", $email, $travellerId);
+            $stmt->execute();
+            if ($stmt->get_result()->fetch_assoc()) {
+                $errors[] = "Email is already in use.";
+            }
+            $stmt->close();
         }
-        $stmt->close();
+
+        if (empty($errors)) {
+            if ($newPassword !== "") {
+                $hash = password_hash($newPassword, PASSWORD_DEFAULT);
+
+                // CHANGED: also ensure must_change_password stays 0 in normal change
+                $stmt = $conn->prepare("
+                    UPDATE travellers
+                    SET full_name=?, email=?, phone=?, password_hash=?, must_change_password=0
+                    WHERE traveller_id=?
+                ");
+                $stmt->bind_param("ssssi", $fullName, $email, $phone, $hash, $travellerId);
+            } else {
+                $stmt = $conn->prepare("
+                    UPDATE travellers
+                    SET full_name=?, email=?, phone=?
+                    WHERE traveller_id=?
+                ");
+                $stmt->bind_param("sssi", $fullName, $email, $phone, $travellerId);
+            }
+
+            if ($stmt->execute()) {
+                $success = "Profile updated successfully.";
+                $_SESSION["traveller_name"] = $fullName;
+
+                // Refresh local copy
+                $user["full_name"] = $fullName;
+                $user["email"] = $email;
+                $user["phone"] = $phone;
+            } else {
+                $errors[] = "Failed to update profile.";
+            }
+            $stmt->close();
+        }
     }
 }
 ?>
@@ -129,14 +171,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <a href="../../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
                 <a href="../../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
                 <a href="../../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a class="active" href="../../auth/profile/profile.php"><span class="dot"></span>Profile</a>
+                <a class="active" href="../../auth/profile/profile.php"><span class="dot"></span> Profile</a>
                 <a href="../../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>
-
-
-
-
-
 
             <div class="sidebar-footer">
                 <div class="small">Logged in as:</div>
@@ -148,17 +185,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <main class="content">
             <div class="topbar">
                 <div class="page-title">
-                    <h1>Edit Profile</h1>
-                    <p>Update your personal and login information.</p>
+                    <h1><?php echo $forceMode ? "Change Password" : "Edit Profile"; ?></h1>
+                    <p>
+                        <?php echo $forceMode
+                            ? "You must change your temporary password before continuing."
+                            : "Update your personal and login information."; ?>
+                    </p>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back to Dashboard</a>
+                    <!-- CHANGED: fix path (was ../traveller/... which is wrong from /auth/profile/) -->
+                    <a class="btn btn-ghost" href="../../traveller/traveller_dashboard.php">Back to Dashboard</a>
                 </div>
             </div>
 
             <section class="grid">
                 <div class="card col-12">
-                    <h3>Profile Details</h3>
+                    <h3><?php echo $forceMode ? "Set New Password" : "Profile Details"; ?></h3>
 
                     <?php if ($success): ?>
                         <p style="color:green; font-weight:700;"><?php echo htmlspecialchars($success); ?></p>
@@ -172,10 +214,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </ul>
                     <?php endif; ?>
 
+                    <?php if ($forceMode): ?>
+                        <p style="color:#b45309; font-weight:700;">
+                            Your password was reset by an administrator. Please set a new password now.
+                        </p>
+                    <?php endif; ?>
+
                     <form method="post">
                         <label style="font-weight:700;">Full Name</label>
                         <input type="text" name="full_name" required
                             value="<?php echo htmlspecialchars($user["full_name"]); ?>"
+                            <?php echo $forceMode ? "readonly" : ""; ?>
                             style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
                         <div style="height:10px;"></div>
@@ -183,6 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <label style="font-weight:700;">Email</label>
                         <input type="email" name="email" required
                             value="<?php echo htmlspecialchars($user["email"]); ?>"
+                            <?php echo $forceMode ? "readonly" : ""; ?>
                             style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
                         <div style="height:10px;"></div>
@@ -190,11 +240,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <label style="font-weight:700;">Phone</label>
                         <input type="text" name="phone"
                             value="<?php echo htmlspecialchars($user["phone"] ?? ""); ?>"
+                            <?php echo $forceMode ? "readonly" : ""; ?>
                             style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
                         <hr class="sep">
 
-                        <h3 style="margin-bottom:6px;">Change Password (Optional)</h3>
+                        <h3 style="margin-bottom:6px;"><?php echo $forceMode ? "Change Password" : "Change Password (Optional)"; ?></h3>
 
                         <label>New Password</label>
                         <p style="font-size:12px; color:#64748B; margin:4px 0 8px;">
@@ -202,7 +253,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </p>
                         <div style="position:relative;">
                             <input type="password" id="new_password" name="new_password"
-                                placeholder="Leave blank to keep current password"
+                                <?php echo $forceMode ? 'placeholder="Required"' : 'placeholder="Leave blank to keep current password"'; ?>
                                 style="width:100%; padding:10px 40px 10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
                             <span onclick="togglePassword('new_password', this)"
@@ -224,9 +275,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                             </span>
                         </div>
 
-
                         <div style="margin-top:14px;">
-                            <button class="btn btn-primary" type="submit">Save Changes</button>
+                            <button class="btn btn-primary" type="submit">
+                                <?php echo $forceMode ? "Update Password" : "Save Changes"; ?>
+                            </button>
                         </div>
                     </form>
                 </div>

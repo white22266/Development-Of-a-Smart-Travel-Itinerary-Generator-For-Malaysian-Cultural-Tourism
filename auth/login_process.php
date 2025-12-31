@@ -39,7 +39,8 @@ try {
     if ($role === "admin") {
         $stmt = $conn->prepare("SELECT admin_id, username, password_hash FROM admins WHERE email = ?");
     } else {
-        $stmt = $conn->prepare("SELECT traveller_id, full_name, password_hash FROM travellers WHERE email = ?");
+        // CHANGED: also load must_change_password flag
+        $stmt = $conn->prepare("SELECT traveller_id, full_name, password_hash, must_change_password FROM travellers WHERE email = ?");
     }
 
     if (!$stmt) throw new Exception("Prepare failed.");
@@ -67,7 +68,18 @@ try {
             } else {
                 $_SESSION["traveller_id"]   = (int)$row["traveller_id"];
                 $_SESSION["traveller_name"] = $row["full_name"];
+
+                // ADDED: store the flag in session
+                $_SESSION["must_change_password"] = (int)($row["must_change_password"] ?? 0);
+
                 $stmt->close();
+
+                // ADDED: force redirect to change password page when flag=1
+                if ((int)$_SESSION["must_change_password"] === 1) {
+                    header("Location: profile/profile.php?force=1");
+                    exit;
+                }
+
                 header("Location: ../traveller/traveller_dashboard.php");
                 exit;
             }

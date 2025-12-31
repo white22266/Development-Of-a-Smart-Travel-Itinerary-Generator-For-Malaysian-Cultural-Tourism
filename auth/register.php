@@ -116,7 +116,7 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
     <div class="main-container">
         <div class="left-panel">
             <h1>Create Account</h1>
-            <p>Register as a traveller to access itinerary features, or as an admin to manage system content and cultural data.</p>
+            <p>Register as a traveller to create and manage your itineraries and access cultural travel features.</p>
         </div>
 
         <div class="right-panel">
@@ -133,11 +133,15 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
 
             <form id="registerForm" method="post" action="register_process.php">
                 <div class="form-group">
-                    <label for="role">Register as</label>
-                    <select id="role" name="role" required>
-                        <option value="traveller" <?php echo (($old["role"] ?? $defaultRole) === "traveller") ? "selected" : ""; ?>>Traveller</option>
-                        <option value="admin" <?php echo (($old["role"] ?? $defaultRole) === "admin") ? "selected" : ""; ?>>Admin</option>
+                    <label>Register as</label>
+
+                    <!-- keep id="role" so your JS (togglePhoneField) still works -->
+                    <select id="role" disabled>
+                        <option value="traveller" selected>Traveller</option>
                     </select>
+
+                    <!-- real value submitted to server -->
+                    <input type="hidden" name="role" value="traveller">
                 </div>
 
                 <div class="form-group">

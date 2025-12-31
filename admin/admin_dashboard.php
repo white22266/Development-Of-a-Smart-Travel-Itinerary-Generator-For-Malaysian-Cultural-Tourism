@@ -10,7 +10,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || !isset(
 require_once '../config/db_connect.php';
 $adminName = $_SESSION["admin_name"] ?? "Administrator";
 
-$resUsers = $conn->query("SELECT (SELECT COUNT(*) FROM travellers) + (SELECT COUNT(*) FROM admins) AS total");
+$resUsers = $conn->query("SELECT COUNT(*) AS total FROM travellers");
 $kpiTotalUsers = $resUsers->fetch_assoc()['total'] ?? 0;
 
 // Pending Content: Count items in 'cultural_place_suggestions' with status 'pending'
@@ -102,7 +102,7 @@ while ($row = $resList->fetch_assoc()) {
       <section class="grid">
         <div class="card col-4">
           <h3>Total Users</h3>
-          <p class="meta">Number of registered travellers and administrators.</p>
+          <p class="meta">Number of registered travellers.</p>
           <div class="kpi">
             <div class="value"><?php echo (int)$kpiTotalUsers; ?></div>
             <div class="tag">Users</div>
