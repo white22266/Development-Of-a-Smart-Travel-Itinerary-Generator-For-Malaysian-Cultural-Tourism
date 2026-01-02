@@ -169,6 +169,16 @@ $stmt->close();
                         <form method="post" action="admin_pending_process.php" style="display:grid; gap:10px;">
                             <input type="hidden" name="suggestion_id" value="<?php echo (int)$viewRow["suggestion_id"]; ?>">
 
+                            <!-- INSERT THIS BLOCK HERE (between hidden input and buttons) -->
+                            <div>
+                                <label style="font-size:13px; font-weight:800;">Admin Reply (shown to traveller)</label><br>
+                                <textarea name="review_note" rows="3" maxlength="255"
+                                    placeholder="Example: Duplicate place / insufficient cultural description / wrong address / please provide valid lat-lng."
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"></textarea>
+                                <div style="font-size:12px; opacity:.8; margin-top:4px;">Required when rejecting.</div>
+                            </div>
+                            <!-- END INSERT -->
+
                             <div style="display:flex; gap:10px; flex-wrap:wrap;">
                                 <button class="btn btn-primary" type="submit" name="action" value="approve"
                                     onclick="return confirm('Approve & publish to Knowledge Base?');">Approve</button>
@@ -177,6 +187,7 @@ $stmt->close();
                                     onclick="return confirm('Reject this suggestion?');">Reject</button>
                             </div>
                         </form>
+
                     <?php endif; ?>
                 </div>
             </section>

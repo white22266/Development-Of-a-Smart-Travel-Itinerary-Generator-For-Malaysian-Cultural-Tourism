@@ -20,6 +20,7 @@ function back($msg, $isError = false)
 
 $action = strtolower(trim($_POST["action"] ?? ""));
 $suggestionId = (int)($_POST["suggestion_id"] ?? 0);
+$reviewNote = trim($_POST["review_note"] ?? "");
 
 if ($suggestionId <= 0) back("Invalid suggestion id.", true);
 if (!in_array($action, ["approve", "reject"], true)) back("Invalid action.", true);
@@ -33,20 +34,31 @@ $stmt->close();
 
 if (!$sug) back("Suggestion not found or already processed.", true);
 
+$now = date('Y-m-d H:i:s');
+
 if ($action === "reject") {
+    // Require message so traveller "receives reply"
+    if ($reviewNote === "") back("Please provide a rejection reply so the traveller can revise and resubmit.", true);
+
     $stmt = $conn->prepare("
-    UPDATE cultural_place_suggestions
-    SET status='rejected', approved_by_admin_id=?
-    WHERE suggestion_id=?
-  ");
-    $stmt->bind_param("ii", $adminId, $suggestionId);
+        UPDATE cultural_place_suggestions
+        SET status='rejected',
+            approved_by_admin_id=?,
+            approved_at=?,
+            review_note=?
+        WHERE suggestion_id=?
+    ");
+    if (!$stmt) back("Reject failed: " . $conn->error, true);
+
+    $stmt->bind_param("issi", $adminId, $now, $reviewNote, $suggestionId);
+
     if (!$stmt->execute()) {
         $err = $stmt->error;
         $stmt->close();
         back("Reject failed: " . $err, true);
     }
     $stmt->close();
-    back("Suggestion rejected.");
+    back("Suggestion rejected. Reply sent to traveller.");
 }
 
 // APPROVE: insert into cultural_places then update suggestion
@@ -60,7 +72,7 @@ try {
          opening_hours, estimated_cost, image_url, is_active, created_by_admin_id)
         VALUES
         (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
-  ");
+    ");
     if (!$stmt) throw new Exception("Prepare insert cultural_places failed: " . $conn->error);
 
     $state = $sug["state"];
@@ -69,8 +81,7 @@ try {
     $description = $sug["description"];
     $address = $sug["address"] ?? "";
     $opening = $sug["opening_hours"] ?? "";
-    $imageUrl = $sug["image_url"] ?? null; // can be null
-
+    $imageUrl = $sug["image_url"] ?? null;
 
     $lat = $sug["latitude"];
     $lng = $sug["longitude"];
@@ -79,8 +90,6 @@ try {
 
     $cost = (float)($sug["estimated_cost"] ?? 0);
 
-
-    // CHANGE: image_url is string, admin_id is int
     $stmt->bind_param(
         "sssssddsdsi",
         $state,
@@ -103,16 +112,23 @@ try {
     }
     $placeId = (int)$stmt->insert_id;
     $stmt->close();
-    $now = date('Y-m-d H:i:s');
+
+    // Allow optional review note for approval (can be blank)
+    $reviewNoteOrNull = ($reviewNote === "") ? null : $reviewNote;
+
     // 2) Update suggestion as approved
     $stmt = $conn->prepare("
-    UPDATE cultural_place_suggestions
-    SET status='approved', approved_by_admin_id=?, approved_place_id=?, approved_at=?
-    WHERE suggestion_id=?
-  ");
+        UPDATE cultural_place_suggestions
+        SET status='approved',
+            approved_by_admin_id=?,
+            approved_place_id=?,
+            approved_at=?,
+            review_note=?
+        WHERE suggestion_id=?
+    ");
     if (!$stmt) throw new Exception("Prepare update suggestion failed: " . $conn->error);
 
-    $stmt->bind_param("iisi", $adminId, $placeId, $now, $suggestionId);
+    $stmt->bind_param("iissi", $adminId, $placeId, $now, $reviewNoteOrNull, $suggestionId);
 
     if (!$stmt->execute()) {
         $err = $stmt->error;

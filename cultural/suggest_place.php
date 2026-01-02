@@ -8,6 +8,12 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
     exit;
 }
 
+$travellerId = (int)($_SESSION["traveller_id"] ?? 0);
+if ($travellerId <= 0) {
+    header("Location: ../auth/login.php?role=traveller");
+    exit;
+}
+
 $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
 
 $success = $_SESSION["success_message"] ?? "";
@@ -33,6 +39,32 @@ $stateOptions = [
     "Putrajaya",
     "Labuan"
 ];
+
+$mySuggestions = [];
+$stmt = $conn->prepare("
+  SELECT suggestion_id, name, state, category, status, created_at, approved_at, review_note
+  FROM cultural_place_suggestions
+  WHERE traveller_id=?
+  ORDER BY suggestion_id DESC
+  LIMIT 30
+");
+$stmt->bind_param("i", $travellerId);
+$stmt->execute();
+$res = $stmt->get_result();
+while ($row = $res->fetch_assoc()) {
+    $mySuggestions[] = $row;
+}
+$stmt->close();
+
+function sug_label($s)
+{
+    $s = strtolower(trim((string)$s));
+    if ($s === "pending") return "Pending";
+    if ($s === "approved") return "Approved";
+    if ($s === "rejected") return "Rejected";
+    return ucfirst($s);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -175,6 +207,69 @@ $stateOptions = [
                             <a class="btn btn-ghost" href="cultural_guide.php">Cancel</a>
                         </div>
                     </form>
+
+                    <hr class="sep" style="margin:18px 0;">
+
+                    <h3 style="margin:0 0 6px 0;">My Submissions</h3>
+                    <p class="meta" style="margin:0 0 12px 0;">Check approval status and admin replies (especially when rejected).</p>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Place</th>
+                                    <th>State</th>
+                                    <th>Category</th>
+                                    <th>Status</th>
+                                    <th>Created</th>
+                                    <th>Reviewed</th>
+                                    <th>Admin Reply</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php if (count($mySuggestions) === 0): ?>
+                                    <tr>
+                                        <td colspan="8">No submissions yet.</td>
+                                    </tr>
+                                <?php else: ?>
+                                    <?php foreach ($mySuggestions as $r): ?>
+                                        <?php
+                                        $status = strtolower((string)($r["status"] ?? ""));
+                                        $reply  = trim((string)($r["review_note"] ?? ""));
+                                        ?>
+                                        <tr>
+                                            <td><?php echo (int)$r["suggestion_id"]; ?></td>
+                                            <td><strong><?php echo htmlspecialchars($r["name"]); ?></strong></td>
+                                            <td><?php echo htmlspecialchars($r["state"]); ?></td>
+                                            <td><?php echo htmlspecialchars($r["category"]); ?></td>
+                                            <td>
+                                                <span class="badge" style="<?php
+                                                                            if ($status === 'approved') echo 'border-color: rgba(16,185,129,.35); font-weight:900;';
+                                                                            else if ($status === 'rejected') echo 'border-color: rgba(239,68,68,.35); font-weight:900;';
+                                                                            else echo 'font-weight:900;';
+                                                                            ?>">
+                                                    <?php echo htmlspecialchars(sug_label($r["status"])); ?>
+                                                </span>
+                                            </td>
+                                            <td><?php echo htmlspecialchars($r["created_at"] ?? "-"); ?></td>
+                                            <td><?php echo htmlspecialchars($r["approved_at"] ?? "-"); ?></td>
+                                            <td>
+                                                <?php if ($status === "rejected" && $reply !== ""): ?>
+                                                    <span style="color:rgba(239,68,68,1); font-weight:800;">
+                                                        <?php echo htmlspecialchars($reply); ?>
+                                                    </span>
+                                                <?php else: ?>
+                                                    <?php echo ($reply !== "") ? htmlspecialchars($reply) : "-"; ?>
+                                                <?php endif; ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
             </section>
         </main>
