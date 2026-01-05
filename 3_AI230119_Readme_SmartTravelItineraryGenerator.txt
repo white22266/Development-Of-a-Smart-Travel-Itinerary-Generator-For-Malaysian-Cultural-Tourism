@@ -11,24 +11,29 @@ http://localhost/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian
 A) Requirements
 - XAMPP (Apache + MySQL)
 - Browser: Chrome/Edge
-- PHP version: 7.4+
+- PHP version: 7.4+ and above.
 
 B) Setup steps
-1. Copy the project folder into:
-   C:\xampp\htdocs\FYP_1\Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism\
+1. Extract the zip folder and Copy the project folder into:
+
+   C:\xampp\htdocs\Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism\
+
 2. Start XAMPP Control Panel:
    - Start Apache
    - Start MySQL
+   
 3. Import database:
    - Open http://localhost/phpmyadmin
    - Create database: travel_itinerary_db
    - Import SQL: [ travel_itinerary_db.sql]
+
 4. Update database connection:
    - File: config/db_connect.php
    - Ensure host/user/password are correct.
 
 C) Access URL (Local)
 http://localhost/FYP_1/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/
+or just click the StartFYP.bat file.
 
 3) Login Accounts (for examiners)
 Traveller account:
