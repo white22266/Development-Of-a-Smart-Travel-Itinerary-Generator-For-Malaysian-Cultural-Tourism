@@ -148,8 +148,10 @@ while ($r = $res->fetch_assoc()) {
           </div>
         <?php endforeach; ?>
       </section>
+      <div class="actions" style="justify-content:flex-start; padding-left:16px; margin-top:12px;">
+        <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo (int)$itineraryId; ?>">Export PDF</a>
+      </div>
     </main>
-
   </div>
 </body>
 

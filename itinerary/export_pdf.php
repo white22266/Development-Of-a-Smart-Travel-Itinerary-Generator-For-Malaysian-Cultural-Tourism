@@ -1,7 +1,7 @@
 <?php
+// itinerary/export_pdf.php  (PHP 7.4 compatible)
 session_start();
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -10,293 +10,345 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_GET["itinerary_id"] ?? 0);
-if ($itineraryId <= 0) {
+
+if ($travellerId <= 0 || $itineraryId <= 0) {
     header("Location: my_itineraries.php");
     exit;
 }
 
-/* ---------- Helpers (English only) ---------- */
-
-function ordinal($n)
-{
-    $n = (int)$n;
-    $mod100 = $n % 100;
-    if ($mod100 >= 11 && $mod100 <= 13) return $n . "th";
-    switch ($n % 10) {
-        case 1:
-            return $n . "st";
-        case 2:
-            return $n . "nd";
-        case 3:
-            return $n . "rd";
-        default:
-            return $n . "th";
-    }
-}
+/* ------------------------ Helpers (PHP 7.4) ------------------------ */
 
 function esc($s)
 {
     return htmlspecialchars((string)$s, ENT_QUOTES, "UTF-8");
 }
 
-function pdf_img_src($raw)
+function is_http_url($s)
 {
-    $raw = trim((string)$raw);
+    return (bool)preg_match('#^https?://#i', (string)$s);
+}
+
+// Convert a project-relative path (e.g. uploads/places/xxx.jpg) to absolute FS path
+function project_abs_path_from_itinerary_dir($relativePath)
+{
+    $relativePath = trim((string)$relativePath);
+    if ($relativePath === "") return "";
+    $relativePath = ltrim($relativePath, "/\\");
+    $abs = realpath(__DIR__ . "/../" . $relativePath);
+    return $abs ? $abs : "";
+}
+
+function detect_mime_from_bytes($bytes)
+{
+    $bytes = (string)$bytes;
+    if (substr($bytes, 0, 8) === "\x89PNG\x0D\x0A\x1A\x0A") return "image/png";
+    if (substr($bytes, 0, 3) === "\xFF\xD8\xFF") return "image/jpeg";
+    if (substr($bytes, 0, 6) === "GIF87a" || substr($bytes, 0, 6) === "GIF89a") return "image/gif";
+    if (substr($bytes, 0, 4) === "RIFF" && substr($bytes, 8, 4) === "WEBP") return "image/webp";
+    return "application/octet-stream";
+}
+
+function file_mime($absPath)
+{
+    $absPath = (string)$absPath;
+    if (!is_file($absPath)) return "";
+
+    // Prefer mime_content_type if available (simple, PHP 7.4 friendly)
+    if (function_exists("mime_content_type")) {
+        $m = @mime_content_type($absPath);
+        if (is_string($m) && $m !== "") return $m;
+    }
+
+    // Fallback to finfo if present
+    if (function_exists("finfo_open")) {
+        $fi = finfo_open(FILEINFO_MIME_TYPE);
+        if ($fi) {
+            $mime = finfo_file($fi, $absPath);
+            finfo_close($fi);
+            if (is_string($mime) && $mime !== "") return $mime;
+        }
+    }
+    return "";
+}
+
+function curl_fetch($url, &$httpCode, &$effectiveUrl, &$err)
+{
+    $httpCode = 0;
+    $effectiveUrl = "";
+    $err = "";
+
+    if (!function_exists("curl_init")) {
+        $err = "cURL extension not available.";
+        return "";
+    }
+
+    $ch = curl_init((string)$url);
+    curl_setopt_array($ch, array(
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true, // important for Wikimedia Special:FilePath redirects
+        CURLOPT_MAXREDIRS => 8,
+        CURLOPT_CONNECTTIMEOUT => 10,
+        CURLOPT_TIMEOUT => 20,
+        CURLOPT_USERAGENT => "Mozilla/5.0 (PDF Export)",
+        CURLOPT_SSL_VERIFYPEER => true,
+        CURLOPT_SSL_VERIFYHOST => 2,
+    ));
+
+    $data = curl_exec($ch);
+    $httpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $effectiveUrl = (string)curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+    $err = (string)curl_error($ch);
+    curl_close($ch);
+
+    if ($data === false || $httpCode < 200 || $httpCode >= 300) {
+        return "";
+    }
+    return (string)$data;
+}
+
+function webp_bytes_to_png_bytes($webpBytes)
+{
+    if (!function_exists("imagecreatefromwebp")) return "";
+
+    $tmp = tempnam(sys_get_temp_dir(), "webp_");
+    if ($tmp === false) return "";
+
+    @file_put_contents($tmp, $webpBytes);
+
+    $im = @imagecreatefromwebp($tmp);
+    @unlink($tmp);
+    if (!$im) return "";
+
+    ob_start();
+    imagepng($im);
+    imagedestroy($im);
+    $png = ob_get_clean();
+    return $png ? $png : "";
+}
+
+function webp_file_to_png_data_uri($absPath)
+{
+    $absPath = (string)$absPath;
+    if (!is_file($absPath)) return "";
+    $ext = strtolower(pathinfo($absPath, PATHINFO_EXTENSION));
+    if ($ext !== "webp") return "";
+    if (!function_exists("imagecreatefromwebp")) return "";
+
+    $im = @imagecreatefromwebp($absPath);
+    if (!$im) return "";
+
+    ob_start();
+    imagepng($im);
+    imagedestroy($im);
+    $pngBytes = ob_get_clean();
+    if (!$pngBytes) return "";
+
+    return "data:image/png;base64," . base64_encode($pngBytes);
+}
+
+function image_to_data_uri($imageUrlOrPath)
+{
+    $raw = trim((string)$imageUrlOrPath);
     if ($raw === "") return "";
 
-    if (preg_match('#^https?://#i', $raw) || strpos($raw, '//') === 0) return $raw;
-    if (strpos($raw, 'data:image/') === 0) return $raw;
+    // already data URI
+    if (stripos($raw, "data:image/") === 0) return $raw;
 
-    $raw = ltrim($raw, '/');
-    $abs = realpath(__DIR__ . "/../" . $raw);
-    if (!$abs) return "";
-    $abs = str_replace("\\", "/", $abs);
-    return "file:///" . $abs;
-}
+    // remote
+    if (is_http_url($raw)) {
+        $http = 0;
+        $eff = "";
+        $err = "";
+        $bytes = curl_fetch($raw, $http, $eff, $err);
+        if ($bytes === "") return "";
 
-function build_static_map_url($points)
-{
-    // $points: array of ['lat'=>..., 'lng'=>..., 'label'=>'A'..]
-    if (empty($points)) return "";
+        $mime = detect_mime_from_bytes($bytes);
 
-    $base = "https://maps.googleapis.com/maps/api/staticmap";
-    $params = [
-        "size" => "640x360",
-        "maptype" => "roadmap",
-        "key" => GOOGLE_MAPS_API_KEY
-    ];
-    $qs = http_build_query($params, "", "&", PHP_QUERY_RFC3986);
-
-    $extras = [];
-
-    // markers
-    foreach ($points as $p) {
-        $label = $p["label"] ?? "";
-        $lat = $p["lat"];
-        $lng = $p["lng"];
-        $extras[] = "markers=" . rawurlencode("label:{$label}|{$lat},{$lng}");
-    }
-
-    // path
-    if (count($points) >= 2) {
-        $pathParts = [];
-        foreach ($points as $p) {
-            $pathParts[] = $p["lat"] . "," . $p["lng"];
+        // Convert remote WebP to PNG (more compatible)
+        if ($mime === "image/webp") {
+            $png = webp_bytes_to_png_bytes($bytes);
+            if ($png !== "") {
+                return "data:image/png;base64," . base64_encode($png);
+            }
         }
-        $extras[] = "path=" . rawurlencode("color:0x1d4ed8|weight:4|" . implode("|", $pathParts));
+
+        if (strpos($mime, "image/") !== 0) $mime = "image/jpeg";
+        return "data:" . $mime . ";base64," . base64_encode($bytes);
     }
 
-    return $base . "?" . $qs . "&" . implode("&", $extras);
+    // local relative (uploads/places/...)
+    $abs = project_abs_path_from_itinerary_dir($raw);
+    if ($abs === "") return "";
+
+    // Convert local WebP to PNG
+    $webpPng = webp_file_to_png_data_uri($abs);
+    if ($webpPng !== "") return $webpPng;
+
+    $bytes = @file_get_contents($abs);
+    if ($bytes === false) return "";
+
+    $mime = file_mime($abs);
+    if ($mime === "" || strpos($mime, "image/") !== 0) {
+        $mime = detect_mime_from_bytes($bytes);
+        if (strpos($mime, "image/") !== 0) $mime = "image/jpeg";
+    }
+
+    return "data:" . $mime . ";base64," . base64_encode($bytes);
 }
 
-/* ---------- Read itinerary ---------- */
+/* ------------------------ Load itinerary ------------------------ */
 
 $stmt = $conn->prepare("SELECT * FROM itineraries WHERE itinerary_id=? AND traveller_id=? LIMIT 1");
 $stmt->bind_param("ii", $itineraryId, $travellerId);
 $stmt->execute();
 $it = $stmt->get_result()->fetch_assoc();
 $stmt->close();
+
 if (!$it) {
     header("Location: my_itineraries.php");
     exit;
 }
 
-/* ---------- Read items + join cultural_places ---------- */
-
+/* ------------------------ Load items + join cultural_places ------------------------ */
+/*
+  Assumption: itinerary_items.item_title == cultural_places.name
+              itinerary_items.item_type  == cultural_places.category
+*/
 $stmt = $conn->prepare("
-  SELECT
-    ii.day_no,
-    ii.sequence_no,
-    ii.item_type,
-    ii.item_title,
-    ii.estimated_cost,
-    ii.notes,
-    cp.latitude,
-    cp.longitude,
-    cp.image_url,
-    cp.description AS place_description,
-    cp.address AS place_address
-  FROM itinerary_items ii
-  LEFT JOIN cultural_places cp
-    ON cp.name = ii.item_title
-   AND cp.category = ii.item_type
-  WHERE ii.itinerary_id=?
-  ORDER BY ii.day_no, ii.sequence_no
+    SELECT
+        ii.day_no,
+        ii.sequence_no,
+        ii.item_type,
+        ii.item_title,
+        ii.estimated_cost,
+        ii.notes,
+        ii.distance_km,
+        ii.travel_time_min,
+        cp.address,
+        cp.opening_hours,
+        cp.image_url
+    FROM itinerary_items ii
+    LEFT JOIN cultural_places cp
+        ON cp.name = ii.item_title
+       AND cp.category = ii.item_type
+       AND (cp.is_active = 1 OR cp.is_active IS NULL)
+    WHERE ii.itinerary_id=?
+    ORDER BY ii.day_no ASC, ii.sequence_no ASC
 ");
 $stmt->bind_param("i", $itineraryId);
 $stmt->execute();
 $res = $stmt->get_result();
 $stmt->close();
 
-/* ---------- Group by day ---------- */
-
-$days = []; // day_no => items
-while ($r = $res->fetch_assoc()) {
-    $d = (int)$r["day_no"];
-    if (!isset($days[$d])) $days[$d] = [];
-    $days[$d][] = $r;
+$days = array();
+while ($row = $res->fetch_assoc()) {
+    $d = (int)$row["day_no"];
+    if (!isset($days[$d])) $days[$d] = array();
+    $days[$d][] = $row;
 }
 
-/* ---------- Build HTML ---------- */
+/* ------------------------ Build HTML ------------------------ */
 
 $css = "
-  <style>
-    body { font-family: DejaVu Sans, Arial, sans-serif; font-size: 12px; color: #0f172a; }
-    h2 { margin: 0 0 6px 0; }
-    h3 { margin: 14px 0 8px 0; }
-    .meta { color: #475569; margin: 0 0 8px 0; }
-    .hr { border-top: 1px solid #e2e8f0; margin: 10px 0; }
-    .map { margin: 8px 0 10px 0; }
-    .map img { width: 100%; max-width: 640px; border: 1px solid #e2e8f0; border-radius: 10px; }
-    table.list { width: 100%; border-collapse: collapse; margin: 6px 0 0 0; }
-    table.list th, table.list td { border: 1px solid #e2e8f0; padding: 6px 8px; vertical-align: top; }
-    table.list th { background: #f8fafc; text-align: left; }
-    .page-break { page-break-before: always; }
-    .place-card { margin: 12px 0 14px 0; }
-    .place-title { font-size: 14px; font-weight: 800; margin: 0 0 8px 0; }
-    .place-img { margin: 8px 0 10px 0; }
-    .place-img img { width: 100%; max-width: 480px; border: 1px solid #e2e8f0; border-radius: 10px; }
-    .no-image { width: 480px; max-width: 100%; height: 220px; border: 1px dashed #cbd5e1; border-radius: 10px;
-                display: flex; align-items: center; justify-content: center; color: #64748b; font-weight: 800; }
-    table.kv { width: 100%; border-collapse: collapse; }
-    table.kv td { padding: 0; vertical-align: top; }
-    td.k { width: 90px; font-weight: 800; padding-right: 8px; }
-    td.v { text-align: justify; line-height: 1.45; }
-  </style>
+<style>
+  body { font-family: DejaVu Sans, Arial, sans-serif; font-size: 12px; color: #0f172a; }
+  .header { margin-bottom: 10px; }
+  .title { font-size: 18px; font-weight: 800; margin: 0 0 6px 0; }
+  .meta { color: #475569; margin: 0; }
+  .hr { border-top: 1px solid #e2e8f0; margin: 12px 0; }
+
+  h3 { margin: 14px 0 8px 0; font-size: 14px; }
+  .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px; margin: 10px 0 12px 0; }
+  .card-title { font-weight: 800; font-size: 13px; margin: 0 0 8px 0; }
+
+  .imgwrap { margin: 6px 0 10px 0; }
+  .imgwrap img { width: 100%; max-width: 520px; border: 1px solid #e2e8f0; border-radius: 10px; }
+  .noimg { width: 520px; max-width: 100%; height: 200px; border: 1px dashed #cbd5e1; border-radius: 10px;
+           display: flex; align-items: center; justify-content: center; color: #64748b; font-weight: 800; }
+
+  .row { margin: 2px 0; line-height: 1.35; }
+  .k { font-weight: 800; }
+</style>
 ";
 
 $html = $css;
-$html .= "<h2>" . esc($it["title"]) . "</h2>";
-$html .= "<p class='meta'>Total Days: " . (int)$it["total_days"] . " | Total Cost (RM): " . number_format((float)$it["total_estimated_cost"], 2) . "</p>";
+$html .= "<div class='header'>";
+$html .= "<p class='title'>" . esc($it["title"] ? $it["title"] : ("Itinerary #" . $itineraryId)) . "</p>";
+$html .= "<p class='meta'>Total Days: " . (int)($it["total_days"] ?? 0) .
+    " | Items/Day: " . (int)($it["items_per_day"] ?? 0) .
+    " | Total Cost (RM): " . number_format((float)($it["total_estimated_cost"] ?? 0), 2) .
+    "</p>";
+if (!empty($it["start_date"])) {
+    $html .= "<p class='meta'>Start Date: " . esc($it["start_date"]) . "</p>";
+}
+$html .= "</div>";
 $html .= "<div class='hr'></div>";
 
-/* ---------- Part 1: Day list + map ---------- */
-
+ksort($days);
 foreach ($days as $dayNo => $items) {
     $html .= "<h3>Day " . (int)$dayNo . "</h3>";
 
-    // build points for map (A->B->C...)
-    $points = [];
-    $letters = range("A", "Z");
-    $idx = 0;
+    foreach ($items as $x) {
+        $imgUri = image_to_data_uri($x["image_url"]);
 
-    foreach ($items as $itx) {
-        $lat = $itx["latitude"];
-        $lng = $itx["longitude"];
-        if ($lat === null || $lng === null || $lat === "" || $lng === "") continue;
-        if (!is_numeric($lat) || !is_numeric($lng)) continue;
+        $html .= "<div class='card'>";
+        $html .= "<p class='card-title'>" . esc($x["item_title"]) . "</p>";
 
-        $points[] = [
-            "label" => $letters[$idx] ?? "X",
-            "lat" => (float)$lat,
-            "lng" => (float)$lng,
-            "name" => $itx["item_title"]
-        ];
-        $idx++;
-    }
-
-    if (!empty($points)) {
-        $mapUrl = build_static_map_url($points);
-        $html .= "<div class='map'><img src='" . esc($mapUrl) . "' alt='Map'></div>";
-
-        // route line text: A: Place -> B: Place -> C: Place
-        $routeParts = [];
-        foreach ($points as $p) {
-            $routeParts[] = esc($p["label"]) . ": " . esc($p["name"]);
-        }
-        $html .= "<p class='meta'>Route: " . implode(" → ", $routeParts) . "</p>";
-    } else {
-        $html .= "<p class='meta'>Map not available (missing latitude/longitude).</p>";
-    }
-
-    // list table
-    $html .= "<table class='list'>
-    <thead>
-      <tr>
-        <th style='width:55px;'>No.</th>
-        <th>Place</th>
-        <th style='width:90px;'>Type</th>
-        <th style='width:90px;'>Cost (RM)</th>
-      </tr>
-    </thead><tbody>";
-
-    $n = 1;
-    foreach ($items as $itx) {
-        $html .= "<tr>
-      <td>" . $n . "</td>
-      <td>" . esc($itx["item_title"]) . "</td>
-      <td>" . esc($itx["item_type"]) . "</td>
-      <td>" . number_format((float)$itx["estimated_cost"], 2) . "</td>
-    </tr>";
-        $n++;
-    }
-
-    $html .= "</tbody></table>";
-}
-
-/* ---------- Part 2: New page - place details (image + description) ---------- */
-
-$html .= "<div class='page-break'></div>";
-$html .= "<h2>Place Details</h2>";
-$html .= "<p class='meta'>All places with image and description.</p>";
-$html .= "<div class='hr'></div>";
-
-foreach ($days as $dayNo => $items) {
-    $i = 1;
-    foreach ($items as $itx) {
-        $titleLine = "Day " . (int)$dayNo . ". " . ordinal($i) . " Place: " . (string)$itx["item_title"];
-        $html .= "<div class='place-card'>";
-        $html .= "<div class='place-title'>" . esc($titleLine) . "</div>";
-
-        // image
-        $imgSrc = pdf_img_src($itx["image_url"] ?? "");
-        if ($imgSrc !== "") {
-            $html .= "<div class='place-img'><img src='" . esc($imgSrc) . "' alt='Place image'></div>";
+        if ($imgUri !== "") {
+            $html .= "<div class='imgwrap'><img src='" . esc($imgUri) . "' alt='Image'></div>";
         } else {
-            $html .= "<div class='place-img'><div class='no-image'>No image</div></div>";
+            $html .= "<div class='noimg'>NO IMAGE</div>";
         }
 
-        // description aligned (prevents text going under label)
-        $desc = trim((string)($itx["place_description"] ?? ""));
-        if ($desc === "") $desc = "-";
+        $html .= "<div class='row'><span class='k'>Category:</span> " . esc($x["item_type"]) . "</div>";
+        $html .= "<div class='row'><span class='k'>Estimated Cost (RM):</span> " . number_format((float)($x["estimated_cost"] ?? 0), 2) . "</div>";
 
-        $addr = trim((string)($itx["place_address"] ?? ""));
-        if ($addr === "") $addr = "-";
+        if (!empty($x["opening_hours"])) {
+            $html .= "<div class='row'><span class='k'>Opening Hours:</span> " . esc($x["opening_hours"]) . "</div>";
+        }
+        if (!empty($x["address"])) {
+            $html .= "<div class='row'><span class='k'>Address:</span> " . esc($x["address"]) . "</div>";
+        }
 
-        $html .= "
-      <table class='kv'>
-        <tr>
-          <td class='k'>Address:</td>
-          <td class='v'>" . esc($addr) . "</td>
-        </tr>
-        <tr>
-          <td class='k'>Description:</td>
-          <td class='v'>" . esc($desc) . "</td>
-        </tr>
-      </table>
-    ";
+        if ($x["distance_km"] !== null && $x["distance_km"] !== "") {
+            $html .= "<div class='row'><span class='k'>Segment Distance (km):</span> " . esc($x["distance_km"]) . "</div>";
+        }
+        if ($x["travel_time_min"] !== null && $x["travel_time_min"] !== "") {
+            $html .= "<div class='row'><span class='k'>Segment Time (min):</span> " . esc($x["travel_time_min"]) . "</div>";
+        }
+
+        if (!empty($x["notes"])) {
+            $html .= "<div class='row'><span class='k'>Notes:</span> " . esc($x["notes"]) . "</div>";
+        }
 
         $html .= "</div>";
-        $i++;
     }
 }
 
-/* ---------- PDF via Dompdf ---------- */
+/* ------------------------ Render PDF (Dompdf) ------------------------ */
 
 $autoload = __DIR__ . "/../vendor/autoload.php";
 if (!file_exists($autoload)) {
-    echo "<html><body>" . $html . "<p><i>Dompdf not installed. Use browser Print to PDF.</i></p></body></html>";
+    // fallback: show HTML so user can Print to PDF
+    echo "<!doctype html><html><head><meta charset='utf-8'><title>Export PDF</title></head><body>{$html}</body></html>";
     exit;
 }
 
 require_once $autoload;
 
-$options = new \Dompdf\Options();
-$options->set("isRemoteEnabled", true); // needed for Google Static Maps + remote images
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
-$dompdf = new \Dompdf\Dompdf($options);
-$dompdf->loadHtml("<html><body>" . $html . "</body></html>");
+$options = new Options();
+$options->set("isHtml5ParserEnabled", true);
+$options->set("isRemoteEnabled", true);
+$options->set("defaultFont", "DejaVu Sans");
+
+$dompdf = new Dompdf($options);
+$dompdf->loadHtml("<!doctype html><html><head><meta charset='utf-8'></head><body>{$html}</body></html>");
 $dompdf->setPaper("A4", "portrait");
 $dompdf->render();
-$dompdf->stream("itinerary_" . $itineraryId . ".pdf", ["Attachment" => true]);
+
+$filename = "itinerary_" . $itineraryId . ".pdf";
+$dompdf->stream($filename, array("Attachment" => true));
 exit;
