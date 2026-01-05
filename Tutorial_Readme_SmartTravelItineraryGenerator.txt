@@ -35,16 +35,15 @@ C) Access URL (Local)
 http://localhost/FYP_1/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/
 or just click the StartFYP.bat file.
 
-3) Login Accounts (for examiners)
-Traveller account:
-- Email/Username: [FILL]
-- Password: [FILL]
+3) Login Accounts video demo(for examiners)
+-traveller_part demo video.mp4
+-admin_part demo video.mp4
 
-4）Admin account:
+4）Login Accounts (for examiners)
+Admin account:
 - Email/Username: [admin@gmail.com]
 - Password: [123456]
-
-5）Example login Traveller account：
+Traveller account：
 -Email:ai230119@student.uthm.edu.my
 -Password:[123456]
 
