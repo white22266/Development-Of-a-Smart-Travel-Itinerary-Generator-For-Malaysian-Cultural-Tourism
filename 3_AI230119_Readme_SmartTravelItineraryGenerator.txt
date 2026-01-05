@@ -35,13 +35,13 @@ Traveller account:
 - Email/Username: [FILL]
 - Password: [FILL]
 
-Admin account:
-- Email/Username: [ai230119@student.uthm.edu.my]
+4）Admin account:
+- Email/Username: [admin@gmail.com]
 - Password: [123456]
 
-4) How to view the Demonstration Video
-Option (Local video file):
-Open file: [demo_video.mp4] using any media player.
+5）Example login Traveller account：
+-Email:ai230119@student.uthm.edu.my
+-Password:[123456]
 
 5) Key Modules to test
 A) Traveller Preference Analyzer
