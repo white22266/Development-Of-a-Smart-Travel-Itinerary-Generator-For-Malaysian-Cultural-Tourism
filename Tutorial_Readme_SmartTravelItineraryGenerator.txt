@@ -32,7 +32,7 @@ B) Setup steps
    - Ensure host/user/password are correct.
 
 C) Access URL (Local)
-http://localhost/FYP_1/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/
+http://localhost/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/
 or just click the StartFYP.bat file.
 
 3) Login Accounts video demo(for examiners)
