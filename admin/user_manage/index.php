@@ -1,7 +1,9 @@
 <?php
 // admin/user_manage/index.php
 // Single-file User Management (travellers only). No delete. Views: list | create | edit | reset
-// CHANGED: Reset Password now sets travellers.must_change_password = 1 and sends email with temporary password.
+// FIXED: Reset Password now sets travellers.force_password_change = 1 (matches your DB schema)
+// FIXED: SMTP App Password auto-trim spaces to avoid auth failure
+// NOTE: Email sending failure will NOT block password reset (system still works)
 
 if (session_status() === PHP_SESSION_NONE) session_start();
 require_once __DIR__ . "/../../config/db_connect.php";
@@ -9,12 +11,12 @@ require_once __DIR__ . "/../../config/db_connect.php";
 /* =============================
    PHPMailer (optional)
    ============================= */
-// ADDED: Prevent fatal error if Composer vendor is missing
+// CHANGED: safe autoload include + detect mail availability
 $autoloadPath = __DIR__ . "/../../vendor/autoload.php";
 if (file_exists($autoloadPath)) {
   require_once $autoloadPath;
 }
-$MAIL_ENABLED = class_exists('\PHPMailer\PHPMailer\PHPMailer'); // ADDED
+$MAIL_ENABLED = class_exists('\PHPMailer\PHPMailer\PHPMailer'); // FIXED: used later in messaging
 
 /* =============================
    Helpers
@@ -103,17 +105,20 @@ function base_admin_sidebar_users(): void
    ============================= */
 function sendResetPasswordEmail(string $toEmail, string $toName, string $newPassword): bool
 {
-  // ADDED: If PHPMailer not installed, do not crash the system
+  // FIXED: if PHPMailer not available, return false (no crash)
   if (!class_exists('\PHPMailer\PHPMailer\PHPMailer')) return false;
 
   // ===== SMTP CONFIG (EDIT THESE) =====
   $SMTP_HOST  = "smtp.gmail.com";
-  $SMTP_PORT  = 587; // 587 TLS, 465 SSL
+  $SMTP_PORT  = 587; // 587 STARTTLS, 465 SMTPS
   $SMTP_USER  = "peckjianhao0226@gmail.com";
-  $SMTP_PASS  = "itbn jnok xcvo wmna"; // Gmail App Password (not normal password)
+  $SMTP_PASS  = "itbn jnok xcvo wmna"; // Gmail App Password
   $FROM_EMAIL = $SMTP_USER;
   $FROM_NAME  = "Smart Travel Itinerary Generator";
   // ===================================
+
+  // FIXED: App Password should not contain spaces
+  $SMTP_PASS = str_replace(" ", "", $SMTP_PASS);
 
   try {
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
@@ -130,6 +135,10 @@ function sendResetPasswordEmail(string $toEmail, string $toName, string $newPass
       $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
     }
     $mail->Port = $SMTP_PORT;
+
+    // OPTIONAL DEBUG (uncomment when needed)
+    // $mail->SMTPDebug = 2;
+    // $mail->Debugoutput = 'error_log';
 
     $mail->CharSet = "UTF-8";
     $mail->setFrom($FROM_EMAIL, $FROM_NAME);
@@ -159,8 +168,8 @@ function sendResetPasswordEmail(string $toEmail, string $toName, string $newPass
     $mail->send();
     return true;
   } catch (Throwable $e) {
-    // Optional debug:
-    // error_log("Email send failed: " . $e->getMessage());
+    // FIXED: log real reason so you can debug from Apache error.log
+    error_log("PHPMailer send failed: " . $e->getMessage());
     return false;
   }
 }
@@ -171,12 +180,13 @@ function sendResetPasswordEmail(string $toEmail, string $toName, string $newPass
 require_admin_guard();
 
 /* =============================
-   POST handlers (same file)
+   POST handlers
    ============================= */
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $action = strtolower(trim($_POST["action"] ?? ""));
 
   try {
+
     /* ---------- CREATE TRAVELLER ---------- */
     if ($action === "create") {
       $name = trim($_POST["name"] ?? "");
@@ -211,6 +221,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       }
 
       $hash = password_hash($password, PASSWORD_DEFAULT);
+
+      // NOTE: force_password_change exists, default 0, so no need insert it
       $stmt = $conn->prepare("INSERT INTO travellers (full_name, email, password_hash, phone) VALUES (?,?,?,?)");
       if (!$stmt) throw new Exception("Prepare failed (insert).");
       $stmt->bind_param("ssss", $name, $email, $hash, $phone);
@@ -298,9 +310,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         redirect_to("index.php?view=reset&id=" . $id);
       }
 
-      // CHANGED: Set must_change_password=1 so traveller is forced to change it on next login
+      // FIXED: your DB column is force_password_change (NOT must_change_password)
       $hash = password_hash($new, PASSWORD_DEFAULT);
-      $stmt = $conn->prepare("UPDATE travellers SET password_hash = ?, must_change_password = 1 WHERE traveller_id = ?");
+      $stmt = $conn->prepare("UPDATE travellers SET password_hash = ?, force_password_change = 1 WHERE traveller_id = ?");
       if (!$stmt) throw new Exception("Prepare failed (password update).");
       $stmt->bind_param("si", $hash, $id);
 
@@ -310,7 +322,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       }
       $stmt->close();
 
-      // ADDED: Load traveller contact for email notification
+      // Load traveller contact for email notification
       $u = null;
       $st = $conn->prepare("SELECT full_name, email FROM travellers WHERE traveller_id=? LIMIT 1");
       if ($st) {
@@ -320,17 +332,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $st->close();
       }
 
-      // ADDED: Send email with temporary password
+      // Send email (optional)
       $sent = false;
       if ($u && !empty($u["email"])) {
         $sent = sendResetPasswordEmail((string)$u["email"], (string)$u["full_name"], $new);
       }
 
-      if ($sent) {
+      // CHANGED: clearer message based on mail availability
+      if (!$GLOBALS["MAIL_ENABLED"]) {
+        flash_set_success("Password updated. Email disabled (vendor/autoload.php not loaded).");
+      } elseif ($sent) {
         flash_set_success("Password updated. Email sent to the traveller.");
       } else {
-        // If SMTP config/vendor missing, system still works; only email fails.
-        flash_set_success("Password updated. Email sending failed (check SMTP/vendor/autoload).");
+        flash_set_success("Password updated. Email sending failed (check SMTP/OpenSSL/port). See Apache error.log.");
       }
 
       redirect_to("index.php?view=reset&id=" . $id);
@@ -339,8 +353,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     flash_set_errors(["Unknown action."]);
     redirect_to("index.php");
   } catch (Throwable $e) {
-    // Optional debug:
-    // error_log("User manage error: " . $e->getMessage());
+    // IMPORTANT: log real reason (SQL errors, etc.)
+    error_log("User manage error: " . $e->getMessage());
     flash_set_errors(["Operation failed due to a system error."]);
     redirect_to("index.php");
   }
@@ -580,7 +594,6 @@ unset($_SESSION["old_input"]);
       <?php else: ?>
 
         <?php
-        // LIST VIEW
         $q = trim($_GET["q"] ?? "");
         $page = (int)($_GET["page"] ?? 1);
         if ($page < 1) $page = 1;
@@ -599,7 +612,6 @@ unset($_SESSION["old_input"]);
           $types = "sss";
         }
 
-        // Count travellers only
         $total = 0;
         $countSql = "SELECT COUNT(*) AS c FROM travellers {$where}";
         $countStmt = $conn->prepare($countSql);
@@ -610,12 +622,11 @@ unset($_SESSION["old_input"]);
           $countStmt->close();
         }
 
-        // Data
         $rows = [];
         $sql = "SELECT traveller_id AS id, full_name AS name, email, phone
-                  FROM travellers {$where}
-                  ORDER BY traveller_id DESC
-                  LIMIT ? OFFSET ?";
+              FROM travellers {$where}
+              ORDER BY traveller_id DESC
+              LIMIT ? OFFSET ?";
         $stmt = $conn->prepare($sql);
         if ($stmt) {
           if ($types === "") {
@@ -688,7 +699,6 @@ unset($_SESSION["old_input"]);
                         <div class="actions-inline">
                           <a class="btn btn-ghost" href="index.php?view=edit&id=<?php echo (int)$r["id"]; ?>">Edit</a>
                           <a class="btn btn-primary" href="index.php?view=reset&id=<?php echo (int)$r["id"]; ?>">Reset Password</a>
-                          <!-- NO DELETE -->
                         </div>
                       </td>
                     </tr>
