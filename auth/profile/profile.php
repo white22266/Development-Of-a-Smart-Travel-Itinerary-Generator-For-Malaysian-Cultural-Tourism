@@ -20,9 +20,9 @@ $errors = [];
 $success = "";
 
 /* ---------- Load current profile ---------- */
-// CHANGED: load must_change_password
+// CHANGED: load force_password_change
 $stmt = $conn->prepare("
-    SELECT full_name, email, phone, must_change_password
+    SELECT full_name, email, phone, force_password_change
     FROM travellers
     WHERE traveller_id = ?
     LIMIT 1
@@ -38,7 +38,7 @@ if (!$user) {
 }
 
 // ADDED: force mode when flag=1 or URL force=1
-$forceMode = ((int)($user["must_change_password"] ?? 0) === 1) || (($_GET["force"] ?? "") === "1");
+$forceMode = ((int)($user["force_password_change"] ?? 0) === 1) || (($_GET["force"] ?? "") === "1");
 
 /* ---------- Handle update ---------- */
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -61,16 +61,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($errors)) {
             $hash = password_hash($newPassword, PASSWORD_DEFAULT);
 
-            // ADDED: clear must_change_password after successful update
+            // ADDED: clear force_password_change after successful update
             $stmt = $conn->prepare("
                 UPDATE travellers
-                SET password_hash = ?, must_change_password = 0
+                SET password_hash = ?, force_password_change = 0
                 WHERE traveller_id = ?
             ");
             $stmt->bind_param("si", $hash, $travellerId);
 
             if ($stmt->execute()) {
-                $_SESSION["must_change_password"] = 0;
+                $_SESSION["force_password_change"] = 0;
                 $stmt->close();
 
                 // CHANGED: after forced change, redirect to dashboard (or same profile page)
@@ -112,10 +112,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if ($newPassword !== "") {
                 $hash = password_hash($newPassword, PASSWORD_DEFAULT);
 
-                // CHANGED: also ensure must_change_password stays 0 in normal change
+                // CHANGED: also ensure force_password_change stays 0 in normal change
                 $stmt = $conn->prepare("
                     UPDATE travellers
-                    SET full_name=?, email=?, phone=?, password_hash=?, must_change_password=0
+                    SET full_name=?, email=?, phone=?, password_hash=?, force_password_change=0
                     WHERE traveller_id=?
                 ");
                 $stmt->bind_param("ssssi", $fullName, $email, $phone, $hash, $travellerId);

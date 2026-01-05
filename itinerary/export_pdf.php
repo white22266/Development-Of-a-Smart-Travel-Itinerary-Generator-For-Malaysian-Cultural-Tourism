@@ -1,5 +1,11 @@
 <?php
 // itinerary/export_pdf.php  (PHP 7.4 compatible)
+// FIXED:
+// 1) Use COALESCE(cp.image_path, cp.image_url) so migrated local images will be used.
+// 2) Relax JOIN for attraction items (ii.item_type='attraction' can match museum/heritage/nature/etc).
+// 3) More robust remote image fetch (redirect support + SSL fallback + size limit).
+// NOTE: You said GD extension already enabled. WebP -> PNG conversion will work only if GD is active.
+
 session_start();
 require_once "../config/db_connect.php";
 
@@ -53,13 +59,11 @@ function file_mime($absPath)
     $absPath = (string)$absPath;
     if (!is_file($absPath)) return "";
 
-    // Prefer mime_content_type if available (simple, PHP 7.4 friendly)
     if (function_exists("mime_content_type")) {
         $m = @mime_content_type($absPath);
         if (is_string($m) && $m !== "") return $m;
     }
 
-    // Fallback to finfo if present
     if (function_exists("finfo_open")) {
         $fi = finfo_open(FILEINFO_MIME_TYPE);
         if ($fi) {
@@ -71,6 +75,8 @@ function file_mime($absPath)
     return "";
 }
 
+// FIXED: robust curl fetch (redirects + size limit + SSL fallback)
+// Returns bytes or "".
 function curl_fetch($url, &$httpCode, &$effectiveUrl, &$err)
 {
     $httpCode = 0;
@@ -82,28 +88,71 @@ function curl_fetch($url, &$httpCode, &$effectiveUrl, &$err)
         return "";
     }
 
-    $ch = curl_init((string)$url);
-    curl_setopt_array($ch, array(
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true, // important for Wikimedia Special:FilePath redirects
-        CURLOPT_MAXREDIRS => 8,
-        CURLOPT_CONNECTTIMEOUT => 10,
-        CURLOPT_TIMEOUT => 20,
-        CURLOPT_USERAGENT => "Mozilla/5.0 (PDF Export)",
-        CURLOPT_SSL_VERIFYPEER => true,
-        CURLOPT_SSL_VERIFYHOST => 2,
-    ));
+    $MAX_BYTES = 8 * 1024 * 1024; // 8MB limit to avoid memory explosion in PDF
 
-    $data = curl_exec($ch);
-    $httpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    $effectiveUrl = (string)curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
-    $err = (string)curl_error($ch);
-    curl_close($ch);
+    // helper to run curl once
+    $run = function ($verifyPeer, $verifyHost) use ($url, $MAX_BYTES, &$httpCode, &$effectiveUrl, &$err) {
+        $httpCode = 0;
+        $effectiveUrl = "";
+        $err = "";
 
-    if ($data === false || $httpCode < 200 || $httpCode >= 300) {
-        return "";
+        $downloaded = 0;
+        $data = "";
+
+        $ch = curl_init((string)$url);
+        curl_setopt_array($ch, array(
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true, // support Wikimedia Special:FilePath redirect
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 25,
+            CURLOPT_USERAGENT => "Mozilla/5.0 (PDF Export)",
+            CURLOPT_SSL_VERIFYPEER => $verifyPeer,
+            CURLOPT_SSL_VERIFYHOST => $verifyHost,
+        ));
+
+        // enforce size limit (works even when RETURNTRANSFER=true)
+        curl_setopt($ch, CURLOPT_WRITEFUNCTION, function ($ch, $chunk) use (&$data, &$downloaded, $MAX_BYTES) {
+            $len = strlen($chunk);
+            $downloaded += $len;
+            if ($downloaded > $MAX_BYTES) {
+                return 0; // abort
+            }
+            $data .= $chunk;
+            return $len;
+        });
+
+        $ok = curl_exec($ch);
+        $httpCode = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $effectiveUrl = (string)curl_getinfo($ch, CURLINFO_EFFECTIVE_URL);
+        $err = (string)curl_error($ch);
+        curl_close($ch);
+
+        if ($downloaded > $MAX_BYTES) {
+            $err = "Image too large (> {$MAX_BYTES} bytes).";
+            return "";
+        }
+
+        if ($ok === false || $httpCode < 200 || $httpCode >= 300) {
+            return "";
+        }
+
+        return (string)$data;
+    };
+
+    // 1) strict SSL first
+    $bytes = $run(true, 2);
+    if ($bytes !== "") return $bytes;
+
+    // 2) FIXED: fallback for Windows CA issues (only for images)
+    // If you prefer strict-only, remove this fallback.
+    $bytes2 = $run(false, 0);
+    if ($bytes2 !== "") {
+        error_log("PDF image fetch SSL fallback used for: " . (string)$url);
+        return $bytes2;
     }
-    return (string)$data;
+
+    return "";
 }
 
 function webp_bytes_to_png_bytes($webpBytes)
@@ -146,6 +195,7 @@ function webp_file_to_png_data_uri($absPath)
     return "data:image/png;base64," . base64_encode($pngBytes);
 }
 
+// FIXED: accept both url and local (uploads/...)
 function image_to_data_uri($imageUrlOrPath)
 {
     $raw = trim((string)$imageUrlOrPath);
@@ -160,7 +210,10 @@ function image_to_data_uri($imageUrlOrPath)
         $eff = "";
         $err = "";
         $bytes = curl_fetch($raw, $http, $eff, $err);
-        if ($bytes === "") return "";
+        if ($bytes === "") {
+            if ($err !== "") error_log("PDF image fetch failed: {$raw} | {$err}");
+            return "";
+        }
 
         $mime = detect_mime_from_bytes($bytes);
 
@@ -211,8 +264,10 @@ if (!$it) {
 
 /* ------------------------ Load items + join cultural_places ------------------------ */
 /*
-  Assumption: itinerary_items.item_title == cultural_places.name
-              itinerary_items.item_type  == cultural_places.category
+  FIXED JOIN:
+  - Many of your itinerary_items.item_type uses 'attraction', but cultural_places.category uses museum/heritage/nature/etc.
+  - So we match by name, and:
+      (cp.category = ii.item_type OR ii.item_type='attraction')
 */
 $stmt = $conn->prepare("
     SELECT
@@ -226,11 +281,11 @@ $stmt = $conn->prepare("
         ii.travel_time_min,
         cp.address,
         cp.opening_hours,
-        cp.image_url
+        COALESCE(cp.image_path, cp.image_url) AS image_src
     FROM itinerary_items ii
     LEFT JOIN cultural_places cp
         ON cp.name = ii.item_title
-       AND cp.category = ii.item_type
+       AND (cp.category = ii.item_type OR ii.item_type = 'attraction')
        AND (cp.is_active = 1 OR cp.is_active IS NULL)
     WHERE ii.itinerary_id=?
     ORDER BY ii.day_no ASC, ii.sequence_no ASC
@@ -289,7 +344,8 @@ foreach ($days as $dayNo => $items) {
     $html .= "<h3>Day " . (int)$dayNo . "</h3>";
 
     foreach ($items as $x) {
-        $imgUri = image_to_data_uri($x["image_url"]);
+        // FIXED: use image_src (COALESCE(image_path, image_url))
+        $imgUri = image_to_data_uri($x["image_src"]);
 
         $html .= "<div class='card'>";
         $html .= "<p class='card-title'>" . esc($x["item_title"]) . "</p>";
@@ -341,7 +397,7 @@ use Dompdf\Options;
 
 $options = new Options();
 $options->set("isHtml5ParserEnabled", true);
-$options->set("isRemoteEnabled", true);
+$options->set("isRemoteEnabled", true); // OK: we still embed data URIs; keep enabled for safety
 $options->set("defaultFont", "DejaVu Sans");
 
 $dompdf = new Dompdf($options);

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1
--- 生成日期： 2025-12-27 07:16:35
--- 服务器版本： 10.4.27-MariaDB
--- PHP 版本： 7.4.33
+-- 生成日期： 2026-01-05 12:33:51
+-- 服务器版本： 10.4.32-MariaDB
+-- PHP 版本： 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,8 +40,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `username`, `email`, `password_hash`, `created_at`) VALUES
-(1, 'Admin', 'ai230119@student.uthm.edu.my', '$2y$10$LBMEG72pdE..zMt9mhynsO0u8XmNXnWcAjEmSnw/G5lcanabmiKGW', '2025-12-13 07:31:55'),
-(2, 'Ali', 'peckjianhao0226@gmail.com', '$2y$10$2Lk5XVk02wq9RuwCTMaRcemg.ZVY8JAcqqquWd5pbqNC2ejV2ixtq', '2025-12-15 19:50:31');
+(1, 'Admin', 'admin@gmail.com', '$2y$10$LBMEG72pdE..zMt9mhynsO0u8XmNXnWcAjEmSnw/G5lcanabmiKGW', '2025-12-13 07:31:55');
 
 -- --------------------------------------------------------
 
@@ -61,6 +60,7 @@ CREATE TABLE `cultural_places` (
   `opening_hours` varchar(120) DEFAULT NULL,
   `estimated_cost` decimal(10,2) DEFAULT NULL,
   `image_url` varchar(255) DEFAULT NULL,
+  `image_path` varchar(255) DEFAULT NULL,
   `is_active` tinyint(1) DEFAULT 1,
   `created_by_admin_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -71,17 +71,31 @@ CREATE TABLE `cultural_places` (
 -- 转存表中的数据 `cultural_places`
 --
 
-INSERT INTO `cultural_places` (`place_id`, `state`, `category`, `name`, `description`, `address`, `latitude`, `longitude`, `opening_hours`, `estimated_cost`, `image_url`, `is_active`, `created_by_admin_id`, `created_at`, `updated_at`) VALUES
-(1, 'Johor', 'food', 'Kacang Pool (Johor Bahru)', 'Local Johor breakfast dish, commonly served with bread.', 'Johor Bahru, Johor', '1.4927000', '103.7414000', '08:00-18:00', '8.00', NULL, 1, NULL, '2025-12-15 09:26:21', NULL),
-(2, 'Johor', 'food', 'Mee Rebus (Johor Style)', 'Traditional Johor-style mee rebus with rich gravy.', 'Johor Bahru, Johor', '1.4927000', '103.7414000', '10:00-20:00', '9.00', NULL, 1, NULL, '2025-12-15 09:26:21', NULL),
-(3, 'Johor', 'heritage', 'Johor Bahru Old Chinese Temple', 'Historic temple representing Chinese community heritage.', 'Johor Bahru, Johor', '1.4572000', '103.7637000', '07:00-17:00', '0.00', NULL, 1, NULL, '2025-12-15 09:26:21', '2025-12-16 06:34:37'),
-(4, 'Johor', 'museum', 'Johor Bahru Chinese Heritage Museum', 'Museum showcasing Johor Bahru Chinese heritage and history.', 'Johor Bahru, Johor', '1.4579000', '103.7646000', '09:00-17:00', '6.00', NULL, 1, NULL, '2025-12-15 09:26:21', NULL),
-(5, 'Kedah', 'nature', 'Gunung Jerai', 'Popular mountain attraction with scenic views.', 'Yan, Kedah', '5.7887000', '100.4246000', '08:00-18:00', '0.00', NULL, 1, NULL, '2025-12-15 09:26:21', NULL),
-(6, 'Kedah', 'museum', 'Kedah State Museum', 'Museum presenting history and culture of Kedah.', 'Alor Setar, Kedah', '6.1210000', '100.3680000', '09:00-17:00', '5.00', NULL, 1, NULL, '2025-12-15 09:26:21', NULL),
-(7, 'Kedah', 'food', 'Laksa Kedah', 'Famous Kedah laksa experience.', 'Alor Setar, Kedah', '6.1210000', '100.3680000', '10:00-18:00', '8.00', NULL, 1, NULL, '2025-12-15 09:26:21', NULL),
-(8, 'Johor', 'shopping', 'AEON BiG Batu Pahat', 'Shopping mall', '1B, Jalan Persiaran Flora Utama, Taman Flora Utama, 83000 Batu Pahat, Johor Darul Ta\'zim', '1.8657186', '102.9483805', '9.00 am–10.00 pm', '0.00', 'uploads/places/place_1765891527_7083.jpg', 1, NULL, '2025-12-16 13:07:42', '2025-12-16 13:25:27'),
-(12, 'Johor', 'nature', 'Taman Negara Johor Pulau Kukup', 'Pulau Kukup is one of the world’s largest uninhabited mangrove islands and a protected national park in Johor. The island is well known for its wooden boardwalks, rich mangrove ecosystem, and traditional fishing village culture, offering visitors a unique combination of natural conservation and cultural heritage.', 'Lot 1319, Mukim, 82300 Kukup, Johor Darul Ta\'zim', '1.3225724', '103.4283275', '9.00 am–4.00 pm', '25.00', 'uploads/places/place_1766813513_1914.webp', 1, 1, '2025-12-24 07:50:41', '2025-12-27 05:31:53'),
-(13, 'Johor', 'heritage', 'Johor Bahru Old Chinese Temple (柔佛古庙)', 'One of the oldest Chinese temples in Johor Bahru, serving as an important spiritual and cultural landmark for the local Chinese community. It is closely associated with the annual Johor Bahru Chingay procession, where different Chinese clans and associations participate in traditional rituals, performances, and parades. The temple reflects the city’s multicultural heritage and is often visited by travellers who want to experience local religious traditions, community history, and the atmosphere of the old town area.（柔佛新山历史悠久的华人庙宇之一，是当地华人社群重要的信仰与文化地标。它与每年新山古庙游神（Chingay）密切相关，活动期间各籍贯与会馆参与传统祭祀、表演与游行，展现地方社群的凝聚力与多元文化。游客可在此了解本地宗教习俗、社区历史，并感受老城区的文化氛围。）', 'Lot 653, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor Darul Ta\'zim', '1.4606803', '103.7630595', '7:00 AM – 6:00 PM', '20.00', 'uploads/places/suggest_1766814848_5261.webp', 1, 1, '2025-12-27 05:54:44', NULL);
+INSERT INTO `cultural_places` (`place_id`, `state`, `category`, `name`, `description`, `address`, `latitude`, `longitude`, `opening_hours`, `estimated_cost`, `image_url`, `image_path`, `is_active`, `created_by_admin_id`, `created_at`, `updated_at`) VALUES
+(1, 'Johor', 'food', 'Kacang Pool Haji Restauran (Johor Bahru)', 'Local Johor breakfast dish, commonly served with bread.Kacang Pool Haji Restaurant is an iconic and must-visit culinary destination in Johor Bahru, famous for its signature dish, Kacang Pool Haji, which has been captivating the palates of many visitors since 2009. The restaurant offers a rich, rich, and satisfying Johor dining experience, perfect for breakfast, lunch, dinner, or even a late-night snack.', '12, Jalan Dato Jaafar, Taman Dato Onn, 80350 Johor Bahru, Johor Darul Ta\'zim', 1.4907395, 103.7515533, '7am - 12am', 8.00, 'uploads/places/place_1766837821_4033.jpg', NULL, 1, NULL, '2025-12-15 01:26:21', '2025-12-27 04:17:01'),
+(2, 'Johor', 'food', 'Mee Rebus (Johor Style)', 'Mee Rebus Selera Johor (Warisan Keluarga Hj. Wahid) is famous for its authentic Johor dishes based on family recipes passed down through generations since 1948. It serves a variety of iconic Malaysian dishes, with a main focus on the mee rebus with a thick and flavorful peanut sauce. Traditional Johor-style mee rebus with rich gravy.', 'Johor Bahru, Johor', 1.4927000, 103.7414000, '7:30 am–9:30 pm', 15.00, 'uploads/places/place_1766835810_7693.png', NULL, 1, NULL, '2025-12-15 01:26:21', '2025-12-27 03:43:30'),
+(3, 'Johor', 'heritage', 'Chong Long Gong Temple', 'Historic temple representing Chinese community heritage.Chong Long Gong Temple is a unique and vibrant Chinese temple located by the sea in the Kampung Segenting fishing village of Batu Pahat, Johor, Malaysia. It is famous for its large arapaima fish, believed to bring good fortune to those who touch them.', '81, Kampung Segenting, Batu Pahat, 83030 Bandar Penggaram, Johor', 1.7836877, 102.8926308, '9:00 AM - 6:00 PM', 0.00, 'uploads/places/place_1766836350_7759.webp', NULL, 1, NULL, '2025-12-15 01:26:21', '2025-12-27 03:52:30'),
+(4, 'Johor', 'museum', 'Johor Bahru Chinese Heritage Museum', 'Museum showcasing Johor Bahru Chinese heritage and history.The Johor Bahru Chinese Heritage Museum (Malay: Muzium Warisan Tionghua Johor Bahru) is a museum in Johor Bahru, Johor, Malaysia. The museum is about the history of Chinese community in Johor Bahru. Collections in the museum include documents, music instruments, old money, photos, porcelain etc. It showcases the early days of the Chinese settlement in Johor Bahru, their history, culture, traditions and occupations.', 'Johor Bahru, Johor', 1.4579000, 103.7646000, '9.00 a.m. - 5.00 p.m. except Mondays', 6.00, 'uploads/places/place_1766836057_2242.webp', NULL, 1, NULL, '2025-12-15 01:26:21', '2025-12-27 03:47:37'),
+(5, 'Kedah', 'nature', 'Gunung Jerai', 'Popular mountain attraction with scenic views. Gunung Jerai is the highest peak in Kedah, Malaysia, a unique island-shaped mountain (inselberg) that is easily visible from afar, serving as a landmark and sea navigation since ancient times, now a popular tourist destination with a resort at the top, recreational activities such as hiking, cycling, paragliding, as well as rich geological and botanical treasures, with panoramic views towards the rice fields and the Straits of Malacca.', 'Yan, Kedah', 5.7887000, 100.4246000, '08:00-18:00', 0.00, 'uploads/places/place_1766835360_5565.jpg', NULL, 1, NULL, '2025-12-15 01:26:21', '2025-12-27 03:37:07'),
+(6, 'Kedah', 'museum', 'Kedah State Museum', 'Museum presenting history and culture of Kedah. The history of the establishment of the Kedah State Museum began on 3 February 1957, known as the Kedah History Museum. The museum, located on the ground floor of the Balai Besar, Alor Setar, was officiated by YAB Tan Sri Tunku Ismail bin Tunku Yahya, the 2nd Menteri Besar of Kedah Darul Aman. The increase in the number of collections caused the museum to be moved to its own building (next to the new museum building) on ​​the Darul Aman Highway, Bakar Bata on 30 December 1961. In July 1964, the Kedah History Museum was changed its name to the Kedah State Museum.\r\n\r\nGiven the good response from the public, the State Government agreed to build the current building in 1997. This building houses an exhibition hall, workshop, library, and mini theatrette. There are 10 permanent exhibition galleries such as the Cultural Hall, the History Hall, the Nature Hall, the Heroes Hall, the Transport Hall, the Weapons Hall, the Manuscript Hall, the Textile Hall, the Arts and Crafts Hall and the Language and Literature Corner. Apart from that, its facilities have also been improved by providing an elevator, cafeteria, car parking and public toilets.', 'Alor Setar, Kedah', 6.1210000, 100.3680000, '09:00-17:00', 5.00, 'uploads/places/place_1766835098_6695.webp', NULL, 1, NULL, '2025-12-15 01:26:21', '2025-12-27 03:31:38'),
+(7, 'Kedah', 'food', 'Din Laksa Teluk Kechai', 'Famous Kedah laksa experience.This legendary Laksa in 1967 when it was sold by Din himself on his gerek going from house to house.', 'No 246 Batu 4 1/4 jalan kuala kedah, Alor Setar 06600 Malaysia', 6.0949606, 100.3206236, '3:00 PM - 8:00 PM', 15.00, 'uploads/places/place_1766831415_1464.jpg', NULL, 1, NULL, '2025-12-15 01:26:21', '2025-12-27 02:30:15'),
+(8, 'Johor', 'nature', 'Taman Negara Johor Pulau Kukup', 'Pulau Kukup is one of the world’s largest uninhabited mangrove islands and a protected national park in Johor. The island is well known for its wooden boardwalks, rich mangrove ecosystem, and traditional fishing village culture, offering visitors a unique combination of natural conservation and cultural heritage.', 'Lot 1319, Mukim, 82300 Kukup, Johor Darul Ta\'zim', 1.3225724, 103.4283275, '9.00 am–4.00 pm', 25.00, 'uploads/places/place_1766813513_1914.webp', NULL, 1, 1, '2025-12-23 23:50:41', '2025-12-27 07:21:10'),
+(9, 'Johor', 'heritage', 'Johor Bahru Old Chinese Temple (柔佛古庙)', 'One of the oldest Chinese temples in Johor Bahru, serving as an important spiritual and cultural landmark for the local Chinese community. It is closely associated with the annual Johor Bahru Chingay procession, where different Chinese clans and associations participate in traditional rituals, performances, and parades. The temple reflects the city’s multicultural heritage and is often visited by travellers who want to experience local religious traditions, community history, and the atmosphere of the old town area.（柔佛新山历史悠久的华人庙宇之一，是当地华人社群重要的信仰与文化地标。它与每年新山古庙游神（Chingay）密切相关，活动期间各籍贯与会馆参与传统祭祀、表演与游行，展现地方社群的凝聚力与多元文化。游客可在此了解本地宗教习俗、社区历史，并感受老城区的文化氛围。）', 'Lot 653, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor Darul Ta\'zim', 1.4606803, 103.7630595, '7:00 AM – 6:00 PM', 20.00, 'uploads/places/suggest_1766814848_5261.webp', NULL, 1, 1, '2025-12-26 21:54:44', '2025-12-27 07:21:15'),
+(10, 'Selangor', 'nature', 'Forest Research Institute Malaysia (FRIM)', 'Forest park with canopy walk, nature trails, and educational eco-tourism experiences.', 'Forest Research Institute Malaysia (FRIM), 52109 Kepong, Selangor, Malaysia', 3.2353390, 101.6342690, NULL, 0.00, 'uploads/places/place_10_169294a803_20260105_120730_5e4700.jpg', 'uploads/places/place_10_169294a803_20260105_120730_5e4700.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:07:30'),
+(11, 'Selangor', 'festival', 'Thaipusam at Batu Caves', 'Major religious-cultural festival with pilgrimages, rituals, and vibrant community participation.', 'Batu Caves Temple, Gombak, 68100 Batu Caves, Selangor, Malaysia', 3.2374000, 101.6839070, NULL, 0.00, 'uploads/places/place_11_30123df278_20260105_120731_8f5f34.jpg', 'uploads/places/place_11_30123df278_20260105_120731_8f5f34.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:07:31'),
+(12, 'Sarawak', 'heritage', 'Niah Caves (Niah National Park)', 'Archaeological and cultural heritage caves complex known for early human history and cave exploration.', 'Niah National Park, Batu Niah, 98200 Miri, Sarawak, Malaysia', 3.8083000, 113.7755000, NULL, 0.00, 'uploads/places/place_12_85ade11fe5_20260105_120734_5496bb.jpg', 'uploads/places/place_12_85ade11fe5_20260105_120734_5496bb.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:07:34'),
+(13, 'Sarawak', 'culture', 'Sarawak Cultural Village', 'Living museum showcasing Sarawak ethnic groups with traditional houses and cultural performances.', 'Sarawak Cultural Village, Pantai Damai, Santubong, 93752 Kuching, Sarawak, Malaysia', 1.7497100, 110.3169800, NULL, 0.00, 'uploads/places/place_13_1dada0c29d_20260105_120735_8c494b.jpg', 'uploads/places/place_13_1dada0c29d_20260105_120735_8c494b.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:07:35'),
+(14, 'Sarawak', 'festival', 'Rainforest World Music Festival', 'Signature music and cultural festival combining world music showcases with local cultural elements.', 'Sarawak Cultural Village, Pantai Damai, Santubong, 93752 Kuching, Sarawak, Malaysia', 1.7497100, 110.3169800, '', 0.00, 'uploads/places/place_1766958248_6687.jpg', NULL, 1, 1, '2025-12-27 01:36:07', '2025-12-28 13:44:08'),
+(15, 'Sarawak', 'nature', 'Gunung Mulu National Park', 'UNESCO natural site famous for limestone karst formations, rainforest, and extensive cave systems.', 'Gunung Mulu National Park HQ, 98070 Mulu, Sarawak, Malaysia', 4.1320000, 114.9190000, NULL, 0.00, 'uploads/places/place_15_d451eb69ae_20260105_121459_5c8d18.jpg', 'uploads/places/place_15_d451eb69ae_20260105_121459_5c8d18.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:14:59'),
+(16, 'Perak', 'heritage', 'Archaeological Heritage of the Lenggong Valley', 'UNESCO-listed archaeological landscape featuring significant prehistoric findings and sites.', 'Lenggong Valley (Lembah Lenggong), 33400 Lenggong, Perak, Malaysia', NULL, NULL, NULL, 0.00, 'uploads/places/place_16_28a30c79d0_20260105_121504_08dcd3.jpg', 'uploads/places/place_16_28a30c79d0_20260105_121504_08dcd3.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:15:04'),
+(17, 'Penang', 'heritage', 'Cheong Fatt Tze Mansion (The Blue Mansion)', 'Straits Chinese heritage mansion offering guided tours highlighting architecture and Peranakan influence.', '14, Leith Street, 10200 George Town, Penang, Malaysia', 5.4213194, 100.3352500, NULL, 0.00, 'uploads/places/place_17_0f1d7f3b50_20260105_120749_69e67c.jpg', 'uploads/places/place_17_0f1d7f3b50_20260105_120749_69e67c.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:07:49'),
+(18, 'Penang', 'festival', 'George Town Festival', 'Annual arts and culture festival featuring performances, exhibitions, and heritage-focused programs.', 'George Town Festival Office, 1st Floor, 86 Lebuh Armenian, 10200 George Town, Penang, Malaysia', 5.4154392, 100.3370691, NULL, 0.00, 'uploads/places/place_18_fe4e4116bd_20260105_120753_530144.jpg', 'uploads/places/place_18_fe4e4116bd_20260105_120753_530144.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:07:53'),
+(19, 'Melaka', 'museum', 'Baba & Nyonya Heritage Museum', 'Peranakan house museum showcasing traditional lifestyle, artifacts, and cultural history in historic Melaka.', '48 & 50, Jalan Tun Tan Cheng Lock, 75200 Melaka, Malaysia', 2.1952670, 102.2466570, NULL, 0.00, 'uploads/places/place_19_c023100102_20260105_120755_1fe0c4.jpg', 'uploads/places/place_19_c023100102_20260105_120755_1fe0c4.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:07:55'),
+(20, 'Kuala Lumpur', 'museum', 'Islamic Arts Museum Malaysia (IAMM)', 'Major museum showcasing Islamic art, design, and cultural heritage collections.', 'Islamic Arts Museum Malaysia, Jalan Lembah Perdana, 50480 Kuala Lumpur, Malaysia', 3.1418340, 101.6886180, NULL, 0.00, 'uploads/places/place_20_4fd8bba161_20260105_121510_b26c9a.jpg', 'uploads/places/place_20_4fd8bba161_20260105_121510_b26c9a.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:15:10'),
+(21, 'Kuala Lumpur', 'museum', 'Muzium Negara (National Museum)', 'National museum presenting Malaysia history, culture, and nation-building narratives.', 'Muzium Negara, Jalan Damansara, 50566 Kuala Lumpur, Malaysia', 3.1379960, 101.6870430, '09:00-17:00', 0.00, 'uploads/places/place_21_60f3eb5978_20260105_121514_5d3aa2.jpg', 'uploads/places/place_21_60f3eb5978_20260105_121514_5d3aa2.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:15:14'),
+(22, 'Terengganu', 'shopping', 'Pasar Payang', 'Traditional market for local products such as textiles, snacks, souvenirs, and crafts.', 'Pasar Payang, Jalan Sultan Zainal Abidin, 20200 Kuala Terengganu, Terengganu, Malaysia', 5.3300000, 103.1380000, NULL, 0.00, 'uploads/places/place_22_c8b317e8dd_20260105_120808_88a923.jpg', 'uploads/places/place_22_c8b317e8dd_20260105_120808_88a923.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:08:08'),
+(23, 'Sabah', 'culture', 'Mari Mari Cultural Village', 'Living culture village experience featuring Sabah ethnic traditions, demonstrations, and performances.', 'Mari Mari Cultural Village, Jalan Kionsom, Inanam, 88450 Kota Kinabalu, Sabah, Malaysia', 5.9732639, 116.2023167, NULL, 0.00, 'uploads/places/place_23_95717a344d_20260105_120813_bd78dc.jpg', 'uploads/places/place_23_95717a344d_20260105_120813_bd78dc.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:08:13'),
+(24, 'Sabah', 'nature', 'Kinabalu Park', 'UNESCO natural site known for biodiversity and as the gateway to Mount Kinabalu.', 'Kinabalu Park Headquarters, 89307 Ranau, Sabah, Malaysia', 6.0055351, 116.5422225, NULL, 0.00, 'uploads/places/place_24_7be148a719_20260105_120836_02a8a1.jpg', 'uploads/places/place_24_7be148a719_20260105_120836_02a8a1.jpg', 1, 1, '2025-12-27 01:36:07', '2026-01-05 11:08:36');
 
 -- --------------------------------------------------------
 
@@ -106,17 +120,18 @@ CREATE TABLE `cultural_place_suggestions` (
   `approved_by_admin_id` int(11) DEFAULT NULL,
   `approved_place_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `approved_at` timestamp NULL DEFAULT NULL
+  `approved_at` timestamp NULL DEFAULT NULL,
+  `review_note` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 转存表中的数据 `cultural_place_suggestions`
 --
 
-INSERT INTO `cultural_place_suggestions` (`suggestion_id`, `traveller_id`, `state`, `category`, `name`, `description`, `address`, `latitude`, `longitude`, `opening_hours`, `estimated_cost`, `image_url`, `status`, `approved_by_admin_id`, `approved_place_id`, `created_at`, `approved_at`) VALUES
-(1, 1, 'Johor', 'nature', 'Taman Negara Johor Pulau Kukup', 'Pulau Kukup is one of the world’s largest uninhabited mangrove islands and a protected national park in Johor. The island is well known for its wooden boardwalks, rich mangrove ecosystem, and traditional fishing village culture, offering visitors a unique combination of natural conservation and cultural heritage.', 'Lot 1319, Mukim, 82300 Kukup, Johor Darul Ta\'zim', '1.3227011', '103.4283061', '9.00 am–4.00 pm', '25.00', 'uploads/suggestions/suggest_1766515341_6595.webp', 'rejected', 1, NULL, '2025-12-23 18:42:21', NULL),
-(2, 1, 'Johor', 'nature', 'Taman Negara Johor Pulau Kukup', 'Pulau Kukup is one of the world’s largest uninhabited mangrove islands and a protected national park in Johor. The island is well known for its wooden boardwalks, rich mangrove ecosystem, and traditional fishing village culture, offering visitors a unique combination of natural conservation and cultural heritage.', 'Lot 1319, Mukim, 82300 Kukup, Johor Darul Ta\'zim', '1.3225724', '103.4283275', '9.00 am–4.00 pm', '25.00', 'uploads/suggestions/suggest_1766562623_1316.webp', 'approved', 1, 12, '2025-12-24 07:50:23', NULL),
-(3, 1, 'Johor', 'heritage', 'Johor Bahru Old Chinese Temple (柔佛古庙)', 'One of the oldest Chinese temples in Johor Bahru, serving as an important spiritual and cultural landmark for the local Chinese community. It is closely associated with the annual Johor Bahru Chingay procession, where different Chinese clans and associations participate in traditional rituals, performances, and parades. The temple reflects the city’s multicultural heritage and is often visited by travellers who want to experience local religious traditions, community history, and the atmosphere of the old town area.（柔佛新山历史悠久的华人庙宇之一，是当地华人社群重要的信仰与文化地标。它与每年新山古庙游神（Chingay）密切相关，活动期间各籍贯与会馆参与传统祭祀、表演与游行，展现地方社群的凝聚力与多元文化。游客可在此了解本地宗教习俗、社区历史，并感受老城区的文化氛围。）', 'Lot 653, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor Darul Ta\'zim', '1.4606803', '103.7630595', '7:00 AM – 6:00 PM', '20.00', 'uploads/places/suggest_1766814848_5261.webp', 'approved', 1, NULL, '2025-12-27 05:54:08', '2025-12-26 23:01:47');
+INSERT INTO `cultural_place_suggestions` (`suggestion_id`, `traveller_id`, `state`, `category`, `name`, `description`, `address`, `latitude`, `longitude`, `opening_hours`, `estimated_cost`, `image_url`, `status`, `approved_by_admin_id`, `approved_place_id`, `created_at`, `approved_at`, `review_note`) VALUES
+(1, 1, 'Johor', 'nature', 'Taman Negara Johor Pulau Kukup', 'Pulau Kukup is one of the world’s largest uninhabited mangrove islands and a protected national park in Johor. The island is well known for its wooden boardwalks, rich mangrove ecosystem, and traditional fishing village culture, offering visitors a unique combination of natural conservation and cultural heritage.', 'Lot 1319, Mukim, 82300 Kukup, Johor Darul Ta\'zim', 1.3227011, 103.4283061, '9.00 am–4.00 pm', 25.00, 'uploads/suggestions/suggest_1766515341_6595.webp', 'rejected', 1, NULL, '2025-12-23 18:42:21', NULL, NULL),
+(2, 1, 'Johor', 'nature', 'Taman Negara Johor Pulau Kukup', 'Pulau Kukup is one of the world’s largest uninhabited mangrove islands and a protected national park in Johor. The island is well known for its wooden boardwalks, rich mangrove ecosystem, and traditional fishing village culture, offering visitors a unique combination of natural conservation and cultural heritage.', 'Lot 1319, Mukim, 82300 Kukup, Johor Darul Ta\'zim', 1.3225724, 103.4283275, '9.00 am–4.00 pm', 25.00, 'uploads/suggestions/suggest_1766562623_1316.webp', 'approved', 1, NULL, '2025-12-24 07:50:23', NULL, NULL),
+(3, 1, 'Johor', 'heritage', 'Johor Bahru Old Chinese Temple (柔佛古庙)', 'One of the oldest Chinese temples in Johor Bahru, serving as an important spiritual and cultural landmark for the local Chinese community. It is closely associated with the annual Johor Bahru Chingay procession, where different Chinese clans and associations participate in traditional rituals, performances, and parades. The temple reflects the city’s multicultural heritage and is often visited by travellers who want to experience local religious traditions, community history, and the atmosphere of the old town area.（柔佛新山历史悠久的华人庙宇之一，是当地华人社群重要的信仰与文化地标。它与每年新山古庙游神（Chingay）密切相关，活动期间各籍贯与会馆参与传统祭祀、表演与游行，展现地方社群的凝聚力与多元文化。游客可在此了解本地宗教习俗、社区历史，并感受老城区的文化氛围。）', 'Lot 653, Jalan Trus, Bandar Johor Bahru, 80000 Johor Bahru, Johor Darul Ta\'zim', 1.4606803, 103.7630595, '7:00 AM – 6:00 PM', 20.00, 'uploads/places/suggest_1766814848_5261.webp', 'approved', 1, NULL, '2025-12-27 05:54:08', '2025-12-26 23:01:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -142,14 +157,8 @@ CREATE TABLE `itineraries` (
 --
 
 INSERT INTO `itineraries` (`itinerary_id`, `traveller_id`, `preference_id`, `title`, `start_date`, `total_days`, `items_per_day`, `total_estimated_cost`, `status`, `created_at`) VALUES
-(1, 1, 2, '5D Cultural Itinerary - Johor', NULL, 5, 3, '17.00', 'saved', '2025-12-15 09:26:28'),
-(2, 1, 3, '3D Cultural Itinerary - Johor', NULL, 3, 3, '0.00', 'saved', '2025-12-23 11:44:37'),
-(30, 1, 4, '1D Cultural Itinerary - Johor', NULL, 1, 3, '17.00', 'saved', '2025-12-26 10:58:55'),
-(31, 1, 4, '1D Cultural Itinerary - Johor', NULL, 1, 3, '17.00', 'saved', '2025-12-26 11:38:37'),
-(32, 1, 4, '1D Cultural Itinerary - Johor', NULL, 1, 3, '17.00', 'saved', '2025-12-26 12:47:02'),
-(33, 1, 6, '3D Cultural Itinerary - Malaysia', NULL, 3, 3, '61.00', 'saved', '2025-12-26 13:08:37'),
-(34, 1, 4, '1D Cultural Itinerary - Johor', NULL, 1, 3, '8.00', 'saved', '2025-12-26 13:36:52'),
-(35, 1, 1, '4D Cultural Itinerary - Johor, Kedah', NULL, 4, 3, '25.00', 'saved', '2025-12-26 13:38:33');
+(40, 1, 6, '3D Culture & Food Journey: Malaysia', '2026-02-22', 3, 3, 74.00, 'saved', '2026-01-05 11:30:21'),
+(41, 1, 4, '1D Food Journey: Johor', '2026-02-22', 1, 2, 23.00, 'saved', '2026-01-05 11:32:17');
 
 -- --------------------------------------------------------
 
@@ -178,27 +187,14 @@ CREATE TABLE `itinerary_items` (
 --
 
 INSERT INTO `itinerary_items` (`item_id`, `itinerary_id`, `day_no`, `sequence_no`, `item_type`, `place_id`, `item_title`, `start_time`, `end_time`, `estimated_cost`, `distance_km`, `travel_time_min`, `notes`) VALUES
-(1, 1, 1, 1, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, '9.00', NULL, NULL, 'State: Johor | Category: food'),
-(2, 1, 1, 2, 'food', 1, 'Kacang Pool (Johor Bahru)', NULL, NULL, '8.00', '0.00', 0, 'State: Johor | Category: food'),
-(86, 30, 1, 1, 'food', 1, 'Kacang Pool (Johor Bahru)', NULL, NULL, '8.00', NULL, NULL, 'State: Johor | Category: food'),
-(87, 30, 1, 2, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, '9.00', NULL, NULL, 'State: Johor | Category: food'),
-(88, 31, 1, 1, 'food', 1, 'Kacang Pool (Johor Bahru)', NULL, NULL, '8.00', NULL, NULL, 'State: Johor | Category: food'),
-(89, 31, 1, 2, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, '9.00', '0.00', 0, 'State: Johor | Category: food'),
-(90, 32, 1, 1, 'food', 1, 'Kacang Pool (Johor Bahru)', NULL, NULL, '8.00', NULL, NULL, 'State: Johor | Category: food'),
-(91, 32, 1, 2, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, '9.00', '0.00', 0, 'State: Johor | Category: food'),
-(92, 33, 1, 1, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, '9.00', NULL, NULL, 'State: Johor | Category: food'),
-(93, 33, 1, 2, 'attraction', 3, 'Johor Bahru Old Chinese Temple', NULL, NULL, '0.00', '5.84', 13, 'State: Johor | Category: heritage'),
-(94, 33, 1, 3, 'attraction', 12, 'Taman Negara Johor Pulau Kukup', NULL, NULL, '25.00', '50.77', 51, 'State: Johor | Category: nature'),
-(95, 33, 2, 1, 'food', 7, 'Laksa Kedah', NULL, NULL, '8.00', NULL, NULL, 'State: Kedah | Category: food'),
-(96, 33, 2, 2, 'attraction', 5, 'Gunung Jerai', NULL, NULL, '0.00', '59.06', 73, 'State: Kedah | Category: nature'),
-(97, 33, 2, 3, 'attraction', 6, 'Kedah State Museum', NULL, NULL, '5.00', '58.47', 71, 'State: Kedah | Category: museum'),
-(98, 33, 3, 1, 'food', 1, 'Kacang Pool (Johor Bahru)', NULL, NULL, '8.00', NULL, NULL, 'State: Johor | Category: food'),
-(99, 33, 3, 2, 'attraction', 8, 'AEON BiG Batu Pahat', NULL, NULL, '0.00', '115.94', 100, 'State: Johor | Category: shopping'),
-(100, 33, 3, 3, 'attraction', 4, 'Johor Bahru Chinese Heritage Museum', NULL, NULL, '6.00', '120.19', 106, 'State: Johor | Category: museum'),
-(101, 34, 1, 1, 'food', 1, 'Kacang Pool (Johor Bahru)', NULL, NULL, '8.00', NULL, NULL, 'State: Johor | Category: food'),
-(102, 35, 1, 1, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, '9.00', NULL, NULL, 'State: Johor | Category: food'),
-(103, 35, 2, 1, 'food', 7, 'Laksa Kedah', NULL, NULL, '8.00', NULL, NULL, 'State: Kedah | Category: food'),
-(104, 35, 3, 1, 'food', 1, 'Kacang Pool (Johor Bahru)', NULL, NULL, '8.00', NULL, NULL, 'State: Johor | Category: food');
+(17, 40, 1, 1, 'attraction', 3, 'Chong Long Gong Temple', NULL, NULL, 0.00, NULL, NULL, 'State: Johor | Category: heritage'),
+(18, 40, 2, 1, 'attraction', 8, 'Taman Negara Johor Pulau Kukup', NULL, NULL, 25.00, NULL, NULL, 'State: Johor | Category: nature'),
+(19, 40, 2, 2, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, 15.00, 49.44, 50, 'State: Johor | Category: food'),
+(20, 40, 2, 3, 'food', 1, 'Kacang Pool Haji Restauran (Johor Bahru)', NULL, NULL, 8.00, 2.18, 5, 'State: Johor | Category: food'),
+(21, 40, 3, 1, 'attraction', 4, 'Johor Bahru Chinese Heritage Museum', NULL, NULL, 6.00, NULL, NULL, 'State: Johor | Category: museum'),
+(22, 40, 3, 2, 'attraction', 9, 'Johor Bahru Old Chinese Temple (柔佛古庙)', NULL, NULL, 20.00, 1.12, 5, 'State: Johor | Category: heritage'),
+(23, 41, 1, 1, 'food', 2, 'Mee Rebus (Johor Style)', NULL, NULL, 15.00, NULL, NULL, 'State: Johor | Category: food'),
+(24, 41, 1, 2, 'food', 1, 'Kacang Pool Haji Restauran (Johor Bahru)', NULL, NULL, 8.00, 2.18, 5, 'State: Johor | Category: food');
 
 -- --------------------------------------------------------
 
@@ -221,7 +217,7 @@ CREATE TABLE `travellers` (
 --
 
 INSERT INTO `travellers` (`traveller_id`, `full_name`, `email`, `password_hash`, `force_password_change`, `phone`, `created_at`) VALUES
-(1, 'PECK JIAN HAO', 'peckjianhao0226@gmail.com', '$2y$10$lYfcjI.sxFWbZbJbFYJT5utbhYjQRIzOA93T//vXT4XXQFiylK6Xe', 0, '0123231123', '2025-12-13 06:56:11'),
+(1, 'PECK JIAN HAO', 'ai230119@student.uthm.edu.my', '$2y$10$z1JkXPqBGJx/s3RCaegb/edGHQZt/Jv1FnnrdzF90xk1P/kfPE3oq', 0, '0123231123', '2025-12-13 06:56:11'),
 (2, 'YAP', 'waterwhite455@gmail.com', '$2y$10$edaq3qxL77q/m1O51AnhAOXkYwQBN8OpEdGhLTR9h.neLmuiD1OTu', 0, '0114433433', '2025-12-15 17:21:35'),
 (3, 'WONG', 'peckjianhao0227@gmail.com', '$2y$10$HjX9/FRqOmURvF7paXPfJO5a8f3UL9Ns9i2M3rtalQchIKFvOaOKW', 0, '0123122332', '2025-12-15 19:17:59'),
 (4, 'Pearly', 'peckjianhao0228@gmail.com', '$2y$10$2Yl3pw9YV.YgPTWP5zekpOY/LTdMjij5F2mcKjrk141QXGrkC1Ahu', 0, '0114437898', '2025-12-15 19:29:52'),
@@ -251,12 +247,12 @@ CREATE TABLE `traveller_preferences` (
 --
 
 INSERT INTO `traveller_preferences` (`preference_id`, `traveller_id`, `trip_days`, `budget`, `transport_type`, `interests`, `preferred_states`, `created_at`) VALUES
-(1, 1, 4, '1000.00', 'public_transport', 'food', 'Johor,Kedah', '2025-12-14 14:29:01'),
-(2, 1, 5, '1000.00', 'car', 'food', 'Johor', '2025-12-15 09:15:24'),
-(3, 1, 3, '3000.00', 'car', 'heritage', 'Johor', '2025-12-15 10:17:21'),
-(4, 1, 1, '2222.00', 'car', 'food', 'Johor', '2025-12-15 15:15:45'),
-(5, 7, 5, '2000.00', 'car', 'culture,museum', 'Johor,Kelantan', '2025-12-22 02:35:40'),
-(6, 1, 3, '3000.00', 'car', 'culture,food,nature,shopping,museum,heritage,festival', '', '2025-12-23 11:59:13');
+(1, 1, 4, 1000.00, 'public_transport', 'food', 'Johor,Kedah', '2025-12-14 14:29:01'),
+(2, 1, 5, 1000.00, 'car', 'food', 'Johor', '2025-12-15 09:15:24'),
+(3, 1, 3, 3000.00, 'car', 'heritage', 'Johor', '2025-12-15 10:17:21'),
+(4, 1, 1, 2222.00, 'car', 'food', 'Johor', '2025-12-15 15:15:45'),
+(5, 7, 5, 2000.00, 'car', 'culture,museum', 'Johor,Kelantan', '2025-12-22 02:35:40'),
+(6, 1, 3, 3000.00, 'car', 'culture,food,nature,shopping,museum,heritage,festival', '', '2025-12-23 11:59:13');
 
 -- --------------------------------------------------------
 
@@ -355,7 +351,7 @@ ALTER TABLE `admins`
 -- 使用表AUTO_INCREMENT `cultural_places`
 --
 ALTER TABLE `cultural_places`
-  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `place_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- 使用表AUTO_INCREMENT `cultural_place_suggestions`
@@ -367,13 +363,13 @@ ALTER TABLE `cultural_place_suggestions`
 -- 使用表AUTO_INCREMENT `itineraries`
 --
 ALTER TABLE `itineraries`
-  MODIFY `itinerary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `itinerary_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- 使用表AUTO_INCREMENT `itinerary_items`
 --
 ALTER TABLE `itinerary_items`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- 使用表AUTO_INCREMENT `travellers`
@@ -429,13 +425,6 @@ ALTER TABLE `itinerary_items`
 --
 ALTER TABLE `traveller_preferences`
   ADD CONSTRAINT `fk_pref_traveller` FOREIGN KEY (`traveller_id`) REFERENCES `travellers` (`traveller_id`) ON DELETE CASCADE;
-
---
--- 限制表 `validation_logs`
---
-ALTER TABLE `validation_logs`
-  ADD CONSTRAINT `fk_log_admin` FOREIGN KEY (`admin_id`) REFERENCES `admins` (`admin_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_log_sub` FOREIGN KEY (`submission_id`) REFERENCES `content_submissions` (`submission_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

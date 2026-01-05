@@ -93,7 +93,6 @@ while ($r = $res->fetch_assoc()) {
         </div>
         <div class="actions">
           <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$itineraryId; ?>">Back to Map</a>
-          <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo (int)$itineraryId; ?>">Export PDF</a>
         </div>
       </div>
 

@@ -310,7 +310,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         redirect_to("index.php?view=reset&id=" . $id);
       }
 
-      // FIXED: your DB column is force_password_change (NOT must_change_password)
+      // FIXED: your DB column is force_password_change
       $hash = password_hash($new, PASSWORD_DEFAULT);
       $stmt = $conn->prepare("UPDATE travellers SET password_hash = ?, force_password_change = 1 WHERE traveller_id = ?");
       if (!$stmt) throw new Exception("Prepare failed (password update).");

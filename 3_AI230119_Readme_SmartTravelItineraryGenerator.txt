@@ -74,4 +74,4 @@ E) Cultural Guide Presentation
 6) Notes / Troubleshooting
 - If PDF export shows “Dompdf not installed”, ensure vendor/ exists inside the project root.
 - If maps not loading, check API key in config/api_keys.php (keys may be removed for submission).
-- open php.ini in apache/config/php.ini modify for extension=openssl remove the semicolon";" to allow access for send email.
+- open php.ini in apache/config/php.ini modify for extension=openssl and extension=gd remove the semicolon";" to allow access for send email and PDF Generator.
