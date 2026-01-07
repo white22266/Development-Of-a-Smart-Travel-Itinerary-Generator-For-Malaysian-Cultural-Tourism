@@ -2,12 +2,10 @@
 // auth/register.php
 session_start();
 
-// role via URL
-$defaultRole = (isset($_GET["role"]) && in_array($_GET["role"], ["admin", "traveller"], true))
-    ? $_GET["role"]
-    : "traveller";
+// Force traveller only (ignore ?role=admin)
+$defaultRole = "traveller";
 
-// flash messages from register_process.php
+// flash messages
 $errors  = $_SESSION["form_errors"] ?? [];
 $old     = $_SESSION["old_input"] ?? [];
 $success = $_SESSION["success_message"] ?? "";
@@ -37,38 +35,23 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
             }
         }
 
-        function togglePhoneField() {
-            const roleSelect = document.getElementById("role");
-            const phoneGroup = document.getElementById("phone-group");
-            if (!roleSelect || !phoneGroup) return;
-
-            phoneGroup.style.display = (roleSelect.value === "traveller") ? "block" : "none";
-        }
-
         function banAlphabetInPhone() {
             const phone = document.getElementById("phone");
             if (!phone) return;
 
-            // remove alphabets immediately
             phone.addEventListener("input", function() {
                 const cleaned = phone.value.replace(/[A-Za-z]/g, "");
-                if (cleaned !== phone.value) {
-                    phone.value = cleaned;
-                }
+                if (cleaned !== phone.value) phone.value = cleaned;
             });
         }
 
         function validatePhoneBeforeSubmit(e) {
-            const role = document.getElementById("role");
             const phone = document.getElementById("phone");
+            if (!phone) return true;
 
-            if (!role || !phone) return true;
-
-            // only validate traveller phone (optional, but if filled must be valid)
-            if (role.value === "traveller" && phone.value.trim() !== "") {
+            if (phone.value.trim() !== "") {
                 const val = phone.value.trim();
 
-                // block alphabets (just in case)
                 if (/[A-Za-z]/.test(val)) {
                     alert("Phone number cannot contain alphabets.");
                     phone.focus();
@@ -76,7 +59,6 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
                     return false;
                 }
 
-                // basic MY phone formats: 0xxxxxxxxx or +60xxxxxxxxx, allow - and spaces
                 const normalized = val.replace(/\s+/g, "");
                 const pattern = /^(?:\+?60|0)1\d[-]?\d{7,8}$/;
 
@@ -91,12 +73,7 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            togglePhoneField();
             banAlphabetInPhone();
-
-            const roleSelect = document.getElementById("role");
-            if (roleSelect) roleSelect.addEventListener("change", togglePhoneField);
-
             const form = document.getElementById("registerForm");
             if (form) form.addEventListener("submit", validatePhoneBeforeSubmit);
         });
@@ -104,9 +81,6 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
 </head>
 
 <body>
-
-
-
     <?php if (!empty($errors)): ?>
         <script>
             alert("Registration failed. Please check your inputs.");
@@ -117,10 +91,15 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
         <div class="left-panel">
             <h1>Create Account</h1>
             <p>Register as a traveller to create and manage your itineraries and access cultural travel features.</p>
+            <?php if ($success): ?>
+                <div style="color:green; font-weight:800; margin:12px 0 0;">
+                    <?php echo htmlspecialchars($success); ?>
+                </div>
+            <?php endif; ?>
         </div>
 
         <div class="right-panel">
-            <h2 class="form-title">Register</h2>
+            <h2 class="form-title">Register (Traveller Only)</h2>
             <p class="form-subtitle">Fill in the details below to create your account.</p>
 
             <?php if (!empty($errors)): ?>
@@ -132,16 +111,12 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
             <?php endif; ?>
 
             <form id="registerForm" method="post" action="register_process.php">
+                <!-- Traveller only -->
+                <input type="hidden" name="role" value="traveller">
+
                 <div class="form-group">
                     <label>Register as</label>
-
-                    <!-- keep id="role" so your JS (togglePhoneField) still works -->
-                    <select id="role" disabled>
-                        <option value="traveller" selected>Traveller</option>
-                    </select>
-
-                    <!-- real value submitted to server -->
-                    <input type="hidden" name="role" value="traveller">
+                    <input type="text" value="Traveller" disabled>
                 </div>
 
                 <div class="form-group">
@@ -157,7 +132,7 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
                 </div>
 
                 <div class="form-group" id="phone-group">
-                    <label for="phone">Phone</label>
+                    <label for="phone">Phone (optional)</label>
                     <input type="tel" id="phone" name="phone"
                         placeholder="e.g. 012-3456789 or +60123456789"
                         value="<?php echo htmlspecialchars($old["phone"] ?? ""); ?>">
@@ -182,11 +157,10 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
 
             <div class="form-footer">
                 Already registered?
-                <a href="login.php?role=<?php echo urlencode($defaultRole); ?>">Login here</a>
+                <a href="login.php?role=traveller">Login here</a>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
