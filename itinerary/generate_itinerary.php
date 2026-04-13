@@ -722,7 +722,7 @@ $stmt->close();
 // If no places at all, still redirect to view (no error page)
 if (count($places) === 0) {
     $_SESSION["success_message"] = "Itinerary created, but no cultural places matched your filters.";
-    header("Location: itinerary_view.php?itinerary_id=" . $itineraryId);
+    header("Location: itinerary_review.php?itinerary_id=" . $itineraryId);
     exit;
 }
 
@@ -759,7 +759,7 @@ $ins = $conn->prepare("
 if (!$ins) {
     // Do not block: redirect to view with message
     $_SESSION["success_message"] = "Itinerary created, but cannot insert items right now.";
-    header("Location: itinerary_view.php?itinerary_id=" . $itineraryId);
+    header("Location: itinerary_review.php?itinerary_id=" . $itineraryId);
     exit;
 }
 
@@ -913,6 +913,7 @@ $upd->bind_param("dii", $totalCost, $tripDays, $itineraryId);
 $upd->execute();
 $upd->close();
 
-// ===================== 8) REDIRECT =====================
-header("Location: itinerary_view.php?itinerary_id=" . $itineraryId);
+// ===================== 8) REDIRECT → Review page =====================
+// Send user to the review page so they can accept/reject places before viewing the final itinerary.
+header("Location: itinerary_review.php?itinerary_id=" . $itineraryId);
 exit;
