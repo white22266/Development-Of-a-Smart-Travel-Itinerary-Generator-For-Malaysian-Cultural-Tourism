@@ -1,7 +1,10 @@
 <?php
 // cultural/cultural_guide_detail.php
+// Enhanced: Added nearby food recommendations + nearby hotel recommendations sections
 session_start();
 require_once "../config/db_connect.php";
+require_once "../services/HotelRecommendationService.php";
+require_once "../services/FoodRecommendationService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -16,11 +19,11 @@ if ($placeId <= 0) {
 }
 
 $stmt = $conn->prepare("
-  SELECT place_id, state, category, name, description, address, latitude, longitude,
-         opening_hours, estimated_cost, image_url
-  FROM cultural_places
-  WHERE place_id = ? AND is_active = 1
-  LIMIT 1
+    SELECT place_id, state, category, name, description, address, latitude, longitude,
+           opening_hours, estimated_cost, image_url
+    FROM cultural_places
+    WHERE place_id = ? AND is_active = 1
+    LIMIT 1
 ");
 $stmt->bind_param("i", $placeId);
 $stmt->execute();
@@ -32,23 +35,42 @@ if (!$p) {
     exit;
 }
 
+// ---- Nearby food & hotel recommendations ----
+$lat = (float)($p["latitude"] ?? 0);
+$lng = (float)($p["longitude"] ?? 0);
+$hasCoords = ($lat !== 0.0 && $lng !== 0.0);
+
+$nearbyFood   = [];
+$nearbyHotels = [];
+
+if ($hasCoords) {
+    $foodService  = new FoodRecommendationService($conn);
+    $hotelService = new HotelRecommendationService($conn);
+
+    $nearbyFood   = $foodService->recommend($lat, $lng, 0, null, '', 5.0, 5);
+    $nearbyHotels = $hotelService->recommend($lat, $lng, 0, 20.0, 5);
+}
+
+// Fallback by state
+if (empty($nearbyFood) && !empty($p["state"])) {
+    $foodService = new FoodRecommendationService($conn);
+    $nearbyFood  = $foodService->recommendByState($p["state"], 0, 5);
+}
+if (empty($nearbyHotels) && !empty($p["state"])) {
+    $hotelService = new HotelRecommendationService($conn);
+    $nearbyHotels = $hotelService->recommendByState($p["state"], 0, 5);
+}
+
+// ---- Image helper ----
 function img_src($imageUrl)
 {
     $imageUrl = trim((string)$imageUrl);
     if ($imageUrl === "") return "";
-
-    if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) {
-        return $imageUrl;
-    }
-
-    if (strpos($imageUrl, 'data:image/') === 0) {
-        return $imageUrl;
-    }
-
+    if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) return $imageUrl;
+    if (strpos($imageUrl, 'data:image/') === 0) return $imageUrl;
     $imageUrl = ltrim($imageUrl, '/');
     return "../" . $imageUrl;
 }
-
 
 $img = img_src($p["image_url"] ?? "");
 
@@ -120,6 +142,66 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             display: inline-block;
             min-width: 140px;
         }
+
+        /* Nearby cards */
+        .nearby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .nearby-card {
+            border-radius: 12px;
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            background: #fff;
+            padding: 14px;
+        }
+
+        .nearby-card .nc-name {
+            font-weight: 800;
+            color: var(--navy);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .nearby-card .nc-meta {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .nearby-card .nc-price {
+            font-weight: 900;
+            color: var(--navy);
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 12px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--navy);
+            margin: 20px 0 4px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid rgba(15, 23, 42, 0.08);
+        }
+
+        .cuisine-chip {
+            display: inline-block;
+            background: rgba(15, 23, 42, 0.07);
+            color: var(--navy);
+            border-radius: 999px;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
     </style>
 </head>
 
@@ -164,13 +246,14 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             </div>
 
             <section class="grid">
+                <!-- ===== PLACE DETAIL CARD ===== -->
                 <div class="card col-12">
                     <div class="detail-wrap">
                         <div class="hero">
                             <?php if ($img !== ""): ?>
                                 <img src="<?php echo htmlspecialchars($img); ?>" alt="Place Image">
                             <?php else: ?>
-                                <div class="noimg">No image</div>
+                                <div class="noimg">No image available</div>
                             <?php endif; ?>
                         </div>
 
@@ -182,15 +265,16 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                             <div class="row"><span class="k">Address:</span> <?php echo htmlspecialchars($p["address"] ?? "-"); ?></div>
                             <div class="row"><span class="k">Coordinates:</span>
                                 <?php
-                                $lat = $p["latitude"] ?? "";
-                                $lng = $p["longitude"] ?? "";
-                                echo ($lat && $lng) ? htmlspecialchars($lat . ", " . $lng) : "-";
+                                $plat = $p["latitude"] ?? "";
+                                $plng = $p["longitude"] ?? "";
+                                echo ($plat && $plng) ? htmlspecialchars($plat . ", " . $plng) : "-";
                                 ?>
                             </div>
 
                             <?php if ($mapLink !== ""): ?>
                                 <div style="margin-top:12px;">
-                                    <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer" href="<?php echo htmlspecialchars($mapLink); ?>">
+                                    <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
+                                       href="<?php echo htmlspecialchars($mapLink); ?>">
                                         Open in Google Maps
                                     </a>
                                 </div>
@@ -201,10 +285,110 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <hr class="sep">
 
                     <h3>Cultural Background</h3>
-
                     <div style="color:var(--navy); line-height:1.7;">
                         <?php echo nl2br(htmlspecialchars($p["description"] ?? "No description provided.")); ?>
                     </div>
+
+                    <!-- ===== NEARBY FOOD RECOMMENDATIONS ===== -->
+                    <?php if (!empty($nearbyFood)): ?>
+                        <hr class="sep">
+                        <div class="section-title">&#127860; Nearby Food &amp; Restaurants</div>
+                        <p class="meta">Recommended food places near <?php echo htmlspecialchars($p["name"]); ?>.</p>
+                        <div class="nearby-grid">
+                            <?php foreach ($nearbyFood as $food): ?>
+                                <div class="nearby-card">
+                                    <div class="nc-name"><?php echo htmlspecialchars($food["name"]); ?></div>
+                                    <div class="nc-meta">
+                                        <?php echo htmlspecialchars($food["state"]); ?>
+                                        <?php if (!empty($food["district"])): ?>
+                                            &mdash; <?php echo htmlspecialchars($food["district"]); ?>
+                                        <?php endif; ?>
+                                        <?php if (!empty($food["distance_km"])): ?>
+                                            <br><?php echo number_format((float)$food["distance_km"], 1); ?> km away
+                                        <?php endif; ?>
+                                        <?php if (!empty($food["opening_hour"])): ?>
+                                            <br>&#128336; <?php echo htmlspecialchars($food["opening_hour"]); ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <?php if (!empty($food["cuisine_type"])): ?>
+                                        <span class="cuisine-chip"><?php echo htmlspecialchars($food["cuisine_type"]); ?></span>
+                                    <?php endif; ?>
+                                    <div class="nc-price">~RM <?php echo number_format((float)$food["avg_price"], 2); ?>/meal</div>
+                                    <?php if (!empty($food["rating"])): ?>
+                                        <div class="stars">
+                                            <?php
+                                            $r = (float)$food["rating"];
+                                            $f = (int)floor($r);
+                                            $h = ($r - $f) >= 0.5 ? 1 : 0;
+                                            echo str_repeat('&#9733;', $f) . ($h ? '&#189;' : '') . str_repeat('&#9734;', 5 - $f - $h);
+                                            echo " <span style='color:var(--muted);font-size:11px;'>(" . number_format($r, 1) . ")</span>";
+                                            ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php
+                                    $flat = $food["latitude"] ?? "";
+                                    $flng = $food["longitude"] ?? "";
+                                    if ($flat && $flng):
+                                    ?>
+                                        <a href="https://www.google.com/maps?q=<?php echo urlencode($flat . ',' . $flng); ?>"
+                                           target="_blank" rel="noopener noreferrer"
+                                           class="btn btn-ghost"
+                                           style="font-size:11px;padding:3px 8px;margin-top:6px;display:inline-block;">
+                                            Map
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- ===== NEARBY HOTEL RECOMMENDATIONS ===== -->
+                    <?php if (!empty($nearbyHotels)): ?>
+                        <hr class="sep">
+                        <div class="section-title">&#127968; Nearby Hotels &amp; Accommodation</div>
+                        <p class="meta">Recommended hotels near <?php echo htmlspecialchars($p["name"]); ?>.</p>
+                        <div class="nearby-grid">
+                            <?php foreach ($nearbyHotels as $hotel): ?>
+                                <div class="nearby-card">
+                                    <div class="nc-name"><?php echo htmlspecialchars($hotel["name"]); ?></div>
+                                    <div class="nc-meta">
+                                        <?php echo htmlspecialchars($hotel["state"]); ?>
+                                        <?php if (!empty($hotel["district"])): ?>
+                                            &mdash; <?php echo htmlspecialchars($hotel["district"]); ?>
+                                        <?php endif; ?>
+                                        <?php if (!empty($hotel["distance_km"])): ?>
+                                            <br><?php echo number_format((float)$hotel["distance_km"], 1); ?> km away
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="nc-price">RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?>/night</div>
+                                    <?php if (!empty($hotel["rating"])): ?>
+                                        <div class="stars">
+                                            <?php
+                                            $r = (float)$hotel["rating"];
+                                            $f = (int)floor($r);
+                                            $h = ($r - $f) >= 0.5 ? 1 : 0;
+                                            echo str_repeat('&#9733;', $f) . ($h ? '&#189;' : '') . str_repeat('&#9734;', 5 - $f - $h);
+                                            echo " <span style='color:var(--muted);font-size:11px;'>(" . number_format($r, 1) . ")</span>";
+                                            ?>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php
+                                    $hlat = $hotel["latitude"] ?? "";
+                                    $hlng = $hotel["longitude"] ?? "";
+                                    if ($hlat && $hlng):
+                                    ?>
+                                        <a href="https://www.google.com/maps?q=<?php echo urlencode($hlat . ',' . $hlng); ?>"
+                                           target="_blank" rel="noopener noreferrer"
+                                           class="btn btn-ghost"
+                                           style="font-size:11px;padding:3px 8px;margin-top:6px;display:inline-block;">
+                                            Map
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+
                 </div>
             </section>
         </main>

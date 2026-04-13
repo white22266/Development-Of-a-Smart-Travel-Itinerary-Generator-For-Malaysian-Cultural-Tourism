@@ -136,10 +136,46 @@ $stmt->close();
                             </select>
                         </div>
                         <div style="margin-top:12px;">
-                            <button class="btn btn-primary" type="submit">Generate Itinerary</button>
+                            <label style="font-weight:800; font-size:13px;">Your Starting Location <span style="font-weight:400; color:var(--muted);">(optional — for origin-aware routing)</span></label><br>
+                            <input type="text" name="origin_name" id="origin_name" placeholder="e.g. Kuala Lumpur, Johor Bahru, Penang..."
+                                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px;">
+                            <input type="hidden" name="origin_lat" id="origin_lat">
+                            <input type="hidden" name="origin_lng" id="origin_lng">
+                            <div class="meta" style="margin-top:4px;">Enter your city or address to start the route from your location.</div>
+                        </div>
 
+                        <div style="margin-top:12px;">
+                            <button class="btn btn-primary" type="submit">Generate Itinerary</button>
                         </div>
                     </form>
+
+                    <script>
+                    // Geocode origin using Google Maps Geocoding API when user types
+                    (function() {
+                        var inp = document.getElementById('origin_name');
+                        var latF = document.getElementById('origin_lat');
+                        var lngF = document.getElementById('origin_lng');
+                        if (!inp) return;
+
+                        var timer = null;
+                        inp.addEventListener('input', function() {
+                            clearTimeout(timer);
+                            var q = inp.value.trim();
+                            if (q.length < 3) { latF.value = ''; lngF.value = ''; return; }
+                            timer = setTimeout(function() {
+                                fetch('geocode_origin.php?q=' + encodeURIComponent(q + ', Malaysia'))
+                                    .then(function(r){ return r.json(); })
+                                    .then(function(d){
+                                        if (d && d.lat && d.lng) {
+                                            latF.value = d.lat;
+                                            lngF.value = d.lng;
+                                        }
+                                    })
+                                    .catch(function(){});
+                            }, 800);
+                        });
+                    })();
+                    </script>
                 <?php endif; ?>
             </div>
         </main>

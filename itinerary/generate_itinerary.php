@@ -1,9 +1,11 @@
 <?php
 // itinerary/generate_itinerary.php
+// Enhanced: RouteService integration, origin-aware routing, distance/time per item
 session_start();
 
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php"; // expects GOOGLE_MAPS_API_KEY (string)
+require_once "../config/api_keys.php";
+require_once "../services/RouteService.php";
 
 // ===================== AUTH / BASIC VALIDATION =====================
 if (
@@ -33,9 +35,16 @@ if ($preferenceId <= 0) {
 }
 
 // ===================== OPTIONS FROM POST =====================
-$startDate = trim((string)($_POST["start_date"] ?? ""));
-$itemsPerDay = (int)($_POST["items_per_day"] ?? 3);
+$startDate     = trim((string)($_POST["start_date"]     ?? ""));
+$itemsPerDay   = (int)($_POST["items_per_day"]   ?? 3);
 $routeStrategy = trim((string)($_POST["route_strategy"] ?? "google_optimize"));
+
+// Origin-aware routing: user's starting location
+$originLat  = (float)($_POST["origin_lat"]  ?? 0);
+$originLng  = (float)($_POST["origin_lng"]  ?? 0);
+$originName = trim((string)($_POST["origin_name"] ?? ""));
+$hasOrigin  = ($originLat !== 0.0 && $originLng !== 0.0
+               && is_finite($originLat) && is_finite($originLng));
 
 $allowedItems = [1, 2, 3, 4, 5];
 if (!in_array($itemsPerDay, $allowedItems, true)) $itemsPerDay = 3;
@@ -710,9 +719,9 @@ foreach ($byState as $st => $pool) {
 // ===================== 5) PREPARE INSERT STATEMENT =====================
 $ins = $conn->prepare("
   INSERT INTO itinerary_items
-    (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, estimated_cost, notes)
+    (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, estimated_cost, distance_km, travel_time_min, notes)
   VALUES
-    (?,?,?,?,?,?,?,?)
+    (?,?,?,?,?,?,?,?,?,?)
 ");
 if (!$ins) {
     // Do not block: redirect to view with message
@@ -721,11 +730,20 @@ if (!$ins) {
     exit;
 }
 
+// Instantiate RouteService for distance/time calculation
+$apiKey    = defined("GOOGLE_MAPS_API_KEY") ? GOOGLE_MAPS_API_KEY : "";
+$routeSvc  = new RouteService($transportType, $apiKey);
+
 $totalCost = 0.0;
-$maxDayKm = get_daily_max_km($transportType);
+$maxDayKm  = get_daily_max_km($transportType);
 
 // Used place ids (rule #1)
 $usedPlaceIds = []; // place_id => true
+
+// Track previous location for distance calculation
+// Start from user's origin if provided
+$prevLat = $hasOrigin ? $originLat : null;
+$prevLng = $hasOrigin ? $originLng : null;
 
 // Pick start state:
 // - If user selected states: pick first preferred that exists
@@ -798,14 +816,33 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             if (isset($usedPlaceIds[$placeId])) continue; // hard rule #1
 
             $name = (string)$p["name"];
-            $fee = ($p["estimated_cost"] !== null) ? (float)$p["estimated_cost"] : 0.00;
-            $cat = strtolower((string)$p["category"]);
+            $fee  = ($p["estimated_cost"] !== null) ? (float)$p["estimated_cost"] : 0.00;
+            $cat  = strtolower((string)$p["category"]);
 
             $itemType = ($cat === "food") ? "food" : (($cat === "festival") ? "festival" : "attraction");
-            $notes = "State: " . (string)$p["state"] . " | Category: " . $cat;
+            $notes    = "State: " . (string)$p["state"] . " | Category: " . $cat;
+
+            // ---- RouteService: calculate distance & travel time from previous place ----
+            $distKm   = null;
+            $timeMin  = null;
+            $pLat     = isset($p["latitude"])  ? (float)$p["latitude"]  : null;
+            $pLng     = isset($p["longitude"]) ? (float)$p["longitude"] : null;
+
+            if ($prevLat !== null && $prevLng !== null && $pLat !== null && $pLng !== null
+                && !($pLat === 0.0 && $pLng === 0.0)) {
+                $seg     = $routeSvc->getSegment($prevLat, $prevLng, $pLat, $pLng);
+                $distKm  = $seg["distance_km"];
+                $timeMin = $seg["travel_time_min"];
+            }
+
+            // Update previous location
+            if ($pLat !== null && $pLng !== null && !($pLat === 0.0 && $pLng === 0.0)) {
+                $prevLat = $pLat;
+                $prevLng = $pLng;
+            }
 
             $ins->bind_param(
-                "iiisisds",
+                "iiisisdiis",
                 $itineraryId,
                 $dayNo,
                 $seq,
@@ -813,6 +850,8 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
                 $placeId,
                 $name,
                 $fee,
+                $distKm,
+                $timeMin,
                 $notes
             );
 
