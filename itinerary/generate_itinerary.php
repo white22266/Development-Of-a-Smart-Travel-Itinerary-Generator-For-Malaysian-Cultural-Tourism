@@ -584,8 +584,16 @@ function pick_start_state_best(array $byState): ?string
 }
 
 // ===================== 1) LOAD PREFERENCE =====================
+// Check if preferred_districts column exists (graceful fallback)
+$colCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'preferred_districts'");
+$hasDistrictCol = ($colCheck && $colCheck->num_rows > 0);
+
+$prefCols = $hasDistrictCol
+    ? "preference_id, trip_days, budget, transport_type, interests, preferred_states, preferred_districts"
+    : "preference_id, trip_days, budget, transport_type, interests, preferred_states";
+
 $stmt = $conn->prepare("
-  SELECT preference_id, trip_days, budget, transport_type, interests, preferred_states
+  SELECT $prefCols
   FROM traveller_preferences
   WHERE preference_id = ? AND traveller_id = ?
   LIMIT 1
@@ -601,10 +609,11 @@ if (!$pref) {
     exit;
 }
 
-$tripDays = (int)$pref["trip_days"];
+$tripDays      = (int)$pref["trip_days"];
 $transportType = trim((string)($pref["transport_type"] ?? ""));
-$interestsCsv = trim((string)($pref["interests"] ?? ""));
-$statesCsv = trim((string)($pref["preferred_states"] ?? ""));
+$interestsCsv  = trim((string)($pref["interests"] ?? ""));
+$statesCsv     = trim((string)($pref["preferred_states"] ?? ""));
+$districtsCsv  = trim((string)($pref["preferred_districts"] ?? ""));
 
 // For title only
 $titleStatesCsv = ($statesCsv === "") ? "Malaysia" : $statesCsv;
@@ -618,6 +627,10 @@ if ($statesCsv === "" || in_array("malaysia", $statesLower, true)) {
     $states = [];
 }
 
+// Build district filter list (only used when districts are explicitly selected)
+$districts = $districtsCsv !== "" ? array_values(array_unique(array_filter(array_map("trim", explode(",", $districtsCsv))))) : [];
+$userSelectedDistricts = !empty($districts);
+
 $allowedCategories = ["culture", "heritage", "museum", "food", "festival", "nature", "shopping"];
 $categories = $interestsCsv !== "" ? array_values(array_unique(array_filter(array_map("trim", explode(",", $interestsCsv))))) : [];
 $categories = array_values(array_intersect($categories, $allowedCategories));
@@ -629,24 +642,35 @@ $userSelectedStates = (!empty($statesCsv) && !in_array("malaysia", $statesCsvLow
 $preferredStatesForOrder = $userSelectedStates ? normalize_list($statesCsv) : [];
 
 // ===================== 2) FETCH CANDIDATE PLACES =====================
-$where = "is_active = 1";
+// Check if district column exists in cultural_places
+$cpColCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$hasDistrictPlaceCol = ($cpColCheck && $cpColCheck->num_rows > 0);
+
+$where  = "is_active = 1";
 $params = [];
-$types = "";
+$types  = "";
 
 $catPH = implode(",", array_fill(0, count($categories), "?"));
 $where .= " AND category IN ($catPH)";
 $types .= str_repeat("s", count($categories));
 $params = array_merge($params, $categories);
 
-if (!empty($states)) {
-    $stPH = implode(",", array_fill(0, count($states), "?"));
+// District filter takes priority over state filter (more specific)
+if ($userSelectedDistricts && $hasDistrictPlaceCol) {
+    $dtPH   = implode(",", array_fill(0, count($districts), "?"));
+    $where .= " AND district IN ($dtPH)";
+    $types .= str_repeat("s", count($districts));
+    $params = array_merge($params, $districts);
+} elseif (!empty($states)) {
+    $stPH   = implode(",", array_fill(0, count($states), "?"));
     $where .= " AND state IN ($stPH)";
     $types .= str_repeat("s", count($states));
     $params = array_merge($params, $states);
 }
 
+$districtSelectCol = $hasDistrictPlaceCol ? ", district" : "";
 $sql = "
-  SELECT place_id, state, category, name, description, address, latitude, longitude, opening_hours, estimated_cost
+  SELECT place_id, state{$districtSelectCol}, category, name, description, address, latitude, longitude, opening_hours, estimated_cost
   FROM cultural_places
   WHERE $where
 ";
@@ -702,12 +726,21 @@ if (count($places) === 0) {
     exit;
 }
 
-// ===================== 4) GROUP BY STATE =====================
+// ===================== 4) GROUP BY STATE (or DISTRICT when selected) =====================
+// When user selected specific districts, group by "State > District" for finer routing.
+// Otherwise group by state only (existing behaviour).
 $byState = [];
 foreach ($places as $p) {
     $st = (string)($p["state"] ?? "");
     if ($st === "") $st = "Unknown";
-    $byState[$st][] = $p;
+
+    if ($userSelectedDistricts && isset($p["district"]) && $p["district"] !== "") {
+        // Key = "State > District" so nearby-routing stays within district
+        $key = $st . " > " . (string)$p["district"];
+    } else {
+        $key = $st;
+    }
+    $byState[$key][] = $p;
 }
 
 // Shuffle each pool once
@@ -820,7 +853,8 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             $cat  = strtolower((string)$p["category"]);
 
             $itemType = ($cat === "food") ? "food" : (($cat === "festival") ? "festival" : "attraction");
-            $notes    = "State: " . (string)$p["state"] . " | Category: " . $cat;
+            $districtLabel = (isset($p["district"]) && $p["district"] !== "") ? " | District: " . (string)$p["district"] : "";
+            $notes    = "State: " . (string)$p["state"] . $districtLabel . " | Category: " . $cat;
 
             // ---- RouteService: calculate distance & travel time from previous place ----
             $distKm   = null;

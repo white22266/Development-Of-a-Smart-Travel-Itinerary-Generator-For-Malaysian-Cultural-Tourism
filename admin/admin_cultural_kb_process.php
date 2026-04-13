@@ -64,8 +64,9 @@ if (!empty($_FILES['image']['name']) && $_FILES['image']['error'] === UPLOAD_ERR
 if ($action === "create" || $action === "update") {
     $placeId = (int)($_POST["place_id"] ?? 0);
 
-    $name = trim($_POST["name"] ?? "");
-    $state = trim($_POST["state"] ?? "");
+    $name     = trim($_POST["name"]     ?? "");
+    $state    = trim($_POST["state"]    ?? "");
+    $district = trim($_POST["district"] ?? "");  // NEW: district field
     $category = trim($_POST["category"] ?? "");
 
     $description = trim($_POST["description"] ?? "");
@@ -105,30 +106,34 @@ if ($action === "create" || $action === "update") {
     if ($longitude !== "" && !is_numeric($longitude)) back("Longitude must be numeric.", true);
     /* ===== CREATE ===== */
     if ($action === "create") {
-        $stmt = $conn->prepare("
-      INSERT INTO cultural_places
-      (state, name, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active)
-      VALUES (?,?,?,?,?,?,?,?,?,?,?)
-    ");
-        $latVal = ($latitude === "") ? null : (float)$latitude;
-        $lngVal = ($longitude === "") ? null : (float)$longitude;
+        // Check if district column exists
+        $dcChk = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+        $hasDistCol = ($dcChk && $dcChk->num_rows > 0);
 
-        $stmt->bind_param(
-            "sssssdddssi",
-            $state,
-            $name,
-            $category,
-            $description,
-            $address,
-            $latitude,
-            $longitude,
-            $cost,
-            $opening,
-            $imageUrl,
-            $isActive
-        );
+        if ($hasDistCol) {
+            $stmt = $conn->prepare("
+              INSERT INTO cultural_places
+              (state, district, name, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active)
+              VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+            ");
+            $stmt->bind_param(
+                "ssssssdddssi",
+                $state, $district, $name, $category, $description, $address,
+                $latVal, $lngVal, $cost, $opening, $imageUrl, $isActive
+            );
+        } else {
+            $stmt = $conn->prepare("
+              INSERT INTO cultural_places
+              (state, name, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active)
+              VALUES (?,?,?,?,?,?,?,?,?,?,?)
+            ");
+            $stmt->bind_param(
+                "sssssdddssi",
+                $state, $name, $category, $description, $address,
+                $latVal, $lngVal, $cost, $opening, $imageUrl, $isActive
+            );
+        }
 
-        // 兼容 NULL：如果你想严格用 NULL，就把 latitude/longitude 改成直接 bind double，并在 empty 时 set null（会更长）
         $stmt->execute();
         $stmt->close();
 
@@ -138,52 +143,66 @@ if ($action === "create" || $action === "update") {
     /* ===== UPDATE ===== */
     if ($placeId <= 0) back("Invalid place id for update.", true);
 
+    // Check if district column exists for UPDATE
+    $dcChkU = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+    $hasDistColU = ($dcChkU && $dcChkU->num_rows > 0);
+
     if ($changeImage) {
         // change image_url (either set new url/path OR set NULL if remove checked)
-        $stmt = $conn->prepare("
-        UPDATE cultural_places
-        SET state=?, name=?, category=?, description=?, address=?,
-            latitude=?, longitude=?, estimated_cost=?, opening_hours=?,
-            image_url=?, is_active=?
-        WHERE place_id=?
-    ");
-        $stmt->bind_param(
-            "sssssdddssii",
-            $state,
-            $name,
-            $category,
-            $description,
-            $address,
-            $latVal,
-            $lngVal,
-            $cost,
-            $opening,
-            $newImageVal,  // can be NULL if remove checked
-            $isActive,
-            $placeId
-        );
+        if ($hasDistColU) {
+            $stmt = $conn->prepare("
+              UPDATE cultural_places
+              SET state=?, district=?, name=?, category=?, description=?, address=?,
+                  latitude=?, longitude=?, estimated_cost=?, opening_hours=?,
+                  image_url=?, is_active=?
+              WHERE place_id=?
+            ");
+            $stmt->bind_param(
+                "ssssssdddssii",
+                $state, $district, $name, $category, $description, $address,
+                $latVal, $lngVal, $cost, $opening, $newImageVal, $isActive, $placeId
+            );
+        } else {
+            $stmt = $conn->prepare("
+              UPDATE cultural_places
+              SET state=?, name=?, category=?, description=?, address=?,
+                  latitude=?, longitude=?, estimated_cost=?, opening_hours=?,
+                  image_url=?, is_active=?
+              WHERE place_id=?
+            ");
+            $stmt->bind_param(
+                "sssssdddssii",
+                $state, $name, $category, $description, $address,
+                $latVal, $lngVal, $cost, $opening, $newImageVal, $isActive, $placeId
+            );
+        }
     } else {
         // keep old image_url
-        $stmt = $conn->prepare("
-        UPDATE cultural_places
-        SET state=?, name=?, category=?, description=?, address=?,
-            latitude=?, longitude=?, estimated_cost=?, opening_hours=?, is_active=?
-        WHERE place_id=?
-    ");
-        $stmt->bind_param(
-            "sssssdddsii",
-            $state,
-            $name,
-            $category,
-            $description,
-            $address,
-            $latVal,
-            $lngVal,
-            $cost,
-            $opening,
-            $isActive,
-            $placeId
-        );
+        if ($hasDistColU) {
+            $stmt = $conn->prepare("
+              UPDATE cultural_places
+              SET state=?, district=?, name=?, category=?, description=?, address=?,
+                  latitude=?, longitude=?, estimated_cost=?, opening_hours=?, is_active=?
+              WHERE place_id=?
+            ");
+            $stmt->bind_param(
+                "ssssssdddsii",
+                $state, $district, $name, $category, $description, $address,
+                $latVal, $lngVal, $cost, $opening, $isActive, $placeId
+            );
+        } else {
+            $stmt = $conn->prepare("
+              UPDATE cultural_places
+              SET state=?, name=?, category=?, description=?, address=?,
+                  latitude=?, longitude=?, estimated_cost=?, opening_hours=?, is_active=?
+              WHERE place_id=?
+            ");
+            $stmt->bind_param(
+                "sssssdddsii",
+                $state, $name, $category, $description, $address,
+                $latVal, $lngVal, $cost, $opening, $isActive, $placeId
+            );
+        }
     }
 
 

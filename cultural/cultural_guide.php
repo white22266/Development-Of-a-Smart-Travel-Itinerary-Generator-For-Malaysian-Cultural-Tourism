@@ -11,29 +11,40 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
 
 // filters
-$q = trim($_GET["q"] ?? "");
-$state = trim($_GET["state"] ?? "");
+$q        = trim($_GET["q"]        ?? "");
+$state    = trim($_GET["state"]    ?? "");
+$district = trim($_GET["district"] ?? "");
 $category = trim($_GET["category"] ?? "");
 
 $categoryOptions = ['culture', 'heritage', 'museum', 'food', 'festival', 'nature', 'shopping'];
 $stateOptions = [
-    "Johor",
-    "Kedah",
-    "Kelantan",
-    "Melaka",
-    "Negeri Sembilan",
-    "Pahang",
-    "Penang",
-    "Perak",
-    "Perlis",
-    "Sabah",
-    "Sarawak",
-    "Selangor",
-    "Terengganu",
-    "Kuala Lumpur",
-    "Putrajaya",
-    "Labuan"
+    "Johor","Kedah","Kelantan","Melaka","Negeri Sembilan",
+    "Pahang","Penang","Perak","Perlis","Sabah","Sarawak",
+    "Selangor","Terengganu","Kuala Lumpur","Putrajaya","Labuan"
 ];
+
+// All districts per state for cascading filter
+$allStateDistricts = [
+  "Johor"            => ["Johor Bahru","Kluang","Kota Tinggi","Mersing","Muar","Batu Pahat","Pontian","Segamat","Kulai","Tangkak"],
+  "Kedah"            => ["Kota Setar","Kubang Pasu","Padang Terap","Sik","Baling","Kulim","Bandar Baharu","Kuala Muda","Yan","Langkawi","Pokok Sena","Pendang"],
+  "Kelantan"         => ["Kota Bharu","Bachok","Pasir Mas","Tumpat","Pasir Puteh","Machang","Tanah Merah","Kuala Krai","Gua Musang","Jeli"],
+  "Melaka"           => ["Melaka Tengah","Alor Gajah","Jasin"],
+  "Negeri Sembilan"  => ["Seremban","Port Dickson","Rembau","Tampin","Jempol","Jelebu","Kuala Pilah"],
+  "Pahang"           => ["Kuantan","Temerloh","Bentong","Cameron Highlands","Raub","Jerantut","Lipis","Maran","Bera","Rompin","Pekan"],
+  "Penang"           => ["Timur Laut","Barat Daya","Seberang Perai Utara","Seberang Perai Tengah","Seberang Perai Selatan"],
+  "Perak"            => ["Ipoh","Kinta","Larut, Matang & Selama","Manjung","Kerian","Hilir Perak","Hulu Perak","Batang Padang","Perak Tengah","Kampar"],
+  "Perlis"           => ["Kangar","Arau","Padang Besar"],
+  "Sabah"            => ["Kota Kinabalu","Sandakan","Tawau","Lahad Datu","Keningau","Semporna","Kunak","Papar","Beaufort","Kota Belud","Ranau","Kudat","Kinabatangan","Tuaran","Penampang","Putatan","Sipitang","Tambunan","Nabawan","Tongod","Beluran","Kota Marudu","Pitas","Tenom","Kuala Penyu"],
+  "Sarawak"          => ["Kuching","Miri","Sibu","Bintulu","Sri Aman","Sarikei","Kapit","Limbang","Mukah","Betong","Serian","Kota Samarahan"],
+  "Selangor"         => ["Petaling Jaya","Shah Alam","Klang","Subang Jaya","Gombak","Hulu Langat","Hulu Selangor","Kuala Langat","Sabak Bernam"],
+  "Terengganu"       => ["Kuala Terengganu","Kemaman","Dungun","Besut","Setiu","Hulu Terengganu","Marang"],
+  "Kuala Lumpur"     => ["City Centre (KLCC)","Chow Kit","Brickfields","Bangsar","Cheras","Kepong","Setapak","Wangsa Maju","Titiwangsa","Bukit Jalil","Segambut"],
+  "Putrajaya"        => ["Putrajaya"],
+  "Labuan"           => ["Victoria","Labuan Town"],
+];
+
+// Districts for the currently selected state (for cascading dropdown)
+$districtOptions = ($state !== "" && isset($allStateDistricts[$state])) ? $allStateDistricts[$state] : [];
 
 // CHANGE: pagination
 $perPage = 6;
@@ -59,6 +70,16 @@ if ($state !== "" && in_array($state, $stateOptions, true)) {
     $params[] = $state;
     $types .= "s";
 }
+// District filter (only when state is also selected)
+if ($district !== "" && $state !== "" && in_array($district, ($allStateDistricts[$state] ?? []), true)) {
+    // Check if district column exists before filtering
+    $dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+    if ($dcCheck && $dcCheck->num_rows > 0) {
+        $where .= " AND district = ?";
+        $params[] = $district;
+        $types .= "s";
+    }
+}
 if ($category !== "" && in_array($category, $categoryOptions, true)) {
     $where .= " AND category = ?";
     $params[] = $category;
@@ -78,9 +99,14 @@ $totalPages = max(1, (int)ceil($total / $perPage));
 if ($page > $totalPages) $page = $totalPages; // normalize
 $offset = ($page - 1) * $perPage;
 
+// Check if district column exists for SELECT
+$distColCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$hasDistCol = ($distColCheck && $distColCheck->num_rows > 0);
+$districtCol = $hasDistCol ? ", district" : "";
+
 // List query
 $listSql = "
-  SELECT place_id, state, category, name, description, address, opening_hours, estimated_cost, image_url
+  SELECT place_id, state{$districtCol}, category, name, description, address, opening_hours, estimated_cost, image_url
   FROM cultural_places
   WHERE $where
   ORDER BY updated_at DESC, place_id DESC
@@ -334,11 +360,25 @@ $pageItems = page_window($page, $totalPages);
                         </div>
                         <div class="col-3">
                             <label style="font-size:13px; font-weight:800;">State</label><br>
-                            <select name="state" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            <select name="state" id="stateFilter"
+                                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"
+                                onchange="updateDistrictFilter(this.value)">
                                 <option value="">All states</option>
                                 <?php foreach ($stateOptions as $s): ?>
                                     <option value="<?php echo htmlspecialchars($s); ?>" <?php echo ($state === $s) ? "selected" : ""; ?>>
                                         <?php echo htmlspecialchars($s); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label style="font-size:13px; font-weight:800;">District</label><br>
+                            <select name="district" id="districtFilter"
+                                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <option value="">All districts</option>
+                                <?php foreach ($districtOptions as $d): ?>
+                                    <option value="<?php echo htmlspecialchars($d); ?>" <?php echo ($district === $d) ? "selected" : ""; ?>>
+                                        <?php echo htmlspecialchars($d); ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -387,6 +427,11 @@ $pageItems = page_window($page, $totalPages);
                                     <div class="place-body">
                                         <div class="badges">
                                             <span class="badge"><?php echo htmlspecialchars($p["state"]); ?></span>
+                                            <?php if (!empty($p["district"])): ?>
+                                            <span class="badge" style="background:rgba(99,102,241,.10); color:#4338ca;">
+                                                <?php echo htmlspecialchars($p["district"]); ?>
+                                            </span>
+                                            <?php endif; ?>
                                             <span class="badge"><?php echo htmlspecialchars(ucfirst($p["category"])); ?></span>
                                             <span class="badge">RM <?php echo number_format((float)($p["estimated_cost"] ?? 0), 2); ?></span>
                                         </div>
@@ -430,6 +475,26 @@ $pageItems = page_window($page, $totalPages);
             </section>
         </main>
     </div>
-</body>
+<script>
+// Cascading district filter: populate district dropdown when state changes
+var stateDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
 
+function updateDistrictFilter(selectedState) {
+    var distSel = document.getElementById('districtFilter');
+    if (!distSel) return;
+
+    // Clear existing options
+    distSel.innerHTML = '<option value="">All districts</option>';
+
+    if (selectedState && stateDistrictsMap[selectedState]) {
+        stateDistrictsMap[selectedState].forEach(function(d) {
+            var opt = document.createElement('option');
+            opt.value = d;
+            opt.textContent = d;
+            distSel.appendChild(opt);
+        });
+    }
+}
+</script>
+</body>
 </html>

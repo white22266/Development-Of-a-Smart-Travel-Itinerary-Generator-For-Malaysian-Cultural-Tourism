@@ -18,8 +18,13 @@ if ($placeId <= 0) {
     exit;
 }
 
+// Check if district column exists
+$dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$hasDistCol = ($dcCheck && $dcCheck->num_rows > 0);
+$districtSelectCol = $hasDistCol ? ", district" : "";
+
 $stmt = $conn->prepare("
-    SELECT place_id, state, category, name, description, address, latitude, longitude,
+    SELECT place_id, state{$districtSelectCol}, category, name, description, address, latitude, longitude,
            opening_hours, estimated_cost, image_url
     FROM cultural_places
     WHERE place_id = ? AND is_active = 1
@@ -259,6 +264,13 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
 
                         <div class="info">
                             <div class="row"><span class="k">State:</span> <?php echo htmlspecialchars($p["state"]); ?></div>
+                            <?php if (!empty($p["district"])): ?>
+                            <div class="row"><span class="k">District:</span>
+                                <span style="background:rgba(99,102,241,.10); color:#4338ca; padding:2px 10px; border-radius:999px; font-size:12px; font-weight:800;">
+                                    <?php echo htmlspecialchars($p["district"]); ?>
+                                </span>
+                            </div>
+                            <?php endif; ?>
                             <div class="row"><span class="k">Category:</span> <?php echo htmlspecialchars(ucfirst($p["category"])); ?></div>
                             <div class="row"><span class="k">Estimated Cost:</span> RM <?php echo number_format((float)($p["estimated_cost"] ?? 0), 2); ?></div>
                             <div class="row"><span class="k">Opening Hours:</span> <?php echo htmlspecialchars($p["opening_hours"] ?? "-"); ?></div>

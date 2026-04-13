@@ -40,10 +40,15 @@ if (!$it) {
 }
 
 // ---- Load itinerary items with place coordinates ----
+// Check if district column exists in cultural_places
+$dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$hasDistrictCol = ($dcCheck && $dcCheck->num_rows > 0);
+$districtJoinCol = $hasDistrictCol ? ", cp.district" : "";
+
 $stmt = $conn->prepare("
     SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type,
            ii.item_title, ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
-           cp.latitude, cp.longitude, cp.state, cp.category, cp.address
+           cp.latitude, cp.longitude, cp.state{$districtJoinCol}, cp.category, cp.address
     FROM itinerary_items ii
     LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
     WHERE ii.itinerary_id = ?
@@ -257,7 +262,14 @@ $interests = $it["interests"] ?? "-";
                                     <td><?php echo (int)$r["sequence_no"]; ?></td>
                                     <td>
                                         <strong><?php echo htmlspecialchars($r["item_title"]); ?></strong>
-                                        <?php if (!empty($r["state"])): ?><div style="font-size:11px;color:var(--muted);"><?php echo htmlspecialchars($r["state"]); ?></div><?php endif; ?>
+                                        <?php if (!empty($r["state"])): ?>
+                                        <div style="font-size:11px;color:var(--muted);">
+                                            <?php echo htmlspecialchars($r["state"]); ?>
+                                            <?php if (!empty($r["district"])): ?>
+                                                &rsaquo; <span style="color:#4338ca;"><?php echo htmlspecialchars($r["district"]); ?></span>
+                                            <?php endif; ?>
+                                        </div>
+                                        <?php endif; ?>
                                     </td>
                                     <td><span class="chip"><?php echo htmlspecialchars(ucfirst($r["item_type"])); ?></span></td>
                                     <td><?php echo number_format((float)$r["estimated_cost"],2); ?></td>

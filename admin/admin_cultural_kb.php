@@ -28,23 +28,33 @@ $offset = ($page - 1) * $perPage;
 $categoryOptions = ['culture', 'heritage', 'museum', 'food', 'festival', 'nature', 'shopping'];
 
 $stateOptions = [
-    "Johor",
-    "Kedah",
-    "Kelantan",
-    "Melaka",
-    "Negeri Sembilan",
-    "Pahang",
-    "Penang",
-    "Perak",
-    "Perlis",
-    "Sabah",
-    "Sarawak",
-    "Selangor",
-    "Terengganu",
-    "Kuala Lumpur",
-    "Putrajaya",
-    "Labuan"
+    "Johor","Kedah","Kelantan","Melaka","Negeri Sembilan",
+    "Pahang","Penang","Perak","Perlis","Sabah","Sarawak",
+    "Selangor","Terengganu","Kuala Lumpur","Putrajaya","Labuan"
 ];
+
+$allStateDistricts = [
+  "Johor"           => ["Johor Bahru","Kluang","Kota Tinggi","Mersing","Muar","Batu Pahat","Pontian","Segamat","Kulai","Tangkak"],
+  "Kedah"           => ["Kota Setar","Kubang Pasu","Padang Terap","Sik","Baling","Kulim","Bandar Baharu","Kuala Muda","Yan","Langkawi","Pokok Sena","Pendang"],
+  "Kelantan"        => ["Kota Bharu","Bachok","Pasir Mas","Tumpat","Pasir Puteh","Machang","Tanah Merah","Kuala Krai","Gua Musang","Jeli"],
+  "Melaka"          => ["Melaka Tengah","Alor Gajah","Jasin"],
+  "Negeri Sembilan" => ["Seremban","Port Dickson","Rembau","Tampin","Jempol","Jelebu","Kuala Pilah"],
+  "Pahang"          => ["Kuantan","Temerloh","Bentong","Cameron Highlands","Raub","Jerantut","Lipis","Maran","Bera","Rompin","Pekan"],
+  "Penang"          => ["Timur Laut","Barat Daya","Seberang Perai Utara","Seberang Perai Tengah","Seberang Perai Selatan"],
+  "Perak"           => ["Ipoh","Kinta","Larut, Matang & Selama","Manjung","Kerian","Hilir Perak","Hulu Perak","Batang Padang","Perak Tengah","Kampar"],
+  "Perlis"          => ["Kangar","Arau","Padang Besar"],
+  "Sabah"           => ["Kota Kinabalu","Sandakan","Tawau","Lahad Datu","Keningau","Semporna","Kunak","Papar","Beaufort","Kota Belud","Ranau","Kudat","Kinabatangan","Tuaran","Penampang","Putatan","Sipitang","Tambunan","Nabawan","Tongod","Beluran","Kota Marudu","Pitas","Tenom","Kuala Penyu"],
+  "Sarawak"         => ["Kuching","Miri","Sibu","Bintulu","Sri Aman","Sarikei","Kapit","Limbang","Mukah","Betong","Serian","Kota Samarahan"],
+  "Selangor"        => ["Petaling Jaya","Shah Alam","Klang","Subang Jaya","Gombak","Hulu Langat","Hulu Selangor","Kuala Langat","Sabak Bernam"],
+  "Terengganu"      => ["Kuala Terengganu","Kemaman","Dungun","Besut","Setiu","Hulu Terengganu","Marang"],
+  "Kuala Lumpur"    => ["City Centre (KLCC)","Chow Kit","Brickfields","Bangsar","Cheras","Kepong","Setapak","Wangsa Maju","Titiwangsa","Bukit Jalil","Segambut"],
+  "Putrajaya"       => ["Putrajaya"],
+  "Labuan"          => ["Victoria","Labuan Town"],
+];
+
+// District filter from GET
+$district = trim($_GET["district"] ?? "");
+$districtOptions = ($state !== "" && isset($allStateDistricts[$state])) ? $allStateDistricts[$state] : [];
 
 // edit mode
 $editId = (int)($_GET["edit_id"] ?? 0);
@@ -74,6 +84,15 @@ if ($state !== "") {
     $params[] = $state;
     $types .= "s";
 }
+// District filter (only when state is also selected)
+if ($district !== "" && $state !== "" && in_array($district, ($allStateDistricts[$state] ?? []), true)) {
+    $dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+    if ($dcCheck && $dcCheck->num_rows > 0) {
+        $baseSql .= " AND district = ?";
+        $params[] = $district;
+        $types .= "s";
+    }
+}
 if ($category !== "" && in_array($category, $categoryOptions, true)) {
     $baseSql .= " AND category = ?";
     $params[] = $category;
@@ -96,7 +115,12 @@ if ($page > $totalPages) {
 }
 
 // 2) LIST with LIMIT/OFFSET
-$sql = "SELECT place_id, state, name, category, estimated_cost, is_active, image_url, updated_at, created_at"
+// Check if district column exists
+$distColChk = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$adminHasDistCol = ($distColChk && $distColChk->num_rows > 0);
+$adminDistrictCol = $adminHasDistCol ? ", district" : "";
+
+$sql = "SELECT place_id, state{$adminDistrictCol}, name, category, estimated_cost, is_active, image_url, updated_at, created_at"
     . $baseSql
     . " ORDER BY place_id DESC LIMIT ? OFFSET ?";
 
@@ -255,12 +279,31 @@ $stmt->close();
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">State *</label><br>
-                                <select name="state" required
-                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <select name="state" id="adminStateSelect" required
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"
+                                    onchange="adminUpdateDistricts(this.value)">
                                     <option value="" disabled <?php echo empty($editRow["state"] ?? "") ? "selected" : ""; ?>>Choose a state</option>
                                     <?php foreach ($stateOptions as $s): ?>
                                         <option value="<?php echo htmlspecialchars($s); ?>" <?php echo (($editRow["state"] ?? "") === $s) ? "selected" : ""; ?>>
                                             <?php echo htmlspecialchars($s); ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+
+                            <div class="col-3">
+                                <label style="font-size:13px; font-weight:800;">District</label><br>
+                                <?php
+                                $editState = $editRow["state"] ?? "";
+                                $editDistrict = $editRow["district"] ?? "";
+                                $editDistrictOpts = ($editState !== "" && isset($allStateDistricts[$editState])) ? $allStateDistricts[$editState] : [];
+                                ?>
+                                <select name="district" id="adminDistrictSelect"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                    <option value="">-- Select district (optional) --</option>
+                                    <?php foreach ($editDistrictOpts as $d): ?>
+                                        <option value="<?php echo htmlspecialchars($d); ?>" <?php echo ($editDistrict === $d) ? "selected" : ""; ?>>
+                                            <?php echo htmlspecialchars($d); ?>
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
@@ -527,7 +570,12 @@ $stmt->close();
                                 <?php while ($r = $list->fetch_assoc()): ?>
                                     <tr>
                                         <td><?php echo (int)$r["place_id"]; ?></td>
-                                        <td><?php echo htmlspecialchars($r["state"]); ?></td>
+                                        <td>
+                                            <?php echo htmlspecialchars($r["state"]); ?>
+                                            <?php if (!empty($r["district"])): ?>
+                                            <div style="font-size:11px; color:#4338ca; font-weight:700;"><?php echo htmlspecialchars($r["district"]); ?></div>
+                                            <?php endif; ?>
+                                        </td>
                                         <td>
                                             <?php
                                             $raw = trim((string)($r["image_url"] ?? ""));
@@ -592,6 +640,22 @@ $stmt->close();
             </section>
         </main>
     </div>
-</body>
+<script>
+var adminDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
 
+function adminUpdateDistricts(selectedState) {
+    var distSel = document.getElementById('adminDistrictSelect');
+    if (!distSel) return;
+    distSel.innerHTML = '<option value="">-- Select district (optional) --</option>';
+    if (selectedState && adminDistrictsMap[selectedState]) {
+        adminDistrictsMap[selectedState].forEach(function(d) {
+            var opt = document.createElement('option');
+            opt.value = d;
+            opt.textContent = d;
+            distSel.appendChild(opt);
+        });
+    }
+}
+</script>
+</body>
 </html>
