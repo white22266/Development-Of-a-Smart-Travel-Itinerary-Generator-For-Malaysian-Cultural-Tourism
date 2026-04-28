@@ -31,11 +31,15 @@ $stmt->close();
 if (!$it) { header("Location: my_itineraries.php"); exit; }
 
 // Load all itinerary items with place details
+$dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$hasDistrictCol = ($dcCheck && $dcCheck->num_rows > 0);
+$districtJoinCol = $hasDistrictCol ? "cp.district" : "NULL AS district";
+
 $stmt = $conn->prepare("
     SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id,
            ii.item_title, ii.estimated_cost, ii.distance_km, ii.travel_time_min,
            ii.start_time, ii.end_time, ii.notes,
-           cp.latitude, cp.longitude, cp.address, cp.category, cp.state, cp.district,
+           cp.latitude, cp.longitude, cp.address, cp.category, cp.state, {$districtJoinCol},
            cp.opening_hours
     FROM itinerary_items ii
     LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
@@ -52,7 +56,15 @@ while ($r = $res->fetch_assoc()) {
     $days[(int)$r["day_no"]][] = $r;
 }
 $totalDays     = (int)$it["total_days"];
-$transportType = $it["transport_type"] ?? "car";
+$transportType = strtolower(trim(str_replace("-", "_", (string)($it["transport_type"] ?? "car"))));
+$transportType = preg_replace("/\s+/", "_", $transportType) ?? $transportType;
+if (in_array($transportType, ["public", "publictransit", "public_transit", "transit", "bus", "train"], true)) {
+    $transportType = "public_transport";
+} elseif (in_array($transportType, ["drive", "driving"], true)) {
+    $transportType = "car";
+} elseif ($transportType === "walk") {
+    $transportType = "walking";
+}
 $startDate     = $it["start_date"] ?? null;
 
 // Load nearby hotels
@@ -90,6 +102,8 @@ function buildTimetable(array $items, string $transportType): array
 
     foreach ($items as $i => $item) {
         $type      = $item["item_type"] ?? "attraction";
+        $dbStartMin = sqlTimeToMinutes($item["start_time"] ?? null);
+        $dbEndMin   = sqlTimeToMinutes($item["end_time"] ?? null);
         $travelMin = 0;
         if ($i > 0) {
             if ($item["distance_km"] !== null && (float)$item["distance_km"] > 0) {
@@ -101,7 +115,7 @@ function buildTimetable(array $items, string $transportType): array
                 $travelMin = ($transportType === 'walking') ? 20 : 15;
             }
         }
-        $cursor += $travelMin;
+        $cursor = $dbStartMin ?? ($cursor + $travelMin);
         $duration = match($type) {
             'attraction', 'heritage', 'museum', 'culture' => 120,
             'food'     => 60,
@@ -109,16 +123,23 @@ function buildTimetable(array $items, string $transportType): array
             'hotel'    => 30,
             default    => 90,
         };
+        $endMin = $dbEndMin ?? ($cursor + $duration);
         $schedule[] = array_merge($item, [
             '_travel_min' => $travelMin,
             '_start_min'  => $cursor,
-            '_end_min'    => $cursor + $duration,
+            '_end_min'    => $endMin,
             '_start_fmt'  => minutesToTime($cursor),
-            '_end_fmt'    => minutesToTime($cursor + $duration),
+            '_end_fmt'    => minutesToTime($endMin),
         ]);
-        $cursor += $duration;
+        $cursor = $endMin;
     }
     return $schedule;
+}
+
+function sqlTimeToMinutes(?string $time): ?int
+{
+    if (!$time || !preg_match('/^(\d{1,2}):(\d{2})/', $time, $m)) return null;
+    return ((int)$m[1] * 60) + (int)$m[2];
 }
 
 function minutesToTime(int $min): string
@@ -1040,6 +1061,7 @@ function renderDay(day) {
 }
 
 function getTravelMode(mode) {
+    mode = normalizeTransportMode(mode);
     const m = {
         car: google.maps.TravelMode.DRIVING,
         motorcycle: google.maps.TravelMode.DRIVING,
@@ -1084,6 +1106,7 @@ function showDay(d) {
 }
 
 function setTransport(mode) {
+    mode = normalizeTransportMode(mode);
     currentTransport = mode;
     document.querySelectorAll('.transport-btn').forEach(btn => btn.classList.remove('active'));
     const modeMap = { car: 0, motorcycle: 1, public_transport: 2, walking: 3 };
@@ -1095,6 +1118,15 @@ function setTransport(mode) {
     const labels = { car: 'Car', motorcycle: 'Motorcycle', public_transport: 'Public Transport', walking: 'Walk' };
     const lbl = document.getElementById('transitModeLabel');
     if (lbl) lbl.innerHTML = `Transport: <strong>${labels[mode] || mode}</strong> &nbsp;·&nbsp; Click <strong>"Show Route"</strong> between stops for step-by-step directions.`;
+}
+
+function normalizeTransportMode(mode) {
+    const m = String(mode || 'car').toLowerCase().trim().replace(/[-\s]+/g, '_');
+    if (['public', 'public_transport', 'publictransit', 'public_transit', 'transit', 'bus', 'train'].includes(m)) return 'public_transport';
+    if (['drive', 'driving'].includes(m)) return 'car';
+    if (m === 'walk') return 'walking';
+    if (m === 'motorbike' || m === 'bike') return 'motorcycle';
+    return ['car', 'motorcycle', 'public_transport', 'walking'].includes(m) ? m : 'car';
 }
 
 function focusPlace(lat, lng, title) {

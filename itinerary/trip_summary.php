@@ -47,7 +47,7 @@ $districtJoinCol = $hasDistrictCol ? ", cp.district" : "";
 
 $stmt = $conn->prepare("
     SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type,
-           ii.item_title, ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
+           ii.item_title, ii.start_time, ii.end_time, ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
            cp.latitude, cp.longitude, cp.state{$districtJoinCol}, cp.category, cp.address
     FROM itinerary_items ii
     LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
@@ -255,11 +255,18 @@ $interests = $it["interests"] ?? "-";
                     </div>
                     <div class="table-wrap">
                         <table>
-                            <thead><tr><th>#</th><th>Place</th><th>Type</th><th>Cost (RM)</th><th>Distance (km)</th><th>Time (min)</th></tr></thead>
+                            <thead><tr><th>#</th><th>Time</th><th>Place</th><th>Type</th><th>Cost (RM)</th><th>Distance (km)</th><th>Travel</th></tr></thead>
                             <tbody>
                                 <?php $dayTotal = 0.0; foreach ($items as $r): $dayTotal += (float)$r["estimated_cost"]; ?>
                                 <tr>
                                     <td><?php echo (int)$r["sequence_no"]; ?></td>
+                                    <td>
+                                        <?php if (!empty($r["start_time"]) && !empty($r["end_time"])): ?>
+                                            <?php echo date('g:i A', strtotime($r["start_time"])); ?> - <?php echo date('g:i A', strtotime($r["end_time"])); ?>
+                                        <?php else: ?>
+                                            &mdash;
+                                        <?php endif; ?>
+                                    </td>
                                     <td>
                                         <strong><?php echo htmlspecialchars($r["item_title"]); ?></strong>
                                         <?php if (!empty($r["state"])): ?>
@@ -278,7 +285,7 @@ $interests = $it["interests"] ?? "-";
                                 </tr>
                                 <?php endforeach; ?>
                                 <tr style="background:#f8fafc;">
-                                    <td colspan="3" style="text-align:right;font-weight:900;">Day <?php echo (int)$day; ?> Attraction Total:</td>
+                                    <td colspan="4" style="text-align:right;font-weight:900;">Day <?php echo (int)$day; ?> Attraction Total:</td>
                                     <td style="font-weight:900;">RM <?php echo number_format($dayTotal,2); ?></td>
                                     <td colspan="2"></td>
                                 </tr>

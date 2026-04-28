@@ -275,6 +275,8 @@ $stmt = $conn->prepare("
         ii.sequence_no,
         ii.item_type,
         ii.item_title,
+        ii.start_time,
+        ii.end_time,
         ii.estimated_cost,
         ii.notes,
         ii.distance_km,
@@ -357,6 +359,13 @@ foreach ($days as $dayNo => $items) {
         }
 
         $html .= "<div class='row'><span class='k'>Category:</span> " . esc($x["item_type"]) . "</div>";
+        if (!empty($x["start_time"]) && !empty($x["end_time"])) {
+            $html .= "<div class='row'><span class='k'>Scheduled Time:</span> "
+                . esc(date("g:i A", strtotime($x["start_time"])))
+                . " - "
+                . esc(date("g:i A", strtotime($x["end_time"])))
+                . "</div>";
+        }
         $html .= "<div class='row'><span class='k'>Estimated Cost (RM):</span> " . number_format((float)($x["estimated_cost"] ?? 0), 2) . "</div>";
 
         if (!empty($x["opening_hours"])) {

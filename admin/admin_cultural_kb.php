@@ -2,6 +2,7 @@
 // admin/admin_cultural_kb.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/api_keys.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
     header("Location: ../auth/login.php?role=admin");
@@ -272,7 +273,7 @@ $stmt->close();
                         <div class="grid" style="gap:12px;">
                             <div class="col-6">
                                 <label style="font-size:13px; font-weight:800;">Name *</label><br>
-                                <input type="text" name="name" required
+                                <input type="text" name="name" id="adminPlaceNameInput" required
                                     value="<?php echo htmlspecialchars($editRow["name"] ?? ""); ?>"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
@@ -324,20 +325,22 @@ $stmt->close();
 
                             <div class="col-12">
                                 <label style="font-size:13px; font-weight:800;">Description</label><br>
-                                <textarea name="description" rows="6"
+                                <textarea name="description" id="adminDescriptionInput" rows="6"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"><?php echo htmlspecialchars($editRow["description"] ?? ""); ?></textarea>
                             </div>
 
                             <div class="col-6">
                                 <label style="font-size:13px; font-weight:800;">Address</label><br>
-                                <input type="text" name="address"
+                                <input type="text" name="address" id="adminAddressAutocomplete"
                                     value="<?php echo htmlspecialchars($editRow["address"] ?? ""); ?>"
+                                    placeholder="Start typing a place or address..."
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <div class="meta" style="margin-top:6px;">Select a Google Maps suggestion to auto-fill coordinates.</div>
                             </div>
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Latitude</label><br>
-                                <input type="text" name="latitude"
+                                <input type="text" name="latitude" id="adminLatitudeInput"
                                     value="<?php echo htmlspecialchars($editRow["latitude"] ?? ""); ?>"
                                     placeholder="e.g. 1.8540000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
@@ -345,26 +348,48 @@ $stmt->close();
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Longitude</label><br>
-                                <input type="text" name="longitude"
+                                <input type="text" name="longitude" id="adminLongitudeInput"
                                     value="<?php echo htmlspecialchars($editRow["longitude"] ?? ""); ?>"
                                     placeholder="e.g. 102.9330000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3">
-                                <label style="font-size:13px; font-weight:800;">Estimated Cost (RM)</label><br>
+                                <label style="font-size:13px; font-weight:800;">Entrance Fee (RM)</label><br>
                                 <input type="number" step="0.01" min="0" name="estimated_cost"
-                                    value="<?php echo htmlspecialchars($editRow["estimated_cost"] ?? "0.00"); ?>"
+                                    value="<?php echo htmlspecialchars($editRow["entrance_fee"] ?? $editRow["estimated_cost"] ?? "0.00"); ?>"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            </div>
+
+                            <div class="col-3">
+                                <label style="font-size:13px; font-weight:800;">Visit Duration (minutes)</label><br>
+                                <input type="number" step="15" min="30" max="360" name="visit_duration_min"
+                                    value="<?php echo htmlspecialchars($editRow["visit_duration_min"] ?? "90"); ?>"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            </div>
+
+                            <div class="col-3">
+                                <label style="font-size:13px; font-weight:800;">Halal Status</label><br>
+                                <?php $halalValue = array_key_exists("halal_status", $editRow ?? []) ? (string)$editRow["halal_status"] : ""; ?>
+                                <select name="halal_status"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                    <option value="" <?php echo $halalValue === "" ? "selected" : ""; ?>>Not applicable / unknown</option>
+                                    <option value="1" <?php echo $halalValue === "1" ? "selected" : ""; ?>>Halal available</option>
+                                    <option value="0" <?php echo $halalValue === "0" ? "selected" : ""; ?>>Not halal / not certified</option>
+                                </select>
                             </div>
 
                             <div class="col-6">
                                 <label style="font-size:13px; font-weight:800;">Opening Hours</label><br>
-                                <input type="text" name="opening_hours"
+                                <input type="text" name="opening_hours" id="adminOpeningHoursInput"
                                     value="<?php echo htmlspecialchars($editRow["opening_hours"] ?? ""); ?>"
                                     placeholder="e.g. 9:00 AM - 4:30 PM"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
+
+                            <input type="hidden" name="website_url" id="adminWebsiteUrlInput" value="<?php echo htmlspecialchars($editRow["website_url"] ?? ""); ?>">
+                            <input type="hidden" name="phone_number" id="adminPhoneNumberInput" value="<?php echo htmlspecialchars($editRow["phone_number"] ?? ""); ?>">
+                            <input type="hidden" name="avg_rating" id="adminAvgRatingInput" value="<?php echo htmlspecialchars($editRow["avg_rating"] ?? ""); ?>">
 
                             <div class="col-12">
                                 <label style="font-size:13px; font-weight:800;">Place Image</label><br>
@@ -656,6 +681,130 @@ function adminUpdateDistricts(selectedState) {
         });
     }
 }
+
+function normalizeMalaysiaState(rawState) {
+    var s = (rawState || '').toLowerCase();
+    if (s.indexOf('kuala lumpur') !== -1) return 'Kuala Lumpur';
+    if (s.indexOf('putrajaya') !== -1) return 'Putrajaya';
+    if (s.indexOf('labuan') !== -1) return 'Labuan';
+    if (s.indexOf('penang') !== -1 || s.indexOf('pulau pinang') !== -1) return 'Penang';
+    if (s.indexOf('malacca') !== -1) return 'Melaka';
+    var known = <?php echo json_encode($stateOptions); ?>;
+    for (var i = 0; i < known.length; i++) {
+        if (s.indexOf(known[i].toLowerCase()) !== -1) return known[i];
+    }
+    return '';
+}
+
+function componentLongName(place, type) {
+    if (!place.address_components) return '';
+    for (var i = 0; i < place.address_components.length; i++) {
+        var c = place.address_components[i];
+        if (c.types && c.types.indexOf(type) !== -1) return c.long_name || '';
+    }
+    return '';
+}
+
+function formatOpeningHours(place) {
+    if (!place.opening_hours) return '';
+    if (place.opening_hours.weekday_text && place.opening_hours.weekday_text.length) {
+        return place.opening_hours.weekday_text.join('; ');
+    }
+    return '';
+}
+
+function generateStarterDescription(place, state, district) {
+    var name = place.name || 'This place';
+    var type = '';
+    if (place.types && place.types.length) {
+        type = place.types
+            .filter(function(t) { return ['point_of_interest', 'establishment', 'tourist_attraction'].indexOf(t) === -1; })
+            .slice(0, 2)
+            .map(function(t) { return t.replace(/_/g, ' '); })
+            .join(' and ');
+    }
+    var location = [district, state].filter(Boolean).join(', ');
+    var sentence = name + (location ? ' is located in ' + location : ' is a Malaysian place of interest') + '.';
+    if (type) sentence += ' It is listed on Google Maps as ' + type + '.';
+    sentence += ' Add verified cultural background, visitor etiquette, and local significance before publishing.';
+    return sentence;
+}
+
+function initPlaceAutocomplete() {
+    var addressInput = document.getElementById('adminAddressAutocomplete');
+    if (!addressInput || !window.google || !google.maps || !google.maps.places) return;
+
+    var autocomplete = new google.maps.places.Autocomplete(addressInput, {
+        componentRestrictions: { country: 'my' },
+        fields: [
+            'name', 'formatted_address', 'geometry', 'address_components',
+            'opening_hours', 'photos', 'formatted_phone_number', 'website',
+            'rating', 'editorial_summary', 'types'
+        ],
+    });
+
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (!place || !place.geometry || !place.geometry.location) return;
+
+        var nameInput = document.getElementById('adminPlaceNameInput');
+        var latInput = document.getElementById('adminLatitudeInput');
+        var lngInput = document.getElementById('adminLongitudeInput');
+        var stateSelect = document.getElementById('adminStateSelect');
+        var districtSelect = document.getElementById('adminDistrictSelect');
+        var openingInput = document.getElementById('adminOpeningHoursInput');
+        var descriptionInput = document.getElementById('adminDescriptionInput');
+        var imageInput = document.getElementById('image_url');
+        var websiteInput = document.getElementById('adminWebsiteUrlInput');
+        var phoneInput = document.getElementById('adminPhoneNumberInput');
+        var ratingInput = document.getElementById('adminAvgRatingInput');
+
+        addressInput.value = place.formatted_address || addressInput.value;
+        if (nameInput && !nameInput.value.trim() && place.name) nameInput.value = place.name;
+        if (latInput) latInput.value = place.geometry.location.lat().toFixed(7);
+        if (lngInput) lngInput.value = place.geometry.location.lng().toFixed(7);
+
+        var state = normalizeMalaysiaState(componentLongName(place, 'administrative_area_level_1'));
+        if (stateSelect && state) {
+            stateSelect.value = state;
+            adminUpdateDistricts(state);
+        }
+
+        var district = componentLongName(place, 'locality') ||
+            componentLongName(place, 'administrative_area_level_2') ||
+            componentLongName(place, 'sublocality');
+        if (districtSelect && district) {
+            for (var i = 0; i < districtSelect.options.length; i++) {
+                if (districtSelect.options[i].value.toLowerCase() === district.toLowerCase()) {
+                    districtSelect.value = districtSelect.options[i].value;
+                    break;
+                }
+            }
+        }
+
+        var openingText = formatOpeningHours(place);
+        if (openingInput && openingText) openingInput.value = openingText;
+        if (websiteInput && place.website) websiteInput.value = place.website;
+        if (phoneInput && place.formatted_phone_number) phoneInput.value = place.formatted_phone_number;
+        if (ratingInput && place.rating) ratingInput.value = Number(place.rating).toFixed(2);
+
+        if (imageInput && place.photos && place.photos.length) {
+            imageInput.value = place.photos[0].getUrl({ maxWidth: 1200, maxHeight: 900 });
+            imageInput.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+
+        if (descriptionInput && !descriptionInput.value.trim()) {
+            if (place.editorial_summary && place.editorial_summary.overview) {
+                descriptionInput.value = place.editorial_summary.overview;
+            } else {
+                descriptionInput.value = generateStarterDescription(place, state, district);
+            }
+        }
+    });
+}
 </script>
+<?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>
+<?php endif; ?>
 </body>
 </html>

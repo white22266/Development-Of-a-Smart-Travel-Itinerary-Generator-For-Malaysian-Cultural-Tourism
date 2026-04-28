@@ -31,7 +31,8 @@ $oLat   = (float)($_POST['o_lat']  ?? 0);
 $oLng   = (float)($_POST['o_lng']  ?? 0);
 $dLat   = (float)($_POST['d_lat']  ?? 0);
 $dLng   = (float)($_POST['d_lng']  ?? 0);
-$mode   = trim((string)($_POST['mode']   ?? 'transit'));
+$mode   = strtolower(trim(str_replace('-', '_', (string)($_POST['mode'] ?? 'transit'))));
+$mode   = preg_replace('/\s+/', '_', $mode) ?? $mode;
 $depart = trim((string)($_POST['depart'] ?? 'now'));
 
 // Validate
@@ -45,6 +46,7 @@ $googleMode = match($mode) {
     'car', 'driving', 'motorcycle' => 'driving',
     'walking', 'walk'              => 'walking',
     'bicycling', 'bike'            => 'bicycling',
+    'public', 'public_transport', 'publictransit', 'public_transit', 'transit', 'bus', 'train' => 'transit',
     default                        => 'transit',
 };
 

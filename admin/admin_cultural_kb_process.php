@@ -17,6 +17,73 @@ function back($msg, $isError = false)
     header("Location: admin_cultural_kb.php");
     exit;
 }
+
+function table_has_column(mysqli $conn, string $table, string $column): bool
+{
+    $table = $conn->real_escape_string($table);
+    $column = $conn->real_escape_string($column);
+    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+    return ($res && $res->num_rows > 0);
+}
+
+function update_supervisor_place_fields(mysqli $conn, int $placeId, float $entranceFee, ?int $halalStatus, int $visitDurationMin): void
+{
+    $sets = [];
+    $params = [];
+    $types = "";
+
+    if (table_has_column($conn, "cultural_places", "entrance_fee")) {
+        $sets[] = "entrance_fee = ?";
+        $params[] = $entranceFee;
+        $types .= "d";
+    }
+    if (table_has_column($conn, "cultural_places", "is_free")) {
+        $sets[] = "is_free = ?";
+        $params[] = ($entranceFee <= 0.0) ? 1 : 0;
+        $types .= "i";
+    }
+    if (table_has_column($conn, "cultural_places", "halal_status")) {
+        $sets[] = "halal_status = ?";
+        $params[] = $halalStatus;
+        $types .= "i";
+    }
+    if (table_has_column($conn, "cultural_places", "visit_duration_min")) {
+        $sets[] = "visit_duration_min = ?";
+        $params[] = max(30, min(360, $visitDurationMin));
+        $types .= "i";
+    }
+    if (table_has_column($conn, "cultural_places", "website_url")) {
+        $sets[] = "website_url = ?";
+        $params[] = trim((string)($_POST["website_url"] ?? ""));
+        $types .= "s";
+    }
+    if (table_has_column($conn, "cultural_places", "phone_number")) {
+        $sets[] = "phone_number = ?";
+        $params[] = trim((string)($_POST["phone_number"] ?? ""));
+        $types .= "s";
+    }
+    if (table_has_column($conn, "cultural_places", "avg_rating")) {
+        $ratingRaw = trim((string)($_POST["avg_rating"] ?? ""));
+        if ($ratingRaw === "") {
+            $sets[] = "avg_rating = NULL";
+        } else {
+            $sets[] = "avg_rating = ?";
+            $params[] = max(0.0, min(5.0, (float)$ratingRaw));
+            $types .= "d";
+        }
+    }
+
+    if (empty($sets)) return;
+
+    $params[] = $placeId;
+    $types .= "i";
+
+    $stmt = $conn->prepare("UPDATE cultural_places SET " . implode(", ", $sets) . " WHERE place_id = ?");
+    $stmt->bind_param($types, ...$params);
+    $stmt->execute();
+    $stmt->close();
+}
+
 $action = strtolower(trim($_POST["action"] ?? $_GET["action"] ?? ""));
 /* ================= DELETE ================= */
 if ($action === "delete") {
@@ -76,6 +143,10 @@ if ($action === "create" || $action === "update") {
     $opening = trim($_POST["opening_hours"] ?? "");
 
     $cost = (float)($_POST["estimated_cost"] ?? 0);
+    $halalRaw = trim((string)($_POST["halal_status"] ?? ""));
+    $halalStatus = ($halalRaw === "") ? null : (($halalRaw === "1") ? 1 : 0);
+    $visitDurationMin = (int)($_POST["visit_duration_min"] ?? 90);
+    if ($visitDurationMin <= 0) $visitDurationMin = 90;
     $isActive = (int)($_POST["is_active"] ?? 1);
     $isActive = ($isActive === 0) ? 0 : 1;
     // --- NEW: handle remove checkbox + pasted URL ---
@@ -135,7 +206,11 @@ if ($action === "create" || $action === "update") {
         }
 
         $stmt->execute();
+        $newPlaceId = (int)$stmt->insert_id;
         $stmt->close();
+        if ($newPlaceId > 0) {
+            update_supervisor_place_fields($conn, $newPlaceId, $cost, $halalStatus, $visitDurationMin);
+        }
 
         back("Place added successfully.");
     }
@@ -208,6 +283,7 @@ if ($action === "create" || $action === "update") {
 
     $stmt->execute();
     $stmt->close();
+    update_supervisor_place_fields($conn, $placeId, $cost, $halalStatus, $visitDurationMin);
 
     back("Place updated successfully.");
 }
