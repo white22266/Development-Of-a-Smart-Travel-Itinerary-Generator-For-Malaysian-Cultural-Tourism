@@ -111,10 +111,10 @@ function sendResetPasswordEmail(string $toEmail, string $toName, string $newPass
   // ===== SMTP CONFIG (EDIT THESE) =====
   $SMTP_HOST  = "smtp.gmail.com";
   $SMTP_PORT  = 587; // 587 STARTTLS, 465 SMTPS
-  $SMTP_USER  = "peckjianhao0226@gmail.com";
-  $SMTP_PASS  = "itbn jnok xcvo wmna"; // Gmail App Password
+  $SMTP_USER  = "adminpeck2222@gmail.com";
+  $SMTP_PASS  = "vuuu imdy uqrl uwro"; // Gmail App Password
   $FROM_EMAIL = $SMTP_USER;
-  $FROM_NAME  = "Smart Travel Itinerary Generator";
+  $FROM_NAME  = "Admin from Smart Travel Itinerary Generator";
   // ===================================
 
   // FIXED: App Password should not contain spaces
