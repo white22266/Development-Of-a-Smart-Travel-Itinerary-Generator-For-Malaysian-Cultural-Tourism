@@ -100,7 +100,15 @@ class CostEstimationService
     ): array {
         // ---- 1. Attraction cost ----
         $attractionCost = 0.0;
+        $selectedHotelCost = 0.0;
+        $selectedHotelCount = 0;
         foreach ($itineraryItems as $item) {
+            $type = strtolower((string)($item['item_type'] ?? ''));
+            if ($type === 'hotel') {
+                $selectedHotelCost += (float)($item['estimated_cost'] ?? 0);
+                $selectedHotelCount++;
+                continue;
+            }
             $attractionCost += (float)($item['estimated_cost'] ?? 0);
         }
 
@@ -109,9 +117,15 @@ class CostEstimationService
         $transportCost = round($totalDistanceKm * $rate, 2);
 
         // ---- 3. Accommodation cost ----
-        $nights            = max(0, $this->tripDays - 1); // last night not counted
-        $hotelRate         = ($hotelRatePerNight > 0) ? $hotelRatePerNight : self::DEFAULT_HOTEL_RATE;
-        $accommodationCost = round($nights * $hotelRate, 2);
+        $nights    = max(0, $this->tripDays - 1); // last night not counted
+        $hotelRate = ($hotelRatePerNight > 0) ? $hotelRatePerNight : self::DEFAULT_HOTEL_RATE;
+        if ($selectedHotelCost > 0) {
+            $accommodationCost = round($selectedHotelCost, 2);
+            $hotelNote = $selectedHotelCount . ' selected hotel item(s)';
+        } else {
+            $accommodationCost = round($nights * $hotelRate, 2);
+            $hotelNote = $nights . ' night(s) x RM ' . number_format($hotelRate, 2) . '/night';
+        }
 
         // ---- 4. Food cost ----
         $meals       = ($mealsPerDay > 0) ? $mealsPerDay : self::MEALS_PER_DAY;
@@ -149,7 +163,7 @@ class CostEstimationService
                 [
                     'label'  => 'Accommodation',
                     'amount' => $accommodationCost,
-                    'note'   => $nights . ' night(s) × RM ' . number_format($hotelRate, 2) . '/night',
+                    'note'   => $hotelNote,
                 ],
                 [
                     'label'  => 'Food & Meals',

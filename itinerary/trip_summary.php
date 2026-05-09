@@ -62,11 +62,15 @@ $stmt->close();
 $allItems  = [];
 $byDay     = [];
 $lastPlace = null;
+$selectedHotels = [];
 
 while ($r = $res->fetch_assoc()) {
     $d           = (int)$r["day_no"];
     $byDay[$d][] = $r;
     $allItems[]  = $r;
+    if (strtolower((string)($r["item_type"] ?? "")) === "hotel") {
+        $selectedHotels[] = $r;
+    }
     if (!empty($r["latitude"]) && !empty($r["longitude"])) {
         $lastPlace = $r;
     }
@@ -241,6 +245,27 @@ $interests = $it["interests"] ?? "-";
                 </div>
             </div>
 
+            <?php if (!empty($selectedHotels)): ?>
+            <div class="card col-12">
+                <h3>Selected Hotel</h3>
+                <p class="meta">Hotel chosen during itinerary review. Its accommodation cost is included in the total estimate.</p>
+                <?php foreach ($selectedHotels as $hotelItem): ?>
+                <div class="hotel-card">
+                    <div>
+                        <div class="hotel-name"><?php echo htmlspecialchars($hotelItem["item_title"]); ?></div>
+                        <?php if (!empty($hotelItem["notes"])): ?>
+                            <div class="hotel-meta"><?php echo htmlspecialchars($hotelItem["notes"]); ?></div>
+                        <?php endif; ?>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="hotel-price">RM <?php echo number_format((float)$hotelItem["estimated_cost"], 2); ?></div>
+                        <div style="font-size:11px;color:var(--muted);">accommodation total</div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+
             <!-- DAY-BY-DAY -->
             <div class="card col-12">
                 <h3>Day-by-Day Itinerary</h3>
@@ -285,7 +310,7 @@ $interests = $it["interests"] ?? "-";
                                 </tr>
                                 <?php endforeach; ?>
                                 <tr style="background:#f8fafc;">
-                                    <td colspan="4" style="text-align:right;font-weight:900;">Day <?php echo (int)$day; ?> Attraction Total:</td>
+                                    <td colspan="4" style="text-align:right;font-weight:900;">Day <?php echo (int)$day; ?> Total:</td>
                                     <td style="font-weight:900;">RM <?php echo number_format($dayTotal,2); ?></td>
                                     <td colspan="2"></td>
                                 </tr>
@@ -299,7 +324,7 @@ $interests = $it["interests"] ?? "-";
             <!-- HOTEL RECOMMENDATIONS -->
             <?php if (!empty($recommendedHotels)): ?>
             <div class="card col-12">
-                <h3>Recommended Hotels</h3>
+                <h3><?php echo !empty($selectedHotels) ? "Other Recommended Hotels" : "Recommended Hotels"; ?></h3>
                 <p class="meta">
                     Nearby hotels based on your last itinerary location.
                     <?php if ($budget > 0): ?>Filtered for budget up to RM <?php echo number_format($nightlyBudget,0); ?>/night.<?php endif; ?>

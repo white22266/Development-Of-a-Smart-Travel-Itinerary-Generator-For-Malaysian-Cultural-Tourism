@@ -9,6 +9,8 @@
 session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
+require_once "../services/CostEstimationService.php";
+require_once "../services/RouteService.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -37,6 +39,142 @@ if (!$own->get_result()->fetch_assoc()) {
 }
 $own->close();
 
+function item_type_from_category(string $category): string
+{
+    $cat = strtolower(trim($category));
+    if ($cat === "food") return "food";
+    if ($cat === "festival") return "festival";
+    return "attraction";
+}
+
+function table_has_column(mysqli $conn, string $table, string $column): bool
+{
+    $table = $conn->real_escape_string($table);
+    $column = $conn->real_escape_string($column);
+    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+    return ($res && $res->num_rows > 0);
+}
+
+function recalculate_itinerary_routes(mysqli $conn, int $itineraryId): void
+{
+    $metaStmt = $conn->prepare("
+        SELECT tp.transport_type
+        FROM itineraries i
+        LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
+        WHERE i.itinerary_id = ?
+        LIMIT 1
+    ");
+    if (!$metaStmt) return;
+    $metaStmt->bind_param("i", $itineraryId);
+    $metaStmt->execute();
+    $meta = $metaStmt->get_result()->fetch_assoc();
+    $metaStmt->close();
+
+    $transportType = RouteService::normalizeTransportType((string)($meta["transport_type"] ?? "car"));
+    $apiKey = defined("GOOGLE_MAPS_API_KEY") ? GOOGLE_MAPS_API_KEY : "";
+    $routeSvc = new RouteService($transportType, $apiKey);
+
+    $hasItemCoords = table_has_column($conn, "itinerary_items", "item_latitude")
+        && table_has_column($conn, "itinerary_items", "item_longitude");
+    $coordSelect = $hasItemCoords
+        ? "COALESCE(ii.item_latitude, cp.latitude) AS latitude, COALESCE(ii.item_longitude, cp.longitude) AS longitude"
+        : "cp.latitude, cp.longitude";
+
+    $itemsStmt = $conn->prepare("
+        SELECT ii.item_id, ii.place_id, {$coordSelect}
+        FROM itinerary_items ii
+        LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+        WHERE ii.itinerary_id = ?
+        ORDER BY ii.day_no, ii.sequence_no
+    ");
+    if (!$itemsStmt) return;
+    $itemsStmt->bind_param("i", $itineraryId);
+    $itemsStmt->execute();
+    $res = $itemsStmt->get_result();
+
+    $prevLat = null;
+    $prevLng = null;
+    $updates = [];
+    while ($row = $res->fetch_assoc()) {
+        $itemId = (int)$row["item_id"];
+        $lat = $row["latitude"] !== null ? (float)$row["latitude"] : null;
+        $lng = $row["longitude"] !== null ? (float)$row["longitude"] : null;
+        $hasCoord = $lat !== null && $lng !== null && !($lat === 0.0 && $lng === 0.0);
+
+        $distKm = null;
+        $timeMin = null;
+        if ($prevLat !== null && $prevLng !== null && $hasCoord) {
+            $seg = $routeSvc->getSegment($prevLat, $prevLng, $lat, $lng);
+            $distKm = (float)($seg["distance_km"] ?? 0);
+            $timeMin = (int)($seg["travel_time_min"] ?? 0);
+        }
+
+        $updates[] = [$distKm, $timeMin, $itemId];
+        if ($hasCoord) {
+            $prevLat = $lat;
+            $prevLng = $lng;
+        }
+    }
+    $itemsStmt->close();
+
+    $upd = $conn->prepare("UPDATE itinerary_items SET distance_km = ?, travel_time_min = ? WHERE item_id = ?");
+    if (!$upd) return;
+    foreach ($updates as [$distKm, $timeMin, $itemId]) {
+        $upd->bind_param("dii", $distKm, $timeMin, $itemId);
+        $upd->execute();
+    }
+    $upd->close();
+}
+
+function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
+{
+    $stmt = $conn->prepare("
+        SELECT i.total_days, tp.transport_type, tp.budget
+        FROM itineraries i
+        LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
+        WHERE i.itinerary_id = ?
+        LIMIT 1
+    ");
+    if (!$stmt) return;
+    $stmt->bind_param("i", $itineraryId);
+    $stmt->execute();
+    $meta = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    if (!$meta) return;
+
+    $itemsStmt = $conn->prepare("
+        SELECT item_type, estimated_cost, distance_km
+        FROM itinerary_items
+        WHERE itinerary_id = ?
+    ");
+    if (!$itemsStmt) return;
+    $itemsStmt->bind_param("i", $itineraryId);
+    $itemsStmt->execute();
+    $res = $itemsStmt->get_result();
+
+    $items = [];
+    $totalDistanceKm = 0.0;
+    while ($row = $res->fetch_assoc()) {
+        $items[] = $row;
+        $totalDistanceKm += (float)($row["distance_km"] ?? 0);
+    }
+    $itemsStmt->close();
+
+    $costService = new CostEstimationService(
+        (string)($meta["transport_type"] ?? "car"),
+        (int)($meta["total_days"] ?? 1),
+        (float)($meta["budget"] ?? 0)
+    );
+    $breakdown = $costService->calculate($items, $totalDistanceKm);
+    $total = (float)($breakdown["total_cost"] ?? 0);
+
+    $upd = $conn->prepare("UPDATE itineraries SET total_estimated_cost = ? WHERE itinerary_id = ?");
+    if (!$upd) return;
+    $upd->bind_param("di", $total, $itineraryId);
+    $upd->execute();
+    $upd->close();
+}
+
 // =========================================================
 // ACTION: confirm — delete rejected items, add hotel, resequence
 // =========================================================
@@ -59,6 +197,29 @@ if ($action === 'confirm') {
         }
     }
 
+    // Keep only one selected hotel for the itinerary.
+    $clearHotel = $conn->prepare("DELETE FROM itinerary_items WHERE itinerary_id = ? AND item_type = 'hotel'");
+    if ($clearHotel) {
+        $clearHotel->bind_param("i", $itineraryId);
+        $clearHotel->execute();
+        $clearHotel->close();
+    }
+    if (table_has_column($conn, "itineraries", "selected_hotel_id")) {
+        $clearSelectedHotel = $conn->prepare("
+            UPDATE itineraries
+            SET selected_hotel_id = NULL,
+                selected_hotel_name = NULL,
+                selected_hotel_nights = 0,
+                selected_hotel_total_cost = 0.00
+            WHERE itinerary_id = ?
+        ");
+        if ($clearSelectedHotel) {
+            $clearSelectedHotel->bind_param("i", $itineraryId);
+            $clearSelectedHotel->execute();
+            $clearSelectedHotel->close();
+        }
+    }
+
     // Add hotel as last item of last day (if selected)
     if ($hotelId > 0) {
         $hStmt = $conn->prepare("SELECT hotel_id, name, state, district, latitude, longitude, price_per_night FROM hotels WHERE hotel_id = ? AND is_active = 1 LIMIT 1");
@@ -68,6 +229,16 @@ if ($action === 'confirm') {
         $hStmt->close();
 
         if ($hotel) {
+            $daysStmt = $conn->prepare("SELECT total_days FROM itineraries WHERE itinerary_id = ? LIMIT 1");
+            $daysStmt->bind_param("i", $itineraryId);
+            $daysStmt->execute();
+            $daysRow = $daysStmt->get_result()->fetch_assoc();
+            $daysStmt->close();
+            $tripDays = max(1, (int)($daysRow["total_days"] ?? 1));
+            $nights = max(1, $tripDays - 1);
+            $nightlyRate = (float)($hotel["price_per_night"] ?? 0);
+            $hotelTotal = round($nightlyRate * $nights, 2);
+
             // Find last day_no and last sequence_no
             $lastDay = $conn->prepare("SELECT MAX(day_no) as md FROM itinerary_items WHERE itinerary_id = ?");
             $lastDay->bind_param("i", $itineraryId);
@@ -83,16 +254,58 @@ if ($action === 'confirm') {
             $lastSeq->close();
             $seqNo   = (int)($lsRow["ms"] ?? 0) + 1;
 
-            $hotelNote = "Hotel | " . ($hotel["district"] ? $hotel["district"] . ", " : "") . $hotel["state"];
-            $ins = $conn->prepare("
-                INSERT INTO itinerary_items
-                  (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, estimated_cost, notes)
-                VALUES
-                  (?, ?, ?, 'hotel', NULL, ?, ?, ?)
-            ");
-            $ins->bind_param("iiisds", $itineraryId, $dayNo, $seqNo, $hotel["name"], $hotel["price_per_night"], $hotelNote);
-            $ins->execute();
-            $ins->close();
+            $hotelNote = "Hotel | " . ($hotel["district"] ? $hotel["district"] . ", " : "") . $hotel["state"]
+                . " | RM " . number_format($nightlyRate, 2) . "/night x " . $nights . " night(s)";
+
+            $hasHotelIdCol = table_has_column($conn, "itinerary_items", "hotel_id");
+            $hasItemCoords = table_has_column($conn, "itinerary_items", "item_latitude")
+                && table_has_column($conn, "itinerary_items", "item_longitude");
+            $hotelDbId = (int)$hotel["hotel_id"];
+            $hotelLat = $hotel["latitude"] !== null ? (float)$hotel["latitude"] : null;
+            $hotelLng = $hotel["longitude"] !== null ? (float)$hotel["longitude"] : null;
+
+            if ($hasHotelIdCol && $hasItemCoords) {
+                $ins = $conn->prepare("
+                    INSERT INTO itinerary_items
+                      (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, item_latitude, item_longitude, estimated_cost, notes)
+                    VALUES
+                      (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?)
+                ");
+                $ins->bind_param("iiiisddds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelLat, $hotelLng, $hotelTotal, $hotelNote);
+            } elseif ($hasHotelIdCol) {
+                $ins = $conn->prepare("
+                    INSERT INTO itinerary_items
+                      (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, estimated_cost, notes)
+                    VALUES
+                      (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?)
+                ");
+                $ins->bind_param("iiiisds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelTotal, $hotelNote);
+            } else {
+                $ins = $conn->prepare("
+                    INSERT INTO itinerary_items
+                      (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, estimated_cost, notes)
+                    VALUES
+                      (?, ?, ?, 'hotel', NULL, ?, ?, ?)
+                ");
+                $ins->bind_param("iiisds", $itineraryId, $dayNo, $seqNo, $hotel["name"], $hotelTotal, $hotelNote);
+            }
+            if ($ins) {
+                $ins->execute();
+                $ins->close();
+            }
+
+            if (table_has_column($conn, "itineraries", "selected_hotel_id")) {
+                $selUpd = $conn->prepare("
+                    UPDATE itineraries
+                    SET selected_hotel_id = ?, selected_hotel_name = ?, selected_hotel_nights = ?, selected_hotel_total_cost = ?
+                    WHERE itinerary_id = ?
+                ");
+                if ($selUpd) {
+                    $selUpd->bind_param("isidi", $hotelDbId, $hotel["name"], $nights, $hotelTotal, $itineraryId);
+                    $selUpd->execute();
+                    $selUpd->close();
+                }
+            }
         }
     }
 
@@ -106,11 +319,8 @@ if ($action === 'confirm') {
         }
     }
 
-    // Update total cost
-    $costRes = $conn->query("SELECT SUM(estimated_cost) as tc FROM itinerary_items WHERE itinerary_id = $itineraryId");
-    $costRow = $costRes->fetch_assoc();
-    $total   = (float)($costRow["tc"] ?? 0);
-    $conn->query("UPDATE itineraries SET total_estimated_cost = $total WHERE itinerary_id = $itineraryId");
+    recalculate_itinerary_routes($conn, $itineraryId);
+    recalculate_itinerary_total($conn, $itineraryId);
 
     echo json_encode(['status' => 'success']);
     exit;
@@ -276,16 +486,22 @@ $best = $candidates[0];
 $newTitle = (string)($best["name"] ?? "");
 $newCost  = (float)($best["estimated_cost"] ?? 0);
 $newPid   = (int)($best["place_id"] ?? 0);
-$newNotes = "State: " . ($best["state"] ?? "") . " | Category: " . ($best["category"] ?? "");
+$newCategory = (string)($best["category"] ?? "");
+$newItemType = item_type_from_category($newCategory);
+$districtNote = !empty($best["district"]) ? " | District: " . $best["district"] : "";
+$newNotes = "State: " . ($best["state"] ?? "") . $districtNote . " | Category: " . $newCategory;
 
 $upd = $conn->prepare("
     UPDATE itinerary_items
-    SET place_id = ?, item_title = ?, estimated_cost = ?, notes = ?
+    SET place_id = ?, item_type = ?, item_title = ?, estimated_cost = ?, notes = ?
     WHERE item_id = ? AND itinerary_id = ?
 ");
-$upd->bind_param("isdsii", $newPid, $newTitle, $newCost, $newNotes, $itemId, $itineraryId);
+$upd->bind_param("issdsii", $newPid, $newItemType, $newTitle, $newCost, $newNotes, $itemId, $itineraryId);
 $upd->execute();
 $upd->close();
+
+recalculate_itinerary_routes($conn, $itineraryId);
+recalculate_itinerary_total($conn, $itineraryId);
 
 // ---- Match label ----
 $pct = $best["_pct"];
@@ -302,7 +518,8 @@ echo json_encode([
     'new_cost'     => $newCost,
     'new_state'    => $best["state"] ?? "",
     'new_district' => $best["district"] ?? "",
-    'new_category' => $best["category"] ?? "",
+    'new_category' => $newCategory,
+    'new_item_type' => $newItemType,
     'match_pct'    => $pct,
     'match_label'  => $matchLabel,
     'match_color'  => $matchColor,
