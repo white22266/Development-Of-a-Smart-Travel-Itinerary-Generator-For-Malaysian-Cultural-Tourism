@@ -47,9 +47,23 @@ class CostEstimationService
 
     public function __construct(string $transportType = 'car', int $tripDays = 1, float $budget = 0.0)
     {
-        $this->transportType = strtolower(trim($transportType));
+        $this->transportType = self::normalizeTransportType($transportType);
         $this->tripDays      = max(1, $tripDays);
         $this->budget        = $budget;
+    }
+
+    public static function normalizeTransportType(string $transportType): string
+    {
+        $t = strtolower(trim(str_replace('-', '_', $transportType)));
+        $t = preg_replace('/\s+/', '_', $t) ?? $t;
+
+        return match ($t) {
+            'public', 'public_transport', 'publictransit', 'public_transit', 'transit', 'bus', 'train' => 'public_transport',
+            'walk' => 'walking',
+            'drive', 'driving' => 'car',
+            'motorbike', 'bike' => 'motorcycle',
+            default => array_key_exists($t, self::TRANSPORT_RATE) ? $t : 'car',
+        };
     }
 
     // =========================================================
@@ -183,7 +197,7 @@ class CostEstimationService
      */
     public static function getTransportRate(string $transportType): float
     {
-        $t = strtolower(trim($transportType));
+        $t = self::normalizeTransportType($transportType);
         return self::TRANSPORT_RATE[$t] ?? 0.60;
     }
 

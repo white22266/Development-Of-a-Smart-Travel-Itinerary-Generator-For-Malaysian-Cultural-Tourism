@@ -20,10 +20,10 @@ $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 
 $tripDays  = (int)($_POST["trip_days"]      ?? 0);
 $budget    = (float)($_POST["budget"]       ?? 0);
-$transport = trim($_POST["transport_type"]  ?? "");
+$transport = strtolower(trim((string)($_POST["transport_type"] ?? "")));
 $interests = $_POST["interests"]            ?? [];
-$states    = $_POST["preferred_states"]     ?? [];
-$districts = $_POST["preferred_districts"]  ?? [];
+$states    = $_POST["preferred_states"]     ?? "";
+$districts = $_POST["preferred_districts"]  ?? "";
 
 // ---- Validation ----
 if ($travellerId <= 0) {
@@ -59,15 +59,19 @@ if (!is_array($interests) || count($interests) < 1) {
 $interestsStr = implode(",", array_unique(array_filter(array_map("trim", $interests))));
 
 $statesStr = "";
-if (is_array($states) && count($states) > 0) {
+if (is_array($states)) {
     $clean = array_unique(array_filter(array_map("trim", $states)));
     $statesStr = implode(",", $clean);
+} else {
+    $statesStr = trim((string)$states);
 }
 
 $districtsStr = "";
-if (is_array($districts) && count($districts) > 0) {
+if (is_array($districts)) {
     $clean = array_unique(array_filter(array_map("trim", $districts)));
     $districtsStr = implode(",", $clean);
+} else {
+    $districtsStr = trim((string)$districts);
 }
 
 if (!empty($errors)) {
@@ -77,8 +81,8 @@ if (!empty($errors)) {
         "budget"              => $budget,
         "transport_type"      => $transport,
         "interests"           => $interests,
-        "preferred_states"    => $states,
-        "preferred_districts" => $districts,
+        "preferred_states"    => $statesStr,
+        "preferred_districts" => $districtsStr,
     ];
     header("Location: preference_form.php");
     exit;
@@ -113,7 +117,7 @@ if ($hasDistrictCol) {
         header("Location: preference_form.php");
         exit;
     }
-    $stmt->bind_param("iidssss", $travellerId, $tripDays, $budget, $transport, $interestsStr, $statesStr);
+    $stmt->bind_param("iidsss", $travellerId, $tripDays, $budget, $transport, $interestsStr, $statesStr);
 }
 
 if ($stmt->execute()) {

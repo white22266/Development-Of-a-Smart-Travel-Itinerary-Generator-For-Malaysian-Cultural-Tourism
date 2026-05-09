@@ -42,6 +42,14 @@ function back($msg, $isError = false)
     exit;
 }
 
+function table_has_column(mysqli $conn, string $table, string $column): bool
+{
+    $table = $conn->real_escape_string($table);
+    $column = $conn->real_escape_string($column);
+    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+    return ($res && $res->num_rows > 0);
+}
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: suggest_place.php");
     exit;
@@ -49,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 $name = trim($_POST["name"] ?? "");
 $state = trim($_POST["state"] ?? "");
+$district = trim($_POST["district"] ?? "");
 $category = trim($_POST["category"] ?? "");
 $description = trim($_POST["description"] ?? "");
 
@@ -93,33 +102,67 @@ if (!empty($_FILES["image"]["name"]) && ($_FILES["image"]["error"] ?? UPLOAD_ERR
     // CHANGE: Save relative web path into DB (varchar)
     $imageUrl = "uploads/places/" . $fileName;
 }
+if ($imageUrl === null) {
+    $imageUrlInput = trim((string)($_POST["image_url"] ?? ""));
+    if ($imageUrlInput !== "") {
+        if (!preg_match('#^https?://#i', $imageUrlInput)) {
+            back("Image URL must start with http:// or https://", true);
+        }
+        $imageUrl = $imageUrlInput;
+    }
+}
 // ===================================================================
 
-$stmt = $conn->prepare("
-  INSERT INTO cultural_place_suggestions
-  (traveller_id, state, category, name, description, address, latitude, longitude, opening_hours, estimated_cost, image_url, status)
-  VALUES (?,?,?,?,?,?,?,?,?,?,?,'pending')
-");
+$hasSuggestionDistrict = table_has_column($conn, "cultural_place_suggestions", "district");
+
+if ($hasSuggestionDistrict) {
+    $stmt = $conn->prepare("
+      INSERT INTO cultural_place_suggestions
+      (traveller_id, state, district, category, name, description, address, latitude, longitude, opening_hours, estimated_cost, image_url, status)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,'pending')
+    ");
+} else {
+    $stmt = $conn->prepare("
+      INSERT INTO cultural_place_suggestions
+      (traveller_id, state, category, name, description, address, latitude, longitude, opening_hours, estimated_cost, image_url, status)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,'pending')
+    ");
+}
 
 if (!$stmt) back("System error: cannot submit suggestion. (" . $conn->error . ")", true);
 
-// CHANGE: bind types must match fields (image_url is string)
-// traveller_id(i), state(s), category(s), name(s), description(s), address(s),
-// latitude(s), longitude(s), opening_hours(s), estimated_cost(d), image_url(s)
-$stmt->bind_param(
-    "isssssddsds",
-    $travellerId,
-    $state,
-    $category,
-    $name,
-    $description,
-    $address,
-    $latitude,
-    $longitude,
-    $opening,
-    $cost,
-    $imageUrl
-);
+if ($hasSuggestionDistrict) {
+    $stmt->bind_param(
+        "issssssddsds",
+        $travellerId,
+        $state,
+        $district,
+        $category,
+        $name,
+        $description,
+        $address,
+        $latitude,
+        $longitude,
+        $opening,
+        $cost,
+        $imageUrl
+    );
+} else {
+    $stmt->bind_param(
+        "isssssddsds",
+        $travellerId,
+        $state,
+        $category,
+        $name,
+        $description,
+        $address,
+        $latitude,
+        $longitude,
+        $opening,
+        $cost,
+        $imageUrl
+    );
+}
 
 if (!$stmt->execute()) {
     $err = $stmt->error;

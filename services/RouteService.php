@@ -43,8 +43,22 @@ class RouteService
 
     public function __construct(string $transportType = 'car', ?string $apiKey = null)
     {
-        $this->transportType = strtolower(trim($transportType));
+        $this->transportType = self::normalizeTransportType($transportType);
         $this->apiKey        = $apiKey;
+    }
+
+    public static function normalizeTransportType(string $transportType): string
+    {
+        $t = strtolower(trim(str_replace('-', '_', $transportType)));
+        $t = preg_replace('/\s+/', '_', $t) ?? $t;
+
+        return match ($t) {
+            'public', 'public_transport', 'publictransit', 'public_transit', 'transit', 'bus', 'train' => 'public_transport',
+            'walk' => 'walking',
+            'drive', 'driving' => 'car',
+            'motorbike', 'bike' => 'motorcycle',
+            default => array_key_exists($t, self::SPEED_MAP) ? $t : 'car',
+        };
     }
 
     // =========================================================

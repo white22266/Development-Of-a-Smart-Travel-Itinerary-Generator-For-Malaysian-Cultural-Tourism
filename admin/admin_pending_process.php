@@ -18,6 +18,14 @@ function back($msg, $isError = false)
     exit;
 }
 
+function table_has_column(mysqli $conn, string $table, string $column): bool
+{
+    $table = $conn->real_escape_string($table);
+    $column = $conn->real_escape_string($column);
+    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+    return ($res && $res->num_rows > 0);
+}
+
 $action = strtolower(trim($_POST["action"] ?? ""));
 $suggestionId = (int)($_POST["suggestion_id"] ?? 0);
 $reviewNote = trim($_POST["review_note"] ?? "");
@@ -112,6 +120,40 @@ try {
     }
     $placeId = (int)$stmt->insert_id;
     $stmt->close();
+
+    $postSets = [];
+    $postParams = [];
+    $postTypes = "";
+
+    if (table_has_column($conn, "cultural_places", "district") && !empty($sug["district"])) {
+        $postSets[] = "district = ?";
+        $postParams[] = $sug["district"];
+        $postTypes .= "s";
+    }
+    if (table_has_column($conn, "cultural_places", "entrance_fee")) {
+        $postSets[] = "entrance_fee = ?";
+        $postParams[] = $cost;
+        $postTypes .= "d";
+    }
+    if (table_has_column($conn, "cultural_places", "is_free")) {
+        $postSets[] = "is_free = ?";
+        $postParams[] = ($cost <= 0.0) ? 1 : 0;
+        $postTypes .= "i";
+    }
+
+    if (!empty($postSets)) {
+        $postParams[] = $placeId;
+        $postTypes .= "i";
+        $stmt = $conn->prepare("UPDATE cultural_places SET " . implode(", ", $postSets) . " WHERE place_id = ?");
+        if (!$stmt) throw new Exception("Prepare update cultural_places metadata failed: " . $conn->error);
+        $stmt->bind_param($postTypes, ...$postParams);
+        if (!$stmt->execute()) {
+            $err = $stmt->error;
+            $stmt->close();
+            throw new Exception("Update cultural_places metadata failed: " . $err);
+        }
+        $stmt->close();
+    }
 
     // Allow optional review note for approval (can be blank)
     $reviewNoteOrNull = ($reviewNote === "") ? null : $reviewNote;

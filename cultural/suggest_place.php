@@ -2,6 +2,7 @@
 // cultural/suggest_place.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/api_keys.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -131,19 +132,26 @@ function sug_label($s)
                         <div class="grid" style="gap:12px;">
                             <div class="col-6">
                                 <label style="font-size:13px; font-weight:800;">Place Name *</label><br>
-                                <input type="text" name="name" required
+                                <input type="text" name="name" id="suggestPlaceNameInput" required
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">State *</label><br>
-                                <select name="state" required
+                                <select name="state" id="suggestStateSelect" required
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                                     <option value="" disabled selected>Choose a state</option>
                                     <?php foreach ($stateOptions as $s): ?>
                                         <option value="<?php echo htmlspecialchars($s); ?>"><?php echo htmlspecialchars($s); ?></option>
                                     <?php endforeach; ?>
                                 </select>
+                            </div>
+
+                            <div class="col-3">
+                                <label style="font-size:13px; font-weight:800;">District</label><br>
+                                <input type="text" name="district" id="suggestDistrictInput"
+                                    placeholder="Auto-filled from Google Maps"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3">
@@ -159,26 +167,28 @@ function sug_label($s)
 
                             <div class="col-12">
                                 <label style="font-size:13px; font-weight:800;">Cultural Description *</label><br>
-                                <textarea name="description" rows="4" required
+                                <textarea name="description" id="suggestDescriptionInput" rows="4" required
                                     placeholder="Explain cultural background / heritage significance / local tradition"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"></textarea>
                             </div>
 
                             <div class="col-6">
                                 <label style="font-size:13px; font-weight:800;">Address</label><br>
-                                <input type="text" name="address"
+                                <input type="text" name="address" id="suggestAddressAutocomplete"
+                                    placeholder="Start typing a place or address..."
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <div class="meta" style="margin-top:6px;">Select a Google Maps suggestion to auto-fill coordinates.</div>
                             </div>
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Latitude</label><br>
-                                <input type="text" name="latitude" placeholder="e.g. 1.4927000"
+                                <input type="text" name="latitude" id="suggestLatitudeInput" placeholder="e.g. 1.4927000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Longitude</label><br>
-                                <input type="text" name="longitude" placeholder="e.g. 103.7414000"
+                                <input type="text" name="longitude" id="suggestLongitudeInput" placeholder="e.g. 103.7414000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
@@ -190,15 +200,18 @@ function sug_label($s)
 
                             <div class="col-6">
                                 <label style="font-size:13px; font-weight:800;">Opening Hours</label><br>
-                                <input type="text" name="opening_hours" placeholder="e.g. 09:00 - 17:00"
+                                <input type="text" name="opening_hours" id="suggestOpeningHoursInput" placeholder="e.g. 09:00 - 17:00"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <!-- CHANGE: Place Image below Opening Hours (as you requested) -->
                             <div class="col-12">
                                 <label style="font-size:13px; font-weight:800;">Place Image (optional)</label><br>
+                                <input type="hidden" name="image_url" id="suggestImageUrlInput">
+                                <img id="suggestGooglePhotoPreview" alt="Google place photo preview"
+                                    style="display:none;width:180px;height:120px;object-fit:cover;border-radius:12px;border:1px solid rgba(15,23,42,0.12);margin:8px 0;background:#f1f5f9;">
                                 <input type="file" name="image" accept="image/*" style="width:100%; padding:8px;">
-                                <div class="meta">Upload JPG / PNG / WEBP (optional)</div>
+                                <div class="meta">Google photo is auto-filled when available. Upload JPG / PNG / WEBP to override it.</div>
                             </div>
                         </div>
 
@@ -274,6 +287,119 @@ function sug_label($s)
             </section>
         </main>
     </div>
+<script>
+function normalizeMalaysiaState(rawState) {
+    var s = (rawState || '').toLowerCase();
+    if (s.indexOf('kuala lumpur') !== -1) return 'Kuala Lumpur';
+    if (s.indexOf('putrajaya') !== -1) return 'Putrajaya';
+    if (s.indexOf('labuan') !== -1) return 'Labuan';
+    if (s.indexOf('penang') !== -1 || s.indexOf('pulau pinang') !== -1) return 'Penang';
+    if (s.indexOf('malacca') !== -1) return 'Melaka';
+    var known = <?php echo json_encode($stateOptions); ?>;
+    for (var i = 0; i < known.length; i++) {
+        if (s.indexOf(known[i].toLowerCase()) !== -1) return known[i];
+    }
+    return '';
+}
+
+function componentLongName(place, type) {
+    if (!place.address_components) return '';
+    for (var i = 0; i < place.address_components.length; i++) {
+        var c = place.address_components[i];
+        if (c.types && c.types.indexOf(type) !== -1) return c.long_name || '';
+    }
+    return '';
+}
+
+function formatOpeningHours(place) {
+    if (!place.opening_hours) return '';
+    if (place.opening_hours.weekday_text && place.opening_hours.weekday_text.length) {
+        return place.opening_hours.weekday_text.join('; ');
+    }
+    return '';
+}
+
+function generateStarterDescription(place, state, district) {
+    var name = place.name || 'This place';
+    var type = '';
+    if (place.types && place.types.length) {
+        type = place.types
+            .filter(function(t) { return ['point_of_interest', 'establishment', 'tourist_attraction'].indexOf(t) === -1; })
+            .slice(0, 2)
+            .map(function(t) { return t.replace(/_/g, ' '); })
+            .join(' and ');
+    }
+    var location = [district, state].filter(Boolean).join(', ');
+    var sentence = name + (location ? ' is located in ' + location : ' is a Malaysian place of interest') + '.';
+    if (type) sentence += ' It is listed on Google Maps as ' + type + '.';
+    sentence += ' Please add or verify its cultural background, visitor etiquette, and local significance before submitting.';
+    return sentence;
+}
+
+function initPlaceAutocomplete() {
+    var addressInput = document.getElementById('suggestAddressAutocomplete');
+    if (!addressInput || !window.google || !google.maps || !google.maps.places) return;
+
+    var autocomplete = new google.maps.places.Autocomplete(addressInput, {
+        componentRestrictions: { country: 'my' },
+        fields: [
+            'name', 'formatted_address', 'geometry', 'address_components',
+            'opening_hours', 'photos', 'editorial_summary', 'types'
+        ],
+    });
+
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        if (!place || !place.geometry || !place.geometry.location) return;
+
+        var nameInput = document.getElementById('suggestPlaceNameInput');
+        var latInput = document.getElementById('suggestLatitudeInput');
+        var lngInput = document.getElementById('suggestLongitudeInput');
+        var stateSelect = document.getElementById('suggestStateSelect');
+        var districtInput = document.getElementById('suggestDistrictInput');
+        var openingInput = document.getElementById('suggestOpeningHoursInput');
+        var descriptionInput = document.getElementById('suggestDescriptionInput');
+        var imageUrlInput = document.getElementById('suggestImageUrlInput');
+        var photoPreview = document.getElementById('suggestGooglePhotoPreview');
+
+        addressInput.value = place.formatted_address || addressInput.value;
+        if (nameInput && !nameInput.value.trim() && place.name) nameInput.value = place.name;
+        if (latInput) latInput.value = place.geometry.location.lat().toFixed(7);
+        if (lngInput) lngInput.value = place.geometry.location.lng().toFixed(7);
+
+        var state = normalizeMalaysiaState(componentLongName(place, 'administrative_area_level_1'));
+        if (stateSelect && state) stateSelect.value = state;
+
+        var district = componentLongName(place, 'locality') ||
+            componentLongName(place, 'administrative_area_level_2') ||
+            componentLongName(place, 'sublocality');
+        if (districtInput && district) districtInput.value = district;
+
+        var openingText = formatOpeningHours(place);
+        if (openingInput && openingText) openingInput.value = openingText;
+
+        if (imageUrlInput && place.photos && place.photos.length) {
+            var photoUrl = place.photos[0].getUrl({ maxWidth: 1200, maxHeight: 900 });
+            imageUrlInput.value = photoUrl;
+            if (photoPreview) {
+                photoPreview.src = photoUrl;
+                photoPreview.style.display = 'block';
+            }
+        }
+
+        if (descriptionInput && !descriptionInput.value.trim()) {
+            if (place.editorial_summary && place.editorial_summary.overview) {
+                descriptionInput.value = place.editorial_summary.overview;
+            } else {
+                descriptionInput.value = generateStarterDescription(place, state, district);
+            }
+        }
+    });
+}
+</script>
+<?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>
+<?php endif; ?>
 </body>
 
 </html>

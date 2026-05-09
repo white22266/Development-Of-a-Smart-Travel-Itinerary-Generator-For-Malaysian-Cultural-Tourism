@@ -23,9 +23,18 @@ $dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
 $hasDistCol = ($dcCheck && $dcCheck->num_rows > 0);
 $districtSelectCol = $hasDistCol ? ", district" : "";
 
+$extraCols = "";
+foreach (["entrance_fee", "halal_status", "visit_duration_min", "best_time_to_visit", "dress_code_required", "avg_rating"] as $col) {
+    $safeCol = $conn->real_escape_string($col);
+    $colCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE '$safeCol'");
+    if ($colCheck && $colCheck->num_rows > 0) {
+        $extraCols .= ", `$safeCol`";
+    }
+}
+
 $stmt = $conn->prepare("
     SELECT place_id, state{$districtSelectCol}, category, name, description, address, latitude, longitude,
-           opening_hours, estimated_cost, image_url
+           opening_hours, estimated_cost, image_url{$extraCols}
     FROM cultural_places
     WHERE place_id = ? AND is_active = 1
     LIMIT 1
@@ -272,7 +281,22 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                             </div>
                             <?php endif; ?>
                             <div class="row"><span class="k">Category:</span> <?php echo htmlspecialchars(ucfirst($p["category"])); ?></div>
-                            <div class="row"><span class="k">Estimated Cost:</span> RM <?php echo number_format((float)($p["estimated_cost"] ?? 0), 2); ?></div>
+                            <div class="row"><span class="k">Entrance Fee:</span> RM <?php echo number_format((float)($p["entrance_fee"] ?? $p["estimated_cost"] ?? 0), 2); ?></div>
+                            <?php if (array_key_exists("visit_duration_min", $p)): ?>
+                                <div class="row"><span class="k">Suggested Duration:</span> <?php echo (int)$p["visit_duration_min"]; ?> minutes</div>
+                            <?php endif; ?>
+                            <?php if (array_key_exists("halal_status", $p) && $p["halal_status"] !== null): ?>
+                                <div class="row"><span class="k">Halal:</span> <?php echo ((int)$p["halal_status"] === 1) ? "Available / certified" : "Not certified"; ?></div>
+                            <?php endif; ?>
+                            <?php if (!empty($p["avg_rating"])): ?>
+                                <div class="row"><span class="k">Rating:</span> <?php echo number_format((float)$p["avg_rating"], 1); ?> / 5.0</div>
+                            <?php endif; ?>
+                            <?php if (!empty($p["best_time_to_visit"])): ?>
+                                <div class="row"><span class="k">Best Time:</span> <?php echo htmlspecialchars($p["best_time_to_visit"]); ?></div>
+                            <?php endif; ?>
+                            <?php if (array_key_exists("dress_code_required", $p) && $p["dress_code_required"] !== null): ?>
+                                <div class="row"><span class="k">Dress Code:</span> <?php echo ((int)$p["dress_code_required"] === 1) ? "Required" : "Not required"; ?></div>
+                            <?php endif; ?>
                             <div class="row"><span class="k">Opening Hours:</span> <?php echo htmlspecialchars($p["opening_hours"] ?? "-"); ?></div>
                             <div class="row"><span class="k">Address:</span> <?php echo htmlspecialchars($p["address"] ?? "-"); ?></div>
                             <div class="row"><span class="k">Coordinates:</span>

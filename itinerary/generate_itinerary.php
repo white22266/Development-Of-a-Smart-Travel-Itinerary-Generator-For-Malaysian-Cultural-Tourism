@@ -6,6 +6,7 @@ session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/RouteService.php";
+require_once "../services/CostEstimationService.php";
 
 // ===================== AUTH / BASIC VALIDATION =====================
 if (
@@ -207,10 +208,11 @@ function state_group(string $state): string
 // ---- Daily distance limit by transport ----
 function get_daily_max_km(string $transportType): float
 {
-    $t = strtolower(trim($transportType));
+    $t = strtolower(trim(str_replace("-", "_", $transportType)));
+    $t = preg_replace("/\s+/", "_", $t) ?? $t;
     if ($t === "walking") return 5.0;
-    if ($t === "public" || $t === "bus" || $t === "train") return 25.0;
-    if ($t === "car" || $t === "drive") return 45.0;
+    if (in_array($t, ["public", "public_transport", "publictransit", "public_transit", "transit", "bus", "train"], true)) return 25.0;
+    if (in_array($t, ["car", "drive", "driving", "motorcycle"], true)) return 45.0;
     return 35.0;
 }
 
@@ -435,9 +437,10 @@ function ensure_food_priority(array &$selected, array &$pool, int $itemsPerDay, 
 // ---- Google optimize ordering (real) ----
 function transport_to_google_mode(string $transportType): string
 {
-    $t = strtolower(trim($transportType));
+    $t = strtolower(trim(str_replace("-", "_", $transportType)));
+    $t = preg_replace("/\s+/", "_", $t) ?? $t;
     if ($t === "walking") return "walking";
-    if ($t === "public" || $t === "bus" || $t === "train") return "transit";
+    if (in_array($t, ["public", "public_transport", "publictransit", "public_transit", "transit", "bus", "train"], true)) return "transit";
     return "driving";
 }
 
@@ -583,6 +586,85 @@ function pick_start_state_best(array $byState): ?string
     return $best;
 }
 
+function table_has_column(mysqli $conn, string $table, string $column): bool
+{
+    $table = $conn->real_escape_string($table);
+    $column = $conn->real_escape_string($column);
+    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+    return ($res && $res->num_rows > 0);
+}
+
+function sql_time_from_minutes(int $minutes): string
+{
+    $minutes = max(0, min(23 * 60 + 59, $minutes));
+    return sprintf("%02d:%02d:00", intdiv($minutes, 60), $minutes % 60);
+}
+
+function parse_clock_to_minutes(string $raw): ?int
+{
+    $raw = strtolower(trim($raw));
+    if ($raw === "") return null;
+
+    if (!preg_match('/(\d{1,2})(?::?(\d{2}))?\s*(am|pm)?/', $raw, $m)) {
+        return null;
+    }
+
+    $hour = (int)$m[1];
+    $minute = isset($m[2]) && $m[2] !== "" ? (int)$m[2] : 0;
+    $ampm = $m[3] ?? "";
+
+    if ($ampm === "pm" && $hour < 12) $hour += 12;
+    if ($ampm === "am" && $hour === 12) $hour = 0;
+    if ($hour > 23 || $minute > 59) return null;
+
+    return $hour * 60 + $minute;
+}
+
+function opening_hours_allows(?string $openingHours, int $startMin): bool
+{
+    $text = strtolower(trim((string)$openingHours));
+    if ($text === "" || str_contains($text, "24 hour")) return true;
+    if (str_contains($text, "closed")) return false;
+
+    $normalized = str_replace(["–", "—", "to"], "-", $text);
+    if (!preg_match('/([0-9]{1,2}(?::?[0-9]{2})?\s*(?:am|pm)?)\s*-\s*([0-9]{1,2}(?::?[0-9]{2})?\s*(?:am|pm)?)/i', $normalized, $m)) {
+        return true; // Do not reject records with non-standard opening text.
+    }
+
+    $open = parse_clock_to_minutes($m[1]);
+    $close = parse_clock_to_minutes($m[2]);
+    if ($open === null || $close === null) return true;
+
+    if ($close < $open) {
+        return $startMin >= $open || $startMin <= $close; // Overnight range.
+    }
+
+    return $startMin >= $open && $startMin <= $close;
+}
+
+function place_visit_duration_min(array $place): int
+{
+    $configured = (int)($place["visit_duration_min"] ?? 0);
+    if ($configured > 0) return max(30, min(360, $configured));
+
+    $category = strtolower((string)($place["category"] ?? ""));
+    return match ($category) {
+        "food" => 60,
+        "festival" => 150,
+        "museum", "heritage", "culture", "nature" => 120,
+        "shopping" => 90,
+        default => 90,
+    };
+}
+
+function place_entrance_fee(array $place): float
+{
+    if (array_key_exists("entrance_fee", $place) && $place["entrance_fee"] !== null) {
+        return max(0.0, (float)$place["entrance_fee"]);
+    }
+    return max(0.0, (float)($place["estimated_cost"] ?? 0));
+}
+
 // ===================== 1) LOAD PREFERENCE =====================
 // Check if preferred_districts column exists (graceful fallback)
 $colCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'preferred_districts'");
@@ -610,7 +692,8 @@ if (!$pref) {
 }
 
 $tripDays      = (int)$pref["trip_days"];
-$transportType = trim((string)($pref["transport_type"] ?? ""));
+$budget        = (float)($pref["budget"] ?? 0);
+$transportType = RouteService::normalizeTransportType((string)($pref["transport_type"] ?? "car"));
 $interestsCsv  = trim((string)($pref["interests"] ?? ""));
 $statesCsv     = trim((string)($pref["preferred_states"] ?? ""));
 $districtsCsv  = trim((string)($pref["preferred_districts"] ?? ""));
@@ -643,8 +726,9 @@ $preferredStatesForOrder = $userSelectedStates ? normalize_list($statesCsv) : []
 
 // ===================== 2) FETCH CANDIDATE PLACES =====================
 // Check if district column exists in cultural_places
-$cpColCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
-$hasDistrictPlaceCol = ($cpColCheck && $cpColCheck->num_rows > 0);
+$hasDistrictPlaceCol = table_has_column($conn, "cultural_places", "district");
+$hasEntranceFeeCol = table_has_column($conn, "cultural_places", "entrance_fee");
+$hasVisitDurationCol = table_has_column($conn, "cultural_places", "visit_duration_min");
 
 $where  = "is_active = 1";
 $params = [];
@@ -669,8 +753,10 @@ if ($userSelectedDistricts && $hasDistrictPlaceCol) {
 }
 
 $districtSelectCol = $hasDistrictPlaceCol ? ", district" : "";
+$entranceFeeSelectCol = $hasEntranceFeeCol ? ", entrance_fee, is_free" : "";
+$visitDurationSelectCol = $hasVisitDurationCol ? ", visit_duration_min" : "";
 $sql = "
-  SELECT place_id, state{$districtSelectCol}, category, name, description, address, latitude, longitude, opening_hours, estimated_cost
+  SELECT place_id, state{$districtSelectCol}, category, name, description, address, latitude, longitude, opening_hours, estimated_cost{$entranceFeeSelectCol}{$visitDurationSelectCol}
   FROM cultural_places
   WHERE $where
 ";
@@ -752,9 +838,9 @@ foreach ($byState as $st => $pool) {
 // ===================== 5) PREPARE INSERT STATEMENT =====================
 $ins = $conn->prepare("
   INSERT INTO itinerary_items
-    (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, estimated_cost, distance_km, travel_time_min, notes)
+    (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, start_time, end_time, estimated_cost, distance_km, travel_time_min, notes)
   VALUES
-    (?,?,?,?,?,?,?,?,?,?)
+    (?,?,?,?,?,?,?,?,?,?,?,?)
 ");
 if (!$ins) {
     // Do not block: redirect to view with message
@@ -768,6 +854,8 @@ $apiKey    = defined("GOOGLE_MAPS_API_KEY") ? GOOGLE_MAPS_API_KEY : "";
 $routeSvc  = new RouteService($transportType, $apiKey);
 
 $totalCost = 0.0;
+$insertedItems = [];
+$totalDistanceKm = 0.0;
 $maxDayKm  = get_daily_max_km($transportType);
 
 // Used place ids (rule #1)
@@ -798,6 +886,7 @@ if ($currentState === null) {
 
 // ===================== 6) GENERATE (NO STOP, NO ROLLBACK) =====================
 for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
+    $dayCursorMin = 9 * 60; // Industry-style daily schedule starts at 9:00 AM.
 
     // Remove used items from every pool (safety)
     foreach ($byState as $st => $pool) {
@@ -849,7 +938,7 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             if (isset($usedPlaceIds[$placeId])) continue; // hard rule #1
 
             $name = (string)$p["name"];
-            $fee  = ($p["estimated_cost"] !== null) ? (float)$p["estimated_cost"] : 0.00;
+            $fee  = place_entrance_fee($p);
             $cat  = strtolower((string)$p["category"]);
 
             $itemType = ($cat === "food") ? "food" : (($cat === "festival") ? "festival" : "attraction");
@@ -869,6 +958,18 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
                 $timeMin = $seg["travel_time_min"];
             }
 
+            if ($seq > 1) {
+                $dayCursorMin += (int)($timeMin ?? (($transportType === "walking") ? 20 : 15));
+            }
+
+            if (!opening_hours_allows($p["opening_hours"] ?? null, $dayCursorMin)) {
+                continue;
+            }
+
+            $durationMin = place_visit_duration_min($p);
+            $startTime = sql_time_from_minutes($dayCursorMin);
+            $endTime = sql_time_from_minutes($dayCursorMin + $durationMin);
+
             // Update previous location
             if ($pLat !== null && $pLng !== null && !($pLat === 0.0 && $pLng === 0.0)) {
                 $prevLat = $pLat;
@@ -876,13 +977,15 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             }
 
             $ins->bind_param(
-                "iiisisdiis",
+                "iiisisssddis",
                 $itineraryId,
                 $dayNo,
                 $seq,
                 $itemType,
                 $placeId,
                 $name,
+                $startTime,
+                $endTime,
                 $fee,
                 $distKm,
                 $timeMin,
@@ -892,8 +995,11 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             // Never die; if fail, skip
             if ($ins->execute()) {
                 $totalCost += $fee;
+                $totalDistanceKm += (float)($distKm ?? 0);
+                $insertedItems[] = ["estimated_cost" => $fee];
                 $usedPlaceIds[$placeId] = true;
                 $seq++;
+                $dayCursorMin += $durationMin;
             }
         }
 
@@ -908,6 +1014,10 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
 $ins->close();
 
 // ===================== 7) UPDATE ITINERARY TOTALS (KEEP total_days = tripDays) =====================
+$costService = new CostEstimationService($transportType, $tripDays, $budget);
+$fullCost = $costService->calculate($insertedItems, $totalDistanceKm);
+$totalCost = (float)($fullCost["total_cost"] ?? $totalCost);
+
 $upd = $conn->prepare("UPDATE itineraries SET total_estimated_cost = ?, total_days = ? WHERE itinerary_id = ?");
 $upd->bind_param("dii", $totalCost, $tripDays, $itineraryId);
 $upd->execute();
