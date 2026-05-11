@@ -12,5 +12,5 @@ define('SMTP_FROM_NAME', 'Admin Smart Travel Itinerary Generator');
 
 // Optional: add your OpenAI API key here to enable live AI answers.
 // Leave empty for the built-in local fallback used during offline demos.
-if (!defined('OPENAI_API_KEY')) define('OPENAI_API_KEY', 'sk-abcdijkl1234uvwxabcdijkl1234uvwxabcdijkl');
-if (!defined('OPENAI_MODEL')) define('OPENAI_MODEL', 'gpt-4.1-mini');
+define('OPENAI_API_KEY', 'sk-abcdijkl1234uvwxabcdijkl1234uvwxabcdijkl');
+define('OPENAI_MODEL', 'gpt-4.1-mini');
