@@ -1,7 +1,7 @@
 <?php
 // config/api_keys.php
 // CHANGED: central place to store API keys
-define("GOOGLE_MAPS_API_KEY", "AIzaSyArlxAajANPHXxQBrb7nCauebL1_JvmwB4");
+define("GOOGLE_MAPS_API_KEY", "AIzaSyAMzVOrlvsnlmGslctUvJcsxomiuyDtXwM");
 define("OPENWEATHER_API_KEY", "72e6d568ecd49f6d56f0f7fbd0a8f04c");
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);

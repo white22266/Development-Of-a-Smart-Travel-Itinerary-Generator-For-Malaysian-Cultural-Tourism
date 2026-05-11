@@ -232,7 +232,7 @@ foreach ($days as $dayItems) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($it["title"]); ?> — Itinerary View</title>
+    <title><?php echo htmlspecialchars($it["title"]); ?> â€” Itinerary View</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css">
     <style>
         /* ===== Layout ===== */
@@ -250,6 +250,38 @@ foreach ($days as $dayItems) {
             height: 520px;
             border-radius: 14px;
             border: 1px solid rgba(15,23,42,0.10);
+        }
+        .map-wrap { position: relative; }
+        .map-error-panel {
+            position: absolute;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            border-radius: 14px;
+            background: rgba(248,250,252,0.96);
+            border: 1px solid rgba(239,68,68,0.22);
+            z-index: 5;
+        }
+        .map-error-panel.visible { display: flex; }
+        .map-error-card {
+            max-width: 560px;
+            color: #334155;
+            line-height: 1.45;
+        }
+        .map-error-card strong {
+            display: block;
+            color: #b91c1c;
+            font-size: 16px;
+            margin-bottom: 6px;
+        }
+        .map-error-card code {
+            background: #fee2e2;
+            color: #991b1b;
+            border-radius: 6px;
+            padding: 2px 5px;
         }
 
         /* ===== Transport bar ===== */
@@ -698,8 +730,8 @@ foreach ($days as $dayItems) {
             <div class="page-title">
                 <h1><?php echo htmlspecialchars($it["title"]); ?></h1>
                 <p class="meta">
-                    <?php echo $totalDays; ?> day<?php echo $totalDays > 1 ? 's' : ''; ?> &nbsp;·&nbsp;
-                    <?php if ($startDate): ?>Starting <?php echo date('d M Y', strtotime($startDate)); ?> &nbsp;·&nbsp;<?php endif; ?>
+                    <?php echo $totalDays; ?> day<?php echo $totalDays > 1 ? 's' : ''; ?> &nbsp;Â·&nbsp;
+                    <?php if ($startDate): ?>Starting <?php echo date('d M Y', strtotime($startDate)); ?> &nbsp;Â·&nbsp;<?php endif; ?>
                     <span style="text-transform:capitalize;"><?php echo htmlspecialchars(str_replace('_', ' ', $transportType)); ?></span>
                 </p>
             </div>
@@ -722,19 +754,19 @@ foreach ($days as $dayItems) {
             <div>
                 <div class="card" style="padding:16px;">
                     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-                        <h3 style="margin:0;">Route Map — All Days</h3>
+                        <h3 style="margin:0;">Route Map - All Days</h3>
                         <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                            <span class="weather-chip" id="weatherChip">🌤 Weather: —</span>
-                            <button class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" onclick="locateMe()">📍 My Location</button>
+                            <span class="weather-chip" id="weatherChip">ðŸŒ¤ Weather: â€”</span>
+                            <button class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" onclick="locateMe()">ðŸ“ My Location</button>
                         </div>
                     </div>
 
                     <!-- Transport mode switcher -->
                     <div class="transport-bar" id="transportBar">
-                        <button class="transport-btn <?php echo $transportType==='car'              ? 'active' : ''; ?>" onclick="setTransport('car')">🚗 Car</button>
-                        <button class="transport-btn <?php echo $transportType==='motorcycle'       ? 'active' : ''; ?>" onclick="setTransport('motorcycle')">🏍️ Motorcycle</button>
-                        <button class="transport-btn <?php echo $transportType==='public_transport' ? 'active' : ''; ?>" onclick="setTransport('public_transport')">🚌 Public Transport</button>
-                        <button class="transport-btn <?php echo $transportType==='walking'          ? 'active' : ''; ?>" onclick="setTransport('walking')">🚶 Walk</button>
+                        <button class="transport-btn <?php echo $transportType==='car'              ? 'active' : ''; ?>" onclick="setTransport('car')">ðŸš— Car</button>
+                        <button class="transport-btn <?php echo $transportType==='motorcycle'       ? 'active' : ''; ?>" onclick="setTransport('motorcycle')">ðŸï¸ Motorcycle</button>
+                        <button class="transport-btn <?php echo $transportType==='public_transport' ? 'active' : ''; ?>" onclick="setTransport('public_transport')">ðŸšŒ Public Transport</button>
+                        <button class="transport-btn <?php echo $transportType==='walking'          ? 'active' : ''; ?>" onclick="setTransport('walking')">ðŸš¶ Walk</button>
                     </div>
 
                     <!-- Day legend -->
@@ -756,7 +788,17 @@ foreach ($days as $dayItems) {
                         </span>
                     </div>
 
-                    <div id="map"></div>
+                    <div class="map-wrap">
+                        <div id="map"></div>
+                        <div id="mapErrorPanel" class="map-error-panel" role="alert">
+                            <div class="map-error-card">
+                                <strong>Google Maps could not load.</strong>
+                                <div id="mapErrorText">
+                                    Check that the API key enables Maps JavaScript API and allows this localhost URL.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="info-box" style="margin-top:10px;">
                         <strong>How to read this map:</strong>
@@ -771,13 +813,13 @@ foreach ($days as $dayItems) {
                 <!-- Hotels nearby -->
                 <?php if (!empty($hotels)): ?>
                 <div class="card" style="padding:14px;">
-                    <h3 style="margin-bottom:8px; font-size:14px;">🏨 Nearby Hotels</h3>
+                    <h3 style="margin-bottom:8px; font-size:14px;">ðŸ¨ Nearby Hotels</h3>
                     <p class="meta" style="margin-top:0; margin-bottom:10px;">Click to highlight on map.</p>
                     <?php foreach (array_slice($hotels, 0, 6) as $h): ?>
                     <div class="hotel-card" onclick="focusHotel(<?php echo (float)$h['latitude']; ?>, <?php echo (float)$h['longitude']; ?>, '<?php echo addslashes(htmlspecialchars($h['name'])); ?>')">
                         <div>
                             <div class="hotel-name"><?php echo htmlspecialchars($h['name']); ?></div>
-                            <div class="hotel-meta"><?php echo htmlspecialchars($h['district'] ? $h['district'] . ', ' . $h['state'] : $h['state']); ?> · ⭐ <?php echo number_format((float)$h['rating'], 1); ?></div>
+                            <div class="hotel-meta"><?php echo htmlspecialchars($h['district'] ? $h['district'] . ', ' . $h['state'] : $h['state']); ?> Â· â­ <?php echo number_format((float)$h['rating'], 1); ?></div>
                         </div>
                         <div class="hotel-price">RM<?php echo number_format((float)$h['price_per_night'], 0); ?>/night</div>
                     </div>
@@ -787,7 +829,7 @@ foreach ($days as $dayItems) {
 
                 <!-- Trip overview -->
                 <div class="card" style="padding:14px;">
-                    <h3 style="margin-bottom:10px; font-size:14px;">📊 Trip Overview</h3>
+                    <h3 style="margin-bottom:10px; font-size:14px;">ðŸ“Š Trip Overview</h3>
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
                         <div style="background:rgba(99,102,241,0.07); border-radius:10px; padding:10px; text-align:center;">
                             <div style="font-size:20px; font-weight:900; color:#4f46e5;"><?php echo $totalDays; ?></div>
@@ -806,7 +848,7 @@ foreach ($days as $dayItems) {
 
                 <!-- Transit legend -->
                 <div class="card" style="padding:14px;">
-                    <h3 style="margin-bottom:10px; font-size:14px;">🚇 Transit Lines (MY)</h3>
+                    <h3 style="margin-bottom:10px; font-size:14px;">ðŸš‡ Transit Lines (MY)</h3>
                     <div style="font-size:11.5px; display:flex; flex-direction:column; gap:5px;">
                         <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#7B2D8B;display:inline-block;"></span> MRT Putrajaya Line</div>
                         <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#1E5CB3;display:inline-block;"></span> MRT Kajang Line</div>
@@ -825,10 +867,10 @@ foreach ($days as $dayItems) {
         <!-- ===== Timetable Section ===== -->
         <div class="card" style="margin-top:18px; padding:16px;">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <h3 style="margin:0;">📅 Daily Itinerary Schedule</h3>
+                <h3 style="margin:0;">ðŸ“… Daily Itinerary Schedule</h3>
                 <span class="meta" style="font-size:12px;" id="transitModeLabel">
                     Transport: <strong><?php echo htmlspecialchars(str_replace('_', ' ', ucfirst($transportType))); ?></strong>
-                    &nbsp;·&nbsp; Click <strong>"Show Route"</strong> between stops for step-by-step directions.
+                    &nbsp;Â·&nbsp; Click <strong>"Show Route"</strong> between stops for step-by-step directions.
                 </span>
             </div>
 
@@ -839,7 +881,7 @@ foreach ($days as $dayItems) {
                     $dateLabel = '';
                     if ($startDate) {
                         $ts = strtotime($startDate . ' +' . ($d - 1) . ' days');
-                        $dateLabel = ' · ' . date('d M', $ts);
+                        $dateLabel = ' Â· ' . date('d M', $ts);
                     }
                 ?>
                 <button class="day-tab <?php echo $d === 1 ? 'active' : ''; ?>"
@@ -865,12 +907,12 @@ foreach ($days as $dayItems) {
 
                 <!-- Day header -->
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; padding:10px 14px; background:<?php echo $col; ?>12; border-radius:10px; border-left:4px solid <?php echo $col; ?>;">
-                    <span style="font-size:18px;">📅</span>
+                    <span style="font-size:18px;">ðŸ“…</span>
                     <div>
                         <div style="font-weight:900; font-size:14px; color:<?php echo $col; ?>;">Day <?php echo $d; ?></div>
                         <?php if ($dateStr): ?><div style="font-size:12px; color:#64748b;"><?php echo $dateStr; ?></div><?php endif; ?>
                         <div style="font-size:11px; color:#64748b; margin-top:2px;">
-                            <?php echo $d === 1 ? '🚩 Starts from your location' : '🏨 Continues from previous night\'s hotel'; ?>
+                            <?php echo $d === 1 ? 'ðŸš© Starts from your location' : 'ðŸ¨ Continues from previous night\'s hotel'; ?>
                         </div>
                     </div>
                 </div>
@@ -913,14 +955,14 @@ foreach ($days as $dayItems) {
                                                     '<?php echo addslashes(htmlspecialchars($prevItem['item_title'] ?? '')); ?>',
                                                     '<?php echo addslashes(htmlspecialchars($item['item_title'] ?? '')); ?>'
                                                 )">
-                                            ▶ Show Route
+                                            â–¶ Show Route
                                         </button>
                                         <!-- Pre-computed estimate -->
                                         <span style="font-size:11.5px; color:#64748b;" id="transit-est-<?php echo $legId; ?>">
                                             <?php if ($item['_travel_min'] > 0): ?>
                                                 ~<?php echo $item['_travel_min']; ?> min
                                                 <?php if ($item['dist_km'] ?? $item['distance_km'] ?? null): ?>
-                                                    · <?php echo number_format((float)($item['dist_km'] ?? $item['distance_km'] ?? 0), 1); ?> km
+                                                    Â· <?php echo number_format((float)($item['dist_km'] ?? $item['distance_km'] ?? 0), 1); ?> km
                                                 <?php endif; ?>
                                             <?php endif; ?>
                                         </span>
@@ -950,15 +992,15 @@ foreach ($days as $dayItems) {
                                 <div style="font-size:11px; color:#64748b; margin-top:2px;">
                                     <?php echo $activity; ?>
                                     <?php if (!empty($item['address'])): ?>
-                                        &nbsp;·&nbsp; <?php echo htmlspecialchars($item['address']); ?>
+                                        &nbsp;Â·&nbsp; <?php echo htmlspecialchars($item['address']); ?>
                                     <?php endif; ?>
                                 </div>
                                 <?php if (!empty($item['opening_hours'])): ?>
-                                <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">🕐 <?php echo htmlspecialchars($item['opening_hours']); ?></div>
+                                <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">ðŸ• <?php echo htmlspecialchars($item['opening_hours']); ?></div>
                                 <?php endif; ?>
                                 <?php if (!empty($item['state'])): ?>
                                 <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">
-                                    📍 <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
+                                    ðŸ“ <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
                                 </div>
                                 <?php endif; ?>
                             </td>
@@ -1033,9 +1075,31 @@ let dayRenderers = {};
 let dayMarkers   = {};
 let dayVisible   = {};
 let currentTransport = <?php echo $jsTransport; ?>;
+let googleMapLoaded = false;
+
+function showMapLoadError(message) {
+    const panel = document.getElementById('mapErrorPanel');
+    const text = document.getElementById('mapErrorText');
+    if (!panel || !text) return;
+    text.innerHTML = message;
+    panel.classList.add('visible');
+}
+
+function hideMapLoadError() {
+    const panel = document.getElementById('mapErrorPanel');
+    if (panel) panel.classList.remove('visible');
+}
+
+window.gm_authFailure = function() {
+    showMapLoadError(
+        'Google rejected this browser request. In Google Cloud Console, enable <code>Maps JavaScript API</code>, attach billing, and allow <code>http://localhost/*</code> plus <code>http://127.0.0.1/*</code> in the API key HTTP referrer restrictions.'
+    );
+};
 
 // ---- Init map ----
 function initMap() {
+    googleMapLoaded = true;
+    hideMapLoadError();
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: { lat: 3.8, lng: 109.0 },
@@ -1078,7 +1142,7 @@ function placeUserMarker(lat, lng) {
         zIndex: 999,
     });
     userMarker.addListener('click', () => {
-        infoWindow.setContent('<div style="font-weight:800;color:#4f46e5;">📍 My Location</div>');
+        infoWindow.setContent('<div style="font-weight:800;color:#4f46e5;">ðŸ“ My Location</div>');
         infoWindow.open(map, userMarker);
     });
 }
@@ -1102,9 +1166,9 @@ function placeHotelMarkers() {
         m.addListener('click', () => {
             infoWindow.setContent(
                 `<div style="max-width:200px;">
-                    <div style="font-weight:800;">🏨 ${h.name}</div>
+                    <div style="font-weight:800;">ðŸ¨ ${h.name}</div>
                     <div style="font-size:11px;color:#64748b;margin-top:3px;">${h.district ? h.district + ', ' : ''}${h.state}</div>
-                    <div style="font-size:12px;font-weight:700;color:#4f46e5;margin-top:4px;">RM${h.price.toFixed(0)}/night · ⭐${h.rating.toFixed(1)}</div>
+                    <div style="font-size:12px;font-weight:700;color:#4f46e5;margin-top:4px;">RM${h.price.toFixed(0)}/night Â· â­${h.rating.toFixed(1)}</div>
                 </div>`
             );
             infoWindow.open(map, m);
@@ -1174,16 +1238,16 @@ function renderDay(day) {
                 strokeColor: '#fff', strokeWeight: 2,
             },
         });
-        const typeEmoji = { food:'🍜', hotel:'🏨', festival:'🎉', museum:'🏛️', heritage:'🏯', culture:'🎭', nature:'🌿', attraction:'📍' };
-        const emoji = typeEmoji[item.type] || '📍';
+        const typeEmoji = { food:'ðŸœ', hotel:'ðŸ¨', festival:'ðŸŽ‰', museum:'ðŸ›ï¸', heritage:'ðŸ¯', culture:'ðŸŽ­', nature:'ðŸŒ¿', attraction:'ðŸ“' };
+        const emoji = typeEmoji[item.type] || 'ðŸ“';
         marker.addListener('click', () => {
             infoWindow.setContent(
                 `<div style="max-width:230px;">
                     <div style="font-weight:800;font-size:13px;">${emoji} ${escHtml(item.title)}</div>
-                    <div style="font-size:11px;color:#64748b;margin-top:4px;">Day ${day} · Stop ${label}</div>
-                    ${item.address ? `<div style="font-size:11px;margin-top:4px;">📍 ${escHtml(item.address)}</div>` : ''}
-                    ${item.opening_hours ? `<div style="font-size:11px;margin-top:4px;">🕐 ${escHtml(item.opening_hours)}</div>` : ''}
-                    <div style="font-size:11px;margin-top:4px;">${item.start_fmt} – ${item.end_fmt}${item.cost > 0 ? ` · RM${item.cost.toFixed(2)}` : ' · Free'}</div>
+                    <div style="font-size:11px;color:#64748b;margin-top:4px;">Day ${day} Â· Stop ${label}</div>
+                    ${item.address ? `<div style="font-size:11px;margin-top:4px;">ðŸ“ ${escHtml(item.address)}</div>` : ''}
+                    ${item.opening_hours ? `<div style="font-size:11px;margin-top:4px;">ðŸ• ${escHtml(item.opening_hours)}</div>` : ''}
+                    <div style="font-size:11px;margin-top:4px;">${item.start_fmt} â€“ ${item.end_fmt}${item.cost > 0 ? ` Â· RM${item.cost.toFixed(2)}` : ' Â· Free'}</div>
                 </div>`
             );
             infoWindow.open(map, marker);
@@ -1279,7 +1343,7 @@ function setTransport(mode) {
     // Update mode label
     const labels = { car: 'Car', motorcycle: 'Motorcycle', public_transport: 'Public Transport', walking: 'Walk' };
     const lbl = document.getElementById('transitModeLabel');
-    if (lbl) lbl.innerHTML = `Transport: <strong>${labels[mode] || mode}</strong> &nbsp;·&nbsp; Click <strong>"Show Route"</strong> between stops for step-by-step directions.`;
+    if (lbl) lbl.innerHTML = `Transport: <strong>${labels[mode] || mode}</strong> &nbsp;Â·&nbsp; Click <strong>"Show Route"</strong> between stops for step-by-step directions.`;
 }
 
 function normalizeTransportMode(mode) {
@@ -1299,7 +1363,7 @@ function focusPlace(lat, lng, title) {
 function focusHotel(lat, lng, name) {
     if (!map || !lat || !lng) return;
     map.panTo({ lat, lng }); map.setZoom(15);
-    infoWindow.setContent(`<div style="font-weight:800;">🏨 ${escHtml(name)}</div>`);
+    infoWindow.setContent(`<div style="font-weight:800;">ðŸ¨ ${escHtml(name)}</div>`);
     const hm = hotelMarkers.find(m => {
         const p = m.getPosition();
         return Math.abs(p.lat() - lat) < 0.0001 && Math.abs(p.lng() - lng) < 0.0001;
@@ -1324,18 +1388,18 @@ function locateMe() {
 // ---- Weather ----
 async function loadWeather(lat, lng) {
     const chip = document.getElementById('weatherChip');
-    if (!WEATHER_KEY || WEATHER_KEY.includes('PASTE_')) { chip.textContent = '🌤 Weather: N/A'; return; }
+    if (!WEATHER_KEY || WEATHER_KEY.includes('PASTE_')) { chip.textContent = 'ðŸŒ¤ Weather: N/A'; return; }
     try {
         const r = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${WEATHER_KEY}&units=metric`);
         const j = await r.json();
         const desc = j.weather?.[0]?.description || 'Unknown';
-        const temp = j.main?.temp !== undefined ? Math.round(j.main.temp) + '°C' : '';
-        const icon = j.weather?.[0]?.icon ? `<img src="https://openweathermap.org/img/wn/${j.weather[0].icon}.png" style="width:20px;height:20px;vertical-align:middle;">` : '🌤';
+        const temp = j.main?.temp !== undefined ? Math.round(j.main.temp) + 'Â°C' : '';
+        const icon = j.weather?.[0]?.icon ? `<img src="https://openweathermap.org/img/wn/${j.weather[0].icon}.png" style="width:20px;height:20px;vertical-align:middle;">` : 'ðŸŒ¤';
         chip.innerHTML = `${icon} ${capitalise(desc)} ${temp}`;
         if (['Rain','Thunderstorm','Drizzle'].includes(j.weather?.[0]?.main)) {
             chip.style.background = '#fef9c3'; chip.style.borderColor = '#fbbf24';
         }
-    } catch(e) { chip.textContent = '🌤 Weather: —'; }
+    } catch(e) { chip.textContent = 'ðŸŒ¤ Weather: â€”'; }
 }
 
 function capitalise(s) { return s ? s.charAt(0).toUpperCase() + s.slice(1) : s; }
@@ -1359,12 +1423,12 @@ async function loadTransitLeg(legId, oLat, oLng, dLat, dLng, fromTitle, toTitle)
     if (detailEl.classList.contains('open')) {
         detailEl.classList.remove('open');
         detailEl.innerHTML = '';
-        if (btnEl) btnEl.innerHTML = '▶ Show Route';
+        if (btnEl) btnEl.innerHTML = 'â–¶ Show Route';
         return;
     }
 
     if (!oLat || !oLng || !dLat || !dLng) {
-        detailEl.innerHTML = '<div class="ts-warning">⚠ Coordinates not available for this leg.</div>';
+        detailEl.innerHTML = '<div class="ts-warning">âš  Coordinates not available for this leg.</div>';
         detailEl.classList.add('open');
         return;
     }
@@ -1372,7 +1436,7 @@ async function loadTransitLeg(legId, oLat, oLng, dLat, dLng, fromTitle, toTitle)
     // Show loading
     detailEl.innerHTML = '<div class="ts-loading"><span class="spinner"></span> Fetching route details...</div>';
     detailEl.classList.add('open');
-    if (btnEl) btnEl.innerHTML = '▼ Hide Route';
+    if (btnEl) btnEl.innerHTML = 'â–¼ Hide Route';
 
     const cacheKey = `${legId}|${currentTransport}`;
     let data = transitCache[cacheKey];
@@ -1392,19 +1456,19 @@ async function loadTransitLeg(legId, oLat, oLng, dLat, dLng, fromTitle, toTitle)
             data = await resp.json();
             transitCache[cacheKey] = data;
         } catch(e) {
-            detailEl.innerHTML = '<div class="ts-warning">⚠ Network error. Could not fetch route.</div>';
+            detailEl.innerHTML = '<div class="ts-warning">âš  Network error. Could not fetch route.</div>';
             return;
         }
     }
 
     if (data.status === 'error') {
-        detailEl.innerHTML = `<div class="ts-warning">⚠ ${escHtml(data.message || 'Route not available.')}</div>`;
+        detailEl.innerHTML = `<div class="ts-warning">âš  ${escHtml(data.message || 'Route not available.')}</div>`;
         return;
     }
 
     // Update estimate
     if (estEl && data.total_duration) {
-        estEl.innerHTML = `<strong>${data.total_duration} min</strong> · ${data.total_distance} km`;
+        estEl.innerHTML = `<strong>${data.total_duration} min</strong> Â· ${data.total_distance} km`;
     }
 
     // Build transit chips
@@ -1421,18 +1485,18 @@ function buildTransitChips(steps) {
     const chips = [];
     steps.forEach(step => {
         if (step.travel_mode === 'walking') {
-            chips.push(`<span class="transit-chip transit-chip-walk">🚶 ${step.duration_min}m walk</span>`);
+            chips.push(`<span class="transit-chip transit-chip-walk">ðŸš¶ ${step.duration_min}m walk</span>`);
         } else if (step.travel_mode === 'transit') {
             const color = step.line_color || '#4CAF50';
-            const icon  = step.vehicle_icon || '🚌';
+            const icon  = step.vehicle_icon || 'ðŸšŒ';
             const name  = step.line_short || step.line_name || step.type_label || 'Transit';
             chips.push(`<span class="transit-chip" style="background:${escHtml(color)};">${icon} ${escHtml(name)}</span>`);
         } else {
-            const modeIcon = { driving: '🚗', walking: '🚶', bicycling: '🚲' };
-            chips.push(`<span class="transit-chip transit-chip-walk">${modeIcon[step.travel_mode] || '🚗'} ${step.duration_min}m</span>`);
+            const modeIcon = { driving: 'ðŸš—', walking: 'ðŸš¶', bicycling: 'ðŸš²' };
+            chips.push(`<span class="transit-chip transit-chip-walk">${modeIcon[step.travel_mode] || 'ðŸš—'} ${step.duration_min}m</span>`);
         }
     });
-    return chips.join('<span style="color:#94a3b8;font-size:10px;">›</span>');
+    return chips.join('<span style="color:#94a3b8;font-size:10px;">â€º</span>');
 }
 
 function buildTransitDetail(data, fromTitle, toTitle) {
@@ -1440,9 +1504,9 @@ function buildTransitDetail(data, fromTitle, toTitle) {
 
     // Summary bar
     html += `<div class="ts-summary-bar">
-        <div class="ts-summary-stat">⏱ <span>${data.total_duration} min total</span></div>
-        <div class="ts-summary-stat">📏 <span>${data.total_distance} km</span></div>
-        ${data.fare ? `<span class="ts-fare">🎫 ${escHtml(data.fare)}</span>` : ''}
+        <div class="ts-summary-stat">â± <span>${data.total_duration} min total</span></div>
+        <div class="ts-summary-stat">ðŸ“ <span>${data.total_distance} km</span></div>
+        ${data.fare ? `<span class="ts-fare">ðŸŽ« ${escHtml(data.fare)}</span>` : ''}
         ${data.summary ? `<span style="color:#64748b;font-size:11px;">${escHtml(data.summary)}</span>` : ''}
     </div>`;
 
@@ -1451,8 +1515,8 @@ function buildTransitDetail(data, fromTitle, toTitle) {
         const leg = data.legs[0];
         if (leg.departure_time || leg.arrival_time) {
             html += `<div style="font-size:11px; color:#64748b; margin-bottom:8px;">
-                ${leg.departure_time ? `🕐 Depart: <strong>${escHtml(leg.departure_time)}</strong>` : ''}
-                ${leg.arrival_time  ? ` &nbsp;→&nbsp; Arrive: <strong>${escHtml(leg.arrival_time)}</strong>` : ''}
+                ${leg.departure_time ? `ðŸ• Depart: <strong>${escHtml(leg.departure_time)}</strong>` : ''}
+                ${leg.arrival_time  ? ` &nbsp;â†’&nbsp; Arrive: <strong>${escHtml(leg.arrival_time)}</strong>` : ''}
             </div>`;
         }
     }
@@ -1471,7 +1535,7 @@ function buildTransitDetail(data, fromTitle, toTitle) {
     // Warnings
     if (data.warnings && data.warnings.length > 0) {
         data.warnings.forEach(w => {
-            html += `<div class="ts-warning">⚠ ${escHtml(w)}</div>`;
+            html += `<div class="ts-warning">âš  ${escHtml(w)}</div>`;
         });
     }
 
@@ -1484,7 +1548,7 @@ function buildStepCard(step, idx, total) {
     const isDrive   = ['driving', 'car', 'motorcycle'].includes(step.travel_mode);
 
     const iconBg = step.line_color || (isWalk ? '#64748b' : isDrive ? '#374151' : '#4CAF50');
-    const icon   = step.vehicle_icon || (isWalk ? '🚶' : isDrive ? '🚗' : '🚌');
+    const icon   = step.vehicle_icon || (isWalk ? 'ðŸš¶' : isDrive ? 'ðŸš—' : 'ðŸšŒ');
     const modeLabel = step.type_label || (isWalk ? 'Walk' : isDrive ? 'Drive' : 'Transit');
 
     let html = `<div class="ts-step">
@@ -1510,7 +1574,7 @@ function buildStepCard(step, idx, total) {
         }
 
         if (step.num_stops > 0) {
-            html += `<div class="ts-stops">🚉 ${step.num_stops} stop${step.num_stops > 1 ? 's' : ''} · ${step.duration_min} min</div>`;
+            html += `<div class="ts-stops">ðŸš‰ ${step.num_stops} stop${step.num_stops > 1 ? 's' : ''} Â· ${step.duration_min} min</div>`;
         }
 
         if (step.arrive_stop) {
@@ -1528,12 +1592,12 @@ function buildStepCard(step, idx, total) {
     } else if (isWalk) {
         // Walk step
         html += `<div class="ts-line-name">Walk ${step.distance_km > 0 ? step.distance_km + ' km' : ''}</div>`;
-        html += `<div class="ts-stops">${step.duration_min} min · ${step.instruction ? escHtml(step.instruction) : 'Walk to next stop'}</div>`;
+        html += `<div class="ts-stops">${step.duration_min} min Â· ${step.instruction ? escHtml(step.instruction) : 'Walk to next stop'}</div>`;
 
         if (step.sub_steps && step.sub_steps.length > 0) {
             html += '<div class="ts-walk-steps">';
             step.sub_steps.forEach(sub => {
-                html += `<div class="ts-walk-step">→ ${escHtml(sub.instruction)} (${sub.distance_km > 0 ? sub.distance_km + ' km · ' : ''}${sub.duration_min} min)</div>`;
+                html += `<div class="ts-walk-step">â†’ ${escHtml(sub.instruction)} (${sub.distance_km > 0 ? sub.distance_km + ' km Â· ' : ''}${sub.duration_min} min)</div>`;
             });
             html += '</div>';
         }
@@ -1541,7 +1605,7 @@ function buildStepCard(step, idx, total) {
     } else {
         // Drive step
         html += `<div class="ts-line-name">${escHtml(step.instruction || 'Drive')}</div>`;
-        html += `<div class="ts-stops">${step.duration_min} min · ${step.distance_km} km</div>`;
+        html += `<div class="ts-stops">${step.duration_min} min Â· ${step.distance_km} km</div>`;
     }
 
     html += `</div></div>`;
@@ -1619,6 +1683,21 @@ function escHtml(str) {
 </script>
 
 <!-- Load Google Maps API -->
+<?php if (trim($googleMapsKey) !== ''): ?>
+<script>
+setTimeout(() => {
+    if (!googleMapLoaded) {
+        showMapLoadError(
+            'Google Maps did not finish loading. Check the browser console for the exact Google Maps API error. For localhost testing, the API key must allow <code>http://localhost/*</code> and the Maps JavaScript API must be enabled.'
+        );
+    }
+}, 7000);
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars($googleMapsKey); ?>&callback=initMap&libraries=geometry" async defer></script>
+<?php else: ?>
+<script>
+showMapLoadError('Google Maps API key is missing in <code>config/api_keys.php</code>.');
+</script>
+<?php endif; ?>
 </body>
 </html>
