@@ -911,7 +911,7 @@ async function replacePlace(itemId, day, state, category) {
                 category:     category,
             })
         });
-        const data = await resp.json();
+        const data = await parseJsonResponse(resp);
 
         if (data.status === 'success') {
             replacementMap[itemId] = {
@@ -1104,7 +1104,7 @@ async function confirmReview() {
                 replacements_json: JSON.stringify(replacementMap),
             })
         });
-        const data = await resp.json();
+        const data = await parseJsonResponse(resp);
 
         if (data.status === 'success') {
             window.location.href = 'itinerary_view.php?itinerary_id=' + ITINERARY_ID;
@@ -1177,10 +1177,24 @@ async function sendAiMessage(event) {
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({ itinerary_id: ITINERARY_ID, message: text }),
         });
-        const data = await resp.json();
+        const data = await parseJsonResponse(resp);
         if (loading) loading.textContent = data.answer || data.message || 'AI assistant could not answer this request.';
     } catch (e) {
         if (loading) loading.textContent = 'Network error. Please try again.';
+    }
+}
+
+async function parseJsonResponse(resp) {
+    const raw = await resp.text();
+    try {
+        return JSON.parse(raw);
+    } catch (e) {
+        const start = raw.indexOf('{');
+        const end = raw.lastIndexOf('}');
+        if (start >= 0 && end > start) {
+            return JSON.parse(raw.slice(start, end + 1));
+        }
+        throw e;
     }
 }
 </script>
