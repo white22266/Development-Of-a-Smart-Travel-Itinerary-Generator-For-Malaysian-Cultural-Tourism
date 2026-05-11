@@ -13,5 +13,5 @@ define('SMTP_FROM_NAME', 'Admin Smart Travel Itinerary Generator');
 // AI provider for the traveller AI chatbox.
 // Supported: ollama, openai, gemini. Ollama runs locally and does not need a paid API key.
 define('AI_PROVIDER', 'ollama');
-define('OLLAMA_MODEL', 'qwen3:8b');
+define('OLLAMA_MODEL', 'qwen2.5:3b');
 define('OLLAMA_BASE_URL', 'http://localhost:11434');

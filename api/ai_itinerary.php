@@ -39,8 +39,8 @@ function generate_ai_itinerary(int $travellerId): void
     }
 
     $data = $input["data"];
-    $model = defined("OLLAMA_MODEL") ? trim((string)OLLAMA_MODEL) : "qwen3:8b";
-    if ($model === "") $model = "qwen3:8b";
+    $model = defined("OLLAMA_MODEL") ? trim((string)OLLAMA_MODEL) : "qwen2.5:3b";
+    if ($model === "") $model = "qwen2.5:3b";
 
     $prompt = build_itinerary_prompt($data);
     $result = call_ollama_chat($model, $prompt);
