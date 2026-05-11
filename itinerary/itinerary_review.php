@@ -816,21 +816,21 @@ $startDate = $it["start_date"] ?? null;
 <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
     <div class="ai-chat-header">
         <div>
-            <div class="ai-chat-title">AI Travel Assistant</div>
-            <div class="ai-chat-subtitle">Ask it to write routes, check costs, or improve this itinerary.</div>
+            <div class="ai-chat-title">AI Chatbot</div>
+            <div class="ai-chat-subtitle">Chat with the local AI before confirming this itinerary.</div>
         </div>
         <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">I can help rewrite your itinerary route, explain why places match your preferences, or suggest what to replace before you confirm.</div>
+        <div class="ai-msg bot">Hi, I am your local AI chatbot. Ask me about this generated itinerary, route order, budget, hotel choice, or places to replace before you confirm.</div>
     </div>
     <div class="ai-chat-prompts">
-        <button type="button" onclick="askAiQuick('Write my itinerary route in simple steps')">Write route</button>
-        <button type="button" onclick="askAiQuick('Suggest better replacements for low match places')">Improve</button>
-        <button type="button" onclick="askAiQuick('Check whether my itinerary is within budget')">Cost check</button>
+        <button type="button" onclick="askAiQuick('Act as my travel AI chatbot and review this itinerary.')">Review</button>
+        <button type="button" onclick="askAiQuick('Suggest better replacements for low match places.')">Replace ideas</button>
+        <button type="button" onclick="askAiQuick('Check whether this itinerary is within budget.')">Budget</button>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
-        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Ask about this itinerary...">
+        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
         <button type="submit">Send</button>
     </form>
 </div>

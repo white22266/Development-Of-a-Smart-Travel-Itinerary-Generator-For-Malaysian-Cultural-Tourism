@@ -1061,21 +1061,21 @@ foreach ($days as $dayItems) {
 <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
     <div class="ai-chat-header">
         <div>
-            <div class="ai-chat-title">AI Travel Assistant</div>
-            <div class="ai-chat-subtitle">Ask for routes, cost checks, culture notes, or improvements.</div>
+            <div class="ai-chat-title">AI Chatbot</div>
+            <div class="ai-chat-subtitle">Chat with the local AI about this itinerary.</div>
         </div>
         <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">Ask me to write your route automatically, explain the itinerary, check budget, or suggest improvements.</div>
+        <div class="ai-msg bot">Hi, I am your local AI chatbot. Ask me anything about this itinerary, route, cost, culture notes, hotels, or improvements.</div>
     </div>
     <div class="ai-chat-prompts">
-        <button type="button" onclick="askAiQuick('Write my itinerary route in simple steps')">Write route</button>
-        <button type="button" onclick="askAiQuick('Suggest improvements for this itinerary')">Improve</button>
-        <button type="button" onclick="askAiQuick('Explain the cultural value of this itinerary')">Culture</button>
+        <button type="button" onclick="askAiQuick('Act as my travel AI chatbot and explain this itinerary.')">Explain</button>
+        <button type="button" onclick="askAiQuick('Suggest a better route order for this itinerary.')">Route</button>
+        <button type="button" onclick="askAiQuick('How can I improve this itinerary within my budget?')">Improve</button>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
-        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Ask about this itinerary...">
+        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
         <button type="submit">Send</button>
     </form>
 </div>

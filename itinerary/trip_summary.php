@@ -402,21 +402,21 @@ $interests = $it["interests"] ?? "-";
 <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
     <div class="ai-chat-header">
         <div>
-            <div class="ai-chat-title">AI Travel Assistant</div>
-            <div class="ai-chat-subtitle">Ask about cost, route writing, or improvements.</div>
+            <div class="ai-chat-title">AI Chatbot</div>
+            <div class="ai-chat-subtitle">Chat with the local AI about this trip summary.</div>
         </div>
         <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">Ask me to explain the cost breakdown, check budget fit, or rewrite your trip route.</div>
+        <div class="ai-msg bot">Hi, I am your local AI chatbot. Ask me about trip cost, budget, route, hotels, or ways to improve this plan.</div>
     </div>
     <div class="ai-chat-prompts">
-        <button type="button" onclick="askAiQuick('Explain my trip cost breakdown')">Explain cost</button>
-        <button type="button" onclick="askAiQuick('Write my itinerary route in simple steps')">Write route</button>
-        <button type="button" onclick="askAiQuick('Suggest ways to reduce the total cost')">Reduce cost</button>
+        <button type="button" onclick="askAiQuick('Act as my travel AI chatbot and explain this trip summary.')">Explain</button>
+        <button type="button" onclick="askAiQuick('Check whether this itinerary fits my budget.')">Budget</button>
+        <button type="button" onclick="askAiQuick('Suggest ways to reduce the total cost.')">Reduce cost</button>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
-        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Ask about this itinerary...">
+        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
         <button type="submit">Send</button>
     </form>
 </div>
