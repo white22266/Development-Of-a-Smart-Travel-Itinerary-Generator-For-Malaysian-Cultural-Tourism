@@ -138,6 +138,7 @@ $stmt->close();
                 <p>Select a saved preference to generate your personalised cultural itinerary. Weather will adjust outdoor activities.</p>
             </div>
             <div class="actions">
+                <a class="btn btn-primary" href="ai_itinerary_assistant.php">AI Itinerary Assistant</a>
                 <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
             </div>
         </div>
