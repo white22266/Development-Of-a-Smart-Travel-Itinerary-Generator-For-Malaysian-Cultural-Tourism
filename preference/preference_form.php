@@ -127,6 +127,41 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       color: var(--muted);
       margin-top: 5px;
     }
+    .wizard-progress {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+    }
+    .wizard-step-tab {
+      border: 1px solid rgba(15,23,42,0.10);
+      border-radius: 10px;
+      padding: 9px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--muted);
+      background: #fff;
+    }
+    .wizard-step-tab.active {
+      color: #fff;
+      background: #4f46e5;
+      border-color: #4f46e5;
+    }
+    .wizard-panel { display: none; }
+    .wizard-panel.active { display: block; }
+    .summary-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .summary-item {
+      border: 1px solid rgba(15,23,42,0.10);
+      border-radius: 10px;
+      padding: 10px 12px;
+      background: rgba(15,23,42,0.02);
+      font-size: 13px;
+    }
+    .summary-item strong { display:block; margin-bottom:4px; }
   </style>
 </head>
 
@@ -186,16 +221,21 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
           </ul>
         <?php endif; ?>
 
-        <form method="post" action="preference_process.php">
+        <form method="post" action="preference_process.php" id="preferenceWizardForm">
+          <div class="wizard-progress" aria-label="Preference steps">
+            <div class="wizard-step-tab active" data-step-tab="1">1. Trip & Interests</div>
+            <div class="wizard-step-tab" data-step-tab="2">2. Location</div>
+            <div class="wizard-step-tab" data-step-tab="3">3. Review</div>
+          </div>
           <div class="grid">
 
             <!-- ===== LEFT: Trip Details ===== -->
-            <div class="card col-6" style="box-shadow:none;">
+            <div class="card col-6 wizard-panel active" data-step-panel="1" style="box-shadow:none;">
               <h3 style="margin-bottom:8px;">Trip Details</h3>
 
               <label style="font-size:13px; font-weight:700;">Travel Duration (Days) *</label>
-              <input type="number" name="trip_days" min="1" max="7" required
-                placeholder="1 to 7 days"
+              <input type="number" name="trip_days" min="1" max="30" required
+                placeholder="1 to 30 days"
                 value="<?php echo htmlspecialchars($oldTripDays); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
 
@@ -236,7 +276,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
             </div>
 
             <!-- ===== RIGHT: State & District dropdowns ===== -->
-            <div class="card col-6" style="box-shadow:none;">
+            <div class="card col-6 wizard-panel" data-step-panel="2" style="box-shadow:none;">
               <h3 style="margin-bottom:4px;">
                 Preferred Location
                 <span style="font-weight:400; font-size:12px; color:var(--muted);"> (Optional)</span>
@@ -290,10 +330,25 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
               </div><!-- /location-row -->
             </div>
 
+            <div class="card col-12 wizard-panel" data-step-panel="3" style="box-shadow:none;">
+              <h3 style="margin-bottom:8px;">Review Preference</h3>
+              <p class="meta" style="margin-top:0;">Confirm these criteria before saving. The system stores them in normalized preference tables and keeps legacy fields for existing itinerary generation.</p>
+              <div class="summary-list">
+                <div class="summary-item"><strong>Travel Duration</strong><span id="summaryDays">-</span></div>
+                <div class="summary-item"><strong>Budget</strong><span id="summaryBudget">-</span></div>
+                <div class="summary-item"><strong>Transport</strong><span id="summaryTransport">-</span></div>
+                <div class="summary-item"><strong>Interests</strong><span id="summaryInterests">-</span></div>
+                <div class="summary-item"><strong>State</strong><span id="summaryState">Any State</span></div>
+                <div class="summary-item"><strong>District</strong><span id="summaryDistrict">Any District</span></div>
+              </div>
+            </div>
+
           </div><!-- /grid -->
 
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn btn-primary" type="submit">Save Preferences</button>
+            <button class="btn btn-ghost" type="button" id="wizardBack" style="display:none;">Back</button>
+            <button class="btn btn-primary" type="button" id="wizardNext">Next</button>
+            <button class="btn btn-primary" type="submit" id="wizardSubmit" style="display:none;">Save Preferences</button>
             <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Cancel</a>
           </div>
         </form>
@@ -359,6 +414,73 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     distWarn.classList.remove('visible');
     distHint.textContent = 'Optionally narrow to a specific district in ' + state + '.';
   }
+
+  var currentStep = 1;
+  var backBtn = document.getElementById('wizardBack');
+  var nextBtn = document.getElementById('wizardNext');
+  var submitBtn = document.getElementById('wizardSubmit');
+
+  function showStep(step) {
+    currentStep = step;
+    document.querySelectorAll('[data-step-panel]').forEach(function(panel) {
+      panel.classList.toggle('active', panel.getAttribute('data-step-panel') === String(step));
+    });
+    document.querySelectorAll('[data-step-tab]').forEach(function(tab) {
+      tab.classList.toggle('active', tab.getAttribute('data-step-tab') === String(step));
+    });
+    if (backBtn) backBtn.style.display = step === 1 ? 'none' : '';
+    if (nextBtn) nextBtn.style.display = step === 3 ? 'none' : '';
+    if (submitBtn) submitBtn.style.display = step === 3 ? '' : 'none';
+    if (step === 3) updateSummary();
+  }
+
+  function stepValid(step) {
+    if (step === 1) {
+      var days = document.querySelector('[name="trip_days"]');
+      var budget = document.querySelector('[name="budget"]');
+      var transport = document.querySelector('[name="transport_type"]');
+      var checked = document.querySelectorAll('[name="interests[]"]:checked');
+      if (!days.reportValidity() || !budget.reportValidity() || !transport.reportValidity()) return false;
+      if (checked.length === 0) {
+        alert('Please select at least one interest.');
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function selectedText(sel) {
+    if (!sel || sel.selectedIndex < 0) return '';
+    return sel.options[sel.selectedIndex].textContent.trim();
+  }
+
+  function updateSummary() {
+    var days = document.querySelector('[name="trip_days"]').value || '-';
+    var budget = document.querySelector('[name="budget"]').value || '-';
+    var transport = selectedText(document.querySelector('[name="transport_type"]')) || '-';
+    var interests = Array.prototype.map.call(document.querySelectorAll('[name="interests[]"]:checked'), function(el) {
+      return el.parentNode.textContent.trim();
+    }).join(', ') || '-';
+    document.getElementById('summaryDays').textContent = days + ' day(s)';
+    document.getElementById('summaryBudget').textContent = budget === '-' ? '-' : 'RM ' + budget;
+    document.getElementById('summaryTransport').textContent = transport;
+    document.getElementById('summaryInterests').textContent = interests;
+    document.getElementById('summaryState').textContent = selectedText(stateSel) || 'Any State';
+    document.getElementById('summaryDistrict').textContent = selectedText(distSel) || 'Any District';
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      if (!stepValid(currentStep)) return;
+      showStep(Math.min(3, currentStep + 1));
+    });
+  }
+  if (backBtn) {
+    backBtn.addEventListener('click', function() {
+      showStep(Math.max(1, currentStep - 1));
+    });
+  }
+  showStep(1);
 })();
 </script>
 </body>

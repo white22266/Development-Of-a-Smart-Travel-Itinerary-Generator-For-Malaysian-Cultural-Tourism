@@ -100,6 +100,7 @@ class CostEstimationService
     ): array {
         // ---- 1. Attraction cost ----
         $attractionCost = 0.0;
+        $scheduledFoodCost = 0.0;
         $selectedHotelCost = 0.0;
         $selectedHotelCount = 0;
         foreach ($itineraryItems as $item) {
@@ -107,6 +108,10 @@ class CostEstimationService
             if ($type === 'hotel') {
                 $selectedHotelCost += (float)($item['estimated_cost'] ?? 0);
                 $selectedHotelCount++;
+                continue;
+            }
+            if ($type === 'food') {
+                $scheduledFoodCost += (float)($item['estimated_cost'] ?? 0);
                 continue;
             }
             $attractionCost += (float)($item['estimated_cost'] ?? 0);
@@ -130,7 +135,11 @@ class CostEstimationService
         // ---- 4. Food cost ----
         $meals       = ($mealsPerDay > 0) ? $mealsPerDay : self::MEALS_PER_DAY;
         $mealPrice   = ($avgMealPrice > 0) ? $avgMealPrice : self::AVG_MEAL_PRICE;
-        $foodCost    = round($this->tripDays * $meals * $mealPrice, 2);
+        $defaultFoodCost = round($this->tripDays * $meals * $mealPrice, 2);
+        $foodCost = max($defaultFoodCost, round($scheduledFoodCost, 2));
+        $foodNote = $scheduledFoodCost > 0
+            ? 'Scheduled food stops RM ' . number_format($scheduledFoodCost, 2) . '; minimum estimate ' . $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2)
+            : $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2);
 
         // ---- 5. Total ----
         $totalCost = round($attractionCost + $transportCost + $accommodationCost + $foodCost, 2);
@@ -168,7 +177,7 @@ class CostEstimationService
                 [
                     'label'  => 'Food & Meals',
                     'amount' => $foodCost,
-                    'note'   => $this->tripDays . ' day(s) × ' . $meals . ' meals × RM ' . number_format($mealPrice, 2),
+                    'note'   => $foodNote,
                 ],
             ],
         ];

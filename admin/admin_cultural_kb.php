@@ -3,6 +3,7 @@
 session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
+require_once "../services/DuplicatePlaceService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
     header("Location: ../auth/login.php?role=admin");
@@ -56,6 +57,20 @@ $allStateDistricts = [
 // District filter from GET
 $district = trim($_GET["district"] ?? "");
 $districtOptions = ($state !== "" && isset($allStateDistricts[$state])) ? $allStateDistricts[$state] : [];
+
+$duplicatePlaces = [];
+$dupDistCol = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$dupDistrictSelect = ($dupDistCol && $dupDistCol->num_rows > 0) ? "district" : "NULL AS district";
+$dupRes = $conn->query("
+    SELECT place_id, name, state, {$dupDistrictSelect}, category, latitude, longitude
+    FROM cultural_places
+    WHERE is_active = 1
+    ORDER BY place_id DESC
+    LIMIT 1000
+");
+if ($dupRes) {
+    while ($dupRow = $dupRes->fetch_assoc()) $duplicatePlaces[] = $dupRow;
+}
 
 // edit mode
 $editId = (int)($_GET["edit_id"] ?? 0);
@@ -184,6 +199,7 @@ $stmt->close();
                 <a class="active" href="admin_cultural_kb.php"><span class="dot"></span> State Cultural Knowledge Base</a>
                 <a href="../admin/admin_pending.php"><span class="dot"></span> Content Validation</a>
                 <a href="../admin/user_manage/index.php"><span class="dot"></span> User Management</a>
+                <a href="../admin/admin_reports.php"><span class="dot"></span> Reports</a>
                 <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>
 
@@ -260,6 +276,19 @@ $stmt->close();
                     </form>
                 </div>
 
+                <div class="card col-12">
+                    <h3>CSV Bulk Import</h3>
+                    <p class="meta">Upload CSV columns: name, state, district, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active, visit_duration_min.</p>
+                    <form method="post" action="admin_cultural_kb_process.php" enctype="multipart/form-data" style="display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
+                        <input type="hidden" name="action" value="import_csv">
+                        <div style="flex:1; min-width:260px;">
+                            <label style="font-size:13px; font-weight:800;">CSV File</label><br>
+                            <input type="file" name="csv_file" accept=".csv,text/csv" required style="width:100%; padding:8px;">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Import CSV</button>
+                    </form>
+                </div>
+
                 <!-- Add / Edit Form -->
                 <div class="card col-12">
                     <h3><?php echo $editRow ? "Edit Place" : "Add New Place"; ?></h3>
@@ -312,7 +341,7 @@ $stmt->close();
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Category *</label><br>
-                                <select name="category" required
+                                <select name="category" id="adminCategorySelect" required
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                                     <option value="" disabled <?php echo empty($editRow["category"] ?? "") ? "selected" : ""; ?>>Choose a category</option>
                                     <?php foreach ($categoryOptions as $c): ?>
@@ -352,6 +381,15 @@ $stmt->close();
                                     value="<?php echo htmlspecialchars($editRow["longitude"] ?? ""); ?>"
                                     placeholder="e.g. 102.9330000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            </div>
+
+                            <div class="col-12" id="adminDuplicatePanel" style="display:none; border:1px solid rgba(245,158,11,.35); background:rgba(245,158,11,.08); border-radius:12px; padding:12px;">
+                                <div style="font-weight:900; color:#92400e; margin-bottom:6px;">Possible Duplicate Places</div>
+                                <div id="adminDuplicateList" class="meta"></div>
+                                <label style="display:flex; gap:8px; align-items:center; margin-top:10px; font-size:13px; font-weight:800;">
+                                    <input type="checkbox" name="allow_duplicate" value="1">
+                                    Allow duplicate because this is a different place
+                                </label>
                             </div>
 
                             <div class="col-3">
@@ -667,6 +705,73 @@ $stmt->close();
     </div>
 <script>
 var adminDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
+var existingAdminPlaces = <?php echo json_encode($duplicatePlaces, JSON_UNESCAPED_UNICODE); ?>;
+
+function normPlaceName(value) {
+    return String(value || '').toLowerCase()
+        .replace(/\([^)]*\)/g, ' ')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .replace(/\b(the|restaurant|restoran|cafe|museum|muzium|temple|park|taman)\b/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function roughSimilarity(a, b) {
+    a = normPlaceName(a);
+    b = normPlaceName(b);
+    if (!a || !b) return 0;
+    if (a === b) return 100;
+    var short = a.length < b.length ? a : b;
+    var long = a.length < b.length ? b : a;
+    if (long.indexOf(short) !== -1 && short.length >= 5) return 88;
+    var words = short.split(' ').filter(Boolean);
+    var hits = words.filter(function(w) { return long.indexOf(w) !== -1; }).length;
+    return Math.round((hits / Math.max(1, words.length)) * 75);
+}
+
+function checkAdminDuplicates() {
+    var nameInput = document.getElementById('adminPlaceNameInput');
+    var stateInput = document.getElementById('adminStateSelect');
+    var catInput = document.getElementById('adminCategorySelect');
+    var latInput = document.getElementById('adminLatitudeInput');
+    var lngInput = document.getElementById('adminLongitudeInput');
+    var panel = document.getElementById('adminDuplicatePanel');
+    var list = document.getElementById('adminDuplicateList');
+    if (!nameInput || !panel || !list) return;
+
+    var name = nameInput.value;
+    var state = stateInput ? stateInput.value : '';
+    var category = catInput ? catInput.value : '';
+    var lat = parseFloat(latInput ? latInput.value : '');
+    var lng = parseFloat(lngInput ? lngInput.value : '');
+    var matches = [];
+    existingAdminPlaces.forEach(function(p) {
+        if (state && p.state !== state) return;
+        if (category && p.category !== category) return;
+        var score = roughSimilarity(name, p.name);
+        if (!isNaN(lat) && !isNaN(lng) && p.latitude && p.longitude) {
+            var dLat = Math.abs(lat - parseFloat(p.latitude));
+            var dLng = Math.abs(lng - parseFloat(p.longitude));
+            if (dLat < 0.002 && dLng < 0.002) score = Math.max(score, 85);
+        }
+        if (score >= 60) matches.push({ place: p, score: score });
+    });
+    matches.sort(function(a, b) { return b.score - a.score; });
+    matches = matches.slice(0, 5);
+    panel.style.display = matches.length ? 'block' : 'none';
+    list.innerHTML = matches.length ? matches.map(function(m) {
+        var p = m.place;
+        return '<div><strong>#' + p.place_id + ' ' + escAdminHtml(p.name) + '</strong> - ' +
+            escAdminHtml([p.district, p.state].filter(Boolean).join(', ')) +
+            ' - ' + escAdminHtml(p.category) + ' - ' + m.score + '% match</div>';
+    }).join('') : '';
+}
+
+function escAdminHtml(str) {
+    return String(str || '').replace(/[&<>"']/g, function(ch) {
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch];
+    });
+}
 
 function adminUpdateDistricts(selectedState) {
     var distSel = document.getElementById('adminDistrictSelect');
@@ -800,8 +905,18 @@ function initPlaceAutocomplete() {
                 descriptionInput.value = generateStarterDescription(place, state, district);
             }
         }
+        checkAdminDuplicates();
     });
 }
+
+['adminPlaceNameInput','adminStateSelect','adminLatitudeInput','adminLongitudeInput'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', checkAdminDuplicates);
+    if (el) el.addEventListener('change', checkAdminDuplicates);
+});
+var adminCategorySelect = document.getElementById('adminCategorySelect');
+if (adminCategorySelect) adminCategorySelect.addEventListener('change', checkAdminDuplicates);
+checkAdminDuplicates();
 </script>
 <?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>

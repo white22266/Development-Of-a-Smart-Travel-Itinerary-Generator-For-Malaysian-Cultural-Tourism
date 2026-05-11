@@ -623,8 +623,8 @@ function parse_clock_to_minutes(string $raw): ?int
 function opening_hours_allows(?string $openingHours, int $startMin): bool
 {
     $text = strtolower(trim((string)$openingHours));
-    if ($text === "" || str_contains($text, "24 hour")) return true;
-    if (str_contains($text, "closed")) return false;
+    if ($text === "" || strpos($text, "24 hour") !== false) return true;
+    if ($text === "closed" || $text === "temporarily closed" || $text === "permanently closed") return false;
 
     $normalized = str_replace(["–", "—", "to"], "-", $text);
     if (!preg_match('/([0-9]{1,2}(?::?[0-9]{2})?\s*(?:am|pm)?)\s*-\s*([0-9]{1,2}(?::?[0-9]{2})?\s*(?:am|pm)?)/i', $normalized, $m)) {
@@ -958,15 +958,17 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
                 $timeMin = $seg["travel_time_min"];
             }
 
+            $candidateStartMin = $dayCursorMin;
             if ($seq > 1) {
-                $dayCursorMin += (int)($timeMin ?? (($transportType === "walking") ? 20 : 15));
+                $candidateStartMin += (int)($timeMin ?? (($transportType === "walking") ? 20 : 15));
             }
 
-            if (!opening_hours_allows($p["opening_hours"] ?? null, $dayCursorMin)) {
+            if (!opening_hours_allows($p["opening_hours"] ?? null, $candidateStartMin)) {
                 continue;
             }
 
             $durationMin = place_visit_duration_min($p);
+            $dayCursorMin = $candidateStartMin;
             $startTime = sql_time_from_minutes($dayCursorMin);
             $endTime = sql_time_from_minutes($dayCursorMin + $durationMin);
 
@@ -996,7 +998,7 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             if ($ins->execute()) {
                 $totalCost += $fee;
                 $totalDistanceKm += (float)($distKm ?? 0);
-                $insertedItems[] = ["estimated_cost" => $fee];
+                $insertedItems[] = ["estimated_cost" => $fee, "item_type" => $itemType];
                 $usedPlaceIds[$placeId] = true;
                 $seq++;
                 $dayCursorMin += $durationMin;

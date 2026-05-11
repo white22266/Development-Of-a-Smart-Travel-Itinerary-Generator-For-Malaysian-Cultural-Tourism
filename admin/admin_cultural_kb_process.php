@@ -2,6 +2,7 @@
 // admin/admin_cultural_kb_process.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../services/DuplicatePlaceService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
     header("Location: ../auth/login.php?role=admin");
@@ -85,6 +86,129 @@ function update_supervisor_place_fields(mysqli $conn, int $placeId, float $entra
 }
 
 $action = strtolower(trim($_POST["action"] ?? $_GET["action"] ?? ""));
+$currentAdminId = (int)($_SESSION["admin_id"] ?? 0);
+
+if ($action === "import_csv") {
+    if (empty($_FILES["csv_file"]["tmp_name"]) || ($_FILES["csv_file"]["error"] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+        back("Please upload a valid CSV file.", true);
+    }
+
+    $handle = fopen($_FILES["csv_file"]["tmp_name"], "r");
+    if (!$handle) back("Unable to read CSV file.", true);
+
+    $headers = fgetcsv($handle);
+    if (!$headers) {
+        fclose($handle);
+        back("CSV file is empty.", true);
+    }
+    $headers = array_map(fn($h) => strtolower(trim((string)$h)), $headers);
+    $dupeService = new DuplicatePlaceService($conn);
+    $hasDistCol = table_has_column($conn, "cultural_places", "district");
+
+    $imported = 0;
+    $skipped = 0;
+    $errors = [];
+    $rowNo = 1;
+
+    while (($row = fgetcsv($handle)) !== false) {
+        $rowNo++;
+        $data = [];
+        foreach ($headers as $idx => $key) {
+            $data[$key] = trim((string)($row[$idx] ?? ""));
+        }
+
+        $name = $data["name"] ?? "";
+        $state = $data["state"] ?? "";
+        $district = $data["district"] ?? "";
+        $category = strtolower($data["category"] ?? "");
+        $description = $data["description"] ?? "";
+        $address = $data["address"] ?? "";
+        $latitude = $data["latitude"] ?? "";
+        $longitude = $data["longitude"] ?? "";
+        $opening = $data["opening_hours"] ?? ($data["opening"] ?? "");
+        $cost = (float)($data["estimated_cost"] ?? $data["entrance_fee"] ?? 0);
+        $imageUrl = $data["image_url"] ?? "";
+        $isActive = isset($data["is_active"]) && $data["is_active"] !== "" ? (int)$data["is_active"] : 1;
+        $isActive = $isActive === 0 ? 0 : 1;
+
+        if ($name === "" || $state === "" || $category === "") {
+            $skipped++;
+            $errors[] = "Row $rowNo skipped: name, state and category are required.";
+            continue;
+        }
+        if (!in_array($category, $categoryOptions, true)) {
+            $skipped++;
+            $errors[] = "Row $rowNo skipped: invalid category '$category'.";
+            continue;
+        }
+        if ($latitude !== "" && !is_numeric($latitude)) {
+            $skipped++;
+            $errors[] = "Row $rowNo skipped: latitude must be numeric.";
+            continue;
+        }
+        if ($longitude !== "" && !is_numeric($longitude)) {
+            $skipped++;
+            $errors[] = "Row $rowNo skipped: longitude must be numeric.";
+            continue;
+        }
+        if ($imageUrl !== "" && !preg_match('#^(https?://|uploads/)#i', $imageUrl)) {
+            $skipped++;
+            $errors[] = "Row $rowNo skipped: image_url must be http(s) or uploads/ path.";
+            continue;
+        }
+
+        $candidate = [
+            "name" => $name,
+            "state" => $state,
+            "category" => $category,
+            "latitude" => $latitude,
+            "longitude" => $longitude,
+        ];
+        if ($dupeService->hasHighConfidenceDuplicate($candidate)) {
+            $skipped++;
+            $errors[] = "Row $rowNo skipped: possible duplicate place '$name'.";
+            continue;
+        }
+
+        $latVal = $latitude === "" ? null : (float)$latitude;
+        $lngVal = $longitude === "" ? null : (float)$longitude;
+        $imageDb = $imageUrl === "" ? null : $imageUrl;
+
+        if ($hasDistCol) {
+            $stmt = $conn->prepare("
+                INSERT INTO cultural_places
+                (state, district, name, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active, created_by_admin_id)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ");
+            if ($stmt) $stmt->bind_param("ssssssdddssii", $state, $district, $name, $category, $description, $address, $latVal, $lngVal, $cost, $opening, $imageDb, $isActive, $currentAdminId);
+        } else {
+            $stmt = $conn->prepare("
+                INSERT INTO cultural_places
+                (state, name, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active, created_by_admin_id)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+            ");
+            if ($stmt) $stmt->bind_param("sssssdddssii", $state, $name, $category, $description, $address, $latVal, $lngVal, $cost, $opening, $imageDb, $isActive, $currentAdminId);
+        }
+
+        if (!$stmt || !$stmt->execute()) {
+            $skipped++;
+            $errors[] = "Row $rowNo skipped: " . ($stmt ? $stmt->error : $conn->error);
+            if ($stmt) $stmt->close();
+            continue;
+        }
+        $newPlaceId = (int)$stmt->insert_id;
+        $stmt->close();
+        update_supervisor_place_fields($conn, $newPlaceId, $cost, null, (int)($data["visit_duration_min"] ?? 90));
+        $imported++;
+    }
+    fclose($handle);
+
+    $_SESSION["success_message"] = "CSV import completed. Imported: $imported. Skipped: $skipped.";
+    if (!empty($errors)) $_SESSION["form_errors"] = array_slice($errors, 0, 8);
+    header("Location: admin_cultural_kb.php");
+    exit;
+}
+
 /* ================= DELETE ================= */
 if ($action === "delete") {
     $placeId = (int)($_GET["place_id"] ?? 0);
@@ -175,6 +299,19 @@ if ($action === "create" || $action === "update") {
     // latitude/longitude optional，但如果填了就要是数字
     if ($latitude !== "" && !is_numeric($latitude)) back("Latitude must be numeric.", true);
     if ($longitude !== "" && !is_numeric($longitude)) back("Longitude must be numeric.", true);
+    $allowDuplicate = (int)($_POST["allow_duplicate"] ?? 0) === 1;
+    $dupeService = new DuplicatePlaceService($conn);
+    $dupeCandidate = [
+        "name" => $name,
+        "state" => $state,
+        "category" => $category,
+        "latitude" => $latitude,
+        "longitude" => $longitude,
+    ];
+    $excludeId = ($action === "update") ? $placeId : null;
+    if (!$allowDuplicate && $dupeService->hasHighConfidenceDuplicate($dupeCandidate, $excludeId)) {
+        back("Possible duplicate detected. Review the duplicate panel and tick 'Allow duplicate' only if this is a distinct place.", true);
+    }
     /* ===== CREATE ===== */
     if ($action === "create") {
         // Check if district column exists

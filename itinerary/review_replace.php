@@ -3,10 +3,12 @@
 // AJAX endpoint for the itinerary review page.
 //
 // Actions:
-//   POST (no action field)  → Find a replacement place for a rejected item
-//   POST action=confirm     → Delete rejected items, optionally add hotel item, resequence
+//   POST (no action field)  -> Find a replacement place for a rejected item
+//   POST action=confirm     -> Apply replacements, delete rejected items, add hotel item, resequence
 //
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/CostEstimationService.php";
@@ -175,26 +177,100 @@ function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
     $upd->close();
 }
 
+function load_replacement_place(mysqli $conn, int $placeId): ?array
+{
+    $hasEntranceFeeCol = table_has_column($conn, "cultural_places", "entrance_fee");
+    $feeSelect = $hasEntranceFeeCol ? ", entrance_fee" : "";
+    $stmt = $conn->prepare("
+        SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
+        FROM cultural_places
+        WHERE place_id = ? AND is_active = 1
+        LIMIT 1
+    ");
+    if (!$stmt) return null;
+    $stmt->bind_param("i", $placeId);
+    $stmt->execute();
+    $row = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    return $row ?: null;
+}
+
+function apply_item_replacement(mysqli $conn, int $itineraryId, int $itemId, int $placeId): bool
+{
+    $place = load_replacement_place($conn, $placeId);
+    if (!$place) return false;
+
+    $hasEntranceFeeCol = array_key_exists("entrance_fee", $place);
+    $newCost = $hasEntranceFeeCol
+        ? max(0.0, (float)($place["entrance_fee"] ?? 0))
+        : max(0.0, (float)($place["estimated_cost"] ?? 0));
+    $newType = item_type_from_category((string)($place["category"] ?? ""));
+    $districtNote = !empty($place["district"]) ? " | District: " . $place["district"] : "";
+    $newNotes = "State: " . ($place["state"] ?? "") . $districtNote . " | Category: " . ($place["category"] ?? "");
+
+    $hasItemCoords = table_has_column($conn, "itinerary_items", "item_latitude")
+        && table_has_column($conn, "itinerary_items", "item_longitude");
+
+    if ($hasItemCoords) {
+        $stmt = $conn->prepare("
+            UPDATE itinerary_items
+            SET place_id = ?, item_type = ?, item_title = ?, item_latitude = ?, item_longitude = ?, estimated_cost = ?, notes = ?
+            WHERE item_id = ? AND itinerary_id = ?
+        ");
+        if (!$stmt) return false;
+        $lat = $place["latitude"] !== null ? (float)$place["latitude"] : null;
+        $lng = $place["longitude"] !== null ? (float)$place["longitude"] : null;
+        $stmt->bind_param("issdddsii", $placeId, $newType, $place["name"], $lat, $lng, $newCost, $newNotes, $itemId, $itineraryId);
+    } else {
+        $stmt = $conn->prepare("
+            UPDATE itinerary_items
+            SET place_id = ?, item_type = ?, item_title = ?, estimated_cost = ?, notes = ?
+            WHERE item_id = ? AND itinerary_id = ?
+        ");
+        if (!$stmt) return false;
+        $stmt->bind_param("issdsii", $placeId, $newType, $place["name"], $newCost, $newNotes, $itemId, $itineraryId);
+    }
+
+    $ok = $stmt->execute();
+    $stmt->close();
+    return $ok;
+}
+
 // =========================================================
-// ACTION: confirm — delete rejected items, add hotel, resequence
+// ACTION: confirm - apply replacements, delete rejected items, add hotel, resequence
 // =========================================================
 if ($action === 'confirm') {
     $rejectedCsv = trim((string)($_POST["rejected_ids"] ?? ""));
     $hotelId     = (int)($_POST["hotel_id"] ?? 0);
+    $replacementsJson = trim((string)($_POST["replacements_json"] ?? ""));
+
+    $rejectedIds = [];
+    if ($rejectedCsv !== '') {
+        $rejectedIds = array_values(array_unique(array_filter(array_map('intval', explode(',', $rejectedCsv)))));
+    }
+
+    if ($replacementsJson !== "") {
+        $decoded = json_decode($replacementsJson, true);
+        if (is_array($decoded)) {
+            foreach ($decoded as $itemIdRaw => $replacement) {
+                $itemId = (int)$itemIdRaw;
+                $placeId = is_array($replacement) ? (int)($replacement["place_id"] ?? 0) : (int)$replacement;
+                if ($itemId <= 0 || $placeId <= 0 || in_array($itemId, $rejectedIds, true)) continue;
+                apply_item_replacement($conn, $itineraryId, $itemId, $placeId);
+            }
+        }
+    }
 
     // Delete rejected items
-    if ($rejectedCsv !== '') {
-        $ids = array_filter(array_map('intval', explode(',', $rejectedCsv)));
-        if (!empty($ids)) {
-            $ph   = implode(',', array_fill(0, count($ids), '?'));
-            $types = str_repeat('i', count($ids));
+    if (!empty($rejectedIds)) {
+            $ph   = implode(',', array_fill(0, count($rejectedIds), '?'));
+            $types = str_repeat('i', count($rejectedIds));
             $del  = $conn->prepare("DELETE FROM itinerary_items WHERE item_id IN ($ph) AND itinerary_id = ?");
-            $allParams = array_merge($ids, [$itineraryId]);
+            $allParams = array_merge($rejectedIds, [$itineraryId]);
             $allTypes  = $types . 'i';
             $del->bind_param($allTypes, ...$allParams);
             $del->execute();
             $del->close();
-        }
     }
 
     // Keep only one selected hotel for the itinerary.
@@ -327,7 +403,7 @@ if ($action === 'confirm') {
 }
 
 // =========================================================
-// ACTION: replace — find a replacement place
+// ACTION: replace - find a replacement place
 // =========================================================
 $itemId   = (int)($_POST["item_id"]   ?? 0);
 $dayNo    = (int)($_POST["day_no"]    ?? 1);
@@ -378,6 +454,8 @@ $interestArr = array_filter(array_map('trim', explode(',', $interests)));
 // ---- Find replacement candidates ----
 // Strategy: same state + same/similar category, not already used, not current item
 $candidates = [];
+$hasEntranceFeeCol = table_has_column($conn, "cultural_places", "entrance_fee");
+$feeSelect = $hasEntranceFeeCol ? ", entrance_fee" : "";
 
 // Build exclude list
 $excludeIds = $usedIds;
@@ -395,7 +473,7 @@ if (!empty($excludeIds)) {
 }
 
 // Try: same state + same category
-$sql = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost, opening_hours, rating
+$sql = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
         FROM cultural_places
         WHERE is_active = 1 AND state = ? AND category = ?$exPh
         ORDER BY RAND() LIMIT 10";
@@ -414,7 +492,7 @@ if ($stmt) {
 
 // Fallback 1: same state, any category
 if (empty($candidates) && $state !== '') {
-    $sql2 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost, opening_hours, rating
+    $sql2 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
              FROM cultural_places
              WHERE is_active = 1 AND state = ?$exPh
              ORDER BY RAND() LIMIT 10";
@@ -432,7 +510,7 @@ if (empty($candidates) && $state !== '') {
 
 // Fallback 2: any state, same category
 if (empty($candidates) && $category !== '') {
-    $sql3 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost, opening_hours, rating
+    $sql3 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
              FROM cultural_places
              WHERE is_active = 1 AND category = ?$exPh
              ORDER BY RAND() LIMIT 10";
@@ -482,26 +560,15 @@ unset($c);
 usort($candidates, fn($a, $b) => $b["_score"] <=> $a["_score"]);
 $best = $candidates[0];
 
-// ---- Update the itinerary_items row ----
 $newTitle = (string)($best["name"] ?? "");
-$newCost  = (float)($best["estimated_cost"] ?? 0);
+$newCost  = $hasEntranceFeeCol && array_key_exists("entrance_fee", $best)
+    ? max(0.0, (float)($best["entrance_fee"] ?? 0))
+    : (float)($best["estimated_cost"] ?? 0);
 $newPid   = (int)($best["place_id"] ?? 0);
 $newCategory = (string)($best["category"] ?? "");
 $newItemType = item_type_from_category($newCategory);
 $districtNote = !empty($best["district"]) ? " | District: " . $best["district"] : "";
 $newNotes = "State: " . ($best["state"] ?? "") . $districtNote . " | Category: " . $newCategory;
-
-$upd = $conn->prepare("
-    UPDATE itinerary_items
-    SET place_id = ?, item_type = ?, item_title = ?, estimated_cost = ?, notes = ?
-    WHERE item_id = ? AND itinerary_id = ?
-");
-$upd->bind_param("issdsii", $newPid, $newItemType, $newTitle, $newCost, $newNotes, $itemId, $itineraryId);
-$upd->execute();
-$upd->close();
-
-recalculate_itinerary_routes($conn, $itineraryId);
-recalculate_itinerary_total($conn, $itineraryId);
 
 // ---- Match label ----
 $pct = $best["_pct"];
@@ -514,12 +581,15 @@ $pct = $best["_pct"];
 
 echo json_encode([
     'status'       => 'success',
+    'place_id'     => $newPid,
     'new_title'    => $newTitle,
     'new_cost'     => $newCost,
     'new_state'    => $best["state"] ?? "",
     'new_district' => $best["district"] ?? "",
     'new_category' => $newCategory,
     'new_item_type' => $newItemType,
+    'new_notes'    => $newNotes,
+    'new_opening_hours' => $best["opening_hours"] ?? "",
     'match_pct'    => $pct,
     'match_label'  => $matchLabel,
     'match_color'  => $matchColor,

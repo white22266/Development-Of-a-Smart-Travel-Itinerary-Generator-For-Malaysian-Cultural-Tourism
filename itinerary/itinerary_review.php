@@ -1,7 +1,9 @@
 <?php
 // itinerary/itinerary_review.php
-// Post-generation review: users accept/reject places & hotels, see match scores, system regenerates replacements.
-session_start();
+// Post-generation review: users accept/remove/preview replacements, select hotel, then confirm changes.
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/HotelRecommendationService.php";
@@ -87,7 +89,7 @@ function computeMatchScore(array $item, array $interests, float $budget): array
         $budgetScore = ($cost <= $budget) ? max(0.2, 1 - ($cost / $budget)) : 0.0;
     }
 
-    // Rating (0-5 → 0-1)
+    // Rating (0-5 -> 0-1)
     $ratingScore = ($rating > 0) ? min(1.0, $rating / 5.0) : 0.5; // default 0.5 if no rating
 
     $total = $W_CATEGORY * $catScore + $W_BUDGET * $budgetScore + $W_RATING * $ratingScore;
@@ -168,7 +170,7 @@ $startDate = $it["start_date"] ?? null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review Itinerary — <?php echo htmlspecialchars($it["title"]); ?></title>
+    <title>Review Itinerary - <?php echo htmlspecialchars($it["title"]); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css">
     <style>
         /* ===== Review page styles ===== */
@@ -393,6 +395,8 @@ $startDate = $it["start_date"] ?? null;
             flex-wrap: wrap;
             z-index: 100;
             box-shadow: 0 -4px 20px rgba(15,23,42,.08);
+            border-radius: 14px 14px 0 0;
+            margin-top: 16px;
         }
         .confirm-stats {
             font-size: 13px;
@@ -428,6 +432,129 @@ $startDate = $it["start_date"] ?? null;
         .badge-heritage   { background:#fef3c7; color:#92400e; }
         .badge-culture    { background:#ede9fe; color:#5b21b6; }
         .badge-nature     { background:#dcfce7; color:#15803d; }
+        .pending-change-note {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: rgba(245,158,11,.14);
+            color: #92400e;
+            font-size: 11px;
+            font-weight: 800;
+        }
+        .ai-chat-fab {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 160;
+            border: none;
+            border-radius: 999px;
+            background: #0f172a;
+            color: #fff;
+            padding: 12px 18px;
+            font-weight: 800;
+            box-shadow: 0 14px 34px rgba(15,23,42,0.22);
+            cursor: pointer;
+        }
+        .ai-chat-panel {
+            position: fixed;
+            right: 22px;
+            bottom: 82px;
+            z-index: 160;
+            width: min(390px, calc(100vw - 32px));
+            max-height: min(620px, calc(100vh - 120px));
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid rgba(15,23,42,0.14);
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(15,23,42,0.24);
+        }
+        .ai-chat-panel.open { display: flex; }
+        .ai-chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 12px 14px;
+            background: #0f172a;
+            color: #fff;
+        }
+        .ai-chat-title { font-weight: 900; font-size: 13px; }
+        .ai-chat-subtitle { font-size: 11px; color: #cbd5e1; margin-top: 2px; }
+        .ai-chat-close {
+            border: 0;
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+        }
+        .ai-chat-body {
+            min-height: 210px;
+            max-height: 320px;
+            overflow-y: auto;
+            padding: 12px;
+            background: #f8fafc;
+        }
+        .ai-msg {
+            width: fit-content;
+            max-width: 88%;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 12.5px;
+            line-height: 1.45;
+            padding: 9px 10px;
+            border-radius: 10px;
+            margin-bottom: 9px;
+        }
+        .ai-msg.user { margin-left: auto; background: #4f46e5; color: #fff; }
+        .ai-msg.bot { margin-right: auto; background: #fff; color: #334155; border: 1px solid rgba(15,23,42,0.08); }
+        .ai-chat-prompts {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            padding: 10px 12px 0;
+            background: #fff;
+        }
+        .ai-chat-prompts button {
+            border: 1px solid rgba(15,23,42,0.12);
+            background: #fff;
+            color: #334155;
+            border-radius: 999px;
+            padding: 6px 9px;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .ai-chat-form {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            background: #fff;
+            border-top: 1px solid rgba(15,23,42,0.08);
+        }
+        .ai-chat-form input {
+            flex: 1;
+            min-width: 0;
+            border: 1px solid rgba(15,23,42,0.14);
+            border-radius: 10px;
+            padding: 9px 10px;
+            font-size: 12.5px;
+        }
+        .ai-chat-form button {
+            border: 0;
+            border-radius: 10px;
+            background: #4f46e5;
+            color: #fff;
+            padding: 9px 12px;
+            font-weight: 800;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -464,12 +591,13 @@ $startDate = $it["start_date"] ?? null;
         <!-- Review header banner -->
         <div class="review-header">
             <div>
-                <h2>🗺️ Review Your Generated Itinerary</h2>
+                <h2>Review Your Generated Itinerary</h2>
                 <p>Your itinerary has been generated! Review each place, check the match score, and accept or replace any stop you don't like. When done, confirm to finalise.</p>
             </div>
             <div style="text-align:right;">
                 <div style="font-size:22px; font-weight:900;"><?php echo $totalDays; ?> Day<?php echo $totalDays > 1 ? 's' : ''; ?></div>
                 <div style="font-size:12px; opacity:.85;"><?php echo htmlspecialchars($it["title"]); ?></div>
+                <button type="button" class="btn btn-primary" style="margin-top:10px;" onclick="toggleAiChat()">Open AI Chat</button>
             </div>
         </div>
 
@@ -492,7 +620,7 @@ $startDate = $it["start_date"] ?? null;
         ?>
         <div class="day-section" id="day-section-<?php echo $d; ?>">
             <div class="day-header" style="background:<?php echo $col; ?>12; border-color:<?php echo $col; ?>;">
-                <span style="font-size:20px;">📅</span>
+                <span style="font-size:20px;">Day</span>
                 <div>
                     <div style="font-weight:900; color:<?php echo $col; ?>; font-size:15px;">Day <?php echo $d; ?></div>
                     <?php if ($dateStr): ?><div style="font-size:12px; color:#64748b;"><?php echo $dateStr; ?></div><?php endif; ?>
@@ -516,6 +644,7 @@ $startDate = $it["start_date"] ?? null;
                  id="card-<?php echo (int)$item['item_id']; ?>"
                  data-item-id="<?php echo (int)$item['item_id']; ?>"
                  data-day="<?php echo $d; ?>"
+                 data-place-id="<?php echo (int)($item['place_id'] ?? 0); ?>"
                  data-state="<?php echo htmlspecialchars($item['state'] ?? ''); ?>"
                  data-category="<?php echo htmlspecialchars($item['category'] ?? $item['item_type'] ?? ''); ?>"
                  data-status="accepted">
@@ -528,27 +657,27 @@ $startDate = $it["start_date"] ?? null;
                             </span>
                             <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
                         </div>
-                        <div class="place-meta">
+                        <div class="place-meta place-meta-main">
                             <?php if (!empty($item['state'])): ?>
-                                📍 <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
+                                Location: <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
                             <?php endif; ?>
                             <?php if (!empty($item['opening_hours'])): ?>
-                                &nbsp;·&nbsp; 🕐 <?php echo htmlspecialchars($item['opening_hours']); ?>
+                                &middot; Hours: <?php echo htmlspecialchars($item['opening_hours']); ?>
                             <?php endif; ?>
                             <?php if ((float)$item['estimated_cost'] > 0): ?>
-                                &nbsp;·&nbsp; 💰 RM <?php echo number_format((float)$item['estimated_cost'], 2); ?>
+                                &middot; RM <?php echo number_format((float)$item['estimated_cost'], 2); ?>
                             <?php else: ?>
-                                &nbsp;·&nbsp; <span style="color:#16a34a; font-weight:700;">Free</span>
+                                &middot; <span style="color:#16a34a; font-weight:700;">Free</span>
                             <?php endif; ?>
                         </div>
                         <?php if (!empty($item['address'])): ?>
-                        <div class="place-meta" style="margin-top:2px;">🏠 <?php echo htmlspecialchars($item['address']); ?></div>
+                        <div class="place-meta" style="margin-top:2px;">Address: <?php echo htmlspecialchars($item['address']); ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="place-actions">
-                        <button class="btn-accept" onclick="acceptPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-accept-<?php echo (int)$item['item_id']; ?>">✓ Keep</button>
-                        <button class="btn-reject" onclick="rejectPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-reject-<?php echo (int)$item['item_id']; ?>">✕ Remove</button>
-                        <button class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>, <?php echo $d; ?>, '<?php echo addslashes(htmlspecialchars($item['state'] ?? '')); ?>', '<?php echo addslashes(htmlspecialchars($item['category'] ?? $item['item_type'] ?? '')); ?>')" id="btn-replace-<?php echo (int)$item['item_id']; ?>">↻ Replace</button>
+                        <button class="btn-accept" onclick="acceptPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-accept-<?php echo (int)$item['item_id']; ?>">Keep</button>
+                        <button class="btn-reject" onclick="rejectPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-reject-<?php echo (int)$item['item_id']; ?>">Remove</button>
+                        <button class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>, <?php echo $d; ?>, '<?php echo addslashes(htmlspecialchars($item['state'] ?? '')); ?>', '<?php echo addslashes(htmlspecialchars($item['category'] ?? $item['item_type'] ?? '')); ?>')" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
                     </div>
                 </div>
 
@@ -556,7 +685,7 @@ $startDate = $it["start_date"] ?? null;
                 <div class="match-score-wrap">
                     <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; flex-wrap:wrap;">
                         <span class="match-badge badge-<?php echo $score['color']; ?>"><?php echo $score['label']; ?></span>
-                        <span style="font-size:13px; font-weight:900; color:<?php echo $barColor; ?>;"><?php echo $score['pct']; ?>%</span>
+                        <span class="match-main-pct" style="font-size:13px; font-weight:900; color:<?php echo $barColor; ?>;"><?php echo $score['pct']; ?>%</span>
                         <span style="font-size:11px; color:#94a3b8;">match</span>
                         <button onclick="toggleBreakdown(<?php echo (int)$item['item_id']; ?>)"
                                 style="background:none; border:none; font-size:11px; color:#6366f1; cursor:pointer; text-decoration:underline;">
@@ -568,9 +697,9 @@ $startDate = $it["start_date"] ?? null;
                     <div class="match-bar-row">
                         <span class="match-bar-label">Overall</span>
                         <div class="match-bar-track">
-                            <div class="match-bar-fill" style="width:<?php echo $score['pct']; ?>%; background:<?php echo $barColor; ?>;"></div>
+                            <div class="match-bar-fill match-overall-fill" style="width:<?php echo $score['pct']; ?>%; background:<?php echo $barColor; ?>;"></div>
                         </div>
-                        <span class="match-bar-pct" style="color:<?php echo $barColor; ?>;"><?php echo $score['pct']; ?>%</span>
+                        <span class="match-bar-pct match-overall-pct" style="color:<?php echo $barColor; ?>;"><?php echo $score['pct']; ?>%</span>
                     </div>
 
                     <!-- Breakdown (hidden by default) -->
@@ -597,9 +726,9 @@ $startDate = $it["start_date"] ?? null;
                             <span class="match-bar-pct"><?php echo $score['rating_score']; ?>%</span>
                         </div>
                         <div style="margin-top:6px; color:#64748b;">
-                            Category: <strong><?php echo htmlspecialchars(ucfirst($item['category'] ?? $item['item_type'] ?? '—')); ?></strong>
-                            &nbsp;·&nbsp; Cost: <strong>RM <?php echo number_format((float)$item['estimated_cost'], 2); ?></strong>
-                            &nbsp;·&nbsp; Rating: <strong><?php echo $item['rating'] > 0 ? number_format((float)$item['rating'], 1) . '/5' : 'N/A'; ?></strong>
+                            Category: <strong><?php echo htmlspecialchars(ucfirst($item['category'] ?? $item['item_type'] ?? 'N/A')); ?></strong>
+                            &middot; Cost: <strong>RM <?php echo number_format((float)$item['estimated_cost'], 2); ?></strong>
+                            &middot; Rating: <strong><?php echo $item['rating'] > 0 ? number_format((float)$item['rating'], 1) . '/5' : 'N/A'; ?></strong>
                         </div>
                     </div>
                 </div>
@@ -614,14 +743,14 @@ $startDate = $it["start_date"] ?? null;
         <!-- ===== Hotel Selection ===== -->
         <?php if (!empty($hotelsByState)): ?>
         <div class="card" style="padding:18px; margin-bottom:20px;">
-            <h3 style="margin-bottom:6px;">🏨 Select Your Hotel(s)</h3>
+            <h3 style="margin-bottom:6px;">Select Your Hotel(s)</h3>
             <p class="meta" style="margin-top:0; margin-bottom:14px;">Choose a hotel for your stay. Match score is based on price vs. budget, rating, and proximity to your itinerary places.</p>
 
             <?php foreach ($hotelsByState as $state => $hotels): ?>
             <?php if (empty($hotels)) continue; ?>
             <div style="margin-bottom:18px;">
                 <div style="font-weight:800; font-size:13px; margin-bottom:8px; color:#475569;">
-                    📍 <?php echo htmlspecialchars($state); ?>
+                    Location: <?php echo htmlspecialchars($state); ?>
                 </div>
                 <div class="hotel-grid">
                     <?php foreach ($hotels as $h):
@@ -636,13 +765,13 @@ $startDate = $it["start_date"] ?? null;
                     <div class="hotel-card-review"
                          id="hotel-card-<?php echo (int)$h['hotel_id']; ?>"
                          onclick="selectHotel(<?php echo (int)$h['hotel_id']; ?>, '<?php echo addslashes(htmlspecialchars($h['name'])); ?>', '<?php echo addslashes(htmlspecialchars($state)); ?>')">
-                        <span class="hotel-select-badge">✓ Selected</span>
+                        <span class="hotel-select-badge">Selected</span>
                         <div class="hotel-name-rv"><?php echo htmlspecialchars($h['name']); ?></div>
                         <div class="hotel-meta-rv">
                             <?php echo htmlspecialchars($h['district'] ? $h['district'] . ', ' . $state : $state); ?>
-                            &nbsp;·&nbsp; ⭐ <?php echo number_format((float)$h['rating'], 1); ?>/5
+                            &middot; Rating: <?php echo number_format((float)$h['rating'], 1); ?>/5
                             <?php if (isset($h['distance_km'])): ?>
-                                &nbsp;·&nbsp; <?php echo number_format((float)$h['distance_km'], 1); ?> km
+                                &middot; <?php echo number_format((float)$h['distance_km'], 1); ?> km
                             <?php endif; ?>
                         </div>
                         <div class="hotel-price-rv">RM <?php echo number_format((float)$h['price_per_night'], 0); ?> / night</div>
@@ -664,30 +793,54 @@ $startDate = $it["start_date"] ?? null;
         </div>
         <?php endif; ?>
 
+        <div class="confirm-bar">
+            <div class="confirm-stats">
+                <strong id="stat-accepted">0</strong> accepted &middot;
+                <strong id="stat-rejected">0</strong> removed &middot;
+                <strong id="stat-replaced">0</strong> replacement(s) pending &middot;
+                Selected hotel: <strong id="stat-hotel">None</strong>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <a href="my_itineraries.php" class="btn btn-ghost">Back to My Itineraries</a>
+                <button type="button" class="btn btn-ghost" onclick="resetAll()">Reset All</button>
+                <button type="button" class="btn btn-primary" id="btn-confirm" onclick="confirmReview()">Confirm &amp; View Itinerary</button>
+            </div>
+        </div>
+
     </main>
 
-    <!-- ===== Sticky Confirm Bar ===== -->
-    <div class="confirm-bar">
-        <div class="confirm-stats">
-            <strong id="stat-accepted">0</strong> accepted &nbsp;·&nbsp;
-            <strong id="stat-rejected">0</strong> removed &nbsp;·&nbsp;
-            Selected hotel: <strong id="stat-hotel">None</strong>
-        </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a href="my_itineraries.php" class="btn btn-ghost">← Back to My Itineraries</a>
-            <button class="btn btn-ghost" onclick="resetAll()">↺ Reset All</button>
-            <button class="btn btn-primary" id="btn-confirm" onclick="confirmReview()">
-                ✓ Confirm &amp; View Itinerary
-            </button>
-        </div>
-    </div>
 
 </div><!-- /app -->
+
+<button type="button" class="ai-chat-fab" onclick="toggleAiChat()">AI Assistant</button>
+<div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
+    <div class="ai-chat-header">
+        <div>
+            <div class="ai-chat-title">AI Travel Assistant</div>
+            <div class="ai-chat-subtitle">Ask it to write routes, check costs, or improve this itinerary.</div>
+        </div>
+        <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
+    </div>
+    <div class="ai-chat-body" id="aiChatBody">
+        <div class="ai-msg bot">I can help rewrite your itinerary route, explain why places match your preferences, or suggest what to replace before you confirm.</div>
+    </div>
+    <div class="ai-chat-prompts">
+        <button type="button" onclick="askAiQuick('Write my itinerary route in simple steps')">Write route</button>
+        <button type="button" onclick="askAiQuick('Suggest better replacements for low match places')">Improve</button>
+        <button type="button" onclick="askAiQuick('Check whether my itinerary is within budget')">Cost check</button>
+    </div>
+    <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
+        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Ask about this itinerary...">
+        <button type="submit">Send</button>
+    </form>
+</div>
 
 <script>
 // ---- State ----
 const ITINERARY_ID = <?php echo $itineraryId; ?>;
 const itemStatus   = {}; // item_id -> 'accepted' | 'rejected'
+const replacementMap = {}; // item_id -> selected replacement place payload, saved only on Confirm
+const originalCards = {};
 let selectedHotelId   = null;
 let selectedHotelName = '';
 
@@ -699,6 +852,15 @@ itemStatus[<?php echo (int)$item['item_id']; ?>] = 'accepted';
 <?php endforeach; ?>
 
 updateStats();
+
+document.querySelectorAll('.place-card').forEach(card => {
+    originalCards[card.dataset.itemId] = {
+        html: card.innerHTML,
+        state: card.dataset.state || '',
+        category: card.dataset.category || '',
+        placeId: card.dataset.placeId || '',
+    };
+});
 
 // ---- Accept ----
 function acceptPlace(itemId) {
@@ -752,26 +914,52 @@ async function replacePlace(itemId, day, state, category) {
         const data = await resp.json();
 
         if (data.status === 'success') {
-            // Update card content
+            replacementMap[itemId] = {
+                place_id: data.place_id,
+                title: data.new_title,
+                cost: data.new_cost,
+                state: data.new_state || '',
+                district: data.new_district || '',
+                category: data.new_category || '',
+                item_type: data.new_item_type || '',
+            };
+
             const titleEl = card.querySelector('.place-title');
             if (titleEl) titleEl.textContent = data.new_title;
+            card.dataset.placeId = data.place_id;
+            card.dataset.state = data.new_state || state;
+            card.dataset.category = data.new_category || category;
 
-            // Show replacement result
+            const metaMain = card.querySelector('.place-meta-main');
+            if (metaMain) {
+                const location = [data.new_district, data.new_state].filter(Boolean).join(', ');
+                const opening = data.new_opening_hours ? ' | Hours: ' + data.new_opening_hours : '';
+                const costText = parseFloat(data.new_cost || 0) > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free';
+                metaMain.textContent = [location, opening, costText].filter(Boolean).join('');
+            }
+            const badge = card.querySelector('.type-badge');
+            if (badge && data.new_item_type) {
+                badge.textContent = data.new_item_type.charAt(0).toUpperCase() + data.new_item_type.slice(1);
+                badge.className = 'type-badge badge-' + data.new_item_type;
+            }
+            updateCardMatch(card, data);
+
             rep.innerHTML = `
-                <div style="font-weight:800; color:#d97706; margin-bottom:4px;">↻ Replacement Found</div>
+                <div style="font-weight:800; color:#d97706; margin-bottom:4px;">Replacement selected</div>
                 <div style="font-weight:700;">${escHtml(data.new_title)}</div>
                 <div style="font-size:11px; color:#64748b; margin-top:3px;">
-                    ${data.new_state ? '📍 ' + escHtml(data.new_state) : ''}
-                    ${data.new_cost > 0 ? ' · RM ' + parseFloat(data.new_cost).toFixed(2) : ' · Free'}
+                    ${data.new_state ? escHtml(data.new_state) : ''}
+                    ${data.new_cost > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free'}
                 </div>
                 <div style="margin-top:8px; display:flex; align-items:center; gap:8px;">
                     <span class="match-badge badge-${data.match_color}">${data.match_label}</span>
                     <span style="font-weight:900; font-size:13px;">${data.match_pct}% match</span>
                 </div>
+                <span class="pending-change-note">Pending: saved only after Confirm</span>
                 <div style="margin-top:8px; display:flex; gap:8px;">
-                    <button class="btn-accept" onclick="acceptPlace(${itemId})">✓ Keep This</button>
-                    <button class="btn-reject" onclick="rejectPlace(${itemId})">✕ Remove</button>
-                    <button class="btn-replace" onclick="replacePlace(${itemId}, ${day}, '${escHtml(data.new_state || state)}', '${escHtml(data.new_category || category)}')">↻ Try Another</button>
+                    <button type="button" class="btn-accept" onclick="acceptPlace(${itemId})">Keep This</button>
+                    <button type="button" class="btn-reject" onclick="rejectPlace(${itemId})">Remove</button>
+                    <button type="button" class="btn-replace" onclick="replacePlace(${itemId}, ${day}, '${escJs(data.new_state || state)}', '${escJs(data.new_category || category)}')">Try Another</button>
                 </div>
             `;
             rep.classList.add('visible');
@@ -781,7 +969,7 @@ async function replacePlace(itemId, day, state, category) {
             card.dataset.status = 'accepted';
             itemStatus[itemId] = 'accepted';
         } else {
-            rep.innerHTML = `<div style="color:#ef4444; font-weight:700;">⚠ ${escHtml(data.message || 'No replacement found.')}</div>`;
+            rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: ' + escHtml(data.message || 'No replacement found.') + '</div>';
             rep.classList.add('visible');
             card.classList.remove('replacing');
             card.classList.add('rejected');
@@ -789,7 +977,7 @@ async function replacePlace(itemId, day, state, category) {
             itemStatus[itemId] = 'rejected';
         }
     } catch(e) {
-        rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">⚠ Network error. Please try again.</div>';
+        rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: Network error. Please try again.</div>';
         rep.classList.add('visible');
         card.classList.remove('replacing');
         card.classList.add('accepted');
@@ -798,7 +986,7 @@ async function replacePlace(itemId, day, state, category) {
     }
 
     btn.disabled = false;
-    btn.innerHTML = '↻ Replace';
+    btn.innerHTML = 'Replace';
     updateStats();
 }
 
@@ -831,14 +1019,21 @@ function toggleBreakdown(itemId) {
 // ---- Reset all ----
 function resetAll() {
     document.querySelectorAll('.place-card').forEach(card => {
+        const itemId = parseInt(card.dataset.itemId);
+        if (originalCards[itemId]) {
+            card.innerHTML = originalCards[itemId].html;
+            card.dataset.state = originalCards[itemId].state;
+            card.dataset.category = originalCards[itemId].category;
+            card.dataset.placeId = originalCards[itemId].placeId;
+        }
         card.classList.remove('rejected', 'replacing');
         card.classList.add('accepted');
         card.dataset.status = 'accepted';
-        const itemId = parseInt(card.dataset.itemId);
         itemStatus[itemId] = 'accepted';
         const rep = document.getElementById('replacement-' + itemId);
         if (rep) { rep.classList.remove('visible'); rep.innerHTML = ''; }
     });
+    Object.keys(replacementMap).forEach(k => delete replacementMap[k]);
     document.querySelectorAll('.hotel-card-review').forEach(c => c.classList.remove('selected'));
     selectedHotelId   = null;
     selectedHotelName = '';
@@ -848,13 +1043,43 @@ function resetAll() {
 // ---- Update stats bar ----
 function updateStats() {
     let accepted = 0, rejected = 0;
-    Object.values(itemStatus).forEach(s => {
-        if (s === 'accepted') accepted++;
-        else if (s === 'rejected') rejected++;
+    let replaced = 0;
+    Object.entries(itemStatus).forEach(([id, s]) => {
+        if (s === 'accepted') {
+            accepted++;
+            if (replacementMap[id]) replaced++;
+        } else if (s === 'rejected') rejected++;
     });
     document.getElementById('stat-accepted').textContent = accepted;
     document.getElementById('stat-rejected').textContent = rejected;
+    const replacedEl = document.getElementById('stat-replaced');
+    if (replacedEl) replacedEl.textContent = replaced;
     document.getElementById('stat-hotel').textContent    = selectedHotelName || 'None';
+}
+
+function updateCardMatch(card, data) {
+    const colorMap = { success: '#22c55e', primary: '#3b82f6', warning: '#f59e0b', danger: '#ef4444' };
+    const color = colorMap[data.match_color] || '#64748b';
+    const badge = card.querySelector('.match-score-wrap .match-badge');
+    if (badge) {
+        badge.className = 'match-badge badge-' + data.match_color;
+        badge.textContent = data.match_label;
+    }
+    const mainPct = card.querySelector('.match-main-pct');
+    if (mainPct) {
+        mainPct.textContent = data.match_pct + '%';
+        mainPct.style.color = color;
+    }
+    const fill = card.querySelector('.match-overall-fill');
+    if (fill) {
+        fill.style.width = data.match_pct + '%';
+        fill.style.background = color;
+    }
+    const pct = card.querySelector('.match-overall-pct');
+    if (pct) {
+        pct.textContent = data.match_pct + '%';
+        pct.style.color = color;
+    }
 }
 
 // ---- Confirm review ----
@@ -876,6 +1101,7 @@ async function confirmReview() {
                 itinerary_id: ITINERARY_ID,
                 rejected_ids: rejectedIds.join(','),
                 hotel_id:     selectedHotelId || '',
+                replacements_json: JSON.stringify(replacementMap),
             })
         });
         const data = await resp.json();
@@ -885,12 +1111,12 @@ async function confirmReview() {
         } else {
             alert('Error: ' + (data.message || 'Could not save review.'));
             btn.disabled = false;
-            btn.innerHTML = '✓ Confirm & View Itinerary';
+            btn.innerHTML = 'Confirm & View Itinerary';
         }
     } catch(e) {
         alert('Network error. Please try again.');
         btn.disabled = false;
-        btn.innerHTML = '✓ Confirm & View Itinerary';
+        btn.innerHTML = 'Confirm & View Itinerary';
     }
 }
 
@@ -903,6 +1129,59 @@ function escHtml(str) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+}
+
+function escJs(str) {
+    return String(str || '').replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, ' ');
+}
+
+function toggleAiChat() {
+    const panel = document.getElementById('aiChatPanel');
+    if (!panel) return;
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) {
+        const input = document.getElementById('aiChatInput');
+        if (input) setTimeout(() => input.focus(), 80);
+    }
+}
+
+function addAiMessage(role, text) {
+    const body = document.getElementById('aiChatBody');
+    if (!body) return null;
+    const msg = document.createElement('div');
+    msg.className = 'ai-msg ' + (role === 'user' ? 'user' : 'bot');
+    msg.textContent = text;
+    body.appendChild(msg);
+    body.scrollTop = body.scrollHeight;
+    return msg;
+}
+
+function askAiQuick(text) {
+    const input = document.getElementById('aiChatInput');
+    if (input) input.value = text;
+    sendAiMessage();
+}
+
+async function sendAiMessage(event) {
+    if (event) event.preventDefault();
+    const input = document.getElementById('aiChatInput');
+    if (!input) return;
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    addAiMessage('user', text);
+    const loading = addAiMessage('bot', 'Writing answer...');
+    try {
+        const resp = await fetch('ai_chat.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ itinerary_id: ITINERARY_ID, message: text }),
+        });
+        const data = await resp.json();
+        if (loading) loading.textContent = data.answer || data.message || 'AI assistant could not answer this request.';
+    } catch (e) {
+        if (loading) loading.textContent = 'Network error. Please try again.';
+    }
 }
 </script>
 </body>

@@ -71,6 +71,7 @@ function base_admin_sidebar_users(): void
     ["State Cultural Knowledge Base", "../admin_cultural_kb.php", false],
     ["Content Validation", "../admin_pending.php", false],
     ["User Management", "./index.php", true],
+    ["Reports", "../admin_reports.php", false],
     ["Logout", "../../auth/logout.php", false],
   ];
 ?>

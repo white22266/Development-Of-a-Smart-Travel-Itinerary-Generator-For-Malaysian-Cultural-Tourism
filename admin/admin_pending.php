@@ -2,6 +2,7 @@
 // admin/admin_pending.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../services/DuplicatePlaceService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
     header("Location: ../auth/login.php?role=admin");
@@ -30,6 +31,12 @@ if ($viewId > 0) {
     $stmt->execute();
     $viewRow = $stmt->get_result()->fetch_assoc();
     $stmt->close();
+}
+
+$duplicateMatches = [];
+if ($viewRow) {
+    $dupeService = new DuplicatePlaceService($conn);
+    $duplicateMatches = $dupeService->findMatches($viewRow, 6);
 }
 
 $stmt = $conn->prepare("
@@ -68,6 +75,7 @@ $stmt->close();
                 <a href="../admin/admin_cultural_kb.php"><span class="dot"></span> State Cultural Knowledge Base</a>
                 <a class="active" href="../admin/admin_pending.php"><span class="dot"></span> Content Validation</a>
                 <a href="../admin/user_manage/index.php"><span class="dot"></span> User Management</a>
+                <a href="../admin/admin_reports.php"><span class="dot"></span> Reports</a>
                 <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>
 
@@ -156,6 +164,23 @@ $stmt->close();
                         <p><strong>Opening:</strong> <?php echo htmlspecialchars($viewRow["opening_hours"] ?? "-"); ?></p>
                         <p><strong>Estimated Cost:</strong> RM <?php echo number_format((float)($viewRow["estimated_cost"] ?? 0), 2); ?></p>
 
+                        <?php if (!empty($duplicateMatches)): ?>
+                            <div style="border:1px solid rgba(245,158,11,.35); background:rgba(245,158,11,.08); border-radius:12px; padding:12px; margin:12px 0;">
+                                <strong style="color:#92400e;">Possible Duplicate Places</strong>
+                                <div class="meta" style="margin-top:6px;">
+                                    <?php foreach ($duplicateMatches as $m): ?>
+                                        <div>
+                                            #<?php echo (int)$m["place_id"]; ?>
+                                            <strong><?php echo htmlspecialchars($m["name"]); ?></strong>
+                                            - <?php echo htmlspecialchars(trim(($m["district"] ?? "") . ", " . ($m["state"] ?? ""), " ,")); ?>
+                                            - <?php echo (int)$m["_duplicate_score"]; ?>% match
+                                            (<?php echo htmlspecialchars($m["_duplicate_reason"]); ?>)
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+
                         <?php if (!empty($viewRow["image_url"])): ?>
                             <div style="margin-top:10px;">
                                 <img src="../<?php echo htmlspecialchars($viewRow["image_url"]); ?>"
@@ -168,6 +193,12 @@ $stmt->close();
 
                         <form method="post" action="admin_pending_process.php" style="display:grid; gap:10px;">
                             <input type="hidden" name="suggestion_id" value="<?php echo (int)$viewRow["suggestion_id"]; ?>">
+                            <?php if (!empty($duplicateMatches)): ?>
+                                <label style="display:flex; gap:8px; align-items:center; font-size:13px; font-weight:800;">
+                                    <input type="checkbox" name="allow_duplicate" value="1">
+                                    Allow duplicate because this suggestion is a distinct place
+                                </label>
+                            <?php endif; ?>
 
                             <!-- INSERT THIS BLOCK HERE (between hidden input and buttons) -->
                             <div>

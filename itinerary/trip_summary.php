@@ -1,7 +1,9 @@
 <?php
 // itinerary/trip_summary.php
 // Enhanced: Full cost breakdown + hotel recommendations + budget comparison
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/CostEstimationService.php";
@@ -143,6 +145,22 @@ $interests = $it["interests"] ?? "-";
         .trip-meta-item .label { font-size:11px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.05em; }
         .trip-meta-item .value { font-size:15px; font-weight:900; color:var(--navy); margin-top:4px; }
         .day-header { font-weight:900; font-size:15px; color:var(--navy); margin-bottom:8px; padding:8px 12px; background:#f8fafc; border-radius:8px; border-left:4px solid var(--navy); }
+        .ai-chat-fab { position:fixed; right:22px; bottom:22px; z-index:160; border:none; border-radius:999px; background:#0f172a; color:#fff; padding:12px 18px; font-weight:800; box-shadow:0 14px 34px rgba(15,23,42,.22); cursor:pointer; }
+        .ai-chat-panel { position:fixed; right:22px; bottom:82px; z-index:160; width:min(390px, calc(100vw - 32px)); max-height:min(620px, calc(100vh - 120px)); display:none; flex-direction:column; overflow:hidden; background:#fff; border:1px solid rgba(15,23,42,.14); border-radius:12px; box-shadow:0 20px 50px rgba(15,23,42,.24); }
+        .ai-chat-panel.open { display:flex; }
+        .ai-chat-header { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 14px; background:#0f172a; color:#fff; }
+        .ai-chat-title { font-weight:900; font-size:13px; }
+        .ai-chat-subtitle { font-size:11px; color:#cbd5e1; margin-top:2px; }
+        .ai-chat-close { border:0; background:rgba(255,255,255,.12); color:#fff; width:30px; height:30px; border-radius:8px; cursor:pointer; font-size:18px; line-height:1; }
+        .ai-chat-body { min-height:210px; max-height:320px; overflow-y:auto; padding:12px; background:#f8fafc; }
+        .ai-msg { width:fit-content; max-width:88%; white-space:pre-wrap; word-wrap:break-word; font-size:12.5px; line-height:1.45; padding:9px 10px; border-radius:10px; margin-bottom:9px; }
+        .ai-msg.user { margin-left:auto; background:#4f46e5; color:#fff; }
+        .ai-msg.bot { margin-right:auto; background:#fff; color:#334155; border:1px solid rgba(15,23,42,.08); }
+        .ai-chat-prompts { display:flex; gap:6px; flex-wrap:wrap; padding:10px 12px 0; background:#fff; }
+        .ai-chat-prompts button { border:1px solid rgba(15,23,42,.12); background:#fff; color:#334155; border-radius:999px; padding:6px 9px; font-size:11px; font-weight:700; cursor:pointer; }
+        .ai-chat-form { display:flex; gap:8px; padding:12px; background:#fff; border-top:1px solid rgba(15,23,42,.08); }
+        .ai-chat-form input { flex:1; min-width:0; border:1px solid rgba(15,23,42,.14); border-radius:10px; padding:9px 10px; font-size:12.5px; }
+        .ai-chat-form button { border:0; border-radius:10px; background:#4f46e5; color:#fff; padding:9px 12px; font-weight:800; cursor:pointer; }
     </style>
 </head>
 <body>
@@ -177,8 +195,13 @@ $interests = $it["interests"] ?? "-";
                 <p class="meta"><?php echo htmlspecialchars($it["title"]); ?></p>
             </div>
             <div class="actions">
+                <button type="button" class="btn btn-primary" onclick="toggleAiChat()">AI Chat</button>
                 <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>">Back to Map</a>
                 <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
+                <form method="post" action="share_create.php" style="display:inline;">
+                    <input type="hidden" name="itinerary_id" value="<?php echo $itineraryId; ?>">
+                    <button type="submit" class="btn btn-ghost">Share Link</button>
+                </form>
             </div>
         </div>
 
@@ -367,9 +390,83 @@ $interests = $it["interests"] ?? "-";
 
         <div class="actions" style="justify-content:flex-start;padding-left:0;margin-top:8px;">
             <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
+            <form method="post" action="share_create.php" style="display:inline;">
+                <input type="hidden" name="itinerary_id" value="<?php echo $itineraryId; ?>">
+                <button type="submit" class="btn btn-ghost">Share Link</button>
+            </form>
             <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>">Back to Map View</a>
         </div>
     </main>
 </div>
+<button type="button" class="ai-chat-fab" onclick="toggleAiChat()">AI Assistant</button>
+<div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
+    <div class="ai-chat-header">
+        <div>
+            <div class="ai-chat-title">AI Travel Assistant</div>
+            <div class="ai-chat-subtitle">Ask about cost, route writing, or improvements.</div>
+        </div>
+        <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
+    </div>
+    <div class="ai-chat-body" id="aiChatBody">
+        <div class="ai-msg bot">Ask me to explain the cost breakdown, check budget fit, or rewrite your trip route.</div>
+    </div>
+    <div class="ai-chat-prompts">
+        <button type="button" onclick="askAiQuick('Explain my trip cost breakdown')">Explain cost</button>
+        <button type="button" onclick="askAiQuick('Write my itinerary route in simple steps')">Write route</button>
+        <button type="button" onclick="askAiQuick('Suggest ways to reduce the total cost')">Reduce cost</button>
+    </div>
+    <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
+        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Ask about this itinerary...">
+        <button type="submit">Send</button>
+    </form>
+</div>
+<script>
+const ITINERARY_ID = <?php echo (int)$itineraryId; ?>;
+function toggleAiChat() {
+    const panel = document.getElementById('aiChatPanel');
+    if (!panel) return;
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open')) {
+        const input = document.getElementById('aiChatInput');
+        if (input) setTimeout(() => input.focus(), 80);
+    }
+}
+function addAiMessage(role, text) {
+    const body = document.getElementById('aiChatBody');
+    if (!body) return null;
+    const msg = document.createElement('div');
+    msg.className = 'ai-msg ' + (role === 'user' ? 'user' : 'bot');
+    msg.textContent = text;
+    body.appendChild(msg);
+    body.scrollTop = body.scrollHeight;
+    return msg;
+}
+function askAiQuick(text) {
+    const input = document.getElementById('aiChatInput');
+    if (input) input.value = text;
+    sendAiMessage();
+}
+async function sendAiMessage(event) {
+    if (event) event.preventDefault();
+    const input = document.getElementById('aiChatInput');
+    if (!input) return;
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    addAiMessage('user', text);
+    const loading = addAiMessage('bot', 'Writing answer...');
+    try {
+        const resp = await fetch('ai_chat.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ itinerary_id: ITINERARY_ID, message: text }),
+        });
+        const data = await resp.json();
+        if (loading) loading.textContent = data.answer || data.message || 'AI assistant could not answer this request.';
+    } catch (e) {
+        if (loading) loading.textContent = 'Network error. Please try again.';
+    }
+}
+</script>
 </body>
 </html>

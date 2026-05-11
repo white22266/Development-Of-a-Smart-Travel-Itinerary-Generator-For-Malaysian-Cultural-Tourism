@@ -2,6 +2,7 @@
 // admin/admin_pending_process.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../services/DuplicatePlaceService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
     header("Location: ../auth/login.php?role=admin");
@@ -73,6 +74,12 @@ if ($action === "reject") {
 $conn->begin_transaction();
 
 try {
+    $allowDuplicate = (int)($_POST["allow_duplicate"] ?? 0) === 1;
+    $dupeService = new DuplicatePlaceService($conn);
+    if (!$allowDuplicate && $dupeService->hasHighConfidenceDuplicate($sug)) {
+        throw new Exception("Possible duplicate detected. Tick 'Allow duplicate' only if this is a distinct place.");
+    }
+
     // 1) Insert into cultural_places (Knowledge Base)
     $stmt = $conn->prepare("
         INSERT INTO cultural_places

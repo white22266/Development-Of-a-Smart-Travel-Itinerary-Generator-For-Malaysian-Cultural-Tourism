@@ -12,6 +12,10 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 }
 
 $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerId = (int)($_SESSION["traveller_id"] ?? 0);
+$success = $_SESSION["success_message"] ?? "";
+$errors = $_SESSION["form_errors"] ?? [];
+unset($_SESSION["success_message"], $_SESSION["form_errors"]);
 $placeId = (int)($_GET["place_id"] ?? 0);
 if ($placeId <= 0) {
     header("Location: cultural_guide.php");
@@ -47,6 +51,46 @@ $stmt->close();
 if (!$p) {
     header("Location: cultural_guide.php");
     exit;
+}
+
+$userReview = null;
+$reviews = [];
+$reviewStats = ["total" => 0, "avg" => null];
+$reviewTable = $conn->query("SHOW TABLES LIKE 'ratings_reviews'");
+if ($reviewTable && $reviewTable->num_rows > 0) {
+    $stmt = $conn->prepare("SELECT review_id, rating, review_text, created_at, updated_at FROM ratings_reviews WHERE place_id = ? AND traveller_id = ? LIMIT 1");
+    if ($stmt) {
+        $stmt->bind_param("ii", $placeId, $travellerId);
+        $stmt->execute();
+        $userReview = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+    }
+    $stmt = $conn->prepare("
+        SELECT rr.rating, rr.review_text, rr.created_at, rr.updated_at, t.full_name
+        FROM ratings_reviews rr
+        LEFT JOIN travellers t ON t.traveller_id = rr.traveller_id
+        WHERE rr.place_id = ?
+        ORDER BY rr.created_at DESC
+        LIMIT 20
+    ");
+    if ($stmt) {
+        $stmt->bind_param("i", $placeId);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        while ($row = $res->fetch_assoc()) $reviews[] = $row;
+        $stmt->close();
+    }
+    $stmt = $conn->prepare("SELECT COUNT(*) AS total, ROUND(AVG(rating), 2) AS avg_rating FROM ratings_reviews WHERE place_id = ?");
+    if ($stmt) {
+        $stmt->bind_param("i", $placeId);
+        $stmt->execute();
+        $reviewStatsRow = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        $reviewStats = [
+            "total" => (int)($reviewStatsRow["total"] ?? 0),
+            "avg" => $reviewStatsRow["avg_rating"] ?? null,
+        ];
+    }
 }
 
 // ---- Nearby food & hotel recommendations ----
@@ -260,6 +304,16 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             </div>
 
             <section class="grid">
+                <?php if ($success): ?>
+                    <div class="card col-12" style="border-left:6px solid rgba(16,185,129,.7); color:#065f46; font-weight:800;">
+                        <?php echo htmlspecialchars($success); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (!empty($errors)): ?>
+                    <div class="card col-12" style="border-left:6px solid rgba(239,68,68,.7); color:#7f1d1d; font-weight:800;">
+                        <?php echo htmlspecialchars($errors[0]); ?>
+                    </div>
+                <?php endif; ?>
                 <!-- ===== PLACE DETAIL CARD ===== -->
                 <div class="card col-12">
                     <div class="detail-wrap">
@@ -324,6 +378,53 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <div style="color:var(--navy); line-height:1.7;">
                         <?php echo nl2br(htmlspecialchars($p["description"] ?? "No description provided.")); ?>
                     </div>
+
+                    <hr class="sep">
+                    <div class="section-title">Traveller Ratings &amp; Reviews</div>
+                    <p class="meta">
+                        <?php if ($reviewStats["total"] > 0): ?>
+                            Average rating: <strong><?php echo number_format((float)$reviewStats["avg"], 1); ?>/5</strong>
+                            from <?php echo (int)$reviewStats["total"]; ?> review(s).
+                        <?php else: ?>
+                            No traveller reviews yet.
+                        <?php endif; ?>
+                    </p>
+
+                    <form method="post" action="submit_review.php" style="display:grid; gap:10px; margin:12px 0;">
+                        <input type="hidden" name="place_id" value="<?php echo (int)$placeId; ?>">
+                        <div>
+                            <label style="font-size:13px; font-weight:800;">Your Rating *</label><br>
+                            <select name="rating" required style="width:220px; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <option value="" disabled <?php echo !$userReview ? "selected" : ""; ?>>Choose rating</option>
+                                <?php for ($i = 5; $i >= 1; $i--): ?>
+                                    <option value="<?php echo $i; ?>" <?php echo ((int)($userReview["rating"] ?? 0) === $i) ? "selected" : ""; ?>>
+                                        <?php echo $i; ?> / 5
+                                    </option>
+                                <?php endfor; ?>
+                            </select>
+                        </div>
+                        <div>
+                            <label style="font-size:13px; font-weight:800;">Review</label><br>
+                            <textarea name="review_text" rows="4" maxlength="2000" placeholder="Share your visit experience, cultural value, accessibility, or cost accuracy."
+                                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"><?php echo htmlspecialchars($userReview["review_text"] ?? ""); ?></textarea>
+                        </div>
+                        <div>
+                            <button class="btn btn-primary" type="submit"><?php echo $userReview ? "Update Review" : "Submit Review"; ?></button>
+                        </div>
+                    </form>
+
+                    <?php if (!empty($reviews)): ?>
+                        <div class="nearby-grid">
+                            <?php foreach ($reviews as $review): ?>
+                                <div class="nearby-card">
+                                    <div class="nc-name"><?php echo htmlspecialchars($review["full_name"] ?? "Traveller"); ?></div>
+                                    <div class="stars"><?php echo str_repeat("&#9733;", (int)$review["rating"]) . str_repeat("&#9734;", 5 - (int)$review["rating"]); ?></div>
+                                    <div class="nc-meta" style="margin-top:6px;"><?php echo nl2br(htmlspecialchars($review["review_text"] ?: "No written comment.")); ?></div>
+                                    <div class="nc-meta" style="margin-top:6px;"><?php echo htmlspecialchars($review["updated_at"] ?? $review["created_at"] ?? ""); ?></div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
 
                     <!-- ===== NEARBY FOOD RECOMMENDATIONS ===== -->
                     <?php if (!empty($nearbyFood)): ?>

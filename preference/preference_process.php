@@ -14,6 +14,50 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
+function pref_table_exists(mysqli $conn, string $table): bool
+{
+    $table = $conn->real_escape_string($table);
+    $res = $conn->query("SHOW TABLES LIKE '$table'");
+    return ($res && $res->num_rows > 0);
+}
+
+function save_preference_junctions(mysqli $conn, int $preferenceId, array $interests, array $states, string $district): void
+{
+    if ($preferenceId <= 0) return;
+
+    if (pref_table_exists($conn, "preference_interests")) {
+        $stmt = $conn->prepare("INSERT IGNORE INTO preference_interests (preference_id, interest) VALUES (?, ?)");
+        if ($stmt) {
+            foreach (array_unique(array_filter(array_map("trim", $interests))) as $interest) {
+                $stmt->bind_param("is", $preferenceId, $interest);
+                $stmt->execute();
+            }
+            $stmt->close();
+        }
+    }
+
+    if (pref_table_exists($conn, "preference_states")) {
+        $stmt = $conn->prepare("INSERT IGNORE INTO preference_states (preference_id, state) VALUES (?, ?)");
+        if ($stmt) {
+            foreach (array_unique(array_filter(array_map("trim", $states))) as $state) {
+                $stmt->bind_param("is", $preferenceId, $state);
+                $stmt->execute();
+            }
+            $stmt->close();
+        }
+    }
+
+    if (pref_table_exists($conn, "preference_districts") && $district !== "") {
+        $stateForDistrict = trim((string)($states[0] ?? ""));
+        $stmt = $conn->prepare("INSERT IGNORE INTO preference_districts (preference_id, state, district) VALUES (?, ?, ?)");
+        if ($stmt) {
+            $stmt->bind_param("iss", $preferenceId, $stateForDistrict, $district);
+            $stmt->execute();
+            $stmt->close();
+        }
+    }
+}
+
 $errors = [];
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
@@ -123,6 +167,9 @@ if ($hasDistrictCol) {
 if ($stmt->execute()) {
     $newPrefId = $stmt->insert_id;
     $stmt->close();
+
+    $stateArr = array_filter(array_map("trim", explode(",", $statesStr)));
+    save_preference_junctions($conn, $newPrefId, $interests, $stateArr, $districtsStr);
 
     $_SESSION["last_preference_id"] = $newPrefId;
     $_SESSION["success_message"] = "Preferences saved successfully. You may proceed to itinerary generation.";

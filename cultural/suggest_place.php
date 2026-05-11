@@ -57,6 +57,20 @@ while ($row = $res->fetch_assoc()) {
 }
 $stmt->close();
 
+$existingPlaces = [];
+$distChk = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
+$distSelect = ($distChk && $distChk->num_rows > 0) ? "district" : "NULL AS district";
+$placeRes = $conn->query("
+    SELECT place_id, name, state, {$distSelect}, category, latitude, longitude
+    FROM cultural_places
+    WHERE is_active = 1
+    ORDER BY place_id DESC
+    LIMIT 1000
+");
+if ($placeRes) {
+    while ($p = $placeRes->fetch_assoc()) $existingPlaces[] = $p;
+}
+
 function sug_label($s)
 {
     $s = strtolower(trim((string)$s));
@@ -75,6 +89,25 @@ function sug_label($s)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suggest New Place | Traveller</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <style>
+        #suggestPinMap {
+            width: 100%;
+            height: 320px;
+            border-radius: 12px;
+            border: 1px solid rgba(15,23,42,0.12);
+            background: #f1f5f9;
+        }
+        .duplicate-warning-box {
+            display: none;
+            border: 1px solid rgba(245,158,11,.35);
+            background: rgba(245,158,11,.08);
+            color: #92400e;
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    </style>
 </head>
 
 <body>
@@ -192,6 +225,16 @@ function sug_label($s)
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
+                            <div class="col-12">
+                                <label style="font-size:13px; font-weight:800;">Pin Location on Google Maps *</label>
+                                <div id="suggestPinMap"></div>
+                                <div class="meta" style="margin-top:6px;">Click the map or drag the marker to correct the exact place location. Latitude and longitude will update automatically.</div>
+                                <div class="duplicate-warning-box" id="suggestDuplicateBox">
+                                    <strong>Possible duplicate found</strong>
+                                    <div id="suggestDuplicateList" style="margin-top:6px;"></div>
+                                </div>
+                            </div>
+
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Estimated Cost (RM)</label><br>
                                 <input type="number" step="0.01" min="0" name="estimated_cost" value="0.00"
@@ -288,6 +331,10 @@ function sug_label($s)
         </main>
     </div>
 <script>
+var existingSuggestPlaces = <?php echo json_encode($existingPlaces, JSON_UNESCAPED_UNICODE); ?>;
+var suggestMap = null;
+var suggestMarker = null;
+
 function normalizeMalaysiaState(rawState) {
     var s = (rawState || '').toLowerCase();
     if (s.indexOf('kuala lumpur') !== -1) return 'Kuala Lumpur';
@@ -366,6 +413,7 @@ function initPlaceAutocomplete() {
         if (nameInput && !nameInput.value.trim() && place.name) nameInput.value = place.name;
         if (latInput) latInput.value = place.geometry.location.lat().toFixed(7);
         if (lngInput) lngInput.value = place.geometry.location.lng().toFixed(7);
+        setSuggestPin(place.geometry.location.lat(), place.geometry.location.lng(), true);
 
         var state = normalizeMalaysiaState(componentLongName(place, 'administrative_area_level_1'));
         if (stateSelect && state) stateSelect.value = state;
@@ -394,11 +442,120 @@ function initPlaceAutocomplete() {
                 descriptionInput.value = generateStarterDescription(place, state, district);
             }
         }
+        checkSuggestDuplicates();
+    });
+}
+
+function initSuggestMaps() {
+    initPlaceAutocomplete();
+    initSuggestPinPicker();
+}
+
+function initSuggestPinPicker() {
+    if (!window.google || !google.maps) return;
+    var mapEl = document.getElementById('suggestPinMap');
+    if (!mapEl) return;
+    var defaultPos = { lat: 3.1390, lng: 101.6869 };
+    suggestMap = new google.maps.Map(mapEl, {
+        center: defaultPos,
+        zoom: 6,
+        streetViewControl: false,
+        mapTypeControl: false,
+    });
+    suggestMarker = new google.maps.Marker({
+        position: defaultPos,
+        map: suggestMap,
+        draggable: true,
+        title: 'Suggested place pin',
+    });
+    suggestMap.addListener('click', function(e) {
+        setSuggestPin(e.latLng.lat(), e.latLng.lng(), false);
+    });
+    suggestMarker.addListener('dragend', function(e) {
+        setSuggestPin(e.latLng.lat(), e.latLng.lng(), false);
+    });
+    ['suggestPlaceNameInput','suggestStateSelect','suggestLatitudeInput','suggestLongitudeInput'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) {
+            el.addEventListener('input', checkSuggestDuplicates);
+            el.addEventListener('change', checkSuggestDuplicates);
+        }
+    });
+}
+
+function setSuggestPin(lat, lng, panOnly) {
+    var latInput = document.getElementById('suggestLatitudeInput');
+    var lngInput = document.getElementById('suggestLongitudeInput');
+    var pos = { lat: Number(lat), lng: Number(lng) };
+    if (latInput) latInput.value = pos.lat.toFixed(7);
+    if (lngInput) lngInput.value = pos.lng.toFixed(7);
+    if (suggestMarker) suggestMarker.setPosition(pos);
+    if (suggestMap) {
+        suggestMap.panTo(pos);
+        suggestMap.setZoom(panOnly ? 15 : Math.max(suggestMap.getZoom(), 14));
+    }
+    checkSuggestDuplicates();
+}
+
+function normSuggestName(value) {
+    return String(value || '').toLowerCase()
+        .replace(/\([^)]*\)/g, ' ')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .replace(/\b(the|restaurant|restoran|cafe|museum|muzium|temple|park|taman)\b/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function suggestSimilarity(a, b) {
+    a = normSuggestName(a);
+    b = normSuggestName(b);
+    if (!a || !b) return 0;
+    if (a === b) return 100;
+    var short = a.length < b.length ? a : b;
+    var long = a.length < b.length ? b : a;
+    if (long.indexOf(short) !== -1 && short.length >= 5) return 88;
+    var words = short.split(' ').filter(Boolean);
+    var hits = words.filter(function(w) { return long.indexOf(w) !== -1; }).length;
+    return Math.round((hits / Math.max(1, words.length)) * 75);
+}
+
+function checkSuggestDuplicates() {
+    var name = (document.getElementById('suggestPlaceNameInput') || {}).value || '';
+    var state = (document.getElementById('suggestStateSelect') || {}).value || '';
+    var lat = parseFloat((document.getElementById('suggestLatitudeInput') || {}).value || '');
+    var lng = parseFloat((document.getElementById('suggestLongitudeInput') || {}).value || '');
+    var box = document.getElementById('suggestDuplicateBox');
+    var list = document.getElementById('suggestDuplicateList');
+    if (!box || !list) return;
+    var matches = [];
+    existingSuggestPlaces.forEach(function(p) {
+        if (state && p.state !== state) return;
+        var score = suggestSimilarity(name, p.name);
+        if (!isNaN(lat) && !isNaN(lng) && p.latitude && p.longitude) {
+            var dLat = Math.abs(lat - parseFloat(p.latitude));
+            var dLng = Math.abs(lng - parseFloat(p.longitude));
+            if (dLat < 0.002 && dLng < 0.002) score = Math.max(score, 85);
+        }
+        if (score >= 60) matches.push({ place: p, score: score });
+    });
+    matches.sort(function(a, b) { return b.score - a.score; });
+    matches = matches.slice(0, 5);
+    box.style.display = matches.length ? 'block' : 'none';
+    list.innerHTML = matches.map(function(m) {
+        var p = m.place;
+        return '<div><strong>#' + p.place_id + ' ' + escapeSuggestHtml(p.name) + '</strong> - ' +
+            escapeSuggestHtml([p.district, p.state].filter(Boolean).join(', ')) + ' - ' + m.score + '% match</div>';
+    }).join('');
+}
+
+function escapeSuggestHtml(str) {
+    return String(str || '').replace(/[&<>"']/g, function(ch) {
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch];
     });
 }
 </script>
 <?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initSuggestMaps" async defer></script>
 <?php endif; ?>
 </body>
 

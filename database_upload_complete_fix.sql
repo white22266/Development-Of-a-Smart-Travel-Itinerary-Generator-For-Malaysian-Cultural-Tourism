@@ -268,11 +268,69 @@ CREATE TABLE IF NOT EXISTS `ratings_reviews` (
   `rating` TINYINT NOT NULL,
   `review_text` TEXT DEFAULT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`review_id`),
   UNIQUE KEY `uq_review_place_traveller` (`place_id`, `traveller_id`),
   KEY `idx_review_place` (`place_id`),
   KEY `idx_review_traveller` (`traveller_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CALL add_column_if_missing('ratings_reviews', 'updated_at', "`updated_at` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP AFTER `created_at`");
+
+-- Normalized preference junction tables required by supervisor feedback.
+CALL add_column_if_missing('traveller_preferences', 'preferred_districts', "`preferred_districts` VARCHAR(255) DEFAULT NULL AFTER `preferred_states`");
+
+CREATE TABLE IF NOT EXISTS `preference_interests` (
+  `preference_id` INT NOT NULL,
+  `interest` ENUM('culture','heritage','food','museum','nature','shopping','festival') NOT NULL,
+  PRIMARY KEY (`preference_id`, `interest`),
+  KEY `idx_pref_interest` (`interest`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `preference_states` (
+  `preference_id` INT NOT NULL,
+  `state` VARCHAR(60) NOT NULL,
+  PRIMARY KEY (`preference_id`, `state`),
+  KEY `idx_pref_state` (`state`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `preference_districts` (
+  `preference_id` INT NOT NULL,
+  `state` VARCHAR(60) DEFAULT NULL,
+  `district` VARCHAR(80) NOT NULL,
+  PRIMARY KEY (`preference_id`, `district`),
+  KEY `idx_pref_district` (`district`),
+  KEY `idx_pref_district_state` (`state`, `district`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+INSERT IGNORE INTO `preference_interests` (`preference_id`, `interest`)
+SELECT tp.preference_id, jt.interest
+FROM traveller_preferences tp
+JOIN (
+    SELECT 'culture' interest UNION ALL SELECT 'heritage' UNION ALL SELECT 'food'
+    UNION ALL SELECT 'museum' UNION ALL SELECT 'nature' UNION ALL SELECT 'shopping'
+    UNION ALL SELECT 'festival'
+) jt ON FIND_IN_SET(jt.interest, tp.interests);
+
+INSERT IGNORE INTO `preference_states` (`preference_id`, `state`)
+SELECT tp.preference_id, TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(tp.preferred_states, ',', n.n), ',', -1)) AS state
+FROM traveller_preferences tp
+JOIN (
+    SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10
+) n ON n.n <= 1 + LENGTH(COALESCE(tp.preferred_states,'')) - LENGTH(REPLACE(COALESCE(tp.preferred_states,''), ',', ''))
+WHERE TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(tp.preferred_states, ',', n.n), ',', -1)) <> '';
+
+INSERT IGNORE INTO `preference_districts` (`preference_id`, `state`, `district`)
+SELECT tp.preference_id, ps.state,
+       TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(tp.preferred_districts, ',', n.n), ',', -1)) AS district
+FROM traveller_preferences tp
+LEFT JOIN preference_states ps ON ps.preference_id = tp.preference_id
+JOIN (
+    SELECT 1 n UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5
+    UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL SELECT 9 UNION ALL SELECT 10
+) n ON n.n <= 1 + LENGTH(COALESCE(tp.preferred_districts,'')) - LENGTH(REPLACE(COALESCE(tp.preferred_districts,''), ',', ''))
+WHERE TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(tp.preferred_districts, ',', n.n), ',', -1)) <> '';
 
 CREATE TABLE IF NOT EXISTS `wishlists` (
   `wishlist_id` INT NOT NULL AUTO_INCREMENT,
@@ -293,6 +351,19 @@ CREATE TABLE IF NOT EXISTS `shared_itineraries` (
   PRIMARY KEY (`share_id`),
   UNIQUE KEY `uq_share_token` (`share_token`),
   KEY `idx_share_itinerary` (`itinerary_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE IF NOT EXISTS `ai_chat_logs` (
+  `chat_id` INT NOT NULL AUTO_INCREMENT,
+  `itinerary_id` INT NOT NULL,
+  `traveller_id` INT NOT NULL,
+  `user_message` TEXT NOT NULL,
+  `ai_response` MEDIUMTEXT NOT NULL,
+  `source` VARCHAR(40) NOT NULL DEFAULT 'unknown',
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`chat_id`),
+  KEY `idx_ai_chat_itinerary` (`itinerary_id`),
+  KEY `idx_ai_chat_traveller` (`traveller_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS `audit_logs` (

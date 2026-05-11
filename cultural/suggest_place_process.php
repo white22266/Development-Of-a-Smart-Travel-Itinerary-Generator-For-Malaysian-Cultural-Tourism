@@ -2,6 +2,7 @@
 // cultural/suggest_place_process.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../services/DuplicatePlaceService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -77,6 +78,18 @@ if ($latitude !== "" && !is_numeric($latitude)) back("Latitude must be numeric."
 if ($longitude !== "" && !is_numeric($longitude)) back("Longitude must be numeric.", true);
 if ($latitude < -90 || $latitude > 90) back("Latitude must be between -90 and 90.", true);
 if ($longitude < -180 || $longitude > 180) back("Longitude must be between -180 and 180.", true);
+
+$dupeService = new DuplicatePlaceService($conn);
+$candidate = [
+    "name" => $name,
+    "state" => $state,
+    "category" => $category,
+    "latitude" => $latitude,
+    "longitude" => $longitude,
+];
+if ($dupeService->hasHighConfidenceDuplicate($candidate)) {
+    back("This place looks like it already exists in the cultural guide. Please check the duplicate warning before submitting a new place.", true);
+}
 // ================= IMAGE UPLOAD (store URL string) =================
 $imageUrl = null;
 
