@@ -1521,7 +1521,7 @@ async function loadTransitLeg(legId, oLat, oLng, dLat, dLng, fromTitle, toTitle)
     if (detailEl.classList.contains('open')) {
         detailEl.classList.remove('open');
         detailEl.innerHTML = '';
-                                            Show Route
+        if (btnEl) btnEl.innerHTML = 'Show Route';
         return;
     }
 
