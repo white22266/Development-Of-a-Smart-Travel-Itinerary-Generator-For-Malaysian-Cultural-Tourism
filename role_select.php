@@ -9,11 +9,16 @@
 <body>
 <div class="main-container">
     <div class="left-panel">
+        <div class="brand-mark">ST</div>
+        <div class="entry-kicker">Account Access</div>
         <h1>Choose Your Role</h1>
         <p>
-            Administrators manage cultural content and user data.<br>
-            Travellers use the system to generate and view cultural itineraries.
+            Select the correct access path for the system. Travellers generate itineraries, while administrators manage cultural data and reports.
         </p>
+        <div class="entry-list">
+            <div>Traveller: generate, save, review, export and share itineraries</div>
+            <div>Admin: manage places, suggestions, users and reports</div>
+        </div>
     </div>
     <div class="right-panel">
         <h2 class="form-title">Who are you?</h2>
@@ -21,16 +26,24 @@
             Select your role to continue with login or registration.
         </p>
 
-        <div class="button-row">
-            <!-- Admin goes to login page with role=admin -->
-            <a href="auth/login.php?role=admin" class="btn btn-primary">Admin</a>
-            <!-- Traveller goes to login page with role=traveller -->
-            <a href="auth/login.php?role=traveller" class="btn btn-primary">Traveller</a>
+        <div class="role-grid">
+            <a href="auth/login.php?role=traveller" class="role-card primary">
+                <strong>Traveller</strong>
+                <span>Create and manage cultural trip itineraries.</span>
+            </a>
+            <a href="auth/login.php?role=admin" class="role-card">
+                <strong>Admin</strong>
+                <span>Manage cultural content, users, suggestions and reports.</span>
+            </a>
         </div>
 
-        <div class="form-footer" style="margin-top: 30px;">
-            <span>Not sure? Go back to the </span>
-            <a href="index.php">homepage</a>.
+        <div class="button-row">
+            <a href="auth/register.php" class="btn btn-primary">Create Traveller Account</a>
+            <a href="index.php" class="btn btn-outline">Back to Home</a>
+        </div>
+
+        <div class="form-footer">
+            New traveller? Register and verify your account before using the system.
         </div>
     </div>
 </div>

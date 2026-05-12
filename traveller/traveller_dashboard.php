@@ -29,12 +29,12 @@ $stmt->execute();
 $kpiTripsGenerated = (int)($stmt->get_result()->fetch_assoc()["c"] ?? 0);
 $stmt->close();
 
-// 2) Saved Itineraries (status = saved)
-$kpiSavedItineraries = 0;
-$stmt = $conn->prepare("SELECT COUNT(*) AS c FROM itineraries WHERE traveller_id = ? AND status = 'saved'");
+// 2) Saved preference profiles
+$kpiSavedPreferences = 0;
+$stmt = $conn->prepare("SELECT COUNT(*) AS c FROM traveller_preferences WHERE traveller_id = ?");
 $stmt->bind_param("i", $travellerId);
 $stmt->execute();
-$kpiSavedItineraries = (int)($stmt->get_result()->fetch_assoc()["c"] ?? 0);
+$kpiSavedPreferences = (int)($stmt->get_result()->fetch_assoc()["c"] ?? 0);
 $stmt->close();
 
 // 3) Preferred States (unique states used in traveller_preferences.preferred_states)
@@ -60,7 +60,7 @@ $kpiFavouriteStates = count($stateCounts);
 // 4) Recent Itineraries (latest 3)
 $recentItineraries = [];
 $stmt = $conn->prepare("
-  SELECT itinerary_id, title, status, created_at
+  SELECT itinerary_id, title, total_days, created_at
   FROM itineraries
   WHERE traveller_id = ?
   ORDER BY created_at DESC, itinerary_id DESC
@@ -83,15 +83,6 @@ $quickTips = [
   ["title" => "Weather-aware planning", "desc" => "Outdoor activities can be adjusted when weather conditions are unfavourable.", "badge" => "Weather"],
 ];
 
-// Helper for badge label
-function status_label($s)
-{
-  $s = strtolower(trim((string)$s));
-  if ($s === "saved") return "Saved";
-  if ($s === "exported") return "Exported";
-  if ($s === "draft") return "Draft";
-  return ucfirst($s);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -154,11 +145,11 @@ function status_label($s)
         </div>
 
         <div class="card col-4">
-          <h3>Saved Itineraries</h3>
-          <p class="meta">Itineraries currently marked as saved.</p>
+          <h3>Saved Preferences</h3>
+          <p class="meta">Preference profiles stored for future itinerary generation.</p>
           <div class="kpi">
-            <div class="value"><?php echo (int)$kpiSavedItineraries; ?></div>
-            <div class="tag">Saved</div>
+            <div class="value"><?php echo (int)$kpiSavedPreferences; ?></div>
+            <div class="tag">Profiles</div>
           </div>
         </div>
 
@@ -207,7 +198,7 @@ function status_label($s)
                     <strong><?php echo htmlspecialchars($it["title"]); ?></strong>
                     <span>Date: <?php echo htmlspecialchars($it["created_at"]); ?></span>
                   </div>
-                  <div class="badge"><?php echo htmlspecialchars(status_label($it["status"])); ?></div>
+                  <div class="badge"><?php echo (int)($it["total_days"] ?? 0); ?>D</div>
                 </div>
               <?php endforeach; ?>
             <?php endif; ?>

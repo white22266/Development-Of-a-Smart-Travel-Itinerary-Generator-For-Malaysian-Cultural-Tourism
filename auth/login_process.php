@@ -4,6 +4,7 @@ session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/remember_me.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -192,6 +193,7 @@ if ($mode === "do_reset") {
 $email    = trim($_POST["email"] ?? "");
 $password = $_POST["password"] ?? "";
 $role     = $_POST["role"] ?? "traveller";
+$remember = (int)($_POST["remember_me"] ?? 0) === 1;
 
 if (!in_array($role, ["admin", "traveller"], true)) {
     $role = "traveller";
@@ -248,6 +250,7 @@ try {
             if ($role === "admin") {
                 $_SESSION["admin_id"]   = (int)$row["admin_id"];
                 $_SESSION["admin_name"] = (string)$row["username"];
+                if ($remember) create_remember_token($conn, "admin", (int)$row["admin_id"]);
                 $stmt->close();
                 header("Location: ../admin/admin_dashboard.php");
                 exit;
@@ -255,6 +258,7 @@ try {
                 $_SESSION["traveller_id"]   = (int)$row["traveller_id"];
                 $_SESSION["traveller_name"] = (string)$row["full_name"];
                 $_SESSION["force_password_change"] = (int)($row["force_password_change"] ?? 0);
+                if ($remember) create_remember_token($conn, "traveller", (int)$row["traveller_id"]);
 
                 $stmt->close();
 

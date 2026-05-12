@@ -2,6 +2,16 @@
 // auth/login.php
 session_start();
 require_once "../config/db_connect.php";
+require_once __DIR__ . "/remember_me.php";
+
+if (restore_remembered_login($conn)) {
+    if (($_SESSION["role"] ?? "") === "admin") {
+        header("Location: ../admin/admin_dashboard.php");
+        exit;
+    }
+    header("Location: ../traveller/traveller_dashboard.php");
+    exit;
+}
 
 $action = $_GET["action"] ?? "";
 
@@ -147,6 +157,11 @@ if ($action === "reset")  $view = "reset";
                             <option value="admin" <?php echo $defaultRole === 'admin' ? 'selected' : ''; ?>>Admin</option>
                         </select>
                     </div>
+
+                    <label style="display:flex; align-items:center; gap:8px; font-size:13px; margin-bottom:14px;">
+                        <input type="checkbox" name="remember_me" value="1" style="width:auto;">
+                        Remember me on this device
+                    </label>
 
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>

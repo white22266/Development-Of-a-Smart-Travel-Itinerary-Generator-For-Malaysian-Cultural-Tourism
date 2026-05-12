@@ -85,6 +85,36 @@ function update_supervisor_place_fields(mysqli $conn, int $placeId, float $entra
     $stmt->close();
 }
 
+function normalize_optional_date(string $value): ?string
+{
+    $value = trim($value);
+    if ($value === "") return null;
+    $dt = DateTime::createFromFormat("Y-m-d", $value);
+    return ($dt && $dt->format("Y-m-d") === $value) ? $value : null;
+}
+
+function update_festival_dates(mysqli $conn, int $placeId, string $category, ?string $startDate, ?string $endDate): void
+{
+    if (!table_has_column($conn, "cultural_places", "festival_start_date")
+        || !table_has_column($conn, "cultural_places", "festival_end_date")) {
+        return;
+    }
+
+    if ($category !== "festival") {
+        $startDate = null;
+        $endDate = null;
+    }
+
+    $stmt = $conn->prepare("
+        UPDATE cultural_places
+        SET festival_start_date = ?, festival_end_date = ?
+        WHERE place_id = ?
+    ");
+    $stmt->bind_param("ssi", $startDate, $endDate, $placeId);
+    $stmt->execute();
+    $stmt->close();
+}
+
 $action = strtolower(trim($_POST["action"] ?? $_GET["action"] ?? ""));
 $currentAdminId = (int)($_SESSION["admin_id"] ?? 0);
 
@@ -130,6 +160,8 @@ if ($action === "import_csv") {
         $imageUrl = $data["image_url"] ?? "";
         $isActive = isset($data["is_active"]) && $data["is_active"] !== "" ? (int)$data["is_active"] : 1;
         $isActive = $isActive === 0 ? 0 : 1;
+        $festivalStart = normalize_optional_date((string)($data["festival_start_date"] ?? $data["event_start_date"] ?? ""));
+        $festivalEnd = normalize_optional_date((string)($data["festival_end_date"] ?? $data["event_end_date"] ?? ""));
 
         if ($name === "" || $state === "" || $category === "") {
             $skipped++;
@@ -155,6 +187,18 @@ if ($action === "import_csv") {
             $skipped++;
             $errors[] = "Row $rowNo skipped: image_url must be http(s) or uploads/ path.";
             continue;
+        }
+        if ($category === "festival") {
+            if ($festivalStart === null || $festivalEnd === null) {
+                $skipped++;
+                $errors[] = "Row $rowNo skipped: festival_start_date and festival_end_date are required for festival records.";
+                continue;
+            }
+            if ($festivalEnd < $festivalStart) {
+                $skipped++;
+                $errors[] = "Row $rowNo skipped: festival_end_date cannot be earlier than festival_start_date.";
+                continue;
+            }
         }
 
         $candidate = [
@@ -199,6 +243,7 @@ if ($action === "import_csv") {
         $newPlaceId = (int)$stmt->insert_id;
         $stmt->close();
         update_supervisor_place_fields($conn, $newPlaceId, $cost, null, (int)($data["visit_duration_min"] ?? 90));
+        update_festival_dates($conn, $newPlaceId, $category, $festivalStart, $festivalEnd);
         $imported++;
     }
     fclose($handle);
@@ -265,6 +310,8 @@ if ($action === "create" || $action === "update") {
     $latitude = trim($_POST["latitude"] ?? "");
     $longitude = trim($_POST["longitude"] ?? "");
     $opening = trim($_POST["opening_hours"] ?? "");
+    $festivalStartDate = normalize_optional_date((string)($_POST["festival_start_date"] ?? ""));
+    $festivalEndDate = normalize_optional_date((string)($_POST["festival_end_date"] ?? ""));
 
     $cost = (float)($_POST["estimated_cost"] ?? 0);
     $halalRaw = trim((string)($_POST["halal_status"] ?? ""));
@@ -296,6 +343,14 @@ if ($action === "create" || $action === "update") {
     if ($name === "" || $state === "" || $category === "") back("Name, state and category are required.", true);
     if (!in_array($category, $categoryOptions, true)) back("Invalid category.", true);
     if ($cost < 0) back("Cost cannot be negative.", true);
+    if ($category === "festival") {
+        if ($festivalStartDate === null || $festivalEndDate === null) {
+            back("Festival start date and end date are required for festival records.", true);
+        }
+        if ($festivalEndDate < $festivalStartDate) {
+            back("Festival end date cannot be earlier than start date.", true);
+        }
+    }
     // latitude/longitude optional，但如果填了就要是数字
     if ($latitude !== "" && !is_numeric($latitude)) back("Latitude must be numeric.", true);
     if ($longitude !== "" && !is_numeric($longitude)) back("Longitude must be numeric.", true);
@@ -347,6 +402,7 @@ if ($action === "create" || $action === "update") {
         $stmt->close();
         if ($newPlaceId > 0) {
             update_supervisor_place_fields($conn, $newPlaceId, $cost, $halalStatus, $visitDurationMin);
+            update_festival_dates($conn, $newPlaceId, $category, $festivalStartDate, $festivalEndDate);
         }
 
         back("Place added successfully.");
@@ -421,6 +477,7 @@ if ($action === "create" || $action === "update") {
     $stmt->execute();
     $stmt->close();
     update_supervisor_place_fields($conn, $placeId, $cost, $halalStatus, $visitDurationMin);
+    update_festival_dates($conn, $placeId, $category, $festivalStartDate, $festivalEndDate);
 
     back("Place updated successfully.");
 }

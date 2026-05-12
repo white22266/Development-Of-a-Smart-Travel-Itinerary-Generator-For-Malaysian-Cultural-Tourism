@@ -62,7 +62,6 @@ if ($startDate !== "") {
         $sd = $startDate;
     }
 }
-
 // ===================== HELPERS =====================
 function normalize_list(string $csv): array
 {
@@ -594,6 +593,96 @@ function table_has_column(mysqli $conn, string $table, string $column): bool
     return ($res && $res->num_rows > 0);
 }
 
+function table_exists(mysqli $conn, string $table): bool
+{
+    $table = $conn->real_escape_string($table);
+    $res = $conn->query("SHOW TABLES LIKE '$table'");
+    return ($res && $res->num_rows > 0);
+}
+
+function preference_interest_csv(mysqli $conn, int $preferenceId, string $fallbackCsv): string
+{
+    $values = [];
+    if (table_exists($conn, "traveller_preference_interests") && table_exists($conn, "travel_interests")) {
+        $stmt = $conn->prepare("
+            SELECT ti.interest_code
+            FROM traveller_preference_interests tpi
+            JOIN travel_interests ti ON ti.interest_id = tpi.interest_id
+            WHERE tpi.preference_id = ?
+            ORDER BY ti.interest_code
+        ");
+        if ($stmt) {
+            $stmt->bind_param("i", $preferenceId);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            while ($row = $res->fetch_assoc()) $values[] = (string)$row["interest_code"];
+            $stmt->close();
+        }
+    }
+    if (empty($values) && table_exists($conn, "preference_interests")) {
+        $stmt = $conn->prepare("SELECT interest FROM preference_interests WHERE preference_id = ? ORDER BY interest");
+        if ($stmt) {
+            $stmt->bind_param("i", $preferenceId);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            while ($row = $res->fetch_assoc()) $values[] = (string)$row["interest"];
+            $stmt->close();
+        }
+    }
+    return empty($values) ? trim($fallbackCsv) : implode(",", array_values(array_unique($values)));
+}
+
+function preference_state_csv(mysqli $conn, int $preferenceId, string $fallbackCsv): string
+{
+    $values = [];
+    if (table_exists($conn, "traveller_preference_states") && table_exists($conn, "malaysia_states")) {
+        $stmt = $conn->prepare("
+            SELECT ms.state_name
+            FROM traveller_preference_states tps
+            JOIN malaysia_states ms ON ms.state_id = tps.state_id
+            WHERE tps.preference_id = ?
+            ORDER BY ms.state_name
+        ");
+        if ($stmt) {
+            $stmt->bind_param("i", $preferenceId);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            while ($row = $res->fetch_assoc()) $values[] = (string)$row["state_name"];
+            $stmt->close();
+        }
+    }
+    if (empty($values) && table_exists($conn, "preference_states")) {
+        $stmt = $conn->prepare("SELECT state FROM preference_states WHERE preference_id = ? ORDER BY state");
+        if ($stmt) {
+            $stmt->bind_param("i", $preferenceId);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            while ($row = $res->fetch_assoc()) $values[] = (string)$row["state"];
+            $stmt->close();
+        }
+    }
+    return empty($values) ? trim($fallbackCsv) : implode(",", array_values(array_unique($values)));
+}
+
+function daily_start_minutes(string $preferredVisitTime): int
+{
+    return match (strtolower(trim($preferredVisitTime))) {
+        "morning" => 8 * 60,
+        "afternoon" => 12 * 60 + 30,
+        "evening" => 16 * 60,
+        default => 9 * 60,
+    };
+}
+
+function budget_tier_defaults(string $budgetTier): array
+{
+    return match (strtolower(trim($budgetTier))) {
+        "budget" => ["hotel" => 90.0, "meal" => 12.0],
+        "luxury" => ["hotel" => 280.0, "meal" => 35.0],
+        default => ["hotel" => 150.0, "meal" => 20.0],
+    };
+}
+
 function sql_time_from_minutes(int $minutes): string
 {
     $minutes = max(0, min(23 * 60 + 59, $minutes));
@@ -665,14 +754,51 @@ function place_entrance_fee(array $place): float
     return max(0.0, (float)($place["estimated_cost"] ?? 0));
 }
 
+function trip_end_date(?string $startDate, int $tripDays): ?string
+{
+    if ($startDate === null || $startDate === "") return null;
+    $dt = DateTime::createFromFormat("Y-m-d", $startDate);
+    if (!$dt) return null;
+    $dt->modify("+" . max(0, $tripDays - 1) . " days");
+    return $dt->format("Y-m-d");
+}
+
+function itinerary_day_date(?string $startDate, int $dayNo): ?string
+{
+    if ($startDate === null || $startDate === "") return null;
+    $dt = DateTime::createFromFormat("Y-m-d", $startDate);
+    if (!$dt) return null;
+    $dt->modify("+" . max(0, $dayNo - 1) . " days");
+    return $dt->format("Y-m-d");
+}
+
+function festival_available_on_date(array $place, ?string $date): bool
+{
+    if (strtolower((string)($place["category"] ?? "")) !== "festival") return true;
+    if ($date === null || $date === "") return false;
+
+    $start = trim((string)($place["festival_start_date"] ?? ""));
+    $end = trim((string)($place["festival_end_date"] ?? ""));
+    if ($start === "" || $end === "") return false;
+
+    return $start <= $date && $end >= $date;
+}
+
+function remove_unavailable_festivals_for_day(array &$pool, ?string $dayDate): void
+{
+    $filtered = [];
+    foreach ($pool as $place) {
+        if (festival_available_on_date($place, $dayDate)) $filtered[] = $place;
+    }
+    $pool = $filtered;
+}
+
 // ===================== 1) LOAD PREFERENCE =====================
 // Check if preferred_districts column exists (graceful fallback)
 $colCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'preferred_districts'");
 $hasDistrictCol = ($colCheck && $colCheck->num_rows > 0);
 
-$prefCols = $hasDistrictCol
-    ? "preference_id, trip_days, budget, transport_type, interests, preferred_states, preferred_districts"
-    : "preference_id, trip_days, budget, transport_type, interests, preferred_states";
+$prefCols = "*";
 
 $stmt = $conn->prepare("
   SELECT $prefCols
@@ -693,10 +819,18 @@ if (!$pref) {
 
 $tripDays      = (int)$pref["trip_days"];
 $budget        = (float)($pref["budget"] ?? 0);
+$budgetTier    = (string)($pref["budget_tier"] ?? "normal");
+$travelPace    = (string)($pref["travel_pace"] ?? "normal");
+$dietaryPreference = (string)($pref["dietary_preference"] ?? "none");
+$preferredVisitTime = (string)($pref["preferred_visit_time"] ?? "any");
 $transportType = RouteService::normalizeTransportType((string)($pref["transport_type"] ?? "car"));
-$interestsCsv  = trim((string)($pref["interests"] ?? ""));
-$statesCsv     = trim((string)($pref["preferred_states"] ?? ""));
+$interestsCsv  = preference_interest_csv($conn, $preferenceId, (string)($pref["interests"] ?? ""));
+$statesCsv     = preference_state_csv($conn, $preferenceId, (string)($pref["preferred_states"] ?? ""));
 $districtsCsv  = trim((string)($pref["preferred_districts"] ?? ""));
+$tripEndDate = trip_end_date($sd, $tripDays);
+
+if ($travelPace === "relaxed") $itemsPerDay = min($itemsPerDay, 2);
+elseif ($travelPace === "packed") $itemsPerDay = max($itemsPerDay, 4);
 
 // For title only
 $titleStatesCsv = ($statesCsv === "") ? "Malaysia" : $statesCsv;
@@ -729,6 +863,9 @@ $preferredStatesForOrder = $userSelectedStates ? normalize_list($statesCsv) : []
 $hasDistrictPlaceCol = table_has_column($conn, "cultural_places", "district");
 $hasEntranceFeeCol = table_has_column($conn, "cultural_places", "entrance_fee");
 $hasVisitDurationCol = table_has_column($conn, "cultural_places", "visit_duration_min");
+$hasHalalCol = table_has_column($conn, "cultural_places", "halal_status");
+$hasFestivalDateCols = table_has_column($conn, "cultural_places", "festival_start_date")
+    && table_has_column($conn, "cultural_places", "festival_end_date");
 
 $where  = "is_active = 1";
 $params = [];
@@ -752,11 +889,31 @@ if ($userSelectedDistricts && $hasDistrictPlaceCol) {
     $params = array_merge($params, $states);
 }
 
+if ($dietaryPreference === "halal" && $hasHalalCol) {
+    $where .= " AND (category <> 'food' OR halal_status = 1)";
+}
+
+// Festival records are date-specific events. If the trip has no start date, or
+// the event does not overlap the trip window, do not suggest it as a normal place.
+if ($hasFestivalDateCols) {
+    if ($sd !== null && $tripEndDate !== null) {
+        $where .= " AND (category <> 'festival' OR (festival_start_date IS NOT NULL AND festival_end_date IS NOT NULL AND festival_start_date <= ? AND festival_end_date >= ?))";
+        $types .= "ss";
+        $params[] = $tripEndDate;
+        $params[] = $sd;
+    } else {
+        $where .= " AND category <> 'festival'";
+    }
+} elseif (in_array("festival", $categories, true)) {
+    $where .= " AND category <> 'festival'";
+}
+
 $districtSelectCol = $hasDistrictPlaceCol ? ", district" : "";
 $entranceFeeSelectCol = $hasEntranceFeeCol ? ", entrance_fee, is_free" : "";
 $visitDurationSelectCol = $hasVisitDurationCol ? ", visit_duration_min" : "";
+$festivalDateSelectCol = $hasFestivalDateCols ? ", festival_start_date, festival_end_date" : "";
 $sql = "
-  SELECT place_id, state{$districtSelectCol}, category, name, description, address, latitude, longitude, opening_hours, estimated_cost{$entranceFeeSelectCol}{$visitDurationSelectCol}
+  SELECT place_id, state{$districtSelectCol}, category, name, description, address, latitude, longitude, opening_hours, estimated_cost{$entranceFeeSelectCol}{$visitDurationSelectCol}{$festivalDateSelectCol}
   FROM cultural_places
   WHERE $where
 ";
@@ -789,9 +946,9 @@ $title = build_itinerary_title($tripDays, $titleStatesCsv, $interestsCsv, $seed)
 
 $stmt = $conn->prepare("
   INSERT INTO itineraries
-    (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost, status)
+    (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost)
   VALUES
-    (?,?,?,?,?,?,0.00,'saved')
+    (?,?,?,?,?,?,0.00)
 ");
 $stmt->bind_param("iissii", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay);
 
@@ -860,6 +1017,7 @@ $maxDayKm  = get_daily_max_km($transportType);
 
 // Used place ids (rule #1)
 $usedPlaceIds = []; // place_id => true
+$dayStartMin = daily_start_minutes($preferredVisitTime);
 
 // Track previous location for distance calculation
 // Start from user's origin if provided
@@ -886,11 +1044,13 @@ if ($currentState === null) {
 
 // ===================== 6) GENERATE (NO STOP, NO ROLLBACK) =====================
 for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
-    $dayCursorMin = 9 * 60; // Industry-style daily schedule starts at 9:00 AM.
+    $dayCursorMin = $dayStartMin; // User preferred visit time, default 9:00 AM.
+    $dayDate = itinerary_day_date($sd, $dayNo);
 
     // Remove used items from every pool (safety)
     foreach ($byState as $st => $pool) {
         remove_used_from_pool($pool, $usedPlaceIds);
+        remove_unavailable_festivals_for_day($pool, $dayDate);
         $byState[$st] = $pool;
     }
 
@@ -936,6 +1096,7 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             $placeId = (int)$p["place_id"];
             if ($placeId <= 0) continue;
             if (isset($usedPlaceIds[$placeId])) continue; // hard rule #1
+            if (!festival_available_on_date($p, $dayDate)) continue;
 
             $name = (string)$p["name"];
             $fee  = place_entrance_fee($p);
@@ -1017,7 +1178,8 @@ $ins->close();
 
 // ===================== 7) UPDATE ITINERARY TOTALS (KEEP total_days = tripDays) =====================
 $costService = new CostEstimationService($transportType, $tripDays, $budget);
-$fullCost = $costService->calculate($insertedItems, $totalDistanceKm);
+$tierDefaults = budget_tier_defaults($budgetTier);
+$fullCost = $costService->calculate($insertedItems, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 $totalCost = (float)($fullCost["total_cost"] ?? $totalCost);
 
 $upd = $conn->prepare("UPDATE itineraries SET total_estimated_cost = ?, total_days = ? WHERE itinerary_id = ?");

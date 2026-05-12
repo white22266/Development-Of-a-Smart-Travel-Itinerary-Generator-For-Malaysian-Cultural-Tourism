@@ -22,7 +22,7 @@ $success = "";
 /* ---------- Load current profile ---------- */
 // CHANGED: load force_password_change
 $stmt = $conn->prepare("
-    SELECT full_name, email, phone, force_password_change
+    SELECT full_name, email, phone, force_password_change, is_active, activation_token
     FROM travellers
     WHERE traveller_id = ?
     LIMIT 1
@@ -44,7 +44,6 @@ $forceMode = ((int)($user["force_password_change"] ?? 0) === 1) || (($_GET["forc
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $fullName = trim($_POST["full_name"] ?? "");
-    $email = trim($_POST["email"] ?? "");
     $phone = trim($_POST["phone"] ?? "");
     $newPassword = $_POST["new_password"] ?? "";
     $confirmPassword = $_POST["confirm_password"] ?? "";
@@ -85,27 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Normal profile update mode (not forced)
 
         if ($fullName === "") $errors[] = "Full name is required.";
-        if ($email === "") $errors[] = "Email is required.";
 
         if ($newPassword !== "" || $confirmPassword !== "") {
             if (strlen($newPassword) < 6) $errors[] = "Password must be at least 6 characters.";
             if ($newPassword !== $confirmPassword) $errors[] = "Password confirmation does not match.";
-        }
-
-        if (empty($errors)) {
-            // check email uniqueness (exclude self)
-            $stmt = $conn->prepare("
-                SELECT traveller_id
-                FROM travellers
-                WHERE email = ? AND traveller_id != ?
-                LIMIT 1
-            ");
-            $stmt->bind_param("si", $email, $travellerId);
-            $stmt->execute();
-            if ($stmt->get_result()->fetch_assoc()) {
-                $errors[] = "Email is already in use.";
-            }
-            $stmt->close();
         }
 
         if (empty($errors)) {
@@ -115,17 +97,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 // CHANGED: also ensure force_password_change stays 0 in normal change
                 $stmt = $conn->prepare("
                     UPDATE travellers
-                    SET full_name=?, email=?, phone=?, password_hash=?, force_password_change=0
+                    SET full_name=?, phone=?, password_hash=?, force_password_change=0
                     WHERE traveller_id=?
                 ");
-                $stmt->bind_param("ssssi", $fullName, $email, $phone, $hash, $travellerId);
+                $stmt->bind_param("sssi", $fullName, $phone, $hash, $travellerId);
             } else {
                 $stmt = $conn->prepare("
                     UPDATE travellers
-                    SET full_name=?, email=?, phone=?
+                    SET full_name=?, phone=?
                     WHERE traveller_id=?
                 ");
-                $stmt->bind_param("sssi", $fullName, $email, $phone, $travellerId);
+                $stmt->bind_param("ssi", $fullName, $phone, $travellerId);
             }
 
             if ($stmt->execute()) {
@@ -134,7 +116,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                 // Refresh local copy
                 $user["full_name"] = $fullName;
-                $user["email"] = $email;
                 $user["phone"] = $phone;
             } else {
                 $errors[] = "Failed to update profile.";
@@ -152,6 +133,43 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Edit Profile | Smart Travel Itinerary Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/dashboard_style.css">
+    <style>
+        .readonly-field {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(15,23,42,.1);
+            background: #f8fafc;
+            color: #475569;
+        }
+        .verify-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .verify-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+        .verify-badge.ok {
+            background: rgba(34,197,94,.12);
+            color: #166534;
+            border: 1px solid rgba(34,197,94,.28);
+        }
+        .verify-badge.warn {
+            background: rgba(245,158,11,.12);
+            color: #92400e;
+            border: 1px solid rgba(245,158,11,.30);
+        }
+    </style>
 </head>
 
 <body>
@@ -230,10 +248,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <div style="height:10px;"></div>
 
                         <label style="font-weight:700;">Email</label>
-                        <input type="email" name="email" required
+                        <input type="email" class="readonly-field" readonly
                             value="<?php echo htmlspecialchars($user["email"]); ?>"
-                            <?php echo $forceMode ? "readonly" : ""; ?>
-                            style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
+                            aria-describedby="emailVerificationStatus">
+                        <div class="verify-row" id="emailVerificationStatus">
+                            <?php if ((int)($user["is_active"] ?? 0) === 1): ?>
+                                <span class="verify-badge ok">Verified Email</span>
+                            <?php else: ?>
+                                <span class="verify-badge warn">Email Not Verified</span>
+                            <?php endif; ?>
+                            <span style="font-size:12px; color:#64748B;">Email is used for login and verification, so it cannot be changed here.</span>
+                        </div>
 
                         <div style="height:10px;"></div>
 

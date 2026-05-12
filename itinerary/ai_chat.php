@@ -101,22 +101,9 @@ $context = [
     'days' => $days,
 ];
 
-$provider = strtolower(trim((string)(defined("AI_PROVIDER") ? AI_PROVIDER : "openai")));
-if ($provider === "ollama") {
-    $apiKey = "";
-    $model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-    $baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://localhost:11434";
-} elseif ($provider === "gemini") {
-    $apiKey = defined("GEMINI_API_KEY") ? GEMINI_API_KEY : "";
-    $model = defined("GEMINI_MODEL") ? GEMINI_MODEL : "gemini-2.5-flash";
-    $baseUrl = "";
-} else {
-    $provider = "openai";
-    $apiKey = defined("OPENAI_API_KEY") ? OPENAI_API_KEY : "";
-    $model = defined("OPENAI_MODEL") ? OPENAI_MODEL : "gpt-4.1-mini";
-    $baseUrl = "";
-}
-$assistant = new AiTravelAssistantService($apiKey, $model, $provider, $baseUrl);
+$model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
+$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://localhost:11434";
+$assistant = new AiTravelAssistantService($model, $baseUrl);
 $result = $assistant->answer($message, $context);
 
 if (table_exists($conn, "ai_chat_logs")) {

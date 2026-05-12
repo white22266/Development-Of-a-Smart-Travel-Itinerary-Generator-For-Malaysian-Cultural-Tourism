@@ -25,7 +25,7 @@ if ($itineraryId <= 0) {
 
 // ---- Load itinerary with preference data ----
 $stmt = $conn->prepare("
-    SELECT i.*, tp.budget, tp.transport_type, tp.interests, tp.preferred_states, tp.trip_days AS pref_trip_days
+    SELECT i.*, tp.budget, tp.budget_tier, tp.transport_type, tp.interests, tp.preferred_states, tp.trip_days AS pref_trip_days
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
     WHERE i.itinerary_id = ? AND i.traveller_id = ?
@@ -88,9 +88,15 @@ foreach ($allItems as $item) {
 $tripDays      = (int)($it["total_days"] ?? 1);
 $budget        = (float)($it["budget"] ?? 0);
 $transportType = (string)($it["transport_type"] ?? "car");
+$budgetTier    = strtolower((string)($it["budget_tier"] ?? "normal"));
+$tierDefaults = match ($budgetTier) {
+    "budget" => ["hotel" => 90.0, "meal" => 12.0],
+    "luxury" => ["hotel" => 280.0, "meal" => 35.0],
+    default => ["hotel" => 150.0, "meal" => 20.0],
+};
 
 $costService     = new CostEstimationService($transportType, $tripDays, $budget);
-$costBreakdown   = $costService->calculate($allItems, $totalDistKm);
+$costBreakdown   = $costService->calculate($allItems, $totalDistKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 
 // ---- Hotel recommendations ----
 $hotelService      = new HotelRecommendationService($conn);
@@ -110,12 +116,36 @@ if ($lastPlace && !empty($lastPlace["latitude"]) && !empty($lastPlace["longitude
 if (empty($recommendedHotels) && !empty($lastPlace["state"])) {
     $recommendedHotels = $hotelService->recommendByState($lastPlace["state"], $nightlyBudget, 5);
 }
-
-$startDate = $it["start_date"] ?? null;
+$seenHotels = [];
+$recommendedHotels = array_values(array_filter($recommendedHotels, function ($hotel) use (&$seenHotels) {
+    $key = strtolower(trim(($hotel["name"] ?? "") . "|" . ($hotel["state"] ?? "") . "|" . ($hotel["district"] ?? "")));
+    if ($key === "||" || isset($seenHotels[$key])) return false;
+    $seenHotels[$key] = true;
+    return true;
+}));
 
 $startDate = $it["start_date"] ?? null;
 $states    = $it["preferred_states"] ?? "-";
 $interests = $it["interests"] ?? "-";
+$placeCount = count(array_filter($allItems, fn($item) => strtolower((string)($item["item_type"] ?? "")) !== "hotel"));
+$costTotal = (float)($costBreakdown["total_cost"] ?? 0);
+$budgetStatusText = "No budget limit was saved for this trip.";
+if ($budget > 0) {
+    $budgetStatusText = $costBreakdown["within_budget"]
+        ? "The estimate is within budget with RM " . number_format(abs((float)$costBreakdown["budget_difference"]), 2) . " remaining."
+        : "The estimate is over budget by RM " . number_format(abs((float)$costBreakdown["budget_difference"]), 2) . ".";
+}
+$hotelSummaryText = !empty($selectedHotels)
+    ? "A confirmed hotel has been added as the final itinerary stop and included in accommodation cost."
+    : "No hotel is confirmed yet; use the AI assistant or hotel recommendations below to choose one.";
+$chartLabels = [];
+$chartAmounts = [];
+foreach ($costBreakdown["breakdown"] as $costItem) {
+    $amount = (float)($costItem["amount"] ?? 0);
+    if ($amount <= 0) continue;
+    $chartLabels[] = (string)($costItem["label"] ?? "Cost");
+    $chartAmounts[] = $amount;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,8 +154,14 @@ $interests = $it["interests"] ?? "-";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trip Summary | Smart Travel Itinerary Generator</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         .cost-card { border-radius:16px; border:1px solid rgba(15,23,42,.10); background:#fff; padding:20px; margin-bottom:16px; }
+        .summary-card { border-radius:16px; border:1px solid rgba(15,23,42,.10); background:#fff; padding:18px 20px; margin-bottom:16px; }
+        .summary-card p { margin:8px 0 0; color:#475569; font-size:13px; line-height:1.6; }
+        .cost-layout { display:grid; grid-template-columns:minmax(240px, 360px) 1fr; gap:18px; align-items:stretch; }
+        .chart-panel { border-radius:14px; border:1px solid rgba(15,23,42,.08); background:#f8fafc; padding:16px; display:flex; flex-direction:column; justify-content:center; min-height:280px; }
+        .chart-wrap { position:relative; width:100%; min-height:230px; }
         .cost-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid rgba(15,23,42,.06); }
         .cost-row:last-child { border-bottom:none; }
         .cost-label { font-weight:700; color:var(--navy); }
@@ -136,6 +172,7 @@ $interests = $it["interests"] ?? "-";
         .budget-ok { background:rgba(34,197,94,.15); color:#166534; border:1px solid rgba(34,197,94,.4); }
         .budget-over { background:rgba(239,68,68,.12); color:#991b1b; border:1px solid rgba(239,68,68,.4); }
         .hotel-card { border-radius:12px; border:1px solid rgba(15,23,42,.10); background:#fff; padding:14px 16px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+        .hotel-actions { display:flex; gap:6px; justify-content:flex-end; flex-wrap:wrap; margin-top:8px; }
         .hotel-name { font-weight:800; color:var(--navy); font-size:14px; }
         .hotel-meta { font-size:12px; color:var(--muted); margin-top:3px; }
         .hotel-price { font-weight:900; color:var(--navy); font-size:14px; white-space:nowrap; }
@@ -161,6 +198,17 @@ $interests = $it["interests"] ?? "-";
         .ai-chat-form { display:flex; gap:8px; padding:12px; background:#fff; border-top:1px solid rgba(15,23,42,.08); }
         .ai-chat-form input { flex:1; min-width:0; border:1px solid rgba(15,23,42,.14); border-radius:10px; padding:9px 10px; font-size:12.5px; }
         .ai-chat-form button { border:0; border-radius:10px; background:#4f46e5; color:#fff; padding:9px 12px; font-weight:800; cursor:pointer; }
+        .ai-hotel-card { margin-top:8px; padding:9px; border:1px solid rgba(15,23,42,.10); border-radius:9px; background:#f8fafc; }
+        .ai-hotel-card strong { display:block; color:#0f172a; margin-bottom:3px; }
+        .ai-hotel-card span { display:block; font-size:11px; color:#64748b; margin-bottom:7px; }
+        .ai-hotel-card button { border:0; border-radius:8px; background:#16a34a; color:#fff; padding:6px 9px; font-size:11px; font-weight:800; cursor:pointer; }
+        .ai-change-card { margin-top:8px; padding:9px; border:1px solid rgba(15,23,42,.10); border-radius:9px; background:#fff7ed; }
+        .ai-change-card strong { display:block; color:#0f172a; margin-bottom:3px; }
+        .ai-change-card span { display:block; font-size:11px; color:#64748b; margin-bottom:6px; }
+        .ai-change-card button { border:0; border-radius:8px; background:#f59e0b; color:#0f172a; padding:6px 9px; font-size:11px; font-weight:900; cursor:pointer; }
+        @media (max-width: 900px) {
+            .cost-layout { grid-template-columns:1fr; }
+        }
     </style>
 </head>
 <body>
@@ -195,14 +243,26 @@ $interests = $it["interests"] ?? "-";
                 <p class="meta"><?php echo htmlspecialchars($it["title"]); ?></p>
             </div>
             <div class="actions">
-                <button type="button" class="btn btn-primary" onclick="toggleAiChat()">AI Chat</button>
                 <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>">Back to Map</a>
                 <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
-                <form method="post" action="share_create.php" style="display:inline;">
-                    <input type="hidden" name="itinerary_id" value="<?php echo $itineraryId; ?>">
-                    <button type="submit" class="btn btn-ghost">Share Link</button>
-                </form>
             </div>
+        </div>
+
+        <div class="summary-card">
+            <h3>Complete Trip Overview</h3>
+            <p>
+                <?php echo htmlspecialchars($it["title"]); ?> is a <?php echo (int)$tripDays; ?> day trip covering
+                <?php echo (int)$placeCount; ?> planned stop<?php echo $placeCount === 1 ? "" : "s"; ?> in
+                <?php echo htmlspecialchars($states ?: "Malaysia"); ?>. The route is planned for
+                <?php echo htmlspecialchars(str_replace("_", " ", $transportType)); ?> travel, starting
+                <?php echo $startDate ? htmlspecialchars(date("d M Y", strtotime($startDate))) : "from the saved trip date"; ?>.
+                Main interests: <?php echo htmlspecialchars($interests ?: "general cultural tourism"); ?>.
+            </p>
+            <p>
+                Estimated total cost is RM <?php echo number_format($costTotal, 2); ?>, including entrance/activity costs,
+                transport estimate, meals, and accommodation. <?php echo htmlspecialchars($budgetStatusText); ?>
+                <?php echo htmlspecialchars($hotelSummaryText); ?>
+            </p>
         </div>
 
         <!-- TRIP METADATA -->
@@ -238,31 +298,38 @@ $interests = $it["interests"] ?? "-";
             <div class="card col-12">
                 <h3>Cost Breakdown</h3>
                 <p class="meta">Estimated total trip cost based on itinerary items, transport, accommodation, and meals.</p>
-                <div class="cost-card">
-                    <?php foreach ($costBreakdown['breakdown'] as $item): ?>
-                    <div class="cost-row">
-                        <div>
-                            <div class="cost-label"><?php echo htmlspecialchars($item['label']); ?></div>
-                            <div class="cost-note"><?php echo htmlspecialchars($item['note']); ?></div>
+                <div class="cost-layout">
+                    <div class="chart-panel">
+                        <div class="chart-wrap">
+                            <canvas id="costPieChart" aria-label="Trip cost pie chart" role="img"></canvas>
                         </div>
-                        <div class="cost-amount">RM <?php echo number_format($item['amount'],2); ?></div>
                     </div>
-                    <?php endforeach; ?>
-                    <div class="cost-total">
-                        <div>
-                            <div style="font-size:13px;opacity:.8;">Total Estimated Cost</div>
-                            <div style="font-size:22px;font-weight:900;">RM <?php echo number_format($costBreakdown['total_cost'],2); ?></div>
+                    <div class="cost-card">
+                        <?php foreach ($costBreakdown['breakdown'] as $item): ?>
+                        <div class="cost-row">
+                            <div>
+                                <div class="cost-label"><?php echo htmlspecialchars($item['label']); ?></div>
+                                <div class="cost-note"><?php echo htmlspecialchars($item['note']); ?></div>
+                            </div>
+                            <div class="cost-amount">RM <?php echo number_format($item['amount'],2); ?></div>
                         </div>
-                        <div style="text-align:right;">
-                            <?php if ($budget > 0): ?>
-                                <?php if ($costBreakdown['within_budget']): ?>
-                                    <span class="budget-badge budget-ok">&#10003; Within Budget</span>
-                                    <div style="font-size:12px;margin-top:6px;opacity:.85;">RM <?php echo number_format(abs($costBreakdown['budget_difference']),2); ?> remaining</div>
-                                <?php else: ?>
-                                    <span class="budget-badge budget-over">&#9888; Over Budget</span>
-                                    <div style="font-size:12px;margin-top:6px;opacity:.85;">RM <?php echo number_format(abs($costBreakdown['budget_difference']),2); ?> over budget</div>
+                        <?php endforeach; ?>
+                        <div class="cost-total">
+                            <div>
+                                <div style="font-size:13px;opacity:.8;">Total Estimated Cost</div>
+                                <div style="font-size:22px;font-weight:900;">RM <?php echo number_format($costBreakdown['total_cost'],2); ?></div>
+                            </div>
+                            <div style="text-align:right;">
+                                <?php if ($budget > 0): ?>
+                                    <?php if ($costBreakdown['within_budget']): ?>
+                                        <span class="budget-badge budget-ok">&#10003; Within Budget</span>
+                                        <div style="font-size:12px;margin-top:6px;opacity:.85;">RM <?php echo number_format(abs($costBreakdown['budget_difference']),2); ?> remaining</div>
+                                    <?php else: ?>
+                                        <span class="budget-badge budget-over">&#9888; Over Budget</span>
+                                        <div style="font-size:12px;margin-top:6px;opacity:.85;">RM <?php echo number_format(abs($costBreakdown['budget_difference']),2); ?> over budget</div>
+                                    <?php endif; ?>
                                 <?php endif; ?>
-                            <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -374,45 +441,41 @@ $interests = $it["interests"] ?? "-";
                     <div style="text-align:right;">
                         <div class="hotel-price">RM <?php echo number_format((float)$hotel["price_per_night"],0); ?></div>
                         <div style="font-size:11px;color:var(--muted);">per night</div>
-                        <?php $lat=$hotel["latitude"]??""; $lng=$hotel["longitude"]??""; if ($lat && $lng): ?>
-                        <a href="https://www.google.com/maps?q=<?php echo urlencode($lat.','.$lng); ?>"
-                           target="_blank" rel="noopener noreferrer"
-                           class="btn btn-ghost" style="font-size:11px;padding:4px 8px;margin-top:6px;display:inline-block;">
-                            View on Map
-                        </a>
-                        <?php endif; ?>
+                        <div class="hotel-actions">
+                            <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotel(<?php echo (int)$hotel["hotel_id"]; ?>)">Confirm Hotel</button>
+                            <?php $lat=$hotel["latitude"]??""; $lng=$hotel["longitude"]??""; if ($lat && $lng): ?>
+                            <a href="https://www.google.com/maps?q=<?php echo urlencode($lat.','.$lng); ?>"
+                               target="_blank" rel="noopener noreferrer"
+                               class="btn btn-ghost" style="font-size:11px;padding:5px 9px;display:inline-block;">
+                                Map
+                            </a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>
         </section>
-
-        <div class="actions" style="justify-content:flex-start;padding-left:0;margin-top:8px;">
-            <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
-            <form method="post" action="share_create.php" style="display:inline;">
-                <input type="hidden" name="itinerary_id" value="<?php echo $itineraryId; ?>">
-                <button type="submit" class="btn btn-ghost">Share Link</button>
-            </form>
-            <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>">Back to Map View</a>
-        </div>
     </main>
 </div>
 <button type="button" class="ai-chat-fab" onclick="toggleAiChat()">AI Assistant</button>
 <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
     <div class="ai-chat-header">
         <div>
-            <div class="ai-chat-title">AI Chatbot</div>
-            <div class="ai-chat-subtitle">Chat with the local AI about this trip summary.</div>
+            <div class="ai-chat-title">AI Travel & Hotel Assistant</div>
+            <div class="ai-chat-subtitle">Ask about cost, route, or hotel options. Hotels save only after confirmation.</div>
         </div>
         <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">Hi, I am your local AI chatbot. Ask me about trip cost, budget, route, hotels, or ways to improve this plan.</div>
+        <div class="ai-msg bot">Hi, I am your local AI assistant. Ask for hotel recommendations, cost checks, route explanation, or itinerary changes. I will not save hotel or route changes unless you click a confirmation button.</div>
     </div>
     <div class="ai-chat-prompts">
         <button type="button" onclick="askAiQuick('Act as my travel AI chatbot and explain this trip summary.')">Explain</button>
         <button type="button" onclick="askAiQuick('Check whether this itinerary fits my budget.')">Budget</button>
+        <button type="button" onclick="askAiQuick('Recommend a suitable hotel for this itinerary under my budget.')">Hotel</button>
+        <button type="button" onclick="askAiQuick('Suggest one better replacement stop for this itinerary.')">Change stop</button>
         <button type="button" onclick="askAiQuick('Suggest ways to reduce the total cost.')">Reduce cost</button>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
@@ -422,6 +485,44 @@ $interests = $it["interests"] ?? "-";
 </div>
 <script>
 const ITINERARY_ID = <?php echo (int)$itineraryId; ?>;
+const COST_CHART_LABELS = <?php echo json_encode($chartLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
+const COST_CHART_VALUES = <?php echo json_encode($chartAmounts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
+document.addEventListener('DOMContentLoaded', initCostPieChart);
+
+function initCostPieChart() {
+    const canvas = document.getElementById('costPieChart');
+    if (!canvas || !window.Chart || COST_CHART_VALUES.length === 0) return;
+    new Chart(canvas, {
+        type: 'pie',
+        data: {
+            labels: COST_CHART_LABELS,
+            datasets: [{
+                data: COST_CHART_VALUES,
+                backgroundColor: ['#4f46e5', '#f59e0b', '#16a34a', '#ef4444', '#0ea5e9'],
+                borderColor: '#ffffff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: { boxWidth: 12, color: '#334155', font: { size: 11, weight: 'bold' } }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(ctx) {
+                            return ctx.label + ': RM ' + Number(ctx.raw || 0).toFixed(2);
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
 function toggleAiChat() {
     const panel = document.getElementById('aiChatPanel');
     if (!panel) return;
@@ -456,15 +557,130 @@ async function sendAiMessage(event) {
     addAiMessage('user', text);
     const loading = addAiMessage('bot', 'Writing answer...');
     try {
-        const resp = await fetch('ai_chat.php', {
+        const hotelIntent = /hotel|accommodation|stay|room|住宿|酒店|旅馆/i.test(text);
+        const editIntent = /replace|change|swap|modify|regenerate|alternative|better stop|change stop|reduce cost|cheaper|lower cost|更改|替换|换掉|换|改行程|重新推荐|改掉|省钱/i.test(text);
+        const endpoint = hotelIntent ? '../api/ai_hotel_assistant.php' : (editIntent ? '../api/ai_itinerary_editor.php' : 'ai_chat.php');
+        const resp = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams({ itinerary_id: ITINERARY_ID, message: text }),
+            body: new URLSearchParams(hotelIntent || editIntent
+                ? { action: 'recommend', itinerary_id: ITINERARY_ID, message: text }
+                : { itinerary_id: ITINERARY_ID, message: text }),
         });
         const data = await parseJsonResponse(resp);
         if (loading) loading.textContent = data.answer || data.message || 'AI assistant could not answer this request.';
+        if (hotelIntent && data.hotels && data.hotels.length) {
+            renderHotelCards(loading, data.hotels);
+        }
+        if (editIntent && data.proposals && data.proposals.length) {
+            renderChangeCards(loading, data.proposals);
+        }
     } catch (e) {
         if (loading) loading.textContent = 'Network error. Please try again.';
+    }
+}
+
+function renderHotelCards(container, hotels) {
+    if (!container) return;
+    hotels.slice(0, 4).forEach((hotel) => {
+        const card = document.createElement('div');
+        card.className = 'ai-hotel-card';
+        const name = document.createElement('strong');
+        name.textContent = hotel.name || 'Hotel';
+        const meta = document.createElement('span');
+        const price = Number(hotel.price_per_night || 0);
+        const rating = Number(hotel.rating || 0);
+        meta.textContent = 'RM ' + price.toFixed(0) + '/night' + (rating ? ' - Rating ' + rating.toFixed(1) : '') + (hotel.district ? ' - ' + hotel.district : '');
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = 'Confirm Hotel';
+        button.addEventListener('click', () => confirmHotel(Number(hotel.hotel_id || 0)));
+        card.appendChild(name);
+        card.appendChild(meta);
+        card.appendChild(button);
+        container.appendChild(card);
+    });
+    const body = document.getElementById('aiChatBody');
+    if (body) body.scrollTop = body.scrollHeight;
+}
+
+function renderChangeCards(container, proposals) {
+    if (!container) return;
+    proposals.slice(0, 4).forEach((proposal) => {
+        const place = proposal.new_place || {};
+        const card = document.createElement('div');
+        card.className = 'ai-change-card';
+        const title = document.createElement('strong');
+        title.textContent = 'Day ' + proposal.day_no + ' stop ' + proposal.sequence_no + ': ' + (proposal.current_title || 'Current stop');
+        const meta = document.createElement('span');
+        const cost = Number(place.estimated_cost || 0);
+        meta.textContent = 'Replace with ' + (place.name || 'new place') + ' - ' + (place.category || 'place') + ' - RM ' + cost.toFixed(2);
+        const reason = document.createElement('span');
+        reason.textContent = proposal.reason || 'AI suggested replacement';
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = 'Confirm Change';
+        button.addEventListener('click', () => confirmItineraryChange(Number(proposal.item_id || 0), Number(place.place_id || 0)));
+        card.appendChild(title);
+        card.appendChild(meta);
+        card.appendChild(reason);
+        card.appendChild(button);
+        container.appendChild(card);
+    });
+    const body = document.getElementById('aiChatBody');
+    if (body) body.scrollTop = body.scrollHeight;
+}
+
+async function confirmItineraryChange(itemId, placeId) {
+    if (!itemId || !placeId) return;
+    const loading = addAiMessage('bot', 'Applying selected itinerary change and recalculating route/cost...');
+    try {
+        const resp = await fetch('../api/ai_itinerary_editor.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm',
+                itinerary_id: ITINERARY_ID,
+                item_id: String(itemId),
+                place_id: String(placeId)
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = data.answer || 'Itinerary changed. Reloading the updated summary...';
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (loading) loading.textContent = data.answer || data.message || 'Could not apply this itinerary change.';
+        }
+    } catch (e) {
+        if (loading) loading.textContent = 'Network error while saving itinerary change. Please try again.';
+    }
+}
+
+async function confirmHotel(hotelId) {
+    if (!hotelId) return;
+    const loading = addAiMessage('bot', 'Saving selected hotel into your itinerary and cost summary...');
+    try {
+        const resp = await fetch('review_replace.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm',
+                itinerary_id: ITINERARY_ID,
+                rejected_ids: '',
+                replacements_json: '{}',
+                hotel_id: String(hotelId)
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = 'Hotel confirmed. Reloading the summary with updated cost and itinerary...';
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (loading) loading.textContent = data.message || 'Could not confirm this hotel.';
+        }
+    } catch (e) {
+        if (loading) loading.textContent = 'Network error while saving hotel. Please try again.';
     }
 }
 

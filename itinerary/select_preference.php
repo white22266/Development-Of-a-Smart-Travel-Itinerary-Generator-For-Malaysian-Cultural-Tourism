@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/api_keys.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -14,11 +15,14 @@ if ($travellerId <= 0) {
 }
 
 $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$ollamaModel = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
+$googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
 $errors = $_SESSION["form_errors"] ?? [];
 unset($_SESSION["form_errors"]);
 
 $stmt = $conn->prepare("
-  SELECT preference_id, trip_days, budget, transport_type, interests, preferred_states, preferred_districts, created_at
+  SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type, travel_pace,
+         dietary_preference, preferred_visit_time, interests, preferred_states, preferred_districts, created_at
   FROM traveller_preferences
   WHERE traveller_id = ?
   ORDER BY preference_id DESC
@@ -78,6 +82,22 @@ $stmt->close();
         .origin-status.ok   { color: #22c55e; }
         .origin-status.err  { color: #ef4444; }
         .origin-status.spin { color: #6366f1; }
+        .pac-container {
+            z-index: 99999;
+            border-radius: 12px;
+            margin-top: 4px;
+            border: 1px solid rgba(15,23,42,0.12);
+            box-shadow: 0 16px 40px rgba(15,23,42,0.14);
+            font-family: inherit;
+        }
+        .pac-item {
+            padding: 8px 10px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .pac-item:hover {
+            background: #f8fafc;
+        }
 
         /* ---- Route strategy info box ---- */
         .route-info-box {
@@ -99,6 +119,203 @@ $stmt->close();
             font-size: 12px;
             color: #475569;
             line-height: 1.7;
+        }
+        .ai-helper {
+            margin-top: 16px;
+        }
+        .ai-helper-grid {
+            display: grid;
+            grid-template-columns: minmax(280px, 410px) minmax(0, 1fr);
+            gap: 14px;
+            align-items: start;
+        }
+        .ai-form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+        .ai-field {
+            margin-bottom: 12px;
+        }
+        .ai-field label {
+            display: block;
+            font-size: 12px;
+            font-weight: 800;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+        .ai-field input,
+        .ai-field select,
+        .ai-field textarea {
+            width: 100%;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            border-radius: 10px;
+            padding: 10px 11px;
+            font-size: 13px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        .ai-field textarea {
+            min-height: 76px;
+            resize: vertical;
+        }
+        .ai-category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+        .ai-category-grid label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 9px;
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #475569;
+        }
+        .ai-category-grid input {
+            width: auto;
+        }
+        .ai-status {
+            display: none;
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .ai-status.show { display: block; }
+        .ai-status.error { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; }
+        .ai-status.ok { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+        .ai-result-empty {
+            min-height: 310px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #64748b;
+            border: 1px dashed rgba(15, 23, 42, 0.18);
+            border-radius: 12px;
+            background: #f8fafc;
+            padding: 20px;
+        }
+        .ai-day-card {
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+        .ai-day-card h4 {
+            margin: 0 0 8px;
+            color: #4f46e5;
+        }
+        .ai-route-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        .ai-route-chip {
+            background: #eef2ff;
+            color: #3730a3;
+            border-radius: 999px;
+            padding: 5px 9px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+        .ai-place {
+            border-left: 4px solid #6366f1;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 9px 10px;
+            margin-top: 8px;
+        }
+        .ai-place span {
+            display: block;
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.45;
+        }
+        .ai-summary {
+            background: #f8fafc;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        .ai-chat-shell {
+            display: grid;
+            grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+            gap: 14px;
+        }
+        .ai-chat-context {
+            background: #f8fafc;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 12px;
+            padding: 14px;
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.55;
+        }
+        .ai-chat-window {
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+        }
+        .ai-chat-messages {
+            min-height: 260px;
+            max-height: 420px;
+            overflow-y: auto;
+            padding: 14px;
+            background: #f8fafc;
+        }
+        .ai-msg {
+            max-width: 86%;
+            margin-bottom: 10px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            line-height: 1.45;
+            white-space: pre-wrap;
+        }
+        .ai-msg.bot {
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            color: #334155;
+        }
+        .ai-msg.user {
+            margin-left: auto;
+            background: #4f46e5;
+            color: #fff;
+        }
+        .ai-chat-form {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            border-top: 1px solid rgba(15, 23, 42, 0.08);
+        }
+        .ai-chat-form input {
+            flex: 1;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            border-radius: 10px;
+            padding: 10px 11px;
+            font-size: 13px;
+        }
+        @media (max-width: 850px) {
+            .ai-chat-shell { grid-template-columns: 1fr; }
+            .ai-chat-form { flex-direction: column; }
+        }
+        @media (max-width: 1050px) {
+            .ai-helper-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 640px) {
+            .ai-form-row, .ai-category-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -138,7 +355,7 @@ $stmt->close();
                 <p>Select a saved preference to generate your personalised cultural itinerary. Weather will adjust outdoor activities.</p>
             </div>
             <div class="actions">
-                <a class="btn btn-primary" href="ai_itinerary_assistant.php">AI Itinerary Assistant</a>
+                <a class="btn btn-primary" href="#ai-travel-assistant">AI Travel Assistant</a>
                 <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
             </div>
         </div>
@@ -163,7 +380,7 @@ $stmt->close();
 
                     <!-- ===== Saved Preference ===== -->
                     <label style="font-weight:800; font-size:13px;">Saved Preference *</label><br>
-                    <select name="preference_id" required
+                    <select name="preference_id" id="preferenceSelect" required
                         style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px; font-size:13px;">
                         <option value="" disabled selected>— Select one preference —</option>
                         <?php while ($p = $res->fetch_assoc()): ?>
@@ -182,7 +399,10 @@ $stmt->close();
                                 #<?php echo (int)$p["preference_id"]; ?> |
                                 <?php echo (int)$p["trip_days"]; ?> day<?php echo $p["trip_days"] > 1 ? 's' : ''; ?> |
                                 RM<?php echo number_format((float)$p["budget"], 2); ?> |
+                                <?php echo htmlspecialchars($p["budget_tier"] ?? "normal"); ?> |
                                 <?php echo htmlspecialchars($p["transport_type"]); ?> |
+                                <?php echo htmlspecialchars($p["traveller_type"] ?? "solo"); ?> |
+                                <?php echo htmlspecialchars($p["travel_pace"] ?? "normal"); ?> |
                                 <?php echo htmlspecialchars($p["interests"]); ?> |
                                 <?php echo htmlspecialchars($loc); ?>
                             </option>
@@ -247,7 +467,7 @@ $stmt->close();
                         </div>
                         <input type="hidden" name="origin_lat" id="origin_lat">
                         <input type="hidden" name="origin_lng" id="origin_lng">
-                        <div class="origin-status" id="originStatus">Enter your starting city or click "Use My Location".</div>
+                        <div class="origin-status" id="originStatus">Start typing and choose a Google Maps suggestion, or click "Use My Location".</div>
                     </div>
 
                     <div style="height:18px;"></div>
@@ -255,6 +475,31 @@ $stmt->close();
                     <button class="btn btn-primary" type="submit">&#9654; Generate Itinerary</button>
                 </form>
             <?php endif; ?>
+        </div>
+
+        <div class="card ai-helper" id="ai-travel-assistant">
+            <h3>AI Travel Assistant</h3>
+            <p class="meta">
+                Ask about the selected saved preference above. The assistant gives route, cost, culture, hotel, festival timing, and improvement advice using Ollama
+                without creating or saving a formal itinerary. Local model: <?php echo htmlspecialchars($ollamaModel); ?>.
+            </p>
+
+            <div class="ai-chat-shell">
+                <div class="ai-chat-context">
+                    <strong>How this assistant works</strong><br>
+                    Select one saved preference in Generate Itinerary, then ask a question here. The AI reads that selected preference, so you do not need to fill another trip form.
+                    <div class="meta" id="aiSelectedPreference" style="margin-top:10px;">Selected preference: none</div>
+                </div>
+                <div class="ai-chat-window">
+                    <div id="aiChatMessages" class="ai-chat-messages">
+                        <div class="ai-msg bot">Hi, I can help check your selected preference before you generate. Ask things like “is this budget enough?”, “suggest route style”, or “should I include festival places?”</div>
+                    </div>
+                    <form id="aiPreferenceChatForm" class="ai-chat-form">
+                        <input type="text" id="aiPreferenceMessage" placeholder="Ask about the selected preference..." autocomplete="off">
+                        <button type="submit" class="btn btn-primary" id="aiPreferenceSend">Send</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
 </div>
@@ -266,18 +511,51 @@ $stmt->close();
     var lngField  = document.getElementById('origin_lng');
     var status    = document.getElementById('originStatus');
     var btnLocate = document.getElementById('btnLocate');
+    var pickedFromAutocomplete = false;
+
+    window.initOriginAutocomplete = function () {};
 
     if (!nameInp) return;
+
+    window.initOriginAutocomplete = function () {
+        if (!window.google || !google.maps || !google.maps.places) return;
+
+        var autocomplete = new google.maps.places.Autocomplete(nameInp, {
+            componentRestrictions: { country: 'my' },
+            fields: ['formatted_address', 'geometry', 'name']
+        });
+
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+            if (!place || !place.geometry || !place.geometry.location) {
+                latField.value = '';
+                lngField.value = '';
+                setStatus('err', '&#10007; Please choose a valid Google Maps suggestion.');
+                return;
+            }
+
+            pickedFromAutocomplete = true;
+            latField.value = place.geometry.location.lat().toFixed(6);
+            lngField.value = place.geometry.location.lng().toFixed(6);
+            nameInp.value = place.formatted_address || place.name || nameInp.value;
+            setStatus('ok', '&#10003; Location selected: ' + escapeStatusHtml(nameInp.value));
+        });
+    };
 
     /* ---- Geocode typed address (debounced 800ms) ---- */
     var timer = null;
     nameInp.addEventListener('input', function () {
         clearTimeout(timer);
+        if (pickedFromAutocomplete) {
+            pickedFromAutocomplete = false;
+            return;
+        }
+
         var q = nameInp.value.trim();
         if (q.length < 3) {
             latField.value = '';
             lngField.value = '';
-            setStatus('', 'Enter your starting city or click "Use My Location".');
+            setStatus('', 'Start typing and choose a Google Maps suggestion, or click "Use My Location".');
             return;
         }
         setStatus('spin', 'Looking up address…');
@@ -288,7 +566,7 @@ $stmt->close();
                     if (d && d.lat && d.lng) {
                         latField.value = d.lat;
                         lngField.value = d.lng;
-                        setStatus('ok', '&#10003; Location found: ' + (d.address || q));
+                        setStatus('ok', '&#10003; Location found: ' + escapeStatusHtml(d.address || q));
                     } else {
                         latField.value = '';
                         lngField.value = '';
@@ -321,10 +599,12 @@ $stmt->close();
                         .then(function (r) { return r.json(); })
                         .then(function (d) {
                             var label = (d && d.address) ? d.address : lat + ', ' + lng;
+                            pickedFromAutocomplete = true;
                             nameInp.value = label;
-                            setStatus('ok', '&#10003; Location detected: ' + label);
+                            setStatus('ok', '&#10003; Location detected: ' + escapeStatusHtml(label));
                         })
                         .catch(function () {
+                            pickedFromAutocomplete = true;
                             nameInp.value = lat + ', ' + lng;
                             setStatus('ok', '&#10003; GPS coordinates captured (' + lat + ', ' + lng + ')');
                         });
@@ -347,7 +627,87 @@ $stmt->close();
         status.className = 'origin-status' + (cls ? ' ' + cls : '');
         status.innerHTML = msg;
     }
+
+    function escapeStatusHtml(value) {
+        return String(value == null ? '' : value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+})();
+
+(function () {
+    var form = document.getElementById('aiPreferenceChatForm');
+    var prefSelect = document.getElementById('preferenceSelect');
+    var input = document.getElementById('aiPreferenceMessage');
+    var messages = document.getElementById('aiChatMessages');
+    var sendBtn = document.getElementById('aiPreferenceSend');
+    var selectedText = document.getElementById('aiSelectedPreference');
+    if (!form || !prefSelect || !input || !messages) return;
+
+    function updateSelectedPreferenceText() {
+        var opt = prefSelect.options[prefSelect.selectedIndex];
+        var text = opt && opt.value ? opt.textContent.replace(/\s+/g, ' ').trim() : 'none';
+        selectedText.textContent = 'Selected preference: ' + text;
+    }
+
+    prefSelect.addEventListener('change', updateSelectedPreferenceText);
+    updateSelectedPreferenceText();
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var preferenceId = prefSelect.value;
+        var text = input.value.trim();
+        if (!preferenceId) {
+            appendMessage('bot', 'Please select one saved preference above first.');
+            return;
+        }
+        if (!text) return;
+
+        appendMessage('user', text);
+        input.value = '';
+        sendBtn.disabled = true;
+        sendBtn.textContent = 'Thinking...';
+        var pending = appendMessage('bot', 'AI is checking your selected preference...');
+
+        var fd = new FormData();
+        fd.append('preference_id', preferenceId);
+        fd.append('message', text);
+
+        fetch('../api/ai_preference_chat.php', {
+            method: 'POST',
+            body: fd
+        })
+            .then(function (resp) { return resp.json(); })
+            .then(function (data) {
+                pending.textContent = data.status === 'success'
+                    ? (data.reply || 'No reply returned.')
+                    : (data.message || 'AI response is invalid. Please try again.');
+            })
+            .catch(function () {
+                pending.textContent = 'AI service is currently unavailable. Please make sure Ollama is running.';
+            })
+            .finally(function () {
+                sendBtn.disabled = false;
+                sendBtn.textContent = 'Send';
+                messages.scrollTop = messages.scrollHeight;
+            });
+    });
+
+    function appendMessage(type, text) {
+        var div = document.createElement('div');
+        div.className = 'ai-msg ' + type;
+        div.textContent = text;
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+        return div;
+    }
 })();
 </script>
+<?php if ($googleMapsKey !== ""): ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo urlencode($googleMapsKey); ?>&libraries=places&callback=initOriginAutocomplete" async defer></script>
+<?php endif; ?>
 </body>
 </html>

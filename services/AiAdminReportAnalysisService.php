@@ -2,27 +2,25 @@
 /**
  * services/AiAdminReportAnalysisService.php
  *
- * AI analysis for admin reports. Uses OpenAI when configured and falls back to
- * deterministic local insights so the report still works during offline demos.
+ * AI analysis for admin reports. Uses local Ollama and falls back to
+ * deterministic local insights if Ollama is not running.
  */
 
 class AiAdminReportAnalysisService
 {
-    private string $apiKey;
     private string $model;
+    private string $baseUrl;
 
-    public function __construct(?string $apiKey = null, ?string $model = null)
+    public function __construct(?string $model = null, ?string $baseUrl = null)
     {
-        $this->apiKey = trim((string)$apiKey);
-        $this->model = trim((string)($model ?: 'gpt-4.1-mini'));
+        $this->model = trim((string)($model ?: 'qwen2.5:3b'));
+        $this->baseUrl = rtrim(trim((string)($baseUrl ?: 'http://localhost:11434')), '/');
     }
 
     public function analyze(array $reportData): array
     {
-        if ($this->apiKey !== '') {
-            $ai = $this->callOpenAI($reportData);
-            if (($ai['status'] ?? '') === 'success') return $ai;
-        }
+        $ai = $this->callOllama($reportData);
+        if (($ai['status'] ?? '') === 'success') return $ai;
 
         return [
             'status' => 'success',
@@ -31,10 +29,10 @@ class AiAdminReportAnalysisService
         ];
     }
 
-    private function callOpenAI(array $reportData): array
+    private function callOllama(array $reportData): array
     {
         if (!function_exists('curl_init')) {
-            return ['status' => 'error', 'source' => 'openai', 'analysis' => 'cURL is not enabled.'];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'cURL is not enabled.'];
         }
 
         $instructions = implode("\n", [
@@ -52,22 +50,23 @@ class AiAdminReportAnalysisService
 
         $payload = [
             'model' => $this->model,
-            'instructions' => $instructions,
-            'input' => "Admin report database snapshot:\n" . json_encode($reportData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-            'max_output_tokens' => 1000,
+            'messages' => [
+                ['role' => 'system', 'content' => $instructions],
+                ['role' => 'user', 'content' => "Admin report database snapshot:\n" . json_encode($reportData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
+            ],
+            'stream' => false,
+            'options' => ['temperature' => 0.35],
         ];
 
-        $ch = curl_init('https://api.openai.com/v1/responses');
+        $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
+        $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POST => true,
-            CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json',
-                'Authorization: Bearer ' . $this->apiKey,
-            ],
-            CURLOPT_POSTFIELDS => json_encode($payload),
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            CURLOPT_TIMEOUT => 180,
+            CURLOPT_CONNECTTIMEOUT => 5,
         ]);
 
         $raw = curl_exec($ch);
@@ -76,37 +75,20 @@ class AiAdminReportAnalysisService
         curl_close($ch);
 
         if ($raw === false || $err !== '' || $code < 200 || $code >= 300) {
-            return ['status' => 'error', 'source' => 'openai', 'analysis' => 'AI service unavailable.'];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'AI service unavailable.'];
         }
 
         $json = json_decode($raw, true);
         if (!is_array($json)) {
-            return ['status' => 'error', 'source' => 'openai', 'analysis' => 'Invalid AI response.'];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'Invalid AI response.'];
         }
 
-        $text = $this->extractResponseText($json);
+        $text = trim((string)($json['message']['content'] ?? ''));
         if ($text === '') {
-            return ['status' => 'error', 'source' => 'openai', 'analysis' => 'AI returned an empty response.'];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'AI returned an empty response.'];
         }
 
-        return ['status' => 'success', 'source' => 'openai', 'analysis' => $text];
-    }
-
-    private function extractResponseText(array $json): string
-    {
-        if (!empty($json['output_text']) && is_string($json['output_text'])) {
-            return trim($json['output_text']);
-        }
-
-        $parts = [];
-        foreach (($json['output'] ?? []) as $item) {
-            foreach (($item['content'] ?? []) as $content) {
-                if (($content['type'] ?? '') === 'output_text' && isset($content['text'])) {
-                    $parts[] = (string)$content['text'];
-                }
-            }
-        }
-        return trim(implode("\n", $parts));
+        return ['status' => 'success', 'source' => 'ollama', 'analysis' => $text];
     }
 
     private function fallbackAnalysis(array $data): string
@@ -216,7 +198,7 @@ class AiAdminReportAnalysisService
             $lines[] = "- Use highest-cost itinerary records to inspect whether the cost estimation logic is realistic.";
         } elseif (($data['report_type'] ?? '') === 'ai_usage') {
             $lines[] = "- Use common AI question categories to improve itinerary explanations and route-writing prompts.";
-            $lines[] = "- If most answers are local fallback, configure an OpenAI API key before final demonstration.";
+            $lines[] = "- If most answers are local fallback, start Ollama and pull the configured local model before final demonstration.";
         } else {
             $lines[] = "- Keep report exports as evidence for supervisor evaluation and final project documentation.";
             $lines[] = "- Review sections with no data and either add data collection or hide the feature from final demo.";

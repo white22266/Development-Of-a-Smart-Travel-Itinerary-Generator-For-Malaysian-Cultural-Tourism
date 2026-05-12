@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 require_once "../config/db_connect.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
@@ -17,13 +19,13 @@ $errors  = $_SESSION["form_errors"] ?? [];
 unset($_SESSION["success_message"], $_SESSION["form_errors"]);
 
 $stmt = $conn->prepare("
-  SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost, i.status, i.created_at,
+  SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost, i.created_at,
          COALESCE(SUM(CASE WHEN ii.item_type <> 'hotel' THEN 1 ELSE 0 END), 0) AS place_count,
          GROUP_CONCAT(CASE WHEN ii.item_type = 'hotel' THEN ii.item_title END SEPARATOR ', ') AS selected_hotels
   FROM itineraries i
   LEFT JOIN itinerary_items ii ON ii.itinerary_id = i.itinerary_id
   WHERE i.traveller_id = ?
-  GROUP BY i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost, i.status, i.created_at
+  GROUP BY i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost, i.created_at
   ORDER BY i.itinerary_id DESC
 ");
 $stmt->bind_param("i", $travellerId);
@@ -122,7 +124,6 @@ $stmt->close();
                                     <th>Places</th>
                                     <th>Hotel</th>
                                     <th>Total (RM)</th>
-                                    <th>Status</th>
                                     <th>Created</th>
                                     <th>Action</th>
                                 </tr>
@@ -136,7 +137,6 @@ $stmt->close();
                                         <td><?php echo (int)$r["place_count"]; ?></td>
                                         <td><?php echo !empty($r["selected_hotels"]) ? htmlspecialchars($r["selected_hotels"]) : "-"; ?></td>
                                         <td><?php echo number_format((float)$r["total_estimated_cost"], 2); ?></td>
-                                        <td><?php echo htmlspecialchars($r["status"]); ?></td>
                                         <td><?php echo !empty($r["created_at"]) ? htmlspecialchars(date("d M Y", strtotime($r["created_at"]))) : "-"; ?></td>
                                         <td>
                                             <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">View</a>
@@ -153,7 +153,7 @@ $stmt->close();
                                 <?php endwhile; ?>
                                 <?php if ($res->num_rows === 0): ?>
                                     <tr>
-                                        <td colspan="9">No itineraries yet.</td>
+                                        <td colspan="8">No itineraries yet.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>

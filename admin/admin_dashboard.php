@@ -116,7 +116,7 @@ if ($resTravellers) {
 
 $recentItineraries = [];
 $itinerarySql = "
-  SELECT i.itinerary_id, i.title, i.total_days, i.total_estimated_cost, i.status, i.created_at,
+  SELECT i.itinerary_id, i.title, i.total_days, i.total_estimated_cost, i.created_at,
          t.full_name AS traveller_name
   FROM itineraries i
   LEFT JOIN travellers t ON t.traveller_id = i.traveller_id
@@ -380,7 +380,7 @@ if ($hasAiChatLogs) {
 
         <div class="card col-12">
           <h3>Data List: Recent Generated Itineraries</h3>
-          <p class="meta">Latest itinerary records created by travellers, including cost and status.</p>
+          <p class="meta">Latest itinerary records created by travellers, including days and estimated cost.</p>
           <div class="table-wrap">
             <table>
               <thead>
@@ -390,7 +390,6 @@ if ($hasAiChatLogs) {
                   <th>Traveller</th>
                   <th>Days</th>
                   <th>Total Cost</th>
-                  <th>Status</th>
                   <th>Created</th>
                 </tr>
               </thead>
@@ -403,12 +402,11 @@ if ($hasAiChatLogs) {
                       <td><?php echo htmlspecialchars($it["traveller_name"] ?? "-"); ?></td>
                       <td><?php echo (int)($it["total_days"] ?? 0); ?></td>
                       <td>RM <?php echo number_format((float)($it["total_estimated_cost"] ?? 0), 2); ?></td>
-                      <td><span class="badge"><?php echo htmlspecialchars($it["status"] ?? "-"); ?></span></td>
                       <td><?php echo htmlspecialchars($it["created_at"] ?? "-"); ?></td>
                     </tr>
                   <?php endforeach; ?>
                 <?php else: ?>
-                  <tr><td colspan="7">No itinerary data available.</td></tr>
+                  <tr><td colspan="6">No itinerary data available.</td></tr>
                 <?php endif; ?>
               </tbody>
             </table>

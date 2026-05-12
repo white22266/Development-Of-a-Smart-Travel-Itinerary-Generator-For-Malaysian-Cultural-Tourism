@@ -32,6 +32,38 @@ $transportOptions = [
   "motorcycle"       => "Motorcycle"
 ];
 
+$travellerTypeOptions = [
+  "solo"   => "Solo",
+  "couple" => "Couple",
+  "family" => "Family",
+  "group"  => "Group"
+];
+
+$paceOptions = [
+  "relaxed" => "Relaxed",
+  "normal"  => "Normal",
+  "packed"  => "Packed"
+];
+
+$budgetTierOptions = [
+  "budget" => "Budget",
+  "normal" => "Normal",
+  "luxury" => "Luxury"
+];
+
+$dietaryOptions = [
+  "none"       => "No specific requirement",
+  "halal"      => "Halal required",
+  "vegetarian" => "Vegetarian friendly"
+];
+
+$visitTimeOptions = [
+  "any"       => "Any time",
+  "morning"   => "Morning",
+  "afternoon" => "Afternoon",
+  "evening"   => "Evening"
+];
+
 // All 16 states with their districts
 $stateDistricts = [
   "Johor"            => ["Johor Bahru","Kluang","Kota Tinggi","Mersing","Muar","Batu Pahat","Pontian","Segamat","Kulai","Tangkak"],
@@ -61,7 +93,13 @@ function checked_val($arr, $key) {
 
 $oldTripDays  = $old["trip_days"]           ?? "";
 $oldBudget    = $old["budget"]              ?? "";
+$oldBudgetTier = $old["budget_tier"]        ?? "normal";
 $oldTransport = $old["transport_type"]      ?? "";
+$oldTravellerType = $old["traveller_type"]  ?? "solo";
+$oldTravelPace = $old["travel_pace"]        ?? "normal";
+$oldDietary = $old["dietary_preference"]    ?? "none";
+$oldVisitTime = $old["preferred_visit_time"] ?? "any";
+$oldAccessibility = $old["accessibility_needs"] ?? "";
 $oldInterests = $old["interests"]           ?? [];
 $oldState     = $old["preferred_states"]    ?? "";   // single value now
 $oldDistrict  = $old["preferred_districts"] ?? "";   // single value now
@@ -223,15 +261,15 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
         <form method="post" action="preference_process.php" id="preferenceWizardForm">
           <div class="wizard-progress" aria-label="Preference steps">
-            <div class="wizard-step-tab active" data-step-tab="1">1. Trip & Interests</div>
-            <div class="wizard-step-tab" data-step-tab="2">2. Location</div>
-            <div class="wizard-step-tab" data-step-tab="3">3. Review</div>
+            <div class="wizard-step-tab active" data-step-tab="1">1. Where & When</div>
+            <div class="wizard-step-tab" data-step-tab="2">2. Who & How</div>
+            <div class="wizard-step-tab" data-step-tab="3">3. What You Love</div>
           </div>
           <div class="grid">
 
             <!-- ===== LEFT: Trip Details ===== -->
             <div class="card col-6 wizard-panel active" data-step-panel="1" style="box-shadow:none;">
-              <h3 style="margin-bottom:8px;">Trip Details</h3>
+              <h3 style="margin-bottom:8px;">Where, When & Travel Style</h3>
 
               <label style="font-size:13px; font-weight:700;">Travel Duration (Days) *</label>
               <input type="number" name="trip_days" min="1" max="30" required
@@ -259,6 +297,74 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                   </option>
                 <?php endforeach; ?>
               </select>
+
+              <div style="height:12px;"></div>
+
+              <label style="font-size:13px; font-weight:700;">Budget Tier *</label>
+              <select name="budget_tier" required
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+                <?php foreach ($budgetTierOptions as $k => $v): ?>
+                  <option value="<?php echo htmlspecialchars($k); ?>" <?php echo selected_val($oldBudgetTier, $k); ?>>
+                    <?php echo htmlspecialchars($v); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+
+              <div style="height:12px;"></div>
+
+              <label style="font-size:13px; font-weight:700;">Traveller Type *</label>
+              <select name="traveller_type" required
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+                <?php foreach ($travellerTypeOptions as $k => $v): ?>
+                  <option value="<?php echo htmlspecialchars($k); ?>" <?php echo selected_val($oldTravellerType, $k); ?>>
+                    <?php echo htmlspecialchars($v); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+
+              <div style="height:12px;"></div>
+
+              <label style="font-size:13px; font-weight:700;">Travel Pace *</label>
+              <select name="travel_pace" required
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+                <?php foreach ($paceOptions as $k => $v): ?>
+                  <option value="<?php echo htmlspecialchars($k); ?>" <?php echo selected_val($oldTravelPace, $k); ?>>
+                    <?php echo htmlspecialchars($v); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+
+              <div style="height:12px;"></div>
+
+              <label style="font-size:13px; font-weight:700;">Dietary Preference *</label>
+              <select name="dietary_preference" required
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+                <?php foreach ($dietaryOptions as $k => $v): ?>
+                  <option value="<?php echo htmlspecialchars($k); ?>" <?php echo selected_val($oldDietary, $k); ?>>
+                    <?php echo htmlspecialchars($v); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+
+              <div style="height:12px;"></div>
+
+              <label style="font-size:13px; font-weight:700;">Preferred Visit Time *</label>
+              <select name="preferred_visit_time" required
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+                <?php foreach ($visitTimeOptions as $k => $v): ?>
+                  <option value="<?php echo htmlspecialchars($k); ?>" <?php echo selected_val($oldVisitTime, $k); ?>>
+                    <?php echo htmlspecialchars($v); ?>
+                  </option>
+                <?php endforeach; ?>
+              </select>
+
+              <div style="height:12px;"></div>
+
+              <label style="font-size:13px; font-weight:700;">Accessibility Notes</label>
+              <input type="text" name="accessibility_needs" maxlength="120"
+                placeholder="Example: elderly-friendly, avoid stairs"
+                value="<?php echo htmlspecialchars($oldAccessibility); ?>"
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
 
               <hr class="sep">
 
@@ -336,10 +442,16 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
               <div class="summary-list">
                 <div class="summary-item"><strong>Travel Duration</strong><span id="summaryDays">-</span></div>
                 <div class="summary-item"><strong>Budget</strong><span id="summaryBudget">-</span></div>
+                <div class="summary-item"><strong>Budget Tier</strong><span id="summaryBudgetTier">-</span></div>
                 <div class="summary-item"><strong>Transport</strong><span id="summaryTransport">-</span></div>
+                <div class="summary-item"><strong>Traveller Type</strong><span id="summaryTravellerType">-</span></div>
+                <div class="summary-item"><strong>Travel Pace</strong><span id="summaryPace">-</span></div>
+                <div class="summary-item"><strong>Dietary</strong><span id="summaryDietary">-</span></div>
+                <div class="summary-item"><strong>Visit Time</strong><span id="summaryVisitTime">-</span></div>
                 <div class="summary-item"><strong>Interests</strong><span id="summaryInterests">-</span></div>
                 <div class="summary-item"><strong>State</strong><span id="summaryState">Any State</span></div>
                 <div class="summary-item"><strong>District</strong><span id="summaryDistrict">Any District</span></div>
+                <div class="summary-item"><strong>Accessibility</strong><span id="summaryAccessibility">-</span></div>
               </div>
             </div>
 
@@ -458,15 +570,27 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     var days = document.querySelector('[name="trip_days"]').value || '-';
     var budget = document.querySelector('[name="budget"]').value || '-';
     var transport = selectedText(document.querySelector('[name="transport_type"]')) || '-';
+    var budgetTier = selectedText(document.querySelector('[name="budget_tier"]')) || '-';
+    var travellerType = selectedText(document.querySelector('[name="traveller_type"]')) || '-';
+    var pace = selectedText(document.querySelector('[name="travel_pace"]')) || '-';
+    var dietary = selectedText(document.querySelector('[name="dietary_preference"]')) || '-';
+    var visitTime = selectedText(document.querySelector('[name="preferred_visit_time"]')) || '-';
+    var accessibility = document.querySelector('[name="accessibility_needs"]').value || '-';
     var interests = Array.prototype.map.call(document.querySelectorAll('[name="interests[]"]:checked'), function(el) {
       return el.parentNode.textContent.trim();
     }).join(', ') || '-';
     document.getElementById('summaryDays').textContent = days + ' day(s)';
     document.getElementById('summaryBudget').textContent = budget === '-' ? '-' : 'RM ' + budget;
+    document.getElementById('summaryBudgetTier').textContent = budgetTier;
     document.getElementById('summaryTransport').textContent = transport;
+    document.getElementById('summaryTravellerType').textContent = travellerType;
+    document.getElementById('summaryPace').textContent = pace;
+    document.getElementById('summaryDietary').textContent = dietary;
+    document.getElementById('summaryVisitTime').textContent = visitTime;
     document.getElementById('summaryInterests').textContent = interests;
     document.getElementById('summaryState').textContent = selectedText(stateSel) || 'Any State';
     document.getElementById('summaryDistrict').textContent = selectedText(distSel) || 'Any District';
+    document.getElementById('summaryAccessibility').textContent = accessibility;
   }
 
   if (nextBtn) {

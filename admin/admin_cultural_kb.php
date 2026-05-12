@@ -135,8 +135,11 @@ if ($page > $totalPages) {
 $distColChk = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
 $adminHasDistCol = ($distColChk && $distColChk->num_rows > 0);
 $adminDistrictCol = $adminHasDistCol ? ", district" : "";
+$festivalDateChk = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'festival_start_date'");
+$adminHasFestivalDateCols = ($festivalDateChk && $festivalDateChk->num_rows > 0);
+$adminFestivalDateCols = $adminHasFestivalDateCols ? ", festival_start_date, festival_end_date" : "";
 
-$sql = "SELECT place_id, state{$adminDistrictCol}, name, category, estimated_cost, is_active, image_url, updated_at, created_at"
+$sql = "SELECT place_id, state{$adminDistrictCol}, name, category, estimated_cost, is_active, image_url, updated_at, created_at{$adminFestivalDateCols}"
     . $baseSql
     . " ORDER BY place_id DESC LIMIT ? OFFSET ?";
 
@@ -278,7 +281,7 @@ $stmt->close();
 
                 <div class="card col-12">
                     <h3>CSV Bulk Import</h3>
-                    <p class="meta">Upload CSV columns: name, state, district, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active, visit_duration_min.</p>
+                    <p class="meta">Upload CSV columns: name, state, district, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active, visit_duration_min, festival_start_date, festival_end_date. Festival rows require both date fields.</p>
                     <form method="post" action="admin_cultural_kb_process.php" enctype="multipart/form-data" style="display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
                         <input type="hidden" name="action" value="import_csv">
                         <div style="flex:1; min-width:260px;">
@@ -350,6 +353,21 @@ $stmt->close();
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
+                            </div>
+
+                            <div class="col-3">
+                                <label style="font-size:13px; font-weight:800;">Festival Start Date</label><br>
+                                <input type="date" name="festival_start_date" id="festivalStartDateInput"
+                                    value="<?php echo htmlspecialchars($editRow["festival_start_date"] ?? ""); ?>"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            </div>
+
+                            <div class="col-3">
+                                <label style="font-size:13px; font-weight:800;">Festival End Date</label><br>
+                                <input type="date" name="festival_end_date" id="festivalEndDateInput"
+                                    value="<?php echo htmlspecialchars($editRow["festival_end_date"] ?? ""); ?>"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <div class="meta" style="margin-top:6px;">Required only when category is Festival. Generator only suggests festivals that match the trip date.</div>
                             </div>
 
                             <div class="col-12">
@@ -623,6 +641,9 @@ $stmt->close();
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Category</th>
+                                    <?php if ($adminHasFestivalDateCols): ?>
+                                        <th>Festival Date</th>
+                                    <?php endif; ?>
                                     <th>Cost (RM)</th>
                                     <th>Active</th>
                                     <th>Updated</th>
@@ -658,6 +679,15 @@ $stmt->close();
 
                                         <td><strong><?php echo htmlspecialchars($r["name"]); ?></strong></td>
                                         <td><?php echo htmlspecialchars($r["category"]); ?></td>
+                                        <?php if ($adminHasFestivalDateCols): ?>
+                                            <td>
+                                                <?php if (($r["category"] ?? "") === "festival" && !empty($r["festival_start_date"]) && !empty($r["festival_end_date"])): ?>
+                                                    <?php echo htmlspecialchars($r["festival_start_date"]); ?> to <?php echo htmlspecialchars($r["festival_end_date"]); ?>
+                                                <?php else: ?>
+                                                    <span style="opacity:.5;">-</span>
+                                                <?php endif; ?>
+                                            </td>
+                                        <?php endif; ?>
                                         <td><?php echo number_format((float)$r["estimated_cost"], 2); ?></td>
                                         <td><?php echo ((int)$r["is_active"] === 1) ? "Yes" : "No"; ?></td>
                                         <td><?php echo htmlspecialchars($r["updated_at"] ?? $r["created_at"]); ?></td>
@@ -670,7 +700,7 @@ $stmt->close();
                                 <?php endwhile; ?>
                                 <?php if ($list->num_rows === 0): ?>
                                     <tr>
-                                        <td colspan="9">No records found.</td>
+                                        <td colspan="<?php echo $adminHasFestivalDateCols ? 10 : 9; ?>">No records found.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
@@ -916,6 +946,17 @@ function initPlaceAutocomplete() {
 });
 var adminCategorySelect = document.getElementById('adminCategorySelect');
 if (adminCategorySelect) adminCategorySelect.addEventListener('change', checkAdminDuplicates);
+function toggleFestivalDateRequirement() {
+    var category = document.getElementById('adminCategorySelect');
+    var start = document.getElementById('festivalStartDateInput');
+    var end = document.getElementById('festivalEndDateInput');
+    if (!category || !start || !end) return;
+    var isFestival = category.value === 'festival';
+    start.required = isFestival;
+    end.required = isFestival;
+}
+if (adminCategorySelect) adminCategorySelect.addEventListener('change', toggleFestivalDateRequirement);
+toggleFestivalDateRequirement();
 checkAdminDuplicates();
 </script>
 <?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>

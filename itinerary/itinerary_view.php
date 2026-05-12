@@ -7,6 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
+require_once "../services/CostEstimationService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -20,7 +21,7 @@ if ($itineraryId <= 0) { header("Location: my_itineraries.php"); exit; }
 
 // Load itinerary header + preference
 $stmt = $conn->prepare("
-    SELECT i.*, tp.transport_type, tp.budget
+    SELECT i.*, tp.transport_type, tp.budget, tp.budget_tier
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
     WHERE i.itinerary_id = ? AND i.traveller_id = ?
@@ -211,15 +212,7 @@ foreach ($timetables as $d => $items) {
     ], $items);
 }
 
-$jsHotels     = array_map(fn($h) => [
-    'name'    => $h['name'],
-    'state'   => $h['state'],
-    'district'=> $h['district'] ?? '',
-    'lat'     => (float)$h['latitude'],
-    'lng'     => (float)$h['longitude'],
-    'price'   => (float)$h['price_per_night'],
-    'rating'  => (float)$h['rating'],
-], $hotels);
+$jsHotels     = [];
 
 $jsDays        = json_encode($jsItineraryData, JSON_UNESCAPED_UNICODE);
 $jsHotelsJson  = json_encode($jsHotels, JSON_UNESCAPED_UNICODE);
@@ -231,12 +224,25 @@ $openWeatherKey= defined('OPENWEATHER_API_KEY') ? OPENWEATHER_API_KEY : '';
 // Total cost
 $totalCost   = 0;
 $totalPlaces = 0;
+$allCostItems = [];
+$totalDistanceKm = 0.0;
 foreach ($days as $dayItems) {
     foreach ($dayItems as $item) {
         $totalCost += (float)($item['estimated_cost'] ?? 0);
         $totalPlaces++;
+        $allCostItems[] = $item;
+        $totalDistanceKm += (float)($item['distance_km'] ?? 0);
     }
 }
+$budget = (float)($it["budget"] ?? 0);
+$budgetTier = strtolower((string)($it["budget_tier"] ?? "normal"));
+$tierDefaults = match ($budgetTier) {
+    "budget" => ["hotel" => 90.0, "meal" => 12.0],
+    "luxury" => ["hotel" => 280.0, "meal" => 35.0],
+    default => ["hotel" => 150.0, "meal" => 20.0],
+};
+$costService = new CostEstimationService($transportType, $totalDays, $budget);
+$costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -249,7 +255,7 @@ foreach ($days as $dayItems) {
         /* ===== Layout ===== */
         .iv-grid {
             display: grid;
-            grid-template-columns: 1fr 360px;
+            grid-template-columns: 1fr;
             gap: 18px;
             align-items: start;
         }
@@ -342,6 +348,63 @@ foreach ($days as $dayItems) {
 
         /* ===== Side panel ===== */
         .side-panel { display: flex; flex-direction: column; gap: 14px; }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 14px;
+        }
+        .summary-card {
+            background: #f8fafc;
+            border: 1px solid rgba(15,23,42,0.08);
+            border-radius: 12px;
+            padding: 12px 14px;
+        }
+        .summary-label {
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+        .summary-value {
+            color: #0f172a;
+            font-size: 18px;
+            font-weight: 900;
+            margin-top: 4px;
+        }
+        .cost-breakdown {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+        .cost-mini {
+            border: 1px solid rgba(15,23,42,0.08);
+            border-radius: 10px;
+            padding: 10px 12px;
+            background: #fff;
+        }
+        .cost-mini strong {
+            display: block;
+            font-size: 13px;
+            color: #0f172a;
+            margin-bottom: 4px;
+        }
+        .cost-mini span {
+            display: block;
+            font-size: 11px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+        .budget-ok { color:#166534; }
+        .budget-over { color:#b91c1c; }
+        @media (max-width: 1000px) {
+            .summary-grid, .cost-breakdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 640px) {
+            .summary-grid, .cost-breakdown { grid-template-columns: 1fr; }
+        }
 
         /* ===== Day tabs ===== */
         .day-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
@@ -759,9 +822,7 @@ foreach ($days as $dayItems) {
                 </p>
             </div>
             <div class="actions">
-                <button type="button" class="btn btn-primary" onclick="toggleAiChat()">AI Chat</button>
                 <a class="btn btn-ghost" href="my_itineraries.php">Back</a>
-                <a class="btn btn-primary" href="trip_summary.php?itinerary_id=<?php echo $itineraryId; ?>">Trip Summary &amp; Cost</a>
                 <a class="btn btn-ghost" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
                 <form method="post" action="share_create.php" style="display:inline;">
                     <input type="hidden" name="itinerary_id" value="<?php echo $itineraryId; ?>">
@@ -803,9 +864,6 @@ foreach ($days as $dayItems) {
                             Day <?php echo $d; ?>
                         </span>
                         <?php endfor; ?>
-                        <span class="legend-item" style="color:#16a34a; border-color:#16a34a; background:#16a34a18;">
-                            <span class="legend-dot" style="background:#16a34a;"></span> Hotel
-                        </span>
                         <span class="legend-item" style="color:#4f46e5; border-color:#4f46e5; background:#4f46e518;">
                             <span class="legend-dot" style="background:#4f46e5;"></span> My Location
                         </span>
@@ -829,60 +887,48 @@ foreach ($days as $dayItems) {
                         Each coloured line is one day's route. Day 1 starts from your detected location. Day 2+ continues from the previous night's hotel. Click any marker for details. Switch transport mode to re-render routes.
                     </div>
                 </div>
-            </div>
 
-            <!-- RIGHT: Sidebar Panel -->
-            <div class="side-panel">
-
-                <!-- Hotels nearby -->
-                <?php if (!empty($hotels)): ?>
-                <div class="card" style="padding:14px;">
-                    <h3 style="margin-bottom:8px; font-size:14px;">Nearby Hotels</h3>
-                    <p class="meta" style="margin-top:0; margin-bottom:10px;">Click to highlight on map.</p>
-                    <?php foreach (array_slice($hotels, 0, 6) as $h): ?>
-                    <div class="hotel-card" onclick="focusHotel(<?php echo (float)$h['latitude']; ?>, <?php echo (float)$h['longitude']; ?>, '<?php echo addslashes(htmlspecialchars($h['name'])); ?>')">
+                <div class="card" style="padding:16px; margin-top:18px;">
+                    <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start; flex-wrap:wrap;">
                         <div>
-                            <div class="hotel-name"><?php echo htmlspecialchars($h['name']); ?></div>
-                            <div class="hotel-meta"><?php echo htmlspecialchars($h['district'] ? $h['district'] . ', ' . $h['state'] : $h['state']); ?> &middot; Rating <?php echo number_format((float)$h['rating'], 1); ?></div>
+                            <h3 style="margin:0;">Trip Summary &amp; Cost</h3>
+                            <p class="meta" style="margin:4px 0 0;">Map, schedule, and full budget estimate are combined on this page.</p>
                         </div>
-                        <div class="hotel-price">RM<?php echo number_format((float)$h['price_per_night'], 0); ?>/night</div>
+                        <?php if ($budget > 0): ?>
+                            <strong class="<?php echo $costBreakdown["within_budget"] ? "budget-ok" : "budget-over"; ?>">
+                                <?php echo $costBreakdown["within_budget"] ? "Within Budget" : "Over Budget"; ?>
+                                <?php echo " RM " . number_format(abs((float)$costBreakdown["budget_difference"]), 2); ?>
+                            </strong>
+                        <?php endif; ?>
                     </div>
-                    <?php endforeach; ?>
-                </div>
-                <?php endif; ?>
 
-                <!-- Trip overview -->
-                <div class="card" style="padding:14px;">
-                    <h3 style="margin-bottom:10px; font-size:14px;">Trip Overview</h3>
-                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                        <div style="background:rgba(99,102,241,0.07); border-radius:10px; padding:10px; text-align:center;">
-                            <div style="font-size:20px; font-weight:900; color:#4f46e5;"><?php echo $totalDays; ?></div>
-                            <div style="font-size:11px; color:#64748b; margin-top:2px;">Days</div>
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-label">Days</div>
+                            <div class="summary-value"><?php echo $totalDays; ?></div>
                         </div>
-                        <div style="background:rgba(34,197,94,0.07); border-radius:10px; padding:10px; text-align:center;">
-                            <div style="font-size:20px; font-weight:900; color:#16a34a;"><?php echo $totalPlaces; ?></div>
-                            <div style="font-size:11px; color:#64748b; margin-top:2px;">Places</div>
+                        <div class="summary-card">
+                            <div class="summary-label">Places</div>
+                            <div class="summary-value"><?php echo $totalPlaces; ?></div>
                         </div>
-                        <div style="background:rgba(245,158,11,0.07); border-radius:10px; padding:10px; text-align:center; grid-column:1/-1;">
-                            <div style="font-size:18px; font-weight:900; color:#d97706;">RM <?php echo number_format($totalCost, 2); ?></div>
-                            <div style="font-size:11px; color:#64748b; margin-top:2px;">Estimated Attraction Cost</div>
+                        <div class="summary-card">
+                            <div class="summary-label">Distance</div>
+                            <div class="summary-value"><?php echo number_format($totalDistanceKm, 1); ?> km</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-label">Total Estimate</div>
+                            <div class="summary-value">RM <?php echo number_format((float)$costBreakdown["total_cost"], 2); ?></div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Transit legend -->
-                <div class="card" style="padding:14px;">
-                    <h3 style="margin-bottom:10px; font-size:14px;">Transit Lines (MY)</h3>
-                    <div style="font-size:11.5px; display:flex; flex-direction:column; gap:5px;">
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#7B2D8B;display:inline-block;"></span> MRT Putrajaya Line</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#1E5CB3;display:inline-block;"></span> MRT Kajang Line</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#F5A623;display:inline-block;"></span> LRT Ampang / Sri Petaling</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#E8192C;display:inline-block;"></span> LRT Kelana Jaya</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#0072BC;display:inline-block;"></span> KTM Komuter / ETS</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#E60026;display:inline-block;"></span> KL Monorail</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#C8102E;display:inline-block;"></span> ERL / KLIA Ekspres</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#4CAF50;display:inline-block;"></span> Rapid KL Bus</div>
-                        <div style="display:flex; align-items:center; gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:#64748b;display:inline-block;"></span> Walk</div>
+                    <div class="cost-breakdown">
+                        <?php foreach ($costBreakdown["breakdown"] as $row): ?>
+                            <div class="cost-mini">
+                                <strong>RM <?php echo number_format((float)$row["amount"], 2); ?></strong>
+                                <span><?php echo htmlspecialchars($row["label"]); ?></span>
+                                <span><?php echo htmlspecialchars($row["note"]); ?></span>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

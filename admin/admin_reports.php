@@ -82,12 +82,65 @@ function csv_frequency(array $rows, string $column, string $labelKey): array
             $value = trim($part);
             if ($value === "") continue;
             $key = strtolower($value);
-            if (!isset($counts[$key])) $counts[$key] = [$labelKey => $value, "total" => 0];
+            if (!isset($counts[$key])) $counts[$key] = [$labelKey => $value, "Total" => 0, "total" => 0];
+            $counts[$key]["Total"]++;
             $counts[$key]["total"]++;
         }
     }
     usort($counts, fn($a, $b) => ($b["total"] <=> $a["total"]) ?: strcmp((string)reset($a), (string)reset($b)));
     return array_values($counts);
+}
+
+function preference_interest_frequency(mysqli $conn, string $tpDate): array
+{
+    if (table_exists($conn, "traveller_preference_interests") && table_exists($conn, "travel_interests")) {
+        return rows_query($conn, "
+            SELECT ti.interest_label AS Interest, COUNT(*) AS Total, COUNT(*) AS total
+            FROM traveller_preference_interests tpi
+            JOIN travel_interests ti ON ti.interest_id = tpi.interest_id
+            JOIN traveller_preferences tp ON tp.preference_id = tpi.preference_id
+            WHERE 1=1$tpDate
+            GROUP BY ti.interest_id, ti.interest_label
+            ORDER BY total DESC, Interest ASC
+        ");
+    }
+    if (table_exists($conn, "preference_interests")) {
+        return rows_query($conn, "
+            SELECT pi.interest AS Interest, COUNT(*) AS Total, COUNT(*) AS total
+            FROM preference_interests pi
+            JOIN traveller_preferences tp ON tp.preference_id = pi.preference_id
+            WHERE 1=1$tpDate
+            GROUP BY pi.interest
+            ORDER BY total DESC, Interest ASC
+        ");
+    }
+    return [];
+}
+
+function preference_state_frequency(mysqli $conn, string $tpDate): array
+{
+    if (table_exists($conn, "traveller_preference_states") && table_exists($conn, "malaysia_states")) {
+        return rows_query($conn, "
+            SELECT ms.state_name AS State, COUNT(*) AS Total, COUNT(*) AS total
+            FROM traveller_preference_states tps
+            JOIN malaysia_states ms ON ms.state_id = tps.state_id
+            JOIN traveller_preferences tp ON tp.preference_id = tps.preference_id
+            WHERE 1=1$tpDate
+            GROUP BY ms.state_id, ms.state_name
+            ORDER BY total DESC, State ASC
+        ");
+    }
+    if (table_exists($conn, "preference_states")) {
+        return rows_query($conn, "
+            SELECT ps.state AS State, COUNT(*) AS Total, COUNT(*) AS total
+            FROM preference_states ps
+            JOIN traveller_preferences tp ON tp.preference_id = ps.preference_id
+            WHERE 1=1$tpDate
+            GROUP BY ps.state
+            ORDER BY total DESC, State ASC
+        ");
+    }
+    return [];
 }
 
 function top_rows(array $rows, int $limit = 10): array { return array_slice($rows, 0, $limit); }
@@ -189,9 +242,9 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
     } elseif ($type === "user_preferences") {
         $title = "User Preference Analysis Report";
         $description = "Analyzes what users prefer: highest and lowest interests, states, districts, transport modes, budgets, and trip duration.";
-        $prefRows = $hasPreferences ? rows_query($conn, "SELECT interests, preferred_states, preferred_districts FROM traveller_preferences tp WHERE 1=1$tpDate") : [];
-        $interestAll = csv_frequency($prefRows, "interests", "Interest");
-        $stateAll = csv_frequency($prefRows, "preferred_states", "State");
+        $prefRows = $hasPreferences ? rows_query($conn, "SELECT preferred_districts FROM traveller_preferences tp WHERE 1=1$tpDate") : [];
+        $interestAll = $hasPreferences ? preference_interest_frequency($conn, $tpDate) : [];
+        $stateAll = $hasPreferences ? preference_state_frequency($conn, $tpDate) : [];
         $districtAll = csv_frequency($prefRows, "preferred_districts", "District");
         $transportRows = $hasPreferences ? rows_query($conn, "
             SELECT COALESCE(NULLIF(transport_type,''),'not specified') AS Transport, COUNT(*) AS Total, ROUND(AVG(budget),2) AS `Average Budget`
@@ -234,8 +287,8 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
     } elseif ($type === "destination_demand") {
         $title = "Destination Demand Report";
         $description = "Compares desired destinations from user preferences with actual generated itinerary destinations.";
-        $prefRows = $hasPreferences ? rows_query($conn, "SELECT preferred_states, preferred_districts FROM traveller_preferences tp WHERE 1=1$tpDate") : [];
-        $stateAll = csv_frequency($prefRows, "preferred_states", "State");
+        $prefRows = $hasPreferences ? rows_query($conn, "SELECT preferred_districts FROM traveller_preferences tp WHERE 1=1$tpDate") : [];
+        $stateAll = $hasPreferences ? preference_state_frequency($conn, $tpDate) : [];
         $districtAll = csv_frequency($prefRows, "preferred_districts", "District");
         $actualStates = rows_query($conn, "
             SELECT cp.state AS State, COUNT(*) AS `Itinerary Items`, COUNT(DISTINCT i.itinerary_id) AS Itineraries
@@ -375,8 +428,8 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         ") : [];
         $kpis = [
             ["label" => "AI Questions", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "Selected period"],
-            ["label" => "OpenAI Answers", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE source='openai'$aiDate") : 0, "note" => "Live API responses"],
-            ["label" => "Fallback Answers", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE source='local_fallback'$aiDate") : 0, "note" => "Offline demo responses"],
+            ["label" => "Ollama Answers", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE source='ollama'$aiDate") : 0, "note" => "Local AI responses"],
+            ["label" => "Fallback Answers", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE source='local_fallback'$aiDate") : 0, "note" => "Report fallback summaries"],
             ["label" => "Active AI Users", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(DISTINCT traveller_id) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "Travellers using AI"],
         ];
         $sections[] = section("AI Source Summary", ["Source", "Total"], $sourceRows);
@@ -392,9 +445,9 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
 
 function build_ai_analysis(array $report): array
 {
-    $apiKey = defined("OPENAI_API_KEY") ? OPENAI_API_KEY : "";
-    $model = defined("OPENAI_MODEL") ? OPENAI_MODEL : "gpt-4.1-mini";
-    $svc = new AiAdminReportAnalysisService($apiKey, $model);
+    $model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
+    $baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://localhost:11434";
+    $svc = new AiAdminReportAnalysisService($model, $baseUrl);
     return $svc->analyze($report["raw"]);
 }
 
@@ -413,6 +466,65 @@ function render_table(array $section): void
         }
     }
     echo '</tbody></table></div>';
+}
+
+function chart_number($value): ?float
+{
+    if (is_int($value) || is_float($value)) return (float)$value;
+    $clean = preg_replace('/[^0-9.\-]/', '', (string)$value);
+    if ($clean === '' || $clean === '-' || $clean === '.') return null;
+    return is_numeric($clean) ? (float)$clean : null;
+}
+
+function chart_for_section(array $section): ?array
+{
+    $rows = array_values(array_filter($section["rows"] ?? [], fn($row) => is_array($row)));
+    $headers = $section["headers"] ?? [];
+    if (count($rows) < 1 || count($headers) < 2) return null;
+
+    $labelHeader = (string)$headers[0];
+    $valueHeader = "";
+    foreach (array_slice($headers, 1) as $header) {
+        foreach ($rows as $row) {
+            if (chart_number($row[$header] ?? null) !== null) {
+                $valueHeader = (string)$header;
+                break 2;
+            }
+        }
+    }
+    if ($valueHeader === "") return null;
+
+    $labels = [];
+    $values = [];
+    foreach (array_slice($rows, 0, 8) as $row) {
+        $value = chart_number($row[$valueHeader] ?? null);
+        if ($value === null) continue;
+        $label = trim((string)($row[$labelHeader] ?? ""));
+        $labels[] = $label !== "" ? $label : "Unknown";
+        $values[] = $value;
+    }
+
+    if (empty($labels)) return null;
+
+    return [
+        "title" => (string)$section["title"],
+        "label" => $valueHeader,
+        "labels" => $labels,
+        "values" => $values,
+        "type" => count($labels) <= 5 ? "doughnut" : "bar",
+    ];
+}
+
+function build_report_charts(array $report): array
+{
+    $charts = [];
+    foreach ($report["sections"] as $section) {
+        $chart = chart_for_section($section);
+        if ($chart === null) continue;
+        $charts[] = $chart;
+        if (count($charts) >= 4) break;
+    }
+    return $charts;
 }
 
 function build_pdf_html(array $report, array $ai, string $period, string $adminName): string
@@ -480,6 +592,7 @@ $export = strtolower(trim((string)($_GET["export"] ?? "")));
 
 $report = build_report($conn, $type, $from, $to, $period);
 $ai = build_ai_analysis($report);
+$charts = build_report_charts($report);
 
 if ($export === "pdf") {
     $autoload = __DIR__ . "/../vendor/autoload.php";
@@ -539,6 +652,12 @@ if ($export === "csv") {
         .report-tabs a.active { background:#0f172a; color:#fff; border-color:#0f172a; }
         .metric-note { font-size:12px; color:#64748b; margin-top:6px; }
         .ai-analysis-box { white-space:pre-wrap; line-height:1.55; font-size:13px; color:#334155; background:#f8fafc; border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:14px; }
+        .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+        .chart-panel { border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:12px; background:#fff; min-height:280px; }
+        .chart-title { font-size:13px; font-weight:900; color:#0f172a; margin-bottom:8px; }
+        .chart-box { position:relative; height:230px; }
+        .chart-empty { display:none; color:#64748b; font-size:13px; padding:12px; background:#f8fafc; border-radius:8px; }
+        @media (max-width: 900px) { .chart-grid { grid-template-columns:1fr; } }
     </style>
 </head>
 <body>
@@ -618,6 +737,22 @@ if ($export === "csv") {
                 <div class="ai-analysis-box"><?php echo h($ai["analysis"] ?? ""); ?></div>
             </div>
 
+            <?php if (!empty($charts)): ?>
+            <div class="card col-12">
+                <h3>Report Charts</h3>
+                <p class="meta">Visual summary generated from the same database tables below.</p>
+                <div class="chart-empty" id="chartFallback">Charts could not load. The complete report data is still available in the tables below.</div>
+                <div class="chart-grid">
+                    <?php foreach ($charts as $index => $chart): ?>
+                    <div class="chart-panel">
+                        <div class="chart-title"><?php echo h($chart["title"]); ?></div>
+                        <div class="chart-box"><canvas id="reportChart<?php echo (int)$index; ?>"></canvas></div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <?php endif; ?>
+
             <?php foreach ($report["sections"] as $section): ?>
             <div class="card col-12">
                 <h3><?php echo h($section["title"]); ?></h3>
@@ -628,5 +763,53 @@ if ($export === "csv") {
         </section>
     </main>
 </div>
+<?php if (!empty($charts)): ?>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script>
+const reportCharts = <?php echo json_encode($charts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?>;
+const chartColors = ['#2563eb', '#16a34a', '#f59e0b', '#dc2626', '#7c3aed', '#0891b2', '#64748b', '#db2777'];
+
+function renderReportCharts() {
+    if (!window.Chart) {
+        const fallback = document.getElementById('chartFallback');
+        if (fallback) fallback.style.display = 'block';
+        return;
+    }
+
+    reportCharts.forEach((chart, index) => {
+        const canvas = document.getElementById('reportChart' + index);
+        if (!canvas) return;
+        new Chart(canvas, {
+            type: chart.type === 'doughnut' ? 'doughnut' : 'bar',
+            data: {
+                labels: chart.labels,
+                datasets: [{
+                    label: chart.label,
+                    data: chart.values,
+                    backgroundColor: chartColors,
+                    borderColor: '#ffffff',
+                    borderWidth: chart.type === 'doughnut' ? 2 : 0,
+                    borderRadius: chart.type === 'bar' ? 6 : 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: chart.type === 'doughnut', position: 'bottom' },
+                    tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.formattedValue}` } }
+                },
+                scales: chart.type === 'bar' ? {
+                    y: { beginAtZero: true, ticks: { precision: 0 } },
+                    x: { ticks: { maxRotation: 35, minRotation: 0 } }
+                } : {}
+            }
+        });
+    });
+}
+
+renderReportCharts();
+</script>
+<?php endif; ?>
 </body>
 </html>

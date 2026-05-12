@@ -10,8 +10,7 @@ define('SMTP_PASS', 'vuuu imdy uqrl uwro'); // 注意：是 App Password，不�
 define('SMTP_FROM', 'adminpeck2222@gmail.com');
 define('SMTP_FROM_NAME', 'Admin Smart Travel Itinerary Generator');
 
-// AI provider for the traveller AI chatbox.
-// Supported: ollama, openai, gemini. Ollama runs locally and does not need a paid API key.
-define('AI_PROVIDER', 'ollama');
+// Local AI for traveller chatbox and AI itinerary assistant.
+// Ollama runs locally and does not need a paid API key.
 define('OLLAMA_MODEL', 'qwen2.5:3b');
 define('OLLAMA_BASE_URL', 'http://localhost:11434');

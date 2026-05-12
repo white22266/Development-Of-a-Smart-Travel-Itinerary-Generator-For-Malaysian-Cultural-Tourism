@@ -11,22 +11,29 @@
 <body>
     <div class="main-container">
         <div class="left-panel">
+            <div class="brand-mark">ST</div>
+            <div class="entry-kicker">Malaysian Cultural Tourism</div>
             <h1>Smart Travel Itinerary Generator</h1>
             <p>
                 A web-based system developed to support Malaysian cultural tourism by
                 automatically generating structured travel itineraries based on user
                 preferences such as budget, travel duration, and cultural interests.
             </p>
+            <div class="entry-list">
+                <div>Preference-based itinerary generation</div>
+                <div>Route map, cost summary, hotel and food support</div>
+                <div>Local Ollama AI assistant for itinerary refinement</div>
+            </div>
         </div>
         <div class="right-panel">
             <h2 class="form-title">Welcome</h2>
             <p class="form-subtitle">
-                This system provides personalised cultural travel planning for both travellers and administrators.
+                Please login or register first. System features are available only to verified users.
             </p>
-            <p>
-                Click the button below to get started.
-            </p>
-            <a href="role_select.php" class="btn btn-primary">Getting Started</a>
+            <div class="button-row">
+                <a href="role_select.php" class="btn btn-primary">Login / Register</a>
+                <a href="auth/register.php" class="btn btn-outline">Create Traveller Account</a>
+            </div>
         </div>
     </div>
 </body>
