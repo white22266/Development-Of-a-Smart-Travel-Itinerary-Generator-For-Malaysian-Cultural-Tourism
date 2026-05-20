@@ -74,6 +74,7 @@ class HotelRecommendationService
             $hotels = $this->fetchHotels($lat, $lng, $radiusKm * 2, $budget);
         }
 
+        $hotels = $this->dedupeHotels($hotels);
         if (empty($hotels)) return [];
 
         // ---- 2. Score each hotel ----
@@ -139,7 +140,7 @@ class HotelRecommendationService
         while ($row = $res->fetch_assoc()) $hotels[] = $row;
         $stmt->close();
 
-        return $hotels;
+        return array_slice($this->dedupeHotels($hotels), 0, $topN);
     }
 
     // =========================================================
@@ -194,7 +195,31 @@ class HotelRecommendationService
         }
         $stmt->close();
 
-        return $hotels;
+        return $this->dedupeHotels($hotels);
+    }
+
+    /**
+     * Keep one hotel per real-world location. This protects all UI screens even
+     * if seed/import SQL accidentally inserts the same hotel twice.
+     */
+    private function dedupeHotels(array $hotels): array
+    {
+        $seen = [];
+        $unique = [];
+
+        foreach ($hotels as $hotel) {
+            $key = strtolower(trim((string)($hotel['name'] ?? ''))) . '|'
+                . strtolower(trim((string)($hotel['state'] ?? ''))) . '|'
+                . strtolower(trim((string)($hotel['district'] ?? ''))) . '|'
+                . number_format((float)($hotel['latitude'] ?? 0), 5, '.', '') . '|'
+                . number_format((float)($hotel['longitude'] ?? 0), 5, '.', '');
+
+            if (isset($seen[$key])) continue;
+            $seen[$key] = true;
+            $unique[] = $hotel;
+        }
+
+        return $unique;
     }
 
     // =========================================================

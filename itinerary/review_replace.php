@@ -315,44 +315,6 @@ if ($action === 'confirm') {
             $nightlyRate = (float)($hotel["price_per_night"] ?? 0);
             $hotelTotal = round($nightlyRate * $nights, 2);
 
-            // Find last day_no and last sequence_no
-            $lastDay = $conn->prepare("SELECT MAX(day_no) as md FROM itinerary_items WHERE itinerary_id = ?");
-            $lastDay->bind_param("i", $itineraryId);
-            $lastDay->execute();
-            $ldRow   = $lastDay->get_result()->fetch_assoc();
-            $lastDay->close();
-            $dayNo   = (int)($ldRow["md"] ?? 1);
-
-            $lastSeq = $conn->prepare("SELECT MAX(sequence_no) as ms FROM itinerary_items WHERE itinerary_id = ? AND day_no = ?");
-            $lastSeq->bind_param("ii", $itineraryId, $dayNo);
-            $lastSeq->execute();
-            $lsRow   = $lastSeq->get_result()->fetch_assoc();
-            $lastSeq->close();
-            $seqNo   = (int)($lsRow["ms"] ?? 0) + 1;
-
-            $hotelStartTime = "20:00:00";
-            $hotelEndTime = "20:30:00";
-            $lastTime = $conn->prepare("
-                SELECT end_time
-                FROM itinerary_items
-                WHERE itinerary_id = ? AND day_no = ? AND item_type <> 'hotel' AND end_time IS NOT NULL
-                ORDER BY sequence_no DESC
-                LIMIT 1
-            ");
-            if ($lastTime) {
-                $lastTime->bind_param("ii", $itineraryId, $dayNo);
-                $lastTime->execute();
-                $lastTimeRow = $lastTime->get_result()->fetch_assoc();
-                $lastTime->close();
-                if (!empty($lastTimeRow["end_time"])) {
-                    $hotelStartTime = date("H:i:s", strtotime($lastTimeRow["end_time"] . " +30 minutes"));
-                    $hotelEndTime = date("H:i:s", strtotime($hotelStartTime . " +30 minutes"));
-                }
-            }
-
-            $hotelNote = "Hotel | " . ($hotel["district"] ? $hotel["district"] . ", " : "") . $hotel["state"]
-                . " | RM " . number_format($nightlyRate, 2) . "/night x " . $nights . " night(s)";
-
             $hasHotelIdCol = table_has_column($conn, "itinerary_items", "hotel_id");
             $hasItemCoords = table_has_column($conn, "itinerary_items", "item_latitude")
                 && table_has_column($conn, "itinerary_items", "item_longitude");
@@ -360,34 +322,73 @@ if ($action === 'confirm') {
             $hotelLat = $hotel["latitude"] !== null ? (float)$hotel["latitude"] : null;
             $hotelLng = $hotel["longitude"] !== null ? (float)$hotel["longitude"] : null;
 
-            if ($hasHotelIdCol && $hasItemCoords) {
-                $ins = $conn->prepare("
-                    INSERT INTO itinerary_items
-                      (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, item_latitude, item_longitude, start_time, end_time, estimated_cost, notes)
-                    VALUES
-                      (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?, ?, ?)
+            for ($nightNo = 1; $nightNo <= $nights; $nightNo++) {
+                $dayNo = min($nightNo, $tripDays);
+
+                $lastSeq = $conn->prepare("SELECT MAX(sequence_no) as ms FROM itinerary_items WHERE itinerary_id = ? AND day_no = ?");
+                $lastSeq->bind_param("ii", $itineraryId, $dayNo);
+                $lastSeq->execute();
+                $lsRow = $lastSeq->get_result()->fetch_assoc();
+                $lastSeq->close();
+                $seqNo = (int)($lsRow["ms"] ?? 0) + 1;
+
+                $hotelStartTime = "20:00:00";
+                $hotelEndTime = "20:30:00";
+                $lastTime = $conn->prepare("
+                    SELECT end_time
+                    FROM itinerary_items
+                    WHERE itinerary_id = ? AND day_no = ? AND item_type <> 'hotel' AND end_time IS NOT NULL
+                    ORDER BY sequence_no DESC
+                    LIMIT 1
                 ");
-                $ins->bind_param("iiiisddssds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelLat, $hotelLng, $hotelStartTime, $hotelEndTime, $hotelTotal, $hotelNote);
-            } elseif ($hasHotelIdCol) {
-                $ins = $conn->prepare("
-                    INSERT INTO itinerary_items
-                      (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, start_time, end_time, estimated_cost, notes)
-                    VALUES
-                      (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?)
-                ");
-                $ins->bind_param("iiiisssds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelStartTime, $hotelEndTime, $hotelTotal, $hotelNote);
-            } else {
-                $ins = $conn->prepare("
-                    INSERT INTO itinerary_items
-                      (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, start_time, end_time, estimated_cost, notes)
-                    VALUES
-                      (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?)
-                ");
-                $ins->bind_param("iiisssds", $itineraryId, $dayNo, $seqNo, $hotel["name"], $hotelStartTime, $hotelEndTime, $hotelTotal, $hotelNote);
-            }
-            if ($ins) {
-                $ins->execute();
-                $ins->close();
+                if ($lastTime) {
+                    $lastTime->bind_param("ii", $itineraryId, $dayNo);
+                    $lastTime->execute();
+                    $lastTimeRow = $lastTime->get_result()->fetch_assoc();
+                    $lastTime->close();
+                    if (!empty($lastTimeRow["end_time"])) {
+                        $lastEndMin = ((int)date("G", strtotime($lastTimeRow["end_time"])) * 60)
+                            + (int)date("i", strtotime($lastTimeRow["end_time"]));
+                        $hotelStartMin = max($lastEndMin + 30, 20 * 60);
+                        if ($hotelStartMin > (22 * 60 + 30)) $hotelStartMin = 22 * 60 + 30;
+                        $hotelStartTime = sprintf("%02d:%02d:00", intdiv($hotelStartMin, 60), $hotelStartMin % 60);
+                        $hotelEndTime = date("H:i:s", strtotime($hotelStartTime . " +30 minutes"));
+                    }
+                }
+
+                $hotelNote = "Hotel night " . $nightNo . " of " . $nights . " | "
+                    . ($hotel["district"] ? $hotel["district"] . ", " : "") . $hotel["state"]
+                    . " | RM " . number_format($nightlyRate, 2) . "/night";
+
+                if ($hasHotelIdCol && $hasItemCoords) {
+                    $ins = $conn->prepare("
+                        INSERT INTO itinerary_items
+                          (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, item_latitude, item_longitude, start_time, end_time, estimated_cost, notes)
+                        VALUES
+                          (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ");
+                    $ins->bind_param("iiiisddssds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelLat, $hotelLng, $hotelStartTime, $hotelEndTime, $nightlyRate, $hotelNote);
+                } elseif ($hasHotelIdCol) {
+                    $ins = $conn->prepare("
+                        INSERT INTO itinerary_items
+                          (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, start_time, end_time, estimated_cost, notes)
+                        VALUES
+                          (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?)
+                    ");
+                    $ins->bind_param("iiiisssds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelStartTime, $hotelEndTime, $nightlyRate, $hotelNote);
+                } else {
+                    $ins = $conn->prepare("
+                        INSERT INTO itinerary_items
+                          (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, start_time, end_time, estimated_cost, notes)
+                        VALUES
+                          (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?)
+                    ");
+                    $ins->bind_param("iiisssds", $itineraryId, $dayNo, $seqNo, $hotel["name"], $hotelStartTime, $hotelEndTime, $nightlyRate, $hotelNote);
+                }
+                if ($ins) {
+                    $ins->execute();
+                    $ins->close();
+                }
             }
 
             if (table_has_column($conn, "itineraries", "selected_hotel_id")) {

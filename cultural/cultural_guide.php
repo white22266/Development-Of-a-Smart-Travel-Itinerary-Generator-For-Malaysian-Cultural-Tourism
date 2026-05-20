@@ -53,12 +53,12 @@ if ($page < 1) $page = 1;
 $offset = ($page - 1) * $perPage;
 
 // Build WHERE + params
-$where = "is_active = 1";
+$where = "cp.is_active = 1";
 $params = [];
 $types = "";
 
 if ($q !== "") {
-    $where .= " AND (name LIKE ? OR description LIKE ? OR address LIKE ?)";
+    $where .= " AND (cp.name LIKE ? OR cp.description LIKE ? OR cp.address LIKE ?)";
     $like = "%{$q}%";
     $params[] = $like;
     $params[] = $like;
@@ -66,7 +66,7 @@ if ($q !== "") {
     $types .= "sss";
 }
 if ($state !== "" && in_array($state, $stateOptions, true)) {
-    $where .= " AND state = ?";
+    $where .= " AND cp.state = ?";
     $params[] = $state;
     $types .= "s";
 }
@@ -75,19 +75,19 @@ if ($district !== "" && $state !== "" && in_array($district, ($allStateDistricts
     // Check if district column exists before filtering
     $dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
     if ($dcCheck && $dcCheck->num_rows > 0) {
-        $where .= " AND district = ?";
+        $where .= " AND cp.district = ?";
         $params[] = $district;
         $types .= "s";
     }
 }
 if ($category !== "" && in_array($category, $categoryOptions, true)) {
-    $where .= " AND category = ?";
+    $where .= " AND cp.category = ?";
     $params[] = $category;
     $types .= "s";
 }
 
 // CHANGE: total count for pagination
-$countSql = "SELECT COUNT(*) AS total FROM cultural_places WHERE $where";
+$countSql = "SELECT COUNT(*) AS total FROM cultural_places cp WHERE $where";
 $countStmt = $conn->prepare($countSql);
 if (!$countStmt) die("Count prepare failed: " . htmlspecialchars($conn->error));
 if ($types !== "") $countStmt->bind_param($types, ...$params);
@@ -102,14 +102,22 @@ $offset = ($page - 1) * $perPage;
 // Check if district column exists for SELECT
 $distColCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
 $hasDistCol = ($distColCheck && $distColCheck->num_rows > 0);
-$districtCol = $hasDistCol ? ", district" : "";
+$districtCol = $hasDistCol ? ", cp.district" : "";
 
 // List query
 $listSql = "
-  SELECT place_id, state{$districtCol}, category, name, description, address, opening_hours, estimated_cost, image_url
-  FROM cultural_places
+  SELECT cp.place_id, cp.state{$districtCol}, cp.category, cp.name, cp.description, cp.address, cp.latitude, cp.longitude,
+         cp.opening_hours, cp.estimated_cost, cp.image_url,
+         COALESCE(rr.avg_review_rating, cp.avg_rating) AS display_rating,
+         COALESCE(rr.review_count, 0) AS review_count
+  FROM cultural_places cp
+  LEFT JOIN (
+      SELECT place_id, ROUND(AVG(rating), 2) AS avg_review_rating, COUNT(*) AS review_count
+      FROM ratings_reviews
+      GROUP BY place_id
+  ) rr ON rr.place_id = cp.place_id
   WHERE $where
-  ORDER BY updated_at DESC, place_id DESC
+  ORDER BY cp.updated_at DESC, cp.place_id DESC
   LIMIT ? OFFSET ?
 ";
 
@@ -130,10 +138,12 @@ $places = [];
 while ($row = $res->fetch_assoc()) $places[] = $row;
 $listStmt->close();
 
-function safe_img_src($imageUrl)
+function safe_img_src($imageUrl, $placeId = 0)
 {
     $imageUrl = trim((string)$imageUrl);
-    if ($imageUrl === "") return "";
+    if ($imageUrl === "") {
+        return "../api/place_photo.php?place_id=" . (int)$placeId . "&v=2";
+    }
 
     // If it's an absolute URL (http/https) or protocol-relative URL, use it directly
     if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) {
@@ -187,6 +197,7 @@ function page_window($current, $total)
 }
 
 $pageItems = page_window($page, $totalPages);
+$imageFallback = "../assets/place_placeholder.svg";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -220,6 +231,7 @@ $pageItems = page_window($page, $totalPages);
             border-radius: 16px;
             overflow: hidden;
             background: #fff;
+            position: relative;
         }
 
         .place-thumb {
@@ -240,6 +252,10 @@ $pageItems = page_window($page, $totalPages);
 
         .place-body {
             padding: 12px 12px 14px;
+        }
+
+        .place-card.has-rating .place-body {
+            padding-bottom: 44px;
         }
 
         .badges {
@@ -268,6 +284,20 @@ $pageItems = page_window($page, $totalPages);
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
+        }
+
+        .card-rating {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            border-radius: 999px;
+            background: #fff7ed;
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            color: #92400e;
+            padding: 5px 9px;
+            font-size: 12px;
+            font-weight: 900;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
         }
 
         /* CHANGE: pagination style */
@@ -414,13 +444,16 @@ $pageItems = page_window($page, $totalPages);
                     <?php else: ?>
                         <div class="place-grid">
                             <?php foreach ($places as $p): ?>
-                                <?php $img = safe_img_src($p["image_url"] ?? ""); ?>
-                                <div class="place-card">
+                                <?php $img = safe_img_src($p["image_url"] ?? "", (int)$p["place_id"]); ?>
+                                <?php $hasUserRating = ((int)($p["review_count"] ?? 0) > 0 && (float)($p["display_rating"] ?? 0) > 0); ?>
+                                <div class="place-card <?php echo $hasUserRating ? "has-rating" : ""; ?>">
                                     <div class="place-thumb">
                                         <?php if ($img !== ""): ?>
-                                            <img src="<?php echo htmlspecialchars($img); ?>" alt="Place Image">
+                                            <img src="<?php echo htmlspecialchars($img); ?>" alt="<?php echo htmlspecialchars($p["name"]); ?>"
+                                                 loading="lazy" decoding="async"
+                                                 onerror="this.onerror=null;this.src='<?php echo htmlspecialchars($imageFallback); ?>';">
                                         <?php else: ?>
-                                            <span class="meta2">No image</span>
+                                            <span class="meta2">No place photo</span>
                                         <?php endif; ?>
                                     </div>
 
@@ -447,6 +480,11 @@ $pageItems = page_window($page, $totalPages);
                                         <div class="place-actions">
                                             <a class="btn btn-ghost" href="cultural_guide_detail.php?place_id=<?php echo (int)$p["place_id"]; ?>">View Details</a>
                                         </div>
+                                        <?php if ($hasUserRating): ?>
+                                            <div class="card-rating" title="<?php echo (int)$p["review_count"]; ?> traveller review<?php echo ((int)$p["review_count"] === 1) ? "" : "s"; ?>">
+                                                <?php echo number_format((float)$p["display_rating"], 1); ?>&#11088;
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>

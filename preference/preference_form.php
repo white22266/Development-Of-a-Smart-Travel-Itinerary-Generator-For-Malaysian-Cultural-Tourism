@@ -200,6 +200,12 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       font-size: 13px;
     }
     .summary-item strong { display:block; margin-bottom:4px; }
+    .field-help {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 5px;
+      line-height: 1.45;
+    }
   </style>
 </head>
 
@@ -235,7 +241,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     <div class="topbar">
       <div class="page-title">
         <h1>Traveller Preference Analyzer</h1>
-        <p>Enter your duration, budget and interests. The system will use these preferences to generate a structured cultural itinerary.</p>
+        <p>Enter your trip budget, travel style, location and interests. The system will use these preferences to generate a structured cultural itinerary.</p>
       </div>
       <div class="actions">
         <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back to Dashboard</a>
@@ -261,15 +267,15 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
         <form method="post" action="preference_process.php" id="preferenceWizardForm">
           <div class="wizard-progress" aria-label="Preference steps">
-            <div class="wizard-step-tab active" data-step-tab="1">1. Where & When</div>
-            <div class="wizard-step-tab" data-step-tab="2">2. Who & How</div>
-            <div class="wizard-step-tab" data-step-tab="3">3. What You Love</div>
+            <div class="wizard-step-tab active" data-step-tab="1">1. Trip Basics</div>
+            <div class="wizard-step-tab" data-step-tab="2">2. Preferred Location</div>
+            <div class="wizard-step-tab" data-step-tab="3">3. Review & Save</div>
           </div>
           <div class="grid">
 
             <!-- ===== LEFT: Trip Details ===== -->
             <div class="card col-6 wizard-panel active" data-step-panel="1" style="box-shadow:none;">
-              <h3 style="margin-bottom:8px;">Where, When & Travel Style</h3>
+              <h3 style="margin-bottom:8px;">Trip Basics & Travel Style</h3>
 
               <label style="font-size:13px; font-weight:700;">Travel Duration (Days) *</label>
               <input type="number" name="trip_days" min="1" max="30" required
@@ -284,6 +290,9 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 placeholder="Estimated budget in RM"
                 value="<?php echo htmlspecialchars($oldBudget); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+              <div class="field-help">
+                Your total trip budget. It is used to check whether the generated itinerary is within or over budget.
+              </div>
 
               <div style="height:12px;"></div>
 
@@ -300,7 +309,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Budget Tier *</label>
+              <label style="font-size:13px; font-weight:700;">Spending Style *</label>
               <select name="budget_tier" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
                 <?php foreach ($budgetTierOptions as $k => $v): ?>
@@ -309,6 +318,9 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                   </option>
                 <?php endforeach; ?>
               </select>
+              <div class="field-help">
+                This is not another budget amount. It controls default hotel and meal estimates: Budget = cheaper, Normal = standard, Luxury = higher comfort.
+              </div>
 
               <div style="height:12px;"></div>
 
@@ -442,7 +454,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
               <div class="summary-list">
                 <div class="summary-item"><strong>Travel Duration</strong><span id="summaryDays">-</span></div>
                 <div class="summary-item"><strong>Budget</strong><span id="summaryBudget">-</span></div>
-                <div class="summary-item"><strong>Budget Tier</strong><span id="summaryBudgetTier">-</span></div>
+                <div class="summary-item"><strong>Spending Style</strong><span id="summaryBudgetTier">-</span></div>
                 <div class="summary-item"><strong>Transport</strong><span id="summaryTransport">-</span></div>
                 <div class="summary-item"><strong>Traveller Type</strong><span id="summaryTravellerType">-</span></div>
                 <div class="summary-item"><strong>Travel Pace</strong><span id="summaryPace">-</span></div>

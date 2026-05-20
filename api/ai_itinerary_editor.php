@@ -78,9 +78,71 @@ if ($action === "confirm") {
     exit;
 }
 
+if ($action === "confirm_add") {
+    $dayNo = (int)($_POST["day_no"] ?? 0);
+    $placeId = (int)($_POST["place_id"] ?? 0);
+    if ($dayNo <= 0 || $placeId <= 0 || $dayNo > (int)$itinerary["total_days"]) {
+        echo json_encode(["status" => "error", "answer" => "Invalid add-place selection."]);
+        exit;
+    }
+
+    $place = load_place($conn, $placeId);
+    if (!$place) {
+        echo json_encode(["status" => "error", "answer" => "Selected place was not found."]);
+        exit;
+    }
+
+    if (is_duplicate_place($conn, $itineraryId, $placeId, 0)) {
+        echo json_encode(["status" => "error", "answer" => "This place already exists in the itinerary. Choose another place."]);
+        exit;
+    }
+
+    $ok = apply_addition($conn, $itineraryId, $dayNo, $place);
+    if (!$ok) {
+        echo json_encode(["status" => "error", "answer" => "Could not add this place into the itinerary."]);
+        exit;
+    }
+
+    recalculate_itinerary_routes($conn, $itineraryId);
+    recalculate_itinerary_total($conn, $itineraryId);
+
+    echo json_encode([
+        "status" => "success",
+        "answer" => "Place added. The route and cost summary have been recalculated.",
+        "added_place" => [
+            "day_no" => $dayNo,
+            "place_id" => $placeId,
+            "name" => $place["name"],
+        ],
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
 $items = load_editable_items($conn, $itineraryId);
+$addMode = is_add_or_regenerate_request($message);
+$additions = build_addition_proposals($conn, $itinerary, $items, $message);
+if ($addMode) {
+    if (empty($additions)) {
+        echo json_encode([
+            "status" => "success",
+            "answer" => "I could not find suitable additional places from the current database for this itinerary. Check that the selected state has enough active cultural places.",
+            "proposals" => [],
+            "source" => "local_fallback",
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        exit;
+    }
+
+    echo json_encode([
+        "status" => "success",
+        "answer" => build_local_addition_answer($additions),
+        "proposals" => $additions,
+        "source" => "local_fallback",
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
 if (empty($items)) {
-    echo json_encode(["status" => "success", "answer" => "There are no editable itinerary stops in this itinerary yet.", "proposals" => []]);
+    echo json_encode(["status" => "success", "answer" => "There are no editable itinerary stops yet. Ask me to add places for a specific day, for example: arrange my day 2 in Johor.", "proposals" => $additions]);
     exit;
 }
 
@@ -151,8 +213,8 @@ echo json_encode([
 function load_itinerary(mysqli $conn, int $itineraryId, int $travellerId): ?array
 {
     $stmt = $conn->prepare("
-        SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost,
-               tp.budget, tp.budget_tier, tp.transport_type, tp.interests, tp.preferred_states
+        SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.items_per_day, i.total_estimated_cost,
+               tp.budget, tp.budget_tier, tp.transport_type, tp.interests, tp.preferred_states, tp.travel_pace
         FROM itineraries i
         LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
         WHERE i.itinerary_id = ? AND i.traveller_id = ?
@@ -392,6 +454,282 @@ function build_local_editor_answer(array $proposals): string
     return implode("\n", $lines);
 }
 
+function is_add_or_regenerate_request(string $message): bool
+{
+    $msg = strtolower($message);
+    $terms = [
+        "empty", "arrange", "add", "extra", "fill", "day 2", "day2", "regenerate",
+        "replan", "more place", "more places", "complete my day", "plan my day",
+        "没有", "空", "安排", "添加", "加", "多一点", "重新安排", "重新推荐", "补"
+    ];
+    foreach ($terms as $term) {
+        if (str_contains($msg, $term)) return true;
+    }
+    return false;
+}
+
+function requested_day_no(string $message, int $totalDays): int
+{
+    if (preg_match('/day\s*(\d+)/i', $message, $m)) {
+        $day = (int)$m[1];
+        if ($day >= 1 && $day <= $totalDays) return $day;
+    }
+    if (preg_match('/第\s*(\d+)\s*天/u', $message, $m)) {
+        $day = (int)$m[1];
+        if ($day >= 1 && $day <= $totalDays) return $day;
+    }
+    return min(2, max(1, $totalDays));
+}
+
+function denied_states_from_message(string $message): array
+{
+    $msg = strtolower($message);
+    $denied = [];
+    $states = ["johor", "kelantan", "perak", "penang", "melaka", "kuala lumpur", "selangor", "kedah", "perlis", "pahang", "terengganu", "sabah", "sarawak", "negeri sembilan"];
+    foreach ($states as $state) {
+        if ((str_contains($msg, "no " . $state) || str_contains($msg, "dont want " . $state) || str_contains($msg, "don't want " . $state) || str_contains($msg, "不要" . $state)) && !in_array($state, $denied, true)) {
+            $denied[] = $state;
+        }
+    }
+    return $denied;
+}
+
+function allowed_states_for_addition(array $itinerary, array $items, string $message): array
+{
+    $msg = strtolower($message);
+    $states = [];
+
+    if (str_contains($msg, "johor") || str_contains($msg, "柔佛")) {
+        $states[] = "Johor";
+    }
+
+    foreach ($items as $item) {
+        $state = trim((string)($item["state"] ?? ""));
+        if ($state !== "" && !in_array($state, $states, true)) $states[] = $state;
+    }
+
+    if (empty($states)) {
+        foreach (explode(",", (string)($itinerary["preferred_states"] ?? "")) as $state) {
+            $state = trim($state);
+            if ($state !== "" && !in_array($state, $states, true)) $states[] = $state;
+        }
+    }
+
+    $denied = denied_states_from_message($message);
+    if (!empty($denied)) {
+        $states = array_values(array_filter($states, fn($state) => !in_array(strtolower($state), $denied, true)));
+    }
+
+    return !empty($states) ? $states : ["Johor"];
+}
+
+function build_addition_proposals(mysqli $conn, array $itinerary, array $items, string $message): array
+{
+    $totalDays = max(1, (int)($itinerary["total_days"] ?? 1));
+    $dayNo = requested_day_no($message, $totalDays);
+    $anchor = addition_anchor_for_day($conn, (int)$itinerary["itinerary_id"], $dayNo);
+    $existingDayCount = 0;
+    foreach ($items as $item) {
+        if ((int)$item["day_no"] === $dayNo) $existingDayCount++;
+    }
+
+    $desired = max(3, min(5, (int)($itinerary["items_per_day"] ?? 4)));
+    $needed = min(3, max(1, $desired - $existingDayCount));
+    if (str_contains(strtolower($message), "extra") || str_contains($message, "多")) {
+        $needed = 1;
+    }
+
+    $usedPlaceIds = array_values(array_filter(array_map(fn($item) => (int)($item["place_id"] ?? 0), $items)));
+    $states = allowed_states_for_addition($itinerary, $items, $message);
+    $category = preferred_category_from_message($message);
+    $tripStartDate = (string)($itinerary["start_date"] ?? "");
+    $dateFilter = festival_date_filter($tripStartDate);
+
+    $statePlaceholders = implode(",", array_fill(0, count($states), "?"));
+    $excludeSql = "";
+    $params = $states;
+    $types = str_repeat("s", count($states));
+
+    if ($category !== "") {
+        $categorySql = " AND category = ?";
+        $params[] = $category;
+        $types .= "s";
+    } else {
+        $categorySql = "";
+    }
+
+    if (!empty($usedPlaceIds)) {
+        $excludeSql = " AND place_id NOT IN (" . implode(",", array_fill(0, count($usedPlaceIds), "?")) . ")";
+        foreach ($usedPlaceIds as $id) {
+            $params[] = $id;
+            $types .= "i";
+        }
+    }
+
+    $limit = max(1, $needed);
+    $candidateLimit = max(20, $limit * 8);
+    $sql = "
+        SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost,
+               entrance_fee, opening_hours, rating, avg_rating, visit_duration_min
+        FROM cultural_places
+        WHERE is_active = 1
+          AND state IN ($statePlaceholders)
+          {$categorySql}
+          {$excludeSql}
+          {$dateFilter}
+        ORDER BY
+          CASE WHEN category='food' THEN 1 ELSE 0 END,
+          COALESCE(rating, avg_rating, 0) DESC,
+          COALESCE(entrance_fee, estimated_cost, 0) ASC,
+          name ASC
+        LIMIT {$candidateLimit}
+    ";
+
+    $stmt = $conn->prepare($sql);
+    if (!$stmt) return [];
+    $stmt->bind_param($types, ...$params);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $candidates = [];
+    while ($place = $res->fetch_assoc()) $candidates[] = $place;
+    $stmt->close();
+
+    if ($anchor !== null) {
+        usort($candidates, function ($a, $b) use ($anchor) {
+            $da = place_distance_from_anchor($a, $anchor);
+            $db = place_distance_from_anchor($b, $anchor);
+            if ($da === $db) {
+                return ((float)($b["rating"] ?? $b["avg_rating"] ?? 0)) <=> ((float)($a["rating"] ?? $a["avg_rating"] ?? 0));
+            }
+            return $da <=> $db;
+        });
+    }
+
+    $proposals = [];
+    $seq = $existingDayCount + 1;
+    foreach (array_slice($candidates, 0, $limit) as $place) {
+        $anchorText = $anchor !== null
+            ? "near " . $anchor["title"] . " (" . $anchor["source"] . ")"
+            : "from the current cultural places database";
+        $proposals[] = [
+            "proposal_type" => "add",
+            "item_id" => 0,
+            "current_title" => "Add new stop",
+            "day_no" => $dayNo,
+            "sequence_no" => $seq++,
+            "current_category" => "",
+            "new_place" => format_place($place),
+            "reason" => "adds a Johor-focused stop " . $anchorText,
+        ];
+    }
+    return $proposals;
+}
+
+function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?array
+{
+    $queries = [];
+
+    // If the requested day already has places, continue from its last real stop.
+    $queries[] = [
+        "source" => "last place in this day",
+        "sql" => "
+            SELECT ii.item_title AS title,
+                   COALESCE(ii.item_latitude, cp.latitude, h.latitude) AS latitude,
+                   COALESCE(ii.item_longitude, cp.longitude, h.longitude) AS longitude
+            FROM itinerary_items ii
+            LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+            LEFT JOIN hotels h ON h.hotel_id = ii.hotel_id
+            WHERE ii.itinerary_id = ? AND ii.day_no = ? AND ii.item_type <> 'hotel'
+            ORDER BY ii.sequence_no DESC
+            LIMIT 1
+        ",
+        "day" => $dayNo,
+    ];
+
+    if ($dayNo > 1) {
+        // For an empty day, start from previous night's hotel when available.
+        $queries[] = [
+            "source" => "previous night hotel",
+            "sql" => "
+                SELECT ii.item_title AS title,
+                       COALESCE(ii.item_latitude, h.latitude) AS latitude,
+                       COALESCE(ii.item_longitude, h.longitude) AS longitude
+                FROM itinerary_items ii
+                LEFT JOIN hotels h ON h.hotel_id = ii.hotel_id
+                WHERE ii.itinerary_id = ? AND ii.day_no = ? AND ii.item_type = 'hotel'
+                ORDER BY ii.sequence_no DESC
+                LIMIT 1
+            ",
+            "day" => $dayNo - 1,
+        ];
+
+        // Fallback: previous day's last stop.
+        $queries[] = [
+            "source" => "previous day last place",
+            "sql" => "
+                SELECT ii.item_title AS title,
+                       COALESCE(ii.item_latitude, cp.latitude, h.latitude) AS latitude,
+                       COALESCE(ii.item_longitude, cp.longitude, h.longitude) AS longitude
+                FROM itinerary_items ii
+                LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+                LEFT JOIN hotels h ON h.hotel_id = ii.hotel_id
+                WHERE ii.itinerary_id = ? AND ii.day_no = ?
+                ORDER BY ii.sequence_no DESC
+                LIMIT 1
+            ",
+            "day" => $dayNo - 1,
+        ];
+    }
+
+    foreach ($queries as $query) {
+        $stmt = $conn->prepare($query["sql"]);
+        if (!$stmt) continue;
+        $anchorDay = (int)$query["day"];
+        $stmt->bind_param("ii", $itineraryId, $anchorDay);
+        $stmt->execute();
+        $row = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+
+        if (!$row) continue;
+        $lat = $row["latitude"] !== null ? (float)$row["latitude"] : null;
+        $lng = $row["longitude"] !== null ? (float)$row["longitude"] : null;
+        if ($lat === null || $lng === null || ($lat == 0.0 && $lng == 0.0)) continue;
+
+        return [
+            "title" => (string)($row["title"] ?? "anchor point"),
+            "latitude" => $lat,
+            "longitude" => $lng,
+            "source" => $query["source"],
+        ];
+    }
+
+    return null;
+}
+
+function place_distance_from_anchor(array $place, array $anchor): float
+{
+    $lat = $place["latitude"] !== null ? (float)$place["latitude"] : null;
+    $lng = $place["longitude"] !== null ? (float)$place["longitude"] : null;
+    if ($lat === null || $lng === null || ($lat == 0.0 && $lng == 0.0)) return PHP_FLOAT_MAX;
+
+    $earthRadius = 6371.0;
+    $dLat = deg2rad($lat - (float)$anchor["latitude"]);
+    $dLng = deg2rad($lng - (float)$anchor["longitude"]);
+    $a = sin($dLat / 2) ** 2
+        + cos(deg2rad((float)$anchor["latitude"])) * cos(deg2rad($lat)) * sin($dLng / 2) ** 2;
+    return $earthRadius * 2 * atan2(sqrt($a), sqrt(1 - $a));
+}
+
+function build_local_addition_answer(array $proposals): string
+{
+    $lines = ["I found places that can be added. Nothing has been saved yet; click Confirm Add to update the itinerary."];
+    foreach ($proposals as $proposal) {
+        $place = $proposal["new_place"];
+        $lines[] = "Day " . $proposal["day_no"] . ": add " . $place["name"] . " (" . $place["district"] . ", " . $place["state"] . ").";
+    }
+    return implode("\n", $lines);
+}
+
 function item_type_from_category(string $category): string
 {
     $cat = strtolower(trim($category));
@@ -434,6 +772,67 @@ function apply_replacement(mysqli $conn, int $itineraryId, int $itemId, array $p
     ");
     if (!$stmt) return false;
     $stmt->bind_param("issdddsii", $placeId, $newType, $place["name"], $lat, $lng, $newCost, $newNotes, $itemId, $itineraryId);
+    $ok = $stmt->execute();
+    $stmt->close();
+    return $ok;
+}
+
+function sql_time_from_minutes(int $minutes): string
+{
+    $minutes = max(0, min(23 * 60 + 30, $minutes));
+    return sprintf("%02d:%02d:00", intdiv($minutes, 60), $minutes % 60);
+}
+
+function sql_time_to_minutes(?string $time): ?int
+{
+    if (!$time || !preg_match('/^(\d{1,2}):(\d{2})/', $time, $m)) return null;
+    return ((int)$m[1] * 60) + (int)$m[2];
+}
+
+function apply_addition(mysqli $conn, int $itineraryId, int $dayNo, array $place): bool
+{
+    $seqStmt = $conn->prepare("SELECT COALESCE(MAX(sequence_no),0) AS max_seq FROM itinerary_items WHERE itinerary_id = ? AND day_no = ? AND item_type <> 'hotel'");
+    if (!$seqStmt) return false;
+    $seqStmt->bind_param("ii", $itineraryId, $dayNo);
+    $seqStmt->execute();
+    $seqRow = $seqStmt->get_result()->fetch_assoc();
+    $seqStmt->close();
+    $sequenceNo = (int)($seqRow["max_seq"] ?? 0) + 1;
+
+    $timeStmt = $conn->prepare("SELECT end_time FROM itinerary_items WHERE itinerary_id = ? AND day_no = ? AND item_type <> 'hotel' AND end_time IS NOT NULL ORDER BY sequence_no DESC LIMIT 1");
+    if (!$timeStmt) return false;
+    $timeStmt->bind_param("ii", $itineraryId, $dayNo);
+    $timeStmt->execute();
+    $timeRow = $timeStmt->get_result()->fetch_assoc();
+    $timeStmt->close();
+
+    $lastEnd = sql_time_to_minutes($timeRow["end_time"] ?? null);
+    $startMin = $lastEnd !== null ? $lastEnd + 30 : 9 * 60;
+    if ($startMin > 18 * 60) $startMin = 18 * 60;
+    $duration = max(45, min(180, (int)($place["visit_duration_min"] ?? 90)));
+    $startTime = sql_time_from_minutes($startMin);
+    $endTime = sql_time_from_minutes($startMin + $duration);
+
+    $placeId = (int)$place["place_id"];
+    $itemType = item_type_from_category((string)$place["category"]);
+    $cost = array_key_exists("entrance_fee", $place)
+        ? max(0.0, (float)$place["entrance_fee"])
+        : max(0.0, (float)($place["estimated_cost"] ?? 0));
+    $lat = $place["latitude"] !== null ? (float)$place["latitude"] : null;
+    $lng = $place["longitude"] !== null ? (float)$place["longitude"] : null;
+    $districtNote = !empty($place["district"]) ? " | District: " . $place["district"] : "";
+    $notes = "State: " . ($place["state"] ?? "") . $districtNote . " | Category: " . ($place["category"] ?? "");
+
+    $conn->query("UPDATE itinerary_items SET sequence_no = sequence_no + 1 WHERE itinerary_id = " . (int)$itineraryId . " AND day_no = " . (int)$dayNo . " AND item_type = 'hotel' AND sequence_no >= " . (int)$sequenceNo);
+
+    $stmt = $conn->prepare("
+        INSERT INTO itinerary_items
+            (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, item_latitude, item_longitude, start_time, end_time, estimated_cost, notes)
+        VALUES
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ");
+    if (!$stmt) return false;
+    $stmt->bind_param("iiisisddssds", $itineraryId, $dayNo, $sequenceNo, $itemType, $placeId, $place["name"], $lat, $lng, $startTime, $endTime, $cost, $notes);
     $ok = $stmt->execute();
     $stmt->close();
     return $ok;

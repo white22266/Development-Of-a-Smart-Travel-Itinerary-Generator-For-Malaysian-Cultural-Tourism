@@ -419,16 +419,14 @@ $stmt->close();
 
                     <div style="height:14px;"></div>
 
-                    <!-- ===== Places Per Day ===== -->
-                    <label style="font-weight:800; font-size:13px;">Places Per Day *</label><br>
-                    <select name="items_per_day" required
-                        style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px; font-size:13px;">
-                        <option value="1">1 place per day</option>
-                        <option value="2">2 places per day</option>
-                        <option value="3" selected>3 places per day</option>
-                        <option value="4">4 places per day</option>
-                        <option value="5">5 places per day</option>
-                    </select>
+                    <div class="route-info-box">
+                        <div class="route-title">Travel Pace Controls Daily Places</div>
+                        <ul>
+                            <li>Relaxed preference: about 3 places per day with longer rest gaps.</li>
+                            <li>Normal preference: about 4 places per day.</li>
+                            <li>Packed preference: about 5 places per day with shorter rest gaps.</li>
+                        </ul>
+                    </div>
 
                     <div style="height:14px;"></div>
 

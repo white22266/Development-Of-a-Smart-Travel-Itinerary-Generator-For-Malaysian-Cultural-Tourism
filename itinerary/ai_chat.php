@@ -66,8 +66,11 @@ $itemsStmt->execute();
 $res = $itemsStmt->get_result();
 
 $days = [];
+$activeStates = [];
 while ($row = $res->fetch_assoc()) {
     $day = (int)$row["day_no"];
+    $state = trim((string)($row["state"] ?? ""));
+    if ($state !== "" && !in_array($state, $activeStates, true)) $activeStates[] = $state;
     $days[$day][] = [
         'sequence' => (int)$row["sequence_no"],
         'title' => $row["item_title"],
@@ -89,6 +92,12 @@ while ($row = $res->fetch_assoc()) {
 $itemsStmt->close();
 
 $context = [
+    'assistant_rules' => [
+        'Answer only using the current itinerary data below.',
+        'Do not suggest Kelantan or any other state unless it appears in active_itinerary_states or the user explicitly requests it.',
+        'If the user asks to modify/add/regenerate stops, tell them to use the confirmation cards shown by the system. Do not claim the itinerary has already been changed.',
+        'Use plain text only. Do not use ** markdown.',
+    ],
     'title' => $it["title"],
     'start_date' => $it["start_date"],
     'total_days' => (int)$it["total_days"],
@@ -97,6 +106,7 @@ $context = [
     'transport_type' => $it["transport_type"] ?? "car",
     'interests' => $it["interests"] ?? "",
     'preferred_states' => $it["preferred_states"] ?? "",
+    'active_itinerary_states' => $activeStates,
     'preferred_districts' => $it["preferred_districts"] ?? "",
     'days' => $days,
 ];

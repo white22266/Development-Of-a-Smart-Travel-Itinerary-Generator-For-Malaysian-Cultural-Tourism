@@ -32,6 +32,7 @@ $stmt->execute();
 $it = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 if (!$it) { header("Location: my_itineraries.php"); exit; }
+$originName = trim((string)($it['origin_name'] ?? ''));
 
 // Load all itinerary items with place details
 $dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
@@ -125,15 +126,13 @@ function buildTimetable(array $items, string $transportType): array
         $dbStartMin = sqlTimeToMinutes($item["start_time"] ?? null);
         $dbEndMin   = sqlTimeToMinutes($item["end_time"] ?? null);
         $travelMin = 0;
-        if ($i > 0) {
-            if ($item["distance_km"] !== null && (float)$item["distance_km"] > 0) {
-                $travelMin = (int)ceil(((float)$item["distance_km"] / $speed) * 60);
-                if ($transportType === 'public_transport') $travelMin = (int)ceil($travelMin * 1.4);
-            } elseif ($item["travel_time_min"] !== null) {
-                $travelMin = (int)$item["travel_time_min"];
-            } else {
-                $travelMin = ($transportType === 'walking') ? 20 : 15;
-            }
+        if ($item["travel_time_min"] !== null) {
+            $travelMin = (int)$item["travel_time_min"];
+        } elseif ($item["distance_km"] !== null && (float)$item["distance_km"] > 0) {
+            $travelMin = (int)ceil(((float)$item["distance_km"] / $speed) * 60);
+            if ($transportType === 'public_transport') $travelMin = (int)ceil($travelMin * 1.4);
+        } elseif ($i > 0) {
+            $travelMin = ($transportType === 'walking') ? 20 : 15;
         }
         $cursor = $dbStartMin ?? ($cursor + $travelMin);
         $duration = match($type) {
@@ -229,7 +228,9 @@ $totalDistanceKm = 0.0;
 foreach ($days as $dayItems) {
     foreach ($dayItems as $item) {
         $totalCost += (float)($item['estimated_cost'] ?? 0);
-        $totalPlaces++;
+        if (strtolower((string)($item['item_type'] ?? '')) !== 'hotel') {
+            $totalPlaces++;
+        }
         $allCostItems[] = $item;
         $totalDistanceKm += (float)($item['distance_km'] ?? 0);
     }
@@ -416,6 +417,44 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
         }
         .day-tab.active { color: #fff; }
 
+        .day-box-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(15,23,42,0.08);
+            background: #f8fafc;
+        }
+        .day-box-number {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            flex: 0 0 42px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 900;
+            line-height: 1;
+        }
+        .day-box-title {
+            font-weight: 900;
+            font-size: 14px;
+            color: #0f172a;
+        }
+        .day-box-date {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+        .day-box-note {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
         /* ===== Timetable ===== */
         .timetable { width: 100%; border-collapse: collapse; font-size: 12.5px; }
         .timetable th {
@@ -509,10 +548,28 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 1;
+            text-align: center;
+            overflow: hidden;
             flex-shrink: 0;
             border: 2px solid rgba(255,255,255,0.8);
             box-shadow: 0 1px 4px rgba(15,23,42,0.12);
+        }
+        .ts-icon span {
+            display: block;
+            max-width: 30px;
+            overflow: hidden;
+            text-overflow: clip;
+            white-space: nowrap;
+            color: rgba(255,255,255,0.96);
+            font-size: 10px;
+            line-height: 1;
+        }
+        .ts-icon .ts-icon-emoji {
+            font-size: 18px;
+            line-height: 1;
         }
         .ts-body { flex: 1; }
         .ts-mode-badge {
@@ -976,12 +1033,14 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
             <div class="day-box" id="day-<?php echo $d; ?>" style="<?php echo $d !== 1 ? 'display:none;' : ''; ?>">
 
                 <!-- Day header -->
-                <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; padding:10px 14px; background:<?php echo $col; ?>12; border-radius:10px; border-left:4px solid <?php echo $col; ?>;">
-                    <span style="font-size:18px;">Day</span>
+                <div class="day-box-header" style="border-left:4px solid <?php echo $col; ?>; background:<?php echo $col; ?>10;">
+                    <div class="day-box-number" style="background:<?php echo $col; ?>;">
+                        <?php echo $d; ?>
+                    </div>
                     <div>
-                        <div style="font-weight:900; font-size:14px; color:<?php echo $col; ?>;">Day <?php echo $d; ?></div>
-                        <?php if ($dateStr): ?><div style="font-size:12px; color:#64748b;"><?php echo $dateStr; ?></div><?php endif; ?>
-                        <div style="font-size:11px; color:#64748b; margin-top:2px;">
+                        <div class="day-box-title">Day <?php echo $d; ?></div>
+                        <?php if ($dateStr): ?><div class="day-box-date"><?php echo $dateStr; ?></div><?php endif; ?>
+                        <div class="day-box-note">
                             <?php echo $d === 1 ? 'Starts from your location' : 'Continues from previous night hotel'; ?>
                         </div>
                     </div>
@@ -1002,11 +1061,62 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
                         </tr>
                     </thead>
                     <tbody>
+                        <?php
+                            $firstTravelItem = null;
+                            foreach ($schedule as $candidate) {
+                                if (strtolower((string)($candidate['item_type'] ?? '')) !== 'hotel') {
+                                    $firstTravelItem = $candidate;
+                                    break;
+                                }
+                            }
+                            $showOriginRow = $firstTravelItem
+                                && ($d === 1
+                                    || (int)($firstTravelItem['_travel_min'] ?? 0) > 0
+                                    || ((float)($firstTravelItem['dist_km'] ?? $firstTravelItem['distance_km'] ?? 0) > 0));
+                            $displayNo = 0;
+                        ?>
+                        <?php if ($showOriginRow): ?>
+                        <tr>
+                            <td>
+                                <div style="font-weight:800; font-size:12px;">
+                                    <?php echo (int)($firstTravelItem['_travel_min'] ?? 0) > 0
+                                        ? minutesToTime((int)$firstTravelItem['_start_min'] - (int)$firstTravelItem['_travel_min'])
+                                        : 'Before ' . $firstTravelItem['_start_fmt']; ?>
+                                </div>
+                                <div style="font-size:10.5px; color:#94a3b8;">depart</div>
+                            </td>
+                            <td style="font-weight:800; color:#64748b;">Start</td>
+                            <td>
+                                <div style="font-weight:700;">
+                                    <?php echo $d === 1
+                                        ? htmlspecialchars($originName !== '' ? $originName : 'Starting location')
+                                        : "Previous night's hotel"; ?>
+                                </div>
+                                <div style="font-size:11px; color:#64748b; margin-top:2px;">
+                                    <?php if ((int)($firstTravelItem['_travel_min'] ?? 0) > 0 || (float)($firstTravelItem['dist_km'] ?? $firstTravelItem['distance_km'] ?? 0) > 0): ?>
+                                        Travel to <?php echo htmlspecialchars($firstTravelItem['item_title']); ?>
+                                        <?php if ((int)$firstTravelItem['_travel_min'] > 0): ?>
+                                            &middot; <?php echo (int)$firstTravelItem['_travel_min']; ?> min
+                                        <?php endif; ?>
+                                        <?php if ((float)($firstTravelItem['dist_km'] ?? $firstTravelItem['distance_km'] ?? 0) > 0): ?>
+                                            &middot; <?php echo number_format((float)($firstTravelItem['dist_km'] ?? $firstTravelItem['distance_km'] ?? 0), 1); ?> km
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        Route to first stop was not recorded for this itinerary.
+                                    <?php endif; ?>
+                                </div>
+                            </td>
+                            <td><span class="type-badge">Origin</span></td>
+                            <td><span style="color:#94a3b8;">Free</span></td>
+                        </tr>
+                        <?php endif; ?>
                         <?php foreach ($schedule as $idx => $item):
                             $typeBadgeClass = 'badge-' . strtolower($item['item_type'] ?? 'attraction');
                             $activity = activitySuggestion($item['item_type'] ?? 'attraction', $item['category'] ?? '');
                             $prevItem = $idx > 0 ? $schedule[$idx - 1] : null;
                             $legId    = "leg-{$d}-{$idx}";
+                            $isHotel = strtolower((string)($item['item_type'] ?? '')) === 'hotel';
+                            $displayLabel = $isHotel ? 'Stay' : (string)(++$displayNo);
                         ?>
 
                         <?php if ($idx > 0): ?>
@@ -1056,7 +1166,7 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
                                 <div style="font-weight:800; font-size:12px;"><?php echo $item['_start_fmt']; ?></div>
                                 <div style="font-size:10.5px; color:#94a3b8;">to <?php echo $item['_end_fmt']; ?></div>
                             </td>
-                            <td style="font-weight:800; color:<?php echo $col; ?>;"><?php echo $idx + 1; ?></td>
+                            <td style="font-weight:800; color:<?php echo $isHotel ? '#64748b' : $col; ?>;"><?php echo htmlspecialchars($displayLabel); ?></td>
                             <td>
                                 <div style="font-weight:700;"><?php echo htmlspecialchars($item['item_title']); ?></div>
                                 <div style="font-size:11px; color:#64748b; margin-top:2px;">
@@ -1076,7 +1186,7 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
                             </td>
                             <td>
                                 <span class="type-badge <?php echo htmlspecialchars($typeBadgeClass); ?>">
-                                    <?php echo htmlspecialchars(ucfirst($item['item_type'] ?? 'attraction')); ?>
+                                    <?php echo htmlspecialchars($isHotel ? 'Hotel / Check-in' : ucfirst($item['item_type'] ?? 'attraction')); ?>
                                 </span>
                             </td>
                             <td style="font-weight:700;">
@@ -1119,6 +1229,7 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
         <button type="button" onclick="askAiQuick('Act as my travel AI chatbot and explain this itinerary.')">Explain</button>
         <button type="button" onclick="askAiQuick('Suggest a better route order for this itinerary.')">Route</button>
         <button type="button" onclick="askAiQuick('How can I improve this itinerary within my budget?')">Improve</button>
+        <button type="button" onclick="regenerateCurrentDay()">Regenerate Day</button>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
         <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
@@ -1146,6 +1257,7 @@ let dayMarkers   = {};
 let dayVisible   = {};
 let currentTransport = <?php echo $jsTransport; ?>;
 let googleMapLoaded = false;
+let ACTIVE_DAY = 1;
 
 function showMapLoadError(message) {
     const panel = document.getElementById('mapErrorPanel');
@@ -1457,6 +1569,7 @@ function toggleDay(day) {
 }
 
 function showDay(d) {
+    ACTIVE_DAY = d;
     document.querySelectorAll('.day-box').forEach(el => el.style.display = 'none');
     const box = document.getElementById('day-' + d);
     if (box) box.style.display = 'block';
@@ -1679,11 +1792,19 @@ function buildTransitDetail(data, fromTitle, toTitle) {
     // Warnings
     if (data.warnings && data.warnings.length > 0) {
         data.warnings.forEach(w => {
+            if (isMinorRouteWarning(w)) return;
             html += `<div class="ts-warning">Warning: ${escHtml(w)}</div>`;
         });
     }
 
     return html;
+}
+
+function isMinorRouteWarning(message) {
+    const text = String(message || '').toLowerCase();
+    return text.includes('walking directions are in beta')
+        || text.includes('missing sidewalks')
+        || text.includes('pedestrian paths');
 }
 
 function buildStepCard(step, idx, total) {
@@ -1694,9 +1815,11 @@ function buildStepCard(step, idx, total) {
     const iconBg = step.line_color || (isWalk ? '#64748b' : isDrive ? '#374151' : '#4CAF50');
     const icon   = step.vehicle_icon || (isWalk ? 'Walk' : isDrive ? 'Drive' : 'Bus');
     const modeLabel = step.type_label || (isWalk ? 'Walk' : isDrive ? 'Drive' : 'Transit');
+    const iconText = escHtml(icon);
+    const iconClass = /[\uD800-\uDBFF][\uDC00-\uDFFF]|[\u2600-\u27BF]/.test(String(icon)) ? 'ts-icon-emoji' : '';
 
     let html = `<div class="ts-step">
-        <div class="ts-icon" style="background:${escHtml(iconBg)};">${icon}</div>
+        <div class="ts-icon" style="background:${escHtml(iconBg)};"><span class="${iconClass}">${iconText}</span></div>
         <div class="ts-body">
             <span class="ts-mode-badge" style="background:${escHtml(iconBg)};">${escHtml(modeLabel)}</span>`;
 
@@ -1784,6 +1907,10 @@ function askAiQuick(text) {
     sendAiMessage();
 }
 
+function regenerateCurrentDay() {
+    askAiQuick('Regenerate Day ' + ACTIVE_DAY + ' with suitable Johor places. Use the previous night hotel as the start point if the day is empty; otherwise continue from the last place in this day. Do not use Kelantan.');
+}
+
 async function sendAiMessage(event) {
     if (event) event.preventDefault();
     const input = document.getElementById('aiChatInput');
@@ -1797,20 +1924,151 @@ async function sendAiMessage(event) {
     const loading = addAiMessage('bot', 'Writing answer...');
 
     try {
-        const resp = await fetch('ai_chat.php', {
+        const hotelIntent = /hotel|accommodation|stay|room|住宿|酒店|旅馆/i.test(text);
+        const editIntent = /replace|change|swap|modify|regenerate|alternative|better stop|change stop|arrange|empty|add|extra|fill|day\s*\d+|day\d+|更改|替换|换掉|换|改行程|重新推荐|安排|添加|加|空|没有|补/i.test(text);
+        const endpoint = editIntent ? '../api/ai_itinerary_editor.php' : 'ai_chat.php';
+        const resp = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams({
+            body: new URLSearchParams(editIntent ? {
+                action: 'recommend',
+                itinerary_id: ITINERARY_ID,
+                message: text,
+            } : {
                 itinerary_id: ITINERARY_ID,
                 message: text,
             }),
         });
         const data = await parseJsonResponse(resp);
         if (loading) {
-            loading.textContent = data.answer || data.message || 'AI assistant could not answer this request.';
+            loading.textContent = cleanAiText(data.answer || data.message || 'AI assistant could not answer this request.');
+        }
+        if (editIntent && data.proposals && data.proposals.length) {
+            renderChangeCards(loading, data.proposals);
         }
     } catch (e) {
         if (loading) loading.textContent = 'Network error. Please try again.';
+    }
+}
+
+function cleanAiText(text) {
+    return String(text || '')
+        .replace(/\*{1,3}([^*]+)\*{1,3}/g, '$1')
+        .replace(/^\s{0,3}#{1,6}\s*/gm, '')
+        .replace(/[ \t]+\n/g, '\n')
+        .trim();
+}
+
+function renderChangeCards(container, proposals) {
+    if (!container) return;
+    proposals.slice(0, 4).forEach((proposal) => {
+        const place = proposal.new_place || {};
+        const isAdd = proposal.proposal_type === 'add' || !Number(proposal.item_id || 0);
+        const card = document.createElement('div');
+        card.style.marginTop = '8px';
+        card.style.padding = '9px';
+        card.style.border = '1px solid rgba(15,23,42,.10)';
+        card.style.borderRadius = '9px';
+        card.style.background = isAdd ? '#f0fdf4' : '#fff7ed';
+
+        const title = document.createElement('strong');
+        title.style.display = 'block';
+        title.style.color = '#0f172a';
+        title.style.marginBottom = '3px';
+        title.textContent = isAdd
+            ? 'Day ' + proposal.day_no + ': add new stop'
+            : 'Day ' + proposal.day_no + ' stop ' + proposal.sequence_no + ': ' + (proposal.current_title || 'Current stop');
+
+        const meta = document.createElement('span');
+        meta.style.display = 'block';
+        meta.style.fontSize = '11px';
+        meta.style.color = '#64748b';
+        meta.style.marginBottom = '6px';
+        const cost = Number(place.estimated_cost || 0);
+        meta.textContent = (isAdd ? 'Add ' : 'Replace with ') + (place.name || 'new place') + ' - ' + (place.category || 'place') + ' - RM ' + cost.toFixed(2);
+
+        const reason = document.createElement('span');
+        reason.style.display = 'block';
+        reason.style.fontSize = '11px';
+        reason.style.color = '#64748b';
+        reason.style.marginBottom = '7px';
+        reason.textContent = proposal.reason || 'Suggested from current itinerary database';
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.style.border = '0';
+        button.style.borderRadius = '8px';
+        button.style.background = isAdd ? '#16a34a' : '#f59e0b';
+        button.style.color = isAdd ? '#fff' : '#0f172a';
+        button.style.padding = '6px 9px';
+        button.style.fontSize = '11px';
+        button.style.fontWeight = '900';
+        button.style.cursor = 'pointer';
+        button.textContent = isAdd ? 'Confirm Add' : 'Confirm Change';
+        button.addEventListener('click', () => {
+            if (isAdd) confirmItineraryAdd(Number(proposal.day_no || 0), Number(place.place_id || 0));
+            else confirmItineraryChange(Number(proposal.item_id || 0), Number(place.place_id || 0));
+        });
+
+        card.appendChild(title);
+        card.appendChild(meta);
+        card.appendChild(reason);
+        card.appendChild(button);
+        container.appendChild(card);
+    });
+    const body = document.getElementById('aiChatBody');
+    if (body) body.scrollTop = body.scrollHeight;
+}
+
+async function confirmItineraryChange(itemId, placeId) {
+    if (!itemId || !placeId) return;
+    const loading = addAiMessage('bot', 'Applying selected itinerary change and recalculating route/cost...');
+    try {
+        const resp = await fetch('../api/ai_itinerary_editor.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm',
+                itinerary_id: ITINERARY_ID,
+                item_id: String(itemId),
+                place_id: String(placeId)
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = cleanAiText(data.answer || 'Itinerary changed. Reloading...');
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not apply this itinerary change.');
+        }
+    } catch (e) {
+        if (loading) loading.textContent = 'Network error while saving itinerary change. Please try again.';
+    }
+}
+
+async function confirmItineraryAdd(dayNo, placeId) {
+    if (!dayNo || !placeId) return;
+    const loading = addAiMessage('bot', 'Adding selected place and recalculating route/cost...');
+    try {
+        const resp = await fetch('../api/ai_itinerary_editor.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm_add',
+                itinerary_id: ITINERARY_ID,
+                day_no: String(dayNo),
+                place_id: String(placeId)
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = cleanAiText(data.answer || 'Place added. Reloading...');
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not add this place.');
+        }
+    } catch (e) {
+        if (loading) loading.textContent = 'Network error while adding place. Please try again.';
     }
 }
 

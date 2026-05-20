@@ -33,6 +33,9 @@ class AiTravelAssistantService
             "Use only the itinerary context provided by the system.",
             "Help users write routes, check costs, explain cultural value, and suggest practical improvements.",
             "Do not claim bookings are confirmed. Do not invent exact live traffic, prices, or opening hours.",
+            "Do not mention states or places that are not present in the supplied context unless the user explicitly asks for them.",
+            "If the user rejects a state or place, do not suggest it again.",
+            "Use plain text only. Do not use Markdown symbols such as **, ###, or bullet decoration.",
             "If data is missing, say it is estimated and suggest checking the map or place details.",
             "Reply in the same language as the user when possible. Keep the answer concise and useful.",
         ]);
@@ -92,10 +95,20 @@ class AiTravelAssistantService
         }
 
         $text = is_array($json) ? trim((string)($json['message']['content'] ?? '')) : '';
+        $text = $this->cleanAnswer($text);
         if ($text === '') {
             return ['status' => 'error', 'answer' => 'AI response is invalid. Please try again.', 'source' => 'ollama'];
         }
 
         return ['status' => 'success', 'answer' => $text, 'source' => 'ollama'];
+    }
+
+    private function cleanAnswer(string $text): string
+    {
+        $text = preg_replace('/\*{1,3}([^*]+)\*{1,3}/u', '$1', $text) ?? $text;
+        $text = preg_replace('/^\s{0,3}#{1,6}\s*/m', '', $text) ?? $text;
+        $text = preg_replace('/^\s*[-*]\s+/m', '- ', $text) ?? $text;
+        $text = preg_replace("/[ \t]+\n/", "\n", $text) ?? $text;
+        return trim($text);
     }
 }

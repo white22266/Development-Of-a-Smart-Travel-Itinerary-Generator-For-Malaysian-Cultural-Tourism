@@ -89,6 +89,7 @@ $tripDays      = (int)($it["total_days"] ?? 1);
 $budget        = (float)($it["budget"] ?? 0);
 $transportType = (string)($it["transport_type"] ?? "car");
 $budgetTier    = strtolower((string)($it["budget_tier"] ?? "normal"));
+$originName    = trim((string)($it["origin_name"] ?? ""));
 $tierDefaults = match ($budgetTier) {
     "budget" => ["hotel" => 90.0, "meal" => 12.0],
     "luxury" => ["hotel" => 280.0, "meal" => 35.0],
@@ -140,11 +141,19 @@ $hotelSummaryText = !empty($selectedHotels)
     : "No hotel is confirmed yet; use the AI assistant or hotel recommendations below to choose one.";
 $chartLabels = [];
 $chartAmounts = [];
+$chartLegend = [];
 foreach ($costBreakdown["breakdown"] as $costItem) {
     $amount = (float)($costItem["amount"] ?? 0);
     if ($amount <= 0) continue;
-    $chartLabels[] = (string)($costItem["label"] ?? "Cost");
+    $label = (string)($costItem["label"] ?? "Cost");
+    $percent = $costTotal > 0 ? round(($amount / $costTotal) * 100, 1) : 0;
+    $chartLabels[] = $label;
     $chartAmounts[] = $amount;
+    $chartLegend[] = [
+        "label" => $label,
+        "amount" => $amount,
+        "percent" => $percent,
+    ];
 }
 ?>
 <!DOCTYPE html>
@@ -162,6 +171,12 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
         .cost-layout { display:grid; grid-template-columns:minmax(240px, 360px) 1fr; gap:18px; align-items:stretch; }
         .chart-panel { border-radius:14px; border:1px solid rgba(15,23,42,.08); background:#f8fafc; padding:16px; display:flex; flex-direction:column; justify-content:center; min-height:280px; }
         .chart-wrap { position:relative; width:100%; min-height:230px; }
+        .chart-legend-list { display:grid; gap:8px; margin-top:14px; }
+        .chart-legend-item { display:grid; grid-template-columns:14px 1fr auto; gap:8px; align-items:start; padding:8px 10px; border-radius:10px; background:#fff; border:1px solid rgba(15,23,42,.08); }
+        .chart-legend-color { width:12px; height:12px; border-radius:3px; margin-top:3px; }
+        .chart-legend-title { font-size:12px; font-weight:900; color:var(--navy); line-height:1.25; }
+        .chart-legend-meta { font-size:11px; color:var(--muted); margin-top:2px; line-height:1.35; }
+        .chart-legend-percent { font-size:12px; font-weight:900; color:#334155; white-space:nowrap; }
         .cost-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid rgba(15,23,42,.06); }
         .cost-row:last-child { border-bottom:none; }
         .cost-label { font-weight:700; color:var(--navy); }
@@ -303,6 +318,22 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                         <div class="chart-wrap">
                             <canvas id="costPieChart" aria-label="Trip cost pie chart" role="img"></canvas>
                         </div>
+                        <div class="chart-legend-list" aria-label="Cost chart legend">
+                            <?php
+                            $chartColors = ['#4f46e5', '#f59e0b', '#16a34a', '#ef4444', '#0ea5e9'];
+                            foreach ($chartLegend as $idx => $legendItem):
+                                $color = $chartColors[$idx % count($chartColors)];
+                            ?>
+                            <div class="chart-legend-item">
+                                <span class="chart-legend-color" style="background:<?php echo htmlspecialchars($color); ?>;"></span>
+                                <div>
+                                    <div class="chart-legend-title"><?php echo htmlspecialchars($legendItem["label"]); ?></div>
+                                    <div class="chart-legend-meta">RM <?php echo number_format((float)$legendItem["amount"], 2); ?></div>
+                                </div>
+                                <div class="chart-legend-percent"><?php echo number_format((float)$legendItem["percent"], 1); ?>%</div>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                     <div class="cost-card">
                         <?php foreach ($costBreakdown['breakdown'] as $item): ?>
@@ -372,9 +403,74 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                         <table>
                             <thead><tr><th>#</th><th>Time</th><th>Place</th><th>Type</th><th>Cost (RM)</th><th>Distance (km)</th><th>Travel</th></tr></thead>
                             <tbody>
-                                <?php $dayTotal = 0.0; foreach ($items as $r): $dayTotal += (float)$r["estimated_cost"]; ?>
+                                <?php
+                                    $firstTravelItem = null;
+                                    foreach ($items as $candidate) {
+                                        if (strtolower((string)($candidate["item_type"] ?? "")) !== "hotel") {
+                                            $firstTravelItem = $candidate;
+                                            break;
+                                        }
+                                    }
+                                    $originDistance = (float)($firstTravelItem["distance_km"] ?? 0);
+                                    $originTravelMin = (int)($firstTravelItem["travel_time_min"] ?? 0);
+                                    $showOriginRow = $firstTravelItem
+                                        && !empty($firstTravelItem["start_time"])
+                                        && ((int)$day === 1 || $originDistance > 0 || $originTravelMin > 0);
+                                    $displayNo = 0;
+                                    $dayTotal = 0.0;
+                                ?>
+                                <?php if ($showOriginRow): ?>
+                                <tr style="background:#f8fafc;">
+                                    <td><strong>Start</strong></td>
+                                    <td>
+                                        <?php
+                                            if ($originTravelMin > 0) {
+                                                $departureTs = strtotime($firstTravelItem["start_time"]) - ($originTravelMin * 60);
+                                                echo $departureTs ? date("g:i A", $departureTs) : "&mdash;";
+                                            } else {
+                                                echo "Before " . date("g:i A", strtotime($firstTravelItem["start_time"]));
+                                            }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <?php
+                                                if ((int)$day === 1) {
+                                                    echo htmlspecialchars($originName !== "" ? "Depart from " . $originName : "Depart from starting location");
+                                                } else {
+                                                    echo "Depart from previous night's hotel";
+                                                }
+                                            ?>
+                                        </strong>
+                                        <div style="font-size:11px;color:var(--muted);">
+                                            <?php if ($originDistance > 0 || $originTravelMin > 0): ?>
+                                                Travel to <?php echo htmlspecialchars($firstTravelItem["item_title"]); ?>
+                                            <?php else: ?>
+                                                Route to first stop was not recorded for this itinerary.
+                                            <?php endif; ?>
+                                        </div>
+                                    </td>
+                                    <td><span class="chip">Origin</span></td>
+                                    <td>0.00</td>
+                                    <td><?php echo $originDistance > 0 ? number_format($originDistance, 2) : "&mdash;"; ?></td>
+                                    <td><?php echo $originTravelMin > 0 ? $originTravelMin . " min" : "Not recorded"; ?></td>
+                                </tr>
+                                <?php endif; ?>
+                                <?php foreach ($items as $r): $dayTotal += (float)$r["estimated_cost"]; ?>
+                                <?php
+                                    $isHotel = strtolower((string)($r["item_type"] ?? "")) === "hotel";
+                                    $isFirstTravelItem = $firstTravelItem && (int)$r["item_id"] === (int)$firstTravelItem["item_id"];
+                                    $rowNo = $isHotel ? "Stay" : (string)(++$displayNo);
+                                    $typeLabel = $isHotel ? "Hotel / Check-in" : ucfirst((string)$r["item_type"]);
+                                    $distanceText = ($showOriginRow && $isFirstTravelItem)
+                                        ? "&mdash;"
+                                        : ($r["distance_km"] !== null ? number_format((float)$r["distance_km"], 2) : "&mdash;");
+                                    $travelText = ($showOriginRow && $isFirstTravelItem)
+                                        ? "&mdash;"
+                                        : ($r["travel_time_min"] !== null ? (int)$r["travel_time_min"] . " min" : "&mdash;");
+                                ?>
                                 <tr>
-                                    <td><?php echo (int)$r["sequence_no"]; ?></td>
+                                    <td><?php echo htmlspecialchars($rowNo); ?></td>
                                     <td>
                                         <?php if (!empty($r["start_time"]) && !empty($r["end_time"])): ?>
                                             <?php echo date('g:i A', strtotime($r["start_time"])); ?> - <?php echo date('g:i A', strtotime($r["end_time"])); ?>
@@ -392,11 +488,14 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                             <?php endif; ?>
                                         </div>
                                         <?php endif; ?>
+                                        <?php if ($isHotel): ?>
+                                        <div style="font-size:11px;color:var(--muted);">End-of-day accommodation stop. Not counted as an itinerary place.</div>
+                                        <?php endif; ?>
                                     </td>
-                                    <td><span class="chip"><?php echo htmlspecialchars(ucfirst($r["item_type"])); ?></span></td>
+                                    <td><span class="chip"><?php echo htmlspecialchars($typeLabel); ?></span></td>
                                     <td><?php echo number_format((float)$r["estimated_cost"],2); ?></td>
-                                    <td><?php echo $r["distance_km"] !== null ? number_format((float)$r["distance_km"],2) : "&mdash;"; ?></td>
-                                    <td><?php echo $r["travel_time_min"] !== null ? (int)$r["travel_time_min"]." min" : "&mdash;"; ?></td>
+                                    <td><?php echo $distanceText; ?></td>
+                                    <td><?php echo $travelText; ?></td>
                                 </tr>
                                 <?php endforeach; ?>
                                 <tr style="background:#f8fafc;">
@@ -487,11 +586,37 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
 const ITINERARY_ID = <?php echo (int)$itineraryId; ?>;
 const COST_CHART_LABELS = <?php echo json_encode($chartLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 const COST_CHART_VALUES = <?php echo json_encode($chartAmounts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
+const COST_CHART_TOTAL = COST_CHART_VALUES.reduce((sum, value) => sum + Number(value || 0), 0);
 document.addEventListener('DOMContentLoaded', initCostPieChart);
 
 function initCostPieChart() {
     const canvas = document.getElementById('costPieChart');
     if (!canvas || !window.Chart || COST_CHART_VALUES.length === 0) return;
+    const percentLabelPlugin = {
+        id: 'percentLabelPlugin',
+        afterDatasetsDraw(chart) {
+            const { ctx } = chart;
+            const meta = chart.getDatasetMeta(0);
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.font = '800 12px system-ui, -apple-system, Segoe UI, Arial, sans-serif';
+            meta.data.forEach((arc, index) => {
+                const value = Number(chart.data.datasets[0].data[index] || 0);
+                if (!value || !COST_CHART_TOTAL) return;
+                const percent = (value / COST_CHART_TOTAL) * 100;
+                if (percent < 4) return;
+                const pos = arc.tooltipPosition();
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = 'rgba(15,23,42,0.42)';
+                ctx.fillStyle = '#ffffff';
+                const label = percent.toFixed(1) + '%';
+                ctx.strokeText(label, pos.x, pos.y);
+                ctx.fillText(label, pos.x, pos.y);
+            });
+            ctx.restore();
+        }
+    };
     new Chart(canvas, {
         type: 'pie',
         data: {
@@ -508,18 +633,20 @@ function initCostPieChart() {
             maintainAspectRatio: false,
             plugins: {
                 legend: {
-                    position: 'bottom',
-                    labels: { boxWidth: 12, color: '#334155', font: { size: 11, weight: 'bold' } }
+                    display: false
                 },
                 tooltip: {
                     callbacks: {
                         label: function(ctx) {
-                            return ctx.label + ': RM ' + Number(ctx.raw || 0).toFixed(2);
+                            const value = Number(ctx.raw || 0);
+                            const percent = COST_CHART_TOTAL > 0 ? (value / COST_CHART_TOTAL) * 100 : 0;
+                            return ctx.label + ': RM ' + value.toFixed(2) + ' (' + percent.toFixed(1) + '%)';
                         }
                     }
                 }
             }
-        }
+        },
+        plugins: [percentLabelPlugin]
     });
 }
 

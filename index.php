@@ -1,11 +1,25 @@
-<!-- index.php -->
+<?php
+// index.php
+session_start();
+require_once __DIR__ . "/config/db_connect.php";
+require_once __DIR__ . "/auth/remember_me.php";
+
+if (restore_remembered_login($conn)) {
+    if (($_SESSION["role"] ?? "") === "admin") {
+        header("Location: admin/admin_dashboard.php");
+        exit;
+    }
+    header("Location: traveller/traveller_dashboard.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Smart Travel Itinerary Generator - Demo</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css?v=20260513">
 </head>
 
 <body>

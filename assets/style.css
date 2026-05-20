@@ -22,12 +22,12 @@
 
 html,
 body {
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 body {
     margin: 0;
-    padding: 28px 14px;
+    padding: 46px 18px 28px;
     background:
         radial-gradient(900px 500px at 0% 0%, rgba(10, 26, 79, 0.14), transparent 62%),
         radial-gradient(800px 460px at 100% 18%, rgba(230, 126, 34, 0.14), transparent 56%),
@@ -35,13 +35,13 @@ body {
     color: var(--text);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .main-container {
     width: 100%;
     max-width: 1060px;
-    min-height: 620px;
+    min-height: 560px;
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
@@ -57,7 +57,7 @@ body {
     padding: 42px 34px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .brand-mark {
@@ -120,7 +120,7 @@ body {
     padding: 42px 34px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .form-title {
@@ -254,6 +254,13 @@ textarea:focus {
     background: #FFFFFF;
     color: var(--text);
     text-decoration: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.role-card:hover {
+    border-color: rgba(230, 126, 34, 0.42);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    transform: translateY(-1px);
 }
 
 .role-card strong {

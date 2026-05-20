@@ -12,6 +12,7 @@ $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $placeId = (int)($_POST["place_id"] ?? 0);
 $rating = (int)($_POST["rating"] ?? 0);
 $reviewText = trim((string)($_POST["review_text"] ?? ""));
+$reviewText = preg_replace('/\s+/', ' ', $reviewText) ?? $reviewText;
 
 function review_back(int $placeId, string $msg, bool $isError = false): void
 {
@@ -23,7 +24,7 @@ function review_back(int $placeId, string $msg, bool $isError = false): void
 
 if ($travellerId <= 0) review_back($placeId, "Invalid session. Please login again.", true);
 if ($placeId <= 0) review_back(0, "Invalid place.", true);
-if ($rating < 1 || $rating > 5) review_back($placeId, "Rating must be between 1 and 5.", true);
+if ($rating < 1 || $rating > 5) review_back($placeId, "Please choose a rating from 1 to 5 stars.", true);
 if (strlen($reviewText) > 2000) review_back($placeId, "Review is too long.", true);
 
 $check = $conn->prepare("SELECT place_id FROM cultural_places WHERE place_id = ? AND is_active = 1 LIMIT 1");
@@ -70,4 +71,4 @@ if (!empty($cols)) {
     }
 }
 
-review_back($placeId, "Review saved successfully.");
+review_back($placeId, "Your rating and review have been saved.");

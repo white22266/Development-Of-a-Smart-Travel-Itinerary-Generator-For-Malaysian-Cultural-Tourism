@@ -317,15 +317,9 @@ function take_compact_from_pool(array &$pool, int $k, float $maxKm): array
             $selected = [];
             foreach ($pickedIdx as $idx) $selected[] = $pool[$idx];
 
-            // Remove selected from pool by place_id
-            $pickedIds = array_flip(array_map(fn($x) => (int)$x["place_id"], $selected));
-            $newPool = [];
-            foreach ($pool as $p) {
-                $pid = (int)$p["place_id"];
-                if (!isset($pickedIds[$pid])) $newPool[] = $p;
-            }
-            $pool = $newPool;
-
+            // Keep the pool intact until an item is actually inserted. This prevents
+            // a day becoming empty when a preselected item is later skipped by
+            // opening-hour or festival-date checks.
             return $selected;
         }
     }
@@ -342,9 +336,7 @@ function take_loose_from_pool(array &$pool, int $k): array
     $take = min($k, count($pool));
     $selected = array_slice($pool, 0, $take);
 
-    // remove selected (no reuse)
-    $pool = array_slice($pool, $take);
-
+    // Keep the pool intact until insert succeeds; usedPlaceIds removes real inserts.
     return $selected;
 }
 
@@ -354,6 +346,15 @@ function desired_food_count(int $itemsPerDay): int
     if ($itemsPerDay >= 5) return 2;
     if ($itemsPerDay >= 3) return 1;
     return 0;
+}
+
+function pace_buffer_minutes(string $travelPace): int
+{
+    return match (strtolower(trim($travelPace))) {
+        "relaxed" => 45,
+        "packed" => 15,
+        default => 30,
+    };
 }
 
 function count_food(array $selected): int
@@ -619,16 +620,6 @@ function preference_interest_csv(mysqli $conn, int $preferenceId, string $fallba
             $stmt->close();
         }
     }
-    if (empty($values) && table_exists($conn, "preference_interests")) {
-        $stmt = $conn->prepare("SELECT interest FROM preference_interests WHERE preference_id = ? ORDER BY interest");
-        if ($stmt) {
-            $stmt->bind_param("i", $preferenceId);
-            $stmt->execute();
-            $res = $stmt->get_result();
-            while ($row = $res->fetch_assoc()) $values[] = (string)$row["interest"];
-            $stmt->close();
-        }
-    }
     return empty($values) ? trim($fallbackCsv) : implode(",", array_values(array_unique($values)));
 }
 
@@ -648,16 +639,6 @@ function preference_state_csv(mysqli $conn, int $preferenceId, string $fallbackC
             $stmt->execute();
             $res = $stmt->get_result();
             while ($row = $res->fetch_assoc()) $values[] = (string)$row["state_name"];
-            $stmt->close();
-        }
-    }
-    if (empty($values) && table_exists($conn, "preference_states")) {
-        $stmt = $conn->prepare("SELECT state FROM preference_states WHERE preference_id = ? ORDER BY state");
-        if ($stmt) {
-            $stmt->bind_param("i", $preferenceId);
-            $stmt->execute();
-            $res = $stmt->get_result();
-            while ($row = $res->fetch_assoc()) $values[] = (string)$row["state"];
             $stmt->close();
         }
     }
@@ -793,6 +774,50 @@ function remove_unavailable_festivals_for_day(array &$pool, ?string $dayDate): v
     $pool = $filtered;
 }
 
+function filter_and_top_up_day_selection(
+    array $selected,
+    array $byState,
+    array $stateOrder,
+    int $itemsPerDay,
+    array $usedPlaceIds,
+    ?string $dayDate,
+    int $dayStartMin
+): array {
+    $result = [];
+    $selectedIds = [];
+
+    $appendIfUsable = function (array $place) use (&$result, &$selectedIds, $itemsPerDay, $usedPlaceIds, $dayDate, $dayStartMin): bool {
+        if (count($result) >= $itemsPerDay) return false;
+
+        $placeId = (int)($place["place_id"] ?? 0);
+        if ($placeId <= 0) return false;
+        if (isset($usedPlaceIds[$placeId]) || isset($selectedIds[$placeId])) return false;
+        if (!valid_coord($place["latitude"] ?? null, $place["longitude"] ?? null)) return false;
+        if (!festival_available_on_date($place, $dayDate)) return false;
+        if (!opening_hours_allows($place["opening_hours"] ?? null, $dayStartMin)) return false;
+
+        $result[] = $place;
+        $selectedIds[$placeId] = true;
+        return true;
+    };
+
+    foreach ($selected as $place) {
+        $appendIfUsable($place);
+    }
+
+    if (count($result) >= $itemsPerDay) return $result;
+
+    foreach ($stateOrder as $state) {
+        if (!isset($byState[$state])) continue;
+        foreach ($byState[$state] as $place) {
+            $appendIfUsable($place);
+            if (count($result) >= $itemsPerDay) return $result;
+        }
+    }
+
+    return $result;
+}
+
 // ===================== 1) LOAD PREFERENCE =====================
 // Check if preferred_districts column exists (graceful fallback)
 $colCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'preferred_districts'");
@@ -829,8 +854,11 @@ $statesCsv     = preference_state_csv($conn, $preferenceId, (string)($pref["pref
 $districtsCsv  = trim((string)($pref["preferred_districts"] ?? ""));
 $tripEndDate = trip_end_date($sd, $tripDays);
 
-if ($travelPace === "relaxed") $itemsPerDay = min($itemsPerDay, 2);
-elseif ($travelPace === "packed") $itemsPerDay = max($itemsPerDay, 4);
+// Daily stop count is controlled by the saved travel pace. Hotels are added
+// later as accommodation and do not consume the daily place quota.
+if ($travelPace === "relaxed") $itemsPerDay = 3;
+elseif ($travelPace === "packed") $itemsPerDay = 5;
+else $itemsPerDay = 4;
 
 // For title only
 $titleStatesCsv = ($statesCsv === "") ? "Malaysia" : $statesCsv;
@@ -944,13 +972,30 @@ $stmt->close();
 $seed = crc32($travellerId . "|" . $preferenceId . "|" . date("Y-m-d H:i:s"));
 $title = build_itinerary_title($tripDays, $titleStatesCsv, $interestsCsv, $seed);
 
-$stmt = $conn->prepare("
-  INSERT INTO itineraries
-    (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost)
-  VALUES
-    (?,?,?,?,?,?,0.00)
-");
-$stmt->bind_param("iissii", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay);
+$hasOriginColumns = table_has_column($conn, "itineraries", "origin_name")
+    && table_has_column($conn, "itineraries", "origin_lat")
+    && table_has_column($conn, "itineraries", "origin_lng");
+
+if ($hasOriginColumns) {
+    $originNameDb = $originName !== "" ? $originName : null;
+    $originLatDb = $hasOrigin ? $originLat : null;
+    $originLngDb = $hasOrigin ? $originLng : null;
+    $stmt = $conn->prepare("
+      INSERT INTO itineraries
+        (traveller_id, preference_id, title, start_date, total_days, items_per_day, origin_name, origin_lat, origin_lng, total_estimated_cost)
+      VALUES
+        (?,?,?,?,?,?,?,?,?,0.00)
+    ");
+    $stmt->bind_param("iissiisdd", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay, $originNameDb, $originLatDb, $originLngDb);
+} else {
+    $stmt = $conn->prepare("
+      INSERT INTO itineraries
+        (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost)
+      VALUES
+        (?,?,?,?,?,?,0.00)
+    ");
+    $stmt->bind_param("iissii", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay);
+}
 
 if (!$stmt->execute()) {
     // If itinerary itself cannot be created, we must return (cannot continue).
@@ -1081,6 +1126,22 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
         // Food priority within the SAME day state (rule #4)
         ensure_food_priority($selected, $byState[$chosenState], $itemsPerDay, $maxDayKm);
 
+        // Remove unusable candidates before ordering, then top up from available
+        // nearby pools so a valid day does not become empty after schedule checks.
+        $selected = filter_and_top_up_day_selection(
+            $selected,
+            $byState,
+            $candidates,
+            $itemsPerDay,
+            $usedPlaceIds,
+            $dayDate,
+            $dayStartMin
+        );
+        if (empty($selected)) {
+            $currentState = pick_start_state_best($byState) ?? $currentState;
+            continue;
+        }
+
         // Route ordering mode (both have real function)
         if ($routeStrategy === "google_optimize") {
             $opt = order_google_optimize($selected, $transportType);
@@ -1120,8 +1181,11 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             }
 
             $candidateStartMin = $dayCursorMin;
-            if ($seq > 1) {
-                $candidateStartMin += (int)($timeMin ?? (($transportType === "walking") ? 20 : 15));
+            if ($timeMin !== null) {
+                // Includes the trip origin -> first stop leg when a start location exists.
+                $candidateStartMin += (int)$timeMin;
+            } elseif ($seq > 1) {
+                $candidateStartMin += (int)(($transportType === "walking") ? 20 : 15);
             }
 
             if (!opening_hours_allows($p["opening_hours"] ?? null, $candidateStartMin)) {
@@ -1162,7 +1226,7 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
                 $insertedItems[] = ["estimated_cost" => $fee, "item_type" => $itemType];
                 $usedPlaceIds[$placeId] = true;
                 $seq++;
-                $dayCursorMin += $durationMin;
+                $dayCursorMin += $durationMin + pace_buffer_minutes($travelPace);
             }
         }
 

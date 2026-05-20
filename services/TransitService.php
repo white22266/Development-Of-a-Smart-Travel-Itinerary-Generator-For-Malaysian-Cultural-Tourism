@@ -210,8 +210,27 @@ class TransitService
             'steps'          => $parsedSteps,
             'legs'           => $legSummaries,
             'fare'           => $fare,
-            'warnings'       => $route['warnings'] ?? [],
+            'warnings'       => $this->filterWarnings($route['warnings'] ?? []),
         ];
+    }
+
+    private function filterWarnings(array $warnings): array
+    {
+        $filtered = [];
+        foreach ($warnings as $warning) {
+            $text = trim(strip_tags((string)$warning));
+            if ($text === '') continue;
+            $lower = strtolower($text);
+            if (
+                str_contains($lower, 'walking directions are in beta') ||
+                str_contains($lower, 'missing sidewalks') ||
+                str_contains($lower, 'pedestrian paths')
+            ) {
+                continue;
+            }
+            $filtered[] = $text;
+        }
+        return $filtered;
     }
 
     private function parseStep(array $step, string $mode): array

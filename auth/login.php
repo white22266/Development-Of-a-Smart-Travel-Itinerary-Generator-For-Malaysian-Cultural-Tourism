@@ -72,6 +72,7 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"]);
 // optional: 通过 ?role=admin / ?role=traveller 预选角色
 $defaultRole = $_GET['role'] ?? 'traveller';
 if (!in_array($defaultRole, ["admin", "traveller"], true)) $defaultRole = "traveller";
+$defaultRoleLabel = ucfirst($defaultRole);
 
 // view switch: login | forgot | reset
 $view = "login";
@@ -84,7 +85,7 @@ if ($action === "reset")  $view = "reset";
 <head>
     <meta charset="UTF-8">
     <title>Login - Smart Travel Itinerary Generator</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css?v=20260513">
     <script>
         function togglePassword(inputId, icon) {
             const input = document.getElementById(inputId);
@@ -151,11 +152,12 @@ if ($action === "reset")  $view = "reset";
                     </div>
 
                     <div class="form-group">
-                        <label for="role">Login as</label>
-                        <select id="role" name="role">
-                            <option value="traveller" <?php echo $defaultRole === 'traveller' ? 'selected' : ''; ?>>Traveller</option>
-                            <option value="admin" <?php echo $defaultRole === 'admin' ? 'selected' : ''; ?>>Admin</option>
-                        </select>
+                        <label>Login as</label>
+                        <input type="text" value="<?php echo htmlspecialchars($defaultRoleLabel); ?>" disabled>
+                        <input type="hidden" name="role" value="<?php echo htmlspecialchars($defaultRole); ?>">
+                        <div class="small" style="margin-top:6px;">
+                            Role is selected from the access page. Go back to change access path.
+                        </div>
                     </div>
 
                     <label style="display:flex; align-items:center; gap:8px; font-size:13px; margin-bottom:14px;">
@@ -189,10 +191,8 @@ if ($action === "reset")  $view = "reset";
 
                     <div class="form-group">
                         <label>Role</label>
-                        <select name="role">
-                            <option value="traveller">Traveller</option>
-                            <option value="admin">Admin</option>
-                        </select>
+                        <input type="text" value="<?php echo htmlspecialchars($defaultRoleLabel); ?>" disabled>
+                        <input type="hidden" name="role" value="<?php echo htmlspecialchars($defaultRole); ?>">
                     </div>
 
                     <button type="submit" class="btn btn-primary">Send Reset Link</button>

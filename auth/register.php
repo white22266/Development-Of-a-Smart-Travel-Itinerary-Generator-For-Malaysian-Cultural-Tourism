@@ -19,7 +19,7 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
 <head>
     <meta charset="UTF-8">
     <title>Register - Smart Travel Itinerary Generator</title>
-    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css?v=20260513">
 
     <script>
         function togglePassword(inputId, icon) {

@@ -120,17 +120,18 @@ if (empty($nearbyHotels) && !empty($p["state"])) {
 }
 
 // ---- Image helper ----
-function img_src($imageUrl)
+function img_src($imageUrl, $placeId = 0)
 {
     $imageUrl = trim((string)$imageUrl);
-    if ($imageUrl === "") return "";
+    if ($imageUrl === "") return "../api/place_photo.php?place_id=" . (int)$placeId . "&v=2";
     if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) return $imageUrl;
     if (strpos($imageUrl, 'data:image/') === 0) return $imageUrl;
     $imageUrl = ltrim($imageUrl, '/');
     return "../" . $imageUrl;
 }
 
-$img = img_src($p["image_url"] ?? "");
+$img = img_src($p["image_url"] ?? "", (int)$p["place_id"]);
+$imageFallback = "../assets/place_placeholder.svg";
 
 $mapLink = "";
 if (!empty($p["latitude"]) && !empty($p["longitude"])) {
@@ -241,6 +242,67 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             font-size: 12px;
         }
 
+        .rating-summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 12px 14px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 12px;
+            background: #f8fafc;
+            margin: 10px 0 12px;
+        }
+
+        .rating-score {
+            font-size: 28px;
+            line-height: 1;
+            font-weight: 900;
+            color: var(--navy);
+        }
+
+        .star-rating {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 3px;
+        }
+
+        .star-rating input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .star-rating label {
+            font-size: 30px;
+            line-height: 1;
+            color: #cbd5e1;
+            cursor: pointer;
+            transition: color .12s ease, transform .12s ease;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #f59e0b;
+        }
+
+        .star-rating label:hover {
+            transform: translateY(-1px);
+        }
+
+        .review-form {
+            display: grid;
+            gap: 10px;
+            margin: 12px 0;
+            padding: 14px;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 12px;
+            background: #fff;
+        }
+
         .section-title {
             font-size: 16px;
             font-weight: 900;
@@ -319,9 +381,11 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <div class="detail-wrap">
                         <div class="hero">
                             <?php if ($img !== ""): ?>
-                                <img src="<?php echo htmlspecialchars($img); ?>" alt="Place Image">
+                                <img src="<?php echo htmlspecialchars($img); ?>" alt="<?php echo htmlspecialchars($p["name"]); ?>"
+                                     loading="lazy" decoding="async"
+                                     onerror="this.onerror=null;this.src='<?php echo htmlspecialchars($imageFallback); ?>';">
                             <?php else: ?>
-                                <div class="noimg">No image available</div>
+                                <div class="noimg">No place photo available</div>
                             <?php endif; ?>
                         </div>
 
@@ -381,27 +445,40 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
 
                     <hr class="sep">
                     <div class="section-title">Traveller Ratings &amp; Reviews</div>
-                    <p class="meta">
-                        <?php if ($reviewStats["total"] > 0): ?>
-                            Average rating: <strong><?php echo number_format((float)$reviewStats["avg"], 1); ?>/5</strong>
-                            from <?php echo (int)$reviewStats["total"]; ?> review(s).
-                        <?php else: ?>
-                            No traveller reviews yet.
-                        <?php endif; ?>
-                    </p>
+                    <div class="rating-summary">
+                        <div>
+                            <?php if ($reviewStats["total"] > 0): ?>
+                                <div class="rating-score"><?php echo number_format((float)$reviewStats["avg"], 1); ?><span style="font-size:14px;color:var(--muted);"> / 5</span></div>
+                                <div class="stars" style="font-size:16px;margin-top:4px;">
+                                    <?php
+                                    $avgDisplay = (float)$reviewStats["avg"];
+                                    $fullStars = (int)floor($avgDisplay);
+                                    $halfStar = ($avgDisplay - $fullStars) >= 0.5 ? 1 : 0;
+                                    echo str_repeat("&#9733;", $fullStars) . ($halfStar ? "&#9733;" : "") . str_repeat("&#9734;", 5 - $fullStars - $halfStar);
+                                    ?>
+                                </div>
+                            <?php else: ?>
+                                <div class="rating-score">-<span style="font-size:14px;color:var(--muted);"> / 5</span></div>
+                                <div class="meta">No traveller reviews yet.</div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="meta">
+                            <?php echo (int)$reviewStats["total"]; ?> traveller review<?php echo ((int)$reviewStats["total"] === 1) ? "" : "s"; ?>.
+                            Your review helps other travellers judge cultural value, cost accuracy, and visit experience.
+                        </div>
+                    </div>
 
-                    <form method="post" action="submit_review.php" style="display:grid; gap:10px; margin:12px 0;">
+                    <form method="post" action="submit_review.php" class="review-form">
                         <input type="hidden" name="place_id" value="<?php echo (int)$placeId; ?>">
                         <div>
-                            <label style="font-size:13px; font-weight:800;">Your Rating *</label><br>
-                            <select name="rating" required style="width:220px; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                <option value="" disabled <?php echo !$userReview ? "selected" : ""; ?>>Choose rating</option>
+                            <label style="font-size:13px; font-weight:800; display:block; margin-bottom:6px;">Your Rating *</label>
+                            <div class="star-rating" aria-label="Choose a rating from 1 to 5 stars">
                                 <?php for ($i = 5; $i >= 1; $i--): ?>
-                                    <option value="<?php echo $i; ?>" <?php echo ((int)($userReview["rating"] ?? 0) === $i) ? "selected" : ""; ?>>
-                                        <?php echo $i; ?> / 5
-                                    </option>
+                                    <input type="radio" id="rating-<?php echo $i; ?>" name="rating" value="<?php echo $i; ?>" required <?php echo ((int)($userReview["rating"] ?? 0) === $i) ? "checked" : ""; ?>>
+                                    <label for="rating-<?php echo $i; ?>" title="<?php echo $i; ?> star<?php echo $i > 1 ? "s" : ""; ?>">&#9733;</label>
                                 <?php endfor; ?>
-                            </select>
+                            </div>
+                            <div class="meta" style="margin-top:4px;">Choose 1 to 5 stars. You can update your review later.</div>
                         </div>
                         <div>
                             <label style="font-size:13px; font-weight:800;">Review</label><br>

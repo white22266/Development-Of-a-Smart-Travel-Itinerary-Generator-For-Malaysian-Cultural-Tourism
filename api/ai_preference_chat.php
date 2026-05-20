@@ -148,7 +148,7 @@ function call_ollama_chat(string $model, string $prompt): array
     curl_close($ch);
 
     if ($raw === false || $err !== "") {
-        return ["status" => "error", "message" => "AI service is currently unavailable. Please make sure Ollama is running.", "source" => "ollama"];
+        return ["status" => "error", "message" => "AI service is currently unavailable.", "source" => "ollama"];
     }
 
     $json = json_decode($raw, true);

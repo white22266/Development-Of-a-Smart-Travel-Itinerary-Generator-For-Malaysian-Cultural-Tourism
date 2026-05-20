@@ -104,16 +104,6 @@ function preference_interest_frequency(mysqli $conn, string $tpDate): array
             ORDER BY total DESC, Interest ASC
         ");
     }
-    if (table_exists($conn, "preference_interests")) {
-        return rows_query($conn, "
-            SELECT pi.interest AS Interest, COUNT(*) AS Total, COUNT(*) AS total
-            FROM preference_interests pi
-            JOIN traveller_preferences tp ON tp.preference_id = pi.preference_id
-            WHERE 1=1$tpDate
-            GROUP BY pi.interest
-            ORDER BY total DESC, Interest ASC
-        ");
-    }
     return [];
 }
 
@@ -127,16 +117,6 @@ function preference_state_frequency(mysqli $conn, string $tpDate): array
             JOIN traveller_preferences tp ON tp.preference_id = tps.preference_id
             WHERE 1=1$tpDate
             GROUP BY ms.state_id, ms.state_name
-            ORDER BY total DESC, State ASC
-        ");
-    }
-    if (table_exists($conn, "preference_states")) {
-        return rows_query($conn, "
-            SELECT ps.state AS State, COUNT(*) AS Total, COUNT(*) AS total
-            FROM preference_states ps
-            JOIN traveller_preferences tp ON tp.preference_id = ps.preference_id
-            WHERE 1=1$tpDate
-            GROUP BY ps.state
             ORDER BY total DESC, State ASC
         ");
     }

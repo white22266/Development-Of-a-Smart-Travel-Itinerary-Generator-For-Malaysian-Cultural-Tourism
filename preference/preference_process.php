@@ -33,39 +33,6 @@ function save_preference_junctions(mysqli $conn, int $preferenceId, array $inter
 {
     if ($preferenceId <= 0) return;
 
-    if (pref_table_exists($conn, "preference_interests")) {
-        $stmt = $conn->prepare("INSERT IGNORE INTO preference_interests (preference_id, interest) VALUES (?, ?)");
-        if ($stmt) {
-            foreach (array_unique(array_filter(array_map("trim", $interests))) as $interest) {
-                $stmt->bind_param("is", $preferenceId, $interest);
-                $stmt->execute();
-            }
-            $stmt->close();
-        }
-    }
-
-    if (pref_table_exists($conn, "preference_states")) {
-        $stmt = $conn->prepare("INSERT IGNORE INTO preference_states (preference_id, state) VALUES (?, ?)");
-        if ($stmt) {
-            foreach (array_unique(array_filter(array_map("trim", $states))) as $state) {
-                $stmt->bind_param("is", $preferenceId, $state);
-                $stmt->execute();
-            }
-            $stmt->close();
-        }
-    }
-
-    if (pref_table_exists($conn, "preference_districts") && $district !== "") {
-        $stateForDistrict = trim((string)($states[0] ?? ""));
-        $stmt = $conn->prepare("INSERT IGNORE INTO preference_districts (preference_id, state, district) VALUES (?, ?, ?)");
-        if ($stmt) {
-            $stmt->bind_param("iss", $preferenceId, $stateForDistrict, $district);
-            $stmt->execute();
-            $stmt->close();
-        }
-    }
-
-    // Supervisor-required normalized junctions using lookup ids.
     if (pref_table_exists($conn, "traveller_preference_interests") && pref_table_exists($conn, "travel_interests")) {
         $stmt = $conn->prepare("
             INSERT IGNORE INTO traveller_preference_interests (preference_id, interest_id)
