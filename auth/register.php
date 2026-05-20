@@ -80,7 +80,7 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
     </script>
 </head>
 
-<body>
+<body class="auth-entry-page register-page">
     <?php if (!empty($errors)): ?>
         <script>
             alert("Registration failed. Please check your inputs.");
@@ -89,18 +89,30 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
 
     <div class="main-container">
         <div class="left-panel">
-            <h1>Create Account</h1>
-            <p>Register as a traveller to create and manage your itineraries and access cultural travel features.</p>
-            <?php if ($success): ?>
-                <div style="color:green; font-weight:800; margin:12px 0 0;">
-                    <?php echo htmlspecialchars($success); ?>
+            <div class="left-copy">
+                <div class="brand-mark">ST</div>
+                <div class="entry-kicker">Traveller Registration</div>
+                <h1>Create Account</h1>
+                <p>
+                    Register as a traveller to create and manage your itineraries
+                    and access cultural travel features.
+                </p>
+                <div class="entry-list compact-entry-list">
+                    <div>Email verification required before login</div>
+                    <div>Saved trips, trip summary and AI assistant access</div>
                 </div>
-            <?php endif; ?>
+                <?php if ($success): ?>
+                    <div style="color:green; font-weight:800; margin:12px 0 0;">
+                        <?php echo htmlspecialchars($success); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <a class="auth-back-link" href="../role_select.php" title="Back to Role Selection">&#8592; Back</a>
         </div>
 
         <div class="right-panel">
-            <h2 class="form-title">Register (Traveller Only)</h2>
-            <p class="form-subtitle">Fill in the details below to create your account.</p>
+            <h2 class="form-title">Create Traveller Account</h2>
+            <p class="form-subtitle">Traveller-only registration. Verify your email before using the system.</p>
 
             <?php if (!empty($errors)): ?>
                 <ul style="color:red; margin:0 0 12px 18px;">
@@ -110,14 +122,9 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
                 </ul>
             <?php endif; ?>
 
-            <form id="registerForm" method="post" action="register_process.php">
+            <form id="registerForm" class="compact-register-form" method="post" action="register_process.php">
                 <!-- Traveller only -->
                 <input type="hidden" name="role" value="traveller">
-
-                <div class="form-group">
-                    <label>Register as</label>
-                    <input type="text" value="Traveller" disabled>
-                </div>
 
                 <div class="form-group">
                     <label for="full_name">Full Name / Username</label>
@@ -155,7 +162,7 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
                 <button type="submit" class="btn btn-primary">Register</button>
             </form>
 
-            <div class="form-footer">
+            <div class="form-footer auth-account-switch">
                 Already registered?
                 <a href="login.php?role=traveller">Login here</a>
             </div>

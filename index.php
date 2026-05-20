@@ -22,7 +22,7 @@ if (restore_remembered_login($conn)) {
     <link rel="stylesheet" href="assets/style.css?v=20260513">
 </head>
 
-<body>
+<body class="entry-home-page">
     <div class="main-container">
         <div class="left-panel">
             <div class="brand-mark">ST</div>
@@ -44,9 +44,16 @@ if (restore_remembered_login($conn)) {
             <p class="form-subtitle">
                 Please login or register first. System features are available only to verified users.
             </p>
-            <div class="button-row">
-                <a href="role_select.php" class="btn btn-primary">Login / Register</a>
-                <a href="auth/register.php" class="btn btn-outline">Create Traveller Account</a>
+
+            <div class="welcome-panel">
+                <p>
+                    Continue to the access page to login as a traveller or admin.
+                    New travellers can create and verify an account before using the system.
+                </p>
+                <div class="button-row">
+                    <a href="role_select.php" class="btn btn-primary">Start Now</a>
+                    <a href="auth/register.php" class="btn btn-outline">Create Account</a>
+                </div>
             </div>
         </div>
     </div>

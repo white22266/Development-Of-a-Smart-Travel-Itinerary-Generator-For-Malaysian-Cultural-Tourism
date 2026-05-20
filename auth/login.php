@@ -102,24 +102,32 @@ if ($action === "reset")  $view = "reset";
     </script>
 </head>
 
-<body>
+<body class="auth-entry-page login-page">
     <div class="main-container">
         <div class="left-panel">
-            <h1>Welcome Back</h1>
-            <p>
-                Sign in to continue managing cultural information (Admin) or
-                to access your personalised travel itinerary (Traveller).
-            </p>
-
-            <?php if ($success): ?>
-                <div style="color:green; font-weight:800; margin:12px 0 0;">
-                    <?php echo htmlspecialchars($success); ?>
+            <div class="left-copy">
+                <div class="brand-mark">ST</div>
+                <div class="entry-kicker">Account Access</div>
+                <h1>Welcome Back</h1>
+                <p>
+                    Sign in to continue managing cultural information (Admin) or
+                    to access your personalised travel itinerary (Traveller).
+                </p>
+                <div class="entry-list compact-entry-list">
+                    <div>Traveller: view, refine and share itineraries</div>
+                    <div>Admin: manage cultural data and reports</div>
                 </div>
-            <?php endif; ?>
+
+                <?php if ($success): ?>
+                    <div style="color:green; font-weight:800; margin:12px 0 0;">
+                        <?php echo htmlspecialchars($success); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <a class="auth-back-link" href="../role_select.php" title="Back to Role Selection">&#8592; Back</a>
         </div>
 
         <div class="right-panel">
-
             <?php if (!empty($errors)): ?>
                 <div style="color:red; font-weight:800; margin:10px 0 12px;">
                     <?php echo htmlspecialchars($errors[0]); ?>
@@ -172,8 +180,8 @@ if ($action === "reset")  $view = "reset";
                     <a href="login.php?action=forgot&role=<?php echo urlencode($defaultRole); ?>">Forgot password?</a>
                 </div>
 
-                <div class="form-footer" style="margin-top:14px;">
-                    Haven’t registered?
+                <div class="form-footer auth-account-switch">
+                    Haven't registered?
                     <a href="register.php">Create an account</a>
                 </div>
 
