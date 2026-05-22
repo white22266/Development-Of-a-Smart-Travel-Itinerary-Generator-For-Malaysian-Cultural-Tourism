@@ -188,106 +188,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   try {
 
-    /* ---------- CREATE TRAVELLER ---------- */
     if ($action === "create") {
-      $name = trim($_POST["name"] ?? "");
-      $email = trim($_POST["email"] ?? "");
-      $phone = trim($_POST["phone"] ?? "");
-      $password = (string)($_POST["password"] ?? "");
-      $confirm  = (string)($_POST["confirm_password"] ?? "");
-
-      $errors = [];
-      if ($name === "" || $email === "" || $password === "" || $confirm === "") $errors[] = "All required fields must be filled.";
-      if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email format.";
-      if ($password !== "" && strlen($password) < 6) $errors[] = "Password must be at least 6 characters.";
-      if ($password !== $confirm) $errors[] = "Password and confirm password do not match.";
-
-      if (!empty($errors)) {
-        flash_set_errors($errors);
-        $_SESSION["old_input"] = ["name" => $name, "email" => $email, "phone" => $phone];
-        redirect_to("index.php?view=create");
-      }
-
-      $check = $conn->prepare("SELECT traveller_id FROM travellers WHERE email = ? LIMIT 1");
-      if (!$check) throw new Exception("Prepare failed (duplicate check).");
-      $check->bind_param("s", $email);
-      $check->execute();
-      $dup = $check->get_result()->fetch_assoc();
-      $check->close();
-
-      if ($dup) {
-        flash_set_errors(["Traveller email already exists."]);
-        $_SESSION["old_input"] = ["name" => $name, "email" => $email, "phone" => $phone];
-        redirect_to("index.php?view=create");
-      }
-
-      $hash = password_hash($password, PASSWORD_DEFAULT);
-
-      // NOTE: force_password_change exists, default 0, so no need insert it
-      $stmt = $conn->prepare("INSERT INTO travellers (full_name, email, password_hash, phone) VALUES (?,?,?,?)");
-      if (!$stmt) throw new Exception("Prepare failed (insert).");
-      $stmt->bind_param("ssss", $name, $email, $hash, $phone);
-
-      if (!$stmt->execute()) {
-        $stmt->close();
-        throw new Exception("Insert failed.");
-      }
-      $newId = (int)$stmt->insert_id;
-      $stmt->close();
-
-      unset($_SESSION["old_input"]);
-      flash_set_success("Traveller created successfully.");
-      redirect_to("index.php?view=edit&id=" . $newId);
+      flash_set_errors(["Admin traveller creation is disabled. Travellers must register through the public registration page."]);
+      redirect_to("index.php");
     }
 
-    /* ---------- UPDATE TRAVELLER PROFILE ---------- */
     if ($action === "update") {
-      $id = (int)($_POST["id"] ?? 0);
-      if ($id <= 0) {
-        flash_set_errors(["Invalid traveller id."]);
-        redirect_to("index.php");
-      }
-
-      $name = trim($_POST["name"] ?? "");
-      $email = trim($_POST["email"] ?? "");
-      $phone = trim($_POST["phone"] ?? "");
-
-      $errors = [];
-      if ($name === "" || $email === "") $errors[] = "Name and email are required.";
-      if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email format.";
-
-      if (!empty($errors)) {
-        flash_set_errors($errors);
-        $_SESSION["old_input"] = ["name" => $name, "email" => $email, "phone" => $phone];
-        redirect_to("index.php?view=edit&id=" . $id);
-      }
-
-      $check = $conn->prepare("SELECT traveller_id FROM travellers WHERE email = ? AND traveller_id <> ? LIMIT 1");
-      if (!$check) throw new Exception("Prepare failed (duplicate check).");
-      $check->bind_param("si", $email, $id);
-      $check->execute();
-      $dup = $check->get_result()->fetch_assoc();
-      $check->close();
-
-      if ($dup) {
-        flash_set_errors(["Email already exists."]);
-        $_SESSION["old_input"] = ["name" => $name, "email" => $email, "phone" => $phone];
-        redirect_to("index.php?view=edit&id=" . $id);
-      }
-
-      $stmt = $conn->prepare("UPDATE travellers SET full_name = ?, email = ?, phone = ? WHERE traveller_id = ?");
-      if (!$stmt) throw new Exception("Prepare failed (update).");
-      $stmt->bind_param("sssi", $name, $email, $phone, $id);
-
-      if (!$stmt->execute()) {
-        $stmt->close();
-        throw new Exception("Update failed.");
-      }
-      $stmt->close();
-
-      unset($_SESSION["old_input"]);
-      flash_set_success("Profile updated.");
-      redirect_to("index.php?view=edit&id=" . $id);
+      flash_set_errors(["Admin profile editing is disabled. Only password reset is available here."]);
+      redirect_to("index.php");
     }
 
     /* ---------- RESET PASSWORD ---------- */
@@ -366,6 +274,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
    ============================= */
 $view = strtolower(trim($_GET["view"] ?? "list")); // list | create | edit | reset
 if (!in_array($view, ["list", "create", "edit", "reset"], true)) $view = "list";
+if ($view === "create" || $view === "edit") $view = "list";
 
 $success = flash_get("success_message");
 $errors = flash_get_errors();
@@ -561,7 +470,6 @@ unset($_SESSION["old_input"]);
           </div>
           <div class="actions">
             <a class="btn btn-ghost" href="index.php">Back to list</a>
-            <a class="btn btn-ghost" href="index.php?view=edit&id=<?php echo (int)$user["id"]; ?>">Edit Profile</a>
           </div>
         </div>
 
@@ -654,10 +562,7 @@ unset($_SESSION["old_input"]);
         <div class="topbar">
           <div class="page-title">
             <h1>User Management</h1>
-            <p>Traveller accounts only (view, create, update, reset password). Deletion is disabled.</p>
-          </div>
-          <div class="actions">
-            <a class="btn btn-primary" href="index.php?view=create">Add Traveller</a>
+            <p>Traveller accounts only. Admin can reset passwords when users need account help.</p>
           </div>
         </div>
 
@@ -681,7 +586,7 @@ unset($_SESSION["old_input"]);
                   <th>Name</th>
                   <th>Email</th>
                   <th>Phone</th>
-                  <th style="min-width:220px;">Actions</th>
+                  <th style="min-width:160px;">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -698,7 +603,6 @@ unset($_SESSION["old_input"]);
                       <td><?php echo h((string)($r["phone"] ?? "")); ?></td>
                       <td>
                         <div class="actions-inline">
-                          <a class="btn btn-ghost" href="index.php?view=edit&id=<?php echo (int)$r["id"]; ?>">Edit</a>
                           <a class="btn btn-primary" href="index.php?view=reset&id=<?php echo (int)$r["id"]; ?>">Reset Password</a>
                         </div>
                       </td>

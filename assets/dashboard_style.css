@@ -179,6 +179,12 @@ body{
   gap:8px;
   text-decoration:none;
 }
+.btn-small{
+  min-height:34px;
+  padding:8px 10px;
+  font-size:12px;
+  white-space:nowrap;
+}
 .btn-primary{
   color: var(--navy);
   background: linear-gradient(135deg, var(--gold), var(--orange));
@@ -197,12 +203,32 @@ body{
   grid-template-columns: repeat(12, 1fr);
   gap:16px;
 }
+.section-heading{
+  padding:4px 2px 0;
+}
+.section-heading h2{
+  margin:0;
+  font-size:16px;
+  color:var(--navy);
+}
+.section-heading p{
+  margin:5px 0 0;
+  color:var(--muted);
+  font-size:12px;
+}
 .card{
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding:16px;
+}
+.card-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
 }
 .card h3{
   margin:0 0 8px;
@@ -277,6 +303,9 @@ body{
   border-radius: 14px;
   border: 1px solid var(--border);
 }
+.compact-table table{
+  min-width:0;
+}
 table{
   width:100%;
   border-collapse:collapse;
@@ -288,6 +317,11 @@ th, td{
   border-bottom: 1px solid var(--border);
   font-size:13px;
 }
+.compact-table th,
+.compact-table td{
+  padding:10px 11px;
+  font-size:12px;
+}
 th{
   background: rgba(10,26,79,0.06);
   color: var(--navy);
@@ -295,6 +329,11 @@ th{
 }
 tr:hover td{
   background: rgba(230,126,34,0.04);
+}
+.empty-cell{
+  text-align:center;
+  padding:32px !important;
+  color:var(--muted);
 }
 
 .col-12{ grid-column: span 12; }
@@ -307,6 +346,15 @@ hr.sep{
   border:0;
   border-top:1px solid var(--border);
   margin:14px 0;
+}
+
+.action-stack{
+  display:grid;
+  gap:10px;
+}
+.action-stack .btn{
+  width:100%;
+  justify-content:center;
 }
 
 /* Responsive */

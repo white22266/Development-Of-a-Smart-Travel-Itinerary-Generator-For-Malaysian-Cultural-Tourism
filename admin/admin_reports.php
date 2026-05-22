@@ -111,11 +111,10 @@ function preference_state_frequency(mysqli $conn, string $tpDate): array
 {
     if (table_exists($conn, "traveller_preference_states") && table_exists($conn, "malaysia_states")) {
         return rows_query($conn, "
-            SELECT ms.state_name AS State, COUNT(*) AS Total, COUNT(*) AS total
-            FROM traveller_preference_states tps
-            JOIN malaysia_states ms ON ms.state_id = tps.state_id
-            JOIN traveller_preferences tp ON tp.preference_id = tps.preference_id
-            WHERE 1=1$tpDate
+            SELECT ms.state_name AS State, COUNT(tp.preference_id) AS Total, COUNT(tp.preference_id) AS total
+            FROM malaysia_states ms
+            LEFT JOIN traveller_preference_states tps ON tps.state_id = ms.state_id
+            LEFT JOIN traveller_preferences tp ON tp.preference_id = tps.preference_id$tpDate
             GROUP BY ms.state_id, ms.state_name
             ORDER BY total DESC, State ASC
         ");
@@ -124,9 +123,9 @@ function preference_state_frequency(mysqli $conn, string $tpDate): array
 }
 
 function top_rows(array $rows, int $limit = 10): array { return array_slice($rows, 0, $limit); }
-function bottom_rows(array $rows, int $limit = 10): array
+function bottom_rows(array $rows, int $limit = 10, bool $includeZero = false): array
 {
-    $filtered = array_values(array_filter($rows, fn($r) => (int)($r["total"] ?? 0) > 0));
+    $filtered = $includeZero ? array_values($rows) : array_values(array_filter($rows, fn($r) => (int)($r["total"] ?? 0) > 0));
     usort($filtered, fn($a, $b) => ((int)$a["total"] <=> (int)$b["total"]));
     return array_slice($filtered, 0, $limit);
 }
@@ -255,7 +254,7 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         $sections[] = section("Highest User Interests", ["Interest", "Total"], top_rows($interestAll), "Most selected interests.");
         $sections[] = section("Lowest User Interests", ["Interest", "Total"], bottom_rows($interestAll), "Least selected interests that may need content improvement.");
         $sections[] = section("Highest Desired States", ["State", "Total"], top_rows($stateAll), "Regions tourists most want to visit.");
-        $sections[] = section("Lowest Desired States", ["State", "Total"], bottom_rows($stateAll), "Regions with lower demand.");
+        $sections[] = section("Lowest Desired States", ["State", "Total"], bottom_rows($stateAll, 10, true), "Regions with lower demand, including states with zero user selections.");
         $sections[] = section("Highest Desired Districts", ["District", "Total"], top_rows($districtAll), "District-level demand from user preferences.");
         $sections[] = section("Lowest Desired Districts", ["District", "Total"], bottom_rows($districtAll), "Districts with lower preference demand.");
         $sections[] = section("Transport Preference Analysis", ["Transport", "Total", "Average Budget"], $transportRows);
@@ -284,12 +283,12 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         ");
         $kpis = [
             ["label" => "Most Desired State", "value" => $stateAll[0]["State"] ?? "-", "note" => (($stateAll[0]["total"] ?? 0) . " preference selection(s)")],
-            ["label" => "Least Desired State", "value" => bottom_rows($stateAll, 1)[0]["State"] ?? "-", "note" => ((bottom_rows($stateAll, 1)[0]["total"] ?? 0) . " selection(s)")],
+            ["label" => "Least Desired State", "value" => bottom_rows($stateAll, 1, true)[0]["State"] ?? "-", "note" => ((bottom_rows($stateAll, 1, true)[0]["total"] ?? 0) . " selection(s)")],
             ["label" => "Most Generated State", "value" => $actualStates[0]["State"] ?? "-", "note" => (($actualStates[0]["Itinerary Items"] ?? 0) . " item(s)")],
             ["label" => "Destination Records", "value" => count($actualStates), "note" => "States appearing in generated routes"],
         ];
         $sections[] = section("Highest Desired States from Users", ["State", "Total"], top_rows($stateAll));
-        $sections[] = section("Lowest Desired States from Users", ["State", "Total"], bottom_rows($stateAll));
+        $sections[] = section("Lowest Desired States from Users", ["State", "Total"], bottom_rows($stateAll, 10, true));
         $sections[] = section("Highest Desired Districts from Users", ["District", "Total"], top_rows($districtAll));
         $sections[] = section("Lowest Desired Districts from Users", ["District", "Total"], bottom_rows($districtAll));
         $sections[] = section("Actual Generated Destination States", ["State", "Itinerary Items", "Itineraries"], $actualStates);
@@ -380,19 +379,21 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
     } else {
         $type = "ai_usage";
         $title = "AI Usage Report";
-        $description = "Analyzes AI assistant usage, recent questions, source type, most active users, and itinerary questions.";
+        $description = "Analyzes AI assistant usage, recent questions, most active users, and itinerary questions.";
         $aiDate = $hasAiLogs ? date_filter_sql($conn, "a", $from, $to) : "";
-        $sourceRows = $hasAiLogs ? rows_query($conn, "SELECT source AS Source, COUNT(*) AS Total FROM ai_chat_logs a WHERE 1=1$aiDate GROUP BY source ORDER BY Total DESC") : [];
         $userRows = $hasAiLogs ? rows_query($conn, "
             SELECT COALESCE(t.full_name,'Unknown') AS Traveller, COUNT(*) AS Questions, MAX(a.created_at) AS `Last Question`
             FROM ai_chat_logs a LEFT JOIN travellers t ON t.traveller_id=a.traveller_id
             WHERE 1=1$aiDate GROUP BY COALESCE(t.full_name,'Unknown') ORDER BY Questions DESC LIMIT 20
         ") : [];
         $recent = $hasAiLogs ? rows_query($conn, "
-            SELECT COALESCE(t.full_name,'Unknown') AS Traveller, COALESCE(i.title,'Unknown itinerary') AS Itinerary,
-                   LEFT(a.user_message, 140) AS Question, a.source AS Source, a.created_at AS Created
-            FROM ai_chat_logs a LEFT JOIN travellers t ON t.traveller_id=a.traveller_id LEFT JOIN itineraries i ON i.itinerary_id=a.itinerary_id
-            WHERE 1=1$aiDate ORDER BY a.created_at DESC LIMIT 30
+            SELECT COALESCE(t.full_name,'Unknown') AS Traveller, i.title AS Itinerary,
+                   LEFT(a.user_message, 140) AS Question, a.created_at AS Created
+            FROM ai_chat_logs a
+            LEFT JOIN travellers t ON t.traveller_id=a.traveller_id
+            INNER JOIN itineraries i ON i.itinerary_id=a.itinerary_id
+            WHERE i.title IS NOT NULL AND i.title <> ''$aiDate
+            ORDER BY a.created_at DESC LIMIT 30
         ") : [];
         $intentRows = $hasAiLogs ? rows_query($conn, "
             SELECT
@@ -408,14 +409,13 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         ") : [];
         $kpis = [
             ["label" => "AI Questions", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "Selected period"],
-            ["label" => "Ollama Answers", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE source='ollama'$aiDate") : 0, "note" => "Local AI responses"],
-            ["label" => "Fallback Answers", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE source='local_fallback'$aiDate") : 0, "note" => "Report fallback summaries"],
+            ["label" => "Assistant Responses", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "AI replies recorded"],
+            ["label" => "Itinerary Questions", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a INNER JOIN itineraries i ON i.itinerary_id=a.itinerary_id WHERE i.title IS NOT NULL AND i.title <> ''$aiDate") : 0, "note" => "Questions linked to real itineraries"],
             ["label" => "Active AI Users", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(DISTINCT traveller_id) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "Travellers using AI"],
         ];
-        $sections[] = section("AI Source Summary", ["Source", "Total"], $sourceRows);
         $sections[] = section("AI Question Intent Summary", ["Intent", "Total"], $intentRows);
         $sections[] = section("Most Active AI Users", ["Traveller", "Questions", "Last Question"], $userRows);
-        $sections[] = section("Recent AI Questions", ["Traveller", "Itinerary", "Question", "Source", "Created"], $recent);
+        $sections[] = section("Recent AI Questions", ["Traveller", "Itinerary", "Question", "Created"], $recent);
     }
 
     $raw["kpis"] = $kpis;
@@ -428,7 +428,48 @@ function build_ai_analysis(array $report): array
     $model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
     $baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://localhost:11434";
     $svc = new AiAdminReportAnalysisService($model, $baseUrl);
-    return $svc->analyze($report["raw"]);
+    $ai = $svc->analyze($report["raw"]);
+    $ai["analysis"] = clean_ai_report_text((string)($ai["analysis"] ?? ""));
+    return $ai;
+}
+
+function clean_ai_report_text(string $text): string
+{
+    $text = str_replace(["**", "***", "__"], "", $text);
+    $lines = preg_split('/\r\n|\r|\n/', $text);
+    $clean = [];
+    foreach ($lines as $line) {
+        $line = preg_replace('/^\s{0,3}#{1,6}\s*/', '', (string)$line);
+        $line = preg_replace('/^\s*[-*]\s+/', '- ', (string)$line);
+        $clean[] = rtrim((string)$line);
+    }
+    return trim(implode("\n", $clean));
+}
+
+function log_generated_ai_report(mysqli $conn, int $adminId, array $report, array $ai, string $period): void
+{
+    if (!table_exists($conn, "audit_logs")) return;
+
+    $details = json_encode([
+        "report_type" => $report["type"] ?? "",
+        "report_title" => $report["title"] ?? "",
+        "period" => $period,
+        "summary" => function_exists("mb_substr")
+            ? mb_substr((string)($ai["analysis"] ?? ""), 0, 600)
+            : substr((string)($ai["analysis"] ?? ""), 0, 600),
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+    $action = "generate_ai_report";
+    $entityType = "admin_report";
+    $stmt = $conn->prepare("
+        INSERT INTO audit_logs (admin_id, action, entity_type, entity_id, details)
+        VALUES (?, ?, ?, NULL, ?)
+    ");
+    if ($stmt) {
+        $stmt->bind_param("isss", $adminId, $action, $entityType, $details);
+        $stmt->execute();
+        $stmt->close();
+    }
 }
 
 function render_table(array $section): void
@@ -507,7 +548,7 @@ function build_report_charts(array $report): array
     return $charts;
 }
 
-function build_pdf_html(array $report, array $ai, string $period, string $adminName): string
+function build_pdf_html(array $report, ?array $ai, string $period, string $adminName): string
 {
     ob_start();
 ?>
@@ -539,9 +580,10 @@ function build_pdf_html(array $report, array $ai, string $period, string $adminN
         <td><div class="label"><?php echo h($kpi["label"]); ?></div><div class="value"><?php echo h($kpi["value"]); ?></div><div class="muted"><?php echo h($kpi["note"] ?? ""); ?></div></td>
         <?php endforeach; ?>
     </tr></table>
-    <h2>AI Analysis</h2>
-    <div class="muted">Source: <?php echo h($ai["source"] ?? "unknown"); ?></div>
-    <div class="analysis"><?php echo h($ai["analysis"] ?? ""); ?></div>
+    <?php if ($ai !== null): ?>
+        <h2>AI Analysis</h2>
+        <div class="analysis"><?php echo h($ai["analysis"] ?? ""); ?></div>
+    <?php endif; ?>
     <?php foreach ($report["sections"] as $section): ?>
         <h2><?php echo h($section["title"]); ?></h2>
         <?php if (!empty($section["note"])): ?><div class="muted"><?php echo h($section["note"]); ?></div><?php endif; ?>
@@ -562,16 +604,23 @@ function build_pdf_html(array $report, array $ai, string $period, string $adminN
 }
 
 $reportTypes = report_options();
-$type = strtolower(trim((string)($_GET["type"] ?? "user_preferences")));
+$request = ($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST" ? $_POST : $_GET;
+$type = strtolower(trim((string)($request["type"] ?? "user_preferences")));
 if (!isset($reportTypes[$type])) $type = "user_preferences";
-$from = valid_date($_GET["from"] ?? "");
-$to = valid_date($_GET["to"] ?? "");
+$from = valid_date($request["from"] ?? "");
+$to = valid_date($request["to"] ?? "");
 if ($from !== "" && $to !== "" && $from > $to) [$from, $to] = [$to, $from];
 $period = report_period_label($from, $to);
 $export = strtolower(trim((string)($_GET["export"] ?? "")));
 
 $report = build_report($conn, $type, $from, $to, $period);
-$ai = build_ai_analysis($report);
+$ai = null;
+$aiGenerated = false;
+if (($_SERVER["REQUEST_METHOD"] ?? "GET") === "POST" && ($_POST["action"] ?? "") === "generate_ai_report") {
+    $ai = build_ai_analysis($report);
+    $aiGenerated = true;
+    log_generated_ai_report($conn, (int)($_SESSION["admin_id"] ?? 0), $report, $ai, $period);
+}
 $charts = build_report_charts($report);
 
 if ($export === "pdf") {
@@ -579,7 +628,7 @@ if ($export === "pdf") {
     if (!file_exists($autoload)) die("Dompdf is not installed. Run composer install first.");
     require_once $autoload;
     $dompdf = new \Dompdf\Dompdf(["isRemoteEnabled" => true]);
-    $dompdf->loadHtml(build_pdf_html($report, $ai, $period, $adminName));
+    $dompdf->loadHtml(build_pdf_html($report, null, $period, $adminName));
     $dompdf->setPaper("A4", "portrait");
     $dompdf->render();
     $dompdf->stream($report["type"] . "_report_" . date("Ymd_His") . ".pdf", ["Attachment" => true]);
@@ -596,11 +645,6 @@ if ($export === "csv") {
     fputcsv($out, []);
     fputcsv($out, ["KPI", "Value", "Note"]);
     foreach ($report["kpis"] as $kpi) fputcsv($out, [$kpi["label"], $kpi["value"], $kpi["note"] ?? ""]);
-    fputcsv($out, []);
-    fputcsv($out, ["AI Analysis", "Source", $ai["source"] ?? "unknown"]);
-    foreach (preg_split('/\r\n|\r|\n/', (string)($ai["analysis"] ?? "")) as $line) {
-        if (trim($line) !== "") fputcsv($out, [$line]);
-    }
     foreach ($report["sections"] as $section) {
         fputcsv($out, []);
         fputcsv($out, [$section["title"]]);
@@ -632,10 +676,20 @@ if ($export === "csv") {
         .report-tabs a.active { background:#0f172a; color:#fff; border-color:#0f172a; }
         .metric-note { font-size:12px; color:#64748b; margin-top:6px; }
         .ai-analysis-box { white-space:pre-wrap; line-height:1.55; font-size:13px; color:#334155; background:#f8fafc; border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:14px; }
-        .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
-        .chart-panel { border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:12px; background:#fff; min-height:280px; }
+        .ai-generate-panel { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+        .ai-generate-panel form { margin:0; }
+        .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; align-items:start; }
+        .chart-panel { border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:12px 14px; background:#fff; min-height:0; overflow:hidden; }
         .chart-title { font-size:13px; font-weight:900; color:#0f172a; margin-bottom:8px; }
-        .chart-box { position:relative; height:230px; }
+        .chart-box { position:relative; height:180px; max-height:180px; }
+        .chart-box-doughnut { width:min(100%, 340px); margin:0 auto; }
+        .chart-box-bar { height:210px; max-height:210px; }
+        .chart-box canvas { max-width:100%; max-height:100%; }
+        .chart-data-list { display:grid; gap:6px; margin-top:10px; }
+        .chart-data-row { display:grid; grid-template-columns:12px minmax(0, 1fr) auto auto; gap:8px; align-items:center; font-size:12px; color:#334155; }
+        .chart-dot { width:10px; height:10px; border-radius:50%; }
+        .chart-percent { min-width:52px; text-align:right; font-weight:900; color:#0f172a; }
+        .chart-value { min-width:58px; text-align:right; color:#64748b; }
         .chart-empty { display:none; color:#64748b; font-size:13px; padding:12px; background:#f8fafc; border-radius:8px; }
         @media (max-width: 900px) { .chart-grid { grid-template-columns:1fr; } }
     </style>
@@ -681,7 +735,7 @@ if ($export === "csv") {
         <section class="grid">
             <div class="card col-12">
                 <h3>Report Generator</h3>
-                <p class="meta">Current period: <?php echo h($period); ?>. Each report is generated separately with complete tables and AI analysis.</p>
+                <p class="meta">Current period: <?php echo h($period); ?>. This page shows database report data first. AI analysis is generated only after admin confirmation.</p>
                 <form method="get" class="report-filter">
                     <div>
                         <label for="type">Report Type</label>
@@ -693,7 +747,7 @@ if ($export === "csv") {
                     </div>
                     <div><label for="from">From</label><input id="from" type="date" name="from" value="<?php echo h($from); ?>"></div>
                     <div><label for="to">To</label><input id="to" type="date" name="to" value="<?php echo h($to); ?>"></div>
-                    <button class="btn btn-primary" type="submit">Generate</button>
+                    <button class="btn btn-primary" type="submit">Load Data Report</button>
                     <a class="btn btn-ghost" href="admin_reports.php?type=<?php echo h($type); ?>">Reset Dates</a>
                 </form>
                 <div class="report-tabs">
@@ -712,9 +766,25 @@ if ($export === "csv") {
             <?php endforeach; ?>
 
             <div class="card col-12">
-                <h3>AI Analysis</h3>
-                <p class="meta">Generated from this report's database result set. Source: <?php echo h($ai["source"] ?? "unknown"); ?>.</p>
-                <div class="ai-analysis-box"><?php echo h($ai["analysis"] ?? ""); ?></div>
+                <div class="ai-generate-panel">
+                    <div>
+                        <h3>AI Generated Report</h3>
+                        <p class="meta">Click the button only when you want AI to summarize and analyze the current database report.</p>
+                    </div>
+                    <form method="post">
+                        <input type="hidden" name="action" value="generate_ai_report">
+                        <input type="hidden" name="type" value="<?php echo h($type); ?>">
+                        <input type="hidden" name="from" value="<?php echo h($from); ?>">
+                        <input type="hidden" name="to" value="<?php echo h($to); ?>">
+                        <button class="btn btn-primary" type="submit">Generate AI Report</button>
+                    </form>
+                </div>
+                <?php if ($aiGenerated && $ai !== null): ?>
+                    <p class="meta">Generated from this report's database result set.</p>
+                    <div class="ai-analysis-box"><?php echo h($ai["analysis"] ?? ""); ?></div>
+                <?php else: ?>
+                    <div class="ai-analysis-box">AI report has not been generated yet. The database tables and charts below are available without AI processing.</div>
+                <?php endif; ?>
             </div>
 
             <?php if (!empty($charts)): ?>
@@ -726,7 +796,8 @@ if ($export === "csv") {
                     <?php foreach ($charts as $index => $chart): ?>
                     <div class="chart-panel">
                         <div class="chart-title"><?php echo h($chart["title"]); ?></div>
-                        <div class="chart-box"><canvas id="reportChart<?php echo (int)$index; ?>"></canvas></div>
+                        <div class="chart-box chart-box-<?php echo h($chart["type"] === "doughnut" ? "doughnut" : "bar"); ?>"><canvas id="reportChart<?php echo (int)$index; ?>"></canvas></div>
+                        <div class="chart-data-list" id="reportChartData<?php echo (int)$index; ?>"></div>
                     </div>
                     <?php endforeach; ?>
                 </div>
@@ -748,6 +819,87 @@ if ($export === "csv") {
 <script>
 const reportCharts = <?php echo json_encode($charts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?>;
 const chartColors = ['#2563eb', '#16a34a', '#f59e0b', '#dc2626', '#7c3aed', '#0891b2', '#64748b', '#db2777'];
+const chartValueLabels = {
+    id: 'chartValueLabels',
+    afterDatasetsDraw(chart) {
+        const {ctx} = chart;
+        const chartType = chart.config.type;
+        const dataset = chart.data.datasets[0];
+        const values = dataset.data.map(Number);
+        const total = values.reduce((sum, value) => sum + value, 0);
+        if (!total) return;
+        if (chart.width < 260 || values.length > 8) return;
+
+        ctx.save();
+        ctx.font = '700 11px system-ui, -apple-system, Segoe UI, sans-serif';
+        ctx.fillStyle = '#0f172a';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        const drawnBoxes = [];
+        const canPlaceLabel = (x, y, text) => {
+            const padding = 5;
+            const width = ctx.measureText(text).width + padding * 2;
+            const height = 16;
+            const box = {left: x - width / 2, right: x + width / 2, top: y - height / 2, bottom: y + height / 2};
+            const area = chart.chartArea;
+            if (box.left < area.left || box.right > area.right || box.top < area.top || box.bottom > area.bottom) return false;
+            for (const placed of drawnBoxes) {
+                const overlaps = !(box.right < placed.left || box.left > placed.right || box.bottom < placed.top || box.top > placed.bottom);
+                if (overlaps) return false;
+            }
+            drawnBoxes.push(box);
+            return true;
+        };
+
+        chart.getDatasetMeta(0).data.forEach((element, index) => {
+            const value = values[index] || 0;
+            const percent = ((value / total) * 100).toFixed(1) + '%';
+            if (value <= 0) return;
+
+            let label = chartType === 'doughnut' ? percent : `${value} (${percent})`;
+            const pos = element.tooltipPosition();
+            let x = pos.x;
+            let y = pos.y;
+
+            if (chartType === 'bar') {
+                const barWidth = Number(element.width || 0);
+                if (barWidth > 0 && barWidth < 54) return;
+                y = pos.y - 12;
+            } else if (chartType === 'doughnut') {
+                const slicePercent = value / total;
+                const circumference = Number(element.circumference || 0);
+                if (slicePercent < 0.12 || circumference < 0.55) return;
+            }
+
+            if (canPlaceLabel(x, y, label)) ctx.fillText(label, x, y);
+        });
+        ctx.restore();
+    }
+};
+
+function renderChartDataList(chart, index) {
+    const list = document.getElementById('reportChartData' + index);
+    if (!list) return;
+    const values = chart.values.map(Number);
+    const total = values.reduce((sum, value) => sum + value, 0);
+    const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+    }[char]));
+    list.innerHTML = chart.labels.map((label, rowIndex) => {
+        const value = values[rowIndex] || 0;
+        const percent = total ? ((value / total) * 100).toFixed(1) + '%' : '0.0%';
+        const color = chartColors[rowIndex % chartColors.length];
+        return `
+            <div class="chart-data-row">
+                <span class="chart-dot" style="background:${color}"></span>
+                <span>${escapeHtml(label)}</span>
+                <span class="chart-value">${value}</span>
+                <span class="chart-percent">${percent}</span>
+            </div>
+        `;
+    }).join('');
+}
 
 function renderReportCharts() {
     if (!window.Chart) {
@@ -759,6 +911,7 @@ function renderReportCharts() {
     reportCharts.forEach((chart, index) => {
         const canvas = document.getElementById('reportChart' + index);
         if (!canvas) return;
+        renderChartDataList(chart, index);
         new Chart(canvas, {
             type: chart.type === 'doughnut' ? 'doughnut' : 'bar',
             data: {
@@ -776,14 +929,26 @@ function renderReportCharts() {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: chart.type === 'doughnut', position: 'bottom' },
-                    tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.formattedValue}` } }
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => {
+                                const values = ctx.dataset.data.map(Number);
+                                const total = values.reduce((sum, value) => sum + value, 0);
+                                const value = Number(ctx.raw || 0);
+                                const percent = total ? ((value / total) * 100).toFixed(1) : '0.0';
+                                return `${ctx.label}: ${ctx.formattedValue} (${percent}%)`;
+                            }
+                        }
+                    }
                 },
                 scales: chart.type === 'bar' ? {
                     y: { beginAtZero: true, ticks: { precision: 0 } },
                     x: { ticks: { maxRotation: 35, minRotation: 0 } }
-                } : {}
-            }
+                } : {},
+                cutout: chart.type === 'doughnut' ? '54%' : undefined
+            },
+            plugins: [chartValueLabels]
         });
     });
 }

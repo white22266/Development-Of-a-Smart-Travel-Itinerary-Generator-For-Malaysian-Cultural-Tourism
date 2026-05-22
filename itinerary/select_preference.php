@@ -15,7 +15,6 @@ if ($travellerId <= 0) {
 }
 
 $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
-$ollamaModel = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
 $googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
 $errors = $_SESSION["form_errors"] ?? [];
 unset($_SESSION["form_errors"]);
@@ -478,8 +477,8 @@ $stmt->close();
         <div class="card ai-helper" id="ai-travel-assistant">
             <h3>AI Travel Assistant</h3>
             <p class="meta">
-                Ask about the selected saved preference above. The assistant gives route, cost, culture, hotel, festival timing, and improvement advice using Ollama
-                without creating or saving a formal itinerary. Local model: <?php echo htmlspecialchars($ollamaModel); ?>.
+                Ask about the selected saved preference above. The assistant gives route, cost, culture, hotel, festival timing, and improvement advice
+                without creating or saving a formal itinerary.
             </p>
 
             <div class="ai-chat-shell">

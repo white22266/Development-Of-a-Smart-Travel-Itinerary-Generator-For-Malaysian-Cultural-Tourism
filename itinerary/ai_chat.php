@@ -118,18 +118,18 @@ $result = $assistant->answer($message, $context);
 
 if (table_exists($conn, "ai_chat_logs")) {
     $log = $conn->prepare("
-        INSERT INTO ai_chat_logs (itinerary_id, traveller_id, user_message, ai_response, source)
-        VALUES (?, ?, ?, ?, ?)
+        INSERT INTO ai_chat_logs (itinerary_id, traveller_id, user_message, ai_response)
+        VALUES (?, ?, ?, ?)
     ");
     if ($log) {
-        $source = $result["source"] ?? "unknown";
         $answer = $result["answer"] ?? "";
-        $log->bind_param("iisss", $itineraryId, $travellerId, $message, $answer, $source);
+        $log->bind_param("iiss", $itineraryId, $travellerId, $message, $answer);
         $log->execute();
         $log->close();
     }
 }
 
+unset($result["source"]);
 echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
 function table_has_column(mysqli $conn, string $table, string $column): bool

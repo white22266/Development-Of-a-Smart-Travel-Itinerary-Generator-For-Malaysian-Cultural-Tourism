@@ -46,6 +46,7 @@ class AiAdminReportAnalysisService
             "5. AI Feature Usage",
             "6. Recommended Admin Actions",
             "Mention concrete numbers from the data. Use practical wording suitable for a final year project report.",
+            "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
         ]);
 
         $payload = [
@@ -198,7 +199,7 @@ class AiAdminReportAnalysisService
             $lines[] = "- Use highest-cost itinerary records to inspect whether the cost estimation logic is realistic.";
         } elseif (($data['report_type'] ?? '') === 'ai_usage') {
             $lines[] = "- Use common AI question categories to improve itinerary explanations and route-writing prompts.";
-            $lines[] = "- If most answers are local fallback, start Ollama and pull the configured local model before final demonstration.";
+            $lines[] = "- Test the assistant before final demonstration and make sure itinerary answers are specific to the selected trip.";
         } else {
             $lines[] = "- Keep report exports as evidence for supervisor evaluation and final project documentation.";
             $lines[] = "- Review sections with no data and either add data collection or hide the feature from final demo.";
