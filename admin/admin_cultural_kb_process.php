@@ -354,7 +354,6 @@ if ($action === "create" || $action === "update") {
     // latitude/longitude optional，但如果填了就要是数字
     if ($latitude !== "" && !is_numeric($latitude)) back("Latitude must be numeric.", true);
     if ($longitude !== "" && !is_numeric($longitude)) back("Longitude must be numeric.", true);
-    $allowDuplicate = (int)($_POST["allow_duplicate"] ?? 0) === 1;
     $dupeService = new DuplicatePlaceService($conn);
     $dupeCandidate = [
         "name" => $name,
@@ -364,8 +363,8 @@ if ($action === "create" || $action === "update") {
         "longitude" => $longitude,
     ];
     $excludeId = ($action === "update") ? $placeId : null;
-    if (!$allowDuplicate && $dupeService->hasHighConfidenceDuplicate($dupeCandidate, $excludeId)) {
-        back("Possible duplicate detected. Review the duplicate panel and tick 'Allow duplicate' only if this is a distinct place.", true);
+    if ($dupeService->hasHighConfidenceDuplicate($dupeCandidate, $excludeId)) {
+        back("Possible duplicate place detected. Please edit the existing record instead of creating another duplicate.", true);
     }
     /* ===== CREATE ===== */
     if ($action === "create") {

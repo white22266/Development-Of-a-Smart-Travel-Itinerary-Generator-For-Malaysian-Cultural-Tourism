@@ -35,17 +35,16 @@ class AiAdminReportAnalysisService
             return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'cURL is not enabled.'];
         }
 
+        $reportType = (string)($reportData['report_type'] ?? 'overview');
+        $typeInstructions = $this->reportTypeInstructions($reportType);
         $instructions = implode("\n", [
             "You are an admin analytics assistant for a Malaysian cultural tourism itinerary system.",
-            "Analyze only the database metrics provided. Do not invent missing data.",
-            "Write a concise but detailed management report with these headings:",
-            "1. Executive Summary",
-            "2. User Engagement",
-            "3. Itinerary and Cost Insights",
-            "4. Cultural Content Insights",
-            "5. AI Feature Usage",
-            "6. Recommended Admin Actions",
-            "Mention concrete numbers from the data. Use practical wording suitable for a final year project report.",
+            "Analyze only the selected report type: {$reportType}.",
+            "Use only the KPI and section rows provided in the JSON snapshot. Do not invent missing data.",
+            "Do not analyze unrelated modules or report types. For example, only discuss AI usage when report_type is ai_usage.",
+            "Follow this exact analysis focus and headings:",
+            $typeInstructions,
+            "Mention concrete numbers from the selected report. Keep the report concise, practical, and suitable for a final year project admin report.",
             "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
         ]);
 
@@ -92,66 +91,88 @@ class AiAdminReportAnalysisService
         return ['status' => 'success', 'source' => 'ollama', 'analysis' => $text];
     }
 
+    private function reportTypeInstructions(string $reportType): string
+    {
+        return match ($reportType) {
+            'user_preferences' => implode("\n", [
+                "1. Preference Summary",
+                "2. Highest and Lowest User Preferences",
+                "3. Budget, Duration, and Transport Pattern",
+                "4. Admin Actions for Personalization",
+            ]),
+            'destination_demand' => implode("\n", [
+                "1. Destination Demand Summary",
+                "2. Desired States and Districts",
+                "3. Actual Generated Destination Pattern",
+                "4. Admin Actions for Destination Coverage",
+            ]),
+            'attraction_price' => implode("\n", [
+                "1. Cultural Place and Price Summary",
+                "2. Category and Price Coverage",
+                "3. Data Completeness Issues",
+                "4. Admin Actions for Knowledge Base Quality",
+            ]),
+            'cost_budget' => implode("\n", [
+                "1. Cost and Budget Summary",
+                "2. Over-Budget and Within-Budget Pattern",
+                "3. Hotel and Trip Cost Observations",
+                "4. Admin Actions for Cost Accuracy",
+            ]),
+            'ai_usage' => implode("\n", [
+                "1. AI Usage Summary",
+                "2. Question Intent Pattern",
+                "3. Most Active AI Users",
+                "4. Admin Actions for AI Assistant Improvement",
+            ]),
+            default => implode("\n", [
+                "1. System Overview Summary",
+                "2. User, Trip, and Cultural Data Status",
+                "3. Operational Gaps Shown by the Report",
+                "4. Admin Actions for System Readiness",
+            ]),
+        };
+    }
+
     private function fallbackAnalysis(array $data): string
     {
         if (isset($data['sections']) && is_array($data['sections'])) {
             return $this->fallbackSectionReportAnalysis($data);
         }
 
-        $summary = $data['summary'] ?? [];
-        $popularStates = $data['popular_states'] ?? [];
-        $popularPlaces = $data['popular_places'] ?? [];
-        $transportStats = $data['transport_stats'] ?? [];
-        $interestStats = $data['interest_stats'] ?? [];
+        return $this->fallbackSectionReportAnalysis([
+            'report_type' => (string)($data['report_type'] ?? 'overview'),
+            'kpis' => [],
+            'sections' => [
+                [
+                    'title' => 'Available Data Snapshot',
+                    'headers' => ['Metric', 'Value'],
+                    'rows' => $this->flattenFallbackRows($data),
+                ],
+            ],
+        ]);
+    }
 
-        $travellers = (int)($summary['travellers_total'] ?? 0);
-        $trips = (int)($summary['itineraries'] ?? 0);
-        $activePlaces = (int)($summary['active_cultural_places'] ?? 0);
-        $avgCost = number_format((float)($summary['avg_trip_cost'] ?? 0), 2);
-        $aiQuestions = (int)($summary['ai_questions'] ?? 0);
-
-        $topState = $popularStates[0]['state'] ?? 'No state data yet';
-        $topStateCount = (int)($popularStates[0]['total_items'] ?? 0);
-        $topPlace = $popularPlaces[0]['name'] ?? 'No place data yet';
-        $topTransport = $transportStats[0]['transport_type'] ?? 'No transport data yet';
-        $topInterest = $interestStats[0]['interest'] ?? 'No interest data yet';
-
-        $lines = [];
-        $lines[] = "Executive Summary";
-        $lines[] = "- The system currently has {$travellers} registered traveller(s), {$activePlaces} active cultural record(s), and {$trips} generated itinerary record(s).";
-        $lines[] = "- Average estimated trip cost is RM {$avgCost}. This figure helps admin monitor whether generated itineraries match common traveller budgets.";
-        $lines[] = "";
-        $lines[] = "User Engagement";
-        $lines[] = "- Top traveller and preference tables show which users are actively generating trips and what trip settings they use most often.";
-        $lines[] = "- Most common transport preference: {$topTransport}. Most common interest: {$topInterest}.";
-        $lines[] = "";
-        $lines[] = "Itinerary and Cost Insights";
-        $lines[] = "- The most frequently used state is {$topState} with {$topStateCount} itinerary item(s).";
-        $lines[] = "- The most frequently selected cultural place is {$topPlace}. Admin can use this to identify high-demand tourism content.";
-        $lines[] = "";
-        $lines[] = "Cultural Content Insights";
-        $lines[] = "- Category and popular-place lists show which cultural records are useful for route generation and which categories may need more data.";
-        $lines[] = "- If some categories have low counts, admin should add more verified places to improve recommendation variety.";
-        $lines[] = "";
-        $lines[] = "AI Feature Usage";
-        $lines[] = "- Travellers asked {$aiQuestions} AI assistant question(s). This provides evidence that the system includes an AI-supported itinerary explanation and route-writing feature.";
-        $lines[] = "";
-        $lines[] = "Recommended Admin Actions";
-        $lines[] = "- Add more cultural places for low-coverage states and categories.";
-        $lines[] = "- Review high-cost itineraries to ensure hotel and transport costs are realistic.";
-        $lines[] = "- Use AI chat logs to identify common traveller questions and improve itinerary explanations.";
-
-        return implode("\n", $lines);
+    private function flattenFallbackRows(array $data): array
+    {
+        $rows = [];
+        foreach ($data as $key => $value) {
+            if (is_array($value)) continue;
+            $rows[] = ['Metric' => str_replace('_', ' ', (string)$key), 'Value' => (string)$value];
+            if (count($rows) >= 12) break;
+        }
+        return $rows;
     }
 
     private function fallbackSectionReportAnalysis(array $data): string
     {
-        $type = str_replace('_', ' ', (string)($data['report_type'] ?? 'admin'));
+        $reportType = (string)($data['report_type'] ?? 'overview');
+        $type = str_replace('_', ' ', $reportType);
         $kpis = $data['kpis'] ?? [];
         $sections = $data['sections'] ?? [];
+        $headings = $this->fallbackHeadings($reportType);
 
         $lines = [];
-        $lines[] = "Executive Summary";
+        $lines[] = $headings[0];
         $lines[] = "- This {$type} report was generated from the connected system database for the selected period.";
         foreach (array_slice($kpis, 0, 4) as $kpi) {
             $label = (string)($kpi['label'] ?? 'Metric');
@@ -161,7 +182,7 @@ class AiAdminReportAnalysisService
         }
 
         $lines[] = "";
-        $lines[] = "Key Findings";
+        $lines[] = $headings[1];
         $findingCount = 0;
         foreach ($sections as $section) {
             $title = (string)($section['title'] ?? 'Section');
@@ -184,20 +205,20 @@ class AiAdminReportAnalysisService
         }
 
         $lines[] = "";
-        $lines[] = "Recommended Admin Actions";
-        if (strpos((string)($data['report_type'] ?? ''), 'preference') !== false) {
+        $lines[] = $headings[2];
+        if (strpos($reportType, 'preference') !== false) {
             $lines[] = "- Use highest preference items to prioritize itinerary content and use lowest preference items to identify weak demand or content gaps.";
             $lines[] = "- Add more cultural places for high-demand states, districts, and interests so generated itineraries have enough variety.";
-        } elseif (($data['report_type'] ?? '') === 'destination_demand') {
+        } elseif ($reportType === 'destination_demand') {
             $lines[] = "- Compare desired destinations with actual generated route destinations to detect where the generator lacks enough place data.";
             $lines[] = "- Increase cultural records for high-demand states and districts that appear weak in generated itinerary output.";
-        } elseif (($data['report_type'] ?? '') === 'attraction_price') {
+        } elseif ($reportType === 'attraction_price') {
             $lines[] = "- Review very high and very low attraction prices for data accuracy.";
             $lines[] = "- Complete missing image, coordinate, opening hour, and visit duration fields to improve itinerary quality.";
-        } elseif (($data['report_type'] ?? '') === 'cost_budget') {
+        } elseif ($reportType === 'cost_budget') {
             $lines[] = "- Monitor over-budget trips and adjust hotel, food, and transport assumptions when needed.";
             $lines[] = "- Use highest-cost itinerary records to inspect whether the cost estimation logic is realistic.";
-        } elseif (($data['report_type'] ?? '') === 'ai_usage') {
+        } elseif ($reportType === 'ai_usage') {
             $lines[] = "- Use common AI question categories to improve itinerary explanations and route-writing prompts.";
             $lines[] = "- Test the assistant before final demonstration and make sure itinerary answers are specific to the selected trip.";
         } else {
@@ -206,5 +227,17 @@ class AiAdminReportAnalysisService
         }
 
         return implode("\n", $lines);
+    }
+
+    private function fallbackHeadings(string $reportType): array
+    {
+        return match ($reportType) {
+            'user_preferences' => ['Preference Summary', 'Preference Findings', 'Admin Actions for Personalization'],
+            'destination_demand' => ['Destination Demand Summary', 'Destination Findings', 'Admin Actions for Destination Coverage'],
+            'attraction_price' => ['Cultural Place and Price Summary', 'Price and Data Quality Findings', 'Admin Actions for Knowledge Base Quality'],
+            'cost_budget' => ['Cost and Budget Summary', 'Cost Findings', 'Admin Actions for Cost Accuracy'],
+            'ai_usage' => ['AI Usage Summary', 'AI Usage Findings', 'Admin Actions for AI Assistant Improvement'],
+            default => ['System Overview Summary', 'System Findings', 'Admin Actions for System Readiness'],
+        };
     }
 }

@@ -419,11 +419,13 @@ $stmt->close();
                     <div style="height:14px;"></div>
 
                     <div class="route-info-box">
-                        <div class="route-title">Travel Pace Controls Daily Places</div>
+                        <div class="route-title">Travel Pace Controls Daily Activity Places</div>
                         <ul>
-                            <li>Relaxed preference: about 3 places per day with longer rest gaps.</li>
-                            <li>Normal preference: about 4 places per day.</li>
-                            <li>Packed preference: about 5 places per day with shorter rest gaps.</li>
+                            <li>Relaxed preference: about 3 activity places per day with longer rest gaps.</li>
+                            <li>Normal preference: about 4 activity places per day.</li>
+                            <li>Packed preference: about 5 activity places per day with shorter rest gaps.</li>
+                            <li>Breakfast, lunch, and dinner stops are added when nearby food records are available.</li>
+                            <li>Food-only preferences become a food trail with about 4 to 6 food stops per day.</li>
                         </ul>
                     </div>
 

@@ -213,8 +213,8 @@ foreach ($timetables as $d => $items) {
 
 $jsHotels     = [];
 
-$jsDays        = json_encode($jsItineraryData, JSON_UNESCAPED_UNICODE);
-$jsHotelsJson  = json_encode($jsHotels, JSON_UNESCAPED_UNICODE);
+$jsDays        = json_encode($jsItineraryData, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE) ?: '[]';
+$jsHotelsJson  = json_encode($jsHotels, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE) ?: '[]';
 $jsColorsJson  = json_encode($dayColors);
 $jsTransport   = json_encode($transportType);
 $googleMapsKey = defined('GOOGLE_MAPS_API_KEY') ? GOOGLE_MAPS_API_KEY : '';

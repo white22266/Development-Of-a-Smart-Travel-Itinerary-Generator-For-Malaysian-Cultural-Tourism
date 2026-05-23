@@ -22,7 +22,11 @@ $q = trim($_GET["q"] ?? "");
 $state = trim($_GET["state"] ?? "");
 $category = trim($_GET["category"] ?? "");
 // pagination
-$perPage = 6;
+$view = strtolower(trim($_GET["view"] ?? "list"));
+if (!in_array($view, ["list", "create"], true)) $view = "list";
+$displayMode = strtolower(trim($_GET["display"] ?? "list"));
+if (!in_array($displayMode, ["list", "photos"], true)) $displayMode = "list";
+$perPage = ($displayMode === "photos") ? 8 : 10;
 $page = (int)($_GET["page"] ?? 1);
 if ($page < 1) $page = 1;
 $offset = ($page - 1) * $perPage;
@@ -60,7 +64,8 @@ $districtOptions = ($state !== "" && isset($allStateDistricts[$state])) ? $allSt
 
 $duplicatePlaces = [];
 $dupDistCol = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
-$dupDistrictSelect = ($dupDistCol && $dupDistCol->num_rows > 0) ? "district" : "NULL AS district";
+$adminHasDistCol = ($dupDistCol && $dupDistCol->num_rows > 0);
+$dupDistrictSelect = $adminHasDistCol ? "district" : "NULL AS district";
 $dupRes = $conn->query("
     SELECT place_id, name, state, {$dupDistrictSelect}, category, latitude, longitude
     FROM cultural_places
@@ -74,21 +79,44 @@ if ($dupRes) {
 
 // edit mode
 $editId = (int)($_GET["edit_id"] ?? 0);
+$detailId = (int)($_GET["detail_id"] ?? 0);
 $editRow = null;
+$detailRow = null;
 if ($editId > 0) {
+    $view = "edit";
     $stmt = $conn->prepare("SELECT * FROM cultural_places WHERE place_id = ? LIMIT 1");
     $stmt->bind_param("i", $editId);
     $stmt->execute();
     $editRow = $stmt->get_result()->fetch_assoc();
     $stmt->close();
+    if (!$editRow) {
+        $_SESSION["form_errors"] = ["Selected place was not found."];
+        header("Location: admin_cultural_kb.php");
+        exit;
+    }
+}
+if ($detailId > 0 && $editId <= 0) {
+    $view = "detail";
+    $stmt = $conn->prepare("SELECT * FROM cultural_places WHERE place_id = ? LIMIT 1");
+    $stmt->bind_param("i", $detailId);
+    $stmt->execute();
+    $detailRow = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    if (!$detailRow) {
+        $_SESSION["form_errors"] = ["Selected place was not found."];
+        header("Location: admin_cultural_kb.php");
+        exit;
+    }
 }
 // list query + pagination
-$baseSql = " FROM cultural_places WHERE 1=1";
+$showForm = ($view === "create" || $view === "edit");
+$showDetail = ($view === "detail" && $detailRow);
+$baseSql = " FROM cultural_places cp WHERE 1=1";
 $params = [];
 $types = "";
 
 if ($q !== "") {
-    $baseSql .= " AND (name LIKE ? OR description LIKE ? OR address LIKE ?)";
+    $baseSql .= " AND (cp.name LIKE ? OR cp.description LIKE ? OR cp.address LIKE ?)";
     $like = "%" . $q . "%";
     $params[] = $like;
     $params[] = $like;
@@ -96,27 +124,28 @@ if ($q !== "") {
     $types .= "sss";
 }
 if ($state !== "") {
-    $baseSql .= " AND state = ?";
+    $baseSql .= " AND cp.state = ?";
     $params[] = $state;
     $types .= "s";
 }
 // District filter (only when state is also selected)
 if ($district !== "" && $state !== "" && in_array($district, ($allStateDistricts[$state] ?? []), true)) {
-    $dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
-    if ($dcCheck && $dcCheck->num_rows > 0) {
-        $baseSql .= " AND district = ?";
+    if ($adminHasDistCol) {
+        $baseSql .= " AND cp.district = ?";
         $params[] = $district;
         $types .= "s";
     }
 }
 if ($category !== "" && in_array($category, $categoryOptions, true)) {
-    $baseSql .= " AND category = ?";
+    $baseSql .= " AND cp.category = ?";
     $params[] = $category;
     $types .= "s";
 }
 
-// 1) COUNT total rows (for total pages)
-$countSql = "SELECT COUNT(*) AS total" . $baseSql;
+// 1) COUNT distinct places (same state + district + name counts once)
+$distinctDistrictExpr = $adminHasDistCol ? "COALESCE(cp.district,'')" : "''";
+$distinctGroupExpr = "cp.state, {$distinctDistrictExpr}, LOWER(TRIM(cp.name))";
+$countSql = "SELECT COUNT(*) AS total FROM (SELECT 1" . $baseSql . " GROUP BY {$distinctGroupExpr}) distinct_places";
 $stmtC = $conn->prepare($countSql);
 if ($types !== "") $stmtC->bind_param($types, ...$params);
 $stmtC->execute();
@@ -131,17 +160,12 @@ if ($page > $totalPages) {
 }
 
 // 2) LIST with LIMIT/OFFSET
-// Check if district column exists
-$distColChk = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
-$adminHasDistCol = ($distColChk && $distColChk->num_rows > 0);
-$adminDistrictCol = $adminHasDistCol ? ", district" : "";
-$festivalDateChk = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'festival_start_date'");
-$adminHasFestivalDateCols = ($festivalDateChk && $festivalDateChk->num_rows > 0);
-$adminFestivalDateCols = $adminHasFestivalDateCols ? ", festival_start_date, festival_end_date" : "";
-
-$sql = "SELECT place_id, state{$adminDistrictCol}, name, category, estimated_cost, is_active, image_url, updated_at, created_at{$adminFestivalDateCols}"
-    . $baseSql
-    . " ORDER BY place_id DESC LIMIT ? OFFSET ?";
+$adminDistrictCol = $adminHasDistCol ? ", cp.district" : "";
+$distinctIdSql = "SELECT MAX(cp.place_id) AS place_id" . $baseSql . " GROUP BY {$distinctGroupExpr}";
+$sql = "SELECT cp.place_id, cp.state{$adminDistrictCol}, cp.name, cp.category, cp.estimated_cost, cp.is_active, cp.image_url, cp.updated_at, cp.created_at
+    FROM cultural_places cp
+    JOIN ({$distinctIdSql}) distinct_ids ON distinct_ids.place_id = cp.place_id
+    ORDER BY cp.place_id DESC LIMIT ? OFFSET ?";
 
 $params2 = $params;
 $types2 = $types . "ii";
@@ -152,6 +176,10 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param($types2, ...$params2);
 $stmt->execute();
 $list = $stmt->get_result();
+$placeRows = [];
+if ($list) {
+    while ($row = $list->fetch_assoc()) $placeRows[] = $row;
+}
 
 
 
@@ -173,6 +201,34 @@ function resolve_img_src($imageUrl)
     // local relative path saved like "uploads/places/xxx.jpg"
     $imageUrl = ltrim($imageUrl, '/');
     return "../" . $imageUrl; // admin/ -> project root
+}
+
+function local_img_exists($imageUrl)
+{
+    $imageUrl = trim((string)$imageUrl);
+    if ($imageUrl === "" || preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0 || strpos($imageUrl, 'data:image/') === 0) {
+        return $imageUrl !== "";
+    }
+
+    $relative = ltrim($imageUrl, '/');
+    return file_exists(__DIR__ . "/../" . $relative);
+}
+
+function place_img_src($row)
+{
+    $imageUrl = trim((string)($row["image_url"] ?? ""));
+    $placeId = (int)($row["place_id"] ?? 0);
+    $dynamicFallback = "../api/place_photo.php?place_id=" . $placeId . "&v=2";
+
+    if ($imageUrl === "") {
+        return $placeId > 0 ? $dynamicFallback : "";
+    }
+
+    if ($imageUrl !== "" && local_img_exists($imageUrl)) {
+        return resolve_img_src($imageUrl);
+    }
+
+    return $placeId > 0 ? $dynamicFallback : "";
 }
 $stmt->close();
 ?>
@@ -217,9 +273,14 @@ $stmt->close();
             <div class="topbar">
                 <div class="page-title">
                     <h1>State Cultural Knowledge Base</h1>
-                    <p>Manage verified cultural places by state. These records will be used by Smart Itinerary Generator.</p>
+                    <p>Manage verified places used by the Smart Itinerary Generator. List, create, and edit records are separated to keep data entry clear.</p>
                 </div>
                 <div class="actions">
+                    <?php if ($showForm): ?>
+                        <a class="btn btn-ghost" href="admin_cultural_kb.php">Places List</a>
+                    <?php else: ?>
+                        <a class="btn btn-primary" href="admin_cultural_kb.php?view=create">Add Place</a>
+                    <?php endif; ?>
                     <a class="btn btn-ghost" href="../admin/admin_dashboard.php">Back</a>
                 </div>
             </div>
@@ -239,10 +300,12 @@ $stmt->close();
             <?php endif; ?>
 
             <section class="grid">
+                <?php if (!$showForm && !$showDetail): ?>
                 <!-- Filters -->
                 <div class="card col-12">
                     <h3>Search & Filter</h3>
                     <form method="get" action="admin_cultural_kb.php" class="grid" style="gap:12px;">
+                        <input type="hidden" name="display" value="<?php echo htmlspecialchars($displayMode); ?>">
                         <div class="col-6">
                             <label style="font-size:13px; font-weight:800;">Keyword</label><br>
                             <input type="text" name="q" value="<?php echo htmlspecialchars($q); ?>"
@@ -256,6 +319,17 @@ $stmt->close();
                                 <?php foreach ($stateOptions as $s): ?>
                                     <option value="<?php echo htmlspecialchars($s); ?>" <?php echo ($state === $s) ? "selected" : ""; ?>>
                                         <?php echo htmlspecialchars($s); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label style="font-size:13px; font-weight:800;">District</label><br>
+                            <select name="district" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <option value="">All districts</option>
+                                <?php foreach ($districtOptions as $d): ?>
+                                    <option value="<?php echo htmlspecialchars($d); ?>" <?php echo ($district === $d) ? "selected" : ""; ?>>
+                                        <?php echo htmlspecialchars($d); ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -279,22 +353,13 @@ $stmt->close();
                     </form>
                 </div>
 
-                <div class="card col-12">
-                    <h3>CSV Bulk Import</h3>
-                    <p class="meta">Upload CSV columns: name, state, district, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active, visit_duration_min, festival_start_date, festival_end_date. Festival rows require both date fields.</p>
-                    <form method="post" action="admin_cultural_kb_process.php" enctype="multipart/form-data" style="display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
-                        <input type="hidden" name="action" value="import_csv">
-                        <div style="flex:1; min-width:260px;">
-                            <label style="font-size:13px; font-weight:800;">CSV File</label><br>
-                            <input type="file" name="csv_file" accept=".csv,text/csv" required style="width:100%; padding:8px;">
-                        </div>
-                        <button class="btn btn-primary" type="submit">Import CSV</button>
-                    </form>
-                </div>
+                <?php endif; ?>
 
+                <?php if ($showForm): ?>
                 <!-- Add / Edit Form -->
                 <div class="card col-12">
                     <h3><?php echo $editRow ? "Edit Place" : "Add New Place"; ?></h3>
+                    <p class="meta"><?php echo $editRow ? "Update one verified place record. Duplicate detection still runs before saving." : "Create a new verified place record. Use Google Maps autocomplete where possible to fill address and coordinates."; ?></p>
 
                     <form method="post" action="admin_cultural_kb_process.php" enctype="multipart/form-data">
                         <input type="hidden" name="action" value="<?php echo $editRow ? "update" : "create"; ?>">
@@ -401,15 +466,6 @@ $stmt->close();
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
-                            <div class="col-12" id="adminDuplicatePanel" style="display:none; border:1px solid rgba(245,158,11,.35); background:rgba(245,158,11,.08); border-radius:12px; padding:12px;">
-                                <div style="font-weight:900; color:#92400e; margin-bottom:6px;">Possible Duplicate Places</div>
-                                <div id="adminDuplicateList" class="meta"></div>
-                                <label style="display:flex; gap:8px; align-items:center; margin-top:10px; font-size:13px; font-weight:800;">
-                                    <input type="checkbox" name="allow_duplicate" value="1">
-                                    Allow duplicate because this is a different place
-                                </label>
-                            </div>
-
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Entrance Fee (RM)</label><br>
                                 <input type="number" step="0.01" min="0" name="estimated_cost"
@@ -452,7 +508,7 @@ $stmt->close();
 
                                 <?php
                                 $currentImgRaw = $editRow["image_url"] ?? "";
-                                $currentImg = resolve_img_src($currentImgRaw);
+                                $currentImg = $editRow ? place_img_src($editRow) : "";
                                 ?>
 
                                 <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-start; margin:8px 0 10px;">
@@ -620,19 +676,138 @@ $stmt->close();
 
                         <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
                             <button class="btn btn-primary" type="submit"><?php echo $editRow ? "Update Place" : "Add Place"; ?></button>
-                            <?php if ($editRow): ?>
-                                <a class="btn btn-ghost" href="admin_cultural_kb.php">Cancel Edit</a>
-                            <?php endif; ?>
+                            <a class="btn btn-ghost" href="admin_cultural_kb.php"><?php echo $editRow ? "Cancel Edit" : "Cancel"; ?></a>
                         </div>
                     </form>
                 </div>
+                <?php if (!$editRow): ?>
+                <div class="card col-12">
+                    <h3>CSV Bulk Import</h3>
+                    <p class="meta">Upload CSV columns: name, state, district, category, description, address, latitude, longitude, estimated_cost, opening_hours, image_url, is_active, visit_duration_min, festival_start_date, festival_end_date. Festival rows require both date fields.</p>
+                    <form method="post" action="admin_cultural_kb_process.php" enctype="multipart/form-data" style="display:flex; gap:10px; flex-wrap:wrap; align-items:end;">
+                        <input type="hidden" name="action" value="import_csv">
+                        <div style="flex:1; min-width:260px;">
+                            <label style="font-size:13px; font-weight:800;">CSV File</label><br>
+                            <input type="file" name="csv_file" accept=".csv,text/csv" required style="width:100%; padding:8px;">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Import CSV</button>
+                    </form>
+                </div>
+                <?php endif; ?>
+                <?php endif; ?>
 
+                <?php if ($showDetail): ?>
+                <div class="card col-12">
+                    <?php $detailImg = place_img_src($detailRow); ?>
+                    <div style="display:grid; grid-template-columns:minmax(260px, 380px) minmax(0, 1fr); gap:18px; align-items:start;">
+                        <div>
+                            <?php if ($detailImg !== ""): ?>
+                                <img src="<?php echo htmlspecialchars($detailImg); ?>" alt="<?php echo htmlspecialchars($detailRow["name"]); ?>" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:14px; border:1px solid rgba(15,23,42,0.10); background:#f1f5f9;" loading="lazy">
+                            <?php else: ?>
+                                <div style="width:100%; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; border-radius:14px; background:#f1f5f9; color:#64748b; font-weight:800;">No image</div>
+                            <?php endif; ?>
+                        </div>
+                        <div>
+                            <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:start;">
+                                <div>
+                                    <h3 style="margin-bottom:6px;"><?php echo htmlspecialchars($detailRow["name"]); ?></h3>
+                                    <p class="meta">
+                                        <?php echo htmlspecialchars($detailRow["state"]); ?>
+                                        <?php if (!empty($detailRow["district"])): ?> · <?php echo htmlspecialchars($detailRow["district"]); ?><?php endif; ?>
+                                        · <?php echo htmlspecialchars(ucfirst($detailRow["category"])); ?>
+                                    </p>
+                                </div>
+                                <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                                    <a class="btn btn-ghost" href="admin_cultural_kb.php">Back to List</a>
+                                    <a class="btn btn-primary" href="admin_cultural_kb.php?edit_id=<?php echo (int)$detailRow["place_id"]; ?>">Edit</a>
+                                </div>
+                            </div>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:10px; margin:14px 0;">
+                                <div class="chip">RM <?php echo number_format((float)($detailRow["entrance_fee"] ?? $detailRow["estimated_cost"] ?? 0), 2); ?></div>
+                                <div class="chip"><?php echo ((int)($detailRow["is_active"] ?? 0) === 1) ? "Active" : "Inactive"; ?></div>
+                                <div class="chip"><?php echo (int)($detailRow["visit_duration_min"] ?? 90); ?> min visit</div>
+                                <?php if (!empty($detailRow["best_time_to_visit"])): ?><div class="chip"><?php echo htmlspecialchars($detailRow["best_time_to_visit"]); ?></div><?php endif; ?>
+                            </div>
+                            <?php if (!empty($detailRow["description"])): ?>
+                                <p style="line-height:1.6; color:#334155;"><?php echo nl2br(htmlspecialchars($detailRow["description"])); ?></p>
+                            <?php endif; ?>
+                            <div style="display:grid; gap:8px; margin-top:14px; color:#475569; font-size:13px;">
+                                <?php if (!empty($detailRow["address"])): ?><div><strong>Address:</strong> <?php echo htmlspecialchars($detailRow["address"]); ?></div><?php endif; ?>
+                                <?php if (!empty($detailRow["opening_hours"])): ?><div><strong>Opening Hours:</strong> <?php echo htmlspecialchars($detailRow["opening_hours"]); ?></div><?php endif; ?>
+                                <?php if (!empty($detailRow["latitude"]) && !empty($detailRow["longitude"])): ?><div><strong>Coordinates:</strong> <?php echo htmlspecialchars($detailRow["latitude"]); ?>, <?php echo htmlspecialchars($detailRow["longitude"]); ?></div><?php endif; ?>
+                                <?php if (!empty($detailRow["website_url"])): ?><div><strong>Website:</strong> <a href="<?php echo htmlspecialchars($detailRow["website_url"]); ?>" target="_blank" rel="noopener">Open official/source link</a></div><?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+
+                <?php if (!$showForm && !$showDetail): ?>
                 <!-- Table -->
                 <div class="card col-12">
                     <h3>Places List</h3>
-                    <p class="meta">Tip: Add latitude/longitude now, later Module 4 (Maps) can draw markers and routes.</p>
+                    <p class="meta">Showing <?php echo (int)$perPage; ?> distinct records per page by state, district, and place name. Exact duplicate names are hidden from this list; keep the newest record and clean duplicates when found.</p>
+
+                    <?php
+                    $displayQs = $_GET;
+                    unset($displayQs["page"]);
+                    $displayQs["display"] = "list";
+                    $listUrl = "admin_cultural_kb.php?" . http_build_query($displayQs);
+                    $displayQs["display"] = "photos";
+                    $photosUrl = "admin_cultural_kb.php?" . http_build_query($displayQs);
+                    ?>
+                    <div style="display:flex; gap:10px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin:12px 0;">
+                        <div class="meta">Display mode</div>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                            <a class="btn <?php echo $displayMode === "list" ? "btn-primary" : "btn-ghost"; ?>" href="<?php echo htmlspecialchars($listUrl); ?>">List</a>
+                            <a class="btn <?php echo $displayMode === "photos" ? "btn-primary" : "btn-ghost"; ?>" href="<?php echo htmlspecialchars($photosUrl); ?>">Photo Grid</a>
+                        </div>
+                    </div>
 
                     <div class="table-wrap">
+                        <?php if ($displayMode === "photos"): ?>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:14px;">
+                                <?php foreach ($placeRows as $r): ?>
+                                    <?php $thumb = place_img_src($r); ?>
+                                    <div style="border:1px solid rgba(15,23,42,0.10); border-radius:14px; overflow:hidden; background:#fff;">
+                                        <?php if ($thumb !== ""): ?>
+                                            <img
+                                                src="<?php echo htmlspecialchars($thumb); ?>"
+                                                alt="<?php echo htmlspecialchars($r["name"]); ?>"
+                                                style="width:100%; height:150px; object-fit:cover; display:block; background:#f1f5f9;"
+                                                onerror="this.onerror=null; this.outerHTML='<div style=&quot;height:150px; display:flex; align-items:center; justify-content:center; background:#f1f5f9; color:#64748b; font-weight:800;&quot;>No image</div>';"
+                                                loading="lazy">
+                                        <?php else: ?>
+                                            <div style="height:150px; display:flex; align-items:center; justify-content:center; background:#f1f5f9; color:#64748b; font-weight:800;">No image</div>
+                                        <?php endif; ?>
+
+                                        <div style="padding:12px;">
+                                            <div style="font-weight:900; line-height:1.25;"><?php echo htmlspecialchars($r["name"]); ?></div>
+                                            <div class="meta" style="margin-top:6px;">
+                                                <?php echo htmlspecialchars($r["state"]); ?>
+                                                <?php if (!empty($r["district"])): ?>
+                                                    · <?php echo htmlspecialchars($r["district"]); ?>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
+                                                <span class="chip"><?php echo htmlspecialchars(ucfirst($r["category"])); ?></span>
+                                                <span class="chip">RM <?php echo number_format((float)$r["estimated_cost"], 2); ?></span>
+                                                <span class="chip"><?php echo ((int)$r["is_active"] === 1) ? "Active" : "Inactive"; ?></span>
+                                            </div>
+                                            <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;">
+                                                <a class="btn btn-ghost" href="admin_cultural_kb.php?detail_id=<?php echo (int)$r["place_id"]; ?>">View Details</a>
+                                                <a class="btn btn-ghost" href="admin_cultural_kb.php?edit_id=<?php echo (int)$r["place_id"]; ?>">Edit</a>
+                                                <a class="btn btn-ghost" href="admin_cultural_kb_process.php?action=delete&place_id=<?php echo (int)$r["place_id"]; ?>"
+                                                    onclick="return confirm('Delete this place?');">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <?php if (count($placeRows) === 0): ?>
+                                <div style="padding:18px; color:#64748b;">No records found.</div>
+                            <?php endif; ?>
+                        <?php else: ?>
                         <table>
                             <thead>
                                 <tr>
@@ -641,17 +816,14 @@ $stmt->close();
                                     <th>Image</th>
                                     <th>Name</th>
                                     <th>Category</th>
-                                    <?php if ($adminHasFestivalDateCols): ?>
-                                        <th>Festival Date</th>
-                                    <?php endif; ?>
                                     <th>Cost (RM)</th>
                                     <th>Active</th>
                                     <th>Updated</th>
-                                    <th style="width:180px;">Action</th>
+                                    <th style="width:260px;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php while ($r = $list->fetch_assoc()): ?>
+                                <?php foreach ($placeRows as $r): ?>
                                     <tr>
                                         <td><?php echo (int)$r["place_id"]; ?></td>
                                         <td>
@@ -662,11 +834,10 @@ $stmt->close();
                                         </td>
                                         <td>
                                             <?php
-                                            $raw = trim((string)($r["image_url"] ?? ""));
-                                            $thumb = $raw !== "" ? resolve_img_src($raw) : "";
+                                            $thumb = place_img_src($r);
                                             ?>
                                             <?php if ($thumb === ""): ?>
-                                                <span style="opacity:.5;">-</span>
+                                                <span style="opacity:.55;">No image</span>
                                             <?php else: ?>
                                                 <img
                                                     src="<?php echo htmlspecialchars($thumb); ?>"
@@ -679,32 +850,25 @@ $stmt->close();
 
                                         <td><strong><?php echo htmlspecialchars($r["name"]); ?></strong></td>
                                         <td><?php echo htmlspecialchars($r["category"]); ?></td>
-                                        <?php if ($adminHasFestivalDateCols): ?>
-                                            <td>
-                                                <?php if (($r["category"] ?? "") === "festival" && !empty($r["festival_start_date"]) && !empty($r["festival_end_date"])): ?>
-                                                    <?php echo htmlspecialchars($r["festival_start_date"]); ?> to <?php echo htmlspecialchars($r["festival_end_date"]); ?>
-                                                <?php else: ?>
-                                                    <span style="opacity:.5;">-</span>
-                                                <?php endif; ?>
-                                            </td>
-                                        <?php endif; ?>
                                         <td><?php echo number_format((float)$r["estimated_cost"], 2); ?></td>
                                         <td><?php echo ((int)$r["is_active"] === 1) ? "Yes" : "No"; ?></td>
                                         <td><?php echo htmlspecialchars($r["updated_at"] ?? $r["created_at"]); ?></td>
                                         <td>
+                                            <a class="btn btn-ghost" href="admin_cultural_kb.php?detail_id=<?php echo (int)$r["place_id"]; ?>">View Details</a>
                                             <a class="btn btn-ghost" href="admin_cultural_kb.php?edit_id=<?php echo (int)$r["place_id"]; ?>">Edit</a>
                                             <a class="btn btn-ghost" href="admin_cultural_kb_process.php?action=delete&place_id=<?php echo (int)$r["place_id"]; ?>"
                                                 onclick="return confirm('Delete this place?');">Delete</a>
                                         </td>
                                     </tr>
-                                <?php endwhile; ?>
-                                <?php if ($list->num_rows === 0): ?>
+                                <?php endforeach; ?>
+                                <?php if (count($placeRows) === 0): ?>
                                     <tr>
-                                        <td colspan="<?php echo $adminHasFestivalDateCols ? 10 : 9; ?>">No records found.</td>
+                                        <td colspan="9">No records found.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
                         </table>
+                        <?php endif; ?>
                         <?php if ($totalPages > 1): ?>
                             <div style="display:flex; gap:10px; align-items:center; justify-content:center; margin-top:12px; flex-wrap:wrap; width:100%;">
                                 <?php
@@ -730,78 +894,14 @@ $stmt->close();
                             </div>
                         <?php endif; ?>
                     </div>
+                </div>
+                <?php endif; ?>
             </section>
         </main>
     </div>
 <script>
 var adminDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
 var existingAdminPlaces = <?php echo json_encode($duplicatePlaces, JSON_UNESCAPED_UNICODE); ?>;
-
-function normPlaceName(value) {
-    return String(value || '').toLowerCase()
-        .replace(/\([^)]*\)/g, ' ')
-        .replace(/[^a-z0-9]+/g, ' ')
-        .replace(/\b(the|restaurant|restoran|cafe|museum|muzium|temple|park|taman)\b/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim();
-}
-
-function roughSimilarity(a, b) {
-    a = normPlaceName(a);
-    b = normPlaceName(b);
-    if (!a || !b) return 0;
-    if (a === b) return 100;
-    var short = a.length < b.length ? a : b;
-    var long = a.length < b.length ? b : a;
-    if (long.indexOf(short) !== -1 && short.length >= 5) return 88;
-    var words = short.split(' ').filter(Boolean);
-    var hits = words.filter(function(w) { return long.indexOf(w) !== -1; }).length;
-    return Math.round((hits / Math.max(1, words.length)) * 75);
-}
-
-function checkAdminDuplicates() {
-    var nameInput = document.getElementById('adminPlaceNameInput');
-    var stateInput = document.getElementById('adminStateSelect');
-    var catInput = document.getElementById('adminCategorySelect');
-    var latInput = document.getElementById('adminLatitudeInput');
-    var lngInput = document.getElementById('adminLongitudeInput');
-    var panel = document.getElementById('adminDuplicatePanel');
-    var list = document.getElementById('adminDuplicateList');
-    if (!nameInput || !panel || !list) return;
-
-    var name = nameInput.value;
-    var state = stateInput ? stateInput.value : '';
-    var category = catInput ? catInput.value : '';
-    var lat = parseFloat(latInput ? latInput.value : '');
-    var lng = parseFloat(lngInput ? lngInput.value : '');
-    var matches = [];
-    existingAdminPlaces.forEach(function(p) {
-        if (state && p.state !== state) return;
-        if (category && p.category !== category) return;
-        var score = roughSimilarity(name, p.name);
-        if (!isNaN(lat) && !isNaN(lng) && p.latitude && p.longitude) {
-            var dLat = Math.abs(lat - parseFloat(p.latitude));
-            var dLng = Math.abs(lng - parseFloat(p.longitude));
-            if (dLat < 0.002 && dLng < 0.002) score = Math.max(score, 85);
-        }
-        if (score >= 60) matches.push({ place: p, score: score });
-    });
-    matches.sort(function(a, b) { return b.score - a.score; });
-    matches = matches.slice(0, 5);
-    panel.style.display = matches.length ? 'block' : 'none';
-    list.innerHTML = matches.length ? matches.map(function(m) {
-        var p = m.place;
-        return '<div><strong>#' + p.place_id + ' ' + escAdminHtml(p.name) + '</strong> - ' +
-            escAdminHtml([p.district, p.state].filter(Boolean).join(', ')) +
-            ' - ' + escAdminHtml(p.category) + ' - ' + m.score + '% match</div>';
-    }).join('') : '';
-}
-
-function escAdminHtml(str) {
-    return String(str || '').replace(/[&<>"']/g, function(ch) {
-        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch];
-    });
-}
 
 function adminUpdateDistricts(selectedState) {
     var distSel = document.getElementById('adminDistrictSelect');
@@ -935,17 +1035,10 @@ function initPlaceAutocomplete() {
                 descriptionInput.value = generateStarterDescription(place, state, district);
             }
         }
-        checkAdminDuplicates();
     });
 }
 
-['adminPlaceNameInput','adminStateSelect','adminLatitudeInput','adminLongitudeInput'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('input', checkAdminDuplicates);
-    if (el) el.addEventListener('change', checkAdminDuplicates);
-});
 var adminCategorySelect = document.getElementById('adminCategorySelect');
-if (adminCategorySelect) adminCategorySelect.addEventListener('change', checkAdminDuplicates);
 function toggleFestivalDateRequirement() {
     var category = document.getElementById('adminCategorySelect');
     var start = document.getElementById('festivalStartDateInput');
@@ -957,7 +1050,6 @@ function toggleFestivalDateRequirement() {
 }
 if (adminCategorySelect) adminCategorySelect.addEventListener('change', toggleFestivalDateRequirement);
 toggleFestivalDateRequirement();
-checkAdminDuplicates();
 </script>
 <?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>

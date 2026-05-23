@@ -116,12 +116,12 @@ function build_itinerary_title(int $tripDays, string $preferredStatesCsv, string
     if (count($catsTop) === 2) $themeText = $catsTop[0] . " & " . $catsTop[1];
 
     $templates = [
-        "%dD %s Trail — %s",
+        "%dD %s Trail - %s",
         "%dD %s Escape: %s",
         "%dD %s Highlights | %s",
-        "%dD %s Explorer Route — %s",
+        "%dD %s Explorer Route - %s",
         "%dD %s Journey: %s",
-        "%dD %s Getaway — %s"
+        "%dD %s Getaway - %s"
     ];
 
     $idx = $seed % count($templates);
@@ -340,14 +340,6 @@ function take_loose_from_pool(array &$pool, int $k): array
     return $selected;
 }
 
-// ---- Food priority ----
-function desired_food_count(int $itemsPerDay): int
-{
-    if ($itemsPerDay >= 5) return 2;
-    if ($itemsPerDay >= 3) return 1;
-    return 0;
-}
-
 function pace_buffer_minutes(string $travelPace): int
 {
     return match (strtolower(trim($travelPace))) {
@@ -357,81 +349,161 @@ function pace_buffer_minutes(string $travelPace): int
     };
 }
 
-function count_food(array $selected): int
+function is_food_place(array $place): bool
 {
-    $c = 0;
-    foreach ($selected as $p) {
-        if (strtolower((string)($p["category"] ?? "")) === "food") $c++;
-    }
-    return $c;
+    return strtolower((string)($place["category"] ?? "")) === "food";
 }
 
-function ensure_food_priority(array &$selected, array &$pool, int $itemsPerDay, float $maxKm): void
+function daily_activity_quota(string $travelPace): int
 {
-    $need = desired_food_count($itemsPerDay);
-    if ($need <= 0) return;
+    return match (strtolower(trim($travelPace))) {
+        "relaxed" => 3,
+        "packed" => 5,
+        default => 4,
+    };
+}
 
-    $have = count_food($selected);
-    if ($have >= $need) return;
+function daily_food_hunter_quota(string $travelPace): int
+{
+    return match (strtolower(trim($travelPace))) {
+        "relaxed" => 4,
+        "packed" => 6,
+        default => 5,
+    };
+}
 
-    // Anchor for "nearby": first valid coordinate in selected
-    $anchor = null;
-    foreach ($selected as $p) {
-        if (valid_coord($p["latitude"] ?? null, $p["longitude"] ?? null)) {
-            $anchor = $p;
-            break;
-        }
-    }
+function category_mode_allows(array $place, string $mode): bool
+{
+    if ($mode === "food") return is_food_place($place);
+    if ($mode === "activity") return !is_food_place($place);
+    return true;
+}
 
-    while ($have < $need) {
-        $bestIdx = null;
-        $bestD = PHP_FLOAT_MAX;
+function food_slot_target_minutes(string $slot): int
+{
+    return match ($slot) {
+        "Breakfast" => 8 * 60,
+        "Brunch" => 10 * 60 + 30,
+        "Lunch" => 12 * 60 + 30,
+        "Tea" => 15 * 60 + 30,
+        "Dinner" => 18 * 60 + 30,
+        "Supper" => 20 * 60 + 30,
+        default => 0,
+    };
+}
 
-        foreach ($pool as $i => $cand) {
-            if (strtolower((string)($cand["category"] ?? "")) !== "food") continue;
-            if (!valid_coord($cand["latitude"] ?? null, $cand["longitude"] ?? null)) continue;
+function food_hunter_slots(int $count): array
+{
+    if ($count >= 6) return ["Breakfast", "Brunch", "Lunch", "Tea", "Dinner", "Supper"];
+    if ($count >= 5) return ["Breakfast", "Brunch", "Lunch", "Tea", "Dinner"];
+    return ["Breakfast", "Lunch", "Tea", "Dinner"];
+}
 
-            if ($anchor !== null) {
-                $d = haversine_km(
+function mark_food_slot(array $place, string $slot): array
+{
+    $place["_meal_slot"] = $slot;
+    $place["_slot_target_min"] = food_slot_target_minutes($slot);
+    return $place;
+}
+
+function nearest_food_for_slot(
+    array $byState,
+    array $stateOrder,
+    array $reservedIds,
+    ?array $anchor,
+    string $slot,
+    ?string $dayDate,
+    float $maxKm
+): ?array {
+    $targetMin = food_slot_target_minutes($slot);
+    $best = null;
+    $bestScore = PHP_FLOAT_MAX;
+
+    foreach ($stateOrder as $stateRank => $state) {
+        if (!isset($byState[$state])) continue;
+
+        foreach ($byState[$state] as $place) {
+            $placeId = (int)($place["place_id"] ?? 0);
+            if ($placeId <= 0 || isset($reservedIds[$placeId])) continue;
+            if (!is_food_place($place)) continue;
+            if (!valid_coord($place["latitude"] ?? null, $place["longitude"] ?? null)) continue;
+            if (!festival_available_on_date($place, $dayDate)) continue;
+            if (!opening_hours_allows($place["opening_hours"] ?? null, $targetMin)) continue;
+
+            $distance = 0.0;
+            if ($anchor !== null && valid_coord($anchor["latitude"] ?? null, $anchor["longitude"] ?? null)) {
+                $distance = haversine_km(
                     (float)$anchor["latitude"],
                     (float)$anchor["longitude"],
-                    (float)$cand["latitude"],
-                    (float)$cand["longitude"]
+                    (float)$place["latitude"],
+                    (float)$place["longitude"]
                 );
-                if ($d > $maxKm) continue;
-                if ($d < $bestD) {
-                    $bestD = $d;
-                    $bestIdx = $i;
-                }
-            } else {
-                $bestIdx = $i;
-                break;
+                if ($distance > $maxKm) continue;
+            }
+
+            $score = ($stateRank * 1000) + $distance;
+            if ($best === null || $score < $bestScore) {
+                $best = $place;
+                $bestScore = $score;
             }
         }
-
-        if ($bestIdx === null) break;
-
-        // Replace a non-food
-        $replaceIdx = null;
-        for ($j = count($selected) - 1; $j >= 0; $j--) {
-            if (strtolower((string)($selected[$j]["category"] ?? "")) !== "food") {
-                $replaceIdx = $j;
-                break;
-            }
-        }
-        if ($replaceIdx === null) break;
-
-        $food = $pool[$bestIdx];
-        array_splice($pool, $bestIdx, 1);
-
-        $replaced = $selected[$replaceIdx];
-        $selected[$replaceIdx] = $food;
-
-        // Put replaced back into pool for future days
-        $pool[] = $replaced;
-
-        $have++;
     }
+
+    return $best === null ? null : mark_food_slot($best, $slot);
+}
+
+function pick_standard_meal_stops(
+    array $byState,
+    array $stateOrder,
+    array $activities,
+    array $usedPlaceIds,
+    ?string $dayDate,
+    float $maxKm
+): array {
+    if (empty($activities)) return [];
+
+    $anchors = [
+        "Breakfast" => $activities[0],
+        "Lunch" => $activities[(int)floor((count($activities) - 1) / 2)],
+        "Dinner" => $activities[count($activities) - 1],
+    ];
+
+    $meals = [];
+    $reservedIds = $usedPlaceIds;
+    foreach (["Breakfast", "Lunch", "Dinner"] as $slot) {
+        $meal = nearest_food_for_slot($byState, $stateOrder, $reservedIds, $anchors[$slot], $slot, $dayDate, $maxKm);
+        if ($meal === null) continue;
+        $meals[$slot] = $meal;
+        $reservedIds[(int)$meal["place_id"]] = true;
+    }
+
+    return $meals;
+}
+
+function compose_standard_day_plan(array $activities, array $meals): array
+{
+    $plan = [];
+    if (isset($meals["Breakfast"])) $plan[] = $meals["Breakfast"];
+
+    $activityCount = count($activities);
+    $beforeLunch = min(1, $activityCount);
+
+    foreach (array_slice($activities, 0, $beforeLunch) as $activity) $plan[] = $activity;
+    if (isset($meals["Lunch"])) $plan[] = $meals["Lunch"];
+    foreach (array_slice($activities, $beforeLunch) as $activity) $plan[] = $activity;
+    if (isset($meals["Dinner"])) $plan[] = $meals["Dinner"];
+
+    return $plan;
+}
+
+function mark_food_hunter_plan(array $foods): array
+{
+    $slots = food_hunter_slots(count($foods));
+    $plan = [];
+    foreach ($foods as $idx => $food) {
+        $plan[] = mark_food_slot($food, $slots[$idx] ?? ("Food Stop " . ($idx + 1)));
+    }
+    return $plan;
 }
 
 // ---- Google optimize ordering (real) ----
@@ -651,7 +723,7 @@ function daily_start_minutes(string $preferredVisitTime): int
         "morning" => 8 * 60,
         "afternoon" => 12 * 60 + 30,
         "evening" => 16 * 60,
-        default => 9 * 60,
+        default => 8 * 60,
     };
 }
 
@@ -714,12 +786,13 @@ function opening_hours_allows(?string $openingHours, int $startMin): bool
 
 function place_visit_duration_min(array $place): int
 {
+    $category = strtolower((string)($place["category"] ?? ""));
+    if ($category === "food") return 60;
+
     $configured = (int)($place["visit_duration_min"] ?? 0);
     if ($configured > 0) return max(30, min(360, $configured));
 
-    $category = strtolower((string)($place["category"] ?? ""));
     return match ($category) {
-        "food" => 60,
         "festival" => 150,
         "museum", "heritage", "culture", "nature" => 120,
         "shopping" => 90,
@@ -781,20 +854,22 @@ function filter_and_top_up_day_selection(
     int $itemsPerDay,
     array $usedPlaceIds,
     ?string $dayDate,
-    int $dayStartMin
+    int $dayStartMin,
+    string $categoryMode = "all"
 ): array {
     $result = [];
     $selectedIds = [];
 
-    $appendIfUsable = function (array $place) use (&$result, &$selectedIds, $itemsPerDay, $usedPlaceIds, $dayDate, $dayStartMin): bool {
+    $appendIfUsable = function (array $place) use (&$result, &$selectedIds, $itemsPerDay, $usedPlaceIds, $dayDate, $dayStartMin, $categoryMode): bool {
         if (count($result) >= $itemsPerDay) return false;
 
         $placeId = (int)($place["place_id"] ?? 0);
         if ($placeId <= 0) return false;
         if (isset($usedPlaceIds[$placeId]) || isset($selectedIds[$placeId])) return false;
+        if (!category_mode_allows($place, $categoryMode)) return false;
         if (!valid_coord($place["latitude"] ?? null, $place["longitude"] ?? null)) return false;
         if (!festival_available_on_date($place, $dayDate)) return false;
-        if (!opening_hours_allows($place["opening_hours"] ?? null, $dayStartMin)) return false;
+        if ($categoryMode !== "food" && !opening_hours_allows($place["opening_hours"] ?? null, $dayStartMin)) return false;
 
         $result[] = $place;
         $selectedIds[$placeId] = true;
@@ -854,11 +929,9 @@ $statesCsv     = preference_state_csv($conn, $preferenceId, (string)($pref["pref
 $districtsCsv  = trim((string)($pref["preferred_districts"] ?? ""));
 $tripEndDate = trip_end_date($sd, $tripDays);
 
-// Daily stop count is controlled by the saved travel pace. Hotels are added
-// later as accommodation and do not consume the daily place quota.
-if ($travelPace === "relaxed") $itemsPerDay = 3;
-elseif ($travelPace === "packed") $itemsPerDay = 5;
-else $itemsPerDay = 4;
+// The daily quota is for cultural/activity stops. Meal stops are added around
+// those places. A food-only preference becomes a denser food trail instead.
+$itemsPerDay = daily_activity_quota($travelPace);
 
 // For title only
 $titleStatesCsv = ($statesCsv === "") ? "Malaysia" : $statesCsv;
@@ -877,9 +950,16 @@ $districts = $districtsCsv !== "" ? array_values(array_unique(array_filter(array
 $userSelectedDistricts = !empty($districts);
 
 $allowedCategories = ["culture", "heritage", "museum", "food", "festival", "nature", "shopping"];
-$categories = $interestsCsv !== "" ? array_values(array_unique(array_filter(array_map("trim", explode(",", $interestsCsv))))) : [];
-$categories = array_values(array_intersect($categories, $allowedCategories));
-if (empty($categories)) $categories = $allowedCategories;
+$preferredCategories = $interestsCsv !== "" ? array_values(array_unique(array_filter(array_map("trim", explode(",", $interestsCsv))))) : [];
+$preferredCategories = array_values(array_intersect($preferredCategories, $allowedCategories));
+$foodHunterMode = count($preferredCategories) === 1 && $preferredCategories[0] === "food";
+$categories = empty($preferredCategories) ? $allowedCategories : $preferredCategories;
+if (!$foodHunterMode && !in_array("food", $categories, true)) {
+    $categories[] = "food";
+}
+if ($foodHunterMode) {
+    $itemsPerDay = daily_food_hunter_quota($travelPace);
+}
 
 // Determine if user explicitly selected states (not Malaysia)
 $statesCsvLowerList = array_map("strtolower", normalize_list($statesCsv));
@@ -1089,7 +1169,7 @@ if ($currentState === null) {
 
 // ===================== 6) GENERATE (NO STOP, NO ROLLBACK) =====================
 for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
-    $dayCursorMin = $dayStartMin; // User preferred visit time, default 9:00 AM.
+    $dayCursorMin = $dayStartMin; // User preferred visit time, default 8:00 AM.
     $dayDate = itinerary_day_date($sd, $dayNo);
 
     // Remove used items from every pool (safety)
@@ -1108,10 +1188,15 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
     foreach ($candidates as $st) {
         if (!isset($byState[$st]) || empty($byState[$st])) continue;
 
-        // Try compact first (nearby), then loose (still no reuse)
-        $try = take_compact_from_pool($byState[$st], $itemsPerDay, $maxDayKm);
+        $dayPool = array_values(array_filter(
+            $byState[$st],
+            fn($place) => category_mode_allows($place, $foodHunterMode ? "food" : "activity")
+        ));
+
+        // Try compact first (nearby), then loose (still no reuse).
+        $try = take_compact_from_pool($dayPool, $itemsPerDay, $maxDayKm);
         if (empty($try)) {
-            $try = take_loose_from_pool($byState[$st], $itemsPerDay);
+            $try = take_loose_from_pool($dayPool, $itemsPerDay);
         }
 
         if (!empty($try)) {
@@ -1122,10 +1207,6 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
     }
 
     if (!empty($selected) && $chosenState !== null) {
-
-        // Food priority within the SAME day state (rule #4)
-        ensure_food_priority($selected, $byState[$chosenState], $itemsPerDay, $maxDayKm);
-
         // Remove unusable candidates before ordering, then top up from available
         // nearby pools so a valid day does not become empty after schedule checks.
         $selected = filter_and_top_up_day_selection(
@@ -1135,7 +1216,8 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             $itemsPerDay,
             $usedPlaceIds,
             $dayDate,
-            $dayStartMin
+            $dayStartMin,
+            $foodHunterMode ? "food" : "activity"
         );
         if (empty($selected)) {
             $currentState = pick_start_state_best($byState) ?? $currentState;
@@ -1149,6 +1231,13 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             else $selected = order_nearest_next($selected); // fallback
         } elseif ($routeStrategy === "nearest_next") {
             $selected = order_nearest_next($selected);
+        }
+
+        if ($foodHunterMode) {
+            $selected = mark_food_hunter_plan($selected);
+        } else {
+            $mealStops = pick_standard_meal_stops($byState, $candidates, $selected, $usedPlaceIds, $dayDate, $maxDayKm);
+            $selected = compose_standard_day_plan($selected, $mealStops);
         }
 
         // Insert items for this day (ONE state/day => no East/West mixing in same day)
@@ -1166,6 +1255,9 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             $itemType = ($cat === "food") ? "food" : (($cat === "festival") ? "festival" : "attraction");
             $districtLabel = (isset($p["district"]) && $p["district"] !== "") ? " | District: " . (string)$p["district"] : "";
             $notes    = "State: " . (string)$p["state"] . $districtLabel . " | Category: " . $cat;
+            if ($itemType === "food" && !empty($p["_meal_slot"])) {
+                $notes .= " | Meal: " . (string)$p["_meal_slot"];
+            }
 
             // ---- RouteService: calculate distance & travel time from previous place ----
             $distKm   = null;
@@ -1186,6 +1278,9 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
                 $candidateStartMin += (int)$timeMin;
             } elseif ($seq > 1) {
                 $candidateStartMin += (int)(($transportType === "walking") ? 20 : 15);
+            }
+            if (!empty($p["_slot_target_min"])) {
+                $candidateStartMin = max($candidateStartMin, (int)$p["_slot_target_min"]);
             }
 
             if (!opening_hours_allows($p["opening_hours"] ?? null, $candidateStartMin)) {

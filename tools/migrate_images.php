@@ -4,10 +4,9 @@
  * tools/migrate_images.php
  *
  * One-time migration:
- * - Find rows where image_url is NOT empty AND image_path is NULL/empty
- * - Download remote image URL to local uploads/places/
- * - Update image_path
- * - OPTIONAL: also replace image_url with the local path (requested)
+ * - Find rows where image_url contains a remote image URL
+ * - Download the image to local uploads/places/
+ * - Replace image_url with the local uploads/places path
  *
  * Run:
  * - Browser: http://localhost/.../tools/migrate_images.php
@@ -29,7 +28,6 @@ require_once __DIR__ . '/../config/db_connect.php';
 $TABLE    = "cultural_places";   // e.g. cultural_places / cultural_place_suggestions / etc.
 $ID_COL   = "place_id";          // primary key column name
 $URL_COL  = "image_url";         // remote URL column
-$PATH_COL = "image_path";        // local path column (must exist)
 
 // Where to save downloaded images
 $UPLOAD_REL_DIR = "uploads/places";                       // stored in DB as "uploads/places/xxx.jpg"
@@ -38,9 +36,6 @@ $UPLOAD_ABS_DIR = realpath(__DIR__ . "/..") . "/$UPLOAD_REL_DIR";
 // Behavior
 $LIMIT = 0;                   // 0 = no limit; or set 200, 500, etc.
 $DRY_RUN = false;             // true = no download/update, just show what would happen
-
-// IMPORTANT: user requested "auto change sql image_url also"
-$UPDATE_URL_TO_LOCAL = true;  // true = set image_url = image_path (local path) after download
 
 // Network options
 $CONNECT_TIMEOUT = 10;
@@ -162,9 +157,9 @@ function makeFilename(int $id, string $ext, string $url): string
 
 out("=== Image Migration Script ===");
 out("Table: {$TABLE}");
-out("Columns: id={$ID_COL}, url={$URL_COL}, path={$PATH_COL}");
+out("Columns: id={$ID_COL}, url={$URL_COL}");
 out("Save to: {$UPLOAD_REL_DIR}  (ABS: {$UPLOAD_ABS_DIR})");
-out("DRY_RUN=" . ($DRY_RUN ? "true" : "false") . ", UPDATE_URL_TO_LOCAL=" . ($UPDATE_URL_TO_LOCAL ? "true" : "false"));
+out("DRY_RUN=" . ($DRY_RUN ? "true" : "false"));
 out("-----------------------------------");
 
 if (!ensureDir($UPLOAD_ABS_DIR)) {
@@ -173,10 +168,11 @@ if (!ensureDir($UPLOAD_ABS_DIR)) {
 }
 
 // Build SQL
-$sql = "SELECT {$ID_COL} AS id, {$URL_COL} AS image_url, {$PATH_COL} AS image_path
+$sql = "SELECT {$ID_COL} AS id, {$URL_COL} AS image_url
         FROM {$TABLE}
-        WHERE {$URL_COL} IS NOT NULL AND TRIM({$URL_COL}) <> ''
-          AND ({$PATH_COL} IS NULL OR TRIM({$PATH_COL}) = '')";
+        WHERE {$URL_COL} IS NOT NULL
+          AND TRIM({$URL_COL}) <> ''
+          AND {$URL_COL} LIKE 'http%'";
 
 if ($LIMIT > 0) {
     $sql .= " LIMIT " . (int)$LIMIT;
@@ -199,10 +195,7 @@ if ($total === 0) {
     exit;
 }
 
-$updateSql = $UPDATE_URL_TO_LOCAL
-    ? "UPDATE {$TABLE} SET {$PATH_COL} = ?, {$URL_COL} = ? WHERE {$ID_COL} = ?"
-    : "UPDATE {$TABLE} SET {$PATH_COL} = ? WHERE {$ID_COL} = ?";
-
+$updateSql = "UPDATE {$TABLE} SET {$URL_COL} = ? WHERE {$ID_COL} = ?";
 $upd = $conn->prepare($updateSql);
 if (!$upd) {
     out("ERROR: Update prepare failed: " . $conn->error);
@@ -258,11 +251,7 @@ foreach ($rows as $r) {
     }
 
     // Update DB
-    if ($UPDATE_URL_TO_LOCAL) {
-        $upd->bind_param("ssi", $relPath, $relPath, $id);
-    } else {
-        $upd->bind_param("si", $relPath, $id);
-    }
+    $upd->bind_param("si", $relPath, $id);
 
     if (!$upd->execute()) {
         out("  [FAIL] DB update: " . $upd->error);

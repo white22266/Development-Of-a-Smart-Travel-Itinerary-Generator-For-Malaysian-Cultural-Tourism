@@ -1,13 +1,14 @@
 <?php
 /**
- * Download Google Places photos for active Johor cultural_places.
+ * Download Google Places photos for active cultural_places.
  *
  * Saves real place photos into uploads/places/ and updates:
  * - cultural_places.image_url
- * - cultural_places.image_path, when the column exists
  *
  * Run:
  *   php tools/download_johor_place_photos.php
+ *   php tools/download_johor_place_photos.php --state=Kedah
+ *   php tools/download_johor_place_photos.php --all
  */
 
 ini_set('display_errors', '1');
@@ -17,11 +18,32 @@ set_time_limit(0);
 require_once __DIR__ . '/../config/db_connect.php';
 require_once __DIR__ . '/../config/api_keys.php';
 
-$state = 'Johor';
+$cliOptions = parse_cli_options($argv ?? []);
+$state = trim((string)($_GET['state'] ?? ($cliOptions['state'] ?? 'Johor')));
+$allStates = isset($cliOptions['all']) || (($_GET['all'] ?? '') === '1');
 $uploadRelDir = 'uploads/places';
 $uploadAbsDir = realpath(__DIR__ . '/..') . DIRECTORY_SEPARATOR . str_replace('/', DIRECTORY_SEPARATOR, $uploadRelDir);
-$limit = (int)($_GET['limit'] ?? ($argv[1] ?? 0));
+$limit = (int)($_GET['limit'] ?? ($cliOptions['limit'] ?? 0));
 $force = in_array('--force', $argv ?? [], true) || (($_GET['force'] ?? '') === '1');
+
+function parse_cli_options(array $argv): array
+{
+    $out = [];
+    foreach (array_slice($argv, 1) as $arg) {
+        if (str_starts_with($arg, '--')) {
+            $arg = substr($arg, 2);
+            if (str_contains($arg, '=')) {
+                [$key, $value] = explode('=', $arg, 2);
+                $out[$key] = trim($value, "\"'");
+            } else {
+                $out[$arg] = true;
+            }
+        } elseif (is_numeric($arg)) {
+            $out['limit'] = (int)$arg;
+        }
+    }
+    return $out;
+}
 
 function out_line(string $message): void
 {
@@ -32,14 +54,6 @@ function out_line(string $message): void
         @ob_flush();
         @flush();
     }
-}
-
-function has_column(mysqli $conn, string $table, string $column): bool
-{
-    $table = $conn->real_escape_string($table);
-    $column = $conn->real_escape_string($column);
-    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
-    return $res && $res->num_rows > 0;
 }
 
 function http_json(string $url): array
@@ -146,18 +160,21 @@ if (!is_dir($uploadAbsDir) && !mkdir($uploadAbsDir, 0755, true)) {
     exit(1);
 }
 
-$hasImagePath = has_column($conn, 'cultural_places', 'image_path');
 $whereImage = $force
     ? '1=1'
     : "(image_url IS NULL OR TRIM(image_url) = '' OR image_url NOT LIKE 'uploads/places/%')";
 
 $sql = "
-    SELECT place_id, name, state, district, address, image_url" . ($hasImagePath ? ", image_path" : "") . "
+    SELECT place_id, name, state, district, address, image_url
     FROM cultural_places
     WHERE is_active = 1
-      AND state = ?
       AND $whereImage
-    ORDER BY district, name, place_id
+";
+if (!$allStates) {
+    $sql .= " AND state = ?";
+}
+$sql .= "
+    ORDER BY state, district, name, place_id
 ";
 if ($limit > 0) $sql .= " LIMIT " . $limit;
 
@@ -166,21 +183,22 @@ if (!$stmt) {
     out_line('ERROR: Select prepare failed: ' . $conn->error);
     exit(1);
 }
-$stmt->bind_param('s', $state);
+if (!$allStates) {
+    $stmt->bind_param('s', $state);
+}
 $stmt->execute();
 $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $stmt->close();
 
-$updateSql = $hasImagePath
-    ? "UPDATE cultural_places SET image_url = ?, image_path = ? WHERE place_id = ?"
-    : "UPDATE cultural_places SET image_url = ? WHERE place_id = ?";
+$updateSql = "UPDATE cultural_places SET image_url = ? WHERE place_id = ?";
 $update = $conn->prepare($updateSql);
 if (!$update) {
     out_line('ERROR: Update prepare failed: ' . $conn->error);
     exit(1);
 }
 
-out_line('Found Johor places needing local photos: ' . count($rows));
+$scopeLabel = $allStates ? 'all states' : $state;
+out_line('Found places needing local photos (' . $scopeLabel . '): ' . count($rows));
 
 $ok = 0;
 $fail = 0;
@@ -227,11 +245,7 @@ foreach ($rows as $place) {
         continue;
     }
 
-    if ($hasImagePath) {
-        $update->bind_param('ssi', $relPath, $relPath, $placeId);
-    } else {
-        $update->bind_param('si', $relPath, $placeId);
-    }
+    $update->bind_param('si', $relPath, $placeId);
 
     if (!$update->execute()) {
         @unlink($absPath);

@@ -328,7 +328,7 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         $sections[] = section("Lowest Price Attractions", ["Place", "State", "District", "Category", "Price"], $cheapest);
         $sections[] = section("Data Completeness Check", ["Issue", "Total"], [
             ["Issue" => "Places without coordinates", "Total" => scalar_query($conn, "SELECT COUNT(*) FROM cultural_places WHERE latitude IS NULL OR longitude IS NULL OR (latitude=0 AND longitude=0)")],
-            ["Issue" => "Places without image", "Total" => scalar_query($conn, "SELECT COUNT(*) FROM cultural_places WHERE COALESCE(image_url,image_path,'')=''")],
+            ["Issue" => "Places without image", "Total" => scalar_query($conn, "SELECT COUNT(*) FROM cultural_places WHERE COALESCE(image_url,'')=''")],
             ["Issue" => "Places without opening hours", "Total" => scalar_query($conn, "SELECT COUNT(*) FROM cultural_places WHERE COALESCE(opening_hours,'')=''")],
             ["Issue" => "Places without visit duration", "Total" => scalar_query($conn, "SELECT COUNT(*) FROM cultural_places WHERE visit_duration_min IS NULL OR visit_duration_min<=0")],
         ]);
@@ -379,21 +379,12 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
     } else {
         $type = "ai_usage";
         $title = "AI Usage Report";
-        $description = "Analyzes AI assistant usage, recent questions, most active users, and itinerary questions.";
+        $description = "Analyzes AI assistant usage by question intent, linked itinerary questions, and most active users.";
         $aiDate = $hasAiLogs ? date_filter_sql($conn, "a", $from, $to) : "";
         $userRows = $hasAiLogs ? rows_query($conn, "
             SELECT COALESCE(t.full_name,'Unknown') AS Traveller, COUNT(*) AS Questions, MAX(a.created_at) AS `Last Question`
             FROM ai_chat_logs a LEFT JOIN travellers t ON t.traveller_id=a.traveller_id
             WHERE 1=1$aiDate GROUP BY COALESCE(t.full_name,'Unknown') ORDER BY Questions DESC LIMIT 20
-        ") : [];
-        $recent = $hasAiLogs ? rows_query($conn, "
-            SELECT COALESCE(t.full_name,'Unknown') AS Traveller, i.title AS Itinerary,
-                   LEFT(a.user_message, 140) AS Question, a.created_at AS Created
-            FROM ai_chat_logs a
-            LEFT JOIN travellers t ON t.traveller_id=a.traveller_id
-            INNER JOIN itineraries i ON i.itinerary_id=a.itinerary_id
-            WHERE i.title IS NOT NULL AND i.title <> ''$aiDate
-            ORDER BY a.created_at DESC LIMIT 30
         ") : [];
         $intentRows = $hasAiLogs ? rows_query($conn, "
             SELECT
@@ -415,7 +406,6 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         ];
         $sections[] = section("AI Question Intent Summary", ["Intent", "Total"], $intentRows);
         $sections[] = section("Most Active AI Users", ["Traveller", "Questions", "Last Question"], $userRows);
-        $sections[] = section("Recent AI Questions", ["Traveller", "Itinerary", "Question", "Created"], $recent);
     }
 
     $raw["kpis"] = $kpis;
@@ -678,15 +668,16 @@ if ($export === "csv") {
         .ai-analysis-box { white-space:pre-wrap; line-height:1.55; font-size:13px; color:#334155; background:#f8fafc; border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:14px; }
         .ai-generate-panel { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
         .ai-generate-panel form { margin:0; }
-        .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; align-items:start; }
-        .chart-panel { border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:12px 14px; background:#fff; min-height:0; overflow:hidden; }
+        .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; align-items:stretch; }
+        .chart-panel { border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:14px 16px; background:#fff; height:370px; overflow:hidden; display:flex; flex-direction:column; }
         .chart-title { font-size:13px; font-weight:900; color:#0f172a; margin-bottom:8px; }
-        .chart-box { position:relative; height:180px; max-height:180px; }
+        .chart-box { position:relative; height:210px; max-height:210px; flex:0 0 210px; }
         .chart-box-doughnut { width:min(100%, 340px); margin:0 auto; }
         .chart-box-bar { height:210px; max-height:210px; }
         .chart-box canvas { max-width:100%; max-height:100%; }
-        .chart-data-list { display:grid; gap:6px; margin-top:10px; }
+        .chart-data-list { display:grid; gap:6px; margin-top:10px; overflow:auto; padding-right:2px; }
         .chart-data-row { display:grid; grid-template-columns:12px minmax(0, 1fr) auto auto; gap:8px; align-items:center; font-size:12px; color:#334155; }
+        .chart-data-row span:nth-child(2) { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
         .chart-dot { width:10px; height:10px; border-radius:50%; }
         .chart-percent { min-width:52px; text-align:right; font-weight:900; color:#0f172a; }
         .chart-value { min-width:58px; text-align:right; color:#64748b; }

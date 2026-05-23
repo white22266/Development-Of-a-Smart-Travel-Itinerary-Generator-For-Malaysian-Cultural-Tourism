@@ -285,7 +285,7 @@ $stmt = $conn->prepare("
         cp.category, cp.state, {$districtSelect},
         cp.description, cp.visit_duration_min, cp.halal_status,
         cp.best_time_to_visit, cp.dress_code_required,
-        COALESCE(cp.image_path, cp.image_url) AS image_src
+        cp.image_url AS image_src
     FROM itinerary_items ii
     LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
     WHERE ii.itinerary_id = ?
