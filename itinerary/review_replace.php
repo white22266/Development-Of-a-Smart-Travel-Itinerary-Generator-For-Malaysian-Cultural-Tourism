@@ -131,7 +131,7 @@ function recalculate_itinerary_routes(mysqli $conn, int $itineraryId): void
 function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
 {
     $stmt = $conn->prepare("
-        SELECT i.total_days, tp.transport_type, tp.budget
+        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type
         FROM itineraries i
         LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
         WHERE i.itinerary_id = ?
@@ -165,9 +165,15 @@ function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
     $costService = new CostEstimationService(
         (string)($meta["transport_type"] ?? "car"),
         (int)($meta["total_days"] ?? 1),
-        (float)($meta["budget"] ?? 0)
+        (float)($meta["budget"] ?? 0),
+        (string)($meta["traveller_type"] ?? "solo")
     );
-    $breakdown = $costService->calculate($items, $totalDistanceKm);
+    $tierDefaults = CostEstimationService::budgetTierDefaults(
+        (string)($meta["budget_tier"] ?? "normal"),
+        (float)($meta["budget"] ?? 0),
+        (int)($meta["total_days"] ?? 1)
+    );
+    $breakdown = $costService->calculate($items, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
     $total = (float)($breakdown["total_cost"] ?? 0);
 
     $upd = $conn->prepare("UPDATE itineraries SET total_estimated_cost = ? WHERE itinerary_id = ?");
@@ -406,7 +412,7 @@ if ($action === 'confirm') {
         }
     }
 
-    // Resequence remaining items per day
+    // Resequence remaining itinerary items for the affected day.
     $seqRes = $conn->query("SELECT item_id, day_no, sequence_no FROM itinerary_items WHERE itinerary_id = $itineraryId ORDER BY day_no, sequence_no");
     $byDay  = [];
     while ($r = $seqRes->fetch_assoc()) $byDay[(int)$r["day_no"]][] = (int)$r["item_id"];

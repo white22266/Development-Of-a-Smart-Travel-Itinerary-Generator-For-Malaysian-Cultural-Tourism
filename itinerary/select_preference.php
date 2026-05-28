@@ -21,7 +21,7 @@ unset($_SESSION["form_errors"]);
 
 $stmt = $conn->prepare("
   SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type, travel_pace,
-         dietary_preference, preferred_visit_time, interests, preferred_states, preferred_districts, created_at
+         dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts, created_at
   FROM traveller_preferences
   WHERE traveller_id = ?
   ORDER BY preference_id DESC
@@ -29,7 +29,118 @@ $stmt = $conn->prepare("
 $stmt->bind_param("i", $travellerId);
 $stmt->execute();
 $res = $stmt->get_result();
+$preferences = [];
+while ($row = $res->fetch_assoc()) {
+    $preferences[] = $row;
+}
 $stmt->close();
+
+function pref_human_label(?string $value): string
+{
+    $value = trim((string)$value);
+    if ($value === "") return "-";
+    return ucwords(str_replace(["_", "-"], " ", $value));
+}
+
+function pref_rm(float $amount): string
+{
+    return "RM " . number_format($amount, 2);
+}
+
+function pref_interest_label(?string $csv): string
+{
+    $parts = array_values(array_filter(array_map("trim", explode(",", (string)$csv))));
+    if (empty($parts)) return "-";
+    return implode(", ", array_map("pref_human_label", $parts));
+}
+
+function pref_location_label(array $pref): string
+{
+    $state = trim((string)($pref["preferred_states"] ?? ""));
+    $district = trim((string)($pref["preferred_districts"] ?? ""));
+    if ($state !== "" && $district !== "") return $state . " > " . $district;
+    if ($state !== "") return $state;
+    if ($district !== "") return $district;
+    return "All Malaysia";
+}
+
+function pref_short_label(array $pref): string
+{
+    $days = max(1, (int)($pref["trip_days"] ?? 1));
+    $nights = max(0, $days - 1);
+    return "Preference #" . (int)$pref["preference_id"]
+        . " - " . $days . "D" . $nights . "N " . pref_location_label($pref)
+        . " - " . pref_rm((float)($pref["budget"] ?? 0))
+        . " - " . pref_human_label((string)($pref["travel_pace"] ?? "normal")) . " Pace";
+}
+
+function pref_activity_limit_text(array $pref): string
+{
+    $pace = strtolower((string)($pref["travel_pace"] ?? "normal"));
+    $type = strtolower((string)($pref["traveller_type"] ?? "solo"));
+    $access = strtolower((string)($pref["accessibility_needs"] ?? ""));
+    $base = match ($pace) {
+        "relaxed" => "lighter schedule",
+        "packed" => "denser schedule",
+        default => "balanced schedule",
+    };
+    if ($type === "family" || str_contains($access, "elderly") || str_contains($access, "wheelchair") || str_contains($access, "avoid stairs")) {
+        return ucfirst($base) . " with reduced walking and extra rest buffer.";
+    }
+    return ucfirst($base) . " based on selected travel pace.";
+}
+
+function pref_analysis_rows(array $pref): array
+{
+    $budget = (float)($pref["budget"] ?? 0);
+    $days = max(1, (int)($pref["trip_days"] ?? 1));
+    $perDay = $budget / $days;
+    $tier = pref_human_label((string)($pref["budget_tier"] ?? "normal"));
+    $interests = pref_interest_label((string)($pref["interests"] ?? ""));
+    $transport = pref_human_label((string)($pref["transport_type"] ?? "car"));
+    $diet = strtolower((string)($pref["dietary_preference"] ?? "none"));
+    $access = trim((string)($pref["accessibility_needs"] ?? ""));
+
+    $budgetLevel = "Limited";
+    if ($perDay >= 250) $budgetLevel = "Comfortable";
+    elseif ($perDay >= 120) $budgetLevel = "Moderate";
+
+    $foodRule = match ($diet) {
+        "halal" => "Food places are filtered to halal records where available.",
+        "vegetarian" => "Vegetarian preference is recorded; manual food checking is recommended.",
+        default => "No dietary restriction applied.",
+    };
+
+    return [
+        ["Traveller Profile", $tier . " " . pref_human_label((string)($pref["traveller_type"] ?? "solo")) . " Traveller"],
+        ["Budget Level", $budgetLevel . " (" . pref_rm($perDay) . " per day estimate)"],
+        ["Route Scope", pref_location_label($pref) . " first"],
+        ["Activity Rule", pref_activity_limit_text($pref)],
+        ["Transport Rule", $transport . " route mode with daily distance limit"],
+        ["Interest Rule", $interests],
+        ["Food Rule", $foodRule],
+        ["Accessibility Rule", $access !== "" ? $access : "No special accessibility restriction"],
+    ];
+}
+
+$preferenceSummaries = [];
+foreach ($preferences as $pref) {
+    $preferenceSummaries[(int)$pref["preference_id"]] = [
+        "label" => pref_short_label($pref),
+        "summary" => [
+            ["Duration", (int)$pref["trip_days"] . ((int)$pref["trip_days"] > 1 ? " days" : " day")],
+            ["Budget", pref_rm((float)($pref["budget"] ?? 0))],
+            ["Transport", pref_human_label((string)($pref["transport_type"] ?? "car"))],
+            ["Traveller Type", pref_human_label((string)($pref["traveller_type"] ?? "solo"))],
+            ["Pace", pref_human_label((string)($pref["travel_pace"] ?? "normal"))],
+            ["Location", pref_location_label($pref)],
+            ["Interests", pref_interest_label((string)($pref["interests"] ?? ""))],
+            ["Dietary", pref_human_label((string)($pref["dietary_preference"] ?? "none"))],
+            ["Visit Time", pref_human_label((string)($pref["preferred_visit_time"] ?? "any"))],
+        ],
+        "analysis" => pref_analysis_rows($pref),
+    ];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -118,6 +229,45 @@ $stmt->close();
             font-size: 12px;
             color: #475569;
             line-height: 1.7;
+        }
+        .pref-insight {
+            display: none;
+            margin-top: 14px;
+            gap: 12px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .pref-insight.show {
+            display: grid;
+        }
+        .pref-panel {
+            border: 1px solid rgba(15,23,42,0.10);
+            border-radius: 12px;
+            background: #f8fafc;
+            padding: 14px;
+        }
+        .pref-panel h4 {
+            margin: 0 0 10px;
+            font-size: 13px;
+            color: #0f172a;
+        }
+        .pref-row {
+            display: grid;
+            grid-template-columns: 145px minmax(0, 1fr);
+            gap: 10px;
+            padding: 8px 0;
+            border-top: 1px solid rgba(15,23,42,0.07);
+            font-size: 12.5px;
+        }
+        .pref-row:first-of-type {
+            border-top: 0;
+        }
+        .pref-key {
+            color: #64748b;
+            font-weight: 700;
+        }
+        .pref-value {
+            color: #0f172a;
+            font-weight: 800;
         }
         .ai-helper {
             margin-top: 16px;
@@ -307,6 +457,7 @@ $stmt->close();
             font-size: 13px;
         }
         @media (max-width: 850px) {
+            .pref-insight { grid-template-columns: 1fr; }
             .ai-chat-shell { grid-template-columns: 1fr; }
             .ai-chat-form { flex-direction: column; }
         }
@@ -368,7 +519,7 @@ $stmt->close();
         <div class="card">
             <h3>Generate Itinerary</h3>
 
-            <?php if ($res->num_rows === 0): ?>
+            <?php if (empty($preferences)): ?>
                 <p style="color:#ef4444; font-weight:800;">
                     No preference found. Please create one first.
                 </p>
@@ -381,32 +532,24 @@ $stmt->close();
                     <label style="font-weight:800; font-size:13px;">Saved Preference *</label><br>
                     <select name="preference_id" id="preferenceSelect" required
                         style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px; font-size:13px;">
-                        <option value="" disabled selected>— Select one preference —</option>
-                        <?php while ($p = $res->fetch_assoc()): ?>
-                            <?php
-                                $ps = trim((string)($p["preferred_states"] ?? ""));
-                                $pd = trim((string)($p["preferred_districts"] ?? ""));
-                                $loc = "";
-                                if ($ps !== "") {
-                                    $loc = $ps;
-                                    if ($pd !== "") $loc .= " › " . $pd;
-                                } else {
-                                    $loc = "All Malaysia";
-                                }
-                            ?>
+                        <option value="" disabled selected>Select one preference</option>
+                        <?php foreach ($preferences as $p): ?>
                             <option value="<?php echo (int)$p["preference_id"]; ?>">
-                                #<?php echo (int)$p["preference_id"]; ?> |
-                                <?php echo (int)$p["trip_days"]; ?> day<?php echo $p["trip_days"] > 1 ? 's' : ''; ?> |
-                                RM<?php echo number_format((float)$p["budget"], 2); ?> |
-                                <?php echo htmlspecialchars($p["budget_tier"] ?? "normal"); ?> |
-                                <?php echo htmlspecialchars($p["transport_type"]); ?> |
-                                <?php echo htmlspecialchars($p["traveller_type"] ?? "solo"); ?> |
-                                <?php echo htmlspecialchars($p["travel_pace"] ?? "normal"); ?> |
-                                <?php echo htmlspecialchars($p["interests"]); ?> |
-                                <?php echo htmlspecialchars($loc); ?>
+                                <?php echo htmlspecialchars(pref_short_label($p)); ?>
                             </option>
-                        <?php endwhile; ?>
+                        <?php endforeach; ?>
                     </select>
+
+                    <div class="pref-insight" id="preferenceInsight" aria-live="polite">
+                        <div class="pref-panel">
+                            <h4>Selected Preference Summary</h4>
+                            <div id="preferenceSummaryRows"></div>
+                        </div>
+                        <div class="pref-panel">
+                            <h4>System Analysis Result</h4>
+                            <div id="preferenceAnalysisRows"></div>
+                        </div>
+                    </div>
 
                     <div style="height:14px;"></div>
 
@@ -419,11 +562,11 @@ $stmt->close();
                     <div style="height:14px;"></div>
 
                     <div class="route-info-box">
-                        <div class="route-title">Travel Pace Controls Daily Activity Places</div>
+                        <div class="route-title">Travel Pace Controls Daily Schedule Density</div>
                         <ul>
-                            <li>Relaxed preference: about 3 activity places per day with longer rest gaps.</li>
-                            <li>Normal preference: about 4 activity places per day.</li>
-                            <li>Packed preference: about 5 activity places per day with shorter rest gaps.</li>
+                            <li>Relaxed preference: lighter schedule with longer rest gaps.</li>
+                            <li>Normal preference: balanced schedule with standard rest gaps.</li>
+                            <li>Packed preference: denser schedule with shorter rest gaps.</li>
                             <li>Breakfast, lunch, and dinner stops are added when nearby food records are available.</li>
                             <li>Food-only preferences become a food trail with about 4 to 6 food stops per day.</li>
                         </ul>
@@ -440,7 +583,7 @@ $stmt->close();
                             <li>Places are filtered by your <strong>preferred state &amp; district</strong>, interests, and budget.</li>
                             <li>Each day, the system picks the <strong>closest unvisited place</strong> from the previous stop (Haversine distance).</li>
                             <li>If a starting location is provided below, Day 1 routing begins from your origin.</li>
-                            <li>Category diversity is enforced — no two consecutive places share the same category.</li>
+                            <li>Category diversity is enforced, so consecutive places avoid repeating the same category.</li>
                             <li>Outdoor places (nature/festival) are deprioritised when weather is unfavourable.</li>
                         </ul>
                     </div>
@@ -449,8 +592,8 @@ $stmt->close();
 
                     <!-- ===== Starting Location ===== -->
                     <label style="font-weight:800; font-size:13px;">
-                        Starting Location
-                        <span style="font-weight:400; color:var(--muted); font-size:12px;">(optional — for origin-aware Day 1 routing)</span>
+                        Starting Location for Route Optimization
+                        <span style="font-weight:400; color:var(--muted); font-size:12px;">(recommended)</span>
                     </label>
                     <div class="origin-group">
                         <div class="origin-input-wrap">
@@ -466,7 +609,7 @@ $stmt->close();
                         </div>
                         <input type="hidden" name="origin_lat" id="origin_lat">
                         <input type="hidden" name="origin_lng" id="origin_lng">
-                        <div class="origin-status" id="originStatus">Start typing and choose a Google Maps suggestion, or click "Use My Location".</div>
+                        <div class="origin-status" id="originStatus">Choose a Google Maps suggestion or use your current location. If empty, the route starts from the first selected place.</div>
                     </div>
 
                     <div style="height:18px;"></div>
@@ -491,7 +634,7 @@ $stmt->close();
                 </div>
                 <div class="ai-chat-window">
                     <div id="aiChatMessages" class="ai-chat-messages">
-                        <div class="ai-msg bot">Hi, I can help check your selected preference before you generate. Ask things like “is this budget enough?”, “suggest route style”, or “should I include festival places?”</div>
+                        <div class="ai-msg bot">Hi, I can help check your selected preference before you generate. Ask things like "is this budget enough?", "suggest route style", or "should I include festival places?"</div>
                     </div>
                     <form id="aiPreferenceChatForm" class="ai-chat-form">
                         <input type="text" id="aiPreferenceMessage" placeholder="Ask about the selected preference..." autocomplete="off">
@@ -554,7 +697,7 @@ $stmt->close();
         if (q.length < 3) {
             latField.value = '';
             lngField.value = '';
-            setStatus('', 'Start typing and choose a Google Maps suggestion, or click "Use My Location".');
+            setStatus('', 'Choose a Google Maps suggestion or use your current location. If empty, the route starts from the first selected place.');
             return;
         }
         setStatus('spin', 'Looking up address…');
@@ -644,12 +787,46 @@ $stmt->close();
     var messages = document.getElementById('aiChatMessages');
     var sendBtn = document.getElementById('aiPreferenceSend');
     var selectedText = document.getElementById('aiSelectedPreference');
+    var insight = document.getElementById('preferenceInsight');
+    var summaryRows = document.getElementById('preferenceSummaryRows');
+    var analysisRows = document.getElementById('preferenceAnalysisRows');
+    var preferenceData = <?php echo json_encode($preferenceSummaries, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
     if (!form || !prefSelect || !input || !messages) return;
 
     function updateSelectedPreferenceText() {
+        var selected = prefSelect.value && preferenceData[prefSelect.value] ? preferenceData[prefSelect.value] : null;
         var opt = prefSelect.options[prefSelect.selectedIndex];
-        var text = opt && opt.value ? opt.textContent.replace(/\s+/g, ' ').trim() : 'none';
+        var text = selected ? selected.label : (opt && opt.value ? opt.textContent.replace(/\s+/g, ' ').trim() : 'none');
         selectedText.textContent = 'Selected preference: ' + text;
+        renderPreferencePanel(selected);
+    }
+
+    function renderPreferencePanel(selected) {
+        if (!insight || !summaryRows || !analysisRows) return;
+        if (!selected) {
+            insight.classList.remove('show');
+            summaryRows.innerHTML = '';
+            analysisRows.innerHTML = '';
+            return;
+        }
+        insight.classList.add('show');
+        summaryRows.innerHTML = renderRows(selected.summary || []);
+        analysisRows.innerHTML = renderRows(selected.analysis || []);
+    }
+
+    function renderRows(rows) {
+        return rows.map(function (row) {
+            return '<div class="pref-row"><div class="pref-key">' + escHtml(row[0]) + '</div><div class="pref-value">' + escHtml(row[1]) + '</div></div>';
+        }).join('');
+    }
+
+    function escHtml(value) {
+        return String(value == null ? '' : value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
     }
 
     prefSelect.addEventListener('change', updateSelectedPreferenceText);

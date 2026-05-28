@@ -62,7 +62,7 @@ function load_preference(mysqli $conn, int $travellerId, int $preferenceId): ?ar
     $stmt = $conn->prepare("
         SELECT preference_id, trip_days, budget, budget_tier, transport_type,
                traveller_type, travel_pace, dietary_preference, preferred_visit_time,
-               interests, preferred_states, preferred_districts
+               accessibility_needs, interests, preferred_states, preferred_districts
         FROM traveller_preferences
         WHERE preference_id = ? AND traveller_id = ?
         LIMIT 1
@@ -91,6 +91,7 @@ function build_chat_prompt(array $pref, string $message): string
         "travel_pace" => $pref["travel_pace"] ?? "normal",
         "dietary_preference" => $pref["dietary_preference"] ?? "none",
         "preferred_visit_time" => $pref["preferred_visit_time"] ?? "any",
+        "accessibility_needs" => $pref["accessibility_needs"] ?? "",
         "interests" => $pref["interests"] ?? "",
         "preferred_states" => $pref["preferred_states"] ?? "",
         "preferred_districts" => $pref["preferred_districts"] ?? "",

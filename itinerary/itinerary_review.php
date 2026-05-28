@@ -114,6 +114,14 @@ function computeMatchScore(array $item, array $interests, float $budget): array
     ];
 }
 
+function extractReasonSelected(?string $notes): string
+{
+    $text = (string)$notes;
+    $pos = strpos($text, 'Reason:');
+    if ($pos === false) return '';
+    return trim(substr($text, $pos + 7));
+}
+
 // ---- Load nearby hotels per state ----
 $statesInItinerary = [];
 foreach ($days as $dayItems) {
@@ -672,6 +680,10 @@ $startDate = $it["start_date"] ?? null;
                         </div>
                         <?php if (!empty($item['address'])): ?>
                         <div class="place-meta" style="margin-top:2px;">Address: <?php echo htmlspecialchars($item['address']); ?></div>
+                        <?php endif; ?>
+                        <?php $reasonSelected = extractReasonSelected($item['notes'] ?? ''); ?>
+                        <?php if ($reasonSelected !== ''): ?>
+                        <div class="place-meta" style="margin-top:4px;"><strong>Reason Selected:</strong> <?php echo htmlspecialchars($reasonSelected); ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="place-actions">

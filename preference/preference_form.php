@@ -291,7 +291,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 value="<?php echo htmlspecialchars($oldBudget); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
               <div class="field-help">
-                Your total trip budget. It is used to check whether the generated itinerary is within or over budget.
+                Your total trip budget. The generator uses it to choose lower-cost places, meals, transport estimates, and hotel assumptions before checking the final cost.
               </div>
 
               <div style="height:12px;"></div>
@@ -377,6 +377,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 placeholder="Example: elderly-friendly, avoid stairs"
                 value="<?php echo htmlspecialchars($oldAccessibility); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+              <div class="field-help">The system automatically analyzes this note when saving and applies it to route planning.</div>
 
               <hr class="sep">
 

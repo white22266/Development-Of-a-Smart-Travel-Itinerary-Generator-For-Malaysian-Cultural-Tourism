@@ -21,7 +21,7 @@ if ($itineraryId <= 0) { header("Location: my_itineraries.php"); exit; }
 
 // Load itinerary header + preference
 $stmt = $conn->prepare("
-    SELECT i.*, tp.transport_type, tp.budget, tp.budget_tier
+    SELECT i.*, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
     WHERE i.itinerary_id = ? AND i.traveller_id = ?
@@ -183,6 +183,14 @@ function activitySuggestion(string $type, string $category): string
     return $map[$key] ?? $map[$type] ?? 'Visit & explore';
 }
 
+function extractReasonSelected(?string $notes): string
+{
+    $text = (string)$notes;
+    $pos = strpos($text, 'Reason:');
+    if ($pos === false) return '';
+    return trim(substr($text, $pos + 7));
+}
+
 // Build timetables
 $timetables = [];
 foreach ($days as $d => $items) {
@@ -237,12 +245,9 @@ foreach ($days as $dayItems) {
 }
 $budget = (float)($it["budget"] ?? 0);
 $budgetTier = strtolower((string)($it["budget_tier"] ?? "normal"));
-$tierDefaults = match ($budgetTier) {
-    "budget" => ["hotel" => 90.0, "meal" => 12.0],
-    "luxury" => ["hotel" => 280.0, "meal" => 35.0],
-    default => ["hotel" => 150.0, "meal" => 20.0],
-};
-$costService = new CostEstimationService($transportType, $totalDays, $budget);
+$travellerType = strtolower((string)($it["traveller_type"] ?? "solo"));
+$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $totalDays);
+$costService = new CostEstimationService($transportType, $totalDays, $budget, $travellerType);
 $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 ?>
 <!DOCTYPE html>
@@ -1181,6 +1186,12 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
                                 <?php if (!empty($item['state'])): ?>
                                 <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">
                                     Location: <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
+                                </div>
+                                <?php endif; ?>
+                                <?php $reasonSelected = extractReasonSelected($item['notes'] ?? ''); ?>
+                                <?php if ($reasonSelected !== '' && !$isHotel): ?>
+                                <div style="font-size:10.5px; color:#475569; margin-top:4px;">
+                                    <strong>Reason Selected:</strong> <?php echo htmlspecialchars($reasonSelected); ?>
                                 </div>
                                 <?php endif; ?>
                             </td>

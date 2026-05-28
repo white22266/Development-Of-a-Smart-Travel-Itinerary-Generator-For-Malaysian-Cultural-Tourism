@@ -54,7 +54,7 @@ A) Traveller Preference Analyzer
 
 B) Smart Itinerary Generator
 - Select preference
-- Choose items per day and route strategy
+- Select start date and optional starting location
 - Generate itinerary
 
 C) Itinerary View

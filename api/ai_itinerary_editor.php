@@ -213,7 +213,7 @@ echo json_encode([
 function load_itinerary(mysqli $conn, int $itineraryId, int $travellerId): ?array
 {
     $stmt = $conn->prepare("
-        SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.items_per_day, i.total_estimated_cost,
+        SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost,
                tp.budget, tp.budget_tier, tp.transport_type, tp.interests, tp.preferred_states, tp.travel_pace
         FROM itineraries i
         LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
@@ -533,7 +533,7 @@ function build_addition_proposals(mysqli $conn, array $itinerary, array $items, 
         if ((int)$item["day_no"] === $dayNo) $existingDayCount++;
     }
 
-    $desired = max(3, min(5, (int)($itinerary["items_per_day"] ?? 4)));
+    $desired = daily_activity_quota_from_pace((string)($itinerary["travel_pace"] ?? "normal"));
     $needed = min(3, max(1, $desired - $existingDayCount));
     if (str_contains(strtolower($message), "extra") || str_contains($message, "多")) {
         $needed = 1;
@@ -623,6 +623,15 @@ function build_addition_proposals(mysqli $conn, array $itinerary, array $items, 
         ];
     }
     return $proposals;
+}
+
+function daily_activity_quota_from_pace(string $travelPace): int
+{
+    return match (strtolower(trim($travelPace))) {
+        "relaxed" => 3,
+        "packed" => 5,
+        default => 4,
+    };
 }
 
 function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?array
@@ -902,7 +911,7 @@ function recalculate_itinerary_routes(mysqli $conn, int $itineraryId): void
 function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
 {
     $stmt = $conn->prepare("
-        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier
+        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type
         FROM itineraries i
         LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
         WHERE i.itinerary_id = ?
@@ -929,16 +938,17 @@ function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
     $itemsStmt->close();
 
     $budgetTier = strtolower((string)($meta["budget_tier"] ?? "normal"));
-    $tierDefaults = match ($budgetTier) {
-        "budget" => ["hotel" => 90.0, "meal" => 12.0],
-        "luxury" => ["hotel" => 280.0, "meal" => 35.0],
-        default => ["hotel" => 150.0, "meal" => 20.0],
-    };
+    $tierDefaults = CostEstimationService::budgetTierDefaults(
+        $budgetTier,
+        (float)($meta["budget"] ?? 0),
+        (int)($meta["total_days"] ?? 1)
+    );
 
     $costService = new CostEstimationService(
         (string)($meta["transport_type"] ?? "car"),
         (int)($meta["total_days"] ?? 1),
-        (float)($meta["budget"] ?? 0)
+        (float)($meta["budget"] ?? 0),
+        (string)($meta["traveller_type"] ?? "solo")
     );
     $breakdown = $costService->calculate($items, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
     $total = (float)($breakdown["total_cost"] ?? 0);

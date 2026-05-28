@@ -26,6 +26,9 @@ class CostEstimationService
     /** @var float User's total budget */
     private float $budget;
 
+    /** @var string Traveller type used for meal/person estimates */
+    private string $travellerType;
+
     // ---- Default rates (RM) ----
 
     /** Transport cost per km by mode */
@@ -45,11 +48,28 @@ class CostEstimationService
     /** Average meal price per person (RM) */
     private const AVG_MEAL_PRICE = 15.00;
 
-    public function __construct(string $transportType = 'car', int $tripDays = 1, float $budget = 0.0)
+    public function __construct(string $transportType = 'car', int $tripDays = 1, float $budget = 0.0, string $travellerType = 'solo')
     {
         $this->transportType = self::normalizeTransportType($transportType);
         $this->tripDays      = max(1, $tripDays);
         $this->budget        = $budget;
+        $this->travellerType = self::normalizeTravellerType($travellerType);
+    }
+
+    public static function normalizeTravellerType(string $travellerType): string
+    {
+        $t = strtolower(trim($travellerType));
+        return in_array($t, ['solo', 'couple', 'family', 'group'], true) ? $t : 'solo';
+    }
+
+    public static function travellerMultiplier(string $travellerType): int
+    {
+        return match (self::normalizeTravellerType($travellerType)) {
+            'couple' => 2,
+            'family' => 4,
+            'group' => 5,
+            default => 1,
+        };
     }
 
     public static function normalizeTransportType(string $transportType): string
@@ -64,6 +84,36 @@ class CostEstimationService
             'motorbike', 'bike' => 'motorcycle',
             default => array_key_exists($t, self::TRANSPORT_RATE) ? $t : 'car',
         };
+    }
+
+    public static function budgetTierDefaults(string $budgetTier, float $budget = 0.0, int $tripDays = 1): array
+    {
+        $defaults = match (strtolower(trim($budgetTier))) {
+            'budget' => ['hotel' => 90.0, 'meal' => 12.0],
+            'luxury' => ['hotel' => 280.0, 'meal' => 35.0],
+            default => ['hotel' => 150.0, 'meal' => 20.0],
+        };
+
+        if ($budget <= 0) {
+            return $defaults;
+        }
+
+        $days = max(1, $tripDays);
+        $nights = max(0, $days - 1);
+        $mealSlots = max(1, $days * self::MEALS_PER_DAY);
+
+        // The user's RM budget is the hard planning target. Spending style gives
+        // the preferred comfort level, then this caps hotel/meal assumptions so a
+        // low total budget does not automatically create an impossible estimate.
+        $mealCap = ($budget * 0.25) / $mealSlots;
+        $hotelCap = $nights > 0 ? ($budget * 0.30) / $nights : 0.0;
+
+        $defaults['meal'] = max(6.0, min($defaults['meal'], $mealCap));
+        if ($nights > 0) {
+            $defaults['hotel'] = max(60.0, min($defaults['hotel'], $hotelCap));
+        }
+
+        return $defaults;
     }
 
     // =========================================================
@@ -135,11 +185,12 @@ class CostEstimationService
         // ---- 4. Food cost ----
         $meals       = ($mealsPerDay > 0) ? $mealsPerDay : self::MEALS_PER_DAY;
         $mealPrice   = ($avgMealPrice > 0) ? $avgMealPrice : self::AVG_MEAL_PRICE;
-        $defaultFoodCost = round($this->tripDays * $meals * $mealPrice, 2);
+        $travellerMultiplier = self::travellerMultiplier($this->travellerType);
+        $defaultFoodCost = round($this->tripDays * $meals * $mealPrice * $travellerMultiplier, 2);
         $foodCost = max($defaultFoodCost, round($scheduledFoodCost, 2));
         $foodNote = $scheduledFoodCost > 0
-            ? 'Scheduled food stops RM ' . number_format($scheduledFoodCost, 2) . '; minimum estimate ' . $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2)
-            : $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2);
+            ? 'Scheduled food stops RM ' . number_format($scheduledFoodCost, 2) . '; minimum estimate ' . $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2) . ' x ' . $travellerMultiplier . ' traveller unit(s)'
+            : $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2) . ' x ' . $travellerMultiplier . ' traveller unit(s)';
 
         // ---- 5. Total ----
         $totalCost = round($attractionCost + $transportCost + $accommodationCost + $foodCost, 2);

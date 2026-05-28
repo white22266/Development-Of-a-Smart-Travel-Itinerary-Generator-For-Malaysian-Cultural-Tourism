@@ -3,6 +3,8 @@
 // Enhanced: saves preferred_districts alongside preferred_states
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/api_keys.php";
+require_once "../services/AccessibilityNeedsAnalysisService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -170,6 +172,14 @@ if (!empty($errors)) {
     ];
     header("Location: preference_form.php");
     exit;
+}
+
+// Convert free-text accessibility notes into compact planning rules. This uses
+// Ollama when available and falls back to deterministic keyword parsing.
+if ($accessibilityNeeds !== "") {
+    $accessibilityService = new AccessibilityNeedsAnalysisService();
+    $accessibilityAnalysis = $accessibilityService->analyze($accessibilityNeeds, $travellerType);
+    $accessibilityNeeds = trim((string)($accessibilityAnalysis["stored_text"] ?? $accessibilityNeeds));
 }
 
 // ---- Insert to DB ----

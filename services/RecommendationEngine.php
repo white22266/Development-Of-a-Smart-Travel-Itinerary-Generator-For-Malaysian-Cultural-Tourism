@@ -45,9 +45,6 @@ class RecommendationEngine
         'shopping'  => 0.3,
     ];
 
-    /** Max items per day limit */
-    private const MAX_ITEMS_PER_DAY = 5;
-
     /** Max travel distance per day by transport type (km) */
     private const MAX_DAY_KM = [
         'car'              => 45.0,
@@ -78,9 +75,8 @@ class RecommendationEngine
      */
     public function generate(): array
     {
-        $tripDays    = (int)($this->prefs['trip_days']    ?? 1);
-        $itemsPerDay = (int)($this->prefs['items_per_day'] ?? 3);
-        $itemsPerDay = max(1, min($itemsPerDay, self::MAX_ITEMS_PER_DAY));
+        $tripDays    = (int)($this->prefs['trip_days'] ?? 1);
+        $activityQuota = $this->activityQuotaFromPace((string)($this->prefs['travel_pace'] ?? 'normal'));
 
         // ---- Step 1: Filter places ----
         $places = $this->filterPlaces();
@@ -101,7 +97,16 @@ class RecommendationEngine
         usort($places, fn($a, $b) => $b['_score'] <=> $a['_score']);
 
         // ---- Step 4: Build itinerary ----
-        return $this->buildItinerary($places, $tripDays, $itemsPerDay);
+        return $this->buildItinerary($places, $tripDays, $activityQuota);
+    }
+
+    private function activityQuotaFromPace(string $travelPace): int
+    {
+        return match (strtolower(trim($travelPace))) {
+            'relaxed' => 3,
+            'packed' => 5,
+            default => 4,
+        };
     }
 
     // =========================================================
@@ -236,7 +241,7 @@ class RecommendationEngine
      *   - Respect daily distance limit
      *   - Start Day 1 from user origin (if provided)
      */
-    private function buildItinerary(array $places, int $tripDays, int $itemsPerDay): array
+    private function buildItinerary(array $places, int $tripDays, int $activityQuota): array
     {
         $transport   = strtolower((string)($this->prefs['transport_type'] ?? 'car'));
         $maxDayKm    = self::MAX_DAY_KM[$transport] ?? 35.0;
@@ -270,7 +275,7 @@ class RecommendationEngine
             $candidates = $this->getDayCandidates($currentState, $byState, $usedIds);
 
             $attempts = 0;
-            while (count($dayPlaces) < $itemsPerDay && !empty($candidates) && $attempts < 100) {
+            while (count($dayPlaces) < $activityQuota && !empty($candidates) && $attempts < 100) {
                 $attempts++;
                 $best    = null;
                 $bestIdx = -1;

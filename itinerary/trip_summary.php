@@ -25,7 +25,7 @@ if ($itineraryId <= 0) {
 
 // ---- Load itinerary with preference data ----
 $stmt = $conn->prepare("
-    SELECT i.*, tp.budget, tp.budget_tier, tp.transport_type, tp.interests, tp.preferred_states, tp.trip_days AS pref_trip_days
+    SELECT i.*, tp.budget, tp.budget_tier, tp.transport_type, tp.traveller_type, tp.interests, tp.preferred_states, tp.trip_days AS pref_trip_days
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
     WHERE i.itinerary_id = ? AND i.traveller_id = ?
@@ -39,6 +39,14 @@ $stmt->close();
 if (!$it) {
     header("Location: my_itineraries.php");
     exit;
+}
+
+function extractReasonSelected(?string $notes): string
+{
+    $text = (string)$notes;
+    $pos = strpos($text, 'Reason:');
+    if ($pos === false) return '';
+    return trim(substr($text, $pos + 7));
 }
 
 // ---- Load itinerary items with place coordinates ----
@@ -89,14 +97,11 @@ $tripDays      = (int)($it["total_days"] ?? 1);
 $budget        = (float)($it["budget"] ?? 0);
 $transportType = (string)($it["transport_type"] ?? "car");
 $budgetTier    = strtolower((string)($it["budget_tier"] ?? "normal"));
+$travellerType = strtolower((string)($it["traveller_type"] ?? "solo"));
 $originName    = trim((string)($it["origin_name"] ?? ""));
-$tierDefaults = match ($budgetTier) {
-    "budget" => ["hotel" => 90.0, "meal" => 12.0],
-    "luxury" => ["hotel" => 280.0, "meal" => 35.0],
-    default => ["hotel" => 150.0, "meal" => 20.0],
-};
+$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $tripDays);
 
-$costService     = new CostEstimationService($transportType, $tripDays, $budget);
+$costService     = new CostEstimationService($transportType, $tripDays, $budget, $travellerType);
 $costBreakdown   = $costService->calculate($allItems, $totalDistKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 
 // ---- Hotel recommendations ----
@@ -490,6 +495,12 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                         <?php endif; ?>
                                         <?php if ($isHotel): ?>
                                         <div style="font-size:11px;color:var(--muted);">End-of-day accommodation stop. Not counted as an itinerary place.</div>
+                                        <?php endif; ?>
+                                        <?php $reasonSelected = extractReasonSelected($r["notes"] ?? ""); ?>
+                                        <?php if ($reasonSelected !== "" && !$isHotel): ?>
+                                        <div style="font-size:11px;color:#475569;margin-top:4px;">
+                                            <strong>Reason Selected:</strong> <?php echo htmlspecialchars($reasonSelected); ?>
+                                        </div>
                                         <?php endif; ?>
                                     </td>
                                     <td><span class="chip"><?php echo htmlspecialchars($typeLabel); ?></span></td>

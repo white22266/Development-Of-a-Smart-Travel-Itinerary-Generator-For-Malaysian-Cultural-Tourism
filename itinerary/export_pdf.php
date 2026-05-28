@@ -49,6 +49,14 @@ function clean_text($value): string
     return $value;
 }
 
+function extract_reason_selected(?string $notes): string
+{
+    $text = (string)$notes;
+    $pos = strpos($text, 'Reason:');
+    if ($pos === false) return '';
+    return trim(substr($text, $pos + 7));
+}
+
 function is_http_url($value): bool
 {
     return (bool)preg_match('#^https?://#i', (string)$value);
@@ -316,13 +324,10 @@ $tripDays = max(1, (int)($it["total_days"] ?? count($days)));
 $budget = (float)($it["budget"] ?? 0);
 $transportType = (string)($it["transport_type"] ?? "car");
 $budgetTier = strtolower((string)($it["budget_tier"] ?? "normal"));
-$tierDefaults = match ($budgetTier) {
-    "budget" => ["hotel" => 90.0, "meal" => 12.0],
-    "luxury" => ["hotel" => 280.0, "meal" => 35.0],
-    default => ["hotel" => 150.0, "meal" => 20.0],
-};
+$travellerType = strtolower((string)($it["traveller_type"] ?? "solo"));
+$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $tripDays);
 
-$costService = new CostEstimationService($transportType, $tripDays, $budget);
+$costService = new CostEstimationService($transportType, $tripDays, $budget, $travellerType);
 $costBreakdown = $costService->calculate($allItems, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 $perDayBreakdown = $costService->perDayBreakdown($days);
 
@@ -490,6 +495,8 @@ foreach ($days as $dayNo => $items) {
         $html .= "<td>" . (int)$item["sequence_no"] . "</td>";
         $html .= "<td><strong>" . esc($item["item_title"]) . "</strong><br><span class='muted'>" . esc(activity_text((string)$item["item_type"], $category)) . "</span>";
         if (!empty($item["address"])) $html .= "<br><span class='muted'>" . esc($item["address"]) . "</span>";
+        $reason = extract_reason_selected($item["notes"] ?? "");
+        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<br><span class='muted'><strong>Reason Selected:</strong> " . esc($reason) . "</span>";
         $html .= "</td>";
         $html .= "<td><span class='tag'>" . esc(ucfirst($category)) . "</span></td>";
         $html .= "<td>" . esc(fmt_rm($item["estimated_cost"] ?? 0)) . "</td>";
@@ -516,6 +523,8 @@ foreach ($days as $dayNo => $items) {
         $html .= "<div><span class='tag'>" . esc(ucfirst($category)) . "</span></div>";
         if (!empty($item["opening_hours"])) $html .= "<p><strong>Opening Hours:</strong> " . esc($item["opening_hours"]) . "</p>";
         if (!empty($item["address"])) $html .= "<p><strong>Address:</strong> " . esc($item["address"]) . "</p>";
+        $reason = extract_reason_selected($item["notes"] ?? "");
+        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<p><strong>Reason Selected:</strong> " . esc($reason) . "</p>";
         if (!empty($item["best_time_to_visit"])) $html .= "<p><strong>Best Time:</strong> " . esc($item["best_time_to_visit"]) . "</p>";
         if ((int)($item["dress_code_required"] ?? 0) === 1) $html .= "<p><strong>Etiquette:</strong> Dress code required. Cover shoulders/knees where appropriate.</p>";
         if ($item["halal_status"] !== null && $category === "food") $html .= "<p><strong>Halal:</strong> " . ((int)$item["halal_status"] === 1 ? "Available" : "Not certified / unknown") . "</p>";

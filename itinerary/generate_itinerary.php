@@ -37,7 +37,6 @@ if ($preferenceId <= 0) {
 
 // ===================== OPTIONS FROM POST =====================
 $startDate     = trim((string)($_POST["start_date"]     ?? ""));
-$itemsPerDay   = (int)($_POST["items_per_day"]   ?? 3);
 $routeStrategy = trim((string)($_POST["route_strategy"] ?? "google_optimize"));
 
 // Origin-aware routing: user's starting location
@@ -46,9 +45,6 @@ $originLng  = (float)($_POST["origin_lng"]  ?? 0);
 $originName = trim((string)($_POST["origin_name"] ?? ""));
 $hasOrigin  = ($originLat !== 0.0 && $originLng !== 0.0
                && is_finite($originLat) && is_finite($originLng));
-
-$allowedItems = [1, 2, 3, 4, 5];
-if (!in_array($itemsPerDay, $allowedItems, true)) $itemsPerDay = 3;
 
 if (!in_array($routeStrategy, ["google_optimize", "nearest_next"], true)) {
     $routeStrategy = "google_optimize";
@@ -204,15 +200,79 @@ function state_group(string $state): string
     return in_array($s, $east, true) ? "east" : "peninsular";
 }
 
-// ---- Daily distance limit by transport ----
-function get_daily_max_km(string $transportType): float
+function has_accessibility_keyword(string $accessibilityNeeds, array $keywords): bool
+{
+    $access = strtolower($accessibilityNeeds);
+    foreach ($keywords as $keyword) {
+        if ($keyword !== "" && str_contains($access, strtolower($keyword))) return true;
+    }
+    return false;
+}
+
+function needs_low_walking_plan(string $travellerType, string $accessibilityNeeds): bool
+{
+    $type = strtolower(trim($travellerType));
+    if (in_array($type, ["family", "elderly"], true)) return true;
+    return has_accessibility_keyword($accessibilityNeeds, [
+        "elderly",
+        "wheelchair",
+        "disabled",
+        "avoid stairs",
+        "avoid_stairs",
+        "low walking",
+        "low_walking",
+        "less walking",
+        "avoid long walk",
+        "mobility",
+        "step_free",
+    ]);
+}
+
+function prefers_indoor_accessibility(string $accessibilityNeeds): bool
+{
+    return has_accessibility_keyword($accessibilityNeeds, [
+        "indoor",
+        "indoor_preferred",
+        "avoid heat",
+        "avoid_heat",
+        "too hot",
+        "hot weather",
+    ]);
+}
+
+// ---- Daily distance limit by transport and travel pace ----
+function get_daily_max_km(string $transportType, string $travelPace = "normal", string $travellerType = "solo", string $accessibilityNeeds = ""): float
 {
     $t = strtolower(trim(str_replace("-", "_", $transportType)));
     $t = preg_replace("/\s+/", "_", $t) ?? $t;
-    if ($t === "walking") return 5.0;
-    if (in_array($t, ["public", "public_transport", "publictransit", "public_transit", "transit", "bus", "train"], true)) return 25.0;
-    if (in_array($t, ["car", "drive", "driving", "motorcycle"], true)) return 45.0;
-    return 35.0;
+    $pace = strtolower(trim($travelPace));
+
+    if ($t === "walking") {
+        $limit = match ($pace) {
+            "relaxed" => 3.0,
+            "packed" => 7.0,
+            default => 5.0,
+        };
+    } elseif (in_array($t, ["public", "public_transport", "publictransit", "public_transit", "transit", "bus", "train"], true)) {
+        $limit = match ($pace) {
+            "relaxed" => 15.0,
+            "packed" => 35.0,
+            default => 25.0,
+        };
+    } elseif (in_array($t, ["car", "drive", "driving", "motorcycle"], true)) {
+        $limit = match ($pace) {
+            "relaxed" => 30.0,
+            "packed" => 60.0,
+            default => 45.0,
+        };
+    } else {
+        $limit = 35.0;
+    }
+
+    if (needs_low_walking_plan($travellerType, $accessibilityNeeds)) {
+        $limit *= 0.75;
+    }
+    return max(2.0, $limit);
 }
 
 // ---- Neighbor map (canonical keys) ----
@@ -251,7 +311,7 @@ function count_valid_places(array $pool): int
 }
 
 // ---- Pool selection (no reuse by removing from pool) ----
-function take_compact_from_pool(array &$pool, int $k, float $maxKm): array
+function take_compact_from_pool(array &$pool, int $k, float $maxKm, bool $budgetAware = false): array
 {
     if ($k <= 0) return [];
     if (count_valid_places($pool) < 1) return [];
@@ -267,7 +327,11 @@ function take_compact_from_pool(array &$pool, int $k, float $maxKm): array
     $target = min($k, count($validIdx));
     if ($target <= 0) return [];
 
-    shuffle($validIdx);
+    if ($budgetAware) {
+        usort($validIdx, fn($a, $b) => place_entrance_fee($pool[$a]) <=> place_entrance_fee($pool[$b]));
+    } else {
+        shuffle($validIdx);
+    }
     $attempts = min(40, count($validIdx));
 
     for ($a = 0; $a < $attempts; $a++) {
@@ -327,11 +391,15 @@ function take_compact_from_pool(array &$pool, int $k, float $maxKm): array
     return [];
 }
 
-function take_loose_from_pool(array &$pool, int $k): array
+function take_loose_from_pool(array &$pool, int $k, bool $budgetAware = false): array
 {
     if ($k <= 0 || empty($pool)) return [];
 
-    shuffle($pool);
+    if ($budgetAware) {
+        usort($pool, fn($a, $b) => place_entrance_fee($a) <=> place_entrance_fee($b));
+    } else {
+        shuffle($pool);
+    }
 
     $take = min($k, count($pool));
     $selected = array_slice($pool, 0, $take);
@@ -340,13 +408,18 @@ function take_loose_from_pool(array &$pool, int $k): array
     return $selected;
 }
 
-function pace_buffer_minutes(string $travelPace): int
+function pace_buffer_minutes(string $travelPace, string $travellerType = "solo", string $accessibilityNeeds = ""): int
 {
-    return match (strtolower(trim($travelPace))) {
+    $buffer = match (strtolower(trim($travelPace))) {
         "relaxed" => 45,
         "packed" => 15,
         default => 30,
     };
+    $type = strtolower(trim($travellerType));
+    if ($type === "family") $buffer += 15;
+    if ($type === "group") $buffer += 10;
+    if (needs_low_walking_plan($travellerType, $accessibilityNeeds)) $buffer += 20;
+    return min(80, $buffer);
 }
 
 function is_food_place(array $place): bool
@@ -370,6 +443,104 @@ function daily_food_hunter_quota(string $travelPace): int
         "packed" => 6,
         default => 5,
     };
+}
+
+function adjusted_activity_quota(int $baseQuota, string $travellerType, string $accessibilityNeeds, bool $foodHunterMode): int
+{
+    $quota = $baseQuota;
+    $type = strtolower(trim($travellerType));
+
+    if (!$foodHunterMode && $type === "family") $quota--;
+    if (!$foodHunterMode && needs_low_walking_plan($travellerType, $accessibilityNeeds)) $quota--;
+    if ($foodHunterMode && $type === "group") $quota++;
+
+    $min = $foodHunterMode ? 4 : 2;
+    $max = $foodHunterMode ? 6 : 5;
+    return max($min, min($max, $quota));
+}
+
+function traveller_category_priority(array $place, string $travellerType, string $accessibilityNeeds): int
+{
+    $category = strtolower((string)($place["category"] ?? ""));
+    $duration = (int)($place["visit_duration_min"] ?? 90);
+    $type = strtolower(trim($travellerType));
+
+    if (needs_low_walking_plan($travellerType, $accessibilityNeeds)) {
+        if (in_array($category, ["museum", "culture", "shopping", "food"], true)) return 0;
+        if ($category === "heritage" && $duration <= 90) return 1;
+        if (in_array($category, ["nature", "festival"], true)) return 4;
+        return 2;
+    }
+
+    if (prefers_indoor_accessibility($accessibilityNeeds)) {
+        if (in_array($category, ["museum", "shopping", "culture", "food"], true)) return 0;
+        if (in_array($category, ["nature", "festival"], true)) return 3;
+        return 1;
+    }
+
+    if ($type === "couple") {
+        if (in_array($category, ["nature", "culture", "heritage", "food"], true)) return 0;
+        return 1;
+    }
+
+    if ($type === "family") {
+        if (in_array($category, ["nature", "museum", "shopping", "food"], true) && $duration <= 150) return 0;
+        if (in_array($category, ["culture", "heritage"], true)) return 1;
+        return 2;
+    }
+
+    if ($type === "group") {
+        if (in_array($category, ["food", "shopping", "culture", "nature"], true)) return 0;
+        return 1;
+    }
+
+    return 1;
+}
+
+function sort_pool_by_preference(array &$pool, string $travellerType, string $accessibilityNeeds, bool $budgetAware): void
+{
+    usort($pool, function ($a, $b) use ($travellerType, $accessibilityNeeds, $budgetAware) {
+        $pa = traveller_category_priority($a, $travellerType, $accessibilityNeeds);
+        $pb = traveller_category_priority($b, $travellerType, $accessibilityNeeds);
+        if ($pa !== $pb) return $pa <=> $pb;
+        if ($budgetAware) return place_entrance_fee($a) <=> place_entrance_fee($b);
+        return strcmp((string)($a["name"] ?? ""), (string)($b["name"] ?? ""));
+    });
+}
+
+function reason_selected_text(array $place, array $preferredCategories, float $budget, ?float $distanceKm, string $travellerType, string $accessibilityNeeds, string $transportType): string
+{
+    $category = strtolower((string)($place["category"] ?? ""));
+    $bits = [];
+    if (in_array($category, $preferredCategories, true)) {
+        $bits[] = "matches " . $category . " interest";
+    } elseif ($category === "food") {
+        $bits[] = "adds meal stop";
+    }
+    if (!empty($place["district"])) {
+        $bits[] = "within " . (string)$place["district"];
+    } elseif (!empty($place["state"])) {
+        $bits[] = "within " . (string)$place["state"];
+    }
+    if ($budget > 0) {
+        $bits[] = "fits budget";
+    }
+    if ($distanceKm !== null) {
+        $bits[] = "near previous stop";
+    } else {
+        $bits[] = "first suitable stop";
+    }
+    if (needs_low_walking_plan($travellerType, $accessibilityNeeds)) {
+        $bits[] = "low-walking plan";
+    } elseif (prefers_indoor_accessibility($accessibilityNeeds)) {
+        $bits[] = "indoor/heat-aware plan";
+    } elseif (strtolower(trim($travellerType)) === "couple") {
+        $bits[] = "scenic/relaxed preference";
+    } elseif (strtolower(trim($travellerType)) === "group") {
+        $bits[] = "group-friendly category";
+    }
+    $bits[] = ucwords(str_replace("_", " ", $transportType)) . " route";
+    return implode("; ", array_slice($bits, 0, 5));
 }
 
 function category_mode_allows(array $place, string $mode): bool
@@ -727,13 +898,20 @@ function daily_start_minutes(string $preferredVisitTime): int
     };
 }
 
-function budget_tier_defaults(string $budgetTier): array
-{
-    return match (strtolower(trim($budgetTier))) {
-        "budget" => ["hotel" => 90.0, "meal" => 12.0],
-        "luxury" => ["hotel" => 280.0, "meal" => 35.0],
-        default => ["hotel" => 150.0, "meal" => 20.0],
-    };
+function projected_trip_total_cost(
+    float $attractionCost,
+    float $scheduledFoodCost,
+    float $distanceKm,
+    string $transportType,
+    int $tripDays,
+    float $hotelRate,
+    float $mealPrice,
+    string $travellerType = "solo"
+): float {
+    $nights = max(0, $tripDays - 1);
+    $foodMinimum = $tripDays * 3 * $mealPrice * CostEstimationService::travellerMultiplier($travellerType);
+    $transportCost = $distanceKm * CostEstimationService::getTransportRate($transportType);
+    return round($attractionCost + max($foodMinimum, $scheduledFoodCost) + ($nights * $hotelRate) + $transportCost, 2);
 }
 
 function sql_time_from_minutes(int $minutes): string
@@ -851,7 +1029,7 @@ function filter_and_top_up_day_selection(
     array $selected,
     array $byState,
     array $stateOrder,
-    int $itemsPerDay,
+    int $activityQuota,
     array $usedPlaceIds,
     ?string $dayDate,
     int $dayStartMin,
@@ -860,8 +1038,8 @@ function filter_and_top_up_day_selection(
     $result = [];
     $selectedIds = [];
 
-    $appendIfUsable = function (array $place) use (&$result, &$selectedIds, $itemsPerDay, $usedPlaceIds, $dayDate, $dayStartMin, $categoryMode): bool {
-        if (count($result) >= $itemsPerDay) return false;
+    $appendIfUsable = function (array $place) use (&$result, &$selectedIds, $activityQuota, $usedPlaceIds, $dayDate, $dayStartMin, $categoryMode): bool {
+        if (count($result) >= $activityQuota) return false;
 
         $placeId = (int)($place["place_id"] ?? 0);
         if ($placeId <= 0) return false;
@@ -880,13 +1058,13 @@ function filter_and_top_up_day_selection(
         $appendIfUsable($place);
     }
 
-    if (count($result) >= $itemsPerDay) return $result;
+    if (count($result) >= $activityQuota) return $result;
 
     foreach ($stateOrder as $state) {
         if (!isset($byState[$state])) continue;
         foreach ($byState[$state] as $place) {
             $appendIfUsable($place);
-            if (count($result) >= $itemsPerDay) return $result;
+            if (count($result) >= $activityQuota) return $result;
         }
     }
 
@@ -921,6 +1099,8 @@ $tripDays      = (int)$pref["trip_days"];
 $budget        = (float)($pref["budget"] ?? 0);
 $budgetTier    = (string)($pref["budget_tier"] ?? "normal");
 $travelPace    = (string)($pref["travel_pace"] ?? "normal");
+$travellerType = strtolower(trim((string)($pref["traveller_type"] ?? "solo")));
+$accessibilityNeeds = strtolower(trim((string)($pref["accessibility_needs"] ?? "")));
 $dietaryPreference = (string)($pref["dietary_preference"] ?? "none");
 $preferredVisitTime = (string)($pref["preferred_visit_time"] ?? "any");
 $transportType = RouteService::normalizeTransportType((string)($pref["transport_type"] ?? "car"));
@@ -931,7 +1111,7 @@ $tripEndDate = trip_end_date($sd, $tripDays);
 
 // The daily quota is for cultural/activity stops. Meal stops are added around
 // those places. A food-only preference becomes a denser food trail instead.
-$itemsPerDay = daily_activity_quota($travelPace);
+$activityQuota = daily_activity_quota($travelPace);
 
 // For title only
 $titleStatesCsv = ($statesCsv === "") ? "Malaysia" : $statesCsv;
@@ -958,8 +1138,9 @@ if (!$foodHunterMode && !in_array("food", $categories, true)) {
     $categories[] = "food";
 }
 if ($foodHunterMode) {
-    $itemsPerDay = daily_food_hunter_quota($travelPace);
+    $activityQuota = daily_food_hunter_quota($travelPace);
 }
+$activityQuota = adjusted_activity_quota($activityQuota, $travellerType, $accessibilityNeeds, $foodHunterMode);
 
 // Determine if user explicitly selected states (not Malaysia)
 $statesCsvLowerList = array_map("strtolower", normalize_list($statesCsv));
@@ -1062,19 +1243,19 @@ if ($hasOriginColumns) {
     $originLngDb = $hasOrigin ? $originLng : null;
     $stmt = $conn->prepare("
       INSERT INTO itineraries
-        (traveller_id, preference_id, title, start_date, total_days, items_per_day, origin_name, origin_lat, origin_lng, total_estimated_cost)
+        (traveller_id, preference_id, title, start_date, total_days, origin_name, origin_lat, origin_lng, total_estimated_cost)
       VALUES
-        (?,?,?,?,?,?,?,?,?,0.00)
+        (?,?,?,?,?,?,?,?,0.00)
     ");
-    $stmt->bind_param("iissiisdd", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay, $originNameDb, $originLatDb, $originLngDb);
+    $stmt->bind_param("iissisdd", $travellerId, $preferenceId, $title, $sd, $tripDays, $originNameDb, $originLatDb, $originLngDb);
 } else {
     $stmt = $conn->prepare("
       INSERT INTO itineraries
-        (traveller_id, preference_id, title, start_date, total_days, items_per_day, total_estimated_cost)
+        (traveller_id, preference_id, title, start_date, total_days, total_estimated_cost)
       VALUES
-        (?,?,?,?,?,?,0.00)
+        (?,?,?,?,?,0.00)
     ");
-    $stmt->bind_param("iissii", $travellerId, $preferenceId, $title, $sd, $tripDays, $itemsPerDay);
+    $stmt->bind_param("iissi", $travellerId, $preferenceId, $title, $sd, $tripDays);
 }
 
 if (!$stmt->execute()) {
@@ -1111,9 +1292,12 @@ foreach ($places as $p) {
     $byState[$key][] = $p;
 }
 
-// Shuffle each pool once
+// Shuffle each pool once. When a budget is entered, put cheaper places earlier
+// so the generator plans inside the user's RM limit instead of only checking
+// the budget after generation.
 foreach ($byState as $st => $pool) {
     shuffle($pool);
+    sort_pool_by_preference($pool, $travellerType, $accessibilityNeeds, $budget > 0);
     $byState[$st] = $pool;
 }
 
@@ -1138,7 +1322,10 @@ $routeSvc  = new RouteService($transportType, $apiKey);
 $totalCost = 0.0;
 $insertedItems = [];
 $totalDistanceKm = 0.0;
-$maxDayKm  = get_daily_max_km($transportType);
+$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $tripDays);
+$projectedAttractionCost = 0.0;
+$projectedFoodCost = 0.0;
+$maxDayKm  = get_daily_max_km($transportType, $travelPace, $travellerType, $accessibilityNeeds);
 
 // Used place ids (rule #1)
 $usedPlaceIds = []; // place_id => true
@@ -1192,11 +1379,12 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             $byState[$st],
             fn($place) => category_mode_allows($place, $foodHunterMode ? "food" : "activity")
         ));
+        sort_pool_by_preference($dayPool, $travellerType, $accessibilityNeeds, $budget > 0);
 
         // Try compact first (nearby), then loose (still no reuse).
-        $try = take_compact_from_pool($dayPool, $itemsPerDay, $maxDayKm);
+        $try = take_compact_from_pool($dayPool, $activityQuota, $maxDayKm, $budget > 0);
         if (empty($try)) {
-            $try = take_loose_from_pool($dayPool, $itemsPerDay);
+            $try = take_loose_from_pool($dayPool, $activityQuota, $budget > 0);
         }
 
         if (!empty($try)) {
@@ -1213,7 +1401,7 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             $selected,
             $byState,
             $candidates,
-            $itemsPerDay,
+            $activityQuota,
             $usedPlaceIds,
             $dayDate,
             $dayStartMin,
@@ -1272,6 +1460,28 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
                 $timeMin = $seg["travel_time_min"];
             }
 
+            $nextAttractionCost = $projectedAttractionCost;
+            $nextFoodCost = $projectedFoodCost;
+            if ($itemType === "food") {
+                $nextFoodCost += $fee;
+            } else {
+                $nextAttractionCost += $fee;
+            }
+            $nextDistanceKm = $totalDistanceKm + (float)($distKm ?? 0);
+            $projectedCost = projected_trip_total_cost(
+                $nextAttractionCost,
+                $nextFoodCost,
+                $nextDistanceKm,
+                $transportType,
+                $tripDays,
+                (float)$tierDefaults["hotel"],
+                (float)$tierDefaults["meal"],
+                $travellerType
+            );
+            if ($budget > 0 && $projectedCost > $budget) {
+                continue;
+            }
+
             $candidateStartMin = $dayCursorMin;
             if ($timeMin !== null) {
                 // Includes the trip origin -> first stop leg when a start location exists.
@@ -1291,6 +1501,8 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
             $dayCursorMin = $candidateStartMin;
             $startTime = sql_time_from_minutes($dayCursorMin);
             $endTime = sql_time_from_minutes($dayCursorMin + $durationMin);
+            $reason = reason_selected_text($p, $preferredCategories, $budget, $distKm, $travellerType, $accessibilityNeeds, $transportType);
+            $notes = substr($notes . " | Reason: " . $reason, 0, 255);
 
             // Update previous location
             if ($pLat !== null && $pLng !== null && !($pLat === 0.0 && $pLng === 0.0)) {
@@ -1319,9 +1531,11 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
                 $totalCost += $fee;
                 $totalDistanceKm += (float)($distKm ?? 0);
                 $insertedItems[] = ["estimated_cost" => $fee, "item_type" => $itemType];
+                $projectedAttractionCost = $nextAttractionCost;
+                $projectedFoodCost = $nextFoodCost;
                 $usedPlaceIds[$placeId] = true;
                 $seq++;
-                $dayCursorMin += $durationMin + pace_buffer_minutes($travelPace);
+                $dayCursorMin += $durationMin + pace_buffer_minutes($travelPace, $travellerType, $accessibilityNeeds);
             }
         }
 
@@ -1336,8 +1550,7 @@ for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
 $ins->close();
 
 // ===================== 7) UPDATE ITINERARY TOTALS (KEEP total_days = tripDays) =====================
-$costService = new CostEstimationService($transportType, $tripDays, $budget);
-$tierDefaults = budget_tier_defaults($budgetTier);
+$costService = new CostEstimationService($transportType, $tripDays, $budget, $travellerType);
 $fullCost = $costService->calculate($insertedItems, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 $totalCost = (float)($fullCost["total_cost"] ?? $totalCost);
 
