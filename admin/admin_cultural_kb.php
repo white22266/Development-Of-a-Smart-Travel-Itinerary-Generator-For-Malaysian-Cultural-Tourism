@@ -314,7 +314,7 @@ $stmt->close();
                         </div>
                         <div class="col-3">
                             <label style="font-size:13px; font-weight:800;">State</label><br>
-                            <select name="state" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            <select name="state" id="filterStateSelect" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                                 <option value="">All states</option>
                                 <?php foreach ($stateOptions as $s): ?>
                                     <option value="<?php echo htmlspecialchars($s); ?>" <?php echo ($state === $s) ? "selected" : ""; ?>>
@@ -325,7 +325,7 @@ $stmt->close();
                         </div>
                         <div class="col-3">
                             <label style="font-size:13px; font-weight:800;">District</label><br>
-                            <select name="district" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            <select name="district" id="filterDistrictSelect" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                                 <option value="">All districts</option>
                                 <?php foreach ($districtOptions as $d): ?>
                                     <option value="<?php echo htmlspecialchars($d); ?>" <?php echo ($district === $d) ? "selected" : ""; ?>>
@@ -917,6 +917,25 @@ function adminUpdateDistricts(selectedState) {
     }
 }
 
+function updateFilterDistricts(selectedState, selectedDistrict) {
+    var distSel = document.getElementById('filterDistrictSelect');
+    if (!distSel) return;
+
+    distSel.innerHTML = '<option value="">All districts</option>';
+    if (!selectedState || !adminDistrictsMap[selectedState]) {
+        distSel.value = '';
+        return;
+    }
+
+    adminDistrictsMap[selectedState].forEach(function(d) {
+        var opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        if (selectedDistrict && selectedDistrict === d) opt.selected = true;
+        distSel.appendChild(opt);
+    });
+}
+
 function normalizeMalaysiaState(rawState) {
     var s = (rawState || '').toLowerCase();
     if (s.indexOf('kuala lumpur') !== -1) return 'Kuala Lumpur';
@@ -1050,6 +1069,14 @@ function toggleFestivalDateRequirement() {
 }
 if (adminCategorySelect) adminCategorySelect.addEventListener('change', toggleFestivalDateRequirement);
 toggleFestivalDateRequirement();
+
+var filterStateSelect = document.getElementById('filterStateSelect');
+if (filterStateSelect) {
+    filterStateSelect.addEventListener('change', function() {
+        updateFilterDistricts(this.value, '');
+    });
+    updateFilterDistricts(filterStateSelect.value, <?php echo json_encode($district, JSON_UNESCAPED_UNICODE); ?>);
+}
 </script>
 <?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>
