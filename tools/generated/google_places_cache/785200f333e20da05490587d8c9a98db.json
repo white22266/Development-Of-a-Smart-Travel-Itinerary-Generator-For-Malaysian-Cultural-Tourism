@@ -1,0 +1,1160 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vxOWSd2NAEkRnoJIzohkbuU5AevpWsTKXYuhOlFEteT2nEclj9_jMM7Yks5iPY1r56NR11vMhXYXjIKdukrgpxQoq3Ykn7bHuzu9_Sp9o8IrssCHMLpwwTnS7U1h-t3APOkaZVweJo-jI6c7Vwz4IvotqJDdwnY0l1gxI-0rKWCQtx5A6NZr5hvsem4TQfSqniX4iZnX0vLS4P9eTW9bKNH1gbd0Obsrh2Fz7pTd5psPkO5IXh0QayyKyzxvt9nETrhg-5K31KwU2sklT7fJYR8XMyuGPu6booffkKwWw1lWWC4pmp7Hy9XQqtzsc9uYs9iOyLBibK2MRU0tina_U6labWjf4lpWg1KexCxJ4DNlOKITjOASxfJZzs819GdXkFxM6RW_1HqyTmZvMA8uOdGoQjVfhufgja7jrklvbYdzLMAtV7yKWJaOo6Jj7OTeG9HiWjW7WEKpbWxnZ8YcoxzXIxSHVZetMI7cEmgw5HlzRiW9yjuru0IZdG8njXvdTHWld8Boe4j-GHublw69OakGFBpNgAWI0VdQ1kZ6qBpMQL7-eQJXzQNbvwH_t3glXKY5tX3Sv6DU7Z2Ri5jFmVCU3rJ1S6vusA7OjH8pqo1JIOL57g3PjsL3THEQB2eUiGRu5RM1-RrVCARqU0AmwlULroUIAFVEXp5BSTqCL6VNYuJTeBPA1k0O_M2ckbwYuLbzzVVFxkJx0kH_DIDRLzAQtigbq939ibXfgD9AjiJDiXQTGHtLBGOyU9uD-7xRAbdis_412wMvIs7B96QKUYhfI2WN0fdkg4FoCW-F3wiWIl2EJ0EAfdAQRVrbhxkz6wSIUloco",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "RV9V+H8, Kampung Memali, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8189993,
+               "lng" : 100.8932102
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.820442330291503,
+                  "lng" : 100.8947339302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.817744369708499,
+                  "lng" : 100.8920359697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Bersejarah Peristiwa Memali",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115751261191123953893\"\u003eAbd Basir Muhamad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v9wxeP1jhJLA8PqR59HeSzbKtcgMwNFxtbuSPNC7A5YsFAlFEkBx220bgLDL1aOEcYT3hux4w2xrCNGwnNAacZVUW9qHoY1VdLpZrhTgJFkOPZsju_iHjJqNPiKPdXYkN0d9oLjmT3IZnqMBGRLjKHAUVV4q0S964vbH_zMA4zLICs1Ls6RvZFYZbXuidWI9l6eVlUX5sDD3nz8_Sji8fUNaxoU1ZP3AfFwAEqfsW1yNfISnO5nuwOvXdleS1LCDh3r8eaIuE9ONv7w9-g9ukS66OJ1bASMZSHaHzKvU2ftWv_Bxl6k92W7x992ti4BHE1SGUqylD-wWLmMdJ2U9BRr9qCmELNld1AbjuRTRGoxPe2eeD_EQnq-HMyDn5N9M7YhJ4xF0iB9nyoIjf6XqX8FaeOj9BUKt3OqiXFNFchAjAb",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJYbGnlubDtDER-hqwHx0VpK8",
+         "rating" : 4.6,
+         "reference" : "ChIJYbGnlubDtDER-hqwHx0VpK8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Baling, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.678814,
+               "lng" : 100.9166
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.680149680291501,
+                  "lng" : 100.9179962802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.677451719708498,
+                  "lng" : 100.9152983197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Lama Baling",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113056730910878945817\"\u003eMohd Zulkifli Hashim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vHD5n-xjr5vew5Zdk4Dex4XpMednWHgI9A4I8NGzVfOMk3BK90nSmypdKEZrivcdTwj8Zp0DWvPcCijxcvIhCqsR_c6McaoYdfzI1EL0rQmWlB8AuSOqhWU4SgybQC7gBz1OeEITalTxYlJdmxctpSwo9tlRh_fBxsYDFdbvQSdI63I9DqHqh7pPIbDaj4rN9iOLN1SJClLnTdALP4txIrhaGTucGLhk25eQFzvZtzcNxE0T6bsv3PwiMbGGp0MzN0UtTOBiqin4eqOf57rcypq9EE40U--zwuFBUExwaDsZ9d4nakjQT8UhLofZpVtUpBrY8hIdkKfoThmiWkxZUWTJb0rvPqQGbkmhaqNbRZGDOaBg4k3OK361CnxFoqqUslopSkeDbRRwvmLAIwnq9OKd5yWPDDxzHy_IskCmh4GIbW",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJqxsInejetDER60V-AwylqcQ",
+         "plus_code" : 
+         {
+            "compound_code" : "MWH8+GJ Baling, Kedah",
+            "global_code" : "6PQ2MWH8+GJ"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJqxsInejetDER60V-AwylqcQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 26
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "berhampiran dengan Sungai Batu, Bukit Batu Pahat, 08400 Merbok, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.738085,
+               "lng" : 100.4144983
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.739396780291502,
+                  "lng" : 100.4158883302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.736698819708497,
+                  "lng" : 100.4131903697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Bujang Valley Archaeological Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118215423548122168943\"\u003efar east\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sKUc6haopwmzN-YzAcXWNWepgLcjNhCmF-dstu_qPkxGYxCK8PCGzWgF_YjC7uxXG2wwQTrIbuq-PJZMeJFNSSGvvwGDfAj_ba8o3IZeW1gQkEEO8Q0km8Jv5eZjqgdQG2o8iD-gpnUTJp2iVt3UIMd2OmohX4sEoZRVX298tSJpTLQHKS6msLgnwp_PbqT239e7z6ROY0ZgJ6xLzzeNmWdIhw9SsoHjpD57CGH6FMlTAZMmKVZjNevDPVffDmkwdut1VjuoYFlbsZIDUK5vDkAsrc6I5rYITDE6eo8ju23fJMKimOhOwcnn_GiO7u6P1GW3oliCJjI9tXW-u0kNc0dmrRfitz1FkanADjX9sfzeezzEflyeYRmdj0bM81vUn-bUYclycvsN-G26n58rFo6Lq8lYY9qL_-NixyS6ceqe21",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "plus_code" : 
+         {
+            "compound_code" : "PCQ7+6Q Merbok, Kedah",
+            "global_code" : "6PQ2PCQ7+6Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1227
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bukit Tok Kaya, Batu 42, Kampung Bukit Tok Kaya, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6571709,
+               "lng" : 100.8797263
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.658530080291502,
+                  "lng" : 100.8811174802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.655832119708498,
+                  "lng" : 100.8784195197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Sallehuddin Tok Bandar Pulai",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101428078211118187566\"\u003eSHAMSUL ANUAR Zakaria\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ua25Nr0NkACtszYyM5uQ6bbRPwznldBGgPz6mh2ldCosHm3GevyHwiUDZ8g3C8ZGBPYddXvt__q3eWTvlm3KWjKENUEO8r8mLlwLq_lscVO7u0j6zp_dGNHSu5cNYtZdNZTZS6kuCm4gv-pvoj_pYTnHE8UtwdGKlyladab67M7guAn-bhAQXW0dsC4dqJrMJkdoUF0aq9jCP7XmHVWdCR1sj-LknaqeS3gi_nhsdMtl0_rqfKYMDY_KLqwq_1NGANzRdVpKc1jLYgp593PeLTYtR0FYpr-9fqMZytCAI8Wpp6q6KrYZCcv3_MO9BXqwcJhgsYDDrefC1cVTz3_SI-LaAsosNg54Jl-jH3vmp8mrt59A-SG1eL96b0IlweyJ8LQypsevGHeQ7xNC9-AHRgPMODnLgC9zxLCavg-uo",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ8zQujc_YtDERU9_3XVEKi_M",
+         "plus_code" : 
+         {
+            "compound_code" : "MV4H+VV Baling, Kedah",
+            "global_code" : "6PQ2MV4H+VV"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ8zQujc_YtDERU9_3XVEKi_M",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 72
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kedah, Baling, Kampung Seberang Pekan, Unnamed Road邮政编码: 09100",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6850824,
+               "lng" : 100.9150374
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.686429980291503,
+                  "lng" : 100.9163916302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.683732019708498,
+                  "lng" : 100.9136936697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Guan Yin Hill Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGJWNi6XUiTi-XMxQYianP6EsttB2nQy2l7E989jGV9JkfPtIYGctaJspVAdFhMHdiibclRoVl0vwDe_qFEWxkN-6mCR71n64uwcOQr61PnIJ6RkJ6DtlXcgLBOJ8p9VfS1p1QxXy4mEVz-PF67kH_-O4gZet4Aa6q_-5And75_Nc62KfcSveeCs2Nd2kmyCyLgiEn6ya3iGiVkF3Tdgkk_NiXSmvmjHBNwA1BjZMhTEqhaJ2JvkniVLEpeszJimuiIdYpzBbPaSui181un3l3X0zeBBkP1DFWBo31F2KO6s83EO8ttfFjzmdFAj6oa3VZOTxwURDz_EFLhaiWOv9RDarzJl131iuAIcsc3whZ_KfMCdcMrOm8q1f4EsTxSj5hdiyiV8yLGPsBkSOAPwpu1ZIMZuSGg4HkKUSpbcwuyQ",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJUQ6GN-retDERN6a33xhjx44",
+         "plus_code" : 
+         {
+            "compound_code" : "MWP8+22 Baling, Kedah",
+            "global_code" : "6PQ2MWP8+22"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJUQ6GN-retDERN6a33xhjx44",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 44
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pulai, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.656085,
+               "lng" : 100.8900761
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.657370230291503,
+                  "lng" : 100.8913970802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.654672269708498,
+                  "lng" : 100.8886991197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Lama Tok Bandar Pulai",
+         "place_id" : "ChIJJWVEKs3YtDERsifI6OYsV4c",
+         "plus_code" : 
+         {
+            "compound_code" : "MV4R+C2 Baling, Kedah",
+            "global_code" : "6PQ2MV4R+C2"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJWVEKs3YtDERsifI6OYsV4c",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Perak, Bandar Alor Setar, 05150 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1202722,
+               "lng" : 100.3651758
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.121663830291502,
+                  "lng" : 100.3663881302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.118965869708497,
+                  "lng" : 100.3636901697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Zahir Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110063498323626512897\"\u003eRuzend Mohamad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-szlsyW_7tdcTuZNni6ddPdiA5bULy-MfNm4EEY6_LKK2qzR1elA5C3MOCa5FmfZVc9KZteF4LYSs7Bg4agtI8dWf5FMS4YLyXA7lc7ZT_KFAZ2VblzTy-e_5PQqDlbZN0Ok8K_HzhzJxLZ_4u-PkGzFav7YSCCaSlCwnXlOU-eYNOmAjxM_F-Wp79WtnOzYGPK6ORXZ8uxmCKEW2lOP5ASTXGztbYQBwkijWnxWOtBMHx9CKRRlE9YTgjNRBU_PUNc1Nt8B9Q0bZUZttNH5OsYr2RFw0e2y2ULrQ4_nYB8epfM27-WncO94dJCzbLITLTftYzfwIcNA0vMvHr-c8RrJSjOK8B-JNwNk8ZHC5iZ69cq949D-04UJaKrE1wEXXeQ5skJth8IpMledDI1w8sdgIpylVUgTSkrAD4OqzLDPBpnH8MxTmwNIFW81A",
+               "width" : 3602
+            }
+         ],
+         "place_id" : "ChIJM8lHErxESzAREyhjhGEgPSQ",
+         "plus_code" : 
+         {
+            "compound_code" : "49C8+43 Alor Setar, Kedah",
+            "global_code" : "6PR249C8+43"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJM8lHErxESzAREyhjhGEgPSQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5289
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 710, Kampung Permatang Samak, 08100 Bedong, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6953653,
+               "lng" : 100.4540643
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.696659130291502,
+                  "lng" : 100.4555067802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.693961169708498,
+                  "lng" : 100.4528088197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sungai Batu Archaeological Site Kedah Tua",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 574,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108432031277787130744\"\u003eSungai Batu Archaeological Site Kedah Tua\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sHWsURtwaAcOFpGirM0UXnLQtKlsUJCF2NpF9x7F9HpoWaK0YM5cpWJuTEgQxVsFDMBDiwM0Cp0Z_aDJMR92afyQVGmSXCn6p0g8LczueXez5WeoPFs0XAI9KJ0ImPTrMOPmajhZ7EBXCLDUATOz34xUdb6twZFpxcyI3OYRH9LbJXz913Pdks02rEBsfa_Oa8qGlTaFCwnKC9Vwn1TiY55a5fVFUDgFv0cD6XIuudxwFH2BY-hGbXc14Ywrgubh0-QKAT1YzygpzYeOAluEOTqhwwMUAJzEuPF5inrpsMhA",
+               "width" : 1020
+            }
+         ],
+         "place_id" : "ChIJrU27kJcoSzARdbk2kzi_cNA",
+         "plus_code" : 
+         {
+            "compound_code" : "MFW3+4J Bedong, Kedah",
+            "global_code" : "6PQ2MFW3+4J"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJrU27kJcoSzARdbk2kzi_cNA",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 332
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Banggol Lada, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6726531,
+               "lng" : 100.9222088
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.674103180291502,
+                  "lng" : 100.9235347802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.671405219708498,
+                  "lng" : 100.9208368197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "1955 Baling Talks Historical Building",
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118068114660321808268\"\u003eKHAIRUL anuar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uMQGo49PJvvgR5u5MIn1cewJdV8Ufy3U7bmWlsV0G208KOq4amR9CL02rX3K3lvyLZyfVq9KXniliPdE6sFBl7TJ4wYQl3U2FJGUZfYOtDK3o8e2xr9T4niUSOg97yw194gZYAK5dIxYa1bx1eRqtOKdtE4tmP9lzZYCaf7e91veuDACTaMJy66GVTMFYFimkQizv5TXbnxTwiOjno3UGL3bQSZJbcp8LBJzwxD0dLR1Gm7-ByAjtsyDK72ULMPwDXpO10Pe2S8leWjtssJCHypQ5r8rO3QYdOOm9MirdOFHroiPeYghDtkvABP2EjWG6-pZzc2ERTsXAlXRXKgpuztL_mO7OIg5l4ctUN4aOewBfqzr04pZj8f0F4flFfcLfdlU0xb4X7f4lvB-VLaNWIIznR4T1Vzmqqbeqbl6pqCg",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJZfgiYD7ftDERfyWyvpgpsF4",
+         "plus_code" : 
+         {
+            "compound_code" : "MWFC+3V Baling, Kedah",
+            "global_code" : "6PQ2MWFC+3V"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJZfgiYD7ftDERfyWyvpgpsF4",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bersebelahan Sekolah Kebangsaan Tunku Putra, Kampung Banggol Lada, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6726717,
+               "lng" : 100.9221911
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.674348530291502,
+                  "lng" : 100.9233872302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.671650569708499,
+                  "lng" : 100.9206892697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Galeri rundingan baling",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1944,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104580299053485574979\"\u003eCalvin Chin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0UAFZc-AbmJIXIOFnH8xBkaYKYDBEeymuzCbk-RuUTKjwyV1DyAxLKPG2IIZ-mhWP5fWwppatVQnKPSG8KpjJ8TqAD-J6DNfF5-pXjinhnzZaIftlDL3dtMze2TNT0uycShIYsIB_JpzBVtBZK3tqQJUiiDHsMAW1iifJFKqgTjRsGcLyROwutrdKii8S1bjh42GzWM8Wt8C8Y0AMRxSvrhl31NZZK2Kn7mbdpCqhZbGPbyOkUnyQ4JkFxGt9UXBBpDz6BnlnnQNfcpbuCLpHC1_a5OQeUH0wm-nlksz7DCliILYrlHYDaX7BcRbDbDP-mCiR5wGQfxc8w7MGvRQ4IPLToFNWDywDXbATYqi7nDfSmrK7H7HVCfIwmMRMG_4bO5cfgle3S9RmTyGufmMCoYi6i2j49SE3qUHDsSBjKzfQyjviP4fndfwk-w",
+               "width" : 2592
+            }
+         ],
+         "place_id" : "ChIJsQOWfQDftDERVkau6pyX6_s",
+         "plus_code" : 
+         {
+            "compound_code" : "MWFC+3V Baling, Kedah",
+            "global_code" : "6PQ2MWFC+3V"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJsQOWfQDftDERVkau6pyX6_s",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Ladang Badenoch, Kuala Ketil, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.553915099999999,
+               "lng" : 100.7603532
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.555357230291502,
+                  "lng" : 100.7616387302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.552659269708498,
+                  "lng" : 100.7589407697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Maha Mariamman - Baling Estate",
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107656336453193651658\"\u003eKuhhan Maniraj\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-usF20NaZEK-m_A4b8Dr6luuowyt7p1bGV--AH4w3VoYVr-51NRMMcW2Xl5RYre8rU4CDHkLlvxXHkNecbLZXpvw9EAdF9JtwCHsLTAfY9zyYNYas0RiOtibsUb5ZnjZMkA0PtodHeP5449gzKgtniH0gd1gj4zEA5gNCoN0IaZ_dWcpvG_udzCUGEzlJhAwdkUSw7dPkM57NX94hmvAoqUZU7_boCqcBpLRVCgSiRcwzFJhEY1ieJ4C0rEZNWBNbGX_kNI_JPykhkoxHvig5E4RMiS_Thm-mrfGYbyc-8R3VQKYPx-NdXMwpgXHRsTexIZmAlb7BUGiqaH4C_JzamL7Oqf_VDu-Z9-Rp7xjp2OsuiFiEAVakm0Z_ZZrzaWPkG8zpElSf5_7ZTR5NGl9Pj7Mi0fkAC7so1RBgRX_GzCfg",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJP0u_kYEptTERw2ta2JAVM1Y",
+         "plus_code" : 
+         {
+            "compound_code" : "HQ36+H4 Baling, Kedah",
+            "global_code" : "6PQ2HQ36+H4"
+         },
+         "rating" : 5,
+         "reference" : "ChIJP0u_kYEptTERw2ta2JAVM1Y",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Seberang Pekan, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6829252,
+               "lng" : 100.9147162
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.684262730291502,
+                  "lng" : 100.9161041802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.681564769708498,
+                  "lng" : 100.9134062197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Subramaniar Devasthanam Temple(பாலிங் ஸ்ரீ சுப்பிரமணியர் தேவஸ்தானம்)",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108737785903768861236\"\u003ecslum88\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-usIGtkGCRlt36bDl4_CfCMtBTY9F6W3m0Yf0oJlc7RIHjyPOmHRlFNf21y7NC2owc8nL926IXC7PDWxBfJaNPdGzNDVYbPgm1s1vEgU62GFIdIInfOzl188hr_2tfR9BkecNRx4sFcADM1_9umHSLAXsDkbeoML0fVbvKygN0KptrFC9GgdccwC_hhhoUmW1DH79eI8oW6UiWZgVu62MkmrRj41b9Gq8TEsmg-J_ZL7vG1eH2lgz_89-iiYVe3Mc2SaWw_6vEIeJVoJTEjD1-nELCZB_RyuYUiF3tvIx-8WjiTC92B0Is7nndkqtQgXWQkEW_lvq1MJRxosk7W0jNClBaA-owcqypjoDUNK0A0ok-SHchO1iZ7u1LfDvUIiFJbtrnG9-iY_0xnP-gWm0JkSTHYWCJH8S5icFZks7yJ6ri_Fqql1scVq0iGWD7c",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJzZGxlunetDER9x4EJSgPICo",
+         "plus_code" : 
+         {
+            "compound_code" : "MWM7+5V Baling, Kedah",
+            "global_code" : "6PQ2MWM7+5V"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJzZGxlunetDER9x4EJSgPICo",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Keda Ulu Legong, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8165434,
+               "lng" : 100.9358627
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.817865580291502,
+                  "lng" : 100.9369942802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.815167619708498,
+                  "lng" : 100.9342963197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pusat Rekreasi Air Panas Ulu Legong",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117363331005496884145\"\u003eSyed AzlanShah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vxLuyj4hJ573Jhkpv-rhvmNODvJN-LomPvBFX-htTv0Xju0eI6nF56Edh-YWlsNFt5-yAAPSTjr5raFig6n02G-xIjdZPZBc5pdLEKuOem8A5JXrj9YJvchh8dTMF7Fl4scteqjRnLHrbOaAqlc7oQha5RLXrFNScnofTTuk_-P9K96C4jInvXyZIc3Fu0uPQ2aMAxaYBip3Dl-5Nv1Tc8XBcJS3_MRkugPdnmmJcu72GQqCSag1-vHsXtI1-kulPJwnFxqnruXLCdJ_0tUIXPyFwAJ5HM6zPChxrb8HiXU8ryd4MOeaUyarNetxI-oMzVbroChWqefgEDzmsZ8Ls7RauyEbeaqYzKBg4_LvlEMPY7BnjQKiCU-cbwolzpHWtdzCN2R58Dg2AENaZ_qzTLl0X8HAuqvo6KH1_oOt6ocg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJYf3bAh7DtDERNuHF0Ed5MRQ",
+         "plus_code" : 
+         {
+            "compound_code" : "RW8P+J8 Baling, Kedah",
+            "global_code" : "6PQ2RW8P+J8"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJYf3bAh7DtDERNuHF0Ed5MRQ",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3262
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.717504400000001,
+               "lng" : 100.8139828
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.718841730291502,
+                  "lng" : 100.8153569802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.716143769708498,
+                  "lng" : 100.8126590197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Lata Bayu",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109319311702143390708\"\u003eAlif Ikhwan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vZUv29Bfc8iV7oAtG23SbC3Zu49ww943UdIoDfSyI0yuriISUBLFWEu6WH8surKAq--tOP22276Ym07r8dJU0-_gf2Pd9q6pvi6IVr6DY-8xFi9u6gY-0mw1gs80QV9SakvLwbHqFdFw-j3axLgGv7zr9KIaatJ_ZXmFWwA9BupuT5fgqEq6zpVFTPiXeUeBKkcucFJdGrx1ZmgvsOcd2g2nEZLL43aTCO78MIgKydenoGNIT5RJ1xlYfWJ96WKODG6qh96kIOjoASE50KtNnjO4TjFYRZ9X5eXgFSo00d2vUPJmg69A-Fc6WD2d1l1razY3fWteSE9ULm2nwDzhd8y8U4esqb_fE8XcVkKdmFDU2sTYELcufNHtFu2OaiflxX95hiqje2_j-7_yAhpRfCJLUfq6f4ZrRBmn-zq6V0wjs",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJVecWdhvatDERniJ_zTSTadI",
+         "plus_code" : 
+         {
+            "compound_code" : "PR97+2H Baling, Kedah",
+            "global_code" : "6PQ2PR97+2H"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJVecWdhvatDERniJ_zTSTadI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 872
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "MVMQ+8Q Gua sireh, Kampung Padang Che Mas, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6836218,
+               "lng" : 100.8893898
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.684981080291504,
+                  "lng" : 100.8907713302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.682283119708499,
+                  "lng" : 100.8880733697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sireh Cave",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109694536167819295680\"\u003eGB Lutfi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sS1fmVNQqh1MMkMn-z9KwxeaszFmnWv-djZuP4xwbJZeJNV0WhIfBpkgiXjK12z0Oe_YeI7AqtPe3AUTMgug7PFb2HrFjf22pAg0AH_rBSTGMzgk6uMSDpMLMPaCrFJ3sqJm3oFU53QnfHv_SOLQqFVx2_CZfLlKI_xYe9IaLVhX9kI8P6Q3iY4ngaXq4y7pGMPq29yeP8PjXUHwviOyXx_9-yIFZ9TbVKzfoSz9pSYEMxINSTm7Oq3mbaqi89mGP3dYZBm_3Me_MwaIxBqdRuBwiyg4CPhDhE-5aY-q1yHv2xldPzCiYgjtSmkX8gJ3zzLzW-ekHWT7xEThIbbnPKMygcZfAavCZmSWsoM6pGKt1sGOKCLgM0ZaVIwfRDa7bJsevHBu85f8pQJ5VklBN8tdShtn4tRXxZ8DxDOH8",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJx1qkpIzZtDERuU1eAEuwHzE",
+         "rating" : 4.5,
+         "reference" : "ChIJx1qkpIzZtDERuU1eAEuwHzE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 273
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Baling, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6794034,
+               "lng" : 100.9091854
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.680752380291503,
+                  "lng" : 100.9105343802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.678054419708499,
+                  "lng" : 100.9078364197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gunung Baling, Kedah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114366474949857282034\"\u003eพระชวนเชิญ.ประภัสสโร บุญมาประเสริฐ\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sEO2ow4J48qzCdEoEvifPJb-Ab3W3BGmoD02TfFbjJ7i_5Fvr4NN8OZRfpk82OS4990pxNycHL8v-tx54LXW_Z0verl9keVqeTXMt0qnb1cgIioceAY_n8vF9vU8I3wgQt70pQrePNoWh76832rkU-42wx6MPc0HKg9fUGA0Aq5-M6M6e0LbfqJ6mFPssba9DMdbjKLCM7roVh57IA6C5Ru4KCvrMtciZ36uq33XfyO_mBZ1niUG52876fdZBmXq5N5eUFiKA5HN3q25nZScgGuJKB9pulnnWguRGLakN3fpxoHVLXncpV30Nz90VLNjpUBBZlMai7V7Sm7Dbp3u4L-O0VL0i5pQdCgW81rDvLmIduq8Wg9jbBZ6dyTYgwD6Gd9ilTt_ALS3ajpzjxa2yvQ935JUZ743ZDComaPmlm1g",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJf3F4O8PetDERbPBHHZFci1E",
+         "plus_code" : 
+         {
+            "compound_code" : "MWH5+QM Baling, Kedah",
+            "global_code" : "6PQ2MWH5+QM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJf3F4O8PetDERbPBHHZFci1E",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 353
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Rd, Kampung Seberang Pekan, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6870365,
+               "lng" : 100.9149277
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.688408680291502,
+                  "lng" : 100.9162815802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.685710719708498,
+                  "lng" : 100.9135836197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Gunung Baling",
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115146971023138478925\"\u003egee unise\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-svxKO61G-26SeThSTJhfL4ZCxDBy0EZ3-zI_BIzuaeX-iVxRvLIY6wvGynM9ZG4l0fYSEvw1vmRSg200V94C_uxGufCkZvZVw2E7DgrYpAREYlCWemAJ65BmjUMC7uCWJzKn9De3kgsxASnmZ_SBxwWkeAwQ6SbaUxwtqziqxllwavo5xAC6xGM2fbODkQ6n8GjQ2s0vt6wqzeLm7tuCvKFQ4euY1Z65RGch8BNJ6oPKkkIucP-_9x9rAmui1dFwIU1ZJ6BsRRV5j-P4qAAEzG-Uh4PvXnYckwHHUeR9PlqUvXvSZsoHRAKLBFZWBpVc4UvQbtB02TfH9safiniQJNC-1CBEWXjoY8o4J6n4hs5vVBRDXA_0wl9rTeIfzAekdl4yWEXgocles5PYGpuAVDT_6rlSxDavrodT7D7I2l2WvX",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJXZtC8OretDERMrslpt0KNlw",
+         "plus_code" : 
+         {
+            "compound_code" : "MWP7+RX Baling, Kedah",
+            "global_code" : "6PQ2MWP7+RX"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJXZtC8OretDERMrslpt0KNlw",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 438
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.501172,
+               "lng" : 100.7718167
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.502554630291502,
+                  "lng" : 100.7732397302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.499856669708498,
+                  "lng" : 100.7705417697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Hijau Recreational Forest",
+         "photos" : 
+         [
+            {
+               "height" : 629,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103444004668961899794\"\u003eWan Lanun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vB3GZl3PpPme5WxGbnB01SNipnltOYCF4N206Cvxu7Duyvh4Y7busRpOIjBGOx0WmCtXaLKmBzUnRuY231VdctCIo4D2nPCA9NaAyQyAiSjli61VvGc4lltmNRwg91srm1-AUcbsG3JJIwIsrRZ0Uf0QquiL9_m78qR14WooJ1MIFFmbrBneGnP1j5uFCsMUBWbu0VMmWamhtoqnUFol7ZGfHhvKqUM9rH2kELOPBHAUPvrSzeSiXGWgAvQZLkhB0O1OoypOkySAB1BG1rpt9uVd-k_dK0271f5q1MPluW-fbAZR5uUCfF2YBbCAJ_hk7w2ucpZVlJ4JTuqDTC4eblJxcM9Xvzzlkx0jnoNAlRGp1cA2GcYeQ4c-njcR-pLuF9XA6imGFc0Yzate2DS2N-Y2QPwM5rU9Jabc3lk8L22SQc",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ6-7QpxsmtTERY_Jv4xYwktc",
+         "plus_code" : 
+         {
+            "compound_code" : "GQ2C+FP Baling, Kedah",
+            "global_code" : "6PQ2GQ2C+FP"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ6-7QpxsmtTERY_Jv4xYwktc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 243
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "c2, Jalan Syed Sheh, Baling, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6749338,
+               "lng" : 100.9169159
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.676073730291502,
+                  "lng" : 100.9183274302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.673375769708497,
+                  "lng" : 100.9156294697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Baling Bus Terminal",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104866867829226836419\"\u003eBIGM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-veam2l4oDXqEseHL_a7wZ7cF027H8NZR-kfqvp4b3DQ0o2FzrZY8zh8gsRSji99KWrePKlbxN2GPFsmzKKQ-UzcTv3uH7ghQKDNGrRHbt4S564QddOqU-5o-k4NoZ6p7njKyyV-aEl_fZgKxKXYd7yaZHiyPCD45LHdiN8yY0ZCT5xCRZ7suiTy31BJzRoPH1ooZsSWb1_yJc1WQdiQ9eFw9AcwqSsDE_zplHdOiK34cZOkojaVFQAel20J4WTAiWopv9URQ14DeMAIy2E6OjijVgf48E43O1BKAoWWQyFJzTT19NkUaKMdz_3dnZ9-fgMjhnBfrBUiwdZWfclb5an-5-ZsKDJY8m7qAgAFgnUb_BVomzUIoUShdLtdZRy8JJEu7u1OVKvTpwWZ8OmY-hAAMsAdpgR5cAYsEzo7JA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ58-JkObetDER48chdXD7oAo",
+         "plus_code" : 
+         {
+            "compound_code" : "MWF8+XQ Baling, Kedah",
+            "global_code" : "6PQ2MWF8+XQ"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJ58-JkObetDER48chdXD7oAo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 307
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Dusun Tok Wak, 09100 Baling, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.808226299999999,
+               "lng" : 100.9233375
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.809701980291504,
+                  "lng" : 100.9245779802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.807004019708499,
+                  "lng" : 100.9218800197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "DUSUN TOK WAK BALING KEDAH",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112118901523805700848\"\u003eFathie Fathie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s_r8cdTggUPtieh92xz8oomS5UmYVtIm687YCOAtU-Y7PESPQLxKZsdVgqnU9cAyYwglmEc70pRgw2oFNySREWceHn3fDEs-dQusBHUKZk9kANXBAHg_LVhvalksHIlUDk23oGhFlG_fSDzI00X7UdHD-XlI2u0cjjc06aed0XHvNXeY-pBgWnlSCrj5GN8nSdl2KR_d1WGWOi7QFllsMjEYmQ6b3zsKjHqrQeQdJHMlCZMMyXUih6L-3U_vqdRkhaWDWChP4PFWG_f3YefSmNvErKsgSow92igwzdqe5OoZ6_dEzgwfvYy1tnbb78jGvIzrc_pg_1zFy5m2zaJzf_eoy319w4tcPL4ZUXusNvz-w6sW6IjaOQ1hcqaqQmnWLerZtTprFS7iqcimSMd7E3udAmW6SJ8SrzJa4ETkSOFA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJjSLU29vDtDERLZVJL1ZFimY",
+         "plus_code" : 
+         {
+            "compound_code" : "RW5F+78 Baling, Kedah",
+            "global_code" : "6PQ2RW5F+78"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJjSLU29vDtDERLZVJL1ZFimY",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 106
+      }
+   ],
+   "status" : "OK"
+}

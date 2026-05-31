@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Cenderawasih, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2693 4799",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.145777,
+            "lng" : 101.6889059
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.147186180291502,
+               "lng" : 101.6903167302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.144488219708498,
+               "lng" : 101.6876187697085
+            }
+         }
+      },
+      "name" : "Kuala Lumpur Butterfly Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 4:30 PM",
+            "Tuesday: 9:00 AM – 4:30 PM",
+            "Wednesday: 9:00 AM – 4:30 PM",
+            "Thursday: 9:00 AM – 4:30 PM",
+            "Friday: 9:00 AM – 4:30 PM",
+            "Saturday: 9:00 AM – 4:30 PM",
+            "Sunday: 9:00 AM – 4:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115417659856546147076\"\u003eMuhammad Hanafi Hambali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tg39enNN7Q9d38_rN7ihoLUOVfNHHrJ-TvA5LY7frk0IF64Cm1RvKB3sQgRZqQv4QKH3AZyyZmud6zPoboz1ZmWV9hqe2BGwGnVtbxW0UIz3LCOBuft3phWCsgbF7PEKYAEbW27_8xkWAdj3WbluihdfALP4eq3h7D6Ff0lXqq05W0nXNl6mrOa-63cZD1IJY197n07bcIQCI2Vf0Rf2Eon9OK6a62EB5hSOW51Kr11u0s0E8lwW-1WTjqRZs2RjFs2K64arq9zf4vrdqVyNqWYIQKQJ0LLrvkz9LLcVb6zLtaUCL2-21GrhvkbVwUdYuXqpFhsrHSK4Ls8cPBKoD2DL3ccQE_x6jfcrgtbMXskgl70J4MPW8LHFGKROogoIyXV7oUYXCxwXs4-NHQJhn-Ujzpp1_RAHWoUYkwerc",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110778829839369669594\"\u003eNiru M\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uvRMYGJgNLp-y0Khhz-XopuEC5LE_c31EYWpXHyk8I3CAjwqz_548Dy6kgRHZuJsnDvwn2pb4qHHZIPzoz71MRj3aV-CcZsDHhNH4lns-zuuSzV4Dqcbs0yIwPpQ4SQv4Xn7CxTbQ_gMrYCXug5E2enqbmfROvZgog1IUD_uHjmVp9wX0rcg1y_6uQobM6by5ec-_9fOOcyy40ApEr77o9t82lr2SsZTuxBc6_i0T0maOgiQNDYvtIarKE2QCOaPRdebQazyi1EaHThkR1fcmmasJnLJa-e2NmNLa8mjHMRIe4ofFACssTO6xvRmU1qmAcO_Ahouwux_v8Yhr8QAxZRoLzr2-V6H_xb1O8BtnsdYIV_eiGnEJH1L8kDsDKu1SjipnOixeV1MbC20NTPTqgxqE7XeFBuaRz4qUUQvCN7hZm",
+            "width" : 4000
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110460112248302157793\"\u003eShimon Honda Civic\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t5o-KDMXIAPXMFfvVaMFJm53mkyBkYmimwcHOAx22gp0zUR7mFmLf0d2TA8ZTP5B_yxyFr9kyi6LGh-0-XNAVKVPdgNmo7o3uSW2jjsFt6D7r05-QXq1_ctj6DdZUIoZGgWV2xK_Rd7D-CA1zClClhrN6pvlLA7hm6d9QYYVkPJWi-JCauhp0J2V0vpnIMpWnzzitmk1-WuphRuQNRyryHOHAlBbg4ft63Ouu3xSn3s9MmCXFyFSPM4Idn67zNIUU8RjWJ55DX4b7i05hLbzq2fafjR6PYI1H9heHKvQkoacuOOj-nW3E8y8sYBJZE785zJuIhnzSh1kqyX4ZScfnx4o5stTsnU5Wlf5FZ7obUhO7E5_jvyzF69yFn-ydTr-o6waMqB73MC6ypCd8IxPeNiInqJfa6NR0voU-298THiA",
+            "width" : 1620
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100391870412035499410\"\u003eSrihari Maruthachalam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sHKE3srkicf_P3C-17f5oSHvLfnmm1lYLMxTF7CASLa255Ri9GGdZt1-RbKhUCiCAhcC-eo8pN5lNO-I3RvKNgCj_ZncyIKq-J7o5xvaKNUn92_xoc8_Gc9hMq4oDeszw2qQCmUiTO7cxJOg4GZRHlhyS72EwDvNyo5GqPXww5fXUIyn3Wf7Huuznf_k3xKdICXOIMjsaKHpi-49ZsxRKSSV-mIt4M8AP6PHZgLQIDfMSX2KuY67EWbN20TFOWy9oDHBy8r7deKIW7xUPtPk3hVzygElo1uZ_TS0nkDYr8jKDdnKeDZM6_tbXFVvaJilkxf2on_wTushwR2mYCapcCCispGK4iFKVXW-BH6eLEi-dWnd0yNIIPxzdwxrdplrHT9MkEMG0EPLFTqCInn_CfghoJ02rFPQt76mqJpCIWg16k",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110399178354646507304\"\u003eKarin S.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vs-0HCtOqvG4vDS7tfcskmgCicKnuRekSRnIuwTrq3Gr44sUn-QWPJ_khVgF5Fi6xRG283n8DSpb0JfL7WFCiznWQ8ipAiwLOSuwgJB8zkwCZ294ZEhiUROg_9eBX1WTt9ULQvqorZZsALayqWu-Jk03aiF6PFu8BAh2YIONA4yWZ2yZgm3HIsykJh-iRNYYYmVlkpYC1dsL-rjFKgYlAmXRXcZpA_Cte4xxpjgeyszOrjMK_KReYJOYScCVpCk9D46j2UmGMIiWonDlLK3FxdughUqJIvzwYS5VlkJZ9JhHo1VF7dmOOo6HJ1CxUDRtkQdogKOxrakRdiX5oRhDIOGoR_4cPp6_Kpm-lkehqwTlWXmZPnlzieEwXzODIqaYZkytP9-pcJDOQV__n3GB58HXcc7wReuzkDc8oFW8lAEA",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103718452953233814651\"\u003eVadim Moskalchenko\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vYytEzGBtcqU3fIzfXjd6V0g93B3TgjFi1GzWN4oqzbKsmBGh-D6y44E30dy-EOdwoKYtumMNqzY6HHXe3IdoGS14DPpsTCqw3FbJh221AM9rUAKonlnvZOAizlpksyg-0I9e6aXIt5LmFjpGF63jYPWgwYlfhrrkIK1xsEMCRDdjIT32HqBhApm1G4HBmVMQ1sIZ9XQj-OpjrRAxmUZQQYa1YQIGYgh_is0p2T1x5_ok0Z97pEff8R3m63sq7Yjpa5PkOjwgaUq_8ltqGhJTsR0zm7TKZ6kdfWlaKSlFxEJ7ASKdQICrYvG7mGAvFjUBJQyvgzYFtP_yciwhWIZhlzq7bR_Fnc6aQbJnISTmaEjmk_gOkZv_qF4WWcWfeOTlOmnjFGk-JFK9ZYpcIU1uHQFcSCbLHTS7YSPbOPnEAKQ",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101796861001134206408\"\u003eDarryl Hobbins\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vkR-NjNT3DyJi02_asBKNVZeSglGz3gpmztmjKAiY9-LGMwggkG4zaBLMDJKsEGQwXEH_9eJbd_TCxqCA8vuOrrHQLfDtH_gsnQ9ipqFNQ3HP3EdkCTv8xFiS_ezvZCbe6GfgyrpaKq39tBUhwSkS0UIuqznqyuiJnUc1hmWUZusqGWEF6OGd1HfV0TEmg3T_t2h-h-bHE_-ZuoubJyFEKmoqleT-HQ-Vimut9SSvpWG5xZ5PYpnKN5eh7Z1d0jKvalKdgwP3UXxk8G-JTFywqdTiDavQaqo-lpTekBmSKjxRjP_ITYun6wUWzm13vswNiu6I-_qRzcbam1S-0faydn2rWX4UB65XGvRwIsGISEMpzw3DTT2bWMX0MMGdAuHLlh7zQNrtHVT-yE15HpN_ZfXIeiYMYDcqBAKTB5R_5svPZ",
+            "width" : 4536
+         },
+         {
+            "height" : 1014,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113313446266331678813\"\u003eKristin MW\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tlFQOMbnOwdd3afDw9MtwMNU1Xn01LAUVinQKux7alF_hc2raSBtntUJprKaipTPdKF3NbWoWlBXMRwQLysKErFGdh5SG2yP3rDhEB9x904OgtI_13d_kYGjM7HNTzvWrfv5aNrOM0niBvIBzBYJOt-xXDjUOOPQJkGCWor-OkTiwAONKC5TOarWx4735oWm3k5CLluSflnuOvxC4ZmfAmr4OcIhxXG9z_hm8ng5yt-m6YQXBj9CcqHvEu0qhmeX_w0vC_p_18SwF_yEqSgy-48PqM_s4XnZAiZSXYDaxP9Cy2jCzslyweip4pfVOZsscZulYPxqz3wnoeBbH0OiZvPwAMZEOCL8bWwFOpfBYanQXA75u2v5kMqWD6vnyS5tnxLRrVr9Xsmql_bueDV820o_0RSFpGThUXk_7GO03uFw5P",
+            "width" : 1496
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102895461378528397714\"\u003eKobietaWpodróży\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v_OnRP8VWBcLE6COAy-JHgB4uD08_6N4njQ29p5eQOVq4Fdvv7FBXg-WKKwIo4Dm03-NDrsCy9FJn7R-v9c4sd68OPKH0SKuroOHmDusbEn8zUK1-j3GIJfTolVBZipcCXp-jvU0bHT6c0lRRCN8dOOAQCf7bQbsm1CqN2yGYghSl7fGjhDFOeyUcxk4qvcUc4bcYqVR9AzxDga8w9IvJu2OT5Jz8fA9TE9mcOeWMUWE3zivQb_YVaQN2LivNRY7Sv8v00EInH8jix2NsihFWRISkf0IpgCiXFWnDlA4iysr-NTKIkNDDgEq4LtORz3xL1bCKB_LnQ_f7f-RJEEpS8l4ZyeKFR_9L7L4FR7_z0jysEJq8W7OVN4QIA8JmO6rjz4D-ow0JBHSBwhbsWWbqFIgseXo1_EbZZ5FBChr3aI_sv",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116808783739255141564\"\u003eRoshan Iddagoda\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sUD3zo4nFhJo8PpXYWyLzRtsrKFb0PIvsgWXhNL_AdKrCHs48MF1hBHdgx7FrZLe_8iNndNjOirOaH6xUqwdI5UIdErrOs64VxSlxpeYquIdLLnyrdk8qKx7NxEeFKurSElfnF9nkfOtLV_hvQvNzwExz8MYTs9v_06xFsWesI1wTEUmjhwN-SpEJdtgRMrGra1NwcpxHih9CPz4YWjItXgW1FbJPVcf1tb2AAC-FS-vKpx2B65Y3Mj20vfIgPbhuEGIvbd4nz64gcre_ZKgRNSoo-hi6OJobpED2CjPloL2dLbIWrkmkAD-3xkvIQXxdLXYViPPYY4-kko-WnqTzurIkE_0sphQ75HVTVJIM0UfXk36DIlUGVXJWDwjDA694K5bMJorVK-C3MLD-LZ891RMnxVlnPgHvvPuASuLpk7A",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ8wfIRclJzDERbd5b45ki4WM",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=7197071723854552685",
+      "user_ratings_total" : 6020,
+      "website" : "http://www.klbutterflypark.com/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Telaga Tujuh, 07000 Langkawi, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.371088299999999,
+            "lng" : 99.6716785
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.372497630291502,
+               "lng" : 99.67313403029149
+            },
+            "southwest" : 
+            {
+               "lat" : 6.369799669708497,
+               "lng" : 99.67043606970849
+            }
+         }
+      },
+      "name" : "Langkawi Skybridge Cable Car",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1230"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0930"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:30 AM – 6:00 PM",
+            "Tuesday: 9:30 AM – 6:00 PM",
+            "Wednesday: 12:30 – 6:00 PM",
+            "Thursday: 9:30 AM – 6:00 PM",
+            "Friday: 9:30 AM – 6:00 PM",
+            "Saturday: 9:30 AM – 6:00 PM",
+            "Sunday: 9:30 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100944445547896606359\"\u003eJ K\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sUf7fI-3T55SBw1GEAGxnbDCG8dZIrX29Mq6x3aQMeOHZ6z5M6cXf2f5TZtbl5QgZ5dXScRvpbv_7rCLBt2p-lz9l3E2Y2-4EC6ASfuwfnRaWZ9RlcretBJ_wfkmBiJw67KDDZpcRjyTLiZhAo1I6Iq95t4NOmg79bICbw96kGmyke9PsDeyFbuJB2S31dvSsVmZTnIj2xOWHfIk94_b2ORmx03kq1BSMoyackd-2-Lu8AIwYeaoqIUKlnvb8Hwc9e1IffHMjXePxlmG_hCUMiF_zz2F53P0BvnuD1asqoaPtCtnxSchlx2Y7TF-MUPCciOYdBQGUyI9355-vZ71fBwZ1kapA71DF4As9gBdg613BN0CP_x9c7N8uOZrk0OiVw-aep5CMpEz9o8IZ4RYHGzeybF8xYohpUVdO98bskwc8",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103950292471818926201\"\u003erohith suresh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u0fuQ-GFV8Sn_9DJVN95d-kS3zY6F_VOVLz3sO9YVJx7iPMGid0e96kDQ7jSfeqR3XXGw47oYd8knJaJEEn7tYts8PzqtcvUEdqPgiyeF5jN2_nGIY55Y5BEBpLPhAlD4RrpNqM-q2ThfZkqqra3HxOGHZvPigNxP2P-wUwle8WodpjPnB33S6GQ7pTrwfU6B_UocWR7nJVdVj4HVoZvXg4abEwX2TRMftHu6nr-y42AA8UvjBu6yzPC4G1d7ZVPsODXxgKVFn1c1YkWCW2bqNCFR5dNEoAZl7zoNwUWMyxSEdISpZh5hVvuUG8Vq1pc33HQd5iUVZQ8DfwqoWQuC4M2sHqm_jG2k71srN-IhG9OH1oTRubB-3GUgZmatO4Bg9ZWteVifNxoQF7Nf5wH-IKoH3NiR5WJehzh_2k5fbZDqe",
+            "width" : 4032
+         },
+         {
+            "height" : 716,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101535839459344515647\"\u003eHaeidi Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v7oRvjpQUmNPNafw2WO8_F4o-p98JrwzHRD3yP9y2lgdI6va6OgRDfr4O0id7-aO4ktkauu0xrDZ7MAYgXFHjqu3srSLaWDL5CeJlpmhAx2qJjosha597z3WJejOkXyo2n6uRLszZZO5ae1lGA-on0LJQMjF3kvUVI8PB3blFhfKrbtZ7m3Avu8GrRKSirES_zypymR-KoVBwUzZI9Wby8L04q5NA3HO2QIEmGPrhMmx7p64HkJyG7EE-jzcR2om-Iqhibdmm830HHhD9rCDyWar1jgcXZbc933AcBOUzG8Ty8cBOC8FpCHwL_IyT9bK5J2X0JtERcy0AnYcDE2t5JzS514uks3J6c4mkItSwU9o5QipDR3eN2FdRautxmr7fdtxiZiMFkiprxf0WhxY5vWe0PtXN5YFJlKfMNA2mr3w",
+            "width" : 888
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101741391630168672145\"\u003eChua TW\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uvYP6XIGOi1__E1rgKswicF9jcV6bfx9Nz2Znpr5ArCMka0_ruF_8mEhKdhl-X65i18mjDtsQlNDtQ6ic7dLp2tbc4KDqtzDD4MuIPUz1w8B1oAjtMKYNenKh4aL5rtimI1xvcpedDK_hzkWP8MbV2pyqamD4K7_BseHeY34kgUt7KpNGs2qMm1ZDwjHOTWtKB_goCfI3CzrOA8_7kju4XXjVkABmAW5O2ZwJ_UNKIbftIEUncnXksfjVzJBJH9vsS9rWd-fR8Z6NO2KoYA2SYSXOD5ySpuc6TJSN3crXmB9OUJmzaLSiPGLTQEhdowLRHzCkPNUj6ptOeGEFatVZMe1NnDcnQOXd85grLmYahOQRtgD_puPyk6HGLK4IFNWCQJ2tDWyRTbI2LF8P9rjIswJ3nGeJEh2Oqjc86-xGFzP6O",
+            "width" : 4000
+         },
+         {
+            "height" : 3468,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117356596919241907300\"\u003eJuergen Hofmann\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vjEqJpntkJgviPu6ZNBtRsTGxdLRcNrdm_PHfmZ2WTWQ5glXuhMWxLHezkqstuKO_Ds5yfocEx7qh3orIgfwELjP8Z2Orz9tEUHvsr1K7QZLZrT-oN6kSPhI4KGJnrKZASNZjwJkNu4hdGkSQGSCpoOUeL6MvLNXjIg4HpwdGMN8UTFzarNHDtiSiHya0mgUEpQf1BD1M_wgCJicXRnvLEsMkkxYT2fiAT8cgH3Yh0Gz9zbAxhEB8aRfWGb6sLjEpwIsHqAAPrj1__rq49Mq0gUVDQ9HkJs26nIIW1T34N6Mlz8nqCT23qCUKi-h7mL2RkFEqlkX19i_d06Bdns5P0M5WSxjbcJbxgM-BB6Q8ROkq4YZURwLf0luer4tLPl0VMCs9F5lctD0vzmOmVG9Fq15SZeAWw2colZct5XOnBq797",
+            "width" : 4624
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111380521528139982857\"\u003eWON LEE\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuc79UcL9WO7UZ4ddxFW84kgqO0F80nNRyQimysLMJf23qsLm_xrT_EHVPgBJOM0S9vZD_v8Wpq5YZg_7IQsOCrJcacXBovGO5ueqz4VaDU-zdGNvP43tS_VwgimwOFNoeJMSIk3jrDuoKEJxMYb-L8jqRde7sSiQbqTnKQyaIVoRJpEMcdBQoTZIu9fG_Bu0GvfeT6fIMgUyiGaMsIvko8nmSiBd21gdDn0oP-fmSA2j-fJsLJ7NyEcTp7jveXT-bsNlVtZAdhVbi0C5bCg4Net3FXuvP81M6UFKQdIXrzwonlIr_1gq0TYY_ZqllYMxOomMqbMH4uCJVvEmXTRxX_cCWvzt-yn0DbhZx0n7O__2vAJq6PSSMid3t-y6u7IwV0FtTk-bLLjp09Dc-6z5lOhkQ2HdbzZ4tBLDWxX3rwgZY",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108129832715165047358\"\u003eShazwan Shafee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t5Wx9K5Mu5FhVw2ew244LlO-rw_TApeWyKc_kiZQZPvX_lIzuak2KYa5VNiLWOy03gqFDQkLyBdvCuHSbyoK7pnj7Z1EIDh4Mw-lcPh6bdwEb6cM0Yxvvc5iHb0nvYX_2_8tbhIpl6cpxHrumFO9TZxvJoCR1YTJigEtwCAaALh5SF78M82N-3of50eRPC8itF_sSGcsKk50acRoYykhHNLlWDNlbWzUbO34nuzWlB-WHlHR8czfeT1ZscNm8MsnHz254J74JEyUrQ2IHB8iGv38jklVU7EqoFtNlPd2QTLvUeJhC9NXFO5-4NO0p4hny8G9rLLaQgyF1jW5D0cqGaCWOwk4JCexBQStyUY8Adi-XCPU1xdem8SILQP4O2MGD8bnfa2Ge_ZcRiuoaqwJNnSwO91AgFc9XObtzkuj9lU9pk",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103856569574975021931\"\u003e蔡昆堃\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tdijt0ssIIcYbx6bJUQNWI-aqHF_Ya66WZoeYgj1b1RCTwkYjKsfKPrzPjL3dFCVAWnkQY1E9h1sLpPMvsKO2DDmeq7td8AAwS3xxwbbaK16MfJD7hM9AyvR1UBQAhHmIpSENzEroyqcNa-dZ1ynIgnREu4yXpGY-dL0n4AqRiiHXdmmk4w7ldaJM5oQpVIVs5Zzh_DDjnjAB5MscgaOSmaqT9a6evmgnpcEWeKTZMrWU1o0FVjbEzcyIw56D1m4HzlrsxI8UiHwc3NVBBcA86rezEIR10-bbexJ1rM00ojoRJJa0uy_zl_JHxQsTIkTGJm6KWUSCm_Thvh-QpKGO2GOkvVPEWaFJ3kyVG96gnoNpDXIXx4345kB91UnaRRS1pjFgqlXuAlkxhu6J36rTp3U-SQTKgMk3jhHDsViykJo3R",
+            "width" : 4080
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109369985696948224027\"\u003easma mohamed\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vhTdwVHp8euIBfRuYJI9RM9tFq3O1W9Jo9J1-GDw2Hhk245YqNxordNUUPTbHNOB66Vnuu5N2x4CZFE3JoX6P_Kz4f2P2BUbwSlqd-Qhjge8mwb4rzi1yvCLiHuNe6vEiSHO2p7qKL38CpOnbuGbkDxLdA3EyU3pf6v03If7t2EmD4O3Wp9MN3o3MnyzC41KiOzMajnKkCdy5X7ZS82zzLxi9om09P9zcG_kt6plZkAiG-yCX_ZjpHj1PoFmEt7N7rU63Lyytm9OvyLqKkQ1O32GK3MGdEV3BEK9ki_QlVnXHLTwhMOvPwfG7srolgwtyjK7-QKqRhVfyR97TKRUKBZhG3CU8cs1nzYeixnO0PhLoaPvJxH_Cg3MxnEXekttGXPBAWf6VGyCU8r6U10K4bMbR8c7GivQZAsp-9dD0B6JM",
+            "width" : 3024
+         },
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106807734961170201675\"\u003ethe assamese voyager\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sZ4IppxguSCNTLtXIttuzrc8dZuaTsuFH7xIdd9vUhRod_JWtYqwojRN7DaC80-cFVZIGRRTVVgY3z33UdYKM-ncre7JLbdWr1DH9nKEb9VHldS3mTd5xabjXvmVIk3DhMd4lTHwSFYVQ9lP0p4AFR9tIS9MmBqE3uAR55BsmbHVtZqVq_m121buuaGcJuuGd9tWS3C2XREZkPEvI2jNBq55F_7EWs50CrRmv3R5Q3xg157_zgKWSuXCyYwLG-0awREyR6yc4o8Us4pL9rBmBWoEV2O8IqGTVFmYqeD_q8i9qc9Ij9GKzHXopazAt00iGei1jFDwr3oraP52jyE5S05fab82Topvg-iEakmPDLu7i2Gp8gY4ig1GKgWh8ET1MtWj8MY6rWEVWscV9nPIdtgcy1CgNR3eUAPYXAd0K6j7jApKyJhM2eCXX8Lw",
+            "width" : 3472
+         }
+      ],
+      "place_id" : "ChIJAd9TL-F2TDARfrojfQscVeI",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16308972461261830782",
+      "user_ratings_total" : 29674,
+      "website" : "https://ticket-advance.com/langkawi-cable-car-ticket"
+   },
+   "status" : "OK"
+}

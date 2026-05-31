@@ -1,0 +1,322 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Majlis Perbandaran Kemaman, T131, Kampung Tabuan, 24000 Kemaman, Terengganu, Malaysia",
+      "formatted_phone_number" : "09-859 6644",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.2956587,
+            "lng" : 103.3859624
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.297094680291502,
+               "lng" : 103.3871886302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.294396719708498,
+               "lng" : 103.3844906697085
+            }
+         }
+      },
+      "name" : "Kemaman Zoo & Recreation Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1430"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1400"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 1:00 PM, 2:00 – 5:00 PM",
+            "Tuesday: 9:00 AM – 1:00 PM, 2:00 – 5:00 PM",
+            "Wednesday: 9:00 AM – 1:00 PM, 2:00 – 5:00 PM",
+            "Thursday: 9:00 AM – 1:00 PM, 2:00 – 5:00 PM",
+            "Friday: 9:00 AM – 12:30 PM, 2:30 – 5:00 PM",
+            "Saturday: 9:00 AM – 1:00 PM, 2:00 – 5:00 PM",
+            "Sunday: 9:00 AM – 1:00 PM, 2:00 – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1596,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109797122699629812782\"\u003enorhadi ahmad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-slKnIVOnOYfM05NxBNGl7I7CEtU-LdMTXlVmh_UiyjDJO7geAmJSC-SaC66VuaVLdHuL_3z4KERr7qMdrE3zBTzB6JEWxNDqLst_b4CVDjm4bRkNRX11Z2dzHSUprzU2JnrfaClr2lXkVYoVeuBVAQa_c-V0hkwux-z0T02Z457Zk0WK9gezvU603BajY621tayjAlUlVpKYyPJt3LgKyxd1_jP1eQXt6uNwVJhFrRp3rboCbhCIbhYbWl3-91xOGGsafvqqeGA-UBQtDTGFi0SEl2Rd9LbHw2ATpKazbYlOP1e1lGbNcn7jJ5Z-y9S0gphhgfwT4SXXgCfHlebuNLEWxV9hWg0rd11XjKW36_QvdFVSmZW1pULvIQlv-FqXGjwLsiwR1LjDPjVFETrWCTO88LuDSBeXkGm-ReWi3end7C",
+            "width" : 2128
+         },
+         {
+            "height" : 2160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109229866599056464795\"\u003eKhairol Faris Khalid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t-wrrR4deB4YDn7fipfZLaVLWCqmErhotusvSFcIMkGD1ycf1T_m4XeDAa8U7_lGKYaP-z5XcCua2nl7eAm0Z5h9wUcDcqgd03J5l9FqFAojW0I43VyLaCO3BXWsW_jJ_fL06QPLm17pN0sfW_zKrmtYTaIY_lnjCj5Vk-4Hm19tZWapHORx6zphMGEbFiTKgX5wivItu-z3e1THA_2k-TYZ46jqMYl6ImzKzKHm_HEL7TWY_d2X_hrqOQAu44WMTldXjDhsfT5sJ9hs4xzd85-dFoEBTof3y3heUGfFfwL3beBlmEYkCuiljNcb7LvYgcCR_OnVboCPbGowzDH3IriLaG04FLE3hBBZ6sUkAKp3p5fH3qjn5Bg6dDP50GmD-UeNf9WT2w2pkaQxHev2cGA5yI4jQ9k2OHFJIX9es",
+            "width" : 3840
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107730143489123492218\"\u003eD. Shah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u6YlAZ7ggudd95vAeSN4aiN6_Uor7KlR2tSPqOaTW5FJw-Yl6NahVDHmuvgDrH6mPUaUyHH0qzupuI4yeUPCDMShATyzzqXnA94N4WFQAPJcNJ5RiDvHpzrUjubICeTQbotvh21EjE6ZrBIDFz3IDVoMKahnujf-ua4QGKHHnq8AhZRJ-PzeI6-RrOxXSWtSIznbsf9vrTUIMoOYl2GnomEyQ9T3pW-JUBU_3bef_Oe15-H4jfA4MC_Ztuu6W1PP7BaLe74AHvmY0If4VM0tENmLzbZs1iQJcXcXV5e3UogUH1XaVUjfGfRvTXi6w-vxERth3mOIsAmA8va-QR4GT2g0M8Lom0n0lrJQpeNz3k-2k-7Iht0WMaIXlYz4wUkFOOGAqMsZpuvdYEMENJHTkzd9vGSrLXcsUeuihX0aD0zfDY",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110883896036673317124\"\u003eKC Chung\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uaVjFV-fv3oESLx44tj5khuoYEl3_0_tMtcp8pdS5uzTxyWDDyUGwnjjfVsvj33EakPq4XJq9gKYPIsHrpco0uu1Ot1IopcApMhqvQsjVye1ElUpJ8v2JpeW8Djgd_bbFS7sg2TFcNVZccsWhaBZQP0E9Fsxc5gWcs7XhPkOS6wbmJrkh6s5ZebAKxFD0UEyXMT2GpJE8oio85mPNYX1Fir1xr-uxaz-Ygv1A2yZ3C5YMkQHPIE0cUi7xa5kweXSOul87MbQQ9GH7W2ukEvC_vnWAxDxoMYuxDglSDfhfIurr7BDLedk0sDwzNIlxFWzEcfLLOr2Hx3OouohPck2xGm-SLOi4JYOiN3ajWTlqbvW0IdCKCDmEZEYNrB2dzBateV9c_9fyrfwDgZx3jzXkORT-fPkEeiFUtMaAISaE",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105679651605935849262\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tC-Ie6YTvlXg-TyNTn1ow7noWfOFoUBRkyuvlMc9Bjh56yYYdHSD9ZVbyDZl0znAWjjZ8PK7SUVO6gHnMVEV7ChhX_LT8wALCgg57dx7Uh1IHbpSmw14rtDxGBfbd4ui-bbcVyRYmvEpS-NX6B3TR5R0mcJ3D8tmP-83luxyGTyiA4oYsblpPe6l8X1w0kzEF-RDD5ElseSzn5xc6f39BhP-QX2F-zmXyxidilV0CtfncofKT6YYIenDwq9sMgO0gvpLvlK47GEsMhE8liUzpPGw5O1JtYGSknDHQ_fiaD7JxfWNLF0p0VvddyuWuAjhTJ2DTWwyWxWKlmkxs5tzLHiWja2vJvrxfxpz5sW-q8RSezztAKiiCJivAucWQJE_wwWtGAqFLad5wG80Jv6wZu1AAIPsYwz3hAsO4SJ-X7Og",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114195450506451020129\"\u003eMohd Nasir Ahmad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tAq0SJjFpt6NG4eKp86LNrxKq0vXLzPbrj4tF_y2W2tFugDMp6rjr5m0vx80WG3q7i1b73tz4mhVncOpFx4Z19tWMBPPqWWM2Onlcsx3ANABDyzkdL6RbD2QuEjQI83PN1NbRFQ2-BhCjUJjJWzD1CSAQhB1_XKCuEcpo3VAXaHeyk-rDizDSvrFQBJTTeTb2zMG5Anq2rEs2f61SUl-Nup0JwxVfnIAiDgwwR4ooxl4f3ABbhHSMd6J1fr6_6O5rABDXxrKZAN2Xz-vYgIjITSBjwYiMruE4I7D2XGGxsK5sgMGf49uHDVAIbz4O5iHcLuO1YWKbXbSAm6hOBL4PB3h3AGtAqxv9-DNLdOwrQywm7N2rXFG9TOYVS-io2SD5JB7zeNEJaor5zEuaQD96owd34KVKxLevZK-iL2Pjwo329",
+            "width" : 4032
+         },
+         {
+            "height" : 3648,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116959579497993671506\"\u003eAxt\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s1iIsbTk-TY2Q4DhLdPffO9Zhfck67fmSCiM3Y3Sl2c2m6f9oeETJ3XrE782wjLql1RgHpiuN5jic1QEnm-yR88h6o1_bTU8NM_ivUbh0HEGM6VKmO0jqo7Qo0A9IKfIgr_hBMbBngXY4bQX9Ca7AcRO_X1rqquhmujidp-qPbobWOsYPB4FVzpY2s5unzBSa7_7hMIlWXHD4KN2pQ0eu-gfBD8dH4bAI0fZNofOsr6ARqn2lot66xvdYzaH9rK9lNFk17h1Tx9w2hLSkIe31c5ZCCRWoqEuODXmKl3PT8xiKuOiopmYKpMgOQ5qrKM3uqZpL8C0D7wU8Ic4EYRtY4eckR--l7jm6HEH-jJrtBj6tR827NBW8UE1FEUU9s7JEUXLTKLkBfJ19LIDU-g3OzQkLk36ktlB46QfBGijGWTA",
+            "width" : 2736
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113115676784298035651\"\u003enawal asy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9sAnM4GzByXTobI_-JP5VLvOJWGCXutsL7c_eDhJu3jzSC1tQGrhhBjdOr7PGVjvbApi9-EGSiakLoo9Pryyr5wXuDYBBm6OYbiKoVerYeWr27l3oWNjQ-rqKH3eJ1hfOvkZLxy4pAisFnvg-fTfwZx2rqD76oDU5B2M9WEHMwx4xBIIsYRh_eacfHZf3f8CD22VMyFor0wlIRgYCBMwTatjN1qMsvoeZeU3fvKYvz7kbfNVJovKcBMnu6OKofdEYtfs87bn88mU8pOzqRxccK8EG3ugCLeYQq6wnEGzmFLrNhLlj3oio3CmLXs3e7PrXA-cDS0oaScQWRLb00bUqTVZogX5Jw68gZvQUTUZ_igqCYjb2fmhAKGaAHZP4gDkXu9ORusiJ42t9WU_TPLjc4AK3Y7DB7XlxBXeZzzsU2ekIfv9WbuiCHgYopw",
+            "width" : 3024
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104701976343043731581\"\u003eSon of Shamsuddin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vvihgk4UyAZJEtAoOlxn3FAnZO4wLVzvL_t-SfW07NgFYk5P9WJJjHKiZGv2s_PKlbOlDDWK8rBFlMj4aePg4YLLmuQSNBFZIEDdRs77WGPk6wZX6HXB3hFBNKqNPFyV6eoOU8SHUvp6zxWWzUSCJAy19SKtgSVTZ9h0UuTZgzpTnEIqqaenWCaS4JUbfEjjBHrCy6zUDFIZlMSglShYkjDhbFlX_P6GblUjW963KvsgUWcCLaB0zbysyAMZvokQKvnMv5_HiJZt-lvYO9GCokfIs6BO-GWubxLash7aPki3wrsuuTMqtO9xX-mwMzAZ0eh7IEMcq0hkIkNcDOrKZOHpdUvIwlt5zRMuBM-O9VeknhXcLX6dOyHhQW3hpG7-WtQSTnKr8XkuP3OB_my2pIsOUcBABPMv6hteVf6-j4KRCG",
+            "width" : 3000
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112785792339019958657\"\u003eBavin Raj Sugumaran\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vysqhGd3veG5bcgCar8XqkkxQ2YHMJvdsQzlSen9Qq-0l3KLgo02v_oWmBNxZ8DH3tI_7PNDALty3PCCCTrm1JDse8zRNpLvAdlsYqwum1VS7j67wLBXch2ys-uDBDAwSOrKAqluPqVhWaUj_nc2n4ZXFhpiTYeN-Gg84JNz1tIQG2jOS5exU2700WKv1EcX5cw_5K5Saxed4938fAA7oYY1hsy6XollfqHFJu3SGDDvXdzSwaH3AyGAolpOwwwAopdLirxhhVygkW_AgfltMlhIpadC9BZsQ4Kz5vTWQTIGYSIXuZLqHBpHnyLGHkBRPWyRnUHB2vJYg7ShOnOXl6Iutqs8NxkP6_IjYT-8gx5bLZ3pz5jioZ9XHOSD0zTzHikbeSoDAb15pvv5oyRAwggPACeDjtuB9pskeHmWqgRhk",
+            "width" : 3600
+         }
+      ],
+      "place_id" : "ChIJOZlLomt9yDEROYibmcR6exc",
+      "rating" : 3.7,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=1692081069817038905",
+      "user_ratings_total" : 1687,
+      "website" : "http://www.zookemaman.my/"
+   },
+   "status" : "OK"
+}

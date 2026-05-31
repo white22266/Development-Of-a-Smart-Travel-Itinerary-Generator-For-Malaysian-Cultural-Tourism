@@ -1,0 +1,54 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "KAMPUNG MALAMPOI PETI SURAT 60 89957, Nabawan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.980665,
+            "lng" : 116.462932
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.981939680291502,
+               "lng" : 116.4643282802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.979241719708497,
+               "lng" : 116.4616303197085
+            }
+         }
+      },
+      "name" : "IFGF Malampoi",
+      "photos" : 
+      [
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113673390182063462005\"\u003eElvianaedilla\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uX7QI3UaLMtGkOp4DWL_1I729ap6yuQFK4u7kLU8V3T0lJoDYRyoI0CmRwRYt1-J5nS_Lo5idLAxZ2hkKivnLm4Fi8W9EHRSklzwZM2gOGB-xyCETOHf-iFbj8rESksYOl5RfzC0epPP1DLg0S2bBEy9xYTYoyKQ1AqXiKA6JMlsPe9Hl2o3KdwzUoN4ciJaqO1CDArWXUVlkNjI7Qd0dGuJh8SN8TE3M3LBVWQ_QUKINgbjzT_Vq-mzYRfnH9bp7FmrUtLgq5n3wapU1R2PkpFCuqz_4KNRxtNKBjdRlQ4zYydxtyKtNy-QlN9CSL6Evhb3FPNLBxX2vDZZjkPuk4eHG4PbY_JhjKyVyQMMy5y6UGwQypLddldXClZNLRzvE4fGzWdAgnDD1n0TYjv2PHv1W5A-Q30RwkDBhUzQOqMFp0",
+            "width" : 1024
+         }
+      ],
+      "place_id" : "ChIJkx7KVxqnPTIR0wAqmnXSeo0",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=10194692109045989587",
+      "user_ratings_total" : 16
+   },
+   "status" : "OK"
+}

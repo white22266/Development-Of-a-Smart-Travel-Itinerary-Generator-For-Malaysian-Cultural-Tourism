@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "SJKC Chung Hwa 1, Kampung Paya, 12300 Butterworth, Pulau Pinang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4141806,
+            "lng" : 100.3772752
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.415530330291502,
+               "lng" : 100.3786220802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.412832369708498,
+               "lng" : 100.3759241197085
+            }
+         }
+      },
+      "name" : "Wall ART Totoro",
+      "place_id" : "ChIJ-bZdQBbFSjARpisEF2JxDK4",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12541523728426871718"
+   },
+   "status" : "OK"
+}

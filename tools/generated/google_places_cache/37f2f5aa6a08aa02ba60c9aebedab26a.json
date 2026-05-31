@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "603, Jln Alternatif ke Pusat Bandar, Kampung Rantau Panjang, 17200 Pasir Mas, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0140727,
+            "lng" : 101.9752117
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.015367080291502,
+               "lng" : 101.9768991302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.012669119708497,
+               "lng" : 101.9742011697085
+            }
+         }
+      },
+      "name" : "Kubang Chenok",
+      "place_id" : "ChIJZSDlsZMZtDERlKm-mtSEV_4",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=18327263257271642516"
+   },
+   "status" : "OK"
+}

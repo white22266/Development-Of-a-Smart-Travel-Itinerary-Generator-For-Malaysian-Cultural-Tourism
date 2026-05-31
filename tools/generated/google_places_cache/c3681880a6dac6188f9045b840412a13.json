@@ -1,0 +1,1172 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-s1z21EdW5Mf6JITX0zZf_veuU_CvQ_XAY3HuSZAK5Bl_NBiH23gIm5sQln8-zVz8RZyQTwkK3YtSgsI39Fxg_03hY2kTkf_u2Ck6TR_Ez7AwrnMbF3BsQh6pGt-n942eMn02iwCqWaFVYtYhu8eHtcWlXB4R9QWRwfjBteonAkRBI0zvQVhKkCIxcRtYmITt0LopzGjchIUiG281l8KZWK1G1qPNx-pxcwgwcN1jzNaYVBVZqVNiBIzm9m8omxUJrmzSu6dyK1Le0A7RYFSDo7fD60ftjK2A8dOjzOvRE1YwIm-pNgy7PsDkEiJku3OjolJk7HMlLsShjahhDcmeWDB_R2TCW5bO3l_GlgXvKiKtTj402-UIA5WWFgCGZKcp0oNfnkVLgAnW80vU8fGFdEeez9BP2LsWAW_VXQlXJ5ycYGDaFPVJcD84F4OLZB9SdJsR32AGsgLZjvt2RA9EZNX2rWKmKHHpqrhhzP9SH-mPSOApHJQqtmhOZcOI0KJ_BrcbxVbzbfo_ugLrg3r2xJfCz0_KJCWFq4q35RF3F8Tngm77j3lABPG0Mb9hOFp8ZOdJctdsmd9DEyOG9x7QJ0B0_HF2axFtmtTWhjt-hIlUZD-NUMXQVHebDhFQ67q70Y25VARAJ_gAHWA2DjaGodKU7ClzcKsPwUNM13Q6oxx-FLux6BhDdTrpwpCnovrpzHWynzeMrYUPaDNHU4dhAAERMgVaIVqgvzoS-MIhywn9bZIV_EJfkJA-DuFD0aM3eID205h8bANimEYfoYmjywgG8YBdxj_mBVmUboNSzghCpWmhPSU8Sfr8iPnkAFR4XCWdd8qxE",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Ibrahim, Taman Kenangan, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4509623,
+               "lng" : 102.4218484
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.452241530291502,
+                  "lng" : 102.4230503802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.449543569708498,
+                  "lng" : 102.4203524197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Abu Bakar (Masjid Lama Temerloh)",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105757363328093334199\"\u003eNUR AZAM Zulkafli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-stsF-yjcexGnJH3sRo7bkENi1YIeeE5eohAGZyACmCCQ6gvAKFUdg7ddUs0ODqLhY-qqhtjSqjLz4EsU6h5DS2xYAhITd9Cck59KWjgxMDnWLyZePCWRXn_eRxee1Mq2bJ_y-7eS3lp5j6RJKZ-7vw84q35hnMX5q10ZrPC07G0DC8OE-iaGsQ-mV7E8_BrwIhDWdT-opwa1mq7j1yir-DIsi4JWBN44-1wLRyxo_p20TcdwY5yDMDWvRcnH5Cfu3n4jJCbYKHfNA8DTIYtlnO-WoHOXhgtCpldxiHTF9KsYTvy212bX_bST7VKoehKGU_dnG943FROn8bJNn5hS1HLcoHPSAFlTiVHQm3PR6kYScPgYG2KZsTUqJLtWHuvcasYQVkZqEYd2SYxpjP3Bw96yIrgDqePQaBfNdZLVFAKIOe",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJsSxhjo64zjERnQaLP7Bvmes",
+         "plus_code" : 
+         {
+            "compound_code" : "FC2C+9P Temerloh, Pahang",
+            "global_code" : "6PM4FC2C+9P"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJsSxhjo64zjERnQaLP7Bvmes",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 324
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 1, Jalan Mentakab, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4558518,
+               "lng" : 102.4076588
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.457168980291502,
+                  "lng" : 102.4090271302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.454471019708498,
+                  "lng" : 102.4063291697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Ubudiah, Batu Satu, Temerloh [Ubudiah Mosque]",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103773490690093690336\"\u003eKwai Peng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u2WvS0mIdMblSX76WBQeVdSat-Ht9N-UvkPKOUykfQJmDNQYm_2hdMoCbQjbJEDomXqis6a_mEU0ci7idMU5ivz0N0J8-XSI4qBbNxr-5OQ-IrLmge5JSW8N9q2fj0ZILfAVvgACkFO681koeh4tlDmJ_BQpKSFVIZhV5eCNiBXC_nqyEzHziuOtYmZ3aw_S72qLO6u8hwTDuuWO6k75cW3_HFTkMVdE12N8UER_4X3aTXOpsGnltYRk2YwiRF1ymvSh0oeEFBoe9FMdb8wstsBt7AvASSZm_zXQ1qIHrvVbCGqlkqLrRTPe3wsYl4QF2SYjV8YQZPidx9H3jilhcKhEAgPcfAIlaSMjS2p_enowtDpDQEc4e_5q0O0h8P4pRh21uRacpng4IYSaME-fko1nPUGls0xQIrGyOF5GZqBQ",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJgaGzWPa4zjERxSjnd8rJRIQ",
+         "plus_code" : 
+         {
+            "compound_code" : "FC45+83 Temerloh, Pahang",
+            "global_code" : "6PM4FC45+83"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJgaGzWPa4zjERxSjnd8rJRIQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 99
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bangau, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4636867,
+               "lng" : 102.4365097
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.465077130291502,
+                  "lng" : 102.4378808302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.462379169708499,
+                  "lng" : 102.4351828697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Tok Pentara Raja Kampung Bangau",
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103816868030995180829\"\u003eRosli Mohd Nor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v6AhxUjeTq6XK9t5_KqoN52HaIj4JKhSfIK_VV-u-Z5OfE1qjPpPsbdKtE7q8ppmaASONO6Lca_hj3_xaf6cKwvLnDCbaCru1VxlDXv1vf26ZMRQN960OPwlO-2IDvdYlAA2xGHAKeF4m8DBkUH_div7mdout4ZUchpSj_QO2mhUxHTceq4ktxAhUAJOLpggl6j3SIgUDNEhj2MH_aNipEyYkl2ZloIszr_Tnte4Meuwcg5xAUwxhFay5Ndp5u2yLMOflCiYeflqFKF1BY1vrCB9LpWCpgtZryITw5C54IwNsLNwNmpsRMPmB0xD6JeZDyVk1Nf-SXPHvcrkNur_mjj1mPiPk-AzE5HTSwEdg-zIY3T-OJgFXnmzf2BQ1bAsRX68-eW4Hl4ARYFBKvFBU6x4kl_bnNRlsgMgD0Nn_tCA",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJ____v3m4zjER-wP7h16TWFE",
+         "plus_code" : 
+         {
+            "compound_code" : "FC7P+FJ Temerloh, Pahang",
+            "global_code" : "6PM4FC7P+FJ"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ____v3m4zjER-wP7h16TWFE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Mentakab 1, Taman Mentakab, 28400 Mentakab, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4802105,
+               "lng" : 102.3456914
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.481590330291501,
+                  "lng" : 102.3470335802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.478892369708498,
+                  "lng" : 102.3443356197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "文德甲天后宫",
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116756327826042395001\"\u003eKaren Wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tQiLm8EWs22JUd4Xk5I_3oiS0jpbobVCo0viXT8Igo5j-q-aTSj3O9SOmHQ3tDqFZYAfzCUs583TEDEfAEsaGkb9Bm1P7iUWf97ELBPGPDm_N9TYAzk3DLAN3F8C6Rk463OllRjDrvQH8ZNaYUSVaDgLueowuNMR8flxWysCYn9whIBmpdkGXUfFGCDQWEOWGMo07YTFx0JzUu_onDUiw8HEH9n3okrJWIrOdWbpTrszGOXEIeUpUBwoCJu6OVCBRbUG7eYTOaHj8PaC6PctVp5UftrixsDQpXh5SJrORzW5kKYxGpQFyB-aAapISvejHb93FRi1KajMwU-Lc9wLwNHz4czjJHnOQYdPVgdvtAIu4VFUlW1JFbuxm0aOO9Hxr7lAAuROUvYGHTyMHpYCjxKcxwNGHfCZQHkS6F9_HveICq",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJNyWvwx-6zjERyD0GmlNe9mQ",
+         "plus_code" : 
+         {
+            "compound_code" : "F8JW+37 Mentakab, Pahang",
+            "global_code" : "6PM4F8JW+37"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJNyWvwx-6zjERyD0GmlNe9mQ",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 178
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "61, Jalan Dagang 1, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4427102,
+               "lng" : 102.4219494
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.443927030291502,
+                  "lng" : 102.4236475802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.441229069708498,
+                  "lng" : 102.4209496197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Haji Ahmad Shah",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116021883797040014052\"\u003eMozali Mohd\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tAlxwNK_HiHyL6ZU-DyOot0_NfZscz0btMM8v0_QKqTdJRwonaKM5hlrEmxZ1dNYhyLrofLNjItktuoQbUgrLRT9JHmv_D6jKiJVA3AU9T6u1DgWju1vxs5OT7hlxl9YGbw8D1BIdvs0WTQiPl0H3vtYiylGRswc0syl8alsL0Yd9D_tdJNAn8dj7gQSK16YDAUfqfT1dkuscZg6CfcAIM0cXPNg3rz1OS-MFgCAP0z5v1yYRruhgq0TWe1HhK6IQ_C3UT6tIlfgG0HTMR_xnruBId2if7-wpsecgOcEI7ROcAvQaVsMziPhaoJRpBu7QYqi3qHTw2poWfP3kIt8Gj35ua4nfT9_GAC9N8hmuahJCJk2vYaLHTZ5_2l0qlS3AEb8UGqtCbEaPdJb5arv7nIGvz92EnwN3iNNFx8V42vPASv6gmBxPeJFQBAiA2",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJoy7dLgC5zjERTqjSRuPHqcA",
+         "plus_code" : 
+         {
+            "compound_code" : "CCVC+3Q Temerloh, Pahang",
+            "global_code" : "6PM4CCVC+3Q"
+         },
+         "rating" : 5,
+         "reference" : "ChIJoy7dLgC5zjERTqjSRuPHqcA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan TJ 6/7, Taman Temerloh Jaya, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4520109,
+               "lng" : 102.3930891
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.453537730291502,
+                  "lng" : 102.3944698802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.450839769708498,
+                  "lng" : 102.3917719197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Tengku Mahkota Tengku Hassanal Ibrahim Alam Shah Temerloh Jaya",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111114408146201795503\"\u003eMuiz Jilani\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tPFuG6lVd7Qv3-gWGisFYmYiVS-b4A-F4VoID0Bo2mfGy29NH-i_9Od5YB8r-htyVIcH63cJmjYekDX2bvkxbySDCdKTx1OxqUywKSqWHzG_dqtUJIMXvyTZtoENxECvWx-IFljzi6W2RNlUKd5CZsSAhTHIYbgblj23feHabwQR2QD8V9KQEXxAJFrAHRJ4QpfuamXyMemRuvQT6hmg5AU42Dl1otm3EEpWUIQkv1M2b2HhbjCVymklNOt2UdgDeu6uCXQSQMk2VAoE0HNmdBpIz3Td3_eAoYAY8DVeYnBQvezHlSruEJ6mjV8ShhpANEJWVokJasqEqfySh9S5C0OI0rPrhSuWYLanY57uSl6jv9jk5AlBbMRNEtdZ4knWz2YtN-fjyeJYWmSWagEj3iGTQGHRIFvZS-c67vZ08kURkHeHrUYE1BLTUarQ",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJ5xW1k_24zjERWQOp5Wn8GvY",
+         "plus_code" : 
+         {
+            "compound_code" : "F92V+R6 Temerloh, Pahang",
+            "global_code" : "6PM4F92V+R6"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ5xW1k_24zjERWQOp5Wn8GvY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 299
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4427686,
+               "lng" : 102.422181
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.443852880291502,
+                  "lng" : 102.4237467802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.441154919708498,
+                  "lng" : 102.4210488197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Daerah Temerloh (Masjid Baharu)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107055986811155425903\"\u003eannour 78\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uCqCCdYUl7ay5V8Y6Nzh_Agj5dLIbWbA2yTMeqa00P6Cc0eBda9-kDmEyoDxz-AhhLDl_t_l_08af-G9EUEUJ1BTbjOJKlfQokEIniYcxWTnd1WMc9UP52aTmQb5jIsMWCxIjmOaLnLp7nQZ1xb8cBBK87Ivl9tl_cXt1nH671Mdy-XHk3EQriHqwXIf2LfiWSPXWZ4Vj0pkuCfralgkcrbLOvWUcQtDaXPfWE4ZQGQgFa_RYyHkZ55FR7m2ZGf-QnJm4NYUramOs_al9zTMZsZqFP4hC2ABGjOMv3E5QJbY_0Zauzec6Xfu34YMQFoh_qtCWnBdJIWMpd9QDe3Xe1PgilhYWKq1NXDr-lzsIBZpAOwFSMnIDEWGlq7XI1RpTbpEsrI4M-WROvLb8-8LKv26C7qTQ83LhHUxwqH-wjF1b3z68yWvHo9cSGwZPt",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJWfhDwJC4zjER3sDgQs7K2JQ",
+         "plus_code" : 
+         {
+            "compound_code" : "CCVC+4V Temerloh, Pahang",
+            "global_code" : "6PM4CCVC+4V"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJWfhDwJC4zjER3sDgQs7K2JQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 270
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persimpangan, Kampung Tanjung Besar, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4627831,
+               "lng" : 102.4709771
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.463924380291502,
+                  "lng" : 102.4723174302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.461226419708498,
+                  "lng" : 102.4696194697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al Wosto Kampung Tanjung Besar, Temerloh.",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110567883332830897819\"\u003eABDUL HADI MD YUNUS\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-smh4C0W5-u3horFWT_6RS3DQJBPhoSOgCHLkJV-1ivwFoPLpRNIV9dJluLVtMuh11y-4q2wWdGErLjuqzc5vwDBoT26IjyHh2gBKpxm8rNWfb-xoK82-FclJshqZYYqX9YImPltZOfIYjt87aI0kup44KKMi-Srs0Kt_YOvkoMqqzw4yFsounOal-PNNhGRUZ9PwOtirKAjPHFVLl-EhPkhyRp6Q7UQ54_ucqCtED_yO_HqcmLBfK_R6FKQjzoZ_drP6Ka92K9gt2haYT9OzOkCsY9h3lvelyt5TEooleHWFTz-wIrDyp4g8zREZSt6Nxq3ThgbNNAhLkQa5_DOCAElpR9QxUKh1dANvKFVwyL50PHWLm2OMdgRC5Ght9Z5BgqKd6s1ZrPAUhgEQq65bRZunNoH8TLW_4GV9g6upvI4-Cr6pZZdDefUPw9RI0i",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJBThfrlDHzjERss3L8PwLktM",
+         "plus_code" : 
+         {
+            "compound_code" : "FF7C+49 Temerloh, Pahang",
+            "global_code" : "6PM4FF7C+49"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJBThfrlDHzjERss3L8PwLktM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 67
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Sri Semantan, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4740632,
+               "lng" : 102.3840584
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.475382330291502,
+                  "lng" : 102.3854863302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.472684369708498,
+                  "lng" : 102.3827883697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Seri Semantan",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108841256766431855250\"\u003ezarim zakaria\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u1sP16kpWx7YpdFL0agyQjvSHMgpZvOvfPHu6v30mz6-n5mVp2gAyPKM0nmuYu4KqwJJa0wEdw4MA4ccSK46t6aXw5kGrMVsU0_E68MFP34DWIVYtZMtxxMrPWZzxCmmxsmhgW_ZfbcKqh5KLIJWQU2CQHNq8EoX0A66scejj2khdVJ_HqdBt8PPw1JjwJsPhaV6Y5LVZXyDbCEixpgYt_cQ0KK6WhFfnD40yS__N3Pt7z1q0WB_X6kP0ZKW0KTcxI_PMw8ONgqewIMNE40LUxc5VM5D_4Pv6bB7Rx6M298r4smQvL0sdazlVki1vlPtSY2i4jHkqmE3qtIb-faXofLx5vrFOmANpCK-mcGOWnw5UQArsWpYMuoBpluCDORP3i2Hf5QOWKn5vrLLoJjuL1Vo4OiWmwkxoAswde8EJRAjcp",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJPQ0L2ra5zjERx9L5umyriag",
+         "plus_code" : 
+         {
+            "compound_code" : "F9FM+JJ Temerloh, Pahang",
+            "global_code" : "6PM4F9FM+JJ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJPQ0L2ra5zjERx9L5umyriag",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 130
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Maran - Temerloh, Kampung Awah, 28030 Chenor, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4792164,
+               "lng" : 102.5127617
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.480445480291502,
+                  "lng" : 102.5141814802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.477747519708498,
+                  "lng" : 102.5114835197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Kuil Sri Bala Subramaniar, RISDA kg Awah.",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117400972918223417857\"\u003eSuntarajan Kanan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tNwv3rGWiDAZQKNAyRL7IEL5E_KFGvV-WkKB6fEikFXFgUTn5TO896LzyMcecYEdMIhZbZOje2rZ6kGlv9KnjaEtjPo0ZcHEhoRLHh7Vi2SGFhoaPJWZAO_obpoj5unDBrC6Zt_Jx7CNuAe38wZG0HTTHN_F_iDlGxPr1Qjf31heM6RgTw_tubu1Sqka0Ij_MBC5upZLRRkDy0IXv6DZnq59RYFwg6hhugc2S--n3k9GTvsb2cHWcPV0CQZGARLPSyCA03WndzrZcPR-umpedEWyERXZz6Qmjmi03cS2pGWWUsA53uKjc78qYWBGYycRKmr0nyOwGI3Z3p2FVvqeHZYhmnd5Dc_POP9js2kwEle3_-dY3obY04hS_lJ7qk1MeOVcqs0i-5GW4ee3-fq79tnKDerGgivsfRZ3N3voo",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJY_tbzhPGzjEREZHc7PGxPVE",
+         "plus_code" : 
+         {
+            "compound_code" : "FGH7+M4 Chenor, Pahang",
+            "global_code" : "6PM4FGH7+M4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJY_tbzhPGzjEREZHc7PGxPVE",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Raja, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4811884,
+               "lng" : 102.3951514
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.482471030291502,
+                  "lng" : 102.3964896302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.479773069708498,
+                  "lng" : 102.3937916697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kg Raja Songsang",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117538922596639342622\"\u003eArgonzhara\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u-vzM5wWnL684CIFG_pa89I_cwodfAT58dklltxxjyDBM3PXV5NzNyBcuNgTcDkYy6surGF5panazowr06NRmMZKcs-4jYZNuFim2G4Kv8XGp8OKPH_pRS6dZNppZlawRvRI_c2buWwmHeRayG5Nd0Cgz0MpHjTK-cxZs24T1StcPoh1OeXk85AYhEQaHjo_LlWNsI5PLsMShw4R4ym0rmgCA_-HvjyQvIXZhIbvztljpWYXM_Y3sCFHenLWvh8XvsvR2t3CCXxIA0mZLy8SwuS4koUd8hble-GQ5PlMkrxWREbXQzUmhFDYWP5HonczV7pbJ0v8EY2ZrtsxIWlEa4cVO4Y8Ul525pS5OOTl3K_nbfDYw96VyymMc_Eha6JnEo2GgrOypCTjEvx7EAo0w55-5DEsHNyMRsqrSpNq35i8mCgDKEhdgzi8AZH1XO",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJz3eD-DS4zjERwjDxxjMgaSo",
+         "plus_code" : 
+         {
+            "compound_code" : "F9JW+F3 Temerloh, Pahang",
+            "global_code" : "6PM4F9JW+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJz3eD-DS4zjERwjDxxjMgaSo",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 103
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Charuk Puting 28000, Kampung Selendang, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4183547,
+               "lng" : 102.5062552
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.419821680291502,
+                  "lng" : 102.5075168802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.417123719708498,
+                  "lng" : 102.5048189197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Charuk Puting",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105599355160819202956\"\u003eMamu Amir Haniffah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uh7Xd5UedTDrDpGBRcf5zrFa_v9Xzjp5TFrpfKScQe66Vh4BkM-yL02grGscB30bCKGtw4cLLAKPMOmcM2l3YgSMD6-6-O7MJqwNK6BcLelznwOLVy0LmgRg-MH9D-J0TsgF8MOUuXQaStC6IaehxfwKMitVrmD44YYYgreqIQSnx_oF42hpiPaSybBV---wJ94pPKjCvPf0ee7Z8oMEYUnFYr42to79LZ4sudydaatzdlm4gaTpRXKVhsONwAf2s2GdyI3BAzLwhvqB14D9UDF-L5svFjueVgi51DVzH1XVR6TkjjFQPbq4oYgSMJnpkzB7UyQgL2QxRgHNExMSEs2eauSbB25x2dLx61UMMelS6ONPp9HsWlmLkGa6k_QoYQ4FXTqUb-tms6mp4OrY1hUwV10L0UNeBoP3FUj4Nn5Z20",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJ9feTpMrGzjERglGUuFCazqk",
+         "plus_code" : 
+         {
+            "compound_code" : "CG94+8G Temerloh, Pahang",
+            "global_code" : "6PM4CG94+8G"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ9feTpMrGzjERglGUuFCazqk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Pangsenam, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4187235,
+               "lng" : 102.4195561
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.420022080291502,
+                  "lng" : 102.4209672302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.417324119708498,
+                  "lng" : 102.4182692697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Khairul Jamek",
+         "photos" : 
+         [
+            {
+               "height" : 2352,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110909675499809554354\"\u003eSalam Mujahid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tAy3KY45w_pwGqmlkaAzCwRFKIcw0tUxcCmGn_4TsfAROlotu7DcRH7HVqPFgF7cUW1ym3YufFGIFA4b9O1O6bhtYuCK0V0nzgWD1SSaPcGhh63GW3zu7R82u9Kenoujhfk2N5-918RHFAfo_55e8AubFdiupba62_--ZIcC6FYWYJzA6AXq1NZdzHL7NbxMxhoz9kwcGQuuQOD7g6oRugkL7xC5VrcS9Su6nM3W76uaFGVjHXDCBsRO6-QAbDwy98bwcPh1q4KuWmRzDIip9nCsFajd21ySC1ybrjauGwBUkowCtaZ92n7yIE3D3cGsKJqzWVnRWChuDbUWaX87R1pgoybnwHwbvlHx1hvLY8HOAQZdxsaR4P-k6TY1Z3_IwvJmx3IPu4QpxhxEyN77gBUeJkZmWhfCem0LRE0t3s4RAm",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJLSQXtbS4zjERTdXO3XlkHiM",
+         "plus_code" : 
+         {
+            "compound_code" : "CC99+FR Temerloh, Pahang",
+            "global_code" : "6PM4CC99+FR"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJLSQXtbS4zjERTdXO3XlkHiM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bukit Kelulut, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4362217,
+               "lng" : 102.3957451
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.437494080291501,
+                  "lng" : 102.3970469802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.434796119708498,
+                  "lng" : 102.3943490197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Bukit Kelulut",
+         "photos" : 
+         [
+            {
+               "height" : 2352,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110909675499809554354\"\u003eSalam Mujahid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-txQJNQWbgicJ8v3Jo_jcIfw4pexyyR4HkgboW8VDI7HG35cYQCGAhs5Bqcn9fY5wkY6o8IckdUO8FsJNwzEANd2cRLUAPU_3sbsehiZrwWlslN787XFudJ3xavxZstCwobmCCypQwJattDwqcP3-ibDF5leQKOvB2JV9pwdcFAN1Sas3dni-IDRBcXwd3q59cjQXCNrr8Rd4k-mqxNZrtbx4_Byr603oI6E1Okl9zMo-J493cWf-At-6AqMOjCYCbeScjFdvVtx2tSB_zOcfMPJKZ_xMOsjS-2_vGCbiVDW-2D0jJVDtMkocdVjo1Rpz9IztYBVV7MW2Z_c-WFRa3v_kjj2HNkqpWfNSJCCYInWHwLrfrZe2ocF7ZUxE8DGU9_eBr-3mqGqd873U2gVTE8mkOMqIDIGFh2J8P3p_DUxQ",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJq6qqqtu4zjER8x563YVif_w",
+         "plus_code" : 
+         {
+            "compound_code" : "C9PW+F7 Temerloh, Pahang",
+            "global_code" : "6PM4C9PW+F7"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJq6qqqtu4zjER8x563YVif_w",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Baru, Kampung Paya Kecil, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4621345,
+               "lng" : 102.3982735
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.463427730291502,
+                  "lng" : 102.3996813302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.460729769708498,
+                  "lng" : 102.3969833697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Bukit Kepayang",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108467051975418289526\"\u003ehelmi riza adnan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ucFVAkRgFrSWbI6QEkrp7JF5UcP4hCkqfXPIftoUFZZM0h320rxE28GDMxDZdnsByyyHHY3wIKwvWYhfgiRVuaFdNEqAysKW2qmC9jGNP_s6s-S7zzwS8nnPzgnMNaBLkwkm3tdSletMbXx38p5Gi9IRClS_fJMDkrhaX-LGkU-RLLAeGbaT9VmTQU2UUojN_l-bqT8tukspIvoSU6d4F17bFAx4oJcRHL4ri9JX3AZRjj-T0jx--6x9RrLt5eyUUGRuJqx2MwJGVdvG2IVzg3rLkyk5zbv7WLF_UpIV0hKWAcH7AuGp-YckrrP8N1XwEWbRFz3SWeGl2VtvJ8OYqK09QOt8OZF-oO5ieU4WJr2nc686dE1cCJUY68B1s77TItEhC0duke9wk0uJn7VTj__HtRpGYEyb5GvIAXFmUDJCTUC0cI7sIoVgEGHw",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ992YnVa4zjER2eikIaUI8IQ",
+         "plus_code" : 
+         {
+            "compound_code" : "F96X+V8 Temerloh, Pahang",
+            "global_code" : "6PM4F96X+V8"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ992YnVa4zjER2eikIaUI8IQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "NO 1, TAMAN AWAM KUBANG GAJAH, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4437977,
+               "lng" : 102.4230899
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.444878230291502,
+                  "lng" : 102.4245273302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.442180269708498,
+                  "lng" : 102.4218293697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kubang Gajah Waterpark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100986619464037394702\"\u003eKubang Gajah Waterpark\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkqsKi6jBf-ebgEBVW1AtB6xI0LUAAqu2e3SUYcEDKbcWoJbcVsloTG0mantVuZnOe2I4wdfvjmmpVX5D0AhQamgLFz96mc-sTmkfdkAfmC_M_XFetJtR0dJoguEL5NmdKEYa1CdZNWzxSInK7HMsVvajJrKOWCIO5dnxmJv4NYEF3Njm2Y7gdFTYGcZqDlHHnH5dsGlyMPm3mdSRKddyElVgWDYKquNK1OTkzmr7qC8-m-1m4upZ-lZIo-ofHJzMVuM7mBNNH4Y5P7ca8gDqdNRHMdRxRX57VXvlzCQhgObq4iE62m-Y72P8PFDUv3efBdjJaRKDdBLUbzjCRfGsNdRsWuBP8GAGoerXVVELprPRnl1QIvVBuLjayecyoOF9rD0PZgYeVSf1upTqZmtJgrBzD73BwT8tFgtZdI7GTqiRgr1sJi7T5gEjgGM4M",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJWQ9WLJe4zjERfd-9axxFTx0",
+         "plus_code" : 
+         {
+            "compound_code" : "CCVF+G6 Temerloh, Pahang",
+            "global_code" : "6PM4CCVF+G6"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJWQ9WLJe4zjERfd-9axxFTx0",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 922
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Exit 88, 28400 Mentakab, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.467289,
+               "lng" : 102.3494267
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.468808830291502,
+                  "lng" : 102.3503733302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.466110869708498,
+                  "lng" : 102.3476753697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Rekreasi Tasik Chatin Mentakab",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114284236858514267187\"\u003eNAG\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRLzGY4nVH_aqdnDEqP_T08j13gc93LzAW40nd-FPwMWf4Mx3FryaMjgnCkXNyy_jjF7sMc0Ckt2eAgMhiUzL4K4fwj5-M-V30tQVvXHkP0oIwA1r77Dak2tW9H5sKeWkJLqmNA7FMk_WGnbFBSifG124LdfXofHg4yEmbT1-dcAC91mLJ553rB7M0p84jupGyGLFAwC5YBlRfi9hoKyJQmqDasmc0fDUjqWp-Iz9y3ZJf_sdi21eAf00ZGQuUl6MzWcIlmyiYxoBkam7dgU-0sIqCOWcVgL5_GmkiSwda_qlMd9qApPAysTdwWsidgVf-_NTVLD1DFgHpFCypH7pMhXqsYWz6hiVLU6FvmrcgAcbHkLBe7KK_KY8zBrrHfTeRvrUzeH7OS5t5iVCfhVS6mz5z_xF-vfzPle2qcEGLEqo",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJtbBgzoe5zjERAsZ34CPTfgI",
+         "plus_code" : 
+         {
+            "compound_code" : "F88X+WQ Mentakab, Pahang",
+            "global_code" : "6PM4F88X+WQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJtbBgzoe5zjERAsZ34CPTfgI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 375
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4448569,
+               "lng" : 102.4164622
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.446220030291502,
+                  "lng" : 102.4178195302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.443522069708498,
+                  "lng" : 102.4151215697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Tasik Bandar Temerloh",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ueoID-CeJFXuVlsFHgmjlucgdVUyOeL7ZFznS8cRUMmsba45Hqd8mnbBE3cGcVbe0agHpmrRq20HdkiiKX2Zp_yRUPl2g3dfU_JVZcgc7-SHLdUMtU9JomwVqui4WEt3jsMNA-Nbjb1BMhlP_Ep99ToxFVj8Q9Brj_kVc8EisRhHIqG9D-pEkPftrJdWXlav3bmuaUcwWoeh4QuB98pPBcR6TDZyrd0H9ME0C-dy6Xd5DC_tnHBLbF5LIK0B1zjiTjG3w6MDfF6VaGS4MctfoUF8J-9LrNa8JBmSnWY50ijxVQN6AxHVdRj0-eonbyI_GXHJIa7q71lJsJmDBa8MO8buOO8QxOThcqBkUHOK3G2fzsRrpA_sqEmU4GEQf9oXZPXI4oHmEv4yndpSXbyxgbbUf7Lr6TjkSr4DV2rVkgxY95",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJzbUe95K4zjERIqJFUHAdFb0",
+         "plus_code" : 
+         {
+            "compound_code" : "CCV8+WH Temerloh, Pahang",
+            "global_code" : "6PM4CCV8+WH"
+         },
+         "rating" : 4,
+         "reference" : "ChIJzbUe95K4zjERIqJFUHAdFb0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 368
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Kenangan, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4493938,
+               "lng" : 102.4209626
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.450703530291502,
+                  "lng" : 102.4222896802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.448005569708498,
+                  "lng" : 102.4195917197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Istana Sri Udara Temerloh",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102720887333964810163\"\u003eShahrul Johar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t3Mg5qvqeOkhfkroeITIaELP0-MEfIAoY-vctBqgPdoAhHyvEV-rHJ77MGUwNy7-Rqqf1rV5y_KTTOazTityVTA-T1jevdhupmRnqzSEI5unmSzfY95cXZWG21js6IX-DJerHsSmENPCH5FKBQs4cZAvC64yP2xmZVuy7s1JYL8vY4_mhGi_F5yEtxs5_aE1nNUWTBRGVDB0mqyFZ6fRFJrNW5TB99fnaLpBlUqvaH43XY-Qpd-Dy1FMae6X4i-rQhlCkBCu6Iyne-NIHgNQsszgH0AOMac28IrvikOQt5K-CQIv3hR8Os61_QU5YdGpGZ0qwSTsqau1dNb8Xj99J1GZs0LuQasYVnKVL0NMEMB27UCajcsgogRGDDx6hfB3AUFnjzbFGgxkk8Et2JToTUqXDOSay-ouwkIsgvDb5ozsX-",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJkX4-Co64zjERrkHzF1EbuQE",
+         "plus_code" : 
+         {
+            "compound_code" : "CCXC+Q9 Temerloh, Pahang",
+            "global_code" : "6PM4CCXC+Q9"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJkX4-Co64zjERrkHzF1EbuQE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 21
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Felda Sungai Nerek, 28030 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5353562,
+               "lng" : 102.50173
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.536807630291501,
+                  "lng" : 102.5034374302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.534109669708497,
+                  "lng" : 102.5007394697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Ubudiah Sg Nerek",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104241104910178500826\"\u003eHishamsull Abdul Wahab\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s415gEGpnwWIET3-Q5XTzqcYNc9c4onk9fh5dkSwPGBjxAykc7JPwx1Z6nMDoF7aBbod_FI4RU0Pu8VJpe51lKF7MtwmsFCGEh90Jfp9sQFelAd8XAEBK-X-oyDYpomlR4lD2L4wMjwLnrT9ljERu8kqOvb_gGzW5cc4qGlue6SP1oGzzSILyrQgD14ZEVB4XL5xQrINWkwnbYs2B9C6vmYYT1ykTU3PrKmc4pwYNt_jK9kBSd-ARozO8Ue5T8HIUk50cmLhg2H3-M52GWaT8s3OpMyJBPy4HvqnGy_3CH9a2QmDuoLnTcvDQ6QcLZ78JpNHgzhnujEpvFvMj0KDSXJKig5oyEbDJNVcUv125El2NOfwMTh36bVffEYw6oNndE6yPaWnGUqMhzVJLSgcfiejEspG887Kf-ZShjk10OsQ",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJeRTT8eHIzjERspZVdzgmbXE",
+         "plus_code" : 
+         {
+            "compound_code" : "GGP2+4M Temerloh, Pahang",
+            "global_code" : "6PM4GGP2+4M"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJeRTT8eHIzjERspZVdzgmbXE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      }
+   ],
+   "status" : "OK"
+}

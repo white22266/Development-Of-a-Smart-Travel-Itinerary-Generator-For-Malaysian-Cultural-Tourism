@@ -1,0 +1,51 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan SS 17/2, Ss 17, 47500 Subang Jaya, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0781776,
+            "lng" : 101.5854283
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.079571680291501,
+               "lng" : 101.5868822802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.076873719708498,
+               "lng" : 101.5841843197085
+            }
+         }
+      },
+      "name" : "Kabin KRT SS17",
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110289305395766466529\"\u003eHusaini Hussin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-utzMBQTIRdjgaKck-PAY_qyur54ckheYZSQ_XERcj0lsAt_tpnXknjSJRvh-RDMWkbhmSqCUrIs7qt4-WjG6eRPBFr9CJU5WFVYwcEektki0c43EBeg-ExaGSDIEEqXvfVuL7UGRXvx_Ffug52V9sIYiR-7t7hus-0GD-riyHCEVxZ6pH6N2WKR-vOKTTBhsG5PmXO44MoWVeqmHLUzMCY1I21OheQ-B6l6ATqGmdRUxHGWkd1yIra1gg23ccbsXUs-7IgIz_OU0prm08-tGES9e9aW8qkZfJ18K6EzAq9fIKKmNzCdtWUyAMHvsdRgTUVTB1NV_ViHzchfFU1yWUAgYkz2hK7ptmXTVtMMbN_LftMPTJzjgDjb0ZXz7WFQG2GHLM3SkqmstgUm8PIKmf0Ap3eMfso2OEOQmaLfQdKB3CjKfHnEerRcgsyzdGf",
+            "width" : 4800
+         }
+      ],
+      "place_id" : "ChIJGVp5FABNzDER7rg6Dny7cEo",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=5363993297687329006"
+   },
+   "status" : "OK"
+}

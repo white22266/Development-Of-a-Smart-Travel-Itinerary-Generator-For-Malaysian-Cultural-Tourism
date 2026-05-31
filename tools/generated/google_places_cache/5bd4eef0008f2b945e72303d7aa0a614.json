@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "No.261, First Floor, Parkcity Commercial Center, Phase 4, Jalan Tun Ahmad Zaidi, Parkcity Commerce Square, 97000 Bintulu, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1808929,
+            "lng" : 113.035957
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.182287380291502,
+               "lng" : 113.0373007802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.179589419708498,
+               "lng" : 113.0346028197085
+            }
+         }
+      },
+      "name" : "Mural \"bintulu\"",
+      "photos" : 
+      [
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111334631967330816538\"\u003ekiong lung chung\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-slNIR64KkkomXP-unp1k3VsrMOiblIsbKJQAEbQDy96NAw3O7RZv5z7R_EZyEPV0gULE_u_mllHrY_wlNSjDuqRzWdemvD3zXYmxLzNJqsuD7S6zx1FqwJTNkORoiIkt8rd4sWkEi9vX_02ISMQeQKEQQxAJd5fcv1Nooikw5GpryXVhrUA1E9nRaWvhAIKeAK_q9y2jFBSTcV2uBw1ui3OLYpP9YFKQObPgdyzL4wfmq8kkRvSh9tp0WYaJTfYtMJda1lVVhF6xGatjyIBOzpQqrTwB2zRDg6WXW7EU_GG55QzXkCb5P0SXbpp0i-z-oQrr9LMc7JAlmUp2Zd56R3szpFWZmK-hNrW7QGTn9ruYCQxzhwa5g8T_5km2GmCeZj8a3oproOK52KyJPqkYZrnJA-QAWatzJnnBXepsQ",
+            "width" : 4080
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116250161678074496613\"\u003eJohn C.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZ-s8jB7DpcRT5R-20dJaoUVCzhQC4kOAGgLsACviL1J56AwC2H9_gg0qNQY6UK5VAmZj62iuxRT5hNZCDaITjO0lUKiUz7FtxgmABTDVyKqoe0q6Exps4FpeCPxVRK4SkIJBEOEbN0jaP3z_PsCdvNwrlAw7NfJ2O6cDH8dWHjJzd96WARMZxAFdOAs7FhT0Kt9S166ppcF-JyQcrIDq_UNrs_fzp2Ri8DtBCiwtZPvM1NJAsH7S-brT1tl8E9PfNm1oqnwUY4xxHJgT6-Vd1FWmW_bdomkL5ybDq2WZhEyTDTFx8--6XGhE4efpIx-PvNsQuVk1o_vkflMww2pTGJVj54K8OCWUDqQz02Nt_G0eMBYNTHlkDHwJ8nHmLJp0VHRt9psIYiiOJyH2XExWd_cKioaZlwSzhCCnNb1_3oZru",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJE5LxSu7BHTIRk4dQHR0mwPQ",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17636138047270586259",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

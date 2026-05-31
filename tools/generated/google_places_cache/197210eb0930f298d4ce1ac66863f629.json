@@ -1,0 +1,1134 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uAh5sXKhBRDYQ53QkbSTPI8jV11Gz-drqpfotM4-HpQbBVM6bJxWYFcqKU3FCyHmuiYC8zUFlXKeaYI30LN8u8IISY3FWC_Wg44HRr7EiVXmuIcCpPtcGsyLyNAWsHqsMHjsznezBZFLBFE0ZIZq0mSxBzbC7sNDDBm6JQpkBPtRYJ2gUHJdDNWgSPNwE5Qp-i5Y2oDKDmRsKOYGAzg-z5S5qMoGffDfrbZxxqNDJqPi9Hv6tLAynGtg04tf_zb5gVMnZ5kyO776rmh9SHcD3nYsgUMpJmQRkFEG-vuZNc8kICFtT5hv77vngaPoA_UQiS9TAtENehgTZRSQMfME88-PwXGtzQ-zY0zE-OzJts6ep2E-Vb6bXBPx7It1YpoZsX6gtXGNbtjfvlEBnetcWKD16pOfYiPI8gNGsgZu1f6EtU0XRNxh3ne_ENz71VMXcrg4AJvB6BtB2C8lyN5RxzFPds8oK8NPbwbIHMaIwFyGOJ4oylSjJbkFyZxTD-80XT5LvIft1xPCI0jeE-AKwlarjvxJGls_GFoorCS0Zztj0RW1x1w62Fj1v5KPFBidCMMNRn1j1K7FT_IaObCYkhaQdDcLoY6lRVVP52acytPIoyosQV4hxE9P8cAKcov4bH-s4W9YZBCvgAdpUT2haM5RKs0Iv_RFZ5eApwWQhes9D9EYzndzhIu590hEXrdW_uyf-7jZMcdkwFQFSSb2acZX7xa4kaQxQwlb07a08orz6nF8kgwMHII_Lqu5m1vLzXuhpCmUSrucbPqD1NFc7qdxoNC2629qVEGjXwmpRgCZH7AjprzfdrExFwLmTxy_KVY7LYNPfK",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "36, AH18, 23050 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.827622,
+               "lng" : 103.4171186
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.828423680291503,
+                  "lng" : 103.4182962302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.825725719708498,
+                  "lng" : 103.4155982697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Batu Pelanduk",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2659,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114289913644508413771\"\u003eTEO JOO HERN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vYFI77YTVw1YrGi1DS-TDCIi_iG0LrvNQDcTYGB13dBndJDQ2bXCQDPFdBsbNYBYzDnX2P0Hu9zJdv1wu8gVxQ9JKxBq6rIjgI1fx8uGXk-0ZHbhFLRwppdxG9bcDhSeH6HWz9SYLQR7smhp52Zb2_yfQdivXxIADy9hoiQ19u0K6T_3IObLkuAdYjjzEVXcRU81pSZC86D6pFKSLRmnJ-ClW0HjRw5mfkmqwrjD1wscvflaGZxnQyOnBwM3Sym5JOR1C98dBtwohGz93VJdrI467jenajTLmO1IpBOEQB8tqFddVcx2uYDaEUwNl2Ckv4Ic8QqVVByltgY2ksI4KbuKj_4oX24KR4y7ChpNOl_KOWAObxLBIQiSAUaj4is1AL7tCxWdhE2X3MhwPsjzhjv3jl7TK__grwbAXxRgPuQNLpYFIyBz0K1xp9NvAX",
+               "width" : 3547
+            }
+         ],
+         "place_id" : "ChIJL-6IYG8EyDER4mgW9FONCLU",
+         "plus_code" : 
+         {
+            "compound_code" : "RCH8+2R Kuala Dungun, Terengganu",
+            "global_code" : "6PP5RCH8+2R"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJL-6IYG8EyDER4mgW9FONCLU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1180
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "The Gate, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7547785,
+               "lng" : 103.4159354
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.756045480291503,
+                  "lng" : 103.4172046302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.753347519708498,
+                  "lng" : 103.4145066697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "منارا جم دوڠون Menara Jam Dungun",
+         "photos" : 
+         [
+            {
+               "height" : 4128,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106373863703787672618\"\u003eمنارا جم دوڠون Dungun Clock Tower\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tqoCx88AbXfl598hNxDyXAe0SypwfVtgAfGDGZqDYsRt4YF6ZwyoijG72v3gjSMgNfrgiL79uNC_L7euBYkpueMdaB1mj7UAmgb_zSLiTisV6PykPMxKZ10AjAHsxIZCercv98XhQQfD6SrT9RnjGSvd5nvby6U1S48_YI6UtbxUWHtewzmVGk1VBtc3TUqOLGoyjjQrodd8X0E2BbMjrhK2Pxxcj9Eom8-MrlgwZGH-GEGCceTCtkx_hCTahoxRvHui6AgEvMyadPCaXqHZ5HkKi2YAziiJEKhf-rlstkpg",
+               "width" : 1856
+            }
+         ],
+         "place_id" : "ChIJ7YgPQQAPyDERjU5yRfZ4ZPg",
+         "plus_code" : 
+         {
+            "compound_code" : "QC38+W9 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QC38+W9"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ7YgPQQAPyDERjU5yRfZ4ZPg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.768151599999999,
+               "lng" : 103.4179883
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.769533130291503,
+                  "lng" : 103.4193452802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.766835169708498,
+                  "lng" : 103.4166473197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Dewan Merdeka",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110283390982181043560\"\u003eسيتي نور علي\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-utvQb0CjkMhbLvTdIzpamkTcvffMPTaNCeHhBCc_Z_UDHBTd_YhM51OBpfEVHsWwoHoUwXnDEOTQwHhJSbZjBiqfDVdECjIbHAPHfDdjGotSdpPUnL_V9ILTdlah-YwWtd1FlsUjMFzu9ezeey7t-uDZXpqUJ5oeCqFNzMMphJSqaxiV0MYf-we2ZeAY4mhOGKYsUIKLlcZLT0Dtu_CoobEEobcYeGkN1GFb8IMCt77qgdwOBAfsJTcWpz6-a3BFCvO7OcdnwkxKo4ccdb8YQ4ulLZc9si3jSWX5JEz_w1zrQ9AYTSiW6p0w4n1yyagq_HbAN-F5wTJ197gnflMfHfrJ720V0687RA_4dU7Nf9wU7YP-V1nIFzVhSwtOWYaup378B1quXZmmd0_Ep4PYW1dZJy4n3-kubYnQJ9e2NZwQ",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ5eXxdI8FyDER-RR2XfntSfY",
+         "plus_code" : 
+         {
+            "compound_code" : "QC99+75 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QC99+75"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ5eXxdI8FyDER-RR2XfntSfY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 277
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7778085,
+               "lng" : 103.4248135
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.779147680291501,
+                  "lng" : 103.4261587802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.776449719708497,
+                  "lng" : 103.4234608197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuala Dungun Mural Art",
+         "photos" : 
+         [
+            {
+               "height" : 1312,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117994703308419599811\"\u003eAndy Pua\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sr4hcoj29e0D1st6lZR6T2i5yakMOgxFpOBopSlM0m0cHGjCzFLfSO36s1D8RyqjKqWTO1luNE7UGyo0OVYnNsXNBDmJ323o9EGu0tGGx8CSdFgulW2zKTCz79-eyYPdOJBcTdG-5IlLn0z_bcjm2DDkAuUcx4iG5nJnz0tPd-8f9n_logukSjj0FyNeJKSM1ZMo4j3fwWJJ7jnMJB4puTf3hJYyMDaWtuku_i_ClARtbbGfX7f1qAwkrtec31uDqtBdmbPjmee6YJAVBinMbz7U7-EF2B0A8DhYZd6mamm1_tVZpEZM-KklWWvoFkowNwFLe8ZKF4NEoRO12ctpJeAnPqqF0o1yWrKA9h_6RWQGhfZST2Pco3RXiQqyVapkP9x5IfpFoN9AOo2mJNRANRPiulyBaDLvPGO4NZqkf13Uqz",
+               "width" : 1968
+            }
+         ],
+         "place_id" : "ChIJifrSMQAFyDERIgMzne9NaAo",
+         "plus_code" : 
+         {
+            "compound_code" : "QCHF+4W Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QCHF+4W"
+         },
+         "reference" : "ChIJifrSMQAFyDERIgMzne9NaAo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Teluk Lipat, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.766600599999999,
+               "lng" : 103.4222155
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.768015630291503,
+                  "lng" : 103.4231442302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.765317669708498,
+                  "lng" : 103.4204462697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Teluk Lipat",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107635693869690643703\"\u003eKHAIRUL FAIZAL ABDUL HAMID\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tnEL4YOjf8EYlI2aI7PEaHF5S8lhP9wXBgGw6cFi7_YmPVB69fkYTPx8lkW2oDSRXzTnnflPh7_HR3s4rKdmbEyHysXOQB4f58SJHaCo9SchK2hyC1rHuyT6A7OWOsZxsSe5e4NbVm3qYEFo-VDb9qqlixeIgpKPlapnSP1JAKXX_n6fWagr3PdJQ3fKYSsa6PcksJNM4eOF3QnAMKIFg_GlDHlkf5-q5QIw8h68_3oS0CM7yUfsaGUV6p_dVCVAXQ8PdelX2bX44PzQSor7yTWJZt2xqc-rOy5So10z21tlqBYA66jxr1zSDRxEUMAhwZEOndwQy7myB7vm2rtmNEF3515bG8z5U0r0143z3VOUZh1jkdPmUsGVX8FQFBNI_EY1-Cfj8pbZNHIOsdtk_wF4AzVwP1yHR-5PfoCGm5Uw",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJe844uOIFyDERNpl3XiG29-o",
+         "plus_code" : 
+         {
+            "compound_code" : "QC8C+JV Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QC8C+JV"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJe844uOIFyDERNpl3XiG29-o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 485
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "350D, Jalan Pantai Sura, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7566573,
+               "lng" : 103.4232649
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.757971030291502,
+                  "lng" : 103.4245927302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.755273069708498,
+                  "lng" : 103.4218947697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "♥️Dungun",
+         "photos" : 
+         [
+            {
+               "height" : 4624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118388388995264514882\"\u003eMuzhirah Zulkifli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-syW7BUkiRn_QFkOQBKZe8d3M8_k9siDvR36W6GaFJkSU0IduztU5Tm03nFwn76O9K3EejCpxqV0BD33rRec_rl2-VuKuHBFHLYOTn_pFUhaM_eY8F-SktvpE1W5X205xH7UrL6aMduUaoWNSNNKPPSc1Q3URaNZwj-aVoieuPohg-EpHbnEwDt2g0nBT3H9Ut9UBrP0qbKFRyBVV-Itgluhejb8sBwsCgfMXYdxWPUy6MUHO56nNLYsRgZ_Vag12x8opLwS0vldHxT_hqEYhax-Xw50RoHSHDtJKoVplkyt7KCX23sHBaDqh5fqbXzSSYaQ6WSyHvA9Dyh1H4sjRYKSTJUm1GML6IhSpFbGzluSZzeMMAavFpikhBzun_7zXjwTWygBpZnYj0Kk9sQPdYK-dKZDqkLyfYFs_9Rjg",
+               "width" : 3468
+            }
+         ],
+         "place_id" : "ChIJNfpmQWkPyDER9g0HGD_i5F0",
+         "plus_code" : 
+         {
+            "compound_code" : "QC4F+M8 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QC4F+M8"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJNfpmQWkPyDER9g0HGD_i5F0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "23050 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7834466,
+               "lng" : 103.4381012
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.784848730291503,
+                  "lng" : 103.4391060802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.782150769708498,
+                  "lng" : 103.4364081197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teluk Bidara Beach",
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100443333497820587977\"\u003eRobert Chee Kuan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vjIvKovJ5elQfe_qSfixxwp4Xr9tZCWU5WbR7ZXnPr3qihpi7liey2qq1Ex0OkhPM4eLTNwqEAUQQntsHYslFywJeitdiGL2h23F7n-WtGF8a5T9zQaDpcPor7oDNZ6QGfF-7tOXjfkHFFuiGvsWi1LQNhAdjItzNxwVijACEyCqd-wjccmuC7ur-UEy1Kqme_NKnR0Yk0VhxinC2I4902yDa_PhFVLAQ07H8ESY7tlCz469ZNHFvqVX3FO9xfAbXfw3kLSRGIUMW5J2c4YfCAJz3VJ4TeXfdfhUdxOJCEbwYX3xdi8yODXzFgnyA2-IGifO-bRCIgC6-Wu7MPa_2ubkmU5cMAgi-UsXR_WYxOKj2q4IlpEWKHwAyWwGANketzGhlkOYnO55Yt0k51S8bhFp_VvzJeBQfMimZ5-h58Qw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJDxtmGMMFyDERVgwoT-s0gp0",
+         "plus_code" : 
+         {
+            "compound_code" : "QCMQ+96 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QCMQ+96"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJDxtmGMMFyDERVgwoT-s0gp0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 622
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sura Hujung, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.6997992,
+               "lng" : 103.4458273
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.701071880291503,
+                  "lng" : 103.4469197802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.698373919708498,
+                  "lng" : 103.4442218197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Teluk Gadung",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106318689248984674945\"\u003eAiman Hakim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v-56MkZL2cauy0zQLDqGAdYCH_IiW2LdhKNuxiIciCDttL26UM4rBzcYhWQOqJnRA41xVU4ON1Mh4dPImIV7ZDdofo2zF_oz1IEIGwUcFdhqOc0RQ50LMaNaf6OsToBFHTUS5czucCKs4Ch71MQyloVLenkkbQVuXPIh8xa38py_dFKrAAIprq7PYZhDgzG8XYk3KwB7I4L2gNz70EErvZZ9WA38DkijPEMf9w8lhPqqoTg8HEz_SyOVFo8IOzx2XdXoHGWkwRzuD2zfKoC2v7xm8hjAz2uR86HGs6Bq-UagJf1p-rAO9vrYsChh-roIiI7KGq4u21N1sjl1EnqLrawpKlW8LI91gQxARolbxXo5UH--XgM1o-5Zbd5JCX8LYiqhXfT72clK9KZsNWOEQoHnYhOwgotFg7ZyeVp9w",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJcXe-98kOyDER7ZVkJj-oVO8",
+         "plus_code" : 
+         {
+            "compound_code" : "MCXW+W8 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5MCXW+W8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJcXe-98kOyDER7ZVkJj-oVO8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 149
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pantai Teluk Bidara, Kampung Kubang Putat, 23050 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7823664,
+               "lng" : 103.438983
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.784490830291503,
+                  "lng" : 103.4394287802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.781792869708498,
+                  "lng" : 103.4367308197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuala Dungun Sea Cavern",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113695664497829898980\"\u003eMohd Hisham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sK8HJgesRlNRu3UKG2MQMtFWnGNafOBHjIwmjy7XsDFxuG-46XFwP8NkMQZaJJr7FvT8u8Tl52-5BjBaKxm91BoEaBsmVBa4gXCWbQ4Wpf6DJgcO-XssD6UE_bOEVJRonsnvZwdSo7D7U-nyezUU2Xg5UKFAViSr1BXF_5wIXu9c-kDyCEtI10r5z7xsBqUmb9Pgec_WwIAXctQKRrARg0-BN2hh3qCOlAnDG2sIYhRoMnypFI37Gxg90tGB7pEpdMQEzLUuapddpFugaPFOGwLAgMI-LnnUB5HmqJJtFOzqWkNyCG1yHDCXf8qm6_CQK-VWkpEEDluu6eN4VdRW_UomuJO0f2iq80rezvFpzqV87zUUBSC4mebKs4P_jV0tugxhiLbavQ4OySLur4hhNiH7nYI3g7qaYSbtvacxtrnJT1JZGxu8UJHbU_FY7T",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJfe1cB6IFyDERtuhUjPsTd1s",
+         "plus_code" : 
+         {
+            "compound_code" : "QCJQ+WH Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QCJQ+WH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJfe1cB6IFyDERtuhUjPsTd1s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 29
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasar, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7749438,
+               "lng" : 103.4312126
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.776292780291503,
+                  "lng" : 103.4325615802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.773594819708499,
+                  "lng" : 103.4298636197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Benteng Kuala Dungun (South)",
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111313205498795569863\"\u003eZatie Wanderer\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tDS3bQ0RUqxzxgiOiCY_sm757ZUtwx7tA9Pce7p0s5rDcwQQ7fBdUBVperiKqv0yg4IsuUOCQUYt-zKQMwIW6HnfdmGTdur2Ric2ae0hUTMf_o6CjeLWQ3Ht08VwsoqEb559ZnMDUY-pKn39GSiqdtmP-B8LxIQVuu7vcFieBBCWkBysyHpghyMVg2r--sIx3oClHpJFAZ7H4y7C7w6wca2EOBi9r2s3EwCbHvkboqwhmwENxkKjV7tzEjcpcvpFsC0E6JUTNrh9W5J2C3GEICHjA-HdPhejcVXfE8zwqAGZEX-qqxufl4WsR_O7dgD4R1ya2gaF7_Rz0PWhl0Kc8iC0cAcacX9IIIcODtyyGpdnwoguF_xNxgW4ekDPcG8Z0pfuNGg4dA2IgBa2ovue79ZeXzCM8gAchOXVz0oWU4rA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJa95YYSUFyDERT4Ztw_1wvh8",
+         "plus_code" : 
+         {
+            "compound_code" : "QCFJ+XF Kuala Dungun, Terengganu",
+            "global_code" : "6PP5QCFJ+XF"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJa95YYSUFyDERT4Ztw_1wvh8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "561-A, Jalan Pantai Sura, Kampung Sura Selatan, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7216485,
+               "lng" : 103.4360064
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.722978580291502,
+                  "lng" : 103.4373115802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.720280619708498,
+                  "lng" : 103.4346136197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pirates of sura(Kalang Midi)",
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107757561773055196493\"\u003eMuhammad Haniff Bin Amdan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sKjH4YvhyJWYphno-XhpPefUUYBwHxwb1Tmx6qNuahk11XRiucqK6jeTfXAOfK64jSt7Xm6qYI-GPEtUSSWGHBPwKRNuCdgJS5SIZ6XUA9cQOjgq03VqbqsrSi9XdEzfCHCguGOvI9EnODgWlHA6JjV-U16OJ4UyfdiNuRwI_2QriByB87kEhNBgxUmfGLckjosQyYzGY8RVxOcWKxkO3ofadBcANZOJgEF2pcxxGNqUs1OHVhEV2siFCFpDB1Po2KDZ2crqpLRvDI0JpW3yg-XBEC-Z5Cg2rO323q0oU0yYdfmikucYMgArTh2p6QE02W2QlJvW1ClzMEg4qOEONmkfbrb5Y7vNOOpO1EI6j1XxjQzGA5Mye64O6Vrm_rbBvLXiibXYCRKq17cgll1MsKuGpj5oHjs-oPyOQKt4FzZCWW",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJu6MF_lcPyDER7w1q8jYKpVI",
+         "plus_code" : 
+         {
+            "compound_code" : "PCCP+MC Kuala Dungun, Terengganu",
+            "global_code" : "6PP5PCCP+MC"
+         },
+         "rating" : 5,
+         "reference" : "ChIJu6MF_lcPyDER7w1q8jYKpVI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Rd, 23050 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.858167799999999,
+               "lng" : 103.3842029
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.859549980291503,
+                  "lng" : 103.3855501802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.856852019708498,
+                  "lng" : 103.3828522197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Turtle Rock",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109869267091060290712\"\u003eM Fadzzrul Jusoh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vSs-WehBGdNH8V1f1e0HnfeNlo4baudVJqdcudJRfX3dnceVtVJklAkqptLhWGq4NZh0tkXbh2NtWwWIch5pcGZeKbTT51IaXCciSeuspzkbOzUBP20pCOVsmhlk5og61W1AP05-3VCG4xbs1FQ0GCvpfW62ZheYwpmtX3iNjynFfPoWLdOi7NZMCXdmod0-z1pQDCZOV2SYeisvl7Zm5g5AvL4uOvPuTKXWht6ONw3ZBL_iPxT_d7SR6OJ2Yw1D9x611qqMjcY6KtEZ70c_fYdK4YHLcDFcqgMP79rrPUWUaMToMW3uK0uJ1yRvi8l5v6DYvMYKEckcH3Zhcv7OP2q-7I1nmNGN0mMbcHQxAa7ZDKFv8TJODW50D_8uX1j0DIEFB2Qp614Ef0_KJrEVHpcPbV9dMWi7RAuu6l1Zw9Kbyq",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJPbdRMGoDyDERXnc9zsQW5jk",
+         "plus_code" : 
+         {
+            "compound_code" : "V95M+7M Kuala Dungun, Terengganu",
+            "global_code" : "6PP5V95M+7M"
+         },
+         "rating" : 3.2,
+         "reference" : "ChIJPbdRMGoDyDERXnc9zsQW5jk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 22
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Delong, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8136296,
+               "lng" : 103.3106902
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.814948580291501,
+                  "lng" : 103.3120397802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.812250619708498,
+                  "lng" : 103.3093418197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tuntung Kampung Delong",
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102734800798336748688\"\u003eMuhammad Iffat Bin Yusof\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s5UksdA8WtSS-Y-fawEkuSoCLnEjE3AydRhQQz3q9xt_aNc_lGaFafjvZVQxH6KVcA2M3soNcjZJ82qvqipUuvW7XtLhmCuZweIIbilYBxTjUqZD75wvpJU9WFP1cPXjLWJ_i0loIeS4MFltVmF7QSaCPFd1EzD_PhYK-NEKieoLWLWVPBqS-xselxiEmAC3RarlrJ8MzJeRPKWAer3KHf_P49Kj7TP6iO1nql4156KNyT07N9ZCFz20ycnmeQKNIHT8acof8SYQVyvveqE80gDd7Mt2SDqHmj5Y-aA3G8xQuwWJJFAQDJnvBQXmAQODDZ1AeP--c1KlnPQh20Q4mbpo67XLvqfas3kMGwfFDW9UxSu0-sy6WJh4b-R-EELq7URGsBKEhY-dEcV6owdmP7i0FP4SuL8kEClpMVF82PA0aVjD8-87Ufs5rtC0Sj",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJf9tgCAAbyDERLRQD17g5xP0",
+         "plus_code" : 
+         {
+            "compound_code" : "R876+F7 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5R876+F7"
+         },
+         "reference" : "ChIJf9tgCAAbyDERLRQD17g5xP0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8134061,
+               "lng" : 103.4206492
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.814746880291502,
+                  "lng" : 103.4219837302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.812048919708498,
+                  "lng" : 103.4192857697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tanah Kuala Abang, Dungun",
+         "place_id" : "ChIJYz2HWh8FyDERjY7klopBfZQ",
+         "plus_code" : 
+         {
+            "compound_code" : "RC7C+97 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5RC7C+97"
+         },
+         "rating" : 5,
+         "reference" : "ChIJYz2HWh8FyDERjY7klopBfZQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "T116, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7321651,
+               "lng" : 103.4317688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.733430730291502,
+                  "lng" : 103.4329113302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.730732769708498,
+                  "lng" : 103.4302133697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Sura",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100633895625506560228\"\u003eAnis_\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tI8nXzDG-W3OOQzOxuK5peNc0vKWozcLdQVWw_KPfIWZlI4Psw9Lgr8rEEUb2LvsLvO_WeJqA_mCw9-LC5m3DZ6B5pHgcW_L7RiPC-YmQRUdSCwOMjlunEviIKRG6qMmxUeBsoRsdkfYRGCpN1vCqAGJCbVwrN7U08N7eVpiTpM1clMZLVH1IFOV3D60pVrT7OP71k5ntjj5VR9dnWv_YXLtnY5sa4g6i0RzEFMawUViA9xRKssQY3vNRthgjTCppShic1a1fdbo6zuE6Ln4k8qsDDCAf3pNjdonl6dimx-F2zcTda0cudtNatIZWV0bV9-8thxsb8ILw3tyYYfLXHezDw1eypE07I-VEeMYLl2w6C-4PFBsyMnDoDxAyAdx7ZIFvFNqqsFUo0aLk5-FFTp0TzHF6WGBbsET4OGKRMeQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ-wNcENUPyDERbDPPYfb2H3Y",
+         "plus_code" : 
+         {
+            "compound_code" : "PCJJ+VP Kuala Dungun, Terengganu",
+            "global_code" : "6PP5PCJJ+VP"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ-wNcENUPyDERbDPPYfb2H3Y",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 126
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kerta Pulas, 23050 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8228482,
+               "lng" : 103.4191215
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.824166380291502,
+                  "lng" : 103.4203837302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.821468419708498,
+                  "lng" : 103.4176857697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "pantai halaman rindu",
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102152221680255207894\"\u003eSURIATI ALI\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-solaARExJ4TqNuzTXZh4Sealbmkc9HD7ZmX8e7KAEDZiI22FHSRWlZMbJULz1eIlTToMdbBg1i_93SsBnLVvrKDQzbjdkJaUcFjzDqqiVy5yUaAKNcG-PUwDbfiiT1pkoxaRJBsFP0faOpasPbVETW_dQE3NEYalmedhFkcVHNjK3W1WJOzk5YkhJygFezgfl1x9EyzizEm76MOLFxYVEqO7uNNgXoQ-9SXAIHcFK5az6x3jXgt8e9sepoUBOB5ntA7RJ_1xKFihMsatfUlk21bDQJBVcG6fO1OAN4MHEiwGt-hwwusYIchPgQbmr1DPcZ5_MhhTy6CbjsJdGBw3ScIWzRcYFrkexYv-VQgWp0m57zIzaEp0koPC-tBMipOvM3AYoXHvoPctPm9ti9GQtvQn2S1xe0xQVnRCwSy-7-FI0okM-bzWahnDXseBL-",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJ6dGecwAFyDERKIfCjVKwOWs",
+         "plus_code" : 
+         {
+            "compound_code" : "RCF9+4J Kuala Dungun, Terengganu",
+            "global_code" : "6PP5RCF9+4J"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ6dGecwAFyDERKIfCjVKwOWs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuala Abang, 23050 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8504855,
+               "lng" : 103.4011125
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.851839030291503,
+                  "lng" : 103.4024697802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.849141069708499,
+                  "lng" : 103.3997718197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuala Abang",
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118023402526364746448\"\u003enorizuan mohamad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uYeJcXLVAeyPtSCNvD4-fRy-U965jFRWhTNzyme_1bLYWq19n-6TJNVKdDN3NX5Fv7Q8qcbpdEF_VLT0CsMD_OcswiyB727VnuYPI6pzmk3_4-Mi8dTpsxYxUWsEjxKSVf6u0FAnp_h1eZzwnnMasqtprc9BZjfGlnlbhjuc5-9b2C3ynOgVxVitF896EMhTZZQF6WzuObZp4RmB-lEcfPbGofyobCP4raIeJArOwgNSFQuf3_JZiEIz6PgxFraPtGMh3CtAsbKRl4B2LW8n_OfkBoxIttEGbZalEIX57Tyt_5ltA-rUxAlK2fLO2kb2oEx4QcwVBi5XQbQ8D_nxwICkalPt527sVrehP_WXRYVDtn-AM-9K6_J9OMY4cZy3xyQWxGCAHalrNcb0CNcMfuSYjXypTryUxLSHXZ1mJp9WU",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJGdWlLgADyDERCSFleDExy14",
+         "plus_code" : 
+         {
+            "compound_code" : "VC22+5C Kuala Dungun, Terengganu",
+            "global_code" : "6PP5VC22+5C"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJGdWlLgADyDERCSFleDExy14",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Rantau Abang, 23050 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.883877,
+               "lng" : 103.377511
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.885307630291503,
+                  "lng" : 103.3787684302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.882609669708498,
+                  "lng" : 103.3760704697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Forest Rantau Abang",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106057875238635699852\"\u003eNq Okuma\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u6P0hPobmYowQwmBt59OWvqFlhHKIdhczvF92CbHreuafF8HlQ6lEjb2YrA1woquqcxqm3vm9BHUJ5ZrjJ75-KlZ7uqRZyqijBVlG7O_oFIzZwY-lZeYpVHrS56vVtUs0oQKhlF81kUKklWIyDW1j4gRGKWfaJYXv6k7VhGILd_TRSdrA5BkoESX-WXu1IJvJ4tc66D3zmIUAcHu1Lfd7zOF0MXnBMk5kmbzgcDmHRpxW3x0t4x8kSQCVrgdKOswXLc4RC__ubP6o2SHUYxNmoXfXanmO_Y9d2w6szysXI_Ieuk33S816qdksxeSBe6BIe-rUIv2ah5lOr6prEh79Ku5s2NZJ3tAL4eBfpiPElPd_OOm5wdkQWiKarw3fvywyhN6axLRx8ca1NdX5N8jfZd5yBqacFeYtvSRaZ9eE",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJIYWBat8CyDERc-sBbVBr8n0",
+         "plus_code" : 
+         {
+            "compound_code" : "V9MH+H2 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5V9MH+H2"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJIYWBat8CyDERc-sBbVBr8n0",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 158
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7073412,
+               "lng" : 103.4382031
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.708700280291501,
+                  "lng" : 103.4398071302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.706002319708497,
+                  "lng" : 103.4371091697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Tasik Tanjung Sura",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100471688539623100893\"\u003eSuhaila. Azura\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vSrCNRbfWHqKxKAwx7jL2ag5A6ZqemFO8ckSZd-lfJv96keq2ic5NlkzhQ9NJgRem42JP698lpEVLe8542jIB9Vzgxgd_AGMC5MsEpamQrxl9bioe5dwWmsD54M5MVlZyKONRnDmzMPTHfTy6BRtu8SRgahnmuAUGrW33-JHoqy6dGjW3BpDYhoYgFXFdmXFE0g11eEtFARaZWj67UUqgCM3qlwcGrMCyqee8OtIRieOuWDn46YqXU-sOi5NeyInX8Bf3dMgkEjnBxDsi2B-xX0e1lRRvJQycYKICHlB4SXTVxyi53j09GNj8bQWcZlTrnyNiyWckueP_jvNKmhA-Q1A_ZsVdRivlcAdx95LMC02yB6v5z1OM5JtDbl6C2R2PC5mIzZD6_sRJjuy82EdBChe4-gCCmN5Aq-R1vFofgV-oV",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJu0Cqn8UOyDERKZhucGG4LrE",
+         "plus_code" : 
+         {
+            "compound_code" : "PC4Q+W7 Kuala Dungun, Terengganu",
+            "global_code" : "6PP5PC4Q+W7"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJu0Cqn8UOyDERKZhucGG4LrE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 141
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pantai Sura, 23000 Kuala Dungun, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.6985063,
+               "lng" : 103.4463859
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.700358030291502,
+                  "lng" : 103.4472219302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.697660069708498,
+                  "lng" : 103.4445239697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teluk Gadung City Garden",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116656566576423524413\"\u003eNAMIZAM NGAH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v9AqVf3awVtCTsZVh332w3raEPNvmKGWmFvRntoB9ixSVUjP6eXn30axuV25weHfmtzzOTghqCW792cwBHjwWsb0NqzLP0xdMuH6aMW9HqO7PusJ6yDqUD5irBfS9yYct6XbkMqPM3hE3ga5Rx1QDU0Dgn9TbW4HirQPWcvi0jtbkOrhnq_8IZuFtZaX11dVCr15vLsA5kELBgXNAqbRmN-33FoJKsLx8KIoeATysgi-5ukkKnFBszSzFM7ycY4uNLeoqU1YIOlxjPtHNGk-A3rNKBkD2w-mXB25BEbkyGzRkETdeCteeTBQOr8zE4K0SjDL77ghQ5KJCOhhQEY36PPnVXtJQXX54K1_Frh1_Tot1sukO_8WInpEAxd4V9A0-5sMmJee2WebxRzhACkdL51--2NywN2Z_-qojfhyW1v_UM",
+               "width" : 1695
+            }
+         ],
+         "place_id" : "ChIJX9jA7ckOyDER_IbAklBWePc",
+         "plus_code" : 
+         {
+            "compound_code" : "MCXW+CH Kuala Dungun, Terengganu",
+            "global_code" : "6PP5MCXW+CH"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJX9jA7ckOyDER_IbAklBWePc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 55
+      }
+   ],
+   "status" : "OK"
+}

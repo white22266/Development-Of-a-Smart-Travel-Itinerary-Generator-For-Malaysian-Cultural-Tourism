@@ -1,0 +1,229 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kemus, Simpang Empat, 78000 Alor Gajah, Melaka, Malaysia",
+      "formatted_phone_number" : "06-552 0888",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.42943,
+            "lng" : 102.21336
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.430446480291502,
+               "lng" : 102.2146089302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.427748519708498,
+               "lng" : 102.2119109697085
+            }
+         }
+      },
+      "name" : "A'Famosa Safari Wonderland",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 6:00 PM",
+            "Tuesday: Closed",
+            "Wednesday: 10:00 AM – 6:00 PM",
+            "Thursday: 10:00 AM – 6:00 PM",
+            "Friday: 10:00 AM – 6:00 PM",
+            "Saturday: 10:00 AM – 6:00 PM",
+            "Sunday: 10:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 676,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115942151674056785437\"\u003eA&#39;Famosa Safari Wonderland\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-snaqFI7p4PCIweGHLTqBwXK42BVLNJZH3qZpRFD_HU-VdqBcdCX_qwE4mh4mNMg03ItX8vbMR0R1ha0MEFBQPwy8LJzWwiS2O1Rslm39cyoIYEfuFQmHXOqkzvzAdCLbXLn5KrmEuxW8bgnCEa6Lp5fNHj9xTJl7PU0fB8GdS8MINgjYNHBWlPg61pdv1F9MOj2qyXKINiZSDgrSyXPpofLf4Sw0PVeDVGeSdeJ-A_WA8oIwaMwH4s3ybk4xkE0W2leCoGenHYCMDWIZ25rUO7IYCK1Hv5MCZN9fbewgxePw",
+            "width" : 1200
+         },
+         {
+            "height" : 1360,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117650796524399326676\"\u003eAbdulaziz Al asfour\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tdvs9ScaXyfxUFbA86LcuyW9A1ujb8HCEwJb_LvgO2ndRpmc0D8ZsmU2xqzfWsysrPBATf4shno-CsJt7tZ5MdvqxzGx86x4M5uhB8fkbV5ev_zxSn-kel6vIen66rm_7m-S3EfsSIcDM93soAzQOhxR_oRru87HsY03OkIvEHbbko1aufMwP7jlQK7x9F0RWkGhQOSc8w6ZDo9wZBx2m2OeoUUHHBsXVJrs7JxL6QNg1BdO-7uNvSgovPRRhrskSdBCm4-b7hbdZKOmlGAZrmk58Kxon6p1UQLPsGrHbE_HQ8i0OF6ozNboYZA6p90mdLnRQ1dLohkKqIqvTQyjkTtyrsxJrBCXDMDJzPfhYhalI5tueIFHWhlqrZNrU4Qdlp0TKVNaf_bs9KVbOiwYUQ4GXby9VWu6D8iAgL6uMaI5E",
+            "width" : 2048
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116079074295585539147\"\u003eالحاج بيدر الخزرجي\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uoTLGGhzkgeanJd6qlH6SGetkWCSiKsDYKgxVx0xWUa2Zsq_rhs5rr63Lu8J1Ikb59Fd1Os877KQxvGepWvLOW_ETkh_hfuxDZyn9iSyxk_YheT26cBDy7Y4QrGbGq6_Np106KY6cFkbgTW3gHUYpfIT1ImaNVcMs2LLDkIQ3lsaLlFbsomHrJK54x1-mUO0lGhJN4pNbjg6a8defgkDRMzsWRJ-f616MrsXqc_7IlPUAWNVZfdPseOOLpghRU9-akRZt-uiWBLAFYO4Z2kgWdE2W3SIe6dc9jioipi-IF1Z5qO2ikGsC38bbBkIjKeLhb34aHneli0ffhzaKMR4EULYXNqLVte4KnXMW3dhSdfgJCBXXxmFfy93og_9KgOBFQqW6dXJE3SXPuz5asB5ZpkECQmrl4kVZO7k0BcSzyJ9iz",
+            "width" : 3648
+         },
+         {
+            "height" : 2700,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101169193452820505450\"\u003eMajid Alsaiday\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sluPxWEicIyQ83_cFRebZyDEbe4QR67Lz7xxvi-YRRFLh8r8PRzp0TK0s35fRz4U6KdBy7VLOpR_DsVxMPzBKR8TY7UXP6mAJP_VR2s1lyo-ixXDrJI1zdDDjE18aafLvV9Zi4wgApBPFmxhbKy7FHgg4ZPuNs8h6Pzbw73cFAVZ9LkWYrJBmi6r2ao3tG1AtfjWY5bO1spGNfQnTLQHc6mdUl1LVWmCGOfnNX1__9X8ZM03Dk37XZFSl9nma6x14qkZ1HeCZElGlo2ncmscmwMcCmogqotEO0Z2WQemGknR3XrcGbrIuWrSs6xCCSI1bPN2sq1X4IRnR-VKG9TVEqtz3OuyAlr4nJrLYRNeukKkjJXcTwuospLygxINWBvCFMWX4BTJ0iX-O8dL6RoIZVY78CP5yXlz6WqM_-z2vOeQ",
+            "width" : 4800
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113352043390377690297\"\u003eEmily Lowe\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKIlIQynJ8bjf79SOsBZvHrPuemBefTC_T2PODLaEDxZrovu6FUDXlK22qbeVLi2X9SWduu69BRh6vBjDfX_HUOBygnJeXOTKo-dY6xk70XGQZKREwsi6qNXYe0XdtkemNAAPU9ikMum9X79RqZu6-GdLuxXd_g3YXA3ID1tXdn8yl-e571FDLKgxicwtrLt4Mfo7hZ3knw37CVCae7_f4X5Mc5vAW94U_aF4EnjbUeLEl1i5iPKDGrRoJWDFvezT3Zt2Z2DNJyEF6JuPzs7O05OSaW1zPemCu20q9uH9fCbYuoRUQuGBMYPY6YKQ6pELURbHY70rUNjW57NHhf5q_IQsKYZFWG0auD6sUfXqEW9geavPgnoRhOuuHKq0EV3aieSUes1kiXgRRMWSJyErsdg2M4ytl_LwL8K6zajpbw6VJXod6GChH3GtWjZ4D",
+            "width" : 4096
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113694852190691699323\"\u003eNaz here\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v-IPnfWnHOO_aBPIq7mSmXZB59noqs17Khio6NGH-zw8-XH9-lq3r-YhOxTciD9Aw7XSQQAonxVl1wfS9Dahp1vACjJUup6Tnu70B0UPkY8zvh6-UFcka0dtsFEYrU5pVQ1xSNdlcG5IAYde7E2ylCIKxZcuJdYOkMvpXpHLKRTyshc7UAtXyAKX8lWAyHwMzB9av8Kkn2P0-HaqKaXNydtd9fYHNb1942YemTr8-GmMtNgEQG-pRny3DC3cadKSzzwIISDZkJUPnuu3Hh6-a4Wnrz0Q_8WIwUC0LxGt1tnJ1AF9IOmlDv-EeGtsUrcTXgd9xKz5eSt9GlirqsHvNtzEKjSWtwF1VhdHPNV3EbfPss6YgNdBiHZ-osaRtw_VLspB692tNuUApksgZ3DPIBw03luIrLpMVO3V60yWUiTQ",
+            "width" : 3600
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100213944414372715359\"\u003eHadri Hanafi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sUF0CtOoGEa1fZiO6y__f_164g9I9T5KYo-CZ_f3tqzvr2lzkAVFyrr2Fuf50ooLrpgXpqUjpmv4e64lE0U42KcqABdV15M_-v8KqoDr61RxDWERTYrWcQ1bzAcpwG0iiClOiaoocVMGAYKb6TGDPSOxQK0FvWL2L-8AcLGrDNbimMnquvNJT6BgZyZv4xUiPVFLLlN_TRSrE-njlU63UGxFUcxYXxtIBNuPsofQZ8BJTiFlSw2hTRrjjWMLwBVcU0QMmLPTbHwNUdPWRV-qMdeVApEQjlnR7SBYZby_qejt_U1uLC4eAF8OnBTcQE1sqhPKnqL7mR6Q2exduuRhdxZc0S7J7PnKPjsfKe5P0PW4HQ3HtykCCH39WuwOnch3l5IWWjN6ogOac_VMGbxfIAf3VAyk4jj7Vg8u9EnlWNDKOxYZP7TJjSGRPxIDp9",
+            "width" : 3000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102691842961809386988\"\u003eYee Kuang Khor (Daniel)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vaVwWz4xlNgPiyqzPddgXBtqfeHdNFsrGFxew7aMkczkGksdt8JGgIuxhohdkhIRQZyqpnbjcupoBD9Z_UbzO4I92LJAs836mNv_K1z9Z25ifBZV1YOEhmdDmm-YFlY8NoQnrFVHx2rLF_KhVo3HmPps7y37m1LW5RsBwtHL81HRO5inWzXVno5jwmSfKtGi_VB938_aH7Q-VPPnrsMqdKfZoqtNFOcW00D9C22v2zyWGEWqQUR-v_czET_upwPbs01NQS11oh1xldVReHGKQ1rignN-rMFerZVGtguDe4BB8U2RCJmhOakdKn8BOtcI-ZopORqGIT4NubUr-gbE-E8Sn9dHN_-Tx-pIkVKlG-PUgPCMUM59mskSsU1w3cqggvHcVr6XafLQeTyb-QUMHAGgro_rbXZEeVKWHyY5M",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108078538301210053748\"\u003eShafiq Yunus\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vTnMIReMjQ7G3JAaRdFA0XZfHXjGSGTnRwDvGyaaYcKBxK_ZHHyyT4OahKojwSz-0KsXX1Vt_500bGKor4I1QZnzIWoJWK-8iGb3puZ1DykfDCAWeLI2NuVEmym_Blynje7b_-fqLETQz2NdMkVU09UdMfx9-KTdAu_hMqASanIw2Xo80auWuYz3zSHItTgiWOjlEAUJmDLWh4TyInzRR_6LMAIyJlmKTlDjV_LcgnpPCY5u-vzvJF9AsZdWEyuy06jbxDLLwGTlqwE536jiv-AF2RldHiO5nlEm0l0YnHOwUowJh9T2Wv4cyBZ_4nIDMJN5vLyTnjmUI4L4Fm2_Hg3OPq-1AEb5HCrAfiPKjLEtLq-pbdWEvQ2fUCIuNIPUWDL3A-xzVXdmZIDqna7xnKLqFOKSGgM7I0ACsQbnw",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106373023733016996816\"\u003eVince\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tByTyjajRiU-jGmagegs4NCRcy3aKjPrHRjxp-6SHH_MXgV7DZaw-BCuRg4qexocUFO0ZCRJvL86Ruly0UyzueO-J_HkFLyXm5sTt_5DcUvMmb5Vbp9UgMH3MvhvuphtyHZuGWN7a7yizE7RzrrE4lMKzuPdpIn7JkEMmGBD_DSDqLHG9fclA1XqBF5UrlrX869FhdPIBQ0-rbU6d8jrKo62BIfJ-kH4BHbO6wJduyEzy-fqxttgFbaMs-JbeS9EnYFJN6NCdSWr7-PZqjHYHKcPM38lUuylxnngBPrFrcupzBo8eh4yr2n2DxMLdOAZV4lgfhrYJDAW7AkGGz_b5a1m0l2aIdudhR_USnn8SA80euirVJd8Itc_KEVjKXdqX26OpRwB-tet3kKsuGzZJ0AJqP2i4I3FVLFpz-vdtgK3R6",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJAYiIovYCzjERLw8OfvzQ5hk",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "food",
+         "point_of_interest",
+         "restaurant",
+         "store",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=1866408878456835887",
+      "user_ratings_total" : 3247,
+      "website" : "https://www.afamosa.com/safari-wonderland"
+   },
+   "status" : "OK"
+}

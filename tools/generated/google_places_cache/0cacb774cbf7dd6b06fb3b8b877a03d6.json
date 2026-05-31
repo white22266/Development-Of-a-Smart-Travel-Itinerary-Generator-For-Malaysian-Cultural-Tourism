@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "73GG+46, 21070 Kuala Terengganu, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.275296,
+            "lng" : 103.075598
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.275825580291502,
+               "lng" : 103.0773210802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.273127619708498,
+               "lng" : 103.0746231197085
+            }
+         }
+      },
+      "name" : "lubuk jenggooow",
+      "place_id" : "ChIJ437cdgC5tzERk6xNmCDWvW8",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8051827144290839699"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Pulai, 09100 Baling, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.665108399999999,
+            "lng" : 100.8928583
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.6651084,
+               "lng" : 100.8936083802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.662019599999999,
+               "lng" : 100.8909104197085
+            }
+         }
+      },
+      "name" : "Gua Layang",
+      "place_id" : "ChIJyf2Q-PzftDERzhNrTJgRa_s",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=18116593271842739150"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,50 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "6, Jalan Medan, Bandar Sarikei, 96100 Sarikei, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.122444,
+            "lng" : 111.520179
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.123792180291502,
+               "lng" : 111.5215169302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.121094219708498,
+               "lng" : 111.5188189697085
+            }
+         }
+      },
+      "name" : "Sarikei Town Welcome Arch",
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115233653131928194805\"\u003eNolan Rasiah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uZElcLMkF1502TUeCHB8w3Br8w5qnw8KPe0bnPDMSLf1UW3v-UQGPo1HnBRxkCK2cHzoSa4lXedhzgn4PncCs2Pb66UrJThKBBpSBLENJQpHOyzU9G0pWmKweVtxPh8mqGK9S6qPphMnCeMkE8GUSwnNvjRyQ6F2LLiYu6aY-feC_aG00fLLdsxALnMMIfKvax0MvJUedm8v6MhKMJWp_N9UqrAze9m6CYNmEgFVbCTuNcZhUkVfk2ohiqC_OKy4vk77ExwbPpy3_GhTwVtRNhxDfcwHkpSZfd7Jc0_n0O71uh5BRN3k9kwKZlB1pVeEsA1KzJbDj7G2ygtchvolFTo6bQ4f8OL75PLVB85HjzD8GXSVDpEUF4NGwRD8j5hkhER1RhALcgdZOvgTpCF6zB73AvWShmbcmYmT4xLUoMzDmDIYLyumCo-TiRUA",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJSZ7rWQDD-TERskYknqISets",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15814973531112097458"
+   },
+   "status" : "OK"
+}

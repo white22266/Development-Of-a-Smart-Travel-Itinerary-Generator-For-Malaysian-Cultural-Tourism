@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "No. 18, Lorong Kilang Ais Sekolah Kebangsaan Jalan Pegawai, Jalan Seberang Perak, Taman Pesisiran Tanjung Chali, 05000 Alor Setar, Kedah, Malaysia",
+      "formatted_phone_number" : "04-772 2319",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.1133212,
+            "lng" : 100.3628175
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.114657880291502,
+               "lng" : 100.3640055302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.111959919708498,
+               "lng" : 100.3613075697085
+            }
+         }
+      },
+      "name" : "Rumah Kelahiran Tun Dr. Mahathir",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 12:00 PM, 3:00 – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106712129063308010096\"\u003eMeng Hui Goh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNn1TKJOvpWmrl9ce1bMzQE_vjHhCjkr44vLtGW1XLFnygr1G7lBTa8VfXnbwClEFX81vqrr3gIWf-mx5sN_SgvKLT6jsKUYVmTgpkFreOprc8dNji8hPG0plOa0yecx-L0m6eGHir1QwrFAyzAhUoHEnQSJKcLh-bS8uSL3JD5xN7lIiiIyLm5dRMNJWI2gFL74MPW2Q1rTuBOOrWmk8L24fUoovayBBz-VcKWqYTwuVuECdBLWmn9PZuvAtnP0b16RJkclD7TCHk2Ban7-Z_uyVn1xMmbLXkf8LiIEgNY1qYNH2kpj3hirqroUOuWiAEkUujdiAy97PYv1JR0lX2BuKqTSH_5e38KMhcO6mIKQtT6HHQ6RXkLMNMJI8rV9AJb1w7U-gOFYtgQV8utfgpvyVizkB3x34Pvja3q5XgKVGo",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113352043390377690297\"\u003eEmily Lowe\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uEAq_aaAAGCw-QTvGfdc_mcGH6We2XyRrZQGvCBIo0Csre3zV8BloxF-CzQKR7-LabypryTE1DYQY18XD03GPohitCzdnHMo9ZwckkOC0YPobowP92zMZKpuw1t5cBZO03IG-BXMurcRgL5i4lNNX_nfMt9YYvu2_WtLYttD7nGOd2y6J1WJJUi5bnRw4MLDvcbLbhVFq82kyBywRSFv_n-heIblFc9ljKeFIgV4KeTqtPxAoxn3dNgxGwUC_Rhr494HmHJfIFJSp8HKbYbQyrKUqwnHkCbC7G9_pXltOOAxA_mhSUMg6yZqv_DYFotc9pX0rhwy-0totBp0FIIaTt8fXyfrXzm42e1RECzkcEOhx7cuOIhCM5HxwEzWVKPxSeL_NflAc3Lb6AS6bbUOFYjNDyhrORNvhWvl6pVM9OITFBt2eewCLshgD-nGgG",
+            "width" : 4032
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111598188728806631888\"\u003eChin Kong Foo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t1M5e1tz0Kv9axBL0y3p8g8-zcp4TugYHd0PkFuyDiJdqBmgVhs7zaaeGsXCjN924V4Rced0sqln0iUS3ORY9XP-lZ8ipzl7ZrqAbqqrc1x8BGrOxhqCpe9JeNwVBvbnAir3D9HEN_HcitutCjEyUUlgJBD3ZDMybbGMZdemXfk8D0ztuAXxxXC8HEkC5rICObBmyS3gkkTPcy2yCpKzO9nPY89YxexBlDqe9FPH9zp32ydW0B2u1w0yci7hZqCWVlcfscBG9rvlpz1FW4g5bq7BjIVAF9t0ADS1Nd_zCyrFgVk4F-bTYSN1R55puG2lLuf9qrVKIo5cR3FKewb2GBhh7tUj-KjBEntgeXTLiFdopMdMRoJxoii6K7m3W1t6NNzsi6NSvYjVMjKUkHfw3lsrL3d95lbaUlIiYD1GAK870S9ShZNVGqfNCnWJv2",
+            "width" : 4800
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104091791839308990050\"\u003eAisyah Hani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t94Rkd1tGRQW_W87JV09JaZncVEQsj-3K8eLjr51oLDOOyPPSzu5lCS8kaStU7rFhzdubobPsNLO9DM63XtVOD-ggRj3QMWNGPljKkzMLJLnVkntWs_94a7qLLO3HpiErkZBRxfFIPI2CIhHdMUSl2TJFWdPwnjpkp2h9ERHar3mtKp0By_CSdLQpH9OQ4XEnLnlXc4aIDcrvCGhOaanDpGdJkTxzACmm32VGBV_sOlzrggjLtuPa9hNfrWsOpUMxOl-Na6VJfiCyWY7xNXULhmJwIdhwDF-txQDZ8WnFM8ZC3GwsPKyRjlo_hqlYjYGHgcxk0RcR30Q5Fr0Ss_sg_K_wTifIxGhkNloFKCo5RT9PkJf2d2N9CwmAIUdIrrw3puD1fp_I7AlVdMgAYg7iI1y4zrCH8Ucef0cjJl72RoA",
+            "width" : 4080
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113352043390377690297\"\u003eEmily Lowe\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vqeX49joCyM5JKWsei9i8sJ5gy8o_IGScVeVPcSuoRr2G8Io4ul42-Ewi5YszNftinpgkGK-CfqhK0H4l5ONiP9wY3e8dRe_OnYzc_-Jyh-G1jqN9DQjWjFxTrdhvtrDA7MlWCDGV6RwuUjhU29FqqvTRGZXhRJG4c8C9dhUoXYMv3VLqrGRcQTbz0Ci7n_IBoMP613LXn14sZoQJESu9tQRdlDkEVN5IrhMeLiDeDxhmFBrhBHeoxQml5zJv-_fwGPAIw6KK-Tz2OmmhypJrU3giCHMzjskn6aMFVHO_w81NG1VDFRR9EiVUpVOQAUcq8yBPHTxZjkAscumMPFP0kHvYjmwfj8NMz550390Zry1bG4c7mrq0VwG-5jGJccxKIdwDs97sXGwO5Mv8Hrnc2BaSFaGeH2P3hVPAryeNcp2efDqsOIQ9zgp_WIzQr",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104351126336250039974\"\u003eAuld F. Art\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sfvp-D4D1FcgaRMStgSqws__uNaQM-UUUmpFdWe3tlWEFhWIDcvfVYJn0wotWwGkFuoHuZJVwpieEFcl0DrmKd4cYlfxBHWDMhQF7PkCQFlO8UHhZd4G1RL8PiQt_25aaWBEP3yIBzSNCjJPD0ehOJMuAP2Vzq4a5oC_XSm1nqb56plHY4SfL4lqPNAalYMhHXysMsdC6-gsGgpXht_vdo7uNO5jNjt_r1upRAwWalhjc_NRvY2iiVpkSGf9Go_5dU1r2XeCXnZJ61vs7XF5kx_saIHeuihsyekZxby7k1weEu8lGQuEMes5i7JDh05iQCRYFXxluAIT-IrcG3jpnLzYxhwhkT_cH7lX9Xbn_y0vGBekeop3FwGc2SQ5oISUGFy3sqkgWDC2BZurBaM5QTbvjC-sNWSGzMHr51ySTUvU8qy63fx68XbzWqxg",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100059563127217692980\"\u003eSri Hazwani D&#39; Hj Mohd Nordin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vDbpHCuJZo-FNj4ztSgrBeGhL0tiK671zAXx8r9xrYN5I9R_gEc8dMu6AbuBXYlnxBJkDw3GRx3zPd1se1TJDzQH1a-7Y165Sq0_N_jCpOU8MekMlOChVJuEjIKrxqCWNq7y4vx8sc5JFgUhg9p1OE8lqJsK1Tx4SmV6Bae0Hzzjkv_Hza6adQfsWnFmoclp6qMNhYrPWBtn_sZ3DeGzfHBq_EbMe2bXUXXyFCBf--1Xwk0wiumIz7slw_9b3_FIJZVaCeWiws2KmOwfv9-5d7YPy09SwsYs3LlkEBzssAyo1IQCTx_WM7InamJuOIDWKBvTf5To_a5gNJbkFflY_u9sd7ClLaTwjvnJmnHxAbrYiLfY0yAcTPmlSS3huvgIspiAuNDQYplNF1nIrw-f_RIzIX4m6GAxdQWW-iETitiXFMUZ3R1AWR2-rhAOq2",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113352043390377690297\"\u003eEmily Lowe\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vqLfbDsMlJgvE-0RS90vJ2kX39KTRTkvImUuj0_0LqEBppUToY9P5OIyIf6A13J1VLHlYMve5XRtYbmueCOtBFE3n9IJA2RF_AyRCNitOgbJ1EkJdSO_nwwy4kxqnF64sJb2XWozdmCVoxokt8OmOe9jTQFEYpegjqd4XuaOVKbg96Y8_mlLEcgW5I62JRQurzUyyO6XrOlkjYlBUTUgpxVVWAhba1e7tc2N-DHdyxl-fXHXBjS-UmQ9JNQgXQHjlIk0BmOPuOdC9iUqKeB6zTw7gDXgjOqRIRD7ED7bawFL90PGEYT42J6-5qHQXn2s64hl2pWA-tXub8SxNlTgNESmoJ0jV0pAwRJN8TVRlFzQ6omnHeJT00KV1qrV4aVNNrPx_0YMf9LO5v1tZaw2p1DhOgsStXD2qMmVKwSJUi-Dz8Qs9XlBZMNZ3cPu7P",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104859230151479679706\"\u003eRahimah Eyma\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s0XOKHmiYawwomaLWJtWnyTbsR3XYWc_AKEe-C72ncvdZVAB0nz-R4tIt8eEwncWoU8mD6DYFZyVaM-y3qeBsk4-NgaitYXw9FO8oOi05Cj-BrRXCYe5RAes1DMHqDcKawdo4CY10VDP4dxzi_URNjI-exT3ZTOJbPG47dCln-suzoay2DWZRl6zCyXwWgju-LaHAOO-sDW21shpoJegdOHdGBnTb51dmg3qCXdDh7LpU_DNxiwrJphY0rIjjudaQQGZQK9MdDWLQBuST5-c3AOdqCQfYb1z6tJs64sKlao4NqMnpcXwg364sZ1w3ezkuPT1T4zZ1Vg0Nkyb6RoJJnKGthxpyoVop_owCrgh-BN6hAkJ970pey9Em6URVcKsYdNiFQQm7PAgvi02M8OywbGOGFO7HQGPxHETwSdPQifQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112607907989565035047\"\u003eHong Aun\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sEiRJ2HIXQV2r1D3iRRu_q_1MZbT7xYZ3GzcJOG478h1AOV5E4OJEJo-t8hv-oZp1tZJ87Dx1kycX2ewQsjWm2Btw7z10JfaNYtb1qTNmWcGUeRW0WZLpGDbhOGK0tMlaBRm3h2jLoCbT7ayC1WY8cZGMTENtvW4SkbbU6dyZvpJIgfYD2Ktv6qOlofXjcBeTQXhVFBkQXSqbYMY3N09MWjgkG0PoOIh9NAfddFgFjkXiTykuuKAii1SIRbj14rw_LNOr-qV08ANGUbwBXnyUcoRgFJHaieg66SK1qlpwByzBfyN3zqMSR-juu0tmZ3ZbmLCyDklJ4Lb18uMhb6CU_N8QkWBJ0R0jNFhFQ2xKX-Rh2RNm7iKabYlhewEvuRhXGkH05Hogv4USyzl13iBskae8eUr3rll9xeDIpfyA",
+            "width" : 4608
+         }
+      ],
+      "place_id" : "ChIJdf5FlpdESzARSCJxrITAvZU",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10789991958310888008",
+      "user_ratings_total" : 991
+   },
+   "status" : "OK"
+}

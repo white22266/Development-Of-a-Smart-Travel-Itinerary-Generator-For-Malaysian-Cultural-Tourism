@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "136, Jln Kelisa, Felda Pasoh Empat, 72300 Simpang Pertang, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.015315,
+            "lng" : 102.3003452
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.016630780291502,
+               "lng" : 102.3016313802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.013932819708498,
+               "lng" : 102.2989334197085
+            }
+         }
+      },
+      "name" : "Koperasi Pelancongan Hanya D' Pasoh, Mini Galeri Jelebu Geopark",
+      "photos" : 
+      [
+         {
+            "height" : 2560,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101194251008465033786\"\u003eNADI Felda Pasoh 4\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tPAFCH2BFxBM1rU_FQNMUB7zSUbInaSdDwC_xk9W4CwQi9zlGPd-oxttd39SCrPv6hLcVviITvidRlIIIDXuQYCEa0gtGZj_22Ls3QeRYmuGnF2i96DYGsZpHMdCtzP93UBQvIfq5iZWCHEJLHM73m2x6je31aCZVGwrfP0B-rc9KVPyAHlA-OWPLOi7vK2XQT9EkOJnWYUUPvEV5kkAdp_7VFj30e-cZ0Jp44oOSfBtcnXYkKMH5dB8p2Dnm_X9sl6LpE5XHJa6ZM2azynwsCSLZuFt4VEKCSuiZ6efOWdVUknkwxsvhClLjE-bBeymefGEVIYWupUcZMSeRWtkfEnJD15M508dAMdR5bIThzF-QO_MCwSu2HxZFMp-_IMDyEoM25nRvuEEqJB3Met1IV3chsJaxHv2jl_rO6aJnY2fE",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJYdBNUABjzjERLDz9IvCcGcU",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=14202555455082675244",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

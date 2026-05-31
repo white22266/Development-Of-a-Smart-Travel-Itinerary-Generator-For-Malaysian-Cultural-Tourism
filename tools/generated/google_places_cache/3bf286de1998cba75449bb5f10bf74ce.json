@@ -1,0 +1,75 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lubok Rusa, 73100 Rembau, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.5924885,
+            "lng" : 102.1327438
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.593889230291502,
+               "lng" : 102.1340523302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.591191269708498,
+               "lng" : 102.1313543697085
+            }
+         }
+      },
+      "name" : "Land Site Lubok Rusa",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110543632832860181599\"\u003eAmirul Ariff Affandi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s98mBcD3eztDWHJ-qEvbcnlQHTPBSQqbl5tyZL5duy_maxCLaMcLLyiG_u_T9NZxsTzM0xfzFk-dMoySNZJp34r3D104wnA5AcgTdhzSV7nHYsRnLHRxdrvHRCZyXObzh5qHfhBkuusrt_iL35t-E7j1lVhxjj9pAGQYIaxCgcUgYnpJON_Ska3nLuQigZPzuoMb_85fFDS7_WF4rFvg-airMCeaHcnHGDBrpFbMjuddkYquG-LQOwT2FrgJo-fuDTsLfyLei5oQK8JPKFMA2NhcktakhGfVdzFYtL4xBdtD3MDyDuamxkCd30IZSJ_t-gwt9thQ9oLYlVaiHJDQeLPnsLKW1yJHTq9YBm3JFHIa73kV6s1I90qRf3-0Y1k34aiYrryG0SOJZ0B0TQ2LDZxVQEee7h1-AvddjtyNk",
+            "width" : 2252
+         }
+      ],
+      "place_id" : "ChIJdfkZdAAJzjERTWkSuAjtQ9Q",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15295329381184072013"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Q2QC+P7, 91100 Kunak, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.7893012,
+            "lng" : 118.0207375
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.791899180291503,
+               "lng" : 118.0210706302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.789201219708498,
+               "lng" : 118.0183726697085
+            }
+         }
+      },
+      "name" : "Kebun baru",
+      "place_id" : "ChIJa2gELgC3PzIR36N-nWEjaVg",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6370662050053399519"
+   },
+   "status" : "OK"
+}

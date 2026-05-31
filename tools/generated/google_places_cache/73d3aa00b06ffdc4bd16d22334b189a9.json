@@ -1,0 +1,69 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Temerloh, Lembaga Pembangunan Seni Visual Negara, off, Jln Tun Razak, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1736636,
+               "lng" : 101.7052282
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.174839630291502,
+                  "lng" : 101.7066402802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.172141669708498,
+                  "lng" : 101.7039423197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "National Art Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105627534438363118512\"\u003eNational Art Gallery\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-suz53RQipH6bQDolNR2OWE4_6K9JAM-MLsACntM8uPPiGAC2oepWTNMTJgpDxtRGdOoIt4SrZh8D7DkYXtkeJnN89Yj-35WtTvJGUJcm5jMUzp4V5psu-1BE6BRBoq62Wbn7BxbLvlBx4m41yeoeLE0V0o2CtE5VrcpjTx_WnHaCJDxe2S3KwN2AYHzIFOxg6wr3QSzHSrUMqBVsNlGn8pApwoV6QnxllLJ4KOH-OlWgdy36KvSUZ1s0It42h1KAYpebwY-bL-FnkGS9mu_8Lb-qi4alVnFst2H3aT9HEoDQ",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJn7ct6mxIzDERAfOvaaTX5DM",
+         "plus_code" : 
+         {
+            "compound_code" : "5PF4+F3 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PF4+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJn7ct6mxIzDERAfOvaaTX5DM",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4864
+      }
+   ],
+   "status" : "OK"
+}

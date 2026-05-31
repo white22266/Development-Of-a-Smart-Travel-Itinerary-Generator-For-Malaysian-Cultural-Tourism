@@ -1,0 +1,464 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4754035,
+               "lng" : 118.1707794
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.476752480291502,
+                  "lng" : 118.1721283802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.474054519708498,
+                  "lng" : 118.1694304197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabatangan Wildlife Sanctuary",
+         "photos" : 
+         [
+            {
+               "height" : 1750,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102783977027397628613\"\u003ePeter Rae\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uiR8l9vBzIEnayzl0NzZl-rqAQ4Dt8SqFckv7tpGwYjjjPgNrHb2ZFGIYYX5o43xVf61gxJSH-l-Hf3K4Vpq1laPQ2nnSH2PVQISrD2dY0-88UXUgOXJGCoZ64TVGrhpkmP8Jf-Dyya2Rv1MWMLAeOl39LaAVuXUG43YFMbGxkGKrNX5RE4mRujBGTCTwAyK_uW8wmIykUd29W67_-8NPF2hqLfrlxH5xSCRlLFac4eybOLj3I6vUV5IszSo7ytxm5j2b7496AbjFQarvu6Yiq4P2xqwE1xMoBcamtblLx4ipoGLWrEJyUgMB2vFdO49SbdFS9so8Yo1HaHqHOGdusw-VO3NhPvqouz4kxNM8ih4xCsgTvw9yzuEtYemNhNQLJxeeDE7kKSaenwKgRdQOHM4AS4c0X2xSgM_IrBxhMmb0",
+               "width" : 2542
+            }
+         ],
+         "place_id" : "ChIJ4W53uxw7PzIREADa5so7Zn8",
+         "plus_code" : 
+         {
+            "global_code" : "6PQWF5GC+58"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ4W53uxw7PzIREADa5so7Zn8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 313
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "WDT 197, Kota Kinabatangan, Sabah, Kampung Perpaduan Datuk Mohd Ugi, 90200 Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4158364,
+               "lng" : 117.9421037
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.417180980291503,
+                  "lng" : 117.9434021302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.414483019708499,
+                  "lng" : 117.9407041697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Agop Batu Tulug",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100866564701583348179\"\u003ekhairi hamidun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAKT-9i6JCas_WbSz_NkIBwLsnd8txjJaiuEzyB0l7SI_wb6OVmSdH-W84d3-2arp-RT_IgF7VrZ9_cCGsQyKJwDRYKIOLBg5uBQ9n9AJDPymNeOhrNRNYpdW6GPW8xC_yspzFrqglgwgy6gn0EjOloTNmdx0L8oKpL_zMjMv8X7amJz43QtG5YE_2Xv1X91zP0B8MixF2yw5qdLixTkUf0Az3spYb5SqJbG5xZsUO1Fos9XrbAODY8kO3CtzIT3MDcbGH17AwNVEjzLFe36MIMb2IZ6Et8pYolV1SCs_uo1AqzdSOcDxpx78ag5TAQWBHC468Sa6eAwefSWIiCsVUpem3KQg8sqzXq1yX6KZgkM4oxJk5BOVNELue-m4dkVpMnUH50BmC_ji9BDiMcTLh2E4pBQDbCpwFHrPFtY8",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJianVf4krPDIR8psYLu8WUrM",
+         "plus_code" : 
+         {
+            "compound_code" : "CW8R+8R Kampung Perpaduan Datuk Mohd Ugi, Kinabatangan, Sabah",
+            "global_code" : "6PQVCW8R+8R"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJianVf4krPDIR8psYLu8WUrM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 122
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.459365699999999,
+               "lng" : 117.8370041
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.460714680291502,
+                  "lng" : 117.8383530802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.458016719708497,
+                  "lng" : 117.8356551197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabatangan Wildlife Sanctuary",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115260751177399862999\"\u003eHelmut Eglseder\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tWa5JRjzCmLZV73l_79_NlWme8HSuz5Y2KXv3H3IhfA8_ffqD6KUTHkvq_rhY_JYfbvQFUJlMwGk43HZHMjlod9GGPCEeYAkwBBUSTVr1wZ_Z9NiRL7YY0YPSvYhDwxH6_wTuRx5VrCm9wr_dPdYuv0ECc9th8aSqYzldJEnSh-P1wBdlZbSBxYADBYx3WUOEsTT3GURLU-s90KarcZQa283i7avQMWaMes52xfFPBK4TQvrkZyNM6KgicyKnCHpFBkYtvG1jZcC6svWZC8Y9rO0fyJ-H6MWHbEhddIcvwpZPCcuagt1cgDm8Yb48a757y2GR1UgZ4Pxh8Sb34J3M1vEf21Gxi3i3aukTkLA2I2NhndbdxOUCrI3Ff2Ckhh0BTzCqSWOrMHxBcvsKHBE1VBL5iihi6ooLVTnCKqzjTJd2POsthSFMwoQ31AWCX",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJDRWizF3ZPjIRS5joMvk4Q-s",
+         "plus_code" : 
+         {
+            "compound_code" : "FR5P+PR Bukit Garam, Kinabatangan, Sabah",
+            "global_code" : "6PQVFR5P+PR"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJDRWizF3ZPjIRS5joMvk4Q-s",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 39
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "〒90000 Sabah, Kinabatangan, マレーシア",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5695636,
+               "lng" : 117.9327481
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.570595480291502,
+                  "lng" : 117.9343681302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.567897519708497,
+                  "lng" : 117.9316701697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Simpang Sukau",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107028059132538751762\"\u003eHr Ken\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUy7J4IMb5oMiuA_HDcOaO65yPIMYiZPFDSnHRZK0bRYSCjwM4yxdgfc1Ab1Qb1rqbFsXi42WLBX8MYC8J0HUHxDRXzNQh7LKRurrTr7droqV2HeYZjJsqDV3M81rw1gbhvWOUgEvnIoYs0fLdsfnOmb1MisUAi8iYRS4PZm0rCnWGJ1PF7ZGisb2S0gH7i1iLnW120w9_aAmdu0rbDT5u31BJeTbFEDJSAKdTWenY9RDmYry2QsxJc5_0Jpk33fF8teVOKRFx5ZXF_hXp16LBHyGqc6FGMGxSIu4XjSo5V5QVy9U1jQBZZBntqZQXBB_h_g8JNIB0opbqwD0FIiLalt8YyDLSgUD0VMlulSyR4uymReqd_-3HpBKBiX8bqf33qaRNhnJNv87uxIa9KjviG8oy6fd8Bh-K1TFEgzYMigXQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJW6hu1O8pPzIREsCZsHM84iM",
+         "plus_code" : 
+         {
+            "compound_code" : "HW9M+R3 Kampung Jaya Baru, Kinabatangan, Sabah",
+            "global_code" : "6PQVHW9M+R3"
+         },
+         "rating" : 4,
+         "reference" : "ChIJW6hu1O8pPzIREsCZsHM84iM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PPM 538 Elopura Sandakan 90000 Sabah, KOPEL Bhd. Jalan Feri Lama, Kg Mengaris, 90200 Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4111213,
+               "lng" : 117.9627785
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.412470280291502,
+                  "lng" : 117.9641274802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.409772319708497,
+                  "lng" : 117.9614295197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tungog Rainforest Eco Camp",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1093,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104416999941035238848\"\u003eTungog Rainforest Eco Camp\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-saAf3HQMxxqp59_TPKP_pUA9Forv-WnF7frr0DdOenxFbHhnsFjUiaL13C1ikTNDp1BWRSsmXTb6aFSPDdl9EbUo2VlYelSziVl3fcW6qDrix_WhUgBLxlqGlxfj07O1HKoFEqSrbZ0d-MmQYdcnZ1djoHsVaMXctUYJnPYqVDLh8kLC16CY5W2APn2Y0MNBCFx1wLWsVBgeGqlrhlyWV-RxS-9RL-jG3t5dv2HJR79zYNEg5oLVW6CsDEcW1pdX3yYNms3G7trE8IcQM0g1pVOkJFFQ5ibKu8kvDJ0wDORA",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJO-pF1OQgPzIRrMZ2kAsARy8",
+         "plus_code" : 
+         {
+            "compound_code" : "CX67+C4 Kampung Perpaduan Datuk Mohd Ugi, Kinabatangan, Sabah",
+            "global_code" : "6PQVCX67+C4"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJO-pF1OQgPzIRrMZ2kAsARy8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 152
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6159107,
+               "lng" : 118.3578828
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.617259680291502,
+                  "lng" : 118.3592317802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.614561719708497,
+                  "lng" : 118.3565338197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabatangan Wildlife Sanctuary",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108427165992135182050\"\u003eAnirbankumar ghosh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tcUjcLxY1gFIJ17fJSHmKQxGjb0BgnrcCSVdny7IpYWtY8Fy8fey1P1YPP3Y5eHas-8rWlBUpyvHujPUp48rL_d_TOWo3UaJJd__mQLMgejWEQvQBnyisIUjiaj9b2sSf1gZ0K_91BlBDYOSIcUrlWLt0D7fq2bP7BEGe713mcJyh4Z2cBR3Js2kTbaNsVCwuQp1JqddFjrU8SkY5cN-VRp4to2zlCl0zNBA5Vpkshn9tpMYE47DURUFLOhv9mv7XZ1pE1EPBv9UOuSwteDWyrHBtgTCT_sGClubvL-3Uc7z7f5W7KejoPpzg0v3irRjROzpRNJ2onFbkep_7of3rGINERde5I25YyM8Dr4hFc--ioK7zQ9f6UaZFtMxVp9wDylTyAq2rxiLiN_B-kjgRzFFPMVMWBYhFO6aADhJWVBQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ14vPwxBLPzIRZWD0jq_TvRg",
+         "plus_code" : 
+         {
+            "global_code" : "6PQWJ985+95"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ14vPwxBLPzIRZWD0jq_TvRg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 110
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PPM 538 Elopura, 90000, Sandakan, Jalan Feri Lama, Kg Mengaris, 90200 Kinabatangan,, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.407583,
+               "lng" : 117.950452
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.408925730291503,
+                  "lng" : 117.9517983302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.406227769708498,
+                  "lng" : 117.9491003697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mukim Batu Puteh Kinabatangan Tourism Cooperative",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 750,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117898160469776761592\"\u003eKoperasi Pelancongan Mukim Batu Puteh Kinabatangan Berhad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vw5jb6hrz5pxkC9ygwj_I6ic-ZQpECWDQEy22rBCJ7yGzk_RBoLqYZI8TsRoQ4ykGzHYCo3m9_ywuslTbEjin00Bt55RJvbluwNvEePORLFS0dR55rmKBjdfCJEGcsUs4qU1ihKgDG7njmCCjoc5n9fOYmiu73Lmot3T05IyFeF0QOhT2N7rqHioTBJhzrxp00u6Jj_ML8bqRBxmDXCBXrJaAITexIdXvRDSIRaqwNFfa9UwqsonKkBF0CmxyncRH_LVX9ID7tQ66Rd0SJ26-VFLGWtyobZCxX8Qgt06sJnRVEaifdnLkw-7Gx2gjfeJjUhO-UhTswG_Xm2jyUG6rHyH1bHpG6-zMH3FapauC3fc870ZajODZLUEVS3vE0RYTEMeV79zN-O5gTzBxBFXYM36sZIm5UFvO0z-VSG8b6KQ",
+               "width" : 1000
+            }
+         ],
+         "place_id" : "ChIJ5e3gejncODIRm_S9IAN7fTI",
+         "plus_code" : 
+         {
+            "compound_code" : "CX52+25 Kampung Perpaduan Datuk Mohd Ugi, Kinabatangan, Sabah",
+            "global_code" : "6PQVCX52+25"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ5e3gejncODIRm_S9IAN7fTI",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 46
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4770371,
+               "lng" : 117.6478848
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.478386080291502,
+                  "lng" : 117.6492337802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.475688119708497,
+                  "lng" : 117.6465358197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabatangan Wildlife Sanctuary",
+         "photos" : 
+         [
+            {
+               "height" : 500,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113069417220194471152\"\u003eBalai Kito (Aterayu)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tSgDe2jN7PIzAh2TvXGRuDqd67xpSuF3Ec68G7F64o3uSTvfB5k515Lbz32d6OhefpSvdy1h5f28kt0HOrGtdpTxswQEaGPmpm9w7RC2akV_S8xiWo_yBnqoj--LcigZqKsxP51zdQ6H5oZPTpWNL-U_07jakHF7S4jw3-zKomzIVFSRz2geP4OSpm41LiYXRBfibUGTJrfYveb5ZtK5sTHGnHksOOyGM5Q33X2NOh5PMaXJoqUW3Ah8Tj6OdWqi3uSmdE_LCF9U1RjLNC4OtlicTUQTpEXObM09ff_TAQaz0APsAQQsUSY0mRJfJd6ctosPgKtg5xW9zEgqF35Yx96oaXqLOp7U4w2g-mQu6tZGpOQwRLbC9cJymV7eD1IUO50FQZEfFGsqjSdavLdVKVFS1iVBu8YAVO8jna6ptsAQ",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJEUXuXyHEPjIR6WGW6c75Stg",
+         "plus_code" : 
+         {
+            "global_code" : "6PQVFJGX+R5"
+         },
+         "reference" : "ChIJEUXuXyHEPjIR6WGW6c75Stg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      }
+   ],
+   "status" : "OK"
+}

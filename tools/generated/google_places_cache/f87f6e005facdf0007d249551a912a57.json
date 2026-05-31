@@ -1,0 +1,86 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "C8, 28000 Temerloh, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.3901987,
+            "lng" : 102.5317767
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.391548880291502,
+               "lng" : 102.5331172302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.388850919708498,
+               "lng" : 102.5304192697085
+            }
+         }
+      },
+      "name" : "Dataran Padi Kuala Bera",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uhQgFnWDx5I1gpJdGXdjPBjQW1h0kEWR2ohil_GTY1v8s8PKK8d0jXhmsXiu8OsvAv-7f7nyvgCt9CHdM6Q5pwylQxDppXEGzu8FlUiCsEMBr3UMtc0gD6iWJLtUvNDU1RJMTSJK_j_URXfVgnN9F2Szr5m5CCeXPwbSs7yM9B8ID7DybSAYEK_uS7ypQqsIG2ljuaEGsYMWu0Mowolsmqqi2mRhSZVyRTqsnHuyEmqIa6OgDSs4-J3rN5022mTgiKhxhoZSC0lytllKplIxdeyBt5p9LVTYI9Ok20ihTecS6IjQcoCHHG1MFyZBIrkqRgS6qJhcfhh7ZTg1auJC5e5r9MNn5oX4Rw_8HKGGqEhwo3cME9exmDgCS81L7ebiSrvMh34BV0qI-IhiuEj6CxksIpzf-TMuuNJ1ZcKyIonOI",
+            "width" : 4032
+         },
+         {
+            "height" : 3088,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9BwybHpQvcLP77i75lRZ5aL5WxuSOLHm--04grfw3DyK9rNbFp42MgTT66voeXdQmrVvxO_rWHw6fR_SGHPjOEYGqSjWdUwWMxsSuQO-Swh903ldOte-_3_bkWI9DfFUCkp2Tu3kXt0zh_Fe1uRKzyOJty4sFQS0rY8wRwO2h2OgmBHWnUFPXgDCjATuveKLiyto9wv3ClCeLCHW23mbczQ4EwaBc9X15yiPRZ5AKd1G02XPw-tMyxbnP9P5TOLqlD2rjDklWtGFDT1vcepz2BjlF_rmN3dQc2EG4cHCCJr7Ymd8gis_F8t_EgZqhc_UzznVK6z2b27DdXjN3yzDWvg6enCguW8iVAUS2NWwaVEgT6GhTRp3kPD5AisKkzCxOxp19uTjBzHvnYlond2AChvPNqSCkBqy7ghJl5anmaA",
+            "width" : 2316
+         }
+      ],
+      "place_id" : "ChIJ4dhlEEjDzjER5yY9zXR23y8",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3449606083620710119",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

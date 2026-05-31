@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "14100 Simpang Ampat, Penang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.2748154,
+            "lng" : 100.4451542
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.276157030291501,
+               "lng" : 100.4465163302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.273459069708498,
+               "lng" : 100.4438183697085
+            }
+         }
+      },
+      "name" : "Kampung Baru Bagan Bukit Tambun",
+      "place_id" : "ChIJIe5qIDe3SjARK6_hJ_Wtcic",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2842525583271898923",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

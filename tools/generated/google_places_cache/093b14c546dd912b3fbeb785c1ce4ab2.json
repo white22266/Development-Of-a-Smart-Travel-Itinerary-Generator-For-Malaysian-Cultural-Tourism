@@ -1,0 +1,1176 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tbRiOCOLb6wrgRpi3x1RlTib_e-IaInv2IOk8GngYBKTngdSriX76-IDbCy1ntPiGWNsV4ti9M8CuEl3E36Gn72qPzZKluwsbqQvhRypH5gYmH0eCToEcmQoy6jIevwSyFd3zo8bbH1mnZz5KiN5XqqTaGWP2d0UtDEebX42s-Chz8YIHTarWXgm6OBEFwdkTck7IlP_W6hNTl_fJ8x81AejylIGTtvBYJ79YB2YgflLXQ99o23M9h4HRychPR6skqTlltKTa-ccCz5gdWRYhTouu4esZ7bK27_BIzIqg_vQyUg_ilMjR3pBgd7Y_M1ffNXoV2xrJQzgZYIWrINN0cbbdlbcyouirx8LvfJLzvYZsAJoL8_2tANCF5qbbOo8XigBUA4SQWCexvq9Sf9_pGqP272nGGxpPLg14uyxz1rG7pNI6g5AHW-M7PrNSD-f0_JGFnXR6tmv-qv7KfUiqyRp4VBrlYjx41HHFwO_vO5xb5b1VkP8fLzuaEbzQWrNXIU-MopUe092gDCWXOLMoGCNGLttGp6dvobm-pWCb-Frb5qtL2IBFMSWN2DVZulJwCsBlnUplz76cou4twezN62I2SetCl7O50gdk928I7Al_kz8Wl5LcUhnDq4HljpLlBqmlfnXUn8VdQx5_uxyvUeymC5BOmS8KvMNWYuF1XK-piGFRxeMm3TTTTMwILyURAlEavpnWwqgXPf1JCVOFkFI1nrGTPzzyQbcr-UkWBFqoOjGqC8vaeJL96ieQg7FoRV4F5Zd9_mrJ1X15-ZYgK7KGs6mVLmDZNKhYXLV487VSG5ozVI9CoZVOSpzss3lPIZ_JvNtI5",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "60, Jalan Tunku Bendahara, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3585175,
+               "lng" : 100.5534364
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.359825680291502,
+                  "lng" : 100.5549110802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.357127719708497,
+                  "lng" : 100.5522131197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kulim Bird Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1036,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106993056638431317451\"\u003eKulim Bird Park\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZ9x1eINO8RVtbxzaC_y_5ezVqTi4sQeI_djyZHXfS0tNi2q8LD40xensgy_U7kiC_TM7pkvT2uoBUuA8eDH9kOUf8VxKLCaNlQ37qjY6jlUmOd8jfKYfLY8mnYxeH81UCJR2pXA9FaCvd3LUqR3vJ9vZat18lqqrcqVOCXbdNFy_l_GiSNk0Oha59y5Voln3QJrpamda4enqMj5TcbWSOQttVDOWi-oFx001Eyvfa-VrKM78QZ4_-68dP5nWUkQolKzv-87Q5Q0KPEXPKvFPRwKq2tWfFJXwDlulVOyRv7-uXhtpELD_zB4JNN1OmM-hviwShFAtD7NcxuHFcfPYWbLaf5PzBYZZIXuzv-Z-XjevceM0bjdx3CNlCn9uwOrc9mL2mTqNrFFOqt50FozeNgk2GcFmTX7yXJGSqCkb-1w",
+               "width" : 1037
+            }
+         ],
+         "place_id" : "ChIJcQj0wLjLSjAR9fWhXnFbSek",
+         "plus_code" : 
+         {
+            "compound_code" : "9H53+C9 Kulim, Kedah",
+            "global_code" : "6PQ29H53+C9"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJcQj0wLjLSjAR9fWhXnFbSek",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 1619
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Hi-tech 3, Kulim Hi-tech Park, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4247076,
+               "lng" : 100.5949288
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.426056430291503,
+                  "lng" : 100.5962765302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.423358469708498,
+                  "lng" : 100.5935785697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Rekreasi Sungai Parit Bunian",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118060668497471311965\"\u003eSayuti Arshad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vSZc_K2uDo_D1mgUExEVTo5aiD35l5wxduOXILv1z1gwdbE4_j0H7SAkZpcajN0lRGPWV6qJ8NY3BGV5S7_3_iCfSOHG8wEhZStWCxpclQ2m36r3DgEufug2TydD9lfhzIeDMByy-ouuboM4ThYE1heaibFQdo6K2vgBaYGhdIO6Fjkz3DwH_VMjDwd4G0qKxRXDPfEFRPH1R6PeXKt8Hbes3l5CBg0t9jD1e_PNOG7pROIB2WPTSCAqn8t8EpyRozp5eUVnahKLC0ObdU4u6CnoqNaNjq32bufbnt7ZdoNMNwbwqE-gnqj1I0L9jiIZN-NdcHuSs625Msg9NSZqKPSWqO5zO3p3Ee_pEW_7L134Oj1ct-kPHALXC5XRPNL1GReyej0cRxZsAsqkJaZUpQAuqqVlfuyK38hdCyA7A",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJj3LtSODMSjAR_CJAsRbIFH4",
+         "plus_code" : 
+         {
+            "compound_code" : "CHFV+VX Kulim, Kedah",
+            "global_code" : "6PQ2CHFV+VX"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJj3LtSODMSjAR_CJAsRbIFH4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 197
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 1528, Kampong Kemunting, 09711, Pekan, 09700 Karangan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4031144,
+               "lng" : 100.6708786
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.404404830291503,
+                  "lng" : 100.6722027802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.401706869708498,
+                  "lng" : 100.6695048197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Paccayadhamma Forest Monastery 缘居林",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102313738829350208771\"\u003ePatrick Ho\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-syLl2TwE642xyBYi9oofG24uzqR2-Hr09ZbvuegvqlOMOnYYacFrMFoXhxIxHci4jE3PDL5dNjZEwWu_KpzlkTgvMcIsMvnSKv8oTutuw3B_7Dufq9vCvS1uWaDrOhdYsrOT9pqkXpNHHwOaYmdlynyYXaAyR9n4aQVzCNolP2908R4sC-sZVUrPDnwluyuejuTYN1fK1Ptj2_XrzkKa_kCsv7P4DYCx2_CyvWvpA6LOHECWHwSluewAG6SUpQkq2RtYQRFA9E7du1cdvLMUf9WF-hrphwMVqHersi_GlkQhGt3zgxg6nl-QJulO9WnxS2O4BPGW8uMISklfHRkCGVx_JEpe3m0kSBhwhjNqBBFI8oYSzGM73vP31R8DdrU_ZyD1Bzj_ijijky_5wej2MCCIv3YPgudD4p_7ypYHk",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ5f4sQ6oztTERqA6TfIXpKPw",
+         "plus_code" : 
+         {
+            "compound_code" : "CM3C+69 Karangan, Kedah",
+            "global_code" : "6PQ2CM3C+69"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ5f4sQ6oztTERqA6TfIXpKPw",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 69
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg Ulu Riau Tree Top Walk Kg Ulu, 09700 Karangan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4140706,
+               "lng" : 100.7820889
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.414939680291503,
+                  "lng" : 100.7829783802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.412241719708498,
+                  "lng" : 100.7802804197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tree Top Walk Sungai Sedim",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105028958576842649082\"\u003eKhairul Effendi Production\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uM7CjCu1sXWED2GD_5vNRZ2NvKfmpQ06dNitJdbxW1e6CDhBQ0aCxTB_3eRZ5UR0gQlt3m_OmyZACiCIiYdXmWVDr_w7N_bb6sn3Zb6Ps618qFAM5QORxBwJ6Ex0oasMcdgng4diO0tlmLMTLb9LqSTNWJ4pgmPs24CAVtmE8sokfQMp5C6DcMB2dmrJKPXbSC57RQBkm8pp3t4_SQzCzuf0_BTbBI531yMPsCSf8RWA9dfBxtLeFHvU1bql-KOpl12GKn2-99gP2asqPm9LL0P93A1LP-5rpg36FKMy-jW6AnkLs6vfhTGSDfGwVqxfAWI03WXhB-K6ZQXML8_RTlXuqLMEteH8SzRUtDzlyN1nWNGyPInJUG9tBBBwIakU2WMvafyGbNvq5c9EqOUWBwx19YXmgaFgR3eneJqeVojQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJVVVVFaExtTER4Kw9dR4IboA",
+         "plus_code" : 
+         {
+            "compound_code" : "CQ7J+JR Karangan, Kedah",
+            "global_code" : "6PQ2CQ7J+JR"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJVVVVFaExtTER4Kw9dR4IboA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 809
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 193-195 & 3959-3963, Jalan Limau Mandarin, Jalan Kampung Sungai Limau, 09600 Lunas, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.418728499999999,
+               "lng" : 100.5372543
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.420089880291502,
+                  "lng" : 100.5386429802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.417391919708498,
+                  "lng" : 100.5359450197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ruza Agrotech (Agrotourism)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102783474634108042079\"\u003eMohd Nizam Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sFrC7XbwaZjoPTc4lsyWyM7Z00zOlurUasmvXfNthhstJCa5Aju0EQRd0eWzmLd1xk28qVGKkHTlGYJDXu5h3HNINxLBIDPrMo5_evJOqMaRkv7Ko0bzVdCbHUcJFKjWsW2FXG_V8BqvNDLneoQ_jztJjsrdC98-7Rdy_WTB93J-xTq1waQCKih_8gnT3y5klhm6EwYqYlWOMjpMRJOK9P5vL5_INDI8QsFBHqCoU4ZLcWZ12JF8sZSHOdnl36Nt_g9qMcAtFSwSOsYcTHdA4oiwL5_QykaqtayuTwK_Fu5FhDkQbyPROfnZfRnSiwKegO8o06K7yo6wGlVn4cDWOcUiCTfEtKURvhqiBj_-pR0D6EeYtY6a7uDljZJZFdjbmIRkAcXT8Sd2lvKe7Vh3n_NPF6AYMNJanhGb-oCniM0_jqpKBGo4E3Pakq8g",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJF3lhBe_NSjARDVgqMQTaE2I",
+         "plus_code" : 
+         {
+            "compound_code" : "CG9P+FW Lunas, Kedah",
+            "global_code" : "6PQ2CG9P+FW"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJF3lhBe_NSjARDVgqMQTaE2I",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 627
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kulim, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3661517,
+               "lng" : 100.5529358
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.367412980291502,
+                  "lng" : 100.5543607302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.364715019708498,
+                  "lng" : 100.5516627697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Merdeka Clock Tower Kulim",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105028958576842649082\"\u003eKhairul Effendi Production\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vPvYX8uqEl29WrkxoGvnpEFJU1_ERTM0NZ5cEOkXtHTvnzZa_S43XsiXd5a1wmvk0nApdIIbP3_Y_8kY5DQWVRHN3LR0J4PY5IGTNz0R6PiGhsngrB5v65HD6qrPcN6GA56cHbVIxsrB1o8_-yTncnsn5FvKlZa-BNBwVS1ggp3of-g8lYmjSdXG00yZWm_04DCE4pUqmUrQeX42-wfgEtSf7JI_HFQFEu9rnSIUwCG3X1xYN3LFc0rdCZlS3nqxXic4hSKrENkZKOFnTOnBt-Q0y-iNnJEAdIC_oqximc9vo0izlGCs86zOZ26B43GcUbFqjpB9HdNd_uNn2bdCU3RvoJBbC8xIPfLusCF1OvijwmRIuITs6P2WpM4dueoyICikmiRlyf-DNNFEKSK-1O8mSuGreUgVeD3cuZlMuWOA",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJkUC9SZXLSjARhhI3Jx_f_98",
+         "plus_code" : 
+         {
+            "compound_code" : "9H83+F5 Kulim, Kedah",
+            "global_code" : "6PQ29H83+F5"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJkUC9SZXLSjARhhI3Jx_f_98",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 56
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Semarak, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3795442,
+               "lng" : 100.5416149
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.380859880291501,
+                  "lng" : 100.5430084802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.378161919708496,
+                  "lng" : 100.5403105197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Saturn House",
+         "place_id" : "ChIJicdgDwDLSjARD3Mmbl95_A0",
+         "plus_code" : 
+         {
+            "compound_code" : "9GHR+RJ Kulim, Kedah",
+            "global_code" : "6PQ29GHR+RJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJicdgDwDLSjARD3Mmbl95_A0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No 8, 1st Floor, Jalan Teoh Moh Soo, Kulim, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.371748999999999,
+               "lng" : 100.5538564
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.373141780291502,
+                  "lng" : 100.5551880802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.370443819708497,
+                  "lng" : 100.5524901197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bali Euphoria Tour and Travel",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1244,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117116883164609662892\"\u003eBali Euphoria Tour and Travel\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tyTQnHQwQOBBPEnWUG_W1mj0ckTh7n3zW5b13Zwc24NHSNi5ciVODIG9AFu77wD3vZgzNRSOF11rXN_Md8rEFd6g30fuy9KBE8EuJ5nTY3yRe8RryN7nV7h2i0gT9fk0S6q2R6var4Jalk--bJQCvEYR3COEjl3jZaWMw72RwqaXUYQ4NImXQBYqAVUIrKjMzUad5I7_GGjBA8rLyiLopZtecDljw1exlBsYA4cemnH-sU0M75W7MUhJt316iBewFa526Vyntv0g8f95DkCu--2eOnPz5fip40REflDkh7Iw",
+               "width" : 700
+            }
+         ],
+         "place_id" : "ChIJc_LBrbHLSjAR3b82LOHT5y8",
+         "plus_code" : 
+         {
+            "compound_code" : "9HC3+MG Kulim, Kedah",
+            "global_code" : "6PQ29HC3+MG"
+         },
+         "rating" : 5,
+         "reference" : "ChIJc_LBrbHLSjAR3b82LOHT5y8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 646
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Chabang Tiga, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3705406,
+               "lng" : 100.5600011
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.371352530291502,
+                  "lng" : 100.5611043802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.368654569708498,
+                  "lng" : 100.5584064197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "MPKK swing at Lake Putra Kulim",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118003572299661899668\"\u003eZaini Abd rani\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tc0CZz9Z97EpF-c52dzs9ZIJHmn7WcS64__GQiIcx3XDrDPD7YZpP7qzbhyA2uCJvZOZ5r4w410g5Q5iRXqooZ3-q6IePVKPhA-DzFtxzN_jar0J7qrPqZ5OgqQxdhtPfOGF0cWejmdTxzWRtAfUQ7NhQgVXIkc78CbhIRWAnlLD9UMREPrWEYiMhi2QdioPn2DsVp47iAxdxPQ_-le40EklvibfQxxGZQiE2SzNiykeSOsAHJm5ugpk433YLFvj0vFPD9N_h5Ic_3lsiOqnBQOnii2jRXiIxZcPrvdH_2S6E6WhNOREMVLwGCgUG5w13I2JQIoxIHyLMalEfLKWL4YmwEK-FiC4lEZdpY-RAnJ88n0cbJ5g-Bc4hHTu7jgxpqZVr6cTSXX5i08Ej_p_j28kigG8M1i5eYxACus-X1u7Tm",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ2bcehKLLSjARMHvy19UeKb4",
+         "plus_code" : 
+         {
+            "compound_code" : "9HC6+62 Kulim, Kedah",
+            "global_code" : "6PQ29HC6+62"
+         },
+         "rating" : 3,
+         "reference" : "ChIJ2bcehKLLSjARMHvy19UeKb4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pusat Riadah Wadi AnNour, Kompleks Ibnu Sina, Taman Kenari, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.367090399999999,
+               "lng" : 100.5736787
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.368420880291501,
+                  "lng" : 100.5750994302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.365722919708498,
+                  "lng" : 100.5724014697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pusat Riadah Wadi AnNour",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111260900921480696151\"\u003ePusat Riadah Wadi AnNour\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tr92ciX63dAb7tP1xbb1wDY0ECX-nWccOHdzyaf-nXYQlKvsMdEO1-6p0qtCPd4WAt-LlXn3tSWpAvleslIn5m1X4N5a6Cm7Ywgsr36aSOvF59flIeqWLOsR7wSDD5fsqG26-hybyQJGVbPyTZYdcJxJkODAuYAyU_YXsmt3ABD7QbR0k8RJFO1rN37P5wDR-PNYDfINOzP3gFL2s_o9kK80pvV9OjPM5jPxNIKc-fqRnBcYIWE0rXSIFfyygZGynTDiCPcpN_wZ9LbmCkiANJGy36nzj-hD1Kj7PJuYuwkA",
+               "width" : 958
+            }
+         ],
+         "place_id" : "ChIJZfM8J7HLSjARvJPZVQakd0c",
+         "plus_code" : 
+         {
+            "compound_code" : "9H8F+RF Kulim, Kedah",
+            "global_code" : "6PQ29H8F+RF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJZfM8J7HLSjARvJPZVQakd0c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "school"
+         ],
+         "user_ratings_total" : 23
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Tunku Putra, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3721459,
+               "lng" : 100.5571717
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.373466330291502,
+                  "lng" : 100.5583720302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.370768369708498,
+                  "lng" : 100.5556740697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Pasar Besar Kulim",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108029166247489909959\"\u003elo leong sim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t-HkCte6Hv4rcPO-kDSl6dkWGcPmzPrT8tr1JZl3xN8RTWwVDJxcY-Wklm4RbQWVMWfq_j5_eOLPZfEcNOtQANWhopXY8CJ1kjq10sM-6Yj7_krE7pz7irQIfsZ_91TG8gF7mCHSVQbl3dNtgfTSmm1QettzjLoSvRQdIg5Pa1ozS5XmQe-kDCrZjhnNHxFr_o_SjRv6D0mrUJ02Kd0nr2FUxFUEXuUCs_AeI7YfQE8r02pq3x68EYHMc6JPEPd7N99rKngh5LP1rdUGSBImums5n5h9vQOQVf7xBV-fS6DYMegeYa1OGrUC_l7Et5Ae4nzZOL_RhAkM1SVXA1j0fy5EI-GoMXIw-IAoBhQUD3B-6lfwSAUSVU5O-xJy3qLHpMY0mVMgqOmpLDg8orlKdacUUp5uIorrogTpyKtS1WJQJ4",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJ95rA0JPLSjARIKCn9L3soSs",
+         "plus_code" : 
+         {
+            "compound_code" : "9HC4+VV Kulim, Kedah",
+            "global_code" : "6PQ29HC4+VV"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ95rA0JPLSjARIKCn9L3soSs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1370
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "888, 1F, Taman Kempas Indah 3, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.364971199999999,
+               "lng" : 100.5298327
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.366344030291502,
+                  "lng" : 100.5311473302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.363646069708498,
+                  "lng" : 100.5284493697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "The Word Spaces",
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114092588436195710596\"\u003eThe Word Spaces\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tsWpl9twPPAF9dpXqUkdQLpDzZ9WDGxAx_NQ2GAOzPy5ojACDwrSvVKrFIl45pnGse3a5s3YlgPQVosRMyLC-4quXJcT7ABkdIA1_klCfdWkk_2dZcfsrivWaMKK_BBFWhYzJV0SYU8rdemFh9e1hSIxYzVIhHe9eFJPJwnvAimF54qgkI03utXuAChEvVqbyaLeIA7A7DQrgKyM-Y_1_H8IUD4sgFdaeO0U7SYtojq1BrXaiNiySsgapmpFnlWUtJquGY4r5DWEUGqXYtVUXci4FxoujbVffQiyS3G8zLG8XqlAQT5uosDpN85lnfQdI0Q2D30iJDy7Iww7joiw2Rrnp4yr-gREJUfkxV5tq56WmBJ4CYEzJM2D7KoXEUy6j9vp5uyjfz05cxRAZwqgeMGylcw5D2599OjF4Ndduvb9pW",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJidYw0BLLSjAR3dX4NOiGd24",
+         "plus_code" : 
+         {
+            "compound_code" : "9G7H+XW Kulim, Kedah",
+            "global_code" : "6PQ29G7H+XW"
+         },
+         "rating" : 5,
+         "reference" : "ChIJidYw0BLLSjAR3dX4NOiGd24",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "store"
+         ],
+         "user_ratings_total" : 105
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jln Penang, 10000 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.414454399999999,
+               "lng" : 100.3295496
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.415800380291502,
+                  "lng" : 100.3311064802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413102419708498,
+                  "lng" : 100.3284085197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The TOP Penang, Theme Park Penang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102715149159225409202\"\u003eFaye Zufairi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vEAer1XlP2cswe9zPnVuSDXv9nIcX1p8NrM-X2L2tzJL3oqh--yyUv4QlKzBQa3v6aPW2wjVt-qN8TY0GFshiXeKkXp_nd_M_Al8q6q9UtS8UWTQjearr7RzirKTBPtaQXrncuKJ0eNPlZY-6WBd86kp7fdMO_H-hqpjExS4V-QrUOFR1mgdZyvvibyUbcsuD6KvfQDG-57Jg9QDifrn6u7v84nPJg5JV6MTDoBYtTLIyCdy1oXOisR6I-GJ5ZVf0a9Rvg5OaMva5qdZ0MIDUtS-a5Si4AmqIhX9EceD6sBKuyVQNmVBNbS_-7w05k71P3xM_FigVoF-B2MOHXtAIcafgcuckK_w64CGp72ROfqWsKSGkMx4v8olUaXW9R_9takHT0BQWshohlIjnhmfZvRc7VeiCXRQ1hAFCg-DdRU84f",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ-8pjzpXDSjARhqQbf7o4ang",
+         "plus_code" : 
+         {
+            "compound_code" : "C87H+QR George Town, Penang",
+            "global_code" : "6PQ2C87H+QR"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ-8pjzpXDSjARhqQbf7o4ang",
+         "types" : 
+         [
+            "amusement_park",
+            "aquarium",
+            "bar",
+            "establishment",
+            "food",
+            "museum",
+            "night_club",
+            "point_of_interest",
+            "restaurant",
+            "spa",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5789
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 12, Lorong 1, Kawasan Perusahaan Kulim, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4029792,
+               "lng" : 100.556935
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.404300580291502,
+                  "lng" : 100.5582884802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.401602619708497,
+                  "lng" : 100.5555905197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "ISKCON KULIM,Sri Sri Krishna Balaram Mandir",
+         "photos" : 
+         [
+            {
+               "height" : 555,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115750030660667831279\"\u003eISKCON KULIM,Sri Sri Krishna Balaram Mandir\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uk1nWvRq_SKd51aUHZt3OhCd5gmpl19ShzJNgBhj08-4ehj4epoS70j-Mk5dlrsvuzbc85-Rai8PEFdWzL_zhRtgdIgbT3UhFIGZZiGKSJNomAKeId7tSt18tVo94Mr8VdkxgM86Wo-MC0yvOj7tkGF50UZje_95jsogidZwgbsRxK6JvxnzLWN10Zj1hkXr6vRr1o3KXJgESM7C5A9NBpbLBmcAl8Zkvml4jDBIT4OQEMAoTtzwu9fjXfnRPSFGKKjzt76rbkJae24_mY7BRgow7YphbjvgkjLMcueRWA9Q",
+               "width" : 559
+            }
+         ],
+         "place_id" : "ChIJ4TliBmzMSjAR-m_WfrIrCrE",
+         "plus_code" : 
+         {
+            "compound_code" : "CH34+5Q Kulim, Kedah",
+            "global_code" : "6PQ2CH34+5Q"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ4TliBmzMSjAR-m_WfrIrCrE",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Chabang Tiga, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.371798,
+               "lng" : 100.5587076
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.373163080291502,
+                  "lng" : 100.5598032802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.370465119708498,
+                  "lng" : 100.5571053197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Swing At Taman Tasik Putra Kulim",
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112707498815551889565\"\u003eLeiZhan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uDQfqFtEluyjGrqrODlVPhfINPGUzlDzWHRZ_jLotOZYcotcuTmgn3C3KB-FIxHQfePZ1NinufYckdmZ6c8ryVjwIjPMX-THk15yR6GguzpyYuGZvbxCIe0Bj5Hxn-2XH0WbOXz83kLrRJXmmV3OjOb0Ra6_C4QxWDBXoPx3UPg4tjAJiI0xrtwW1sbGefBW0yzsGp6wI6hwTDIS3Gh1LeQg0rr5jsejfjVS2VQGLt0HfleFMCHv4lc5eapjN7DFyQb35gL2-M6-xtC9eoVCecfnG2kxsujeP3yJ-GiIvVsWzzRn2YjXsxBgkpItAqdSPHXMX6UsHTBiv7fqNN9pY48nkEhjjYZbh4HDI8XWhVpjnXrs7Ow8DQ37yVM2BFFBxaCkA0NXwhUJPwkwTRGqEZoEcgTJ9EkDTVlEkBnhMxmg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJqZDla0bLSjAR1Etdz2-aNJA",
+         "plus_code" : 
+         {
+            "compound_code" : "9HC5+PF Kulim, Kedah",
+            "global_code" : "6PQ29HC5+PF"
+         },
+         "reference" : "ChIJqZDla0bLSjAR1Etdz2-aNJA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "33, Jalan Bunga Mawar, Kampung Baharu Darul Aman, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3533287,
+               "lng" : 100.5600722
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.354722330291502,
+                  "lng" : 100.5613674802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.352024369708498,
+                  "lng" : 100.5586695197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "KEBUN TY",
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115287465213043391760\"\u003eU-Point\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uJe_w9ECrzZnLiSN4zHQm2q5sZt9DjGN1cAFDzDhfDu3sHcuZj8CFwCALaZpUCAK8v6wSvlvqKjjoiyazHBXcL6MpD8sSqkUk4LzfsvnEjMuKHcqPRNh3-wOGGUJX_lzfjSjGKIHhXJyOwlvlAs5hmWuCmtfos-wQ2BBBjJWdtKC669keF2MbDXRSwcKO_X8OrexMO43IWqDwNRxk6zi5db43PxaIPOL91aW_lDEe4jJovBdExTf4WP1mop0vXTi1REujXfIXP7_CNgahCuRCf8TBS0cOPAdIxo9XC1U6IxXs72tVpmoCrqPHtU3C2RXAtcr8M7KBxbSdBKBsZI44kHwD_AjW8JrOZ0kH3GmtcsQnfcYshwIZDGY5XS4V0fkZeziBrIa8NLGcH2okSIiPf5Y8YmELhf6hEs5kW5rrNZA",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ750pjbDLSjARoT81n1G9TyM",
+         "plus_code" : 
+         {
+            "compound_code" : "9H36+82 Kulim, Kedah",
+            "global_code" : "6PQ29H36+82"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ750pjbDLSjARoT81n1G9TyM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 149, Jalan Tiram 4, Taman Tiram, 09600 Lunas, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.425256,
+               "lng" : 100.5560204
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.426583730291502,
+                  "lng" : 100.5573626802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.423885769708498,
+                  "lng" : 100.5546647197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Persatuan Kebajikan dan Sosial Kamakshi Wilayah Utara (Registration No : 0286-05-3)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3204,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101474451628620954687\"\u003ePersatuan Kebajikan dan Sosial Kamakshi Wilayah Utara (Registration No : 0286-05-3)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sX1bUDMcR3GXDomLVw0XJBDxDNnvu3h68OtnY69Z3wjfeJh3isnJ5_d4uh2umi9A-4THkIMot-2pMFRu37TFdL3ibaRDjR3IZKaUlcPdNFa50U2P6xoF8ztuPc48AtryAg6x4VVIjeU1krcfFYPVzmMFMNf9OHT53N3cS7HUvMBVqAeBHZe4hDBV4JoyBdwQOKebTMN9E5syr3PhvDUm0NWP1kTdburvrczDyqldLVef0uqC9hMnoJvVlgGpcSNc_RW6u5NJIFinbrf550NAgcAW27ZH_F11V7FVwnkDAaClOGBBT-a29mCIDWVD7NvUSKCiraZhMLYuGA7as73Dzr9GNn025oOwW6AKWXoZdgBSyQ1iWZ8p2Px-psGOT8dTlsu1DhQpCcEoN09KCWQW5lx3-wG_CyF-3AA3CDejU",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ01RoJEvMSjARjXg3ibizYr8",
+         "plus_code" : 
+         {
+            "compound_code" : "CHG4+4C Lunas, Kedah",
+            "global_code" : "6PQ2CHG4+4C"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ01RoJEvMSjARjXg3ibizYr8",
+         "types" : 
+         [
+            "establishment",
+            "health",
+            "point_of_interest",
+            "school"
+         ],
+         "user_ratings_total" : 47
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "352, Jalan Pahlawan, 12300 Bukit Mertajam, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3904277,
+               "lng" : 100.5213669
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.391761180291502,
+                  "lng" : 100.5227118302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.389063219708498,
+                  "lng" : 100.5200138697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sungai Lembu Village Arch",
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116959155109280155384\"\u003eYong Wooi Kee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t77Kns_oTo96EeAYT37j6EtlAsVFSm2gG6pYdOMlw34c4_QKuI9yunDgrEZ8fXH-wKnZyiv35SGLGveBQh3wQidqZmxh6dhIcgqZn7LxaKy7RW7cfi2XGC3isBe2gi4UaVTnNEqbpmULhbSsZmrspyWKzwKWq4JMRue__YfSg0Hdx6vAwVe8nkwvr-WCDfP_tvJNMuZr_BNdO0QlXC6QGkeUFTeZ_75_hJ8T6TKL3FqC44ts0GtrR8882WygxDRgxUNGHWbr9GIGDbhu3ecVtI-AmyBwd_YT_PbkbQvCSDv_psOdqyPjHkt5Iz87Zgenn0IXHx-3STDuvhymb5Bk2LOVeigm6tShY1YdOvQhK5YX2buHmgyj9G0b8PDW3Vh3JlMr4j9vFuAQ-C6POPAI6iDWmGf4W_1qG5PEGQpkl7JA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJO7XqinrPSjARmTiDkpEttvQ",
+         "plus_code" : 
+         {
+            "compound_code" : "9GRC+5G Bukit Mertajam, Penang",
+            "global_code" : "6PQ29GRC+5G"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJO7XqinrPSjARmTiDkpEttvQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 46
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Keladi, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.388941099999999,
+               "lng" : 100.5419766
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.390500280291502,
+                  "lng" : 100.5432910302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.387802319708498,
+                  "lng" : 100.5405930697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dewan Haji Ibrahim",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104684379357656099919\"\u003eWan Abdul Azir\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sX8_9-px-lT26IqU0W59rlzXH3vS4JO-nbnLP-wUpGwFXaMNMESuipKQGQnggyk3PYPzFDGsP_26VpvOlbFT12bK4BPiev3swjQ_F-J8x1s0-7QIYUFn7iubkTu446PTIFzYLvBsGSdFuls6mZG9E7E2_bEGupGVzj83CrwKo5eRlSlo16SjpW8uCU0t7sle1qkP4FkABKMXuBFuqUXbAK8TGxUzDAd2KY-RoPiC8vO_IYDaxJUpSxKfl3rToprTm1WXmwnwiqaAokwqK4hjY5VtGGyhsGlu6zgC6z78i19TY7w5912ZIP2m2MY8t67F-ei8WzVc86h78bteVKdniUTdXg6E4jTcrl10vMVsf-fvGWKR1cfpH4T7IY0MAtimbGZa048KTzR1T5XrCyG35w5bgdxz-YkBDOqSD7ou7KmHo",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJnU5HvwjMSjAR4ofL5iQWNcA",
+         "plus_code" : 
+         {
+            "compound_code" : "9GQR+HQ Kulim, Kedah",
+            "global_code" : "6PQ29GQR+HQ"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJnU5HvwjMSjAR4ofL5iQWNcA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 174
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PT 23A, Jalan Ara Kuda, Kampung Tun Sardon, 14000 Bukit Mertajam, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.432162099999999,
+               "lng" : 100.5132578
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.433523280291502,
+                  "lng" : 100.5145486302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.430825319708497,
+                  "lng" : 100.5118506697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teratak Nona Manis",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107902753513190567785\"\u003eCik Nona Manis\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uJPFAFbGxydQpuJiI8AICkB5Q1niDwiognT7Cy0a-f75Atay_yOsR_Yoqv0EZJHBUNlETE2aSeyB_oqA5nJnhwB5xdBR_q0fEhd2eeDAPTfYZboHo5asE_-jYmvTWwYPzeyVNhhsgEajeC_1dcgN5npagMXmlqnPCvAjqwyW2Y-Cwgg-Qg7HJ9oAxiSugaLzU5R75psRpTzPRfQ0AezmWCb9EbfP7WfyhTfWma03hn1hOJhNvfSxY3UK7Wgf2lQobj8qM67SGE6CsYQWB4KNQNjaQJsR5HbSj097kb-x7vROJKHohEIdhmH3Lpqa2mBFt8CaEinHGKUDSJdsWnTNp5fUR9c0nlpZx1GQXuBNAaWD-35tEF-omWvN7gyWnGjCp0YLEO8x66vXvBbACnSovrq1xs85Ud40GLZijU1K2ejA",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJFS5poRjPSjARNSJ6Xab0jQ4",
+         "plus_code" : 
+         {
+            "compound_code" : "CGJ7+V8 Bukit Mertajam, Penang",
+            "global_code" : "6PQ2CGJ7+V8"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJFS5poRjPSjARNSJ6Xab0jQ4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 19
+      }
+   ],
+   "status" : "OK"
+}

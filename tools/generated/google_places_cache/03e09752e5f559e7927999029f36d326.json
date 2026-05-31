@@ -1,0 +1,52 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Jerat Cina, Kampung Kuala Besut, 22300 Besut, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.837488899999999,
+            "lng" : 102.5447462
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.838558080291502,
+               "lng" : 102.5459574802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.835860119708498,
+               "lng" : 102.5432595197085
+            }
+         }
+      },
+      "name" : "Asal muara Sg Besut",
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113059577099047047918\"\u003e3Q Homestay kuala Besut\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vXNPSFlPZ_yREBmK8KAIjMnamJ4noUPqnZLphCRJremN3yz_KuPCT626ch7zqw5VwvFhT1v-0vrsokn-bb1hKJZxs9-YwImGGCYu_j4RAuB5_NGOYDdtdAubz0EUPRAW7XSc9R8E2eLmcYb8zS2CnYATi8qjALIymFZFNAwSesy9vZ0NCChLxn3TNDgyAFNcYvMGEvp48UbamNky7nQMtTNg6IGh_jdgahcIjKgpJBY3C3EGotC9kbc7pxC3aBL-O1Q8yspccSOzsscKq704exEeNHGGKFBPJnxrh_zX_SBBnlbogzmKsOuzByIGqxGBhdmFUy9T8bquX5MhfRUaQrAnBaX9PFPpLeo6vs9ti4977HiGZhyCQW3PYqdKz2YETmG5ovy9R0XrXjDQoA2wvUKCQBZc2TzN51S0NNCc2yVw",
+            "width" : 1824
+         }
+      ],
+      "place_id" : "ChIJj802Gq7vtjER9QhsFrokJ3Q",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8369698814150052085",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

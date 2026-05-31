@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "4FRF+PC, Kampung Kebun 500, Mukin Jabi, 06400 Pokok Sena, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.141810899999999,
+            "lng" : 100.4735073
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.143261930291501,
+               "lng" : 100.4749215302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.140563969708497,
+               "lng" : 100.4722235697085
+            }
+         }
+      },
+      "name" : "Wat kebun 500",
+      "place_id" : "ChIJORC-gkhRSzARM6LXxACyEUk",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=5265185155745030707",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

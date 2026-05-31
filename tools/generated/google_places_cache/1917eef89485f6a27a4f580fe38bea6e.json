@@ -1,0 +1,65 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "3GM3+CJ, Kampung Gulau, 06400 Pokok Sena, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0860235,
+            "lng" : 100.5012989
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.087372280291503,
+               "lng" : 100.5026479302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.084674319708498,
+               "lng" : 100.4999499697085
+            }
+         }
+      },
+      "name" : "Mini Sekinchan Gulau",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "place_id" : "ChIJvU9MibJPSzARqda8s52K7CU",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2732711483837044393",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

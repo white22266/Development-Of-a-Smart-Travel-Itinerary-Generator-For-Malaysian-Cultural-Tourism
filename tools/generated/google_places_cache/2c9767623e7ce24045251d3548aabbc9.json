@@ -1,0 +1,95 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "78000, Jalan Melaka Sentral, Plaza Melaka Sentral, 78000 Alor Gajah, Melaka, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.3823828,
+            "lng" : 102.2099458
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.383689730291501,
+               "lng" : 102.2113361302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.380991769708498,
+               "lng" : 102.2086381697085
+            }
+         }
+      },
+      "name" : "Alor Gajah Roundabout",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113857838696346679742\"\u003eBrothers Z Vlog Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u9Fx0i9bbDdtdqJiNYhrQELcVBMBXrDc1l_jPnYx0ooxL8CADv8CzjB_id6ILAHAlIV0dZ8LuspoI9B0ESgrMumCol0U9TMQ37kEXDo8WwoWkOIwMFgyWUuTUzzLN9LC1em_fV2T7d3J8zZgwzHdcFM8L8Uohv48ipCHDAimZ05ts4qeEsh4bf9TcMhUfVoPe9vrHzYK-Qiel947F1V6su_L2tLao3vFjlqVC8fuyhUDsw1IgjaQHzBhgYCdGLiY7lk89zmf5cfcPwzmnWz_hKfru8I8EdL_p_8aZVYJu0xvrCW_PjvKi9dinhwdCh-FbXNXlBHjGuFGZouOwPGgFWVTyrwebsu_c2fHQeMp44mNLfU-tnXnbxpCHJFg_5D3LNYsV_UMNKBe3CbrxqK4fXSn0WFzbYd51HuqKtcp4",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113857838696346679742\"\u003eBrothers Z Vlog Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u0t4tYrhqcP0DX5bL0l-Iox2u4Dnqe1lfFHJBf3EtulVdDhlyiFk7fu4tj8vGOpgG5k6iKM6O2q36yzY6wsA25WuGDt6T4zSMdOSwIHdeSGQkY7MYLGDcwogiosTA91R4dz8Zefne3-dnao9rTTkSu7oQ-YvJjiNgqJ4K-y1hc7i63CBoBMzHOE1lQsCT-Cvf5_W6Nzky2OfzE1wRsmlWXZ6AWsxJf7m5DgurfdsEx4ReuI2W1qjgEZf6yQAF45QKpU_6KiWszLCcmbx3Y42RtVpu1VBCAG3Mz8y31BrjMmISYYS02GW49zR80vTJ9GmID7vhRE_At7fFic43hVNCJfCFAa5HFDsi0EcDovv34atVF0p1nPIzpbuWkr1UMCxqWbiX4so--lUA8Knpn1gLz_s_XQd8F323ZSmsspY5j5g",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113857838696346679742\"\u003eBrothers Z Vlog Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tE4yHZU4a7EQOqr6SdD-F0hWHpniTP4IyyhF-DEiNyXV_HLcsMVW67HcIF2TQMAHltlftBmma_RKtJR6MH4LYGlxzxowkROT4hA8SrOSceqKT0o0IArkrwn152cXaihmZmoYgTTSuVUY-TZzDnpr5a-rLT8XVhfWRqgsbFVPCASlTnCKEdAgY-cfbTuV9tG4PEyDzPJqcd282f3va83Eq0wxTcLh5DRqjN_6Fau0t_BzuLdEfEc3GJDEnsVjO8btkt1Q5QtLvfJ9skI-7Zzta_LCaIktUFOtK2w34jnsgmTLBuDHla0IGH9B0d-Jp5uf9V0cJHEhTkLsZXFsBywkziQQhcHRovyzZmYAlepdpfw7Tdn2-29Kk2ov2CqWxNSftPn6FXpUYynP-YfKVVW896Rg_IOn8cbI3e3VmHWggcd0o",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJZUmurOX90TER5etFFs8LTCk",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2975766437844872165",
+      "user_ratings_total" : 4
+   },
+   "status" : "OK"
+}

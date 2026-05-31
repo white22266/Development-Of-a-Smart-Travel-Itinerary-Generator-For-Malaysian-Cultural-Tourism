@@ -1,0 +1,1193 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-s0Hk4wOSyCxFaD7PBnRCylAgqkanjfEgREpF3q6EM-Crq3jY0NsNb8mC4xGRvhWeno9uQ0-GBkepJPFAtAJpwSOe-kZ1X-7XaR_Jbq_EJcIXYQ81slLzOBjF8ISpBMx6IekzFNkfjVpBfOcZZiwSlGP2WeDgX5dur3hQCDyCqyDLr6TlgEqDpZtMYZDuSYd83Bdo66Cg0PBR4qAy4HXKEGT55OlZrZgiO6-jyG9uAtC51W3JmnSoaxj5pEyMV-5hZ_lXE_roR0h8EiVwqfdMVfaQCkaSY10eKDeR0-ADn5IuBt9D496GDLPl795lnXGtOLUCtiVK7fJW_1rdDJa9OMtkPiaqykDKCFlo0cz5n9pvzTN6rNkINyq_mYqP5Di5CZfQY7ESR8sHz1VZNxPFePqQ8x_muc_rc0QLXuAdjaCD479_jHUxtAInoJKta9UtiGpKYaX4EC2FvGOtUXPwKa-bGZdwDXubYY2G01GDr3Ybp4qh2LcgTRICQSbNZemk4eIhef9tjVSV0dGcXmRwgwnDkZakS8Dny7MVT9gB1t1uoig_j9BK37rkErDct6LIPBLDUM3pwsgDAl89rGg7gCiAVhXhvzRr8wDOHrlDSU9Mntk00hyFErE9RmjfU3zJ9NT6F463l138NooXabLzXpiiqs7d6SskrEpdK5gLJ13nNnq7jBT3r1RXv_-Yuf8AC0D-GM-zsUmiCae_svzMEGdSiIGmpJR6h73mWcs1EixlZUg7RLG5rv4qY2eEU39FtxIRRINFWr_vyNUmKUHN79g_8XJghxLQZFgBoC-4v_FBgOUN9zQPzk2sO8_yjHmo695bdXaKSF",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "WDT 197, Kota Kinabatangan, Sabah, Kampung Perpaduan Datuk Mohd Ugi, 90200 Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4158364,
+               "lng" : 117.9421037
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.417180980291503,
+                  "lng" : 117.9434021302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.414483019708499,
+                  "lng" : 117.9407041697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Agop Batu Tulug",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100866564701583348179\"\u003ekhairi hamidun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sktG6kSVK6Sbxmaw1jfNj96lzTtdj8mKfBONpbI3R-L2L1ZWKea8_GzNfyEaj6wse5V-nPHL1T6bBdZFueIK3VzGw7wiLY_JlR7Zd0UHW0PSjVX3zWrSHlgzREoi_H2K51UM3tgxuCOT6_Blaj4U69ILdGCyhDL5lZ-aqevkqhSCz-ufxtoGKVbLdSbyeikVrOGY7lWcWkQAieZbCCtGGLusvLwZy1vISS-zt8suDpemVBSBFzBPzzt8RNLHgQ9MtqQkkEsk3rGbGfHip9tp4wNlDZzDLKCvhCYQiXGWOp9VD8TBZbErq_wsxfDdC4Lx7U4QV-Hm099oDwsSqY0hb1QqhcBR6SAlWD2s20MSRoLsnzQB4JCdQBYnT9RJLwRKhxK7gDagFDdKDbrWEpH6tE7l0Ix6TUxAeFyPVxp7w",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJianVf4krPDIR8psYLu8WUrM",
+         "plus_code" : 
+         {
+            "compound_code" : "CW8R+8R Kampung Perpaduan Datuk Mohd Ugi, Kinabatangan, Sabah",
+            "global_code" : "6PQVCW8R+8R"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJianVf4krPDIR8psYLu8WUrM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 122
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "296, Jalan Utara, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8428086,
+               "lng" : 118.1161937
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.844164080291502,
+                  "lng" : 118.1175385802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.841466119708497,
+                  "lng" : 118.1148406197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Agnes Keith House",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115474408549787660680\"\u003eXiang Yan Pok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t6GRojUOS4bbHHsiJOKP5czJyrkEJVOgQu9BXe-a3N8GR3k9sRVfdZWLXVb6jkax1CyASMuaon5GBnQqJxVoTrozDY2tOPh4ory66ZcZGxGP8XJqE-CfQ-b6MWeJWN-_dJ-0wuJqDflcu6eL3EimL1bUWSnEJTSLP68xRyxdcGdLbVmYuILD9LPeYuL791yjU4UwjUXmNjQ1d2VWzgIFy1TwMpbfp9t8AREfPOsMkceQHA5WPGyEC6HDhKyRtjD7G5vZotHhxhnMTA3mUEAJq5WvSUMkg38E5fuT8ba1Hjjdqsh6h2BKCnAi3WgyOg4iF9LXiQQRcWyBIARJ0N0h5JLYAq9_vNyXKdgIT0UnuHtxzLLQU8w3xyzEHJAByUpRz139-WcxJomIEBQ786wXJPt4W7qcdd9kgMxHxJS-2Kf8F0",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJh3-SrCvFODIRuCIa5kDztis",
+         "plus_code" : 
+         {
+            "compound_code" : "R4V8+4F Pusat Bandar Sandakan, Sandakan, Sabah",
+            "global_code" : "6PQWR4V8+4F"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJh3-SrCvFODIRuCIa5kDztis",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 664
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Road, Jalan Kionsom, Inanam, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9736958,
+               "lng" : 116.2036688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.975209080291501,
+                  "lng" : 116.2049043802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.972511119708497,
+                  "lng" : 116.2022064197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mari Mari Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1748,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115764917221730916604\"\u003eMari Mari Cultural Village\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vGlzrVWVAqKGmRJMA-ZVywAW8YZ1UMgF4RsAbbU_dhp9YduM7pk2YYMkem9d6y807OZbzNApA0XOmgfgbtkZK-2IMjifSX_Q28sc6P57WIWV-TEo6-X4tGG_MtSk4_pLFM4nMJqZdn0iyQkdZrDIzCwFHo_yPggKlpj45WYoC1fzTeQ4jEEPBWfVfrwt0jXsZR33DafYtKQEDCCy5UKdkK60KCeMmTpQMZMLE34t8p3GLb7KCiu_PDKj95MZcoBXWFG1evd8wyiX_4aY8ms-w-w5O2vOigNr94gjVys9dOCgn3so5Fp7RxSPAY1HqtOjEkAw-W1JKtWrWZnDyqYJPhecDkGPEinBd8jnevvtRaF8fNkghpZnxNSPuVUTtfMdK0A2Aj3kaJ1RfxPi9R0taI0iIBpycbbmnSLu7KwfY0r18gHVtQN4z3SLVFD-7r",
+               "width" : 1240
+            }
+         ],
+         "place_id" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "plus_code" : 
+         {
+            "compound_code" : "X6F3+FF Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX6F3+FF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3851
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasir, Jalan Teluk Likas, Kampung Likas, 88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9954925,
+               "lng" : 116.1082195
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.996832780291502,
+                  "lng" : 116.1095913802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.994134819708497,
+                  "lng" : 116.1068934197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Bandaraya Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113151283152419518959\"\u003e서진\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sJ4CYTUATmE4kAuF0IJnz-AV1W9gd5yBCmFSCpItbRuoKXysE9qVeH5fUJAgMcZRkHfDr9H9li3jGqLbz3IGU2jkRRKxkVOcFLumnu0w6X78JcaKdt7uLkR9kdH9Xnf97JJx7ECMa2r84iAQRktwQHe_VCK__z84WjQtSfNJM4FVL9bEq8h3n8YoV9c0Pdta5uyByVXfpiAYVlvp3dmG1nA9lHhoKE0oIB4ZBXvPxxaaWS2sj_vWOQDM74hxd1w2wPJUY-EuJ1GZAa_7yfpCszw0274_oOjhBhh7Ec064LBerZPXonatSDRAvVxXklk2oVfwa28LeIHOmDR5bBqA020NiMN_h_K4IWA1RhpsWQvyHq4sNN7jgS_41rG8ZYAE3ZqbHA3whkGOXmNqj9tGLX8BGW_QO3Yg23GlpUrv547IDN",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "plus_code" : 
+         {
+            "compound_code" : "X4W5+57 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX4W5+57"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tunku Abdul Rahman, 88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9599249,
+               "lng" : 116.0671212
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.961133430291503,
+                  "lng" : 116.0684115802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.958435469708499,
+                  "lng" : 116.0657136197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sabah State Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3382,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114844356429605351994\"\u003eZENG PhotoArt\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukZJNbFOYWseZgY7LDBPlgWHt84WFU5oAjHMSkm5HWWLfBwPsd4zXWt3dSh0utZ2g3P-C97plf5QmciqlPZd-3ibN797r4LuCNJtO_MYh8Fj00H1YqyPvXryd4JjMvhz-902fRFc0AlVAQDFeJ5boDwNeRSj8z6zi3snIh8Ocgw9M5TH4dL5SSlHRVHwRNpW7187lJ-UJ8-TRHQsA04GWWLjxdvq46L2lcO5Bu3Z4nskhllHRZ_BL_CpmyldGGO2elzEXsLIL3YZu96mR_5IsnYqKddNGi7YcDyCFAKaItuP6aS5t0q8r1keveNIWwHz7JoK-q4sBXBofO8ARvwlzxVk9TtFCRIqVzyOSwnVjfC7Zzrq0pQZlfDOkPt4MgvU6YAjqljKrjHuvASfYgZPPsH-QKb3DImfBQG-o1Lfd0PQ",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "plus_code" : 
+         {
+            "compound_code" : "X358+XR Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX358+XR"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3288
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Semporna, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4399347,
+               "lng" : 118.6221084
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.441123480291504,
+                  "lng" : 118.6237641302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.438425519708499,
+                  "lng" : 118.6210661697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Bukit Tengkorak Archaeological Site",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109445948473709117518\"\u003eW ZF\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vk5Gx_nkaJkgj-ZFASsbgDbh3lIPB28WShWnJLRGqcD7_tjqvWtqVPin0w91l2oVDdXDi8LuZKgay9jCLLmcPExiMoJeWKscglpBv85mjlsGXljg0lzJQpExNEqv61cXNTWJ6J5ELAxPsKzL359IQBXWrqGKtBDZyrzAJ_3eXNs8JRzzys2Xm5neKiCnps8BSe81aAw9EPUCOm__g-5IKMJldchMe7G5A_wR0obTfyxpJto3wgRhTyOiVfDl9RYYhK-fdWeE5KqOS-kEbUCfZPqvENSPvtrm11SdIpEpDuKxxd4ap4Vi6uJ5Vwjv6mPji3GlofO8m3jSpwCH5ufV1VhwOVO43jiRmvdRrJ7X7oZcLsPeEzozEPqmhX2XY-RE6d2AHKAaf_k6-hccbft3b6htHanc1jxg3QCuM3MIpgAfQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJlytRZ4FVFTIRDLSh36K6cPE",
+         "plus_code" : 
+         {
+            "compound_code" : "CJQC+XR Semporna, Sabah",
+            "global_code" : "6PPWCJQC+XR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJlytRZ4FVFTIRDLSh36K6cPE",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 361
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Cecily, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8338068,
+               "lng" : 118.0864292
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.834726780291501,
+                  "lng" : 118.0872694302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.832028819708497,
+                  "lng" : 118.0845714697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Puu Jih Syh Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104695276677491999186\"\u003eSteven Parker\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-shaPEulrfPnug2j8Fn2iFIOC0p6KyGXB1hMOX4QZMbvznCB7Md_5lYA2P9X_1BjAgTyV0PkTwGI7FWMiMkUJbtS4uNGeo12nMtCD1jCCSR-KY-Jwpfo7YNdA6l8Q9tN_tTSDaPfo_EcE1mwiJks7X9cK_pU8EvFC1EyQsB3FtgtfiLjinIUR_j0YZ2-sZrmZnCalWmcrjRY2VGchyygrtZRVV69kZrBpK_2Odk482IAQbnnncqwVi1_fayBJNy9fD3uHL2PLhZiALO1bmfg4PYXiw_QUJv0EsX4a_w88uSQvjI0-_N011XxbxlMmmXIAgn1GHH9ureprM3e9MBC6jYK-_l9PBuBsTkupMEk8NnFI1PYcj2MKMAYG6SrEg8lDrg1LEYVrqU8spjNvFIJKiD3LnfnPqYfXL4m6gn1v_NnA",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJy9A3punaODIRQpzlkJxvepQ",
+         "plus_code" : 
+         {
+            "compound_code" : "R3MP+GH Pusat Bandar Sandakan, Sandakan, Sabah",
+            "global_code" : "6PQWR3MP+GH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJy9A3punaODIRQpzlkJxvepQ",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 802
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "90702, Jalan Labuk, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8882734,
+               "lng" : 118.0474989
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.889186430291502,
+                  "lng" : 118.0483481302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.886488469708497,
+                  "lng" : 118.0456501697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sandakan Memorial Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2636,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116496298914635439093\"\u003eLeigh Midkiff Carroll\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sA84o6zQK2EFjBiSehDXzlsLENhiqgek0BtqDNz4HfTj4I3_OuCVMaDPdY6aIjIeeeX2KoAgiFxof0QnA0LT31J53RYTWXiXUwdGP-57hs7xDEK-NPO5B7048edSHs3_SyX0Hjfkw1MufqTgz0iGoQyYdfWqA3lfAHJSdiiO3fJJlpULMcshfdEdUyTmhu60eIwDwu7sW4JNiN0DGpL2J3BU7bMcGahrn-9s31ubBaFxr--OM4zGCXJhQrgLQP2_c1LRjNtLZjxnjd1P08AASwjNyCS2DVNz18Q0AXL_B09ACuHNuHqQg8VDPcqL9eiDrLFqs5h0lDsp-subylDt2Hwqf-zTk48qAbIRo5vPrrRHgoPdp2VxqJW_GzFUwj3OxQXr3e__dQpd9uCsVtseMTEeaNSbq_eKeQiW8ANRl_Kg",
+               "width" : 3460
+            }
+         ],
+         "place_id" : "ChIJSfC28XXcODIRWCaMYehnyr4",
+         "plus_code" : 
+         {
+            "compound_code" : "V2QW+8X Taman Fajar, Sandakan, Sabah",
+            "global_code" : "6PQWV2QW+8X"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJSfC28XXcODIRWCaMYehnyr4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1473
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pusat Bandar Sandakan, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8405321,
+               "lng" : 118.1163002
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.841927630291502,
+                  "lng" : 118.1176560802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.839229669708498,
+                  "lng" : 118.1149581197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sandakan Liberation Monument",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101623874685378096199\"\u003eFrancisco Javier MARIN JIMENEZ\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-soMRRrp9CxhRfkO6NMK-IFCs3xiEEYVXB-yAbiSbT7XldI1rrB656UyUQ7DJWguo7EZ4SPGCscJJfqdToveC4Z4w4xsG5GktyPEnJmZ73oGmwig3R8Eon71QQv9-1OULp27ixjqiyLAV9bYpuiad_fnaVnUJES4PnppIDBxETbOrlsONP6rH6KVPlYNeyxAhz5dOBhR8IgywT1iH735UnD1914cyZ16f0T5NuQ6y3OH7easQ2_ZYecGXfnxjxG6e2XpiezVL0qrlBknZtUj06tBBLvmdxD8fWwme_d1GJMAf8MlfGNZiG38cnh5Lm3459ITmYUit6dkjGIj2vot76nIHQhT2Wq3X0jTEOVd2UrKiaHdqwCBCc1HzJrsYFUsgtkEiI4epIakcmZW6KefPPeYeV7Kunk10lM0ok0H6Glcg",
+               "width" : 3134
+            }
+         ],
+         "place_id" : "ChIJ9fwddCzFODIRMH8JykMZ7Lc",
+         "plus_code" : 
+         {
+            "compound_code" : "R4R8+6G Pusat Bandar Sandakan, Sandakan, Sabah",
+            "global_code" : "6PQWR4R8+6G"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ9fwddCzFODIRMH8JykMZ7Lc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kundasang Kauluan, Kundasang, 89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9871801,
+               "lng" : 116.5764041
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.988422930291502,
+                  "lng" : 116.5774022802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.985724969708497,
+                  "lng" : 116.5747043197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kundasang War Memorial",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4128,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114252140600021714502\"\u003eLe King\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uCTVuS8kGYy656hZHrQpyiw-qqpQrQkzGrzfJilQmin9sO3Ix9ICCNgN9vfQZ7FvUOsir_cuNPYpfpIOsuO3_cMUrFmWihlp02Unyx3ZF504MJ_kXq3B8f9Lrun6ZmtrfXJcoXV_81v5qTyLIGfBrCW6IMnwqLNZtWc-Aoz9rOofwdMxrVBCPF_qk2lvU2-38mUAgV7N6BsI1o4FEsum_g3-JWBAKoNziye7TygKmVrVg93Q1kv1_PZRwUfTAFcEnzoHpwiAATQauAQN3gxitMCN3WHaiA5cCeNadSceJAZZaPmf6b2ZZFMFQ1xKRZjZkT8D8jwkAdbjBxq48k76gJHfcImCL4HoB1WXzbMe6c4QMeus-g1oGGWdNuwHgHPXcWidj6cIhjSna0AFXMAVfdRH7RNAeboj1i54IPN68",
+               "width" : 2322
+            }
+         ],
+         "place_id" : "ChIJ9VaFSrGZOzIREG2KZeWQ9tc",
+         "plus_code" : 
+         {
+            "compound_code" : "XHPG+VH Kundasang, Sabah",
+            "global_code" : "6PQRXHPG+VH"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ9VaFSrGZOzIREG2KZeWQ9tc",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6539
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bukit Garam, Pekan Kota Kinabatangan, 90000 Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5966322,
+               "lng" : 117.8281103
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.597909380291501,
+                  "lng" : 117.8295290302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.595211419708497,
+                  "lng" : 117.8268310697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Rumah Ibadah Sidang Batu 8",
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114856811349597903371\"\u003eRinchin Kudilou\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tof4nsB-1js54EERTmuDz6LkNJpKwKxmdCMMrIaC7a4vgL4L9ND-E1NtS5vaGQ-ZsuOE6o968IdDHpHF4Vhzf9NOHUpE5lxV_XPrhs6iK7HoicNyaBjl6-S98CGrMYGS0vp5JBeOn6QFfn08-Z4xMZhFbFWDo-Ohzx7Ys4UiSNxH2Wj2pdkq9GXtHwMC92shOCv8sOSYeNMbpx1dCwdhePydiNgjZ6EpwlQjPJzStXA0Vp8XwxTw7nqxQnrlC2V3iVXlgHDVNfUDE-XDMW9janwcEKtoe8sWNMU7mP8o4WeVE3RyCZTeQSJg6NdLKP5tPNbPWDltPDot3AB9176JWFkSKUvqKmvaoer0iFQsRNxGZYgaoHLwxWPTHcVWIbyHvNIO-AnmsRZKtj1U701kAQKfmL8dPe3AYHokV8AHQwVu4WlHRiOjlFkXRp66JS",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJIzSbZwDRPjIRYVWmE9GtN8s",
+         "plus_code" : 
+         {
+            "compound_code" : "HRWH+M6 Pekan Kota Kinabatangan, Kinabatangan, Sabah",
+            "global_code" : "6PQVHRWH+M6"
+         },
+         "rating" : 5,
+         "reference" : "ChIJIzSbZwDRPjIRYVWmE9GtN8s",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4754035,
+               "lng" : 118.1707794
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.476752480291502,
+                  "lng" : 118.1721283802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.474054519708498,
+                  "lng" : 118.1694304197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabatangan Wildlife Sanctuary",
+         "photos" : 
+         [
+            {
+               "height" : 1750,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102783977027397628613\"\u003ePeter Rae\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIvzoBLJa9NW2SX-jYoD1MtSsuHfNMorf7ZyVQ0tQlATvKRY6rF6nE_JB2M3BeYrkUNNyUC8_9VjE4zmgAkOrxCbKh55ZcMJrYeCf8HSi1pc-gSWyG6i60mXBw1EO41xRMid_TYaudJX3OtseZJkyfX5PdGwds_OKN9qaxT0mnKQmyd48tR9X3Uzto8z2w3YKflpIngCDuB3BgsWZpmZXbfMpc7wmT3SWnLAkdwvxZbxIgC_WOc_S_-GgB0yrqRfZDK0tRlsz9SsW3b-liATBRtOM2COWoVXqKwxwM-sKiez0O7xdZ0uH-F3PQiwGjbdSKc_RvdfCW2Gj8brbRZ0sb5qx96zR6ghqeemndBALww4vcMxZv0x2LBDX1ROBzvl_S61uhRsGcfN95LMCUHYWgd_Kvut_YoyrY0Xp4t3f9bj0",
+               "width" : 2542
+            }
+         ],
+         "place_id" : "ChIJ4W53uxw7PzIREADa5so7Zn8",
+         "plus_code" : 
+         {
+            "global_code" : "6PQWF5GC+58"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ4W53uxw7PzIREADa5so7Zn8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 313
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Singgahmata 1, Kampung Bilit, 90000 Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4782365,
+               "lng" : 118.2215837
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.479585480291501,
+                  "lng" : 118.2229326802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.476887519708497,
+                  "lng" : 118.2202347197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Borneo Jungle Adventure",
+         "photos" : 
+         [
+            {
+               "height" : 2624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104695193109187763154\"\u003eBorneo Jungle Adventure\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBX9lIjNZGAg8rarbwOMLQliU-g-89JofPo9BxbPPc5XwVeiqOfklxou5vHAjQKbwZGv4XDNgvaZxp8wec0ryT412Mfb5CaUgRamGw5y2up-HZQTYKhLoErIu4BVnoNjySdghjDFluPWtNoLKq0SXsYK6M8ROh-J3QAKrXVt9y-Ap8iS5hbyf5kOEAbJisWOj19PncIEICjGhEwSj4L_HNG7EAgQYZCKejR9F4ZHuaxqgSormSbIjMdWN1ob-1vswyrxjzrl7miq-Ez1usVpYRS9uyCWOcYdWiIu9PyKQu_aI-Tgml2K5NZ61DgoYAbaFUHYoNp0xgYFPSYUCfDiEUHNNiVj1rtxc_0uaV4hME5Gqj8ln_Ma5IZuruG2LDaQUSCoQTa0bfeIWMU1UwRqvnEpWi06PNWPTfDmMEut8hJ4fg",
+               "width" : 3936
+            }
+         ],
+         "place_id" : "ChIJ7-PtTlE5PzIRIcc8YDvHtkU",
+         "plus_code" : 
+         {
+            "global_code" : "6PQWF6HC+7J"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ7-PtTlE5PzIRIcc8YDvHtkU",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 82
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bilit, Lot 1., Kota Kinabatangan, 90200 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.49636,
+               "lng" : 118.204241
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.497703230291502,
+                  "lng" : 118.2055991302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.495005269708497,
+                  "lng" : 118.2029011697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Borneo Natural Sukau Bilit Resort",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 747,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112973756796255605344\"\u003eBorneo Natural Sukau Bilit Resort\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkjsrLpnlTq3Cxyw_uyvtUqkctQ3vy01ls2ukPKAqKffj4nPCAwuUyt0qdw1QmNkpFuoPoT4eHuE-CP6dVyxOnsq6vL3MU9TzTW4H9tcnCeT9H1rWAwjmYwG20GoP_11edoSwBk0ccNrSekSRonEvfKGBMPRYS3T2knb9dgYTlAIogIP_38lGDjwMErKT_Z1QHNp1ZIw9t0O5DQAfjW_okB51mf3ZoapW_JmIzdUKqxpfk_g36fBYnL-872NjIixZong_PQH3iRtPHcpnQn-vmlEC9mzu-qhETvFIhU6dMlMQbcqy1hIVM4fQjWdFcJaifZba1oVLO-3g-unJ3TAybEJTpB7PoZS_vg2hg1o-wKh4Pxz3rPdQEIb2p6aAzEGWimA3OhTMrsChtBxiFgkVBcUtMTu5d3yxfUj5MN1QziRU",
+               "width" : 1328
+            }
+         ],
+         "place_id" : "ChIJwYnvIgI6PzIRLaw78c4RINY",
+         "plus_code" : 
+         {
+            "global_code" : "6PQWF6W3+GM"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJwYnvIgI6PzIRLaw78c4RINY",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 595
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.207340299999999,
+               "lng" : 116.6408975
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.4442192,
+                  "lng" : 116.8747459
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.9894244,
+                  "lng" : 116.3728434
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabalu GeoPark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 576,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113603650130677388720\"\u003eWilliam Tinkle\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uy8odVjTEJf2JvK1spdVPOnwgaFNdWXbQLVXOmyLKPSHpQ_O_RuWKb84D_Pp-QqxYuM7xtpyYHbYqMMo3QIzIu9OemfykfA5WDsxZ15af0doZEO8ZMAxZcbIomAiTq2YG_qhLXHMAq99bhe7fS5eTBveF1giS12ZqgW_PpYnWTHSc8kIRxHqzl6MPQonTgesOP9PL9rzCgvb6D3gKA3TeJxAyHM8IhMH7J2V_Ca12jl5kCa3o3VmeY7UKZsTg1NTfFXm0si3EirXwCdY9T8gPA4n0GySLc-xvzB93XGECClfYPpJ0Ki6WwMbvHyWGPsZAAXmB3odXl3nb8ZCgTxbICpSSFvpW85SpP8dyMaVeZJFa1EB4RTeCjg5ZIfIdtcvJP01L09lYRGvUky0AlOF3KBSpCOtC7KJQLfo15u-XJ_9o",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJ9Ten7QuwOzIRPgO0ApYiNEs",
+         "plus_code" : 
+         {
+            "compound_code" : "6J4R+W9 Kampung Gandukut, Kota Belud, Sabah",
+            "global_code" : "6PRR6J4R+W9"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ9Ten7QuwOzIRPgO0ApYiNEs",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2185
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Sukau, Kampung sukau, 90200 Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5086508,
+               "lng" : 118.2857588
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.510003380291502,
+                  "lng" : 118.2871027302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.507305419708499,
+                  "lng" : 118.2844047697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kinabatangan wildlife river cruise",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100301880206641741407\"\u003eRizan Rexs\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uNtGtWEWY9j118cngKKwSacMNOEJ9tHCv-KqZUjxX-yJBVBnwhxQfZ4P0IAMayUEjO2KhouIsgn7C3OT_j8t-B4AcdEFc2xrF6JkjXEo4uUHoV4nPg4SYfbEXXXY-it-3kTvEkmZW0B1VL3ER85VYZw2mPerk2QxQiCwlrSBTuHEAiGBcmKzcDpjbcVa0_EJVHFQXb5zTO28UHG80JQle2tmhvRyphTL8141BKLojkmkE_XqslPLUHh4PrCDz0VJkqwokZ3G1RPSnnJ5Zq5djDi70m0LAwTO3J2v_w3AHGEdgI-Cy4WhDubiBdH2Rp_FtzMVyTW4DCIRuszDhoha9F5jI7mSkpYVn0qLwWe_70XPcAchcuOMShHrTZml9hYCjNwYyI_m_waU7mwaRJ2sybCEQ4nqrw5az6XuDTK9wbJA",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJG_83DXo3PzIR0JJsMEXaRTs",
+         "plus_code" : 
+         {
+            "global_code" : "6PQWG75P+F8"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJG_83DXo3PzIR0JJsMEXaRTs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 93
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bukit Garam Kg. Sinar jaya Kinabatangan, 90200 Bukit Garam, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.475774299999999,
+               "lng" : 117.8829491
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.477123280291502,
+                  "lng" : 117.8842980802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.474425319708497,
+                  "lng" : 117.8816001197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Tanjung Bulat Jungle Camp",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107083614643276661029\"\u003eKaty Martin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vG7oKE2m0wjUOLZ33KilgMabCwqjQMS5zM_fGaMHCyvV8uuN5obFWvaTOOmjtXuqoMZHQ4ejQDww2LsuyH9_rhJ9wKiGQqyCTfkbY_MSv-nf6tA9lA1fkTv8T7IN9cdm5vLEL6Mnm5Yu4JafT7ZrnuRzOr60Zjfrn4c8kGldJY93bqW6lHDhMZnE7f9kTXYyrZUAN4YLoZdq-M4I6sV_qCCDcmaABjc4qqCyp5FBevK4INsB1wNontZlsOhZjaKcwAV5_aa4kvxwUaoYC1Kz5FF8fKySok7sN8KFk9sk2joKGBLFcdmtr0Byu56qJP-tdYql-epRUbpJvBcVGJ3M0zKr1f7XLOnRSd6JQu3dfWQnrSAFBCidhGXS0AM7zRbTeXsD8GUtmXiL2cArrZhKIkKD9OK98bfoAe7oF4u3rIJA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJNwrDoVXRPjIRfMJ0KzLLcEc",
+         "plus_code" : 
+         {
+            "compound_code" : "FVGM+85 Bukit Garam, Kinabatangan, Sabah",
+            "global_code" : "6PQVFVGM+85"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJNwrDoVXRPjIRfMJ0KzLLcEc",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 58
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kinabatangan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5042558,
+               "lng" : 118.2780891
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.506889780291503,
+                  "lng" : 118.2780891
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.504191819708499,
+                  "lng" : 118.2752582
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Sukau Menanggul Homestay",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107753895586290776985\"\u003eAndy Loeber\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ttimVqbVmzirqSG51twLtAuU_Z1evR6JAZSI7-VANY4cp3OEGXOvZ_JiusoCStwxyxUFATAGCP2bD0RgnBgJPOzXfChpqKcF4BY-cqfwgMeF5QFV20FNnGqOXHOSPu97QQzbnTnG7sOPTK-A34pL9FPA5tZ0yIWbt8cQTixPvlH9CSTjXYO-VgavNI4g2TUlb3yeaZJOva-utcmDeKn8b5UMCdOYYAtJAfniUqT5iMVrl4ac7DFN6muHiwXgmCgJE2KYK9kOUGdxNAMb4kKYj1RLxKgj8RILJYj8uUHZtOEMJgEmfMThJivK9g6_aOg7J9o7YK-XlzUK7pbje9P10zpZNW-RLLvmZz9VVHR1AnZCNh43btuPzzTJdUNNjEQNaJP9FeixkVSotjXI0nIwBK7J-noW_LIXXwTOdnkIsvSrA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJew2bEfM3PzIRbHS_kTvwoeM",
+         "plus_code" : 
+         {
+            "global_code" : "6PQWG73H+P6"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJew2bEfM3PzIRbHS_kTvwoeM",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 185
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tunku Abdul Rahman, 14B, Jalan Menteri, Karamunsing, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.964945600000001,
+               "lng" : 116.0723269
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.965973880291503,
+                  "lng" : 116.0734891802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.963275919708498,
+                  "lng" : 116.0707912197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Sacred Heart Cathedral Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104551573496785936995\"\u003eLibor Kukal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-swSwkX0L2KrxfCNBnWn6zkqy2nY5pir1V-HlidgMnrPZt7YrrXvuY1BehkxuK61OiYsiGRUJ7RlYynfSTGFxdvtLU2Y49h9JVhCfCJFFxw3ZnA3ZbFDpy6XEMlFx7L0S-MFmnifQsHV8XhFOAyV5OUYqI5eQ5s8ZlFauFuvhKLUIxUUAJ0Y5iwBmbJsHew-K_vNw2YSBjywFxTbB5XqsjbxyxqQI_YrUHNktsy6oSW2enYkV6zM2R3VWbM4YqgGjWo4BTEhu9cT4aDzcUR0xxU-seUyKBuhp7lPak3ogXu7mYX2hhflRx42XDT1hC1Z3xVV_vo4T2EQqC2w5jc_8RwLjGL4t2kOcIq0f8mANHxkXYeIQKv0GZk2ndUk8EEfLPyDhAKsvJefTXDqyDntjN7XX4fRGDHDk-qzT1CjaOzng",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJLfRrS7ppOzIRYYIP_b93v_I",
+         "plus_code" : 
+         {
+            "compound_code" : "X37C+XW Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX37C+XW"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJLfRrS7ppOzIRYYIP_b93v_I",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1628
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kinabalu GeoPark, Mt, Kinabalu Park, 89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0055351,
+               "lng" : 116.5422225
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.006969380291503,
+                  "lng" : 116.5438052302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.004271419708498,
+                  "lng" : 116.5411072697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabalu Park Headquarters",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109022125936017748060\"\u003eAzman Abdasis\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vs0ZcTwgJHuPWIuj2BQ6JyKgDHfeX378aF6l49EtM0n4R6mSYWdE56b_I6FyjtyVl94A1v5v8G3w8nEEwJAKfph2bxYif6EWfZtHrbcrnZAjUAod4mZTyqhzx79ECu3VqMNWbghzi7JFhDL0sbCBTq1I0Isj3Tt-q11phfrSr8ZRqJFeim1E_37H9iLxuHt3t7QXVsKfiiFaoU1yH2jP5Mj77KkwKI2NhvqBtMz0AQA5-TjcTwdwg0mVD52YSLS-SaFkDH6Fzvz8CbKFg_csqVMuasSVW3LX9VloshnyF3d0J8GtekTRpXgNmVMPg0FymjdV2oh9Hz20JcdlHMn3clbO5GoG2xMsOhI03wssNoD00UIyI2BavJTF7Qu4FszG1y0h803vny3ePVfbeN2YlUDmMWGH9EbaZMjfmg90azd4s",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJU1xk7-GYOzIRL-kZzHTAFwY",
+         "plus_code" : 
+         {
+            "compound_code" : "2G4R+6V Kinabalu Park, Ranau, Sabah",
+            "global_code" : "6PRR2G4R+6V"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJU1xk7-GYOzIRL-kZzHTAFwY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3477
+      }
+   ],
+   "status" : "OK"
+}

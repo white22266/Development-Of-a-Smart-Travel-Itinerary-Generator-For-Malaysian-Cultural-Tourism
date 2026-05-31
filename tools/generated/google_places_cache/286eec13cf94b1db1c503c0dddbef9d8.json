@@ -1,0 +1,1148 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vqpKUGzoVnw8iEoIzV01RMFBaJVcTg4PybpkD25P3M875CG46jeT5WWfptxp1k2AB8IsyHxsIoHdGHip2SjBD44pstJxnTwEjT9HZ7MSaVrD9eW2PUBdL0QVjZkwQowRKlamwFkHnxcCZDeY6xqp1ot8u3z9Brl1RV5-Uwz9CZPSYOdr2e1zGFZPFzIrL_lNQsAJ2EGVAnrtQHgZr_LK3nw0YPpEE_GoJ-6kbxH0WRBo3BW52ACltwwPIjhJsxwlEM1xWLxMA7DRUP_yY6ENNw8TlHWsUYpOItYIgv_Ud2V4JL5bA2a0U-MrK1JpxSlg-3qXCDzU9DSaKCsdC1Mq2QZzNnayUQ2CoWVsoJqFvig9cSe0KoeI6k123GIENwBkk8bXFhwapKsppBSFBiEv6dexG6u3IwfBCjMOkt07JYAXR-KSTwzjWIugPyf_FVj5X0Dc29HMd4tcBKCVNaFWHwWGQ9GFjUYSiY-BY0FQctwrEye-Md0trKOtQn8VCBsJ7GpL0P9dqQaNUWzS_0QlnPKKWzggrCduSXyJHCHojyHAHfEKoFQFPKboOOnSl1x2Bb71hFPMLm85llsQEqcseNxDOTX_9HVWNE1HN8wJqTiHEgWMLb9Now_p9Ew__LmSYUUjolyAUhcW3yR-xUvEJSps8u6z4AQsJMTDfcDN4ZFrCgBa_GPbtI1z5pORedLyKs6ZrGmUXdi9EJI6aXZRcxHSkZpGG03ld9B1AUDJkQ6lx8VCbzgTMoTQfkKMNw3A8AircEeH-35-i6Sj-C2CVj4yoCn7U5N0cPBkIzuJkRFXmYXKmOeajzOebu4-0WJmLUJiL2EQI",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "C9P7+HM, 94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4364172,
+               "lng" : 110.3642056
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.437486330291502,
+                  "lng" : 110.3657575302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.434788369708498,
+                  "lng" : 110.3630595697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lubok Bulat",
+         "place_id" : "ChIJQzg7QACh-zERzKVnCY7yQ7w",
+         "reference" : "ChIJQzg7QACh-zERzKVnCY7yQ7w",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4694158,
+               "lng" : 110.4330126
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.470000680291502,
+                  "lng" : 110.4344689802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.467302719708498,
+                  "lng" : 110.4317710197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ct Paw Island",
+         "place_id" : "ChIJBzMLgiej-zER7DiyYNIUeAc",
+         "plus_code" : 
+         {
+            "compound_code" : "FC9M+Q6 Kota Samarahan, Sarawak",
+            "global_code" : "6PHGFC9M+Q6"
+         },
+         "reference" : "ChIJBzMLgiej-zER7DiyYNIUeAc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "14, Lorong Setia Raja 14a, Taman Rimba, 93350 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5231282,
+               "lng" : 110.3869128
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.524792080291502,
+                  "lng" : 110.3880962302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.522094119708498,
+                  "lng" : 110.3853982697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sama Jaya Forest Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2352,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109486240833986028458\"\u003eWinson Chung\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vSEjroCCrvkQCqwQKlKDFtDh5JTgJQffzoaApeO08BEv2za8yReyXF_dNZjSNYR5UyyFD54lffCk4slu3Fbq7-lITKfEZcNHEVUOIMGHX-hY7NE7UfX7pbFwjRTUrZ1EjsHsIFky8LXSx-O7EZdebQtoyfk3AUnM-Pk8mHcnkcsw3Bx7jEvCAgXSTHcX1cPPI2KqGf42xI1zMWijFCzvpDVI7AYiv61MkY_sabMwgtKSNnpAZ2YtVfoppzu9yc6ew2mJ2U2Har5ZV_9-T32vM2_3DVUNBwQ_1H4isvtVkv0sMeVas--v8C1rz8VntmrKeZUZB9YLEdSddJVdnvDCwZGof7CuhEgokQErOy8BFWeb-HKgIo67WqpM06xFrrySu8PclP9QAnn0HN3hujiqulnJxZQK7-OKyLJGYa3g-1_g",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ-TOWZ-am-zER5--T0897TvY",
+         "plus_code" : 
+         {
+            "compound_code" : "G9FP+7Q Kuching, Sarawak",
+            "global_code" : "6PHGG9FP+7Q"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ-TOWZ-am-zER5--T0897TvY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 984
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Fort Margherita, Petra Jaya, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5606039,
+               "lng" : 110.3494709
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.562103030291502,
+                  "lng" : 110.3508236802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.559405069708498,
+                  "lng" : 110.3481257197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "The Brooke Gallery at Fort Margherita",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101082974947388379231\"\u003eTerence yeo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v17KdkfpAIvKMW9AfOD2VJLySVH8T-_RTB2-zmLYmSCJeMAowPDC9EJl69NG2HU1hlonRi806LBZEG3bBp5akDl9ltTVD2IjwnbDtCKfAhLzkEd-BHFHwETL51aB7vAmkHrZwn3tszcmzg8AN06bSy00xE9AWNkL6ML_iBNXtDr0gthWm2Ua1ngTNxXftIYgU0nTmx-uTm2JqOvl-RECkKJEDynQ__R3JBexV6iS_q62vdx13QhvCpAuuCc4y4Aiv3YrPfMSPStd4O3eC3kajZxi_wa1WeC1ctCU8d-GttsJOnyJgSxxliPjDPSZVF-w_jQFL3O7bMr2L6gYjEG_9rZDNqu44FSh2Qs6rsEFyCdcP1CQTKmqqka-olYeIziD2vwKMrRb3XEpvcIwmcKHOgaG4Wl7WcwM0e_hBvVDEg8Q",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJH9FWyein-zERxLxt1qpWjtY",
+         "plus_code" : 
+         {
+            "compound_code" : "H86X+6Q Kuching, Sarawak",
+            "global_code" : "6PHGH86X+6Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJH9FWyein-zERxLxt1qpWjtY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 954
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "FJ86+CQ, Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.46611,
+               "lng" : 110.611949
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.467458980291502,
+                  "lng" : 110.6132979802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.464761019708498,
+                  "lng" : 110.6106000197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "HUTAN WARISAN LAMA",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118277423427845973639\"\u003eMelie Yes\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u17sTmVEQfrotoNZsJVRRiwm7Aaj106S7vJyq8llMVIH9vp6y0Zqla7qUphL8TPORKyK6XOod6VThNTS0PCYwcbBxcF5LZvHp6HfR837qvzEe9zmCivvf4fkONfhhABTG9-PRRHF_FCebv0UyLva8wyF7rEuBP0MrWsxeW0id1ISU1aJENNQzYIptfo0StZ-faxCVGPrSHA4LJL2c2usj33j_85XdJDJsYNnEbtG0f9Xpk3o3I2UgOzR7G_ru6Pmshj5kEDm6OamJ_DNnQBUjMgjDY3JVHY6Jq3XmImtNjitCOCyao0d1VSLc_NCSG48Q28fk9kqjPqlsGmXdQdA4uhHWN1sHfXqmXldkU0RP9j0AVuLeGJQmbsbIl4qWEWJV3YSsskM0fJ-emun_ffN0epL_5fxdyJZm1J9jhoHzWlQ",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJQdXWZAC9-zER4-ywwcUsovc",
+         "rating" : 3,
+         "reference" : "ChIJQdXWZAC9-zER4-ywwcUsovc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1-27, Malaysia, Sarawak, Kuching, 亚答街93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.558635,
+               "lng" : 110.3452593
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.559993880291502,
+                  "lng" : 110.3466011302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.557295919708498,
+                  "lng" : 110.3439031697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Harmony Arch",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106032755543348111590\"\u003eMaciej Fleming\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tq_IFrlEbZ2jGq1AqUBZS_mQYqZURtk18WXEG3DYzhtvL2uONE0JkVdDvxxr9Hcl5vUbzha-5iRvbfZvUWOPN7LQYBzySqznc4E30sSXbvna1_t3Bz4NTi4KvGU_jWSCDuyVAkLXmLJJuNc7oEJAIZIhlrSNGQUxyv7yu9RdCHfdTgTom-_CPXFgGepCLFBA0pq9FOjmu1issKI3VNrVJpfQcX1WAcsvCEQOpzusb9I0XUp0-f_g39jLwAKhe-Ltod7c-r-AFctZFk_NyYwoZTS_7_MwVXvfIFgg7b1E3M12U7KszOy1UMCmuENPdkEWLWGqnwDKZcDkCWb-sRN-KXiN5WeQPhIXu90CWXv-zXP_RuXDKiqb_4XzI1hrPUv1xNDg_94LGAVOVUDoq8pz4Ul6o6sJpU6yq6R7T274Uu_g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJIelucxan-zEReFMtNCMmm3Q",
+         "plus_code" : 
+         {
+            "compound_code" : "H85W+F4 Kuching, Sarawak",
+            "global_code" : "6PHGH85W+F4"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJIelucxan-zEReFMtNCMmm3Q",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 60
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Damai Santubong, Kampung Budaya Sarawak, 93752 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.7500924,
+               "lng" : 110.3159462
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.751424330291502,
+                  "lng" : 110.3170867802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.748726369708498,
+                  "lng" : 110.3143888197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kampung Budaya Sarawak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113103868486256084260\"\u003eGinny Toh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tpqFvTBSDCvswqG108lhldpE_1bNqPcgWM2nOQL662E6tJsEbl0FPi55Q7mU775s_zgOVQslQI-nFsrR0hXtDwkojH-r4B8bTMkgXs_5EHEnJXZdbgxyEDV_EVfA88tAiSdbS7QfnYD11TBq_-CARyMw0rMBjq8t1UQHO9wLm98zLiSgfCHGPUL0GP9Y7OR28ld-zp8srnfYTGHW0ucVhcmW1aQIULzmggPZcZrgNhcgwvVYFkHcSc0cNzcJj0S6Mbo9tR841hvhZ55Dv-kueBdaNQ_stY8nAkE0ngssaDCFooylXB1JHTt4pWG2OrCR1HIQsku_AhnKdyyGUoxtIKxl7orRe7Kjw1toVafABvDjpiqYC-Zw0jamMwzQqY-97YD0RcCzx-r0o3qFLie17kDDpO9zY_ZvFrWu6QStc",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "plus_code" : 
+         {
+            "compound_code" : "Q828+29 Kuching, Sarawak",
+            "global_code" : "6PHGQ828+29"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4790
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tunku Abdul Rahman, 93100 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5577146,
+               "lng" : 110.3526949
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.559136480291502,
+                  "lng" : 110.3539889802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.556438519708498,
+                  "lng" : 110.3512910197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cat Statue, Kuching, Sarawak.",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111713381047440726996\"\u003eHANSUB LIM (World traveller)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vm_onYG6_O71zYEIFJnL2rTbjs73Zxwn5e8h0X_uwnRxAzHU0Kb8NvgCg1M4yU78DiAfukplpJrlbSHErlObGcJLi1OI18blnp000JLMlkCrRAx4v8YLxihmRmXiS7hlRKNhbUY3OKcZkLmBO9bIM4fp7M7Tq2OQ4mcTHXJJBPrQMh3yDJr0xVbeO3AOmjddmD2_v1z1O999k5PShgPF1KOeGG1Rd8wPux8UihyITwUncMh76ITHcXbrVs62JngBDRINCyjiYJ_t-bMzUAwmYBnfbcvYy4qySG72gDJdLpFfczLAHwlZcd6xQJXw3I35hXLvWMldeVzJuQBM3cvQiabK78lbg7KRydGTqy33xG5IKxEafm_h676phOKZ7bCZRrZIFLiweh0FlwHBq11S9FpnCNic0txUtEpVIaCusyPQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJqZ64J-qn-zERdOvQeAfXhAU",
+         "plus_code" : 
+         {
+            "compound_code" : "H953+33 Kuching, Sarawak",
+            "global_code" : "6PHGH953+33"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJqZ64J-qn-zERdOvQeAfXhAU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2397
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan P. Ramlee, 93400 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5550658,
+               "lng" : 110.3414678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.556435730291502,
+                  "lng" : 110.3427379302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.553737769708498,
+                  "lng" : 110.3400399697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sarawak Islamic Heritage Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105524857989722894565\"\u003eSarawak Islamic Heritage Museum\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tN5vA3EI6nCCCLrlxLiKgMr6rzR29FZau5J58rYMZhur5LZxLaAcnGAqCmW4ph_Xc5y13KrPJUdcMG8StLnOhhFrGsaHVJ6H8jqOwUGgvvw8Kp7yYd-sQnmcUSofIe4cwPF2fClMb1gO8xzx3FTBIPoki_WYbzntolgGMofyhPJ1fxCDfQ0EOZ4ihs4nFN1W4uKz22LMf3QoBPUpVzV9i5GCrECWztyxxoHGMI0wTLrIO9VoSjEc4-alowcGuU_9CtIS9_zKtKLe_x9qatiSPOfD72PgY3aqNFuaEgM2b1RBD-txLcx7HJUXwcWmGS6uo6fO30n8tR_ZiM2BszBzsRTKuotLAdBBLvhf6xw4ofr3DoJkdh7vOVJ2P7HbAAkh4LWWVC5OGigl5beZkfK5v_bY8ezT-t5lRxJzEMo9E",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJB72vjfKn-zERD4Ig07uHJLM",
+         "plus_code" : 
+         {
+            "compound_code" : "H84R+2H Kuching, Sarawak",
+            "global_code" : "6PHGH84R+2H"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJB72vjfKn-zERD4Ig07uHJLM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 106
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM 20, Borneo Highland Road, 93250 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4019845,
+               "lng" : 110.3144405
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.403301280291502,
+                  "lng" : 110.3157969302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.400603319708498,
+                  "lng" : 110.3130989697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Semenggoh Wildlife Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109258196798863735405\"\u003eOconer Belarmino Payba\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s6tVp4fGaoay_Q41NU7lldkXUp5CskgdmfGKQMSf9eAWRrHMsjN2Eo8c7sTizNHmYxVDLVqZeGW-iOF2nPzrS40mHpf5L4P9r4yCtIy2TYFrBo0nTeGp0ja2a1LBShSAl5c9frpDhBTixgGaXQrufXFE3Ww0uOElvnA2GQOOACWBBzgE2cxQRTa8Lg6EhV2ftG6N0oUqe-KqIszlZQrdEy6jjClFYT_T1re4jPhJRc_zPrSruvUosDoc54MwFmBMDEvsoVTmy1VIjk5JTOi4S9ETROGWho9sLkFeCT0lvbH3ur8Hyb4skQgxAtMPRRTbWII1B4tWwuSHSLOVz1iNrJ0ll3cJjaYVMn95n58GrpdLzNrv5-nI0IUCcvgrqMRvdgifM9sZKDcnksKvh3m3TdDuZplQW5vMRtYewa-3wC8krtZTToeh6Q8MCb4A",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJYS7oo2R1-zERbLMHEKPgYGo",
+         "plus_code" : 
+         {
+            "compound_code" : "C827+QQ Kuching, Sarawak",
+            "global_code" : "6PHGC827+QQ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJYS7oo2R1-zERbLMHEKPgYGo",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 2305
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Petra Jaya, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5603807,
+               "lng" : 110.345876
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.561603530291502,
+                  "lng" : 110.3468759802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.558905569708498,
+                  "lng" : 110.3441780197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Darul Hana Musical Fountain Watching Position",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2048,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115871456411498845227\"\u003eSantai Saja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-siir0C7shCv361nG7-pQRInMDeo5Xm88MN7Vm5-aSDL-70d4A2YjJSusbtI89jDLFvhBRi6kRz4Vy3b-9fZCFc9tiwc93sGYZOnY2Sh_u5vRQvgZv86ZMD2v5tQ5_QFOxnX5pgp7pH8et2mZwkmH6mqqDMlG137ikg7RQsgy_d-_JBpdrSvepKpufI737sRTC_MpcqxnrnVPptpKlQ1s3r_r0dRLQ3XIt3KFsKDx8hEOu-GIxaeR2DtOSc2Ef5kZ1P9jiB5gbXqJi404zINEtTWY0TjEPCcpJ1L3q3HIukQMcoEC9WzPf7k13g5Q50t6-fchGJuYc_ByrNY4symS1HmcV145QwSZZ86lCib9gLpwf0vynFToK45XYg-ThfikP9-4C03V9FxXkssiKWHDLJve871PBwRTinjmZHLwXPq3N2",
+               "width" : 1536
+            }
+         ],
+         "place_id" : "ChIJmTIS9j6n-zER2Tc11wYeiaA",
+         "plus_code" : 
+         {
+            "compound_code" : "H86W+59 Kuching, Sarawak",
+            "global_code" : "6PHGH86W+59"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJmTIS9j6n-zER2Tc11wYeiaA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 594
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4648392,
+               "lng" : 110.4260815
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.466191580291502,
+                  "lng" : 110.4273972302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.463493619708498,
+                  "lng" : 110.4246992697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bulatan Petary UNIMAS",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100684049186265449442\"\u003eVictor Chai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u40vXD2LOisZ2-xTccUVLvzk8tFvvIxqVbdW_b7IulQQYAKw-IsR1Ac9i97lmzSuksFA0lqQKbVZ89_xKlJcvzT4KaiVQIAgFQnvwToxGYfeSUj9BUKNfDghRrXAGEpYqLCx6aVXK0UucF8p5Px4Tykk-r7-KtpUbSjwmfaDpiGt8Qw73a9BTh246bwmekbD07kxI82pPHmyDAuu5lsPHZWP_VP0GN3rR4eR7GIKSvU99O4kiHQi4gaxGpU3cvmJN67ZmFsEUOkz2FVcXGhXbKFZqvsp-0zR1KDIqx4ZfbeIarKRVnQSwxVtlqvLzg7q3fNAiVLJPAQmduFWQhRbl0S5H54EO3lTTlKVUE85TJi7zupwfFeCq0thFK-5cNCtqlsbw3LM57JBZ5tZP0US5W1iBwiMniWU7pffEMBgENTNnPNfRFtNt9hyUbLT5p",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJ1XG7CBah-zERs4pUmzdmi6c",
+         "plus_code" : 
+         {
+            "compound_code" : "FC7G+WC Kota Samarahan, Sarawak",
+            "global_code" : "6PHGFC7G+WC"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ1XG7CBah-zERs4pUmzdmi6c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sarawak, Kuching, Kota Sentosa, Jalan Stakan, no33邮政编码: 93250",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4628084,
+               "lng" : 110.3358067
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.464164780291502,
+                  "lng" : 110.3371610802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.461466819708498,
+                  "lng" : 110.3344631197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Mei Lee Villa Recreational Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110812034029356864185\"\u003eWee chen Ean\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-up29pYjCZWi8lp1lssJncrbFdDU8HnhiZLnHiB673jE5nB-iW3pom7Pwk4dYg2ru-D7vYWwmcjIk5SYsLXghY0CHCKtIO6PeIxqmEw9DlZPEQWIXO5jgAd4pqGTE5erE2F5c6JdpS4ecudTIV4iQ1_58ce6xiVoJ0c-RBVQrvG9Ltqk852zz72GL6VADfSDytEW_UJ3kU8SdJEJepzAFexS4BiiVF0auvQUSsX8HLc9etrwbRUJcihNqOZ8NN_IsdBFu4vOgdNFq3hPuJH83gBlhMcu1efDkYi_-SCWUIzs2k34gblJE60qaj4ly19BrlEgHvCGV09ejMKmHW5Itk-eA47mMG5l4KeAW01qOVtuLU8Dlpl2eUYC8ZzLX_NGAZKiGdYAwsLHk4Trcs6pCd6jDwD35SFnGa-fwH9TOpUsg",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJUyqD7ICg-zERUo8D_s0cjpE",
+         "plus_code" : 
+         {
+            "compound_code" : "F87P+48 Kuching, Sarawak",
+            "global_code" : "6PHGF87P+48"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJUyqD7ICg-zERUo8D_s0cjpE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 62
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7, Jalan Tunku Abdul Rahman, 93100 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5604695,
+               "lng" : 110.3457446
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.561647930291502,
+                  "lng" : 110.3468102802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.558949969708498,
+                  "lng" : 110.3441123197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuching Waterfront",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1512,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117426145300480038824\"\u003eNieta J\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vhKPbmrjweub69eNB8R4BXtWhRk4dMHykAyeNxTFdCGmppDInk4URV4rYQVYbe9r3RiB9t75ilP6BCQ_-8XOWdre2rUkWLnfrXwObtKB-Ndjo2SfhP_zP9y_kzVcl3QGOyhQKUPYv65OBgSStjW79CIwoYahliEJTvWvIK3mdKB-MG4co_To8XbgzEG-UvZXYWhr306t3YPuxcHO1SKjZ0f_fqapzraNyK3AIIWxPwlgekAmO1LxSplNT-Z97N61IIBXxPj7mWZweeaGx9eDmZS0KzfZUVCs0RNeskGgzxo457s0mDEhg8Aml7N5Pot1a0VZVRHKaI9eGsPI6QOut3MtDG88qQf7_T77lWPv_TJtnv5exrCA-PfwhIASUXe-wSBRbCp62zFMTt6PkLQJ_ovbo7oTNmF1HWkBffcSp5OnIc",
+               "width" : 2016
+            }
+         ],
+         "place_id" : "ChIJ8ZPJfLSn-zERcm674Uq78Z8",
+         "plus_code" : 
+         {
+            "compound_code" : "H86W+57 Kuching, Sarawak",
+            "global_code" : "6PHGH86W+57"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ8ZPJfLSn-zERcm674Uq78Z8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2368
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Song, Tabuan Heights, 93350 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.515993,
+               "lng" : 110.365054
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.517447180291502,
+                  "lng" : 110.3663543302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.514749219708498,
+                  "lng" : 110.3636563697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Malaysia-China Friendship Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109700255902409798518\"\u003eKAMALIA ANUM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-txuVNi5DpGGLZcpjEK1Q5eS2ir1BbN5IfT7___hmiVlWc4CqTakTihybw1vBRRQNnHVMCXGOyeznSHOGJnA_IHfUveRxX3OySD9liPMeJkicRBXsTD1OZzsYbNQReP1IxpaDomDNkYq3QJJ1ncLVJROH9Hg3VqzmJaaH-PANnBnlxWIDvsjBlnlo8sTOLw6urfUI5eeNnOppsk-dWEaLSu6zKUxXtoxpkfellRauPnnycuu0W5GqCHjdieBb0qgh9SwrlRIGmXH_Bgv_MNzAlIermUlwEpAYT_vOku-ivkF_RPPZdXC_WzTOVlntXGJEFVN_h8hL2NbDynXR4VoDkRwVgS4cc2Sl03v2gG4RwBZw-P_rflXgnvEFewDDT8gnI04oUJ9o4OJoxHLyVuDEel1FE5u8qZj6S4FnymReLbgEhp",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJB7DJaT2n-zERcGCbNNEF8hQ",
+         "plus_code" : 
+         {
+            "compound_code" : "G988+92 Kuching, Sarawak",
+            "global_code" : "6PHGG988+92"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJB7DJaT2n-zERcGCbNNEF8hQ",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4860
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Waterfront, Jalan Main Bazaar, 93100 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5591175,
+               "lng" : 110.3471553
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.560344030291502,
+                  "lng" : 110.3484185302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.557646069708498,
+                  "lng" : 110.3457205697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Royal Kuching Cruise",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3201,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108964499984269302266\"\u003eRoyal Kuching Cruise\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v02dfON3T3B_QTDoW-1Uvb_1MndJvjKn5EtwBYulom5eFWmGvnOekDxDZxKAcvVeOmRn-x4suE_2dIbF9RZR1U0x2_GkpaXBaKXGeH0mIl7D0ci-N9VBEWmlYOgxtIixIaHf4T-E6FdnVu_hpChBavHT6WSmXKu3r8wGaVqiHwV3UBVq3kdHGKED7JTaO9eZptjdDxdD7lIkX_OQonfossFhZV4nrlU4VoSGZFJUDSQ-PhPlZF0xZ4AC3irszR_nZ9LNY9fPCA3j65FgkeDjNBODOXuXcefDGM3ofPAGjXUvr3W1JAy3I5Ae10ejaQQyNPqEid7asLd2j2wSe40IsbvtvWOnZhgsNamp9nRthjtZbfWZWqLJfHUEuzxu_bxfG6-NRQyPiPOhKcz0LfcH1Htk7cMDvf5_PD14UbSdAEh9Sakie4YkJIxm5HVRQX",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJh4y4X6Kn-zERUdlSs920KEo",
+         "plus_code" : 
+         {
+            "compound_code" : "H85W+JV Kuching, Sarawak",
+            "global_code" : "6PHGH85W+JV"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJh4y4X6Kn-zERUdlSs920KEo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 183
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Gambier, Jalan Main Bazaar, 93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5602536,
+               "lng" : 110.3455535
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.561472830291502,
+                  "lng" : 110.3468044802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.558774869708498,
+                  "lng" : 110.3441065197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Square Tower & Magenta Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 638,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111342234130466891070\"\u003eMask Trooper\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZJsi9CGltnzSfTMet7HH6ad6J4nmWEObbtE_NaVom2IZwvgePYrELtIfRSZUpw6ktFaAgn2-CZD4HRSmCnLXxSV7yVQYZWac3wPD9pj9KDDRw74LXBVITYt8o53Lf0RZF72L2PhPoTYfCC1PJH2ijV9rrDtf5u1c9UdeidnikiVxbM0giP9m1-1y5lzvE3LZgTxXTXN9DwVSJKQ-Bw7agfVx9qCIsGzZ-RPZx_9Z1QUQo1DJDLPY8wKCl3LUlRtfWK3OzeyQSVT7oaYEapvJl8JKvX9tNXwI-VjKUf5cJ9Fy5JNFVJN5BwwKxeoH28-XfDUXZelOz45OoWX89SkpCEoInP33hlMr26YcfmkF5Lbaph2KFf8CpfBWED3Eta7AxOR82QyY7FWJicOcKTCggEye4rtaM6l9i3OVO2D0YkWJy",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJ072yyO-n-zERWC1JNO3qP7I",
+         "plus_code" : 
+         {
+            "compound_code" : "H86W+46 Kuching, Sarawak",
+            "global_code" : "6PHGH86W+46"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ072yyO-n-zERWC1JNO3qP7I",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 117
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Tanjung Parang, 94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4427573,
+               "lng" : 110.4977108
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.444452230291502,
+                  "lng" : 110.4985560302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.441754269708498,
+                  "lng" : 110.4958580697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Tajur",
+         "place_id" : "ChIJLUuhCwCj-zERPJgNiK_aL5M",
+         "plus_code" : 
+         {
+            "compound_code" : "CFVX+43 Kota Samarahan, Sarawak",
+            "global_code" : "6PHGCFVX+43"
+         },
+         "rating" : 5,
+         "reference" : "ChIJLUuhCwCj-zERPJgNiK_aL5M",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1-16, Lebuh Java, 93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5592535,
+               "lng" : 110.3425286
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.560603130291502,
+                  "lng" : 110.3438617802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.557905169708498,
+                  "lng" : 110.3411638197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Street Art \"Different Cultures, Same Ice Cream\"",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102500364652897881408\"\u003eKen Wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uhr3KxeeLNAzz3bNLBD31KzBpdxKbTCyZW0-EEvnXcU6i2n74_8U_-1l_dCHr0DBHJT2L8mTpvF3v6W-bdRvqKSLBWCmvSM9PpaUEe1NUyhFgtFB9pTFMK8GBciAP7sxC4Hr_vnZf5usYbXPK2i2jddsx-F7LJmaUgFhT7iaGiR34Aut2ek4I7V2x7IdWwIm8w69pN0YZLnG3JGqQ-pGqSObHo2Cd8_Ql63kd_JgmlbwsH7KL5SmmaUjkhAtNqJ-Yo8Ejd4iufYVWgaASr5cXXKPU5joW5N78MdD0bd-cG2fLsk3-cbVd09aWs54UdSmkSrph2SYWR4OBiL6inO2UUS816_fIgNik0Yd5DW7oKwUTOAyts8L4O-zbu6jeMlJtFo0JP2BrrS-AR1p3n9xnDKod9RbpdUIEJZuznXV0",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJLSJ7KDGn-zERfmSuoW7wjRE",
+         "plus_code" : 
+         {
+            "compound_code" : "H85V+P2 Kuching, Sarawak",
+            "global_code" : "6PHGH85V+P2"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJLSJ7KDGn-zERfmSuoW7wjRE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "82, Jln Padungan, 93100 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.553517,
+               "lng" : 110.358712
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.554801180291502,
+                  "lng" : 110.3601055302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.552103219708498,
+                  "lng" : 110.3574075697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cat Statue Padungan Roundabout",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113969243241715990532\"\u003eIshakg Kosasih\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s6oijrv5aJz3Di82sFM3X9gXGgLHPMIXJNhK85Q3wbLNIB9c1Ibd4XICMciYnpdTWkMUT_vo01dYPyPvNjXl55mT6DvY8fdIlLxcOCipvTHFCMLyXaqJsaRJw_hT0TCliBC1i_NOVFivdE5nnpCPQehsKa-1cZ_bX3Khj009TuwE5IrQICRaso6NSRUcHwGpLmWrZ47msQbSbMPFrGaq3yx4fIEN_6jSPbJv9IHjZ5dr85BWjz3AoIIjXP51HpWejhh3BGBcw9oCStnR0SsgvhwhKB3wpforT_dTT-fmz9KOg_i-9m-jIzu3zRqbLjYz1e7TAUR_Qva1sJeqkyqXh94rbXqxDfmrSDXShTA2sW-vvFRZwG6d5b2J4nU29Egz0ALhApCILdhgfu4FNNVutWmLnxSH6FwZDFetklC2FJUoU",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJx7e_m8Cn-zERSAmG6Cjaxik",
+         "plus_code" : 
+         {
+            "compound_code" : "H935+CF Kuching, Sarawak",
+            "global_code" : "6PHGH935+CF"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJx7e_m8Cn-zERSAmG6Cjaxik",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 769
+      }
+   ],
+   "status" : "OK"
+}

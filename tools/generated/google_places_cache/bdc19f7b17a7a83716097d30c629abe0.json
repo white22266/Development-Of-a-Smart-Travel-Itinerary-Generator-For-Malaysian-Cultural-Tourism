@@ -1,0 +1,65 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "2, Jalan Jalil Jaya 1, Jalil Link, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "019-820 8245",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0576111,
+            "lng" : 101.6742309
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.059026930291502,
+               "lng" : 101.6755596302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.056328969708499,
+               "lng" : 101.6728616697085
+            }
+         }
+      },
+      "name" : "Peace Community Church, Bukit Jalil",
+      "photos" : 
+      [
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116209304673931534386\"\u003eRobert Kee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twDIp1fvZoKYDM2VHyEh-FUpTTb2wJlFdN6qMY-rreVXtl4RLvQ-JP34M8Py7Kprpc-5LTgn5eAo68-3u1kEEqiWipSOil0TbaPOPjWhRQFmMM38ZgEm4u3QtekpUfNXdyrN8rRcmj-P0BArEv6k3lAM4roGDjUsHE_S5Rh44grauh4NowEZF54gFi1fjz772nTc3ibBxkT2gAsARGfJXkLcer0Lonr_IzJPX7pEufaH_KixVMCgay3k82TZIuXeIS7iDRow_-BtQOx6SbHJFTepfAxdMN-H6sOUfFQwSLzPnx3ZzEL_8gU6K4lPzV9aWIG50nXPAkuSja-57cWon0DvqHclgUP5QkTljcgZ7kDp4ifV0x5qdqRF_Gq14bVFKlGgb1vjqBh3Bq-IBCdf2hSFLtrmoKMNleKiA3_CY",
+            "width" : 539
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116209304673931534386\"\u003eRobert Kee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4do-rRJAjTrdP7hF9YyOKRvaZYyThKdgiOIusz01UG82ScWBK_1_lEqyZHyXeJK32_KNS4ifkx7Nf2HBYK9s06m3J3Ytx_Rb71FSP4hBQKr0G4VR-Fxc7aEG9nWgKokTJ8xKfHnaG5KX28PB9JIrbFOVYVX7Q11aCNcH3BdPwnDUJaTjD9uk9QAwrigWJxj8OffnYJBs0-ARcZV-dB2B8Nkw8oiafQhUbGN5pnkBQZnghhv75ttNqbj_3ehIJ2y24-DX0M8uWJT1H64U2IetfygFA-ovg0o2LSiLUu7whenzN-PHuqQNy-tgCmb4Go-RX8X70Y13mNb7a455oveZzVyEIrE_jUiFTyQr5-mk7dLWGCXvQ8cMdIya7C8M4gZe8t3sg3Q0N--LYhGOyiOpAD32UJ_ChJsiJQRuHQWm-Hw",
+            "width" : 539
+         }
+      ],
+      "place_id" : "ChIJ5Wp5Je9KzDEReH68TGWvN6I",
+      "rating" : 3.9,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=11689004207477390968",
+      "user_ratings_total" : 11,
+      "website" : "https://dwmpeacechurch.com/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,188 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "MY :, 45000 Kuala Selangor, Selangor, Malaysia",
+      "formatted_phone_number" : "03-3289 1439",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.3416401,
+            "lng" : 101.2463485
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.342437780291502,
+               "lng" : 101.2490101302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.339739819708499,
+               "lng" : 101.2463121697085
+            }
+         }
+      },
+      "name" : "Malawati Hill بوكيت ملاوتي",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: 9:00 AM – 6:00 PM",
+            "Sunday: 9:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102546794971378318513\"\u003eWatie Ikmal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uz_my1t8LKTrLqqkQKh25ofvekTPIiSdmvk475pDOwiZ6M8AgZAFpP8jMc6UE82cGtSeAXG2bHV7Nm5is7oUG5evzQ0QUer6kkno1dOEPZIserD_oP_RwUXjvwPAUH1iuuv1lPUtwAIvQOKkDPUi7UVnibmOZNMejbzqC2BQMVawGhPckK_CJv-ocqwyoK06ink8gRpSULBkHnlm6cN_0g6YJOpJFaf1XqMtRfTa5Kzwn-egZgiIwDbZil1jgld2TC_ZLISuyGvFsbMTHnPiMP6GTpW6YWe8rBd_LQe5QtCBe4E-uKLQN7PNSdQ6ffXh55zxYFX2pj0pM7axcfBQvygvlZIF3P7LxzseNkR-aHiFJh403P_M2B60DE-eSdhEyHHNdAk4KEwWJWNVAuqzbmA3yGNNWwpSKGOsD8ZB7xY2CY",
+            "width" : 3072
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104860559039670357728\"\u003eCK Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vROEhMRUR-4GTakq3MtUNpaXwW32tjr0Av0idvUp7es8z4SNogfofbttx_2jyOGQQfbD1ICbijZQkA4ZA7sWNFRo6uNm3J7Y6TgKa9d2V2PjTiV9W659JqybpbeC3MIg-y0Ek8qlRBqTWuEkSfqM-07YR6wuF0Db1AO198tZPU9vEHc_6wkhSwMR41spLRMco7IqeaO5EwC0K9fMpe93WSrw_mhVOOdg5KLR2o_P0uScw8Yuu5hpOb0uSemmjIj-6_nOvVLX0ssiaYEFyqioUbxohvt6GbIidcAaYwNkwWEkII3ZLerhSEv5B4VVgTslqg9qLyK5Xwn3j9Mxx3-PGJOKET7jhm4BtPSCQ2IYk8v8_t6le9H7OdKYNN707y7e2HH7KuivkbgOWn89i4MdiUa3Ymut-9xLOjgrHaCk0",
+            "width" : 4000
+         },
+         {
+            "height" : 550,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116171093731537553646\"\u003eKogi Com5\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ub-8gDyZClk-bt5GXlrITCfMRmpj7pAvtvsk-hh6PpDUcGSuAxD9kzcYGJ4MOqV9-EnDp0Or-iUxSgRfZwbPksGeklEQMD16pYxwN-o4gQU2qNc9LZN_rCD0lfGz_cwpDGasu2DkTwoKvNvS-WEwp7xjCdV_YBN5MXXn_pQFXItxI2S4eGQStgOoG72vc9ymK_DFUVIwlYmRQ7OTLOnA47N4tAomQ8U4D_jDpVAwoTW9qc5uc8vQ5wgNJPoFfZBQQHU83Z9aQKzYPWfG8sbW9b5Pp08SC1sWqwGIfGNU5aEFJ7K5lYRPb13GJrJum-7lQZXZve0VbxUONPy41y9s2ZbwfjXVRWSezwXiTZI75MJsUITAxN2pNOpeTeJM_saG2fuz4rbT9bmfNzJRvTSQn6YiHo1A0FZAvVIMgRjcc2WA",
+            "width" : 366
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114429699696720736095\"\u003eMax\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tK7P_i31ec3SZ9KGE5SvStbk-ezbvQt3Dqsg5e-cEfbD5cVKrTHYTmzcplyYySGUvw4W0vHzxPBXeG1UQEQINT2KebPIyogZZgYHQk9--2goCYP_mbOHOvWfeFtAfkyxtJ7V4TrHKdfhQFtPD4FwKNm0nHWWBs0tcJolUyxihUV4LuskGX1YFafKSvAmuTcjaZ04AjaPKEuEMGbKbOV0M7JnOZlnMqoWBZbJ8_OMjV-KbdstZBoSkcuPS_NM6HL5FEERDHMY_XqBP9m3A5Dqr0NOjImlwL4I1uBi2zkHDFHFnOiEdCiNdgyAsHgIyvDaGKjbKCU75ndfVaT6tD1THIYqUKbePyQbpcP5WYBXn6opX2IcGQgMDHsrr79qvyQ3X1atOdmAOIxXAnkbNC2GTn1TWjy6e-i9nwUn5sBr15KUeS",
+            "width" : 4000
+         },
+         {
+            "height" : 1012,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116757822149775154338\"\u003eShobinesh Athithan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tEORNfo3Sb-MxkDN36usk3BwCMsGhKYKHHiTeuHm2ns357MkywWFMyFxfcAxGgoVLLZ6J_4KiGMtMMbCPGubRYZ5zSIgu3yflchttQfyy7S1EvhcVqH_crc_UbwBG7J5jnoAbC_ps2KUanq0OebgpcxZmauXGt59_wLocBZS7o8hiYcZfFEtBmlQDx3yASeStvu3IIfaHcEde9SPb8v9osXY9Hq9qe8n6HI-guBY1gZLH4a8Z2SZV3ENpROOapYLCCmJeD04v5hTx5qOaNEvoruFchOUpPsH6ac6L1RzJKRWI_LIkpjS2X_ACId-aWkGrtGrjbsCKwFo4EUW_hjNy8F55cWwkQ79-2pu4mD0Ko7B1FjPsj0uoevU0mFFMZfUOdJ_XBlsh6moWO_cLg6WVJjbq1EL9eZLPAsLHYLqA",
+            "width" : 809
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105845641092019582806\"\u003eMuhammad khairul Diego᭄\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t3_UR1PdckUA-fKU8Cmqob4S9ZTsHGTOmjdBNPlqfXZJ0TYYPGnEGiEgUBbpzeP5Ixa8Jk1kjjbEWgAT6crl7GSbM8IOdzdcUaVWc-IAyDxm20lZkuTJ_K5_N2fLLhmndu7Y5GP6q417CGO5Favk1rLUBrG1qYKHlkF3mszZwvK44I0ZsoLFocPv7h8NcI3IWyv2nBnkJClKn5E2s_7ugLEEvGEhAgtzCc_LsfcM4E6fiBzXdNThCGDWBx7uBeV5rdHYUYX5-V6ea7Oih3IFFSKjvZlSl0lTMvMO71WoTfIim4AhFFhXxS0jO0P1l7jSVH1S0zkB5jPh7Wfaqw7flgBA-_RUGhJxEGad03AMNPLpwEnx_OqYc7lI4DWAd1u43hWWuYZRKNoSTvMdu4SnCdTDqevu7t0iY5u4WTJDTBn4sP",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106812362120898813658\"\u003eShengho Chiang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vkGxUvPDjtOa1LbuqHp3Vw2i--thMw2BDS-G5NMFYV-VfJCTI_qnSF2U3maILTh9uBr6C4OuvxeThBI3EAXB218_UaQlVi_LdSqFsoaDPLCm1SOTcKuIIxudD-Hfk6xRjBVhuoVUbUOmnOkUF8UX-SAHpIx8kNaTQf12FlarUhrFxzSO1GFreH47mhCd6G_gJcZ6kZUjTcucfXRL_G8IMVgKndPRCeGE_5_I_PqihrN5qwM6fO0KOdKkNg8itiuOF7rsvxlQiSv8sh3WO-y1zfjTXR2yAwNrwVhbrKjMjsbjfjc2aXEEOniMSIDhIppMskhGLC_wJteLApm0eZm5x3Jr9cM2DSGf26yGEBGcYHZLeNXLFPUqFfRDMth37WlFIBrwWn2Ck1oLAcS8bwdjVSD0H_KVKl-6h1LuxZJK2WCzQ4",
+            "width" : 4032
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104860559039670357728\"\u003eCK Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vO96KL_1-xb41WtFvH-nRGjFSTkwgZ4KmG9uRTwtJdk6_p7LYUcVFURDA3_I2eHg4lPZUgWNMgyh72y0RN96pOMhWNLJ0xuHSsQhAjq_vG4AFfGZnttNW76F0mY0XR6J1krByzeknUghJpDsQk8MYZY3rzcEUbHSxT3_E5RJ_jWzL74BUeWGfCxQV_gyInJNuDemOFJT1TWqxhEBtt_drIoLGKyflZdvE33NZ98bVRqKjaBKXhS5bc45iT4LWf3WMf9yb_jwRFbE1c1XrsDF_6qJ4902vWyG0zC65IL7hctuf1GaV1CySCFPtYarxBDSaVKySEbQbyqn7Q0JAXknuCpyxntAmtyLun6hSlPT0Wg45QJL-Wp7AY7GP_gEB94OWazKWeoX1-vviEvzG0YB6lNJ1P6vB-kPKYj0nJVJnJiw",
+            "width" : 3264
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107055986811155425903\"\u003eannour 78\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tO7OiqaJfGRoLGO3kek2Cf1qveUPVAeDSJUnSUoTw3frXv78v9pjmabp8KlGLb_IMPYJHMwQ-GyhFxdYU4cDbSeF7WlJ_PDq9AAeZyel8R1LuoMm-hvFkDGtn0Hu_D0p0njsS72RjJteEdPZsRC_EBe6OLMY2cd9aM3vvOTuE8O3XP0kLAP_CMmOcqbqrSL1XtK6EbmRA-1VwGKgpNa9CaIlBkehUAnJSgPSVCp3AFV1KIuEKw_6AoCfnGXUssC7fR43KA5UFRE7R_LFsuvoopWIWbn7bVsNWEs92satvFHX2KkMiDUcyDNzJlGRbwCSXv5-Iuph2pLpaI9nLJ6pCDmJdKMhvb9Ccc7kmiun2WOAaKTOH0Z4FQkd4m3mRLPyIqLdGWxwAyFjtfhbh5kfdGfywlZDeXtVrK5kw-iCkYCRE",
+            "width" : 4000
+         },
+         {
+            "height" : 809,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102242066216809284174\"\u003eMuhammad Fawzy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sto5IRg27cvfSo5QHGl_W2_CYDXUPk1Rlm4DUrK5SlZFQysyK9yNU4-FmVY8GKBsYfYMYWfSVVUl_n86k1UR-hwBJz_0YRO5GpKC2VvCNmFGumxiI3RuwrL81TzNVv7mNOllYA-xHWONbcWbu0i6yTzbqGEDHcCxgGQfDuulAASLc4T17i-CX3o4YrO_HlNF2CS7ADPd6zAEZVdNWXTeN9KAJf2peTQgrqIFH8LRvpgWFTdSOBTMMjbDNzGAeuZJH7KSSswDLTaUA8skRALEDqe_JkGYb68l-6_3o59U471_GVvAGzeUo-jIl_3b_baMdbqXE4t5w3qMdOMmm8-GgniF2wvaULQ32eMVaINXAX_twcUnqeyU07bm4glw70AxI6Ctqn7k9fLhwQIkmBAEp06jBUm7Oy8f8XOptqQX__YV8n",
+            "width" : 1080
+         }
+      ],
+      "place_id" : "ChIJDbHKEVnzzDERB0onrkufykA",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4668719111116114439",
+      "user_ratings_total" : 5785
+   },
+   "status" : "OK"
+}

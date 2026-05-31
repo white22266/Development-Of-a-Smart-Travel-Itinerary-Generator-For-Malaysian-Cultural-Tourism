@@ -1,0 +1,60 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "559W+5G, Kampung Lentang, Kuala Lipis, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.1678846,
+            "lng" : 102.1963651
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.169233580291503,
+               "lng" : 102.1977140802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.166535619708498,
+               "lng" : 102.1950161197085
+            }
+         }
+      },
+      "name" : "Tempat cantik",
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113412227309666223028\"\u003eLufias Irahza\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vH2ySsCyR6qguWoJ1u9OPegFZ3sDXRmabKgIhjYIIludOAY-kFAcXuB_LzZtYyWc5Vsr30kK5Izt5UgPvaG-Y7QREM4aXfc8KGIaAeXcUgOCaPXIhBMvYq4diUckSW50m7VgOp24fIib-eLME6AA-8GcWpSXOwFudWPwQ01rEnFVLeaYbUKhs4P_hBCtrCfOtccy_5j8rcWE9Bcou_urc1Ug2QPFOgdTYVPEeh86biGEmUM3w-s4F5G2gD5Fas3G-CAyxc01Ub0tlpp0wO7EyM38hze6m_kEVAP9JW4WDXVJCeu6aYrGCXyPcMnoERZZ5F2tP2nFJ2tgQVJWZbQZLpsAkBMYNIfs8NXGQcpojkWaBh3dnoXDH7g8zp1RCmTZZUJcVTzxySJ0bJuaTsLbgqBT_hQmyF33Vy02Yhp3KWvw",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113412227309666223028\"\u003eLufias Irahza\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t9kPd7cBC2dhmGPnku6iNeHbn1mEMppXLAK4SQrV-Zy8low7wwM28UblnSvZZK0ggFVlM33VEUUZG6XyQw47wV5ZLgzgSl34EA96FdjstX0uhCQibZEPo2OiJSfunHjhgq9Gql31xEixszhNZ7RBqfJRpBrwa9oBMzCwi8dcvj-O7hzs3FcF_-37HQm8EFVcdfAchxuI55YLTX1fKshjcK7tvDgQLTYHc8EJ1jWcxZvDOL-t7Dm6vOxSWqdtinqQgpmsITH5NQyKb1dHPJ5SgbHLfxxL5RU0XgIqlF4E3kV_DTes-QlS-DKtjp9mchuXchs2u2VU0q6-5sQzAUWNtfosnQmL2F4AGFhI4f6_jb46niGjVmOxf6A7KDtemCuT50JwmwcZ91jNoHi2ZZQMXNZe1sPlDOjkcaAqR279d52CIC",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJTfn9OgB7yTERLKwNq2hgPpY",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10826196556907916332"
+   },
+   "status" : "OK"
+}

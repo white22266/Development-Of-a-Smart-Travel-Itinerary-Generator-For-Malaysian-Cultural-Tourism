@@ -1,0 +1,1150 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-s9wJUS5XMb457cE8NG-QSabKv8k_DNMf6mERv38xTKo-mYT2JMz7VC-8Cwu83_xxDR1MWlhrFCu9vP4Ru7I56Rphyx-Iu-bA4uUARBKN1RyvpwOsrbzqNE_E6Yg05h7c2feH3Ei4T_Bc-5eNI6PfvW6mVhRDPayIvPORZK-8n0wE1xjDB2BczQjx_DdBIFdVG1K3kEmkpIOckDdb6sENLIOD8x4KqpkYFg_-nWpgnv_oiHQYVMfKg_fVy_Qj51M8gnXSoHWvo72BmeNFRHwODN-8rUq0jnMmiTR3Jm4TOwFXX9OcYKK-w00LCCnoA205lEqn1Yf826M4p6X6YrplHk_2SyTVb_LcdV0163oEXexQC3CLqIwOOMIwjNdwsnL_cX2DXvs4VAkjkjLmUxNzlWZ0zo9vHkFB62gMISNyUk_yqi8045c5VwtbOWvtZV858GhzXk7kIwH2bKkwnX4aalQLWUaTWeft_tGFbygmdnDW1QN-OELKveI29vNufTm2mAz31NUcMAnohXW5TgZQUv8OtplmHv4djQfVvxmvZBL6p67gKxRaR70FG5NG0DZo8z_2svBrqOsOh7YdhtudCufeh-HQG3zot1faDy1N6yBIFR_heS7vVAVw-cforpg_vQPD8kcxJVjleXlIcPob4NIt9mMBwAWDpcVjXTvJR82caqwwSs-pv5nJ6sZbhIVxhOx2id88YbAtIJJADTkSrUjO178pUnoxZFzLvw0PtzUjUu79T2NVt4WCLcFnS36nOtv_LL09OFyP3CNzsznz6QpUvOPsmYxsMGPNiTDuE6bPvytGWTBP4yMiR5bYHzzQkCUIPZpFCH",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sungai Congkak, Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2100407,
+               "lng" : 101.8432558
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.211365080291502,
+                  "lng" : 101.8446454302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.208667119708498,
+                  "lng" : 101.8419474697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chongkak Park & Resort by Tourism Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109978321853289028438\"\u003eChongkak Park &amp; Resort by Tourism Selangor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uCZzc5PBdM20hNoFFP82XXrVsjGKXb58vlSI5IOCdhUes6DY85oayd8vRxsq1dDfPuWJ-e6BzfQeXhhd418kMtceITp_PtP_jxpVnzl6G80kphcnjlFdXN9BUsWvEcYN9tb4MP7S4MH6-dtmNKFSlVW8TD7tFjZRtkXYjxi58PjfmwIzSk63cxUE3vxG0l_oC3TryPIlpZx6i8HT1qqGaqcv-YC_ybt-2Da4YErX9umOGH31o-am0pcpmn_ncJXky0H9jdVsKCBqeRt-itYntMi6NZObWI67tlq9fApxYsDw",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJ7XS6rP07zDER05yY5HYoKvs",
+         "plus_code" : 
+         {
+            "compound_code" : "6R6V+28 Hulu Langat, Selangor",
+            "global_code" : "6PM36R6V+28"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ7XS6rP07zDER05yY5HYoKvs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 110
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 20, Jalan Sungai Congkak, Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.209053,
+               "lng" : 101.843517
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.210411380291502,
+                  "lng" : 101.8448877302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.207713419708498,
+                  "lng" : 101.8421897697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sungai Congkak Recreational Forest",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108355327128842071095\"\u003eSamad Talukder\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uemlxVlfiVfTx6ZlFMLPal4E_2yHpXcfndUaCJtQnKSh5m3b7XV0Kk3fBOtDSnkBFlr6Lj4AU7ecIrz1nx5UahiEIILTKeFN11IMmBnh1_0zXcuMnzUXFapi5iCg0Z85MTpC7b3NxrsFECHX_ZfE0iLZt0FAvkTbPfD2nW0xd3zJoX4I8j41HppwWPjMocXgvNUcN8Sc8vTVaz-0xkb7TnIrpRoHXFcyYKz-4fSs80t_DaAbwgFlKjnZkcy01TydOkaGo1Q-iy7-UzOq3OKK260UDqEbR4l7ef6mM-R5enHYsLYMOx0y2j4u4RTivOEKMmwoAFkYDsOpe4yGMdfW25R1KHGeTBf_Ey2AOg_SzN87mFs9GpCLVRysm5BGlPAspJNyRSyklMSOPlyzeO3PHcnRF3qwbWgyqZHX5wyyg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "plus_code" : 
+         {
+            "compound_code" : "6R5V+JC Hulu Langat, Selangor",
+            "global_code" : "6PM36R5V+JC"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3489
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.251107,
+               "lng" : 101.8658741
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.252455980291502,
+                  "lng" : 101.8672230802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.249758019708498,
+                  "lng" : 101.8645251197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lepoh Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3507,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105446303785684232285\"\u003ekijal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tFNkymlc5TCkjmkpOxsteP8F1lYj3kZQ-jKnwQhrTAkwJoFFFcykZq3wVKCiv7RKZRMdaXElJVkt3cecOiJsUCsVZ_Su7CSI_7qfNqgsW6W9_yEtNrUwtdixZpfgM1LVCOqk4yqP8eODITo2n27JURKf2usHnR6b0r7p_nTiG7D0L5cbq1_Tc6K49-9wp2oyR0LfLI6AV4jTPdhu2qxxgWuUL-lurC604oL7B9qk6A5wzpb-zTbLVeRwyFVNWItIAC4Kv7Si8Gm-Iz_oLsLFqcy4VBewcJCS2VVY8BbfHxBcgNIIMeIs0DMGxltgeO-AFc6a7pifGLCYsqq5EG6orKq5fXcTq6D80eoAaiYdq2ykAgONn5x_xcm8JiD0voY2WVTwlSIQbEFZ0l8CHtIAlk-IQ8M_qT1qKctH1Bvgmz5g",
+               "width" : 2629
+            }
+         ],
+         "place_id" : "ChIJoRmQcGo7zDERjpTXeCXFxx4",
+         "plus_code" : 
+         {
+            "compound_code" : "7V28+C8 Hulu Langat, Selangor",
+            "global_code" : "6PM37V28+C8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJoRmQcGo7zDERjpTXeCXFxx4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 494
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Air Terjun Sungai Gabai, 41300 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1660921,
+               "lng" : 101.9090289
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.167347830291502,
+                  "lng" : 101.9098659302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.164649869708498,
+                  "lng" : 101.9071679697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Air Terjun Sungai Gabai",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114567647498869187867\"\u003eSufizal Azwar Sulaiman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVhwPZYKbT80ytArYz2Ir6gVaLBLTuwzxbbSeyNpPDA0czD39ErtNHy1EwdCinGBomP5kIlnPhcFns4UCs3ELd5CHhF0oQGmkVjYeqynH3lbMI-J7bq2-rXyB2_2mJQgAE7SBkTX_SJWFr_d06Fh3km9vHW92T7phZq5UBAt6WXFOWkZnORJUMrUaZTXo72U0dRdXTXeVL1qHgfYGiSF8J5Zz7phzK-AKRs9qS4Nuy5wv66CBqEFsNK0Matvo--jhzmsadPl2fpAbbYnafvX1LhtadNLf6YPVU5J-1SMcYDElBK6Qmemi4WvqVTBv5AMvoyU3XLCMl1FRW65jbDHzFF5YqymsANFhpQN1J8FZPchvq7Sf03BD4DGm5Kz7b5LiKe1XI8E9neCQ9wm0L0est4hXxIY7V92d6IK0RK88-4pG-",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJRXVLAMEvzDERc3dmxRjWzNQ",
+         "plus_code" : 
+         {
+            "compound_code" : "5W85+CJ Hulu Langat, Selangor",
+            "global_code" : "6PM35W85+CJ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJRXVLAMEvzDERc3dmxRjWzNQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 963
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1976087,
+               "lng" : 101.8536137
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.199030880291502,
+                  "lng" : 101.8549738302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.196332919708498,
+                  "lng" : 101.8522758697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sifu Area Sungai Congkak",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101259727950051751138\"\u003eesam hnaish\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vOYttejPd2H7eIVT6M1ReZKlRNrD507oPnErSog_4nm0X2zu5UDdST4ezCGfhYjwCWol3NTTNZAVKWmXOX8KYlBGXFSDYCMcubmFxbORgTV_cv3j46XkS9-Sbqb_OTPfC1-kHOFdo5ERTIaqpaQKyzZCEH6ZdVbvfTdt34I8cuWiE2Qk54MCI80ClcRIOzM4H_Lz84SKsuX56sBMLTFRSzHiQ1_IF7diOn161tWaZHhjshZV_fx_27xqs0yxwgX4rOCltKkTSgI6LfCPlgMOGEsl2It22XSwhYwcM9WUqrtE5X9cnjY41PtPfvIDjaySVsyWMsewWV6QSwIn4io224WkQtBs3K3FsDiURE8ZgSRFYcBfYH-T6hPTJHmHMMZiciQ21cFmlev6xmkFF6YahTk7RXC8K9K7kkGqjpjeTeHuPJ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ9YHoRGw7zDERMCwcrL7Ew0o",
+         "plus_code" : 
+         {
+            "compound_code" : "5VX3+2C Hulu Langat, Selangor",
+            "global_code" : "6PM35VX3+2C"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ9YHoRGw7zDERMCwcrL7Ew0o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 180
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 2511, Batu 19 3/4, Kampung Lubok Kelubi, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1893348,
+               "lng" : 101.8508903
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.190686780291502,
+                  "lng" : 101.8522431802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.187988819708498,
+                  "lng" : 101.8495452197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kebun Langat",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110609892848584534281\"\u003eKebun Langat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s87Y7L2aj4nW7qxUS6OPGZaX35pI1VnZGx_ynmkzXt_r68n8ecQsebVGo-hlVg0f-VYPK8oOGo88e43lYOztJ0yuXqveDGSpKFEE7U5uX6LMj75PcPcjCYu_uzL_JSDSv5TwyZ1uQHFQP1vxtz2rY8eZbwsrq714skVRDA2w2nOXFGwOsTdyCcq7wbLspKDafA8ioH8_QXEzF4Bs90pVQpwMKeDr9on_n9yvvuvYs3qrogfaVkxGzo7qn3Fp445OhCIkN3nPDyrl2opvetg7JD7JHd5fq4pxN1Gr1J2_6yfg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJCS95JoU7zDERP8r-tEixxq8",
+         "plus_code" : 
+         {
+            "compound_code" : "5VQ2+P9 Hulu Langat, Selangor",
+            "global_code" : "6PM35VQ2+P9"
+         },
+         "rating" : 5,
+         "reference" : "ChIJCS95JoU7zDERP8r-tEixxq8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "49, B52, Kampung Jawa, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1669082,
+               "lng" : 101.8495525
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.168293630291502,
+                  "lng" : 101.8508786802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.165595669708498,
+                  "lng" : 101.8481807197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tempat Warisan Pembakaran Zaman British",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 574,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101418023515479768724\"\u003eZack Aripin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sMhcoHPQiwT_BvPLbjdzf0ZV979pLqxk7Keo2-ytfKHYUbnnFyG505ZTiRcQQvmfz0CaUdNqtS4f-IeU9aceF1Yq056OrlVBJv_VowWoOcQmhHFizQCK_wdapEvw0ziTlbjUqkFDinEB_5y7R7QY3TFB0W3Id92MxXbWG78ZHwtwzcn_vWHk-v0ujxNrDUGCecUIzPZxt2RzWfH4HeJpvWLntg44GmWON6bpg74Y6xV_2UcpoWzaMHRG9n-I-2BbX29X8CBpsJzb_TiaRd_7ZvwlROaC7iQHFriHkMzPEBPc0qrtfdmiCYNXUu6CJL7M83Bxwsn4T5K94CJaeP2TF2ymovPkV18YdeLJPEqSB_HVo3aebHaAk-1Ymm-zBSFTssdoLg42rM-9KaoWU6Mfoo7_0H3fDwAihQGFRTMZgKyC5QoId-XE1CcUPwia0n",
+               "width" : 1020
+            }
+         ],
+         "place_id" : "ChIJgWhGRgAxzDEREgiEdMLksnY",
+         "plus_code" : 
+         {
+            "compound_code" : "5R8X+QR Hulu Langat, Selangor",
+            "global_code" : "6PM35R8X+QR"
+         },
+         "rating" : 4,
+         "reference" : "ChIJgWhGRgAxzDEREgiEdMLksnY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "41, B116, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1090537,
+               "lng" : 101.8521251
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.110299680291502,
+                  "lng" : 101.8534739802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.107601719708498,
+                  "lng" : 101.8507760197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Penanda Kampung Sg Tekali",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110214675459307318716\"\u003eImran Azwan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uQVfOO_FUITrRWksq8DAevrLLBDGyFehtMoMWATlMHjEsQyoEKXhFqvuBXskk5Q1_Clv1-T3VPTcoBfqy0udCmb3aMWpGQBInZdjnWEgudYRkhNpYSpu_o0gqvA1da5K619qBYJelHybrB4_BV4A3ygA2y7BqpnGuhD4RZlUQrVXzhWefnZRtwCuu6P6F7HUIgTrT-tjlMJaN9MdX90igce4YFjRJt5InTg2OVzPRl4SoSplGo2Gjk6Pe8CkiPaa-9cPggOiaS9MKz5At34t3V03K_EMPieiu3hkw2neRr3uiEe3xlYC8ZbXxHFCi1IrAAs03-5H4SFqI26vFcFOIMKts5TjLtDGcB9aF7vo1oUKO_s7zrqdQoz4LZ_kJ9tj7E0X2Vu42KuWEo1h_1g2Qw6MF2w2GC76EbYBCawt4",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJvxJZSwAzzDERiUFadaLm2vo",
+         "plus_code" : 
+         {
+            "compound_code" : "4V52+JV Hulu Langat, Selangor",
+            "global_code" : "6PM34V52+JV"
+         },
+         "rating" : 4,
+         "reference" : "ChIJvxJZSwAzzDERiUFadaLm2vo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "4VG3+G5, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.126325,
+               "lng" : 101.852947
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.126754430291502,
+                  "lng" : 101.8568284
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.124056469708498,
+                  "lng" : 101.8523891
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tekali Valley",
+         "photos" : 
+         [
+            {
+               "height" : 1201,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113335613652079599842\"\u003ewilliam py wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tVp6GQBwQxw0ONn6croc6vWRw7fF8hbL7dqGglkohCIQ_d4zaCy5VtprHBi8PPqGThuM7rshlrnEnJpNrdIegVsAgnsyZOQj_P4a0xlxmIDfzELb9dOqKj-A-xTybhG6DZjOmVXeiPapKfsYjTJ4uCJc_8_AjGojzpxwLHRyqHa7VEoveSVmxMNNdWqslSJ4Fl084iyklcm7LXqXtyBdsPbfUjAZ434V6XPIFgSjywg-dDKjFnE5Mp5IN23r4qcGzqrmpIVZdrjVmJ3P2f96GSLquurWd-I7XlM_eRcYAxl0JdL2bS0hFPwyYBo-t_keB9w5vMiFDYsH-Wj0P4GhOx_9Lf12-8M6DVdvpdbXvi2emU3jKN5yL_bdCXeBmw5Vk-oRpsYfePnea2d1ZzopgQJAgPlLKFPVcWNKqa7YV3O_6qnTMUri7SGvKNnQ",
+               "width" : 2156
+            }
+         ],
+         "place_id" : "ChIJA4AjT_8xzDERDebKJCE0GKU",
+         "rating" : 4.8,
+         "reference" : "ChIJA4AjT_8xzDERDebKJCE0GKU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 20, 1/2, Jalan Sungai Congkak, Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2089852,
+               "lng" : 101.8422029
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.210361580291502,
+                  "lng" : 101.8435416302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.207663619708498,
+                  "lng" : 101.8408436697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "SKYTREX Adventure Sg Congkak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103852276073657702971\"\u003eHaffis Musthafa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIMa65856wQ7QVri3AlPtdjiGTXSr4kuGKKdylE3qBuU2Ryfv8FIrYT-jgGFNCNMNX49j06ypbbBzY0CHIiCjw2j3I3xpRsxQ9_CMPqvYACnSQmukw0CqeCWP63VTEggg6fyMLc5aM-M7aqyLud56fAi_6IZPiDaO5pQVyqhxQGq-q64Q5cBIyvCfpxr1yqFALCwL0XXnY5T0VsQY7H2dvAaLGKdkjxdzw3c0RELiU-2R33bhkoQOMwbzKyJy94j2GCvfdJcUjcIEHK8I9Hpi41_MGMH_ILHF9diDaHH6i5Seok2QeZ2ip-72jbhTKO8JsSrE7UHV4GRlykk7ZMS7kxEGapRXr1gX9AxnXU5Rr17W5J3DtfFhnQ-twRHFcyWzMggmtmc-rLNA8RhCnUXZEZlyWv6HYdZUhW6rKj5NIudCk",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJGy41J9I7zDERwtdfWl53_Gg",
+         "plus_code" : 
+         {
+            "compound_code" : "6R5R+HV Hulu Langat, Selangor",
+            "global_code" : "6PM36R5R+HV"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJGy41J9I7zDERwtdfWl53_Gg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 500
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1204409,
+               "lng" : 101.8321343
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.121714580291502,
+                  "lng" : 101.8332392802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.119016619708498,
+                  "lng" : 101.8305413197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wealthy Farmland",
+         "place_id" : "ChIJ6xAuZQAxzDERGcdlRGiNeF0",
+         "plus_code" : 
+         {
+            "compound_code" : "4RCJ+5V Hulu Langat, Selangor",
+            "global_code" : "6PM34RCJ+5V"
+         },
+         "reference" : "ChIJ6xAuZQAxzDERGcdlRGiNeF0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuala Pansoon, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2100327,
+               "lng" : 101.8772906
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.211326280291502,
+                  "lng" : 101.8786646802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.208628319708498,
+                  "lng" : 101.8759667197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rakit buluh river side",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3936,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113813900418445777752\"\u003eASYRAF DANISH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tmC8FHauxi6fh9yDSiMTQy4jvU3pzg6JP8kll-W7frI-F6U0KUJ24xUX5gJJbkTQuogvjGr3p4CvI4tkEyxXvgMxIJk0XNQyORzooDUp3xAhOSBqRgx_4Gdww10ZHB5y5nK03Rc6fr2BtFQV63ymsbF9joHYsH2j-XyDfuVadTblFVB_wFsfLNCG-Jk0SZdQfEP6a8Px48NxZIAek3PbAHXjpAPUwXCc4jWa2rrWTpSCszjQiX8KeiOtt5LRniyBXovOibtwty77gnQUxs_-kTSaQuMxBtx6XPA0qAg7L2F_sxOcowJdcOQx-8p7GRSJ5Y04YsrCoY525x7kyWNO9eqNXiJt4BGA_oRs3L8wPqgOMOeVxgK3TzmMjBRq3ZwMUhns1eBCAD6jrjCPECfuUxp7GIOMetdjaNpjrlRx3fCkQKXsvYRgCEaiR6z8MT",
+               "width" : 1728
+            }
+         ],
+         "place_id" : "ChIJc-UFQgA7zDERv9jqBEm9sGk",
+         "plus_code" : 
+         {
+            "compound_code" : "6V6G+2W Hulu Langat, Selangor",
+            "global_code" : "6PM36V6G+2W"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJc-UFQgA7zDERv9jqBEm9sGk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 54
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1507549,
+               "lng" : 101.8929845
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.152873280291502,
+                  "lng" : 101.8953058302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.150175319708498,
+                  "lng" : 101.8926078697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "KenidaiLui @ Tuntung",
+         "place_id" : "ChIJX-viMP4vzDERV52z80GvkdI",
+         "plus_code" : 
+         {
+            "compound_code" : "5V2V+85 Hulu Langat, Selangor",
+            "global_code" : "6PM35V2V+85"
+         },
+         "reference" : "ChIJX-viMP4vzDERV52z80GvkdI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 12, Jln Hulu Langat, Kampung Sungai Serai, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0907242,
+               "lng" : 101.7946145
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.092264180291502,
+                  "lng" : 101.7957551302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.089566219708498,
+                  "lng" : 101.7930571697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Serai Bamboo Hot Spring",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1909,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101020604460773913591\"\u003eSerai Bamboo Hot Spring\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tx45YCi14x4E20gec_xKE6Y7FuzPFz9oG9shOMRFBayNYb4sEQ9pxpWz6ZLl53gMPvzrvJ3vapOdTM3EHgDjXR4O2Ktk9wMPpSN1F_FR6Oz_Qg20ENtdnJtBf1uLgAzWsQOl3qVH-Nn30PrGGBwl_lYkbQwuvnhXmvaTVtPkfLVZvfx7xyCGwl0BMhnMVGQdBe7IEtJF9j0lcRl-mmnx0p0aPQ10V1ZNhH2a9aWun6HtpdTTEz1lO5c1NQh5UnYLh3Vw6ToH7MHsYL6sesXr9rfTOm5IpJBw7jA3eTohpYaZBxGLL0s5IOzfgEd1ysVTWoI3WcR0xA8yDxZe2QicTVyUW9HsS-tT4VETHuzWh_dHx9W7lQhL8D8KDOnoXsao1MjogUvTvZPnHevOFxhqXrcJLDpoZKvkUsA9GpOrBl3CA",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJVSKDznQ0zDERvCl0AVKWcvY",
+         "plus_code" : 
+         {
+            "compound_code" : "3QRV+7R Hulu Langat, Selangor",
+            "global_code" : "6PM33QRV+7R"
+         },
+         "rating" : 4,
+         "reference" : "ChIJVSKDznQ0zDERvCl0AVKWcvY",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "spa",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1474
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "11599, B52, Kampung Kuala Pansoon, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2107711,
+               "lng" : 101.8715533
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.212272880291502,
+                  "lng" : 101.8729441802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.209574919708499,
+                  "lng" : 101.8702462197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Asli Rekreasi",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109024752322323844187\"\u003eCaptain Mika\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ul19xTB3LbkolR4cGJa6iQzl3R8wAi7oU4N-zSiS2fKEqNR2Nm41w5yvMh0fnjVGVkqgeEfDjM1uUm_WtHai0vmK-ftgLY3HSaz_xAdcGQtCqshSNDgOiPBqCefcqArY2ICtZ2nshpBvYEg66sbk8KLzlFYZQbYLCulzsv5ePMFugo-t38WxrGKcS1mj8oq_5o-Av4OEXuK2BJxNv-eXDerk766fbt8ML-WdlVE4NlUYPyac1Wi1vf-ILC6F5LiZ599Wa2AtuqI45-hY6kmF8WOEAaF-EfI5od8rbicp32ISlWGWvVV3FfRq2EMx4pbw1cFnVApkd0BMXaHfbSol51lZCl7B8KM5QI17pobw5ubyl4CJtKU3w18rFhL23Dxc9lbXxkmMlsvSRtuXVNC6ejPxkxvDOgM2JjfPChfFX0Hg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJIe2EYBM7zDER-Kcwe2zGu48",
+         "plus_code" : 
+         {
+            "compound_code" : "6V6C+8J Hulu Langat, Selangor",
+            "global_code" : "6PM36V6C+8J"
+         },
+         "rating" : 5,
+         "reference" : "ChIJIe2EYBM7zDER-Kcwe2zGu48",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "39, Jalan Mendaling, Bandar Kajang, 43000 Kajang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.991960600000001,
+               "lng" : 101.7866747
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.993323280291502,
+                  "lng" : 101.7880900802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.990625319708498,
+                  "lng" : 101.7853921197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kajang Heritage Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103083043629984305570\"\u003eSui Lai Khoo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-srN0xPsY8UEBUJEhISmlkZY8Ygyh1L4ICNIZvfgM4mNheEyEprqdu51tcEIkkfgVrbkCtWcD-rzmqz58Zi9luktq49_kLS3WFdtkIcHG5t3PCvhf35glV5OiTyf-C4TMUybMKepga-R30DOP6po9HWe3RCZ9VNb78VbaEuu7C9VEjVIbe2sC-C-h72rjOiLD6Vw7pb91ZFsu1iX_U4xb4APJRrqPn_qA1rYfy2_bAfIxma-nZZHp21opcMwVNQOevH6tSHHB_Bcz2fay6rk_dSqh8_FOpKrJB7PmWsTuU-UcLiGC11y2arPkXMAUpWyhSB9UMr7dViSRuqLNnFi9qKoqYDPIVULHXsI16MRyScV-SzzHigvSfORwZmncKY4q0_QDfpczcZJdsYTDaZdhFVSKrAat1wLS2XoZT3qU1tRg",
+               "width" : 1868
+            }
+         ],
+         "place_id" : "ChIJBUOBtYLLzTER5_Zo3qj_voE",
+         "plus_code" : 
+         {
+            "compound_code" : "XQRP+QM Kajang, Selangor",
+            "global_code" : "6PJ3XQRP+QM"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJBUOBtYLLzTER5_Zo3qj_voE",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 68
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 16, Kampung Dusun Tua, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.136917,
+               "lng" : 101.8345202
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.138350180291502,
+                  "lng" : 101.8358275802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.135652219708498,
+                  "lng" : 101.8331296197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kolam Air Panas Batu 16",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103108291958295420168\"\u003eKolam Air Panas Batu 16\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tYvLbgfheMQp-SpGP4c02jP3Xmlhvn4rbZcbjqDm1knWIHP2INljpGXDEM8iHIl6COsWIo9aqUwIIIXrPiIcaVJLcPJT_QtAubr2DgmG87dY-KQF5mZoaWGXeXklrz51WKWeA6nF-HprehE6PIAfEDCt_DbCGWdePJfGOaPpLqB4n7St5raeIFgHea9BltrooAMmm_TJtWBgIyRKt6xXr5gjQ-6OacgAADsOpEJPvTLNCKynJSGX3s7jOMHUVjTApv4PYkjOqrQ0NiC-6uCGeX-5xToiSMOQ4br2eAIqWu2WK_Jr-_CDFInvRg9EL_e7JzC_48jGHzSkeA4MMGxQ6N1N3_yanPjSxPfV_U8EvJKyklHQPOQlP773nHtqTmhDene9h5mRd-wiI0kEHt2e3Da6Pj99wR52n_-uxYfwKmIA",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJRWBVVw4xzDERRyoTm4kVdz4",
+         "plus_code" : 
+         {
+            "compound_code" : "4RPM+QR Hulu Langat, Selangor",
+            "global_code" : "6PM34RPM+QR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJRWBVVw4xzDERRyoTm4kVdz4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 614
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Pungsun, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.217332,
+               "lng" : 101.882736
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.218773680291501,
+                  "lng" : 101.8841180302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.216075719708498,
+                  "lng" : 101.8814200697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Gunung Nuang Recreational Forest",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107402636523016701010\"\u003eNuraiemy Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sq661Ir_cX30DzDgQhth0BxXG3VmV3HnUydavADO2E2Uh76-GOmUMCCGMXBZxGgG8NGAfWdLVTNIbRVDseUkeoNser8rCbd1riE8PyPqDMxFIOLXbAS1a2XiVSWO0k247gdUh889kbgQ1Q5UGWFfVLPZu1LrWliUcuieLtCDzIvCIbhTnOWPnp5GwM4zGVrKBYYw75cf7uv8CI4VtVsnxUjDyOG14dj3vSkdKWb0FRB41es5HAQmWC87z2Ctgsc7yg5TFZp-7j5bmYHq-odLptDZXzhvTzs4uB8Q6AvFwGAQJER41pbQjktPOAXwtMAf46pqkdvagEA5ZFydaUEDOJz2nJE4vo6sTkYXVNHCnYwz9Ran6sJkfJeSQWe5ac0EOP5OgfqDM4ZsqdN3S3RGoMdKNxuXCLl7-DUxnIwwptzqY",
+               "width" : 4208
+            }
+         ],
+         "place_id" : "ChIJLYT8Ec46zDERo61wF-0Khj4",
+         "plus_code" : 
+         {
+            "compound_code" : "6V8M+W3 Hulu Langat, Selangor",
+            "global_code" : "6PM36V8M+W3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJLYT8Ec46zDERo61wF-0Khj4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 527
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.135385,
+               "lng" : 101.858593
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.136733980291502,
+                  "lng" : 101.8599419802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.134036019708498,
+                  "lng" : 101.8572440197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teduh Tekali",
+         "photos" : 
+         [
+            {
+               "height" : 864,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117619818770252763858\"\u003eshida san\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tFUwV6bglfCE2NPi97-vB8sSV-An9OzvJ6qp9akwF38TkMjU40E1wvut4D3kbXl9zXJhCjpZ3e4ftT-H0QOGO6BLUJibSKkc-aWjbZ5xjp0XyDW35NFafbyyX5KQmwr6bqKjoXloufWd7dzAhoqFSuo2ZkxVA4SrGXM-zlA3EpawBn8RmStptd4K6ejclowChAyiG3gOVZICC_f5FjviD42KJ-WTGfE23dUhnQ-1pd2aTs7UDJMMAk5_vcJ7biWB_xF8JZTFG7CDiDRXrDSmecmlmV42UpTSoOs2XIvoNnPozn6eR2Zin2lNpiW2sjAhW1zbcLoO-UZmnseFZ3M8g0e6F01o1fXoMl7L8_riPH_hS0-U1go0W9RC4K622-996JRvyEKbKr77F_yDD3eAuqdUc5oCSZ2PFXAVq4C0UV1-tW",
+               "width" : 1152
+            }
+         ],
+         "place_id" : "ChIJVftGaOQxzDERpz60sL1Sl_Q",
+         "plus_code" : 
+         {
+            "compound_code" : "4VP5+5C Hulu Langat, Selangor",
+            "global_code" : "6PM34VP5+5C"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJVftGaOQxzDERpz60sL1Sl_Q",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1208015,
+               "lng" : 101.8568716
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.122208780291502,
+                  "lng" : 101.8584720302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.119510819708498,
+                  "lng" : 101.8557740697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lulin Hills 阿新露林",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113335613652079599842\"\u003ewilliam py wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sPvD9HsKZEGz484bdNeZUqZZ8qTNRIHUdFrhnFkNl3SQ58l5jGn0PtE2iAafjQqAXGmisLs98MQLnoeo9TmM9mX_0O00aFpd3Wg_AousVF7cvbzGuTWcEDJhoIBra5V7iL9GByq_7q1qFGrUdfUqw7OCARV-ELv83tZO0PfbY3wvgHQObunIdAsLBDuCrtwJuNDvozWSNoRfAWqAp9PEeY24MsakmpKOd8XggK6FzDXYuKPQoSwuRMw3kiDdM2M6JtoIk0gPmitozH4EsoFwHfLuM3_J5dULFHJc68XL24Aa2mdRNPcJTAYYaA_JOeRY-O23lodzQAyYNzVq-dbv-o3To4QfYkUaAqmAKegOIhBVnk9ifHx7senNpvETGkvaYlkSe5TOsn-_nWc-TWmQx-N9nnX2ow2xgjiQ5hmHPPzw",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJ7Z7mPLQxzDER_hgQZlC4hfs",
+         "plus_code" : 
+         {
+            "compound_code" : "4VC4+8P Hulu Langat, Selangor",
+            "global_code" : "6PM34VC4+8P"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ7Z7mPLQxzDER_hgQZlC4hfs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6
+      }
+   ],
+   "status" : "OK"
+}

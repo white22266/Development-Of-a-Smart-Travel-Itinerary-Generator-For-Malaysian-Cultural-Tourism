@@ -1,0 +1,250 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Besar, 32700 Beruas, Perak, Malaysia",
+      "formatted_phone_number" : "05-674 0160",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.5011182,
+            "lng" : 100.7802537
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.502428130291502,
+               "lng" : 100.7815550802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.499730169708497,
+               "lng" : 100.7788571197085
+            }
+         }
+      },
+      "name" : "Muzium Beruas",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1215"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1445"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 5:00 PM",
+            "Tuesday: 10:00 AM – 5:00 PM",
+            "Wednesday: 10:00 AM – 5:00 PM",
+            "Thursday: 10:00 AM – 5:00 PM",
+            "Friday: 10:00 AM – 12:15 PM, 2:45 – 5:00 PM",
+            "Saturday: 10:00 AM – 5:00 PM",
+            "Sunday: 10:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3204,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108098594915832330656\"\u003eMuzium Beruas\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t4caJHLirVZhz5ZoTejLpbrCuvuT22lW02rBBZD7ltHcRldpFFIxhViEhqhF4XHoBMhVreZ4mWCE614wNvnf6Ok86CCGUHKNQMd_VJqwn7ttj2GD2XkLpCOTU4q4-WfBkbBetqY1G3Ire4ZRNztKAwCGvl1oefx_MDVRrat5PwkTHKgqzdfSMk8lHCIvpLRBOQ9VSZlnQOxnopDjQYlb86Llba4zxw5cf9JF7cXVfJja9ZhPCPvPHRO4M4rf8mRrugKQNVJiFR1tXYGksGjDj_7tkWAIhiRAb7n3dG7nn4QQJC9Q28qaZyiOVxEExYLNAge2VFKE2-ZabpkzR4yNfX02BCfi1TRsPm4cDK_PYxLfD1UhyH_t4sppkAHt7Au4-bakLXe4eeNLyCQhzmJC9ezoxos3zQPwHHMOvfPS3m-w",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100638905056070101902\"\u003eShamsul Ridzuan Idris\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3w1jEfWPHp_4u0DRoeqPzb0vb4g-opXI20vdd9LMww3Dj9UHhuYKJI16v1HMkVltqHSKPPBAVSBovpxLY8m4hLhIFIDdl5MisDqlM-EfM5-PBICZbzrhPXL9O4gK9AmVN0jrOaXrRfD61l0R1Fl3MAJg7mXZ9UWHM1b5sSGN5Bz_q3LNkX8nwy23QXqI1o5mjRvtnslelA1M3kea8jOLPmdutv1DEuZjKu2u9o-JG5AI8q45loWrMa-U092uC2aZheaAu3TWqXGPu8AEQf2a3EguXOr7U8cT8psTIQboSms8959NbIoNgoEt3M-kuyMNFXDmoa36v1o5repijBCl6mNyE7D99YZke8wZgYkvt9C-1wNkHWcPCRt51vJ4EU2rnkiQRT3E3GOZVcsYBn-Qu5o2ET4NAHSxv0afO1IsrHQCM",
+            "width" : 4032
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109433786243999012077\"\u003ecaptzulh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tvEhzghTxf3Ywt3kjFu2ZAcS7sQ1Z_Nv1Tf2rgXx9ZdLmONeZdRChv7LF0EBFNlyVhTp0KelOp8kOYb9JhpKETt2Rk4PwVyBMLO3fGWVnsC89qU1zkTNSuXkRd4qJVV-8QLDZ-GdAXfQoMV26w4MG0OyGtnzblKzrJUhCuwBXPwUIrJ--3VxklxwvawcgLdiPEY1I0tidTwYfa7cz1909Zx5sQQn9vYpgMMITfZu-6yfaBXvp1wirtMUVRuRvKgUDsl-Lt8JISNTgXp9HlW6N8TzgHzUnQaMEruU2P0Xr47ePvHEhyyb8SjQwygB9vdYlUnJ9jbOuc8USHoBRjrhVhCh52OJO1F9ib7RzI_c20dXdwSSJSVojniYHyf8-UzdRaOfitOUX_C8LCswrXLxKXIxN_viQPxvFr2nSyyruus7k",
+            "width" : 3648
+         },
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112359584626105559024\"\u003eSanggar Cinta\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-va8sPwocJSGiNhUWcTCR4vNkSRAxsQ8vSwU9expWsrX-feUE2lzVK7ibQTPJHYRB0W-sR2Z-FCWWpjs8Q0G6VQ1hdxclp7QzgIdCZqmGan-LUmRcld8sVhuA8CDzVw8oXke5kuXgJQ1j4nDVIygbpM2CSBizG8bu3AE2qfjd-8Ffw6afuIPmrmf_x6pvTBUsEDUmXooQoUOBqZ_D0K1qawXHoZp8dj_E9rf2xYX35Oyg00p7uQGSCtpdehmWN-AECRwVCCd2al1d1-cVoPjE580o5JwL2NGUnCjgIwDZ4G2ArLjUq9hP-mXGi563UvmnH6oZlLuzRaNWhqy5woE0JbFb0a7ipx4BZHnk7d-AsekdZrYDzWH_fXDPIOoi35f25MVI1d7ygGuTnR4jD8rhyEF2B1ur6xGeNeuw6hmgg",
+            "width" : 1080
+         },
+         {
+            "height" : 1706,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108098594915832330656\"\u003eMuzium Beruas\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tHI1HW2PG7AJsFOzRykpQ-iHJYcyf__vc37P7USx3LD3uGIqNlGw4sFMTOHZKP4GhODAn4pX1HV1rrP0xS2mCWNp0eKryc5_9-0gGGosHa6a99j1UCvXgBSxV6cYuY72xe0fOmTV0LyjsWr_FpSF6mPUamdVMp2Y85NglGLSMW5zt7ieU-WkE5wf9-l23GNUQfD4YMRCb8eI1lYA0ksF4xeTlsXT7K6iwgz39BEeEsHbpqIUATAnbUWJEerRUJIaCZ5qorAnfYRxnQen0cLebPrJkZ3h7Y7wHLKm4X2C3AR87QDkgUVlumYaLnipxmLWmOcCc7OkwH0UdavceDuVxAF1LbK_n3IBG0vkFnsoeu7X9UTZktbNGbmS6Ex6SeI8Pgvh03FZv1upOcC5tDGSJDAehh6BhJ9Z4XNHNKhViDLF9v",
+            "width" : 2560
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116846843956984992200\"\u003eKhairul Nizam Bakar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sy0J8DobUpG0lr25rLBsIFoV3eT5oWi_HpX-76lcxMcZKlQIe61xa0WJjtAxp39rP94a1FmSm7OI2np4ha7w2LkmunWi0rrbbVOWHTzJQd8HnvNWMtajqHXGzfjxP8WuIwMaWOnVp26SI9lWdKrDpNjczMjrqxsX2vL2mdfMQoRLErk47PO-YISvDTAaUD4T-8qlIyCpSSyb_ETkkqUc81yuMOAnMeeXGX404VEMYa2LFepXxta00C6Hrs4loNLHuUnZVoelFT0GFB_wyOplFNBnwxgw0tru2xPWoeg00zU9tTOkE0c858YWCMUk-93w7HXCgIKVGBa1rw3pAtKGhQi6Ub3CCnLvS6AyCxoXSA4m7yYYDwEQc26mVm52I1CD1n_n1VlomevjCo1DEzb5B5bzEY-cB21EogK1gQHThG_Q0DFAkuKhsCf6RAENh5",
+            "width" : 3072
+         },
+         {
+            "height" : 1706,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108098594915832330656\"\u003eMuzium Beruas\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uUyGm4m6Ys2xF-VihNKfYsiT4zCqWXDySM52TvkLBSEftiQ0Op6A8HksY6SXym52mAhnyVqK2j2b-XqNq7_j9f0As6y6VtezEAjR7gGNZrc9wBA23wP83sfEqU5mJH9ZeWQx1wdgd8ZXjM_D3Tfj7lb9vC_lGBNtD0eZZJwboznlEu-wVM-4KhloYjSZXv_vu2laoPS8RvyHOv7ycilerqVOFCcwnxA5CuVjnhF7RzwtlR_nZYxXAP7bqEW2yqd9iAtCu4AwRGkMyfe5iFG5hLzkPJvMzexX51Bd8CJKZ2vynZPMBmgSTKpWze8HESf3BeID1gY8fDbfTke6VO95SZ6_XiPMXopG_aCCuZtDIE8fEWJKpqJhdIS8slX4mNsX9XY7uTaKWZ8K5Huu3ccKiaWdG2G4MASCKS9_hmP-D2OZD_",
+            "width" : 2560
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113767059303117562653\"\u003eNurhafizah Yaacob\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sNhhwjtCBljvHXzyUl_U89WjmceR17Nfemf5RNvJTlYTbGV5i9pX-T9aLKngJtRR-BkFQlY3gHY6UOBSITralm-d_iChQ8whxvXanO8OOpQQuK9Gvi0vQkdApwvalfpHnhpcrCenHXkUbXQLRDZ84b0HSvjI93hue-I-4c1jV2Ip2ntntHeLoLncZwOrS4d4j88IRXybHy8THAD_M9_Sl6NNoeB51ay83Zhqqoe0ZKy3xgdxXWgxyngcfuBEOhAucMB-OniqrxK6JgTyt-Vw7lDa9wxCcK6IbyiIFe9GfwmSiy31PSNWx5PHR3FLGaD5BpbDWuNGYpNLbXBRajrEeFg17VYsf403y7uYGSZx2Pvvi731_fub-rN17TEZLScJD1Rn-C-TMwrNYYXFVFYnRRNoFiV-OlT4hPhMuMetNg905R",
+            "width" : 4032
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100652236106131536962\"\u003emohamad farid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t8unWwocDhth7-xgdP8DMMAv1pYLFkQTHuGVXGLp73EKqAJ7I7uyss_337c-0wVyF0aQq680SpGhUc0g13aeiWcGlso07ySsS5x7W2XwY_1ml1ksTJVJ2D-IdEODkxng-0_-etpVpQ2HhFcMJtgpfm1T991FfRRMIq2V_6K9GCoDZD7Uqoy1oTBeiYoipN3qwl8l19bGDbWdlDN0NHH99-qFTFfva4E31U6R8F1xtfyfesidJrFkqVqb7Kufx-rpxLqFt2dujMLpeuVBDA69RmcoSRHLdFn6s2mJibYbfylmpVoQ4KHJOco_NtPGBbogUvqGR98tyayiNT-SjGgMu3Y7oNOopvzoDUx8QNWWLvGzQV3THDrYd4mw-8TzWUKpN2e9UmEOX5B0GhTnF6MyDmPC-Hb7dsYTq7AppnHK_GagFj",
+            "width" : 4032
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116846843956984992200\"\u003eKhairul Nizam Bakar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vPUE2s-MxUaDoEjI99l3qtNYg0P-T0fNfeZKuEoyl_lXUk8HgpprRotwOgJE9NXYpBwEbvb0vZp4UEs4ts1pSXsYpCK6KhNH40QvrLWXTypj7CzWL0rBJ00Fm-rCAwusnH2nf2DdTfI7xjSxDhyKcOUhtxGYmyYdS2ibq--BZc9eNiieS1Q0Ax8bLmqyI7PRavgQTDyawh_f3HAS1U6K90xE6Vq5zUqISQOGuLk3PD-l8bxTAI7f1dH_awy7vHzMZZN3IkqmaPqwtApaDFzs1ObGR3q2yUxeVT_bHq0RanKou8OSy7-ucbsghxQT3PxbzyCFwmbaEPQzGWTWotgE8-P5_LhzvqeqNy5zqz2dinassIC95meMEz5coeuSR2zEgorAUorEg-ECWOtnUJoHy9LfU4LYlJjhTfjRTZ_DfxO5q0OBQ4w2z9Gf18Uds2",
+            "width" : 3072
+         }
+      ],
+      "place_id" : "ChIJ90bKH-vPyjERfSsZf7SNxys",
+      "rating" : 3.8,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3154645870362307453",
+      "user_ratings_total" : 200,
+      "website" : "http://muzium.perak.gov.my/"
+   },
+   "status" : "OK"
+}

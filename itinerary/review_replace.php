@@ -13,6 +13,7 @@ require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/RouteService.php";
+require_once "../services/HotelRecommendationService.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -247,7 +248,7 @@ function apply_item_replacement(mysqli $conn, int $itineraryId, int $itemId, int
 // =========================================================
 if ($action === 'confirm') {
     $rejectedCsv = trim((string)($_POST["rejected_ids"] ?? ""));
-    $hotelId     = (int)($_POST["hotel_id"] ?? 0);
+    $hotelPlaceId = trim((string)($_POST["hotel_place_id"] ?? $_POST["google_place_id"] ?? ""));
     $replacementsJson = trim((string)($_POST["replacements_json"] ?? ""));
 
     $rejectedIds = [];
@@ -302,13 +303,28 @@ if ($action === 'confirm') {
         }
     }
 
-    // Add hotel as last item of last day (if selected)
-    if ($hotelId > 0) {
-        $hStmt = $conn->prepare("SELECT hotel_id, name, state, district, latitude, longitude, price_per_night FROM hotels WHERE hotel_id = ? AND is_active = 1 LIMIT 1");
-        $hStmt->bind_param("i", $hotelId);
-        $hStmt->execute();
-        $hotel = $hStmt->get_result()->fetch_assoc();
-        $hStmt->close();
+    // Add live Google Places hotel as last item of each overnight day.
+    if ($hotelPlaceId !== "") {
+        $hotel = null;
+        $hotelDbId = null;
+
+        $daysForBudgetStmt = $conn->prepare("
+            SELECT i.total_days, tp.budget
+            FROM itineraries i
+            LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
+            WHERE i.itinerary_id = ?
+            LIMIT 1
+        ");
+        $daysForBudgetStmt->bind_param("i", $itineraryId);
+        $daysForBudgetStmt->execute();
+        $budgetRow = $daysForBudgetStmt->get_result()->fetch_assoc();
+        $daysForBudgetStmt->close();
+        $tripDaysForBudget = max(1, (int)($budgetRow["total_days"] ?? 1));
+        $budgetForHotel = (float)($budgetRow["budget"] ?? 0);
+        $nightlyBudgetForHotel = $budgetForHotel > 0 ? ($budgetForHotel * 0.30) / max(1, $tripDaysForBudget - 1) : 0.0;
+
+        $hotelService = new HotelRecommendationService($conn);
+        $hotel = $hotelService->detailsByPlaceId($hotelPlaceId, $nightlyBudgetForHotel);
 
         if ($hotel) {
             $daysStmt = $conn->prepare("SELECT total_days FROM itineraries WHERE itinerary_id = ? LIMIT 1");
@@ -324,9 +340,12 @@ if ($action === 'confirm') {
             $hasHotelIdCol = table_has_column($conn, "itinerary_items", "hotel_id");
             $hasItemCoords = table_has_column($conn, "itinerary_items", "item_latitude")
                 && table_has_column($conn, "itinerary_items", "item_longitude");
-            $hotelDbId = (int)$hotel["hotel_id"];
             $hotelLat = $hotel["latitude"] !== null ? (float)$hotel["latitude"] : null;
             $hotelLng = $hotel["longitude"] !== null ? (float)$hotel["longitude"] : null;
+            $hotelAddress = trim((string)($hotel["address"] ?? ""));
+            $hotelState = trim((string)($hotel["state"] ?? ""));
+            $hotelDistrict = trim((string)($hotel["district"] ?? ""));
+            $googlePlaceId = trim((string)($hotel["google_place_id"] ?? $hotelPlaceId));
 
             for ($nightNo = 1; $nightNo <= $nights; $nightNo++) {
                 $dayNo = min($nightNo, $tripDays);
@@ -362,11 +381,14 @@ if ($action === 'confirm') {
                     }
                 }
 
-                $hotelNote = "Hotel night " . $nightNo . " of " . $nights . " | "
-                    . ($hotel["district"] ? $hotel["district"] . ", " : "") . $hotel["state"]
-                    . " | RM " . number_format($nightlyRate, 2) . "/night";
+                $locationBits = array_filter([$hotelDistrict, $hotelState, $hotelAddress]);
+                $hotelNote = "Hotel night " . $nightNo . " of " . $nights
+                    . " | Live Google Places accommodation"
+                    . (!empty($locationBits) ? " | " . implode(", ", $locationBits) : "")
+                    . ($googlePlaceId !== "" ? " | Google Place ID: " . $googlePlaceId : "")
+                    . " | Estimated RM " . number_format($nightlyRate, 2) . "/night";
 
-                if ($hasHotelIdCol && $hasItemCoords) {
+                if ($hasHotelIdCol && $hasItemCoords && $hotelDbId !== null) {
                     $ins = $conn->prepare("
                         INSERT INTO itinerary_items
                           (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, item_latitude, item_longitude, start_time, end_time, estimated_cost, notes)
@@ -374,7 +396,7 @@ if ($action === 'confirm') {
                           (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?, ?, ?)
                     ");
                     $ins->bind_param("iiiisddssds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelLat, $hotelLng, $hotelStartTime, $hotelEndTime, $nightlyRate, $hotelNote);
-                } elseif ($hasHotelIdCol) {
+                } elseif ($hasHotelIdCol && $hotelDbId !== null) {
                     $ins = $conn->prepare("
                         INSERT INTO itinerary_items
                           (itinerary_id, day_no, sequence_no, item_type, place_id, hotel_id, item_title, start_time, end_time, estimated_cost, notes)
@@ -382,6 +404,14 @@ if ($action === 'confirm') {
                           (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?)
                     ");
                     $ins->bind_param("iiiisssds", $itineraryId, $dayNo, $seqNo, $hotelDbId, $hotel["name"], $hotelStartTime, $hotelEndTime, $nightlyRate, $hotelNote);
+                } elseif ($hasItemCoords) {
+                    $ins = $conn->prepare("
+                        INSERT INTO itinerary_items
+                          (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, item_latitude, item_longitude, start_time, end_time, estimated_cost, notes)
+                        VALUES
+                          (?, ?, ?, 'hotel', NULL, ?, ?, ?, ?, ?, ?, ?)
+                    ");
+                    $ins->bind_param("iiisddssds", $itineraryId, $dayNo, $seqNo, $hotel["name"], $hotelLat, $hotelLng, $hotelStartTime, $hotelEndTime, $nightlyRate, $hotelNote);
                 } else {
                     $ins = $conn->prepare("
                         INSERT INTO itinerary_items
@@ -404,7 +434,8 @@ if ($action === 'confirm') {
                     WHERE itinerary_id = ?
                 ");
                 if ($selUpd) {
-                    $selUpd->bind_param("isidi", $hotelDbId, $hotel["name"], $nights, $hotelTotal, $itineraryId);
+                    $selectedHotelId = $hotelDbId ?? null;
+                    $selUpd->bind_param("isidi", $selectedHotelId, $hotel["name"], $nights, $hotelTotal, $itineraryId);
                     $selUpd->execute();
                     $selUpd->close();
                 }

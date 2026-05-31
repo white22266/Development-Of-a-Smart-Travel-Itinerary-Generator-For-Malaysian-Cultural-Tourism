@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Gerai 1, Taman Rekreasi 73000, Kampung Tampin, 73000 Tampin, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.471764,
+            "lng" : 102.2273242
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.473027380291502,
+               "lng" : 102.2286574802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.470329419708498,
+               "lng" : 102.2259595197085
+            }
+         }
+      },
+      "name" : "Jambatan Gantung Taman Rekreasi Tampin",
+      "place_id" : "ChIJ24VJJQADzjERiMchNWo_O9M",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15220829091019212680",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

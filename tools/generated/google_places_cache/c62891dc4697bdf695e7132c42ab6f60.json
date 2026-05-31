@@ -1,0 +1,71 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Malaysia, Sabah, Kinabatangan, マレーシア",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.5695636,
+            "lng" : 117.9327481
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.570595480291502,
+               "lng" : 117.9343681302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.567897519708497,
+               "lng" : 117.9316701697085
+            }
+         }
+      },
+      "name" : "Simpang Sukau",
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107028059132538751762\"\u003eHr Ken\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u3iBZu4MizbZkv2eeUls9LxgdIgnh9VwIZ7uyzpb3WaHOS0iPJWFLkdLuqNr-tlLm_kpdeItGXmiCf1ZwJVPNKtn5RuU2coZSXtZIRr90AmkJrDzmWoykZrP4fDtUuM9psoseD25R_bE9TRKfpu5Y_aPT4Jr-Q8VSVClmvash0G_GjbbfICAfjO5OD-PRYLkiidKzvvYj5fN-dIHAfHPglKvU-9HRZujJnKJRU5Uw1KWMz7mjkUrSLJaxSXVRn8s_dEzPBAKh7eZz7Ot28eE5AkZKm1EyA21Hxli_QVgwrpRA29CpfI4ZRZgsHYllA1vVF64CDpdoFIBVm9ccYF779Z_R6bHZLL5ClLeHXJDjhc_y_MPzX118JCUA_bci6A4QEPgb3yCmjf1vdBcA3n3EokQMtwFzP6JoqpvmGcKTmFRHz",
+            "width" : 3024
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112533070425249434585\"\u003eAp3x yt\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8bKXS-nqZWmjZNx4Ry09F7GBZDk2qrqgmFkGauO07gfa-OiUO7RObXVduJX6vGpWiQxEpg4mdlCD20g7lngIGAgujrUX8X853NXhbvcPWOKRCeh6ZQC9NPS7adyC_QzWa9opxAc3U4woeNiqQIFHyq1oSZntSGWK8UHlQIPaedIG1auUGfw2iR0k2q_5TeAKc0UMcyTn4IRbBgkft9cnBSqOkxOc83tR4V9iscgDyzlfDtGJgK6JHlqk8mACI4e8-rTs91AttzXa0BR3tYWgzDGNeYysPfSQhhwJ0T7fVKM2Anf-sxgaFWGz9gYM8BF3XJcv-um-jMhW62ZgFexfMHvlMQxJeouvEWZu7qiCoyRueBE26pVP2_FH6rirbMGHzd99uJHJZOLd-Is_K8XBC06rZyOnZmDP7LmXZKeA",
+            "width" : 3968
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107898212443662272659\"\u003eHadif Hakimi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t8XS7KffyUVTBfUyuIPu2OXXYa35yQecKVafANYjH5WdScPtOZFQBm28koG2Yq5f-BESNYrFFZP8YuGmcHlkzwvooMyhvMj4E6DkhSK0EDcDeN3ENP0e-7xn_aypCqhOYU0H6FJOyv7l_65SXWlDv2DYGg4Nai7SX8NhJvUemulHYJN-qQt4vlrK9Z3FUPIqW3qldGP7PsSE9omTWgpqaVXoja5_HTlNRM-ZW77sM0G40LqCjLEsFXH3WtoensYlPrINvF4jp5p8rI4MhMT1p_Cj_AxZbqjXdV4rlaTAelwHKrt4vXh9zoGpSjbrNpI3LAiv8xH3Q9TYQAX8a-dBbj6w--4vePUZH1ZPyEK_-E5K3_GbD-1xL9h1heJsQAu44cD2iCP0E28Kg8sn-g6UCth0pK2aPcsn53GkunLfFs-g",
+            "width" : 2592
+         }
+      ],
+      "place_id" : "ChIJW6hu1O8pPzIREsCZsHM84iM",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2585695603645857810",
+      "user_ratings_total" : 4
+   },
+   "status" : "OK"
+}

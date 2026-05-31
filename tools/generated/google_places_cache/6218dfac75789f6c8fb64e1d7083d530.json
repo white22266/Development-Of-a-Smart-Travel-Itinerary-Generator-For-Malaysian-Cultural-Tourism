@@ -1,0 +1,63 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "No,205, Pulau Sebang, 73000, Tampin, Negeri Sembilan, Negeri Sembilan MY, 73000 Tampin Pos, Malacca, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.4663951,
+            "lng" : 102.2312701
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.467749980291502,
+               "lng" : 102.2326223302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.465052019708498,
+               "lng" : 102.2299243697085
+            }
+         }
+      },
+      "name" : "I Love Tampin Mural",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "place_id" : "ChIJddF_bQADzjERyVC6KM5JxDk",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4162533105392570569"
+   },
+   "status" : "OK"
+}

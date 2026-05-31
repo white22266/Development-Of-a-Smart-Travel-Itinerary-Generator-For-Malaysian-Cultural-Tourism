@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jempol, Kampung Kuala Sialang, 72100 Bahau, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.812324,
+            "lng" : 102.364304
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.813645730291502,
+               "lng" : 102.3656879302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.810947769708498,
+               "lng" : 102.3629899697085
+            }
+         }
+      },
+      "name" : "Jempol 1",
+      "place_id" : "ChIJZxiJHQBpzjERuOaVDAj-Lqg",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12118902957824927416"
+   },
+   "status" : "OK"
+}

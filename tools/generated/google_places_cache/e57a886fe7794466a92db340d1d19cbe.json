@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 730, Jalan Besar, Taman Pd Jaya, 71010 Port Dickson, Negeri Sembilan, Malaysia",
+      "formatted_phone_number" : "06-651 2954",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.568806,
+            "lng" : 101.8241917
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.569771930291502,
+               "lng" : 101.8245556802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.567073969708499,
+               "lng" : 101.8218577197085
+            }
+         }
+      },
+      "name" : "Kota Lukut",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 387,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108986462032480965767\"\u003eKie Giogr\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uSNKTtcK8AzLsHAtx9aE57kNwgztFjz97b6G6D_tdEpwsCuWjsvoKNpeURSs-flPGZrOI3RePWmIsXOVWHqzyopHvRqVZ1oq3GbBiEEHvZ4RWG-W2kQH4pqVU9RZtXRqd93t9AhN6LKl_WC-MwDmEKFVyEyF8dOapCNBiXl1IWgYzolUGs95i-zDN2hIG_xCIhEv0_5FhA2kLDDdEs5gzoshVoVtgGaghBfLRA6HCJjP_qVShhWF2RBthUTMMSXhhTwGp2bngsvDCmxqTB9tAtDK4DUgg82ND4nVVM9FqPB9qi87IcpAnbYebqI3PaZiZj05G3C4oKPUSx0YQiZS0M_vnkRKHqJXehWC-k7TS_5SKXHwyGUMTAP86EJhELKouZBNianVYDyRcGkYy1Y9K5Pu3-rq3dx1wQffWf__WlLQ",
+            "width" : 512
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105953715362745104141\"\u003eBeau Iamnak\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vVaQSfGAr7Kj2CmsaK4GSSkxeboIexmvVhtzyHkFRKt6qiONUzT3oDo6fj7n_743zTv516IEcqJkfPjNT1AFHK1tss4Q7DR6XKkn3y2z1R1MRZwP0gyHSTDChWjSYwaVabQPjlSaKih5jIrPFzzhTlIfLWfW51TPdIAy0MxUAwFG3XUnctjc4S_vHMhVSM5JSF_rNrGMO6c2MAwHmzVCZ0H46UMDbkKPS9ED2jE5-JkGYcCFh_DJ1aISxboK6Bm9dXEnPyX8wAExIPVCoUfrpQ_hNvSYv1jU3mKM84R7QUjMKrMwqd33DukDNtyO23RvPgoFWv7X4qOsbxEB3wrRvWQVC2gXZae9mPoYeabCwLGaubEBhBFUcOs5sF0Y4ZAH5P0PJmta4KdeOFe0jE3-X0gOXg4-ARRNAwsInjq3OI2A",
+            "width" : 4128
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sg-DEfwVOwgTg6P9YgA3qxHD5Y3oHrUg2fl7yWuNGv5zuzCctxW_0_nkJh5p7gheAOKQmRV0wBHv525YHGjcpOzsFsGO45wFoQNGZfotZk-7ewr85TQBEc5Kg7tUSv1FlWLHP2Svsqy3jk9Dz12-4cmaT_XxIDvm_YKpai3U2huIKDULapnwAiM7cDnGvGf-g5UZA3ufjuebH1iKmEkt12nWLo1BQxgCND_T0ob89XOaGJTkc6vt0KT0d7IquDxcLyBkSO7SeATMbXmr8CotS8fZTwJ5F1SvB-9ID9qD952qVfFiERxQuEFvbHyY4T7BDOhS1gHWN_llvxK8Vde8j_PqIS-tiCtIdbHxaGSGquGIH4_SAS_RZNh6Sxss4mSh6-VSRMnV_NpVuUMUL_aUrCU8O8APmRqs2uPYd8tEKV9Q",
+            "width" : 4096
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u-guhJIY23_7nUAbTsXjvs1gXii1S2rv3jacdT8mQiXuYXUsr0TVdmBlYBeHiBfJucIn3qqidrMibiEvRzc5zRl6T9Msdj-jnEELiS8mT1-uNwrtSVOXAC-0AFGhNdcBTLXxuuD6JIYpeJ6WKVJTNSa1NB4cCBIjowFqZglip41GTdJHab8Yr6JXwtJdtvShqgpYAI1B1CWrtwDT3L59Iu0lkGslRsL5S77F1TgTUXugFqPnp9_jEZc1MzavqEGo_6mpPqtSvD_t6gqqyi6Wtuq7QdrQ-G3PSnK34rs-m_Sp_TWm4xxXBmYPyotJG-llqo2b37EtKZyzgMSBdQvT6WH59QiBryZuHe1EReeEPbWiSBgsDJZkvFrSyaNNDODEOUZSyqs-3kUuH0ITB6SlIm6MUw7yhZi2So7f0nd9rwtiU",
+            "width" : 4096
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118302313158921092337\"\u003eGEE SOON\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uc3ey44X_G5BssAnLGmjs1S2kLVICgSepoeO6OC9doySvU6Bj5v3WXMSFNOzWnh3eZsWK7103BU3cp-N5GEww5RxCHab42mRwaIAJYj9L6i1XoKJdBhzq11_kuqREjmw4vxnrPKq7UhWgPB1EgmuIuAYi1cFpf-aaoRl0xh4uxX7xNny4zhxBAb5Gd0vn5zvG16ZSXkH9PgantaT2yoNNsiBv1ENkcGVjsxZmc4F4QhfP0wHBshN4bQ0g5NjgQAMUm34PvAncEYLR55bAOG02CTxagRnSHiXwKKNbyBKwwRPrgJ3Ib176ykKfQ-Vq58zaJvi3V6u0XXXH1dKIxR1ohvDmTZ0uvQnPmhBDwbwJtEFL2LJMbT2HgSKRB31ceKUGMzaK5JPyAZBLNCoMRYYVtj689jVRNWTMQocE3JpGUvXaG",
+            "width" : 4000
+         },
+         {
+            "height" : 1068,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101329453330758190925\"\u003eOsama Shukir Muhammed Amin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdZzJNsbvdldKuKQ8q8C1xH9NXvhoNJZumwzB3tsI8pwMaSu7Qr4u34EX4x6zXQRHtX3vqSs0ycZpbqfjGRfu4dvchupN4meOh2sEhBGdC-OwTFFN7KZKpmpPAAhQlg1Ft179vX4xe31eXVoAWVzaOm7DO7HZbsdWoH6JFLAFY3VA6Y7METBrOsYFxtBNMGPZRwpdiZfyn06J2EMQMc3nXpd9HjRO3CueLBaMGsBscWC-51mlQa77tdvtAAcQBHUeQfyvV6ogxBX2l704fBnlGkP_WGu9Hs3QYf5l0Q5zHWOTDWTxCbcXlNh1gQz2e0UcnaFq7dUeeTdyD2_mhXgltHejU-zF_PREkrgSnBogdCl3oyvwB6epKFl1nnbw-eNm6ad-9vh9uCycjqefW7CRqStnuIxQZHx-5mHjP5iElDw",
+            "width" : 1600
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118302313158921092337\"\u003eGEE SOON\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-urNWRrOPEmASrGeSTZ5u0eImP723u79ZfrIiWoijAwDlvxNJ3y84b1akGpQjqJDBrt4AoNUW-6CSTJ7kFlwdo1TvNFsTJFHPTvitx6Wp7T1cs4M2AtKFC55k0pUIdUOWoy0_cf4JeIZVS63lH5ZRcp7EOGTZKnB8TiNrksJbo7RH5MPoY-wDGPBBnwzzpamw-h6g6PaC5rf7X6GRL4B2WHt33laDIYvRalaMrTL0V1fqRfbwQPZgPHthzX0ui6m-SEF0IeLmjncTzZ4v58GvGSAXIjdOkTrg0_rMYo_K2rgdN1n658bwbSxFPyHIWowQyJjoNlwQ36p_WBWdlWwSCG1DzGK3mHSDqgzAFfmw8B8NXBUY5plKB5ufTJnhcMWoljCzf_rud-wBznpfZKj_iCjeLx925iMGFa0EYhnYdVPg",
+            "width" : 4000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105319771393540377621\"\u003eMY Sam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-us6_RHAIgKXUAb3nbfi2GpkUOIGLt-0pnZOqivK1z8M8xhflGYBIO6wvMZhLBXT7Itgj6CzQ0MSvyoaZ1wjDKzUG7rvLA690RGmeZarYRREdJzw166jGWp3wuaLv_2Z6xLjFuWo95B4BEDtnpavtPF0dlN4YLpUiNd0fGzzRrplMM4NaA24Ng5ucscVeeizSdcxj6g-665YNtjfIjgI6td8s4sh1-QeFM6ELY3nnLJ32mdp0Cme69u5v5YSuLen3OPjKxcA8LLfGcquL8a2OULBbgHkmtN40TLlTZIKm98Tv0-Cy0aQh8D2uW_8RYHpspuOb9zwCSODmPCYeRk8RO7LeyABw8R1HjA0jrUPInJUGBRMgPz6XXSA9dW7nZzuKEqxSb2UFv1QxlXKE5fi8kOAXXaNvRqWXMV47j5utH40COH-kPw5jqbQwKvpqbb",
+            "width" : 3000
+         },
+         {
+            "height" : 2464,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105900809790140455098\"\u003e王老师史神教室\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tKh3-r81tRDaRD2A51LH8TJ8LQ-3B8JYW0QawbmVMu5CXrnYnEQDgPS-Qyq-huE5WVRDTAZF3aGMBN2VKdH_kE6QnDN37_PuU2cEM4wzBZNUJJpiAwGe-RbzX14BUPHi2IWQBqlloLWH-B7dm_DMJr_OIkgTIqXz_RuYju_aWmNf0mURmZMfAPpErUSDE647XBMJ9zbCEj_P3FMWXp3WEx8CP02jkBZgGSDjnEWMyikd0tLrcGYNOw63uWYR3sLibu_YXCOYeq5a6X5eqxII7phzLWMziyxQFXEf1r791lPlMbszDlup5uDU9fevNB8jKfRYBvSNZox67l1uCnNl6cFL6X5BL3c3WhTN1sK5YiWc1ghvTb6V9A6aMaOuijBpe9pU23nJoSGpWvlUDm7ff02GPFBBMyMCXb6Kj9FAEk8kBd",
+            "width" : 3280
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105319771393540377621\"\u003eMY Sam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sMP6mkSahtzU6VBlzeshev7jRjYIJi5Tokxp7sX_DF9vqqF2WOxwplWldEFRzDs3Rd4vD6p9JzsOupE9wdvw98n0tMJdci6-9yMk4JIjCTX2bF-ApM2kX73XmAL2UdTmh2HCMcZxV_CbM2Tgkef2r9bxFqNhXFWOfbS0iltrYX1s0g4okFCKbi985uLrE2HB7ShtovP86iuxduXFlF1yBTVVe03lTGGx_6Cpb71wLZMlgbLDHNi7GmQ4m0S9BC1ppV8PdN5JR1YNlFFvfIl8uKMEU6GYKf-j3TCUeMAmOO-xenbOXSJDPsTGBFjDeEOXAfhSWXhbUEiHCzqV1y8BWh5T15DYHZRuhhCLi9xjeeXqi_6WFsXrRsZ8-mPapx8dnkr1_4VWxq9H-OH55P249_354JGVEFJsGBi2wwJfDZp5XIfI8RsdobZKdT0g",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJfZ0UgyHuzTERv1ZIVJqVlec",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16687408484362770111",
+      "user_ratings_total" : 489,
+      "website" : "http://www.jmm.gov.my/ms/museum/muzium-lukut"
+   },
+   "status" : "OK"
+}

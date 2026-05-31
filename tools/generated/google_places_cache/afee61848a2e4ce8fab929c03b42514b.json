@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "41100 Klang, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0551028,
+            "lng" : 101.4347394
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.056148830291502,
+               "lng" : 101.4363001802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.053450869708498,
+               "lng" : 101.4336022197085
+            }
+         }
+      },
+      "name" : "Cultural Village Projek SMG",
+      "place_id" : "ChIJ2awxaQBTzDERE2rrEffpDY4",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10236094775449840147"
+   },
+   "status" : "OK"
+}

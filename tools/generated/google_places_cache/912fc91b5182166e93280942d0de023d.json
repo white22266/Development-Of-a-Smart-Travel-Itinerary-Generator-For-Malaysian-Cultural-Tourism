@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "23, Jalan Panglima, 30000 Ipoh, Perak, Malaysia",
+      "formatted_phone_number" : "016-328 8438",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.5967461,
+            "lng" : 101.0782954
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.598061030291503,
+               "lng" : 101.0796033302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.595363069708498,
+               "lng" : 101.0769053697085
+            }
+         }
+      },
+      "name" : "Time Tunnel Ipoh Old Town",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 6:00 PM",
+            "Tuesday: 9:00 AM – 6:00 PM",
+            "Wednesday: 9:00 AM – 6:00 PM",
+            "Thursday: 9:00 AM – 6:00 PM",
+            "Friday: 9:00 AM – 6:00 PM",
+            "Saturday: 9:00 AM – 6:00 PM",
+            "Sunday: 9:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115435766872919300359\"\u003eCasper Liew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uBPs7EhdMyx8BB5RsgBpm_fXpcDthIRaDTFmwyfRzbd0ltj0CA-x9Ue2r9aPu1jtn1YqW78nq1hpOEpNpXkUXFTN-C8S_i4yyFgclLyH4YdTtJRS8oT23yl0skq3-I5xDeutKkzA6Atyztze7EJktdYUdIRn9KI1Aat6d1KJbwSHQLJ2SGZipdHZ3THdW9xuSiV_4Z_AGBM9yWVfk9lHz4Bu_wcUpYXeuZ4U4QZqUDttt-2nG_q8HKGRywnszk0TkMK_8ESEztPo2UQUTruOo3r2v_4ROGLBdNiwGgQvQDLmrxNPMVTNOQqTLjqKiD_X9mCijOeiIi_Db_9D_GODwM_cslUpJdEXV070fHv97lnWeWuRjnF_jNZ10m46KSKynvUb_geN30tkuc2jqzjzhueUAhv4-lQ3YKP2j6XsE",
+            "width" : 3024
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sx4SA3bHwKoH2YjY6tAqJZHbzYJwK7RylBu42g6u0IKLyqOHJ_sbYXnm3hYPOI9xSArlus_ZHwHJxgpSVz3iI9kur2XcBzPd2RToU7wd0YJICgYEsUAjuKg3DXRbXuYJLpQXB2rIsXs6ipmOrAWq2q_JXdG7vv1lovuEnEO7hNcKdn5eL0wM5bVKJ7tmkBrAvBgtZCx0QsrpKS6yVBWMKe7OpIcbSYivIMfkZLPyHrCzKtZibZXHGHyWmWdA7ulY13U0jd_RptwwC0SapBgTnDHioNQyJzgIDAJ-NdJrmrQqmIxrahBlpdQGvsZuUdAyweEO-NsmoWGZhz_E4M6gKEdMLZ1e-ru7MjG_nGe6hl10C79VOj-7ZBEPZzIU3wJNkvs6JTzAxho42kQVwmPq4bhpJfN-FdzuMAZt8KOuYEnWv2",
+            "width" : 4608
+         },
+         {
+            "height" : 600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113352043390377690297\"\u003eEmily Lowe\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u88rJeqykJFFUjTVCAjlo4T0G6q2FwE_OBHjZBU1dX9YZCZavkYs6kGKDM9H-b0Y8XfNSzvj3RGaF-50a68sjckuiRU2Ofj8w0ejORKwIk3fMUrY52vXCpuVx96MIivvyt1DazoCNHs4W9ZaPmRndBwu2vRmxe0zy6B2Um5nalBOxoGjgp990nQVMEiNk7MDjoYQonJSV0RHhPO4WovI5s1t7aNgK5UlivvatBLyUb9AxzU9MPDXSrbItoTd_MEgRVhI01D-B7iZHGjA5FHZ0jnW8oWNenNwd3e0IICZWWNIb4UDADX4Nh85bxSAONQhTmQr87mtjKqa9xM6w2KgGwm6NI-8lLtE_IMGYxeWTw-cu_cxx6Dx7UykdXLU9_WBKs_mJS7LLM9Nm_9eFNW4RcT1WW1HghrmjcxPspQ8097Ko1",
+            "width" : 800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115435766872919300359\"\u003eCasper Liew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFaPEWdlHpQt_qzXjXJmAbjUhH2h74_gaND34nWnazYod7rOpiTv9Nz7DWUMbFWhNyZa3mVIivy0zPqOo_urdhN-pzlL0Mz2VcEaplq_hfla1zk4OQl2Audx9AjO0SpGXGAHw9x4NwM1-KCpmwmH6vRBoo6aUISbLODU4CzkVn2eUVbPLLKriYY1a994OXDRhO2oRa53x2h9AXBFfVNmbm8BB56s2L9pAZaE5x2keaXOkGOCU5S-XLh_736i82WzuwjYmETYuNfedlhi5VspuqAbO7VELTz0Vn8fN3-EGd19RwpME1pzv63-WKZHnADBr2cQajffCG1itb32pQieaxERAi_6WJ2dwRXulpXw2hNIzNm_un1sOc2xWhFvLGA0LnInnc2NpjKyADOPx_y__ssf5AdcVs9jplearRKyvAliYw",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102803597016733962696\"\u003eabdul aziz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vGmOkdwQYNOl2NGciJ1xoFlkgiW7XIHMu03CCUiUvqWpGKseLBTek_gKl-kOzAaVHzL5rKY7-MSfe-vJ--z9zq7jjK66zcdn6qhoRAFwsCOaFR13TBsF9MR6nGgfT4FrZWgaCIjK84N0rEjfZnv9LRtp3aGU_zqIU8HtwVwYhvFtCHFum7cmIXUWaVUrDo-Fup3b5OAcSsYySGhv8TJeezPOB_g49W7oztLA3D5OijQe45jMHolxQbxl0zRR1_O2PtOQopJT4SilrdYANwLAIN2VROKLdGEzXL491ytRFsNIih3Gtbjj62_-BKJFWRTGifrBiAV7Sp-7qSevcfAQB6HciOlcxrarQTeH5n7sjjlKwCf7nvUznbKGbtronFx_YebCjwhdCRN1oIqZW5AU0me5AQoNbZiXXAlnci22Z-aA",
+            "width" : 4096
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105186797250360870675\"\u003eSenior Izz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuu0LGp4ApFRaL6deupfaVQjftaZH4mrmxgbimJk7O8MJVLDlc1BuAiccVt94pk9Izeb7CkdNgyoI_c7tcqwLdcGWVpJ_3GOfMPiO6ubdtUKvtjHdeehxFtV9gTPhZqq2Sr1ZDssSHhoOUPc022xUmCzreE3QDYjjeyvu24GS5YVFJeFPhy4_WW3SkCJeBivKye2onp0Zb7i9imlwrBkzzzWg45KRP0LTZUfpUr5z4w5D46wRaclSPF_NNQ8wp-Fe7vTe6qP0HSXy6mQo7Wri4YyIvW-3Mehf1BynuEzaRNIr_pZOLpmGjJ78BSabXOcmIpY4ws3WVpJXCgp-hYKid_K7DaHe53rqceARXdIulsRMLiCIyOxQvkXWstRC48QRlZAA_lqFI0xi3GbKAmyJjxKIB82mBMyqyFessS7MNjA",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115435766872919300359\"\u003eCasper Liew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tsy8ZIDBASfuUZ250xfbh1HZDKVH7AK7pvKss83eUO0nsTmkENmcDj5tXxmqFAIWBTs0vHA5AsJ6YVkfduNvX15IhGVNVVXd_n8DYCIcOi8bItur9dWLtNz8gvBBp_wQj4j7pkqJK1lTgmKWi_iwcrqXL60QvK-Vxu6GiirHLb2-H3dmMGQ9_hTwhPnrN-YR9TSrzDMRjmW5Qz6CbFNB5cilb_q0ot3CQtlL9ACPt3QQDR7ORSQZFeULtXPaPEPYRQI1LOv2W94EqGY62Y7HVXzZJdrDFfhX3aRRm-zzvV7_3L4fUVNyHDqcji0fkgOA6B03lCu7YiQpeLkL-4L9bL99T3Vh1JLbbppJoJfxdfKTuVORE5V6ez3Fs-RHOFm5hRTKayIV0hbCIN_yEsEv64E6GLXfE65MWRua3H1UYy4w",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113221003589996426952\"\u003eNTYU BG\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tdNXUd2MCN-8ziYEimuVxKlcpNd_KASqLRi8IpafKeLeTVSKlq5Kb-n1C5uB6FBIe9mEErI5A1GexsOuAV2m709ae3sm0szuLb-cahZlEeYe4F00EuK9OVjO0DdHzazGIIjqppUA5MG3pI-q3nf_raY5weRue6Wo_tb_g--iyfqwYlOym4h7amg5fL_OPqfFd-MPHfIbVb6BrqoIzyWuW4lnATgf3xLIvdF99u5IlD-FnH_XX8VvCUUzie4jr_1xw8NB7rZe80AFOhz3Ic0XUf-Q35T0CNKLbQpKxOzbVxJx0cIJNB-TLP5JIzbt0Zu-pcbSMNRdJ_1UNrkCaSSV9b0LVpidNWKSFP1QDVt_oxAjKjaLt8_j1qWeJofvi5c9_7KaqGipEmUgOY-EajCnskedBpMOMJsjEZc_IEN3QVAA",
+            "width" : 4032
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114108499225089627233\"\u003eLinda Gandajaya\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vZE_79mBNccQ9gBWbK_nMZcdpzsxvIxRaQAb6sFKYki5ak1lGfYifo0IZ0mWOgapy9cpk4qCD2_8uHUyOTp2aPpdFvUPasA2NtUMC2cEKmuBxH1IXau9IF-E_BoENcSerC0YKbHMJtPK_wtCsu5mGG8UjcLwmAGtYr3V7sFgxLe92m1u9jKH66xqEmqG8aQWYrdh9QWyuKouTg_IWrlWnvvrI97cDhnNnBcyHZWABg8cCncg-q4flxISuESyuDWoql1oTSj29bqbYXKWTj25iPetCgYQWpju8a_B30Cy0tWARollJBMWXfm27o44Ps8WkECFomGmWBHV3d2ful6Nkb82Q6QY4U2qvpkklVhYSRCpAy-0lPmthF3J4gHOzyluDaMz76paU4sCdIABxiDqwzJnvCMpR5ZgYru7fsBytNeA",
+            "width" : 3000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108383905462593836377\"\u003eSebastian Nummelin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sNwK6-2oiIS0Cb40bs5cAHUiG4T04zaMkKJv7FYYCt1GR7RgzUwb6V0onKvtlqrw48kVVrDOftXXgfX5EG13_lijxAvu3hdpKh_cJUHdG3cuGKKatYxqEdw6EMfupeWd4MJ_PD9Bm23w6AWBfrr9Lj6YnYwU9wBz8CkxWlWcEyapT36bBAxNc8hE14U4JyPAbLkSydKFi-xa3Yx77irnKCFVwTaJwM9FCy5qDtyYO5_kJ2uwmhOWMtBqggwj1oblhQ_WDoREjBazJ0Hx1btAOSjAiZgR2AfH_9LLISSEnFKQUrBYlncAf8aoxkGMUMBgbJYyp0-r9LVWTQNIK590eLTsYUhIxQFyaY_0DqT9VLqi83kCOh_HHMGGHilSvdiKXiEhbct42GIT5-cAlghX0GHfDYL3U-KUKlurCasGCLBg",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJacrLIlDtyjEResJvADzU6Yo",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10009765000978088570",
+      "user_ratings_total" : 148,
+      "website" : "https://www.facebook.com/KooKeeIpohOldtown"
+   },
+   "status" : "OK"
+}

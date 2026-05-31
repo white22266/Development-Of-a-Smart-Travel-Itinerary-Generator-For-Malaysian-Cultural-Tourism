@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "828, Jalan Teluk Bahang, Teluk Bahang, 11050 Tanjung Bungah, Pulau Pinang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4497405,
+            "lng" : 100.214038
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.451069380291503,
+               "lng" : 100.2157084302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.448371419708498,
+               "lng" : 100.2130104697085
+            }
+         }
+      },
+      "name" : "ESCAPE Penang",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 6:00 PM",
+            "Tuesday: 10:00 AM – 6:00 PM",
+            "Wednesday: 10:00 AM – 6:00 PM",
+            "Thursday: 10:00 AM – 6:00 PM",
+            "Friday: 10:00 AM – 6:00 PM",
+            "Saturday: 10:00 AM – 6:00 PM",
+            "Sunday: 10:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 450,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103580325527004855030\"\u003eAida Shawal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tnLkzPOIkCDId9CFU3MNSMVtBrFEkZB4qRCPlY6ivdwWb8Pa18lZF4KlLAftqMTHETRN8T5LO6K55wP3PI2mjBJNe4OuxgyMAeTw_c03Ovt_Sw2zWpR1j5REgQmxn0b99SFaA7eEPJJ9OcaY9aEI1ST_yqSFBj1LH_Gv51Zc-M7rUmuAnY10esRVAD9ej7y_--kcrxQoOS2zAKXyBk44EecXfbE6xEyFl3g39LKjaSdnYJq2erYDTTQfR-QbEYfIS_B4hzIWl6Ek4tFTHNwJ3tSLEeOrirVRUKJY-VJoxo_pkFUbDi6pc_pMb-nv60cxdlqizjQVycQNXLM6M9FD-5UG8PxkAJBnc8aA_pV1dj9uH38IO0kUswAHyvVg_GD-H9r2bxtgHc4YdEMBiihkGpgRgNcRHwJlM-ZtGLLvdkyA",
+            "width" : 600
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117326721670337409065\"\u003eFR 75\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vNN3kDVGKLYRVCNhNkMg3yGPUI_KymvgGpkaIDTVL52gW0RXwIsPPSDPnMaj8bMvEk3HSf-A4_zLTvTjXZlekPF2crFULl2C_1qTw-o8fJ109ZIe1Xpz8YM8iMAHHgvBtSfmq05kKmkIGAC0gAWyuMcqmYjjpSTL6OaIYiu3tygff2KGRniTHf2XL0iqJG8xuw3_mdZNwklTK95lqOfDvbJ5Pbqh4IHpW8FZWAfvrCTXx60iXxmDfmWfE1RDI7or41TKS28KsOY5AX6VdRhtbKFMO9CuRTCQq9jQLJMrc7kIrTV8i3PYkkxH6w7TfA2OM5QYYMQn76u2nKKwB_Wk1-mfufLFYOaRf0DrhOd7QADzgcXa3wYbA_xKcdUR1s3uCx9JXvr335TPP_-RLMakQWRMuN2rp0Ttzek86Sdgllh5M",
+            "width" : 1080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100464742838236328879\"\u003eWaleed Alowaiyesh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuBFp5pt0ZKUY1GLYWgU-7ceGGi0i4IVJtaiT1l9FboKilxa5hVRYSj7JBZBfyWUEUzIHagLIzHwWR2CXH8HI58a7P_-5x4xuHY9XzsJl_vqRWLZ2h6PHeUkK3AjzX67mjhz8v77mnx3KfWlItfN1Y0vD_4YGNHEcBlNH4AXQ7jXs4lgUAuLoD-u19kecjjP9eS5wfYFZlvKAxSpgHnR1JSoSTNxeqLHIm547Wbd28jEUWao2NTMUmYHP1KZdIHUJf5w05MNA4INtFXaoQ_SumNHsRd9R0TRvk6IwTbYEQiezwnQVc2MF9vNvDZqkkqsxqQ520TDSdSEtDlX2lKZpmC0oLB1jhdCX-zyIYZAh8IAevVm9EbUMDPjDx9F_yeGGQ2Zdd8z5lPydT0TJc9AVL1fGsM_ROp1HZpbVjNteOzjM",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113426786702276896718\"\u003eHammerhead\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tR-hAKBp5UFknyzgcKmgWJn-eblfltqpAm8zAYnx7CCVjRa6v3XdoGJh20sKEfRx3Ma5ydzvydHRuulohzJH6a1jUfvUt-fmkXDRLowcsrmGgAdwCPAw8rowxj-s-etSCLp2ZxvBipMZfT6XAVfp2UEbkqaS0ny1ecl0QgNamurSslgEkq5ImTFwf3zGTndRzFNKPTS6-uWiBgdzHJ05JdRIBB-RY5h8_ehY5Tu_F8Ji-M79CgXJp2XjDjT9ohkatKmPqynNIxmMQAWetQIMtaSDOA9FqfCqCviHjQTsEvyLcN0tJn7_Ze-CpWl4VE_-m6ybGTqU8IedIQCluUDTCpoZGDWJgfvD2ldZXkrp5QMS2vsvcw0xI2M9rJSotptg6C0dz4qYvCDqg3tczIyikFrc71ZRc92LpN0Brcw0dau6ycO7B1J12mplKAaAmr",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106243822924026086459\"\u003eJijo Philip\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tLLGdz9BExERyA6bKrgplbA78eZ7tvJm2VzG3e6Hu1xYr4mDaTdyRDhSnJZH8CcfaT2kHDO-by-AiXuOBXgYO6ZYJ3Ve-uu85V5JjWNfmTH499PlQO9tpU0V2duigIGtVx-v-uj6v_3icQeng58ODBqRhuhh4EuANipfF4Cqw20FG66Z1Dm7qNl6k7QXpAe3fOkGrmK5Gcrji25rAkgqMj1FIofHUmUi31aKxICqyFqt5moTe1Ek9WhiNGiVizc1r5OdNhmV7nYLrkHl96S36vnLYWHYXJK_3IcD3INRFcNyvdPNYO5rMEQ6eBAodltpqLgEVa4BCaRj8PJlmV6t6-A6Ln5EJlycNq4UE0QRr91vTwk2HuS_Hlp9-sImbtkoteAR5hoqnfBq1mcab4F-5ndCMBD_kqZXoTKOEyT6q07w",
+            "width" : 4032
+         },
+         {
+            "height" : 3201,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104538982545480857178\"\u003eDerrick Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sfeJ50tc1Kho_M-R8pE3qGE47yaNKL7fW1YePHXQMwmSw1Aglkfb5VW1goonokkS6ET7ZvPTcW7zrjC1oI5lJKuy-6Hep6KSCvx0R6dWyBCQUHRNKVEzWwHVivhgo1oV-T2MjH_t5G1DA_afAU8FV2Eju1vlXwX60rA7-w50R0wzhr6RU8x0UbpVWlstPlYazhodqLr4hrXKYdWUaMuPkMlaRhNVXEcn22WAQT49NHKwcr8oT_FDqiBUC_ulA-v_v1ojFL2N544UWQ7Dwfo20cqjPiLL2pUjBdDpWfhUxXlflcEAtphjEuz0diEhUJbeC1cTduGifDniOOhCMHitmjUMVUJirKz-lMNaascAIqAcH-b_Fylt8Vmb4ZWkXJSk1u_GiKJuZt1J2yNLN6hQQY9LGKtFkN9JNJK7n_5KZ-Cw",
+            "width" : 4800
+         },
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110030499123766465752\"\u003eKah Hoong Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-skuVTZ2EO45KqyIZeyj32MsPxpjB2HUkr5P6oWDy-DzrNd3cEfNJVY1qq4fd1mkKlI-wQ5agsQ5ZUPzVUvgtShf9M-q5OjYS_TcwOAmkwSnERKGMkQpswuU6ImdJTZsJx8j-tq6GGBgRiYUlCigMz3NZw5_jCoFtKeqfkqmyfr2fcPuLfQ8F-J_0iPxauzaI7WjlQoB8zMjNP6_PbxiPHEonPHtAHb3SHtUVSu3w480xoUAXQgEEJbmhnT5l4Iw8d6XWo3BlGEsE7ENqyVfyf_S5TKLrYhYPY3AI8jOvICFDgENrWsaWgQbfTFEf4UbOnSFIQZKongxdqb0Kh3nt_ogDFxbx7fvqFhRvAg648098FmXAOQqdwoBzJTr-3_LWth9rSKWwr3yRPc-q95g8cCLgbyklNTO97qYZjK26E",
+            "width" : 1024
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113820519201516169830\"\u003e陳建宏\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vazFuV_pfMxk8B8vxhBtu16UT7HV4lFbbQsAJ4UxtvaYxw0RdvnB51qi7xC1WQtr6fbHhw3OibnqwvsibGVS3h7tmw5RoSOpdj9FhBM7obWadKgmKAfmjdjFUJvkQcKK8jVL3BpBlxKRFmgnEYbH2fc3DWMVyFDjBTMuBCDEYj0_VqrHFN6qRFQnO4KHbwWcRwNAHR_Qac96EgVJkXegf6Ev5FTJ1FPn4UNQd8HXhcJ4p7E3S4ymmVsFwwgWwaBd6PkW-OHBTp_3EWpCGdYos6uKAQckoDrF5ilGaZhOFnd_iF3vNCChlj_c8yV9DP4S2Pct7_RkqaoSGaiHHFZAFI6TeGm4IkRAdwevXgIOmRkDwhHmuKcWnmHq6N0miZMscws9_DKPefpAOmnGndtTWFLzLHvIKqbtu4lThkrIUtJjc",
+            "width" : 1848
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117634594452436108216\"\u003ePD\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uKcPHZHhLtSagnxzBR3FumXL3zlD5EntwzZdW9p66zBKOwS1FUmY3jvpg6h6AkdhGYuxX3VcqTAW_0v2ooDVuht1UnoogRXHuG54-VhLQYgqyz4-6jRr5fHLKAJLaPXS1n2Xi94ctu0mIS29ARqBZNo77l9TsnJbS8gShU9DYDv05XXRgqJf5497Dz2yTMjULQFSW09PUUyL7kOA2416mIqYdpOrk9RgVoxRBD9jLN7PZBm7C4uvQWxfDXKH3Cp88u79hKVIwu9n-adTUBHUcy4tW0b0d3qILOwxzijyRnNVrKjhaHgDjgk10T857A-2KrH-VqG4IGYYbkdIAZ-P7g6NUouHeMPth7gcydGau44PNUqL0WZuc4vWBZMBbxXr4JdcIet5oR5L-xe6HiXrz4alqu_EfiHsYlE1OuGhYXNA",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117205314698679572262\"\u003eSune Nygaard\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uCJpV3C90rDz6wcdy-wZvYlPFZeRD_Jb8fPJW1FxviU8CqVN9ZOqwuyIKC_fZFt2wJRWx_hmS4EcmPwDRfMlH845W97NECbEcW9QtwczDnBOOl1yLHErNtnx599NbDPQEIZ4g5dDtpmZWbzHpPSzdES4Io_5JMoN86EzUpUQPd652KAQL2j3xw0ZfjuJ1iCHTN3oPiFwk9SnF0vuiDAWWu2BCpzF4rBOVoH8-_f6tFL50C2NKRFkP0pYofQ1BHYz0-Gw7iiXZG_jlQgFL0EeSYwbDSh-GmR-Xf7ca_YmW6o-lFpDmgrik-WUIR5CsXe1WGdZAqI1G4UJu3WSmEE2C63L8PnomumwZ0WH1vjAMHd7ZcpdHjTV2xJ562NuTLSGgxN96NTK95aD9rp3YRvL_lqCHUzJ_EjLagcUQMCf69LMaP",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJdd8lXaTDSjARYLK8T3hGW-U",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "amusement_park",
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16526880740113953376",
+      "user_ratings_total" : 7123,
+      "website" : "https://www.escape.my/park/pg"
+   },
+   "status" : "OK"
+}

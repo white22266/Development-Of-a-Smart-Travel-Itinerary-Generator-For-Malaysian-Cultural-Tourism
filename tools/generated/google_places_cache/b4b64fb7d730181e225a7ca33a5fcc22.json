@@ -1,0 +1,63 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "36, Jalan Main Bazar, 95000 Simanggang, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.2359606,
+            "lng" : 111.4660057
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.237368280291502,
+               "lng" : 111.4674042302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.234670319708498,
+               "lng" : 111.4647062697085
+            }
+         }
+      },
+      "name" : "Masjid Lama Kampung Tengah",
+      "photos" : 
+      [
+         {
+            "height" : 1600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113118586630128587803\"\u003eAbg aisy aniq Abg mohd sasyim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vC0YcfKk4gBJN2D-VBGuVHfHarrg-60JOzerlDk0xwMFtnKURzjZPIT4VJDFTCAxGVmRCz2CO6khcXzaUSXUbi1flbZp20d4bbmF4vxboDG7nC_2tvOLetkGErOxPv5FI8aVLRyzGuLjr3hZieK6AXG8wm_97pEAbRhMTzJid7gkfb_Kbe0RCpe3TZ4rg7yUs5liw1WrSGYmeM5tf9qLmXNTKgzDQ9xthXAA235sRQO83uf6hT_HSrDylBFuM96BN6RogS5s27Ai-6zi8jme3-y-VheW3brKu7bBvcAStpKbOmvDyxlVI8zIz_vA5qev2AXpJe-apdgtLJ7tzQnl3Xo1p3tTWN2Qod5NGlKVZPOtXBljXffrMgcLy9YhfHu0I94cuiJQ5q8FziN2QtVPvha_GmbctThPcdqWATgS665IWaFEto6ZdvCKglwA",
+            "width" : 1200
+         },
+         {
+            "height" : 2088,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101390325732009608313\"\u003eAwg Suhaimi Awg Mustapha\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u-WROmxjD-yTNl9pb-DJI5ecG__bAN1uPaKnZlks-yFM5JlPRQXrEKvqspodwoxh4OQ39EhZUJMJOV-T53iqPJ07GhP2xZleLgZ80xYhJg610T5oNvjAosRp9H-AC6j46W-SC42M8S1E7Ez0T7PGRMxWgK2_u6oPs21pw6dDPkl6oNUtkAQpSapJ-fqPxOOe__4b5v-apiekmSx-Bnc-4w2k4cZrClZrZeuNfQKyn6MVwgDigmKyGjXiGSMVQm0cc4a1wtwuYUIQyRNxG6aHL8LOCSjVKsZBGt7w7164mCzN7ue68GiPTgDDlgeOXd6NH9l2vIxlsn5Bc8r_mZLrCMi7yXpeEaCLICHd7d5N76ZDMZ3olWuWk_mj2CLsSwILW5gzrQzYNsCvKv92kQwh81z5UarxP1jcOA8EAsUs6tCKdr",
+            "width" : 4640
+         }
+      ],
+      "place_id" : "ChIJy1FIZOpJ-TERaJxd7K-Gy4g",
+      "rating" : 3,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=9857120299573419112",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

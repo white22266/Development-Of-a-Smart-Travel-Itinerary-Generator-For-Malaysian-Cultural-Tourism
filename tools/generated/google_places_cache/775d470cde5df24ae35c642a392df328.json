@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "City Centre, Kuala Lumpur City Centre, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1555902,
+            "lng" : 101.7147872
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.157269800000001,
+               "lng" : 101.7181839
+            },
+            "southwest" : 
+            {
+               "lat" : 3.154355599999998,
+               "lng" : 101.7136069
+            }
+         }
+      },
+      "name" : "KLCC Park",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 10:00 PM",
+            "Tuesday: 6:00 AM – 10:00 PM",
+            "Wednesday: 6:00 AM – 10:00 PM",
+            "Thursday: 6:00 AM – 10:00 PM",
+            "Friday: 6:00 AM – 10:00 PM",
+            "Saturday: 6:00 AM – 10:00 PM",
+            "Sunday: 6:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117607918472144168067\"\u003eАлександр Коноплев\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sgkkewegkqazgiHf16lfs5GmhFwkDOM2vJg7k5JIxbK5wxKwoWaRsnCXmrbdeu6biuThQraU6bnlPfRnHtf-jRAqPAgbSKDnmxT0mH2dS14Nbx7lWLJlXF47qOzSGCRnt_2ZLaf1iUBlCkejzT0a2WcxQ6fOXTnCyVKjTEE6yDUwbJXRxCaFUGMXKGDiiCdNUWiRIcG5P8yRNDvyi9v-zxy6XzJJPsivqKRZr6qxNXwmxKFdLvVp1CK-plboG0P_2RaovCWpJZ-jPi3QhrsnpYDCtGIsdXR1mAFVARH3dQ762DWWDqBoGlg_cIe27JQdzmtgCyGYxQyePAR9IKP0QTAwQFFTsgPNU3sPZCvNBdGkGfUv2I7I-blrM41UoAfINetHogf2At3iuWbMbetsvPirPQ1k0OqJXsBoMxBDnwfw",
+            "width" : 4608
+         },
+         {
+            "height" : 3782,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113420431913866550898\"\u003eY E\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s7NJqVSowm5maHonFIlV1Es5qKrmwLFVuXd-ath42-N03EUUAQhu_rjP6OfK4bpdviejF9uSEWNKGvzHF0omGfVy1F5_Gpxrpi7G_8AmYySc6vtew0QJ_8VWpYC61wvnLcBJpyxa80B4yu_i3PTS5vpliAhKYGdiWoVc7Kvoj5nADOSlqBJIoT90pWNIXZnhI9ZgzzKsYZIp2h5PocTA8HRXz7r9n5G76JNsH5UrB8rLIbeDY3N03wgmM3SBfiNKS7GXFvjp_flvK1h7ZX5u8c345ZMTRrchDFRTCjg0Diyl7XHr2RUutQa-gVUkiC_m36LHo7fwqaL8fljEKKjtuCW1_CNPyDyC4kDXfHAU6BPIKwq5coRGo0JO7yLKzfJiEOqUZxKHeCjoTrbLaa3OUtetmQqTlivaFPnGFiTxg",
+            "width" : 2847
+         },
+         {
+            "height" : 480,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118151177936578683019\"\u003eابن المليك\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uiYyB9suFTGCCW-Os6264Hz1LszAjwzkx_aABGw4aDche0CRlJyU3fceju-7atNVRx_Xm4umo5P6m97hqUmSBsqkWeZkuXQ9KX7rva5HbrK4MLJx3fiZsbOnwst22Cx5pOKyaRnJ6EPSk6rlaAAwA-n9AWdWuNuKRKelG6JaU1qp1AkXUSYxz5FWWi3yCcQYttuwWTDwFZdBl1x3VuUBql6OYB3ugslDMQugash3Vxu_sp50AZ05MJNLoWbvvvohZ9Vy9texi0z-LHE5sTfonoZ4wBw9FLIxcS1tpe3Yh-fj5SnE3Mc6M2Sx195SEghYhjzVhsyTFY_AWlwZ1v8AWyrx2YMOCtw0DdVQD33d4xLnMLEt9bcgLMpUDJrzOnaHSe_bR1tlEi1920vjLtvB7nK7ypX0sYe79Ku9Uv9gBaFA",
+            "width" : 720
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111875804505020385582\"\u003eAlexandru Bacu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u1CaK7ZvxXAG2drrTloMmuxZCDvDFFOdTnPY5ax-n-CoCelZXeNxaAgxOwK18WXmeUTU5AJavkWRpyOZUUf5MWzjhTcOpwZ5WCg62o-RmzKS09i_ywe1SUna9f0buZw-vbRbIM9JmKN_xY2OEzn_LVV7AisfvhwCl5RmWS2Im4Y_caH_ssF_rWezLnVkxyQ0DY5GndCpfcxRGPW6zneK3S18FksYZG0gD9RsjNCcJCFC5yISaxe-jU0FCVKmBV_aOTq65Bb7L3SXTWt81tc22iDbLFyTjqJZr1EvxlKwr9Wnz_Ekrggc5bpcb4SCIMg-T4roCKLeuQTEiAbDLUIbGF2-p6pKjSCPfMrUWCf_cswj9-ZO2ff5CbwSsciD-P9KZXMOU9DfeQp4DPWsJ-6A57w6XOXyVHHNuoSsNYSf2qNQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111873662496312464674\"\u003eArif Tanim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tJb1nqYT3iK-jr17Z4ONFsfJnmzTl2QYUVIgbdcnVO4Zx9UNftI0fBM2JcHimUv7WjnsgXY2GCacZvbvtr00Xjy9ev9-mJ62TEiO_oUYip2mFMrGTO2vM8kq3y5nDMICzSBVY65p_KaYFKMRjDDMtf_g7nTHosDiaWVZzvS6qG0RMCwNNTu_YAeE2CL8ky93NZp5nmDEqvUTXXMrXMI-MZ2AmuDkQdStityOVgcTZtPm-5p0lEjaL1_7e6VeMG684cGWG7bpYU7YNCHa1ifqM_gLQwThreOO8D-KQzWOAErbY1yBfOk11vW7nKV5TCscFcvXLv9I6vxgaqBiQlmlNn66wS9bFIDpF8pVEYOsVTEoY5bxgANqyoXcnAj1-Q38S-SbCwSqSpcZMgF7Uf4nU-32HvEOKeg5VYzx51mORxDnc",
+            "width" : 4000
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108531972645832547164\"\u003eAmiaty Rani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sHvyQhx2-MAktg1_JA-0iNpB-ZVTRZFL8JdKfm1s9dMfHmwgtkCHpI-2wzXEIxFfGzFpFSchxShk0ZykmRLZmQwfxIeRNnSCFtRCt95N_SOT_cSmNzYIACVhI-T7E_YZMhweRNHQLNFXKPG_yT73Tt74StWlLy_oBcF9E5pLCrWmFXfHuQN2czxLlBa5Jq_paWycB3JagOSBcc_gkWytdEihiGx-nX9m5RPSeHcUNvFBJ5hX2sjg-RbcoZI_Gb6GND-ISfBQuJaUaAROVvL4m9GumuQxbTBhr51_YTfqmODYXPaQKs5ilcWpZ9Ke8VQkyhE9tWq6nL1ADnS1NJ5PDLw0YBHAOzwHPCMZkfYaTVtu-2Q2eXt-VOHdcd5DvuuRXYF1r6t7sZerYUE7lJWe3y6s1sHlTKEwykxo7FVk8",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113434620476292915827\"\u003emaciosek25\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vkzj_3N0DnihSpXzZIw8cj8GvIYZKqjjxbjZdeGpvtrOJTEO-p29pmM0FYoSQQALcQ2VbBMWKMx-Hp5VwlU8KIx47p_PZ6JfPtgTYvqRvA361kL_BnBatorvP7ClKT-K3BkH3DaIbCNn0hcoy2trnB7qbjYkT1UZ9DUWXdEIMP7xV4TkmNbCJX7fJRsd_LzBjq3IRR4Rln5GwWDFh4tyZsXlgFegHQKkK-9x6Z3XpNFBgi-V8Lv_euGgIE-LkmLadVHr1mFONE4mnGWC_wNyH1Zz6zvqHlhbMXSK8n4uJkkemW8XvM_bJl8NY5bMb5BLhk5Ql_cVWHivL0mjppZunIP8ikUEO6M0XYBxHYQ4GugycMzLKy24m3PwUFdRrxeo9XohJNCMqXYVW3uz9h-bcmP8oTDPQToTZs6pK3QzK8HA",
+            "width" : 4800
+         },
+         {
+            "height" : 3472,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112425911622459071872\"\u003eKajiuchi Hisashi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vjNf668zWHOMfJAaS1pPjEz8rmZLCOr94_-_QJrJfkB8UyGybnpTYyxotUXyA9ovfNebFDP5NQQHqtOFwp1WWLUgz8wnyrXe76BCRk6h7GRIo8HgcAAalSXUlZXt4Vg5uZWF5YXktNSmnvsjj3EG-Xh9e4GFLwZs-F8yJvNQhVQhX2s8K3pFT-QgY7hHAm6qa5OFCMuFqV2BBLec2pQwvOEEEX5pjy5ESCRRQcrjygv1Ide59bvgWl0JqEIZA9KNIvMoaWNf2qwGcx2QWEef-sSOT5CY33U0u4zNS-CDVM7wry-NtNKJrD42y4s0YwENOnrcudD4GcrMlJeX1aqlwtl1oHbOPSv8EFEUhg7nawAAN08eXz9tDksUvP9NDL2jCpfvEZhMmiFKCeZ28gmDQ_23iDYwF7y-TjM2TQ5nx-QUrY5OMUbX1SwQpxfw",
+            "width" : 4624
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109704915903814736864\"\u003eKhairul Annuar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tOcJSLjsVoi4HjZ7zMHHJMehABp5PDuWThZ1uTMiCyjtsyl5t4NTh7Eq5bb3jcMfj7ZRDDSDwZirn4GqiMIjMpbV9RQ1bACo-79-zjgZF_a4k1m89_aJ_z9GKBoeKFLRmUEoWGrzP8ImAk38UcAEqktRXA6j6R80wCiDGlQq4LO0ZSsxyq_2nLOH-AbWj1YJ2A9JgvTw0vPlCrcgV7BE6XncoHPQ_mKOd8hZWim4BWJCw2I8H2Raat1Aei7Uy5sJaSlMfTPGD2pWMWD6qcTAQiQl2v1yF3gffuP0_we1fL6e0Q3Qhcl7tvaF1kpBS1OSmAqF9QZJ10KJsXS7yAanTsnZAdo7dtQL-94b87H2gxuC5QdcX_K-40wEa-vuP3qym4MkSenqHf5VOpv4IJewPBMYbbUyg1UDvKWMjJdB0",
+            "width" : 3968
+         },
+         {
+            "height" : 3968,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106258118899362648782\"\u003eNAM HING Ng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tHSWU4Wg151zs9WtsQB_SxzHAxkWxPLTI95mFJbKymZ-tnOzuHqq_KUK0kP4O_xlnev5tO0Dv4xDTo10G_JPTZwQsojaR_8J6j_Q7X7yBOy6us4vIU48fjXxRohLjOosEM3hMAt9A-w2juDr-8CIXAVPe_nntnNvxJNMk35-EvHO_0m7xtGXRrk5zI1vML7PaUZiJZDUeKtA-UMtX7r57iOHr_WMvi4WxouOgbwTLrHu7V8SYj8Hdu2X64FDJhbw3B65eiKjZtzmZ2UOTHxFJRXYNWRis9S0HscZeUBojC15H7uaNzclG-veYCIXWCZJD5-s1SIpos5fWhg2dqBYRRT-NH6gSWpefk_s5pmDU01QwR-Qo95qXs8I-1XlrpIoHuPLYawjSwh--z7wuYwMniGnPYZf7QOBNqHhXMq4sffLk",
+            "width" : 1984
+         }
+      ],
+      "place_id" : "ChIJBWbm2tM3zDERTno0px940s4",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14903106194266946126",
+      "user_ratings_total" : 63145
+   },
+   "status" : "OK"
+}

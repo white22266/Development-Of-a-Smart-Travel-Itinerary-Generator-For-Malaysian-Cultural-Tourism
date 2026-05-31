@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "FJ4X+FP, 91308 Semporna, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.4561571,
+            "lng" : 118.6492874
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.457573830291502,
+               "lng" : 118.6507697302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.454875869708498,
+               "lng" : 118.6480717697085
+            }
+         }
+      },
+      "name" : "Rumah Abd Gani hensom",
+      "place_id" : "ChIJFb-LHwD_PzIRgkb2T4yHwTs",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4305871755449616002"
+   },
+   "status" : "OK"
+}

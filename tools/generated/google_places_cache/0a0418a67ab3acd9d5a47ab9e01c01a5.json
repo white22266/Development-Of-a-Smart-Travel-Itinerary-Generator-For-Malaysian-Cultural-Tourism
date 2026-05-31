@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "3JJ2+Q8, Taman Subang Ria, 47500 Petaling Jaya, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0813611,
+            "lng" : 101.6010278
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.082840180291502,
+               "lng" : 101.6025151302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.080142219708498,
+               "lng" : 101.5998171697085
+            }
+         }
+      },
+      "name" : "@SubangJayaReads Meet Up Point",
+      "place_id" : "ChIJ48p4RwBNzDER-GwzvUP33T0",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=4457991076475792632"
+   },
+   "status" : "OK"
+}

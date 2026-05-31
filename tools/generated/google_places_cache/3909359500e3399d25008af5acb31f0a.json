@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "XVW6+7G, Kampung Nala, Lahad Datu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.9957264,
+            "lng" : 118.8612862
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.997100730291502,
+               "lng" : 118.8627439302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.994402769708497,
+               "lng" : 118.8600459697085
+            }
+         }
+      },
+      "name" : "Sungai Tungku",
+      "place_id" : "ChIJUQnj7f5jQDIR-xRODrdVVjA",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3483065606525031675"
+   },
+   "status" : "OK"
+}

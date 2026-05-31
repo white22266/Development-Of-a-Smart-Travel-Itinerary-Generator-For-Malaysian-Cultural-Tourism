@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "96400 Mukah, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8775696,
+            "lng" : 112.0740826
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.878978230291501,
+               "lng" : 112.0756733302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.876280269708498,
+               "lng" : 112.0729753697085
+            }
+         }
+      },
+      "name" : "Tapak Warisan Paih Batou, Petanak Hulu",
+      "place_id" : "ChIJq2OHjZRN9jERuvkBxqKXvcs",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=14681057085660199354",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

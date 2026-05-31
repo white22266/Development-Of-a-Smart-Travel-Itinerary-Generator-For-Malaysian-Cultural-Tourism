@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Pekan Gua Musang, 18300 Gua Musang, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.8843779,
+            "lng" : 101.9676535
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.885747780291503,
+               "lng" : 101.9690087302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.883049819708498,
+               "lng" : 101.9663107697085
+            }
+         }
+      },
+      "name" : "Kampong kundur",
+      "photos" : 
+      [
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110810573064158122902\"\u003eMohd Sabal Saripal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uwkeAKMlopjvmN7cjVufOCSkKr5YEaHS5LrkEWemY2lFvm4xeFtxvLv2LNDTF-PY4lGdNlL9tr4b9pyLIq29uASQ5jUSDRlWAuBZs6SQlveH4G9vuOem7nzvDw2yXbOTyytgjiyk2x6nWKe6AFLNBCebU44sEXImQNmqwbszfX_SZg0nb3JTw5aHBr8ChTHB-qfMCxyQ3yQjwyLzh1NU2UYfaF-3owfsLOy6C1Ukr4BSi8Im-nliMwdutDLoft9rmEj0UeDhKvBa99iEUXop7WtjxFol7-au_LGMLNXEZ4zENbHdLOMYMrGnamAVHc3TqoIkysvMbRkyxAPrnkMraWOkRd8GMVeXtFGj-SZ_zxUvgpFLBQ5s0XEQ9_E0w-y6FanbK3RpSXIuVKtdEPW0HqFap78pTDyWUf6K7Korc",
+            "width" : 3072
+         },
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113480288428842379831\"\u003eA9 MoonBeam Ray\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uMT35Xwo7WQOtFSGbYwOqswa8jt0M4N4DC88uWCyFnxZvDiXsauULK_GkZfABfir1fFKjXUYSkEHudwB4jEIbs8l-bp32A3RTpiTw61t2mqMr63gd6i7xdt39AXpB85GjjopvI9qKhouddQv9AyALfylDHG9qb-AuOdZrsn3Kt5HeQidqCefLp2tN_HnQUsgF5pPSu0j3tWxvtoRaX3Crgb50hDHhK__F8hdSmAptgcJX8iARHOHVsFNvvdecIwkmGmt0qgYdyOjB3kmoO9fRcU1B1UB1obAYOfv07RXsh-mwZnMR3jvpggjVF055AJXgHR37qlK8rBk3IwVI9W9hdxy6fEX5m96agOVjRTFv1exRQjnmP06jJZHPBPZSKx0QmGDqk8iyV63FJzTyc-cK-i0BZDiT5shuJS9CnlVjD5hF8",
+            "width" : 3468
+         }
+      ],
+      "place_id" : "ChIJp7NZheEHyjERqHACT86Ywc8",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14970414648212484264",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

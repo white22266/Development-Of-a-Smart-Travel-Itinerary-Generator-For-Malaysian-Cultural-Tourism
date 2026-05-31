@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89800 Beaufort, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3410426,
+            "lng" : 115.7243197
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.342304280291502,
+               "lng" : 115.7256408802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.339606319708497,
+               "lng" : 115.7229429197085
+            }
+         }
+      },
+      "name" : "Bulatan Udang",
+      "place_id" : "ChIJr40PpFvNPDIRVNjiKGME9Kg",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12174360516623521876"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,67 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Mahmood, Bandar Kota Bharu, 15200 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1223616,
+               "lng" : 102.2409879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.123820080291503,
+                  "lng" : 102.2425140302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.121122119708498,
+                  "lng" : 102.2398160697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cultural Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3179,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106011121149801903346\"\u003eWan Muhammad Izzul Wan Nor Anas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uf4xpf3PZ5Ixj1Nrg_CBMKaQMCRHAoU_lLcjYEHc34pkQ7dLOwnhOhYPUYBsgQ0_ieZevtkKUi4ZFxrMYA3ujXBIptuDX19y_zD8XdGn8wt4P3e4KePKhoYC0vALw-R6kuk0aX_KBWgaXqEGJqj2NhdU5E-kKgk1A-qavZWmHhOWBbNk8jIzijrNtdC_B7InzwMNtSP8cbOnRc7OLc1v6dvyNnaZpXzRNSe6JNzwfP0d22ue8TnLvKFJJ-RhaydoL8zciq_NTKC02xaqCYI16-PTDZVvDz3Fh_EuB_9fQv-cRMysyccno3qFpmGd8qPl7ohLOmcC9QaKbvESnTDZzDVU-EDimAzJg1yt5B3K7mZWdcFQrYlFNcv34Hyd-XXiewJGgWSxE91peLJqnONjpqJddqVR-uipPn_3YKRy6cW8-O",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "plus_code" : 
+         {
+            "compound_code" : "46CR+W9 Kota Bharu, Kelantan",
+            "global_code" : "6PR446CR+W9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 140
+      }
+   ],
+   "status" : "OK"
+}

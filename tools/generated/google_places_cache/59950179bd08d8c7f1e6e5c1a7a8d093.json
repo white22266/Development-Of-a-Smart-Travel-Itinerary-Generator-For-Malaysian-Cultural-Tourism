@@ -1,0 +1,63 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89100 Beluran, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.6441931,
+            "lng" : 117.0015632
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.645672280291502,
+               "lng" : 117.0030438802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.642974319708498,
+               "lng" : 117.0003459197085
+            }
+         }
+      },
+      "name" : "SIB Bestaria",
+      "photos" : 
+      [
+         {
+            "height" : 2080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110476558126433357495\"\u003eR. Allexender R.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXTdI-n_gHQIpXwK8GtyHO-PElmVazKlp_D3PtVXwOViKjDF3Gl-ZEAJ-BjhWQoKlkxzmPBlLP7WeTMyYZbftgB3J8ufgikwb01BAUZOQiPUgqIAlDzjV1hgJ1IDMRSDjWWuplONXBYESYP0blY_TywxJ2NNWjBZZPf40H64oguiA5Myut97uQNlPmCawHRoHbezawszIBDhH3sLC7aQB4hkJKlL2HrtQ6P7rTCpZNleuVVDaMYNmsraBKsyUoLHMqAVRv3UgbL56q6xhZPiM17tw0JgFYYSBwT3ePX7oNgqApH6R0gy-ZdcilZA6GwOtGgdY_J1vFOauM9-D5yWZDyN0DZ0D6dRczXsKp_GdSZ6aTr6SwTHPAVWm1FSVGaGdqN0pP9W63N7Ibb-gjBiIuH-vQ0ljzmFqGfgsQ0-_RK9YR",
+            "width" : 4624
+         },
+         {
+            "height" : 2080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110476558126433357495\"\u003eR. Allexender R.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vIG5ZiveFkipktawk291Y3lLBCXIW7eZFiLnR1u5yn6J3vlR-LD0wuFeg6wpGB6qKYqb8NN5S2Y1-tj_zVYGZcgAjWfV-kln8nrmsTPzrpa-cs-rUm5M0HI9PttdzrkQMhLGnmI5x5n3ODsxGcKmQ_vCJJbIWZVtKdyaf7Hnh6tTssToDzlsZZiF2iGkyf_7OqkanUnNQNmjFPtLSTi22KT9ImWWwNSFGC_QhLg35dUCB5PsCNVeezplTroAT-DgoeaBevPSzrzctEHa1ryEc0A1djpCYgTNjYpmZ_80CFTeDaBlW9QEbcBXjmjX1dXNdEU-qFsxP8dxs-PGAjNBwVRtNCDsgYWiyihSx64jCr-BTMthweKMsKougyPuvLGD3qKnFGhf0qu-PtM9GL3wBM7vBy_QpJLpzuL20yVw",
+            "width" : 4624
+         }
+      ],
+      "place_id" : "ChIJH5XKq3UHPDIRZSJGeY3W_A8",
+      "rating" : 5,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=1152031507813376613",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

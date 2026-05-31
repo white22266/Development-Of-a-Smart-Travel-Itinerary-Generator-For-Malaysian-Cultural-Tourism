@@ -1,0 +1,95 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Limbat, 17020 Pasir Mas, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0873817,
+            "lng" : 102.152501
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.088797630291503,
+               "lng" : 102.1538808302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.086099669708498,
+               "lng" : 102.1511828697085
+            }
+         }
+      },
+      "name" : "Panggung Anak Limbat",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116574968067067798113\"\u003eche zarhana\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-seYERu5CRv5nFOS5G5twlsAPhNAzEFOSO1izSH-UfikBuQsBLQy-eCruy6u6_CQUS4jE5kNmXcYdMtYRMC3bcNY5kdM-UFpMF7ctA39Rb3zksoRwYPj8H8HW-bCodw34YC8eXde-gkX9eyiKehPmaxIC_cTEpVZVMtVyUs_IhvNtYsWBg-tnofrZ8ETQ8eSp2lZAlvMVtoW6hTpqE_Np7W9NaAaydIirjDFG65hleZOwndBiDAlv73GGWer3WMHDPap_SISP3TQaJj91N6UmMD1o03Ksmbz2yZg44tyFezy8WUo3pXPYdCGFm3C01o2J9WiXwwrBGhFBgbE9Cmw5IUMfTApzBnQxg5_s3Kcd9zfJX9OqArWrQDUQMA65mg80P-33TimOlnXAtvvWMkNkymn0Zb8ZQIC2cl8zkpw9QckDMNrQhrX0wwIY-ZPPll",
+            "width" : 3024
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103352711287865294374\"\u003eZaid mozar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sozAyggMMOVH8ofkIFYzvNT547rVWA6uk1_HNUnHSS6ssm8JlH4yZN5LpAMxLagl86LNUOKwtqk98C0cLAbNri2hJPYR2SOJN_eY7okcOGzK4yaS1lQntxRirn3eufh9n6kRubWdNzYm6fzNL2zF1aWrrflpgaGk5QM9Xmn-bg4jD9MFW1Cyg7zXwG0M7u8gQC2_s8X41189rK3JHTxtb4Xhre-bd0IDcjWbwGbLBLoStODebXDkCdH8eydKt-YtO30STu8TIcmPjY12KDVsLRYBBANSd-8NQpxshEszC-Iy-cWKibeEDV71kvuifiAXGTs9k7LF4KtYzBUunLQr9chT5P9oBtUeNs_Th8bjPtd8IK0ugwOpCeWBoetdKQ-MNpCZztFGyAmBcrLotld8_Q_WqG5bvTcZZMuw6PbaH9ub7918SoC2iRDkHuR1Zd",
+            "width" : 2560
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103352711287865294374\"\u003eZaid mozar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vHM9D_ptB3uH8rWkHzzcD5UHvMU76u-yupwELuJuhzYLN612ZfZBuBvgI5Y8G9m6-5jK_2fpIGB3IS9BcD0kTnah6hfw1tjMU_YCzOxVJOMQENRyk892hNaByYNEnzVCIdo41HJk6Fz9zbkpq4-ZEq4Sar2HfBns8YHJ4A8iA7u0S7oogoYy-kRKI1qk0kEqxz7-1oB7LN9TO0NPc-X7kuGdUcQGlcjKIyH4On2xAF6p4jVHHdTh_FG_hQ6_Ty5BLWhr1Ld0SURp91qzYY70b9EOnJC0k1h3GclwfaQtrJoWF_jtWFCORqZNU30SdFyNnZf6V4Pwnl3suuHKP-lZYX7eEXyfH_2NVuSr79HWLRnDrIl8W-xj3o_csh-myCCHpxxEoRxicRyXTH35DT_5-lSJrMafRfSlP409EfP3aSxLS7VlnkoVtwQIzNMfhD",
+            "width" : 2560
+         }
+      ],
+      "place_id" : "ChIJ0ywbJgCntjERj_f1uq7fjXE",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8182442039556044687",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,70 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "19, Jalan Pasar, Bandar Baru Mukah, 96400 Mukah, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8971409,
+            "lng" : 112.095662
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.898498730291502,
+               "lng" : 112.0970400302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.895800769708498,
+               "lng" : 112.0943420697085
+            }
+         }
+      },
+      "name" : "Statue Of Ikan Merah",
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v2XfqY--IGwZgIQLwDaROgbSMkfftNM-zvDkT4niJxp6dq5DtXJ71EiMhIAldcsj2fJzSu7qhcWbubsg9GetZqB9NxJysS_2v3B6WtKtT5-U8N825Sl-HQDe1yWggpoF3fMELoAcxEg91xM78n6U4ckWMuRraQiFSjHqy744QzZCOW11VLuqHx46XfWmlh17tjlZhHwedETLLObwTc5NjVE50FtNCGVYkPS3_9nxr1sKuh13r42ccA49Hx867P1-V2lqQpMTvr94pDnsX7ZP4DsBaCBREuYWVxrdrwLgQUssCjzp3FdwB8wAzErQtdlZSKV1nx_P1WiGjzfze0WSMGCpLIPQGWpCupfvKMua7SL15x5jq-m3-xbAmtX1lvBqXJ155i2V2NL3t0FaXr5VahBZ37h6oFsPYbMQC7wZo-j_U5",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uboWGezn2YfgJtrJZ8j2iMf8JxUxThjc4awqqpl6owcLnzBMLmK06ysHZiEMZGVIgjwjobT63fo7axwERQMlpNgX0K5nsEgMhQAlb35IQx4CRm3YTN07XCyLg-qrGQJOPBUxVN57MA6eo7LwppdPW_0hs_vN3bPKgn9Db9pzG-FsifdHEbIWh7SeUJi8H6HOSuxLLWZ0TV9-hJaSNl1BN0rZYgTb4nbFyBfI7k6bOYqojY5kKgpmhLmpfifkcwB-v2Ht44bgfFERPkBYPmLECn811BMi4X8rgtPuD4lk__DfCZvtaDDaYZqG6oESyAufX0-xUy1nQdw4vrDNCoVYTtffQs1-y2qixgJVV3jJh41_yyu62cJHMv0yajAcPYrfD8OIjb47uSUl9CZNhq49vvBnvmvTuAP0rKMB8j1Iw",
+            "width" : 3024
+         },
+         {
+            "height" : 3968,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107126384007451278846\"\u003eTCS 87\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vD2s_HllCvLkSXcIjm3mDsILUFvCVbVaQjbxm5CyGM-TKeJt3EQjlllYmgMOkTwB8ZWRlqqrsfyNPv9Vi4pv27Thnhk-6k70mTndR9rPIgfH28tnRJrzLVaLwXQlKNFKtl3bUktmy83xANv5RVrDX7AyWwST6kPMjUw5ukLLO8LoEqGiU7X-lvmlcIKb6dMFfEAxmhLV9XNC5-0f-xXSrEeBF9Qw9ScgplgH2xXjIdKFMw7QqLxHl2g0XfvZ5zDmGC2IftQGKNs31sVIkiSB1eYPAsx6rK3UfG5I-FUBcnCP5mOMAwM8k5Y_tzFWuVuiB_LRfzESQrbbrOEOijD6LLl9rqRhe3LniUiDWlSeuDpllqdaHyzIwIu62rW38i_71BYnJe-taeHQRpI7qT_iwFwSRpxdkeUzqLEEGqqUyj3Hz5",
+            "width" : 2976
+         }
+      ],
+      "place_id" : "ChIJ8YEWj8xN9jER3R2nuhBYhO8",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=17259016500864818653",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "River of Life, Jalan Tun Perak, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1481777,
+            "lng" : 101.6954539
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.149347080291502,
+               "lng" : 101.6965958302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.146649119708498,
+               "lng" : 101.6938978697085
+            }
+         }
+      },
+      "name" : "Kolam Biru",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 11:00 PM",
+            "Tuesday: 10:00 AM – 11:00 PM",
+            "Wednesday: 10:00 AM – 11:00 PM",
+            "Thursday: 10:00 AM – 11:00 PM",
+            "Friday: 10:00 AM – 11:00 PM",
+            "Saturday: 10:00 AM – 11:00 PM",
+            "Sunday: 10:00 AM – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105628541060582783098\"\u003eArun Kumar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vungE-8kOKB1B0wglAN4TG4Ie-Q6YEv54drC9twEBF7OMCYmWDHEaLomx-1u4slYw0b4BlRKuOL8Ln_CgaecyVjf-ELcoGuhMwLlxyTB9LJmKtLlbO305g6ZY1wTLa3VYD1pR6HRsp6uvvebE6KNb8ruKEBr6Upi7GwUIazNclYCzi7vXz64G2vUHnzawCEAfN4zizGRzo0BIFMFelSDZXjdlUqFpkAYJ2HELWe9EBwmS253xzgzwBIym_R0I8M1fPs4YzoIGgsuGKj3-nTaaNVuRw_owf44YPWwc9u_f0tcYSDa3rACbTKd-0mxa1u57RLNCAZqgWnOt1naioPxkdOvjuIZdXFivmsf2SUNa_8eqmlHdHhH_UqkcrB3O7IAgJ9QXAJm03Wq5s34wQ8CXTddFpoQsRNdNJD8a1nVRNsWAU",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105628541060582783098\"\u003eArun Kumar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tbqLmgjuSBL9DzHq-TDSNCdB3GeIzvwX3_9_vAwm-Yne3wIs4R_Eaa-CXAFFYoAk4FB5ePSbXEvRTPDKq0cQLO8KVP32P08dZQGMbAGeNxF9BJMqpoLXlcx5ZbqbqIw3iHXReh9VxyhWj6FKP0X8CHyDmcIULGetEYxIJEFezIi8-AlQZBsavitpqOqn3kMnufK5NQj4WNdXm7UGsVpCbHZvsPO2-la6bC-NBnCv7nsSMYw0O49E2aqDWyAtMGP-SdtHbne9iLJweopDMAdhLVLvOHt0TcI2JCOQMPT4TFTDpb_uc_mljNQGemOTpv7nzTiRqKqiYoieE3-R-_m1jEh9eAhT6TMurMiC-TQ4PR2HaqwODzzrivoGePty16T8BYuaGR_sxOq32L3uW8akzFQAgMHETvj7Zg916hAjQ",
+            "width" : 4032
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109321983463386620290\"\u003eMd Saiful islam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sFFH1WU6JRN1p3U9gM3SgTwwfucs0ZjM2s7mxesWDK3lQyjNS5IZYuUUPxO8SQafetoyeyHOC_HfxjDatlaVZoaABel_TZsAMYIRP5GwYLUyk7SAeTZp5QjfOmL7q0oKChUvnd-_fSpA9x4M9kmKKKT3iWcEDlu1_cph1pp8zlpOHoED08tbbCpwt15Ch2uuV_1MdpFzZeJEqgpR5F05ilIaq5zIe0QMOuk7ja_6ar8CjarycLb5hr1PxIWVCqNxS5Q0-AY4XGyu_RsEz0CCK_9kxT4TkIY0uRDlh5gvTD-NaUImA6rEZ5D9yC2hUqRsRGiTE9nctOeQ8Ci0juqY3DwBDfev5uQe47u9XOetgNJVorGPZFma5PU18vXTJh8xrrGmBkxYMN4C36wbqC_wyE3t4ofZ7dm11h6V-sCPU",
+            "width" : 4000
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109808675283073172416\"\u003eToan Vo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uLFLZGqK8FSAj5-cA0d2VUeilrhvGcETp0Czfla3FWUBKnXV2712cAO0sbhmCuSFxt5T85FadIwN_OoimTUUum6vwUYuG9rNyBNM3pKHGnA58w7agdl3YTPdDMnWkesniRsA3Yg_2mbiAnCc64X6Lg4eNnRxM8-KCeqpHocvub7eEuRNzZbn-iv5Egdx8CKd0MImAAl4sHalyOHfPAl4M6I1CE7Z_uhV59YRBCAYSBXoM9v4BdNHuwdfNUXEpLm5mH3_ztm3HCDtT-xwEZc84Pua6yXrZLEtKhA3FBNXtav3J01-NYlK1a8s_6DkDzyNLDr6tEWWZICUDk9hgCb_0px4rgH5xQcIX7GR-zfa8K0ZbLblxcYzh4-joaELJIV_pSPO-Khmi6l4oxpKes-ydutmo6DSrC1Q6ZXYtUbhKQiRar",
+            "width" : 3264
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110691822088620237996\"\u003eSze Mei NG\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t4Pj57fKwfrCIbsQfq2FLU4dBeAASUkY0RAtSPwpYvZTam4W4ATC6KNsxroBvM2H_XhgsyBYXN2cSChtGfiyqcnmC83GPa4Hza7R7T4E3o2BV1-A-lCkb3n6kJm32jIyqHO_z_FHkgon5ru5PidgvVr0Mh7CxwRsB3tjWWMH7PP028lAgUUwC-gEJUtHwjlzjQs0uQz8V4QArxtdmpJ6zc8efAFl2FZUwX89pHlxlUVkuBIQ00cJsEqS3ccOl_yqjpF-zSu2BGkAtkZ_gJfKNutUa4HekZ4Glr0iSAcdgpiFEasgObrI61kwTBOFeM9dnfbaN9qd6K-rbptwpiOc0auYTM9U3f4AsiWedt4g-dI-17eR6vamTflGdXk48OxuAPZCpwPu2_u8ul6N3zjYpyjSLf81nl9hjDnh9kXnXLZPIexUfkv02i9ZG9lAFw",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101854120376657149174\"\u003eSAMNANG BUNNY\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uPaQo2VCNhmFoVZhPu5XI_-mWJxADeCOOg7J7hNQ_AWaAmUA5M8nZPC6yCSbHsBZ3vgAkAlSJNzWd3eExAEb1yRyBomiNZiKw0FX2ZVlH0zP2b_zejbaVaUMvPxmrg7pewQ8EmxLcHYoQPD2P2mMBbKHp2j4lFtsD-_c1w_O9hBRvtsnKQ-ekQjoVn1H3dndilPCkqafMx0WDsODcNk5WTfm5DF72TTAcarPm5baodiaT3JJZcDRO7EpCTCSokqnq99g3a90-F6Pgut2rO4U0-RtNyLHKZ5cAW7fzkgGHFg5-sEyOsaieIf0yCPS9FQYqeGZGcIiT3ueNvx8FV-5ZDXNEA8UMt2p_2T8DNgLG1rZjlyqd-V869QGCDCAA0hiybFdhRpPNUpVmEXh9FNnsU1f6slq6KYDVhiVQiHWfPRQ",
+            "width" : 2268
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109404760884412579390\"\u003eC. Houston\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVUQVzbGB2z5NaC13GOIqpbp5U8_Q_bbgsMp-hrYbRRV9IDzaiA0vzVcRaxlHioNlVURAHycTEjqCI38_44ZrJ6aTRZq42MPE-d65aJhqGzWLRNx3yO5cJBceXDJYIN0gkMyfomZ-WynOe8g3QNn6yAUs-DbkfCzBtXWvai-_QZjU2Jyx9EidqEH6puLPNjAFaqVVLFzpDbe9SRmo5Qtb7qrhQV4aGoTF3aDGdEGkXe6EXUQQD7R35Y91Y_WM20HVtAj5SELkJL5OBNRLNnRiIIf-XZcZ7Dr1lJlKVFtSKS08piJzWKWP6KiPpFJe-ZOctkQUJpDsU0zThn7d3YmHp9-h8CNz6YwpGR_7d9woulBU0NIf39TQc7gEu_WfXCtwreyf7L_4bJC1fDd4Mid48dpZHeCGqsCQ10OSrFWGdKg",
+            "width" : 4032
+         },
+         {
+            "height" : 3464,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114893674637501594128\"\u003eMostak Sony\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sRZy4a8JDjfzsjub_GZ3QWtfOSp8p9FEPIaskC6FXHJzBcLgQFR4GkBi5KLtzzouoCDy21aF_Bes_BWtBqkoQQGDgt3ZwXiRUPy0tiTy_lbAr5ECqgCo2EqhIrEAlRgHLCYStkZXV6cVf3cgtZoCw4Wk_wsh7YazdbPsJl1tQUL8lKNkarI_keRXRDELR5MtDCeEpgYE2KHG49j4jpg3FIu7Jku1lo_yFxg9NSu2kGs75yl2A9_1AgYB5ou7CfyDoDNwt4mHbonymxQYFVg2RrhLrsHg5h49F_F2ThKqEg6Nv2k_5VypKKemZwClscpV2GsHknVCPfCmwqK-3LKaU8qFSqRNdu6iG-0hi8qpL55a7td-MxMOR7BjFZw-dNwQn-Lf5zzrleuxSqd8VORf_mgTzSQ481z97FBHn26UqHSw",
+            "width" : 4618
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104475355394573591099\"\u003eUrmas Ruusalep\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vO2z1T9X3L8RZ_vgEN2FlvD8BsGkktYUG_nICDeikKD0ZvRmwPlIkAFRz7bTzmupipQZaS2xVgCp0z27E3CWHsRN8SM-7qDLQVi_bO57I1odS6934Ey95pKFyzPdCscvNBsgBR8DsP8kGzo7oAu_Z5ypH8nObU5m-txrdQk7rXt1GBaCKDTYvcsGAqulLgNgVR8A4ssUsQtOsnG42DE4JBBmRtl8zWPJDDnpExel7wIaL__d_RHAMX--OMn9QIC-ZzgVwImfgrVlRSwya7xIDmptw-UNSCIdlmggVMEN-anFxGtCsndumo3bYP7UEZxwUj3HJqrUVqKDY1FJRashzdguWFeiBKS6kVWcACm2JTsC8F1tTknrzJkv9-LwBIfWU3xZ1Rzc89cylbZ8wniA9X51O5W0-Ft8tKNcKDd8OIpQ",
+            "width" : 3072
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109404760884412579390\"\u003eC. Houston\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vd8TPDSTzkX-V_ZHPhYcx5-dvFXCTSJSZlrPBeSYuuhkXzNlUapT4ekKK3YvfdI5fhzHlxnb0czdOMomNSesFPUk9NkcpxsIP5siPpyq6g5xCoaUK7uazXAe85X4AJ4xxBr3mp7tQHqLHSP5WEGI3-PhtsqgeqmqxHaz3ZYoMsa_ZLlJN1S8-rm8KAwSPGLxfG95yszRb7J6uxDNdkJkoSrSI86R-HzLfghaMweivq-XXCqjZZmFKbOKJJVwfgfZZ1lcHm2cDQeM_D9DOq4wGsCKhIAIaB4YxIKLWqYAPVVFzu0nIijRMdAOpLRfqHzTveMbkRWLCTJnOdcDo2U8YU8mQxDyrtiaHYGfViYnirwer_APRq3VG3cyClBjHekwzMajUyk14G6KLGh8pDGhLvUcoX606MEcqCjf2p3xI",
+            "width" : 1440
+         }
+      ],
+      "place_id" : "ChIJfXjQic1JzDERPt_s5Y9b6LY",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13179884983095713598",
+      "user_ratings_total" : 274,
+      "website" : "https://facebook.com/riveroflifekl/"
+   },
+   "status" : "OK"
+}

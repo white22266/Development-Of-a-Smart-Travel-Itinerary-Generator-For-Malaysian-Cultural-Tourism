@@ -1,0 +1,188 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Indah, Seksyen 14, 40000 Shah Alam, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0731666,
+            "lng" : 101.5143375
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.074763830291502,
+               "lng" : 101.5161045302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.072065869708498,
+               "lng" : 101.5134065697085
+            }
+         }
+      },
+      "name" : "Laman Budaya Musical Fountain",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "2100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "2100"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 9:00 – 11:00 PM",
+            "Saturday: 9:00 – 11:00 PM",
+            "Sunday: 9:00 – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117179217319849571197\"\u003eLaman Budaya Musical Fountain\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v1RkcJYoa9VCoC41GWvyamA6n1Gn3d-4MAR0Vm5Rbr7c9jPcv8Kii66WtdVdHZIbJes--Sm7vblicvBS5yMYDhISoUz4KuZIHCMvCiG-qbM_vhHH9Am9-uin4_DLqOVsK5hF2W11ZM7iEOb0wvTAHy0B5iGdMbXHxriwJ-A7pMly9IKyCjg4JvXeV952GPv6nd9OjkpOO3eBo3b7Mc1iZxM0Oor6Krf8m11JYlLZIj02nM-_nSA3ZLcTXAmHdhMaOT1TF2B-oRg34Siyeq-arC6bgLjdqPCHnNCqCs0Kr0_Q",
+            "width" : 1024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111163513109790267407\"\u003eAena Alim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdu1NFXoYE454eUeSjuMKcEaLQVOVm-Lc-iJjsbR6KBDiDHzhnX-x_woplEhWW5X_V6UiB2P40buwFIQ8ARJp_O9jZ5tvZd0tlkg7Fc3AvA-g5vNHg4QNGgGtRFaEV5pfNjDoIsTztlM4rWDhlXfhl2XsGGiEWpObOGBlbI1PFTfpzjoBhOmFqhF9j3G3JObHiNf1qCmMfJ-ZXaRUccCKf9qKgDBkeCZmxZmWT40X2tMyL9vFTz4BQ3hTwiJuCdiA9U_rQ0nWXwSPcocXEvLXpSNQ--UOWi0Dtx2mfxyQh9mJZVHewYvNpcY77Bo3oS62OVG_tPa8L_RYnA-jZ_WI99UZy0lOXUXJEVh-Uq0YtSHNpPG8905AQz4vF43gJv9S2yW11rGMYbyFA9B6kIbNja1ThAlHu13buEAfPY0cdmw",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103370704493075721332\"\u003emus ra\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sc-IxdT9Xa8lr9u7MO7jnNtc0qFAFZLQqZZ-qHEuQkwKRJN4FNOsxGhz-1ZD6FyTnv-P95YvmQevf9O8dSbzhrNR9Y99Y6MsHXMRsqWUwLosZ5UBuEpjqDZUsdkaQDtU1t-4ql0BBWs33YlbKG-YjlMimaBJKdfYusQy3B04yKaa882kZ0GQ78wnKT4h0X2sXQdFRT-vtB_gwIO_iFs2x2mGhCi_nm2A0mnWJTmRDeLf5j9icPjTEh1FijdEATvqY-hZMep_paMCARY0Ny8yfcX6aUJCGkC_OYEXIKHjC-KMslejZ6pGm95dyF6X1T1A6AdzY1wDMUx5Gf-llJLBBT5g74VPtYODn6ZfQLDWIG1ZTPI9gPo-Ei7ycLaJ6iV7kfJtAszFHPIXd71UiHKisI3AGi4nQq-ly02az9JZdCaBBA",
+            "width" : 4032
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106702720642284404152\"\u003eDamia Video Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uu4Dnhy5iqHn1j05OkDn7WXPBOe0MbYg87rNlYxR_r982eTZjPhUO3WgN2nLAGuh0HUFk3tONhYohnbRF95sdFmR10ZvF7WKNyGLdg5j4Rjo8fFGUSYupSbmpEbufkVSACwK19jyxwF2ZxWwLyLomPZb42orFQn4rPEw3krWTPZpwnko6zFlxaTuq291HT_sqdL9y0gLhrm3ml39qFxe6KZdjulFychONC49PGabvOS3OZS-AgTEyybddPt-7nf65ErVX5Ba5kLmG0O4z1QbD1JN2JgGiWkI3H0xeYhWru5T1XzwdgYQikEt1DlwrB4DyRglrgZtpl8T64Log5wKcyvgsSAzsylFD5A09dphru85QLJyNoLz7Df4uHYlNXgl5VuxCijhqHuQoGo0_8D_ymTYVlUbPsB8ankLHgvSk0rw",
+            "width" : 1836
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116255436298179166619\"\u003eAmir Alshukor\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sINJUobgrDpNGC5m45yJnhvV3oZL-mSvs64KiW3RAmHPkDUomZqBP5rYFh-W7TQlgq9Y8XW0LS8ARlzWFlKueAVVy28pdCR9EkZugO1Ph6VXqlBd_j8lsvPQTsw7EnewCoxy14HLrmcUtU2GZUnwzrOGMyuDE0GVEoQ365l9Pg7NtCAvJoYHTju6WB1XinVXlIeTox2b9wuh0_L0J4_fDOKo2mHdKY-1Z8BB_-yv9gluC8yHJ9pNpjm3jyjzJGXpUmA7sk7ow7PhvdpQvel73dnEGDXBiFc3nLQM_0owuHC7SyCz8PyCiOTuWG1c94dWCvR4FWuMdTxnJGv2P-ytPYgdPoLXyqTfE__ADmNCj69rdi-KjYBGTaHOUBrWxNinq3PQQGKKB4rIcdLDwh9Ja6XIm6FQu1q5VdSHtprxpDjFM",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114264854329172289247\"\u003ehueda n\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tLCX-HhCXQqN8rvMkgWYrV-pDxi3GMK_gXuu_C5Jjt547aFCxVizes3OxlP8Wong5uXarlcPeUe3JbZMp_hpSe_5K-o5K9HaJmKnIhVQ7-qsor61Eiwo8AEI8vLEHHG_Ivbr2C_nxAAfjmvUZCmVEzacMTcdjz-84zbsYyos5uTzYJlijxhvqbcXvVNOW0hwoxadWZSSfptCBenln9cvH6ab6Eu8bzsDobb3bv_vim7G1ShujhtnxW1HM2UagMMlkSZo1R4IlsFXDmW68WPEhlySEOg9waFQ_8R3WMjGJZbBayycMrPo9b1ofDw9pwUPG3O6DTt8rn2JSSnjArBJd4qdBTLjYBOG-Gci2Y9bOrAD9I9cwT057MWG3VKsrChEdQl1NJbulZ9M-yLZZC8cQBbIOMcMACRqEhoMI8w5Ddgmw",
+            "width" : 4032
+         },
+         {
+            "height" : 1868,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112747850288210433552\"\u003eMr Z\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3dWpTBOLnlvEONMUPYOCYqtYZIqFxUjMmqMYXcLg4YsdmZcPWX3KMsJNc6lFQ9oWjIMgzGOQu7vZsHVVRUNZUIKotTEX59C7vG65kY6UUR9TpVcfeVie60VXUQTf6g2s7GJrx7F-j3RIaCgxLJMyHJBbsw10LB7Q4Y5jEYUWhcIlUUDDBCcQ7a68zE8GaYeOYnTP85Y80i35m7TZxT73jr8L5DnzEa0VisAbxYxvSfv6o8PXBfvwA263Fd4vq9dGIiePackoQbA-cPHNirqNWlqToQev5GPPxkyB2smZHdVHbD2CY2DUdp1OFrZ8qzCzyJhjk6YJLA1JbGUzy10GvvmldfQyaZp0PXJgjq0IUARhZrEBNaGxsnaLgU6_mHxU-XQqNiG0G5BgfgObgnEAHdOoIVOCjew4rvafiErSXTqKO",
+            "width" : 4000
+         },
+         {
+            "height" : 2084,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112467026788430441634\"\u003eAsri Ri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uI2oh61aJQ7ZyqfhgLvThvLjkjaJ362q4nadSQhHbSfh2kd6JmlZ1IeaorGJspx7OClBfae0iCPcP2KAgFub3JPSWPFEKen4ozrgjuK2CU5EQMje1pW-QIKQdm2dYXf80BMGciz0adJ58uTliYUMfSgCwRBwIU5BNNmiFVJ0B0-MqZMML6QQR89V30OnBRSe_4AIAhPhEOzZNwRroE15NlprskaHJEbb9qUs7q6wUeOAzzeynhBFVFTdWQn8e7MXg5yaVA75iyGInSg136RGZGCv7RHFSMoTtkNpl0cf0EVuBpKyVWHtWQB7QH16B3gGvO9D5AQZohQ8h6S8DqSKxhb_jFXSmwF6JSCxy_l0R4yUk7iJt9M4__UajraNbzv0_btqAAwPDLaLY_0ahLHnbxFZ-4b20YctQ7g1Ylb3bkpauT",
+            "width" : 4624
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114448463846880183132\"\u003eTs. Muhammad Haris Jafri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tHjyFMZxEst6GXXHpmLDuTq5evnA_KOunk1rFDN6d9YISqPXmNQ0cR-jXAsIQOhdMUidOaYBKJKVoC-IHn0bU1wJ2sPLbasXI1NfWhWUxtdLy82jzlaiLoalUpV0-kbq2-tX8DMvp_EzV9UBFrSzY1MLSmLxyjtPEX4WdKmrQP0iJzcDXXhldW-rLIvXrmANpR6tktRbI4KCXaR6bUGYKBXZGfURxbvfsxZUu1AB8L8ycTgQmmfBQO5L1jc48RGNkwvywV6niuy5JzErctWfEIam0tVaaDunbsZ-q9pqrjchchEzRDqPecNEAuR34bau4ceABrMy_5yBb2zSoQsS3v8jew4QRdHdp-jYTWuPCHBayEYPY8RC2l6p6yimwQ_NNoF6Sa_0T-b3VmzcLSftkcrQwehEQxaWpknzIeqAXLIg",
+            "width" : 1920
+         },
+         {
+            "height" : 1868,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112747850288210433552\"\u003eMr Z\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sF9uI3gHLNWQ8VugsXrqKitqsBQ5Cv1wkolD4J7Wo2DuHN2nyDyENSRb25JRpbar4iBK1q11qA6h65IDcJmZD_02vERkC4Yg-85kQBqxchgx4RB8s9M_GrtnDTd_n7P10DC1PgP0gHJDja1DVmZq2u-cMi66_7k3yy0reBRxTEnAYLhC3J4Qau6uL1EAfpWyglGgZAzXKZVIacyY69RwEIC8YfyDZYTLOOfpuLRsLBr15qIvbHBz7d8BxkWY7t1Kv9OCKwgUqc5OuUNUNEt2ZOH7N7vqfq0VvcgUV_-0LCAq1sUMsAA8QqO-Zq9mvLL_4lZxz4rNOoJyBCFBRDtshtLq_vk1Jxh1EedVNQER_O2Z1clt2P6nw0SkZYjJi2ntW3NnirK6uxCCzs59gZEJ-SfQ1ROOMH0c0lr4OXrjhFUA",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJu0art0VTzDER1Lv0YScr4Co",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3089516792523307988",
+      "user_ratings_total" : 36,
+      "website" : "http://mbsa.gov.my/"
+   },
+   "status" : "OK"
+}

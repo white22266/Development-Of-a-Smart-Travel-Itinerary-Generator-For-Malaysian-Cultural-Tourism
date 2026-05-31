@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89100 Beluran, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.659285199999999,
+            "lng" : 117.1969651
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.660756930291502,
+               "lng" : 117.1982408302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.658058969708498,
+               "lng" : 117.1955428697085
+            }
+         }
+      },
+      "name" : "Dewan Kg.Bauto Telupid",
+      "place_id" : "ChIJlya06E6rPjIRYzbmRaDXiwg",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=615822857433658979",
+      "user_ratings_total" : 6
+   },
+   "status" : "OK"
+}

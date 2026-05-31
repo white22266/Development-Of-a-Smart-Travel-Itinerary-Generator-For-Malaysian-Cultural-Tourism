@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "48, Lorong Hiburan 1, Kampung Tasik, 26800 Kuala Rompin, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8050449,
+            "lng" : 103.492916
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.806426630291502,
+               "lng" : 103.4942056302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.803728669708498,
+               "lng" : 103.4915076697085
+            }
+         }
+      },
+      "name" : "Kuala rompin pahang",
+      "place_id" : "ChIJwRHfQACJzzERoX49p1idDXM",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8290455493147459233",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kuala Krai - Gua Musang, Pekan Kuala Krai, 18000 Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.5360007,
+            "lng" : 102.2092337
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.537345280291502,
+               "lng" : 102.2105739802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.534647319708498,
+               "lng" : 102.2078760197085
+            }
+         }
+      },
+      "name" : "Persimpangan Krai Central Park",
+      "place_id" : "ChIJOfjKYht9tjERMd1TEmAUP14",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6791169165954899249"
+   },
+   "status" : "OK"
+}

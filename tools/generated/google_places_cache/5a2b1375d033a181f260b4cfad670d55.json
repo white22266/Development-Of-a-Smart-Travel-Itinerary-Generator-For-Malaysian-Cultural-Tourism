@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "73000 Tampin, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.4791144,
+            "lng" : 102.2137492
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.480471980291502,
+               "lng" : 102.2150853302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.477774019708498,
+               "lng" : 102.2123873697085
+            }
+         }
+      },
+      "name" : "KAMPONG ORANG ASLI,TAMAN TASIK TAMPIN",
+      "place_id" : "ChIJjS1VEF0DzjERi2LxSAZciA4",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=1047188095426978443",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

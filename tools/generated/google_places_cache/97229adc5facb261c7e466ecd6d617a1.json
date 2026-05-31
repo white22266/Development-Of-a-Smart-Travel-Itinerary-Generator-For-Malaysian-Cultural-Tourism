@@ -1,0 +1,1225 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-sSWliN5jM0pfEzsGvfT8XEObOgqRafXoCe601WLa1gyJjSFBKfF149ys-9T1VbBrdufLCG_03GsQ5MmARYsey_9B1VfL02VDcerMofqw4u1KjSMN1qAx11vHE9Q6EpB6isS4DobXmf6IC9q8q-HEW5LnVeMzf0b39elmqefST8dTwJAtycTFZLfr7Krqn5wDynhQvyLXB8A0TpkHHv-HwcXw0Yci_jAvLf0VlU7CoIGMXoMxTXd_6fLMq9m1rtcuf-R3drQLIHCY3s8IPkk5SXWjkEzjjXGQAmZF0AFMQjNxhJaP4P42YRz7WDYz8x_miqChCtGjgPX1YDt561cZa_-7o5WyJ9X94jzRWERV1N2Jfu-JhAbdZHj2LKw-7k40eSKNfyUA0Z2TSVsWxq-zg-Zi_rw8DrojIgQa4YDN_IXiAjtVUGcNMIaIH3X2eU3XaHCNxMrEEu_7vz0k27kn3LrjKAA20-gZtXqzSd12Dpth3FndtmsVec0BbZHR3cKDZ-jyPYZbdtW6VIX9XIk1YQmzmViv_sb-Mrppy09-1UfksCTaiWBULpNi_fRTQXraWxM3867al-oodtmY2-7TwC4Ahe9RvrpBGl1OnjXH0nSzUm0R1UEsFoRlGhMOIGmsQRRl_wqmDgPdiC-TJL8hSbVy9XLUCzFshmUb8vBJHyYXX2xk3Cwehl6XWLHzLq2c92fKfiQ7muofaa-DtFLtOBuwwxw5NRVwgJItz-h0yEK72-_5glVHIUGZADeaCx-ZgoO7EJLdSxopJXG9-2tsuZ0LBDxsQLLzT_CMT5F6EgudtNFGofhJRFoH6TYY2HHb6q1PtngL5K",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.24, Jalan Pantai 9/7, Seksyen 10 Petaling Jaya, 46000 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1025515,
+               "lng" : 101.6518796
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.103815330291502,
+                  "lng" : 101.6531329302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.101117369708498,
+                  "lng" : 101.6504349697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Thai Buddhist Chetawan Pagoda",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2400,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103967066283306893089\"\u003eThai Buddhist Chetawan Temple\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJ00JIXiS8qy2veDIfXVcq9Wy1A4Hsir2-9ZEsS1S6KUu7XIt1QfixhPHc-30DHR43HCTjUJPDQxlvxq0Xehft6N0ZwqaogShp2Z3Z01-ESMd7zxjQArQHZb8kNpp1zsj52wemJcEjKGvnAvEudeHOOXBZUstiM7A864yjMt4iq4GCzlGkfY6dMSCv3cA8Woh1RGz9XyrvjNgQKwNxZ9x8yZIwtjA-hIxVq0DCAVjecRFapZuC_oUC7tD2Yt938hVFHbXR8Sz9gJ0Z5cKov01xq32TQRTEdRmtS6QmnCe4-A",
+               "width" : 1758
+            }
+         ],
+         "place_id" : "ChIJs9po3s9LzDERnjnD4WX800Q",
+         "plus_code" : 
+         {
+            "compound_code" : "4M32+2Q Petaling Jaya, Selangor",
+            "global_code" : "6PM34M32+2Q"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJs9po3s9LzDERnjnD4WX800Q",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4051
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 6119, Jalan PJS 1/35, Petaling Utama, Petaling Jaya Selatan, Petaling Jaya, Btu, 6 1, Petaling Tin, 2, Old Klang Rd, Taman Sri Sentosa, 58200 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0786557,
+               "lng" : 101.653196
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.080034230291501,
+                  "lng" : 101.6545831302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.077336269708498,
+                  "lng" : 101.6518851697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "SRI MAHA MARIAMMAN TEMPLE PJS 1",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104291397431502334532\"\u003eVmel Lesh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sCcv5GybP3_N8laXOUbjvGjrslpaACyg2Jty1-nHs2Iwa9tiMgXG1HnEeHUPNa_J8AruKBgGdxsgpJGp2w2j7yw0CCwdxIDGY82CvwX5j0NmxKpbzs4PolmizwjSQrmDaclKY73jHXv9UXX9wgWc3VHERiozFGAE4pWK5U5tdLS_eOmi18PW6Q10024VILMNCPcsLXyu_dQBYcFemtChR8aP44ICZv2Uzg4PpbQHTrW8PPlEHZJorMbP4_wV9LsYRviX7hI86RgFEwXch7DvWXW4o-cSpZQ3YPX09AB0muCbFMjxb6wPcvykilt6t_g0c5wB-R7oL19BS9lSXHGLvuRVO4w5mYUqNeemkrYHDpbk36hKhQjCHW0oWyEKnwO6RXsr1PrXUzxFXrolhXO0tEqmwqEkDqyoyKC5T6HFuCPtNV",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJXT-4fABLzDERU-U0WJLONlA",
+         "plus_code" : 
+         {
+            "compound_code" : "3MH3+F7 Taman Sri Sentosa, Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+            "global_code" : "6PM33MH3+F7"
+         },
+         "rating" : 5,
+         "reference" : "ChIJXT-4fABLzDERU-U0WJLONlA",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 20
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3, Jalan PJU 1a/37, Taman Putra Damai, 47301 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1170212,
+               "lng" : 101.583874
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.118447230291502,
+                  "lng" : 101.5849799302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.115749269708498,
+                  "lng" : 101.5822819697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Ara Damansara Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116903859591705559908\"\u003eA.U Alisan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vpWXy09jzyJe7da97wLGEDBq8_gZEIaWCQkOnAu-3N1myfGUGQWan9jRM4SPR_XHN_wpfWcidNxXN9yTqR_IvFKl8ky0MsCZtfSMlevuiz9B425Q7d0c5jhaiFF2Kpj7Qqu3F4rIIknrq8xnL6pMkmQAfpAt8iNMURI-BQQf8JEIuCQYyrW3OWP_Oe-fXVt_iBlwk6tJsxf4r16r44z-vzF9LcyRXT12C8WuGUvr_Gyxtwa1uBYZm-OBKYkQJloiHgLbsPUo4fekEbPjsqlcOLavBbK2ktdOFYuvg6gLhYJ0iuRobU3i5RwJEs8Ndrz7DiGTKXQsjT_17-F_jrGTiF3t8s-tI1lUJoE7ijmcbsVDGldaxIkiTYqxcb1RQOqU5rrYNbtAz_eR3yHo6LTSdRTN8rSmigiQ63jB1Rdb3dcQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJSy6N0o9OzDERvMz9PFb8lt0",
+         "plus_code" : 
+         {
+            "compound_code" : "4H8M+RG Petaling Jaya, Selangor",
+            "global_code" : "6PM34H8M+RG"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJSy6N0o9OzDERvMz9PFb8lt0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 986
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pj238 Masjid Kolej Islam, 46350 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.118805,
+               "lng" : 101.6412206
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.120104830291502,
+                  "lng" : 101.6422613302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.117406869708498,
+                  "lng" : 101.6395633697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kolej Islam Malaya",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3012,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103401901679336727718\"\u003eMohd Hafiz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uNDiBM94SNhA4HhD_ZQTX_435qPNrQ0RpJhW_79SmCn7TDXO5KPH44riD_5b8BEPlQ4ukQCDGV0z4hUf_qbjSzMygZ0kwEVbcfSYaCjTglzRWI1FVZAEgQNRZPRCC76QGpPT6NQ85vBYJTNdQ-ybXCI67a_RXingRFsfAs_UjdyzmvMHln2b7J0-X0vmPbXv_9tY-gDgX3Q_tA0sqZjnU2FhhtOiK19CEfj2hO9UgM3MJQmlSrbfTX3K6mR3NtvXAho-pCXI9aqg6z5FteWz_775PWDXx2JaKawXoXJ8J62dNDf_izkiXDEqhW6IpcHxuKK_UxGEVYLHOwRvHHB47fALGhYiPB5pIQ5B7ISFnxt4t4XEtioOBqvEbvq_u5PHTCvMUfwlD-AWtGLMZIMe_CS3pQLB7me9USVYx_U7mCNIr_",
+               "width" : 4017
+            }
+         ],
+         "place_id" : "ChIJSws9eVtJzDERpZrNGB0lPRQ",
+         "plus_code" : 
+         {
+            "compound_code" : "4J9R+GF Petaling Jaya, Selangor",
+            "global_code" : "6PM34J9R+GF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJSws9eVtJzDERpZrNGB0lPRQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 180
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Semarak Api, Cyberjaya, 63000 Cyberjaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9321891,
+               "lng" : 101.6484702
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.933009280291502,
+                  "lng" : 101.6492130802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.930311319708498,
+                  "lng" : 101.6465151197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Raja Haji Fi Sabilillah Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106499334107758260634\"\u003eFaiz Kembara Sufie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vACbKyTbIMYNoF-KYyQUYkIaEPgq5HehW3bKDVHQVb2sRSsaQtH8gfsYLX2g7grN8rjVwnoae20KFllYtGByBxwIQCR71ukV5bfwDH_xvh0an-mG8NZ6XWSQQxiC5mAZpp7JR9oRrhD317ezjvEKfvPC4-QbCScENkeINQCYcbXSQss3xyKBIriQONSfHCRdeO9xU7e6LIw61Al2p9arPz5bPNzwzCPXh5Z51D8LE5WpWkzAnyO0cl203mmpbAOuggdI8NeL7tQt-twjckKv-wpyl6TdQ__tOFZJW0rtYpsxmRwCVabK7GtGRzSApprNq-2fT5uAC9JX7MlKGcvACdGynm7KnsIFQX-xPE_Vx57BsXY6RhLwNDlFmhTQgG6fMclc3uFCsURBLTPmaKU-Yb2NsRPpkDoFhgq_wiqVl-LRpR",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJXdl9VPm2zTERn0D4oXDHqEU",
+         "plus_code" : 
+         {
+            "compound_code" : "WJJX+V9 Cyberjaya, Selangor",
+            "global_code" : "6PJ3WJJX+V9"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJXdl9VPm2zTERn0D4oXDHqEU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8987
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 70, Jalan Templer, 46050, Petaling Jaya, Selangor, Pjs 4, 46000 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0940817,
+               "lng" : 101.6446799
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.095400830291501,
+                  "lng" : 101.6460292802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.092702869708498,
+                  "lng" : 101.6433313197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Catholic Church of The Assumption (1960)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102765495493738332555\"\u003eAVYNASH DA ESHWARAN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tnmNIImrl2RWwt1S_wCIBKwp8j4iqY4lMSu8TQXffXj6tflIYhVgOJ6MhVmXo-Pst26stz6pzvN8EDD8UEtRrtgqabeyYti0o74kZ5vLYBtmSpE0ZS6FAvp1aDasNsIzOBlqE3Uq9W1AaKw-mMymWwziShGC9p6pCcedKctHqzuTt8ORqzu5sUU54uYJ3ug_UquIFHUy6woPho-XBdKQP_1b3tcrgNEkA_TaRGbNwxcga2RXEKXBtE5dj-9XlI7XWzDItFgcMOjPl0hLRbUmXaIkbFQVJzB75rC1WEyLG2kZanOQixxw9DLPh3jGpE7imj6CAvlgRrkFAbtVhXytGfjR9XLy-R4h09xkXDVw185DECj-AotxSXAoUeNjPoVJ22HGklkEhiL_Lc04Qw2SZRuiOUgWfWsrU568D3JEsSPg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJa_WsfMdLzDERCrXOJlnaJ-k",
+         "plus_code" : 
+         {
+            "compound_code" : "3JVV+JV Petaling Jaya, Selangor",
+            "global_code" : "6PM33JVV+JV"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJa_WsfMdLzDERCrXOJlnaJ-k",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 295
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.9&11, Jalan 22/32, Seksyen 22, 46300 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0985857,
+               "lng" : 101.6233449
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.099888330291502,
+                  "lng" : 101.6246936802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.097190369708498,
+                  "lng" : 101.6219957197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Di Mu Mother Altar Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112648027948094692663\"\u003eAaron Lai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u_ACtFZPr3sF78Mfu6ot_5i_CIJGt8IBphVPwIHx54ss9hwuD4OdId7CDlTB5es8o7gSXFt9CtS67OP4ssYcrIddYQ3BzvEz6Vk2rCBfoMWfME49bPJes1Cnq7lJ8Kgh0xsNTz2Oq-Wwk-kZ2X4WpoggYUxeEN74vKPOgYyBxM5IVygD--AuzQ9ejsEPORj_QdpQZut2f61PylOxodwHVocwlZwb6iKrDVZMBq4sV5wsrtWn2X29URCwthHi-wWvyq7Iucid1zrl-JL5USvg5qcHuIkkvrWpzfVtsJpNBUu-AxkRSNVuR1MzSDRDTpidMnVmmNxMbt-w83d8slsk8qmxrD80n6oVscOVIsan36TQ22dlz2Y26SuedNsYOs4UAedYqoyviZ0EKoOFPvl4Zrksw7gHIuhcy5s5guAT3nWtSM",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJMW2yYPFLzDER6YbVPDKrDOM",
+         "plus_code" : 
+         {
+            "compound_code" : "3JXF+C8 Petaling Jaya, Selangor",
+            "global_code" : "6PM33JXF+C8"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJMW2yYPFLzDER6YbVPDKrDOM",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Aras Bawah, Jalan Professor Khoo Kay Kim, Seksyen 14, 46100 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1120326,
+               "lng" : 101.6338895
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.113346480291502,
+                  "lng" : 101.6352183802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.110648519708498,
+                  "lng" : 101.6325204197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Tun Abdul Aziz (Masjid Bulat)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105996275451817062193\"\u003ekhairul amirin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tUkDPnvZ2zR2OVAe_MZV6PI2-giDJJTKPUqOcro8V8BMcwqQMjBZRZSu3knPeUzJDBY9o1JLa0epVFijlL-xEymXXRtJYRbk8QmdrUrg-W9wb1pmkinVxFg50y1usI3C8qS-s5ai4Kt71zipiHLZnvlfcWNe2gnaN9Ni7qpeNrsfNwTzTMFs25o7vsdh47Bqw-ej_598FJfjrTEc6_sL0bzY0P2tkDkHAj-fc16jxI2VEFXULsAbYPlWUfno85Ta4ftqm-PCQZf4rFvUevkM8cBA2PcIWsDSOZAuG8_06ERMpGQvqDXk-LIkHGm-aU6BHSDEP9ox8FEni9SOzoEk7fBN6_fPVUlSLoFWMVuVIsyQxhKzFYSp8DCNjus17kOMG1JWopB3vUqTyMw1oaE8G3tdZZ_40u1JXFzlPovNxp5FIk0_0uzmOneTbHeA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJQ-bj_1pLzDERrfsEDa3-wBE",
+         "plus_code" : 
+         {
+            "compound_code" : "4J6M+RH Petaling Jaya, Selangor",
+            "global_code" : "6PM34J6M+RH"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJQ-bj_1pLzDERrfsEDa3-wBE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 451
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong 3, 69G, &, Jalan Templer, Seksyen 3, 46000 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0908253,
+               "lng" : 101.6505383
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.091887330291502,
+                  "lng" : 101.6518124802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.089189369708498,
+                  "lng" : 101.6491145197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Sultan Abdul Aziz",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113795873669978253623\"\u003eDr Fadzil Hamid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vix95vRsLpGp9vTq4-8sD596ZvQz4m_vTozw8J0hPdzmz0R4BB71P3ldt6B1HTIwrAJtM76qjZClS8cTAqXK6QlXkaDgA1doPkyfJmUMcYVOMBBpwkUqybMZCPV2Ih3rakSWd58bjxxIfV7AXziKkUvMBSJ7XHIkAlN8EBnlVtyFWdTceNQaDkmoj183EblxyMBEV3cW0IOX7SdpzxxNFbNx1qclEvvh0fHLxzsw6uhRMOs-mhzrBf4BtG7IigIpGXaPqG-9DbQq09GTUNC2aiAA5blNVdn6CIfnGjptSGNZiLHoPLcOftDLkxknQHmUfiX-JTOrdyqHtE93T4rDqZBtemDOm6S5vLkyJ40qUbpqJ3P9l4xlEeRKULPR5GitsqsBB2GGpxnYULWjXMpvAleZzxPmQHJwoIJFHsvisjCEUJ9mLmiAHtzYxH6bbs",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJmVCag7dLzDERRQxKUH9TXng",
+         "plus_code" : 
+         {
+            "compound_code" : "3MR2+86 Petaling Jaya, Selangor",
+            "global_code" : "6PM33MR2+86"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJmVCag7dLzDERRQxKUH9TXng",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1045
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Selangor, Section 4, 46050 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.091135,
+               "lng" : 101.6456148
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.092440430291501,
+                  "lng" : 101.6470291302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.089742469708498,
+                  "lng" : 101.6443311697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Sithi Vinayagar Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115936694454142973209\"\u003eRajalekshmy V\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBWVOMzN0ni8c4FbSQsWusC1TJDhyuPiHrqySq2yB65UWLj2JLtEvTfmeMUAK_UY4rbPnYEclmJgC9li-QqGwjv2fz17Rd1P-XuIJjDTChsE2erOZZXuU5Hwah3G0BHlGuPJamgvYkrBkAvSDMuHPD410l05strDshL4UyVTYP5OOPqrJOWkyYkO9M8GQbJ2j8BxTsd3mM117TQePrpuDN1_UyOBoyg3z-g-FHu6-_xQQHNRrdBQ0n8wnOvHqP2_zMqhZuYH2tm_rgDjQbg0vc35TNx7FECawRDPZRHyllmB7afonlVnlss3kQ1HvmGhd59OYEDwxTb1ALDK1pKkIkHujVd-Qmh7pJuXpinou-xQ6WPQzK-mSmcFxO0Qnh4FNX7LiGLZJlHOZ-4seSeEVCfIPORyqlrNrgIP5xRwevsgOc",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJWbPT3LhLzDEROFjGWmeu4-M",
+         "plus_code" : 
+         {
+            "compound_code" : "3JRW+F6 Petaling Jaya, Selangor",
+            "global_code" : "6PM33JRW+F6"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJWbPT3LhLzDEROFjGWmeu4-M",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 319
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SS 7/13, Ss 7, 47301 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.095151,
+               "lng" : 101.595483
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.096530830291502,
+                  "lng" : 101.5968859302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.093832869708498,
+                  "lng" : 101.5941879697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Tengku Kelana Jaya Petra Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116903859591705559908\"\u003eA.U Alisan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v8khTHd30LeI1J-dfu864zoT4utXjoyCUhaJOb8bYqBGyg4fGCwg938GDXkS78AlXdeTSDlu64dHO8tLDZRRPx87ILI7dU7g4h4SyMA0BQhGLIDvSDAfPJOZD2H6iRtr-x2TzXjnl5vVVAJUJLIKp32AQowz-QW2LW-SxkTvg2569KkMm8dKTx6qajJ1bvUjxn5xTuEUF8tjfNkrL8YsJeGVBgNr8oBXi0tvbpikxHWT9_wFtHNFi503Yid3MvzgAQwQtbydskl41Br9oASq1HNaoIjfbxnAqiRxo51gTKZb5joiQqcjeNqDpa1lR0vwdpZUg0gPYkFzeszvY9w9kOlRB2C6Yu1WVtldtemt-m3DRDVC8f0Oc5nAxaAChVC5qINvgJNZPVl5Gj4DqLfEWF2sJzo2b0W98kWFAmonY54g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJIQTxGxVMzDERsiYdisEqL4Q",
+         "plus_code" : 
+         {
+            "compound_code" : "3HWW+35 Petaling Jaya, Selangor",
+            "global_code" : "6PM33HWW+35"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJIQTxGxVMzDERsiYdisEqL4Q",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 631
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SS 21/23, Damansara Utama, 47400 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1386087,
+               "lng" : 101.6205305
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.140068180291502,
+                  "lng" : 101.6219426802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.137370219708498,
+                  "lng" : 101.6192447197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Mujahideen Damansara Utama",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106193244751337074926\"\u003emuzaffar dain\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-simdXBvO0SeJE92xhkBZNO7ET0yXechdcvjhmmK-yIaLWdFWgU6AybCoSKE_fYBJgZrJKki9rqbM4Uh2Y8wF62jkFtInYrbiWvqPTHqFP-tBFuhj3wLUuH7GvmNmoYwPn5jMo9huBPCSMFjMKEDWVbNkgBzqNwxM4C-8DVkcOTDJR7Mps2B29-BQXe5saMJimTXOHBT0vGU1gfFkraUs2gx-P31eUtjgPLvvCZD1ERayP5wUqd-0lzmKlTOY8jvIxNQTGItTHVVQjWITHVMiaUcXb7gMBAK3gym8rneqsxo3LLSm7pW-1FHBTuBBjeLniAH5tuSQR1780PwiEQ3CspNXAalq_s_qDn6Yl6RYzyrYou-hCgzbm2-40Q2lKA6G8oVYlnUoKpgVfjtqhTMwyvPetQB8rQPcljrEopcbKfAA",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJJ4qU6TNJzDER-QK7qRLW3_U",
+         "plus_code" : 
+         {
+            "compound_code" : "4JQC+C6 Petaling Jaya, Selangor",
+            "global_code" : "6PM34JQC+C6"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJJ4qU6TNJzDER-QK7qRLW3_U",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 476
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 7, Jalan SS 1/31, Kampung Tunku, 47300 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1037829,
+               "lng" : 101.6195989
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.104903230291502,
+                  "lng" : 101.6210027302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.102205269708498,
+                  "lng" : 101.6183047697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Tunku",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106865832491474320831\"\u003eMr Bat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sG-nz1BK6mGa6-uU9-7EanQBCWqH-bZzVDQLsV1slK5zdBV7Ic0XuKcsSY2rCCfg7MeQCvI3ck8OGLMzaceidNR40u3wlEajqbNRYs4A9sD0EakDsblOcjJg5f5mwx28zSyAFP7PH--L3GY-4pxkYj-k4KrpfSgsKuUlbcCtwgYnBBClJ_Isw_m6FHI2i-zFvufMw1orQND0t7cMTNF7zXk4DIdIWJjGufcC3eTYiBVlwLf84fiPLIk2pbt19SX3rCygODaJvZweQD8Iw-gRA7YbBaWkRApmPISwKUcpyu2DnkOMbIglp_GHqj7kCb2lYijC7Hz_KZ940D-JBJ9pjEg-L3K13pAci9zWSVzh9OpMwWGhFfZ_5cHguOLIzIZAV87XJ3k9nV7HUoz93fv5pgi3utV6wYVLKK8dFBRlCVX2DWnwujiQ2IabgpE7Xv",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJqRuo3PlLzDERmNjrKhzdsTw",
+         "plus_code" : 
+         {
+            "compound_code" : "4J39+GR Petaling Jaya, Selangor",
+            "global_code" : "6PM34J39+GR"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJqRuo3PlLzDERmNjrKhzdsTw",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 320
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Damansara Perdana, 47820 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1732959,
+               "lng" : 101.6176843
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.174614680291502,
+                  "lng" : 101.6191889302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.171916719708498,
+                  "lng" : 101.6164909697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Damansara Perdana Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100310634174081179789\"\u003eRN Raju Hossani\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voV-3-reNr4twh8_8vPHBbSelTY2J5bi5HFGFfQZMEqOTJyrz7zmNbF3GZYfO-pyzwaIim26U28iZ_elisHb55UuntmTtfYRL_ArN-nuTZoWHiBCqse9itBzMHh2Vu58MchazUjzVo4Nmsvuyau_ZeUMGJaEJn3fct0ZTNBObKMqSKvyNe1GJQROVHwuOInymyiStw8_oqgByPjPmPNIbUrnaUO2VqJ3ECiuxMbxw8qUDobzRbpBFZRWhvplCRf0KuZ31kduch3ffPD_SjOOAov0sjsu7MV9Nh_7ITKKV580Hi0wPukEborMiO4moeNpJvgD_rxSLjAOFsIlWxnL8y5uINYBOoVUD8i7N1_jOSrE31VhEeLYboP5_tFgHjkr7rAcvsLpi49lHjg_sX_kEgPrAw7vn0IfCapGn5LuWG9A",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ6Vo4TqVPzDERerWBaFa5bUM",
+         "plus_code" : 
+         {
+            "compound_code" : "5JF9+83 Petaling Jaya, Selangor",
+            "global_code" : "6PM35JF9+83"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ6Vo4TqVPzDERerWBaFa5bUM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 262
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SS 2/6, Sea Park, 47300 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1124825,
+               "lng" : 101.6135573
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.113777330291502,
+                  "lng" : 101.6150455302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.111079369708498,
+                  "lng" : 101.6123475697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Aminah Al-Muhairi Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2634,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112429154508149974936\"\u003eDahlan Mohmede Noor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ulqVs-plvw9Yrj-DziI7b6Vtq54gukCjJ3dSD0gXl0Cw-jnC1JAIZ8iKfecEKn-4kvAJv1sKH36rOdbxe91aHXnf9AsDQJ6s1YGIRcD2kfqQYRY6DGSsDz9HT-ND-xpiTrkvYA6DRKkhIGMnY1yKKOLGXq1SlbG3knvGvIMnEldlyQHdcfpyBdoy3z5mPlp8vA68Wn_x0eUc7m-1KQTSZuOH_rGBdl00tU5nMbBNRk-_6tH4hM98UmeBukSqo442ZCuDpsJhuxrhtQPPZFo-o7ySncczQS6ygV1YcvqnCfebzXg5FLISsbku2QJtngKq01NlgKfbAU9Qj177er0QJusj5S1-M-br_7xGo4MqdcY-v9BEqAKKzXc_2yLUNgkLxk2NLf_yWtOxl-hyYSOnAh0z5ez06nOoxj7vrSLO-zig",
+               "width" : 3510
+            }
+         ],
+         "place_id" : "ChIJW15pJQBMzDER6kgShHNKnPs",
+         "plus_code" : 
+         {
+            "compound_code" : "4J67+XC Petaling Jaya, Selangor",
+            "global_code" : "6PM34J67+XC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJW15pJQBMzDER6kgShHNKnPs",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 302
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan PJS 6/4, Kampung Lindungan, 46000 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0769971,
+               "lng" : 101.6175951
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.078272880291502,
+                  "lng" : 101.6188323802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.075574919708499,
+                  "lng" : 101.6161344197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al - Islamiah Kg Lindungan",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116796133068307833741\"\u003eIbnu Mustafa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tqvDbwKgjLTg8bEI3rnEWTDtN4ul4q0jo77r2kZkpi3K_JgdyCZRmC6ZJOOYiS2J68WZoglft3T_KlzRE9TU4sFIN9gAmPHYTs5vU70FZ0BTjV91w4QcNv7BqyyKojWLPFcj3mbsOFcifBC9xvi4rJLKhYengd58dVfb0NxydRYaH6a1s1RHJsQNkZLVAoILr3Xynz8JjhAK_D4WRonIEx05Tw9iWJ8w18WLA1UZm-tOw1ZwmbpgtlXB2GvPjDLlANGlmCdwdBijtMpR4OUt2CHlup0Pft2ANV8GQpRIFpWYYf-2ZHbqBi8uS5Sv3Z-QP-31JYqyhqb6Hu3LiJg6TpCR4e6s0r-WRq-C31ZKD0jBcy99ePvu8RZnB1HQrCM5-dXlfUTdkw_n_m5FxDPZCOvfKMqO2lLe-7KUsaovY",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJJ1qQeIBLzDERm9iXRXm9-Sg",
+         "plus_code" : 
+         {
+            "compound_code" : "3JG9+Q2 Petaling Jaya, Selangor",
+            "global_code" : "6PM33JG9+Q2"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJJ1qQeIBLzDERm9iXRXm9-Sg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 454
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1A, Jln BU 3/1, Bandar Utama, 47800 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1471699,
+               "lng" : 101.6116536
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.148672030291502,
+                  "lng" : 101.6130514802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.145974069708498,
+                  "lng" : 101.6103535197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau Al-Syakirin, Bandar Utama",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101732036583679992870\"\u003eHairul Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tpnH8c0mIi5P7i8yxLoQgz9vCazruyY0jM7ljsFgq27cWdD_ekNl7_r1PwapoKvXSyPEUcXyAaGUU1-RZvEzzI0dnMKuQ-7oTMx49tbdb2tEMwrJ3ZmC3ESuZ4Y8JIXplTqnJ3HO-cVW_KzqJhgFqs-gp70zDoD2Sy5pUVKm3hnGNyaAXF7_S8thZlHMxR9PISyNsYDsqx7ujmatNec73S-P8WaLUDNW9VGMlWpvYIKaVTtakI2LuGs_7tskgmQOMnO2YuUPvchvfWNwK_szBXNA7iKtdhEf_Ak_lt-G4787CDTSPuikUej21ayQCY0hsswoVW7kAf7KA-cn-cCmwHmIYrKyLLROnQvAz_FD7OOHrwh4rpA1U72VJmGMMgRxuMUx7ZOt5GzZUZHRkNLxO-_eMThIyiB_sBS5tp7M0iUQOb",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJcQOpjtNOzDERyULAgH3cUUE",
+         "plus_code" : 
+         {
+            "compound_code" : "4JW6+VM Petaling Jaya, Selangor",
+            "global_code" : "6PM34JW6+VM"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJcQOpjtNOzDERyULAgH3cUUE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 222
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sepah Puteri 5/21, Kota Damansara, 47810 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1615339,
+               "lng" : 101.5874081
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.162876430291502,
+                  "lng" : 101.5887735802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.160178469708498,
+                  "lng" : 101.5860756197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kota Damansara Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1944,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107665823960650946557\"\u003eRoslee Yusoff\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tG_oMjdF_AWb9LFUZNX9jV42ah9gndABRIjjYiALI2Ib9JV24SiSNvY6JPFqYRM1LjKn6aH1l1bguIuUMyD6eCjr0EC8lMCIxkQs11biyCybfBq4FQabkvz5iJi1vMbTeGQfqro3p8KqmGkX7fLJELkV4dgTr3PYxS7vgCTpPWTCwM-ixDODlF0dw1NNjb5JvKNCskFpKpBRcfzFNDXthdY5jH5sMxGH4yxcJ9napoEouMw8PWJ4RyrCdLOs355KYGG0wJem9cVFsw8lmenbeJsmZFSX3BB7YwzZQp_Q2lZ4JIEwdlcjechV9m0ZSG-y52YWBTFZABAC7aQAiffXMTCReCuKbRF_7moiVq6RveiBjiBo0ypxWO6uLaWphkPKsbMVPU62y2BnsHYd71aHVuuW1riEDzuSV_XVdbCaQSNGaq",
+               "width" : 2592
+            }
+         ],
+         "place_id" : "ChIJN2vTHRpPzDERhXIFdVBuT8w",
+         "plus_code" : 
+         {
+            "compound_code" : "5H6P+JX Petaling Jaya, Selangor",
+            "global_code" : "6PM35H6P+JX"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJN2vTHRpPzDERhXIFdVBuT8w",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1309
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SS 3/19, Taman Universiti, 47300 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1012124,
+               "lng" : 101.6079676
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.102453830291502,
+                  "lng" : 101.6092715302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.099755869708498,
+                  "lng" : 101.6065735697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Al-Hidayah Kelana Jaya Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2634,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112429154508149974936\"\u003eDahlan Mohmede Noor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tq_GixkMSR022G8E413469bNuESlrEaJ7e7rl9-epLVzPQQ8RUMyxgkCBl9OODEXd_kXugcEyGivmQuttnigFvibRriJVvK8AyCn861zh9b2erN-l686G7VR8EyWodysbI4P-5pNvBjo1ob6TjrZIC7DFMnDkUA8KkzApkYwLgTmGwu4LFlt03m0GuhgpVFWPaCGS0E4tIy5GWEOIzVbkCx_goHF-XayjKD5oW1zRUvzZ0aKT6VzJbGpyd-9UbBzILjOdppbFOrmUBEWAw5x5pOHoTMPFYIDx8YdTsZHMq4WIZOZXv-_ma_EGoh70kiQ1AiBrcDoy7AZEx9M4Wk9ZoQ1uuk4mH8v9d0QhIlcOyJI7vN3-OWhj8A7Vv-Tr9BI7r7kcmpBosLKa3tSGEvdrr9Z6Ig1endSGmeiFy8us",
+               "width" : 3510
+            }
+         ],
+         "place_id" : "ChIJpeY6BQ9MzDERE2g6_QefU-c",
+         "plus_code" : 
+         {
+            "compound_code" : "4J25+F5 Petaling Jaya, Selangor",
+            "global_code" : "6PM34J25+F5"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJpeY6BQ9MzDERE2g6_QefU-c",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 465
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Persekutuan, Presint 1, 62502 Putrajaya, Wilayah Persekutuan Putrajaya",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9360702,
+               "lng" : 101.689213
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.936832730291502,
+                  "lng" : 101.6911379802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.934134769708498,
+                  "lng" : 101.6884400197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Putra Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101871907543931816623\"\u003eAISHA - M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ubh5edV18K_7tl96Vv46DZQiSd0P0BoiPLvn-H5bsgKCLwIQcBdCz9kQVCz2DeuRk0woSgXRIhd3uksUyvKTUOKL6sq6KsHEbH3lC3ejih_f9ITijcXaQ78Mt6yvEd-oCxRdu-NVpt1fgLRilKfOUe_0fLroiCb15la5_k_wdfe4pah4LlP_IJbHEnh5AolRCl4XZ0xOisXlmln6Wm9qKghEOac21fAkpKwAqqOOqXM6fyUHTVvnnWotzDpiH46qic3dpjYOhFSt3eQYms1V0bQgldA3xFd-csJ_vfnwNmfQhzydp_UXLmoBpPt_ykePjYT_tTWDiXvvs0gmMftshrlxzJS_OwqRJUzza7K8UPxmIGiFgbrmThxjbfyk3-Nq9IhvA-r5Lpt9H5Xw41hrzX-piAjmcGnUqrnyOdOQvvmdWH",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "plus_code" : 
+         {
+            "compound_code" : "WMPQ+CM Putrajaya",
+            "global_code" : "6PJ3WMPQ+CM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 23924
+      }
+   ],
+   "status" : "OK"
+}

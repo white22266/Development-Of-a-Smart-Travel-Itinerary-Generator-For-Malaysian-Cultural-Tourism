@@ -1,0 +1,1211 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-u014UEkMNFDe-R3Rb8_1E7vvKTPkv6EIJQnbnd5La4uaDaLEQDFLBnVttMEOJpnoAMshUXbbtS8APoXBvxvkTTjAf9mN2CCiB2k7Q0mrEd7xXlWBje2pJayVdiIXApXXEma_EtothvfdJlMoBhZnrxaNWIAZzgs1OM8qXGhjnR5M5iaIRLZhVVmeaP1YHgdkoaB27iWZb76HNqnr10pjZNf5i55IxQHg1-oBUOdxsHqaaQVcka89pQg3ppz-XzalzUFQ2A1R7b0614RO0vhipmLaIFWcqu8KeX1uldbOonFIGCIXJ9D2XFnKDTM7QQid9J4NUy8L_9t4LEZFmsmVjnPr4N6L6VyXnwwjtomrN05JIjYw4zS_v05z02w0YigMNb0zUxi1YnbTmkQQtTDt430OvZ_OOKyV7Ceo3JvrcbuRnHmQcpcrb0VDxHg3l7Ir0Tz0c9HjljSgwSLgNLgz7eYcuFbnQ3r7XSvsBfC_fJhthrkGx44mbXGo-i00GCVdPnznfi09FU5LDySheXuGlDgEx0qtWcVmkiXNPRDYIJcQjY320Ts_7wPVHAd-F7_yHPjJd5VUoE5PAskgwifAiT5OVBbfu8uEZAO7i3LMxMDKMWRDWuwGq3yFpGAo6Hp9B8-IvpNrNTYjCDpdGrDIGgjpJJsjuQu_tlGty7FslPnHVeqhv_CSekNnYR0_OTVukbLDQ3LQdIu_fK_wYgRi410oAAU2Fq5Aemi2upcZ_w_IvCFou9RFCeIM-43UMCmpxMgRDKkUFr2EfEkfFePddGkSa8PALRmwtZqlSTPin2gQ7dusANGREDWWGmKzMmsQCFWKcXopE",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "14, Lbh Buckingham, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4169573,
+               "lng" : 100.3371206
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.418098380291503,
+                  "lng" : 100.3383933802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.415400419708498,
+                  "lng" : 100.3356954197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kapitan Keling Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115835811873147395051\"\u003eFahmi Dahlan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-urgput4uhuNfxuJEQWfma89ip-HP1VzdDap5s7lLn06rDlSWXzYBUsVD6yUABpWnN3ba8oSW6gbTWpui07tEjgfXJYQ3bsLQiUgngHdj_B-LDbhSWbDWs3H8HjIPgav1bOP9to6dGXNd4DvXCWIZq4ij1MJPOvUsw96vMwAdZ2nmveOSlQ9Lf9e4vcEyTflJ2OpuGxmwC9gEU2TNituQE-0jWVIuCYR_89rf-bkbc3z8WFmF79NsznKNCgM7iYnab7men0yf2vWFUUegw-4lu58vLWOHraRYRHQobzQ9wBdtoU6ml2OdISMN5Fmv_1gQ3NSgef4mVApQHhM0TTdOo43TTHzEXqy4DR3sBNjb36FL8DBIkaphzHnBltyoHRYww5zkzCT3A8pUcYDS3ekgUPGpBBxTn7mKSwNIux5URC8A",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJq5qauJHDSjARY-1J3UITR0U",
+         "plus_code" : 
+         {
+            "compound_code" : "C88P+QR George Town, Penang",
+            "global_code" : "6PQ2C88P+QR"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJq5qauJHDSjARY-1J3UITR0U",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 3352
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "35, Jln Masjid Kapitan Keling, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4180117,
+               "lng" : 100.3386253
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.419372080291502,
+                  "lng" : 100.3399571802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.416674119708498,
+                  "lng" : 100.3372592197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Masjid Kapitan Keling Road",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102385984434652467462\"\u003eIngrid E\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4shDD3TffKYdrFQ9J1FhRW1mHf1zKEsfwktkQ3xsnSTfVXnIFB2MIVeRoXwAFjlOxM1xSJFASPWqNiMEnnl8_CW5Eth_4_WF0ZS1v5GYSTbx4a-lRdLISllTrxtf__fVop_Noe4KP_yZlgcvxqcKRkZsW27QuLXIYfWvAKPmszz7iF71qT5F5MtZ691oZA0fUX715cj73x3WgZHt16wLauZLOEuVfVnKE-7zzDIBhf5F8aNCRgql6cH_FxmZdmVrY7j_Egipl798HQ6RIamc1zlNowjP-agMh-6qvzHqYrt91v1IYQC3mQIPme88EbylCx_Ca5uR9pqcJvrXseK_uILJtVW3V4nrfbEyZT4czJLiHkgLZcFliEB4uP55wdWXDMOaOzeiwOkuiZ-fEsuJZ7Gf0AMvL4XSNrnlKrsz0laln65GfYBP-WRMB9Tql",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJkz3PVE3DSjAR8GJQktxSpG0",
+         "plus_code" : 
+         {
+            "compound_code" : "C89Q+6F George Town, Penang",
+            "global_code" : "6PQ2C89Q+6F"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJkz3PVE3DSjAR8GJQktxSpG0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kek Lok Si Temple, 86s, Jln Balik Pulau, 11500 Ayer Itam, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3996413,
+               "lng" : 100.2736126
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.401296980291503,
+                  "lng" : 100.2749307802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.398599019708498,
+                  "lng" : 100.2722328197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kek Lok Si Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117098485636146060270\"\u003ekarolina aleksa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uEHgKrQWQJpVseaCkYcJjJ83JwVhyvOnmldWQTayVZw1EjlTtnXMAo74jT4An6lKKHXXEb0um0aY8vxZpM_dKNGySROP94wK4T9yBM-BFY9LRxYN_q7v8QmC2Dnc2a2ei19thgfpZ7PFoyw9w6KLtxEUwx4tGFzzMk7AxrJ8AdW0PJLWoD6tSzKbXXd1Xqz7Ymh0cIL-ZnIcJqvWXi7RESuZ8L8WyctoJFA5t7olNv5VmDhf1WxCZIaTZBPvQkt86662U_kH2A8Z4siAlGGkssB-3xc-SKkOXVUCZj0SyddOpe9Uz1V-POorWV2kni4gF0H_CNednD2-DO3OtcrkcVxGCTBSkIcsKkvLCqECRJjyQcVWwlAqrlvFbogxB6GzIFjtVGV3BXoACslQS8Tf-7_LE0wh5qxR54xSktx8hUrY-n",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJZYb8XRjCSjARxD5Df-qEkCw",
+         "plus_code" : 
+         {
+            "compound_code" : "97XF+VC Air Itam, Penang",
+            "global_code" : "6PQ297XF+VC"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJZYb8XRjCSjARxD5Df-qEkCw",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 14744
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "9, Lorong Jelawat 4, Seberang Jaya, 13700 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.396899900000001,
+               "lng" : 100.3954825
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.398322680291503,
+                  "lng" : 100.3968129802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.395624719708498,
+                  "lng" : 100.3941150197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Arulmigu Sri Bala Murugan Temple",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107209163547292370189\"\u003eIlamaran Ramamoorthy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vdjWaWNy2ASd_q4K1sQhsJQxp3G2_tyauSgCN1NRV5fGoQgMKBUtiX4eYREj0b7XwnPq5NW8nVFV1GNaZd7TZs8dFtgtXut4lEqc5BkeoOMHe0rZ-vIRQxoghQPuOanQ5byH9w9pRc07umI2eukCLKhRTJtd7B_E9_agbkBF44nsOrQA2n-I-d47UZIsOt5arUfXGG3a3Ca8H3AnxczV_JcaSksFNvpe11jauypaopPxkLrLW00KgHg0RuE_wCnP6GrcGq44l-Lr_c3dubZb_OV66WkNzzulz3oTrsJkNx6YwY85uS-n0Wm7jaZHfxDXvL6nI7KCvSpCkElyVBSVcPQaS8jsasxlhQIYFPc3Bx47sU5W7_f3aYJQTfC3vo4Ky36xGMK9F5NEYw8Oc0R9k6bEnUncp-utvvHnA7zVuVOwt4zB9K5luROLCl6w",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJoT7K2tLFSjARWUton29ZNfs",
+         "plus_code" : 
+         {
+            "compound_code" : "99WW+Q5 Perai, Penang",
+            "global_code" : "6PQ299WW+Q5"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJoT7K2tLFSjARWUton29ZNfs",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 48
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "159, Lbh Chulia, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4170037,
+               "lng" : 100.3379775
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.418365780291502,
+                  "lng" : 100.3393544302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.415667819708498,
+                  "lng" : 100.3366564697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Georgetown UNESCO Historic Site",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101642608104358003228\"\u003eYang Wi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vXgwRznFtjvxGXbCD2oCaN1fFM0E80a_l8zoWYmgIx9AMJK6hupHp6U8NLw3MOQzP9T5Ck842O6n0SptYz3mcP4Y38eH9NG7C43Rjzq7rbC5OGzkmTOuT1fXRPmBzichKv5FGiDw2Wz0-64w4cm4jkBudHB6P2gavkyj5V3KNgXQsHvg7TqptkNEOxtwZPrBVcCf8CG-nAcmPGhcdftZ7WigR55YPzENGJLyxtoMW2zkNZLIUYVVD46RNA5muvDXJXxS6umaInmvSVkaX5IDuZtJ2hRfXHWGSGakv9wg6F7zxGD8EV6KywLusS-L2hSzEXTP8ZAktJvtszqwilQy0fFNdCvdDwZ9DwiWQZN9y8yYH5v2RU8iAcDIQTA9KcobNFIwUcJ_jbJNwjl561LQgBDuL7hRR9-kQ5WqVJ-0nusg",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ0ZhzIZHDSjARWcrnjUdMN-M",
+         "plus_code" : 
+         {
+            "compound_code" : "C88Q+R5 George Town, Penang",
+            "global_code" : "6PQ2C88Q+R5"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ0ZhzIZHDSjARWcrnjUdMN-M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 13460
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "30, Jln Masjid Kapitan Keling, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4184256,
+               "lng" : 100.3387262
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.419820330291502,
+                  "lng" : 100.3400064302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.417122369708498,
+                  "lng" : 100.3373084697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Goddess Of Mercy Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108926946156422213986\"\u003eKars Pinsel\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-scvNjz4v2QA6BOcz0YECPNKGxKlFlccdTFkRFEE4wYXfqTQVzXK6nCBml4O5iIGM03GIyXhenAJNAbRHJ7T_Lm1NoS7b6YQMOTNHq6PpRx4hFavpWUHugj_B6IAbi7vBTmpCFolSU5xnyNmky609xpUHE5gvTXEv4Te_kSy1SzE_axQLOH2e4Saqpm8KRXWpLHWjR8Q8WqBROvlCZeY8-9fHUX-3i3iAjxAOkm2owggQJ4H_9fpRIXCgDwua2nln4Yo8Kxz22l1PzM2mYMfR73WCT4OSWyj1bVYbtw-J_Zj3OnpYed9Fplw2xMAdNQUlzUUVuRv5WpLTW33ZS84LXj9lZwTakE82PrdbE9zDGAGr5A4i0WcU1PSnIMbX65qFYIpzqkLoqCJtuUoy9kbTpC472Zo1waxMDHwuA",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJTQlMJ5DDSjARGf6dJYfrYEA",
+         "plus_code" : 
+         {
+            "compound_code" : "C89Q+9F George Town, Penang",
+            "global_code" : "6PQ2C89Q+9F"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJTQlMJ5DDSjARGf6dJYfrYEA",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2607
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kulim, 14000 Bukit Mertajam, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3526054,
+               "lng" : 100.4772744
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.353163530291502,
+                  "lng" : 100.4788114302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.350465569708497,
+                  "lng" : 100.4761134697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Minor Basilica of St. Anne, Bukit Mertajam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 540,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110823777763374932237\"\u003eMinor Basilica of St. Anne, Bukit Mertajam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vaO3MpkKFjuZV4ddF5NgU9j0p_MC9yPzZex9O2YfyIu51G1TytBHXtsGPSpp9YFobLATTzbyjtMmMRo0ktmtFVXSNCwNmtffvOJT1cvjVhmgKXvGTU4M4QXfWvAXk6t7pflqJNJAEhUNs1LRru6130zNF6pioU1KYPKB0Pw8l_f-vfvViPEo9Jz3TSsgxxo-JMwYtRuF45--s4Xeu0kcVDlZmeJ6NxZDHD2VWyGJFPSuQzEG0S0Yqo4Z403fAE2t4H6FT1mt3QlqnDQTlBiaMJpURkR9T-rX1xY8uB8JK46w",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJrzLcX_nISjAROoUcgOWPZAI",
+         "plus_code" : 
+         {
+            "compound_code" : "9F3G+2W Bukit Mertajam, Penang",
+            "global_code" : "6PQ29F3G+2W"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJrzLcX_nISjAROoUcgOWPZAI",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2381
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Baru, 13600 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3724029,
+               "lng" : 100.4096468
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.373878580291502,
+                  "lng" : 100.4110809302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.371180619708498,
+                  "lng" : 100.4083829697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Kampung Setol Perai Pulau Pinang",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103959681553262000766\"\u003eKhamaruzaman Man\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJkZRcU8tO0XfBkK63ZF0Eon9uHkKPDLvsRw2ltLd6tWcTYwjlM5gAAN-UMauNiD02zTV-MFm4veUE7ZL6DQwHG8k5e0TuW9fdcbMWJ19uzwS8chsShoUJ6eHuKGih7dYIcLjDRrSj1yVCD0UlErZpOiYdXnvcFhsH1qGp44nZxx3GJMJdWlX0-B1ngQS5xrozitJzKRXkcPUrHCbolZYGA830ChKOYKDUoySIuGNKPL-rNR6scYG-FOay0iURvyFfgmjqUuJ836jsXh3U250ZNr17ofAMdaCi45WWhRJrn7gXqRF-YnvjBIt2TRjSSXPtvxiHWRkOacC5CJBfXG7yxl2zrciJ1vyO7IR9ddBbulN4e6P64iEEptItGx88euZN-b_a-xrz9uzp3N63IFXEjSK-41OcFk0iTiQuvHPlzA",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ6Xm1M2nGSjARrFWKxcBbPoI",
+         "plus_code" : 
+         {
+            "compound_code" : "9CC5+XV Perai, Penang",
+            "global_code" : "6PQ29CC5+XV"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ6Xm1M2nGSjARrFWKxcBbPoI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 139
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lbh Armenian, George Town, 10450 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4154076,
+               "lng" : 100.3368522
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.416833880291503,
+                  "lng" : 100.3382066302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.414135919708499,
+                  "lng" : 100.3355086697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Yap Kongsi叶宗祠",
+         "photos" : 
+         [
+            {
+               "height" : 2700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113454419831993276853\"\u003elinh nguyen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sewYJL1tGZC6Y7cxweV2zP6S9pCEp-TGVyL7CUMHiop6CCOJHTI0qZo0plKZzN6cEx5o19OxUJv-xqkcEVgoLQwFY7fvkgW7A1NeMwjCZGVTur7n5VWeeZbwdQAGEEeoeiEIdp54pXKGl9ky3kIH91sp9bFc9fWLuqRwuw7RGaMD6a6OzvZmvtJY7DyXRCv5tJUdMaE3D3zmV8qo3nd1jux0PiGsVoVOZJIqrT0HZJIg_9BGA66UwKq5CKudUegBHHWv0d1WuCkKvcvimy3ByOEktrVOyZqrtpZSWHWyAT4EIPRYn6RGL5XW4bRWacRyG-RdN8qbYoQVYuMirzMiFkwPNb01DsuHG_YCPNbsOSWtvXCYYiP10MKeniZ7HV2DYXiTBhPvurp7w31kje8LJkrERCT0y0WEAkNW3if2H4bjG7",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJFbbji5HDSjAR5MGxiVetGig",
+         "plus_code" : 
+         {
+            "compound_code" : "C88P+5P George Town, Penang",
+            "global_code" : "6PQ2C88P+5P"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJFbbji5HDSjAR5MGxiVetGig",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 163
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18, Cannon Square, George Town, 10450 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4145737,
+               "lng" : 100.33719
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.416129330291503,
+                  "lng" : 100.3383587802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413431369708499,
+                  "lng" : 100.3356608197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Leong San Tong Khoo Kongsi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110034906481132738675\"\u003eMatt Jenkins\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sv59IgT1xuZxO-02OJuPE3x4qThnidDhKEF67VEYKAdxzzpbAJU_EprVl6zYbLvSFfkCq1T80QUGNfI0VNl_ZxRv2tPFlSqEw0gEheRKz5zG5zBMtb0vslQs4QCyW3OYs-ZKLMZamYVP0lHUiyuxQSqHsp3CH8mk6rxKYC6e0zT1Txr9iEXMTyoPlcoQB7U7MFy9cyJHCX4vPOoUvtEX0hQGQLZsuIO4vMfzDbPLsdqh7jBv9gw4M7zSKGXuEYU5HrEV0Hkve5DD7oSG5RVonPP8CL1xgMc9ZEij_6Gh6_BS5IJRUV5hkLcOJxNi2vnUrjGWJd-2YK3lu8JPKYIF8TCGbF9_oHhNh3oKIyLktdD9Yaa5j2z7KUT3oBInU242lbwLB3uXmpl_RDG0sUuKJY2XmHbfyhL9Z2iQfjk2qYj3U",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJny-BJpLDSjARtmEDgFcyASw",
+         "plus_code" : 
+         {
+            "compound_code" : "C87P+RV George Town, Penang",
+            "global_code" : "6PQ2C87P+RV"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJny-BJpLDSjARtmEDgFcyASw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2017
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17, Lorong Burma, Pulau Tikus, 10250 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.431709,
+               "lng" : 100.313829
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.432972330291502,
+                  "lng" : 100.3151535802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.430274369708497,
+                  "lng" : 100.3124556197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chaiya Mangalaram Thai Buddhist Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2965,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107371142461591249882\"\u003eChaiya Mangalaram Thai Buddhist Temple\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tvstUe1v2OSQ9LeirpVCK3ig1KkLCxdLr-lw3nEWlTSk64YdhFKHWUbOn4Poayk82JJfYpruaJ2S62lGLMGlyKMdNbfM5jGDMqn_vBvhKdQYwdP27f-LGuW5znPAqjfhdutUiwvMMBx-GEELNknjQ_vLSJP7ZUiNhdkiz_BS_IBOn9EZY-UBa61p2NwPcznHGdvRManct5S6Z2RWvKktjlkPoM2o6WQ-4pm0fCns6MQd2Oa65BVCvvKssJDfixulakbEBPlXO7Am56g6tgFFmZy2VE071o_A8ca9FSpF2MLNUB4cOU4fyK1wyDrHXfxgLT7ZY4aybcsVc-IandQG6yzmOagK5AIvwuhmYUYJipjoZVpnYkiyTr-HjAuqXqP594D7D9_JXscBXgorOd3MoN2DkbDKyoh22JoZ2bYW_BFg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJNZHZhAfDSjARDdvaFwsp64s",
+         "plus_code" : 
+         {
+            "compound_code" : "C8J7+MG George Town, Penang",
+            "global_code" : "6PQ2C8J7+MG"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJNZHZhAfDSjARDdvaFwsp64s",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3688
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "10250, Lorong Burma, Georgetown, 10350 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.431392799999999,
+               "lng" : 100.313996
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.432817830291502,
+                  "lng" : 100.3153208802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.430119869708498,
+                  "lng" : 100.3126229197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dhammikarama Burmese Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113622753213418799728\"\u003echin wey ngee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tyE5ImHkkjDwWhRRYVdD9w0ghiocNSbsacyYZNCc3FEXwtrFaEf6jdLfi5Bqhbs6nwyWzLGTyykO-v2hA6h7rkjBhPQ3pjZPi2Lrvz2g3qKEyiWMet7ubWeHky-dx42-TSZtn4V4xX3-17dX5TYvN-g5xcGb1PDYqgaSj2QeMBzJ1NMZhAtVEext8btlAPeRGPJ7YR8G30giEulCpIUIASrrRv7jdz1tVEWplnmXaq5-eDJeej83XtoVVxNIXZgSRhrYqVYNB4RXBr62RN03PrDLxjB0hUI2hhbeMmECVmVnsva-H1D_f8pqK9WRm_xI5T7XcoMM1QDOaZNovZHQWaSWfVp-R--hSSC3r0TsIauY63-BqqLEngisBtweWasBMndnJrW2LcT1DeRjdFRaRo43AGClqWzzmhdD6Xorh14Q",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJTyuIhQfDSjARnJUKdBToekw",
+         "plus_code" : 
+         {
+            "compound_code" : "C8J7+HH George Town, Penang",
+            "global_code" : "6PQ2C8J7+HH"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJTyuIhQfDSjARnJUKdBToekw",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1371
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "10, Jalan Sultan Azlan Shah, Bandar Bayan Baru, 11900 Bayan Lepas, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3139425,
+               "lng" : 100.2854153
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.315344530291502,
+                  "lng" : 100.2868179802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.312646569708497,
+                  "lng" : 100.2841200197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Penang Snake Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112398433510873522346\"\u003edavin lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uhsyisHBTsAdKX3MxP6UhITfLhgkWN9wNlq2mKjpDEvmLKkNyYckDv1EIF1nU8Z36ip6XmOUld7PLx7qv_T0z2ql_dMqfzCZSPMdDUt5obyPobJh-EptUvaCHJkUXCirfHSg3ksRg_DU7cWmV2lMVfXfadsmHC558s9nx7UhYYK-b84MSFX1yljyLNoPESWWW16dPHOX-6nUny0NnDDYqmCVlwKm8znrLvPafoxF5nN4kkzL7PMjiyDnYM-dQoq11NjL-nTwKWQXVUSnJLRDnUiqeOTtOZSd3BfM7e8Db4fsZuUeEkOlYHPHFez7leOTWx31_6peQtcie9iGfdULry_Zh3dytMCWWYyC9tHWReBnJDL7CuQF3PoKpwvQJYdwpPKVSZAvYcXB8L_4tbUx1vFyESsJL7xB293JluufLOYfh8",
+               "width" : 3224
+            }
+         ],
+         "place_id" : "ChIJVXXAdXPASjAR7aoLQDj2liw",
+         "plus_code" : 
+         {
+            "compound_code" : "877P+H5 Bayan Lepas, Penang",
+            "global_code" : "6PQ2877P+H5"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJVXXAdXPASjAR7aoLQDj2liw",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1797
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "950Jalan Sama Gagah, Permatang Pauh, 13500 Permatang Pauh, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.414288399999999,
+               "lng" : 100.411699
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.415659780291502,
+                  "lng" : 100.4131128302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.412961819708499,
+                  "lng" : 100.4104148697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gaik Cheng Kong, P. Pauh",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101570652883456944461\"\u003eYongkin Lai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZH4KheUSM7n_Tu8vaTT4DFfitTliXF9aHo5bOtijpi2P7lvE9uqCycBmvtoTotv33m4Qo3jwB_Y3Z_LYwvTRaQEYiA6slGuW-ZlGxBimNKWQcwCMhk7ag2xtknyzTJaYBvJ1DvRvKG95j7sd_6hTAFsEQFA9I7mfl6TunkgWKWu4pJAe-tXBaB_yxXMnh4Mt_H9mPLHRpFPHlbj4G9tehHKIz-tE_MePqOM2xp2Fzv7mXLJBmchVqZg4pLC2IwFOKD7etGo50II0GdNb1waHwMRDtZTK52ArvvDNlCzzxDhkDHUkP7mF2cLwsNDtQELeo2mik0Qf4KsGDMaZxnnByFScwNfvSfM3Lnb62PTDlY-z_2xc7FD0qrXLk7pNM6E3i-EmtG3xAYe88IV3sM9bEvvPbOT-o6RJ4Cl6v0OR83AS2",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJEQAZIL_FSjARLLCAT-YChLE",
+         "plus_code" : 
+         {
+            "compound_code" : "CC76+PM Permatang Pauh, Pulau Pinang",
+            "global_code" : "6PQ2CC76+PM"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJEQAZIL_FSjARLLCAT-YChLE",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 34
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid, Bukit Bendera, 10000 Bukit Bendera, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4246577,
+               "lng" : 100.268153
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.425926180291503,
+                  "lng" : 100.2695346302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.423228219708498,
+                  "lng" : 100.2668366697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Penang Hill Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108195111022023485917\"\u003emichael m\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uRgNhtA1fhkDhQcdayA_O9qwHK70I_6sy8tnf27CtNET5khYUJsOUA0eWdEd4Z96BWhi4raqgt8XVHED6N-R42q9-EUo0141r2SHrs4tnPjMayp3HN2NsXpWviiuE2_Snu--6NyIAwKVtfnc4ATwRV_t7ATk9_3tUFhcSvIuVanHYsJmMuX7g4PUXx-xG-hMVK5JFWU7EgrXAqBRURZURbG_UgSHkU7dW12ZZ52FCTSyc45Ien82gfSHVvbRkO0cYMi4MX415X-mLmULa2WaGhwLEXdUrH2z6wsCi0OGnqZXEwfAGEw72Wb-VLBIa6gLB4mACz-4c79splaglF5pymqDAHpeajHs79lELH8ZSKuh7KbiiOh6TzKqMA7kXBzPLhZWPf6qsJ4CSww8voPACeOHOOK5K52ipBg5u2akQ_wSuDVzj5E4c-G3GsqOgr",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJtVSqD3vCSjARrosYyDIB1VU",
+         "plus_code" : 
+         {
+            "compound_code" : "C7F9+V7 Bukit Bendera, Pulau Pinang",
+            "global_code" : "6PQ2C7F9+V7"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJtVSqD3vCSjARrosYyDIB1VU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 241
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "8, Lbh Armenian, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.415188199999999,
+               "lng" : 100.3383087
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.416355780291501,
+                  "lng" : 100.3395014302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413657819708496,
+                  "lng" : 100.3368034697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "世德堂謝公司 Cheah Kongsi Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104345840107288666107\"\u003eIan Chow\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ugnIDpzQfWl3iS61SouPYuu05zbxijLymlVYgsfyuc0_2aIA7bAluhNpv1Pw825Sd4LUxYYicA6Px5LTalUSrIPS3dELUuWVZYTJpyQTBeAyU3BEktwI98PxjdQlD9nvLx3NNH11pI-mDA-dpvfAPlSZuYAVPvKNVm-45AHhPqOrIZw3jUJqbk5e3WDPWIn7goN0B6H2RP6DOrYLMC4z-_A-P6NRKnC27PRv9AVvQz4yJnJ0ob2fMEOMMjbbL2r4SCo97mdTJJYha3t_mEbFKvVKAdTM8pHxmZDQHrdzkolkALDiOrI0GfmBIzwG617X8h20ZXBb3gVsAF1SDFdJZCZ3fAWpe0m7CcB3k0Nl1vfXntRK8e-81SQX_X7rl3kW-Qvh9KRPJjbe8p3_10WvX5XSYvC4o1Ry9a6CWXyN1UOqcO1qlAQm-nh2S8XA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ81DUBZLDSjAR7At5WcU-o3E",
+         "plus_code" : 
+         {
+            "compound_code" : "C88Q+38 George Town, Penang",
+            "global_code" : "6PQ2C88Q+38"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ81DUBZLDSjAR7At5WcU-o3E",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 341
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "894 & 896, MK14, Jalan Raja Uda, 12300 Butterworth, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.440468099999999,
+               "lng" : 100.3870353
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.441762930291502,
+                  "lng" : 100.3883895802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.439064969708499,
+                  "lng" : 100.3856916197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tow Boo Kong Temple (北海斗母宫)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110499536046084169242\"\u003eWong King Guang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vvUcql6c1e2jryC4CQzO3Mpac6OM4V5Reh7YnUJRcPwx_fQ9CM-YQ3Vaz2ELTeQRndBSaSjspceTAaR_1CAAHcm1kKSLwfxMCXzKwZ_N2XVMhDh3Qfru4vcGfkzGdMxsPkrtYJx-fdD2M0XQehMXRiP8CX34cBXdtNty0knPhlOhg_ntngaPgmvIDnb9DdXekWbBS4E1zuExUaeQ-TDRBT7x9wBik8y3YOd30btpn2o75yVSs_WQUgHGIwMC_uYZ7OYOza3d62bd7HC-05ZNmqSiyho2fOO-sRcxHmL4ABr04efYKvA4VE3MaFEMIe9PPaKyPw215c01RBKhU6rY0nQS4_p5G2e2-1UUxNiBhd5B-3GwS_NYiBG3QLxNrAgHd8g52E7_MANK4bNt2W-bC-WIFetW7V_d4pYVwOOk7FTLJ2",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ-74tI-fESjARD8MCN1QAxd8",
+         "plus_code" : 
+         {
+            "compound_code" : "C9RP+5R Butterworth, Penang",
+            "global_code" : "6PQ2C9RP+5R"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ-74tI-fESjARD8MCN1QAxd8",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1771
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2999, Jalan Todak, Seberang Jaya, 13700 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3953247,
+               "lng" : 100.3951981
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.396617230291502,
+                  "lng" : 100.3967582302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.393919269708498,
+                  "lng" : 100.3940602697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Guan Yin Buddhist Temple Seberang Jaya",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107209163547292370189\"\u003eIlamaran Ramamoorthy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sY-qW6AnxTq4iLEh_s2WVSLbZ70-0K60sbSnZULRTKYix-fLYXE4-sGraDzmHhG5nUVxi7_65T7dkSLH7UWKOXEH4mU4ofUzSFA5egwXzBnHRQpcyR0bKGmsEE4AeIXIKItaknJzP09vrQGcbmIySpXEndec54rHLXwSnASdN3HRypI8WA5jSE_dYNYNdfCAwQZbzGzNxeA6Af2lBMKKr0NaUXR04TKiV-XHLhklIWhuA9lmYVxvOwgXnkRG4ScbrkxiP_yLdZy_Niofz6kno38rEeNzosOtu_NbK-q0Eck6LUiop2PvLk6A5T1PBwax2t_GENxIv3IxDBUNU-St_ESnp3wfSPk8cwgI9N3R4mAzBz4x1t7eDVkIyRctLhdZ5TZiXQ7N5zxeiXi3gRLkAIbVBH9AoJtBUo86qyXzeVTwItYsOHRmk8TL9gI95z",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJadh8gxrFSjARAmzjqsuvO3g",
+         "plus_code" : 
+         {
+            "compound_code" : "99WW+43 Perai, Penang",
+            "global_code" : "6PQ299WW+43"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJadh8gxrFSjARAmzjqsuvO3g",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Baru, Taman Pauh, 13700 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3680199,
+               "lng" : 100.4193839
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.369279980291503,
+                  "lng" : 100.4206034802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.366582019708498,
+                  "lng" : 100.4179055197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Al-Hidayah [Jalan Baru]",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105539660876432615348\"\u003eMuhammad Ammar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t3ALwRePoZBZExRWanlq0SMKp1ivFrlsJ1u_4gBFUqwby8E3qru4yNOv5IeAKu35X7vRMHg-BiosyFWMaGG8kOSnYjsrSmnd6imLFaZ3S0zxNJ94wy3FjzVUUDJdFsPoZ2XZ00hgC7npPO1DCbpXOioe8Y8rFEVVeP56stKkXP8ZkiXlK5jye5yWUbPeAF8gpdhx7tgBL02M7lIh_8ItrjaW6-AFyuO6FnuTwGxmf1piALqID-MwbU2n5kONlbnDrhNJR-R5MFZ9xylsEYQfkWMnStfSNaC8WRcWGLDtYnhC6_B5cdv9cXolFOMLipcM-9mc4_5s2N-455TuzmUPXaJs7D9KREGSEMfcJAW5yAkpms3GxB_qc1CrCANeXTE2P3MgvtVz-FgR_7ouJiR399BtQnMfbPtPSa7DKmD9EseSCJ",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ1fF0cBXGSjARHl6hYO06pAE",
+         "plus_code" : 
+         {
+            "compound_code" : "9C99+6Q Perai, Penang",
+            "global_code" : "6PQ29C99+6Q"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ1fF0cBXGSjARHl6hYO06pAE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 261
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "8, Jln Perak, Pulau Tikus, 10150 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4256842,
+               "lng" : 100.3162003
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.427049080291502,
+                  "lng" : 100.3177125802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.424351119708498,
+                  "lng" : 100.3150146197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Buppharam Buddhist Temple Penang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112256435336241179023\"\u003eFRANCO LAM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tu2u0EFDplEizrM_fwcS52FCOkqbEFl4KDqqsQwbAi44BIheG9mdk0PrsRLS1r8f16w344dP_bFouDWIhe1FPW2c1pzJ8KAAhhnKNNtcGiKt9mvhlO_dI2dcBcrHIlQHAqtgooc2usOdxvEefN_PNPg_tfY3_rmHFEPtcYgewAt4IM00sHdknp8mtmz9ANhGPg5fkHois59p6dQc6ydNEYHuJ_MI6jz2AiM_k_mADGn1dMxMYsITMjG2SapCf9AMh8jSIOg7vC_zAuaE-Yb6KIbTLYgUR6UeMyLhHmWtxyyCZqd3h7pbLe1IclYNd9X17eT3gGY-6a0nGWar0OgmttijM6wOB4pwLDwxT2uaX31NCZosgBaoZb4EZ7Iyt6rmC-z94215LMLfmGf2yHQZScMDmV--I0OkkLY4gHvE59ZA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJuyBY_qXDSjARXAo8KK-li-4",
+         "plus_code" : 
+         {
+            "compound_code" : "C8G8+7F George Town, Penang",
+            "global_code" : "6PQ2C8G8+7F"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJuyBY_qXDSjARXAo8KK-li-4",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1326
+      }
+   ],
+   "status" : "OK"
+}

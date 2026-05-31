@@ -1,0 +1,211 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Unnamed Rd, Pulau Duyung Kecil, 20100 Kuala Terengganu, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3363958,
+            "lng" : 103.1272778
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.337744080291502,
+               "lng" : 103.1286533802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.335046119708498,
+               "lng" : 103.1259554197085
+            }
+         }
+      },
+      "name" : "Kota Lama Duyung",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: Closed",
+            "Saturday: Closed",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102466097451038171135\"\u003eJosef Vanžura\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stL8QLYMrUtA5WKqWjmtqQjaKHQyH8xh4rdVCZXSFJhRrtRoiODfXHmiJpO-K0kN08mlVu9ixetbNm1QAC-mf4bNk1wMsDghX-1_mc7rSTxZmd7UuBorDgmhdsTlH1kxJIWLjOSIEmNGcBSglodcUNmhqd1cTor6DUfSNStSWQn-RbspFF4ZkxqhfXU3hP_Ct-0ICXntYZlWoQAfwzUmS589baNlgVSYX0u75xaWEQX5tT4eLF3xsTEuz9dOJ2OYr6RyXNdAS0MhLHEtsAHbcCsxAVw0TsZ5OrGeNJHilydIdmePEwNtYM8Qc70jMZJmRB4JnlARBR8o82t0m1FIl0W_naxAwgVs-3dpptlmJUi9rzcasdHh4PVF7cVjhOfDCwIj209PoP-YHF-ISjTo01SdrenOxJs7c3oJMhL7S2Ip3x",
+            "width" : 4080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112540479713220042947\"\u003eHisham Said\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uCjifjQnnzHQAm_Efamj43riTVrKl9EjA611985P-1rRgdQJIe1pycYEyHbh4363BN8P-Hnf1LLXonw0iyk2Azu8hwNewrvzwp6dH0RfJUvE4JdgVSS8Nc2GaB56jXBvRiLlYVzrSfbJ3T2hnLy7PGLlGIn3VZ5bSTCAvXkUu6jrYAIqOOWiPP_OmeJ4zGdm_hhBYbFyFy2pMchroLbABBAr7Rli1TS6Q78GtsalDWWzyb2O8a8PeJjhNlc6Tu_ZxqeQd2ubcKuN0hlg6FdiRG0_Q_ArN4nbZ3kTqsBoB0abQWrXCoqFt7hT7oVHZEInM_rQQM03r6H6NgjVlJxc6OfAYJnK4jFjNUVpUFA6P5G9HP-E7T-HyE_sMftK7zuXfEmPUNj5uNL4-oaZpvFbJM8hHBiDp44BtdhiRZi7gX7sK3",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112540479713220042947\"\u003eHisham Said\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u-vGctx46zuiP2WzPAyzDXyVnPFEOMpPNlVMstViOUfMfiKK6dQXMxWw4p70BajDyeXK3kpmqUYYk2kowq1aSMNSod5lhrDQ30dDdqQuDfk-O0zVqTE1-UIeJRvO6qsCb6WFAQzLhgJWoKvC6B0gyFbinMsgcJfPMziqjF-1F4JoCgzLB9g2MSA31h3luEj0UTvZWowAh5PVV7FG7E_ScFr6QUQ9de6n_9MdwE1v6ikBRq2Iv3AdL1p9RDraamDPW9sNLSrNnPV0i688Qsv-9euffeT2FrpndJkJYMJZ6KcjrmWhevctgC_imQDQDfKTy-O7xHZb5uGcRMnJ1OjmAkga_lP_frVCEImy8Vh9QPBeAxhS4-qzP8XL_XERfL3_FDdy_tp6afnZtooOEGdLCOuPcZmQPTZAVVUW_iStErOO4",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108529423343637992781\"\u003eMohamad Azzwan Niza\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tOqRgcdvUqJquIdOWpI_1qKZbmNwAP92hB6sPPnAtf8yfKe1c5g1cFiBlVhC3qgKR0ks5s1JskooYCLcEgQW2ZcFoQemi28Uc2GEb7ogGlW-2SsJXI_FIlum0RfQmcR8xkmC6BgMRWIyUNyDPkiXUBrTeKupXQ9pRNse0W1qVgR_N67wRNlsdhe0pr01Sfm7VSfIVmLBEOn_PWbaC-mVpiaGC7qJd3Vwbwa219HXMU5u7eeJw2fMD07thm5vsP9BnEukRF-XeTSu_55mwBn9h3GYQFBnASqWN5WhWXtQ-UKqkFjjJNl6hIS1T21eGOOyOJ50vX-eLWcwI4YX-mC8P8qjm3jAPzJPdRLHDW28M7B6F0-cPnmrkttrjWLMG3sURNTVXSPEeGGyFKubFKJcbTZxEeL2bzVwZip9AmeNU",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114621371587592573846\"\u003eAhmad Fauzee (AFA)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tf6fKGgDB7PBuYP6JdT4b1Et8HjCHzJ8pkQEG16Uj6dR6sOPhv1j62tstq9JzMoDC92_d_3eUm8BJJgXTs9rHyc7k9KWKeOperDRqYu0MdnzJuF7Z_J-uAmNnfhU768tce4nD4NamlEmB6EZ5gepvpXZmDLoeuw0FDDJyZpEgrZ3TCE0pS8HCnx715F8ISHKFzJY8SVX6xEM8gkpooxHifbGt4lBIF7tkRS7Iv2NZ6cRbmGJ3GAqeLHlTTcfbfmsOxws0p8A-bAS0ox1_vNSL5itkEWAG94-y0u9uwaKdVEdGMUr76-e4U8LJh8ftjsxl9thdXoFnI1LYL5lX5J9jc5wTEdAbhWol6qRizGkx2EU7R3-8Dq0iRYVEOlkFwxwOOEQZ3k2Iu-VIlSoL5s0XQquqH_ckNvLwtghSbV37xdA",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107478526380438463639\"\u003eKervin Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ueJbnqMNBwOaOzBwjcXi7AGiOeaZuRoZeHaNo6Y4Du__5IKr6i7N8yo8fvTidkOy43f-QTY_szCX0_Bp_LqjJREPRdhkmFuNVY0AkhbZvWBSCLr0zBIX_ni2jrd-82zz3ifv_Jlo4WuLifBn9gaBgEOrMphIoYTRht_kQxXdzrT85LcmcYH63EoqU0_eeqWUErhjkWby2pdzv_--Al46BHAZh0MW_zuB9hklffXFfW1OpWZlUgcvUcwXLJ_fUWzcDCXOKuSjt0fyutqeHUwFx0vgaBM9DWD-I6XeOA2Nr6yDy1v_aTiRYiXNlSfPagz5B3xt-uCXNdE0vSUaHTjkwOdDIb3O2ruGjFgv03acwhWI-TnLXPdLgvlBUrYifcSSmekvNMb_L2LlH9vO6HRDAc-u1zgFe_ulG_nfPjF7FjVQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108529423343637992781\"\u003eMohamad Azzwan Niza\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sHHAB4L4v9erTcD8EPpw6nqHEHrab-1FDgSYHvXO10uY1_QGWB5MRq6eo8XRpP-g2de9Bx4LfTFROj35YXV7jVDWIz6czxkDjPuIA7juWHHEQt2K58GKycfD7A-uNFJklajG5plEqJANqebRkH0zUuOXj9WCAZY3GjEsESJ5g9V8rX09CYTB3NjbABlGzP9D0eD1j18bS7HMYDPLsVLehfB0DXCxZfnqp9bbfBM5IX7TmbCi9QwUv9H5GaQaZM8y8S9tGARGtyqKJBrXiAPj5WSUv2mRCFPha1kOU0v1rS8PM3javkLtnkksT6B52GAVPSHBpSWm3lTlVQVGMkMOPq3x9aBJMAOQNtSEpV0lXhTwlv54OdPGenKK5qISYeJ4eY2tVtGm0AFeTH3eMaNgw6xG4O6yh7i8w1NJwjfj7tgw",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112540479713220042947\"\u003eHisham Said\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uld8RyXdHK01Wqou5FM6QqYpVCTh0QHSV2R8a4Ri-qJTSyVY4iCzTmlz1mEBRcycdU_f8qX2YPTTnIYFqyLuebPE8-pe6JjkB3CL4FZi88BiLfi1Yt_g5-3AVi8PJV6c3FFEsRMaov3Po1OmclKpDZcHqh4Mpnb8AfTrgQhghvZdnHATWwKhboF2Rp9sbXz-btwBwh6xWs_9iN95o5Ir_cX0GovibcnSIDPN-ime5bEkvUqRnrmjnNCFgkFK27QfbdKsacMFCfCxYzMnx7l2qV7YfCl4VnRBOxQ-97p2QqCZMeog2dXwVT4wtsyLw64_6qOUXqi8gt0I_c3IINXMEmP3ADlL1h1aNMnhMRuW4i3FNdVbv9bbTHFeeUvq4QCphtWAc2wXF0ruBpnYO3OvRoisvqegCLgUEUcluDbTo",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114621371587592573846\"\u003eAhmad Fauzee (AFA)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vY2lmjv5m6zI5QdVP8srjjvDXFFviwXvSG7Jpzxy10O--uGuSRWx6-BpHJwYfjt3Acmx6ypc8clzSIYSYxfaUVNsbUCrgHPKDKgQ-uvJ8lgfTIPIfwyXSEOxfVGq4iDFfmzzlgIVuzPfQWnl1n9Nagz1yXFJLHB04dFOP1aV0RY3aMc2mmsTHuzsLlGZx0C6IrJfZfsCmQcvPoOB3K0yAUUfRjXTFHDwfy1mthagqL-cJ4T2aCcFbtiQX47mIXVbfmCVhsDFaUITrrY1sfnEJerKSXlnBDQzP6K5B89Pyl0ZUMnid8IaFYik3lA511JH6FuNulk9QMw657D-Cq_uBNJB8WQFw6_id8vU58BZAOUtJ9Vy4Fomdj9YDUoUeTywqzhw8XUHNulIwhUagsDjfZSb4-5rw_v3TauQCFmg",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114621371587592573846\"\u003eAhmad Fauzee (AFA)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u36LJ2VcOYGv4XRKoFZrAmgo7SL-RFfbMI9_6UeGrG0LFgVZhXSidHTCP0bPKAmcDs7rCEjDBGKqWs_p8Ys5eO3Ziq56U40ggNvROtDRAJc-gMLVf3xj9J83gelQYTLWSC4WbuX9opV4FPFLnaGMmW_npxrgKRfRPiSbo0wMUabKFsNPSxQIbrkCeF-hGikkkubuo3yMKWGSZdo-L3m8cHuZHRddUecDhlam6sxrHW9-EEcC0eAkzvMrJIgoon672uiBz4ahYVIsHAwPmxGQIe_eBjI5O6R3IW0p-YxWMnaAdoeEaKAOawJ4sXc1yFowxV8uJ-aPdSfgRXvBuGMTJyQysQx9jjeocaQsF8b-WC5MgcYenQN72Ji9gjDezZigDKodteIVYJv_VxoxMYs7N82q6X4BhrDlNMDFpJVn88SQ",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJPd7fsCq8tzERs3mG5vegkMU",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14236055408703076787",
+      "user_ratings_total" : 240
+   },
+   "status" : "OK"
+}

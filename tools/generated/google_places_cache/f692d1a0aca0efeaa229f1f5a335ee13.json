@@ -1,0 +1,1200 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tEtn34sSPJUumt6LK1JqQmZQDQKiaOjnWRKWEvK-vkEIDyfrpWsYNHPVAUa6DlLkd_7Xp2F6WhMa_xef-efUdPl71miVmyb3JhKntTPea_lxgdF007aSKhY117leKlNQtOa3cmJLn8AAaB82VGi1Kv44VR4i9U5xiSumnwJiTAkR7tj4UbrbTKkZoIim9GWMmX-5pCWggrpM2VgRkqZLy5JxIfoAn1MOi1T6ZanKFLT-IwlJqnmCq7jWL7fix_bSBNbSVzebU6MFm001_ixuMo0J95e9k1_SoyhqLg1tlSKCRhScjPBOK8_-Sny5iQquEhHC2kpVQvnS_3jVn38Ks8ewcBRNnTMEWD9v02ZQEPliuTkJXHvFlvSYG4lGasy-7w4afoz-P4ndrRGnWU0MmTFb5gT3kOlZDgwf6zuLUaS-uQKkqjKk_w_Xoz9uS3b_oBVKZv65w4T04kFPkD1z5amAY7pKDgoRY2Aqhg-qWVIZjecw7untV1wLn_ViHyd6WH5bU3lICb7yH7QGgP7560VGvrkeNwDTLBr8w9_gou9zhjxbCkyr2QH0EIMdNwnQNgesDz5EIxWdwsJJmyBQmPh_-mBYpS6M4o7KLNr7Kvn-7eCAfjSpI1z84-oM5CRE8pHjAKvrxHqo5PHwdx_BAE25FOOoBE9qH_1ro9aTEvTmWKdOfZ7xYg_vohmKfiqx6g16LNNNQ2izQp3gGUQbD0JRtBQEdfUo7ZBhCX1gNdEmjDh4Ujkd1SpXRi4nojr93_q1DZ5J98AWIL2Vvh5gCdmRH_Pg9MHrFNIIYRddcuYbNyRcu1v8X_EccVKXYUi1wTq0FflKY",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Haji Babu, Batu 20 Sempang Kerayong, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2952688,
+               "lng" : 102.4446522
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.296551580291502,
+                  "lng" : 102.4459089802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.293853619708498,
+                  "lng" : 102.4432110197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "As-Sajidin Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2366,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112818231515713414591\"\u003eTokkuu asha #sentap joran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uneeQZNbovlCp516DF8yYn-4bDfKwDgdZ_QS9fHiZEdUxipGFOKNO4NomY5kX8y1FukMM2xpyqSQpa7tAGToPuU9xpj5MF0kPiZt6KWlqH_hQnpnVVcnkENx-GHRfXZejLCJpzVCEyT7UF-1U3pg_DLab6OBE49D0f_6MUA-c__Az-hzAJa2-x0E74cqQ-A5_qWat2tzDsXiUdvuoTrdRyN4LrfWB62s3Wd51gzQvvBuXTSt32GUBUkzj4HuKZ6fs1i34TS2e9by7u0OPZnrAb2dUGDP_74-P4f4KNRAVe4Yv9zPvvDbhuaslPlPNFKcRcbYopr6Gp9VOXRIgQ8918E_9YyABik7rR3yV0lFazIuXlS_l0Vwz0_I28rHDt0qbZgPUh6cWNAWgn0Te393EhUUROyQNMTsGS_Y7yinacpo1O",
+               "width" : 2256
+            }
+         ],
+         "place_id" : "ChIJhenf3IXd0TERT87K9VH9ILM",
+         "plus_code" : 
+         {
+            "compound_code" : "7CWV+4V Jasin, Malacca",
+            "global_code" : "6PJ47CWV+4V"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJhenf3IXd0TERT87K9VH9ILM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 113
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Jasin - Melaka, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.296444600000001,
+               "lng" : 102.4145919
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.297817480291502,
+                  "lng" : 102.4158374802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.295119519708499,
+                  "lng" : 102.4131395197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Ghaffar",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109248062077890340671\"\u003eMUHAMAD IRWAN MUSTAFAH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t0PdTBwWsArvghGXQ6fU-sfXgeFil-Psw60unv-W0kMshF_My9szqx93b1KDSQoxRpQT6TARZqVbUTU57w57hd6fT7G4eEMEben5YxVlkawT-tJgGOIsnaPNOVbSgCKmn3THZnThVzPq1rXtbfOI9THvcEdRhYJ_ZerJ4G4cEWCie5OKHuxILmoK4JPsQvZxyhmDjrej3ijvs-NuJAm3_FUwvra8oUS92IB5w52qmWb4PaYu1QK3jteXl6wl9U3aRejSCeGZSTK-aUX4XsyHvS6pWMGA8VDqKaibnM7dwD90S5ToL9e9GrRylQmkLCQtbE8PBue1-quY_lWcFvazUjDEJh7JakYLbeR7GrPx63rgLpcnlQTAruvO3btZ8ji2t8YOQKVXPOiiWYXYi-O_lMfmUR50H4JRKtdDRSGo8a0pIm",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJuZzOrBLn0TER6QNi-I3Yxk4",
+         "plus_code" : 
+         {
+            "compound_code" : "7CW7+HR Jasin, Malacca",
+            "global_code" : "6PJ47CW7+HR"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJuZzOrBLn0TER6QNi-I3Yxk4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 222
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "77100 Jasin, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.433373500000001,
+               "lng" : 102.4742742
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.434456380291502,
+                  "lng" : 102.4755618802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.431758419708498,
+                  "lng" : 102.4728639197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Kauthar (Masjid Tua Nyalas)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101719099431884602771\"\u003eRoslie Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-soPJxToy0VEnljocu9R-loY9bwMOoRorXxuaxt6H_40PWRYlFYv7WZM9f9-nv_5bySYZV6Fw3w0_-ReGV5J0owI-iYbK3uwNtstMJiFoA1eKfplegYh3rZpAc5LH1SOgFTO94zE1m5bVvy72leurg5-0uhvmnovPYD2mCNWdRYAZRCTDjyWuZk0OoMxAKxfr8vgY8sfsIa-eHKIM5sM4wDdGz7-B343OC1QbQgs6nqZuwm_1BIC61detdgF-MX-4b64ib_RmsM2zrhzxRi2R4MrTcA40ANZipbJv71G15X17Wy_TkKKiiaFg7Vjs355J-OKrCR_TN8u7zNKrfqXesAUhxaTvNkxwn48s0BIf2XNWgr9hihw3vKrxOdnIuCr7j91eQSKjbNUNp04aNurz3htJKmcDDS3tNHOyUw-6llaPHE",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJty0iSVAgzjERKSCj7Wuyw9I",
+         "plus_code" : 
+         {
+            "compound_code" : "CFMF+8P Jasin, Malacca",
+            "global_code" : "6PJ4CFMF+8P"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJty0iSVAgzjERKSCj7Wuyw9I",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 39
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Parameswara, Banda Hilir, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1917988,
+               "lng" : 102.2503678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.192846530291502,
+                  "lng" : 102.2513751802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.190148569708498,
+                  "lng" : 102.2486772197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "A Famosa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 562,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101202297290851884473\"\u003etakumi yamaguchi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ulUj3gGHwuqncrzJTQ0B6nxSVKGpCppx-OTHUKubgKq--VOWGzDzTKqa2tSV3iaSj3IP2tXfqtGJjHj11EEgy61tw_0taPH3H8aiqK93qkzQaUBpxd52gZEc7JjL76MgpVtCC5DFIedlPAWKYG8-k49jgZ4N_fMcT1GvDIAKdGE1axBrp8ePqvrADQT9dSV_uZQKv9arAEswanKK0jIdynxkKaW8e28PEKa1TNLxJk40tpryFXHSjRbJpOSwhqrINNa6sqMoAT1tqREUd7--nDCoz8QZR8WV4QBnYQVAUBC3ArijKDf-RzdbRTFui4S5edduzBORAFnDsES71YdK8e7VKFxM65lPvUzPUtHLG_I1aJHdW1jkKKqa5nbST1j3CedyRr69d1wl-GN5F30qS6UwSXgQ5-b2WwJUMrd3N-BYjUjtehxuzJ6S3ZWQHG",
+               "width" : 750
+            }
+         ],
+         "place_id" : "ChIJHWino-Dx0TERtWMOoXza5MI",
+         "plus_code" : 
+         {
+            "compound_code" : "57R2+P4 Alor Gajah, Malacca",
+            "global_code" : "6PJ457R2+P4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJHWino-Dx0TERtWMOoXza5MI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 19481
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tangkak - Durian Tunggal, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3191313,
+               "lng" : 102.3912176
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.320647330291502,
+                  "lng" : 102.3926301802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.317949369708499,
+                  "lng" : 102.3899322197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid As Salam Kesang Tua",
+         "photos" : 
+         [
+            {
+               "height" : 1156,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102214180243473434474\"\u003eTony Kansai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-th33UYZb3tBPIpgdDtO8RZO_N35rMbbvRoqF8AYzX49nLdj1HQLmHVc4wWY0-krDQoGvFf96cZH-T0KxrtoB-edC1vtvS9Wut12xucJ9Tj3HwXl1xO7qK35sXZ0yh5OoCTdi1EQwHtzhAWgDogi9snMdrQv0cjODN3l7CjN8TsLHn3NyVjAlfXkAijRP4KPyGFXwnrogSHOTxkU2mh8EXR-E6W7LE4qy0KYEDtLSw94w8MkApaGyzeCU5phAkJ56iZnnFNyM9aeZ3QaW6bGTF52VGDInSMc78MaREl3Al8_3mfqF8t5FRTP502BPyDYcfZt2VTJ3zF4EW0wTU6WWs40BuWOdDN3qPsv2Ra0Rk-brHySyJmztHIlrH3AzY83DkPoEXKKE5H-NfGn5Jq-T4zAzB_Ycm0jjsAndcjH6X6XQ",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJByo9Mdbm0TER0QgnDFDSeGg",
+         "plus_code" : 
+         {
+            "compound_code" : "899R+MF Jasin, Malacca",
+            "global_code" : "6PJ4899R+MF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJByo9Mdbm0TER0QgnDFDSeGg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 106
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jl. Bukit Palah, Kampung Bukit Palah, 75400 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2152137,
+               "lng" : 102.262145
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.216149230291502,
+                  "lng" : 102.2634462802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.213451269708498,
+                  "lng" : 102.2607483197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Al-Azim Mosque (State Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 540,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100601485018037647416\"\u003eF A H A D\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v3DnW0r7JGcKUtg4ac2EhauZrAiKELddX-HLsoBQ7Yc99JRLBTB0qZPcVuq7_aFgbY72RYDLYPLDKZ6ONlubD4avJh-OyrSpJFw7WEfiK7-sb9NCJtQJr-dEqcHQuHH6-XF6vFb-txQ8Zn5tgFQ2FveP86Mla3kCk7LlWUJxBhYI2YZMa8H36Y95n9DtdS35w_UipLNkm8DQon1J7dLiF5fYAAHTUzHSCy0YyMWOA26JhTG4oDp356eQYK9Zqp8-nvEILl-IP-FD1lNnyFONeODQObrt4M90MR1u5hg62mQbDcafOS8F5-UBKQqtfPMaOdRJvaKqr2z6UOa4rRGkJxDJXK4GZp3vq84oTKpB4b07eCLLY8CjHYVGLzjBB2IxAnbD_JI0v7iI25pBrqW8u5i1ITxnbuYMJ0pR67TrpkrQ",
+               "width" : 720
+            }
+         ],
+         "place_id" : "ChIJJc5WNtLv0TERwGJjxevzAss",
+         "plus_code" : 
+         {
+            "compound_code" : "6786+3V Malacca",
+            "global_code" : "6PJ46786+3V"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJc5WNtLv0TERwGJjxevzAss",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3338
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "75200 Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1967526,
+               "lng" : 102.2474876
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.198162330291502,
+                  "lng" : 102.2488986302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.195464369708498,
+                  "lng" : 102.2462006697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kampung Kling Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 664,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116901396689574955493\"\u003eHazmann Majlam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sKbQn7aH3ZUhZ3PdJ4ahsYNDQbP86DvzFRsOjbvrTwbWzeeOJh4_rILHCLXi-sRPVxrqJi4vQTQcz9IAg9UTpoqVbQiySo-7mGUEKZnDP3nugvMCThSTJno3X6Hewnq3wTX_w6v9kSGKtuPxuFcoIDUq6k5pweJPvC5F1GGfGTKTKzzt6NPqn6pXGpsm1PPyNh29OATXdazy9bWlNs7fJ_3x18iXZsIBAXxO5SqJM7UreKpt2-Zsy2ecFmcn4HWqO7_R1Eh6KUTq_qACRcFUZZDJYWjHNk_Fa9RwnprL5Jwc-dTU29pWs8T_usdHgxg5-sNLxpcqhCd8NJwjfYrUqVdBxkbCAW8pZBicFhAmnE01R5XgXgsf5pFpLZM8_WLKgbkxZnTbbUHcD3oa-WZS3IjAZ1ipHKsmZXd1vprFDBv0xn",
+               "width" : 1000
+            }
+         ],
+         "place_id" : "ChIJmwULttvx0TERI1HUncbJMVc",
+         "plus_code" : 
+         {
+            "compound_code" : "56WW+PX Malacca",
+            "global_code" : "6PJ456WW+PX"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJmwULttvx0TERI1HUncbJMVc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 626
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Jasin, Kampung Jasin Hilir, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3090245,
+               "lng" : 102.4297661
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.310238980291502,
+                  "lng" : 102.4313116302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.307541019708498,
+                  "lng" : 102.4286136697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Ubaidullah Jasin",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104645101363830417460\"\u003ePerunding Asa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sjLMQXq3DaQ_g4JmdtK0ypbaEOfQ2C5BS3y3u34wm38DbhDBQIQXRsTpf_7NtNwYAdBySmWTXLFwNA2NTKO23guidUzsSGi0-cxq3LrzjKkjO0gUJTfxR9x-a_NF1RVtsE9fhzUzRwofzr3L6ssTJHi4Ht8blbIRo_C9NtHONfQ-Yh7xBz-rZskE1yAbv5alLpQ0f_Z4MZi_YW6HUvaHJJaFJbYMfUnFTft8u34uk0sLnHmvO-ttZOY2Ni8mBBCaYPDczE6qNm8FtmZttt009LXfh66MVFAz3iO9-oXZL4s0KGGuyDi5bhP4iLHHm7m_lySz5zug3yeqjZDpp9SsFdilKbzHQelHPyg1b2T1kX0Qde5Z1YEOwDLKxYn7iJTX4qd5ownseXtdRN6kAJXUFhlmdEXIhwXKayTmXpZUqX0g",
+               "width" : 4208
+            }
+         ],
+         "place_id" : "ChIJP8BXUlzn0TER14GBSB54YWg",
+         "plus_code" : 
+         {
+            "compound_code" : "8C5H+JW Jasin, Malacca",
+            "global_code" : "6PJ48C5H+JW"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJP8BXUlzn0TER14GBSB54YWg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 54
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Selat, 75000, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1790798,
+               "lng" : 102.2491349
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.180691780291502,
+                  "lng" : 102.2507111302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.177993819708498,
+                  "lng" : 102.2480131697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Melaka Straits Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1274,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101580898157994201619\"\u003eمحمد H\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vwYVi_cM1xnBMATQSJKShfseWjhvrXXAKJhiXYNu-nLv2TGYIJACDEQsdCJAoxt9P3Zu_4VWbYB5TgquXvRXZ6D1mm4lHU9MHV0tYd71xUVNzJPJQ3fxCx6bSW6XCHvzdP4PDxhqFEAhfjsm1OGuvf3vow0CNXSktYwkAZeNc27Bjk5xfHCc9-W5z7QYgKSXC0gUtKzND_0e17UwNXGIecwvW0MTYJgcxPZ_fjhC95Yl7ueUYRp-NeGk1YcAOymbwVaFuDW1wqdusQ1gaA-jHJpEt5AeQrzVrDNXXGQcGLXPOsuv2yzRxJ3g8obudtzPg1276es0EiVuMRrT8fXPuoG_TjNjM48DBEST1Qd_11WS2ThVwagzjBGLgw6NiJzYWkVxQC4adIOkdSvDsN3EIVv7KNWX1iJH67CdZ-boh-8Q",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ2SBZWtvx0TEROHAya-aDz9k",
+         "plus_code" : 
+         {
+            "compound_code" : "56HX+JM Taman Pulau Melaka, Melaka",
+            "global_code" : "6PJ456HX+JM"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ2SBZWtvx0TEROHAya-aDz9k",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11611
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Km 31.2, Rim, Melaka, Kampung Rim, 77000 Jasin, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3110549,
+               "lng" : 102.4403897
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.312539830291502,
+                  "lng" : 102.4417673302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.309841869708498,
+                  "lng" : 102.4390693697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid At-Taqwa Kampung Rim",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tPFyR9TtUVjzy0jNl6Jqe0bpb5TgAUAQKcNqIEjXBdnsoscGpy7El6VQTyos5_iDF9_zmUNzfe6Y6h8bVfI5Vc2kh8rMknAtvOSFWwbCuJi80C-S5PpD8wRnxUv614m2p6BzShAf0Ih6nFE8v_LMLkfwPTxlIG_Q4lnLzg6bBBMJQskfHpfAKZJjMb9HwrJTkRqPFiKrmX3SnfFTYHySg9taWnoyivxobIrI-VFPH30zB4BJQuV6s3mROwd5rUu8qnIs9cjjepW8NuTb2prAvYPGVyT7n9LpGtGFp92yNBW9mO2YBqb6JWiVHZisXz2f_bnsR_5fSuLqDZ8RHOGjF5n7SGlrj3fBVOOG40nTprUArjQmtTMY8QNfHrqF8uV8w3UVSWZd-jXGnvHOq4me2zLZkFZkmPdUJeuSPDahQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJwUpDiPbd0TERmlPTwkhG75w",
+         "plus_code" : 
+         {
+            "compound_code" : "8C6R+C5 Jasin, Malacca",
+            "global_code" : "6PJ48C6R+C5"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJwUpDiPbd0TERmlPTwkhG75w",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 35
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pantai Cheng, 75260 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2595075,
+               "lng" : 102.2253736
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.260809630291502,
+                  "lng" : 102.2267935802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.258111669708498,
+                  "lng" : 102.2240956197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Arulmigu Sannasimalai Andavar Tirukkovil",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107209163547292370189\"\u003eIlamaran Ramamoorthy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tb8JNsbhd26FMF-YOf40ETtb2nGRQKPwCqZBFPrBzRu_vqVEZM2slvRzK3Fuivygq-vsaETA4NFjk9epfRzt-Tandyp8ixCMJTRGBnH6rtdt0bgWP4qBGxHZJjMUpnDG6_h1UWXZ_ObniXbhwLqqrU2F4j8852iTIzpj_hszMo5fPV-WlcrPZQeDV86AJ3Dksz_FwYtKtNjEc7oGb8BYEFn-Nzt87E2w1C-tF1sM6gR7XtLbbNGY4h3ukak-4rvNX2xfEEQtVDZ03AMjf4P7uxOfbhmWKqfj1x1g2adBY3jF6JywE2upN2ByJlOWACmjnekvWhUl2eOLxsQUBCtjs8LfcbGVpBPJOGaFYbQ9XhAppaPELb4lhWArlnplW-Tiyj4gG719j3CfGRggjB2ZIdMweRRPhhS6D2E9iR7itTTaYv",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJvySbCZr60TER5T9tkAEXj4k",
+         "plus_code" : 
+         {
+            "compound_code" : "765G+R4 Malacca",
+            "global_code" : "6PJ4765G+R4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJvySbCZr60TER5T9tkAEXj4k",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 239
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 20 Sempang Kerayong, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3014267,
+               "lng" : 102.4403647
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.302786080291502,
+                  "lng" : 102.4416534302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.300088119708498,
+                  "lng" : 102.4389554697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau Al-Ikhwan MRSM Tun Ghafar Baba",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115024991523246630872\"\u003eAfiq Haziq\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-spbTNi-wM9IKOp4cZ17TmMeTTnQNUNBO82WDDn5CSLXATukVNMXaaUEpjr4qslodeL739rirxyEzyjfD1vmm5fbDRFkmtWHZurNIGktjL68SR8GlSCKivf09yMR8Z88xeyREKut6s-u4MGXB9VIq_hihuSbJ7bQdt8ni6hkZI44KMW2osyikr28AmmzpOyGx--KkIkaBWNqqfooEMXHDfpd7nokAxWrHIwxSF-frlMD01xk2fIsl9mQVo_xyRbipS_Dky25QMwJWMsAokAZXRbJEE6xotpUhOQkS8J_F931loA_jlecI-AthlJw74aKnY5IbF-GFtB_oAz9bh1gIIEy_69EVdlY4l1CQsWne8xViH58sZjrik5hTgCfV0imJOd5H--XCtPuSqwP3IxqXwsBgUVCw6iywiWCS0pVjTZxw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJp98rKIrd0TERDCpESlQGzU4",
+         "plus_code" : 
+         {
+            "compound_code" : "8C2R+H4 Jasin, Malacca",
+            "global_code" : "6PJ48C2R+H4"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJp98rKIrd0TERDCpESlQGzU4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "77000 Jasin, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.277965,
+               "lng" : 102.4811199
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.278415580291502,
+                  "lng" : 102.4834536302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.275717619708498,
+                  "lng" : 102.4807556697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chinchin Lake",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1440,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117932115257221313847\"\u003eSultan Melaka II\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0s4aln0VQrRbgRy7BnFAXwp-no3nckR0WZvDt12frUNaRlAe0IMBrKT_FT3lBgoSqYfyNARjtSaTpK0RTmDYQ7aRA_Uy3so8cWacsVX2-dJs8TljZrQyfIFxNNz6Tqd3feRd7GU004P3JqBcjz0pm7SXvQTzVRsuPZyis5U42cYXPrOi5jz1RDY__kRfcqmJdFlq8raM9C-f-6k9cTxXzvqoXWhAT1ZruFvhHrhG_9q__I2GWv-y4VZxseNC4IKk7fBySHUUbiPVWI-8DHfa9PAeW3Hayj7fPuxNOn0ss5-HHBYeBeOHk-JN8Fhz94EyAu87Y5T00z4jiTfhvDlA42tXKWlOLcvTQqFg4kYABRr-fY70iOVVFabnWoLEOtLPIIytQUCsdSbNpfIh7o1jwkBYPCqoj2U12zKKhTZOnYAvn_sz8-7TWoE59f5zb",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJfzAB8t3d0TER7Ump_1syskk",
+         "plus_code" : 
+         {
+            "compound_code" : "7FHJ+5C Jasin, Malacca",
+            "global_code" : "6PJ47FHJ+5C"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJfzAB8t3d0TER7Ump_1syskk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 65
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "77000 Jasin, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3183266,
+               "lng" : 102.4028935
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.319789930291501,
+                  "lng" : 102.4042307302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.317091969708498,
+                  "lng" : 102.4015327697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Barakah Kg Kesang Luar",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106414937665679999701\"\u003eaiman rashid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u5ejPy2h9txsfkIb2LENN_qOcDNz1LFyynHLGzH6NXi17C2C14kBgFVKSq25GDDwC2no9SsTmJ65REK1BXupmyv7JMxDjJ-Zy9BPbileOQhga-aDP78hCbsJB4c_av3Ogz7l1KGqjGV4CCqceMRKe1nyCAi68iW2qMhTYdIAm7uNLyshjsBlKRFhnUAtfmNpDRa4EuZ6tP97LF0fXGp-MkVU0tjIt84Uv80ggXYLsNQcLaxGPyjqXcx04Is4Bf90F03jMSbqk8oxYusS--9qOmYxt-3uuOs5WRifBtpsT-aPAdyuLomMhOUVg-nOzt-EnCktfG4PCOKtyv2fedeG-CNMaTmFE5J7Ggmh_VkMe2Y4LA_X58MjI34nqQTLPiNP8vP7vE_hZqAWwoE4GBg7H5HKofOanpwaHTTtSi6McCSm6UTT60hNVSS-Pu7Fjv",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJH4IdzS_n0TER62jIu_GI8Nk",
+         "plus_code" : 
+         {
+            "compound_code" : "8C93+85 Jasin, Malacca",
+            "global_code" : "6PJ48C93+85"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJH4IdzS_n0TER62jIu_GI8Nk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 21
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Medang, Taman Maju, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2968148,
+               "lng" : 102.4203053
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.298170430291501,
+                  "lng" : 102.4216227302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.295472469708498,
+                  "lng" : 102.4189247697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid An-nur",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114975760381990367405\"\u003eMohd Shuib\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uurnN4zejdsoROoHL8BJlsiF6jCPvntTP1bVnz3XTT2PbStQCF-WRIBEjVVYF0IhxCLBbtpqe06aUNOhosKiOi1KQJyfwBSL0KBnaAIiHA36h5gstqH7LTCFYlTFjkowIXYfFqHQp4XVGcDmdPVxvjpVgJ35oraFfLfmEwU60SP_s4tJAMXQ4h6tlbJma4_AULxw4YQFUtktmwfRPgi1EYrEyf3ZycZBdLoed6IsIquqYo3ZJtzQdPFUdsDnv8gmHRyVeuDefb4aX9WRPLpRteFAQlK49Uc8xui1WJAORPsyxytjijt84nJsfiEzcKbZld-txdUG9-1rVR-vuLevjTlKYf-J0_-UI5cQAfHiDAaMs750rE9vn6ltRCcOAk6ba2vVcKMI3syjB1Wbe47tyUO_0EuwDeNKtBLwdnBHOlx5Pw",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJYx4i_G3n0TEROm56-BLccSs",
+         "plus_code" : 
+         {
+            "compound_code" : "7CWC+P4 Jasin, Malacca",
+            "global_code" : "6PJ47CWC+P4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJYx4i_G3n0TEROm56-BLccSs",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 58
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tengkera, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2040646,
+               "lng" : 102.2319867
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.205319580291502,
+                  "lng" : 102.2332958802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.202621619708498,
+                  "lng" : 102.2305979197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Tengkera",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 360,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101155827219787864411\"\u003eMohamad Amirul Syafiq\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uC02hy0-7K0pNXULbFF0njhCE0Q2UXCGrKP_dnQzNOcK-ODWdC64h6dohOD2m6PNJRkN2osh24sDr23CVhgh0dNGe2PfIqjG8mQNjLFXH1mEUSabBVo8fRwz7CeJ_LE0SIy-EhL-AjVcGLoMskFjR7fETGw5olwzO8aKrtj_SwnFL0YOFgoVaDGhV3B8E4dJJUoYapsFRYJ1gU_7NyjBHzBn5ijWGZszz3W8ayJxz_I2UO8P3jXaeGQ8AtsAlZkaOCMUXyCKFddInecdVfpQG8LpbxlSVA1W3frsXLlga-qTD68u7XVWQFsnK_U_oL3oVs6ET391IdZKdLwbH5PgsGTHuuOpR5boFC469ArY0i3yB3lanKs2DkoRY0vkO0CptRcx_wXRQHKaU1ODQLKULJNVHRNxE3F_IjXXhKUMEteA",
+               "width" : 540
+            }
+         ],
+         "place_id" : "ChIJsTe3rcjx0TERVI_A5nKdcGs",
+         "plus_code" : 
+         {
+            "compound_code" : "663J+JQ Malacca",
+            "global_code" : "6PJ4663J+JQ"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJsTe3rcjx0TERVI_A5nKdcGs",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1209
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Kenangan Chinchin, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2913005,
+               "lng" : 102.4836135
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.292580230291502,
+                  "lng" : 102.4848741802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.289882269708498,
+                  "lng" : 102.4821762197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al Junid Kampung Chin Chin",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109287517998209975914\"\u003eHamba Muhibbin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vaOQloEst5P4fDOdz5QlnhBvsK3sNPYWPyo8owgjo_8c8YrGcQaUGr6yyWZPkbT7jRbFZvmIaceKdBs1kVSnaKv57-iihGPDnpqi3_92IeT2enaJl5nBC7J-k-6o-XCs5zmFlI0U5Qec8iGedvmbX0EviaJSIgSH7WXpZhzHz3Yjstg8S_ASaRZIWovRZZTnte7eNISTwOhHoY1mmmxv8XZAdkJ4fS433nb2lvqHsw-JJjPdCOs-41EGmAXZbR8QsRCFPge1_RboighCyCKt1unUdNWG3QUqxFscT-naS_3CDEJ09zCZRPPWWcleJA2pgGo9xVUKeb03lUO8t-kN2FZGWcBMeLeLLTqgXwYrR2CQJpzmsXKJJBCAFsOlA8MWrhWXLilji14mq-MKDCiBFe7_loyAYx2f-tYoAO6ulkmA",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ_6fLqqzd0TERakH9NSRNyw4",
+         "plus_code" : 
+         {
+            "compound_code" : "7FRM+GC Jasin, Malacca",
+            "global_code" : "6PJ47FRM+GC"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ_6fLqqzd0TERakH9NSRNyw4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kilometer 35.2, Felda Kemendor, Melaka, Kampung Kemendor, 77000 Jasin, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3500623,
+               "lng" : 102.4045696
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.351418980291502,
+                  "lng" : 102.4060172302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.348721019708498,
+                  "lng" : 102.4033192697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid FELDA Kemendor",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102235237569527344826\"\u003eEqwan Syafiq\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uSbxcPtD8rPXIsFR-Ek_VAJCozcLDJqP8xqmnnTIne6fN-g3p2sOzl8yJJqp1hgE1OZgvHNtzGsn0d-NQZwzHZbhCiRIMVyd7q4kfgOQZXaJmwinOqNszcl2S6__Lwauy4XfbmJgWae7xAkBMZ4Pv3Hc6ZholQexfwEoq5QdCa3PB6a4J96JR0SXmtPwwbRAKX5v7bQLckm2j85yu_VeKM7jIzm1U98FjYeFhiAqS66QB--mujjrBMt5Y6-iV-qSG7z61ag23Q7lkoVlivJWGkFlFSqLeoXed2eqhKx4lIRFfwIlp9j0o2KjAnc11nB5uYKflknr2xpUiEQ-jeYzOZSUu9Rge4qs9SOxCLk78P7VRjH2ru-KyWldVNV6YmR3vu0KTdk8XmVN84qMR7nT1E7cIY3rRrpK-tECc7yov3Dogb",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJKZJtAO_g0TERL8dUtWkDGrg",
+         "plus_code" : 
+         {
+            "compound_code" : "9C23+2R Jasin, Malacca",
+            "global_code" : "6PJ49C23+2R"
+         },
+         "rating" : 4,
+         "reference" : "ChIJKZJtAO_g0TERL8dUtWkDGrg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 77
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Chinchin, 77000 Jasin, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2875872,
+               "lng" : 102.4546123
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.289054580291502,
+                  "lng" : 102.4560253302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.286356619708498,
+                  "lng" : 102.4533273697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Terentang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107593088285052930664\"\u003eA Hisyam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sJJSVdBKX6wx7-iUEcX9vtSzObN7tlv0mjT4ACWgGS7hHjxIUjL8cB_TmGVer_jBWAkbL-X_f2ukfEQuBgKdUqLMnLQG0VFjcZHeu0DRFkPwjs2-VZcF2fV0S-RhASlmcR6tUgHETmNlZtCdxaKpMAiCQaeShnzBmC3dZOQ3QmRHpkqe9E2MaMrt9c0MYPWb84vd7tGdECgEUTI6Us3ZNzuZvWtxhYGSHaZPH0fI2dGlgHoJVMhmkSW-U_zwaKKqx5J_DyssQHw_Hd41Op48cZvOIoqkXuK99HU_EAGousYcWZwCg_zfJSeeMnf0ckdY3camCPRxu5zTRHSJQYo2ePsG-RM5iBTCOCUw2AV6flaaLACjdEIBb0jT7KJh7-CfOR-OclLzQO37KDevdSamtTAyV6OTFFQdPSJ-oMfGifQQ8W",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJXy02lJ3d0TEROonmp6DNd7s",
+         "plus_code" : 
+         {
+            "compound_code" : "7FQ3+2R Jasin, Malacca",
+            "global_code" : "6PJ47FQ3+2R"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXy02lJ3d0TEROonmp6DNd7s",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 50
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Exit Lebuh Ayer Keroh, 75450 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2823631,
+               "lng" : 102.3038163
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.283766430291502,
+                  "lng" : 102.3052024302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.281068469708499,
+                  "lng" : 102.3025044697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Malaysia Heritage Studios",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1365,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103678615977688633425\"\u003eMalaysia Heritage Studios\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRI5vdC4qQ0vEXdpbbrZTObie8e3zsBsiXQyTthk_s8lzyh04yZagCYY5pEz-dYXSMWNT448OAUe5XTmyurRv0vpjAc9WMsxlCIqzOtymMRysPa21mI4UqcSD61PymzR_P0S-1iAWGdIcs1QKD79AwM5rCVKvUw3rcp6UJTEZrUrrioxeIvvgbzTZzfFIZvPGDLM1bucIvPmXYDCiJUxuab64ULrMf4bI0qakaB7wiIJAwqDCFn2Myit2CjSRxXVfFve50bAE4A5Qr1tXKUBRZjJJtuaZkUBSvyrQpTycg9w",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJQX8JdKnl0TERrH-_MJ4dnNI",
+         "plus_code" : 
+         {
+            "compound_code" : "78J3+WG Malacca",
+            "global_code" : "6PJ478J3+WG"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJQX8JdKnl0TERrH-_MJ4dnNI",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2879
+      }
+   ],
+   "status" : "OK"
+}

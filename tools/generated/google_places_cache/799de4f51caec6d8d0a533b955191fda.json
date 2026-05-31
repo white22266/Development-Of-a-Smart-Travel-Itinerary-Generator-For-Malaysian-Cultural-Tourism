@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Lama Guchil, 18000 Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.5539676,
+            "lng" : 102.2009974
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.555310180291503,
+               "lng" : 102.2023654802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.552612219708499,
+               "lng" : 102.1996675197085
+            }
+         }
+      },
+      "name" : "Ghetoq Lamo Guchil",
+      "place_id" : "ChIJAVRrMd59tjERIwfjelQH7wI",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=211395766930048803",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

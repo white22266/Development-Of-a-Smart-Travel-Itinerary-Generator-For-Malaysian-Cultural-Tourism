@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Masjid, Bukit Bendera, 10000 Bukit Bendera, Pulau Pinang, Malaysia",
+      "formatted_phone_number" : "04-828 8880",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4246577,
+            "lng" : 100.268153
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.425926180291503,
+               "lng" : 100.2695346302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.423228219708498,
+               "lng" : 100.2668366697085
+            }
+         }
+      },
+      "name" : "Penang Hill Mosque",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0500"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:00 AM – 9:00 PM",
+            "Tuesday: 5:00 AM – 9:00 PM",
+            "Wednesday: 5:00 AM – 9:00 PM",
+            "Thursday: 5:00 AM – 9:00 PM",
+            "Friday: 5:00 AM – 9:00 PM",
+            "Saturday: 5:00 AM – 9:00 PM",
+            "Sunday: 5:00 AM – 9:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108195111022023485917\"\u003emichael m\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tSmPobAj8t6dPXt-Te0GuzuIWNkV9VJAmlMEOl-g-2DkLBCVCGWTLI82pC0_GMPbuNB8GUSa5ebgwWqGvggiXZhYEQlTGknZWPb8MRzRgwsiJP52ivcjos-rhbhdeL-7jTGreOdQ05isfM1Sx6giJ_d5Ay-cWvbojW7Mkvl4CQDhjsH8AAU1_36LJSdxeuH5CtlJgQHTIjL4XxHy7_Kb2rsANoyElelvNkuYPleS1p5BT4g9BiELrxIkJHp10zRjcwYFKafGOzK3qcBBMdNePF5VGrGNrqH1CYj6H7r9GfyWpxDuTuQ5IdUxJlsNkQT9NuBLZQ3aVJSd2AGr_dj7KK_E88Azbps13BaE3VyvfaYbW7PQJggSmsEDtabOXcjBJA0q8N23vlz5fHkeTgr5T9vFmmjN_sTx02PGNGDE64m103QBt7nqLFL-KLC8Wj",
+            "width" : 4800
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116846843956984992200\"\u003eKhairul Nizam Bakar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uPeQZXwJ8ORcFLZcji8c_nnt8ij4KONlNwj4OBxeQw__9l4A6dAltkjGJFSMYPQau2kPzxM2Z6SylCskn7mFgQDIDEgAlKWezqQUn7c73DSKf3gLYtr--GioERO7i6bHIDZnkG8ml06F3TVP1_AZf3M7LWgkpwE128bOGS22f-eAo44qzo8k1z_kU_VXLXZi10U35vaaSZfmhD4NVNYl7DUic_XlyYHt6L4LBEOjTQECDqrLg5aNz_jyiYrA_-tl3ScKkJA-21fXkw_SM6aIG3TW9ifUFWiY5zyAvExs80cPX5Bwh0cvFAlU5d7uwMF_gHGQKKrV4rMKzhNV8nHfjHMGEPWEXDX7IEdQnt6ALDUyPFFqq6sEfkH7yfheRSD0izE3rgHC2wgVLoCbsqeWBjO8AJx1muOyh2DE48uG8xdA",
+            "width" : 4608
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101220946249376951945\"\u003eMohammed Irfan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uzuO4Ckh_Pmgu5IxBGfkg8n2VP1MU0eYDEWpVTw4924yXpQBR-QYSoXSd-UWqxgCRENPV1Ph775SWUKMipWUZUnPECTw9q_0McAPEpcg4g8-CGZQvrp-tkSCm3zhtrPu3ChIsQGDKH3LFXYqoSaAR8VeloLYwaUfoZYWd8QmxwNRshscLyfILSEwjqncnLRpdfCPe_L0BLvy_CqUXwVg6CB8wMKadPPlFYwL00HK9Qb5PBnPa8bcjHAwd0YOv9kk9In6DB7zQVRltsh4IS6zY9sNgixWhlxMng3ih-PH-mZZQvQ8epCCg1LwkpHW3sjyjt1mfcz_5P2C4ZmFZaMB3SjAOnf1rlC6bpFm0sR2hp0oAr0wQd07JBbwaLhzshlSLZHlzSvr6UCFeOok4GcJdqURIU_wMfkoI0o_25RqWUMPWu9tCNTRDmcKw7bQ",
+            "width" : 3600
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116438569650205644995\"\u003ePeace cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFxXGC79fY5DbcS17qXTF7-zeNYuvkEqXkm-98sM2p8IcSiM6zHQFIwXt7PcS3XpgaZqeSIocmKk_zYuFxO0q8KuST4BMtTur5aaLm1iDaxExdFDBIdQ8uN9H5thfocMEuIG7KLthspaZ8DTRVlXbIGvMO_E2IYSzZgyhRLc02HvZMqtdo7jFLHln85JxjqAtKkyADclFB9yaRul3xGgmNtaQKT5Q3oxxZJWD0kFFYqNSppi9j70sBqJbgKHtpAJuS1824PHBnOK-7aVX336voy06z1KzhBjZNnzZmgZIrjBtEFGi-5g3RqkjgSTA4u9TD5wQ6q7Bn_dMKqtRFfDWie1JxTolLTMzroj3DwVMokNj725JDoDzObD4E0HHGWsk9eizWz5ahuujknAtVbChV-6ngPUDNf3ve2uBbGfRJqlyB",
+            "width" : 4000
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101220946249376951945\"\u003eMohammed Irfan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vUIfbWlEuTKPLJ8ZnZouC1KjS_M2mmNRoQ8Ox8iwgs9FnPrEsRIHmnXGiHDG99Q8DFuilgOwvmMDoMXoeQbjE4X6U-Wwb4efTg7uzWVJSnbha-hECq7qI153n-BgW4PvO9QP6TH3lKVaVguC_8Iae8gmBlsrGduhNFX6foSRUjUpqJXr6X3cKYmX73LG0KjxhflHQXnO0cowybNnUkt8ym5j6Uw7P6QSoxx-afqsrzLE8OFlLnmV_LMJcS4WrC2GRsBR1LAJ1403Ln259B0V_MSb_v8lkHePNSkoYTzpyMSEqKsaWP77s3Bq3gSzzq0TW-EvdocDGPeOENNbca_QZMz_IPHZdQwi7dCuUuzriZ36v5lsEr5cU8rgC41BRNyjXay-vq138Dp38TFcaTDieu0m70Gextk4zUFcAtUq8XlLNjbS7u6aqhyD9XGg",
+            "width" : 4800
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111250970153650328025\"\u003eYusni\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-usKTxGp6I6kiCZfte0KQybjW7j1qHPT_QHvLFG9zb0rtE7v1J4I_a7tibz3HQYlo-yExo99ihhyw57oO2BfEKx7OH6atdrT29uGHcIIYQFgLCP8Qwa6oEsYlVUCWWn8grQixjHx1jFv1YiTjPKfWssHXj3LmRxxPyyWS5dHaNqF-c43rNd2qlG_FQurPHdRLDlXF3rCvwXsXElWUCCw8Gz2yO1CmJ6ZTc-x1KnlQ15kxXrv9PaDm-BATy94ykP9ehELgBe6qxd7tsMeko0mBRHvkwnD4xE1Sg08xNLVDnuJq__6ubDdP9zdYEjqpflMC3wM9tV_0g0wpT6yfGFQYrRCultScP0ZmCMAE02O7vijcBpqyQPY5YbcRFWjblkvi25iFx11A6BNpqswKfIwGsd_4iLPp9QLn3vaYN2eL0FrW-x",
+            "width" : 3968
+         },
+         {
+            "height" : 3036,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107241596739775830057\"\u003eIce Lysis\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u8geuegfkbkd6BsPlqwGBF9QYc3_HlXeWQvPP26Mbj2ohqHBVBVGUVms1UIZWhOiYc5SJA9GI2vtlWXfZ-zdcac_3-34yi4ITpNyT9JTMB3sII9gWjyZZDQ4iHmt68HSSb-HGtIc5kgXWFzl3gtpMBJmAhC_-pZUsbPYsl8nBLRb6w9JxkP31uGShbAkmcmhlP5a3Kn2xglPDTZ9swGkBYbnfG3kITCuGycaVqvyEj6K_0rEVVkGI7jYbzWcR_LLjVVCielirzLDPZMaAPFf9iWuFRqzgH6bZdeWoyaVanywjuibzSZy8ZdLF2FAbKvVyPA_C2kFzVo6myUR5BebY9u79iouF02g57RURuYHi-hTOx-1SdDdflucsBfcjqWPnT2WKsBQdrisMfqnX-JEaa6Ib8KL5kNLugL8ETblz3WKo",
+            "width" : 4048
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117432254284908110241\"\u003eReal Red Zarul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u2rPer-at-amn8k4mHiGQs1gDHrdGzHGkLcVDcqsrMj9ssWWWEsFSmz_pJ60T3nDB2E4mIU-KTZbkDQ29bC-lZGBi9pFhYEuluqYwhuDe4vQkF3yA3_GytvTU58pnjCdf8SJcttdGeoMfq0L7HcnbJxO8JLZcrrxJGOaTPWtWHjuvHq6lAqdCuHAfqGHOdPuHgGSJtTw5ciT6gpyMrjC8xxvrsiSaESSoJ2xZyFeJFO2dNzIP30gyWsg9jl3Z-Arbt6TlH6WQWBUsFz1FvLhHwik-KJfqwudlu-7gHpgAKfOzWfDCoaVN9A0uwqnqeWUoaeAzzAU0m6tSFzQAT82mab-Z_TIWcDs9hJUepZThEUJyX4P0ZXPWFhattbSewx_gF2S5Khas2XGU9pUD4brEAe2ODDhtA9TI027fJd4wGNw",
+            "width" : 4000
+         },
+         {
+            "height" : 1868,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115663487011040564504\"\u003eMohd Yusof Tawil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sH4_lbogpieEmIeDEujiTZkNDoqjYqQsk6WCPKU7dgamSB0DzOimBVgUxJvED-yaSgxq_KM6Z5wMZLxjcgZKxF7AgI3YXX_7X_Wj17rmz72Fzzb9_LUN0O5I9JCKOGKBIPGjeF_Wg_T4PtyY4XXqso38xF_SXCPql9PadNnql-_Swam1DlcbpVNyZIjjeFvIvmnB4cKRRC247E5W-5zi0o30sjJR5h4zmypUaB6JHyDsWTCM-9jZZ9Uge9-jZ1hXin-1p3KDF9WWfvJTT_IOyAmHTXNavjd5TBYLIRQbuKkWuEiF0c8JHZ2l3DTIYFcC6-VNuAwd2-J3H9ng7G0O4I9-fCIKHHDdESzJiMMdEzPq4i-JJtrFzqRo6vpjDZRpVcgiw6w881AAyZiHAVPpa_Y3XIYajc0z8tz2mWpIY",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102192249819656624262\"\u003eLife is a Journey\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vR0R0CKd50mxYzJJcnPGNX_OM7IoB-w-9KB-UNrAEdmhrZn3b6bsD3rwih_Gwd0GJBK47F_keiDuKB1pbsDW1G-xt_ljW1EpOv1Vxl5AoXt811VvMORBw3qKOn0XpuBtnZVm1s7X8T5JhnxNRP2Hl1qWKL1tVtC2PTudEpa7wkXeXEGgdadPU3F5tk8RoYvoVARWbzwj7hvWlobp9i-Iwv4v-gzcn7HMOPvNvazvyaWJmeaGWNv2LOP_9MLj0T6pwXRKrd6yESZFHtGjamta1Hv2ki-016JwSaH_cHsGNBX3139Utj-KEksQhrJ2JJO47iiSNartjwZQKFYRZgfmMCLR7_NgI_sUn3Ui-quQOy49siMttdDDJdq6f5E4Y5igN4-DospMPdB08mL53ce4ja7STClZcAqiu28ZRIGfYywXwN",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJtVSqD3vCSjARrosYyDIB1VU",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6184850980880288686",
+      "user_ratings_total" : 241
+   },
+   "status" : "OK"
+}

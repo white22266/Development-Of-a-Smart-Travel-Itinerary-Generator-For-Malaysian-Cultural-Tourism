@@ -1,0 +1,42 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 302383, Jalan Air Terjun, Kampung Batu Berangkai, 31900 Kampar, Perak, Malaysia",
+      "formatted_phone_number" : "012-682 8084",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.306989,
+            "lng" : 101.1644388
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.308642480291502,
+               "lng" : 101.1654870302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.305944519708498,
+               "lng" : 101.1627890697085
+            }
+         }
+      },
+      "name" : "The Syorga",
+      "place_id" : "ChIJrRLnQjMDyzERqpqLm8YukD4",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4508154657545886378",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kuala Krai - Gua Musang, Guchil, 18000 Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.547380899999999,
+            "lng" : 102.2004451
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.548734630291502,
+               "lng" : 102.2017379802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.546036669708498,
+               "lng" : 102.1990400197085
+            }
+         }
+      },
+      "name" : "Persimpangan Batu Balai",
+      "place_id" : "ChIJ-T2iUAB9tjER4GnZSmC5Mzw",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4338014689311680992"
+   },
+   "status" : "OK"
+}

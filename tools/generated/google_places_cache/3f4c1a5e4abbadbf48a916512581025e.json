@@ -1,0 +1,841 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Arau, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4315883,
+               "lng" : 100.2710104
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.432927080291503,
+                  "lng" : 100.2722909802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.430229119708498,
+                  "lng" : 100.2695930197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Galeri DiRaja Arau Perlis",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106753221877603537251\"\u003eYan ::\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tAiiYlTgfbXZGO6Qn5b_EMR1ilL3qJsxyTYfy6QWU-RqoTyHE0IpVDN9o19taKqwBmj67bqd1Xgdcu4ShhaBmpQV68Rc1iJNFnjATwnzHTgQQGmGPsRx4APFy4eCOHJlmtZdTI1fBmSaDnpZ8M6qbB8sF0dgL2AOzQ8CaIScDWtq4azRHXuLefJjGy_i-HcEDquYHRv88lCXvqxT0QlLPTVDYzFIO2JQr0-_Gl7rkZBWF_pOoU54Itjy5UsRYu5lt0U8jIbVpJjRv3aQVMzAnFrlSfrCaTgT_XFKdOhv1GFUXeACa1Nx0gCM5iMLYFvNT4Xxg-QAzQz2z7YZ_G1sQyGMDQKxOSzMZ4ameuDKFdpIMCxrBQLLL0quLLsuDZb7_mLL6Gcvzix63mg764yG4Pjwjb05vYJ2ngFLcsJvlt3tYY",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJIX07V5-jTDAR85rH34CNihA",
+         "plus_code" : 
+         {
+            "compound_code" : "C7JC+JC Arau, Perlis",
+            "global_code" : "6PR2C7JC+JC"
+         },
+         "rating" : 5,
+         "reference" : "ChIJIX07V5-jTDAR85rH34CNihA",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "JKR 533, Jalan Besar Arau, Arau, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4270979,
+               "lng" : 100.2716733
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.428578680291503,
+                  "lng" : 100.2730244802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.425880719708498,
+                  "lng" : 100.2703265197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "ARAUBERRY",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107642780564863386747\"\u003eARAUBERRY\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVXGXfHlO4zwNSfFA2GtTkbCr6HYvOnn5fIVlImw8I5rdtKnMgz7PFAWOorWv6CkBgScqo1TDEaei8gp146tZzXKTaHvfWHku8qYg8XzfBAteIMph0VoLz3mmTkzfxFVlQCXdLLEfCqoucPYOMEayR40O3ZGgHUg-4IeoHQ6mK_KxjV2fMjDWNlti8OfMuQF23UnCU2ow1YlT3IO5oab9bUGcFPqdaR0eA1Dqmvmeg2i0XEpy0-EVlLTtHMdkVKv0YeZeaW4twm4rIpWDbJBWNvfctVG6Caa_ClJbCRF1pgA",
+               "width" : 3199
+            }
+         ],
+         "place_id" : "ChIJ08xAjlijTDARXK0wPBsSgJA",
+         "plus_code" : 
+         {
+            "compound_code" : "C7GC+RM Arau, Perlis",
+            "global_code" : "6PR2C7GC+RM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ08xAjlijTDARXK0wPBsSgJA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 44
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PT 3521 Jalan, Tok Derani, Jalan Kampung Hutan, Kampung Hutan Arau, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4318891,
+               "lng" : 100.282378
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.433307180291503,
+                  "lng" : 100.2837450302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.430609219708498,
+                  "lng" : 100.2810470697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Northstar Empire",
+         "place_id" : "ChIJ-Wd5_9mjTDARea6y9Af5uZc",
+         "plus_code" : 
+         {
+            "compound_code" : "C7JJ+QX Arau, Perlis",
+            "global_code" : "6PR2C7JJ+QX"
+         },
+         "reference" : "ChIJ-Wd5_9mjTDARea6y9Af5uZc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Pauh Setia 2, Pauh, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4378698,
+               "lng" : 100.3023076
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.439319630291502,
+                  "lng" : 100.3036133302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.436621669708498,
+                  "lng" : 100.3009153697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Baru Pauh Setia",
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104278972504893377035\"\u003eLyeHuat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vxYM7_DDPZXUMt1NIiFM7BVVPH4KdkaB6AemI6mdp-BL1fHwKUEJ2YewoQ0Znhpo0BSqnBiMF3cSHM1936jyFOQn4Pz151sd1Tji2-0Gdk0zpEGzpChIf_XvB0QLrcaeIX-RFtDu93cxs6vCxW_JWcZ0aACkVkN23cKo6MLwxaqhVp59AgdJXyl9krRO_wcqFjjESZFp0YiwWTxu1fN9AXY6VvbF2nQo8qAHKLzTMSV-eX6IhGdKGufG6pdIoOjYmZEd1xvbhBSDh6-5NxLUGS-rAZP-knFeD9Jlt1BGWGdD6vOYPW2RwoW5XO0jkHvHanmdrKlUZSPEY_WqvxxSyX0DmDuVmSLAcavbE04UogBPSJGGOoQBS4Hy4pc-K1d8g8qfDRiz8libVbrgshmm6OSQ8CCcmDIf9V98WK3rstnlg",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJZ9GWjOijTDARyvBJM9fZ3NE",
+         "plus_code" : 
+         {
+            "compound_code" : "C8Q2+4W Arau, Perlis",
+            "global_code" : "6PR2C8Q2+4W"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJZ9GWjOijTDARyvBJM9fZ3NE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Arau, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4275729,
+               "lng" : 100.2711685
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.428933930291501,
+                  "lng" : 100.2725339302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.426235969708497,
+                  "lng" : 100.2698359697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "清凉居佛教学会",
+         "place_id" : "ChIJwUa7tHyiTDAReB4YGL8xY54",
+         "plus_code" : 
+         {
+            "compound_code" : "C7HC+2F Arau, Perlis",
+            "global_code" : "6PR2C7HC+2F"
+         },
+         "rating" : 5,
+         "reference" : "ChIJwUa7tHyiTDAReB4YGL8xY54",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "02000 Kuala Perlis, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4156508,
+               "lng" : 100.1487503
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.416960630291502,
+                  "lng" : 100.1502061302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.414262669708497,
+                  "lng" : 100.1475081697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kota Kayang Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101801694538394586220\"\u003eLisa Zahran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vts0n8vi3HO0d8wY_GuxKKVfMrzHhSPZw5KTHyUDGrcrDBSdBkIQjVwHFDEy08VKnyVA-2JtIE5PI5m8N12f8KK68-ro9vzsJ_aPFgKkBF8bUeZ2NMOBat_hDjaSHavoaU1LkHTd-jNeK6ON8hlkvufrjaqQVMLEQz7fuy70blemgk31Hh-5cWtUgGPlYX9m92xKsXZvvw0bRhd7LK93sFQ4uz6i3wiDa3qUQCwUfNN8dxVIXbioEu0lH1s9PMlUkk1xStlmy0fBalXKduWLGWhA7zxgMcBvu8uRhPoNG5j5bJ8MkyHuZPmmexsHJ-7Cn-_dO6PiEmErzwR-Tk05jCmc7thsfxvTa-dDpmiwcpWxgWi15Tr68nShaMpmy5pGFLBCQJYY8sJyFC1EPvkJQ8vnCrv7PBXcL-sNuBCSz_kw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJh7OxiMCbTDAR8Eyd1NKutsw",
+         "plus_code" : 
+         {
+            "compound_code" : "C48X+7G Kuala Perlis, Perlis",
+            "global_code" : "6PR2C48X+7G"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJh7OxiMCbTDAR8Eyd1NKutsw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1241
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan, Kaki Bukit, 02200 Kaki Bukit, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6448981,
+               "lng" : 100.202778
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.646145280291502,
+                  "lng" : 100.2043041802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.643447319708497,
+                  "lng" : 100.2016062197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kelam Cave",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107207715528715708742\"\u003ezalizee mohamed ali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tzXf7JPWJBLFmEgvp5yKfZHdIyHnbrKvha64CUIHOoZ_S4QK2_do8dUgysbhKNI2BgY3voy_jt4HcyyYQIwfQkxDNAUdNKoI_7SqtKx49JwAqxfAR-hEksKWKumijEHBYzcU8niCIxS5uCNjn2iWYgPp08SvASs-HR7u5cEbYHvw4WIrgZzlAQ8A-J-n6RcqKZN5xIXg1TtPr5NygBiWsTrB-itORAFj6QXIHLGocEX05vW6NNOJRRRA5LkR1WWGETJbfwLvnn_fTcW86oaEV89KZQ37_qxQNvP2EMReZW1qjf4hQY5gEHZ9zKmnHyntORocEExLoNNqRH0oEQeKhoGvdlNxPVxPN5ePBbvoATcZ3XORFj48b_Aa_0KrppQcKa6Rm0s6432kNsp7hV-N1QgMWXX89FHv_GG_6SOApXWg",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJkagyqDLrTDARg_FYNlTR3SM",
+         "plus_code" : 
+         {
+            "compound_code" : "J6V3+X4 Kaki Bukit, Perlis",
+            "global_code" : "6PR2J6V3+X4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJkagyqDLrTDARg_FYNlTR3SM",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2812
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kompleks jps, Taman Pengkalan Asam, 01000 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4356392,
+               "lng" : 100.1817879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.436981530291503,
+                  "lng" : 100.1831131802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.434283569708498,
+                  "lng" : 100.1804152197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Floating Market Perlis",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101075838876771842156\"\u003ePASAR TERAPUNG @JPS PERLIS\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uVn81JxkwM7JreSOUk1IXw_dP5QPBC38QbIevB90iFm12KaqxrO-rDl2sTWB6pBsg4LrNMP7VLU2lhNyVc7P1PeMeT6jinevcw9ZH9veXEHwWTopfnuxlal5fboButYx9FnHoAFvfzkn9lXyTZAQS0xlCgUI8W_Us8G7eJrM-SXKLqGEBmlcf6t4wfTMsTxBL6lpBQ5dWQ-rvcDmcRObOt-LA2_beG2UpLOXt3JLnJgyBKBQlkk4NinhppF_kXXQ-EcBgJnPUH2Dp0XBIv8JgklpO2hhyAN8h7mpQK-HfJkXxM-yF5yjdShwZyJARkYxsv_bDauocVKOTpJvSjruuV8rlL4vgnNleNYyjXD3YGbCXu56ilntvttrdXmQB00TtTeO8UNPlBcUya1_HaLj9bzvxnzFctMucH-qkEGvAGydxyCq_7jaZvg8UmM15a",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJVR1bePGZTDARadmVaeBrOtQ",
+         "plus_code" : 
+         {
+            "compound_code" : "C5PJ+7P Kangar, Perlis",
+            "global_code" : "6PR2C5PJ+7P"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJVR1bePGZTDARadmVaeBrOtQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 124
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "01000 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.412324,
+               "lng" : 100.1936368
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.413596080291502,
+                  "lng" : 100.1950311302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.410898119708498,
+                  "lng" : 100.1923331697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Bunga Kertas Tuanku Lailatul Shahreen",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105806777132510476412\"\u003eJuliani\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-smgOdv-bWvT8CI3X02vAXVtzMHKUz7LmvQuFxgA5KZNhDTO9p9WmWvkSA96hYn7LD4uvdPj3BHNWwXYCY9Q6lYp060pL90Wlo8NcQtiIjIPyFtctaKvbkFCRo_5yWrqTMSF_OT46CH6uOaAfIdP1nK6m_T7RQ_wbe6T0nfywiOaASgZGRR1xHWxplkFkVBDbU5_MtOsR9fzF4pbh7AQ7Mdsd45F6PLROfz5DfHioTn6bKqGr2sMNlMzFnVKv78OeOM9Wq2k9y4mqzh4fTEFrNOmhwqzLF4b-kTtDrbtbFOAz7LhjpkAmKo2mX1OuAcrYLhTgESKktmsrF7grSrKqIbGGwW7qdmkaCF80v_kAwbMetaLlTy_7oVg8_MwrHGfjWss73eYrKaRmYBhhdWlfO76U9FXL-dbpOvmPEQN3a33g",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJE_974j-ZTDAR5Cn7YidNsok",
+         "plus_code" : 
+         {
+            "compound_code" : "C56V+WF Kangar, Perlis",
+            "global_code" : "6PR2C56V+WF"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJE_974j-ZTDAR5Cn7YidNsok",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 139
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4337313,
+               "lng" : 100.2801491
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.435217080291502,
+                  "lng" : 100.2816229802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.432519119708497,
+                  "lng" : 100.2789250197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Makam Tok Arau Perlis",
+         "photos" : 
+         [
+            {
+               "height" : 1032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109368481919065030477\"\u003eGerard rodric\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ulq1N324aj0-v2MowVqcsLiE2IE1rxkpAzvuwtHRLiQI-qkw6w_srigtKTt2hwGinJvqb3JzJkRwg0nYd741p656O-D4gNPBMy1sJow3AIENCn1JbgHLI17x2SaG9ylk3FsEDWyPob253No0fmvinXeYYzA0V0wwk96PVNGnw92OHQDcSvOZU3RZ51Q-c_Ufu-EsyBwPWOsQE5FuJHJxAIeRcX6_-aWg1Afh6Vq0JH3o8tFMockpVPpVUdtapU0Grsbk5K1xOM7Ewdf06uEp735kCI6VYSWy62T6pRhxSrwI7S7Au_gfg76cF28jJ5MourLshIaMPHbWaGjG88jjrM0wgy78vVRrQKfiM6OrFsnzrso1_QvltOJPcbXII023cRfqRDUxQHXHpf2Dw3hFmUDCPMnjvoOejWGg",
+               "width" : 581
+            }
+         ],
+         "place_id" : "ChIJYwxU-oqiTDAR7Y54jJLluGo",
+         "plus_code" : 
+         {
+            "compound_code" : "C7MJ+F3 Arau, Perlis",
+            "global_code" : "6PR2C7MJ+F3"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJYwxU-oqiTDAR7Y54jJLluGo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 35
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "G64V+V8, Jalan Tasik Melati, Tasik Melati, 02400 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.50681,
+               "lng" : 100.243228
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.508107830291502,
+                  "lng" : 100.2444344802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.505409869708498,
+                  "lng" : 100.2417365197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Tasik Melati Recreational Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2928,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tMIVnkHiguEPyoRNRmQWVV2c6zQBFETA8fQIfVvuXIRG0lrbf_jfO27maZ0hQvAQNCm6f8ObaxoO0t_p2Ndtw7s5Gm1qsdp2_-v_lZ3Zj1UizdW6nFvu5WE1uxRhoFVlj_clhATBGoDNmwGXXzvhGvhIjovrTU5dxXi5pvqZVLJCtsF1ildq7TnlnTxBkF7TdR1nSuziGI87xs1kGKkOCqNCYHJmITlPRNqJUWqWXTZPSITsl4IS38ZNzGY8Bies7R1S0IU7nfAHKqOJdpVr7yAF87K5TSaHGatmLzVSBwPEXBcDopmlGdMkCdy5QwZ7MrFaXEWLzJmQu2LyXxfGeLL0iCLPeZpIz1rzPIuRg35sFyBfHVzJ_pVOdUZxMtPukAOlaV4YS1evf4KP4wFnNxxTTnZjg99dHPdSRUays",
+               "width" : 3904
+            }
+         ],
+         "place_id" : "ChIJa0fPTM-XTDAR6yN1emRkGG0",
+         "rating" : 4.1,
+         "reference" : "ChIJa0fPTM-XTDAR6yN1emRkGG0",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1540
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "R119, Kampung Lembah Tuwi, 01000 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.5183317,
+               "lng" : 100.1745107
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.519635180291504,
+                  "lng" : 100.1758487302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.516937219708499,
+                  "lng" : 100.1731507697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Perlis Vineyard",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113287514221484411829\"\u003eXiao Qi Keok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGVRzCkcVI3A0QZMuW9_csVdMVXgDq-hblrvIGKY4r0QHaj0Fnp_iCB7fjkMhIiiq5UfwaPwjiwm7l2c_XJyRMmkmCm94A23ckiej6f-nZFFx1jkGGpLWusWJFaipHPQ-WPsvOxocgOzmaEDGJYaLEHMI4NF5LJbv_uxvM_tlD3Ki41PExpe9U_oeTaA9VrE0pggO0BlDNrrebQaADOK1tUT61fBLQ8iu5G1cH-fuPwZqno4fd7K3OQQpnzjUIhlFgktmeh4myP_-FaZN_Goki504ipjD6aM5XX48BnhzTi_22ZtNileLbxSo475LEnOTxQthYjlAIzoxEbZ0Kf7JdeoNAacWrv_zhfEHqqBPFsagA89GiMNgzJjjKc3QAOnYVeOQhGq4L4BxI0KBSvwKkt4VcBxLXWyOkWe4ckIwpng",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ-erVjNWWTDARcxvOlp2ZitA",
+         "plus_code" : 
+         {
+            "compound_code" : "G59F+8R Kangar, Perlis",
+            "global_code" : "6PR2G59F+8R"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ-erVjNWWTDARcxvOlp2ZitA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 779
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Jubli Emas, Arau, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4446147,
+               "lng" : 100.262992
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.445947480291503,
+                  "lng" : 100.2643387802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.443249519708498,
+                  "lng" : 100.2616408197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Laluan Rentas (Flyover) Arau",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116932896497935981671\"\u003eNORHAN BIN ABDUL RAHMAN (KBAA005)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s9ToQFOiTEugq8nEIWmcDVqdzUmjGyIVD66mGYXkgZG0a4HWFltd7BSylWEu_oDsQtSeHCVUTRi6gsbbx2e3Kj1wKseejjewRyuf0jO_ovpQHXIY5ecz9Wtq0SwlJdFkZ1lprYcO6MR4WEDic7-5Ii8PvGosWcC7y_DvL-yRdavIpFMEwDTty7W7r_h7jwKA2DTyjWEbxLKWk1NmchI_LmA4mQq_XSYhVi6k5ZIcotund85vwI3Uu52pRvpeXfUlQozLllRh0_kqvijMSBidFwyZemxW8egif6TNyE8IGZxWUwpgGXYwRFCh6mJiK05VLGk4kJrkpoXNc666YmGfahD6mLiUM-4B6M_wKPeAKwgwT71eJGIhEHuQrvcVtiWn8KU8XKPCYUYOeq8Yb5kQ2srdqn7lxpIHA0KLRCmOI",
+               "width" : 2080
+            }
+         ],
+         "place_id" : "ChIJQzZQxkWjTDARraVWDn25kPo",
+         "plus_code" : 
+         {
+            "compound_code" : "C7V7+R5 Arau, Perlis",
+            "global_code" : "6PR2C7V7+R5"
+         },
+         "reference" : "ChIJQzZQxkWjTDARraVWDn25kPo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "C7VJ+9M, Kolej Matrikulasi Perlis, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4434116,
+               "lng" : 100.2817383
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.444697780291501,
+                  "lng" : 100.2830518802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.441999819708498,
+                  "lng" : 100.2803539197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "C2305",
+         "photos" : 
+         [
+            {
+               "height" : 4064,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104276694691616139285\"\u003eUser U\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tvDVkp2nBMRbmRxzi5UpVcnFNFTTM0ux_dO077R-LL3T4J2j2rbcxMe2Oxl1z8MCs_0_6b9lzrawclUIGedDJQKBOB_HqRFvCXxMzQeWgP5PC8Xz69GsPHXI_fRZAKGAjLgphMB5-8gDZ73voyug-k8Fiv2JIcsXFcJFvankE6IqhYLJP4xzdwriCM55ArvNLXBm5zSS8UC9Mtlsy4vn4umq-vv886ngk9LNmjpkBFkvTPoQE-_5ls91yGheSWCJfAQWDXmpFd6msngTZAPm50R0kFKAy_9C6H8ILmiwAYNp2xaFoW2oXXTVotITEtVdf7mNn0DigXOo-QZ58Gsz-l9Ik-1Pidmy4LreJK3WfG5DDVLVi9aQ14yas1Za2-uzCadnea4RrFQMukSDNG82IVq4BYLOoCEzMdpauyheM6Ggi1",
+               "width" : 3048
+            }
+         ],
+         "place_id" : "ChIJvfs0TgCjTDAR38jKVipp6ZI",
+         "reference" : "ChIJvfs0TgCjTDAR38jKVipp6ZI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "02500, Unnamed Road, 02500 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.505275,
+               "lng" : 100.2782699
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.506423080291502,
+                  "lng" : 100.2795627302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.503725119708498,
+                  "lng" : 100.2768647697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pokok Asam View",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102513188487574967707\"\u003eWondering Guy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGg6NUwUuv1U4SSiGLJHMkHVbPf8rYSEvf_vNPNY0p59Gs4MOqXsjQ7iDgd0d2X7hSKQRm_IZ_sg3LBZkJSujHqgyCy7AJObHTGGLHEBu_-QnTRmPCItuvHXvNULoBbfBktS_ZMk_UMNBP3c2nX2X1oFlud8XGXDKTSWmgGTl-Hj94LGXK3grecugcE3Z8bCqhxo9K3RwJCu3Vm5bp7QNDTpEL_-g4lIyEASsNeT-srAN-AID-A5-bfMm1fjRgijFTOCGoRJldhW01K5QY2jK0XMZVinBswRKO7LTxmjLbYnsxC3zVqKeE_tT74jKHAOm9lulSdl97lOwPT2FXzdoXxPLTzfIP8t7T8x_8k8AmxJTcGYMkb8aHgNR-aTCHT8GsLn_O5Vz3AP_0C5C6A27yPAr7Z01O-wLsntUozfV55g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJm42DDMS9TDAR5BAmm0Gc2B4",
+         "plus_code" : 
+         {
+            "compound_code" : "G74H+48 Kangar, Perlis",
+            "global_code" : "6PR2G74H+48"
+         },
+         "rating" : 5,
+         "reference" : "ChIJm42DDMS9TDAR5BAmm0Gc2B4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      }
+   ],
+   "status" : "OK"
+}

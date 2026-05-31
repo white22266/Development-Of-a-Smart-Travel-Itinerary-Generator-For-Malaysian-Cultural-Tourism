@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Besar, 25000 Kuantan, Pahang, Malaysia",
+      "formatted_phone_number" : "09-513 5821",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.803963299999999,
+            "lng" : 103.3275176
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.805490430291503,
+               "lng" : 103.3286959302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.802792469708498,
+               "lng" : 103.3259979697085
+            }
+         }
+      },
+      "name" : "Kuantan 188",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 10:00 PM",
+            "Tuesday: 10:00 AM – 10:00 PM",
+            "Wednesday: 10:00 AM – 10:00 PM",
+            "Thursday: 10:00 AM – 10:00 PM",
+            "Friday: 10:00 AM – 12:00 AM",
+            "Saturday: 10:00 AM – 12:00 AM",
+            "Sunday: 10:00 AM – 12:00 AM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 986,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102898512748933276772\"\u003eKuantan 188\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tqya5zCS1ax0XD80PZFUwcskdSOVFX8ODh2393fZN2lWgWQwSzo3rAJI3U1hbWCLINKmjlYNu1h1D0Naq7eId0N9cltqs5_TAz5Fn1651edhAqZwt3OqkX6m7LENh5a-2nnyvIn78za0PVxUM-9HeXZ6Qw5KvK5Hh9Dwmy7GHZPo6LYvfBRb_7ffnHbxz6bcKnAR97F6ltssVHkqN_ubrM2PZxbM97FdPoC3LzoHKrAg2dP8BcmH3C6ensYSDDh00sNKGWuLPBPvI6nxcoFCIBP2Ux2QO4LOMGiyvozCUessqxTVp_1wjgpRyMwApwq7xCN8qaVOZi_3bHdaGblQT9f1TL71KQa8ldHcbBWiPHFwH02-w-kUKiXk8XZ-rp1QjCKFRaWsrkU3FkHe_pC1yy57r_tYK-J3qLVQetjy4GPZc",
+            "width" : 657
+         },
+         {
+            "height" : 4319,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117041526571396955341\"\u003eFakhrul Hairudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t6Kaafht3ipDCdRi9LTGTXPMQQT0dL0k5qoBGAqkX0_x8tzfxI0w0PS6Kczf1XODlUQCBTPGGYjacymGrsWx8YqTMlB8sipxOU0Cy418yGAt-j3DvBRXoiljljqTy4bEmhUx6GShtnKDEEACMBJg5PPSKmp90AoL_TLOrKV9Y4iQH5vJ8xWToY1S5Wfw5Uo5eYeH6IXMenSC_mXo6TvNJMyfE4Zw60Lzf54EkJplKlFJsBoOqQJeILp7UY-UYPpCayM3YpPHPCII4oLjVRl9R3Ugad2_rmOC0QcJXuCqxs7OIJ7D8u7R2l141-_fu8eCAzFnjoh7-bRY8sz121z1pYnSnm6Qs3nrWiGjlddTu2lu_UpfmhvZBRe3uJNfgEaGlefaW2T0WgL9HRuY-C60RYkYM4ud-u7Zcvj9tJ77woQUo",
+            "width" : 3455
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101459659822017111644\"\u003esiauhwa tew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKYWWh7z7AzcjSNE6ONXstbDqtW7zOBW5eWqLjadNnMH9b37dBfkxULSrfJ43bhlwBLQTfpmoy-bspjcYkmIaY-VzoDT2T2WfK52dvsXHp7Pm_A6vTqH-KXQi40Kkp2Am9VF6Zjqf1V6RE3W-j4EFD591YsWpxsmKyiy-pZJn0jWfv4PunHEZYWqeB_RP3xGEbqXkEKqa3qYyyIQ3Gj_uop4E7w8Kmp3Y7vvLtyZrW429cqiEi55wJKo_fxkR-RBwD0hmrau66iTITtGhaEu3l1ySJhYpOtyFxIoQCLhDK8mJDSJO8mHZi3ZQ8f_HZ4rd206kHZyi9c4NlFpLUp1BkfupBxu8WTYli5nrfIEwDyN38gDzMXecPuQm8B1ZNYBspqCBat0Bk8P8uPPMhRq8JZPiYhZLSei1jxAYqhZw3BfqYQ5k55VRIRcJYywIF",
+            "width" : 4032
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105596636534752167904\"\u003eAzlan Raiman\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdQgc2PTfMpWdSMyg1qLsF86Mxomj0HZ-4cl8wqDMoIoMQCXXkFO3mFd4cwCGSims46Iz-vBmVA32NiFt_yz6vFtH_PBZxQrKyhHKehC7rvN3_rr4yysnlnnxYkq1pST9i1zG_2pGdfemynhhutMoGaBwnsyNAa8W4ihZytkvHJ9An6kSIXmA61wLEtEWPDQTzUu0QC7Q8laO13aoFgi0lcQXJmkgedrR5cqI0sIztPNHZhcs6weD6ii44vLlzPau_7M659DTgV2_0YpzISirLSdX3YeQglf_xy-XTtPySU_WDsnZ80E14xkonwGVkE7uATdHcZd0Mp3_a9EdnNZ_qBWaNoq6Qq6pxNqCtBqe4vqga7XoX3M85TMec-UjrPjbaPH3TwxpwwG54PZWjQdnRDPIC0Mem9SqHpq0w64rsoSJC",
+            "width" : 4800
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116643805849749447490\"\u003eNelson Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tkBrbQBg_KKjbKbjrNGSWfafxYjTjjunUC5vZ1T_FAiTLHXyK5YWe-Bh3Dd-o-jML42NNV4qHFDJtUvJ_t0cMd90KhTwTvgexGwBUM-jHYbbMAhoDr3SqGAdV7lX8Wv2WdU1957tLy8m-2PfRYGc60QOmw2Sncn6tF5qYQSLqgMbjiC5JeftotlXVAXpSfvQZ-cCZcpWkHSrtYk-xc9WX4UGg89QEwKvq6Hdfj57J4rM2-oxOppbqeXr8-jbpegwtWtgZs0pd48jqjfgZc1aDkvjKZoQB5eLpOl4ajwP5aHHwh_syhRNUq6NkiJBr8fv_P1FoVbnunGdMj1gOJIjCPmSRemMqUUqpE9uZ76QDrm5Dr577QM31sl3pOGEkD1dRd4pANXaKWRLJoyCfsoJlltRIIqdkdiZknDw_xqxmkBAu7",
+            "width" : 3024
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113352043390377690297\"\u003eEmily Lowe\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tnoWs_xxmL7Y-E5-C8WkcF512X10aJVlFbquqR_xmKSUxw-p4K9eptnOCWeW8Fpkhz6mu2HNDlwwLz1-LnCstOi4iGYCB-xLY-Gu7lX6eki39IK8Rgc1Un7rcGBLhiepZ7Deud2nwoRSQbxPN_bND2SLXxjDXQdo6JxE-i-VWMPCFytqrzd3kkNPlDDcKgAbdEA0VsVwC2-qIO_Trs8KGRVKP1evlW-2YiNvj1lQ8NtUCl5q4CmO_XRT_NkfguNruKhW76CunxJV1uO9PyFlyErvoI-kTcVj4qjtz-zeh5WB_82r6GRZ8Slr7N_KmwTlCPhCKy3VA_pbJkwYlpSS2HC-BV847bcuYs8_kLoU-ZXG8m1HhbhizClKsQy5HyPIqWRnk_i0sLit73WXNxfFDQxk6YBlK-LKz9DuyiY7c4ZYBDbGWwtwSftZ3a1sdZ",
+            "width" : 4096
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115290898154663145983\"\u003eThian Hock Bu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-viXQT46XcXm7mGnjQbOXbpSqL68BP8jYPGhdVqJK2CGs8c01sMiNEQIXg35e4OpNla3A_HyQKRPFa2qXwQByAgISQyw19cis1zJDKHZoUhIREwBVL-j15js7Ln1kfDPwXUIzO8YFeduCv1ms_3G-ueHVJI7aHlmoKefEt8PlkJ8D84fkOXf7UE7j3KwX8pzNcElGSglpnM7sbPdSAUR3vVLVZxVBFiBHgm2qw5cDrz_ToPzMbK5UQdI_z52OFR85a5F2U3R1EI93hOrNYXL1goeV3kjoFMhrWVGOu1XvPTG0qudo4nQM334yOyusXS6ASFsY1_m7YRO5vPDxmXEuIvSp3SAIbL6iqi0lwJYrEroNNx6RBoutcClO7x67BtjVRqusihF5MI3jhMImpLLGWhpqPo2JAsKrvVD2c6McC2ZA",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100620700837383269951\"\u003eLaura Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uBRqtcaYUAg7mdQq_pGOo3PuJAjkoQJnegnlFxL8Qztm7Gvullkp1zH8L8c7PWE70Ky44maErFQFhjBo5ghGoGXYP83TEC41k1Shi9C3x_vCokXUS1cBf63RHj7e59kTdQulFUBKSvi4Gr287OCVx9znQLfhTfihUU6BrDnlBGt5iJugjv0lhARX-rRJxOfJYfBGc5HptUls-uCbgGjxKge6zOxec5MSRf_rea6UDqoGQEeRPUoBDcE4Rq4d4vh7aC9osu2EsFxK0PaeaEFcyyvvDcDon-Yn9C5hR7c_lnU3eVnIutEvdvsdQyw-HbDIRWjA67d1lbKuUCcGaC13WhOCdm0wYBhHIa6ToANZ8IF6w6lVT-f8apsMEPX-KB4lx2HkYfb7e_jJA1VJeJuHO1Z7KP8DE3WeM_DA9j0UC_6g",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104231143263952865360\"\u003eRidhwan Talib\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vUEjiY1z6V5HjKvjMvFCZNfxhDHHv34tHAU10AEUpYnkr-zJDLV94DzRrUBPoneD015fHZH4swL2YaQk-NIZ0w-Ejir1zEdg-rnQcDRU0DTEKC0BgYxwNGlIGZiljgQ3JH5efsdvhWwmbao7CTdInsFkgnTfpsza_xheINi_7ityKaN9ACaalr3CisxhLdke04vYxnYNbc9XWbkMWA2xIGdnGbg8oiwou6u6hDSkcUSKD665Mlyy6XHAUFzDhKF33h4lHfgPoIspXYUfpmxXqQRvlhiOzS1vLREbrhNTceW3BinUgYKmGrg8guI6d7tHIUoHaz2EAtpaeHA5a0QskDukKzBJHfGDqnH4SEYRQWWPAY1sUPM0-YVbM4U2BAZzKQhYZXtu0jbscJ3XfT0ecWk0-H21rPs-xH_5QGfVO67g",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110874721919322483550\"\u003eFuad Subkhi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tl4C-HDUq30DO7sGlQ7VDLjFwEvqgMDys6BlAIds_0iNo4dkI5ffdbUuP9cWyOmVChfRd7yybocQ_QJKpbpwDrxgTc7nxEpyX9OUhBNiQsmBI7r6PHHqRbajIfCr0sVojxbD9GjqUxagrw1YHvD0YCzZ9GPMaLMDt88Ce0jnN3LpiIgNDnAFWfUVLWEEGudMCNBozWD3RTW_4Q33sA6dUq6ZLYGG1vNtO6FTfsU3vDB6s3sI4j4ZiMr6pSczu-e65B7dOv_YpOltdAZSVlRI3SXyQYYt1JS-InMwDFe6-6Rgn1aXME3W8dnPjDQo2QL5-wOEgDr6_KrB_jn6Lfn-LcLAb1Y5A1yv0-wxBfILQFwjzefphwny08KTDboj2sjh1iO04er07DOvsG1oAyZokGP3CTmKdyunZOYfRnbea4L118",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJF-OtU5y6yDERPfQwCGKdlYU",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9625772822944085053",
+      "user_ratings_total" : 3328,
+      "website" : "https://www.kuantan188.com.my/"
+   },
+   "status" : "OK"
+}

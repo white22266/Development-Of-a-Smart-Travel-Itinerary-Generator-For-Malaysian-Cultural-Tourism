@@ -1,0 +1,1241 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tRre4NpPKdrh0mj8zTeRWjBvmkObT72zgpCC86ms_S8pml0Bblt0xw46NsPLGS0akxDZrtelR6VZqlG9AR_sNG9xToL_yiGUj0q-VQ_gzRXUMgGwKgzU9MEdJ4hzbZk2pwi5o5zPuHqt1iqlD-o_V5T2co04SzhGm-p-JeYyPvNlIW7vRznWAwn6Gzr1yw8ZosiXySdh0T4NF7hi4-WJF10aJkZUm9xQdoqeL7IDb8W4wujvJKV9kn8LZ69KBzZ6VZZqCDwo9byyS81XyM9WtB37NimMZWV07nU2jK2sWsIoeCt6oyPv1Q0xy8ZFL7g2aErpLVS2aEJpowdPgK1Fefa-XGEC81kLDC44BOhBWzqQV_eGahu4_atxJQGoOT9q07yHyWzp9ZLcvi0O7-TwPoSLGQKA3rMPmh0qlnaBKeYfipw6nnYzd0BDSKmPZTQSSYCQ14GNVZ1SGkZLuojorVdQdImKT6A3akeCdCTON6ZP01LmUg4VnOafyCXCQxCgvvfZAV9d5IVq8Z533syGIjJ1UHFE-o9VSRJwZHfTWEpOaEf52Kh8mlzfz3KON8r07z47Pv4ikpoxH95iPMTGz8HtL14vTym1xAqyuHCaSyBEg2yzUuwwjBIVUgC28hsqTwUOrGwE0p2Sa8LsSu7XM6yaVOdQjqE0QlwFv774UIxPukpUATXg2mXy43T_Yc2Eeaw0FSpSwDcla7NiCEed1Y99pqPncZvomYLAzYoMzV7dy_MVHpSGS0zzGxlXXChmL-exdkwMx4yHgZo7oZHJTdnwxup0qBmhnoEL7ckcR_-dU-S2g4rppFYJex12orkhP1OBO7Gebw",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "15, Jalan Kamunting, Chow Kit, 50300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1567915,
+               "lng" : 101.7004205
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.158168380291502,
+                  "lng" : 101.7016882802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.155470419708498,
+                  "lng" : 101.6989903197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "White & Black Kampong",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116829281589387609289\"\u003eWhite &amp; Black Kampong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uPSPHg3WEyxAUBUgqqz57d_kkL_rJS1ikAz8jM1z0apH8pPYodJmxM25shacF43VtUK-Ac3sCT7BGqyxvHD4uo51rnEjg2jzhyLGGjw3-0TRXWOkIt4EjGzlp19eskQbjxUJUaTnpYMVF1sqoWD9TuSnCE424Y_6ictyFWs_5f6bUTaewpaDJhKIE6qbPPjczup6WHiM8_dDlOR2UEF-8k_r1t9xxp8Z6EkU_5stawGeptV71EH8I-YRuMdG0s-plw3a6p3AlJrPGnxL11xvjfde0g8LZvyneCnwNsQnT30Z5xUGfbJifUb9wv9TkO_gsXJ5f1lUtXPX2IkMkd-iukJp10WZbN8ZiDOuktM3VgBr_LPr4Lon49gkjNuyGY3reraRenobj4AmN0PA354t7ph6YybKayK9ORtLyT_954IKAEYyXerPB6C7ggOR10",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJF4_ib9xJzDERwQ2LGWXs90U",
+         "plus_code" : 
+         {
+            "compound_code" : "5P42+P5 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P42+P5"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJF4_ib9xJzDERwQ2LGWXs90U",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 5051
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "NO 40, Jalan Pahang, Titiwangsa Sentral, 53000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1682169,
+               "lng" : 101.6981261
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.169514280291502,
+                  "lng" : 101.6995856802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.166816319708498,
+                  "lng" : 101.6968877197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Restoran KL Last Exit",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116220936713101676900\"\u003eNatalie Naz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tHk_VQ5YWgehV2jDR86FNaea-Bgl8D1aWeFaJm0XcDz_uDqjN6n7NUq8Z3jOTyDUmW2unsVDpx8MnUQ8gygz1wbsxWy1niJK6ZjBpr6BGFKFDtBCQ_kPMjYX25Mxf-b7lHB91uW74Ka0OPXct1Lyi7aMqeWMofWDxV7Sq0Ziv-Z_UrDvvMuZD-hm8O2t1l6tK9vy4AzEsEeGSrG117aQS1hqyjq0ecDokzpveGPbP8bUVzjPM5AuhZX0YjxGFW0Ek7BNnCzEZvx_CLOh9kvw1m21nh1XgkzBMHWkZrTB9F-RpVU1R8E6e8C1-62r0BLv6rcl0Qt4zfzelQK2c1iIH3kA6hGfnY90PbQOkgAxIj7NUGVDg7X3miUvkGM0KBGOzuuvwlMTBWO8E3WQQN6JGLOFWaRDbCzotbq-hChdQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ7bgihsJJzDERhjCRQBSGjHY",
+         "plus_code" : 
+         {
+            "compound_code" : "5M9X+77 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35M9X+77"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ7bgihsJJzDERhjCRQBSGjHY",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 400
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "11, Jalan Maran, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1757178,
+               "lng" : 101.7006437
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.177060080291501,
+                  "lng" : 101.7021217802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.174362119708498,
+                  "lng" : 101.6994238197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Titiwangsa Wang Kopitiam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116124710325743508595\"\u003eJ N\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tVQkHK1OC42mOOJHCl25INmvm1kWyGhtRGxFTeR-rh75m5aKlgsMhhKV4pcdV-slTyKZqQLYxn9XpY6MYP_3Vt9FXyGzlJmRK2-FHzvrIS3IeYSezwIMmlTQ-ovnPdm4_XHE5tLnkNlRE56vuGCezXXH-_hUobPG3rOFA_mj5UjtQvMl_cjnG5hEDFwY24WOpYWpkdOMg0uZ9DfTH03XH3Viu8Wh_21znRTyaoMcclkAfly_NVZpOlox4GyCE9rUQrFqxex9uOf33VBvJ2DqevgeDHB_Sc9UMzpJDDzDQLJECj8l16IYOzNiWhzcxhSH33kJK-KY4A7tK9wlufKvEzX5ROY1eSHHKYBOXJwosECIByxy6qVIJA6-2dp2LjQBjoKUg42mrJi1RntWVUfE0O6g3nDPApggegkKg2at4cfOzE-cUmDgwAG_V8yyMO",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJe67eUBlIzDER1Z2UTf_giE0",
+         "plus_code" : 
+         {
+            "compound_code" : "5PG2+77 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PG2+77"
+         },
+         "price_level" : 2,
+         "rating" : 4.2,
+         "reference" : "ChIJe67eUBlIzDER1Z2UTf_giE0",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1007
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.27, JALAN DATO HAJI EUSOFF 50400 KUALA LUMPUR Titiwangsa Sentral, Titiwangsa, 50400 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1697299,
+               "lng" : 101.6967899
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.171038080291502,
+                  "lng" : 101.6981085302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.168340119708498,
+                  "lng" : 101.6954105697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Punjabi Rasoi - Titiwangsa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110864152245890842986\"\u003ePunjabi Rasoi - Titiwangsa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sIfXyqB2XUX-ZFn5OG6HiFX6DdiGsf4JpgL9PGaJe9mlcX_-HFD0K8nXGnsruDzTPpXV4Lx0bKJyyvzj4uKotmPNDKyR4YdnilVsLlol5TGhD9Y9boQI0Ksv5985jOVjEccwh2UF7mCk1xY9w_tr3k_IMksVfP1zxZA4-DrjfikosjgrLcfZE88_KQAH6KyL5ILhyBh-hT4cZJ4_jgupkA2EEIcW9sUsZkzxv32gvyGFR7FeTipuEdfi3u36kzACeyF-kAvQpz-wOgRNWc1ZuOT1jx-GJ5R05AP-1iHcX4DA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJfWkpqiJIzDER13rMPC4kAgY",
+         "plus_code" : 
+         {
+            "compound_code" : "5M9W+VP Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35M9W+VP"
+         },
+         "price_level" : 2,
+         "rating" : 4.5,
+         "reference" : "ChIJfWkpqiJIzDER13rMPC4kAgY",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "meal_takeaway",
+            "point_of_interest",
+            "restaurant",
+            "store"
+         ],
+         "user_ratings_total" : 1006
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "52, Jalan Hamzah, Kampung Baru, 50300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1663954,
+               "lng" : 101.7079323
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.167704630291502,
+                  "lng" : 101.7092812302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.165006669708498,
+                  "lng" : 101.7065832697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "WhiteButter.KL - Kg Baru",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1440,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106683153102819519452\"\u003eKudori -\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJxqeP-vV2wLuGDE6nePl1AVtXRoRwD2JC41eFe80sD53z0QwDokoQtX3tvnE4Y5kl7aqL84tcAQzDg2z_77f47hPpIdgy4rEsXVXPJzHm4O58Jx5V076Rn0nidAeT5byiL4XLy4_tEyuXmqZQXA_aQl1i3JzxdO6VXI2B4mjPUATE0aVYqoLjEM_q7PSuDzvLMU3IQ8JUV3XEcY0f-Crwkb66m0L7RkclM32OnIeU79aUMfpUcvzxhXLbiwZubywFjFOlIEg5dZNxZ1WBHDV3cJE6GeNxx3V8d5mvRLKS5_uXnApcQrAl_7JkARyoauED0AQM7KT7TL6hvxNZjyZAM1PmlhkU2-NpoboNNJ9BtWkI0-TIOoRtASR1Fe1fgyVwzhTTKTVO3VjV-8kGvN_7Nou7zLcO7FXK-KISk4r3nms",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJvWT4r1s3zDERIZ0nPJGL7Y0",
+         "plus_code" : 
+         {
+            "compound_code" : "5P85+H5 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P85+H5"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJvWT4r1s3zDERIZ0nPJGL7Y0",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1559
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "64, Jalan Beserah, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1754556,
+               "lng" : 101.7031804
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.176709880291502,
+                  "lng" : 101.7045166802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.174011919708498,
+                  "lng" : 101.7018187197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Kedai Makan Mak Andak titiwangsa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110221112179761906736\"\u003eMaya Ayumie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u09wBAeggPN1vpJfSn-OPUe6rOMTG2AcW5clScMAf5faVic3JscomP0RzQo2ATLGc7Cs5eZqSkQTdnTuCLhsSUlHlTxtubC1ip96jlcfdfIaUdf11oh76FBACtRpVu8Eqvf3Rwv2xizeu8o9yDKpl_dLhuOBrjERm0WA8xt_LFMjWyB4ZuEopsj7ZwQA1FIfOlMES4Usvp03Jzvc8BTaPU25rjuijtan2V6telStv7WCau1PGLsnRRnuFHB_T5WD0E8CjnWBietvE3RJqmilgUjbuG1uOZvpbG7TNQr0NBVyFWfb7t99N_bQEbkKY4o7DeMvTvFuSTtySWkG8PydaPZsPG86xVXaTXqLfJZ5kcUnk-zeBS7PmhcHqcflrAnFUN4rLCbWTKjdtYEw0OVWpVIFD8Dgg0fCZDrTimFg_xrMo",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJv60vJF5JzDERDhq9LmNMq-k",
+         "plus_code" : 
+         {
+            "compound_code" : "5PG3+57 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PG3+57"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJv60vJF5JzDERDhq9LmNMq-k",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "83, Jln Sultan Azlan Shah, Titiwangsa Sentral, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1694508,
+               "lng" : 101.6959001
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.170832280291502,
+                  "lng" : 101.6971628802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.168134319708498,
+                  "lng" : 101.6944649197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Ras Balouch Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104454524953024317080\"\u003eUnkelBMW\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uc3uktJg_M-6ApZobu75SKlxuIFpRntZPHq4vc4as2nbdxABhvcfvl-scxjDh-tI94mezr7887sMD5nHc29ATZcEc9u7K5FataZ_JmwWLpTHW8_Sy1EVoKHlW1icUoy8UhJ1atjTO3HC88q3sKSjYEHNYmbA2EVe_HoKi-KnIIZ0qAjhZIYpJp9TkURQ04HAH3PkKhvPWTBZrm-UavQZTmtwm-tFGHx7XTBv_EIqpm52sdF-dzI1Vjp80YyVIuwnxV1oQ5HXyi6vuENts6apBLbS7jfoQahFx5HvnUUeqSfTCURZxVW8nGh1k1GlpCnG6qP65ldcT-XBKIWjNpB13lr0l8aZbUvpZ9o7uxZG3k-F0CChDDzA40HyiQA_b7GAso3UEkAbyEVRcVnitx4SV00v9vFSv-D_Ud1T_b0H72vNep",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJISViziJIzDERFq5tUGJj0Iw",
+         "plus_code" : 
+         {
+            "compound_code" : "5M9W+Q9 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35M9W+Q9"
+         },
+         "price_level" : 1,
+         "rating" : 4.2,
+         "reference" : "ChIJISViziJIzDERFq5tUGJj0Iw",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2214
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.19, Jalan Sarikei,, Off Jalan Pahang, Pekeliling, 53000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1771368,
+               "lng" : 101.6994741
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.178487330291503,
+                  "lng" : 101.7007373802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.175789369708499,
+                  "lng" : 101.6980394197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Restoran Dapur Sarawak",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103516966177489546205\"\u003eHaffiz Ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uELQJpHhHLbghddaLL8HwnOqlszECh8r1tRb97AyRDQsUWRTUPzpdbheQeKj7IrjGNgpIc2i8Vbe_4PHl1Zq1ojsBZnnwXU-cCdSrtrc_gqvoIg6uR-dJuBereDDc2G2ijw8Pufhwvsi68aAJQ1UndLhfPYI71IIg01zjO-VUyw4h-3snDka8G4q4MjG7qnE1aaeY-hROy7QaHe2dkx8UW7Oj2MwWrcGR7IG_fzsNur9AiYPKw6QUnX8sFyUIr3ub6AlDpUIWT_jV2Buossnoo0zlIZkPoQC9OiWR_Gd0PghvD1cUQlXILID16NJJr5eallaUoPuAt8hDKBpSWBnNs2ix66WRrGDcQCfqYVOoqX9H88NP33_Z9ZE1HDTVa1IHasUSN8fzgSkTrHCe8kixoTmm1BBZEQ8oaIMux8OEoAw",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJbXmhuBtIzDEREbcDtgz7vfk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MGX+VQ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MGX+VQ"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJbXmhuBtIzDEREbcDtgz7vfk",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2216
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Kamunting, Chow Kit, 50300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1565163,
+               "lng" : 101.7003615
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.157828180291502,
+                  "lng" : 101.7016864302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.155130219708499,
+                  "lng" : 101.6989884697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Yut Kee Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4167,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105127103043620511792\"\u003eJavill Kong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tvWzGS0HPqd6oVmpLlR4SXNTE79qXp_RRYVNC3ZLKPflT9z3PkemjqK5I00SD4t03ethtCAhrNi2MyVUcWALbT6FRnKqyU4jdn61t_lsKFPxrRltFXZ7KhyVMHZ7O0bQcrSQpTEBY26C5T_ztLyFqApccXYdyfSv3oCK6tz4czEAKNZrQAr5rVE15on2VxFiaxjCrjuyayW-y4vovO0vDZuOimsJyFQOGaOQaAf2OVLiMNs2X3AsP4PGwtjuoo3F5H3NjQ3z71X1MQFLnqx4LpvHdRx2J8kwHL63juQtnY47NnzahMrZS5NB6fe5_Oy53BoHicrj_Hq__ANTeSadI_mG2cXrvL7vdGQRPWlpSZU-J1wot4xpVCgu1ZonsFZALKsnynJ-Qd7mGXmt-yzeJTk6RvPviQN_atEKTAVdEOi9Yz",
+               "width" : 4167
+            }
+         ],
+         "place_id" : "ChIJDYyGHixIzDERVtAqsZhFZws",
+         "plus_code" : 
+         {
+            "compound_code" : "5P42+J4 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P42+J4"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJDYyGHixIzDERVtAqsZhFZws",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 5816
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Beserah, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1753829,
+               "lng" : 101.7028148
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.176660230291502,
+                  "lng" : 101.7041694802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.173962269708499,
+                  "lng" : 101.7014715197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Doplohtiga",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104179507241398996191\"\u003eVidhyaa Manoher\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-si-PxZKROwfyqd6Awa6_Cac_MGgbkSPtNDs8i9BZyBqm1_l-I1jRGHCvMgvyUkwZ7hawt13TreKF3FA-kcz9-W1hWUMBKs18ATzVnTuv15oF47Ub6ohtSTzYzRsmg4PeFGEOg_RavhODc16it174p4pPUIMQILrcHA9IvWQ108n8vnLBbQYLl8WxT0pREMOeeSejpwQWJkUXRK85XSGewPsv6csbl7aZNcRZk0KsYugMYorRpG9RVKUcIUUVfTlJpzdmhGFW98LKYYz1F_ufVLSJ2i-32MmpAwpqU-h1VW5XewHUwL1Ur5vH5FByuMisDi-APdqtNk7htDf2mi0K0xWVDkPkV4UAvUb90hyEomEaGI8NKr0hld00goMESWp_uTnpZ1kjVrV89l3823U1DTm1DGyCmH0qVV8swr7yE",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJF4-jYVRJzDER_X0OJa-xa_M",
+         "plus_code" : 
+         {
+            "compound_code" : "5PG3+54 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PG3+54"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJF4-jYVRJzDER_X0OJa-xa_M",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 376
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "20-6, Jalan Pahang, Titiwangsa Sentral, 53000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1713582,
+               "lng" : 101.69857
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.172678730291501,
+                  "lng" : 101.6999747302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.169980769708498,
+                  "lng" : 101.6972767697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Loong Kee Hokkien Mee 隆億海鲜饭店",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113437794020155790115\"\u003eChow Stephen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vTjei-waAgBkgDOAeFT0DHn-QMh323HQKQpgEQrq346deFyU3wjIWTEEeqiRz6akaPS50EzyReJ5rYyHUlzCpjsePezzKAwSwrcUuuQZmPQbA1b8iXoyYaxvZk8vGHPbvJl-Vz3Cf_ICCnWjgucn4Atl4krBPpUfcXgVbn-LJIf4mpeTRvbKSdGzbDbocL9AQgIgsqk5bLBB0LWYIB97mCQKDxYRHbojvA5VK5vzgKvdpn0c8HhCl_EpOjMuMlwrQAVQOoy9R8hUb9r60sLjF_NeRYAJDfAzmdeTOl6GzazxIY6xyFyKj67swHD4KslNxgULfsGXkOSSq2QDlH3wGGglUVpjqW8OVYI8ihIAnI6kCGgQKVXC5-lizk_Klf1gCghc3jwkxTAz46XjE4U_tiY7WhrZ8r15cbiJqEDIrEA2Ae",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ0XJNezBJzDERqBd81Ur8_RM",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCX+GC Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCX+GC"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJ0XJNezBJzDERqBd81Ur8_RM",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 210
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 105 Batu 1 1/2 Near, Damai Hospital, 51200, Jln Ipoh, Titiwangsa Sentral, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1700268,
+               "lng" : 101.6953324
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.171287430291502,
+                  "lng" : 101.6966153302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.168589469708498,
+                  "lng" : 101.6939173697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Pak Punjab Restaurant HQ",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112598181098770816578\"\u003ePak Punjab Restaurant HQ\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uJbuwiWXBBqzIZn84j_9wBRYlm96WH2zj4EYzkTOEagh1QmiyNf2f020d98t2p9rSPsQPnzLj8x6ihApWM5EOV06_ZWHcRYaw1HiXSgbRqB2ZogFWa-vEu5q_A6XCAfD2ZdDoTJGPR632QktW0TU1BiIz-dQD8UmqrnWWTyS-vqyOixh80uTlniOhMeLmwMCG0E8EccbQ5WQplS3InycvCdNOcTgB5EZFuddj-BqNdCHhPkWdgW5_u7M_WMWOv94QQ_oUj08Pvh3ZMLq8RjRVqe4y2BPOrvxsjfVJb3po5ItkAm5VJAM9_9kQUMBRIPKVXWFdYR1Vl2fkUtd6ApEzavs2exmRph8ChbgxbPHYyLTND9sb4bj9WMcqAROeyTCvXiyV7BgO059L2-vuweB9WG72iXr35Xq1knwwE4cx3S7NLVJO3AxG_EqrIXw",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJheNlNT1IzDERhydrznRKlwE",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCW+24 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCW+24"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJheNlNT1IzDERhydrznRKlwE",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 4727
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "National Art Gallery Jalan Temerloh, off, Jln Tun Razak, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1739608,
+               "lng" : 101.7048825
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.175182930291502,
+                  "lng" : 101.7061252802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.172484969708498,
+                  "lng" : 101.7034273197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "SEJIWA Titiwangsa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109827887882633232576\"\u003eSEJIWA Titiwangsa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v8xJtX5ZBtZytwGYB-eehrxfWcRWCCemFlaeLk5tRyB4csvbOSgVn0Lhi8LjrFBhJGZ0ik0muN_qCbhfAokg_pBfZZENS5z5NHfe1P95AVvw_jMNV-FR7piE3BFkb126pCIMq8fVNh_E95vJgLPQ0DnAP_eOmiWeKATLq-g3soQcOys2HfJVzZDEwOKa_YYosWRHJQHwAI35Pj2lRGLQ_t_pOJvmBqAX4qxLrQWKN_8NuW8D9jxolXfQSWFLzlvAVN15vIkE33T_LHWI4p_4GSdPir9WRTOGTY5c8e7Ucz_w",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJOy2g_TNJzDER1oCxFbxQ5Ek",
+         "plus_code" : 
+         {
+            "compound_code" : "5PF3+HX Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PF3+HX"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJOy2g_TNJzDER1oCxFbxQ5Ek",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "store"
+         ],
+         "user_ratings_total" : 1031
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "68, Jalan Lumut, Titiwangsa Sentral, 50400 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1711111,
+               "lng" : 101.6955556
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.172564930291502,
+                  "lng" : 101.6969020302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.169866969708498,
+                  "lng" : 101.6942040697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Hokkaido Seafood KL Main Branch",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112313243184081998872\"\u003eRobert Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4ChRWZqJgqKjlow6u6hIPNjxBp402fc1N-UCi5inCW_mCzPk7LS5zt5uterBOGJUuNevjk6BRv3_KgbWQZwfUQ-t54vulOaMqlwYkDoWZoCuvxMubDeU0SZrjCJZx0wSpHx3XYTVPCWiysTQG51gNHCswOx7KYbmgCvFrtQdKYobVSRDQmgC6VZ_DuSkTMsoC50Vg2LSpOUiLomMwwYFZgabpliignZWgHY0NiVEErzy7H5L6xCyRtfXHQ0iVjdBb6ggp5hsYhbb7TWV2Nkf9Ao4gZSkoxQuEDm3gjbNjGC26XuR3YNa1GdJu4eCgKYvvix401Jh2CLNyXxkhcmBCRiQvngYoazT_8_Epbc8EdxYZQ8ly9T2a6tduUkUJbaIRV2yBOelXC1TLJragJa81Zg6XZemrRI6ZrrOcwtyyMQ",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJY0vfARhIzDERkE5C13Vpoos",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCW+C6 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCW+C6"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJY0vfARhIzDERkE5C13Vpoos",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 3054
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "5PG4+MF tasik, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1766875,
+               "lng" : 101.7061875
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.177829030291502,
+                  "lng" : 101.7074625302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.175131069708498,
+                  "lng" : 101.7047645697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "White & Black Lakeside ( HALAL ) - Tomahawk & Beef Wellington In KL - Western Cuisines",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112323228815228203083\"\u003eAzim Aziz Channel\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sB8RdvrpEjMN3CqOMjk-mez9BNMGymHjgImp2q0_JMvhsjNBZjDLuI2jtuT0CWJ04bVUmFeYPYjuWdtaNJEIhiSLJTBbgArs3sQh55Lj5iwvrWqLAfexGEdkvz6F-M_lJn8BrEMKtiUgGVtzGpzzBp0la2-8hXivX7YQ2-eOdPNryoeYqDFoEDeCV3avrNlIXXz7uoeSznWr7phIIOWCUXQLLGYT2uPhPgNIvzhyoxTHpYJAQX49jdWnTcGIg9baCUUNymiBto698EVdavzy8Fm7QUHR3Z5n3bPOtozSfNkyttKRtpN4HP-oznzI0BzOLZ8jkuwo35TZOS7YKp2nktmPec42FIE_tGXNceQK8QMLjkHAjLYcndLN2pP22KgxxXd2dtXODQUbWYpZrBvTkrChYnoYnH7fLEgd_7Vh63qxUp",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJj-2Y8qdJzDERfk6Fp-BUFeY",
+         "price_level" : 2,
+         "rating" : 4.7,
+         "reference" : "ChIJj-2Y8qdJzDERfk6Fp-BUFeY",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 3943
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97, Jln Sultan Azlan Shah, Titiwangsa Sentral, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1697962,
+               "lng" : 101.6953862
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.171106930291502,
+                  "lng" : 101.6967438802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.168408969708498,
+                  "lng" : 101.6940459197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "RESTORAN PAKISTAN",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2273,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110969801658267924671\"\u003eRESTORAN PAKISTAN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vahUJfdWK4BJRtEgPnlOiZp01EfbIvvoolwPT6efpLXdGy0r_VOkCZIXCabejuyCnILSwLQfLQdp89ku_JAstPZ_ezasgzr75M38iCWQyKHQ_Wj6hfuQR6lJhD3mLyOShfSE13ND0nrPLcAFUNgrJdxS66BiqtBNYC2naIdW_mLaBN3SzOJWsTH4WxkWhTaEEpdncOLJ_rhUwnmdnr8I-l5T2Zv1OMGC2PgdtNaLBR1McPOfbgcejLlGKFd4xXnDSpo2TVfia2J_ktRcbDu0T4-4UeTpOb1uGwem1GCUUUFF9dheG0x4Mx1uBgXyKxFUWwFUT3UB3YkP1vKEAQCPwPCswdJk4E6wTUCUsm1l_rszL2bQ3ckHOAsRIsjaS4hAccGi75d6j7ltHdSO8nf3FtiUk9YdLiOINMTGoZaj-c-DWD",
+               "width" : 1800
+            }
+         ],
+         "place_id" : "ChIJ8xIdSD1IzDERsOxN5fOVMD8",
+         "plus_code" : 
+         {
+            "compound_code" : "5M9W+W5 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35M9W+W5"
+         },
+         "price_level" : 1,
+         "rating" : 4.2,
+         "reference" : "ChIJ8xIdSD1IzDERsOxN5fOVMD8",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1289
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Haji Salleh, Jalan Sentul Indah, 51100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1827784,
+               "lng" : 101.6911777
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.184217430291502,
+                  "lng" : 101.6925120302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.181519469708498,
+                  "lng" : 101.6898140697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "TasteBud Sentul",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 900,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100374317316658150282\"\u003enatnauk9\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u6aWqVeGuhmvtW2zwDxdyXT5R-dTxuYuyS0vNzPc8oq7TMwNoCOz3RCpQClog-Pl30KC-Jo94k8loGSB3B5Y1vcK-gs2xVXo-282QQSk0zytQItGI6M6e9xVx7b2qTIWtZB5GNDcU5ZMUmW_121ChBmdHRzdR0LI2gcKWZnJakgbmP4yayOVCBWuaPJE3HOuVtubn4rdpFMch5VVNBWE5jNNKQnWTp-JoNQwcXndmXrR_ivw62X_LSt28UZtUbzupVAnvFMdTwUBzk6-H25msuwqW3tB3G8i4CiaN4sBSTaO7xOAMnxcSqctsuzkIEx-934GfUHN1Q6CuzsJM79WJbyDefAeCJ7pdZg8_bAQHI8ONpig2A4j-xCuDuOi0V7xeth_eVTuSIJob0yWdBKq_v3wy0Ru-aY_GDhZ--Jl0OBNAlNW6p37AJeL2Q5sZv",
+               "width" : 1141
+            }
+         ],
+         "place_id" : "ChIJZwrGUA5IzDERuWtoUaePP80",
+         "plus_code" : 
+         {
+            "compound_code" : "5MMR+4F Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MMR+4F"
+         },
+         "price_level" : 2,
+         "rating" : 4.4,
+         "reference" : "ChIJZwrGUA5IzDERuWtoUaePP80",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1357
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Wilayah Persekutuan, 1, Jalan Yap Kwan Seng, Kampung Baru, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1618489,
+               "lng" : 101.7134669
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.163224980291502,
+                  "lng" : 101.7148493302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.160527019708498,
+                  "lng" : 101.7121513697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "After One KL",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104529597656226026345\"\u003eAfter One KL\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vfTT6omgKDO7Y1nU5aIvDat-E8YAJgfJnSPMf9d89D6WO5LtF9N39PAuzilEOqIaJbxbIpfLcVLS1Wdq1g3Jt4aa852D2iKfll1I3BkQm_08FKGGDyAkJYxYqJ_vTRoI_wfk95ccSUYPPUNKHbFqAxsoxQ8kdT2SbWPrZjEOa9fwq_XTUs8RuuztZi6kG_s0IEAWQx7LmP9qZ8er5fLBUo3tl8Ss3s5DE5J13431rzTVH04T0nqvYXV7V3o244Pd3h282OqG_7xWs_fBTjkdIBVaO9-FxqYVMV_tcUbWFymCvKlpdo2myu-Gjc7f79RQZn7VZFIXQem-o24In24Gjufb7EwdB_MXIdFvow5diQ1eH6zZItf1b7wkJkbmRLX7pOcNmuCoqvfo1H9KtoIeszjCdq15zgswSBK6Q64ZY8_eU",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ21kzqpg3zDER6Pa6rFJAZno",
+         "plus_code" : 
+         {
+            "compound_code" : "5P67+P9 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P67+P9"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ21kzqpg3zDER6Pa6rFJAZno",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "store"
+         ],
+         "user_ratings_total" : 2735
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "8, Jalan Raja Muda Musa, Kampung Baru, 50300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1623698,
+               "lng" : 101.7044279
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.163655380291502,
+                  "lng" : 101.7057678802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.160957419708498,
+                  "lng" : 101.7030699197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Nasi Lemak Wanjo Kg Baru",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111304211760566341616\"\u003eMShahidan Rusli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sKkD8PuUMIc4e5noRSLHCXwMUUma9nldY5BlyPkDpR_NEiDFNyTNSf3CGg-wWT6Zhxp3JgjjcSEOZu4LOdHU-QH7ycK3iRzqVQPQFezUP2XXgv7hyMPeDryaOO2jGmUwB8_YFpjoha0U65miynpULdCJHtykElq5MEZByBN9Xc6wkA5M6lzlbm66-Era-9qF94ZZntV-RD4ZQThDhvg5gSfRhDeQD__Yj2LCl9htjX0SQioQVNLGINI5zeBO2LroFUSt6pJpcpgNKAfWMZAYZ2Lgq-JH3b0A7oFESq8lLkmSRdVTsRuAGQ3I5KixweQoy0f2Kw9igKKHifOYMikhEPsPjgv10hP2jxN-JaFIvs36magod1MOAB9d7yZeZOT5q2BWN4JPQMVcYDtEHlqFhRj1tyjj0ljgAqEVwq0ghXHw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJIX_PtydIzDERHS_1R1F40zU",
+         "plus_code" : 
+         {
+            "compound_code" : "5P63+WQ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P63+WQ"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJIX_PtydIzDERHS_1R1F40zU",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 11790
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 2791, Jalan Daud, Off, Jalan Raja Muda Abdul Aziz, Kampung Baru, 50300 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1677528,
+               "lng" : 101.7036206
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.169193680291502,
+                  "lng" : 101.7049712802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.166495719708498,
+                  "lng" : 101.7022733197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Rembayung",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1848,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113511100443521815867\"\u003eMohd Arif Ibrahim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vHW_rWqlUzVGI7kVYphdPsysTi2lzrcfVJgqbTDBd5QHwDQxDC2cIgOdoOLGRGZYKXZWD9p6stTIUVm-v2wHqQ67bIzOiUCmUi7KHU_40FznyTqMCP9uEuOHGZE684x48kWedTyySNa8Jc6CrPzTMc0xIn0MMVjrW2M7W40wGLH4SkNhxiZh8iSVJl_M6N95lLiZadOgIY5e-eqMODjCrG9DxnEGlnq2blnII62dVwuvyhXEogAr2FiUiZb4V2Dd1jq-my6HCqKLpOORWeFRxkBByJDa3AlRgNzn5woayid1k9jRrgTTA0qHGCQ9Nxxc6veF1xJRfjjgj1JLYuKNg6AI_-8pfecSWybcjIUKR4sogOeTggSGhDZYDLnQTis6XfPHrbkkFNSWtp0qOo72UQDsX9WLKWWfXaVDs2Slg80Aqebr9kV8noj0dc2dgH",
+               "width" : 3285
+            }
+         ],
+         "place_id" : "ChIJs24TKQBJzDERGGJIZY-BNVQ",
+         "plus_code" : 
+         {
+            "compound_code" : "5P93+4C Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P93+4C"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJs24TKQBJzDERGGJIZY-BNVQ",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 678
+      }
+   ],
+   "status" : "OK"
+}

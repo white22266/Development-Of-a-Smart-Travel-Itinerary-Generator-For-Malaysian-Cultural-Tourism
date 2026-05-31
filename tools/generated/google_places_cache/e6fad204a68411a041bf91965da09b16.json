@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "14, Lorong Setia Raja 14a, Taman Rimba, 93350 Kuching, Sarawak, Malaysia",
+      "formatted_phone_number" : "082-365 194",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.5231282,
+            "lng" : 110.3869128
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.524792080291502,
+               "lng" : 110.3880962302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.522094119708498,
+               "lng" : 110.3853982697085
+            }
+         }
+      },
+      "name" : "Sama Jaya Forest Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0700"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:00 AM – 6:00 PM",
+            "Tuesday: 7:00 AM – 6:00 PM",
+            "Wednesday: 7:00 AM – 6:00 PM",
+            "Thursday: 7:00 AM – 6:00 PM",
+            "Friday: 7:00 AM – 6:00 PM",
+            "Saturday: 7:00 AM – 6:00 PM",
+            "Sunday: 7:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2352,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109486240833986028458\"\u003eWinson Chung\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uaCcNhvnyB156wiSMr9ornzMXKs2Zg_JsxfnWe4Pzpf1mp_Jt31aCu91tncXeFkQaXUttjr5FfA9OM06KpcHl6X-_l_N0CD2Bpe97A42xaLMsHYpNmYSaQc0e9qgozietG29X23CnK0UZdWUlBSar5PBq02YlrVCFF5jWwbYOzUmi3jfEqoPlMIRpZpYdCH7MPAAVFd1F8-NNnqwOp-njsqTv1v7pRD9jDLEBrUQSFW1ytTASGbn9QjpJQVnWI7MbGmqIfgnZ_MenwHouqxU2CH3lq92bmf8zSvLE_UeGTXB9FjMaA1mnE6gnkaTTwqiJZqGQxZTc2yWBY9HDQmpz1TE44fVrWGLqzPEBa3LnYV6OKcfUp7kFsH_Go4V2fUlvyRhrNhc_rtt8r6qnTZd-sJrVBX_LPvM4OlVyDNyiPTw",
+            "width" : 4160
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102227567030753284400\"\u003eBern\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uGRiY08eW4eIUjKg0_Gslo4fxnLcdogar3jyPVKe1cdQcpN310ouQIaRDt3UiPw1eJvflP3yZVl_LNRO9B8ZavJyaOciaaPu86uyHOvSgs4apcfGSIASpe9rx6NLmbBQA5D4-cdG_cxoJq0ennn7TZLaPq8Xid28P2Zl8yAdj3Hjy9CKx1ino8AjmCWDJ2CwH0jUu98beX1fCnkcLRVmw5tCsCPRuRo69kuAgdeQLfDrSCGTP21flkWQdn4NmlCn0qsRPlrwtUrIcMun2fQZ_As5c421A2vzqUUPtq_2VxlVLvVOKYlDAXXRcAciSvq0H5uugyZuHa4dAlf0SiWYk3w9CkP2kfZsxDUeNVwd2JkqrkMq4jD_UM1vnL3FmYoZ89Z_CBKo1VuPlxhWKsXPBm_DkpVMAJVM-0SOSMLFDV_A",
+            "width" : 3648
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116581585004092046121\"\u003erkl chan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tMw0LP_9C8I5Vt2CZZAwDI6fh0l-OHalc2282n4H0M389Xm1tjHIhfOOmpdEkzmUrjdGr8fftTowCw_xA9CjHHstY6XGCwQ2EXJA3Wc2XXrnl9oVMKIrtsSILxdMqgGZLeEMQ4UJeZVXz6zs-RIzmN4N8hsBdpKf3qfSTto9BKjI6kyMjanG7nj_yjjnDgKgFBt-uhm6ftpAey2vxRPR4wGbj8F6ebxohFhmM1rsJVk65nJq0-ap0rC78_jX2-WzpCIfdMsG2adYTFUVQqD0VELxysAcrJriKWMiKojzpH6TalWzLmk_jAYxzacsq9-6PAjJLeefKfnBwFKyFsvyfdjuaD-D6JXiRsNEfbNjuqkBNt2FKTsvnuvfFMvg4sFrVnxyjf2ihlaGOp7tcHjRD6ilvO1P5gz-8xNfLzZ7mjKxN4",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102604470444993713649\"\u003eOkâng Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSSBHLu5UXbuDL5teaX0CNNIgXVyn2SgNeJJvxO0PSL7uZeZrWqpYFXHI-qHKQ4ozGDxu4ai4jgm_h5CDOhyfT3PdmcpUQmINKe7ED0eEvLYAO2DnbrRwQuetFg8NL5kbK9I-B85CPI9ZVmfTdQond2W9K0lGecOP7bTPP1UHpTBpEbc0FFrrCXAilcPmXl_73TtiD0WVt6UN0QRBIjy2aaVJaO8JMZYlepCJpR1oLvlzcjkW6KKp-bUw4O4x2GUS87L928-rxWWN7GZd7AOB-HiMectlbaUNYIbnheUO95oDrev07c_mxFDgZiz8rOTejt_auJhz_uirWjdcrlO_PgusW7TptDCWaxrt665Pt-HTYit4IJKY8th5uH0nXUk6KmF_1eyOSkkwuANWYsUlheI59PrvY5zurtqF2PlLDJvtV1BXuUyoHLvUNiEW2",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102429295109391593826\"\u003eKL Y\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vH1vDewdBOIZZl0IsrVwTuZSqaHj3KibngP2_HrIM3vQ9pmmZpX3kpWCgln91pTBpiQBmp_JHKd1XRGdq4V5FSDSCec4a2hJXqJ6ZOLCyrrA9QVRs4FOqnvZHq_Bc8LDqAE5e2osddGUtxmer3jk0kRVIApIU9EFjcgOgYsUGnhP7fhM3FkqzjVF4tZXRdS_31WmztKxTztqyLjDKrep09IsHFn1pAd5Yvm0qM3nXenN4ckodwH7NJOey0-VRAcVbvoaVvPX6AqEcYZ0807kTMOodHUqdqyb4MOWEdvE0xlgPz3RTG9KDPzrhTXGuTBbYwUMUnVkE5PhBT4kTteEy5o9i0cJFZomXI6iFKAKVP7GVWA9Zi1W5smjMjupp3qczuIkGfWgzE1Vl4-yrYt_imD1MoTmSHvBjtVm_gll2x5N59",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111348169207095818895\"\u003eHien Kai Joseph Lau\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tAVwxwmZjwL5W6XTvl2ACBxNgyB9cptKl_AmBtSUYbSFnA8tjTC-QwbLFXsnNuvTZBJ3XGcKPk6yIaXL-KRT4THJqlvZwlDyZvmfbYI3Z4jgu3Bwlmngc1q__wwausqFEHyjvTA8k01FC-nfjww5qp4Ut6S1y024yUOfYTFT5LsGxyiU8rj6VfF6Yty3jRTn7tSkXLtVjX6C32NZVSS4fUtMY3h9RjelbQPpXKDhY7T1X4meR63YkGEpJEMuDwm_TgsRKe4kpSSvcDXVhHA1iS9X5fDBDcawZrZ-f7vZX3Nu0lGX1lXJxx4oHF7AQAy0SuKd6ecAf_ujRlnkM1rVsVIiH8ePBtTdPfprtGVcMsVbVCfTwtgmfwuS2qJAHoXr2HG9arisXR0sAXSB7v1oxWJNKzUalk04BcGqYnpGkt47_N",
+            "width" : 4096
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103361240734125012735\"\u003eGeoffrey Renc\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uestA3dx44tcQFkOpgm_mLCvlE0pkl-SSqBNqx3uwlDIyggkdXTaWdbabSVaEARAHrsQmm70LvkWg_cwViwD-jy2otRHk3klmY39ZdiQ6QqmimZaPCrAlwyFGXQlti314dAggTiQHQECyYaB2opBr2-n3fXl1KF-1ot0aBYYTnuhrz-c-FENbqeDNc8qKbZNHd-e6ghrYXEBYwcoWIGfrCbQzS6j5q8roNGeoEa1IATzKb57sQQjX2y2x-A-nGmKPjIz4-iabjihAoTi-j_R2dD3NJAPbXCIXmSbWTt-wA0bJa_3GKZ76UEw_8risAuaHF0OEqVE8_jVU42rlQGvv8L60_5_1Nii6baTuxZC1w7yU1qLnKlK43nT_nHoWryGXEK8oJfJaFUmHJmTY3TMSGjRMyFX5P4PF2fskquxaUJbbbr8OENiz13ODXFuGO",
+            "width" : 3000
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102423978922639180249\"\u003eHock chuan Chung\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v1uSG66OXgiAYX8jrWW4HP6nqs4gtUtAErxa8n70NS7tLDnqc5Z5HtarKm-DYN5aTN3X0zJk_zEzg6yPvN5OPnVLKGaxwS1WMk82tiQh9x8GDb6Z1Jo3NgA3Bx1AWklGi6BYo0tiMnMnie4kF1vJLzZGjumY1_o5gafBDuuG4FbNPaYmGsI6oisxbXqGobevn08wZXwvRh9OM20S5fgyMKv8R5dZ6CEiGLDw8InVlC_2Tk7E1sm-UJkUIVBGhWEKJF1Nrv4JsBOAJncsYawR_IR8auucUhrg64hg2GQVW255G3XrkLcmlZWjSuWTavyAV-RMObzLSJI7WPSLgj77VFLsejMY5_GgRwaLjVfFRgGjfKRInK7rmdZXP26JDaSCx9dtzML-P2F-JhwR7nxqtYNMsYWuAmbDwoOVNqMrg",
+            "width" : 1280
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110268181208670350626\"\u003ebob zakaria\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vQK5Am74t48Rga_McNQLKyafJ99Gx58RUJT7jMM7E2oE0MgPqIpvbl-lW3KmSOn98L-4xHjuDu878ICRf7kh56KHByFn50w-TZKBnOaRxnhyy93_beCch7k4Ivz74mdJhWtIr-7fqgvyJLPt-_W3uxx-VeH0YKvbpIa05KJ6IeVoYwst2xgPoATI3yWjjMaqVRG3bvnHyVRbJdz_zMBKP6Vf9h0jagAo4wMzFZC2iblQSXhsdZ9PWH4GJwa1Yd0-NUkOMSnv8B9Ron5gKwMAeEu8rctbc_pJM6WzpkxL6OcsZWxKph98mfsMgL74cygTpYH4Yu7osz6ViWPuIaPtgXphYtdceqjQ1zzXVKH35JsyG0C_zwoNujI2fAW6tzZtBQi2COLv-xPWbfO4YqvfI4O47ETxvYKigithOvCz0gPVVNRFa2cOQOMTwRwoC8",
+            "width" : 4096
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110268181208670350626\"\u003ebob zakaria\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tbZopYCUnFJTQeIiogUIppZE-2GcMQS732iqegVxgICrI6EKwVPVNgZIefKuBC57tTpKRCb5ks5G3cy_Btw46q1w8gKjF7ZYVkI7SMLKaknNftXZhuB-JLOj4FlPM3dIvl0BUKhj8lO0R9sfreiSHqmx7IBGZHbcl9iocoksxLOI_B6QJgUfkQo2qSx5toDdEloyaFRWCUtKE1YWDHD_AdYbQG6O2rfUjGNFF1J8t5q6B4WoMTIRMSCqXGN7NDKWPtfJ9PwH74KONVaNTF781Vlg8TzIvOgCMkvaUB3d7tauM9UiXKPVkrjs5JlJD6Udwn6Y_bWlaD1IYMAE-13tSjIP0hCQcoomd7HbLhnn1Z7ZEhHpv8SKInT5sz6btDvp8nVO3l0q5NaXAqEiBMPYr88hNmTrIUcNtIL73xnjvqIQ",
+            "width" : 2048
+         }
+      ],
+      "place_id" : "ChIJ-TOWZ-am-zER5--T0897TvY",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17748259314051837927",
+      "user_ratings_total" : 984,
+      "website" : "https://sarawakforestry.com/parks-and-reserves/sama-jaya-nature-reserve/"
+   },
+   "status" : "OK"
+}

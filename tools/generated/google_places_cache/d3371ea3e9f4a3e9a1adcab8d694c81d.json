@@ -1,0 +1,235 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Pasar, 35500 Bidor, Perak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.1117135,
+            "lng" : 101.287684
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.113066580291503,
+               "lng" : 101.2889940302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.110368619708498,
+               "lng" : 101.2862960697085
+            }
+         }
+      },
+      "name" : "Petai Lane",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v-Ruc2ywcE0XtiHHMU9iGZaQLG0IbyLsCOoA-CA_gF3WFg_mAUt7k_RQHXy0oqAvkJuwHiqsDuaQRZgdo3ojSUjYaHVUgp-YkEAbkm3ZczymQeqM9zH8l2DRVmVt7KZDD03Arbz6sbXJYBe7INvuycQkztoTK5cBPtd7logoHaeJ7NjhVv18PhLveH5BMoXJRzPQYClaQmKZEYzE-vhDeTjpmfd-J9AIaJ97fvU8Q7eO4DbChxBxLQrHiLAReb3IXXdCki5GWsz_Qu59a0p6AmxMI0jLp_GO1Ct--6Zu92XgVLbHbp8kp-HkYmVsS0n51bNd3Xe_UST0KUmRpXrL5Les8Kvm-nGNVtLcpU2rIhszLmyT1H2uZKjBFeqsZ8rGQeDO6Ddb4J8wLFbPZp5i-pSDWq_5Y7X8dBeb6QLB85bz7z",
+            "width" : 3456
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100546811129396069543\"\u003eEu Jin Ang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v74UfBATCLR9Y6RiHiBOvvSJfK_JsHCM7ceiB7HIyCadeXpM6G-15ttpwqYo1Nb21jXkTM7mX3gHyzrYMeiK7l6VTFHzvZRsKkknd6xn79z1aa2QounOnNQLL4rEP4PTHrwqvaLpqQbvDWADUzcudvIhdbbie5I_fXYN2rWytNBq7dxAliaEJ1ip5Cmlaebub9oEW1HXLk2g0HBrhe2PIrmIQVX-oNhKxQ64UTT21nqWt7wOn8lGn2OSb0zBkwBrjGcAEVhsz3kKw9NW0gHXswL9E9uzDn9H68B8phfEkbcFQEiX60C6wkvuCdQWBOLT4CHVnRdHozdFmzSRc3ruhyGrNcypy9WhAieOcjjEyNj45A-jq6DhySRUlqmSeDsfbL9qJhpgDbej2H5S-l6cwpR6EadwU4NueBcMvFMdg",
+            "width" : 4608
+         },
+         {
+            "height" : 2884,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113329819302627252949\"\u003e張博凱\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sGM-JMB0oPC4VevjmXcM0qIMn7lc6zeyEaUKpjw2FH6XwMyh8LjH5opWUVo2m52lAWtrHny9j620FQSs3ATBcO1O20B1whzW6P4XkyxZtuQ8B-oV4_KqkZOcx82_osM6vc9dXbCb0Tr56CVkbducDJlEQrJlBTUaiEvtUgfZ14064ywvKOsUfh0y9MqX4hYMuy2x9-M5cS6DDaYSJHD2P5nuDD1oUI6Bkv1slWavXeBhYEf-htg2c7A6GuWnKloNVOR2yN1L9HokOiFDTySmJogd0DR-2JRRU91UgzCT9yeb5zbOSZMK4yac_q-zLPIXknY4G0DB7NkKfZseRDIX74MzJxP5i79O4mILKU2QQGpQjyUwC400z8o1zzlFqzQdBjk2NpsxX_mEABxGPDGNdXHdWmjhRou_Oem6Q7brk",
+            "width" : 3851
+         },
+         {
+            "height" : 2700,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103700075327693841144\"\u003eWoodz Packer\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uEhdBkOOF_vrb6tCaONcLc_00uMofCieF0my4f3Dx8vKwm070CtFJnvNVYgvGCfdjX29YCxAcWrTZo8yko4Qt9ADN8D_dtYRFXn3yYzeHdsv2EGUKGzxoeUDatkS45Q3qRzpVskhmR0JVRO4vRk1cq3Gf95nwK6NzZzDkGDlS1tHukI0v_8Kbuxo7EoVapaJZ7mZxF0bEXf7jP5jJLDUE4cJ0mK_QXBm0QiBwrsDEMkUKcM2zt3G2llrDbKOaaVwtK6vC5b8W0awMy1xSbdAN-TrAk-PI_lRwHWiQmSEj5VaDiJR2m-kyeuAA6zwOSLi4AJk-kl0SzCl2ICuhszK1U7tdY-DDOohCF1i7zUpoxKk5srIuOhLRmEa_kg2EJAqaqVg8gmRuhVYQYBrS2siBYphCnHiOZ9ol47HC1Pxb_vw",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118269700059829309324\"\u003eLayla RA\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4Ov0bnb0AklQ5eSdAYX_Mz2sjhoSN1HnVjiHeMUpkN8U1EdlIxvCDaBc05trl5O4V2rwezXyHeBet2VGB1uCrCiDApkAmQA4llL6gnboslDQopdcE2YExGOdqjngqALxqEzKvDdfjsI8wphxAJvJgITgnE_Y39PgLlTcODTP-Vqd6LZ9VwiTiY7BW_vDnDgdVELzZCSR3UaGqU8O1_y290jnJRZwNR1V6ucfWK1PFiA-CDiweVCfI6AFOSOjeL_0uMgx760fJoL_vfPTw-h04aplRdrAtilUvh3nbhppeik2-D0nx4Ddw_DkUhd6YQBuAcBkYflGevoCgC8sIGEFA--b2zOFqgDp8-qjSfSwm2SQ6YsQzdAsu1TrnaPtLDhu3NvDGMn8S0IQHJT_Gd7Q8rObnSN-aH5RuSXscd5tinV7n",
+            "width" : 4032
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117043136140711503252\"\u003eSurip Tahunson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t_ChSQLIwYKyQ302E8LsTTEwBww6-byISA1QlpwUrnZpKAN9xBu8XqhBLW6XxY2qXClg3bSpCNnVqHIcrNTFdYnA9oTRnsvse2iKdkTKSzHXAm5yzrUpder3_hYs3Qbqnl7s_4QLSrq3gCh_BglluNMuY02XMmOuR7lPUYOJihFTuzVcAJcrJnHQWfPbAr-iqu9Aq0UasJaGgyx6IAliildVC91Ykro8ulcdEgWWSBldliRyXThARmlAKV4fpk9quY11EC_rg-reMFl2r64OcOY3ad-_c6neFgaZVgXdcmVQE4AANSF5SHds9mqQQoLtZYxt6M7JHi4hhOOEUWvSb20gJLi42txlgWZendd776o3xIF6VyRVkrN4KoP74n1DOJkjnTiEw2-VKG7YEtCDGO2n9cBvRdLKnJUp1X4dFE1WEYjw4R7CzNPq1Bxyb0",
+            "width" : 1440
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113329819302627252949\"\u003e張博凱\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sr3OJSuwwn3YdocIyg44uqAZow0vALGrTT42v78Q7VjSEaVwp5XXXKKWDnKnzN28VHaMNHSH9g6d79Ugcz6bU0x3a9NRCjlqH0kSVGhvN6HsapOBZBqOxQOARUmnQPPhjcomfxeKGfWfm3RKmTULMh96_8JZIZQyt6kGks0I5Q1Jq7c7fJNUcsgrjCzY_se4hC9pFttiSRAZl2IWTxNToBSyZopk9zKcCj3aRlGAf-7C2rcd_JQWj1KO4ksNPQ9hEE5P28-bNjAYzd3Iq3flw7WYUaseJn7iOOQbFifdoDpYZyr7mvvRWIkH1RmpcYhI9F6ZHdVGPXHU2efwyWFKGMc2joKblkCXR0uvFBraeZ6qEpE1iRTG5bONoW3WKqKdl-SINaEtAmF4atZ1YyzWwjIJXZ4ZkaVLqnNA",
+            "width" : 3072
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107446788007547516226\"\u003eIsaac Ooi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tqhMIaBO00Efd1tuKdOzAZV0L4n9fyLBFRltW5shrWcLNy9UMkRsyrwxih5bP0AChXL8Q7aJZMmDWo38aPDW_rWY3m3yYqSkE4WZjaZNMtmX68p8wh6iTj5GrWi4KNG-QJuPux4vdoQZEgwMlX3DoWCJwuDuddbeyH03FbeUIdtxcZb7IUcnrPNDMbo0e360GH1k5lj4Pjh_rOz2R09DkwNsWhcir8IqeLhiAXxTq31z5L801SizMPfLlXDYjEJG_d4yoF62yZZFDErnxRZGgR9BjC-1dr-P4NA-HNiKc59VN0ZwNSIlUxsgKZx4YDTZsYQR4IoEYEhoThTRjg5IfFttvhJLxfu6szykaNpGcTbVMKuTJkIaSfk14t-XHL68OjvzW580eafabsYKByPMBZh65evbWsGp45AwKXpGJ5tI2r",
+            "width" : 4032
+         },
+         {
+            "height" : 2992,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116635912102210577693\"\u003eAlan Choo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vgtqY91RfIla8FpSXEc0DgalaYqcQ03Zjos1n5HVJTJZxgzxrfGbTJxEwKcUMfUZWFeQiqFOWvvT5QbhrpS0Q6SLflBbOucaDGbnZKR2G8v61WLdEOANvrKxe_NcrNFU5iben4aXu1Wb3cgTyVpQ9M_azAftr62yHN7vJ_hF2SViBu69WjqP8PtbKL30aqa05iITGWjUaHPVVblRzfthY5juPhld3IyhRPTIXnYK_5ZxDLzbQrszmch4PArzRkyz86HEjZ2Q52k2NDvj493DacFPbYqoNHlSgzrHYPySH--sW_QEuyFW0IOK9k6aohZEaIJYFZ0Q6OiCaV2YOy9mbn6xtM-_lQkrVYL_6Dek1ezJzXHofzPO-Ix5aO6pxtpPIYieltHBywjMVvMD7uO-8xkgsKWY2ylEZf5sAv3fbYdQ",
+            "width" : 2992
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102557934317806849218\"\u003eSek Hue Yeo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uWKYtXBJXfuYwCx6A3xD6zK_aKop3AAKdiEMJbj7KKtUu_iZbfvXChBFQblEDVYHVM7KL6k0loZNeybttWZSqOcl0PcrTOSFzBbVSsZ_N-mL-2cyOO0LdSszeWPtGuIJ6kTof9vuI81IkTp9W5iKQvsEDJ53Bf-Ofh-hwlOZYErQ6s1ChVyx4F_d06i-BKPiFwa4RPJCp3Nd7z1Q1TgqRooILtS40FKGKJx7xHyttQ3oTWkue-cPg5tO_0st2BSM_q7Vea2p1GM3evCAf4WebS54Rb95JnTi5So1tJppYGsivKBpNKXbhPUCpooR4seMvxW_sId4sWSFd0UCghatAvkMXx3hIhficck4Y0knaBnI6BZldMJHibYoum5nKn6e8sTpEyVLUDWrLqVRkfhpjdNPLHT1IB2jIM0QCkHsJSNw",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ_Qypfe4JyzERnYB_O0YOtr4",
+      "rating" : 3.7,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13742187007776358557",
+      "user_ratings_total" : 26
+   },
+   "status" : "OK"
+}

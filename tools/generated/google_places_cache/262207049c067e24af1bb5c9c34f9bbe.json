@@ -1,0 +1,720 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "8, Jalan Semantan 1, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4509406,
+               "lng" : 102.4229494
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.452303480291502,
+                  "lng" : 102.4242693302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.449605519708498,
+                  "lng" : 102.4215713697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Esplanade Temerloh",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117796075222467481816\"\u003eK T\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tWhfhF-YATlCWQGgnzF-rjgJjgsuJ7x2SihKDPnWXAzXmpPd4bZ1eodGZPGgwkAqJHSamzB0V-eBHiz5eri5iywZlI_IqkrVwoYMljcqGaIrbdIAXDxuRF-yPYgw-acsIa1qzTBYDREvNvTUupwHceS8uCyKyUdjO49WMMPGK1S3Vc8Sb8oavV_4MU5CGnyAaM3Nfwpl9A4FEl2bzx-VFXF13MDdgOegx-KAx6n_iTm_XTgAQuBX656LD6Y6lOVfo3Dl8wt-XUcgo88difloJYrES1hlOoDF15Us4eV1yblL7EjJkIFqi7tUOjdVOsqx4UVNLi4bvxpQ_D9YDtB8x_N9eLDKUYgrXr_x6Gxk35xbArX2e3rtmMAXXAOdDX_6F5CfrzZz3mkrBdxg5tPc7iZCoxZU27NKLKDdAJrFM",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJk23w-o64zjEROTkOjX178i0",
+         "plus_code" : 
+         {
+            "compound_code" : "FC2F+95 Temerloh, Pahang",
+            "global_code" : "6PM4FC2F+95"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJk23w-o64zjEROTkOjX178i0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1036
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "74, Jalan Ahmad Shah 1, Pusat Komersil Temerloh, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4484443,
+               "lng" : 102.4178127
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.449910330291502,
+                  "lng" : 102.4190217302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.447212369708498,
+                  "lng" : 102.4163237697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Temerloh (Temerloh Square)",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111952861106747737156\"\u003eRemo Maxsuns\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tykSP0dIBEiBbDoB2jdt4NMgLlTV2vDI4d5XV7S2ON8AVmru648BXJWH05btCihzgDF43DQ2w7OgAyG-N-21I0RkcBo3Pp9lW50W-XeE0Ccn4k8kRmDVUz160-zNLoczm7-P8rFQgPYOuUggL5sJNSkmp_nqDDEKEv6Us-WruE6pvuZHtjhRIzc0RFm0SSdI-Zh16b2474OXP4bZdo0xFrV1nt7aH0OhGQ_ACSFOibhV04m2lZ11sXlh7DvegptFV9uhdQTfQnJvfjC9kD-Hr1Bg4bDZupbI5WX980NRa6MIefjfW1KyhLwo9QJCo5teo6Ls4XbJM-ioa0ROZFZdfLjqnQ88L6hyw6tLU51X1m0CUopF5CjFRw4R7gvvpPbeJDD03TL0jpt35enxQb-raxWubhXyUsmrktTAHvaFbeOw",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJuat7Ggm5zjERYzirtEzwXFY",
+         "plus_code" : 
+         {
+            "compound_code" : "CCX9+94 Temerloh, Pahang",
+            "global_code" : "6PM4CCX9+94"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJuat7Ggm5zjERYzirtEzwXFY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 117
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Semantan 3, Taman Kenangan, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.450641,
+               "lng" : 102.4203348
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.451987480291502,
+                  "lng" : 102.4216902802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.449289519708498,
+                  "lng" : 102.4189923197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Temerloh Umbrella Street @ Mural Art",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112164768554659981594\"\u003eAhmad Nazrul Rosli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-usW_EyyF7mmj9B4ZrySwE3l1xA0gu6T7_F0NFdaiYPwSgAGnxCe4PgrgKQwgnIZs9jB18ViIah-aHw_PI19l_dtjvlS9o9y3tHyyX62lKT3DRHMxGKiSfllUwoLjk81cantqPny-MbLajrE2pzU5kU9Q0dyOz6mfhA29MLhmmZKycWFl1IwsrBDlBd0Dep1UlU4VtbYyDBEVn61GK_gcLA8ZXMkPclfa8Nufpg7ob59tjWg9m7SHFnfX5a7QJl8sInJAZKbArqVOkB-uAdFAnD49agLb8dI3DLuNnQHIZMbdBNRRGPOIUtmNAYiVZQS5C64erZro9haIuzMpHnH3TkvO2_gvZWTHtdQDMM7SF6zwQEsHno5hOBBJGTVRjIQurHM5KoQS9mJZT6OhcfxQ0W-n-5jBTgXZwTD-JeSqNeAQSgDpm9H3mhwDF712k5",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJgYai7jS5zjERcMycfQkm9-4",
+         "plus_code" : 
+         {
+            "compound_code" : "FC2C+74 Temerloh, Pahang",
+            "global_code" : "6PM4FC2C+74"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJgYai7jS5zjERcMycfQkm9-4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 31
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "11, Jalan Semantan 1, Taman Kenangan, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4502823,
+               "lng" : 102.4210655
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.451661630291502,
+                  "lng" : 102.4224305302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.448963669708498,
+                  "lng" : 102.4197325697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mural Art Temerloh",
+         "photos" : 
+         [
+            {
+               "height" : 3389,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107455863886111494267\"\u003eSuffian Zulkiffeli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tKQQz9ZD2HWmY3vj4DdA2os6EaWAoXfCMjPilh95tAKo_Nn8kqatNDf4AOMl_T4h2VGieSE2Om6WP5RVnzIK9Q1tLzhX0D529IH_UiEcsHIXcxD3qlVEM8iXOkpvmhOqvbIK1PwgP54QQbSyY8KUINURxtwriH4GTf3w0-lR-eE0XZZBwB3hjFBBrlrEIi_7j-lE8boqUalMN_TLqYGGmOjVdtYuX33AywsJGkggOx6vdkLvYbzyChpncc2V4ZN5oxKXgWiKbkIJpETmtUnoXrOf_L8FRBDGF2CyixseDsXN7SVMMC6KdLI0jJRJ9ffwSxwxmenPKuY6_fTIJuExJ7N6vFCJLLQ8rJ0ipfgKMGlLupwuG-SGNpRQ-GNGHjtdjFnyx6MZPYSWArlATxSJh6DfaBux7dqkcMBcBygsRcVrKDpPxGmLz2jVA2Z8eE",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJQ721OUi5zjERZA6IhohEFSE",
+         "plus_code" : 
+         {
+            "compound_code" : "FC2C+4C Temerloh, Pahang",
+            "global_code" : "6PM4FC2C+4C"
+         },
+         "rating" : 4,
+         "reference" : "ChIJQ721OUi5zjERZA6IhohEFSE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kolam Tahfiz, Kampung Berhala Gantang, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4855916,
+               "lng" : 102.4316389
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.486573380291502,
+                  "lng" : 102.4328386802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.483875419708498,
+                  "lng" : 102.4301407197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Rekreasi Wadi Al- Amin (Kolam Tahfiz Berhala Gantang)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114848434412274425025\"\u003eTaman Rekreasi Wadi Al- Amin (Kolam Tahfiz Berhala Gantang)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uf2y3JZ6vzBf_IlwfjGhleYoGihwa_fAp1itidEsXJBXkQ-ZTxrTx1jfJLMQ6Yep691ldesUGKpOb7iBG25TcWhquMC1_-jN7attvUfJ09lwrlje1DdjbMixMz0Kcj6O5cLm4hyK-5ifjT_grDpWlNk6v84ANI5u3t1hVi1Px4hMu4EgYqblMgTpGi5QUev7W7cGcH2jCL7hT1cOGEbMccKfTnSa_7PJthtUAOzO9ggWmD2M2mgoEbG8WceIB8IJLDs_Brk4dObSlQ6opqSC7v7KBcHuHJvhUeUYbyLGvPVw",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJETQTLw-4zjERJzNc8CscSss",
+         "plus_code" : 
+         {
+            "compound_code" : "FCPJ+6M Temerloh, Pahang",
+            "global_code" : "6PM4FCPJ+6M"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJETQTLw-4zjERJzNc8CscSss",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 207
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Awam Kubang Gajah, 28000, Kampung Sungai Rabit, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4429453,
+               "lng" : 102.424769
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.444269930291501,
+                  "lng" : 102.4261084802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.441571969708498,
+                  "lng" : 102.4234105197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Awam Kubang Gajah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117852325231836544314\"\u003eZulzamri Baharom\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vK90iM46yfMRlviuYGO5ioIhShD6O59rWD_ZUOY8598MAbgMN-zPwaQe58duJ-YZJiOuA7csvLfGMwiJEqCp71DZdKjHcyWqR0CkcxgO4xhsayapHJWvnYpwcPi0xsoIimxNNKCzrVKa4vQqUVmWKAnsxrdvLCxb8aH4TCeQwmabEUld9CxNfSaF1dMJohx0ebwoXM4QL5aBhDcdzAJLCaxEc_NoIH8sEX3N0tDlEd1v6y7619iM7bkjNR0xsRmgMdSJQpPrtP0cjbLhW57vHGK5P4eA6188q52SQkw5DnLeoGEdMGjNajjfjrrvUTKudFPZ5qhEQzqb19QA_BNtNUzNnbeuSavvuENJ4G0GwSistt_dDVDrP5lj_SP1A8N1VDblnCzSonNeJ8VNSe3TNh6wCW6Rdbf6_5SBXCy1sLkZ8",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJkQz9M5e4zjERTF7YKHvhgk8",
+         "plus_code" : 
+         {
+            "compound_code" : "CCVF+5W Temerloh, Pahang",
+            "global_code" : "6PM4CCVF+5W"
+         },
+         "rating" : 4,
+         "reference" : "ChIJkQz9M5e4zjERTF7YKHvhgk8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 214
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "NO 1, TAMAN AWAM KUBANG GAJAH, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4437977,
+               "lng" : 102.4230899
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.444878230291502,
+                  "lng" : 102.4245273302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.442180269708498,
+                  "lng" : 102.4218293697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kubang Gajah Waterpark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100986619464037394702\"\u003eKubang Gajah Waterpark\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sssSvTPjg8ThQbel9g7zCcvq7nVrskyTOgtDDp7SfRjifkwSeUqzAlun5y_5YWrdb4W79aGwGvN7EAS1c-wTURl64UOGE3ehJxidmCZ2MDn2kyqc8y0wsPTBZj7xd0UV6KLaLASOBxI3RzTW_wLJkayst_DA-GFu8ajsRYGjSulwIDR3xj0Pi6DK7-o8Q2yD60OwuqUGVcWGUuUPI5IH4lWi0db8PW_Q8rZSLdHSMW-JcsKk-Ynu5qA91pjRjrML1nPwDr_oUaG8gLDAOA_vgPdg-AekXW3GZhyGLYfMx416TzWQt0nPO76GSEoKFKHBVMYQFe19H6bPyxE9BXZOc1wNyEV0878iIaGkvUKs5bGZFV_7KgSKWmEL89aSG_NvYM7EPnGElKwKiYRU7V3MjrZx5SJG5qpydmriE2OzPsC-vJxJ71S8xHJKQokJ9u",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJWQ9WLJe4zjERfd-9axxFTx0",
+         "plus_code" : 
+         {
+            "compound_code" : "CCVF+G6 Temerloh, Pahang",
+            "global_code" : "6PM4CCVF+G6"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJWQ9WLJe4zjERfd-9axxFTx0",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 922
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "b32, Jalan Semantan 3, Taman Kenangan, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4509864,
+               "lng" : 102.4203028
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.452308080291502,
+                  "lng" : 102.4217031802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.449610119708499,
+                  "lng" : 102.4190052197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Waterfall Mural of Temerloh",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103228785269818124515\"\u003eTEE EN YEE Moe\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uosXtTfBoPeOyl5ByVB6IW6qVtiBBQhuFaQzHHmNKeDaHk00-MoQnU3qNk-n15-lz1S4H0R_IsnXIxNAXatLkhfSYkSCrhJsC0YMGKQxV224S3ZCLJAgAtq0tSiS4z22U9fLnTHGZTf0dLJrU3Nm1vZ8HnwTESpPMOAvpN-B_-XtvMHpvvmrRsxe6WPMyfLJ2hTnc3DpWDg0SeTQ-1_qP6yW2ToW2K2DE486MKQ1cNfeWD3H04oRyFJ5oe08QWVKatgHAYxIc-BxAXgDfumiEeMLvP1iqM5jDND2dqA9pp45mZQ-VbsxhdNXMwD7Px6isdZMhAiv26D6oGPWeBUAPdqweZXmfW1CLS3Gqty8qrIS1lfuOTSR1DaREuhO69oacW9VCd1wchw__1dOT5vLEMJwgQ7iv9lOQS5YKlECfbftj6mtb4h_24lso6x-df",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJBdne7Au5zjERrmI2Yj8A3qg",
+         "plus_code" : 
+         {
+            "compound_code" : "FC2C+94 Temerloh, Pahang",
+            "global_code" : "6PM4FC2C+94"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJBdne7Au5zjERrmI2Yj8A3qg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Sri Temerluh, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4523652,
+               "lng" : 102.4193161
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.453677380291502,
+                  "lng" : 102.4206362302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.450979419708498,
+                  "lng" : 102.4179382697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "淡马鲁新村路口打卡景点 - 有求必应拿督公&许愿树",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2928,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100892067904153780678\"\u003esf ko\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s-ZncyhgbWJ34Ho58_JdBRt4tzLSs_0_HYDZD1-wAVGFbMtAkf1j4o-yss6BEklVKHggzHOukA52KI5xccABp7kGoZ6ArctEB5bX4o4jAwy8Ox1LWihncwfYfjomR6f2V3tGQWKhLtckF33urF21HoORDSEiHZ-YZP46ZnB4RDDbLI62BTqIRaLzS4SFO3k2VS9F4fK1OjMaDWLdI3bLmjWESnM6Hs1vdhe4ykt6DMRSbnFoLiHpSHxsR2Gb7hikPn2U5Hyh_U7C2FbAQfNn6Pb3dPQAtLOJQjdufU8PMMV8T_5fnVWpYmow9mrCLQVT1h1HKPCyyj6hdKpr8BZHruoOWsSu2FeD46Pl1dduQUo9Zs6VImhW8qun1B88vKu_vgcVBMzykjkKnBZFaQrHPKX8-M8jMPGbfhXCY1pfKLH0Ma_7CrAEIdjv8qahRQ",
+               "width" : 3904
+            }
+         ],
+         "place_id" : "ChIJSx7K4IS5zjER-UWfdlEcBdE",
+         "plus_code" : 
+         {
+            "compound_code" : "FC29+WP Temerloh, Pahang",
+            "global_code" : "6PM4FC29+WP"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJSx7K4IS5zjER-UWfdlEcBdE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4448569,
+               "lng" : 102.4164622
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.446220030291502,
+                  "lng" : 102.4178195302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.443522069708498,
+                  "lng" : 102.4151215697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Tasik Bandar Temerloh",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tdQjAMdyjMAoMyEYrXfmfVBNl5x6zAS32ViGZjDH3Yo7UD0Pcah5TYlpDdpyboQC4L36kMVkgoZJ-LBLrojSQ1ysAZyldstoucjfVemo6KhzHVYVgOMWfN4tlvblBRHwDsjYm6ea1H1TkKZ-pMB-Rs7mYslfeMns8GA1fAtzhc3PUwqOhOM-agSsxLqzbJsWbnKD1ixfRN82rMX3lOCm5t2FUvz0WDHDM8MyOWnnCp2U2TtwKDIHzz92bbyHn02ugetyzFLam0DPO_g8J-DZotI7p9v8DBlp4SfbDa01Yo45jFyG7NNIij_9Yj0NEMJxLw5PbnQRDacSzN3wGmQ3X_1WxoLiRRmM7YIVA-p1V8EKR5iWk_3qvsi8ZwA7kmfwCllN4uNaMjwV5hxmh4zodQiCouf9XiP2nqnoxOprzSNEvf",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJzbUe95K4zjERIqJFUHAdFb0",
+         "plus_code" : 
+         {
+            "compound_code" : "CCV8+WH Temerloh, Pahang",
+            "global_code" : "6PM4CCV8+WH"
+         },
+         "rating" : 4,
+         "reference" : "ChIJzbUe95K4zjERIqJFUHAdFb0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 368
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Exit 88, 28400 Mentakab, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.467289,
+               "lng" : 102.3494267
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.468808830291502,
+                  "lng" : 102.3503733302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.466110869708498,
+                  "lng" : 102.3476753697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Rekreasi Tasik Chatin Mentakab",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114284236858514267187\"\u003eNAG\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vUtTtzs0DJ4ZimD60jWcUBL_mPgHaXOtqpKzM9WSybog4GgEURrzZyjnoJTh8euK6RskpfS_VKL6EugUM77kdQ1gEjYyUYq4EX3T6SRYcSYEKtHF4zG0PkN6Hil-0Iff5ro3RQXkpJIBxC15atL5XM7z9ssJE7RXefVQrn7lPYg2kvMCeXvJb_ClVa3GD2oPE62S_VzeFV0l89VMXyfELuoCguc_77hmVrnMnvI1gH50ubUa6nm8yCHKEwuYhebaH3N5gEQmF9TRkuOu9yuiJjy9N6DUvlRRi7pzFdTKiCZjRHV5gp6Vkg2ssyaH139UOC_zoZmz3_XXGLCa1MDlpNWYg5QqAXK3MnnnuSZTXSDhfwhqmto3SjIGGSNm20xAY3xCV-0KVcARbzsq8NC6rNCLA9kUKkvKJ9Da6bpa5E7ow",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJtbBgzoe5zjERAsZ34CPTfgI",
+         "plus_code" : 
+         {
+            "compound_code" : "F88X+WQ Mentakab, Pahang",
+            "global_code" : "6PM4F88X+WQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJtbBgzoe5zjERAsZ34CPTfgI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 375
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kg Bangau Parit, 28000 Temerloh, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.449796,
+               "lng" : 102.4255254
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.450905130291502,
+                  "lng" : 102.4268670802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.448207169708498,
+                  "lng" : 102.4241691197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "TEMERLOH Sign",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100678500677462253173\"\u003eHairel Mat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIrInzfHxV6bkHKv983pKqz7RwzqYWMccrqnagdup-zp_gG_9zmk5FhVmfspr8eJwtJd-I0Em5CO-3z-HLcCPR_C9TFzXc6wD4duSevOW6VyWEcYAiYR3c2jTMeXd9Iy1AyL6TdfjlKb4-eoRxM9WT4yzRSKhANp4DY0WSJyAuuMRA15qIRxrv9lBJ5V77dIBeKFVn6pBD7nInN3VPZDBl-oEvh0o4gNp4DKwc9v4wMxFwiltfwjq3g4AfcPn8LD51uetZLDpSPLogKlEAxzfw0Ci1gUIbdbKjmnmjS7Ph4aRmkqKXRzP5DHab3iNAkc16j_WsoqcW3Fo1wWrZH2ndZXf01iDt0imUWCxysNrYVB_2kp9dSTfYfCQ3Bnp2qAT--tuGHMym1pNX2_AYkHx-CK1AZIRLircoKqH2i7FbpHM",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJk9nOWdO5zjERhegWZ6eE9Mc",
+         "plus_code" : 
+         {
+            "compound_code" : "CCXG+W6 Temerloh, Pahang",
+            "global_code" : "6PM4CCXG+W6"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJk9nOWdO5zjERhegWZ6eE9Mc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 14
+      }
+   ],
+   "status" : "OK"
+}

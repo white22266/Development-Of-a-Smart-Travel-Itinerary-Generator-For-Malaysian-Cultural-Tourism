@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "17600 Jeli, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.7296516,
+            "lng" : 101.8122946
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.731000580291503,
+               "lng" : 101.8136435802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.728302619708498,
+               "lng" : 101.8109456197085
+            }
+         }
+      },
+      "name" : "Puncak Bukit Jeli",
+      "place_id" : "ChIJaW_PmAYxtDERMjbX8xX5WNY",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15445368794747713074"
+   },
+   "status" : "OK"
+}

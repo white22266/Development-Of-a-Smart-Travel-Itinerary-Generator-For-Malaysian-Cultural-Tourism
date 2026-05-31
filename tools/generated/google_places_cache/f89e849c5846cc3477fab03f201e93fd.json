@@ -1,0 +1,143 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Bandar Labuan, 87000 Labuan, Labuan Federal Territory, Malaysia",
+      "formatted_phone_number" : "087-408 178",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.2725569,
+            "lng" : 115.2310614
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.273887480291501,
+               "lng" : 115.2323221302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.271189519708497,
+               "lng" : 115.2296241697085
+            }
+         }
+      },
+      "name" : "LABUAN ART GALLERY",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 5:00 PM",
+            "Tuesday: 8:00 AM – 5:00 PM",
+            "Wednesday: 8:00 AM – 5:00 PM",
+            "Thursday: 8:00 AM – 5:00 PM",
+            "Friday: 8:00 AM – 5:00 PM",
+            "Saturday: 8:00 AM – 1:00 PM",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116464915567287484168\"\u003eNeo Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vSNCMmcGZfncTtiYWMICPnmX-U6h9x0PFVhqLaG3QbE24yeAL0G-9yBrkWALfHdZuwhy_jvQKlDVsKHjZUnEdTJ6pfSn11p6PFSBapKskllPZZbT5Tam1ioDH5-L98fGuVcJfOGKxnrGrYwJVDbNafi9xF_ct6mxPeELEZ8-JzSKh6SUuIvmMs1em1sUtzSA3LtNe33gtq59hWaapZ4XwPNQL4bsDUbGSgiiCH0iE8Jpsz2fZ02BU6lnywvMY4rdaIdrlZMdjPehrbcpdgjO6iLAxpe4z65lb0-E3DzpImosXDPL-1UnhOAafZt3j_xmElUow1OCHqf4m2s0ihNTSDsQabEWoXviE7m1FjrARMGgH2uUqu6Fu0yTbKQEtkqjlVRcMJ0dipA8GycNljY4T7Lj6Gc9oglhYCRNgUfFo",
+            "width" : 720
+         }
+      ],
+      "place_id" : "ChIJef7WCdsYIzIRBhb-C9iVLfk",
+      "rating" : 5,
+      "types" : 
+      [
+         "art_gallery",
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=17955172044542711302",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

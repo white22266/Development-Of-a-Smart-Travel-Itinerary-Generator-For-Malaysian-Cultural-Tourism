@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "P84G+JH, 89650 Tambunan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.7065056,
+            "lng" : 116.3264199
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.707847630291502,
+               "lng" : 116.3277410802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.705149669708497,
+               "lng" : 116.3250431197085
+            }
+         }
+      },
+      "name" : "Kuyungon Living in Harmony With Nature",
+      "place_id" : "ChIJpefhGwCBPDIRjA3lu7xNkH8",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9191932312464723340"
+   },
+   "status" : "OK"
+}

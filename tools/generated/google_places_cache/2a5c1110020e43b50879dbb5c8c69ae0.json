@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Sungai Ujong, Bandar Seremban, 70300 Seremban, Negeri Sembilan, Malaysia",
+      "formatted_phone_number" : "06-763 1149",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.7179077,
+            "lng" : 101.920485
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.719283130291502,
+               "lng" : 101.9218125802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.716585169708498,
+               "lng" : 101.9191146197085
+            }
+         }
+      },
+      "name" : "Lembaga Muzium Negeri Sembilan",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1215"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1445"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 12:15 PM, 2:45 – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110277639093785598475\"\u003egabrien93\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vwrPI5xdQgGADpfKhTsJPliGG0p0VrT_zhoLYAtluGhtLB3AWA-CHHHrJ651-R7o4lVy07bhtpK_FLLg80rpRcxp2OzFVl7xR8h5m7YNtq_iMG_qxQkVP7OMfHrQvC7JRt9hu4HRsNsv1rtgXNdHaQY5eFVnwa7Uj9R9DwK-pPiO6UfRUQdF6la2blLVvzXzScI8ZXq3NPy-LCWjH_80aA1GUP6OvYzwlJPl_coIvWWMjA4LyuVfMrFvjkQ36WAd3yvPw1DAccZ_LL2xFYhK6a_Ma_S3fG5CjbaskR9y-xws1mMTXgja_hTjuGg_Lra_vTUmmL179LxYw_9uiimZ5B8MtzcDI6Umg-7CzMtu8ee8ZqzPIBs-ef31EbCUx3j9JEM9ed_0Z8UmnKwQNaulBN-FCFu8MMQfrMZYYNuf6qmQ",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110277639093785598475\"\u003egabrien93\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vu2hb-tViIgHl8DIUuxrOYwhHBpVVgfvgyPe98tjfwLicSwnrOsnN7lCecD6hE-8l95LouG_tJ-OBz3BOLedNY4zsnDuIKmXEWBt4NuEfiotJ5APaXoLjK4eXAtLB50-lHq29G4uysINS-Fh1KI85Mi4ZK0NXCxJeojPVO_8enQOK9tmB2yk0l-y9GvasMFQRLRnmZjYuullhhHXb3dm8pPGXO76sJfh7G0tYzqTiz2lbXp9ybHs4N28emlXHfRMkrDVM3QqHUeh31NTpgie6sPMw6CcGHqMF-ED0uAoWX_NSjOBSFyh_pSnbmif5CbdHUBTR9ESWpQAS3vo_oQ8QdS_WAINrvhbjQWicAZZ3UiTY90vSGcjcIMMHjXZAuik6B_Lr4eBiPJH-4f50X5AUTKYx1UEa0vquywffBYKsoVw",
+            "width" : 4800
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115566859752258229655\"\u003eChat Hall\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uV--tLTPsqY-PHjyIxwPveUtu9JY47DsCDzeXRtTiJONEnB_6VXPMr6j1Zl2uT7eSqsdDsNFss2KfyFRbJAGrZV-WrpFpwS68OO2wRN6fl9NJmNWIgUuiZaR3aSFUYkDugUfV_Ycef7b6IrpPjFAn71j_df337vt_Hghro80LxK8lUjwswH49xfduuwNFBSE0EK56-ulDQfo6Qt37LsKqAELu8CU1OzTIzsespxzVEro53mg8vBZPA-V784C_4tIAjXFnNIkUDxNDoHcoxMboPNcw-vLhPtrburEy9PYa4INW_pu5lKa3KUo_ZwdiXxj40I7X9kCASc9IIl_JD8Cp3jrnG-lV5ncBvlNzlbeQm4BROiPQNFXB5PkZZIb6FBW3LqtZq-ujE1OjCm-UmFwm-Ha3COPnNmPRQ1ljFG4e_y1phJZqkqXBCHFuVhV2Q",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103592028156937116807\"\u003eAndrew Ang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u2YXp3sosBVfH7CPn4NuuFvXNarSTVXT-dNixvIeIjS0oqaaDOHKrHx7fejpOlSUh0gyy8GTVVCnhgKbX_7GzUdgAb9rqleC6fIUNsOgBOPEQ8ohZFNM8XNDXy-u8mvVMZF5iDNwONKaNj2Ttd50STyz4SwWCienNqdr5YAGfdWjVMAOXnactM-H6e8GczXwwt_Hi4IcScoHMnFSaDslwrLPPj5R8DLRHGIgqrTAXpN6ZOu0073WWrliv8xZas2FE4kMv9v2XKNfB8u-WtOYfAIT2ZEu7e7k_M82eyQlIvnxVd2aV23J-LrpQlwJynSXndtCCOZYsL5ttMJg1Rd-sP59W5w6zu8Eslo-tdItVyVGAyW1L_tBHq0rB4qVkdxSur32NBF0xjqxG8d_S4L4TTZ3yhPOJFt1rybp0uPHyobUI",
+            "width" : 4032
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103653651762506347100\"\u003eChinliang Cheah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uNLwWED6Rk5hEuxJYP2TUf_hr4A58IdA2Al3cqyF5mImbniyDoRNwCyZqcC8sNpGbAZRbrqHGH5XZtUPs8bOIrMtIh-gxX513Jdp-U8WpO3hpwDSAuGKMvrLXxhcQ0nHvpe9vbWhayp2Vgo3mBlUWamvKc3WmQuTH9reNt5ceEqT8eqmc2jKpokZ7wu_jDoTdPAAa5mspofcEq6cNOg5TYafrZVkpm2p_xTvbnyuR9ldHSEpxjNJWzgJ0cste3piJmBPQAPblDMeY469cdR9NZZGVPQuPoB_c9z6RjxOGrxr2mabHJYEZ8LbALwzUBa64HoCAfV4NLqbLXwfl-0q1-L4geNvjtgzSy2udxBO1hqzKCqs4w35s0lXyV4INPkbWCYUHQimRpIl7v3gzWcsMO-dlTKT9-nqTO9xPGpDb4eUg",
+            "width" : 1920
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103360162876432321728\"\u003ePui Cheng Lum\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ssVIj6AGJBp4XSDFxEy9e9m6k7UxZsR4zm85jTnHJquTHBjdM-8rCJjouBonL80GuvqIFbfeWhvYlJ4UuruQK5ohwWvP8Z97X5ixZTooGruV2kOkCU5YUYiEeQbwA-sDolJYzgeKPhP3VnaDR1InJqpo_AmQhow00JPLcFQObAcbAyjbjiyzlCyMo1yHGK9Xolhe88kYP4TRfj-LFCR9jCzyVuGILnzP6FbwO8hqObxXh-KVd31Oc16P8MVo9CKX9PHlNEbppkXPtQqC3B24BGfQ9Itq507PQhbbvgB8RgnKkJ6O00Amh23cN989LvAuiUhnO9ENxZmO6mSWNAeVAA7sKxBhS4GfjK3DtI5V6QcV7-ztMnuzL8y8JJcjAXx0U8wgc_KxtE1Dx2f7CDJ69NKWdLkhFwPPYYc5WyzCZ0wQ",
+            "width" : 4032
+         },
+         {
+            "height" : 2702,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105258147791673691470\"\u003eFarah N. Elias\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vQouDPSWInIGqXnYt6FkAtADkAl854rGFMGmV1zUBcotV2ph2ft857aJqXc7Y-xThkSP1zkE5WOTEE8IoBX2AeUwqyp3R674PJU3os_j_Bn3s6E_QgmibnnqWI1QDysrFS_vdtJeKaFKQZAnDd0EbOxE8joY1m71DkDTG-qavVishvEsEyfjLGGOk_PcbfdBNv4jZ2vRsQvMYJt3bRBo9O7_bXkJ23eI9q8oZjLn1ytjEmxth7xCqNUnpoGEaDyE92X5ohvKK3AY1V7iq7Aoo5bwjiDalnKJpcbvGPVLlK2sm5AoS2qGO41XJFeX1dQ8i9EAv0duhvJOAi9yGj473Uv1AWTyH9tswjwvf47w_kP1_JFrMRip3ccKv-MGQTSA7Pq9fu3lPpuCbWU6xNd0s9mDLXyyKqd9cnRzvVpAVeqSQKI0M7CkZn96vN3jga",
+            "width" : 2054
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113329819302627252949\"\u003e張博凱\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tsGT9_5YTrGJ9dBEzpru5fhsdIDertH8G5UNQa2CCFBqLO8raQWvnFmc4fIF3MQ7jB_VtBjCNtSx6T9GnkY32JuoBA8ttxNDzIUJX-WwdJ_BMT4eeDCJdgdOvGHyFcwYlvcoOAQHGoCssKslf7cYynlf5FEf53bI5LMlJ4SsUKHcFA7CNB4gCLJKleptVSwzP-8yhtuxsexPJk0yJZK7FnlejAqaBgRRzPegurrj3fDMLL3LLeXZeVdZnfcYDCE3OGzDkI_X3SIHA6dKaFDsTipXm1CIXSBjkt553d6FJIlQTrW6o96fUovLZ8Cq2uySEQp1dJmEhW-w18t7q3tTzB4lwQWoe4bchpMnblc3YwRkKuepNJl1cksEFJ_vxZQF4EvCm3dnCqWzPnp1KlO1QgvmYqtvvUvPHStC3Vv52HjPiaYJEvExxYjvJWzQ",
+            "width" : 3072
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105759984436678631984\"\u003e010 Pixel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vYsBAhOxOkYKbhPjtTic5_-m4E90E3CoamQumyljvDIDiRwaogdgNGYAI1lwXLNxMaLGCRggHXsUEvs5EdDRzE6t9c9eE7-4WiRJkMLW1w-8yPerEIVRNydquG7rusC-DOYZYkCr9vuW0_P6QP-LRzIg8RazQaaSBCHbLo_8UndLx60qm2SDK_QbiFV6cuqBQPecT_mO-BPk2FR8zIX8AIAJIIgKaVHFk9bQrWXx5WIEaCgsWUSiWQLtpz--5XpaEZ6zAHqCqL_OIOZ24VUYqgBde_OhVKMes3lgWUcGsM9YD6x0e1k_RNwEqaoRUStoDPqFH49aaF3lDJu33WZ2sGgYaXCNpaeW5-GbN7nevFCquZH3H6aFcjAjcwhe2u0hF9YV9niTeIqRyohnfc_Or6ujEtljuzRm4X-WL33sXao4w0",
+            "width" : 4032
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103511058220799267859\"\u003eVincent Fung\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t17cejor7tRWkgkqnY_YpCl-K2--pA5uGqKPxYn7CTxNQh2zna9DGq-3dyUw9VB44b0uzul5CQ1swpXaT4qmrLE7CXQYMfIqfljoD6US6lY2K7vHEBZO5HFCBqHvfwrdgWgecC3fjSnNvw0WDlkRyyE7QVBcSiishPzhDOZWHT1OB56wwVEGnx39pt4n0-G-MBABSWPdEZNmWmIJ9tNVPib4UaliCjBN-I0XphhgI4SlANlk3bVyp1WrzgZ-Z9Gt9EOGC9wEEr_a2QwiIG-cThfzn9YwNE8iK7JWc2x0YcCCc7gCcOhhgPsRLCpiY9fgEjiisLbjrPsWqyomTBIQtpKVHDB26ZHzfvdXygbTwqV7iBNgbBKhuUl5TipjOpsG9M_QKOMsCOtfrqxbekOLYvXpA2gP9mOsf7sSd8DVLqmg",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJd673u5bnzTERDPtjpfmLtoY",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9707099951181593356",
+      "user_ratings_total" : 643,
+      "website" : "https://lmns.ns.gov.my/"
+   },
+   "status" : "OK"
+}

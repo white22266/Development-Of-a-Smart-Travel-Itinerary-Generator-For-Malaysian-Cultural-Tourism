@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "P2RX+PH, Pitas, Kota Marudu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.7398763,
+            "lng" : 117.0486486
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.741235030291502,
+               "lng" : 117.0499598802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.738537069708498,
+               "lng" : 117.0472619197085
+            }
+         }
+      },
+      "name" : "Kampung Gusung Senaja",
+      "place_id" : "ChIJC7VqIr4bOjIReWqXNPsTaN0",
+      "rating" : 3.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15954023649600039545",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

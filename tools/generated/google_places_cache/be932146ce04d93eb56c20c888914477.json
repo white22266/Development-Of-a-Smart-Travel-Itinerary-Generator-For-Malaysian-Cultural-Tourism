@@ -1,0 +1,239 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Perdana, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2107 3100",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1419783,
+            "lng" : 101.6917573
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.143361080291502,
+               "lng" : 101.6925627802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.140663119708499,
+               "lng" : 101.6898648197085
+            }
+         }
+      },
+      "name" : "National Mosque of Malaysia",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0930"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:30 AM – 5:30 PM",
+            "Tuesday: 9:30 AM – 5:30 PM",
+            "Wednesday: 9:30 AM – 5:30 PM",
+            "Thursday: 9:30 AM – 5:30 PM",
+            "Friday: 3:00 – 5:30 PM",
+            "Saturday: 9:30 AM – 5:30 PM",
+            "Sunday: 9:30 AM – 5:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 788,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108318017359840412871\"\u003eHajaranah Hasanuddin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vzbNdFzun-uMRzMdUgSm4qMumUENnqKxRLsXWejlpaeuJSs3L1KAJZxhY4y6KDggUuxmgcPJt4uH1IsYqCjWDr8tM4li6foizdEqauEPel_0qv91vBi94BSWadGaL6rlc0T7HfMTTcIhEDQ2R7wHcGRw6R8g6Yg_QTK8NLNS96isIv0P1iVvsrQhSwgXiSAm65QlhN5adL3X4cnW95UU3v6ppMrRD2r9rz2RhjoR1douEgMwMr8L9vYvkbtUP1cv_jrjKGpAwk8aVhiz3bphaDOYAInV1CDbsrqM5EGpUnyKWCq_CNf8Ag7z0sSQ2sOS4noGH0xHA-uY7M9L0pu8AZgO9O2qgeKbS4QG8hSzwIeBYqOvAT4ElAbgKgMs8uWgdgZtt4eBpBN-ODrMhGY6cJzyWwUxXgS0cZ_32IpT-lkCc",
+            "width" : 1080
+         },
+         {
+            "height" : 788,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108616597471836287418\"\u003eEya Lewiss\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t2VYD0wikzpoPAMYb0kSwOqb159zBxE_RZN0L3G7H3ESZDmhFUZ2tZRE-03waT0yZHQPHiXCVsw2i_Inxx8ivMD9cIzNIkM2tmOFiEjiPf6dGVWsFx-LkTPMnoi4j_a_A797kqDNOzdoExk1MKwx7tY4l7y67ojczkU9Xe81aRpdhymbgVbDFl2WrGr2__8J535k2kenYtI2TbmSZ3qJmK_N2TGYsQbaF9bHjAY7Ol1fPcgDzzpUEYJ5VJaouGMhQeRPEag60U2cRGVXmRaDClozwKTcJgbt68NoPcsi4guUlmfQTJHxUBEOOG0A94CKqcFWqL6hXIWn2HE3CEJUJ4qxQEAMIcMV_1Lcn2rWReKi7AGBF8jkazILBuXH6G25_fA2EF6W10iGVFzB8CHgcm0SaB66ZV15jeGmzfdr3vUg",
+            "width" : 1050
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100250775105855555901\"\u003eRysiu Yan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdgYMQ_-hlaaY0BXH2IfIsLS9YtXWMFVD0NueWjBmpbscLkaxpsFAE4pGbPxIBN2-7QO2hFnzkvgajAD2fbC2iYitxjzLALZ7R1SAiyTcykMsLxh6sbHtIHJABXypL31A44x4EagdNj1PniK0-_QEbayAy6jv9o_7PzjEzx_7kix8w676fGYS-QYGqNRamHookXbSomimAvGdccrHLeZwEe373W6GTInHvY52iSlrixhbzqFOQO9uis45EjcJCFTuh6qMthnVl_GukgH9jIVe78m8Pfuu_JWdyHpaXTqTZUIoGWL_-ld4UFnttOOl3sFzUx_bDWLQ0aZeTLd20UH61QcdjrnVyHTDrvtTnSMoU8lxuZBPVB6Ye_XZo4Bf9pKrcEiLOhPlCMJdoKgUTgGKhpQYFYomR47H7Gy_GJ6UM9w",
+            "width" : 4032
+         },
+         {
+            "height" : 874,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110466949606426799240\"\u003eSaleh Uddin Ahmed\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgVeLz4Th3QyBf0HILSoNaKTUfpdORGDqIz2OvwjQ8QjMLGjJFnnD4hW4FCx6DE-tLD1Z-s5VE0HzyTUG-qsW52-ELEZKnxN-2G2vKh1s4DBP8bwAfTikLfI9LgpFeAfuXKyUfL4Bz4Io_NsqYslpBkaS6uBmyQCb6UvOpCG9Ntgag5g6NtW1XIZqC_bvkcEidzMFrqGO9lHHmTRXDX2yUre6EFKvc1f_4hjK3ZYYQ3YSoDaaTtTVWRibC_hjoIGqyfkUw70CeEOn8rm9cdna6i5wsdwZHraGmFl7CqQ97ImGdnaqxq9qzXp3AoCrrFaWY1lESnTFIxWYlajkSjuP5e0viWryVX3I0ykg6ETSrhlZ95xNQw783FwxUveLvTKnL__l0Z82VkA8oXZXbyHwW8uLWA9f-_xHmL31Hq7ouVA",
+            "width" : 1170
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117770246712360737417\"\u003eSharon Hoyt\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ti3_zz5ay_kQ-2E--oNmEG62z1Euv8iZTq_xsCOtlX33l_-70_7YCLnKoZ6qsA9Ugx_40MyIV_j-RjmAB4FbYeXiDDD7RtUdOWQbKrZgYGyOVyznO_T1DcUuTCzMhyNM8JA7-qInZeIKWWJU-38kgV1HwiMv91nMrmzLUJx-c9BfUlt_yApLpz03ooEat8hOQ7ReRjU-v1urqSI-6su1uhedAwlYbp-Sk2m0uUvSXaDpVAPS4GW6wXbMvOeW6HyN55J6fOPCEFxkgUGk6KiGkekU8FKFkXiYEXSXnkP4_PHVLyQ_yH5xM2sZ_6LdWWwXttQO12yHmaWqtJCz6ZCZENb8_jr4FhT_IC0FBFeU5Ae-5JV4PBJzOmXSyqK-6m0am7L828yaoTtjy8sI5aictq-7eRApz9oLB1i9LNfQT5r_g",
+            "width" : 1800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104933933228716314320\"\u003e啊俊\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tIKuY63YkNKyjpIBBWLaf1feUOYPuoH8qRjG5XSMJ73URGESTPmdxSZg8FICuEsC-XyT-sMjXs3bN4rhcq-FKnZrOfb_OJWlw7ztFNUKLb8znDcSRVHiZybDczBEWeKUC6VxeHRlhflCiDyMkTz8elZA5aVbVQzK9uOsVkTh_6HdPrcf2N8g6BX3AMaaSt3PQ7VSjv3-4Rduc1jrvM5se5t8z8yK5QTjJJtSiaw3DEEFu-WSGTY0E_rkV_VlD00FA8V0jBf5WXqp0vg51kJvH_S9YILPC113bot-m6rG-MNS_xw6VZAxrCAUOIAxeQFpdRelMsxPb2EqR5Xelv0wZ9T7LnLclpqWPGXeKjTXaJGYg33hL6WEM8zMfcCpNpHCMP_upAguOolJDOzAwsNqVZVaAzqzeXgA1T7AxTZW65_2Zf",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109760135744317911000\"\u003eSandy Chen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-szh6rdQNv4-EjbHUEdG1FqF5XIxyqa8DVK4GobPyqYS4Io59Zl_hYtY9Lrly4Y3uyiv15Lg1otdifPn-zDJmemVAii7Xm-9yEVMpDJDpuDiPRXUPbDq6S5vBkEhvUf-GBeTeAgG0JknOqpUGXduR_fWsWzS5otaP60LXAa2rKyoKuP9RN7HjFDIKJmFXWDhFibluzXG93KbaicDbYphnyXy7r6Qtd4CI_njXchIvBKEcwF0HzZpz-8mMbtffYK_vpgZhaXbi3bLRSG92IT6F5E1w4zor74na8OixH6rERGZJlKa03ZWWakoUpMXLldPlMAtKT5wSrpjlgUiTd2A6bpNuCDULwpGUGUHp9MBPK_kvb2xrIAtQLmpXa2Cbq5QgF_taiZnK_RQMQNn8c96OfFwoLAarz3aoOvy0UtIH1xf0WJ",
+            "width" : 4032
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116202063325381301266\"\u003e1074_Baladinesh K\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ue6BJm7msZQcWUuYrjKh81UDUplcQotN2fi6tVBR_o-bo8zTejEy3WJwtr4b-JsLobkAfHPA6r6-J9ImVjzkzV_3SSMsgpbIENjND4JgQpdN3XarEjD5IvXXd1tuiJAAKF2WZMq2_PN-EdXSqix75dY9RlvYz2_ac5AiZvobWA-XNdz78kFgB-Ec5yOPvjoaNfiyH4INxWFQ6UIq5pt1aUlyZpFeHTobLBJULMwWlX1gYVWflVvycQY8NCN6LiBp3VsYB83BG1JdmK27cnS-XJbW8F2J1Fs61v32Qey3TUNehyxvzwMkloJ4lqOtHpj8h_3DFIRJAfdaxT0dpga8d0UnyE1x5GjhcX0jSfKOQbM4LfodlfW2a-yJNAIChhab10TA5q9Gp-9aSm3iPkNT7aJmzad9E1FUfZi8y2AzGNHQ",
+            "width" : 4608
+         },
+         {
+            "height" : 720,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112150874606092091556\"\u003eMohd Hafizi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-un6DL6b_vlSnteLgsPrfLefNGhS2dp-jwnvkeTLQdo8Cj-j5i8TRpGCcqiJRCvUlSj1XEZdnGjFihZKuNobZKXt8PeCDrthTSADqk7RT7vrRGajaUlQeG63LU7UzEKQVi2yPWMkS6qbc1sSmtSCfi9DjOFXvYwI5_A4t_ESBtd0gh10CO5HrHfxkYMrUVgvLk91LORmLfAvJiqH70ughXMmJ3uKGy-zRQwkZBMKlW6LsAC9N2KVJgbufvKhaK9M7RNVS2GrqKtkz7-T-lHvuPmxJTdhKp5sW2aonKkFS46Y-cbQrD3t2YHM-fMKU4EIlieob4e2fuJEXgkIqVmirIdonYRtv3g-ZJUA4eqPtwV_Sdh2jUrPUWf_KTpmBchkmnyvGLwquPKCp4_YO6YlAIc0pKWLrkt3RSOLaMgg3_rThGD",
+            "width" : 1079
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103892892598636496839\"\u003e꧁吃喝玩樂꧂\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tIYzbLF_kpINxpxfUOAOOk8j8DgL6XN47GGkhYSzQnm6HD0syQPxJMABqGDla_sJaDN0SLpw_yuh750n7XDH3MVi0fJID8KrLyji4tiHYXRrk8ui5sXuNp4kCzXZtZp1sVRhWetdX-adB_lMyxQt3irTi9VCJ7NYf40WCaj7heh3q9ipJNO9quDVPIhCzpKwwMV9B5khkEKwb87IndQ_I5XgdxArqCZbfLvqk4Hv9uJSE6-96r09MmAEUTvOknXoiZyoWVNpzN1MMgn-Jr6lq0WzTbzYY9t33TWOiCbr1DwiADe5pgLAlXsO244XFz7vA-TMGvv9llHZOHEOvCF5U8sU_caQO-oUZuGy9pjFaukcYgQa9bmqlMkGohV5dhEwhumYSLGLDHMoitNUGNFdtsQGKBgo-bBnFSGqZGNjXHVCbmZn0Cn0MDBEhy7A",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJJX8hZM9JzDER-yYg0nIT468",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12673995160223229691",
+      "user_ratings_total" : 26581,
+      "website" : "http://masjidnegara.gov.my/"
+   },
+   "status" : "OK"
+}

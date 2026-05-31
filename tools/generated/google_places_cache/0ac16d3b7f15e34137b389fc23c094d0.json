@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "GG4X+GV, 89740 Kuala Penyu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.5063283,
+            "lng" : 115.5496556
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.507668580291503,
+               "lng" : 115.5510031802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.504970619708498,
+               "lng" : 115.5483052197085
+            }
+         }
+      },
+      "name" : "KG. TEGILUNG",
+      "place_id" : "ChIJDyTgPnFJIzIRwhOrguogF3Y",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8509306212526527426",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

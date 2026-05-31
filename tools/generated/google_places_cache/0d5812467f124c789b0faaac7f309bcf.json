@@ -1,0 +1,1184 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-twyBMRRwtcxLkOOIw2QNXclmZygyjvOZgTGer5TJO2D4QU8xJ6LYGCXmMNNbyjzpe71KrdNB0F5x1zbp2jdgaHT9DW9xgIB8X0MW1c55y5fMZVOBCBI037pwseNV_nIvwowOPzhSxWXvJLXCQHWEYsySPqDXf3vGa8buhdTlQoEytWm0k-M0GzAUpV6zlKG2lN1I10oL1cIcRM9BSSnnMdyN5Dru3fG1sAAAMFbs9V4ao6H4X_mc11twIvL-BcpZSWrRmtv7veWcL9KhkrdQOpXFGOFUu1huckpEiXo7DZ_Yw9Uc9k_RBliUHvDtauL0lbaPmhw_9DcTtWfYsJ-x7_bNO4FB97WhKCiQJ1tUGqPMGsQDwDQIWrhR7wQmHQgNqQzY_QenUjdBNMhe1OEkS1FhljLhOyF0KyjgwqBkh9FP2QOvu6r5CXleN6Ray1xK0DKTl7hcEYTDKqWJawt_iHxsIB0P0DSGZjoFJ6sCZdiwmUyZu6yMiV4In2HESTOf4JPjrkDwCiNZpVFf_bIjsZxMxZDCwZigM0m39XPMUjl-CbqOJInCMEBuC5amAdG-OIrGv5uyNGrnlXqsOYJjH4cAwgp6ee6kQDmDqMfK2BXy9gAqJ5vzGLaiwAi12yFeB02CKm7yipSFX-YNunJTo-GXUTZrZcLzjOsfJtUMIsPVlZn6-7Dw-LMR8YadVpyv7fCxgrAYcl4thmcn9qXo1s_XhyKrRzWQoOLfXSWnYf4n8wuNQqeouoOlrmtWmuyVP541PFsL0LFB9zntvj34kiMOkZ591eTMxuhqVta_TPpH8EazIXcrjZMaJ0Lh6IT-3bkZzc3Yl2",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid, Bandar Labuan, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.283771799999999,
+               "lng" : 115.2475676
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.284795480291502,
+                  "lng" : 115.2489816802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.282097519708497,
+                  "lng" : 115.2462837197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek An-Nur (State Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107001104719429174631\"\u003eReza Maha\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vU_EGIr5F10rj965Z1NZsYpKucZY5ylZBCCUH5yEjGT7E4TR7h-9nD6yfYzL4_JzPkpQfdnR4J0nruBy_fRcQe8kRIjGvKOPr5yLn572L34GP96DGXAHxTGAUIWOE9MqLGpEkqj31TMHKFLQaIyMbf3-CI9fcQs7KxEzDN4gT9XZTGvEIlqmykmE_U0jcF9wrjyFtJJNI3HQjseg5bxqt6KWU5eMGLGA8sq3Wo6TveKc7xgFUaFaloM1nflTQsVO8ZK4KGtlBl5X4ptyU8_m5Y1cEBNf6BAilIYQYhpAdNZ4nav9vWT2osZADx1yn9xwMVQUahe9wO1EqYMMAsrjcbxIXz84v1fnL4OeecR-zMvCHLSIf0YuX1-QfANjxp9owxNbGoXtTRE_FroOSOsQshVuWynfiizIzYDBVcpalR1Q",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJS8_x0ucYIzIR6DLxsgGlSqM",
+         "plus_code" : 
+         {
+            "compound_code" : "76MX+G2 Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ76MX+G2"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJS8_x0ucYIzIR6DLxsgGlSqM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 879
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Masjid, Bandar Labuan, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2834959,
+               "lng" : 115.2474088
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.284904080291502,
+                  "lng" : 115.2486794302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.282206119708498,
+                  "lng" : 115.2459814697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Negeri Wilayah Persekutuan Labuan",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107593909707887597236\"\u003eNoor Aufa Shiddiq\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sjodF9Njcezvawe0jc_DUzLOca8_e1QDVZf4qmre29A1CuyrSnVhiBD1vgVjVGz8knOP8x7HGyCyYdzTRNm59qf47agI7s49WGfCahIoKKASV9ySShN4zvZo-Ppg6mFhe1dw_eCnkmpo-chT18bIfSbnezxFtg3Ptk2oxoVCwuLiXJSt-UEFw47yU7Rg3NvTLPPlH8RNBhx3BjAHzAEWJ9J-0KDYNviW2vDAq2lRL_ByEFKPo3Lr78Yc5t1pzuj2YUrmbGhjmj_ScNsl9ROll8KfjrB8ibySWI_nXsiCoHnjoUt0IlWzKYgPnU7bUBNGf12LmXCbOTnCmqPTKsLSq-M9jNOzuIwjsGFdLpVKxoNYe1mO_nxw_RmztjsUEiG2oheja-0ke1CUTWp4DikLQDNpgsNKK2dDMEhpZYZAp8JQ",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJN-t73-cYIzIRtZd9DDNTDrI",
+         "plus_code" : 
+         {
+            "compound_code" : "76MW+9X Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ76MW+9X"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJN-t73-cYIzIRtZd9DDNTDrI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 39
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Pohon Batu, Kampung Lajau, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3321444,
+               "lng" : 115.234499
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.333491180291502,
+                  "lng" : 115.2358348802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.330793219708498,
+                  "lng" : 115.2331369197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Muhammad V",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108618498977812779815\"\u003eAzli Huzaini Official\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tK-txD9lFQPYky9LNkcc9Hel71D1lAO2EWjR6JmSfHigpxbCjTNoYmhQHmXeFHnTV35kik_Ur1JvNvOMUCpbf8NUCmjvN3-VITRMkIGAzHmvqMlSjQjTHSBI4N3VT2vSutXREJapc36zOxBll5zvH7fQKU4LVHKGfRa4S8Cdw-fqeCh1Xq7Z90RDNvD-GGX4rhvbWzpMEOwJhIAhpRhIVbLwEk6m4WTuf4C6oPBXWYPc2kUWEbFnH4cvTSv42Ju0Jb8FK7dryZCm1-4Q9UPpq6TeKUDCwxKccN8hxgXPJNGlHrg4pI2VCpPzHolcWJ2p3MDOQDbkha6BsY--viCZ4d2lEwKqA5qgZE7JKEikESKeNN_WJ9sUv-CFtFxORHGdHb5rFqifaY-volzoRkWSGrnS3OYr40IM_aIgphOklTfw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJU7yu49IZIzIRtZVCbGZvF1g",
+         "plus_code" : 
+         {
+            "compound_code" : "86JM+VQ Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ86JM+VQ"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJU7yu49IZIzIRtZVCbGZvF1g",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 91
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3230455,
+               "lng" : 115.2187973
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.324465980291504,
+                  "lng" : 115.2201313302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.321768019708499,
+                  "lng" : 115.2174333697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Falah",
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107435841664411505920\"\u003eACT A_BAMBANG PERMANA SIDIK\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vYe51_NxRKGJZLMiE1GqTSn_JjwQNGGOAYwGk0uhEpFB00wp6u7XynnWF7AfvN_tpQORtPE2CvYQKTXvX7NHLJLxFOyNJWk72AVe2VlNboASE2bSuKDF71i5lyPZmHZ4B6O_08SrpGodSe73NbX8kFkVpMYI3dB8lmDF2ILvukzDrYsBjnENxGPzO1tHK3K0OqvgBXoLJ_93JP99Bz6jos3hX8aoI8bfH8C-TyfK1BzySCXmgIl91-oF_ZfGNrdCZhvTatIn9ghtp22f22wkiR_bzrtTjWUWHbdccmcqovMjaG8MSKXv8O_ZSeeOl0fm4twuDPw8Fc0GEBeYWFGj62Dfi_qnzS0vpKWObFsbvKd1Gp5ClgzG2xsGSCzG6YEK6GYSFiFi0W2LeQ9O3f4jlL3zXME1cGwAGsNKRzq999KI8",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJf3fyKscZIzIRTVWrD0_82iE",
+         "plus_code" : 
+         {
+            "compound_code" : "86F9+6G Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ86F9+6G"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJf3fyKscZIzIRTVWrD0_82iE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 17
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3468046,
+               "lng" : 115.242694
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.348095480291502,
+                  "lng" : 115.2439461802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.345397519708499,
+                  "lng" : 115.2412482197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sirajul Islam Kg Tanjung Aru",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104793402060909176534\"\u003eFlying orca\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uubGnycM0VsWDZ5cNCS1ssdRIUPAAurPuJT4yfezlHhr6WNnCSDWIjkiaFW62GvnRxeu1d3DjOztF2k52o2iGKw24HNISJgh17eN5Y8oFDOX99S9KdwRl1NdxdlyL70h03RtOoy22weY0wgfIkF2E3MDOH0ofdf4T_vDPu-6BeRTyshbre0Cq0rVYe_ECJ-a1VmAhiLS7th4McE43zKysH92ELGJYelLzYodth1-GCLVOg20EzleoTicKq28ztWPDIPWk6YwtxYNjL_2m6KfeZ6-qXftigfONOoatW6BmqmwggTs3lV_aoa9Z6XvLhzUXVdInn5wfd8DSH-1euGKbhRzaCO_tr7yrQAut5DCCkb2ogEBkw-t1sY9WH_MYlKG4aXEKqs7AJ0vam_ey5a4Rp9rvqwi784VK9VjKdlinX_rV9",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJ3xs6mYQXIzIRtZj2z_S4ix4",
+         "plus_code" : 
+         {
+            "compound_code" : "86WV+P3 Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ86WV+P3"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ3xs6mYQXIzIRtZj2z_S4ix4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 48
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Pohon Batu, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.346909500000001,
+               "lng" : 115.2341116
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.348255730291502,
+                  "lng" : 115.2354744302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.345557769708497,
+                  "lng" : 115.2327764697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Adam Kg Lajau",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102554580462049987572\"\u003eMariah Absal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s5KVxgr37fpcch4KGuqnlyPUgeccqlC5mQebLCEm73feD8TU79K-fxUJpfj-bIOuXU7yULv5Y5R8OajipEfGHtZiWTf8SLwj479xKbujQEKxildn0PcLky4IlLRA4mudZRhAe8lv1oY_TY0NbFZWMXLt_o9bBa4NXeYiJ6HrOpbfy2NzBUaXl63xifdtAkgjyGFJYry5HYzE4UwyF_5O8pTO5yOmhOdBIHDYVWvHxMLKH1pqJhyvCA0LRk6pwBRS3RUqjBYcfi6y2aPfe1v2DyENVcMuuaBN2hNRPSNAdcls-921SD-zy2KhwHYliXQiOUtiSJE3wsmvl7W9HurpysMR0VdabF_NjQinGCDWwSqlAhN2oqzOAIkNomYtSbC-yoeu9Xnht2xWmHMQKdIniiN4UDbeV1YUaQp0Z6zPMoIQ",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ3SlhW3gXIzIR83-4lNDfcHQ",
+         "plus_code" : 
+         {
+            "compound_code" : "86WM+QJ Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ86WM+QJ"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ3SlhW3gXIzIR83-4lNDfcHQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 33
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Labuan, 87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.278744,
+               "lng" : 115.2397571
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.280057630291502,
+                  "lng" : 115.2412271302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.277359669708497,
+                  "lng" : 115.2385291697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "India Mosque - Masjid Nurul Islam",
+         "photos" : 
+         [
+            {
+               "height" : 1184,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100201750806345404718\"\u003eWong TF\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tEchaasQfoekLPCr9-bKTyRCjm7kjUqd4kwQPNaxK7ow1hs21BVnEPM-l2shUXq_B5q5dh3jfWXw6mx924zZciX3fIdOsawPy2Sk91K2SPuFSH00tcPdScwaZVZdgAFu4vV4SPD-aOZ3c2WYDasp0tohy9vVOZeHIPUNeo3OW8BBvF2yozmBHpz9Pg2gk3_lrYswzGKgF5iViI203ejGl0uYcIAVkbAf7N8gpj68BfzcmCgjayzXVH2rQqi6utdHe25r-mMXWpKIPtOENQSXxOwWETwUKSXpvlrMsM_ZG4mo2z2z7_w69PSiVCx9wzos7bYLocYhZNWOYPuZLV4Ne70PUK7Zz1f79r8jUuOLtPo1g8h2uSwrL7HuEi7vswa3cNhOhK9OSfqTNUWMz_wdwXyEyipPPYtyoPRKfDH1c",
+               "width" : 1632
+            }
+         ],
+         "place_id" : "ChIJ21Mi-94YIzIRWpdlE75lAhw",
+         "plus_code" : 
+         {
+            "compound_code" : "76HQ+FW Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ76HQ+FW"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ21Mi-94YIzIRWpdlE75lAhw",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 25
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3323848,
+               "lng" : 115.1928091
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.333698080291501,
+                  "lng" : 115.1942016802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.331000119708497,
+                  "lng" : 115.1915037197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Surrender Point",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108666933745471222719\"\u003eAndy Hong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vf9KQBr8qbE0d1dOCQ1RoZdvSk6iZKWiEs1N6mD7bXlkt_xfrSlfrGskQggOb-39etjtxyqRq9d5p-_S5vh3OQ3YjWsnBWBnCshhgwOhf_IMi0VRSQwmaZgJzBUuf-fQhb6lmKxfWLs5qWmS4J080O0NkgRmg96iAWF2lMm5e0y092gF7fIUPaVW2k37NOxmXnnIwfT8G_7uOfZ9-TK05w4haOgbiiNVgcCj3RfRhkXe7v4IXgjRdIhea_r0WmsTmE3Nwrs2MqW2tDLyqZ5z-cxTD6eBE3ufWzDmZ_lsirQzg4jNcf-0riMZjjdjl2TxIy7x8rdc51yOue41Vj-prBzA3tM9oDiAsReB4503aSOQgqZyPlE4DA_AbVCyXAclyTz38g2gFBEWPebAmDahLgDQAbKn-ID7e-_Kmocil1ZQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJccq6plcXIzIR8m5kkqKTF00",
+         "plus_code" : 
+         {
+            "compound_code" : "85JV+X4 Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ85JV+X4"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJccq6plcXIzIR8m5kkqKTF00",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 377
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kerupang 2, Kampung Kerupang, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.31819,
+               "lng" : 115.2469559
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.319502130291502,
+                  "lng" : 115.2481108802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.316804169708497,
+                  "lng" : 115.2454129197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Al-muttakin",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105355192218691911702\"\u003eSafwan Safarudin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v-mHWP0EqvVUF64overvm3yk0Y24Ywtq0QiPjAv15GzEJPnEnc6j8dADA3ly5wYA6wRt1X3Y_7zJ6meQFuWiTW9ZwJrk0ivoj29lrVL4V4_N3eP2iKdSImUuJJSUbxSQUJkyXeRk46iA1_r2A7shZ2JRh5mOhdhL0lCFvwSB1hi9IDfBPVj-is6DM35pok9nLG-rtIN2UtxXmWrpxTW5MLXhFwL-1OUqbOPZfB8sUfIZCt6A7HhcSyVvJ_ABpnUBgzfqyYNAWfDL5eth1z86w65wH4wlcOWcwhkj_GHY39Sb38WgJ86m5gYNnUZGuC_mAKsDPWzCu3igLS76er8_92MmGA7Su3OYNPC6wDBrvbpGp_kgeYuV4Shphyy_cYsGO_Oh_CCRVDFlVyq-Oq6Np6DVT1OnFoFsxD_ztc-t37g7zc",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJrVSma0gYIzIRwsRUC_8CujQ",
+         "plus_code" : 
+         {
+            "compound_code" : "869W+7Q Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ869W+7Q"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJrVSma0gYIzIRwsRUC_8CujQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Okk Daud, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.330983499999999,
+               "lng" : 115.1954635
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.332355480291501,
+                  "lng" : 115.1968250302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.329657519708497,
+                  "lng" : 115.1941270697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Layang - Layang",
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104849998876909308930\"\u003eSyarifuddin Ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tK1qYPSg7r8B0MxnKjGKIwGIz8FdX-UstzGGbq2RXvWtFveyNJKXVPnCZmZonJx0zJP43S_AXq4yjsq0ayZBOFkmEngHGnSFajk3oyRZy3xvr9t7Mfg9Dwt4KGm8t-anpJg18vX2QQmigQF9a5e8FwrSgtCapOPaiIqZW1WzmF0UOFSQ7sttdXyhyQJFq4doSte7s4ICU5kyZvw0wSNhW7BBf6BmvzVutQdzbcU-400bNXYZT3_0HaqQ71XnqdFRE3R2rzf6qYW6pKJMFiyjVQeLdoF5BlX2D0xNcUTCiCo3Ipp-zcYLe6MGZcq2QhWda0c00_Bb2VUEqL_xbCJGmV84yfvOrI6IcL6LdOw0ATbV-biqVkHYth0hq_bC8mGau38wb3A7p141O8TNSNeFGKxU3vvR4rAXrSZxZCb05nHA",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJP-1XrvAZIzIR5kIvKdeBiC0",
+         "plus_code" : 
+         {
+            "compound_code" : "85JW+95 Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ85JW+95"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJP-1XrvAZIzIR5kIvKdeBiC0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 32
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Merdeka, Bandar Labuan, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2764468,
+               "lng" : 115.2445545
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.277864030291502,
+                  "lng" : 115.2458972302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.275166069708497,
+                  "lng" : 115.2431992697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Labuan",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118103736057112285489\"\u003eSarman Masrom\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUEUJHZE4_zUe04AgOV_SuMnATbotJZ-EFUeuGZqe9r08G2-PRXErb2q2E0dLsKqnBzhROHgZ3hTawi8m7LJEz3sLFPeseEnBtSdQjQ_XqNg_GesrvQIuejF-sRZ41ByQiRsBPJM-yAHB6NLZ_r-_TilEMjML7oIopM_cnob6ZU-emN_NS1gCVEOhGLc3MAKo6yMN6bJ2JDqKYqKfe4r_tzlwd3tlc5GMw1e0zAbuTM9B7PIhcXKXMGWvYzOEMGJHOCnvPpsMQKeuQdZykOo8PQmFVJBFhQHFRiV0F6Dcar8gq_QHgUjJLpwz_9vtXJ0HBGzg36M7x8YVaPoP4Jyzgjph7gNNzis0zf0KxRht-kaTzGjZetrjwqNyAA1eb69Ow_sfqfKvjoPrryxVgh3UeqwaE-UZRaeFVbEA3gEq46XJr",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJQygeeNsYIzIRFqTRG_nCCR8",
+         "plus_code" : 
+         {
+            "compound_code" : "76GV+HR Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ76GV+HR"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJQygeeNsYIzIRFqTRG_nCCR8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 690
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2869699,
+               "lng" : 115.2618807
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.288360580291503,
+                  "lng" : 115.2634546802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.285662619708498,
+                  "lng" : 115.2607567197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cemetery_grave-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cemetery_pinlet",
+         "name" : "Labuan War Cemetery",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104265723165372511026\"\u003eHSSE Department Imm\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voveFgv8AsKyyjsCKM_o170bpWjnPwYuoG9zNPqXy9GIoW9fVAc7GYg5vy4lA3LtPF8Zx9CGkZ0hCDFhgizdH_v8x3otHJWWfk1gS9ibk_JQtzKuwGg8PWLE6bN7WyyDKC9yMXUw7jxYjy7Oxejl9vsQmowohK7itWdQNTDKqJGZ_ueekuyLBt1N4SDpqM3mwvsHnc2llwoEydmCZKDQtiXq9Y5IxbFOLENXXxYaybnKSJjFJOGLe0O-aui_805SHOI4dD9fvzuRbHpAgxsZkkLYfQy1s2sxFEBv0Je3BW5cC0hl4zSg7p8_yVkSmJEuXbvZ_PUT3AJncyCjdGbqttj_l9i7bul3X-5eRKatY8wAy8kFjgBlAnTh1vnqB-SujCZ5_4w0WvAs-IGJLGgXWiGfylHzyFsFJVJozgXyJo5NqRN8Xc3a1kyO3uFm6K",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJWYOEPZMYIzIRCeQduIGJFIQ",
+         "plus_code" : 
+         {
+            "compound_code" : "77P6+QQ Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ77P6+QQ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJWYOEPZMYIzIRCeQduIGJFIQ",
+         "types" : 
+         [
+            "cemetery",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 87
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tanjung Purun, Bandar Labuan, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2756998,
+               "lng" : 115.2548353
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.276833930291502,
+                  "lng" : 115.2562700802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.274135969708498,
+                  "lng" : 115.2535721197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Labuan Clock Tower",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104351126336250039974\"\u003eAuld F. Art\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uR2TNEJ6ZfluTLYk4I6YOMuE_c9uMyjUgwSGKmT9GYT7vufd_uNNV_clniPkrcszkdPoqKfalHPMT3s733fExHH0XRmDc1bE4T41fqTccuL_abnqzXyKhO-dD72hZJdyjCy1u8eCRPm6t9utyUV_2pFFda4LyCSjDVgjLBopIKKzLgwXG6Iu7lnOVNi6y_BfFli6_47JOg_dGchCF0TuiQ4S8xwbWIWD7VxTxGEOTTTzrm_NJHl6mFH-fHj4GzbaWFDn_E9iVmPAGT61Na_vnU1yyhTvT8a36XS1hvDIOLg5nvG1PR3LmCirJmmARAAQzzeZyRMRxeItgNnLpz0f4ApshY3s9Y-XaJKV6jxXXSX559_nxQu0MMVp3BB2Ft-5imLOQD9bYCky08M09CcOXMfw88SbDKCJR9yh1OXZWO9I-irn-gzm6Y-v1SRVkS",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJIxMlUG4ZIzIRWRDEzezuFII",
+         "plus_code" : 
+         {
+            "compound_code" : "77G3+7W Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ77G3+7W"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJIxMlUG4ZIzIRWRDEzezuFII",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 55
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "U 0364, Jalan Dewan, Bandar Labuan, 87008 Victoria, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2769337,
+               "lng" : 115.2453469
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.278365630291503,
+                  "lng" : 115.2467194802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.275667669708499,
+                  "lng" : 115.2440215197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Labuan Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112552403615890824179\"\u003eZainudin Jaafar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sFxdtb0guTvCiEoe7_Y_HMd1hqKr_FfP2SKN2yspm4YMbhdqmtGkoOEQRggpiEmEYz0mhPxOWP9TK-P3Sm9MpomKiqM71NaUTzqJX9-O0lrOMR5TGz49uAfN5ZG0VuwrUP7zCsDAaUBr36RhgpcLzutmOuYKyTrNC5G5ugkf7FQP7vXgLL2EjYbuzEQQ-v0aB62mvvBcOuMA7v8JeVNV6Wm347jifY0_PBKsvYewJ-MF5GuTuACpkM8T72heDNjId4YkvyzFGuF-DoIaklBr5dLVG2kujJqrVeGEKIDHHbgi6xuCAsI3nQuZ3mdzQmGyXHUYFLQnkHPoGPEKT34iyWrwCncFTm8NhJlf0kqfX_n9gnuOssUDV0hgLTRNhju6cC_Daket968WTJH_l7WH2i615QEulzBwYgZtoDEW2aJCOnJ0CKyooGCU4CXop1",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJOYOlZNwYIzIR_vMwg7Fczu8",
+         "plus_code" : 
+         {
+            "compound_code" : "76GW+Q4 Victoria",
+            "global_code" : "6PQQ76GW+Q4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJOYOlZNwYIzIR_vMwg7Fczu8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 349
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3325147,
+               "lng" : 115.1936572
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.334261780291502,
+                  "lng" : 115.1951783802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.331563819708498,
+                  "lng" : 115.1924804197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Peace Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107579300085646625259\"\u003eMia najla\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vweRNMMVtFJObmo3vilFG1srW5kcBgCoemhzz18YM6PESx-r0g86W7c4zy4RjyVA7crNaUvgpdzWDs5sx90yaCTmcg9Wrm641MEc8NANMMi_ZxsZvL8APlepm9qHLEDQxgDN_JorJdPyuotXsB7G043uyfUEF28xxN5SJbVpd3b6SHr7-ASqAoP9kN3WxeINcdXCn6c5WEURqfDWg4RMuIjxqAYkJ2MOjfUA3JLwXL08KgPg2HSS5ch8IZAI0KeKp4eryJQv6OMcb2tF3LDir_I8BkFL4MwaJVNMHBKGzjtji3RSEwmL37pu0CbaEHrflHQqi-jhBMrMcnCuAApX08moYeHkD1adYHEWOVl2IQY6DlO1QW20c1igTqvXDH6Dr5exadQueqZJXHqm4UvfpGefCz7hdDSccXX-LnAi1GFA",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJH0LgbVcXIzIRS-1V02PHn_E",
+         "plus_code" : 
+         {
+            "compound_code" : "85MV+2F Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ85MV+2F"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJH0LgbVcXIzIRS-1V02PHn_E",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 284
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kompleks Sukan Air Antarabangsa Labuan, Jalan Tanjung Purun, 87008 Labuan, Bandar Labuan, 87000 Victoria, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2740969,
+               "lng" : 115.2547376
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.275816980291502,
+                  "lng" : 115.2559432302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.273119019708497,
+                  "lng" : 115.2532452697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Marin Labuan",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105360792631406207374\"\u003e태양과달\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-us2_euEeD1HWy7qH0lq2j_vyeu8gbj41alWpXSSR54yALZsAJ8O16R1xJ_0dy6309DtqdTR2FT8wAvUzZAgwk5f43TAxqbsw0a_3F2wuUmrvYvQFpJSM0kCIwvBv5Xly0qUu_58ouiYB3UjzFrx_gOmM-HsROg_O2mWdjGEQ4izgSy7Uo25LfRYEBlR6dGMhOw_Fl893TCJbRIPvdjJNcFHb9O6YuNNj-oq838jeV2oM_yH8KF3EjCFSqvNdHgadmH-n_3POzsYy1zkgOzpOJMLDPiaqfdEhVkwnHufPWfEsWZZ-t3uob1AaC0t522egduVmEbgwQpu9ppybuSaKswsr2B-oIBlUTTWAhRV-PDapdyaY4HHdfox2bW_U1uKnDo-cF8ejnZ8UZfPvdrpm_cKLOuKdp-XeOSS0wM0YYa7w",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJWekTe8MYIzIRJZeS2f_ZRk8",
+         "plus_code" : 
+         {
+            "compound_code" : "77F3+JV Victoria",
+            "global_code" : "6PQQ77F3+JV"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJWekTe8MYIzIRJZeS2f_ZRk8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1427
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bebuloh, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3053308,
+               "lng" : 115.2104476
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.306701980291503,
+                  "lng" : 115.2118225802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.304004019708498,
+                  "lng" : 115.2091246197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Sultan Abdullah Kampung Sungai Bedaun",
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116897275676722897759\"\u003eAjey Jaya\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t2T15vaFgFKb_-PYW10HFYGlzfmbqwc4XDb_hjuAr7J1dMJU7HkR_q4qSR1n0BLo-AkvOR3qSzRmgnG1JuI67XoK8ndWyP4xcLJsDNuhSRT6ZCvBi3xG3ggVWSJ6X1CnF6Cj_YdhMn9fLU4WqOGyphNT_LZLcHu9i-mXmGvOzR9Yz9w6oWlWcO3J0KzNEFnqtAAnHFXTlPlJBhdMmS-Mz-_08802SmcHXw-sSCx5EkR9UVoSrBN8OkV7mFARrvOS_NTC9f2xZeGb_SckL4SC3MxWj5MuOSiDq4bCcA7H27guP3lwkZBCZ6iyrACrorefOT77iITCD7n2huOabPFgV-IZc6tsAvcv8VUQH_0JhxSE4RLs6bz5MP6Fxgy99MBTp1FOUYGR9luKpXgnTZv6rHVOY0LggNqxGLIiRuYpn3Vw",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJN0qBTOAZIzIRcqHbrFPJ9VM",
+         "plus_code" : 
+         {
+            "compound_code" : "8646+45 Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ8646+45"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJN0qBTOAZIzIRcqHbrFPJ9VM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3814559,
+               "lng" : 115.2470047
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.382822230291502,
+                  "lng" : 115.2483118302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.380124269708498,
+                  "lng" : 115.2456138697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Labuan Bird Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107001104719429174631\"\u003eReza Maha\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tGZ6Wqf_7XmCrWIFcKxtWYUGQx6QVU1b2spgAIqXD5dnq_aTsHmJ3PE9WyqAzLIWXkAdwFWxRBNOoBI5o2LW3ZDfgvlzoHq1ptFUWpMPRAicLbk3dYlrf8OTFpukcOYJRJznBCgboYEWFH77Rv5MYRdd8OpviHb3U8eXSMbrd92vsetkaGVOlFkAPGNWl4reHLoFI8t_XkwFjWe_mNfsQcIUpxxnzN-qVEcbJ1VwvyzhNwYdlcjrsEzSr9LWqcB_-hZc8Ltv1fGLhCjVy8wUlPMAFkCelebz9z7Bf6SsnCeFYwh4_0esaeAqdF4gy2TGLhgBD1Hs9D6QHonITcoCXpYa8CFxJN0CdZnBzhZXlzs6GDW_uClN5e1pAj99UeLDPae7u_4-1gE8nQpp60jdQPG_4my_Ck8Azyy3hanGBl0A",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJPaJPEFIWIzIRqBvQxP2r1d0",
+         "plus_code" : 
+         {
+            "compound_code" : "96JW+HR Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ96JW+HR"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJPaJPEFIWIzIRqBvQxP2r1d0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 949
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87000 Labuan, Labuan Federal Territory",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3811233,
+               "lng" : 115.2487039
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.382377030291502,
+                  "lng" : 115.2499151802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.379679069708498,
+                  "lng" : 115.2472172197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Labuan Chimney Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108666933745471222719\"\u003eAndy Hong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ujHwbrf7CV6pLBYabZxLbqmm0OXvLkQg_ZV0623wFap10Pfo6woAzIlIRCDyDTF9iWASooHKyo-aiGkVP_cx0So6fAQTQO1MiGcolARct6d31kmNc4He_TBXKe2tje1ZqJkHEeeBxvXMBoFkoNJVk8FtthNoTQGZnAHQys4w-8N4ZIPcaQh2bpfRN6m0VuELxqdbCPLjCCkpgENsVwAAAGzckKP3BNpfaJRV5jbHwY8ds6Pb0SMIlsK5AbMGGqYVQ4vYL3dPWBn9G6_ky74pvD1kR_jCvNN8bC7VmNiuH2ZnZESlfALOZZKuDtAtMCxIOATNPxPirUmcF2InBfVv0GR-MOBlXp9eswB25YtK9I5gl4RhE9BYzqkTLyA8Ymi8C1HL6RAdcfTN_xNE-iDndqPwxjUwKmhNRQJJqcv4GhBJfz",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJVWw6kpQYIzIRA2ujOKz0S9o",
+         "plus_code" : 
+         {
+            "compound_code" : "96JX+CF Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ96JX+CF"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJVWw6kpQYIzIRA2ujOKz0S9o",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 479
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Patau-Patau Water Village, Kampung Patau-Patau 2, 87000 Labuan, Wilayah Persekutuan Labuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2828206,
+               "lng" : 115.2336306
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.284282680291503,
+                  "lng" : 115.2348532302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.281584719708499,
+                  "lng" : 115.2321552697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau Darussalam",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113840032731048286753\"\u003eAhmad Ridzuan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uJKs17bChBjmYERHRB7hdXjSlXBYAHWE8Xp5xB9O0PLg5dCOqR1L6ctUbiM6eA4kueKboijYBYiCq-x1KXx-sgz_0rusbMFVdOOpo64Z4zDhdarwxY5fEN3cDTT8n0ZBoLy3ASG5r0IDEBtQmkJfchiumyvJ7KARqR7a5toZsnkdYj_c8Uai3VLHvNPj2RvsumUiMheOQkzr6LumAnmBVHrpyUaoiYbGe4ribajsV_BGp4rwnYv3Koj1tzdKS2fY1Nyy6lLKcsTQvfcj5vqTPfzQzOGFCEqg66eoPHgD9ufS_bwUz_mpohtBqt29RuN3MsAr6jQJsxIB9vPNdOteTzv1UCEzMLYMQIReeqJpaXVl66rgQsqUO2qQPnNzrh9Qn0-fU9aVpq60K45evj0OdKV9gqXXXLwLW8yBvw6etfdw",
+               "width" : 2128
+            }
+         ],
+         "place_id" : "ChIJf4OPpx8ZIzIRo_9QZ9fzg2Y",
+         "plus_code" : 
+         {
+            "compound_code" : "76MM+4F Labuan, Labuan Federal Territory",
+            "global_code" : "6PQQ76MM+4F"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJf4OPpx8ZIzIRo_9QZ9fzg2Y",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 18
+      }
+   ],
+   "status" : "OK"
+}

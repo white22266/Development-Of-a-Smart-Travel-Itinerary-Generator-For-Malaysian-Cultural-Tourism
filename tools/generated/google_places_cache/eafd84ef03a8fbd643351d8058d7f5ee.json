@@ -1,0 +1,250 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 1864, Kelantan, Jalan Ismail Petra, Tanah Merah, 17500 Tanah Merah, Kelantan, Malaysia",
+      "formatted_phone_number" : "09-955 7907",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.8095515,
+            "lng" : 102.1434901
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.810848330291503,
+               "lng" : 102.1448311302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.808150369708498,
+               "lng" : 102.1421331697085
+            }
+         }
+      },
+      "name" : "Banggol Booksellers (HQ)",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 10:00 PM",
+            "Tuesday: 9:00 AM – 10:00 PM",
+            "Wednesday: 9:00 AM – 10:00 PM",
+            "Thursday: 9:00 AM – 10:00 PM",
+            "Friday: 9:00 AM – 12:30 PM, 3:00 – 10:00 PM",
+            "Saturday: 9:00 AM – 10:00 PM",
+            "Sunday: 9:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105305799054211632760\"\u003eRoslan Jasin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vHVxu9u6bTNolWiFGerOS8T44pr__3sVisShe3obNqt1whbiyDTWi-AC85I1ZZn8bk4OU_xetGdjs2Yk7ybOJvN_FlV3mBN00Upw3OGD6ZtxZoiNLWS76UVQAL2GgPTZmTaZ6qL70VfET_St3th_cWwxLhvIJQ3PWP6go4pUmpdOiL_lvUo2sOkodQMCaHETJA-VR33F4YFeE6mnIeuU0iZzrB5sF7Dsi2lxxJ1BT7onpPo3n8KRtEst5LzIMUaNv6N4JzrT5vsVQ3c05SB6OGype_z6DJsV0IZLs8xfFf1DaoY2np4n7-B1g5N24JXY-LoL0PPTjAsiJTaNCr6k-K4ar4L4eNWaqKuGc1UJXcAbZRlLmMlXOb8FMQUP2lQ1SMcIF-h77v-X-DPNqug2-ZIQFtmLpKJxtOw3O1WuZVIw",
+            "width" : 4128
+         },
+         {
+            "height" : 640,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116543630481149308587\"\u003eKedai Buku Banggol\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sFip8PgI8QAxjXV2Gw-LA75nERFaGS4VLvdiV2l6oUiqr1lJpAmoNzYG9qOkpSErVoHWfudu9ZzRiMhw-m1SoslwyVethCCBvAZJrO0OdlSZ5urU88pH1wF87WYkYMIXvpR-d1qEbZpJYuQ5UsdUzXXLW63nDJ_vzTI2QfVUV7ev8qaaXi3pWR_BWnaRBhm3nsaO5jOwoBq_fIjqxc9tfpzkb37_3tAMqF5DigRUVFKDlas6M-Nm7_1MHhX1dLZaTGD5uAI5sqV009hiWlKiQBvFwT7AjSdrRix_YxIigBjQ",
+            "width" : 640
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100542560872878999861\"\u003ekhairi banggol\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uPDJPzKM_o2m-NAEO9rTzHCePQVZlodVwien-xl3tGDAoId_jJS00XOBqb22rCUsYfThxYFzmr6rlT67cwEaCa1eA2MPOZYrGI-_Sy2WYeqjpqN_Y6dd5H1yg_v12EwW2C9gIzE8pf1JgF2ljrnJATzQ5-8lic4hqDS0lznsp8sBae3mTMkU8Fw8HDp1KpUtsa4SWfrg4w45d8KAIPEB4eMzUV2N_rKkVTcCGr8YiqEsIJ9gWRE_B95l9YR0kFu_LfZvz0Kqzpy-UrSD9LjhqucuE21EloL08SquuuI5TONY2Aq3BzMJp1nQjHobxdm6AupTRT_h_AifECfG17y_FmDnXFlXE7KhHTS8SFSFBgRzRsblgKnccea95alC1ApNb_rZRr1gAEZLNF51jeMrZCYihaBRldfjDu-cPx2ZjNYA",
+            "width" : 4080
+         },
+         {
+            "height" : 1836,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109000585104207713111\"\u003ePRINCE KIM\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s-QluZNGzK-En6Wu4t7l9SnWhBUVCFKYGI_Huw6EGseBV6-sTOrs9rnWFXLqtwcW-vDm-QRnQou2CAFH5Tt88_jwACxhHUVHTm7jZm036Wm1oY4qfEQVRuzDCN6yQleUZW2tNFT6RY5H_lf1LYlTfW9sGxGD5nV5eI86e65Pt1S1Bc01OjmvmKx_KxJ8T5aOXaPq_XYuXWJyPHDMF46Iwnqu0a-hM49RQWxU86XuORSSu5kO7erG2u2Xi7yVZDHQLfiOxClkLpjQNDK_LCss1F2izOHzSamMjZEmIIfhluKm5meinzHNAfAglh4MH86-7uD2dfAnxLVFcZQ-W4yx9YABTIu_myPahXLgjPr9LYFa8M_Ays-H4RMCRDawcJw4e5FSbMGBC9k7uDlvdiK0Nmq3Dai_ffkY5vrlZgKjg_5A",
+            "width" : 3264
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100542560872878999861\"\u003ekhairi banggol\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uZIhKtCfJtsswyPS-23gOIzzy52x4NpJO1ha7EJcc05MIg4oMJ_h26fA-709Wbf3eVmxfudgLZJt8fnIvGvSC_wdcfXkolGM1WicVfe9sGNcxOwAArSGNZmu5uYDF2-4vuh6dcDW12aJkqNGvyXa7JNCa8KMUdA2-kRaFVuHU5UzfDuCFo0OmGWjkjgB47L9K_qgsnAvwUNw8FwMfCzzhplzJAxuWcrDyCoPgqorCUEnGSpNXy9NJN0YgJoUfDavK5aXfxHFArm6wXPuDi-mqylC8dm_p8W7Fv1pgGCWwxryY4Ym9eHbE72v_TmZB6KSUewB3x1E5TMJUco-fAkMuHSbYUXUCY8Y9oIZnXN2eUq0UTvkHwbAjJATsEHViQujfcwY7u6AUcq-enJr2J5x7cHWLWbXRAM0xSDANWnP_7GPn_",
+            "width" : 4080
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108952604535083006990\"\u003eCikguRosmadi BinIsmail\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vaH2ERqno_lmfxokoUzv5HfjQ8xqMRCIQMHVs0I380KUNSXCZB3vVQCZpGGdzubkxgu64CayuP1mOjERb3PfkngIA8BvoiO4adcwfg9HAZppc-f14pdlO_-YsE0xZM5IPmQQZw4hxm_kkVDHpG06Pce-3mZgvGV22HnnGcDDelh6TQdFvHeplkCD3d_j6bhvQXyABzVtQlGMixk_ti01Y_ifoFJepeqWHhELPbvYmvwVBXRBlwDVB4mEVcQGOGuMYHyRVxo21gCDMPv4xzOIUGyJYSAQ3yHrcAjdef7Rid2FBe5f9RjCv2l5tETTIkrVgrlTbgyxAsA23wQv8k5CrvENjRGlNLsAGPhYViOtIFxQdidR84nIYwVYUgy8BSCqVyJ3_aSuvNa3FSDC46kt7Etfhhnt-7rISxWHG9ga7UeQ",
+            "width" : 1836
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100542560872878999861\"\u003ekhairi banggol\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s182HVc9E9j6TfvgYEfUo21buw58k5jVgFEhzRhqjyg_9ywrM8lhj_wkGhUmJ_dUxoXkyhZ6Hf53mXs96j_JhZ2q3Bj2AN2FXZc1xlt1vRBaPPBbNWjMijZCDBQBt1LH8zg6BTfP4-t1re8GGUFQO_IDtMDRiaho5GtVD1mKEUie-V6j--1XZDyzVUzoWTJ9kVAHkkmL5tRxCVmckUHMRh9aBIqKK3GCeW4ahLBQVuPw-8Lq53rJCBjMvZUjpHE8JYIzNSxXMDgScXc9J0BEyPD7lB9Rd7SsW1QWSFWB7chA0pjC-rG0vs3okB30qLx9_up_8x-O8Uek-GsbEP1u1tKOqWndf89T07wuhKgbkpM3z2zX6KFzp3L_730PyTPMFlUENYDVEYpKAPE9VGQ-TG3yhKBdfOjUGR5Zky4nuT2uxg",
+            "width" : 4080
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110146247282788691330\"\u003esharfira huda_II\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uGvK1KoQWrjOqKLPV3cWP0Zp1jSV0OIFibTsoPPTBMmBw4RYyrTqrLfRWyKMFOLBfXwDWKMKgPaypemSY9iqL4dJfPyCgpixonzU9MDYFdGpSxW2LdQKN-kQefBHQ5DIl1lL8MYiVuWwnggtsW4o4UNyKRjrzqPbWBY8lujpDYoA9Mp8xcUN0W3uivF259F3g6JLM9MdJYJGZx4ZFMz7yn0q9ChLE2qrZCQnUbz0qPuup-1gIcOSkJoxXEFaaQCyjmxLtK2nx2wrjlhfzuPBmdRRPBox7AVZyC35F0M1e5Je91sUr7GF37X1Tmty3iERlibTgbiFQZ6xNDSNAip6fjCe37FCm-2cUOmF0LolH-Gc0WHZjQs5xMZPUaY2RWBxlluODPB3mLx5soxwWlGpWUmQMikSEr-2oKXWI59zqZhZzh",
+            "width" : 1080
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100542560872878999861\"\u003ekhairi banggol\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tz6WW88M7F1-jTZaxiFif5ayK7vyWbWNMo-rtrQphCxQWqGKpHOvZGrWfZFBil730NIwkmrZGhIv6EjvYewQ2lkwoFWRza9FO1mQ00YwkeXtNuuG_68WBaWQCfgQ3CBTA4_GBcv1F8FWZady1LA5LxN8qEtGHBRv37KMW3kKqHUcZnZjpdpV0HgGwW1F9PO90-LBFE7aY8UKZS7FSyFypAD2_pP1Zs2o6P9E6OvE1WPLR7ZXzTUh8ReeJAco7xsec7uRVk6VPNqDFzyG9l-0_1U95t8iyN68Dm6e1Bd46DXdMMKTJsmZuyh7raom9zqZOKhvja7Ivji1gXaDv-4CfgEdIOlhmHZI-zxGd3oCl8sgewhPJgLHwbyYQmjTKpjN0MoXJrGyp1UkUdvDXA-aa4MBbCPwSch8Se_Y81PsppeA",
+            "width" : 4080
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117755856167633886497\"\u003eChee wai Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ua5jAy5mCMaQg922ifmgvLnkciP1q_3lmTe-ElQ0vATCsVGXhblAFJsvGBmQ8uq5q4mtKE0eBGDUWXW4PFT-HcKRxKPw2RyvQpKT61o262NQ8Wa29Z1btvtyq7Sc1EMtF0q1sRfawfotxXNWnxsY52KYKhGmsYOBYUKQSvJa-S6Ws5YE_D0GAI_Oo_uOq38UAdJguOIqRBr_EjgB2EIkQc0ox1F3TN5cS7M1JpL2c3oB582Gjmb-TXWb9nqGM40-cK_xD_gyEeIcezX-S2-4Qqkk3zX_kUOXkFiMZ8okxy88rgjuA8aegfc2IEHH864jO7QmKuCTdWV45DKEIwVxRnGYNpSNpSb-kIxTczm_LwZ7MP8q9BkGnAV1nRfKsDOCZjeelHvBFsiC83M5XTYzI1HOXbJyKxX-kMVvpOKkmhAEY",
+            "width" : 1080
+         }
+      ],
+      "place_id" : "ChIJWQW-aoictjER1kD8ZeSFPbI",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "book_store",
+         "establishment",
+         "point_of_interest",
+         "store"
+      ],
+      "url" : "https://maps.google.com/?cid=12843568928340590806",
+      "user_ratings_total" : 188,
+      "website" : "https://www.banggolbooksellers.com/"
+   },
+   "status" : "OK"
+}

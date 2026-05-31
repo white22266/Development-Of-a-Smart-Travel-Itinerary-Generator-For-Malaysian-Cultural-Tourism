@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Main Bazaar, Shahida Commercial Centre, 97000 Bintulu, Sarawak, Malaysia",
+      "formatted_phone_number" : "014-591 0309",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.170598,
+            "lng" : 113.0404608
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.171984530291502,
+               "lng" : 113.0418702302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.169286569708498,
+               "lng" : 113.0391722697085
+            }
+         }
+      },
+      "name" : "Pasar TAMU Bintulu",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 4:00 PM",
+            "Tuesday: 6:00 AM – 4:00 PM",
+            "Wednesday: 6:00 AM – 4:00 PM",
+            "Thursday: 6:00 AM – 4:00 PM",
+            "Friday: 6:00 AM – 4:00 PM",
+            "Saturday: 6:00 AM – 2:00 PM",
+            "Sunday: 6:00 AM – 2:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2322,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103261960396962431007\"\u003eAshGive TV\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tYaaMVLmHJU2BwgdX7rlEXFIOuT5i2GygolZLLWX2n1PYEonI-LgBdK57fc7pw3a6a7fHmHySk8TxtEJjQV2925rkJ3gsZxTDPWGGdL4gO4EfSuobwUWC_Y1Wk95WckomNE6YmLnYCfwahFE_rTlX5WOS5-ThcEmP39O8COgCo24i4GSImDuE7KNFamF12O1FO0mwdFUxVG_HBnqX3_54DbiCaXNKdStTIGiVxbCmKRpjPZBTagwXNkBsupjAKWYJ3z1VaDp_zcM644bjUHmec8ZKziKXVTZyUDTV0GQpH8oCMuu2b1QgRmt7nqIRNVxzz9KZfzsoeH1cQgK3nz6vEbLW11qljINARn6cvzkRWRjUaf5JJ-7jY-3hw4S0M--5Y3OZaQDZRnqv6jOku9WPk1n0YLONgp13zJp5kNNI4lGt2",
+            "width" : 4128
+         },
+         {
+            "height" : 3968,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114846012062374009548\"\u003eAnthony Kong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sGCyTxwD7psv4nYYKscqMYpmAyAkrrGZ3HKlRf2GPpz99OBufXnn4_UyapKfRHx_028exnd44_NgJX_Hn0q7XygJeNpj85X6etaGI33bJXzU6ZSqdHs_NmTLAkWCo0ePjUnn2st0RQdXvs_HHZzFYPrnfCzSWlH0KaVHvcKfTbLekZs6fe7QHqHywVrkzBKPxPSq3BwBSjCpgu8eY5GhASNGzmmzmZvRAjwCmj48XvMpH-rh10aJHoegBzxrqpGy2CBoSq3kWtunOpYPIVv8kQS3tpaXAVFsFXN6FDOSoMg7swCYYoarSFiecXljsTw8lrKFqhxOLuJqPbINksgKEAb7Xt6LXGqVhclr8otEc1U0R9bTAwMN4BgAC9Y3T072l9TtFHaUaurVnjZ7Mpn-mYQZcM7a-lfFo_QepuBtYPfg",
+            "width" : 2976
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100104468614673818804\"\u003eHappy Winnin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sh2qrgRv7UYFapA9hOFj9jp0NLRtuy1gfK2eYo7YHF3xeq0vuU7PRLD2Dl0LITpB91_ADwzGkPhX3iOX-0Go0ceL9nREdT96gwQnl2EPfhnJjPjx5ww1LIP6Ef4XJdhdxwWcbIhLKvGrcZD1Za0MEFdSiWrkhyUjpzYjaRdHR-M_gnn3c-2DfZ0bpJn0XWEjbQVePfkKv4q2zR2px51zOZwUerzoDI1OEjjEcad5hDj0S4wa6EO4G5Mt6e1wgaFLrG1e7PnKzp8FgJJGxaZFugrsRG8J93NtSwpbMjm3hpiyeN_GVZYJbAC3KFQlXxWiLlBAU06Hv_vWKmiHADUn5PNwiYOFu0VmAlNbTYlTHTJl31qLKAoQXEPcHNk7sqpjoVh0THfLRH3gHMgYd3UPO_eA2U7hNiATc3Dw3EaqYbOryB",
+            "width" : 1920
+         },
+         {
+            "height" : 3648,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109144631441041765303\"\u003eJW L\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tcwIeBuKjl8UH9bG9rFv1sRYubCTuRm5HNsIkPz5Yasci0Cn9LiBWkFCiZfHYb2l02DUD8zwQU-AGMdS0X3ZNwmPfVV-t1PtG9gzOG8HobPK5zQZNF00v3aaINQLsPWLboo36ulNw8NvFPvpFiMDhujJM9uRVWCKWQYOPGFbCy834QW_2jNoT3C1MhlZyoCv0nEND-MlfCKQoDn9LBsJwobDWgveIW7XcqD4mow3zJmQajidH1-WFy32IgeeD-EYFp6gVu172jKhUuhrGKcxht5EGHLXkdkd5IUeRVg8B4i7gtdovW9HvekR6PtUmyOUDRe-aNySEV9STeh4xsBEAmbiUmSKdRFu6n5Mx90CFRkpNlu9Lc0JvTH4i_oCuMVVR_sQ1SQhNhzIx_XAuDKw6KMfLvHjgx1uDdxzuOq4e45Q",
+            "width" : 2736
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104651193593634547637\"\u003eDa Bro RS Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vwOKCuMRJ4rI5oNzRyd1RIzjgoRPrtuY9QS7S-An55zaybkaxCBY23SJ_bOY-FR46E2m8XKmpLWCVk76B2rJaK3TcXDwdkVPB-IiBix3UcMwBxaY9nKCFbiO2nzKbQdzckmn6nBUW_mOG0vvLnaNSorBL62atCNiiGBzYSGSy0tYBawlC4YS34X7LNsDsH3n1eiuGig90EBh7LQ57QDDSOTGdNisiYY2RqfUQbMAEDSfxr295oikz9BpLTGANuK8PvGs8feNWwR21E-MZDsxuWpEtAzuZ0MDmtWZ4vk054lxmTbQry69C4V1M4x3ceDLPhxO25fUQYxZ8XYE7cxRqgNPtpLkOpRo4PH1xM-A-WEVms9DFIeHxLL0gvcNFvUBDtFaK2D-n32SzAFPaRvTM0D1wukVLMpX7wG0rHXc3mo3Q",
+            "width" : 4000
+         },
+         {
+            "height" : 2322,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117606889830322728225\"\u003eABDUL MUNIM ABDUL RAHMAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sE4QycFezYRCPt0_pS7E2nPZfOOU_AB5bDHQOyyHug2kRB6UTjQPZXxN99CozzAOlWw7FlgI1uyAaJ1Y1WfvwFhGBlkLETrB60lmACpnkntQlXZV1uJX0W-Zkdz132CScS5wELAOjamEhgANAzzV67I2mMYrDCQpqL2nbnCs1kIEaKanS8o7B_bOFYhDCt-rtXGYOcere6-S2Ht94GFm4R1EeCuYNXPiFTknmu1fwBnuRKzSV3ENIITBaleGbnZtjDnPNTOx2_unzWejeYny7Lucx7dOgmxSz_7iNdL7QIt9roBcMlfLh4-DAlUdIu1byAvW99arK6TehiSJjB4SvsL2NCJkryMsGS12rtxIEc37d3q2UfwVC6rcPjEFRl5ZIx_235onZzHFHjIFSgGnMsMRuHW87vNz2MAXTrnH-yEX8",
+            "width" : 4128
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105352533051946009305\"\u003eFakhruddin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vCYmFdW0RvtS_AvkQO6nO72OEA6r7Cd7uIvRiAsT2obsQxc7dSPKWs1qhcs7UKIW4hb7y9ObpvMGy0Ag9N3l3evV62DvURqb004k94Q5ZV2CxVPwa_BTxoC8ovbT71nk7thOmumx3BUWHH7xA5UFo2ij5cJVL8OEoDVmuDupB67nNPVmNnNVbzIwJM5nXAiTwaw2M5AH91MoIbb7m7M66DO-ZD2TkcX4tfgvEzOndt3CJ3NMM7tBagWP7QTTCqAGfUjp02TNGHShDOk2cID_unY_UJV1pwixofQXbnG5ohfHbCrwtso8WreWe5UKtmzJu8C-VNBSwwX1Bll_HA6b6UMP2C6V1tcSsrXS4MutncYVPRcKzPi4cxKAPIdznYT_bD0UUlJugvVMOhorKqF-2EJBTHy3YfVTxrLEaQXJiEb55reCuFa_LPRjTDpfoh",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111956664408159703850\"\u003eT Sivabalan K Thavarajah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tPTxpVz6sD6wmySkAGrL8RTrP0B7irrA422U2WDbKk8wURczE_jZqvdTj9etMzdx1O8yl2pFYXEY9Llx0_rxZ15KZfRmatGB4qIPjA04iUS_gBN7hipSOLl7n8nm9wRIQcKfziyhyVRhepx5m5JgYrLLTYGsfCAWxiwd9shH-23DEFh1t09PylY9L-TrfmUBHq4Jb6xI6wp-2ny20rgMQri2tZgzznlPIAj-XM0PHImN3qpzUtQxxJ9I0W-Z2JZb8xyOIMf1UVPMBQ2cDpTfu1O5zixN7ffrGMQov8jctFzASPLkROm3cRu4CabgeGMUxCrJ3KMbO3-_69ZFoUnaarfYGQ8Wl8BP8GIT-ePlI0ZFlGi7S0DSPC3CpCNC7gJIq_aKd2ZVH0anI-nF-IlMpOZf3ADUMhKzjuxVBEAdEh1cRj7QZnpD8BYyfDkQ",
+            "width" : 4000
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104651193593634547637\"\u003eDa Bro RS Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uzvgij0wJWiKcg3pb2_UW2TMTpR02bgazCdmPaDErowsLnlNqg0-lS7Srbwny77-mIGTApeGXVCNQnGnDb7fkV8NnReMmWElne8fv8zjMDxy4DVnlRPKrjSUCNYWG3GOYiBoS4ImmeihO5e-X5gkSSQU__Fwehx37N-1ewo1lF69DOm2Q8vZAoP8BaJ74q6VBIbaUHPYxR4j_oW0gVBhE682q2xj7jbKQ6UaxYfLvTeykyrMpHlRn1NF8i9bHLetXZAAMFZVjs5-sksy_3Q0A3U8k2WVOW0uoY68Jimux1iRBH7BhQQfiKLUipLEnMnNajEbGBxlsDNGdz8jCzon7wMAAmuFAU9cyRowkxOFyUZPWgk_rmhY3anryg7pcu0WKACjT9_uy9G7L2TGXOmt8qcWHLbxi2Ttqt729T-Tk",
+            "width" : 4000
+         },
+         {
+            "height" : 3648,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109144631441041765303\"\u003eJW L\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKC5jPd3Ogoth3Xhvb_Vsh1JZULcyc_bRsvPcmJvCwrCchDf8ETv1N0wgta7Zb9msEt-SvwTIPbQS7jYUxIiMF0EHm24EzWoLCSC_Mdwm_Uu-rdSMWZOTkm6QqM8qSJN2RmHyqU4CyFzCocWpzONy-EDSz4Yvh5-uhxRNmIfibeScDtGfgmezCuylMtZ3vgiUdb4FdJ-Nttj0N5SGu6wsPZ_NmKTCQkK6NuwvidFCO6u_mupKLgY7Ywf7Yw3Q6X1VJTUy6_UUIjsyB-qJq4gKqtkM38AjMpM4l1ficuIlRSTwjhiG3P_nfiFaGU-QaSNv6vcowrt9gyzOy7nzIoptya6SJV7gPZBSkxBFKRbX4sv4WgUciQd3W4d1FovrG8gwG7t6eekc6EdPI3eSKzgnojSQ6UKo4sekbExUcO7pjpw",
+            "width" : 2736
+         }
+      ],
+      "place_id" : "ChIJ7YYveVvAHTIRfxWThrypnTk",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4151661058682197375",
+      "user_ratings_total" : 3378
+   },
+   "status" : "OK"
+}

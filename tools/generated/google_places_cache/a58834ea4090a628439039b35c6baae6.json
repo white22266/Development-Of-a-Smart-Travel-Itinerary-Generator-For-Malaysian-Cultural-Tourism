@@ -1,0 +1,175 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lorong Nat Pokok Getah, Kampung Kubang, 02600 Arau, Perlis, Malaysia",
+      "formatted_phone_number" : "011-1611 8696",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.430930699999999,
+            "lng" : 100.2911891
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.432725330291502,
+               "lng" : 100.2927837302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.430027369708498,
+               "lng" : 100.2900857697085
+            }
+         }
+      },
+      "name" : "Nat Pokok Getah",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 7:00 AM – 2:00 PM",
+            "Saturday: Closed",
+            "Sunday: 7:00 AM – 2:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116034801326931272725\"\u003eshaihin sinchan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vpu3caEF-JZsmIvaSyThQZxmvmPqEQGC6l9lTVm7dBOVZHoiex0El6lbUFQuQnniVEc39gTEfoQDlPuSSxzarsG4OzSx_4bm9cMZUQgODkOZxcTOj73iXOU1K6k5L1RgjN-aTZo9fKQHXewJ7ddhZ_WX-nCC6oRglzWipF7AGl-ycuXy5VjhMDNESNy5LAeRmM6kReusaLEyQeESn0Zvanq-IPUoHcHLqu0wOMZABLwnhSVadSFx39xPVGYKuJ7yXEadXaO2cfhyop6WkxOAb9UXNNhz939JjqsQRJYHfzTbyVkHD8VA9Ose7cvmBIhMKNESQVzGaMj45cvV5n_XEXUB5oD1DYZpIhakCZzd0Pwi7131b9bpPZOVt7_Dt_A3qNRn7AguSmOCZWJTFmRNR4noku6LwIBfZfH901zElWzT7sxcqENwonhWsEO7z3",
+            "width" : 3060
+         },
+         {
+            "height" : 3016,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104697381236564862504\"\u003eMak Ndak Tv\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uRUV-gLHCx_lmIjxgO9EznPaVUBnRD-snfSgRFneIkoSJuUui-w08EtoEimuJjONusSfoccr7H9WUY4drYYcM_2LTY4YhWx0ZZFgU-cNlyjCHHzoJdoTIvH6EPzPed7eGCW2N6XjBCJF21LE8YjZW2R5evqTeQ5S5qSAZwPsanomA9gCyWzMd5wmdumMEoi9lTWosDfv0cjnD5XQsPATRKutJ2vcouHfjJME0hjMkYfRjrXePSmdPjHv1euEFVrYYFNi4KpFwwweDzDdmiNK15buEun02iVlW4_FU_Hv7cvQh3cUkRia7tLbo0YHDgcpqJK99Es6VZw5J6zyCmXUVn82-PfSDjE0uMj2-G8wMpAcDR2o_Ne8J3sBi1_xmBL0uUBIxLtREN_BbZQYYm2utZS1vU7MkXXDwngm_oU86CncZU",
+            "width" : 4032
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115132053740546386946\"\u003eNoor Abidah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vX9twZvzuW-mWovsgRVDJBKjdCqOrOJYpLCnu9PY5YspnZP8r0UrtPLqtd2hp-s6yDg8RfXchSWi8k45gYigeyedJOd_Ty1gsE3d5PylOMy011vmgszL92rok17lrJf74JqkHddMciI2-qtU0bz6v_-1jeiIbPeo1_s_21EPM7e14kQrJVnIB4_YoBOwpMua9I89CqmnLK3pwaKhFhz7ShO9EhGm_oTLycaKx79hTpW6brxr3jbgS3-ia1YYwgZOjeVBfchp7vY3AGy8eEEht71U3epWqNROhNUBa7DzHTeis03pNQyjkXOvA_5phz-OL7-Sd78x6QaAI_JUa5KGIBBDgBagTF-Gn8DUeEp63_iZabJAY5YfInwuGqTofm-dR4z7vb5xix6cNynkIj2ByyU1y8yOhs12g7pnRgoNJkEe6R",
+            "width" : 1800
+         },
+         {
+            "height" : 1800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102243570765377918438\"\u003eSamat Talib\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uZvvEQO8vq54d4mPXHcdpbA6i1EX11yTEyWzrI5s_ZP_3R39yQ8WekbmaQDpo4D3QYsFLEUj2Gp5PdkN-gR-9AIff3LkqefkG6YqsIC3TtJd43Yd61AoNCKC8P6i7T7cP_2k992Fts8WgNZqk965-nNOYMxW_8N8J4rglv32bv50hs-251zx9aRk3El5t6Q3g-485C2RDm07P3gpXEDpOkvjXqbZG0ZeKFQ0oxsnsv5W7_3xrYDnkvZOvrpsKkdkd-gSS3Zt-c-6txERLOho4glUUAvfqA_80y2DIsByclFXkX3ucM6KM2n-m6WNZVM67Ku0XP2aPZoisJceBde7qs9W0jKtzJLghlhR9eduZ9JwEYWdUnD4P9Qyl2jld0uc0Zc7jFBbgpLrtQ8IaobIg5XPjO-OzrssjaehpupeSdAOJX",
+            "width" : 4000
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104584535976641143577\"\u003eHazizul Md Dom\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v2uhty5AzUhep1wOlxIxJY2gbjudMcdJQkDFMTYIc_76wJJrJ3AtPzN0-ZaEu2qWY5wrnX4dt2TtnwrooWXTZb5cnXo5LJa1xy_UclmnBk1YoAPJingSKD4bXsncQWL9WWyuhojl7nUvjD-DZr6E2yaYxXY1TegAk3BhnCsmZO6Zrm8-UaPE1NHi8PxU8hSetv0JGcX5th2w04hg1wmDgwV5lapo-LKjh9_JfDul4WhRXHasBwE0WYY7EvFuWZRJg6I7UTEeht0-pt7rLCPh5MlG--xcLoUSyTGWoNLC3KDkXuNwMmv5RgPKRfVXke87FdzWuri2x6H-KHUh8uHeK3el-83OTJj2tlcYdj5LAB-gLd-1oTkizDnv_CGfUsFuJQWoqIWRkW4WfQifFOWO_WGjLMHyMiRoQRLeh7_SKxQHXINbttuyPBhYfcq7FD",
+            "width" : 3600
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108238367904426344748\"\u003eAfwan Afifi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ur4bxORIyy-WoxNDHbg4yJjrZr-fkdyo3QIYy3OL9oiLitc8AsKnvZPZiGQtMik25Wm2LJepW5oC02_abOJ7peMabN1t7qSyoFmiNPxSjzjOXSrmgwAxDXbXoxGGjZdBQZyTlN_is9FqeGwi3YFI3M1msN7VKT20Bw3aZkl0SKLGYLZC8lvU1I2i4xJMkKl-oavIG29thZioSur0niYeOi74mdiiBgQaL2o3_GnsLKkOJ_OSnX1juutv2KW5ttMLxvyHALqB3r9Zm9-ozKE5H-WCbcXa3viOUpaqgXMOUfLViui-wi0ncHBb0uzQMJRLXx__5JuU_8MLIBA1C2TNZ4xpHYHjxerPaqIuDBBdCFUH1oahpC72YqVAM3QbyMAi-oJR84sJjt25P8JWOY0g--CM8MczLRULSccdWPgDRnWCFU",
+            "width" : 3264
+         },
+         {
+            "height" : 1800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102243570765377918438\"\u003eSamat Talib\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sudM6WtWL_KaElCCwuJ5WFZLvgdvD5qqiKjt-njP7mRFr2UhyxIGDSmrJrPg1dr55hGrvpElRSljy3iMUUzlHsKjf5LsCDhxaPCebt7Mdz-dYo3wwlZjBLddetEW7lLhmJY1rWnuhjhCgatO6VfZWIznsg6JkK73UPIyNYELxJ_5sslroLndQUKIhU915MpiCk2-UvMs3bmzb4hICwB5SFmVtpjP0qEZeK9kzh2rPPHxgMclyDM9DVvHX8h_OUjo6KkQdaHRfwMif2YX7zQp5r3fWnk7flUq-3KbqvAiPgTI0kllm5Fm_kg27EmGEa7VAmfdS66eFextFJSa-VuVNtdb8ZMJ2CBoa3FWTO4xL54gGY4YYRhUZa7QPB8shgUqhBgRabCkDYTTDIyaIpUt5RkLkxOZW5iexY__mX-K1IUDXp",
+            "width" : 4000
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103850270764442130723\"\u003eAnnas Abdullah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-us6W6q7gRT8TeQq72NsZpBpPcISi0bKfzjQqyOg29gHy04w6xTQBk8zv6Nc9gUi5ro_qlw_Lrglx5_8LEyhDXULHMpUXuJ-wsEF5q2HJDBEU9K603loAj-h2eSSnYKEN_mQSRRC0-UujBdsBRh0pCOiAma84oP8F58M92fHcHNNlqesR9CQ-GhHWWVYKWGinhs1EYsglitJkGEajp5yvrb3PHFJivbuwd06qhWk0Ao9RCVcCT53ZqFB48eU8aB1rz3sRXTmTn0qsPk2rNOv3oxVQ2s809CEXYZdkzGIERZ1nK401g34V8O4TKvkPzjmBi-ctj3JGFxbReRXjt9nt0VYKZTkjxFDI9Pukbq1RKxyCqQRENrfX_FPQF0yAY6VWkY1-KB87l6wG0zHdHxaQmEG5eSRtfDYS35cEJvISre8BCX",
+            "width" : 2592
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105982380098143339591\"\u003eNazif Fuad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tfdslG96dUKjGSshH9MrO01Fb6boF9O5LG14bhcjzb-MmH14ALX2SuOAqOxg2O8CD-D2gyYxzhu8Z9N9yQGK3dpn_axaeXbh6aHiAWXt-LdKs4u3eoYagv81UgJcbdbpNqGi0f8fSTu_6Osdy4hV8mV-RdkXFSEtgPDMvp_xMquJcc0lVTBzCiIE6TIczSlcNnvo4ZraZAZYdJoPHolVpTK4X8oQ0oS7b1UDaILbeB9975HMs_5c-rlSVosCuEFqR1JjTQPTpOsNVqaatKkx-HW8TD2D8mAY5-Yk3P3fFxVSUUyaRZYw007aG0g5RgpJr_kalumdXIb42z_2nmJ15RZ3vmq4svY78cVpp9V363L3Lk-AlBt7azxrlL2DFoipfl-VHmGUsICxnrywzG8Yp5ayomLp9jqaYrzSH8GwBy4rAT7gG4lpXoQN1Kaya9",
+            "width" : 2250
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100636750500523874735\"\u003eYatt Mansur\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8IOFluB7NVl3g-ZZhKD1mTeCm3sNOAEz73d2VUz8ZOVRaxXhKeJW9tcCfwZusFHzqCb-4rp26_OxnsEuTSY0y5kmPkipFu-2HPY2dc6DopefmmICPDzM1Lt729cY992ZkCg8KgNbs0R2YWNA-ACg3aU_Ngto8vHTmxIL_9M-jXmC05PoZCirx_sBfDda5wP4nNu89E2vAQC4FYo3uECjU9bhsMMjFs-7bsP4He53u4xTGbFN0-aVR5z1f1VufltSnW-bkxWuy7EYQLB-Tazyh0-y-weGPDe2SjFVgroZiODxd5KtfuuXKrFyI306KjwsjkaiJ_X7qwg0aBsOCdViucMTqUczwd2NhKXOXIglbFhtugDBNxEKhRVIlMaT2UFVX8pdv9l4z6hc7IOyLG-L990tjmEvfDO7oLAOXspDPBO65",
+            "width" : 3120
+         }
+      ],
+      "place_id" : "ChIJL4JleFiiTDAR92gtbEDHlQY",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=474504415264205047",
+      "user_ratings_total" : 1090
+   },
+   "status" : "OK"
+}

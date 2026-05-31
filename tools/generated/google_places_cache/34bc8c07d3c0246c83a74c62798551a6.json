@@ -1,0 +1,56 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "96100 Sarikei, Sarawak, Malaysia",
+      "formatted_phone_number" : "019-485 8696",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.1288193,
+            "lng" : 111.4812704
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.130269080291502,
+               "lng" : 111.4826349802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.127571119708498,
+               "lng" : 111.4799370197085
+            }
+         }
+      },
+      "name" : "Masjid Darul Sa'adah Susur Jambu",
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103424515914077276901\"\u003eNor Ikram\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-slOXBmXjV6Rq9NsT2jjonGu5YXmXW4B9VRFz8oFaFsElSXFtaKxF4HtrDZfCPdhMJKDiXgk_7yeCtjNrxX6uVgQHORwFRkAspGrZSQ-hRotORmejwxRS0mH9hKN5257ELsbWX999TCcWXh7-875SHGjp0kZGf9sOoNf8RlSzBiTiIY1jFjpCPya3NmmNPcPoTZHPQ-hUBOGyXJbuCZ2Fo6O-o89rMqQnPsZNPL4OMQR1RqPTzYb1ovl-URS9FpgeQ-SpQ_Cia8CVNHRnMoZLdV4wPH_bS6_vCVzE7dCW_Xg5_D4_fWtA4c2_TBAUMpgaoxQY1KMv6snsf98y0e3cOwmKfN_19ij3KifIFAvc35Egt_wbehY_7uK6rpQdGSocuU9YFNpptOQjHil9PIMmMZkAgl2dvReUlJWNo89PgGuGI",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJVVXZ_6PC-TERovDcMzAqllA",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=5806875156057747618",
+      "user_ratings_total" : 7,
+      "website" : "https://www.facebook.com/profile.php?id=100064489400682&mibextid=ZbWKwL"
+   },
+   "status" : "OK"
+}

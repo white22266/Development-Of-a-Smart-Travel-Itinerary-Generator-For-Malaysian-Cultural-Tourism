@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "10, Jalan Sultan Azlan Shah, Bandar Bayan Baru, 11900 Bayan Lepas, Pulau Pinang, Malaysia",
+      "formatted_phone_number" : "04-643 7273",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3139425,
+            "lng" : 100.2854153
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.315344530291502,
+               "lng" : 100.2868179802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.312646569708497,
+               "lng" : 100.2841200197085
+            }
+         }
+      },
+      "name" : "Penang Snake Temple",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:30 PM",
+            "Tuesday: 9:00 AM – 5:30 PM",
+            "Wednesday: 9:00 AM – 5:30 PM",
+            "Thursday: 9:00 AM – 5:30 PM",
+            "Friday: 9:00 AM – 5:30 PM",
+            "Saturday: 9:00 AM – 5:30 PM",
+            "Sunday: 9:00 AM – 5:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112398433510873522346\"\u003edavin lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t1ErniWTI7WFeykOIgR2H67UnfegJCcg2sNtSqScJrLTHBabNUt07DMe3i-AnpzHcjDXHCVQGeB-4hHjjgBoLe0m61PgxO9c10IEXbrELJw61urFJXGruR2ViDdyOhjome2g4z-J1GN76J9-6BYlNLouJHdpiZR-CO7kf616xa2GHxoHBPDHYlIagchVDqFInE1WnPvrezerOmAvKhkUjfm5UprNSnVKR-IgHB0E0CEYzbpjRiaqsW1RupS7OvYQTYWMd6pIDAkcZxvu7r06kVtpufyNdIWqVqzwV6cmXKQb88pkTopSFTJFCols2aOwMgb8vYkRU7CEJ2k2yqlcEKexShSAXz6IxvHsgFCU-ayiBWccVx5fz-mrGtQZOGFqXjR21iDcbrrebql6oF1fFzm7odThc9kJqb3z9--0tVXyRy",
+            "width" : 3224
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116268575804919255959\"\u003eDerek Chia\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-th80k28us_q1_01dxIaGFpe-zstNnAFWdhp4BZLC9iU8lG43EsnuA5A74vW5Lp_hvvB1G_IF-TsloJrBKg-6Nu1_R4I33W7BgvBLoGNEKuVS4_j3JpDyI0xVm_Qohk0f8O-JwuFNq-KqKjujwKelIkhBFcXRZ2pbWYn5D29a_6AyMMsSPTKehUv-lXG86H3rYxE4WL64XnwmLCsWf5zrlT_IP2XYYrVfjTjdRzhDrL8fdq3fZeO1A_GAfT1-lcvv2xRVJ_YBDYmGAYh3K5r9Tf1vF1IoSJi7PA31SoriYd1-sE5GE4ckMza0lJvX4nEjceF8nJGK3By0xZodpXOzSqYyCuD8IQwDoIgi5-NWJYjZdK1wTdFHw5lAkhFTHaW_i5RbuOUzYAZebMekLdBEtvAe1EUYjCV8ZLPyTnjOjMnFPxljFIQv3u7yJmJWk6",
+            "width" : 4080
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118013389616630608884\"\u003eTobias Kick\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sVyAUajgnBwke5bGIDrwVgA0uS98VVrVtJR7qiVtumFvkS5GbQpvf3hybcJ7Foe15V--JMuW6KjYwXq3dbCZR0zbpHIiWpeubnBpWQje-BJzc2znHRtbIKlsizhLumSJI10C5eQks59sV_SlIfq0iDCtMIWJl7FgTzaMTXUydnfW9dr2qTMV1X1wbCyVYnl1qAG3vvYRMIS7K8A5PN8IVWe7PQWejAcM5z0S5LSjSlxX8Rudx11Kei1gAlomKsIyJkSkyGaBz2Ral-mqoz1v322SpbdK6Pa3TgKAO6sBxUEK13sGPyX-Lf9quBGkGDxZVV0bfNRdM1sOUZTz9Ps-yWsTSSVREUdjtaz9892AAXy0ZU1tXy7IylYe-PRMs-KBt1pu1gCvotE88Z7takm5iuNnyL_S-uru0KyJaXILtv4L5I",
+            "width" : 4000
+         },
+         {
+            "height" : 1041,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108361119929174303059\"\u003ePaul Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vo6whRvnNnrGIltwjdh4-r83v3yuzvIa4G0nTnKDVksHxfQUNgIiHc83xc_y1jy4GsMCn3HrF-JWlaYVukjn4UHT4mt2uYQ5cqof-44EAYF0pc8lyO5RbHGwCq4ahW1K4UAyM9OmmGQQ0LeWOd6YYh3Laj8O6BHnLveN4NAzeC5eRCKWJ8yDp2r-AsCIjN8UGcHlWNnz4w8WvvxWX72E4zLvYg-XXzibfmo4aegNgmM-WSbWUCJ_QtR6J-CbSiGa1LQZ3q7-A-p_MOG78Z1i_LXonXa8a5_yC1uwM2JvHbCHwmYEtZAP8161slgQN86DLR_wNjRo0uiZefxUi5Mn_7AK2x4Ia4JJEPhJNM4pc-ZOW4zSZbM974WgU5kDg3Vnao-9-k2rGhLaev7xA4QvG-MCYCeZaYorH_jNrlSIc6D5kG",
+            "width" : 1600
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103519540283888579637\"\u003eMiles\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sbo1bfiFm79v3pkKkpDJ3H51hd26ZFMNO1xwGQS95dpcyFML_AwY-JMFnCly6JBiCkughY3JIT9Uy-aLS-tVkgW_80ngNZEEOpWzxegMM88Mh170pK7zjXUVTT1prKsXEHtWp5V79bYyp38XbCKru7IGD6KFAK2r0CB_jqnUD25TE8Xk2aHxs8y-zUBd-BPPu-eAjz_Wy9a02sI8TDpVlxoZ8ZFYzbKxUSEUZYFnKK9AOR-7QUbNZELj40Y5AULDeqgvB84gdRTS2spZBvRzABsa7ztUEJ9HtuniOB9VovxguWiANcMZkTR4mCK7JWQ6lZRePA67pxlv1Pyq6HSPRkC0aJ2uYpvTNcQzx84U5VrcecnsLllATCssBY1DRM2an8QAB7Zs6_415D01DLbpvJov1V6-LZMNfGiETnkF0",
+            "width" : 3648
+         },
+         {
+            "height" : 770,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117517261728992432131\"\u003eWiLL C\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vN6iud0m2mEvkOO8eHVVEpknW9I4NTIh5O5QFnPCacGYzs6u75p5YiQ8sS6RUnw_BRoXTBmok0ia493pMy2ldXbQhKmTi90-ZyQoYkwO_2dZgJXrjrdWLBiDO-lTwFrwA8OKJsMn-4TBOo6H3z-qMpQHd-bnT59SQSt-iJNb_WRADy8eagVhxP_jdB9_WtWmksn6ddQbWy_1b3NMSq8CBgC0aUY_pvfr2f-whI3bn46EM72-GcShsFFv6pjpZA9VDekr3w376w4crtnTAxTxvxZeWYpzWKAiFTnnqo8vcyjAVDGe9ZWpdD5Xj67dZ5kme2wPTI0tTTE0lyaQYmZcPKEpYY8LWWmhN0SXGbMMh21r_fbTZaCpkvRmEY_wn5LWwh4Ghg8ImX8kJWI6VOauCrtxdveryo8bPr8ziJKEbx8rYS",
+            "width" : 1027
+         },
+         {
+            "height" : 3528,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108788274628874590453\"\u003edicky hartono\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8ZLTrQPOHyqNF7aj_cI47IgxQygktGopTYCnlwphUwFimm6MN8i3LIQgZRsM2mgEzVkcFS2CXSUxEYBXM6Rd3dKp0rspDpLVds5ExjvfHpsmSRzD-EYUme0L9pstFXu32FGEIrLYqpBbwAczjmE2l2FVhGxyH_D-W4hLdwYSEdvSFY-YE3kKVbKgJ7VgEyTBNRsVVlPEIyKTQv5mz8ItyG8DVHIc-sdwBMy83j8OhI2PsHeIhItkHjpDKDdWLXJJGebJDFGKn1HVZMDg14Ed7XpY6jAciqPW2K9w4vJyt3aqQtQKxzISRaoSG80sSq08M7zjbil0fJQcBsEJ6VvwitVC6M8N4qL-AoWVyw4uW6utdYYkiMM_n7hmchiWOjdF4SrMVsC95ztEWae7sVtwhNxRmfSMKp1K5bgL91SM",
+            "width" : 4800
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110360369452218354475\"\u003eMaverick\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vIjoIMLsu1GsVW_yz9woXm4s7TCQpxL7QSQ4C_yM6swzkMYnTMsp3_Vk4jBcgFHBXH1fIq2MY0w6ew95-M3xqP4jEOx3rzEstYoe-O-tfpKrszYlnuejtGOeqeRqnT7Nr9gW7TJ3rYjjJCz_ajai0M_kopyEy9BVcX8rZgTMul6UJ0I-SoFzBWfIOu14t1ic-tWNVvtuzwONLLnp1MQJ4_8dgZMYKs5Q-q36vDOXB0tS6nLxKe76agszXAYujOonkedi8_kjrv5BR7ziB4vOgx8PZHYz-gHtuRqtO4vRi9MalTaHk8Rxjr-gHbyc_9fXB3P2uW6BYqqhNgphS8h4E65nJM7D4feFxZ4gv4YOjR54O-8h9EVSG_mkMbsPt8fHAtOPmu2D6nCJ5a_QqboWKKOqpgsMbVE_3kZkk310DbXkBrnqecihwSqcaWDazb",
+            "width" : 3060
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101597760873476314895\"\u003eSam Wang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sCK3zG1W9ina7hY7deoZkz9fUTD5-fscsKQNySi1ddWZ8Z1NDX_i6vS1pp6fqRtg8SAUNEW6bfUqmfO9w8VPYVEzBGZB505W8vLYXy27xfsTwQpcbxeX6edsT68wXYWBptFH6PS66VHCTv6-3BiU3cvLiad_-kSyIG-73kYX0U1RvVM-3DpSrWHU-_VluLd_8iJiiRX3f5OjmhlBSZoR_Diu0rRNtGS0qe0Gro3vLt2DGSPnw9Mc0XHCwMjKa5s8cVMx8gYfmbv2ykCTFMpldf_vRQAWXhdNBehzY_ouzVdDz-iH69vPt1d0KoW_uAbMWwaySQB_DacHP-G9RLnMaWAQdWGHMWea23WD6bqSynOp07ZMDLkxXR0cH_-F-A-ZGXA0u19sE-taPkwYwpsYG32JfC7nY3t7lqzR9klZ-0rII",
+            "width" : 3060
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110569770430537085482\"\u003eIrvin Loh Chun Kit\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFkOPDgMeQhwdN2qdO6lBoIfdfOeC7y4bIZshwMFj-KiQYlhEru58qN-V5W4oi_8w1OG7g4l4DSFsBfKXpBOngOIPhhRoGNcRHaaY91wSPlM2NtV0zslu7whQv4vEWk_R0wNEWJ394VJZikNyWSCmcuEBx7NJECmtypGXF31TkSyiHAW_nk-KO40j0p4XMSHlTTIGuaWDxh49D2eKXh-nhVR56cnSmsAm0H8pUVtRiG8Wh0KCOjRKKsDUWQBjUQgg2Ywf3ejJGL67_r_2ndVo2D3e7JdDj3schx3exzGflQPJN0rAJ2rEOj5WXysNNua4re64jTLmg7qcnt9pcDwbAUg3ujdbRwFlwycEUzm0AfXFT7RumYQXahKd5Ls5lXDoY3Iz75fBawxPzYCK1GRiEBxOGw34BVEV3QvqN-7g",
+            "width" : 4800
+         }
+      ],
+      "place_id" : "ChIJVXXAdXPASjAR7aoLQDj2liw",
+      "rating" : 3.9,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3213026105628535533",
+      "user_ratings_total" : 1797,
+      "website" : "http://www.penang.ws/penang-attractions/penang-snake-temple.htm"
+   },
+   "status" : "OK"
+}

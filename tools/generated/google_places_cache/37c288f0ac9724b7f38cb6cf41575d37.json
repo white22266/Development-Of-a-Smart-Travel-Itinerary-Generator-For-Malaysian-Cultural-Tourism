@@ -1,0 +1,1114 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-usp8bJp5-eMFCeL_D_T43VOPpcNNoeznujdpPw4446rUABwRv2_K4Kj2RBMJwdcamDekVfxTs-H2EKeb5w9_mqXaHn-CynFXg6hJXT3_jVTNzWPrRAfVBtMdDe1GfEVqzlNdno9VnC_qb8_80SB_OIp-QJqRLIAiO242YYp81stGY7FXja_ogNpSiJVG2yhWwhde3NWNndkJc4e8BpddwHGuOuApetmBbStyQ7FUDR9M-EoTkZc2-JWA9G0rO4i3GMsjFPHYctyKCaLzvDPmmcUZwbRMuUiO9_2oMLcU5ThSa4RxpIM-10QeZQR9awFUfD72DTzR1Ty31xBrM_gRNMVpmUOC4LjHODGKcpPC1kCQk8Ek1QPmRHPVRfPKRABC30m1lk3bWEaoUKZJuef0WS91j7lZQUTXDrZKTJgTqtL-Y00d7sBXlYWvPeKe03TfxiaK2xE6MwrSzZ3a3a01OEl2u-v-b2qRf4P0UrXR2IhiZDXmdysnYTYM787EQsmURMJ45nWKMZkdLjmG5S530akCbR9RuLWVhqyp0rgTnO6OVfe45vKGLah6h_IrDCKN9wjOS_JDz0PCDrfFRXXxnhCswW6z2CjQZEqK4nvAcrHR9jvjYeetS_pb5WngmHCMXn_C4HTQYFDKm-VFICoLoakXv0P4fN57oVVgSLKAjkq6BkZ1b4-37LCLhff4gqT7HChxzUwJlsEdEM6Rlghrcph7qwthPaG4WpSi_RKpR3mv7GyYvix4IMV-MWlLnxtRm-1W7RqGnBY_7MIEAcbb2nFDvZ7VoLGgoOiM2PeIybDlSCn4-3Ba1emDf0hqfR9tbt-iSSNnsf",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Dato' Ombi, Kampung Jelebu Tengah, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9376671,
+               "lng" : 102.0708515
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.939134430291502,
+                  "lng" : 102.0722640802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.936436469708498,
+                  "lng" : 102.0695661197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Adat",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 398,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117388478862729763433\"\u003eMuzium Adat ( Jabatan Muzium Malaysia )\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uas4hdNKLDywrKXlHYOzb_3FOMIFnPi9t1GAGzL7gRhZmDVYi6JC7LLJTOSBc9yTaTe_4CFrgHvtbdqbSPpqMrI-_yRATmDkkKXHSdA1KU0E5LtpxFzG9m0QU2zBjf3LxHOcBCYivt0svCyddjgfCFVhPVCuczwVYYbcvADvfGrSe-BeKNdtlrxI07JSU_a8Vr-roK5o-oPLwBnlZHmsH9wnOf8Lixkc2BPO6jaQrV-ThNG4pp-PffGWrX-keTdYf9Ng5Cl556Ug94M3fL5UUZqK_J_FIlwmKufiincFXLjg",
+               "width" : 713
+            }
+         ],
+         "place_id" : "ChIJX6ep6x3WzTERLbG4bymWejI",
+         "plus_code" : 
+         {
+            "compound_code" : "W3QC+38 Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W3QC+38"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJX6ep6x3WzTERLbG4bymWejI",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 641
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9369921,
+               "lng" : 102.0684903
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.938326480291502,
+                  "lng" : 102.0698745802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.935628519708498,
+                  "lng" : 102.0671766197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jelebu Historical Trail",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101192809825688743813\"\u003eKano Ky\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vus4S4DXYDjNij-ArzERZo-UkoDXiQlOhdTBdYrR6AZqvLZLEw7GtgcLP4MgBxRfwEgrHTKqirnWEX5q_LkxLpAY22l7G4ZCr3Vb8JkwED7tzwtFqZp43XGbB2oOogxWuirptJWOYhr_a96ETmfIC23daXni8GYaWBINerQFZ1FHHWFkmzY3-dSasLPLWsF6HWzLePUPVsp-sjEIN8szU24kkvVL4DkbZKqoROa8uOhXSqjVtc1TrX7bbaXouYTJh8m9I4JEiDQqQNLgC293MmlPguc7X_K-Uw6R0FG44XQiADzwhTIeMDBHb3OB6MibfIb82LPI5s8WsaCNm1UgNNy_upsFcPOuxTJn7DWiuDdtD4Lotni3V3nkWcEdbKb9ao_2M5Srm4a_OM8CiHh-ugDYyZCTb8BeU6g5Ho160u7X6-tdJStUcujHge5w",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJN0gifvfXzTERawQvUtmIoIo",
+         "plus_code" : 
+         {
+            "compound_code" : "W3P9+Q9 Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W3P9+Q9"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJN0gifvfXzTERawQvUtmIoIo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Gagu, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9417993,
+               "lng" : 102.023356
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.943031880291502,
+                  "lng" : 102.0248267802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.940333919708498,
+                  "lng" : 102.0221288197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Tradisional Jelebu",
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105234818833230819936\"\u003eWong Gah lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4ArlqSdeg7EA8bAFyyXiIFBSgp2nlqKf8AtcnMnHx26N0hkBZe7SSH14mtfbEmvYwHxkA2zR6j739xL5KJ9ttr08H4M03c3Egfow6DSAZp5hEzeIwsKrTjwJMVR4rWcVen-j-zgDGE9m9JvZxJ9hFi64SIi75lZTU8FblIscTpJLBMNoOiqVV18hcgoG0b8mhdVgvATxkrtpYj7SL3736RVSZe9-DCljc0pQ1ayynJVE7PXx8ek1V2bwRziFpkTppuYnbkSDEZKEacSuLa94vubuDyMcamITKZgjTAV02WSB91NzkoMwdNjX2ALUnWdvrRrAmzys6t47y7v38SPKBN53UACxcxxOdNecpc5JuQMNg4DirsbEdblzfT7JEDnbg8F2-9zjcW2slhW3Srs8pNvyzNHzEPTU1tuT_c8tuXQ",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJO551J_vXzTERAumEWzv0wEI",
+         "plus_code" : 
+         {
+            "compound_code" : "W2RF+P8 Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W2RF+P8"
+         },
+         "reference" : "ChIJO551J_vXzTERAumEWzv0wEI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "86, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8644138,
+               "lng" : 102.0141184
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.865753980291502,
+                  "lng" : 102.0154082802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.863056019708498,
+                  "lng" : 102.0127103197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jeram Toi",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104082335319060977216\"\u003esudheesh Kumar subrahmanyan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v_mDi8RO3wPJ_NjgkUE79h8DcZmz-7BXD5x-WJ2gF-RQO8W9rECVF-lOORdiS9fIfQXLkcNC5pqoOQhaWXwDsft-xAEtiPjG9oDZM46Ys8ezJs_l-nOkJtf9RVcANSQ7reo9-4NgQVBy8hKCMGLu9H7TEutYMUFOq9CNARDS7KVwalNLots1c8EdjxzjBQ-EptjfJKvn8cmf9DF5M171LRVK2QYr2KbpJ5EeGtVD1-Hc0nAr4WttZKWPCma0--qGTEW82oYQ6SO8oUJEXXnvPh0tovjS5pD51mWvI0FXho02bgtNhunvaACdyESOnNBhhDfetaoJkcgHXKq1gAHSgL8Lx7pEIWx1F97QJj7xn1XUDitqAeMYVHAYo4ktzjJFL3YgeIfkIKmgtkAKERw0RVm8C3aYuW-t_DqN06TEK1YBZ0",
+               "width" : 809
+            }
+         ],
+         "place_id" : "ChIJXQ2TpNrZzTER0PAP-nGG2KM",
+         "plus_code" : 
+         {
+            "compound_code" : "V277+QJ Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4V277+QJ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJXQ2TpNrZzTER0PAP-nGG2KM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 663
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Ulu Jelebu, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9191771,
+               "lng" : 102.0820584
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.920499830291502,
+                  "lng" : 102.0834232802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.917801869708498,
+                  "lng" : 102.0807253197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Balai Raya Kampung Ulu Jelebu",
+         "place_id" : "ChIJ-wk6Ztt5zjERLHlu_99FK1I",
+         "plus_code" : 
+         {
+            "compound_code" : "W39J+MR Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W39J+MR"
+         },
+         "rating" : 3,
+         "reference" : "ChIJ-wk6Ztt5zjERLHlu_99FK1I",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "V3CV+3X, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.870201,
+               "lng" : 102.094972
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.871549980291502,
+                  "lng" : 102.0963209802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.868852019708498,
+                  "lng" : 102.0936230197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jeram Enggang",
+         "photos" : 
+         [
+            {
+               "height" : 731,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113370173676393298811\"\u003eAzman Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tuzTMzrUsGpQZBH31UoESafbJpS045xZyEdUavNN6n5KPLRnFgHBj3jgk_s8XTQ5cD5pFpIEC8IQubmPJqsYEVlb4AAHuTPoEEpvJoU3E4-wOTVarP2tHaH-ShHdJEGl1N9V66Qa5JXIRTCvCIATTNUC4PUl9508QWkK05ds3g079z66w7tPZaxvi3EfAIUhEda2q_GrGoiRGRAJ1_lx3PCscCKyIbPEdAdNFyx3SDVF6zUURKyVS4nJwyiNeoA3OXqaNpzyIkOd9rby4wkeEOkHhScqNBPs4O6V2VF10CahxK28Ln6vZUN1rNp4t8mfXeS8NNjMDr1dnk-d7b4mfXCKZetZvtZ9bPkH5l3lq9qLttNOYYGtQ5DLEeDKLj7TwHc0qey3WB4c3E2khl6aScFYJavwTi-W72_bnpzUoPc9OF",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ2d42bK53zjERhalPCj2HZt0",
+         "rating" : 4.8,
+         "reference" : "ChIJ2d42bK53zjERhalPCj2HZt0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 25
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Lalang, Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8107246,
+               "lng" : 102.0722661
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.812073580291502,
+                  "lng" : 102.0736150802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.809375619708498,
+                  "lng" : 102.0709171197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Jeram Toi Recreation Forest (Jelebu)",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105103604553622728624\"\u003eLuqman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4v7Rp3XcLBXE-ZamcL4w0hTvU3Vr62T9TShfFfmRzSsynbG39TxWXAGWYMsU4YY7oiRXUiZvcElzXRx6452nCHlFn-vBCBh1VCB1jcX-ahk2YXWF09r_xgEzaGDkGvP-Nj13sCs8e85nyoAkxtVC8rud5E8fBeoOTORMQwtCAlDOoy-n4GOftogONdWwqUVQn8ESbAaxx0TXaCcJu-VIWhWO15RxAX8OTBseaK4_wZfVXBEj8Mtlg-3q_hAjszm3u74ttBpoLGTj8tyl575Z5w5aIDKxLe3pfTWcRGYvX37hTsYbGssJBKb-A6baOTyp6P9s7kO3yeio05U-acePReV6AXVDGDcmxy2FXTmWx7ZAJjjy_oUkGErYck5blsm01YftdOWUzuwSUml1UkbuduIFQ_6dx2iBxzguhqQB_1Tlp",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJdVIcudrZzTERNXBZu0ghPlk",
+         "plus_code" : 
+         {
+            "compound_code" : "R36C+7W Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4R36C+7W"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJdVIcudrZzTERNXBZu0ghPlk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1987
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "90, jalan besar jelebu, 71650 Titi, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9975857,
+               "lng" : 102.0764825
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.998916480291501,
+                  "lng" : 102.0778047802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.996218519708497,
+                  "lng" : 102.0751068197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "知知巷壁画",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106678695046941467841\"\u003elawrence foong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vFBzN8wusXKr6OBv0mWaMv4xsJMlZ4EFbMgLVsvQUuKSZRvuVvkKAKy-AO0rw_chp6BWmH-QDqjBjQkn1TeIFNeKkUeHEx1RMFxi-lAN6opdVBJUClKwmiBOhdn0dRfULa6CCXaRolKGD10YOdOJ3qI2P_YChj2koWrdaKSDFjet7yC-QsrCzIbn3j3vEpHTr22zDYvv0JZtTa6iZC5ufV2WDkl48xlt6JJ9kfFr4Fqu65Xl8ZSTBVA_vp1PyqRjQY0NWG6e4D-4RJzOP21BhKHYSUb_aMdGoxk7ax9dqaqd3UIZG_cVbtKk469oJc3WTbiBdhxiw4TXyfRo1DpHcx0TZbO0FtyX32sql9bwhjcT2-vUWlyDXm5YUd5efqbt53Rl7_6js5ABo2BaoropcGHruhLUyBZ085fvyGJsAaBw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJb0UIiCN_zjERTAwoHytLyrc",
+         "plus_code" : 
+         {
+            "compound_code" : "X3XG+2H Titi, Negeri Sembilan",
+            "global_code" : "6PJ4X3XG+2H"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJb0UIiCN_zjERTAwoHytLyrc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "348, N 128, Kampung Jelebu Tengah, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9378958,
+               "lng" : 102.0712381
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.939215180291502,
+                  "lng" : 102.0725671802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.936517219708498,
+                  "lng" : 102.0698692197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mural Kuala Klawang",
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113329819302627252949\"\u003e張博凱\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sWrmD2viR8YsYUqHYqeCYSLdQ8XDItVJF9lm4gSrp3VtiBtced0GgWlCn6Jq3GkQS9EEo-Qxdmn9n6wbgus6VVpnUfnmqieAcrUnKNhWV66652zCH85uvE-5P3pGNzAy-qySqNuRBFVoQPKKAiXiz5Ze8KF5ybCsA-z9g5nyCflzEmVxIo-X6LIBugBVxlNldxL1qCiCsFZVvtBLtZex1qHWJ_1gi99_92YIlSXOOpbQB6_aUJRKP510Kjy8py5ot2WvgTWw_eGl_ES4Qv5UbWbiC72gCXpl96JRCLabF6WWDmQg5rbBfWE-Z4u_0Q-Wpj0_H_bp91faZYcR--EqzHfsqxVIAkS4Ct6NLz97cXumWLogN7H5Bc_rJjtgiMxukxNzvWWwAHtOWruOltglGcc7L31ppSX8eDCo04MBx5MT5X",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJP1cP7snXzTERiLQZ05xU53g",
+         "plus_code" : 
+         {
+            "compound_code" : "W3QC+5F Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W3QC+5F"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJP1cP7snXzTERiLQZ05xU53g",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "V298+P2, Kampung Ulu Klawang, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8692803,
+               "lng" : 102.0150109
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.870665080291502,
+                  "lng" : 102.0162250802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.867967119708498,
+                  "lng" : 102.0135271197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Budi bahasa budaya kita",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115412763046385386970\"\u003eAlok Jyoti Mahanta\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sI9knZHSc2_yp-6P_ZhCzihBhAMYM1Ju93Zpi6rw0Rh6ND9g7y-pJDvuLprQyiDrNnyajkOoEFTezBNfOo6uvJUyWYe_udOxnbBnYEhmGiZhBwjnAvU1FAYBVVz06GOg4obpRAiL3tRCNCEbaYySBvoLjUrN5Y_jgX4fYES8lz2hXFP3yS9HQ82VxvxgGMNBNwqGqnmzoEmgn2HxmhWMS1DFDBoxg7fl-OZd0zyW6OKe6tY6ZhS52Pre9YnYsNevKgrW77Qq7ce5oM6q_zliNJpwvVCPtAoGwEidT3DpUUq_2DxdHcldQnGCO8MVywgYBZO20oesDEgy948G-wG0GT7sMhcBaygSjL3lc4xSlUMcGPkhelILRx1y-SmYZHI_OHDK4Wpq12yg--kSJh3WW-CCYOV8R2EO8gn-uIIzsgrxpvjdnlF4eshOmzA3YV",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJtX3dOgDZzTERCTVnWEcTePg",
+         "rating" : 5,
+         "reference" : "ChIJtX3dOgDZzTERCTVnWEcTePg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9192085,
+               "lng" : 102.0819056
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.920566530291502,
+                  "lng" : 102.0831783302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.917868569708498,
+                  "lng" : 102.0804803697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Makam Sejarah Jelebu",
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101209084859927345168\"\u003eRoslim Abu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sgriaGUb_-eBvDCFOrqzg5VDXWkyXEZ-Z-59oO28Ccfhc4s_xwkNitSYcfr71SyQZxWw8BJLX5ulewhbWWAlgG3Jb8DP_m42R_yXAiTO_KOQReMCKFRE75tj0hfINnG4oFoqRzPfsHP0koBny5jE0CMRaltyrhYx_iM9TINWfXJlRHAke83LtDxpaCmzShyDgZukO4Aq3xro6jD_9XCd43OXx7xXYwITQBOBwysB1jPJ5kTqgGhbY6RhsPb9mrVUQyda3PUYivfwknE4Ibc-agIxqJmGexdroi3UVtCDpXjkaIArceEke7LaccArjj9qq3uu2s2CerBukdXxzexJ2UHad7RKLhjuWxWTXAOfC_3Bs07ONgUaiJuDmENyZdTs1hNqcmSdFUwdc-lKWRbj2gyJ2ZFV74kwViNH2M-58BJQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJsUE_K4R5zjER4Brk1GeD2Qg",
+         "plus_code" : 
+         {
+            "compound_code" : "W39J+MQ Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W39J+MQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJsUE_K4R5zjER4Brk1GeD2Qg",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9374462,
+               "lng" : 102.0774005
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.938891880291502,
+                  "lng" : 102.0789189302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.936193919708499,
+                  "lng" : 102.0762209697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Warisan Puan Jalilah",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106762591549475995156\"\u003eMun Choon Chan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tFtWVfjJTbXCEnYIlBn3kSvznd3OWsEQO0GTTsMWmsM7oQiRCYJCHskth_6w3HUNokWF2dadP5Cm8P5xfB9e9iTW4Frp5OdDCmFyTxW8BN2obi0N889ayGrbfrtCTNXnPsOUdGI0vSaazxpsv-MZxRKJ_LfQ8zJ8L5ddkwfUrJQkANPe0mfUdXLS-GW1tbOgBDV0uB1E3AZyNMs7uYyVUMKSOAoitX0KU8itOo1W-vJxfxtCGHRIuKlmlMtuE21Fw0mj2Ien4CW6ITowbPh_hzNP7sfgHlwpVWNm_sab12tbZUQ4a9fKNuG68q12QQBeW9N83qfJNqNNL4u-Dmjto8SaHd2VfjmI65H03HnAY0Bzgp5BBfMBHHKLoBH1YwU9q7TsMFx8RdUwuny9TGnwjrlYV5LEHyQtDKlM22DRc0Og",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJ33a736h5zjERdw7-f1DqfV8",
+         "plus_code" : 
+         {
+            "compound_code" : "W3PG+XX Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W3PG+XX"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJ33a736h5zjERdw7-f1DqfV8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "V277+5M, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8628939,
+               "lng" : 102.0142049
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.864932830291502,
+                  "lng" : 102.0154196802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.862234869708498,
+                  "lng" : 102.0127217197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kebun undang jelebu",
+         "place_id" : "ChIJo8zxCizZzTERQChT5iYS4rU",
+         "reference" : "ChIJo8zxCizZzTERQChT5iYS4rU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Jelebu Tengah, 71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9370069,
+               "lng" : 102.0699318
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.938415280291502,
+                  "lng" : 102.0713245802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.935717319708499,
+                  "lng" : 102.0686266197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mercu tanda Jelebu ( Kuala Klawang, Negeri Sembilan )",
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100254863751412300529\"\u003eShuvo Ahmed\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u26FpgUAdKKkY-vh75yCf61On-I3hBzz1OVD3j7FTqK3snCfuuOX4o7XYMg3PcAMOAySQq0N-OGCLOYqd6EcZR_haLoFcysmqkgO1Kmq9PuAiRdgr_rIwOy_Wg1w0Y_wEIzPTlY4MDaRrC3I6oXxVvEKbK3FYV7KMNWT_7xSqGqIopcz8yRgOphcIwEvEE80yw-uX-tDZ9TpykSPXIw4daIn5UODC_fxvFk-gQ088Ji5tpyhfheiJkHPfpifu2iMVrH8_TZ_mqgQzdzoWUUD4DGBE3FUERV9WhUGs9EQPiSTKO-4B_bZiDzmIZFF4jJ-HduQQL6wznFUYpen1mi8bEQzZWfSWsouTy_Z9Nbh-meGOFfc6F5lL-UtJmryAF8UrQWLnsTyBbre4xuCHS9EVbx0rrcBrvclV1GLsFqgQtjeNGckwY8Kcke9PqS9l5",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJucCJVEjXzTERsl9PJR-ZliM",
+         "plus_code" : 
+         {
+            "compound_code" : "W3P9+RX Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W3P9+RX"
+         },
+         "rating" : 5,
+         "reference" : "ChIJucCJVEjXzTERsl9PJR-ZliM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "136, Jln Kelisa, Felda Pasoh Empat, 72300 Simpang Pertang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.015315,
+               "lng" : 102.3003452
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.016630780291502,
+                  "lng" : 102.3016313802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.013932819708498,
+                  "lng" : 102.2989334197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Koperasi Pelancongan Hanya D' Pasoh, Mini Galeri Jelebu Geopark",
+         "photos" : 
+         [
+            {
+               "height" : 2560,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101194251008465033786\"\u003eNADI Felda Pasoh 4\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-taasIUXgsZ_Nd0oe6kP8Bx_b8KVXOlEqYq3ciuuXvi_YzpaEKJvHvboxUF-CKxOjQPfMoxb-E0mMkJxlohjLN4P3cCOWTPduGFqLTC4RzFNiU8qmpZSCsP8PROSTJN_e3UDvATcxdJX6YATbn0EA2EBjONU8iB68qPPhPYJaD6Q437aM5-7WZ_hRpfXnNgA1x8m3cSBa_XprZtxmC4fO7SbV7Oy45pkrEaHQLVSGttd5Y9MA5jcYtuABohAm02CpvI3kmJaxBWbKgjwPn2slY-9UxL5IuGGFguccBZxhyJ4XH5rTqB6_jna53nc_KIGxgbQuTMBBM22ky1bLMPo6uEg7NQsDXucw0es96OrdA-lLRnEybMEpRy12THMJ6hmvfUsH4XwIFMw0g7-Rg6IU5rgS95tBOz6rEiQvEw-sSXIcE",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJYdBNUABjzjERLDz9IvCcGcU",
+         "plus_code" : 
+         {
+            "compound_code" : "2882+44 Simpang Pertang, Negeri Sembilan",
+            "global_code" : "6PM42882+44"
+         },
+         "rating" : 5,
+         "reference" : "ChIJYdBNUABjzjERLDz9IvCcGcU",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1966873,
+               "lng" : 101.9888013
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.198036280291502,
+                  "lng" : 101.9901502802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.195338319708498,
+                  "lng" : 101.9874523197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Lata Kijang Jelebu Negeri Sembilan",
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110333648927948493055\"\u003eSheikh MD\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-smUqwdn0qRT2uAzEB0x0mwd-h1M2T0XzSWKALr_cMBMt9ra1CuJ2Vq8V_VQ8RE0dJuOsh6pT8Qsz7XBxdNf7EePFOsqC5d9U3sOVhh9P4yxQWpPylE9ea5-CHtWdmhklN6PiVFcnjLdaFgaf5C_8xWm0fZBNb4dUo8bp8WUbdn8AAbXeMxamD5gVzulBeG4Kz4eLpzkOGMqWtYovyACNbvzBQfSb1CvDKz1T4ygSNvFUzm4tRkDc_dmni9PkisKt_QlRgQymP4lIjyM3BJqj3y3efXVq_KCpMQ5I592ZGaV3VZayEvev6GeKCJecZqpiB-LphTb23_UN2G8rWFYbX8b6L1wH8Z5BRvHfsvD29DZcJb608Nnm9ju1fL4N-ZJQPWz8poS0ep7ACAMcBEGZSN-Eed-5Vs82qJDXthybf8EwABZoz1ZwT2mFr0qQ",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJm_HuzA4mzDERXY4F_WNF0uE",
+         "plus_code" : 
+         {
+            "compound_code" : "5XWQ+MG Kampong Ulu Kenaboi, Negeri Sembilan",
+            "global_code" : "6PM35XWQ+MG"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJm_HuzA4mzDERXY4F_WNF0uE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 65
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "361, 70400 Seremban, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.727429,
+               "lng" : 102.0585657
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.729017480291502,
+                  "lng" : 102.0599141302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.726319519708498,
+                  "lng" : 102.0572161697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Replika Tengkolok Gergasi",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114888674006974479944\"\u003eSmg 266\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tnI3b9Nk6FVRlveYmolxgypHVrqhQ7gFpSoJmnvwdJDJO3xq3GBzklIaRFLV2uHqOpp2EpSQ-PdWf4OI99Xbk3P7VCgbTL--IN92y1OJ8XFVMKj_rKSKHFEv3yVPX8KuDRGB1J7eLclIN3wcyo2VhHIn4nRwwYLO8gxWfHTByOHp9gOe_uhg3V9Xs_qynzO8YpVi_JWsY3Iq0X8FW7KYocv1qPG7SCiz3G_LrnJnpH5uSWWyqE9B3YhVFzm87SQIB1uItaX_vX8v8XhzwMeMbQc3uWyxDgQzK9JdDFi_pdAvxA2uBkiSVnWqh8-I1FpnAN-I68op-orsUD6AyCywzFdKoRl9F3dYa7XDLZ9Lq4B1fxoh2UCDqosZm9il7HvfiPFioUfu0GZlJITPyMWj1hmFRw9gDTGrRnZbijAIqYPQ",
+               "width" : 2880
+            }
+         ],
+         "place_id" : "ChIJB0c5hcHfzTERSKpKPe1WOLo",
+         "plus_code" : 
+         {
+            "compound_code" : "P3G5+XC Seremban, Negeri Sembilan",
+            "global_code" : "6PJ4P3G5+XC"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJB0c5hcHfzTERSKpKPe1WOLo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "72300 Simpang Pertang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9305983,
+               "lng" : 102.2651226
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.930598300000001,
+                  "lng" : 102.2675132802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.927348099999999,
+                  "lng" : 102.2648153197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Ulu Serting Recreational Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105729561041859819863\"\u003eNadzdzarul Amir Mohyeddin (TengkuNadz)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tCUyPNNOGvmwRFrBOGr8gTfEpx1c3AnWYefmC1_x-NGO_A2CfGbG9abl4GzyBGlqSqpk1OLTtNNpLe_E9H8vwtju5znOIJyHwrCsOdhSL0OJM677rP-eSsAZwrCGsjDaYxRWkg8EA6-Ffe7OS-JrDRcwzIahX6l8odCEY2bo5LxKbaAX-kNcawJEf3nvPntgxvHXZuN3FbNAchSXxyhzJKpUKQlnLdbQh1TyyGJLkSy4mXlW5iPAvt0pRprXFv68f-gVJvxQY3MJcI-5JNemCe8j_clzRSVgxtD9yi5VdIBw8AG1t-ITnKB1CzzeiTfd4jAuFn4O9Fzk4qYw9cmM1Xi-b1aGa5h_PBpJtNtECmEEzLDR0swGSVOXjKahxhgdAJfiVRjYkknqSil8zzRLoa7HN5PuZNLkvYSvFoCmI0spBx",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJLWVKz8lkzjERf2vLJ0wVoB8",
+         "plus_code" : 
+         {
+            "compound_code" : "W7J8+62 Simpang Pertang, Negeri Sembilan",
+            "global_code" : "6PJ4W7J8+62"
+         },
+         "rating" : 4,
+         "reference" : "ChIJLWVKz8lkzjERf2vLJ0wVoB8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 509
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "71600 Kuala Klawang, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9384566,
+               "lng" : 102.067613
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.939810830291501,
+                  "lng" : 102.0691090802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.937112869708498,
+                  "lng" : 102.0664111197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Tajali",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117354277261319600379\"\u003eYousoff Effendy Mohd Ali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-scZKuii1ysDteBBGQ1ORSBq7QgJ3j3UbSBNOB6Nq3ncjZrG90s_WS9mmXFTAtmnpn4U0_foMcKFb-QmZVjXm6RVDnJFHJN5L7cx2ewj7EcOsgqHiN-E4hyFJhSi7bx5272sQRvLndt6AVgD8aLHRGy_uiZckgOMOI2cBCCAGjYJOjvY9gen1QI_VgViAt-_JfiJ_I_6rn_8_C4fhY0o2iUBdsNvz3On7hvqLM0xxflDap3qx7rZhvGdmYWq3bQltG96hgs0CQDgDrNwA0lrEvlbPK-rYkodbM1kvl3bORBhc-klwBGymWBz3WJ8aqc1iaFlOlNephZ7iSX-elw4CoHEKPLkdKI1m7MU95BWGVQJfA48CwdCzjbY4DxJmzslvdxGqS89puutOA29-o1EyBV3XXeLk_lF-PHC0clBLqmlQE",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJI_esRbvXzTERc4hIHO-XM1k",
+         "plus_code" : 
+         {
+            "compound_code" : "W3Q9+92 Kuala Klawang, Negeri Sembilan",
+            "global_code" : "6PJ4W3Q9+92"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJI_esRbvXzTERc4hIHO-XM1k",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Taman Bunga, Taman Tasek Seremban, 70100 Seremban, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.7251956,
+               "lng" : 101.9461522
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.726663180291502,
+                  "lng" : 101.9476209802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.723965219708498,
+                  "lng" : 101.9449230197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Royal Gallery Tuanku Ja'afar",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 851,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109347770593362169849\"\u003eGaleri Diraja Tuanku Ja&#39;afar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vsblaltXKUpOBEBmkJEYjGB8pEfAThCjAEiaCDiFGFP-hLKuB_JC1ZWwRV8PcX2dpL_dJrLmCBmjD35l0oNDW6sJRowZpM2uoaH0JxAtKPOwvGKEbOV7FyV2Eoo7mv8LoH_-XtH_s1gZ9vEd3ytsAEbziwBuO9iyBWWoacbZ_Zmr0ypwcqljmbtxX9vw1-9P6gQ10LM6vetPCICMXFj2VGLXLlVcea9nDjaF51dnYNt0mVs_od9xJoFRj99TJm9E2G5NiIrvJyLh4b9ROM3P2NGGwNA4cxCbzGAn3HkSQ-ozHnHFh_3DNaI3I9UlnH6hke6Fsei4e6AnpCpUqS0GF4zMNCQl3RQSHyZZ5A6iDXZKDTeYedFPbqefCyKU4QGJJBYNaW5vSBhWnXk87y3lGxE9QHbciSIh0ufsXNBVUh4A",
+               "width" : 1276
+            }
+         ],
+         "place_id" : "ChIJEyRRf4XdzTERkEKy3nuHBpY",
+         "plus_code" : 
+         {
+            "compound_code" : "PWGW+3F Seremban, Negeri Sembilan",
+            "global_code" : "6PJ3PWGW+3F"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJEyRRf4XdzTERkEKy3nuHBpY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1033
+      }
+   ],
+   "status" : "OK"
+}

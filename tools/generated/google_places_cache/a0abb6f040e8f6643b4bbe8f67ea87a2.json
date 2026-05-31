@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Wah Keng Jooi, Pekan Teluk Intan, 36000 Teluk Intan, Perak, Malaysia",
+      "formatted_phone_number" : "013-596 6301",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.024239,
+            "lng" : 101.0174884
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.025664730291503,
+               "lng" : 101.0187470302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.022966769708498,
+               "lng" : 101.0160490697085
+            }
+         }
+      },
+      "name" : "River Cruise Teluk Intan Perak",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0930"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:30 AM – 8:00 PM",
+            "Tuesday: 9:00 AM – 8:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:30 AM – 8:00 PM",
+            "Friday: 9:30 AM – 8:00 PM",
+            "Saturday: 9:30 AM – 8:00 PM",
+            "Sunday: 9:30 AM – 8:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116213133936833602984\"\u003eAlissa Jaafar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vg0YU-15jZVGHpsvsJ_w5jX7flSoKQnh3AeqWA7j1Zl6NdQKPbi03roJaq6IaN4xMTW4N2WlwYz6iIUzu_Hb1zbvnMQpvkKQnnj5l9Wli-GtjAlX1KImycVUtra4jVDCAlfawdFq3JpDKgcjgJKScIFXRR48N0hXj2jaW-MFwGqc8YXmfRAkRGCsCC-Ouf4JQlJAW0XIShFi6CpIv867rhJHrOYYcdX4KY3Qzjm66pgpFkOEJh8m9sw2P2Rw42J6M4TaSheeLEe6UDyNTzQhlbGiiDLXOiHoakNNUkc_gyy_vbFl9Bi3NQ0ZyXfnHV-YZL5viYmWzCRpIRNwXtVUfS5izioAleTgTKJmPRh-bqtnHYKOeovrKfwWe-X6ETzw-qo96xl7IazNrMNtPw3HEK8e4ipygJRBr9uVOJ83xb0jKH9alzte74JqkmUNK_",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114949534764508421409\"\u003eEjoi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tB5FRKlUXcLenOR_q9tFKhkw3AkLpvTxZ-4frUJ_zYbPiq0ymp3Ub73Zjh2Nmg3UdSP5ovIjHFiMeH7sTng1zVVI8m4mseipO3mg6WgSoxpfTGDyOQlLT_bWtl9u248PW2JlA0vMRsi1SeSQykIQzefmY2g5ofh6Z3K0_M1yZvbd49aQvSyCRCTMYjcqjsV0ZGWArMMDHR3Ui__MmwoTUsQmMuZVaKrLyqnZl4HbKphW0JfoWA7nv5r8Vllf4-QQtV4ZfBBg-DIoHw4vEsv6kKS0wtcLofzeMJPWDubeXd7OTGgZJ4Jk-0e3i6xRWxsLhpVWxpupOL2kmh32yAR-ouvvGmNDYrYdngWarZ6h1VIuxyhNcz9LkJORurvL0sH5CEoXZtDsVORcOH2WgaMUV7i46ynQg_cjp3ObEFBijkUuo5CEbew85gj_ro6JQQ",
+            "width" : 4800
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111538561190527865288\"\u003eAM Mdzfr\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tPXlh0wMTJRLZsyehi-MqKRwgVoDq3jP4YRfFZAqv8tCqwajBIuFAI4IUzUSaBQJVv2L7kade05Ow4bl1H4ayK70WrSkTLxXWP-Gl3fntfYOJLELhC1axypyo38AiCPRWGJlJ6D3WRkItI6OXTfbfO0xw8Ceo8zatwEbtu52zmFh63KPY96PBlzCrh0mZZDc6y-qDavwczFZeZ4xCVWnkt1D0zkqNUA4lCLu6Un2fRAGrcTNq_7MqntUDM7MmBZ91G8PDgkYSQWsDh4t4eb70bzhV0jhCaJwix2L95icuT4xdDtu_yJhgt8_OUxWbOevL3LXGDkFbUtzWnKRA1nkAMszvmj8idPfFiu95xcQYAgLX3VW706cPtn9qiRYUt4X_u73CIfx5hylD-No0GbJ3acRmwUOZbXMtO9Q_MNYbdBtem3Rq6kRW7ODEN6dRE",
+            "width" : 3600
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114382896691171037938\"\u003eHidayati Sanusi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ub68EDWHzxCx_kp4ggPdT-WcXTB8TxM_aZozZMGrWtzNT328PVzWB_WMratgOQFkgobO30ZXWtmSXFsMX98-JYeObI6BzRx1JnoYTdsqMT5ls8caq2WdnzBnly7uaBV1Z1xdg7wozJ0kM-MmxK_ZuW0LpqysQdpi1FG4E8kBiHjyCZRTlx23x_-WcojA4DaB2w-m3tE-KHig0AM5nWZ7zHzzxD6d7DYFHwmKHqeGAu0g9Ktu6tbsslupVhiS9SUkQi53yUCKhmv8WAfniaWfqMTo78Q8yMJZmJYVPeFsvAZR8g9_IkA5d5QZmRMX-6jVGqn0lBNrYgfNKWut35E5ZB87cQuhyHTnbhMyTaud9yT_9ddqnfFJThwnseG9h_nxgyosjN8GqvtUvdGmCEEgXQk0bQbvIy-huNbh-akaNtw8fO7kZUlnFX8oP-Kqyo",
+            "width" : 3648
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111787682250119645050\"\u003eHidayah Aisa\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uVCcIcQyhy1bnC1BZ_khs1wINeBi5TPSWoHsaurl-6MiyAQCVyJL13o6HsYWaUm7GqFn1dN3LK1zSUL5gCwB3m3HFU_8w3LGhFY1ujkyVAHvU0e72hCrvPin1mSTk4NiVbTCciWRpSkEJcUuzP1Kg3HhBJ3ikygzlgKwLJJv42S5ZGHO-5cnDfkQ7lxML9IoWY1ytYiab4UiYi4tOQ1m5qXV-F_PWtc4ojAAOYM92fLaYIp4mj_K-e87IoQn8NNsoMLeyrKdRej3fxHXCx25LbIsiXKRmcPjhigsrfBeIS_NTTsdN0KpJTt61HRSc179eXEgFpqiwGuQWIGmej332yRcjDJ3O0ZdIMm_4RdfZAzGFc-tERudoF7fKDiARQYuPDfzKXwm0U9IqSMkfr_RQkE8ZLgyyy3asV-UU86wkJdWuCP9MoC8VtwIATMIJ-",
+            "width" : 3000
+         },
+         {
+            "height" : 2928,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100822314977135779809\"\u003eSharmira Md Sukri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tON-nERhHaYWy-LFzRwm-MQK9Eg_rB3QkJtruKTlX8Yn0B-QGFHxB4YeC0yuhYVeaUrBL-LJKCknqY81LqcFva3CqYEKDZHjRenwIKd57vJl6gG7RWo4jQj2bViN0RMNQmQvXgDb7u_KYDQFEG9Z-_YB3whKbve61bcpRcoiobB7Q2mim0kTuMEGEAVKCpnuM1FJWHPAJcNXE7x_MONmnSuc3X0n8mmmDBocKh0Wb9SZnuksXKqHluiLI7_BLqHZnfWiXsq_bJs3H9mRmAVw9G8UhGIckF2_gIyrCcMlLRje56tlCdS1QoxuSworKOzLdb8S-a4e-AcuuDC0tkOlUj7Cg_SFXfcBvZsu0zl307FIk6IVlL46h3E0yHcwkw0SR38yYr9Rq4zrcXGOVTZGBjLI1YtDq9S7Xy3EisoGnZgA",
+            "width" : 3904
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101019317953440594685\"\u003eElena\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-szEAROla8wlm6dvLNOK7E4lUuTH5M4ySwcYiUyr6KJ6k_qQrvgXxxZKa3De9MbB9B4nFwQSL-8BKsMI1bbgP5QudikOOWlIov_JYR3oOHUBRobEh2eByazTEE9T85GmOd92WmHdlm31k6xiFRoJhluSqluq_blQLjvxCDGpNIqT_ooPdX-O-4Abbmk-_ZOCasAiAR-zl8FIZzmEk2QDEtafFOOedmsGuddyfNE48arwBh-QRuBkTVR8-PgVQN-0Q58UqPQhwdDX9NXgFVml1Jt9HFUqrlTrZ4BAsegceBQ9NzkKtfIa-9Moddyc1yZ7GhqBvVJif_GGba06HqwjPzmet_RwTwLrw4MwDsV-O8aTGGfexmGPecBGjYtnUR3-AzjiurrTOF5xtKDhzJV_l4INuY5XfpCjos1sTfV8HIqPNs8gcOGeDBGgIDt9w",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114659493493502902474\"\u003echai ty\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tfUBlp6h3s6DLjZQfzWhQMt-jsBjkxHB1Xe6ajtmbdV07PmieHJ5MiXQaRm66BCCRB6YA_NAD18aIK75wV0fCAbbV3Hn7EE0mjVIcizTBum53pG3dfCTcowripOKgEBa2NZNxVh7jbgw0wkYk7ZcxtCCUdh6-A0jkUteJVmiEMuh9eQGGZggxh7ppR2W-fK5yEN36ts2TVl5zlAGN42f-UOMCm5stEqxRh2U3BVtiJfXfp-pivEa3T7IEnZFKk8RxvAzBvDIF64c1ZRU_onuniHewoVYKKyw3jIsTMNZK0Mp7GsX3MceKVTvl1cbYhx6Uha4milrnDAnGCgjzjMdlEqRJ9WJElVOQmupdq48bdNw2UtBzu41MLF7kRxRKqXwkSNss_914wf03KMXAUtmbVYrDfwpTAuz8YoRpp_YdleSvUXzt-kfdawVNKx_tE",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113493313754065296505\"\u003eAzwana Samat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uCUzXviU0D0CsIdbW2uUEVaCu0GTZxitp0x0tj6uhOJxvsllFx--IVfA7cOQBn8E-JXndtbI-gGIHWOuaxg5gJuLIq4nYCMHgPUcPGFp6ixBasVq-vtwehZhHvX7wtR_zXl2Q1wYFZpcwtDoVwLEnZQ3HKfiyVgqm5n9Uwnihz6utzyhlgmSEkB3J4e4j8gHs3jSI1IC7DP1tCUZIf2RW6NapYahSyfBuA4knKe44YpLpBFKeUZYfrk8lRR_IU3CLrhGm3BMx3y_AqFtaRKr8vVVjVxiRRWlvXWeNoJxqHoFE6ratXTytETKqGUfSY4Sy7JgEc-LnvUW9oaKScfAV8JsKKX-cQHsGRWkBe6czde0Z64ZFs6lDnwwksIFviLEBJgmQY5GQt8rM-kgfS-hMNNSV8K43laLXp5zEo0zx4kHBE",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106912640969370808604\"\u003eIzzat Afandi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vVeksY0GQ-06GA6MlqR1Erw2PKMgus3LWcR2cxP4EEagH6QakdPJ8gvDz3RmSqMhLlUEgBcq5d8DSqbe_Nu86NCAH9-uG7fv7y281qcycins1UC5XceRU7pDI-d7H4LZt3ojWccE6843O5FoNCFARo5ctXCnc74I665ub9pW0AhrDUfWmK4MWZmciOkoRR7OlzH5gop9BmyZnWnHbnZiuuAnVPSkynSGIpjjGC95q8p1UwVdOgOzLrfN0ACKi7YeYHf18Yfr5c2UCl711bfeV5Dl5D4uLMRFyqfAIlqrnTQSCxbmzRVL9sKyDp-3DPy53iWAY26bq9JKac8GpresEm8XnIhrTZ6RCSDl7yTWHL2KhNvrSPnlZL-OcQuo-AUEn8Zg4VyduiFnK2RCVzCdsVo8yVEvlFq0LgcsNKE7BAggBNOHN-F2z3Q5bqhA",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJc0pZ0O0VyzERTjgw9aaAJFA",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction",
+         "travel_agency"
+      ],
+      "url" : "https://maps.google.com/?cid=5774882076762323022",
+      "user_ratings_total" : 793,
+      "website" : "https://www.facebook.com/rivercruisetelukintan?mibextid=ZbWKwL"
+   },
+   "status" : "OK"
+}

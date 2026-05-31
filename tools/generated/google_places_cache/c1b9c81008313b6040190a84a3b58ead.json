@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Terminal Penumpang Sibu, Jalan Khoo Peng Loong, Pekan Sibu, 96000 Sibu, Sarawak, Malaysia",
+      "formatted_phone_number" : "016-875 2356",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.2853949,
+            "lng" : 111.8297136
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.286859030291502,
+               "lng" : 111.8311000802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.284161069708498,
+               "lng" : 111.8284021197085
+            }
+         }
+      },
+      "name" : "Sibu River Cruise",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1930"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1930"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1930"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 7:30 PM",
+            "Saturday: 9:00 AM – 7:30 PM",
+            "Sunday: 9:00 AM – 7:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 900,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sbNJyuZUR6xTszY-CfnGIGAvKyzzWtZrwQMw7M3-_KR-zGN1PccKypOX12oijW0xUC-6HnMCdcI-EmYNvvTY-8NjRXa7ArW0PXIKrPtaszDKjgJkIALt4ieJMaRbAl9TN85ckj--6jYC69sUD9hVr25QZdIGOT6sSoe3jhv6zCEuAAYqSCISLFxFkYHJ0z22tE9OqDkclUW1gPdZ8lgRTB3KW05GaBA82Pzx0hyRHLx4WX5MP2ZE2PeogpgPABUW1lnOB6xqalmtKoMN5F7PJXMDZusynIQ0vAd9BgWc4xgQ",
+            "width" : 1600
+         },
+         {
+            "height" : 1296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vMK7QNBnec2gc3cmAw_iGXQoxleXw8EXkOKlowl9zY8NUfoHGOWr4K8kis2WbPmQ_i-yD8wV_KA1w1IydSs_jPvHZuYyuQgzUgqqiVRBt9KsuPjQDxk19GLUFIYnANs1nzziMEgDRRNFxyymL0HzJRo3fKl7Z8Pw7WAw-BMHKqkgqFXzsvS-pqDrpJ_CWV1JP6TiLDfl02C4p_vMYfv8_k431sQUI_d5icEyLDcGPkoyV5iRPrMrwhNSuNOeL8Weg9sZ8mdAwB3JryFYDRCmFt7IZt3taQN4KcBRqXQIE_3w",
+            "width" : 1728
+         },
+         {
+            "height" : 588,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t_pL7_B60vlHt8IdW7OggTi4nZ0HlfFFeLQ2rOdcCw5bCnZFuISH2IMMf0OgHWxcBpgCidIemb2i1KVvUbpj5ruqkYEnrytUG2mnThiQZMsr3PHu0ED9mR0fP3jtrFKpaxac2-oYa_argtw3OU4Wg4m4HTaRllJcMaPAQIQOl-K1vqQiOLA5Qk1o8ATbp9LL__M-fwKDiyCeOu_YWTO3lUZjYkhfRC1U0bkmc3Y30p7zJw-i8ftTegiBWr5R4xF2ysbPAaQ0QN1MWAQEuF0Fa_L0r8PL6_JW688UY7ZjMtVA",
+            "width" : 1072
+         },
+         {
+            "height" : 864,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uk4-0dxeAx1TrTkbFIry_VgvM_zAIAqHjKL8OL2wpHmHW4d8CdsA9DXjNJDzwUTGidKUCCjT5TOfFdjcm9pSKQwqQGPZvYi0nNrrZeSgZ8l0JQRff0GtthXKVDuWlrmNDN38MFrOKvX1esCHg_cScJtRGhdlXzCH9jILc_NXTls6Ngs3F24ECBN8Pm6gVM2cIs833Uy1RGSXH2RilZdHx8j9gY3G1weBSoJ4C-UOAc2SQXiKkOwoaOXxeZIhJQ0jMn4qwZTrzjZdYOaLlLOx96zUrsM6gtOtNV_VgnTzmSGg",
+            "width" : 1152
+         },
+         {
+            "height" : 1684,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9HHRtxza-FA_t7h6kmW06fDfj8RlJKYy_h0zRuL_1nfSFOpK45cUfErEAf98r2GHvBMIiTHm5xfthpGjKfLO-hE_HLMSYxznrKywBCOBbABc7Qlf67PTYHuy5NuFx6WGUK73laink7yZ5spfens_l1ThamsbX1FnhAxktiqQhdvAQO_VvZZNaHr5UJvKWl8Dxy6nQiEV1-9OwLmiie3FcguqVCJVq26kPiZSa2GydY4x_6Y0DNaTetvsMZ1E6azDNLGQSyrOC9n7lTg4RoEWzfjlw2Wr4rQ1IDdJPT6rbfA",
+            "width" : 2996
+         },
+         {
+            "height" : 1224,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t0ORXdaTY-62jEvSGRVtZb6tmRDLXXWGhD31VeHJipzk3GiJ6zPEHoseOZ_k135RsyEMEUvNvgxyUVwCtcKaILETGwdBgyaIF5I5htma2xnlMXntXaMpwgTIYopO7PR4u1jHTZ-x_ZGZnlQyUqimosytbkHlS7ML0Xsoc35rpwLHwK30jjrS33cC1H2wOwWYEliVBJFJ-No6DhtIXa7UvMH-JkCROhk5_Nd29WiLef2kl7QxjPOP2r7RxPugDdvzzd4pRFWnimxviEPAGwIFGl7SpcC8KXqetxxa1NXGNvrw",
+            "width" : 1632
+         },
+         {
+            "height" : 864,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uebSwOS5eXwDmdJuoj0TG8d_RE73nX9tHYlk4omOQTIcJTg_sc1jZDnD25NA9tecOr6Eh1CbxajucaIxKDjJ7prdcMQauvXLS7l81QUXT2Af0QI3Mz7zvF_0vmEeYOpUNDC1hfRuxNOxslZFHb3v01516wxkvzvmGHKQtJoX3Pe84T0DCEb9YAdp2mwFQ90ydcphvMWuZ8R8FaDFZL-tNLNVAjpiyIGo4jVWkQAzkeTJct5UVGcoP5gCflF6T6SL0k5er7PCGqEepnO9EmDoRXu-DiWDSf7pOKYqWeUIpesw",
+            "width" : 1152
+         },
+         {
+            "height" : 864,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u5wksc4HX729MC2XcwsNwsVTgScc1k-FwviyFEgeihUCqhjJI_kpJtCDRx6a0Blr21pQgKP_A48SfZk6R3XYbjbwM2NP71Hs6xAe9ye39hD3fUfi01iBvAQXZ_q2jUysQ8Ud2SINtJTpjLn56QW0OyT1wO7k43h6p0VUbJ8bKmCqGdV5hOfxFi8V0a-C_Z1IBRhcEG2ei-KMnmyW9Fr6UABza_9aP1ggkruaumjDVC9NLcLoh8-t9g8_RnkM8rXdyO1DLfWakOnewvc8TinSv4JiokAzG44AA8WQSnSFaZaw",
+            "width" : 1152
+         },
+         {
+            "height" : 864,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8zKslMkCDvMK3n5W9r9_0IIhLTFjzgRxAmAdg-AnYU8hL5NNi6Zmin9oPYhEVab7UHPykNNdjrE4phBCzuK1EzTVL5yk2LWIs2GKCZs8K1xIGIZgKGda7KuZF4guV5wCCjmVvQ1QOZj1R6_DSVDWhR6Kb9zbutNCR4D5_MGfj0iUbuyGXfUSRSNi4DQrOkkCn83dlXC1duxDJXZAtQ1MON7mDP3Vbe16N2M2ilDXAluwWaU4OexDz2w1gGg7IknEAmen0tGl5OySJRcBfje8igXul9AlxOhsI1_FW9P_R2Q",
+            "width" : 1152
+         },
+         {
+            "height" : 657,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118436789592510845166\"\u003eSibu River Cruise\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tocQ66wPbh91S1M7hurW5RR9v0Ne4rGnbl3M1SnCFNBxmKGHvF6_ctaetjYXLJ42AM3jBEFF0_YJlj86Mt3E2RY79eiMI1en6bIZ8S2HeqADE05xvqXXDFBkRESDOH4W_QQddr6HAIJL-a6FILNkaoRiVSSPQYXPi6bWx5rwW7u_v9mk9EpU4vHkLcamEwqrbuq1ODxKcBqR2q4OQj3-x0nA4YQysk_azWSoz_mx3_9BF_44DkLe1ifhcUSxTewkEuM42hBzYXAzu83xJeMrJkKWWGBiBT93_u6MMwZn6GKQ",
+            "width" : 923
+         }
+      ],
+      "place_id" : "ChIJpbUDKcF_9zERXkfhrZcimUE",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4726847318754674526",
+      "user_ratings_total" : 72,
+      "website" : "http://info.siburivercruise.biz.my/"
+   },
+   "status" : "OK"
+}

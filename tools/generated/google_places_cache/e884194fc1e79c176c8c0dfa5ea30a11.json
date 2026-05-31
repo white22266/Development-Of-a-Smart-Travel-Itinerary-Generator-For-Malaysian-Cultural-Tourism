@@ -1,0 +1,61 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "91100 Kunak, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.729309199999999,
+            "lng" : 118.1688813
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.730676780291502,
+               "lng" : 118.1702032802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.727978819708498,
+               "lng" : 118.1675053197085
+            }
+         }
+      },
+      "name" : "Kampung Ladang Bugis,Madai,Kunak, Sabah, Malaysia",
+      "photos" : 
+      [
+         {
+            "height" : 720,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102946206845401314877\"\u003eBoba Kecil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ti45cw4AbxvVCoCDZUpTgdInqhd1NDc0UyrqonZbDxADRVJzu6EsJxIzdg_Q_BHG5C7Cq7cjdcO1-Nb19NrXMf_QBXWC7365PCU789jbgqwqQQXek8PFiwuh-BaoLrVzwNwlHtQEzWVz-vAI0yWB35uSDEKmWIqXszR6atH0XODDjUQ6g5zq3AyZKTTUZMts10d6zGEH0xjnOntDz8LHMkWzlI_0oG4RwbwiIfkLH2y069LLmRrzj58b-7AL1KSjtPKUKXGb4MHVdG1tZkrc547roGGePz1l-90fuCtlJZHiseF_ExnOYWPzEBQsQyKVTOtzki33gptq9Ew6RxNL2mjqC0AEgpSPExoPdVjMZ7muxIJ_wmf7F0dTl2jOXy-DKKN8dexkxu79JBv5C4F0whwbTiYqf1FOcBRLzjQhU",
+            "width" : 1280
+         },
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102946206845401314877\"\u003eBoba Kecil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uS8cDcrzAoZ_T4TTFCRXTuTYXlmtYc4IMCjqWOvxhSpemeBpxFk7xjfdkRjh6TrRft_pvGpGAa4uLijDctWY1aLfGsG5zvivnkvyGkEldsyws-UOtZRshL8n4Laz-dExdJz3DQERX5Vu1GMP5iIHOiF7T5GYjZ1LkIO75zp8hry15e1hllEy9woT1Sm6Z8834QITl2u-U9tpnY3N8FSA9QL6KUZoUSIQYFOE6-dThcUobP7Dsdqq0hq6e-c1eInmRIcEYWm5BPz7ugZpAUqtocx0p6F-KgLdFJfIn4YV6jXgw42OObpTtFxlTZUb-YwSxTRYHd0vuvoQPRBIIbaEaT_uviIYvnHz07q31m0FFWI6wIaAIb269DMqt6CKjXehtodzp7zr6rsIuTbkC1NoPgNH5I7IXXF3XwAstag8R0e84",
+            "width" : 1080
+         }
+      ],
+      "place_id" : "ChIJFfXPcCHHPzIR81pyxj0IDMo",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=14559020756797381363",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

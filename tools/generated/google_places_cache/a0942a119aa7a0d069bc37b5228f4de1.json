@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kampung Batu Payung, 91000 Tawau, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.234934,
+            "lng" : 118.020838
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.236325680291503,
+               "lng" : 118.0221606802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.233627719708498,
+               "lng" : 118.0194627197085
+            }
+         }
+      },
+      "name" : "Taman USBA",
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108157152092242074163\"\u003eJie Cong Soo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNfQDHNu3sV9ULnWr-1TjsGZo-RAUuh8yFnjc4kumLwL45EO_By5wn--aJf71lzi4WQwOUTOMbxzNlVaxwxTz43yhMDYT8oU8_aBBFzfQX4pgeOgHeA0ul0QPpE1m84NL89ke6STLX7h6XuB6iPPdExchjeHAeNSxmHfMEbmB9R2Sq89rDLg8xhCCjK17q4mI3bavOwZfVhJRpggNgqlb8n51hnfqexMMXgulaEwvifnFIwzwbNRn32PIt8c26kcxjK5X0C4MUH_TLZr_ivdwK0kR4jV-QyMc2n5ScaY-l_twXGILGJaYY6M7bGS4wRdoo9mcn3bHjvT2S4Egk0z1luN84VQZtZZlJZyJqQ9osZAPaMXiYyq8QLI7VfqjXQE2VIys9rFRLoA162J1ujkbaYGsevnPSxDW4DeMZiyp8rw",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJmV49q9xzFTIRjHc6RDZRxko",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5388083297710143372",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

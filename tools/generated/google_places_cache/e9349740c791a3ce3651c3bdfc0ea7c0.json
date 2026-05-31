@@ -1,0 +1,1182 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tve1Wncvjqu4i1Yy6lhh9q_J5d1Euzvb7cC_VOfPq3bn5MiRZYgCUJvyXeMqk7VxM06V79MWJ2UnELGvYG-lqzM3KyGFCMHgtIKFe7LjM34rBjoGOV6Ig0gwmY3fHGqn6RzIqolUFfmnvakTa4QHoophnaOWpjM_oPhLOo4Nz475wDqu2IiDQ1Bd9qREn-uRAtXOSkffUA_050lUqpzJTR4bBMY9dHNFmkHxAu4rXfnbATn1gaOJ4OdTtQp9AmCoWEI48sFhtgfUkUd5og8anxivKx-ZjtfM-rNKxWojS-Y-d6UGOexA84z5jb4XLi6LQsL_jnhQYzbqNffdqBZOiBpLnKAXHmSnVqvbpycdicLPteyvLKxO23pDmperCz6sZ6e7jCpuowsVFajDz5NEtvzLQM9cof-KgaGXxT53RCuIxSGp8HsflWbAai6JQOJxUs4LQRLO4UZ4dJiZCK9hze2boeuJlfyq7amkuZICKPgLrO5ZZZQMtEA1VYS-alS55qvjOuvEVyaSHomA7ZeenHw8PzBQArexabnrUo5kPGE2yQuSYBwmNkxRo16E70QAbuDu7lzeJUiTZnBbNCaCjAw7C7WkTziGB4K_MRlu5RQeFjBcFSX2yi9wvbPftVmPhknrcjLZiC0V13_4dA-VYfjLSjZjuh_xDfreQMPnwuXHlaxU3Ho0-cZgI2U-dUF5YlJWiibycKfYuFEfBwX1bSEYrg1bU8SGQnciacXd9hWkwTu5tgb0NLroeGSxc0IYLV7ANSskDQTj1XjxhOaOpyMQPpTTgCGKOBivvJsd8eQ_IESAuJt4p1lbEPw30uX5VftEGLY4HW",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B23 Jalan Hulu Yam Bharu - Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3314563,
+               "lng" : 101.7020786
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.332772730291502,
+                  "lng" : 101.7035152302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.330074769708498,
+                  "lng" : 101.7008172697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sungai Tua Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103483689023217753018\"\u003eSenyen Ng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s2zEXESV6Otgik8q3RZrqXv3t7x_9ZcDboRKr_drryciYn1D7MJFPA5q48OeNHKp5YPomOh84heFwx9odjB_Imc8GswCRWrrYqShNOeAebE1UR_xo_cy2zJfOr9ti6yRTGD3ZtF2s9T0zeu49yOfjQmjqzdrxqRf9YnExFLmiPrpcgNooBqK2WyrQXCWf2bQXWshsQ9t1kkPYNWDVxpy4yTacpc17uVF41eq6gRmTWKOuoGo6dSO89GDbIYm8iUfjTfo1jWO2TGy4smvV9SdaFnGsOofJcb9NXeD8MwM_QH8l62IY3lp90QfrOe4WOys74c-6BMsWDJvpI_JLOPZWyAmYAcpy4FJu1zS_tDI5f7kI191bUJ3bGFg40243rtUvbgdZSzJtMQDaXV8D8Drc8I5yyt3D2VDUXPVM8_0tHELmG",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJzRy7nQtAzDERAzOM4uu-rYk",
+         "plus_code" : 
+         {
+            "compound_code" : "8PJ2+HR Batu Caves, Selangor",
+            "global_code" : "6PM38PJ2+HR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJzRy7nQtAzDERAzOM4uu-rYk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 394
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B23 Jalan Hulu Yam Bharu - Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3125463,
+               "lng" : 101.6978055
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.313910680291502,
+                  "lng" : 101.6991100302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.311212719708498,
+                  "lng" : 101.6964120697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Eko Rimba, Sungai Tua",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105336118624380460381\"\u003eFarkhod Dadajanov\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uNteFtEtt3f2UYtirwX0il6Fg6dky52reC6nVrMv0RwsPRGV-4bpmZCU4fhL0orbpn7gik1rSiQwhyr_KvD7iCsGFvxnLxZH_SWzwL_tLksh9T7nHXIDVG8_TgmFJ8hipeAzJchiG3onv8hDKzsXRKJ_Z4TsV8neRz4CcnQewm77q4tx6fsgbtgiYuZoyM_ZeZmAGTGLCKAlp_fm-dJgedLWcf8Vfi40XRNfGyWhNRFWKJS7Wm9tM1qSfIUkptUQZpbKgFFlyfHgfJWDR57b_HEuFiPMWhSMsaUvEiO563Fil8b3h5qiER-SD-jRS7iEJhMi1cjPaCQA1ER8XxeKIXIPfJXIsY1XyhQtGx_-SF9Sy_sog6UiJdaxBq8thiuefDsCZfrM8CjyWYqWvBiqT3Klu4Cv5w--Cj3yz0ea8",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ2xGZnXtAzDERK_92fAIY0Ys",
+         "plus_code" : 
+         {
+            "compound_code" : "8M7X+24 Batu Caves, Selangor",
+            "global_code" : "6PM38M7X+24"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ2xGZnXtAzDERK_92fAIY0Ys",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1133
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "E8, 53100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3062369,
+               "lng" : 101.7351596
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.307605430291502,
+                  "lng" : 101.7365049302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.304907469708498,
+                  "lng" : 101.7338069697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sungai Pisang Waterfall Trailhead",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2256,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114739021764891615384\"\u003eMohammad Ali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tCUk9TN-3HXK3YrQnCGB7UbuI29X_FSOT-rrBXKFLGitAZZC9PIUDwVfK7AOjql747bAyey-HpucnLb1Z5yqw50mwDRSlt7WPXTzqZFiNCjeSp_mCBGpScWf6SgdrsuRxC60rxe9urQWSlW_X0MHk_NyNjfXANhSF8usoyW1FT7ii507kwuSXjj2_-Y1WoXU2hFQL_e37UtUWv6boaN4np7Zz6AOak8x8roW5rrBFV2kapTWw74dsOgdHu9LPUqoYh0qWGeb-em4GEBVmuKOHyMDgKvUUNOe5ocgs6nKqFVxNb45H772tAMnNyem9h9aswTVEZeqSf0Bk3z3vZqP24fQlswtin1RDn7hECxAgeL8DKg8AcGPPpqS702p2SiaGVmzGqpXTbJXs5mlMz8N41LHJssE40EMg7XqD8U1AtmBsU",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJTYDynzE_zDERbZiCWRohO3M",
+         "plus_code" : 
+         {
+            "compound_code" : "8P4P+F3 Batu Caves, Selangor",
+            "global_code" : "6PM38P4P+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJTYDynzE_zDERbZiCWRohO3M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 375
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, 48000 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2987806,
+               "lng" : 101.6193205
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.300140080291502,
+                  "lng" : 101.6206663302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.297442119708498,
+                  "lng" : 101.6179683697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Eko Rimba Kanching by Tourism Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114831534308251438197\"\u003eAnanis\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vmVJFOnAF1AmOf0GUW1PYXHjXMyOrdzD79kTTbyLYdWv2eMX-syLKkicJzDnVwKZye45BzhjDlRdBXnSkB31zCck4b1oy9IFuFftVaZsn-MSgmmYrJ4wrUUDua4H2hmebui6slHAi7Z-nLSHwQvKOjJdAtBRM4nBpcLV3f08WrWTKSJf1AGzAD2s3_uRmL8Y4pTagXKvIz_Bk2H112HALxydPYtOSWUeREBiH0sxOajpTyIJM8XYWa9SqHhPGLP9biQumeur2QPckXLYyk6L9QQ2Ylt2Pli78VLujRoEqO19VOesK8bjqN0Kcqkluh-gvudfv2NSzVI1bQL9PYEbNeyPAeyCE1kNdmpD_qJoddjtg1gnKoSdSaU1EJGjULTdNXUE1AXK2g6mYl27QkdbMBnVSS9HrMSNUwfqQhOGIYPA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJIyDYGWNBzDERkKlxz2r6uLA",
+         "plus_code" : 
+         {
+            "compound_code" : "7JX9+GP Rawang, Selangor",
+            "global_code" : "6PM37JX9+GP"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJIyDYGWNBzDERkKlxz2r6uLA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2129
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 20, Jalan Sungai Congkak, Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.209053,
+               "lng" : 101.843517
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.210411380291502,
+                  "lng" : 101.8448877302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.207713419708498,
+                  "lng" : 101.8421897697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sungai Congkak Recreational Forest",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108355327128842071095\"\u003eSamad Talukder\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v72aRSylzH_bw5-1zhSVtiJXvvSwJlisQMWMa1QBIi985IrHjqkxzO0TqzYnWiGoqzhhqS86CRb7ZZHT6Jl3MpGknn0Qxjl0thsJLfVU-RBSJNpSxgocxaxwEblxIkRZ3HcllvWvbqJjVav8efeWadnRAYVoAdkRiXNLB2ga-75EiBKEN_8YgxyOhDoxDM9EjBcN2egb32uFk5H5T66PNhdzHFvhYBjHyaCXGL6f1NE0JeGUHVbal6pST5HvodblykruA-u3SIhc7mtdcifH8I1Pq3ljFM4xY9EeiIQLSIQnKvCeok2FxDhZqTJjI7tQglsZ5npQ5QT6gCMWkb5sD17I1ZL4G6wcI1NfhbqikO03SYBc34NXOZTuFyKzS6X5fmROKWW5rpZSPHt3vwbRMBuYP1rqQNXgRRhFyeS7U",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "plus_code" : 
+         {
+            "compound_code" : "6R5V+JC Hulu Langat, Selangor",
+            "global_code" : "6PM36R5V+JC"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3489
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sungai Tua, Kampung Pasir Ulu Yam, 48200 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.311927,
+               "lng" : 101.698036
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.313525280291502,
+                  "lng" : 101.6992655802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.310827319708499,
+                  "lng" : 101.6965676197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Negeri Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108381928194456739060\"\u003eEunice Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAZdLt632mMRy7jm_vpKG9K8swSsjOdm_d0CaR41SHYwW2WpbW0CFc065rLR9WEe3wXQeo_VKg9QDbP8KWp414hSj_fMOIZRZhCzQrZmM91g_j16qwF_Y18P8tQsRNKBQEpoWAyxKjwfSmbYxYSIUpHEO54qRscMcwdJ1pNIjDoJvANtR0CqSsivZ3EH0Ymhzh7AIu983fNhUQVfSJF-F6CRTwsUUOGE1xchAp7EZQyMp6eIj__bTXba1wk8CKWxjHXTEHZKHsC1kbiI12hatLCo2p9zrerk4tICpFA0kVEU3Ffv_yt-38_x_wxL0vhPBGKNYd1FtiYOlSIbcEq86qBOK8RRih6fsiASp41DBQeHrHcYW1iibqmdCdnVWjCFsxoKoHgcjyrZ-NJiHkP0qrZUV90h2p6qNb-GZJUucZlAW5pRdvtiLUzuPyOfus",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJlwXJ_nxAzDERIy1pPVQ2Hck",
+         "plus_code" : 
+         {
+            "compound_code" : "8M6X+Q6 Batu Caves, Selangor",
+            "global_code" : "6PM38M6X+Q6"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJlwXJ_nxAzDERIy1pPVQ2Hck",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 989
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "8J88+FV, 48000 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.316239,
+               "lng" : 101.617191
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.317587980291503,
+                  "lng" : 101.6185399802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.314890019708499,
+                  "lng" : 101.6158420197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hidden Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114701056094328472004\"\u003ekyaw kyaw\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v5euR9_TPIranopsCv3rvUaAabu_jjWsUi3_yuYoltjKIrZXTQBAbwdY4iKzWt5qeFqP_5Hs8XtBTJ3vYULe-p-6saSSIoVarmmV3UBnvJV4qJ-j6JLyIBaNUTbOQ56JJvbxMpUH4mtKvw6smgz-j4_uNNmTWHehoannIqJT7Y7bxPfs191i_ssIgBHRngWfJ3Ij3n6UACooFAXnd-iYmJnHjHjsisw68Tcdm594JyCKTrYLR6GDP05csPKEgE_RqrbmBdf5P-gsvJ9_Pi8m3ZxZVNNqSFQZPUikawI42-ewgVIeISPx36b3OwMQQ-wWdDOfuoKp4d3NH-1tYGJAhCSKn3VUxHVefvc9gG4PLCR8LwBUbnWw9wyZvt03BXibw5w491swDG4pWlSztKTBBJWI2CrtxKMVuZqvhGvUlJrQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJO282BEBBzDERpwu_8t5P1us",
+         "rating" : 4.4,
+         "reference" : "ChIJO282BEBBzDERpwu_8t5P1us",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 36
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Gombak, 48200 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3161606,
+               "lng" : 101.7330266
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.317509580291502,
+                  "lng" : 101.7343755802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.314811619708498,
+                  "lng" : 101.7316776197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pisang Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3297,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108539661434104769356\"\u003eTakayoshi Tetsuka\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vq7Zc-_xscpsZ1dPaggiqpJuGPJhme5R_199OEoSLnwr_DPVeBtqFAft5nc2OXzboU_rjEMSPJyuFkG_pisv-rBejV4dMMA0NfX7WMnLIcy4rUdD6izJXX16K0FeR_YlCDEYTeCLZdwLfCrxgWYvCeYWO9ezHMAFzj6Li4LjMlphXTLeXwLvkEJGxou34HWThWUsI1SIOh9L2qWxJRX20yLNVP0Pd1nATK8eSZcKJePYBnhLoWY3QGrj5-s-QkpaxcD0Bp19QOXZNgBE0DcJ72WugzDEWPhmtpTf6s5J-E8-Qn4srmRUmOQiT-1VsRBm4rcKOXz0wDR52kGKFBUBsja2LFhORSDKuqnPwKZR7lvRafwe7mLn2s9Tg4G-e2QfaReuoNq4AbiUaNrsDj2ldVweKYfQIgc7cGTSmzNBJCC5TP",
+               "width" : 2473
+            }
+         ],
+         "place_id" : "ChIJZfOFRAg_zDERYRPy3tFV_Sc",
+         "plus_code" : 
+         {
+            "compound_code" : "8P8M+F6 Rawang, Selangor",
+            "global_code" : "6PM38P8M+F6"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJZfOFRAg_zDERYRPy3tFV_Sc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 93
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Templer Park, 48000 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2994592,
+               "lng" : 101.6195011
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.300533080291502,
+                  "lng" : 101.6207068302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.297835119708498,
+                  "lng" : 101.6180088697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Eko Rimba Kanching Waterfalls",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107304010412077173901\"\u003eAlimi Arjuna\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s4TwxSBarn6K-NnT8hd8hPoIg2Gki8241rFRoAXEaGDfpstcTOeQcxMumQlia3WyKI7bDJxzv2T8QmErmosePRETTkJ7fkWVXjlyXD_rFaFFxWUTA_GcfCTuBzMNdO1ewmTtIyLjTcw77PofA_ZRGI1M_8sjvtxqJIgNAgvVevPMT10w4XOkOrr8cK2-RgCZDGBP8U35RJhM18hXGWXRCxZjXH2FTheZ0-7hLxBFwNFcROandb_wATPVD5QQkWa0Hu_yAfgUTzwTmsrzwpwVZcclOxz92JeUZPTvPxk074n4mJZpznrZ3gFyBlS2VcgP_ohveuXN5ftw9HX4AYHtyc3GZQHEWGKqBbNToFxHtR6OftKFcr7X0xgSAA128Ztrn2pO0MdX2kK7oIJHCM4-XkEH6sR1ughqmFWstoKTt5RiLticuIhTt7J4tE1w",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJy7sEC9lDzDERumSt3Vab3bk",
+         "plus_code" : 
+         {
+            "compound_code" : "7JX9+QR Rawang, Selangor",
+            "global_code" : "6PM37JX9+QR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJy7sEC9lDzDERumSt3Vab3bk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 751
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Tanglin, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.147631,
+               "lng" : 101.686381
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.149015830291502,
+                  "lng" : 101.6877482302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.146317869708498,
+                  "lng" : 101.6850502697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Mini waterfalls perdana botanical garden",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112856181637493042901\"\u003eAlex H\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vV2g8JupzDONAwqs6TwuX8pagBkOPCkM-2YfTB8RuwlbJd9HjsNiC9xgugH7sAAPfOzV96LV6MFE35Y5SDv7suTgvdJTtNUGP4_FE72PZJ4MKpsb_1RbJeju0m5spqOEUKpzGfRYwpzcp3YpsisZGEztfKo-tr9WyEbYW7GFM2F4LL5ZvBwdEql9qcoBBGNFC025R7Nvwd3V59YQ8s1PmTwmx-LLCsYTa5Y7vw8Ep2GGPfKpNc4qXksrkL7V4eY4nMm0H1eGQPE0jrnDg3PAoT-YTJu7jXPMIUrzPXjeiTYpZlojHAylhZEPzAVhkgn_FnT3S9J-oPumFkgGf-4RqW-SJ1lU9BPBRjeVzDpyY8Wdy4mbl6XuEKC3YdYRAp5YaaAYinIUQXB-esz4dHjVXaYmF8AX925ufQjulC-qYZxA",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJxQSKYeJJzDERmDekPHYCps4",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXP+3H Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXP+3H"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJxQSKYeJJzDERmDekPHYCps4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B23 Jalan Hulu Yam Bharu - Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3320002,
+               "lng" : 101.7016689
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.333216880291502,
+                  "lng" : 101.7033744802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.330518919708498,
+                  "lng" : 101.7006765197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ulu Yam Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118169124660539915399\"\u003eAsif Mahmood Dar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t4jq5hvR0BsVuWgndpG2wAfLm9tvLFIygKv3PBvJJqaYzw_ndsW4wzYIOKJxweuIWWFrDUmwg2hml4EMD16vOa8LnnYkmvIDl4MTH2JApo6ZvZ7cOr3-k7ExXxWYgg1ozX5WSvTvcG7Lmux290HIkIxj-WVY1chbf-TLp3NumerYxjOMPVRqW-oMn-CQayfxNnKl5ks-77tq24SkW7ZbX8B_tzr6j22Qn7VgeTHPyjPh0KnURjhZuOtNT8xG859InE6q3pNcPpztyIvJk5OjYUWIzym_lwlIfIHFnJWLbyAq978qHSAc_Rq3i0RT1cgXFcaJAayvJEwFIdmZuOszAiZBaW-vLerIuvp8XgPwGAEDCBfJTjPuUr45RYvkEt3XaL9VtGrV9_WcXU3zJNXcU85Eg0sA_yZ9gnouBc4gP9SQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJb4N4jwtAzDERlcKqFWKFJEw",
+         "plus_code" : 
+         {
+            "compound_code" : "8PJ2+RM Batu Caves, Selangor",
+            "global_code" : "6PM38PJ2+RM"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJb4N4jwtAzDERlcKqFWKFJEw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 144
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kilometer 23, Jalan Kuala Lumpur - Rawang, 48000 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.295739,
+               "lng" : 101.613584
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.298111930291502,
+                  "lng" : 101.6168528
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.295413969708498,
+                  "lng" : 101.6131098
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Commonwealth Forest Park Falls",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102868135166470535239\"\u003eMOHD HANIF MOHD NOR\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-skRvJNWDonlIcjSAuxXW1cVZCbsgRtMWIQnJ9-bdIV4dtBXgDEuH9PvJuhYTPLY32gQw2FvVj_6LBJlLi1glAhWlOvRSrFXd8f7mg7uU09xOCjyFSDqKZXbzkyjkorqrdbC_ZdpzH0L4fw34WCNCo6_eF9b-ReD2Zdr7lp_qxipb_PY8re09BcVn_mHT2CQG9VqSceRCmJL5fOwV5yF0s-qFTneU8kRNRBNIef7-lB_ht5--PECdNZ9FY8eCdONN42ZX1p_4lgIi3tQ8Op66fmnhvqGxcNGWKSfkoJIzuV5XWyoBFQ4T2NcCq8kujbgFdC4q9KGSpuJslaI3pf108lbq1zyA8BPF6PCq1Q7l3aunUK2kiLrPzKbyj3023tKwTrxY1Paq6kv9PEmfR7BeZG7btO2q_3jLD3WNQlM_veiAM",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJjxPp0dhDzDERFibn2Q215Lk",
+         "plus_code" : 
+         {
+            "compound_code" : "7JW7+7C Rawang, Selangor",
+            "global_code" : "6PM37JW7+7C"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJjxPp0dhDzDERFibn2Q215Lk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 615
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kebun Bunga, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1443027,
+               "lng" : 101.6844361
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.145648130291502,
+                  "lng" : 101.6857738302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.142950169708498,
+                  "lng" : 101.6830758697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Oasis Garden Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102371644062093013053\"\u003eB “Wild&#39;n&#39;free” Wild\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uQqTXVM5n2Iz3ORo-Y56d48uTP9f5MrMReXazL3bdOlzpeLrBHpgle3UtvsHNh4r4CpSX98PUAU0K_T0gOnOQlJY3Ew-Rdn2g6HQxZS2PcfPyRN_mYIO3Zndv8BuzLEqM5mhfXZF4q29nIQbY4Rq-o7yzdfqEavaU399ITqOzcVn54BFqEgH1NgqGYXq3Eq98oHp8OtUx4uYS7S0cTDuUR_2Z8Z0hr_F4sZHcUr0xv_nietXGbrPcmUrW8i-J2re1s3PyJIJW2-3rSLgJapCAB-9Y-58yzc8pmYfkLvW7bOjMxGn0LAyqm3dcW33wKEP62rawHJ6J72BfDR0aCcSk2Gt87HJAHPe-Ff1qU_uUuuZmqmEp7f0Y20qC3Wo8di2W3UuMmEZHkIjpKQ8W5bUuKF5LA_dmPni2UI5BreLLoQMv7",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJt9FkyrdJzDERQJjvUI0YYT8",
+         "plus_code" : 
+         {
+            "compound_code" : "4MVM+PQ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MVM+PQ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJt9FkyrdJzDERQJjvUI0YYT8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 20
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, 53100, 53100, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2587179,
+               "lng" : 101.7045328
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.260101480291501,
+                  "lng" : 101.7058719302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.257403519708498,
+                  "lng" : 101.7031739697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Trailhead - Air Terjun Tujuh Puteri dan Bukit Permata",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105999912594739723290\"\u003eAjue Hanie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sqMtzgqwg75BssGgfUl9va40tDZxlzKyd1_wwHqBFJQStuDIN_EDsGPqLk7zOdo1wRvp2oSd3knfx6KheC5FMfOJamhI_HyQ_d1rOzVHe7uwJOO9ZiGpvqIkdyQeuP6iiFddX89pU8640gZKpaSIUVxi8Z7g33-gS4YnmynjtAogq22CMELa0LgRH5E3PHBRCg29PNi115niem597oN2njjAiTjIukwYTiamwg_kbik5qU-7QxJ7NEN7swKZT1JuliwUBnzAvb0iMZHmOnR-6NXPtUnePGtOAI9aCLw43eywv_hpB5HIyKQd4kbCfhDdrMPQS36eEsJPz1MZZxmE-lQoqjJA9b9zGJ4ISsMjYiJ7mNGfD1hRbTtGMJT76QearzZU2gZUxhkzt3yG35C-wIplPo37n8Gl6m5t_R9IKwFsrD",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJ6XeASvVHzDER52o-Zjii5oY",
+         "plus_code" : 
+         {
+            "compound_code" : "7P53+FR Batu Caves, Selangor",
+            "global_code" : "6PM37P53+FR"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ6XeASvVHzDER52o-Zjii5oY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7JX9+XP, 48000 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2998875,
+               "lng" : 101.6192662
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.300747380291501,
+                  "lng" : 101.6206194802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.298049419708498,
+                  "lng" : 101.6179215197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kanching Waterfalls",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115152777446001608707\"\u003erae rae\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tfni76U9up3k_-ALi3ftNPU7bRgn6UVOkP8sBK3AeQwqNHu1n-LMzoIuwAJyissNLk3jhChHmgbRUgarrD92t0zys_ODcv_rs1oS_xaw1CoS5nJHQ7P13IZM5DBdlAl8CHldP-4rkAiJHw45gCV948BMsiisPZfx0FswPzRKorCI0BZvZlszZ3m57Jl0st6Ejgiun5lqEH083f3yktbez9VrWNLvmGEohpvG0KgffGiIOWhbMNO-JY9ZKEap-nLVgME_ffVXwjaVnSzjzJhVH2jTYo81SsUhqs4gVI5s20BobcYb3TB-YqR4_hJ5-oKwqWpdSA2Y0J-XKLJ5BUSQyqB30gtqI2uYfqG6Ytx52QWnYxRCmu8DPBoRUatgyr2MdXjDSWCFArTsbi5f9RusuNRVRePbclx3LPahsv8M7tQPrLXEmD6bNWa3MkoSNK",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ7bbeJABBzDERcSICChlItNY",
+         "rating" : 4.6,
+         "reference" : "ChIJ7bbeJABBzDERcSICChlItNY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 57
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Antara Gapi, 44300 Serendah, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4181616,
+               "lng" : 101.6526924
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.419545480291502,
+                  "lng" : 101.6540388302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.416847519708498,
+                  "lng" : 101.6513408697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Waterfall Lata Gapi Trailhead and Car Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107878174082187770273\"\u003eLê Dương Bảo Ngọc\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v0nQmfPeToTJ0VrfTrWp7kA_Tn6itHxERCeQrw4RWZ8-0muDXQ7RW67clXL7Nuz359ysIzFCJl-An-RkGNmutHrwpMP1QqsWbEay-YHJV224392iuHVGSkCLK-K1Lbrqk9LtpANzomPfuUUlY9g6Al27zTc1v39ZXGxy34RNZwwUnz3Dte2lU8aB5NZ37HaIbGUGPHTHKkk6YLYBYCCTNOZofDmNEnMt97bAti8jrvznroK0qT-OdiH7_gEBC6lMLEn9zv3-8VKdLc07Wbwm1Ooy_B9OhcdRx43nUKOMlyQMavyj2PdW4RLbVH5qiBQzTyXr4KbS20AQ2xC6X_ZSVPxm5WSMWqYdLSgsxsDGWeDCVtLPDiKlTjqkL52Yo5BX0UHJfu5TdyssqrHkRGt_umn7HDgDDdFM6KYzOLPF1GgdRL2uSNSvCWvvLJN9iU",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJLb483y1rzDERU79SG3U_weY",
+         "plus_code" : 
+         {
+            "compound_code" : "CM93+73 Serendah, Selangor",
+            "global_code" : "6PM3CM93+73"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJLb483y1rzDERU79SG3U_weY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3, Jalan 1/4b, Taman Bukit Emas, 53100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2296258,
+               "lng" : 101.7434419
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.230918580291502,
+                  "lng" : 101.7448434802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.228220619708498,
+                  "lng" : 101.7421455197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Melawati Waterfall",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107580899232201858709\"\u003ePatrick Gou\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tAbOwvoeY0hQEKRDS88-RnX5Lxw7hHemT7AzBbvhTU5-G7XZa9DgrqqG5OVF9DPWBF8--MXP1VSKfNze7BG96hG23GxdAYkl-zDA4tcUEnAF0LSKy4x8DThnS_iEdObJbU2J7Q4WI6Fru3rJHfm4uGqHqmFunHbDAXA3Rjo-anKRE08CkVASQTEobKo8svpHQ2TJejggdI-8UbZ7mIbvDTH0IjqcqWPOpYTQKE79amxNrYxNvra-GmCOfX1VVv5kP-nYda3VHHoehXoNhiZz2QC9_6U4cL5VkkjeyDY8QY-PxhSHD0_z6Cd_9ilpx1O1mbUThIuyuRZxfPK4rEZWdtG3xBMa2_FK3REznEMNzPk60v4ZKQBjRWjDs3ajbslytrXFl-Nl_MDSSlPRp_TMbB_SSZYJYa5JDa97zOdemyMQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ0xIM7po5zDEREC3QCPMFfSc",
+         "plus_code" : 
+         {
+            "compound_code" : "6PHV+V9 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM36PHV+V9"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ0xIM7po5zDEREC3QCPMFfSc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 59
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7, Jln Beringin, Templer Villas, 48000 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2989882,
+               "lng" : 101.6196976
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.300244380291502,
+                  "lng" : 101.6209241802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.297546419708498,
+                  "lng" : 101.6182262197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Templer’s Park Falls",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102069671126643131058\"\u003eDylan Sim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZ-z2VxFxbTvhT2sP0JM1cYAmqh-gFgrzWci-sepAU1yjik3VNeHn0JpF5keJvT02nNW7enhEaBggslM21Bg5DgHtILov8cxTxzTGU_f790l175qG21DRxj2i_BPaS7y4SaE6gcMpC12bd0KdM0Gl-Wxdtn8_K9wL8uANOb6_IzI2vb-V8wzuSFkeqPtb3Gz56oIc9vvtBNHvUREpVTTu6q12ZT3d21CeoU75GkXDSC8A5DAqs0zANIMvQV79TzFZK5bTzn0d0F8OLxT9RI4SBGon7f1noX6wSZU3sBtPXAYXZSHvBLRpM9fK1eXiUCvsGwUkRKrbldvftjPg8hDWpn0kOCpHeQt3ceA2BDJ4C5Kv_blwlEg2Zuhji0tUPOFDmzU8pf8_wMc6IWRXHRvAZnLPB50FxYQ9aTJlXYSWXUs8d",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJiaz_FWNBzDERNkSQwNkrpvI",
+         "plus_code" : 
+         {
+            "compound_code" : "7JX9+HV Rawang, Selangor",
+            "global_code" : "6PM37JX9+HV"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJiaz_FWNBzDERNkSQwNkrpvI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 208
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.251107,
+               "lng" : 101.8658741
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.252455980291502,
+                  "lng" : 101.8672230802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.249758019708498,
+                  "lng" : 101.8645251197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lepoh Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3507,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105446303785684232285\"\u003ekijal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u7Y_F5xn_jJPXYkGe_FnqtgcC02vabR0zEZ8y6zMQfpj50DsQnl6lVlpa4RqHC5Veaq-XycnZAriCEMEBqjOOvqwiW9qv3zlx1ezy9omsMtjriapFO7lcJBf4todQYU7MHPyVOwfOgJkTU7GmoqG5C_CN5kFUcyruY4f00het0rt4VheftKhflYB6KgclnvVeeKXQafwz2DvD2X9GhaG2KNt3fK0q4JLkeB8o4MiTZi6jq4xeHVO-d6u4C7n8_X742O48ExsoXLTL_L5MOqEXOj-kDBBudUwfGSCe_MvweJb2UozxvZEYAW4I56dIKxej1IWjiixkAUaVc-1UBVszXE6fblezz8MYTSL2caIRtyGRuQLgIcWsMNCo3fBz2K6Q2w24o22hqKCSSTbmXvzRaSAXE7OxgFbharK3xZSCS4w",
+               "width" : 2629
+            }
+         ],
+         "place_id" : "ChIJoRmQcGo7zDERjpTXeCXFxx4",
+         "plus_code" : 
+         {
+            "compound_code" : "7V28+C8 Hulu Langat, Selangor",
+            "global_code" : "6PM37V28+C8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJoRmQcGo7zDERjpTXeCXFxx4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 494
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.333558,
+               "lng" : 101.7239106
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.334906980291502,
+                  "lng" : 101.7252595802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.332209019708499,
+                  "lng" : 101.7225616197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sungai Tua Recreational Forest",
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114005067767117295684\"\u003eJyothi Gangadhar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-utPqQftFJQrfBK0Uy5bWm25lfOgR_hbfQzSusnDaJkQxyjrsMdwZFHFF8uVTL-7519bMJbajLlH-3LcDMVpfSzWzMNpbYmxedRNaNZ5o-QnCUPqJtSmTEkf6M7NIw6tgqyQ6o03SgfJSEdqrV2nQhqiX-gqud2sa7o_HQQg1ATpWFapDXgOC1fdqW5C_ZW2Qm3wQuY5y2ar9ojU_yuY4Lm-KPflIBIvB2csxjUYo84O8ycq9phUzAhY37bnHxo5yyJtw_qmRlKrVgWFCAEz8xg50AEJHmN4PFT-VNsp5-i2j7TlLO8Gh9igcmncy6OIi784N1CrbQ-K0qmiTLke3SjQ8K7eC9RYkqNe0oLrNgu2aZ0widKNCOJe95g_atzquj0Htgd-hq1IC5TfjxOFo_D6m57qu0ywDiyi7B2481FQ61h0HQtfxsA-iA3uQ",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJVVVVVek_zDERfouL-z832ok",
+         "plus_code" : 
+         {
+            "compound_code" : "8PMF+CH Serendah, Selangor",
+            "global_code" : "6PM38PMF+CH"
+         },
+         "rating" : 3,
+         "reference" : "ChIJVVVVVek_zDERfouL-z832ok",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      }
+   ],
+   "status" : "OK"
+}

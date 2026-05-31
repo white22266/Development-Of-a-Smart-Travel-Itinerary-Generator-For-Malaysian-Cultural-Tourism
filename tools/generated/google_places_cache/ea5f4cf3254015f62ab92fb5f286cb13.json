@@ -1,0 +1,54 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.288278399999999,
+            "lng" : 116.8803877
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.289616580291503,
+               "lng" : 116.8818713802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.286918619708498,
+               "lng" : 116.8791734197085
+            }
+         }
+      },
+      "name" : "Gereja Anglikan St. Maria Mission Tampasak",
+      "photos" : 
+      [
+         {
+            "height" : 1800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104667924601890182752\"\u003eJazly Martin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tpSr7fRORJtOWMOTm02gDFOyDu1OwVULtK8ikZknQfVS3FrTVTkv3hr3PXWvKXPHS3Pi7DAlNuHtmqxCopek5JMAnntlXq67zb9e1zEXiu46umdkTDI74x7YPkux_BPrmpAyxind0DXH2zd6dg6EfNXQMSoZxHXCUXXuxgy8lRCALb9qZG-7olTZYOnUebZucCe5QBDfuMShBGKRcTE7pjHLypR8cvibnVUa8rs1mq66OqgU9JpB-yUgZT8kwm7fYVoHF0wp-0Gk53haa2tdJIwEfjfuvlSMni5KzzU5rBxnnWEca1qugscXmJCOiTQGZArHIw7Q01AuPneRiwOOUU_NNXucNjh_ffMQtd0n1P3SH96OgTEylVGQCs-AAQDDvL_kWY9CJM5jNsvBqXEt-joZxV0znlfq5X_7D3ANot25NtukpIWVzflG_bT2mN",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJFTZnKQA5PDIRFcnhRnbTAoQ",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=9512397867908712725",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

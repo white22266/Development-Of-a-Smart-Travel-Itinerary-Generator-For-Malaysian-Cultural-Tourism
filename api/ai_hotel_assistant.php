@@ -1,6 +1,5 @@
 <?php
-// api/ai_hotel_assistant.php
-// Controlled hotel assistant: recommends hotels with AI explanation, but does not save anything.
+// Controlled hotel assistant: uses live Google Places recommendations.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -59,7 +58,7 @@ if ($nightlyBudget <= 0 && $budget > 0) {
 $hotelService = new HotelRecommendationService($conn);
 $hotels = [];
 if ($lastPlace && $lastPlace["latitude"] !== null && $lastPlace["longitude"] !== null) {
-    $hotels = $hotelService->recommend((float)$lastPlace["latitude"], (float)$lastPlace["longitude"], $nightlyBudget, 25.0, 6);
+    $hotels = $hotelService->recommend((float)$lastPlace["latitude"], (float)$lastPlace["longitude"], $nightlyBudget, 12.0, 6);
 }
 if (empty($hotels)) {
     $state = (string)($lastPlace["state"] ?? $itinerary["preferred_states"] ?? "");
@@ -69,24 +68,28 @@ if (empty($hotels)) {
     }
 }
 
-$hotels = filter_hotels_by_message($hotels, $message);
-$hotels = unique_hotels($hotels);
+$hotels = unique_hotels(filter_hotels_by_message($hotels, $message));
 $hotelOptions = array_map(function ($hotel) {
     return [
-        "hotel_id" => (int)$hotel["hotel_id"],
-        "name" => (string)$hotel["name"],
+        "hotel_id" => 0,
+        "google_place_id" => (string)($hotel["google_place_id"] ?? ""),
+        "name" => (string)($hotel["name"] ?? ""),
         "state" => (string)($hotel["state"] ?? ""),
         "district" => (string)($hotel["district"] ?? ""),
+        "address" => (string)($hotel["address"] ?? ""),
         "price_per_night" => (float)($hotel["price_per_night"] ?? 0),
+        "price_level" => isset($hotel["price_level"]) ? (int)$hotel["price_level"] : null,
         "rating" => (float)($hotel["rating"] ?? 0),
         "distance_km" => isset($hotel["distance_km"]) ? (float)$hotel["distance_km"] : null,
+        "map_url" => (string)($hotel["map_url"] ?? ""),
+        "source" => "google_places",
     ];
 }, array_slice($hotels, 0, 5));
 
 if (empty($hotelOptions)) {
     echo json_encode([
         "status" => "success",
-        "answer" => "I could not find a matching hotel in the current hotel database. Try increasing the nightly budget or adding more hotels in the admin database.",
+        "answer" => "I could not find live nearby accommodation from Google Places right now. Please check the Google Maps API key, quota, or try a broader budget.",
         "hotels" => [],
         "source" => "local_fallback",
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
@@ -192,8 +195,11 @@ function unique_hotels(array $hotels): array
     $seen = [];
     $unique = [];
     foreach ($hotels as $hotel) {
-        $key = strtolower(trim(($hotel["name"] ?? "") . "|" . ($hotel["state"] ?? "") . "|" . ($hotel["district"] ?? "")));
-        if ($key === "||" || isset($seen[$key])) continue;
+        $key = strtolower(trim((string)($hotel["google_place_id"] ?? "")));
+        if ($key === "") {
+            $key = strtolower(trim(($hotel["name"] ?? "") . "|" . ($hotel["address"] ?? "")));
+        }
+        if ($key === "" || isset($seen[$key])) continue;
         $seen[$key] = true;
         $unique[] = $hotel;
     }
@@ -203,9 +209,9 @@ function unique_hotels(array $hotels): array
 function build_local_hotel_answer(array $hotels, float $nightlyBudget): string
 {
     $top = $hotels[0];
-    $budgetText = $nightlyBudget > 0 ? " Your nightly budget target is about RM " . number_format($nightlyBudget, 0) . "." : "";
-    return "Recommended hotel: " . $top["name"] . " at RM " . number_format((float)$top["price_per_night"], 0)
-        . "/night with rating " . number_format((float)$top["rating"], 1) . "."
+    $budgetText = $nightlyBudget > 0 ? " Your nightly planning budget is about RM " . number_format($nightlyBudget, 0) . "." : "";
+    return "Recommended hotel: " . $top["name"] . " at estimated RM " . number_format((float)$top["price_per_night"], 0)
+        . "/night with Google rating " . number_format((float)$top["rating"], 1) . "."
         . $budgetText
-        . " Review the options below and click Confirm Hotel to add one into the itinerary and cost summary.";
+        . " Review the live Google Places options below and click Confirm Hotel to add one into the itinerary and cost summary.";
 }

@@ -1,0 +1,214 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan masjid Firdaus, Jalan 1/42, Segambut luar, 51200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "010-301 0121",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1881109,
+            "lng" : 101.6689706
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.189355480291502,
+               "lng" : 101.6703232302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.186657519708498,
+               "lng" : 101.6676252697085
+            }
+         }
+      },
+      "name" : "Al-Firdaus Masjid",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0830"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:30 AM – 5:30 PM",
+            "Tuesday: 8:30 AM – 5:30 PM",
+            "Wednesday: 8:30 AM – 5:30 PM",
+            "Thursday: 8:30 AM – 5:30 PM",
+            "Friday: 8:30 AM – 5:30 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112818549105957955429\"\u003eAl-Firdaus Masjid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNdmxfU4Ihos4xpG_D44xJxzl2SsbG-MoUR0gj8AGwTKLjV-qapcyIFFG3KgMZfkVqCFGXz2eFMLfn7WFM54hx1JxrVRHIqIK9wTJp9f-8Oi__HWYZ4F54q7b_VRKLvBxEab26S-3cY-Q9U1S9WeFmG4fvGpuGqGCJ1fQt9IODjoOaahDiFjMHmeQqkANcKOV_1p9pttUZpxF9c88eAKpJerCK2wQ0kc5fpTuQ_4JbOHTXIFyXEW88HBPKVWpS2R7bnUTskUpE7i_ocQTuahayGgQXsoQkkyu4MVTcUcL_BA",
+            "width" : 4160
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112185049923362029270\"\u003eMd Zohrul Islam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ukdm2WIUp0C9VwUkDKc1Urtyv9fD2mXnFowE-fuyjxnNUwuNIaRDI3S008lbO9uxVZ0Dln5aXqsiJtPLMqT8QXPrRnO2WB0xRrQU21RRkJexCfrchuiSR7I1-bELEtm9umOIG3sBvdVSA43MnE2lvwTRGGmMw2-iYgZNo_QGDHH2_zOaTjKpfbnqPfnWI19KHPnMwmq0gjputBeDnDAVn3JcE95B9t4Cp3J3LYNH_h29264Fcvy6Oyxh3H20OcGxYrZJ1hyDXm5run1Maup4mjwyaZRkaPMvKsXw2JjAy5PwzJlmmbpFlYB_XhwfuasiYPCqnY6VDMVBFh5fdxIRDzdNIhhOthZfAXwtuFYz4aBrRmcvWIbOyR_n-4jUH8dD4wog5pm_DURuR_H4XmlpQnVw5-Iq7QoB-0nn2AwIkoUw",
+            "width" : 4000
+         },
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105595943368825245553\"\u003ehaziq rahim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZgYivsxG-FMNv6u7CNg2v0UpUuqSdb19ibE-Fdo1ojP9yA-s8uABhA1buAASzb79gFaaJYYET5-pPdT_EHCqU9dLOZrD6cnyIQGmIER7TK_EGU7kFhmC0hPXpjpZ2-zV985ZBYUpFj_m5-4fJh6hOody9mNlmD9IUuBheTDnfeP0ohtbVa6jD37MWqWOT28dJlwdgQF2v0zYDF0N_GVqZD3Ezrk1lbqXOElFJYH1XjdH0WkPZZ2y06oUOK2XixASVk3yAoMdipP8PEedqEA0l1lgSwaZ8DJ0YVeBTKrFcKbut3SILNYNQ_sbfsxDRCO-OLUzJs0W8I4SVuyP4hAJFrytodU9pEcRHAPv8VXXi9zfIpS9vyLo0387AXhra91Rxzn-wowjRLQMLoH1-eqMdkOu9B7jy8BMfjv-dXT1ccouO",
+            "width" : 4080
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111477084649532883556\"\u003eZaman Asan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sH4F5MKG1Z9Yj9c725OE-9_B66kq_hc1OgWWBhz5PvCaikJESvtgO1vCvRH1k8bELPYjnoMGSU9nCTRNcr0ppkPax7bdCzcYhUc1v1izTX3cCfMqH3y5ej7wVdsEvUV5f8bznSPdlr3sPytN9uyfxhYJxbnNGzwp-BVOXGx2kPXErC3Pa_JFZ0jRIv9B4NT8abE1CHufFov3rJKv0T_enbQ0dEgqk5FJCVfI12nAbGfOaTVOurqm9di0hVq8AdI8vDUmzLE5cgEbUQA5fwABibKKuwASXLX-uy23O8QkpcZ5HjmpuBxRnERmbohi_JOKZCNU3yVqt1VAgjhoyF6Fg31Z8Nl125Echay9U1FjCLA5oiz4rSOdCwYZkMubkBVtXqDjGhuKQsRhzRJu_PDaqu8LByhQudy-jxQ43b_7dEuw",
+            "width" : 4160
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115538203640494870682\"\u003eNour Alrez\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tAbBrTRoZ9cP6fjgx29eAKPS7ea3xQNxtSAsgdg0sOOcoXaFSnTt7t-RCOeHc9hZTT9HmynriJnGmiMULZIiyABPdYDFYve-QBAoqfZzgN1bPhlPeIUczQdaPlabztuaJykabZ2YNCkrCI--5p34BJ_xSb-W73CErw9JTwq9rScEJL4MPkmcsQmXxOZSo6xfOeJHiHiBbnKcU9xR8M_C8JTj6aTEw2TkaAxSCtToc1X6hfnnebblIANK_jnBPzwoznc5zxh3N3SVu44SdAgCZMGmoB8xZFgG9mCcekhxYR6Il5CDZW6GzGBkl5w0_zEdo4WiWluK2Z64EX-rOyuw2GTRnqOy4pgogbgtxQR7g97ioVN0Z-V3iLjU0A12mBrn-itDhkctWL0oqBKUicw3PyyLbOaNsVRdE6dOAmkSjsQw",
+            "width" : 3456
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112143123645780040894\"\u003eIbnu Taib Alhaj\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uIWSxdDyBn91v_3YRrVUaOvFDNWISDUJD6vqP9gvDGARfcaU4iJLt-DeBhuXy9gFzbzi18y488O2fcR7Y9gUe_11q1a-pj0-lmfCaTlR-lTwCBisg2gr7jRlI7IwjcRiRmMkAbxoHUNyWEi9qmWsSnyyt4ih8RuLCLYfboC4FGAMGdv6O6TAn_SDZD600-ShNdyX9Oxh9Q0Ubfr8xdNTQ_DXQULnJlso1XNVlfJrcxjkaV5wAFqNrUMKUu2PrfEn1JNQHhzOOs6CNdahbXH4zXWfQRzokX-JyRgyY8NusM1AGdzmBojxmePXmF0v8YQrDuveGKGtrBK6KwcT_LQQC64OvuPkX457JNZ5KxVpPJ35VL50sbbyIyBR4pg7y9apolyxb9eI7Bj56uP_gPrAcwf01bicQwoKDqZb9uumUk0tyX",
+            "width" : 4080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104480944675082034682\"\u003eLuqmanul Hakim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-socX7AJvpPGnd_B-sq6V77bWJZfu5VkTP3aWevdgT7ZDwPu_mdq9EmKrrCoEbHW7sYcT71c2aDWSGno0_dJ3n_nQaLWrgThxLYM7SQQWoup5Xyx52tRHnacaZdTCVEB14I5KQ_EhLGMMoBHXKO8ko7Djj6VuYEZXb3PCgcwiqu3j1Bm8siWSQoqPWUePOrhfdBWuKdqpuiPFHY6sqkXVERwHHDlJhjNMEbRgECBCke5YvkDuX2vmLjcRYi8gDi8C9LgRzVYxme_2SfsF6PZ2yfY0pgNygalCKZxVzW4BO6H-8N7Mk6Pg-16AmNpnUUXBeW91crVumW67nW43TmALNnq9kuK5tlCxXcNQtKPd0ju48ztK4AmXNMTOjip63xwFmlO2fbH0unUZyjRg9ozQPXdWZ0I_1B0TuoZRd7HGrqeQ",
+            "width" : 4032
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110143007595444707800\"\u003eProdhan Media প্রধান মিডিয়া\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vanRRSil_c6meKO-MUMZAxwgaWSxfEonzZJfKXbODlB0SuFsr5f1SHLPCRPzgnJF3_PRQsuRCuZOGKpLh42O2q8AZmiR4fJf3uKc6hEIVMJxTLE7jbC-QNntln9vNJ3j49I4k-n6qvqkOq7XuNF-O1o2LY9zKpz4GYU_dEvUVyo0JTQoiUzrN_Xu5X_BIRa5e7cq8fwgpHAmni0nmzeCVik5J0oX5uHP0ODjKVZALQD5Q01hotHdsqSx_LXtWgi-AwvRuG-QNppAn4sHEQ0Y8nN2WqMvNom3W0TsPc9nqVZfSedUfhIYVM5NuBzeVS3vEjKijlz9Tdsg8HqJNixqiZa5Bw7u7jW4T6Smx3aO4S9Ji8NHJiQRDs-_65GRUW1xrlNdhlZBo9ZamX9KuxQekJ7xn8PaAZAQ8Xp9HfETU",
+            "width" : 1792
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108213588559505818185\"\u003eSuria Ridhuan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-trQII0GYxry49WtdmXEpFXV22odXL4gv2wsEvojxwvCVe92FceMhLkhsy4uEXIp6FpAnJOXJxlQP0jBbguzkkAC2GXxAEOJM7Bf0D23BA1i0fr09RunGjZtTnG75PFdsSFMApmcKO8neMhcxWeW-X5_pz7Z4FnkzwHrAMlGiqlLxYmIElwWctal2Y0PuQl9S2MW1qceoY2H9529puL3gTIB8qzWrSDvh_0hWcM5UYSO2BnUKF6qX2fZ6NIwqPffmbvdAkMFc9VQ1UCtQIOGOeZrgwBeTJB_GMBeNGSXpwcLDCsawnsxMflQF8np3pqOZcXxAnTw2aQPZSgV0dIjoiDuOuxF7DRQLs5JKjNW5EG1qBUzzWGYNbSiaAFEeFlKQRc9kh3_wMyAFgv5odOHm8i6BmjMLqQWmiWnLxTB0E",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112523419284756867284\"\u003eIrdina Izz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sYR2SqE5sC7XBfNExdqi5xWQZQtpyMi663EYk6aqJrU6y0ODlLY1k6rQ6TwUILQ3td8_miwNHOQBzqCnglNrJEPHOmiBi5yaEdskh4MOC6_R_4EHr6DI5ZZGOxysAfEu6IxK43bhlnYMidbOPYIqJzRJ08Oz5Pmn-soXaFtFjsJ-5yf_o9kQGDxTuroXGFyO3QXod8mD9w8-21K9wFA8jC34jSmtgS9mWKsnMhGbkZ1XRaQVQNlj23UcJhF12KrseNe72A6K9AfS76AVgDasmngyx_Z7B5Zv2nFW6cdQdtWbZ_5pPP3NV9IxiV_OfJfKyqNLfZKCTh9ceFvD182_YydeCf7e4MgKVVn_1XR3uZcim6y9UhMvOgyHSheyrsxdIxZ-T-LCHmWpxG8ObySsx8y88-oAIBsG3P93ctx8fQst4",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJhQRJHHlIzDERbPS5JZ3J2as",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12383150327211881580",
+      "user_ratings_total" : 1166
+   },
+   "status" : "OK"
+}

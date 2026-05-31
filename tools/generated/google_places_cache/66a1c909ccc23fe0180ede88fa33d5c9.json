@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Masapol, 89850 Sipitang, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.1007782,
+            "lng" : 115.5804006
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.102066430291503,
+               "lng" : 115.5817033802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.099368469708498,
+               "lng" : 115.5790054197085
+            }
+         }
+      },
+      "name" : "Kampung Doal",
+      "place_id" : "ChIJTV-fUADVIjIRAkJxypoNQfY",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=17744478965289009666",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

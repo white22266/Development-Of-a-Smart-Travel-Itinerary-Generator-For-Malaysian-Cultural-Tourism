@@ -1,0 +1,215 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "22, Jalan Tun Sambanthan, 30000 Ipoh, Perak, Malaysia",
+      "formatted_phone_number" : "05-241 3991",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.597861,
+            "lng" : 101.0784738
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.599025730291502,
+               "lng" : 101.0797570802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.596327769708497,
+               "lng" : 101.0770591197085
+            }
+         }
+      },
+      "name" : "22 Hale Street Heritage Gallery",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: 10:00 AM – 6:00 PM",
+            "Thursday: 9:00 AM – 6:00 PM",
+            "Friday: 10:00 AM – 6:00 PM",
+            "Saturday: 10:00 AM – 6:00 PM",
+            "Sunday: 10:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110593379970035987059\"\u003e22 Hale Street Heritage Gallery\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u_LG4-6X8tMhTPtd8LiCj162JYGdGZaR-Qx7LItbcor6mtFkMTJWOVJ_p7J1FrJo4tGXDqcfKtiAc2RjHDHLlbw4cqv8OC18wjw2GgHNj1hkB4K9eW-bgBHBkWWf7INlZtimjJ7ttxzZa8RAKl3DOlngTqDK3feTrMszOAVEJPy6EfvQ9_FkTXODfCujR61wOgidJF298-MC1chq0vCBWcZ6wQoTaPz0Gx153fDqII6yinx6Jxla7ypfScVYDFGJ3RDkGh1RHrEFlTLFL0fT2-gKKwjt-kClHWW3CBDeh1Vg",
+            "width" : 4800
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101216190995275824854\"\u003eAde Ardianta\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uEfuLqaMUc5Pnyq61NM_MqHuf8V80GdHPD5pDeyhB9lx4ohkjGD2LNp1FgKlcQ8OiueclCx5BXeWJ-IhQroesjSaEruk5HEI04lJzr_9CUMeCjtGRhMHsKPzENHVpTfu51r7HKPnmxvlgF1sVpJPz4HNynB4cWzXwAG-hTUQwSqLihizTYRk0qdACPG_Bnnymwq9p6xcxIs1Tf-borc7emrq8H89r3ZVcjeDsUs0aZzG7Kd_HGLceizd5lKwdatEK3n_Lv1aolCtnG1RP0bCsV3D1YoKJQvWhN-piTVSRBIYg3w2HlUfG_JaYyEFBJtArLN2t0HxnqTtgXbQXgqNKYxIJrhZl5W73oOXycfXAqos6c-pfoyvo6u9LcvOi7Y5AXvOntUCMFforahMu5EEuT6E7VYksMpx-Hi_NClIG-4A",
+            "width" : 2252
+         },
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103516136599032692050\"\u003ekp tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-skAZ4PEnpJN4gGEAeWU8gTyeKjn55KAUAGGXyswU6ya8ECw6qsnGnkVZQoxuUSpD-fkkEX3G4W9RXa3BzBXZCVFUOx9Ma4XAqUO2YXW6YXG-2_YjHH0OPgHGdnrvtb5EXxjVJvEEKxMmnN-GfinJMZMAIG-ChQPB9bSaHMzU_4kq2InicS0iODmg3lybmeZIEjP0lh0D8bqDzTvfnIF2VOhYLa_gtB6KajAlABtsuFldGYxYxLdOobAi9PJIM_GI7h2dzT6_81Iawb6UG0o9UmZYsapyf8JaIPILHkrfevym4537Gpo1jjpyjkcADkshJ2JExb_eCFuRygR8gj1MdqUV12Dtv_5NlIxrBd-TziX0zi8eSjRBv1d2176c2l8EJwoa8otG_rqErGg0sUe_ipic6lSWI7rYUsOxVoheAzHw",
+            "width" : 3468
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110593379970035987059\"\u003e22 Hale Street Heritage Gallery\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tU2iN_YpeSc8O7L0QySXHr6Aikg0DdTwWnx8cfbVrjFNWHQKNaLMrHJRZ6nlFhSUzZLXONNBX_ywBiZNQWzc0Fo6iq3Ug192BTHP6oUEr5Gn4lkbb9r7HYFkfUbOzUsphhrLLRLs5FpeGtk0rBU7eqQgbVHCeMD8sFUQdtY9AYBJniJQ5RgMU-IBRSuhg3LKfiI3vYx5oAiAXgpKFjMrp_Cis-ZJt-MRgBPE5tx4fWuScq9lQj5D5RMi3QqMSpnr-f03hOzySaWNAvOlEfNWIwcB2jnDUfj0tdtYY6j0ONwQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3941,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114345555265183607362\"\u003eCK C\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tiJP8OVd6fFOSVCYQtyKz5h8BxOwe-RuGjkTW_3JgiHV9gjAMkZPs_fUqz9nIvRbbIrijrmGJatRE0qZ_KEs-zosf_xVtBcfVPwWA8hYGkqt3tjm4XHwgJM-5icWOpS1d-grkI_xK0CgNmHp5QTZUSeKdPnMTaYNyyuPR9bUZ2r_yOQQY13lMumJF02mckABmtzUG4oFntBWe46cQ__VSjKv0FHj9wY9d3V4D0hsP_c2Iz4897_MS7Jc5JvXyB_aa-q-G2fGrCZvw83qhWB13cJ_C3Bmc4xzSIOhfqP8kbtraVJ1J7JimbVkcDbJdVmplG4tHQftXAwb4dso9Ow9OxU4HMwotxQycF1vqvCBnSwrggsyteSopjvHbT7WqChyI2XlHCvFNQf9K49wylAakY8xjX1oJD3LG936selcABgQ0",
+            "width" : 2955
+         },
+         {
+            "height" : 2992,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108505801739519767599\"\u003eWaridi Hamdan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twEG5oqT8I-V1B8cFXVfdzDGd7Ns_u00YRNz0KJAMBMphY4AWlyvJGEIkhv9ylDTIk0X0DthJ3NbOUJXXB4DUmMM9EAy8a2ATjGEw7JUa769dNC-PDuumDMczFi3gP7r5zA-mYtsaPAfWmFUSQJmkspxfnArBpUCsqOGOQ9UOyQFH9-X4h9BU4972-IUO_Bg0kBpcf6Yk--d84EWqt_9EIsshSEdfdyhkGscDIepgkrJgjC5TRcl8gR1FoGBjtC-6WD9Jufo0z9h4wmD1YnfHvgeZaUEzKDVekHd4EgiwakBeNduWBe9E_Tp3GvQiWDZIvb_KfWU-mGTn4ECkhD7ZYsVt5L269m6Mzsu1VFdHfpBkqZmifSgB5PEOHu8E9Tba_4sS-XdxrgrgqUwItiGFHw-qUF1QLpBKKVSqC_BNpsg",
+            "width" : 2992
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110593379970035987059\"\u003e22 Hale Street Heritage Gallery\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-shv3pSjVY5egB0ITLcb1uxc_hwZuBqN5-CJiqQltC42_xCl8P9Nu_6r1oO4CQzQ3RvoB1nIldFQBskml2tsKLYZWYcySqevUcriDgcQ7NkfRfg5isu48hyR-OSUk2YpKbCo3qpnfWAESLlj6UG5XWcGO6v3pIi3mkigt5fuF3_FovMxBvM5VDlizMRWtddftaCAkdMPn6XFJ7-T8kIabn-CedrlU-ZX78nfhAp52t6dMI1jw1ClhWnczu4jQB_g9DEdFnAeEgf2t2OxPt64kyt7X26Xf4PLDI2t4FAb-kdeg",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105116239622676580324\"\u003eMay Lei Timms\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vzbNs0khc9wPDRCZIuVRWcLmE4qn4-1VZwUvlsYY_RxkG4urJ760NGnUYHpL3ejzDX4pQCvk3obpwfpVF6EbKlmvrMoznI_uzn9EAiHsjy-H_XjVK2oWM6eLUE_o83iLB5M2fcAsak2xjObhYBIhSymDjrojIT8HvoT9azlvp8X3VscRapOBwW6S8KjFkhgQnBHPsctZPAdnVFJRHqxTzjVdR8NKaduXa7Ux2UBeqAXW_SAMDjHQH89kxDdiOUqpBamp26WSStSIKKDqCypEk9oBOgDWsz73Il60eobq7i5FEYR_uBSTI9gDDxNXwCdlDe0i55MkTLyW1Q5UV7zZ64ZJdya2EcZ1wrIZP53RSs-q26abQhc8ejWLq8vvMyfvJBxnfSNf0GtlYym7YWxL_bZZk075UK9991hz8bcv6alIGu",
+            "width" : 4032
+         },
+         {
+            "height" : 2992,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108505801739519767599\"\u003eWaridi Hamdan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vMlGYaueYgZeqVYL4Fu_0QD4WrAa6pZ1r0zKeoW9RztAAclZg01yu_e9Mq0IXC7jycLuwUx8-ctc4Rifj_aibf-E1uPUhl8MiEVBR81g4Nnp_xE89l5DsOLTDv9Hvb_UhZ301blZVzZbb_6W18nru6l7ciB4v357rz6BCpwryhCwhEc3eRvvTW6H0SQJLi7yj0AKTg1oN2VXaY8r6EomNOq-cWnlLZ7p2yI4W7g7U-QjQnktK09F8dtaPkHoURZFerBLDEtRK-F6G61QzkQgiJ9LD5s0ixGPMxm9oRSGYZWXb7vagxIBZ4ecCH2OYPpSEd-jMcR9DjCF4hR09P04T-VbxYe-2PBH_uf-cJzq35RteaIpd0NLGhc5T23FCP6a3_Q2PWkJ2FL8dwdkkuZ0MVoQEl87QYxEHF8otVyoZdJIyO",
+            "width" : 2992
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106588057126071653915\"\u003eMardianah Mohd Yusof\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tIom2qtnwJYgkW_bHgnreDmBiX1eig5Oznx7Rmh3lrMCIGwI4-dqvy5yJcUUfR_6dvwPz9NAF5xnUVY_gDv6-ivSuI82_yluug0y3z_IJRi6NMnmDvpAek-wYYdKLJugni5_w-j_UfvtcCKlmu0ZtLUVB-FAgp_v_vispqZzSOdcLfYicszqBJzpIMtxYkN395KrbSiido8JgZTg7yYRZS-bv99ASR21OGKA3-8rdfCwlUQlmSBWhbB8tNnui2hcrFVy5wAR5EDj-cXyuXDYq23uTHYnuaxMuKJrGj0jeDQIxz_7PPFz5N5wJjN9BQFerCBU47pMhJKt02wbse3BarEJya6f_cdRunM4aBfFW1yW_xS5_b93CY8vlI3LL3rIeZU9m8nqb3PGqo5bocDjHkTOu4vwMlxmmg_gEAEFWNVv0I",
+            "width" : 4608
+         }
+      ],
+      "place_id" : "ChIJgaROuH3syjERv8PsY2-k-go",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "store",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=791125482881729471",
+      "user_ratings_total" : 362,
+      "website" : "http://22halestreet.com/"
+   },
+   "status" : "OK"
+}

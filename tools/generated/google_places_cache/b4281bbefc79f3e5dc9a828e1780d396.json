@@ -1,0 +1,225 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "38, Jalan DS 2/1, Bandar Dataran Segar, 71010 Port Dickson, Negeri Sembilan, Malaysia",
+      "formatted_phone_number" : "012-611 7379",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.5598038,
+            "lng" : 101.8177531
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.561182480291502,
+               "lng" : 101.8191126802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.558484519708498,
+               "lng" : 101.8164147197085
+            }
+         }
+      },
+      "name" : "Segar City Port Dickson",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 7:00 PM",
+            "Tuesday: Closed",
+            "Wednesday: 10:00 AM – 7:00 PM",
+            "Thursday: 10:00 AM – 7:00 PM",
+            "Friday: 10:00 AM – 7:00 PM",
+            "Saturday: 10:00 AM – 7:00 PM",
+            "Sunday: 10:00 AM – 7:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 343,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113491461594390352349\"\u003eSegar City Port Dickson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u7eRGPe-pp3AlZZ7Rc4y6kWgi51AqPafYxqayt55P-3KL0J8J0JMpd9HJFpc_WllzNPk8N3kxzvFQHNl1ZuOmFiUHpxX6iJ61mC8KzbE3FZwWL6lbSKOQAQQblCupB3cCiwnk9lH3kuIZvd6ZgirrUDsjzr7OaPiidL_gBN3qDZ4B6ySdau0gQ5Zvgt1BXMTOc1ZyLTWaIvIu7i5CVXEHN3NFVNVae3PGV2Mo2zCsGdZQergE46-5iDUOns764CSLFv2fBxvW64L0mpsQkFeyDAxBZhwTSuL38PbJ9YNd1XA",
+            "width" : 610
+         },
+         {
+            "height" : 3199,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113491461594390352349\"\u003eSegar City Port Dickson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vT24sZEzIsrdSGz5HhuvqYgmuU5hn_88mmVllhUaQOOi1KNOa2pBoIqvjGiTvjFSx4XMKCvIreQztgTUJLGojCxhkc_6Hp7SWGQm_vdpMEBrPyTDcA78j-7k53fvDQCZUBpaHn-wYaz5sIu6BRfJvmi229rKgHwofQdbuHiqqix0lPUMYzZQK0jk_hrVvuUlgQVFneJoS3QqXYfQFHPuQhNYyhoFipnFEFHOu3zVoGeHSu1c8jmqCajoP4Enbx9XiqzPsmALuJYWt46LTJySzSFF81KjyCG6x_g-LsRdfSJA",
+            "width" : 4800
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113491461594390352349\"\u003eSegar City Port Dickson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twRnc75rtl3GsI_PLesmRLSRujC9OO9nwLI7BIZ5rLOMt4CD0aiOe418DFu6mWCvm7HAmTjuefm1bpLeDBP92V8u0jAFwNLifQZw221LRePqddj6c7VkkkzFjsjIBP7v7EJ2_1c_zJFIGtU8mrnx22C5odcXdyTXyBSetRtfb5zulxaf2XkhnY2sYQS5cSXa8kCZTeDdzQOyqDmZvSTqAWZ1xuaK3WSfCl5XM3c5dE2iQs33HJWAemiaowpwoywq6u5OF-lorQlUP-bDM-BcPDVgYdK0Kk047cYL4g3xdp7Q",
+            "width" : 4800
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113491461594390352349\"\u003eSegar City Port Dickson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tup1Whtf5F58zJTF5Q27pdHrXsUTPu5lEDYqOoFcBxZYYLK585cDwa4sEumlHLQOYe47Yr4PXq8XwiVjJR3e4nXIWOIKb5ZgRqUowPfdSdpBWcl3bVcgTA8i7VX8VZeBrK-uY7dk6KkKh5xBW4GTL8khs2JYKDjwFv2XVJ2CWCmzAu8P8m4zSn7c047UpBJlHPhPfVwBEeKo2gkpv1vtGaJ34XIKLZj9iih-xGCt-D2r2_4TEKeJdZlZiTck8RdVm2ZlwWgioC7mpA6biAAk3gQmY301bYXl4vLlavx1E1aw",
+            "width" : 4800
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108944664546222993105\"\u003eAdriana Rose\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v86S4-B97s3Y_Sbc2gibJOi8KQwhS5Hs3FLBAqC2dNNqzig2gybG3LdjShLGX1MCGAHJXP15F8wAX_PtyNyWgWWPG36-YETAnm1O1D9p81tB5z4q_GozCFNqv3dwCogfUAcFnXqJo5D967N6h9dU0E7LNFjfR5m63U1ZJYD0FsWT-zbGc_HN455wWBq-HDexom6rsVZNeXWcz5j22yS3YeSiV2mdGLptJAJi-aomFWK4unOak_itIOxyrrBVwEPt1aanOm5CmbFNCURCVbhdL5W-EVBKdj09uz5X4SfbNhnUzOYpJCM5U8cbf3Hn_FftAtXKOOM6wBt44JyFrD9_sQ4wU267UaTEbLcsNir1E7GbjyjCnA0iov-PlvbYPqkJdDrLMFQDdBYk8G64ql-3JN4XsyDCnywoGhg0DZomLtSA",
+            "width" : 2268
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113491461594390352349\"\u003eSegar City Port Dickson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uJys7ZvS5Lmq8klxytPPxnmQ6eubSwIN2_x1R2YcWTxIXRoNkHW2oyZgwmVJxXnReKq98Ewb34ln0bYpmruh49svD34sGpjwo7VivdkjhA6AZX-ZNjmhoxnGyl0RCcQMSu2wtz_DOG252aUGeTo9cHpbDjIiFOKgZV1lgRvzKDLZaSTzn5IJulLClYhwLN4u8ebEkbUBTRnU0pNYlt4gf3FG234WePF4oa9wKgaVTSL7SJud-f4-H77db5Zl1hdZ3302tlYL81QrcvDtGFoDQEFf_f_Q19ubHsBPPofRsVcA",
+            "width" : 4800
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100254569747276470014\"\u003ealice khor\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uK5nqjvf4CuAccx02cMTkAwUad7c51eT8ih9FaoGnERceg75-ypl24Kvnzf_so3Xj--UfJMdrVVJd3wjyHk_q75Ny3vM3XLUxBqX7DwfNG8C9gL6S6bq7c5NzL-a_a6AYVh4RwhLa8XyjelWM240dYDrzs__SjJZw6nVc4PDf0Nl_utfD5N0bR_P3U6u7jyqJeNCyz5Jo09paSfjYuNXn37jpOnjufyMpkBH8y29-2tiHcPKM2s3NiAdcDQ1h_VfNu0TLgnD1-OD-GVpiblJQ4apvzuj1TKjWiu-TYa6KS8mfVqZ-ZFuM17YwyQMKcMj4MD5E-2RmD8JUjA3EwluhGXkt5-kdCEVhn_fDnzS394pJZwsgvINIsv_Gs6Z7pobQJP2zVMrE19MZ1zpJLpkQxu-W2c7dd7O4Kbf8HH5fA4N0wp2rEVWZljIbtZiBc",
+            "width" : 3600
+         },
+         {
+            "height" : 3359,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108944664546222993105\"\u003eAdriana Rose\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uCnGneQeq_Bw8Lzi2TcCbE7AEGZLTA4H9DG1PMUaKxwO6bSl_mbohz6v5DiZjQlDtcV1hMTnulzs-1dQtG5IWUUBnN_QmI2jZl8X3_9HVjcYJmt6OLEJa6Dy_I8iU8d88iOCTwYckLEkykJTJ8QcSy7wW845QnNPWNsbVz2hSgt6q3chK5YWLjvORW14y6zgktg8dEVurk3MTvtnAnwFL1MG9iOn150BhToe0Xjugwe-B8Fm0HwxEHz1RIjINc4gLAPmzy2NK7ux5rzmB6V1_36ppWECCFJZpyXGU1P9bx2Cbn6KCPcsQA0u15VrkJ7CODKbX657TKSnYIPzNn70cn_TR8BQpaNSeqHxmV-4nYZL1JZOXn8rebC4wRv2w11g0lWOTiaRzVbS1UXdNTCY_DkCeAo4vdGKExkz-RZMZ_XRmf",
+            "width" : 2131
+         },
+         {
+            "height" : 3199,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113491461594390352349\"\u003eSegar City Port Dickson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tXy7lVzbILCw1oHdc1rxJrsQ1NvzKS2GlzzkM888j2-OScBJATLhi317rAmvtCqYUGIollzilOIFnCbi0qNf71GbYpfstJ59kWlpjx5h4PAeiS2HVxMJdI7JZX3eflWeiF6F-k3ZdfcLoQONsgI8FkNQ9FC1XMCn7zc34_pGce8miqPdhDer_J6N0f2GFtnoXB-Tx7iUCoP6bRBHNJTQh0ygDbggcpsIHqSKgCdzSAVYPZjpO1eLRycOt8tT2YOkIgvEe8zsYHD2q2ro9USYUGys59kYKH6BGa_8jjH9vgFw",
+            "width" : 4800
+         },
+         {
+            "height" : 2560,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100254569747276470014\"\u003ealice khor\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vwoyZBCnFNIMtg71SCzlUtgkwzHvhKftpLz7oJibbuq8zDAmcVCNp0IfOr43ZuVK8e7JlxHZcTOcTj_BpqCJVh4j0GnFBp1qnZUdWcCD9pEsv8U4rZmTXbzy-Y6JwnB4LBAuET7PkCbfaQomIpAyoHKqumfQ9YeO1WmjYdfLCuRsH9DmzpUHq73KUMkKZjE20MQMCLn3wCzJh2j3qlaajuDQIKsDHSSgOc_DgkEmzlxSK9WoyOQ8i4FAz7KE22QN56BN9F7jji7SOES9txg4pxt6GcxfK8LKVFm5YLhHT7BtjQX5VrEFwmRTZJJs0q2RvqpIKXbmXtCeiniSyv68sSA9R7BLASzExjgx4SsfduxzBttmqID4IG05QvuIYCYOJGwSiiOgd22KFapIR0Tt9s02Sw-vfa_l7xtVKBKTi68H3BXLZIfWxKIkhFHDlE",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJu62o-8HxzTER7XEwl9aZz4U",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9642094474162106861",
+      "user_ratings_total" : 44,
+      "website" : "http://www.segarcity.com/"
+   },
+   "status" : "OK"
+}

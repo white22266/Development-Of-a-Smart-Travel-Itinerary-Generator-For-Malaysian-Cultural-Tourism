@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot3620, Jalan Sultan Al Abdullah, Bukit Ubi, 25200 Kuantan, Pahang, Malaysia",
+      "formatted_phone_number" : "012-977 9735",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.816280599999999,
+            "lng" : 103.3163262
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.817459180291501,
+               "lng" : 103.3176928802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.814761219708497,
+               "lng" : 103.3149949197085
+            }
+         }
+      },
+      "name" : "Kuantan Memorial Hall",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 607,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117706270109187883959\"\u003eKuantan Memorial Hall\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v5AYYOKWFeEYN8tqobQLBmxuwK0GdeXFWoJH3zTvdOwI4oj0RE1qmaYfuGv6JKVG72BbKqORRM6va4Gg__hofV859c_Ekp7A0Fz9YBp-OPoCajTQXHOvNANJfCJTCxlUS8Z-1Z_khLPzUMER2s6CCLVhPI9h3qs-g1i7Zph8eptrxH5yth70uQI_n_fgdaYBk3O6Aj21i4mTX2GRQG3mPgXwTiYKK7Yy2acM7ee9ZKJCRlbkIIskVGYD0tn7WUY9romMsOyVaZnN2U9x6_rzJXVnPapsxoV2m8JFcrMpJPkItC7lkwt2wd5W1zOSUcarqO-QMP3LoOE_5tlr49mjykTARwyNMafkc8IzRyXFudThyD50Go3FSg661_hFhc-JuqUZDqrTKHu9dT2FxhjixEnxddIWmO7oaNCIiNLmDeaz8U",
+            "width" : 1080
+         },
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115855096099417449391\"\u003eBH Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u5M8j5Wgot0Is5LSZnoVHehukK3C_jCFF_KDKzxvhgyXKVQcJ9sMROdizHOhKVX9lCxPiVzrKLVDRKJ_U0R7HT5-nXNXQyDASb20gmw00DIehnIxujx8KAO7Nkw-TcL7loPedz2J6TwIJrzOkn36YaPgCVDoxutL2XZNW_VWYG2SOgBDwmVES8_t-8Lvv3KBuUjOUsKJiT58r6UbrB1u34zn59m989WI8IlB67aHh9lpTP5huDexyPY0sAVcQK0d3QC18w4KWnkfKYS4LEruAYn2tWa1OvqQGaEtPAYnLj-BjL8tvfJhs0BgNN93gvHsSut3NWQrwXFjwKLwCsAKDYLeslNSoeIhFHqvRf841d_puznPRuxyS9er7T5QQb4j4XmTMHvCcFUBgrbFaiRdtB7aTGv3Xraq5XtErRPXHx7Q",
+            "width" : 1024
+         },
+         {
+            "height" : 678,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114985379249981805696\"\u003eAdmin Department\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4aJMsuSCXhvbBAAjGXqRT7ZIebACvg7HSNbBPxZnFFXHraiScWIIuC1qBNLqjqJGfW02YugaONUKKMRA1TgZ4nPlRBv32fQDm843coiyE6EPhbSRYSAmk3sbppSIBn-86IrbTzHEMPvbAJhZ8Mb2yMcUVK_xzLWUQDPy5tpuNSlQKBUhx6v1RG74ofaKMpUfSLqlI79E32QMoC5_jKVwk6zHWhEyZEV9R87dWMtRaJ-nL_uFv45hFAAp7F3Tk23ag6eyR-kVk-WBfaIPYbpZIkfBO4z3OzBlA82xFN9YvLFx0WBAjg1FVXi6h7vijv2N7wsAzvUxXk81D8BYbj57CJBQN_ZsFOXSE5m5bQLh7UTMblJYQqslnaABuAjmYa8sj4gKLmXcAtwarzKJPTrvy7zJkFYEvCCW0kMNDZSC1tg",
+            "width" : 1024
+         },
+         {
+            "height" : 979,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103458378795583905684\"\u003eBH tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tXQwvihzcRuD1clxbUbYbcaoYzNQNK26gkabovsze_psds5x6k43-i69c73VHjWOQcS9mVn1npExWsU0Z0NbOKqS_MyPwiMnQSHmOwvfFwRgNTMgOw7AEqKoLSHsLWL_3VcDEU57bzHBOQlNDEz4ZSeC-k24tod0feTN6f6_GPp3Opx9JZkyNS6qgqs7ntFWjrqs6Upv4t1_tHY5xi9dcQSJYDE8gd-lGK2I5AcJ3kBsZhGDdRttOLilGTVqO1a2s5TMgDBirNqIOmYsFUrwZYoMw4z9DA7MJjhKYKkqZbzRswhkY44s4CvEZCFv8csIfxINDqv9Xu0sJr738Aef66ad8tnqJc8Umv2Kld238BF6eo-6LLNB2p048RrY4SdRDWzwGjUPrwbXuKBJhyFpgCWSqBjFZ29bG4V10vcRdkNw",
+            "width" : 1478
+         },
+         {
+            "height" : 678,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114985379249981805696\"\u003eAdmin Department\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sA7SaD8rt-lgXZ5cW0cyp1EUaC2bxb8r1xBGKoK98bNfZOX5gK_Iw5-AIp7VRO8DLh40yj8TscwLQPqt192PRgipWOhcbW9cayNofIKxnaQ5bRCAOb-UsufmhqIAYmV7UJ4PV3dcBg2r6lYaVGuhMEpJC7WfhKTHRntDTrc9DO1c5wFJQ8jbr-0ttjmDLNdJ4vjffaaw9dCB8YZQhj3sscRJp3mozLCwlYf4W-b4AsXl9JA5bgVbgik6OG72OcbLX6NBRh-48783bXyteQEeJj7wVWfaJ-3wJAWtGEDchmuj2acy-v_GGMrSuQ2YkOEumJkWA1Bs3ct9xqKaZrFxZZxlEFlIA7ZBWMFmdLZT0nwSRsPZ75sLcvIk7hS0NxM-XHXMZeBSCNBXp4FAPz5oQG5iVbrzhuCMqo-GK7ET0",
+            "width" : 1024
+         },
+         {
+            "height" : 964,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103458378795583905684\"\u003eBH tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8eo1yhqnUpGFUg37skR6wSoVd_2TO8H0pcXReWA6VYBWrFaP8vD6iYN0aRhMlArkeBotZ5qyVGphDsE5ytghZDk_t9u-uc6M-ZO8WYlkBL4qFfkigj56IoFdAHVNAVXIdtr-BnI1ZbzCoAUHlDrEvUxlKVlnxkfVPzjTAUfUh7d_FQUama5eIb8T9kpvvEEIwj05mmNu0DqN6oxPu3MNaIZfdTn-lQhnxI0Rr9hdH4oK7TiQzZzEYGC51jRAq2Lepbx0d75CGG5DM7yr6-ZYdRC4JbSJz91a-hgz5ONIkDJnRuxO5DTYKJB7GSuq0Qn-O6XzlUfzbPPM9ObKmRwQpi0tvIHAQ1GViynev3SagqEKURnHuJwsiM8GNlPdammsp0r-mEjEIDpEhCDfSWOzYWHmoFiR6WylBAzeHCyuz5_qs",
+            "width" : 1455
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115855096099417449391\"\u003eBH Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tLmwpyfTWuo18FADAOO564zNHRHpf0CBkBYI4WofcYCLwBwEUjHxWDUiV7mw7EOBHBRCTq8GxfZGxxhSk_H6rY6tXukNC_YLCqQTYUbRIJ7x8q9ZWsNypQ80JrEtrPpeCQ3aCtlQAL4YQwhw6v6kQdE2ZW9Xvcpdj3tZ3y0-fJWxGCMCnYdWwVB9SkuDqdzW4oImJ4x0fhN_OWI9pnULUjGiioxJ6emAJo4JrSo08uRww_IgwlssiH6MtZuS4iXlwu33mXumSKmXhi1ujfWveXy_9dJCez0H2yJqqUkddMN9sHbSPSxCaT3C59f2wAW9oY8KLBWyeoTf8nAB2mCoXgrA5u6uZgK_jtKlu2HQOLz2e88GSvaZxObzAchCWfWBk51rRwqj5GHsVA4UEaRnfm9z-Vcygd5aofWKrh9AhbFQ",
+            "width" : 960
+         },
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114985379249981805696\"\u003eAdmin Department\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZlC5CsC3b2yOVxsUy2GSdVpqoFzCt7JHJnsvswW32nfKVy99lF1DSe8QKiYEYBfG5WOTutssSigwDexam5wFHSZkxPeLRUfxK6qh-iZrAyfql1jY61Q23F2qZZSAZazNnY_8Paicu37a0dr44hNiKfM51bPHvNeVJKzgpoy-Lh2iGRLdotsP0KydCxOscs_6vDFauYShi6EYjH0fUpW5UtfkegxzzB5pUetZkHcuyFVRp55e1M20vikZEbJSLDgM5SKhPFrx1MMW5elmeuj36Up3y_LZejft2duaeMjVwXBBALk_00kdYLliVIRtDAq4D_UzB29oJXk8xkSPLxlddidmHC5x5ZgNjmDcpGf5uKzX3kvoK1H6n7P-iCH5KNbU_WWTC6SGH8MKg_2ANK_E9Bi7_hha87IrDwdqick5bLXCX",
+            "width" : 1024
+         },
+         {
+            "height" : 575,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114985379249981805696\"\u003eAdmin Department\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uymNjqTwtUM6VAUyfvisU5MYXSQyhTfqR3jABeUelvhiAzqJIBvsX_nqX26f93QpGAGeIHM98JhqQ4JwLiCrEMT11s1WcB8jLlqnBqaOQDPHX515u_jXjpS9PA8W9921kiKKcdzEgXj5AU-oF_cfrwpRyP1R_tgzRouRosECqj-rF_Pewy4WTyrtuLlkhi5R1N3G-fnnuP0RDz1Q-m5vvdcoI2y94jJL1WQgqXG8ZGz7nTyYIWAYzXXPtG5Fv4EcMU_Tz42CnfgZ-lRe7Whd16_PNeOgVr3C_DTPNf41Nz24Ndt1cMDhFZ-pnjn7ACYlaW_M5a5riX8zTxeDOKHWsVe1v3LFi0CGm5-4KeFTEzuYVX1iRCEC9ny9VsEUsHyyRrm6ihFY-sXTbUp8LewPpaWdqDwcHsUL4iVIkJV1ye6Rjn",
+            "width" : 1024
+         },
+         {
+            "height" : 1242,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115855096099417449391\"\u003eBH Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-svH5rTGX7C4IC7J92trnS-qFb2TO0AvNuE1XMnuVW0kBXbRzFDctphEAjAPi7LDepLE8WbnqdeXF2Oas2030gnaMFhtHMZNSuUKrPiCpdI_fFtN2arqiX7VItsphsG-kjXzzhgageWofZT2lBjVn4_PUEodPutRUiMdCsxEFbNWqXUI7VimO3pZTVOl8mxdjMMoiQwvCc5jF-Zs7TrAcXEFWOnj9wTL_dYXNFAV2mdjfG7YHaD7cKxIQAcEUMD-3SEOD7ifMbhu_l479cbIuKqUd7rxhQfKOJueiKdrCzAco1o8vV9Nm_CTHZyRymvVecQREFBvExMFdjKABVad2n5VDo65ZSsgr4SEri1oKEi2n4vFgVrJgQMZi-05abubmoHnevYk9RbtrpDZq0DIptCU7vWK-eNgktDH3fDGRwVRA",
+            "width" : 2208
+         }
+      ],
+      "place_id" : "ChIJ2XFWe4m6yDERFonH8YaoIis",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3108231990374533398",
+      "user_ratings_total" : 132,
+      "website" : "http://www.kuantanmemorialhall.com.my/"
+   },
+   "status" : "OK"
+}

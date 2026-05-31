@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lorong Hilltop, Taman Far East, 88300 Kota Kinabalu, Sabah, Malaysia",
+      "formatted_phone_number" : "016-824 8414",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.9508962,
+            "lng" : 116.0924821
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.952229930291502,
+               "lng" : 116.0937828302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.949531969708499,
+               "lng" : 116.0910848697085
+            }
+         }
+      },
+      "name" : "Fatt Kee Seafood Restaurant",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0700"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:00 AM – 11:00 PM",
+            "Tuesday: 7:00 AM – 11:00 PM",
+            "Wednesday: 7:00 AM – 11:00 PM",
+            "Thursday: 7:00 AM – 11:00 PM",
+            "Friday: 7:00 AM – 11:00 PM",
+            "Saturday: 7:00 AM – 11:00 PM",
+            "Sunday: 7:00 AM – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114752734918937890546\"\u003e陳志堅\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uUqO84i-Mfx4KuQLzepX6XjaOeyEtwYRHI7bC0tGd0zkGGn8cPfR_JLAx-11XR3Q3CrGWT3MY511-N7FlN5HBzPVkBXW4UfdDRpPSvt3Ry6csIiLx4KOVEKfUFvWaudChMETQUdl759TL2uG2ZLrrSEmQm6hsG6sI9riycq8aOUYpf4yUYjcsJAAf6PgtcS479OrzuF-BS41FaA1HTb0lDOUVAHGl9ViS5t22Cg3h7d5TGDLLdqkJngUd6mHkd2YIlqWimxdTV_QSD1T3t_60AyHYQYnyN4JICo40OoiiIaOEFUyNiL5L4TSp6N9ntpmDrpyXF_dOse0Gmu640cZi0dHR_9IepLkxN10h4mjYEPiD1iv2kkg-z-8uIJS4Uii4o8yvpqc7kt9bzN6b_xMqGLfecz9sAQH8JGxFEYIQ8Va_Wj-oc6ceCErwiIg",
+            "width" : 4032
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101384485587740462084\"\u003eYap Y Hock\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t2OL0x7Q-D-6P4fr63FMSbJNpP39kkZxjkeKbLUDPoPK_v_HM7WTpunORhS_p9EChjdxFLR8ymTgqKgwQpQseJwlP1eq_gGiJGfsZGn7jcPN7I7OH_1XAnonFH535RG-yV0p3l4Mi1hcuE9GV76-3FFFRQXzwYkTcXwS4r7duqk67aiA4DiwmgNoG4ZKEgzxZ85iBHxaAJSif29p4EzPfl0RUGBndhdyzmVAmATF8-454-SyEGlIScDUzUSjXQWdMzhxkDxZt4h6GbMKOI8wV6ru9kcYtNXcPyfLC0TIPM2cNcPJh1YkcaA2rarcJSwQlseLhdStmsBtjUcfIVOvlbNWwsRlpXwi2VB8nDsP8dgFgeJoEt9ah9RJ71KvbfQ5fJRnlklWW4Fcs5XRD8ROhDzqLK6yMpHrVs09OKTdlmYOOh",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100704601265398195029\"\u003e微微尼\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vxk3yXETZvw-oe7SASTkirTWQo_1q7wpvRhXJv8pSZRnnnox3Fyk1KdzpegiuR6h1o3hG65RQ3Aav9XlZCoBjPAfFdR4bdSarDDw1sRP4OAzl3CYrT8xLM6hSjBZBMoF23eQ_WOgPG7pEjsqeYotxA8pXX6yh2I4VL65CFnEW8PbMvMpuHr3q1rmPczxv6HrlxanAtHZumx-Ho8hFOYlbAWdHVZ8_rFySXKFNBZ1NUTvnFYLeX4EmYRLQXrfPAR-6FfRrfzrS2Pgd0v-40Xw7mSghRJ5xez-hsJzlVeY7VjuBOP3mJercZ1a51iLk5wn4E9-kQaXJDrOCPH3SoG0IfdcgGrGKL_DTAKqdYV5psgrWBqRP8GEusYovJA2bOkqUWyCFJOXZMH7FUVfyyW9s3FrYztl_GeK9TJWF243IFD2nyaX7_e2WA2PPRJZBv",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115630181256836580592\"\u003eJeremy Hiew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v77ad5nEs-Wmq29ifwDn7vKPCHpADZZAgQHg_1prv7dKb9etppW3v0ibVkB66pOchWpivv634vcmSnwgFZNxMeAv-6Y9wujzqiZvZQz3cfCSm3iAiNZZwg9J7ylL0KWpaLcgm7HvS6xO8o0x8ujZelrQ327IX9CCZcg0k1azyB5Avoj0nElz-OcPJIj-rZwCbduPeaFXuEP8vUS4JteRm-p3G3koNli3NbcGKN8k5Ij7-OzZZd7cgXmZvNBOTdaDC16zkk_uzWqn2CBmMllHsHbzDpop-GVuf6Itcy5ga7_5D0CSg0PAI55eZ8wM2qsL3tlhdHxZTI1Hm346SMQ0G9sM6pDN7q_v6qq4sxjeFQXZiWC4Nr89UVcSPVM6-KJwYgMjbsR_OsjLPf-jV2cVH4F_6ALNAd7q8Z94f0jwtxyEwRolP_hR_uQOiLQZGB",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101586596449173359437\"\u003eEugene Choo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twuZJoMcObH-Ug6ZmkATZu0taJVN-R3DQf7OTXTeRisskL3qDsoZIbowcSVXNorH-fEazd9SDwpXne1y7lTsYQQyM1TPoqfcjBLpe4QvmLVc7qomTnQnPkEonQs_05G_JRWsrmABRyt518X8_UrM9gAd6gOt2TKrTaoSgAMXLB-CWK-msubjJ4vcAh71qSd2WNeop6G9NoG0brB1e2Lu5ZQgpmJunzrBkx7XsTenAfqx4jdXl5TgpEhZuR0VJ9ETISmunVj75H-wh2xAPjWb-3gHT60vVrj6SwxiDvsU1FhVfGagXPxQ8ERknjrbul0RNjip9Jdjx_vvempQR0V6BUE8MpgqzzTSflG4Wj2dDlpFGZ-ca-zao_ChB9udoz6DZDPRS3TCV2mT73qjqZkdW5ylM5JNGw3xtP8E7Z5kfz5UzLmZt4sIh9YsCpgh7L",
+            "width" : 4080
+         },
+         {
+            "height" : 2860,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113486937705176360439\"\u003eUpsilon Andromedae\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uIiQDYEABCqGPMnc3NxwLIpkUh2eNoIQ_Kw9_N3rSDBFlr0liapdyUKn2Mtkr04VVXg4mH9J4JCVIRk5Kv5akQ7Crem5agiGEc-FSCfxTnB804OdfuFj1NHdWoAovHjxYaF17oe8nsLxPIoYlouBmOsdrEZ8feemNG5M1pT7VI3f0EPu0tXbTtSbZAPWpgqzz6qBTi9PvUqQJXaQe6bbKL5ihgbHICC9Eozf38oefUgxUmJl15pKknZYnkP57VKabXPMkk4cDheo9taG63OtH3WRxN1fpgGhbQ_Oe0FOsWgM5LTw00uNd5OD-pfrxNK1JxrvZsMoGA8cTGL-qQCmPYkDNZ2nTl_T87pJcqEGRhwUyTsEwRkTpRbLBo1iejSr898mrja6fFfdTNUsNqpkALSp2m3pPaVU8XBYLwvsv9WO7PW921MZp1myRoOU6o",
+            "width" : 3302
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110984769158412229476\"\u003emat sabahan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ulQk-ouVO1sI9wvV69Ug3AQ5JAGWIS62d0BWxFeIsF-fDfY5RXZadaFo7EPaTuXrkUgNoRYirms4hA1-Xky8kGIjRCiBblUPTNAY7YwtB7yt4tKvMGzVQuZ9JAT8NjIwiutBJMbeNnePyEBKUEV6jRxdPuDiHR3p9Ih4uvTqtquamq7xsMa05Ew9_lWKMqPBlrF4h3Php3_8pAYZRw0fHeegdO2709KCw5ilpaVaTkXJqFG4ekCdOaFf0AV6f2gPsvzjDqM-PqAaN3GdP9XU3-S0TCiHuOubi6e48Kk6ltDeMTlWT9JsJKj_ny8dCsj6cce9lxb88Gtm-mWM77AhZaTZ8Vw-6lM52sbf7jPCjz2vpAYTTRLmmGXJoOS2NU94um2K7AGr1P28rUGxuBwuUNarfDzazM21-lpsJgZ_kyhFOf9X1C9OQmj3i0rw",
+            "width" : 3000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108756004575606515016\"\u003eCaryn\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vsOuZC76zMBt1WBs0OSfdXqGSFiAbx3mJ7ePqd_YWoCK_KGo8Arky_8OQTe08rXSpLzZMJFr5Mu-2JVaLD8i0Q0AAyVdtSaecVDSFDLqF2r_aj7Rey58YSczhz_VncPrJMpazoa6px9fmpSbQ_Wi2KF3_BAF-Dh99SP0ymCyr47N9jtCd1Dj2waw_QCCltAeFGfLoTjhDZoM3rcycqain5CyomcBPEbig326Wfq-EdcuIO9xa6TF1h6ncy2F4bi5f0bGejXcNtTIjpBCDRw6evje6rQ9He48N5O0I_kAMEHuJIJEKeOeH_SUbqo7cnAJkGpu5OoO7DMfKa3RUuIaUKQG8dL1EH8xSGaVADqqVfXwbg9IvgcsXqOFJphpltFJC85dUGZsPP4PTbTZXxk3l6YvZV8VE8otICfn87N8Jb0Aeosjjl8_2lvMoViUnM",
+            "width" : 2252
+         },
+         {
+            "height" : 2700,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117302044632020364659\"\u003eKai Leong Kwang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uMiIWU92ANqub17_2Wvf_24DY9PxjS_9qq2YPJnaZpr0mlCNAtCcMxTGZ-TtN7oQIyAqmxPvRJrnHZPnqoWLDTgTZYkqFrYpETxwYW3xbGh4PHTuLalbRCVKH0rMubJ4ClyrWg7oc-DH6ue4c0jEnRTtQD_CkjTHQzmrw45tg2JpgrH3K_OJ4_ilLFqXX0fFRO5-gnpHDs-Z0GIoLZK8WAu021QSasS0PX-NSvaWwWSBlYiRnnroz5gTRT9X2RlBEI4Vk4GmAl02s7J8eXBXtPTKH7wv5SN2h-y2lXXp9rI07sSnFAkLpUG4ksm6vI5BE7bYaL0mWrMxaM16NauLqIcFoqbmtgafMn8I_PnXaM7gw5FX13INQM3KbWAa8QureR6IOkgJafGkSdx_FXo7wPfbbeJudLqz_pWFqGKbsTN116z01NpqmXbZMn6yZA",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104549381465001950989\"\u003eBland Emma\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vp5jHEzt-sFdR0MUKNG1bjwmg-gszcsXxxvKkACnTr0uOHBSt--Zv5aUuaruoIfnQe54-SlI0j3bQ7Z5AP3eLfemfXNl9U0AY98A_BL4Oo7J8jjaECeG4kHCRKuB-xYH9GLUAu6GuvZOZ1v2CCuOMZey7Z-jDakLI2z7Z8lJ4pBtqTgfdW_JpHWMotNLxwJ6FJqsTWJIYd4VIDcKIzH1vFfB0r2UBTd2Zzhc_rgvLqFNADkCkVpd48Lum8tU1IZFCce4edaJUNScMb3koiChpKy1XoL6_mSYPDm0vp2L7gwoq9g_HdavMfZAi2ue8KFeHH84nkNs8BI-ghdY47PAn1FvjALj4xe1YBVKLwSTeX9cUmd6ETK-858mkYrNGG92XBHt2dbcIzX-_NyupKiha6rQ5Ek7kE7dI1JwihhvW9AJf8Ifi4s7rbd3Wzbg",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJucv6JP5oOzIRs-CYzCBi5KQ",
+      "price_level" : 2,
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "food",
+         "point_of_interest",
+         "restaurant"
+      ],
+      "url" : "https://maps.google.com/?cid=11881729609921257651",
+      "user_ratings_total" : 5967
+   },
+   "status" : "OK"
+}

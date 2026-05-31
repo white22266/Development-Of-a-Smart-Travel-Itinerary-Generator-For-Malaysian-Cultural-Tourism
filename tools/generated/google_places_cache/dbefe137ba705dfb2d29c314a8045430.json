@@ -1,0 +1,1192 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-ur-XN9RNq_GoxcXCMHiQ1ALBhf2i9bJvfxbLI0puBUb51LwF_QRpbzvJwmBOrdJyzeAeUM6RYXWA2v29QeMQIHFCdPtdtp1ln-suRvIq5TJDjgHIbpEEYF2N9YL52Codj8fRTlBSHEt8v60S8VxYW1cQJn-KudJlCmy6jR0XLeo-jtb68xZ4E1A-ehEv_DoUMZZNZkV5DSmc9vqQmQ6lSos-MNdFFWxXooypn5O7XNARlzadno9ExDEgIoZlU--7ASgYXWUhzjM7gVkSFEYbP-MPn_bAEjJkSAc1zHTNsVGZCpDpqYB-t9DnWKS4OH8nqLGAu-9bZdhoyXYLeYekucZii6hBIItkXno18yOgvj7Lt7UYm4db4VWpbL1Vk5ISTyHi4ZBV3t9x9hAVpgXGWDpwv6ZH_VYH49u46yf3fWtnWYRQy__x8VQQARjSwtJJynHKLlKuJ4hlxSWZ7Qfi_bV6YPOZ2_3QWcLJZ5TdiB8OITp346RYE_rSd41XR1AasjB4ALMg9fCxnwTXbqSknvarFacyyzR12LlHbQJq8QxQQPKUSYS6tWEJXj3ET689a8Ky9Q5talKyThyaMv0KPQfFf4papwT4W8Jc8l-yKm9PV8de6oGfnw0_1SxrL-CRrN0xxUbWUu0VtGoCs-d3c5rhZAicGRxBxOarC5Hs1iClg1wTEqwd_4OH-tHjb3ikLSb0rlh_h3wb7W4c7QbS6clt-oACsInfH-FVwLcwJGFCY8Dha6UngkodQJHV_0LzB1YwNMqZUX6eWISVTXuavzjWxRtlU655XwPA6tCGZ6n-N5IVPShKKUNQJNjX2gaY61_IzowGY",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "55, 44000 Kuala Kubu Bharu, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.568037,
+               "lng" : 101.7139584
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.569120530291501,
+                  "lng" : 101.7153618302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.566422569708497,
+                  "lng" : 101.7126638697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Empangan Sungai Selangor Viewpoint",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115639235466606138532\"\u003erudy ridwen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufnxArVq5FWd0_Z-sROzUP_n4KSUidtFmhZGMaftaNBoebpTR3L9NytR1S_DOZBid-HiLLymc_nB7J5PDlOvYby96hzMK7n0aj3_oJJTD332eGJVgTtx46vKEeIxlu-L0JH6XN4DLBNGnl1mzkf48eM8GClazEZzO79J0am-rLpOn44IzObZdwJuNVP6JbHBtIrawJYyRn3hnwrvGdWBHk34wnNwNIy50oPq48i8NCsYcsoha35uUC1XxhKgcdVAU2X6k6K2aTn5WJ4MfC9aFLPuUK57ojhr_NnWxBBjb6AdzjOhSoW-msIbIKWZmrtoPNpi0UkD8xC0E3MnIOw-61KEiE22hFZOjk8C5lqd5153ja9YLvQudQDjdgKNAWYl_RNmPrrQrhH9Jt7hyXAKlg0MlBFGGBb7G76kELXDpqend-lN5i1u-1iI35H58U",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJtd1eY7ENzDER409C8gxnZhQ",
+         "plus_code" : 
+         {
+            "compound_code" : "HP97+6H Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3HP97+6H"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJtd1eY7ENzDER409C8gxnZhQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 923
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan, 44000 Kuala Kubu Baru, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5439085,
+               "lng" : 101.658718
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.545243330291502,
+                  "lng" : 101.6600621802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.542545369708498,
+                  "lng" : 101.6573642197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Alor Lempah (Ampang Pecah)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2385,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116071453180968016097\"\u003eSOO YEW CHUNG (SooYC)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sgbWmcehEy6BkDDLCFH2oIHuWVbzdrWHyud6zgVkZqPgGSifFB_KJLcRSzZw1x1itv2lmbx3eaiIjVdGmPnvZHW0buVJQ-ef1HbBh1nDOak4qCruxDoUxZtSxHhywTE7BPJcwD603C6zsSnwwL7grRmV_ab3-Nau4gcBfuV8vm1oLz_ojndF5dP6uL7_qBGtihdyCLlbi8GzEPhZdzBUBeC2XWGYJyfVQKuzwugQo5zAqBQ79_2pdacPjKuYo-jysVIoQMtFIbRlVvVywpa0O_HmNLHfnr2ugPFoC-8Mywd3P0B-outLcUeNP1Rk_sU086s9gNBXGOjEUxqkvegj6BO8Fg69CdRPgA-SzbPu3DhmSs_PDKytV1Z35myGNut4BJmfks73S8J6ZXWbhPjXqrY0L77JeeJ2mJsjyyJkr1ftN4",
+               "width" : 3181
+            }
+         ],
+         "place_id" : "ChIJGTcBt1VyzDERyZAwk37RGK8",
+         "plus_code" : 
+         {
+            "compound_code" : "GMV5+HF Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3GMV5+HF"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJGTcBt1VyzDERyZAwk37RGK8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 605
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "LOT 403, JALAN SUNGAI INKI, Kampung Pasir Putih, 44100 Kuala Kubu Baru, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.6412008,
+               "lng" : 101.5862662
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.642514530291502,
+                  "lng" : 101.5875140302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.639816569708497,
+                  "lng" : 101.5848160697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Inki River Park",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104078979005086107843\"\u003eZarshinYsp\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tCKUF1FQGh_NZFNO-FqX1sK0lGts5YozzrTH5bY6JlrAYWRObOg9aoEcZjXa4aFFlLOjd7VSTKhaRhVSfRX5L6JjPD_j8gU7E-mY0b6rtsktDj69Uv55fXnhgEU4I0_q8MJcMtBgzrdUyaeJLpXbsm-Ks9_rQtIPDu6TuhCLE7WflD8L7-CzG5He34eUHh3rYuWFnzn0O_44wRQL22gsglOdzvFhpFrEx3uKUQT0COir3c2SlZAjAtvNDt5vMTGgbE6Hqq33TtkFqxfkvOnm9h5WUY3mwGKOK5Y1orV2Yc8uu_7xelxTzSyq5jdkG--AaX7r7xTvnS6JGMDNtwfZYHf3RQAeVwrE0nCGuIHFfKFOgX_hsBe_rvwvKk8iVx3vP7lWostGukGJVEXsApYhswps_RcFVrnQc5qJKXPictpaMi",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJlVeVO0F2zDERWZ1MQYEPhCk",
+         "plus_code" : 
+         {
+            "compound_code" : "JHRP+FG Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3JHRP+FG"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJlVeVO0F2zDERWZ1MQYEPhCk",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 171
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 2440, 3545, Jalan Ampang Pechah, 44200 Kuala Kubu Baru, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5279453,
+               "lng" : 101.6497789
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.529444130291502,
+                  "lng" : 101.6511926302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.526746169708498,
+                  "lng" : 101.6484946697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fraser Valley Kuala Kubu Bharu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101131918433010195273\"\u003eMuhammad Hanizam Borhan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uF3vyy1pib0nFhv3ualXwgV88gGktZ22hMOC9wzhi-C01r1L1pcOcmTJSZhseb2HLKUvUtDWrjyWruMEWc-uDTzs1JdQLK97lwj8lEbu8aKGudjPeT5CXflPfXytSzyvl0cdZt7H9hU8Es_C0eAddTW7g0IdzaotMTgackafBopt8a2b0J55mjk_8SUzQys26YEjj0-BnRlt2ocYctrSO2QF6-KGZfd6M1nEIzMfxYzYXqSFWuG45hZGlZjOS1FmFLayA5gSucwc30YzG52Y4uVrZitaTpsyrLCmeSeFP7VdcSjg8LrH4nl7Ook2DcpkcMcABmfEngiC_0l0uiq2_nSHD09ah6p7c_GfY42kmHJ9Z1SWHqtgouu_Lh757IeBKVPq1jpdHlkNf2e2MY8X-T9ZcjgMxk0fH5csafRyFB8ZI",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJPVK8xWBzzDERPyDk-aIoaIo",
+         "plus_code" : 
+         {
+            "compound_code" : "GJHX+5W Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3GJHX+5W"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJPVK8xWBzzDERPyDk-aIoaIo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 174
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B23 Jalan Hulu Yam Bharu - Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3320002,
+               "lng" : 101.7016689
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.333216880291502,
+                  "lng" : 101.7033744802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.330518919708498,
+                  "lng" : 101.7006765197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ulu Yam Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118169124660539915399\"\u003eAsif Mahmood Dar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-utOD9PUx_JkeAsj3ssFc7fAG50E3V_WlyvxWflPpV8JaeNyPN_hR-g-lMerEUKCivz1GHKqMr1mtOl6sP0n8VFpeJrQnNFFkb_H2j62MZk7ThaIW7ep8i-xMlxRRT3-x1lTAgKymt33QoXK7tVkVcmeJBZcRH6a7XLHABUasmARn-zaqa5TrqiXlL2K-2Sq-uU49wqocpYj3XgugtJlL91u2qdtOWxDaJg_NmRAWoZvSwyrEHJwpGw6pm0vYB9JbYWNba5JNUOEWJNZD7kUdBysB-uu0kley9xP83C69AUrGKyCmnOQBuZTX9I6s_7b3z9IMfeHAXog9HQTFvFZJOtq2ScDnUMAqq13uF6y69jMhuL1RFiA01BvaYL7YCBSSe13vQkThJ310cNvGuDn8Dtaf911ZoQQWdLwEsZuAgA1g",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJb4N4jwtAzDERlcKqFWKFJEw",
+         "plus_code" : 
+         {
+            "compound_code" : "8PJ2+RM Batu Caves, Selangor",
+            "global_code" : "6PM38PJ2+RM"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJb4N4jwtAzDERlcKqFWKFJEw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 143
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Orang Asli Serendah, 48200 Serendah, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3664894,
+               "lng" : 101.63777
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.367764830291502,
+                  "lng" : 101.6391917802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.365066869708498,
+                  "lng" : 101.6364938197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Serendah Recreational Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 958,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112861706239672927087\"\u003eDinesh Thalavell\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sD3-tpEeGf7Zr5EMOG8bkWpdIhWVicrqifOCtSMeSQT3BueAyTKlcz4gItDGhjr7cGu9eATpD8qC28eM4EU5F0SNue4MYz6Dm6ZWXJIfO9hYnvvCdHtkgP7313DY3aOqLP2I4zOdJ4BefmFTjzvZabW2V4zt8LLOKkwhuFpOFejqLhbeZJdEqbjdUA_pd55PibUwCTvE9vVCxgAS7tHx37cSv1KM2yAHEn2pMK7BFF5yCK43RELPrt0XpqNHcLa7HXQJmo6EjfArsZwAwqTfsZ4Tpz_t7Q2tmrvl4R0BuG7t4hCyfG_K_VYeOfyxB4_FSwcZhIwBm_H32miPoCoPQxW4Qu6tQSBFTVyz5vLCDgIVZYOk-YBpyzMqxSs-I5bRw_3bPyyOgSJnxzoyivhg-m-6UH1hOhzFQ6ahd81kcd0fA",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJoy3I6BRqzDERzoK5AbbPA2g",
+         "plus_code" : 
+         {
+            "compound_code" : "9J8Q+H4 Serendah, Selangor",
+            "global_code" : "6PM39J8Q+H4"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJoy3I6BRqzDERzoK5AbbPA2g",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1431
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Hulu Bernam, 44000 Tanjong Malim, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.6799713,
+               "lng" : 101.5078347
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.681320280291501,
+                  "lng" : 101.5091836802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.678622319708497,
+                  "lng" : 101.5064857197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Changkat Asa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117479025866687882332\"\u003eHafizun Mushtafa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sSAIDMgRs9oHGI0bvuWHzbPZ_JC5ncaWKB1jqV9cUjs6-JcPMstF_q5DygODTsox-56vlh4bEXS8FUDYTe9ACLpQstwe6bhGd3wGYlqqf2nsc1rL8-OQ8L5N3vSQvcMGX6gP3w-l1x74apOMZ6DJhxh5et7fAQIQSNRhXSWLiIPBhAuHQK2w9Ga1Gr3gcUMpnR9ui8sPQVH3w9wT95XOk7dB5_4jyAcNICtjrsrLyBWFfR6ZS38LSGOSIZi_uU83gixOTm2PRfEEGT_K7P1mIiR8nOnJ2GFP61KbUnkftL-_UT4xtzwOXzMex-6luZcbR9U3o-kS9WQIBGOV6ouQCR8H0Q_0yFoS6WwABYlQ-00JMQHLWvfBWHnNkZEyIQlB1NHqvNqOl6l4rBjsDpKFoAQ78Y51dUspKZ9n2tB9u-oOCOUvrgpu3U9_rZOfKs",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJP9Phde6HyzERJhAzwBlmED8",
+         "plus_code" : 
+         {
+            "compound_code" : "MGH5+X4 Tanjong Malim, Perak",
+            "global_code" : "6PM3MGH5+X4"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJP9Phde6HyzERJhAzwBlmED8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 116
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "110, Jalan Arif 6, Taman Arif Utama, 44000 Kuala Kubu Baru, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5649367,
+               "lng" : 101.645831
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.566269980291502,
+                  "lng" : 101.6473139302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.563572019708499,
+                  "lng" : 101.6446159697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kolam Air Panas Kuala Kubu Baru",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116590545817504503844\"\u003eJean W\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIwO7x5PiALwrFVc1fohPtTZrwyHbH4f2dziEoeC6YrwkOExP-ULD39dJwVNo3CLUInkEAUD2KzMCa_l3tvVZi8Yj9nomfuUYMBttR9TmOGLVzLJi5FVluN0q_HANtFVZVMbhmrI4J-tfWiR_qNWOGnUPiWqB5L3ZTB_uxHYeMQKp_pZn1t7EVSNtZfBwbm762oVdjr8CKzvgWDnoULUkCsbcfFeEuRUC4py1hWlI0MasmSDWkOs1XyPltRxBdsS4pKmT3AZEYRJ68-NM9KsBdDKlt5SNbWqTaKvPylMJqb5dzFDYHWSQ9VEsKlsT093_sEJDg8PId27UOBI-maxDf4ZpQFxiQqFOeoY9D1AXwH_k-0lZD1gfKJnQOk4MEKwrZCiAm4pCbSSZx0pUBHGy6RU3qmTse93DA_vCcYAPT12A",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJibZrcrxzzDER5v-8JO71UO0",
+         "plus_code" : 
+         {
+            "compound_code" : "HJ7W+X8 Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3HJ7W+X8"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJibZrcrxzzDER5v-8JO71UO0",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 953
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1814, Jalan, Kampung Hulu Rening, 44300 Batang Kali, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4902036,
+               "lng" : 101.6933324
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.491745830291502,
+                  "lng" : 101.6946642802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.489047869708498,
+                  "lng" : 101.6919663197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dusun Ayah Heritage and ATV Ride",
+         "photos" : 
+         [
+            {
+               "height" : 1078,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111123225756442512903\"\u003eDusun Ayah Heritage and ATV Ride\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uhutceR26KUnKRsTWv9Nu3nixSZXlUVm8ar8fOgghtvT3b_0wJ-p9V5rv_F8pnbNXkB11losF9b0tfFWikoiMSHCi8LW7q-IkBi_wrTl3niXRHwQ0ozgDdz9cWQ4gGOGzbr3oXfNAavtkM3-p7Yhn6L519CkNaOKpMxxvRpc14x98nl1D95kNAbHIppB77-BIqlnCP2gUvF5hyYNf4LQ0rOAxKWZkBhxrcpCTktVjcYbCjqpVb3bJA6I-myUILuk5qCl61K7Gz5bPMFDyrq1qhE8WuaMTV-KPSFoQLqoaoABU2jlQmz-CsKur72Lyb5g96_cOZUvIMNh9pdQ9tlRmYcb_PrYSBt-ciVwXG14KJM6LIg9VMEYC6d5yBKx4aAOW00w3BsmwgwwFpsa2T0EOqau6ollwcz4sxSsZSOuTe1tCi",
+               "width" : 1079
+            }
+         ],
+         "place_id" : "ChIJt0IgVOhtzDERZGftoQV9JlA",
+         "plus_code" : 
+         {
+            "compound_code" : "FMRV+38 Batang Kali, Selangor",
+            "global_code" : "6PM3FMRV+38"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJt0IgVOhtzDERZGftoQV9JlA",
+         "types" : 
+         [
+            "campground",
+            "establishment",
+            "lodging",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Hulu Tamu, 44300, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4638644,
+               "lng" : 101.6969346
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.465058280291502,
+                  "lng" : 101.6982653302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.462360319708498,
+                  "lng" : 101.6955673697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hulu Tamu Hot Springs",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109175839420631527140\"\u003eyee yong jing\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ubl8mpauNITdRB8OcL529a5X68uBWJi-FIK83UAZg-RH5MRLArT_4pLc-z69D-0gg9j_1ZIyiGFJ_e7-YS3yso7fSBlR4jBEhVYtHJZq-ACeq2xSSiQQHLpCeX9s4jkkkso-uZI8IBRpLbtUO8WPGYxbjLjHqmXjqURYtSeBrhqkXBup0nT-J8jkqeV-bXWiJmpRtc4lPWPbDWaARHeWcbXndYhN9v3t09dT3Mz-LgnTZiFyjKefn8IDIBlT4xpS6icZ7lMVkEhgR10CZg-8b3YHbifRadYah4mYtvZjzTitPAX2SBLk5OQVmajvCGHUjhScaW8EHaADovgH9ftN1EzIfCVdJ91WjMB5zFcAU5PwWSBVfd1tmJ9MBCGN5RINVtjjiR4c6_vlwxHkuZsYSQNV2LJkLcJCEIzOkS8wA",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJg0N8FNdszDERC2cgQpv9HWU",
+         "plus_code" : 
+         {
+            "compound_code" : "FM7W+GQ Batang Kali, Selangor",
+            "global_code" : "6PM3FM7W+GQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJg0N8FNdszDERC2cgQpv9HWU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 860
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "kg orang asli hulu kuang 48050 rawang selangor Kuang, Kampung Orang Asli Kuang, 48050 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2632803,
+               "lng" : 101.5818798
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.264702380291503,
+                  "lng" : 101.5832868802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.262004419708499,
+                  "lng" : 101.5805889197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dewan Kampung Orang Asli Hulu Kuang Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2796,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113559886408860064594\"\u003eDewan Kampung Orang Asli Hulu Kuang Selangor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vuLtOvOzCveNnlxSFtNMbyziZ9hQWcm5r9wtHg7SVW3J6jik90nz3FPs18gLh-bc_6PbUSrim1qnHpiBDpUny3jeRJwXgn0uWXwtuUUqIgJ3yQjE7oUc0gcEJ7swhi99qIXG6DTKNCgQ078xtFEF1hQveXSmORb8fECFhe-BAYM5jf7eGqgKebaxUQltf9QUvJ984lsIxoyoFxFTHUkvlgozhej3tVGwilaBOHtL-k6oQohV-9bF8EKeAOxRdqm77V9we4Gfti8V2fQ2niQDxWbXXW2O1Qjeiun0cokzCGKA",
+               "width" : 3726
+            }
+         ],
+         "place_id" : "ChIJ3QBqfsRFzDERbPvW2bPgZJw",
+         "plus_code" : 
+         {
+            "compound_code" : "7H7J+8Q Rawang, Selangor",
+            "global_code" : "6PM37H7J+8Q"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ3QBqfsRFzDERbPvW2bPgZJw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Kuala Kubu Bharu, 44000 Kuala Kubu Bharu, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.560932,
+               "lng" : 101.658546
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.562349480291501,
+                  "lng" : 101.6599835302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.559651519708498,
+                  "lng" : 101.6572855697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lorong Seni dan Pelancongan",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116766014979607236431\"\u003eG. L\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sB3ZcAZ3pPhpXrZ8NvzHUv0_Pti1g2rvqF5gIoR0eAmE7Mo7q-4nbOIoejyirN7GzQZFTQXUKd92k25NtD_It3ey2t9zGsplgET2kRsHook2vJuZM90Xt5ezE5OX7Y_op5H6K0SEp5KCQW_KvzBwF6qIZc40ioRKxP4VpUlUb0GD3QPF7U0-nHTcBoNR2M2O0KkB_y13Uez1F7vRh87TkUHWLNtsdHM_6SdPJkbYdFPswH0dxLji6RTkRJ_QPntbyRVdxwYG2WJqQRpLt68rhPsHUemKQRQ9lZg4Uu26ZwiQi-TCB4ulkAYx_HXctopLh7394F3muoluxZoadu85PpSiDOcGwa6FtvUFShMHPcOw9ZXs6gzIF8pTnwVt3DQcnZb4WqVE0WcihN5TzDcH0hZ-MTIHGlANzYYvs6uLkLny-n",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJjbLaZABzzDER_cvJK0JM9Co",
+         "plus_code" : 
+         {
+            "compound_code" : "HM65+9C Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3HM65+9C"
+         },
+         "rating" : 5,
+         "reference" : "ChIJjbLaZABzzDER_cvJK0JM9Co",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sungai Tua, Kampung Pasir Ulu Yam, 48200 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.311927,
+               "lng" : 101.698036
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.313525280291502,
+                  "lng" : 101.6992655802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.310827319708499,
+                  "lng" : 101.6965676197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Negeri Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108381928194456739060\"\u003eEunice Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vcIhUImVkC42Zt0F6cojX00WUW_IKbviGA6vmdAnNcYDG9D0dTOK_ENibpAZM0WRyPzHf1J0L5Vqqm7x4AmLeDFSVFcA6cjJqKBIfRl8GVezgJhMMcNIouTavVhHcD8EqrOlK_7ljjsKA5Gs_MzFOOJIS7kOvJzWFG2QKoL4Ub_3oEw2y9tOCAHCmOem-Kf6jnPkW1NqI2RxVNgJ-fO7neyzSphsaDDsNoDYy0XDGidrwgN4DoEyJ5BY1D7Ypgpv4GhiCVq6rW84NqnnwQXb07kvha44K68rDLJ29cfVOv8Ec8e39aYgFLW2YplN_24j_3a3GFEKH1Iwt0nG4751OZ7xL_eJOICC82uDt202dA_28e14KrrPhOILAqtJ4zmA-nwU5YfQ1K096A6YR3g5jB-cyS5TgjMbKt1s9UaJaoFQpMpSd-Yl7JYHGcmJTc",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJlwXJ_nxAzDERIy1pPVQ2Hck",
+         "plus_code" : 
+         {
+            "compound_code" : "8M6X+Q6 Batu Caves, Selangor",
+            "global_code" : "6PM38M6X+Q6"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJlwXJ_nxAzDERIy1pPVQ2Hck",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 989
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bharu Selangor MY, Jalan Hulu Yam Bharu, 48200 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4078366,
+               "lng" : 101.6695178
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.409180880291502,
+                  "lng" : 101.6707990302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.406482919708498,
+                  "lng" : 101.6681010697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "D'Heritage",
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102460304219522048728\"\u003eSharil Routh Property Agent\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v_ZWt7Uos3xR4uxhsws5swbt8XBoCrN586VR07cpfz-9O8FbGne21RHN9Ax2vO5HFs5Hs6lVKLZ7M2nXuozLOg3Ps0Rg10k0qNey2er6FjPN_SQ_hrIS5PP3i9wK6SMGHpwNCgJ5RseaUMkF-_D-43yqj1Hr7t6z2qyuWAEXBzeud4GCMTx3lxZpjlwSGCjmJ2BMpuL7uSNt8hwv4MXSILohwjVkCPLbIfcUR5TC5-a-z3WCA7FkWZyJdbXc2IObND55HxMrAQlpsv8USNfNdijdm9ba9UVgoEO0Qoh7ggGdqq9qF0oDzGdz0B-yob4xoOWYGl2uZeScKEBGQVU8kJogfxvpVhNIY3Jpkk1yjx2CuK8nnheBu5ABBrAsxKvtUw8vItqISx9ta7Lg8LCU1Bzg4p4uX4_ZRB7gG4_gSCnAJQco3LOfSAMCHFGQ",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJ8QD3-wxrzDERRyfMLQGcKfM",
+         "plus_code" : 
+         {
+            "compound_code" : "CM59+4R Batu Caves, Selangor",
+            "global_code" : "6PM3CM59+4R"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ8QD3-wxrzDERRyfMLQGcKfM",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 60
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7, Jln Beringin, Templer Villas, 48000 Rawang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2989882,
+               "lng" : 101.6196976
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.300244380291502,
+                  "lng" : 101.6209241802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.297546419708498,
+                  "lng" : 101.6182262197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Templer’s Park Falls",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102069671126643131058\"\u003eDylan Sim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tmZqE7xb6iFyH-s4FpFSOnkuwn8LBnA8oYQwiG-kD1q7TY5ENZyGBlsLycAtGsZirsEndwJ0NHAdrEUahrJW-DhIJ4IMqcYcsp8clMqbzxrijXuF0gF2ie2GUhqEday9ixgwTotIWZsli1TOAzv1zEzkeBhAB6tVx4hIF9Ojg16676exr1l_0JO-KVgiEizoqO6cGH4ixe5Hwu4MrvTwuUx13ua8JVWQl5kepFNvK2Ctao_aWzSBsGYmwEeqmL_S9rH92L18yFrBjA_M325m9uZCxT3gbU-3h6tuSg7boYaaIdkkXmsFSsOHwxD0GikC1jpMPJIMXUge3cgS8J3enxfNWY0BR2wapJpq4otMR1wMmxNQCYGmbySNXWWhIj1wYAaowG6WH8-7nApXMlUSYmuWeQfTHN3qm5DhKEhnkzFvUu",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJiaz_FWNBzDERNkSQwNkrpvI",
+         "plus_code" : 
+         {
+            "compound_code" : "7JX9+HV Rawang, Selangor",
+            "global_code" : "6PM37JX9+HV"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJiaz_FWNBzDERNkSQwNkrpvI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 208
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "JHQV+8F, 44000 Kerling, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.638251,
+               "lng" : 101.593655
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.638892830291502,
+                  "lng" : 101.593655
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.636194869708498,
+                  "lng" : 101.5909022
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "嗱督山",
+         "photos" : 
+         [
+            {
+               "height" : 3840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110368351012822712120\"\u003eHingfan Hingfan8308@yahoo.com.hk\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tmm7nCa-Z-wHWoPrlcDfZ-yxvG1Q8-MtDnXQbW7lex0qWUNeC-opPaorYAzQNGf98oSfkkum19umpV9BDj_K-jfRK4jxkhd9GSUDo5fS9XyAa44rXps508xBMMjLrvkEij05HXeLwQBZiybZo40UjA-tknBEymaSw6w6QRjskdiLQlijGakucCKOIlKAbHeiq79TvovrTEdQIJnt6gNuRXeZz-xXfc0NJxfmTLh5hLyAOO8Y5l_NWgw1a3sOfOwVpeV69_7q-ypsYZj53JpDk_MvdP0wjqbChl8TEzotmXAlQGj6l_-x1EsDZAMklzW1ALrNlbFV1vNq7w6Hl9KkIUhx9jYCkJTfLPqjoLMiXOXOIiPff-Mx4N1u3gzGR1NtZbWbqGdiMJoPw5u9RScvofSzt6NrRhKLTM_D1xKYVg9gxr",
+               "width" : 2160
+            }
+         ],
+         "place_id" : "ChIJlyrb32h3zDERx9NydtmKtvU",
+         "rating" : 5,
+         "reference" : "ChIJlyrb32h3zDERx9NydtmKtvU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sungai Congkak, Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2100407,
+               "lng" : 101.8432558
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.211365080291502,
+                  "lng" : 101.8446454302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.208667119708498,
+                  "lng" : 101.8419474697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chongkak Park & Resort by Tourism Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109978321853289028438\"\u003eChongkak Park &amp; Resort by Tourism Selangor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufmuN_LUYnepgFNczZuvnJUlHfidaWQF97VAAvqDN9i1eJjwFF4qYpcmXBkmAWu5L-N1CbZrcyKbkE9zlTmpwbzbtcNvWCRskoAkiUsQjZFyw7Zr3vVDnuXXFukc0e-tQiCcLsAC_I4RbgPAg-E39s5r4i9D5jyITGwB3CvLDSkVkCEVOR6Npm9ClLSBn3SkuW9VLW0P_TrkIYiG1GLKCBpWElE_hL_kl7JEbczayGaZUvDi2kD830BxCE02_2njgEZhELcVYPEEvhPaNk4yZU159_s9VINx_J7aNG5bjmXg",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJ7XS6rP07zDER05yY5HYoKvs",
+         "plus_code" : 
+         {
+            "compound_code" : "6R6V+28 Hulu Langat, Selangor",
+            "global_code" : "6PM36R6V+28"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ7XS6rP07zDER05yY5HYoKvs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 110
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Kuala Kubu Bharu, 44000 Kuala Kubu Baru, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5660231,
+               "lng" : 101.6553783
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.567319630291502,
+                  "lng" : 101.6566901802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.564621669708499,
+                  "lng" : 101.6539922197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Galeri Seni dan Sastera Hulu Selangor",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105454147275487571694\"\u003eAmy Daud\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ubGqymvCc0gkTIP2YCVGA0-Rg-cZpspNY-u95VhiVVoIWE0fY-XOWdzWSoQtsLO6fkQFcyBVh6nZyOa2MKRfxE-y467TOawRyvhkAtCRYp6YEc42KSZo-Wezhragy1gVFnRk4FOMdYRJQN8KBMzAKROepOar6TSVPXUmyPjalBfwMzfs6n0fcffhXGS6ubkkUduhSPSR4GUadeNlY8aKb7lQdoP7kCzlYHSOOoNvYuZ6tj3XdorWSUkeP6CcQ7wlxjdT5vE1NhcmQsqfr0DpPgrNXl10cUCB8fAKZRp0lAjkwc8gSHkVYTgYEafKYFjXHfceKt51T9srqXfDXbYQ2qIQte2lhgyfw_NJi5gfXFDhTnssAGcCwAw_qtPWS7QBsBe5y5Jj8ZEBSs2W9sAuo9DKEnkbdfhsgJqHSu-v9QGkmE",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJJRClH6JzzDERWfo8eYqTonU",
+         "plus_code" : 
+         {
+            "compound_code" : "HM84+C5 Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3HM84+C5"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJJRClH6JzzDERWfo8eYqTonU",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 42Jalan 2, Batu Cavtre Point, Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2374497,
+               "lng" : 101.683972
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238515530291502,
+                  "lng" : 101.6850437302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.235817569708498,
+                  "lng" : 101.6823457697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lord Murugan Statue",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1342,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105039223820464255462\"\u003eRaghu R Gowda\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s0JEMH1GVS_4E07cKgjOaeZNkQweMLVcfme0uYRLISbWzBo_FtP7IhyDHTqNgkrqdPnAc_mCgxxN16c6LbdNY-AXvVag8yZ4cL_mkxylukjm4B1tbnGrGBDFkMFgnL9-Ma_bijnH9_3MSXlEUGoIj5qwK7_ckBYrMJ1WYSHzto1RF1pqjDMe5JPnkoK3KjAsXsGn_3f4wjv17m44Zf5rJa8hFmiKP31UY8M6DSLuxxL8FvfznE7gUqnlVIhrkwpQz6mCShqMs_HvBP6mHqazxipCLE1QY_-cJ3rNYEgoPTWbaHgxhtCVuNAG1XOWxtecUU6A3HEILbQiuTJrgFuHwZkmBWqFqM-6Cce4K5_FObbWTQUeMKNxgg-H3n0nEJuiIcajZRDwmzx4mwxDlIv6ggZq2YkP_qSuBEc5QrKLvjTQ",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ9d_bR_NHzDER31TrGM2bNyQ",
+         "plus_code" : 
+         {
+            "compound_code" : "6MPM+XH Batu Caves, Selangor",
+            "global_code" : "6PM36MPM+XH"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ9d_bR_NHzDER31TrGM2bNyQ",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1637
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 20, Jalan Sungai Congkak, Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.209053,
+               "lng" : 101.843517
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.210411380291502,
+                  "lng" : 101.8448877302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.207713419708498,
+                  "lng" : 101.8421897697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sungai Congkak Recreational Forest",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108355327128842071095\"\u003eSamad Talukder\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vL_EKZVX3xCOa73Ddlg6p87Lt5IuyEaEXVPMfCecdNHPNEVN_1-zx5WDkTgPXI0o8xhCvhxjR6VxBGYtfl22HkmRPGCpXWhoxKzb0vOZoPrdCmMHndoBbWAQEgmoKl8ZSiulXPMMxmFWxWa0M8zsXUzoyivQbmNsK5c4PrQtnZvZzaHjQg47n1T3ntiO4lyTIPcvESqMNflaR6NzXKjzhA_OfPNM7e2V25NF7dnMmIfDWApgvhJLL8IiVG9HqpxA8ePhjUA70WJ9vJZq1MhnNTehUdP8MFcRGtaUVaGvFiF91pEvEH274TDlCNqhMzXr1nRZ4TpND0E6pNNX-maFQUvRzzmiwN-Hme6lBErcbHY1kQKdBd9yNGn2rCReRoD7JbeUeMtH5LS8OmtMn8QjMcV3gWYFLEbwYJH5u96JE",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "plus_code" : 
+         {
+            "compound_code" : "6R5V+JC Hulu Langat, Selangor",
+            "global_code" : "6PM36R5V+JC"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3489
+      }
+   ],
+   "status" : "OK"
+}

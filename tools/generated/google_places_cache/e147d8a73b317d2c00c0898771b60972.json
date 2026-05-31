@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89908, Jalan Jawa Sumbiling, Kawasan Melalap, 89900 Tenom, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.2699091,
+            "lng" : 115.9876174
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.271229430291501,
+               "lng" : 115.9889825802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.268531469708497,
+               "lng" : 115.9862846197085
+            }
+         }
+      },
+      "name" : "Kampung Ulu Sumbiling, Tenom",
+      "place_id" : "ChIJ1xVycADdPDIR2KQKw1btaXc",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8604669519963268312"
+   },
+   "status" : "OK"
+}

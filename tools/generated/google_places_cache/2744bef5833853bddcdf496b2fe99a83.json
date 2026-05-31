@@ -1,0 +1,1137 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vXEqAt8Ifm6pH1n3Ug34Mt1IQbcx9VJ4_0szuSk0GyZe5Lx-flF3PVxrlqk3N3QD2IpLfw4UQrXyrOv6NaI1xXn444raFq_zb_hI5htOSyT9QZlMho7KUy2XcdeKKNSp_7UmBx5YrNyli2VlA47EdKndnIOXx0rAUEoM5-61Ii6G6PiNpCIOtxWI4JUwSuCdwnS34w4tHlSl2Do9NJqn3HA6jeD_HchqO_WIec7A2enEelo4VX3eLoN8UyyR1jgG0Gr0tSPw5iQhG-kZU7DKKQQ43GVF5cFn8ez3KuBvEnHwSOKxO6J7r4bATakeeViGQ8Fjgou9qRY3nxI0btbWys0Au7GdyrkKZUVBT6xK0csmSMFouBa02A0BOsaMRZQEkLJ-NFkw8RqYqB6eZPLC7rNyvBoFgoYvkf4aCqJWmFkR0Mq-pUkKalywwjN7lfpFh0o3C9eekFDjiZY9HQSDK2eZ70eVdem1p82ISSSw84hSaiDwfAVeenXhf8ssYL61rQxSL6LPnJOK8lG0H_Hqth-Src9oKI5zqVz1qelleT0MT-CvtdYDDK8tOkIOyiQn0DW_Bs-wiHyl47WMylCrkiB1_zzTAjVQXAk4ytzR4cvq_Abut-RPeoLDucWoHZ9xFPqZB1Ksyt70FwiN4wmFBdq1fwBQMLmomDlv8WZiXLXt3s1gP1snP86jm05HH3deR7x5qlzAKEm8LO3qJ7vnZQKMWl00KPVK4s0tXACbTugrhg1Y9BJa6wQeMb7Cedj1ohFijLRR5jK9VcCJ1yAgXQQX6Zs26wFbEWlbgddyAc0GWvmAEnENUoNNcaXl3smME5UIjgUhh9",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3, Jalan PJS 11/11, Bandar Sunway, 47500 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0693932,
+               "lng" : 101.6067533
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.0721122,
+                  "lng" : 101.6123884
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.0663095,
+                  "lng" : 101.6016649
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sunway Lagoon",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 701,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114106066209471280678\"\u003eNameless NoName\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tTDG8jCjbLuei4PVrJw6KtUlHdEJTIwtxipfNQziMDiYUTL9OToJGlZ6Io0fvVPbD503yEXREOg0ArIdGL8vIhpV7KZpBDYnn4b8pryVeO85A_EysLbEVOiGRN6HIG_hJ_Mmcmbaz-Ywb-vvqFQGVkC9zANe7KMQU4sGDQBNJIgn74Kr4wLXtLpEhFmYORg30I3ycKeGA1UtkXxmeseT_ifDOOIEFgBhhwJ1DHdP9H50ikWw4GWX5BKtgBDBcCgxHVOfAr1PbQkKNa2nlru718ldsA3-cFHVhBvTfJJsi0F3ROiQ07VTCpo2knteehVqlEbm9RmmBD9chf93f2tTz3bycghYHZWADl4TUO5mdm5Qp3a1MBg_oK1gAWylPdrPdtIchClZ6WwWOyRw74b1glpcurmK5wZxZxXHDYTxKzLw",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJJTHt3YhMzDERvM3wesdMZds",
+         "plus_code" : 
+         {
+            "compound_code" : "3J94+QP Subang Jaya, Selangor",
+            "global_code" : "6PM33J94+QP"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJJTHt3YhMzDERvM3wesdMZds",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 28497
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SS 12/1, Ss 12, 47500 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0813678,
+               "lng" : 101.5976307
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.082530780291502,
+                  "lng" : 101.5991428302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.079832819708499,
+                  "lng" : 101.5964448697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Subang Ria Recreational Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109235451480732645886\"\u003eHisyam AS\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v3TmpNUylSRdw5MibJH6WOpgoFdV2PHbqfa5wcXNG8fhNRRVw_rwSqvt18MMBTDuL-4vuG-tF1ZK7YXB_GrO5PvUHTpahjm4HOXt8QsGi_tNhhxIiwlLhIOhJFb6yTepAfuxMVJrGqQO3PKa_z4msfVYlUGNafzdl5VoBCLWgUI_0b_mryQVFKcN2R4MmDYJG5m58eYkjmXikIMiPEyTN-_vvvA511TlT0k_3vPngvlTueennSep04aKdUCJKVpFeK-z9_jEJ97gQpR1I7mjuYHJ_zsGOB6g-G5Old8gWJceVf5gARWl4o0E-ZUl6AFMeGieVWFXjxWn8pb8fCO8RWNqv_765XwFcm0SxxwQtbv1m_9K6ZI7aPClfRf1FwiBpGqUaQkaX9hDB7n4KGLfXIHAXYsea9ThMwb8-SE94",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJPZBrtGdMzDERVkSNL0kOHFA",
+         "plus_code" : 
+         {
+            "compound_code" : "3HJX+G3 Petaling Jaya, Selangor",
+            "global_code" : "6PM33HJX+G3"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJPZBrtGdMzDERVkSNL0kOHFA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1629
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Sunway, 47500 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0683743,
+               "lng" : 101.6024829
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.069719780291502,
+                  "lng" : 101.6038318802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.067021819708498,
+                  "lng" : 101.6011339197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Subang",
+         "place_id" : "ChIJs_lxBwBNzDERxTPcBqdb1tQ",
+         "plus_code" : 
+         {
+            "compound_code" : "3J92+8X Petaling Jaya, Selangor",
+            "global_code" : "6PM33J92+8X"
+         },
+         "rating" : 5,
+         "reference" : "ChIJs_lxBwBNzDERxTPcBqdb1tQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "12, Jalan USJ 12/1, Usj 12, 47630 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0382608,
+               "lng" : 101.5750063
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.039627530291502,
+                  "lng" : 101.5763721302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.036929569708498,
+                  "lng" : 101.5736741697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Big Bonsai Tree USJ",
+         "photos" : 
+         [
+            {
+               "height" : 4624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111567469790567480316\"\u003eWei Han\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uClCO0GhJuuuUbFgfNgDLvG7vfRSzJge5WWBeXppDrYImV9RNTbioZp-Vqq7mUagBU4L3nGvbELF-SLdncOwKDXg6b9Fmwtl3iOd8QsC1Chcc6HFr726iDziDl3_fSFsP_2GCdWpQGfhby9_q48js_QOBVGnSN_JUYCZrKGVUVSLU6AZ-Xf6Va_VoBE3OTW38mEFQdDtFbh9fczn7S2_iE__sWxSt8-IOtAxfu1V53jMB7GHcsr-24f88qQeY_-i-q_BRvy32iQbMZ5XuY7RrhHtD3PhvjUmSRb2p7Aj0pe51Jeg-sf4faxcZSla82hizDzdCIONv4V_-F7f2oO_D89tV3TPW_vrPjPuq2wtpabahFh3IwKdBBhocE5c2ZPGdcHz9MGp3Ukf8M4DZWqbuG2Uur2HYAuT0EU2PlCbZRtQ",
+               "width" : 3472
+            }
+         ],
+         "place_id" : "ChIJ0ZwZPZhNzDERSPGXz78fzjs",
+         "plus_code" : 
+         {
+            "compound_code" : "2HQG+82 Subang Jaya, Selangor",
+            "global_code" : "6PM32HQG+82"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ0ZwZPZhNzDERSPGXz78fzjs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Subang Jaya Industrial Estate, 47500 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0727335,
+               "lng" : 101.5937224
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.074192730291502,
+                  "lng" : 101.5950669802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.071494769708498,
+                  "lng" : 101.5923690197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Millennium Park, SS13",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1152,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102227567030753284400\"\u003eBern\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tuwadeoUfVsGYwMzGpP0XqyOTlQihQytGjJMqOLDBzc95QSwTl4ui3EwqUW1ISOITiNXOxa7coRZsHz3LrblFFxkqKs9TQhLNgcircLuVnespBYHjfS3wjB3gbp3R4NCk5znV8fwvx2iSCU8PT3g4DTZbxk7Nf07sPaHhmCbecw6M2BQsqj1ZgwWICdkM--xphbdXIP06oNSMBOUKT5g2rmKr5B8Wf5z3cs3xE2DgU6GiaE3q8N1o0r8aDZNc2Zc7nknSjwI_umvTIXtgZLZ0DsCl9e-46oHdBoNJDtuNdEsKClbjvd4FxFfYQQEYHbn1UOwJIlbKFQVH_jBQI2i-HzLWuFzXIm5BnqEWBT757IiK45kAvF-vB5NjzM1d2WB4atcCAhCPMLFroqcnTN-L_lZ8GczPtqVixJnfDX49voA",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJ3xtTvopMzDER7TVt3AZ6BfI",
+         "plus_code" : 
+         {
+            "compound_code" : "3HFV+3F Subang Jaya, Selangor",
+            "global_code" : "6PM33HFV+3F"
+         },
+         "rating" : 3.5,
+         "reference" : "ChIJ3xtTvopMzDER7TVt3AZ6BfI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 181
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Ss 14, 47500 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0646355,
+               "lng" : 101.590842
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.066068280291502,
+                  "lng" : 101.5921899302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.063370319708498,
+                  "lng" : 101.5894919697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Our Small Kingdom (OSK)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110736529266576600825\"\u003emobi-apps biz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vjVsGi-r2gGq_BdW_iSaaya6V4S1rkezFhdFc0NgaoMyTpaqLI9agacggp4_CuSu1GMDxQ_LAWXignybjkJxJBgUv8UWjx8urnLahYcQoyopMx0NGoTPjYhQRDk4tOymt1cVX9V56rOypSocxoETsjfDfygbJpjK9EVi7iQArhasZMz7Gp_MQ3RKWRp1wRgfoZjGh8XTZf1NhXK8YFJDnyI6GfUYQjavuyFQ7qyXrIBqXHqSw1VWl1NmLZ-xN3B2VjO2VK0nXf4qradizIOZ9PV1aJoFrSngicJ4PX-I9qI2ro69EFIfcv-POF6oFsygzQKlIywiu1IwNaQYB0O9hNM6SRnvTKpo2kQyaRBYhY7hmv3FkR1rr-FGCWsgpL-IClhXmlB8MZ5q6tpa5Rg13hniGHU94DT2UAi32HYZs",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJsdQCZY5NzDERyP8e8e5D5mY",
+         "plus_code" : 
+         {
+            "compound_code" : "3H7R+V8 Subang Jaya, Selangor",
+            "global_code" : "6PM33H7R+V8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJsdQCZY5NzDERyP8e8e5D5mY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "S-01-01 WAKI TOWER. BLOCK C, USJ ONE, Persiaran Subang Permai, Subang Light Industrial Park, 47620 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0585388,
+               "lng" : 101.5985326
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.059887830291502,
+                  "lng" : 101.5998432302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.057189869708498,
+                  "lng" : 101.5971452697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "WAKI RELIC MUSEUM",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104966702052704699497\"\u003eYvonne Kong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0PdhtfXn2TQJTpjY0QK6exqU86tZ5w7wiMw36aksMEFmukgHzhIG_lYoD-lFr8OK6OqdhV3oN2CDzDzlfpPu-pSgf9OPyRviTLBUBxIpMV6daxYl2dpJGAPf8B-iaKLoCdHKkhdMqCsNHwhZBtsxTuwP4v5bkHfik4lu2ps1CpONejOd-LIfwPYc83nj7OckgJNx0eJKyk0Fsv47BEB6oO0Jkmpjp-0sxKnWrFjWXF77YUS5SCEzGsHVJpgtJWyZvT7YDYds4MGM6G7Yw91Mvb61rR8F8SBdjRvQboBM4sMAMOl0AF12jOUDN7jAes7R9KT8Lv4z15Y6t3oL1H36FBzx9vEsNaDKwaDQf8_TYXx1KXgbkCXsIxzDf7x4vlrs7qg6T4qDldt_eIeEg4biGkVyMQKY7mUTcNZOue0mSLOuh",
+               "width" : 3445
+            }
+         ],
+         "place_id" : "ChIJuYVYDUhNzDERZNemIcuKv-Y",
+         "plus_code" : 
+         {
+            "compound_code" : "3H5X+CC Subang Jaya, Selangor",
+            "global_code" : "6PM33H5X+CC"
+         },
+         "rating" : 5,
+         "reference" : "ChIJuYVYDUhNzDERZNemIcuKv-Y",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kompleks 3C MPSJ, Gate, 4, Jalan SS 13/3, Subang Jaya Industrial Estate, 47500 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0727254,
+               "lng" : 101.5992898
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.074157880291502,
+                  "lng" : 101.6006383302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.071459919708499,
+                  "lng" : 101.5979403697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Subang Jaya Youth Club",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1154,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108002783836731828767\"\u003eSubang Jaya Youth Club\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4UA8ZCZZ5pq02c668Rd-GTf8PcRjf5kC8hJw5AtOwKog2-qkgMY61571ftEkYsmZHV9Y4RoasIeT763cQ9RhjKpAyy4oL-yhwzhvcdumWf4dkGoriT3xzBnd1hymb6BkdqsIo8J4iJZGrRXBRbW74KLSkOu4XX29v2DpHZ4vbJaRr-0GN8XLMX9bvk-Q45d75sg5xB1bmhzBoy7ddEiXyosnm0DMBDfiHlr7G9GvihW7jesd8IGA4JOPpUQtSJ1fSR5YjJNcfTlQ7bZ5NM0RM9oG_duAW3eeFvxxq9iS4Cy6hFOiLcA1XARZiANzVs5iD7s1Og8EgOS2XCORDTWo4AUXok-ficyXYq1uexxHnOGs3K0C-rRvpcU3LuXNoMs7j4d3CFyZ8qgjPhkU5_S0ywuOrASxpCNXFzxc9oQrEVA",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJ6Q1sQIpMzDER4--TwGoZ-f4",
+         "plus_code" : 
+         {
+            "compound_code" : "3HFX+3P Subang Jaya, Selangor",
+            "global_code" : "6PM33HFX+3P"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJ6Q1sQIpMzDER4--TwGoZ-f4",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "library",
+            "point_of_interest",
+            "zoo"
+         ],
+         "user_ratings_total" : 146
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3JJ2+Q8, Taman Subang Ria, 47500 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0813611,
+               "lng" : 101.6010278
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.082840180291502,
+                  "lng" : 101.6025151302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.080142219708498,
+                  "lng" : 101.5998171697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "@SubangJayaReads Meet Up Point",
+         "place_id" : "ChIJ48p4RwBNzDER-GwzvUP33T0",
+         "reference" : "ChIJ48p4RwBNzDER-GwzvUP33T0",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan USJ 2/2r, Usj 2, 47600 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0610077,
+               "lng" : 101.5898225
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.062356180291502,
+                  "lng" : 101.5911571802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.059658219708498,
+                  "lng" : 101.5884592197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Rekreasi USJ 2",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116578261771627758099\"\u003eAmirul Asyraf\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tVczqfT0pKA36FV6VAYVdkEFo8Fv8nfPZOOdRJaU-fWLc4mbqBfm5ae7vGF5QZjq8aSLv1OPPS3OL14jzzGxcSKgqcN-L_8VVxsNkaHO-DfLD7OgBlNELO71orLWPnFns1pFIztgNBkXQ8LUe-_hSbZvYP5ReaPMPdpaqBrYqICLXKsDv5-cddsYfYcBil9J-ShHUUuzldr_9Urw4rbX4vv6ZJA3lahOygV3elEZKSmoJeNDAPPRy5GSGCas4_QeBhxdM-1jyDWdQi6DeX2OktDKvpCq5BR6GxfC00mnfoanw8FHCSt2-n_wN2PlfgYGaBLXcGMFqI8g7rEfMUqG9FFaCY_DYHKRphgACyk91t-zYEDMnBn_Us2lTJx8poe4zG1UN83NEfGSv8EAyzpAYBM1Q9gv_JiVywXXaAiQ7LuDc",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWRJJzDZNzDERTrCpQpzgl0A",
+         "plus_code" : 
+         {
+            "compound_code" : "3H6Q+CW Subang Jaya, Selangor",
+            "global_code" : "6PM33H6Q+CW"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJWRJJzDZNzDERTrCpQpzgl0A",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan 10/7, Taman Jaya, 46000 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.104912300000001,
+               "lng" : 101.6502808
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.106081930291502,
+                  "lng" : 101.6516016802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.103383969708498,
+                  "lng" : 101.6489037197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Petaling Jaya Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105417797245357478136\"\u003eKamarul Ariffin Zarkasi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uHcxYlyxhHX36si0ijR1Zd_vbjNPvUyRVU_CeuS2V6Y5pbbiVF8Y8nCVieh5zqSRf6Kmgv3NokF32sdYnphXpg6vPHZ00a_4yO1cZrrAadvoCV9PJZWHGemxv0BTHP_K5sjpSOgfXgezr5OBjSOoDf0fB8hjr4SVATK97L23odUt8mDBRouGuH6AbtPU_9YKt7RsZwiUh5n7jwWSdroBJpwfjj6aGQZ9m4hQxDuDNsouirlIJ_ibIjec9ZAWTMFIuJ888hQVcNWVt4Gv-8XMvi71iy3j3GswFHHmc_28Xe2FJe2dWWLJ_6mynduzX-O5STePKKL3jduJjY9zJYVKzHTJkvRrgxRjqxjdmRAGBdPSEc890oWtp617tuwjThtWv5gOExLF98XS3ryUXm-YeLitWMAobqewIF3QP85Xk",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJExGRZdBLzDERqU7Krbh_zZs",
+         "plus_code" : 
+         {
+            "compound_code" : "4M32+X4 Petaling Jaya, Selangor",
+            "global_code" : "6PM34M32+X4"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJExGRZdBLzDERqU7Krbh_zZs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 216
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Industri PBP 11, Taman Industri Pusat Bandar Puchong, 47100 Puchong, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0090431,
+               "lng" : 101.6205353
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.010383730291502,
+                  "lng" : 101.6219284302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.007685769708499,
+                  "lng" : 101.6192304697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Swiftlet Eco Culture Museum 金丝燕窝生态文化馆",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 648,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100449827528250563010\"\u003eSwiftlet Eco Culture Museum 金丝燕窝生态文化馆\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uiJ5gPDO2_laKHaeOeBDZTC2XiaeuZZ_SU7NZXTVplUTyum86mEgsQR__SnIUCNtgXebKDB4JXHoN_WkKIRRJ-J9VmEKmD7GOcOelpE-rHP_1nBZ5j8C1xGgSR5kRTC66N1ZQHEqptqL6iM3Z8026_Ju0-PTwEs_XRch6FHW3N2SlQY8tiZXCfcqIzO0NsqNDGSL3YD0ORowVeoCrIseN91HP_RzW_OVe-PrlJOllneRuz5MNy12A0k-X1GZ-abF6aaHilEuHwF8cV59Id7mfs9Zyj7q_a_VBhmjgN2xCLsIeCrh2a25vDapirFB9aySmGcAnDDmzFvQhS-qyDOOdGmUH2eX0QG2z3lbup1BwcmDMBtA2Dba0gGuAEMx_WzrZUuHeSQG-Cb_7KUuhTwQOmDz-Vuh7p25J41oFpxygHCA",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJHfFkToS1zTERAn9u4h-qRJg",
+         "plus_code" : 
+         {
+            "compound_code" : "2J5C+J6 Puchong, Selangor",
+            "global_code" : "6PM32J5C+J6"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJHfFkToS1zTERAn9u4h-qRJg",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 154
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Setia, Usj 3, 47600 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0551847,
+               "lng" : 101.571021
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.056650630291502,
+                  "lng" : 101.5724351802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.053952669708498,
+                  "lng" : 101.5697372197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Rekreasi Hutan Bandar MPSJ",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109328514743930396012\"\u003eAilat TG\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vZIYC8ZIv9pjszU9Vr2U-6_n98hWkFU9SwOe_HkvkxFnUWJnIglXo_qlj12iwRfeqaiv3yMTWXXllb6Mc9wVYBHVeXvqAi5I_1z8v-BRxZaSXHyIF8SWFWOmvzBUvAwUx67guuWULS38k2W2cp7q_CafsVUTc-tEAwooOPt6l1AitdypvNy77_rRneP35EmZiXxdE6ezCEhtBjH0eoxYZ2M84ps-ifqdwr1PMCtV5tFX35740nkmbZJRl2xuigLgOLAx3Z9SbPFxrQY96SKglcDVIwMnDWiZdGPR4aPh2GiCTP0npQuVbMzKJC5J0O_GqCJyeWhEqQIFxQm9k4hWeqiMLfgsPV6F5qlAwuo_V_YnnZpnmzNo9rmQRNq5lDnGtEFkfSfK-AUgvDETubFnGMsTCV13kKwXkhkJiWsxh70fg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJg-sQZ3dNzDERYNwIxxsheIA",
+         "plus_code" : 
+         {
+            "compound_code" : "3H4C+3C Subang Jaya, Selangor",
+            "global_code" : "6PM33H4C+3C"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJg-sQZ3dNzDERYNwIxxsheIA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 316
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan USJ 6/6n, Usj 6, 47610 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0482577,
+               "lng" : 101.5891459
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.049579530291502,
+                  "lng" : 101.5904724302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.046881569708498,
+                  "lng" : 101.5877744697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Verti Culture PLT",
+         "place_id" : "ChIJlUEiwsZMzDERCP6Px5uvSjw",
+         "plus_code" : 
+         {
+            "compound_code" : "2HXQ+8M Subang Jaya, Selangor",
+            "global_code" : "6PM32HXQ+8M"
+         },
+         "reference" : "ChIJlUEiwsZMzDERCP6Px5uvSjw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 2.140B Level 2, Summit USJ Mall, Persiaran Kewajipan, Usj 1, 47600 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0599489,
+               "lng" : 101.59356
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.061001530291502,
+                  "lng" : 101.5951331802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.058303569708498,
+                  "lng" : 101.5924352197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fun X World",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108742519157582773951\"\u003eHock Hua Jee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tShGF84A8bgfmgUh8hwnTM3bRp8z6LqT_Fh_WffHMPdojbgWHzamPTTCZu8B4QxYHZOlZMgbCZf1wpgvjvrn1Dr7XYQNfWIFWHlAlsnfVw3iM3VRJS6L1DEwu4HVjtNelysp4kVwOfgFgJ-r5GB5bcUHLYKjq-El-YjMHsWIUOh2Jo4qhofxd9aqEOWW1EQwaAc5JNzios3s3kD1PiHOY6ycZWrPMFNZQhDSxIULJNa3cuVd8ufVFyBTD-h65dHGdZbKvRUmJnYwMAnCWfEuL9l0qCubCVFEXtaZ2V52z9Vma-ODtJ2bbS7oEZbFpTtclDCdC5fdViDva-nU9HXGArNiZKt7wh3ydfkAuLnFgmrGJGseH7LZUVgdxDlGzdBJnxgNxA32Xz23w1RtixlQhJRdTcTj_CpIz9RunZmqy9xg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ-QBKB_FNzDERQgMqI1MFMko",
+         "plus_code" : 
+         {
+            "compound_code" : "3H5V+XC Subang Jaya, Selangor",
+            "global_code" : "6PM33H5V+XC"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ-QBKB_FNzDERQgMqI1MFMko",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 828
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SS 17/2, Ss 17, 47500 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0781776,
+               "lng" : 101.5854283
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.079571680291501,
+                  "lng" : 101.5868822802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.076873719708498,
+                  "lng" : 101.5841843197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kabin KRT SS17",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110289305395766466529\"\u003eHusaini Hussin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tX1PNKskasH1Op0VLxK46Ei_PyPe4SrOyYme-lB8qXmZL_QqWgfhmyG_6rpE8BPxncDu3wvjvGn-X50jeqm9Ye9lcw3sWwaxvXlaEEyxZMsr8Mt_KhFDBEBURxrcnqT1ATiqNeiQTLc0DMOhTg2LIzuQHKwCCHKVStNAnu3dmTjvmXpRk7M9F3my7ER0UDx629-ju-MDLpAsU8kbGvd1e1jNegGQF0keg6XWi7zw2KhTp9vYtb44pyAi7yn-Fa5qKRYEXR_RbQw7G2qqdKIem0RNK0EfP4ydinT0UGrx_H_WxXVnmzKYc62ubgPYW3aOT2rRnkHvYyjK6IB3ps2FDGI4-OuYRy9iknEw8EG7QOSIKzZEKqjxaXZoG0vtAPu4WZDrkWQfCvb0bGrY6xI7VoMujabLTviw2Qg5e5ZXNl4jYtN9l5ND7zDHu4fDAZ",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJGVp5FABNzDER7rg6Dny7cEo",
+         "plus_code" : 
+         {
+            "compound_code" : "3HHP+75 Subang Jaya, Selangor",
+            "global_code" : "6PM33HHP+75"
+         },
+         "reference" : "ChIJGVp5FABNzDER7rg6Dny7cEo",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Laksamana 12/1, Seksyen 12, 40100 Shah Alam, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0720028,
+               "lng" : 101.5339968
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.073338530291502,
+                  "lng" : 101.5349546302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.070640569708498,
+                  "lng" : 101.5322566697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Kayangan Palace",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102728966684589572103\"\u003eAhmad Fazelley Bin Razali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vCaPFFWgBacxdtlPCZj3ATDwFW7gR9FxwBqxmMJd6GSbGUxlPdIyFIXieyiD588647aWllGoXFAFTvmj5vlRqQMetoDpql0XtWXvUAi592OQh2Smm1B8Rhd9jzelLVpo3Y5HeyY6SzKces3edBBNZIQonrn3FYQzkF0LwKpIdrM7L-YUHa3GxUcscGQACIQDJj-Pi023ahpfx0FVklM0PvkcHb-O5c_eWJLd0ryuqQUL-o_h5xuEhogNCcPdvYtMERAqrFT5AgvH8wI3GItULcj8xVDV5tcIxORgNtcBfgpRjo-k2vP_g9UbBtkibLwLU71pyAm5Wabdp9zqbsZ2E8LFJGRkrYbarFNCii0w6NgqaN5d5Lj_F07adaC-SZ92xG6xM25Zpl1Qx9gFEKas0RI0elykRLHG0SqphESI4",
+               "width" : 2312
+            }
+         ],
+         "place_id" : "ChIJ7T94snlNzDERWr3zlO6NcjI",
+         "plus_code" : 
+         {
+            "compound_code" : "3GCM+RH Shah Alam, Selangor",
+            "global_code" : "6PM33GCM+RH"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ7T94snlNzDERWr3zlO6NcjI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 112
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Saujana Resort, Seksyen U2, 東京都墨田区錦糸1-2-1 アルカセントラル14F, Saujana, 40150 Shah Alam, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1091354,
+               "lng" : 101.5762025
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.110489080291502,
+                  "lng" : 101.5775977302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.107791119708498,
+                  "lng" : 101.5748997697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "マレーシア観光案内",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 873,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115317430575297411977\"\u003eマレーシア観光案内\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vPnX6lNvE_OlzYJVUYF9Jgh-zQdldEl1WTrOZqXKvuzGyo2ZK_EoH648dJpNvxUMFn2lxPD3pB41-Kr_P1m_fhUcMp3tZiFQu9cSlGgoAjp-aChHkBU9qriueb_XqcWav7r3AlDSeywhT9t-6BqArrvyBsVnAlsGV7ThH6EHpkRWPOmkQjy3uFZw1UcVGiTZbp7LE0vtd9kpMXQEYhwZ2cii4cotrBMKTgyXpxEuY0uQCFiCKMBBgkE39xkiUWUOa0CJxdG5tymTTD9EaqrIRIYk8yozWBI-gU16BDsIlOz2DKKJO3sYUybb8iMQTSK7W55JcVcvJYsOf7BDJrq08Vz98FptadUPdHH870Jf9a2BblzoBwN_RhJtYg1qJCD-WYAUIGEMXT5HlHAN_Ph4pXKjL7PK4EG547RTiVTbf2HS-ylGy3P5wBqZY21yU-",
+               "width" : 1179
+            }
+         ],
+         "place_id" : "ChIJrarnFsBRzDERAjOkR1bMWNQ",
+         "plus_code" : 
+         {
+            "compound_code" : "4H5G+MF Shah Alam, Selangor",
+            "global_code" : "6PM34H5G+MF"
+         },
+         "reference" : "ChIJrarnFsBRzDERAjOkR1bMWNQ",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SS12/1, Taman Subang Ria, 47500 Subang Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.081928,
+               "lng" : 101.6007702
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.083367930291502,
+                  "lng" : 101.6021245302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.080669969708498,
+                  "lng" : 101.5994265697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "PARC",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101339750735025599868\"\u003eKhai Zam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t98PtEo-zFZuUYuYbl-NdNlvLjwbX1Sz8zjz4nxAeMTLLkpYQSJtLywuQ0N_MAj98JWpPBBLPTFTxzMCqfbp8IpiIHYIekueTixwksgsXsrKTqy0whCtZKpJqOCL5T_yGY1c4x9r_B2Xw3Aka24GI2qAHXSSvloiJnE6RZgbFLBKe6YjCuHP_SR9_IEvLLkpTrvjkUl1bKSQh2lj608tOFLfiwx1BJF4UqinRNE9_aysAG8FzXxcayF-Gb_2UHhSpFMJuaSxjfeLyTvu-KQYE0ncBRnKRfTfP4BfUaFFS3zctccxPc8nYj6IWHw5uCwMqebREnHysw9xctDMzhYVd_DYJ114iefV3kGliedrp7JCvAi5X4lTSWt2INFz03zeqvwRhvjXhwCQVTHX1upxeeA9-e6S01Asx5h6fD1F9MHGt0D_deMigUAzdNOQJ9",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJpRADPLVNzDEReyzexJWjcmE",
+         "plus_code" : 
+         {
+            "compound_code" : "3JJ2+Q8 Subang Jaya, Selangor",
+            "global_code" : "6PM33JJ2+Q8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJpRADPLVNzDEReyzexJWjcmE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 258
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.25, Jalan ss2/64, SS 2, 47300 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1187306,
+               "lng" : 101.6204343
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.120079530291502,
+                  "lng" : 101.6217832302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.117381569708498,
+                  "lng" : 101.6190852697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Forgiveness Mural",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102691152704915926154\"\u003eSilly Jellie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tokfOC5O87lBzButCPNAFe5Rap_likdENvv6TtNnnAakF5gx-toJtDZRjvnS04yV8eG8ULj4QKkT-whjn517_UW7ejVCS89uiNO3LTQG5xLkB2lcOA7Ijup2U3LJwLVhQLihbmdKtRwBtymkGHPnJ8mCBxd_E6qKYttyAMmPrqQ7dPcLE6sPaeQt9qowEsuQEzhRZhYUAP66Y7qa9FGXjlseEeWkWGgqoAaWn_UQDkdf9ogZUFWHekKXWyK1U6w-uY53zlWRnqzSDLd_dvb0ixSo6AB07tJv3SFUIuPZ3O8ZjGrnO83JKcRIfkdmaMx0fCsVlV0cmOHgC5gL97CziGiYuR5Dek-kaSmacI7Gd73S3EV07xU5UccCvkHRcwW4C5mKtM3aONwkcODCiZwjFgHjVUDc7WrIBylj8nmR-VCg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJkWvrxiBLzDERuQZp4qVIpYw",
+         "plus_code" : 
+         {
+            "compound_code" : "4J9C+F5 Petaling Jaya, Selangor",
+            "global_code" : "6PM34J9C+F5"
+         },
+         "rating" : 5,
+         "reference" : "ChIJkWvrxiBLzDERuQZp4qVIpYw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      }
+   ],
+   "status" : "OK"
+}

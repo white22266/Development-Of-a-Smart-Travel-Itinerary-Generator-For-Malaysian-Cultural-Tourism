@@ -1,0 +1,86 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "16700 Besut, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.8543397,
+            "lng" : 102.5257166
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.855719780291503,
+               "lng" : 102.5270940302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.853021819708498,
+               "lng" : 102.5243960697085
+            }
+         }
+      },
+      "name" : "Sunset spot",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110388512602608271138\"\u003eJulian\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-txz1hB4EH1J9slb-Hqw3LwGaiJgxSQyldF3VwW0iWrgO94Yb_zaQuq71YEVxl1SY-ifzSQIMSYYrO2ztFD_vTsE1DHOOFEL5FMe3eV4ocJQPR1pEdSYdIdAB0EALt0v-5yuk74goXKxi5g7k6CHy6fXBvgXnnk3QhOTGU1tgORLW2Ht1XZMI8RADQmjtOP1Rr8_6FiAIjxStSTTF9hREdGv7a6xf7gJY7xcQ4MBaA0ZmebKP9qsuE9kDxo3EHSTmE9ohcNCuUaGMW8LetySzglFux7I1uP2tidFonXoV41lI5itcwotzcFQsaQfhZjVRYIEl7KwCp6e1C8JROySkt_fSSu1Bydl41gjY9dyU_yq_cz9UySk4HHSFTxdOqszUCdO_AKR0nJouS_-g-4SPjQqC5AuxA01cpEOj1F8mLYI7IE",
+            "width" : 4080
+         },
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110388512602608271138\"\u003eJulian\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ttqfwNNxvH5vviGToKENMpj-0xhMG2I-0Noc0oUUdRjqxYzaKaP_bwP8lZdMZmgmPJevi_ukTKU5f2k8kSe-qcYkLn7bodfjgLUImHigHX8lr3bpSgHBDxR9gWqbTKqcwglxFzjoQTajDWgUYBSesKflBj4GfU961ykjBJO4W_Vs4gWYqw9i26ay_Jz5poLu_9whD7YNZicBFq85My8VnsCc-nJQTHPFDhqjn47aCtNai9tXzW6u65dNYdalp521M-f9aAAnQInEq75fBwj6GCKWJRXXAR19aN7Ulh1l9O-UKgV2cyeFmkrcMU5oQNFAhqlF8JV8D759utdd-HpsFn6NQ7yTTBKikb_JKZTaYDz0ZVayfuu5hPJsHBc4nqndkBZscgt-3BO8lJQQdS7r9d034e4EpFL30ekfOucMweOrXv",
+            "width" : 4080
+         }
+      ],
+      "place_id" : "ChIJEfIVCQDrtjERHtP1RAwEU_g",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17893650195216192286",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "J7X4+JJ, 02100 Padang Besar, Perlis, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.6490383,
+            "lng" : 100.2565654
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.650325880291502,
+               "lng" : 100.2579303802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.647627919708497,
+               "lng" : 100.2552324197085
+            }
+         }
+      },
+      "name" : "Montperlis",
+      "place_id" : "ChIJq2RwDgHrTDARewK9W1aIxNQ",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15331528935963689595"
+   },
+   "status" : "OK"
+}

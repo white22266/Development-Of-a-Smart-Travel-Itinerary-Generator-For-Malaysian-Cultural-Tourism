@@ -1,0 +1,1214 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vIqm4lPnKhixG31FNVKey8EgIogJFcS01ta18gXPb3g3NRaZZMtHo023cPEoEbLRvCHZ5Zzeq7qbHO5u_6X_cNUU6-u8Nz52BOXnFuJB0WefNQc1nr9xh3TcwSIl8XwjVHHzjJKojVFn7pADPd0Q3Mjgs8cf_lQIBlHlCJU-6jodJx2tVmqGZLfiuw9l7xmOvF1ERmTdD3b_ybrCbF52w_2c1zbNdsIH8msmDDCanK1cMCp37U48rcX3BRlJhBTATK69o4M2UmIwS4AtODc5bJWRcGWBef4gDaefIAk1sICb0H5SrPu7U_Mq6AEF4oKo9wtKl_Fn08rrSjPTHVtuS68gxLhWEI95aAe9cYlAI6d69QqBv_ILor98Qy8UpS7SaA9jVESH2AEFhyOaTVeNJWn3aZn9RYkSW2m3g-IT0kxrz2kvQPK3AxJPhMrwKNaSkrb_VjymsyzkR5PIP6SSl-FZwchC-wcVqoFTrz4kMgcwsmUQ0Xw2rRttOtuEDz5o_9bvawGCsK49mAWWnGkdhdDQLnb0Zuj6pouhiUSs0VMwsI-MYn5W27IAbMcw2sgvB1ESpfei2MXl19iKe7NAnQdKNBShw08sbo6ngN9dhnZPNbT30Mdn_Vnh2hENK9sZ_fVOvx6vn3XI0TzarIjV4XzEko3wDYOprf2drYQBUGhrgyHH6EZMH7A7852sHJwtloITNZTqVeuGP3QiyuflfhOSVq-DlSeY1g7tcFzGsvEC5CrO5O56ayySrVHTaC-E38QIyp9uNHVHLkPu8Ij4y6RHMbXL7_63Eg8qdyLMBGUolo33C2R8sdo2GlrXMJzQkgq_D_GxIO",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Road, Jalan Kionsom, Inanam, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9736958,
+               "lng" : 116.2036688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.975209080291501,
+                  "lng" : 116.2049043802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.972511119708497,
+                  "lng" : 116.2022064197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mari Mari Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1748,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115764917221730916604\"\u003eMari Mari Cultural Village\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vW62mg6tOh0195jWpRfBJLjCZ8xE3l8pwbNvwNVZYKeLmCPWvwbBEsZ49kQPOfFbvAb-eWCK8h2XYh7AZenaQXVVs9_YpfjdPpJBPsqxiRYXZdhag_AyfpB28a8zDaOLLtWx8Vgc873_hnm5cZZCNosqzoSNvcR5lj7KOc48e4T4k94ZiTo9lX220gt2I43sSF8guJ22BgiOpCSSLissnuJcb37Z0PwMl6R4_23f6IB-cprO9F6nopsPhiosgMyXrI2bfhhZnDLm7S4E7OHCjkLJEYII8hmieGyyKinU33y71h-womX_x95rsje4NrqP2KTWw4Fdfg4k_ppy021DHevcwKdAO_IpHxRsTBIgdjxdIn6BjR2u_WH3kPpdSmpiuPSraJc4jhvievRSCC1Ln2YT88OX34twZHANOn-B6axSQ23oKftFWaEInYSThR",
+               "width" : 1240
+            }
+         ],
+         "place_id" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "plus_code" : 
+         {
+            "compound_code" : "X6F3+FF Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX6F3+FF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3851
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "k491, Kampung Kasuapan, 88841 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9983958,
+               "lng" : 116.0609517
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.001160600000001,
+                  "lng" : 116.0609908
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.998327699999999,
+                  "lng" : 116.0576575
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Gipsi Sabah Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109601138596329588595\"\u003eTony Cronin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vmuHJHkYX2WsGLnCmjF4_5wW137ULdx37eu5IhxIp7pOJ63TFTdzqkyf8QKS3DwxjRKy31eXByg3Guh_uVRcNLJZMYbE5ajbmIET1iX83I2xM7Crfp65xmdaa1ReQ6U4pg_d7omh6lLN98pS6kE8tspe9aprfWWTFiQLvKHeEOnwyXv8Md5bvg1zP8VdpOUeEriEHXRFRe-m_8q6cMANinX6ng_ln6nhmI__Mb300jZBT8pemtW9zjMMzYn1pAh5HvB6xu2hutlLVdCDpbvrLt_95Gfkdv33Rd9ZOlEaCfj0uQug_VCb90BdFZzGjr5NDqS5wzs4QBLXWDsfdLW4JmSkJa2hLPHrMz-S4qt2EEssyqqkBzMsa1LOeLP5qP9gBhTqEsibvjn4UBdX_kxgqx4Bf6YRbBEHDlFqGHQI45GCn7xf-cOOIvxxZ1iTLh",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ9Ye5MYdrOzIRqIZ7lAV7CB0",
+         "plus_code" : 
+         {
+            "compound_code" : "X3X6+99 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3X6+99"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ9Ye5MYdrOzIRqIZ7lAV7CB0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0241044,
+               "lng" : 116.1940301
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.025513230291502,
+                  "lng" : 116.1954286802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.022815269708498,
+                  "lng" : 116.1927307197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kokol Hill Elf",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 359,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106392877730551673275\"\u003eKokol Hill Elf\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v6wG92wV82k69H7u-SjjZq35ner5vQ_3uQHE1-5eHoOAplpY4xs7FKYuZUe2rRSQsQIfodCB3IcbqIuv9bhQ72cU2gYKKGZHWWGXSjfql4tBcH7cCW-ktiC9y-dpFxBNLmn5GueIvxfjroB6C1hXZ7773-hh51T45Nh5U3YHlXvIIdif9_RZFlxqsTEN6U9p7gO2Li2_50bnDzpo6PbQTLOgRLVwtFctr_1ewIve4FrNqeEdNUxbYbynqiWfWd-GN3BS2Gf3NhP5U-Qqfw0RslQTxNv9Rvw_5IwT1zm4zugg",
+               "width" : 640
+            }
+         ],
+         "place_id" : "ChIJzdIT6FVtOzIRJX0oikhupag",
+         "plus_code" : 
+         {
+            "compound_code" : "25FV+JJ Kota Kinabalu, Sabah",
+            "global_code" : "6PRR25FV+JJ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJzdIT6FVtOzIRJX0oikhupag",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1528
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0361096,
+               "lng" : 116.1152174
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.037370880291501,
+                  "lng" : 116.1165677802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.034672919708497,
+                  "lng" : 116.1138698197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "UMS Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105900809790140455098\"\u003e王老师史神教室\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-szZMcTzq3OC5VxNO06jFV3ylnV7uMzaIGkRfdCitcS6PrisO7WyoJ5iRTLABTupiQtwafwgNDKe1WUCX6hKEAvjLtcRbWL4MhW_DqNNe23bzERBiD4tLhtp5HFwpE9FZ4cEr4ZojZ76aObPwPpQix8Yd7LcA_Q0wPmNCAhdxddg0VGb18_jZyKH8fPvypaT3oyIppuAtZnT3tnnmMiw5VRMjfvidatMVwtOoJm8ckcr8fGCwyLbo7huN6SLpBrr6q7Is6rtQkVzqOjASpIqkzJj47jOymVXh9R-2wA2fxlt0jaKfMQ7nxQQolaqqkOstYDk1L_cj6rvJOvqfwwmH0xVGTXMDV6YSmGEw3RxT1uyocVyILEIcCedJ-JEDLnylbbgMoIueFLoDVXV__CB0FHytgwJ9PNFfOr1kIKNt1tKKSw",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJEXTSiXJrOzIRb8FqFQGiklY",
+         "plus_code" : 
+         {
+            "compound_code" : "24P8+C3 Kota Kinabalu, Sabah",
+            "global_code" : "6PRR24P8+C3"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJEXTSiXJrOzIRb8FqFQGiklY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 47
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tun Fuad Stephens, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9849383,
+               "lng" : 116.0744884
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.986294080291502,
+                  "lng" : 116.0758717802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.983596119708498,
+                  "lng" : 116.0731738197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Marlin Statue",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103526634213432239350\"\u003eEnche_takeo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vijiEz9XkQYdqiI_5KGyU0roHgdqSQzO_DAiGS612qvvf892gzSykvMpQWcCFk3gOeO4f8jrtoK28AlmQCNIdMWmXzmM7S2dMPG5y5tGQ38QVd1kEQnVAFq7lUTRw3cEtGHWP-Dqz9zAAiUhTsc_unoHOwAoMVVxhlmobq7WUzb509X6oPgwQcjGRaW6W5ZlChlTLNKOtRjqpcn0A3Untq4islw1Do1WKcGXaNj0KCb-rkH8XiL8NBZBRXUOmsA_COtNdetXHY7FqNhReDMw_UqhHWRO8S9veh6HKiY8SXPsfbwd5UJRRAq2MEgWYJQJnzXz6TaGQiC_fOZCThIybX2P6FKDSCUseOQpNwy0I0hr6aNb8JV3jkfU_xacNFiPm17Imc1puGbwAKK4HBc3msTMSQS1NLljSoGnO4nD7PD1l9",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJC0wGI49pOzIRQ020kuzyJxA",
+         "plus_code" : 
+         {
+            "compound_code" : "X3MF+XQ Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3MF+XQ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJC0wGI49pOzIRQ020kuzyJxA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 295
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Bukit Bendera, Upper Likas, 88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.987957799999999,
+               "lng" : 116.0892242
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.989306930291502,
+                  "lng" : 116.0905727302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.986608969708497,
+                  "lng" : 116.0878747697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kota Kinabalu Wetland Ramsar Site",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102448445618640239720\"\u003eKota Kinabalu Wetland Ramsar Site\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vI9ROA4mks50S3F6xynCJqjaoUbd70sFYCvx0HZ93NDAi1LL2Hc66K067dXhCasgfqu0bkRMS6JzPzQqWT339pUaZzYvCHx-Im3Rqu8zamF80zpvA_2gpS5OVBsmIzty7LY7MszFhfHdPl3_eDz6K9iSArnkyxfxLslHdrnqAHtcSgjHlVGdCTu_UFlBlL5AtlQcxFO5HmA-VDiFwpyh3UVd0Zf8i2njO4BOLp3vlYhbTTcogXKFy_NSzN6oJtUJIT0EQAW2GU15uwWEL-JS6wtuN-v8jHHSPnHbccD5AQb7mRkOb6hl5o9U7OnYF4fZeepHB36lRyRETJxq3PQKRr7i8pkmj5z_L7tacXbFKb9fx7ZUL9P8onbWecMB1rYC_McSaJzTIaKgL4rpmiavk2t8rwFq_g9MLxxtFx9sT07U7tdcScXaRWUlvS7558",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJX4siuX9pOzIRhm2lbOskvhg",
+         "plus_code" : 
+         {
+            "compound_code" : "X3QQ+5M Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3QQ+5M"
+         },
+         "rating" : 4,
+         "reference" : "ChIJX4siuX9pOzIRhm2lbOskvhg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 498
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tanjung Aru Beach Resort, Tanjung Aru, 88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9473842,
+               "lng" : 116.0455771
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.948937530291502,
+                  "lng" : 116.0474059302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.946239569708498,
+                  "lng" : 116.0447079697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tanjung Aru Beach",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1500,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115083582414189104643\"\u003e巴浪岸\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4cbeZXIH1stnJzi9Ib1LVmXfKJ41aReU25fcN-HdXJY6NP0epIx2P_Ugi_V7m6EZVe2Xp3AmviNrPfCcHyFFmTQzIw6Esu_wEPM-U-ivgwQBGTreYa8yd4JQLSfPTr59NDdD7lwgCaClckpHEaXVAkCPz3961wd70Ymq_-sibnmwPmZb5PEOBwfVHC5y8P-zXb8Gv942jXYoFS4LP5rN6Ynd9-8eDLUFzpcBVlTGewjik7ZApFp5pJrQdJk_QdNBOryAqipXMF1PrPVhMYWRleEyLW4XffLPga6N94Tru7--zH9PeX2XSOgyek2_BxQpZCY4d9ZtFr5xpElccOKswR3KN0hPcTrMi4dOUBKCZi5A_MvGYMbZ6iD67izX2LuBu_aaDJD9JYanO4FYoVKjLBvLHOWXpECGqD3ZnAt_HgFsrnLD3KaT_JcLWtA",
+               "width" : 2000
+            }
+         ],
+         "place_id" : "ChIJN2sNPSloOzIRrPTPP23Jjxc",
+         "plus_code" : 
+         {
+            "compound_code" : "W2WW+X6 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRW2WW+X6"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJN2sNPSloOzIRrPTPP23Jjxc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 13959
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "408, P, O Box, Hongkod Koisaan, KM. 8, Jalan Penampang, 89509 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.923277199999999,
+               "lng" : 116.0902886
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.924617780291503,
+                  "lng" : 116.0916428302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.921919819708498,
+                  "lng" : 116.0889448697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Koisaan Cultural Village (KCV)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 951,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102342221366367045947\"\u003eKoisaan Cultural Village (KCV)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s5Rk9Ha_7ZdIvuFjFevFoi6L2y1k2GsvXCn-JfwFUBDSdLJH3QGi-gTfPwCNy-NMmmVKpz75y-mcXIyc-RqIi5VNdk0vPlFcIpb-AavBYDlmOsXUPHV7eifrvsdzi7rKDlfykS3-YgYzYTYgtxJUVki1qtzvJ4d68YqZFMKDQNxh0QzbUBFCq_N6ttFDfCYz8YIRWOl-2TbrXWvQygkfiw0YTOaDcSdOKXkFnN6ogdvLlkIUr68rb_exSRVpzGUvHBrhnAnFTR7-Sh4xvpeUT-f9xVpV0SLMNoCskUnIJrU3tx6g22HT3M06tjVPh4n9Em4QI_IN_-1c15tCsN68-UsJJZPCSrzy2jqjHTaomxNaC-p55kYjbz0wndOcq-gsJVONlmM14coD7xoDLsgibkX1HQyEWu5S4jtJMll6Xx3A",
+               "width" : 713
+            }
+         ],
+         "place_id" : "ChIJYfx5BYhoOzIRmo2GhgVfWoo",
+         "plus_code" : 
+         {
+            "compound_code" : "W3FR+84 Donggongon, Sabah",
+            "global_code" : "6PQRW3FR+84"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJYfx5BYhoOzIRmo2GhgVfWoo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1385
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasir, Jalan Teluk Likas, Kampung Likas, 88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9954925,
+               "lng" : 116.1082195
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.996832780291502,
+                  "lng" : 116.1095913802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.994134819708497,
+                  "lng" : 116.1068934197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Bandaraya Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113151283152419518959\"\u003e서진\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uIImrlrdn9s-0X59No5uhVJSGk5ZijBQtH9HgdruQYgipJrUZuZRNAZRotIaMgdsHy1yzY-eD6oc_1JjCa9mBv18hbV_Y7khtK7ZLvjQNoGdzCEConjItgwu8ubr5nVSFT5WBh115TAGShcztpR8KFMfogMwl5HwSdlpPYuJeXooPpmNXrh2iSE62fNyHJgdqUAPWnfDRn2UHESwYcCK2cZ66QvnRKaIPNdR_eCjSxMIx7hVvbPlvuAKOcp282tUElOZBz0Ha7OS1I3zV8THJQoGEkXULY4GOLZIuascE6-p-3YsBEuNWqPRnRi7z_oRVpWsTsP919BHK4TbJIot-D5sKfN78jHkOEvZ09Uxpigo1qr3RFDmjJgyR7KNVaWEQMZ0H_GN0S0PbuhOFQdS9Fh3qG8FuUGRFuZihoCVu8n0VD",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "plus_code" : 
+         {
+            "compound_code" : "X4W5+57 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX4W5+57"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tun Fuad Stephens, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.984891999999999,
+               "lng" : 116.0742299
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.986264280291502,
+                  "lng" : 116.0756453802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.983566319708498,
+                  "lng" : 116.0729474197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "I Love KK",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112127411070496293290\"\u003eA\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vGQPSQmRbi7Sza9whGRIZXtmmTZ0tzVMc2xwU_UlcWYKaRflVOTQFmi9Fn1A4XVCMUGgt3hh4StjKuWiRvylaRCwqD7ckJ1dBrGT3oQP-UzI0RWN89TNVso09fnPgVCAdhfocL9pYloFZdSxbHzvCWjebjdbacaEKEFwrNt2Fc22owdliX4qsA5cQb_7wE4OYjf9ClQd-QndERETtE-0v0M1LU8d8YNqULKeDGHgS5a8QQVUFHvuqzURqPrasUkOYPMoYwOdTXzUquahTcyHf0TksEr3oNeNACQYt1OpCvQdkU8XkrEiey-mY5ESPUuoBTpCUq09rkYYtfuCTXn934iAgoQwRfQzURO6WfkXbAnQl0XwmT9Z4kAdV-ho4jW_SmzvJsIJRhl5ARic3KsJZUrL0Fno-fRKJZX67XKKw",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJq6srIo9pOzIRbpNGYNZjYH4",
+         "plus_code" : 
+         {
+            "compound_code" : "X3MF+XM Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3MF+XM"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJq6srIo9pOzIRbpNGYNZjYH4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1323
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Dongongon 2, 89500 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.916109,
+               "lng" : 116.1093008
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.917313180291502,
+                  "lng" : 116.1107914302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.914615219708497,
+                  "lng" : 116.1080934697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sabah Cultural Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103812491160473434053\"\u003eReco Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uAZnzB0aELqi15PfL_7UmaxPyXpktqiz8ef-bE3Tbb-ylZvSZ9qdURR0KF0gOiVglnWcaAwCkd-8Sd5ibL_vKEAwFndF0HigMS3oEUZbNCgjnpv1PlEAhbDs1n9rbRCuWNN5nN_bYjTZT5tsScyg_sgKN9_u1RL5DjBd8ATH1ZQe7AfPhyfhOg2ARAYluW8JQOmma1oqtUrsV2qqPPGnpUYcae2nIKgBIAaFNTw_Z7pAymIUErtnbcUToAgML9pXnEBe2zsPkber5jLEAaAmQZunDTPisUqET40XB3j8XqBhaZ8rvwnRxJdCGUaAzriZGexQTsMsLQLcailcoHF22sHa4wUg3-uOGUVN1lET-Z9-dCh1CkEkdwzUI6GAFgzhHbU_zSng14B_pBUuHxrDVcqXkzQHJV_cqFRYMIBGeABdOA",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJgU-KJ59oOzIR5Iqts_WSNhw",
+         "plus_code" : 
+         {
+            "compound_code" : "W485+CP Penampang, Sabah",
+            "global_code" : "6PQRW485+CP"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJgU-KJ59oOzIR5Iqts_WSNhw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 444
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "51, Jalan Gaya, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.985384499999999,
+               "lng" : 116.0781898
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.986769580291503,
+                  "lng" : 116.0794609802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.984071619708498,
+                  "lng" : 116.0767630197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Free Heritage Walk",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101237524452848246189\"\u003eAaron Yang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0qqy2dOVOnlI4NcW0-3XrqQStI111DPsgczcPZUpH0DdkYqjYTIsi8EmIVea37Dh_R2-LXk76UkE-9Feo5QHdVJRSKjkci3mx0DgSONpHcnXkHn5rG9DP3-eCkYk0S8O-pxqrA4vFzC8AtJOqxh0xaC6ux1Kw-wFyF_VylYMqJp4J2ktIovl4n0D6Mluwm7VJ_xjLencAl6fTKi3JgoCkJCM8eAS7IRXUQ67XvBzClUAw0O8KIvJQ0l4VrvuOL_zWfVy7PzIIwwtA2i9zuso2OLdnfN7ywQ8whkmE5YPPnV9noJtO6vCqMjlrduUZhV5vvF3Fix39COjIueBU-YB6V666CUfC28mX0Vbn4ON-Oo6NWSxFBnQ28lR45smSLt6IZdnhE75Vpxw0gEBxQmQ8A4g4P3hS0Rra8pTY_xE",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJ7TZZ73xpOzIRWE0zXvDu6Kg",
+         "plus_code" : 
+         {
+            "compound_code" : "X3PH+57 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3PH+57"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJ7TZZ73xpOzIRWE0zXvDu6Kg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 26
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kionsom, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9737352,
+               "lng" : 116.2064477
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.975154030291502,
+                  "lng" : 116.2078238802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.972456069708499,
+                  "lng" : 116.2051259197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ulu Kionsom Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108420001184518395822\"\u003eUlu Kionsom Waterfall\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uQpeoMzrCfKUfkfUa3wh4I3texmNyRGuD8uXjU_HMeoQK01ozp1yY7ZD79i2Bf5V89z1zq7MGzB_iint7EPCsKduPKVsvf_sAXJpZ_CZHxmWsHjEY3ugQ3sUGf6Xr0hSObu2eRDdWN210plp8tGe9B0IRamYjN2ljn27-sdTglT4noOt6jSrIk0Y9VrfH0gj7iQ0wrRQP2xJyLNzdydqLnUgJUhPJ23AtG41pwcdl8-tz8-e3rtc8qaPZdA1_7r2krWoWN9414H933bWXtLqqnxNvYo-fsCofoj_C5jB6oBg",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJs2j8zYRuOzIRDVI6p4uP4ak",
+         "plus_code" : 
+         {
+            "compound_code" : "X6F4+FH Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX6F4+FH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJs2j8zYRuOzIRDVI6p4uP4ak",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 516
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9575732,
+               "lng" : 116.0542766
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.958944480291501,
+                  "lng" : 116.0556227302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.956246519708497,
+                  "lng" : 116.0529247697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sunset viewpoint @ Kampung Tanjung Aru Lama, Jalan KampungTanjung Aru Baru",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114830712545748478567\"\u003eYH Chen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vfV9mYB7oPLwRR4CXmUdo7TfxBOYb24fTbKuCzp1kTxXrUzJcLNARnMkAa0Cg44KeZwfKLfR7D5UWGLQse0fCry8kG_FgyYaRP66bnGzUcoMCqAxgqBYGQyFIgJRNf96PrupImKCgOJMlfFWnJ2wb_OpqOic326oswlHdgfkoG70v8RYVo09XlZt-zp6Hxrv5lqg5nIEyJxqDzEBeOmnKJW79ltxwg6cXSdPK1uHjtCvU4g93WBf8cADLChF3i-gEDGAES6PNSMbQRiNyQRl0Sc170CSlkzZltvsufDf-AVP18dkRRGCtQuN41gLgr7vAcvSmPbj_9QxF2EahKKb2FByKSITr_46UBEi4oFuShQwzhmZfCr9aD3vb8TB6Dg8bsLsfwh_1hQQ7nBByAfEtjslNEcxYi4VxW6nrdDqx9TjQC",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJgwBTu8JpOzIRWYukoMDIIKw",
+         "plus_code" : 
+         {
+            "compound_code" : "X353+2P Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX353+2P"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJgwBTu8JpOzIRWYukoMDIIKw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 28
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Padang Merdeka, Bandaran Berjaya, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.980896599999999,
+               "lng" : 116.0771371
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.982400730291502,
+                  "lng" : 116.0785645302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.979702769708498,
+                  "lng" : 116.0758665697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Merdeka Square",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3472,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113328319947760732763\"\u003eEirinikar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-skbsMEC_qgfPljvK-ZShL-0fxExkFje8nFa3dOF7Ji-C7ziBu70YGPqNd5AdEKhPL9MClkQgp7Rf3OqGVjbxZYF_OzJZwWuFPWMjSPoF31pSf4D_DhhNmrGW-l0BtBDHNyQXbb5zvdI9fntXa37jWB8K_i30gDRhUB_aPiKMIsPodn03OBDgMnUPeKUvHGicUgwc74srmDdm6vsHnJZF02WOsGnULIgyUPp-0bZh7uhS8P8Mvcufw1ySI3C2uv6e3TZpZknP76wA38vX-WnYVwNmn4JTlslbIsDr1vHYkv4tHSBpni89I8s828BBSNhMY0DaZ6J5Whi5_iuIkFBN9KA5z0V4ejHneheuu5b-NIm2NTmMc7Lwx44Ca7fkLCz3-DRYX4HShcZu-Z4cYcXx47txBzGMVLnG9BT2MPJYtu9yBKjeXjWFnva66d02eX",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJ5eNAqpppOzIRK73P5NFLXqA",
+         "plus_code" : 
+         {
+            "compound_code" : "X3JG+9V Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3JG+9V"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ5eNAqpppOzIRK73P5NFLXqA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1086
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "14, Jalan Shantung, 88300 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9531484,
+               "lng" : 116.0813804
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.954781080291502,
+                  "lng" : 116.0826849802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.952083119708498,
+                  "lng" : 116.0799870197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sabah Art Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108553702070809925323\"\u003e純英曾純英\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vaigx1_MllR1ZP9QnMG3qL0lY8gmF0r30qfL_XlSqZ2J3jmAQUJ-YwcEcQ8Tx3piBetqr94DCEPuIczjR551A4_rxcg2vE3ICnLaNO4sqtHf3w4tnlebFANwCuzU-2CE_RAxpO-uClAZy_I1unu8HwDcVGOLiZw0UyqCXpDb8zbRDNdF3kp2F7i6E4O9R7RF32Va1OixhmbpC-p_rPSkzJQq022hQhlORZbSQxyaOffTLyFlo2mjVa42ygGxoKw9FApGky3N6NP1qySJfho6cucaRPB1BxlpxbVpNpy8-9iT1lDkhG1GznfPO3Ie0_UQ441iIF4RjmX_BxOOLa5XusP-F1__S86b7IcpyV-MEV1mFbA99jIuX4mXUB16KHWnn_j0xVI3vFw_jk-MtWfif6L-LsW2zMIDsj2IgXXROwqQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJD5vbv6xpOzIRUgx9DoD3eYs",
+         "plus_code" : 
+         {
+            "compound_code" : "X33J+7H Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX33J+7H"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJD5vbv6xpOzIRUgx9DoD3eYs",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 768
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9439513,
+               "lng" : 116.0471624
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.946353830291502,
+                  "lng" : 116.0490655302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.943655869708498,
+                  "lng" : 116.0463675697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Prince Philip Park",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100805073207312280083\"\u003eeric wu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u6vRIDxm6sQ15VPnuXbJSd2a8u7hSXL_1sZg8Gj3HK753_eiVsNT7Rf96ixllAxJ-ZaC1d5jlDoIg229N_wr-kMnXJly5LEQ0f9tdI9T31eA6QxOiVMr7IKJEjDYnoWi52Y9o_TAMhkLLRW-_J-IAAFphcDyNu7HtZIi-2vMOO_jcDxYzf_v4_wVxXVitE40DoOR_mS-R5vPADjW1vCDUUD5FP_J3ws_tLYvOBdYzZ7S4JYcdbXmc3SoktgSUYqwVjmpprdQDC9IeppLjt88BlO5d8-y4_WA5wwWavxMCEZ6ipE0V0FEfTxxZpxoCjYW_rA0_bd4fWpfjNYzd-RZDxpnWjt0Cc1MaCtTSbEb74xZTqzmdN_v7DItvJVlhct2bKmAWvitXBSo1z9CRWm7aaz05707TJwU6NLyGD-hLSAI7v",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJCz9IuChoOzIRn9hW-NmD9IM",
+         "plus_code" : 
+         {
+            "compound_code" : "W2VW+HV Kota Kinabalu, Sabah",
+            "global_code" : "6PQRW2VW+HV"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJCz9IuChoOzIRn9hW-NmD9IM",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 615
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tun Razak, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.981135,
+               "lng" : 116.0744599
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.982538180291502,
+                  "lng" : 116.0757200802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.979840219708497,
+                  "lng" : 116.0730221197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kota Kinabalu City Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107605382553074648983\"\u003e양재민\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uRYBEx3EzmxCE5f5EvwazXnJIEKhoc7FwE77w3UP2MPkLfq5KEFHYqwa27ZsIBoO04pcu6qfhWyS8F0wbGfy89jGhPEl7qT7PScKAe_TxRHvf4WkFN6siWbgnqTOXHc6-FZXNQp8qKwAyFocOmzYXoeHP7Al904jNmdap0idtlnQwognxstaDNgaFHGqHXqMgmN3bFgX22Nx7XLOcla5aHQX2RD3Vq5iV-Z3vmfMKMtS-n2yRGha5K7li1MwGBguiEe6PNJI6GleOaFjsFTAcXz83Q-RWx7uqOqQmNzmSHKYN5Wd49MeMHyClvbML1X09HYUVeuiSeRsADDMG9_MV0f77WumZoQvAduKhe4pKPpb0NlXYWlwAlH_NhVcdiUqJLQWGIcOqCVzdySUK0q4Ce-HuJNV9Js5p2BGyJqjDxG_tR",
+               "width" : 2880
+            }
+         ],
+         "place_id" : "ChIJI2EI2o9pOzIRXi1u22XIfJg",
+         "plus_code" : 
+         {
+            "compound_code" : "X3JF+FQ Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3JF+FQ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJI2EI2o9pOzIRXi1u22XIfJg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 508
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 15, 1st Floor, Touri-Cultural Entertainment Esplanade, Jalan Tun Fuad Stephen, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9832411,
+               "lng" : 116.072917
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.984662380291502,
+                  "lng" : 116.0741589802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.981964419708498,
+                  "lng" : 116.0714610197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "KK Waterfront",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102312328277970207446\"\u003eHuda\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uYFhNS8mDIW6UJTjm7xzLT0gHYK3B6Ck52AqIhM_z7ivyN16jE6YvW1EvVJuEbmbpbeOxVg-t4iyVY-d8DOnqoH3iwb8gWbSr1sxPnLE1nc3IOk5lT_Cfov6dCJj8wuqI5luf52qOeGkOdmjvtXg-MN0m3hTrXPBKZTKxpbxoqiZr9vRqi2jDGIuSlLTwdHn9_e6yT92RiOlPiHtszF5RYrbcwMpQV3rXxn8edtZV3D0mZeCu9mqAYOa3cSRqAmumWFA4PgeSi9ShipkUea-pe6ahH0DQDUjacC9N6t9oV46uK4B6EVqgb8tGbiDn2rSSpb2Wny0aJF01yrxNcziDz-QeCkTUc5S-o57WAEu9CF4LxOxDNOmH5MAje3Q68vACz9LIWk1jst0z2S9IIbhR4UJXd95ZbYsqV6jHhUGEVzg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJgY6SMZJpOzIR0-2MreF6hDA",
+         "plus_code" : 
+         {
+            "compound_code" : "X3MF+75 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3MF+75"
+         },
+         "price_level" : 2,
+         "rating" : 4.3,
+         "reference" : "ChIJgY6SMZJpOzIR0-2MreF6hDA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2000
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Voluntary Association Complex Lot 4, Mile 2 1/2 off, Jln Tuaran, Pusat Bandar Kota Kinabalu, 88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9778177,
+               "lng" : 116.0879526
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.979197030291502,
+                  "lng" : 116.0893353302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.976499069708497,
+                  "lng" : 116.0866373697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Aquascape Center",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117333454217632039558\"\u003ePetrie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vWSozwKfqYLS2q4SzBEB5__6222Hb6usrhCY9z923FGctCsMBzdhNdrjjDtUrsd2olBWH3paK5pGu2MmhDIYXtrySjdvMYf3Z623GdtdbX-M0RsGovQGlIyAfA9OZbloXiUrH_lWy6pl-JfnBnnoUJeFbHlAtc5J6pyPMjnGBMxvdcDEmnd40O9H3RKFBE-qFccb51pglybikyUh5STNftFt6UQf2DkdqrRSVJH-1uJzcGcgzFJwz108WtYXWoykoo_k2bOLqKVjQS8r2n3bxxBtECS7RYevKA4gG7uBiRBeVjE96O76tOKBfjQ-1lgJUCKkCplORhx-P4xXopjCpMLrzFO9vMzPHRNYuxeOlO77ZnwNmR9inVZAaRSKPT1DoKWbC8n6ZDqpdEWfvhLZvPTkO3NGkxcIEY0mI9wLyvZRwW",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJQ4JTOzZpOzIRo02c_DkbmAI",
+         "plus_code" : 
+         {
+            "compound_code" : "X3HQ+45 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3HQ+45"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJQ4JTOzZpOzIRo02c_DkbmAI",
+         "types" : 
+         [
+            "aquarium",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 204
+      }
+   ],
+   "status" : "OK"
+}

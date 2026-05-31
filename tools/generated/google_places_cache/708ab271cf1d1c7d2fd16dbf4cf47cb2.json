@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan 13/155c, Bukit Jalil, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "017-395 6714",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0522222,
+            "lng" : 101.6755556
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.056442000000001,
+               "lng" : 101.6799158
+            },
+            "southwest" : 
+            {
+               "lat" : 3.050439799999999,
+               "lng" : 101.673922
+            }
+         }
+      },
+      "name" : "Bukit Jalil Recreational Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 7:00 PM",
+            "Tuesday: 6:00 AM – 7:00 PM",
+            "Wednesday: 6:00 AM – 7:00 PM",
+            "Thursday: 6:00 AM – 7:00 PM",
+            "Friday: 6:00 AM – 7:00 PM",
+            "Saturday: 6:00 AM – 7:00 PM",
+            "Sunday: 6:00 AM – 7:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113397791738657218271\"\u003eRosita Faisal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4q4BfuzpjEWmydl_ubLvT-gRXB1WiXifB1LpGFAi4RIOR7E9BwaaUcZGi86OQGecFVWA7HI02qU0w4iLsroGjtqv5mpT8Wu_29b0E9CO0x3mtUa3mc98dRFj_VxK42qXGcgsy1LMjfvRQfs6_qzxZQuVQ4q6xMEQtXJnGXdkwWLU8eSCWvvqpyTh7ky8q5v4l_OBw3uMLhLzLNIWjux_upPUqQf7zqvuLYgX5zgXhH77Ll4KvYQgCQdc31dDnis2-poAwjud6j-IPa0evgWqEwyt3yXFmr_wC4txr8DzZXYF1kbN8-NbGWGMOUCab4O2WSSeonqlW5Da9bLM_fw3YMNsDBoMpK2ypOTwyNva45-MUp7X67HuVQ3diQCYvas7imTR3jkgUX7t8FYqe0GGuRFLBSZNPZZMoYtmW2LEgkQ",
+            "width" : 4032
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101240448159803940600\"\u003eSiow Yen Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sJN77jUqqm9VPAFvcaWDnpWsdVSYqmNyWzHQoTSI-Y0zQUMOHedNeYpG8Ond14kBh9PTY3pQoHSu28c0kbA8PUzfRnuAR4MK4JijN0EpOsz4yeMt0rhRLs_txix5WmUmWiKzbcoTQdn1YnHUa8S-3baW3LxuF2VeihrTGn1CPaxHCNhABIh8m-X5cDkfNH1XN8FBCaa259aOpVOfYt_p1azEu5B24vRDmd_tFaIsEj70kvURT2-YUqkK75-qqh0hXjqLV3fI_FOjxuA-OyQ9w-eLjqY9aiXCU-DOd4DdYjietjK94RDbx0IcvW9QIj49qsORmiDwZ72KfhM8h-_WwjI6ibJcOS54oWgSI4Wf57X-z9I4oQACpeTMJjinef88VZp0thxLVs-6jUVfcKVy33bE947amBAUaKf8injFQAku8",
+            "width" : 3968
+         },
+         {
+            "height" : 3492,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110131895998564601928\"\u003eYang Ying\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sZ98EcMs2u4Xn0M2kC47wGJTklzC2vTKDUxJZ0QGdPiRjfxTgbQmUaEP88kk8_snJ0TMAQJTu4gM3xpb7_Tsdb-o_aKBuMlxF7CwLe1t-dGzK9yi3lJSmXs1AcYZsVR_wAvPvKqtq3iUkEqy038XkTTJCWDIcL57wxG_Zf0upjrlLfm_zUVlHXbs5lTNSI4_AW3gjCw4QhgWrWzLwY7SqyOo1LvWRZ9qF3iKB_0qaVw0s3A0es14jESJI9GuJ0KarvUsZPSaQfsObUCmhF_hqO5iFFXkuZKGU6tlLWGZarnB6wDJP7Y1EXQSrgroYvTphwWYDGubNRsfcEy2dLcHjBO4OK9-IQBlgsCoWuTee28d0Orvj-UAp-TC-czLu6eU_KGDmUCVLP2pBNdeh8mU88ajcQn3rh74THa6uxCZsiPr-r",
+            "width" : 4656
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117955237134918363980\"\u003eVC Chee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uje-Stmn5oKpCLZwywI2tq65K7YXzrHqJBv0hhWDLC3F935acfKDODtV8qsO28wbMIv5Vk78oFhZBPxeYIQhi_OzcIyImR14MI2nlk2I81hHPTPkmf9UMYJtkr9wjQ0D2qMTdXlFBXyJUqWOOOnnk37fZxK3QMSRLUS6_uVDJl19Es3adc4uOlDjDy-bnAVS_BHCFUhf30y_JBFnk4II8O375nGWPdQzN4NWiTW7oLP98GBS-8Xb4b3IPUGe1sp4PyuiOl3Sp9_ajPrh3NHddzR5FZbLr_fAnFm9-ynfAKoS_p63QQOeC8aSPELHA_BgyQUlFwBtprLyPrya9QV1G7eMDGL6uNL6ALUUyTbohwDWJn1ewwtW42N_ECxiihPrGEpOv5soX78i8VySxf6rkuWquZXR0hsPw7oCKi7PgoxDsX-EfVy6L7yBff5B2d",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110636878407076920288\"\u003eSimon Ong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tRII-yplDBIDFo3mCh4CNyuMPk-Ohd3MDbFPxYKoE9rX48zVAmD1CRGpU776UbhIAx7hpTgXHUlpQ3BRc69FDOTGaP_eH1J9Wz0VvkWmXBnsrnEU9zowBg0IjTGDBGMUIHbpvMHBaYP-82YkQ_7hvBiraZpuufpeIkMzb8GIXbvE0f6AP8rLIKv3VUMJ-r7f-5zTp3clJVpDyDW8Z6y3h0FbIN2kiwh97OKMtkT5ENlzLO8CrFuAauO4KYpQ69jgaBThuEBLjH5Pwy1FFp78Tu6wIizrf8mgwaGxOzeFiBL1RKs2nKf3j3ZtYvlNQH_dNq3LKj5L3Xk3Sn3DHWLS4E46AYFtNXqc9M7dDzrasrNR2sAculs0nUNH1sVpGIDoHeIdnPkHfzjtj08JCDH9DhGE5N8LujkoSrFxACtjFB_Iw",
+            "width" : 4096
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104397307612761761950\"\u003eParam Rajen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vz0fA2cs_FwmHJJy3EbHrzhx4_zYPPsyKMEZOY2x9PgKFeeofGzzfx9nqnzxOJzkrEBrOvxlJ26stZ7DJCHcCNrGj8EAIn5MoX4evlq66a8o5ROnKPJ0h6prDjXdG2xWI_ATzT-7l_xTxP6YhQi2ESeVscr6nJ9-IIA4b83K3lksciityeb8COwFExal6B40IhhNZuP_2Y9YH8ZTpIEVrtmXKlfnxZMfOZF1VZER528UdRzBm7mYY0zOxIW69RexkFj0NKgHi1wYxVYWNHmLUR-8JAIMKmcC18T1V41DhRpwmkdlZ7Qg8CntZRxvVMAm7tuCnxgpQOb-7sqVTYg9zGIACzN4K5OcHScRarVg0iCMakRzAw0yCXY_WL-S2UOFX49mruSGk-PunBDrNOml7Te97XhbwUFuFoE2Xp5F9W1RE",
+            "width" : 4608
+         },
+         {
+            "height" : 2127,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114034733298603844650\"\u003eDan Tang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uefen1mulvMpDsLxUhflMgQqk3gNnlxhA6PdNy1DDgxq2fYLsLcBH4u0EPw2kAvg12_iERrFRMfuLj459JAhy2Fz3X07GeTm9wmvnWe4nv7pD1seZKXrhbbSEPoEEojp2mgNQHa9ngnT4rPpmeqjSb3WESpHdGfuDPlIwIaeMl0vsDl0ID1solNdoY1CnYWbljfBz2jQqHESIm6XI0zPyZLlA-SWbHmRRpfofCJ-0KPQjD6-ComCQhet0Jsdbuc5HYq_hPHSnY3kf7jIWXa_yAs8owVVjXGBIpE66y0vaA5ehy11dL-Jl9LNorxD6YFl8EEKzmx4cZ78pUa1T2hXW3V227yNGHRH2rQb5bCEuMycBQeTe2vKmwO35pDDaFi-ya0fZo9yd3SsJOpKLfhu1LGyXJyhg0Pg3PiIaEt3JxCQ",
+            "width" : 1822
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110131895998564601928\"\u003eYang Ying\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGHk5O58ton2ULaflbQA3TyyhRA2Ok7-SBHjOPP_KQorCVFX5ZCM0VPlzrq_pkktRx00Azq-FIqkxp-O6JV3wOQhcWZjh0Pch3551q4E6m-8C9h_r2kRVR8OO39kn3Eey-9GM0tWYfvIZRZ3PfGDBgbkbcHuspSmUQGTCD0U3a2i_3VNI4s2bdLn40SPMaEuyhw9LLsltKbuj8Z13AtiK4XZFn58HTX3eqHjY7HreUseccv8ZJQDocuMNjNHA4aMCBjXW0DbqmK41gne_r-wJVgSRGw8p5Cim0y9NbDhdqeeUy6Xwm5nqPTbhNBkhkrD3c_F3YtljSqs34-63Au9LulO13MaIOBlWTdbilZCGGbpD8fA4imQuMs9uvrkOIsHH200zGiCp-jWxKgaJjty5yhPEO2LxREskOqwk5_YpDY9Wf",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100728751621331652649\"\u003eSuka Sempoi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sTijW7of7yQrqPN2-P1X7Rrsqst6ejwPKgs9jS6UeENA1K4tsSXHpF3Czbi_BShLnHWIkD-nbBEvRZzsVF8S4IoYQPHqk6Nw5smM8825QZkRQ8iqEzbMvvlLUUr8jHwUch8S4hYdauQYAq4yHUZ4MhWz3v7mgVXSAvsm9g-4gEiGVCOpSSFmayoECytTLvma0UmH7WUOWycUkYTEm0ngd7A0UvUEzvST2dOT3G1ePSW1pb-jsik_3d7-PDBtiNVzA91xgQuiUrUn3XkoLhh1ogYqZuMWf196HLn04V6YyAk4zL3Jw2-lXaf2LXfYFmZsB3ovxqXO7IlwzvrbFUbjEWcopWENI0_9-kOGtQNlfBnWoj2qEkgaQL4znc5BVwOTZ5cw6neFua8d8wLGSc_JeslzgJQhKWdfYZp03dV5vfog",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100614504185057983337\"\u003eAditya Gupta\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uz5LVURr6xpta5efPzj__kKZPJiCYPY1t1cEwG6W9ifruuLpKGXfeiZEtU0GbZng3SHcSqNS5nRC3LNKaogo_SxYwOyMFuMz26rHysfp2ay9elGlMv6k2IPGYpEApJttPSMpfDSlGyTM28UFJllA6NwdLs72_krMcmbG3dMPVfS2mNeQ-Q5ftw4M5YVHmVqkX2H_Fr7b_vN6NQdHsF-6soqvSU3qzm_PWVqMuxKXYL6rQK4IpLGfeYkv4Q5bypEqFHuJOydKUQAhzHjgA3F2zswKUf2meQxoP_isaanDnCD_CZ8sBo8-rDnxeA2Dj08IdjZ3GZXfoDSOjfUzMiwx_DjsDPsllpTxxnqQspSu7X__IXQdZzYd1MYQxKL7xbRQl0l1OJSjge9VrNnZcunbCtuUXQL6uSW637iY9tKkYYTZDn",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJX93dYsJKzDERN0oBQxHIIm0",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=7864067875806464567",
+      "user_ratings_total" : 6263,
+      "website" : "https://www.dbkl.gov.my/en/fasiliti-awam/taman-awam/taman-bukit-jalil"
+   },
+   "status" : "OK"
+}

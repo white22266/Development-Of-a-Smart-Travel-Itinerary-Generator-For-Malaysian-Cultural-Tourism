@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "08000 Kota Kuala Muda, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.629764499999999,
+            "lng" : 100.4070876
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.631298830291502,
+               "lng" : 100.4087621802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.628600869708498,
+               "lng" : 100.4060642197085
+            }
+         }
+      },
+      "name" : "Tapak Istana Lama Kedah (Istana Lubuk Pusing)",
+      "place_id" : "ChIJv5G84x_ZSjARvhZa6CCX8y0",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=3311156318640412350",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

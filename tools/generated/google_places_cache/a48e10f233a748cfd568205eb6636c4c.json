@@ -1,0 +1,298 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Masjid India, City Centre, 50100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2602 1026",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1516061,
+            "lng" : 101.696343
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.153068080291502,
+               "lng" : 101.6977324302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.150370119708498,
+               "lng" : 101.6950344697085
+            }
+         }
+      },
+      "name" : "Masjid India",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1230"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1230"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "0700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1230"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "0700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1230"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1230"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1230"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:00 – 7:00 AM, 12:30 – 10:00 PM",
+            "Tuesday: 5:00 – 7:00 AM, 12:30 – 10:00 PM",
+            "Wednesday: 5:00 – 7:00 AM, 12:30 – 10:00 PM",
+            "Thursday: 5:00 – 7:00 AM, 12:30 – 10:00 PM",
+            "Friday: 5:00 – 7:00 AM, 12:30 – 10:00 PM",
+            "Saturday: 5:00 – 7:00 AM, 12:30 – 10:00 PM",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2512,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116536372130568450349\"\u003eMOHAMMAD SHAIFULLAH\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s_2qFagao5krx4GYOeOtnC8pJmMz4YHmx-xUIy3c79rGS9dsCZO9JglA6nfyhlXn_7t9snonSe6tG0Rfj4Dj154dkog0_T7KDaVRW0kmwNjaSx57HGmcGWN5f9SNlm5mxITXNUX8QjE6jqYFJDiG4PEBd1Zsrb0nQKP8T8bq_NiMFCoTwOxi5jK-gwDLWGDzk993zoiv2kRe-7y0O7UQXAQBhHv0Yp9A_Ytasj5v-liNQGK-BZ-f5kngyN6gzDFzKfGMhJQKbMFanPueMzt2ZHyFO3aLGjKe3Lno8BibrFzY9JHDmeJ6JXfcj0aPbDigIArwo9eNhsF9Hs7h7jOvI3GEAJZZGGkXAOROkngY4IjlbrSUPQU2apicweSxX6Eef2_LvDeY9PZj85pquXeybs3VBU1d5it6Q",
+            "width" : 3352
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107001104719429174631\"\u003eReza Maha\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ttWiBDUCbDTGewLow6sdVN6i2hw48D6tfIQtLfkLE9JDs8vZQLOMtYNdowUBCf1ncb1_WkrxNP_DAKog5UTLT5h9l98kgf25fxbyov4w_TlfQZuEaJrU6qLRKzTpablXrr5tpI0-iNutZ3v8auN2FaM3DzmPVXOyAfYg6wS4zzWpiyzMzWIKByOYvbr3Jvs_lSGBvs9guUaWXQSobIOS_jCRJaD9ias0Lsx2IdbbwtJI66rh85iWYEUl7CpeVsem54ltc_lcRM3M6tSCHdTLPoWJJLtopXEd9hhHJu0hF0_oySwgJD05fu7F4I_VRXt6A0tqwietwq-3qZiDPwujP0cR1K-UEa5FPxhANX_hzht3S3_LoM-VO3ntxQbt3XJ6ni-2TZMTuqwu80pJG_RezKAMdpBC6K2S0jOQxvQQRXLrBH",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101159845609329838664\"\u003eAlif AA Aliff\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s57rDKyXTH19vSMp_1qXffa7wo8FRbYEIuExPgFHA5uvvxHSVtXdpLxPLgvSiFSycmH78Gvtu-FVoqYQXtYYBEOBqGr0DwAWkPSMqP0ZWvQkWBA3dlnNj-HaOIZUKBJEA33mgU3tksbMO02G37A-UWjfWBtSYs6PMYS4_KXZPp6krpwbSNB0r1xhxnd8hUek9Nh3jPeIe6ZNv-hw5mMIs06hipNUDbx0MViexoCTfQeWH2uDhLJ9OQBurlpuHkRmDPpytSdTIFvCtS9wVDmx5bWEGhQ_lx0iClqDzcv3Ubm4XhWmcui0ejCsdj9Fd5CCvhASVMRFKh_7UWxstzpXlvZM13x1iCCRE4m1hq2MTpVcV8DjXlaHcK11BNWUCvQCNNwv6DavyLqdaY_6OClXmM4FRL-Qa9pbChE4leuAohMp9M",
+            "width" : 4032
+         },
+         {
+            "height" : 767,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107945377527616520260\"\u003eSOLO ROAMER\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-voZ-fl_jKZFVSXVnfQkBCMp9Nntns4yXXn4xn_7keTIGz3BnJUt64OXt2lFFXp9Pcrg5sJNF9pbnn3-OiROz43EEQatyWi6UCL7lZS6_31SeScN7vh6yP2jxeOURhM2XvLKMH3AKurAD9T6arPtLTdsaplvnXQLI1BVngxImqcCf5EYXxFibW3ceZkxdJl4aJYgwKwTplWQJehq3UmRLyiMFgVWgAXuzmxmr4ihuU9kw-dzPV_vPTsmCpVNcHXCKTI5ern2QZdeKd-lNeVlMYESWAwTuQ7bNS2VmseZSKuRf-AQMVwANu1sTWDIUG_IYAxkTB23AS7bHKQydamugeymjNOGvxtgyrzJJluwpEER1Mss3bIpQwAdkMUR6ZL-1UA0DUitsRSyCaZFyBRBy3IbA8SBU9KfDTzHQiEUU_oefxZiPUBue_2oWWClu2W",
+            "width" : 1150
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104077577374867250536\"\u003eMahbub Hyder\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8wx1Awd9vC6o_V_AvuHtKwBaBmzAidj-xqWODpxfPJhH1ngfMprdUK0g6zVOgMZoQ8_1zJDGYqoJelUnxBqv8yWg1txAOgS141sTqHrWXI9CN5dMEV80df_lwJ7b5dQO7a7jf-VOO5Fwwp3RfSjONj41vD-uNkS_Q6V_0Ff51jM77VnwMXz1KF3wpmg8L6IKvwIFX_CwotbYTYlFyvmgOO7cZJDA0rh8BHzAWItE3HvPU8_nWUWpbrM7PYh3NYr-2V_Q6Vd0zAP-zjewmur6VUn81xSJRlU3ihyHjUTaM2ibq52FPYSNqdW8Pyhl6n2PI4psok4WFPMS0aYLNQ7oQ_zvSN3phH0oRrsmfmPRUet018RSMHnzdR8UOWmLgu9YaRo2r5noHTWReFhLMagUN0qHO4hexuXE72z23Kg85Yw",
+            "width" : 4080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108539661434104769356\"\u003eTakayoshi Tetsuka\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSLE03l7-26mDgN55qdecFs5thx-MBGL4HBGxk--nXpjDUX654emZDf-4Ce2NKceM2hbal-vYMEyRR7Izmn-sfS5DSESM607eMj4TLTxp2vTYRCMR5EwyzmOr3Y0bd6fd25hDeURTjDGBIIJhUsglbqLty7O6-4i7ODLKCPluB5vgZp0WSDCW-oHDS8tP3sSev_qs8e_Jc2n2Xz6342-Fj9tmWJ9XzjN7EZje_-SU8EkCPKxgDVoU_d7odl-PxirlwNpy2LK-fwlJ0zeAu5vY0cEcgkfalnRPGdIRvBtAuDlJBv6iNMjoon1mMcWouH4LNvOI6ZmVbua07Z0n_JRyzid1plghC2SyoEy1PB07BH6hkT3xd_VcOMUDkerbCUL0EeJXmWRbFBxgaEgEwNz_9Gb88WyPQ6TpxaunGBbLpRw",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107055986811155425903\"\u003eannour 78\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uExM3IKpDy5SBdPIk_J8fwJziOYpi3HyIcV8GXD1R2zo5tAqA7MfI1zb17TRi5eRyhOifD6hK_VFPc3YJiZOq1g9zuZAMSrXwThuPLkT75qvLvOCRhqEZ7pb_dsw7VvoiAuLxIoRhgOg4RIYNCuM0IoELwpEzH9LLWwG14kzrpDQy2XKpPbCatE6Wu1r9KEEU0Hm7lq1dGwn23dUcyvdtKuhKVnOj0uQBTWHgmxm9UCNKjGg96r9eIozg_ZLnN4_66Ie1Vv4PcQcHzeSV88jmWjRJYUo3wu2j2Ea5Aq-Xh755MibE78CFm6OBFgk5TfEePJMnd7c7Iq8fKnNvLlDUkoVmaQNEkFxdDVw9E_IEXpLyChrOI4TY_0KR3r8wZZ7SkIO5VkWw8ReiS2B5u059qz-LUDdeKbtQBEsABUDEam_4q",
+            "width" : 4000
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115177487644026627078\"\u003eshahadat tutul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tCzAG2ou9pSHYeXMQfVksKatU3dKb7g5r5cASAOSwP0UiFW4QfmsuPkdMmJuOEERwN1gIV78rOWan-Ep-XIf9kXHQDswzoR7zZ4ka9BNObX-OJssnnT5oLI8CfQbM7FlshybZUfoGTpZodpZXDlF68U17d-WUCkvs8lB3A_QewvI4v2Gk1yZ86XFRtAkc1gswMY7EeS5nH5KUb1PIJyZSu6XHiTimkn7A2fng0LoaQIfBXDL2LoVVRIglOj2dc5w4-foL8AahFNf4IYGXmdksvPHqlMISPZrLN-MQcKGDfluT3EW-gQRMJj0pGcvgSgb5sJ5sG59s5aUaL_0VLeS-KPedOtcUs35LFQs8OFruX3hmEj1mjxQu1_fTgZiLvujbOW_RwYCeDY6_9YNncQ2Nyggh0qWZnw6qrfFJ_-nqjxDDmciour8H7S59pvl5S",
+            "width" : 4096
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113016085989758591082\"\u003eS M Habibur Rahman\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sIZ4pVxF5AxL6ORlJui43Zrhcz-Yr0J6l1rNbQEFsQHZ6j9MQCrY5GRWpPCTAWBgaVv3Ap1TMlGXxMn5asKuNbqID_5VRkUNSHd548pTyH_k1EW_XV76e5cDnKa_mZoC-KHHFQMxKBAukeoZaUgGzPAXHh4A1qVA5wb2iu2v-rRhHIOvQ1bk3yZjTaw-t2KK_GVH49-ae-OWynsKh6QemR8A-78sT8_W4vYkjgz5u25Bozya06BI2Uykz3haVvSZ_kUZVbdD9hacumqJLkwPbx3T0-8Avl1xeo0tTJ9HwgabGPvksJHRM1wCDEUd_DHjWOxetMRSxY7NwNJntAwgfokYwio5qJd1-MI7__WyfhW5TTJ14GQUFDBEQQQRlcSbUvk-DK24xea9F6QaKr_LpvgKNJcKtKI0JUTvawIgNBCeZA",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107310147508564832939\"\u003eTamer Elewah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v0KjwQS4NmOKE2puMMKjqiJSkvDP5zUgG-y1QAA9vrtT1buChrqCwjZC1pLOouMmGVSDTkmpJNjRxNhNsoMDzArdnmTuObeIohNRzkM9qcBniusyLKYPdLr2YPTMEhGy8H0EzEsMakT1V-MwiHPdf_0AJ8hrojUPbtQhZZADosTVt24UNHYvsvPtaWFXds1JzuVaHtdfJkMIM7AXbrSqW5SKFBql9me6GYXoNeZLU6ic_BZSPD3akGkWFSgdQVthuvEOuJ9QRMS43NIb_3zqqYRiBoJxi-NkTkwh9RiwUDzuj42csYWJ4L_NfX4R4D-0Sf43nlpqQnSgrcgmHBFfT1B501fH5fbMdiq_u_wJRkpcP7FVmi5qzF2S3TjkAnvVH_Nj1fwIv7e0oNE6_RzZ5hAs6XMh9f4gLe5miTuujQoY4wZU3KxvDuozvnPBM9",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJeeZdLDFJzDER0Z2OZiw1zVc",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6326771516340870609",
+      "user_ratings_total" : 768,
+      "website" : "https://www.facebook.com/masjidindiaklofficial"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "321, Jalan Kuari, Jalan Bukit A, Kampung Cheras Baru, 56100 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1062141,
+            "lng" : 101.7361611
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.107670180291501,
+               "lng" : 101.7375923802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.104972219708498,
+               "lng" : 101.7348944197085
+            }
+         }
+      },
+      "name" : "Madrasatul Islamiah (surau jumaat)",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0500"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:00 AM – 12:00 AM",
+            "Tuesday: 5:00 AM – 12:00 AM",
+            "Wednesday: 5:00 AM – 12:00 AM",
+            "Thursday: 5:00 AM – 12:00 AM",
+            "Friday: 5:00 AM – 12:00 AM",
+            "Saturday: 5:00 AM – 12:00 AM",
+            "Sunday: 5:00 AM – 12:00 AM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102288386371191379565\"\u003eNazri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGEX0rOo8mKrxYhZ8Jg4bEiELRiD85x0pEbS1IUvGfjlTLqD9p1GS-a2scHcKDyzakkZkXVuMJfY5VXU9SC8vZeyLIbXdWXLYkSsDtmXLK5W71NaNankE1JRXAv0ZaX-LqMVTwUS5L7wHceu7hbJjOzZJtqMYQIhZ2ppvz3i-ZceE3gCK0uR0_2ugTO-BWF7ODEIet5cH-GISwVHXyvyok3HpMn3qzCw3OPRmaWslqaMj2U4b-vvS73xtIbisyhoPQtTM-rCAzWDNleajZvFVeVKcNtTneLH-LEKdrlOHTqa04CLmNh5MgjUB-eNwIo-nnNYrXplFznETAGnYJR6Z8WQwoC72HM-N3dkedVFZhV7i-0zerKyxEMe7BGkfa3DcJqo1v1WEDVNRgVXS23vD5Cn9YJrmZGPDoLj559gB2hU-3",
+            "width" : 4608
+         },
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106193244751337074926\"\u003emuzaffar dain\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sIGIS_79x8Ag_vAAl3D3W4CJe-s3mZSfLfxEmoJImatJiIFmSa6lvjFnzzVWYA4bhjBcnYbp5re8PJ54cfmYq43SrnqnKwBgLZZLjodPoi9at09U5fEGK9oLnwmvf2KQmURutTsyNTgAVUhvFuhcZKgARipTEKPQBj2h3OdXhKntbjD_DDCvJcpAYR3fuY1BJ8ak6Imx4CKuhWD5ZJMrPRqs4dIgCRPUpj11ShQEsM7EJK9LS_hHjIgsHDTR4UrPwU2fcas7z1YZa_64wWi4HxUEYeab7WjAJZ1gOqI7OgCLyqG82R0yl8ZJNIfGekma9HbXNMMli3UZL4lqXAw6p99aLw6k3G9fUKM9FKl_4lGCPi9ez0ZqG02PShH51alkxKDFZ8VpjIKb617I8qVvNjY1RPOJ0vVVtaJ-CBDk3OG0z5YwU_5eDJofgWG-YS",
+            "width" : 4080
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112672383911688907970\"\u003eاصحا ب الاعراف\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tCURDft3-yJwi2RqCcF6o3_nJBlQ1og3n0zpTvJ1IOv7pWk_cYvU0P5VNVfcFyVM1pCAC2VKglLjaAZKmPT1e1_NKZqp81teVqQVEn3djZhRY95-CvHGkKH3uJeHWXuoJzZV2YaGlCJTewuDMLK8fpwCg_1JW3RNkqBDNHBBJCaZXMBiU8lAaOp1F7GIjLDQu3Gg4e5zyjtinoYZ9YH0KEgxRsSayQv0zG-qvo3snsKtUw4Ttdg8B8GQ4tPWYivJmJjfi6e3-BUOUznjQmd1lrmVRf0MpVBwQyNDuOHaQ2n2m7Ht1h6nRxxQo8J0X0-gf-6xn60rwCMoMiSUDEhogSEZ697WGRribF6cyqBechyonM1Od1omuKyeR4GFGa73QdSVCF36mpvw0zmK78qpB-OEWnsZcLRkC17JDwtFKd4C6v",
+            "width" : 4080
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102288386371191379565\"\u003eNazri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s4vwCdcBvMSwX1K72Is8hwT7-Md3fQqD5_fdPi3Sjig7lxa_Idu_1zbXR0FY_XiTvnWeSgSRw3x38HMgdE3Ct34m-i0vwKw1dzFsKN_SIUJi32dkkjK6lMU2MZZJ4EwIZ0C1OkFOoOgsts95OxVAj-QPxdCKgyLOkFoMla9TE8dUONYLb7q3dIsQcuV6K0RV1n7dVQrzac1ppjoq1RsCjCj-XGK6JcwJG-bt0pBboYzuT7J2t5DU3-fG0xZd0OWQr_K_WSPOifycvljdXI1DjxKrvgA2bK_or4dCcTN25oE3AOVIFc-mquO1QHxQdZk28jvMpOaFda8NsHzEIJHSY06AareSMa6CJ3YGS4h5rkh-2t4po1PkGrS4rTOyXLH26vTQj7VBp7Vo7EClxZWz88VP0fK_qlPClPlMuhkMztpQ",
+            "width" : 4608
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100853138631839157393\"\u003euncle gedek\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vU3IqDhDB9zrWXiPe-PuCUPP4wkll4KynhS_lWtB7BiwY0Hv88yfm7-ssCmGBzx3aKlMEuSyim_Dngsl2yqqynfH-Lso513X8ocmeYtQXf7fiqSZt7SXX06gkAlbTrPKyERbN4eo_r0N_Bxwe6Z9e-HgvitXPOR6dnY1M86KHOMsOFwcwGlICMyWtWZbCNetCbfCTQ5sYZhh5_a5__yDqhJBnDpnDliEw53-fdyLZnlba6Owsp-BH14RyIkEjjRQaiGOwvkLZ6z_1Pf6OI-YYjp2sPG9b7VK-CsUWfzEvZFPy1AOA3116CVRBU4TvBeT8UMgvZva6cZq5GG_Csk8Shbzgj4fizNHKHY4eIeDemLWrSOABI594LrOLXzcI9WrBr_OAX0xFIHZ16XCU5NHN2M62lhcG94AUT5v8PmXQwxDri",
+            "width" : 4000
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112672383911688907970\"\u003eاصحا ب الاعراف\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdfyg-c4BHkpPed_SKlc_IONu5FYMBn67g6LhA29tEwKMGnIUavEAqew_7Ydbk2_dFHsYSzCJC-CX0AroKmEBK_j8-gYhedsyb5ZPFe_TRL7tyz1B-daZR0DuKeEhpdqM2zW3JPGM40cjVHlJ7f4tW0ZmPDwfsBn6HuUYhEFY9JE7h8XaG6vZKVhJE9lot3r5ub_YkQna7RAzTBlZnJwUqlT5IG0qrjVzI1CdXNuCVDSTGFqlznxWv0IfoWPWkbsVfpBE-M5Ow7f5-FHFx6Le_X3MPvqRZQJiXTXghu-ShXMgnjN7eceZwyqUsyDfAlZ7SM6zHTC3CnqDVwa6eUWfHv1rtenssP3qXsk6DPePn9Q8cC2diu7cSY1jIEEBbau6YrKDIBX17Vwbp2G82pt57---3HIGLCqpTKnPelh0",
+            "width" : 3072
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112672383911688907970\"\u003eاصحا ب الاعراف\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ujsLediMTCTKI6q__k1kZNFE5L1vXoB1CApFF3FJEVC0HcgZdo1tEj-mK501VTpkhU3KgUcPDzcLnYyQAPvIxrn9BU85y_t6caASDeHMTWN5dyZWKmX3pVZ0YN-76ISPhW-ZT3zTBTkdOvd3DI3EVrMF98MJ67pnok6b_8818qadbk4YUj1DcMv9PyOTPFjg1H2N8W5wMMsXdjxBBbEh9-eMze-Tw_dnsIC0_7jNBQ0C-WoO6KOw7HzZ0OgG_znHp9c6bcTZjGxwgVWpML5EwFceBKDghP1-lIOiZv4pDaTWf_8uulsAYlvusfCxLT1ORcsjFlx38fSu_JOrCnvDxN6fcqGvMHnarhfEAzvOQ-FytrdtA45pGi10E7B8PPvxbDy_T8_45vqvenEeFAUjSiko4evOvxdM3AbatG7EbojIAC",
+            "width" : 4080
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112672383911688907970\"\u003eاصحا ب الاعراف\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tjnosqZfs12aCNNRdpHg9XReMaZNr7vaR4QbEP5_tGMq6Z8diqtUFyH3SO-EtzdfOWj1EqgGijENzNfDoFXoZXNdlEkM3YuAWWHJrdgoBQqjLhXACwfHqZTLcZAr8HoeyuTtmFscrKB55effWLeA_7WULc05Cf8OuptAYAV8YMBqCXXkFqTs9INeJ_mgIYuMqf6rtzT7lTHf0DAGDQMO4sCw6-mUTlHbyYK-Y28iu2R_aaguZufHrhHCvGbIzObY96abpjA7BVRDUfMgA1vQTVXOY4qrGTIXu9LQuZJNTrBQs1AbDSC2PqTcLjVaxKqOaPmT3cvtF6w8lBa9yfLD-OEvcqb2btGApy7z5BVX-oeZBWLo9Lcn6L9S3KlBW-nFbAySaHTpJQWJzuLB-JJANGJc9fqPYGje26vCg6UBTb9A",
+            "width" : 3072
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100853138631839157393\"\u003euncle gedek\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t9DT1S77-Vr1Bm7rUR-G8-ycbc2WPcYHLOWKoa3SujFm88vr9dizcZbA8-MtzWBVm4AXsHBu3ifcszgZpkBQFZWCb_SmSMqF3zW3Aw1pJ2vKBuis5Z1v79Y8JLlIf2ogz7_jssOmIVnKKABIIHU0nW8hpGnfevhJbvApVnTgts6G6GtNKIFJKd-zV67NI54OW8iglaJsUL6qViEJ3peEBLHPjQJi9Lbj7UZtTG-O1109snExAHlcNCMEpjE6iHp7xTAE8YJRUc_7IxMj2MEzaZJqDdmAtAHaMoNL-qzsfa4fVGVhpH4SbYdSTurAuI1-jBEJ43tISWmZylkVxhl__z34AkelixC9KO2vmPXp7pAWZCQyM1p3obBx53N7wQQHmTfriXUZDoEQgSnczmyRzm53jlGqIRuyw5tHRMzk8",
+            "width" : 4000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100853138631839157393\"\u003euncle gedek\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u46TmVhdzJyWmRbTZS-FGc2rQMNpJxCjR1eCToTVGYF2KHrHrKxTZZZMjeVQY6F5ZLmH746z1RUHdkgVLQ4DCVSFaFk0Sad8J5F7Y0Le1K8bbfcNHiyhvVJdNpwkHzcAuJludgYN0j3YOPkTvxtchp_FqEpQPYabF6FRR5UKzGscwjJw010-eMTnCkSZoNQXO-PbytASQbYXrXHdqauEisCEkXNZ5DiAj9do5iqhUGgqdGipnRUEcnIT4k1WCjO15rCyLzR8ocsgpN1XS3ZA08iLJUKpM2ZeuKMaoLxgtwi44-rmNln_fIzfuR8AZPqT9o59UWVno7NG6tBHFJJFB6PIdE_xFOfQQwOy-9PEUOz-uGTNYijdBBstk54Jko0jRYOFxLFwAplYLaLUS0WFTdHm-tk_4EUdmgURIDEHc",
+            "width" : 2250
+         }
+      ],
+      "place_id" : "ChIJ_SkfflI1zDERRIxo6zyN2NQ",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15337163823797275716",
+      "user_ratings_total" : 84
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "67, Jln Taman Ibu Kota, Taman Danau Kota, 53300 Kuala Lumpur, Wilayah Persekutuan, Malaysia",
+      "formatted_phone_number" : "03-4143 5576",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2043282,
+            "lng" : 101.7210854
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.205694130291502,
+               "lng" : 101.7224614802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.202996169708498,
+               "lng" : 101.7197635197085
+            }
+         }
+      },
+      "name" : "Setapak Central Mall",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 10:00 PM",
+            "Tuesday: 10:00 AM – 10:00 PM",
+            "Wednesday: 10:00 AM – 10:00 PM",
+            "Thursday: 10:00 AM – 10:00 PM",
+            "Friday: 10:00 AM – 10:00 PM",
+            "Saturday: 10:00 AM – 10:00 PM",
+            "Sunday: 10:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101932288109887058669\"\u003eEnergy Shack\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sNCvv_Lw7uQSMyFroQdD4VcGT_TV_51iQjCe2o1XbFp6XRQZjKY9MNdoA09l3S5Prfd8HUNPrd3Vef3w2Q20ENI83LPLPIRqqfH0sKDyp4jaPdRlOBn-bO2ewivMS9dFiN_ND-Y4yQ0xiNPC9tbIFfaSKnWiKpmeEZfWbYOBaooiEpPT0iNekJc8WvJeO_VU9jaKk3GBPQiYXaMg-oRXhl9suml3a3uZyuiqGB9NO43bDtAELfhy7jgQQhsMfuJcFVSfo9YjPXL41hySQlcZD-tkqI7acGLpD4OH6sUPrTzTXjAOskpKMLt5G1xLVIH8kfb4rj_BxWiTyDL2CNTuufPi4sFqJSQ0_vqzlWjHSCzff_Ewotx2S3wkCKZ0dbWIQ7eGm7yP1xBeKbYGIQ_180_l0zUSm9Do5BxVOGgyeLDejq",
+            "width" : 4000
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117384759267813850673\"\u003eGhassan Hadi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vPPYfE-dCarJ_7CCwy2338KQrdLRB0QTU3zOlhVp1jA1h2MpiRjB7vxUBmBW8VxJEQb5aKMdJG1LxYyY-uFFoxeg6yCs0z8g-S5Um65DcmRGy9iKJvRsoxDzorXHtHUeCughdLNTQuqb9zRciohg4TJTborPRvJrWdRDBW0G_2beJMA4TU3KgjQYeb5pBjsXQ37BAegKMlg1zhcHcY-c1rDpW0MeAlfQWi5qMdow0dDZ7wdscHCscjwbW8WxQ21EmBSKDEjJ9Vq0-_kOeHng0ToA7dbkUJA8WyUGOGdLFBuvHR2kgWLHgA00RsEz-Kq-uM4wZInx3tHEK232Lwm8Fo5U65vfnqENzcUJbZMA0hlbr8SqyMuhvLzeDUlueMJiZxAalJMxi9huMqNX2czjObPALryJ1b8clxF9QzZHfl2w",
+            "width" : 4128
+         },
+         {
+            "height" : 3464,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117120856709627388834\"\u003e大米TimLow\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vmdbCyvDqdAbvKxRnlUUOq-zjJVSS-bemG_OTNr2GSqBb4ICMsOfaEU2otZC7aS0_KLaDXPxsscxvpacERqjT3zgrDLse288kcGcu9ZqhcbxvZ8GnxNvOuAna_gPV6BMMiPEgmlb3Gey5O-3caeZubC4cegjr4OVZuurrbjA0O5XqxY6dKtIskAlIcYj07v1M7oTvQah6Wkwe5R3N0MD3QM6JU-AiEC6WpjwZnv6NWJHVKJgWvORE4w0KuYtSJqObnJZhXsIf_6x_J3a1sSsrrMmq1trtmopyW6gNs_tve5fgyp1wcjEcT_m5JoXsrbiRv5hVJzC_EKhoFKtuep5HDnOAmOpq4CJb72UJJWtYfb0vuEqA2iz1fYgCOjxcBEBFKt50T4jeA-UqsoFCMYHny-oQGJsiLjuHdPxJMTL_ggw",
+            "width" : 4618
+         },
+         {
+            "height" : 1840,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105516539455666146082\"\u003eBanjong_贤善\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ve9jXlAJMtS09HfAltAXaiH9hOmYUl7VZhQmuby_RPScDuXDq9htjVAb9-dwybCQSIdP_W38M9MnxsNpXLpI7gCKNqnghIJlcVc_GLSAB4yg8iKq5nlkk0M96std1xciNVJE-jPlIdaCjGdf0LSclgsxJfld6e97xEzpEDG5bgiESG83x_jhrBBML0NLkI15YOnzaNvlKi-cpVAFxbk9Za4EityYyRsV1FrvrnddYNNmaUZXzgerJ44FxyYDh3-ue0X_u6-Aa_UDOnHyDzUTdMr6EumuZKjMRHcnttzj3-mY6TJzgLDL-bsUnvU9G2YxempriOWIwN6Rhrh8QSCOIxoMMTk5mMjTMq-IeoVwuVroYsy8wve0_oG5iMWAp3866LslJ8J56qtUADmfN0Wi9aVv5aG0A9bbNwrsIxUkSULJ6N",
+            "width" : 3264
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103856907209908038368\"\u003eCommander S\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vJ9VI-FCu5zz9zki_VFP9tR01PzQANi4PQ70KMsJbeZi8WOW8gKEdfifpEGoOvW96EKuq2VuKhLN08fE60ciLyce5LWLm3bnbhxyEhtwhqBkoFItTHwSuZorjezPnTB0xDoif6NGM_YyyyzhQm6HQ5BzTcXYW60c0VX_1Lpr41_jGbcv1CKgaO2MsS9MyxSf0-BK8Mj1u_U2XgqlQAEnpUlgycS_BkoVHCOyqwVq6SnVorJ1XwoZmZRyuZiU-BdM-wcmI3n9n6A5kNcH_xSf4Ve-Y3VdCarui17v57TceCdeCsaM1xhUSa1jhCz1aEx4FwFytORNnhPhESgdbdeG181jAKVQGqA1xJ94rup1ixBnuNF24etBlZ__6D3O28WuGFq7SCZxuAcyftpQNRSa0HCeDCr-UdsnYAIppJY9lszJik4c8XnyRgA5oOPKAP",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112556835534886903469\"\u003eFoodTravel Engineer\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3w6ticTdvW_DEBJggDO9Ly9QTzkLFliqMgT7KHyFCyr-D6RMYygaEzuqqd07xIF4StzgVM2RJWtINpquxdlxXanZlQf7wLyxIR3nSBhm2W0TqQiUTkbi2XqzcccnMX2yL903nuxZgr4kzZZzTePkLlnEfdNmjq4TzHTzBkkHHesR6QyNQiY05LkEGYrebwy5oDZ4dDsiSHAsm0vjKHzwKkrhPbILC0d_x_TiNnW1UcBKJvB5UM5dPxZvQM7XnrE9gbHbxYHJMOgV13-ZtSS1KKomUVZOe-o5xvxqSEh6jkW6LJD12J_xWQkYQoqM-NXWxlEJrluJhG0WdHoCo_E3M3uSi5B4Mv5aepj_AE38iTXvzf_9AI59B6TgvOFvmE2XafH7S2NjYHGO6dRxd9nABL2OqIFbNNX7NVtS8uqyo5w",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103856907209908038368\"\u003eCommander S\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t1lCab7e82sNSWoJFhyEWAo-b5x8XQ2fvx6TLcI2_Uh1uxUgZrUcrs0vBHNn7CbIJYyJ6ZAcjRmBpfyvqq33-iu-2cP53JU34Ko8n3a7OrReve0Om7ssi1GbmntAY5iXF6RrqG7GQ_syj47cV23UWwxLLmnscinpV6GMKQGNjuEBcBdCnjWPKx9vjE_dE76i-EAkutPdEOd-DQcbGbxA9txm0TpDvatYRicNgQweASuMBM8YN2ey80ZEUiG0jkQ8u-FwDoHeYymCtprUacTVMytbG3v5TjTW_v3iPtZ3H63iTA6oGyu6saauTDc6NPNq0eQig3vxS8nomJUzyDLXdihQiJ7CMXriOjdLA3C5it3UnvBKiAwC4MM7saRZ-gZ1IFx38hzEmoTYBPCsNp19ZgV1piYncYuVPvypx1N3OcjCsYlcp84Q9btpJwSA",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111305046142224980929\"\u003eMico Yohanes\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sguIizfOpYKw1K24OQChAo8Yb3DPx6vP9HeB5vslOM-eIbV3pJpzxVUgbbRNIOTsg2WgrK98aasu2VDymJ9XIaeuWaYHmp7zFUR3XUhKrpJrqFom4krET70wVfWTtN-8aGIuQ9-iLDdqOmKvFnWF6cr1FVVvFRPAjxs8VWeWOQxJ2xtXFIdB4XI3pmh8jXE6ePRIwLUf-B8Kvff4_mEsfsudb10dHsI1sOA0sM4Uun6C8ME4Vz7c_PZrJ4ULGB4zdxV_2cUUCkEMf561b3sJXvP4kovOFNTrti3pDJSLsCoam27jEIsKDtSQg7v-1Id3VTOd31Rw1BFdSqwBdUm8YhNpnlYl1iHLMlqFauVK2zLuIlKDIXSZFCh4-bkD7rdmz3cPhDQpxrHF-ezulnUFHGzBOVeyyWypQtnlbi8Vo",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103856907209908038368\"\u003eCommander S\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vyIRjocbQwVnrap0wKb-S006lfJAPlAA9Q47Mqvb84E6bRqC5N5-w0BcNuU2wZsczEIgfM9YX4JOuMLv-se92v0DA17Pq-_1Osm6JfzQETiQXyWt1x1KgtChJ_F8-Fx_UAnHhVs-zpzG6Egk2Z6Hm_sQ-wfwbrgoTcsin0gtutu3uA4M8rs-2bdzZD2DIW5Z8Mf8orQbxSXJ-ZgN3DPsbixvYxgQlRHFp7GnYIDaFuwylz2Kjr8tabAWMsoAUHw90OM93MMkKQHsw60mdoKb6tdIF7zECvoHfDiVlyxteJaxDl3AKMzgF8Gj2AplWmxu1e8Qdi9zuRTtXJ2Xor5SHiJW_qC_AKAGeDUC4I7lNtuXQQR3dOJWd8h7ck0FlVNo6EECYnkyMZJfPiJ4WsjbRYv_8_BqEJurTs7neX7pOwVBJOuj9SV5q1UMD3rQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103856907209908038368\"\u003eCommander S\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t8lB6w_um0DxBxPq-y1Oh9x8R0nkyrVIpwMl9OL_7ZqBTJjyazXsy5knZv5hHeUsvs20Tg9zl2wBakbqxwmPuwtI_YsnZGM5tUs4lAtv8rkcnjXCG9WuTAfW_NTwgGLPc3iL1hsLri7t5t_W4hlouGLAijfEpGWiYaDcnPKX9Gk2qPp__pLqhDLi5AeCN6qXBKWuL2qhEa09nWAArj_ibjpM677x67ObR5371JQhvrS8mnH-zhmP3DGK0U3Szsn1GWfHlbB2_Pa4bZOZmlqr_6iqITabp6Vx5NVQ4GlUaF6VVFqCouOia5UMJq33okX65s4vmTNoDHCajSjJxNG7Fwl9WmmAGeDXYKL-58xz_3W3k_68gctwSKkftz2Fs8CqiZ6LiB9C7XrB9T5e3gU7rP7Htk2W-TmY0x8oREs-K_p0_IepaEEoUhKbeM6A",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJL4BKORI4zDERB8t2wthEFkI",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "shopping_mall"
+      ],
+      "url" : "https://maps.google.com/?cid=4762069353757068039",
+      "user_ratings_total" : 16242,
+      "website" : "https://setapakcentral.com.my/"
+   },
+   "status" : "OK"
+}

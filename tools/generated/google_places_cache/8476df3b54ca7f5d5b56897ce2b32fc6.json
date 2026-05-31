@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "2VM5+G7, Kampung Nala, Lahad Datu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.033774999999999,
+            "lng" : 118.858171
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.035088830291502,
+               "lng" : 118.8594882802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.032390869708498,
+               "lng" : 118.8567903197085
+            }
+         }
+      },
+      "name" : "Lung Teburi",
+      "place_id" : "ChIJYa2BdgCHQDIRELni2S8O5EY",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5108223476026751248"
+   },
+   "status" : "OK"
+}

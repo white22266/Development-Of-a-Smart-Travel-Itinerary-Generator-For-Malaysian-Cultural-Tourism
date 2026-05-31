@@ -1,0 +1,1178 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-sY1o57MZbDj5nkOZrnrBhMDqFnExC7LeJPZGCbaCKzmlKdx3EdgjNPqxhvgmrR_BDQQykklYQKEt6YAlhWfsredzmdOFNo3E0ja6QFkVD6p3zsTd0EB0qeKWhtbqL__8-E4bcjUDxXU09lDBghxiYbhSkJiliahBGKU6QVXWxSlW8N4t7Od85oLKcW_zGwEd7WpndOnZfq6FqG7FQCNL7aB89T7WHqCpdeHEYdRbTIxx-f9cPvIZedk-ViXEuHCfvK-0a313T_rLIJ2UUE42KLgefhHaNWzh6ltfRVg-I1zqzj1FYJqTt1Z9MnfLVLLwj_ad4cZEJ7oxYiJthtrqKyJOYD89tYGXqIxUJkepvapJitVaLqZ1DYqJW6poejO_UAvmaFX5Hca-H57vxUgtnkpSGdb1FR380SNXjkmX3eJgIm3OUO214iGqpxnx5q_pql6xXWwRZLwju1rnahJ-aOXrB3FpkHWv057yfPWwDjWb7H945D-BhS8N3u9De0C6sxo2QTLpiqxz_jOG9wl7cbcPY8hAiAL5ZiTRFuT4toL6fDUWWsuXDQEOFnWZ2djYPPD7cZZxNdlakGQfM7IWTiXOoMdDSWwWPeRqLS9IPhoMyQbTLsSU9T6BGYfivZD7gkslBkY6UoV-5tlpwEHoHtYL0H-nW5zA-wS-RhEH9XvLf3fKuyyC4UMJp3TIVmNm0W2a7oGFznYXjemw5SxSbHHE7oVakUVXsLuutM6qBOFB_ILOdfoy8IZNtXySqj4NspGQ11OQjUSp0QJe8KWLVSklzEqNXiBfVWlj1sOmxuELcKFtJ2Pjzpi9jAa4hol6l1voliGQ8",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.31882,
+               "lng" : 100.482688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.320155930291502,
+                  "lng" : 100.4839264802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.317457969708498,
+                  "lng" : 100.4812285197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Hutan Lipur Bukit Wang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107191897802145711426\"\u003eAmirul Izzat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tbxg3-3vINLf8cSxpl6O9x0zXU59p1kNh6oBzijORyy-mZlBwpjgOjhXIm5nAqwoawO889p-L1CLfMcVdeIM7XLSFI4Rz5_k2tI2VEDYJG97N7Bc9excQMxDoUH0qCjZ7baXEOsyEJKn6Zb6a7yAcoo0W6rsT3BSCMEY_eMAIYGGm_gJEzBY_qbbRukrRiOJoSyBPDp1vtiNIxFdw7osB2QrWZ1JUDp6TS1fJZRCfb28uk0PSJhLlMaKMEuMycmY8JSxVo9enW2SfvYOFwMURN-UMNJoO8bTWqM2tK3P1ZfLvV6ZdwCE_Ige0Ch70F9ndiczmgUBNWWDGXh96a-bYESWi452GWajA3Iafqaq1cHSxGlAhFxrH5BEXEje9tVWVhsRgvhYuVpSF0aSxAalwxGqlWn3wFpUoi6YIRo5TVxg",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJl62obzWoTDAR8oMd12ANLIk",
+         "plus_code" : 
+         {
+            "compound_code" : "8F9M+G3 Jitra, Kedah",
+            "global_code" : "6PR28F9M+G3"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJl62obzWoTDAR8oMd12ANLIk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 381
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kelubi, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2482653,
+               "lng" : 100.444828
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.249569130291502,
+                  "lng" : 100.4461385302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.246871169708498,
+                  "lng" : 100.4434405697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "DARULAMAN HILLS",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110777248836142687796\"\u003eHajar Zainal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZyrMX4U-y84Z7FemcWEBUh892EfhllZXu2QSMuhUBDiDTLe7t_eX-du9ABmYFT5b7ZGog7YgA7vmQgM3wJ8ayyBfkLORiOCnBL-J51-VYFkXEB_kZ9hYjC2YcKSp50Kl931qUxRKZ9pQ9Dnk8ktKx-Xb6jzATgEYAgvkWdfwfJiRiMdp4zQraJtzMIe0AXn5A-uh3bRQH7txo8bTBtsmDFwv70bZz_JZp00DLMBDsBpgBH2ElFXETr4VEBQrDThLLpG0r9aqpynLCioHX_y5HCVyJdpEGrpqaIylnPjz8C-qZHOADS-18O5JhTmGd9g-wiouHJ_8-VABPz-3u9IwJPhIS0oEc-D8smE2c5ShaAHwY6618K2oRMCqjFFqQ1kx9IBkBwkzbW8zJCxZaVANARcfL9zZrdBzzNF864P4",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJIWrQ32VXSzARHct7ZR9EM44",
+         "plus_code" : 
+         {
+            "compound_code" : "6CXV+8W Jitra, Kedah",
+            "global_code" : "6PR26CXV+8W"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJIWrQ32VXSzARHct7ZR9EM44",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 125
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 4424, lorong masjid, kampung changkat setol, Kg Changkat Setol, 06010 Changlun, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.423738999999999,
+               "lng" : 100.46165
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.425070780291502,
+                  "lng" : 100.4627713802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.422372819708498,
+                  "lng" : 100.4600734197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "MnM Home Whimsical Houses",
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108214523079947070719\"\u003eMnM Home Whimsical Houses\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vFZnizjOPggtnTgo2exbuXHQLUXwHeDAan9baHbisVuhET3_ZcjgsZlz2kOxjCL0AIulU5V82Ru4rXmapAhz6Zrm6uM3HhSE1WkW_CHhSh8la7jl0qxJgmnf9CZPe8ow-xcS38AABhl_YvuOIZ4we3n4oUUiALNeU_IouhrUK_Va6QLqTM9iQVTRthUCS1C3PjNAb83lJSlwdaAblIBJ0ur8GBDPruJkVYa58aUWcPp6gEV9dKqTr7t3t98pk7p95gQwX40Rpbv7uWjsXisJHPLya6pr6o-b7xhJOOPcykpA",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJd1bmtnSvTDARkoDBuwBneRQ",
+         "plus_code" : 
+         {
+            "compound_code" : "CFF6+FM Changlun, Kedah",
+            "global_code" : "6PR2CFF6+FM"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJd1bmtnSvTDARkoDBuwBneRQ",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 220
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Gunung Keriang, 06570 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.191029599999999,
+               "lng" : 100.3248669
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.192674130291502,
+                  "lng" : 100.3259780802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.189976169708498,
+                  "lng" : 100.3232801197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "National Science Centre Northern Region",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3622,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108619964230045941423\"\u003eTaufiq Yasin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v1FnBDw2XKpDcdOKAZAC8htV-hfZECdzS8K2D2RWFnFqEFYZ_DGwWHHqxYcrtD32gAlmFpWWceVW7aJ7KA8TawTb5uNrmYhHRTQ6Indune6BjMP46xysQm3vDYkhAi1TZFrpU_fZFtfIJkWUHEFWiMAQGCC7KqTj_BhXb1BYsULQiEGzQYxyjGpbiPmmbWDkHdhKRYWmbxsKUGioyANOL7DPfpS6sE4pwDQsbxuWuhnriQP7t6rbVpvespdLEO5LB9e-tya3mxxGjB4U4_XUoDKGNK-cTH-ECvGD_KsEbiTi_CZVCnJ6wQpIOXfIoqV3q-3XH8irE2NNyVQIqjCYiimZZAdKjsP_hlTuf3GDH9eGaaWTbhpUDE6XHIxB-aLbUNyB7D-EHdaVbvac41O_UTXfUNTJSuNi6zMiLFn7ZySxlc",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJzw51e2VcSzARZ8sbptYmhT0",
+         "plus_code" : 
+         {
+            "compound_code" : "58RF+CW Alor Setar, Kedah",
+            "global_code" : "6PR258RF+CW"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJzw51e2VcSzARZ8sbptYmhT0",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 207
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Darulaman, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.253638599999999,
+               "lng" : 100.4378312
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.254943280291502,
+                  "lng" : 100.4392114302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.252245319708497,
+                  "lng" : 100.4365134697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tasik Darulaman Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108464430128790573769\"\u003eHazim zul\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-souIRB282b3ezPDupT9Mv9hzAItJf3vCjlRRH4W5DTDWatnk8SyPwd3VcawyBDuv_tHnd0eKLgd3hb70jET0VaAvgOwgPsPFlHNfkPRZxtRL1NDBsDxpO-GUJHAuHgEDXaYShuFHFlle7zbq2vWWzc2jg9UeJPVT07pHyvp67TnAE3SVuRGv9azDseqi0qwfsm2IoyXjOZByvCmHR0OTWM-Yv7wY_QGZXwub7BbCpOZ8DTvmIF8pDDr8511RD1wHBn0LWOX57SY3C3_9ktGrO2JEKLupmj4rMixJGaWuLJRbo9rK24VyCb7C7TOq46Db7vYgroQE10NV56V215VTkbFyzwKx4TwcWcJPRAjWSAdmR3vTo_AAOuJ8MfNNaJUJC4qyFnD5bX1TpiU82KLV7cJ-fDCUeC5VvSEowbDVI9Z45Q1_G05z8lk0acRhvM",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJLWgHftZZSzARkLb_OwpvSNg",
+         "plus_code" : 
+         {
+            "compound_code" : "7C3Q+F4 Jitra, Kedah",
+            "global_code" : "6PR27C3Q+F4"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJLWgHftZZSzARkLb_OwpvSNg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2931
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Darulaman Jaya, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2431667,
+               "lng" : 100.4200337
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.244515430291503,
+                  "lng" : 100.4213659802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.241817469708498,
+                  "lng" : 100.4186680197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ceruq Seni Jitra",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102513127505168886073\"\u003eRizal A Kudus\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sXKTb1y7dMEocU6lCzlygOPsMDnKZzK4GTaCxaEJWW_p2-Ofy1SJuCEuby-SOip8bTIesU1eSxtGTue5PkLKfV1oUN2vA7JNOaxp3MX4hhmuOnGEoElLkT9Puh56R85V9kRw711xWsDTLe7KZiKMVOIXwLZn-Gasg4p6HD23VPmFBorxIP9tziOSf7DJbGXzIrsDhN5jfDEerVsWpEgryOw2Pwt0kOsGpdJXnhHvNQvFIZ5KSY5Y4_Lx9j-ASTlSQDK2jtvaqXgrICmjKys7m4uHp8Dg1XK53FtFdKnMkKbyDHuaNS47ZDhZ-t4hNF136ckqGaKW8lVQp7IFF-RT_3YVfsM9cacUqJgXt76OU0_KW28s75skYwV2aFUGkhKrqmYP-AysZvmzxVELe2lCffOUJ48f5XoTiRN06Fy-s3miWZva2j1j0DwSNL4Gyx",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJo6WpeQBZSzAR_nj-VXwvlKk",
+         "plus_code" : 
+         {
+            "compound_code" : "6CVC+72 Jitra, Kedah",
+            "global_code" : "6PR26CVC+72"
+         },
+         "rating" : 4,
+         "reference" : "ChIJo6WpeQBZSzAR_nj-VXwvlKk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Golf, & Country Club, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.254339799999999,
+               "lng" : 100.4385154
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.255651830291502,
+                  "lng" : 100.4398898302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.252953869708498,
+                  "lng" : 100.4371918697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fantasia Aquapark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108626501701672835866\"\u003eEpau Qis\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sQ9RBlVKs4PSbYvO08tx0Nli2t_nYFpivQbQM4F4_BwsAjOF0i1AeGk-qveLs2LSc8D14xn8s2B0cHEXpKP7OqPJWhGn57rsZLgHkFspRA23A-qn1LUg9QcelYUbeho6N6Umidj-_d3yIshQ61jr-LCktu1lO1S4j3PhoqRAALSb25Tf9ZasLwlOt0ClooGgRxR7NMyaelQuP-FTGIE99rq2svkQ_IoQSeUCOXgFrt-9PWM16u5rDUpVFCypF57bot1pf50o2YLuVoKdOSoIi8K3yJD77qcRI-JzWMDFaCQcrRd_KL9Mk85ehpiSbJx6pPQXysG9Srgddx37aRFxr3KCUwnhFcdfJ_E29SR2yjPZjX9D4z6txLoX-pzMQ65PhdWW7tE_rXbtAfT_y465hWcZzYtEFm6YUIGK9ty3Devg",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJs4U_FNZZSzARVkpwPXs48B8",
+         "plus_code" : 
+         {
+            "compound_code" : "7C3Q+PC Jitra, Kedah",
+            "global_code" : "6PR27C3Q+PC"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJs4U_FNZZSzARVkpwPXs48B8",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1214
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Lumba Kuda, Bandar Alor Setar, 05250 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.147892800000001,
+               "lng" : 100.3717351
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.149377830291503,
+                  "lng" : 100.3731768302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.146679869708498,
+                  "lng" : 100.3704788697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Tok Su • Malay Traditional House",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-spUEDvb3hmKuIlVr6gKbmYhR7BHYD6Bw19GvF2cA6uI0LdqnoxHg6TsSM2ipIdYUaRWiRp39jfT2B7N00i78ewCRaCzvxPkMJrwQ4-nw_ZSvp9A9sxi-_sxKRX747infMPrc24CvoEdVID0PZXhSRTFm4vXI8URUguZmW3HdCNHFGq8PdAuqCrpHG68yYYpVn0vsqrAfcNyhhGsIG1T1Hljeeco2vzKcADHVl7JW7dAUNUHhZMXBPKKgFR3zfRE-Scm-bQuD6XkLIjvUXtcGnnErzIy3Cihs1N3B-3HFPLBNzr8RrPZUgQK0HQ47y22hKnsG5UxzhErPA20JAjPfoh4wbdC6BDYDg1Yi-Qo1BJj_sZOVhaER3tImiHZXDyLMnBcAQ5B1NtXkjXmLkxWZ4Tdxu21qclWwP5wmp1LYs",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJk8Jc1m1bSzARa3j8OU47RU8",
+         "plus_code" : 
+         {
+            "compound_code" : "49XC+5M Alor Setar, Kedah",
+            "global_code" : "6PR249XC+5M"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJk8Jc1m1bSzARa3j8OU47RU8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 92
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Sungai Baru, Kedah, Kampung Chegar, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.265921199999999,
+               "lng" : 100.4279646
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.267300530291502,
+                  "lng" : 100.4292701802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.264602569708498,
+                  "lng" : 100.4265722197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Jitraram",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tDBH0kkrI6V_JhZaZJm_LEjIxkfE1dlOmEqEHvcmlNinNRdp4E8BEVLOhi58fRNYcrlQqEuAwyqAHVDGq8U82KsVW8TZ6Yu6FY-vABrKIrTWKUw9-2epGOP5PDgS1wVn8VV7lUCpO2V4gAsZF7T169isb-aKFVOQu8jO_dSLMEgy1JaVcVGqC5_PjKUnBxSmuyPv6V_RuMm1dMv-GfSxkyDB6zgwXOtf4XBOMyRQgTHd1en_qTI4OE7peRG3N7fIPGWd4KMUDP0vN97DQAa5_xmnnwqKnyTdvwFHh_njqupbGRSyKkckGXH2ZapRIfDO3hF2WIujhMxPL6p0SH-NyQ-3oQ5u0XY00iZif04eyjZkdOJS3vCNIW1b1SDpskG_EhIffZdehCLEZ7ksX185p7TUYNZ9P5s9sineaGGjXiww0",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJUSDf9DFYSzARoKOqWblinBk",
+         "plus_code" : 
+         {
+            "compound_code" : "7C8H+95 Jitra, Kedah",
+            "global_code" : "6PR27C8H+95"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJUSDf9DFYSzARoKOqWblinBk",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 89
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Nat Pokok Getah, Kampung Kubang, 02600 Arau, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.430930699999999,
+               "lng" : 100.2911891
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.432725330291502,
+                  "lng" : 100.2927837302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.430027369708498,
+                  "lng" : 100.2900857697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Nat Pokok Getah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116034801326931272725\"\u003eshaihin sinchan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u-FGG-0MkNFugwx-PiEjIvGwrHwH0BrPSauYXLtIwKuBLKzshhDStn421rBF0PCUJwGymURHG4n6qdOouaX63kYTeYQNST33QB7HiL0CakSxE9eUcojItVXZprX_FAT1TQpt3SegKa6pwXi4Ts7Rhg2hsYVDxCHqADC9P-XrL2F9aSZXLew3sU3QHiZTsAtQQrjoCQdrPiXYGr6yra0BDFz_2kTSFr-VzaDg_U3jMQTGkRQ8wntngAe5zv4beQof9OkDD22QTSjo5dGVAg8m0NulmzLh42a1n3v3AQY8yEYkyIUBOy2r19i-KC4-J2KgTo2rdiAH4sUxxfC0tTmDJv_DqK2baawTW0Au0jOFMb9pP8_qZUdrxdr3Zo4nX9axBARFDNRtwnBODwN1PV73AdsN9Olm6eh2LoKCPw-p0sERTfMDfPpqhXgq76A34X",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJL4JleFiiTDAR92gtbEDHlQY",
+         "plus_code" : 
+         {
+            "compound_code" : "C7JR+9F Arau, Perlis",
+            "global_code" : "6PR2C7JR+9F"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJL4JleFiiTDAR92gtbEDHlQY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1090
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Banggul, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2766134,
+               "lng" : 100.4109393
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.277992580291502,
+                  "lng" : 100.4122668302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.275294619708498,
+                  "lng" : 100.4095688697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Bazar Iftar Taman Suria",
+         "photos" : 
+         [
+            {
+               "height" : 2099,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115969286992358940691\"\u003e假掰VV\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sksytLhwteZqJUAkd95_Zs7A7sfP-oj340hxVQ46plIxc4UgYLshWR9zJIeu0NqfFpqrsI3ebyZbI_PPKjN5xLcURQYIb1hGkrUxi8PucnFoLA1yJ1QKp2k5o4MzipeXqc4WBCAQLnsuD79nX_RsMSSTEfyLpKqcuaK-EoAcNo8YtHw4T6huMaAZzUY0FnV1FfJhBo004pX3qM8hSTVquA9eGDPVb7cWCeI0-fmhw_4SMqASl7BUoaLeZC78UhAP16xNwR6EOwFXu13GPVQmo5jKpcHlomHu6iFkUDFbMwj16-9KD43mjQ_b2r4Fe8qtiaRcB5d_QHt4vaBuQ30_9vLyuA5zB9kaX49eA1dAfeNksyHiXZTmwpmRq7mN3-p-pcfx2ST3eRr7ILltFlu-Q-3J1YmB1QwMKUCx7CGZjbSQ",
+               "width" : 2099
+            }
+         ],
+         "place_id" : "ChIJzYr4ss9ZSzAR-Y57LSCpRt0",
+         "plus_code" : 
+         {
+            "compound_code" : "7CG6+J9 Jitra, Kedah",
+            "global_code" : "6PR27CG6+J9"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJzYr4ss9ZSzAR-Y57LSCpRt0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 49
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "02000 Kuala Perlis, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4156508,
+               "lng" : 100.1487503
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.416960630291502,
+                  "lng" : 100.1502061302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.414262669708497,
+                  "lng" : 100.1475081697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kota Kayang Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101801694538394586220\"\u003eLisa Zahran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGk7X_L8az_JKdc8JbtnkmzlsgyPySs5Xrhz8e_CkFQM1b6Lae8F1yXLgW9ciEVrFbjNIhmA3t_jVC6K5rEqCjgBn4NdaLGptz98SicczwOMl9CKpN7D5f1OTXnB_QPpG9krz5oqf0NuUP_uPgWDlCPCWk6VvHetCQ2vUK4SzlooceQg90-vxXLj272nMbiYgL4-tespnQo6Q_wMrgeS17TTxGje1rLogSjdLfbYHhmARDlIWAJvdJfAydrSlIwdS1_KW4XPcMco1iCxo9yPYIqBkg9tQZRSbJxS4b0Qu3exq295LmM2SZeLknf_fX_BROHTbsHhaJXAztEI6SSk_1stgBFTmCkBl-y_Hu6I7ee1MOE8p7q6_FeSG9_LZYiBUnZ08Q42RJN_9pVwH50kJAVJj3FqnCfXlV-GxlPMCH4g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJh7OxiMCbTDAR8Eyd1NKutsw",
+         "plus_code" : 
+         {
+            "compound_code" : "C48X+7G Kuala Perlis, Perlis",
+            "global_code" : "6PR2C48X+7G"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJh7OxiMCbTDAR8Eyd1NKutsw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1241
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 99, Lebuhraya Darul Aman, Bandar Alor Setar, 05100 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.124412,
+               "lng" : 100.3670848
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.125965780291502,
+                  "lng" : 100.3683480302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.123267819708498,
+                  "lng" : 100.3656500697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Alor Setar Tower",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114430980863566472919\"\u003eronnachai angsakoon\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUx7nlcfTD_Qw1YwSENISRka6tBycFwcsBIyG4dgUG9BxQgZxTz96pNKVcCFxAvVX0FPo2CdOYQg_byW2HztbKpB5sVttCs2Te9NqEh8T7EOPQ9fsT4En6c9jJTs-4RHSbbJ1VB7feux_Y6fhwIkHMMFqWDducnD-BpHfdhsWDLC5vUH7e8lnAJH6BWcvfReyvUo9ZVw4YtKLDEHvmscHz3MjnaJNVprP5Ms_p0MklulNwvSIemRb2vnxTZ8SP2CnLqDFPk_y6uo4upIqgHCvwMH8JkOKp4U3rShrvD_4J-pKeH-V0PTMHP_iLiYKwDxm_r3zCnC-1kXuuD7dgDGAKk666eM30lH8n1U2ZMGVzf7qc3EqYax8bMtq1gAA71u69gBYWZX8-Eu7dnlxATMSi0S6ySNAa0qaqtvGwauuS6A",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJmxLxkLlESzARZsnwJMh8clU",
+         "plus_code" : 
+         {
+            "compound_code" : "49F8+QR Alor Setar, Kedah",
+            "global_code" : "6PR249F8+QR"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJmxLxkLlESzARZsnwJMh8clU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9012
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "06300 Kuala Nerang, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.372647199999999,
+               "lng" : 100.5586566
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.374049280291502,
+                  "lng" : 100.5600454302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.371351319708498,
+                  "lng" : 100.5573474697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Puncak Janing Waterfall",
+         "photos" : 
+         [
+            {
+               "height" : 1960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110872749154938533346\"\u003eMohd Tarmizi Musa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vPo4s4w-HzGTIhk4akXG4XK-PHK7JnoJr6_01BYs9OHyP8-uzIHDxTgalsJA_ixrtvflV6Odyip_2u-wQLfptBWcdrZCW9HbWOb78p3lAgkaGVtiPKdNG_-IqPuHqjNkzSyceZJ8ySIKnQeZfQ9r1JRJHfgsqyVsLj32CsrNmHNXKG23Us93gl57jT1RJJNv2Xp1SfmooIT-3n9y-bnsOopE8K2vbUr_tb99xskxeVxRe4iXR9idC54BpSntkbG241BGt2iorQY7eq0ootNqF4oqpbG9DIvg9hcbChaG2kn_HYuR5qb8wSBi3LJApA7WlhCvAhyWEwsfLko7CPe_F-YKMghHZB3flvIxp4ilAyb3IRCQQ0L47-b929VQSEAcoGCDaFyQ_cHQ5yUpW9acAIjR4TmJazTeExyihAqkcBcR7J",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJ_jcaI6rTDARPnniPtoUwMA",
+         "plus_code" : 
+         {
+            "compound_code" : "9HF5+3F Kuala Nerang, Kedah",
+            "global_code" : "6PR29HF5+3F"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJJ_jcaI6rTDARPnniPtoUwMA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 275
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Alor Setar, 05000 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.120991,
+               "lng" : 100.3666061
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.122403530291502,
+                  "lng" : 100.3678156802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.119705569708498,
+                  "lng" : 100.3651177197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Nobat Hall Alor Setar",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113845309825112812884\"\u003eSuwanna sakulyanonwittthaya\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uW-XFOx_1OwGvTFSnlNNCwXJ8ObTcj6SBJvn_sNdr-lJG1KIazMPHcNyB5jbK10PFNGdxUsD7UrdABZwWhYk5Qq-LM5sZSYLdp35O58NyYJwYNwH0_nngmLYyRCwsUXYRlYOHL3hQI1C8728DCanWA2KWt0ajDPQcxP70aN5CK3iAgWWFRLjyb97Kq3n3RCJueiDsAAY1t1m6Ku34bbp_Mfru1PDu1FqB8FlNu8p6OS18NrJ2aXtmhpq8iV7k7uznT9bYnotksc_GF3Utw84kIZ0cCv6i086LtcNsMyM5HyukVwfioEojEXJwis3HmAG2fe1i7DM4grX-4aUtwx3FCC-6lvY6XJVfOqOBQHBXQEdAYsRnfPUXdqISt-c4ytlSMnAnHEfntG1T0DEpwbf21x7NSLlRZLsY2bXz2yAMnHw",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJU-zb_7tESzARE2yYwr084Rw",
+         "plus_code" : 
+         {
+            "compound_code" : "49C8+9J Alor Setar, Kedah",
+            "global_code" : "6PR249C8+9J"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJU-zb_7tESzARE2yYwr084Rw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 128
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 42, 43, Taman Industri KEDA, Napoh, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.362856700000001,
+               "lng" : 100.4193879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.364183230291503,
+                  "lng" : 100.4207345802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.361485269708498,
+                  "lng" : 100.4180366197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kilang Coklat Kedah - Kilang Coklat Nokona Taste (CnW Jitra Manufacturing (M) Sdn. Bhd.)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100734231791328953438\"\u003eKilang Coklat Kedah - Kilang Coklat Nokona Taste (CnW Jitra Manufacturing (M) Sdn. Bhd.)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v3itZN2BsotqfXSgtYoTUd9BE_INwAWKaH5EMYL1H95nhXK5Zqb9QXCHoEK7FHgTvODNqGLZyPo0yJ-AX8yCaN8zx03BnY31153ijAJ5V7aEott2VQK4jD6FM8tQSvFEkFJ7YjOkuZkGyyI2EgSyqIFT09Twx9xK80Fz7jD6BsW5tVem36GjJ2joGzDbG_E4OMMIf8w9LJbsXK288Bs8E5hjh_AJR-uPLVe1UeY-nPnWtfWQveYUyK-Ivv7DvhSaDjG7s_ZV6Fg5tZUa_O5q052hlSnM_yy9qAG5OENwIBcQ",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJof6lRD-nTDARtmQpTrP2zWM",
+         "plus_code" : 
+         {
+            "compound_code" : "9C79+4Q Jitra, Kedah",
+            "global_code" : "6PR29C79+4Q"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJof6lRD-nTDARtmQpTrP2zWM",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 79
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Kampung Siputeh, 06100 Kodiang, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3562596,
+               "lng" : 100.326555
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.357581880291502,
+                  "lng" : 100.3281226802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.354883919708497,
+                  "lng" : 100.3254247197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Makam Puteri Lindungan Bulan",
+         "photos" : 
+         [
+            {
+               "height" : 700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112570124336362456723\"\u003eRosli Desa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sb3TTofqDTPONZvxHfNY9l1TsDj7eWm9qRRNqbgqIn7NUaRc18ZKV_TcGvq8AjdweQaOY-qYhPFvCb9hTNRFK57sD6tjt0mznWDdI_BUJfcg5cCH4cSqmen213ThkC_5khnetEfX3MdwnXTHTDw531Hy-qo6boASuHvGO698IXSI0J6SKrDWioVT_8v6ZdU3BI2krEpIEsnr_UpiPzf2krVOAC7WDPDTAJW_odphCBQ95Ynl8lgQWamhN9Bloi9PJjLBXEmnqhwjiwJp-EDzbjC5EIZkyRI8NyvwOAG2dcSK_lp3ZfTTSM1Fk350t09OuWuAMcencPye6B161NolpIFJrgI9W04Z6wevvB2LPwF4MFbL6Z_ejp-cFTLa3DYTi3kVvw7cq9fz_BsHCJHFQ8yHfwGn3Okc9Uxtu_TiA_1A",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJL_qDaBChTDARDjeJFsiwTOo",
+         "plus_code" : 
+         {
+            "compound_code" : "984G+GJ Kodiang, Kedah",
+            "global_code" : "6PR2984G+GJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJL_qDaBChTDARDjeJFsiwTOo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 46
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "5F84+MC, 06400 Langgar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1666476,
+               "lng" : 100.4561147
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.167652980291503,
+                  "lng" : 100.4573168302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.164955019708498,
+                  "lng" : 100.4546188697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Singgora",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100302066272725399797\"\u003eBukit Singgora\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vCDBLsMxqh_XZI6Rk1V1QHZWd1Ru6kJ2_EmfrZbgqltpUI4JVsL4N_GC-09xHdXOMz7kGVmbeOd8ER6iI8cpoWQ3TU3bbMbbyzPUq0N2cBB-AFFGfC4YIf5Q4lTTzWMP4h6qzcGh0yg8LnyRajF3_ehCsl7n2Mm7aFiNiLs2rkbTS5ZipfuSRd0ajAVWjjMfzfuPu-mY-Xy9OCN21i2f4VMJoln_QeOPEEPUtMktdr2Ph2uD9ZgqylkYY3CFcTmWqL7IP_rfkDl_JMRw5klHy8aCKDKsmDLCYAGpwwKtO9e32ik83mM93wzUl7fuUFDfQwyvOs-s7LqiKueyz1St4sCn0yuiSdtn11g3p6pJ7o_chqI-Oh8kAlQx7OY4laV-zLgZkVstSl0xVUduFHKJiQQ-Ok_MeEXdBKZF_D6L93d6BP",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ0X2aMxJRSzARXFDYoGXwS1E",
+         "rating" : 5,
+         "reference" : "ChIJ0X2aMxJRSzARXFDYoGXwS1E",
+         "types" : 
+         [
+            "establishment",
+            "health",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Tunku Habsah, 05150 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1251919,
+               "lng" : 100.3719975
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.126791280291503,
+                  "lng" : 100.3734599302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.124093319708498,
+                  "lng" : 100.3707619697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Nikrodharam Buddist Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113595255627363150028\"\u003edeTraveller\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-stwjej_UXR2xBs3h0WV_V318nyabe97vnwMsmkkQvVe-kmSFY-jvVqlgjy-INyaoMan7O5f4wYttj8iHd_a7KyLgzDDzx_5SbX96d8pWGBlqZNlCfLSkYgWDXMyDuxlzJ8ZN9ytxIFXPq1TzpXYLblHIiNDfUQDU4sZAU81rK-f-XlbfFXuLd_pT0nLuQhmeDc7HylNLEPetTfcI3JLJQqNySGsW813EWzFyOXyMGvVU9SdbJXMUizzMWflmhNKySYBIbLN7BV1U225MLfrQiW68YJFb6gc6Dv5uX9nC9Duto8KOkOugh37WxassggZT68CJ7V9cwxhpPfKmwgO3Kj2X2lRlCo45sdyBIn7KSAs7sQT-Z26g-jmLSFpodvWB4Cg074u8Sj1jsvyf8I2TXkEHLOqSQcMgU8PMLVEJo58gepOp8rdZRz2JGvgpiI",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJf1B4BbhESzARCOLOeDYzYvU",
+         "plus_code" : 
+         {
+            "compound_code" : "49GC+3Q Alor Setar, Kedah",
+            "global_code" : "6PR249GC+3Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJf1B4BbhESzARCOLOeDYzYvU",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 208
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Bukit Wang, Kampung Padang Panjang Hulu, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3095724,
+               "lng" : 100.4734904
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.310968230291502,
+                  "lng" : 100.4747622802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.308270269708498,
+                  "lng" : 100.4720643197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/camping-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/camping_pinlet",
+         "name" : "Bukit Wang Retreat, Chalet & Campsite",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103468236284705177209\"\u003eNorazwan Nordin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sIxD3DgQYFxsN61rlqWFGsarRFrvDDfDMJug3W6h6TzJeHrPciesv-ekWHMux9mA1L7uDrdkK8n9PABIpyShMZny6SQtUCGSGhXgRbtTBi4KINRVwd4JmxWdI_Xsm5A7qLTVjr06Lh99C3Hl702REDg5YNXxSxLLCyL5Qv4U5g4dQFbAb1xSM6iM2E0NsbKX_XPi5GgeExxc3qeYnO5lBiAhnRWKhq6xmdwZbtMIxa1zCUTPKk-4ChXCWFsLotrbJcGq5D10oOpVohOdYeTpkUshqaNaicXAx1WuKheMBXoJciKlzedcFnX_jba6WH0nq-ENiS1whYSNyrjXWmvJcJ7X8xiO3IWTLwx0LhS6cM00FlEnthpqPodYWuitMla8G1BqHq-3vUiRLKvA-NHuHSzEgkFlDERPJeKSvkSGYNBJxaWof8WafdHt0QWQ",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJj8Ti145XSzARoa0lQVVmkBU",
+         "plus_code" : 
+         {
+            "compound_code" : "8F5F+R9 Jitra, Kedah",
+            "global_code" : "6PR28F5F+R9"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJj8Ti145XSzARoa0lQVVmkBU",
+         "types" : 
+         [
+            "campground",
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 36
+      }
+   ],
+   "status" : "OK"
+}

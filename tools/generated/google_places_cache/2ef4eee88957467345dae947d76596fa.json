@@ -1,0 +1,55 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Pekan Limbang, 98700 Limbang, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.7592417,
+            "lng" : 115.006014
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.760550580291502,
+               "lng" : 115.0074057302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.757852619708498,
+               "lng" : 115.0047077697085
+            }
+         }
+      },
+      "name" : "Grace Church Limbang",
+      "photos" : 
+      [
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115250356062560781597\"\u003eMeyer Karamoy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-veKmGRxUb5AoszLhqHq7S96bvO-Ek4ZJipZNx_4NkMMOjZBEk9mo6rED7KcNm0H7mMgXKrBZkZy-LLdlKfMPzl5jgonCojreYNATmwQoiuvwB9PD7XIm0v_OxWRDxUYiOJb_K3pY4MJ0ZY6FFBtiCNcH-fw4Zqw-11OLcG_efLL3dz9aqPyJH9J_ubSBtbGkbWsnnjUUpwpKbR8PAOjAecPe1DwRylwSCNkfDfQUC6i8mtznlpkAkU0SkJQbsswm7EA7OZyg10hWJfcBQV1-LnxyBt8VeVJD3UHl0PXc6qXmHQdWGWlmOI_wKm_IMlqbIjhZwUaY_swsvyN_iQ6HwUjo3VWxCWtrKPM6LyuOmwcJ5NKVSQ2pXV6caDlcpgGxjJ8IMVBpX_Uu8a5YBRSuqd9CnyMSDRCiJFV6MOcRCN0fOy",
+            "width" : 2560
+         }
+      ],
+      "place_id" : "ChIJ8dfVbDaPIjIRg-tgUj2HWTY",
+      "rating" : 5,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=3916310048420195203",
+      "user_ratings_total" : 2,
+      "website" : "http://limbangloveministry.blogspot.com/"
+   },
+   "status" : "OK"
+}

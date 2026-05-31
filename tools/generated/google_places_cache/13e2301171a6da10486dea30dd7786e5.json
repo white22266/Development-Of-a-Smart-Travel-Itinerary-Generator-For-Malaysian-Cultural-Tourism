@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "VW2R+C6, 27600 Raub District, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.8510278,
+            "lng" : 101.9405556
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.852376780291503,
+               "lng" : 101.9419045802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.849678819708498,
+               "lng" : 101.9392066197085
+            }
+         }
+      },
+      "name" : "Nomizoland",
+      "place_id" : "ChIJcRMGNgDlyzERmQByemy5DbE",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12758057194972381337",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

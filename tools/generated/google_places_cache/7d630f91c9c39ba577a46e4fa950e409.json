@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "26500 Maran, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.582473299999999,
+            "lng" : 102.7776126
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.583764530291502,
+               "lng" : 102.7790034302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.581066569708498,
+               "lng" : 102.7763054697085
+            }
+         }
+      },
+      "name" : "Dataran Payung Maran",
+      "photos" : 
+      [
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116741603573891269678\"\u003elamkow lamkow\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ugSZ0RhTcxa45KA02hoHNzldKM5atwnBtxSkB-J1AmGg029r9f_-YPxkctTUjPEHqvF-utaeKqZmWzPqQeSQQdrdmnVOiKpQdb5y3cPTXAss-PGmAS2lSB46RGSONROAm_wE4Uk9T6iQmR18poiyCezCLNtR_ekdbP5tQl9dbSne84YXm4ExOPHsy62_TKULb4R0-Bup4c7aVevuydaELlpJQC-8qknY65vcGtQwhdeS7_ZHbefQW6pYv5ATSOo5vI6FZAwJivbjCPyW7pbiTcyTd6KMKxYjQ78M-TBrkAH8SFEAivMm-hx1yGGxIQk-m5M0621DYktuiY4LgIaLsFVhwXD2AXavdfb9bNzZo8Z0-hP_JnrLBzTtr8KZI0uSLXjnvdbw-E-nvSmBlEUhzHbwiuif4voUoscWeeW4nGiois",
+            "width" : 3456
+         }
+      ],
+      "place_id" : "ChIJKZ7qFYjVzjERbeU3duGjBPE",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17367186251793818989",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

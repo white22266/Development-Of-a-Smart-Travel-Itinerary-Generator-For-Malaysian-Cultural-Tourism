@@ -1,0 +1,1178 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-sVxxv-lflfjiQWFW2l1v5b1SIkTj1RmFVW6wbLbw8JhXOjvO_5NRBHJSp1X21HXT845uT26692_o3xgAYCdXcto8qdeh7mfIAl8yyQkf-0yO0mvVCPuRkoCdVmsVm74vkJoDEhyQpRTK3Cz7Zy9APCW5TmSR21_1kVs1d_VhR67XbDRE4XXQ7Hbx57A9NqdyZ0wv7_hQoqGnOmmV-Lv_bQfTsfFo3MmC36SwZ-CsiCii0qGBNVPG-4w2zcHe_zEL03EEpXahxCAPxDu6O_mqmR7ID6FNWtr_xahJqnBeNdrN4Z0cHjJHcUtms47NIVhsxvsBzdT0mMsNjly8a-BI0rbxePR-9dKpkkF1FzbXNMgLDwyqMmNuX1ynz1AfgfNCVQ5ir2BJpb2HNu6zCDfrRwiEZ34Iw-qBNkjKXs4458rzlskDymkSf-3tUivIN8qkkxYjxCtBnd2G-nc44WBkvHB-KnsipSwbpWbaa6QPuXVGuNzhbw-01DmZjMVvX2uAJ2N_kVegiYOxDKNqeB2FTY_iU9d-K5HCrzaIs2mTK7USrAHUvKTDJKzvJGzzC1XLE3wmOBcIWm3F9A94-UXm8QcB4hMcjf-31pgfE3pSiYPXJGsh1nJzYY-u01IYeJ8pI7kuAsRvOF-Y7xKUmkGxp4iv1Ixyp0UXBwxLBadsmy4uCElEpkz2gGkT-hc-Ji_QmFiYbm-yJ77mtMuQFoy3_8OHZnLe55se1MlQk2Rd01-zSC3gUGZFEweXD-QZgYGS3FSNuR3a2j-zVmjxSOIBTQEK9NAigOYZ97LDi3g261ssZzV5182ukzJzpnRYtu0184GpbTA1I",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg. Togudon, Penampang, Jalan Tambunan - Kota Kinabalu, 89500 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8611021,
+               "lng" : 116.2677769
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.862398830291503,
+                  "lng" : 116.2690915802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.859700869708498,
+                  "lng" : 116.2663936197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dolibung Waterfall Starting Point",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112235379385134317411\"\u003eJakub Daniłowski\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uAfyWVlVcNmJXImRnHQEmhNlW9aMrr4_G9tGoEIAaBnsxB10VkISmJvGfBaOO41X59vLJJMjr8646VDESPaI5uvEUZi4UOXLRxciu_eopCmGejgIEdqg_Oa1XWS01o_H91FvAQqznAfN5riWDZaaouL4ihxOwBzblcuSpgTUWbD8Sy1Kz3UEKWFt0XULDURYqSpNhwuWFRWFgaOsKmirQGTX4-bxUUgWfds6d11XsPJmPm5Q-GqEHodO5F68sw6HrnFsuDBAdD3-aH-jzf8qQZWfcyGJuGRmBu02HrGfOM-sZzZZSOpWvJ9uIQy70BYa6UOnl49MLv6H7m0UtIqw8qWsuXVY1m9Je2n27V-I2HJc8FCsiOGHdXpcXCUXyYYgCRxKUP_fXgzJe5gMlxGgyZDoNJFfeoV88XB2xp_9TMXWZY",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJcZdpAwB7OzIRxGfgfqENMlM",
+         "plus_code" : 
+         {
+            "compound_code" : "V769+C4 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRV769+C4"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJcZdpAwB7OzIRxGfgfqENMlM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 16
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg. Mahua, 89650 Tambunan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.796971,
+               "lng" : 116.4082551
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.797943430291501,
+                  "lng" : 116.4104593302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.795245469708497,
+                  "lng" : 116.4077613697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mahua Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115053048589526684097\"\u003eCL Livsnjutare\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkdRLH0K6QtNqEbZUEcYpQii0fw2uEkY1DcdffLOIDwrzjcxwgCgCeFgaGQlP2IxMHhVtC1C57DkA53XV79SaUPr6P1oQEWrvCpEXLsQtxL7J_KEv8AuBsOHPuLHdFHqHWyz_n0NBh6NaCku_bmonZB1CAv2EHg0tRM5V_mvHQK5gSwHvS10laE9QPmrzzNn-49W3N8lYZyx2sHDcZb-iauV6yNKOU3YZY8wQwGwXqFXR59XpbNdVmfUZVJncp0NPIgv12CxaaHS7V3aMozhdTabq_qyPTfT_YaKpNfmmsfjdXidnvAK-iNZheSrLkMAufJjWljIomQCxL82RwJpaWlulyFSUV1KzUGZ_qC0Lq5tSFQHPRaP3VE196VmNs2QHS94DD0u2Pte1Gb-a94zUdLRdB154M0mgpga6NDnwGXVE",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJbSQGD2Z_OzIR2w1BTFE_wN8",
+         "plus_code" : 
+         {
+            "compound_code" : "QCW5+Q8 Tambunan, Sabah",
+            "global_code" : "6PQRQCW5+Q8"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJbSQGD2Z_OzIR2w1BTFE_wN8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 551
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Notoruss, 89500 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.898703100000001,
+               "lng" : 116.1987092
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.900194630291502,
+                  "lng" : 116.2004131802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.897496669708498,
+                  "lng" : 116.1977152197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Tolungan Riverside",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107543217971414334372\"\u003eAlex Denzin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t7Q20mA2sDrNQFJCscQ9cgKAEo97zpEAs4S6iLloF90jUZDwo99H6rKWb_tjhy7m1s4fh2boOM5GrESIwpbi7oz61Ut_kFddEI8GE2ztPNgLUUvWWvaV1U82WmaEZ-SkbMYqyUZf71fpV52dm7NfzUHMthDK7wuY1VwnC4uYWKTNd8ZwLh4HF6ApTHs_YEeHle3mAryCJ6riNP6ukpDryZSLJO4hmTCjdnQUXE5KnQMUqpb9MbEisjReiMt1TvNid1hh4zOBK529eragcvGF2ipplyVTqrigE-Fjk81OH8EggtYDOR1AOS_V7wkhLAwjqIRUbqYDlHQAO-_XILWugNSGpYB47YmxOSxVrp1tftbWiEclSDUJhEB-XwrOLwyi9B_4cVh78SsiQOcDt0nuVNfG_7wLd3CvUzIagQmM2YQ0cD",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJh7q1kS5lOzIRVzHjmFmWRKM",
+         "plus_code" : 
+         {
+            "compound_code" : "V5XX+FF Penampang, Sabah",
+            "global_code" : "6PQRV5XX+FF"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJh7q1kS5lOzIRVzHjmFmWRKM",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 52
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "p/s 323 Kampung Minangkob, 89257 Tamparuli, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1289298,
+               "lng" : 116.3452801
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.130279980291503,
+                  "lng" : 116.3465891802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.127582019708498,
+                  "lng" : 116.3438912197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Murug-Turug Eco Tourism (MTET)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104969922964133543048\"\u003eCheng 7go\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uLANALRyb2Jllltv9ZRrzB3T25Y_C8HrBgiEVgA1Tb0McmGaEfqzm9JKwbXOsVshG-JdqtL0_iANiRdXkiTQ0sRhrQ_QA2Md-MkRwOA2qZjlJ0tZGkM5aSXBcEivGhFnpxaxtRmRqXbfY6yKqjwkDZ_4hIoVeuOHbijoas2nsoXCMKChFbLBvhugjVHg7TbF_8i_mauDUDlvL9fZkuC3cDHOF8rfBCszuF0h8Q5AmXUGuD_avSMi6YAVK_Omn4LGgTuYF_xtVpRdsRTOO7j7e_mWV8U6mhtmWHVHTLLn09RZ2IwI9Ga1eUTNGqsGZeGsDo6jC4j01Knhxv5ua9rcwzZA3wnLtVDvCeC_fPD1GX5DWXibntCXveJYw8vDsbrwaWe2t87y1ht3nthHGFMfegaPprAH5m-HgJ-3tfiTHnByPQ",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJp3E0rOELOzIR6-levinqznM",
+         "plus_code" : 
+         {
+            "compound_code" : "48HW+H4 Tamparuli, Sabah",
+            "global_code" : "6PRR48HW+H4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJp3E0rOELOzIR6-levinqznM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 504
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89500 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8560813,
+               "lng" : 116.137066
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.857406980291502,
+                  "lng" : 116.1384724302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.854709019708498,
+                  "lng" : 116.1357744697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Inobong Substation, Crocker Range Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110777672692496298804\"\u003eRhys Zufarnuh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkBHWgKRUd0KhqBianDtBp3CORJmdZSKpC-KEp7WuVcvn9SdHBaqVE5JSy7nCHLATouvSfezPG7-UilUDpciQey9CD82XTNiX1TsQfRrlSNrs2pjIS8xGE5bgFR7vLfWuND9Bu8bepA_3A3as-6hSly57jta7PWqIPvcEjBI5Wh5SEevx-sRCdlvwaITslE6lI8jsVm2jySDDaZbOubsHqDJifwbUV3nlwW5JtnenzyXbNyCB9CbuGNqvwXgdKHafcExI9xdMqaiqssdQp_iRRWAJyEwgfB-17twBw0c1NM6YQsNAytQX1EFj3zzzAEaVEKPo_MU0E839UCjlnv-MwvdZkxaitLSnDwjyx1WDkXPCVjYLteF4_nC7AXerv7SAy7CKer4MNRA7_hWBrcYJCRjvDd_2B5wYluinKC8r3aTN7-ydbcbw3gmWZs50i",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJT0y9wiBkOzIRaYcpsery1mE",
+         "plus_code" : 
+         {
+            "compound_code" : "V44P+CR Penampang, Sabah",
+            "global_code" : "6PQRV44P+CR"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJT0y9wiBkOzIRaYcpsery1mE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 87
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Babagon dam, Kg. Tampasak Babagon, 89507 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9084097,
+               "lng" : 116.1870555
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.909897280291502,
+                  "lng" : 116.1884038802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.907199319708498,
+                  "lng" : 116.1857059197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tampasak Eco Camp",
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101607667744012118011\"\u003eLester Noris\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sJgN-DhWJZFaIYkJzmZiM8ZVqOQe21YlUQhFpSfKzNztCnt3w1r3z_b_9AGhNH8aOoSeaoqIkgMQ1koTFC9wVSP4pWMa1xVcKr-7lSrC1NOQRll_X1zF93khULrku9Vjw0qKv9C4sYm3-f5JlGK3bXrzYMEhGtFN0_vbR23S-63mYTot-slKz3slymXQ1U42ikK9WeI1rfzfE-a6FMYR0U68zGFC0lhz9MBemKmUKOPzfrebNWicvUUhGw8sJiAFSpQanWhthZ8DKKvxGO11XPOzBxjPQeYEjjfjkhHqwRVgFqQnvRvVHGfYd30ZJnLYQvdcrxVd6QnO4d4WE2Z4yv1d8fI8Ch2uiO35hVqxaf9QKY_oJxqf6G0uW0c0tqE44xYOa-jW8PqqlBrJrUqxyHXnlJNWc2PLe7S2KA8GwH-T-S",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ8XjhcE5vOzIRtTPZEU_B2i4",
+         "plus_code" : 
+         {
+            "compound_code" : "W55P+9R Penampang, Sabah",
+            "global_code" : "6PQRW55P+9R"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ8XjhcE5vOzIRtTPZEU_B2i4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Inobong Putaton Bansadon, 89500 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8774419,
+               "lng" : 116.1432028
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.878642980291502,
+                  "lng" : 116.1443228802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.875945019708498,
+                  "lng" : 116.1416249197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sinilou Kibambangan Water Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3016,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115000650142340855053\"\u003eKaharuddin Kolleng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s-TVQ7JD5f7H6RqH2tdgRgpCMGf8hhiYQvhJJ7aneIDbFeELqcE8Zw1irnXTkS7JkurnF3e6MIFISHUOKP3ZpnAlebrtahp1Q2BWRApyg7WsYtCooVH4IAXpISBuFqpU3S3I88JxMMcK916wSRiZ5ZTri_rd9XDjR2xJq6jGxADkgW2QDn2tLW3aTtFd8DbQU465sc8uOkWQjwu6vR4izOZsC85lya5_2ZhhEgrCaSxqA0fPNOPfDJ9pWkQdwZwXmYULSphtpXJuQ0WzEPiZus-XkqurujKYhL0TpbE6zK7krwDCXk-ZVxt6qBEsGh3tT_X5P8qaP1DJejYX0LMkPiVCIB-Z1Utqsc3xzl0mwmhYrsVXq5WB3x_EF1zDgfCL5-6Xt-yFRPhO35gI0NnPxQ2_AwR8plUU54Ab089eJSgg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJwecNNNFlOzIRlI1hJ_payZQ",
+         "plus_code" : 
+         {
+            "compound_code" : "V4GV+X7 Penampang, Sabah",
+            "global_code" : "6PQRV4GV+X7"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJwecNNNFlOzIRlI1hJ_payZQ",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 465
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kionsom, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9737352,
+               "lng" : 116.2064477
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.975154030291502,
+                  "lng" : 116.2078238802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.972456069708499,
+                  "lng" : 116.2051259197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ulu Kionsom Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108420001184518395822\"\u003eUlu Kionsom Waterfall\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uY9QTs66qIxIJd9aUjp7aYiBh8vKUJqUFH50n1Hhf4ldr1uBPEsFd779n23uWKijOh4ITeKdvryqUaL9hF1GOzWXuMTUW_2qGIxtsumvwz7hrD4wyj_1KQ7A9XJtX-Ds7pbs_FpIbIt6aaxz1LpQEI45YE5zN-dXkTu68WNacTAcQ1E0nGqGMnDOgFgA29wWc_XE3-jievXLKDYduCtZ1jsh5FaLRpYEMTCPK-pHkRhXfy5eAeButogNy_pLgatv7Zjy7-FdjRoNXFEuLZ9oe_REKcrr87Kr-P3jUXsmE39A",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJs2j8zYRuOzIRDVI6p4uP4ak",
+         "plus_code" : 
+         {
+            "compound_code" : "X6F4+FH Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX6F4+FH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJs2j8zYRuOzIRDVI6p4uP4ak",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 516
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "88300 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9559967,
+               "lng" : 116.0786977
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.957267080291502,
+                  "lng" : 116.0795677302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.954569119708498,
+                  "lng" : 116.0768697697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Rainforest Park",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106679256212736559811\"\u003eArkk Smith\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u4qMAdHnkGWwyF-xFKzoOc36OYiXjX1kcLzrW9r8GaNrywdWHYIY60xpmOBFgyr5HptMQU0J-2L75KAc7sOAiF2kxuINrTKC9zUXmCZNAGBj2odXjuNAlomIW9vw9CZ6SvK84gEMpqgocxsfISemnbBEUEjbxdecQjudxS9d2VonhQrW2PpIsfDtihhh02kGxL5_TPUFxzZg3l_U_YXR3znSXoESiE1rPbOpx6KU-e5epxYfhl7hz2RLzhgGEb7p1hPWx79TGzgwhjezGlQTSX73AIshzMGT4wWTvkD9IEb5kn7g0chgyBOKJrxpb8h5NIGEA9B4_Kjx0glKmhTF6B1yH5UrQMnSYHL5MZsTA5EEKsV7hLCuuRtP3xej_XvX3SEMmbkdEb9teL4NbA8rWMwmc3H34uskl_y-IvfRJsOdR9OmJ9UxmctxZ_Fw",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJq6qqxq1pOzIR-JMn-EMUMPU",
+         "plus_code" : 
+         {
+            "compound_code" : "X34H+9F Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX34H+9F"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJq6qqxq1pOzIR-JMn-EMUMPU",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tambunan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4007765,
+               "lng" : 116.1033037
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.402015230291504,
+                  "lng" : 116.1047529802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.399317269708499,
+                  "lng" : 116.1020550197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Crocker Range National Park",
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100494206372377221619\"\u003eElsie Marie Almanda\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tUJNdyK0LS9SeKoxDOH44mxbMFGpu4-6B44KKjhqClUNRm49AJNA-n6aPamobSGOhMkJVgONMlatZdIzoqDtqvUATH5z7finhMevj1xeKOVeYbRhjt9U6Pl442j3BPNXDuRrec8I5nd_7mY1-ypTf4SRXcQ9TQQSlDbZxKJz2IgMk1Y-yj3ReuhdinxdEOLg0ZkqppbyzCk9SmGfLmsXYKjXnGKqMXYuWYt0KrJKqTC3VwxMdEJ0Desaz_jSZPRM6jhw0rohDxvaBEdkFUGsHNaN0CC0p4wsdGOciuHGwtC-Vq2x_8s9xPNmf-Np2xeChha_yW3yupP8gLyEdCXL1oaNRoqEnYSma5LXLruz-nO1sHAKJgRtNL5WZba4V4nLo5gM82D7fvAcmA3J-hWXeMuQyk4fcPkofFAR4IvTpBejr-",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJCxG18oGWPDIRMM6Zw-WfI6s",
+         "plus_code" : 
+         {
+            "compound_code" : "C423+88 Kampung Sinar Jaya Tanpulan, Keningau, Sabah",
+            "global_code" : "6PQRC423+88"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJCxG18oGWPDIRMM6Zw-WfI6s",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3289
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Tun Fuad Stephen, 88300 Kota Kinabalu, Sabah, Malaysia",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.948977999999999,
+               "lng" : 116.1076442
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.950456480291503,
+                  "lng" : 116.1087891802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.947758519708498,
+                  "lng" : 116.1060912197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Tun Fuad Stephens Sabah Botanical Garden",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101006762609320721350\"\u003eALC\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v9vFLkI0Sic5fhi_D-4QOYnrBpceN69jEl4fhtm7TI24qRozt3Cw52XpMxAWTJtVH_Z0HC7JD5HZ8RUpPI1fpHZt_HS6-C_5D4LDV_tuM-yaoy0BMMgzWZKUc0jdGp6M4MepAE0UKQm_5RHUNaJNE3-d1dcH4-1GDRPwYuYCpYVyoGqW5poEAJhzsJ7CmLj-IzncTLlTAcaSrIGAQofdSP1XYs_s5QvNzvss_sDeRVPm0WNatm0KeAb4d3dbIRXehoalJWBrc-GDTotGtxwRfb9M8f4HsUim726cZTJqw3OpMZ7dpPDA0OSj8BMjQ5nkL1rbzv7mM7G5BVvXwEcyON5YThOfovnVPtuVl3AiLKb1C_O2cQWoDGhV9HVFS2mKGFD6mZ59Ztf9UZMaNmRTZ9juzEEADVhtH6USb2vCqaX3wG",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJGw2qweFoOzIRrmNvn0fNi8M",
+         "plus_code" : 
+         {
+            "compound_code" : "W4X5+H3 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRW4X5+H3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJGw2qweFoOzIRrmNvn0fNi8M",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 772
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "57km, Jalan Tambunan - Kota Kinabalu, 89500 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.821564,
+               "lng" : 116.3414792
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.822935480291501,
+                  "lng" : 116.3428919302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.820237519708496,
+                  "lng" : 116.3401939697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Gunung Alab Substation, Crocker Range Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114712031134697964596\"\u003eMurphy Ng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voh2GbwaXUk6J3aU2jvv7PhpmShC-EMkuA-aORkEehkstIEQ3AxjDJFoyqigoQN4IjB-1HGHYiOdc5LahZSJJzYZUXiYZ7vzoZp8A-9_vus9zUNQknDpPRLEYRDK6VVsUJH4s8TmyXXpa0Z1U64K5QgF42s-UDDuV5_AQvvBzH4HIT9lwJYSoqVQhYCTnrYR33zCMJZEtUd0ujmPybjh0NTdc-xyN5DU-CHZilkQa4dlCIoVYuIcxUmqj4njEbADs7G_gPPEftGeS3KLRxbwWDGcC-M_00EcF3Ez8KYGuB9o9QfjrO9saF1BcBhq0IHD3xOtEXDX1s0JZzg8LxmmznHp5-87F7pQJ4lgeatezrABFmW5SqjOI_-e69nnGQsybqj-_S7QiEj-WcgfrBGl8QMjN846d851liLB96qWWZRcCJ0NAYDjUpvriITZFh",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJj0pBrEx5OzIRAe2p_XrBAPo",
+         "plus_code" : 
+         {
+            "compound_code" : "R8CR+JH Penampang, Sabah",
+            "global_code" : "6PQRR8CR+JH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJj0pBrEx5OzIRAe2p_XrBAPo",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 91
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9439513,
+               "lng" : 116.0471624
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.946353830291502,
+                  "lng" : 116.0490655302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.943655869708498,
+                  "lng" : 116.0463675697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Prince Philip Park",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100805073207312280083\"\u003eeric wu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uhzh93tN_LaMvnJF6La3Y-YfoKiYTHsLcgkffABUgfXuasFvPVWCIxmhGyoNIslf9ldLGtG5ds9k-1lLo79qMr_LKRCW8A0bUGq1NyA5Vk-CtqJ48tDobazp454tlSKDmT32fd0CxUS8zEK9oLvV8FHcK1RXEMGUH9IU1KyPUsO-3dFej7D5vknY73BVOio9qiHzhx_85mLTuukyKSRRctCs2egCCl4btkLiEzbQBfUpKX74dreb3dnrO9YJXDHcey9wEZdAOC9zSGRF-M-GJYcBiMkbcvEmhbmzpYpSbLPnW9c3yCBctlotBKN0njo7tg1rpe4tKPHohX-1aQjOtg1B9ocqwV4TMNlthVPx27_MSszTmJFLHw-BXnt2kqWXvgmAn4dgVQYPSlw59Jep7IHNhlyC-4U84i1i_90SpqIez4",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJCz9IuChoOzIRn9hW-NmD9IM",
+         "plus_code" : 
+         {
+            "compound_code" : "W2VW+HV Kota Kinabalu, Sabah",
+            "global_code" : "6PQRW2VW+HV"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJCz9IuChoOzIRn9hW-NmD9IM",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 615
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg. Putaton, Inobong, Jalan Inobong Putaton Bansadon, 89507 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8950852,
+               "lng" : 116.134712
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.896458630291503,
+                  "lng" : 116.1360888302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.893760669708498,
+                  "lng" : 116.1333908697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Iron Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110986561685426054645\"\u003eAdlina Basirah Zainudin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t4_pWMYrqFdz00VqFJM5i8oiaGu8TM94wC70zxEiBalotEBWzjxdslUye5I4tKEFUxyz3I-rX3-MEXqnUfYNQF2x3AcmjJdwVexRw7_jR9BKQh31K2thWoiUNDv9DN9cCdyD7vgDGoickBSiZFxjWcAC-Xun8fRbTux-S5v8JCIWKErKjlpxa1cPnoJnPBWwtwh9aFIiHvqmLukeEv7KEZaMY1wQWqtu6F7bmqS4pSY4wxLxDT-T9RH7XF0qSfra71FtrtesIs9HKe_Rl67QRNAgZ585dbzQXpXY5yV0uZWydkck0C1AQe3NS07qqAmf2-QYQYWNbAHAQUgBm0_beM1G6mw_M7nfYnAbXGPqyjLb3CcTAbNx69NlskKz_odS1J8Q9Ixmb0aWxX63vnBiQEMdIz-Hin612SF7MddiYWth-L",
+               "width" : 2701
+            }
+         ],
+         "place_id" : "ChIJUU5DRdtnOzIRgIzlbqhVdYo",
+         "plus_code" : 
+         {
+            "compound_code" : "V4WM+2V Donggongon, Sabah",
+            "global_code" : "6PQRV4WM+2V"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJUU5DRdtnOzIRgIzlbqhVdYo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 22
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "TAGAL TINOPIKON PARK Kg.Notoruss, jln Tambunan, 89500 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.900633,
+               "lng" : 116.195801
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.902017080291502,
+                  "lng" : 116.1971547302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.899319119708498,
+                  "lng" : 116.1944567697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tagal Tinopikon Park kg.Notoruss penampang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108240577272590168896\"\u003eDoranita Salim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vGX02qVNazBpH-9mgXigkvv7Q7EOPTUSlLFDxExGyFwdEJ-iaPYKfNH7o-Y5mDhHqLoHkGvJ9g187trxaMNFyrf8fgFx06cSbt03-QZmtrSaHBEfN30kR32KSsbbZhwdoZoYsAZXRzVHlVIKYVCeh_4yAvFCmdMjre3drNQwuObNK2EXJoxGGpKEvwuq8R9mqbrPhjHTVX_84MELFfjvGzeD-EMV_SgJxfRnCP9nhzZejUDKmnKPr2roozyrJkSrixkZncKPCSURbofkHABoIwXW_WlsfkzC0QAK0Xp7-JHmfdQreKDKAJ89czMNUUPheSRy5XwPgZMmKLeSzI8fOQQebwaY3I3BeFcHAVwrFMzIBOpYYZOKcQ_jL_ErFVy9Rxzkv1YV21lTinADZEP4t_N8HjfZFUyUHcUowYtRHvTg",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJ5cNw-GVlOzIR5iYNJ-Qy2Gc",
+         "plus_code" : 
+         {
+            "compound_code" : "W52W+78 Penampang, Sabah",
+            "global_code" : "6PQRW52W+78"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ5cNw-GVlOzIR5iYNJ-Qy2Gc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 52
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "4160, Jalan Tasik, 88300 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9558108,
+               "lng" : 116.0783307
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.956549580291503,
+                  "lng" : 116.0795522302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.953851619708498,
+                  "lng" : 116.0768542697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Tropical Rainforest Ujana Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3008,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105404697861198478659\"\u003eRoyston Jaafar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u8_kkVxETJcl0iXmm3aI4aD27jfMi3HuEpjTb_odzRUVQdbnb8gwWoA93BTRaNjiOXjXBfo-lzzTBlH5Ni1uAwsx3_7poHVaJMh3DeR1EpnHehASFjKj49MinbktKYHeb6DQH-fPrwimmN-3T58Kwbpy2XjEkLLoEVVTGiTJY8hnRFh_Ub0scuE2qMuASXPaYUn2hLOUbX17WFGVvsgSH7P3EsQp6AoNZqyYLmqTu10h5sE2fEO8-F7blA8kbH3iZXRBmc74oHaxmQl4eD6ob-YIkrQxjlQw7jO2ITRbJATto_EqhuD4vWM22B-487o-cQR8lVx6weB_nETEcNkLEQbU6aeH_hhOpHauqtsdbtQSM2X-KUoBFXWFbi-NGFFbHxXFpbZAHtKVsc0y9b1djo1MEHOotj7St6zJgHL4N96Q",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJcVAnwK1pOzIRFd-7IwsIDtU",
+         "plus_code" : 
+         {
+            "compound_code" : "X34H+88 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX34H+88"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJcVAnwK1pOzIRFd-7IwsIDtU",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1574
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "X7Q5+RH, Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9895866,
+               "lng" : 116.2588802
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.990935580291502,
+                  "lng" : 116.2602291802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.988237619708499,
+                  "lng" : 116.2575312197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bongkud Waterfall",
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106694552556201971460\"\u003eTheo Dora\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s_qlbS7gSWLRkYO1h4Dnjk-FusMA2JQwzNX3J0CsFNG2FE4D6U43NntbNCvH8oZv6Wap4UZEH4ZKXk7GlWFcI4dGaQGC3yAtj7M-OTLJ0DIDrjHV7pOUyrltr53bSu8WorW8KCK4Lvzj3JD0stIrSxl5F47JiUaXI3XMeR4zeVrSd-NeMP7FoO_PxRyjb6wMNtxKfdUSXjDqgcE4kv2YMjXH1MwybOx7Yy8g5B6xPPKSWy9-eUVDEKIU2KuMk3zPNBKpcovouJxrslkbcAyrt-q8utkz2U2PjIPlhbdm7UbPFCOH-9Q3H9l9_9EpJnAMRAw0SQByogerWNkLNEt8n4aO8gjXpxkXtUjTjjPpkRtvF6-uzs2UIL8stIs-wzoGC9Fwn26eSAYh9V3pRoxQjRgRqk4wbB0bA7fTSRStG9OrReky4hvAXfS83ysYlg",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJ02QyfwBzOzIRG9eEawvR4Ko",
+         "rating" : 4.2,
+         "reference" : "ChIJ02QyfwBzOzIRG9eEawvR4Ko",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0514056,
+               "lng" : 116.7009931
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.052239530291502,
+                  "lng" : 116.7040009
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.049541569708498,
+                  "lng" : 116.7009931
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kipungit Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108409180914453747566\"\u003eSyazwan Arif\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vGcKPvT92Om8-AMBcXO0YD7O9HfnI2395f6NVsQHY6psftnKfo5Xu1pT5xNOMSI8biu1M8_xZj_rpMNjIubkBji5YvwBsqX9yYPrS6OXQVvDi7ezQ4TCBSloJAv_VAb-Lh75D5upTLAS4eMwv2B9LrJhmsyeMxmrONWWwLkzpNxQMpxWQ9kXvbLyaOniaaZP2v4oZC3z8KrjEYHXdplrz-ndp-Q3YlsB04EG7f3yQZb0_qQgEZeQJKP-Z0a5X84T3nvHSB_owkIR4MelwlLbKxnqwJdKBBCqvJl9JKy2-RwaiGV-lXlaijC_sBH5nsCKIl-SDHjrn3u3jKwmVU2zBc5uQt1wNbDb-4NCYpPjIRyicwDeGjusHbxkXaemjn8JOgPuvsBaK5lgE69v--l3p_g_Gulnh439qr9oPzvqOLKXw",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ7cI1cuK9OzIRahHMvAeI3m0",
+         "plus_code" : 
+         {
+            "compound_code" : "3P22+H9 Kampung Kinaratuan, Ranau, Sabah",
+            "global_code" : "6PRR3P22+H9"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ7cI1cuK9OzIRahHMvAeI3m0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 138
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.207340299999999,
+               "lng" : 116.6408975
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.4442192,
+                  "lng" : 116.8747459
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.9894244,
+                  "lng" : 116.3728434
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabalu GeoPark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 576,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113603650130677388720\"\u003eWilliam Tinkle\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sslKzCug6MgeBiyPkekvIGDqZiLG3D85ZTyu_Kmyu0BYLQ88MOHQN_LdqJjTUVPiEqZkMT-iecel4tKuU3Fptvz-36vahJwvtKkYECbXYaJbz-7c_EpJJaxYeJEbs-g93SN0u_xcg7CEfAgxC-cGbuDXQeWMUSZ9G68VPJdHfDXmGkvF2PFaX5DHhyVl4SdoyoLhAgLNEW5oyFUgNzJ4Z-IW5rNJvmgdBKVvfkFEwaeI-jp5RfnUuVZcC2abo4-KVNmSNAqvvDFbEIm6zEgb7et8NUG4padm9WjFBKAmz35POkXq8s2c9Sb26VffzWnQreO3ipkp6Rn5EuYaohT1H3N1uPiiYnDK7sTpg46Icr45sTf3zXQTGDIExB4GqcK5WyN7HLPLMxyPtsu3SFLzM7GcZmQRn6i1RuZg_gD7CV2mE",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJ9Ten7QuwOzIRPgO0ApYiNEs",
+         "plus_code" : 
+         {
+            "compound_code" : "6J4R+W9 Kampung Gandukut, Kota Belud, Sabah",
+            "global_code" : "6PRR6J4R+W9"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ9Ten7QuwOzIRPgO0ApYiNEs",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2185
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kinabalu Park, 89300 Kundasang, Sabah, Malaysia",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0056521,
+               "lng" : 116.5420776
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.006979480291502,
+                  "lng" : 116.5434460802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.004281519708497,
+                  "lng" : 116.5407481197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kinabalu National Park",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116038586464973777983\"\u003eXplorer SEA\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uo6TrNHkZmMMwMDW3i_UkZNghEwA9zaldJcfHHkHLdnUXyidpWYPKsHS0Y4lOv4rq8IzOtdOS915ls71FFz2nYDcxy3kM34UQGu-SHm_jY1L7UMNdjvRR3TvX4PBBsogsWOK32JF4OCHbj_qiZZ2FDpZXCtBTfop3TUVARZU8tMU-1HbplPfvpMOSR0aOwJwk5MFARzWOwwJCJ0XBxiZQ5bmj-rrX2kUP6BevfYB8gSg5Hq8pBeJXvAF-gDKz8CrodEVzwupsPYcAjDe5ar3MsvvxiGWkVF_lZP_StdnCjcBU4tYNwfq_vOw1F3YhQRPUmTKDq9E-jiI5DxXyDCfT47P0ig60g5AzFo-4cm5n8vz5qx4UXabuweWq6k2QtoCkFB7cdyuYNwGPRlHSU18w6mXRCrbcpIr_fgPipVQy68no",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ0yOnUJuYOzIRQRoKBqilz1s",
+         "plus_code" : 
+         {
+            "compound_code" : "2G4R+7R Kundasang, Sabah",
+            "global_code" : "6PRR2G4R+7R"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ0yOnUJuYOzIRQRoKBqilz1s",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 450
+      }
+   ],
+   "status" : "OK"
+}

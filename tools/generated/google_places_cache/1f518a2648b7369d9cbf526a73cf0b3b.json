@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "94-1, Jalan Sultan Salahuddin, Kuala Lumpur, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1513978,
+            "lng" : 101.6845789
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.152728130291502,
+               "lng" : 101.6859191802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.150030169708498,
+               "lng" : 101.6832212197085
+            }
+         }
+      },
+      "name" : "Taman Tugu",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0700"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:00 AM – 6:30 PM",
+            "Tuesday: 7:00 AM – 6:30 PM",
+            "Wednesday: 7:00 AM – 6:30 PM",
+            "Thursday: 7:00 AM – 6:30 PM",
+            "Friday: 7:00 AM – 6:30 PM",
+            "Saturday: 7:00 AM – 6:30 PM",
+            "Sunday: 7:00 AM – 6:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113894973796022436108\"\u003eSimon Leong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sstC3blp4fjYvfQ8FvPBRut9OtE3EESM7xUGNY5wZ--bNKJixLVN-mf-ishHUk476wGWLySotNMVXa0HDdL_LGVHeJMsNKwKP0C_mpj9X6WW1aB4R7mJ-iWwwMNyrF1aloy31Ci3kh0H6R3Hps0_x6WcBJ9KptujJL-T8zxo9fC3IK7OGSM_qH044jUrmfBdH3T6bKpyVCvUTuaNbTaeoWMeI9ObpBCJ5YuJpU7HBwoxnkY9IXvruF6yRn3sjJ0P_lfJte7TYwWiRmKiWS8iOxQTK6eV5oBsg7QNFSNYAgUosRF0XRH2q5H15AOpjQlYnu5OQU0gW6iNAxiXjTsOuHJNox54hoSAr53NtBpoEq2bvb0depd_9CeuhUjQ9YLBye6BhVPlh6bfr55nr_BrM1DyRTAwfcMdbbDkA5YDiCsU3jYnWr7UmaGpfWsODe",
+            "width" : 3072
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101525412154763484200\"\u003emc ng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXBKq1XwzGIxv8GsXvMtBlTsBieu5lTBwQ8S8BuBGuGihxer9DkIVw9k0R3nMR91A2Dtm2MZ67MSF5CuEfa6JTphWg0ut2JW-0Z9m__qvTclIF4NzAci4F9vL-ztnW81NvOllMh2nM75wj0lQGSYYBlYM4zuaz5ScybLKodwCOaRPqTmif817uzCmEFmBxiURz7TNESTGSijeoAh0xVWGIMszcGeVG5jFgqLN4aAnzTAOd3SjJxwx2r31oXVUgq6MsoM1GcEVTChtXg-W1LnHpWnZvpWhIJkjkl-vDn6iu1OI62kz69SsS5mOxdrr4NrtJVm0WjCZndGuodxpdVoKZhT-fBm3SLbTK9X0vAfoiUhcYzMbGN9DmszFoFnUNy6TCjMoi7q4H1SnSTr22CScmAMaAt_5KTIyksbfGcVULAo3qLLYv8T6qaf-TDiiB",
+            "width" : 3000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112860276091159424488\"\u003eKC\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s7irTOzWWBI7qZf3a36hBGnPXjn8ai8ZYH5aMtOB8dImsUa8rkGsztGNk51fL66i7g5tOUXazDFIoab7fGtalCLytgR8SpNv33i3nmRbw_BndnBM3DNLz3e3Ya6hbpXtoYTb1tva-z7iyGEW4L7cUrRjqlgokW4TicGzDqU93auhMTaxnKgX-XgfbdLIfA80loPoGrEAQye3eOV2nlFOhM1L3wSsnUP8m5NyanlQhrpR2-Dm1diQua4jmu7F7roasV6454Q53wuBW74nGzO4Q9RmukWPaGP7QPiHtYJVN11BN7Lw3al8fT9FQ9-9IdHjIbAP2HfT9oCO5HBYn09lpmxdcFURohxeqA70w7AFaHkpZOWAZ2F8H4IsKc7MFHSPIJV6C7nqIUqH9fcygvcdVIRi0A4Hzxbhm6K9jY0yqNpA",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115267698573372247807\"\u003epeter chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vA76Pa4HNVy9VQ9k7g8LnGnbXwzjq-QzrjMGqtq0vJ36rO3uH2sPgd3jYVe0rrBWI7iEoV3_mhy0r1g7HHyw4rE0rD62xVzJuHyNCdfe1LPYhmxA_BxSgH6QpUxJHhKGPE1lWCBNDW7YogSqRscAjlrCy1ykDJoLBavvp_ZqOmTw7enTfN2_BaQbAeaZL1hkvyhG7D-vyhhrf1DsVNGBPebf_njf0KuYzV_ZPORaV1Ks5xNdh0UYnOW6wCndJR8uwT5Xtse-XjEZOXEHsIUJxiO3e7mXgh4ufRDg4KP197sV_X4BUWHuT2HrvvM_UCIVNOWPrfoT5gyziVcBr6k4cotRNRhZ6uXbenuOSSUB1zRiPQkP6_oKAs7nX3G3Tz89vS-NRDksk1fmRJd2YSXjkPPeRMKUDgPiZ0CJVcKZ3ErFKK",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113409023943885118912\"\u003eJ. R.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sNACwKoF3NOLqNJ7fB0Ox8uQSYPLRs3he23gJTp-dbZTgcpPcBs65jNMq1bY4DfXFqerbuM4XNwmKrku0LG25_gU3JqMfe8Y1--kUPgj2UVbwhOEewOKG9ivOAs7W6IweaOLH2yVje-htNnGr41vMBr9OBAkMPiieUgsLNaLyiD8UHgl-Uk3nZMIMv3k-MLdPzI0-xNSIiPTzlEPyKZ-jjc0m2MSHrCt4oFi__wmbmdx6VUvKXF0z8EtQ4oDBFXekm2tXkEmuJZ2qbowvFsF5fw6rVn06RE1d1TojULmHTyiq3aL5fMpByhKbcqn3p7CI7xE9xTlft2KyCv9vFVXCGSa-W1U0DW8bSPylGeAGy7SxYaApwDfuHhWagvuHP2lrdiHL6QBhQ9QN9fqoEPYsDSp_kkKz0w2WV7Ppd9x2TXHfdPBT0IoaZSXo9rDzl",
+            "width" : 4000
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112860276091159424488\"\u003eKC\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-su_ZBqqedSRPm47kdNq7nfKLmCjlU1-s1YD2SfUJyjktLSWEqeW53qPBG5521fnfAA09sgHeSqAzFGBPniNI2e1HfEvo32m7pOwb8KNJYYvnCyFnU4ZeAMfdIUwWrIut7f4QOHC8jhA3hX9O0ytIdUUsTg0JVtiClzYOgkgrxPtrSxFe1309tar6eS0VqFF49A78TErYVrsIKwPV1oH6JWmjs1sWdTrTQwkiUnV4v3GCra61UEvekGuRm4-vnoBfVZTvY1QJ4StjgaTNJzorwq097_nTjA0-f7AGcfXyvn5szg0NoD9vNcMHFkjjOuVKBqn0f1lSR13UL3xHTsj0RLser0RubaUGTcBLLTvjv9hDjK5BcDmayilD9lbAJSK8I265tG1stM_AegrNzELnGAQbfimLV6hKhjjVjeBp5noA",
+            "width" : 3072
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111523966356403186635\"\u003eTakashi Fujiwara\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vfkI0Qx4E9ViFUS-SWzfrrua7z0TqtjJ7GlwYP6Phs9rNg3wHSjLDyU8pvSbHCSHBoFoP6Qld4O5-3lqt7oMlXEobyKSRaYFx_70a4aa1z_jeBXBwWVD2C2bYcrOQy3u-D7dGZz_2AkyFCOEWN7HxV9KlVKphzf97-e6mwS-9boHeVJxRRqfrqqL3vkWTEBPRdGpP95l_6qe5fA4rh_mOZqxgXZBY2InZSSp9K21pNxy9FCb6ivT0oxZe5fDYx8_1o5PHvUKqBp2AVZGQKLkd5PsaCgiACW_CCJFd7oOk1SGJMdp8u5rUZjU9-s-Z9lV80VIZI29M2wgBv1drCZfPpCruBKoEZn4o3M1sNxKsamwPLGJtwE4pqZOzh66Uc1oOGXCakjG76LNTUVdb9_Yo4wYMsWZlqGo78XizCL_FiqQ",
+            "width" : 4160
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113980819574948893281\"\u003eKc Choo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdTtbv6uEAgAwtl9QSSvjyNdGrkiExtkriGZVO_qQ4H00HaI8uR_iszdsprMwWiMKDvwhfTRjFmJY_4LzDKA1HFt37QFJAFyVqLF4xiHACb9uxIeAsbHKE3sDU1NhDnkF364aEV5kgAUuYrX5CtnFw0Ecuk2cxNoi9XBNJhiQydjt5UMRdW5NqBHjywr0vDXweVh_nTlg1H9JbkLXy13VfzKoYiqJo2dsErd7CpbNH1zJQowILNf1iNAavDVGL73KKm2CP6k3bTAojGnitfYPyhr8KMv1f5EspFHIBowjRQjfa_icu1CTX6zIrgIfp3R_ChFAIk7PfCSwRyrgRS5KhxMRo5tH73XzpKX6RRCxMNlpkbK6kTcr6FgYs2mo0Cl1ticLwMvLHQdaoGwujcQxiVy-c-Y7DOlBSYuF9u3O82KZCXT8gr4U2Da4ufed7",
+            "width" : 4080
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100734642325793121179\"\u003eKhasim Shaik\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uha2WGA4dXd8PtNiMi0ibDXcX695xwOV2CIRxD6ShLrMEd98VZAcVHaehqLFyrrFoUvaVpqAeobgi1X9esE6k9DlT5IrzHDD3SpEgHrF2dCy0rcbVo7zzZqemE-EtZ6meDi0Ona0VrOhHgnBecFI0UrBwumHgErWkx_mVt7p4AWlr6JWFT3yOgnAUYEgcc-RRHnmDUDx6rxpelOdVaOiJeC0ofsiT4mCBBnVVh3uWjm99EeGKFd8fXgQRyQC2sVZy04n206NoP9byw7FcQSIU0YDnOGmI592pzPQS1VoZhJt1On21O6ERhCr8vcatWuwrOu49wKbG7xKpBfTfriEgTMkTKvTjfwviNN1RvDvL0xtPC17AvmcdeU9sS3VyxQQsrsM4BjSCMyE5Zn8P4tW75QkJbHpw70Mtq4orDucRiI1H8G_unCCx1lDKp-c6r",
+            "width" : 4096
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113980819574948893281\"\u003eKc Choo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uR4DCKqjwLVlgwh7Jz1qIWjC8HJn6HO-Tl0kJNRRRwczmdLNliv53-gpKySUbNMoEUir8XG5br0-B5IS65E5sp9bHWV2FP-XGb1_yV-uYzxPj8CcCg3bc44OHXd4lCKVeyI377gorTW8u0_zaoPgxQGXXZG3haZk5qWGqFVHXqhiKQNIXgX8aHF6sJEYORJKeSHSDtZfXSHJrxqsQSYlOKVMjwZIuk9hSv7ibFkOGFaz1STqZg6ZhhcqkDFsL0zFSbzqYGarvIOsTfRJ6dfVWdKsLiCzcaG380SQvhk_gGGKdqb-gRATYafHHWdg2OcSR-lfFlGXo2RMPGhP7xTJ6txEYR7sa9-4b04nCTlmkL1Y2TvXWDqpEM8xqrwBpXzYx9hAGliwlEuPzbtlpBq4fiWcXNmdEKewl-GxbEZQfixAQ",
+            "width" : 4160
+         }
+      ],
+      "place_id" : "ChIJCyJhdLxJzDERIgijWhmft1w",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6680983503471052834",
+      "user_ratings_total" : 326,
+      "website" : "https://tamantugu.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,292 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Betong, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4859736,
+               "lng" : 111.7118661
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.486752630291502,
+                  "lng" : 111.7131168302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.484054669708498,
+                  "lng" : 111.7104188697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Nanga Muman Longhouse",
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110991818571813763536\"\u003eBartholomew Emily\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vKty__K3sj3V19mGUqoOi0F8XOGQMRJkp-1amV4p1hyAPkjOqwVPIIRx20u9vLpbQ-ZZCYeUQ0h_cp7N8xoPF7JmYKVYM0pkQoCwQ8tUDpn2U4PNA-K0_fUIYaDNA7dTEbTJ2fr63iJGvPl14EVCCGGHRoK117LW8dA6qZ4jgt8ZmjweHdlJIbdmZsNZb-V4SqvGiVAYGYMjTVAgu8YpBcnfEDPSjTLcw4GVDzXkYp-r5vfzU6e0aeoq4rk9lbs_h-oumjQY6CuvFc7RNAwgICQ__hZwdp0tUlaroI0EbBbAWsHJWsbD83BcphrEizIQ9vd-qgKH3KwJ458qxguZELo3_NdaX7wTxPByztLjmqq9LfwljwV48AIygliajSsxoQSyc40sKDOzV2bK_L5f8OrEL7lzJLyPdQ-mR-6cuH9t0",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJQQPaDaIb-TERjNqDAEIWcCw",
+         "plus_code" : 
+         {
+            "compound_code" : "FPP6+9P Betong, Sarawak",
+            "global_code" : "6PHHFPP6+9P"
+         },
+         "rating" : 5,
+         "reference" : "ChIJQQPaDaIb-TERjNqDAEIWcCw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3411, Jalan Datuk Patinggi Udin, Kampung Gerakan Daya Wawasan Betong, 95700 Betong, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.414457,
+               "lng" : 111.527991
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.415829530291502,
+                  "lng" : 111.5293412802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.413131569708498,
+                  "lng" : 111.5266433197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fort Lily",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111259347015536327984\"\u003ePaul Gerarts\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t2SKEg4NtnbfES0Gnowcaih2DWSKnAylG-HrY5kCWeQqSO6KG6IAJE9th8WKr5qZnSmDR78d219dMo49HuMoOHqCSiUx83gAaCGMP1bH5oX6IJJW8YYHmx9Gu6bXMQOTvyhS1stxbUpV6gaIQlp1KwDxF-1zZehh_PuI-mrZbIFNdhxlrGTtG05O9dw1HIHeyrLMtt6pvgXJW6iFfYfeDfBZgBggPtTqANZegec7p6r_jIZSjxCtdK6hMdWdhf1vxXiQq7ZZLqQ4GTaY-yx666Hkt5nyla__9CAdBr4No_UM1Q2r3U0eaVizXEaq_aCYDqTp8Im_FPraYZFySRhkFY8wY26MAFOese6UDEBGf27RrmCeprGuNav3exAaRr41cOQP1LyIx1TfVETULrWAnJuTgB6ohFTh-LVnDbgLj2Ak79",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJqangDio--TER7Mqe5vw5-gc",
+         "plus_code" : 
+         {
+            "compound_code" : "CG7H+Q5 Betong, Sarawak",
+            "global_code" : "6PHHCG7H+Q5"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJqangDio--TER7Mqe5vw5-gc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 23
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "95700 Betong, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.409605,
+               "lng" : 111.5276942
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.410961830291502,
+                  "lng" : 111.5290728302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.408263869708498,
+                  "lng" : 111.5263748697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Betong Clock Cultural Landmark",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109708823772502761248\"\u003eEncik Lewiz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vysVSyJqW-ta1BS6aRCa6mOObPNwzYWEKFM1ga6odmtVey2kjwJe5CtBsfXjClIl9PMiKLFhaODJ0XnpMYlkaR8JRIU_s-OPcmvq28Y8g90kll_ezG1i7H96Zlxg36k3nXSNp4BfrCbsDPlju4lNbPu7JXFhu8YGPYypLbAzYuFHms23EJqq7nOn6TVKdBsNKA58248hDk8X7iNjSBtTyXQQj2B9DdGQe7FkgGj00YXxA4cFVw6J1YXGgIj4kQgId_sIAeo__rvIpgaRFsLVxeFMoZMcWcbwCum73OkxvfKrk0i2Vpw6Z7CWUC7bJxlJUjEr0pltrfFSF0F6cC0O0y1Uuh_JUz9NENYlEQi6TpBOfhP9OjywaeYO7BrOhHFwJeNqN08O5M5c7RDxGz_13Bt4GaQemNRrl1m77Xsd2kUbBAMKHg3sUVCZ8ByQ5u",
+               "width" : 1808
+            }
+         ],
+         "place_id" : "ChIJT8TLOQA_-TERSxI0dQg62No",
+         "plus_code" : 
+         {
+            "compound_code" : "CG5H+R3 Betong, Sarawak",
+            "global_code" : "6PHHCG5H+R3"
+         },
+         "reference" : "ChIJT8TLOQA_-TERSxI0dQg62No",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Spaoh, 95600 Spaoh, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4580661,
+               "lng" : 111.4773565
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.459400930291502,
+                  "lng" : 111.4788637802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.456702969708498,
+                  "lng" : 111.4761658197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Anjung Layar Sari Spaoh, Betong",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108896716348007520693\"\u003ePaman Aheri\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u64eOw38CxW_yjuyCjt6vPPPvkJ5vrt0Fvjkjal5AS-wao-34JVXg6eEA7VfAW9nLzjyBkffxSyulzFkIyj3IWJfn2BCtThY9rIq92POYxIappb2KhNM89AVnvkl4nXgY9aElHZJM51QgX6qHIB2MKsQi0JV5K4acL09L3cBnrrrrZ9M5b36CFg7IDM6Xagc87-hF3YVqVAWB97kZgr94l5W3oITGWQ_fBNK4MWWv4u__kvoB87LdS9R6cxjWDcZSRbA4lkowat6VdPYhq4P_-wjY81_d3qQa6hb6evziQUyU2NhPC0bBasnV4Cg9JD-jMKb1tNPlTQYWsQ75rhrbVqFuCVHaa5_BGqw87ZMwksmBMltGrL3zReDycNa8BSkDlOCqBtwqs_wUtKoGA9qRDvaDl7NO5RaL6Z8SuKOg7ZA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJq6e0WMkV-TERv8B6GAH3TvE",
+         "plus_code" : 
+         {
+            "compound_code" : "FF5G+6W Spaoh, Sarawak",
+            "global_code" : "6PHHFF5G+6W"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJq6e0WMkV-TERv8B6GAH3TvE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 19
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuching/Serian 95000 Pantau, Sri Aman Sarawak, Jalan Sri Aman, Pekan Sri Aman, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2397314,
+               "lng" : 111.4618751
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.240883830291502,
+                  "lng" : 111.4628683802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.238185869708498,
+                  "lng" : 111.4601704197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fort Alice",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113659172198635034941\"\u003echristabelle cindy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vW2XLE6K31PMvs5rE13KwjGXvR16--JPodfjTQqVtD2UCEwUQawGMV0KI7vg_ReQ9k7X6f9miFBBrgBqr13uMybCgA7zj3bayhJ1agZRDl4QdRN4Pa-MR34V7NesrJxDqZCjGdM8vW3WDG94P7P82OIHji3yr7nenzGQ0BJiEP2WU9SZ-8XfcwdqC0DND1yW16F5Ay23vn_CH-QP5WXATnmpvGUq72GwWbbYE6LG4GPils5lxMCmxyaInDqO_awK-53WJL8MI5oXWlqdtMKkc5V_u6ipfinBC8Eyzx5Kyknrm6fyOqgER1nFgCBkv5baxC2FMClEtpiZE2lNKzmsyGeRc9zZSDVyJb5w-Xkx5D3ciN8kDPraAaGXAbLBYog7SADCYFF3EzMkH7CEyWT2Rt4lpizT4OswV9FQd7Q7_NhA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJo0igJDJI-TERipFIlhejDdM",
+         "plus_code" : 
+         {
+            "compound_code" : "6FQ6+VQ Simanggang, Sarawak",
+            "global_code" : "6PHH6FQ6+VQ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJo0igJDJI-TERipFIlhejDdM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 407
+      }
+   ],
+   "status" : "OK"
+}

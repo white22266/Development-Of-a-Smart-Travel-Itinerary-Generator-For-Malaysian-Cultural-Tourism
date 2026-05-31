@@ -1,0 +1,64 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Second Floor, 76-B, Jln Temiang, Taman Unian, 70200 Seremban, Negeri Sembilan, Malaysia",
+      "formatted_phone_number" : "06-762 0115",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.733286,
+            "lng" : 101.9380467
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.734603280291501,
+               "lng" : 101.9394542302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.731905319708498,
+               "lng" : 101.9367562697085
+            }
+         }
+      },
+      "name" : "NS Kwang Tung Association | 森美兰广东会馆",
+      "photos" : 
+      [
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106504901567225787346\"\u003eEunous Mocktar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vbfTyL1PA2i8lEPQazmKCOII-QMova7iCTe5Zyl7Nbos9QtDMFzZB42mWygBQm3xcWSx_so1jvg1Qr4Tf41_eWMrnnW2myU1UYS5yRSLhUySN7xCWzmiypxY7nY66zbF0t7bhGO0u3XGNOFuOvQ9VjLYoRiIr41ux6IWvlWfxHatR4sx11pe6wdn7JO8qv7bev1YnoLobtHmWkM2u9M5ZUnFORYXdcM7eof33hlb3CnAQFy3v2QFCohf9drU4XluRm1FaLnHaAcp7dmrCXC5Ec-nLe9_1QPVfrdco7S1SuUSIXsRcZT0827A6c-Lj2sLpP3kVa0qJwIlk2_uAQLbDksu4zYUKpw38h3gEWN8Ei63KNKlt_LsFL4tsePUMgJhtTzHVl3Ug-q8FL2hLZQhu1hrMwxjAq1HUM2JD_gly5-BLy",
+            "width" : 1920
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107380250233796127983\"\u003eCM Ong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-slH_rOfsLpi66pN0PwSjNbVv22klS9AJz_KBJtISAWEB3t29yzLqncT9trKU8_f3CiHB15ooOn1wziWlnkcBJ-JFQ-Hpc93dK1_DC97rOFpfT5nLGETM9wnWZvQO3CAW0c6izXPs-rbyJC_S3bJlriWIrkBsGbtHmpjfaz5TDsV5ZioP6CH1AUwihda_gm32wcU3C2b1X23H-WdINTYnxDZR_U6y54glJ7gc523ovjumximpbKnX0aNmLj6DAVKPovkubyWisuJC5psqMZHShwiqCigRShF92LdMMjZpHkf2PL5Y9xtgUMgM5UjUUDMqzLU5ZC_IyCAGQDHlROCV8QibhqzMz9Caijpy1UPgEN49YNadz-i5T5jrzAhSF6gCQBsTpw4ssrlVEkcxsDa1Vyx-zJtXR-3vqqIJigr3LVY-O8",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ2bM_jJ7dzTER8SHu6C4JdFY",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6229614281641304561",
+      "user_ratings_total" : 2,
+      "website" : "http://nskwangtung.gbs2u.com/"
+   },
+   "status" : "OK"
+}

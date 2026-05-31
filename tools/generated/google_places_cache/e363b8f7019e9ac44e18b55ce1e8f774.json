@@ -1,0 +1,248 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "27200 Kuala Lipis, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.179878,
+            "lng" : 102.045721
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.181268630291503,
+               "lng" : 102.0470360802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.178570669708498,
+               "lng" : 102.0443381197085
+            }
+         }
+      },
+      "name" : "Zoo Lipis",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1330"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 7:00 PM",
+            "Tuesday: 9:00 AM – 7:00 PM",
+            "Wednesday: 9:00 AM – 7:00 PM",
+            "Thursday: 9:00 AM – 7:00 PM",
+            "Friday: 9:00 AM – 1:00 PM, 1:30 – 7:00 PM",
+            "Saturday: 9:00 AM – 7:00 PM",
+            "Sunday: 9:00 AM – 7:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114541245504603192901\"\u003eIdayu Said\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sQSNut4surhvgE_2sgG20wzSjXe7uYG1pof_keb6XTjZ9sC3x1uQ--iQ90Y0-xSmba61KY07vEOPRfAPELNShkKzT9VvGmw09lt5huFan2x-C8zyRfbyVGqXr9KjAVguw7cqnf2d__HZav3_PSpi8xZsX1lznz6n62imF2W1xjVu0GXMBKL86OmI6wDNaHggO1jz_-YvB3tCnU01vnO0jvsR0O0ScI9_Zcc0-gE6BWV7yA2QaCPSChZdAujsi10ljLhbCi3YBwpAxgIKRN3ZCRybVnStpTW4wXoLlo-HkwGzvnUruc5GF1m50AFGXe65YRWv07ty5hBcPnud20odx7lk0TGwMht6hjAyMBNYzU1r2VRGvbyy3MUVw2knkzNPmqMP92FAqaLGiC-BolSKsd6eE_6Iua54DudFfXDB7Okm3_ty7DUEtTeLj-h_RG",
+            "width" : 2296
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101807740793564010954\"\u003efariza wases\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSB78E2Ngrpvk7nIR3Pye7okbfZvYWQxBun3mru-jHaCM0d1P_W4q7GZb_iEpe8NKcUVNe7fOqDcyMKoFwjGWn-oY1dRMCs1JrsD8ml8flRKv6X7xUeGnw8fS4uCYdYMsu3QC3zF6sGYVDJJ-u-ICg52X4dzRfEEZu0H6mq0kTqHe1ZKKVtuu95Cx0XB_i0YUzp8RGtT0SuKxM1A21Vpc8_tEVWiZrV78JumaqChg_EvAxQ4kEUsVZGO73Jks5PrDapzvr3Hy_neadQLgW0HDyyN8R_O3WDgW2BIW1ekyMLVLu8OiAhJIk5t0nwV4Pvtnlp_FNnyWXbdJEQq8SMho_I4fOKo3OFblJ6SMMxSHsiKvOJwP79TrwDNTpMTiX77RbwBWbFH1WwN5_0JrAYrSJ1QmXB5dBA65qxMdkCpmGcidYQrwdNmj0JOUbV7hZ",
+            "width" : 3060
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114980143568794699302\"\u003eNur Syamila\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sYaGGW2VUyxr238y38RC_8_s3-oEaQ1MGB80dNQjQBX07FoA0OPom8vhvpyPHJSXvOx1BDtWAAhQlZPSAdBf2LwGug1hKyxvi59FjjJxPq828jBurjoI5cPozkFThroJrcSi_OLopSEiYihHsu5w4CE-JErvkwSqpv30ELsJa0dfkW8R6WQzE-QFikeYDGgNMlI3cgCApOFCR_R1j8d6_f6kRPyj4IaY82Dk6jfG1CvK_oLqDDbQCdemyWdxl3n-AJHsJNJtJ6Ime_5lFgug7sUrui2z3Gu580w5lMVnK9FvR_SWGATiNwEgdBgsXLMccz4Gqqc81DpbKAr-UfPLHAsso6cUXeoNhkHGZVU57mHCNbi2rEIPw7dOQoazK5ZCqPiZfuzJtHGb1uPPJVeaFBsw-IR8i7DWgVU1XDU0eUN5RJ916WJGqyxKnoHnAg",
+            "width" : 2252
+         },
+         {
+            "height" : 2340,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101248610077236558024\"\u003eAnnie Cheang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgzwG17MOuXNGuJULbEpwanjk4xGhskz2frcw24cdtadp5rJlSLlrw-ze0qc7Vd1zpa-rEk5xfpUY-DnEaoi0humHBJ-e5LJE1DehpjpKDxatAb_VGlRxbZhhtI-nA2TYY_o7trm-IFWEVS5POOaDqThx6VIBQCv_d7lxaKnY5B149q5IhB_NfCFcSwb7wJNXfV6clOq1Kl1syuVzK9NMmR3VU8zkXRPT2WTN_xN-Pi080g0v4YkPpLL42NYjBjUwvz7aUKOgRR3Dn5U_VTYvhiwsAR68U3RyaDmjtXlageQPPlOQ4nNd3j7-bU6cGupMUkgW_a32mPE99frHWm906nyzOT4IQw0Im-257eEmHmoruykp2EjgZaAvbwMRrIZj7zT2XCtiH-GvooRVxKy3ZYh5cdqsCaacrDsFFPpPZEg",
+            "width" : 4160
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113549744290619235963\"\u003eAwang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uyCPdmcMkYqvd2SCk8eAi_1mvZOaVhrDsLLemNTOPcXoYg9Il6ZwrDecGj8OtZy30777JKv6x0wz0JxQt-ruM-khaVmK17nZxRzFkBaS84x55of1vyiFzH6sl3ohkQclVFnm8jpanJXK4lho4adhvl_mBSUUqhplMH-fNlDqwqRqa9vT9rxYdf6hv2JkBBsH-hMLTq6NPfwjFhgifhysLdHwCxehaarSiSHFJ1UHKzSK4Jp7tpUkjQXBF3VBd1RpE412qDGALB9Mknwa4OvIG5OJfIX1ZXA-fcsTv9PSGcf_lfEeOFJgV-2eUX_cq9L5UFJabL8xRo-c_DV_lhjgNxFHJxPPVefs4Qiu6Obtd_oR28I9r_rNGu45_QhszoF0qYIrUuitAFA9W9PYSisn61J7GEarJ85Nq2GaqEXz42bXN7dpdJkr1n-S6NDBUJ",
+            "width" : 3000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114980143568794699302\"\u003eNur Syamila\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sV4Y2Ot0IqHScDIq4bE1fVVaOnWxaKCVYcP-c_14ZxqP2qM6UcCNWkDlyoyZO21BtThEu55GOyaAsyh7d_632Qbt8w79RsOUOwMnCDxrozsSC52s9tca3NqZSomugLxBhwW7AVgw25Ye53CqKokay-28yMBQTknvxOfbxYaFhP1S9EfK_dTUN7jkbVWNFv1wzUnfnivVbL6LpdP10cru-g7iC6qrfC48v6TTXeI8hea7_nw_8uuPMXWuR6Nv14yWIAt0PcX0-YnwG3Br1Hz16FrX4slfL6uboigYxleKOri4OgyXl4E0v442I30RYlHYIpK_wi2PL5JpGuw2_K5Yf0u1nstXyW_nrc7Eq5eQJAXd3nEPb1zMlGb1GhhiEfo2lNeEwClqvcxyYXVg6zUTY-RM6e55nqNBCm578wU2nIeDdYci82h_K9srAtDm7s",
+            "width" : 2252
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113549744290619235963\"\u003eAwang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tTXTrO-SLgHzNKu1Rfrsc1KraiUinQq8W1UnHAcyWwwEj2_XCjyQrzEdHgH6IMHakNXZItlWIeUWEDu9AgQnRFA9vIleWf1UsLD0fOUdnv8VZE4uzI4ALhrn5Nrr5r4CAqlBAAqUiK50CJgKLmzhZWHNjze8TQRmh0mThWXSl2dSUot5OKSbd_F5V_4LznGnTrN8X7bn3b4_ZahdXb4hIWldFHo7k_kvwrYPIqcOr6QC0L-bRWREooNMEcR-t2HblcLtWS0b2t_59gQIEhVUVFWQFtna90pF3qyI1reLsttJAgSR3GzEKilkEHJ3JaPVOzHPMGnSU1Eslk3AYX1eF8t_iHpGIXYt-mjTmmspw2wwAta57kiuClTulo4EZREe5t6Z0IYG_W7F_coJJVfZ_zC1_q5YsxYXvON8RWIz-0utHhjWkDONcuSnljgQ",
+            "width" : 3000
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100612874188424909386\"\u003eFarhan Hamdi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t60ppUxMM24OVPi8tqDGfk-g0BycBKRUANc4CeUmpmK1plYNS2ryNN_LwKLXLo0yV15x7XIEDzfF2Sz951Y9bF6S6gL0slV0516AJLHxv7kDJvwU51R0yohwy9_Jz4khAFgNawdzMNpBQINR88FXUPR64S00jAG-1uTWMYCLtWh8DUg6E6DNtlJDm8Gdq6UtpRdeH-5EI3hQWcsf16AeJxaNZmmSxI1MfBhHb57yFYwze4X0xfnniJ6y_hhFtHtsMPKKJmZlZRKaTc3UitPt48Fy11eU5ZgmfOgbuULP-7eSW3KYW3XSUM4TJyt8LYedCPsNCKv_SfQdWfE68Cg5DF64H1_jDruT2eNfBu7Ex5j7ISUXYjuaJikTcxG1JH5dL_GVf6fxY1O11D8b6ohV2DQ24as7jGZGVJZUGMJ6C3Mw",
+            "width" : 960
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114541245504603192901\"\u003eIdayu Said\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vjkY50rHMQTFcW8OYRD16wp00yDToV78_gkSxhMQgIX9VHATES7x77AUjU3KQcVWE1wRRRY_nFxiR2sEmjEaV20A9Xqvxw_fpF6OGvWeaBYu3Vfs_BMUgF3cEhARdd3mICPSAnUns_IwGLL-aOcEuYT598xWcbfv1SyLXAcLv_l_aMWzTHuDP1QpWjJ6J-UDPZgmu20BOVUDokHTjg9QyOeDt1X4xqwgheQX6yd1VNgb5ahAZqwAHXzstvWg-eSIBuKEaxqRS0--7olrydGOzcAH3hxRLz1Ig5nsgyJyF5rjyHUe9-VqmK3XQAANFIPtR_Ba_QSNufeIREfgkrwuylcTJAL1ryBGFmW4lyfSF0sg57oJHiMEtFA4nZX8KiPr1Z3z0xIHt_F__vaDhI7vWRONGd86DIdRK4kwHn8YDawZBf7ftjYiAIpLID4w",
+            "width" : 2296
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118437697790086151502\"\u003ewan azhar wan ghazali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uasT-QgTTTP5s2jgOsESpStEi_zuUZUZiH8hR-ockhvy1vVvlz7fCEpBD3oebOUsqpVDo9onZWQ5N4DX4JLRshUbJRT7Axv_sV2kgxX-OhFHcYQfR5meZOsdhDklzN0OV55WmeTrx8rUZ5b8LPcA24fFC4tpmWyF-RXn-m0y2DGR_zq8skJhJweEJxjj9bhTp2Tjye6x8eWKhiulFc3a_1BAVakz3OQfRjKeAemIVQ4axue-2W9BZzOU_YpfA45szy5GcxdvR5J2Y9L_0ED3yI7CvgXCBkn-J-oSEEd0usfsvOynGaEZZ97fPPydzbV6ro-BpcRMqgpVv6aEaCLVjnhqtcyVsHbi7TMsJTPUp_WH3zudq5mTnczT4iZ7EUsTuLsD0o16l-ba1UWPTPDVPSeqcEoA-vfxOkRKuA_we7lQ",
+            "width" : 3060
+         }
+      ],
+      "place_id" : "ChIJYVQ92rTXyzERxVzRfkJaqDo",
+      "rating" : 3.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=4226727491929201861",
+      "user_ratings_total" : 90
+   },
+   "status" : "OK"
+}

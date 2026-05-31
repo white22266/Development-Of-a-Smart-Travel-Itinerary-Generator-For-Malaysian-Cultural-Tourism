@@ -1,0 +1,211 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "WRGM+28, 89050 Kudat, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.9253541,
+            "lng" : 116.8333437
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.926618980291502,
+               "lng" : 116.8348172302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.923921019708497,
+               "lng" : 116.8321192697085
+            }
+         }
+      },
+      "name" : "Hakka House",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 4:30 PM",
+            "Tuesday: 8:00 AM – 4:30 PM",
+            "Wednesday: 8:00 AM – 4:30 PM",
+            "Thursday: 8:00 AM – 4:30 PM",
+            "Friday: 8:00 AM – 4:30 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108737785903768861236\"\u003ecslum88\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vKNpxYvLlxiAZRjxXDNVsV9iTef7bXTBf_mcgrjHW4q7GB3OTU0s-Q9iJwh7CEjsRfMnM11GEloz_5V1BTm6yEK9A0ohy1QWGM-s_357Y1AUj7G5nfn7cJ_jZ2j_ExPB79dZTEuFDYMLEOUwlvYnHAVbkI0PeAaQDKMAWpuHo-MOgxlUtdlJS0yTz9kqVx3S98QSK7LQdE52KwZdGNKajXJnBq8bweiXzHAFZd1nrhyl_8EJoAXIm8KZLVwrfg_LFpwoww3T-wQIuIw6wOxKAX9eDL0Kz27agXy0J1XoCRvlnI6QMG7RKn0Gso-m706A935lw0ehLADFmIaftQmxjd7paWWRYhGtiHCRPXVN1JK2VE7xMu9nFViNA91ZVe6QevVFNHUAzae0BYzR5fw8BwDabrbedyKivwah9BtXdYnptFP_f86Wca2XuVCv1N",
+            "width" : 4000
+         },
+         {
+            "height" : 1392,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113702804301697732419\"\u003eY K Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuYVwtgf1_vEun9_Uqd-JwmitQThj_enx6lvOL7HMSsP3TFfBAXzVlJmmGtk6mGaRvkyJQ6SIOyfHMvHWPrYMeTlLxk5F2LbbVjAfvuns5OTcvuPvv_fEoF9AJ5rWBk1ti0EVB4qHPs9ONnjNIS_J6CuMeSHF0hsyjHeQGzCNm-VIxApLl0Jkh589Rgs6rhU8qRSDEspBuTgpc1fkl624BkfNxK56LUscqYIHEe36av2V3AIq9yd-uxiYx5RJUpLkVhplF3cS6O53kNlNTOPAyDNe17YHFAg2R0ioTFu5C4jEko9zLQPqo_h4St0vpLK1unHn_a70jRlcxuzwP0z0k4Qda9PbIZY3Lm1BaGYKi_vvWpujgkr7mdiT2_n5Yi0w-fCrTXJhEDWqyGfbi_1wQM27xwsq2r0yhQChK39t8Wrs",
+            "width" : 1080
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111495932129139933811\"\u003eChoon Ping Bong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u3H6XYFwn2eooWKyTFx08FASjrYcSC3L5iSAT7jPC8jKtLKCXYAvgoA9VmH0dXmuWmafmzHwFYI8AugmeGcVBrBwYTfhg1DXm-2ChhVrl6vYqq31pjk9p23KnSJFvNSNJ-udTVym5gWi1w_A8K_g_1dxhqBm2af5NZ-jcSyG2rqwgF6JYQoLmfUVrlAHl05UdGAPv5dr2J6ZfTmgEi-Hoxix9LFHEIpxI8G56FTCuEEVIaYgtah4VjdZ_TfyYcnuOmWkvfmvhY8m9sEIMKduzmqbR_d_1K6fdhnK6R6Gf21CXI80mf06kBlvyOpQqicJmdUYZBz30DRSweiD0lfcWm6QMIya_qVOXxt155btzi89CORc7lZzhqF-nt79YTvyGTubQ0cx7VAYBbSX1m8GJe5ZCLafkRH_c94gkNB-yMugs",
+            "width" : 2552
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111495932129139933811\"\u003eChoon Ping Bong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tcx9QAuGLztkJgVewgapaYRS77i53nPuZ9YpK8-GE7xCU97cKUXcSHV7IjitbgaM3gUwkX8cK8m68DB3-M3nmkMoWId0TRFiHkwjPj0DB4vQFk73jqzuEhe3qk7nQ5MjLpjz2vMxZub2R7QYIYgNUMh4lY3nT8cPDtRNdhOKEbPRxlx_ZrsiyHVNUfKB7dfbGD0FWlz3YDzHJJMkrmost1XVNXpF6tyKWnYnq2HiOL47FGjJIJCG1Fyp6uJNqSjJ5jmfVhN3yT7eRhfW1EN5Tn1LyGJE07pYExWrba-U8s9rW-IckcdmbRXerore6CCR6d1SiAl4Kk_ijbh7L8bH4LSvVxPGUZmEaskYM85nrCXy8JDdCBH7wkVjB0UwP8ramUTTZJAtZhll4GvWnY_OegB9s3GvpnbCefbATmPANdQw",
+            "width" : 3024
+         },
+         {
+            "height" : 774,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113702804301697732419\"\u003eY K Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5L7TPZlE2n7YhMdxTYZAWl3jZqAAe3-E14g-v8AHSkE4g952hnM2vHJ3yrG0efgHnK0UQwgnzVFDvoP9LdMRfCvWkJcWbNxM9gzy8_DQYbd_OTMjU9fuR8Y9xxdydEDlrC-dpINB0PgQ7e_to45AUQC2UaA3wfCkty6XhIJHPc6vlZL6USmRfOMoqc5Miwcfk2YzrXfZFuJEgIYnLRNskBYFBT-jxDjH7Zk0ovZVq5EEB6WSHkJoGZM73ryNkYs1O-TGoygfuTNbsB4z_sh4B2waB00L5_MsmYjB1HU24A3eoEdL3zFD4e-_rmm3YaTEF0kJebcTZYIOe5orV20zTVDPscDnSRzIKdSh5Ti7FuaoRBsNDOgHZKmgz1Fl7PvVJjUBQUpyqRa0eH3Lb4HJ6lf7govBs7toq_nmz1AIDZsgb",
+            "width" : 1080
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108737785903768861236\"\u003ecslum88\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4_4Z9m7xiouyvd4qMWR0tPNWGAuumEJIYo3Fz7bTz3QuWSpdmJgcDU8hpgjPsLpLcEpSKk9l9_lHcFkJ6iOWD5PuIkXMZTdu187J8majm8BhIeIxq3MCQ2_lwnvn55gBoNNhXRXA_Mwhlz9Mt7neM6EUcuNMWb6DphJVM2DXQGkqaeUg97pcggdYQwK59xDRLYbzbmxnBwN4UrIg5Wbe6z9zo-4o8HffOeSkqkNgPDocFwKK35vItAc9LGgU8zQX3JzgMrVGDbFy6_Scti4iaj946Uj8uDu0PIuCyEgtsZPPjCch0Hn99Gd_QsKEYObMwEg0TOWFLS4DzxxLGVN1DCa-qYNIy1dRrQqOfTIh7ndpp6ZCjD2ihDIfLrennx06bmONRscnnS2TIFS8Bo7EOx3pzwJbHR6RYKMH8M-OesGAmJS3AF1tnVwV2ozvP",
+            "width" : 4000
+         },
+         {
+            "height" : 1402,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113702804301697732419\"\u003eY K Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uTG0dqwr1gdAZEicnkC_wX-tNpaY0AAZnirvj5Zo-U8ZShSp7BYwu4YZZRiQIAafyjIgbkwKk5vCEA1N78qtPDpi10-ZZJp2tGYyWO_v0ZG-gdd2g-i8lgKgBcCiSlptTrvQznvKBrYFVtyPtxmYWgildhKEp4FhTL2clttl-GNPxDmsXieM_lEFCAsxAys5nhk8Y5rC-gC7BJkruQ-OorCDnx9GwfO_AfqJINBQyga2AvuzXCK__tlTkGg77s6D503eZy31WFmJhefLobflFWEisSYFcreu_c4gKJCSdSM0lb4RRsO9dVOodnB_jF2jZSEs1ZTP80ekhMQWV9ZfJ6gpNG7KclDL6brwVMwpXGnRSuXvGT7tvCcwLTjRjHF2Qp4-PwEwRMlGkLqK5LcBt3wjPVnfYWcoxSlptrrVRxaA",
+            "width" : 1080
+         },
+         {
+            "height" : 1394,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113702804301697732419\"\u003eY K Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uWsaTwin7EasyreAChZA7DqGBlhv_lPg5XaWBMk0eDb6k-3d2mIos2BfwqBInPQBWplPWi0HjEEimPnQl_c8EL6mlY-nuXRu7NZEKrUJmVgCgHzoaDOw-Hcqg_eNN5wuctJbywDuxV62kiumPA3GUU7FwSvrCQ0JF4BKvmoQLFHLETaKVBUQBa5Hrw7TQ4GbdXOq-NWK-kBn1kSqaaXp1vJNzelmPO7yfhCMkzHEZcOJj9Pl6MyYzTK0wfAR6BwfBe6zb-bullWr4h7rMhMRLwgLAJ4zvo_lQ36BTp2ZoCbVqdBQkD-dZef29s4h-ouXm1Ac2_FtxfaUtgNOXLRXj4_va_GwE5kYEEZv5wtQKkYpBrYwXgLNJA0dNEsyyFIVRPNASA_9rKZI1WjYFhS8xhkqgdWnjYev1_znAmll2CXOgs",
+            "width" : 869
+         },
+         {
+            "height" : 820,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113702804301697732419\"\u003eY K Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tzyqDUWspN_Ei_uLP70-L-YH7qc1SlbfHtriD-4N-KTzSy24TPtkepp_8hMHIi-6yla2nAnrkjZh6eiez6CCHWH5s9dz4V-6Y3YAIryShKVrejvXf9xD_H4vVICcqZniPc6zHrhFbkXl7FweWEqDvMBL7OPUK1FEWgngmP9s_i6_1HEPBqRsqmTScsiFjPMdOtybcpBd1sq6Sy-u0I6cf03HXRGuqsS-CY0yzg8WMq8YJaZ0orXfNscq9iOGcwswW94GDo4oJz0sT6jh5XwFsBLjeVJdBDz1e_VHywms0SFXmzLQ134DiHIGysIBob6bRpCzv0wvbkTCscCdlGRQ7m_osC9e0DSlN-FJ4WYJa9dcq1UbR4ZyT9AKx-xrUpLnBIgBw7PSl19bNhUh-TNfmc89mcv0RPbAybqaVxSF9HCw",
+            "width" : 533
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108737785903768861236\"\u003ecslum88\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vxf6oZPokMogSibLHwlN1I35kFzFFeKmWv87cFfRVxQ-e5dWlkkaWjnOLOk17r_8KcH0s--l8pjMqMwTt-86WJRb-VBrU01DKNSaHJQu8gSLU5mUa7q1un0lAO6IM7a-vRUXM0xYKsUWKM5Ls1pQDbXgByT8EpJznImFUsTktgu9uLc4ZGjoObzpwwAAYpJppM7UnLQDNU3ZP2VgMe8VEonWzbRoQobtT-9N2p_evO5fUX4wlLnZlmwX6N86wqDWTU79gk6OUW027sv8l0o7FRF8weJEjnm5nm12wOQeMRk_T3fLhuErH-yjXUXxKPv6yAszEvm0gZskksH0oE7bWjR7qj-EStNZQJDhAjNXi64fPwDNHrsQ23fsH_a429FalQDqvXjSHMqaNe0-V5ij0ttXzk6Y8qyCptWoQpXo5M1JFQ1e9ggolXkTltHClD",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJ12OjyqkLOjIRtiKZcyl5HU4",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5628788328223023798",
+      "user_ratings_total" : 6
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,50 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Sungai Ibor, 71400 Pedas, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.5920805,
+            "lng" : 102.0503712
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.593457930291502,
+               "lng" : 102.0517066302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.590759969708498,
+               "lng" : 102.0490086697085
+            }
+         }
+      },
+      "name" : "LANDMARK REMBAU PEDAS",
+      "photos" : 
+      [
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109347373913738095674\"\u003ealaisutida Resources\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vzVbTiECNOK3H_Y0SkCVdYJmTgn7kSqsrwR0TC8hxgFlQrDxgExaqRiucuhAlb-7v2SLAEUplk9tdkl3MPklDBXS4cR1jCHDlZLWOomLJcglryj6BE1r4I9k66DsvD2ZsLSnP0kWs_BQP6x6dx-dS10v0dGSL0zyNx0yBi-g-i3tlr3F5LRszJtk3MAH1-i3-feWbUCZrDlqybKInlmH963ABlMMN4Hovhz7CPtg4f5RHOe9Ts0XIZa9dZ23Nhq_7-XaHsIUqq-SkmFQrbM-v1BdmDvhMd_jCsdv-gY5f16h5wXPNnjUy5PAMFjnyV7DQdl_HswNtzxPCD_hhHpOjzVaRRNI2QgJTu6mhzqLSX1dW8qtlMkArrRTakA7RIAygLZ1UFHRm58yVQIs92osL2-fgCFeQ3KYp7mKwwwx7ortvaKVXm1yXlutFwNl8R",
+            "width" : 3060
+         }
+      ],
+      "place_id" : "ChIJ4bbNcgDjzTERM0_FQ1xqFqU",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=11895812410252283699"
+   },
+   "status" : "OK"
+}

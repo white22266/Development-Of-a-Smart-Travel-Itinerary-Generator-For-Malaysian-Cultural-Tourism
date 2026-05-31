@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Seksyen 14, 40000 Shah Alam, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.073281,
+            "lng" : 101.518461
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.074644580291502,
+               "lng" : 101.5198760802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.071946619708498,
+               "lng" : 101.5171781197085
+            }
+         }
+      },
+      "name" : "Klang",
+      "place_id" : "ChIJSxzDbQBTzDERi379ozUD9PU",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17722793962529193611"
+   },
+   "status" : "OK"
+}

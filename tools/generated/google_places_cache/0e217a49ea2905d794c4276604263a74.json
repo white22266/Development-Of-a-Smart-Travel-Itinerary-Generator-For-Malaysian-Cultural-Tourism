@@ -1,0 +1,83 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "90100 Beluran, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.8906379,
+            "lng" : 117.5521251
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.891910980291502,
+               "lng" : 117.5535652802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.889213019708497,
+               "lng" : 117.5508673197085
+            }
+         }
+      },
+      "name" : "Our Lady of Fatima Church, Beluran",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: Closed",
+            "Saturday: Closed",
+            "Sunday: 8:00 AM – 12:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117676682429343559483\"\u003eJuwinikh Jupain\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vMdrOlTPySvKwgyMIBXSzS-4xY_4bEnlPc-aQLVuesbKb-R-nw7t-C5o9HaAGgRlS8g2IUlqThF8N4oU9QN2qNxIQq9EN0thjHF4kqrzqXvqCw2XALxpP5KD5g26C6Qp3qc3xi-GK_t7EcWB7IzE77i1EGCNQNrsW_iJkfBGuextS3CrnabaCngT5XPTY1V9wZuEFs2G5zZ1tekdMaZFc0FiHBsjCXnPrXwRk3BXOFoMP3z2SPqKpNvMMg-RF1xMeiF0gqItz4Uotg8icpKZmW-ad94iJ27moligO_tvjClTQkRLNA3uwm4XsIqPfsAZaEm1Y6pQH3z5z1xl6XO1hQQUJ0rTbgz2GX7g380lw57Sq4uFMbdRmL9ftFr5nMRaIinfFbs3NcjvUOtCSCloiwVU9WsGUiLe_-GtxJi6utn9bk",
+            "width" : 2560
+         }
+      ],
+      "place_id" : "ChIJtyMRNsE5OTIRkajsZeiYiHA",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8108899252990421137",
+      "user_ratings_total" : 9
+   },
+   "status" : "OK"
+}

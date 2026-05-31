@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89150 Kota Marudu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.5053999,
+            "lng" : 116.6644343
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.506732730291501,
+               "lng" : 116.6658027302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.504034769708498,
+               "lng" : 116.6631047697085
+            }
+         }
+      },
+      "name" : "bastop kg sungoi darat",
+      "place_id" : "ChIJy26hWABFOjIRLB1GRrLzym8",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8055518830514281772"
+   },
+   "status" : "OK"
+}

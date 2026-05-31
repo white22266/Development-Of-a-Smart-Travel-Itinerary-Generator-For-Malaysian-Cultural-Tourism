@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "32200 Lumut, Perak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.1989223,
+            "lng" : 100.665841
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.200274080291503,
+               "lng" : 100.6671899302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.197576119708498,
+               "lng" : 100.6644919697085
+            }
+         }
+      },
+      "name" : "Rock and Roller ( Seri Manjung, Perak )",
+      "photos" : 
+      [
+         {
+            "height" : 720,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107520690548781910053\"\u003eAzran Mizam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tB5-MYN3S5_H1Qito0xS5QGg3QlnZiSz-aGSXSd7bjZPJmPXRyPGVqeWvynmCEcgw8w6NhfRyERIvBFOQTUGPlb3HT8eyUo8KDBpTDblAv6pAVjgPWswcTiwdtrmUHUl8Dc9QxAcfaPpd1sZbnFInkp5zEnfmhLNRmLn169Xqoe8zBGaowamEFPI1GoqFClp9oIve9c3mUWlzpqrgMEnaZFoxDJ999tp5a3puRIx9BqQBzs3h03x1Udrj8BbK3ETJiWZhneBOk1-5Fc2aaEhpBilsUP6EHenC2T475XdROBx0PiJBTDHRYELekFcw7E86ue-QEPbqxZMhUkJgZGmPPUHD6lZuOnVy69OanbQa3fanB0jwvzfbCDNo6xUrFg2Z9cB1fYS8igKqB7LNqw4oxYUQBoFeM20pggvYdd8NcsD4y",
+            "width" : 1280
+         }
+      ],
+      "place_id" : "ChIJjVYsC_0tyzERVtZ48udT0fM",
+      "rating" : 3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17568915877019571798",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

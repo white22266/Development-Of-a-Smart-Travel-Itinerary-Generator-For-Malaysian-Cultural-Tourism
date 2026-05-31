@@ -1,0 +1,1181 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-v30dr7Rq4IiPZcfd26NhE6nqdBfbF8wcZWmiEjDxfi_vbQpwyXEB9Rt7Z4FghRXKkhr3WUG9j1O-75qqJqi0l9aygDO8hGm0sXLlmTmzK0Njy0ZdORvnkLhYOx-9hPzXxgnP1CjTPwQq8lhie8KqGdMp_aYDWPzoKMOUc5BXEHhr7oF1mlp3zyyV-7xmHjbywAU1y7RTPhtevb9FpIXKobEi_X6iVcLwbeUXvr-2tXHXR2xidy1_oBxuCYuU6fNSkbflOhDfi47UPrf5J2JdKfm4fKC313AdXpCyux1UZuFdEAAih9ouhdJ-h1R5XBAwri7h26Ll1p9o9Jvo9AkfQvblnx4Ik778g_ogxc-ggGfgQXEf4E5BoFqVfVlWmIaR1KhbUutpZQsxCn8NZeXcTdlfDsjsztBYW1_JnOHAOMuVbuBP4L71vgc4pM23bmNhywpH-33wX7_eQg2cnzQHbnaVi8Coeq0mr_VXKQAGo7CplpOp_MlK48tucp9NdgIkutdGDla0UBZvjhQvZnNFNc8ZdFTIzzto-QSffyF2A4QOYCz6Dv1hpY48IWD72fQqKbC01oKjnQNLJ2mQ0mnScUgAIWF73tYeC2L2ptEyB1_8DqgWcIYn9OfD92gG9DiHrW7NljaF_bLqzHTySXnuzKuZ5awNYuOSuzVxeJ-VoCCawc9y835wCzgVE-zIqkbeh2FR5yBmoI8t_j-lYtIKI8EEbCNeAhKoEJxT0IV-a2Th3SbN8VdC89jKwuCZw_K_AxvkYJ7lqci262KLN9tClnVL7h84HmuAAwx0ycA79si3hH7ArhfDmZHcgf09eKbn7LtS8FJ84",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasir, Jalan Teluk Likas, Kampung Likas, 88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9954925,
+               "lng" : 116.1082195
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.996832780291502,
+                  "lng" : 116.1095913802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.994134819708497,
+                  "lng" : 116.1068934197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Bandaraya Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113151283152419518959\"\u003e서진\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u1Btn5OULarY3nC5kUQbS49EoZ4tph5DpTAinyoCL6qZcjCX1XzYTjxV7EBTAHb_XCgEp8sFIZgcKBGlt6XPGWciTKwh8XR0oM3uouptugFBupiYdgiXwIHW2LeUAGLgn8_kfWWedTyJqXDQXVzrbaGtmYY0zwgi2FCiq1Yo7BTJBdyF3-pU-Ipp0nFSL8WzgUkizwEZSE4IpfORkyppK5Hw7CFCBmUuvIzydCwfWNj9Ru4VzoD0B89SmhM3EHIjV3eN0zmQb-LrG_piIkCy8P3LexZESCE9hdtFp_nhRHJoPg1s2XykoqsthyRKDli_gFuByiIxcZ5P3fKL3fZa4i-vAlxvn6U5qKE-CRa8mJJa1MCzj4TzHJv-aJCO3kPO4t57DvMRK-7jEnUY-An_7x1OM2x4aADKBNHpOdN10SQOWd",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "plus_code" : 
+         {
+            "compound_code" : "X4W5+57 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX4W5+57"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tunku Abdul Rahman, 88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9599249,
+               "lng" : 116.0671212
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.961133430291503,
+                  "lng" : 116.0684115802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.958435469708499,
+                  "lng" : 116.0657136197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sabah State Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3382,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114844356429605351994\"\u003eZENG PhotoArt\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJ9n3JcDI1vPpniQt0GUOapTfKctIPI0fEbUC2iefJBjPaFXCgd5bOZB_v68BDtTTZ6P1ZYmRvc6xDkMVRkY7-bnUweCX4921Mf4SYdei7qpGqog0AI4wtKldbMap7JTgVhUS_tPhycyHQPXV8gD42X1YfqLl6q5RUlL_ELNIHoQnDIJxC6Fq2aB5bczYuq67u11oVeekcO2miY0kdedlkNsOJb54NLQZd9du_HVDJiY1bRNme60Ch7GtM1WctIz4gqToM0AjcOfLkIop1h4Lt_c_Z63k47IprJkYe_CBasIt-FM_IUAcgQ-l7nccWYRqdldiga9TXMdMkXaXMpChs2kGIHs7fGLNiddY4zFtS6G84xY120s7dyX0xdlrb7flT-9msUzmP24Z3FD7BSk3h3MlskVbghtkXhclEv6YswA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "plus_code" : 
+         {
+            "compound_code" : "X358+XR Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX358+XR"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3288
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Cecily, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8338068,
+               "lng" : 118.0864292
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.834726780291501,
+                  "lng" : 118.0872694302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.832028819708497,
+                  "lng" : 118.0845714697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Puu Jih Syh Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104695276677491999186\"\u003eSteven Parker\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sp7Glkbxpyoo5IvQYji6gy-cKXAb0UNUK9ClRWPabW0cO4DZHi3asi0OjuPQAMQN3zJOBZ6YtrWmpeWWWAu13JXNiRBFaqtZwtmSOQhk4nu2GE_yjPLRBUOMat7rDdQrwZ8znQtS89rfwLANyxArPXmrFSWc-Y-O0T9AIP22EUEDd0mepCyHYbAUv8SyZkb-MhZ7XhoAPQqkEZdRle7KMYIdeyuet7iezNMUtIeSrhO7jnVtCNBO9oCGEy_TMzrfeoLNKy98FGDRbb36oAzfR2kpeNPKsXC97000943-RtrBNOeB6k-XbRWU0CeRmOJHpezXOAqUZsx7woiHwpbZ3O53cftDHQK2MAy81Od_7A4Mu2KxanEuOKBPeuJS9YUReSXmSypj-qRDLrlzdCdXudVabuLgQzDM5DF4lj8MK5aQ",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJy9A3punaODIRQpzlkJxvepQ",
+         "plus_code" : 
+         {
+            "compound_code" : "R3MP+GH Pusat Bandar Sandakan, Sandakan, Sabah",
+            "global_code" : "6PQWR3MP+GH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJy9A3punaODIRQpzlkJxvepQ",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 802
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89100, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6839634,
+               "lng" : 117.123054
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.685376430291502,
+                  "lng" : 117.1243126802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.682678469708497,
+                  "lng" : 117.1216147197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja PCS Layung, Pitas",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103356338788213316435\"\u003eLyne Linsai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tBaHzHa8tkfnbdPKYR-N1VLrydZyBt1TveWSdLFMmvcziKj12Irer75tmrirxfLR1l6nxWzAGcfFY2S8G72eN7GGvwyB5HaFAGUjQxkKjFAccP8FdYtoUPqP7Z-K-NPiOBRKpK19YKeMnHHI4OXN1TpYcl7zUK_9e5Mdf5envqan1D-Z-5_g4QVeYQRDy_c0suBg8_xKtMM3EKT4hVcwrlsahzLv5TTycRXplglf4ZuxhjNAeAO8utpC4iw9fGbXsA5a2O8bxMolZk9b-3iOL1svVF4ZkmN0pK7bJlfBPJ0EPl6BHFpbfpZitn0W_SnxM7kHEPVGPI8biNTbxcU9oWv4dIaoEef3OAnUdSNS6ptj4exiqXDDSCM3ogPawUP8G6XmPGRHsDu3lQ6TNKHFVBSca6yiAU7xj9cm-Zfn01xXFU",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ_fFWfBkfOjIRSlLzT6l2zrg",
+         "plus_code" : 
+         {
+            "compound_code" : "M4MF+H6 Pitas, Kota Marudu, Sabah",
+            "global_code" : "6PRVM4MF+H6"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ_fFWfBkfOjIRSlLzT6l2zrg",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Usia Bandar, Bandaran Berjaya, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.979184999999999,
+               "lng" : 116.0764256
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.980749280291501,
+                  "lng" : 116.0776772302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.978051319708498,
+                  "lng" : 116.0749792697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Usia Bandar Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 570,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116035491432860806164\"\u003eMr Sumpit (Belalang Hitam)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uoYiKNT7mwadwmUYpFBSLZWp8eCAANIfdBYK7xXKnwKChj4YdJQ0wm_o1HVzuGb3V0Qb2p0gKGf7nGT7CxQKNzCLNFs_5OTPmWpUcnYiUI4rqC3QIWCv3Jyd9H1qfbBFDrWJMAAlD3Hvqwu2wpqOVpHE_pwkBa_EePCOA33MlKUWVzk400s676wF1W78kiiOMyFPel0J1M7GafFW-OCRlhXSVNFtNCJld1xDVlxQLqMwLvWyUX73wLl1fALT8Ls-PGi4gc_XWU4H8S_fnOyEsUDvmRzkbJiIiBIsZmwaxCs4lQt21Xn5qd_nRrRDfoRqm79zCsE30uMwJzxEE0E0xyEBFQKR1HPxfOlkUTZiHIPDve13Q9UbAwZddIrnPlT6rUMmwWMYxx2aZGwiRHTSLfvOHwpU1if8S6VCSDjfiqIumK",
+               "width" : 840
+            }
+         ],
+         "place_id" : "ChIJt8PfcJBpOzIRCb70AJoOQYc",
+         "plus_code" : 
+         {
+            "compound_code" : "X3HG+MH Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3HG+MH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJt8PfcJBpOzIRCb70AJoOQYc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 196
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Urusetia, Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7104912,
+               "lng" : 117.0324502
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.712086230291502,
+                  "lng" : 117.0339583302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.709388269708497,
+                  "lng" : 117.0312603697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Amin",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117676682429343559483\"\u003eJuwinikh Jupain\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sPTSLlqbwB8eTcm00XSdM4McDw9UxBhI8sJxCuKCZVV2uO14lxJv0EG8S9-TvddtQJ2NS-F1zELM5XhKmRriEHukRIJksycF-AUM0BSDlbj0exLpKbY0pI3lyczz3bI-TFGhsaJ_AyiHjJTwvvV6xkc8oBH1v7xF-lcHZuUeHkmqSIBIM89NkjdwVQEM0eDIyVJWgQVREo_ifGxK8kFYP55Nws9B6mA9mDiXHZACPnzPGUGLv-NU_lTB1OrtPe2YAlBGru5lp_AfWxs6DKUi96klkSYmRyPLPC0fhj9gsPGTIB2KsrrqVMQoHp1mb6IfGe2lnb-yDHnQJHl-J7Ek2KxQdEb3jxA1pjxHSyRgJuTwQoUaLJ7vhSIIinRojURbkSW8OzalCPFv0lJyIZWHqyaX-LqIQRruBNZ-uPhviikQ",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJy3Kh_38ZOjIRKpgXJzaw8aU",
+         "plus_code" : 
+         {
+            "compound_code" : "P26J+5X Kota Marudu, Sabah",
+            "global_code" : "6PRVP26J+5X"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJy3Kh_38ZOjIRKpgXJzaw8aU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pitas, 89100, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.700704600000001,
+               "lng" : 116.979981
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.702039980291502,
+                  "lng" : 116.9813174802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.699342019708498,
+                  "lng" : 116.9786195197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "ROSOB PITAS MANGROVE",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104724012967656289502\"\u003evv v\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tlG53qqmUJxap8GxdfSKRL2BSYZfSqK7ItnxQnxTXXgPvXQA9utBbbIH6qm6rKjJUioxy5vFafOcoZCp9iqNUO1DKrQQ4xagLZynKcnTpi56c_i_pWc4mj_1j1ffdANj_tiHIKrKKF87mA6naLn_rqg_kiGDMwI0Ni4hc8PpQWAm3jxZ1Phq998hQXEED7Mp35Y32GtkErJQoY96F8Ux71DhCq8gFNWgvQfELQzHder7pPOXtYr17n606N7-aexX4gNVzz-tDFuoP4EjmrGwuTfHFPOiCDdAR0wnmDLBnZFXDwJb1NqByjo6S95i9MT_40qUXzJEPTyE5nNqORPKjpMa-iKHqtKXW1dgSEJ37bG52M_GnFDctCGaLpCd5KMTvRjNUXPzZb-p1Of18wP7Cc4_p8KkjXXEjulDVqVjA",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJKxSR124XOjIROdTHoeUNCs8",
+         "plus_code" : 
+         {
+            "compound_code" : "PX2H+7X Pitas, Kota Marudu, Sabah",
+            "global_code" : "6PRRPX2H+7X"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJKxSR124XOjIROdTHoeUNCs8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 32
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.9583051,
+               "lng" : 117.0600846
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.959679730291503,
+                  "lng" : 117.0615456302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.956981769708499,
+                  "lng" : 117.0588476697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kg. Malubang",
+         "photos" : 
+         [
+            {
+               "height" : 2610,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109946912354196853388\"\u003eSham OSMAN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tlbqKP4ZSNVjyTd0g8aqERbKj-aiMpcgwbNZ-InGOeAB17VbrFc4GthdDfJ0qCzgDXoVSg8knXsAw8wvnepdZ49aNM_MX9HwaFOFzlBa5KicC9V-4s7DvppuvuzGsZobHDSORXfs3VqnO9vt7PSSc_1AGai-JDDWa4uN2vqFqEEwaE_WLb88DqhfGuyZyncmeenKDTZ4sdr40l22mTvGNXUoEx7i5lCT_Yh8gs0H1PJlFNr-pgBp5kp6Ees0u_r9Mp9BdA1Vj3KPdWZme_UZp1dfCKfo7Sh4Agnr7QzZRPcgKzhe8p6c8_QnydRATYok2620nm8viOj6YMBTJ0AK9Em2X2c9CEv6SpTHr5iXX-ex92MawiI8nzDc_VD49u4tRxVJVCESibxlBg1I0iBmxd3_3V2Uv2BSItmp4yzroywA",
+               "width" : 4640
+            }
+         ],
+         "place_id" : "ChIJkyFCV-qpMDIRYGoSawoEVrs",
+         "plus_code" : 
+         {
+            "compound_code" : "X356+82 Karakit, Sabah",
+            "global_code" : "6PRVX356+82"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJkyFCV-qpMDIRYGoSawoEVrs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 40
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.705881799999999,
+               "lng" : 117.0309363
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.707209580291503,
+                  "lng" : 117.0322852302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.704511619708499,
+                  "lng" : 117.0295872697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pekan Baru Pitas",
+         "photos" : 
+         [
+            {
+               "height" : 800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107356928653786401308\"\u003eFrancis Chu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vHNG1stfKr1xnsNU2SAClT81R3IeKvmTilUNdylsfV1D9PTKOLJ1clPzZf6VWrwKc3mdmHO84oMrNtGQRwMeEnuooUjFpZDvqKLDWvX3pP6IfFV-VSNNPrmcWoYvhx5E-B5DH_RcFOHquDHpS8q1Pi-tK0j9MTDNJg0VwKwznwqrc-l9eUZdGC-caS6w6eQ9riAznnP3QVGsxqXUolZ3Uenv534TOIIM6jvmcdPlozI6hDAaL1JjHS-V3CuVecqjIUbAZSLrhEcK_RMB3RSjHdaKjSsJHLYigEJKg5s0evU2YqCxRPQjx5CNF5YLhlxuLTUnZO1XagDwfafoYOJ5eyZHvGpwBlmC-DBfog6QTDQGmc-YCAE7LZfaetKBT73AGMk-fDpdLRjKrKUF9vLtsQGui_apCJstq1jqpvHhiqiEgB7RvpZwu78vcIaA",
+               "width" : 600
+            }
+         ],
+         "place_id" : "ChIJ67tJgagZOjIR8sgK0_-C2a0",
+         "plus_code" : 
+         {
+            "compound_code" : "P24J+99 Kota Marudu, Sabah",
+            "global_code" : "6PRVP24J+99"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ67tJgagZOjIR8sgK0_-C2a0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 63
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sinukab, Jalan Kanibongan, Pitas, 89100, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.645683699999999,
+               "lng" : 117.213622
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.647046880291502,
+                  "lng" : 117.2149003802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.644348919708498,
+                  "lng" : 117.2122024197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja PCS Kg. Sinukab",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114879647703904760356\"\u003eDifliks Lik\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s8t0VrowV3ce6YpE0CrNLzdhRDK87slpXA9yrJNXwm46hScXqde2kTXcYCumeN_Dx-TWa49vZh3OO-xvK4-rqhbTBS_uHDzp-bJDNIDxLqkGznG_zksJoYU0N3Tz8CSYLXYss7eIYez4xkFb3Mga5bZWiREwzO8_s7_ecCHQk2JoYbQi1bGxZSfckMfpMCUEK9Bj41DFJNjF17Jq-NpegxdYKf-dZLMSX9rkMf8VCgifDbhi6YgMHFeKnm3ZMqsAZMpK3RognELVGTebqsDO5ZvcNTl_E2_eyj0qaILkHPngVOkFWKzx2wDnDqZbiSocnJAhc0Bzi5mFPnwTr0DpFVNcoeSb92hK4rrWx7FMrTnFoRiSe4WLCC5dhTtSumjLWdTU6w87YUtb48PLQAiHNbtHc46Q6vu8d9Te6xfmlRmg",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJbSfYQBn1OTIRi_WFc4xUnNA",
+         "plus_code" : 
+         {
+            "compound_code" : "J6W7+7C Jambongan, Sabah",
+            "global_code" : "6PRVJ6W7+7C"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJbSfYQBn1OTIRi_WFc4xUnNA",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Urusetia, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.709745799999999,
+               "lng" : 117.0324478
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.710882880291502,
+                  "lng" : 117.0336554302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.708184919708497,
+                  "lng" : 117.0309574697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/civic_building-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/civic-bldg_pinlet",
+         "name" : "Jabatan Hal Ehwal Agama Islam Sabah, JHEAINS Pitas",
+         "photos" : 
+         [
+            {
+               "height" : 1440,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103896317063282336745\"\u003eHeymie Warlords\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0DTuTUHovMA3k-EpNrbXNYh4xi0QpGoaBbln6JmMxzzFXsLr_YsMUsJTYNeeONrzsYJzb7Acm2HPty3oVAEIkq3vF2L9GTDuY27ZKfCjsiliwDv_UgcHz-DtAlrYY8DV517kA52PaUn1s_7CO5sA_DKXaBXqx0vPlQnrwgbV3YyogiGEzkNtYZSNFslh50Ufqu02RPx7eoXapUiQH1L2dU8JoPTrRiedlrsQBOz4S8CIy0ES4GKxwGUEZM2XHYpSQzawX5LcA6quD-UqXzAhRFFXikiZKaLvkKiBCV8qyVNnyvDHhcCHoPo_1OkzddMIfRTIuvuqaa1-Bv9wm076L-VYFxKqeRsSlnkYFXFeuXgu0g4S3SkCoA1PCabVsO3wEjWOhctolv8sJvYP826IxklH-rmx8Wx59--nG9jy0DQ",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJvx8LX28ZOjIR1VyDnEN1Lbc",
+         "plus_code" : 
+         {
+            "compound_code" : "P25J+VX Kota Marudu, Sabah",
+            "global_code" : "6PRVP25J+VX"
+         },
+         "rating" : 2,
+         "reference" : "ChIJvx8LX28ZOjIR1VyDnEN1Lbc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6181138,
+               "lng" : 116.9310847
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.619484930291502,
+                  "lng" : 116.9324816802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.616786969708498,
+                  "lng" : 116.9297837197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja Di Pitas (Church Of God)",
+         "place_id" : "ChIJQ8OXImE9OjIRqlp3WehTSwc",
+         "plus_code" : 
+         {
+            "compound_code" : "JW9J+6C Kota Marudu, Sabah",
+            "global_code" : "6PRRJW9J+6C"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJQ8OXImE9OjIRqlp3WehTSwc",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "MXV7+QW, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.694388399999999,
+               "lng" : 116.9648106
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.695765830291503,
+                  "lng" : 116.9662517302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.693067869708498,
+                  "lng" : 116.9635537697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pitas Bay View",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111127390081517472203\"\u003eFred Raymond Kisel\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-utz9paykC4mLCdbQUYpU8cHFk0ukfTgxAODRXldXXa6R3zMl8XFAJtT8BLQBf1K6M8Dba8SxBwMQzEBa4kMcTadQlw0PkVfunO8h12OQNiJ2jqSVjnXeOJeVOiqfg5OY0r5ARUueC3PBdOBGHPdofYBrvo4onq0NvcuY5DMhpN9DEfgNN4sbArZyLySSz05lSCThtFJTdoNB4JGNJM1N4y-VOMTkvUPLkB8vmCmoMxPlIBmgDXNCWDQgb2viH3RE5WxG14wmzs0Z0yc-bq4sTI9KqXngCXNyf2Jb8tspZX32ogCNUjvi1yC-FZmp60aWUnJwApCISJW1Jj8Gs8MyTI-s6axItzzOSaCLpXwzrzB0NVFIRgym2Qtk0MeNRGSfGx9mj4iZmxR4qSMIvfj1Qb6_MYe7hLxJgb4bK9bp9REKM",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJv0zyfqcXOjIRoPMmdh1dKEY",
+         "rating" : 4.1,
+         "reference" : "ChIJv0zyfqcXOjIRoPMmdh1dKEY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 178
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bukit Piniapat Kg Dingai Pitas, Pitas, 89100, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6792718,
+               "lng" : 116.9751565
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.680609480291502,
+                  "lng" : 116.9764775302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.677911519708498,
+                  "lng" : 116.9737795697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Piniapat Pitas - PINIAPAT HILL ECO TOURISM",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104724012967656289502\"\u003evv v\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sKKTUpbN96YqlGXkYkRffzqaNS4GOALCmVfKSSQY8RgFLqIkTsFInrkse9ZLTiS1pyShHP37vm4_V4jJxqxsnnCz8lGQDDnYy4EPngghRTwsvzdVokFy31DnYLv0hNPnwRFbB4HSWqDR7LBMPNzSRWHFGMXF4wfzmfzswQFTnjxerAP_6CYBxMiePZXv3Dru156kVHiP0TthEuQH0c0Kh5dlJhfoWmZkQtEzBFNhcIpdw9Mp7ONSOuDE2ux_0zjZLHZ4lcOqM0LKKBOHAb9XAGqnkLWF4jWaqIW26bDMiUuRRHreqfbG4Q0hl0JXdeYsvuINcDV8oOclcyImWSa9m5cWluT60p4M9bi8Wbnnek_zgqZBfEccJkOj1ZUejabgN1l1CneAe3pz2gW__Gcj8Hm0VDlpWo0Le0Q5RTC14",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJr2xGBToXOjIRDy6X13ml9eU",
+         "plus_code" : 
+         {
+            "compound_code" : "MXHG+P3 Kota Marudu, Sabah",
+            "global_code" : "6PRRMXHG+P3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJr2xGBToXOjIRDy6X13ml9eU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 209
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 4, Jalan Khidmat, Off Jalan Kolam, Bukit Padang, Sabah, 88300 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.953098199999999,
+               "lng" : 116.1053214
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.954454830291502,
+                  "lng" : 116.1066234802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.951756869708498,
+                  "lng" : 116.1039255197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Pasupathinath Alayam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102153073087103748574\"\u003eValli Rajoo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u5h6UPHheQZVtUSSfJQEDRTIgTQWqM37N8qpeliqHuXtSOrX5n9GQ3ai35ZnIHZ0kCyMV83WuYhuNh7z6ECakhtjLyGKEOqDu8ELBxWQGy1yRcn4_qZGxlkhWhcn4lLjq6XVAYz8p7YkOrditHwaQtU1Ho_OLg1GvQpqzZhAxtSMu58sYEWgvlE3KnN3BxHROcNNhC9--EG5p_o-y48Pi6iziwYBzx52tAoJAw69UPySlzgMH-IqH8g1dD-e6gJrTze2_KWHsgz2C1HS7AYn5SEg2hKipSw2h_5-uucyBgCN6S_XcwqBomGir7Go3hCay0145qr9DR_JzJOK9gF6Bw7BUMwOc7FAnXu5vNStH_uKEi1hWGAJOQG1D_gMTtw5TdLkAsHky8b_3T5rbfd3VoMk8nTMnuzhT9CfyxwLhOrg",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJYV8aqUNpOzIRtzIoGXpES6k",
+         "plus_code" : 
+         {
+            "compound_code" : "X434+64 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX434+64"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJYV8aqUNpOzIRtzIoGXpES6k",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 253
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg Malubang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 7.0103113,
+               "lng" : 117.0808838
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 7.011660280291502,
+                  "lng" : 117.0822327802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 7.008962319708497,
+                  "lng" : 117.0795348197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pitas Floating Coral Bar",
+         "photos" : 
+         [
+            {
+               "height" : 4128,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111744260052243268531\"\u003ekongsyn lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sprp-cQyldRDyk3ZyB7O40D-Ndb89p1uoGZhOUlNXJ7INyYEeaUCmC4zkIlAsisHtqZntbGlnsT837r0fCwzXibw7teNiTioKvov7fPSAwWm7URuUN0mNLPXuRladfJh55bL9QhfFvb0650ByyRT6vKvO-iu1aqgucM9clBmCFxuGKv1G6_jLHE4QAb2airgeOkA4rYnZC71xVCW-BDBxw2f6x8HtzjzQhKzlSt-uiar9QySxRPcvQ7OboNTjQOOUONotV-0zgQIjmn_Q44AgpJfB923-7FjlX9bSqNHemgWF0RTwxRCeheQS0aXn-IFIpEuXh8j0HUZIqhzrgAbFRgepuGDanGEWPEg82vvFo-Ik3uHA-WIhvPWNHAyZ4cSThaHCazLbT19o19NdNDddDB7NxmnRnnxguHdLL0tMg7Q",
+               "width" : 3096
+            }
+         ],
+         "place_id" : "ChIJXXYISu2rMDIRdlAupK8JfhE",
+         "plus_code" : 
+         {
+            "compound_code" : "236J+49 Karakit, Sabah",
+            "global_code" : "6PVV236J+49"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJXXYISu2rMDIRdlAupK8JfhE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Persekutuan, Presint 1, 62502 Putrajaya, Wilayah Persekutuan Putrajaya",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9360702,
+               "lng" : 101.689213
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.936832730291502,
+                  "lng" : 101.6911379802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.934134769708498,
+                  "lng" : 101.6884400197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Putra Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101871907543931816623\"\u003eAISHA - M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vNXCR2CHbGaYsrBVFk3fZVI-1H5eWi0V5A5E83nlg52vv2NA_IUFw0K-TxZlBhue2FWmw29fUSid0PtDVGbF_ITJ6e4CR7xbXoFpRnt62CO1eqMn1XuhA-BgtE7fae8uW1SyrFF3OOcFGMxzqeM_4WcI2lp0q7LcOmBJKNg0RompkFIKZYPILSTHzw1sdYHmlzlLORFKt-aLfn7Ym2oc-99amowqOdxcA8vF6AWBm5IweMZoJwqMMWnyxtXTe3UAOxTFdlRKKYVOL9gitGr1lJVvDjQeu2pX5O0rhTYGaHq2c-3doazGxGlYqRlDuDp43m_h1vjSkpPQwYxLfvkVQT_mfOV3pIj3dHv6nifgtbeyOtPW1etUMC81Vti7e_NBvyB5O9tH-98f1cjB1x4U7wkMgqFiIGVqyT-SMUit-dnWAW",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "plus_code" : 
+         {
+            "compound_code" : "WMPQ+CM Putrajaya",
+            "global_code" : "6PJ3WMPQ+CM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 23924
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jabatan Agama Islam Wilayah Persekutuan, Jln Tuanku Abdul Halim, Kompleks Kerajaan, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1718992,
+               "lng" : 101.6710787
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.173105580291502,
+                  "lng" : 101.6730600802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.170407619708498,
+                  "lng" : 101.6703621197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Wilayah Persekutuan (The Federal Territory Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110188376846481365368\"\u003eJoe 9⃣7⃣\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAhgwtNPiWdMpESs--YFlLiBKZpYm4TEb978DFVRRtn0q6J7H8QqTb1Ubb1nECfdnUPrywuaBjKEB9xMXr97YsHdFBqXZogkET6q4pbhXescbwLbodqz2M72aLECJ86wTp3O6o6-CaJ9Goy-aXA7a-e-kDtvuQ_UUiQmxptUm9DbW1OGf2hjnREbYx-jDzCGsQtRI2t18TINKGU74xTBRynFkwk_6iSc1dLo0s8ryX022uONfjQOQrQ7ZywlaWRNA-V0VC0RLfGo-e0eKn3kRoRWy_VDPoaK_FBf5sLGmQJ-zd7xzm4ODIVR6-bPLZh8rF2-KytEzv-aeX9yxBLWFGrIu_4Awyh8CFIjISmZiUQtp7v8T_tqt_KW0yNgdNR_u0FZmiaw-oNr1PmQf3fVR8l6br0pM2b1P7Sqop3kQ",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCC+QC Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCC+QC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7514
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "65, Persiaran Endah, Taman Persiaran Desa, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1219525,
+               "lng" : 101.6876678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.123622130291502,
+                  "lng" : 101.6892546802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.120924169708498,
+                  "lng" : 101.6865567197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Thean Hou Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106009050344640864582\"\u003e山田正実\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUjm_8jXCa7ylfN3yVIQOWbv4JZExlB0XPtJPzYWNmITxcW6xZgXsJ8bBJJT1ZMHskfCTs39RYwOiM8-tOaWAQ9E4BoaGwd2eLg5cuZ45oXL68h2qsN8H7M3KrgoFdRDpUk3aMKk6jF9zG2ybBTtXqEO9EqgQHs9UCvxcmc0_TYfYiVYVgb-l8opXf42y1lb5_-LgC6a-NkLoSm0ENBalJFlzaucvtvLsO6crUo3uBiuQwVmk2eO-9oEQwYKZg6TFtX1yC3aVeVOPXAZzaMA8YtxBM0w2iqdYI5JJ6NnJ3WFTq8W0S6oYkyYZy5OOhpbQuLwEOd6YnLE6r3A5b-pD_YsiGuk2XR5l0LkASOevlBR1y801LPZZ08URZfiHVTVjYqaCOz742ciijH9pUKSyfG3GTF1TO_P_ZGVQ3N-19nv8rtd3jczHiOhhmDA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJqSc-d_JJzDERbOlsCf-UmNs",
+         "plus_code" : 
+         {
+            "compound_code" : "4MCQ+Q3 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MCQ+Q3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJqSc-d_JJzDERbOlsCf-UmNs",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 16244
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Ibrahim Arshad, 89050 Kudat, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.8808497,
+               "lng" : 116.8474779
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.882192580291502,
+                  "lng" : 116.8488109802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.879494619708497,
+                  "lng" : 116.8461130197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Malaysia Day Memorial Monument",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117278611539927035544\"\u003eRed Purple\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tQq8mw7lOG1Gls1nfN57zaEKmc_e4nn_gm2A4f9ujdLLF1sT837B3-QCLK-6SA9Suu78aWo3dCv5yJfSXivm3zW_yA7xRwNsE1fIJnCSBGpV57W---lAyW3BCFmjTmwkfPO4k5sX5UaSH001ZpepL4SdCXRuO3wr37yd4Q8tIcI0YgKHp3Px1ZnzB_7vqNgHsX3nALREyKYqB6sZgIoUyhAFmGy4twPLvZUH6DtvPsyMBbGNk7zHp50-kWgoG_gsrno3dnJZf-JgdSpRP1_VTx-oazMbqWo4wfz2nEtpObVc1PET6B6aK8q8E1w_vIJmBDxvS4gFDNz3Ez5WMQPzdXwG7DcrpCPBcUeUAzl5_2zdkTAjf0tu5km74UTb_nyBflm-9WeJy_hCrb-JC0Ngf-W4l4_Ik1elZI-pw-kF_9hw",
+               "width" : 800
+            }
+         ],
+         "place_id" : "ChIJdW6OcYELOjIR7Hx56-9q8BI",
+         "plus_code" : 
+         {
+            "compound_code" : "VRJW+8X Kudat, Sabah",
+            "global_code" : "6PRRVRJW+8X"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJdW6OcYELOjIR7Hx56-9q8BI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 32
+      }
+   ],
+   "status" : "OK"
+}

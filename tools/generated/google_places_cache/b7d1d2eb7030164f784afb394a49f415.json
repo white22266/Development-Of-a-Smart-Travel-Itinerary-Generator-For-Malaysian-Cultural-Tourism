@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "34950 Bandar Baharu, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.1380767,
+            "lng" : 100.5539433
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.139499880291503,
+               "lng" : 100.5553440802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.136801919708498,
+               "lng" : 100.5526461197085
+            }
+         }
+      },
+      "name" : "Puncak bukit angin",
+      "place_id" : "ChIJf0uDVACtSjARNileR77lu5U",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=10789469937700055350",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

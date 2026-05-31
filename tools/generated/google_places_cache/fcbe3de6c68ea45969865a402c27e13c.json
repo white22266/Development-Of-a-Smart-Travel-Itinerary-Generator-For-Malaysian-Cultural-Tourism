@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Pekan Betong, 95700 Betong, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.4115817,
+            "lng" : 111.5289338
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.412849530291502,
+               "lng" : 111.5302626302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.410151569708498,
+               "lng" : 111.5275646697085
+            }
+         }
+      },
+      "name" : "মসজিদ",
+      "place_id" : "ChIJoRErKwA_-TER3a7w86TqArA",
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12682957494816911069"
+   },
+   "status" : "OK"
+}

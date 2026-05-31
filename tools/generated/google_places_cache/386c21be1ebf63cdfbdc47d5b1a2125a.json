@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Padang, Pekan Machang, 18500 Bandar Machang, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.7655116,
+            "lng" : 102.2163375
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.766864580291502,
+               "lng" : 102.2176867302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.764166619708497,
+               "lng" : 102.2149887697085
+            }
+         }
+      },
+      "name" : "Dataran Kenanga",
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118283669206146121278\"\u003eAHMAD SUHAIZIE SHAN B HASSAN KPM-Guru\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u5eLlIO9UksG1cnTuwEo-ji7CxZ95lqgdVK2YZ-bZsoPNOXQlJtYMyYGc2waLE5aYG_vdc-4TcSuAoO5pLZkYrPny1qYwMnnFVLJYaqU3UywMioWzwLHCukgE9Q5EtqoSuFEnvSQVxfJWFbvG6nfw8ZoL7QnwahrybEWQoNbPMa6k1M8fZAS8YNHZYXdL8DxdwKd02WWQSLlkv94BuE2RaPL_v3XCXaTWape51ZJ0mdxDGo0GqHiyOFZx8U8ziShUhI3Pu-wcwQV-nGL-f16g1ZmyP0E-yy6OGGYiHDDSuetWK1eX_yOGRJRClyIxjzP_wMMCLT8WG7X1v80wgD2V6sTEq4fTUZenJwWKK9EYbF5VUCxGimmASnzvrPnnWe1BtXFqEAJ2ERMphNbcZxO1ZOeJF5ZUXCO0nK0WlsfunKw",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118283669206146121278\"\u003eAHMAD SUHAIZIE SHAN B HASSAN KPM-Guru\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v73mDxpPz4a3FFKU7tKhCXjU4-4sT8DmaSCR-M5Z2WcuMnDJ1NAPMxmOctGBOwWfHhHHSySW56VzxxQ8PgNkRjk0tRhfJew9Ii39ZYS-6XkfHUcafZ2_1JDlGImrX8pyBambMVdxw9fX3rmemmpnyyWfDYfh-6FpJ3_StBuRRzUdsvG1_BtzY8z745rnmUPfRt-CWTBcb70il3jYTUQQa7CYIItE-z7DvGXx04J0MJKOdCidl4k5WrPU29BBMFfYPXGwUlKy-8vAFu4B8cjFtWeqdUMtwoz7osueIMti3J_uLz5PNTTSZrXTyDs7vbvi5KXUwLitQHqRvSjDQqr_5gafcdLnE6H3Uni8D_jlrlQlmpvDSnQzYsxt6ZLTtrATtYAF8bJLMmtdxR-Crkj5cesv3J6OFD79UsyFMVsKo",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJ7ZTtZDmFtjERT7w5wFQYKYE",
+      "rating" : 2.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9306996857219169359",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

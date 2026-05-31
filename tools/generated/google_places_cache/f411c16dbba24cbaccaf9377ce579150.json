@@ -1,0 +1,190 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "No 123, kg adat melayu, 06760 seri banian, Kedah, Malaysia",
+      "formatted_phone_number" : "010-447 6625",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0415208,
+            "lng" : 100.5657529
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.042883530291502,
+               "lng" : 100.5671010802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.040185569708497,
+               "lng" : 100.5644031197085
+            }
+         }
+      },
+      "name" : "Perkampungan Melayu Seri Banian",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1100"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 11:00 AM – 10:00 PM",
+            "Saturday: 11:00 AM – 10:00 PM",
+            "Sunday: 11:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101626124090948392065\"\u003eSnSollehah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sAVM8OlelIVQYR7jHiNne7nZ_Ie2cxhiDlCiQKVel8oVfvELBRbNDXJAWVKD7_ATTsO45z5KVyJZ4x_KGVPzPo0yY5VkBXksselp9_MRtYpvyAhdV5p-sn26NEvfKrhs1zX43_szjt1fJA9kJs1RCbiG5oI4jCxuHeqNh0LtjxlbDUAxvPz4RuVqKko6L2LdSPyOFxYe3si1pGlhwN2XoA5TnfZ87vROKRQ1iMq23x5g1eABjG6x5OVfRxhVgY5fgpnzi1HkCsc3i-5HoOH0l_ByFw60sJkMJgO2tWiysX9Z-SUch6V5EGzjn45lmaAR1EfuyfPlJTIF8ovOSjqG24nCR0dS1mrldV3m5AWf9Uf9IgET9bQVWorM4XijrJErB2ReTkXYbnMocwopETkUH3FHg3H52NLjG4xDI3DOLpmg",
+            "width" : 4608
+         },
+         {
+            "height" : 772,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104140782827869473611\"\u003ePerkampungan Melayu Seri Banian\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tESKt2dJsADqllRwj5rNlYAoOZrs9lSvMj_fczE2q2wT4mFHpr996OpRJsMuiqLHwT-GpbZ9KFhJWNppVnnMjNp3DZpjLqcvDGavQDQbEi9P_dUIR2qx0RdtjOify-14Gr7kPZNJbTInAE1Wjm_0QMH2BZWKACVCpG0QHVyNk8jBcUE460yw2V2Fkqyafgi0bXAp0cMgzJ5FyfgbYjXSkjBMlR0YkKX29ms837CXVzbb0f2X1D8B1ahX3iIvL4Z9i-mNd93TaGE9J29u650NSpHnj8N2I-ISxKccTHAnXD2yCkKnbYQu016x4RavoSTCMzC1sNOQi2WyHFua2h9IqYtka98vm304wpXVO7bu6oQW4KXgq6Fx1FhGu_m5lSV4_tx1ED4eqQPkEPpZqnaBu3td9hdTWr_Xru1YFoMSk",
+            "width" : 867
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103509997679016231091\"\u003eSB Y\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tUnTuP17kkWu2EawJ6Xh1-TO2gLrKroNTDCeDXJkWthoLlRaflXdq8riT2mM88kEz_uLHVOn3wSAjd9LDUhTtFrIDLBylz7orqOqpX4LUGEKSX4CUgLgdGx2D2zfPhU-QELlhllLbaDQnd6oTh5TjFGv7IXc0pIeHqmbGGQs7ISFK08Jleyl2RKPi4T1kxNikpt9i4EGsR7rQ1AbNTTvbFKa04-EusaTJ88zuYQfEcTF2pZsheiyyMixo9YHZhhdsVPNYodYXDVtW2oAwJrrsOqUS2Ejp6SefphRzOoXarua_6xeRNdVb-w_UYmsnSiaDuOXTQvBSEePYa5z4yCvFXnCUgOPpsVCEU7ywtGAGu01yjn7rNQ5Srxlc5E2sVl-mRVSF4ddywuHcfe4j_bqEPCvRNL5gGIZFwEjnnUZ-PcAXGxpkgpDdJbnvQU8c_",
+            "width" : 3072
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111358744727491727183\"\u003eYati Shams\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uqhegLZCaG2AqQzQrekIAO9RNfnVe0Q6_lN866MvSnVDz1FQGhU7090xfBriKV0mtZqwyRa6EqPS-rv2ayK9fzkkDa_45W2Op28zLLRfDGW8xjAqI1PdNh6cf6Paarnz9xN2Iu-XWcPyH9MddQGZekBQZCfZtDyX5u6BshUNL5Ka4RP7s8zfZWv1kHJ-53pydcXyDSxz9jbnJicHtGpQvgc2vvX7sHqlID9sAKSW275WLW9PD_lqbUgWdPNd1PLTTDnDT844uI7n5Jxot59jaxSz3TjdCbOvnlXspm1x7jrv54s7kk4T5u9pcdrwNGPUpXT4IcQCTdat88rILt1r_52MBPsOD_eRGd0w3wgDcKdGrplU3DXn2SMDj3CFfVg2Ak8vNU8rpvGmtm-vEv-kswElccAQ2hjlikb_omMdlHGkoYHimsfHxVetcYQw",
+            "width" : 4032
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105756663891586707161\"\u003eRamadan Dons\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tjcXjg27VB9bbnpyubnFDaGH_RIM0l-dSH7A0KFrD6LJvlc_EwT2Y3SLJAM032RKkGn40CVyRyVzj0v3GcJiziNFW9gExZ57VULr57_TrVPzi_pI0La_3JI3QG5Sjf3G8mq_tZjjYW95Sc8UNQFd2pcmpEKgu--pHMzzBuFhqv_P2UUwoPE0UHjX0lDwvKGHMY_Ifa806nvopRk-q6bSmHn8L3G9bpQHwLedWSm724Fr1K7AtXyUOeGK06jtgAQNJX1pb6i4yhkw3-LyW0Jmb1nvcRyXXI1ZEk0fUkAQ2M1m2DkEDeGrt8OINa6bTS-by3510L7hhao5fD3AvvRKvzYxPMV89F_hZ28lJ4321IYFwilmfXyiRJi-Ul_6LpKOlF44BLLkOHlgPXUY5u45dX2eLMurdyA2ltD1HvzjsRqT20NWiuFdtA3mt3hyyY",
+            "width" : 4080
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102856228218493811021\"\u003eSolehah Abdullah (Nina)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s0Js8O6To38-U1yIxGtfCNUigtb2aRFWkgDhd0GQ_1EOt1t4txMcv5Yj6COmx0AmjmnNaVg4YBkaP99TDBzyWo5gbLYX8UWKsz3nzz-VAeZb4TOpp_Hygi8eEtk0eRCUxpy93R9XI5etfhlfLYW0B-Vnlvlmm6gFSYDMqQTkra3XZPYsGzwxkKvGLEsi7BU9aZjBUhfWc1KhMHToqmWZsDgkUt0HUCWU0GwDeydIWTjDdp6X0FffIPLJTKLbqXrF0crr-YCXwYJVGZ3jlVGQ4uQUYHUJiyUljGlWuflgqtbqUhdBSxcpc5_qw4FYzvKr4_GL8i1FCJh-iCSKzvaO2vwIAJaMkz51s14jFLoP8ERVH7Opm4u5-6HZ77nAZB6VzhcOJ20sHLVxJ2-u09cWUR6LykVDrh0O2th4BZmNWQEvQn404wFelnOiY9klah",
+            "width" : 3072
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116191710154410233804\"\u003etajul rosly\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVMfOT-TgfoNscINQw6WfQ0s-x8sO_qBiN8_bcQ6gda0zT5ereN1pumnzAcdCPUvt3luRd-s9d1bhbfyVFT5jI4xi9RJSRRQuyfGf_mVev1sGfNNXc20jP2WQSC8rXFMMS6cPAGq3xxnRAFq_epSHH-LByrJfdFpouU5UNNDv-0rk4AAMxntG9ybXkwhd_atpkxMd2Lj_BrRUHzHitkb7RhOzdTQklnMdpY36cJ3SRjEwR3Cp0c1au8LeSRbGTw6wS5FXLhbl9ZQg523i37vicIQ1hYeS5xleK9paIyJ6k_bcb9ryeHgdq4hYORQ4C2oWjWfg-6fd6kila1xDtDj1xegSU15d1WyO2lelGnI0TAHNAOvmbRAKPC2wIYKO34KhrSyKTHlYbe9iJsPxNAs7hAQOxEat9rYxqD5F08BNXneA",
+            "width" : 1440
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108473079674436383772\"\u003eFaris 88\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ttu_Lw6CLZZ6_DuPHLC3sZr4TfBmtoRBHczgIWKg7KqbkiQJupmtSHSpnqZb9spedJE-eJIT7UGmH33DnCh1J9PRu3C07wjU02xvCzVWJxwwD0VzZjrcaIPgFxaHNJq1G3Qw6yz9NSFjp4a8UScto5cEjip-78_lZG2NtqHQx9ICYxTjjAQ8NsmkotEcx0LXFNw0wJOF2x5Uj-XCSQq4u1XwL2J0oQ-TBZgJPuV99f0yvZne42TMF4LgEvCglHub8twH5jhh8zBmxFqiv3EeIwTqMsPyJkh-rbHz1jEbWX6gH4ZXiSDW5BVlhpCDL4ZUgbY7l82dS2ILLdjIpn6eatDFGdsP_6COI3KYovfzsPfg92wkbMHe5VoGW4gfFCUovgCN_lbMQV8cAc3AMtr15IE-9Iy3OL_4t69kCVkwq_UA",
+            "width" : 4800
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117649808534128349235\"\u003ePeter Amandus Jr\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ukgCrRYXLdZRHG-j942wChRxLL_pwLBNIPbplqRIOUQFHmBWkvCRbKWw6rvRZAla-cwBob9PSHnLztElbB7Y6JVAk_9T3xA9wIS6qQaV5toGGZCT4j0eLXWPogop5AklMGuiVruOwZYvkRJgT-Bbw6wbVJpl42_7GI4o6SOaJAyQ7q8h1UCcvdK2Q1qyoSORKQaGiQMhImsTTrqW_541zHekA1OSNUBlIWYJWmizEzCLK7_NYat8x-oz6gyfBquSrZX4nxw0ZbjH-rWdrtLJ3GuiKny0m2M4ypxFqcYdNmp-wp_SEqx0ixpFrL21cQKdzhjlpLjgwfErzHWGBqwuWgw3g7bh_572PiUFtAy-8kVe0au08UMkqnxcqF_AIgVUqgKyI_nDdd3lppdwr3Gki86RAA3VsEoVH5e2MvqhI",
+            "width" : 4000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108098653631128336983\"\u003eismail yaacob\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ssoh9qx8h0YCCJrSkX0uN238hJ_pU2IZYYBJFUTHBU7nC4_67k79veeh0ORydB8UoaEIcChXxIiNI3g3y9Ze2u4OP5oqMvaURoQvdTYnkoNyYSJjCJxNoVkQcsIrazovPdboPw52Y5LMDq4u5s6rDJganysd7jqEHayHE_UXg_PcVRu0y0H9uvwz2zOPUMVM5j7Ggjli-qzKgc3H42G2OnAxzwvV0J_edPjA298-oTqUDibuvyQ7Rc1aJ7mhO-rP6Xgbn9x8UJuAcfErp_y9_zOkfT1i8SslXdqqNbMVeIqArET1N3_wp2vtn7lKQDm857ot5-RRTGrBgjS2SR-gWfEN5zC_Ee5Xzm_EHxehbGguBWyWDmVdMdE-_J93cuNtLJmHPon1JNedBIW35K0WktU6wrp7ryhqGWRvfFLLaCkg",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJ35s3xQtLSzAR24vUm5PR7Z8",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "food",
+         "point_of_interest",
+         "restaurant"
+      ],
+      "url" : "https://maps.google.com/?cid=11524097453415762907",
+      "user_ratings_total" : 201,
+      "website" : "https://www.facebook.com/profile.php?id=100057652771362"
+   },
+   "status" : "OK"
+}

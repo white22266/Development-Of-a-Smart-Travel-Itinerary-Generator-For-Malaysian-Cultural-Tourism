@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Bandar Putatan, 89500 Kota Kinabalu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.891911599999999,
+            "lng" : 116.0496762
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.893252330291501,
+               "lng" : 116.0510272302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.890554369708497,
+               "lng" : 116.0483292697085
+            }
+         }
+      },
+      "name" : "Church Of God In Penampang",
+      "photos" : 
+      [
+         {
+            "height" : 862,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104145604942817023254\"\u003eMervin Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t6WdNQG2-uycstHTPgdSvxE-mbjlWZmS5X3ASgDfi0P59BT-IQk7nazfGnayUu0d_LKZL40A_iMwuVVI66hKRrtQx5IIhJPshqdkLBFkm-Kp6G8vGhCfgUWh4wzmzsnGmntH68sngD4stt-fnYmBq2Ji4qVk_vduHLC7Ic8q6PzzjQ1I8P17MbMDz1sTihVh4ORCIBFFAQQ5oqtmpJS3SkCXg6wfHfpu-ECQe7KWJ6HW9XxKyam_0K9734awdkQmpXGzrtCIo-02kuI3naGdYDv5XkJWRQwyu7C8ilGLfaYqqutDmwHpMPSUUzlJ3XUFnhepC4Cweu5PPhDuwUeQyvD6yJL_GRWkDj_awzyPt0cXg8KwpLaDYfy59H5c-pr8_L9x2fgAXmJBUZWMLCiB3Kns9CEjWgtihGmC3ej16eHgheq9RkWy1Wh0ogJY5w",
+            "width" : 1220
+         }
+      ],
+      "place_id" : "ChIJUfnQNoxnOzIRibPM1xlAIPY",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=17735245812323890057",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,1220 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-v2Ig2A1m4VhQBgGegdy95Bmleu8PGrYnA3lRqh4AOTE21oo8ItBYlykiY2jFANQieVweMSARFHJJaeZ9BnFZjHakbcWEKlea7L5MaUlX643eCqwnoe7XT_AFsMuatWNQovTtsAI1pD1FCqNxF9vSePgwFrOWZXtNvlq6V2itYYasdrxdA3SBl3AXGwb9817yvXEzGKpdwjdTU4nv7IpcHRVPqvOsLAG9m4qrzS-JB3JWx4PcTIKMom0Vfd4Ycz6p93cHB75AjxuO7rl4F4CfMs1_6RM3DEF4EQQymBVBiTWiGeyZ9s19dYYKs5sTquEeCPOdNQnhXPQ0I7XdpRM9V9nCx7mFgf4_8l010Hh1UMihXtxOkhjkpfodMd_S6v67QUQdiB-3D99wNtaW6PNfdLtk2j4uS7yVxB_j95WFDEr7jqI1fr_5LJZePAi47Ev0oGUJX0uCwT2fHmo0Bwr5BacCE8r_et4EcU-Ly3NfDXyTfVx7f6zutJ9lAvIWHqhlJW5z8n91zsk6aPY95Nxj3bAdN6OaTe_jhLbZNyP1ybb5GtE06GkHYKfSmH2Rnk-RAy48EFqrT8zxYPDss6f9nS5Mb3t99GzJEH1xuj-kbKE-MvPWhhM9AtKGd6fnbHya-38VJjPx23L4qrxdbHibOqmN6TOU0EGvnTZSnTS0DUZN0udjcCSIKewGARnryXpIT5R2Byw_CdIdtHT1VE_LbueDCfcNrW-XD9mmI8Azm-yAOWdOxZYSz-BIX0_gzfjJbvVoaWv_RHx84Fb0BhzT2nWmt6VtTdg3IOTGkgeEUVe05D8uInoxB7LMfwLHQUHXjwH-9YkSvR",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "78000 Alor Gajah, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3832668,
+               "lng" : 102.2099887
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.384675280291502,
+                  "lng" : 102.2114337802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.381977319708498,
+                  "lng" : 102.2087358197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Keris Alor Gajah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111829112458928412235\"\u003eselayg90 arshad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s229dCCapZ_JDEnTAKbh2SHEooZa9kG51TvQjHUrV8V6kkGO9TLsUC5UMuNVTrgaNPBJfbFExKYRbyuZFMGKBSuCO4Bs1QVgBVPsj7moMl-QjeY1MA4-lAlcTfElG1VstTlhiWGkR12rffm8MZg1OiRSBQMkFMnHWc390rg-SYaYvuwgcrK5U6aHrKGvQbE-RKUVIx6Qk3OoZl-tqPQIheD04G7NyG2xUmOwKJTp3QUEOpa1_91u9eR_dqX_ogh1ZnWfbKu5l6lXWdFLZDjod9VXuxUV4kT-nliYE3ARv-GAykJLC3dEy6cZ9dfH-_7yQ_BV40RlryGvYq2ER13FzwYxLkf4zWYtsrLyPE4mHwlBZibvZ6MyPL2AQq_Z3ma59WGtEZ50a7B_eO9rIjlyvVNzOV5dl3uJd1t6wBW4jvd5shruocoUgLQqLJXl9h",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJz8wiWeb90TERrdAUqzDCfRw",
+         "plus_code" : 
+         {
+            "compound_code" : "96M5+8X Alor Gajah, Malacca",
+            "global_code" : "6PJ496M5+8X"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJz8wiWeb90TERrdAUqzDCfRw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 484
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Parameswara, Banda Hilir, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1917988,
+               "lng" : 102.2503678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.192846530291502,
+                  "lng" : 102.2513751802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.190148569708498,
+                  "lng" : 102.2486772197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "A Famosa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 562,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101202297290851884473\"\u003etakumi yamaguchi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBUUF1Qm4RoX5-cWu4fiQEe_jS5SIiqrcgByrwZgqj0UxbzySfBpG20nYsyKFY0q66et8Ajo9qudUNLdnhyIwhkuaG98lBLT8kEhkqgwN-Sb3An71HRQEnk8UH5dy06lE2Yfc_3TO5L_zyrGNBwKKVvcDZ7m_LRZzxJCmO4hlXVHXxLtKExKtHmDXyL-IKCcBOSxu62etEJm9aC7OT-YS3CzSLt0KIM2c31J1bjNul8Vtj5DI5gxT5yIw3Vy3q7bcmh-mvYTv_fuba_eLzYQUpKcpVRnB4bB8Eg4U1wZ1eDDdYjuWY0-oW544Xid46mj6ax4g5PzQ7RJyTnbMZfE9y0J5ZmSJ1AI7pCW8J1XNjozVXm25rz2PzjODPmRHHnqAr-MTUCYi85wSKfIIdcy_p6NccPn1exU2xtAkL_GtuahGFzbZQ2ZqN4KLmMzmL",
+               "width" : 750
+            }
+         ],
+         "place_id" : "ChIJHWino-Dx0TERtWMOoXza5MI",
+         "plus_code" : 
+         {
+            "compound_code" : "57R2+P4 Alor Gajah, Malacca",
+            "global_code" : "6PJ457R2+P4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJHWino-Dx0TERtWMOoXza5MI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 19481
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Baru, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3801739,
+               "lng" : 102.2108598
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.381576530291502,
+                  "lng" : 102.2121996302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.378878569708498,
+                  "lng" : 102.2095016697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Ansar Kampung Baru",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108881442664635275475\"\u003ealjunaidss\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-swD2jgamU_SmnSUrCJmCAQJIdbbGxsiTtj3MHsDd7rpRwatFf7WCg2jqYst7RywRtzoIzaQk6oRUpHfHUMVWER7vhiBKKnYGOZkK97XLk7DfRgCb6mZaNFVvJ9fI2u9EnRyHGRnOlvQ7P45chnHYxlWhjbxpToNIGvSijtnu9ot-0-wKlniBlHHi-1xMHIRPunvazgK1uh630Ls3w4Icy8dC_G0k_3HEWydZ82bOzwZTG7p3FXTFaNKz8dzheWV-FwwjcTACIbUwFHna0osmv1Qva0vt8mNtejmjD3uzI1RJSWL7DCR5XcTy8EFjJyvru5zIdiFTDvq1g-a44dw_5vDyaeqUJA1fAx7I4zsMayd_akYl86-NLBIkZXXh1SkPNMjgUIN-zKFGrIqepUJZWcxz7cfc51VcNN_KkOmZHBGw",
+               "width" : 1836
+            }
+         ],
+         "place_id" : "ChIJJeB3jgn90TERJmkLujGvXH0",
+         "plus_code" : 
+         {
+            "compound_code" : "96J6+38 Alor Gajah, Malacca",
+            "global_code" : "6PJ496J6+38"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJJeB3jgn90TERJmkLujGvXH0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM 32, 78000 Alor Gajah, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.4520505,
+               "lng" : 102.1812583
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.453405330291502,
+                  "lng" : 102.1826365802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.450707369708498,
+                  "lng" : 102.1799386197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Dato' Dol Said Taboh Naning",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1339,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101441521490735231739\"\u003eNor Sham bin zainudin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-semLDsO1u_00Jb266Ijz1u2d8SztPbxqNpLBPgHzNWo3k7gJADOIwAVjWyVc7PwUL-uY-HjZln_CarbKCslrEdnUrogPuA7l1-t06i4o208Fpy9Bm9Nsjubrh-waQTGt07NPmsro0myZQC9FEsyF68cCHdt5t5lulNw0nUG8e_fuP_m3ryL3LxsKXj7uxUYyefbjo6JyHPXalEqqMQ0Gex0mIX4o2Aww5_cm1JXWHfHlFL8THIoOKegJmkxkej8rEx0DtB8sTx98jaX3YMSOK0eypzUHnPiono3tcfons79hpotw9NGmNNvjVPlpJeKiJPqUfqc_ql71p2BjVNHDXaxd_I5UoQOs61WJyMaNSuQ53odi87jtHO_6q0DP3WzeL51DRutwWL_oq1yd9bbSlyYk9OJXQGFfHzEvANhYMOWQ",
+               "width" : 2538
+            }
+         ],
+         "place_id" : "ChIJ95cvtsgDzjERXwcVDyDjlSs",
+         "plus_code" : 
+         {
+            "compound_code" : "F52J+RG Alor Gajah, Malacca",
+            "global_code" : "6PJ4F52J+RG"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ95cvtsgDzjERXwcVDyDjlSs",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 147
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "78000 Alor Gajah, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.4167468,
+               "lng" : 102.192619
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.418130580291502,
+                  "lng" : 102.1939986302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.415432619708498,
+                  "lng" : 102.1913006697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kg Melekek Luar Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114239557125799741416\"\u003eAhmad Kamal Zainuddin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ulnSTl69eyl3LCmiQbJxPmXhNPVnsg9dclCiaHPUQYPff0WuxaRISvfzY4jqmb3tG8cERu4C1VQSkz2AqLiXwzsD3Ik-LLr05RbIo46iWhWfMRnaXViD-4UydWEvi8u1_DPS_q1Rb8wzFX-VZiIOzXEbG_4-CUnde8bdiImhe_kk6j5POH4-ABqBbD7hw0hhpnzwVV68ffmvv_vajiKXkJH6fatRB3bG7NjHaASF6roda9urHeZzC_9Npo1717hwZCS6LLg6JLtbYUthgQFVdgv85B53OUfPNGewhv_fFD1-NKBI6CfeQeWtIqR0qxBb_fK9WIv-bzV0HfeahEkqWnbZuP1-U915GVKGehs8E9TgGkMCdtKRm4wvIUDkSjMdQ-ICghMDG7sDQlDE8aFiNCMeq6u90t1LuEdh4GHClJI6GmpeAzwfQwN8mCShss",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJIV1DY24CzjER0boKqq4S1aY",
+         "plus_code" : 
+         {
+            "compound_code" : "C58V+M2 Alor Gajah, Malacca",
+            "global_code" : "6PJ4C58V+M2"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJIV1DY24CzjER0boKqq4S1aY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 57
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Jelatang, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3835153,
+               "lng" : 102.2148949
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.384813330291502,
+                  "lng" : 102.2161943302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.382115369708498,
+                  "lng" : 102.2134963697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Ar-Rasyidin",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105967307226393400651\"\u003emohd edzuan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u6J6nULCyVs8E2LKn_BLmMvDZ0MZLsr0SNrAB2e_j4uQqegwZbtOBFHZdKNKC-ds9bWMfoZZ7BtfHo3BGaxMEtIf_8unpaT63zzKfnXTnds6rjl1HvVTlWrFn4MO9dvLbrfNfxM1WX-KjGxpPQrAWqwX_ERLawMFtJBwhaRT5FxrzR_j15P0-Y6iJ0sCj3PtATCpnE8ug3PPdNyI3PwfMahaVcVPsNcZDllG27xsWT4WMdjaebYSYUu33zvrYfaaAil--N3N_24pvvS0m1QiF1fXzGK6LZVrWE6mZpXoxunZZHLUy_0G7i358G1xaihDwVef9qgB-KcV3nR-3Y-CYAzCjjhy3YhKnvpjOtAE93uZjH76GzQDL-Qcz6hRfT3VYb1UVlFx1h_mGPbmdHTVl1Cnl-688zWhaKhk8KcR7KCnks",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJEcJ-gV790TERY0Dx-svWrE4",
+         "plus_code" : 
+         {
+            "compound_code" : "96M7+CX Alor Gajah, Malacca",
+            "global_code" : "6PJ496M7+CX"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJEcJ-gV790TERY0Dx-svWrE4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 133
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kemus, Simpang Empat, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.42943,
+               "lng" : 102.21336
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.430446480291502,
+                  "lng" : 102.2146089302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.427748519708498,
+                  "lng" : 102.2119109697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "A'Famosa Safari Wonderland",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 676,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115942151674056785437\"\u003eA&#39;Famosa Safari Wonderland\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uj-MjhZg7Ko1vqVU8cs1Ne0ann8YGjIhCP3DxPB7DtF_uCqrId513ppNBNV1ltnI2Z5AUz0GF90IztGeBWsJBFT26j04X66vWu64puCy6e7NWkg0WkekigtM5_ihyoU9v4d9Zoz_8bmfhven2DwzikXbVxIHU-IjI5tjwM_ElfKmva8P4F5eYpHhhBGK9UQjDDChZisvtjNBt_iw0DwJtGxbwWE2HzICnHe3-fI2uh0aAYF0dHteOHJjYoIaqI5FgMKEL3L0OvYl5qdHEjSjOyDDQQeGmQjY8zYr7hM3dprQ",
+               "width" : 1200
+            }
+         ],
+         "place_id" : "ChIJAYiIovYCzjERLw8OfvzQ5hk",
+         "plus_code" : 
+         {
+            "compound_code" : "C6H7+Q8 Alor Gajah, Malacca",
+            "global_code" : "6PJ4C6H7+Q8"
+         },
+         "rating" : 4,
+         "reference" : "ChIJAYiIovYCzjERLw8OfvzQ5hk",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "store",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 3247
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jl. Bukit Palah, Kampung Bukit Palah, 75400 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2152137,
+               "lng" : 102.262145
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.216149230291502,
+                  "lng" : 102.2634462802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.213451269708498,
+                  "lng" : 102.2607483197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Al-Azim Mosque (State Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 540,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100601485018037647416\"\u003eF A H A D\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-saF7QCSJ8VSE7Tsi6e1qsLfuy3mIaYw1NqpDdp6q2Y58aEN3-TEYhzV6IuRxvKS6NDixetAv50S7gMGjP5pFQ-yu6zNQRXp8RysMeNsSCvxrxi7Wqor8bf1ttee4mE7HvKkDFrQKqAzqh25Rhxb5Vdef1vfJZu2dwL-KmiYl1qs8rzDcxrH0lo4-5RvBFfwA-nuuJhSi2kl6pW04wYPdq_5SXHc2n_SwcGCG1R0AGszTwEal5cJwOd6jIPBHWxF1TRfFiywV2Q88Syi885wn-zTaHVF9d2JPaNPEAWCQGje-jZxMzSOjuinxlgaZaSn-nX-D7TcE_K-OjACFHib5bzpEhis6umh4Xwh_HkwusPC5WZowqmqIDzMGRkPlNOjtSEPWxYasAGBrNU1yxWtvMhNssAGEiJYuSjkR0Uf4Xm4A",
+               "width" : 720
+            }
+         ],
+         "place_id" : "ChIJJc5WNtLv0TERwGJjxevzAss",
+         "plus_code" : 
+         {
+            "compound_code" : "6786+3V Malacca",
+            "global_code" : "6PJ46786+3V"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJc5WNtLv0TERwGJjxevzAss",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3338
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Km 25, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3613361,
+               "lng" : 102.2286716
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.362709780291501,
+                  "lng" : 102.2300511302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.360011819708498,
+                  "lng" : 102.2273531697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "KM25 Masjid Melaka Pindah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117867061254620990665\"\u003eZulbahrin Nordin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s-NlvwQAGCoLniDHyAQmQvm8kUBbcMrHTLq7mtTDxfKWIACiwyGtdKA4aFGHvvmhgfTlrONsjuO6xQqEma-NQOJ4cVdjDP8eksetq91kamcLGy66hHR5YlUfO4Sk9VpivYM2CF6qhHfKQ3dV5E3jcUiNuLES70Wp7p505X5U5VCDcMj6XttTDcc5hpDKEgBjS_ik0iwML0QtrZNPzuf-S_1GvTkGTMi_ILX85OV0FurQ8z0rylXn4jipkg0TKb7pmi6L832gifhMQRoooISzjktKmbpl8wq7gXdmPrU1_H2cfMACCQxD7wzJceeGHh4wbB6BHm2rL1eiVgNGrPkLMpKaVp7OueGQa5XSoKghllINYPqicTZrFSr-qhaCdHNtLvlyLLPRWB4-apWxSJDbWaXuunBYufhIf7koq0tYgs4g",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJBfH9huf80TEROByGptF33zQ",
+         "plus_code" : 
+         {
+            "compound_code" : "966H+GF Alor Gajah, Malacca",
+            "global_code" : "6PJ4966H+GF"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJBfH9huf80TEROByGptF33zQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 81
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "75200 Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1967526,
+               "lng" : 102.2474876
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.198162330291502,
+                  "lng" : 102.2488986302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.195464369708498,
+                  "lng" : 102.2462006697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kampung Kling Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 664,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116901396689574955493\"\u003eHazmann Majlam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUX0pzjHmVdAg_Q2N5Huh7iCsS3IpFeVYYMb6ffq51QWsgrM3r0qtIkcqwHgYFiJYvbAgVsIV0wafSf_erRSc6ieD6Ptc7DzQKWsALlAvh8cT41WHAogciBCOlNiE3S_ZrBZcepDQBoHrzzZFLNRgTWH6x3LOXqKS0S6jg2DrbGzJj6hx3QnFlS6zGjlNztPBjWcSSGQIhkmW1lWv6SAfnn6hIbjasMQuuO0m8BAI7TpC4c0rFDwO_1RTHFRPvBn0wqBYETAaY8EY_BsV9QI4W0evVZNaavMUCi7o5YZNljM3VEQSWwMQsB2_5tQ8je63QhoZubnb0mULJ5qI6mtlWgC4dwheeqfME2q6t_u6SwhKBTlDME5GMa5Z2osCYaczDhBmJ3T2aKbDSyhHgeK9wV1WATdz8xLR28cUwsZSU2smH",
+               "width" : 1000
+            }
+         ],
+         "place_id" : "ChIJmwULttvx0TERI1HUncbJMVc",
+         "plus_code" : 
+         {
+            "compound_code" : "56WW+PX Malacca",
+            "global_code" : "6PJ456WW+PX"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJmwULttvx0TERI1HUncbJMVc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 626
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Uitm Universiti Uitm Lendu, Melaka, 78000 Alor Gajah, Malacca",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3657393,
+               "lng" : 102.1802246
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.367241230291502,
+                  "lng" : 102.1818063302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.364543269708498,
+                  "lng" : 102.1791083697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Hikmah UiTM Lendu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116687660023259735530\"\u003eDzul Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tzVWrVobAlMXdMjSq0btANc1HkHowqCsVaf4xPC6Q57rVQITDYcFWT6G1XlFMC0LizMlq5vH4v0wurN75R_KJ8iTGBFAdQE5WmHB3bzg8zw0oLs0WXG7jgO2DMNLj_tm8RZnDBzFWbP76AEP0-GqTn7T7NQ0uN_zFlk5imWnPzyM8-kAOk8lBd0QBKnxXex55jZNDexNT7a2yuizgeGKUl_UHv3QJpDVxCkb41seBFADd-0qILJP3zUoA6n33VDbNDXgSM9BQ8QKvI8xewGH77CmtgMAsiEynn1tjRAzKX5u0alcqWpFrkIuWg7AZApy8zJVOaO1quEWTxF3BkMvdmfkG79IRAjWVofYRIW-o6DZ_j5TWbc18Eo2ISutZ24Wvz71dAubkkizFQSMjcCXV08mrsU2dxumBzDrF3SYbPVJbY",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJE135fTH80TERC6FcGUWOMGI",
+         "plus_code" : 
+         {
+            "compound_code" : "958J+73 Alor Gajah, Malacca",
+            "global_code" : "6PJ4958J+73"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJE135fTH80TERC6FcGUWOMGI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 69
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Selat, 75000, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1790798,
+               "lng" : 102.2491349
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.180691780291502,
+                  "lng" : 102.2507111302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.177993819708498,
+                  "lng" : 102.2480131697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Melaka Straits Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1274,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101580898157994201619\"\u003eمحمد H\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sSW7arFbkAxxSKrBHYz6l5G91kslHcsDG7h-D_89rOb3R4PQXtKSPl_ebDEZ8xdyFm8LORX1O7GFdPX755SM6dCuuOGq4f_aFVb3Kkay9e_DTv8TMFojTsRgIZuFX8i0HlAuEbKMNU2j2Eq7HGNn4o88aPSCk0gP5hFO1jNqSczj1F1pk2YnPQFD2FNXq34_psyJUa7pWUcJTsqhHyDfJDOyFHeKyCT8xeNihWAyHrc91OwNL1yikalNJ_6t67VVCvJ3BfgqoOSwrc0wNNVbRzK16-a7nW0VAVMJRa4GSkYfwx4Etf88BJ2l1DR9MG6qEY_Yet_L4I0WUR5ClcTmcnDTMjjck3jBV2Cn1NuNetAEdE2cuB9STZoQogUgdkJ4wT3foMGAW6pr52ge1WzaMUFfZ823Ow0Ib1WXRaiVUHwA",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ2SBZWtvx0TEROHAya-aDz9k",
+         "plus_code" : 
+         {
+            "compound_code" : "56HX+JM Taman Pulau Melaka, Melaka",
+            "global_code" : "6PJ456HX+JM"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ2SBZWtvx0TEROHAya-aDz9k",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11611
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Persisiran Bunga Raya, 75100 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2073436,
+               "lng" : 102.2518114
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.208621380291502,
+                  "lng" : 102.2530973302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.205923419708498,
+                  "lng" : 102.2503993697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Melaka River Cruise Jeti Taman Rempah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2958,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113347791763123364748\"\u003eThiep Mai Phuc\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v8ZsEzLvgfzuIePKYLC9XFuNXbvci9iElFDWGe8xE_v7PwHp0E13Pr3lrm1OpD14PV2ykidtxJQb58sppE-8c21253s0HnSFDuad7ZoZrBqnEcROiIzWGJbKpLKUzrPTnfoR5F0zQQ6HI9YJpwUZvIXzw1lOlSKpfH3axSYFsddbn4Dhih2nx_oY7374NW05zMrKCPGIBiDprwgHPitDNEKk9wQ1TTuGNI64X7la9i5LjFVqo7prfN8YW16WCglR-MKzM87snlIc74j214MqcBY914a8QMJrLNLgHuyW2s6VuzQMbcdruUvWD_STol-p9CgT0Y8xARNqi2lU_LkhSmxKfrH7B-N4OvTK2aALVZ6AggaoOGAugflVhzWgXGzPjWi2ZxaA-WHFMeKED5yakN6WwBBkzmL2tyH9KWBeg",
+               "width" : 4437
+            }
+         ],
+         "place_id" : "ChIJtSbDV9fx0TERouZVMfwjLVU",
+         "plus_code" : 
+         {
+            "compound_code" : "6742+WP Malacca",
+            "global_code" : "6PJ46742+WP"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJtSbDV9fx0TERouZVMfwjLVU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9856
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Hulu, Kampung Dua, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1992674,
+               "lng" : 102.247546
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.200659530291502,
+                  "lng" : 102.2489906302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.197961569708498,
+                  "lng" : 102.2462926697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Hulu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108409384668190022314\"\u003eZainal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uW-lXVatsBFg6mlxVSMJx9JEXM9eZMRvHYjm_u_1srkmRh5aZXV4bMnQzumYtiMmuGVFSo9DxD62itPsanwuw2Gmacz2pyb-kh2PksDZRdI9PyN3okx0IvoVKj8rynBG9d0OVl9V39KNB_PXkQjWn_duKvoaQTTg72JHpXu0Gkb5U-7h3kPwK3IDIZJ3OK-FXv23q3LVZ7jrJ9dE4brW9sfNVR8UgBdaRyVPaS0WCSGyHRTR1TptkcK0pOpiw2fzPP068vfWB9IYbIJNxGUkgHnxrPFvvA3_x4sovSOiNspqkMaBcDz21xEeXIAy021WSXrUlbOYR9jAiuqB1IqlYb0-1-i61wx9ebgFuo5DzOpVL7mD8nDM5r1BdsbyyafguIzz9JR7Y6ka-OjFSvpr995vsY0EW4iVKI2fSHCH5hQ45SZOYu73ipETk-tw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJVdsAttvx0TERLmKNDkOQBuA",
+         "plus_code" : 
+         {
+            "compound_code" : "56XX+P2 Malacca",
+            "global_code" : "6PJ456XX+P2"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJVdsAttvx0TERLmKNDkOQBuA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2084
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Lendu Masjid Tanah, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3624911,
+               "lng" : 102.1716808
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.363600380291502,
+                  "lng" : 102.1731663802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.360902419708498,
+                  "lng" : 102.1704684197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Umar Al-Khattab Mosque Lendu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2322,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100346119377686181510\"\u003eEffizzul Salleh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s2g8MBwg_5h9NgEPhRFTctQIoo_mgXoFIeC4rcGeimpag-S4ekfgdKDFt2XBbNacHeTXdi298ZNSxxpJaiNHv5cs1jj33kOPbF0dzQVGaV5lyGbwwhfggGA2tbx4UBmXKv1fLXyVHRuX8hNH3tvpB1ejc5SZwucaHbNYP7k4mR2ifSIByd7YSZDU1sFYCydiZOcnyng5lqDYE1xAFPN92T5KWPyLBiujG4xX4CvWi6xmf9KZp5NkWOMIvxHZbZdYGXlGcGFsa-aVZMG_e7marMqZ9kwj9LfSqKlpVU6V3Es71HbK_MUWK6lq_tQlCdds-EYpB4TEr9FM8AM0Eko7DeWwIlrw0vdhEyowg0fzTcs_dnYJpNaizGsqZ0NgN9YDdJM6Siv9R6iCBwmWKERBmh0pX-aRapMIb-r5vPpqaksQQ",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJAQHNQS780TERTnCZubp761k",
+         "plus_code" : 
+         {
+            "compound_code" : "956C+XM Alor Gajah, Malacca",
+            "global_code" : "6PJ4956C+XM"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJAQHNQS780TERTnCZubp761k",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 174
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tengkera, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2040646,
+               "lng" : 102.2319867
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.205319580291502,
+                  "lng" : 102.2332958802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.202621619708498,
+                  "lng" : 102.2305979197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Tengkera",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 360,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101155827219787864411\"\u003eMohamad Amirul Syafiq\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ssn5t-QFTh9ochI_6485Aw76stwklkb6Z3NcDLIXeZ5dqJa0UjWLzi3d3LeP_N-95vJLLNuh_GX4wwiPgpaZ4QuG_uaFJekxSjJuNF52S3pX_oeN8ho1Kxi2d6Ajhpawt8_zRdUR-rVe4izQTKdfH0hcCmcsp4AFw0hp9aRf8mEDCsSTNtD6F9lH8qVATtZ3HgPCZZ3YKCbWQ0u6pz7MJWij-uBfq-syycdKsTotqZb3avFTtL8KZOVMXLV-Z4d7lVcxO2fkFszz58NXa_KOhzGJ-syFxxJnYW4AXnoEIFDAtggVFe_LgsyTYiw8A2kxrjKGvTSumdSW9W2lq-b9YvSVOuBjn1T-QvYHS48qHb96ppBPe9fOSWuzqG7hD1vIFJ3L5GPlFbEil8SiV5IaNBBpdc8vZvd25eBMmTmxbIAw",
+               "width" : 540
+            }
+         ],
+         "place_id" : "ChIJsTe3rcjx0TERVI_A5nKdcGs",
+         "plus_code" : 
+         {
+            "compound_code" : "663J+JQ Malacca",
+            "global_code" : "6PJ4663J+JQ"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJsTe3rcjx0TERVI_A5nKdcGs",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1209
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lebuh AMJ, Rumbia, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3180655,
+               "lng" : 102.2170443
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.319409980291502,
+                  "lng" : 102.2182550302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.316712019708498,
+                  "lng" : 102.2155570697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid An-nasuha",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113458183669271615574\"\u003eZainual Mohd\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s_m5KtNqflbkxKSLeQ6kLewoU0UFK53XMgCuAjtKIAlgiTpICM-KZXZg--KX7Hxd9_ASIdY5-fHhxVuHPbebmvnLnspHxepUhoTyTCtJu4TSKnVjrj39J39Bi_7l7RHoqgdyShJeBd1RCkt6FJ9LgORax8dzPqGk_R-gViErMlR45MKabe8J096tjV55kkMuufzMvmQbEB6VwzxAJZ99hGgUrkf05DI-efWWakrgqF0KpOP4RuAUtZ9Gwv2gDaucCvEzJe-5p5eqgDwqV9GJ9M_MPXEAUKioYVID6Ieuq22dG0WOizCfoyWwyVPdZwu21vUi1PC1CtcwMT4iuKY6xZ7x4z6Bd2FFIQAkqpXNN2lBfMwi_UitIcY95B3AZlv2HfieXCTYKMAiShbMINU-c5QVe0P9_yosj4JInx9R53NTCg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJGSwXd3r70TERksKQvVsjLYk",
+         "plus_code" : 
+         {
+            "compound_code" : "8698+6R Alor Gajah, Malacca",
+            "global_code" : "6PJ48698+6R"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJGSwXd3r70TERksKQvVsjLYk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 29
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Pulau Sebang, Jalan Pulau Sebang/kemuning, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.4481759,
+               "lng" : 102.2357813
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.449514980291502,
+                  "lng" : 102.2371099802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.446817019708498,
+                  "lng" : 102.2344120197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid As Syahidin Kg Pulau Sebang",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102365311169685864175\"\u003eRidzwan Mohamed\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vCWfywasQQpYU5XWPVw1NnkgVFEEQgN4JNUODtkN1Ud1FNAuL8BpLV9IfpV02jA--PN-4BvrPOJ69KqQcdxf03yE-qgzlqHpJuqJcQsPlPFJR0oafTw4NHzq-b9Cao9dQJG0aGv8vPbYUKEPneu0UKQKBEDkPcqdZBdb5wzcQ9d5GyrBCbZzK5atg-3vvRgIiiEF1jhDIG8g2pIAeahXgtHIf0KrHt8GD4nNhLt8r_BKiTgfQBQsumTFJ6hUFZTlsNHhZNNHujrkIcoW-n3j1zUWzSveSnrgQ_B3JN07ZmW1DU46TfGqXBaz_2AeXI-cxyj-W6KvFE3HZxwz1PJN1z8jdtZbCtmewDeVomkjVPVsQMohewRR8NRDYpeetjCYJuoniYj29sL21FBZ4DwyLCay0PIoSJhyRc0YSncMuzHVg9",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJN4ETYSEDzjERtv-REIcRAfk",
+         "plus_code" : 
+         {
+            "compound_code" : "C6XP+78 Alor Gajah, Malacca",
+            "global_code" : "6PJ4C6XP+78"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJN4ETYSEDzjERtv-REIcRAfk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 79
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot PT 851, Mukim Sg. Baru Ulu Pekan Masjid Tanah, Kampung Londang, 78300 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3478959,
+               "lng" : 102.0941398
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.349210130291501,
+                  "lng" : 102.0955259302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.346512169708498,
+                  "lng" : 102.0928279697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Ihsan Kampung Londang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108627352736415982344\"\u003eISZMS 6268\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vmpoP92p5oIZf1ff-WbhVAZiFtn2r7jZYZi_e6dK0H05nc119QeDC5heKcopbhRB9AuL6SmIuFgiEtqCLVSeFwHyLwgXd_jrZeVNus_xYqHisDeXX-bikSjTTsUravj-di_7T81jRUUntLznlsxPTJB00yHp7eRCnw433vLlpkbtQpAovzFshARmOAXSeQ4jKdLoslyeJ9DXMlQjlnDrvX0ankUoiXk-KfZDtiuekaaFIosxdAWHrm_vnFtRWvRfZPg9BkB5d2OazsGVn8FDjUYqHfFh33_eKp80lFqP7srElMKsT-E_-DG1e3oo2DZHUO1rT3dM-6oSnzw8Sjml9VJQLNJPjNVevzhfxYbQU49_ZGMrhf69mvGF4v7zXObC4FbpfiaMnhOL_6nx-nCYW1x0hGYo3_sO6eXNywyJCyx20",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJYwX4gRn_0TERoL8VkPxn3PQ",
+         "plus_code" : 
+         {
+            "compound_code" : "83XV+5M Alor Gajah, Malacca",
+            "global_code" : "6PJ483XV+5M"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJYwX4gRn_0TERoL8VkPxn3PQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 67
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Machap Lama, 76100 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.3792072,
+               "lng" : 102.3285856
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.380571730291502,
+                  "lng" : 102.3298962802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.377873769708498,
+                  "lng" : 102.3271983197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Datuk Wira Poh Ah Tiam Machap Recreational Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-twtb6R_xXDZwvUGgZROZpqPSzdUI9wGJw8dZ8A9KitNgQaOTJBFMWoF-0cmLy6UNptlcX8OggQb926MX1NioR2SjPheKnLm36pKtqmNHQq6Jh0-ObzGVMBljgBQs9mQawRcsW6SlnWeTvYBZfKOMfXAkbccvBDzQANEexuMZyoNgsOQizFcvWQlfZh_E0ZLe_HVAqHFH1MIj9TR246wKSiJhrN3D3RyvqTleyUb3sRYIkXnSzHNeJ6sf1OmjNkDWqGICKynBHpPb3EP5A19J9QnQ-LpC_aMRnLekMS2pauLCJgVuqScoi9T991TlbCC_5jL88sSGkVEzEUP4JrYxwmQct6vDmo9_dJd_tLzWzCI6zFICAY-ZJ4aG_QJuT6AmS-nksUoUOJcmOLaCGtaSsm1J9wXKOARpZr6yHwTQRs1PHU",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJe5m_UTni0TERlThUF3TR0V0",
+         "plus_code" : 
+         {
+            "compound_code" : "98HH+MC Alor Gajah, Malacca",
+            "global_code" : "6PJ498HH+MC"
+         },
+         "rating" : 4,
+         "reference" : "ChIJe5m_UTni0TERlThUF3TR0V0",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 129
+      }
+   ],
+   "status" : "OK"
+}

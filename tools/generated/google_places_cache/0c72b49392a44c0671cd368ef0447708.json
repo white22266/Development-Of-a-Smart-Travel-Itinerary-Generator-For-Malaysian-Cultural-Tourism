@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "2F68+26, Sindumin, 89850 Sipitang, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0100492,
+            "lng" : 115.4655926
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.011390030291503,
+               "lng" : 115.4670467802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.008692069708498,
+               "lng" : 115.4643488197085
+            }
+         }
+      },
+      "name" : "Jeti ZanX",
+      "place_id" : "ChIJc7M3FgDFIjIRpxpVvs1K6Ik",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9937274825314998951"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "17600, Lebuhraya Timur-Barat, 17600 Jeli, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.715386,
+            "lng" : 101.7456705
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.716670830291503,
+               "lng" : 101.7469736802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.713972869708498,
+               "lng" : 101.7442757197085
+            }
+         }
+      },
+      "name" : "Permian and Triassic Limestones",
+      "place_id" : "ChIJExfqdgA3tDERANCG0jYkDAA",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=3417517599412224"
+   },
+   "status" : "OK"
+}

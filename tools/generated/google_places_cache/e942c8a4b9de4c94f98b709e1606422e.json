@@ -1,0 +1,1222 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-sDI5jnJSRYwE9iV5Z5pCbv3gPQIr_gIcNDSVBl_o0DQhNenHy0GGBUO2emsuRbRd9oX2IHZwI3WoH_ppLTAdNEnOQ5mBCxaEg9ObXZis4XmQ1lf1KM407NsFpDvCi7F8f2-DB48APN9yQ_q9xbWrlXaEedVhtniKurm4LYeNtUArd44sL_nZNdelKPKzio8ZrWLF7y9hYabMSsRjfXz9-9FvL5kGzkgs2hwpPCDKyDZVkgNhUsz0DR_uAB3Ca1GhAlMRvgD2wuRC_KYcg42Qqjgg82qqiS0I5mWYKYZ5JLkNxjwek_7fQULjvOjLoxsBobq30EQQKsejPtAQtejXKEeShMG5nIJ0P9bKyWW12EVXWZxINcl4v4QGpShLrHpQFiAK5gFMrl2HCZLD5FTKht0DIGJhWQ8Gut-VKGdIDy9D4jQJjllU4oUnY_DnkLWSBkBW-Vo-2JB6nQvcDldEaW5043zODc_l3axT3b7szoR9BXq1DteuJxvH9_F0IRNpfiAiRA7nsffOkH2FV1MI4dZBDRIsSwEKpqLvAhDd0vVT0JNa-GvLZ-3GpOw-Zh4YLC06JQnjdYiDf5PS1ad0WmElxtz6_XOayhz69HBcfFjHebTkAoLkvVOnVljxr2qsexvDw5ISzpLxtsBpXsoLrwcqIi7aGhp-TN1U5BrUtXUmRaDuU9v2ooZxCx36tDqrmFyjkiuZnyHAtWT5ffYAkD-eeTF-6N6C3gOTEDAZUpQoPTGAl45DsrMc1-9EvvXGLk6p96xB8okz-A72qyiZJ6QkY9WiW76O13_S9hcYHnTglaRV2EM-o84uek751RP-COE4fvfvJF",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "4, Jalan Usahawan 6, Setapak Jaya, 53300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1966646,
+               "lng" : 101.724434
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.198410480291502,
+                  "lng" : 101.7255428802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.195712519708498,
+                  "lng" : 101.7228449197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Royal Selangor Visitor Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114502926442884900837\"\u003eRicardo Nuno Rodrigues\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tDbK66_DrhuDnOFLC5I5J5aMKZbl7rntgC_lEVvqIJS2h6QwjJRC6C1cuosSvWQWPW_wD3tR-muQt0s5Mk4akafdL80s0vbkTD686PiE15Uyp8rolf1wZtXHbasAVkuDhLM1uTQu_cQmIWjff1mLEZH4lWuSPVurF-eCDxcpw5hO51bCsLWT2BzfsWveSC4DnrGWCOUUb8huvsZ2yPBa6GyC2dvqsumyw8D8lFnl8Ra97zw4vL0Hp-itijt05LGzPinaohItyhKM99bM6I811-xOMFlRyQTFHMfJTwIJa3y_MncM3QVvzwS-oZxMdsqCWzg409L7E9R47arDb8iyhHvEufn14AgfSjvSJAibC9x3WD27U1UEv1DqvohYs1s1wZjPaIpWoDM3_WGO-Zly7wbyL7bVGJMMf7gcgOuM4",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ380v_Rs4zDERg-ayesQ7RaY",
+         "plus_code" : 
+         {
+            "compound_code" : "5PWF+MQ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PWF+MQ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ380v_Rs4zDERg-ayesQ7RaY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5617
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM24, Jln Gombak, Kampung Batu 12, 53100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2942924,
+               "lng" : 101.7321237
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.295662880291502,
+                  "lng" : 101.7334416802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.292964919708498,
+                  "lng" : 101.7307437197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Orang Asli Gombak (MOAG)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114846080547263753599\"\u003ecea\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-selEJvjRP56OJ7P8bUYR_h50ksCP1JdWvGQWvAwv4rGWEZj5sR6akA1Pe8o0o2U0EXLLQTWDcGxz-Pc85Mrgf8JM4Na0V_IMJl3fE231gm4Uh0Da8ybQTVAOXq9aOwZytabw4nVH2LqV05YI58QVQ08gPgnWacym_9CLK2dcBtCqYzM3uzweV5cnRf3bFxEz-JUKRxnpb3abr0IwCbhZXi_URxAihyPhmgkBGg9e4-uuoZf9h117Wi6ODQZ58mXcvWUHO2nXsUPtGjD38DUPditz8nILg9Qd6jypsZqyZLtrZMpJ1P0oFEe5BGFjX-C_CMNkl50u0pnSzx2fgdpP2Ywa7HCHyW8WqqhGdQquScVs2HQTxv4TINxJ_ngCgmlWqp6QyUu5JrIatBMIjwhYAtyq4tq-Zta5b3RhxfEAzohA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJPRPXkhQ_zDERlQ_RmCgIwy4",
+         "plus_code" : 
+         {
+            "compound_code" : "7PVJ+PR Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM37PVJ+PR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJPRPXkhQ_zDERlQ_RmCgIwy4",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 376
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur Convention Centre, Jalan Pinang, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1535483,
+               "lng" : 101.713178
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.1557583,
+                  "lng" : 101.7155261
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.1521654,
+                  "lng" : 101.7115108
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Aquaria KLCC",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110911635509276383183\"\u003eعبدالرحمن علي\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vnL3aeuolCmPINWlF8daAcX1LKT83VqJ3CtgQgRxgjMLh5E5MZYPmAXsetEXr9cgMHcvNpI7uh4McLgjrJ6tFW6qRxPoKfoMvBYlsTq-nYG-qMRm-210wN1DnKKnQ4GqgU65-OPJkOjyOEg-dk-SSZ_pTqR7XzjtsVeubyDIbVI9luj_uL_tWg8xcaZsK3AMT6fRDj3b6kvePGYl_4FA8ZEt5kdwos5SR154H-9fvaeaZg4nxRQClxYQqTw-xfql8uIAZyO3FHx8hWlP6iXaajjoe63pUbqHpNMxUOxJZiUwO7ix8YJkPTv0FfnIBD1Npvu7rlrfWUNhTx5DzFwztuVZX4vkT_TSPZU-ZwJPZno1tBRBwBwDtU3QDpmXTyzESghjhslozJmHAAOdNYMGk7j8Il3cl-4X55TiNh7cS89A",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJM5cxndM3zDER7WuP_cN-omg",
+         "plus_code" : 
+         {
+            "compound_code" : "5P37+C7 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P37+C7"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJM5cxndM3zDER7WuP_cN-omg",
+         "types" : 
+         [
+            "aquarium",
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 40251
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Level 4, Menara Berkembar Petronas, Kuala Lumpur City Centre, 50088 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1578933,
+               "lng" : 101.711981
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.159113180291502,
+                  "lng" : 101.7131605802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.156415219708498,
+                  "lng" : 101.7104626197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Petrosains, The Discovery Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113984711918370489967\"\u003eReem Ibrahim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uUyuXyjqg7LTW1bfmER9cjMxV-Ga_aO3uZEDVMeSA0-m0ls9MSLQ6Oa4sURnDON_UjYBl1wOPiX25IcY6B76Eb7k422CmlWRn7HvAeIwvixYM6yDRk6zxV9Rg1MmLzGae__xwSxlrE6VIQAXnmJYEP-M7x9utyzFF6ifdtw-lU5YuXjHK3Hus3BA3OSMU7kJjtNVRNGcYwcl6SZGtku7rManLdB8sh7rUkhHof9NYArCj1qkfVwUiW51IpKwy17rI74KiKfr1P7pimoTk9_1qUprqwQkqSiZ6Va0u_xWgHocWCKQP8DvB_8m8Ma-2LJmah6COF02rrWI8pNpyGa-eRB5Co2m59fMOIg1aulCqIqayiczRHz6jbTSmFGOk0EjNljYAtkpI6kyI0unbpCfXV0jUIhynB6oz5qu5EbbY",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJiXsntdY3zDER0-B-9En1XOQ",
+         "plus_code" : 
+         {
+            "compound_code" : "5P56+5Q Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P56+5Q"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJiXsntdY3zDER0-B-9En1XOQ",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9284
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Presint Merdeka 118, City Centre, 50118 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1418445,
+               "lng" : 101.7006433
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.143492480291502,
+                  "lng" : 101.7021670802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.140794519708499,
+                  "lng" : 101.6994691197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Merdeka 118",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110188376846481365368\"\u003eJoe 9⃣7⃣\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sy_8YrzaZEzrNlWAndbr_ky9HYtcgGMrOYlUV0NvKD3Nc42sbBRJm0k1JNiFHB16gMKWvOe1ENLg8_DdsSoY5FiWYCVfgyTQgR7bEcQuhqOTQIHBNI8cpZDm1HsTluSlnxHcoIJnAra1YKBuguJO9bYwP5r_gBou_IvgagplCAXzKpa3T-u_8zGJiuf9GSac9yT7-SQgGoBLtVqiOBDUUdZ8HgyTYCc3boEALoYe9FIT1TfAVNxHJlFXMLOZgKCMl42iKRUdbvQXj8fqIOrAQFiCuDVTDwJiip17HIP1cDROi6EYqB_tbODRbPlboC6RuJpInr1HwcxNXXj_nJnOg4U2jtKk3we99iGBwASGEAvqLsxlD5dOByFRJxJH9HZpTGUp2KWizgZ5kNG8W07p0WwacQCt6Lx5G4S113gzikog",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJ8dfhij5JzDERYoQs1Ff8HjI",
+         "plus_code" : 
+         {
+            "compound_code" : "4PR2+P7 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34PR2+P7"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ8dfhij5JzDERYoQs1Ff8HjI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2425
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2 Jalan Punchak, Off, Jalan P. Ramlee, Kuala Lumpur, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1528762,
+               "lng" : 101.7038516
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.154193180291502,
+                  "lng" : 101.7050922302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.151495219708498,
+                  "lng" : 101.7023942697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Menara Kuala Lumpur",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118189487791872795219\"\u003eJelle Pera\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufQNp2mETwLP8lbrmcdRWxXmF4DsfC-QaeyhYntm60QTXieCzGoTa2oMHaBFbAgZV7VT1qSx3E-u7LCky-lgbuDvbRofaR3I04-8w9GB_LyF75FMN2n2rzkidQ49epMwyvEI0b6oFi1tQtzc4_kVjpj5XbK0H1KFW7yn_P8sFj_6cUZsWxAOfJxfnlQBG9hamc3bv-qRzkxnjoV8ifoakiAQCcpJ33dkB0dNVq3I3bEdz9V1IwT8wfSFcxwMKac1tQMje1FL1Ybh6tX1ZCAYaPOkO0dU6nTIjN7b5zS9G7JQftaDZgshnnwAjkQEt_IrZhoqfq4o2_K6mtOCEriCaftY1aXt0nM5Fg6tZbEverBS4toyo46l28n0Uq2wy4fxGIE_ZZLOGSgzkjun1LwAXdRGE8BJPWiyIYX4_rgi75vReG",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJE1jNHStIzDERujrDO85YYBA",
+         "plus_code" : 
+         {
+            "compound_code" : "5P33+5G Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P33+5G"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJE1jNHStIzDERujrDO85YYBA",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 41515
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1490605,
+               "lng" : 101.6936592
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.149998330291502,
+                  "lng" : 101.6951887302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.147300369708498,
+                  "lng" : 101.6924907697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Merdeka Square",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 866,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106458291978076964674\"\u003eSylvia Super\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUdaGgEvi54DxOktC8kROuua0S_Rq1UeWxPADukLzYCu2jyrkbLbAE6wvucSvjrphNA3qUvF23wR1P29y1osIK8IiSquQVkB8s6mN_knU9PrHqG_i9V0zRlcDIHVZ6pTVZ7-00lbCxT4RdzMqefR0tIY0WjXWZ9oqc2Q8Sh8iDN54FBXUzZE_K_WkSt81gANZeXVbMRULDmAt1Oq2ZV83ekiR7yzWczjiHswnZeXeSuGi43SulmYMvceZMN8mJtIwqnulFhqkIxWDYmAM7TqjbxVjP-s3w_a-ErfWk1yxBnGEavM4VnOAwOsXkKI_vxXpbeYZnGGUxxxXLLM21U2Y5vKgMt-O6y-vYp86DLCkUTk0aVMb0kYVX4maJj-XQT78qGBXf7z7_QyJK-Z9EiJOdz6H4N3uAQbx_1sOZM7lf_Hul",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJORWImM1JzDERWTN2vAb5CzQ",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXV+JF Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXV+JF"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJORWImM1JzDERWTN2vAb5CzQ",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 51866
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Benteng, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1477516,
+               "lng" : 101.6952781
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.149124580291502,
+                  "lng" : 101.6965050302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.146426619708498,
+                  "lng" : 101.6938070697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "River of Life",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110487111221184891517\"\u003eWinson Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-spMG_0HzvqOi53daEXHKJZgNr1-dayd-cgpoSuV79s1-UIFLZKswOR1_cKd5CzC7j46f1Rm2kKGVftyj6rs7Oa4sNe0eJyOrcun22lsigdxLL2ATbcTLnopmkOK7c1_IYs9fOHr1yWlFIFtJW6uby7Wn_wyYzsU3dOOX741lC8OWgWuStyRYEzpG6YAs8mX9ZDy3XKZ2NaMq-WB7XDJprhmH51n2zAANRBfnZMlKZfCWflhW7XjKNc1VIKjvMy1HgvMmoojxoMSSubjrYCQm30UWl14qez-euZ3480vCH2aCXjVKK3kk0qd6OCjCFAIksRjkXIzheNmrpsIvuIcFHj0nlC-gQmMT7AZWb9IUouH9ObMyYKwq2F8W6yrN5q68MInEPUj1cQxNr_170sFLWf7IY48usIt8RNUYpXIxVToM1mtOIIMH7ZjfsERxog",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJkSBUv7hJzDERQbxP_WdwMrU",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXW+44 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXW+44"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJkSBUv7hJzDERQbxP_WdwMrU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1300
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1476561,
+               "lng" : 101.6937926
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.148990630291502,
+                  "lng" : 101.6952422302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.146292669708498,
+                  "lng" : 101.6925442697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Victoria Fountain",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101290026018995901563\"\u003eStefan Gehring\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUKVteHUH29JNSiuOxu65V5fdidqr2KF6HMr3GtYww9OgajsclaS_Ot7_1FFK-yRlgLP5cjfJ_8ZC_nXeUQdEg1CYnVERsS1Y69c4tDFqF3_mxsqsdcb0k_gbtybtft6-tUqzbgm7qcgA2PgGTDvBlt5ULq9hQfHxYxqRQFrgMsQHeuoGMSgl7SDmzcq3oqNvYGZQjg03q6DdefxvKArbzb1x0oZeXiEM59-mzPKAsyvNoewuf_DjpaYuIXYwu64T3LupknsPMWs1CKHodIiSWU4lu_lbQhrl9iTq0pmc5KyJV6IR3lURuvkEtS9ePDEzx3FOxy7c5X_I-vnbt52-y3s0JbDfvGNm7ZIAf1Ov7ztFfnrfNO1PcO4d--C_rJ4DkEymmjcLGba8CNw1KNOT5UtOt4xnaNY9ExEfLF0WtWQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ0yHjwM1JzDERfnkoIpvC1vI",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXV+3G Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXV+3G"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ0yHjwM1JzDERfnkoIpvC1vI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 163
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Badan Warisan Malaysia, 2, Jalan Stonor, Kuala Lumpur, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1502709,
+               "lng" : 101.7164636
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.151619180291502,
+                  "lng" : 101.7179163802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.148921219708498,
+                  "lng" : 101.7152184197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Penghulu Abu Seman (The Penghulu Abu Seman House)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113015414339459430250\"\u003eDaniel Louh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tqiGAWHQ2KnhICKfRxZld7y94y_GE1JP4zFD8tZy0OMYTt70EbYHjAOjBjKSvdhWRdfasVHI2T3qRoOiGJjc2az-0aIqid70EXR1t3jKU1TEi4-QNopLVc0tyfRRseyAwj-deapG6N0irrZHSiLCFWbEurapx2YS5Ew8d9OdCWbOdQZUOoJMxaqwDgOXLRHE1ovacKS5pgvxQeXS4g7cf82ec9ukkSM9UMrIXvvOgWxuRxuJVeAbXC_AQH4RLc1ID5UTv23z1yvD5RQB1pkQIyC57ZuZjoEdScVxCmJzJ1NbWU3V9bxcfzs9ZAimkTRKZ7lP-7PXCZoPKjsbgQXHPbIOeen6LO4tosQgotRz-r1DzTF7bfFTxMtEMyDdDsvWVnlB8r2Pg70a3yvkh5nNucDD4k_Lr8IxNUs8J7OVKRfhNN",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJQd6sOS02zDER_HJnQBZXwXM",
+         "plus_code" : 
+         {
+            "compound_code" : "5P28+4H Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P28+4H"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJQd6sOS02zDER_HJnQBZXwXM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 206
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "26, Jalan Sultan Hishamuddin, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1467465,
+               "lng" : 101.6940414
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.147905480291503,
+                  "lng" : 101.6952517802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.145207519708499,
+                  "lng" : 101.6925538197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "National Textiles Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118282150633607620800\"\u003eSurachai Pramualcharoenkit\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ttjCIXMInpMLQHhquUkUdrhj8FocNEOlMd9QS15OU9cIoTpb3w4VSS5f8DopdmyB4z426wfgvJl2yQjHvTsGK04xYAvxyFzK3I8CtBR2bloTO1I-uLbv8Fi4JG0l8WKhkiBC0DoDBFCk4Uohb8gWanlHVygZLcRmZbHjUnM4EGrXcR6FquMB6K8oAtsZocSvEHAZQQFKJJbqke8tjhxIzOyq6jsdsAPCP7CWt0nGHSeiuQHxIEn57kZsM32J_8BiggPuCoQ_tEekbR8NrZBOXKAcEZmnItyUywLRfFMcwh1_7fXLpy3_mgaNEiJKuLKbxy1YIF-BvM6g4-SErokWs2BeJMN_mousMvAVL0ZGhRPAmqV4FJ_Ed02SLQQWZKag0Zpos3FziiKl15EB8C3aIyFmBbdu3s61zCRYQ1l9lC0A",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJ6_aE4M1JzDERegcsYEwivM4",
+         "plus_code" : 
+         {
+            "compound_code" : "4MWV+MJ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MWV+MJ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ6_aE4M1JzDERegcsYEwivM4",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1812
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "22, Jalan Dedap, Taman P Ramlee, 53000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1948049,
+               "lng" : 101.708107
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.196254480291502,
+                  "lng" : 101.7094935302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.193556519708498,
+                  "lng" : 101.7067955697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "P. Ramlee Memorial House",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 333,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102810415985127700664\"\u003eWarisan Alang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sz8Upc5h05_-IcG1XTpSM7HqZSqpElnGTpJQ8lp4M0jat8clUmZ88pzR5mGsqAUawJ7h3n0OOzf3VA5DX3e_1UD6S8hXTgwBNT9ozGjofNYUMMDD6zlA8ML-HUwPXJYG9keViW7YjwwpJfyMo7uGDjDRSYTA9tX8WONyozlc6G2gT3_Px7EYkzf8WuiHg0R2AK1iWy26-_nTlOGjWZb6kdDejUKhVOYoFulJ416GrKEDJNoYcp4ZEWNRN6jiLrnNP_N3Jt27mc0a5SSzNzKSKd45b2ekD5oI-zUEfsVbF8C2wImoVIeIccjlNZy8wh1WuqpBux2oqqaP1DLzyqjENPERaXex6DdmSmyXEfc5aRGc9L1XdKu6b-hq0ukQibVpv8BE7G9uWI31q0tVRA6zxyJhnWw88llMmjp06kCKR0qHw",
+               "width" : 500
+            }
+         ],
+         "place_id" : "ChIJ0SPxuAA4zDERipiX8FMtCOc",
+         "plus_code" : 
+         {
+            "compound_code" : "5PV5+W6 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PV5+W6"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ0SPxuAA4zDERipiX8FMtCOc",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 521
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Level 1, Ansa Hotel, Wilayah Persekutuanalaysia, 101, Jln Bukit Bintang, Bukit Bintang, 55100 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1471339,
+               "lng" : 101.7121372
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.148527880291502,
+                  "lng" : 101.7135332302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.145829919708498,
+                  "lng" : 101.7108352697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Museum Of Illusions Kuala Lumpur",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3203,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103422288044972659789\"\u003eMuseum Of Illusions Kuala Lumpur\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ua-9vmoVG-yenRWbAAcfT37VEuSse0pB28kFFP1rDmtRCUXrM79xVjIlf9Oys3rsLkJbl9yxhdrwFMN43CZ27P9DQULn658_wBjlpclhP7j-wp1RuKRSD35H8Pxny54AN5Dm8UBm8_SR8ZfqxaSzuoShWdEseG3Y2bNJBS9vqG5uSfoyCVh-Yh17vckWF8bQ4NqHb5SWhkuiV-sxZ7I3VDrcQOp1eu6VMq0Gdwq5W6FtnmIzUFAYkw_DKi70cd5LBXI4BW8_LN_oh4hOMGKJW020ABs2cjXaZ2YWPY-b37XA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJAQAw-is2zDER-IZQA10XVP8",
+         "plus_code" : 
+         {
+            "compound_code" : "4PW6+VV Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34PW6+VV"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJAQAw-is2zDER-IZQA10XVP8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1697
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Stonor, Kuala Lumpur, 50450 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1505,
+               "lng" : 101.71669
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.151794880291502,
+                  "lng" : 101.7180906802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.149096919708498,
+                  "lng" : 101.7153927197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Heritage of Malaysia Trust",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2848,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113218464386387903275\"\u003eBadan Warisan Malaysia\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vHlIaLHn7hZUo09KTK97NQo41MVHIOZrquUBSBXSUhC-F8hOltZAOc0z3bdNg57aDHEz8_BXQ2WtPE24t0ccPwu0D-GR3VVVe2KoS5GfPmKa50hhc1alYexW-6Bw37diG3Bgs3vQhsg83vV7xyGVAxot_wstHz9obEUIGjizp-rVeALOsVpxJ0FTKIb7nqYTd4xmSvWE5x-3DnV_IjIQ0C5VbZh8BfCuBylmoj4IeHbl3jx_Pg4bTAHVp2Ha9NYVhX9b650naEkvvTnQmmhbLRkHPAcF1QbrCP6fSVrPG2RLJ9yTTz8LyVdaYeFncPKJLo-Tf_P9UKgZTVzFkBvHyWlZI1qbU1YoDFXO1mgBIFIxozc9nLR6tZTOjfi8KJx_GGO_2_XOE3-pNuFVf35tRlLzJ_hp7UYf_yOpuNPxI",
+               "width" : 4288
+            }
+         ],
+         "place_id" : "ChIJkTJDOC02zDERHXx4abonwBE",
+         "plus_code" : 
+         {
+            "compound_code" : "5P28+5M Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P28+5M"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJkTJDOC02zDERHXx4abonwBE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 74
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Temerloh, Lembaga Pembangunan Seni Visual Negara, off, Jln Tun Razak, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1736636,
+               "lng" : 101.7052282
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.174839630291502,
+                  "lng" : 101.7066402802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.172141669708498,
+                  "lng" : 101.7039423197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "National Art Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105627534438363118512\"\u003eNational Art Gallery\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sW-AfT1-_ofk0v42SayRF8pZ-q6C35EXxI7kpiW5U8icfSEO5c1psS8U4eUzxXNsM53kKCUwIc2sQ5IHvVwXiV6BpXwG8T9z6R7fq2oib2ku1RLUgT2jVCxW_Ze5dfRehH2AL53yaudnQMQVWda2eouKU5Dj3BoSOPr3BZXAHo5C-2QWkYdWcEdK_jZiBA8b1h_SS8cnVtxVn_YUYFwC658aHEq3wwv_Xc3Zd5b0jb0GaZ0odtHUiiJKi1m9sLLAINI01dYHNLIcorYFdkRoCKOyRO-O6GB_wRofAum3svqw",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJn7ct6mxIzDERAfOvaaTX5DM",
+         "plus_code" : 
+         {
+            "compound_code" : "5PF4+F3 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PF4+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJn7ct6mxIzDERAfOvaaTX5DM",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4862
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Orang Asli Crafts Museum, Jabatan Muzium Malaysia, Jalan Damansara, 50566 Kuala Lumpur, Perdana Botanical Gardens, 50480 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.137701,
+               "lng" : 101.6884631
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.139112030291502,
+                  "lng" : 101.6898292302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.136414069708498,
+                  "lng" : 101.6871312697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Orang Asli Crafts Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111445015174027470368\"\u003ewoelly william\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vX6xTXZyEcYCozAaPloEwVExe0ohkHvgyeNLusY-kK49oqljnpcHUsmiKZdF1fVdoGubSsHZ6CIQksyGPn5FY-7_Qhs6lkzaPfTo50EvgEeqFYM-Dt3-pagfQ4DZKbf6YgFgqf7MFgYrbO0ydjkio_wuIyC3GKuCGTNTWD4lFW896uNSfDoyZ1cXtuNki5VVBtH3IMFzdgdQubZWovuBnaLBlJy6C99cePZbaih0q1kOplrmQfy0Ii_ST1kg5hhPZpJA-965AK5aAw_HuzK4LXoLKMvGzeXP-6pVgMN-qC7Ba2LuIx_xAc-pwRNpFAGm-SLlVYMY7fMuRD2RG8nsHJOUneFJuniAmGLGTfAPtId2472nEicycWb6rtd49Ug9-NzXmu70J4nGyBjyv9PpUjR_xYj2TaZegXztAeSh0",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJ5Yo1z7lJzDERjQ0Y3YzFkVA",
+         "plus_code" : 
+         {
+            "compound_code" : "4MQQ+39 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MQQ+39"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ5Yo1z7lJzDERjQ0Y3YzFkVA",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 237
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "172, Jalan Petaling, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1402509,
+               "lng" : 101.6984022
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.141576080291502,
+                  "lng" : 101.6996486802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.138878119708499,
+                  "lng" : 101.6969507197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chan She Shu Yuen Clan Ancestral Hall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105613910004038507938\"\u003eWai seong Yin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vdyyyrTPop1kKm42wNK4XTCnHU3LXYZVJxWJDixKUB6BXKuUKdYQGaPTwW6HnjN7e3X8m5-UFQlb3b3NYKROktRGw_FUUc6Lrcia59yUMjmLSYwU7J5mo-KgI6kNPC8ynRnYmxnPy7rIi_fItYSXcSNGlybDB6f2nqaR8zo3BBVXzlGiLvzWc8caIeC_2DkrAh4VBD-hsgMUVhMDLQgL3XTEyLoVFibyBB8DbWYBKdhIAXm2-TG81FhAgCQtGORbjrMJ9lyqr4f_tbikTTFDU0dIWYuz_Lx7CbUqV2xMN-3lcsDZ6ljQ54AGh-qoRXmHWYd248NCg7eqhgaGaTMS9GqAu9zkRZfsvIG_kLkQyFaMcRNWYjIxbuX6_uLh9g6T_IOE-yrI5YQbms0J-DCqQX3VD_kJ2pLcWuOr58ijSx0g",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJF5HxHdpJzDERcxbhlW8Kkg0",
+         "plus_code" : 
+         {
+            "compound_code" : "4MRX+49 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MRX+49"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJF5HxHdpJzDERcxbhlW8Kkg0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 795
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Perdana Botanical Garden, Jalan Cenderawasih, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1417537,
+               "lng" : 101.6870311
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.143246630291502,
+                  "lng" : 101.6884714302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.140548669708498,
+                  "lng" : 101.6857734697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Memorial Tun Abdul Razak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111291653184300497175\"\u003ePaul Ciprian\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uo3FtT4s2XU_FL23eg_mXA0zAoNMFfUzg3gWYAYfKQjudhhkOrjxvSyZP5uNno8QkASSa0hRFJkC4DVHu88JMA2ESuAjXepQkY1DqLyDvj_ZW7wSrwP7l7axCvFNu4jd_tiDP3G4aBtvKUxsqWKo08EI6ukks7mJHhxD2SEVe9UIFPl8C5wr3oh8xTsgOKjRDnXBfxxp1FMNhPVaz_kR5a3X7Rcx7jaKYagu_veY3TMiIxIIXKrJI-98EEPjmfe8J_Ltk97er5K5YQxFbsTs9gQX2GssyId-f29r1VrKt2X0DgT7JW16X3DifsGWccJyBtY-WtKEkn-bczYoaFbN52OEBCbduTAj10FFup_3fwmqQSSFxDB-wzYbFd2F_1eW0uRCiGbnBXf7lb6FnV8pvvVOzCmROkxPHTUJ25tGCvhZguV8sd_DpSrZT10PFJ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ3fONYshJzDERvrF1u1Aqbbc",
+         "plus_code" : 
+         {
+            "compound_code" : "4MRP+PR Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MRP+PR"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ3fONYshJzDERvrF1u1Aqbbc",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 194
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Raja, Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1487179,
+               "lng" : 101.6944582
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.150026280291502,
+                  "lng" : 101.6956531802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.147328319708499,
+                  "lng" : 101.6929552197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bangunan Sultan Abdul Samad",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103774206695926550293\"\u003eAdo J\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s8u1E8x7EC6xGgw2VGr0ANOLayoro_qLLJd00uIuaZZYnBlTeLcA5D7wKa9ZN-QvauAd6a5Dcpg7xAkovc5QECJjwE0YK1W3k4sACGJQwT5TGLdqxDF89gGFXw7oEqhQ8MwK7x1DQEvNu_CedcDyTumTspwIp8MRxIfF77b9Cvrb0kLibSCv4EbOdhgWoD5qn0q5d_MfmlinqgyIVYAgdy-sYAqPU-sgB1koBTQ_Q6WVK_KmBx_9MMptc1JyBvi8qFo6v65JizxETpZaalErUC-KF9xsEb4iGyefuncVO0E8aIruxFLBRDUeXBSpdhhvr0fXnJwWTRP_wbvTDKngMXnWtATAYIgh0Rds2z23vDIV-y6SBYGAdVOhbzSHqoESjz7ZWsGFjD8d381R6jyMiPiNiC7nGFKaQQ53gEzaGsC6F79AoFQ634NcoRcA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ_Y2Rm81JzDERKAawVfuGOd8",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXV+FQ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXV+FQ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ_Y2Rm81JzDERKAawVfuGOd8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2971
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pesiaran Sultan Salahuddin, Kuala Lumpur, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1499716,
+               "lng" : 101.6844145
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.151439280291502,
+                  "lng" : 101.6859003302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.148741319708498,
+                  "lng" : 101.6832023697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Plaza Tugu Negara",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102874870312297263538\"\u003eMichael Rozario\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uh37nx9fNW-OUfNqGlcekCFM8xWLoBPgHdAJSx1v6GLT-NJiijpd2TB_Qjz-a62wjPLrTJhJUTzHR_b4yGJJAyKkccqb1o_H9Karmq5JgDR4zjPaXH7-qYZETsCXZTSdxdcX5LMH13LudW8gsRM6YSKpMY_VYc9ff3gPyUedAgOcADZLOB7_s977IX1907HfSRS9pp5j2moEaIjxZV2MoGtyg4WKUizXGO1DL1tl1-g9HvFktZ6-cwuIaC6ix_3mhHtjLaQsh7DePkKx7jDF-72Q_EX5J__QdMX8v1GGu9vtV4zn_gDODGCQ-hgWb-ZqLtRuWPpPHBtH3CGkHCPUsyZz-NQJl2CUbjYUfWLZYyhLBfohaNprborBMBVEA0pxyVmHxGuW8zCBD8wcAbU11KQBsi9oWNzH3cSty4KDR8xU7i8V_jbk-MxB07KVUF",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJOzgKmspJzDERMH_AAunHNm4",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXM+XQ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXM+XQ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJOzgKmspJzDERMH_AAunHNm4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 454
+      }
+   ],
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "51, Lorong Hang Jebat, 75200 Melaka, Malaysia",
+      "formatted_phone_number" : "06-288 8571",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.1953013,
+            "lng" : 102.2486742
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.196628030291502,
+               "lng" : 102.2500066802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.193930069708498,
+               "lng" : 102.2473087197085
+            }
+         }
+      },
+      "name" : "Cheng Ho Cultural Museum, Malacca.",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1715"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1715"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1715"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1715"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0930"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:30 AM – 5:15 PM",
+            "Tuesday: 9:30 AM – 5:15 PM",
+            "Wednesday: 9:30 AM – 5:15 PM",
+            "Thursday: 9:30 AM – 5:15 PM",
+            "Friday: 9:30 AM – 6:00 PM",
+            "Saturday: 9:30 AM – 6:00 PM",
+            "Sunday: 9:30 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115066912578736214944\"\u003eJoanne Tseng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGsjY35rEndNlLDgQPu5uc0I8R7ZaAh68BxpzW1fCT0fBBy6UbHEb310H7pdENOjYCIDfSCAbB0tJrVF4VU9FKhO36bboZIY9dbfZOAN3UGLq4AiY29ksbmGRAqYEolpDYKsX4_Kva9LCqD-84J3aTgCNX9zwteiu9Lu6i2ntvj3N6dq4jLCaiC-QEJ0sX9VUpdVa2TDNsEUIGS0kFMLfS2XU1IDZFkNHCPdvr6SMn2TGs5Xmr55CcngExLKc_pF_jw_hG8oSKmFhTPt532GUqA5UFHxcXOu34m5iWqvhjGfU3wS1bDt5yrPH_LvifkfOZZqGJIxRQuEaU1jHaMy34IpucHntnMCfFj-OaCk2qWgPg81Rzizy-c5nH0xLISoZL3zI_ZKSAF3wHfGROaDzXiwygH0koYWioZFbwruXDX18",
+            "width" : 2048
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104715908086712968446\"\u003eTang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-skEDP5yq5V2MdMHxqgXlfHNZzV5P7ZpkZD_Od9E9DXWJfmhNRwYpaIQAtNpPP_5fv8er02zNmX8ocy0WNkqpGMK8I3X9BZie1Aprr1tXRpvG4dNyg50fwyFKlvjk04J1yUOTpVfGauPCZhRvM1oVbuGYM9PDqjG5v9YkfmxRlCgqCo6uhkHUYuvOgP3XN1b0wotJw_pt-OI7dCMBsZCh9wObr8iEQaAjDobWACI8COsEncZ5umifdPTbHJbTPS_ZpKtAJJjx44A2fgOT2cHcEBooZoDBkAjlIvvgO0qJkkOfioKlZgNzBEshyEDxAe8LLqzXD8neiZGakoxHSUxBTkudGd75kVkArzivOUpXs6CSMCQ_Nunx8tpQ9EnxpmouRwVyMnBVx-UWixJ4hneUBEpGmXVoBX2Tuu53bn1e9arisI",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110412982945838832866\"\u003eRandolph Calenda di Tavani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vfoYLmDfJ0ugmetuSPxXhpXJC0Q6Aj1iGVWcDnrbdIc3X0UclW8lTtcwMjeJmd2DMdt6HOMCZ4W-YuVFDJ76ee4mvooJSmTysAzWXOpaooAOnzhGc4pQkWraJcZe6-V1HhZX5t6iJ6ldi0pJ-tt-Z_DvyKJnRvYAXRbNkQ5TO0xKbfEL092Yay30FtKyBZ2Keg48fWdJhuu7PpR00WktZQhSnSdZC9KLYESPnEzwQRaxe6JY-_MRbYUrh6i6SR0bJmken0qFXw53NdzCq4J3NHOBj3MrOJ7I5MeZ-9YBm3rLbCXq0wZS-670IKNRHt8IDahmkDgZlGPnev3DlUwLz4QPJoQxVDk41pHafU4qZ6DqX3jYcZR0Y1IYvkscItW7hDvH3sTJYo3m7_3RGTwrjtY4ddmUmcfjIPPFb2NJYdKw",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104018581199517363619\"\u003eEmily\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sd5q7TPtEqvwxp1MvttkhSUP3xQ7d8ZAgyR6L452if4UhRM04G-ktGWO0dH5bftEzT1W2xa4d0pTcD3GQmuUa3-hSlf0_lXqE13k5sBnKwEQA_9uFarPz3tmzNyavGix00RrC5u9Jq-YTbk6TFSppsezJCxPGJ-rvpuAkTo9MbnVHPN_Bon_jiMXimeD8jZ7d1yfWnWuxrVVBYX5bEi6zxeqsoRBw-K_mEHNSgDfXWZQsrQVfX5G0jo9B4xgIHpAZLGiPVmwyNRcJcYOl8TkCWcQJciAnwAIOxkfPSO9X7SgJWQoL48jhwFYDcFTcaTs0Le9NvwWX7nx_kC6e0wG9MEXuOTVWNwoJIEk_K1kYk9UbLhNSIdZxvhdvW3DfWdAQt2q4D1gFEd-MSyZcfyp2Q0NHgfJ4vTmBToPlWOqE",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110711789234678747129\"\u003eV K\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u_EML2nwZnXrAgVQO0oNeusj5KpxxUzQ5XJsRxxZukGxW4YkYaWFpQnVWMFoA-l4HaCGsrz7u7jeZIwLYF0vJKxh2JQzEzDeTLiZyhnF01tNzewiTYSybXxWz8TRxvHzz6AR3KL6iKEiHJ7y5hvsLoHZ2Q8ydoylplMlBEXzBE_fPCWUVMGRwk7D4bxti87QmRIfbimJTsrIk0FmA0EYBjPcFpa2eUfEwyndLM6wltzaV-gxs8lZaJ1WcCiF0L-CcQAbkyL7TUx9Jeg4Zbivk02UtcfEtR740_lzp3GTegczwzcTrJvgk_V30J5wPUajCI-F-68CqtT_xoCuHGXqkqK4NYiocZuki-Y7hMlHBSvzejtazeeRIltmbs44B54CXOJ9vIuzZBIgszzNx0TWSXzqc7kTzSLcNRpXsn6kTTDw",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106548138570563694195\"\u003eCK\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uSDex0IEmhorJHt7tvAo_Xu65YC1yUCajpte_RrYuB657qL5yVbY0fFjTvUIkj3h9ZtLnNcAXJ9XQ_JCdzoW78L0PtmyGWDnIopT3Q5woGiy7JxEy6t6FRhYhzCora8KhTK9s4d-axtmFZxrxiUgrSyzxflmPOI_veVQhvK8-mDZrfN2Jy6oSbZVssCRicb9rI6tq0GdRZoCEJL_TZ49vPgYG5UrLKoofg3jB8AOPZBuM8gM1Kaf20EKP4sodEyMUABDIVllYHMfO_yxxhbRfta7GejUQla93TR7mgW86PQ6AY8Gjp89gMZ1MeDDsddwkUGSeD1JMhOS0t7X18re2HINRhIeIQwj8lWIGNx31IgwigRmPBc3a4RAkz_afq-z99XGfShEZw0Q7bRBbyIkgCHJoJOGCRF-KnnVOCUQ4lv-oZ",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107690906971108085407\"\u003epokuan teoh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vtvxRvrhW2DnID6e1IHvD4lKEeSMSSMeweuEtBw98qhSnsQeIaq9LuYxIL_wER6ukM4EkHT2VMBZAIwHXQY9TSfhUDyCa0HCFLefuCHTU12krQd-af5-ZgqbuYIIMrmiTCo2Uu24XyFxbGAbo3ZmEk2BQ8WDAYjHqsbfigGkWLmT7C-RJBuTRN3iwMCS20oqj4UiFxHq7uCC_7PctlptAOy7Je9LmwcGkrjiZzw7YnHfJNk5rZFze9TzV6t8czqWSZCMuKXRVZ13G9X2TXWDjlwrkhP3MxotdsA2YuexYfUGMvLZjzfH4Ea4e-GsiJzTBlTknnZWYUaPsTLJm0g0JMTQAV_K9sVjowrseihNZr9CBZsmZl8huWF_IIpW6TH97t_bemPP9fJLEjixmRX0jhywaXFd8mxpNlA2lfa8LJwR6t",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104715908086712968446\"\u003eTang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tP9ZBiz4NDKnt85JZUpUELnnWGruLK1q14ObArMnpmEP-HzQL4n6Uw6wDa_BWZ9hUwxMClHPI7Q_IwR6t-Exh1kzm2sFDak8jPMMki8rXj0myPsCzZwYomPW5ZPzP2zNJ9ov5wy5akxMX-otDzJ5nj3GsbUJ6IhPBoI84MET-sgNUcEqN3E8W1utjLSjf29HitcElAdYGmoNhIDFMw_CUfeFS5Xpm9gv92NI9hjaDnJ1l1EZbynitmRadiIyMrW2RVna00nqkFlZ-JhNk3Qww7zaFmRXCNtZW4j-Nzys3Z3ox5waU7Bc6D9laMMjyEOku_VGwICeg39vDoehFSsytAGRyqzJMLRyAeK3FNuqaVzGC6gnYApypNYAfS9OtdHqD3GvKKZcxvGJYj4IhcDW0RbeqSvGI9J9_f-PoMmePM9d_q",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104715908086712968446\"\u003eTang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v4kbqDhq4Kh29QV1ZeZ5E0ftZF-vA17NAjdWR-w_P0cc_xX2wEtD-wpGehib1nJPW28DWqWJD-wLN-x87DuXQ9dkqy5-DTWxWGVmLFS1ewNYG_JA5rRS4cypV7aKbZdzuO33tciRikVNyLq00i5AOLmX9pp9WOrB9Z5xvlwHWxumhYFa-ZqxtPRky16AVatunBFlX-MuA77rJr8OKomaJENzqCXNx3z1x2CPMiffJ65sv-A4YvSe8JrXFnyGGUMRvQJe_S1MPUzSxTJ5QgUVrNEwty1osLXyiXU79Mpw9Q2sFWO_TLWyV4d3moB-iwW7fAxUWDavXodfNduMDGRgPYSNfZA7YpPUnqNkqi24tlwipXR1t7Ixk_8ZEIHwddBieGdJ1XLSuXYvt5fEzO9sh6symd7PblzwPQKAuvJQNp6-IF",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101824048842787993434\"\u003eVénon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t0YgAkSsYerNbQncs1Ky8NFqFm3aFwK00u9qLHL1mwPAdlUT44L7KFWN31-o-nB2LzHXlU4ZJSZ2ICf7bjY3jwL343pFE-ikyCrr6nTykCYxgZbEGFK9ZN0n9ztBZHYSKIORxRbVvtofRi0-6FKTfoQH3fg8rw1x9I-eMUL431j-xVE5ZAefq8oVGV8v-vJeVHfYipSF_LuIG-FWuRS8GqjwOPYlbrAYqOdyzT82IYV5ggPH53ELxkxquBpbwSZLEfbMIMHKdVnUx7FpS1HHoi-4hrT2ccae-TLbZAL4hwggsbbK_2PJuLdvQ6Zy_8uA4EQa09jFqfpAD5NdFCPnSguZYDMUZ673OH2ZztEa8GifWh_8atObgy_e1ebyFSDVPUlyjHNzpTVxuU0iUrbJ8pTydiV4zisX9eIb1QCx8VlLQ",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJVVWFJdzx0TERMv7qo6qtDSQ",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=2597923508468776498",
+      "user_ratings_total" : 437,
+      "website" : "http://chengho.my/"
+   },
+   "status" : "OK"
+}

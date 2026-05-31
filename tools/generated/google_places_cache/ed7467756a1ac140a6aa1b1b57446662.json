@@ -1,0 +1,1150 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-v2VUI5B64m9WY25WqlYyByd-HNrEVZdaj456OrKCodJKJ5HtnifBRC7wdeFYqSJo8XQLXUtf31djTOGFqWkSKoL1LtoUUXrrwRXhUj-KzezBpGySQMPmIWXVvsUYVnHgS_26c_vwO2q9FmvKiufEz4x4N4qgXu4daZdR_0ro8jEspzfSqU6ATyicgRwNo1BrkUpJxw-Cn-kWHMJJCbWhAX4lLQIwBY6t1vCP_wn7T4JoKMg2-2wButazVC9Yv74lMT9cx0PwrWsQ7A0l2pxzz4bVS-_Qo5z-Mde6CIjPrVlGtzqPKYXicFNJYXAXHrVfLkPeH7ygSrfY8laHcYa9ZCY4POedGU8TGit4Bfsxn_YmhYiu0dUvC3XDNsbXLSOLnLDjyK5k-vLv9VoMdzN_gGbb1qIGEN2k-5We1RSuW-ZossAMlbXFMcu1yePRxkWfc_2uMvxqC1ArwyINe0B16GVGxUSLb_VmC-rWW95R3nd_a31huXad5Bk0fYFXOpQeY6xEDDbTTZO0rhA0fAFWm-Q2cFohvTMtZKyYhC5fAQ3bHGHLJbELCN6f4BHu_1laarZv3thdU-y3dYg6MzKNRJfnuyVmHKo1JJPgI5N0nhlAgQ9We2D8ookZwx7wcITY0mau8c5YOTXRZDnY9Qlts83K4x4shIbMHASYq-obBXG7OV4JmEronB7ndNdCoZWz7d--i6kPg5V-WcKcWsyoG-zGi-TKBFqanUn0D8upj8lJs7azgJruDVnHDmR9_Kt6gdtay61AzAjCnab0XCVU5T-HBy1FzNY2RELOqaCnDntEP14I3cnhZ9-R97rGTNNp8rzY503aM",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2C98+WW, Jln Pantai Melawi, Kampung Ummi, 16310 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0219048,
+               "lng" : 102.4190012
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.022931780291502,
+                  "lng" : 102.4206095302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.020233819708498,
+                  "lng" : 102.4179115697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Melawi",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106398087765951381112\"\u003eCL\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uRAX494y-Y-raCCs1GoSDS5Cx50IhKSyyZ68THOosVS6OSKWYOwpiHd_5NKUF5yfPx4x84iV3s55epdi0sjXnhSQQz8u2XoFbVaM0aTTYz3QVxabY_0rJX9Ey_h1mM9PucxVR_3L0uXPCNwJtpJxHELiixHTIlVH9CZ0iVDuG2ABtLEW9HN4ZlQqRGu_afGc_Sota6vLuFG0RfPLMJ5BEi3ASWsjGoAKwi9venE_2i-wWD3YNIXimeQpSMzj4hJpR7sGJqIYypX4o446ZWOC_XskXV1f-FnOgbaskHlME1drwXB-pIHftzFjYk2AAChvqsiaiHoa-mITzxhSa3GBiEvJyYsUFgQ9VJQJBQsjibMFUlqYNYSDG9IdKrJ82Zb-M7GcYZ_8l4wwe1mnl6BqkVeADSlKP5ajjM08I0peg",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJdY9Bt2W5tjERvSfgSSMYv3U",
+         "rating" : 4.5,
+         "reference" : "ChIJdY9Bt2W5tjERvSfgSSMYv3U",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 915
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2C2H+GW, 16310 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.001262,
+               "lng" : 102.4297914
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.002697980291503,
+                  "lng" : 102.4309680302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.000000019708499,
+                  "lng" : 102.4282700697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Kubu Kuala Gel",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111107443766622908678\"\u003eJain Mahmud\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vSGDNN8ZseVG8x8y-qCseQDiD35sMN-MeF9-L6GIez3xEdX9vWhT1WYAbBym7LUchsduMjHkowmNi673cK06F_DcP7r6A9vIEiNCKqj2wNOFNbpStymvJ88rcrYEUztViFM8av0wUustAn727js__WcsEoxDEKjmIo-zNknFZCSEwU_PqsG6RKkZ1nXeqq7UXea3NRo0djRMD3ZjjiGM9pAcboblvYCdZlIEZ9kOCyObJS7_3AtsfRgLUv1161FeUKZMB0uYtOGhazzeQsVUwp0xLnXT4j-xSUKvApWOQsU-NKeaV39HyJDUNhs-Q7bxBBZDmVXTntUgLxBEPnU4luy8F9vy1VO5P7UD8jTe5daEsYWpbilhSPUumkujNlFJk2TriXPxaCWtHo36sDmM4K-fXclwncPmAoljQ5ovbVW9fw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJVyOefU2_tjERmjxy7xEuoJA",
+         "rating" : 4.4,
+         "reference" : "ChIJVyOefU2_tjERmjxy7xEuoJA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 54
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16300 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0653578,
+               "lng" : 102.400779
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.066694380291502,
+                  "lng" : 102.4019393802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.063996419708498,
+                  "lng" : 102.3992414197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Irama",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114531043952593091500\"\u003eKiyoraka Ken\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s_50ZzdD7X_Y5QSeTqSLJLfnnJ6vziqqHZHR3C-OOnih3bXonQZiH7O81Vk3w5QieA3Fjb0uYgDgztJR1-C81SEaogz6D3aoGlzBEkeKzpcmGtskytzZN27OkBwzjzv8BpfrdYUg7JSIqmUCJNgfVjnVDug3iTyzAziSXI4VV7zOYT4SCLfV5erdvMlN86r9qTw0obYoW7rguJmzzYH2d2nMMCI1HeUJG9zJiu8zPIec-DG3aJ-udLSY7MO93kZC_KmrqT696y4vAHG3DO8Og-WABDqMRvSiDm3sDQK7sP-cxxzerzaNrBbEUnHjRgQakzb3SeOWxBqIM2LAjSrliNe8J5aPIDrnCwRbk8YAP_iP6-VJ4n7oToQFqdInmkfwhF3WPoFbyULl9lCM-987eYMkhv7ZKPBnlJ_WsCQ7Qbxv54",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJLxpuZv64tjERp73KVFnYKxw",
+         "plus_code" : 
+         {
+            "compound_code" : "3C82+48 Bachok, Kelantan",
+            "global_code" : "6PR43C82+48"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJLxpuZv64tjERp73KVFnYKxw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 120
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2C2H+GW, 16310 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.001839899999999,
+               "lng" : 102.4296298
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.003096980291502,
+                  "lng" : 102.4309359302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.000399019708497,
+                  "lng" : 102.4282379697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Kuala Rekang",
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111889849393386007985\"\u003eNoor Athirah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tzwfb4KvpOfKZm4f-9AlORSkYA7ES3QIdESgT3d9EM0cIvn7KudrujMm0m3X6niiJ9u2lgG3aGNiAf3KPrPDKPcOUj28YhQiZWa2JoG-5sYmGRCsBEQZZmqh7C7b24JDeI_tAupHhqe10vHj7tBZ30H0d3Xxb0P06bLJLZVcqwWHge4AuejLUrOr49Fkb5Eb48warRi8K5IgZvaHsM__5xcWedu180sFopwvPnY3SV_FJAlyjoqRYhbIgTa8tv2U1xe2GTOYAUzFoH44bj7o3VEXQ2IfT46FAX83I2ZmmDKmhTpMtF7A75AtsAAQjWKJMPlczV-9u62pB8K7vDdR_P32mRi-pOM0EiBp54XypmXH0aWCdLdQkoKco3lMBw5KZTB_D2HJawEYIXhKQnNHZZvnA24uFx5OCCwvsJRrsB1kizEceZa60yCRACcw",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJebexDQC_tjER8GKqbfMlHZk",
+         "rating" : 4.6,
+         "reference" : "ChIJebexDQC_tjER8GKqbfMlHZk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 48
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Kuala Gel, 16310 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9998786,
+               "lng" : 102.4306421
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.000849180291503,
+                  "lng" : 102.4318418302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.998151219708499,
+                  "lng" : 102.4291438697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Kuala Gel Bachok",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112985690148025415308\"\u003ePantai Kuala Gel Bachok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uwDKU05jbAMCpg4BMyCk_Iq4698XQLCfU0-GsVUqgFTqcjKpjeFS3n_BXZa51MiGDL2SajtP7vYhpcqYfGXkV4mMf3H7wAv48H6Zf6oaA8a61APPtSoLUxwPimWF8p5aX3kvFkQ4KUtb-TityTd9SuL3aI2z1W7vd4a0Hn0taDq9kDJa2Af0_7pFnZHJEW7o-EAvyR_Ky1QD05IOYl_ZBqsLzM_eqqJGbQ9AVJVp9sYWljV2OH3UdAXMKimZbCNIZLdOYgm6WMQdD4uMccSGBSUnoc9II4shju07vE95KJQt0a3qlwODKxB0nwGkDdu3PPV1Nrvi_AM-xn9FmHLtpRA0nUsTFzgbIBEWiZEdy4jsM4dS3kea8Eq9Ad8ItnIp5DbTY9XZH5cHg7LjhLb-wWTtSrOe159IfLgxJQ6j_2iTiEO_UbK4-86H8aChln",
+               "width" : 2160
+            }
+         ],
+         "place_id" : "ChIJizV-WFu_tjERIh2XpJMAqo4",
+         "plus_code" : 
+         {
+            "compound_code" : "XCXJ+X7 Bachok, Kelantan",
+            "global_code" : "6PQ4XCXJ+X7"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJizV-WFu_tjERIh2XpJMAqo4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16300 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0606004,
+               "lng" : 102.4025266
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.061922380291502,
+                  "lng" : 102.4037135802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.059224419708499,
+                  "lng" : 102.4010156197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "De Irama View",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104071674999564207388\"\u003eDe Irama View\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t-xsrM5-EawNvCIIpwAp4dunf-KABzd2uWdMAh-aRk9zKwmBFzcBI-Ug6YogYrb9mN26tKiKzvb6X4k5jqsxvLZddwQ9fyV-SiUHaAJvfR00WQgVbpiftVRE7FmL2E2ZNNpmsL_E64-_n9quURg9XOPTjz77bEca3UwEaUA_dRGEHCSdveyH_I9hjwZ3VPFi3lPsjagoO0Cw0Stm2-KVLtRf0nt2ptcTZGhT4nPPEoejvCbIdgyKHAEDLz85UYKlP3j4i-yyXlD7Bno5Hc7-KoFJtxzenr4oQOgFbHMTLeenONMzYaMJyUbN8e_8lcRasBdDXSY4c09KvHhXwVUB5jLh0FyKyA-9h7CpiDLKWe3ApOYxcjr1f40i4es9lS62iM4u3l0F_QQEGFVDtGJy6Tq7l7gPC0hOso3QagSVNyeCn0",
+               "width" : 1599
+            }
+         ],
+         "place_id" : "ChIJOUa7h8C5tjERIoduQjxqz28",
+         "plus_code" : 
+         {
+            "compound_code" : "3C63+62 Bachok, Kelantan",
+            "global_code" : "6PR43C63+62"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJOUa7h8C5tjERIoduQjxqz28",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kemasin bachok, 16300 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.098179,
+               "lng" : 102.3856788
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.099507630291501,
+                  "lng" : 102.3870336802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.096809669708496,
+                  "lng" : 102.3843357197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Tokong Kubang Golok",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113735841768274626399\"\u003eNg Ghim Eng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukZJUN3d8-w2uSnN5mI5Rvd9vCQne4ooHqwVVEvyRj3Ww-35EMxJHoVWMSmhOHoiCCf9z9nROGD_WmDmQcKZONluFBW4zen1NDNNEPedH19mnWYLXlLQRi2xEWFjrRR3VRKTBPnXaIyPuisQJIKaZ-2-rgwQbQ-MF2-QJahcVOcdz_1C6fU8CLp5MfGrCRQSE7ULKQx4RHyiaLZTHLJQBHjdVtdgCS3Pl7tikhzdZiD2lRIU5bDAkOssKmlWNU6Sm3BcrB9wEbtjiem-7CGA8N-zb1cH0UTtm5RBBC2dP_WmNFKh5QjyvGdFYQ0yycuaLn0GdL4wULF_4CIhIHrP9ZXxS3AYoTbVQC0JMxIOMqr552p16clMTRmHHlQok3Mq3vgJIH-bbG6xFhr7gURrjIFYOxbQfJyLJJ8V1OinKZ_aFd",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJO2ILDyy3tjERZWanLtbNsUQ",
+         "plus_code" : 
+         {
+            "compound_code" : "39XP+77 Kota Bharu, Kelantan",
+            "global_code" : "6PR439XP+77"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJO2ILDyy3tjERZWanLtbNsUQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 37
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16300 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.064591000000001,
+               "lng" : 102.4018012
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.065842330291503,
+                  "lng" : 102.4028788302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.063144369708498,
+                  "lng" : 102.4001808697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Irama Photo Spot",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117736949894890986521\"\u003eHaRrY boy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-saBC2m9OU0Wm2MLv-JEDNQwJ4SKFvCVfPVf66ajqdcddw0tRpOg3ouer-dqmnU_Q_MTk76zs0km-OP6jvJcgYUKzHMOi5ZOASnQZOUKNAm-vAKdzDy5FzHbgTzlMCgLkRYXM2dz6ygEDBlFI10Y-mhXChM4LCkSss-Dx6hxba-fb3nzbTnYnnUQXSPPutbelPxM45zAVc-o-FlqFg7lPX1H25bMHIyMknopAUgBF0znxE2z_qTZOf8rZn6Xp8HUjQDMKIas18-jbwxyirtYYto374-BCo9aCht8qnNeLt894hZ3vT6XrOXx5h1T-T7gqZR600nwUi8dmZWon7JRFMUFtCMIdr8O3e9m4AVLtjhN1mHef9nQUVVY7FXNgC6rn-CbZFIiqJWiesqlN-Q0MxTcX_uOWDzkMCXFgbKT7Dw5A",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJPzc5OAC5tjERW57PO8O364s",
+         "plus_code" : 
+         {
+            "compound_code" : "3C72+RP Bachok, Kelantan",
+            "global_code" : "6PR43C72+RP"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJPzc5OAC5tjERW57PO8O364s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "49FF+VQ, 16300 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.124687499999999,
+               "lng" : 102.3744375
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.125955830291502,
+                  "lng" : 102.3756260302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.123257869708498,
+                  "lng" : 102.3729280697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Impian Kemasin",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112362857805439011482\"\u003emfaisal chemat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vUJUcyM7JOzmucsM_xk6-tnpXl8Bf_2aKs4QPaDjFXXa7N6CXZ9QxfTaGq_YSoSDp6ZteRrD1hXcLIhmcwfMAR-Ra78BLw4RRTz5bm2xPL0xWNClN4YcMucFpAGGn8OGxuhyMt43LRDkSnuiWv6lvquFI2BSlEx0sm5NZ7vDC93Wbh6fHni07MQuAK0ZBymPte9wLQtDugxx2-w_Kv3P314oE4J0arwxYbGaM1uAUDWULFi-AYdogJe8Jt6I5KMVTuA1OpgTOdB5eDoCsyZha-Enz_KGn8iY9ZWwEU8ZPDaEs5GWLNwJusp0AUHOnDNWc9h549ioQk1NbfSEMo-7UzrLc4hqM81gkUxcNwDOTVdLlMhMR0_9ZFgwFg8qG_t9SuEp9VfTFjgYejLOCZLNJIXSlmxDn2mMRy1Omx0wzgzbfUV6nuUlcOiJywEZsl",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJVxSNxLW3tjERkb6BvEb5eDs",
+         "rating" : 4.4,
+         "reference" : "ChIJVxSNxLW3tjERkb6BvEb5eDs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 219
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Balai, 16300, Bachok, Kelantan, 16300 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.108788,
+               "lng" : 102.3713084
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.110191480291502,
+                  "lng" : 102.3726389802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.107493519708497,
+                  "lng" : 102.3699410197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Phothikyan Phutthaktham",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115060258506633404661\"\u003eLee Jun Hui\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v6EkM8Le6KijmL3Whr3gS_qhrKTcGSpPJHae765uGNgbPxIdDRsgtr-t8ukr4QwML0qC2Yu-aSxErCdvwlR7IsEdNg5teZgVvAXwJ8pgC_dHvfibmlSt3VMlNyD3GI0Z1KgYrnGWkCiioeGa7dguOxxvmmexH3sW6CwcHUrGlaoL_d4YLNL_I_GNs83_4oGcLzDzDQGYWQlFFFB6h-SzoqYzkXqAYPrIpLT_ufwpohRRw-T-7swVD9hvaXtBV2nQiwELAnO0QcOHqrsxtaWXD45kyEkjdNO7PXEXf92qgzRxb7FC6cK8K1TXAZtDDRBVZx-yr2OIfEatK06_93lcfEXP_t64D3c7tOdhyiwqm5GLKlCZJRXS2xOu6_-PLzuJyOjoRFtpi9vgA6SnKJA2Aw9nZtKCEBTD_Eack6JzdcfA8b",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJ94w6hGm3tjERbWtlgGhbH2Q",
+         "plus_code" : 
+         {
+            "compound_code" : "495C+GG Kota Bharu, Kelantan",
+            "global_code" : "6PR4495C+GG"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ94w6hGm3tjERbWtlgGhbH2Q",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 534
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16020, Unnamed Road, 16020 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1618719,
+               "lng" : 102.3482084
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.163178030291502,
+                  "lng" : 102.3494851302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.160480069708497,
+                  "lng" : 102.3467871697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Nami Bachok",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106423371031694665538\"\u003eZarifah Binti Hashim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-twjmNCS24p7NqoS5kUHM9ih_rtiBNGWeY2i6xERJoIUXFc58Cv7xh3Kfqpve86L1CsQ83wMJcVr33FwMfKjYlK6uGBoR4I7sa92HPqDMXfibrsGKxn9IP-3r0AatEGsfm_SRdwM6WyCJcr83Cey3P4GbcuC0sDk7odM5E0dJwWX_1M0u1vOllbZ6mWlx7qcZOIIx_MyJ0ZTgsIjkcnaaIt1_S70bcbyhIfdH9DX3RoZU8-XSkEvUejdJ_Dw48TyBc_pOMK1nHxVEfpDdfbaRNUSbGrsvv1ye9eJk6IhW1GcrUeF4zadG4poICE7cr9zNGY9D4haTailRpj4zl3NBYKIfpWOtLeBzF23GNk-tQT3YfLXwZz3tdSnavox0HKVA-m6xXnkQzlk_bMXRbbQsLMaLbMyGHXfMdN1Jyr3qg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXcQEdbe3tjERxGkprIedLbA",
+         "plus_code" : 
+         {
+            "compound_code" : "586X+P7 Kota Bharu, Kelantan",
+            "global_code" : "6PR4586X+P7"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJXcQEdbe3tjERxGkprIedLbA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 226
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg Tok Burung, 16300 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0696409,
+               "lng" : 102.393409
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.071026230291502,
+                  "lng" : 102.3947672302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.068328269708498,
+                  "lng" : 102.3920692697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Istana Bunian",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114608658574184461123\"\u003eMohd Irwan Hashim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u58YxNySOD8g7Y7nwtweI1tZ_VBzqjbZgLu8cfcD2qJGpIsgnGBx1yIMBOhRlf0WyokrExX7x9hlRancXOl0526Hs_XedvyfrznMKg0EJblSkwLG5hf4GFY0aawFIaGwbEDRfUAW9g_9imleuV5f1HelL1WSHihKu3F2OAKdwqSh5-nirtiUhnyCxlXgJ_lp8pcU97erzGgs32KVBDP_bch8aFp7t8tPhuV4YtCddU_AS7lqjPqNiHp7SnhjORHxei-QLYjSLehdIJ5UeO4ohbaIG3crIx8VTMGJS3hkM5jW0ETnmlRGHGK0izCmBaRYVxzqyZS2EL78scWdQEWN7PNp9-gE1WMZnjvlC2jh-e_ILO4QtMD4-p3YTWhizRC81mJ2tr7Q3VDMHRigQzBHkl2JK5s1ZN9BCtHobf6QMb8AR5RO4x0Pz_L0fnTA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJU9ohKG65tjERVSxZfVMu5HY",
+         "plus_code" : 
+         {
+            "compound_code" : "399V+V9 Bachok, Kelantan",
+            "global_code" : "6PR4399V+V9"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJU9ohKG65tjERVSxZfVMu5HY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 70
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16020 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.163774999999999,
+               "lng" : 102.347275
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.165024630291503,
+                  "lng" : 102.3484708302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.162326669708499,
+                  "lng" : 102.3457728697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Senok Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3492,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101556396877743137571\"\u003eKah Lian Yap\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-veKpXq5pnZBv4CqCMINVqgWFE0wZGxszInGk8Zp52scABHB1dmcPvOGglGwzrzAyqNndf4dcyQWBefSmE_1D3vO-rWtlvf2gVSuvLNs5I1nLK4Y0RchEXT0ax5deZIEQa_Th0wzvdrfDucqbL3BWB2fe-AIzXJtJ89j57S2eFBEU7mm5kdM_ipogAtxpmTa1WtPTkFnM3lqrTwCH1IXE1wDprsDg0sxog_yO8K-TA39iOXA6lw7XU9e3p0uKC0MSoJwBCrdvbHUubc2N169UTDzAErM79Kr8vAIhO-AKi0Ol58l8Og1TB_NJ7EQJkSP2tu8iHJk3alzettvvdB5v6eqHwWMBfqgsXPTWOv-3gV5T6fEg6-pHNw1TW5J1DN8IqaQZA1GbjNhQoC4JVXcHFl7kJs5BXLuuJotJuVxtmEHpTB",
+               "width" : 4656
+            }
+         ],
+         "place_id" : "ChIJj7YgtzO3tjERfJsgd1pjIhI",
+         "plus_code" : 
+         {
+            "compound_code" : "587W+GW Kota Bharu, Kelantan",
+            "global_code" : "6PR4587W+GW"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJj7YgtzO3tjERfJsgd1pjIhI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3782
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Min House Camp, Lot 1287, kampung Pulau, 16150 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0901461,
+               "lng" : 102.2908636
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.091486430291503,
+                  "lng" : 102.2922178302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.088788469708498,
+                  "lng" : 102.2895198697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Min Fireflies Garden",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115134558802749607521\"\u003edylan ong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-st8OsJBBIL0Y16ERcMNHtzmqkcYl2XNy8uvML1YH4CYPoftG14PCqDrwrFZBKVHBjqbCAsfwqnRMuf71rlhm2gWzw03NxYsgf7pW1z1AqNr9pfBRZkwAgFoSnb1ziYqhdl4M_CGUvyJPRJbS_MzIxlj0tHdTIPMo_zdQ-JCsrLUJbsg26l07nCjJM204r6euo9tfgxPdRiR6pmeDM0CTZqdACvL-o53oxa-vAUcCA92rcopEvF0If8TKoUyjn1ls3YXmzxsa4euvQsmXEFVtqS8ReZ0LOcmENv_zn4vyoorYjSDQYErbe__LOeRg4Z4EW1h2GX1WugT4tusygiA5cj1fLy7AyU6dBhTThebW32vU6y8muwsykk8kFs3ujuaj_hFBaIREt5dZA0HbkEQQnEEdwKkhU4QAemJ-Dks2q52BaM72JuWLxLj4zTjS-b",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJpcZ4nYS6tjER5-MhZREczOU",
+         "plus_code" : 
+         {
+            "compound_code" : "37RR+38 Kota Bharu, Kelantan",
+            "global_code" : "6PR437RR+38"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJpcZ4nYS6tjER5-MhZREczOU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 28
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PT 584, KG KUBANG GOLOK, 16300 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0981469,
+               "lng" : 102.3856367
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.099493930291503,
+                  "lng" : 102.3869861802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.096795969708499,
+                  "lng" : 102.3842882197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "PANTAI TAPANG KUBANG GOLOK",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113011418729085660671\"\u003ePANTAI TAPANG KUBANG GOLOK\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tEHrvU27yEen8j_lY8Zh0I-AogLd3pDnERHA-k5oeFn9K72EKw1Slimlnx0jWkRna8KN_VGPLI0sUlcTP7riPRpjSN4b-UFHb3k3QTfaae2gg0uQFuOTRnc3HBCfz7BJxY7Qok9NAcPpitpT3eZ4LcDdpfeo6zprgj6VtIF3ODsSR5xxh3LdQiqUodLiy507cBPQaBDWoeLg4XD8uvykBFfSqoAig7h5EItS44oabeM2BWyd4yKvUUWJN0yIXniJqyssueMrF76jpXqSIuOyC_lTThy6kfaDmnt4wbcp9kYaoL4_cZYhVKpLKsYYSgjVHkuVP-7oMHvVALpGQR-Nw0miz7fzMERL_XkvCd7wRQS_gAPa8Ler23vROgtu583H-d0KDpqHBPBgh8nfZiWgpslbiWNo6uaOXr4auLiToPRi2YpY5-UryOZKI92g",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJz9s6E2O3tjER-4vOovJVIL4",
+         "plus_code" : 
+         {
+            "compound_code" : "39XP+77 Bachok, Kelantan",
+            "global_code" : "6PR439XP+77"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJz9s6E2O3tjER-4vOovJVIL4",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 41
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "LOT 2010, KAMPUNG SUNGAI PERUPOK, 16300 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0829531,
+               "lng" : 102.3833027
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.084342780291502,
+                  "lng" : 102.3847498302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.081644819708498,
+                  "lng" : 102.3820518697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Tourist Spot No1 Bachok",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116709427395822590628\"\u003eAishah Yusoff\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uaxWYw4epH3pKizJB6ZW0WX4x54MNqB9J6YT0i-9gGMUdHF8i02B9R4SQeMRxHWv9axykmwIBg5x3ZDVUnM6SOC0K8Wi3UeUEXNICGYxPLxZZKRPEFhb2Y6qbipmH9AGFCcYbX1zOe1pSeYvkx7SWslVcCzbxKsyYl-hRc8TcuesdU-EIO77RkpO-JUSMqsSTj7gtkcw_SX5-fzXkTHNlTg7iITSbQmU7gjgVjYcEGjW01cFvz_yAQ2sfnhestg5qg0QPsq6yg1bqfQ3sw5BpSBtq96ziq6NRAcUDosuQqWAj0vCiM7fzO7-NXnnXafNU7qVJikGL9b4m3uMY1MX-wgAh3z9dmlyr9VZtEPPwGKhCLB2mxUP1-P1KIHUuCO0Y1oc3nOBQOJtxFlLQ0p7DBCambV7BvxVD4I2nM1eRYYqk",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJJR88MB25tjERAeRTQOpVofM",
+         "plus_code" : 
+         {
+            "compound_code" : "39MM+58 Bachok, Kelantan",
+            "global_code" : "6PR439MM+58"
+         },
+         "rating" : 4,
+         "reference" : "ChIJJR88MB25tjERAeRTQOpVofM",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 349
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 225, Kampung Kandis, Km 6, Jalan Pasir Puteh - Tok Bali, Taman Sri Cempaka, 16310 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.941333800000001,
+               "lng" : 102.4524698
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.942700780291502,
+                  "lng" : 102.4537636302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.940002819708497,
+                  "lng" : 102.4510656697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "ANR Akademi Nik Rashiddin",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107930151004449556491\"\u003emohd azfar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v7CbfOWsQWA1COlDRvDMOlyaYeeqQ9VA9pPGq8SyWTGuP7Iwej03BcRIDdxhkmpOWCWwMPcJ_Lcjkf0jabxkVRgqfl4JZrCCzbqvtLHSUeyHLDTUHTDLYF9WacfthCvxjpRQCHRZHXWR5n_1kXcXd7zFrElM2SW_fJFm_60ausGxOFuxnDW5ASeWqcnuK-PbcmGOqlrtAAXCSeVQaildd2OlxqD5C37DAkL81nTs-q3MoblcFVdaNjJ_xlAo-eORKps3Z8WrnUukiaPwd9Mu2bUOKT3NWqQ7MlWt3DyL9bnVMNYlIFWohLwp0XSoiQlRTzoL_NZuuNM9zxDaksCuZORGKYLKR30Gm7aNpJFLmXV_H__xHabfGpxT7XkEeVQuV7E94Z0RgueNWLjIILtFncxUjRszN3j3sF8-kyf9wUIA",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJU-H0eBHAtjER699zCi_eqhw",
+         "plus_code" : 
+         {
+            "compound_code" : "WFR2+GX Bachok, Kelantan",
+            "global_code" : "6PQ4WFR2+GX"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJU-H0eBHAtjER699zCi_eqhw",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16100 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.173458,
+               "lng" : 102.330726
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.174804630291503,
+                  "lng" : 102.3320868302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.172106669708498,
+                  "lng" : 102.3293888697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Pantai Sabak",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106025920607972335941\"\u003eMohd Khairol Extra Joss Pantai Timur\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sIF0dIZhX4sHIsumPVOcbKhGEi1L7jVuP0NGEnGuGu7fk6w6xKtDWOkBmVdW9juRevW_rhOY07UyMo-9KScvfnmSt30XUWaymODlKQV10WAk4KDoqwxeBbodriSKpaqIlXJHmuWG8ipwBmmVc5TumBAOO9Ga_dFrrRFrTAv132J1LFMCeOTt9I6aI-HFItQShLIBuakM48nyGMvptnIcLxLVWFiXlbtONWgN0w1LJNwtHI8Yi-grRWJClihleUMBOJogyIdUgHV1K2Ez_crvYAwt8dc5Fo7ic3M_31ehoKaOo5gPCUpEKcpbEgK6ugL6CS5wESJIjNiOdOF7EzYfHoUuF5A0eBfX6kmC0UrtPtiCWMnUhvN5SxnpSmlwi3c4NX65KOpX7jKXGDo9fbndlODRhoazQrTDXcFFhpvn28tA",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJAS9UIgCxtjERYiv9CcweJXk",
+         "plus_code" : 
+         {
+            "compound_code" : "58FJ+97 Kota Bharu, Kelantan",
+            "global_code" : "6PR458FJ+97"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJAS9UIgCxtjERYiv9CcweJXk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16310 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9819673,
+               "lng" : 102.4369644
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.983283780291502,
+                  "lng" : 102.4383165802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.980585819708498,
+                  "lng" : 102.4356186197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "D'Aur Beach Resort",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112866462715011573912\"\u003eAsni Radzuan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t1e5o7pKVKT3wMyHEAIlu7ElgElGfls_qo5SntUO_qUxYUwySSo_Osnd0_MEzv3jAxBXT1SAPGVOrmp24MzaGbyKs5BISoWZxaPuw5VRzJxfr1N981W7IBRrWhErao9qrkZ70aJ7Lda3F7lwcMElocW8FgIkpwJUNlAPjdQ7SknJE8GBzzigdNxnYarXXI23w_FfUzAnf39Rssm2IXYI_yg4f68sau5gWKNlEW0XHGWVmFwhJyCwDcmjSSBRgA_IN-KyLtU3SEtZR_Bmm1V9E3WilpebANlSjgL3V9Y7dRdYh3OqkcVRQA43dV8V9P9cmruAXYTYzToHrNTwaGQd-IrljwxnuJPy1HoAqGaOmDyLFrWn8RCyfrUZorxTURh9xFuEJRKXYlguGhmmudQR9oVTIKFWT6oeQWY1sFxoszZPc",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJqfxC8Z3AtjERWJUPlCsJyYM",
+         "plus_code" : 
+         {
+            "compound_code" : "XCJP+QQ Bachok, Kelantan",
+            "global_code" : "6PQ4XCJP+QQ"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJqfxC8Z3AtjERWJUPlCsJyYM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1223
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 15369, kg gelang gelonggong, 16070 jelawat, Jelawat, 16070 Bachok, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.963381399999999,
+               "lng" : 102.4021903
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.964801930291503,
+                  "lng" : 102.4036843802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.962103969708498,
+                  "lng" : 102.4009864197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "NASA MAJU RESOURCES",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 809,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116294343045584759900\"\u003eNASA MAJU RESOURCES\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tdprLDR9669aZcaoLZNq45pde_g3YzWYLN_sx0JR0qV-QchiaflJNSGfK43a6XYcg1rBwOv8mxaJaGxtAY_jiL5c6hD2y_2tHkqiIcliAF3J8sC4TTPuArV6Vzt1DK3y93cxNgAC-sJpB3Ftt4VqW8Vri0ZsG737Gj3opDSOXOuWbwDcQkEHE_ZH7ewOemv4_3EBrVTYxWURYMOE50ki4tiBhfm47bbiwKYOX3LNXpoNmV9uXq03KMe3EPqvU3djPrKSqXUluSBvIFuY56Tveq1iDyrH0Aq0vNsheEX8CeGT9dl4BYue0DHkoDBQlVx-VyCbaiRdZ07H3b631riqdSY3EuVlG61NRMpM_T4X_B-cVN2X5WXrgeEu0-pWolBblhdxBGm_pka48Nte6nNLfsngtcb-c9ySCKayHCQYX1NddN",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJ9_9U_Tm_tjERMf3h2nA9KWM",
+         "plus_code" : 
+         {
+            "compound_code" : "XC72+9V Bachok, Kelantan",
+            "global_code" : "6PQ4XC72+9V"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ9_9U_Tm_tjERMf3h2nA9KWM",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "store"
+         ],
+         "user_ratings_total" : 4
+      }
+   ],
+   "status" : "OK"
+}

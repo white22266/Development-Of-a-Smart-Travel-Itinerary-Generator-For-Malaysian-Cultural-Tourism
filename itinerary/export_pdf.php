@@ -460,11 +460,12 @@ if (!empty($hotelRecommendations)) {
     $html .= "<table><tr><th>Hotel</th><th>Location</th><th>Rating</th><th>Price / Night</th><th>Why Recommended</th></tr>";
     foreach ($hotelRecommendations as $hotel) {
         $distance = isset($hotel["distance_km"]) ? number_format((float)$hotel["distance_km"], 1) . " km from route area" : "Same destination state";
-        $html .= "<tr><td>" . esc($hotel["name"] ?? "") . "</td><td>" . esc(trim(($hotel["district"] ?? "") . ", " . ($hotel["state"] ?? ""), " ,")) . "</td><td>" . esc(number_format((float)($hotel["rating"] ?? 0), 1)) . "</td><td>" . esc(fmt_rm($hotel["price_per_night"] ?? 0)) . "</td><td>" . esc($distance . "; fits the estimated accommodation budget range.") . "</td></tr>";
+        $location = trim((string)($hotel["address"] ?? ""));
+        $html .= "<tr><td>" . esc($hotel["name"] ?? "") . "</td><td>" . esc($location !== "" ? $location : "Google Places result") . "</td><td>" . esc(number_format((float)($hotel["rating"] ?? 0), 1)) . "</td><td>" . esc(fmt_rm($hotel["price_per_night"] ?? 0) . " est.") . "</td><td>" . esc($distance . "; live Google Places accommodation result, estimated for planning only.") . "</td></tr>";
     }
     $html .= "</table>";
 } else {
-    $html .= "<div class='note'>No hotel recommendation is available for this route. Add active hotel records near the itinerary destination to improve this section.</div>";
+    $html .= "<div class='note'>No live hotel recommendation is available for this route. Check the Google Maps API key/quota or search accommodation manually.</div>";
 }
 $html .= "</div>";
 

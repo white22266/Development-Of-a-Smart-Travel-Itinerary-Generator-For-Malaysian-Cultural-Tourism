@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Taman Semarak, 09000 Kulim, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3795442,
+            "lng" : 100.5416149
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.380859880291501,
+               "lng" : 100.5430084802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.378161919708496,
+               "lng" : 100.5403105197085
+            }
+         }
+      },
+      "name" : "The Saturn House",
+      "place_id" : "ChIJicdgDwDLSjARD3Mmbl95_A0",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1007813867401016079",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

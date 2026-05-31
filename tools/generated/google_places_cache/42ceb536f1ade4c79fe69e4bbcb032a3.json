@@ -1,0 +1,1151 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uuntA94Ch5gzye904QLQQHyl5wh2blcs2_yIzMueX--L8kzWEIqUxqDWFXa-4eZsqblZPaIFNMxJndlsa20nMJSlMiREvocJgSH-dG6AdsxDj3VsOlR8yuqgwX5DvY7n_6SkGnQTkDxVC89E42ALLBjZjZqCXeWMmXAIiQSqz6enZrMSlbq49mGgc-6Xc8duTorFuSPDrj7SVv8ZmpFR3lnLgn4fherhgP67qaf-F6WzY4zhXEN6YQDbDSDR0jUZ--x9iy2gTNk4SOcIiP2_j-yYZqv4Iwt_TmxA0UQkrs6drzLdN59JHj6vLei7Ib6PT3Y0XM8zVYpkQyDJaWVAWJDShqCIGggZKoGgWvmnAoLzgOHfwJzJ29lH7XQH8qknaXvSmyNujQqoFjkkJ37BkbX57UXlw79q-H0xak2TN7WYw2UNnGi_AATKgMYuxOD4vDb1JC-6lE9NCEAqa47F6S2V3N0OWmkEFMNU25r8dpO_yefu-dpHwwBU602ZObdniXwQDcKyBKYdTp-Md7kJbnxvBnzK_WcRurq1b4uQqzv97wHIUm8TULft-IJt_mt8cce5zm0rapW5VV3gcxLN63HIKZaDUp23HM0wnY0fjbLrS-V8acCW_tG93JVfv7a5lUHApFhKTLVEQRzeZlgR3HSV19IP3b58lbWLHLbv65ZXRybJa1EIjjVuAqfBjPRRVgQgw5_WkjRcMAklhPQ-yrcgpCuQd09F7ca66DHCqWf7ZP6Ne3y0ANYvsKJiLd0RPzThsut22eZUprSLbwLVRp2pIF6Gb5DE2wC0oyBUHZCKiX4CoxMA0nx68k6Z9PDSYC2j21e941",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "4, Lorong Keriang Menora, 06400 Pokok Sena, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1327463,
+               "lng" : 100.4732698
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.134159530291503,
+                  "lng" : 100.4746719802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.131461569708499,
+                  "lng" : 100.4719740197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rahman Musang King",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112598214572164752952\"\u003eRahman Musang King\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vQJ-n3zTlw1WWwXNI4_aI_uoY7oDejwVj9_fcNp-cXiqyYiiCgSeDbn3oLlJ4vdCfqcoosahrXQJOyPiz2Rp9yS5NV9nMUjA619TOwl39P8Yp7SO0fjAgcGiV7fs-NozSGO91syEHjVW3839-CHyaDk5q0qU_bw47SAQM31dCH3zb5SE_fOQU-d0sRSn4g8F2cKutfmcZctnP8MvOXlo_Njwbo8uFguw_uLdJVQn3ldehZXD9z8pDzW-lhpgQphwiW5RPga1S4rRuH1s4VPaEzg3i7rgJikaXrlCBl5Hzg7Q",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJXV-jbYRPSzARB4tgvAKFDDU",
+         "plus_code" : 
+         {
+            "compound_code" : "4FMF+38 Pokok Sena, Kedah",
+            "global_code" : "6PR24FMF+38"
+         },
+         "reference" : "ChIJXV-jbYRPSzARB4tgvAKFDDU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pokok Sena, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2193019,
+               "lng" : 100.4911674
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.221077580291502,
+                  "lng" : 100.4916672802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.218379619708498,
+                  "lng" : 100.4889693197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "DpunCak PsR",
+         "place_id" : "ChIJ18kzzd1XSzARlHLPYpnZsY0",
+         "plus_code" : 
+         {
+            "compound_code" : "6F9R+PF Pokok Sena, Kedah",
+            "global_code" : "6PR26F9R+PF"
+         },
+         "reference" : "ChIJ18kzzd1XSzARlHLPYpnZsY0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3GM3+CJ, Kampung Gulau, 06400 Pokok Sena, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0860235,
+               "lng" : 100.5012989
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.087372280291503,
+                  "lng" : 100.5026479302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.084674319708498,
+                  "lng" : 100.4999499697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mini Sekinchan Gulau",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "place_id" : "ChIJvU9MibJPSzARqda8s52K7CU",
+         "rating" : 5,
+         "reference" : "ChIJvU9MibJPSzARqda8s52K7CU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg menerong, 06350 Pokok Sena, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1393355,
+               "lng" : 100.5249877
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.140667780291502,
+                  "lng" : 100.5262650302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.137969819708498,
+                  "lng" : 100.5235670697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kg menerong pokok sena",
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111286977873014262543\"\u003eSyuhill PS\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukc5OoKqldin8FxnuuwIqeZz94KU26FEulRlWNGwPehxmNs1J2T9cT_POpOQ516qkA29YC3JYqUvfaciUx8loJePgBkHNa1KyM5ci4D8ZKwuJ7_qiFEgwmNyRKYjKv0xD0-0Y6F93lQRPg5xxJoV3Vmv5nMpyR28syTmbHHBoAagyAld7AlBqEfcPk2C1SmanxNpECo1r-O6MEJxpg15m-pQUFz6nLzeTTL8WAGyTknd5Dr7dSvE5fvFPRqRIsQY95jiVTV_Le0q8swmECl1Avsp9dFmn-77tIxdi5yTTMY2vVjUJnMw-9aYGLPJIu29F_J6u8omF6_hZ2MtDrjKMrO4pnS3_mujITm46BqNFtJdSWc1txkSfkbKzg8yyRjfbzxn0rfON0r6TyOLkqJVhhln1rjGs9ZWag76QTbpThNbt_tKUq6UUWn4p3qKai",
+               "width" : 1840
+            }
+         ],
+         "place_id" : "ChIJxzeqAgBRSzARsYY0CjhRmVE",
+         "plus_code" : 
+         {
+            "compound_code" : "4GQF+PX Pokok Sena, Kedah",
+            "global_code" : "6PR24GQF+PX"
+         },
+         "rating" : 5,
+         "reference" : "ChIJxzeqAgBRSzARsYY0CjhRmVE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 3680, Mukim Jabi,, (Kebun 500), Daerah Pokok Sena, 06350 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.138611,
+               "lng" : 100.484861
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.139961230291503,
+                  "lng" : 100.4862663802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.137263269708498,
+                  "lng" : 100.4835684197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cemetery_grave-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cemetery_pinlet",
+         "name" : "Nian En Memorial Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1197,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109634842225761308922\"\u003eNian En Memorial Park\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufkeDf8uL4_70fR2PGmby0dqnRnujpEdDMIcdA4up7Uq-Zve3AeATYg-LyCB3uTHWymYq6pt_TP0isdsz-yGoitxuhqaiKIcRxkfKK1-vuIXSri9etWUeuTTbwzILQQrVOlQIMG38afVCWp_IXMPry1-QBUE95n96lwPVs_o3CHp820Kk2cIM2JteE8DiyWaUY_xabY_69mdTqEr1XZldW6UdrD_nqbPznMPwS78nyV-XXP_ah-i-fVTglhxCxLLf2byqj6WyIVxqzQGgYNHtPqdMfU_Lk6RulEuqMtGzCbw",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJAfvdy9RRSzARsGeowtI2KRE",
+         "plus_code" : 
+         {
+            "compound_code" : "4FQM+CW Pokok Sena, Kedah",
+            "global_code" : "6PR24FQM+CW"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJAfvdy9RRSzARsGeowtI2KRE",
+         "types" : 
+         [
+            "cemetery",
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 79
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "LOT 1213, KG PELANDUK JATUH, Kampung Yoi, 06400 Pokok Sena, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1500014,
+               "lng" : 100.5224807
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.151173980291503,
+                  "lng" : 100.5238022302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.148476019708498,
+                  "lng" : 100.5211042697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Dalam Kebun (Green Garden)",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113862295801278625799\"\u003eRumah Dalam Kebun (Green Garden)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tc2IsxKwZ03ED72BvPeN2hpesI8U3sQsydYKKjzf_OnDZKEOSPsLIcpIlP-1kBNeHbwwE5k9rpzCEOwMFQBttAx11nB1q2UsyBih1pomBN5jjjqxyetJti6KKXnTdSeHAKYbvUFkFWTGIweqkjgSRj0n-ht1laeIL9FrUUITL1hTez55DHe4BI4PdI1MpkNMV45dLaBEF_wkicS0sntGBpQXq36XbKtohqkjcWy3zniXwNY3UW59ajNoegeXBgDlT_KWhs-3LL8XbPfmvzN-J8n3scEABXbVwN69J_uzMyoKD8FoFdkkMSH2oj3Y6IyVDYpwx5QaViUonYPxtJN-lMDzQdz84JXR3ZrF9N1iYvZlg-7Jl2zFZvw2Bcqo1QXyscIpymUYiC9EqSl4uELM8zpmCBehjRMScR9hZf9O1DPA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJw9JhvLdRSzARxMBZJrU1Rzc",
+         "plus_code" : 
+         {
+            "compound_code" : "5G2C+2X Pokok Sena, Kedah",
+            "global_code" : "6PR25G2C+2X"
+         },
+         "reference" : "ChIJw9JhvLdRSzARxMBZJrU1Rzc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lebuhraya Darul Aman, Bakar Bata, 05100 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.136074499999999,
+               "lng" : 100.3690552
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.137350830291501,
+                  "lng" : 100.3703984802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.134652869708497,
+                  "lng" : 100.3677005197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kedah State Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106387088686727414206\"\u003eKadir\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vLMPvIEVXxx-TC47Kd-_d5fGQJCUtEvIyxdzAj2lF91xi0eRs_HwzGUER7dO3DQx7-6Uw2QBMRUuiAS4LUr1NHuPRZ8iSVJIUT26ASXNOAYcihIv9c0S56WeyPDnhDpLFkY1ed_xzllO_JSDs_u1jGDOus_1FFd-Re09RFRP9si4XN9l6QSL80_I-sXM-5m_JQ8jnmVB53MQYKopzzrCbMBiwUDODejwKPUGf6njw774eorOwbzxxxSqDdM2_NxJvpn-yJitg1FSZWFOHoblDYY5QrZHfYdn_w_8Ge3uEFZ2wV1oVQQEdlcjJVPL9M_a7kFlUs-PcIPX1-lv876XUGrQZNeycbkKVJbn81z43qxkt-dJL0zB4alKM6VNgTUtQkqNZowE96g5xM8EyF6oT-x6hFGMOX5BkXHNalpEw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJCT9n3rRESzAReXCM30F9p3M",
+         "plus_code" : 
+         {
+            "compound_code" : "49P9+CJ Alor Setar, Kedah",
+            "global_code" : "6PR249P9+CJ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJCT9n3rRESzAReXCM30F9p3M",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 695
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Darulaman Jaya, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2431667,
+               "lng" : 100.4200337
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.244515430291503,
+                  "lng" : 100.4213659802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.241817469708498,
+                  "lng" : 100.4186680197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ceruq Seni Jitra",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102513127505168886073\"\u003eRizal A Kudus\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0eb0tf7_k44bcfvzvNqcA5038O9mws9_Jnc8ZzX0aMg1Mgn-ylz_a--k-v-AeMNG1grw7YcCUOOJVvm5IWUworA1L5KVmh1l03e-RntIZwjC2NW33z_Fqas8M-pwEao3pGQK0ym9FQOhFW8CPEcWFNNXfsquO71D4bf5kCmTOLHTLz0pDLknBNQPgyzicDzvDFtIEM5-60BsT55evJhFsWigiXHlk_7zqpsX7lRoZ-bsLSMU6cA2ioYBeo6Fad4foThtOJtNwiaBHVKdD7HP-noTnFbeLWYJAYxo-kCKP62PuMAo2wnbxb5Xa65J_zzPWgHcZZzscwRdrFNBgO_rssifjHbXspbNjAAP6POhnhPX0v9PbBJJfVwmx61GxMxPqekAD2jfiTSs77Cl1i-t-k5B2yL1NHHYY6euJnHzkvW9pd5z5P59nt68Z0ipQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJo6WpeQBZSzAR_nj-VXwvlKk",
+         "plus_code" : 
+         {
+            "compound_code" : "6CVC+72 Jitra, Kedah",
+            "global_code" : "6PR26CVC+72"
+         },
+         "rating" : 4,
+         "reference" : "ChIJo6WpeQBZSzAR_nj-VXwvlKk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Lumba Kuda, Bandar Alor Setar, 05250 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.147892800000001,
+               "lng" : 100.3717351
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.149377830291503,
+                  "lng" : 100.3731768302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.146679869708498,
+                  "lng" : 100.3704788697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Tok Su • Malay Traditional House",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t1QpSBZjKInrtz2tu3H0hKMqBX0lp2521q7NBSKC9o_jr4oJyVsKyFt3XT6Z1WLhyVeD2es4MwWS3-iQXyoHLYzOztyTSKhr-_LbDlNsKpHxIIAg8ajNhJPIJrBAoY9V6cjvXTibVrYPZVr2Eem-hxmyVV0ISavPll3trd_yPZOYLC07W7aRFrhU0xjFxFKxMwgUodai3tWePf-3gIhkVHNZBrq_WCT_RaR-9nzNvcyfkFS4Zq3jgk5T5NI1LgBKPLuCfQa3OeUA7EhdADyh59BSBRu1jkXaRxkVZKNY6ZxDuWQQC3dR0gGEm01YLjGgEfITxh9DGt5JN9-n3XtfNB_XamuZNJZxo5EmRHYmmNgMfGoHup6BGNhMG0UNEr77kZ_op2hx4udbdvIBR04IqyTvMAa-IiOSBKi_Jnfto",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJk8Jc1m1bSzARa3j8OU47RU8",
+         "plus_code" : 
+         {
+            "compound_code" : "49XC+5M Alor Setar, Kedah",
+            "global_code" : "6PR249XC+5M"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJk8Jc1m1bSzARa3j8OU47RU8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 92
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "119, Lebuhraya Darul Aman, Bandar Alor Setar, 05000 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1188801,
+               "lng" : 100.3656534
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.120257180291502,
+                  "lng" : 100.3667666302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.117559219708498,
+                  "lng" : 100.3640686697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kedah State Art Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107577720599549102849\"\u003eFadzil Hisham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uk_5yQ0bZNUb8HDHfXffnev_thV8JEDRyls6HimMVrnSEdh6WjqiIEe9jmGSiomur0mTGNM3uesDT3BII4oPqmDm8Z33qotS7Al-uFxnsFTG_RwlPiSpHVjyFSAAindVuoQPuJ_wPVTbKOMdF6wOpKPiSvJKfoIubaROZZf122FuyGM3IoCRV7uqLwlPBaXYyxGKrCRiHtLcOI6Zdp95rLB-3A59UxMPi2YLoKChCQMqBzqN_EyTwctdoInXBXuwIUa0EUGrKPyN5cQRTkxsAuZ6UJythTtV0oyIL3aSzPMr1VgCftOL_YBWBLdn5q3bRG7h08OS_Fc6KANuNhpzjsN2NRlGhBarfMGoOxqpIWB8lHqtJSSrdgtBueSEDnqtk7dvTJcy8B9_kip0s8w3IEppeYZeiAubbC57tbMFWPJiZt",
+               "width" : 2223
+            }
+         ],
+         "place_id" : "ChIJe4-zNrxESzARjPhOP9Pxx9M",
+         "plus_code" : 
+         {
+            "compound_code" : "4998+H7 Alor Setar, Kedah",
+            "global_code" : "6PR24998+H7"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJe4-zNrxESzARjPhOP9Pxx9M",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 274
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Alor Setar, 05000 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.120991,
+               "lng" : 100.3666061
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.122403530291502,
+                  "lng" : 100.3678156802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.119705569708498,
+                  "lng" : 100.3651177197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Nobat Hall Alor Setar",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113845309825112812884\"\u003eSuwanna sakulyanonwittthaya\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v-ECk0GRvVQVBqt5wSAGHjGW2udcnIxz0F1lh4GlM5KMbmHj7fLHr9F4eCcXmlT2Ay1_p2n4XHcLidryKiz87hWSwJbb1L7s-L8_FClj5swO-CMDFJsv9NRmwVaISguydzm5tfNuym1u12EW18YVjqb9hOyxhKG4ihd6qIIqu-aRsRkCtgB48H1simXYvp5dvT7vdReSipQTdHwMIYjUSzldkyuzdJTwQ-z8ZGQAZJzPWBAWVBAQtkh1eJI5CIbGgN6Rn9TKbuMBdAH2cZo8mBrxRbEZJuNu-rMFoz-riZGliHU5fvoBvY600Kh5nLDdL2szBDb49DN42hLc1qw532a4E-pRlRmIY-r8lfqDHNSC7wgjk2wgSt54mJgO-eLSu55OarIw_Xsb15LquP7Fc4OcEEF01VPufDyioiqsUfqQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJU-zb_7tESzARE2yYwr084Rw",
+         "plus_code" : 
+         {
+            "compound_code" : "49C8+9J Alor Setar, Kedah",
+            "global_code" : "6PR249C8+9J"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJU-zb_7tESzARE2yYwr084Rw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 128
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Medan Bandar, Kedah, Bandar Alor Setar, 05400 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.119481899999999,
+               "lng" : 100.3668764
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.121333230291503,
+                  "lng" : 100.3680825802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.118635269708498,
+                  "lng" : 100.3653846197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kedah Royal Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114971967879782810978\"\u003eRaynardthan Pontoh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-toFd_qyYGtK976z5BVqFX7AkuChawE1-jHixj2K8vZNy1tnC6Uw5T2RsGlk-VlkqCSxUzWKSGen0Beuts250Yq-HgNcpCp0maT8OQO88dihofPBbJcrRxuL5rUJLwfw2j8FnLpeKgsn8MtjyldbN_NFka18uuvg5id0-mumv-2ta_F1ax4D_VrMX4HbxJm52VEwJJCpn6nai_zXg7Txg7HKfIPx91oEeQAgk6tBq-IGy-yIC7rO8_0bUWEmsq11BDZYVn_K2Rxn7TZmQJBMAtkrEWdIrEl0VilIe_cByPRWl6wTvgFOC6EE2WWnaOO9M9GOVUAvcFFkq85zxs7TSKOHYPKYP0sJ7IntxPbOhWGouDHQtAAsJJbwoZ1s2hPH90d6fQdgC8G6xvjY65_zhykDvLY3WExDELRDUkgzpjnkRXR",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ_____85ESzARZfFzT6SrzxM",
+         "plus_code" : 
+         {
+            "compound_code" : "4998+QQ Alor Setar, Kedah",
+            "global_code" : "6PR24998+QQ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ_____85ESzARZfFzT6SrzxM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 121
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16, Lorong Cermai 19, Taman Putra Jaya, 05300 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.109541399999999,
+               "lng" : 100.377803
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.110989280291502,
+                  "lng" : 100.3790409802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.108291319708497,
+                  "lng" : 100.3763430197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "San Sheng Charity and Culture Association Centre",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109437696307821210590\"\u003eMongnee Ooi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thic30rjbhYBOAf4n8sqjD6FFozi4MJUn5q8nne1yCLF1jUN8S4gmVARmV66xAh3FgEaX_6baVCZjANhztgkUAEcdjvzW6kAHpe8SgtmlBPaIuMBisOgsFvOcZJtt-m9VvGB7wlTn-uAtRYlnafrraeZNATixkjTTIwjo1f7EuctM-wHVX5_nFZXJ6-Qr1gI_rifX5gSEWtfY9C5UZujpwUierYFzctTveysAyfTaxXC-EMo1t_hFr0MEdpKhXUYlfy3cMH-YDKe8XmyNmkk_KQLym6NPjDdb3LqqqKN8fjQO3Y3SSQdeaFxkfFjvMagATpBwe8oKM7hkz-E4pPjqn9vzQ8WY7gHAyGPfodfYQekvtJcPeH1KA5a3c-2AjRjdmg_hWZlKViXohHlhFi0OP2f-yzLpBGrX_xaF3Z3MAUGQ",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJR62vp-5ESzARO7bJ8qVYCYA",
+         "plus_code" : 
+         {
+            "compound_code" : "495H+R4 Alor Setar, Kedah",
+            "global_code" : "6PR2495H+R4"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJR62vp-5ESzARO7bJ8qVYCYA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 346
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Alor Setar, 05150 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1209726,
+               "lng" : 100.3659074
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.122275480291503,
+                  "lng" : 100.3673482302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.119577519708498,
+                  "lng" : 100.3646502697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Alor Setar Clock Tower",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108626119095520108088\"\u003eMuhd Amru Bonaventure\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ud-7Rh0Ue-F4xg4fVyrcgY5ASNTvTsrVYBDRLEulI4fhGwkH8GuXXXdIlaOocvAQagcZPuyiW_ly09xGBS7PucAeSb9PYQJgIXLc3cz3HsengGeLbL14-OkiCH0lYFxysUluJPqEVsri6KtiUbg9UtxiR9KByLHBM6OLWZnuHd2OcaigSCkr1n33VKmtyoxjrdzxxBv1HgYFULg94n50cnRkRyUMl3x5AqnQ22JqIBmR95dMRBuXGZ7h6c7AnaibCiIwh_YD1oaDHgeuyLvSlBjTOSVUmiME8PApVmhIML7tQpeXUFLhRaSj_uNSx-VrJTqREjx31Wp3SA71LSKQxyqCdLclcXXZ-xokjdv2L7S9SFnewqD9ymfRTCJPP056OPTJMnulvPevVFKT5qBM1Zg3FjFADeQetbF5d_J8QBnGvV",
+               "width" : 3466
+            }
+         ],
+         "place_id" : "ChIJfQlQ97tESzARX00p1rcOPNc",
+         "plus_code" : 
+         {
+            "compound_code" : "49C8+99 Alor Setar, Kedah",
+            "global_code" : "6PR249C8+99"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJfQlQ97tESzARX00p1rcOPNc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 38
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tunku Abdul Rahman Putra, Bandar Alor Setar, 05150 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1229935,
+               "lng" : 100.3599146
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.124688280291502,
+                  "lng" : 100.3615020302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.121990319708498,
+                  "lng" : 100.3588040697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Merdeka",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104106394256780776945\"\u003eEL.AI.EN.A\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t60ELWWFBJGuBYTZ_PIcbkyD5GeuYQnKUyVGw9YRg3xygkyUoJFMcZyfOkp9qwZNHShegMErT-USY_TBZM-vksdADPzd8hAx6PYTAxvXzy-8F2oeYLrIMaR1vOAFwZBw-JDJf6epYcMA4NTCrdHEg44Vf91Nkzsb2RAzGX6R9D7PFmbJM6oBEaOZKYvrVvzCyMiCYQpAmjxNpB38ZowrFqttYcPSdhxUkPtCkFNCVhdtXZkB0zuClafdwXtM2fnOgsHsMOQ-aQX6XISii4D8Qi7oyT0v8Yr0w83f4u860_SUlaYyQXCIUeIAsSznYcxOK0pVHMHnPTK_2vwG8ZFZ8NN99VArNvHcZA_4EbQBVlC0XcJp9f9qLbMmknaRN2aM7QJg_ixBJ67Bd4VQZjDGBcv9RkWJb0w_0IWxKcI9nsGw",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJ2YW-2qRESzARRcrvVfL5Eu0",
+         "plus_code" : 
+         {
+            "compound_code" : "49F5+5X Alor Setar, Kedah",
+            "global_code" : "6PR249F5+5X"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ2YW-2qRESzARRcrvVfL5Eu0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 149
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Cina, 05000 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.118055699999999,
+               "lng" : 100.3630827
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.119380430291502,
+                  "lng" : 100.3644570302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.116682469708498,
+                  "lng" : 100.3617590697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jeti Pekan Cina / China Town Jetty",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118147447509793473613\"\u003eWoon Ling Cheng 郑焕玲\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-shmWepG8V1KS8iX6-N2frqaQXnPqe0dctgvUJ-bfD5LNReUvvFun2vOMWKnmUOOuXSzugzcfnVRqLOSTRhDb9u5kQPeNIEJarf6Keg3_o_iL8TC_ECkamKMO9oQDBwTxr80-2IYYkNtfi4QmSmAPX4PbNxvtrhyPTb0gJC8aUDbFS_fhTfx8iOMQjpyhCjq3VnWB2QXjNkrYBcgcK4XnVC1S_U49wti8xPw0f2WLSEZG8ufZ1OqQkKRcRfvDqD46xzdQ5GxSCFz1MgyWzYMzn95xAIPfGKZRDQalMu5huM4Iacnwa8R-nYkctSJKj9NjojwOjHpCXh13h32A5jJ91ctOzw-N3ukpP55CzjvnoRhE-QZeDrRUTasarzygtloaM1E0hTbztMPRdsjsZKqLst69Pk9XsdTNt5xbOnCM-whhQ1SVaTr_in05VfSA",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJfWDyvQ9FSzARLgbrWudlW1E",
+         "plus_code" : 
+         {
+            "compound_code" : "4997+66 Alor Setar, Kedah",
+            "global_code" : "6PR24997+66"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJfWDyvQ9FSzARLgbrWudlW1E",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 36
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "GALERI BATIK MUHAMAD BUKIT PAYONG, JALAN NAKA, Kampung Belukar Jambu, 06400 Pokok Sena, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.145982,
+               "lng" : 100.5631389
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.147696280291503,
+                  "lng" : 100.5646275302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.144998319708498,
+                  "lng" : 100.5619295697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "GALERI BATIK MUHAMMAD",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 540,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109507705203722926833\"\u003eTHUNDER FLASH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v2BV392coT7DwLDYcrFezlEAf2vuG_0hMh-QU8vkntzfrZbR8BowsoT7e6StnGT9Pi_KCs9fWeYbkxDYJi22r-gc3Ny_eaE8tPLxSRZWASmyDPuKC-lrmPd9aJXczngpwg66BGg8QpGK1NWZhoe5ZQ15aTqg9eW9Pi9llpCDuKvqe0-F5TQKn33l_4hjQN6_3TanQ8oa4i8qhcK19LYkiKoZGw2UUpIL7DEbJiVSkf9YGwrKMc6OOQNXS9lwXqNy1w5d86zMxZK5qncgEiTS5xH7UC-nL6buhSGqbQrndExljCadJ-Xvy9VoDSdFPIXFXA4zOEerl4m0CCXUcDwN1JCiA6Q5x2Dsd279dmmCkMnIaqlKcwWiUISBg5byuhBZnAJ666bodqYTviQwo6RrxQmONFeJ1_lSFzTGXnHUC3vQ",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJR960rF1TSzARnCH2UPuX7N8",
+         "plus_code" : 
+         {
+            "compound_code" : "4HW7+97 Pokok Sena, Kedah",
+            "global_code" : "6PR24HW7+97"
+         },
+         "reference" : "ChIJR960rF1TSzARnCH2UPuX7N8",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Seberang Kota, 06600 Kuala Kedah, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.108730599999999,
+               "lng" : 100.2866717
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.110281030291502,
+                  "lng" : 100.2877908802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.107583069708498,
+                  "lng" : 100.2850929197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Kota Kuala Kedah Office",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2592,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105126722502299865751\"\u003eFar OFF\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sjq2B4aBBttupg7cEfA5k8dHUkJlB9xLy1pCwlwSwRRY0CfUeKj5MIhLbNYR2soGeioDQg2XR4pVHCP92cYOJfLMQvEs7r-QsMPOxJkYwTvlDKwvMH2RAqW3au1GMPcfnfl6wey4Va6tUNzzOrSI9XxtK65mpCM2kOogAZpVK3axoMdXN_zm6C0ZNJn4zxIMxzZgC0a7MzQRQ0QWCWXLUf5C8wiZgadPCgLgKBEQUxdMsvTyEL6FzJdSWfEXRIblpJNlBM2rZfj70fVCbrkWs7BWdAQp9zUj0Al1dexsVQm9Ncjv7ZLuAQ6IQIwUHUQZJfLPxdhWnUG7gmFyDW10fLncf23gEaUpj19Nugc-M_oIO5m1hqWRS49lt4k6K5iBRMRwX9Zrxl3WnM1arT9IQQ2eG9Vctz763okoHqXlWJFgxb",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJzcqMuO1CSzAR9U93LaUdHJw",
+         "plus_code" : 
+         {
+            "compound_code" : "475P+FM Kuala Kedah, Kedah",
+            "global_code" : "6PR2475P+FM"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJzcqMuO1CSzAR9U93LaUdHJw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 682
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 99, Lebuhraya Darul Aman, Bandar Alor Setar, 05100 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.124412,
+               "lng" : 100.3670848
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.125965780291502,
+                  "lng" : 100.3683480302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.123267819708498,
+                  "lng" : 100.3656500697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Alor Setar Tower",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114430980863566472919\"\u003eronnachai angsakoon\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sfcacG88EY_NWkFwwAndRTA4vfplxCKP7ErHm6PvDkOsVQYFIxAS299JNnevN_RZJoXxyHvCdSQTz32WEXB7ucp4yz8rO0Uf4_NCxbsw3cXQLb_EBSMEsyWUo4r7qhUNmZat7wFkZ7v8fHGJvOJ04O7gj2sh1hHgSqlWgj6TWoHQk99JcsQ48ZNOajSNWchHhFzIFsah3TuR-g8xC1H5cVMsktEh2i4Ta6a9ZpEUyT1KUUibji2kSVJ8UXzxLxpXH-dlDFp4W1GqrPF7kf2TmrAmEM5LXVOugsN9uo9YAIQOCCZTdwqkVrzLFOudAu9bn6B4Vu29hhwOT9GE3z2d2c2XZi3F-yGnend3gel_LG0OiBYjP1Fh6Yv80ukf8UU_7iC1-oRLhasKJ8E3Rr_sN55J8gNgXAQci47MIzPUoLKw",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJmxLxkLlESzARZsnwJMh8clU",
+         "plus_code" : 
+         {
+            "compound_code" : "49F8+QR Alor Setar, Kedah",
+            "global_code" : "6PR249F8+QR"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJmxLxkLlESzARZsnwJMh8clU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9012
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Pegawai, 05300 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1096504,
+               "lng" : 100.3679757
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.111197880291502,
+                  "lng" : 100.3693765802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.108499919708498,
+                  "lng" : 100.3666786197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Alor Setar Old Iron Railway Bridge",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108448421568208503998\"\u003eForest Ang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sFTNV1nbXBuH4lvvBW2nBrySOxW1OceaQ9qEu9BPRieozlTkH7jsgfon2hhRrus8esSW7G7cA3K2Q8QpCmaENuZl6o4VNR1kxQ3Bfj5ruwqxc2_Jl5HETAYBBzqjIL5fGjy4IRd0Vf5KKuHjH3zNo-1aWk6W0-vxu7Vj-gZffwmh6YayO9LIMXbc3rz9C2iew4HYGh4VdHxPVZiRFk8Vjwmh7w2FpAfYyf1-CNTNp-d1Zhjaw9AzGXV5bhSwHmDkXyVE2xmnKnsRJj7GFRH6Wm8Np9mbtBDaMVPpHEnJZhEOPHNeW5B6gURwzHkOMT4SEeR9EUgrInHksJdpQe9lYndjsdvxX5MkVSdNxqgRs-V01Ls_3E_hyRS2qtb7EcOy3YgjiOwkBtHlMISVKc8nXjOtqI9Nnl0xNiSMybFjvAaA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJi5c77ZNESzARzdcSgQI1lsQ",
+         "plus_code" : 
+         {
+            "compound_code" : "4959+V5 Alor Setar, Kedah",
+            "global_code" : "6PR24959+V5"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJi5c77ZNESzARzdcSgQI1lsQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 103
+      }
+   ],
+   "status" : "OK"
+}

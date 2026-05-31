@@ -1,0 +1,250 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Damai, 30100 Ipoh, Perak, Malaysia",
+      "formatted_phone_number" : "05-208 3333",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.6258304,
+            "lng" : 101.0889885
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.627938830291503,
+               "lng" : 101.0910341802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.625240869708498,
+               "lng" : 101.0883362197085
+            }
+         }
+      },
+      "name" : "Gunung Lang Recreational Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 – 11:00 AM, 3:00 – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2922,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118373503965217501574\"\u003eJenny Koh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-saG0muXn6AP1qt4mSrx9K4VSyCUt4vYVGKPviAo1Oh1ubDSfq6VNEfDgBIYTYxGGTXcAFq6ABrxXzCF6olx2WAAWhjQUa2s-bZxo_AdtN6askVJEuY3218YC60stgs1cjGW4OLQynBrq8WftBdaUiQ0ybfbZPr12QzHU8CkJgS9LmXuoEntiiPH9HXU_2OBXuZAPq1Xxe5QRxK3j4h3d4zspSPOB7-e6SPTOicwYTwdhC4IVXXjVoTZ8eR9F7e2My_hvD4qh9m_Sq8WhG2K8Eh2eQQ_CA7-FeDDf19Du8B1UwGWLJjvQ8iZ6Ge7CYGvSA22zJRNT0YToqVapkJvJg9QbfkL5sKJSrsFbui_1WJDqBzskeuMNXovR9zcHn2CEplx4O4IUpmbHJW42N4wMttoVChJH7M_JgWSjexsa22hw",
+            "width" : 3896
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116828594909350710129\"\u003eRizal Zubair\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sQeIQdJt9KsIzd6mblFnfDGgmuow0DTULWMwvuXDRGfc2trxdk7QDZiALwz1vcgYVabHqnRa-M_8UEytlX0ZlonDojiAEsBB98vvhJq79a2BTlThI8fhxRx3mWPAwJt2UqasQJzZHSm-hThb8jxsfgcOfQHz-xFvN2QYJ-PKAwtwHqjvn6LKZYCTZwfkPAcXQdOPwVEYAykarPXT3ynHroIt-X9OPhHV4S4AyEhjOA7g5PwRveq8BVg8c2RyT5F_9rj4HhQG-HtZzUElZqTaTYC1WNfUiAx-6CCUeCtk7Yt_bNMAqOOC3LE0THUyAxoc1zGsOhX1A4nci8dsu4UF796yEp5ci9XBPNq5P7NGtjgfydOPVJ-jz1WScOpu4JDaOQb1iJii6XOoZjiFZ4c6UW105Z_iA89UtjBNF3XRxa70Ze",
+            "width" : 1080
+         },
+         {
+            "height" : 1848,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116313617834950447862\"\u003ePeng Pipi Rania\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t3bcs-3Nq3nuk9JGWgAThBtPMyeAC3qwFRviG1hvaJD6x0hPxaaLFU_DAogsS8k4t8Qm1Ac2ZK9k9Iun18Py9u-J3Xdq7CeirbSQ56QntWL_OH2N-y3gZrGs4DGIoXneEHjT6AayEXoh_wriaZ-mn5BZcBe1WEcYUAjwfeuSZJHDR3OEJ__TpaPUpN_h3E8ZOKDpqFAumlMDYK2dcK3SE3YGyXCK1kYO89-YiqsibrtfbYNluT31XBDSNQIKYR5BDjMoSiXhNjdcebZqNTUaphWhSdlQXESd0x5HKDRFPaN-SLU-Ri0jvG_xua6SJZ40O9FQifb8CoXrFept6YqvO8fnZaHl7suLXpPiJBYPP_iTiXElp6tubZi6s92qnxg-RSL0wGsBqZD-yYSp8OpsYybiR9mY-fv10zGiJ8kwlq-GY",
+            "width" : 3280
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112080331393150739503\"\u003eMin Hui Yap\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t17_xpprSmUsDOnFK4xmRZSCerpBmSDbZmRWy-7IN8-YUlb1Nf8v-eVs-X6UFSK-h7sMAeJouOIPfbzrKcSzrckSxM1xZKY-u2ApXeR7Sbk8yKjEMW_aAOc1qM3n7t4M8zX8qQ5VkP8wWeEPmjThwueWluC5fiQ_b9TYGtbBPP8XRXp3dQme9uNn9e6IqJKpN5hCMn80VYtmMa5SiitLAylmPd24eQmUCw7el3fXFCqgAmiZQHlVjiM6lCgzTLKqHPWsuXZxg-xyCnfSDqhl4ZcF1MGle3HEi6ZO0sM_g4wCZEIVl5fAjH5PlINw-cJoKw9xqTS31kSk0aNX-mdGT86T1wkohEryocflTlFzTbTk6Liw709EGLE_GwEaOHUXs8UchQMsceo5BlNUoaNSwMRY7cQmSWdYZg2o5XKVpXfFFD",
+            "width" : 3024
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114843183430452139085\"\u003eDakwah Ummah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sP4qdNZUY8t_ApZj_-UAMwKM6mXHNyed7FaC8gIFuKHkEfvsi7XrjcDyoupj7sdsrKmYZIyUOT8MejJYCN9Lv9rdtzoatN93Dl13j0BBDrhpsxiSeqE8IbdmpJvNNnAlbaOveQOrbYmqowQBbwjk-wEV090TlEeDumWIowvSRTrbzxFyW8Ov5OqHRMQyRGGF9fWR8IYbotdvwUa3QcmG66bkjUAKqnegniRiM0WrEmB4736LPmAzojHfo3MQik8GlunxSY6JAEyisWrDeIt88n_UdfGhLWCvS_VCke0Ym-ueva7adzueD9pVFE8M-raSz5Cx6W99CYp5EIIRkQ_jCT0jNl04xu5XQvOHl3zyaomp2W9vM1kZ82RbswOm574di4li8x_r8OJWrpP_XL8OH4DYG4EKd41VnwyjtVgByUcWv8",
+            "width" : 3968
+         },
+         {
+            "height" : 774,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112160696415777235781\"\u003eRoy Chee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5SppnH2k7Pt-H3LKVdtwt4_U6LiEjn5tQgjZrYDe7IhtUmbGrY-ssWaXrWEIPcQwB5bP06KlLiZ7d3G4eceq-F7dQr5tGT65JQwzD1Rb3zn07wJDQvf6ZSTux_-H0-kM4MM9rgxg_JJwgS1Mvt-DvFya2IxDf_FmiklhDy7fsT6tp6phhC-Ai67JEiMgrYsNrUEp4XV1-aPw8eb4KymBcBEoec_QLgLKN_-J4p-KCpJ2T_R7Qfp4BheyEQ5VP47Hmbkd61437fS52dQ3CIPQ76SAz33fwcckmN2PFgHwmiL6GjDYrPmR7XOUZL_EjbMg1XJbv9Omp6AedUEwZJyp35xFudnawl05anhxurjgpZQIsQZjVcwArUFzWB6DwoMdS51bxxoosdWvzjjIlc0WkrtjZexevc0ztZsEWARdx0jWf",
+            "width" : 774
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111380521528139982857\"\u003eWON LEE\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t7f_QISgFuJ3T2tA2zwpCP5_c9foywrfcdd8vS42XS46kLQb6QYkCDIfC_Ax3CPGrw-HvSaAJa8s-zsnsGS3zGBVzdUjd1UI35tnt5xBZzrvdqaC5xv4IaDx--BuJh1cXp3ptlor3P6aE4mhSW3pQ7EAqrILNHR4zcebp1iEoLFXZ5Vc1PwcGACrFUfgEgGl8Ibva9Sny1OOuxoXK0ALTcljZIqd81jXr2lmPnLqnFbfLJIVNlW7tp1TDyuIoJ7X_r9kM6kHvpTSkHg01a0pq45RDemDPEql07pCHL16YgN8pyZ1mKm2bgVRD6MRHOVdm4ZgsQfv0ljr1aSKAEaHLRx_MK7VGr3nnM-X7nxjRUb27pUuyJ8O1VNahNxnad1F6Tau-MHyhFCaeNuNJXlx3418WeEJBqsMDAtH56fYk",
+            "width" : 4608
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114145290864731885174\"\u003efly onn\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vnPR89TaLG9TqGBndKgrWYj8omTLOmy0iM-rEp0ZDep1X02tS7wldQcvQp4k_9wOj95W3kq8Bbnek6CVzvuJIlWIRGIu-ka5xCF6dy9cjot775912hPhgyi6JbKyf09wXJbT6rag4pYoDhJhJtKWT3fSOTWZb7ASaYn7xXoRuvikWRrlaPA7555jr73qCN4q3YH87xlK1fwqsCiPmHgp9dsnUsINquNnHhauLC8pAnxZ_d4u9NdSEjcw15Pd8YeofqScJKwkD1O8Nkt_b_L_bbTlLkCMmtuLnpd7QrFCR7ZACGKR7xOARUMAHLmx7zbv5WGXQZ2dlajNEuXx-emMMrerFz8g5PdT0maijmDqsu2Kpimg6JqdjGK7LlcFAbA5J-7YVxtQsi7_tDcewuiOXeAF9aNL6oxfjFEOFanARzEAasQk9qNA",
+            "width" : 4000
+         },
+         {
+            "height" : 801,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117330254605916372771\"\u003ejamal jamal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s-aUyvDzNbfgpY7X3skVKiJB7qMr4qWrVA9-IUKftonEZSVjJYs_qKkiAyqUjYOjoGNT76-kM8rxY4rdjjjJ-HbUDQa0ZGgozwBxIxj1i3Vw36aI69iXNLSyj0RaEYnpY7xcktG5ojOVc9dN6XQHJhFRDJh0p-6v0J8i8Mq8xPNAi0V-TcOy12WZhEQaQ_hAw_nf_LLiSO8xnjvQA8ok2d5ZZgDctV75wej3hNb9s8QcWVJaqJ00dVOQ1SOZvis9W8Zdscaj4eh3S5lGfCSOzAwnAetrRLWySLDtRNVsNoeo3gIuPaxOrYrGBx8ARgAV-ZnBtFgSW_V6EGumZ5dw_58RyW60NaqmITG0Kxy-2zofuWzQL1-1eRgSyKn1SmbBN-gCq8phOl-cWcZ_w1g5mpONRlislfWXDSdj02_VjgTw",
+            "width" : 1065
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105679651605935849262\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v6lvL0CNXJOa6M9W7Vle3VwoQYs7EOI0rsoIxZMoSuJo2yGRU7RL749TloEBqKdb3zoU7TRzRcKG59lKrfGsNKR6VHosXe5K7XZOq6dVy59PvnljpsVe-O432bmetv2f-J5X8dqxWiNWfyXlLqylLf19HVRhMYuYf50qN7LclpNY5b0LRhRWYwSMMxfBRVSaVwyNkSN-zSt4UWNmrehLotOEV4PTEUe8d2YbGg5HTFlNYnRhgOFja_vVe57CaLydceHOBFMB--mkdxW5TgHzKt4mkxRthNvXzEFBAiHTxzALg5GhENGZgiGFgQxkimAJY_sIMAzgJ3iTQKoSK4kxIJuk0CHTFO8wdWrJrxZ34iW80YNapiFB7oO9jjTEjEiizRJGidMU987I4l6YIul8Ho9SvhW7XlkHonwpdFckQpHw",
+            "width" : 4608
+         }
+      ],
+      "place_id" : "ChIJcRlUrLnsyjERkKAQRWUhUEg",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5210701487701794960",
+      "user_ratings_total" : 10708,
+      "website" : "http://www.mbi.gov.my/"
+   },
+   "status" : "OK"
+}

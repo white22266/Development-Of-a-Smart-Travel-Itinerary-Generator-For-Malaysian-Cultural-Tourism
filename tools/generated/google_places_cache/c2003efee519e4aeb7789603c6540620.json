@@ -1,0 +1,75 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "g5128a, Jalan Besar, 73000 Tampin, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.4664294,
+            "lng" : 102.2315489
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.467780430291502,
+               "lng" : 102.2328340302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.465082469708498,
+               "lng" : 102.2301360697085
+            }
+         }
+      },
+      "name" : "Tampin Landmark",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100254863751412300529\"\u003eShuvo Ahmed\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tLbM7XvOY2-vH84LmhVIYs_aYfbPOVfCRMEW4YySiWdDxKL4rWjtE5TVM2OLwe4me8aFUv7vhPRa99UCXyEEEJYekbIHZp971KCBQn3K25GyfuiAcxCwb-YvU-VLOUo6Mmbtfiv_cMl5gSkGehLWcF4U_ZQmQyPvShWvkE7HiTxaOcR-hkg5UdVp1bRApGZ1yM5_B3OEgZQr30ujI0yZca7WF0eJIM8vTeXcDHmxf5fmPkTeVSK7CB3xGb8Z1IFQMgHfVlsAO-MHsugQZsPuVxEd6_LpqdRAG3olp3BHPCAx2gDo88pnsRV8lfKOEOGV8g39fBLg20Iy80SFVINmsMEzrNaQNwz37ETGNSmE68WskGthJID5c-inhLlgIjy-zuvUUhEqXM6Wd4MueHRlYZMqHRtL-6m302lsJdUKoko70GQ8BTIvahEVWVTVUV",
+            "width" : 4080
+         }
+      ],
+      "place_id" : "ChIJ9e26KQADzjERjJyKzMTgzDs",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4309066079336569996"
+   },
+   "status" : "OK"
+}

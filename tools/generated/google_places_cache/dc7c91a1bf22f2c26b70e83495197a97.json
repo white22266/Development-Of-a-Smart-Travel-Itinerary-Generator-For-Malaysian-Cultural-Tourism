@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.1204677,
+            "lng" : 116.524152
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.121755780291501,
+               "lng" : 116.5255059802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.119057819708496,
+               "lng" : 116.5228080197085
+            }
+         }
+      },
+      "name" : "Ekklesia Church Assemble (A/G) MLP tongod",
+      "place_id" : "ChIJcwWwdACtPTIRdZOBzNMwlDA",
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=3500476496600994677"
+   },
+   "status" : "OK"
+}

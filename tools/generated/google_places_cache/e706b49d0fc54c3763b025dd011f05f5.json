@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "KM 8, Jln Gombak, 53000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-4031 1536",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2108778,
+            "lng" : 101.70595
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.212172730291502,
+               "lng" : 101.7073528802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.209474769708498,
+               "lng" : 101.7046549197085
+            }
+         }
+      },
+      "name" : "Masjid Zaid Bin Haritsah",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0530"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:30 AM – 10:00 PM",
+            "Tuesday: 5:30 AM – 10:00 PM",
+            "Wednesday: 5:30 AM – 10:00 PM",
+            "Thursday: 5:30 AM – 10:00 PM",
+            "Friday: 5:30 AM – 10:00 PM",
+            "Saturday: 5:30 AM – 10:00 PM",
+            "Sunday: 5:30 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106513667717682935494\"\u003eMukhlis Hakimi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s2U4MNtiS8Qk_H4tVcxnB2ljrwEv2itWXOrIGdREiOTjF65y52jXCRiIOCa_nSKrLNpagnsQftxouYR_OyiAuPddScKSiwn11rJ_5LQ_oAVhj-jFs0BOgWMxH2aikeghhnekDMZ-CHeMI1MSEzXVE1pKkopZvSPjx704lZwUQWVhQ7TvFZmsGOdRyBUa9OZ2ig7B7mc5Dojm4SD7h59OJpKZ2FtiiLbHN5qfoWnh6YZfxBBlhoJi795GV2O-EBHCHnvAEGNddVJZK2grPWiBwzjX_eo8wJm2wnyrIrdauqk7dXURARURU4GBqi4lduUf8mNAKsZsBePQxtrvCWWN9yJ1RPzqar7fCQsx6kd0MrWHc-DgLhgglJl10op6m_KRJ6Q5r2amtSWw9d58y5kGvt1FlYj6gbhfqzhZWZ4Zl6Cg",
+            "width" : 3468
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102365311169685864175\"\u003eRidzwan Mohamed\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s-91xEJy1CGJDvGopWyeI6aYkFBvF51ELSo2knwcSp8BJDml4v4ETt2X6UhamFb04HtrSLgi7UV9ohHv09H3R2NbpuBOvQpD3FBY4V7QxYUP24Tjs7geViMRvJjMX9hoqbYXTtw6Wq01aBXo06oDW68hLKJhk2zg0ArVLPVyTLzmac4vaO0VoMq_eInXY5B-JUp6XsE0OwGGBfbLj7iB8MnVI8912wYrIeiY7VQLIKzUmCCS8AXGfZ6WLK_fafOWuyRStUGMkwsbgM_-5hRtnAbROcPwlYBos_wGHAk7j6vqd6COxleqvgUKY0HPPk6t2gP2l8BD7GTx881kDd3ZB6OrUsCZCDVATUUST1rxjnnSkRMVG9F3Gkcg5waE4zLOCZDlOXAwlFY54RjF4QoXZd414XFbsE-vkVkHXzw6fCQw",
+            "width" : 4032
+         },
+         {
+            "height" : 3599,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106513667717682935494\"\u003eMukhlis Hakimi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vOCiTD4R4vZygnRG8-N-66jFoxELv10g4tQHN_wesTHf2OLBECHzgDRWtcqBdSXkA4wfTK27eW11r49m6sQ-mF39ngQmmjWabz8PPVeGcIIYkUmfDRXxHbuz1aEusSTwPOGqX6D9AOVcVGhvakVyiDP2Pz9IEV-O4mwIYRHfHouCK1K1hXbH8AOHxADLEGVEZtCHjQXgikS48Fx71skMISXOYvI7A4urv-22F9vAY1Ebrkpv2IK3L9IxzENNXuKR5Cj2GtTZbbeCS56MF8ryljBy9oozD_kcJA3czNc81_2tDp6InSNu8Z-BtdmaU2M57twpYqkLEqLHB982CAqpp1QLTkzHkLw2IdUPYmU57B8gyypuJJ6_YgRLoQKXc5cEbDgmjFxcG0zpqyf_bpgM7FsxZGHQyP5MJmTHUdCFX5Da0D",
+            "width" : 4800
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113021286278808458811\"\u003eMohd Yatim Hashim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgNmrzbkSrXDu4C1Ek6x1pzUcbQpz1eHoWoOu98EbymlBzpG8LPoayvsXoVak00IPNvhBp5ef0Si3Wg_szb5WI3TI1dJqptSFTH8UgLM1D9EzumNYal_j1oXgHCyu6Wp8rHEKHMCMqtu_3dqqxDEP6XF3PyqxAp2JGg3MkZWTDd7Q8jJqCEyc38V4HiXnyv9XqbKnNxZ6TUulb-fgQH-mczmuQTSIP7kVtTcBBsud-jfq8iXYs8DOuIBpc1xF3JCOTwNWgMyAtGa91t0C-HFYWgvWWgRhfAmcm5gBvTmpRfMOGKbDkK74geQTG1ibIZ_avOI8Eff_XwjBOKsnTOGm1bOnmsSQ8NU_GF-0QRo8H35hZxyINq_wcHU_nZ1xvJgXJa-lfL9aEqhuqy1qeeq08o6vybRCB4rzkAzxR3bU9iSfT",
+            "width" : 4128
+         },
+         {
+            "height" : 1040,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111985385313994939305\"\u003eFairus Hamdan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sHutFjIifOqc-Ne8XQ_j4IgmA5-wCXTJJzJOWv-4pI6Babn7lCEGEun7-snQdC1JT50of_qf2ckTp3cevu1zYSZRlBSZJeBqTERnWEPpmKFM5zOiEyT8zG2cGgWGOozuC5AzlXZweiaSI27EK01jap03RM1cFDlNxFqYNSgLMrjNfu4EJPqEyNg7l2ThMgWweoHzjzC0Q8S6iCprvOBoQ36N88qliLv3a0lhXWsbEgCIZUy0wZwMskBA5CcX3xY6KkLTlxikA3061jk7NwlFpvO-32gTgZ4Fz6A37GFrZO7T_5KU1DZf9sU2IdzTc-I4UT-IAzyEZx8R5UuSGvSBen6ddaeJtKtJVzH9xQGO4BT1OXWu6W98uin4UL8da4YCLrajkq4Dt-VW3-hV9kCn-Zshrur_MIOR6SgSdlTXBQF08T",
+            "width" : 780
+         },
+         {
+            "height" : 720,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115938094967692729751\"\u003eMohd Kassim Abdul Rahman\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u8m2wk4OCzTRDbvF0P2-kfVCCRD2DlGmuuJrJynMH8abUooCI7fw5GuQBTxECKWJHWrjttrEHp593avcM7JaEGkbs2jdThrvljL65Ec8XD5nkQrWbdYwUdJjB-GURn37j4iZXgplRELwMgJKxgg5JvdBAI8Vw4W85NA766oZzGd-9ekyhsmGqtPVoLa8Rl7PyVi9YhzudsVjy-fLVrC3wEexZ_CylwQq-hYYemis9HhSkcoYRNvM0mXPzUazOewwTDEdyVpV7uEN4LIb-5wW3rNuwosPjIP6PXsbdtX5cMyHiTFOJ9LhV3Ly2FiHLKX5K9aGMfOOO-xN1SM-D-rWYtnMQ90oFTZ1PSChr_KSqgHhgdg9_W14p63tcTcBtakDj7__-5epXK9Ppy_3oJ3ieM7h8Nb5smQvUvvV0wAUnPuTtK",
+            "width" : 1280
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104551572647368559688\"\u003eNora Zolkifli\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vhQz_kZ4AChQQKLD2Ina46jyxBUoHPbfoz6WpMQARHvlwZvDYYWQWweTibJNDBItnHlZAmiFYaUgwfswVxwYUlXPE0-MQNfmdJjcVXSU4LBBHBa4sO-ni52zKug_zpuk0rKhgyLJ5dni58MkQo6aUUgjWyqViiGTQYYr7r0MnwHacKN8ky6ta7ceKjKZXRg2dx02YxmDC4MIUHQ1HYWwZYWBFp6sJEpyDNYyY4vVAW3bWeUD6vT06Wl8dDeQmWqWstFMdbgo7StZmlkpdh9WBzESMPjeGabaMSb5VgSRyjtO-CFrHf8YZcwrhkGJp491u76PUA3cRYPt0FZ8mj0Pe0L3vzWyVDdUKmEKD7a62ZhH0opmqjZGGntBVryKPCLrok8bv24jZNQmXGnbBOsRJznQfIo1iZdvf3ti-GeTx3MgI",
+            "width" : 3024
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111985385313994939305\"\u003eFairus Hamdan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vAMkGJebbo4I2keso7dKY5Z-opIsNFuc0M1yfsa52fwdbbkvsPZdrNqjtAeZfEkOPh1kOYB5Kl6eNqbNi4OV9n_cf-V_cc1tGV7ulxl-qHVCG3ZBb6RDhFuFWd2MOjnLYJS6g6s4QjVsGGUtYm7Iu8ZoJegHg2Q9WLQf-rSBf3fje3REYKT8--f8V0Oo-AOF4zZGx9bVzF5G8IJjex4L9JuCEq-0u7VKxoqCrWkQDWhgmhDT2SpldoO9b7sqUhogVa8JFyzeVHz7Vr2oGDwP3PHzYJwSkS1y-BcfvIXmVDWWVpRLVB2H49wJejO56Tg21kkTNj4vM0iK1jUiAH_cDC5fFy3G0P8jcCpTu5lqTcXd1PLYdWNqw3VzrC9uAHaq4U9MXI_REQ0iIlRG9m_xzCyjHOpm49vxZ8_TOfvap5F0KX",
+            "width" : 4160
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111985385313994939305\"\u003eFairus Hamdan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuT8cUTFh71CcqqhcGBjQWdLe7t4PwpkLiwSmQQvgPXUBobjf-AmzCfbrD_sQXVanaRjb1SmYZSyFYOVyXwGObmeqr9UxHKPyRnRlzthc_8f40YTXlSxyeyGm5ylkOwR1Fi7r-X8nKCsFX8vzt7EfSFYfTf7dHzyJqkoifaWHqX_-3Nt39wavVjbgOecdZb6SZyX0JKtVtvAwydnw-Ff8ZJjDcYFXRJV18Og8uXtzMcGGCiWnX9U4HBBFIg_Ron3NFcpx40cmHROxY9k1TT_o0Iiml275IsG36o37lXTBllTbZqOujeU6XOYQzNcNhUrPc_k-zX-MBw_1RoidA2dMSnQST0kkkoPULqf-j6tUcQ67FPmYjas9IQGkEgmOCHiO5GTUbxiHSDTtht3gsMw92oRpcOlf4kuegb8iQj2xfDOsPCorMd_4GJ-_m9TkQ",
+            "width" : 720
+         },
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105595943368825245553\"\u003ehaziq rahim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tc7vh_01VqvpoCdGrMMuHNG8PnrU6Yexou-2f1djDmAZqi4xhRrweLYE8u_gz6xQGqcP64UCjsrsriN5Fs0J2_kUllsK5Ao_GuBvdqgglkZOnSpU2OHIpEJDWtlhW_Wux8YmfEPOzkQoCJCqViBWC4HcvL_EcJm9Z3xfrbtRA_Ua4ef6jFVdOpwOcTgTPLl6e-dX1z6BzgslxbKHmbFy4GeWRzDuxxSkEMA3lKmKEKZx6itUbrav4nYmcsL4tDEWg8hx6aB0ngSXgyRjLViofBhdU-f7JSckwwB-s3OixioHq-2dAV2vzcmVMbpGa1ehfP6kkf6El0vTseWbgqsCs7MNjeB5T2TOcAfOjNNDFehB5Po-GG0U0RzgwKK0WtB-bc1BQJIdwVBsUCORMrF7jClkyFIrsJcbzzFvbEzpo5lQ",
+            "width" : 4080
+         }
+      ],
+      "place_id" : "ChIJQwq5uYpHzDERxyCig4P1Kpc",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=10892788593946927303",
+      "user_ratings_total" : 213,
+      "website" : "https://www.facebook.com/MasjidZaidBHaritsah/"
+   },
+   "status" : "OK"
+}

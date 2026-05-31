@@ -1,0 +1,1189 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-ufv6nflbvGgu_MCpBDJYAPpUj6Cx41YLl-HrFINlTCxFuIK78SuWCVIcT1NIwa6KMxjf7OTYnobDwyDNM9f_A6WDLmxoL_TypxDnzPw2jrqMO9YycGyosMFCp5Vc3wnmXNEGmU6yksFavIGpHujJqBLpLqxjvhCoZge60vLAFFdZSHiXKG-rRG0N1W2dJp8JgpEqyezsr61pHe-5mlcPjRzAe0jCiDWMAekJdkhDSCJWITZHVdWkGL9c0ZoWTW2BbYw6VyAJzEtuGTCP-HJUdRYDyc8gTtgXLRovTHA7YECnSfr3TlsfpYBtYbKgMcdaLwH9bVlAWzqX833jM38yFfuCqE1r7Cx4iN6Q8SMXHSYP-qu7OtEgwXEAfcop-T9ALNiDAwt7VP3qvIYI2V2t0YwKC4u1u6l4mEV7CGh5E5LCu0rGaPn8be0IkyDACFyUP9Ea_kVN2F8x7nVyv5CR8ACt64-qURfUQDujlCf0z6CaC3q-k81GB25lVZ0Adebf7zLAt7MyltJLuIeqpId-0eL2pOEr5pGoEGtC_0qkS21d9puK7MWbKQNz_bekn63nHc97LvPsVEVPq1_0FcViCX0XpAIf7C63Ni2OmcA05dtpjdroaUxJKw4mJfTe0PU7BoNILhIv_acLUp5v6USOIJPgTeewbAq5WGm_SrnA-tl602UBu36YQ0iG3_ZK-WUscia_ZuRH76Qb6D8ZmSABNZQ2tsHhQNcIlZxX8yfpSQTJqO8KtkRec1V78Jh8xCEGbo31XCRSb64AupIWOnSWx0nAJK9cY9wVqlElNHww_QuCTBwz4_daG18Zj7E8woT6x2RP7wOkrU",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Perak, Bandar Alor Setar, 05150 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1202722,
+               "lng" : 100.3651758
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.121663830291502,
+                  "lng" : 100.3663881302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.118965869708497,
+                  "lng" : 100.3636901697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Zahir Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110063498323626512897\"\u003eRuzend Mohamad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vtqGbpd-YcB3z5EkuLzEZrW67cR24cTtqdCZ5f8iEebxvhYEW73kuU7o_9U2bCq95X7kLynzfu314PQj1sA5YOHzHsXekRMvpYQp35rvpCNCZYRiGCpoi9ph417t3EuvpqINIIUKbAWU0LNVVkJN0JO9cBIlrO9Esj7JVlfzdagEPC9XDtVaLTnLaAABDSBx-d8L934QYpvAU_epCK92oocKHXGG8u0Zgydz0S0IW8o9ODlCy5TIMfkZeuDvwHwgGzLaOExYfhx8r62j6afYq1sdE5O4Z0WRB0Ws9pfO6IJYKSj88bfL_jbnZoD6CKAHyTGQz7Td8NPSZKKJaZowtoGNUXf8O4vR_686wxPuJnZbejBSY9pt6O0DMe-4x95mMFsPfXNqYSF9-2o8TYpsOPBSOE4x1St1Xm9u0sNFDLy3bz7tVzTwDqXwTMxg",
+               "width" : 3602
+            }
+         ],
+         "place_id" : "ChIJM8lHErxESzAREyhjhGEgPSQ",
+         "plus_code" : 
+         {
+            "compound_code" : "49C8+43 Alor Setar, Kedah",
+            "global_code" : "6PR249C8+43"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJM8lHErxESzAREyhjhGEgPSQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5292
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Lembah Bujang, 08400 Merbok, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7391118,
+               "lng" : 100.4136014
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.740367280291502,
+                  "lng" : 100.4150307802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.737669319708497,
+                  "lng" : 100.4123328197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Candi Bukit Batu Pahat",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105021282184914571727\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tEnyWFchExU91vIrxrtlr1oZo0a8A3nHIvIwXtb4Y30ukh-AjWiYRM70e1jIRAyjTmHI78cha1Oyg572opzMIhMHMjW1qhLbnu2fWp_gNEIn8MGOy_UTuGJWRYAL75UD43AE_zaB8hsphwLKp0KgQkW41dC4C5NeZI5TfsJGqZGNhaxX5QVyp6nSIScukoUJUeENsZp1eEXuu1iPG5fLzyyF-PHxXbJlChPirbl1rP2FY_mXR33vbt78EQp6Str-xEvtAo4IXjojt1qewk3X74dphuJCqbOQewSTBk4SyKaqfIxAnvClqgP_y0Q1U3OhS-O_TdfMKKFR3IKqUwIB_5blbz3upc6AgJ5fqtIknsPzRaT5QrMIEFCGejpm1xVHRC7ZW2vnBEFFpc_L1KckITxgleh9GazbuONgCzX_HsbXvH",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ44U0kMAlSzARibgIV-qLCaI",
+         "plus_code" : 
+         {
+            "compound_code" : "PCQ7+JC Merbok, Kedah",
+            "global_code" : "6PQ2PCQ7+JC"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ44U0kMAlSzARibgIV-qLCaI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 52
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "berhampiran dengan Sungai Batu, Bukit Batu Pahat, 08400 Merbok, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.738085,
+               "lng" : 100.4144983
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.739396780291502,
+                  "lng" : 100.4158883302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.736698819708497,
+                  "lng" : 100.4131903697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Bujang Valley Archaeological Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118215423548122168943\"\u003efar east\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vByllppaFjZQ-Xi8FKlceTgZii_2pLoKwdHM527GrextVrUcIbU9Uo1I_TQmf6Gbdak8fRLJu1XUxK_W_evzJM3DZIHGScH7eR7P9Cjp48zlbcRv5B9VDm43xXLiqRtXMs49mcxfndyz8L5i3O3RpuOPDcFUV0dEz-ycYU0DqhdvJGbDnf49-Q8DZeDHhTyXiLCz0INPLSMzXG0TLTmw_mWsmNGTM6RnGTw9k7CoAkPBuJoZtsE2Juf7Ui58LNitQ2qdZYLuStDKWk0P4cOi0khgdiV0jtBneBjjbqf7KgmxuX10rNC6MODDkDgGBKkUiCEdL3Evkf9FSGXABfPE1nB7Neb6lZazeNQehlMiY7LblIWa2F6GNAFrok5jKtfCInmKA38OzHaMdlnfAFEEsCWZmw1seeUEzMSiJl35gaGM-j",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "plus_code" : 
+         {
+            "compound_code" : "PCQ7+6Q Merbok, Kedah",
+            "global_code" : "6PQ2PCQ7+6Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1229
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Kampung Siputeh, 06100 Kodiang, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3562596,
+               "lng" : 100.326555
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.357581880291502,
+                  "lng" : 100.3281226802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.354883919708497,
+                  "lng" : 100.3254247197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Makam Puteri Lindungan Bulan",
+         "photos" : 
+         [
+            {
+               "height" : 700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112570124336362456723\"\u003eRosli Desa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vX8D2Q1vRQR5mmmDI19l4Q-GF1bm-EEhL0uw9rMZZVNVQ_YeJjCwhIHpsWnz6keMZhbtALg3HvAc9HqkEcp-MpzaQbz0vrFjOhg1hmE-Alt4ESFSEJ3v3YgqLaEWcKfh4kJl9YU7GmIV1QTMgiEjEKGus0RKLqWI5fv2V-HDkfs1TIIWWS-uokv1VHbe5peo5Dvh4GTndJ1ImLDIJlZvAStdDS1YRPkHBlbDB2wqczPr9uX99ofRZM9HL1DBmem_Osi52TZrBDxcDOgLZgi3LJxtiK3z1zK07eywZ3nNdaVSu8TF_HJRct5bvZGjmvey7L9gY9iUwjjnV-PTNZblE3L7xr1r2GPfn0ANkz66xnxxuPpovYGgSTQT4klxS7kn7F-rB4lCjkOrHTNvlyGdo5NpjGzcdF0D8xGmOAPcYWhA",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJL_qDaBChTDARDjeJFsiwTOo",
+         "plus_code" : 
+         {
+            "compound_code" : "984G+GJ Kodiang, Kedah",
+            "global_code" : "6PR2984G+GJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJL_qDaBChTDARDjeJFsiwTOo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 46
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Simpang Tiga Sungai Limau, 06800 Kota Sarang Semut, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9109707,
+               "lng" : 100.4177437
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.912268580291502,
+                  "lng" : 100.4190097802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.909570619708497,
+                  "lng" : 100.4163118197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "MASJID KAMPUNG KUBANG PASU",
+         "photos" : 
+         [
+            {
+               "height" : 750,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102001586524295981802\"\u003eazizan awang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tT4hf3Vhnti26ysjWTcE1rgol-pUWARBzEOooYhWhU-T5Op1CQaAbPwjRhQb19VFCDd9a-WK6Bz7mUbfoEWcBxZLj16MoNcTxDZKPdC3avKDRKTkbprr4zq_bZFLOP9b9NLj24NZU3nwt-xC8SDnEO3KwrVHq92WmAMh9Dbdx-NzrE09mqxDeYdsz3dGcNGq5OXsRkf6IWtafKLxYjyq3lv_NOn39gq-UycllqNJP3Uayn7fE6AQRmtsZsa9-XyvuW3nuSk3eM-FSBhXmYKptazuKVpuiTytNz4O0hV5HHz2Jqeyx8Zi88DZgGxY4sY87OZ_n7SufguZ6L9nWuj8t3dwuCpy7Qn6AZuMb1SuuMSMw89btbo8wXl0KsU6I_juEYcEnX99vlPlI9c93lTwXZ3fTQgHywDbFWrs4og9c",
+               "width" : 1000
+            }
+         ],
+         "place_id" : "ChIJI04iXMs5SzARuPeyB5kHtk0",
+         "plus_code" : 
+         {
+            "compound_code" : "WC69+93 Kota Sarang Semut, Kedah",
+            "global_code" : "6PQ2WC69+93"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJI04iXMs5SzARuPeyB5kHtk0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kubang Arang, 06050 Changlun, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4417518,
+               "lng" : 100.4093038
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.443004930291502,
+                  "lng" : 100.4105871802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.440306969708497,
+                  "lng" : 100.4078892197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Abidin, Sungai Laka",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117764198966014595015\"\u003eAzmi Mahamad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vdzIR1T7Swiy-CmRTnJqvB98HGLfaQ3qw4nJMBee6w38ORq34z9V6fpP6PXs7wS-ZX1spiY2ZQR2D-OXAm-Tvy69_kYVtwWGJWZHrfWhWhQFAR0EYj-h0ZM3CGHPS6MczZftT-nawRluMUSumFAZfJNJn1HdD4T1ypge08grHXkgo7Cv3RZzcJi7piPmdhE4lSrqOwEuVverGFOmQ1on2ESRjaLST6LeyFVjkb33YwdxDwYIARQvMDs_LpWHj-2hRSbONaR7J4gT5sVDtmIt1MZCnDuGsl5om1CngqF9fN1Dr5UqSDblvb5o8EvF-zDec93YGPSlYBbkPyc98VmrGdLPwkrihRY1Ucwv3GM3sr7n9CR9s-08qO8q688sdQ-7nRyY6j04KTrfkZ7VNLo-HUlDyFHqKJ_BHbasqDiSQRtDaZ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJmbaquhGlTDARM9x1tlETmLo",
+         "plus_code" : 
+         {
+            "compound_code" : "CCR5+PP Changlun, Kedah",
+            "global_code" : "6PR2CCR5+PP"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJmbaquhGlTDARM9x1tlETmLo",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 81
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Pering, 06100 Kodiang, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3769639,
+               "lng" : 100.3384305
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.378226430291503,
+                  "lng" : 100.3397524302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.375528469708499,
+                  "lng" : 100.3370544697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Pering",
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116177359759914943739\"\u003eLynn 84\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uh7Vm3K2bkRIEUUbE_lRWLERKmdCQP-7-VwERzoo6lzPAujJzGwjNR8K2ycYnIEsVRVTSNQW80reQOYg0sLdxm7pAXTHlp_GwSov1VlFdmSK1zM1apvT_n_FVwYzA8UqDYQp2GqLG-PEgyvxuKLv_FT8yaEwusuaoHx13yYIYaMw0Zjw6y9xhwkAwsMXhvs1OjzgQGuc_DKIC1AqpHyfVT2MC_ofRAj6pezPkK65UiE4KAffzl8AD5y2IHBTfaNcoBaFuuEOwM8YCE65xDmsH5T3LS2h7bRk0Fpw1xnzftpTGDABO6InyBfuXJZHRrkYdieWivv_Z29T-BEkTlfMvELaaG1rVjIKGWwZopfIjBnpcY3LN-PzEodccEWBVA3c0KWMUAOlvqb2QTVq9CmJ__1dRYCD7k2aqaZcqZjTnQoVtU",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJkVvUWEWhTDARRruoATgLPfM",
+         "plus_code" : 
+         {
+            "compound_code" : "98GQ+Q9 Kodiang, Kedah",
+            "global_code" : "6PR298GQ+Q9"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJkVvUWEWhTDARRruoATgLPfM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 17
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Wat Bukit Perak, Kampung Dato Syed Ahmad, 06700 Pendang, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.922352399999999,
+               "lng" : 100.6366633
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.923555180291502,
+                  "lng" : 100.6380009302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.920857219708497,
+                  "lng" : 100.6353029697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Ratchadakhiri at Bukit Perak",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3904,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t8N_Fn0i3HPH8Q3axLjNTGskCIZU8lf3v7PV5xRXMzzzMo3cemv3Bgq0jnNRBjrzlUYhjZzzduSNQALiKtyqyDmOgIc5vO2eRaT1RvvUf-BUAXGonOtNWOp-b5zDZZTPILn8a-w_iBuxtERKZ0ISnO2X0-UH49UiQtFP9VIeNcyn-Km39DGW1FIsX24H7G9iaJbOi0jEhPwezthVI8mlM9AXkzH8C76BQEZ0wx9HtpGvAmyWG66X-l123JNfSJPl6qT9Hm7nIqFGITaPLqYd1RRyCRSoAI873Iah6-3wqueXqCFxfNWOg7CHCCmCZ78pCdmYKj6Gk4opk6peVi7JTPz9tdBARKkplhsj71pFI9zvGZ3IV2O2TLmtkb07Pkz9toTWDUbuULz_Bba2agLrL6XDyYqLMs6vh2nJgjfyI",
+               "width" : 2928
+            }
+         ],
+         "place_id" : "ChIJ74kdTifLtDERi_tiTeD2heY",
+         "plus_code" : 
+         {
+            "compound_code" : "WJCP+WM Pendang, Kedah",
+            "global_code" : "6PQ2WJCP+WM"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ74kdTifLtDERi_tiTeD2heY",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Langgar, Bandar Alor Setar, 05460 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1323019,
+               "lng" : 100.3875596
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.133858680291501,
+                  "lng" : 100.3894015802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.131160719708497,
+                  "lng" : 100.3867036197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Albukhary Mosque (Main Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100264430583353872417\"\u003eMalik SA\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uMm-WvzVx7_nHidxtOrb8XuIhpmvErR-XzpD-72Dor4jIg36lnffOK3fLxn2H5lw2y5BqgWLm0dnljBWOOzQf677q6EAqrIJxTTTBnUxgIh86YugUPyhXeZPtGslWAcA8kApP4mQ4b3Uycqg6K3rhtO62t0-3LMAdChV77wbImXyKnc4XtKXDkUJtAbBOW1WZydxLyycotMNAGLtSTM6aQQoCqM-JFH021oRBjkM62F4MjOjQXtEFChZDGiUzYmBqB-fir0-IwlIpIz0TZe3jOmSGyC31q5olr582t6VDZRddTsEuj9Xmu2y11SluaWk9I8MR01LZGwlIl_hO6_lgPQXv3mTbFaG9EBfpnkEnMdK4sYUFQgbZ5GQZ9aDLFjwZXvFo0qWcVAu-CxOIickmzLKhjykdtkjNQu-HcLHK1mg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJZ6o3UypbSzARPZmXamGyFrU",
+         "plus_code" : 
+         {
+            "compound_code" : "49JQ+W2 Alor Setar, Kedah",
+            "global_code" : "6PR249JQ+W2"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJZ6o3UypbSzARPZmXamGyFrU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2073
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Sharifah Fatimah, Batu 13, Jalan Kemunting, Pekan Jitra, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.285289499999999,
+               "lng" : 100.4196591
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.286616330291503,
+                  "lng" : 100.4212243302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.283918369708498,
+                  "lng" : 100.4185263697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sharifah Fatimah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110777248836142687796\"\u003eHajar Zainal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vorO8oy9n_YKlcw_ORaSQ3_OcPePTE7QoFU7pSkIF1agLXCHzJzMN5TAi2p4apiGNBePVdtJ0ci4FE9yhsMIVilKrMjo8QcWldSfpU2DMPyql4wcrBeLSSTIrCpt2R_jCl1-Oq_ARI_y2HYkLIoeUpRcRHYsTw1WJdyzk3P10EYwMd1sy_n07_2BiHnFB-LkrjAZ6K7k7DFHz0Qoqp66995fNjEzIzIpQyd2kojI9ptK_op6Cc-R1tOQuOSfqw0nOncmeUH3fzHbchIM06vHHFzxJMHGPDoGuGkS9hfVgCFKHk0FX88EByfvQDF-HKovpjp6CXz5Qnjy8xcN5ctGbg3cxIH7eu4PYaIkPTzy7qFvcMDWoWnmVYpJ8PCamTKCKPGKFpK0YMuHZTqFlLX1Tdkqk1cd8dP4uv18NCr-FvTASq",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJAQBA9xRYSzARw7rvcWxxZNY",
+         "plus_code" : 
+         {
+            "compound_code" : "7CP9+4V Jitra, Kedah",
+            "global_code" : "6PR27CP9+4V"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJAQBA9xRYSzARw7rvcWxxZNY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 360
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuar Lama, 06250 Alor Setar, Kedah, Malaysia",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.175041999999999,
+               "lng" : 100.3004735
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.176436030291502,
+                  "lng" : 100.3020021802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.173738069708498,
+                  "lng" : 100.2993042197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kubang Siam Alor Janggus",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112693092820863120740\"\u003eown asrul\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRz-azqJpd5UYEJXkenU1NmAmE2CwKUEPFBFq2GiLrak8xRtfaFZlO1QjMl7ywAXjI9YPLYKZlRUdbt016b4S1J6H7KKBFAQTbnC2aaNRlTB8mn-iMGKS3P3-40XRFZdPanviuU7Ev-LAXon9oi1feHgmUV5Mt-Lu8Gvo4m0WTIAY22-qIlwzQfjfBTOFdP4wpAIMn_8xLWicqKlN3JBvd-PUc6VQFCJ0ud44lELcFdVekGX0e1XN6REDAHjbF5J83tGuCKqmYNqIcUgUW86zH8_uQYz2TShwJer2IiMV_KeDD0ymiaum_zF7RKWP-FCwcuyVXxOQzds2lVBCu-bUE14-3qem1c1Ell3pV-g1G9m_nu4NXixlv3T4jRy9yt4pHkgBOIeFvXuH7DnQq3MeG_ocRV9PfNKG9DawHiqtvjg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ_aYuWwFdSzAR5zm72c-W82E",
+         "plus_code" : 
+         {
+            "compound_code" : "58G2+25 Alor Setar, Kedah",
+            "global_code" : "6PR258G2+25"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ_aYuWwFdSzAR5zm72c-W82E",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 65
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sungai Layar, Taman Jubli Perak, 08000 Sungai Petani, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.647041,
+               "lng" : 100.4877685
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.648169480291504,
+                  "lng" : 100.4887760302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.645471519708499,
+                  "lng" : 100.4860780697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Muzaffar Shah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101657433448997983705\"\u003eIndy V\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sCyqXtdBRoqC0l8LiqnNLWCpp5zXhsVJf7MwWoMRDq-WyE8OA6kpWZhdsE2nbLOr6oG8LLGCnHCMsBr4CRX5lHtCjM8Z1Mun96uywpKPDK181eUw38Vf7fZ-a1kxfMwsNmtC9B9tlBQdS6gR_tp7jjEy_dxQJ8UeP8nLvd7nf3czhbhhMk_-2R9Fr7dz5rGANvE4aYcSkLalxk5A7okwgrOAlnBFnJvcHIdnSXkf6B1keRwAoDHlLM3aa8pvY1Cc7HK6UIInIopL4D2LSDXd0YiJJzoyHAvnt3hP9oez9D5Uq58rQJqt9N-GlXfSiO850xc3pRe5fcJ2w3Xit8Ub_JsICbRrhqjXH5m3zRUPEVbD4z8euaEphDs-HhBrvHEZ9P9sOPjlWeCqXlrlMAndEs4kGU15yrBqCpHmTCUTTkLg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJmbN-p80pSzARVbxfCa7j2MU",
+         "plus_code" : 
+         {
+            "compound_code" : "JFWQ+R4 Sungai Petani, Kedah",
+            "global_code" : "6PQ2JFWQ+R4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJmbN-p80pSzARVbxfCa7j2MU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 994
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.31882,
+               "lng" : 100.482688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.320155930291502,
+                  "lng" : 100.4839264802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.317457969708498,
+                  "lng" : 100.4812285197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Hutan Lipur Bukit Wang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107191897802145711426\"\u003eAmirul Izzat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v32UlTuCvfYvysaSPMxV7B9oJIe84Rf3Rbyw9Vuv4_N92nveCtSNvCBcpnaiB7k5zJZl-XdFI6nT-JhfdxUOtiy1J3NzYv0XiTmF-rkZb8OxbSs1lzQPceGTctdwIQyhMQc6NG-mMrP0jXQiDR9rnMF0qHVXRXBd2YyXG3VxIZ1HJ8ATm-Mv288_56i1NBK2P38BkyrPOXVvrTrR1KHq3pTmH_dW_bMankzjk9Sth3_jLC55iIE0CNYQMhKbB_h4Ba9LMLJ-Aa2MbDrQTO1znBanA03K_pZsnEsx21G055knAp7yYsbrTr744K0yAZF5ZJPAJ6wElsyILkY5wHBbcuUgvthzAk4A_8WT0S-US0gBxAqUlfw48T-7DHIoU4zIMAOtpf95mLIZUyB2WT1lQRU8UM7TbL8ciBqhV-MNblsQ",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJl62obzWoTDAR8oMd12ANLIk",
+         "plus_code" : 
+         {
+            "compound_code" : "8F9M+G3 Jitra, Kedah",
+            "global_code" : "6PR28F9M+G3"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJl62obzWoTDAR8oMd12ANLIk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 381
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Simpang Empat Kerpan, 06150 Ayer Hitam, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2601401,
+               "lng" : 100.2281734
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.261455180291502,
+                  "lng" : 100.2294701802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.258757219708498,
+                  "lng" : 100.2267722197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Ar Rahman Kerpan Mosque",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107638510249227739849\"\u003eSyed Munir Alsaggaff\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vYebnMPTsD8XPB7fWy3RgGgRbsIRBRnSdK2qGS3-hfoUB7VTHKsSLNcvIdeEjc8ZKwdFubNmchkfsIXhoKqHgUuAmViXE6zJaVG1aGs4xayBN-Ho8qUx-TR3hMTcy1_I8uHMKbh3FLUSZzo0Rzy0_Yom96lQ80vt9AjWaC0f_W191LVlp_I1k9io6FY_f5BdddiV92SLEBixpEFrA0P1l0juhENPu2Dy7_Q3UMqbGyN3dV-oyw3ZWlsagdYPyqbTxQj6vyQDBJ7sAkt-J297dosISYf0drSd7ZpBoUbrYPjanfvshNEoZfw_ruSMXD2SlbwsZneOsYPCVRt-7SfWDaeX0TjGDz5XQQSPTavlOAvqrTMKACwOgrn2VXv3LR67cuerdyxprNC2kNW7Kbll1f7EIvRBDHI8g925JnsB76JM4",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJnWR6OvdgSzARsGcPusYISpU",
+         "plus_code" : 
+         {
+            "compound_code" : "766H+37 Ayer Hitam, Kedah",
+            "global_code" : "6PR2766H+37"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJnWR6OvdgSzARsGcPusYISpU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 136
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Merbok, 08400 Merbok, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7226821,
+               "lng" : 100.4088912
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.723912430291503,
+                  "lng" : 100.4101474302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.721214469708499,
+                  "lng" : 100.4074494697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al Busyra Merbok",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104712768458493447884\"\u003ePeneram Boy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vX3fCmhuGVzQ52T7lbqafW9a5g4FLNClT0q79jskRVkOR_aTv8eBLjJIGRjzMylSo6rZK6B87OQfOAPz2wvXUuyNsw00UcBXo-lGySLjuT2z1gzrx5yn9Q0EkEX9YsDDmaaWfCiyFZprbK26OnyKmzlkOKdTPAIYtp8Ee0U2WedEcpKRW5WGFcpWT3LyRMVdEW-P5hhX8KB2_PS9zd8wzmmFc5ERZDId3ygBU5Y2O7W4cQHcRXW76zxzuuO7xE4OSYjXkh9zHwcdqoj7alngn67Q0p9wPmvS7Lmmb9CiXB-rUt8Dpbk5xjwYpGQba21zZFvBetSQVm8oJQXKd93l_yuKxi6AoGsfHU9GJO9Pack5nl6V7XF--9p8Ux31dpl7CQj-HhzpGbmcW1WDfn-esFohAjBo9gO745zgGA6ohYitWo",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJVVVVlXUmSzARq65UehcIo3c",
+         "plus_code" : 
+         {
+            "compound_code" : "PCF5+3H Merbok, Kedah",
+            "global_code" : "6PQ2PCF5+3H"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJVVVVlXUmSzARq65UehcIo3c",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2783
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "136, Jalan Lunas, Taman Ilmiah, 09000 Kulim, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.391265799999999,
+               "lng" : 100.5626806
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.392657030291502,
+                  "lng" : 100.5641084302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.389959069708497,
+                  "lng" : 100.5614104697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Huda Kelang Lama 09000 Kulim Kedah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118060668497471311965\"\u003eSayuti Arshad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u_Nscg2WCxkyPVdY111shkKTG0qp4MnwNFTKiS3rPukJttXAAkYGTX3Eg0vvWoLmBcehlU0lVJtMOyiOLqphGly5grakrIE-XnJW45mBVdIcf4tO1IJ_9ig4_HWocxDeswk5Gh4f3IPKCMQwHa6r6rZ5N049pEKUURur01OBx0PHz8ODxOngrnET0Rv9IH5VlSOtxtxtoCNj6wpv4SVR5rDA6oJelcowjX9g-xSQmvSsaujFqv5icWO7HSbUeU1XEKCfZh3f1wMUwDLFB9xroSw4GbrwYa80e850_B7GghoZXeH3FsZRn6kL2GPKDh9dKEjnqCzHCn8GNQRoZxLv41aOvsj3w4Ltf6km1ktpZjAh-GUC3EKNHQ_Fq8OamtJG6JQ3653S4P6GtfbOy_ibXDrPDhQa5xSJpFr1_D1bt48gPnlydhK2lloclRoA",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJh_gDGivNSjARart10r18QqU",
+         "plus_code" : 
+         {
+            "compound_code" : "9HR7+G3 Kulim, Kedah",
+            "global_code" : "6PQ29HR7+G3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJh_gDGivNSjARart10r18QqU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 423
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Ayer Hangat, 07000 Kuah, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.348349,
+               "lng" : 99.87353859999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.349697030291503,
+                  "lng" : 99.8748688302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.346999069708498,
+                  "lng" : 99.8721708697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Kuil Sri Muniswarar Selat Panchor",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102096876868886686871\"\u003eong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-utgcw__IGzILkt3a0Bw9BYzplHZpRMcvsTezW1e5otf3XN7TdvP1p3mZwDwAjbRVWoHLBE9zIZGRVLlwqs3bjBJr8XLvvrFxRMJ7HZRDmp4dvdc-W7S-iavt80glppxfKsGeqtaQP0OT4enKxriP0mCEF4-XwDgULKkiZlz6uGGVnkx9Cyb-LpIZrKPiqWmuXsXzE6wSKhTdyAmBIZ5mypamHNr2AcFaL_YbP_7qqizr0TFjGLglKPBWrhfiOaG7x41hlSfoxX6ol8H-CwDmMvkKDhLaVOAcviw6tExwHfZd9iabXd4j58yWy9IGHl_S4KLy0dqN8jCAT-X2uyt6MO5dBYXfurhgYhv4mlvvPW2sL19UOljbpm9kltPom49Y_B9sc6RmouGVj3Y9eYUl_6My_WT6shXux-RwoiO2UR6wP_",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJkSd-CAB_TDAR8t1JBnEPqYY",
+         "plus_code" : 
+         {
+            "compound_code" : "8VXF+8C Kuah, Kedah",
+            "global_code" : "6MRX8VXF+8C"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJkSd-CAB_TDAR8t1JBnEPqYY",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Kampung Kilang Besar, 06700 Pendang, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9038716,
+               "lng" : 100.4926085
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.905223630291502,
+                  "lng" : 100.4939460802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.902525669708497,
+                  "lng" : 100.4912481197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Arulmigu Sri Mahamariamman Devasthanam Ladang Bukit Jenun",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100566027273207119654\"\u003eKavikumar Murtee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vUh3hOeWH4Xz87hx2r8ZotwDZLvoZu8oKDFVfgNAvW-bRTi_mVW8aM31J5336Ny-bUP8UEvZlRqwAkC-O0EXGPc2nBlvr-fO_nwJs82OZ7DQlk-_TN52_3o_khZUYkru1UlEEbfXIQ4GnUnRUolah9PD4FuoUpTA3aaYt8pkPVnDUxObnf6YGfHCTbin3lgqzvPFybEMoxeEsa7ohu3ifEMjsJ3RdApbf3qMb8YFNm5CHViMTJLS4nuIt7hrNPUpwzvIWjsHP1BYLoA7C_nfJM_ScRjyFBVZfry6eIO4lJjKd7LQBIPmWsL39XNcZktLFDbQ8feJi4ZVSsDdQEeDj1d3yOnioxHCuH8dZIUKyFPEclSODTEvb-Z_FcY_9Eei6hb3jwsRrbaBtZkrPFeepR-Z6thgnwYnt3hBV06zULDw",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJdx_P4f03SzARSeKm9wC31qU",
+         "plus_code" : 
+         {
+            "compound_code" : "WF3V+G2 Pendang, Kedah",
+            "global_code" : "6PQ2WF3V+G2"
+         },
+         "rating" : 5,
+         "reference" : "ChIJdx_P4f03SzARSeKm9wC31qU",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Ria Jaya, 08000 Sungai Petani, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6509809,
+               "lng" : 100.5184715
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.652292480291502,
+                  "lng" : 100.5198946302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.649594519708498,
+                  "lng" : 100.5171966697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Abdul Halim",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108833779332097682856\"\u003etravel local.\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sYGnxlqLMi8zl1QPZ3B3CfDmSZTN8f6LpD8d2mUwaoul0s6pNaiPOOhvpU9NfpXCxExsz7fr0DKDoPtVtX0Lyt7I1RKpyeO6r7dSZDCLfqLpUrUhzelVmWe7NvlhvT6dCmMu7caQ5c89YpO39jSYMyH49G3LqSEaye6xiAmdrfFjz5aT8zvYHiM9iJrWzT8D7BIJXpAnYRXAluKSzR_RkDz9jFnCORVF1vtOYXyBpuLkPrfz0XsR6D1-3OAIfeRxaXJ9WwfSS6jO3NLvkh2Cw6UIioshEcZH9f17Rrd9_nMVumEwaA2kBQtf_Lj9kW2J3xzwZSKH-I6PCfAixOXOSKOwQ2J8-Uum5eGTJ5FQtmyMge3rh_GZmTY8TdRB3AlTL3XhPPf8LssB7SgGLa4eos3VxzwRHsnY-jT7_HpHEu8kMk0fRTKF5A5FjutQ",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJuXXVcvIpSzARr0qlBk7-TvE",
+         "plus_code" : 
+         {
+            "compound_code" : "MG29+99 Sungai Petani, Kedah",
+            "global_code" : "6PQ2MG29+99"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJuXXVcvIpSzARr0qlBk7-TvE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 385
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Darulaman, 06000 Jitra, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.253638599999999,
+               "lng" : 100.4378312
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.254943280291502,
+                  "lng" : 100.4392114302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.252245319708497,
+                  "lng" : 100.4365134697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tasik Darulaman Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108464430128790573769\"\u003eHazim zul\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uFrvBguoETaHMtOvRrzLcdHIm9zUFzQSGKyJNE9I_xohhTgVvxAwZK0tyKsvQF94jQ20LnUHo4TcEFTKwNEdW9Pl9K5LSvbHV8wT5sz3JwWhm6xhosPr8iuK0Hk6Ya-x5oiegUYnyJ2aGDMDSBYtUZyKHQrb2UkEaAZncaZ60elX0fiUYqOIGZ0SBBKDMvuppLFOPWH2RGBVxB9f6iVfS6zaUwpGcUYfDHXXsEdGvmigLuJK66suYSpcrgvvEPQPsvQh3dfBx2mOrKyL_P5jOGqOW9F3-7aZbCt32AdPWHoQpUN2bduzC-MIJVq_ArJgGB9qtvw3JpFh8l1lZUf2RMOCiPf8J2zKd36GguLkRankiqeNywSLd1iHvGQD4tKmI1IQMfJianyOBlS9d_QSAB1sXfIAun8NFYlmrkRbte0YqVE1cG43PLlPKW2Wnw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJLWgHftZZSzARkLb_OwpvSNg",
+         "plus_code" : 
+         {
+            "compound_code" : "7C3Q+F4 Jitra, Kedah",
+            "global_code" : "6PR27C3Q+F4"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJLWgHftZZSzARkLb_OwpvSNg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2931
+      }
+   ],
+   "status" : "OK"
+}

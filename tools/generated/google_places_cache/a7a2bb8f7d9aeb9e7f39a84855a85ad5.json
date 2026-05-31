@@ -1,0 +1,1164 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vMXJUtfEKty78ackvEFj5iu9OSFMr3Yu_FAmMROwmSEfX1HrbMC9uzddBbJGz3u9m2aYnrqojqAWPPykWL61LaFg0vD1Dcc105IM-6av_1E9Qd-cC7xd9FZu8caIWmMWOPWZjNf3zPiRH1kuhG828CcpJonreq9p6A2ScQB-6HWe-8KyCy_FWNbeWZws0s79L6mNyYtlyKuZrpfnLTVurMzXPEmEJk5GqYTE8wzxyhgbSBfMR83tWFQBrqssmsHNib52xH5Dfs6ufKkkxzuthgKkJB0W9c0fczyDzFkFJR1-o1TL0E8UE8NzI2zrWCLQwVDS7riOSbj2B-EN6hAKsX3kW58WnnVoWf9qDE0Q7WE2VynzzDZ_h19l1-eaemvhXK9Llsq9kahi4kX1AXcoyTawLCMWwOD8L7WflF886PuOhOZK4wEraTd4ejoAN361BOdFPTsbYO08Bp2-DyqI9dmaBGD-qNarrzKUtVvFQq44Gazix5qK6evx9QiMipdunLdQA8bUrAvA5xGShv8FAaUDq_l7pxEeI5dELyfVJ07xSLJ3QTZV9jgBTNqvj7ltgDydawfTC7S53GxKBcHUs2-v3P91EmkHPFpkl-EVS-hyxjlFSABP4QgzJymfiQvDyJpOdaXQvInI-KBXblKsbFqF9oahFdsAkd6FRkUNkfeOe9FiLgOcJxdczKesNzyvZL4UYZ_Z6BCl3H30M4crd0FY4bhXWK51hdiTbaZdqtXx1alBXmOGq2NQ1A7njvge5PermCzeLlmJX6c39qOJwY7qHhfXRr9n4atbLRkPw1pwJQl-5N9waNOCC6yAt_U_IxwCUTorkJ",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pasir Puteh, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.833946099999999,
+               "lng" : 102.4027377
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.835294430291501,
+                  "lng" : 102.4040841802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.832596469708497,
+                  "lng" : 102.4013862197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Ibrahimi Mosque (Main Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102640911562420885361\"\u003eabd mohd\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIXcOlCWHjc41wh0tB-FBmc4AvK-cEJYOQ6yp-n3I0zzzb5qDj-Qn5fQMRqOjjTpFQNvTfqbIZ5UCx9hmMsK1aZuE5baq76GsSID4ig9MnPlpDKfnH4UmfX-a5AxpmJ6JkWlFC_GCpg_42CENF0AbMzdu2pbiWwHSszEx1vnv8-76E-2JvHSBbKKDjpY-lW_AOXUoGy0ht97ehYeY72DQOIB2Hy4RN9b09hA51bUiHcRP88XQQM883pJ6Zo8gdngiMreaPThvi_j3DAmfMCKLbB9wKCfu_bcyPycnSjxOCjyvv99pWSf5WMdh2Z82iZzg_UMM9aIuFSqlgmSddfa6grBYBMio4hqKVqs-AiCJwS-rOzlsP9WUU0BUdG_TbpRrc0XK2Q7UF7j2Qs4Q2ijFlW2HocdqwZ9Cd89oz73gYPHmL",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJW9IGp3qTtjERwGKFtacfcdw",
+         "plus_code" : 
+         {
+            "compound_code" : "RCM3+H3 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4RCM3+H3"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJW9IGp3qTtjERwGKFtacfcdw",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 384
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Pasir Puteh, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8411668,
+               "lng" : 102.4022951
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.842515430291502,
+                  "lng" : 102.4036337302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.839817469708497,
+                  "lng" : 102.4009357697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mazhu Temple Pasir Putih",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115720957807425430859\"\u003eLiang Han\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vT9CCGNd4tjil2mT-yKLD2LQTNfKH3eruCAp8etDnRTXhWDCZVjGw6rFJfnvDAsmyKBdYZS9Hzjx0393Lxbngo2bRi4VDiofS55xe-MDSv5_UcK_KZ8UY7C9fSKPXQNaoCA6CHpboTmM4eKz9ZMb5nT2g-dLxRcdf4Z6k9iQCyv07WoM6FZdwpLZB_IdNoC0_XnR_A3VtHMuZcMaA1xUl4tjXeB2MI-9CV91waU016bkjqy32v7x2YZ5jI-Ih6OsGkX7Qo993sUGdOylBfgVjj44Gg1iVhz4LgIZMCSWvlPJA9Z6kt3RlN4WAwJfsTIScupoLCs8q1iW8bhO7ve5h9Nvo4_YIs15w8yB-yMi0ana8vvuErdHK4MuoVqBTSahVuzvc2b0dRtShZpXWOIH92dp_X4elBJp8tQdgs9-dBPjao",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJ4faWUPyTtjER_osih3Fpqno",
+         "plus_code" : 
+         {
+            "compound_code" : "RCR2+FW Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4RCR2+FW"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ4faWUPyTtjER_osih3Fpqno",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "448, Kampong Laut 1, 16040 Tumpat, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1543854,
+               "lng" : 102.2308399
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.155697630291503,
+                  "lng" : 102.2321829302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.152999669708499,
+                  "lng" : 102.2294849697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Laut Cultural Heritage Site",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111375701848852733818\"\u003eSyuib Yusof\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-td-OBA8bWx5KK8FvyS2FMGD9xaOoumy2HpCerIJ5nUFGhR6NBZ3xrbeIEMjBM68h1DaBeZuGRKDzSAOmREpxeT0bnovDNJVD5dq10Xuc_o5DIw279rzHS5bnKkdx8Ng_fsNHVTfW1_AFUPI47gutBSWHYv1TPDOI_yOt8pM1U4RpeBkK_hc11vdomIkn4k4LZTpHb4P93KJDP1EqtMMqRHugLO3rKA82knbwnUAmkcZupDGsmdrmmke_TFP54S0xLabHDP5VTVs8xpK_3hiycOgwwLd97a8mVDlA3MQsDr1ZKJiUTyH6VuxBAu9C7Ci4SxF7JUmITAJtNThFbJoFoMX_cbwotOHSsSXrNYzWuxhoEy1hB46PtyEFRx1DonN2oJUA8GErRFh8UQ35Vodfi76OH3lXzm8wegI03ObSM",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "plus_code" : 
+         {
+            "compound_code" : "563J+Q8 Tumpat, Kelantan",
+            "global_code" : "6PR4563J+Q8"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 775
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Banggol Kulim, 17200 Rantau Panjang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0151786,
+               "lng" : 101.9826441
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.016385680291502,
+                  "lng" : 101.9837747802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.013687719708497,
+                  "lng" : 101.9810768197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Ismail Petra Perak Jubilee Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101294877662540881413\"\u003eSozu San\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sYmV-TjVfQJvtjJK4-wYEpCHL9CD2sPt0ErUcv8veZRbuCG_vd5DIq-FNtzYWCxK-xAJGgZyU04It87tR4CqxJSvbjzHkoiOIU0ZWnxuSndvAa4aXd0WqeQovvWgHrPeopJYg-6nROUbkof6JLuddP0-tg58nnPlK3jtQketZGRW6rC_8tbnPiPfRBGW5Y16SwB2yp1UDWn32RJYDJGRDCBpjghAXpAvf3WHTmtFz6JlrZuyGTYtYHrvKTYTzvXdwEEBfkEQAR3X0Aeq9-MQrx7cWoOkm-Yf7zBQvziT8tzBpb9nY9OdM0R_GYFVZGda0Ko2BtfQlsK2HuvjPH-99wfkp9QFqxIpZU8IdjUd6c-jruIhiAXgFgyCVmBk0CqOKbKJRWWSD56zbL9aAZ7Wlw5vFlz_WVKXB6ItDjQ33Q_Agu",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJT6s3cKsetDERS2YtQn6x7wg",
+         "plus_code" : 
+         {
+            "compound_code" : "2X8M+33 Rantau Panjang, Kelantan",
+            "global_code" : "6PR32X8M+33"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJT6s3cKsetDERS2YtQn6x7wg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tok Nek, 16200 Tumpat, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1544206,
+               "lng" : 102.2310228
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.155701380291502,
+                  "lng" : 102.2322837802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.153003419708497,
+                  "lng" : 102.2295858197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kampung Laut Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117006648069520763542\"\u003eAhamad Kamel Ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uFJ1AYYBy4WpwVd1zIaLEpQ_flvSGUfqOTu0-YJDEfGA_Mj-RNPp3v4nVL2jhH31SCBWjAgxQOOlH0DV-5n9PRmrsupKez9Nb7kQCQWDv007UjnsnQyGUv2_5c16OJuHnqaXFCxi3y8dVaNyH0D-ycWmMFmaSbO-WuLLQnTVHFYkt0KPuDzzsYe_12Iv-ZjUclbO1kjxWN1GJxHfo4Lvv9lv4uBMwgdjDoW2H5ym3RSF6MHuiLzduZWOIInDmNesBhQNWJRK4sdkCZHMk0tbfJ_uQHr_X-s_zcPRgefIGqEpQ44TG68wqmLscRQR4BYuRmMqeYkpAYpqGleOpR5xYABzHG4LixqXuRl_8o5hZWuSvtwXojcHvPS6PH8BYzC7_GAMkcpzNQc13OCAspT_rBpG4m2I0u7yiRY-S2954xO3g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJeynUbqktjERaHRSS3eUWDg",
+         "plus_code" : 
+         {
+            "compound_code" : "563J+QC Tumpat, Kelantan",
+            "global_code" : "6PR4563J+QC"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJJeynUbqktjERaHRSS3eUWDg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1158
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.847888999999999,
+               "lng" : 102.3168215
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.849199130291503,
+                  "lng" : 102.3181681302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.846501169708499,
+                  "lng" : 102.3154701697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kubur Seligi",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111329549973839140768\"\u003emy family animiey\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v_wmnvwN2724O-tn5vi5HeVvnLNnxM8UfO84UKLIFffmb5fDtGvQuBcN2Msl77SPr8769Nzxj4X76ZSfBakvx9laLXbxpLpXTFlnEuwkzrwczrQ4sVG2HavB99N6vI_Kb1y8rCbLXZ1bEgUzdx3GX7GwIF-wmIEBIZvQO57sv1qyDVsoFzIAsExEkkWPg8jZK6LZzNlKIwxSnTplA4DXOJLPv4ewg_j6ErxaqrpMlxofN83SpvgbKvsHkOraPF59u2FP2nACEl6ZlYdPnGRLzrM6acuguWNrj0_NbP3E4FabEI8hd0bMCDTazyRU13hw_iU7MrqOxnLkxf5AsFzCBG8dkPxJH2PBi6QWDObXVm3agamwf1Loa-X_oRmoSyu9xg7yElN667Wh43Pj33YgMuTMylgSipJSGoquvwS6QJKg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJXeX0rP6XtjERrFtHvpFSrRg",
+         "plus_code" : 
+         {
+            "compound_code" : "R8X8+5P Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R8X8+5P"
+         },
+         "rating" : 5,
+         "reference" : "ChIJXeX0rP6XtjERrFtHvpFSrRg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8457143,
+               "lng" : 102.365598
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.847144930291503,
+                  "lng" : 102.3670203302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.844446969708498,
+                  "lng" : 102.3643223697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Padang Pak Amat Town Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2592,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111848178989152703444\"\u003ekangkeng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tXNUn0xz-20hdVYvj87a6AMbDWu1_HUQaxfrHDNlAzJ2DtciFo87KRNrMTjgnabEHQt-R0exRshHSAbCwVBXX6OB7-KGNksN_68iVpzH5gm736GnWVfRf55HY_GtUcLvgsdCgHT7h6QIOMN_IXOrUSmY5JWTwblm4h7ew3xZYe071c6_rv1QQJv4pVlB7EyU-_z-1GujFRkZq9TeycKfTWC78llok1kG78FGCEXBdW2rxCcgMSBtnnBhrmRvCX8pPZi-1qPLyRjh3j5tG7RwHREhbVczuUNxuWY50hMI5z96FT4IUKIyVlzDZUHNOSXSKorv6YHoEuq5k-g5KfvQRH9T9ndGn-kfWg6eeBcgEMi9vRalHoQtCeYlMglla9HD8XDa3JtP_lQPZlhVdgYN5G4foHFCtelpplyvoKFiw",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJlUkUcQqUtjERodoTS1_Mdzc",
+         "plus_code" : 
+         {
+            "compound_code" : "R9W8+76 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R9W8+76"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJlUkUcQqUtjERodoTS1_Mdzc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 185
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8396767,
+               "lng" : 102.383271
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.840828730291502,
+                  "lng" : 102.3846006802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.838130769708497,
+                  "lng" : 102.3819027197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sri Aman Town Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112737116628766494364\"\u003efaiz fauzi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tlCfg-eJ2FB_09IKbu6B_i8xhYtVLwDSDIybkfRwgxIQhf4fqTaZsiHP23hxr6cZ1befSUMqE95Y6_I3AlOXHlXegU1tfUuLU_zRAfIyhKUq7IdIBxZsmX-mL2r23ibZrhKdU5TucZayTX6G2WkoNm3EmFHJ4Hp5HUjE4cMiIXadm8yxsM9JZLMt2_mWzWKF-ULslEROdNHsIK8qVZY7e5dhQxoSmr5EjJhdDyqWt2zLW2gAPa-7jFgFW0uObueMwK6ah4CzGa21S49mfszkZEdK4g3rry27RD5BJYRxMEFwMNKh8rWvYQF91cV8epGTKpUkvy1b9xwPwkkKiR2CDTVrT5JZVEgI2HX4TU_wnQup-HCNM8XU9M-7hX0QMlrclegMSoQOM7-nACq5M5ipDIWqaJLL5KExA",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJLRhf0YWTtjERKZ5sg9Ip9p8",
+         "plus_code" : 
+         {
+            "compound_code" : "R9QM+V8 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R9QM+V8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJLRhf0YWTtjERKZ5sg9Ip9p8",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 69
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Changgai, 16800, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.796475999999999,
+               "lng" : 102.4035866
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.797766780291502,
+                  "lng" : 102.4050213302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.795068819708497,
+                  "lng" : 102.4023233697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Al-Makmur Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100268429138980049856\"\u003eWan Othman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vXAa15Hxfuj2n1y634AjUMt6O7WVF8xMzWh4j4JLk5Z4vNm_EQnYahpQpevY7WFQs2SN0KTZtu_S-xIhFazV8wP_4LKo6wn5_F5XzxcRFMc2PJlSnPeZHcHyTXLGXy3nJ-5eSFpDQ9P6_3Zu0kMMTb0kGY8Jv_RLxjs-pLVWP9yPx8AeQmXJB0kNorGaj_Cfe9MyB6iTebSiuZfzLBkGN9TFpHV5Ef5ccQyWJFr2yesxiPQvf2p_njitFEDApIwNSYOahxTa9d5QegivsiVsvpqKu-CfKY0hhfsUeN03VVtlXA2WCIpqx2MjXF5ULzAMgWsqdnw6fzvs1h-VubWO4I__X4qEgXSoulpoILSQ8JeVwkqhunPxFMJSxroC6MbjwHJKCTISdgMBJhgoAl4Yc5JHWBlQXTRNkX_eMV8rnodA",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJF8VfM_uStjERAuN9QXR1UVg",
+         "plus_code" : 
+         {
+            "compound_code" : "QCW3+HC Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4QCW3+HC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJF8VfM_uStjERAuN9QXR1UVg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Pasir Puteh - Gong Kelih, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.799327700000001,
+               "lng" : 102.370375
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.800544980291503,
+                  "lng" : 102.3717539302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.797847019708498,
+                  "lng" : 102.3690559697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Mukim Jeram",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100752566130923583458\"\u003eMASJID MUKIM JERAM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vRTqAGpUupv1jHUKCSaUGZHg9AftKM_9UoaerOno8scGAcHU5iWtaI5gwDgBY44mRx6C65SMUR93IM6v3eDPRKClc5SZ8vSuVFUVYMTCar3VCJtLr4QESg6Zfr9HjtzncIvuv1xOVus1v00X8ksnJwmv9rdnu6aS8tOZO3_8_LCycIzxRQYwXhdgPlp8j1AfdkWuJG7KcNliF5SovF7zXZaLrhMvv5TX9hTsjSa1lQug71PPRAXIl9kuli8MJiugr8MPPWKZ_2TZYPA1O-5kOQnar6JTGzfsVX6nEldvRZ48TrGwgjL_T4axTXpipK-ZCqUoFHqEwu1t5dEcR-GdrgWjDPZCAAYqwOtSdhguiBEb3OGC6PRGPs8neRm3dYbTapDnohgidJQcnZW1uPD7fSN8zm-hLpOK1VfCugKhU47T8",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJIY0A6KOTtjERxTjIGHWhojE",
+         "plus_code" : 
+         {
+            "compound_code" : "Q9XC+P4 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4Q9XC+P4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJIY0A6KOTtjERxTjIGHWhojE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 22
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8452528,
+               "lng" : 102.3633363
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.846555580291503,
+                  "lng" : 102.3647272802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.843857619708499,
+                  "lng" : 102.3620293197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Haji Ismail Mini Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "place_id" : "ChIJTysXAfaTtjERo-JQFEAzVcU",
+         "plus_code" : 
+         {
+            "compound_code" : "R9W7+48 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R9W7+48"
+         },
+         "rating" : 5,
+         "reference" : "ChIJTysXAfaTtjERo-JQFEAzVcU",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "bukit jawa pasir puteh, 16400 kota bharu kelantan, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9166367,
+               "lng" : 102.3203777
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.918072980291503,
+                  "lng" : 102.3218610302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.915375019708498,
+                  "lng" : 102.3191630697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Bukit Tanah Town Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116821767275881248249\"\u003ezues lieey\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u-6wW__iiGmKVP3rabcjssuvqDwdWis1krEB3vfPS4nhQCjxmzOnbAov2HNpIfsATh9PeaXFthzKxvFpTWddhGGAzr4Z505GjEELPD3tAQbs1fIXyzEyAoGFdPxNaiMeOZX1LoBmXzqWAmO8jONZMqdf2Kjia4ECg0FrgY9YxPMZdj6aFO5pqCyQm_XXqb2HljTtxrZFlQu0R5r1Z1foRnkEJcNRYSNC-T0h2Nm7rPfXa6Wi1njacHvJ8jeKv9FVXUotEhfp7RNrCfMbKa7m0_H7_csznoZBTdBxDzvCsP8hmw5RJpasa3pnQk7IBmAy6E0zeh-S0BBuE_f5EWbwNFytACrQ7qjOePbn5KVR1a1bPePzjwGA_FhJvXmr1EuPbShxMP7yl5X7u8DOryalqTnricuOZhXoIjEgOVeZyN8AQP",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJXSA5_DyWtjERQ7uwks1QE-c",
+         "plus_code" : 
+         {
+            "compound_code" : "W88C+M5 Selising, Kelantan",
+            "global_code" : "6PQ4W88C+M5"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXSA5_DyWtjERQ7uwks1QE-c",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 40
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8067502,
+               "lng" : 102.4286332
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.808123730291501,
+                  "lng" : 102.4300381302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.805425769708497,
+                  "lng" : 102.4273401697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Gong Datok Town Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "place_id" : "ChIJV0jYwiiTtjERzRhf7UcrVoY",
+         "plus_code" : 
+         {
+            "compound_code" : "RC4H+PF Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4RC4H+PF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJV0jYwiiTtjERzRhf7UcrVoY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.9955133,
+               "lng" : 102.2324187
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.996962530291503,
+                  "lng" : 102.2339499302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.994264569708498,
+                  "lng" : 102.2312519697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Ahmad Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117479025866687882332\"\u003eHafizun Mushtafa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukQmfAkZATUVHubwwmC0B6thBwSD7xftCNXKQbiUB74OHPsv1Cj0v6CPehDpC5M5-un-nNH2GeJYp_82cHfBaZQ_PaVAHKSlxhsXvYreSAacNQDxYZ0b5mVNfcwF51ON3AP-C6pi8PicdsBRNP08KhFd0wExSoWZ_Ec0AmcnQ5egVR66_vxIaZqknH2Epx2I_ICm96H58o6-zKkGthprsKl111QB81TRgnNb-qpA3_FvJ9WeW2cESqamtb3ueGN1faNVqpBkKXM9WCADKaKzcavFZTSPsdGCS4DLF5uxB8BhrDVi7mwHm3tGv--irlp8MSrxAMdRQ8iKoT2-P0oPiNTQHczQzE_5inr8dgkMu7vorw6Vm-aAtYyhgObeXCapxMjgD5SqQ43_iG6wSUFY53WWxSYrEf-f4mEWfOaKYwJnbw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJuWiOoyIDtjERywaXz9TviSo",
+         "plus_code" : 
+         {
+            "compound_code" : "X6WJ+6X Kampung Paloh 3, Kelantan",
+            "global_code" : "6PP4X6WJ+6X"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJuWiOoyIDtjERywaXz9TviSo",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 414
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bukit Abal, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.867713999999999,
+               "lng" : 102.3397215
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.869231930291503,
+                  "lng" : 102.3409325802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.866533969708498,
+                  "lng" : 102.3382346197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Mukim Bukit Abal",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102718021049177429077\"\u003eRo Kawli Mullah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v10gr2ujyz9rbgfQRlkLCJfbWavrzrEC2sm1zfT5SmFQjt2fBVVZrzLJhjU8t2U8v9OoJoVZlKuB8xwIDkOEQM_PTQbiJ-ypFpSXsMY7PKuJ-JYvFr8Vzx6eLHaP71kx5AVSyl30y-J6vMWxoM6BtXsgK6jpaAYj0Xkc8-lGl1LLPF2tnf5n0xO36jAH_q7KPuvR-zHQMECN6hYyHzlcgV3Tr2l6Fi4NwvBCIw193Jx_9r_WhzMZkL-kc1TlTzAbgznVVOnB7SCIEKZ8RFVczy_-Rvcf_mc25HbdoPL1HVfFyidQuXolXWfz-8PZx4Tdqjm08hskiQ-gDEDbtZoNFmEsVR-7CH2kqxjv-cBRVeMb0fMtoKB-kEtjT_21ZVJ5RriDulsGaAonvmrlDFVWxS4nRZF3kOQh8H0OEL-_uIDw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJbRL2qSuXtjERmHg4NVEFjQo",
+         "plus_code" : 
+         {
+            "compound_code" : "V89Q+3V Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4V89Q+3V"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJbRL2qSuXtjERmHg4NVEFjQo",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 21
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8059802,
+               "lng" : 102.4470369
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.807407680291503,
+                  "lng" : 102.4483754802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.804709719708498,
+                  "lng" : 102.4456775197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Gong Chengal Town Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104120845817974501709\"\u003eAbdul manaf Abdullah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAcYQnBB5qTvwc_vN8J6MtLPGN_ZavnqH75v6Cd2DVV6z1cgoGnQQtvbPl3PkY-JQ6EJjjfG2LKZQanH1u2v1Vf-tf4Hk0jDxDK6L26dh8-bbQc1i83SqoGfu_fUa2wdLrHRpTEsToV6LQhOIp6OpZ56OK2ppZ8FbpoeYM5KAxjpJ-Tmd7R45kn5TFzKfY24-C_tZgtLDXMaiUpUs3UIGzozxzrT9WtrocegxQhisn0S0Vw36GOvp72yfLjZCpFtpAT8a-gaxJ7ThPCDxAPiLrhVmG3WlSpnOuJ0gaEuCFME6gJoHxlYaF4ZvXpO6-DwPDzzzptvCvqi6hrPoVAjwG0KOtX8XuIipEIkmV_2ELCKq3koOz5Y1_m7kFOa-5W_Dd2e_Nze3Ukmq9hINfCDlkoWcBuh5X4cqQ4w-LtoxRywA",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJj7AmVSvttjER5QiBd4xGTrc",
+         "plus_code" : 
+         {
+            "compound_code" : "RC4W+9R Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4RC4W+9R"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJj7AmVSvttjER5QiBd4xGTrc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8362855,
+               "lng" : 102.3905339
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.837551580291502,
+                  "lng" : 102.3918836302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.834853619708499,
+                  "lng" : 102.3891856697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rahmat Mini Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1444,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101914628536075878264\"\u003eАлижон «Алий» Халиков\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u37Gl6TuiuwxPGRouONAIidQZzcNNzvmGKK3L24nrjJD9vmL8LaYv3KALMXoTcI29JCJVTh9e2An_zvVBaNbV-y-OwLS2S-jbGByn14PmfEjvpoKd_t7T3Fs6p0l_A_K0Lz6tuKmlxXueJscnpzVZ9pzMTMLSQngWCvN2tm9YUVgqUPxgeYGA8pbeHyCpPe2_ui8ioHC02FwBpzza6b-4Go_jsCdysxYfTpTiie914dR5zrK7RQvX-OAO9XLiKfrukgPScZ26kK3aVvCtp0LUbYzvVGrXNYtR2E-O5UE0DRCo9asxr5HLXyLL-kz6icgBGSbFu1cMuWrIOuB1DtXycXHMSJfDY47-SaHCtuWO8d3iV2O_UtSbhfYTkY1IOTpLpVYw2ikHeIMEfu948xXaVEhmVSQCBF6WeOEOsUWyZBnA0",
+               "width" : 1078
+            }
+         ],
+         "place_id" : "ChIJ-YZXZuuTtjERkRHKWJN84oE",
+         "plus_code" : 
+         {
+            "compound_code" : "R9PR+G6 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R9PR+G6"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ-YZXZuuTtjERkRHKWJN84oE",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 2486-A, Kampung Jelor Besar, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8795682,
+               "lng" : 102.3956438
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.880948980291501,
+                  "lng" : 102.3970547302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.878251019708497,
+                  "lng" : 102.3943567697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Nuril Hidayah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116624119922160314637\"\u003eWaqiyuddin Najid Jelory\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vy9biW7DwHoQc7Z93b4_w7Wra-cUcoC1VQbSawluGQPZtfpecrEZqILysbWEj_2cf01WJB7itzGtNiOMZXnFSV5RkcuIWrOylnLTQAVCMIQgkIEQ1JOPeUAftimJ4nbBNWLNQgCtMTZzNZhTV875HRHhBSYCl4YQQXKymCKcImNQxmEtObVok8moId6GyrlWveG03CWMzHvTazT52k8DdqOTG0kdspwjg6gwGn1jbRInEJOs7r0uZWg0ZvAyxRMonxCgp1RtJphUlBJ2fyb6G1FqLbjIJPcPGuHubFjzalXXPLAbCfIvKEtYqCWlu9JH8xLH6uVAmDJ120wEurVF55XgR6m51RbRInqD5IFxtVCXWuCOMGQROjbbH1o6cFaloOHnRZYZhQ56K8vPibGjMadOPQGYacXnJ_KGiC8Q8pEjqm",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJMRWwoayVtjERiXYkxJEPEK0",
+         "plus_code" : 
+         {
+            "compound_code" : "V9HW+R7 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4V9HW+R7"
+         },
+         "rating" : 5,
+         "reference" : "ChIJMRWwoayVtjERiXYkxJEPEK0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8484314,
+               "lng" : 102.3119719
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.849610780291502,
+                  "lng" : 102.3132724802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.846912819708497,
+                  "lng" : 102.3105745197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kg Seligi",
+         "place_id" : "ChIJfdmll92XtjERGvZsN8_J7C0",
+         "plus_code" : 
+         {
+            "compound_code" : "R8X6+9Q Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R8X6+9Q"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJfdmll92XtjERGvZsN8_J7C0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Sungai Durian, 16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.834516799999999,
+               "lng" : 102.2904762
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.835862530291501,
+                  "lng" : 102.2918794302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.833164569708497,
+                  "lng" : 102.2891814697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "SRZ Ternak (Ladang Tenusu Jeram Mengaji)",
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101179678093517935360\"\u003eCikgu EL\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZQEMofwzwLkv9T9XylX-kEwvu9c0KDD5AL5zeWVebDc74QLxC0bjHIuPS3EgGXEGJIm4bwuFWraJ5itLKvHpPBD4AigSyD0_AYqTpdNjGERoKx6KLgz46Q46TPqSwhP5pEor0pZX7xgsE8tckc4DAUSVM83KNB-mLrze8roP4M1OTnQmY9D6_2G9UTvSEh_hHwzMvDD8RKM9PcJkGZqIIwsE30TRdyK0IrKdjUMsz4-tmldiRhBpcfGoygZJ1dBjSySclVt6YI3SlBV54n395ClL8fwre21vOoFpQ2XZYxg7w_LBiz6eIW5TRbhCZZoM-rrKYH-OqvY5vnLLaSzutXKUr7_RHecSLFoSjPHVcniqZzTNRb9XS0-Fk2-m7TJKiv_CFwp2tqQsbLtaomwW4UqJw6PJRRwI9leWUDSrS4WWz",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJkeUhT1CRtjER61YLTgs4CTI",
+         "plus_code" : 
+         {
+            "compound_code" : "R7MR+R5 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R7MR+R5"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJkeUhT1CRtjER61YLTgs4CTI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "zoo"
+         ],
+         "user_ratings_total" : 1052
+      }
+   ],
+   "status" : "OK"
+}

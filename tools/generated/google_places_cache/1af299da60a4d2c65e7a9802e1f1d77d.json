@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "272, Jalan Tasek, Kampung Selarong, 33100 Pengkalan Hulu, Perak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.7025879,
+            "lng" : 100.9954604
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.704085980291502,
+               "lng" : 100.9965138302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.701388019708499,
+               "lng" : 100.9938158697085
+            }
+         }
+      },
+      "name" : "Tasek Takong",
+      "place_id" : "ChIJYXLBMgDhtDERDQBnhSFbLo0",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10173168807806697485"
+   },
+   "status" : "OK"
+}

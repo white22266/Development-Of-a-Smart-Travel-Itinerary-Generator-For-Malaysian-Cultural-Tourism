@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "8CVC+PJ, 89150 Kota Belud, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.3442398,
+            "lng" : 116.421576
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.345300380291502,
+               "lng" : 116.4229501302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.342602419708498,
+               "lng" : 116.4202521697085
+            }
+         }
+      },
+      "name" : "Dul Gui House",
+      "photos" : 
+      [
+         {
+            "height" : 1784,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110801695074957978669\"\u003eDg Fishing Kb\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uUiDPNe4Fh2hE35wd4mUuMTrdKuxXrPhJS2rJ87I0K4zPKopRa58vq5BrxC4RVf7LuyNzwCXhHykVBeh2vDSUR3tywWDHkE7Gu9fBtAHRRFoTLrTL2j1tDyCu-aEcZCSch1c3MgBlrhGyZk56uaPvzPLZ6Iawry581DGlrqd24hFwJRgjGgVZhXmDugwjLeY6KvcU76Pd5prDF8eTiDSRGSykQWLgqI8HZiKHxNi_Z_WL3-KPPRDvikc_CZO8aadq7RYKMS_oAl3YXGV7YDXNv7t5xIWXrweju9UkRISjVLwvBJrLJZynzvMF_HYpMmtGWWfxNyJemoTswBw-CbDAJyFOcOrw_j_n7VcKDXuX6Xp35CtTocYoxz6bVYNh0s2D6_3Fpp0MZjrS-PWq9XPg4KL0nbG5HBosGzfdh13W0zLM",
+            "width" : 3176
+         }
+      ],
+      "place_id" : "ChIJTRGxPEyrOzIRrphOPDveX5w",
+      "rating" : 3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=11267969138700490926",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

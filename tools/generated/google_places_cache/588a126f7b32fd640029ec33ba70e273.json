@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Long Pasia, Sipitang, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.4059122,
+            "lng" : 115.7280496
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.407260230291501,
+               "lng" : 115.7294238302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.404562269708497,
+               "lng" : 115.7267258697085
+            }
+         }
+      },
+      "name" : "Long Refayang",
+      "place_id" : "ChIJWcdkEgD3FzIRy3TYjqd6ZD0",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=4423795594059347147"
+   },
+   "status" : "OK"
+}

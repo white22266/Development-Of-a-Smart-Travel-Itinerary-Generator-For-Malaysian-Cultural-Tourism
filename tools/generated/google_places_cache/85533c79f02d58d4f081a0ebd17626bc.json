@@ -1,0 +1,42 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89100 Kota Marudu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.6181138,
+            "lng" : 116.9310847
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.619484930291502,
+               "lng" : 116.9324816802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.616786969708498,
+               "lng" : 116.9297837197085
+            }
+         }
+      },
+      "name" : "Gereja Di Pitas (Church Of God)",
+      "place_id" : "ChIJQ8OXImE9OjIRqlp3WehTSwc",
+      "rating" : 3.6,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=525606038917307050",
+      "user_ratings_total" : 5
+   },
+   "status" : "OK"
+}

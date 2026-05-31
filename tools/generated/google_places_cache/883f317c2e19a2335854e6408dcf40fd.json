@@ -1,0 +1,59 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "95700 Betong, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.409605,
+            "lng" : 111.5276942
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.410961830291502,
+               "lng" : 111.5290728302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.408263869708498,
+               "lng" : 111.5263748697085
+            }
+         }
+      },
+      "name" : "Betong Clock Cultural Landmark",
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109708823772502761248\"\u003eEncik Lewiz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ucX4cNrQFdLlt261ZYnlkdXetei7z15l1ZxHZlXpA5putn42gwKn9W9osDzdj9abu3zE2rt-S5BjASx-sjVExkHy1M1NiuXzPcuJKf63llYK-v-OL-DL6hvtm4zoU_Hwk1ECvuTq8WeyCSt-zOSgQRf5O7xUPTKAUfVnbQVdnAgrGd0gXm1vtJSEEEUdMvw-BOT1y28_P8JCGkShTA-xq13TTRJJ5abXQ9Hs4-QCjNPSq-yrCnYv3AbVtx5gAwXMHKQsHTgmMx1o3YbOCu27NdP13zMHE7g57doWaMrhN--rQBBESlpQ64S89Kl8PfJnig_rMUCboyKipScdKoZ0FguDHX8IzfUT_5CL5EldDWuQiggaE6_t3_bxiCWthqFFTxFzyh7vTrQN4Fndc36QmGLokdmY9vp-0idTKSm3vt8fvBOCNuyvHB9GI7BNPI",
+            "width" : 1808
+         },
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112768050041545937163\"\u003eKong Chak Teck\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tYjIXxxZUx0hSU2CyqIrGVMRRjFK5CLcGyhguw812E36zAaoeLDIOcaQA0mNGbu5NaXpTLLcxA6UlvO1sd26nq_Z9lxAFZwkrO2zwCeqZCBQsi_151QIfd2kiLS5pZgm36oTSFAwCA5fY_3nTIY--DMLQ4-XNbXXK9G-JoAnpvAFJVqAXOZGUqciIKEHdg3_2Z5Li6IpE1D9LfuB2q7ljOx6f5vEOX_2UJplNdPp1eAXoqY0nN2DbccEKxRhXg6NVsFCMq2B28otdre5rT0kXfxSsbpRX-3jnXska3jtxL-l063KcDEMRA1XpYEY63S_4kt6s5m4MGe1KdNPytGJ1i1-xBRELG3JwMgVDOmijh40FELEwLm3zlAr6zHN30yR0Tg7hPjDbYycWvk3lWksKqBF5LUGTNH6SHsfM6satsedkpW-D8rcehOcx9KA",
+            "width" : 2080
+         }
+      ],
+      "place_id" : "ChIJT8TLOQA_-TERSxI0dQg62No",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15769417903238287947"
+   },
+   "status" : "OK"
+}

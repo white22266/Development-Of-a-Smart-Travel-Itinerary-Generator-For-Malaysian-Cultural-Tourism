@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Ulu Jelebu, 71600 Kuala Klawang, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.9191771,
+            "lng" : 102.0820584
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.920499830291502,
+               "lng" : 102.0834232802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.917801869708498,
+               "lng" : 102.0807253197085
+            }
+         }
+      },
+      "name" : "Balai Raya Kampung Ulu Jelebu",
+      "place_id" : "ChIJ-wk6Ztt5zjERLHlu_99FK1I",
+      "rating" : 3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5920902963474102572",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

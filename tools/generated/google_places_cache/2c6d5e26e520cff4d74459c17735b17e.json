@@ -1,0 +1,896 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8976412,
+               "lng" : 112.0957991
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.898958580291501,
+                  "lng" : 112.0970448302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.896260619708498,
+                  "lng" : 112.0943468697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "MUKAH WATERFRONT",
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110181300308580264908\"\u003echaiting Teo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vDe4ETp4sqoa5qKMUKsgobTaxuxV1pLjhKn8eFZFChn-IZnyCyLnmlHJQv4kz34FcXaww9D0sGEG6_ryyIgUh1ivB-Yy1n-kyDww3RiyUUueQVEZPFJWKVEFYGrLG07PoFYEDqTCbmh9ui0AegMeI54rOw-ZtMrltx2lNcR8kvMLOjlzymQa0exio-i8gTpzjPrCkxci9ea2fAH_ku-03O7AW97uUI4_Qd5eGqFcY0oDfAqXvLIzoxwxtqZu3pAg6HB-ayUVOKTOUsWEWk5uTZ1BtLNffgOVqwZUkmhEvFdIkfJzVhK5gpRlmGu9WC0MdpcZLmjdMWZBMOYElQRaj6DQ4nlWZIcf2h2LnX0NMokT3W2fb7O9dMXgcxNTViKFb4Vn0ZKNqtK7ak2xEVCkn6Zii_SjgD0wHsTnXeSz5rzrsa",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJEeuHSflN9jERMwBB-Mpoa1M",
+         "plus_code" : 
+         {
+            "compound_code" : "V3XW+38 Mukah, Sarawak",
+            "global_code" : "6PJJV3XW+38"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJEeuHSflN9jERMwBB-Mpoa1M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9103064,
+               "lng" : 112.0877173
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.911603380291501,
+                  "lng" : 112.0890735302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.908905419708498,
+                  "lng" : 112.0863755697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Tapak Pesta Kaul Mukah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104708354411472218625\"\u003ehaidir wasli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vRquXzNDZslKuE5d9igG_kp7sQxTdk6VZPKsOZhkuNWlW1JmP1E4tbxaY7pR_tjdxJATihnpWwlA2fcVQ-2Q_3CkOx3MJfc0GR-L0RccwhUwsZ8dDurrtWn0BMzks6rgTOSwCvfURqaV9n3veSVtJkE9k7FhlTn6GU2AT4AvYSYHTnEKnkY4xK0fSR61whs5r22LutWGqynbPBAOai8ewUizt5FiNpjkgoi9pWBDTIg-n5mJJYqvMbi32LanXSNhQzc_EjEV46_k7_FhNdVbvIXdZTO4lZnnAsXKXggSdTnkhn_52klI0TokjXPfY5htfUGb9LP-vICiZ_wvdHW3P8nPFZzLDNj746LqE2lhsc0Q6PanhltUXl5fOWBzylcXg_52d1UavvvSWZdFUAdB4c_Wlz5qIfG1-ZpKrSGOWVEQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJxUE10atN9jERqb87fTcJot0",
+         "plus_code" : 
+         {
+            "compound_code" : "W36Q+43 Mukah, Sarawak",
+            "global_code" : "6PJJW36Q+43"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJxUE10atN9jERqb87fTcJot0",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 426
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampong Telian, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8780109,
+               "lng" : 112.1028912
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.879266030291502,
+                  "lng" : 112.1040845302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.876568069708498,
+                  "lng" : 112.1013865697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sapan Puloh Mini Melanau Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106174564737518464234\"\u003eAhmad Munzir\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voanoKUVTofPaIScuKhxSN0WOPmJ1qf9r04IFqhJVJN8uJLddNUy4wA8RiTHAJCF3CPseV0Smu95GYy_upL9H9k4mxz7ZBEtWlSoCZsOL8XG4pInq_IBC5Eb28Y9A_6_1yDJ3pjkG6utEoX4JLN13fU8d4RxxIdIs1Y19QaiJXXdl_G-0UFhKcXOX0Iaxev9QFd8qlW4lxqjWQx-1AmAoGAelzDjvH23jyaw7v4GsiKasjW7FQagF3JxdrCZpXKAK1xaohsCwbddE55-xQ5rArTjeO5PIQHBdp8YJhpA4E9FqANqSINT_Dxv_lgjpEMgwOhT-nH7g8LSGNjvEKCXw64OLSaNgA7DcXulR0Z93l21daeOO0nCgoej_Efs7B-fBkvMUOJeXB_O_dzipOed4NaFxrfFTxsue8Bl1xY64HAB7S",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ_2ff59BM9jERd93z5ta_hh8",
+         "plus_code" : 
+         {
+            "compound_code" : "V4H3+65 Mukah, Sarawak",
+            "global_code" : "6PJJV4H3+65"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ_2ff59BM9jERd93z5ta_hh8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 72
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9108093,
+               "lng" : 112.0877803
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.911863880291502,
+                  "lng" : 112.0891702802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.909165919708498,
+                  "lng" : 112.0864723197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Mukah Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117666518244301614283\"\u003eNorfaizanie Bahari\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vPoz_UPaeJlnI0G1DSr6j1LqSoD1e18iFZRPQ4Qm0Ff9nzK5awd4NwHGNvvl6GbxT1_yevDm4xLxvRnRsSqBzaggG5SPAwpnCycA26RdOUVbHio8BArNr4iZl35nTlrc1k5j1Z1S6nYyqzJqeGoeoh9r-XAdbMFDJhkG-JVCc_rw2iXElF7-f_w2qw6t9u9EQOnFmkZypAvrm66ok8JezePm-zSKRCt0yOFyg8caqPDG3250VEbHKBEuAx2JzOQfBUnTRWnMFzYnZgwvKfYv5fSk9tzTl-azB30LLOAmGmYoYxRDwR9NbQDR4ag1e6FSM34c2hgKtYbHswrRuSAxKraMKAnsBGBikI3AVL6zmD8fefqcgczfnNJGBfuyiNWj2UA35MCM8SDUprXiX-j3-q3TD7TNZZayLLrtqhCLDiExO1",
+               "width" : 1000
+            }
+         ],
+         "place_id" : "ChIJeRc3dalN9jERz402J46-Vuo",
+         "plus_code" : 
+         {
+            "compound_code" : "W36Q+84 Mukah, Sarawak",
+            "global_code" : "6PJJW36Q+84"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJeRc3dalN9jERz402J46-Vuo",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 33
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Universiti Teknologi Mara (UiTM) Mukah Sarawak, Setia Raja Boulevard, Taman Boulevard Setiaraja, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8926583,
+               "lng" : 112.0917641
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.893890480291502,
+                  "lng" : 112.0930614302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.891192519708498,
+                  "lng" : 112.0903634697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mukah Clock Tower",
+         "photos" : 
+         [
+            {
+               "height" : 2814,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107126384007451278846\"\u003eTCS 87\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZfVzMWpvPH1SG0NGT-lPcNVQRCL5EOATdh18IE5FNG7H-W-IBAigKekJqHopxXDZBUN-CNXDKJ1q4C8drLzt3ixUhwTebNwpQjEd5iIPXnTMhi2dnXrDFcjpzDAU6umPzHA7rIGwE3gkL6wuJIIUxJFv_PnsLhXesT_coP2chWUNQG0PfID4AeZ2V9oZhvHsP0iNS1UQwUREmZxhjwxg1He-7LF7g3EfNkzVXyYOO0mZXCQa09BagS3Wu9W4yeyUnX-ISA3SWxyDL6ENZlU8s6N0SzErXIXh0PNF6DTd2ohS5JI99lApfijlVLY1Qske3WLY-i-9c1Rsw7_wROjtBi4qd1eH8HGF_JOitzFg9mUH4PW6j55H_CpeTnJgr3A30E-2Atd8HBsbtukvCqBUdcbaQdQvnWwgY0ArSVZ0",
+               "width" : 1845
+            }
+         ],
+         "place_id" : "ChIJc5_5_u5N9jER0WNlavGVOws",
+         "plus_code" : 
+         {
+            "compound_code" : "V3VR+3P Mukah, Sarawak",
+            "global_code" : "6PJJV3VR+3P"
+         },
+         "rating" : 5,
+         "reference" : "ChIJc5_5_u5N9jER0WNlavGVOws",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "19, Jalan Pasar, Bandar Baru Mukah, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8971409,
+               "lng" : 112.095662
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.898498730291502,
+                  "lng" : 112.0970400302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.895800769708498,
+                  "lng" : 112.0943420697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Statue Of Ikan Merah",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sSYDi9rheeFbuma2VAolAfZOLcngsMaQIWrAWOrVINvbT6s6HL2nesGoKUCX6NA-Zq_CkaqBh7xYmBPHv-dCTf1SnlaUycOQOHtLl8yCN-cexGBKxu7L98swdOczcmLyYMr26IR1tKDCGxpck6Frc1xFtWkNRuj8e6Gb8T02uGYBBJcYZO97JP3D5yMqKLTQ0ZCvROIalVaeYYouGpWQ_DS6VfQD3KAA5hMlwwkCm1DkA1Y_FJdk8LpwA9vVGGvM3qVgqgVC9fAOUR6jSEvU9tQC1VheOo30pus8_K7YifL0zX-ciV15icAU1ubOgbOSegUvOu4YFEiJCIobp-Xlwm-AIjg6QUFl7-1oWdeqb98e8PttVNidoHoY6yWCmA_xRkB8Ct9E3HSSJBBk-ZCSz13_GoWx0oSLQUjv6FtntGrEVp",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ8YEWj8xN9jER3R2nuhBYhO8",
+         "plus_code" : 
+         {
+            "compound_code" : "V3WW+V7 Mukah, Sarawak",
+            "global_code" : "6PJJV3WW+V7"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ8YEWj8xN9jER3R2nuhBYhO8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "VVCM+X5, Oya, 96300 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8724319,
+               "lng" : 111.8828881
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.873122080291502,
+                  "lng" : 111.8850346302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.870424119708499,
+                  "lng" : 111.8823366697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tapak pesta kaul oya",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108463526493222064975\"\u003eJudin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tdRIki3fvdIZS4MrxgCYq0Cue6E-qKhPvfcPs59WMFspiFzq8oAHlzG3Vfp2G0GGeOzWdtHVrt1o04oqzH5C8t1qgRXeH9xdvlt8qVV0olcI2ev9uDBaGqzOyi5TP0IGKQ_JpPzR_phwXO5_XAgmfU8vBKiC4W7kATbUZbkPBI0Duqa-42hL5FB36sBsrenJbwFUyhpRirLCSCjy_vO57oA3MSGIp4FYDwY7RLLkdJ_eMxZhbAGv_TyY3FmWywbWxgep1Os8HnBMsYDP5rO5xJhaSZ7BY4s54gtp5jBRRyEMuesaRTD7e8Wt4qHreF7fsu7Ml3HS1g9rBcLlt0TpjxwKfmwgUDc65rJ3kwx4H7muqkJXN-qtO4xyma4-VPZ9lfR7b98ryei-6zcuqzBM6TnHnzeh-h1EnSUwEVHyakT8T1H-8QGX4bzevuZA",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJQbDnIACr9zERcJxOQQRbv3g",
+         "rating" : 4.8,
+         "reference" : "ChIJQbDnIACr9zERcJxOQQRbv3g",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 26
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8775696,
+               "lng" : 112.0740826
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.878978230291501,
+                  "lng" : 112.0756733302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.876280269708498,
+                  "lng" : 112.0729753697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tapak Warisan Paih Batou, Petanak Hulu",
+         "place_id" : "ChIJq2OHjZRN9jERuvkBxqKXvcs",
+         "plus_code" : 
+         {
+            "compound_code" : "V3HF+2J Mukah, Sarawak",
+            "global_code" : "6PJJV3HF+2J"
+         },
+         "rating" : 5,
+         "reference" : "ChIJq2OHjZRN9jERuvkBxqKXvcs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lamin Dana Cultural Lodge, Telian Tengah, Kampung Tradisi, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8793076,
+               "lng" : 112.1028864
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.880748980291502,
+                  "lng" : 112.1036311302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.878051019708498,
+                  "lng" : 112.1009331697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Lamin Dana Cultural Lodge",
+         "photos" : 
+         [
+            {
+               "height" : 3204,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103256902214411416810\"\u003eDayak Wanderer\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tSYdAMjd7WO_7KLWFZ29V6ExYWgQ2pPSStieUbAvK6FtFS4vkcvkMozWTr69-8XUo2Cu_ZBniAhJYW3zu4k1kvyx2WnfhOtyJ8HBkYMFeyUj836yEqSueWMCDJMnBZMbaYHYEuHBKpsXFFVEIAkmOmjuMemj5Bjday-df8hPy160NzvoFiY-NyY1F3W6AYynl59idwGuE8gIsJadxn6HcfLghfJMH88Bpt3khFi5d3rva0SJ1chmFfjxrqf88S5FgsKa6J8TNwOgvpfNKOpy2OlzcvoHaRzz1101wI1Nhk6CuzsaKmnJ0aTGPYpUwbBHgrX5JoKUFcpT4OKz4FSMBzWPTiQ7efwxgaSJAhocIJTZawQxLc-UKDNQ01U4lNkfmKzBFyxUHxU_-qHf9bn5XHa4T0zBbOY6QKRlbpclyxIilV",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ_XO8DoZN9jERSqddhrmIfok",
+         "plus_code" : 
+         {
+            "compound_code" : "V4H3+P5 Mukah, Sarawak",
+            "global_code" : "6PJJV4H3+P5"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJ_XO8DoZN9jERSqddhrmIfok",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 56, Kampung Penakub Ulu, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8904006,
+               "lng" : 112.1006943
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.891790980291502,
+                  "lng" : 112.1020346302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.889093019708499,
+                  "lng" : 112.0993366697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Cikgu Magalee",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108389399997927865195\"\u003eFikri Fadhli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uSic0yCP3ven0sQp3lmNS12JIGD3U1_7Ksctt7E3-6ODCPaRkMHeJdq08vPXb7xB1yHKtldWKYpSLg8FfLsLjK_G1Bskj8yoUfU-paMgN79vsAlWi-3xs8cOKsA_wZRO9JL1FVgYErtSuU970fanGs1nFSFlUDIk_7gj8GcIBJzseBFKVyuZLl9Az1_hXFR-TTixIJ-M1BnRR6WKzeiypuxV87_VXsBT9RV6pkii3vHifvl7akC9FQyPn19u6AAo1nT0hHb2X-zAsjaSfxWLZlol3gjckOicuKESRow0nDbvTNzackUNhdnFB_XVTiuBqdal_NZJsfHfcotiau_OdhoU425-4SqtkfAwKO-W7bRbjFhHCnIj7Zd1hACsizRadjSWxxFUblgBkdEOUCa7DUDXgOIXMtIBQ0WKkXnIlQhD9DS9FKdPcMM0C5N3HE",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJj-PsBQBN9jER03tfZpaQPXI",
+         "plus_code" : 
+         {
+            "compound_code" : "V4R2+57 Mukah, Sarawak",
+            "global_code" : "6PJJV4R2+57"
+         },
+         "rating" : 5,
+         "reference" : "ChIJj-PsBQBN9jER03tfZpaQPXI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tapak Pesta Kaul, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9102357,
+               "lng" : 112.0871276
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.911548030291502,
+                  "lng" : 112.0886348302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.908850069708499,
+                  "lng" : 112.0859368697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tandas Awam Pantai Kala Dana",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102354519136556026844\"\u003eYan hairann\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uggSUm8bFUcyt02pZ8ho-v-Ws3C7FzYqXWOQ5Q1rKt9dxwn_NUPpC3uC8smXv4er8JScqHCaX6924dHwGcJFn11QPGkbOy2_IZKqWVFOGxPZ-t0ffMxJjg4PogKBbjvz4FSmlf4iPsSXr03PC7OSWmFZYSQjLT6BruKInJKV3UVcmBu6vRaNEvxL2wUkO8K6Rpu7EaO1KEhDD-F2zzsNjFVy3NkLMiA9-AN_EK66FjsQIyrCMrGq8KQyXEJ-tu9i7EZD7W8-as5xEqWwtKCfnVJZC0Z7Gc5Y2sQr9ZMzvpEAsjwIaZwJNg0K62BiXjCvGJuW3D7ihWFyyzwbZFjD7VcwOhnuJ6E2FAoyosLb4lR25ei4J0ohlAJ6NUigWgXQk5fA66S5rP9kprV3ax4QiuUNtn7EuYzxMocm7FBWKUhcNQ",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJfSH4zZpN9jERMltx9z7ck54",
+         "plus_code" : 
+         {
+            "compound_code" : "W36P+3V Mukah, Sarawak",
+            "global_code" : "6PJJW36P+3V"
+         },
+         "rating" : 3,
+         "reference" : "ChIJfSH4zZpN9jERMltx9z7ck54",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "85, Jalan Haji Mohd Fauzi, Kampung Kuala Lama, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9011255,
+               "lng" : 112.0795268
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.902555630291502,
+                  "lng" : 112.0809459302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.899857669708498,
+                  "lng" : 112.0782479697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gou (辜) Residence",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107580899232201858709\"\u003ePatrick Gou\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t8L4C-CZBARdO2mlaqrXTfVYH_LvxF_8HmV7zuAVgipQn7Dlc-6KqQkgOmz3hd0RBMKN5ZaNqMVwd6KOwMZFF4NJgm9uFvg-IL7Mnpj_EX2bAtbm3oLiDnlCpz3zscffpHwOs85h3iL8emZ82bg-CcLxe73W9ocl72ecvVmmvVhQ6P7OkgYpdpQLDPZ4E22IvkNYTczJuNotUv-pMKIbOw1yMZ7yRt3nj4-WUFJIRBCmyhSs91G7aIEM7YMABMXGkQqubKGnatQpROdAOK-7MQWUVVWUfh25oJm6BpL-n1WAmot9-dWvYJp4oiMnIjlNZhBp1Azz954bqBENJ3I3bVpsiYBAf_6u-gxenNggYpOREvpW_W_vt7Nc3ixTSoSwqLVMRq9hEjXRtmFcIBuSB8-vxDtcKdW5D4Lad0TxFArhY",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJHaApojRN9jERgvSxE_VRZYw",
+         "plus_code" : 
+         {
+            "compound_code" : "W32H+FR Mukah, Sarawak",
+            "global_code" : "6PJJW32H+FR"
+         },
+         "rating" : 5,
+         "reference" : "ChIJHaApojRN9jERgvSxE_VRZYw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Baru Mukah, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.889255,
+               "lng" : 112.086139
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.890521880291502,
+                  "lng" : 112.0875624802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.887823919708498,
+                  "lng" : 112.0848645197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/civic_building-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/civic-bldg_pinlet",
+         "name" : "Perpustakaan Awam Mukah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110181300308580264908\"\u003echaiting Teo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJg-O71zoIs-RddBAImKW4sP6Ujb3MtNn2dI1DivRFWjU5eRYN134LvUYf4QwNl5nQDi1kFZaqOk7CSh6HMwSJ_EMqYH_zUt06NPbdtEDvAwRXZkcZ-adtdtL-YcHjY86aqFFoPUVy7XywU6axtDdeS-EI0GWPSFpS17L4haar6k2L4YLZIopO8iyzcHXBna-k9wETOvCYYUoIwJHQHmnqqoDD4zLzFDpM-ekqFbDHScr8YMTkjH4iBFywLFA1Uf9Dx4qzoAIUu8hy74okz8LUu-np0kMHnQDjlQwPJy501YnhMgrXWu5I3wSst_oqyTlzlx0ibO-YNlqV3daT-OhYw7woSO4G2bAkLmLxsShnZ_NPby4g8h0EXGJmc2Pa9Czx2LAXqA66Pl5j8aKM3BvgnqAD8tCZBDcQrf_GPDTTW5Pm",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJJ0SkgSJN9jERrY7hieobQKM",
+         "plus_code" : 
+         {
+            "compound_code" : "V3QP+PF Mukah, Sarawak",
+            "global_code" : "6PJJV3QP+PF"
+         },
+         "rating" : 4,
+         "reference" : "ChIJJ0SkgSJN9jERrY7hieobQKM",
+         "types" : 
+         [
+            "establishment",
+            "library",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "V4G3+F5, 96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8753355,
+               "lng" : 112.1030307
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.876673730291502,
+                  "lng" : 112.1043356802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.873975769708498,
+                  "lng" : 112.1016377197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jerunai Sungai Misan",
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104329985567829251639\"\u003eFazlyndawati Kamaruddin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uO-l33O0ymEnrc5_YmLzX45V2Y81AK20XeF5LTqia1jh1iUVI7yFcYtE3C0UfuMXyWWGJU-xf5ul1jURgWp57G6yPVKXK4VLZ7Af6h5ug5j8Npw5-fZFupWiAFO1fLJeVtlP_l2kfb9z43UXG1AbuwF40A-3HX6w35_eWPDGyOAxtRZsjb2S2Os-UdINVWV05DbzvwKvM-vSVdzUes2spb-3rB0yhOyYo_5u7XV3SM2nFxecOK4ImrxXaG8RE18JI6fHNC8xfibuwnnv7GQTcLzGC9I3jDxvLEF6HYEj08NPgunzZVNyMBWsCds0SSMz3qX1w2Mvx-dSayNg5_KhV3-TAc0iM2ee0RKINZPBpnCIuS7DLFhDev3jElp0DsBZErcNBP1i-YY3VMCxMHLOxywsTokpqEAwxRsO3t8tQxpA",
+               "width" : 1836
+            }
+         ],
+         "place_id" : "ChIJSxKIEJ1N9jERlZ6QwZCkKoI",
+         "rating" : 4.8,
+         "reference" : "ChIJSxKIEJ1N9jERlZ6QwZCkKoI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8612715,
+               "lng" : 112.1613098
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.862195480291502,
+                  "lng" : 112.1625184802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.859497519708498,
+                  "lng" : 112.1598205197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lungun Melanau",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108588753453042590901\"\u003eRudolf Felix Baising\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJUekNdVlDY0mwE38ssiraSYbhwfbRF4PuZCN58GH878Gn-xE5eGKpgx5pOTr5Sw0NrFfsmFYl5u0gDgTfI192m-5u5m36mP_NbsKql3fOttKwxMj2OlOLS81GLEuUc5s1NKXeqTrnv9OdM_0BpFb60S9Kf7Ahss1YnfpAbvbkbRwKxtlofaomxutqKJHJJMjaPkM7_ihRlJ1WF-OGeNs24Bu5CJNogKe3n-IoXbGYbxv6f0DfVJWwICLJk7gAIpHJM6ZA-BgoGepZC7-V9UnqvLjHn6mw1zGaR8WpddFTzSCD7E44ovBgbbzv6npfXQs_KY_D_lxO_kuzeqxwtakj1vPyVD8duSdwtb3iqhrsf4KxiySWrXU4rX22qwDrSNgvWqbjH3dtFf-5N64Tdhizqw5vh62eT60TCrYP3nCF23d7",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJn7YMFXC19zERsyiuc_vOJxo",
+         "plus_code" : 
+         {
+            "compound_code" : "V566+GG Mukah, Sarawak",
+            "global_code" : "6PJJV566+GG"
+         },
+         "rating" : 5,
+         "reference" : "ChIJn7YMFXC19zERsyiuc_vOJxo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96400 Mukah, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8982666,
+               "lng" : 112.0955248
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.899597680291502,
+                  "lng" : 112.0968131302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.896899719708498,
+                  "lng" : 112.0941151697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sago Factory Chimney",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102500364652897881408\"\u003eKen Wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tbKGP6lZiNBGej8w-p9OjIUsgf11y_b02G1V-Vd684tI64Iu5g_jyrwEjUnYXWEnAE0FPkNmI-kPmuhKO_05Nv1FdOGZ6Th_zs7TTUPxmT6eRmUiEWFP5yQvSClrMSlQXnLN-d2YrujQL3T-UGaOnOFXEs9adqyCvJMCPTmXzcOlitCkuezgnKUQg8h87q2NfkPC6GCegNVvdQjigtzHLMmPEp11DwQrsU1owi2FRIMndJkWlMH1H6Mk9jQYieVAwvl_v11zagj2xiTmH4uxxFvOWf6-yAu1TTI7st-9lipdWNCH5pjsHDidxLSStJG59t1ev1hYliilD7dZ_N75J4inX_3hJa8RY-wv_Vy008Cgjz61CgCceeK9O6szhSmP_uxeEPPOovgARR7lYIPZExbJKRObfe2KkD5sQ1bPQ",
+               "width" : 2256
+            }
+         ],
+         "place_id" : "ChIJDehxVf1M9jERwP7rJ1HeZsc",
+         "plus_code" : 
+         {
+            "compound_code" : "V3XW+86 Mukah, Sarawak",
+            "global_code" : "6PJJV3XW+86"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJDehxVf1M9jERwP7rJ1HeZsc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 9
+      }
+   ],
+   "status" : "OK"
+}

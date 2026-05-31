@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan SS 12/1, Ss 12, 47500 Petaling Jaya, Selangor, Malaysia",
+      "formatted_phone_number" : "019-362 9369",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0813678,
+            "lng" : 101.5976307
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.082530780291502,
+               "lng" : 101.5991428302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.079832819708499,
+               "lng" : 101.5964448697085
+            }
+         }
+      },
+      "name" : "Subang Ria Recreational Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 8:00 PM",
+            "Tuesday: 6:00 AM – 8:00 PM",
+            "Wednesday: 6:00 AM – 8:00 PM",
+            "Thursday: 6:00 AM – 8:00 PM",
+            "Friday: 6:00 AM – 8:00 PM",
+            "Saturday: 6:00 AM – 8:00 PM",
+            "Sunday: 6:00 AM – 8:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109235451480732645886\"\u003eHisyam AS\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXYXuOCTQ82urzEKw9m_iVnlAkT1JpCr95BErlFPq8iRatyu-jSzlYoH_J6LwnpUgjELy8jnRBmA5CUisrRk4HQiJcIabsMxkFE_MezZ-smKQ3yC8fgCupJJJoXyr5d8yEb4crwUrX9L7Y3f48yWCA7PJ2NqKmFDs9oySXGW-dvBn1lIfIgjRiFKWTAcw8AwjbIUq89Lgn8FZMIRJp7hXid8uVedFt-hL9EGUzXBfcfzzUYX5QvuTjzuyj4B22mkBzY3vsH4ZgOlyGkToJVs9GCi-PcfeNgW5fojxqL6IfbYDNaXl58YMch-H1jwd98AKnGV_u0kFAnj_B2ZupfWPTzWFWroy7RXoS3Pt0-drQxBPEPifd_pzUPdr4NzS8U61QmudXnBgBY5bTGbGfXhHino2cdpXdea6g-2hqBAk",
+            "width" : 4000
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106873411177887545293\"\u003eEric W\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uHG_9ZQppSPGtLWdBEhpSAo34oigZNNh_ELf-FckAjWzVxbG0R3ocdDOpkDzjdLCndJ-YvO_QhpecYVJAvYOgOLHf7IWFPtUH70Woy1M5Xj6TmngGNmhNNMoUiv0MRW1yva-4FMVE0hsZZ39Qj9yTOWgEh0JxeHprKUR-LSNAdTrmwBHBxyRjwsNkM4XRcRpQ9D5ZXSC8UYwIL7euDZ6QLSctlpy5-dPjJjiBiEHEOIrsITs8xRMjfBVuJAZ9QeX_Uy0Bkj2x8m3RKv7kfosN9jZuhPXMU-htBPB-a3A2H47FHFRBepCnXutnJBeLsUpgcjw9aI5bOrRH2XSaUcbbdw0P-LhAf-SvHuSmaE-DfWKVYXBEzYXCKSYBfP7VROBiYdqO06OcuhfADR8v_tYykF-181lEFq0TR277ZZPGyuoYE2L94TjulQe9S5Q",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100896934877918086775\"\u003eJeremiah Seelan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u2tUq3wPHEjdvE4TmR1ZOv6aG8IKavDehMn66mkYoeostpSaHLCtmXiS5KivCvhy41G-yBzDgMGKjb8o-4rzakSnf0LRwxLj9C0TJm5v8lxCkLaoE7Xe0r2UVISZTPgXb8P3twJ3nExQJBjl8yrquq4qoQm2Cls-KmIAKNQrG5pf9y0nhhkWTiO8rB7R5ZvFIc11M20hL_mNMJT32WfPL8wOvtTr1P9r-rzp5NVEpXXAo6XFt4VcECWcLbzQtHeOzwrIoVSmAUzB7UeFjmEVtJ6iv5NkkzvoKYM7hilAzK8c7AB0o44_Amq9Kc6U-EwXlnkSURUJgrWclN0Dr1PbsxqwruQMNxpFR-FwuLeTXfiBO5BHCEcCLuHtRoTC8IHmbJJnf6gkDmJPNbksQHZ3Gr8uFKdRKkdWPUsMr7RFuBD7o",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109406357014582462674\"\u003eEng Chin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-st0hPJsJ5h49C1i8-OelxNJMPUx9pfubRF_PdkUPNcxAs3xdyefURUFptGiH33nVfCtyGQajXoF6w7baWNsD2_8QfD9mbtMu9rqiDeTZn4S4oMpBtwpcZq39ZyohmVKsvoV7UmXOfJuCFseibp1jsi9QbXd-zS9FplBck5Er9Q6C7dj1Ac7r0bhODJqq0vKlA03K-edrNBhJkb9Vup9ciK6UPTr59RR7yxwo4tkl2kFJx14uslNyIRJFM1jNX0h4lTdITki65TpORvvbDUE9eIhrMBHELj3gjxKuqR7jiQvO3tI3PlwcDcEXzIVfArPdFjgZtRsJhMGshKNapGTF35XcXIeBZifMSBX4d3hv1rMIcbFUCthMkFL0AvgLl6jDijqsyAY1FcDZIWpaFozFy8OnbEGp1LT8YA2HLkaHctuUAD",
+            "width" : 4096
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101286706036659051801\"\u003eAzrin Nordin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vl27vq1m21Sz4zut1cvoifE3dz6L5wR9u4l2onMTRFF6MDL5g88gz6Su4R8xndLmBSpUZs-uAGY1gtiNqqnt52egJpcLyG4Ta7PYjADjjIiVnpJ1wRrvs69Kig5KGPgJ00kHziNUIhi6AiUwqXDsjc43peX73VFrhZfo045BRFpomcXJxqUvT_LuQcwQzGhm1cH9AOLIFr6rOWi2Ve51YZT_2khQX95HO1pbb3u0HdHhTqWZ80i8iN7jR5eAdcy1AYRzELwvruF885qDAGt41KZp-2Cu0tjvDojH76Ia25iqa-qunIEBYbcT0VWzqgG0Ae7N3S51ExAUbUaISa6usqWJYE5IiXfLAGOvcSt8x0jriuJRnYRL0yNd_9EtCceqzeOeHeLcKY7oDOn91Yh-UBFRNObNyUM_HGQEZYPM2UCg",
+            "width" : 3648
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103957775190374893901\"\u003eJee Kian Koh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sUWQQJCrw2jaNXu76RZ4cuNfgfGMwtA4hDkpjHgM6bSq-rIHuP_T1HUbpKcI8KLwypSNBFT5l03pjkTOmgq3FUmdaUNOnVlGEwyp9awTZCNoLLyaRm8nhMqmzPMwlYVuYgF2Ow3GSIn_7ydsLRnxGsY359AR2z8ZflkhrqJnqdWNZLTjAPVD-5q9RTAz2BG9kB3JzyR6eGcvXGS6K2vXM6uGk0Hj201sysU6YxGo4CoT6B0LYx1gAJZ9N8dNnW9EqHEHru493WkaPIvvcw9xNLc9XFzjFo6SnTRJ20HPEjkvNBbK82VyvN8itPCjc9bd3ppaG9EmgFY9RLhyAonxeca3k_JyZppnQtKefV5BASCQrv7kj6I5boljW1N20kBuvAOoSH3zKqAPxBoCINoZaCKHrT-tfB73ys7rgwlCPuGZpf7CmT9exulfyw4ZbK",
+            "width" : 4800
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100728751621331652649\"\u003eSuka Sempoi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t7EVR4m_ppZAyYNuYsEbqFYIxTAh81Fs7qdL_kODrVc2XDqbMR7QwF5bQQnbO9ysUJJqk4bFxZRpenawdfSrco41Abrk39nfcl9iUEzeH7044Qnqd4v_2yWSLLvUODOE_zybI0d_h50TimKZ28l5I8g-L-6N_U9PVGEKZB7XHewTtz1lmMGRPzwFc0LmSrhHFjDJiznYPXFk21DC7j8EzgbNwOYMqSuE8Gd4KSI9XVrI_eVOa0tcb7Th57dlBzL6eJdHMQ0C0taTqeW1MOMaaUam_p-1c2LRpLvCnNmT6inzerWZ2f4FIu3O4su_Lz2-bPpo_gHJ1GmjZ6HVbmD8fReaSEBVmhb2oIkS9kMkp2jOoTmcwvyNg35YMCGGZp7NsoujrjekISGaD6OSondUMIDTIY9hEgZZPVJgG6Ru29eg",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118323144516201018309\"\u003eRohaya MN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vg0hAP9545oJL68XhAxT94ZfpIjAhVQJTRUeCk4mTUBZrOO108cqT6-7Ria1cjam7PL3_xwDUTBwJBLUbeeJmwPr86nmWuM3iEdQKk6j_qhNHMUyjEmingBtAiMZLxFWXYcZnGAu_mQiTLmua21vdz3YZoxFZ8SsBvcahgAVCxIUfnAzU8RUiTYDdfRhMiiJHMYK-jdm0cyEX4i2U_caDTVPUL0Q_zkyJW7gLSG_YDRicxHrfzRS3ZGWItN7Ph1rK3uVpkKjZBYUMIJUbTvKZPLINs6n17VL53VhUonRc0csirxK8128i3BxDkU-0wyfafqHm6g4rDpDkYcf1z5g9MMUUu6QQepJCmiwKpbtiPqYwia4FnBRrWHyo6WnZrix5HghARbpZVEOciadWMeNJkGD3TAIjag0biicG1QfQlVg",
+            "width" : 4032
+         },
+         {
+            "height" : 2322,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107713462378849411759\"\u003esuper wang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sc7qP5ytlObioaeE8vBH-spqCgBvwv90Wmw8WvuNU6UEyMMWfcqKYmKxMNItuF3vdNK9iDhRueu4YfH-YM7RWVEMK5lOvhb5iY9oBwbBE6IrZNym2B55SDteiK7_06JVFDs-UqWd7y5Ky8-85wEwCN9bKN84MsdRJ2oZ31isyuiBTB74v2fcgoz_nQo78iTYoPBOlLyPIZtdmcJOKykdVu2QePSi76Ty2S4tUB25dZk06NJD-VpOno1_EPae6IQkSO9YxyCdzeBe3uRyy5kTSUdY7xPF5TA5OHdx0yJcUX7b-gEm2B8j8CJ63gQIcXnlqtYSBFMhVogGuixcq6AOHELMPscCr1g88H0gLJSej1jKlc4vsFPFuTSlOHh0WJkrvUtbKLwmhRZ46Zx2jZK1WAlEuaVex6jy2hWBF3IR_wNByd",
+            "width" : 4128
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118323144516201018309\"\u003eRohaya MN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sBcrz6LMaotOTPf4oToMyZICG8JRmRbKNg-Xbf-ITrutcSh0YNBN38osqw66kZrtPCutqXhr69Qg12BJTORE5hoOzSHdJcfkb9sB-yHQ5Z86Q_wBWMaf74I4Ls7EInAPu8y0n6zGd_t5WXlD6wDjz6NLKnNAZtUg9lieepFXp0IgV3NPcg7rCiT7sgtf7mMZ0ahKRqAXLAGUQy7HU76EOEDP_Qr0jyclRpoorJAZHrgPODSNyPZLWjCBOA8tSvW2Jj0nSei8CHQOuzZcwQOaSMEmAKJ66MAk1i07uUFTT0gEXHYoO8XLKN2XBWdB72vN1MoFMfeeRq4xNXDluoSV3SfPKAqW0kVbhnud33PBhQG1oJIk6LRbNWkmrCn--D6Dxl8hdVMt627X7Ao9ihuJctqfjJOLwpGFaKQAlc-gWvKOsewHTVHbUUN4Bk9A",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJPZBrtGdMzDERVkSNL0kOHFA",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5772504529875321942",
+      "user_ratings_total" : 1629
+   },
+   "status" : "OK"
+}

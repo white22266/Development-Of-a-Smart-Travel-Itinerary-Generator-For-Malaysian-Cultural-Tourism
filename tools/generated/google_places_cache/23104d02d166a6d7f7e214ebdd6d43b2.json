@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Tenom Ponontomon, 89900 Tenom, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0135124,
+            "lng" : 115.9667454
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.014861380291502,
+               "lng" : 115.9680943802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.012163419708497,
+               "lng" : 115.9653964197085
+            }
+         }
+      },
+      "name" : "Aliran Sejati Agrofarm",
+      "place_id" : "ChIJGcSvVwAjPTIRgM_4BPA2GyI",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2457618426164203392"
+   },
+   "status" : "OK"
+}

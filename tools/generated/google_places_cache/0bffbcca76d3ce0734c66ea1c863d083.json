@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kg. Kala, 18300 Gua Musang, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0636914,
+            "lng" : 101.977807
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.065034680291502,
+               "lng" : 101.9791893302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.062336719708497,
+               "lng" : 101.9764913697085
+            }
+         }
+      },
+      "name" : "Mata Air Kala",
+      "place_id" : "ChIJ4QiteFz7tTERmyD9jSKOtvE",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17417264887964180635",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

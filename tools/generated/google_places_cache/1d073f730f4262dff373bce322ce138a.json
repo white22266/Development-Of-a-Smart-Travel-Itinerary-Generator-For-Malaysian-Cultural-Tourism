@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan USJ 6/6n, Usj 6, 47610 Subang Jaya, Selangor, Malaysia",
+      "formatted_phone_number" : "012-429 2965",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0482577,
+            "lng" : 101.5891459
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.049579530291502,
+               "lng" : 101.5904724302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.046881569708498,
+               "lng" : 101.5877744697085
+            }
+         }
+      },
+      "name" : "Verti Culture PLT",
+      "place_id" : "ChIJlUEiwsZMzDERCP6Px5uvSjw",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=4344477874155159048"
+   },
+   "status" : "OK"
+}

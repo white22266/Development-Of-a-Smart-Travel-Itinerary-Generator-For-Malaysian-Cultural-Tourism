@@ -1,0 +1,303 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lorong Jati, KM 28, Jalan Padang Besar, U, Titi Tinggi, 02100 Padang Besar, Perlis, Malaysia",
+      "formatted_phone_number" : "04-945 6235",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.6464921,
+            "lng" : 100.2420014
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.647830580291502,
+               "lng" : 100.2433196802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.645132619708497,
+               "lng" : 100.2406217197085
+            }
+         }
+      },
+      "name" : "Teak Eco Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1400"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1400"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 1:00 PM, 2:00 – 4:00 PM",
+            "Tuesday: 9:00 AM – 1:00 PM, 2:00 – 4:00 PM",
+            "Wednesday: 9:00 AM – 1:00 PM, 2:00 – 4:00 PM",
+            "Thursday: 9:00 AM – 1:00 PM, 2:00 – 4:00 PM",
+            "Friday: 9:00 AM – 1:00 PM, 2:00 – 4:00 PM",
+            "Saturday: 9:00 AM – 1:00 PM, 2:00 – 4:30 PM",
+            "Sunday: 9:00 AM – 1:00 PM, 2:00 – 4:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t8ju9nn0myysrrCd77e-49pwuJwGP6qYSi66f0pgZIQkibUXZ5nMfRaZ2raDlQhw8vfUo3XHkEGV5_jrMee0nGJe_YgDeWJO6A1vkWLRdUNj0TwnDYt0s3vuJ5Rbzp9LkGYJsQlTkyI4daQcg1u7pq1G2bpOQKBMVnVK8DzAGTrzMF_ckh9vH66yaS3DdK0BmHtqEW4x3lUniNItBZjgz6jq0RKgj3YQeA1f47RpXs7LsSqjW33Y_rH1-WFazz6mrYQw20jX94IGauMMkS7Hpl8FV8VTosb59UE7XK9V7yV4lK6Mzlp-PSlnfTTWQwmXvFJW3mFRx2tWB4clGb7uMEAZPiLlxl_LerZE0o6_wgsGOYDc_3Vwd-RBft41fmAcHEyRIF_-nQWrcoj6DHDyu4u5sINfItF8p_S6QGTSwS6QS9tOOksbcb-GjM_kcJ",
+            "width" : 810
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t3XxH7DN1Jju-F7-WBJ4U2_NdNo1hFsPiXpLxeFNcO0bBFsjAEchacgZoFvWilMoSTH46wuwVHsQq3GJLIgtabeO3tebKGqlJz-MISNMIN6RYwEOn3_-L5fKog4uE4eZHAN1nwHCTc49RtmHSGorH8i6oI_I0puoLFDkyHJKSw3sdVJyJvzKkI_dmlcGrx3sH30AnWnj1jaI8p0khgsbhYYoaoYrNQYrSF5Lq4T3VhXU8rmOPk8ZU1zqWun9Su4n81xSSABWl8FP7rW8wzbtjW5J6q0DsEdA3a79I6EZIZkF4Zz8LA3gi4ghCY1epf05lEcEheiNbK3rMIUwWwc2u3o30aSKfUtB9wgF_ptWVdJYkWO54hVUByTLrDOj91jANmrapQwjYyRJuUxAMUyoBzJA2sxSKAlS6MR83QhsA-2DU-7krvcVdAJ395eA",
+            "width" : 810
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sS_XovCW9AWpOjddu242WAHRv2bAyxHLuLAio63IbOdYi9EYiyK9zMuAYBhI6-Cyl0H93NZAhX5SqZBeADCDqcmI-U0rFmoAkZjxwNSGMFsx4apNsof9VcB-L0ndVpUAAfj7AKUlHreigwAdMI6qiVk8R5hUQ5UrZ8V7JGZJ_86AfXMh_wCli4Jn6FWbDE8Ze-IAQARov2lj1jGhmee3Qf8hka1jLyn57ZWL2goqOfL85-VI2rTigiw36aUdVsurvWjIHmQnDWKUJ7IEViFJUN2OZmp3A7uFXCdLNK6CuOvFysQOhP7DB2eZZruwx_W0ra8BXP0kfd91-hzgvMVx5fSb88B4hUCCbKUWYpTg-hvsBjkXZ73tdqxYuM7dzg8WEpYUEdZaPUTHXtqW3HiGhMXJyv9Jfhni_AN4_oW3k2ibwTHLugqpEbHhsA_Ymq",
+            "width" : 810
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-syRhRiXdO-qsQV8YW4oSLOPKRrQoV-2mrxXugTpIQlx_YM_XkHAXnaKyKY5sqKE5D4WpwYs-xDX1PLM6zka9Bknv3tqau0BzOnhhs3f9v45on-CwuQFsscTCkglqOn0hXDyQ-uzwhN2CB2Sh4DdxUsnQe3qM7m3i-JV3z3YlwTndgGEB7gP_3WaoVvPXjP4HzleGyWmVUu1neLCZvuuz8QjCellWVPzkXzkEZrFl9i75Q_shAVne9UM_V4-WJcl_zZ6Ycl2F8tVzhNn2Bchq4wowN6tOz7tVfXzHVqLYqKfSTfiHQG7GgqZZrb53KyEhWfPDOkJqOGo_J5T1fPlJzrau4kx7aFTcHLmFO316EeX-Dr24Wn1xbFJSZ6lo_nBk00Hp9LdINd95gRzf6zXasN1eD9wAjMpYuX9Q7ctpxjETrrH2oO8WtQYUC1qtlV",
+            "width" : 810
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u5Ttl2CHP3W981sb5h1hhvFbb-m38tgoNcoh3ZeWXFJ_KV9-6q-k0MI4t0sfns6WZj7UX1gtvUdK0O0FrmRDbVKxz23EAjjYE8oEetMSocj9hpLS-MFAZ4IQZ1cRnGgnL6jU2MEH7J2LahY7yGvwvFEw4muVXadOfsnfoDNVvAKdJnQgZgx_0Ma1PUVQ_wCPihrXUP_QvslC649RSx558X0aCog1YqNR6pATffn0-IuvlRO0qS1tkrAVqkE2yZC-R26I-HMwBvyfFYWXVIKYeXLs29m5nASwH3PyJ_KuljHWkAbaRyDb7-ercHzGV65ZUggV40DXIccGkvGSqLnnVhoN2Ek3IGMxZHJQj18cnB55yOb7gHehvNVQ_46SFlgkiJPaDQogpIneRQUlAeEKRroYjFgZ82GC9M7J0cLB5iXRF9ZROtwLpaGulfc4Vz",
+            "width" : 810
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tTqVq0FqSXu8MasB2p7ChJltlraiTjGqJtUzNNrkRtOGVMnO7firo7HE4wB3BmVA8A15EH0pPiQrhMW9eVmnPjpE403-49K0YGnZWq3ST4lLh-tDAB-oJwUg00sTDo6ktpz52s4RMt3J0DyoeHDk3MGx3o6BS77Khdi51ClSVmoxAFt52D3cOAOdUcl1PJdDn8JsAPU4GxD5iobIVjoV8lyCOo9feY_xk2qBLr5Zsah412Ye934Mp-PoT2y6jRgmSEMHvJXDdxPz_A61vDVrLZCan2FKaGF3MyFF8M61mJh2pEsscv4fRN2_j2VxB9mBAyRZEXmHMJihWCbyh353OHyKyqRdmUik_UXI_j8W-lstUeMbew0zhEQzuF371bGLpArxHE7i3KW4I1mlmvDpOBC5de9rWmEUxB-4NF7QytoLw6Aa749SLl4_SbEQ",
+            "width" : 810
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sHp-pLm6WsxTqIaVVjFvAJF9bRiSc3N9iqZfGaeB3dYyvSQU2dq1TBPELg8oCsoZhvWPqOh-4yxqvd4kdYy1vIO4WXr9nPIghML_XlG9Nr1LGx6LosJ67lEyiSjkAp3y5YzdoiD-mKb5cLFDdafwPxMgQT9Jw0FBq99m6tvcuwjrPfMuW_rjifbDW9OUf8mWgBW9iU0peTddIhk5Xfgw67LlW4a0saskmck99ACMzEFqUsLE4Gp136-VFsmiSnIV-rh8SOLPxILr9fWwW59IKiFSb9-cNnGtIMW1O8dyMarG6r7nfeM5b2XgrBlF-q5IhZWNFRIlUKbhPTBiW-vegkddDdz594Xp6OgmFlRi5DxXYU29N_UnX16J9SruPH_i_V25xFdB2E7_3ORYjxtWoTw2iq0ZhCbKXtOlfxCVwdUD-m3YsusPCckoi327qr",
+            "width" : 810
+         },
+         {
+            "height" : 607,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v0Tq1Xw_9SL1rKaHN7-wBGAskBCFYKvZ3xOJgX7MGKK6G2a6ASZZTtkVxqGMvcllGZCeX6e8qPxkGzQpheqSjaHZsyULrQ8PnsX2-KSIuyXXAZUPnuTTw8Igm-_6DB7UkPehs3XZz-v2JFWOQYv85RWlxcsDiet5FoMtS5NTnH4rubyHqvfCj6Bvb28LqTifWanAf9uknKfoUqCfrhF24P3Q-9dDF2z6eJMZejJuW9HU788KtPYm6GiBKGtYurCcZGZkmKYm0EFJUGs83gwob-Mml6RPWrT94F5pfrpArEnAOvTR0CVimEV4ow_rbFA6iygEvarQsqMSFEdmgLUN_gyNpLNNav0ZLeU9nRhc1vc-tUAxhZw3OQDjV11Ka9ow6kCmvaKWELBb39qknO_IH3vlu638he1WAqJLP2ThHSEVoTNN8ad3EZZCPl3jGF",
+            "width" : 1080
+         }
+      ],
+      "place_id" : "ChIJx2ddLgDrTDARxJD5mQ5bpcE",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13953659138748289220",
+      "user_ratings_total" : 1,
+      "website" : "https://www.tiktok.com/discover/teak-eco-park"
+   },
+   "status" : "OK"
+}

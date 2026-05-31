@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "43100 Hulu Langat, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1204409,
+            "lng" : 101.8321343
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.121714580291502,
+               "lng" : 101.8332392802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.119016619708498,
+               "lng" : 101.8305413197085
+            }
+         }
+      },
+      "name" : "Wealthy Farmland",
+      "place_id" : "ChIJ6xAuZQAxzDERGcdlRGiNeF0",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6735288721696212761"
+   },
+   "status" : "OK"
+}

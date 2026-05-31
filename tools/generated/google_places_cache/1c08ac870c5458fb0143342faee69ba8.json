@@ -1,0 +1,142 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "123a, Lorong Friendly Garden, 89050 Kudat, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.914746999999999,
+            "lng" : 116.841443
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.916021380291502,
+               "lng" : 116.8427730302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.913323419708498,
+               "lng" : 116.8400750697085
+            }
+         }
+      },
+      "name" : "PARTY EDITION IPD KUDAT",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0607"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1815"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1810"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0958"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0840"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1802"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0805"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0910"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:30 AM – 6:07 AM",
+            "Tuesday: 9:30 AM – 6:15 PM",
+            "Wednesday: 9:58 AM – 6:10 PM",
+            "Thursday: 8:40 AM – 6:00 PM",
+            "Friday: 8:05 AM – 6:02 PM",
+            "Saturday: 9:10 AM – 6:00 PM",
+            "Sunday: 8:00 AM – 6:00 PM"
+         ]
+      },
+      "place_id" : "ChIJXdLvgxYLOjIR4k8HrHVlsSk",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3004293982504570850",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

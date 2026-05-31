@@ -1,0 +1,1220 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uOmO0d7j2F9K2VLjvMbf09tx52NWjWc_EQoaO1ZXDFmPItSHh3JJBhAkReqC8ies7a5N9xAZuGfAYBXwAKPqdT6efY-clsT9eef18w_kPEl8gs1LM5kkDVoX_zaU6dIiJt8kgQxEDpyRyir2CBANRQ1-ZDF5IAhh4P5wYbUSYF8y0hlwDf4ynhnCcyD6aPVWYK46h-31N1IVQJW5OOd7lj8ikC_o597TRvZ2Tc8MuHpXjyWl65NiG3fh6pqqiMV1azdIe77z2PVtxzgyHct3tQWQq8eYEPnFtqlMDHZLylX7L-NdRhX5NL6sNUTbhmOcqjDkWnsI3_pUI3XfvsjsjyCPRYdxEmrb5QmLRr_AQelY6o87A9lhNayL1ZLBVtflHD2e1qhocm4w7_A9rEN9xOt7uuwlSbLr_faVT1JEomzveVpSKwlzADtfC8BMrQnYyksB0kbE5bHYNsJyLy_0zsDMM1V2h7G_cv8UTA2gmywqlU4Kh-QLue5_s5kDVOpUW7hIJQYM_F-0RK4tjtRjSFlopGZxe4mGKRYcCuAHUmyuFFxlutu_48TdExLBI35pu-h7iDL9rX9kMbuM3EC0vrlKLZIfbxNIFWVy3bHUVBHD0EAkovWxEwJJiweQNRP1hc0tvfPYp8osG3ovG2qT2Velov2v8yGHRNK4grEZdoGfX9PTI2LBZocW8IyHCYvaPmnmOpdmfAMsbbh8IHlA3knqroy0o9O5jd4CNfiTpU45r_waXd0imI6etTuDkzGGeLVKP0HhrdzFmmKHVta2pTL-y-M-PqRsFH-rwW-6eEahXleTa3ewqwyY3L2EK_KzEf_OUS6oVU",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3/ 53100, 6, Jalan 4, Kampung Simpang Tiga, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2331717,
+               "lng" : 101.7116236
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.234444130291502,
+                  "lng" : 101.7128735302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.231746169708498,
+                  "lng" : 101.7101755697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Al-Shariff Masjid, Gombak Town (Main Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113535702874743039299\"\u003eAng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ucr-rpDZW1vGJCz6s944zP1mBJIjmoyjRJCAFOhlMHJqlInFirh2MioP5BjnBolwuqyg0zWh7QZCPzKbROU_SusEhEibitodleQmKbfrkRPz8NTZlHAlDDtC31K-dd5iNj5w9rPrPq1OgZCILq4dBrNutg1QdmfRvkz3hGe29ZuX9OF4fvyBFQN9fsWkuu5oa0zhTEzMEsomZTzcAg78AefOncpRIfMWgzskCrI9xJDkhOIb1gsKlUazwYlTSYjSYF-fLbxytdNw39CpcOxXH1IGRjq2LhUFIS0K_HhpOVKbLrZ-tNX-MIq6ofetHisSuz3JGJbjm8-UO_jznPFOp2paPW_tiyVZWyBwVKk6H9zXpaBMOvcBb_KACGQXgAefrS85kcnbhc2NHPQ8P-v8z8fL5xXuyCqGfUce_o1aZ96srf",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJu_XMJIE4zDERj33wBTsX6RE",
+         "plus_code" : 
+         {
+            "compound_code" : "6PM6+7J Batu Caves, Selangor",
+            "global_code" : "6PM36PM6+7J"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJu_XMJIE4zDERj33wBTsX6RE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 566
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "BATU 19, Route 68, Jalan Gombak Lama Hulu, 68100, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3315511,
+               "lng" : 101.7743283
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.332907380291501,
+                  "lng" : 101.7752239302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.330209419708498,
+                  "lng" : 101.7725259697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Karak/Gombak Shivan Temple - Om Sri Athma Arul Jothy Muneeswarar Alayam",
+         "photos" : 
+         [
+            {
+               "height" : 502,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112269725706797647695\"\u003eKarak/Gombak Shivan Temple\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sJddVLp0lfVM2cS3aLHDOzcXBMrsP_zsFYWn0jMwxfIrq2ifKwdGWrmmg2XDK1gVb_IEjsw7HcRrUmI5cQJH0X8QK4i7aaspwPDUEaeLjdAiMUVGppez7meC5nPegveq-8DneVJ2oTLGFpzMmbEpied_-I3Hxrht2zS2LWOt8g01f_A7lLMKU1JOeosyrBLyo9flxcNDFCuLcimNihkdxwdu0krPoaqkd5qaqF7KFVplOdIYFEOYneRoZ_5kKU1hR3RdU0z7CwODHdAWoyJl4p95_DqSOituVTIDeLBUFf5oNJlkIsfORLchwTRjYfxTBcsTz92vTemQqYQAr2zH8UQvIjo3xuQdodgpHoNexWG5Be5IOQaukdMjxmby4WAF-H6PllUHyVyGt_oCaS-vmMqLuRk3hGadxnkVMVaYOpIxze",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJdVV1-rQ_zDERDBgxX_S7oOA",
+         "plus_code" : 
+         {
+            "compound_code" : "8QJF+JP Hulu Langat, Selangor",
+            "global_code" : "6PM38QJF+JP"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJdVV1-rQ_zDERDBgxX_S7oOA",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 155
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "International Islamic University Malaysia, Jln Gombak, 53100 Kuala Lumpur, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2512358,
+               "lng" : 101.7350865
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.251369080291502,
+                  "lng" : 101.7350865
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.248671119708499,
+                  "lng" : 101.7295275
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Haji Ahmad Shah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106414937665679999701\"\u003eaiman rashid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s9BEJU7tdg0oUrKUFyAd0SgMsp5OVURC8KJup4Q5juow4iaCcI_50-gCraQFGTzWXL-WRscvn_0DM1SEYzrHwu2eyK_Rc4hSEVKNi_noLd5vl-UJMz285vb54I6Df5iktmUiifxckcKqx3R84ZyAH-EtQ_YNtedry-kc4CSEEMuEt_7IiaDNdNVtTkahQZasfgRFOM2m-Zx-VB3k0vIHbuZ12bOn2SUNbIRr0eDCzQG1m5yo5x084Cg_c0MJgVdt3LjfrAcqeNR3HtuQwZljLpnP0iDiUE_Z5rc4suEfq7-23k632Ezxc3cICciEJDrDSaR_IAv3ARbY5AMz506AcopBICLQhGoc1euTVXi-aGVfHJVhgx3wevY6SMNMro1YtKWLgPbB482H_35TGTWUBIz_c6DVYKkwvKeGp7yKbufhqq",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJcwBNj8E4zDER9br4Y_lV-Pw",
+         "plus_code" : 
+         {
+            "compound_code" : "7P2P+F2 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM37P2P+F2"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJcwBNj8E4zDER9br4Y_lV-Pw",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 748
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2386421,
+               "lng" : 101.6816297
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.239420180291502,
+                  "lng" : 101.6834786802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236722219708498,
+                  "lng" : 101.6807807197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Ramayana Cave - Suyambu Lingam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111884011050592843748\"\u003e陳徐行（Mark）\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vq1xPxNbvsgjbGOwu8Ujsqa7aS_cWRjrYY1qYvRQEdI3S6lM5OCW965GYF9ynFe91fqOmKdtxjJnENOQw6qioa_LXilYJVAqcVV5gMzSkvE1ojLFZVM2uAvJXcEYVLsIQtFvEanDWrpAb_lT-pN7r89IEkzNeMhl2HltuzOhG2AuM6z-suG-pPKlN3JRd71X5EA8BSMUXh7uWkPfvbVMYNzwdZdIOr-T-X2DEySpml0V7K1S1ngL_hvsiOal5bgbI2zoMvZ53gAmHmuFNj7foBALbdsr3e8M_Y0dokqiOTXGGrWdneeM7E7eA40dAO11MQvankpGhUH6HtU1s1Jdd70zRqufYkhNpFqNjzpgMwKKcfT-bLCFsqjVpLNg4EOzR7_bxqBchVTE_-XhsrSiDfMyprcLaX1kMYzzC8sLpnMw",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJC-2QDg1HzDERDSzG4ioNJ-Q",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQJ+FM Batu Caves, Selangor",
+            "global_code" : "6PM36MQJ+FM"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJC-2QDg1HzDERDSzG4ioNJ-Q",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 646
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM24, Jln Gombak, Kampung Batu 12, 53100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2942924,
+               "lng" : 101.7321237
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.295662880291502,
+                  "lng" : 101.7334416802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.292964919708498,
+                  "lng" : 101.7307437197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Orang Asli Gombak (MOAG)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114846080547263753599\"\u003ecea\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZxlkObVB1Dayr28LSrYVv4uRT63pDu6wpeKwPC68jnkUwlNpPyDL5VZ8rkiYBUYq8cuSlKXUsNk6kFPUncxcvSfv-Xj1Tm9g5ck16fa4UdsURTCVqlZNL4ytfSDtf3dM93lVqP72DHVoW6D7UuLFZOzLNTTkEhDRiwg9GdlXuXKwabizkqJamvckMxbpmn87lT0GID99MwMIe-ecqwigYjI3_V_zFTp8zg7WQpQwCXS-S_8OF8noyTqBT9cJ78tA8pTvcCk_N1EGAsriF4Y3RO7jGNQUvFYjBz8N68dnkkR8DNqq4DjoX_rtoc3DkF8qJ2XFbfmc3nK4z6mA2D07MG5qgzncGrJY1m2PcdnrlylktL8N01keSD-IZ1L4e_-I9Ag8PZAZQxY_UT2_TqJ0LP-M2T4zflwt7aNIRo4ItaA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJPRPXkhQ_zDERlQ_RmCgIwy4",
+         "plus_code" : 
+         {
+            "compound_code" : "7PVJ+PR Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM37PVJ+PR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJPRPXkhQ_zDERlQ_RmCgIwy4",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 376
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gombak, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2378844,
+               "lng" : 101.6840385
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238803480291502,
+                  "lng" : 101.6852723302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236105519708498,
+                  "lng" : 101.6825743697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Caves",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103716561345803065971\"\u003earavind sp\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vTxSNxNnd0jZTMvPC1vW73UYlQGYzZdWl54fs4CZ1Y82c21b3Z0xd7nyjjN2lZG7RMy2Y1RQ6d0vmYn_uyIvs_zgp-AETtYmBnWQiLj96qtZ1gfnxS-Fu4NoqCtFSjq9BxI4Ps1UwIK2pnn18eJnlv3foui4mhI22a6deJvbh08tZ6KD1Gy2Bo6Suapc3FYUmN4hoUGog3Nc5iKsu2AksQt8pwyzHUHDsKMI4-9RBkyE9cyL3edWt6aCdzupyoY5cnAIbCY5uIri0uRnUUOGAmV8D7Ee3Xh5R0-1kqPImu653Jhpf3VhGK-gPkkZCRPdbDMfRfs5oBGuOQHfPKwRHGB1cE7UxBglNfBYhDbtQoFCtxgvtDxmKv_E1tcN0lYXn1B_6RI8o0ToYNDfICdlGEGMN-5e9YegT7w7NzaaZmjNyo",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQM+5J Batu Caves, Selangor",
+            "global_code" : "6PM36MQM+5J"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 78754
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid, Taman Kenangan, 53100 Kuala Lumpur, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2233847,
+               "lng" : 101.7138233
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.224780430291502,
+                  "lng" : 101.7152669302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.222082469708499,
+                  "lng" : 101.7125689697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Lama Batu 6 Gombak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109571689731434707181\"\u003eZul Zul\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sQyXo4HWtMEYCcE_k_ZyAxwxxAs6AK95WzH7oCay8ygkFe7VPXWKPAEzb3Fo_UgEmSMls4VgHouNEPutXaj46bkZ9S0wrw5FS1wlsxCyxZUaGVz8RIcJ7i4BGVVisD6ZfZg74MqLzGjdPzOIlEByAgkbPP0m0Auj3jWtLyreDrDe0LqCmbLd_PijenfHDfT6Z72drZ3FsCWnRSq8IieavovDr4fPOb3qQ8h53xG2X_GGncGHsx5FP5yUwnc5DLhLzbrCZKK7Zsmv8SpKBkVRP7IP7YIGyE7JqdK9wskOR7sBVTqrYsaMtWSPfRSyEey50oAFILktoQhlG97y-31jUPZObPGxV2rHGjHpBCQXtbhHoHl8W6PLbZFGZ-n85DLopgNiTirb_u045G-L5IRCAjXg2qJOUQlNVur0-chCe0QJiW",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJIxTIx3s4zDERyHXXMF-PlBU",
+         "plus_code" : 
+         {
+            "compound_code" : "6PF7+9G Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM36PF7+9G"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJIxTIx3s4zDERyHXXMF-PlBU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 108
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 42Jalan 2, Batu Cavtre Point, Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2374497,
+               "lng" : 101.683972
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238515530291502,
+                  "lng" : 101.6850437302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.235817569708498,
+                  "lng" : 101.6823457697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lord Murugan Statue",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1342,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105039223820464255462\"\u003eRaghu R Gowda\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vNkm_-me4ShFjnAXpHmDOuO1AMA4HyHNBUu4-djdLE9pCkgrGOCOtE3OQdM9mbOnzffBP9k2J-cPDhnjiVzd-sK1zCXJRPPqsTy4h3oWNl4Q7vsYHePK7moFrTn3no8_1Ca3ol9AhYIOmQ4Ap-SRWAMSwaIumK_O9g2HGjsqF5ZXwGCeIEk3Z5RLT2MefTRhkeCJ4tgfzTW4kI8QtmtWTbbkXA6KEy6pMmPp1URi_JGSk-6N4aDnGQEwZrjySBdCzkjQlpB0hpojXeTKRy1_QIGAlBpSkxuRfaBlD2Ijirydqlk-Y_jySLYm7tX8MLPxDZvnHns9cLw_He0PhSJimtIuHxIRkRU-TfehAo9daX0MN0UIWyEr8hSDPPYrH1U1xW3rSc_8dgJgKaye-1X18fuAQBZN5sPe_t6sUq4gWr1w",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ9d_bR_NHzDER31TrGM2bNyQ",
+         "plus_code" : 
+         {
+            "compound_code" : "6MPM+XH Batu Caves, Selangor",
+            "global_code" : "6PM36MPM+XH"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ9d_bR_NHzDER31TrGM2bNyQ",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1637
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2376597,
+               "lng" : 101.6828325
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238898280291502,
+                  "lng" : 101.6841140302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236200319708499,
+                  "lng" : 101.6814160697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Cave Villa Indian Food",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109644521794171046717\"\u003eChand Basha Mcb\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tpX3G4VC-FySO3UvZ1CeWPAoJNBE57tL2elyXsvzPg6w2Mk0zuCa9JatnZ8Hg9aHWUeJTdrx1yuovUJjoMtN8SgoAfiqEOxk3p6HoDLMSZKz4Y_rXfR_6Tfh1u6huqAUnO_A_4yQ-lLYxJDSLzJIJxptCQ2RUvO9XAUKnyWCdkevLEL5HvmYdxjjifqKIsUK_li6DRGzHmudNZBIyJJyqhsFuEWTWxvya78QGWxhPuoAlGrxfuyHCE6exeOBKC2Ch4s3oImTl-uKgfg1cm6Aultun9Yi8pPoh49gK3ysc3WNAdR_OTUJ4So1TGi0Xxa72OwvSsDENmtwHrGknISI1hAnQOoMDjQxkNoI_Ye7aGBMHdxf-rTOqyxvsbnExn_-lH6EsR28QyeOX6XjmR01e7noC9UevuWTUkPHGqW5jG0Ng8",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJPcwD3wxHzDERw5hC31-Um5g",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQM+34 Batu Caves, Selangor",
+            "global_code" : "6PM36MQM+34"
+         },
+         "rating" : 2.7,
+         "reference" : "ChIJPcwD3wxHzDERw5hC31-Um5g",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 223
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jabatan Agama Islam Wilayah Persekutuan, Jln Tuanku Abdul Halim, Kompleks Kerajaan, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1718992,
+               "lng" : 101.6710787
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.173105580291502,
+                  "lng" : 101.6730600802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.170407619708498,
+                  "lng" : 101.6703621197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Wilayah Persekutuan (The Federal Territory Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110188376846481365368\"\u003eJoe 9⃣7⃣\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRDNM1CONxIza_oe8fcMJDHddQDnALan2Pd9AgYoeP2MJdsUgEAuA1T2pt0fmQENwKp6grM26H7xmClETtFd-N-yqTDFTmK9lrz4tvGvJxdEjWM3WLY1Tb84SJiTBvgcvBMM97P3NcA8Y_JKQPfV9YnzJTlsZWywFXkcCQAOeAf6fhyDEWeiujOx6mheGhEkuYs23HQTms4GqkCMqURcymezVBoaY1k0mQ-YcUs1zzcNeT7GyUP4wn4PfFfoLQV1V38_xjWdhtku-ab8OhBkUle6A3fL7s1fnHSq8Tge0HX8yYBDq00zYpN1JOieQUsuPAQTQfj4BEBvGT1WfLVETNE6qkcFTWnezT66hIJ1ymQbVQLYI2OM-SRXxl3tqvs-Nu6qx7SWQYErIJ--sMLwFHSUPWwa0TgSFrID1MuoA",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCC+QC Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCC+QC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7514
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan SG 7/1, Taman Sri Gombak, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2467356,
+               "lng" : 101.7027999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.248148730291502,
+                  "lng" : 101.7043692802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.245450769708498,
+                  "lng" : 101.7016713197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Khairiyah (Taman Sri Gombak)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1984,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105813638525034939201\"\u003eN. Rihhadatul Aisy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v3iBLBk5psn4027cG2uciIXLRbGGOFTAqP0__jbmXtjeJDFWUHz2HWhJSfw88UWXV94SO-H1_FLTLVGN-aKnhT0luiFEE1SJ9uGNFpduq4BUV-nzwZqMuRb1OXVVL2okazdeA1Mw4Et8rgqJOvRj9pbOgLAlePE1LXTOsBr6RRP6kV3cVGI051Ao-cu_RMbrw8tu4Mur4WAVuXJBDjYddg_sKt77J7QJN7ISMAvLXRvrqtwLMwPbpGndTnyb3btLhrjr3M9VV3YQZMh_krQpAy8glIAf5M1PPE816Ey_JjghcDqqAGSyrX6gTxo-fMI2N9EpWGys2KR36ivCHs0v5fmjqerV4SuYYoA6QGYpMVh5z9qmTWlFotOKsY8CDzkxWQwqQZwDTkzxJrnSknbztEyOfXqrU-8R3YGj2AgVBfPQ",
+               "width" : 2783
+            }
+         ],
+         "place_id" : "ChIJda8jF2FHzDERI-5xSl4Gzbc",
+         "plus_code" : 
+         {
+            "compound_code" : "6PW3+M4 Batu Caves, Selangor",
+            "global_code" : "6PM36PW3+M4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJda8jF2FHzDERI-5xSl4Gzbc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Sungai Tua, Taman Amaniah, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2360913,
+               "lng" : 101.6744582
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.237400280291502,
+                  "lng" : 101.6759311802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.234702319708498,
+                  "lng" : 101.6732332197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Al-Amaniah Batu Caves",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116790818550275216397\"\u003eMohammad Afifi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uzlEQDRZFaKr6dgbBwxvCDrWmww02fB-AfSz6c6VdQAYtCADfSC-ZqQhjw2_6D5261Zu2PD3owHhKbu8_6G3GsUGCrEx0AfVsLu0Jl3i37y6Uwxh9d6OdFJwMbWdDD_9ZOlmo6qxcHF1Tt7d51F0lzPSzEzRGGFvLwH1TthDagcGuyBKREoOciwsrqSbv7cF0mX7TjZZ6NFwh8jGQVchyAVsoMcHqQ2JkFURNzZHFp9D3GU3olTwJLqGYn1hwxgQji11_CU8AHE2nl2q86qXKfXTvo5EFjb7nZQBZL6ouK22L1iLrjKutLimnQVz_yiUFpd35jPTg7_0pQAu-X91S2FEeEvd7o4a9v9fSY_RVdj8LEf3_znqFepfVWfK6RmDpv42_rzk15SLWb4WMjKyX9hrEFEUoWu0iETebh58JmivEK",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJi3MIOg9HzDERBhPscnI5vYU",
+         "plus_code" : 
+         {
+            "compound_code" : "6MPF+CQ Batu Caves, Selangor",
+            "global_code" : "6PM36MPF+CQ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJi3MIOg9HzDERBhPscnI5vYU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 639
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM 8, Jln Gombak, 53000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2108778,
+               "lng" : 101.70595
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.212172730291502,
+                  "lng" : 101.7073528802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.209474769708498,
+                  "lng" : 101.7046549197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Zaid Bin Haritsah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106513667717682935494\"\u003eMukhlis Hakimi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vqoU49SDgu4eLJu3dXzvbUwk6N489_UEMkkssbViSzFlo2xltmL9twk5gduJaq0SzQ9xLSBpsRE_-FdaORTP4egv0o64RX3MVH0wXELDrtfyTMdEhf-tV1VZZhEjrIcC6zjHZeaFknlillAhjS8oc-61L_bWWMT9GO0HuwBJkCHxPr0OG0iOmREyFnN8Mb6wxoCXuVfgjxKT7Om2gTPsczpVQ7befpBCNroEAh4qp3nI05LcpVwqKwwcGZsocVUPAqTDJmN5SxApG4TWVcT9KBtutRb0oAsyDrJTzfvGS3FLlL_F_sHHE9ZlAQwCKp1OC0JoNF7AzmfzSf9AFJPw9gcjDawjJyZjEVCof_34M9onumU0NKQMrmYNwS77Dp5whDLNj_uAhfRrLPuSnpl9jsErxy0g88zUxQ-JRG0dSBFw",
+               "width" : 3468
+            }
+         ],
+         "place_id" : "ChIJQwq5uYpHzDERxyCig4P1Kpc",
+         "plus_code" : 
+         {
+            "compound_code" : "6P64+99 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM36P64+99"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJQwq5uYpHzDERxyCig4P1Kpc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 213
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg, Jln Gombak, Gombak Utara, 53000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2517838,
+               "lng" : 101.7224839
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.253091880291502,
+                  "lng" : 101.7242452302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.250393919708498,
+                  "lng" : 101.7215472697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Zakaria Batu 8 (Gombak Utara)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104105369852110882542\"\u003eARS\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tpt8l7nCZDpep4MPbcwEPbd2A3yWwcJGloJYaDu01XkFy1MoHwILeKSV2vBqLrlbg1YlUjTXONeFdvtxV6VVQOGRDxatHZHiXW0-YEjIowzt5zWyYn5FRSRsBkyolV2hMN8SJWVhY2LcjoFDX4Tf5jn2fw35UzmQrL3q3abyZBTMUYVRJcJBiPX6NT15l1MBMNmMQtOZqUgq0w0QwgqX6mPVFZaMUSigCoJ4CLSOp-XkvuuX7_VPFEUnUmK84uM_y4UUb93Yp_2Jd4v9ZbcfZA2Jw8TsUaeFZtQMkFReMfyYESaPaD5gDYklBUeFZXJwhQKSTDzuQr_CS_sM4ibzlOnMZnH9qRWO1r4QL73KCaX-NuSxeUs49DerIV_2mlyhiopxSuzJixlg0EMexK43uCkuFOySlLtOle3LTB_a6sC2ZV",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJNwDKyL04zDERYwCwDpUJa5k",
+         "plus_code" : 
+         {
+            "compound_code" : "7P2C+PX Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM37P2C+PX"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJNwDKyL04zDERYwCwDpUJa5k",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 452
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM16, Jalan Rawang, Persiaran Pegawai, Baru Selayang, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2633907,
+               "lng" : 101.6548681
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.264756730291502,
+                  "lng" : 101.6561461802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.262058769708498,
+                  "lng" : 101.6534482197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Firdaus",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104668208148690697639\"\u003emohd rozy jiji\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vunNkLkDvDX79L8nwbQAnxdz3BoKi3GabOx9JjGSCFNCyYQqZzzomvso16OKx5e2lBFn9COIiCLb7aGX5yn_ayBBBcegj_hFVvDILx5o7wisTEuIVbx2pOsRcmfg89GOlRVtz8SW1EIKIO7eS2NahcqcQ6UVPy2ltAkPi8-cDKS2VO9R5eBOLVr5zTr1Qg6AViZjDPhRyLqI7borBfVaELIqJ5XA2aEcYHrSTKg84Q_upTVpboamoSMzg1nhpt-MPfiTtNnpVHZB5B9X1n9C7Bq4VeiuEF-Ak0sXrLNGFP7CO-5aln8knl5P6mL6GKmr315HsszvlmNPpsi0rlMRyulzp0JJYGXOhcmWtyRWXS63GAy9wAZmLFG2D-mnks_IlJBpf-_ls5gIRpewEbQsP1ZPkDXq5MfdFiM6RKpDKcK_5U",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJJxrFJ9FGzDER7C2bBi_zQjg",
+         "plus_code" : 
+         {
+            "compound_code" : "7M73+9W Batu Caves, Selangor",
+            "global_code" : "6PM37M73+9W"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJJxrFJ9FGzDER7C2bBi_zQjg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 484
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Batu Geliga 3, Taman Melewar, Batu Caves, Wilayah Persekutuan, Taman Melewar, 68100 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2201039,
+               "lng" : 101.699496
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.221348630291502,
+                  "lng" : 101.7008979802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.218650669708498,
+                  "lng" : 101.6982000197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau At-Tarbiah Al-Islamiah",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106739603730558126106\"\u003eRifaie Ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vUNjE9FrcqjMk7OMuun8nx8PnXYp8Gnuw4dRp4j7CAOpfNUhUpdM-iPAt0fwG26zCXm3YMoHJQ8pnPYQNEzUDmIysKn2Kz2-_WddkV18R9yiP6_C7JNn-K4xCooHGdEzFLHa6RBkLrY4q5kj_o-igbreuQ8inuaDKwTNWr1auXPybZbiNlbtJF30gdFZ3YK602VywVefJR5k_p568NgTkenbsUPdQIHq9ukHxGUx7EGHduW1RsEK__5IG8k9K1dhMnvJMVkPb2O6WUQl9iJrr0LmVSAnhXjqLwexwmDdzYlE7YltomUxVlmhFnsjH43ADexcvRUsaVqkypB2rjGQU0tsNDnDya7uFFxJ55gBr0P1xXGp0CSgs7l1vo1EoWUVaKuiVNyKdAEqLftLJTdPQSf1bUhFef8n2ZVrF1nsRMbLym",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJaZWj8IVHzDERsSb2U5JznQQ",
+         "plus_code" : 
+         {
+            "compound_code" : "6MCX+2Q Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM36MCX+2Q"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJaZWj8IVHzDERsSb2U5JznQQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 25
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Persekutuan, Presint 1, 62502 Putrajaya, Wilayah Persekutuan Putrajaya",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9360702,
+               "lng" : 101.689213
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.936832730291502,
+                  "lng" : 101.6911379802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.934134769708498,
+                  "lng" : 101.6884400197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Putra Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101871907543931816623\"\u003eAISHA - M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uNBWoV2txGa4zdhwR8zwFyxSQeugJiwHmweJRegVZwLES7YDR3zUqKNMHDv_6RGxgElfJkr_lywjz65PFZT5SlCR6QByDZZPNg4V-5v7QSq7kF4Y1tVCqRbRQPezkF_sgz-3qx7UERotKx5yfuDp4z-_yIIeCRH4sPcxibVz9RUQhxO9RF-k7gR8Pvzu2bOi6srhhYenX2GHlErRUFCPzGBaSWodkJ_IVbMWGT5BAn1m-jxkgbLftE1QW7M43gFVuHj9afCq5rnv0YcWJ5OpjEgV8GMrs7usYybnZnT8IDcGgXd9gSGAPoiw1QZBFvnNIMd28EttElrVIdaZIwJwl0U6sM-gvgdPqQYthQEecmY7TOrCkb8UYgrlELyghZDm9oGeT23UBlJbI3hZoiO23O3hk81yNLnZAM-4RhYH_rM5Op",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "plus_code" : 
+         {
+            "compound_code" : "WMPQ+CM Putrajaya",
+            "global_code" : "6PJ3WMPQ+CM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 23924
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot Masjid, Jalan Bazar U8/98, Seksyen U8, Bukit Jelutong, 40150 Shah Alam, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0995294,
+               "lng" : 101.5387326
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.100998080291501,
+                  "lng" : 101.5402847802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.098300119708498,
+                  "lng" : 101.5375868197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Tengku Ampuan Jemaah Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3599,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114150524797880295612\"\u003emohd suhelmi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukD-KvQe7bkni9iWGaetR6n0rqTo9gTyMw6T0KRB6H_fP0GVSgJ5KBLrVKLTnW6xfVa0vtCY0cmG5bYqXBc2owXdaT_EIalDY2R-2w0mJ1r9-s4TiSVX4YGTxwd-Ty4SNCY-ivYOU_Ksaj4Dpc18WNUCotJI17c-Fn8NTs__4ZWdRHEUgy2QsvUjb1yrkECCATL0oUUZyvXz9HqKAX6N7_sd7n9RraAT6Y8LMaeEe8hS5bdMbRVii6v6bj6F1ghwyf9RNnV8-2kfpLV9K5OzEXKAEEp11CIwEOLHObOR5jJVxxVMZkKOzjDyjVZa4Eordum7WJdS2NavPFbzU9z0w3vvhxmupykD91pyyc_rYCdlU7fixPRQVSfDxqNeRN_dAjZUn6iU7nF_zWhGQcl1Z1Vm9cCAbO_LzVSW-bNjkGAw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJNR5HhO5NzDERDyqiFbBtEYI",
+         "plus_code" : 
+         {
+            "compound_code" : "3GXQ+RF Shah Alam, Selangor",
+            "global_code" : "6PM33GXQ+RF"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJNR5HhO5NzDERDyqiFbBtEYI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4424
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B23 Jalan Hulu Yam Bharu - Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3125463,
+               "lng" : 101.6978055
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.313910680291502,
+                  "lng" : 101.6991100302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.311212719708498,
+                  "lng" : 101.6964120697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Eko Rimba, Sungai Tua",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105336118624380460381\"\u003eFarkhod Dadajanov\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uUWJqhNf_e04Zt8T6Mp-nvr523zSgbAOzhROuduJCzuELqOeaCjLTcPg7WmX4b5BjE_7yYPLFs8ZWD9-4GRGYdUJVzmboO-U-ruOug6GzTnUdUKhhcSIbJPeDmsk_Qv4bjuhZwAk9ZGYSWbtl3V5TotbSaovH4zKBMH0S8sFk1r_KVOTuGKE4Qx1O7MOC7PQfsmr0K0HJIY9Qod9EV14uea1MuaJt3zkfLFug1IJZO_Xv7phCuxV5_ohXuFWM-6c1h2xfH83K82Mkz8ingvCe1XGvqioVrPwLwyhM2f6YE0hksLfDjNmUOusci-LgKw90WlCjdMArua2WOYILYtlnD7MCcvjl4HC3MA0vWxctJUqV7N2HU4wlDcpKO2IajZTkMnjOpqR7HXrxv_3gR77lfqAtGNdbHzpD6blgw_Y8",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ2xGZnXtAzDERK_92fAIY0Ys",
+         "plus_code" : 
+         {
+            "compound_code" : "8M7X+24 Batu Caves, Selangor",
+            "global_code" : "6PM38M7X+24"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ2xGZnXtAzDERK_92fAIY0Ys",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1133
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Perak, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1489235,
+               "lng" : 101.6956276
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.150651630291502,
+                  "lng" : 101.6972373802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.147953669708498,
+                  "lng" : 101.6945394197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Abdul Samad Jamek Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 645,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117436491342451698773\"\u003ewsh wsh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vuFij1tAsst-18Dz00aRPHGJ98WnfhXF30phsV6GHxOcbtxsq8vW6ftXPjr8D7FyA8olX17SFTW233478L0F3M5UK0VVxd4IqDOYuWR67-_JpPTSR1xfo8GaQ3k37kqTDmpu35xDJ5jeDEMvBXmpZEeN3j50NRUg1fqyoSw47GLcteJPPHaFpZa5Q6UNorxlXE0xbqqtctaD8LNxmZqCUrjlVcrNWicmS_XD49SJQAX_3YG_44G-IpdOc9th8sJUjIZaVlMXgqXMX2SoN-tnqW5tyila0X70mp_xBDPv_3EW8yreyeEp2ZG4IruWRvHfSt6raaSGr5Jj44YwhY9U6PJtF28FNXDLe_g4De83tiVOImB5AUBcngBW-QY8FfSO8A8W0g2HbDCVG5UTf9TlblKt-ZNt2MrqJYnhvyGIt7oBwi",
+               "width" : 865
+            }
+         ],
+         "place_id" : "ChIJeVDgedJJzDERWNeKvpt8kIA",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXW+H7 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXW+H7"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJeVDgedJJzDERWNeKvpt8kIA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10763
+      }
+   ],
+   "status" : "OK"
+}

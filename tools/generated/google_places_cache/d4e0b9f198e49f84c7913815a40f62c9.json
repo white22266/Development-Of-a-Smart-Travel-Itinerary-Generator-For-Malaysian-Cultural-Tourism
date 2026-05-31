@@ -1,0 +1,946 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuala Besut, 22300 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.832914800000001,
+               "lng" : 102.5580905
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.834301130291503,
+                  "lng" : 102.5593800302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.831603169708498,
+                  "lng" : 102.5566820697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Kuala Besut",
+         "photos" : 
+         [
+            {
+               "height" : 812,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108349948294033898179\"\u003eHG_ROMO\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uWI-5rlDQmR13rco0xO1sIG9E408-4k2KaP3mLPAleCkiAoTosdBjld8RL0KNyefLbTwduzz-2oFZYkNF-6628WUdCpoyyBH6oPboO5XjFSwL8wWo94hKvB5bmbjPadZ1LoxQKzIe00Xd_q93vKeOnAwC6WatuwRK0d8-w3ojkHVxEqgRw6il8PsnFo7vAm10Rabx6mc-WxQTEHUoadJ-lt263gZ-3bCv0mshoxH3ZnFxbVYxSEWvijC4IPMXAPHHwK1-zz284sVtK4aSkzOkmfSGpWWauu4BPQwbTjl473VOViCmkAOGQ2WMvEe07uUxp2U_jz6pbr6zubrNchafxt-aLGIE5mGvqwQ499QGcEWqi_mxDFCzRherVAczXmSO-1ce_Ip2VvOcxFzYSR_yJukbzjiRgIqRrVkcWfN8",
+               "width" : 1079
+            }
+         ],
+         "place_id" : "ChIJTT0F1MjutjERbJasCfEBkVo",
+         "plus_code" : 
+         {
+            "compound_code" : "RHM5+56 Besut, Terengganu",
+            "global_code" : "6PQ4RHM5+56"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJTT0F1MjutjERbJasCfEBkVo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 169
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "RHM3+9F, Kampung Kuala Besut, 22300 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8332186,
+               "lng" : 102.5538486
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.834535580291503,
+                  "lng" : 102.5551903302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.831837619708498,
+                  "lng" : 102.5524923697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuala Besut Square",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116942689687257343712\"\u003eLangit Biru\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u_9zjy5qQtqvAPPtUKAxMoRRwgyhuJ_LPoiQGuCTZUXrT5D1C0Hq7gVdGNgbJChc_Y7Q8fDhFiB9d69W9GC-rN2iqvjLrJJle3VXYv6HIQDfW1JCFEyU-t2bg_RufOSg2_Tul_4WuHyhDqdBT514VZYUUrUvnY6BCDxHSdaOv5UKTMkqj4aqoxnsYRFe8IRnH3bd8LoCX9uIN1SdLPWIxrKxmtf6r92__lMOL9XYjH_yIB-JPnc1m29H3J3ZwyIJxhguVbdLq8YUR_D1vq3CQStiHVhkikYf9D3iftyT5FZ6Hk3n3JYSzbKfPPWGG6mYclfjtgR_KpvNi5VApbyHn8JjfQjsoPPPObojlE7w9h5zqGEUfttEOjt4xmJWYs3ad5IuSbjfx3_bG9dkGzFro2ZDSvQ14fMG8IC0cWg_5FwhU",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJt-6zZ3_vtjERqUeShOD1EzE",
+         "rating" : 3.6,
+         "reference" : "ChIJt-6zZ3_vtjERqUeShOD1EzE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Jabi, 22200 BESUT, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6390782,
+               "lng" : 102.5878888
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.640456880291502,
+                  "lng" : 102.5891947302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.637758919708498,
+                  "lng" : 102.5864967697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lata Belatan Waterfall",
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104113387110074907089\"\u003ejeffree ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-teMwxG3KrDr-g_tXQheIJgphKoMGfqCp0tbxv0MPACOexFXYO1gMYs7x51z9I8GPeZEUh9cUD7BIpdjtKLmkVD8TCX9GqRtQVfBc3yIZmGYgMkhXLV2R-TjCh8xtpqhFF30p0ffzxnfm8IMi8bzU5XAGEm6hHm2MYcgQDuFHHJgk7ATp_EGVFaaDeDhHPRIGOtpKtBt3tnhtq2zc33g4jAuE6BuCgqJ3kunYkZBq7QamQbl_7gj-iQ3wsCpVF4IUS_SFYFkXjApDGZR_9PPaUDpmolCKj6qOfOc9LgnHezrDODKz90rZw4qtt-wDs3e2I7fhHAGX2UGopkUf5LrOuFYCU5LifP5X9Sw7eMy0o8vJG-STdO8_GUYq7oVWTvvtw6TnF0kqge29IFcSOeFPG17_rcAMR_UPkC4ztVgx2RgpK9",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJ3b55rgj3tjERrDLIRqmTzC4",
+         "plus_code" : 
+         {
+            "compound_code" : "JHQQ+J5 Jerteh, Terengganu",
+            "global_code" : "6PQ4JHQQ+J5"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ3b55rgj3tjERrDLIRqmTzC4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 413
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot PT 9578, Besut Paragliding Park, Bukit Bubus Jalan Ustaz Asnawi Kampung Raja, 22020 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7883197,
+               "lng" : 102.6189616
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.789042030291502,
+                  "lng" : 102.6204281302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.786344069708497,
+                  "lng" : 102.6177301697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Besut Paragliding Park Official",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1995,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109705344726858174870\"\u003eJenX Kyle\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vbdaP8CsseRw77b8ymk8H8rdqHX0FJhEkxIj7Q9bN65y8HaABINuxZWSnxSq9fWGmJEx8Ih1wJWDj1Z4L673pEHFRdkX66AEuwQPZyowOousXjhbbMxEsiCQxV7prE_T-6ELFbvOz9QbhXSrIzgQpM1Xpa4H5HUmJRMovNsyWBMHqH-rreKIyBNFAzsrBcrghWkCqfoyNmfNUH8cqMUpm2BR68TRkv9m337f8dnkq2tbzAzL2OvFfoT5VYATtqY_OzreIViBcjz2NF4V04PCwQQXrMBvo_-TddAbrNeJzYL4Zb_bS8KdESAn_St8sIhuc1FDValSREJ2W08bS084tN-jsA2GOKABWL0-BUCCR9iqrvvpqJhm03ZN5fB-bl61BEFkb01IlFQkuw9ZpQrFxHuY8DabGTMut4yJiMfyGxCg",
+               "width" : 1125
+            }
+         ],
+         "place_id" : "ChIJY21IMsfvtjERrJ6gF5fie3M",
+         "plus_code" : 
+         {
+            "compound_code" : "QJQ9+8H Kampung Raja, Terengganu",
+            "global_code" : "6PQ4QJQ9+8H"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJY21IMsfvtjERrJ6gF5fie3M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 94
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Pachakan, 22300 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8399288,
+               "lng" : 102.5333019
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.841266130291502,
+                  "lng" : 102.5346395802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.838568169708497,
+                  "lng" : 102.5319416197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Besut Archway",
+         "photos" : 
+         [
+            {
+               "height" : 1099,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107341683449014329348\"\u003ewan zaripah wan deraman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sSjNk8aIQihds3XAozgaCADck55y6CupaFFIYo8L16QNx8t-Ve6gsOBch2C6r8sxHMncv5idZrWbFzQrmIQ0BPGAruy8NXN9lSqSwSiXhtKWCCKPYL3XHPYZLIe7qn8R5pFh2NBHiNr6zeHJ6YIkj1QmX8L_5O1ndu1oLo56t8Rb_6TkESGPV7dW-QOAtZMxe7a6mOORWB0ZzDOOwMR7Nd2W-tNtYvHmSPlcbmQiPJC4QUpRy9wzM9L70ccgxtkWcneurVM74qnU21eU7Zjx90utnDH3VdPw3Vl6Vz9vXjsKrHur1DPZtFez4-QvdteJVSyIBCw9JXjZv2sqT8Ae73Sgt8s1La8UE821EsS9KOFEBb0qD2V6bdG35w48JiAUY0fBTRqxvXHi_HE3bMFMHK4OfRl4AGOLA64x8YNgC-iw",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJo-RzHEHvtjER4zu-t2BsxyQ",
+         "plus_code" : 
+         {
+            "compound_code" : "RGQM+X8 Besut, Terengganu",
+            "global_code" : "6PQ4RGQM+X8"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJo-RzHEHvtjER4zu-t2BsxyQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1941, JALAN AIR TAWAR, Kampung Sentosa, 22200 Kampung Raja, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8259778,
+               "lng" : 102.5707646
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.827211080291502,
+                  "lng" : 102.5720796302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.824513119708498,
+                  "lng" : 102.5693816697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Air Tawar",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112682939809610178111\"\u003eBp Channel\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vwyvzm9CZTV1K6NYgfUF_4tZsZW6JOiBPJ1CKmWUWgVq_vTvkvDwhgmq_Bi27baNU-9LUAROgqWy8CcIzdkZ79g97wucTIpDpHaL8oBy0zXzLM5eHQPFU0ETw8Ch7UeDrIaMArVOhUkfhwUIlOEgAyhLrWORo2hUFBk80oRFSXVGPBS9j1N-EtwAcWyVGuUO96WEgKMXtzql7rJah3OdRmL_S_GZwA_9iwt7GezLJQmsdCwzkfLw3WkhNMB9ZtmWGqc4__hSg7BsW3HpRVx2WvU5X8bkZWC7Jx6OUqDzugSdKAy6fGcWvwDdz9xRfzV_GsQQeeA1b-k7UQtJpIZPvOH42e3KI12dJr5J63vo_L0cL3gASzsRz2VEn24LDbSx3f0vflKP_rhdlO67TTlY9NtmuMm6m4_UhukRkCeBY1qQ",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJAQAAAFDutjERbQpmdsad_xg",
+         "plus_code" : 
+         {
+            "compound_code" : "RHGC+98 Kampung Raja, Terengganu",
+            "global_code" : "6PQ4RHGC+98"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJAQAAAFDutjERbQpmdsad_xg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 768
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "22200 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.802432,
+               "lng" : 102.6033696
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.803582480291502,
+                  "lng" : 102.6045479802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.800884519708497,
+                  "lng" : 102.6018500197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Bukit Keluang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109283778729885805175\"\u003eWinzy Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-siRehXcVglMV-kvGOzxE7zf_qAIpT4-Q2lzFRspDsHeBWiHQ2HXLSRcNB13ZsCS-cmyiMgxgKGGpR4aHl-Kzce1gTlmjCtqyzX04lwM7hfcjVg7LvIw--oozPUTIpDCRj_Hdi6AvFAl3CAug68sTmWkZM9Ot2hK-6bV4G8ApiHTDWdTFjmGpDfh-8loZhNIFrcweGR1Di10SFS-LX0NUlYNszMzHKhh_EwIOU6HxIEdMbazmmkv3IRAluXUyZ8lHvV_vu48qVgptR-E7BZqdOxdZFxtPybbbl7b8V27A1f0Uxxvjo-kJHGcAErfcpBbiSzYR5iqFE11F49D_IWTDXMe0GQORxOwLRVWHM12Wmar7dJrb-a_CxFlua_5_Xw5LXG8TgozO3kqoZCUJl9x3ZjQ6_mK3-htx0ZN2l-LYg0Rw",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJ_f0XPHTvtjERH9SCIsVt2ow",
+         "plus_code" : 
+         {
+            "compound_code" : "RJ23+X8 Besut, Terengganu",
+            "global_code" : "6PQ4RJ23+X8"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ_f0XPHTvtjERH9SCIsVt2ow",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1658
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.902313899999999,
+               "lng" : 102.7152757
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.903662880291502,
+                  "lng" : 102.7166246802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.900964919708497,
+                  "lng" : 102.7139267197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rainforest Beach",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105290223112977991371\"\u003eDavid Pérez Bayona\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukpB6KEb3b_nF_hlAmZYqBikX1LeJos_EdBf4D1bycgYtP56o5E0wl3eH0Z--OBUWeSF0_UKZO6gnm8js7EH1BYkaXTld1W7tpd_vzDk6g7pmIQMQYlttKvg-mRoMKl7q7iir1YX26kbzWthYyBr1Mq-WTgK48E66-rFVkuD04ob8S6XD6qvYkolm1xGprjcWOZP9NgGiRtNJxuAc0mFSpZfrxceILrcrdii4zdr0KTwjJAeEnGA3LrbrkJ5mBceYIVP3j3D_qeHVWo5hCVETSoSdF_KsM2EqzS3OJHQkrlBNRC3NUKc7hf3_rmMRGlRsMrzh7sc61T-svwuzAWkBXeyXORZIPwPXIJlqk6FbJI8MsleGK2g_Zy8ADV3c6YCcTn3kDo5xSkFrD8R16bJGuKjubdwAlPmqkOqOB-9Jivw",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJhxhs47TgtjERf55o5GRK6CM",
+         "plus_code" : 
+         {
+            "compound_code" : "WP28+W4 Pulau Perhentian Kecil, Besut, Terengganu",
+            "global_code" : "6PQ4WP28+W4"
+         },
+         "rating" : 5,
+         "reference" : "ChIJhxhs47TgtjERf55o5GRK6CM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16700 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8543397,
+               "lng" : 102.5257166
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.855719780291503,
+                  "lng" : 102.5270940302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.853021819708498,
+                  "lng" : 102.5243960697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sunset spot",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110388512602608271138\"\u003eJulian\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uDUCNf9q-x0NGvKmiVemhcSjUgdyPVkL7tEd23vJaP-xP6cFr8Qg0_y50cB_M6qWOKuH8OhIwZMQfgvzfgfJ8Pwp6a_11vQ8GLNxqDxhekSoHN5COjZywBZbf2pAUmLybXMMSu6_Gc-O-zAb25KQjAKtbkSICOoSwYD_h-iPjRU3z3zxPql7_-E1vEDv_FVUExW8R69NYXplNJsbBIQCV9rsfdI9Y0-dG8lltn2rj5Ev_UJH7zRfssWAK5ait_mCK9xxt14gp_sH-uYk2t7PvluR37xpVb9eakg-80bXAVn9FHrZYDGwcAHCam6YrRSwWCnVVPt9bozkFMyGC_xyLOIBMPGoOFUXx4Q4mynRoG41KVe0pTzsRweiaJH9ECVQTvz69_AWGemuZAPDzYBp2B8PMHczaJaS25WuxigTr8r3k9",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJEfIVCQDrtjERHtP1RAwEU_g",
+         "plus_code" : 
+         {
+            "compound_code" : "VG3G+P7 Besut, Terengganu",
+            "global_code" : "6PQ4VG3G+P7"
+         },
+         "rating" : 5,
+         "reference" : "ChIJEfIVCQDrtjERHtP1RAwEU_g",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, 22200 Kampung Raja, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7956051,
+               "lng" : 102.6124965
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.7956051,
+                  "lng" : 102.6132403802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.792770999999999,
+                  "lng" : 102.6105424197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Keluang Secret Beach",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112540479713220042947\"\u003eHisham Said\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uhX2-daq7EE_fCmk1v__dsQ9PmLv7o3Ynnc7jyIwLidgiEeYKDLWJ7DLJbT3nn0XY1aK6POICanokp_F-z1v7nXJp5X0ye5x7BuSpGFkzc5bHwchJ3sVuybSPBZzAKU3lX_lfXu7idv7TCDmUFLKi_MAKJEuJAB6Jlg32-v2mU4HYXZGx2brRtVVhcgcpLXzIqjRTYqWrkgieZfEWe8HX0H0mqJyr7hOpFRCfVygcuBY06as3RMAgVH8mRUTFlYp9YJi4eyN2P9vzMKRlxnl1qz9s8xxwmS1lge6ozK5c0-h3pb1nyoLOW31IWiAMJOzsbOx2fiPL8uxhmdZ7GGTHWqqKofAB-y_1lTkcHBPf93n1IOSvEO693VUl9yZyPcHcgt9ovl0eJDexM_46tKE4VGjjHvJ-hqyOT7lre0wUHkd2u",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJqwO7ayjvtjERrB4lSz39PDQ",
+         "plus_code" : 
+         {
+            "compound_code" : "QJW6+6X Kampung Raja, Terengganu",
+            "global_code" : "6PQ4QJW6+6X"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJqwO7ayjvtjERrB4lSz39PDQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "South China Sea, Pulau Perhentian Besar, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.890794,
+               "lng" : 102.7581089
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.892142980291503,
+                  "lng" : 102.7594578802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.889445019708498,
+                  "lng" : 102.7567599197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lata Air Berani",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108051276079010085823\"\u003eWan Safiyya\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-svHr6_Uh3Mlc9EM2PAfhrTVJTq4XQJrtt8ztd7o_NrkLFKzusLW27wdQZySci_tOzrE8W0zRsfWHSgQQWJ_QxzksaSiMCL_EvPfm0Xp6LtRstJyXR_eR9-u9NqVYUG1jKKgUKQKnpb_ReqNIvIdih5-E9waSdGpI63WFB6lOQ7XfhgrlZ2vNlP25zf9CdS1j_DqzTokc0-lOlRMydq-LJ5xayjaz0x4zCU7oCPSPUnC1y6fm4VzzffXz7IGn9h0flUBlsXCaFpGheDWaazo5RwaxLSRzQMAU4Oq_IaIRKGTc1MfwsfjZjpfvLfMmvsWK4trtVJZ52NFmPcaVlkIcOxtF8WXsmKeGVt2DcNTmyl1mhQBoU1tET_Uks-wPQz14y5IcmaFvg9g6xvIcU5ZLgWo4XhklED3lwy7xKEUlXuv-w",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJzZ9ONfbgtjER3KbFIwX6fIo",
+         "plus_code" : 
+         {
+            "compound_code" : "VQR5+86 Pulau Perhentian Besar, Besut, Terengganu",
+            "global_code" : "6PQ4VQR5+86"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJzZ9ONfbgtjER3KbFIwX6fIo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 220
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "174-C, Jln Besar, Kampung Kuala Besut, 22300 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.829671100000001,
+               "lng" : 102.5568212
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.831021830291502,
+                  "lng" : 102.5581708802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.828323869708497,
+                  "lng" : 102.5554729197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bulatan kuala besut",
+         "place_id" : "ChIJq8O4MQDvtjERaDZPb8PI0k4",
+         "plus_code" : 
+         {
+            "compound_code" : "RHH4+VP Besut, Terengganu",
+            "global_code" : "6PQ4RHH4+VP"
+         },
+         "reference" : "ChIJq8O4MQDvtjERaDZPb8PI0k4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "13, Jln Pengkalan Gelap, 22120 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6719791,
+               "lng" : 102.7177691
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.673246930291501,
+                  "lng" : 102.7190584802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.670548969708497,
+                  "lng" : 102.7163605197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Setiu Wetlands",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100964331226456934731\"\u003eChee Ming Ng (Eric Ng)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s0DZ7BLIQzb8WmBZdxudCXzYWyHe3dabvVLZuxw8BcpenfanmemUQPGi0rYJHZMcfrufpzW6BnZBsHn0P-OJdv9fL1yKS9tmJq5Ey4tmGS7j-uIAvTgqBOh6OUXpB-VkGiM31P_66Ei3LwqlycZV2EL3TKdnvpm6DMRkUrdY1Oi4oZ2H2BIfZoUiWgDaZjgEwDIT6B2EmAsdTxGvZeQ4bXzw6-mY8b7moVo-kR53UWK_6R2LK_ToH03hQVvoOikFgli0c3jfdQiLf8V9_0FiaIlKaguldYiDWWPZgYy5qdaiRwBQ4LAnNs2DIg1XFhjuqF88TV1mPgebgxd_XjFFtTOF9C9PcX0OdZkwbJ8oJrG8m3rUBKeAJW5glam_RhR7hbcfrgzjjDh29oU7JKPqefxBG1UlYUosk9HpFKF4WYWLpr",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJMwOOC4f_tjERdLxxvpGluAU",
+         "plus_code" : 
+         {
+            "compound_code" : "MPC9+Q4 Permaisuri, Terengganu",
+            "global_code" : "6PQ4MPC9+Q4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJMwOOC4f_tjERdLxxvpGluAU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 222
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuala Besut, 22300 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.828590699999999,
+               "lng" : 102.5542305
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.829953680291502,
+                  "lng" : 102.5555582802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.827255719708497,
+                  "lng" : 102.5528603197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bulatan simpang kuala besut",
+         "place_id" : "ChIJV5ExFAvvtjER-DLr5xGP80s",
+         "plus_code" : 
+         {
+            "compound_code" : "RHH3+CM Besut, Terengganu",
+            "global_code" : "6PQ4RHH3+CM"
+         },
+         "reference" : "ChIJV5ExFAvvtjER-DLr5xGP80s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Jerat Cina, Kampung Kuala Besut, 22300 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.837488899999999,
+               "lng" : 102.5447462
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.838558080291502,
+                  "lng" : 102.5459574802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.835860119708498,
+                  "lng" : 102.5432595197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Asal muara Sg Besut",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113059577099047047918\"\u003e3Q Homestay kuala Besut\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s-7sF8W6UkCcLU-GCvHWyhcf-RQehqj6vhss3_k-EtsPezC8931oNGNKhbufeoiuBL60BmcCYbL7nMMgd9w5H9pc9ssyLiX8hiO0FUzZsrvra5tf1wshGnr_kPvsk58LC-oTT-I8gZ5E4segwPhbTnX-L2J-t3VMmvrGmPweqpCCqs8UhKsiCV6-IbKH3rMpd6F-nx93euaCtiT7jzDlPYjXjfKH-YexlFChNF6FeE91KxpueY2taEA-veGGiMqp9MnGSp3DUuCECLtzFc0guCkn1lvuNuCViQLPU-SmHBVmaMLNyI3w0yqOCHtLhEWQfklUetLG7O9FHOsyvM6FKXxy8Ea6q70qdjVKXW1S7OPxZDJupId1JCBUPfZDdyxbDpizuOtbpm1en5bl-TJIsj_FMJYFmEzP_C8MYtkE5Ydw",
+               "width" : 1824
+            }
+         ],
+         "place_id" : "ChIJj802Gq7vtjER9QhsFrokJ3Q",
+         "plus_code" : 
+         {
+            "compound_code" : "RGPV+XV Besut, Terengganu",
+            "global_code" : "6PQ4RGPV+XV"
+         },
+         "rating" : 5,
+         "reference" : "ChIJj802Gq7vtjER9QhsFrokJ3Q",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "102, Jln Besar, Kampung Kuala Besut, 22300 Besut, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8321683,
+               "lng" : 102.5541849
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.833540830291502,
+                  "lng" : 102.5555050302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.830842869708498,
+                  "lng" : 102.5528070697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Tasek",
+         "photos" : 
+         [
+            {
+               "height" : 396,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103667907693741981452\"\u003eSaiful Nazli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vtIWOWhVxrpMLWXtOWZWM3kuCe8PkBXu7iAeUWNSb9FYcRiKB3Ge8ME9WsZahWxlx-9vIHK7CDHx86MmsLOgFbnlhYFOO9Eo2CfbLe-G8m-XqtIRzykIz9GoGXkYvIYQWnt39IFeo2cBq_gwNhd94_g-B-xusz-kYqaYKR7-aZadrAU5rI8TUMhMJzd58DG2ywnPkJIPUjXhQECQk45aTysQ0BH7AsWDAoOCyl5-QSM6rp4iouEeEnO_ek230sXTtj2wJ8xquEt6Oju7bu9JLJj1TyvPry4CLs47yn6Wqw5emybu8xzJPI8IVQgodyugtWwjfwMUWzFSuw5bXYMujmGlaR8et6mf63hih6NWYscbuTIcrHin64ZUvJXCAbkAWQcGniaKgpbzvzk-dEu1an1tqUocGu-LPcoQtu1XVfeg",
+               "width" : 720
+            }
+         ],
+         "place_id" : "ChIJ____P8jutjERcMlcPyPdrGk",
+         "rating" : 4,
+         "reference" : "ChIJ____P8jutjERcMlcPyPdrGk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "JKR 17, Jalan Tg Long, Kampung Raja, 22200 Kampung Raja, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7990149,
+               "lng" : 102.5618077
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.800350130291503,
+                  "lng" : 102.5632075302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.797652169708498,
+                  "lng" : 102.5605095697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Balai Budaya بالاي بوداي",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1152,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106890129885830164993\"\u003eMohd Ariff Taib\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s2DaPA8nBjUUUiRke1KUyouWdmOQGBxIIxhe8QEuL2tU3fZcr99IotMTIp4oD_svbcVoGFbiHNJAqWZbgj_uJsMYSsCt4F7h42ppA0rvLAPUa7CVILAhteyrtLAMTPQuKrniG5VIH99p5xpX-Cs2JNDrDxRiqWVDqbVuG4jedVa9C-c-EpikSYNQdwn-FTXpPXsZUA61pomB5rfmCRpCiOUKvhFIZW80HxTPLwWCkJbfO2pebltk35zfw2_lgyy4sQOZyvUmXEiQD0O2-xASiG3q8e1QDhO5ZgcbAJyykTcq77VZOsbw2YRthT6vkwAfCdO2ftv9io2NJmLf2m9WqUeHmpflsUkkWdpzCnIQKTk1J3VEXbV3UL1JrE2fw12_UrG5V28KzDv6Lw3Nd_NSihGSPqQGCSdL-WUGU1418",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJpejU2prvtjERTXcJ8GTHwp8",
+         "plus_code" : 
+         {
+            "compound_code" : "QHX6+JP Kampung Raja, Terengganu",
+            "global_code" : "6PQ4QHX6+JP"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJpejU2prvtjERTXcJ8GTHwp8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4
+      }
+   ],
+   "status" : "OK"
+}

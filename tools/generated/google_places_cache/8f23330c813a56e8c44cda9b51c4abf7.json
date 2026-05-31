@@ -1,0 +1,54 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "G6VQ+7F, 89650 Tambunan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.5431602,
+            "lng" : 116.2386483
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.544374430291501,
+               "lng" : 116.2400873802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.541676469708497,
+               "lng" : 116.2373894197085
+            }
+         }
+      },
+      "name" : "Taman Rekreasi Noukab & Tagal komuniti kg Bundu Apin-Apin Tambunan",
+      "photos" : 
+      [
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101465392147565381571\"\u003eLucian Jupirin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sUm0INv9orwkxmFZ-o__a2_hSQ0SZilb18N9mE40i5K4RPTMMNao9-9hsD-bBQ_mZJqPWAdAcuYtwqB8X8N6UH9u_a0ZSWi6d9MwqArGNfNkvJBZEcmuwFYI4mqVOE_HoZwa8GksamyHyvYgU89QpXfotMbUnQt7plY0QaAy3UnxxC1sy33ILux6tHr_J5vq6-XSQPxXkZUdaXRH9h6HHO5bDj8kuyK4EOYiwR7Am5WDG2QF_72cD1HvAuCXHhhRoAua9lWGxH1m0MikOrMfgV1-oOlr0m-B79FK5iDLGG2BsSeRQHE-RYrJj19qIZCBrHjK9X3qSYnCmNx-6vsm7ZRTqbG14mFslpLsw6IWUTTk1H9HapEmXnpMoFPdjrC49QN-zCQ-m2dm0IRCxH0MoMdaCxWsk4GhzE1ZdNj8poRw",
+            "width" : 3120
+         }
+      ],
+      "place_id" : "ChIJfUjP1RKPPDIRWIjpiZ_4KRw",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2029426471204391000",
+      "user_ratings_total" : 1,
+      "website" : "https://m.facebook.com/Pusat-Taman-Rekreasi-Noukab-Tagal-komuniti-kg-Bundu-Apin-Apin-Tambunan-110391088142340/"
+   },
+   "status" : "OK"
+}

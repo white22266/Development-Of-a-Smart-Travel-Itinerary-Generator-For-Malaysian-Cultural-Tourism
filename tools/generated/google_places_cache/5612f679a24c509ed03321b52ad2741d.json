@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Makam Mahsuri, Kampung Mawar, 07000 Langkawi, Kedah, Malaysia",
+      "formatted_phone_number" : "04-955 3515",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.3387083,
+            "lng" : 99.78368329999999
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.340037180291502,
+               "lng" : 99.78484143029151
+            },
+            "southwest" : 
+            {
+               "lat" : 6.337339219708498,
+               "lng" : 99.78214346970849
+            }
+         }
+      },
+      "name" : "Kota Mahsuri",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 6:00 PM",
+            "Tuesday: 9:00 AM – 6:00 PM",
+            "Wednesday: 9:00 AM – 6:00 PM",
+            "Thursday: 9:00 AM – 6:00 PM",
+            "Friday: 9:00 AM – 6:00 PM",
+            "Saturday: 9:00 AM – 6:00 PM",
+            "Sunday: 9:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117415967000735090090\"\u003eWan Zamir Zakwan Wan Zainudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5dziRHp8PRttUyw3nKSFkdtLLdN1Whq2b4x2zPiCbhMYehRut6ZnJE4tIcpSJvs3H7MHJWAzD72NT6X6PyYe6KUHI1y-qz50ANOF3n2EBWBqVHpz1ApUEas6-tLzcj_pHagE2YU19bRVkvCmvFbi3cBtt00OXRFdjrzF6FtuhJWPR-BmWqWaFaOBWf04ZwU-Sfnei5GIZFPP4TLysERVzkHDCjkmLofxwoaE6HOaT2uifKpdG1mpdjM8M8FS-WmsiJ3aomxNsjgbT5vy78WyMegSr7pWWcpMibdB_zxjJcFpEdMoF__jYmhxnecswpkfTOP5a8kCGAosQ9Gvmc-ioqD_c2bMhrrr-Ed_3LqYEG8g9wAXd7cAzPxP4ALYSpxnij56uJYOYSZLvTHac04dwldA53a38yLI4_FJTP19HDA",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106174564737518464234\"\u003eAhmad Munzir\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s68SztlH0Pn82tgK1SXl5jTEC1YsmaxtZkamfSnU03DCBEqsOy65CZTD4uUoDIRl8J4svk7yNs3qEPdz2GCLZLVn9ob1jCwfoqRQsUpNyCLyUknszX2a7g3gnKN40f4lLNXF9CNkSlN7totq7BNWo11BPrszGPmmqdpaUfs5btD6VnmEDhDSYRixkjQSVSTemlpD6fg49m5Cj8G7TUcBihCNVLxuDa7CqcEyhi43hW0b_dqEYE-blxNJwzh8dyhte9GHgDs4m1hLSu2DQZmWC1dAYwo1nhkzqX7c5WGSAtO_2WbHeagtF5fk8SNc8XMcIjFv5CJRS3WAzdsk95ZycCEwsZE7AD8xxfe0O48orAFwg5zU6mRkFL1bBMutD-1YVO6Iwu8Ym9CxvcLGHtxGFhZH9kPfVgjoBLzW1OYkWobgoP",
+            "width" : 4032
+         },
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106066906618334722008\"\u003eSyafiq Hisham\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5vNKwjWMibBekIAdKu2f5IceAyW1BoEJls0M73Q9gMeVgBAz0qw5eb-6TMpci3icfTNQYiynXOY64Nda9fixor7-xgftCnw-gB5N3e8MkX4lCwu235LM6gKFc9KnjWmECVFz9XOdtbMp6uHHNvn4kh7BFQWioQ-zX6yCd9xWiLV3T0jUU2h9kgxUXivh6xR6Ei-O7jikNsCUciTyd75-GxJkSALfo1locJUj4gb16FOtzxRSWykH42fBIry6oy9WTa2Uem8qns9QBU1Q6Z0bjg4cpr-08YL-i52V9awhRwkZByTgUNqigAkvEYqqTLDSwIXO1EMfSMzsKMEEXzYu1MAqvbY5klOAmAgJgP5IWurVQCB97CHt7lsIRpDQYgxnuDnjDU_gREZ0IFHZzeeovxY9PnbrzfiX3pWBEGMQapzNI",
+            "width" : 1024
+         },
+         {
+            "height" : 1944,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118318227659959314189\"\u003eNordin Yusof\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tSYXGcubDQzXBTojW5kMb5EWAPvY6Cokc0oas3yJkTZBGiCWHpzstCz4ehl-I1rNAHOHTiYpS9-a9Y0CteuGZPTzBkOsqhkvK-mzUEahrwB_GYcQoL2TGpjZZYu_uafgjKHTPNvdlA0-ZUt7SMbKB1W25te4FrnBvuIFzde5H1fhWgssaOg5WjLnWORp21_fOmIlD-PjBltl-2bRakjA8tXfojSMaTlrgTE8VXgzpC3uY2SXVAlWkkzYTpKLCqPfrBb_Q1hZx4hAbDAW59MrpdG44EY787mSKpN0XC9Hw0OWIr1d7X8g0-Pj_PZGsouDVJn_KmWKuusFK0E8AIwm7DO8dmrfLMVKblg1dWn7x0h9-99ZZaHaVd8-H7wdIoYcdZaF3D999AhRUoKK5h64DZ_Odocfip8KgJrqDs31c",
+            "width" : 2592
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114572460407991679427\"\u003ePollakrit Toonkum\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sih11g1CeAOxNOX4uLl2GgBNO8RZIuiMbNX9BdiRIpWiB-c6c1iBGjW32D3q68QS-HrE2Z7bztIXocdBgXg6LSZTgGzxplFH6hmAelnRYgbKUkg54sihyL3QRNmRKSe16uTjD0ol4iyT-SoTlyj02Sb0AtQ1g96ZDr2M4BVak-rTFNdifVKq-rbp4CmY6rEdna-KET9weRxSo3m3Z5WI8Gf00D-CzNNgLmlFJxYIMFaYNy0hM8D5UEBhlSPI1zJfHQ_hksMD8_CzMUg9irkvf-pGjViSHPGpXVii9sb3-w9dvjfGbq0noDHFWEcpjuQoX2y4NH-UwgHnZFBVIszXqDWYtdTRpp385kmpVGMqTzNW_HL868qSqFfr7Ax85aH7IyQydgYHyl73QetBipKZocmcpt0_gGLyuOOAfxGH4",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101148075110196710255\"\u003eKembara Cikgu Hafis\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVw-K0E2bnzfTpA7ICixKXnJpCSpk6EBvm-7B5tDljm7Lh-Qi4pe8wM_QBfUcdjBbIke4TMrw1bOaK5pLHqcHFrfKm0HZqrWt3BfiSVxgbRMhnnRwwJfKwbi6H5RnLqxNMEBv4kxaMjVBB_6qzEnxebtMwJ281676HJtfvPgstS8szkhjWe_bS_mz0Ev-9HKnafiZCmY_luDa3uHsg7TQEv_J35_fe5SdpFZeDHX2hhbXLmdrbrRU78pLCuz0ss310LLCEbWoZsx03wIES5HWJxNDXWLGITQHScs4NoW0geZowgMs0PPGGDQLx6-HRR-6A5iPh1RQBtMBsOFgR-PhWtnsvHGZSIf0Zix6HOnCfer8N5ScPFxmHPpG5TZbcZ0DO7BiS9uSKrvPVLOuMSLkyOJZ4jGI5qxJvKS6ic_dQvWw",
+            "width" : 4000
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102737934037671465087\"\u003eMohdNazri AbdRahman\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgnAFsZ6bUIaZzdhOpReZKuxaK1Izk8UCBtRw4nrtah5ubtAGfNBjhaIoEZK07AVkFbedT2ucSVuyF0DSlEAa_KEWBzpxShNYIGcM4SIhggoQ__IsDg5knbUT8G56gI7dMO3wGL9JSiWlCktkBQKrTX645iVKp_zA4bdvnBQUjfjMjTGQKUYz-Ssbu1CSCdQ5kKFW8_5oO5wnAK7caAPjPofg3ls2H2Sk7sBchbEK2-UIDV2Watyi60N6xdGknJSQ56sH2staDlVg50-6ibM5-ggYbml1DJGiJtM0QJxl917O1oYO_B-mgf6T_bv5ELNnIEdP96H46XUOTZAmwdDXnDt3w4FQ5Fc5Pjx4uzSelmSsr-16IiDRFWgzBgKHp-03KByTNF-6c0CJdhVQhdu2QI8XTj9c9JwV-nKg5549KJkcA",
+            "width" : 4608
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103101075711383063208\"\u003eGn eup\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uNUPlvogXseIM2Pr6rnAz6MiLfLAHg7z5iQDpMPIuiLYhfxhliGCHG_elIbmoIE9ZNmGANed4ewrctX18D2i9RwTJIX7PHQlOMkI6Ns79YDHuI8oNmQMQYv1IWG_hIX-lDAOQM52m7OGy3sLFudDMRxl67mQBBrhtYDlRnpgoTCXc0DjXQhh0XimS0aFu5f5Aw37VwPQ8mDarYNRgJXpJGpPAbOsTnJ6F4dXmHmsM0cAUYO33H83TZVFcIDz9fj13xYVr4eYcLt5jxJhYIWnIzOuo7fls1HcWKXpbfP-OBt6vjPasnab-2hkUKippKv6txet3RZRebALjGzMG1oenlTJEIToqrJ1T6Rukd9-HrAYR5NR9lOtf0hWXSKcFCz8k5rfZqcCCoelgdEitAlSj9T9OhQmiql2CpW4D3wFUpfYYT",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112861222927029485305\"\u003eWiljan van Dun\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8CZpQB6wcvt_L8_rG621wp0il5xMsBfwlvnCMGGkq9Mu-vd5kSms74GK9FxXcKIIfsGhgpfi57Awauex6-BPAk6npaQwFSZ9adwPxnR5FNDEjzl6e8imz0gnRX4RgjpvnHXqt3S1ON0FERlxaWrBwMTpuwwpb1rH7sp7kEBpPUq5-GIqu__x6TGgPTOLhI8w4RD7Wok6HGk0lzQGMGIrWd2zW_xNnhZ-oqiKZXtvWlddIfuchci1AXEx-N2YP_5LbBsnarRR-GDZvr_ykyk1ppcnN82a53Qa8wNIKfh1-GWwJYGwDDTJfwMcG3evCrK5D_-u-oUCAWv1maM5rqnBt8BQHSfWGVAjvYKDUJ6sVnFa2rMJqyGzJPZd7zZUTqMzSKFjipW9isON8-dfLJOidE2tL0Pp4xjrn6y5pMVx7HeB5_p_IphuUZVv_tyAU",
+            "width" : 4000
+         },
+         {
+            "height" : 2675,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102893128978292478346\"\u003eMuhammadNur Iman\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s_OXo8pBwpzzz-yEyTkNtDowJ0TZMSbeUGo-QWbEITEvumZr0sM0OEOqhCZoR4HzXaUEaynBwmo5X10eX1XsjgHkxFl0rn1sqswmKZ6WjC_SW-VvRE9GRSkyTG7OCocg8_nGJRERJd-hN7PqPZPMZeQAIoscCxIIQray0xttsH0Z2eNJKtJ-rbyXvGO-DS_TZo-b6-UIYBUDAHXxHBDWhFx2hOWABxMoptAANltRmdekd1sC4QFFiCQV1D08CvgXQa3S8TD_iDBofk9UmA3rVrnyjlBpjM8dHC8nwXwMf2Gx2nuJCCt_yHuX8sXYDwcBHSZ6K_MWKCzXneQs-HcVoPH2llhdvm6q0je500TmF5nOuEHGg4KOfYpoiv6R6BsIwb1q_7HpWok3CNrrdhKkLhtdWY1ZnX0ak0w_DN2cc451x3",
+            "width" : 4031
+         }
+      ],
+      "place_id" : "ChIJ21v8hux4TDARF_Ax2pv6b4k",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9903409652898590743",
+      "user_ratings_total" : 4012,
+      "website" : "https://kotamahsuri.com/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Pecah Batu, Brinchang, 39000 Brinchang, Pahang, Malaysia",
+      "formatted_phone_number" : "05-491 1393",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.4887819,
+            "lng" : 101.3907453
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.490024380291503,
+               "lng" : 101.3920038302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.487326419708499,
+               "lng" : 101.3893058697085
+            }
+         }
+      },
+      "name" : "Sam Poh Temple",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 5:00 PM",
+            "Tuesday: 8:00 AM – 5:00 PM",
+            "Wednesday: 8:00 AM – 5:00 PM",
+            "Thursday: 8:00 AM – 5:00 PM",
+            "Friday: 8:00 AM – 5:00 PM",
+            "Saturday: 8:00 AM – 5:00 PM",
+            "Sunday: 8:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106942646549797197075\"\u003eSem Ekkelboom\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sRSGYCLeIv-4DdaW-9O-9SQjhCGkghYzyC_bik9TLWBIg_DY--yHOLgaKDadCN_KvJu52AL5JNN_cmjNoNno45dzTw_pLXPjn7nFKbiG7YFkJWKbmYGkMQGtwUf43ZyOX4tn4rS9-dGz5UXoVV1ns-Kj5Pdu1li0o9POCPDTCv7S_GqrKfdin_DDulqF5wK38VLqYP554CppfBtQH622tENBUBfdN_tnOCjj614pdS7a_9Cmtyv4xTuemYNKaGdQRKTEdjtjEhw4aQrPblZEakT82sTju9ZWe7mf_mA7TwOdkw3X88VO1WptmFbxtlCZYxZIkrnFpYAWIG2I4vP65SjkHFUCO2gTeB0je742aWF2lqpOXBDfZ21pdsVLf08eBq7zXVUuQiwwJTjruxI7930ZLLJEy-2BtpByqn4wdu0Lg5IEBn8bOayIwW2eu-",
+            "width" : 4000
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103302964096489065258\"\u003eValeriya Sinevich\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vrumE8PksLULl_o4JWzITiFXsdEHZVzpCjtnlfyNg30LIy4Zbycqnpw_86XnLWkT05Cg6OPW-usRADfdMU_317zT3VHQrb19_bDKxHTZA0UV0kWEvc5i0FB3degHeC-vzGq4_Aickk48FqI6lCcNEmKJz1IPYkSjdBswV7B_72x5K6zMFHC1yaxP8c7nns4OLHqlO7198uzODtcaibN1I7klK-3BJAqVsBJbv5IjpiC1HmsVrwG-F84q1nLvx8Zk0O-HqwUz4R-66WJNHCwdS6fVY2v-gZ3Ud_J4ihamx07wk9AoegTwhJF8vYFKfr5yI48FcmcZW1rrUMhRasWCOCSURuE37EoWWw_f7_CLw0B7hrwEdhNMhRnjItaVDUeqWf1Qja2xD7GxlU3j0rKu2eEtIaBU-OcxkrvL0I3qMU3E_PDg6Jq39Wxzfgpnqr",
+            "width" : 4080
+         },
+         {
+            "height" : 2048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110470586050341370162\"\u003eWilliam Kosalla\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-spkoFeNRnIrBSHS5IC8kBiDky1UzuBFYuDNQlNP0RzrA8obhPWHI8E6QVXrwYklRQrSTgcTAKGzSGXlGFR8nHrulVBaXbGmQ46wi3N_H57QZOs_d-sVbV9zXO9MljAkj3zppXfAsXpRZdXrhE6eqVsMNwJsqmHSeKIZiLtFy8MubDi9cy1zt3fahJCLjoULKMxtpCmq13W5u53dONcuqVdTT5Q8eCuGRC3hCFO5Y_pO5YOuQaiJ-D8lHff2B3HkTgrZ7hIXOWZjX9BYMQ4DFHRYSsndX7BfNfQwHErMBzQrK81KenBWTPUzU91xl-KblZWx9FB3nIPXglm1dtOUq0MVGY0joMgOC2bu8bBVttpm5uMPy7-YP7vtKB7YE8CdHKVDvvChCE_S5t8ufSo1OlM5Z9C1WhlPJCa4YtAibpL-0E",
+            "width" : 1536
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101708990121235070354\"\u003eEK Khor\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tcCHwDyTUmTEaN43vmvv-JlmsHLthJus_nzj_Ca_4SuJja9TrrWikTREXahl9ABDtA3OdZy9Ipy3eeX__DuoaQ63GRPTWD48BPeKv_iG0N6VgfiaBOvT6QKWYF3c3Tcy_VrQ62hW_O_WiuqN7UB254TlDIcOBT5J3gBe79PwLq0EHT37dz1x4VHilRlhkcaF_cJIcap1L2ynmtoTFr03ovrlsME4tTEIesL9otZEwbO8l2ZetKO50BOIBqlMQCsCTZ5cHMEuF3WHQn_3qV4Z2PNuhCw2G8fYo17lkFohQDmTFdruS7QozSyeYREztrjHGNkXYDbvnro4-xiiae8P_A6_qMOcE6fGfJjXui0IdB6_qS29F8sUBdAl9V0dQPKUZjNJFfR2kB7vtz23qBB3QpE6NLP-qcP2ajWTQJMGzLmIEb",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108136491598325852845\"\u003eSanthosh2791\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tI0tb2fWNCe1U-vyldGoZwJcbkJjelnfLdMOz4gSmeH4dowCtvrJpMd5H-YzD1khqux3bknCweJWj7-H7TRg-wDZSMQ0D1IcJXgPEVQUhJnyWKpL2380bSZ241Ti-5b48JMVFkED7XtxIleDRbmudfs4OeU6kxuRGnSYsyqh2lGhZyq9l7GIjGuB2u3YsvlH5lNJ1d8V9qyx9SdoseWFaZ9TgLSAskGBOBG_137CwLr_VlhW5mhY7loa1KSgX65FlKIeuEJjktz0-H4HPg-exMT1MjrmrJ2_7cYS62VYETA2v8L5SusktwEngMkqcL1bQrlzRHl3XJZkpmXV7hqmOyAsHfEdDSctDXp0I5HUDSrPYW6UdlVfdhymSo1vn-x3uss97QEuXqCqQVY7n1F7Ao3LA7DpWbfxizrsQQeMEyUw",
+            "width" : 3024
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112669549646678968268\"\u003eJayden &amp; Qing 一起看世界 jnqjourney.com\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t-rECZBDjHT-ktBIJgNt4jv-27oSPlo75afalo9AkqKPdOq1CxqVfk_9f6JqJE0UDk0a7b3bMvT3ctdAtTwwkreCTkNDfDbDVAuFudg9MBsZnaawcQjms5WxE1_ZN1b4nZeACyHQTJTuoC1iB68KuU2qORAPrv2m_EZAgiL68GbIWTbP3jacP-Kcm3CO_YYEFNzwUiesV65r9MJZpZA_fAguFXzWf5GG38qZx1abIKra1E7h8KWCcFUuuGW3Jj7BabJi0_pON4RdMus7fFVrGo9WTRBP0mU59DcSobetnTO5CKfajSaNwaXlpahAOTx837UpzioSOp9W7byN85TS0wBICCkztCxK3iGIB00_OiL74Hg4DRDEInCN5eNMwGej3mPRpSn6jY4rmDUZ0reWqOIRiOElBVQIfoqQgOZglss09SQ1T4Drr7Itu-A5zV",
+            "width" : 1440
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112669549646678968268\"\u003eJayden &amp; Qing 一起看世界 jnqjourney.com\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v0QlBrBdMSiEwf8ksENIHezXXN25c0YvZqHnC1dRlSF6AHemVCCkZLR2iEB5NA-aSSaBUYdGeydA7_iSym3n0kmCiJmMe0RZLa7ie7KIC7ztTTXsQSJxJssuTRfUU1H9vkrn9JmnTjq3veRMpfTeHmNzL-oqurexmUqYVq9BA2qeMjHzFCMJPpzdm0FtjlgfgMmTuBipM0cOO-DOqIa0BCxWO7AfYQjzXnTDhLIq9qMmyow9MJq63rMg10mEKbOmsITHXzuRKNmwDRWhkaMxrgIb4F0oDRDPJcQ3VBtEekPTKWED1dUdD2aOeqslsHWdLl-00noB_mVSbHErrt6Pkj3vvoSaCHORuJzuSQmJ3f_5rQfJjSn6vxZdRJpqkA5_4f_cVbE_XstZEffAab7ukZV0D18NLWNCAFPCWzHW1v4vI8_zZBZ-8E5AhPUAhM",
+            "width" : 810
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100987819802731026665\"\u003eTurki s\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-toYQBZf8OYALBs7PIy6DPuQVRyANBYSUj8sQfbwjG4ou5Sxm1SlKbim7BmwYq-68vLl1KYfQxgF9s9j-FdppgtC6egnzcO1qUkob-x-HZuzh_DONKuyEncuRhEo30KgVg7OLq2Tatx6X1sClagTNXZiz0bl0fgmahiVaWj7VMh0LNBwqEhS2qizerp24sZq0F-XjD_12U4Z_QrHsET6jHLu_Ue7t0mOVJM_oEtN5f9k5anTxuyaN5_c4LQe0vR2gBRRe2OcD1UduM_YsdoUm_LBbP9Aulku-fwXktLyFWlXlryT4IvUda2_nD8CMuZR98VSy88mnhcartnqVSp-VeALSUd7hwghhmkWGn4XxmFs0e7jeO5UNHJIzbZ94vR7f9X6XLeWkTJt8MJatcRwfgA5q4XHQujNO8EkiIkvU77_j_r",
+            "width" : 3968
+         },
+         {
+            "height" : 3201,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103719609308988012528\"\u003eJaan Hong Lim (Justin)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tJ-D-GS9PQX7akC_np_hVq31L9hDS_BJ-2SJtpoEgPQGuVIQk5jqapUNJW7EQSlLElmrcch71NraXkqUdVfSoYH8BKYvZ3l0oj5PGEG149m-bq2Q5rkYYUKVVLsAOr1xVQiIfytdS6YIM_7paVPP_OMGrLUysuIfnnjZQYY-OeYPfyJa1_ei151iBzo5nXoCTpEFNirNII9Kfp6_eLXvA4DFuEQM-dTbECOr_VVCOVf6RDKq8CrmZBQNl2Q5ZHltMtI8DUuAT8-c3ldGZjpEoVIpFLChjWCI9SMFu1bHoBUdKD0yS9JxtS3fJdKQBCrTe5bm_MyEdJ-qXrVYt2DY6h_2suEglJajrw85e_DEJGCXu3cg0RKQtV0PxcSX_UHPWi8m-qPr7sw0XYK5B7D_Gw9nhs1us_zCqqJz6LpRTywXfV",
+            "width" : 2402
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101930835967959325298\"\u003eKent Alan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9ZyX4Zkd0bhr_6uzerrtGHBxatISKYZy76JkFVDrMoxRsZgKNj0LwYT6gohTfU_r50N2qQOH0C3uEFDBTcJWgp3M2HFjjJMqlGVVhJxZzLoEFDPspmhg9KFGBWy0-14o7G6D_yso3BnuME-dguHmZhp6LyjryposK5CBC_PI4rWf1kAoAWPK6aIaPW8kdtxYHKsC7wTUIsccb8bPwuEAUw7diAmgwDHLt-AjEI3h5Jq972RuhvzrodKCGcIZ7K5s4k8BqeetSHG671C3F57yaGF_p5-ibz6Gipl2moSQIFi7_FOH7oLeyyCWzvdPXsFfwUFoyjbWXEwpq7b4OQsoDfQQsLMtCY84quWtIhmYMLa0EriPFc93s9oUJqEXd6UNMAiThkDwrIMtZ7p5bUgPzW6ac10rE4qVRjJCz4WqQtw",
+            "width" : 3648
+         }
+      ],
+      "place_id" : "ChIJ27oxe8tZyjEReyqcu98Bj7Y",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13154735097009416827",
+      "user_ratings_total" : 1356
+   },
+   "status" : "OK"
+}

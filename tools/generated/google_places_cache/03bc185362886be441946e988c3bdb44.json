@@ -1,0 +1,42 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Tok Man Channel Malaysia, Kampung Salak, 17500 Tanah Merah, Kelantan, Malaysia",
+      "formatted_phone_number" : "019-277 4463",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.8639712,
+            "lng" : 102.1644255
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.865258680291501,
+               "lng" : 102.1657643802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.862560719708497,
+               "lng" : 102.1630664197085
+            }
+         }
+      },
+      "name" : "Tok Man Channel Malaysia Garden",
+      "place_id" : "ChIJESbWIAyZtjERFiXhmI9ojRg",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=1769185194580976918",
+      "user_ratings_total" : 1,
+      "website" : "https://www.youtube.com/playlist?list=PLvc1RjcHc7GgMNVTr4aMWGR4M-kjll6fR"
+   },
+   "status" : "OK"
+}

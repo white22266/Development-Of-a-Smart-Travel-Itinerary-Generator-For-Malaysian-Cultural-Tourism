@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "2GM5+GV, Sindumin, 89850 Sipitang, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0337575,
+            "lng" : 115.5096666
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.034212280291502,
+               "lng" : 115.5134353
+            },
+            "southwest" : 
+            {
+               "lat" : 5.031514319708498,
+               "lng" : 115.5096666
+            }
+         }
+      },
+      "name" : "JT depan Samur",
+      "place_id" : "ChIJf6vU3J3RIjIRsqUxEr4-Wi4",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3340051059718596018",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

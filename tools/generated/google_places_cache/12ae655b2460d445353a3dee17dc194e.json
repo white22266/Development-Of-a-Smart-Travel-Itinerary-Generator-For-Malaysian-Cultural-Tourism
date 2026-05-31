@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Taman Anggerik, 72500 Juasseh, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8173233,
+            "lng" : 102.3150133
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.818668180291502,
+               "lng" : 102.3163654802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.815970219708498,
+               "lng" : 102.3136675197085
+            }
+         }
+      },
+      "name" : "Udollah",
+      "place_id" : "ChIJ_Q4cewBvzjERfAAhSiyyOJY",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10824597607676969084"
+   },
+   "status" : "OK"
+}

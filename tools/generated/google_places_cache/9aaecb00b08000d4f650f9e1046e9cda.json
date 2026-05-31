@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Datuk Okk Haji Asneh, Pekan Beaufort, 89800 Beaufort, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.344268,
+            "lng" : 115.7479754
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.345661380291502,
+               "lng" : 115.7490245302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.342963419708497,
+               "lng" : 115.7463265697085
+            }
+         }
+      },
+      "name" : "Taman Tasik",
+      "place_id" : "ChIJR3rmjdrNPDIRVHTEa_HFJmI",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=7072557905517769812"
+   },
+   "status" : "OK"
+}

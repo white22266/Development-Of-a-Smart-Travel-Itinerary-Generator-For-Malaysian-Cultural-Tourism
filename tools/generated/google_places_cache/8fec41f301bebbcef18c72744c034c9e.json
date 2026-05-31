@@ -1,0 +1,1110 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-sURfPGEcslx5Y77ek0Oafu3S0EpdTpgN4SCR5aXQjNzuyylIdKfNP0VtI13fEdCeCTCpVhAbd7jFQC4OuOBkPbNlOwSgEcexv8aEDaFdLqfBeijYQ7H2bE5FIjxxJCmO6HMFu0FGbS-L6fBr4_D18lZ1-h9SL9AQTX03Rwwjf-yLcxuWLV9gy6TW07Z8XTcSwwEj2RbrrGesGKJG1FzdfGn3bNLABGEzguQj5ScLK3vyomTIevlFDgu03DznIA6exAyhLGd1VO98mLnA9sdDKYn81FaZJEhLNqpEZlhebE44oNTuPEzixgGVqpJAj9t-xfuFoa72Et9HqOGgetCIBjQGAMs_Snf2-0rZ5bb2-URsH39zNNxZbWOF6ZnOP8Yy_7poddEWc0jiddA772Vcj7rJwAo-3IZ3NN6fWGfM9cXo_Ute6vZT4IokK_2lE53W7aSCCIezYxN2uusNzd_sg4tvYW5Y0BD-0uIJCdWJidX0hgCj2Wh1viBEfkN5k5sZvKAUtcgU7pIhVFOayUwgk_WlzU1s3s_nw_IYoaT0O7DEedK_Y1J1cFj3TjhLBizQBJqIbEcyHUP61qB4X5OtWMxQMw1t9BalBujGtSoB0IuyukgLXsx3lqGnKwNgZM3u9KUbFRGx5pElnDF9dABJovdly8cPvQ-1TMHjumId_URbI20NMmNz9LwvI3H5-OZRen_Pb-C0WK9gk4bmQPPbCVmK5IXQWKvE66ImMTr7GdrYJqunKGOK2p3-ujScIT35ObyvX1NBT3pmXI88eCs8Fsqb5CYxDDBu5W86ljl7sEE4-hH-IyhyGB16Um5hdgFpeQsAu8AdE",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "21600, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2093341,
+               "lng" : 103.2150484
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.2093341,
+                  "lng" : 103.2150760302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.206138099999999,
+                  "lng" : 103.2123780697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Marang Wave Breaker",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101276807740279270882\"\u003eEng Huat Cheok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tZStcbAqSjtkjnVZ0WYmclOSDqXEckqfVKrpWu3FEANzLmNHvyEWnhX3Cm1-y8J8nOfQDqPYKaF2RsNMygvVImRdl3NFTBj6fA437V5K2ejbQW3mmMh-U2Q2voBCjnaMSrk1d9FT5FUF-nfa4Xhb5U6l0yQrwC6nRvgAr0LTyLyYoTIVml2rcA2TpNJboOCY6Eod1rpMRlSG_HwCr_w4oVPn907pJb1ITZ5TCP6pBksjNf4T3Me1ftwEQkMxeQV5sbmt9QKFyIgC7OvMdjBYFU56rd0sNCgu9g3ETDgaJhvc4GoBvxRXfyyd2GFTof7a01O9Pm-IEd0zLERKF_uMOOcq8EQWmSJM9sGMAhRQYFfqcl5iE_6Yg9xpRD9ktdRLjVsn_0gn5oqP22m-G2kWWPcJvfA2hG6qiw5xq_YByu8TDA",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJp0tcui7rtzERKr3PdyuELkE",
+         "plus_code" : 
+         {
+            "compound_code" : "6658+P2 Marang, Terengganu",
+            "global_code" : "6PQ56658+P2"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJp0tcui7rtzERKr3PdyuELkE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 166
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Seberang, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.1994381,
+               "lng" : 103.2176528
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.200581980291502,
+                  "lng" : 103.2188349302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.197884019708497,
+                  "lng" : 103.2161369697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Seberang Marang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103359224559088396643\"\u003eRaw to Ace\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uQnCOF7lJ7Qup0BXcXYL52Tn8LCuXQUe7F_7M6SMKAilDCJG1FIwCliRUB6l1jfsxwmCyxKlkk8tHEfgrNSVV0VdfVwN9NehQBLoqg-6tVUmQBayAKxkxEc8SxAeM5OsKfXuKkHeuksCdC0A1IhXdwiNiSIad6FMbx1nfWZNpw6RPWljxIBN6h4fn1cDBfRxgmeHIjAa9Z6cwTjOWipgweb1Ds4QL2DRZr9ObcKpxgQ6P6qR_6QPUlISWpiF69UUx3BYoKreY8NDoiCL9Oed2TRnBmI20J4pJqdG2ZsPvKT7OscmjYVGR6xAiyv0nnvcDTvckMUpwj_VXi0KBw-MLq3gwzB8atVm9Oa2b6OseoGJToThGYj8O5cv-NF0TjjchK_eog7U56cV9rKiYd7unRkmdVGj7nlfBxWxZ8aaBA3vQ",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJwzRSjzPrtzER-qGCKf6ZGmI",
+         "plus_code" : 
+         {
+            "compound_code" : "56X9+Q3 Marang, Terengganu",
+            "global_code" : "6PQ556X9+Q3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJwzRSjzPrtzER-qGCKf6ZGmI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 65
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg.Pantai, Kampung Kolam, 21610 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0365832,
+               "lng" : 103.2980722
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.038495530291502,
+                  "lng" : 103.2986019302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.035797569708498,
+                  "lng" : 103.2959039697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Merchang Angin Berbisik",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101276807740279270882\"\u003eEng Huat Cheok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uhDPB9ePDY0-_RiXBDp6dHZkFmHInWcugm_9qncAZ7IXSzw1xpTygf8Otc6a0WNZvbuWWDU8VDrSKlw9gNPPOSTZpmqaG1ScXMSVYrZ8PlP7GTYUTTsrVHeUgh9fV_eAqSNPVuls5Qwxqgta-9QS-Jurb3kGG7oE7RuyyrWnqNayOsEBkYmnZpAI0E0Iu39p9T1ee9y64dWN-5g-46T1Wh8TTFOzbenyB7MV7Hjcup9ITdgVTLF-va7t_FbUuvft1vpNpoqkupKKX3690NFm6vlP01cAwNgugG40HvyNP-aRdRGjnolY1XyvsTgKclnuQAk6f5-t5ZxZ_35RkpBr37yH9V_rbv7GEVYWDiqfSot5pkZdoGZ1F7XKoYd4hnlyHiCVmkU3-ezvV9Ej_6s3r0pcOQ1BQEXL-EcMIMQ16EyzSL",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJZ7eCuxDltzERU7wPFcVDntU",
+         "plus_code" : 
+         {
+            "compound_code" : "27PX+J6 Marang, Terengganu",
+            "global_code" : "6PQ527PX+J6"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJZ7eCuxDltzERU7wPFcVDntU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 93
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2115798,
+               "lng" : 103.2082808
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.212807030291503,
+                  "lng" : 103.2094610302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.210109069708499,
+                  "lng" : 103.2067630697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Pulau Kekabu",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109333326281618893808\"\u003edaniel hakim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sIvzfbipcXKlEbhWCNnbNE2Ms7Pp6TIqmumK4YRwNxUPpvKm-sx51ksLX3iejZtbOzR8AYVXRDkbKH4KwCE6Ad5LNw_mlAL11y3HnYqgiQUSzoTe6BhpDrpycGdWCBmEphCa9PVOdUED-NDJTe4uCqpEW6TMSENU9LNYTDhgNEL7_Bdl2yyzXhfFO0NSwcyGvr9egAPbg5_RLADLK3ShoN1kumJjvWZXXfSdksV2E56ZZTBhnH_W21kIOKMj8bhBP4O8u7LPZ3G_I1cBDEm3EvLnBqBLXR75StpwApwoWrRaj9fQNqyXYLOgi_B9Ug3UocNF-PCP_w0Kw7s-tjQOBphYCWuYJqTXiVQfuaTgRquhkPiFKOWsiGcrps-UrabzJU0pmIJhyEZr19kDxtoPnzEjbvidc5YLh8z9meVGB5JNBh",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ_4V_qinrtzERPIDDs3O2WGw",
+         "plus_code" : 
+         {
+            "compound_code" : "6665+J8 Marang, Terengganu",
+            "global_code" : "6PQ56665+J8"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ_4V_qinrtzERPIDDs3O2WGw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 256
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "6667+3P, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2101989,
+               "lng" : 103.214522
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.211872880291502,
+                  "lng" : 103.214522
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.209174919708498,
+                  "lng" : 103.2104209
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Muara Sungai Marang",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100336205540356344155\"\u003eCozii Home\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s2lyUFiCNY2Q0qvXeFKjQpmxQ1ztCgVa81AXkMIqovspCzoQPJSw8Mpx56vSYhfnQIu2JQVLxwW23JMjK37FjyCXtBGRePoLV1fgFppA3nSjv0mdJMvsPLwx0YMVgmsPPkLA_veL0vZeaPt7pR77dknUubcyvIxL_07aycDT6QINMwIMlI4jaNzoIABF4qTMaQyYZkXX0_FY26GmZFnwtM61uCRRCUZY3SzGMVWWjr3VLFkp__i-lYEJeW0_NcyNC7kPhyqkk2sWAvyXVxwA2SZohjW6NCpZx8lZpur327mgaL5s5ve0kEhdlRRIHN6LVMftSig5tgkrZp-HMU7F1kkdG3ux8nzEYR6S0NInorOBtqMPnOpEmmXCOUbQxrEXtAlpBAnpJy-M3E0LP54ipoWqxe7rXmluDuQMeXFSwF1pc",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJTxwdn27rtzERgAzAAn0-jRI",
+         "rating" : 4.3,
+         "reference" : "ChIJTxwdn27rtzERgAzAAn0-jRI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "46C4+CH, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.1217333,
+               "lng" : 103.207575
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.122221180291502,
+                  "lng" : 103.2088949802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.119523219708498,
+                  "lng" : 103.2061970197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lembah Nisang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2442,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111435736553169447626\"\u003efr\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVh0YBX6ZUdWcTQrR5q6mmErynbdHCf2_BCES2c1CFZ8Mryyge3Zi3iS56Qj6i1dzt-GXoFyXoQEgRU4UIX8qnXVy4uHlWcZxiyMEuX6FOt-pRmhAD1lu2vecPNubTx54LkpW9WV9nmPgg5SHIgZNZ2Ha9iMw0sMTSRCOxLebvxp2zUiX6L1X9GLQ7Njd4JUCuszuiFjnaqJV_7Sp4ck_SRwzQ5A5CKOkBauUXV97k4P76QGfPVfXYAz2WpwYeq02HhMBLaPjhKHui-06dnDDtIsMOS6ILA7Hfqd_BP7kf_B5txUvVs2aFDGQ524fBfm_LMxiNIC_DQ5IercRxQ9HaCCRH5SMCaIUKG5_W6ya4m9hwZw9giSqwsKztetb4OAPMIn1-y-DVm6aTmEMg0C5rDTmNAESNqoi1fN9tIqN4ZbZD_iPRi4vr7P3VU6bV",
+               "width" : 3021
+            }
+         ],
+         "place_id" : "ChIJjc_FdQDptzERb0EYXhyDoyc",
+         "rating" : 4.2,
+         "reference" : "ChIJjc_FdQDptzERb0EYXhyDoyc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 350
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg BARU, 21610 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.9403701,
+               "lng" : 103.3517052
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.941605580291503,
+                  "lng" : 103.3528427802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.938907619708498,
+                  "lng" : 103.3501448197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Jambu Bongkok",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106597458456094250759\"\u003eIda Karina Baharum\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tLGfHYHMNio98tdxbl-zFAej58txQmdMV5Y2tArem_6Tl2aumvYhCk2jxLXSgKVrQGLgNSCH3uFamXT19JvTRYvpmK8K-pCQ4ETsFKU8XTeXk5glYey209FqakfPwrU1d-T-QVfC5cR6jpAOOJ3Ta11Wx2nJELdkM5ViUe4pS6I85p95y3eqQx4PGb_5JGRgNDS5ctyfLu1wlbw95QV-ZyvX9E2zaIuVHc5m2V6vSbIpNKODVzuVic1M_lluAC79zM9In3KOf0V-bkAdTk5YIHL0llLSb1sMXCDDQwsznkyfTT3q5OESs6D_326zgdVFh8zFY3CqjwhedhCvC8aFXSbEwuN5v7QBGDE8INGfT_bJF7e3nI8QFQSRYANdUm47zIXbt8jNa0loh5gHeLfQSqXsz15vlWIviiW-Q2x3s0FA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJDU3AGvPjtzER0NpFZZYquPo",
+         "plus_code" : 
+         {
+            "compound_code" : "W9R2+4M Marang, Terengganu",
+            "global_code" : "6PP5W9R2+4M"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJDU3AGvPjtzER0NpFZZYquPo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 183
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Jambu Bongkok, 21610 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.9441356,
+               "lng" : 103.3492819
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.945422930291502,
+                  "lng" : 103.3505386802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.942724969708498,
+                  "lng" : 103.3478407197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Jambu Bongkok @nyorpata",
+         "photos" : 
+         [
+            {
+               "height" : 2420,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109063868795860061300\"\u003eEugene Tang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vQm7Zqf8wmAaqrQlj87qrhlPAZRDGlA0hklR1M5JxS_GTJTj33ksMsTb2tZupNv-KI0B07WzvkG43RPREw96A4JbzGajlv4Hh3z0E2dFqtY3sw05GmEewK664spQXWDY6QlfQcXFW6LhcR85hxpWeOKWZMvtWsVmGc2acqIjShLhcT2R7pU319bccjf9C9AH-piZYEZXTQAPKwHlVJ8ILqtnGXOQ8hHnmvoOCklpqzvlELQolj3MMX_UPlCp-rA4-N8vQj5Rxz8wtjV-N7dcJzEVSZO5uBYMHityoJqBlLNqE6e0ReCWrHv2GHGZLAJeOKdz1qG2dunspk0ZGApxb1tH9-GtyXY0VNxcoXHufHrJYMyYdGj4Ot1QSBollK-KeYyCHAst08uS5JOpjvVa4zucwUbvuZcZBIqOE51vhLBw",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJR4C2TcDjtzERRqUJOOuoTAg",
+         "plus_code" : 
+         {
+            "compound_code" : "W8VX+MP Marang, Terengganu",
+            "global_code" : "6PP5W8VX+MP"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJR4C2TcDjtzERRqUJOOuoTAg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 195
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Kampung Paya, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2077294,
+               "lng" : 103.2086691
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.209090080291502,
+                  "lng" : 103.2099774302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.206392119708498,
+                  "lng" : 103.2072794697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Marang tower",
+         "photos" : 
+         [
+            {
+               "height" : 1417,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104915524618323182881\"\u003eRahmah Ramli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufUr0HtfChusL1g-AiQ-nvWhHXJjHQbn4zcWnvgSR80cgIK-ufr8LqnHKZKJtz3D4Vel6eITz5jYgKN-Xv0F3S-Tkk1Qb5VJDzbD_Uo6ZPu7rRsqthtLK8JoGLCUGdRzYIGViaPoz_83f9SshrILbcBkS8-lnlDuevMLSjHcUu0PvylFFaa5ilK_O2jpU9oBHbI3BV7lew91YTMg2bJa5qm5bP_6QEbR15OCRh2dNvKp-KcQd4jdlVJT7y5oOdbnI7WiJnNFCzeMqvWKEOchXqai_6V8E3g8VshnEOUHNSOX6lB2s0FR1x1LC9s0VRlLPl-j_eXOQcWtwzAoFbRcSG2MlAmJns0fDZ6J_HpYTojeQ4uQCC1pznfrSXCS2cJ3_Dt0c3zTTMev0OXBDQ4SYOLSytXBiaKlTW7ADou6ytUfvXTwVD4X0_lmMXcBBJ",
+               "width" : 908
+            }
+         ],
+         "place_id" : "ChIJOXqDAWTrtzERJ4uUaVV6G_E",
+         "plus_code" : 
+         {
+            "compound_code" : "6655+3F Marang, Terengganu",
+            "global_code" : "6PQ56655+3F"
+         },
+         "rating" : 4,
+         "reference" : "ChIJOXqDAWTrtzERJ4uUaVV6G_E",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 448, Kampung Serating, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0654854,
+               "lng" : 103.28391
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.067330880291502,
+                  "lng" : 103.2846955802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.064632919708497,
+                  "lng" : 103.2819976197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Serating Beach",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "place_id" : "ChIJyTpPdlTltzERRfRsGfHpSqU",
+         "plus_code" : 
+         {
+            "compound_code" : "378M+5H Marang, Terengganu",
+            "global_code" : "6PQ5378M+5H"
+         },
+         "rating" : 5,
+         "reference" : "ChIJyTpPdlTltzERRfRsGfHpSqU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3, 21610 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0047978,
+               "lng" : 103.3159061
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.006066780291502,
+                  "lng" : 103.3170788802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.003368819708498,
+                  "lng" : 103.3143809197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gong Balai Beach",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117770960645948176083\"\u003eFairuzk Mubarak\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tvibb5tFt0y_bh9sTamBUS5SQH3cEeYb5GNn5sa2VAxOPq9pDJccz875sxm7zTr6CbIxDpvb0KSJvzOpyKOaag3XipnyLgaHpxwq7QmvMtgMqkQTRqFhT0hI92b3EwQnoKLaHxj1rETuDc17M6xbp5-ali1imHWypB5A9Isjh-qNe_cxivHqhZVaHA1C6Kz5ePulmqRTOtVoxcWccJr6syxwgIhTd4Pmn6KOI7PcO_7fYUY8aka5_D9shZH703pT13FcZPF-aXrqtcJYsSUDfxboMZuKeEyui3e4xNwDOHr3dCZ6DbCHpi8o78Dc0NSCGX0Gj6TxXQILJdLtIP6K_MDTqK74C4gqMeaTx_o8auLB8IDPAJm5SdJ7aNqnw80PSJ1W2CZih6-T37PcgA9zAL5LHTwRdAEcrR3mJLs5Z8cjY",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJl85ATwDjtzERSNFWGyFdctE",
+         "plus_code" : 
+         {
+            "compound_code" : "2838+W9 Marang, Terengganu",
+            "global_code" : "6PQ52838+W9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJl85ATwDjtzERSNFWGyFdctE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "56QC+GX, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.189236999999999,
+               "lng" : 103.223127
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.190564730291502,
+                  "lng" : 103.2244128302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.187866769708497,
+                  "lng" : 103.2217148697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bangsal mekjang",
+         "photos" : 
+         [
+            {
+               "height" : 3808,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115072778072101153329\"\u003eMuhammad Amir Aiman Nor Alias\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ssW8T-aTBcZhJGci6zmmBMehfi3A-lkXWWeMA5yyzlmpwKF0jHejCvveWgEwNuVJcfudmVhbp2QkVChQhiDDxCT-9iae3AcJCrY_E0LDrngnrkx48iNtriUlLzUycsYaBksWrOS9OOlGIyNVmyv6K2C7ow7ZDZVZzA5Q6pXImyJIj3ii3zVo_Dno6Zj9qdXOy5IxhmyComW5ugC5YAYojXd3-cXy18dNTWBr_ORFMDMKGW59ZGv98EmnWth3dc4yl082d3LQjV5MkZYAQY-1hnQwXb0Byw9VEB7P4inb7ZIhnUdwL_PSfvyGNvRe0oXfs3RpVoEXcl78zXgm_1WBjbcAk3_RvUCKMLtYu1oAVXd_LXmMFW00wSKmnBhP3p4DyqgSTUI61fFSrCF9HrumwHoaak-VS4PVNkC4Cfn1v_1Q",
+               "width" : 1680
+            }
+         ],
+         "place_id" : "ChIJUayPz1LrtzERxqHJLcBLyig",
+         "rating" : 5,
+         "reference" : "ChIJUayPz1LrtzERxqHJLcBLyig",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalankelulut Kelulut, Kampung Kelulut, 21600 Lumpur, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.1694238,
+               "lng" : 103.231504
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.170630930291503,
+                  "lng" : 103.2325766302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.167932969708498,
+                  "lng" : 103.2298786697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kelulut Beach",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105740462353392410441\"\u003eIKON Hu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t3vqveJ3KVESTAm6cQOOtamJbLdcS-CtiZ4I8MS_ZY_aLRwRvXTNSLDtIhkyYRgEDuKLtdDYbzj4UI35IM1OmSNtvQXJlXpRFY8fyi1Q2pt97MfALrXGRgT_PwaSFarlbQ_bdH12Ez62U0vNxGNJBHjvusIYIQ6Kn8IaoKk0JfkRkpXwtpn6xQ59qRGmrWU_TgctdyltGRqzQH42LnQfHhjYyVs08zOEgZXFM7oBoi7qk1PjUc2hI3PSqvUjM5ewp1BZgbxudHTfqtyWwlBQpL3vv2_5y9pzCg9lfzJucrFuudGMveZylSJilDuQWSo_LPEIx_nY0LL5IJgO1rJm1zf4FZyrKqvjxjX5MWmek2DmZLPFXKJ_3XyfozpUi65y43IK62JWf9eL0ctA--ddeZeQvdfeRHGw-WjFjMYhU3AkTp3wzz_nxlKgJoIOaF",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJXVHxMfrptzERAqgDaW2koLQ",
+         "plus_code" : 
+         {
+            "compound_code" : "569J+QJ Marang, Terengganu",
+            "global_code" : "6PQ5569J+QJ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJXVHxMfrptzERAqgDaW2koLQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 475
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2857+J8, 21610 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0091605,
+               "lng" : 103.3131887
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.010486880291502,
+                  "lng" : 103.3145016302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.007788919708498,
+                  "lng" : 103.3118036697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Menara Kampung Gong Balai",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101975593008253918132\"\u003eNajmi Muttaqin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uKRLBic1WJBglzWIdyLKbLkf3UQWfUnZCv5pKoT1A-9Q_DgoJ7ibYvvu2HLJqP-ejsSDqCJF34yxcixLowlGTwkdESB0IeT4mn9v7DMasIVT7MkKoBdiAu_8Y26PBkuYUiybXUtLngwpMIB11NZLO-JBXQ5JJe5X1WhkJffTy6n01DVMV8IZH-ckJU3lxCpaCZfXNyqGhlYM59nHJfRtPLKvZe6LDGw1NjRw12DIJRsi3cTp3_ScCOZ5rRSFL-scUbzjJNwiN_rhBYUiI8CgumMM-lwXUTl5wCWGa6oKkdpYaeKqH0fsJgpZAPaM-4hQZE0leEB0zpvKVb0Q2bh7s7eCqNI3QkyqACjC2VuonTlvHF5nyF0Ydfy08CCK9msOxJeMmdUzXD_NsGX6ozIe4BnfnHgqkg8PIbvJCA-iS_fQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ32uxOZzltzERGgADHNTDlSs",
+         "rating" : 4.7,
+         "reference" : "ChIJ32uxOZzltzERGgADHNTDlSs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "W9J4+W6, Unnamed Road, Kampung Jambu Bongkok, 21610 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.930301399999999,
+               "lng" : 103.3572148
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.931529030291502,
+                  "lng" : 103.3583318302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.928831069708497,
+                  "lng" : 103.3556338697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jambu Bongkok Beach",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118232091961328330374\"\u003eAtiqah Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s1024F3rL09EtXpFTBwoAXq4GEuxZaS465gMh2Oic3uJdygMyvssoqNu18CMwXZS1tmjaeDMHXt9TK2BGO6NnisIIRxfs2uhRLoW6a8r8i_NqHbMeXM0o3fIAHUwbE7vbX8GgZSJ_E3NiPHe4f-6FGdbC550VY4dIQsQiRkDP3UNAoQW-f-HiGGEEEaN3tzoPslDWga3SDTFn0dgh82_hm0-6EqC226yiLNv4XVjNVvXMa9rOCZS29bSPL42T5-zSy90ZBZZ9yNMHAclH_CaXNhLFvBHHC7SOanhrv3m6w7tf-o3lPozblycvuhAzgjtuFdaxicsD7Gqn35uHPoCaGglTqYUwFhwYR1QaaOIshDb1UlDP7r7-BVBuYMF9rNLESLqLa15rUykrPVlHQSe8e5MVeypWMMryhovkhM_w1YJIm",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJBYjBLR7jtzERuovuxbr-3KE",
+         "rating" : 4.6,
+         "reference" : "ChIJBYjBLR7jtzERuovuxbr-3KE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 186
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3, Kampung Kuala Tengah, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.1069968,
+               "lng" : 103.2587724
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.108368180291501,
+                  "lng" : 103.2601142302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.105670219708497,
+                  "lng" : 103.2574162697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Rekreasi Pulau Kerengga",
+         "photos" : 
+         [
+            {
+               "height" : 3614,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105955540118085870914\"\u003eAddam Daniall\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uj3pa3Hc2TiX8-CgYlxin5ZUTArpp8yNJokDSQi76l6j5Bzb-OMez9fSQWoSp3FTw7ozgOA35IckbVkk2uOqjh5d81gwhRjhERQgqgaM4lahSFVZ3JvBKnG5DJN-yK52q4m7F_KwO-9ER45argLGuePtpaRXkfgj6hmO_UTu-S1aZa1cGE4YogSTQgORHDsvsQUaMAnvyB6uALLIy5u6GxgYCJwXH6Z8VM4agPUg436gHrpUDhY21OSLIcx0DSoefEmMzYhI5hCeeINfLLZ2cDAbJWGY4UcIZlQBuh0i53PkZYfgoBOCoLxcLtvr9O07ijkQkStTCMgFbEjr__Z_-UbVL7fyANddIKNUDPaXmvTZJKiE3klR5DA-1kJFwJMmRInYgNy093IDWTSaT2BJgqDuu-3gLu24XGeQbdWQeEez89",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJy5w7bHzptzERxJLPyXxdISM",
+         "plus_code" : 
+         {
+            "compound_code" : "4745+QG Marang, Terengganu",
+            "global_code" : "6PQ54745+QG"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJy5w7bHzptzERxJLPyXxdISM",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 17
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pulau Kerengga Kampung, Jalan Bukit Kemas, Kelulut, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.1476715,
+               "lng" : 103.2226683
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.149120230291501,
+                  "lng" : 103.2240660302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.146422269708497,
+                  "lng" : 103.2213680697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Pinehill Garden",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111435736553169447626\"\u003efr\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tZIle2r-ZRMOhZJgXbEtZB5k2yMorwSggTWoEzJMztG2-rIDZryYrGZ6vN6jcZAUEw7xIMJhr_5LqXMJtc-K5x7l5rVzuUEneDfYaiAG9YdPE04oqUf3q8mvVIe-pyG3Ho8cjE0pECIrUUg3HjNFBRVgxp78jKGj1HwXNH7joHPdoZLnhnXC94-9l2vvyrN14pWdssb9BK-33blxFWmtEWVYVentdRNT147wnNAl76PW2AN37mBEAEAidS6owyZqm6njWM07fJeW4rVremAqa0PXrwSY8aJNksNL_dj5cjjbMC3ok17QQcHDAg6yL_0DahxBWHzOyMYpEJxhzOv0UJkHkG85BeAHXWECwwmSIovzFq0pX30JMcpg12t5wfzkWNqskoLiBfcIVViWEp5U8Z5MRHPSVQvDkw1X0m8QB1ADHegbtBYh70WEXZAg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ2WTFeKLptzERiRgp2Dwm-Dc",
+         "plus_code" : 
+         {
+            "compound_code" : "46XF+33 Marang, Terengganu",
+            "global_code" : "6PQ546XF+33"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ2WTFeKLptzERiRgp2Dwm-Dc",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 161
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2064219,
+               "lng" : 103.203487
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.207695080291502,
+                  "lng" : 103.2048722802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.204997119708497,
+                  "lng" : 103.2021743197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Bandar Marang",
+         "photos" : 
+         [
+            {
+               "height" : 1872,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110562192333071729305\"\u003emohamad Ibrahim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJeHmm_FMuOrgw41yihKOgElz5cezrdkeH03a1Kh-GbLFoxrSOwUMFSYF9nJPxZfQ0vMoRbWIIUcsyRfzT3sL5sxlC6NyN7KF4TbCjnJVl7PgQYpikSHBXU1_vuNoOOcDUEDkrq7AjV45CX5k8prNurnwDUxJEbeKzT2v_tBAUOTF3E9JeqJU5QfEw9Sl8hUdeD_TxRbBlG_yo2zDij4HTDtFBc8JiGS9emIhy-GMBCC8CGTzYuQ8uml0u2fDhCIv9dPoWQ-KmdJIABIpq-BGB3_vaYkbd_g1mkq0TtyBF2GmqJh5nf6AjTVqUwEKtYKyLEDommh6jykUEV1CEnsM1IP5hwOLmNoUD1AqCgMxjjFhe9BgJ2kMIXhO_Ih6b3R5BSWMpXYcFFeft6_7NMj0xUnCPJGBjvAoKwsBmluZrLafL",
+               "width" : 3328
+            }
+         ],
+         "place_id" : "ChIJZ7g9_VvqtzERoQZVuUkHkWw",
+         "plus_code" : 
+         {
+            "compound_code" : "6643+H9 Marang, Terengganu",
+            "global_code" : "6PQ56643+H9"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJZ7g9_VvqtzERoQZVuUkHkWw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Buluh, 21700 Kuala Berang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0589797,
+               "lng" : 103.0067376
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.060276630291502,
+                  "lng" : 103.0081467802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.057578669708497,
+                  "lng" : 103.0054488197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Memorial Stone Inscription",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101160352345489666112\"\u003ewan azizi ws\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voUzub1Gu0vaKduqg6aPgt1yNBYR7sTjTcZmi0kjs87mHDAQIXktzwSPvlelppwx1C9JQ1c5NQi4SY0dvQFMpn_kZHgXE3LN-LAReftl0V-6grI8biO2WmDau5NZg_Xj9ODvl0h9gkaLS5Mduy255BDkLW53AyOVtQYADQpdmJ_vLrbcY0ZPpn6Brj7hNLVWreJSmgIzjdh6aFBK3u4x5udV0z41YpuYHqn_9MhcmSveWnILibhazMURDi44bnMi5m4Ljb3Ea68rgsQ4Kx8H3i70fb9zc9dIvxerMte50YPZvM1YI6p6muW5xQpCtSLkT0fByocB9Stg_gSeXoLheV6mt-5Gitn-63L3ZiYVuigpMNjz3sKrKvkHpUTrUXuvVW8KaiAET7DEx7QLr9b0I1d-65p5sxqXSC4gBL9Ss7bV7Q",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJr0CEn47atzERk5u3xpwAjLU",
+         "plus_code" : 
+         {
+            "compound_code" : "3254+HM Kuala Berang, Terengganu",
+            "global_code" : "6PQ53254+HM"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJr0CEn47atzERk5u3xpwAjLU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 231
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pak Salam, Kampong Jenang, 21600 Marang, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.12989,
+               "lng" : 103.1975628
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.131237980291503,
+                  "lng" : 103.1989146802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.128540019708498,
+                  "lng" : 103.1962167197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sharipah Bte Muda",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101766887878919221045\"\u003eIsma Zamri\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tzzCYi95Y6UEYTTRKlSwIbYolKmI549wAS4HCmbFTBIYjWiRE1G8ydkv-lx-bmZoidfjkE9tqDBPhpVpmsmBfrhNevuGBy3-_sL9na6EzPYcSYKPqlK94_3JEW_YVjAB1RL_YIe6yWFrk9OKca6uD4yXYGHsZpkOW3mzs5aMZSus_W-oT8_tIUeujHAMw2RqZmpBHfKTerIrFqv5I2p18vZYO1Se9C3cHbHaF4vug6Nb7wqpTBerPZmhLH68JIio4EO42WAYaHuqM67pzCt_DU294ZfbPV1WGuauK4WN9oyvLDv4A1Lc_W4CjFGnDvcBTAzm2zNggjs5yYZ3gzfflHe2uCOz61iUObQ9cBAN1Cbf9QPXJKpXbfVwPRP4LWmRWFtu1UaGodBLG-hwAlwJj4xrr1xUu7P36wG7fv6p7dBIg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJC5SU0mfptzER01iHbYSXF7U",
+         "plus_code" : 
+         {
+            "compound_code" : "45HX+X2 Marang, Terengganu",
+            "global_code" : "6PQ545HX+X2"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJC5SU0mfptzER01iHbYSXF7U",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      }
+   ],
+   "status" : "OK"
+}

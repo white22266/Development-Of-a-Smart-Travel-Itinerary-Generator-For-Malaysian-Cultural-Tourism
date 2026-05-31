@@ -1,0 +1,134 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Kuala Dulang Kechil, 06900 Yan, Kedah, Malaysia",
+      "formatted_phone_number" : "011-2843 8983",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.8467989,
+            "lng" : 100.37297
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.847801080291503,
+               "lng" : 100.3743807302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.845103119708498,
+               "lng" : 100.3716827697085
+            }
+         }
+      },
+      "name" : "Jerami Kampung Kuala Dulang Kechil",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1915"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0445"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1915"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0445"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1915"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0445"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 4:45 AM – 7:15 PM",
+            "Saturday: 4:45 AM – 7:15 PM",
+            "Sunday: 4:45 AM – 7:15 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 538,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106248102659296237644\"\u003eSantai Saja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t-8nkNmgJHHzosQb8CTPh2Vzj0V7LDfkp-OzSbX43rtj0EZAoW88vlLtlvXQ4d2uqwyelmnImnvnMQrB3zwRXy4kK3nthB-9DyoExrehHxXyPZFQp5YhR-uJaq_FdosgGBd9ARTUxN4XBjjcs8tyYdztDWEa60iKscqHa3SpAY3mqLEOhjkGOj7n4jD-jW4v2GusrlYf-X0qT4azMywbwlGISKzYCsvRktJwEZTGdehNkGr9ujbytZlET4xX3Mvnc-MjSIEiGOmcFlEEGV5mGC_7RRvnpibLgGtdHqsOH8n8_r94M84tE5w85X80v0jgPiJ0MwvI4Ugobkm3C-cDWM_CWpoz543bsqkDp2_YW0qXHxgmbbjUR-8IchObjZzI_EWypVJgVWRYYncSvhO15BXOedbFKtR6dRfHoNF6YET6E",
+            "width" : 719
+         },
+         {
+            "height" : 780,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106248102659296237644\"\u003eSantai Saja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ujP3iA1OmO7LVRsYxyxc78v6A8_p1cJFN8xHkBB1YP9ouUwFkIaRNsxJUuY9iodTLgkncNuJh2ATgPJ4uDNUYVX5Vn4g0gZqZPZ9uAGGmWpHfIL474F9SAFJl0C4RfWiyKtIdfjYGDlt3lhEOe5VJs3x-MtDEzRIgdecLAnDz0YGrWQT1E7dw3ZmvV4U6i-ivTljnmWiNFG_dNI2uYM9J4-aeuSGbWDZxs3V8n843PoQiRz-oYuGXckA_Bmy6q4al8zkWoCg2PZNoZvg9isiul48wb-4MbFNOr7o-rwvBdGaDdoy5kfeWE8MaAMpD8I3JMLOsYxEh0hWQu6Wck8C6d2e5CbhI_QwmVA9SDw0dPZ3-CPEVMGrT6Sh1Nts9r6kW_-bgtt7Pw_N8c2tu5lkIZoJXi9MTTsaTP-JnffEodsQ",
+            "width" : 1040
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107140643106338572288\"\u003eZ xD\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uG4hwhcxR3Vde9jMiyvMNl2TmjYKH8RNrU6ad8UFyMfH3ReiH59zjYv5_pCzSQMoQwjT5p2P-01ZiRQEJdJ6ZpglcVjPWpPLwOeSNhzdqJFbOOWrPi2cPt-Ji5inKBQRvNm_icWUc7yUGCFV9w7Ei_uGpRmzuQaVepybI5hdAa-gCJ91b6qoKjEh3yvIgx19YBvAMertzmDtFyLwQiw1RVI57ETvbAgRmc0yQY_kpyJO_PkFe4516hQuvQIXCJzec5Q_bDZif-LQpeTPiXDG7RF23toUb3-_3BCyPH0gTXkbbva6R9Hxgi0u-YUGCuUoM4iDKVkDjiWxhvw5uj4WDuU7MOY9CkE3GwyJuBYvyCBMdjbb4hfjLlsuMmNAXwrHsAp41_9QtTkHzDLwyKlC01BuI7MedATw3bWToRjIid2w",
+            "width" : 4000
+         },
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106248102659296237644\"\u003eSantai Saja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s4dzlY-LIl60CfDdnsT7EunptdB7yVr1ili9A2LRFAkN165kiRqLduKdKF2_rQU-oM2jCJWau4H6cZ0_tp7GIMd9Ys5jgsq6mTqIp7zxd0lqvkDBZRv1-V0ViwmMrWS59f9PMG8a6iXxdTnFLyYdi46qxLhvlYH-fGoQkL0qUkbTgLuU0g4CEKsnLTwZ1vUYLuDRFQOUO8oLzV6bjpc5BO29pOBHxAbGCURSL4PB2aAmL2PWYN6dWxNyLlaW5HFgmFTmGHSL2kgLfb5UVo4rpb5h_fjak9R4UevOHulZuzAtNxAc5Ktz_w3hiPdM3D9JE9Tt4FrtYMcuLfi9L3qKPLMupCQReee1_gZx9vcoQFbEGVXtvV7K-EQNSUh5Jr-l7II_GJlCmKCcaDxf-RbyX1oq-QszRveMjs4sTCZPFb_w",
+            "width" : 810
+         }
+      ],
+      "place_id" : "ChIJTzWauRM7SzARrqZaI8e-2TQ",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3808284722419377838",
+      "user_ratings_total" : 6
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "235, Jalan Tun Sambanthan, Brickfields, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "017-625 4823",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1291052,
+            "lng" : 101.6839422
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.130437180291502,
+               "lng" : 101.6853468802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.127739219708498,
+               "lng" : 101.6826489197085
+            }
+         }
+      },
+      "name" : "Brickfields",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 12:00 AM",
+            "Tuesday: 8:00 AM – 12:00 AM",
+            "Wednesday: 8:00 AM – 12:00 AM",
+            "Thursday: 8:00 AM – 12:00 AM",
+            "Friday: 8:00 AM – 1:00 AM",
+            "Saturday: 8:00 AM – 1:00 AM",
+            "Sunday: 8:00 AM – 12:00 AM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117765198354805050883\"\u003egiovanna caruso\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGK6V940xZpTGkgy_NaxGiiecfYl7lmW3Mvsvqah1KyECWDYQ1Co_0d5S_uKtFndvkbKthssU6gNyqS3wvCaQvGjVMevl12Hb0eSDIHV861M1XDiO-cyJwyEkL4_jijTvUyPWrVm56g-YZDhPF4cdv8geQhDdODz3e_5bdH_15d0O2Jv9aDHxQT8Nhm0hr_B8ZtgT9E8A1qpHOEdDr9tXpM9PYG4D0WFL672_i5IJQPYW60hMKu0cn_Jg0x81fotbmMCLm36CZewk100yDoknF9dilP2u54p0evZ14qfWAJfVLBUtiSH9pKB8mhwvKYXVPxHSeTjabctrvtwx_onK26kYrlEj3oHfd1_wjUHKQEuNQyfvpNqbAsFKEYDw_GvJb6RmGNiNR0c25PAnOpgZhnbrAh8iISeZJsAJ6nGK68w",
+            "width" : 1600
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108262934603032054372\"\u003eFaizal Mahadi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tsGz9AvtAisMYHMuqX9wq0RnJrCntgnqdB3vnUS6j31-e0IekBt75fZPlpiPdBH3Gezg0Lgt1YAYn23Gp_7v6-CuiWB-ht2-yF6wyNraj8WTzoet6TyMZraJbsIQy1KFUXlZGYL_7vWn3dKO-FyVNmwhAWDUItA4HBE_98kCZnoLhFBqJhAPdvg-DQLKU8UVp-GFy8sWO7VSOESFzAn0QtlSAE5GgSQUcjaYxZ4o6CUlxlgfyeP0vw7wqjwbqy4wt1-bq4Txd0OVjA6NW-PT-_iquf07RTh_QGh7TJaYjyGRCwsL8x-m_mrf31SODA94jTR7QYzyovFYVuNSOidKCoXJ7bhWpjAEDMzAG7FyfFUswc04VuLARNbrFOzP1n0BD2_cZLXNi_Qa3rdXnsk1OamVOh00FRGi5XM704yZ1uNmFk2ixJEhpshS6BYwEW",
+            "width" : 2250
+         },
+         {
+            "height" : 2864,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111636664095054758904\"\u003eTan Liang Shen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGK4R_TaLFri7uLj7qBIsDLB2W0KXzLcYvj5UGRguMqXFh8Q5l2rJBkyrT0D4yATEEq7-wvTQYBtCm1VDqULllQgKV-wZSciG0Tar9tghC2hMxHcw0FF7SHLf_MJKaJTbja4ezgcco2e0tp1-ZRo8I9O1OzLppdF4IlXjSiRH3wH1x2o0WROledUdXvPbhHN6H3YK7Mrjh5jNtHOwPJYYaN7mW8jAMkGRRYFt2BnKPffYRz2iSAMqm1UB14wotu6ZwoN_iPVzGVacC3kEVcj48vrxrzrCwEf5u-w5jq8yoiIg6-GpgcanndQoNIMQkqmpVJ3-oD4ghUW9SOxQie9GlyLWUPsLmo9kT3oGPPMf2nQV58tIrIS_53uXwzPyYH3lazg17AEmLk1oj_pUCsrUPlo16Tlj6S2HrV_SeMtU",
+            "width" : 3023
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114458931191249917774\"\u003eMira\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-upTRLWcDURvQW3bLjfFMWdBuV1dQ1dLAAtit9L0n0mvuzI5lAn9FEh_EVVrvXGngO5EowhsWiVgIusfXhDHPKQ2mWxnOUY-QQVCEhpjWSM-PRO8XAj-ybS3g5kpUIT8BAfz8Jk1QStf03tjmbCoqdyJ2zncCg_MSniJNNu-dY9QMGfjx9CxB_bGj9518k1AHGMzRhlXUX3jijCsImuHLeXcBt_vmCh3alr732-KxYRuVdLQx3ZOmKdhqCcnK2gzaHj7kOuFT96yFjNdRgd1lrwkhwhtnbwzcQjr7eW6Gv-D8WNwaGRjaYKpludZ3ahr8jXryCvNpAVFv5hSrZp6waDQE5SrT27YgAzPADl-lkc9e7l9-Lwm7ot-VFsHtDmTCgpLzBxIxYGuRZczIMnxYXgjxbt_JULsxPZFVWjjFljyPesm13VUHAX49l3LPyq",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118175396933597324721\"\u003eAlper Ateş\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v4ipw49xXW81_UtHn7g4A9aGwPS5NTUFxGr-vZD8hIu0p4SRba_uE8p0cAFsX2zxkxGv-vo1PMEfMpwCe-wlUolEu7W80iYO2DrEP4hc8oBLen_UxV2Sf7MqaDFbeIRGehRv0Ng0gbJ8PFF83hWOZT50XJVqXCDz7uxLooD0mQf68Lmu1Be_tEp3AyqRBWAC_Tal5azszuzHAbepY112RCSMGESi17XH7uKqpX7B6e0LJ-HtI0oP9-Ww5lnG-r4jUb4Y8zsArJttLDPLBF1R_I9-o1vbhJfC_bb65CnRkj8RXJzMjg5-HJ3XL1mWW6fpHTPGT1qLYRbLE82IMEY4j6QS1q8FcDQSsTH8A6Smw0y_CFvXSEfeWrBdKQK7Sbb-fgGUA3IEcYsRWiCRjdfhND2tALcSzy2mfcEN5ZigTbib_K",
+            "width" : 1816
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112582008527759904772\"\u003eKeng Low\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t4A_Bli8Sd7_zXlX3cwxeeKoqkiEpsEz0prm16LJk0DNX_MMafjUSxC6ZmFRppyP87sSkcXj-wAR-nc-HN0TFzuA7PIYjbR0cqYXotzQB0VBNMsxjGx6DgIO2K0JpfX5gmmRYrxcFpd2CEBRZ0kcAy0B5im1Z0AGElY5mUCGUGAKfxB5IUF_VIGU1jJeWWe-NSrxTYxf4AQqpUY1Q_fdnNTfZT9PDDCtcErnOOSMxPKJCe_aGCdUXGPh5dKnMFNvVcbIKfuqg8AqjGVelIHh5cLrAV_SFX7wGnyfoPmhMLNyI81xo2Gqwndao5WKK3BXm8osWx16lAenTmBFbJcnRBwko65gSWSJ_mdK1-U6YJgBXC4THL3AQhr2WeO351EORPudUC3Do1Gtz3bwoWczNt6beElZwfpuhUqvU6b9irv_zi",
+            "width" : 3000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117494913105036389320\"\u003eSHAN DUBAI\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v77I_YbH77e5nJ4hCBzd0yS2Yw7OckldeczRLs15YLKlHo8PgMF5e2oQpIAmdNJSQqpAZBZKXlvDGz9NgRu4EeF9GZThNMDWc9v4UTKQ25kLj_R50brtmGG9Fqxkf3GsN8OQMZlZNHwL_jY5zEcV3qIfg-4q9OjjxhAIziCREBOQL3dIxDE_vxQGSyECLCe_LEPcwnfGPZsN-3VbWN6DvtzW_FuKpGhua9cdJf91kPV-Vc1Azst6veDd1SiUV_ZneDVwIQ__Ml5D7HnKKC4x3pqBg-VMFepUfV_E8oqnN06Xkn5veccKaStXuYajauq3V2Th_tyKm7U-IEGNnCDjl04ffSn3nAKRwZ4uPxUf_XaZth-ilDpYPmwsw1KI8DNvkV4qswQTrVE1SYqhZMGo7Rc10Q2ve3XJFtim-nLIoWcg",
+            "width" : 3000
+         },
+         {
+            "height" : 3048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115547554677381228639\"\u003eKarthi N (Karthi)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sfIuRzK3yJpkwk0EcJvhJ0llt9IfP8qL9Hpchz47EdiTh0hNT6MYYX32iARKw7DrF67ez34boTLQlb5-RF38fwkFfRVB-0HxLeb5C1kMuKGi12kWRQo_g8k8jvZHOzQkldJvBNiDx9Q-zW9gHqfUwZBw9m_fv5d3ayGgQy1nhd_ag_rVXpDboRRKd6ry8MgDpF_o_uhJDbxfdmalIJ0zeO6rJKqtqVkZPCC9VE-5ppwoLEDggBpRLqHN2F964FInuSw0N5NvIQzQ65NKgz7CohwOb8Zgr1BFEDKrfaUcYovR4BAU4kwtqRpEIM3apuhWn5XeokhuTPvtoLW2tYl3hH57SMUZnn9oCIPyuDPfhbj2CBTe_foQb18Pq-4Me43nMry_CPWGYxc5U5aoSjnsdWk5wY5QYhgk_BYh-kDsI",
+            "width" : 4064
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118175396933597324721\"\u003eAlper Ateş\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sIibtrLyzYSFLqI_jUaez1tuXcgtrQ89rWVAJEk8ch-WZXgnaon91I3twDMf4ASHDAMH79-08EK-lkQwyvhFOqP0FmrTShXz-prS1g96x_2bZdnq1ejF7IxgHO8nPR3YmS-8ikDnF8bFthdxA-dlJkAGaW6brlw5Xbq2QeBjfi7BORiDEnEgFKZxEc2W7emKiCpm4TtjC01kqHfnDmmCD7R4e2qUDD0qbZW_CFjMKc2cycHBw7l544pPZQdtKKmcD4yZl_B5jOre2jpGkqN-3tkKzQYygPZNUvUA_ZJdEHfJmRciaFREg6YJ2cUq9OIqpE8bNdJDHVIMH4p4E1LW76gjJ6DY54UVRIv0utm9OnChO_gurvlxM6KECDV-59L_K0rkax-6CoY79OuB-sYX5XsKdQRMRXj5bpXkqoY_USWw",
+            "width" : 1800
+         },
+         {
+            "height" : 3472,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103764903521619673235\"\u003eRakhi Dutta\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXYhO6cFG-LCPdQHNrAYT9kM2749AODvUx_WfYgOHtSceSql-uXbaogf9_GjgFAFD4DxiaIhpSB2Bi-skHgmHMcH-sPpITgAvxcs2klWUu99OkpocDMURx7Gkemnmfe35zmwCIHzlnks-jXvW1gJWnN7dClsjl059I50X4LDvGIpMmy2gKaYCAVec4AlHVJwZfxjC6bibrlvJY-qrN8ffVGzTE3ZtXc7yqf3Dzv7efDy9-nBAqLKRkEPwdYUfdgVqjqWFFPM5lq8UMl3EtRjXsbwNoSxCBcPoUD998iaPllA-jt6GO1VBwlv95xbSOcA5AnHHu4hou7I0U9m4EyO7eJJRENWxjLw-w8zoTaFQjbFCfbU_ELwGDHXbvjfmnDHH5sTjvZYpJaIA6ek5rKhYP5klndm86iBywdBFbTvimmg",
+            "width" : 4624
+         }
+      ],
+      "place_id" : "ChIJyU3S7epJzDERr1ORhNIZAoY",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9656308942993707951",
+      "user_ratings_total" : 1277
+   },
+   "status" : "OK"
+}

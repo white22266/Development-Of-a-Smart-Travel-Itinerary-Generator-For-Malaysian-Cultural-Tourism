@@ -1,0 +1,224 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "T132, 21070 Kuala Terengganu, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.261431,
+            "lng" : 103.0408214
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.262777680291503,
+               "lng" : 103.0421964802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.260079719708498,
+               "lng" : 103.0394985197085
+            }
+         }
+      },
+      "name" : "Kalang Warisan, Serada",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1830"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 8:00 AM – 6:30 PM",
+            "Wednesday: 8:00 AM – 6:30 PM",
+            "Thursday: 8:00 AM – 6:30 PM",
+            "Friday: 3:00 – 6:00 PM",
+            "Saturday: 8:00 AM – 6:30 PM",
+            "Sunday: 8:00 AM – 6:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112549691586126952723\"\u003eAzlan Bahrum\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ueetRdJxHDuPL1cl8iljh96XHSugNS33wwPz8hlDNJektFQCGR4-MQQvjEbga6W4GN4VgI2ufeg0TgZxfECfpvVhnFxQONTN3LuafUde5z5RffrbZRoKKeCxCgoRWzBYAyzi8qS7inO73pJsVRcNG1HAq1zeTblpzIaEiRAdMiujos6YLzQfO1k-S2Erx5a15tHysWqUVAEB9BL76XeMMyDrEngOu_HZoLOGUELGYg1mz2pUinyx6ex670nF3D2X_rdNjId1EHnxFm2ivXP4ZtcE-17iJCuPe7smCOMrxk0NHMgmmT-qcqCWlnpeYA2j5YyJRGmS0e2wmQEthY-SPFJj3FEcry8cJx8LTwXqwDcvacA6YhPXyvcrhnsMYJlN8XMAiDTitxd9JYttAO3zEwEEevxzAQYSHG3pGPzQVtVg",
+            "width" : 4800
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113310279066559468181\"\u003eDr Arif Hakimi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tL5Gbk2fvITDFr0XfIQdrRnEopCKF5amWiwhO8jrntQWEMQ-IbI8N8qVENCKU09u2mLDiv9NhnIS5vEgbV23F_1t74bi0tPlLrQ-xW7aLrFTX9A6Aw-hU_qTaZObjvSWbt7V0-WziMgnLocSqf8lN6MbOzO0TmHwJAbsDoIya9v4ItZdmMvCpaliWm03Zgnu_VMb9lWPAyuhbLZxo58Z-Bt4MYUT9dTxZB8zvVaXVZ2OlFiKkRIbA2IDxm9HXSub7iTq5brKMZVTfb75V0FWLdi2ZtCcpYmPh38LPA79vQyh-gYJOrqgyWtrh2WnQet1LqZZcJO-VwXOUcKndcEbatGPGodb8cPQBciDNEgNfxB7VRX8Tw5kBD7bNbZtGVTb77J7Es9KMRoaiIG4SzzOwYllvsm0ecpOgE36IvIZHIzQ",
+            "width" : 3024
+         },
+         {
+            "height" : 3468,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105353156765122942756\"\u003eDr. Joseph Bidai (The Gipsi Marlin)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vmgpSJCRkuPgoxJdWG6Pm1aqR8_xB80DUh0JfHjEvcR99cpd8Mg6JxOaE0vC7fd8oXHqRcPlnkzI3Ywhz2rSqgIsVC9kc6hT-FWVWzwf96PLDL8bFAuzvx-8SIJU87MUeEN1MQYwc5jNx1yM6WeaGEbzNLtOFZ4Vd1TpmoKWkU7uG6-9t3KT-MXxQDdL3zSY2eqWrXcwdqQzk7iQ2gNpy2YI6n1BKIxlS1oUXw6X8p4kaQeV2ONM8YzSWMyoh8sldop216EXRUPPsGUOKb7iuGXR-jVip0UjGi77kbYr7FApABr_pApcorbK_WfIZX6QcaRndF8sHQq1NCQojMlJKKuRtksO6DmQ8JOP7sBCaRWOGHxJIFcsyOT9CJCFkhdns5pDFi-vRPAc4khe0n89Pr7HvGEi1Qxlmx6Tsw6d9sIp0",
+            "width" : 4624
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v6iO1Al7JQROp5ih4dT8P9q1vovdoUZ3Cu3ynRpqFq32S88SAuwORbZxRn70eS9br2C3Dgqah5fknFjeFZTxjOokRdkFS9GPYfM019N-2pBHSEDp5FnX-tW_LMNRYAqc-GnQaMdFtx0NKMnzzmRFTLhJSV1ZnDZcufNHlwQcDWyMD_lDJlyDdAZRYYk8fBqh4MSXovf0G0kYzkZPRMiWJyHzZfSml1qBUzG3oDZE37XFowJ90Xy3hfnzU2TKR5CtoWdp-diYOOOBy_VBCqF1Lg4tFs15PUWe9zl4fqZXXljm-IVAdU4UecKMttcywk1C7VTZxgOCqrsjQFdOMesfl3EVI6B_ZrxBZZaCl-iy5gX6hS4a_FrTQaqcHnKL2E9octDUrdH9W7VOojccrrqtgu648gjiCHyw9sn8105DvqRMSs",
+            "width" : 4032
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103300336394702046177\"\u003eMohd Nasrizad Mohd Sabri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u9WsizEogZeQGVOVaB7CnDQkNEUu5ps0s9pH1FCeqzjvtlRxzE5zBqx28eNQ5tuKbMOR9qQVpJXxMdueyO2-lux2K6r6OV4ndr3WBGwdhd5Lzric_EE5QAWNUkeS45NIXgUv7ZQ8ypa0e3kD_B17N8SvNohdkScBbCTeabv6r7p6LEN2INmC5bI5-sPd8tsHKzyP1w6iytrlTb5y2SixBCerHAFqg528X33tGfm5LzO_K9f6-Rqo1aKylPJu-MnH5IPzSm-WCOwhhpTV6b-1eye9eeJtnR96SXAQ0uhHaklo4rVasBFmTdR_vTS7RT1DIu7u8RZVf1SQBuTusfuWM9spq3RhXmJGaXb6TG-AxMGfQda-b7QDWEokA57Vjek7wnORInmcwx6YMbQ5hI_N94tpD7Zz75Cnr0hhwVHMbxLhxp",
+            "width" : 1944
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sIGFuKXAuDEJ9sbJZY9et8CnryNXJcioTAEbb-sX1SvUSSEymY8eROd_6DJ98v7EnvgY15l4SuSgl2PQ0aS7ZiSWYInYA92G4xhzNtGZ4mZpKq0IhoRsaXQ3COo_Am7hAdovzvfNw5XUgw_CjczHY_vHl9-0bWgVYwLTJ--uhwvXQPAoxIvQRc9G6-wFJxC-b0hSPXx-HxIAkksB5LKt2e91rz-QXTOPea29BBkH2mHC_ffu68JEOWVg7WrUxSHdHisNvH5UXOk6XoD7YW-ZWbJZ1y_8jsQmJ4qgQgwsrdrSzEcpwpMe70uaAKpXVmFPBx68rczlAww40ifrEOXDZHsMdFpxxsOMjbeM0UYbF8FqBm3SZ6UjP-BQJ8QohcpFOyTiK0-J97uNkhSR6_EwRM_0EPFYB6M0t6Vb_evGP9sEE",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tebPDe87ckWMHoZheBuZ9J5iAERIaNScZOEM4H_UjT_J36sgXLVv8StdyXBJhEsCMHxpM7VGesrphmr9JTjvEdOe3uYoOhY2wd7GhjTt0CgN-LWP3avJyU7edSYUmXfahS6pJyyOLUThyu6GeEN8JjqtOUJ0iIF-ftt-2YBWG40OZEFWPFzGfWKZtnpfpV1UMR_hNooxt8kPmhGj65XPzr9ig_sQK4FQwwOxgc9EtMuqBLx2i-mfZBYF1-rjGV1CCIhQSrKN9NBVTYqjKh6MgV2pNIhODuHdKs5yEpOld4NmeGAEoMpABJgBdGXYbEIFzTdJrPyYqdelvYxSd2Dj8r6HDnFxzmkz1Wk8MBuN1UEcoze3vVtyozyXNfSu47h-9Xqfe5vXY_j8L-EGKo4f9xMvrzm4Ipq7QkD8jxH5MoVA",
+            "width" : 4032
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108811694975864590561\"\u003eMDKAMAL\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tmTMK2rmcsKtVoXMtnrh6V-F_EP4gwaWx6CrWSNbLw7ewSCK5yFg-Z1-6P-IpsFLMXzBfOaDvlez2sdDfkyp9WPlXHJnRN_usfB6MhtOJKtR4Xy-gNfgcRH7MIXZKxRiDzk92f4s69VmEVlu3s_tIN8YK4okzyMtT3oF3XtTDA75Aj6QNBwxwg09-3OKnBu2aQz8QuIryPlPhkSRtfJw-eCLYxuSSfoGEJ00zbfuMtwH_xWcLmnChdJi0bh7Pp3ABCbRD855GHi1dK8oWV-sksHPHJm0U4SyVizW7rnQnnfVt0HhKxYcRx8wenzhDFLRSRSQAEs728rWTRXIH281xQd04wXF8pxw24g94_hj9Qp6grKPp9QAXNyO7qgH6b1VrwAipHN29eYnVYyJ1SDgAyJY00kl_YYc9i-Q80yDE",
+            "width" : 4800
+         },
+         {
+            "height" : 961,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110956488188353156600\"\u003eFairynaa najaa\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uoTivsA8-9K0RK4xXakNsRO354azMhiDOBXwCqNWX7pVQ_sdBsPy9BEizem4T46nEsRI408C95lQwAlYBz6w7ofsCpzjnqNcIJth-cLEXGWEptwUZl5aDI0XbQbM0qcuAIAPaEeaNxO8c89mAvyOffYOnoRrG8MCPANm1D8LCtmxsib7xmWDpBAuA-Vse6CMPtmzV4Wa-ztxoO4xxQ3rXVBaCw7ddL0zltWe__s-_ojI1y7JzCnmModvn7Z09Z3doha0vOrM6PsRNb-3Fy6dWsA2zHFL4mzeqHApN3WjIv_NF6hXdr1DrpzqwfgXj2WpQdUokqd6iLf485aYy6-_n9SskzgqD3RTtJRFBqsxhPZ4ajsk1B0YhvPggQG4jp26gRkFxbs6bLCF9W0i6jivkpfHHVJF63LoipW0DclNwueQ",
+            "width" : 1280
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113310279066559468181\"\u003eDr Arif Hakimi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tzMtwEvsf7pgZJlzqy3rDOjYkmBXzWSxk4tDyk74G_CivWRYg3t-X3lvAuA1PbqW5QypI5tug6UVDio95nYqfB2rzltaTbcoQPfLt7n43YZqR0xX78mXUuAmoJLzSJLf8B2HeV1uboAMsk0TtN8sRYBnDyLJ980bTKQf7b1fS2qL1GTOJ8SDYBL8YlV9my2s8N-_euJ98m_JT9R4cnIpwkf7WS-7mA53uz3rR-3HDB1ojLPSyO-1JAx0zVopjgGDYb9RIz0aDkbm4BlREx2h_PbtWXThaKXmvyiFPiNZjAQrIakfV4gjdk6Yhuh_N1kjxMPm-uL9onpBh7BzH8fTDnZisuM_1mytmrr0u_9jiMzzAJ9zp9f262GaoxzxaapwDOecTzjV6Wq1D9cCSTbXNFv7C79aFVmLazgIWQZpmcftc",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJK0x8Xfa5tzERnuMMB7yVbFQ",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6083401831475372958",
+      "user_ratings_total" : 145,
+      "website" : "https://www.facebook.com/266823240171/posts/10158040546460172/"
+   },
+   "status" : "OK"
+}

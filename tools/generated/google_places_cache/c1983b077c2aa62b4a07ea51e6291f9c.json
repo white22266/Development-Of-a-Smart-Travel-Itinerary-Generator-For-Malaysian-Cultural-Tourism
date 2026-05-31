@@ -1,0 +1,77 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kg Kekabu, 17000 Pasir Mas, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0195516,
+            "lng" : 102.1500002
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.020895930291502,
+               "lng" : 102.1513804802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.018197969708497,
+               "lng" : 102.1486825197085
+            }
+         }
+      },
+      "name" : "Jambatan Kampung Kekabu",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106111521474013963939\"\u003eAm Am\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ugDSQ3EBLVuWhnB3uEfPcW8PqAaBPgFuapSfT5wYUO6tGqqLkDSjW5Wlch-lcwwjUq7R6VeLhTo737mO4D74hCPuA0IQP8DemZuA-ppLl2Rge0MpcZVAuClQveP189lcxvvclnE0tKkyjnt0UCI1SOGXWNAWHuq61q1Ti4kauE-MV2i352SOTtd5gTMxZlUVz29eg2L6k7RcnUW_DfrHu2gMej8mKrLnYj8P4xHlhxuZNFafjrM7IEe4BXUwUwV_g0YhPbrLEX27mbbZ7gIiNrEXW9JyHMkWOWNgMGkFFNU1-XrXcD26xd982h-uWPaNBc8siq_fduSGb_t1sEIIitdS80ZeDicX4YI8PPKnCORRL7FnEVAKfIPIbQtrp-D3ur0bE9LdH1NwkL2pIfTFMnnfh6NnThQ-RPgbpo79Gqc_vw",
+            "width" : 768
+         }
+      ],
+      "place_id" : "ChIJ5S77QwCntjERugqxumi11fU",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17714264170745105082",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

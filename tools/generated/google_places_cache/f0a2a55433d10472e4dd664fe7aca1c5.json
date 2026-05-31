@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Banggol Che Musa, 17000 Pasir Mas, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0863226,
+            "lng" : 102.1105693
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.087793580291502,
+               "lng" : 102.1117684802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.085095619708497,
+               "lng" : 102.1090705197085
+            }
+         }
+      },
+      "name" : "KAMPUNG BANGGOL CHE MUSA",
+      "place_id" : "ChIJq5IRAgCntjER2ssiM2NTWMo",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14580495479136766938",
+      "user_ratings_total" : 4
+   },
+   "status" : "OK"
+}

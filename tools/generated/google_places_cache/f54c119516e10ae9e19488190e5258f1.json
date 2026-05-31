@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot A3 & A4, First Floor, Block 4, Bandar Utama, 91300 Semporna, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.4777077,
+            "lng" : 118.6083183
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.479034630291502,
+               "lng" : 118.6096816802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.476336669708497,
+               "lng" : 118.6069837197085
+            }
+         }
+      },
+      "name" : "Ocean Gravity SEMPORNA",
+      "place_id" : "ChIJ59uLVQD_PzIR4uew_nUmQ7w",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13565728790796101602"
+   },
+   "status" : "OK"
+}

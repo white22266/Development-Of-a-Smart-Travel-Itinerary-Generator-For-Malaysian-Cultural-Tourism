@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "654H+3J, Tuaran, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.205171,
+            "lng" : 116.179113
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.206536930291501,
+               "lng" : 116.1803520802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.203838969708497,
+               "lng" : 116.1776541197085
+            }
+         }
+      },
+      "name" : "Tuaran Sabandar Beach Land",
+      "place_id" : "ChIJxdhAFAAROzIR1G672j6wEA0",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=941446106124611284",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

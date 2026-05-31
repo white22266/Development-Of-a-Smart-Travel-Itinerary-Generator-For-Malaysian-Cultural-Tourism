@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Multimedia 7/Ah, I-city, 40000 Shah Alam, Selangor, Malaysia",
+      "formatted_phone_number" : "03-5521 8800",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.065163,
+            "lng" : 101.4848116
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.066553380291503,
+               "lng" : 101.4861644302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.063855419708499,
+               "lng" : 101.4834664697085
+            }
+         }
+      },
+      "name" : "SnoWalk i-City",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1300"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1300"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 3:30 – 11:00 PM",
+            "Tuesday: 3:30 – 11:00 PM",
+            "Wednesday: 3:30 – 11:00 PM",
+            "Thursday: 3:30 – 11:00 PM",
+            "Friday: 3:30 – 11:00 PM",
+            "Saturday: 1:00 – 11:00 PM",
+            "Sunday: 1:00 – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118390990329723313948\"\u003eRENJITH N R\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v7iJq6y5adm5jAKg_eqSTcV8A91HZDddhY_Xf6A5HpJdvhdC8Zt_YuNZH8eNQ-wa-n7SFSCCUczTnlM3k7zRXnJeuywVP-tfPi26y7pD9wpVFjVkl5W4U0CtzmqcW8YU2GLrKQLHQjfsg5MADge4DFMLAzAhLIFUulehhQ_WOCV-sEeHhBd64WuCWNAe8_7cqea1WPrpmMWo_IJDp55nH0suRATVm_mlujpYkeoQV6I7lHqGjcMR_P9envAYpiHHLCVzNt1Bv-vicaPuR-huTm-1hwxW7LWT-jj-pPJOHU8nzUHdQueVlAsL-zw8UZC-kjpzDxT5-UeYTU0draoQDfuiseKwXl88ePHkb5TXxnXhpcF1y9FjjZm4k0t8IVPlzhFgqksfq4TjrOS--2LfZmLK8o_iuyLd2Eth8wqZLKbQ",
+            "width" : 4608
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117270933835094371522\"\u003enurul Fareha ibrahim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-svAqtiO2rQ_mSO5SPi-E2WIjHDYjnnwzkOk8ctN21pkIrpG9miCyg-A0pFuKRjwoQvvWWi3lx6L6A3l4hqAj_2bEbtbHKeCKmP_LFc16C3wkeAxIsa5JQ2_a_9QYyXVF6hJZtPnSpP7DmgFvmdqFejNDDWG3oOxLiE2Fn2oV0AibNgdyRfW3sZNAWk7OuDDPEUtK7bq_QiyLPp0aX35g5wlqeUjLghFNKbiCHE0zm1L_ubIPrZjvRHakBgBlXnnvfECnqnsAIrTMyMwRkFwxE53pNhYYwW8tIKwz5RSX-yIaP8t6htowOOz6UxrW0kHetqNAbS83PhNxwT3C0LMebxUoi3e7CLMFkX2APbbG9t3aUmjyMp80Zaj7NIaYoG5ItNvfVlpOynPtPHvHrrUD9XugcxMZCPxTQHE4SM-78STbns",
+            "width" : 3000
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115028071157315807317\"\u003emileva rizki harfita\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vRrnWXlm0aR56-idvnhi-x9VX3DMrAH2HoDBs92FwDSIfotF3K_mRhTRO9rLH6a32H7x35pUNRqRVoAgm958mUqieepPluzBW4VnfJLrK3E3YpCvHUYSRd7ZPYrGCkQYwDG7gobUgewtEj5SYDbeYjHF2faXKYLUWtN7UZUapPAqi51SrAhU7KsE1JP51ugylu9n-vWUTbZnU1wYU7kFJyXShAiLCe7IaWbxjsVXkfUqhosaWb5aZ1cbASrrYQJT8sQv704q60HVmatn7ya-TqtFJjUI7K-56BI_KjTW7Fz5ewX2ODgHILjMspl4VodkCcizlc7vdbqmQPYMy6PxvOpHWr6LWW-_bqcUSXwW1x4PfC5E1Mmlj4LlU9yDCAHDZQxkqCk-j16K7n40QS3EaWiOlIO3BBQvP_rCraoSO8jNXD",
+            "width" : 4608
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110422593650506038605\"\u003eJoeHazrul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vlBqNWotI81rmlP3vgdNUjPzmw9AlKS0x7PxOkUSXC7mXx13emzHN8XaY66nR1veHoxdq_VGa2SXpMeTL-XHQpWAo4NMiC0BBWnETv7o0oKgw_hcLeflIbb75065Ejd62NZCCgPjZBiIbjByD92Z2oqN7FIasv6hB6RotLgiaLhMdKsIcmZhqPyP5DhSwuADspn0EE1yqh7-y96hIPkxFhH1NSA4OpI4Bl5zS6UtAXsRl1tBiwgkv6MMESV6EzDJahoBhTEuhttRzdGKNky-PY9aSXPS_RAQw6HsLzQzIA4DwoBK_0QFW1zQw96cf6xHgSiNa-QX-FzN1Yxn4iNjEkL_WNTcrsfUQdr9_x7OrAtOrZ8YK_K17qu-Subm08jkr-TevsyImvJTo-f_MIveg7ny5kGjKYjZ124yxyYjc",
+            "width" : 3648
+         },
+         {
+            "height" : 1944,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112904340071811040155\"\u003eJeafridz Hanizam Japar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sZTpYvVX4j4AgtK8u0O02FpnWlanwbGyHsjFOGj-uoOS9p6LxtrY9XSdK__fdaA3VIIyXZWvkAl-NXPf__pNPhOAYMI4h1o0cLLQg8qGEvzClqoCbsjO8rxgcGMsyEFwOzBvOu0ka1rgcu8jouWc7v8-oROsJ0Jzmi_WF64YNIfZt7jWf0gD7n6uAjxgNgo66dsHvso91Q1Dk--969xvzRlcr-FYQRiQfspKL-_A_SqT6RiEw-H-i3HheBk-G78y3UfsOhKrd_2JFzkaGgIUG8-iDKpIaJEPBiqnKVAoIGOJqjH-aNGbP4QR1pQL6COr-GbDEh9-2M_XYSz1dmlTtkvy3Tpom20LiPZE5GdJdd4vDK76Y7jCOK3Pc1UECZ27vNpq_Ybz_uYoFaYSAdRdp7YrqY9YcuC2swgDz9X0k",
+            "width" : 2592
+         },
+         {
+            "height" : 1944,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118004193578173137774\"\u003eAlbert Anthony Undunesamy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vxN1xvd68nSzUFPvk1RdNXNMW-S1jZQd4zxOSoxv43UbWxnSOvnQUlG_VZP5fheeQRWpNradeNtHHaXETfNOP_zea0gRPSedse0BHMpOE8aFAmKehIM1UM47QV6Zxt0ARLxb-mf5W1_BbFDGmEr02yvxWErM-YKKPlbMJ5hTBy83I5G62q2G-woCTc7erdqz-uyv7zgcdKnRqNbw97MPGlkTfgFZsnkxXkT3ZwwZ9ng_rB-6L92tYvX1OnhaywVpX44_IBx9V72LeRLGYLYjaE6g2ry1xjF0odHv2ffr6ftoIV70RwwmTJIkHJenHsNLYZjpVFN_yq_Nmh9lFiFQY0BMJSklP18ougzbiCiXT24isA6-Dy6Tkxsp_HC_xvRyfa_L_t4--Ii_gmlHCxYmPZC4lCdU1_3L38gDA5Xyv5pA",
+            "width" : 2592
+         },
+         {
+            "height" : 2641,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113466740962182475635\"\u003eYok Kwee Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tF3Q0tWtxyw5oSqCFoXTsFBZbB_qhoCQ8bFrHNa2tknqZ5jWd-kVjbDrbqZftyAZQT8O27adCwiCnmykFqBVjg2qcxjNhzYLPFCYlmQ7Rprueq3TZ7jEp6_DqeVliBlYkD788OPO5_6NpyEmf9FhPa_GJMbmjlTAWaetkKHAnzrvo6Gb7fS-9V5y6M4eh0V6eXrNOMQSL457VBpPNIqS7IjnDaPK_oVkUaPvfreoyqIOrpM4P6Cid7fNT-ZqD9AE1Um8naZmu-rWpEc5SwO5sHdxZJzZkmbp8xVXuFgwnxj7aO9-3ZHChZSYyo1kRdgjbPNmMyQeFSfVv9czpbIbuRPX4a7NtUTijeF7B708fVbO4TQkUxGZYG1MahYMsNL-DYIZhZLbiKFmfFZCMYofkOQvY9s_MLIdDlW4TDy288kaAJ",
+            "width" : 3960
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108644197429000651008\"\u003eMafuzur Rahman\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8D2zCRIuFIvSe5iWlMD1B9--2yU_U4F-BBY-nw3x1TB-I92kHhFNp8Kv3Z_ml7IWBNGw_nQGKJiXT1j8dzSYkHBqwDIL4i-ts46HsQyTXz0lU4cUl-psOv6QcrRiLrVE1hFIxkxYcMlfkp8NfVdiEBNUQIz1m64HUbWu7J7cvgAzs6QiqrJUpMnQixn8gHH-Pxq9kSanyyl59gNHIa0fK59rUjxEg_zd6mD02W7fFwvEyvRw7pJoeqSK6ZW6NWwUZJ3A65E-8TuPdYnBEnlWtnBBzivCP_xGxxraDveLQqDWdG6qq5Hw0rsa4dvjgpZ4drMayX-2iqH7vOS8gCOKzQNjs0O36DeaSPWM0_Yqc_ke56OpYGoxfPndiy-wlMk9lSlvvgetSIfRc_CrDEyQkADyRvhlv47JNAMXGHNbC2g",
+            "width" : 4128
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110908034660714666987\"\u003eAhmed Mustafa Alattas\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vvXaCqlB2-m-ymY9Ig4p7aoHrhS4oic-nG4GRLSFvAU_RrVh4rh_-NMskqzjXd4hizsk7kBmL1bcG7niHQCNvCi3PNlns1aES6o5FQjjcDtf_AQ7-K9j0xaNWZrNI3YcchE26PRQjukuZqR8H8LlhNbgGLKlkEMuO9vlmnW2q393L3KDBpZ9mAhD2vF-7lnh2P5WURGf_Au6HPgxDqQ2knurYyQUDXW6tDo0uLobobxGfisVtbt2hiryYSDgihu-pgmClVNJmnfKYEcRBIUjRB_dIeEVr-rGexI0xe4Ov0Y67-zsS-7v867Nh-NP6BxH9pIocybijYk5jQJXkBOUebfIQRbCvfLf2afI-zRJ0FdgT-MjphmanfJQb13lnbGHiZ32PuauVInpxaxTaPfl2dNqM42624IcJtEpW_8LQ2Lg",
+            "width" : 2448
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105467154772456832766\"\u003eNimasha Perera\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sMibQKJfFpkYmxivpSeParBZzwSAfdRaI_H-mRJxsKVt2dlb31pmjoDQMKGGM2EurRVhaRHftSaWtK67_stWpFm4PXMaL4YxU5GNXBlA2-ChMzbXIMpOHY5FU0fH54fdz_CBoa8mFix9BmhMl_AwyLHNfWlWzTKNv2UWpR3x3C63jJ7xj-V-N-1czLtdNkeSRFXtb4ZJ8BQ18mqZXUW4LfedM9rT50NqozLNl_42w5GwZb75qRu6-UcIHinhbjp_JgYx_x0Y0p4bwinAG_Hj53aSPoSbKDxdUk4gwvSMBS5hFbufIkvuD4E9ErPv-nZfWVnmVMw6fXz42Fx9j1gZhYaeNuhClqBIXZVgFZGHhJTZ2XiKE6nPyKZxPA6879OuQEqr5c4sv6zyvYOm3_2GoWyG-i_qDqF-L4hhnZrXE",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJdflQRONSzDERGjzEpdYig8I",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "amusement_park",
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14016084770606562330",
+      "user_ratings_total" : 5305,
+      "website" : "http://iticket.i-city.my/"
+   },
+   "status" : "OK"
+}

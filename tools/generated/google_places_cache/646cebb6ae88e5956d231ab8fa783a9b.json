@@ -1,0 +1,235 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Taman Tunku Putra, 09000 Kulim, Kedah, Malaysia",
+      "formatted_phone_number" : "012-408 3332",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3721459,
+            "lng" : 100.5571717
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.373466330291502,
+               "lng" : 100.5583720302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.370768369708498,
+               "lng" : 100.5556740697085
+            }
+         }
+      },
+      "name" : "Pasar Besar Kulim",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 12:30 PM",
+            "Tuesday: 6:00 AM – 12:30 PM",
+            "Wednesday: 6:00 AM – 12:30 PM",
+            "Thursday: 6:00 AM – 12:30 PM",
+            "Friday: 6:00 AM – 12:30 PM",
+            "Saturday: 6:00 AM – 12:30 PM",
+            "Sunday: 6:00 AM – 12:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108029166247489909959\"\u003elo leong sim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t4YGE1g4dfqvDzjLT-6azPr6pcmt-FAmMwZhB94qgDusADYoc_yxKrjT26q-I0VP_vm3tCfWRIfbIcXUYneFGLBaJyieLhIZIakjkZ9fKpqtTXfcq6wgTmr7JbghESzE4Qg2RRfHys8b0VNDFYMxROq3l5NWtLqw47RNUk8BtRdPOY9q5aqkIH_TfdkQ3NVAWjBqtPc0GZbQHlJtJqJB1agimNr1KVRNHiVHAaPCvTACMDIdSidMU2Uqw8uFOoqC8QhEojrQiNFAfWt1vHR_VYHWv6tnArXXCiGqruDzj91LlJtRw7sc6Bqu55LzPLNmoV7WGXRUi6zQ9gNrVemDA9svItiIBcaF94qNvr4mOWX56Y1nVFmPrp6ceW__tfwDJBF9DTaw5jfe6zP9_KyN_Gyc7dhlFC5R2Y7I8OhxbyMPFK",
+            "width" : 2448
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111691966238874846865\"\u003eTEE KIM TAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tiB-UlVyt1kxeTUj8cJjiItp41X4oC5amJbhiuW_sn5y_52sRPcP2NAr-LAX0-y0jrpbUxw_N-ZaLcAx7w-O1KFBp5O4aCBeLtojfk27RVf8s6zW1jn0dgexaabbJph0ZLvsxnAo1KKRC2GtVnSQUbgHpeoUxg4o8FXSWPk4EInD2dQrjTPq3Dh5JhYn0YIhVGrIXqy-ZKOLEuEvNM1OqSPK-Lzqt2TRpViZcQxvDI-_9E4-dkMjk5n8a-VrAO-CBg4aWpBJbd_aUXFmAU20cdNGBozjlqwOO-VtHTZfojBKSW45KjAq3WkIYsG9tqFFqLOIPRgfUmVZUUUwAyc1rBQVBUpDkfvD79gUioX68w3RmfB9eDiBeYsEJcdAT2BSk0d7rZ49pFJeRUB90IwhxUB4tHYzhanWLvmJqL4_Z9vH-d",
+            "width" : 3264
+         },
+         {
+            "height" : 4618,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109158921426658613528\"\u003eNazrul Zakaria\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s4J-oguQCpuvVp-1V9qV9NtmTMU6kd7eBJzgs9tny9rtrCltyoXJR4H28Ce8gZp3oykvEB8kZTpJgtAP4IWjMVfBSgK9EXKEBnQSm0oXSG3XFuVKFlbPyiaz0dZZPJ5qEHCVqoqe2RJxgEQ-tXFewpZusB8OezxwcX1KgMMsdamsk2cw5y6tUIMgMf2O8S35ot3erMpiDRg6VwwTvwpUaD8diAac5LJjHX0_fc6wey7pwDi5XYXppF7ZlQ2olPHa61ohtVe1mKW8xuNSD057boi4TOJrlRVVU9_k5RUEaZssitnTZULpFW7du0_Upxo3aKEteIPe166eMhifhno0P0rKnlLtUT43DNZFI6FvkNJSOpLesxB25_Z8qQ3cqQqdwf3lDAtrwEF-Wk1SH_3NkTVgbiFaHj3c9kOQmpGOF48w",
+            "width" : 3464
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115246062445947042539\"\u003eBuhri Arifin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vw8t2hMrzx5P9ChNCjNEXsF31GiSeostCgau6b01h2tYLB7nRpnrsSPC1ZjAUC6ouIk5JLiwh0Cy14NRH4qyTb95ZRVpeei5u_FAvV1sGqxlJOmiKueSVopnaOxu1W8eV91l9bCffhTc6YN26JW8a1l1lt8Li73oQynLzbO6R96ZzfU8-vG-YLHNeTfIrMPvi4pggWn2AzIBz5MG4tI1nzjz4RdwhiXSCllRz4K5qbf2lLdWbPT_vb3t2oqqZ4jdlAMpuTtg9rDoYqLMz8kTcDP1x5Fez06jq_ft6bbimUMEFG2a3-f5NTt_6Go3Bx9ijt2d52KkfHZBNi594U01Oa9_SpyuMxbaI6gcVYPmLAzNpvh_gd8l3xI5rP-59uVgul6yuMjrjsHDKZPQDVP9w6kcyM7Bxt8BgnDRCXTMvsUw",
+            "width" : 3000
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115535405504215171940\"\u003eRaghbir Mubarak Singh Shergill\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGec187AXmHMXtOg5BQK9_oW8zqdfoKB0teoCZdWXrzuAT7eZZqSL184RmXV29amUAKEQZx4MKh3Ercsvb1oDCeLoerLZF5tPSe_2wLhKxvNr-qu6RSHofNEamkTvIkhuaTcGsAUPnuqzqLgHtRSt0SFIgTHPLi37tPOBubuCAOoNxhNszkKYiPqO0TrRKmSzj3pAwhyIkFOCwKU0Q9Hjx86M8hEzxOBrkgrPPiimKjqyJ2Q3BPPKq23s6ww-BKV7h6mdOGAj4jMt3OsoTvuOo6nvyVGPjrQGFzeMjR-fky27Qqkamp6XBxhddVITis_9Qj1pr9dkM8_ds-AfWoLqLnKaaYayVfK_yvqcHF3sKtJEmXYDSgub5zn-RQxy0YYpbGWQRZZfKJDbSaa3UFwv6KuoW5ivN9sKY-rG3wRsT0w",
+            "width" : 540
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112310478643662651612\"\u003eshirni ong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8usDHt4b0VvV04XnGnyJxFAc8GEdqNJPoh9CXc95rW5O2X4Mj2UTTSnWKgpaKrkaH7x_C1Bz6eqDruKBgMDSu5SEv_Ft5r5FwvBBxTQOh6ngU1JaTLIyaWPh4XNfGeKM7Cuc9yLpHp5G1s808OWEfgKbMN_jWDrUw8aZ8i7lsjynzUNDljGAEaARqrKMa24QnY4XJ4Zb90c8g3eft_Zs26loIKQKyHF1q98tC5pWBVhIPDvYS9rpwQrB1_ZzjC35Bz3I2tNJS4TMGr5UtFsKAYiSrjCywvATgv0HE2ajfSdZofjt82nYemBu2IeNWZr8sZLcgyvyrHOa-q3W00UIW9kmFbdOXk5yeL2uy5oYTszsRutdammkOx_k7yKP8_C2VBaZ01Ktm0xX7oh4ZSOzS4LwwFPkJOdYl_a0S8fgQhZqo",
+            "width" : 4032
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111691966238874846865\"\u003eTEE KIM TAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tg3QfqSewba9HGyXirE4Zpr8g28eHBqgpxELDOIk94HHn05aM2RtGrDMSWPfZTOIVSsZjdoEDGP7S92GbVIgqF4i77QepGMPSAWIK4tshUG6lXl5iGTXpA3lnekwQintWXGiWwcZWeOgj_-SbOEDmeER4o2jvC-zk5l8wiK_9Hw-g-dIA5SbSTAkF578gmmZrMvYfVX5mPUQrT0d4lfoYIiEOL2Rds5Enq8G3bqvZn1jN9sfP4shWKBZOF1oo0Wv9pVmkDJn11uR3Pj-Ms9pLI5ul4uUZS33vHesXSIr6f5tzL3miZm95A2--hQVfgbdP0xvfRbKGkJN0A75nsIJzfGy8rTxGyLsMS9mWaUrnUoqcJdBSXslXytoHhxj7coprXbIo7NoPiZRT-70UQzaXNqd5bmpTlK_2VC3fcrK-tTw",
+            "width" : 3264
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107628381367522402910\"\u003eKuba 510\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sPgpMD_S2oGwyfStPL3BTfsSIJ1xEPEpGB5_pXt-3yuoSRvzYLcTattMPAnrJhm5r3L19WxxWMrnEc4HaWETVMNX6OItxo3FAhe0X5iM06juhL9hMd_0X5Ll85uwnvNfVL-JJ3ON7IHyBChgF9niSvXrgr04iZLlX5RbQkYSAgNBjGusEQUV276XQUqvmTcxBPKOr16gSUGlQ0FM3Wh99-VAkc26l0XoNjKfK20vDRqT8HVjohEC71KVJJwIIjMDLGFN6K1j5PUP--rJLEbG_jn8KhiWZxwTJXa-b_syOy1M7WmhLBodDoEPBxp474J83nx6dH3xqJG9zIk9E8XsBG6yLV24o9qcvmtvvIXquynCI9RnN6fTNIaTrQJWBCkYEJA-UQ827EImynM0mMfJP2zQ4_QbXBicDkfuXWR3pPuwut",
+            "width" : 4160
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111691966238874846865\"\u003eTEE KIM TAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgks85MMo71Gk_CZG1_OAEaJwnd0OTe-uqstrTQfDY8oXeNI1m_7ANPQt14GWelCrrz7ZdNBP1FBnfYbxMt56BTOWCkKedBLh-C7EsxJtJ6JEBOf9Dt_JogKPtXjArQ4202S8O_SiY9qEA5Gs9vFMNjXrRq8RMeYJSoHLmZU2FbXPchJPoLvzhhykOhHGjN1jsvdayY5--nO7im26Tzo8pxjpyLsRBu4NfIhHtxcQ6VC5c9rCzNdJD3lCU0M4b5t7idjfDVx0XBJTbVKpny-hXxvtmh6KmOGhSJvrdyEePwzZpbuRe44ebkbFgXkinabBA3yc1zUPHbpLBoEDzTdMAE1LtterdYul3tQX_9w9V4ZzzLSXwVemlZqJPdkvicSbOhsb4QuEzNK4hKpU0GhkOFKLXr4rOWlAiUXXnkQ-hvQ",
+            "width" : 3264
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113713972449407833097\"\u003eRajesh R210\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tvOddLHaJ1P5PPEgVr2PFg_hjv162kAfTBb05IBAT4w4bHkUamNr1UqXkU4vDHcQMSFWs_Pu3ZPXHWkZpcmHs9irboHP_e5Ifmo9YHHA9sXMrsAERQ-5vsKYbLpGREuVUjLRvoBScaOcLUleg79_Cbc_WHcOoOrkrX_2Y_87Zp9O56PUEsqepV0-IOk1J3zHizQJ_VafdPNVKT9wEYub_435mxFGJ9KBQ8t4lzrWx91X46t394m5X7HBFSZVqk6DZPZcBTDxPnJE19phOkOpBx01QkrEWG7X8Nut7yovIZ0HcOG0B9WksU1aRxyC3ZOisuLhIcuRZ7wSamDnx_eiKo9FPVqFu_M3Wa8Phjsu98bhEZCMypphCl3n0ws6PUq1c69wITH-Yggv7vClmklUneS-JPhOJV_dekmp_eYevavrvvrQv9MGssiny7Zl8V",
+            "width" : 4608
+         }
+      ],
+      "place_id" : "ChIJ95rA0JPLSjARIKCn9L3soSs",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=3144054315478917152",
+      "user_ratings_total" : 1370
+   },
+   "status" : "OK"
+}

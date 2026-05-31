@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "20, Lorong Sembilang 11, Seberang Jaya, 13700 Perai, Pulau Pinang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4052111,
+            "lng" : 100.3968673
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.406550330291502,
+               "lng" : 100.3982079302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.403852369708497,
+               "lng" : 100.3955099697085
+            }
+         }
+      },
+      "name" : "Taman mainan sekolah",
+      "place_id" : "ChIJ-aAQUwDFSjARZKm7UKyZdcw",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14732850721380346212"
+   },
+   "status" : "OK"
+}

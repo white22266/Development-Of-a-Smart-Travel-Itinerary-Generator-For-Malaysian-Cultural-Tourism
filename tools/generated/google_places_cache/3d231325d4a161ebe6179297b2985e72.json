@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kebun Bunga, Tasik Perdana, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2276 0432",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1441872,
+            "lng" : 101.6864769
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.145536180291502,
+               "lng" : 101.6878258802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.142838219708498,
+               "lng" : 101.6851279197085
+            }
+         }
+      },
+      "name" : "Perdana Botanical Garden",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0530"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:30 AM – 10:00 PM",
+            "Tuesday: 5:30 AM – 10:00 PM",
+            "Wednesday: 5:30 AM – 10:00 PM",
+            "Thursday: 5:30 AM – 10:00 PM",
+            "Friday: 5:30 AM – 12:00 AM",
+            "Saturday: 5:30 AM – 12:00 AM",
+            "Sunday: 5:30 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113750221100667321443\"\u003eMonique Bailey\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9iJN--dJ41JihXb8U3CSHa0SgLnwOMQRZISYj6ps5G6KwrIRBNBc6syK027rrJRZUVQhzkRZCWwsqsxRqOpFMfJhQD3EOA7gN6HsKsxhlT1OjICJxn-NY5OaUEokQDnUQxjUqx6FQD5c9Zp5zD-J-tco_6UHaQxI1sMJiaK1Yc0LeAEeJLMxdw_Oere5ySoReMPuJMphzoaipEBUMmBqD-RCOuKGWJ2zDmEvEawcgHx1GNQLGTlBST_9kWGU4ptf_uKjuDHReu7H9xawZJ5v8G8zBpTOxGe-sjItyERVH0QvjgONED6fGZL3f6PH7BDzU4TOuTkV5U7hnBoicnFfLaWZfk4nD5OD8nL04w0NqXFR-KQSTqGhtpbpIMaSJgvO-rQ1WwlZC4rmgXDCJtdV1IJwHjf1YFtcbUmSnBCZ847HZ",
+            "width" : 3264
+         },
+         {
+            "height" : 547,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112035696137934318159\"\u003eHanif Hamid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-th5eUAels6GWifIoUBW7qdZzCKFvtedqSaiwCcAst6gcsG97-R3MsR7McPI9k3xi0XLw2apOPb_jMdS_xa6rpplK4-8JqoPGzdoI2vyyY9E0A4ErkFxOZ5biO-vUEmV6miSaoUTJCQFjYlCok_z6iyhAEjeNNrt1CSvZ-Ni85qUwSXlTOs0-6ZNDWfA6AqMNfKe-C84e12QLZrJwgfOZ1Q9nTe2uElIcwOKXGpS9lC0QV6qoo6RRmMFodPuuyDtAK9QY7B-L0eM-jP29RktUaAr9WJQAXycDmmLAnDG3nJ8yHpOU9GRSvKlgiBh5KFo5nvaLX0k1R3UASbfkmSnYPJ6oPk1TAPUF-oulCDP5iDDg_VxfjQT0k9GmSwdCiEf9j-te253Bg3jMWzCQG8IQ97ejVJ6bAIb5y-sjIQMKNxIqEv",
+            "width" : 820
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107762622134185926090\"\u003ePoh Seng Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t_UJSmGM2GPO7Pms59hWGEQM1YEz-HLpG-QCtPRJ_U7PHYg-ItYXkfam1q-Fb_wfTdTAk0VE0PjAx7ZSG8AhQWN_kBJi5uttrl4ev-VVpvmAVBJjN7b6WOhyPpyBo4YJMaBmVfaZD0NR0kbz5TL5htLa9B3L93LmC0wNScSoE-lC3aOk1vJjui3Y15tl2MMAs833dSNxrw_Y5itMvbSnvOiel8LSgWQuHcKPBTT7uGT27WajGEXAFJEzlDc19HwUTphtpz7_zGNzhyCkaoMmKrw837xRErZgcfBnAN69cp-a2T8gOII0eRQwnlfa68G9eIG3DVJpFcFqae0lE9lSTOCM9NaPQkf1HR3mT40wS-FTchQFCpGLpMsF5BK1GzHHkaAWyYeeXGmf8JYfGA2LGVsO-Aa0YBko6V2wmppS2kAA",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101638122287853794135\"\u003emeng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tPY5qbjueiCt7lLuBcL8SMz8YMLYw-wlRo0u20sKaVwoaAeCyCxQUSTiu2AoaWvoa0LkONKGC1romoULYofDEAY1wOyHGyFRNVD12y4TZ43riOoYDgvmBsMNqUEBMtgRTMhxOxVaVfUtmoilxKPgaxUoDeTexwmEBYcymPQ9yfHyDFP4m2h-jwoQVuf2c_KeNgLGblf5I3L_suYpww72CvHf21Cg0vZjSd8c36265cdJhTv50-VnVfkKtHRFt6-b3qjshvwAwJmBrPzifACIDWUKmcPhAAHpcFG_iol784acRi_IWkCTVxvXtmsnC9MS4k5KvMKslDYZzSdYXz7518IK6t6mbQ0q8qnniIAzbmnH7unl-Bq-POXTtnt5vAyAeJIF1ietLahsLUwjACiD61XVZDOFDn-X6poOy4urdEZNbj",
+            "width" : 4000
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115612549378069846590\"\u003eZali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-thlShBMsMLTMsPx6G84rzWrIpZDjrFFxdXbtdlP8bcx9mWhtBdDzO_V54V8enclmT4QEFJtXQTu4wv72Sy2X8lHaqwPAwlweNzJs-bUzJeNTbsacYG7kN3Zr_P_u6giNtJwQ8-q5V71t98kYZJnvhy3F7d9sEQlkwK4L-9jThSGt9A2CKwCzkyJBgtXPtCbJNzTTQze95xJ5mPYxmNz4GHaImngv_GF7kiTpA4Z_K_rZ8VkeIaPySKGeVMXQsAKIllX68kD1uSwoXgAsjdY1klo34zppTTrfVHiqxm0UaT3qARFBZ1dOJ9O5plVvgAKfqxeothLBswqAXdxlmrDjtJ4fccIZtZwTR_ZGpBqosA3rQaQswAXDBTgMcEaNXwztrdklECcT5nW_tiw6CExozoacQ6e-4T7sRgCj4hJjoM9PiQ",
+            "width" : 3648
+         },
+         {
+            "height" : 2797,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101914839838562618857\"\u003eVasilis Karantousis\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t6aoSjsmv8wnhpcIScLVcwjRbIBDQs_U1VF8c8CLmWw5RDlD46OSoMXGTdgJA1GznQnmj2PZl-iHOJeQYvOuJfcupXJauoFfTl3TmPGGQaKoLZaRu0O36zFT2HLdy6lcRJzuo1Q_AIwGtiXJmdM-OKrnYY9RpgfsVw-MO3R-tvxq9eIy000s1Z7aHmrpOlVF4CYhhejh51HBPOABQvJlJjkYDuFoQl1oKAz8W1in42NRm8_HxZaj0KmLis1txQKu_a0Wmt6Ho-Q04RhKC8HvjxQ3G1MqlA0g_wB7pqjeicUkUh0CtPPDV6cRElTQgYPW749c7hAFwME-T8sXCsZLJsT7xSDqXYfSwNLgZwxpJSVKwfwdjdu2ocxzuu4i5BI_ae96dbzFCyYnZncuu2JIlpSimYxUmSl9PwXXdBYHgCjjw",
+            "width" : 3650
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110422593650506038605\"\u003eJoeHazrul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8oxY1esdjKrVunUA9-AG6K0TTwlImfGgp6-fqCdW4ClTPy5Bf0ZycQD595tXvtuygtQwjbjY7bOomKIL_5zSMJzP6xlVFgTBCt6S-BTxzHI8F5zKaHwbSkPYFTbJH_q3eNf5csXn995xVBBrhkh30izv3Q55-gxQYNHH-lrcKLiLw13Y12sEvjLXNBBJw09JdzLF353rG7jkEjZEYaLckAjayJl09q6cD0rUI75ok2_AQXcceE9OMkYzZVSiQE_OkQZ5ZNCsuiQQ7DBinT0HfbUN7pTsETPe_dB-28Pr_q9_WG0WaJn6pSmCFAHIGNX9OFbmOgSz1Idm2j0X2xblqmgwDEwG_YOva9J0B5wJY-Da-6gG6irJDjAolWUXaqDmQMDcf1eut4HMEOSfsheK47zPDxdW0XiTkrW_QabK3O8tywRX8mYatafEPSUfA",
+            "width" : 4208
+         },
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115896050504399519983\"\u003eIvan Legkodymov\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-viE5uR8r3-ipYlgZ_v_MCrvJ4SNyonH5sYJ2nxL7TImG22WfwGXL4He7FMJeuLGz7s5p85J8Or4me5n20GndnzRj6fmb4pCURhfa-UG5vfUmwxhNa_TJWuzDtbebDK00sH5q3wMYpzm86IcRNPpsUf52ypZH6303jeIeNZsChrY8_IKwC2_re62dB9ynLMHFoXyX2GY2awnIANELETbPj4jzXc13oS158SBPtKv9_VM2gERrx7IHuZ63evSfKA6KXQd_0MPV_ouYjPa-b2NrzcE07mKYoFVQqReJtAvTbuLPh8l91eZBFwkJ-NGJGtahC1Nsq04jy6PMU7VgyLYeHA3Xvshx6nsOafa1pYnOJYwC85_vKUARuWdiYXWSGy-moUmKHJOxYKz5hts0dpbO5f10EKL1C3krFi6b4qKAx5d7I",
+            "width" : 4080
+         },
+         {
+            "height" : 2577,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112035696137934318159\"\u003eHanif Hamid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uelDcEBKZWnNqEGq4in5wH_Ws44c7YBRdVR7pO0C6hG2cOZagm3doihefuGW58rPK6UrKbyXJENCHl43OAS_CRr4fqsv_p7zDoax6wReQCBEz2N7MtwukKLhej2nmXMEg7sn3D-VTWPY34xwJRrULIoBlvwZzDg5ApwRDfm07Xhd5rHTkVt0PrYkfdby_B2UIr4xdMFJYnOr22ddhuq-qwGbdnC1_dfv3IhsyM-YdVNLMAWyM1X9Oj-Jgh5zvoRBcbP2dZr8-vbIS7DQmpCPJLIzWxjK3p2lq8PdQIHqjOpNME0EJhOgCLs0uaPIH3iUQPk4qcwzq5Jdi93YqjcodvxCjq5zSVyKcnvBfRhaFNwh1sfMaoR5cAJjjPjA3Bg8AnnOJuuKTUQX51AjGWNZibLlCRiORN3B8Ir2f3-dCxuw",
+            "width" : 2577
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100052043619292396622\"\u003eSREE KANTH\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uN5fKJWC3qx587GNbz3b4orNcI8ceskPq-BFkpjcAVm8RyiK8Mj92TK0g6hc2_S7lwGLTos4nZ2bNaa8UMRrCqKnz2HABL5KLTImZComR9qxCt-gv6l4MKrJUNtQ1LCEYLNuRJ8C5CI1XPt7fjTq_aWC7TjYbP9GJAqS9uXQSdprSxszohBClQLqzGCeYpUFUisdR1oF7QtU3ZSjb7SCe0kf-jiUg3bhavboOHB7-p9LldKXO-6ps98cdM7-UuAl0X6epCv4CE4hrdlIc4U6Ii-a3U60bEFy1MC_yILrBF3oSuBIxthNdkDIDuWkWESHTcL52NtXF6phF_q9qtcbjogylI1057G1qzCv4YVvStNHIies0rJ_YdkNuth9FFZ1kwmVATW8TSMRrv2mcz58-mzQbVl06-DXrEV3J2igoNs1VX",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJEWkeL7ZJzDER38lq7GVsWyk",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2980094763449633247",
+      "user_ratings_total" : 27097,
+      "website" : "http://www.klbotanicalgarden.gov.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Sultan Yahya Petra, Pekan Kuala Krai, 18000 Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.5390372,
+            "lng" : 102.2001249
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.540398280291502,
+               "lng" : 102.2014399302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.537700319708497,
+               "lng" : 102.1987419697085
+            }
+         }
+      },
+      "name" : "Persimpangan Cintawangsa",
+      "place_id" : "ChIJEXiYrOV9tjERkeMfNcu2GA4",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1015762699857945489",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

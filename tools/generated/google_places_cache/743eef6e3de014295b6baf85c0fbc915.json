@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "33400, Unnamed Road, 33400 Lenggong, Perak, Malaysia",
+      "formatted_phone_number" : "012-880 2966",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.080119000000001,
+            "lng" : 101.0043824
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.081497580291503,
+               "lng" : 101.0057339302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.078799619708498,
+               "lng" : 101.0030359697085
+            }
+         }
+      },
+      "name" : "Aki's Gallery",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 6:00 PM",
+            "Tuesday: 10:00 AM – 6:00 PM",
+            "Wednesday: 10:00 AM – 6:00 PM",
+            "Thursday: 10:00 AM – 6:00 PM",
+            "Friday: 10:00 AM – 6:00 PM",
+            "Saturday: 10:00 AM – 6:00 PM",
+            "Sunday: 10:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102994510225003499039\"\u003eAki&#39;s Gallery\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sqboaZyDPcsUsZw1McnCVFNobchzjgkawXmhUgGxvObI-m52sxFHLXDxh6iHhNb8OiXOHCA0atnd2QED4Ua1P5tcINAgm7hz6sKw5RRRpWNm1XwYBLrwE1vVzNdRqDPowqABDUi-4oddkwEyMIt96z6YJn-b1ZGBig6Zh1sBD8YqJXcvmnHo9o4wh4RkwUIJPK5MT_F-mrIXnQDtOjIb04tIFce1TOxzklk2SIeXid9IOodHHCbhAO9HqjjKKKukWe9iiX0PXOTN6tJGw9BybB3HNT1RgLLoxa-2wGYVJPeA",
+            "width" : 1440
+         },
+         {
+            "height" : 608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105695493743967074309\"\u003eAkiaji Akiaji\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t68Luj_kAJNlk6OJ1Nm-kDrycDiDz5dYAdEqPsYt9uxKRpCI_8DQXR9zVE2AC_paxQStrbAS53ufS6gact2MNwWU69bxLN0_Ic1ETbyzl4YloT7N8FTTgF32YZze224MzZLtqzROMSNFK7a_DTnHcUHSCAlRArFB16V95tMn5CcxZSMS3hx74fAG00fPEjxmGa7CfgfT_yM66YYzp3gbqUHtW4tqYCnk2jojt38g90-vUCBdA_IAiDf6vW1eZxkAWaMvG9zCeHofgaBXqZBvn_W61haiyIBukFEJ_6T4I-RSZlQNfHae2uFahAcOUv2cEBDGyNSO3gKeEnIrbYuCcUL26JirpNgagPO1P_dKYI9IwVk8AY0XPuZXHdgWASshdUihO_ygOarHwLZCKThTlJbFjdlseKg7L0bfUNb-Wo5w",
+            "width" : 1080
+         },
+         {
+            "height" : 338,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105695493743967074309\"\u003eAkiaji Akiaji\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uFwi8rCK25DKm0Qdx9IczsuQtHCD4VhLc1m4o_lyB29p3S38HSbyK0Xajru2wyvxWt6uhuxNv6_kxLUZUJNEJAkg3YOhUxgnwX976nJ6Xk-nagF6lHxyJ3yCk0frCJGMRcab30l3-TcG4iBMQeS9QvmwSXX-jGZo57HcFHBgOQjQXmnhgpcRYne7z-zyYBSa0D4FWqXbIxTW8TWfP9WZf3WqeA8iItP3kyqhfoP0EFK4_9Y7njK3zrBho6YhvyjT0o-ezKmWbktlV6dA7kmnqKAAMZq_scnmkxjrmrLNYOQGGgUfVNtNgKSJcQn9DiOrjw6S0VcGTyLvuUfsraeE5o2YCN1yQyxKiwrtGcFMLpu_EadVSR5zSwnIHZUQQ3_gJ_Jstv78nbdSP6rN0hlfb_miheoqd3PXLkg9ym2hh3rfUf",
+            "width" : 447
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108737785903768861236\"\u003ecslum88\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vsBMAJOjA1Lin6sCXJ5NqnngC3X3k39njwUpTwLd2OSuCC5S-q_ncznx2e82NkJuRaAUKqThY9ovvojfqURq3v-foEQ9q1W7ovHwFp53jSQ02Tcj4VmoWlHNmPM7TFg66C8r28cRN99hitM46Nz5Uey69mmB6PeXZnHR-voch6g1U5CVlNhBkRTaDRDdHIGMh_ytmoS08ul9-R8571pOvpUYsNwCfCAqLT0c2174_jdEE9zBBIzcbMnYpfdrMDibW7AP8NhVFIjwgEBcKNpmvpAX5E4h8R5pG6p1rJttnzW--qeOxo8C2-3WKUBkhlBaF6Yns1BvdD-oV1kQ_lOeV12AmORSz7pMxNWtvJWkTCLQdVrIB4TeTfwDEzdJsvnfyYOS5I-E06Hek328oF728DLWAcvClzfLndX5ZSxEI7J4yZ",
+            "width" : 4080
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101431193217345070297\"\u003eKoid Yew Siang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-upbvzNCsgN_gQgk7od_nyMnvdV8M_Rd3WKomlRQZUy4k4thREs8jqYKyKN1kTurjOFxdUmHxLPdqjiiRQD-zTK7KGoRCzdlcss-igAsv8XGhLmlpLb7jbe4enQbWVcxeZsAaR1hjTCFukUCi60cE0UmHzPmjMLW4L25joVZ5SigU0KkHGJiQ8CiBOfoZjkQ4ChcWE2l0TM6JKL3SMue2V30ehD0rVbfePUyB4zWbBDOxFbuDMv_iKINPpGfZz9GByZdwkZMzvSdZunpZ8Th4NboczlV3uOAGjzH3NRZypQ_ZI3fm9HZ8hweHPjhuh8FVQPEPw3jYvAjuunE3mUN_dJuMcA1r3FzoGY-NxrLh4G0AGf8awdsJXRMdhUzFv3n9aoqQrKn9s2ZhVUfEesusiMehrBi-vP5kfRA3gjECEOEFOGJlbGKi16hIZgOCei",
+            "width" : 4800
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101779851607404499794\"\u003eBernard Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t6A2pqoVpcC9R-6ZCv-h_6Myct5pbAay-IWfTwYy5sWsfYWPb-bMZA_9eQSU8Myf2arQ86nSA90_9Tqy86rXXOB_Y36-G6bxaEGFYN949ABFteu2AdmLsvA1Avn6r6wVy_IT45crgTDJv_xQPUPRJb6o5T1mjxa8_iOm5zvorW2Ce_rlGnH7Mg6BMsnFd4ttUHXIYUgoUz28fWm10qECNEdyJtIw3PsOMxytSbXguCILoXrA1aEU6rSf4K_QKpziF7EnMnQmQzrA99rZHtkiQ58vWIBR1egpoT58tsXUmIZXHswW8zaQscC9xUzJOPzMT97zZ5ymVbniTBlOIgVAE1nha1NLJSIjECjKdxsgpYYNrhufBB53CuMI32u7TBb8vaw8V4onjzhVaUQi0gk1yxbP6wFaQKLYiaydMoj2I",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113352043390377690297\"\u003eEmily Lowe\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ua_rlsM8M1WxZfHZrk35LCXZ_TepCOSmCNstqNiifyZNIODY196usllWeTynMuy8GDcvL19heoPY9MYnWeZQMmAI7EGJg_j9_1F5oG-Wr2H0hyQaY7x0yYZcDC-dRxm3_mPFYnf2Sr3iHBpLUB3z5pLTY6Ck4VWr9BQXqDCcNTd_izCb7rOURwlwHS8wY-njHCOysvgd56qGfbST7NrCUc0aAVToaEzgUS01jywAZGScz52wdJSiHIjPM93pHAaScpmbb3ETYXJNSS_htv1ysnGFLNpWlJNIbbh9uKQHxAEBJe9uszuW4jgeX8z2KXMnj9ECA-MxwSGXUWrY0akLwsXLtMqzNt9RrAqqHG0Yct3c_xfd3w6zhbBq-H110GOFxAd9bI76kbnSwKo74ZQ8hYVeoh7qU6jCny2lrtwjg",
+            "width" : 4032
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118411554776655018745\"\u003eNurdiyana Adha\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v-J7I-vx2PoaNvTTEakYZk67toglLH6s5q6Jfo_5uUnpTQNLkPcEq5ogFy7-8A8nJHj01RcBY0ZhwC3cOjKhQNerDXcmOZX6z2MNp5WHafAZkPrd3W1G3xa1B2cTLBzHQ3etCw2spggDDzmrNHEhV1AjApHaDvq4mFXxe7QmcbGTgQetz0WfoZGNifyPBpnIwzLSsb8VWGlrtx_K_5UVgs9BIvG0azrAjchKJ6riOA1ZEdCSZSiX7B-3NdTED7r5YCpEt2mfejp6r7aPIOyUMIvxgm1oxk8rxTquhfNpjrf72dha-Bt_CicMpNSVvHk792WKc_pJjdhfVsoLlNR7FDAjhwLeBHviOjhSXebn9Z0WOQnHQ0sI9RVHjlwa123Oumu2109qL92t9c_jihNcoBFqpmTv7hemxGZgscZU_8hA",
+            "width" : 3000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105695493743967074309\"\u003eAkiaji Akiaji\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vGn__d_DG8fo-BhSFUfuchKOZ6wlYR3M6d8_dYMActzERI338vtLbvRDSIcrIWe44qMPFHIkiwP1AyYqfT6jUiJoAAhCHUnOwSGGn8DUL7o1AFb9WB7RdR98v39k9deZxa73jCw2Y-ASIyR_mqEmMo-XNSORkZwQTjKyZu9pg4Tt-nP8HFzQHCsWpOHZnIZ5QutOaB8q_gYN-voVLTuD7Fymg1GbEVrlb7K7U6vtIcEdVvfbOdPmr_VMhJbUthUspch9rxYiMFcdaYtylsWu2PA2r8CSdBxCUgM9fLO52hLnFpVMczea-Ugidk1Z0rOoiK3eYSqm3NmWKTvZKDOq2VnhmJ5JWOBKykPWjg3ICS2PbnVByZrelW-xB_FjVJhn5oQI1PzqmxrzPaCFjIkgA9rYeOODH3SKJz-ogt7aig1eo",
+            "width" : 3000
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101431193217345070297\"\u003eKoid Yew Siang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uMZWTaloowzY6gBszZSuIcmuq6EES5SgEu--7Y8YVFjIPSWmtR93s8kineRx4cOIlMRCcnHhxnRByEzUhHA_vivvlkDrUhFVp6vNj4sZirzj-tIjHtHiWk5T1YaKnniCU4hidBI7ftudy9gFPb6SxPdYQl8avLeofx1rLA6FAmYHrd3k_Y4eIC9G-dfQDbeQyBtxDaPYzHZJ1-k7szCp6XKRVs2pEklNp51iyub0R3Ytavl5KRThWeyA56SRUZJN68FptYcjAiJFrZVunKelJj00GSDciEjkbz6BQTdqmVO4xkUdjpH3_Pk7iRMvl6waZCV0ZfgzK7T-b3ETWB6i4XSDZtjREP2wUCeDgM_9wmOgNqGVqRhvE6z7ahz82WxNjv8bz7i7HRBZx8WhwQDHdk_kPchLroshjV6hl3Jwtx_CykkW4KaT_i-2vGijrS",
+            "width" : 4800
+         }
+      ],
+      "place_id" : "ChIJJQNhMR1ntTERDkBJYkZJ-OA",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16210787425365606414",
+      "user_ratings_total" : 132,
+      "website" : "https://www.facebook.com/groups/1830971743726715/?ref=share"
+   },
+   "status" : "OK"
+}

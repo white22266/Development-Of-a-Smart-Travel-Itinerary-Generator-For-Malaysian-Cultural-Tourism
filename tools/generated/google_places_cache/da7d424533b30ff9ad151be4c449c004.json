@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "UiTM Kelantan, Kampung Belukar, 18500 Bandar Machang, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.7600716,
+            "lng" : 102.2751785
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.761125330291502,
+               "lng" : 102.2766888802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.758427369708498,
+               "lng" : 102.2739909197085
+            }
+         }
+      },
+      "name" : "Tangga Batu Cave UiTM Machang",
+      "place_id" : "ChIJeWaKk0yPtjER20LeWOQQqVg",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6388656119331308251",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

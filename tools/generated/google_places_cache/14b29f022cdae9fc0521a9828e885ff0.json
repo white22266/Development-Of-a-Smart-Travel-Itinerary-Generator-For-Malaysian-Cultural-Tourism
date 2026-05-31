@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Toboh, 89650 Tambunan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.702318,
+            "lng" : 116.3901359
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.703780530291502,
+               "lng" : 116.3915314802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.701082569708498,
+               "lng" : 116.3888335197085
+            }
+         }
+      },
+      "name" : "Bato sapolu",
+      "place_id" : "ChIJrckQbr6BPDIRgIFvgGeeavI",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=17467948272083501440"
+   },
+   "status" : "OK"
+}

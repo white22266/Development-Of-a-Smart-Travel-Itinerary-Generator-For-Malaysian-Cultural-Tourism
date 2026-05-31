@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Pokok Sena, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.2193019,
+            "lng" : 100.4911674
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.221077580291502,
+               "lng" : 100.4916672802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.218379619708498,
+               "lng" : 100.4889693197085
+            }
+         }
+      },
+      "name" : "DpunCak PsR",
+      "place_id" : "ChIJ18kzzd1XSzARlHLPYpnZsY0",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10210181083036611220"
+   },
+   "status" : "OK"
+}

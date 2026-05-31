@@ -1,0 +1,214 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kuari, Kampung Cheras Baru, 56100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-4287 4446",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1095338,
+            "lng" : 101.753384
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.111028630291502,
+               "lng" : 101.7547639802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.108330669708498,
+               "lng" : 101.7520660197085
+            }
+         }
+      },
+      "name" : "Masjid Nurussaadah, Cheras",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 396,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112569730164256330795\"\u003eMasjid Nurussaadah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVChW3pphxt5faUlmTNJfeceXOYUP2UDDGyAG9_KspkpG4lF8wfYCEb3c239f-DhvVaW4ZZ1Oveaj9OazosXbf9iapbRiTlekL3aHVOckTZt3-ArfdJcyZNCpxTTpuXFpI1y9dUMf-5hPiXPu2UZDneFZN3jPa201oba3asS112d0l0h96d30JVaGy0kj_jkbiJKM5hE7xgd9Vt8nOJzLWeJoHQaPZO48NFKUOt8sCg0n2zk5GtUitoOLrS1jOm99QN0L4k4aCIGZd7vRC8ccAcO_uA1V_4OgZwCsl4ErKNA",
+            "width" : 705
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103671270667655446286\"\u003eSamida Wendel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t5lET_dwJd_eNh-yG7LpuJ6F8Qri47L-xaX1108XdC3NFy-1-OnjSOC5JCIf-ZSBPDqk0L9hqT5sOmT-u1ACF9G7MfgOVrxpMhDnPc0wOx4StKvOPgbirgKXSTOE34Qd4pGASdBWk-Ek4wqjpdLZGJaHHqLXVYXZ1KJa47Lf_ZQ3wyJfd4K6zGKC0KdNTPP1LU6q3gZmoiIPwH0FBBugVAZDUjbKPYql7--nMBD6ZDDuuGeZNmVQnJFgiGRwSnbPCF1_SntZJ-O5sugXM4pQlBHE5DW0Y2JYxDvMwnA0P6tOaMOARiXgUFiyGaZS9rmqBOP56BfMq5AxLymPj540NWSjt-Qto8nRLs79xN2G_2T5PHL-pt2faZdjLMazBagopiwInNFaPGfCPlTNbO9-61buatRT2Udc07UsUxRYo",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102177303629793455186\"\u003efizz ayani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ujaALp9XnDfhKxhFaBKwECAJ2IFM2kcZ86ORwXZxvJIcr_PSvUNYcHAr1WtP8eHOVGLzRgs6vs5jo1jQF0HtP0wYpMoIKrrKKT9eFlIh5D6RT940Yp97lVGJaLSi4TIb_dHRu5sO2xbfsJ-eUjAs9h2rgwySidTEqS1brsXsFoDixLmt8dVGCI8pgzAAMws43pNkJsxfBMna69tY7wmTGqlI8RT-fF3j_5T5p7n2-IDHfgwGusk6dUvslIcyhfTG4UiDCqFEEYeI0mZSvrTel9uExusu7FbtYfslcdaI0Azmnz4agUTYTpRnU4OPZjFzxIFj9qqpmmnZ_Mt8Qe6fiqTseNqNpDcOPQgpURgBXZ7pS326rRyW9KF0atjT1VDhK0hj6hhj-bkGCCv_b9RCA06vIhKIMZ-5VFBxbn8ydCcbk",
+            "width" : 4080
+         },
+         {
+            "height" : 2256,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105541890873987792095\"\u003eAbdul Shukor Bujang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8_jLk2TNWQiEaRWfIeCRArbKMdkNqyvTmOUxa1FJh4xb4EpHBzq_5hBtj31f46sBQhZCebBVocHHyJIkqNLbpkvYSLB_y33dMQVHL3wqFvuHz5e_gzZpDJnCUAYy-ntQA1PzY7BHJ67hzpTsslljdbPTfK3eQB721Pf9JD25aYHUMWu4VtuyiRIWDIXfnV8v0FbvQAL4cdMUBsJGoCloDPJEkLqTpY-jYzBL8j9Bh6PqOuUMXXn79-paQfe5tKZyFW-ifd9e1wKOidswN15Rvp9AaYLtrUGaZac3gE0Utn85lAcnvpuU8vPAdQh0UiKRCspQHek_M22KtJ-aq0v-B5cyO_knxNxamM0QL6mSjH0da9fS1_1eDXJq6ZcOq0F-uHF2oA45S3a7KIzBdEPV8lI6UrpXJsnRnNrsRsZLvkMOw",
+            "width" : 4000
+         },
+         {
+            "height" : 1908,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100739643908841244407\"\u003eKhanz Travelers\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sx0ou8nRB1o4-Pn9_yybjSKIB-LOGokw9N4iGlq46iNLN8Xq0kVV4Z0aY9dzPFOBw_sWojfwxSARRyUbGXg5_n77gb3Ly20Ocz2pzaXsAXkfvn6QoOrqEwhmnIZWxB5Vky_3zdI1zKbIiW6k1Li897NGJiyrn2CZDHYVnGi0T5k46OV4EeU5IUZ7flEUD0BlRngXhk08QUUURMKp83a1tIe1x4IHeIQUe43Azdy6NzJ2rf1jVfONxxdBe0WcytyDDUlB9qnMyOZJgOpfekj97irtMgR9KQ5Vbohtasr6Vmf4f_6sQp6F60XoVeHpFwID3jlu5lE568QjjuESynBANDg8DiCmxnZOBJnPCB-ZqpmVRkEmVnpabCEtfhy7gsuVxzT-ISMtSbK8_51lBkYCabShqYNwve8-a2Hd8T_Sg",
+            "width" : 4032
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110991488436893039024\"\u003eahmad sufi alias\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sNGlmJZQSShKgzDhsPsBM6nyrvw8u9EaTqOriel4P5quJvbvUYhevv0ENgtf4aHq9cROk0kb4rX1hy3xy9LuXJIEdA4vYeEAsZkPbtW9WOJJCCx7fD43FcJaiswyGpuFJ36U2yxN6kgdvBhK45ejTWMPHH82MzGNWYBJ1DpowNWEjgdRB7DRHyZ5-busl-pqUdHNSH362XoZVttv-fHTZpr4TzRlCDU8TH-cLfrJvEzT0K4CBA1INrkHctum7wyYqWadcLlQXYDXxCinpre5CFwC9hlublVPL6pv_24VtXYIXp83ljg_CzImqCZIgow9X15dAWgSBLJwdK3yAtWXOMZ3Vk32Lk2TqTcT0kH5M-NxDHUmMpJezUv_D7s_XNbklp_qvQMqPwtBEmdUn9brp75sKM-rs5jqn-Q40iK7DR-g",
+            "width" : 3456
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107478526380438463639\"\u003eKervin Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sz1s7ShkQoGmVpDd01WlTrixrUQpRf7aGOOB4ml-M3SkfkQlQZkAfDDssgpPq4xmZI3Q67ghgjiHqThp0RRN_KL6kYdOWvn_O6txAoz_awrY8Nt3YS_rqWRuRRMMWXCYXQdeZmEbWzUybtTsnk5T3wcnNKgE4JJRRaD6KnROLpQJl7qyd6WIkqvBrjtHUrSkUFx-AMrnAAFNb0MqH154kmgOqLROjfd1kMjRHhd579naa9uUaRM3SvyCLmwOMoIdDglRjWn8mCAJp12mi6WpzvgS0zA56pm_m6wwZJ4Gx58E4oKjcY1qEgAb9TD0oluilNSg1wU0ylnhFOf8xrT07hzI21eJTHCS9J2A_gh1FECacIg4eNHjglchONBLdz-dGoi3VRulpOQXq4jrJRDjPl6WIOAT2gqMNtI2qaflA2Jw",
+            "width" : 4608
+         },
+         {
+            "height" : 1944,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108585892552324880446\"\u003eRura Las\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGMN3ie8V--iAnIXL-LaxCGFp3ZvqumYxRGwWxaPqwhjUMQ0JwYsWnKS0CSoQCWsG7EFOGe8xeUnV2MLxyCHkIXWgJ8MsdQwaw2zJHCYfYF3kuCX3_JhR7mbDIkH8o9wuRWlpkNVuymcKJPnxI9UEqhzuMI5NWTUwiqBYG4_DBaCK2JxGhF6UiZa33romt9B4lK1ehGnSH78167L9q9OxLNES8qjGBv7A3Qkl-myC_DCeKse6QqNb77M36zdF76lnHMBuZeU77rY_27jVO-K3dLibI25GLUDsOYVd66omSi4pj0TJRY-2OiDA2FtWLJalR6iVB884wE8HxNGeSykv6jU5KXUWj_0DlE6fCS2mLUp27wT2ZVD9x1QUVJFgYWZiNXC5mGv-vflWFXXuUH0QHa0uY3PNUb-MNzJl1YyWzkFtr",
+            "width" : 2592
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102177303629793455186\"\u003efizz ayani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNL3Ejj4NhCqEuTMDBC6u0ly0ESXlYX1n-w8-oRNXgysU00Q5dpiGJBFw7Mu6ZvI2YjPtZOea8wrni4l3xDJosN1qYPnp3G80dB-Vie8FCgo3muyxmS0rrIhRA5OtmTL9eX6eA1yd--hFXSJAAC2G47sHePxYlToumDohgOrLCz4q1rqoIRKqFNCdtQUNvgLMtfe5Mn-7IRWM_4arZXaUm9hIsVmkKnUzidClqn3y5sxMajHvybETA6Hn7Q_YhTb_QHSm1izyfG0LzBAlPKgQWYPrWo3XzU76tWuqpnQn1UoTOPShUhYczNG07xhyg0UUp1XkIip4xq_FUDSGn6iPVCVXSmKo5sMLenWYUY2SLf2YGV2eXbYO1_FMMI_KCXpzZBkWZJc7giDzDSXjdqeZgbjjxw2HQIn-7zPoALvxlKg",
+            "width" : 3264
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110822260418614810526\"\u003eMohammed Al-yamani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tkplqReBbaVFMxu_-q2bPAsB0HgiLz31-lm-FhLvxofwf8thiN36xu24Mwf0ZvQLE4AhGUFEOS4JxTt9REZrKr_gkpNRVxVHHTRT6oqWX-nzeV8i08iRUEoKwX65co4-13Tvs_75HRVJ_ORo4VtRI5dZ68Sdwl5iPtPUogbVZTTuIYcRN0IPbjrJbn33ZJbmbSRIPjYVV0UXIA-9kjYZGd0xYjrGQhILWXCYwbq0Vq7_P_N9rBBgGCs5k420SNWkc-CJ-0smJ12Gv3_TK-jwjKB9SC9aSp5bCELX0WO7b-Nn92bwUTgirM5xUtvnNT6B-2ejsfnNFoXRFmiZEUG_xlemRXgHe3j0vz4LBtQLUfRj-Lf3a8BPtrF81iz-FXPOpnOqf8Mw7kadULe70X0CNBjZFo9vgjsvYhMNYtupbIaNw",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJx5Tu3Co0zDER4yhRnBmnUd8",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=16091826672010078435",
+      "user_ratings_total" : 389,
+      "website" : "http://facebook.com/masjidsaadah"
+   },
+   "status" : "OK"
+}

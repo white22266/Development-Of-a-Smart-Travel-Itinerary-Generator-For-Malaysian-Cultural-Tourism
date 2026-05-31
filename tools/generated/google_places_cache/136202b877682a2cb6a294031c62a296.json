@@ -1,0 +1,59 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "C7VJ+9M, Kolej Matrikulasi Perlis, 02600 Arau, Perlis, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.4434116,
+            "lng" : 100.2817383
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.444697780291501,
+               "lng" : 100.2830518802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.441999819708498,
+               "lng" : 100.2803539197085
+            }
+         }
+      },
+      "name" : "C2305",
+      "photos" : 
+      [
+         {
+            "height" : 4064,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104276694691616139285\"\u003eUser U\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t1abfFXmxrUN0FbW7htbfSi0q8E7gZmPuMitztyV_ZBGEyB_wFb0dQ4WfEgCFy3CuHkg9qp1HeyJYw0-ddL0HVFNLOgWXYUSsSmsPTUbUSaTQGvLf4DFccXLdcQgSz7VZkHXWHI4hb02QO8Eq7hRodSi8ga7wpu81RaRURRTT3t97gZhz9-beFKc04PtcDhp64Sy8C-OrPxO0FLmlk39iN2sowIoyBQ6xBG10O68XMWxJFVgtbvNmv9wL634SSCnrxdE2UmhTu1ba4DmNQMpjR-5b2pGQd0O9_qeNDkwTdo5xxAQqz-N65qvRT6rF5aARdcIHF0XrBDDo5Ycqdayl3-iuVAvos9dcM5w1ifO9TXrLuJxt1ua4IHHZrwJxeTHQ8M4sPwpQMG5a1Ym9Ez5DTYE4RxuD1KLngvr00qMGnsgyU",
+            "width" : 3048
+         },
+         {
+            "height" : 4064,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104276694691616139285\"\u003eUser U\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ul_URJWtH8X8r69hrm4G_rMU9JRBJO-FXa144tw5mnTDM08xk4tZd51QjbrHDsggJsFKOBrApiQ6KO5foGxhLh66bvNxnOvSaWzxL2SgOYrPEHL4FCszEqdGzEFx5MVMeTO5fmbhFRbGWjkZq7EtoD0UpPrQEki54j38hPfojunQCQRTTBx0Nc1dzJAdzDX5sxGZdxAdoKMKrG6bChhsDrBlu7KRD_He8Hcl4lesplgNh2FwFEVJg50zUFZYY-CDNoGVhgTtTrMm5o4y0ocPC3iE5QNC55FLrRk_guoe01KVqGsnhfH1cLW7HCN_B330FGCUrfkgkIxSTl_4Tb-ytqZKcg2Q7jR1qogMnOLztm1BWdie9Oyk8EkxHR0ag2oq3qZe2e2LZAka6HW6WPKYj1abeQhkVZu7jRq7L-2s0Gfw",
+            "width" : 3048
+         }
+      ],
+      "place_id" : "ChIJvfs0TgCjTDAR38jKVipp6ZI",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=10586108029676734687"
+   },
+   "status" : "OK"
+}

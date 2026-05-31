@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "90100 Beluran, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.896135600000001,
+            "lng" : 117.5571852
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.897468980291502,
+               "lng" : 117.5585666302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.894771019708498,
+               "lng" : 117.5558686697085
+            }
+         }
+      },
+      "name" : "Labuk Sugut",
+      "place_id" : "ChIJD4nPLhs5OTIRGhtLYynHFw4",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=1015499221568789274"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lebuhraya Kota Bharu - Gua Musang, 18500 Bandar Machang, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.752609899999999,
+            "lng" : 102.211177
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.753952580291501,
+               "lng" : 102.2124962302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.751254619708497,
+               "lng" : 102.2097982697085
+            }
+         }
+      },
+      "name" : "Persimpangan Sawah Kemuning",
+      "place_id" : "ChIJPcdo0KmFtjERtti5tCotkHM",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8327205372452001974"
+   },
+   "status" : "OK"
+}

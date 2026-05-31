@@ -1,0 +1,1194 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-t3IjBY9xYNbnSrcWoU70Q_uoj_it2NDmZw7UIUKVnw2jdC7rpyO9gCKyDnN9IaeAi32deLvMko8MdWjczkUfYF2fx2uowXUW7qXUZwSNfjOQUmfk9POT6zjaAYCZ4Mml2wcBC4T0KMZwk7jn6AtYRY_-TS2gO70FNRy--4TbpkdHW-YHLM09KUQLGoL2F-rmD0r_weLUCkjHV2T1X98iPQOOhTbdHHQiNZWar8vqv9kEsu_2N9NHhoa8mdnT_oGdvBOq_f0_jqBqS_6rEl7SPnLejGBlwcmT9VnP8IVVRVzSA4AG4vaw2mpGeujh0ouFyt6yCi5z6DRVI91IKxpWbBy0Lr7MXazAp4Dz7F48N6g0GOiBUk_7pbli3QnI0schrrzKv6-I3N76ZWhHOXnIpCz4bL8z9fkCN_jgmdUMvCwOkI9cJ_TIcdiqPkJbOPsem5KWzvKep7T_Z6UAKdzoYrZV7DfhkTs35uTeqZEiOH3-j2U-1phWFPNUoYPcJ7Jbf3y8g-Qnfb1zft7QFJzmGYaqLaZ6kdXPlVlWUSCJLgqmHZWqttSlywXrPaslLKVYYaOqIMamqE0Fr2fDSFAzPwNUsieWbNTEDE7RKc1dNGZN5wjIYT3ktMvRcI-tPDdX8PvQvt7VNkyRgo9m85h4TxK1bHjBTUbPd5WD6flZCdClLO-9FNjRh6_j3HwMy3J37T1bY7SnWOGzbFOld2G7657qRUG1IQay0i98ZVT85cVlyBjXmi0_1WDwJbTnBCYx4kWuG-rli9KSKISLu1quJ7YJWbUfyf1P1GG0dQS7bYCclRvrN_DTCgkVRjsAOOJIVfBruno9Y",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tepi Sungai, Tanah Merah, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.789136,
+               "lng" : 102.1510252
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.790521480291503,
+                  "lng" : 102.1523827802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.787823519708498,
+                  "lng" : 102.1496848197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Saidina Osman Mosque (Town Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4001,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101216224237390077798\"\u003eMuhammad Irham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tLOrMgVS0ltITqQ9T3Gu7axNy3hz-BVhC7L74klOrQqu2sL6iqi1efz4podBi6rb-0qTcktL_jfeAS6-j7ChCLYkRt6pim4TevR7xaMnX2dCW4rG6tVbdszJhGiTGvxaC0jS72gCBz8fpnw6msaIbClS1NrElmPtv0Rb7kW0SZi9xA4w_iDLbiu2EiAID_Z9cpcbggwTOnFGsnXuuDDUkOixK3Nl3u7gkCxWZBOkbqBC3EZAuHqzXGsX0IfiX16xswWgOvNPlJvja5VOAucP0LDSWb4NpSRr6O2MvrzhlRVo6pxgrgoccJ8NHpfqZ7ifyZsK3uGEqhSHXUh2f7HcuIoXjiHGBEpsDHrBmZh8YbJTpc2FdvNbwkcVoAyLEKeFQDk_FyHIF8fBPgmRazIBvpHDQwV23qffLCuj4t0jJKuA",
+               "width" : 3001
+            }
+         ],
+         "place_id" : "ChIJaSzr8ZectjERqaNX90Y20s4",
+         "plus_code" : 
+         {
+            "compound_code" : "Q5Q2+MC Tanah Merah, Kelantan",
+            "global_code" : "6PQ4Q5Q2+MC"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJaSzr8ZectjERqaNX90Y20s4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 159
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tok Nek, 16200 Tumpat, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1544206,
+               "lng" : 102.2310228
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.155701380291502,
+                  "lng" : 102.2322837802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.153003419708497,
+                  "lng" : 102.2295858197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kampung Laut Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117006648069520763542\"\u003eAhamad Kamel Ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sc5mr00V6IJndZCWcUhAsg3sD9qbfiQCuSKIdH3LUxTE7fOk8QanZT-RPp8himih-e5TBSs03AqWnPDe8tC7hsDR2FKiXv8ybN688E6NtBMeH2ID8t8BdSTgLGZyZ6Vqp8EUBu0eSLj9zF2hyQ1om8LH4-uU5R6C6Zu0Xh5GBA67SM7va3oOrI4XcA9wbIK0ISjgYbie4t30m1FU8jseD9afMl0Hyr-U4fHNLaCVK5Bt8skqN2UhMhpKUydCXbBFW1k4fnVBTHe2R989jPmTSs_iGmPBOOiQPRwUZxXfeGx2JFIkd-ZliwkYaWM7MXLdqJUku4DI0F_EmDKTl_JUAM6d2ErxE94Yqgyqw5jAdIvLrrX_CgMjEZpyWBDaACMVNS9o0XCNHDkuORJzWJ_b_Jcll0zYckQSv7OUX_2FUFazQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJeynUbqktjERaHRSS3eUWDg",
+         "plus_code" : 
+         {
+            "compound_code" : "563J+QC Tumpat, Kelantan",
+            "global_code" : "6PR4563J+QC"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJJeynUbqktjERaHRSS3eUWDg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1158
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Banggol Kulim, 17200 Rantau Panjang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0151786,
+               "lng" : 101.9826441
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.016385680291502,
+                  "lng" : 101.9837747802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.013687719708497,
+                  "lng" : 101.9810768197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Ismail Petra Perak Jubilee Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101294877662540881413\"\u003eSozu San\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t4tI8LiV66rsU5CAwgxkTo1kIoSqIf9wtuQLvX6WVBQu4AJj-GRSq4eVz9aqf7OFtP8PHSUKMtLfeZsPFYPrh8BZArZbH-7a-61i47cDKpphF42A8x160Jm22cV4K5809tW5bIDzYBfWrzmwBhMhGOnQwlxhSm2hqB671mSsfYAzhDxZYw0l-vuioFaFuz-FISjH1yM7Fn0df2gQdvLo-SsesgNZbgOHHvUHQ45oN3u7xXbOy8RIRiT4uD4xPoOLI6fYf9WfVey6o3s3VBBi_gjIQ6Caktb1xNiyy07ouOsZLRlI7b18gX4W9IFaX8_enBNQ1GkjEKsGUGgIUvdwa8lSUu6yEWLDpsbFAUCeEqfktKMrRDSdBgkovzo9BjAu3XjzIyUot5cxnQpR1_qN_fFxLLN1-bc13Qxf89YwrlOcHp",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJT6s3cKsetDERS2YtQn6x7wg",
+         "plus_code" : 
+         {
+            "compound_code" : "2X8M+33 Rantau Panjang, Kelantan",
+            "global_code" : "6PR32X8M+33"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJT6s3cKsetDERS2YtQn6x7wg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kota Bharu-Pengkalan kubur,Kampung Jubakar Darat, Kampung Jubakar, 16200 Tumpat, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1862704,
+               "lng" : 102.1087763
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.187262930291503,
+                  "lng" : 102.1100252802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.184564969708498,
+                  "lng" : 102.1073273197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Machimmaram (Big Sitting Buddha)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112573016541566903622\"\u003eSteven Ng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sJQ6gUNN-g7bMOdjkZxZgCIJJ8qjGp7ddVNyps85NUgrLDLmZUs0z_vCCUP4m--rFkI_1BYsof7WmxJSxsZLkdNNu14-BhzhoZuxkIYa0YaDZPJodp_lFg8wulZ6jbJwuRPRtSsXUo8wObDYcOe61EEkBcpbXbBWGUXcCVhKLS2pTD5F_HtisJLPmPFQP_xHz9HNTJ0eqk0kfEmOpWBsc6YtQ7scbFIoLdaBc7jB8vp3OAHpAsgfp8tQxc_Q64V9lJ2apVrSn2yaaC0pPUFaphp2uEs-KUCy3ccUBrnQNKXjfTYoU9PlkxfSY-aVyPPdiBGJd5u4bmuo9fA_jbrE8ghkPC89jDYqAPAlqQmsjdejm--XxohBhg1x_7hzijMbprWohF0Qkpx0iKesgK8E5TrrzNSCmBUsPcpE5y4Zg",
+               "width" : 3909
+            }
+         ],
+         "place_id" : "ChIJlSJE5SiqtjERzAYHPu2E3OU",
+         "plus_code" : 
+         {
+            "compound_code" : "54P5+GG Tumpat, Kelantan",
+            "global_code" : "6PR454P5+GG"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJlSJE5SiqtjERzAYHPu2E3OU",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 775
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7429196,
+               "lng" : 102.0521877
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.744289030291502,
+                  "lng" : 102.0534967802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.741591069708497,
+                  "lng" : 102.0507988197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Mosque Gual Ipoh",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112300768218687158521\"\u003eBeemer Addict MY Che Lan 76\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-viegk5gy_-wfIscoIBOQePJv2oHF6DCihFkm2fzzsbapE-f08-yX0buAoU7QDdB6jr7AvFplEo56ha-YjOfILAbDDzkJOe4X93BYq8mSzru_mFz58GRAJXOGLcIFoXweDld6CKfnUS0mUmlGlN395JAjHhJRM1cALWtws6yLL_wRci2eQMhw7Lebme4MPYzwebMH3Eo89UOe1jNH6K2Mb0WuRMy2Co5z4h5VggvbCCVBTe0uRzIwzHyCwnYILHPfVdLIu-FwbADjrV7pO2UNwTgvNQ_dCTeckeDIpWIKCSlba99VCZqtCiiLzipw0FDmWGtxKn_ihn3VagqA9Rx4hWYf6owSo_nVhJXx5CrSBdgJAeiJBOilglo4h3Y-gEfKvohAJf8WQpJKXMv46-9WPZebvgwDl12MhL06tAB9ivLov4",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJlTHVJTkotDER470yEMd4BnA",
+         "plus_code" : 
+         {
+            "compound_code" : "P3V2+5V Tanah Merah, Kelantan",
+            "global_code" : "6PQ4P3V2+5V"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJlTHVJTkotDER470yEMd4BnA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 31
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "D1, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1322462,
+               "lng" : 102.2364253
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.133190080291502,
+                  "lng" : 102.2379010302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130492119708498,
+                  "lng" : 102.2352030697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Muhammadi Mosque (State Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117258352304738504744\"\u003ezawiah daud\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ueubi1HE_CAy7jIYAQ2gbDIb79cG4uV3cpMoWL-oVYz6EfK0KS4dikwExDWG0-ej_UseFotlilv04Iz9OHUQZwaRwJEQGaE5ZW4nDwlzyYZQOCrkWbirKEAPmpbo8G5PHRW8BtLQe9uub-n8O7PwUFZnrNmLNgwHiqkZsjH87o1HAUrD9rTF2xViHk3NI--Tp87mvIBPTk6Yr4pGoWJKBuERhrWoBRURicTfSpvZagvi5Nl5FEe_hETS3-AGUNj8VuIw1ZH8CrJPcFjDMZEAExB1hGQo4G_psam7Sn7HsOSo0ifQ6XGEs2BiAQvav_n5Glp5871YuyRv0LiKMuTeaB1oxlaqPSSQTLvW38G71bB4jk6nXZgDTkIIL3nJ1FkOjxlv5UZjtItSQczy-c67i-VZdjT0SO0adEPhFj9xF3fG6M",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJQ-jrRsmvtjERQW9n8V-jODA",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+VH Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+VH"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJQ-jrRsmvtjERQW9n8V-jODA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4380
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Pulau Gajah, Pulau Gajah, 16100 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1594709,
+               "lng" : 102.332789
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.160773330291502,
+                  "lng" : 102.3341130302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.158075369708498,
+                  "lng" : 102.3314150697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Ar-Rahman Mosque (Pulau Gajah)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102255899337861874008\"\u003eqayyimah mfarid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uiejn-w9OLBFfVcG7XJLCAeVgDEBBruOfA7IzcI7KfO6KjbbiCxO85gdPZ8dgPJtCs3fRQoRIcc_K7n0Hw_c92g-PzHPj_df72tHqx-mfahUUvka7RVzIhbBa0lbN60Usggly1XYoKYatUG4hf6jP6bYigTz9CehVgy72jBRU8kMn2rosfCnuDJEufCilhZAEf_UmbkjpRKtnLdQws8pAzFL0Pw3YBSNI_73bTKWTgkhosOmdwm2YjTkKJ8OhCdi5hRPcdtfLIoC657yOPhb69UZGe-i9ZeHQA0kf1O51Y_l4WSPgWW4RYFtxB0xhGhlRUtflU-4wbf1e8Te9cwbjQ1BNkgecPDSPm4ByIO2riptSNyh43zZAK2ooIChCoxFjSjyyHTWzbrGm1VbvXh2CE501H4gJ1vAoCH8RlfgmLeg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJe4RJHEextjERvrukFRJged4",
+         "plus_code" : 
+         {
+            "compound_code" : "585M+Q4 Kota Bharu, Kelantan",
+            "global_code" : "6PR4585M+Q4"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJe4RJHEextjERvrukFRJged4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 695
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B 1045, Jalan Ismail Petra, Pekan Tanah Merah, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.808611099999999,
+               "lng" : 102.1455556
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.809997780291503,
+                  "lng" : 102.1468707302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.807299819708498,
+                  "lng" : 102.1441727697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Ismail Petra Mosque (Main Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3599,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106511121465844642103\"\u003eBALYA ALFI\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s3BDf8efMTzsu1Y4CTBqmEQhnrYh9_Tl7Xj1OAxmFkzFQ9l-qM4AmjmJ0a2oL3RxXpfRtBq3XUrUYhJtmHHIXgHpsuT9_PO2qsSl-uVFmUndfkE7qN2nw0di7-c3SOrIHS10L2IC8CrLi8-iyk1Mb3wLonSwazDHP5UMG9Y4st_1FJG1Mh7YbJaiBL5epf_L8ODWzuCi-Po3eABby0dd2IdZYBJdNvgId2kZFYwlMnUNEXLI3SmGlelVSPYH2lhmFz6nIgnCBRnQmn69Z8HJqU1143yJBVBpKG7dMiQJZTViI27-XM49d4qiJHcqkFePZxRVbGOGZmt43Fbd6BicdLh5dZv8jUkOuNDn8rp7dIDM54qu5fEABOhyVhK7_wTJUpuCpi73IF4rm6j_-xwr4vN3HA3CBFhFa_GGAzWN8",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJiVEAEIqctjERYlquA1dsmJk",
+         "plus_code" : 
+         {
+            "compound_code" : "R45W+C6 Tanah Merah, Kelantan",
+            "global_code" : "6PQ4R45W+C6"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJiVEAEIqctjERYlquA1dsmJk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 637
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lebuhraya Timur-Barat, Kampung Rotan Tawar, 17700 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.821406899999999,
+               "lng" : 101.9690939
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.822669380291503,
+                  "lng" : 101.9704017302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.819971419708498,
+                  "lng" : 101.9677037697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Mukim Panglima Bayu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111941188884429420651\"\u003eSaif Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voitFSJAuOlq2-YQSZz-jpa1M8TWHbWKhfLTH2r2MNVj4Si9TtNmDY_AwutOvjytuutyQO8kK-i5v1D2Aczt0lS-a9UcRRQnCHeKznIAFAc3rfeyZl2a9icH1eZEfVVQeP1Xw9EyyDRmUaegd2-X461gFpcVt3fAVdEwMsd0PArh_vY3g8WtjcQtrElEYer8IhRnvKmsPmplgBJAubG9EEcnjhdJ5sSh_oN6TxDrsTox6MBmvYfCh_3fjzJkN3tfECKTA8EciWcp53DUSugTj3Q9R1mwX1RS1_JCnrz2QIvkUXeTOYc6Wrrc89bQ8vAPXt8wLJwTxVToN9-Vp2mR9miqJfWQdT87NkhokLJJckSPH9zo3H_kw3Qypw55Vk7Hq6bDEr0kKE1Bc8pa6pG1ZzVd-gL-ysee9dZLT-npU",
+               "width" : 2824
+            }
+         ],
+         "place_id" : "ChIJVVVVlTYktDERe2kLhDAXQBg",
+         "plus_code" : 
+         {
+            "compound_code" : "RXC9+HJ Tanah Merah, Kelantan",
+            "global_code" : "6PQ3RXC9+HJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJVVVVlTYktDERe2kLhDAXQBg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 453
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Mukim Bukit Panau, Kampung Chabang Empat Bukit Panau, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.885373899999999,
+               "lng" : 102.1571187
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.886590330291502,
+                  "lng" : 102.1583693802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.883892369708497,
+                  "lng" : 102.1556714197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Ihsan Mukim Bukit Panau",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105908251922590264417\"\u003ezhariff zakwan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-soTyz5V_2OD5qKK4VIEhRJlNknq_MLzlogJx97gwi5PfDhQdz73DVkyyBAvcAEanBR9xc-UMweN6-sL3GFBpjy3HzcHRPJ2FTsE1YPHX12WglVzvwOnRQ63KFCpHCt4CqgqPK43fHi6anJN2ku7tBmYg9aHQcsuOd-0m5zDiUabLwS0p8qjQlHX-SOO7kyuxcoUFK4gsvooR63FWrwrLA6MP3TzGSlj5vZBgnW_4kDTycs00nI5rNqq61YahVBxXNw8y9xQV63JrL0QglKMgt7cV4mAWsCfTe1NdWyfu8TpKEc_XYUgRYUHgnviO0lsbNsowVyXjv4h0IwWmvIbMDqr0NRX5x_QQAyco5ZiaUk8YvzD8uZpkgzwuSfsk96A_nAheAx7HKXL0YB03OQ80l0fgVZQhDFpnwrW1struRnBb0",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJweviWtGetjERYT7uxyUam8Q",
+         "plus_code" : 
+         {
+            "compound_code" : "V5P4+4R Tanah Merah, Kelantan",
+            "global_code" : "6PQ4V5P4+4R"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJweviWtGetjERYT7uxyUam8Q",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 72
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17500, Felda Kemahang, 17510 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.808754599999999,
+               "lng" : 102.0064792
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.810193730291503,
+                  "lng" : 102.0079187802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.807495769708498,
+                  "lng" : 102.0052208197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Raudhatul Iman Mukim Batu 11",
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102049325169300113860\"\u003eMohd Zaki\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sbobMKyO8hI1BpEcG7WhobNPp4cOtmkGwxXi5yanh24v0IGUPGDykeufZcZjVCNQGvCmYa6AjXgXu3q5p4JVWQwnA4kem3CLhzzFfxBiq_SoEQx_NBmBQdBzVJPIbxRLhEK67jWeAcpSMAjF6dU721Wt9LV63czdYcnVg9jNAh2EyTHKhwFuTgYdGiiVth13eoAszIyGOCFPkM8mhZTNQIdjlzouC8Urh-6zkCtDq_6kk_JtBC1s-gldf0QNsak6kWraBWDBoljIrNmxSOK6y-QL7WnmGkOZ_5XWNkvX-4LcRKlBSCTKrtgODGELeKf6ORM8jxSD0lEbMXi-p_YuQ7gEP3t89IvSCGSDiOr7RDIJ5pAZJfI6mRxL2w2tFEU3nXDd7T8FbjIbORY73XM_CSQeqTw_VlpqArjg0q4oBnWA",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJjzXz-V4mtDERB-sNsxKs3Nk",
+         "plus_code" : 
+         {
+            "compound_code" : "R254+GH Tanah Merah, Kelantan",
+            "global_code" : "6PQ4R254+GH"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJjzXz-V4mtDERB-sNsxKs3Nk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 59
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "R4X6+25, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8475309,
+               "lng" : 102.1104301
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.847530900000002,
+                  "lng" : 102.1126947302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.844503099999999,
+                  "lng" : 102.1099967697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "VuddhiDhamma monastery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108039702941455516134\"\u003eSbh Ratana\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tX7Xu_y2MhVfFor707xboR397lWwnq_ljW5tojC_eucCFS_-qGiE1DA8KqAOeQfBUKKRZ7Nc9MKwQXfnyexgzfieL_EGRQ3dWexiu8xIPTX8qoGNF5ZBfL1KnuFqQS1Z0xOJxQjsh7nw3B2JE_LXoilMAFu8pxEDjvKiPWiPcoWspzYN1dDX_xHktYb_ejWZIzSH-Gj3Wft6nMop0GDIYiIr2tVQUJw3bZHU8OMbbCaVxuEHS6nMKjqdRiOdwr9fBOUClnnps4J_XmG5htLk0odz8VpDQMBNJip-Bq0ZJ32T_EVnIgGNsSJVdHtiQpHVZaIk7Wtm-iwhG-_Vndv9CNLIL2PIf-iLzJaClwLFXem06R1JsNMGpCJkILrSVApSzqbOzKfoclROWKZP9ed2vs4iJW1VWQRklL2Dj9n9oSKun6",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJuScbhJSdtjER-ycUceDdacY",
+         "rating" : 5,
+         "reference" : "ChIJuScbhJSdtjER-ycUceDdacY",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batang Merbau, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8111792,
+               "lng" : 102.0408487
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.812773330291502,
+                  "lng" : 102.0423376302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.810075369708497,
+                  "lng" : 102.0396396697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Mukim Batang Merbau",
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107040791021651418320\"\u003eCMAT 565\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tFXDE8XgdDBKruuYUkTYcAexDG8KIbrMJ5l7TwSOtN8vSlliMNiTA-JBWfCrOZsrfVA3NYt1-GfITmMNN0DRAREdM2pz8vnlfM1E99ymA0OLMKRU01-vwnD22svidUIuwuct6739gp8mwj37BkBkfUylXP25ZWfQMRDanS8dlvy2Rr-Uy5y5Nk0mlc85pcrYGst1os3UL28ocl3k3aAe42xZoQeX-WokduzUJQi0oeloL9NN2yNByjw5Zq5KfQE9n7atUA2fdVUUtuj88XKtgnpl_Cbmvy3kIhzUx3TCNhZc2cPGPc2b-b9npdUSzT6--mYqPMAWJCAwEweHqjEL1mdwlFejztoj4Fb38ntvY9XUGThXLxPI2XXX-yxuBBjS0yMwhPQFZttG7dx0c4bAxaedVy2hnbluoc14cQPpw_mg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJAQAAAP8mtDER0AHAHFfUMt0",
+         "plus_code" : 
+         {
+            "compound_code" : "R26R+F8 Tanah Merah, Kelantan",
+            "global_code" : "6PQ4R26R+F8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJAQAAAP8mtDER0AHAHFfUMt0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 208
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Belimbing, 17500 Tanah Merah, Kelantan, Kampung Belimbing, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8439717,
+               "lng" : 102.161058
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.845286630291503,
+                  "lng" : 102.1624800302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.842588669708499,
+                  "lng" : 102.1597820697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Mukim Belimbing",
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105305799054211632760\"\u003eRoslan Jasin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vw6hBdLjf4AsBsL7wy4lgvk5rf3OoxtQ1fki74BVIfE3BB3NLbIS1KVx4XEQ2y7HHEpxUJj6a-2QIi747kDpnFfOFNHcZlyv4WOeJzKK9rFqTw1f6hd0CRHhg5Ql8ov3G6iavOmOkk-AyOSbb-mByAx4-biKDfu4ewbvwa2hktFUvXaFUMAemS_po6LlaHdxUJiJUog6hn4uGoFXwCq_YvwIUs0v16xQUrlcZfdu_GIH9dX64BkR4YDtPLGOIf4rtivh9k-4GZhOY5G374OeKussc3qeruLYhjKu_FlIZQNmB2uEgT3b6tzjly5j4_0-X-l00cONcMb1y0iSfOeYH88M0lb7AWw_tX59BM_61v6I0XdxtzMyKAEWAAFB6lWFTErL6pZGV_CoH15ZSFFtEBl87y4dIOjV820_I-_cAkYGac",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJzULDJQectjERswCmmnn-USU",
+         "plus_code" : 
+         {
+            "compound_code" : "R5V6+HC Tanah Merah, Kelantan",
+            "global_code" : "6PQ4R5V6+HC"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJzULDJQectjERswCmmnn-USU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 102
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Mahsuri, Kampung Banggol Tok Ajar, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.815004099999999,
+               "lng" : 102.1331696
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.816305080291502,
+                  "lng" : 102.1346520302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.813607119708498,
+                  "lng" : 102.1319540697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Iktikaf Al-Ismaili",
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110645306002418654802\"\u003ewan marzuki\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sHVYx_5lYaTkAEo8U4UtI8hYUezW_tM7iW9toH82gIMAFncArsNbxn3W2vExcv4r9aY-pGbCGlOBPZpm6bjuJvTqrGltqb4oMDbby-eVS74STRZZZtT36YA6gERQcj0jU3hmIn8CaMaTNTz2Ps_VPefNBMYyQ6NqNKSghYPJShzQ4d5adxrs8XsJ5QxQdKZbgbOJD9_JlmRg9ReIo1PBzYnzoWOXLOyeJaKuACivTTgWZKVmfL9XISlUg3BC-oAC9fKjdVvNzzacE2MGYfZLamwh5x95Lzr7REOPgeU_3Xr3cjYscfomXyLqhXN9RxKu7gjC18-dhpn_654fjQ_OnPirLFVNzkvvfW_y7MDYZ3PQhg56z6fn6wYghfKBhaWls_REIAnxwmU6Q3_uy3_6b__MLlVo_D8RwMqmgVAUq7rTO3",
+               "width" : 2880
+            }
+         ],
+         "place_id" : "ChIJO4e1wluctjERa_YKw9_Fdx8",
+         "plus_code" : 
+         {
+            "compound_code" : "R48M+27 Tanah Merah, Kelantan",
+            "global_code" : "6PQ4R48M+27"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJO4e1wluctjERa_YKw9_Fdx8",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 20
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan, Grik-pasir Puteh, 17700 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.824794,
+               "lng" : 101.9507062
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.826103530291501,
+                  "lng" : 101.9518887302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.823405569708497,
+                  "lng" : 101.9491907697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid As-Salam Mukim Jedok",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106865832491474320831\"\u003eMr Bat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-stQ5cLuxCYNBVvrfrtNu5OVk7XKmN9RKBbNZjuid6VxPlIh7v_xgnk2ZM_y3QPZxcPSCgTRcWNxcAJiv8iMKtrtleMJHUq9kgdmwnBSwaOc-r4_1WIliRdyNhvgyuv7CDoQcs2qLyDqGqmkSJmS3DeCD6KgdHACpVRfweOn9bhjUvBQrhD8mwkx0z3T1CPvSbzdxhX7Ryl4LmvT4Y8L6N2Y0IoebyrXRvkYwh7tUcUk6cWbTC873PoX1Flw4gkSRkxQtLiuHBsgqR-i65onS6Vb3_do3q3GmNr76ByGM2iWs67jys92f1i09l-ToMOJ0A42wvbMAVI5Od11bApi0yTjucqp08ZG87IDDyOwMTT2rcfW_JnsaVO9cBefzuUwZNsazuAh9dzyWaEoa4WYJMN48uVEgX0DGBijl0xqSAN1g",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJxcXOwUUktDERf5RgFXbn4AM",
+         "plus_code" : 
+         {
+            "compound_code" : "RXF2+W7 Tanah Merah, Kelantan",
+            "global_code" : "6PQ3RXF2+W7"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJxcXOwUUktDERf5RgFXbn4AM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 112
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan jakar, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8212611,
+               "lng" : 101.9091852
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.822700180291503,
+                  "lng" : 101.9104855302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.820002219708498,
+                  "lng" : 101.9077875697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Mukim Jakar",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3110,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100892746490596226766\"\u003eNor Pairos\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s1ueJOIYZ1TisvRK3QcEr8TgVqWAs8CcR71sdDHORh108OjtL5vp1b8Xo0RK6FueMPQAeBB_lGj8_1XPpEYWcGEt_Ve4k8PT-xBNIoK3pmP98xVJUvZOou3AZMKJEc8RwkEc6x4AyIpuU5FHictjJccjuqPiBwufGJTmol8Y3QlB_Vd6nZqxUKc2DCAUGDD5tZO34hYF88OTyohGXpYIVm0_p7U_Aj9KOyCOat2SgMyzgTEymizHPUF8WaJoPPH0DzmljU41elZvV69923WzpahKdAbmhUlNjDSkhVYVu-UAGNP5ScuEIIUcJ-AWa0sRNqRRxDH5Vgv6urX4xR0xhQBvo92uGPX2fBu1d_0KFYdM4EQWrrXUpRBCgKxKtuIpgyanF9ImIIHmPoD1YQ9_5tBqs1tVjsYANkbm34XoviMw",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJFfm9rd0ktDERzJmNhFtBHnM",
+         "plus_code" : 
+         {
+            "compound_code" : "RWC5+GM Tanah Merah, Kelantan",
+            "global_code" : "6PQ3RWC5+GM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJFfm9rd0ktDERzJmNhFtBHnM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 20
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.833495,
+               "lng" : 102.0630262
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.834770980291503,
+                  "lng" : 102.0642475302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.832073019708498,
+                  "lng" : 102.0615495697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid At-Taqwa Mukim Bendang Nyior",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117153583477873785055\"\u003eAmir Hazim Shariff\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tjn7W1IXM043qYQzNopf9c2ZnxiurXrNSkyBXZGDA5KEISBMU-8eGULCsKWBEk0MrPu9ot1eK1xuWjau81vMq9DvQeDQoIO3V_rvRfeG5dVmd47HXaD4AQCu8fVU7rf6BDmXPiomqAx8hp70T-wTyZxRRL6UyEW29Grs5hPi6EjhrAtS2wDS2zjxdncq3cJWacs9r7mBXDiApzPsk1__JdnHGIZJjoLfnM96e2grmM-_C0g-Tfyd57WZ237PB3M1VjFE7RuWqiST9llhmxfyDQ-6YvcZ9ARpJnutpbyW2oLiv5ms86uWTa3VlpqW20pY_jeEvmlnfdtxXiG8ohJxWkBsOdJnJ_DehO3bFstiZybXqCFwKXw3OzJkTENvPGrzWK47yXAcxprtEN8-vnVuELMWqPHra_eljq0gY5vDXivQ",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJgSv3Bl0ntDER7S-4hWPvmOU",
+         "plus_code" : 
+         {
+            "compound_code" : "R3M7+96 Tanah Merah, Kelantan",
+            "global_code" : "6PQ4R3M7+96"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJgSv3Bl0ntDER7S-4hWPvmOU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17700 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.768814,
+               "lng" : 101.949059
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.770032130291503,
+                  "lng" : 101.9508199302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.767334169708498,
+                  "lng" : 101.9481219697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Camp Site & Recreation Telaga Bijih",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3492,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106174564737518464234\"\u003eAhmad Munzir\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tvYAoHugcnn6_K3bTArR8PyGFoBaqMV7AV91grj6x0O-rUzVjfMTCNGw9zSIZX9OEE8uWLFR3S3gZ3lz_cl3KPrqN3YtMtqoU1A8DypiUUEvNaK9--efn2aRORPa4XLAvv2YYXiKNu6rehtMZmfbKe1hi-g4bLsKqV6JFbASjVUEUBzcYfu_YshVKwtLqvM3PmRtFjzl3IZVaz8HXcg1nz74vEpJMAsl25DSaHxnh4dKLHtZ5m_Qf0l0zk0eeTOZ5p3Ihv8Bqz_GySQpz7VrXk89Gc290uRjgNq07ZrmWiZ_MdA9FN8y2ynHESMjQnTpr2DUGAfCuXoNSztggBnmSH0CnWI_pBVqbzsmjOBbz4qNHYy44yENwYKqYQkvEMoTR1aeP7EFODEz925hn_FmRiXHGHo3muLWI3gh1gPoIt6Q",
+               "width" : 4656
+            }
+         ],
+         "place_id" : "ChIJZwRZB2MvtDEREmgxpw9ORVU",
+         "plus_code" : 
+         {
+            "compound_code" : "QW9X+GJ Tanah Merah, Kelantan",
+            "global_code" : "6PQ3QW9X+GJ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJZwRZB2MvtDEREmgxpw9ORVU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 309
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17700 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7687813,
+               "lng" : 101.9485066
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.769994380291502,
+                  "lng" : 101.9505106302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.767296419708497,
+                  "lng" : 101.9478126697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lata Telaga Bijih Waterfalls",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116064150431175838462\"\u003eSITI NURUL AMIRAH AZMI\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAjiSILc6mTpZy2jgNVvMz1JXS6JDSkphAN-28QSDdlIRFZlbyLBHN2dq5dmz_0f7sQChh-T53LIVrOUE9dlqp9GenIMLN43s_cx_i0-19lIbh5S46YkugnJoaX10lMdKJWfkDFG_LB3KRAP-ZI08uCZiOwStgWF0QSfbHsKcqu729du5bVfGzR9NVMswbFNvuOJ-vgKnKd-AOVPCHi3W48Zc5aEk1ylMS6bSn9YamdEUtGK1re2hOZ78TGqKdKHL1ogWgK_a-CixIhs2UE0WrT0ehZO9tHGQ8QjJ0VBY_ZQbFKmP7VLg2UkjIvO5GlVxQnRcP3xz7edAduLSvud8O04nGFAv9uriVevzg_z_HasO-NaJ_ve3tj2a6p79ylOnh8wmb1O5xGp8pKuiaJ2BGR0T25upijqRM_IuhClujCA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ7bMNnKYvtDERkH5wEVNywLY",
+         "plus_code" : 
+         {
+            "compound_code" : "QW9X+GC Tanah Merah, Kelantan",
+            "global_code" : "6PQ3QW9X+GC"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ7bMNnKYvtDERkH5wEVNywLY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 200
+      }
+   ],
+   "status" : "OK"
+}

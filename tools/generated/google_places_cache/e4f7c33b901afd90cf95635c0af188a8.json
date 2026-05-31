@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "PT 3521 Jalan, Tok Derani, Jalan Kampung Hutan, Kampung Hutan Arau, 02600 Arau, Perlis, Malaysia",
+      "formatted_phone_number" : "011-3997 2906",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.4318891,
+            "lng" : 100.282378
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.433307180291503,
+               "lng" : 100.2837450302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.430609219708498,
+               "lng" : 100.2810470697085
+            }
+         }
+      },
+      "name" : "Northstar Empire",
+      "place_id" : "ChIJ-Wd5_9mjTDARea6y9Af5uZc",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10933043382984027769"
+   },
+   "status" : "OK"
+}

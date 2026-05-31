@@ -1,0 +1,235 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "1941, JALAN AIR TAWAR, Kampung Sentosa, 22200 Kampung Raja, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.8259778,
+            "lng" : 102.5707646
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.827211080291502,
+               "lng" : 102.5720796302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.824513119708498,
+               "lng" : 102.5693816697085
+            }
+         }
+      },
+      "name" : "Pantai Air Tawar",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 10:00 PM",
+            "Tuesday: 6:00 AM – 10:00 PM",
+            "Wednesday: 6:00 AM – 10:00 PM",
+            "Thursday: 6:00 AM – 10:00 PM",
+            "Friday: 6:00 AM – 10:00 PM",
+            "Saturday: 6:00 AM – 10:00 PM",
+            "Sunday: 6:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112682939809610178111\"\u003eBp Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v_eRTc1GvlGI-0m0XoHXX3Nus78viq-d3PT_dFrDLSmklK69DFzVBlxG_a8_8sieHFavZBlkL59NfFe3A0kSntK3JZFH3HZGtDwoczJzrgT-O-4szh8tbhfBWrXlTjW1oUTn29IBUjfgaLFT37LVCbz9dE0eaPmW6uQCwARdE60nB885MNsJWXHFJaMvg1LyzKo7Nrqe-9xQ4c7F1PPHbQC7rhQLPJzHd7wXiVZsvvBEu3SA1Hfjr3EazJaidm56F7XTJWfM3TRO3a4Pk6RnTewMCtXEZGVLCse7hW9-fASDcTK9kYy-gA6zPlg_MSoCHGNom35trYvA2ZjN0pbdYC_z2Ph_feu5LZ9YNtt12Ct0D8j2KyHWSntKk5rdJP7PcChS6xRzXvwtZGUgBrCmfx0n48NAcqgtp62AlYEU1elg",
+            "width" : 2048
+         },
+         {
+            "height" : 4128,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101112148168946124005\"\u003eMuna Zifah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-srLfYifK9JGRJvQb3NI80CSrkY_gtjTxS_23Vd9PRNpwnzdj6HRrdTe5GeXUE0mKA6G8fghnHYuyjLc7r-NXfwnijX_tIYBJ-rltPYaOK3dZ_4_0CBzf3Xw3F0JlQhuCBMcoNky4Xo2Xv6igZ-Hg-teyq1hG7z7tseQTstVbgYlvALn_wH0kZ14v5xReyKDCTF7gJl07XzgchqyqpRko7QhoKmursOPKwvkIpz_qEezFwUMqGOf6rdjW8B5zYnGAsjIhhXTPYQ5YLhgjW1rA8NKWa3ZCYwWlekx8EygKEYKcy7yvelvZbU1gi70JKFcWE8CkILfUqYYH8Onu2oSKmUPNMH1qtyfkvHZ7rpY4uijkWgo-Tv9P3yj3ZnnMBjyXBmyAxakkcZ7z86ddCN3opDJvmGtadKESlwhmG0EYouHQ",
+            "width" : 2322
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117785468615047380693\"\u003eraheim eim (Sagon Nyor Nakir)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uByQUa9XBdFq0P7VFgeEGZq1qeRbu1CGHxE2JpoREMsNRYkYL6HMLh2CPtMo4o783i1_F2tuh-Gv94rOYGKd88DflG9EgHgyUDjNIeiXJr6EQjktKUsT2efTfWK0ck9_TdIzTwK8ONgTLEaoZVtd2TaK1MFY11B2U5phCa9lHwBc9psUvm32133prEq9D4Rd5JMzyWpwgNZi9NTcE-CeZ3bAfp4VHFhxPzSrRRygGub0VqR3MYESsvT8GxaNB-eZeVmQg6auEtXv95jvzzKJdmjZu-j7cxNAJZHXU1r3IEGeUtEhGoxursZqhd65y-m1WKSAglMNvy3PpPpltYyxbUeUBVSglGS59GKPmx5eHNax6YECddYOuTYoCPTfRRyGSB3GSQWjulsRMYqrHuOj6EhdXduLTKURJEC-YxmT6TzD0",
+            "width" : 1800
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101537421509715592536\"\u003eWafi Karim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tQF1Z-OQwCB3bzBsDZvXS0KCAFHPSZWfgpfZUM4eqEhSEnHucRRaqnDQQpsHCU9UBEz72sf8-DBKscNqqz-vWh65vC7G2dK8wAY7XZyxNs4tHWaZltZnrwRLMXYFDJWbc7WjI-xTsDFBpyG7Txgd256wqEMzyYzdkpxwjm7lQDKuyCANeqbWzKoWoRcPR4ewcWQf2W3JzcBjOdpXpvzv5ONpWMEdKcbyrbmrUVB3HlGdUtaj0K4V9OpPG1MYF9creWFezdyXe6MztlPSQIuQxJiLR7igjPFDM8sBkPEaWUDgME2oMdk0wsuHECPinSPAJnymG9P_633DFESfs-lx2s0t1dN3B-IezAnkSfgmPMYGBitY_NrViUzelouo2glom7z2FSRHZ0xXnWnOEV4TmBXGTZCQ47eIL-oo7uUv-Kkp_r",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100876281297216298522\"\u003eAhmad Rizal Mohamad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5gKCBiUuKuB0FiQlePAuQcd2wBmXx0kHYbA_Bnzpgu053m3Wf_GJY8moIR7xb5N8Rq0Na_uMIK6VXF8erk0ta7LgjyQgpCU53rJumKfb8YyrWeJxAN5WPsxuIU-Id7-BsG_aTd4OJ3UESDUHCzHGUdqO6Z1aLlPYfrWzAtS7Aca9yGXXOkMbrTYJ7WM2yGrTDFrW8thL7AYaUCjWbjhemAOZ3p8-p-kpiIdujc6Pxr-9SR_DRMaYScNfzlTXd3eQiRPTnyv7ag6B_CvyHeZVD8p0Q1d-nRromyim9Tv5qdZxWKxmdAyulvI81VdBQ9M1M3Ojz1skNOq6ZGQcd4eMe-PZgvx4ZePMd23xfxofjQzpRaa8FQXVU2N83HgmCWilIoGQ4V-4PrttvuR0zVYKz937RGGyN_wxH4BQ9oebmeQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117180511255971150590\"\u003eZurra Abdul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v-UeW5qt3-4VbX99gqvgjP3qUlYtD_G6oTNUZmMIj4L0rgqCfyuZoyVT2HDJa_cmvsDMTDpYFVYb4Vv-HPt_BSKrPxyYgA5CLRwIhzDtUO9mTLinIjQHphH4xfcTMhoieXhi9l-U2aaqwwn2QkJN3lJn4TukvV9s0ah4ao_wAmLt6EGGj0DcWkzrbRu-0PXUGCJ_SzpAjDLtM4Gl5LDIRt75egQZuDkx_O-aNkSwKYfmGUDTC1mKsSQaqAK0tTHGfGDuOD-Xa4w6ZSqceaEdqUXlgYb6bFI0koRfbLXS3MkinfmNXJQXhOBP_fNA7E0FHKY3vBENQ9-zx-YEu5Hu0jJWJPp3fDEZp0TCsVme7Qx-RlfVKZLywjZuleE8TS_eyQictYSp-ML-MvseeVfBCQcnpzk5VcTBNgTH2-jm3eoZUpUPIfWUy3AxndcA",
+            "width" : 3024
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106409536269061701585\"\u003ewanmohdfaizal wanali (peyja aku)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sIKKZLZCjRGYmMJ5l30FNmLSdk80djzgcrB7EJzEl9fr7lKl9YSu5pmhW7gAdF7qz60u3O1Wow13dFhBTovF_Jx93ewZ5R_jJReArLEcH9lfqQcy5A_kszhVmsMiUvGZZiVxcXYcoz4Dfp8uL7lO0EITYR9mPKJfk0lL8SJMgRnwPO6bF2ZLDN1UoQUmbDBnpnUfxKWYNbBnA6V6bUf3Pw3FZ7DXMHDaPByTkdJoSQn8PEDeMpfEuRRL40wKj3P1N42UAAQynnYJ3XwQmOHpobmD-nuN57-SYrhjFGA5Ydz1S-arJyqvVP8gzxK3zJMFLMHtrOw5b-mjLHbZ2ALWmV0iznXylndGuujEYooyykwYxnkkY4pU5m7VGneIguryuu2tXBjPtQIgXqVAVjahP7-cyXXTttNtbH1Z6FWB6Qdik",
+            "width" : 3456
+         },
+         {
+            "height" : 3360,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100535939712344400245\"\u003eChin Teik6\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uFUm2ryE7N6Aly_oywDrylB2K1IHlbi24vmcLduPnHbIi_Z4TDiO-Dv0VzaX9CGaMNXy-0G5aHhuXHYXz6qR1cS0noqu-BDyYuvebgrOv3t4OY8JBwDK8YTEWu8MvoBmU4eml2sSuXgjYEXQRfCPChBi141fENWYQBpx6VvRShDteC1BMQQxzxGv6Wwi5jWzWmLvaNDvdlAiSMJ2I8kKVEMSUKcDhDMV1AgdDMQfvyo2HufTnvYHyz2s7ze0TdyChZVJZeeAj6QsMCXI5y0uNweF-FBmGA-7MOqbuNZr_THnKi5A09NoKoyxFa03D4jydw7BdmLPe2Wp5M6PRCB3ArV5UehUlQ5bVzYK0I_6GHoFmcHRvk5DQmc8g5C6i_sNiT6yTfKsGQGJr6B6V8pXPx2FPs_2vDKdqsm4ff_UM",
+            "width" : 4480
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113231773768007366850\"\u003eKhairul Mazlan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s6AMtFK7w0giyfX9BbNJnd54Xz-z-YMdyaDCqQZXvVvZEU5Bw3nV1PVkt6ibuR8jvA6vySznWeWzuZBmjDcB4q9GXS9mZlWwZTcGiBBZXlJ445gCIyHrYhW5-etO_lgwTDMBemKoWJFQ9lYvihe3LPDUFKfB5-6CNAWdJ0tuHAo8zsvBdZZT2HCq0XmYEbaB8MSPv9CRcVE0gDkUO4YywpAulYAvB15oD2yT8PbZtFly-bXqFxdYBsNaUedhIxr1M2stFaxGK_NfSWFtD8LRk72k0_CHVNk-ujwe6zfPHE3XDMHwlh8ZniaMWGuXt_oaSzfdj0GBvqcY1cFJBHX3Yec1AgZHTJZc-X0B2myEYFv4eD4Bs5q62V0W9AuYD7kj7EJ-cKm5N6iDVv5mce_tX-U7PclAC1J12PASCJTwXtl9BhaxvafFkIq2_k2NoK",
+            "width" : 2252
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117785468615047380693\"\u003eraheim eim (Sagon Nyor Nakir)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tUpnqBALK4zXXRWxl2HDHAvZ4UoU28gusSSTZrdI7bN40nGugSzb9zd6C-hioVORTzXV-LPgi7UreZdFAC_yPWYJqmMFBBSZCN0e2gf8nj-_-OHkV4EpIpZ45-bg_tlwp86p6QW9A320m9qRQvZC9zcppeps2ITX5V2xWtMGp7D3IOk8-VxqUvR2UiuN7181ZX5i1M7-58ZflQOlcNkqAxbNEWhr8vg3_reEh6_63uN-iHp2_CxKTAIiLiqsVUyvBXpZbDexqaGotDC-fzcpnaCWyFa5uN_rXyrFLRysZ_gJRWy4M7Il_tzp3HWidUI4luln7fwyjR9BsQ8c57vbvU4AX6s1pNbbeGVDookG5ZrYj3jYcEDlBj4oTdQqa88U_yEhWGP_cguhf5EERH6DbNDwEblmknubxHV-wCzqg21gM",
+            "width" : 1470
+         }
+      ],
+      "place_id" : "ChIJAQAAAFDutjERbQpmdsad_xg",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1801331851686972013",
+      "user_ratings_total" : 768
+   },
+   "status" : "OK"
+}

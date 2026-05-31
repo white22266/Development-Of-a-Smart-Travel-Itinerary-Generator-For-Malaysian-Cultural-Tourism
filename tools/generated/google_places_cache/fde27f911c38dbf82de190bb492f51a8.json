@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "12, Jalan Panggong, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2026 0292",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1418198,
+            "lng" : 101.6973608
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.143170230291502,
+               "lng" : 101.6985766302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.140472269708499,
+               "lng" : 101.6958786697085
+            }
+         }
+      },
+      "name" : "Culture Street Arts & Gallery",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0930"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:30 AM – 5:00 PM",
+            "Tuesday: 9:30 AM – 5:00 PM",
+            "Wednesday: 9:30 AM – 5:00 PM",
+            "Thursday: 9:30 AM – 5:00 PM",
+            "Friday: 9:30 AM – 5:00 PM",
+            "Saturday: 9:30 AM – 5:00 PM",
+            "Sunday: 9:30 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108667577527501566391\"\u003eSam Townson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s50B_b2kZqCuux3IDbcEPMSG5t82XHL3bLzS-XJz2pU69o5sJFjkOkbi93fqIqpJCDZ_K6Prt6PrqUXibYLLcSlnYV3Uy7WBR5hH9J99D3FaO8XtVxPV3XCcUbAWDsMwSOW4kyXWh-xDj32OSL0ntfj5h2dQkTtxvBbn_Iwpj4X1Mwmtz8n6HYbvzHd4TfxTFwBnLi3eYQwJSbqq6fC51fjSXgSd8hBoJUd8XUGyY2cXcEJoae-qDz6UikwjnMT1Z04ENmhHGAI0rCfogYCSahK_jnpJt-GaFEPEBQQr9gzcilm4TjxFvgTfnAjG_hnahrd06WqTBQ9Zp6x60Igz8mmZTTz5xymBCBG4VuGdBlbeqfUm0PlSZ6tmRyM9cXP7lH9VTGh_GuM84JWOxRB9gsxp-1p8yuFX6Eedo751V3zw",
+            "width" : 3000
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102513127505168886073\"\u003eRizal A Kudus\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sAkvuc1r7qBS2OiFp0GPJRPeN6NkuyGY8G6kowNIn7EHq0HqbUAJdLgJhXIQHs4cJIt1ZgokBuTJJeBfakiv2vEnIwfal92RaFTp6jrV8x7xNVJ0OUtElbY1opBqMCw66mzjbxirCjSbrJKIVIFcVBQmCAFRMuQB1YNMkFB2SSbdZG4DqjBfngZ_0-HipfQnV41UeWgNhpkkHzqgDgquGwhi3Oa1-kRYvHOFb_5ln8CKJ7E3mCq-GPhzdB8zPrEwUQS-yBv22jVqIh2Cw2i22h7XkTN7ocrc6Pi5cON9eZRu1K2JZ7Ri5nesCmKFFbR665lEvSne4ef8apcpiUWnNvY31ONdDnk_yDyFydfKfJjTXYPuf9FicvCO76YQ6D44PgCv_Wphh-o6S51HWgPFAPxQeTRR56kQ-NwgQuvlu2Dg",
+            "width" : 4608
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117544280561171153493\"\u003emou majumder\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tCgqIQkhG97I3vvEev4ON0xlPcDppS2D87PMv9xs8sN3yGU_yqz5MDBmgRYpMd1P4Q6gilc25fwuIU8QqonuB-I40D429fpadjwXncjC5tSBd12snx_E6PsbOCNB8D89aq4y4hRzt4UYdcfVGc5u_aOXY_52AVCVCxYu4p88RUYR9E_th0GxHAvSMmvOuOWZVQMkGaUwCoJJa8UiOU1314nG8cCvg97cMmr4paABSh1zShRPP023rEgke6DEwAmx0tFOjo5jxq7KEjHZI0y8AqnQHJ0KH1vgmBZ1VvQUgSXiOqnDJx9d579a2FV6VkMWs9t198Vbki8ih-dz9sI4Wj4-PU2SiqOMR4XW2NzCqPqWbRmlHwKv8LEyju3FKZNjNi9zZcRo96c1K2X3nFX45sxS2DZo7PvmMAo_wPmyHiTklx2QuTlThZVJsh5w",
+            "width" : 3072
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110130866289067733798\"\u003eDevi eko Irianto\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vlPqoIDIwx_i2zg944eg1WrfA7-RFF8SnR0WjS09bHxOobfLO-10YlML_-reTouBVXRHiKSIh-8Y62F84B5JN1wkPK-v7XRuMfifcFdcllY35DWVVwnx-bTIBS8CCsAoFewVPhU6YGTuAFWQlMxvw0PyhXCNYAW8lO7VAFgccsHviywH_eOy8jrQjJbuU_oIxt3ckiMLnRIh39B0hW2xHOvoNbHgdCc5rWb4GhhWLq7I7hRHj4h7Yeyrof57WMLc1PM7mAyGAmYwS5q2xecdExO2IxgAnTI03Q3ttzlTV0f26EhVEk3LfNhIbYDtj8o_aMTszSLNn5eomkD1GUCgrZaNS_KgyQmkwKxoRnmDv_2SaKprEWSjFIWisczmP2Ya16MjCUTLyI9LVIlJgEKSNByCjnybrFw4jBc2K8ZwlcN1AE",
+            "width" : 3072
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116006874297511695122\"\u003eCheung May\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sD5qjPrBwLURgwsCPO5bgQkr-Iuqa1IgCKeq26mu-YSjfFCGV2bgsgDSiLxsmqnjNge0h1jsfLjP8Qv1mVfcynGEsRm3WnA3-0P1bIeasMeoSXXUG7ThfPHct67NSXEjSauT01-4sMt63ea8jrCGToqakWrebvrKXM_cho9CAc1oESQuyhXNZZVPB6G-NPLQrE2lVceMes-6AlcYin9XvPPDSK8UDtmLE-XJbqeN8rCrL47zoTM_Byr1oJaKYt4t_C9IWSehTJh6BdEcAhGuI4cnGz1xc8TVxT1cp2FiXQD2N34PHlwF2vU4Ds3ncIPGLquE3eJXA2Lh9VdFZMIB36Awdrv2g6amfKYyvXj-Dm30iBduVWaU81mw6_afX5KNrJqJyT_p_IHp2E4oEfBaSiIAHlDXzj9hZNpNcCPfY6rrAuxpblG0Gr8d5umQ",
+            "width" : 3000
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115804446485509097463\"\u003e쥬베이\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-skcQVtIv6Cvtz7EfyGHRp9loqlIX0GUIz_2J07dOVn7fxbs2a8ebPZMlbpkXraesZLccDmpEl3ie8wPNr5DUESP5V_wSX0fHGRK11tlehs2fw1FWP8csi4XNSudBNC7s5uudeKlw6KeArQfI9OwyKaj5AUijX1SmImpf1QROLTGAO5WXpTHOI6L_RjGvuDZ_PE2lf8gd44VNV1y01AAel7-L0sdfLzwR20rt3bDZumOvuELDSUmGXe1z-9BVWg9XM3UJNk1ThFjtxeo-MYKAVEDB7O1bcPyBRz0ZZftzrwpIcMkUHJpBYyB7PhZknI4Cwv0Tfhysj2rgN2YE0LtUhBSOkQDkkYVH2-LiITSlRRQUdJFZWnD0cnAib6K9zMXK94Q4ElcLK5hh7UKKNxv60twsFfhdihg764RScrmSItOXou2gykXpEENPE0kQ",
+            "width" : 4800
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110730454826126719905\"\u003eEdwin Siu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vHZZl_JYDsLNEQ0fwgXjaovy85KwtGeogLoGN3OGPdRec3QFk4m5Nx1CVOOxjYQpc0O4-IGfGJMcuzYazD9c9u-rT6U6rPl4FenY-H7VyR8fFCnExHyQn5QstRoGqG9Tk1TLjpQG4fAxbpqxY6NOQs3S2qZE2AeEreaoUIp4Wo4v66DCB2XFqOB4YcoKkCH1pyHkh9Fwfa2LaYM_pfviJdFXimkLwWOj-2cuKSBpqtvZQU-ci987dsnBUai9DF9TfuGpHqwOgFW9z9ubz6ekJ8-YagRcow-xmFYSoTnyZrUpUGkV5-PXzycebZoLm_HB9bQSZ2G09mVP-WyFcXgC1jI1PV6uQnhMm8LP1qI0_WoPGGeCLzFK1-VRZh3XQEwmPk4jJ7HmpZ3OlAbx5AZ64At7sP7dEBn3T-J16rOIGa20G3U0OvHEtpekJnNXm5",
+            "width" : 4000
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111652229139881085560\"\u003eKevin Siew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s-lLGkN1AvFFhvJaoDNbARg0SzLnDSXifOPaYfiUjcxKIzXdwir3rqjMf91AB00wTS-JcjxFMiZ10hHjsaGT6HZf06ST_5m2I56VVERaSIabpl3e176QLz5om_BjJ8amuX_PdIddCCOvAv1Aa5VZsESG6VE5wJCcxAZMyZvkwsDUhCekp5eA7EgPFOdB4-wJ0ReOqXL_YcyUwqerYgOBalVP3hgvbKjdqBWPqtVrrP5emwQ5RB9pmmk1FR5uydT29mtgoEfwlDCiuFhRxNCT_xCW2ivp0OxS_ew-lLW6MKWFE0fpyKO76W_wk0R5CAYlGjKWr_9uh-hGZPYOrvfCAMLnFyKKz1yDYj3vclB25WRIPim6mnJoDVcmRwut6pc00gvr7vmTihhzidbnargle-NDbjwgW-6YVU4iczlQrBu6K1UAdW4AmpDRKOd9uS",
+            "width" : 1280
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115400414938622771975\"\u003eDiep Dao\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ugkmNYuvV4q3gWBTKQicqyAeJ7JlLZGIZOcyvc8eUl75EbpwQm1pSrKJiRVC_8OVI074M5JvD90dY-QUHQveBcS_Mgvt0-xVrsSWKwFX2t3RQWblUOXmMXKNNcyhf9jBDpNVP66e70Kjw5EmL39f11IoNsqID1eRnvJEnEEt5FVkcnSQTdyFy04wzj5b7TO4JHAZSGSIn5rdgzmY7zcjh3ouhXVWa3TK_8VLTgAsRcokbOWaj-3Nl_OXsLm6MhV7BKDL_izTbd0EK6A2GX4E5vyaEUR2eRFEzgajpoOwqIf9qDLI5NsZbza1Q01FO0UMjqkwG3sWroH9uCAnPk1GRijZOqSzZCQ_IHbaQ0Rq7v5SH7uFWLlGQPgVV4TyPLeoGY6GfB8Mj6pxbBBM89vVjI1eQh_qKS3cvS8Pe8jbYK3Q",
+            "width" : 4000
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106739077586430565257\"\u003e鄭吉宏\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stsPG5DSi1q1kHvQzoR1IEeaRSKsSzsRUAfD7YG03jMXSad4lPzF8dVnjdS8ldbLoY9ckV0Oc_cesRCXK0gdb30mgveHaBospzfFyA4Ox8BUmQ_Ht8GdtmyJYKL2afzpUUM-RECA9cHnjRMNc7wz6niTg7ZFgDf5kSJ9l4RSjkHgDC0LwsCGgRskdJ1xJtC_g4VoybsM6PhZhQCnt_GxGXfMQhcvjP839mxXX5ZLr8T13rKtzPAYwe-zFQIVyj4oMZmFs443maADhik1gaJGSgjeMTL2qCYkbKRHTQVFXLuPVJVZSahffncLorB2rJ6B7aMy7f-U1jb0o2hobLYjBMfx0229SQJIrrkUYBHRL0RffsMp9Nm0WQt_Qk23p8Iaogenh6ZAEF34GZm85MGtDTqDTnvA3MfWHg1bVksJs61al4GbUBX6okr4Si4Q",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJH9i6ddBJzDERtZdACpF6FcY",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "art_gallery",
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=14273449357381506997",
+      "user_ratings_total" : 85
+   },
+   "status" : "OK"
+}

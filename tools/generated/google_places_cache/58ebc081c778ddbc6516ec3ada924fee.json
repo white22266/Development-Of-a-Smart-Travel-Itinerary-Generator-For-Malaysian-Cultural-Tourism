@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lorong 29 Kampung Taee, 94700 Serian, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.2067004,
+            "lng" : 110.4663076
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.208061730291502,
+               "lng" : 110.4676559802915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.205363769708498,
+               "lng" : 110.4649580197085
+            }
+         }
+      },
+      "name" : "Zone Entagan Danu Kali",
+      "place_id" : "ChIJMXMFOz2H-zER-eTXzKpaDBw",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2021090022410151161"
+   },
+   "status" : "OK"
+}

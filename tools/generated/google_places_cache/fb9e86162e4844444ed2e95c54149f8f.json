@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Bukit Cahaya Seri Alam, Taman Botani Negara, 40000 Shah Alam, Selangor, Malaysia",
+      "formatted_phone_number" : "03-5510 6922",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0944963,
+            "lng" : 101.5104943
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.095804380291502,
+               "lng" : 101.5118510302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.093106419708498,
+               "lng" : 101.5091530697085
+            }
+         }
+      },
+      "name" : "National Botanic Gardens Shah Alam",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0730"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:30 AM – 4:30 PM",
+            "Tuesday: 7:30 AM – 4:30 PM",
+            "Wednesday: 7:30 AM – 4:30 PM",
+            "Thursday: 7:30 AM – 4:30 PM",
+            "Friday: 7:30 AM – 4:30 PM",
+            "Saturday: 7:30 AM – 4:30 PM",
+            "Sunday: 7:30 AM – 4:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3423,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102716332102962668619\"\u003eAnnuardi Mohd. Ali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVI_yPUKNpuqyr4Bn5KD5NE3XlrKGDerqC55FcXAgYc4AAWDBeseVRMArg4vhGNJxHSNDO_Kf5uVME4ac_TgGM1BkWVDaCOjFUn5VsoM0nJc0X1XYa1n8qPVRX7F8JtTn4y6_5nbwBNqn4fBsyLw3XBs8fk4Ds5Vz7Dc1Mim1lQhm_7iICx7dlLk04S0gmSict89_CzPTNRT516GD4mWWNn4W0N3Y04oAPwb2jI-WB-maQEOD48X7OZZWuNyECc17z4NeUZopYUDFzn0QWPUtBvt20cwrIRGPX8Vq6Qra-qCD107o0T8oBg1Pe8LolQQaRmTmwshwkX1BrUN_HvyM-SQIG21AoOEeaX6YbwMXOwKPOm3OdziAyuvdO4dUMkYtdyodsMwtisaV8PvIPDuvCASXwwfWAa2XUGcpg5sydHl6f",
+            "width" : 2567
+         },
+         {
+            "height" : 384,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101102386911709166814\"\u003eMohd Saufi Hussain\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vGX6yYFbH1_ajFwQRb07dRlwgDsPSc2aDsXPAB9IoXxQ2eRwVG3KXLTMMyfG0qezPztPkZHzaGnjWyuA6tUeL7ZGpBKNxZcn981LSReesmuAffwfYyywG_bOWHtgDaw77i48hu3Yksx2RmCJRQ13HGxj6uqT6NOGRY-Y24ivFkQHmTjgCKxaivnDCUJpovR6oOlrJvFNNsou5I--keOrQQHdhOfqWLTSJnOffhNvifmuTuMcmIVG438UTfDuAHliEkHSefuxYSVBexD6eBmWv-dWJzhw5QbzcWXTsmFl8ddeIX2owZhceuA_D0ANGvShPNcM3mW8M88X7KFijEgoPH99DC50vl9ccRRWJr1TvhxL-wk7tQF4dgTJiQgkBFkkZ61eZ6XI2ySfiRYe4fgU54P8_1S3Tp0BcSsRE1zU18IO0g",
+            "width" : 578
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118262311985145583668\"\u003eamirul asyraf\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sunFNorhLA4h6uFgbmt2sTRyeP9QRjUzrUovk4z_bkpDK9dGc7_o6FmOpiW3G4__BYnvCd3p9Rjhjbff6RJJj8wmKezDwjdVRSRwUStT-3NZUEV74DNVOGjQWvvKVclm0gnPO-2_oGnXGrWJGt7MEVnp5_LOryBYbg2Z2B95TuLE5cWZrUxlPwI-9OZJCyHWdV6S92cquB3lcF5ZHEWb0LYmVtvAaMlDybBR7FICZyzeIPixD-OjWv8TnQNmLVtp6dGP2KHNSOwHccBZwAz9Oa42MmLMkKLz6jDruzKk-vAUB6YXlN71bJBgrLToyqlC30el1QkIAWyZjMkhfYZaUii4AbnJocWFbiYzbRIZIY6Lv_-di3zFMJ2akjqzoSJ_LNhEA7g9UMWuM6JLuRIl4-ncL--GGh5mc7sn5iX1k",
+            "width" : 3264
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100327116971908832972\"\u003eSyasHa2506 Aminudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v42KiFAOshHOtXFc5gzVULMYuS1D78DuyJzVeLnkMFeUxebUe9qP9zT4Thx4xVKI2J6smb2j6FYRhEaE6cdQfoCfDVded-NfuUU8U8mrrfqGBVHuMcPfNahnLV8cdhXCOXb-nwLm2-aevLqo-F1BYCMsl7iJbkxYGQOR0tB049q25JAm1U5XGbLtxax3dT0HRJyuzFJtLdBULHkBQ5nOZl0rxi3Yjc6ieezTX9YXPZ7Cu0Gx9bu6gJpbHR15AjSqFbYwemLyQEV86YL3VXEuZOVSbmJqiyCHd3TzZnetyFVq--ryUKIdHDFVIPiLDSPN2eXzNf2y5BJMG84Dv2BSOG69MTfVqlOxH6qxR-58Lif2x1bhp4suik4bJ-qgkEYPFYuT1LnPbMeThekM9iR67dGM8CEfNFacA6o5RWSt5E1NE",
+            "width" : 3264
+         },
+         {
+            "height" : 788,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109416445642169066614\"\u003eBangla Comedy Media\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uhwNbcbfIMMCJKSrgN657A5SMMDLso0FmvThaeu3a5LifaOVsfPu-ymqy_0nVV7Dgzs5nB97aCqtB8PYkknNG9yQKXLbYYIRRfxuWkYYVt1Lldwm9AW7Qm-KG95_D7wEcegx9IGyfN4VaY0Dzi9XBcjXGjHi4YJMA-B4xbVLoIbjLbqwINxm7X3Qy9Nn1zeLS0IuNZWgyvKoVOvz6n02OD-9x7_nw-NNK4ZxvwiUtWK26uXCY1AvfEOxFArVwfIj8LsCSxTsP3c4Ar0tGxWrqjhXU2JDjfrZfcKQs1M9vWRbY1AwgUOyBujH0AwvsRmg-pcXGNgDVZi9V69TRPGeietXtxC5VTdV1l7M9ouJ9M87WW9GZoJyBkrA6QAJ1k2WrziovoXEr0AnpxxC9up-gtOb3O8u01Jy77pMMXgPwPUm8",
+            "width" : 1079
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100152328692721914076\"\u003eAbdul Wahab Yusof\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tRT-1LTZS1ltC24l10O5XSCCduthpApnnGxyl3f-Q5lZqYiDtkUEgxBBmtLfcbWB91gRKeL7ZEdo-U-7KFGS2WsOzxegIL4mvLTOSt__2XW9oOVBfaL-2HlsScVUXH3uXNJq3HWUm5axXIPJalD2s2iBpHOz-ZMK9rML9Y4OCuZD18zO_LZ2jL7fgzJqj8J6dVyhZeKhc-VwDiVT6U5q4FZO5AQWtQ2q2aaXx4-grXgyATl9d-3g9ZYSfTA-9ssjTI3CSfniHFERyNtD8qOi5sbv_QrD60V9hTM1t98su_QYOU3sxl6Uvc3-IIxhcu2Ms3NEw0gJ4vvXSp6j7Fu_N7K_VwOU77h9AxNvs5uO34SflmsVzIgZXMh58IFm8FiKrKslmvlUvewApiRk_Yd3qwomfzpXmH335UJld-oDTz4w",
+            "width" : 4000
+         },
+         {
+            "height" : 1074,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109416445642169066614\"\u003eBangla Comedy Media\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgh-ghjeIHuoQZbCkuDfemqGYLlqqTn8O_rWPev9s9ep5aFNx4BkMFbaKOsOptryAPzDSJMheW-SMBMW6UOvxogV2kaaXgT_rb15CPaQZovj9qFbhzz201IlMsePI6S17bb8yJEMixb7PqF7b3tm1-Zxrb0OROT8ecB7bF5NkY_Z_UL3ookLC83nggDUiEkdpMr2u5Uy0NABZaIeyPWz198BNncn7sxSFbOukqgy-JB0qjD5pmI9RWvrw0nQL5Soe1AyFwt2GUMp5M-bBuZdMzELDuEElWNrry-X90qifW6PfSsEKhpmPP-DMfr9WZkaZB9kMMYEhaIBJ-5SRbFPNWR0KMi2xx9lezxeFk74B372TZUESNaGwyK9zohsr1DQloidgLhKlJYe4IJwG3h6lSL85s0kG1pxvFEb39BPV3Jw",
+            "width" : 1080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115411171462970571302\"\u003ekazunori Murakami\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tAyeL6TeEvZ3tOe5MP79HhyvP9S-tu9q5TXCvwnjYjuPlUnhgDEwoVWXzqMbom52lC_OkS5kNwmmMDiEF7QVqMJszs31lG0DZo6WZJrq7Cqs_AvsJBDqnmgxnpDcRAleyeK_d_ZEuriN_LeFxZw4upJ8IIw4DpBxjS4OM-qKJkF5jQQ8yzY9xKM9q6vR4_xP4cEM4xFmZaUge42WfYgMHzk2eWap3DQmsLfIGrHYAYSHTaV8VVlFchiY2Y3JBkTTunsDtCs-Zs07iXeKdNs0GQn8xHHoVomur4DDzZ3_yAKfhp1BWyZrBcQj8fb92EQq-eDCXYl5Q-3CIAt1Z52-JRUychmI9Z9NrK091r0xJWwnnSipcL2uEunbA7rCPScEFu71aeq-aSDx-BnsPl9Nu5kCJbjrht2xtTd50EPOA",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106844884486326584376\"\u003eWH Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tK1WPwdAUmfH3xX6aWprqLMzol92ooH5K-_fyEMD60QaJnnS05tVEjbAs_5-NvLjwh6ah-9jbMNoHNJigplY3bKJybeCHLMqHL3p-1YBJeDfwTAszOEmr6TLspYEvT3kFJwfrzGxmxgBdFs0ibL2fsArfXWBa1nzQi5yuY9n6OSmTJNjP3IS9_zh5e1VHg0iZjkj7eE5nYdnpdUNCVCkh4DKaCQpsbOz4O7I7Y_Bl4BRN04VXXNsqPIXeb-8m5tz1iY9XHE11FPGAekOxmB7UnA_ZPfFM8RwL_n6KVBvABhzLFeU_ohMaToyotGmAoC_58U12ShUomSyAzeSh4rgnbraDJLubifRKIIYSIEadHO-J3Rwe6UUKHGzhdZwzBxxb-mPVfJQYswlmEUnQM0eF2q5bbGaXfdaSfpoQLK_RbC3sG",
+            "width" : 4000
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109369882233939390742\"\u003eCha&#39;in Yes\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tfNeZMg7i-i_MR-eKswPFURVHaMrayu1Qyqd3mJygYZNzzRMtS8F4Dx6CSmvz2ja2aU3Pi-tQ83ModiZpA_cL1aL6je1daSH_sH2kAI9yKJSAsha28Gx0jhYERhM9xQz7yxQESduLElOOAc0fh_cEK7dDjVq4FRQt5YWoANXKGKbCIE5OI1scfG0idty5KhyPkQJogfWHmQxkUvNgxYaPPSKFOPzz507tui6Uo1ajaCxQN9DaIKreX98tWUh8cPQS1oJHbrawOYCrurvZvVAgM5Mu1C3mZ6-75Xmb7ijlOQvjbTzTq4Y39qZWN-OpFx8B01TwydCRpbOIX3hjglGfFNfJW6zfENxzrxIYq72So-WGtKYPTJ2E3EjtgBSTCUjDijOZC30pIwgjU_0uwxnBuLo7Oj1tbxPXq1k_dIImhBg",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJVVVVVRpSzDER6HL4kTQP1uI",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16345268616049488616",
+      "user_ratings_total" : 5184,
+      "website" : "https://tbnsa.kpkm.gov.my/"
+   },
+   "status" : "OK"
+}

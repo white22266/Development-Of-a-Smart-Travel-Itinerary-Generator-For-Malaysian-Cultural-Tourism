@@ -1,0 +1,52 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89600 Papar, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.6596278,
+            "lng" : 115.9505385
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.660995780291502,
+               "lng" : 115.9518921802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.658297819708498,
+               "lng" : 115.9491942197085
+            }
+         }
+      },
+      "name" : "Balai Budaya Kg. Langsat",
+      "photos" : 
+      [
+         {
+            "height" : 1952,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103938976317328437103\"\u003eJani Juini\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vlVHG20tq7d3SJjFl6C5LXqk6v4h0vCzT9SMJJ4XWfKcOgivr-xhmpn55sSTRRDWvF_SEI7sJyKtzMeYCK3qKzZQAEPxquEDX602S7J-N9Rq47VIWrC9vFs50RJEKpLaClprWFtzPnQVfQdDp4LV0lVFrZsZEehNVzO2WmGFm9SYsiSnAksNtLyvBbR_nEgnG9UW4_TV88IOkDwrszYf5etrY1skQ28kEXLeLWFfdHqPCQmA8-6x4E8ULRqyWC3e5b6Q0Qba-aFXMCnXuXjQR8A8LqcIJPI_kWV0k3IcyeJrP28eRRbZtGqlTNCyacY2HhWuRrgxaPH_pNw3KzdiSVNa8v9uKDPmf4hBhn23vLsyDXY_Cq7rWArrni0l07a_iqWCK-AJbusx2AEFeAncl0iihr17Qt-Jk4z1tmRhwieg",
+            "width" : 4160
+         }
+      ],
+      "place_id" : "ChIJh5caOIajPDIRZaYjVYmleSI",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=2484198678729041509",
+      "user_ratings_total" : 25
+   },
+   "status" : "OK"
+}

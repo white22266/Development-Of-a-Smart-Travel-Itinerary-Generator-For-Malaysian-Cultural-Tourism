@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "18000 Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.5697668,
+            "lng" : 102.1693282
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.571221830291501,
+               "lng" : 102.1706793802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.568523869708497,
+               "lng" : 102.1679814197085
+            }
+         }
+      },
+      "name" : "tasik kuala krai",
+      "place_id" : "ChIJb7cwFK59tjERWLJvmDsG49k",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15700399578973975128"
+   },
+   "status" : "OK"
+}

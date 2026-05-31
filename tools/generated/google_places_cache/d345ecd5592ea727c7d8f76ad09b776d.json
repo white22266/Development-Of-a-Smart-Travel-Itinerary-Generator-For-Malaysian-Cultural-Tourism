@@ -1,0 +1,235 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "11 Lorong Ampang 7, off, Jln Bukit Nanas, Kuala Lumpur, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1497672,
+            "lng" : 101.6986893
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.151047880291502,
+               "lng" : 101.7000209302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.148349919708499,
+               "lng" : 101.6973229697085
+            }
+         }
+      },
+      "name" : "The Godown Arts Centre",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1200"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1200"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 11:00 AM – 6:00 PM",
+            "Tuesday: 11:00 AM – 6:00 PM",
+            "Wednesday: 11:00 AM – 6:00 PM",
+            "Thursday: 11:00 AM – 6:00 PM",
+            "Friday: 11:00 AM – 6:00 PM",
+            "Saturday: 12:00 – 6:00 PM",
+            "Sunday: 12:00 – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116310719683643556655\"\u003eM. F\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXJKOVwpTnmgyxWGbzSa1xuyAQN-pusa0nSvnaaHkqHfkTXUmHbKgRjif8LnUk8fBMJxbyNfkCNwx99ilZ9OuJiqSS7D0myF16i1KBAki2CpT7foJ9Ifhof9o4K4Wr5IMAb3uBPRLr47bJUn-5V4n781l5WrskS1UmYNw9YVcgxTQ0ExgiA8HACZFbLiI3ADAKI31uNGOlp7Cnjz4OcP1RPxWCyATH-1XJbmFAfOa72CuZdP_csYJqz2g75eJQhHa0uq3aZOrRG2EbD8Pu9DlQ29syYeN7MyeDUcS7LeMgdP6y2bKQTH6SenU-Ci_pfFvapjn5P16l4wa-zoCYWqc2UjvcboDGbzNq6hFl7sEo_5Gre6sW51gJnVvdlqWI9SIlmS4avmG2l-HrnHLMrtXxkhIq91IXbI9a3W34m6eTQQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109244474114098045755\"\u003eJusup Sukatendel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-seiu8uPd_Of8f1uXw9FkwIJyP6Lfohpby0z_9s5Jhuy5O5lponskHCbQ9lZH_N_bfmhDa_Mc-16QgQbwwv8RlynbNTTD8m-nkSlSGCCOjTqQSyFatsYUtyWosGP3kRboBJKSfGXJ6Le95jN_-Xd43ZNzWPFoCc-ImeJDeZ9VcAJNs1jSbMjDFmLq6Nc9RBdGCaaJ8t1v3mkmGvwGYRxEdRAerG50_2tO0c_9vLu-30Yjdt9CPbE2hHEDXJFwOJlxljZjuNd1VAGRZpeHMUiWecME5uoEPljj3t2ov4EU999nMeMOuwJmSplQbKe0o9X4CmQL16U4N7mkWQrqHNbnhdrin4bsQUsokUOD4dmzy3O_OGgODZ8_aSv9ycbQHIkG0izerwY367yy5rICWI23pjMtjmHrL2xKpaROrIM91S-c-y",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111366605517986790446\"\u003eNG BB\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v_CwFYd_iD0tiSy10GLJUEHuVmCI0fN_Jy6p33HSccCxuuE-NX3GqkAcJ5pohtZNnAANSoornwqmt5nLdv7a2X6Dd9R6qzzWpqUvapDJ6HxIRPVo287kBfhlF3Pr1pHejS-LhSrVCUdvrhRu8zOAlEzVS5FHIAZRM9hb0tvUSkOFTNAd4byJbn81pc4DphwyOP0s3iqlfjunYHY6jMItI0f1ogGxscGw9LgMY0UEiW9F4m4tBWccK6xxe0PAYBQeli7S3yl-iNQKAUID5iyO_bcw7bxnd0WkaBL4JIlOHB-XFR0VzkJ2OANrVDNw7KeIuFMg-yECrJJEDptRuQ-qEF_i-hT3PKLQ0ZvepcDkxWJzywzPf35YKkw3rqUnyVvzlNU4g9B1WXM-M0vv9FAcGkJLNvOIPK2oOAsNEe832Msqo",
+            "width" : 3024
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102535422431982681137\"\u003eNomad Wanderlust\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uE5vyZUP_WVGOtOsp692XrTkaGJsxEzRGzLwXZeZeFznXMHOCsehV9rg8IaYDh4mhUalAxzutIVpt5m3UaYcZbaPo6S4V4S3-lJHRhKaSWXgzucpb_px5dfHiBHUp1xSV_ueEuPqcUWmdwUBM_OJMGtlCiV8o3ShYDIr9hPxzWkTyG-8k1N_TIemCQy43R7zwUMRYXK3hhQbTLRFnvFJYAHulTksHizhAZgqYb-fha-MGbYjdFQKoY2BIpIyoedXrlHFGEXdJfSPVTHWzYMjaBKPkMu_gqGIhLJ3PSycWykiziOM2YsqXAAGYd_u3BbbVxyZ3tnw0H0Q9aIMbSuNb8us6v6j-5QmwWjafgiKEU_r8pkDnsJwCRp2yy8n5eBfVoVoVFGvWU0js_83skfYyV0TTx1vAjKyWk5wa6C7-9_g",
+            "width" : 3000
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103054765586479867037\"\u003eJohn Goh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uKd0sD5GP29c_e1dfyKpnxAp51IVY7GV2GPEHEHW1niIdRPtOefpID9otWrdxK9KaXTBWjY5Gwv_qvmV8OXlrb3v-pRBNk7uuFgCfA_C7YZX7ZIAbfNrATkIWLg9TSh4tFunsyR4zhTOuJan4syTJ4jgjMsGx1zZi4byqtcVryYP24Pg8ApV3PlTh5d-HrefsRq3qJ6fuI7vwA7i23nn1A8KGw38DO2b1JljNCoj-kTlVYCasAUr051j6iKaTxIasIWFWxwVbeY1C4FNx9hSNWhBDTcHAwBsZZ0U69beZgOa39Au9ikLfxr6jpcWdJgL50b2WuDRAVY73GlvEvU71FuGou1QJWTyck_wX_CP6mTW2GC9s8BqaIETNoqLEp3v3IE6czVr_XmXZfJ7oFU3G-VrcbWRkFt6tiGto",
+            "width" : 3600
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111366605517986790446\"\u003eNG BB\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uKdO-H1gnu7NxA1GlcAx3JdegFc1lOMswFoKMkIEdIG_krjb1gmG6n0J4eM9CuJ0kkHQiCo8wrFcN7fUi7y2MwxrUTMDCxobjXaiyDqhy9VXHYfiIsw4QFB7CpNJH10TMjIo2t5hLYSaAcCV066AQqZqUjPkxyX_dsWA8x5-Yuwe8BHvvpznkAq-4NRqf0oKLzPGBNPBx4T6y5vE-MmCET4boiYMaWrvMHAxFt61WbBapy8UiAKSG5Ue2MxTVjf6PEZrldsGaTn5fH-f8K08ZAOaXrn7bNfZBz7kdTZK67m6XtwghZ0WmcrSDYw5CxKdHtFTFmEiD1AmvbU9aqf4QNifvXzcTuE7UM1rzYS4vhIhS2eICRVKGBRnHV_gBAneSZtZMKeCzVgUhP01A8T0tdEs7DpGmC0bkhpQE0hVwYkA",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112439356714769767867\"\u003eWing Zhen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vr2_0ZTYXok03bHJ0brwLfUAImqwHKxLCeFZyDS04CZnFbl-tLnqJ8bCq5dvUbvVPjjO75XxPXko2yYICIc4AqK0_VjTZY9IaQteoAyovJNQz0FnfLuUgjAD5iQKzP4vsrTON1Ule8GXBhzx6qlmmIPHMhANivLfX0k96OmaNU4HnXOAmKOR0Z4cRzRTlUSdwk5plaGnHM-BkRtSdSkdY9C_UMVW-JVRJBSmw-bMoUhQYu1gAyVfeLjjfiuOyyNcLWR66kGNZf1TGWqJDvn6R_FGAWMhU_iY_6zWgVQnBbwyHLMkqLI317rmJHQYeeVKZu9lLsaQtronRpNK42hhb6CUAEMB5aLD0L8ExAPTal1ciMo_E6jWAkphpfD4IX1cjhR-K05e3YYdRSy9mPinzRSJXugJ88FokyufNNuHE",
+            "width" : 4096
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101192809825688743813\"\u003eKano Ky\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uNIQuvXJkNItWKLkFlhx_z-wjp95SVRDWa-Ldsbqgk2JtjsMIIEZo8FdEgGESQUs_sJpyGAOEArKgGUQQrhGZd1AJf3k669GEMl6JfZCB1Z7UdFrJQeZLfdU13ECUqamk5XIR7C0HgtoSHaYUlsE6wSe2rVB_yeM7LZwjr0RhYLixFUIJ0Qd9rTRH9VL4iaxAQxkNAFgvNg8hIlPiHCBtP87wu6CsPY6JxwAlrTX-AFaBFwLxFfu2-nFPOpTkdDLiWh-1KUrM3onTOS7snmmVo5t3iAsAnDDRRaDATSnk4ALhNY-965dxa3BYYZqI4jWoEEdBWtRVdNb8okwLjkW0SxRI_iErEAPmwG7zeQNMWLHiwQpLFn1IZEjIh3I3Nci7vJOeySSZCcbULHQ-1Lbjrt9vDmrmNjBWjoAp3N4lDLBUw",
+            "width" : 3000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101192809825688743813\"\u003eKano Ky\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uFhYy_6dcTQ-dfxKMGbkfaPoFDDvcYcrvXFmCHKSva7vKOkuRxbrxT70EgVu9uC2sK1gliv6kkKCk4_I2jQf00I21ZEKLyLJ5Ktas2h6lt5GSwKTSkyYLzIK_S6OyJGrpkvlFdJ13yWzci6UObbOx58fgN9xQfLusUCZr2nOSWu6fmMp4GS0Ev07YV6Ina00dJ8VQiVeRfirzK-Ba2AnjPnd_B4PL3wgx71jKdih0huygIMIRncO-aiR8i65LGxCqMKEcC-unx5KW-QKK0jVWrwCcEmlempLES0gYi7qPVouyMp6rT-5uoJnNZYIc4bUnAUEeUyiPvvRU7GfUMvw18L_DwRJbaqljgj8SJxj0TaECV3-wnBY9QKxqKOfQw33ldbKHLHcMwyvziZQKuhB4kHG50L441e6Doi2ME35salA",
+            "width" : 4000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113698248272698042399\"\u003eNatalie Yessipova\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vsVAM7rgT5VZAJkX5Fk4Pz9LdlwHqBbZ25rV87Ffnc3FYiZHe5_-T_MP9BUea68rMogE7fyyRYp6ClPp0xLOn8XSSvIXNevfziw6LXHoQiRiwJkmrVodFwkpfZ44aws5xHZLce6mTKStc5tXqdyMIjjGPVbl2GkxDN17zPHuzIJiXtk62rzkvdssvGogZWhLO08bnsic6S4J190mAfM_SdwlNP_c8-yqDIO1Rnu9WVACFJYfdJO9tu8UNpAKi2nTbDpSe-TScE_MusYOGLyhTwKmxG61RBs6SkfIlcqjjkpYEsR4LKlGndrq1cbHJSFApdkbPD-iisxZvhvGysk-hGBp0DTgLKqzItPp09mK1HheDpLCxWmrNY0-pIeyKJE8dSIRGto3PJa-cKBkJXTa_RtLXcvMOEHjbRke18e8fmNkmocpfEkGziC5-KKA",
+            "width" : 2252
+         }
+      ],
+      "place_id" : "ChIJl1TLNh9JzDERFG_8Hjl5U8Y",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=14290899328816672532",
+      "user_ratings_total" : 253,
+      "website" : "http://www.thegodown.com.my/"
+   },
+   "status" : "OK"
+}

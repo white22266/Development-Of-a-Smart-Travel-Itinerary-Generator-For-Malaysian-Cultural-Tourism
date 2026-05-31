@@ -1,0 +1,239 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Persiaran Semarak Api, Cyberjaya, 63000 Cyberjaya, Selangor, Malaysia",
+      "formatted_phone_number" : "03-8322 0096",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.9321891,
+            "lng" : 101.6484702
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.933009280291502,
+               "lng" : 101.6492130802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.930311319708498,
+               "lng" : 101.6465151197085
+            }
+         }
+      },
+      "name" : "Raja Haji Fi Sabilillah Masjid",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 11:00 PM",
+            "Tuesday: 6:00 AM – 11:00 PM",
+            "Wednesday: 6:00 AM – 11:00 PM",
+            "Thursday: 6:00 AM – 11:00 PM",
+            "Friday: 6:00 AM – 11:00 PM",
+            "Saturday: 6:00 AM – 11:00 PM",
+            "Sunday: 6:00 AM – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106499334107758260634\"\u003eFaiz Kembara Sufie\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s-GBhw8zzGTI4Xf9mfAL2QmO7F4j4eLbQoa6TcgtFttnf1GZEBDPSirHZcRimi9iXyKA5Dd9lBgwaSTM8gVyiKZkb8Rz3MSydbFWTtUBRO49oCqOgbMhy-dfa9a9rBHq0xJqn7KN-ukmuZXGus4xNVVeoILbeFOII7bK6X633yYLCFB54qSOiwvzobaiUuztdTWBBYFJzrDB3fXi33UWCIeRBpZrJju7bosX62hjfei3z8VCAIlfUM9b6NekuFeFT5PW4DcZNvIJUjs_NztKGZC4SRftqmc9PzUvp2c-2_P5cac2c5qRmCaHI4la-m2AWX7R18LZGiROPmfxZwV8wGqXh0OS_Fvx21otYdrT7Zcxkn7ITMce7iOBvZ08g_XUiX7y9svJ3sN_IUsfTSBW0GmOsQDDqQQMewCrfZSfJyAfkf",
+            "width" : 4608
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110974090151480957890\"\u003eAfiq Akmar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s0GcQIuhlRDGevFtMEZ5x_bflVXoV4W76udijYgeOzL5bCyMvI_PdWpWY_XnLOGvKfAD4VJPxX7PYSs5y4dqMvIpGJybd8XKujBxMQ5gzE8na8v0gqgOgRQceKFnwTrNtpi4P1tk8ZR-GfnmawVy9sxjRLmmDQXkurHwUj8i1G62pp3nWSa8lverebnOKU0eJvkcNrxlDS8kQFBtc3Fbb5P_wCZrRdu9toFVowq2P9kcxQY7SYB6vqIwjhxi6NKsJJ8P99GUuDQxOMYnU_PIMZFX55aqhV0UdKeqO4q7zg0N7tXMvFCqXwGredOApKWfHhIwlaEHQl4zk1dxDUVlQ3IOiZOTrMwRgjj5rPWJK4lwnkJbKJ4HZQoYj4kb7VMAiV6TWF5VCJaw_wvOgJotmQTQhARHdlZexrRpAu5lA",
+            "width" : 3000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104131878883346076619\"\u003eHamdan SaifulHaq\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u1FK2cHVTb6gY_BsUoTuemiLUoNq9cGNLN86povo_zVNZfZB8ZabZndcmlIr-BBN9YrkPbtOTfxglGbjG3RwQLUU_famoP2L1jtbeHZoE0aKn9mffavSxmhNGRdQNw57jjf_7YjVY4SE9ntYfHfUYYFj027RPBtJbygAtJ-SHRQZXzpMNEh2XaOS_-1Wrh6cP5wawNCjyEHfEGy_nTz1hkVLC5a-ehfZ6g2Eo8ZlUp3YowpT66YXogwVF7_maISJjmRrMTGF1tgt9gEbhIMukDwKyVw-kHPrT6gr-uhVO46ZZHcXZksJI_OTb9ge_8bDf1VS6uPZMi7YgqU6loylTX0eAoBTZ08X8C_SdtdzQRpsIh8_84JeQS-XhOiuSnnEgVsoV6CebY2fze8GBX3FvlP2wzZ-Ek03Kq7Ib_5R0",
+            "width" : 4000
+         },
+         {
+            "height" : 2988,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103044396486310226578\"\u003eJohan Isha\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uoVbrcHn96mnfRlm8qYwFM2nd0GX9t3ot61goj-exK8W7XTrc0eN0NJiE8gEUraVyaf-tTjbWS7ebkRZzcIOcsZtHf-QeqNILcjyJWJIoh2znE-pl3Rc_OqB92NnWy71RRFF7Ov0HLAOm0jkyFSclphYLsaCntgJ42fkIylDpBf3uEbV2D7oZoXq0uGFwhn_RkqT5JmJZ-g6NBmPPuEU0GhWHm0UAAMyN0Fxc4K4YdV3cKTlBL1iFWyom-FrBwYcEDzzCVUgO1qoyKHYZGsfm3GUQpPi9g4ImpM6ZeOercUBQquXhNH4Md6iQLAprcb93ki6F4IAi8ehIe2d8nl9cASz7nzW2bZbKxxRwmviofD_FamI-AuSccf3NAeV__yr6CQzxX_YHo9pEbehJDrlMapQv4osZ2xnz7A7dZ-4ZtTRtU",
+            "width" : 3984
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110258322411101249798\"\u003eAhmad Aqil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFufk374fppRxupF3GjbOtBrR26BSdKsINELskEeHtDfKuHzbWD16s-lnvpGBdlmMGvRO27-ucpWl0BxZVTmc_WuuZp7b_36SSU7wM10RWiubJAYUGwheLKiCa51q50eooKxojZV7wAKYlfmBLn-JOhZfuJr83iETQql01HWxvzzGK9gk7_xu_3xOo_Ezhw8CN6sO5Aj_PpR2Uk_AxouDKSX_kLN_Uo8F8gdWQ0kVU9f9qGw1-Em26TOCC_vumou6LVrkn3brrsP2QYOx-xunE89_hP1fRZaaNScoLrgD1cKKPm1x4GwVHDoa2rfykUCY9Ji-Gw72UxppYAOxxp4cg_p6bNS_zuiuu_ItSZG4jjVkSYqxpYjRaqWAB4iqm_sVfF1AjpUY8GZk1PfR8SioxEc_QBVceHxG_obfUqsZDdYE",
+            "width" : 4000
+         },
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117397436267702506182\"\u003eHanz Ar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vT1z22rnG6CtY0EgmF00RItjWaUq5TCA6373ckJrHQHaEnzJk7iItHwfcEnGVeS0DjKOT4HDgPmxBBOeELfwxbFIz1lGii8N5VzXNOIzZxK1_bRGpOxTCEJDhlEPeMwN1M689ybH3SP1ifCT713TvPd71CMDzA2nPdZws_OmUedEhD61nDfaiaazkO-2WYP9IyPrquUDeiU3UClwgmn8QRV_-gyLQd7xhOM6Gq-CUXCQwhQAAOr66UwGIt0ypX0VhsRK9P7wBx6Ylx9BCgU7JprOZqa5FQDM5njnEeGr97EWbTQmskNTaqGxXViNQpLcBBEosWvU0XxMeCeCjzdCwB4XuS6kAik4rjqM29lxygqgMoNiz9zFv_I1-1laoRUOYpqV8InQECfCxX9McH6XLutYeFvpyRM2s5GrOBQ2QVaw",
+            "width" : 1080
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106311581745240035423\"\u003eBrader labu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdhdgi0jmK7VNPEQ69Kx3dznsZuhjLA0EQwswNgPKxzH5bu4_G-oEAfov_dm5z_uu3vS-yr68fr4oJybltGNyluYKnYXhhy_F9j9wg-JeuW8Anvpd0ntCCPXCoi7Pa9CfUgsC6B3gHaWnKwTwjUUPyK7cRIqkfD6PXivje7SZvrSd9FCMV7Xtr5JmIrNdoWxvoXOokXcWIuO_AqPvZgical3-pcmusakxSbHHclD4nxYmO1lF5CUUmUKvlm-6e617l_5Wy6U7tuE2PBekLOBLc1dghqw_RrSrb53GWyOgG_WDUrS8dx8upQke7wI2FYfnO5-jYQNlFQml-kp0toqQQLK-fSMbiszYLBqicAr3pRdoDTW1JhC5nZV99X0iElQVgLdc6WOGiNwD7ntKBseZT6WAfp6z3yT6XdibTmV3cz14",
+            "width" : 3264
+         },
+         {
+            "height" : 3342,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113434929136265038589\"\u003eAzizur Rahman Abu Hanipah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sAMC1QCjHTOp4rMOeyJs3jcG2PE2wpu4InmROr13suCbeh67pjhhrCgsJxJiS1GzZh4ZjUNx1QBKtrAEfymSOb3vvu7vW9Z3ksEkVSkDnujcjLo3qV1Re5u5tX9ng8RrFU8nOiuIe2j9mfIWB28M1tCy76XE6XIpU8jZIQHrWm92lvsX3pUyHnDvG-bPXmuMUjMMERiNMDy3UfDvsw23taTcqdnMZ8kwTs24wfWcfb3AvVavWA0bpNoWGXXSPKWd7YB3RqlacSvG8dx10ja4lijIOqgicKBm0t2emcd5ICRPpAcorvY3cF9hhzJ8VIYUbQuknheQnVlhTsJnaufJXbqLYznOo2gUMucy2F1DyhizynMxEcKe0DEKTZqOq7Z9CQGzGW35VZIsFfK9UkhRXgJb2XmVdcVJ398O8wZAU-UA",
+            "width" : 4800
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104575931699711574528\"\u003eHamid Salikin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sRcQrflld8wg0w7WHDX2N7tfAElEnCiiz-ceStjbQ4A7tWm_kRvJkQHr5IendlftEPfhwcXAUyxVAnNn0BQylpG06GDKOmkFVGcSRYU3DqxHTXndJXtM0Z9BqsBlF6zdXdb5BGFZw-9yf8WGg5Y-ux_a7D_Lmi-J1WIaAV3QddLhgirQTZGMdJhMrVyw0ydgBP4C6b8mHJ6BnF_w4g3tHQGRJK6iXpQWI_Ac6ZTn55JJfqYRTkmY4WHtjZvaXhBsqIleJF3u3FGs80PSVekQLou7Pj7kN3QJMEgreL-B_-CYmFlYivLsXByU7JZNwA5aehCWidJrM1aymwVKdgKAr915niKdbAiuA-Ch0SGkDZIZwXlzcmydjCFtFPJcw-epr_CNXPTNLGKwmdeQj4p343YbneEQp6iLKDc__fZ4KWgeg",
+            "width" : 3000
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116846843956984992200\"\u003eKhairul Nizam Bakar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-saa5YUWm3_6yMd-b_2T0bcRZLVYK77FUP_DQkDlAEyYuFRwmtt3JfrDTieViULqeAMvdOYBmUdDcyZz3YJmFq0OMsoldC1uj5ftJezsWdv53WKE3Pcrx1M_s5w9PH2lu6vpMFstbDCDpzQ3D31iokv0RXP-6rCLpF_X08IzrluNTVLdZ87-JuGyh412S_ADWZHKgHb4YuZ5kzR5ts88jSvR1RCr94l5FFUt1zqIzcDk3kBQfUYK8f_PuvXA1NIgtdjBS71kzaMZ-i7FyvUYc9aRm-0OX6HacFSL1X2ZsI0gOoC-kBjcjjdbus0sQdGr7u-7V-zcn1uOLHKDG6j0JfA_ucztO28M9JgmBI0sz48v5rWXOg-_iwn2Nw6YR9VxJCMpNmxoOuvW7_NHyxdh1AxZioI7NcKvCkq2COQgXWDHg",
+            "width" : 4608
+         }
+      ],
+      "place_id" : "ChIJXdl9VPm2zTERn0D4oXDHqEU",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5019481071272083615",
+      "user_ratings_total" : 8988,
+      "website" : "http://masjidcyberjaya.blogspot.my/"
+   },
+   "status" : "OK"
+}

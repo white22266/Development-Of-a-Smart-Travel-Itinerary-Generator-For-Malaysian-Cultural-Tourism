@@ -1,0 +1,1211 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tS0qZdLYar2L70JuVxUfwFDlI9JnqCxzwfTkF0YkP_il1pxAVGIixuKh2whgE9l1RxVY8moImwYmNhNojyDti8MiK1PzBis6rP6yd7xmjjiCkDCr3BoAlwzshBkZOQ-OWoZndNq8l0xF47_FHbMpvh5uRTWB9ijevw6Ip_znkirT4xkuRtS2jt7tzZPmugtzzQoNhN1eSMdsAYUP6R8FF-UoicOkascewWiBFJPgfYVvXAqlRDkUk6YvW1toJJLOsYf_ddW-L3qrdlcdATQBB5BpvWg-9WT78RP67BCtTfRSlO50mYaK0nOCQ8p2r9YbpxpZVo0LNufMKoqqI3kjobO3yMgZaMomHoOMcvUozk-Op0xyBpEabd96zzPhKRRd-EIcy5eyrhv4L-CJGkSdsewwJM8PzQJGG-E5NVhmHew-4mIqGeR-p6w238ouZQdiaQ0f9tj9CwsHv14UZDz4MghLr5-MnQSQLWe-FzqBHOjRR2Ulq9cc-e5vMghVeOMPLwvpANN0eM9RkPg6MqBpLaSYYDD86ggWE6aAEzLjMlhLe8wW56T_8EnzN8ZdL9PAEd9_exQriqfRWER4dbgb3p-sDZAlPdqqEvtfdIQzmeH0POkhpv9liSBbktrJXl40F9ZWesLZ7kSRDfpZihijgXDW7Gbs2rL_Hv0mUIWbULUp3e9kYSBGDPngBqCSWJ50jc1upD5n9IocDp7uLUyxjPZtfegnIR-ViJRmlDMzIXrkXPdCRKBXbEd-smBm6ZwY4bAC4aDUyoRe8Wo1B7zM3CF0a7jozPSFDa0cFuQqqGss6m17N7Tl23q3Mfa2TFSxUder_68B8m",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Datuk Patinggi Haji Abdul Rahman Yaakub, Petra Jaya, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5811945,
+               "lng" : 110.3434185
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.582468880291502,
+                  "lng" : 110.3449500302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.579770919708498,
+                  "lng" : 110.3422520697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sarawak State Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 537,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118089967942202378024\"\u003eHASWAN Niaga\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tDeMuSdEQmj7o9GMuew3c8vh_96LgyZ3_e9mDqIK2V6Bu1kujtf7gi7KbBYxOInM6-wCLXIh3B-SRRw-BXckxToSz0aLoNrIEvyFMW2K_oopVYkVNB8G9IPuKM8n3xIxT_xrBaMq5gti3V7F70LvREOqNaeoeWuq1PZ28mikUUKU33ZSzlqgoCtKKeWl8XM3X78ch5M4fVrfM47dJSvmIQ-bEo08mPZLJ3NiLjsNrZxrM_c9FD9uAWZaAmtkGjDn5P2svYr7KD3Ie9T_ETBu_66ZPgswIfhsTZNJGvA72aynknH_fOyOP6-sHSDOkna3B7x6ZRO48R2cmVPqjTYqcZ9vZbFKOZCG-LdTJT6GUg-fqDp3zrbDw1OODtIg8cAwXvvKD4WzhE2b36k4u02qg_E9DOWZFMP5u8Q2HVopBRY4P4",
+               "width" : 800
+            }
+         ],
+         "place_id" : "ChIJ-8tECwOo-zEResptdrNSvO8",
+         "plus_code" : 
+         {
+            "compound_code" : "H8JV+F9 Kuching, Sarawak",
+            "global_code" : "6PHGH8JV+F9"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ-8tECwOo-zEResptdrNSvO8",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1118
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "332, Jalan Datuk Ajibah Abol, Kampung No3, 93400 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5586116,
+               "lng" : 110.3406795
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.559940480291502,
+                  "lng" : 110.3420524802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.557242519708498,
+                  "lng" : 110.3393545197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Kuching City Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108986364583603835017\"\u003eSHARULAZNIE IBRAHIM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vem_611XSCrPweOvvQabAHHhkhWGpK4VzJgqPlmBlnOS1CxqvDAJMF3upeY2G7p0e5aY9ZturyobuWNfoD1DuWMvAPVSZAklBvARftR9Gip2GzSIubZagGBX0FiZZQdXgd2ErdzjNrYbX45FQ3tTF_WqFFOdXL6uKHmEAAxFAjkrbyoWZIBt7RyPbbotDVXBbuzQ2jOWPvMEosML4t_1_yRtRSCYI1T3o_nBUDAu7Pfdxzn1fVJRyveFoSM5cQFAukokop3sZZdo6S6b7x3NTNn4O-hqW3h-o14z_WTUdBpcK-9XvwDiuC3L1qfeVdnGWfgsSwFlRXreMUF2ydU3YXGTJGhoZUYEwIyBWaPnrXtj2e4n6iEBQwaGAxYmggkuYkEwbLFjp0hLUygmAnRg8Zz63WXLuSfkLOh3e3C1I",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJMYwlQv8I-zERetMR1WtdwU8",
+         "plus_code" : 
+         {
+            "compound_code" : "H85R+C7 Kuching, Sarawak",
+            "global_code" : "6PHGH85R+C7"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJMYwlQv8I-zERetMR1WtdwU8",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1816
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4568281,
+               "lng" : 110.4138472
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.458112180291502,
+                  "lng" : 110.4152322802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.455414219708498,
+                  "lng" : 110.4125343197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St. Francis' Church, Kota Samarahan",
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109095442430429272601\"\u003eJavier Jay\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s0Rr5F2g59tApaC4GESJlUZQ3lMj9KhgKT_dUh8Orjj8ae8WDym1wPK9cbqj2QxN827A0m3oS6PKm9gb3y4O4CkHNtDnFbdfzaKiX38aJWIAvTnHxOskI55XrV9f-tsj9CHbX_zZ1GoPSbWZqi5LX1LFA6_Io35_yTw0fTE8xfaep_7JzO3Abdbc7zD5w06HBkY-EQBQwBmYikjwzy-hZpjrQ3Q2Nfa_eNiqwDBWCZChyE1L-Si8NZ6pLMplkekf0Sy7uvAKkc-cTcRgHJQwnQhc8imiWPSCS2Qh3mRg0smlQYlGR9tet4xIELjp0HaIYMcV3r2TfGMKaTlB9FfPX2kVzpU088BMyxCeihYMJppmMbn2jGjOen-XlqHKXOO0806Nh-VCC1dzQOk46deoXD2sVCo2O0grLm_DU79EfGyzFlrXJnvDRc4UUAtg",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJG_1zVJuh-zERVeqex4QLGmQ",
+         "plus_code" : 
+         {
+            "compound_code" : "FC47+PG Kota Samarahan, Sarawak",
+            "global_code" : "6PHGFC47+PG"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJG_1zVJuh-zERVeqex4QLGmQ",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 81
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5608975,
+               "lng" : 110.3434765
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.561990180291502,
+                  "lng" : 110.3448049802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.559292219708498,
+                  "lng" : 110.3421070197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "India Mosque Kuching",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102365311169685864175\"\u003eRidzwan Mohamed\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vOjwRMkdL33i0LNOxPXqzLEHOwsgq3r0TQHqB7KHheM0-nCNBwkgtMwAzcavLLyvnkf-kI6MKCTHjwc1pT5cS9XjYE6MX63Wg8dKtLOr2ABx2faJV89Mlb3-ulEX6MlNDpjKCl_GztrHuhEA27dJLeKalIkBl5Jtjbwc-h52WzNK9b89Fqh10JH-qPXD1ut2zsj3-25ELR8UgaD6-j23UQftJV7qdqS1U5boZ_QREy-a-I1DKKv87qJX3nKjT-1WGOEwUVETMIQHagLY-FAORY2773k_bncJpdIeW72US4TNs8txTKanUEsKCjmJoTuNzN6g0jq8o7Qn1Jjd-uHLpWGSPPAI6WxsVuv6fSzL1JZC2lrnvTaWkQAnNhvz1SLa67OanpjJDAQYxR9ELhEUBVxodDUcRSe-Vh9jpL2xNEsaCK8Lynyw-wv0ZFfP3E",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJITf-y--n-zERF0iCY5Q0uLM",
+         "plus_code" : 
+         {
+            "compound_code" : "H86V+99 Kuching, Sarawak",
+            "global_code" : "6PHGH86V+99"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJITf-y--n-zERF0iCY5Q0uLM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1268
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kampung Melaban, 94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4601306,
+               "lng" : 110.4417964
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.461490030291502,
+                  "lng" : 110.4431165302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.458792069708498,
+                  "lng" : 110.4404185697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St. Edward's Chapel, Kampung Melaban",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117574420085567694078\"\u003eAlexander Gordon Crocker\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uQ8F18gLgUSPmEv1zwX0qeJIMQs1OgTC9kvFaO14aqcWWN7Jg62Fml5Q7cuhl0R7zHvroXkHhI9ucQ-5rz5cBrqbF9VOom4DV4vT0DDIVROpunIAkwZ9lxYx2OQQK9nS-Kpix5sGAtO4BQHwxPPe_NPlXzbR1EO2R5TtFWgTo7UkxJuunYbElQ1vxLLuw2geHIaBOC5oCGCj__GyVXlJP4reL-10_m07Fd7NPjyIPQpZCQ87ROP25EwKvOole-nNoyY8T_5NvLGJQpL8lGGBZlCYTYufBMY0pYc8mF8aaHGuf17soNpQegL5HH6MGTkeSyTS1ONAHey-osHXMWvS_BrsM8NnKSJKpl8ZuqhN-7YJbEU9ArRPQgxeC_DDcm_Ai1BzbhBWzFslAkX8ZHOTnBunxxxbe4FJYEloc6LxFNoeED",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJAd0Xxp2j-zERRhvcPZH4eUo",
+         "plus_code" : 
+         {
+            "compound_code" : "FC6R+3P Kota Samarahan, Sarawak",
+            "global_code" : "6PHGFC6R+3P"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJAd0Xxp2j-zERRhvcPZH4eUo",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4541206,
+               "lng" : 110.3990917
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.455367830291502,
+                  "lng" : 110.4004227802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.452669869708498,
+                  "lng" : 110.3977248197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St. Peter's Chapel, Kampung Merdang Lumut",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100518606889461905224\"\u003eKelvin Jawa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZ8U218lOMQr8tFjn6OA5gpv9dhgR2Lzcyzw3eiqGIrcBwHpP6Ri3Ba-zt1Ara9N59C3-lPWfNlDZwIaQUvgNxXmW-Q7lrJXSlG6UgjJAEXgHWrfxSWbtgEJGO1DxGBG_AHyG150ButHMHyaQjplStE44_mIaKO66cCpJ6bXhCDjQJIzCzqxbkqIZv9pnslKoudV8nowW5TB83id7d2705cpmlP76LgYz5l47D8UNCrl3PZGyRU8HHI4lQeaE_vtH4e5sNKjLRhTygW-mR5N9DC7c-ZeFcTPcj3dEpNDeGDLDGHRQDTMLRmkoy3Y5mXy_QLXFNt_AtBOEj831qqk7zISFbzD5ckFgdQ8ieplJPV02GCNSwag3-a7y--bZy_-kRmRAyrcJPqiYgtQSaLh68a-3laoKCTXQO35i7sXVCgamd",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJx0xu60Ch-zERzd0BAW43A9U",
+         "plus_code" : 
+         {
+            "compound_code" : "F93X+JJ Kota Samarahan, Sarawak",
+            "global_code" : "6PHGF93X+JJ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJx0xu60Ch-zERzd0BAW43A9U",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97, Jalan Kuap, 93250 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4069441,
+               "lng" : 110.3645748
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.408335230291502,
+                  "lng" : 110.3659761802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.405637269708498,
+                  "lng" : 110.3632782197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St James' Church",
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111259347015536327984\"\u003ePaul Gerarts\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sLBr5j_rq4gm-XADhoCEUw69IN6hvuhABNjNJxcZRfJ1XXl2pinSmpox7YhyepkyhrZXAtOcFEjFENuBkRFhzNzOeNX07pGDJWGJSEGQGFMCPOUc9Ljno-Gf1uFLy2OfftBQexUYnEBAQH0EYNFS_gXL37WgMS1VRxgky_Dj5NtFgVpUmdWUH-QrmaPkt1D87hY2vZYalcIaJEKA-ZnEcTGg6pP1qN-EreoUxRllIsZJxPaAulgOc3dsPlszZQIprgX2Q2oWhwbVpT97CKUhaamuM4x8D823au5RHzAUY9O9yir8nR97FWlhYGJp6S42v3BLSXuQos0ikwghqtlkFRVKHGkjgTqZuRV8ixJhdrsQ1ppCdYTi9aHKu0U89ZjBxtqHuxzpwELCk31AL_fuVsujIUOAMdO00niNplAEMX_Q0l",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ9UZTbr2f-zERIVRWJ5SlE8U",
+         "plus_code" : 
+         {
+            "compound_code" : "C947+QR Kota Samarahan, Sarawak",
+            "global_code" : "6PHGC947+QR"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ9UZTbr2f-zERIVRWJ5SlE8U",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 31
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Fort Margherita, Petra Jaya, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5606039,
+               "lng" : 110.3494709
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.562103030291502,
+                  "lng" : 110.3508236802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.559405069708498,
+                  "lng" : 110.3481257197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "The Brooke Gallery at Fort Margherita",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101082974947388379231\"\u003eTerence yeo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGolfpzm9gRNveIt92iizOB12H0dK3NQ54FWmdCDqI7tQlstgKK9ibaSsvOqorfcPRdHUqmi0MVkbqqrNjpKF-7F26ycfORXjJOHpm7wp-D_OkmV2wEoxkX5AKzD2cjRzpr0Ftp6TGWV7JeJsqFAGtGIb88zj3nlj6FHC82XaeanratkSxQhMXIzffxsPbala0ESC6hbdqVeLTJwSKXzXPS6QNOqqAyJe3AI0Ca725bDLSLyDtH-v19HHbRTVAjh5vZi21lqEB2M8XUjQqx5i5YOgY2sOGPL-hkzZ2RxcMk1kKJN_pjgTiNAX21W7fwNX3aSCWm1flT0rKisrkxqroStcfWnY9SSrJd8gXzHtMX9B3QBfCd7tw-VYJfjRHojN3zzO8WlsvVS3NoeREzwi2vdidWeYpLkDtLzefEvtp1w",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJH9FWyein-zERxLxt1qpWjtY",
+         "plus_code" : 
+         {
+            "compound_code" : "H86X+6Q Kuching, Sarawak",
+            "global_code" : "6PHGH86X+6Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJH9FWyein-zERxLxt1qpWjtY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 954
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5588661,
+               "lng" : 110.3406557
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.560167080291502,
+                  "lng" : 110.3421182802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.557469119708498,
+                  "lng" : 110.3394203197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Bahagian Kuching Mosque",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110268181208670350626\"\u003ebob zakaria\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vDpI3lSN2cEPImPHIKQwqdbzvKw2iiJ6kG87HtV-AudDuLUwngCW9b1BQtRApcTDVnjqZR45DVoGQkd61cbGG47qvzKzT0rS0PZh1lK45lwshGn236GXXcHNFOcla2See_I_SB-pqc8OIoboS1HjxGW0i4lsILt4fzgJ_RUiHAxXIkqUzw4Qp_buO12j7eKbmK55E8taGsxcgBq4nqBxLYZx152Bu0_-_T2zBBDQTgD2DUshHxylFKHdDXfo0_sX0-DaRr3Mmm6qLbCMzH66xoGsSu3EEEfNQhEHdMIvvkUtsOcnvhsZAwTOhxbdQdK2iqXN-e_W9gHEpf9Y0Qm01GgqS_VIiYPs35JvCvXKpNNl0hHsrCdx8de9RVVVWdt8GVAr-RvkC1c3welm2Et3cNLhMsTDah0Lkkr7wEgEeLXtpMjQAFY3A16V5D5U3j",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJq6pql_Gn-zERLnyZKT0-F4E",
+         "plus_code" : 
+         {
+            "compound_code" : "H85R+G7 Kuching, Sarawak",
+            "global_code" : "6PHGH85R+G7"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJq6pql_Gn-zERLnyZKT0-F4E",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 34
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7, Jalan Barrack, 93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5596034,
+               "lng" : 110.3447998
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.561006580291502,
+                  "lng" : 110.3460358802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.558308619708498,
+                  "lng" : 110.3433379197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Old Court House Kuching",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103383583205062362930\"\u003eJourdan Kee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJ-V5bxy_e5jLVeRFUmWfiucVMwg2pPohEQm2KeQlGIFPs0zMxMhI3ncyRDR7w8eEcpFjkb4gkMBFHBG0DMViJ7CbGyarSsdAJXB9Re_7cNU5X0OTdUa2Q99A6HZFyhDLsNc8tYZSr0JKTm94RNGRdL6g97sCCG-teqtoh8KaaJFGt0ASCSBIhQQizA0FlVQ8F23imWF7vDcWGJ9DdwfxvN0x_O3T2PxL6y0I4ewIiADCBxJa0rCPK9qVD9nke-n-C4NJzqDSuw69j6zn98TC_KTda2ER9WD9qnjln4mCIBrczBoR7v5_55lof3how_KjnnnhZD9ED2bMpgx6NOBaULKtV-q7dodk2Uvc3hZ6mAngJmcuBvzoYdxWpSzmqxiP4lISeMRcidtXDRINjtRCv4glnKbdr3o1SKX-xlEJ0ug",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJN9e-Q-6n-zER2clKbwn6q2g",
+         "plus_code" : 
+         {
+            "compound_code" : "H85V+RW Kuching, Sarawak",
+            "global_code" : "6PHGH85V+RW"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJN9e-Q-6n-zER2clKbwn6q2g",
+         "types" : 
+         [
+            "bar",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 828
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Gambier, Jalan Main Bazaar, 93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5602536,
+               "lng" : 110.3455535
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.561472830291502,
+                  "lng" : 110.3468044802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.558774869708498,
+                  "lng" : 110.3441065197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Square Tower & Magenta Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 638,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111342234130466891070\"\u003eMask Trooper\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uBsdUtgemQAU99OzcLF-11gvezwzksC3OcKf-vBQ_0vJ6H4AImMKseItMEdEuw-YSeJWF8Ht_krWpTW7ofH19MAUBLTtYrRqJYwdchGyU6FYnq6opGHcKPqg52QmtwRzMMFsZCO_ninegpkzvLhbaFZQoyn3BsJkgSSVjTSXEy_9m5dHOEQI_5Ui5ZkAdeElNrFa2JkqlV2zANiI1LMrnjX10uy09_7-zChTEp3VoUU09Ah3ApDYav_jAla4vRJdHkbL-MV1I3in2tAlDP7GwoKjjJj4tZb7Bc4A3jZkKXPRCOWz-fh7bhN9q5hkDVna0asZkvGMab3csiH7NUDYIKjM_-9jnxqaRLe77go-QqfET2BAJldwAQ3isM0MKKoyhzy9gUaGMQ4_jOf-J15P-c2liiI_I2sHfZ4uGrwn6VGLWj",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJ072yyO-n-zERWC1JNO3qP7I",
+         "plus_code" : 
+         {
+            "compound_code" : "H86W+46 Kuching, Sarawak",
+            "global_code" : "6PHGH86W+46"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ072yyO-n-zERWC1JNO3qP7I",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 117
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "82, Jln Padungan, 93100 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.553517,
+               "lng" : 110.358712
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.554801180291502,
+                  "lng" : 110.3601055302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.552103219708498,
+                  "lng" : 110.3574075697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cat Statue Padungan Roundabout",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113969243241715990532\"\u003eIshakg Kosasih\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s-iwwJiKzqEdnjSOxFSTSAQGbMD_cLeSKN7OCAnoAc59K0Lcv8tkNSgg9gv3JQAIlVwU63a2j_3aqTIyVkehinAJAEaQt22ACOpQf_MsQ2SRlmAOutoHaWxx_9x3jxeoPDYJHnIvvYOFmVD1YWYlh49q1OFWLFrjpyzQZPJOQiZ-plXxYEYkK3y1MKj4rA8qJrrXQI5C4UATegj0E93Nt7ewveQRG95G4nTuuRjaxouGVpLfsQ7mqza2Gqs0uGV6GmzcDAca9vJq8CPTTs5RBZle5L1v5iYr4LRFxLICWKU_Mm-jIJQgVpgsjyR-OVpF7MeQSplwsDCalz-MetlhSwMC8cnHlh-A_9JYOwfmL67jV6iQZgmf0JL481wv_omGxGHoEhkQiJX_WvN8Vyl6Y1Wd5Q7NuUtgBdeYE3DbbXwSk",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJx7e_m8Cn-zERSAmG6Cjaxik",
+         "plus_code" : 
+         {
+            "compound_code" : "H935+CF Kuching, Sarawak",
+            "global_code" : "6PHGH935+CF"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJx7e_m8Cn-zERSAmG6Cjaxik",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 769
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pejabat Setiausaha, Bangunan Dewan Undangan Negeri Sarawak Baru, Petra Jaya, 93502 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.56205,
+               "lng" : 110.3478984
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.563645230291502,
+                  "lng" : 110.3491795302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.560947269708498,
+                  "lng" : 110.3464815697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/civic_building-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/civic-bldg_pinlet",
+         "name" : "Sarawak Legislative Assembly (New Building)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116348165795949606532\"\u003eSarawak Legislative Assembly (New Building)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sLxmk2JEQ6kAuMIMA95-Vyy3D3oM53yHUx5daDPiGdXBiSzNfCUIsr4H7sr42_wAmIf45BurU-tCedYKZp3_qXdM70cWsViY9_iMjy3k42M1UvdjPBCw7SPdHTv2x1JIoUDKhFt0S0QTHi7Im1ZXOBpLcQralc-U27OEP_pLOGNOCFJj_zpjEZgmVRhdV2dKx5IolMQuM8V-xqN7brW0NgP8UFZQEol171MHNr35JUZmBU1-6EvX_Pzw-ViA5tecJJznXtgkX5sAjNS8CLQVmqQLLnltIMuPyVOOwo6b6ozc2UQOM4tz4EEQ5X5QnvPH5jXFKNybonwRGB2B1yeGE-7olTbnK9FqvyXQNrR8nzcBLtRn8_8sUZAhnUpaeTYjE868eTf6qXx_9sCbwTH6NmFnHureXTAf1cvG7YjFiLSA",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJAQAAW--n-zERQuRJ0jqN7ow",
+         "plus_code" : 
+         {
+            "compound_code" : "H86X+R5 Kuching, Sarawak",
+            "global_code" : "6PHGH86X+R5"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJAQAAW--n-zERQuRJ0jqN7ow",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 241
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Desa Ilmu 22, 94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4517272,
+               "lng" : 110.451963
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.453101280291502,
+                  "lng" : 110.4534972302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.450403319708498,
+                  "lng" : 110.4507992697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Taman Desa Ilmu (MTDI) Kota Samarahan, Sarawak.",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103563923865309961707\"\u003eWatermelon Sugar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tK_djsdxO6XOAiHqMs6cwMa4-ofPxeQX20FKTnc1WmAKMzQWVIy106Epbeg5NmgI-VFAlyQVM8Zc4YgrBORA5wBe634NJjxfalYTzsXg-ku9IJFHfSWOwMk5emFdRONrDzyExOtKHuafN6ug0Moro9WnpGV6-kcHGcMORmlrJkQ33lKe1fbtQnYolnOaSKePYKZ_tAFuM6r4MP3XBXFkErYbKzRW7ya6QLF8mVOnmslJgXBVc3h81596Bkqj2FgxtYc1jrg67Q13MuntQCDy83762VVRC9vjDdRcakjyMx6SiNaXoSWk3TRX0Cm1hx_hq15fCvx2MzNWGp946ujNwivE7cho5dtF9LL-wnQUDw0gaLaMyU-nK8dDQPvunXvOoCT4_j7q6AQJ9890Vsk2dSmUAB_POJ3PaoaMVHD6cQLxCgRXzPOz7x2BThQpP-",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJ9xD20ei-zEROmjR05McueI",
+         "plus_code" : 
+         {
+            "compound_code" : "FF22+MQ Kota Samarahan, Sarawak",
+            "global_code" : "6PHGFF22+MQ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJJ9xD20ei-zEROmjR05McueI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 154
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Meranek, 94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4417903,
+               "lng" : 110.4590317
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.443151830291502,
+                  "lng" : 110.4604357302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.440453869708498,
+                  "lng" : 110.4577377697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Darul Ibadah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111601475145729140400\"\u003eabu adil\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sz1CeUi7EIS7je5s9_9UFyp7rh75O0LrgFJPnLjCNFpwoJQ2pXP9oqFdDpfr9laxg5iUMNVtDOZuefqOS9rys9ZEf21neb40a5GWBEqQBBH4nopgkEY5LWCc5XkDgN1EygNoItc8Ki0XiYpsKl9DIwBluicVktFQ2V3ZgdewvrFJRAhNcwiKD12dyX4KkhhRIxMkhBZlKYLzplU1nBBPuYT2ZwInFhLqAjjHVK-EwXXQvmE3MPqGul8keFjbN5vxI2EEUwmXDdpMwqRzFv9F74sD-lJguBnjhV_fa84H2DnPUESKnEKX8BCtQdMwrz7AxQPy55B_B4TiA-HYriDzBVv8Bergqdd0aENxm-cvQnOGNo1TkqCa8-AfiqMj07waH4J0woAvaWB523-J5IVwhMr-yDfFx38RDv0ftntd1eWg",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJCyhQS2ii-zERfDguRm_M95Q",
+         "plus_code" : 
+         {
+            "compound_code" : "CFR5+PJ Kota Samarahan, Sarawak",
+            "global_code" : "6PHGCFR5+PJ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJCyhQS2ii-zERfDguRm_M95Q",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Datuk Mohammad Musa, Kota Samarahan, 94300 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4665164,
+               "lng" : 110.4822304
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.467925530291502,
+                  "lng" : 110.4836227802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.465227569708498,
+                  "lng" : 110.4809248197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Al-Muttaqin Mosque (District Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117073846503355203101\"\u003eAzreen Jafaar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sY3VmNbgDjy-46p72MZMIGmVO3uQDKyd23X4ts5aZT4HoxFoPHJJN3zXFBepU62-JOpKK2agu2GYgkvVjJGSiykRjyhgmKlmc_-HVGbyIFwgdCRLE8Raolqb6iwql9Rdwt4F0D-TVDgJRv2OFxXBYvFHWl_c3HF4I1tEiep6FdL5_x-MwwCxotxID1F1iR084VNupAI1fnED8HqlB6rQOLegTdc7XQXBEQLeWkBn8WFSyGrVlxD-2EVemDu5yZTfkJZuyJEPUBrSJCASBuOwGMehaPH7bjFmt02qaa4X25QJH5vmpjXhARnZOrq3zvETQC18lUp-CE-zyLvHDdb2pTXsDX0dVlL8nZQ9xom-mU56E2iD5rG1Dk3vhMV3EVDDVPnD1Ny4e7fcLTp8yQdY--TTql8qAP0pEgMqXS7pEf6Q",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJJ6eWQgSj-zERb9b-Mz59FUg",
+         "plus_code" : 
+         {
+            "compound_code" : "FF8J+JV Kuching, Sarawak",
+            "global_code" : "6PHGFF8J+JV"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJJ6eWQgSj-zERb9b-Mz59FUg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 32
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1st Floor, SL50 Berlian Square, 94300 Kota Samarahan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.4505694,
+               "lng" : 110.4193629
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.451918880291502,
+                  "lng" : 110.4207119302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.449220919708498,
+                  "lng" : 110.4180139697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Hope Kota Samarahan",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116016544277898163345\"\u003eTerence Empurai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v8eLl07BLySuACU9Y8ndiWiZuWVWvNu_TyFsC5WP-7nQk05yXACfaksUUDU1FdfwnBy3PvPLFaFuZULog3fj0JiuMf6ZPp6WZ5WN-Vo_iC5NW5eAwf9y0C0OSLlXpgCBl2IxRSNwCujUPODHT2RhFJ34tDUoHTSr5JaDrtk56j_dTFJ4IsasdsYEC56QSEwoCJhTnxSiuNiU47BI-qEsjRnMBwjRJYJG1T473lwuFIEcn4mxZWF8A1TiaJCMntDi4KD4MGlGAiuo5l2cYNCXBrF8Vpq1Mrtnz7Kykr57XbVhtuNWyEDLSFQPndpM8PTQuZAm_IHVCIhUZU4Yvmf1_-RPDG1RsY6VPRFxRncnlVoAHJ6qjzIiPWJA_HNkXlk_wqczCRl4rZKpTg7TB62aOy6h4akLIdL9ye1mQYs68q_Z7-Qdh0DrxddVQDNYPA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJK_Jnjyyi-zERwYcee5Op8ao",
+         "plus_code" : 
+         {
+            "compound_code" : "FC29+6P Kota Samarahan, Sarawak",
+            "global_code" : "6PHGFC29+6P"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJK_Jnjyyi-zERwYcee5Op8ao",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 36
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tun Datuk Patinggi Abang Haji Muhammad Salahuddin, Petra Jaya, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5636737,
+               "lng" : 110.3649208
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.565095630291502,
+                  "lng" : 110.3664106802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.562397669708498,
+                  "lng" : 110.3637127197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Darul Hana",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103598273557031198348\"\u003eMasjid Darul Hana\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uLyMH4fAgqkHMSx9Xi_EHO2P9xMcn1W32l4ahNXCBUhuzE9eLzxrjxg0oMlYappItoAUkFG5KHlH3wUifFhs6p4nsI4sYmKdnVfP-OHRYSgon6AN-NsO6JD7-OgbqlAJpNJyLMZHd6cp2Da-WO_8jRsOIrDS0ch1KvQ4NULwGlnJGz49LJyQAIj7ZY4nBrKDeMUYSrg7FdSfZFFJzcPFsAcUFB7GL8ZEqUJYoCNrL2fLjBq6_ilCrSGjWXgqcUcNX22746ymQpwBI8DkQ2W2uNstlNMROyVsMxvEUqk3fwDA",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJuRl47Nqn-zERo6rDg0SScYg",
+         "plus_code" : 
+         {
+            "compound_code" : "H977+FX Kuching, Sarawak",
+            "global_code" : "6PHGH977+FX"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJuRl47Nqn-zERo6rDg0SScYg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 357
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Tun Abang Haji Openg, Taman Budaya, 93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5507447,
+               "lng" : 110.3423379
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.552096080291502,
+                  "lng" : 110.3433622802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.549398119708498,
+                  "lng" : 110.3406643197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St. Joseph's Cathedral",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114637332213069490320\"\u003ePei Lun Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIfkKye1ItttfQqCBKd7FxUHVW1Bc_ix9PlgHJZ-KYEc2ekyfHt4wkoEv31ZVTo4Gb-7rRG2nMX5Gb_bYKiolOm-XI_83G2mZ9KlEZA8zjZ7O3B3iZKCBoLZ4L_r2I1hAgz0kRVLWZjTy1JGljXsAgk4J_pfVeo6IOHCheVQt4Yy21L9m11RsWpYo3rEduq17Lqf34uzl7FCtqVtjxzMkemrcIXqb3bnk23GFLov3Y9q6e0lSB647BAbehSdHpF1MCUut-NShMk0Zli7du1Wf0CVol4zZIu9_O9Gra-4J3O59W1faQTVSY-mSBqWo8vpqU9Tse3pyMAHwMuFmjeftXYfPQhEFRaXi7xKdHy5xiw-SQhIDlcvMlQf737YuwBp4-ewS00LXuD-N4WsnPTu8wz1NVBADlU4OFdb0IdKId6A",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJw4WchY2n-zER4JIYHKcciys",
+         "plus_code" : 
+         {
+            "compound_code" : "H82R+7W Kuching, Sarawak",
+            "global_code" : "6PHGH82R+7W"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJw4WchY2n-zER4JIYHKcciys",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1587
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Damai Santubong, Kampung Budaya Sarawak, 93752 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.7500924,
+               "lng" : 110.3159462
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.751424330291502,
+                  "lng" : 110.3170867802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.748726369708498,
+                  "lng" : 110.3143888197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kampung Budaya Sarawak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113103868486256084260\"\u003eGinny Toh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uAsIhTOrUGICgXLZN7NJIclaWXdxzzhN91izQM9tVPRpm0XQXFc_-PdXKfGKkr0tv7Dp5o7gy-s-MEIDjVC0SWtOjbfq0F8Ly01Ibnr44Nfi0Wab9aKPmOssHQZNOYjs4akzimGzqtOrABf0mDtjRr-BDoW1I6GvHPx_5XyRYcMNHFIZR79u1WbS3qyXH-ionShfVja-8ZiQzwdbcdfAL8JrV98OoaEgcx-wI3JxilgTVcvQbX00-_GCueJdY_Lxv9ZNhHjDD0FGk8w98Ho7owq3DWOhpYwe1lj1SkvvC90tXH3h05xq3yo7Gfc0opElYhWJKmEZyGofHiPwfSxMMN9sEv-amfv4zG9P0HYzsMOI5cKPlMtp4fXZ8TVz8dVCpjwTjDRwFJ5Lg9xYCUUpdy7iVgEX3CuJmsmcXmc3Y",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "plus_code" : 
+         {
+            "compound_code" : "Q828+29 Kuching, Sarawak",
+            "global_code" : "6PHGQ828+29"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4790
+      }
+   ],
+   "status" : "OK"
+}

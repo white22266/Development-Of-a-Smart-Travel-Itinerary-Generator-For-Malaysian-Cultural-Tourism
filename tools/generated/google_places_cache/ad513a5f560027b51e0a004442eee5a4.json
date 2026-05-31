@@ -1,0 +1,769 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Padang, Pekan Machang, 18500 Bandar Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7655116,
+               "lng" : 102.2163375
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.766864580291502,
+                  "lng" : 102.2176867302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.764166619708497,
+                  "lng" : 102.2149887697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Kenanga",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118283669206146121278\"\u003eAHMAD SUHAIZIE SHAN B HASSAN KPM-Guru\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uSI2ODQB1c77ObY0n4QZ7_LAwpG6aVWmdxZicvjqTGxo2IEe1bl6cUDSoTusFdQRl5d5JeJbUwAGDzLjbnZJsWRedrtQ-aznWf1UV_vKdhha-HohVKXKjGJbN8A-J-0i6tQ1r02cbJ5XiCPrAx-63g4NvTu49eYZoL9W0Pe5ECMhJtJGeEy1ZynH3ugV6HTePc18D_mEpTBsqTAssNcMqCUIyz6YmfgL6Ej_IWfVZ3pIs7_YlAdp1TYb7f5X1i_FcqiwHhYEBZYVIKw6mn7hGxPevYfbKHAY8V1q4IvYoRaOkVr6JvzlAABr9hUgz60qRtJNr5qUOTmgI9kllY4cA6S2_DbIPs1BrAbGJMEzdXeqalZXGJp_uPVuJ2vAxPvyY8OvbSRR963OXWKqcTwX4YLRAiI69aIUJ1JwbDPhOAww",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ7ZTtZDmFtjERT7w5wFQYKYE",
+         "plus_code" : 
+         {
+            "compound_code" : "Q688+6G Machang, Kelantan",
+            "global_code" : "6PQ4Q688+6G"
+         },
+         "rating" : 2.5,
+         "reference" : "ChIJ7ZTtZDmFtjERT7w5wFQYKYE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "jalan taman kemahkotaan, Pekan Machang, 18500 Bandar Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.764793099999999,
+               "lng" : 102.2176847
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.766094380291502,
+                  "lng" : 102.2190313302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.763396419708497,
+                  "lng" : 102.2163333697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Coronation Square",
+         "photos" : 
+         [
+            {
+               "height" : 3468,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108723844771072729445\"\u003eAyoh Lie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vK12ZXOJvnHEwZ84mcs41jdBqCRc7tiM5Zn87M0CWoKP_kS2wI-o50KXyduweBJ85TUNEst1eMo7irc5HGLaVnIvO9Tt9awzvNvkKa9U6epy232ZfYiQQHGhwjDFBE0jCqwpgnqU21LxBhScrtNPQb2rtGCNXsVyzBMDPm5h4Nq4OVxXF2gDsEOkbipfb0reQ7u-mz5PHkMc_GujSk6PCWm8S-kyubDtnIUm4uMooSS77A19_Ikg_aFSF0GNOqqUnLJFlsLFIOLlElfOgBgvtsvW_VjqEeHGVSlbodD03avjCX3yXMeWG10Eb6qmftiktB-jy8-xI8JbMLEWsD5rgkC1QfUetvfEuuI6sVC4fNH5dFlk4bqm7b6ueXFBdoG1m3k4r5ozQB7zS2fEBnBr5NNJmymEIffPaj3clHLViBbV6lUraAa28B6R7jQ3re",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJ6SsWyQ-FtjERju2Z6Ac69dY",
+         "plus_code" : 
+         {
+            "compound_code" : "Q679+W3 Machang, Kelantan",
+            "global_code" : "6PQ4Q679+W3"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ6SsWyQ-FtjERju2Z6Ac69dY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "kg. kemunchup, 18500 Bandar Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.699237,
+               "lng" : 102.1905447
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.700594780291502,
+                  "lng" : 102.1918943802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.697896819708498,
+                  "lng" : 102.1891964197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gelanggang Seni Kg. Kemuncup",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109862386782740951938\"\u003eNz Nr\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uNR0nfCr4Q8vbCk8V2R92cKIKsWR7OTpHZBCEtV72_lC18i08KLNVqleIfWZh7eHuFsUgKacgDj2HDgqQZyjFvTQa2MPCm33dcbXdld9j1siJBB2ODX-GEkUSwDxGsbHQEWTKAru_ByP-2k0c19oqdReuPkJcM0DK6nzPChaNSQRlvD_E7yZqrSTVcicQJNsc4qKwmdBbwPXGsjLWp8rjicExmD9IsqkkuKHXLb5BWHyJdR3D116WX2rPpdfSbHgeI7iS69UyYSGJ7toZu4FxeqYjlTo1RwULU8P4qhOrpxBsABx0j_3UuK8o79CJEvtjRULCG2fC6avqLJ4RyfMaLKTp0jwPlCmLT_0lTE05G45R7qy5xpUaMR6HftnJ-SK8X_87pv93E2UnLquJwn-LjZA3k90VtpEyBH1rL6d8G4Dc",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJa0PMDjyEtjEReMNwNt1lndc",
+         "plus_code" : 
+         {
+            "compound_code" : "M5XR+M6 Machang, Kelantan",
+            "global_code" : "6PQ4M5XR+M6"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJa0PMDjyEtjEReMNwNt1lndc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.829925299999999,
+               "lng" : 102.2904825
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.831330230291502,
+                  "lng" : 102.2919422802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.828632269708497,
+                  "lng" : 102.2892443197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jeram Mak Nenek",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108438298713640146476\"\u003eRuslan Yaman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t5oeUP9KQuwzgDTuAICDeeIgG-SarMkrd1J2njDwrIDVDAz9PL9SBjDnXWsxl9BuKqhaWGTxOgMVmvDcU6vcqEUMlArecqtIb7n0Y5GblkBhD7zLMoUxdHuT_yGyBgS6C9c32XwtlRvKsZZMNeGVQ_61XCa5WZtwkmdQ8boaPKmpDKeTAI1xd2LLpjDv-w9Z60MPDmWzWiYWSmLpBrp5kI8lpwWXUZbYiOH_ZaPGhGUedlj5b5AZLyJ53CcLJcpD0cFAsKYtAZR9Gr0OzeK1f7J17uCuXMcsduBvI_xRUkI70dMxYZF1RfgHkYzvEVWmwkU-qK5MDJBbsCKW2vyTBoodFmJR_yvXmpy09ClNUEKoomHXZfW7shA6uxccxTo7e1Vb3q5bHN8EM7-x1onDeNJvjoY-C36pzL5CjPtawTIA",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJS5sXwtyQtjERsEO_V9YVSkU",
+         "plus_code" : 
+         {
+            "compound_code" : "R7HR+X5 Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4R7HR+X5"
+         },
+         "rating" : 4,
+         "reference" : "ChIJS5sXwtyQtjERsEO_V9YVSkU",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 458
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lebuhraya Kota Bharu - Gua Musang, 18500 Bandar Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.752609899999999,
+               "lng" : 102.211177
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.753952580291501,
+                  "lng" : 102.2124962302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.751254619708497,
+                  "lng" : 102.2097982697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Persimpangan Sawah Kemuning",
+         "place_id" : "ChIJPcdo0KmFtjERtti5tCotkHM",
+         "plus_code" : 
+         {
+            "compound_code" : "Q636+2F Machang, Kelantan",
+            "global_code" : "6PQ4Q636+2F"
+         },
+         "reference" : "ChIJPcdo0KmFtjERtti5tCotkHM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Bukit Bakar, 18500 Bandar Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.720139199999999,
+               "lng" : 102.2580724
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.721517280291502,
+                  "lng" : 102.2594385302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.718819319708498,
+                  "lng" : 102.2567405697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Bukit Bakar Recreational Forest",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103671349718784932729\"\u003eAmirun Zolkifli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tvthsbePr2Q01vRQWS3AbRc6ky6H14tlhO1WWN1rekMBUPAq26lI5s_mxLnjolM60LWNDWtTEzCIWf70Gct_aJxYQnqhn5mxTn7TxR-huISyQRP020f_0QO0BM4xfNW9HuI5qpGL8Hf37OTivXhxGyF3PGnw34CzKye7fDr2FZColz5RYXYGpAP58E0zli9IwUqCGDVJ_EZrGQijVjGN0j7SHB3is-Ii9yB42wAK2BWNTnDwa_G7C9uBabqMXFd9iM9K0ft2t3zoZoii66n0EKt0aOHH2yXIhTBdm4Jx-tQojxe8VsYH4AY__JdbIgtlKotvr9TGl5TxAOwtc2AuA-8ITWbuxD0N5nyD3XgistmtSWmt44ABZoS7f8tcnmKeC81Nid6jkQ1Epy2E0sgK5lejDlHAi0ylIAbXlEQt8",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJiYgSPnSPtjERAIciqzi422E",
+         "plus_code" : 
+         {
+            "compound_code" : "P7C5+36 Machang, Kelantan",
+            "global_code" : "6PQ4P7C5+36"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJiYgSPnSPtjERAIciqzi422E",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 62
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "UiTM Kelantan, Kampung Belukar, 18500 Bandar Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7600716,
+               "lng" : 102.2751785
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.761125330291502,
+                  "lng" : 102.2766888802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.758427369708498,
+                  "lng" : 102.2739909197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tangga Batu Cave UiTM Machang",
+         "place_id" : "ChIJeWaKk0yPtjER20LeWOQQqVg",
+         "plus_code" : 
+         {
+            "compound_code" : "Q76G+23 Machang, Kelantan",
+            "global_code" : "6PQ4Q76G+23"
+         },
+         "rating" : 4,
+         "reference" : "ChIJeWaKk0yPtjER20LeWOQQqVg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.794334,
+               "lng" : 102.3367129
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.795616180291502,
+                  "lng" : 102.3380169802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.792918219708498,
+                  "lng" : 102.3353190197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Air Terjun Jeram Pasu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107866332677540603227\"\u003eNor Fahira\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uQalqez7s-FWbr9REC4IuCjJd6QBXqhhv4nKRZCIvmI1J2QWl67O0oNSWSRCH5FqIE8kDcsGa4suUN63mhuR5-UNolI5FFuUKyaJkw34qfXOtGKVVXGDlf1LqtbpyPTlFAM2z1CrU6f3Mb2-0ZjoqxMCXYMTtW0C74_wHZggOBdaU6yHCsuFH-GCCHNLWgwkhsaQmJHdfFovjwJQ7N7xzMA2bx3M_qq2nBaiOfCj0IWbWdfaf0FztMJSzBs7MMfQ6LMUjWejr9GoEZJarpM99ogrRTVWvdMHELU6G2KiuU6D6N7fyezsXyapSZ_XSuw-Q85kuu2RPXTT6RGO3_XWxjFU0L2mXsbcxnKr_C5SXr_EMaTfD_esYTviWCFGzfCTWfQTAM1Hf3fXRhayw665Y5uSoJ6cU03XcVLpNT21Nh3fxO",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJY6gfio-RtjERg9LJmwvzdQI",
+         "plus_code" : 
+         {
+            "compound_code" : "Q8VP+PM Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4Q8VP+PM"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJY6gfio-RtjERg9LJmwvzdQI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 443
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16800 Pasir Puteh, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.743047199999999,
+               "lng" : 102.3740561
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.744418180291501,
+                  "lng" : 102.3753879302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.741720219708497,
+                  "lng" : 102.3726899697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lata Jeram Linang",
+         "photos" : 
+         [
+            {
+               "height" : 3492,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114723462997042259395\"\u003eAmirul Iman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tWbbmWx2YSm0YlGr_ZQpoFb7-Fiupbm50Ki348VpixOalVvbBWvRZPBzu36jdYlGkU1mXT4TSQ9wYWs9e7nQOiDaoesG260cvyLsIKzmngoUPx8hTJxlPrRhkn_z8sSk7u5sKwvRcphmYYRLKFZIeyjpjteZ5Imr-LUCRR0blslynMCpX0-jajY11vlEcQQnl4txEHEuyGHUAxVM4nLoGEO3NkgdbhpG58KJ581BoHU0iaFCUCbR8H54okclu2PwvIvR0d-XykSxpPtgndUrwGYJDOYICIaKNRSpveoeb2GXB-g7UkuK-NovyOMSTw-COc8_hExq6WD8I5M57gRYjIlSac_19M8i_zyfHyxV-zgdO3zCu3IDsLNBPWDaVtFwCaTHGBqWCL5e3_qOx3oOCypaRYZDfOJGxKuupY1REt6w",
+               "width" : 4656
+            }
+         ],
+         "place_id" : "ChIJ8ze8ApaNtjERr9rqTmAryvo",
+         "plus_code" : 
+         {
+            "compound_code" : "P9VF+6J Pasir Puteh, Kelantan",
+            "global_code" : "6PQ4P9VF+6J"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ8ze8ApaNtjERr9rqTmAryvo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 437
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Mahmood, Bandar Kota Bharu, 15200 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1223616,
+               "lng" : 102.2409879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.123820080291503,
+                  "lng" : 102.2425140302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.121122119708498,
+                  "lng" : 102.2398160697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cultural Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3179,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106011121149801903346\"\u003eWan Muhammad Izzul Wan Nor Anas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-szDrytcF0H301Nrote5dE8Vz6kZHgEz9ljjOHzHtQeAAFq0RP9gC95iywcHFOm2_hDBELeoMuyvgh15VlXFcnxc91p5yk6-YkYnjXCxUL42AvvitGtX1g2tZvWwI_jQLPXr1bEouFqc507Pn0l6mU24T8lqAiHS0dAODjy32g7VHyUA7C8S5orA-gu68u9zyi_PmOG14rWDlgejlsPjqMVzMQ_R7F73F-Nr8Ls9MnFSTkqAOEtAK82_sh4FlOrYfOrhlNNnXkhxBc8tKEyJcAt5q6Af1TdxtI0BOCg_JQQieTYghRx5Dd3BMHBWLo-JoYqCD7lNxCkeqwyndfzZ-64SCGji7QSi2tNIpna_-XYbEp_RsEb2P9vzyO9umtOG05zdKOauv4cDpVJPURIs8ZUjeMAlvvUcf08OJBinzWDgKfc",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "plus_code" : 
+         {
+            "compound_code" : "46CR+W9 Kota Bharu, Kelantan",
+            "global_code" : "6PR446CR+W9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 140
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tok Man Channel Malaysia, Kampung Salak, 17500 Tanah Merah, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8639712,
+               "lng" : 102.1644255
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.865258680291501,
+                  "lng" : 102.1657643802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.862560719708497,
+                  "lng" : 102.1630664197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tok Man Channel Malaysia Garden",
+         "place_id" : "ChIJESbWIAyZtjERFiXhmI9ojRg",
+         "plus_code" : 
+         {
+            "compound_code" : "V577+HQ Tanah Merah, Kelantan",
+            "global_code" : "6PQ4V577+HQ"
+         },
+         "rating" : 5,
+         "reference" : "ChIJESbWIAyZtjERFiXhmI9ojRg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "448, Kampong Laut 1, 16040 Tumpat, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1543854,
+               "lng" : 102.2308399
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.155697630291503,
+                  "lng" : 102.2321829302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.152999669708499,
+                  "lng" : 102.2294849697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Laut Cultural Heritage Site",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111375701848852733818\"\u003eSyuib Yusof\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u1PnPNCG9NAV4eFk-8qTnCHexZBnt4oXH6cT9Gt-r3JnnO3czv8T30czhvrJtiPLoZGmfGHVrXg3Ew_kyHXUMRuiEfa9BCSrICqOA7cfvAHdKFu-pQJHZudWAA4pNtGaUrOFBpB-lzftTHedmWoUxv171da96m4vLPOLvFqlhcr2Ij2qWZgA3uh-CoUDRUng4x6hYuPhQvqouJWquo7UVLABwi3ZJUQz-X_380ZEjOapkstWXCuaTmWlvykNdep0quL8QdRU3C-NGKuWCeqdAVLHm4FbMjRdbJA48MfWP36-2sGdjkTfNWM4fwEWzmx04SJODX6CXLdClwG-YeSMv3oWutsMiEPgfXJ-RFujCVcBx521ty9lRt8_QPAefyhvvEhaf8egmuaJ6mHFqMgRLwa22ddd9R2Pv1GWXxN6Q",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "plus_code" : 
+         {
+            "compound_code" : "563J+Q8 Tumpat, Kelantan",
+            "global_code" : "6PR4563J+Q8"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 775
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18500 Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.703894399999999,
+               "lng" : 102.2059725
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.705221880291503,
+                  "lng" : 102.2073168302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.702523919708498,
+                  "lng" : 102.2046188697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "PO-LAND GRAPEFIG MACHANG \"PGM\" Kebun Anggur Dan Tin Machang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106966003653681647500\"\u003eSU&#39;AIDAH SAMSUDIN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-toIr_Ay8BvrBN9Y-NqDBhP_wYC7nZJ4GAYQQBgDNbWunZqGL58Ts3RYivTR2b7cm65kgTqks49EubkkIE63GtwR1SahoLxrF2nbfBsL2SMGFZVAhRdgT7jehH4c3L2UT2oMF5-a6kXwOa4pM_dghWiQJOyBBUHZy-AbTV02XYn6DetTB_jWFkVedd9V4CaKERCH5Kk6vUSzlvEMupbVuBhJSSNk35Ko_ATugal5dGFWdWOKF38yIQw459zw76qORaEThHzpfkZt8BVe4qfhCopJcX3VoWl7kksqIO6ztbmhj9-Px6LcOvtGuvb2oj5spOlHjYvh0RCQiMtpMV5x80jFR8nJ-vsgiFC4H4-2FFJ-xIyR2Wj_IShEivenVa4cW7gy3RXjgxjx4_VWmizNLrvQAzV6BHLwcl3qaEg76g",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJdRYfytaFtjERFXEYOLjFL-M",
+         "plus_code" : 
+         {
+            "compound_code" : "P634+H9 Machang, Kelantan",
+            "global_code" : "6PQ4P634+H9"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJdRYfytaFtjERFXEYOLjFL-M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Machang, 18500 Machang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.765000199999999,
+               "lng" : 102.2177286
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.766347830291502,
+                  "lng" : 102.2192297302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.763649869708497,
+                  "lng" : 102.2165317697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "MACHANG CITY",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112029521058427598741\"\u003eSoo Yong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tSvjc_egt9_ghkdXt47ddKrtEFfpBzSmF7S4OYo6vnw4bQusH1nA4aXdoCgaW-mLZDceXNbFMByKCU_9UyyzJ5Vu7bIrEHvgOfzWNpXxunWHv1Yl3hJ8FNXmxsFexXFIN8hrWH_q7K-Anr-9waURlaDFD3ztqz3TuCm9QKDHGUH-bW-kDJOBT4g8dIZCKDX5mPe2abLWFbnptnBekphb31juU3Wum-v63cCrIfzum3PGdFthmWk1GPc8h-cPB2vqruKeKZM3OHN2vXYqZjpZjyKHjyhJhM5VdDnlO4V9cwnoZCLqzmvsksfsVSPY5T0mnkD9OcVVF16oMeCezIJ_mmh2uTd1gqKgmMf77kVqHM2Ifj8FkyTt0hpH3K0N2DSl7VgFSoUXCrd45WtirfeW9nnISeCloa8wPWTpfI-S86xLC4",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJV_Bg5V6FtjERV4m6z4SoToA",
+         "plus_code" : 
+         {
+            "compound_code" : "Q689+23 Machang, Kelantan",
+            "global_code" : "6PQ4Q689+23"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJV_Bg5V6FtjERV4m6z4SoToA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 120
+      }
+   ],
+   "status" : "OK"
+}

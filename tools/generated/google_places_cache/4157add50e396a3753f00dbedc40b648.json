@@ -1,0 +1,1211 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-typ2yG9mVnTixdewDZo4wPV6f557XL81mbo1bhNHNTPFIryHPWgvw2zc-MBxty3hR4HsiO00pR1pJIqzftm6p6_6uUNH_9JcFYH6Ry4RylioTjk3f9LizbyiONNGE2U6Wb8Q2ahOd5A_H52vOef6wTlRw_BhJ41mUYhthm8mh44i-TkveZD_Ntpp7-WAWkESMLiL2fl3BeCCIGXbYMpQzgRqnJ5qecZNeAv-WzTyiWTRqdE-sUgK6b5yyRzeiM6osGh_tcS_zpMYNVHzHBL6tm_1GTSs6pQo8qD0MG60yAcIwAQ54rQQke57NY-Z4LdpR-HFKk0axO0BXFN2k-uWVB5_l6NlhxkZwhhswRBna9e94hGwW8cBPuvisH8LzVdaHU8CP5pzfSgquFBEk2JSWffItuAAbahhrsocCT5XiuDuzFJi5Nvk7Zr83F0IiL98Ot8xMsro4qcTrvGdiXyrAO_l5obPurgbHMBSOfpaPivO3DcfP6flIK4axmb2-lm8CLjot4sMtfKO7rXCRzAN2PMobPU121U7IZ8vwp4N_f2uapuE7U5uTvi7OYrYuCeQQ53_6iyKx8umq4jdI0OHxkt8rL5kHuhVatDyNuebMc9JMmeE8Fj6hQoMIyFNuQlQnjmx4PI1cPQoj6R8kj8-ypNzwm-AR4o8VM8D_NQOlcVpIH3zMuEnLs6tbBOFA69r91c9tdl_eOtqoVSNujb_MWKgrKZtLG4mbzMWrOS-1nqegC4__awMC8hnke8WtxlYNJ49vIwsL41MGM6RWVGhZHB-CdH-G0SLuu74VyRXIpH-rxR1owzEKPyKtovmNR7K4gIuSW3eU",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.386568599999999,
+               "lng" : 99.6619881
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.387973180291503,
+                  "lng" : 99.66363989999999
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.385275219708499,
+                  "lng" : 99.6605278
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Langkawi Sky Bridge",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114816636161241711928\"\u003eAnand\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZOLe4AeaC6RZsMhZjTCXnzqp7TuX9sEmfGMfN-VT--yxCbqdsU5Rt3E3K8kkd-as8g2nFXuV4Su10Uo3Nt1Rs-tGDGBRhsZ39M-ETQ7wTxsmug6NoaEq7TGN3iwrDDjkIy0haK2AygIFMinRZaS5jyTfLg0eR1ZErXJWgktj4yF_aQ0erZ_up6T4InMLR2jgEZkQ6B6gHT1XKDT-jeqT43oNs2EvnDY89A6vWpPBCGT0_NO-JuIMR2kSblKvDhQCDBrpwS7wrZg3rbf9vUyfzmggQpxG3PfF40kC_4IX75hSjnoaGJcehBQRz5KwyHBbXw7n2y7oaKNwi79MrA9YOrtBPDabu6QvZNJNm1UZ57MQbyVXlQNPxcG1BxxTcAi-xmp_WTj9Madn6m-ihWc6BWyLmBBjdZjMRG2MEA-c",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJw2-THMR2TDARwykmuG158jY",
+         "plus_code" : 
+         {
+            "compound_code" : "9MP6+JQ Langkawi, Kedah",
+            "global_code" : "6MRX9MP6+JQ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJw2-THMR2TDARwykmuG158jY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 20275
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Putera, Kuah, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3088319,
+               "lng" : 99.85143839999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.309256330291502,
+                  "lng" : 99.85295728029152
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.306558369708497,
+                  "lng" : 99.85025931970851
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Lang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2992,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108896926602739055132\"\u003eDr. Ayush Chauhan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vXirpZSSX0ckvW1aXJnMiHpqyNISkCk_JzpyFNa9gUJtWY_ectiyplyCQw9Vqhbdd8vOW4XYJgAXSJwx6nARb-eixOxlW8pd1mSGoKgdYKT_eHyf9WwuzAHKOP-1QfpOr4f4fp5WJi28-ayYuCH0GmhOYfZbT3qPs_R0dgVCAsqAzUbrlVfmgmwYmb3F3elvqef3Qkp-yOqOMoJZORGhxpB7oYC5GLl-4AY_bPaJhsBN4xdoew_737OTNJ3iFA17DmzRmzs183o3dgNXUVo4k7edxtSnvhEY43oZMBQirAEbdynPOZEd0fKLaEaHcEwoimiKNSRFLDKEuvAjKAsat1ltjG10Iz3TKMF9GRbVB1LWcFLoBvdcJ6ZlB-ITxH4M7Qw7tBGjzA1Vd2xp_nOjImddNzk9OhiWAKVyqcFKw",
+               "width" : 2992
+            }
+         ],
+         "place_id" : "ChIJT5YXv4aASzARiVwJwms7Ddc",
+         "plus_code" : 
+         {
+            "compound_code" : "8V52+GH Langkawi, Kedah",
+            "global_code" : "6MRX8V52+GH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJT5YXv4aASzARiVwJwms7Ddc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18057
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pantai Cenang, Pantai Cenang, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2982076,
+               "lng" : 99.7226211
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.299556730291503,
+                  "lng" : 99.72407928029151
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.296858769708498,
+                  "lng" : 99.7213813197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Laman Padi Langkawi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106865395272966417166\"\u003echan Jame\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uyC-OgOY7t4RYIMHYE1M443CR5d9c3Z0X-wl7UZrenMUit7kaIKWkcg2UUR-fdFCfPSMgYaP9i-a_jfFoJ_cXfuY0b9vCLzs5nvvnodMKpzPHpclff-RuHOQwM89a_7Zu_lO6yoIYbMxkj2Ta5DZMoo1lZ7U-mlrBpCq1hi-j4983rLvYS1k7jjqESucCk_ZyVD-USkUYsudAROAlQyyb4u-5fYmajmJyX2QRWQnea9F6UqU1IbfOhgCOp8eGojS1E7lHHa2b0DhHn1c92GCUbtU-fBmqs4SLFnQqnatHwMVQ4rZZYNDkXNRRw-irD8ZF2GLqw9njRrIKh7rtxvVMRJ1xqVev0DTIvtfxzrhnnlPZNIK7SR3b49QXRvD9tH2RDw1CgTMQ-nMe6VujRGf_E_D8qkHv0XRlVHtY5O8DiJWY",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJfxZ9mgqISzARK69voXSLHfY",
+         "plus_code" : 
+         {
+            "compound_code" : "7PXF+72 Langkawi, Kedah",
+            "global_code" : "6MRX7PXF+72"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJfxZ9mgqISzARK69voXSLHfY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 938
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pantai Chenang, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2877171,
+               "lng" : 99.72859109999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.289099480291502,
+                  "lng" : 99.7303465802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.286401519708497,
+                  "lng" : 99.72764861970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Underwater World Langkawi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 446,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108986364583603835017\"\u003eSHARULAZNIE IBRAHIM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u624qN0Cav4ikcwyrmS1n6-_gE6Q_WL1h8F-ryMgeRSmX3mXLpHZR67MsTMWG9Di3CFS_FvcqGBnRkmCnJWJv6oWgk98cQbgcCGHBKzhdgDMBtoChSP5OWcROhnrVaG8dcV_bzzTMkpZdq0Lf2NGT9F2k8dCXNBjTituoZSqLTlnqWq_WjMEIo3dsS-59PNFgn2PKTcboXnZqyMmFT3_rUD3KIZfCA_oRcZ7SirC9qKKesi9FYp2jg8UEOXj4Y5Rbb6B0pN6XO5LUSAJig4ZcgpqlBtMlHPGuGtzsWqnVddIcMhZngLAYTzpKCJdG5doha1X5-8gAih50j0Tl7tGiNuXPa8UaVPAi7DGpGMmqy20Y1WYhPGPvQdpr3Xm2ZRXgXeF5wPMYwtsHV-dxRtGnRESG0RAIzVfzEvUjveTzTWg",
+               "width" : 622
+            }
+         ],
+         "place_id" : "ChIJwWqJftmHSzAREAOCfNyMmHA",
+         "plus_code" : 
+         {
+            "compound_code" : "7PQH+3C Langkawi, Kedah",
+            "global_code" : "6MRX7PQH+3C"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJwWqJftmHSzAREAOCfNyMmHA",
+         "types" : 
+         [
+            "aquarium",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 14327
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kilim River Tourism Jetty, Mukim Kampung Kilim, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4050671,
+               "lng" : 99.85834799999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.406388230291502,
+                  "lng" : 99.85965643029149
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.403690269708497,
+                  "lng" : 99.85695846970847
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kilim Geoforest Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 878,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115133196204136984090\"\u003eShafix Mazlan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uk3t1TOXM-_Sw9FqyikKBsOTtfhpxSHFFyH8e7kI9sRcSawfBdjp6b_cgWfiJyg0h2o9lv5gkVF4QMM6t-Y_sBMkgw9eM8-G_qK9AmFflIeF9ccCJWX2U1HsGkJYqKgvh0Q0AClC4TSkLeTdjIdmLsFl21UFJeZTXz2aJoagIqGFMAkpGZ-zboy_4Og0qGbDjAAcYpVUam68-FW097LpPt45vFENzBckw19glaeKxhKFcz25iRdWpYZfMGKiH05SsQROeVUkyLs8gdx--Lps25QkQXPWc1A-GkfkXKMkjcSFyWBFWeCiumKE3LMFdOrsCzLxula--6rBASQ_Z_rT4KVth10Ed7Unlky1oDVmevR62E0iVyrqwwXfChvHS5wDGkJuPFby8Zz8GLVzdrnPTU0JkQpCAza6J9Yy3v9QE",
+               "width" : 1170
+            }
+         ],
+         "place_id" : "ChIJSV9bFcd8TDAR1VNW4V90W-Q",
+         "plus_code" : 
+         {
+            "compound_code" : "CV45+28 Langkawi, Kedah",
+            "global_code" : "6MRXCV45+28"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJSV9bFcd8TDAR1VNW4V90W-Q",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6686
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3711231,
+               "lng" : 99.67201349999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.372495930291503,
+                  "lng" : 99.67329923029151
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.369797969708499,
+                  "lng" : 99.6706012697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Oriental Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104512949728189841752\"\u003eAwg Amit\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sMffTqDB-m9h3ChAK1t23Rgul-zPmsBdRqE1W1c3y34LSQGESIv46z8IuS8yDNstUAMJt0vHDdyXEC6zOKaimhrbz1zwpDLQmS7N0zBxuPkYaIGyuDUv_RH9fbPL035B-7BhBfuER7d_mdGk38QkWmnbsfuqZF8cBbZKswZn-wE8xc7D3DMfRpTTdA7zPqMeTC2iDdz-poeDPk0098jOvZZo_BHpyJ6DQWrQvS_A2-pZGU6tMLoQTDQtxGGNMSEMhufTZ3YdIfFJIR0svuWJ0XsMAq418A5aOrMfGKm6ylZgWp2HKdXC2Z3KDgxjfpIR-19HmUA5ZatB3hsYdCn5yT6K4c25vD0R4PwFQZ80bI4nG7MrugOvywtSjZhhd_H4TDaXjd6a-BVri9NHu5bRk8EQI4Lqs-kNsbu5cVGf3oxQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ__-vyeR2TDARHn1zz5BtKB0",
+         "plus_code" : 
+         {
+            "compound_code" : "9MCC+CR Langkawi, Kedah",
+            "global_code" : "6MRX9MCC+CR"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ__-vyeR2TDARHn1zz5BtKB0",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 645
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuah, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3089226,
+               "lng" : 99.85460660000001
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.310100180291502,
+                  "lng" : 99.85590893029152
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.307402219708498,
+                  "lng" : 99.85321096970851
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Legenda Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105862974160528313364\"\u003eNor Fadhilah Harun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tzB_FKhYLjWhmhAF4aqQTCnvCb0Tz1zqbLj_GyOTfiiuJbbezimerq5KcQaXWT_qWGxU-nwws_y_myK_ktA7h6jN0Ut8hVL2pXruRo4424m4yJipre6m4Q9_e1CnieqvSpw5zXH63Y59utX5xoZufNz9f6leHwU_CvxuKjiZ_A1nnaBAdEdlboWTs9PB_hmq7E_OUemgnkR6MOrEWie-XAw7rGAi9tbsyyT8ZGXKAslfSdf1ZRhOq4N-cakRvKHHIUPCxezIYTdUIzVAqJhvCsgP5QR8onCfzT-t2PGzv_MVbKNBjhS8xov4RwoTFKzUxzu5F7x3D7zMUtjwm-ZEutumVyLPjoDgYabzc7tQc5l0EfPSgh1IGI9kUuCCr9bq3N5Ejhvy0XBIAzYNMj5rFmrjxXvqc0sptiueSTii1S3DdcnPDDT4Wb-7QOvA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJNyWRtoGASzARm9-4bmN18WU",
+         "plus_code" : 
+         {
+            "compound_code" : "8V53+HR Langkawi, Kedah",
+            "global_code" : "6MRX8V53+HR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJNyWRtoGASzARm9-4bmN18WU",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1920
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kompleks EB Adina peksn Baru Baron Kuah, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.058128,
+               "lng" : 100.0381904
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.059476980291502,
+                  "lng" : 100.0395393802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.056779019708498,
+                  "lng" : 100.0368414197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pulau Payar Marine Park",
+         "photos" : 
+         [
+            {
+               "height" : 446,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104452917293314867668\"\u003esubha sweety\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s8egpGw2FHNuSxMZJzmBeJuILzfl0rSOmRtPHOzZJ6I_nrXpidSkKgfve1hb8Yx9ItR_Gu-HP4Y4Y1dvza64RtgpbPT9W9PiRZvVHK3r2J_M4WmTtX4fLYtKCBs_s9c512_d1R8Tjh3fuW6_hGovpHcHE6x5e_thGHZrmFEcNn-oqWmV7w9yScgn2Lr2cF4Nx6qstR8BBaMc38IGfelVeZ0gCBQ3A9iiBJY9tIdt2Q8d_dEBypDqM58rH1I6g3_GShMkuc1mYlGURLuZ8OefkH_58F5pT6zc-Q9UZuCrsZqDQkztckZxC-enbyBU78odIi-WfRL6CQBcnAI_mIng7BiqvGQii_AAyr0JuOxh5KQnq4_wvm29uNj-xUQx0-P-6ZUBtUJU84fgSqFcCKCSJqj5uJtI0ZXaa-rpiSzg1PKg",
+               "width" : 669
+            }
+         ],
+         "place_id" : "ChIJe9jMqX5_TDARRHCGeNqKMLA",
+         "plus_code" : 
+         {
+            "compound_code" : "325Q+77 Langkawi, Kedah",
+            "global_code" : "6PR2325Q+77"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJe9jMqX5_TDARRHCGeNqKMLA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 789
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Makam Mahsuri, Kampung Mawar, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3387083,
+               "lng" : 99.78368329999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.340037180291502,
+                  "lng" : 99.78484143029151
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.337339219708498,
+                  "lng" : 99.78214346970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kota Mahsuri",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117415967000735090090\"\u003eWan Zamir Zakwan Wan Zainudin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tu9ipwghgCV_MOj6JluYoWaBvQjeYnTEJJz3_TDV6RrGb7bE8z02zswcpaO19W4tD0XfxfMMEw24JZpbWZN1VznN69LzkNIHj4i6N5hixxErMZUSaqo1Lys7ACPElqx445fmAc_51OWkh0j472x9Ajj1MFaxVKykZ7WdQFJE6MxAgPYzNuUly3gphp6T_UqqUArI8MX92C0sHCU8b8R-sIAj9T3SmCok2udGHgr1zOngQqQ1Id2imttoYvblW0Hxo0nFRTjH6eb41JdZ7_gjBP2t8IppFMlhYlbv8DWzqwv0CW1_3pegpUR2vkvcerYTAe01iyH3QEWHIjdMkAP49jFtKilcSJw7V4SFepHjx-i003IlQ5QubM_3JwkiZi1MRnenzR4Mf2U2hl9PxeptOKYSX_Vf68GW_qlTYOSsUi3Q",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ21v8hux4TDARF_Ax2pv6b4k",
+         "plus_code" : 
+         {
+            "compound_code" : "8QQM+FF Langkawi, Kedah",
+            "global_code" : "6MRX8QQM+FF"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ21v8hux4TDARF_Ax2pv6b4k",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4012
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Telaga Tujuh, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.371088299999999,
+               "lng" : 99.6716785
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.372497630291502,
+                  "lng" : 99.67313403029149
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.369799669708497,
+                  "lng" : 99.67043606970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Langkawi Skybridge Cable Car",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100944445547896606359\"\u003eJ K\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uPaFirVLQ2WS7zLOUDgZ27VslgcLZGHVSCy25Ty0xzYybZDt_4aOyxrxwkv_TSn1hOGckd8VMwtKv7dSVlZnNxRAbYdLcIBJk0X06DS4NZNgHdsm8atguhazcUuFD9dcIHFZ2HhvgT1f2_pNFfih4SwTNLol5KIQhBEVbwovn6m0PU1mtMSnQ1HokbIRni8IPUG7fzhETE3TthLbbm2rKRgBk0w_QDbs5ZPaVUgh1hfYtxCydmg7qQ4omj2Tny9a71ETnJntQopP1eTJUY4tW1E0Fc5FO4rG2f4diFebDO0woIfmUFoaylQFaWyOB3Q97EAN8RqwwSSegTW89Zh5H6Iq1HZaSWW7gGAzzNSjD0D1b_iIS0iAjFYZheEZIwq-17uOs8_ILWNAPRBz1EH9s9dYxCe49fPP7595ZXN4MIseE",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJAd9TL-F2TDARfrojfQscVeI",
+         "plus_code" : 
+         {
+            "compound_code" : "9MCC+CM Langkawi, Kedah",
+            "global_code" : "6MRX9MCC+CM"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJAd9TL-F2TDARfrojfQscVeI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 29674
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Telaga Tujuh, 07100 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3719049,
+               "lng" : 99.67182029999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.373190430291502,
+                  "lng" : 99.67327098029151
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.370492469708497,
+                  "lng" : 99.6705730197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "3D Art in Paradise Langkawi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3911,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116223152129437588355\"\u003eMarek Peško\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tUleCWkJZPR-HK0l2qKW4V-ajI8O2Zn9hR0m5kWPgI-ED1VxizqvFuhXVrQvDtMgPpTtP31fiUlqoiU4a9EH5vDL1zVFGIQDZK4UTUAErsjtqpAPpt16W1S2kj8N9hXbIKJ0Ka_UeA2NiemTcjdm6s4SX4jA1ZdHip60dh8ek9WllG-Ed5RuFvqLWfYBjp6mwCv8PLGRJF1XBEbTchAqePs8aex_Q3oQZMI1rKhP9i_AjfxEfVGzFmE-qCE9JJ-7hRFszUDY2zmqBymrn-BjhrCWudPwnwzKSadEzDS25n5OmquHzjPOZc5aG3dQlQw3Inl0uhB-hpmQhgGSBFJjw5A3z1izR_L1RjgieEFKHB1G3jE2Up8TGfqhUQHKM_2laRqH-XLwbjcU1JjlW3tcVEAqj4FXZKHnzWLX2sDjAdiQ",
+               "width" : 2814
+            }
+         ],
+         "place_id" : "ChIJ0eh8jeR2TDARHMbm07pxat0",
+         "plus_code" : 
+         {
+            "compound_code" : "9MCC+QP Langkawi, Kedah",
+            "global_code" : "6MRX9MCC+QP"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ0eh8jeR2TDARHMbm07pxat0",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2156
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Datai, Mukim Air Hangat, 07100 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4023705,
+               "lng" : 99.7120747
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.403870180291502,
+                  "lng" : 99.7133491302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.401172219708497,
+                  "lng" : 99.7106511697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Crocodile Adventureland Langkawi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113588766252748203600\"\u003eCrocodile Adventureland Langkawi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uDsS6Ki7u1KIk4dhVPJoe89yxLYouvH67Afts0idZz4oTSwvrYR0POQTysSTiw3NJsfo8Twcks64SEkjzfjmPYIHOYc4aBXSX1K96bj_apZs9D1jxpCA4w5cWW67vTj9-9c8B4ofBMKVj-UYChyZeJMirqYNsXAbXqBNMFXYovmM-Ds_vmmuoDxtqjEgv1AHbBEvkf_HKKpxgiY9gv6i9ArkCyV-2mZGyzX-mbCUNeNrSsT6i7PwLCysVFQG0z5oyT9LHqFk2oU2TfXOoe5FtIK2No_J6KYNVLTrnUeexRVp8b900SDWubZ5ByFcgMpSYiKhfKBbIGkmwN6MNK7iP4eo-4RdOjWMjQl3Zdss94oIdk4-QEE3xunGqX_pXsA0FFxGkN-QVUpCfVgg3U4QZ5vlKcfETWWBnTa-C6pqU6NA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJDx9pYYp7TDARxOAA7hlB5r8",
+         "plus_code" : 
+         {
+            "compound_code" : "CP26+WR Langkawi, Kedah",
+            "global_code" : "6MRXCP26+WR"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJDx9pYYp7TDARxOAA7hlB5r8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 5455
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.402072299999999,
+               "lng" : 99.8589343
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.404942200000001,
+                  "lng" : 99.8599299302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.402072299999999,
+                  "lng" : 99.85723196970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bat Cave",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3056,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109211808867342154319\"\u003eHari Shanmugam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u_K4yUZDJGT1WCoGqDyrjQSshQwsAj-T_CVF3fyjp2H_j0_-woQa_ZnFXUhfsv6_2KlFCzlqUyU68kr_dpPiUKQtR2j4oxcqjvd4W5vhhye5qvue5gKaPi8FyOvMX68Sve6jY5AAFKLaT6l5HCWSygBBGwAPd9Gg2stOqN6e1TQ0NvdPmz1HmnkYCiiUkb9p9Ax0X4ULiISILm-0aMXNdnQBr0edseweGy1OASDNEF4XKfTL9WwQCvVRTE7GkWRV3_p3V-QgzTCy9_ZcZU7oiJey5MPG5R29kHS_aXc25EQU9Z_X9da7OE4gGKAicmi1g4c-A3407-tyqO9UrBdB3YJPFQ85C7uNQq2yEe4t2Xs5qmE0FkNARTrfHmr5FFYfZCFZGiAtAatXOke-MHFl6Iy7gD2QJ38MB5Z0vk9KsAI-xo8gmApy8re4ME7crC",
+               "width" : 3056
+            }
+         ],
+         "place_id" : "ChIJp_RI1cR9TDARfjKkd9ZuR7k",
+         "plus_code" : 
+         {
+            "compound_code" : "CV25+RH Langkawi, Kedah",
+            "global_code" : "6MRXCV25+RH"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJp_RI1cR9TDARfjKkd9ZuR7k",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1309
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "27A, Jalan Pantai Chenang, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.290812,
+               "lng" : 99.7267973
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.292247430291502,
+                  "lng" : 99.72810873029151
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.289549469708497,
+                  "lng" : 99.72541076970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Cenang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112302112817133567388\"\u003earies covis\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u81s-0pMzGCscSOIlp_OXYMo1hxxjc4Ey2Wxdh1hDTzlw5B5iSZwiej4hawBdeOtR3vJOH4dK4CK9npDQbyj9eMCLbGjM1wVukP_0nz2BKWUUflurCo5PVc9NpTbQbx5w9QKqANf5x6eO49cNwv7eG6chCDiZoglJeJOrn_1DPc47t0qn7-FYOXPu71JI8WGx7Hy3NyYVrbhrDDnkPCXSxuby8U8KTOvYsKBOtPBwolhlN0H_kwhq4cMXrfYrEimB7RdyYAAcgyPT32fIEiAkmYsjTUHvvui5R8SaS5u5EcLK-aHEaYf4wWj_3xYYiN1ms0DM2vSGLfqJ6dX6Mo3y4XSUZzTqucTssVmlTLjkrmqrvqdbeTbhgKSv82pLakkdLtN2B5cgAf-k1XjZ_9wOrRqYuFO1gfvWsjlz281yhsGE_",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJw8Z-lD2HSzARtRJyJqAHDXw",
+         "plus_code" : 
+         {
+            "compound_code" : "7PRG+8P Langkawi, Kedah",
+            "global_code" : "6MRX7PRG+8P"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJw8Z-lD2HSzARtRJyJqAHDXw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 772
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kedah, Malaysia",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2234579,
+               "lng" : 99.71630039999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.224806880291502,
+                  "lng" : 99.7176493802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.222108919708497,
+                  "lng" : 99.7149514197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pulau Beras Basah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3599,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108130533552817027648\"\u003eA Z\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uu99_9BSZAm8QnM-zSQhXb9RB5XfwMsvxNTv_y2qaFMH5AVZ9D1mDAoR4iR1Pa7LFmFBq3XSyU05N5XZojgTApkWhmObOwCtWl2Pki7v9MAlrgeG3CVzNIobJqML5ulkIq2nyCHKeOhOc6cVo_S7yQQ9lCGHUGExn_CjCd2LTyBQ7UiqZHYPqumyxw7lMYPqofUI4tBsh9kc-PNKTWpfKUWX7lseMTmFrCAK4Lrmkcjxbo7zQpNPqVRhYyhrwmm3rYH5iwnrt2k79TF1yjDW6j8VAW2wRhXhaIsp4Z7-_QZlRc3QD8Kkd6XrNlvVP4U7KFuOICSDL4C2bHcozQC25hqTz_eS4W0CU4FHCf73jOgNUpQNj02KljEuaaVP20S7rNi0RDP9_rNZzdDBAPIQha6Jq3DR4ukD0edrBOX2homyg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJc6b6_FCPSzARLdjWwgspsrc",
+         "plus_code" : 
+         {
+            "compound_code" : "6PF8+9G Langkawi, Kedah",
+            "global_code" : "6MRX6PF8+9G"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJc6b6_FCPSzARLdjWwgspsrc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 247
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No 26, Kampung makam mahsuri, Kampung Mawar, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.338448,
+               "lng" : 99.78496319999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.339829230291501,
+                  "lng" : 99.78630278029151
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.337131269708497,
+                  "lng" : 99.7836048197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Elektrik langkawi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 439,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107307272998985741516\"\u003eElektrik langkawi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vo483wNrGNtZzd19BF8xTwtjNUgyKBoU4eNOegNAZiZy7VPuBRkI3ZuZBDD4UxJy14yfLUbNcv3kS-G7e1uTPjKuUmzr76H7eK1wjPR8ri1LbT9Gv9Gd-VGCEJCSgzAvcjW6fZMpeTfSTdvxoo87VIv3rTDhAnv0Z2D2XlJMX0tK43MAtJECVrO2791Bm9RaWtdTBBkL3sPK2zQTrU3_oLK2rcJKFoGQsEu3mVHuDkFgAtNPCYEHDtKQnvPhhUASh2pIzeBc-uhUGb8hYuOiZEttmyHkC0CohrJAe_BjjDvg",
+               "width" : 780
+            }
+         ],
+         "place_id" : "ChIJVcsef-t4TDARkOTbeSoeo2A",
+         "plus_code" : 
+         {
+            "compound_code" : "8QQM+9X Langkawi, Kedah",
+            "global_code" : "6MRX8QQM+9X"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJVcsef-t4TDARkOTbeSoeo2A",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 284
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lubuk Semilang Kampung Buku, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.364229099999999,
+               "lng" : 99.78995499999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.365520880291502,
+                  "lng" : 99.79126558029149
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.362822919708497,
+                  "lng" : 99.78856761970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Darulaman Sanctuary",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115859070917552967019\"\u003eKim뿌세\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tuGCCcT0penFZqDOpTQRXpTEYiuKqBoKBoPX-sEwzZEqV2FF3dr9cAScJgt9YpDbuhexaSAxDv1HKk8Xr7W6iBVZSv_-GI8zDpCJH46N5qOALikTF59r4bRSvgrxSkYG-43OKLABJm0LtXe0eHJg3Zv6TA_AcjRNjZC2bYldAjx9u8Or1ne057D1RrdC8ovl8xVQ-4wV-9jVS7_6-DpkMml4jztWlpXSKwnxnL0U6fYIF4ctpvlaSOKDITzxoAOMD5he6BqJFczYdyyLCSQTXoso-SCD-PJ3rDFj8fGCsArgX74Krhweu6fLAt02_FZZn0E-Pqv5-vG68-E-OdKB1B6XCWKHmM7_tucRXIVBofiZEb4-zuzos8vQhxRvbV5h7uND2txgTG5T6Xz_5WLhmQAYEskxt7BtRTJtjQ-Ec",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJRQrAnRh5TDARWBCdl4YWXtM",
+         "plus_code" : 
+         {
+            "compound_code" : "9Q7Q+MX Langkawi, Kedah",
+            "global_code" : "6MRX9Q7Q+MX"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJRQrAnRh5TDARWBCdl4YWXtM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 48
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Straits Court Comdominium, Kuah, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.306066299999999,
+               "lng" : 99.8514902
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.307485130291502,
+                  "lng" : 99.85312668029152
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.304787169708497,
+                  "lng" : 99.8504287197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuah Jetty",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3168,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113037905517677855677\"\u003eMuhammad Ali Yaqoob\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-th5U_Gu1ew2qYY5crUDND0fF5Sn1LF7F98ShQumwpiEWbLLDG5PrIbCYFEjzxGaJdhGUhG_eMUsscSsdwm_JGhhAFvTRnyc0sZyuf2x-FMbph6P0yeXnNEHkkbs0dJeSSpxdAd1c5Hieh-GPfctsR0UznNdMLR06YumT9I2IdW4Dypk4I3BuIXzVs8fmEyrMlBCAjodXd-GDzbes6AOzQTz6bKxYs5bSs7XwWYZ81rOgOz_cC7vprF_qoXl3p0uHrhTvlJveJn_b1a3MAUoDdlQRadgVF6ceeDqXJ7RwLa--uPeK-4aXFFzKb_-qCxm18x9wM04Z-t43LEMZh9X_04Z6J58u85I8L2AYUNlBxnAA-CbopxVLG_CtNHnbFIZugCPeJLMLqbjq7zJJG2fqWWwiIx_05iKYzdx_oOkSLxKSNm",
+               "width" : 4752
+            }
+         ],
+         "place_id" : "ChIJ1cx-v4WASzARMlr2BgqXguU",
+         "plus_code" : 
+         {
+            "compound_code" : "8V42+CH Langkawi, Kedah",
+            "global_code" : "6MRX8V42+CH"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ1cx-v4WASzARMlr2BgqXguU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 8274
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Padang Matsirat, 07000 Langkawi, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.3512537,
+               "lng" : 99.73433399999999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.352514680291502,
+                  "lng" : 99.73561848029149
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.349816719708498,
+                  "lng" : 99.73292051970849
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Atma Alam Batik Art Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105889957638055941741\"\u003eAtma Alam Batik Art Village\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vYj3IArvPF44JkHNkwTh1WGoNZzh_5r08800ZvzFOgYpw4gRsAcT6mYErrahxlWZwQPOo9WDWNjUpy4syvu4GdTH3_IT0ERR0vkznoSjMNWxsIOn3YeztH7W_a1mOe64_08F3AXysAGcPLcVnonZeWEJjb_PATdaHGJwwZahWsm1yAkIfx69OCLPRlOvddPwXPkvP13dw3pzxemNe-m4v1i5VM2jaf3EP9WVW9RW4egV-tdgzdDAil2-UTIWChPYL1LC_alkj8VUWWJNDXedWZm1fIQKuhIF8KZVO9YfTaPh-vJFqH0fSlY1p0FQdy9nqaeyxXQ1P59ChPWmx9GzurMd-Vaxryz_jpbkg1vQv4Z8W35uM3yHWbqD4nsqkKOsWA8vR51C194hxgaenoXe3EBvsQ7KB8johOGZfO5p8",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJCT_rKS54TDARVNG1z30iBLU",
+         "plus_code" : 
+         {
+            "compound_code" : "9P2M+GP Langkawi, Kedah",
+            "global_code" : "6MRX9P2M+GP"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJCT_rKS54TDARVNG1z30iBLU",
+         "types" : 
+         [
+            "art_gallery",
+            "clothing_store",
+            "establishment",
+            "point_of_interest",
+            "store",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 142
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "6Q5M+4WP, 07000, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.207849299999999,
+               "lng" : 99.7848351
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.209198280291502,
+                  "lng" : 99.78618408029151
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.206500319708497,
+                  "lng" : 99.78348611970848
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lake of Pregnant Maiden",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114941975383845250281\"\u003eSankeeth Sivaananthan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vplTCvhixLvGa90Ca5eQxN4PsLmv2X0X9h0tx7oamC9YvBL3Q07iSxOYV3NIzpjdiNLLKml3PN8axO-6YseR0GFtefp3-KlT4x1NqaKE4llll7GdQpsCtY9-PQFrw9YPF_wdGlLbvD5BMNqTEjpffYofAx3Ch0OF4KTxz1yyVSG2eCqmkOANfA4bTPofDO6q1X25Ucr8sgtfOgwo7QWWt06ChO0i4xoCXUMgo-NskEQPcitpERztn-UcnIuH-XIsBZAKNLBIbHJI4x9rRlsDQ7zgyUHF9Xj7CNqCSvltdksWjVdNRDoeMgqZk0i-u0gRDDm9wQhi8kRvgVyJebQfrA2_Vpjp_DkcHJXtMd2o88E99hSfY1kuv7gPaGblSnVEV5kmS9ApGrrk2nJz2Wq2uCVm6q-9aoMQ15aklRlBilRdve3wA6FVIQs7hVTj7O",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJR6YfEEeESzARvG2BSXuqmSg",
+         "rating" : 4.3,
+         "reference" : "ChIJR6YfEEeESzARvG2BSXuqmSg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1140
+      }
+   ],
+   "status" : "OK"
+}

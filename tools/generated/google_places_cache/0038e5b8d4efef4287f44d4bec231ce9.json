@@ -1,0 +1,1190 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-s-IwnU5I_Ixe6ZRYaRA10AAKzsnN9BPDyKezFN2FQzj_1wI32IopWB9EPV3Ign-Ti7ubayrGikgdtcaJME5DFqk3wBbOKB6FhQ1Yw4Izd8aAXlK9VYjV1zgdyRJ_npCVxc3XiecddlgEJUqD3NT7d650M6Y01DvynekHien3aX8-EUB-eEgqNGRFR8v0Iux_br7LdYZrKG7Odkc17zm1zNL5PFZzz-eaCFH3CS1i8a3lDdK3bhRlT6AvFbOSut0wo3ADmDAX47TvlmiuXYmT_j9mqblq8ykZvj9T6hi3SfLfC8RrEe3bgqDubxbhbONGypQJ5u2EiqmkP8teNZ3sr1kubhhCIR1eGBnxDrkr1EAQ2mfJZaK8am9Zh-JXcCiAD0ey39Ehgk1w604vmQFhEZSPssfWRv-MvImH7ajcPpDWxx8ScYySPTwCZuCwRos5eXcMorJSeM46AAy3mMZrctMgUjpgEElILKnnht3vTs0qsH0xHCGpuF8Gvuys3ywRVuWMfQ9ZuMS7VCNAZ22o2lNKos_Fno1iT4bs6ffWmdSfGDxCZGaUqDfRoNPlGiHtdNCILj6oa4YvtB4nX8gHbV1IsnF3skFwa5pCoylGUsb2ZyM9si8bcQgAxfDDScvRPviaj-_-tCqkTTF9kTKzhF4RnDuiBJvOUaXFrjR83SAYvuRjpiChUOQT-ag_TRCz2VzJsCcgzEE70EmvvIP0bVBOc4XQIgKfuJWdMdAfdMurLKZrWGHk_e8NrXPEP7f-tC3eAmJG_DevIjWPrUlRp7ZL5m1AYaaZMY3ywO_SyALOqJZ-c4_i3HtAdFS6yDl4sbq7FK3IQ",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Masjid Baru, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1272133,
+               "lng" : 111.5170144
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.128794630291502,
+                  "lng" : 111.5184309302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.126096669708498,
+                  "lng" : 111.5157329697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Al-Muttaqin Mosque (District Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113695664497829898980\"\u003eMohd Hisham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-txeV48XER63uI62-Meqgiugr_XKP0Wck6ZTOnl0N2O5Q5EYpnwu2DBlqS09G-3i1tkiP1XH-k9k4C8gKI71G3eCmR6SLX2YeXZ1ZmqMFYoaeXYCYTjgNLNA4JzDxa44R82Th47xGRmXCTDezBZjTyTnE_rLWQTqsGCPlhn6d9C9T3gP_B-csrhFw5vMQr6kkJKMJejR5JmT-DC9IkS6f_lNSpy6F64zsQa48DeYZE_fQvSzq6TuQg3ZTy12Uo8vD6yF124LFeeJ73WcOPGSeVqQHZTs1Gzokum827Z0TxOSaMys62bhn7X0sXJHrvh35BVGSyxxr_mE9bU6kql55E-bT5ut3Yeq9PazH4816FJea9BVZPdC5PFJUeAixYfLTsvtsD-2x60KOTkg_7wb2QKLfhkszROAWE9GCJJEsc-pL8",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJgaz5p97C-TERp7HqPbM4x5M",
+         "plus_code" : 
+         {
+            "compound_code" : "4GG8+VR Sarikei, Sarawak",
+            "global_code" : "6PJH4GG8+VR"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJgaz5p97C-TERp7HqPbM4x5M",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 129
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Repok, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1270193,
+               "lng" : 111.5208307
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.128345480291502,
+                  "lng" : 111.5220475302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.125647519708498,
+                  "lng" : 111.5193495697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St. Anthony Catholic Church (1940)",
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110473291999267962567\"\u003eAdrian Lu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vgdDlcovGQ6MGpVRX8GQA7OweQiJYPIrsI9QXI7LVONK-K-Z5bfXipDnuXivJsFjd43LeqQur_N76dKbgQmZjFnRahg9bThrCrm5XkzQYftRCzrqkm2Nss5729l6Y6Oe7KKF2mMrKrYEgfz01YQ8NtXu68Guv3VgrGB2YUv8LPx5fQ6gsekrwEcG20zTv0-vJI3arDL1IVhbNlfzNecmnk0NHz42JqzEsAqAGsDsNlBeiYxqeB01l1Mi5b65vDjt-zhyepUl4g-Lr3Lq1EZ_8Jr2F4LXXue1qp4oQ-MDBadVFmifHvfTE5X1iG6Q86if21YmnM57WYMT24nASBKKiIvXMZivisccQ6yh0UYnWDB_2nUatNBfLvysuE7lM3rTGZddnzHaP848QUtn6p_56zhkLGMvEx02X_uMp0WCuDRA",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJCb-DD9_C-TERp1p2m64a8fw",
+         "plus_code" : 
+         {
+            "compound_code" : "4GGC+R8 Sarikei, Sarawak",
+            "global_code" : "6PJH4GGC+R8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJCb-DD9_C-TERp1p2m64a8fw",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 58
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1192274,
+               "lng" : 111.5368722
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.121018330291502,
+                  "lng" : 111.5377697302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.118320369708498,
+                  "lng" : 111.5350717697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "泗里奎大伯公庙 Sarikei Tua Pek Kong Miao",
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110270334906102210572\"\u003eRoland Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sPyLjHahe92E2FHTu5AlNindng18Ru-UFCtV5uZoa-DBPKJIGKqGRIkD0aTnF7XB9Pi8lkFDA9H2X1ipCgJgezYeAfWLrlxCepvIIIx0AuR_tVzSm5eA5Yh4wPUc9yWd6GCBMprFZYllCiTg-V5Ef_luxrH8H7tX4iTXZeLZkLi0SJaMNBqy2G7kvgGVfBiskTRAdxjZVjJMXrdKdn1fJK8dxXwicTHAAIeWC-BXU8QgsaXvpWYoGOEqTi0_xP6wjZQqySZIgHL5NVBLkAubxlqNPmZBPshQ5OXiMJaWxKlJpuMBfsR9HPOXLb0jATC4ZgWhUxLe7F6qMkOanHRTmwgokbDf6wsmeDzbiWYHjoDUDTxmaUfBn_8QB850JA5znewMqwtMSoMPXpU_rvhBTjzN7Valq75klWUS9_GMQ",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJXS9o2KLD-TERYHObnqe4BTs",
+         "plus_code" : 
+         {
+            "compound_code" : "4G9P+MP Sarikei, Sarawak",
+            "global_code" : "6PJH4G9P+MP"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJXS9o2KLD-TERYHObnqe4BTs",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Damai Santubong, Kampung Budaya Sarawak, 93752 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.7500924,
+               "lng" : 110.3159462
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.751424330291502,
+                  "lng" : 110.3170867802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.748726369708498,
+                  "lng" : 110.3143888197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kampung Budaya Sarawak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113103868486256084260\"\u003eGinny Toh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sfDL9plTuMjA_IkjxOZkiWnbiI9DT81f_gsijI_GPcMKxgKCxzcTwa2FTr-BmAIhaDoPSvMKJtUj6kH9KTw0qyqTPaGErSefXLSyFJwm_uf1wofcOJoiQHcY3h6T3J3pzhgqZI5Jl4bWGWu4r8xefsGtoiY9WOId4-dcwtgd6Z8EEMwmY3QIkY1kcr2KtdHGR4hxHglWH3mB6KpTMEX5pyzqpSvovsI9oBvua1krsElmFmiR7vSH2GJqzXXDuMPfIKgmQnIXdSbAX5whNb7eWZWqflkzawduRyM7HBjHsWfV9nzATor6a4dgqG0Az2obljUwutFU3sDrRyMzyJuPuBB6gdLsp83Rj-5L_nKHuCwf_cCPCLsnF6fzN4wBf7tEWNnp0neHdR4qeHvzP9gcmrlNOQGFwyaAzBsaqLsss",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "plus_code" : 
+         {
+            "compound_code" : "Q828+29 Kuching, Sarawak",
+            "global_code" : "6PHGQ828+29"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4790
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1339444,
+               "lng" : 111.5062383
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.135359230291502,
+                  "lng" : 111.5074542802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.132661269708498,
+                  "lng" : 111.5047563197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Ar-Rahmah Sarikei",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102691787521360356835\"\u003eaizam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-txqX_an_YaWQ2OXdEYa18FztfOwiK8HwGlnJ1sS2KxwLbdiACBO3MFuvLvHSbbOG3DBX00BDgajexCQfNAF87ocS_b5-6W3OYiO6c9ijXdiLCFzurJ_ZBWgE_KBtuFB_lZyY5DtDzJDcfGZU6397_3HInoMLCZ3IEObyzCpr6wE9o7-xnphoRposoaiGlCvGMFHz34IDzpKmu1N7Z9bVbotYgH4ZtB9WyVNWpj2GsZbeDuKpT44bsPmbgys9lh7Gq2ptYiZLCRjlWI0cB-9MWpy5CVX0JbpvH05H9IvhpB1Rha-ZdtElM-kBPWn3vU-ryZP4TEQYGKgktDQmBXKGSoZ-cVJKe89309d7LbHz_VqFOgiFjHwmD-INRA8ALjIssg-U_ly8VHPPG1MWsGxNpHBNuWRUnRSoEmrejZ2gF93g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJW4t-QM_C-TERDDjQLXO4-Tc",
+         "plus_code" : 
+         {
+            "compound_code" : "4GM4+HF Sarikei, Sarawak",
+            "global_code" : "6PJH4GM4+HF"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJW4t-QM_C-TERDDjQLXO4-Tc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 32
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.011131,
+               "lng" : 111.319283
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.012559980291502,
+                  "lng" : 111.3207615302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.009862019708498,
+                  "lng" : 111.3180635697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al Ansar Kampung Selalang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102538247321302189445\"\u003eRazali Osman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ta98UZqJI3e1-KxOZz9j1m0snBlqHgK2p7FibyWg--Dut9mIcMfukvhMBEdGro56URCbOe6leHUCy_Tibh6rtPZmqMWZg-TN-5YHa9A8IFjaM8X0jCTzIVawh2Ov49misPjuFnve2KTeB3927k_QnOepwRVDCimYFneoZkjumWfrDxmLA4dzccltT4DNI6mO2g3291zjuCRg_T5GBiLDbnSEPJ0xhWTs4winePaX7l6NMU462BVhU8NOvj0T_ykG0csYa_-mf-7ewTjn_CzgE3iQ5DEEsujF3FFez_krnz2RMutKSw03XJ5Ol8-pjPR4jiM_GhoFEFJLW-4pXEL42BAYmQRbZunkTYlvlY3glkyzgUuoVqYnAjFUioU_rYm6doaWnj2rDb6uVISU2rNUC7RBVRzRgixJyQi8GpIb-t-H8",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJN-tTU4Tt-TERiPjCnUn8hfE",
+         "plus_code" : 
+         {
+            "compound_code" : "2869+FP Sarikei, Sarawak",
+            "global_code" : "6PJH2869+FP"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJN-tTU4Tt-TERiPjCnUn8hfE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1296173,
+               "lng" : 111.5216594
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.131073680291502,
+                  "lng" : 111.5229965802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.128375719708498,
+                  "lng" : 111.5202986197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Trustees Of Methodist Church In Sarawak",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110434911715174658852\"\u003eMaz Nuril\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uI3mfHOnaAodKp7P3-3jQWoUDQW8ClO3CZAqS83wUh76ySPS2w3w8U6hyYYZpnW0RZn_qRQw7wKuF7wqKAUpmv6NlHz9wnTivfPz9boJPrQLsxu5Cg_EjcLKMq9hgGZmMZcDbexkqVX0I45QovXHRgNlgDx1Ms4Otr-j6F6y0_FtsfQIbI3MoSrB_ip0KB3ngJJ8coho78DGbaP8BDkffiJDJ3RAwpgBkeHRiiVpeTtMVDpNPvEOO-CxpZSZrcPHMNKuJ-S8FvFXkUHfukENQ36sBWF6bV6JvC6FOuK7EWefdJKFAtJOYWvvCt4ce5UCZDU37NHvp_wQ5xp-WOfyiHrS0pN-ytJhQlH8xtSGmkWUdNoOEXmtmxTVORusK4vpYGzeJauIzg7GbzurZKOgZ5BqOqREIGzgP7n7V-kLu9Tw",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJfYL9ppfD-TERZds2LpKG7a0",
+         "plus_code" : 
+         {
+            "compound_code" : "4GHC+RM Sarikei, Sarawak",
+            "global_code" : "6PJH4GHC+RM"
+         },
+         "rating" : 5,
+         "reference" : "ChIJfYL9ppfD-TERZds2LpKG7a0",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1288193,
+               "lng" : 111.4812704
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.130269080291502,
+                  "lng" : 111.4826349802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.127571119708498,
+                  "lng" : 111.4799370197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Darul Sa'adah Susur Jambu",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103424515914077276901\"\u003eNor Ikram\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vg-u9JWiw2nRbhtYCfDX5y2bL-mklPb4IVGDsYoA_K8RRnZt_n8KUJyTtq6_imXCzGQwpygPLTmrRCoKVd8H0WuISkNsQxpLqS8BKW4kw_WZ42MeNW0VFver2cXH-lg-xYYSvpHPSRS_wcOwTr_V6xrNOQt3aebA2c_Ms-IV-T6UzKbhCCXh3iuhtawFBIeZ5FYxTl06R-Bn81urtLoHBsGGkESnzmdK2u7bAsQ1crVM8yQgkWHg6Dwz57Awg7TpMvAq1zSHZdsSRAngP3Xk2kvbSWpTRG_VaRLv6NwW3n6B7-CmW6ZQJPWdfGUfrmC4MLH8gINzeAj0gExDV74ua8cGOXiB4nJXPemcqCmekjaOxCn-_SIzIjp7PuCrDal84ePCvea6V3Crta8yN9d0g82Xubnof_PQbFNjUKdP7Urr4",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJVVXZ_6PC-TERovDcMzAqllA",
+         "plus_code" : 
+         {
+            "compound_code" : "4FHJ+GG Sarikei, Sarawak",
+            "global_code" : "6PJH4FHJ+GG"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJVVXZ_6PC-TERovDcMzAqllA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Susur Jambu Selatan, Susur Jambu, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1280687,
+               "lng" : 111.4824604
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.129612380291502,
+                  "lng" : 111.4837386802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.126914419708498,
+                  "lng" : 111.4810407197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "St. Alban Anglican Church",
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102873124661635640488\"\u003eMathew Idan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tMCB234av-F2rmxH7bHXZGfydVlz8yMc0EXgKkHBbDzfsl4vKhIx1n4TalBNQ9a1ZTgtSoAmpRltwfcbtRNUPohWYpFhu5iQsC-X7XImI1ID5NlL_fNLn2AIPnNFIj4A7hbt0kxVOoZ-k8zzxJgJvAJqLZchjVKMk3OdoazHkNR8k7_oIosXOA6y8GfJws-uhJJCuq6PXik9FklNCQFH4_IqbmlexbfHMtu1lK5XATyS7LBN8-P2b1z4cjgs15Eb95a6TpyYYWnzJel8vmUcVKTJTYELwXtohzqBILIDscpUjy1_yhJH0IKBzjtE2J8OrLBBnKAK4my6g4zjLR6NfoBvxMplC2G3Rt7mbAGCgvT2M2QV67qmjQF5RgTueCcL8uUuSVO3W0SKykDH01aZUH3Ie9k3xs5MEtZeaiBIs",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJlYYa7KPC-TERMQ05Ov_qS_s",
+         "plus_code" : 
+         {
+            "compound_code" : "4FHJ+6X Sarikei, Sarawak",
+            "global_code" : "6PJH4FHJ+6X"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJlYYa7KPC-TERMQ05Ov_qS_s",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Blok C, Kuarters Kerajaan Negeri, 96100, 96100, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1138614,
+               "lng" : 111.5321963
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.115376180291502,
+                  "lng" : 111.5335588802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.112678219708498,
+                  "lng" : 111.5308609197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Nur Permai",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1289,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118044084211358509306\"\u003eThomas Ting\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vu8S00wAN2L-faSmTdz8ZYdPMTFexDoIyCuOovLaZi6zFggjHqq50aDxHccLIw3M7EZb7_dUVoRBLeEsxop2RhPhIyLDq5HE-0DL_LotMKXnlfQc5e_0yGPKxv0r0SqxWPr3y6ui7XP5j76ZK-q3NW2RC3aGLASMkDXyNlnxVhFthG6x1q_hj0nvCDNRXAYSoD82HvMHUJt29XQl6LkBXpp8BfZOlWSHjTZ5alhD3z-o7GIx_f7ZvDIvk45OqFhaxac6YHBF9vvJThSL8j9lUKnBI3waJ5P2UZ2suSH1rU4p1U8I93cUiBYzWLz3hjR7wjl_snsZL_DAVy5vaKldrBEpjddUvpEQ41zkrTzc3k1Dj3hK3EWdjFXP3ysJWl-UdxQKW0pyhymYUEyVx1JHU1efY1NTT475RqWX3vpXr39WLn7J_Dkfu7KPnhIYoe",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJr_LAgDPD-TERowcjSDKa2pE",
+         "plus_code" : 
+         {
+            "compound_code" : "4G7J+GV Sarikei, Sarawak",
+            "global_code" : "6PJH4G7J+GV"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJr_LAgDPD-TERowcjSDKa2pE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 22
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Masjid Lama, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.130061,
+               "lng" : 111.5215499
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.131404330291502,
+                  "lng" : 111.5230339802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.128706369708498,
+                  "lng" : 111.5203360197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Methodist Town Church",
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112051607973750187647\"\u003eJohnson Lam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tlpUQPxH_cHb9p0YGhZ0lt_alKJh5-g3wSibMgycACRNWAqAufV7Q_JuNGLHLZ9vS2R1BHoy5235L50-Vf_TRQQlR-CSst6qOZYgIeDsTbb4arAKwNw5hpiQ_zyFw0CdR9l2IIEDyYb1HUIzPTXE3XJsG8P3LBE6Zn4wAgaJGnHKP8LOjj9zRnblUdFrzliu2AKn8pE6vHa7URu100oakRSYTdOpS01AucvfgMr7BIwlthtfaNIDJbFva_oW-_gBZ79fdfvFY8KFwXCPxApWMbcTjhs23m7Z3ml18Vi9R0K24RL03QDkhIzWIpCAqdfO53jPv6Nbg0xXU_gNUHgcZ8mM5WWpGxH6LhSWClirggTSTXiYhisTiiJKiLBSuhemaPcf-suAhtqhllBzuRl2KxYXrmr-rt6uOq10B3dVfedg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJjcpbjdjC-TERfJZ8TfoFH94",
+         "plus_code" : 
+         {
+            "compound_code" : "4GJC+2J Sarikei, Sarawak",
+            "global_code" : "6PJH4GJC+2J"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJjcpbjdjC-TERfJZ8TfoFH94",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 16
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kim San, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.03639,
+               "lng" : 111.503379
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.037724080291501,
+                  "lng" : 111.5046989802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.035026119708498,
+                  "lng" : 111.5020010197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sarikei Thousand-hand Goddess Of Mercy Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109844064209027023657\"\u003eFrancis Yii\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uOOqmytZPbkvqMsf6zt1KdiwzEwoG1WkdFvLu974vJqfaAlUbary3-9taYNYAelSSSaX2A-F4KIj9cduiIA6rJTcFhZ8j_noqFGgeu6vZr9CFGlNaKww3evO7FNXDUAIb2fS57bgSpe4yGLGOarL91dh1dtPLbU4OduCwJ3HEASzRMLZd9MYiel_8jZwcVUdrSYnK1-qmoiXCar2Ix5U-RUYFoa0NKqNsdStzoFJdhqw5UP5fp9Z1s_IvpXohSDx8uep-g5rB9idNpOjxeikzcD0c49Up4LV5XPlLqzbGrsGcZnepOEnXZKupBPcloAs0AE8Rb0ImW2vEdLU8XK-5feUQb-jlTJfAh7zvnDKpfIQsi13lfxNAdezOBlRJl0z6F1IjrRAu_gXXif4REFRyf8NBnUpB1guMwIqnUPrRhRQ",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJoQSK1jXB-TERorqumqkt7l4",
+         "plus_code" : 
+         {
+            "compound_code" : "2GP3+H9 Sarikei, Sarawak",
+            "global_code" : "6PJH2GP3+H9"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJoQSK1jXB-TERorqumqkt7l4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Wharf, Bandar Sarikei, 96100 Sarikel, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1326672,
+               "lng" : 111.5206062
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.134062880291502,
+                  "lng" : 111.5218898802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.131364919708499,
+                  "lng" : 111.5191919197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Pasar Sungai Rejang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3464,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101451600423332862672\"\u003ePhilverson sama ab\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZNCltU5jnPvBDlvR-XTZgtcqzRu6aduPKloV2AeD83xjeSjj34vqk49QCO6vN5uMV29ZUrw0KrZXfdULfXPo3_VCsES1EF2VPqUHYgMzhiZ7RNUfvMLA8h2XQrfaa43vtxNiwMIhIfC6SwJKfjCCeNuDroQOCFgcEidzjs2Cd3uc4kQ654NVGNM8px_UA8bq3ifk7Fj1JK39PHCyCi1L9qiF1TwAIEU1DYKbL0-k2BqoY0qGB_Z2zf5NZbwStPwyZLBRpe2-qYlLUKQ3eFXxK82sBSv7RWvsPNao6juDHcxwYV71g0ez4JbXx3Vqduc82u4JspALx2MOVSxoaLPRVQQyzGstq-sw5e9TuFArYOS_XyGPa4iOYU0Jl8ntWamCNHZD9QnxZgLqZqKeVWsyJ8bHsI-E3eoyfd_-3FLw9uNlc",
+               "width" : 4618
+            }
+         ],
+         "place_id" : "ChIJD81LQtfC-TERnyrX_SrjaJg",
+         "plus_code" : 
+         {
+            "compound_code" : "4GMC+36 Bandar Sarikei, Sarikei, Sarawak",
+            "global_code" : "6PJH4GMC+36"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJD81LQtfC-TERnyrX_SrjaJg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 106
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1334319,
+               "lng" : 111.5242266
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.134752830291502,
+                  "lng" : 111.5256126302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.132054869708498,
+                  "lng" : 111.5229146697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Pasar Tamu Sentral Sarikei, Sarawak.",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2368,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108294899469297713927\"\u003eE W\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vRJ8vpASRS5YTClgI0OxYIogGeg_xxgI0pmKhEUyf0hzqYD-qrbC6nTQUqAdNEnOmb-9OtOZHqZ3WUQTnQjTufS9tOPmFudMzQlzFbLXkwpsXmRLm_A0MewS9noipjYS47RPT9WleWVBSnWwTsu14UQOigMKzUyBU8qTL15NJYPl5GILlBEiWV545azPJuiZbnFBu8qTzcD5hcTNYtMj9BFdDUpkrwGyNSp6jQlCo9FzbUcE7qAM56pLCfwWe7oxOdnXKW_5aJDDR60uxBGmN8pMcTuy66fpuL7ru4CHOHuIivwQ_0WnN8jvGcNmGwgbzLoFumQ3Yz05IZw7ib2wnHos2j7tOg29IpQpxGA8bPkokyEDZctrtcMwtTgqR6aQByH9gwYVnwtN3qtG7P25JAFGsc-FEhAVlxeTOZ95U",
+               "width" : 4208
+            }
+         ],
+         "place_id" : "ChIJJWSQESjD-TERH0lVNn75UF8",
+         "plus_code" : 
+         {
+            "compound_code" : "4GMF+9M Sarikei, Sarawak",
+            "global_code" : "6PJH4GMF+9M"
+         },
+         "rating" : 4,
+         "reference" : "ChIJJWSQESjD-TERH0lVNn75UF8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1077
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Terminal Satu, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1331972,
+               "lng" : 111.5209377
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.134439530291501,
+                  "lng" : 111.5221702302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.131741569708498,
+                  "lng" : 111.5194722697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Pineapple Statue",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103322809658055818513\"\u003eDarren Chang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vsKQLLpoNPh17hZRmwS8qTYVFps0fQbJEH4XCBE1d5ZYQzA3vdEDw1R6uj2M8v-NzUrmqdXukldAzrKWlP_Jz67RE8aK6vuTBxY7pnx2tnKtjbhprEwwWo0KH5iq_kJ46Qu6qWSUClJnpyZMyXH5bNT7GLWIxiYVOCxbiBqUS_6vcUZ2VwuWAyOBE1yvc88usDqYPKgZNExRgjzgB0zluIeE27j-VnVnvvM4lHcFzJ-DiltRAAOcfscpXLCaRLmUHIpJVweHDON75OcQlRQOsf_JW3NBT7xuWcati7ZV-FwjB8TQsRNvYwbp9UPuT8fObYzD-gNvSTMoiPuxjY_g_wA8cLxHhu0B18iyhE6A8soeAdJviGlhX6i9s0A_qGfYL6STJnyu8VQroc13ZwQK2uWzJovE0sfDvcphsNk3srv9AgXWrV_ofvZrDmji3M",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJddeHJl7D-TERloy6IhI5qzo",
+         "plus_code" : 
+         {
+            "compound_code" : "4GMC+79 Sarikei, Sarawak",
+            "global_code" : "6PJH4GMC+79"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJddeHJl7D-TERloy6IhI5qzo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 36
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "9, Jalan Tangki Air, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1212549,
+               "lng" : 111.521164
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.122897780291502,
+                  "lng" : 111.5225074802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.120199819708498,
+                  "lng" : 111.5198095197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Tasik, Sarikei",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117930721241134857022\"\u003eAzizi Aziz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uAZNEk6gfdOp0qi4n2bCnzcl7eptzjWghAPZXY5NRVp_vLb6kFynU2Rtn-SGZ22_gkp5_asCGECq5ttQnSC-l9Vtc6u7g_CklFMzvlTYJUIrCttnccgFHuRKzZVuEfd7A-1KnmodcljkU0vPB3DuLQ9dZXa8QvpDzeS9oIKJN0cPV_wSA7Y7vnrMVR9sKdFQS0WpaCTaTaKG8sZPJmggetrcQ8kU9_zaVI-ZcYa4ygRXxA1_ugb6yLc6AeKYtsNJtEQPslDIebSHT8ITeWTLE-L7tA-27i5qqxrZ-8BK_TARPPOzyIWne4FXHzsWblTxXXuEjOo-Ts-2mTVNtN9viRuKUsfmVnrk6Dl3TndpR77eq2ezQXn8ETgMxiM0N554ZeLbUJQa-FeRKNf39H8xn5jPrSczz9WSlEXvr0lLNxxIWf",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJZ_xxtOHC-TER_b1IXuc4udU",
+         "plus_code" : 
+         {
+            "compound_code" : "4GCC+GF Sarikei, Sarawak",
+            "global_code" : "6PJH4GCC+GF"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJZ_xxtOHC-TER_b1IXuc4udU",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 268
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1268555,
+               "lng" : 111.5237102
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.128320480291502,
+                  "lng" : 111.5250594802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.125622519708498,
+                  "lng" : 111.5223615197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Church Of God In SARIKEI",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2578,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117114688374968513981\"\u003eWONG CHEE SEN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sEqKg1MZk4RhxaZuG0m2yjRuAXs1GW9Ui2yrLr7egW13LIqXmhHXxoPzFunkfzXPORlw4ECELYCPl4Tc8r04CIJcnclStctiuyFjLwcQfGkf_sAMnUzt6dsFHSUBStS3Xiq_wZsVxeNaf4ybeiozOVjfh6lfXgTFkhgPb4cg1mWJnKrC19_aTSjK14_wnzJVR-1dQysueA-clM4eYvBe5aRdF_r4BV6jbKIN0Z1Q9OqzaLMO_bdMajBw3hy1isN1bJXysnVrSn9_JFlXkMLxs-tmVxxDD1c1S7nfTiYwM7NtQVECo-fag8N7c1WCFNVvdpOa_ECs2StjhkbzO_AIEZ0K0k2mNJ9glv0HDypDr1HfOZttXNNYElUg7-eKUKHC_BTFYV8lXJMs_KKAuqZk7LSC-PiVEBl7PTAmnECYkg7dWQ",
+               "width" : 3484
+            }
+         ],
+         "place_id" : "ChIJcfuJmyDD-TERdIKgVs_J1KQ",
+         "plus_code" : 
+         {
+            "compound_code" : "4GGF+PF Sarikei, Sarawak",
+            "global_code" : "6PJH4GGF+PF"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJcfuJmyDD-TERdIKgVs_J1KQ",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 17
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.12A, Lorong 1, Jalan Nenas, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1287005,
+               "lng" : 111.5224752
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.130094730291502,
+                  "lng" : 111.5238276802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.127396769708498,
+                  "lng" : 111.5211297197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "Yitery by Yi Garden",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105551556878476920323\"\u003eYitery by Yi Garden\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u-7-SAh0-WavAZOJdD69ecHPemZsZswFlnyFD7OKJp3hG8rSCz1rPAWC1FIaioehvmfMbKl2-5WrVujEx5U_hyOXgcRyyjd5C9KCjBoBeRO2PipS_0uC7VEYkw6ZIksVSx5No1OIZ1Tkq6N0AFT83OOa63KaHiLWVmlCH6ynjYaF0GFEhwALBgvHqsTuzx1XB5R_Lhta_qFuy9sQXB2rXfHDqOEKUkuuveBUAqpGg2KGG4dDsf5h0OKRJ3OBaRSHlNEtIf8C-enC9g-EL-9RF1VA8cM7HW2ZLLKSp9r3OcDe_34OFpDz63AkzeTnoNJrWBwvQPnUQgWanWjCkGBOzH-bFd7slm0A4cWa782L5kz80qwujgaUb3DMEABPYiD-aQZrabJTAD1sxEhAykfjDdQbp41te2TC2uPnBle5GH_XZe",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJXz5IPNTD-TERKg-5-vENdNo",
+         "plus_code" : 
+         {
+            "compound_code" : "4GHC+FX Sarikei, Sarawak",
+            "global_code" : "6PJH4GHC+FX"
+         },
+         "price_level" : 2,
+         "rating" : 4.7,
+         "reference" : "ChIJXz5IPNTD-TERKg-5-vENdNo",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 607
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Wharf, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1326206,
+               "lng" : 111.5183172
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.133898230291502,
+                  "lng" : 111.5197300302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.131200269708498,
+                  "lng" : 111.5170320697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Sarikei Waterfront",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113390016734001581615\"\u003eArlene Alin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vjjPRcccPjJBHYD0QC2q1e6sfWGVKjTW0bcH7aTb7js8zLpHGj-U5WlQ_ucnkQ5wmioehQo98lyQOe7qpDGbfj0VlhKWnfI8GopcDSWvmPkQjkYSQFafR9Eovm1XaM8ne6KclJOumlIpo2jy_u5_gpHFg4N2_owXiKPjn2mzUGEm79DcvsRmR4-k1w5lqwCuv7JuOD4Nc4Y-Bw1cN-o6Ot_gHjl8TBGT4ABvbmPopDnjoefSuBMkfPHgBbPtF4VrDw0600SDhKH303zN8Ih-qGHoACxfJCW7LVXXm8RUPz1m8iWBgFAPzTPg9tEvMHaHoebm_cEBwhOz2Q98aTL4xK6qPA3e9ywpPRyQ46R9T6ePqH3JLoVAK3ykAwnEqtptVRg6VwGd6yxNtGfw8hHFSPnThx_bxGTKvhwjj9QT0E0vU",
+               "width" : 2352
+            }
+         ],
+         "place_id" : "ChIJqT-90dnC-TER2SginHHdWEA",
+         "plus_code" : 
+         {
+            "compound_code" : "4GM9+28 Sarikei, Sarawak",
+            "global_code" : "6PJH4GM9+28"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJqT-90dnC-TER2SginHHdWEA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "store"
+         ],
+         "user_ratings_total" : 25
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "57A, Jalan Jelutong, Bandar Sarikei, 96100 Sarikei, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1224686,
+               "lng" : 111.5294047
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.123904380291502,
+                  "lng" : 111.5309182802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.121206419708498,
+                  "lng" : 111.5282203197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Nyelong Park Methodist Church (SCAC)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113414192668369798803\"\u003eWild Grass\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uSZwG9HnLiruCnTh98IW9itVWK7VpZcFhGbBwpkeKyV2yrrlKxfmWifgpt7KywUnwdLlQxGHa6hhY4DCA3pYmg7Rw38tAQdNLooBC7B3AA-fwL8k2DK7R1dIgrjyb9yLzCue-pNNRDp6NDDLmuQ6gd0FlMzqo5_4j6lBFVP8gSdSwWShFMRZozrybzPCtQoswlUP4I-PaufKXzTCkdAuBbJzCSqoQAqp7_jbKJuS9TxwNNxuRD1QY0sqHJ8zozNkuFeWcNtzyt4_tPiyXKXzUS-wZGhDVQzM7ArfC-ZSkqd-1THX0E1uEHrb-MpASHLMu9VgYe4_Vza_I0s3xebnCKR8ws35_EA6z2Vfe5f9YwYpNH5zNbU9lFTTMj9fl2qF70VH5XmG4uzkWVXHz6gL2k2_si51de1t8J1hFkT1e36g",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJw7b4sBjD-TEReJTHMjdYokA",
+         "plus_code" : 
+         {
+            "compound_code" : "4GCH+XQ Sarikei, Sarawak",
+            "global_code" : "6PJH4GCH+XQ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJw7b4sBjD-TEReJTHMjdYokA",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 32
+      }
+   ],
+   "status" : "OK"
+}

@@ -1,0 +1,167 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Majlis Daerah, Bukit Gedung, 06300 Kuala Nerang, Kedah, Malaysia",
+      "formatted_phone_number" : "04-790 1200",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.2512867,
+            "lng" : 100.6133309
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.252659430291502,
+               "lng" : 100.6145111302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.249961469708497,
+               "lng" : 100.6118131697085
+            }
+         }
+      },
+      "name" : "Majlis Daerah Padang Terap",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1530"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 5:00 PM",
+            "Tuesday: 8:00 AM – 5:00 PM",
+            "Wednesday: 8:00 AM – 5:00 PM",
+            "Thursday: 8:00 AM – 3:30 PM",
+            "Friday: Closed",
+            "Saturday: Closed",
+            "Sunday: 8:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 500,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108474713482321604142\"\u003eydp mdptk\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vLZSXu-6gK4iSj9RA_jORkZmJ5gBD-xVhgmU0mXMGTn6KBX8tvd0K4uFlf30eR37i8YclNbVF2FLmtmliEYpTJ_BXga8ca34TL4aprIVhpaCVarG4JrjleDzSWxfhOCRjJxqFz85FXm085q7eb5oFtgmXAqemLu8_Kyt1IYzee5WJxveB6JHm9efs0CEmO7DTc-Od2upc8pqVGh7UUEVujBHUlesKmwOEcG8QctWMayQQgKZ4Go2rQpoBXJB19bPlZ477wkb3PZXpB-ytuJTEvER4YAqj5-iEedckwbqwQFpVNbN48IusP-evJQveSB_LFs0YYbfa5dTe4m332jJtZw2KdMspYuLHI70nMiSI2gEmCPrvKnLWLhNfGV6mdcsNzLCbqRFqY3tYZDClq0kg8o2DQuc4Twdid4tPc80k",
+            "width" : 500
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103241458545277728537\"\u003eJefferson Teoh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sYpeuSm1HMFBb8K6tPjdQ6BQDfqUh9h3KnlYkAjBEIIV52xRqTI8tXJOxd5JUeCc_Vki-rknl4rXQ8VLDl6wrq3svzf51dmeVcaQmqSaOpsmwR9OoYyVTqMxiQBoevj-kICkZuXLLPBqaMyG3KGUboddcbQo2-xddpnohS8pH94c-oXXD4ntfmSF8V6aQR_BLkmIaEhgBS529n09jin9XUpAyPX1ORVNUh7IfzGhCNbfJYN_VbENw6rwrGBAvbSDux1xlxTQ5eLADAW_Wl5Rsk0IRfLTIBI5ni9VGaRF5X5HWr7e7FmT4cR-Wrk_WANrkQslQovbkUmrzRemPrljSvZ00BfteagIPe8mRAQLUc03aBJ-69L71Ct8J_kIZLc2ColfhGCCpdeug7VgeLVGcRsIlQZ-fTrNBO0R6CfKGwfg",
+            "width" : 4160
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107344124393218376848\"\u003ecyberchanglun keri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vRq3djwqMvnf0mrbORQLOyjgFJkLkvH97a5wo9UzHKhAk3M1Z1r1MLE-BS86gqNVHXlOjECZqpYZhjGB4y47n5A_5-zYg6GLG704e5W3wdr5gIgbyD1TqXy8arZ1uqNxE28GDwxsvgR7nStQtGfQSHrtDoQ2Iunk4ArvPVj_DbTrxXlT_BY4KNBxvwdcOxOpcL55-XEZY_twSX-Xswya6JF8MQlTEqkP5lOXQ8ahvXJnf6yWrvajZIsX_yBnYy1H86O7j7epqN9Uu9s5efWEIOBwufKgLxakGLw1K_N8h4E_4TRX-HpeuTkoMoGmLh0PK4BPrnaGUBeSXExqM5dsJgmxPJlOpL2N0X7jpw7m2x8QGP72L3mpMPLXH2sqnjIzcTnqpYAuurG-s648GQ7kjQzO6A0F0IP_cBVE72RBNOvZGl",
+            "width" : 1080
+         },
+         {
+            "height" : 1000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109796844617538707685\"\u003eYusof Aziz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ulGDV5s1UaXENPrH4QwEH-D--iCVy3Wwj4Z2sfhZxP8CAFC36VcHHlTeFC7gtwTq12cP5_pAhBLcO03iP4EWvVpH1PUwW3lYN5EuyZpuS7Gt51VcUjd68w4qqjDOIWuALiXamNZzcGDgLvJ9_lLgvpLZaNjICEPBIr8HZdsnfvYdNPlOL8nsho2tU2aI--OQFrdLjeNLLY-CmZXcwxWPAuPQzo3XypJAGTgtvw_nPNqZ4IXMrl3BUaD8P0fv-GLmc8lfwvw4eLCTEpqzqRrrv1MWWUWTp80eyPCK3N6Lp4tHKACu0lqrlvgf7t-XTz9BjVP-QutwiMw6kJ3Mot077W04NS9tAl_pbC0HT4zbRWLtqXgslBOTkrCYtYHdavNGFH1E1-jv25A4H9uXe8wnvEKfPTcJsiA5ufJb7HT6YFdg",
+            "width" : 1918
+         },
+         {
+            "height" : 500,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108474713482321604142\"\u003eydp mdptk\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tKan8_wJn0Q17L5XMTRo_FQ336D8rT5RCfKpe4NPeAKXImjYxpNAhCwrFv8oova9N0viuEmG6f0B2lrPh83R79EU35vwi6LXOGqBi9nNmpm-xu-F4NbAB8Y0u-D37Q31z-b1bO5CFfdM0f9PpcOqWS-ZvVpjeriRxU2GqJXa88szYw0F9pH3gAQVItYZqEDe-levXfLvD-IjHLsH27i6cTCKcr9N28zCPe1ft2xp0kHi5cAru4P34wjydKukyBNQv4V1GkfdTCE_OEyWmMfS5QHmt229_NsaWrXI80zZ47C2wgQmwHH3K6jHLJ8TW54l3gAc56_1k4SZWmDFHf_AoNkukBC7zZyv4EPgkNxqNecjN-xcg_wqXOVsJXUIf5r9F88-LN4uAPUEw7bdwKzbgTszLQ0npzxSUH1rdG8Mj4h18T",
+            "width" : 500
+         }
+      ],
+      "place_id" : "ChIJu_njLLtVSzARwoTocQa6nck",
+      "rating" : 2.9,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=14527972509810721986",
+      "user_ratings_total" : 7,
+      "website" : "http://pbt.kedah.gov.my/"
+   },
+   "status" : "OK"
+}

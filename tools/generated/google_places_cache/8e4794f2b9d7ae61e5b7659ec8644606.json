@@ -1,0 +1,132 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Taman Hap Heng, Jalan Segama, 91100 Lahad Datu, Sabah, Malaysia",
+      "formatted_phone_number" : "017-293 6376",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0321166,
+            "lng" : 118.3189998
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.033464030291503,
+               "lng" : 118.3202713802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.030766069708498,
+               "lng" : 118.3175734197085
+            }
+         }
+      },
+      "name" : "Danum Valley Adventures",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104214924677275256315\"\u003eJenny c ariola\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vUX2xPzTeTIUfR0R0OsbdeO37UCH1XOZBajNJh5CI3mSfl68AUZrRVCrm7t_LIrYMujEDqpQrXhGlOCseMMnE_LKNFlq6ZdxZanSahMfSGVccmBDFngc5tAag-ErXQ-tPeEPlOVrQlJB8R4LUc7EADoeLq9Shxbo_q2FvDnwfp2RVjMV7EPyLdxclUy2G05tR2xWJVCYDJ4g-05ldlJm5nl_3sHoFhseIQ0dGs1hFR_dd0xCFzmbU7IDEfJpngjIsP1HAwrCSgJ2R7vLLfg8XjcJbaS_0MT86WX4-pLBST3zeZOO9gxsyFmI-reDA1XgkLHh414ENlp42itFP0iNFVqyhCZlH99T26-7tovvXcmUBxyeMwDSGL_KAGawGTywPAqeDWjAmcHlWOSxEXe-mzB8nmucWathdZG6nzhVEdP8HgtYFYVCSiQULwKQ",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJBZ8pvn-fPzIRfF5E6H8eMSg",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2896129570082414204",
+      "user_ratings_total" : 4,
+      "website" : "https://www.bikeandtours.com/en/malaysia/sabah/borneo-east-sabah/danum-valley-conservation-area"
+   },
+   "status" : "OK"
+}

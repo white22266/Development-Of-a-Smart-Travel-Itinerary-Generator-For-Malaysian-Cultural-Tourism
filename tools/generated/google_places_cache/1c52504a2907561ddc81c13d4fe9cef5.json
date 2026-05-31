@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Persiaran Bandar Raya, Seksyen 14, 40000 Shah Alam, Selangor, Malaysia",
+      "formatted_phone_number" : "03-5522 2743",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.075446,
+            "lng" : 101.5223924
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.076732430291502,
+               "lng" : 101.5236329302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.074034469708498,
+               "lng" : 101.5209349697085
+            }
+         }
+      },
+      "name" : "Shah Alam Independence Square",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 7:00 PM",
+            "Tuesday: 10:00 AM – 7:00 PM",
+            "Wednesday: 10:00 AM – 7:00 PM",
+            "Thursday: 10:00 AM – 7:00 PM",
+            "Friday: 10:00 AM – 7:00 PM",
+            "Saturday: 10:00 AM – 7:00 PM",
+            "Sunday: 10:00 AM – 7:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103923706557333952091\"\u003eEngku Md K Ikhwan Che Engku Suhaimi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tWBS7e3fZwZ6sfKz9r9JagzwfuvyUeTQ0taMShvOHXBa2oJK94lNVYzUEf6tca3N8ZXANi3wgRnN_1ejaI76qKkFZUUl6phdcY4izvp168nCFH5JY6DY0Yb-vEgTewE9U3fdv-cjJ1k-oHEvdL4K_B2nUkPoole6-c_uEhgHjVkmYdKpFSo9nK9aVHIKTm3l0SjTJApY99MZD2VwljpvPUzokK-W0FfcBerdylk5g66zUyUyY0lcPb8CXt343nYX3NJhKxwJ4MQsnDGDwzLbKOtxYPaajJhVigVySYUF_8mr1N5QMKFBK-8EyJ5sLHR2rDn3-VjrRGDDxcxzk1TaqSuAfjXeR9o216Qjh8Bv8WrgBr2_6xJYM8ND3rvZOssg6HYOLOGrI5MF3dK3qgZiDrWj2yT3Y4lP9cow9ySWo7aVU",
+            "width" : 3840
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104527916285751902034\"\u003eKiM BooN LeE\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vZWxIA52wKKzSg_GCb8oemJ4sCf5SlNW8DAnSc3k-lP-ALkzxrrr6KSCC4GNS475qiE1bXf30cjO-ZYu-gsoNHEkU3YjGXUtbzmZtNBz1zkXRvS1PWpuUPJMOC-ncYAHU12AOaGLaoCn4ZyHtyKxy7sGwXlXEh1dFkunzgSyTFKMl5rwYjOIWyQj9-vcYYOOH7wG57pWCQogsQDHDsiBChrB1tN60SaLqQ7MyQTK26WCumYlaqQzWJTWwUlAOvToXzALXPA4U0bqEp2dgsXS2JoQ5-wkl1MlSusVXYL3PuCq0CH4eyb9lbPnEpSRnf2MXMyAmI0oJrKBxxCq0RiecnMnurpbkgF6amxWLpXU2j7AbDtk-JRLNRT-Pkcqghws382Q-Q1-ZYljm6ub_2xfcWCFs6qDFYLj5OxKCH2TUEbFE",
+            "width" : 3648
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116174949481321986692\"\u003eZainye Sharif\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vAjxEM7o6hv_lsTdCIoq7AlS00p7e6KuRVOoSGZJAI13JFR3aQH582qcv6_fOmvZWblJEzmo-G3NoKaiV1-e4vMW8QDmdv_7TagonQIN-NdJFcH3mboqDXk4rLF4_n45WmXJrychRYvkXeLJ1akTCjl9isKHu8OWxrfOUm-tBHfRKz61jrgq0BZkKWgglT-3HCPlCTlaqlrf_3jqKKUKPpw4liwf2JJCx2dnugdCDmxL9HpK4jnah7kxQbfhnm5LcaSDvcWnDIU7TxTMQ_2A401pH-qF7aTcqXQH1xCHaLMg4orMlYOLqFp22_gyfD0mkrXlYBDrHF-JSIH-55CJ6hvzu7S6ZKXZ5GRIoWfQ96B4t-_fzCcoF9Je5y0jI8M6fWig3T01ul8AftmvviOV7Y4PE8rJxpe4fj2zpCQWTX_37V",
+            "width" : 1920
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110364104395113944162\"\u003eNick Quan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vLFuR2jaE32vb1v_WZ9kOHW-CQ_NwdOCcZbQcsxz8l_Vss8nJ2g3isENuerBYBvCJ0zFxq8ibYSBZqpFobu5UmfL13HSh6G6mEF_BKRDmji0cGZbE32oQiIXxhshl-wPl0g_b5OafEU6KQqeqHKCskDvsM022BXavOpVXlvcDNm3k7EM4zy1ACSkybvjzDTYijgSyNTQ4p6Q_aCY_kzhoetS-E0z1LFnkTguFoy3y0l1BiPgSy0mgAcLvXPxUCav7Zu70xKd3oxWm17KhRzL7L8cLh0QygYYoHk6xi4lSCrIwYdcViDTR7K_6duGidG8VX2_c_wy4ocFD4FGDveLQoUTmeOkTTuQzCurWZYw80sS2iZKNtBv4KDY9M4VFBMDcMW3xDS88RGeqWrwiszHEIB6UV5hvhl1MO-NB3kaV0p-dJ",
+            "width" : 4032
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113062004149013180865\"\u003egeh thuan leong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u74BqxJMqTmMqlgjjnig8A9V0dtlYQLNL8wSoOx6p9OXO_WiNh95ClcMK9XxTuvwsMw5sHf18LsSXh0W0t3ZBfEDwZJXUmAfAHRvZeFjiXT9-wuQztVe1A4p_0wK_SKyeFS7wW_6cE637VfsBCsgUkHHMNOTnXU5FDj0odHSgreHBr-6w3bZUF37DuWGle3fU5wDgSbNSNqvBjGMNVTodWJ46WFdsWgajP8bk4KA0OHp56JkDKoP93OTH9GglagAW0E3M5vMds1qQZJEhfpcTokgACefx1rmxVychJOv5NrMCjzNzXtt2KPbhy7sFSTXBS-4NaeCg-sAvvNC5bK-ZzO5udvU6c-d1RWM_W-OAbQejT4_nk3H3ox5FRU6hyjZ9HdgweqxnHGyRJLuA8Vrxh8Wf-oUlvoUJ2q-2tLZIxIhDA",
+            "width" : 3264
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107910277908996114862\"\u003eakmal rosdy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuDR04YNURwpxJIR_AAjY7c1GiV4o9AXK6l14SLNrsQQJF1HkOz0ADUGFHnjoreOu2VC1oshXlKig1H8FR0zuaDu4RmAqOTg6ydJXWU_hGXQ9_kHsSnnswWUSO1txhyVprn26JwmP2eEh4NYCu3ft11uLwnMpzpoPaic56-PRKa-Zl9vGpHKfo7K3GrTi4xkLc--H4y78bKXgGZGMZWRqsnz5g_pfs2rKn04DP0eH_lZlnB1Xo9su_rjAo0HENyvDUbY6JOC7G68QbKltI46L83-bViFzFuRKBrtFNsZCYDcdWYB2Lkvng8wSMG-A6HXRCYdranYvhG2cP9P7qljBVWFVOgAa71wFeOWGPqkRngGeVjPI6IbFI3cYFpFrnGpLwzRCe_SDqf7CNBVblZ8Wvut-2HWplUiO6o_sQLbe4NQj7",
+            "width" : 2252
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111400710565254710923\"\u003eBaby Ivy Ismail\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t_5ZRWPTuv3_1rBpdHo44rCmYARqiGeaYZBHBqcgqrGWir1kSYgMH0wQrfE6FXJXPOI5hY0aPYkCCxmPqrSyt9066yGVwGV8lw0iTfkD0z1aLdQM9CZAA-TWzW11rWJnyxprJGJK8-3hl1bLutvUSQBvIEwpDwy1rqWPdJGdBejyBtgfTYQvLsGINbzvkIFRSsOP271OR5qLM2CfMwnUcAu_-akXVaTkUUpKTWnr8f-lSCsdSMei6vVmidZ4cTmCy6yfoUFN_j71TcMywt2BfhePtzPPhF79lviqtz5oNbtMa4EUTumorrVcG0s-lVXIsOInZRdQman7fYHx9AWX0Cu7uOcSs4hzDEUHIGjcwU6NkznE4axMRCNXdJyeMN-6zwQaY9NHPjy-_FckIpPhk53beZCsd2KoR8vTnQIIFb4u-N",
+            "width" : 3264
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116174949481321986692\"\u003eZainye Sharif\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-toQy83Yk5STSFOEmfUgX2ex4QmktNIUS_ZYhHU_UoZ2IODFAXpgPBzJ_Oh1kgG2bxgZLRGNkZnwkKwMNh-KXW0uGT7dXA8wH8p4f9WMuPQ4Iq24bRVzI-Pi7QqR1DtvfMDCZwqB4dhrlF-mj2J4J1Y_i7lL2-td4zLGdEnOijG7P3Nypw_ngCko01g9HffOHu3cnmxH4Z7p9M19-Nwzob3xChNxIP-YAooOz2GOozmAJmiEwRFWgTz4caLESbeLm3-b32zW8sYv47tdHdAauOfK3gasSQURb4litvNrP4IRhnWGnObJpUdhBd1lx24Cs74AHkdBbee0TRLfvPIO-q5t3i0NAn4xnoUPvo0RPPqBk5LAAsOWacZ_gl4AbyA8x50yKKtlte80ZXf89HL1StN0wwylqqDrCFY5Z9VJ7myxjxY",
+            "width" : 1920
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105843563273037774138\"\u003eArilarkin Logan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sQ-e4jV_rtAtMHHKw848RBIJvkgn86Y3b6r955Lf0LuoEWHqo0kbh3wm-3chyWTEarQ6jt-s8PJek4P7vvyBh3GYOlbXJ3n3p2_2FZ-CZPqzWS5fWnSahelrn5nr-KvpEX8qLYtHbJ7qH-cUbLYfKfWQmvUdiKnpw_9IcBm0ItgaL_3lNyQnw4htPunRD4ZRmwgy9I26PkD9NnGzmTMBLlgn_RwOiVDKciQbbHsbvqua3i_8BTtOoxcJ8NFR40C2IeOXUNBF5WnSfioKd9AwnpZCKoO0VcMk-iU3xg9Sd7BGaeVmmxsyPIVI--h8n2XBAckMBr8oIp3so4SZh1K2Zff8oLumni-CL3vvRV9ck8WZaQs2P5l0BCkP0Q1WFmhfDVJZLJdqAdaezXCYyhP88TOjCLn_RKYpNsetb92Q6KKgau",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108766843492024631867\"\u003eAmy Sly\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-szNV1DVSZ1nHH09WGRntUNagDgIc-cJfphcDA-jHH4wdHDQh_UC_w--SJJdQhL22PZyJXUltxPJr11K__YCdGdiEHF9dl2oiySafp5lQlHYD0WdunGQl2EIJSexB9JrWgmcrVnyXB-0zmOayfkedRPO0k0lhONViVYzFb7upWIkBlexSdrm0B6GIZrV8XQPl16nbjKIZOdwCt-ZEQMgGekK21OAsLjCLjEOj2IeIxwUcU_W3eAJNVXSbCPfqXlVDA15_Lkjc4G3DxzgIdTjJBENqVmvaKWAYyuKXAyTk9hxKOqdFqrhyiqJD_RpCSFHwiO06SpYy_rhEweWg6qJ8XA3wz92msMRqrqk3Zdv_WFO5pLX4HtnxWmduDWxwvJxVdFuyrXsUc8neEe19tOKqXoTFwt7qqbmjPz2-0cX0viYpiF",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ769d0H9SzDER7MRJ9EEgGqw",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12401259991561520364",
+      "user_ratings_total" : 1385
+   },
+   "status" : "OK"
+}

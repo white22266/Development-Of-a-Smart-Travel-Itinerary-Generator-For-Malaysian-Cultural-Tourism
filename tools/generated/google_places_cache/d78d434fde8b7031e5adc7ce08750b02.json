@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "RFJ2+3G, 26800 Kuala Rompin, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8301691,
+            "lng" : 103.4513674
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.831063630291502,
+               "lng" : 103.4516309302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.828365669708498,
+               "lng" : 103.4489329697085
+            }
+         }
+      },
+      "name" : "Penempatan GBAD",
+      "place_id" : "ChIJt5f8TH-JzzER5bb5l8p_I1w",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6639290783784089317"
+   },
+   "status" : "OK"
+}

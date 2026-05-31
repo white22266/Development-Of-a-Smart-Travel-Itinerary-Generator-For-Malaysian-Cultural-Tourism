@@ -77,35 +77,7 @@ if (in_array($transportType, ["public", "publictransit", "public_transit", "tran
 }
 $startDate     = $it["start_date"] ?? null;
 
-// Load nearby hotels
-$statesInItinerary = [];
-foreach ($days as $dayItems) {
-    foreach ($dayItems as $item) {
-        $st = trim((string)($item["state"] ?? ""));
-        if ($st !== "") $statesInItinerary[$st] = true;
-    }
-}
-$hotels = [];
-if (!empty($statesInItinerary)) {
-    $stateList = implode("','", array_map(fn($s) => $conn->real_escape_string($s), array_keys($statesInItinerary)));
-    $hRes = $conn->query("
-        SELECT hotel_id, name, state, district, latitude, longitude, price_per_night, rating
-        FROM hotels WHERE state IN ('$stateList') AND is_active = 1
-        ORDER BY rating DESC LIMIT 30
-    ");
-    $seenHotels = [];
-    if ($hRes) {
-        while ($h = $hRes->fetch_assoc()) {
-            $hotelKey = strtolower(trim((string)$h['name'])) . '|'
-                . strtolower(trim((string)$h['state'])) . '|'
-                . strtolower(trim((string)($h['district'] ?? ''))) . '|'
-                . number_format((float)($h['price_per_night'] ?? 0), 2, '.', '');
-            if (isset($seenHotels[$hotelKey])) continue;
-            $seenHotels[$hotelKey] = true;
-            $hotels[] = $h;
-        }
-    }
-}
+// Hotel recommendations are loaded live from Google Places in Trip Summary/AI Assistant.
 
 // Day colors
 $dayColors = [

@@ -1,0 +1,1195 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tx1Wr_tzZ1XAIqSK41SKnuYozlXuWRBOx25iBFvdwQMZYzjmDXBqVhivuRrQ6t3acVcpKOh5ziWcynnfdiwsA1hBzVP2BzV8feWCMYgD4HyygS7GkvvvL1Ols2K9_DvB7shd7tWjSt_NG_CRq0NMta17DhFGzmQxnQRjkE9edc5pWo5GOEeYTUgVMdu6cW18znJoBRjmTK0hQcTFjg3-_jvgVYELD70xNGVof3B36R0xQ2WIqtqVqdkG1k7w8N3x8Qw4O3sfgoa4gvOVq_iWagCuauLQQQPnvIJiuc8Rbf4pjuTNZKLWhCmJSMJ7G9JRQx4ndnwnDflk8gtLIUUeZRH9dDR0QIxRbHd98-H4upFCXWSlg4Mb09n85XzPoWX3ax4PZ0R4tx15nKSjtwI23JK9BiB6kADFe_nxkP4MrhnnOLVFqi9QBzH-yaakx7KeyYzKEE_Xa7Xyr-xECBkvezmBJSX__Vu0saQqY9up6rIdfWv0h_t4fAOjz-glxIAEp3wnEu0G9YvFTyHNQwA8XDwcu1y_J-tSeTGVeS6urTJ3MrQzOAGqRRL8lcSI4Fww0sdJbh2gcYs4joAHud1-62QnYU7Laf_AdMoypsPMe6nMzbhnGF5Jihk85kTEvbDVwYyEWLWf8h955WhbU3_2Y_cTZWa8vmqsmtHk8cs2SloK5SIx8vOTUSY7IQ4sdFBLeCtN-luqWz6fEHUz-A1l2MV2SKDlg3nwn0sKoIvA3C1ykHC6Kyuoo7As-B4NYjK2zhQX0q8e1jox7yXdmNk_SC2aeVSzNpGRnjSm401bJ3Rnszulzr_cjj0e13CSMTzwxf3N8G_LDs",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tingkat 1, Dewan Syarahan dan Muzakarah Islam, Persiaran Masjid, Seksyen 14, 40000 Shah Alam, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0789952,
+               "lng" : 101.5207975
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.080056430291502,
+                  "lng" : 101.5223152302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.077358469708498,
+                  "lng" : 101.5196172697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Salahuddin Abdul Aziz Shah Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105967307226393400651\"\u003emohd edzuan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vlI-5dZ49b6UbqB3F_xcZBXDSPSgj8Vbq5gBp0h0bvTfxn7XS2LNJBJGck64h-aVsYkKTLLLISOuqpDM9touY_USsUjBYwTCV_AayNcBkXGi8Y6fYsQLTE45JjIuGZzqoFlsQ734cBmgprf7bGdIrcZ90diXiZl8kiZO50EV1qmIbeNHUP-xOtKLJh1h6LFxGTkuNS5rtBXVO7sim2BfbjrLOdbQ_1DjrWXjdUkKpXpGyXcjsT43bWQiMPi5YxfTdp74qQx_yNSri6LWm9hRt5tFDEF7guPYwsJrDuIVtEoCWNYi-QJOn-mY9Xce8ZNTirnCCbAZVeXtZdRUT8sE6e9mcqTCjZt1kOm9LQE18ULKvMT3-thyOfPuqx9UvOiewXNLFo2o0roQ9pXiXSmz1uBXCEBs4ReTu_8PZ7QeQ",
+               "width" : 1800
+            }
+         ],
+         "place_id" : "ChIJI2g2x35SzDERQrxACfDVnNU",
+         "plus_code" : 
+         {
+            "compound_code" : "3GHC+H8 Shah Alam, Selangor",
+            "global_code" : "6PM33GHC+H8"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJI2g2x35SzDERQrxACfDVnNU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 13096
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2386421,
+               "lng" : 101.6816297
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.239420180291502,
+                  "lng" : 101.6834786802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236722219708498,
+                  "lng" : 101.6807807197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Ramayana Cave - Suyambu Lingam",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111884011050592843748\"\u003e陳徐行（Mark）\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s7GtZR7UckZK6PykqYYLee47PNO3VEK8GmmR-Lp7yj0WtyXtOWJB74H1lPW235w21o43AB9Gt0feBp-hPBw8heR8htsgEpPC0e2zBi85j2LLwwqetYb8zXr4yJ1GYAvmXsj91UDL9MJofMjxboPBvMKGLHR8gU05e2ojwj01Na6BeA79ZUJvQqD0Govi7_e6zjxp36D4d0VsfWWK4IsuuFA4UC6MrQBs5z0UHODLtjijbNb0Ey6r78jc5I2xFpRjhENTYfsaoRaWsItKgKuj7HfFlzoqxrDZczhoU9hsRLEm8LsG2dA_EzyUjTs4o0CFOpruuUsS44NTl9mMwMGrhribF_VQfJaFeoX-v9S1H3zD_jWKqB3YwTKfBH5h-PNicR3Wu5e75tRq1GKxOy3zNtFXCRq-1RfLX2giHM6LPL7A",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJC-2QDg1HzDERDSzG4ioNJ-Q",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQJ+FM Batu Caves, Selangor",
+            "global_code" : "6PM36MQJ+FM"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJC-2QDg1HzDERDSzG4ioNJ-Q",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 646
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "MY :, 45000 Kuala Selangor, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3416401,
+               "lng" : 101.2463485
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.342437780291502,
+                  "lng" : 101.2490101302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.339739819708499,
+                  "lng" : 101.2463121697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Malawati Hill بوكيت ملاوتي",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102546794971378318513\"\u003eWatie Ikmal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sFr7l2dxsCnTG9pNsymYH7Rnx7iZgaYYeX7HHBUXBhHLur4W02_KZPnYx6jrGfc583ft4kp3eMRkYgH6ODt7hdmHH9zowJFQFy6BAygEmw1Yavlbof6yRh4i67efGQF6PyBhfTiJ39TQfQs4xbh5pSpRaAneR_RFTQyJW24M97kEmICXt4TvqfpwHZTLokNCgkRs7jUJ3W5GWTdiS9-NR-C4SwtTHAUEjKapDRiC0e9Nz2BNkReKg8yke-5wULQ5JToXp5kmWA7kFlLS1m8v4dyx1QOAzZVeat5nGf4vFbsJjmq4IZtXpr4jrokK7GRfItpmom2FfSbBI48rRiJ5gh3BBd0aBRcGHHvOWm6fnk_3qbJTuLJ1wtopSjLMEVFe1OhyjKvOt5LysXSp5AYxfjfl7AGsvohiaaBZ5_J95FiB83",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJDbHKEVnzzDERB0onrkufykA",
+         "plus_code" : 
+         {
+            "compound_code" : "86RW+MG Kuala Selangor, Selangor",
+            "global_code" : "6PM386RW+MG"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJDbHKEVnzzDERB0onrkufykA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5789
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Raja Lumu, 45000 Kuala Selangor, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3413417,
+               "lng" : 101.248745
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.342550580291502,
+                  "lng" : 101.2501806302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.339852619708498,
+                  "lng" : 101.2474826697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "King Lumu Mosque (Royal Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108266503369459588264\"\u003eVernice Choo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vr5xoZqhloPCjkI__vQYHULKwWmCnXTEUIUkvc_KVnigfuiMCub5yFL-hq4bpBYQBhWTQhHz6YTIEZ9KPG3dSM1lmazAo0njDA6hmggB3sgDCYqCz8Os6V2nZY3b7tzICKiL-d5WciQ91UQ31XYD3gxXls1g8oj9Awf1oO0Sx0l5OPQPGY7RgL5Nr-QyQZa3P_0SfDHj05u97dDjxenFF0mQ8vKv9koMA9G3sh5TAPFA2N53onesg2lCLTpiNSFHLhO07cx24Q8GxRBRF2voovzLuOp2D0BWZVQKSP2qqUBlhRkfrZaUcBnivkEIPZDd5MzcZ8A5TlEeUtS2Hilow4coZNkqR8kkMdCFGm3WKNttjle2jAYDuOuCu6LZFLDIPJrlwMmPeU6yEizHF53nNABGASaAp0oPe9h93JL3oxeQ",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJqUZ-D1nzzDERJqVjWrKJukI",
+         "plus_code" : 
+         {
+            "compound_code" : "86RX+GF Kuala Selangor, Selangor",
+            "global_code" : "6PM386RX+GF"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJqUZ-D1nzzDERJqVjWrKJukI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 344
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gombak, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2378844,
+               "lng" : 101.6840385
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238803480291502,
+                  "lng" : 101.6852723302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236105519708498,
+                  "lng" : 101.6825743697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Caves",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103716561345803065971\"\u003earavind sp\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uI7WwWjECjf4iKwh1lbpnZoXamVnyYsDBlzJJxKv56LKz3OO5hPhC0paNXKcWVedSMahLIpht0J9_QA8GWZykTG1LzMoVhPvOjS6kkwh59jS1hvFKylfFYxefc19RBYwh482lEh0UBWc53RAQOS4QuYikO4zjRHCRsHHY-HhXCwBhZeKZ-gfNaUMzhpXZJqJmAYyR2HE36hUMX_dhGjYlsLI_oAoaI_i75wowmusUdS3b-Bcwy-ETZM-IB4RkdFrRNSbAx0yA6XoLDRwm0YcCxi5JSqpChPzj3rAgSgwpirjFwR5ycDkHdzb2uhESq2HrhGtHtHsJzC0POxI5HbbVCeN0psEu546RHOLMVXwFZkziPevdPuTfpmcEIHx2noLN1eJGGgjwGQXnLWjLVkO-9oMSd1aTzT6KHrlCpi5bhsfMY",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQM+5J Batu Caves, Selangor",
+            "global_code" : "6PM36MQM+5J"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 78770
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Raya Timur, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0346219,
+               "lng" : 101.4504646
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.036254780291502,
+                  "lng" : 101.4520488302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.033556819708498,
+                  "lng" : 101.4493508697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Suleiman Royal Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108735974289201065625\"\u003eiza thepropertylady\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vUm20MZAA3VQvkNyCURV7FHInHRNT8tWc7eevRAAPg_L6HO60cjCVu-uaXB5cvJHwPU5rK6xmUjA_JeHofpf26PYTV0lqczrAvWxV5sj540N7ORSh9ix7PD-V3BIwhxIpbChqQk3jxf6sxdTYYOeCecIPvhdi5iBxB82W4IcRS6W8T9UAcUVMHorvaaS8KRO5G22ANvAy6hojVPz86_C8oM5iwjKprOkSxk_hXAWro5N62PXYwA5uZxRnk3Plg6Rv_kqEKWP5nJbPadfxPn58Pi5IKkjgrpsL2qTLqF8iSFWoliou51M8LEUVPFTMRki3zD4kW7qosYwJzDlUtUrVfNub8gnwCnr89U80iiuSg0_Q7g9zyVuDGLB1xe3hVH_36I001DSdzJjWMw0wuil-pBZi_n1JC5FIcwgDfmivnVA8kjmWpCNDmmW-YiMxG",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJb--aZrOszTERQRRydRmx2ms",
+         "plus_code" : 
+         {
+            "compound_code" : "2FM2+R5 Klang, Selangor",
+            "global_code" : "6PM32FM2+R5"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJb--aZrOszTERQRRydRmx2ms",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 684
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "30, Jalan Raya Barat, Kawasan 6, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0375624,
+               "lng" : 101.4424898
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.038922180291502,
+                  "lng" : 101.4439165302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.036224219708498,
+                  "lng" : 101.4412185697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "PERSATUAN PENYOKONG RUMAH BERHALA KWAN IMM KLANG",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2353,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101200607262154155817\"\u003eXinPei Yeoh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tR5wS0yecExDRhRgsa8c7n9f8wj-uaY103-3iN81363EasmETTpFAR7wxTQ9ZAVvC84PtMp5kxQMcDrlZLQ4UWRcsB67w0FLtaBC5ZOqWmXBIP0zKxOb61gd7D0XQxmliczwUsSA-FW4udvuNmtiWfzJTjVa3uNjy2Q-v_9p8YZJsw2AiyyWXod3D_3-U9WfmAuh3KyY5iLi8g-RloIM6xQJeFBMXGplCGnYpUHF32Uye9p_Dr3qri9rqZkcb0MLVWNBU9dh-MShY9ltd2FbG7sdh4SxaameGO9ANEFXfElQGzJEZqo7D7GM4XYnRaRgwqJJoY43GBMJKDQru6ustqGFIXqZgl9KItREN5MO4AvoZ3NOYi4YXNTu2PY-LoCrY6vdM9yikazzw-FxjDRilcAylz0rtaTbNUW7OycSi7sZ37",
+               "width" : 2842
+            }
+         ],
+         "place_id" : "ChIJP03O4FJTzDEREAzBKVVpV3s",
+         "plus_code" : 
+         {
+            "compound_code" : "2CQR+2X Klang, Selangor",
+            "global_code" : "6PM32CQR+2X"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJP03O4FJTzDEREAzBKVVpV3s",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1712
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "44200 Rasa, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4977778,
+               "lng" : 101.6351783
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.498871730291502,
+                  "lng" : 101.6366090802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.496173769708498,
+                  "lng" : 101.6339111197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tan Boon Chia Mansion 陳文晟大觀園",
+         "place_id" : "ChIJ-Qe3BgBtzDERlPUz6-CIroA",
+         "plus_code" : 
+         {
+            "compound_code" : "FJXP+43 Rasa, Selangor",
+            "global_code" : "6PM3FJXP+43"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ-Qe3BgBtzDERlPUz6-CIroA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B52, Kampung Batu 14, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1129847,
+               "lng" : 101.8154811
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.114311780291502,
+                  "lng" : 101.8169167302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.111613819708499,
+                  "lng" : 101.8142187697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Hisamuddin Alam Shah Mosque, Hulu Langat Town (Main Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102896523489429822759\"\u003eFaiz Adnan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uvBrTgiWkc74-d-lrquGzgjEvnYGwygrUsMi9s9q4WayYTYDyYmE3SJwhw2PWdztFJGbFAuwDNm4jAleg3xH0QTCw02Wh3V32OBErJKkn3LOVyU5GgcdgIx7CmBFzqyjiC7Y6E-3hfal-QAu6mAl7hFNZiHO1U4mfkVqJicO2USa5iJCHX0z3AVBxstVatunOt5lojvKkvwv7AJu7cZUpI6oCRYXM223J0B38AeTKWo6n5zrHEmvRNpQH1WAaMN9MT-l-7ykm0NHRoMKbLQ86mgxHMgbZTbrUkmcf69jbOdGFNuUn69e9WO4fE6wJ2uZETGBkWE-Pg3XL4bAU633UAkgzfdZs3gIgZnlQX3xwJ-0UFTRAqw8v5JyJNxwuUZ-XhuQ08_MCla4CI4WXX3bjujAavERNYGTndLtY4F08SmQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJnRzkK18xzDER2V22xcBIwHY",
+         "plus_code" : 
+         {
+            "compound_code" : "4R78+55 Hulu Langat, Selangor",
+            "global_code" : "6PM34R78+55"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJnRzkK18xzDER2V22xcBIwHY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 356
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "45000 Kuala Selangor, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3421994,
+               "lng" : 101.2461812
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.343800080291502,
+                  "lng" : 101.2475261802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.341102119708498,
+                  "lng" : 101.2448282197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Malawati Fort",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116507052604375546587\"\u003eAisy Iskandar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u7rwt0P__f5f1uB-U8wcbKPZ_QxyV625XfKeJWfaDcJQ7TIdoTbVDnV2yZWDq5F5P6NYdBPqQ2Zc29TWsptLm3dHLG4nBVgpgx-1yEuBCf2wFU8aezlpAomBMWW0oRwdIfl3NFmMjaz-WHyhTL13AhZg-Rwk6ZEdqBYckFHEGc3PQd6WZtcNWFCcMszwvc5m7GklUBx2_4D6Os8VLjl8ib3sqhOpj28qXrCy82JMeHta-WgC9e2yR56TrdDiYDsoxdGplVVqU80PVQ4mZ5Q2w9Z7GS8r1CRM9FM2k1izUD-6loE_ZY3uKMFMp1-3wpd4jzZhrm9vwWPfqJpL_ajC_j8cWw3iBhQsZa5oTeK0jV41XJlLYapUZ7hjO_V6C2umc4BTRqujBd6h27BLdhkPcGZrZe9F8KE4xn70MKqUvoJtISXF2CFhtpZ89jjplL",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJsWjYRgDzzDERQBptE1KHeT0",
+         "plus_code" : 
+         {
+            "compound_code" : "86RW+VF Kuala Selangor, Selangor",
+            "global_code" : "6PM386RW+VF"
+         },
+         "rating" : 5,
+         "reference" : "ChIJsWjYRgDzzDERQBptE1KHeT0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Semarak Api, Cyberjaya, 63000 Cyberjaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9321891,
+               "lng" : 101.6484702
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.933009280291502,
+                  "lng" : 101.6492130802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.930311319708498,
+                  "lng" : 101.6465151197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Raja Haji Fi Sabilillah Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106499334107758260634\"\u003eFaiz Kembara Sufie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vxSuwi1pJL8WnwbGheZuzMtsGAzg-FJeOwWX1ZWU_-AkehdSA1knjXkSsEmvsZHUtH1Ofo2nutWZXaLXfM2Fks190sQlKOCWkAIbPO_6ySDwCgDdYeyPgwiRtaXjeAnr8T10MVEU8LFZUMgghpD1qR79k74S8SvW-8NtlZSEvyzXpEjH3jeS7vWUKlM8X0vU2c0Pq0x2PyCEhscG2u6JTqP5LMNzuYZJoGBmnATt4X4vGxLQA2H_Mk1st7SVnM_0l_S99gETkld9iRMfzkbM8_PBIWICZMvEr7Mm2sKacMzD6VREaCrm2dYMeYDZcH5FcA-Bwr_Sww7lAorHorM2d6x84bMlTTQIMXzTuUfLMVT2A6KlP4U7z6dKBAcg-65cW__moAfC5254sv8Cer8hdFkTcK93ZgjYBAxbHoReYqxGOS",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJXdl9VPm2zTERn0D4oXDHqEU",
+         "plus_code" : 
+         {
+            "compound_code" : "WJJX+V9 Cyberjaya, Selangor",
+            "global_code" : "6PJ3WJJX+V9"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJXdl9VPm2zTERn0D4oXDHqEU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8988
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot Masjid, Jalan Bazar U8/98, Seksyen U8, Bukit Jelutong, 40150 Shah Alam, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0995294,
+               "lng" : 101.5387326
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.100998080291501,
+                  "lng" : 101.5402847802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.098300119708498,
+                  "lng" : 101.5375868197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Tengku Ampuan Jemaah Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3599,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114150524797880295612\"\u003emohd suhelmi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-slqOQn2NIW5fqGrRwd2DJV0JqEWCs9810iTqKLsrguFLlucPyJ1ylefNjeZFbnNFFV-20IzHrY1j-2tjhJcTaAmuz8ekiRu17MbXYoQLqD6xu6xuxa1S_0zEFaBFBQQhS5rHTor_1xdG4ND9ABnfTQRnh6ONLB8OWopemLr0nCxeCudjTr-QLicJM2iJsaaFPLc99hlNGoZ1Zna8_w4Di8XApARv7p43WwFL3KePb7oJMhc92SJetj7NKNy2MKF-owHWkMW1nXkSiIMJfiMhdi_ffYE3BZkEVgWK7xaPLMUYiXyIAXZO-o961SdOdikH0mRetJkstejcAIKlmQvMy6pg8ksT43BVVhYL0xZW4RIoNbW0uZLZT_jxA3Slgn4_cY_hNx69Zw_XOw0q-M0eNQSXsrJVY8t7czvAvZROtP6Q",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJNR5HhO5NzDERDyqiFbBtEYI",
+         "plus_code" : 
+         {
+            "compound_code" : "3GXQ+RF Shah Alam, Selangor",
+            "global_code" : "6PM33GXQ+RF"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJNR5HhO5NzDERDyqiFbBtEYI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4424
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Persekutuan, Presint 1, 62502 Putrajaya, Wilayah Persekutuan Putrajaya",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9360702,
+               "lng" : 101.689213
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.936832730291502,
+                  "lng" : 101.6911379802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.934134769708498,
+                  "lng" : 101.6884400197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Putra Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101871907543931816623\"\u003eAISHA - M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tCVkVnTXMwAixacWN9xxwcvtv1W0QFDUm8tJpCHOUtIwHlcR11HT7CLK9zN8PUguwwOnC7NFxxEDup5dqJMa1syj7HFxFT_TyA8CMdwfhDTRBBOuOFusXWwXvqyrLZAX4QczdWoBO5dfdh-yDI9UkVhlvIVeDt_OrDvukasZTRuyB-_q7RNYC8DiN6K5PBgdL3j_1xXADVlPg7p1C0zuVr0tI_AOKELQ2QD-isJ6nlWJFG_3YBgrPZg2TA6qL6SlO1GCYukLZ8GvRsIyC2Nk6H90-wbMfVUKKKtWYA3yU4w-liAy87abCsutnXM_r8gNe2S7oCM5u3hMjZJudW9nfqG8cmcmW-0kheKkyvyS1H0-FPydmQCsTp7Mz30X6rolO-iTpD0t-THtU8KHObzhRag1syeKsyIP1wM2wJT9K1HBPO",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "plus_code" : 
+         {
+            "compound_code" : "WMPQ+CM Putrajaya",
+            "global_code" : "6PJ3WMPQ+CM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 23927
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Hulu Tamu, 44300, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4638644,
+               "lng" : 101.6969346
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.465058280291502,
+                  "lng" : 101.6982653302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.462360319708498,
+                  "lng" : 101.6955673697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hulu Tamu Hot Springs",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109175839420631527140\"\u003eyee yong jing\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-seeRgDKbU_WEpUu9BTZza3i5jTVJVzTlmnwCkDqkRrBf655-ws76Wi266wEOAMOMcxHwFARNebHctoN4htn55O0GBRlLi5kebX6A2v0Rs7ftHi8cV18xGX3c9XODfJejLWyYhRM07a4JWWbsBgYmjilTeAUn9HSLLXpFW8g9S709pFiNsi5UFpRVeG_X8Zw6N8RdSqn2tVWVFgZVkqf4CRtT8LW2zWTx1sfCr4cJkPQYZco_BZNYPCxg-CB6cG-Mugrk92HCNotg03CHNlKca6E0dnyEtwjacq8LO3PE8Au80Lx31BSeIw_5fww8yxysgg_ETcN9j2vq56XtsOSTmhUEKnhrN7hc2IphcRIcxPvc6_G9RPTWcqZCzltVU4PyFVSsegFhiUml4XJ9-oc5XWjxK0dRjYrOotbviGpw4",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJg0N8FNdszDERC2cgQpv9HWU",
+         "plus_code" : 
+         {
+            "compound_code" : "FM7W+GQ Batang Kali, Selangor",
+            "global_code" : "6PM3FM7W+GQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJg0N8FNdszDERC2cgQpv9HWU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 861
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "44000 Kuala Kubu Bharu, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.594444799999999,
+               "lng" : 101.7355234
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.595799180291501,
+                  "lng" : 101.7368025302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.593101219708497,
+                  "lng" : 101.7341045697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sungai Chiling Fish Sanctuary",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112185049923362029270\"\u003eMd Zohrul Islam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t_Xx4sFZbpU4liy9rblXXxaR7lz50sNCGLf_MJFWirT6h2fTeP96uqsx0Gv4U_12hhDkFg6oKqJW6cbuq6lp4jEGPF01IPoqiN2kZrdZRhucdOAQ_qfO7c4nkYvrCd6lDVQ0i92d-4vR5JA_7bJBCeVKuwPoa6QCnCEsL1WUL5PH2HwUYy_SMS3Gfu8Wgi-CtGP6r7bFJFxBM3HF7DlltNtprI5VRy5Go8iLEZ16yu6S9KLFbe_a9TAoGrwGqmrz8uZleUg9aFQFL2WraaEt9w69wKvw9d4zqcEONR9PFUxEDYkKkwniRMMlZi0fbW_h8ubJ_wWnmuTEJA0marZbmfyFcjWovCz6IjcG0KKGp7-kCpPXNZtH13_GOQ_ll8XaJvbLcPnBeCiDsOd0KctKiyC6TMtsTO4D0_FUVBHQUPKbuW",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJS3Ye2WULzDERDvf_io-ItFQ",
+         "plus_code" : 
+         {
+            "compound_code" : "HPVP+Q6 Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3HPVP+Q6"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJS3Ye2WULzDERDvf_io-ItFQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 655
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "25, Jalan Tuanku Abdul Rahman, Presint 3, 62100 Putrajaya, Wilayah Persekutuan Putrajaya",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9191718,
+               "lng" : 101.6811676
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.920563880291501,
+                  "lng" : 101.6826297802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.917865919708498,
+                  "lng" : 101.6799318197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Tuanku Mizan Zainal Abidin Masjid",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101155827219787864411\"\u003eMohamad Amirul Syafiq\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vw5dvRKzEIh4e73gVUzHJPjxpkB9T5e_8oC07VMGdgUiXylqopx8vbtcRCfO-wiM4req97ekZyupwd57P8gNlPJLrIjZlTazSCjlBkcq84XulAyq4YVAi30AzYce3uOM-hK7I1IqIv7KivJmOnPIeKkYG98zS_g5-lDVM-h5q0zuaaQIKzul741LXmpNFfGH9JQ4C_jvJiKvGgrCFRML6b7olEMyTohRWp2ntMsJswkdMn7qDdxyTbZCX8Kl-fSr2-Q6avi2fkaLZxMzDTN6Zl1rcphtYpHaosqJ0aQ8A9TR0qcIwiRn41iyBUzdTDMgKwcI7bBgEzGhFgmPGKcYBa8G8of5iA-9FA-GaP_9yZVBaYsIG2hf54UQzy6Q7jZxnhZ3msOyaPDj2FI5oh3ePEp05WGQpKsM8FZwJZ1MA",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJbTPNTEq2zTERDoNeZYmAO3s",
+         "plus_code" : 
+         {
+            "compound_code" : "WM9J+MF Putrajaya",
+            "global_code" : "6PJ3WM9J+MF"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJbTPNTEq2zTERDoNeZYmAO3s",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 13253
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Perdana, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1419783,
+               "lng" : 101.6917573
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.143361080291502,
+                  "lng" : 101.6925627802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.140663119708499,
+                  "lng" : 101.6898648197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "National Mosque of Malaysia",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 788,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108318017359840412871\"\u003eHajaranah Hasanuddin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vlxQzGsfBAb6Ee6_iGSuwqtRynOVkoygciMpGgeatWuB6ZnU-itYNDNB261qeek3evraca-MuGgOB_Q6UfDhAe7KDcPhvcDrR81BUWIVexf6caxjfwQwvlLBGThhTXYI_5w0RTdTtRCfqiYwROGLiYYSSOcZFi0VIwgnu1tx07yLufujILjq0oGfE2UUQh61HRxRLgpnMfJ4qVX4yv4P3W68g1Ybcn0GWiYiBwOuyD-rnbhEbwuxzfAp4XUPpXb47cLBlcYVn7rgbKiB9Nra1nlT9pfFduq1XOQ0I-egVoARAgNika68e3xBMwHB-9gWykrMkM7AOUR437rBJKAREYOCl_tWVKdQL0G05zhWIDZXN2J6LbH05tIYzlotFDmMzBbyFnOyZepup-6WmF8n62814AeW2yr9rdpa_vOvinwGU",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJJX8hZM9JzDER-yYg0nIT468",
+         "plus_code" : 
+         {
+            "compound_code" : "4MRR+QP Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MRR+QP"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJX8hZM9JzDER-yYg0nIT468",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 26584
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "HP9Q+GR, 44000 Kuala Kubu Bharu, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.568848,
+               "lng" : 101.739558
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.572740600000001,
+                  "lng" : 101.7401006302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.568847999999999,
+                  "lng" : 101.7374026697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lata Medang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103209216008376519646\"\u003eMUHAMAD FARIS AHMAD SABRI\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t5HBTmOdYZ5oJmolF4_Kro84x1Ubg3Dcu5pU7v_DXEyEahWID-RXpa-LAFRXNLuT-UlAOC5ITpnNATl4QqbJzaF2f-KghE1U5GY0-h6XpCDjV62sraDieUuWRokfpBYaJWMfseZReAXASVDxFIoW2Y9rbXqVesTP23HHeEpAetrqTteA7ky916j0Rc8MoT3wb0Bmtx0ribdg9Vw7Lu9MCUFQvpNGcO1HLGt0NI-54BJyBprX_Pj24kDYfD7z3T296sGHiqmM75Ra9QXf1QbgTFE59F4Jv3DLQ5KAZXmMABnFt8-4nUAzPRZrJIA_-WUJBbAvZ7KA3LU1N-mFEhE7PTg-NT42G0NbMIWs0La2Tl8Vm062FjpvhSttVmBdVt24ARWn9LsnRNptTZRXNV-b9DAqrn1LF2ByIkBSYj_i0NlRw3uaUSMUHA1E6LBA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJB1TT1j0NzDERiTueXoaF3fU",
+         "rating" : 4.6,
+         "reference" : "ChIJB1TT1j0NzDERiTueXoaF3fU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 23
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, 44000 Kuala Kubu Baru, Selangor, 44000, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.540237,
+               "lng" : 101.7559781
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.541585980291502,
+                  "lng" : 101.7573270802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.538888019708498,
+                  "lng" : 101.7546291197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Lata Medang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102982975773387868831\"\u003eCK SOON\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vfmcmAyn6qdk4y9JPFI8m8f9FiOCtQOL5WYR4vn1BYDpydwkQIQMkLTtCJGYROYKyL6rn1UaRvXLQI5_2jVKIQxHjB9iQ8JFHAJZrL5UwhQcdbqntxcxSv9OafBrAijtt9YvJT_z1CQsbKWqd91QU0x1czdpCe3C2vMrFjfQnmlg5zsabjZ38Gc8gy7Okyl7fDo5mII37PinT_dSdJX9YBh-nNH5XctvlSwnqyv2-NvL1_OblRAISKECZiFt_bUHaQ7PmPuK5Hswv-LiJ5292O9PclWZhKigqZhGPS2VLd8LfO534LYqtrYJpNwJX6oaviNOfAfFaZhFBH9XiUUFpLTBxd9j5K_L-ZUdC4Hs0kDToDHMWBEpyqLJY1Pl6hEzZJ1pcfmQoSVBoxs2vALuSrgiEDf5LcSla43k1euSEO2w",
+               "width" : 1020
+            }
+         ],
+         "place_id" : "ChIJ31P4QdgNzDERQ2ZIVlwjX40",
+         "plus_code" : 
+         {
+            "compound_code" : "GQR4+39 Kuala Kubu Bharu, Selangor",
+            "global_code" : "6PM3GQR4+39"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ31P4QdgNzDERQ2ZIVlwjX40",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 84
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "30, Jalan Sultan Ibrahim, Kuala Selangor, 45000 Kuala Selangor, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3425384,
+               "lng" : 101.2490089
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.343917980291502,
+                  "lng" : 101.2503983802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.341220019708498,
+                  "lng" : 101.2477004197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "天福宫 Tian Fu Gong Kuala Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108266503369459588264\"\u003eVernice Choo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uXxTAgEnf8T6siDyZTY1WeL2fCNSc8NE99oi9K2u4LSvoUcf9IAV_hI1Bb8SVfeNzBE_1wO7UDHR2hzsG92TzUp5pVkzZ079B-F1X9_81FKE6ILBUvp2mVfflDL5VVaDhbvjTghvywCP8vtX1xOEASuwScDWnigklw-33FrLPIiWG_g86OkHRXXhWdzYk0TrUWeWW1RmH5tnhIzmukt_lYEilhjnfKIh4Q8fA4_yYy_Hx4mjS3sxvF2jtMaS5bxFiB96IG9HicFU5e7Z8rv9kpr6agdZuTvE0fakLZx7jfjsTJhSrtMpT1ILyCmfinDect9kww0CEZvvlts3Rq92M65bP5Di-21h9F8q63R08qd67nTtXhcLYM3KZDGzS1mFz9-bt-EXKJmWyaOcXwASrgfWKrFE884XAJ5c_QVcWUMFZx",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJwzXWsFnzzDERCQY7di6OnTI",
+         "plus_code" : 
+         {
+            "compound_code" : "86VX+2J Kuala Selangor, Selangor",
+            "global_code" : "6PM386VX+2J"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJwzXWsFnzzDERCQY7di6OnTI",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 23
+      }
+   ],
+   "status" : "OK"
+}

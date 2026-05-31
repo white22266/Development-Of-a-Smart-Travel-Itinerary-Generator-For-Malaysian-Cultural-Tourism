@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Unnamed, Road, 21500 Sungai Tong, Terengganu, Malaysia",
+      "formatted_phone_number" : "09-666 7473",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3578132,
+            "lng" : 102.754385
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.359565880291502,
+               "lng" : 102.7558564802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.356867919708497,
+               "lng" : 102.7531585197085
+            }
+         }
+      },
+      "name" : "Lata Payong",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 6:00 PM",
+            "Tuesday: 8:00 AM – 6:00 PM",
+            "Wednesday: 8:00 AM – 6:00 PM",
+            "Thursday: 8:00 AM – 6:00 PM",
+            "Friday: 8:00 AM – 6:00 PM",
+            "Saturday: 8:00 AM – 6:00 PM",
+            "Sunday: 8:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108811694975864590561\"\u003eMDKAMAL\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vOhKRmL3sN4r2LqZQhemmk7EwdyxKxtVbDjdyM-cwKRzcWaDlIjAwxYKXpuvvWAtJyK4bKAHqBRo9oeOtBTuAX99-ocxrjFX4P85i6j408eqLITGKYEn0tIZZXgH4OF2juqjWwNkeR6dNoEBgQHK_NysD1GJPOMulaXdzwMpHTYwBhZJQiUJyAvojzSBx2vfskT6zYoymQ8iT5oEFlVvL9pdbg9C8ppVAmUe97NSzOUlOckuNIkZvmeuolWnuBEdA8IcBifIpqELIUzp_O2lis1d_6hEq1PmbN1jpkh653ArzrGoloqU8wAZ-P_mDgxwLWKP8ZpnBDdCDG8BxVu4i6Z8SoROHHuqdZ6RVgxf3TdK6eKyQTO9lgdAtomR73qsuKoENi6nJIc72Jz1-XAAwCI1Hsr-imypy3AIk8BhjKkd6S",
+            "width" : 3264
+         },
+         {
+            "height" : 3968,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107145658531090588264\"\u003eBoris\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vVUXdpcbVlFVThPSs2mewNp66r6jy79BQjaoiNSTnrOTcrwvmReDBc2CsRG4zNWlV0JEkuAuj34S0h-Lzse-OWZoQetS3Rc8jLVrOEHI0kA15fKPfsmPzk1bdUuwFOAkO551zZgBToOYlY2ydOUdgD26I4dtvqfEdAr3B0xhc8Pp2NIryVRjFSaUNrzixtvqurc-EIF5DjrmbhMGBdyab6IXhBALTS4oavRrAg58ZO1Jw7VD7qxCwyKvQBB49oXceZSGzZaw8jtnS5EhEqBhZ6cfFq-1dN-cvU4tRPV_J6wrJcBgiZU6lypk0D8BHFhb2d6xeoHhSDabbD8rZ4YiIx-6hfJBlq01fcR-T1eNv747nlNHB_wnzcPilbN7fJdYjYvSYocZ-OIe6d_katO_7vrBGrdenvKBmJzQkbwYm8Lyrg7-YBTdr8a1jwPJGI",
+            "width" : 2976
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109739505993705332947\"\u003ekamil ibrahim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uHYdZf-vZO6bXhV-4GtfkRoOtQqX7z5gHYJ4UATJuZFvxh0x0IY9-cTu5GqbQGSqXn_t22zq7sN61yZMQJSnQT4pKAK8uv4QiZCcnoyzgJW5opUqr1cTd867jz4I9CB3F-xIPn_ya7KXVwy1OkvjhuyKnJ3jGd0bSskbaxGesCVWxQHrsDenii6_3q4ko37WtvdZPbr24BnAo1GhYLAA_i8_GkhZFPOHoTG_PJ_uqFpxN5PV8Khvmb3FAszgKZlptg6UQtrfpDMA4qcbPyGHG6kJTDghXQOCil-3kyi5iWr3Xb5UPCEO8Y_rMdZ79Y6xt0mpTV7aJK4DC_pnx0h8WyJvgzAxs8WlAnIrYJdS0QK0EndR6NPueNW6TPjeQudUMz_egCHtZGpoTAj6RKCWbmhIV8pXxExclMCTr4IN86fjxE",
+            "width" : 4000
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111633234799731626850\"\u003eRAFIZI ASRAPIL\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twfqcomm2q-WEgKlK5QOeRvknIbN7oZy4q7_drpQqyGNMSDoURJnN_t6dHcBLNjTMh4mb8Klq2WsJ0lmXLMVWEcJS7S_rdFkMHyjszdQXPxpBHackrkMbEoBn8v6QSDhXFj6kjrfvaF-vblk_9sgY2ORvtnklzecswhfmbBd582RA1rjx267bg31vuJKt4Gv4SvzaC4iESHUw-WsMDwjJPM-qQh8HnYI6m7YFjUnMH3S6t-39X-fqU0pdYJBAKZknrhQDCjlbD4fitIOtNOkpGNGAZMKwekULkdwc8xzrQK7T55f-P7PgCDOBSISazvVqbFWNOU8oznPUBGlPeN9EA5DnpguVoS8J-hRNxOXH02hr_p9Ww9TfOluVZ3yZW0RTsaPjja6X4z_TCXPHvB39TeXhU0evT68XL87MG-gBe0Q",
+            "width" : 2701
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104174134944823553153\"\u003eOscar Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-szBAq12ZL9sBePun3EiEsskUhBHmNXRH0bAEY2xiRUeoF7wnH5Grv2dhVwUby1fuL8WHOOn_uLcnMSqXYZNb9IgUKdG-0_56YUuufXgI48uxd7PPoLkVicqSsgFg4JWzLw7ot5iF1MWu36MuYiW4OI78YBHAZHOZReRALRltONVxuKSYtXnoIByifTkeIvzRlReOYGmioERqQhxOOVF7z4jjNy6yldw66_GRaTqCDesqUReXL1Df6Wo5ComFvxUw39rilOgAPWUJMqlWyd5Af_kqZR3xTI1KdBV-H6nRqu2BdUXqt3dJVVNBQE6CkLlyJUbH6LPHL0f7vdOldv15oihKVnCmEGvy-7UC1Cm57ovL8d9p4LKgvs0pr1oJenC42FgixIjRT027BXn5HHM7O0X13WxnEXfsTkwRVNYnawik5B",
+            "width" : 4032
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101693642793570084205\"\u003eAKU Fazly\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKdHV7MjJu7lg-VP2KlPpKVigWfZOjMOs25-O4PcB4reRAGzhHaupTA9iNLfUIqFTHyHFpVjyI8IzTYADLb_GxLCefelVkMUXy6Gfbn2TxLsrqT9jiVjccHSU7ZEwOXm8eE7yWKTyVpuO5uBTHvNWDeS3TFgrDYo1apTG-TDMsE5hGBlSwZP77BugbRPi7baa-u0nU4agK1RnE3YB2bt0arJVwoUQWdpKGqCgeMj5UVSJvCmRvPNafL-dsLNOBjJsd02g0ww3pl_9Lvu7nzB67gJUYcgq3d2OKC13NGcaOy08q7t8QBleaPJ49nSpCZAQbkcaWoXk3JZ8J4CjpPvoKKuFuFHV4ypYmnvqbQKD43FcjSxLZK43GzSv5ZyxysQU1X2od1Izb3qu7rhftyNnxCAkohpd_H3hA3wKVRJpcEg0cDXrzDlTwrXUsmQ",
+            "width" : 3614
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115558771873066162366\"\u003eوديع الجابري Wadeea Al_Jaberi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sL1QgWBYSaDOG1tWFWIza5ydg0CcvCWNBax5YhOXnKh9-IqnZcJX22L7RRd51ESxkPUlc85S-EdiB1hm9KuIIrZ3DjppqYa5xpqH3Z0BfZ6VyxV23XEpzvhgtcmREOe5VUU1nAi3AoOzEpizZlAASUH7XxNpr0maJ2xLnMQJJa__lNZiyP20l0pFl8vgv-5HkoDZyfL12Li3V5e_DZyYxf6rlk6OtbwmKE-2XCn9S0TsBh5EpEnTtBbelaw5EBawFj66gblere89Hdr3ZO3d8x9V-vLVpa7eMja2i_LlP9FiWSeQOFF4hULWlywNqYjdRe7gZ-73k8to4Ca81pyOrLCIziCl-yl8J3CNu437Ro189Qp7ToBFzMCGvgoS259GWrC2iblxNd-pKpTxFUx_Rhq0Ka8wztbSb6RPUIyBu1Tw",
+            "width" : 4608
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115094818221812692960\"\u003eMuhammad Khairi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sl5Yb1lg4vtByUmHv6UX2DuiLURcZHGZGTmRQUMyL-rBb9W_J5oGustJIPql-LbBUQKf6BxCVNOVH1_MwaO1gigHOqEh6B4NnwZIDILPGtRUcx1zkenKXwzHFrTwRCr2TaKoUC7UTAJ3oxpPTQAeKjVdBflg4ZrnsIfxPkql6dTZ645T-4i-nHvFkRgmZMnq5k2z9T0CFDpMuu5iaFYUDrG9J-xsZ0-vLhqgB5OWzRwbA55jgbGVIzJamiYy2mi6zvHPW_25oQYJUccxHnaKBKzbVGrLWlkW_70gaju9hI59eQU4VskiUWmJfOTzf4Nb9LN3dbTCEtbQdMqGA7GDZ9bJx4OcklLGI5PrEwh7wg0JdP71F-KJ47-XHY-NkA_GBioO4U8g4HPxAqmpMIXDCd-X-t_txDg-nTpIzc_B5FZQ",
+            "width" : 810
+         },
+         {
+            "height" : 3036,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113482970886989803743\"\u003eHareez\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uJn-w9sHmqtNIlZk1VQLmo4CLFhmdeFy0G_6i8iicRmpT0k8fpCNHW6y7uO42VdP468Czi4LOy34r5cVRxSexeahalsrMiDPxP7f-LlUpdjJIztN3rgO3YrNf8l_KfVcKdHadi6Ut4U8JJfmft6bkjKtyX6OGyG0Yc6KSBVL4rGVjRM08A2wINbiJQQS-aGg7vsWdGZMdCTA39oRR8M1pKIfcQuX49dq4ogA3F43h859DF7DIaNLf6rm62OvXFognc9ooAbeQSNhCai1L5kkcCkSDfRBPQxiF8q1aOurEyMnaOTGzOVQCF6Dv3CkY9vKi6c3wKXBJuS3qDmx68_l5W16o0WuDqN7fV1AUH9JMGKrfYQ2bMmycyGs8-iPQVDvN_SMg7zGcD0GefneRWz0l5BOAXavdgs7AUGJdwDWVaOhI",
+            "width" : 4048
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101821193095885986575\"\u003eNath Gibbson\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFgtX69achMTKtUJRw03FNW0lt2xwj_7KWtz4WihScv5jK6Q0W6xEyq0kU6rirCCnobSyFFKHzX-CW55Q9_7zO0fO6K_Kj5JCzRIWyQZKDb5_xQ0tqyBG0FfPJTuBn5uISmxXN4qHJI6WKy2n5oGLkY1mf8Etp7TTy3GOTzaBD8iayZSuv_Pe1oeBWWu-JOzEtYpEfZaK31-GDR3EpWm4AZi_gi0U-wgH67YUyzXrATuWYz-mNMEUirg_xSoB1gMohGlAqoMPV61rQ6vAC4xjjiZFizQ7VPkQV4FAWjL5ye6AznSKheEiVtfsq0D7phviByw85gDcHEVx5BiLRPpFym4aAyFhE-rYnPVrWa6RUMPKPtTJJbEapnAOCi5BDh3HVRiM0JDzlWnYTDNI68d2M2xaPJlBr6Zd-fmX7H0PbM8jE",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJW6u-awNNtjERSZ5tCJ-Wljg",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4077612122415930953",
+      "user_ratings_total" : 340,
+      "website" : "https://www.forestry.gov.my/index.php/my/terengganu/hutan-lipur-lata-payung"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "5J57+5R Curve Nx, 18, Jalan PJU 7/5, Mutiara Damansara, 47810 Petaling Jaya, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1580958,
+            "lng" : 101.6138072
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.159336730291502,
+               "lng" : 101.6151001802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.156638769708498,
+               "lng" : 101.6124022197085
+            }
+         }
+      },
+      "name" : "KidZania Kuala Lumpur",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 6:00 PM",
+            "Tuesday: 10:00 AM – 6:00 PM",
+            "Wednesday: 10:00 AM – 6:00 PM",
+            "Thursday: 10:00 AM – 6:00 PM",
+            "Friday: 10:00 AM – 6:00 PM",
+            "Saturday: 10:00 AM – 6:00 PM",
+            "Sunday: 10:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 360,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117458826855646020126\"\u003eKidZania Kuala Lumpur\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t7OsJQUINvZKx6yX4iKhK90hrulh-iwAUj-gUB3d2eD04046NLE-zGYWqSRDLsjIgwVgr__WoBph1_sqZx_FnZkWiEpQaS8IcXb7wj72h0QwrLxOO5cPgh2yO6gVSDr844iCuzaP5VyLN8z4DRm7Fi-e5E7_1aGbkH32_wxIhf3qgwh9zvv1jXiv6nCV3Is9uMpS0ScbnsHBHZreUEGG8BzrccqdKNJpY41OhkC_i7aMtEAfyaZ3zqAtA1WQLJBF7_XKa_IOUZNoJ7bRxK0lNIQW-lnpNeZX0AC166CCj_4w",
+            "width" : 640
+         },
+         {
+            "height" : 381,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106066978517536801306\"\u003eNor Hisham\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vSvtFt7npXlJFruoyS_TgB33ApQe-H2dXXAXpq2W09SrFaL6kmByvOvytvXfTC9qixckPRESCSC12qMwEPOfcQNLzuABAdzk4iWzMiLUI76QuopJq-FKEHL4K8LZgcT-YxXxKafftUIgaWXM7FX58xeAS028veBaZAGjzFksZGojVG4lUCks5c-MEc9yMH9kWz3S_TcqszMTAFpwgbiwaLhPkUw5I7LMm67lS8a9Ru6HAbhhdmQEoKsQ7rrmm5PPn5LkrBDs8thRvuhBpjfhuu0PvtgOPCedONzoSbk87jD98yaIFNeAJ3wF09Q8PVveDrUxImNlDXIzcD4F8VJYEKfvsungiaCTGUQErkjy9oX_XzNPNCC-UMJ38vNCA0_5-ixBaRs22Z3gziXojCDkZ26DUsHfeAARy_cKCgQ0ddvdY9",
+            "width" : 579
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101395162337471098745\"\u003eSue G\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v3iQs730l7dU9WiTrxBahvF9Ysnnj3T4pRBHDEC6QQekB5lU4qR1UNADYjWCQ-dK76s8cgz7Cp57Bl5D4Gkumas_crEUYpOLgtn8-5BELrhmA-IcJlDqYFBbnhE1M5ZdpHzAt02T3X_iFFWaa0i_Ogm9kxoWJzG1HjhmwSiV_Nu5JZJxwXWZLX8QYW0MIoBFB-0MbZ38vUPY_1YJmWoxhYo5p3DsDYwOYoshpA61N8OgFsTCLLBGWBeizms6PqsfxI1VUKBl3pl8reGGlLy2oRUh4nOK44znbBHxgmbMHQizigWS7Uf_MBPqqNL8Lkybjiw0x2iCEAoRK3P79EVXBnjFVGw4_txfs5gfa4Q50DcqOhtBC84Ve_uPRvfMHAXFcUcmbQ-Xv5L5qZoC4ji3w3bRpB2t6n5buxJ0CWEA1tUA",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113962797690071166397\"\u003eVijaidran Tanabalan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vK6fRU0ousBIQvuhBF_pJo_jSqydvSTQGgqVlxwGyf-WwnVYIPW9nkgHCnUo9eDW1E6tn6N-M503Vtl1tgLACG6x5Pc-WEdQYj-jc9c1lJe2JDR9M0LcKC65ixajKtrVkajOB54NEKru6fYoGjjV9PmwNrGHpVCLsy6AezUsAbX-rLJJPrvUxlUl1mEXfYhZficXyRxcuVN5P14vXFnC59ExuwXGQJFxeigK2sHmG2YZLDJ3dcwoWmhT_Xi-caHUSSH99tVe2ngGvSk0PQsRU-8bdlhYTTMmqy2GrlpfwF3ad4mIgF6tToW6ll3XGdFlPLeE2QxIDc2ChrFmrIlAw0T5dmEOY-tgd4HzoHzzdh4GS5X7Zu0sUAQVFd12WyEZ3Y_P4qzL7cphN0cSWS7kBUZphJX3Vi8TGpCe7TOFLibg",
+            "width" : 4000
+         },
+         {
+            "height" : 2832,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117458826855646020126\"\u003eKidZania Kuala Lumpur\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tdUB3zcSdHMjBYdMYh8ESKpapT6OQdIdkeIJvX7KoSlQVs041BJT0b4nDYT6aTqQSyGyF2HdNiRbFzdl618aqBgRtL-0Uv5WdNQfbYE2TZ59ddvYI8tHF8XcHrm78wjec9EC1eKyMuhDttp4asK2zpcTeR_KHDkDwfgk8vUfvNFjRNSh3rCM__3RqeEXI-0cLwx5_frQfv6r5vVLO7cgLuJFwcDpLEe5vxQ08sXDivF4YW5ISxgdSZ1Gn4nF7nf2tlpMxuZZqose308wdN2UNaZDh0amxO3iHykKUhzTceYw",
+            "width" : 4159
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101395162337471098745\"\u003eSue G\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sqWOctW3thIYo7YkClRF29d78JyZyDEXtVXV_gXhEoZbcqMRzAuq3fNtfIYVy_mXLWYbxBj434BEt7DtSkdSWPf0JPZ5HEgfuQu4q07Ied_9VUD9BYCEayb-bpgnIA1KVRa2tthympZGk5Ypo68X-XwQpoerQfexgelG5e4K5ATVLBHivFSKqINfqWNJUBksUEN3Fc0O6OutJQCykrdNfvVfxhFbDjAEwpuTh_0vohX5RnfWHwKK0Cq4BciRjg6YTbUHoXPe-3WQ1p8fotP92Dpbh3zWuBTLnUYEGt3G0XpfvSkcuBp6O3hUYt7Y27KHs0aL1sB9df8bT234tQ4oXOfdkMs4mZKcYVUUvlpZ3mbjByC51x7it5SVGDiPVOatJz0zBv9NRhrqHIzAnjSYUaizg1ar9KxZzm2dx78ViCT-T0",
+            "width" : 3024
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105919855909997256778\"\u003e葉謹榮\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vVJTytDYSQaySnyz51vGIYSUYqUSPwewJihxZwQpsqJqPyqpFg0Yhb6jA0-8yAM8EAnJc9dGsPRvxbD5dojT357z_--BENfExnn3TTv78bCHweZ3Z6Ed4qviTVyAOR9CBFAzhQZRzWP1zY6G_IzK6-O_9yDIspCkZ3WjQzP78swtJmnfdnms7rmLJInUGtWCsQot93ugYZm54KjON6yJqxpDPuSoULPUqKD5Bf4tKy6TQ7--tMX-Pi2hqh8W5-7L9JwkPPsCsy1ujQs1u9LRctzdu7FYglZ756-Lj3jBl79jPfoYjwPyQnIDTslUzvaHQM0bmedTQm2nZubKWt7_4TZo4Mu32_2AcsY8SnTzawX5av65Wy3PdlooR3ekaTZaJBxItB_wPA8Jx5AS8inPJerQRBN3FFxRqJqi_-PlaZOQ",
+            "width" : 4800
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107288099821731779473\"\u003eNur Asmaa\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vt6DEVX-CIgjqGZkTCS9LzWHsxG7gw1HE-w4TlmpYKOui3sD4Oewj-blyeJHxse5xeUQc2r2x3uhG1IDwkEXTZ3u2Pb12LkSa92D4heDue4vtgsQ1B796mIQb6GxdYsNKhaQL1kqBBauSYK-OEfnOty1-BycM9bq_zXdRv6LEODV9-lOeVHWpbFVjT_mdFrGQSqjyZygrxUdDa5T1sFaEGGNrEZfnr7S8ruXpZRrFiEhKxIRSbBqlRyYEt4ljwXoc3I_6T8Db8wNJDdbo-YuQKlaKGx_j8EHMmmyXbjVzEyD7gTHj6-IYstSdizuOYUx7oOayuk6GbeC3J8LZOu6G5qULWqPRs9YTrhL5Z8dGYS_cWkbyMZtCHB5PqIHAtNlme8ieSujkf3PQp-xzbTL2svPxmKX2IAdPXYSv9T1N-d_Q",
+            "width" : 4032
+         },
+         {
+            "height" : 579,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117458826855646020126\"\u003eKidZania Kuala Lumpur\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u5XywmeuNHxeXnIW-H3GwSZ1UqQS8Ml1wob4opfIYF8_8_71E9otoXr7EnCj11Amqtgr3BJapyYk2x2z5-jqCV6__QIQzQt8jBbcUUrPsvncqD1TSKw7IdOPQ0OXW0uYvjL9SArQalLTJ24mRrIeIMhvUNKj1IF0I337KMwTG6nkQlHfpa29d1p6IbsbSml3M9oSc0TxnIeSNoq4_xH6jasg2kwqM6_r1fOVMmJy9MgPrIY35XnV3bYHQxCL6IcVf4R1wlvx8-uK623sMSxRMKiz9qsgSfR7tSI4kQzutrRQ",
+            "width" : 960
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100732656930791181976\"\u003eShane Clark\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t69f5mq1wJcFIbHdF59Ma5EzPBe0VS5ERhwGvr4cSilnH0uaa3BPbCoHYrQXY0lSHpCCO3z081_n1ByTyJTMX7hPSTlzVjNP__i8KmK1vKx0MQqcUukQDssvBtu86BHUSfwYNnplkvWe4nMCzBXgs9IF1AxTFWLVA4bOhN8S-QE7wYAmM97R_Emv0rshGjI15WZT7XXn_LzJQzFbNtZBpWMbkloIYT11VqGwUq76CiV9CXRqm7htNdy5hiqg0SIy_hrlNaL87pAElDFnX60AD562NdKOuiJMtGJmsmk8TwPFuZB4ZSJDAIY5o89ZcLnTnMyeUsfJHby-nzIquuAryDR9IV85qGedKYTXpUg1ayi8-VMDK0Qu74pZKI5snctzUpqlf5KfAhdJ0eKZH1TgPpcdi0SEEsE0N8X0GupDD7bw",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJebTp9RxPzDERzQPNcVUbckY",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "amusement_park",
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5076149783795401677",
+      "user_ratings_total" : 8545,
+      "website" : "https://www.kidzania.com.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Penarik Beach, 21010 Pantai, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.6280401,
+            "lng" : 102.7935526
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.629388630291502,
+               "lng" : 102.7949012302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.626690669708498,
+               "lng" : 102.7922032697085
+            }
+         }
+      },
+      "name" : "Pantai Penarik",
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103396391059276186602\"\u003eOmar Bakar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-umHMCETBv6UCxXVC1dQze-BtlhSihSMA6jcpoT_HZEw7rzszjxttrCA-0yI5ZZro6Q963z4UeNpAKAvj1sdcfZVxxlDrZXpuzFDQRQrCwHp6YrzmoY_GxZ1qdXIwzLPx_2c_8qlRb2cyFKXvXMkezN4msBWz4CB6VObGeCsM3nbtdT-CSjgvHeVCRzYKC2j0BJLR6mb1_PD-ekNXTggNPFA3RmoTocpTpRrb9y_3m7wgk84KK17Q_AWsjiFG4jeLFTB4dDR9wxLodyFPS8kz8DUWAR71-nlFbbbUBdh6Fcmns-M3j6d_4PxQ_a3-N01Y-lYltlkofqHsRSDSRReWV8gqA6zqB1oiHecXEn-a4KcQGqBndZw32mFWEz8VxT75MGgyQtyQzleTuM3fwnIvJxv4r0BzXX1kxm_IdzpiT0XMBGHLDfirR6tRrVQKSp",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103396391059276186602\"\u003eOmar Bakar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uAm7HmlGmH8SaWokSPjX2UHWdBvms1qybeB0aSVf4IZrRlgWpK-cDvZw9epkSblLfzEBcnGpoQBhf4ajstOvLP1vqXQv0FgXGFUCucWpMjvO8bBJV9tuNbBlcBSlbli4ZugV3g1SPzJ9iZ4ISlvrECZ3fz2NUg3WmQuBs0VB4Po96wZGaS3bsg-MfMwnaUYezDqB-9U6rwarYbq8f5-OR2AvFHSXZB_GU0lhX-d-HBgM_tJmElfvzN4460kbbfVBCfgNPw0yy7MQ0ex224hCXFrEF1H_LcaCLb3T3oJWSjrZVfACqqEG3EMsb1tU00Vo8p7CTgPp98eLglEZaotzxLLIJaQvHPIKxFeJPcNdpEbqSi5nKM44WIRY-rHY-oHNHu9ZYBvETGvmUe5p9QQ-0uW39OTjJtcjNEApcqEuWZiQ",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJIYvBmFz_tjERXshXhdy9Z5A",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10405494218890397790",
+      "user_ratings_total" : 4
+   },
+   "status" : "OK"
+}

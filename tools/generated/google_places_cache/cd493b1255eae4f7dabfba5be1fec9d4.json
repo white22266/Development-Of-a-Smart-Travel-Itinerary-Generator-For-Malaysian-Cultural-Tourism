@@ -1,0 +1,321 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "PT 22 Section 55, Lot 641, Jalan Scott, Brickfields, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "012-656 5632",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1352483,
+            "lng" : 101.6922544
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.136627330291502,
+               "lng" : 101.6935499802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.133929369708498,
+               "lng" : 101.6908520197085
+            }
+         }
+      },
+      "name" : "Kuil Sri Maha Muneswarar",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1130"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1130"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:00 – 10:30 AM, 7:00 – 10:00 PM",
+            "Tuesday: 7:00 – 10:30 AM, 7:00 – 10:00 PM",
+            "Wednesday: 7:00 – 10:30 AM, 7:00 – 10:00 PM",
+            "Thursday: 7:00 – 10:30 AM, 7:00 – 10:00 PM",
+            "Friday: 7:00 – 11:30 AM, 7:00 – 10:00 PM",
+            "Saturday: 7:00 AM – 12:00 PM, 7:00 – 10:00 PM",
+            "Sunday: 7:00 – 11:30 AM, 7:00 – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107209163547292370189\"\u003eIlamaran Ramamoorthy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tcgjrU3QJ0Z4dshOTsHidw52hXOz1GhHng6Ov9j-JGIPJpTo4CyGOjzBxH4DSOnSzi7raaHu2hqfhIgKf0xtEd_OawwNqLi06x4l5HBgbjJyZqyQL2WVXQCUaz8jqrjlbBlGOZ8xlrCn5AaEYI-Ja85i_WbQX6VZouzdHJojE-s440OtQiLjaoYMfg-Zo90OYr92_1ZodVq1ca-MQGt9vSyETQs6OQpU9r3STsm8aa2D4YuLA_uYRIs3AO7KNzOyChaeW5V_eSYXLkWdOAHt5Kt2Uzs19XkMi8U0jvD1OU5CLVqQjyNko2t8SJP28j6UD1yNP18XDMwmS65m14TPWWD_v-Z2znuiNl3KkeZYkCp4DCyulZ7FhcNSL8KVGV_LzweJQBBwwLRI8yDRgah3qKOde_OrkB5BddtAWJ8AGLdw",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100305984589404912957\"\u003eSanjiv\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tKUhyyxs_drULfwW-87RAVZNXSDQkn6q2VXnF6uRxG9V-St7AtT61Cd73i49TSxo6JZPCfgqMni-1dwWBYMzXepPMaQqx0jKYylzec1OWflffEfpDcbav2aociXscyJiaKuHf_xzWIXzlw-29Qe1AL375JnXhKNm46-KUBd1CSMEczg6IfKp4E5fYtFdXvVCqHWn4_pS9Avq9rzcvUjmzo6UbFHpnfmfUl_our4muwcJ4lxLVYLcGlW76Isz1GNmcvhCrDb7NDFfDmnPkVKOd2m6t3SlJ81rFxlHtsdoUgOXQljSlM4ifX8ekux2vSj8Y7PJ7Ek3RkPGR_lxt5hWQn7s5n9qPcDRqA3z4WQaA3U9o6PDNyAJdhHOoJvLEJp0q3_t2_Qx7w_oPKZ4_5xpWM-5TwzwdfHyak8iNIUCJpN0txM96-frcWMadN9Q",
+            "width" : 3024
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100206467193311991102\"\u003eDr. Vinnith Pullavarayar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vmBs5PBR1l1on8LrVlcfROa0STPC7elbPWWLfKq_nh10DjZr5OzHt3TC6ghGL3HBczUfuCsOpM6HrlAc5rYmJFMQENWBP_aFLVnTl9ttJ_Jrja4qnpfKwZYnLzdTTlqMs-pvQddJK94H6SNHdq-Dcw4w83cyTJ0GH8pmDY1GOHMfvkI_lpUdCyGtVVxdlYp8geebw4GhfhDaOgpvtjCQVqgDNYADjSDKlGI2ObZPa_wtcEntvVxbHk1DR4lyLBmh1MByvqSZtrleRCr0zzyMk3S4c6kZaxrmLUtsn147ib6PzU8OBg8NaLKLU2aFD0TbTCufc0VWva5q28QjzbQCVxbYCK5P8LY1BzNdmttXnOu5XyryBancti8sP4Av0OfbMx18tIOAxQIWr-G-6jXeoQbJBfO4RK5XTsyhD-nw2mmlNLLmMWooM3x7jw7Q",
+            "width" : 3600
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111179996515781784344\"\u003eDarrseni Sharma (Darshu)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-upr5i7s2Qj1yYyAP_53U1gYNmmM-gjQ8_7m5kEZmfiNzi-peHHw69WXg4iIJ4A7fYchJyrRA7DnAARusUk1yKIMsBMsSkjIbiW6aZ1eBwtFsG_ERIvtOnGeCBoUmYrVn-QI4fZr2s2Fcncr6tdJNBlkyM_ITVbmoddita882MoFEMsR8sL-U7npCKe0ryjD1yGe8HRB8HS39iyK1o3JQnjUFb9nmJGkgGgPi3pLjOE2pDFP7M7k0Qe9aQ5Xa_t8Znn_6bPPx-BKsbR8fi5YUJdKtZ0xlJM77vRUW_Baog7rLIZr5eFKdlZ_-JoN7JuCCyvhA6GU2kRlDFGgKHPW5aqGnPVzNUg84sJ_0XOgNTY2BdFLQKTVDyYQjI7xFN1obsE0llxH63dT7xQQQE6d3vKn93TTNoUb8QoQWpkkZ8ZEw",
+            "width" : 3024
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100305984589404912957\"\u003eSanjiv\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vJ7X7cznxu-t5ixW7Ga2mawMSNOA9rW_w9N8rdZLptmH32AWwnJ4kzbo0NSazxRdG6iwA1iAGP9BhRRd9LcdrR2WlOriaRmzlL78lboxtcBiSxkQEGxfc0HFs0RfLk0hYrD425TRKZRY6otT32NO_KMbnZPRTBtMiv9WWFDU3QtDc3p-uSEQbGL933_zLe_hlQ5l9GWlt4P676YYVvLAKjnXqntCh06wAbMG_3fvxLffYHuT4TH37Nbk-R7thm-5umJQMUvph_jEwfzUcLB4BPfNF3O06-IN9k5gsyPG8O-kdBVysZMS-xFM0iAXxwr7pkB05r3O2rKQdzTwThCgZd3G4KOgTUK-MZyfOJ8_wCpxaZwkrDVxJTxfQKfGy3EUO4NDu2AOs-3LT-yjrRUPPWEOs2ZoypShVf2qnKTU5eNrA1MxXCCde2u3fVdRAl",
+            "width" : 720
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100305984589404912957\"\u003eSanjiv\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uHCjqXowHYoerXQp0YKpb7UqOluwEIV-4_ljml9df0NPBHQ07FXFMuOjxGYyVUxUws0kbhSg8JF4r0b-sW3HbbV1wLZKfAwvWwx7iFeiGE3CcUAVtIkQlh8BrSmQi1SiJpR3ab3qaYU1G0CvMXPAyhRwIatc50Zc3yQTtDyhDmiNVL2Onwf4EeNbe726VlwUYF_WD11a_Wbqf02Zak0p9Ho9GhoCWeEpg3s9YVQ5m51u8xBjU37MWS-vlKOsADiHG4fWlBYa5jUYtCWKGqyuJaTrFGU5Nyjef5Hvx-2LYknaodS85y9k02UEbAMM3HG2fgXfrsDff7l0ICBPjl6fzpsipQHw0l6iOiKQGQRJUc4tCOYOffg0tLcku7Xr_Jzo9pnQe9Xbk4yZuqZTs2n9tly7HaTUXmQlXHfpM5YM_Pi5hZa705qZYY6h-DaEs0",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111179996515781784344\"\u003eDarrseni Sharma (Darshu)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vZO_kBWdeppGMIeu0JvUESjSJrR7HGVxsTraFE2ocaaTIfnx4-6rbYRmjgHTQyBjaDqxgzl8q0o-h3hro-5yf1zm4O85apYeM8fsMDHlT9TQnRE1MO50-7cYHB8lyKIjnPwcb0dpgdwC8oQJimGX7igdh6qnA02-lSiduQWCSgmlo737bmrfdQEwS8_tJSDnwjWHbL3tgKKiAmsWKFu-epCqpDhDsOB28cwgZ-K3gzRLo5XwhLkdRt4h1gvgUoPWVW2My7sE1EyTNW9w0dI5pB-UDEiP3V94lJljj7cJGHoeGgytETuVwkuOa0M1XVn89X4wrYJTZhTaErYoP2UctTxAf6tXtld_dVryeHQqsf6HBc_kHJ5wcd7nKUub2EHUSv6UT2_VKp5EWagNSyDEKB1OkzE3CN0Anf8HIY32uNfutf",
+            "width" : 3024
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100206467193311991102\"\u003eDr. Vinnith Pullavarayar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vlJc4dDnNAXQI4OaeHEl0QEHIJcH6N6hWAWLlm3Hm_eR0n_9rmuAw0Y6vE_353DOQ7lMJMEX1eIuiCKCdXrMJJvac-lyl3yD3nFfiTgZQul_DLh3zopgO4Gt2Ze_zn7dXkbwd3GBNI-L-1Z7LffhGdtxY4pUkj4lEi7JA_3rabmTWHt8iM5ec6x3fXIrjOI0Sb-D0wAvY7DmzxpAdhuucLo9fFuk_SwrkEyr3FYPyHX9MtXbJu2v-ucV1rKjCaoh3tDB1RK9TiDHxnpaTSFEeegU9akvWnrIvD_efVRtUzXxevRED4qh7TrG5Xt82tKrxEdaxpPEY6L1AAuHXgHCf64gjxmMq8h8QTP9a3gqFs9SQ6cqLdNsWj5YcwtprQ6m7OjewRWkKOqlwMZU7m5FJ2f693jMykvCfdk-wBEcrPp5WYI0ULC0WXC7hlTQ",
+            "width" : 4800
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103175550462023790891\"\u003eAswindran Ghanaseharan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sORiZGDgAocVz6rKlLVnBANKMn2DxNS-i1JNmVI7nctcOFzQhnh_xoHFn3k4KzwpqHc0e6SoPUbrpqNs_NnkzO0ZEM6fpZH77wNKp7ZFjwVHaV7Rjo-GBXslUdwnQJqfTuexm4mI0XcnA04y2-CcjWphmFKlAyBXwqN8qmWMpzhCXD5ueN2exdISnUngOZ_KEGeLB9SzRaCH_dL7JhcfNjndgUAXh0jD1YhUSHwy6Nfbkc5xWhkXQMF8rnhP395CBfT8dj_p3QIjUhObWhXcxM47IKZQuzmtQ_2QPBPCNoQzLHkLbOBirl5eGlgJvLWzaDhvaMHKd6qWZzYYOLYTbyaXRWvyJm1oAdn9T2Fi349szVccnWj4YYlXF2p3BLy7d0VvvNA-LKvdTz2G-ckz2lFh0i_l7bQtB9Ck_IlP2QKA",
+            "width" : 1080
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103175550462023790891\"\u003eAswindran Ghanaseharan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u28DI-THyTC7S2i8Q8kdAIqs7xM12yXCWli7ePVYYbTwM-H7pZjDOa42PphhLxOBYerZaOf7FruZmek07BIWma54zoVmc3WAMxbgBJ7L4-_dNtao-2OR54C2d2SWPyPk8kPo4bF38q2fC_QQD8Gi4hhNSW1-mrQ3eLdg5MkHVu5DyiIkoGcCh1pJ31NxvyURQaRMdmcghN06MougNIFfDivv5_JryiFKBAAjNwjNlluROmlzr80P_INxKaHj5WoHPKqcQefAXYmB_yC2z_wJFbqy9c1TL-Th60CRv7SrLxmUREOkpSZQWbraSL9Vj8oSVVW9qPDe113tlbur_AdSP6_7wHT1_mMYvA3KgFQf5Z7SeUEylBvpdiX5ZoYkF1HFXuNQqiI3xAJj7UwP6Vn17Rh_gDKEu2iQEnkQ27OLvUX2s2",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJ6bnOCcNJzDERgVrwgoFtO9c",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "hindu_temple",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15509110144795433601",
+      "user_ratings_total" : 72
+   },
+   "status" : "OK"
+}

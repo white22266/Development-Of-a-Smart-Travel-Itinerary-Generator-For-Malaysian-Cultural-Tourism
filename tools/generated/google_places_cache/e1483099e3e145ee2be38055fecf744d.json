@@ -1,0 +1,72 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "87000 Labuan, Labuan Federal Territory, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3230455,
+            "lng" : 115.2187973
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.324465980291504,
+               "lng" : 115.2201313302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.321768019708499,
+               "lng" : 115.2174333697085
+            }
+         }
+      },
+      "name" : "Masjid Al-Falah",
+      "photos" : 
+      [
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107435841664411505920\"\u003eACT A_BAMBANG PERMANA SIDIK\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t-MdjlRPgJotOa0THGeWBvfIGohsjchJYJeSe0QkAXYHAn5Gbh-g8JfD3JRUg5ZUZ4WQpHfP9JYX761ESyWc_KK2g-3WwBeyeEVHIt_5n8gYIhZTsrA3oykt6pjpKYz0f3BoV-r8RzaQucHYngYGuYtBmPfuTyuHmXqH7ltdCdN0NqFRYgLQckqHxDDjfLEKn4s407y1HujHrHUuF1K2Kgcaz1FW-99c7oKvoD0n9o5-pCw684Ic07Pg2ppFeDKS9XvYSnYbR5IXQrjNEPeOGqrEBfOZxPTqA1oIHTzqfFcwHDL7-kBke7wKha4nZaB3gQeoLGtPrTCzsuJljz3qSLGAqdW-FyeNAa_iumTK1rDecNPj0Exw208b58vFrb99JX4gqc_xYSA5m-oKI8t2Db_ZPK9NReN4xPz7840VRn-5g",
+            "width" : 3120
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110823891259023858447\"\u003eAmirol Mahali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNLTKloPHsVu6sr-_931jeaHPUQx6IM8kQZzWyDjESkOLzkd0bpPfGt8AZKW2XupxTNHC1C7ki3vjG1oy5RwaL6Z1hkm3v-1LQzmdvlSq5NON4GDUSF28-5B90mHXd3zbwWEcyPZR4Jf76lRNnM3k2x9xphYje1RkXtegQ53-tiLF6sUkeH2q0Zocl5JcZGumOySDlCeeKUSKWpALAC0B6qVNkE7mREnLYr6AxQyGCcgZi2BLUZxY2xEjsghgYbnDiYsv7zGFdLxucmDhUxEGyv_jkXofHu94LoMP8H5wdkJb3q5oJVyYlW55ZG6fm7HtZ47-DElI02dztIvBRB9E29j-SsFbW_Blhxkh8NzMai6Fl9N4ss4TJk41AsIZXpy2pQCGiZuT6G5q77qHxpngnrcjS3OF9NES3fJKrZwSwHi1R",
+            "width" : 3264
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110823891259023858447\"\u003eAmirol Mahali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sMRwyv76vT4oaXir6oDb1NeboysnO-DadEF_8ECo32Fa0tskIy-ypfP7IC-RdVk3hKbnwRsa1z3ZVsddg5uI985xWeXJkK8CM3MNl9Bbme1D9yLLyZOcKNRjgi4V8KHxixwUMjVUOWozveORZud6M8dSb-UTHejCuZGb7uB836INjdlWdHZr_O9FrA8XPNYx7Ndtiy_2-I7a6gwuaE7GoRi_dyHglU8SWUHF01z6VCqgIPF1IfUpkygCOoYQtT3aKCvvpf-lIeHHLdJF2Y423lPg9bzAwMHYoiaGRu9BaSlQ97_3BFPD-jAz6CJ96rGB-HL2Yg5XOXAa3N55bKd0nge723QbKVKBcdAs02C40kOODQ6i4GLAZ2hNxtfOJXbk72pfgo-hZ3EoWWqAyKLrSO6_WDJ7RSG00scGGJVdIOZg",
+            "width" : 3264
+         }
+      ],
+      "place_id" : "ChIJf3fyKscZIzIRTVWrD0_82iE",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=2439539564670047565",
+      "user_ratings_total" : 17
+   },
+   "status" : "OK"
+}

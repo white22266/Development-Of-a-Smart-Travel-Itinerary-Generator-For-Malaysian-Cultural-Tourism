@@ -1,0 +1,54 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Nabawan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0365432,
+            "lng" : 116.422036
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.038010880291503,
+               "lng" : 116.4233332802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.035312919708498,
+               "lng" : 116.4206353197085
+            }
+         }
+      },
+      "name" : "SIB Pekan Nabawan",
+      "photos" : 
+      [
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104853829814459372342\"\u003eJulesa Corye\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tXBsGPH5z_yn5V5wtjYW-f6msUrmnYPrjW0Wun2ITSegQpSdlMX4PNp5T2nnwZFGvTNDlslN6rWnjvoLGunNORoGa7_AserM0sZr8ZdZunJ4GctG530zJiXetc3CQRCHbOjB1kEuFWv3vwTmVcE9EeaizdBQgQojU8P1P4_bi6VWdanqxZzVeDMiAutei3UD79zFyqs2iElF5_EX_xtpGkzGiiIcHwIP74IVCUh_-_luWDU3W5UH4X1ftM4Z_ATYQ_gZW1v8on_-NBqo8p7GJ29RbsS1TEJLa9MfAQz811vW3hItt-ILYrAh4pH0lS4cuG5Gff7ILY5BBcB3AXludO0WEIqNhT6SoH1gNNvBlyM-REDXpzn9PuZGqXE7lyrR9ksbK2zBiZZnnr7D03x1ThGnXBF4Vcj1lEpO_TNaCed1F_",
+            "width" : 3264
+         }
+      ],
+      "place_id" : "ChIJV_1e1mSpPTIR2sOIx5W7hV4",
+      "rating" : 5,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6811056263439893466",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

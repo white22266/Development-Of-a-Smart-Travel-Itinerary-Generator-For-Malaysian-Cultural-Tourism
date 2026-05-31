@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Sultan Ahmad, Kampung Pancur, 26600 Pekan, Pahang, Malaysia",
+      "formatted_phone_number" : "09-422 1371",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.4935967,
+            "lng" : 103.3903937
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.495056880291502,
+               "lng" : 103.3918371302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.492358919708499,
+               "lng" : 103.3891391697085
+            }
+         }
+      },
+      "name" : "Muzium Sultan Abu Bakar",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1445"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 9:00 AM – 4:30 PM",
+            "Wednesday: 9:00 AM – 4:30 PM",
+            "Thursday: 9:00 AM – 4:30 PM",
+            "Friday: 9:00 AM – 12:00 PM, 2:45 – 4:30 PM",
+            "Saturday: 9:00 AM – 4:30 PM",
+            "Sunday: 9:00 AM – 4:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117538922596639342622\"\u003eArgonzhara\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-usBARlC1xz7s3BMTbilXRGFwgPgN55dR91eAsyRwE4hvkJvHhGiA_HkXLjOy9uyfx8RVBgTmqHEKDbLQhFXkszcGzTfFGmkvT6wYsufCyxyRsAGk7TbG9FoYHdn9YWHclF-TuFtf0UfgA4dpolOHO3yyXWrhEdkKRkWztdUURKtG9IGAAiw9jywyz6IUfX7YkY1nCBRhDDktaBBHSmUnC4aVAvZBXJvkpTbZnryqlqOwfQS0XvoGITziTtgmI3odOqVhmRWJgLHuxPi0A5Sm3MxEr2UocdAz05M306ihR2TTsMa-3iR5LodzspIZgnDsrpRszlFM8T_rv6djznrgIaOr934b28IFX1rdqj9K3HOj5lbf9ybSPxxQML7yjseQKzlgk2vOj3LKVD2dcepvexefctEOQlBN_RQS46esMbWw",
+            "width" : 3648
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104860559039670357728\"\u003eCK Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tceAwuKQqCIfjYhu5R-c1p1iGlr76OnVAQ7tZSLT4A17c6B1peXnxT0xbgK1UZvI4Svvn0LXpNhqctTpjHURY4nVxLJ4pGkAQJ7PPqsMJDjzAVbhqaQ2S-ebegNL51cgY0nPOIKZJucfMuv05vqAjivhAY79iFa9B85W46dHO_s0xDxjoKETxBiy_3bzbsAx651m3KLuVVMbNFZpPS_I9QS0AbAsz0ZfiNj7uHyAf_hWfxkPbVtSjEvNCQszMHa5QGGKmabZS3uDdwI5eOnK2obvl4y9ihPbd3bczM2M-gFuDd-curgIIy6D73lVOQfO3eYJgMlZB6nB33JWktekiC10maBP9A8hipJIIhqkOCtDKF9dVjde0YDr0YXdppREDlKoBudyiX-P4QSXMSEdVuI1FA7aV143p0Mc2DMPNe6iIsZPmsy9GmXyYZuw",
+            "width" : 4096
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116999554704760363352\"\u003eFarah Ramli\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sh-CWQfncQyeFU1qdakFjdTEPCxj-aZzS2lVYWhvWwcOtbgx3Jxjom0UdHY2AT9tXo7BiwkQbchQvLDpMYsMT02NGGG1cISvv9GbHavTOaa3qpwTiz9LkI_0UHt5M-lmfgkCviJQleJRkrGCUDBO69xBwjAeerajHOp3BSFBICUhYbsX9TFEsX4e8e6GoNVNCfWSBtZyuOVruWXFHNAaTUNkhGKlK9kgL3KrJnqKCwAMvqbh75UgDtZktt-WRZG-zXHOukr25QmoO-a7CdsqpThHBHj1z3YirqK5AzPO74vmzK-xiN2l4c4SDMqkMUw0tQdxkj-zXmywbIQh5mTTFvjrtmRgRHK81xV3xBf2Rfy8eXllVrBkP8tg7nYaZrYMVH8LLxw3UEOVP-JswxG58n3bh6vvnrYywJETJGS306PQ",
+            "width" : 3264
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115884981042065695093\"\u003eAHMAD FARIS\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uQT1Y5cal9uF3eC_NibZ9pmtRzCGMp380vYxBkuS5z0B4fUTgoMEraI1Ae1aGTpj5M527zas8d1rt4B3b-O19w-xH9CfJk_hFm5crRIAyyRnGLQuHBTVRIauOrWM9vZhXTzoJNP0JlhdqjAcWz5gVi42ywc7RY4R7YZGTANRvNb33xR8WUpzra2vouMtMJ6jHzoRF2oHEFa8DBjdGuH0o1rjXXY2BwcIsuAEO8nKR2PKwnjj6Ap7dXwTvQ4qArmQbN6LG08zi1eUZ4d6jyqhx47dNWx-EKSbZzvidSZzZ89gDPldD6FH5QZ4nAJLkpiYIQrv-VAOkK9auZGp67e9suMWJHzwUMqc7yiJGCh6cGk9xzRFtmuoseOL-Ehrp2MbFxptx_I1d_2KPo2txkWvUsaZbdAJDiIT5dpHYF2h_qf2KU",
+            "width" : 4800
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113991439441548615669\"\u003eAndrew Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sjQ4ibgGYNeji60O7IGOyUgAaOUrmLFcQMNd59nNa7gHKZv79t-BzxR6FnYdzUb9vAnySiDOkev_OAEypdYU2p6lyvHZ1CeVtTqYCGfn7VcIS7USAnzlCPWr3oxSAbIyt-8h3_yCMICwMVAPP9plCUEeQUVZMXSFYYjo9qo47QWD22KFFuyGRXNUOPKErSjFR0GJkFOrzOq81oepWlcHXLvBFVLoOQL1jvB5G7-OOdhmzeCelihhjGTt_OEYaurJHaB-EX0D0mwnnrA4MoDXGjqYwGTMNMO8WdQOjLgWZ4LX_ecdvlenRTkWB3g_CErbiAViuzxNzW2vIgTr5zEXo4BDSE2wMIaOexvNOLVw2VQ8AKzcigwADsxSmIwpvBHKBhy5FNJGZwS2wo7oN4M5mGujGtSnJZal2sLBeLvcI",
+            "width" : 4000
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104006986590325994333\"\u003eSaharizan Saadon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sWoimgv6COzx7RnCZsF6nOxWy_M8sAjn7KPElJgrFyEj9r6v4YCKfhVSUTFcz17KUmjUQapRbcT8AycGy4LOrztCVxE07QqTGBEtBo4SuBkKxukcru7iKP_--Oy5MHjiFtrLzEMcTBlab95x0W2d5fBcP5uHZ8XXX_37qS6BUt0OPnbaB9hthvRuVt0qdtOpqzojpNnfAHgvIPJbZphPsidpGxpbvhnN1IMm85DGLIFhRCO0UfU2PaxBLE2t_rXsMrR2UlekgIA6ArFsPFjpCugodNL6pznTb-ST9UyK3qqYslCkWB4iK1W-NpBgxJJKabX3nP8azOZi15Us6ONRB3CsdBymTkzAKOiE4Qx93CtMYSP2n6he-xXVLx2ijm7z8jUPfC36fw_eQwDF26rLuw8VcJnmfLKEXJQh7LP5E",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104860559039670357728\"\u003eCK Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u2wNfeVGzERfmaUDO4YhXnU-8KwQnlqZzFwqGboenDHMtWTEck_AZU8q_QFGI0ETB_dQhnXfPDsTwrCfulv-i-s9tMbJl8WN0ULH_EmjMFHKpi4ibPLVz96ycdOfuWqn5o0hKaDec0UHNR_wlm1ogtpJg9IxRIO6WtFk1srkw23KpegMoPNMiDUXjbGO0hoLl7JFYa0NYolRb-fiWvoVpRL6fECkPhrhOmH9otvAKYEgnzh6ATRwY3TEpOzrrcl0I9KQnDFMChopU9FJZy_v3hhhw4ki0SEhIOnf2_OT3ZKSFd1yOU4eYxVuq1TMgA3o9qbQZilczYyZAAas_i65j8ZEdjiBFRnlT1cyfOGQDhbUoqoq7xR0X0XopjXaayrTFNPy-zRBnv-c2oF9rCTWTMyIbJGWpOw0qlGgoOWjI2N-EJJU1STP5eFFoVPg",
+            "width" : 4080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109129768348167777052\"\u003esh.zarina myzam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vUoRWiNsqH3U_pHibHv7LSkWje_pq3vaiIV6yWYakX2omZy1yi1Mryx2rRlciPeZMLu5jUsjtA09rmCbNYMTOEeVygfxoUj5s8wZsRYcJ698gCwPsV5RyQ20KB6dFm0wTMXQMTlAHSOSRca606hbm7FMWMpSPuofLmytd5tDn_dVNbDud--Za4LnKuDazna22nqzuVJ5w7_SyMc9GjLz7MN7immBEOJEIcGOpXQTIyHTeZoeuqw3wAlc2w6mUY0dbdcvFkagI9f0Dg_ndhuVYHENyDEEEvluZij174iRB5fAhvQw-KPcTYj1v0bxWCUr5z_wuAH1K2XWIQInUEdwE9C4KLDO9cWFBIWoewZtHSz0ekbnLT22g5bzi9qKb2rk0jhYC6dpPeP4xBXQ9alzgHSFNMDNW6EkdKyayuRzXa0ALI",
+            "width" : 4032
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104287588403360561692\"\u003eTOM\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKMU2_NndB-3XfNK-KoKvqePE45zb1775XlyvVGj5bEvS8DkcF8a0XEzUzRnhmGr1oxpBq0yTQysEbmtOXlIez0G1-IvS9HGLDybgtM4SKMDXFQuIDLH0IgC10PVprG_bdOol5S99wmlaU1SffyvX8z4aa0gSLVwHpO9trB_RqCa6viEDGpUN0eTmqci2Jb9M6jboTRJPWtUXJD0TSWeuSPv-bB8XQLFDE8KFU946GNlrHpozRv_rYmin_aEhmxFtbc7_vpWF_7Spj_H6Np76_keY_qT6sDcF4DpCkSIeMUG5NjpJlXAqIk87bAyEhRhf9XkI0HOasCdGOv42JMLTqYx3aJaMCNn5USHcswMVLfdGLcN3gJECdujb0jFyk09PVWCBeh2rnyt9cKKp8Py1vQTSOe45aYJqPck37myGwuSbQCoYlynpMhFxr4Q",
+            "width" : 4000
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118294441943794731445\"\u003eMad Izam Isma\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t5EvitmhlNxfe3Uic6qf-dVNv1b0LDohqI7gDJ4F4cFnJCH6lYck7OrTgPOR2ljslB47IQyJIK8rrgMIGu3T4IG-YBZySP2rmxx7Uhaam2_ffPFL46Ngen8RjbBpctiVSJG8k2hhmU-qnLyVUuBgqsCKeH0kc-kIaYApxfplebnZcvkZCZG12s0tMvok8WVRSvpZnbO8-qVCvsyNO4W-klsDXCTofZc9vjQEnmMyk_nupVrAsqqm0hcI_y7GA9CNlu8skxWShSV0ym9A5I50V6TNdhApXDXPoj5ZAYpnWBj7oRRgVaxrnaB4uCjpRLBpHjrHyNd8HFiyzIWz_a3Ruex3kgma_CPGcR6C-UcSTJDVRsxzpGNABXaT9PdTROKLu3lqhX9Nay4qBgBo5Q4eXeZH_ZitJ2CT8oI0sPxxFUVVRa",
+            "width" : 3264
+         }
+      ],
+      "place_id" : "ChIJuZW7LHBQzzERK0GSinCKqAQ",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=335670388204912939",
+      "user_ratings_total" : 1027
+   },
+   "status" : "OK"
+}

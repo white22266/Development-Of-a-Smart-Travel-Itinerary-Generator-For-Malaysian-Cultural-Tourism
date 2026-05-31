@@ -1,0 +1,61 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4187197,
+            "lng" : 116.7939427
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.420068680291502,
+               "lng" : 116.7952916802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.417370719708497,
+               "lng" : 116.7925937197085
+            }
+         }
+      },
+      "name" : "Air terjun tensung",
+      "photos" : 
+      [
+         {
+            "height" : 2048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104662824928063801500\"\u003eTerence Vun Kin Tee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tMR93AXInXHSNtwucgv-SFP_riZv1ZRB7znld-qnqqIVDvGLtTK7If5MRAakznrXiYyPgo2msDbCoesZmtBiOxS0Kw3RqrfZxXdPu1T6m-T3iyiHpbvQHcxeQjKwUiQBuH1AOaWHQd7FZ-CtT5BjbNvHvli4aokzwCF6DGgNd7uHvuat-wWYch7Shl1coXVv0OpvGi2QRdV84OmQTg9PdVjeHVVFTyF82txCrQBevhO07jhDj-DAWGYfxVTdipbqXmBj4D7LcBa3hEjMUETygw1gF3-F_9GJmYd05XgrvmSQw_cY58fURjgS7vrTK3SAQw1fmrQRs62Y1RlY4DaO4JTnkc_4mSatqM9EVr4ECYxBNPhdiTxCQm7_-QgTN_jYuDNt5Jo0VZEqnFYzjGxUXjojJlo5TnSHsmFKcyM5Okd6w8FwptGApfxylhtHZx",
+            "width" : 1152
+         },
+         {
+            "height" : 2048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104662824928063801500\"\u003eTerence Vun Kin Tee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uSevtjG6-d8a-YrJIIu1YL6k3aZ4WqulSCONdL7yhkMKBZeQs0pHPkA1GnvTqlcZ_I2pzFjxzHr3y5b3v_GE97Hl6pQuOpJlf6m94kor4EXLyR-SbzutfY5EZnO2Yl7J0VJPOZsZeb8VWPiRXDvYQpMN8quNyQV_QMZ2nQYRSUoN_jh1W2ZCCBX2KagrBww25j4ZWRieF2XKkOIZwyDOkGI9VOyQNiMSxptvimalmNz1i51p8B9rrp2zaCygtkt8N3WSmsb0NbR9lR5LctI9VLjDWGO7nSixUHZKzi_o9t2b1wc-G2mnLqO9yRjusMyV0xd30pDQv35HDQjt1y9DJnjB3NOxB5n1BhqSNSP-e987LsdGQvV1nOhx_DjDhGhGmP5JeyzaVWF0uW8FFyfCQKq9QlfOWvDIDQWu1l9ATZvVZKGXH8zyRqgm1T7m5J",
+            "width" : 1152
+         }
+      ],
+      "place_id" : "ChIJNYvHWwBBPDIRAUhjAJD3TJs",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=11190591371962697729",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

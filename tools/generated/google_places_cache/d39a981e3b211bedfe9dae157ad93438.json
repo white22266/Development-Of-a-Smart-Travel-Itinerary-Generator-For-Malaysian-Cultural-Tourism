@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "57, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4137354,
+            "lng" : 100.3348618
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.415110880291503,
+               "lng" : 100.3362340802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.412412919708498,
+               "lng" : 100.3335361197085
+            }
+         }
+      },
+      "name" : "Ghost Museum",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 7:00 PM",
+            "Tuesday: 10:00 AM – 7:00 PM",
+            "Wednesday: 10:00 AM – 7:00 PM",
+            "Thursday: 10:00 AM – 7:00 PM",
+            "Friday: 10:00 AM – 7:00 PM",
+            "Saturday: 10:00 AM – 7:00 PM",
+            "Sunday: 10:00 AM – 7:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103519540283888579637\"\u003eMiles\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tvfxAUmWh00gSn2iMnz4ZDnHNcLZ1FzKnImju-kR66bFS79EWJ7avUHLdWxkz98dwOXkZngXcZjZdgAuBUUxaMau3zh5P2NdihEGNp2YBvwBrfuOpPVpuxOmRh0pB4vPBSIjZIMmiza6A9KJwrcQWipkWsqKxUNTy-zQ027DatrABbFkcmZpMc5pPj-WXCNyykQaS8aTpt3oZQiBnyzdUdzLGCekQ6f8iaYTAr3laUamhy_mbIeISQWoGRxzlpXrDEqO8O_Hwsn1cutaw2QhMfNTwcty1p9Yzacjdbi05rpMEyzO5wxRa-JRjgTlU1U-gFCpJDvFgWIV3a247d9NwOi1Q5LRrLakKBf53tGHxK_nYf_SJZ_wUDSTNESmZW7NITTQ1h_4RljdiB9uutQ47gQq1DGkHHzREzy3Vjjsqv7g",
+            "width" : 3648
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103482498523345015496\"\u003eHarry Permana\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sejiNSURCLFohIKZ33QJoD6aEZ3BzV1dhQxHNJN4aODk9vqmofWhnN_e4jRGqoxHPeGNxuwr_gh001jiHFnhYxT-Bb4T8kdrUwvZe0m5FX6LCFGCwY28tjozX0b7shUJAG3r4p3Fmrd44NeV8Tu-_mInejpOTN0t5kHVaFjEPX4_uLa1kolVlikyB3o2_zqaoIDO8T4hHmLUXVDEZxJMaZLQYqlfwoVAu8B2bmwIisCGdZSdtUZUe3AA-x2-pVBfJ7tntTX7Lx6nQv2xwuwNFwGxJkPYGRTwFqn5-aB9JB1fAkb-6WrfoGbJ4XCr9L8XA5rTGDmMd04VKoHANstbwzN46pQBkXGANuWgmy7iOXvNu7haA7UvkbPMU2o6PhHJFBdV553lXR1W5WffMV74nG3lLWULNkKDN2CpvhM5c",
+            "width" : 2910
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105158207920371203138\"\u003eNatalie L\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uijM52HVGnCL2YOBXhRxXxd_oWLD_E5Bo5UFDsbBL0vQKD2FKK1Y2A_FORb2twyYzlCNM8g1zik3D9rZs5euQiHWWgBAtFc2Xq5LqPh-IatcpWwjNPBSGEVx1SWDKwB6xQ0oXVqv4Jpx4eeruu3-6KmGmx-8ZGPzpxONqz3mdkpd9RuK0dXkfmiJFEplzoaynEt6fIbHEXY6I0s5DZy8k5mcRqlpogyTb-mShm2WlI0m2sjGbDPpxpv9aApzuul-A9xfkzOydr00qIQhtLqEN6gegOxTDLkXGw_ssFvUrmasq3Q4v-ljip8JuYH5rJHRfSLDAy_ggdGfFMGBWV-f4lg7RHjVthUhxe7KyKcADuaqvJkPENnQuG863-foj84C-uXIqaYf-ULnP_t-pHUcN2yMXamIJY0eHtdEKXCnBESQ",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111569334602685672625\"\u003eCrumpled Nomad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKalBoeTfUbcAzCsgpnNPxjzrSiZeFFPif5bnSnZ1-tuCgm1CVBG4eg1AbgSRPwEiJ79siAdO8NV9Z03u0gwBLO8z3_mP5w2gA-ioZ7P-3NobLyRE9hQISVIMW3F4Oozo25zsX_0UcQTDerj3z7tBnj-pDlwQ6D5ypwkFpAz98zk6BEBKTl8a6NQQ2XTIuaMzXE2oJgxIiTXlWqOtJMY8s66UBxNYrZzVQMQbsMrRBXwYw8j71lypwMtEIH5xfBr3gCDv20tWnJYoAEWHLd0RKsy7IHgKKB_qXGLXRyDauIT7GRwskc8wuUD5sanATY9y-y6p1Qjz4D2AYSD7d19skoP-xA95_l98ulVA2C-CNgA_sz7fiJCYjB4eHc4SxGmEUSxVptk4AiNX625TCuftWf7RYzKxIPHW9kOXgd7pbZd8",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103846201917343939525\"\u003eBing Jie\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uxG3lqXu6r_n3V9YQGG0aOk1WRUXsr8aPXeAKbVD-TkNns86Ls3284PQP6yF2Wkw_nuP5Hl2Zsn__pMvx69NBfhxyeyT-CG4IdA6YJanLEITv8cHNsnyfPP2betkKMdvsL8sTp6ZC5U7s4nTh347kUmTTd5VVoAvvLZ4Iza7xJdIjVW-gOuWHQq_jIwiN_gctENwvo0FGaGSqTxJgpdDpXHflg1FPuW1UpawGph5G7kI_6r39WWqHfOVAtZHMuEq73vjefMvk52IKXXShG2KKekzjdUDW0fWwc2e2X4YSNirvSrZ2cjf1KNFiyUkNvxq_2xz4IBhzt0HDWPopBjT5xWAaUKh0YaQSNH1c3rLdDhXnS84KVfYm2GSjY6Vx5-Z5qklOkUKtDTKsIu2aOPJlpDI3hYVxU56mgcdwN-poFI2lH",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111983363580999138676\"\u003ekathy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-skXtR-wANz4j-zXe5sSrBzDJj9fKAFIoMrLK3Ws_HAHwP7tJQsJ75TwFoeGjp3Mh3O-X3vi9ErGxLeqDj_hQy85METv-wcJYsz6DfoVkjn3pchnk2_YVHyLrYpCOkRyPjRC61zUtQUDSTow4UNxA_lmEe41mE2kVWl-Itb7OuQO4-qhswrwtu2KE-JG53xPdIsR_d-VSgKYhQjBB0NND1zVQi4vHYrocjeZBqFQaLxpbHK1E2t1jEPjqtrXlw3GjHD4sclzaa4b3HmuCXaGpea3y56buYNuoLh7XfHr5oHGDUPR9jY6G5LD5p-IX__sNHu1eeYMLIcQnpkemxUxYDHBJ89hxUaUYZDbcGKN1c48JIkoBWBu2f4He_tdapr1Pik-64rcphK9la25vEYcItvBhgttmk1YUBLg7odDHl5QQ",
+            "width" : 4000
+         },
+         {
+            "height" : 1560,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117553680061243993256\"\u003eGhost Museum\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vlotVaytLwyKrJQXsOyHG7pGWqNyddcxFAp3JDsUj55hpUYfHwEusZvhqJ7YbR6tLFlMV7Ej5MFk5g0eJ228nXVNNHu1mk4mRi7unMTg2h-o3j5p9704bW4Qs_CT_cq0eKSdDQk8NM9eaitL4n-QfSxoNzrodwGE9Kc8LWyr0CDWHjruF3nyjJgJgg-GhILuPiWlOZi-Lf0Zsex0A39GAs600NREWnyXCtIFDUrtFjaxh1pjkDAzwTQ-QU3-N8dsQ1-hoBMIqtV8MRwb1lCLQ379steN46iOjBzSy8jbK6ZgRqOPh83S0OuiyGkXpIjPc5rzlg8IIsEqTJLOZkgT1Sg2xK3zirX2YwontJgWw1JnG-sV_KxhDJSIjPMKTwX7jTqMqF9UinmBohegbBB-7_HtqMohybkauoRXEccY-ldgum",
+            "width" : 2340
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102477679370003909782\"\u003eRafael Raj\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vw35DhyyplUEkYbrp_PEGzUquTRCllzXQltpUexNjRvAErYepo-mdPR4DQj_gqBmxauQh6Yo_kS9nJoIZRznqlN5ED3kxeXi3u9lDAWiZcOsJziRWJULTfeG-vFR6_3eLlE7wzd5r9Pfo32l5cVUmEu6uNIWgsJ_fQDJGXYznFQOrEITg-FykH22GbUYfQJDU9HmwRgIa4rssr1aTbPM045gIWnDk7oTvIc7Wp0BI-N32rq5VdO-TCdvO1iTdSm1GTADx9ZFtbNxaJKnn4EoZExXWuAR-E5jYxhW48QmwCABHlByPK4ub3grGBG6oyugGkLnrVWfQMUL_AMhI1EDI3YFBqPL4EY_3NGzf4YFQ6jbiqN7k5XSGLvBhn_0SIEYeuu1iuGItsfQbNL4w1SOjh274aTVEv3nB6pv9djWM",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110251708648500981975\"\u003e慕然生活游记\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tIaqdwcpkmRNL9mUv2i5J-_uayoNMAfNX3j-2v8IF32mVRgqDjIeJjaBzJB4IOXd8eFyT0EA14_fMqWoRNNwdqUt3nEr84K3LKBwhPX9gHhxdwhH311GKT8_I6ubB3w3HulUPfTvc1lPtiDcsyK6nWduNiTF9qWGbRc5ZFu4tbsFGpzRuNg1xS6BszBHE5HVNkshwxIFNJlUkVXfcwgL3gNeTLt9kWa_gxnQZW_hxemck_CLia_hChqb_VRfg9p1TXhnNJ9s5H2iNSLWQEENAZfSBhfc66Z4yZVPGfSKQn5jNfbqQ4flZUQruIMbVLeDQwB49S9hu2BzIvf28uqis33U8lAIylTaDhB63bN8x37Yc8w8-0LCTXv57D-Z1nLLVzRCma7yvL6ZKWsq3SVj2vQdfIepYqrFwzbUdnGsJrUCrM",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104249598377590772157\"\u003e小白姣姣\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vt7li2fNUCjpjHPvOQOX9ucFgUhX2Svny8-2SkA-8xsghDYKd2somkM9nw7xBADbOzAggl2ZsjYCmzKDO4J1dcWexwu4GyXoqhX_2QBG3drBCekxmbs9MKSxrqT0w0A3RLukGSnUif0HAMIKohJq6iMwTDID4AccrLGf3LR1g_GAOkkKivMKhfM1QLpgY41BeDccqSsMROoLtjhiK-k_wH1l173eqdEW-nMDtGiEqL7FipgRbx0AkaInrYP_X55xBVkPSLWHWR9KK57FQXZPUIJCqWDS0tTUMIbfkRG4ahByph5KL66otvIDqZxqKEqrXThcDd9ihB3Nm4PDiVtSobNHXV9CSWWM6rsgBV0uiu0SPmTO68WP5mGJew9AvUUkiqLkCqFGP4z1tAvTLhWN6jXFRzlU4oh-uZwj90IAd2-OZ2",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJMVwPuZPDSjARUbEIN3RoO_Q",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction",
+         "travel_agency"
+      ],
+      "url" : "https://maps.google.com/?cid=17598774817229156689",
+      "user_ratings_total" : 4247,
+      "website" : "https://www.facebook.com/ghostmuseumpenang57"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Bukit Jugra, Jugra Lama, 42700 Banting, Selangor, Malaysia",
+      "formatted_phone_number" : "012-652 4769",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8359244,
+            "lng" : 101.4180136
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.837272530291501,
+               "lng" : 101.4193632302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.834574569708498,
+               "lng" : 101.4166652697085
+            }
+         }
+      },
+      "name" : "Bukit Jugra Paragliding Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 5:00 PM",
+            "Tuesday: 10:00 AM – 5:00 PM",
+            "Wednesday: 10:00 AM – 5:00 PM",
+            "Thursday: 10:00 AM – 5:00 PM",
+            "Friday: 10:00 AM – 5:00 PM",
+            "Saturday: 10:00 AM – 5:00 PM",
+            "Sunday: 10:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115392454810315958640\"\u003eYohann Ong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u8bjJehs3N6sETNkA3lgQ6d0q1tYjnwxxI3UHrL8M3o48wSUDnDbvITOqVTyBJIDdq2_Wpq-mb7ygi0QrUQGCBes3XF697cIztUTzHmZxQsxN0E-d6A16vnb9ya1rhRhLPRWbfdD4_9GiGbhZDUgBEiNtzQLRjNLu8ThMn_xY-iezA5G9qOI6KQK8J4vK6xRDrnnBwhiFKF29JzrLvWM0TE2CV2LKEARtuYmUpyucJvYW1_GIJ2sv76NasalIx8E0odffOZcKBQygbgLg_ey3hHyxfrEKSWHclJQlMaZj4RpnFotm1oiagqq-No8i1MulQaQgG3PM6vbsh6CbUCRzjzinzAT4rRAWUNLjOdiapDEHQQolooVHj6aLs4XyFzYvGiuAIMtOpW9mxGfUeim4LOltMOFjwOrJeTnlv6-i18nE",
+            "width" : 4032
+         },
+         {
+            "height" : 2160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117014558922781725387\"\u003eCapt Ikhwan Azillah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t38t13BOT9LdGSILxwI2p_FrMZ62bi526bBF3Phemwzh1y-NJSaisYD-8rbPbASUuIlOnvFFcbS1At1nUFa2htPSq2XGoYE27w46eAcdjAYUlt95ijTVO5yJgRNpwWRvhQGQopKs_5RiCimDV9b8cXUNw4Ezgpu4yDwdbpSLsk_D5Kvpni6V_UmO8NIq2ETb_SQY49FWv_eB-2R0TcaETfTlz6qX3SoWlGO0o69l0sCKELJVjzKmgEC1Y0NYuOdAhjUpVtbAXsNtT5ciaNAMYwwWNrRBAexNxbHCjLKB70G-HzS3u6yWw7G7CUbw6ZbthYPMrfD-SM8o9jYawXuwLBy3ENSq3S7xCzPfEbto8izTFwivqJG8mzSXb0PjEe7K-HkjaOZDLWEy2WQyj-vDhWEyxkckXd8j0Lkaz0Axu8gg",
+            "width" : 3840
+         },
+         {
+            "height" : 608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102287663650625473487\"\u003eKok Hoong Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sILF4BHxsVwXsBV-OUn2JBy3M0z9zMhS4bHtlSxyXdLRvtP8UxmGO1WJsnSjgqPvM7p5Mhi7yILW0TMInk4iIsz3wcauK4TdWs-wYGohe1R0nvNOyKExSA6g7IuHPiW0y57etLjqn2UGozbqrYm860VGW66LIhh7XXbPNVVPaTxfurC_lMfbUQC47T5nTgrDe2iVcmEWQUe-7ryZKGbn70v67LZA-3IpAVj-WEOE7MWPSEnpZ5Kl88RNUiV-eF0dBH39NRqQDLc7gagwRLHVihWnQT4aGFjadrSKvOpuEKoCzxAYztm3dz4bY9O0xvPGkZa6DpasETwzUdJczp1rViHxSplYXVRgcedh24Lls8Mo1Fg7h3E6Dn6Us_ifdc6qUYNdZ4qEnG1igSHP2mN7L8cgj8h0NZ4_h9VNf_jhQ",
+            "width" : 1080
+         },
+         {
+            "height" : 2956,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104942067004110119861\"\u003eAzim Akbar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uY4YEDe6ZB0nRjJPC6Er8HTxNdzRKq0pW-Pejqpt9sUvuW2nUB7myMhnVKpZYhVUbA_CR87zXvjp17zlDhJhOHcwrM2wuvMw9KQFlV8mC9Yx8IgCzfetrt-Mee-umCrCJZqik9RzGJJqnVc-maMLBi1zwWJVTgHbHRwzk4B4I9LkR7_00ep47Xk-SXH6SLlojCkFTzl5Pns0xHYo1P3ixry5oqM9TtQDa3BDMcsSbha-17lq1Nao0Rt6QunX6paRavSFq_zATLpC5heHZxsA_Mx8HUQegK9VtQAwtLft0vD47z-_7CHgCQPTKrZ4hiYA9x4MUtHdVz_Rpw01ay368OCdHczeD7yf-kdkE0jUaMrUO57WVJPvRnrstYoMFTjhOUHEuySZAD8GsSBV_q1vUsLrw9MBqklYY8u5jY9_jDP4SH",
+            "width" : 3942
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103468512847431758503\"\u003eMOHD ASWADI MAT HUSIN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tpUNnZ6k6bTjFOhJkZFPslWXSG24qgUcuHAbcHtbraMqJJSlURDBKUA33x-8g2G9cFB0NmbisG46ZF1jKPTOKyfXSk5Vh9B9Z6_zZJ9Cg-XpHliH8ZZui3L47ZwQrep8yBHzAZArLwgaTN3OAUaf1E55VEuTiEkEVt1iO6ZCv0bafhGXpzZ11m67knQuGvHD235gZnx4m3z49nZRhFFUSxk9a4BuPZXVUZ4PyWuPiE6521Z3csQeZRAQRX-c0cHA1--WC5Q7wrCQ_17Nm_9-Api40N0eF7DDmh-NeRJl0fcjg7XxHR2teAxkWOGkSMyc04VbCx0QKsIR7g6HBbR8zMA0nea8qrLki--c3sTI6IFMktEt_vDTyydVifs3nhYZ9DqdxU0L2mU-EBdXMiBHD2MiyzT91cHKUSyjjfWo0P2zLZ",
+            "width" : 3648
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117838313073827708436\"\u003eWilliam Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uxx9p-YOkPKoMT3DWnzXnSZtdV-eQAIgYLErsZUdTfC5fdOkPMckFdjLbXK0U2NYVE_N-mIn0Imzbwnz0tXx0wOcANpdezS1lx1JTFDeJtRmqzWjNtx50W1zal330b49sm_Sm653gkrgmLf4-H57tXGzeiw1PTUMtBnIYQ6kcMM98uQLp5tDjUvxdsYRxbT1hJQZX-rPTslyCg4p-8MAAa87KrmVpQIVt9l9aNiXetpelze4r8XE48SLzneaL9ZNQXlL3UD7C-3au_dLyp0dMlGb5ZGmIijPbNxahrgVG-to6NZkqL3ufOYOWrKxpW0GYBFRo0_Eq9Qd4ggVjnV0WEKu5be4bJV9ZEEghcRjt58VPGkx3Z2ecYrlP2VwarC1voYv6VBDzY6zGP8EvMNyB6_qsjzfBo--_LgiaBsF7JYLyt",
+            "width" : 2048
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108561298973736070106\"\u003eBlack Dahlia\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uNMuyKz-N6mC-ZOkKoAmWDqS6e6IcCySn2H6VBktAgIQXwxQPahYdEv6igwjEZfV8u5epFAUSSHOIDBzEJlVpHWP2XV5YWhRR8z6rVaCHAyV1xycRftJK6r9HhVJ3DAprUH1FX4VQ-VQ2Wz31bgn3hV7vpyREO6_qLArzd-k45ZG9O7guLWE_i51FYE0VyMO8xQ8tsITPwhqFxhSLi-QDoItSLfSeNRzfehnB955beL3YLDgnSxROz7MjTddS2yeAbb-xW1bIHMsc4AcsapRPZifG9nTVmnfWxkhQgNsg-lkWjgRVKE6RhU3xrxX5MNeBySHC87PpzXpPKZu2p9JwXAeNcxAxCvCp2Fe09qKijFxYHHmpWW1sx-tFQnJZcAZyQijh2M9Ds4IC1Gi8Jnw2bwM-LfqsDoeXroA94bas18w",
+            "width" : 4160
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108440141936034495332\"\u003eToby\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vDZ6SGUQlruo6rGML4BoEnllrzXuqY2e-tnAV9JsYhb6ou2e2wrkNUiesr_2syA7IdM514ROrQJHb0jLC9xnR2X272J_3f0Vnm7MqzSn_aDfQfBOTH-P0kwGRXgU06eBp2JVwN3QJr_-zfsskU-05Oqeemru8TfXoqlFs49b_SWPLc8pXS8eBjMPr9_Xlg6l8cyacKWLnyf4LhK7yvSgkoR4Sy-gsYg06WCmrJqyUjnn-iqEaleIzJt5LWyEBofECx6jPzHl0nR6qz_Ypna5vO0aaNaHeSTqJqaFLY1u9qBl72cVWZLR8jYyrZ2Wd0bqLPGGo1YVTnSboU7j2DBwrdXfQE0mtxkbw7UpimZczvELWBYtiUdFSP-Cx8maTT8SABCSMyZxQdalN45RvRRIrUYiJOdeyogjK80yk30Cg_fPq9",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101376387297572409397\"\u003eBukit Jugra Paragliding Park\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v6alYicvTYv2M20195H_EpdMELJ81YLwu34kmFktfPVVNWgIh2Nff6_wrWte_KvKTzkG1FpVMxL_8f6SVr58-4JwFvKjZckOjm7ZgcQBtiHSythUpnRxiPS1Y_WuyfycjJGrg22mh2j1HK9LUBrX9WC30HldrW7xvzM1ER25jg2Fu3o3OKrmVOMzKj5kb27TVNim_Bra7jSdzNSw2bnDoJfFKVJ8ge023y05wYSb3vDRVr2mNF5tP_aFGL-LCGl5juy6Js-vLUT67Y1d9GMKR8Qi7WH6Gu0SaTj2tc_yaT9Q",
+            "width" : 3024
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113249217265130391925\"\u003eDanny Yong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-slQYlyztc_ZIl-dBFmYRYol-pCCi7uYDMLNzzw4p9Da07JFt_NBz2z3fk6QQFu_5nyhVS2c6T7LppdlaFb5daPWBEAdJXFP1cjePwlN8aQ6vFZh-t6eedy2huAxfYAnVq0RHYbKlU_2iqdqRbNjZ7qt_2jjjx8ApTbrvpLxkYgZ1H73Nt2T5r1YI58LbeGHnoF2PSMjDHR3hYylRmko3BJtJpYGmQEVA7FBPzPxvr1oRN0dfEb3UkThaTb5Dg8l6B306VjFI9XnJo7NBWpLbcAAMaCtWxt2L0_MjeiGONNCOYOsRNPhUnkfWyUTDlkruN49JWNTT6PeAivJm2ERkHh2sVAoRzsW_erbZHSSz671XJV9AHYCWwNlMo3TIUfagPhJGXpSbV-ll61DcjlDKhF7m-YjSgZZB414lAvgzpy1g",
+            "width" : 2700
+         }
+      ],
+      "place_id" : "ChIJlzIHUommzTERwYa1yPnhFws",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=799355921811998401",
+      "user_ratings_total" : 316,
+      "website" : "https://wa.me/60126524769?text=Helo%2C%20saya%20nak%20Fly"
+   },
+   "status" : "OK"
+}

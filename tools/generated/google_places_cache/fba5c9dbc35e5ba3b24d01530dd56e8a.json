@@ -1,0 +1,1227 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-t_9x7L6TYqK7V_dVQFv5uHRdnglXxvRf25NcYQNCSCXgye4hSODlocNvj4a028cv3FmiPKfS7GXvwk_vExJWlCPRqCQBlm03HQzCrkccfyusKMk90TwSw5I0fc9KYfJgJ9rcDx6A94BEzId4D1WBIU1ZlraErtkoMVJNnLGA80QdplzXe2vwdlwLWfks5Atfcd-jaF61jq0eaARUEhw8aEeXm0zq_hkKKjI9GQ1MYYEXdnqe5io6Jpluq_QjjV_pT_iD7KYE9MVFOl1YHT5cf5JPQeB3oSOnrmX7lUA9jEQiktXpsMEg7fY1m_sYzUMZ-IJbwWrdbIvnpWYjGkCnJdgrcmIBFMSglMQ4TSdjPPyKHmda2Ev3s_7jIiTRFV2H7Jv4Ub1yHCbsokZKqZjRJUUGev8Zc96inpgv3KHqChjl6dP8Kj2v59Koo6-QrrBNFtVEarVJ9I7ybKK_IM7K_cvJsuHFo-Uws7LfyZFDv67JWewkSAJkxIwtN73kt_uEnLVfUA5b_2TtK82PUXFWh31ZaMA1Rjc-lJGO8ULQOrk_n2fFlvJekeyt7f4aZNTvGMs2dF0-p8lywPsGcpNzl-UtwkS_en5M8BZeypKj3413M5inHHYPGhQFAZYj1pXNwcZifGjdd55LQX8b6-8RK2DOUdiEZw8tG-PipgwH63t6JTjsv2q_nBIf09ccB6_aSqs6ed9tFW1HXJ3AZyKOZSahXIdh2zNP-NOyV9NWmUilH2IQ8O3ZB0PQvWoJjBZ7-v7MNQgKMKIXs2phwlU9Im0j8K99QWUJraNx8i1sYz0z-Lr8-J3E8jD22GnOMOgKt7xwn5ZpCa",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "65, Persiaran Endah, Taman Persiaran Desa, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1219525,
+               "lng" : 101.6876678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.123622130291502,
+                  "lng" : 101.6892546802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.120924169708498,
+                  "lng" : 101.6865567197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Thean Hou Temple",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106009050344640864582\"\u003e山田正実\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vRc9aAHyejNJwZtlsC55ua0L1ofaZ96WhVuHia6qT2EOEpSyEQJG9NhP-3quyatGeD232-WHaelzyJ7_JhEeMkwFBye418mEoN2sgW2tHucuerzlND0Qt67SYU13RLreFirHLH_8f5-jAAZZ5BoUsmCe2AunmqrfwIwYVvG8N9epN9BwqGq9yDzRhYwwLrYgtI9zUQ_Twz-5OjoCyizU2YhWmbIAmNiw-fBeSUAjqjksQj9N_dzqTuXiguM6UJNu6J0YgiYLyjzu_CVrPamMYXzEEU_6wr6rUpuRE464gwo2DhN6yX8PNYoJ2AezLPhHuc40RnQwY7szqTDCxHkhbC-BU_jmE6p53yBheeQ2A9gL6prp3oJo96-pUDIhgPJ4g4kl-O_DZMCWtEHdoyJmKIfWwZNsKGuSst-JMwF0c17SDr61ZhoqtzOoNZzA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJqSc-d_JJzDERbOlsCf-UmNs",
+         "plus_code" : 
+         {
+            "compound_code" : "4MCQ+Q3 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MCQ+Q3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJqSc-d_JJzDERbOlsCf-UmNs",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 16249
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Perak, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1489235,
+               "lng" : 101.6956276
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.150651630291502,
+                  "lng" : 101.6972373802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.147953669708498,
+                  "lng" : 101.6945394197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Abdul Samad Jamek Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 645,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117436491342451698773\"\u003ewsh wsh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-shA4ffvHilpfpUdwARGo98g9jIV84dO3WpeOgiWSLN8H0DR_WXswnzA5NS_MhGM0VaoRTu7Cb3NYcpLuyZFKZJZKGMl30sB0f2aL5Hvl3kepULqLrlFdsO0auaSd6BxqMFwO-h0M9msUCrX3X8TKNpo9pGDPfgAnD4K2jr1J1S8w_sZx3Ccb66zrkNtQWP6KFfXu0dq1GeS7oEdjM7Q-dL3l3MID3xt7a1lx7zR7aWovZscG3e_7LzZ_8txydcZ-tG4pYuEScUez0yfkZe92QwiuA1XMNNmlbrbEeNaN6ownLtuxFnlJRONSsICq9Dcoq9t5VdDIsSuPpWIW-1sfColC9hhg41dV2xOg8cl20BrFEIWQBDpq8B6uF-auSDoXCeabpRWl058U2I2se1w0Gk6r9i4LFivEGC1dc4yQDcNB65",
+               "width" : 865
+            }
+         ],
+         "place_id" : "ChIJeVDgedJJzDERWNeKvpt8kIA",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXW+H7 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXW+H7"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJeVDgedJJzDERWNeKvpt8kIA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10765
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "163, Jalan Tun H S Lee, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1433851,
+               "lng" : 101.6964976
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.144731730291502,
+                  "lng" : 101.6978899802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.142033769708498,
+                  "lng" : 101.6951920197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Maha Mariamman Temple",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103964265753601227822\"\u003eTú Nguyễn Anh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vGK5zBXuiZEUH-AdwO-UF0OpK-rduMZRXX2cGdESHuSTFvS8y89R9LBJZI8_GtnJnDoz6zNYh0L_ryDp51m3x0wCqXj-N1GGud8MRHnzZDxaHOeoQ4s5zQ0nVdp4kENq7aEh8x-FkQJE66rJU1KpxUj1Add7S7vYe6Qs4snkgdAwAHOMv5dsCjX0Q3TpuugVDTxhXr4Oqk-CrBZASstD-U6cJXiC71UfOeBxtvJQU_rWciKi8AWT6BhP4Mx0HOFToCH3UEq_r3qarYsPd_-ZahcH0Ul0PR7ixOpog2QCMHGer0QF69olQtfmPxg79onw5ULS112snPairUUgSQXhQ0gNk3Zg2HdFUkUE6iJF7S0gWKKzrzyHZABPbbjQ1fFPFXnYTlD4KFbn3_2xFMBWMAN72WWLqB9GGU98HHkl7WXw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJUXIQqzJIzDERDbwltFc9Pm8",
+         "plus_code" : 
+         {
+            "compound_code" : "4MVW+9H Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MVW+9H"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJUXIQqzJIzDERDbwltFc9Pm8",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4566
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Perdana, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1419783,
+               "lng" : 101.6917573
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.143361080291502,
+                  "lng" : 101.6925627802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.140663119708499,
+                  "lng" : 101.6898648197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "National Mosque of Malaysia",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 788,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108318017359840412871\"\u003eHajaranah Hasanuddin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sf-YJEO3Ql_Q6BKsCQtYqf1ScAtDoH4rUz5xun7cK_k-NXwmchaEII0OI-8VkzWzkcOqZEVlCQAUdGqk0ZbWgCLYtWsX2QSDnQ8NmsgHC0wfAVllT4rIs97Bf656C9plpz0HD0Ei9jJQQM174xtVM70JUFlgKJ8ahMYHfl885bzXV4i89j9jACARZSA6pxJwJAdEtjDNIWw0cigkUgLF8ZwSuLr5m6LT3Au-knpAFjKSPoYh_geCKSxHcmAYTahTyPLwqmVY9UdHkwWUqzmaJYuvMGU_C6s-SdoUCm8neVuQHr3lNIXTx2ly721hmQnz3SoaCJpQUm_O1MY2LXLMYA-t6_8SNcw2HCImDx08jQxsHj0M1yMdfhuOR1JuJdGVdJ1Fvoiz8guA-clXGutIssXd61W3TrM8eLDXCxQus2u0M",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJJX8hZM9JzDER-yYg0nIT468",
+         "plus_code" : 
+         {
+            "compound_code" : "4MRR+QP Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MRR+QP"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJX8hZM9JzDER-yYg0nIT468",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 26584
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Raja Alang, Kampung Baru, 50300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1642227,
+               "lng" : 101.7034276
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.165340630291502,
+                  "lng" : 101.7048751302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.162642669708498,
+                  "lng" : 101.7021771697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Kampung Baru",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112353322301329548153\"\u003efariz ubaidullah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tPWEI-N6-IzjVmjVBT36Ntv9Zppv7kvmyHDJF9oExBMIAfSKWydUdaKIcKLauBjx4TOvEsWyT_B-htClXvxLxiw8eV_vm1583B01IMC6aUFCI2MGvD-pHeAVGP_WLcdfw7ympN8e9KnRWtqcsEOrKdDnKOeoVZqnNSIK2E1PjbjhpksEzPaMtvFbCF9bnaacK1Gl2mP8PwHDHrSz2YoC7pgkgseCuHb2ehM8Z--vuvsAs0cw8VkJX2ZYxxiTbnBO4_4NTrbEQ0hBKHllWnP_5Q4SMbajV-hVQrhESa23p4QrzQu5PgJsvrv2j9Na-gjqfd1-4Uyd0tnIuNaH4RKiG3jBXsxK2ecDp_rojClN3punRSA-Rk5XvBulXKlQ_O312BzcNxs5FLiYf7-X1mAYgTiJkSKEO0JE33d55ioZ31Nt4T",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ9Tnh-iZIzDERjvCJErRiNzM",
+         "plus_code" : 
+         {
+            "compound_code" : "5P73+M9 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P73+M9"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ9Tnh-iZIzDERjvCJErRiNzM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5601
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1490605,
+               "lng" : 101.6936592
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.149998330291502,
+                  "lng" : 101.6951887302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.147300369708498,
+                  "lng" : 101.6924907697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Merdeka Square",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 866,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106458291978076964674\"\u003eSylvia Super\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vQ2uY1n9IWJJh4el_jIUM7cP20PmLiwvhhzTtKzVjvV8X5OjYE0ANqpAruhh3W3Rc_SezKOURndkwSQ2MfgGWH7VOxto7s_RAkbHS4kV0QEogcAGK06KdsY16Btl4LNjxVDWbysWxOM61x-l6xpZ5UnCfTXUCz6EPm4SeC6EkqiiFyEJQph9LQkI9p6co98FBR5nZbpjDPljOUEZXH1F582IrB8A2KuMS-OyyqjLMtRm2gMANgfJYDe7CamE3ro0MZNYJNUdUrg6a8DqGBaNK6lu4Ax6pM67fqPQQ_3c6lQS6lNsBS5zT83y00HiR2Lc-04PWzbLTyTIRZyAMmq44IJMQaZIoPOKkny3Cuk2f3cBevsRa2TCfWi5LEFfrmCcEdno4gpqHl4hzb-9yYj_FZFw57FbUbWLnDo7pKjew-fNHc",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJORWImM1JzDERWTN2vAb5CzQ",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXV+JF Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXV+JF"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJORWImM1JzDERWTN2vAb5CzQ",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 51872
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "9, Jalan Pudu Lama, Bukit Bintang, 50200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1467442,
+               "lng" : 101.7005964
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.148075430291502,
+                  "lng" : 101.7018734802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.145377469708498,
+                  "lng" : 101.6991755197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Court Hill Sri Ganesar Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100442747350760001574\"\u003eSaM L3ong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s_TfuULyjKOxTzgXiETxiinI1DH-itA1VacGX1C1QyBO-X9mqgScTHDuljUUi__1T2ux2wFZELZfZbc6nYk_HbFeRQ6U79WuRZ_7GCgskUylGvKO8xCGeUDZ-myee5KZbWT7lr-mthnO8dFlWswfTgwkSjLTQXyI_nWSBiCHltXN24XT0ALIvZttpESYqZzaSStuD3dYjW4u5nsnEFUJNSkUfetbYtmIcKxbMucQlgBJlLtwejVabHsfUnrsgaScWDK7tnmVopSRCKZdqJ4pA95Bbe19AS8GB5YSMdjPFNvtHTR6alrOPbkfFEtnaT7G7ndrHsfs7Unwa4qlzjeflGtnOX1Q69KPYBU7GlioV7_1WVMfwVklzyw74Nip54F86rgSKm77vZR7pinXpwAmMQudB2lkBDQcnwtxiR6Cj39lUY",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJZ49o_NNJzDER52kKLYt5jk8",
+         "plus_code" : 
+         {
+            "compound_code" : "4PW2+M6 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34PW2+M6"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJZ49o_NNJzDER52kKLYt5jk8",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3229
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "123, Jalan Berhala, Brickfields, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1280426,
+               "lng" : 101.6870828
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.129252380291502,
+                  "lng" : 101.6884675302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.126554419708498,
+                  "lng" : 101.6857695697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Buddhist Maha Vihara",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4460,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100197571922956442206\"\u003eBuddhist Maha Vihara\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sMxEmUvA4bMyT98GABPsjgWmv3aOVsVqHpZAVsVFbBjctHKCTOVz6rYUrLeemoH2NeL3zSaBHlshOdejp6PYeEODKMdOOHvl46EgA5w8-dVJKbA65zLgxtdTz2nI43gV9wSUEuxnUQaBIXgWyA2EqENrlVNOmPRIZ1v0glaRWiUsOTaMim24b1Owa5iOcgJdKvUq73GG3H-G0RU_OS5i4DAiL_PS2K6mXIxA4xcy1C8L-tHWebzQDJnyvqsNVVvQPqKqYaCOGz8eXXpOgVZjtdl-MN_aakWlVxvz-gvNo",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJDbZymetJzDERkjwdFIKToy4",
+         "plus_code" : 
+         {
+            "compound_code" : "4MHP+6R Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MHP+6R"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJDbZymetJzDERkjwdFIKToy4",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1619
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "172, Jalan Petaling, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1402509,
+               "lng" : 101.6984022
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.141576080291502,
+                  "lng" : 101.6996486802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.138878119708499,
+                  "lng" : 101.6969507197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chan She Shu Yuen Clan Ancestral Hall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105613910004038507938\"\u003eWai seong Yin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sV1-adtMyy76Yx8_JG7CZftDbxNQ2rqgQLkIBurhyv_Bi2iG6-dhj4vCzegNvHRktO85SCm2cwHZbh677A1vJjwt5c2Z9ibabj9moHtwcfhm-_x2VOpextgSPEXZYrJKBiXzcWCPK1kAb96mcFugN9cAFNkqdKo92w4FLC6SIthr4NWuHDp2MuinOQM9GDLK1PPeLAALmrwrhMPYXENPQTPDMg2oNTSxdCV6aNtljqZP418mmbIEh2NLNHG5btFOn2BEBClxUcTPkuagFTI5Zb2igZGwtIR8FnHdO-uePpU7SpQoVC-isT8Gv410ggDb_d_pFIXV8sIUlKCUV5cs6lBbEMM6dcdma_u71lCFa8uxp0-IKLV7jazwJktAuNt1EcMQNaKiMKjNMaqoQlG2WtcKqcNC5Epyrf1sWX4_PCOw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJF5HxHdpJzDERcxbhlW8Kkg0",
+         "plus_code" : 
+         {
+            "compound_code" : "4MRX+49 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MRX+49"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJF5HxHdpJzDERcxbhlW8Kkg0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 795
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Raja, Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1487179,
+               "lng" : 101.6944582
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.150026280291502,
+                  "lng" : 101.6956531802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.147328319708499,
+                  "lng" : 101.6929552197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bangunan Sultan Abdul Samad",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103774206695926550293\"\u003eAdo J\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s0HUPZXQ1jRjHCnbI7E_rpySfyKhqascblrf54_DczAfxe9RsTvDQOFc7onW2BFeZotes_nBR3f91QK5thhbIFYl09RB2of3g6SMzmqXP0B5p_k3FpK1CAvRjRejiWLlkvjU57DM3Y-d5D4uQztDhPr5sVqYvFW8e4pOLiVMBi4xn5MfEN7h_8870prWs_s-SzQO4hEqcB5mwCEiiZBhBYp1Tm-3GLbHUqdpU70ms9GoBlCh0JYWXWm5ZmKLav5-xIu3gE6bPzGMt3fdx9Y7e7cIg4ACBFCDHCfRs2DjZlO5XWAyhkApoWgcgjkAno51qsApSjXnoWUeMo4tIBgntx1mnQeJ8ZlBenluvVFebwdLrKKITUgfY2txBBVnXIYTDhUvfmVyJcO7McKGpBKPo2c2GbThLtAzJqvaKv13hU9ln67rjXJEs42-o_Hg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ_Y2Rm81JzDERKAawVfuGOd8",
+         "plus_code" : 
+         {
+            "compound_code" : "4MXV+FQ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MXV+FQ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ_Y2Rm81JzDERKAawVfuGOd8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2971
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Raja, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.150278,
+               "lng" : 101.6934342
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.151594080291502,
+                  "lng" : 101.6946634302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.148896119708498,
+                  "lng" : 101.6919654697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St Mary's Cathedral",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 315,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118387134074303806684\"\u003eSt Mary&#39;s Cathedral Kuala Lumpur\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uO_xdkJcgarzrrHaEw8_FgNTWTWTz1L8jd53pWNDYdJGOKvwhBgRWZLVwoX5_HzbF_O4UQbFRZyok1Gwcwii45FOeTHzsr8rOKeR6Y9nDu7shh67QLaLBnK3BOrT0yoxj47ag4XHxgyX1952STXzVwZy1Q-cIRFl0VIQ0_v8n3MUuPKJ-zg0qiAu9ZM8xINSfe61iAOWxfFWPr-IbLGuX2qHb65elJRrLGN5UK7hVCnaW8PqMNIiuw33wvGFLwEvaod99-GN2oXVK22NKBmekQyoSSGBXHntcOXapJC-FdnjoDEtpI-Mi9dBoZVK4P0DUJmLTP2nzIZvLqvZvsC5m_2gFgSyYOBuzhMO-BweoT2lTFVjVF3mW8RoqWOT6PChUOgqNoK1aOl7ep8Bunbfs5N09uLNJyrUjwYJ_WoGfLsEGm",
+               "width" : 851
+            }
+         ],
+         "place_id" : "ChIJMVJtPc1JzDERzgjwHeAcP40",
+         "plus_code" : 
+         {
+            "compound_code" : "5M2V+49 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35M2V+49"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJMVJtPc1JzDERzgjwHeAcP40",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 602
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "ladang, 3117/10, batu 6 1/2, Bukit Jalil, 58200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0586626,
+               "lng" : 101.6595796
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.059914530291502,
+                  "lng" : 101.6609836302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.057216569708498,
+                  "lng" : 101.6582856697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "DEWI SRI MAHA MARIAMMAN LADANG BUKIT JALIL",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106456052519793086424\"\u003ePrakash Ramesh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tugBIaLp1vw381nHuMEkfOVmXo4H1AL-i-a1_9cScTeWJTGgf78fnUeNphO2YnFRSdtSZBFFKrbL_ZhS2-lmH9X6ARW71Loh0WQZFzSS7O-gLOf1sodfku0yRZM2zj6p6aAO9zZwFGDr1ps_0NZXJL-u6FWeSjZKp-LYjU_uhyT4mmQPCCJER2rhEe6OkrR8gDF7uGZ5Bm9Lunko1St34Q0jQ0EfF3y9UOaObjBC-KMnOsocr2qRH22SabqQ7MEccAmSxGuPvxV4Mo94OBhsQnGR4AidMiD2FAOvinYykgfJWg2B_XKR0tT8Ue8nr_tzIBrPnRO2BGxOoYdC9ZUkygvGZfmVDnePJ5YWEmr0_By-2x__b5-ASE-ksTspx_VBSuyx_i3kc7-VVLR_yiomqL4XUNOKcDtxpK4FSTc_NIIxJu",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJgTbsfSJLzDER-NWG_QL1UeE",
+         "plus_code" : 
+         {
+            "compound_code" : "3M55+FR Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33M55+FR"
+         },
+         "rating" : 5,
+         "reference" : "ChIJgTbsfSJLzDER-NWG_QL1UeE",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "168, Jalan Tun H S Lee, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1440375,
+               "lng" : 101.6967316
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.145403280291502,
+                  "lng" : 101.6980183802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.142705319708498,
+                  "lng" : 101.6953204197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Guan Di Temple Chinatown Tun H.S Lee",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3614,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106989464273510583906\"\u003ebikram barua\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uEv8EEB6Q_VnVUo7W3rNC8s4MFeZ-saQiodBOPQcv12ze98rDRahaHQujSJUSEHTk9_b7J80T2KKpTAHDpnEstX0iwtgFpBn6Cr_0C9geMMB3T-Fi_MeJ8a1uN75Vgk76iYbBzuy4m9MUMt8BsM7u3qYr5QjBvIaZlsZDd2LxIwgj_O98tyQjUeNgSEYJUyJhqPU6UYptVgRSYXO6DorQcRLUybKsb1-z2bzTWurgqzFsDh79B2ZQT6Nwu59wLzTa-HGZd0QabDjIPGfYrvZQUUGCexTRF_VeMRW8aRKP-f7oq3G0dpx_1VTHhBRwu8n7r9gTq0Pped4_l79TeOGUZierHKIPO0LMpxC4mYtxILC5LIe7ori2_oHnwNz5LoOA8hF9jjZL5kTLQ0RJoW1A6xVOFs4OoIH6tpqGDiK1qEDLD",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJlcM2NdBJzDERx4IcsKsVa4E",
+         "plus_code" : 
+         {
+            "compound_code" : "4MVW+JM Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MVW+JM"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJlcM2NdBJzDERx4IcsKsVa4E",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1651
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Masjid India, City Centre, 50100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1516061,
+               "lng" : 101.696343
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.153068080291502,
+                  "lng" : 101.6977324302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.150370119708498,
+                  "lng" : 101.6950344697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid India",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2512,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116536372130568450349\"\u003eMOHAMMAD SHAIFULLAH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uNhxa0F9PrwSTB3CE7KNsV2QRUBJ6A4tUtSHGH_-KyMOyVag6SbnEdSH5qxzFDrFlZHr8ncJ0NCH-8PnO2TiKjZrtFTF10gioih_y1qCJZvT3Bc0TrGSveJqT3H5KCrXrjAmQIUxvG6OZcOtFSrzEgQWk1hKQDPxniVJElmSk-ZkIIa0LoROoA3h64_173JcN_9YtSjsK0d64vmcKHBSp1AuhqJe87Nv0CWOIRgbBS7UsIJO-h_jAgpebG7nJQheQRppBAWcc6xstTzbQbJCRIyGh-AXKVwZhTrcpPVmZCa4vrKMXxZ94cP4BwiHAG_zamyfMlcVr3Kbg0Ok2EoNuw7MgaXzvJevm6Q6WVQGi9Iq2YwhTJ52OJTAO95Pd8NeBdwmZkqqtR-1qWOW_NbemGH36hhdWg_1g",
+               "width" : 3352
+            }
+         ],
+         "place_id" : "ChIJeeZdLDFJzDER0Z2OZiw1zVc",
+         "plus_code" : 
+         {
+            "compound_code" : "5M2W+JG Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35M2W+JG"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJeeZdLDFJzDER0Z2OZiw1zVc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 768
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "49, Jalan Alam Sutera Utama, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0544436,
+               "lng" : 101.6645644
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.055800530291502,
+                  "lng" : 101.6658361302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.053102569708498,
+                  "lng" : 101.6631381697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Talhah Bin Ubaidillah, Bukit Jalil",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110569996849315964159\"\u003eKamal Mustapa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t6yAx2qIlS4TH4q5-0fqdN9CDlvLNXksaMtThZBnQQ1eBCpRI1UPEMbsZGhfaIsp6Q9TlLziHvqtljl2R4iaBpR9JyvJ27I-EAMPmcZ35Ma6DjZ14exvYsfTSlTBUjUdufUTZUm4jzmJkuTBiiwTWvEJkAvu7yq0GVrjD6XyqrzAgp0RhpIraOYysh7kvRJ1kMyN6kg7OkRS1uwBU4GYQTkO3LiicQ3Tazl9NuBElqn2JqLBKsLn7RztoeeIkfsakfEhvaHWZVub8Hn_3Ac9NRPdg5q25qOyG0XMIyd595cKFYrC_nHzVzjFHezd7I48IybqqZRyN9Am4OvMz8IPEQ38Kq0FW8jEOHlHo-hD1CE4QGSW_LcJ6DVlyGCCrLKC0xAXoVct_T5dihG36jA07o-VZqTYzyF4oCUUy-RNumVQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJJ3bXkeBKzDERSalnJ7Vhhnc",
+         "plus_code" : 
+         {
+            "compound_code" : "3M37+QR Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33M37+QR"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJ3bXkeBKzDERSalnJ7Vhhnc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 469
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Apartment Sri Rakyat, Jalan 14/155c, Bandar Bukit Jalil, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0568392,
+               "lng" : 101.6688883
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.058249730291502,
+                  "lng" : 101.6702036802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.055551769708498,
+                  "lng" : 101.6675057197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau Darul Bukit Jalil",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2253,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105913168600113480226\"\u003eMohamad Bin Omar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tVPsA6OKmSW6wNCnm1tXQ3rsaCMZaew7-9AHpyERuOy7QK5G92AWFM9lyxucqxIc41ctEfzA7XmLv4Ig_jKsNzcCZ_RNqorVZiVojigMY-A922S5wE5tbFZ-FoQa3Z1Y2gt-E-9Y-1BNiWoPa3RRSDtdO3LrsLpBbQXjqhhUyaaJqH84vHqimseo0KPPAg1ZUhPmIkIMfkjHaxu9nGhp-hQnHFy_eZKd1LhfYICmGEl76P9TrkjwFbDqOvb1SQVgvoBPELOLeUbIL_9RTQJUi9lkHSwHHqjVh2SkXGdXI4vsaXwI_745wcNx8ofeT2gKU9lKGwGjhOEgXtGaAYh2S7TXXsJDpvLPKcywG4dDl-dBsgf-PlhnltyyUVwmwcikweGFdKfokV2XqF2kF68zvkLvEiDWDvfkzE9n01wkzcZDhS",
+               "width" : 4006
+            }
+         ],
+         "place_id" : "ChIJzSf46OZKzDERL1Z3V8D4k1I",
+         "plus_code" : 
+         {
+            "compound_code" : "3M49+PH Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33M49+PH"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJzSf46OZKzDERL1Z3V8D4k1I",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 184
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Liku, Bandar Tasik Selatan, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0741065,
+               "lng" : 101.7190805
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.075516830291502,
+                  "lng" : 101.7205663802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.072818869708498,
+                  "lng" : 101.7178684197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Muqarrabin",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104943541346826956781\"\u003eMegat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v1qkJZz1NH-Chi4VxUUy9TOWWZ91zDOngotPtV3kjDeZbyp9pJOirXhpA-fF4NIrrtbh3kq3fblX-jI89SUBdcUKtwtPpDrfQQsXQwkA9VSO6_V46V6IoPjzQyQsAekrSGRToc1g0ksI6r9vOmGo8f7ozseKMA-YDjnIbSXyqEnQp9Rdfkd01qj8ow3siLJCiGDO1I-vnMyYNtxyNy41Kywde0te67-VKkCWdXg8-NTtPkl6VljvEiEaa8cvXqjWQANOmKx48_2v3jEhI-DQeG4suEmmEQ0eFaVTBn_GRfJXzMXP8ugS4TPLBZrMMuSaOJNZxW4KM2iZoYvi9Jl-DXIdIPHZlDTwyvFklq9oLf3ClqZ3CXrBESBrQVDxH15j_NjicPrfb01QuhHr6BVCO_pNW9KX67vUe6xGZ95DJs0iKN",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJCxotOp01zDERLZRlvGQRkdM",
+         "plus_code" : 
+         {
+            "compound_code" : "3PF9+JJ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33PF9+JJ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJCxotOp01zDERLZRlvGQRkdM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 416
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Jalil Jaya 1, Jalil Link, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0576111,
+               "lng" : 101.6742309
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.059026930291502,
+                  "lng" : 101.6755596302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.056328969708499,
+                  "lng" : 101.6728616697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Peace Community Church, Bukit Jalil",
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116209304673931534386\"\u003eRobert Kee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkU6OAP7uKMw0oVjMKTPoL5-9e2qy1SIWczBXcAbmay55ICG4S4WgwoPEHTwbv50iGYYMbklIxD9FQzFJFRpULHHQHeUx-KFq5xUVXKj7jKFZ0gwclV2n087ZvGrwLm4FL-7hqlkMOt0KveR0VQzVDdQmxtOWmdxI3EibakKSS0W40foQwNolOeR6oyhJ0pb8Uq6okxOS5NaWCBfDOhOkJjYqo-HTPW_pSq4YGhZxs9gwEcDaK1XJ3zj0OxA62vcCvHajTJI3WhjSP6vKX5TMF_bKqLae-mDb6qHD8YkDL-Dp10YLAHHobIMwX3MrFc0WKupVBGkOzuUU09dWekW_k5MwZdAXmIqCu0pgd2YI_EjCGYeVKz6SckRjR1o0WoEfeeI3grLuhuKCsHtc7N3rBUxlXhe5Huriy7IXICEg",
+               "width" : 539
+            }
+         ],
+         "place_id" : "ChIJ5Wp5Je9KzDEReH68TGWvN6I",
+         "plus_code" : 
+         {
+            "compound_code" : "3M5F+2M Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33M5F+2M"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ5Wp5Je9KzDEReH68TGWvN6I",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jabatan Agama Islam Wilayah Persekutuan, Jln Tuanku Abdul Halim, Kompleks Kerajaan, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1718992,
+               "lng" : 101.6710787
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.173105580291502,
+                  "lng" : 101.6730600802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.170407619708498,
+                  "lng" : 101.6703621197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Wilayah Persekutuan (The Federal Territory Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110188376846481365368\"\u003eJoe 9⃣7⃣\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thVIEhL8i1Qe0XXs_cpDCJ_s8yIA0iMCvk1o1yr2cMUHzovkVNVurd3dS0ya-6zAyqIHifJyXvoOm5l5C9ieNZz49x_RNmQbg-Dbo8lz057dyTAyU2xG3t0QZ2OvyS69XWwGepH6M_EOrHWLzNXar_h7geQG7Xu-7SV6Dwqarjjkb0nAXvgXqXL1Em5YEAV4oJBSAE3dSI5n1Y9enxmcHA0ogN0i-0OQldTOWSlE3ZLR7VOz98hCwcdsjJzqFR5LZV8Gws0s_YnexdSgg10XOyvKGE7-oiabBcY5DD4zYlQhAsVluN_n2MheSdneBbP4EUUaOG5wJis21fWF02YQrFmVbElPkkM3CRpziMkwES9EggvByDCsEwPtqWUWwlK1K4IMKzsCtgcSN7gda6wBUCPArarQ9e44kmA-dp1LY",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCC+QC Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCC+QC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7514
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1452635,
+               "lng" : 101.6954158
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.146642580291501,
+                  "lng" : 101.6968917302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.143944619708498,
+                  "lng" : 101.6941937697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Central Market",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104989338438482279983\"\u003eCentral Market\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-scqtxEu9oaH6ax_Qi6c1gCtvw1hhottuyX8ZSh5_d_QKS4lUUCosc1hALmKoIbl4MogKN_SL4r82khUgv3VUovUw_0O-L3Js7Xx3jzvSp1tAF8IKDx3F0bxEvA-Ju938uMtBCEtmiUJxBE1tL2EqDnaa2dvWEZW7E7y1FNhwLsZwpLDI5d8MVuc3ReYoyZyJwH6bOhvbEbQlBDeBUDhhiMfq3w0n3-kT5i9vl4TAH6JAJU6X7i7SRCBOJDsUdWXwqdU27GmebhUqZ4ukrsEx24NUS4NTAbmI5BDkgUt9yRwh9tVnObDK7zSJq5HM94BXx3QLPloBCJGeEofCuqCQZi6SyvIdhMCn7CjW0uCVnSQ6F4IhD1aI46swtMfa_3qotIY02J_B53Sj86fcz2e4m6TQjZCd_YMBTFN-sOrukByw",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJVxLq2dFJzDERAmCinEoNs_w",
+         "plus_code" : 
+         {
+            "compound_code" : "4MWW+45 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MWW+45"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJVxLq2dFJzDERAmCinEoNs_w",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "shopping_mall",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 59935
+      }
+   ],
+   "status" : "OK"
+}

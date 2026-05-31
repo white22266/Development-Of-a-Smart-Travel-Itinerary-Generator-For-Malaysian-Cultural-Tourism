@@ -1,0 +1,235 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Unnamed Road, 91100 Lahad Datu, Sabah, Malaysia",
+      "formatted_phone_number" : "089-889 743",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.965171799999999,
+            "lng" : 118.1749759
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.966526080291501,
+               "lng" : 118.1763859802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.963828119708497,
+               "lng" : 118.1736880197085
+            }
+         }
+      },
+      "name" : "Menara Kayangan",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 4:30 PM",
+            "Tuesday: 8:00 AM – 4:30 PM",
+            "Wednesday: 8:00 AM – 4:30 PM",
+            "Thursday: 8:00 AM – 4:30 PM",
+            "Friday: 7:00 AM – 4:30 PM",
+            "Saturday: 6:00 AM – 4:30 PM",
+            "Sunday: 6:00 AM – 4:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106853473535811590516\"\u003eC B\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vYIbzAdgDyJLOKfFd3-mxytwKsJGbMA57Rv0ToeIw7MDBGNDNY3rgEJdYm8EH4JXtnx7Cx7uZx3fk3uUbB0GWwMveljjLmxWcStfkkIVBLrKcyuj74ZZoswPdf6lE2DGiraqtRuLtjOMgkauHdIcsNS2uV9unQyZnWpeM1tHn21jpOXzyF-Fv18mTuCiRcGk9hstSDsPYoWmJhyh3MO2HTB-XJ_c9EPa0mvJKw8S1cGvVV_c8NXdrBwv-bOkyjmXyLpsa9pmcYB7YiLn3ND4sLMHld6-o2Gkt7nmg8oVsemfxjMNADcP2GAnFbXlRQbFGlmfI0UNMk2bfEXoVYGgXjpuNDwH4p4_0L_ZG23Ny0JYcA1wiR4amJvUQ_PxPOBWjYcMwBfdM-R1WyCYoG9rxD0DrhkIcZuEE6NaedQToD1pme",
+            "width" : 4032
+         },
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107774723220907277673\"\u003eHanil Fikri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tiRlrIn-n9DBi8WICtJMs4-xxMhx3hE5ugQwZFvrMrDYeXX6bTj-WTWaECoVSjDKesvSGmWEFR7MimWu2z8HZOOy-2_-BcWBCjvZe19ReywuCwUJ0_ytDJnGd8EVg9DV2PJ1tVIKIu3neKaJNwzpMoM5XaGjpesajmVSretDWdKeL9CcnTeDXswM13WUXtIkh4oOKWUqc5T7pPQmJPxDhDcnjwGf-sfQhmxgUHH2hVqQQ2lehM1FjyDqVtv73GX1L5CMCspvmkgfrHPGeN0yXWzRDJH3TajDc9QuYMzNcwRLiSpNBz5ID-LzuTkquLvDjdvaWr8mEL_Va4di4NrjYyFc_YzfOnrxOy56JdHXTSyDq2kj3Ji12p5hJBnd6gfjw8k11MgkBcvGVrIFgvsMJOqGLskrAuQaLs4QmB9L-x0YtPywlE-ohwWXBWcDTK",
+            "width" : 2608
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107422291676380523866\"\u003eMazlan Abdul Basha\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8JJnVocnhmoa1pwALdJCOTv24Te93kPYl38yXsad53sVDJFneCgbk6WWd0XlG6CbgjbQYYyN0OhwsUeTXaU25niNTnxq26jzq_JvYFyGdqwHAl_TETGNix60Kiq1yUiOc-aNnjTX56W0Gk9tPfZd-tmfcSAyh0xaMlkUe6Atlj-XyuiYnEe5ofg3KeP7lovmoOG7ehcXsK7fLbMwFkjxpV530UkUTZKiLpnMMxSLAInI1rW1PW2ckeB38wMjkw67ckjYgJLdBOm8HZlejenA_WAS7xjNG-8U3FqUTZTjHINbhKmwx5q2Teo6P1JYFMYJSNcWrqN4vWfD3HfiunUS7OrH-2q5EAcjm42kaSGKXj9oySyUhs4C-PWG6qnJP3QsjdXtKjtH_DU_jVPaluDkYJdh0Hua08L3PRq_e1Hw",
+            "width" : 4032
+         },
+         {
+            "height" : 1534,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115351537413896719549\"\u003eMahjais Nonong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sj-T6tyX-awJQOhV9oabDWVrlLg_d1LBiqF_I_vGNzYCVzhMisoDbVErp-k7IdRNBl_tWW-gMakbxWOqs_Xx_1CuCdiL9SlpWyom5WeGFIOSDu7UX6jSMTaet7kHmJZ9cAGYlGLoqKMgmxFoH3w7GhPTy6zasn7z4XGcM44e1pixmcztB4rfoob2xXfj1EDA_mnUws2zLT09vpnfII1PwVzrGlwA7e4V_thai-Lzq8PiSFa2sdXrjWovm7sJlgB5v5-XSbIHDeJZRJNMF4SP0FKrMzyuRlRBaq8EYuTTulw4B78bRF-z_pxOjK3kk7q-OYmME6f6NPcFgUEeWjV9jxWj0RMLPkDuTvZFNTrGT-1WNM4x9BbppPIK-Xz4h-DmQQLVKDcxyLjd7Qjl1cB2V8SEWMYESIcJVIRbYVcwWpPaE",
+            "width" : 991
+         },
+         {
+            "height" : 958,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104676073636614460372\"\u003eMudasir Fazir Karim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u19WVu53BgEAQ8nVJYCbwX_df6lrr5DxLq9T_w6yyGthP9mqATpL34Kq492hj7Y_wfB6eXb8QYfFxDekWjvg8hphTdlqbomuN-WJOwuckXokgrV5LNe3c23taKSuGjtPbJ_OABD0qu3W8v7Z_Xq-kWEzOi7y6AhwyUaf4YfTudlshRhSukHamqp-U9WGHsRpvTy4P6TQAb-106ih0qfHgbpHDhBbHHB3uNAIwlyFVx4pjXojH7bklYjsmzctBH03ojt0Ku0zRpb1bc7w5kt8CLhKWmrhskOVvI2zYUTVxOPNMkisT5WgCB-kUHRU_FTGjBTCTND2fiCvL_vyosRaC5StFaS74z9bJCcLNNYQfH5WbmteTNhUgBNF-Hxa0gLD6fDwoGkFac65j2Ja1b8mT1Hc4VYIVpMz7sfqZ-IT4SWw",
+            "width" : 1280
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115474408549787660680\"\u003eXiang Yan Pok\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-teoakZWugvw9-six8v5xKU_meCNjkwNs2LJGkGFXT-ua4M8fMuwrGTDYBKCMvT8mWGr8hnsGMEtMgw4OzKhTqMLNOH9d421smjABTGtTon1BRzPLCSXVLD6v3eXVvqSGX9erjQzsxc1108YULXPWDrPJVoVaKus8uYyR-I0G2LKLBZ-kfGSyrmRJjtbUXA0M1hJzHElCdEVoPUZQkTvmyt0qMn_39Vng3zuBs6ts_REN0orgQpE4BlexjGlcjOrscUaEDvyraBiMASxOhPj0HMRHKZfRm7yjcxKYenUyAZkUl0xsNi5wz2_F9lmJ5iZp2Zj5wRopqbzdV_j5Yh9WRTzyzdIUIu2qTZMGKgmwhRHACI-19Hm1a2NjDy__e0ApprLizKC0c0wLIt4HN1UyZn2ojNUFxnYeE-HVetrxzSLMdo",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115331251112982155049\"\u003eMOHD BADLI SHAH MOHD SAID\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tAcA5GNUVBuGLxLCGl4kf9ODAVATB6JDy0joWEx9KskFp6-KK0DJ98qaAtr6r47O6xB6zgr5fLI6BeLgo_pQKLo9HJMhmKZHcMKhrQPM0z7u7goBpHw8f8y5ROYyj5nkW7ij6bVt6ZAsctuc6VYI_PTMBOaDWn12AQV-JFYJlOHcZbq2qJS8pghGj9zBj9mUtLxtxuJepLd6xn-Z3BKHR4jociCdSBxGFJpffZIotPFb_CxIOEi3r3md2iDcF01vO7ho3vBtUyg8nFuZLLXLWS2gZzZKjAWPltiQLA9JCsPYogFWxvmzlMwiDb-BdoM3AogrR38MWgc-F7FZXfFGdcpE_NjfPB5THYkhaqxDzoodcshJSnQlUOIEtqukHJKWVFtqcudyRMnO1LGFeFNPvCzIdSr3dRpgeYPx8TOnGFmUqRxTVCZgoja12OocAr",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106853021757539062403\"\u003eHT Ng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twJyQFH_0rc4OZHhn0YweksbjAFk4_Ri7MDFp5wtyruqukDGfJHHebz7vWnmqJ7Ppx_1cUt0xrPVYZexuXkSd4ejOiL23Y36ZpRdrJBYc4HNP5tFGEhMzEhH6DunjJfpSpyT73DPHdt3ZiydAc-u57QY-Tdx6lBHzM9j5DSjjEEtml4Ykt7V1vhg-bk34ViGcDD23WmFyMFCXW7kUxgnOqm7HBuJDPcgmMqHtwKffPNEJiSoc1A1YfgeeM2h5Is-HFoEAuTo6CzbQDpQB87LmjBvjF0lEpS9E0zgPYI7eiwl7rnygPok-ihYeet9cOkt6SiT0KCjpPtPA_VUwbsVSOhK9IzNUZNyHXrF_AO75aYqR2fwxeS6p6Ur-OqFXQE3ag_yXUaIRY0Udz2a8I551q-m3DSPTAm2Q1D6O9WlkhlA",
+            "width" : 3000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116798503643091296185\"\u003eMohd Helmi Daud\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3mzShkJPdrobgBBh0gMceDWH33e-Le8_hTrbF6uLp0FHK59cHPC0-09eqd5hGDhoX77SzPcTyA6LszGlhd9m6vXMg1kPnpu7QNeNwpr2hZqjuvZDq5_zOgeYjQk5bDi-oWNcgUCY_FjSgSwr5mBMRQ-rk6IpiRgYaUxnxC9KCqzVKN9q4KZOeqjC8EnirdMOOI16ld3BymJt6UCpm8w33TUwaDNaqVmZufRojZI2iQ_tHd67o6AZKhFPKRF3fzBSHOeo3Tr03odLDC95WgpHUxkHayVW2Ot4gmN2gNT0EQkfC2mpQ0kcpmUmXdOANQTGd2GY-MCCZcHp1RKsQJ0l7uxhc758-ZRBTHRBRKbu7zD89xgwtBm5tuQUT6kW0C1LZ8Xs2j1F05VLS8ZMnEydDnT-aG_iQrcxv5wB6saz1eA",
+            "width" : 3024
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103384528028002468236\"\u003eHermanemran\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tmqwVPGff6vgIFKtxVI5cdvftVm0JHdFm2jwuNwicQjjteTcSkAobnf0_9a54OUhQisuYXp3jFZKjtZTL3pK_UgiIOuWTodlDiTzzv-XmDDNrU_xjiUVAxAm7F4nqf45R_VWfs5OCoSBsB2EyjnfCTfsSEdJZAdTHcbagnR5TU9zaKHEmJJFV-PSZ0_J9yJwaNSpOCgXFaqjd7Do5rD1WyHrMK6vRpmjdP0aGjN_Nr4cOxDqMfLMxUOVunr8n2U1pGYLBMretoqIyHj2kJncEnj56w21UrP4Q0oKOMCd1oJgGsF3rrZmP31v3wj8uslP4sfKTouqb1v1QO-_ctmzIqAjeDi3SYreaWLeytLruoucr0274B9k5eixN5vo7RMgIZP3iGmQ02l0pchsz01Qzkd0-Bz4m68jw3vlGOFOztwvD4",
+            "width" : 4160
+         }
+      ],
+      "place_id" : "ChIJwWRVFDmkPzIRCIQA8ltjqPQ",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=17629449987895100424",
+      "user_ratings_total" : 431
+   },
+   "status" : "OK"
+}

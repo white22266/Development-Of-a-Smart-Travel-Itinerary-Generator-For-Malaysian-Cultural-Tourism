@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "1-300-22-8688",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1452635,
+            "lng" : 101.6954158
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.146642580291501,
+               "lng" : 101.6968917302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.143944619708498,
+               "lng" : 101.6941937697085
+            }
+         }
+      },
+      "name" : "Central Market",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 10:00 PM",
+            "Tuesday: 10:00 AM – 10:00 PM",
+            "Wednesday: 10:00 AM – 10:00 PM",
+            "Thursday: 10:00 AM – 10:00 PM",
+            "Friday: 10:00 AM – 10:00 PM",
+            "Saturday: 10:00 AM – 10:00 PM",
+            "Sunday: 10:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104989338438482279983\"\u003eCentral Market\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uVzhJlKMUmClygR6w5Etei87QMblDTmHQ7g3Uzrz1mq1YoeoVn3ZwqpjFPeCYQKbdiw9MY7fHHWVfnfM_35xwy-X69iF6C7aseVk9CtsXhxqnCvWP7Y-vv5eTf4_SphyoNQe11bOob7DSz-PpuHlUyk50U3zQbj6QqCU7Oa72ME4jsPMG-IQdp-F7gzh6bQ8LK-cD1bOwEQbETDc_2H3BGq-FvCoKFN-mdBbwrgDSOtElL5tzBtyd-V98C21L0oWN7mC6UY1Wdp4IrxtHAKK_5DLOxEhEnddmpQWFnrPxeYZpJib-02UaKiYZLys2qiTh2dnu4rcy-9TYOnwP1NSnDmhrj4Oi1Hzave-T6oVwrnCDfJT7-aOmnESEEG-Vt8apAzFcruLX-7Fe1e6DTHY9tizApdZ3HMOu2kJymL-zUqw",
+            "width" : 1920
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107067579209471755655\"\u003eAhmadarwish\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sx5DWDLgRv-hMPSS3tqNIABGK8FgEwDya50vPbHOffB0nZ3S5yQLugNCCKdFfKbe1OZcIYs-rxFXrRKJYPaAidBcJeD2d3jGpTh2Pc6pFFiu1mcCFpJhLhociefIGviDoeKvwjvW4pZYyf-frzrCN84tl3hgsyeFVKkI4f130oLQOxfBGZ617rIPqXKrYlHctY_wJOq928JLH79w3CueRRWTQmpYnKxR0blp2mgS3bTeJGBw5j_B1kgfnO2UO6OOiIT2jXPkFECAkyv_fnHFz-GzdU6lV-ge-GKTQDBXN4VYcILTeBRdaOUyMSDBEWn5qf7qw6Z8yH8aA2tHzRwLVlmdT15yyO_8UEb3nM-QG-kf08b4UOSwlFzjy35rgHrFgO_iP-UmQZdhMSzQ9ub8bdJbfQ1kBptfb72Pvbbp9XM0ufI78yIRfm1zD6LYEt",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101781753451111213619\"\u003eYi hsiung Hsiang (怕冷的冰人)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vt93vrPKqrvF9gLxMnjYlleRaZFsL5XlStjr3FJZVHhWg-7zatw0U9lO9C1n5foNZgkTEkDZwKRMBL5vKtQ3vlohTj6869oV_JQT-oMReRd1oXLHi-TFEyDWmqMFzsLc0oNhk42RQWt3Izwq0z1DK5o5JP-9ZifLx80U-tOLauTttCOiSfqPYIV5t_Yzea_CUtxS7AZPq0NfEhrF7aKxHCZUSTDPlkxCFDrZY8zzn3470nUwBR81xoYvdhEc6EMQkx2VfNbS0AOg4CYf8R-qzQ0FscCrKz8MbB5E8QqKxEPVfzmJ4119oRwHwQJ12qysifM-beeWkE3WojoroQnxEc_mBf1ZBdB-G5llzBokma1aG-xB_Ynlhk8krTOdXo0iptG6yG8fmXueB6hmHc6t1Kx_158dMDrxSTFSmNPv3lU2Bn",
+            "width" : 4032
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109678667097721191719\"\u003eDuy Do Phan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u40hyKnAPYY6LjltFCIf6oxc8iHLuKGRj5VqZ_JbYbhStj46ypl7Mv0SQ_kiapeBx9JgVf-rypgTNtck2L7TWZJkOjaSB-_32RRgk1YzWDyJGzhPnKYyPVz9O0_4l_V4VNSQrMtLsIde6eWxpon8Lh0D_BuuB_l3384uUyyHoTcmqCnPWaeoQ2d3VRBm1eTVc-NtQ0D1JSOK0c876zBEvWJmot51_83qozN_EFLp0-ilQ6h7yXR751K7ErZA8Ss7BSpQ_cjBzlaBf3gCVCMToyuXgGykiW_JCAL904GIp16-XJ7Fb_Gd10qyT-HOrEDwfQgZa1YbuOED9DTUNlqEMgI-8soqTN3969Ch6872N3DQg_qz7gxgIPE68-H4KHC_6Cdss3Xsf9YMy0y1WfRFVbui0u3erVOBXN3ejjjIEUHaih",
+            "width" : 4000
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115255968077803008026\"\u003eYash Kumar Singh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vc4Jm28YKR9xX_ieBggcFbwup-lNnYM3rvky3MjbAR5R-UMotG6AgzHu7cH4I89iEhTaB5gQxZrLZGRJXo1yNSB6qbc46n4SOpcIKiyKiD7lLe6DK51isus3fEQgE1jxw3NnHtn4D7Gh8QJkxlhAAHCB2xDxvB9BkDs0b0g4A6vx7F8t0qfGOq2B2XARRGoIV2XOwoGfmeMt60sbmx4rIF35K_3e7_A82paY1U-cHLiZNDHLsdorOr_QkTHtQqA0gigC1mJaPd06uKwflgx6T5Eqh55S4CtPYTmHBEe4l2ST1u2m-kLZqPgYraMcCZyoVnYaC4lWJrKKsGwWYSur_1nmDcTewaC41-2Y0VEdBChbWpcpRTV-tjkKq_GOSyTifb7QSzrHgR7fwnkRe9SueL0sKAsyqMunWd6avMJkE",
+            "width" : 3456
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101843179750543364184\"\u003eMurray Odgers\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v5Pvxdj7gzet-hboom6XU4jIhUqidhKaNYvJmx8JaeZCXpBsC03l1mED8-UUw2Y8xCrq2JaXEhV49crzBpDg2q3SzO_WQg7QFN15Mo7S0YSYvkV9M4XAP4HTdkHkwAgjIvu4GBbn7Hq7l5Sl97aWpJ4RlMdtKcsdIAVPq3YkqnWMIXOak_a91G28HvBnBTDbWEo7jyTprzquEEbHQuhw2_RRZo30r3L55guaKK2E_0LTvkasbWRR0JuGUb-4jQ9h0PwjxpzkvxrDpQCdZCqV-n-1rFvoyTJ-DnbB4Uum82Ru7tGT9qAYABtmn1dWk4nUxEl5N65ebewdjHlSA1prdcMqltmzX4KhNAIJysZ0vAxY41MbieiRNQMJx-q0IvhK1nnfNNp_JUYXWgCbZLVIruy4gtB2TdacuEUvgFu5PTPJN3",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116775797736415118000\"\u003eYousef Ahmed\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v7-yiqhnWnxkhwucaLumhQ9TfYGf0HhBDmFOjvghgVu71JYOlwsrlnaQdIWn2r-ywpeD_4OiyjTTDBb6JzCgF6x_ivYIavns4flPzeaKcv-CRYXgPEciqVBsNczAy2oP-TFsvA06THIzt2Ag_XRYuvN8cBPz4bcQXY7xCuqz25PzV7m3MTBAk_Oj7T-oxoPyZYEZQcmcSVPVrLpRKEBytx5JqiMe82BRVL4hWklCe0azXuWrrp9UmlmMax1kNpUNo2_WWabVcmb5zFb2uuq8pFusteOSVkw8onRW3f6AiULH1D44qsvPwuZBLplh1QgzxJDW7LazljQfbmzrHSvXyuhXCQqTu1kDNNORX5lG-kd-dm2J3MlLRKnLBFq2qU46upbYx8MgY3oGRfEAejwv-g65ToyUdpIFzUloswhCmkFw",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102549450503639981790\"\u003eThink Positive\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tFHLUgpICo-SHTEOO6AtbbLwqO2rNFcwkGgWC9QAl0miHf8Fg19hMN5yqNi7gWmLVMpRt21VvXTQByirZxG-wMbOC9B_HkR_VBKW3qzhGY2zzVLoIuuTVGafEWryC3Wy675VJdaUHRsiKtukbMOw8vQ3shtVeDvj0wAm1e4MSSUqaP4gXDTn7VjnSaJc6TMsvCbTkqu83bbCwM-fU8yRO6CkrkX8-59yBz_ul-IF3EwVf3r-ZBuao7foTITCVV8E0RoTTK6vQGvJ6VLfdhd3eMxWOHbjZsb-lhEqKgQHZcHcWpNtDNk_TqWs9mia1BWLfobHDqjNL74yTexXBNEZ1Ix2hO7Or0225QdIgZ0P5AfnZBZOsT8CfAWwh-9i4tN20bPwENI_uMLchn7BtNEcaaRbzhwo64tvuw4UH6Hno_-z4",
+            "width" : 3024
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114548107861542581098\"\u003eWayne Huang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-utaMClK-LH_vjtdNlF2Oi_LhPtB3323S1lNRiftqLSgMcz5Zqvdf1lu47P-biPkIfjhFhCi6Vm3R-blCG2qscBxtfqe7yJWje168pzo_dd02cLDOjTQq9nXltmtSvh55KuFfapGyI3xpQbmxds3GJht0aCOB9V7MdPveMgpQuEB9R4gYBhlnvxfpBhqd1qkpqKjLF8nJe5VD3SOR6EbrP0OpSFxWIYiqrMRfDH9l8UiwN9O0vTdsZsaFnpuvY2nS2Qd_oxTd9s3TxYLYiHHBi0MjaROIS3NqKwYEIk39dmNdGihgeGDFMf8IyKpHxV2NqJ18Q3OWoOkBqK9Z5JhDCOCsoVJKo64Tlw-2B1XpKbh1zM-XPG2yRdjPr73V0TLqhF0MzD8UnVi44T1OhQn_wx-NneQ_c_q7IgyV_0mPJrNDk1",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103100857067533649351\"\u003eLuJin Arsene\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-umE1JypWdsQIZLaxle6cjgs8OEiFf4wR1eAhwoj8L_fS43vrNbB-Sv3omHAYKCXDbGGBaIDCx-3iu8Uy2T8T6flmyH34HzKgI9QkAE2yZU9hdY61-FIezCdJUjK5LxtuXuBciJVt5ONoH_XHOxef582hFbJBitsWK_s3kK0Rg3dN48ba3f9wJurnGKcm2EoS1hIE-DNao8_7g5y9C1TK_1XVGVlTPlZyurBIFK_Vi2e1JfqYNXO7vb5_iOR03jl4kIXs68NxNB3JM14cb3VxF0wjC2sKjjS7-wymI3p8yv4B0jY8N2vJSXaRM_M7HlJEbLS0Bp6abLQ8A5s_fnY48ZaTn75AbwfYV1DJ-waQz_eeCXpjscoHu6Iw2h-iazdNZDI-dctu-_4jidRO3Lw7iIgbCUBMtXEmrAOJ3WsVHqk9mV",
+            "width" : 4800
+         }
+      ],
+      "place_id" : "ChIJVxLq2dFJzDERAmCinEoNs_w",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "shopping_mall",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=18208912332495675394",
+      "user_ratings_total" : 59924,
+      "website" : "https://centralmarket.com.my/"
+   },
+   "status" : "OK"
+}

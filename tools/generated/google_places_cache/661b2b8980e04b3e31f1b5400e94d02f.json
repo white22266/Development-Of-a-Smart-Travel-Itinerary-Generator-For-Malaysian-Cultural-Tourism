@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "7V3W+2F, Bandar Tawau, 91000 Tawau, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.252559,
+            "lng" : 117.896184
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.253983580291502,
+               "lng" : 117.8975359302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.251285619708497,
+               "lng" : 117.8948379697085
+            }
+         }
+      },
+      "name" : "tawau",
+      "place_id" : "ChIJZdeuPACfFTIRK0lNYfijVw8",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1105532520722417963"
+   },
+   "status" : "OK"
+}

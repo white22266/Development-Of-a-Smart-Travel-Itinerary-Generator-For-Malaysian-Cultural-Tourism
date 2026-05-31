@@ -1,0 +1,226 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "42J, Jalan Segambut Utara, Persiaran Segambut Utara, Kawasan Perusahaan Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "012-568 5563",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.184685,
+            "lng" : 101.6763829
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.186101730291502,
+               "lng" : 101.6777729302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.183403769708498,
+               "lng" : 101.6750749697085
+            }
+         }
+      },
+      "name" : "Restoran Yu Ai",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 4:00 PM",
+            "Tuesday: Closed",
+            "Wednesday: 8:00 AM – 4:00 PM",
+            "Thursday: 8:00 AM – 4:00 PM",
+            "Friday: 8:00 AM – 4:00 PM",
+            "Saturday: 8:00 AM – 4:00 PM",
+            "Sunday: 8:00 AM – 4:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117247631817033482866\"\u003eKee Ming\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5u9OFubWI4O8wuNSk3nz58WStAzkouIw0UAOoplyOZ7GDAFbknrW-fh8KgB1k0ASH3XYlS0OXqKNN6-A37OxtTKaQFhLpIXg2Eq37hpNEHlAfel51hygyj8n-Cm3Das52RtZP1HNtZncnxCETewniB4PJC3y9U1zlALWrmomcWW9NaklRyan1oXWgkEecCrOa4Dqd1nByuzBSVN9icQwAv8zEhW3-FIUi1MPh2Lyj0YXauFyzhSPkNchYGpwg1zlX07DCDNSp3HuhwObYeamm1bBXkBlPIE88r-ZbnEI18xyY3FdCV6afrD64NP61oFkpETKkWMVw06jO44iJByplK_8dtVNTTl8WjQesTAd3YfHzLIkwt58az7GHYRw0ap_vKowU-o2pZNHqZAnVixTJexX8tpEWAIoeTNP_3t0Mq8U",
+            "width" : 3968
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107691223355958451393\"\u003eE.C. Yoong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tQ8iuPfKdspA7MQL0zfFd7Fz4jrikb3hvizdztwTHxveX08VCySr9L3cOHYBQqk3ZdZrM4WHAZKytFCzVhOofSYNL8CqtkBn_Kg4Ebnm5lcOE0VlM9zgT5LhkgHG7vCjTfG5pXMPQov4FYmHBZE6XV3ads20gfKBgLvuoqD07xSy78E3cG5xetfFf7Wcx_YY9bbuHYy81YM547FgoUmssoJSu0liHz5KzYPTmvZzec4rTJ3ntSLNRy4arVFOJDfo4boYoMJe40NOH1foauPpc_09gMr5_F3Ak-nG7cQXPQNEtDPDEZB2I8QgG04m4fOh9hKpGscXuPUCk4IMMJz8ozZbNBMnj-RniFG7S7zZR2EAxgWuWwSeFyBAWqsBK8lpJOCWuckXEpvrGLLqB2XJ1tqfj18GM7gxWoHIzs2AIA3r0donkOMdCeVXdLriAU",
+            "width" : 4032
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110574436645496512015\"\u003eKa Vian Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ukYvmDWTYzpd6l1K6_IJUBPbQpVr9g1ghyoo0_22kGEId75at2A3b9jFR9nDxqWMulUxBKEuGBnTyHSP9YGYLet5ijIgboWr1RdTSYGuC32u5JXTYRpejP3QMEzuvRUFIslNniKmQlJZF_dXf7DqFefohQztjpcYfOdGQ3asBBRT7jK1JFBDIKW4kWUzp3d96VUjqooqXxnj7ykI7-tdT2PBKR8tumKa_eI7GBrqRPwskx5YHNavudSX3wDl84uEz5PK5_BhKctiZ-t5aC7rqKedzWsJX4NPP7EL30AVYEEaPEHK4Gh0fPSTUpTu6PIUsHf-nUQ__--UiT8x2kFS5hgsn1K3sQdJW5bBbrscC-oBTnBDXHH0K3yKF5UNGrv_c56qQ2ay8wIV7DEUT_h8eGaSQZVAuOVh28YCQNcECgrfYu3bVgbgCQ4TlFsgrg",
+            "width" : 3000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107691223355958451393\"\u003eE.C. Yoong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-thEzsJ2WzqJcXKfn1pKCc8wYkM2v5jTkjOGrrZ42-5PK5HzdJ0Q8WaSNkL4qLQSiZSI7lQrxisDKFEXKIxTApri8Hr2xG3vbZhCPmFB9Mf7s6-3D-Ozt8A3vfMx_bZoDlg9uV2xLG8RSdV63TshS_KuMZNeKVakvPc9Gttx3HwpjZw5Iz7-jUZrqpHnR0UuG6OLb20hEI92kxX5cAsHKuZ89KCN9V-t7ov8Yu7kmoygeNWTPkBpLoIkvjgw1FsPuIyftGDGM6S_Ix9uTeXhpuW01sGVywkoG336Z0o3Iu7r65m8ZkqdFC-64UDUsGf2CD5H-_OaZ96BSM6JX8McK_OgTltfg5N_EWyGLwXSWc4qtcd9nIXtJ5SIuNVJgr3hZsjPBGH98eQytg0FaMRg42yX3K4XZj7Y7b-9TK6rRO8KN6WyKzPAi6qzBlR0Arx",
+            "width" : 4032
+         },
+         {
+            "height" : 2411,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116231150902875682979\"\u003eSteven\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVKdNSqnUVes18PoVCxJXGDOdRpXJ7aR8qFGQM0_WSdNvdMixTh2LuYvmnPqZrVYfM4rzklGqz_Ew-R2WHz1stcbDUwIDSXV0xcjqa8AGvHKnLWC9Ccj97WXnUDtixCS2tMn2IH9L2092gxfCZq-cymVXbU4mIkKOITUBto8yz43j6px8-YE2YMexBvPEEHfYvmF_bKdWmzdauVA2v86BelSPQaWWBLOps_zgQJW6YtpfWYDN00k229Ur0JenxkUI3OySOGt-hzBGTAUUDrcaGwBSTjjd71iL6gOKweNCMgXzQ6tB2HkXJlLk0kM3mH6T120CAPxHy9XE7kOLPoMhood33XgbD3IfqZ2tkTcGDShJ-6_j9wutvQHXQRxmIZiKGyp171FucZ44wDQe-kGejzkWSk6YEjm_Rgwh8n-YplcEnLOpILiBDVvZHqLfw",
+            "width" : 2324
+         },
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103923003117739147350\"\u003ejustine\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t_vKp6kungrbFzTx0jJ3VQJXS9JKrCwa63tbBLkMN0dnRyK5qgOHeMSebF8Q9LfvrMVmeviWZ_RRJJCbviUm5tXW3lGOGD0Yw6VRpK4EnpvV7wxiKNTAREGrMe40I8UIzojRZyzJvRL3FKPfAkWZa8IVER3tol74LdXui_Mq1DGKcCrY6S12eaR3jrsnf9U5OpMmQGiidVSHbb8EAJJeyBe7ADjlAqTMDBPTcp8F_s5rJnzX1XAIwBC5E1dp7TM3SFPk_vCUf6nRDW7A7DeV7Wq25T69uukkaEGef9IcTyofSztHDQpHvL891JR50JCCNa4Gj73X6ijVeh3vp1i4iPmShG0g2CwWrL4Qo432EksVqBT_ei--N-1ZCGIyPL4Z5eBvF-j40vrq_IytYPjm25TiYciLpxbxG9Ga225hlKyQ5Hdh4FcmD219Mw2gJf",
+            "width" : 1080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109792196481465175477\"\u003eKim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-taA47DQmXysvTi9Bv7KBEyXR-B3qWFJZ5LgXhzmgL-oDqXBhJlv9xoxh4lD5T4-4RwB9Ow1yRVrTI40VG_GtcmYOQr9KE_7w4khCDbfXLpAuLe8ojjuUlcGCFkudLasa8_mioSf2eHhf8WJf90R48nZcbeh_Ns-sGUWSoGcWgorLXlKJyvODI1bWpqsBiTab701DDfajsTaGWJUBCWjbYCApwdOsPhzfkZtKGCPMsm9SKcgHEWGpgNpmbP19yZqFAuqBKgGrlNl6ZWHfJ_AU_xX_JxB0M2BxsNY40UBC13p8hb69bYpbnsyLAKV2VKRk9lEU4CToSbKR7InS6rL3z9IFl3plTYM0SqG3a2MwUwgCD7vvqsRb9S79MrA2HiRMoITGi7_om8iVsG724iX_J6rqodm3KKL8yElkhnTGWhP-8",
+            "width" : 4032
+         },
+         {
+            "height" : 2970,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101837832310821634033\"\u003eJohn D’Cruz - Kajangfood\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u5By4Hx3aFVhIrfZ06rGEoatMuXCMV7PRpKCrhBhoMzL7K3mpKsCkygwSyMJX91BGXcs_3keMnFnKVNOqmJRELlD2V_ZfABhnZrZ4YNr77IOy-dg905omxAqIYJvwBeVW-XOh0_k158E3ZmBtCchsxXrJIYwBVPRINWsrjNveIOWXGt3j9KgdWrLURdbYKjeYgROPhdT0VhRaldC8EpyEsFSFK3QQU5NfVSiaPzFvR5aR5pi6_-fA8LZDQmbDKVIk19IBP42BVM36bBujxosARH_5VlgYl8ydGFEG7Osb1X6U-RpvqBdv4m8G7w2STqRrpCwhSmfGFoRUFiBYK5bLd3QuvEBOaq2SZQseVZkT8xunHME61DsdK3BOcvPYnzXs1iDUL5NwYdU6hnib8Y_Dlp4hO4bR8zvCT4_KtUEhF68b9SCmT6C5juucTxQ",
+            "width" : 3960
+         },
+         {
+            "height" : 3869,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115593824332322219347\"\u003eAlien MM\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uCvfXaVyuOjTpY4ehS2JyAC27vkGoth9O3wAOP4vEapxzW1hMg2sPmXajCOvOCpGNDEsusfJ9Ve1Nj78uuUiI734na3rZ7MZ7F1sQiGO12TX0eTROIPvG409WuHCy5JBfPdbVLLHTRNUvwE8hqnhQwhCNL76ZRxtgSyLTXWCie5h7PZbrSqWzDnf61fhj1H_AfNA3YL3lSD3nGqHQEToTPIM3Ud1gmC7fdJcwYMvlGOlZnMjoSvI6byRpMrnri_aFuBJUZl_JFB0uRNrDL139OexW816oo4A_3d2pXZEqQt9zYMrprWCoFegejvZWnCG5oGq8wpZVi1ipX1uhGVlPl-EqPJGWyIOrxzWvBKTXBOt1el2nv3WyU_qGj4Gsjkov7KUqGSO3geN2DUuCXfHUo-SHvGaMfiComcqBW7hR9T8Q6NBDtCfE17kiQPfR0",
+            "width" : 2734
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114866496544928866022\"\u003eHappy Mama\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4r8WHcXHz1XviYyyo5BttPKxNVHw1UpmrI2aZchPCyASup30q4_yUJs9Xw4eembDPKrwK_235lpgquPhbw2qvKxPua03wH-2cvEIKisdZC5YJ0OhJgPK1v0Td5fMTQChAlDBACXNbCOKnSfRxijj2g2C3FG8FUXVCWlk83YPOeXJFxY_x5fxAnxLFCm_ilW4wKGMw3P06jahB_837RLpSvnMULUUMyvr2KobO5NburHZYxdxVlEkAo054tPx2G3MjxL0jqOMqorOGF56ibXtckLWlYl2VShnWzUzinQd7ubUfnvgJ02FDy71TXPjCW5JKbbDEpdHq9vdD5qEbzxB38FdKt2Wj7aejFacFnqe_rECZfhbESl_-fOo1PJ1I_SDCDJwUXRkJH1Ajjm4Slh1Sh2IJZtZetoOVo0NU0Y6viWbPrSErmHXnQNdDMMPx",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJ7_UiPnFIzDERIXNtTUtHGJU",
+      "price_level" : 3,
+      "rating" : 3.8,
+      "types" : 
+      [
+         "establishment",
+         "food",
+         "point_of_interest",
+         "restaurant"
+      ],
+      "url" : "https://maps.google.com/?cid=10743415299839456033",
+      "user_ratings_total" : 1184
+   },
+   "status" : "OK"
+}

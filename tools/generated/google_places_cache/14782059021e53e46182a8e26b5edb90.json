@@ -1,0 +1,51 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Binaie Bypass, 89900 Tenom, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.120011,
+            "lng" : 115.9427638
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.121377930291501,
+               "lng" : 115.9441387802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.118679969708497,
+               "lng" : 115.9414408197085
+            }
+         }
+      },
+      "name" : "Lintasan keretapi",
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106770993343277424236\"\u003eyum\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sD9bUy6gAdLC6DXKzULnVxOOco6F_hN8joH6ajY0aRpdZNXK7slQaN_I6bbvVQPiTHq7f6rxEyl5GxOagA7FrH-mac_G-VY2RGu2py5wRTtvi5b2D2DvV2OnNIjjH3gS-Vb6rOR1V2YA2Du_1TNiO0Ncv26QOSFppmP7ebjXLWW1exLjegzsv44xQUumZBR0owQ8MznUozMQya13mn5LJ6wIdi3kLSRvOpDqlIZR5ppd6c4DILnxTISVqnuhS9cqm8Ih-KP2erUXSZJ8Cw6u8DbH66gv494Uf8e6m9OBdvuTeST6QOJT_CRAXNmhz0UOo7TDYib9Zke7wT8toBXOcj54q9EockgBrzjkrl6m3Y-Kd5glJ6_nD9SmMlVChm6xz6yQnscokJ7QKZwbH-BbZk9Ops52__B8q72lVSOddbpwWZ",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJCYFIHAAnPTIR3Wk1QcuO-bc",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13256783981765290461"
+   },
+   "status" : "OK"
+}

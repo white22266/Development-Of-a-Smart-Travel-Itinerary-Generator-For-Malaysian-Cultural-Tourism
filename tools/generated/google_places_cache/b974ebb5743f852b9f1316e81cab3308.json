@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Tanjung Aru Beach Resort, Tanjung Aru, 88100 Kota Kinabalu, Sabah, Malaysia",
+      "formatted_phone_number" : "016-833 0678",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.9473842,
+            "lng" : 116.0455771
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.948937530291502,
+               "lng" : 116.0474059302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.946239569708498,
+               "lng" : 116.0447079697085
+            }
+         }
+      },
+      "name" : "Tanjung Aru Beach",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 11:00 PM",
+            "Tuesday: 10:00 AM – 11:00 PM",
+            "Wednesday: 10:00 AM – 11:00 PM",
+            "Thursday: 10:00 AM – 11:00 PM",
+            "Friday: 10:00 AM – 11:00 PM",
+            "Saturday: 10:00 AM – 11:00 PM",
+            "Sunday: 10:00 AM – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1500,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115083582414189104643\"\u003e巴浪岸\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v0OQUcg8S_A-Ec27Wop616nSX1wR0jPPdjZHYgXBUbqCyg_JteguwDebL1RzERwRrPGCSiYeTPzMvS9spiPtK0ErGaTsBysXma2eNKvo6bb-lqhS2_W1wH2kSr7qTvh2GbAeos5we9q15CrGy43DnqnoI2RUtNV1G8y5DIuV-tsVF7owY3FCSawM57gtUC-p8aT4U-lcl5B8GeXrvq-ib7LE6MdNmLihnFnDAZoGMwvH2MU6KCXV3K9WK9bj6EBktP_ZleJ3ekJDXKLjTb38NmLKY6LUiD3oSw7I7mYCYHg5Q_dNfydxWDRB6_wst5svjKuwSMJ3Y7sTJRWBJYxNsEjKojHCsLO5YJeFzOVpBNtksUyWO9KpV8jtsEi5tvHDSLuhq5yF2Z0eR__mxSfSs5pwc5Nhn5lWRjsASXceFJ1RzAOUjYgDfiIEtVRg",
+            "width" : 2000
+         },
+         {
+            "height" : 2703,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110545529949322324235\"\u003eKHALID SAFAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sWgj-fHKYuMBWTyPvZqf_cN0Oo9z6mgW2dtdWTvgZiffCWocDU0F-sun8lBZ2LDxUCqQbaJUzmkIuMHxTubWJl4OR3x7IdIaamNsMMBFzbJchBq23zNKuEY0I6Lz7qI0k_J03m9TjUiJ4g-9EfpCXCnrctDrtIp5O85qYBr9c-vG-21UrwDusrNkw9Jn3nkkifW-NDs5fuGCzgakenKCfSa59BGqheDlYuZBGRIyDvCA6CGnJxY1OchIT8HNLTBUk4csVAEL1kFHHLiOWC_4tcS5pR7g5577DudCfIsZe7JJNqqLTofvc4ybNMvKf_19VLnANQtbgJiwqzElpPuOTsVrCr9sltlUkv2xngt8h_V6yorfZXC5ID-30k6trYY3PsnEkpJE0CRJOE9k3JCEhsM0RBlUo4b7Yha-MIlUtlhw",
+            "width" : 4800
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101500230530233694986\"\u003eREX\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vQj6myz0GX9uCqSrOcNIHx7AVIYXw8S39vHwDDeJ4dRp2WNxjLCHuysM56Z1ZUZ07KD6_qZUT3tVzKzbIZD7ZmDIhLoDEQlMmgtIP1yzYEhaaU9EuGmFttJC16spuLt_xvFgqzBXRuxYbyVJjwXPj56S3FoBfP9EwqgCrGYbx9PDh8Yf0MauBprg62Dp7d_CipD8vg87l6hyHLGVr7NsMx3Jxo9MTRzqbhVx3sTdh7Kmy0n4wD3Ie7t0prfIMd8CxSbDY9ERqqzdQQVAY4wkT8nEOO2qFaGr63p9ZbVT30GxUo2xDFzd9SNJ-tic1iBAUbfz2Fx5Vef6XJdpz0iZOgWzniyiMIU5kc0EC7fqD-VzZr-WXGkg2LjBAKwKUkTkG3cFREuOQ7PSDNSOOlR9K_J9JHnT2B-NcBKC6THL_5mALzdSisZLLl59Yt6u5O",
+            "width" : 4096
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114458931191249917774\"\u003eMira\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgNHfPHameWTu4iDTWpoEGJYZc-6q-S-omSPFG9-3ZRpiMk3qdHshWEhEEj-yyl5NE-DdLL6iBgBR7mMBC3QyNTgCvxhg5nU3vNbFGkCRZD8EUTHBxYtEbtCc1U_E7ssL-HQoFSdihJ4B8lWPyVkoftau8ZLe1GjuBpc9N707JYL4VM8eT2yyJdu2WZyVFG_7VecK2v8hjp2xhARGmoco2Kc2j9oFfsYroy3WCCf6XFuQBxqBMwgTls_uMX0AEwiq976ZWByHhlE6w9S38jXroRsCENWzyrUKYhQ-Vw6QCoCweKmil-HxvKC7ZgJfum4zt2IISs-qNRZ7pEGixhO46umslsUGHea3_pDLvcMKgaNpMCJ3vCxI-h2DvgpItyREVldU-YpyQnsLHVEgWl82Ivn9PnaaX4x2znpE_1P4vs4lpmCtog-6EAFgCKHYl",
+            "width" : 4000
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114178437140752123084\"\u003eHisham Abdullah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-teseOp1Ynvakgnwb4DZdZhG0CRvsG7ObGAwssSektls_L8ik1W8KeafsKqTmJjmuf-thKIAWtNPoqBjXtsJRBr7h_84apFn9pKFZ2nDJTcR0jBvy3lko3E62vQflcAr1f65C3LDWfU-kgaZATFInho4YTCbEPwPff56_r8_AVDdcoCGfK1kRmPkrPzpXgxwT-Btt7GpCqHV8wvElM21-XhBjeb9enjYdRB_qrtti6fr-KVkWRTh0mQvFbt6RlIpIaP_A0_ofueXpFM__kkk_ZabEzuspuFGVL0SKUDkAK3Dw5y1fKj_8QTtI4b6pIohaGAaTOZJ-GzCKl4UfjOuo2GjfL8bIvZuzprXo0exlv3DBKe1rurJdMmJg9YoDIdv9b6ho1tt241yw2chcirTQ2NjP-cJE-pzxtTsD51WDhfyQ",
+            "width" : 3120
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105661930913987524789\"\u003emartin wu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sgStsP_H5lyHIQcoYVoKPGc91djmclLvrI4JkdCFtm_AKFhmtTJhnrj9C1QKzra5UQNEyLDgokwSvdLaWx_cSItDgpi_hH0aQtO1c7yKX3MEdiWIWKaPeInfdzQtzGsgjfWXVNMNzTUXIyy2xn4lTOO1mJ4FraLnJQnmdKMpQm1M1twlwQfToilGz-r8bEHOdB3SgcFccZTKu654TCCvcQd3XCbXCQAN8Fn3DdtKmV5act68-3Oy3piSIjdg9UwuZcUTs0Aflin_JX4p21Kqy3aShQV411vYkKpa-ZE70yNq-_FSLYdrAeHNw4mVGHmq6vQq4oWUIKpK8j8p50RJYg72_44X5rmtZpy88PJ9PWkCHm7Kz3p1VqpJVI_SO1rtUhWLv6HbxvvzWH0xH1jrzLLB-HLlY98MV2KjJ3bH7L2g",
+            "width" : 4000
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108618048322619820733\"\u003eMei Chi Chen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-viXRktxnCk3zJIw6kQEy1u5uiYNQsd_AMIOxA8Rb9ZQjABx9EIVE4B3Wq8PJx_nCkXXOF_w8ZlzgFerEEqfVY0kolCAtmgFPL3w4JQcGycqM6LUx4cYpSqG-BsJ9AW7iHZ0_NocbG2RGJy_Vvkg3h5_PCAgsdjvjsErDIOCRBzIZghtzzJOYhwACwdZ4Xri_Piz4_ip3RxqaXIn_fRh4KI2gJZYoyxLrbXhcuL6UqyNjK2ooYxck6H9wCvzGyroK9p6gt6WqsoG3nZl-Y9FDNReQq4pMK-cEOTLkGi-I37n5V2AcIP8EtlqOzQv5jlmNyof0z-l0DlJf62oRCwaswXg1mTf37W65Cac53sIu5MMvpN68h7ytBoHNVEIKYZ8hJKxMKDSP6_k6cY945p2rlVPywugv28_ZR-zK8AqN8SxA",
+            "width" : 3120
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108700623965281576565\"\u003eLi goater\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZqxnGBdZgEE56wCJqubp3yjKu-whReRqF0Ij-f4hQTQCD24YriUJexf8XEJQn6obba238xDQFS86rFMIxofRdZd_jCVkWVeyBuDdYPJTUvl5lvdQ_vvs4mSVuetLFej--7pWByppMtUSqJi5tg4q4Z13O__3WnGYC78Rh5v7PRmwE9jwn2ezt9ZCBOGdK6mcILUiUbMzyWBAPpKuq2ITWllcd1BbjYa90znU4IZEbnFojKPnjKTW1cJymgiOozxB_xSVuRQkmC7CZ0FoOWKvQ0yefGcC7QOW-ap426pHBUM4A3xuTpa8hzF3kvQqs9JQONLdSYcPHOvV-sDJoGZbPlhH_nAim39Ocp2Siyipfz1yDbxe7pDAfvI1iVEtLSY_PoHPajTlVZ0yQIxIQYmdcHkURgnioqTervCp85LK-qxOZHNGmXGwpxKxgqVxZ",
+            "width" : 4080
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107389780275852535027\"\u003eBrian Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vQc4apfF-yN2mHbGUX0hRTohHisgeC40GFY0mZyTDi1VIC9dDgSj_qVHZjDZl-indbuPJV7Kkx9YyK73rOnE39cPy-_66LgSLyPyKkkmK2rQ-NZhwgMgac7knmLzvyrT_7sbqwjR8alUFLMytIrYgwAgwv72veVfUraoq7naX5zFedELy3sWbn6tyjLUVkwLXq5PPV43k-td052eEYr4ugcsGMEJj9h7j6xcROSXai1k0fAQoFVtdGDADCO314CNSBQfpz6pltI1_UoFNtY4Z8M36y0F-Hd44P5ZBr9qrVYngBmMy1zTPWDJRwJ5ktXbhybkoBRpP1k588pZk8GiG8TR_donBaARBbw7kx8fcIEeIpTIxs87t2BKCL-6LT_JNmzf5h7A1zPYgykZ5t3_ezDaviw_tSMtujS1QWlEs",
+            "width" : 3000
+         },
+         {
+            "height" : 3464,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101957123669799703003\"\u003e김준경\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uw9AFCEsYGX-zeXOFdUEY3y2UC_EE6l5YMuc4qdjaxJQGp79VrsKEfjGwZ29CHwxl1WeC3XDaW6PbUaP9wXCCwMc8Zy_s6Xvut9VwVTxebEUdnsbBc6KZLsYT_RTh13tD0rfzQKenl-aBKQbupBZg-iAlAyehhXEQVVCYcOnJcW9e5uRSsTkYJ8SoXHBIGey81DfWCk-Fqe8pTPlUzTqbJdUyGOxNMNGku0ZiH_mBk1UCOg30boB_IftYL2dcV9H2IHP_UEl9msGA8ekWsPxddQYhi7IQoG8w5tRWSIynzXVB0FRCaQTl8EvxmdgfBYOC_E8MdXGTb1Lu216PNYeG_kBCczi0TwWszKv5lt5CNijpPpTrIAGCsXASZljmW1fFnEaTno-Obp62xeR9DB0npxxeey5uPXuqMvp3x7LZQow",
+            "width" : 4618
+         }
+      ],
+      "place_id" : "ChIJN2sNPSloOzIRrPTPP23Jjxc",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1697797055601177772",
+      "user_ratings_total" : 13959
+   },
+   "status" : "OK"
+}

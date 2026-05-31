@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kemensah Heights, 68000 Ampang Jaya, Selangor, Malaysia",
+      "formatted_phone_number" : "03-4108 3422",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2103543,
+            "lng" : 101.7588245
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.210354300000001,
+               "lng" : 101.7591020302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.206895699999999,
+               "lng" : 101.7564040697085
+            }
+         }
+      },
+      "name" : "Zoo Negara Malaysia",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 999,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110656145834722124511\"\u003eDanial Low\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sDu5bSqTrBoKrIGiGfpifqhhC2UWowBxL2-RRSQ8H8XbFZF4vkl2hFJwTZuJ0PdPHbCIQQ5IWWKOnMtB8iGawbifKBaGzadv97ceQyUyXn-BUe2wOqVarGS1eu7hezAXecczPZGUhS2-UG952Vkn7C7pTtVsgFCxdMdctjdg2CwPqfl_hWHOM7DZG9qPwNXkRGjQgzylSg5fPMpLN9qJlJMY3zuUlBt2Fsnte9uXxXoLxR4xhHTr1hcVtVWB4FkhUREseTAwRdYv434IrXuVT44CqQk_JjrzYeushP7KWs2yeBBqqp0TumGBwGqJHFtI6oQH_qIQbQpSJSMKKrrfKzmQ8eczbLtn-3XQ8jpV5I91rKUuBC3yi7h2IgEGTUjkg7zWGqmGxGDNKR2DwVIQktj74VRKb90TH2w6xUlWeQgGU",
+            "width" : 1600
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101181223074185797827\"\u003eCyrus Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vUSl72qizJqxIu_hzootHW_qL0Wzn4wVaM7SZf5bJ-sIWGcT_XTn9jhVFYIILpqX1aauZZudWHyE9bus5O0E2_khrvm-wNsSZ-VQiniqHx6icsVrCjqfCqtajZHq3D2OtNAYC8L7jV2QmNOOOaAQZPIfdAmLyr36siqOFstrjeLGQcc_xlE1A344vq88i4Xq1ZSlcaJlzLbra02IhvyToELK3Mp1M-Thw8_GGVluoK9rqeZCVBDQl1uc6McNn39z-rtO9mUG1956p361kpl2M4YGPPAt0SBRIcIcUQ2N3xqjoZVYCNf-dyes1o9GfvLGPt89l6zqAXGr-zY8u7G6ERN_oU4eqq3ckB2UwY69o9j-Vm4GhFnHuTrLQLIV7naoPWh5MPQCs5lpjnmuOZaRKkpEZpij74XisJRZ7BuB3ylss",
+            "width" : 4032
+         },
+         {
+            "height" : 2859,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109396846215947029298\"\u003e林晉宇\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vxLoWjHOdHZtQS41t4cHYI0NRaqGNx30MXykO63WvXMlK-G5amIt7-bNoI6FdCFos6Apu2OwhqQaMtUsxSDvH4Za7VUFzMZxna-WFhw47Pd9s7sian2mGnZUDVNAF3hCJG9R7CGapomD1mspxRmtZ6HcnvpzgpqdmjrYOlitkz7oz3MEA86HRDcno9vmdZ0JbqF8iwJpJWjJv_oFQP6xGXhTJSXQaUcng9ht-0iGrERPYjx6Tb_QWC12qmLyb6EuQf_1ivHS0_gh0pN3FB1mzGc0icLhllLs1sYHqQcdXPGtzJ8MMfq65vcFLuPt6MfySmRTA4Er0wlKc0j09Ivskb2-gWopmATSyuDv401nygHIIQHf5iywBcF6KOxFeIXqjPUY1KriG-VQDFUtp0uHZTtKiVVyeIKlE6fMw0p6g",
+            "width" : 3024
+         },
+         {
+            "height" : 877,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110656145834722124511\"\u003eDanial Low\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v_YHzvD8wFTP4NTfKTCTfkUgk2q463_Adq3Y-Wmg1vuli9PHxRvLdPJt0T8F_D86_Pv-PGCIsxBv1csPhj6f59bAROdRNhnrjoaR4Pu1y14Gu-sZnfx6MEdU-HGwM1tllEt1X2OaKcyaJSngi41GKkPrdk9wo9D2ajhfYeQfmLVL9CI56sV7CLqRx0u-1qBti2xpQpfuZ_T3JwPvEsE-YDbYuJwcx-sWbTzHoFoAULA1e1vbbrxO1jO-0kFiGSffCUF4kmStZ-MC3xjvbLAdGwh5MvJA4gRMsnE5EyyUl_CiirvLtgd5ReVzhMwLnYxiKNHeJzP_X9R5JZME6sxjCnsFB4xOONuBtXEwOz8rAIGbWHhq2e2Uh-EjZP1mYeNFLfyJWEl5PFFgC6g_UGns6nuT_jRO5JzCwrepsaOhOoOQ",
+            "width" : 894
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115664595555876813286\"\u003eThomas Hii\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXkXt92d7GVCMPnPnAmvLvGM01IvQ5cOb6gAt7TghsXkJtVotXVOWqSsM3qdQLqG3m2pDBsHzBOmrfyS5qp_8Q78zhTk0-b0Z8N1HZxfyCcgBmR4rlbMMBNMojxZ_fKsylalsYjnBU1vVP6WHpOi7DBS8u6BE_nJldXLdWA3m1emT9WJKNI6V0Dn397G66zOi38myllg0v2WGLZsCcEZAMtKtqf4JpfB2_J4yGEAtpc5Wq8X4q8XTKP-Xt1GHeFeOuhi2GZ0v7hGisQJRP7DETuFEJh64_4hhwNZkxMSzGKUd3OZKB7GHXqnJqfMzlEvkQG1z5xXIzXBh1qcOf5zYEGbb1MHJJYitLY5NJTGirDn5Wmae3csJdWnxZWiI6DDegHnZyalwZH3O1OwxKlROs5a_kAVVgHu8bXTpCCuZhyyYYEgJp5U36wDbpvbqL",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108278295380527633946\"\u003eFelix Cheah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sqrQLkyz1k5YLdzm3luIT7FYHqo1ptZxSt6HJzFcXpqoff601bExADP2ngvuizgygW0KnujuUA5N_krJweLgGdU8W6o3ufRbCPTFXY9fbvWpDyS3mE3uPqIh0tVfaxjYt_9tK26QdTlPA61mRg2GIGsYr3EQNsdVsMK20Hojv4SvDfZ4nyRVI6ZpLgnlB7gJ9yew9J0ZuHgFnusM5Aixi-6_AEIy4gNWweu3haIH0Abt3-njXiWKuLzlQOpNjyM-Hnqbj6F8YsaZ7Zqihd1IhuPxGUdkTG7OTeHWtXeyU2yugZ9xwjpR7wbhFgJPRB84LtMsqCgXuDLe6kgrHx73t1RASBjNOQjIExv05GHT586RUFtM5wA2NdtJNvdWO8Ue1K-BOoihP33XYrs8BU8_3ruKZXIP9Y5tt_XCm__PU",
+            "width" : 3024
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112506008405101309108\"\u003eShadab Mallick\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v_81SA-hcFaEMrg9gPFFTS1jTQhkBhDKxZDlDuYD6NeaDA6C2Dn5FTM0avBulB3k2U42M7mvbqO2Hw2CU8D8RWawaBPd9HNQW2RPT2p0Wr8niHlm4IBAErZMlipjIM429eVOu24MvsqHH2duNalqm_3ML02PrTJdJXui2R_5SG2WWpjFPtnxogXOshxGJHBi_39fWF97I8fbSmho71RFFHiTgsbX-F_QBQtFxDd2RCadrU-SLu4m_K4SP9W0-vYKDG-wYYSQt2GkK6Y3lNSyfYioRvwe_0aSSmbCjB0ykx3dTR2FDDK0zJO-R5TRU_dxsoRpwtnRFtG9AD3inHCMVuRvO2z0jPO-VS7wxw7og_3Dz1PCqlAq4I3DgxLLGEtLS4qWpLWl6J8VI1i4VrqIXejiktQIvpsnFavpRKfdyf7inf",
+            "width" : 4800
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104345324066443704003\"\u003emirul hafiz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uqw-9RcXosJIYib2dNkJHdACHEndMDufSdgia5sr3VFsQzmTwAEHoYpctCLu-unYUR9AyjeHgfbMP_MIcff-owDoa6zAPuQIQ-YmO9mHE8_gIjSHnvoGcvWQmhjNuACEBRM3yf3qXvOGygITDsj2W2gZo4x3mPkuEA3erV7XFOrRuFs5sHgf9qAXUPS-qYZklMpWMQguZ-TtyA1scw53r2cuOGjRV79U8oVeR_SLf7S-Wrwl0Bg6g3LlHIyJHiL4mTYD36qJo2L2m-7wsVMcE_NjhuEbz57A70E5-AR2prdsRm0waBx4tGMk-liALf3-Jm1M_XnEsiUkjcldMt3ezvo4VmMVKY-fEGXXp-eUYehaQosj11sFmk7i9uQbOfd4bYfSHwNkKvCM2BHhryF5X6ir_ILgh55g1Y01q0W65nKds",
+            "width" : 3000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111827498501360581806\"\u003eSaiful Hakim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tzoQt252xE_D9RVqgVb4xrCNGDnZFRVKnYYluZSkCI0xErRGaXI2dbMuGW9nsaPLOcOoXcdN-evrtZ-M2jRlC8fyPQMo0RWeVYVxEsAKEPg5mzMsIS5IKA5kqQ_KLMmwzT9IrNzhdiJ68S92HVJAZ_VglE_NTq5qOI6FkdqD0u0GbpUe-l7zTnM1obhlawpfX8P8uCYXix-5n6k1uMZDUwcvUFwUg06g_7wuchbxFGOn5wPiy3xz5H3TWc7VKdYe9V4xVHJCpDmfs51tFRLik_JTPQX4bDy-LhE-0mHUWv2Tx2Ns5PFcAQ0CZQnAIJiRbJ-sdd9Sl7TOVKNQoEeSv7oZPM-j-CfxBAXGOhA7M9k6zN419tj9bkv2LiDKQKifY_uy3p0uz94qo9v_s-xhoIGbOmM4YQv8AQlo1u3PWm6F0H",
+            "width" : 4032
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111502448902716538729\"\u003eNavin Manogaran\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOdDTQDE7mBOJouuWCvDMtB-YiiJe0mi86GSUd47Smvp-_9_VHNXKJ4DGJKI2-fB2jUIx7wNplsaA35oxbx9a4JOsJQ-XzLX9MMLGrplZRqWUZcEV6oNoAoza1A81UHRSKz_Sl5-giIsQBTSKCjy2kijphPjc4LRKwhsgUhbxiX93WxzjFkL3DCRXEP61BiyAJ20vGd6FOkQz6XcHyBuu1IGGUiSZsX1NX82NRfsPVk7suXDB_Xtx3Vr11P9HT2_BwYfHfL0Y6PjokQvra8RkZc_lg6rEBXYFRcDvFOx4p5aHy6py30NBJFuBlWW5GkmpbASV5VqnL7Z9lHTPKRG9PB00qC-2H4UvnCkKXxAJDjgmO0N4pXbj1-9tYpfUwZww8JCHOnu91TYuLXEu1809KqNRXZxCC-05lxeYEa3I",
+            "width" : 3456
+         }
+      ],
+      "place_id" : "ChIJ4R-DCrY5zDERL3vbAscAyPI",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=17494233607267121967",
+      "user_ratings_total" : 23140,
+      "website" : "https://www.zoonegara.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,1146 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-s4RYYd8NHSUbx49lsGhxkPrOdbnkY0uXb5OboiUo_40rhLIB9cFVJztbncAaHrmTqd3AzvzTElzxeu2LCNVpFUNe26fISmLsD548nGf1WDGgQ-zfw8JdYp3QyqrGnP4ieu4JiO8mIWk9QJKCW6_l5gd29Fs8U0Vi8J5GN_aPa3W-lYqbzhK8fCjdGIoaZdw8UFnZOL7EzOCIB7l6ssgirv4UF2LRJp480S3TRw4d0OgwqL7qoiA9LMeGKkBNZiNIC2RAQzF6262nEijQzR9xZ_fODzAlH3vpR0rhrEL4JaWD803rW5MQIeIHtij1RIQDuKE0SZVklIquPfOKIb8vScHfmVpXZ_65xlwtGg08xbY-7_a09DJUMIpGGtdohy3oBG5BShYKZOPrMwDVBOjeku0gqT5bqZH99tIPTFiJlmQzSIZWffPM3vWXW3uhBPp3H6YivPYwQ5eMDX35fhwNbvAFogfMH9LmWHUUwnRLNVYHBl9V6f19tpai9doR7XgJ1Dzk73npar4DnlttwMYAYp_QWtRW1xMAX4Oq3cXsr1uN_y5rpnvAfd4c3l6uQbwmwhH8a3bgeiYi7Yu_30JGNUOdaeCgaHCiw01h5jjQLifwlMZE6o0vgvpEqAmcRs0KrpfZVY2AboA7m_MkLk9Co5wBh4c6GgzWcOWRtQU0wxMAiXWyP133Em3DMBnHVHqQPCKiDTjZShuCrobVLrWt4Z8EfuD04MlDggQTW8s2DxAWOIfdCrnmqz5h5yllRvIWKUUrKCOS0W5YKkKXKbBhAJRGsyFEwYTL-ZvLp7X6jtQj4cC0ty4U7oT-g5NFkjDrDMkY-6Kt4",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "13, Jln Pengkalan Gelap, 22120 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6719791,
+               "lng" : 102.7177691
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.673246930291501,
+                  "lng" : 102.7190584802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.670548969708497,
+                  "lng" : 102.7163605197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Setiu Wetlands",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100964331226456934731\"\u003eChee Ming Ng (Eric Ng)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vsDGTTkGcsmUX1bOU-OxIh_T3DAy920mzmtGC8ewahMUCxbf1VqqRJ_ppEPK1Ryp85LTYN8Q58RX9TI3Kw64Qhk51j4rX4mdXEguCMqYIy5qvROOidyix0wOwmL_lIsN1l9gfX7t7cb6WQ-zj8EmA3WHWosiwVGJ104VuN3yan44BBp5tKE38DJxSTxsI7AcJppfFYSnTPcYyQeV6UUOi5h5NqG_quJ-gmqu3k4sgKtHj73NKzLy6v9Z_IcOVRDFrWPA4dxEOVlCaayw1preu-rQRoqcGMwn9ZT1CpCW4I-aaJuWl1driVMgijYn7QC-R1ESnLeRKJC861QZ2aXzeupOX0YR4XHSyiPrHaLbY5ZKOynrip1ycxb2fY_BuSI5JrnlMznOTJVovBQq_dXcXkBaFZ_eYEUUPhkbKgER_fMSW2",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJMwOOC4f_tjERdLxxvpGluAU",
+         "plus_code" : 
+         {
+            "compound_code" : "MPC9+Q4 Permaisuri, Terengganu",
+            "global_code" : "6PQ4MPC9+Q4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJMwOOC4f_tjERdLxxvpGluAU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 222
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Penarik, Jln Penarik, 22120 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5929527,
+               "lng" : 102.8287536
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.594298180291502,
+                  "lng" : 102.8300990302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.591600219708497,
+                  "lng" : 102.8274010697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Penarik Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 404,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117672686000262660597\"\u003ePenarik Beach\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-soqkQ39ilo_iBqD3iBlVES-OBXwBWCijw0pZ0i9NU1EsfplryiywABKykzsOCxPXB2RgFZZaAlH35BdaHv80_MVVzw7kLqRSvlCfa-IQh1FK20Jo8BCB5npGXWsIE-7C3xbP9eWmGUWAivvN88Z4XcdK4qh4m0IOtnMbLY1xSJ5ba4naTj5a5mDytUitqIkB2sSLhmTpY2QHvUH26hoQuvl_FF9k75SR9SY2Fqze8oLgDjKlFs3cNymJupzo1E5mvoWtoBUGTMcw-R-8y73-SVHdLgsllYac3WmpOvtOu-uaP-199KO0Lu5-RGulgFciJAqD_tCNonH0liaQAdCTmYi5v9KyccLIArQiK4dvvotGlVv5Lvgr23PALWPVF6JdKXVLcdT8X1gm0VWZvrrYqd61WxsQjoJZWE__AaHfu9AI8",
+               "width" : 720
+            }
+         ],
+         "place_id" : "ChIJPQKlQRABtzER0ZxbWegBdFk",
+         "plus_code" : 
+         {
+            "compound_code" : "HRVH+5G Permaisuri, Terengganu",
+            "global_code" : "6PQ4HRVH+5G"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJPQKlQRABtzER0ZxbWegBdFk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2094
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "HQF4+HJ, 22120 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.573958999999999,
+               "lng" : 102.7566236
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.575282480291502,
+                  "lng" : 102.7579472802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.572584519708498,
+                  "lng" : 102.7552493197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman safari park setiu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105071178149014189559\"\u003eFakurazi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tXRsCiLhJ3Ws2Z3BhkMkBJQL6qcENoxL_zns5y2vL8lZKOGsX_BKVjZY68Vb9Z8POROVe8CBEC6d-TjolG3r-6-BdEVmQNpnqHZhCbAYFbiV4e1IUcqXJThE2lQ7XcD_lYsrZYqlCSG7kAZ_Qs50qi631Lzk3Uzb6vaMLYMXiOISoxNXLoxWXpbNmCz7V1dc_DtpWBoYexZzYOoe9QEIjBITRXfpYGEwwC6TnJCRMPpq5Po8C_s947KgDE07cZebNnJYJbSx-l4-J7xPZh_UbFAUs39-AJOGYrjkdlN4d7lbJRSrFG-kxpAJvmf24ny_In332Tog0d1bKOprNIAkwudtPRxVeoayPVFXQC2kidc6JYEikgm3GhwxC0bcxq0gH8VhZ_EmaBYgqwFjzwCaa-I3Og-oR_oF48fylIcGQ0x-pi",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJC5RHVgBVtjERf8AdmIaThuU",
+         "rating" : 1,
+         "reference" : "ChIJC5RHVgBVtjERf8AdmIaThuU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "21010 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.624039799999999,
+               "lng" : 102.7894978
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.625428380291503,
+                  "lng" : 102.7908609302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.622730419708498,
+                  "lng" : 102.7881629697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jeti Pelancongan Kampung Mangkuk",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110418372161416604048\"\u003eA. M. Techknica\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t2rFr_LvwrJdqk3rp_0kHNaVlQoC14n7jD7rKJfL3U1EGV75Kw_cfB9LkenWj0tasug9l2R6_hZVf2NHuhvDfeEfJqidB8HiDHG4NlrTOxgG7_2r20d8HMLrU8rr6uSvGaRg44xnrze8MNh1pe8r6VKOzRK1zbmuWvv7TGogFvI-LTnrR9j6tFrpLxp-FS23y32AjXb28R087DN1z4fjFETV4OGZz2CgGUnI8yJf0JgiNJ9h9z9A824J4ucaROxnqtkPSyxfDgizA06BKJqyA565CNXdCLkBUrIf497UrWFLqbr_-D4tDMzeuP59mtGDXUJuHNYZ_-FjncaEwKb6JqFEiuHy2n5rqmC0Uhh7gXbdWx7mPL1VeQifRefJdrGKG-x18kmy7Qt00qUMekiNQHepxaGXIV6YfL4YA6c_Vjg2Yb",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJFSS-rO__tjERwHFQLfXFXkI",
+         "plus_code" : 
+         {
+            "compound_code" : "JQFQ+JQ Permaisuri, Terengganu",
+            "global_code" : "6PQ4JQFQ+JQ"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJFSS-rO__tjERwHFQLfXFXkI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 137
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Penarik - Mangkuk, Kampung Penarik, 21010 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6327647,
+               "lng" : 102.7884346
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.633985330291502,
+                  "lng" : 102.7896788302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.631287369708497,
+                  "lng" : 102.7869808697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Mangkuk",
+         "photos" : 
+         [
+            {
+               "height" : 2048,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114177407311586794724\"\u003eShafickza\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sB3_7qFYuu3gPPc6emrT_eh5PAbtFxP1A6csOwiOFtOYyurso4zCrJdlXoBWzg6gu4Lsm6ekSw1nyemfOuC3pZ8Q5VVuVJ3f2CW57d5CQetE-xlp5BNWa3vpHSyht2t8W7QYH7JtPhIYvL-3SRGFFBHGT_v3hgMb2Ldv5THuS62_kWOllQhO9evm777BXXcnRQTR620ww5H_ldw1jN1HaKgGZ9ekgM3jO2zleTA7xnzCEGdiGp7iJOd_BFlmuK6ksxd8vO2Q90xm9JRuJwsIqmD-lNM6WGs-1vbBGuFBQKW_qM5JuEg8GtGnY1v115wldFNN6cG7Y9PfI3I8RKE959yt86f0L_24Yx36NYXOUc0EusBXbeIfUrgVoCPsxDf5Z8B97wS5gIpZUVCFI4SOV3C9JiJxUuGpeLNsfF5-7JKOw",
+               "width" : 1536
+            }
+         ],
+         "place_id" : "ChIJHzFqKan_tjERQqxcIAFKMbE",
+         "plus_code" : 
+         {
+            "compound_code" : "JQMQ+49 Kampung Penarik, Permaisuri, Terengganu",
+            "global_code" : "6PQ4JQMQ+49"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJHzFqKan_tjERQqxcIAFKMbE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 106
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, 21010 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5715581,
+               "lng" : 102.8563512
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.572829080291502,
+                  "lng" : 102.8575708802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.570131119708497,
+                  "lng" : 102.8548729197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Bari",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110489953342958983872\"\u003eken tha\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0jTXnXVIzojUo5EHwgMr39qamMbLphcj_Rqxrvbw7JrDnBwZ6xym68AHUB_VpvfgzuMHHMmjCJ5L5X0cQIphhu9lbocNyJCuAyi2hryklAzYeATbzwsz_ojRZ88ehzVmP_3hHunaCqXvupX003rZnqt3xokesxgKIC1jRIjVRFdlyLqC_Uk9DxIXLSz53Fxlqxg-Z5oLMmWUMnBwZRUluVh2jg48ysA0yn2Oy9-_0fbUBxB-yaSYsMJWQNt-KML_QjGy8BERsRAlWMWBGw4DTBQsipzZ2-CEtlI-o70ZdSqyyjNQDvZJhYSQAwwtEO40DCXk-IAH5BVMTBF8t3Co_W17JMSAiNIk5EVwqxXhYmzWHeSqM6ms764pR7T_4uK8AOE-65dzZj-Z1rEQTFkcmilEv4zfCjPS_M-jU3G4J2A",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJu8_9fyartzERC_lejVd_i9I",
+         "plus_code" : 
+         {
+            "compound_code" : "HVC4+JG Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ4HVC4+JG"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJu8_9fyartzERC_lejVd_i9I",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 125
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed, Road, 21500 Sungai Tong, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3578132,
+               "lng" : 102.754385
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.359565880291502,
+                  "lng" : 102.7558564802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.356867919708497,
+                  "lng" : 102.7531585197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lata Payong",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108811694975864590561\"\u003eMDKAMAL\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uE1LkN4qIZxILFmFXWWE0aLK4ahT2Y3_xX-UbAXTVTPr1JoKfdWyGstppauMOSdfi5iGkZB8jrO0-EUfQAuSQPHEcv9Jycru56gGwEKWW2bJZJLMhOa2yWnqOzkTwFwuZYa25EIdxelqaM68GfW4VC8TUkWc_sJ9MGi2iuYILhFArHeLsmB7NAkVjKVIy3dtcT_pne5hyQaxc0-lAlZHVZU_eZtp3du-ymdt_IbTm1xASNLOsDZ-lE_WXfvuFOvL9VFteFplVor-UMFp77PsjyEp97SYpLgmCJKxo6f-Gic2WDXu-Wc_Yknoysvl6QKdL9h5XIxj0VPwuWuaereR9Zu9ettu7TUrtuSvy7NSf55KypyPviT_LDwLu9iFZe8nvNqE49pa1CjWcT7STP3pgLA4y5KUike7KGfQU6mw1of0Mu",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJW6u-awNNtjERSZ5tCJ-Wljg",
+         "plus_code" : 
+         {
+            "compound_code" : "9Q53+4Q Sungai Tong, Terengganu",
+            "global_code" : "6PQ49Q53+4Q"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJW6u-awNNtjERSZ5tCJ-Wljg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 340
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Langkap, Kampung Langkap, 21500 Sungai Tong, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3701554,
+               "lng" : 102.8210887
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.371546480291502,
+                  "lng" : 102.8227062802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.368848519708497,
+                  "lng" : 102.8200083197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Setiu Adventure Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102459947937757353305\"\u003eNazran Che Musa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufZFK06X9XGs24Vm7TADjxNQhZ6hFeBbvBq13Wj1R3AaR1QDW__Tp6Cz8_qYS5v5Yi4IgvhrUpRQ-ftbLeYUkio0gjV52VO8pA63vMgIJ_yvTbhP8EKb5Px5cColSl7ImUSxuOQOrGtelQMM1YizPAtnGERkcEPawjGZ52thzbJii5u5XJ8anullvMS_AozgWIPyPnUFn5wZJRFkAlcROMhOUomf9DTOcCkz6UWykqnQsgK1LyIOsp65tsGhZiwshUJyPFAxmGVKZ5hMJFuyfHZjY5b0ZMaQoZspzo7V0gQQKGYhu0vK6mNFHwgkET_VnBVRQgcq69rpPUiM7BjEpF-huiuVObb5VbuRjwh6NGA-8gKxvSFvM8FqJVEaTweE_ox52wiVL-N3ByZKI_dpFDyWGCe63YWv3rrmzg5bzyLJWT0GLANP6R3A9WnguA",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJJZyUoEGztzERbsDiKh0xaNc",
+         "plus_code" : 
+         {
+            "compound_code" : "9RCC+3C Sungai Tong, Terengganu",
+            "global_code" : "6PQ49RCC+3C"
+         },
+         "rating" : 5,
+         "reference" : "ChIJJZyUoEGztzERbsDiKh0xaNc",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "JR66+Q3, 21010 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6119945,
+               "lng" : 102.8102484
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.613358180291502,
+                  "lng" : 102.8114734302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.610660219708498,
+                  "lng" : 102.8087754697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kg Baru Penarik Beach",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113400057227917316805\"\u003eAbu Khalisa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uLwKjvM3WW_fl7gBjgxrvygtoxW0snu0sB8T5pnGEahAAP226rS-sTpzviFncQmljYIxGG0e-qLjAuN8AN2TsRadDdAhILs0w90JWEYb3nE05LqBkOylb3ppbeQ0OVjnTrkZ2ZhDuWomon_JOrUE_g1X6JVfSZkgIN4SSDi72kvYCiYFRsrBHjjqkt8hBKE-txzjfEaFdprQQHZ6PPh_3-1s_bgqizKfzU7EFZk9vikLuXYuL9K2O_9uf_XBMdGcB2tGhanTLgHypjye1s5H7kWzONDlYklZK11yGyMt4hvS1EGQ-ao1SdIXWuDfV4DVOp8w9MKCJFNhrJ3Qlvbs7a9lNCtk7wZxcyTVFcr0ptBH6KhGPVM8_Re1jR-8IqVEiAXmg2sXBeWpeiNrDkCpRoaIGvRw1mNjYNX3G0RJFuHrQo",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJU1kmsMcBtzERrjPhkBvYc20",
+         "rating" : 4.6,
+         "reference" : "ChIJU1kmsMcBtzERrjPhkBvYc20",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 41
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Penarik Beach, 21010 Pantai, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6280401,
+               "lng" : 102.7935526
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.629388630291502,
+                  "lng" : 102.7949012302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.626690669708498,
+                  "lng" : 102.7922032697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Penarik",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103396391059276186602\"\u003eOmar Bakar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vytQx9SBVqTo9dIreGv3eAiI5obzyN78diQUo2BcMPxxtCa8VAJk28IlgY96VMDatnJ8g26rHaYpsT_-JqOGcqPI9vNXozUNm8pulG5T70ehoDEOj14Wx7WDPhRBBjMW_l828YNEHpXaoSTZtoZT9k6cQZ7XdD--QwwzMKbK3u3YixF7NoITpW1hiRJ6pJemq5mtcd07oQeMKcOtL-SxxDd8b_VwdWwfQENC3jqtJ84wyqoRWD1UtYAejPsEoZ0LvRHaul1Pc4Ky_69Ji9Fsq5B4GdlxGDmAA7IGH_tOOfdBi-MKLjsCQEj4jUkvO9yC3l-MkyIkIS4iFst5mInQouRLK_pCGK032fy5VVObTBSiaAE3YEhdIliKDFvPAsgcwLcdLHKkIEm5qUGveDwaltmoadAkhbKkfM2XRzGygjYFNNGvc7GKJH-TlRdu-z",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJIYvBmFz_tjERXshXhdy9Z5A",
+         "plus_code" : 
+         {
+            "compound_code" : "JQHV+6C Permaisuri, Terengganu",
+            "global_code" : "6PQ4JQHV+6C"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJIYvBmFz_tjERXshXhdy9Z5A",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "83X8+5G, 21060 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3487575,
+               "lng" : 103.0669478
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.350014880291503,
+                  "lng" : 103.0683384802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.347316919708498,
+                  "lng" : 103.0656405197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pura Tanjung Sabtu",
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113991439441548615669\"\u003eAndrew Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uR7JXdgeXzIj3HvSj0VlvY5HvfaQpDe-SwZrT9zgj-gBJsVsNJnhJCL-s7OMabT8e1fJ773oxESCKzZJuEPhHhUTwADyDBr0kQ22tiIb1qkkgMMYBdLsVQz16JXghoavnvLa3_FbNr6IRZNnhahDPHqhxo7Jycbe19bGvi6nb4WsSg7_YkAa1ZsmzeaAnrxKn9QxeJqpPOT6WRVnlbCQEtIJMmyME-qxbYlBH7qvoxHfDnt1E8XD0UjGgK8rARaZVUKVlXHToF8bOlH9ieL5jCWFMFw_uluACbbEPFI604B_SU83eZGAxdbiShkPULzPi9HJW2FqbDyEu3RR1mEPlaOBMloFtah9NgWxFspNM5BGAigFp2V1r1nbh3UjxjOYIIoEcuEgaYQU6529jZErbCw_LvzuAhVf150kPQznhoMQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJieQgD--7tzERzwfeSXX6L2c",
+         "rating" : 4,
+         "reference" : "ChIJieQgD--7tzERzwfeSXX6L2c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 69
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "8W24+R7, Kampung Bukit Nenas, 21500 Sungai Tong, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3017407,
+               "lng" : 102.9056535
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.303090930291502,
+                  "lng" : 102.9069949802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.300392969708497,
+                  "lng" : 102.9042970197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ghettok Sa’ari",
+         "place_id" : "ChIJq1kCCwC3tzERdKct66k7Sw8",
+         "rating" : 5,
+         "reference" : "ChIJq1kCCwC3tzERdKct66k7Sw8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Wetland School Of Setiu Sesohor Setiu Tourism Village, Kampung Mangkuk, 21010 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6221933,
+               "lng" : 102.7958531
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.623481980291503,
+                  "lng" : 102.7971252302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.620784019708498,
+                  "lng" : 102.7944272697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/school-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/school_pinlet",
+         "name" : "Wetland School of Setiu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117995797116950765735\"\u003eZaknurha Hasniza\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-usVirBJrPGJ_yRLsX6AKP4WUnD99Eoi1icfHaRLCQs_fBG3xnluK6wcubOATMxmWgMwb2WZSs96VF5I4ZS1pwR5_5YfWhiben1Cn5WpwYl207wiZvdVW7pNz-9VudMiK7vVYGhcIkhRQ9yuEQqvUwhNCZTLWK1HASu0T63mMEFVyhot_jbdIKQL2Ph6FuuJa1N_UzR_xg3dVTskJ7WtC8HJGPiPYC6wOxlK-I1gGqFhiCPX_wOdHnU9qhLoGFXFTEMbaojUpJrZ2TPxn4FnYU3pTO8YAI0UtreTE3OSlon-LGziGRWuD7hCNUkng_Vgt-IBBmKjXMBAI3Hrc0dYIRTi7fkAi6E0pzjRWXY4KDKYOt7WGQPFx5VSY_v2VUtF07y2m-fkvdMyOETHBh3vTZya_umw6kJk6rlHD3VmDtsVwC3",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJHWF72v77tjERf2CnBR3Vbtc",
+         "plus_code" : 
+         {
+            "compound_code" : "JQCW+V8 Permaisuri, Terengganu",
+            "global_code" : "6PQ4JQCW+V8"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJHWF72v77tjERf2CnBR3Vbtc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Penarik - Mangkuk, Kampung Penarik, 21010 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6103982,
+               "lng" : 102.808458
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.611671680291503,
+                  "lng" : 102.8097594802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.608973719708498,
+                  "lng" : 102.8070615197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Rumah Botol Ayahku",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107925719003563518965\"\u003eYongMing ChiN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thOuRCWZkPlKaXUBJNH7VcdbmbOcgJMSEkus9ScOShisL-nPFMa6VV0ri7RB8tTS5OPJv6Wwf130Ig5bnnZlNCKYLfQ61oZZf5n5F8NnBpS4Jxl0dcNNNeNv1PQPq_UEvWQjrhF7UH1seiud71ymP3nyInY17WnlgBuR5bbbiPSrwvVdBeNCi7TX8_l2wt8RK2LbAxujycISq3BCsJMkzodGoOqa-fBzxF_4PTTB0p84gb-hbTxFgAtDnuuxarknQwjVAkCLgRByv80PTK1dAcvRqxiCS6FsSSeosf3wkD-vEIPdo6S0O3hIw2AiyUqJ603SIhbEXH5CHCErIkVKdjOX7I40lP8GMzrszue-4aQH9mVCI41tdLWzlpx8kJpEaCrEkY8NyA7gEXZweNrQWxeDe6l5UccrbViXGwC1U-Fw",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJARz1oNMBtzERSRpWlY9n-uk",
+         "plus_code" : 
+         {
+            "compound_code" : "JR65+59 Kampung Penarik, Permaisuri, Terengganu",
+            "global_code" : "6PQ4JR65+59"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJARz1oNMBtzERSRpWlY9n-uk",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 157
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Terengganu State Museum, 20566 Bukit Losong, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.318730299999999,
+               "lng" : 103.1028244
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.320328530291502,
+                  "lng" : 103.1033712
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.317630569708498,
+                  "lng" : 103.1005582
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Terengganu State Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101676497256600774501\"\u003eDeechai Rattanaphutphong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-suLuTOGAjTbh6stZtjkXALMd5vKcAt2UxIiZmeiHN9bGx9BOHs_bCz80uSgisc6vtqWYBmN7xGomRT9LCq1RWCYe88TQ35WkcBEdcuu8E-js6Lmrp6xYLKVr7lPMOVU9l0A37uzYhPvnjk5B8SUIxGO1Dnn9UdXApHVS2-xcwsfm6r9CVPmuXVa0IM6bqRNhUjIQ8eSdG3ndQDPbhWoLK5imhve-IujBrR55PTrBf3OU8CM1wLyiKt-ubDPk_tXznHRb_q4kO4X86m7YNq6HAW2P7V6EXsG36u636CqBAXp554pEQHQ57JiqRId3lImhAC11jnHAIbrXPgbKGY1_3neSA1fGqe0cgpq0Ohkupmf3Eoxw_MPRwA6m007gr8T44I_HkbA42W0QRH7xLnQpAScASE7ZM_fOPZcnvRV7Lhqd-s",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ87fwbL6-tzERh7qMNrpZS7Y",
+         "plus_code" : 
+         {
+            "compound_code" : "8493+F4 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ58493+F4"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ87fwbL6-tzERh7qMNrpZS7Y",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5073
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "T132, 21070 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.261431,
+               "lng" : 103.0408214
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.262777680291503,
+                  "lng" : 103.0421964802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.260079719708498,
+                  "lng" : 103.0394985197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kalang Warisan, Serada",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112549691586126952723\"\u003eAzlan Bahrum\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tQ8IJxcFbne3gyz_fY-ffvG4l_93JPEu_Vpbcbk2Iq64DJ5hPztUgL3_6sxKxbMvqqFNLd0QY2aTvXL_BCecivW7s94-Q0nzHUxxe8XPJlC9p-oPrDTeBDxT0IxUsxSHCTjaZK8UNEjuv4ME47dRBdfjoeaTkghLj8fCU5xX9KBBff9kiBvHzWvpwVSoXlZrNdpUOizEg6aliDABoYZhmsdFMCnTEqCYQ2BrTrNqp8RjG7HuSAQfupUeW-uA8DieCAAIlBm7xAsNBHfuJ-bLg2qjAhbfcToubsp7QN8g-zc_9MQBa3l2gbH5_6NXw8ttIHp6d6P2uU6a47K_zZiKJBRYS4x8wpnQyE3m6ION-3kMQf7DwA6YCniC8MT6PNk4V2Wxt1ne-0Bv-AgXaC2EcHlZKyHJHvIKvYfOVqSnb6nw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJK0x8Xfa5tzERnuMMB7yVbFQ",
+         "plus_code" : 
+         {
+            "compound_code" : "726R+H8 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ5726R+H8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJK0x8Xfa5tzERnuMMB7yVbFQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 145
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kelulut Garden, Universiti Malaysia Terengganu, 21030 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4065039,
+               "lng" : 103.0864597
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.407782580291503,
+                  "lng" : 103.0877306302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.405084619708498,
+                  "lng" : 103.0850326697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "UMT kelulut Garden",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117434549771775923703\"\u003eUMT kelulut Garden\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vZKTEz0vvG6K9i9hmlV8gW3OIA0c4jUht0RqKLI9qreTP-Ux2-hKFWUFbHHYVh7rRXOpwKNNBff-y02MgMGyQme_MlCvFv6-qAySj-VPSk9ozuBQRlJ4AMzbBkRY06ubLwtkrgqmiui7XYcKni6LRNbLXL_KH345RTJTHcNTHE0ed-vM_9LRlhVtevvBo9nv6BheXbmPxgod5pKhJn-8U4lcIGUEHS5SdQSK69X1NANH9BSwUnRt7BFT1EZd-4rQcDvkcCPXpYDvHW0YdjrJi4aIwFgOrepqUHlxJVQf_W4g",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJFdNj31S9tzERM3KZ9xgbO6M",
+         "plus_code" : 
+         {
+            "compound_code" : "C34P+JH Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ5C34P+JH"
+         },
+         "reference" : "ChIJFdNj31S9tzERM3KZ9xgbO6M",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "grocery_or_supermarket",
+            "point_of_interest",
+            "school",
+            "store",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg Kampung Gong Batu, 22100 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6716505,
+               "lng" : 102.7181664
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.672931280291502,
+                  "lng" : 102.7194652802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.670233319708498,
+                  "lng" : 102.7167673197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Setiu Wetlands River Cruise",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103584747038112524721\"\u003eDuta Alam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uOYTQFwddPuAGyY2id95Yt1bntZcSuM1tdepmArx4ZJF4JuiST3ptg_ev_-N6lieClaxdV98ltT5-cShQBS4VL81sQcbiQPo5AAJ4jhsj7v7jC2FWbLq0uEeX0acLaXGpOwC5IFGY2z0I15GWYXXz9x_z2azTosWSNb0X5F3CJEhS6KuJ8WwxWP6Dq-oxDgyhrpsca4UfacorROyaST2FinXoe5JklMYyYK8NIbwqbvwsu97Q4Sj7eiBI80f3wONrrXtt7Q-1l5_NbxR1_o3YmGXO9KzlPVnbr_JySSKs66hdiXn6ohS_kaWPP5ALNsVFvXX_u-_LnLrRBQihkF5Ysp8GYWXaEpBx3dMI-D4e1c7uz8E5Iw9y-eSq07SiNfZxK_hSFP9v_eKIaLrT9HmZkCNhRhYxlCrsencyGulow3w",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJGa42wo7_tjERESequ9ySh64",
+         "plus_code" : 
+         {
+            "compound_code" : "MPC9+M7 Permaisuri, Terengganu",
+            "global_code" : "6PQ4MPC9+M7"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJGa42wo7_tjERESequ9ySh64",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Terrapuri Heritage Village, Kg, Jln Penarik - Mangkuk, 22120 Permaisuri, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.634646099999999,
+               "lng" : 102.7843851
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.636155380291502,
+                  "lng" : 102.7858456302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.633457419708497,
+                  "lng" : 102.7831476697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Terrapuri Heritage Resort",
+         "photos" : 
+         [
+            {
+               "height" : 1792,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104470702062261904288\"\u003eTerrapuri Heritage Resort\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sbWMLjhAjsFUT6EHR6z26YPG3f1Mgzu6D1HnAI0q4QgChSo7XQAOVFg40GwSJr1b0SqNQkU7eDnEt9RWw38pI-5vVrI-S4mO3LFYpGQ-bBYl5EYfiTkxHNf2UkzPpYFwuITdQScdeVILqEn7hIlpIPsoS0a7gwq1iAaRIBbsSGNxjdszYEtErwlGh4vEZSOe0GgumjoOzFWAi9Bfncfv58KzAjlEc5Hn2uHuC7T0fW5WtabuI-5W7eIHVtjfeTv2CUpoxR65l8-y_3gjvWXNffG0jNBxNZpaDz0zEtl-pf9w",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJLSih2zX-tjERMn8gu28ovLk",
+         "plus_code" : 
+         {
+            "compound_code" : "JQMM+VQ Permaisuri, Terengganu",
+            "global_code" : "6PQ4JQMM+VQ"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJLSih2zX-tjERMn8gu28ovLk",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 325
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "219, Jalan Kampung Cina, 20100 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3320623,
+               "lng" : 103.1320139
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.333433430291502,
+                  "lng" : 103.1333151802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.330735469708498,
+                  "lng" : 103.1306172197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "لوروڠ ڤڽوLorong Penyu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100888579298044219083\"\u003eTan EH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u8q8sK0G-7d7RPCtoMAyxGHaX7XsSn9pMAMqzRaS-jB4z97fwa1HCcV0eDWCE0uuQp9myD0llz6JVPGuqpdROz0LqFdLxgC867Gs5vEjqqRwqV916_kJ8P4ESxqrgc78uXMnCVKecnC_Gp6-LWvB1f0iGswuWuGRERSg73GHDJRSTG1-CFMtU8uXzu1D7lB-aFNBVlfKs0-RvaW-FFa8WwtvAkGTq3qcLpZXwWfaouZ8K2cF7b6B83FfWEVHPiu3DUhFwTDp-6JGckwJU_vnkmdBRoBBQsbHbY9huuTmRyEITsv7M63DzwkV1vEw-5jGzaxH7qvtRR1rDU-2OF2-BDt-eeynwUGPsT595Z55azAbl0Ai-cNwJmP050kIR70SNK5dmLDIYgIVbKnM-E1Lxdm7u2UBDV-18kFqD-t8B9NA",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJEXajwH6-tzERBvphRZc8yv0",
+         "plus_code" : 
+         {
+            "compound_code" : "84JJ+RR Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584JJ+RR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJEXajwH6-tzERBvphRZc8yv0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 382
+      }
+   ],
+   "status" : "OK"
+}

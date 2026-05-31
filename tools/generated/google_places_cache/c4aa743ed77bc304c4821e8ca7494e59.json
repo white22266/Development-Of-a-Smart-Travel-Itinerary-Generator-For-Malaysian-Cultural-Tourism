@@ -1,0 +1,1116 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-ubYN2et-OBZ_u134ael1DHvdWQjc4JLCJ-R1g-07SDD31zatBAE8U8tgvlx6nXvg6q6EqWKLr9KEYNkpYZcwxRmTsVsiTCEioC624C8PebDBGwrZcRWqN_frEfP64leqj4OqKkpKjGstj3WydbzuOcs_ykkXVq5wK0Dz_erL8S8d-H9JD3ITEaH5_yYPdgBXLZ9J2c-_v_JM6WzVNSzHnnTMLzB7mIjuNpEp5SiwonaySIu1dvWfAlGpgo6bBTAFQAAMBqJyut1-MkJ-IyECHRr_0LzD2Fg1JEn0ex8DTkfkANMx_Tq8CfKAguac01gRxkdSxR93zIXmVwGUGRQDkAuBNqT9mLt5Fn7Yj0GksBAVINOWZTGT-ZT05AB9dQGOU1Z8WeWsGH_pF5GkNpNVtXU8bEqZDuZkaRMUfbNcmAbGuEmqh_PKw73S59_U0r8zkS_AGMsXQg_KdbEZgJratlafFSlEADGpj_jGLAsQiZCaJt-kf4QE9_b_sXIA5NsaHRg0tr0_Hp-78yoTCuSiXUQB4mBBb4Aa_GevQ9KDyLfT3u13T8rEuh_UMbyaTtvh_TCepivzeW5KN1Q8KWJejD4Z9pZ5Mm-YAKDgLPX-_1txnshV4Y_MRHsubKqO2t_3wPOGoaz2VYyNTWTTZGCT4_je-6yz-vJL-UtOYJWL3qKXH2AlKy_chfVZ8n9YG3f8pvLQZLauiCqrl4xBYKuxsgRMau98lmQcz6u61zEDFwlL89drXNYS2y-kSueA580gm4AbNpaXyxi791h9Y4nYtMvRH4jyh2xnjQSQ",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89709 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.580259000000001,
+               "lng" : 115.6011442
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.581552830291503,
+                  "lng" : 115.6024640302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.578854869708498,
+                  "lng" : 115.5997660697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "House of Prayer Kuala Penyu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1868,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101989776375479033600\"\u003eJules Verne\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tpk_WITDzv7pIG1wVZGsOHb2kBDp-liFiV2uClDt1FbfPa4_4pKEUIjE4CxNt-o1BZsR9-Y5ZVhKA5_1W7RkXLTvBLIKsqq73DN5SxS-ADHN0v5QijXpKkdnZxEpr7z4s4lwUFGS6B5QMFMC4-hkKQO8O5AKYSKGI9RMo4UCvinBvaAO4IwGU3n07_TPBlLcbJiLk7yxtesE4GtJML7u-1rpb4TBIYQB3kB2Rucfs_vOajVZ7dEStZXFo1Skqaf5AG-Tpa0idjCIcMdUYzP63uPuswOJfQOKguM91XnHC8ASShZtS_K_Yqca5MyePFZnF2hsV5Qg4Ax2hW7pvnlUmcitQryaGgliekhG_MELDuItMVIsnw0jVuDL3ur2rgk8h2ki8mbBbHvt3EhJAL3S7I4qul8MkwU6FtQVwCHJo",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJWwT4RspNIzIRcpKk2EZcKqw",
+         "plus_code" : 
+         {
+            "compound_code" : "HJJ2+4F Kuala Penyu, Sabah",
+            "global_code" : "6PQQHJJ2+4F"
+         },
+         "rating" : 5,
+         "reference" : "ChIJWwT4RspNIzIRcpKk2EZcKqw",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Nalitang Kiambor, 89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.547996299999999,
+               "lng" : 115.5783184
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.549185230291502,
+                  "lng" : 115.5805588802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.546487269708498,
+                  "lng" : 115.5778609197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Guan Sheng Di Jun Temple, K. Penyu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112146417137438857217\"\u003eivan tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v3J0fEtqq6iiHbERjkPEHvFvPXi3wbEzjdmk5vp9bZ825j8HNlhp7qgyzx4uXVsS5yT1LIzX7xV-bIZdRCyvPYMqcLiBGwbSjH2WJjDt8ekuoyEa0UYjCMdkOfXMrzxkQtTyk_ngu7CR2meb-M1VIKYNJ42W8ROlzhw3YqAzJaRteZcyXxmqdjAhKkSNod87jq60dfKImaX_xVbTMg6viv3Din8YsRxJze23klMIedi6vjNayi6j9QgcmS0RGqasxocGLLMrmsBkNxINNvSxx3G7rpgzIsb1meppexBLMlNBL8Pp7rIgMr2h7aXfufYHyo4RYZI7QtJYXkDS4Ao8CQYIo9OrsSCpl62FDFC06bclT_LSo25-h7SbHIWcruIFvwhe0bCBOoRXzRiDX--lPbr2rDYE96zwKAHveerTw",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJZYvL4Z9LIzIRExDQDfMXAqM",
+         "plus_code" : 
+         {
+            "compound_code" : "GHXH+58 Kuala Penyu, Sabah",
+            "global_code" : "6PQQGHXH+58"
+         },
+         "rating" : 5,
+         "reference" : "ChIJZYvL4Z9LIzIRExDQDfMXAqM",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kuala Penyu Tamu Kayul, 89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.504771799999999,
+               "lng" : 115.5686845
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.506255930291502,
+                  "lng" : 115.5699648802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.503557969708497,
+                  "lng" : 115.5672669197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Catholic Church Of St. Peter (1991)",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103323117168213705524\"\u003eP. Michael Gebhart OSB\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vAYHfdO-GmDEIxfYi4gkUmZ4XB8GzvBw2SqqVlejQH8uJtdaul9BMh1ZSkDd9b1atSOen7nocI1mwBQLJvdog62FWiJZH1yhEd_lsCIR5iEbMzlviWX7HpnK4UpkJh-hB5JvvuGVAXLrzkvYr8qWd33Za-jYTmLbB2D_vcLzGkDhE6Zz4gzGqLACSlb0jaezS-6i60WXy3fY9O0jPtrr7oG28NIMK23sjUZJIrt4QC-semidXllhyO-kuZ6yjb2VgZrUy6MNFWm21Y91WJxDoOGbZrArkp6KAqKXucMimFGP5ZNyGiUg4OKtt-pI0SazrlS_P3Pe5kV9zMhy7g8TfrhJo_cKyNz1eQk7mr_o3qywFfnG_bSGQhNpZNPAPLaD0QzcQUx4jXapZUHQ_097SIO24CGYhGD2RZyqOUrXGRTkwf",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ3UfCjSdKIzIRdPMdNPVXQOs",
+         "plus_code" : 
+         {
+            "compound_code" : "GH39+WF Kuala Penyu, Sabah",
+            "global_code" : "6PQQGH39+WF"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ3UfCjSdKIzIRdPMdNPVXQOs",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 34
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "FGVP+4F, Kampong Kerukan, 89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.49281,
+               "lng" : 115.536155
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.494217730291502,
+                  "lng" : 115.5375291802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.491519769708498,
+                  "lng" : 115.5348312197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "True Jesus Church, Menunggang",
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113801919025793674905\"\u003ePressella Dyana Atim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sibGLbhGjwSlFZtJ4AnI4Ro9AUwIn2VaYCZ365KjQS7TjnqDtac099eD11h8dY8p8R223clDtud2y8-vmyJEURsN5Qpym-zkHjARgTO4SoWIE-idchJ69q8Nkpk28TWqwP1TlkgD6t-Xzt0eSutpq9_yfssrS4xYT3mVYNZEoN2z0mebjjpLcGvToH9SnWWmxtPfcOGns9u47R_H9V6RusgO0Puv6IjgHflxjv5VyH7B1xcTjgENgO9ZkKFrmON8l3xIsV6qK2_1bZOK7RCtbIMXRdZW8UQqTDGWp_j-MuUCPNOK-FIoaB82-ROBO0Vh-tfDEBbz3EWRlT4A7HiCCMPLlzGcPF2uzJ5YsDtdk0l2BTGjoP73siTVrplqsYgVU027LIfIku5avbtDHHvHniwxZQD_9nebwQ571ytsg0NA",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJc7RQQQBJIzIRxD_T45hNvag",
+         "rating" : 4.8,
+         "reference" : "ChIJc7RQQQBJIzIRxD_T45hNvag",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4978282,
+               "lng" : 115.546435
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.499408730291502,
+                  "lng" : 115.5477066802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.496710769708497,
+                  "lng" : 115.5450087197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja SIB Kasakatan Kuala Penyu",
+         "place_id" : "ChIJz1QhHnFJIzIRGU23r6ZPyiU",
+         "plus_code" : 
+         {
+            "compound_code" : "FGXW+4H Kuala Penyu, Sabah",
+            "global_code" : "6PQQFGXW+4H"
+         },
+         "rating" : 5,
+         "reference" : "ChIJz1QhHnFJIzIRGU23r6ZPyiU",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "JLN KALUBAAN, KABAAB MENUNGGANG, 89747 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4987034,
+               "lng" : 115.5369056
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.500009730291502,
+                  "lng" : 115.5383146302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.497311769708498,
+                  "lng" : 115.5356166697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja Katolik St. Catherine of Siena Menunggang",
+         "photos" : 
+         [
+            {
+               "height" : 2128,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105240867081876315829\"\u003eAdam Kemarukh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uko6nfUvAxg1j4k58KFKdRqocYi64VpWOYqUFTmrbgZdIpVjjRzbQn2eYP9u_J4LYtYONnRETpGjm8slQwC-a7fCcn_lySQkQS4akx1OFeiCDSeSj_IJs83aLOp7aezG29shYITcfcvYaV0-XkHkDww1Ikw73c_iBg0A4s97pDhXhx_2UU2bEFGQksy-1PhlbTKRLvbL3dsuj5SksqDlAI0nthZgnAqMjsdkglN-YbWEFQB2QRlaB1K3M2cZqIOMTWDLmiE45bB93uW35IlK-DTj99aHq78QgklKaFeyMwE2PLoX15R4HH8AgkRe_wF_7AtEELkOwYxMV_fbQbc-SERWfb7z5CLW6uyExJCIeC0GCvlzBamGMOZKckDgd0ivbdC7OBIHcJrcwqDP9ywmFJANJAURukJtm8xGdlkwouqg",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJt1Se_ztJIzIRJq1YGz0XKhc",
+         "plus_code" : 
+         {
+            "compound_code" : "FGXP+FQ Kuala Penyu, Sabah",
+            "global_code" : "6PQQFGXP+FQ"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJt1Se_ztJIzIRJq1YGz0XKhc",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "D/A Pejabat Jabatan Hal Ehwal Agama Islam Negeri Sabah, Peti Surat 41, 89747 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5718764,
+               "lng" : 115.5980884
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.573257030291503,
+                  "lng" : 115.5994392302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.570559069708499,
+                  "lng" : 115.5967412697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Daerah Nurul Hayat Kuala Penyu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104793402060909176534\"\u003eFlying orca\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t2d7WbnrrED1_gnE5rMaa-gOqL54OHSN1HMJaO5r-GDeLjI0hBuShHyVdLA9JH-zfzlXbbX8gap1SLMQZ7r663tca09pGr2NwuW_BwSPYRKpSJN0UScHhBqr_5YdQHdzIe2emSk9Kr3cEs5rdngVhEkmwEsna4XLJFB41ohppxG5JbbUhkPva7fGMjyKtzQucgu7_CNX97hB_5k5KXVaf6UoKf78OGgmSssOwT5tW-GxXd9JE4LfPcHHTsJwLXzRTZHGtF0dqOZT2zE-w_NMoqE2VBWrfkEKkPiIpMP6yYlgnhskfRENcT6i9klZlx1Q2g1GkgJ8lzYz0vZ3-rFRnWM4S-ufRaRPlhYeXAi42TytZ9TK31MyK34qKgq0xNPC-_Qhqn4SMz5CfYGRYHMAk-mUa7jVDizwQtf5LfNhAkFw",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJdcfIP8JJIzIRFuqX1LHfwAE",
+         "plus_code" : 
+         {
+            "compound_code" : "HHCX+Q6 Kuala Penyu, Sabah",
+            "global_code" : "6PQQHHCX+Q6"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJdcfIP8JJIzIRFuqX1LHfwAE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 25
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampong Kerukan, 89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4761057,
+               "lng" : 115.5232506
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.477393880291502,
+                  "lng" : 115.5246912802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.474695919708497,
+                  "lng" : 115.5219933197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jami' Kariah kerukan",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104178403290907809371\"\u003eJit Fard fms\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tQlnW5cx280IsFOmLAy23J5Ff7j7UbTGqbsvK5g68oHpGNAgxoaSQ9hCCoThP7gRup3vjfcDA0fzbl-VWrZrkR9ecCBnl_PsajIb4lRa10IOD_vcVAjQmeZPL61CMfcqrePJCC3OXUndeZcI5jlfN3Q7sh8NDonTvBhLnnxMr3BtfResw5HgCCBHLcia2LrAQWdydWd2VBe-1Xaeo-nxBxO3ay0ayn-5j3PLiO3n6DWHI9piObhIMISQCIT0ZX8tjHxh6hExuu6fVOEe8vX2QJ_17uKbKn3yOHpl2paIs9oMWOIzmeHm7WWPln1OYERnpCWFGaFMPI-xxFgCjbUgTvg_ZxHwRtJdMLQm-dhxchDdR9WQx63sVjSRwbf1Wh14cMJKxcbQuXn1zuS69ZHv8m_qnsxvfLgeOgx59VqmI4fHIc",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJVeOWDSs2IzIRHj-fsvv2yz4",
+         "plus_code" : 
+         {
+            "compound_code" : "FGGF+C8 Kuala Penyu, Sabah",
+            "global_code" : "6PQQFGGF+C8"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJVeOWDSs2IzIRHj-fsvv2yz4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "True Jesus Church Purun, 89709 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5530257,
+               "lng" : 115.6110037
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.554330080291502,
+                  "lng" : 115.6124221302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.551632119708498,
+                  "lng" : 115.6097241697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "True Jesus Church (TJC) Purun",
+         "photos" : 
+         [
+            {
+               "height" : 640,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115026787516818564062\"\u003eSentia Ch\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uVzAdFUwbhrQ8d_qgkMun9yTHSv8B6CXgEkPmKSqKSBNIEppTjVQiuhLeBStyxJSsWSdAz-d426lQE6jp_Pxh_tL8kJCQpgVZBZC_w2m3GH4ug3q02WlwjtdMrkcr125FkBg1Izqn9jZbMFuviR7UflALTeqUyrMbPG0OYQ2-MyH144RFmTV7wvoB0ITCyJKVvYlb1n7bN_hxR-ULEto0ruaAxIQa4liQfjigjm_9P7EY9vfx8Q9HjV9hvaWv2NsfYxTS9reeTl-9qHi35sTnqyaiHSvOO6bMsfR0OZWWwx1dmUNXisY8sK86GejFiYCkxBYpW5K4RcAS9XCuzAVT_zujkRub7_BzwfM4A_elizmj421zDqhLlRRWEiS7l6N1EAa65cVfpEWDpn-EpMNGYN3iOlk3-ZpVuZb8Gk1vEajeu",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJQzgjQn9MIzIRuq3V5spaFJs",
+         "plus_code" : 
+         {
+            "compound_code" : "HJ36+6C Kuala Penyu, Sabah",
+            "global_code" : "6PQQHJ36+6C"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJQzgjQn9MIzIRuq3V5spaFJs",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Tempurung, 89747 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5352592,
+               "lng" : 115.5416549
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.536616030291502,
+                  "lng" : 115.5429962802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.533918069708498,
+                  "lng" : 115.5402983197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Tempurung Seaside Lodge",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102571181360340583498\"\u003eNurul Iffah Zainuzzaman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sySLAa1X7ilA8M8jQWahemWwtEmZBZWScBP1xjlqaNOOzu0-Wire7XD5yEm9Gp9H2JH9nAH2P5J4siAB_HkUqBQXXbcOQZwpenIDHmEv7TmVp4on9iC7Ue9nLlKLvd_eZLMebJllYhViiZ_4XYHqjY8-21VgxEpZ0uz__8l87a5XgaRsv9z-6G5xO7vJfCBQXuhscGf3ZPMgPbSVFceRAJc8G7w2VylLhAGqgZmD8DKmuHerwu1O2mN35ipcJQ2nFellkm47WH9_PTV3ihC_OOXPiRHpY6C3BKn2YpcCBV8OJCd2gobvZn8DQUyMmaLfBu1HebLGya25COvRmBmBccLMFXm-ny6tz5hic-5pkF_0BM4A0pZjpQGfoD-W49BYVBJpxvWb7YZmsBdekwn0gaA2yZeqdCwI3DgLmtLmSxL50",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ4y6hhrVsIzIRlCzEs621mGI",
+         "plus_code" : 
+         {
+            "compound_code" : "GGPR+4M Kuala Penyu, Sabah",
+            "global_code" : "6PQQGGPR+4M"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ4y6hhrVsIzIRlCzEs621mGI",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 359
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Klias River Cruise, Kampong Kota Klias, 89800 Beaufort, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4442783,
+               "lng" : 115.6311893
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.445595030291502,
+                  "lng" : 115.6325194302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.442897069708497,
+                  "lng" : 115.6298214697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Klias River Cruise",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104183861438228820461\"\u003eKlias River Cruise\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uTnKWMtdh2zB3IYOQbYj6P4UNh3_Z0bCIDwpgZDbQcGCIe7xI6gKkHzIovsOmf7xOWfpqJThNMdGBkBN5933VolaGdi0pU0VsnohmycH6vwk-Dx5S2l2rhHmDYeuINnQqm9otu4KvazrKRaEtlPG_DZ3YQiKdVHs-0woMNH9GxK5YTpSmxu0AZn-HvK1beGJNzYVetQ72aldNObquNfts6kY73lHnAjkOTM9FBYDS1jG_nTH9ksfjAo_HRKSdSCpJtVpcm25HR9OW1rxyq8aGWRYWBXbFXz2BkF3GorzQlPA",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJZaBRExo1IzIRfJv5hwLyxzk",
+         "plus_code" : 
+         {
+            "compound_code" : "CJVJ+PF Beaufort, Sabah",
+            "global_code" : "6PQQCJVJ+PF"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJZaBRExo1IzIRfJv5hwLyxzk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 322
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Persekutuan, Presint 1, 62502 Putrajaya, Wilayah Persekutuan Putrajaya",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9360702,
+               "lng" : 101.689213
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.936832730291502,
+                  "lng" : 101.6911379802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.934134769708498,
+                  "lng" : 101.6884400197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Putra Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101871907543931816623\"\u003eAISHA - M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uV9J9LyLScwyhlkXFLb0YNkSLVCLQE1wl37i0E3mSry7iHYeBFJQKK1JbA8FyhfwlJbauIuox2XKIuRNMvX4CV9CVrScF_rkdvPa_NY-RsP5NslVcytygcOG1B90OPjl342V5h6cGUuBGxUmUwOvx9OG8lfrbIMrSbOHvkrMYJ8KnuCVBW2KviBHzYG2bXtvhra6a5L5xFyBPBhM63W0KA7QM1LcNtTjK5vf1jLIqlznIJBAIxocGzKq4FP9sNaa5d4unQFw--wkgk9lyxBeD0SQVwVTzjBz2E9fH0YQvxDIvoSiecMtx9UtcAKe000-hg3UgMx3M0IYfVexW8H85rhysuV0ekdsTYdt-eckeUmivZElv1Dcoiyn81eJRdg9TGLM8pNtO4Fndf82utlmU6Rwmu98otUDJhKGXgKFttBcy-",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "plus_code" : 
+         {
+            "compound_code" : "WMPQ+CM Putrajaya",
+            "global_code" : "6PJ3WMPQ+CM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 23925
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pantai Sawangan, Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6255026,
+               "lng" : 115.6066488
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.626787280291502,
+                  "lng" : 115.6079480302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.624089319708498,
+                  "lng" : 115.6052500697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sawangan Beach",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116198444596552152537\"\u003eRussell Jimbangan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uxHeC34mUrIS0LKCGMk1WHYGeqDbC0xqh7WMm5C2H4CziPhuF_heBM5HQgR6IyxZOvZk_JWlu-aoqU8cRn_M0wvVyg9Pw79M9-7ctCnuch4Kp-QcVtFmF8Tf3qANrQWISD-JZORMFdCUIDaRpRZllIbIcEonEttGe3yEWq5d25TXnKQEA-KI1W19XQc28YYRoFI8ZxzgBo2ZiJXH1nMBAaqbM-J_3mVNkemURF5PZV65McGKuj_kE6vCPbhQ4H91-3K2EHn3S-eJs8UP5uJMuopshaY76O_7-AFNp7QnazzcqmszOSYZ5Ybebn8rE7UWwsZmvc-k47M6KIaOvrY4J0wWhlAg1v8JC_2Ez2i8osqD_u13VGEGWUHYjBicyIDFot-CJGMLlhggKHd2uYKCjtnJLOhXdk4FconZB7FIM",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJHTxGgYRNIzIRSJMjWXzj4Rk",
+         "plus_code" : 
+         {
+            "compound_code" : "JJG4+6M Kuala Penyu, Sabah",
+            "global_code" : "6PQQJJG4+6M"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJHTxGgYRNIzIRSJMjWXzj4Rk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "65, Persiaran Endah, Taman Persiaran Desa, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1219525,
+               "lng" : 101.6876678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.123622130291502,
+                  "lng" : 101.6892546802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.120924169708498,
+                  "lng" : 101.6865567197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Thean Hou Temple",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106009050344640864582\"\u003e山田正実\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tZno60-SHIKKRqLPssSP44ii0pqpMUThAUlwr2MCoy8UyXDzQ2_GzVZ6_MtAa1Z7e_x30qi_h1IyWsVOwu9bD5uaRf6Ay2C612svUCK-jc-9hEDl8IceLHmJV31mcNCsNs5Yr_bHu4iMrrhMaID0PQMrgPTSmGnDAe_AcpvypyjwXKGe0tzj_N0AXfup8wLM5mnnWnOrLU_wTWh7FYUOmwJToewjlLFoDH1LFPH6OQ0MwEz4CGNhChcG_gXtPplANWNLiBQC9q4qhHeulGCU5IHaw7PL0YUsb9jPqQ98w7t0OEgqxea-uNEgAoGtr43CoIZ5zhY4RkZF3mi5nD_4cllj590bIpy5D15uePTy6cFtgRfvkEN1j2c9RfFha9hCtJMwOcRNByCWMWKhhRAFHf217Kl8lbZLTBtuYFwNvNGXzoXxoOxUNiiP3p4A",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJqSc-d_JJzDERbOlsCf-UmNs",
+         "plus_code" : 
+         {
+            "compound_code" : "4MCQ+Q3 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MCQ+Q3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJqSc-d_JJzDERbOlsCf-UmNs",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 16249
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.72134,
+               "lng" : 115.650801
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.722688980291502,
+                  "lng" : 115.6521499802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.719991019708497,
+                  "lng" : 115.6494520197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Pulau Tiga Resort",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107766323313699192273\"\u003eMarakus Bakar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uEQhKGS5QwYL2Kqe4SC9azMcLPjwoOdMRTw4eucRMcDvoXgRSTxER2B9Z28LN_5CXl4OJePv03bom4w31A5aUgXvOzrbHA1pKG4b6trgoqlHA-aRLkt33wF2BKQMc-FDbf4yakOUTfF5L0nq6E00LrkycpesTv-5i7zWUFHwvDbA6jVgXHV-3vLtiO6K3CsuvUwuCVg3GwOj-stuRYJclECqpjTRmdJWDo3BDhGJ9Y9LajaXnHe8ouvq3_bXokx8zmDZ4nce7ApHcTGRUBiE3hxbu2_cPM6qleG_Vy4Q3yzIa3I5Ri4y5c2RhPkczgm4P-sAeEi-SoSAr36QvioEYta6nRqrLGk35CEwkazdvXof2u3QUaJzeepdXjpEHP9s9DcTCqLC67j9pAsC_iajk6toY0Llx0_5UIPFzZXhHmnTJsGYhofTjWR4hITg",
+               "width" : 3468
+            }
+         ],
+         "place_id" : "ChIJ799KJrhUIzIRXooA1gFU76s",
+         "plus_code" : 
+         {
+            "compound_code" : "PMC2+G8 Kuala Penyu, Sabah",
+            "global_code" : "6PQQPMC2+G8"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ799KJrhUIzIRXooA1gFU76s",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 57
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pulau Wan Man, Losong Panglima P'erang, 21000 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3222849,
+               "lng" : 103.1205498
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.323305630291502,
+                  "lng" : 103.1218346802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.320607669708497,
+                  "lng" : 103.1191367197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kristal",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114273248130270535259\"\u003ekhairul anuar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uHEMpz_jjgnZvv10o5r2rTLV1nc6dm0aB_dI8mLYnZvY7KEAOH_bes1hx4dJK6HI-xY0XIQUviObwwkNZKXkO5MeQDNfSzNen_XG75tsJOhbBBlcJs-hmGAK7-5IiGDHTT4nlRGRmmAF8D-uZ1ilXuig2OV-ZYfB0eg-rChASV_94H_FLLezMq-Pg8TxFdZiaTRct2XGG8hYteEyT-W8_5mvJqoyDtSQBswIpPbC4p4Dr8UN4RUhzWVXiXWqoiwKvndzWrugc5pwjmMc4mWOmdq0PRQXyWXMeb5sAAOoGgaMCEB6k9Z7A31bixPWbfjaH1FoeflcYtv3dBfn9NRjS4v1VPZjHz5-UNQPX60aEo5gMM4RZdb0Zfnnbjrcci4t4v8RYhRG3fCTrpT-GnFpbHHZnGR2m3cyL04hnXSwI",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJO_FN3Y6-tzERCEr3QjlnDY4",
+         "plus_code" : 
+         {
+            "compound_code" : "84CC+W6 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584CC+W6"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJO_FN3Y6-tzERCEr3QjlnDY4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7411
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gombak, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2378844,
+               "lng" : 101.6840385
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238803480291502,
+                  "lng" : 101.6852723302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236105519708498,
+                  "lng" : 101.6825743697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Caves",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103716561345803065971\"\u003earavind sp\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vQRV_gQ0l_E9PLQur8ZC0VeDdV4lrlIvlC_GW3AqLoOKQlTd-1Kp7rXDHIEd_IdQ-izYbn90IrDkqZ407Vc08lvsg01q1JvkL-FaMd4ecDCxuAOiMN3zxIVRV-9CDcboUq6dSGaEwYld4NJ0NgUbRDo5KBbBvGjA3xk875IUosRDM2vM6p-ZtIVzvnpUcL5xx4Zk7Dxkh9GwyL9wJJhn_o1uwi-5GY37_qxn8n5lAzc9v7VUFAzRU0h9lwv2BLK87WV00JTbjbh9eRS8DdEXhovRW7blQIWThrTdepBJBYz8aIs0qSskiinexGsU9_kJ-L5SOcQLbMzEZKyRcM1Ue1htwghVqO7qGLT4ii-J7fSaKTbeZ4aocp01YOTbHv7akdMUudTFreouvxjtwZsXMGwIs9sRSmAziNd3pR74DBBFv7",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQM+5J Batu Caves, Selangor",
+            "global_code" : "6PM36MQM+5J"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 78770
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jabatan Agama Islam Wilayah Persekutuan, Jln Tuanku Abdul Halim, Kompleks Kerajaan, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1718992,
+               "lng" : 101.6710787
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.173105580291502,
+                  "lng" : 101.6730600802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.170407619708498,
+                  "lng" : 101.6703621197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Wilayah Persekutuan (The Federal Territory Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110188376846481365368\"\u003eJoe 9⃣7⃣\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ue6s7wJYwvvkiopzVwi_Qxpb0ABKLh7WkUNNCU6lp-429dRs-F2QWNsndS-OWTReMRj7fft-RjDCxJWVDYkAh1LvVb7OZc3dWnjYZWdSJBTIhzjo_EM669ZAv3O8XfpJ5uvrCLbJC-nJH58WKT5M4SuKE5tXqSCgP1n5juV_WVQcC15SpoDOCJCG_nJ07byo9bc3h_jrUrkSIQyYVWR9FJRGStqJLHzDH_yxSL2U46nL8SX_aTrwr-NeiYPQnp6O-fNdbFiJdAq9JJ20DS-l0B_G0sDXbCO53KfREevURVyVAbZskvzAlx03mlT9bTQnsG5ARs5qg0aNDyp08ABB91RPBQYtqN9tz2duGiLOAHZer_3JybhwnTRQXpElC-70il-mgc8fZI9lz25LMaXwJD7Y-U6j7NkQNrUfD6P9g",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCC+QC Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCC+QC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7514
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pulau Wan Man Losong PanglimaPerang, Pulau Wan Man, 21000 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3219257,
+               "lng" : 103.1166229
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.323152880291501,
+                  "lng" : 103.1179886302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.320454919708498,
+                  "lng" : 103.1152906697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Tamadun Islam ( TTI Management Sdn Bhd )",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2349,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116640930074400251890\"\u003eanwar osman zainuri\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-viw6VhGAuR-FQImj6OQKoNX7T1yQ6xjmdlsUx2erqazZaOGNutBBAOXKpDAfm07qE7nf_j7RsYLAkqS_RmbD4InLMu_Dd-PlTVqzC2O83kxyx1-hTB35KV9A9zTHvC733ev5dU8DZOxZT_yahLsrLuAR5WdrlViulkP6MrbmUSvBDzkEBevifPfsNn_I7Mgohb50o8J_pOI1u7Pfe8gRgJHaypDnAYzXKT84BUCh9ksLKcG4FZz5zdqUemAG_6CoK5wLCRB1mMujyiLfIWIxGnbsJdeZbb8IrQ-3Q8RRno8VcdzM_T2Hx12fytKhFK_FWoy3vWSDzXMbYXDewUFyD9a8is19RQb5ZIXmR4sWNqcuFPt4z4XYknUuwE9Sy1kqTOl40AeQxjQ2forVfbiri7KFzcfGARHebdm5oH5ZY",
+               "width" : 2869
+            }
+         ],
+         "place_id" : "ChIJN3Fo4ZG-tzERQnuQ-Qw_PJU",
+         "plus_code" : 
+         {
+            "compound_code" : "84C8+QJ Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584C8+QJ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJN3Fo4ZG-tzERQnuQ-Qw_PJU",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "lodging",
+            "park",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3966
+      }
+   ],
+   "status" : "OK"
+}

@@ -1,0 +1,155 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "JALAN SESB KG PASIR, 89850 Sipitang, Sabah, Malaysia",
+      "formatted_phone_number" : "088-768 876",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0869544,
+            "lng" : 115.5510573
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.088312030291504,
+               "lng" : 115.5524086802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.085614069708499,
+               "lng" : 115.5497107197085
+            }
+         }
+      },
+      "name" : "D'TUAH SDN BHD",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 9:00 PM",
+            "Tuesday: 8:00 AM – 9:00 PM",
+            "Wednesday: 8:00 AM – 9:00 PM",
+            "Thursday: 8:00 AM – 9:00 PM",
+            "Friday: 8:00 AM – 9:00 PM",
+            "Saturday: 8:00 AM – 9:00 PM",
+            "Sunday: 8:00 AM – 9:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111570926872089333657\"\u003eD&#39;TUAH CAFE &amp; HOMESTAY SIPITANG\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sV2uBt3aZx-erVHUEbB-e3RrPXBHMWwNrvinVVKLdTLOYmr0n9njM5aMuLkA5u6Jj2KMBNgx85ge-DNZI5RDo34MeKxsYXcCgY0_q7BWFP3Cwt65HpW7V5AmCWvsb55MZqbh9h3D7dHmNl4ZHRiUCF82Z00Q9nZztHg9VL07qDCTxF2UjnUlNZX7UNBBZtYw3CaLhCuRruVd88quLIf9EyAdZbQYgZQnUCxxKjqVoewR1HkInlpZFI9wZirfRcpeJdu1qu7uYc3JNC2cnu9I0O0k05dR5C6qpN7yGRsXmeioM-O0LEiTyPb19W8DGIC-LTm-heJDowJ0t_Mx9icXesYiqGOi2PAqkWQpRJrQ7wcdN__uxSlcI6OsnlD7oM2dKUhF3G7MTyLrdvoUYjepQDpe6h6qm_1ZHFHNxnUIp9r-Oz",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJl3k3KOnRIjIRDPcnVtWHlHQ",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8400488555296061196",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,1188 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vTfN7KuRefOaIMoqAULlgK-JBU1UJa1l4nPLl_FouXtrh3hojXI2qhMKw8wQ36QGVTSJMKjqBoHQSBuxQ3J8jt-eJ70Gbc4OAu-4L9Bia5aqBmCFeEuRuIAX_i-J9kPl0PpGP7C_RQUziFB9rnISxCFf--bG7APyFx7mCjKCnH8i2nhOhQ_S374T78fV2eE-fPb9qHgYx6lCKI0gtmLbG7ITMOJDyzMaCSi4ukylLAU2eXO9-7pMU_QhnZ5CDvFG1Lcn_DOimII0CH4XTXqouYHcmVT8eZe3tgdIBNovmF-h1BG18Sjd0qVsaGUdHXlVNjkgaWdmxByV2aI_lWZbdgx1E-ufIsp52CcBjuSy84NL74r6gVTVTCTZ7agcWAVUyrBQ2Xs1BTwNqCf3njzyh3AbITRFM1G0oRc7vBx8lFm3AS92gPhYZhnSUNiHaojEf2y3ek2RzPBoNKtvn0segz9sn24rkCg8VhMWq5uDD2P9uk0GVy0ZxWEZ5ef9lYPi6H6020aixlEkhMOZK2kZ7VH73BUffkoool5TPcpChU16RtrLtnh9H9CdMz2W3aKG2jCyHuF8L0Hj5pvu5vuqZuC5SovvxDSkziX_JYnIRt1wzJpiqd2CkiDho2YvF7i9Buz8Ip6Q4tZhaPOPIlwKI_2_W1cmbpi_UDlcBdNs-qK_TI0GbCD87c3ttfbze2MnVvnA-OVPHWNQkFcW7PIYnc5Q_VzyI3yqczKwj9rbZqTYUNepFzzF6mxZa0MV0SmgvM4rwt4y6hdQ4pENB-C5V3SUTDYGe1lXVDi3OtIrIHJd-lo-PzWL16mKCB1gaThbZZZ6y-9uQu",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jabatan Muzium Sarawak, Canada Hill, Jln Oil Well No. 1, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3892301,
+               "lng" : 113.9949131
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.390592880291502,
+                  "lng" : 113.9963414302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.387894919708498,
+                  "lng" : 113.9936434697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Petroleum Museum Miri",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116185306503830937322\"\u003eabd. aziz ibrahim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t1oufGARC8DrzY6n0mRYLcqHFbmmvQN8FNN7Qgbc7uWqGU59yNoi2xvqZUm9TURX_r69QZKebcAF-70QcUoz6x3Zr6zKw57pU3vh46sny9GH2Gg-BOuSCR8waMfnISstc_1jvzfALMooiegy-UER7x39Zces3s4iLfqIxnCzxIrIKs4NW6SLNv4IuxopaKy60NABhSm65Py8PRgU2_x9UbqOy68AMtQLe5mR-ZYVXI-jN0y7qaLfx_KibkQEajyLsUTJci6BG4LjIgohKRxlobqPVaBJMDgemAJdpzEzlTr1NVIh7SzK_dQr-3Mzjj5iH9leJAZxzUb8me4wKn9vWdK3q8DV49yVXKu1qqASW6gxQzLgq0gLPq_MQoXjMoaxAo0mjgmUCWxY3JF8PqKjUVTDyaF-WWDr9TaYiPsgZtgB94",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJV3Me1NBIHzIRhcQPmeUuIrY",
+         "plus_code" : 
+         {
+            "compound_code" : "9XQV+MX Miri Handicraft Centre, Miri, Sarawak",
+            "global_code" : "6PPM9XQV+MX"
+         },
+         "rating" : 3.5,
+         "reference" : "ChIJV3Me1NBIHzIRhcQPmeUuIrY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 211
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "The Grand Old Lady - Canada Hill, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3888229,
+               "lng" : 113.9950683
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.390176880291501,
+                  "lng" : 113.9963005802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.387478919708498,
+                  "lng" : 113.9936026197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Miri Oil Well No.1 (Grand Old Lady)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101282480240036420409\"\u003eDaniel “JC”\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tC2iVFh6yzJR7YEMbBWEMscFC1Ai3YpaSX9fFw9133Im7jhm77R0Win2VScT5e-nKEQ2iSWD92oBKGMnF7IOvM5DCgFTYJ2TpfHr5RpOsrcYN7jaMgnuU8dscNi8Xan4yhqA6b5tWbODZf1JdOe7Q1Ed8btdgvhHs47JqAOrqx2Rn6enRkT88qZU6Lc4HvCaBvYF5Js91RWTYRrxlEG_2dvtI-A9cjLFJf12iBK3mUMSd3rZKIiVaAK4zJvntWrUyVgYbS0BzGJ56bmPLabVH8qg2B7YVzcdPTYkGzIn8rO5NQJvisUA2VYvQpmSc8n_IJYJv9ahZuCLUBpYmaRQC9nNXYkYQnRyqzYRxQEbWLFtXgdxuUwfF3GDmnP-4j6mWiHeLabYUNCqYwFjwsV5rlwvxhJG3SApz0ojwMhd0XHA",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJM4-bzdBIHzIRRxL2bDRzy1Y",
+         "plus_code" : 
+         {
+            "compound_code" : "9XQW+G2 Miri Handicraft Centre, Miri, Sarawak",
+            "global_code" : "6PPM9XQW+G2"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJM4-bzdBIHzIRRxL2bDRzy1Y",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1109
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 2595, Lorong 9, Krokop, 98000 Miri, Sarawak, Malaysia, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4213761,
+               "lng" : 114.0026151
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.422736530291502,
+                  "lng" : 114.0038705302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.420038569708497,
+                  "lng" : 114.0011725697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Some Shak Lung Kung Temple 海龙寺斗姆宫",
+         "photos" : 
+         [
+            {
+               "height" : 2969,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100203758620813919542\"\u003eSee Fong Jong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sCKe6zYxFDXfkWCkXQ7832K6O5fB2veLQbVrNOcLEvt4pCrqrIU_77RTyuQoAyuhN_l2BRSangWdaG8cRU2rFuXpMNzgsXg7sgt2Tx48ULxl_7pg8SSy2EX5gLiUp9mYaJmc3_sv1uyA6hQ62IKhBs0mWfWAgLolgg3_2-ysqIiTz5TmsLznOOPPXykOTP58_C_F43bUhBnvNXQEa4fTFDBn-5BsZ7gw4S6gKQ5QFOs51dJUPhFbSC8J44p22hWIbI5LKhNt0alVsFYn-j1AA9SM_PqtNr2RKSOPuYh4yRn7OqkUsRFrGgz9PC3aIbmyDilM1SY-ri4TWITQwwZOjkN2HGcKXwFJFwlsvN5HslGC4VjfJVnV9Tq-CurPGHqHBgQV-ncV3VNenln5-7t-DviEX2nyx4EyxryDQemoSg3w",
+               "width" : 3958
+            }
+         ],
+         "place_id" : "ChIJb-5aauJOHzIRzPLfHC6W2jg",
+         "plus_code" : 
+         {
+            "compound_code" : "C2C3+H2 Valencia Park, Miri, Sarawak",
+            "global_code" : "6PPPC2C3+H2"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJb-5aauJOHzIRzPLfHC6W2jg",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 168
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3888109,
+               "lng" : 113.9950764
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.390117830291501,
+                  "lng" : 113.9963882302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.387419869708497,
+                  "lng" : 113.9936902697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Grand Old Lady - Canada Hill",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110504716500659317195\"\u003eFrancis Ignatius\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vhMTiGeqAhVX8RKUGtU_8JB7c8H0d0oGmk5irFrksvBPuXXQns3Zh0UTUhb2LBQo1rkn60lTL6tfHFv6IthfZbO3eb-GGirnUHG0t2cXeRpyqmQGsqZeu3cl31_wjXpaWKVfxM8yAuquYez2dNV-0UaJ8lC_ezPukeXTVhEe2u42NlSFpeFp-J_h_2OgXNnyC92mc-R_PHZVbwJhds5iHRv4am7X_VNJR8c-XCsCAhNIKnQG76QdeTR4iL-g2z893sF2XyvQGDmInFzvPoJtNELjWdB9dMU2XoFSXmdygIn8PFF1u3Pd2TfrExnGrqrNyqCQFdu4TV0JXS9ygUrFCcdvGpBPGyPSOxNA8htCgbSitUAfkARjgfVnP8B9fgG7lvvcg0VmvLMTErMQeFHgzC_AiWgYwAA3dEqWx6WwwtYplzLpRKES58xeJA_pXB",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJ9y25ltZIHzIR8Lu1-y38mZ4",
+         "plus_code" : 
+         {
+            "compound_code" : "9XQW+G2 Miri Handicraft Centre, Miri, Sarawak",
+            "global_code" : "6PPM9XQW+G2"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ9y25ltZIHzIR8Lu1-y38mZ4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 620
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "98200 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.8014874,
+               "lng" : 113.7853389
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.802836380291501,
+                  "lng" : 113.7866878802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.800138419708496,
+                  "lng" : 113.7839899197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Niah National Park",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115647602244187045669\"\u003eAzure Group\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGFONouDxbYDDy3FNOR4ICPQbqADW5QD61Fz4I_2ZQ-piShh6b9t5wczZhagAzEtOv5NDzzepWixbZ8TR-eMUIY4F9v4lQDY3dyGROYYYBN1uqXGGntjfQGzBSV2mf3Bb3yfywmlsVtTZsjekTeUIt3gq9gheHj3TpB-8ZzUW28a9Bv5nlf6Q-6nd7mcQxn049ye9Q45JVsKBWeh3cmIepwJJTbw2MF5KcixGgjU7lZlbkwCbUBQNIzrja2_jadRtMLr25NPU0F9IvXEx9diDynJKtgLA5B5-IWxCZI9GmSBX_nWi7sV8bieSTaUj8ZeRuKyBVeIP8MVWiFc6B6sueLuGL1ADjkooSbvMXvW8tl1vqUbQ7XpboXEXLD48VrRWJEZkRHZB3_TxAHa2RY-73lnebnIYgyTqs8_D3gu9mxFAu",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJEabDttjpHjIRWGlhHAJkjfA",
+         "plus_code" : 
+         {
+            "compound_code" : "RQ2P+H4 Niah, Sarawak",
+            "global_code" : "6PMMRQ2P+H4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJEabDttjpHjIRWGlhHAJkjfA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1068
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Petronas Museum, Q659, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3891455,
+               "lng" : 113.9940286
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.390458930291502,
+                  "lng" : 113.9956701802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.387760969708498,
+                  "lng" : 113.9929722197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Canada Hill MIRI Landmark",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106486448736921595332\"\u003eEdd\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u5Ccgron62numsMkB_ujrlIiqp0KlIshTyP--ya2Vw_76MBfo9KfAA8flgZlOYyn7P9MhBFpF50Yn5IXNDUg-f5uuVQl3Ug09x5hsRAZz3-mYZh9U-NFzpZNtvAUJYZB_hBpEes5_TPX2hc1CinaN_IRZF5z5x3YTfU5rFC_R3UMBJ5oGC4NLjpAdAgFDD47rXJhq0VtJpVIOZi5DW629IGOSFM6YY-htM183lLqkxHDoARDOYed8imzMgUcwwyIqBQEGA4qOyOvOI9yaPFbfZz7pX66lp51gjlFL9dkQ6VjblM2Pf12hN2fthff1cdc-2UtgN4y-znF91sOi1uExh7_bHJvF4pNPPReEAJmTLUtp1R-i1tGtmbH1UgIvfqO0b1gs9WFLW7RN_H2npIG5CDwRZO7JoBGHNp3jR4aI_ZA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJrTra-NtJHzIR37i7pobV_io",
+         "plus_code" : 
+         {
+            "compound_code" : "9XQV+MJ Miri Handicraft Centre, Miri, Sarawak",
+            "global_code" : "6PPM9XQV+MJ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJrTra-NtJHzIR37i7pobV_io",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 105
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1-76, Jalan Bintulu - Miri, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.198371,
+               "lng" : 114.042873
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.199349580291502,
+                  "lng" : 114.0442939802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.196651619708498,
+                  "lng" : 114.0415960197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Negara Bukit Lambir",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108925388543644090290\"\u003eCM Chong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u3bf74WDy8JENn9GwKEnd8H07kX5U14A0-OpuU6IS26QkmDrFUV-iCy6p9FD0-C2Oq_ZNV8HCcxLK_vtOx9bdeZXtH6w5pms4iVMSnYQvRMgZ3enOovZEujB48buNzP5Qi81ftRPTTvXQPnmtasj1oeDd9bgxThyycYXLMfp3r0iQhZTMTEo_jduhXozM_eqLypdvdqArqiE_0Qd_psJ4gIiZ7xfiroEY_bSSyGpz2TbF9FF6oasOacZu4OLPxY4btUvwsFgoe2wS7s_HFvbzMaPNIENp5Rgc7b8jAtwavRO_9BE-vsxx581q-jctjX40Vd1M38xIUmGLHE8iwKIpzOid0Bd4PKlG4-0SOnZCBAlJ0ITHAsfCpiXgCF3FYslI0oM5GRRZHlPuHEIU4QP7TtlDw2gCM1vpQAkw7YZw7hQk",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJCZ6heIYxHzIRBmMre0Zy08c",
+         "plus_code" : 
+         {
+            "compound_code" : "52XV+84 Kuala Nyabor, Sarawak",
+            "global_code" : "6PPP52XV+84"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJCZ6heIYxHzIRBmMre0Zy08c",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lutong, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4553335,
+               "lng" : 113.9987839
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.456710580291503,
+                  "lng" : 114.0003050302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.454012619708498,
+                  "lng" : 113.9976070697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lutong Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101385673994756615697\"\u003eLovely Nick\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s5FGAF5nHvh-S3STh9-o7Qr-fkH29tskPbamosdBChz807gthMUcBz213YarkstNoO4PT0aMXXUNSx_ytO1SsLVdvY-0J3rFd5JmR8QtyxzxV-vhfWFa9CZeh65S9o8cZ7syyE4bVEAtO93W6AMlTyEnvK2HFlhSApou9sGcuxz7Av8_-ro7tSYJXJyeMk42jBuv2hOBEwgM3Cs4WgAaDWueZasfmXwENLFCmnS6Goy9_brZivTmZFpn8GQPVfuwYkomAJyddzSXlO6cTzOlNVp7_kalzh6DvGeJ0iBmQjJ5ukiFKM6905taYAtoSGQ6Q9zjOaraHBz0cOMBEACW6CelkRqlGLU810ACdEU6zOFX5WBxSlUAc11T1g1Du7vN-jsGLAGXGAhoKgr12U2aCnrzXyAozu5KFsuPTJLBmBy27M",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJn_Cj-8pPHzIRge6fT__OJMc",
+         "plus_code" : 
+         {
+            "compound_code" : "FX4X+4G Lutong, Miri, Sarawak",
+            "global_code" : "6PPMFX4X+4G"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJn_Cj-8pPHzIRge6fT__OJMc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 416
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pustaka Miri, Jalan Kipas, City Fan, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4029717,
+               "lng" : 113.9934526
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.404219330291502,
+                  "lng" : 113.9955409802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.401521369708497,
+                  "lng" : 113.9928430197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Miri City Fan Recreation Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1235,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115650330842748979509\"\u003eAzian Wahab\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vX3M5svt3bPTIUtZ4YBT3N4ds4eIw9sZ_a9VSEM2-8PViZIddCwfLT6EAdCDTNpiAESV2K631EXNs7KKCJjC5XpsP8brrIM9bA88h2QRF7SBvCkbWaNnrg7WEbUGbJvdULbS9x0x1VIdW8civ-Npg_C4yQJ6LwDt_jaweRNh7TpBqw4_4CqL7xNpeKfl-BSIY0N-3rf-vXiECI2H4KuU_b8fdnpRVwLAzDZqMxWLfGD54wnBBBylp2jOLYITu3RXO84HPoS-Tc4jUHWiw9A5FzhefopOPwuFPmnS1K1JO6qK2lkpmRnjzcYHNNzA0RkvmcIdy3OaoodV787OUZm1gcQ1emsgxzbXpC0P531QKBsvwlEcF__rgLMlxwI1V_DbXSHmFZ3DFtCT6mg5LSvNnOx1viqzeH7UwDbAoEHU7LKfdH",
+               "width" : 1879
+            }
+         ],
+         "place_id" : "ChIJC4RE5i5PHzIRI3NBd5BZD2U",
+         "plus_code" : 
+         {
+            "compound_code" : "CX3V+59 Bintang Jaya, Miri, Sarawak",
+            "global_code" : "6PPMCX3V+59"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJC4RE5i5PHzIRI3NBd5BZD2U",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2048
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3713335,
+               "lng" : 113.9683438
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.372349280291501,
+                  "lng" : 113.9699719802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.369651319708497,
+                  "lng" : 113.9672740197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tanjong Lobang Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102082167451403240618\"\u003eSherman Henry\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tT1M06xgVqXnJm9XCJwtYGflID4HfQGSx6uw-dviG6ER3fJArTqa01SR2BI0Vu5s2DXOknNSx_ji6BgaBTiJ1u66zA12MJ_XeM6jpK3JVQ4AhFfBTKAGZm14FN8IFdUNszSmwqNr9_zA66zPmKv_-3r-RNgZUG2e1zPmTIxavjgk5SQmoGbta2u2fNcLqTCQ5jtyu0VBnYrJSAcyYa-p73qw1vR5xa2aWa75OimHIgTt4DVHTSsszlVgsEsqowaL7hv1peRNOkNq7XieRNT6JyBE6EUxuDPCD6NucKusbaJyN3sGMj6EB_CgqumkQfsjZzhelSDekITdNYBKrD0zh6XaZHU5L1V77idpcfD6kfVcv-QYXwl86mHBpqIehW_gYXk_hW1e3gO6S4lv3aaOUqGeQR0YA8N2keEf2NI-iMBg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJJagLVZBIHzIRqgEWxadjJMw",
+         "plus_code" : 
+         {
+            "compound_code" : "9XC9+G8 Taman Selera Tanjung Lobang, Miri, Sarawak",
+            "global_code" : "6PPM9XC9+G8"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJJagLVZBIHzIRqgEWxadjJMw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 968
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.387671,
+               "lng" : 113.9754753
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.389014030291502,
+                  "lng" : 113.9767888802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.386316069708498,
+                  "lng" : 113.9740909197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Miri Central Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106689265477706489322\"\u003elewis lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vwrRjKBE7z5KtfU2H9Njo53QQ98kGFRflYuSr4dVconqSL4xrDis9g6DXbgpU4E2Gc81v7cX8NBXmmR9EsY_CcB-9BfeBVTapf1WbU6Youco7ArQLxC9dRhYekM-LLuV88HpQy4XPXPDJ4dC-40G10DgX_kU5VKX5XtVuE1KSmKVQgAANMzqBb5GKEKVNI-DYd_Y9AehfrJkx75EPDlR1pvTBKrG5cAugFIR5SM9y9fSb7OGxAG91aTZKBRxesbMpQSMGRFk5YSyK0HShdejV-29Is4I9rvWxRed8ZoRNRl5i75yplWNidaGfogH2THuPwWMwaHCt0_urRSrq5-PtuJ2lL4FmByv7iN7-vczrlyEqg6Lbf-YZ0XYr_tnb9_SWzFxjIwqj5G2sclbKZInYwxuKJ8LdpQdPgB2gn7IoiPdI",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWckVJ7hIHzIRm-rWLUqvbGw",
+         "plus_code" : 
+         {
+            "compound_code" : "9XQG+35 Taman Bumiko, Miri, Sarawak",
+            "global_code" : "6PPM9XQG+35"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJWckVJ7hIHzIRm-rWLUqvbGw",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 819
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Long Lapok Tinjar baram, Taman Awam Miri, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.366882900000001,
+               "lng" : 113.9793905
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.368232080291502,
+                  "lng" : 113.9807312302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.365534119708498,
+                  "lng" : 113.9780332697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Awam Miri",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111445015174027470368\"\u003ewoelly william\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vUM7SIv6Laeq0GRWW4oqvKMGUG97z86jAy2LSB89b5coHqTuRihayq-zymSQmUqRVYEWnQBTJKjkW6fSxGSEFHZHwEbH4LWpKX8DXIU3c0iu2AayQrP0f529pJ1LudhCwSJApty5MMQm5gBJm1_zlkkO7GNkSCW81ynz0Nr1mGKyltNe_22Sfx8Rnq9jeTugPh64lRUgdVppShSoTj4F_-nUW_S46J_mcy9aonNvNtU6qw9ZJjgoxGSCORkll9DqobqHToZhljQ0M_h51Y4BUIIbpUo6WkSgc-9sBF-rJPp0TYetBdQFMnQU7EzBTtd8Ld-se_T81TIS8ClKujMhy0-V34XTieh7C6pGzknTf8DDamzBGIkRUJ7h9q08VTCws0yl2GyVkdve7OcMWWpKXktdaFo45kedOazxP3PHbqHqs",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ3UzD6PJIHzIRYauvK7Khr5E",
+         "plus_code" : 
+         {
+            "compound_code" : "9X8H+QQ Taman Awam Miri, Miri, Sarawak",
+            "global_code" : "6PPM9X8H+QQ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ3UzD6PJIHzIRYauvK7Khr5E",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1414
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Trailhead 8, Q659, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3905348,
+               "lng" : 113.9968919
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.391855130291502,
+                  "lng" : 113.9982763302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.389157169708498,
+                  "lng" : 113.9955783697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Canada Hill",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114960089422984681323\"\u003eTeresa Chen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-trE7UJAPSVjrSc_XAcNCr_-pUyCVt6zFt8_UbO7l2T_brB-cVUbUtlcV6UbE3bPO6IIFjWJkLpFhhME8Udm3zUjhFCr2q2thK6bKSdihZKJmVLCGl0GqaZTbWUVvYDdnB6m8KbrLTHYC5uCLELnqOcjlUtRV3M7GrB0Aj_u_s_Nbvilz_dX8ncJJmlSyFiusgNkyhKaV4a7S-AKlmkI9Yfw8N-x46VUV2h-wqZfNfcKb4heqG97hYxQOhIJyJZoDrNWkjtONNH8LOP8xH8a81rIvr1o21Cq3G3mgv9-ntQ_fyuA22fxMJDvPqja2DPPbAPGHB_5qJ6vrYgm0cOszBC2MtMHQCGt1vcHxtAsChIgpfqHaxbQrkzzcurAq2hg1p8H5D5OTrFGkFqdGyVNiPPbxJL0YpxRP9cqo227cD1HBIKeRmXklnj0Q848xel",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJKa6_aQBJHzIRwwlx0e-xgek",
+         "plus_code" : 
+         {
+            "compound_code" : "9XRW+6Q Miri Handicraft Centre, Miri, Sarawak",
+            "global_code" : "6PPM9XRW+6Q"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJKa6_aQBJHzIRwwlx0e-xgek",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 16
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "9X8H+RX, Jalan Bintulu - Miri, Taman Awam Miri, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3670608,
+               "lng" : 113.9799514
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.368417480291503,
+                  "lng" : 113.9810344302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.365719519708498,
+                  "lng" : 113.9783364697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Replica Grand Old Lady Taman Awam",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117744541095508819557\"\u003eStephen Abraham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-smdRioH7PKbwj9nulob_Ljrjk6n67asblVw7jZR9I_g7FGfluAdxbXbjjchgOZqXGsM13bwBCEQuQyFlxjdiVS6kGqwV5_vM0SUoDDIhihEqb9CN5FKqyOy7xLRSkg5zd8XPyvSx3HXlcpelssRxUo_uWXHKN18NHckKEgJ0ixCCeSRdKzmbhNgMnhz3VhVYoKiFbbm2lT04kAAV0QZF9WuCzrrq5ihr3nBG5cJykXvaWdv3UL1_V7cmEz0Fx_BjvcP-tQooi7xNV2sFe3QehOwgYU9R_UEM8xPLrdGVY45MxdmCTEBsHduxgrqtbaY3z_UNvZMtkpmQLwvxvo90FFoTrpDUhtZaGmpvjix3LFZKoS9w2L_0BsRYu6_a0TGrjekIyExPYZbRx1FEw6O195FyS9zCBo-zsehSDRJXWeXQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJddxuxWJJHzIRURO8yDUUbzM",
+         "rating" : 3.7,
+         "reference" : "ChIJddxuxWJJHzIRURO8yDUUbzM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Bulatan Miri, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4188919,
+               "lng" : 114.0147078
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.420500430291503,
+                  "lng" : 114.0163367302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.417802469708498,
+                  "lng" : 114.0136387697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Miri Bulatan Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105992124634416356510\"\u003eFitzah Dihi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tKMcPdYTdIoYLTOEBlJN0Q5hv5LnUkZpbmbkXPk3D-kFsOv8bCJWl3QfTf5iqu94Qt94S8djXP0gUHmA35zSXSyObFbyIv6f8ZZ2MwX4RCJEts9u2MZZ4jfQsxwqta9sYOWxYKvsy078Y-ie2Ie5E7yNFAYOCA1tbK92_pEDe-arceLIu-pFKTmJmT-fc8NCOgaPKq4bFdMn0A9owp26nxodJIo2Zm5yPowQu4KeB6tnMgX_aWQKZ7DffLLSz1IaNLrKCgFksnJRIoLtLffWcQlmjTMFXjE-BQOH8SmoPyObfmLHAjfkN0x3bRTXGhKhu2jw-VOumQleneOd6S3VxCfsjMNBj4gSIPOyl3Mxx9pXuqtYFnrejvubs_gB24CjKPh82q_9Oivo4LET3XorUaNmdwxHNaYRFR6nCzkDuDCQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJy_Gix-hOHzIRAEbZgurkpgI",
+         "plus_code" : 
+         {
+            "compound_code" : "C297+HV Taman Bulatan Miri, Miri, Sarawak",
+            "global_code" : "6PPPC297+HV"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJy_Gix-hOHzIRAEbZgurkpgI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1368
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.317659799999999,
+               "lng" : 113.9618454
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.319005730291502,
+                  "lng" : 113.9632696302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.316307769708498,
+                  "lng" : 113.9605716697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Luak Esplanade",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115036923921098376971\"\u003eBirdy Ling\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sNG44IXzOfsRAlhRjg4ydKKvEqb_g8XLLDgtX_T5ynwIDxKx38qgu5aXbxOP2mL3q1Gpk9V5s6OZNnsCreRlSlMphNY9PThvLL4mN4_UOWARhrIz917as0G838_uWs8nT0O5RvHoDaeFmob-an9seJtI2cJgFRcG8QYepjSOKPKM9FIF3u5dBBXCums2fC0W5MFBnUb-Q1L_IxoGoFc6ZyCtms1BmeM6KWE8-bUqzCEwNYPOM9CjeQTfS6wBvOyBpnenv-aC9lbrow073XfdKiTiYRGhXXtBp8dxn8nwUMLNVtEjJRU7HmDJ-ajSrDJKOirqyvouJLGkE8uWVbvXER_JeJxjGmMryVM8XxMZ4uMcRH8J7QGeV-ddXFJlJgajSdaMLuITg0kapNya4p0Xx--ILE6XvhPC9xu68XozO86Us",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJNymAevw3HzIRqjP6ck9bp1o",
+         "plus_code" : 
+         {
+            "compound_code" : "8X96+3P Taman Tunku, Miri, Sarawak",
+            "global_code" : "6PPM8X96+3P"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJNymAevw3HzIRqjP6ck9bp1o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1601
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bendahara, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3915697,
+               "lng" : 113.9852379
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.392893030291503,
+                  "lng" : 113.9866760302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.390195069708499,
+                  "lng" : 113.9839780697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Miri Tua Pek Kong Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102456827908307704982\"\u003eWong Kee Lung\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-spOdV68en29AviJHGSnkSCAaiZevB3_RoKINI2iR4fvOBamABpwRCCo5kXSaOb2XF7J2Gyp-0b3LU4dOV4RKIu9XYPdD-n4naWaRerh4XB0fO99GWFFp6HL2ltPRm2nZifWhP6f4mpT2jJ7VqN3W7NGSqwDUHFp_Yo8KFofjUqzfum-eRJKawduicAS_ujiepB5fJTnxj6J9aBAX8WLjPIkQJxo57ajmF4JPuKmxQ-T8ICsD_6s-SPZy3cwQc1uoIDkeNE2XGoYX_5RgupUt6Cmetim8gxAh_ExaTCsxnd21GhX-kVrMUok7fqMRBZgFhfyLPeDdWiEaFT4RVghnNvWfPJQvW3YvS_eGrvb7olCukCW6SeYZbbLo2FIlQlSqlvcmuzoaIqf7J-NU-RAYLcBKkVb6U5qDIEgiCIxxr8yAOJuNbgjjOYWmhF8A",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJG2SPnM5IHzIRKHH-3nitYuI",
+         "plus_code" : 
+         {
+            "compound_code" : "9XRP+J3 Miri Handicraft Centre, Miri, Sarawak",
+            "global_code" : "6PPM9XRP+J3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJG2SPnM5IHzIRKHH-3nitYuI",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 502
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "9X8H+HJ, Taman Awam Miri, 98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3665085,
+               "lng" : 113.97937
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.367861330291502,
+                  "lng" : 113.9807517302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.365163369708497,
+                  "lng" : 113.9780537697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Seahorse statue 海马雕像",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107126384007451278846\"\u003eTCS 87\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIbuvPjXoPgNqTfbnfvjAN7LXHgaqKNNDHzJkY3wGpy2G-rG14Q6kfUYLTgqFGgpIQBd7dpI9yt4Zp69hv1umtq5hvuFKpAzfqGa3IbY-wkauquoj6X_Hvu5nKZNkvx83LAKZcf7Asr5HjLwc3XFOLOuSYuelp8CsV3SJgMmd7-64NgIPTp5OQiGNl5wRth1-N7iTW26opMUM38ArWSXZiBvpkqQux2iQBX31V-Ny0XkWHRIQKkH4OK1D3gosPe4hI2K1S-XL7KqsJhS6g2g2iPQ0TXps15gmw4empWjr7gKkYQVJwpK9qS-OSSJRx6_iAbFs_hqT6Up6FISDdI_k6LSB-V98uWXqqEPpbkjaUoDYdx_tOHuipQqr8a4JCdS9w0CT2zWU322DPEmXvZ5YUzrQ5SVufQe7CAPJkno0",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJr9o7JoFJHzIRtVUW7y019BQ",
+         "rating" : 5,
+         "reference" : "ChIJr9o7JoFJHzIRtVUW7y019BQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3937029,
+               "lng" : 113.9851784
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.395132780291503,
+                  "lng" : 113.9863989802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.392434819708498,
+                  "lng" : 113.9837010197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Marina Times Square Clock",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117744541095508819557\"\u003eStephen Abraham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ue6pFDrakadaca4eLlOFaWit592o-83UMxuz0yDtCZ-dDsNGx36YAWW7ua0chkZhBju3YzpeyelhXGq1QfnhnNVxVdaMg-raZwzAyjUfUgboAH3Vv9UfkTNYo_fPk9KMQIgbFzo82XhEBLevSVnR_E22fJWwpZVqcRc2nxDJZrY-1OOmZOdVizXxrUB_my2qqcv8XT4Cy11dguP-4WGy9ROlp7irGnH_fb4S2qZUjOfueSvo8lh7K4MpIOCkzkzzN_qWHyryYVgXc5YDR9Bg1Q-818NH5Fy42DM5Wvq3QjAojBVxca_k8TzZQhb-A0IzWlvuER-1xYSaXNIVjsvRU0Ol8raFzBZWtLbHkYv5ylJeUjo5aa3qKiUxLopSX9_fYbv7Dx8df8QNda9srq0emB7y-cnhdiWod0E1fl0nJY_Wop",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJg6BIXmJJHzIR2y9rsJb-WFQ",
+         "plus_code" : 
+         {
+            "compound_code" : "9XVP+F3 Miri Handicraft Centre, Miri, Sarawak",
+            "global_code" : "6PPM9XVP+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJg6BIXmJJHzIR2y9rsJb-WFQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 196
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "98000 Miri, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.436641,
+               "lng" : 113.9971658
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.438050430291502,
+                  "lng" : 113.9985698302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.435352469708497,
+                  "lng" : 113.9958718697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Piasau Nature Reserve Ranger Station",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104942894877775979873\"\u003eRicca Bong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZNisPu3Mv2CBIrC2XEyYqesCRjdfI9M9ahgse1azHew5gvaITWfE9dOoCTLre9eQzDhnGmaBnj7_PYLNllQYGqG6vGxkPcPLxO7zpuEYB0VcH6LPAMs5UpYogmRDFl03p8fM7GgeNUAWieSEqvw4onZEie8GYRZaifxPKGvbBsDQY1QMHK-xzY1tXEPDto6oRtNVNl7MYy43tyejKkPkPZx_zl7RVdhLYt3HgdiIOyFve5Vcj9LVjXKhCdW-Ew-1Y5dgQtJmvHecumcb0pKzYu4uUeKNnoU1jd7T_6uZal1VNoXKj_vac0u9peVmt1IKI7OdD9pEiT-yVLZl99T53cMArXjQlxZJC79NQgTjSkk-WWOk5pXII0oCLHkInE7HMc5BnfiUyH11hSR218bOsUA695HpJ7GoFtb-fLMSipg",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJNzh8TKpPHzIRTs81jxrRL_Q",
+         "plus_code" : 
+         {
+            "compound_code" : "CXPW+MV Lutong, Miri, Sarawak",
+            "global_code" : "6PPMCXPW+MV"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJNzh8TKpPHzIRTs81jxrRL_Q",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 109
+      }
+   ],
+   "status" : "OK"
+}

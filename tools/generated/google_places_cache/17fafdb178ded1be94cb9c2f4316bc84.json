@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "2000, Jalan Mahkamah, 71300 Rembau, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.5885899,
+            "lng" : 102.0952549
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.590172580291502,
+               "lng" : 102.0964728302915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.587474619708499,
+               "lng" : 102.0937748697085
+            }
+         }
+      },
+      "name" : "Taman Permainan Dataran Rembau",
+      "photos" : 
+      [
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114397773074113677514\"\u003eShamsul Soed\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOOhFlQPZqbwsn59iSqHoUi9RPNkNU7nou4NOZmq4LUj3VY8fC3FCGOibYUKiMxdDDr-8wd63gPp3_-bmVMheDjuT6vtzVIldMwrMwzrSfYo_N87_XfQ4eNuEPSsbXUN2GmQNEM5p2engRXi0jm2M8ezi2irDWsKTeb6NM0FqHpkaCxz9t4K16yyAlqJLaOCB1YbCQW9x8sq7fzuyfW_gkso6ikXDjtpGQV_36Fskf4vB5tp3waS6ZTuQdM93BGvJjaUTJAlUjLdwlA54JyxTKgOOWKw3RxSl30L-3t3Oq_RFqVSYiYvbTWwg2GocsPps_tS9043z8rjcKeQ5ohIfxKPYNOE0oM67o2oj0UC67exTsyE6MxyUA6IAu41n7o0MKdDAjELLorEJD8xj5V5ZYg2DmnjaLn6mum_VrXiU",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJ85YYHuYJzjERS6bYbW_VVWA",
+      "rating" : 1,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6941689075222488651",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

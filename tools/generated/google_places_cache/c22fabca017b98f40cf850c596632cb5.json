@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "JKR 533, Jalan Besar Arau, Arau, 02600 Arau, Perlis, Malaysia",
+      "formatted_phone_number" : "019-480 7703",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.4270979,
+            "lng" : 100.2716733
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.428578680291503,
+               "lng" : 100.2730244802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.425880719708498,
+               "lng" : 100.2703265197085
+            }
+         }
+      },
+      "name" : "ARAUBERRY",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 PM – 1:00 AM",
+            "Tuesday: 6:00 PM – 1:00 AM",
+            "Wednesday: 6:00 PM – 1:00 AM",
+            "Thursday: 6:00 PM – 1:00 AM",
+            "Friday: 6:00 PM – 1:00 AM",
+            "Saturday: 6:00 PM – 1:00 AM",
+            "Sunday: 6:00 PM – 1:00 AM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107642780564863386747\"\u003eARAUBERRY\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-swj7JP39bGhyfpEujZLzbQB0DI7GF0aWmb_MAXlJ5kl187cQgna9iWKU1hq6abxi9w-l_J4DocP-MmET7RTZ1W-Dxp8N1T5lnN65Nkg-yQs6BUgnCelGk97wgWJme1tiM7k8j7F5E-ST5jyz9qBiFAQdBaCEegDI6-2ntzrKAFSB-lRSXsLfXsVWNjcfwxeYJhE4NicBPiLXZg03TxUUTlDIbmUP5gjB0fd_t90I7PKKaygonEYxWF_JALJ76jX4KUR0g5qE9uNJYmuXOQ2UX1XIDh_xVWD0g7U-u2WK__D2422LhJoiSab-32Nx4PYQCU7_hhu1ujRGyHWsWPNfjfGwNhEdhigvpDVsduEptD9rvcUbI98QU-SO7t-SQrOyYQ3IijfAvbloxC-nu6cgX8rnkU5zmShqgRyVqc3YWz_S4zap8T_E0vlTJkeg",
+            "width" : 3199
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117446116399114357065\"\u003eamsyar nadzir\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tXU-5qwYv1kv_OtXr2HAW5yeni_QPgJPsR0SgGht3QeGlTF5R7T56vFP0XbmMVZjLedy1b6tq7eKq2zxGpLpi9HHIXerAPqu7Y3rhM63r8Tp3fW9VVGMQL2699V_GcX0LZeb5HPqmQq7D27tePuBLSC3nXqGOBAWwuYuBwRPUaGaod_TEBQ92aUyonhhztw4WzD1pfJk_0O4RTP2_mKCLl964Qgji7vfA-hi-NBw6DACGMLXwgu46074uPiTbBa4UQr2TFH2WimWsdnXht5P-GHZKDtL5zYN-_lGYg846BpBL_q6L-_EdnVpR2iZ3jmV3dvJqCF7dqZuddGcV0Vuq88-hB03DEmA_lMLhDrcPXjgecv_zBFp9EWLjF0J4qEpSjWzBvyLlC3CiCbh-D4NgiITYpea9GMhSoCkOBo1KNKA",
+            "width" : 3024
+         },
+         {
+            "height" : 3614,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104409509180118354902\"\u003eMohd Hafiz Yusoff\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sJirxE-ep06-2fKOtUcIcFU988QhqZ1RNwoAf4hMzc2EcGwg8SQeMSSI9I4FmDNlo4N97ic3kiCo99HHuRr94th30Eu23kE3Zmp0Z7ko-dST_z4LnMD_z4SxTQC1vPlCuFJLav7Qu1LP0EHvgGnUUM__WyTzy9RUEsQAjqRuTH5kkfv0F3GUYDr4zo4OKZdYM4GW99LccLPsmn9EcoBd6yDB7DNaohXiRZ_RjrRrbXti1LhhxJai3YbSzQyom6a181XYf1cA4QpxIYqwa1fk_lJe7Urz4oiYe4JdUkceQ7zRYLX-AKeq6QhefnFVrwRnRWNwrVPiUkaqcYlbdGmbszJ3RLGIh5sAEP0sOvzf03JYPgSf8HG4BGFiYR0Wichk0udd02K71UNNj7Azg6Mduzfa_vbJE7RPguYRJfx5o",
+            "width" : 4800
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116011891047747677688\"\u003eAfif Ahmad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sAX4DhmkQhqcpv3-Cdb-E70mpNRewaZUaz7RPcwconqo8M856ql8hJmYU19pptS2EW34AZYpZYEzf8GGsL040d2Ew2yZVqRft8EJL_itnRhzRYxWg3RwFtVg3zUrT4o704wYAgSVDTu-H4UyF2Hc8iuAxpTj-ZDoshKYU4HfphGGloHkUpS6hefHylN-06i0nzT5OnU4A383KGCn5JeIoUd6OOm0DhssrbzsnRL4nkfGJkk-buHxWnLvZQp41pv_XlXig7uM0T6a4P5EoJ7fJtoG6IsWmyDviXBGcP1I1F20cpnVDaiNxY1QpyWAsxjgvfTb-5Ej4tHhmKi3sFIKuhUoFa0dVT5ZvdeUYBy3I_JQvnWldZ9TvcA2_3I1_jz42jzT8LmczUs9mCJglGSu2fZ5cjzGjznl40UuCJSxa-UbW1Hd2u1oICoUpJSbR-",
+            "width" : 3600
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104409509180118354902\"\u003eMohd Hafiz Yusoff\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sgaSWUSKsPUNubn9KaBjxtioL2JAMCzobJAahVrvtm6icjMXCe1n4lUk667rSPvm04rAlNVnxrjuLbiUdZPZi4gH50Wxhcu_MUojI_ijL8R4BcqhxehyHwai0jMkMdvZoGWu1FgOZUoS7BzqTX3C1qVOy-Es-8sVTm-PTpxgh-TnN9_qElZjplcdYzOOEKSKyuug_1XPWRh1O_fyo0RMWNvQchFVkk-PfO-4bHvZJjk5Ri9ivAvrSLlrmcOSsYJ533Dk-zq780NVurlsNQVUFnXpTc7htA0Q15_zzGOA6hTDL7cX3KDEcLsyRRVVEoCI2EmBYAeVIL98JAyxD8GhQYEVVaFOh_BGQDvfliEdHYHNFxzKJFTQkL3l-HSFmauPA1fFTIeOIWpBzQ5jcH7NLfEIFpQ5BLswXkghVG6IL7rIsr",
+            "width" : 3614
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105914248114001489640\"\u003eNazri Environ\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOpDv8o43FrVfxntmCLrZg0HDYbypXpZ3jaMoR2UteWSTaBWi7DZwQ3B5Dpnxo1843dzXfX3u7CCU_CZSw-NeusnBXYbCj6R0AMF26y0phQ4sV-JV9ZUHlpF7iHc9ATO2tuWtpKOUz1hNP280EPGCbiv1TrmVOmkdoFMWY-DuhT3aVaNDikCMUqLFa_L-kQ8eA4hlddRN5MEPwJONaBySnSeKIcfTc-f-n5Nzq1M4hp67RbcgbRG34AFgaHUyU1zN9J7_ybW1gBjVHheYP79c5ihEp27r2pfNgay10UMKxqM0CzjtrFhViF2E97KLcGU5OJljBDWEO6iFShKdLUOfTUakla0HkKZvp1PYfIdYlq6FOz1Ka2NM0b5kTbrfU4fPgGCjrGHg6fweQTG9vNzPO_HQiQe6plUcRzFKFyJh4Q--G",
+            "width" : 4000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105914248114001489640\"\u003eNazri Environ\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uJR7meV-Xp2025VrkqfQo7KMtfOMS-Myx4oW8-uLtJ67lStD_R3OG8HKkK6d-0xSt26xVTe265WSNATF4wjYa-qIu9eEfwyhMKblX7c82FYgirZw6vhv02t3t9CY0xrxDDqlbaeeENBfvYSyEmj8mvHDBxtx6qyoREXYndty_Fk7roibeyXNB8AmMePBp7uLWgYchLd6QFtMpp7ivuQirJAYUQIW4FvEw-BmzVezhlUoKbCTLuNFMecjh9s2pcOXgpWpEk18NiYVNndsr2C0w7NVGvxsO3tAUKnUL7-Mmf7W_Neh5cn-ctt5wQpmSURn-OnB7xqOF-ExuS2H5WRag6hwpKc2g40UjbzSqKN4_8zmFBkl2mCKLxfDX1ubeX_GQ6CpTU3V3m5gm_FPhbY6dhAsBZ3GRGRaWXv3KfaWT2cA",
+            "width" : 2250
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105914248114001489640\"\u003eNazri Environ\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vv1RjQ0AT2Hud_SAaGjJBfoOKgKLYnKpf1lcTOvWv3XasKjyzitmGlQWUSyFfSJ1PEcHAfgdSXaUqiUY6rfof0nAKQeDwO7kRu7CsSJXkohkHRghwL2BiI-_Rviexr0pFQPi21G3lUbA2Q66k9BeWr8APEZ46r6Fpuyy_utpkeJ-GBOixzma5EnGKLSn3BnpgpS1gx8V6YkgpJjDn2ErlxlD7rMEQOVaHoMI9Fq5VSil8dpmu9A6mjaJ6y1y5YFq1hObA2eX0l9JWWAUzbn8y4wv09AzYu5xsYPnN0VutY8ln-zUw1Q6sjgXM39AWW8Luex3h3ux6pzlg8ZJtt6ffsu2L0hUavyiIHGkhTuiAqWNC2LXdZrbTwV1L4QsTa4oOKW7g3R8H1FK3vC3_ZnMQP_3jmq2zbKty4VmsIkqMQJzI",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109128506575347349544\"\u003eainrdz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stYeOHC5jqIxiU7f_vhDHzHQcoTpi85iE6OV314T-DOZoarJCIiAvGE-4EGmsJoSn74u7Bpr1eMCcfBtmH8N6qGkMsgAWvitHAe5cq-QJ9J6PJfl_T4U3cWSrNE4rqjVtr5DyPKpCqRl1AY3wUGOtRGoApgkj7hROitd6b15qR1GN_Idwc533RnmHnE4nU3Kr1ELLVPNnZq27cXeIIoTfSV8Hz1ys-l39U-cwWZqK3RdfXC6QMaOutW7Ik9gvQZmpNh8iK05d08KqGSmWlTtOJglIGF4JO1iKtmUOk5CtLULHnhFBNKTTvWfaU11VZU0BNOGru_JusbReJPlt5yJkhURk9Izukhq7K0OJvSr7brYSJtlGaBjFbGcnqvf8RA5eX2ce7oonc64fkNlUogSAmuJ2tddgVmmpPDjTGZM9rtw",
+            "width" : 3024
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105914248114001489640\"\u003eNazri Environ\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tXKVeGLmK1yMh0HSRfHLdzRc0CogG3Ckf4Pp9esIf1j_tLH2xbqbfV1RpPFchYwCf7V3RD6dqEwv7-QPMUXPSbM3PWbUIRKBqC09LzDI0vFmO8aOJ14hiirr-Z3KQo2qmjpkTh5bOLPDlML9finIWIIIAkTMBssZHhrhZg91jKDkegQqo4V3gJG-72cf0jcJjvmu7gcZ98OKy06YhHIWrWuuUdGzFY3idM0bSS3Ea0BZc2YhxLmPC3CJRO5aaJehfzjJV7apEz3y8ZZV6L5scKCwrGOZNeYrMW9kTa09h6Rx95EzMwxkfnfXRvT5-cmx34L9M27epGp_EjFep2ud9Ih22fg1KQFq3gy2qoD78gVd9dCFxrvUyve8FT14c3ZyjN-PPrHydTHUMCwYiytagDykqOjKPBOA4n1O7TFgI",
+            "width" : 2250
+         }
+      ],
+      "place_id" : "ChIJ08xAjlijTDARXK0wPBsSgJA",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10412342246663826780",
+      "user_ratings_total" : 44
+   },
+   "status" : "OK"
+}

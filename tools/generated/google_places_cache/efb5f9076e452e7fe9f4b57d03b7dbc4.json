@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "33, Jalan Dang Wangi, Chow Kit, 50100 Kuala Lumpur, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1561036,
+            "lng" : 101.7001254
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.157455930291501,
+               "lng" : 101.7014762802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.154757969708498,
+               "lng" : 101.6987783197085
+            }
+         }
+      },
+      "name" : "Courage to Dream Mural",
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104052861337674157857\"\u003eMichael\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vtx93QVURFrJigu97qyzUHBkn3C-XuKRk1v0FS84kLG98zfV7ewDRMwHUYykISc8kzWZ0E72xNTcB_CxoTNgGPZ9wtZKDh2cf2IJwRZZAH9v22zwcmDIVWuzQ5NeU9sQx_VAG1HmBp-ReJ4TSFyv5yRPgLl_QWp4j9sqWmG0g3tRDv-9B1kZcFVXpvlcmtyjeig6YGLuX4sjR-yIIxRqvvZP01O99lm6HSQt_180uHkggeTgY2-PQy9IWUy_XmEQzEn2Yzv4xzFQOw_Lam6JOiaWb4XH7lFaDkuxeV69a9EYiwNtbCDq55s1CWctNVnX5jfrgJ2e6wGqB9ReYGVnlSQDp-5v0Co4aqwu2aXZNJ0Dczx2p2Gtt3HckbhxhusUSvXcJR_kSqGU3K5KlWYxfhqzdRg_JkFGTOVO2t0FKxTw",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJ74TJqKJJzDERHQmDjr2khc4",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14881481677762398493",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "113A, Jalan Tun H S Lee, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2072 9593",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1455461,
+            "lng" : 101.6964474
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.146869680291502,
+               "lng" : 101.6977519302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.144171719708498,
+               "lng" : 101.6950539697085
+            }
+         }
+      },
+      "name" : "Sin Sze Si Ya Temple",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0700"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:00 AM – 5:00 PM",
+            "Tuesday: 7:00 AM – 5:00 PM",
+            "Wednesday: 7:00 AM – 5:00 PM",
+            "Thursday: 7:00 AM – 5:00 PM",
+            "Friday: 7:00 AM – 5:00 PM",
+            "Saturday: 7:00 AM – 5:00 PM",
+            "Sunday: 7:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113323275138950325171\"\u003ePrasit Pichayasoontorn\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vp2WfEEvG5EJzi5k21PZzQEfWjLoaWYwTs87qQmG9jMpYlxlna1EmSOzl7lq029V5e2-vomm0Q1RHULBdc_iDAc0oGD-jScEfdZzjUw1InScqQGaK_C7yK1AVWDq1oTCYjm7iAH6817zPecUn4HZr7dLaZD5z2vDOtF5VVXuHgpywfPr9Xmxhg6yVPrUf4xcW8OmELzRH3A8xscqtWwPrU_1nrIqdn7BmQTnrBBP-RzWtzoxVMulRkBpYutW8M4gYeiu8hKivIrMjXJPa9jBT2Lhk3Dblb7OvFTKIFoRLr85so4t8I8oB1l1As69inYpshDoKnZ30YS3tBSDCeYpdYsg154WEfGgJi7M5D0k3VBs97h71NvHB6GBrhTc9I7w-oEMwx28yooKbuKyMmQvZIpsZIzzQxiVjzw6v-Loyjjg",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100383390876919459249\"\u003eTerence\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t6bpTb3SxieZHXPkTaN_h5qLVNB9x_GjXOuCjCJCw_fmfDSn1X098SskmcyzR6wI7iU1lEXSPaoNhUDz89egcjz60ARXD2c623K0GWma5s1uZhoB5ZU-5NXcEwpUNeI2S3jMZ6Rk0P8QQssaGXvEQTEIJLCiHeHMor2Q16b6uYzwdWVPIPZbKWGDVHi5JbkNBUryRY__8ekgaoaib1XQ4swxryViNStZ7QiuLxRVbMHxCDIADvllt7JqycbxHPuuHLTQss8TCRL3q5F4yC5nRg39tU9PtyS25TKTTBq0HfJgLJOkXEQisy_B1FDGZI96dlNldkVfK3nOvixrnxXBPTzSzjKgnRucKeUuhVilWyo-38JX14KHnJUhkJMFQQS5H-U6AFCpwnFMF4Y4zVxU9QdOTsqsUj1m2MX9NnGmFF189c",
+            "width" : 4032
+         },
+         {
+            "height" : 780,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106783201862035337546\"\u003eVenkata Ratnam Rayala\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vohn1K9GV-iKuDoyYgYB3HufFp0xoJFaAT8CiwD3sarvazq6EdxQfASUAHCq7I13z98dCp__G0V4RyR9RxMXcix2p6TNn5QwPQvfJQP-t6DcZmQiHasILm8k-0_G-Y_H_-eyjEP8wKJf9Ls3MiF0lSCFlfwWIda9Uqa8PrgXj92__sPjvkhHlCCZcA5fkpYnpOPJAvx1bxN0gOotNcndGcFsXNp5EccHcHNyvhmnnw-gwHZHUwpkt0AJH3Ooj68SrHexAg5y9X7GT3YatWzJeR7nHH_Ufwi2l_DBaShBjI3h1Z5yYf--cRCIWrYw6aTUPazhVyv5OEoYf9fvf5erKtaB-gvb5Yyw5PhZ9IOhouBeWA0OAQb4bhmCzyuKGr3kdDDCARKnl2cZUUTLB4WNwNoJXfwvS_BVrpBcKZa4U1L4Mg",
+            "width" : 1040
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118277856734852135541\"\u003eSteven Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stfVgX0ijsXqDOBeuZTMvr2oZ07ix5EsmrJ55xIsvSeIrMFrRuRVTbF5ybL3WLukchE3KF--n_usLlqyMZystJl4edQH8IGDUPcIzFY0ssafUL1UIB6b1tlWinBBqwFjTo0HxgQydQfTCF9JDX159kCf3IcqqjV_tHxevA6Gv8B62cSfKGizmVRkRSeTQKU2A97o5JNk5s8CdeHQEM6oulz9glAWEA2XczkO8jmeCSaePbKwXWsf4nCdyj2n0jmmUNZ1DKMLUOdL_5ZMlSbsUpnqUGACjX1nKSzHOmyb-yBSFLpDi5gJ8emkBjsFxYdb4lTXyqNxqDCUeTK6pjSrGJ87U79b87Iz5PCFdA5KnnI5WiEJBSIbPKei92li0peNokAIusvso54kJQNTWFMuLbyUdx5pB94ragDpRb8w6aYOw",
+            "width" : 4032
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110898291687894247770\"\u003eWilliam W\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tAA06lPpebM44Smqo4ukWalv-qiirCXpjWczyM4BfsjiOWnif3A3oURyYRI2pglDRKjEpM9zcsRx7iapSFbagKMUTkShY5B1KmFp2QaDJfCRmaLs7xkkevjWPKR6i7T3SdBbNrd7H2UujiQAfCOyRrvmII79yM8Ht0EeCBXDQ_1AIhYCPDeBLSt0VPJnUQuAD9ztDRDt-4zoVoVLNN4_AXHbatprpCYG9cKb3bn6wmbUd-v6cauOHgjk_BvL_WiKk0AAc4zpKM4prGTZjNRygYTw445hHqJ73REvmVdAq8XN2BC1pLQkKrqj_Ta83K4hH9jWrzmA8sd-0yzvOEMBUQfxNh3qyPA4qjC2q4gSOcAFSPHKqOG0TG8wTwJNfByKZZ9wdHCYikMEbeauKBSOy5xamluUARC1d0P19ObchuiZhM",
+            "width" : 4608
+         },
+         {
+            "height" : 2959,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101506699224525759345\"\u003eCandia Nam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v_z503buhh2dQC4qRdPdIU5mgk1692yj5Es2IHFkdLsSkd24qQA0VeF6GsNpA8yBHdxhiJhwPPm1x0qFPR8uRWzDTJKdRiJfJ9SEufnkd72eHS8CDUFlMTwddmHawPth5ZWdyc5_82WTl3ekfYhRd1zC-8aZ8JrQBPUBwJMuiqaPN_x3l6ZPkTh_CIDvFMjncMKZYKhZ_0NdvFedZBiIq-c9rBriwkHpqAePQBBvvFwbS0M-fZrC6kJtQvWYpQ8Tl4z64lBjpcqua4e_YBajAC6zCQsdmzlOOctg6PP46mJtK4lvU5RMc1FWdSsFUnv9WU0Yyv4npd7IQA3xv_EC74n6lr4lh3AqM-jkyTV5x6Ni81TWbCJ29Nh23iTznX4PY699BLFQJx8QKrz0j9nyhD5Xe6ku4gtoth34oeeo_z2Q",
+            "width" : 3946
+         },
+         {
+            "height" : 2160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117305218770511922372\"\u003eSunny Oh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tajzTpVGi8dPo5llIAINgGp2ZgrPZoWIi47uZdVZhlXEWNkC29mLCEYPpRsp8d8P-c1vIH6ErbkMdH_rx-vs6Qa6La4JIogBm8MgyZT8c0BXdK8eyU6HdjZgCjvU1gEhPaftzY10Z7SErzh53OSqH86UNNzNPQKsR_JRZBzsF5XUTysJ5KNuNaCRv_bBsAFcjJJPBJB9QmLmXl2n8UhdjmAI4Rb20jMUXFqrHfSPTzr9JhP6Ds4zhW-x3aBIKHHGC3s92FZtSUXilI7eGfqMZoBya9wKcEz_G-yxTpWT19bKlcpCXOjcNe4a-SI7YOxHICz77Mu3w8S1J4vmjJx_MRzalptRKTTRm4Mzdixd-gwFdhx-auKWD_y3Yy6YRaZDatIl56PNnMaZRYy1SU35dpxUcoGHZ0rwd3EpsU1W9rIHM",
+            "width" : 2880
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104324816681569057029\"\u003eTuân Anh Nguyễn Hữu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sMTmjEswBlb3ugiuGc9PfIOaFqKMmPb7a_-e_xADDHE8c6sBJPEq2kMCjD3k1qa5cYdX0M1BxAiYa0dmTOIow1QyNS-LmAIx8NsLAZJR2h0JToKW76qiYnDIi5GzBRu-HjEtEJUXFKsjLQ2FlQEIxMjLcG0zanaup8vWcop-cnoRWL2diWPiEnlt0GT85SpuPzSGV5MMWIb9biOItou6nG6sTiPTSwHHVzgVcg_FDHkCtFqCyQESOLJfKesCOAhIDYsh4PnoJSamCUU4gj8pvb1E_m0jZhTvZj0sc8rbF1SWLAwAzeB9iDSbRXbh20dB8O9kDBmXJnXPaINleBOIcS3u96tU31eIb0zbS5gd9gg4lWbaV8jl92R5rgJ0gnvB7cixSn0Mb9_cpYPWpDIu6lL5d0X_gNbmG7jgKjvmML0w",
+            "width" : 4032
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105004272502972812517\"\u003eChamara Wanninayake\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sdaC77W-Qxvsm6VqHUKpsxMVOe2diEeeePDHnQcjVloVXDQDtw6GTi0Bw6jsFn3gwWaDg3SCl-tqs9vfoDZQbk6aDXGDaFZ9Yvz_iBWZHRh-ngMXe99ctn_Ye_CgXuTWMk7BJUhRDqG3UI39SkRoJGpAQxiXpd_3KL10dlygaUNZybL0Pwc_Ijk7AIJM8hOGY6N_HoEwU5YbJwGmj0Gy2zHVtL83o-e7bLWUpydcSLf8S-KDvsTzbyu78WCzgs1ar9mV0KHxfWX_8gOqX17J6815J0nNSosUtWVNf-OvbEeg0fJrHO_INAf_JOqL1UMxq2K-JF4owYPup2RsprEwN_aQxikz7_KmhCja7__nvjDTNRbAU5nWpar5tXO_QtWjkmKKb5haOASh006zpg1FXix1B4MOmc7mC0dGpXB4g0SMw",
+            "width" : 2252
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102355023855809404850\"\u003eTeoh Louis\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sUr1Nyz7M-i3opVCIMIHxYw0QiyXdnudRGPJjDqLhDjMRrGEjGdqKbSzZlzHP6Ar1TsWiGHcpmIAG1BU24Lq-yNAee1kCuia2Pdhw_9UMfHGJYWWCW0zy9Pz7P6qcBp2kUfmS1mRFssQhevYnYOTv9QcoJCsyvQjQP-kC5y2G-USBFT5myo2-YEPnzGK5NLTdn079iFHwzcFHgqqfRD77zRWWlc1JR_SQnynPH_4A-oWK_UYlaQRIuqHjSsHxF8Skz4XjknSOCKCnSeMRpaM1v6lFI4XEw73RAK63PVRHtlfyVP3-PuhlBMXJwZOPFdrPI_W5JOevF0lIraKDF9pXm9zX5AsU3MhybqEs9f2urHYk2jHH8ZoYO26QD2y_2z69Io7BcaKEJMeVwrZS9yLCf8v3kjh71gnkc597ug6t8EiKllvtEgVibXiiW2WrU",
+            "width" : 3072
+         }
+      ],
+      "place_id" : "ChIJh6BgydFJzDERNDpCGS808VM",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6048673151427164724",
+      "user_ratings_total" : 2414
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Masjid Negeri, 10400 Ayer Itam, Pulau Pinang, Malaysia",
+      "formatted_phone_number" : "04-828 2212",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4066845,
+            "lng" : 100.3015015
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.408250630291503,
+               "lng" : 100.3029584302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.405552669708499,
+               "lng" : 100.3002604697085
+            }
+         }
+      },
+      "name" : "Masjid Negeri Pulau Pinang",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0500"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:00 AM – 10:30 PM",
+            "Tuesday: 5:00 AM – 10:30 PM",
+            "Wednesday: 5:00 AM – 10:30 PM",
+            "Thursday: 5:00 AM – 10:30 PM",
+            "Friday: 5:00 AM – 10:30 PM",
+            "Saturday: 5:00 AM – 10:30 PM",
+            "Sunday: 5:00 AM – 10:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108046126016569301096\"\u003eSHAMIMUL ISLAM\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u3cV2SMc2gSrQXezNos2AH4o0zI5hSQj_wOZFvWZGq4bNEuz1MIYcGjmadZUWM5QS7Vz-noGRWg1ZHYyPGekjhLWtcVW_9Ny0uQzLc11n2L3s8K4tAhWIOFgtFRGjo0I0I_v2lcvKqn8dqZ8nptonHzRremsvT9FpNXke4wUNppBPF1WtKwL2mtIFwmycFkB2QyvbcyE6AyWxVPKeTdGIyKpFEOETYCgJgrIEZqMUFvp6Z4tRLhFk5vuYEqOJXLu77jvcVa8-7pAUg9DJyK_AFM5QyRMHZf2dOo-czSf70gB8cF7JRKrFyaYjeH0jY5VhYeC3a6JB4yrRCzLnIyFJo9yHUy_n8OVJyROgLLD1yyiODER5ZmE2fo4WzNy5YnkAeSGk07Igrkaywlste_iwE92UcNTQEdtewi2N5BiMtbfXQ",
+            "width" : 4800
+         },
+         {
+            "height" : 750,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115243791730836957639\"\u003emohdrich ezul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tFWaNjC2c2bSLksZkk30ub-wsa6sFJwquLIoJ8Pp1wgetO5_rul0oIgIgLGCQkRRzLgLDuS-1rvAj5Uy3m1Tpl4eXikiLDUejVuN3A8rzkyuZoyZ93eBRg2MPNL9Z0UhTCT61OekmLGwGi0iK8LctzDSyHXhnJlvUwsM2kpap1MOOKDQ3bQzM4YrPIOZ2faz7P9L2tzgCIb3oStcDe0e2ag-Izi4X2fenB6X8zZGOnRhBA17ZGJ66boP6uSFBAHpwNJtJF0-v52yulqYYawRVJZnDIjL7cIniWSCtd8p5CXefkj-ZPb5MMz_aWxzER6SP1BzupI8lDko1i52t738VkDZijGonDHGeV1KR23L4_ko723fW7O5sM3fCnuZUhKyVUkMF3coOYuZnkfRBViCAF2--Bq10k9-vtN17FVlDog7dg",
+            "width" : 1000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110278193332715486233\"\u003eismail نجم الدين\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vOP8VwC1XX_q_lMHYLgfkH2jRDTQ8j6BCLRC5hQ1Fi2ugKeUpHi1jIzSGtvsEyzYO3qB8qwBS7wzqaE-BDJy3pegARBRoHMtvQbubwuDJg8RkkX8ohiwk1wGNdUXR8ABd9LbpUPy2mrUHsZh_6c58BjvLo-qiwJLI3gZqYDvb0VT-pNfAQd1a5Lm2sJkNSHxdNfxRiHTbbdUPQ0iUlauihKr02mPV40zdlHGFQ4nyBpF61E03W-5C55PeA5kNu43SZiWeYcGjESv2kqONX1KS9On6kbUovCPwvx-nR6Rpt2UPsVtmWiU3Ko6-UYa05d8WBHLsqNIW0-OubuDDSNipOGe8kx1CT0mw9Ij7ggbZTdZCO7wsOxfL7rpfv_tUj0ZTazbHfXghrMR79W8_x_dUzrX4aCggi_g9-bPkXXXM",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109227164594934918014\"\u003eAiman Kama\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tQZjq3cOKaFu_egRTNBizwEFKUFRpWciCMnTFlKiGYtme7vDP61SADr-tU0p8jBCsUsvmG_onhiFcs5Sv89eqqBFu1cfbRRj4aru-PLQtvLdN64EIZgjjL43kSkuG0jg6WXtqHCE94mVOuXkB8QdJmiWwKVMR-GO3DSWNSUOTRFXg-gfTvAfQaNyLT-icvb2zhXGGRDAwi-7Qin0ULSUT-rLnAW-ihNLw0Jh4jjaj9qW3NUNT95WWPL9ult9dEd32OyKoyrVNtVAOBCdiWldneyexuI3NAFHq3gyynWjEJwEKTAFf2hAbEdRKWZU7JwwC553FppKdOhBYnZLiQnbTeXAxXe0AV9wq4nRilKF-Uj_Lw0cFJAF-7npUljX0iNRSNxsCa0b98xYqBIMG7Al529jNV2aC1M5cf0NjsamQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117777158647722302028\"\u003eBadrul Shah Basharudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tK3ymP1AUzTgmCxKo8oisD-_PCLj9vrwb9pzW18ENQxBkul5QEQO-Zc9b-LzIMUnvawSSCPfb06VpjPFQPQPzbt9GZMLXEUxcXiCGtO_JcUoefWT-URn6Z4xI1zBBFyFPefRIGvVDs3NBOWP6jHFkktDCm1vCxEmYZRPwWevSfg8iOmaNW1_z15BEVv7BHNtwIM_16CltWFQgA9naPYUjBo4EJbTM7UlvdC1rqBYUfcu5Kz4y91DNIVp1gmIzneRCe-ygnMowpTVn8x1tp9Yrpp9I_wYkfWwurG2chZCMv8ZDiI4umsB1yxi5pc7g-TTw7KGkFp6c_XtjHgNzTvG_ZFGEs2QHQjwPTrpRXeF8SeB3LR0HOnzoKb9JYNJM5spNmW_GYRbvqW9mkhW_MVROym3faWZwL6owu1ukRX0A2yM9T",
+            "width" : 4608
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106641021362947940320\"\u003eFaizal Hamid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVylgJcEFkOt0Y1h1HOnnMZY8pw3CIsugrts61xy665y5i2nfyXaZN6-Cm1-7LptVCewmLLt8ed2g59h3Go3ExEsuxkCgPJX63k1e-ITGMse9EaSKm7bc3_KoSQOg20lPAfPwWe7tRia_epGEkT-Sry_3qKJaYKf_zhAweENjOumJ7GQChrTq6vzF8UyHeexY963fwp22Wm-U2W83JKnhhymMsFfcKUqLZZKtccTv0nT8_qBQVe77E5xd37RsacHuZF9Eu_VGgSSkZNR4F0thTaKINXVTmzWf6Dyy1Z2nRq-iHsmVMSgPlQe118fB0g0lj5-dKBJVpkd9Wa-tXp_01xW6le6EMgy02Iz9wg_5RrELXsAN05twpRnhbhMLF0EfYQC-O24mOqx3BwAgfG3mf4QVke62mhOvuSrTFEXI",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112004574727269968438\"\u003eMohamad Shafiq Shahir\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vd3b3S1lEXt3eCAqWEAyRFW46qI9DnoygnfZ29PfZdh7FOz1hqe6iKVr9Cj7mUQmI6YeB-rHMUyMzBRVj4GOrY1oMWjIUeZbw5qr718C2ynJPa1Ku00k37av_nIayXyhl6SdC5_wi-6G77OGaXTWNOMVobHUqExObrwCWH8BSWYvm0VS2ufzhZDGRzooBdPYWRUp-SQJvMMSUdA-wbGJZ4FS3XTz6nGBPaQKLcBUcQxa-zXj0IPjDd_8ldO0RRgg-_6GpKsXqRCGYIVKmbnLnECnLsLLNM8nsaaUioOprij6O5pTo9Kh0jXJULVXE17cpl_JmYyHCtlUtJedmSqtwJfG7uYjAn7yHFxIKOSoAuLG5p9kAGNcLnBR7s26DHm33mG4lyvLuOlKszLiadOh7LMPJJgC8Q-KiC0gD6dxw",
+            "width" : 4032
+         },
+         {
+            "height" : 2700,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110357121436397170337\"\u003eMohsin Hasan Mumtaz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-txpPoVVATsbOKaZYOVRqWhHI2wvgJPfDbSSYYSsrl4BVPYVmet588HzsLYbv68pv8-cZmnEaTM5E6nctNRJQDXQ7A5UDALpmvjBAzyzUbpUREENZ9wHgAOBcGbKFmWjhax3yFgU7jgBK9EbLr0N58RSWhZIbTONNXEgGwQ1p3RubcgZrWt3iQwTNYBj2usdVuMql4MMYnq2Qc2T_yTPUG52957qJOz4pllpsaQwsyILqRnVcYCfV6S1XaqSaAtdQ0ew9gOgiIYg-YsUlcUbyftL4g-XACHovU2rsfeU19ga9NHJSQ3RLXPtAD0qa7qvu2qjPacNVz31PTxgruKA2VoVwAjEZjFKcur_cijh5gToVixV6ZeB4WuTKY1d4hmSMN8bNAyThpQmIutPh5CTvQIkVZ-zlOejdnoGacBtII",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109989603121589214539\"\u003eMuhammad Irsyaduddin Abdul Alim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ujzL21dUm5Pb24D4dXZjhdGZhBQEum-t6TqSnrfKkRmwDrNON8EbBhuNzT5e6vRx4YcpiUl2ChWiry45quiyJzIDSQHOq4V5T1OH-6hU1LVOlvX9WIe-Ado2NcH1b8f0vNm-wu8MtNvGWe5wyJkFf-yJBJPOVGz3LnxLIKCw2I7EW1VN07ZLyS7ezcArv-W57D7hMmXwcQgqHGvSfdBgMASUDrHahPCC8UyLV-PQcrzXBaH4X8pDFLE8c6bPlTRKshYx1-kRl9XQL9Oy8G8m7hnk_SxaBcKaM-j7qI_KCgpXTU0w2AQGXNONWWzTSG6dwnsalLxC6RfFk0FLYh4siGVME-Yd13hc66FeptIrorBIIUhgK3VID6zmCwi2ixMUMF19fhwFewR78j57WQVHn6adKRrg_o_zS8cX49Kzy6Ikkx9srPSSRA8S3DJqKD",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105831927526845443581\"\u003eAbdul Muizz Zulkifli\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tS5CT8Uyy5epSgaw05zXFuQUJ6JRgoKkh1VlElSuqESteH5QU3EkGFiKbGRiQXoXBiY58aU9XM3B3vcHK6q_AdmwYO-EHv9bgASpXH53dN0OzQh7Vpl6tuPEL_BRH_1lpKvx_hWrczgaie1xI0z2YBKonz2L-pP6JotYpjRJ6djq_ur2mDYSPQ8rFW3Zxozhzg95dl3GXJcdOJQ83411OWv7TO9Oats_-5PzWhk_1AqYOjorympol6HF_QQ1IC50Q3Prli1xQsvHCk35TRxOpbVgydd1tQ4R8JKOvb92ZcH4NkDd39Pae9JwUeEwejaK3gSIKZlhUtb6fZgwFQEjMpJQiVwflXNR79G8A3cm6DEBTkU70xpWZyBzB5ocI1HjScMgkdy1awuVlmpNhRAhZ9XhMznfcKQhyuD1aerQYWNgg",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ74CYmSzCSjAR14hsv03vfqs",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12357577544754301143",
+      "user_ratings_total" : 1644,
+      "website" : "https://www.facebook.com/masjidnegeripulaupinang/"
+   },
+   "status" : "OK"
+}

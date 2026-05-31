@@ -3,6 +3,7 @@
 // Enhanced: Added nearby food recommendations + nearby hotel recommendations sections
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/api_keys.php";
 require_once "../services/HotelRecommendationService.php";
 require_once "../services/FoodRecommendationService.php";
 
@@ -560,21 +561,18 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <?php if (!empty($nearbyHotels)): ?>
                         <hr class="sep">
                         <div class="section-title">&#127968; Nearby Hotels &amp; Accommodation</div>
-                        <p class="meta">Recommended hotels near <?php echo htmlspecialchars($p["name"]); ?>.</p>
+                        <p class="meta">Live Google Places accommodation near <?php echo htmlspecialchars($p["name"]); ?>. Prices are planning estimates.</p>
                         <div class="nearby-grid">
                             <?php foreach ($nearbyHotels as $hotel): ?>
                                 <div class="nearby-card">
                                     <div class="nc-name"><?php echo htmlspecialchars($hotel["name"]); ?></div>
                                     <div class="nc-meta">
-                                        <?php echo htmlspecialchars($hotel["state"]); ?>
-                                        <?php if (!empty($hotel["district"])): ?>
-                                            &mdash; <?php echo htmlspecialchars($hotel["district"]); ?>
-                                        <?php endif; ?>
+                                        <?php echo htmlspecialchars($hotel["address"] ?? "Google Places result"); ?>
                                         <?php if (!empty($hotel["distance_km"])): ?>
                                             <br><?php echo number_format((float)$hotel["distance_km"], 1); ?> km away
                                         <?php endif; ?>
                                     </div>
-                                    <div class="nc-price">RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?>/night</div>
+                                    <div class="nc-price">Est. RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?>/night</div>
                                     <?php if (!empty($hotel["rating"])): ?>
                                         <div class="stars">
                                             <?php
@@ -587,11 +585,10 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                         </div>
                                     <?php endif; ?>
                                     <?php
-                                    $hlat = $hotel["latitude"] ?? "";
-                                    $hlng = $hotel["longitude"] ?? "";
-                                    if ($hlat && $hlng):
+                                    $mapUrl = $hotel["map_url"] ?? "";
+                                    if ($mapUrl !== ""):
                                     ?>
-                                        <a href="https://www.google.com/maps?q=<?php echo urlencode($hlat . ',' . $hlng); ?>"
+                                        <a href="<?php echo htmlspecialchars($mapUrl); ?>"
                                            target="_blank" rel="noopener noreferrer"
                                            class="btn btn-ghost"
                                            style="font-size:11px;padding:3px 8px;margin-top:6px;display:inline-block;">

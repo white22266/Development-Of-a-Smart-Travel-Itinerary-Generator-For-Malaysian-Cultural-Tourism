@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Zoo, Jalan Tun Razak, Taman Tumbina, 97000 Bintulu, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2042372,
+            "lng" : 113.0479206
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.205490680291502,
+               "lng" : 113.0491761802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.202792719708498,
+               "lng" : 113.0464782197085
+            }
+         }
+      },
+      "name" : "Title Pond",
+      "place_id" : "ChIJo8xlRADBHTIRU6S4t9JoOeE",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16229117986441045075"
+   },
+   "status" : "OK"
+}

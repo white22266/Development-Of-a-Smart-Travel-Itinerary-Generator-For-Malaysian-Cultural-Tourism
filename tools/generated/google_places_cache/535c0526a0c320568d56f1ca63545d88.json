@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Chau, off, Jln Nosoob Hungab, 88300 Penampang, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.938854099999999,
+            "lng" : 116.0811872
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.940192130291502,
+               "lng" : 116.0825501302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.937494169708498,
+               "lng" : 116.0798521697085
+            }
+         }
+      },
+      "name" : "兵南邦哥布石路关圣帝君神庙",
+      "photos" : 
+      [
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104934670932941510961\"\u003echan choon hua\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-umS-EzGlz7dXcBgTEeXAs2FkMrDlExEubGmOWR86dSwmHUH7ZJLUSNjOm52xYJEB0mATy9-BHe4b6cJnC9y39TYmETBaIa-75SPBHCc7Tlx5KoVY43JXI6INoexGTsjdMAoLfXZLnQDm6D8zSmM7ydGYdybRRYFG6zivavxs0KoTQbOjQ4QcA4qbavfLJvRkzIaHwbO1V74FL-EpQDGtJWiRuEkJD-QYpKtbZL0jxx-aIqJgYt_QBwBCq2f_12orVTmDCxGzHw2RutHY6a9sZsC8EY2bnV_WWt_Sd3jMdaCWB03ZhEZ9xCBHI7WWlJW9mUPmF0Fwt_oLiBzcUEwAKkyeMneLINvYBIlDm33VyGvR2jul1bTQsrtplcuoPyvul_If6Hya0gntciUKZEjgEKEB9_1CQk3I8kI9LyAdw",
+            "width" : 4160
+         },
+         {
+            "height" : 1123,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104934670932941510961\"\u003echan choon hua\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-upVu4XExDZxdOc7ojDjK0z6eW9MxSNwffwNZlQlN3HQjUVI8Q1N3guRd9niykXP3SngjETkrgjzuMREseIn-v3eknW_CWqXUOScXW8C9FUt_fmJkfH9RUmfmUtm2AT7L6fPi4uLh3_C4__zpf7X2v6V0M4Q4FowUWoQwpf8Un3wHLvFu1wKvj1p7OGPlFVmTfo1U2tJ8du-PZj3vsbJwu9ozuyjJUz4TE6gFyoMJdZKiCESaFFA1HMxoVGT_E7gm1hAqDWwQR4BSQUJk05Li2JlNzAIoSDABW-KauGh66jR3JhE8lDffJIYGYmz_c9RsjGszPfI4Wt22NdW7MiGr46IeXt9nwqKQ7wizPPH28WGIPKvt6SF3weeIA-RIa1Dzn-SA12n3S9VEkvzb5Yh4ngHukxDbGVAosBDxG-RjsVNplY",
+            "width" : 720
+         }
+      ],
+      "place_id" : "ChIJZ7OFlelpOzIRhqMp9RHeCXY",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8505573539974849414",
+      "user_ratings_total" : 6
+   },
+   "status" : "OK"
+}

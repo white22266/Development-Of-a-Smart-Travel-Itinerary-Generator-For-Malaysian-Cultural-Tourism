@@ -1,0 +1,1186 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vcJXTcuMyyv6qUs-axuHSfqG9zNHY2fCunjLKYIz6FgOrZjjlerx66wn2RGhChJQjol5iTffqw3JfbLz5EA-ad9V6n8aHNWlr5a2-Do65rcHtpQmexJ45IfkNUVh6TMPxUkBxqEUjGkYDCGINzp6CFbbavqzqBn2i7YybLb-_qUPRkP55BAytTsaIPQ5pCHlqpH3kic46K2cOBVpujRBjb0TPVD3cwAi3GNivloDJfIChwF41wgeDi4K0ImGeDsvPf_gDjunWyBdW0TPiFakUzygIb6JPRqIBXrR5bOBKaDKwCfmzrVNeWSggIXc0aT47UrG3SR-__OjbrebMVusRYJFJUxgpg780saFsKYHGwicBtYlue77J71lkSaEz8mrc16YPC66DLP5jxGdNUo7CLadmRzAv5PeXXdEFhqBfFX4hakclGRH-pKkn4FsV9RXUEXdBKBSw9c_Ce5orC_HXzyF6dyqeyp1rC4P3Ot3cyUek46XUt2ZZUKMmh8_Fb53Y3H65VvnG5A6jO4wJHivbHrvPRXyytEkjxyGDQhhVoYWY78CltGnnAGmX5wJYLhBycwSkgZYGBtUDueM7uy-nWq7A3nInhbKvEEHgc3xC41SCWrxkGK8dEdNeKXftBkZBJTwAPaK3iffVBrcF0TcC2QgalcZnctaCvKcQ2JrGeRzCg7sQuj_VdqynyGH0JBSR9tNQGgPTsrvy8QPLTHPyO94VYJwoOSa9467RLdxnWlz_7jSMMLY4A2Z92Ng_kMm84r9maIAgFQkR0NZyhEkvdanpXYTCsvuZ969GFiVTUeKqDQskRtiNUrW6MIEgGII-c-7KVUmw",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "90100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8906379,
+               "lng" : 117.5521251
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.891910980291502,
+                  "lng" : 117.5535652802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.889213019708497,
+                  "lng" : 117.5508673197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Our Lady of Fatima Church, Beluran",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117676682429343559483\"\u003eJuwinikh Jupain\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tReQTCRza9UUI8umGeEXUW6dRoAs_f_xLSNJ4tw7kxRo9pFNfDd16ZbTtoOuKSjOHIVSelw0cwhONi2WpwQ7EO132yEk_VJM_BjsUog0fsCMo3IZrWMdWuEt7oBTuGTJSqXHZQHMf_8WxXVKgCKI1C7VrpisWZD0I5ULXlJZfq4Eaf7GSIghjpTXB5Qa7QnZP_In12feKrg-Tdz5Z9bV-Vxl5iyYWKi_-LMAPr0kyUpoxfqA9DKQNoFwvybntI-ZVAxjLr3y4n77hSlV3OM69ae9WSs_lXcq9PeTcaNZwpuwWYDHTepSGnm5JkD3Y3ku0_H-e4O-TokHAuocJKilJRaIGIt2fsstpbng8Sy8dUbohhWJfCRLJRS8-a9W2M4MeFwqvc21DivNFqynFtkaWJPsa5RRCKGQK_x3Ixp7Y3Zmpq",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJtyMRNsE5OTIRkajsZeiYiHA",
+         "plus_code" : 
+         {
+            "global_code" : "6PQVVHR2+7V"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJtyMRNsE5OTIRkajsZeiYiHA",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6441931,
+               "lng" : 117.0015632
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.645672280291502,
+                  "lng" : 117.0030438802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.642974319708498,
+                  "lng" : 117.0003459197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "SIB Bestaria",
+         "photos" : 
+         [
+            {
+               "height" : 2080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110476558126433357495\"\u003eR. Allexender R.\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-slh4Il6nVuRQdVZFy7jHB7_rotxKDKdN4rOEbDE1F47SoossgH6OQYE4QIJQYvrHZBiPHeUEGbmba1Pz-6VXdH1P4xvH2gZdeN2GgPT7lL6Bjc30EfhthENluxHVGGDlgQCaGtQYZz2RUF4rIzAABkuvpZScXaYUqLah9Ud8ZqDnIszAVkYSKVNsIX7OpAgDcJ6qV7PVI8ggXIPV73PdsEcKEOh192o0iAJzuLSzZIC9ASiuBUWFsfJAv3Kofdf0U94j57fnH-rwX2rVS88o1Q9hAgZOW-QySVYRyi_oH0OmnRV3yhjSuoMcslmQXnC7P2KKu9_gVfFniMfxvqazMrXk10L0E-c2ayAexctNqDcCW1-B9xZK8TqzUrlwYhxZH-VT3Q0rK1orvn5gF0Lm_OdOXqHcsoYgCNStLAkfdRcPI8",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJH5XKq3UHPDIRZSJGeY3W_A8",
+         "plus_code" : 
+         {
+            "compound_code" : "J2V2+MJ Kampung Lumou Baru, Beluran, Sabah",
+            "global_code" : "6PQVJ2V2+MJ"
+         },
+         "rating" : 5,
+         "reference" : "ChIJH5XKq3UHPDIRZSJGeY3W_A8",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tunku Abdul Rahman, 88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9599249,
+               "lng" : 116.0671212
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.961133430291503,
+                  "lng" : 116.0684115802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.958435469708499,
+                  "lng" : 116.0657136197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sabah State Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3382,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114844356429605351994\"\u003eZENG PhotoArt\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sNQaSTsQkH9gEfxSzAez_WrZkkboHFjepnztth8Aryhb9L6pOGgFKQEYn2l27CFUbBP-N7TeW8Yev3ofxxJmcp8Df_5YtKq_JxY8q6V48CPMMNHhdfkxhMV7C9PwQcs8jX9JHUOcC0zSVIbJny_uRJhPrsjVFN-JLZigNKMGIAir0veMDShTwyuIGqg-pKPXLHDxcmEJuhcWLUzKNFP_2mYrHftmUEWg0o7Zfn7aJOzT_aDJRfoctQFk0QFhf0WvLVWHxkUDXeKATySvo9QKSwMw4gxYh6cvCi-UZzxggKpueb687vFl-Tfc-eoWMETZddeItB-afSEdmJF8rtgARHSi1oyAakTmA-GXU_6_GlNd_IZkKqJjHThChOytEp9ce_f38MbU-SqUbkaftg3zFS6lPyVueps0YTLcXCzmgCmw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "plus_code" : 
+         {
+            "compound_code" : "X358+XR Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX358+XR"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3288
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kg. Kuala Sapi, Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8261536,
+               "lng" : 117.437612
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.827482930291503,
+                  "lng" : 117.4389362302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.824784969708499,
+                  "lng" : 117.4362382697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Holy Cross Church",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105884852665968858650\"\u003eFrandy Lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t0Vs16Dl653xO6VjbiFaOnOyF0Q24dz5DdSN_t3wN2fkfF2o1jbhM1lqLGq_MHr-ijlGd5IhXkL_ZjZ-sfo0RRPF_gKnWnN5epKfvUAhv1cxgauhTIfJfhzbrvGo7hzuPzzLe7tjgRN8j8qw_zGFYLq_wiwWfRaOJ0zOs2kYWgcg1IDYR9H48wF7O04ue9iYirWVl60NDgIQWHJHtTPZ9Em9SzX3pBgUyMiZVmqOHZ-2sQh7TPEbmCcV9ZiLHyesNaj-jfqSE-wcnaY5lyB9f5o7-kxCimnpRDjTdk6AhnWW_29vhYRxtopJbVmuwsO_MLIh-tiIzBhVfDIJroljgS_iM6vlXlvA6D2PXTVvWvKgdfCHCLGXkwvD7JxVWgT0UezyzJImAlaNAPJgMMU1Zo2kEemQPFIkzV6kSuWyh1PUNP",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ6emXzEBPOTIRfKgMfY-CN1Y",
+         "plus_code" : 
+         {
+            "compound_code" : "RCGQ+F2 Sungai Sapi, Beluran, Sabah",
+            "global_code" : "6PQVRCGQ+F2"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ6emXzEBPOTIRfKgMfY-CN1Y",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "R928+JW Sungai Sapi, 89100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8015468,
+               "lng" : 117.3673004
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.802769430291502,
+                  "lng" : 117.3685595802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.800071469708498,
+                  "lng" : 117.3658616197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja Anglikan St. Barnabas, Penimbanan",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 544,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109250549717610159272\"\u003eMichels Mainsal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tsxMIvtlPfxNg4u9438U4pLKfqBvSuo1knczr1jG8ix60gNO8OI-rxr6rK54VxUdOOi5zUdzMglU5YLTf9n36gxo-HYFJdU7kyrlY59CMWmkycha5bLZ8d2T80faa7JKiFRYYAH9C1IM15PmatdPOPq8vJsARqiAohWLfCG5STvkK3Ku4zIBs_RbljkZ-fVX2MejeHmR_f-dhJ9bKdVzEXqnq7sa7TJCpMyxQJKbXR7YBtFf6g6GGDJA_ao-fU53P2tFCPx5t68qNvdLhkdrJH75KggSqp6XPOhmwkGrClSIlxiF9GcALtNDFR8HuGaSImB_EJGg4r0fisGWYtcbk3Yg5t6D2vWR6bqZos11smdNsSVXTke-LcFZrnWjQd7rCz6hnNV_Z9PkvdqVzjjd6xVVt5vWeh_TBLM_YauhVO-Uyn",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJGZ1GL9tPOTIRcALupvoNRXk",
+         "plus_code" : 
+         {
+            "compound_code" : "R928+JW Sungai Sapi, Beluran, Sabah",
+            "global_code" : "6PQVR928+JW"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJGZ1GL9tPOTIRcALupvoNRXk",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "382G+Q2, 89100 Kpg Basinti Lama, 89100, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.051964,
+               "lng" : 117.3250285
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.053386380291502,
+                  "lng" : 117.3264022802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.050688419708497,
+                  "lng" : 117.3237043197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja Anglikan St. Joseph, Kampung Basinti Lama. Beluran. Sabah.",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 780,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113354955646721971434\"\u003eMertinus Suok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t_UkFPm0cY3A11KqB0QaZNQY8jj6pV198u5ft5S3iSFHoJxnhBQSDAEShGS3dHMJK46GA0a9rC1-LWHdFhRTCZknhD2Kxa-gUsHBvCObcMcD_i32cuvONKgrw60ixTzjT8cMXJhc6xuEnE1g72QoVBbgN9T47oV1chC0unbHGEaliPGufxLe0U7NjY-6MzZQIAhDF-rGi11lK6Dg_o7htS8-PPHZ1Zox6-TJOfuMpkL250pt1U68vp7BbJMYtLeRBW7UpEIjFbMFmcKEHPUrZdLh1M5wl0d0Ni11bGfoyEYzEZKKpcVqKlYrZSx6R8TND21Kgpfun24DuqQT-dH1Un_9GHKzTCYkcwVpbYRw3y8VXVL_0_IY3C_wGJNQ-1tEYIRVA9BwiCALUpPDXPpn_mNlLhoHaen_7XDUrNMDXiF_4",
+               "width" : 1040
+            }
+         ],
+         "place_id" : "ChIJU8ncos1nOTIRqnNOXk1T4OU",
+         "plus_code" : 
+         {
+            "compound_code" : "382G+Q2 Kpg Botitian, Sabah",
+            "global_code" : "6PRV382G+Q2"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJU8ncos1nOTIRqnNOXk1T4OU",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasir, Jalan Teluk Likas, Kampung Likas, 88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9954925,
+               "lng" : 116.1082195
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.996832780291502,
+                  "lng" : 116.1095913802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.994134819708497,
+                  "lng" : 116.1068934197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Bandaraya Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113151283152419518959\"\u003e서진\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-trSsYmTtJjHN-84AbtyM1l_vlfXH3fVwqTzSPMWRiiyYIN3_IVBqUAJLMjPlhGx8RfeEg_HEoD7bI-vgEhxqBscoGthBRE9icWLlV65Vnlar3dXKqnuQ6NRNxcmb1ifZwguHrBy1PXivFk3PNIWll8tilgCmQKUNdFBBE33ErZwq5nYxYTQNAR-V33z3j9tuCaDzDnl_FhcbJW4MuUpb1XLBHLzoA1nQ0jeBc0wRAR67NrrU9JQcmPmXUMV9M_1kqQWRvgxD40jA97p9IsREOBipYkryp8d4hDGnkK0arFy64Z5BsuDuPBa5eHMerGq8xNHuOIEgMk2KxToDVcZq0jSAu4t-nm7BpFWlyKtrdwhIBX1q3Axr_l0DShsOUP5kZzyEXJb2sLNju2ut8za3OTgTd99_a3p7lCG2jkYjwdxQM3",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "plus_code" : 
+         {
+            "compound_code" : "X4W5+57 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX4W5+57"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kg Bambangan, Malaysia, 89100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8930485,
+               "lng" : 117.3783991
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.894562230291502,
+                  "lng" : 117.3799750802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.891864269708497,
+                  "lng" : 117.3772771197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "ST. PAUL'S CATHOLIC CHAPEL Bambangan",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111307813668034584075\"\u003eWillson Issac Ano\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u-Xi1aHdGHleCSCmViF0IplV69D-huEzvaZSymOa9yWPAc30eOD_RJjf9mFL8i9LKwj7l-1AcU_jRVXJnLmvwcy0V9w16STe3jqJKWR1yofljyeVbGzZRaJnY2CPXDNUbgKwmUXiivbFb62qEcHQs9MtvKVSoa0B20rOezqg3xY_rM10GAN-b9_WV1Bvi16wGu3I-DSnZjxg-TA-gR-syAVpvxulwiF9jf25h5beL3IK9XCnXRNtM2bjs0sk6SwwMMmat_QpxuMG-JA7ZZY4D48aIAalYQjq7_L258Rp67OFbEiL2hv-oEpX4zzdZkfBL3oh_eRag8BxB22MD0rnRFvjwiKzsFdsdZqDIg3XQz0Pu56OU0Fmj3qXLXWgKyqtK673MRtU-JXU8KwYYayg8cAlEtunXC7Bs9UnhNj34",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJjxzstMREOTIR3Kow6-dfE6M",
+         "plus_code" : 
+         {
+            "compound_code" : "V9VH+69 Taman Mas Indah, Sabah",
+            "global_code" : "6PQVV9VH+69"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJjxzstMREOTIR3Kow6-dfE6M",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Gereja, Telupid, 89100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6268286,
+               "lng" : 117.1348679
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.628234480291503,
+                  "lng" : 117.1360579802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.625536519708498,
+                  "lng" : 117.1333600197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja Katolik Santo Martin Telupid",
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100608498919195824285\"\u003eJasni Gindono\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-srP12ZMxiUEy1W8-umb6QF7FJ1feYDOlIKnOkYF5Z7lYS_9D3XkSZBbR2MGQv19SCkPIlrIZ9l0w65Sxs9aAhZa0j271yO3HY6hO0KLLzU31eYyrny2SINx5KS2y7lGSCTQvu12-jujie2QpMYk59wpHBiAc_mot_O9gTd5_GtmVOzpB2Wm5pyld0AZ5RpIMi6yaZGWrNpAaM_8TuL-0fW77D_ZvI9i2_O_zSC8_rSt7JLDS7-EKQFtmQhns2cS5if95ikpqM83rrK3kEqbg-oHgTNXMiSAImaALG24UB00URSUBggEF1UOuVZiApkfAR3R13pDamwyldFTjh_Vj1SaDaR7MwTacoc9Xy4kZBQ1aZ4O1JsGos-osL6UByLdJWeGaOtu08ceopfIkoYY0AfEgnmHpLFhulqUouO9mqzBEw",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJIRiOLCkCPDIRVD4vsRNR75g",
+         "plus_code" : 
+         {
+            "compound_code" : "J4GM+PW Telupid, Beluran, Sabah",
+            "global_code" : "6PQVJ4GM+PW"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJIRiOLCkCPDIRVD4vsRNR75g",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Capitol, 90107, 89100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9443861,
+               "lng" : 117.2828139
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.946155780291502,
+                  "lng" : 117.2840728802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.943457819708497,
+                  "lng" : 117.2813749197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "New Chapel Saint John Sinaputan Batu 6",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103296668538616937714\"\u003evincent ben\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uIuI6TD8GYBuNVyjecC0-8R2laVTNyMuV4Lty9tPmPFwK1dF-6uGRcMfyBbRmYzL55fu3NFvPqHI1K-0shoz5PLM0ogayBdFXxP2JEwyDSckfofNASSq74qwR-BooGFUI9qWZptPS65VAu1UlVGalL8oyB0jgYtLNuiP_zcqqD-MVmEZQrKybY7maQgW_NuRfDCWISfKoxGXdmDYkX9fqCNpRHaOG-AQyxOW3AhBD1OmgqLXwTSanMmCm4FIsmuXKNPWeHtaAVVD3v5nyLTME-1yFdo_oktM-wyBa-0RlYIj0RsWeVxEFdbmB2lN_7f1EA-ogvzym9ppfqhn_INIbHV0xmMeU-Q9vxM-ay6MAZzz6Wu1Wy1_iBZ0zEuaWixh10BnSBtA8XiSottPG3qVoVvVbQ8cWJgvOVeBGHh1bcgg",
+               "width" : 4560
+            }
+         ],
+         "place_id" : "ChIJBb1780tdOTIR5SXRP94vjzM",
+         "plus_code" : 
+         {
+            "compound_code" : "W7VM+Q4 Taman Mas Indah, Sabah",
+            "global_code" : "6PQVW7VM+Q4"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJBb1780tdOTIR5SXRP94vjzM",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kg. Seri Menanti, 90100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8911028,
+               "lng" : 117.5416081
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.892394730291501,
+                  "lng" : 117.5429927802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.889696769708498,
+                  "lng" : 117.5402948197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "KAFA SRI MENANTI",
+         "place_id" : "ChIJ8wGMqkhHOTIR0u7Do1Xh20g",
+         "plus_code" : 
+         {
+            "global_code" : "6PQVVGRR+CJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ8wGMqkhHOTIR0u7Do1Xh20g",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Desa Talisai Batu 56, Sungai Sapi, 90009 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.700943800000001,
+               "lng" : 117.5209085
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.702265480291503,
+                  "lng" : 117.5222061302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.699567519708499,
+                  "lng" : 117.5195081697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Covenant Sanctuary Church Talisai",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104513020151472118115\"\u003eBJ Jezlin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v7yOQIzE5t2qyNrc-e5PupIKyhD627gWPQtEWMBOIv61VUzGfr7vF6JrI7yYdvKP0ChJ5c9nxaptYb_rPboitc4tvXpZtvnB8z7ARGrAKilfS8oMIv4MRROJXQWS9JNf8h7rHuWPs9wzc8kibRrJr8MnQ7_z1OpQQCiclE1nAl8NF4jvIR_wLXXOK4OmhY3mBpL4ncA96TTNazYoypJJjIc6MtRC3lkNkbc2EP7VXoRNVe8kjevkdnrGqTzU-SvxxQ7_k0-jPuwgArH-bKauiwdVAHpxyk2_r0TDu3_y2wG1WSqHgi2hAmZ8HxmkbyISF97JKa7Oe7w2NuxMK-qfklL01I0c3oN08x_UXVQrTIhsdDCIrUUS8FUtIciXBmHnegdNLaX6sJYky3hMA5mTQBC0FNUmyezvE_kJTk3exu6g",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJQ7OKhApLOTIRwRKkToQiS-c",
+         "plus_code" : 
+         {
+            "compound_code" : "PG2C+99 Sungai Sapi, Beluran, Sabah",
+            "global_code" : "6PQVPG2C+99"
+         },
+         "rating" : 5,
+         "reference" : "ChIJQ7OKhApLOTIRwRKkToQiS-c",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Gambaron 1, 89100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6219459,
+               "lng" : 117.1416511
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.622896280291502,
+                  "lng" : 117.1428522302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.620198319708498,
+                  "lng" : 117.1401542697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "True Jesus Church (TJC) Telupid",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106741046141340899788\"\u003eWillie Wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vykcEYe_w4LhTZFcrxucNlBIFV07tt5AFrKbATA7uRO2NsFfWzsERi9elYyP9kUidU4__H2X54I9wTt7kw_xTOwjRf4cDETz3gcabB51wCg9ypKRwQelO_nlfmAjOc7SGAJYzbjvK3LSsB0IhTm6Necmf39X4ebpO1MYFzcWZTL4rwUYfMZGaHXLq35VRheAIKTqk4bSg5fHfNM3T9yu44pfRlg-xTtdIbLxCzBemBenOy1rJBWzhykHYdDemgGyAZ000VaqwZgG_WmRYwWhQ6Wusvwz2u6yOgJjtCIbmgUs48o4cEZjSI7FHfIji0RfwYQdRjKNsG9freSXtgUnonGAwboUckejG5jJSSwGVyXLizvor6J9-V4iKQ9EmCMQpm8z8L7OfvGIQMBl7PkbVv6_oMLj2z0TxjGGQzrDLt_A",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJrdBg0SQCPDIRmIvtIOGPY7M",
+         "plus_code" : 
+         {
+            "compound_code" : "J4CR+QM Kampung Gambaron 1, Beluran, Sabah",
+            "global_code" : "6PQVJ4CR+QM"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJrdBg0SQCPDIRmIvtIOGPY7M",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Telupid, 89100 Beluran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6209237,
+               "lng" : 117.0852626
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.622240930291503,
+                  "lng" : 117.0864800302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.619542969708498,
+                  "lng" : 117.0837820697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St. John Catholic Church",
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106004859847622197644\"\u003enuraisairenenaim JejakImpian\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uJiqS1ocEaV8IYJAW4hXbmJpdGz_gkiLxLkz0E_YjizutZTtfhFzPiLk5HSA3gfs35m8GLg_DIqs5mVvxZA5Ctv_fbZlHkYJ3u329_xFTynwRQ_xPdiK38gHaSe6_kX2b1__Bszpvvgl7BntuU3QkBfgqOYSjZRtYpJdVapYnjvCOPe7dTBUtLe3JlAvWpaMxGfym6osdcTmBGVZm99ynJfC2_FDhTw4DZEB3Wbg942FYAc0pTtGAT_WSqS3bhuSiLkE22cwjsIEIugFrK-d_cRWAoGtnVIJDxlC0i2zyTfjwVstbLrRyjK-FJ5asAH2sHmBx0Zy3askS4McCgDb3BCDxDBZTGYwxD2mNpVAsPkUGKbGKnzGJR6FfksmEB4uvMcdIsXaZT84DROhcoJ3y7kLoe5C68-i2NcAgdGe4Pv2vu",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJw1w1VwADPDIRZO2dFT_lscU",
+         "plus_code" : 
+         {
+            "compound_code" : "J3CP+94 Kampung Telupid, Beluran, Sabah",
+            "global_code" : "6PQVJ3CP+94"
+         },
+         "rating" : 5,
+         "reference" : "ChIJw1w1VwADPDIRZO2dFT_lscU",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Road, Jalan Kionsom, Inanam, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9736958,
+               "lng" : 116.2036688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.975209080291501,
+                  "lng" : 116.2049043802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.972511119708497,
+                  "lng" : 116.2022064197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mari Mari Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1748,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115764917221730916604\"\u003eMari Mari Cultural Village\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uByT-ijYMa7TdqE3KIn8cB7hVTyhg_iS5EAkUSDC5knSErbVQKPa_QAUwCGhbWpYDqsEOc0DlAP_YFu4sGRBgfYtg0aEeCFcawYmVMFMnbfiLzfJePR4LX98eJTPfcIWPf7dNXnVlTQyMfDLYENyuNgVYJKTjVFlp-CE43QT_S8k4XqnSJcnO6TneXaZ4pBAi1rFOJ-JbrpvmTphrF3fqgorhKY_mcd6BftZiHmu5koP7gN6SXPsmfucL_H9LSxc7cjJp7bMZ-uIVBL4WAcpe39h-haZuVM40bE1ETExwyEGkF4HKRqQGF6S-Vljm5sGf38PwRmuPJR848aQkt6dTMpIiVOECgiOPhcXB5mW5XpzRArTFq8-HXl-qpBvdi_iOU5Nqt5AKV3cN__N_sl69FZjMQDakPmpgLpUu8ATXH3bARU5TykjiDoj0P1PgY",
+               "width" : 1240
+            }
+         ],
+         "place_id" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "plus_code" : 
+         {
+            "compound_code" : "X6F3+FF Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX6F3+FF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3851
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Cecily, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8338068,
+               "lng" : 118.0864292
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.834726780291501,
+                  "lng" : 118.0872694302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.832028819708497,
+                  "lng" : 118.0845714697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Puu Jih Syh Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104695276677491999186\"\u003eSteven Parker\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tl2y9O3prKK0MN95aXGr_2o10wzOyKhD-B_HtG2SvYfWoTfoR7ktsnCHsBDL1IgaEAxJpe9kFd_fFHSThZQk7oLL3pWa_kRc2LnFJALXwTtRWKrVTcc99nSqIcBPMnXXxiLRhbM4GQm-6nytwWhYb0DvPzshEDHsnHLSg2C1YAzPDMc51jSoz6Vcjnm_envRPLFwk3Q9mKEdqLeBF7s6dOsMBRkkGVo70BIpAQ-3mBL5THfekkrHVgHvwtgmT45Mreda8x4y3ArOG0kioeXlZhoJwIsaq4zVoipn7PX3J_m87AOE7-qJAWhz2qYcwBuRvqF2J9Ed79eDvP6FgotiwSCCSNRuW7o2_e41PZzZd57frU-io_IRMEDM4FNqf4grMTDN9XrM_jz5TryoRRAToAkVgmYhqdm46yeV15j-ukkA",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJy9A3punaODIRQpzlkJxvepQ",
+         "plus_code" : 
+         {
+            "compound_code" : "R3MP+GH Pusat Bandar Sandakan, Sandakan, Sabah",
+            "global_code" : "6PQWR3MP+GH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJy9A3punaODIRQpzlkJxvepQ",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 802
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "296, Jalan Utara, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8428086,
+               "lng" : 118.1161937
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.844164080291502,
+                  "lng" : 118.1175385802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.841466119708497,
+                  "lng" : 118.1148406197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Agnes Keith House",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115474408549787660680\"\u003eXiang Yan Pok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4VU2ZlXNXZRHfOc_gzp2MSLbBu6SWUSlHzXmedv6k_NbSe9ertsjkGKG-fCRvQVjPqR0CMMaYZUPpFykMyzOy_G8VC_3Qzslxaf0L1i1EyLjWt9LxxTepZdqJVEpuh9_4j5v4rBNbplh-J7efWnYvFpfAwiy9SfpPTTcLi32Gy9vPSJF57mj8mvS9Hva2WcHacVimEtnHDnVPcczfcxx7U8-Ke9noED1SQDOAgjmNEq7ZS5QUe5yx4AXQDLsWzMGQN_Jry6AJTrq4wmUSxDdhiAtogOqsG3p2YsqRcy481hqmF9kdyO4L9D7i8V-YUFe11bx7z_gEoeUs_Jze2Kajl2UPzE8hNQf-rmrdQMC9bmTDSJouyAi1NIe2fIxW8sO7U1yFlAvH-nKzu-2JyHyLu-tfI9xqzucan2dTAo7_9Ukl",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJh3-SrCvFODIRuCIa5kDztis",
+         "plus_code" : 
+         {
+            "compound_code" : "R4V8+4F Pusat Bandar Sandakan, Sandakan, Sabah",
+            "global_code" : "6PQWR4V8+4F"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJh3-SrCvFODIRuCIa5kDztis",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 664
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Semporna, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4399347,
+               "lng" : 118.6221084
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.441123480291504,
+                  "lng" : 118.6237641302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.438425519708499,
+                  "lng" : 118.6210661697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Bukit Tengkorak Archaeological Site",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109445948473709117518\"\u003eW ZF\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vAA2ay9ya9b8ejfevmrL-sfBMpPGnKw3H5kZR9Hep33CudeB_wGsv-fyaVhTTpaXo3FO9UP-GHsc-tzCf1X0BHlbNO8NbEOksqgRC5w6BLQDLkN8exXljiRoYbYb3dZ1eLqNVIIeuqYUohhO6tIkiULbkdgcgW2fmbI4zyXY_mZdQiv0i70nFWgFUPdndnm1GdfF_g6zZv8fRmHEHIjg3OyxZuqkyoa88PkE5_wZdygsRz7BlTSi-NGmCAg_uiNWD8BDk7am1_J_2fjBduaPJRy5Dpg_9rfi_hYvCa_lGj_h9tRgT0tskuYS5QIgvpNNHtdcoVrAra-hcRBtH4r_fhPuxBFOIMw1fHp660OGq41nm5q5KLoJA-ul-flaJ_EGLnKmB-RiPitMqwhfwML92pWZGqTrIAzxX-WGm4lslL-PU",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJlytRZ4FVFTIRDLSh36K6cPE",
+         "plus_code" : 
+         {
+            "compound_code" : "CJQC+XR Semporna, Sabah",
+            "global_code" : "6PPWCJQC+XR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJlytRZ4FVFTIRDLSh36K6cPE",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 361
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "90702, Jalan Labuk, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8882734,
+               "lng" : 118.0474989
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.889186430291502,
+                  "lng" : 118.0483481302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.886488469708497,
+                  "lng" : 118.0456501697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sandakan Memorial Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2636,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116496298914635439093\"\u003eLeigh Midkiff Carroll\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vexm-NTS32fh8IMfq8RGUXfSDm8a8gB2XT0CIH6cNJ0ZKv4wPRBjGz3NkDWDqJwvhjanwsaYSdKbcbhLy9wWzdunS-_X8VdcWZGdr3s8AAEs22R6FZL2dty8tQAKqTcitfXkE8hZHg1oNdmFo88BmRxjn-SHQeh0egutPspAsVHWbOft26R6qaidBSjM1a_ZBJELJ3fMfENrbx6m4_t2Sb7bHNFddb77IUM4i1rsETiFcDkrD8ViyawbWQ-2A-BEUzrKL6KIddo6ViARUh7SC20qOMNi98e6QRlCIPdfOLUvqxwzAiWn_svnqXPi6MozeqvAcot8gfEGsHIOY22o15TiM-Nh3ZBTy4TWt1L2MbpX8EjaX38OcfQg3tcxK_lqOrHGFttyOumASzaTKkrYIXc3xbRMfx70zHFsB5RGDpew",
+               "width" : 3460
+            }
+         ],
+         "place_id" : "ChIJSfC28XXcODIRWCaMYehnyr4",
+         "plus_code" : 
+         {
+            "compound_code" : "V2QW+8X Taman Fajar, Sandakan, Sabah",
+            "global_code" : "6PQWV2QW+8X"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJSfC28XXcODIRWCaMYehnyr4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1473
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 4, Jalan Khidmat, Off Jalan Kolam, Bukit Padang, Sabah, 88300 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.953098199999999,
+               "lng" : 116.1053214
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.954454830291502,
+                  "lng" : 116.1066234802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.951756869708498,
+                  "lng" : 116.1039255197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Pasupathinath Alayam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102153073087103748574\"\u003eValli Rajoo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s1CIh9mLmOYG7U01Uq2Y4yXIt9A2CwTd7VUuFydE38nJT4f4laVDQMpC9lAxm_dBKDRSxFs3F761F67_UYUiXorIoRfFF17anDlHkQ_objuUpFwra9oNIr7qo6t2mgDWy2ZFGcTZa692RnZGlr98gt7AnzwX_l8SfXpf-47fJ0RCViMC3fH9S8RjPoa601MOD3Z95OodKc8wm-fAyf9-IepYZ6gs8OCqTlH4SXePaJzrIGT53Vj0koJF1GnGcAWOYjSnWVRzbxLX4yL29E4-lf_oOpahCftWChdm__JTs96oVRPB1hkyi2ANqvxsgFRHL8yuBd8rirewJ-yimjOMQjyzNadR2-ozS8d7bTvZIxz03HA-LA2HuDDKoAyzqqOwYi4AzSiK8xUNnrxeEm_0Q7whKEeY5BSj2gTdGNiukZNA",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJYV8aqUNpOzIRtzIoGXpES6k",
+         "plus_code" : 
+         {
+            "compound_code" : "X434+64 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX434+64"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJYV8aqUNpOzIRtzIoGXpES6k",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 253
+      }
+   ],
+   "status" : "OK"
+}

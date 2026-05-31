@@ -1,0 +1,42 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3025369,
+            "lng" : 117.2550063
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.303885880291503,
+               "lng" : 117.2563552802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.301187919708498,
+               "lng" : 117.2536573197085
+            }
+         }
+      },
+      "name" : "Masjid Ar-Rasyid Kenang-kenangan, Tongod",
+      "place_id" : "ChIJI4cIJkidPjIRysmV5UaCLuE",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=16226049748473596362",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

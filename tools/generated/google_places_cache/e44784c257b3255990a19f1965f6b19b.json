@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "174-C, Jln Besar, Kampung Kuala Besut, 22300 Besut, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.829671100000001,
+            "lng" : 102.5568212
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.831021830291502,
+               "lng" : 102.5581708802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.828323869708497,
+               "lng" : 102.5554729197085
+            }
+         }
+      },
+      "name" : "Bulatan kuala besut",
+      "place_id" : "ChIJq8O4MQDvtjERaDZPb8PI0k4",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=5679822821779256936"
+   },
+   "status" : "OK"
+}

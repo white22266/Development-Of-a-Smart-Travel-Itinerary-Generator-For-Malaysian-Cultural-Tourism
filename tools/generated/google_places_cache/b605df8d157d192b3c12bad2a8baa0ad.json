@@ -1,0 +1,63 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Ladang Badenoch, Kuala Ketil, 09100 Baling, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.553915099999999,
+            "lng" : 100.7603532
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.555357230291502,
+               "lng" : 100.7616387302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.552659269708498,
+               "lng" : 100.7589407697085
+            }
+         }
+      },
+      "name" : "Sri Maha Mariamman - Baling Estate",
+      "photos" : 
+      [
+         {
+            "height" : 720,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107656336453193651658\"\u003eKuhhan Maniraj\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t_0ZxqpcJMxGunLeoVjI1MlRPlJKyXwoN6qc_cI3vp6g7UVML-TQ8k7Ztf7XBnVSVAZy6-UmvDH7G7cd3WADF0DUqUaLxeAkqhsrwNfmSRSc51C5H4qHkmjZPKqy5CmgS0VFYqeO-Pp6v1QUjfd9zwkcVAPH6XvfPbjSE5TRGVMTB3hmMxQE5FzfseiV6CtkWAzl3NOcY6INyUuP9grj1aofEpz1hAKUe9WLXEdjJDFiXutUyu1LFd1Tr7PGYgpyaNLEzzF8FWgjzAyz2rw2hvgXULWsip7Hj4ETI6edWHJGQ9f4oSEcXvKUWX5sMxaoC_CIOT7RgLUFQLidNVMz8DjaN5pOsN0p8djGdtB6jaGOJ_sbZ85No66CiF-F5RHNnuEOU51rBEBiKe2r3lRlfA0gSfx_J3Wwfhcl5QfIwWHw",
+            "width" : 1280
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107656336453193651658\"\u003eKuhhan Maniraj\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sWF3EJwot8pvFvC-Al2PWBHCvp-oDpsgJxcu61hn62csYzxl_hXmwu3tIk55jyJg5bN9FoiDutc4JS6lmAU4pXSzlvWM2QRcmGKRi7cCPX28r1QkfENUASYKS00O-37wESDDqmhSQLzzC04ZHaKkWYVA4u9rKQ7c6tS_GJcFkLITkBrKaM4qlp2JIHDcpJr7_epMKTA0-v8S-UrKv-zJ2GZk1LDKaVv2oZklLSmsuUnBr5IhTdbQDDK7ssMoOJvfA7j1-sBXjGyFBpm4R-0eoCUH0A9vESX49bDqAHJlFiNJRC9L5cfsmf5Po_ogSEgN6-OurhD5aBCm-XIAZYtlDpCWv9j-bF0XNXkcwm1t8eIES6Q0XvISA9yledc0iea6Ien8DeLLM_tjzGhfJy_pHWoL3Un0Du-8LmTbJmmq69LbGh",
+            "width" : 1280
+         }
+      ],
+      "place_id" : "ChIJP0u_kYEptTERw2ta2JAVM1Y",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "hindu_temple",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6211332022923324355",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

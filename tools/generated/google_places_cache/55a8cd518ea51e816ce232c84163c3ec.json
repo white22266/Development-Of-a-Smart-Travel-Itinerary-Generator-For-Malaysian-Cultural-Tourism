@@ -1,0 +1,364 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan 10/7, Taman Jaya, 46000 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.104912300000001,
+               "lng" : 101.6502808
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.106081930291502,
+                  "lng" : 101.6516016802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.103383969708498,
+                  "lng" : 101.6489037197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Petaling Jaya Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105417797245357478136\"\u003eKamarul Ariffin Zarkasi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vR3cthF986d6zACYkN-ZyrCVEKtwnvNZfTm00map_x36yXUX2bj1yg-wmV_DuFe58IH_IQkNpYxaPReuV9YAywtIdejfkg5GL3vTg7nnWeiC3uESkNuzF_JN5KV1WjO-zy9wZU_XvTBwc60koi7qGtbTo97NJ4xBkdGWmKsZ0KRQ_fwkgoIxPjSC1QTd1gA18k_KVwMhqIT4WN1rENCMIsVm1wCFvE9ZDNhbm5SATjojfZMeemN5DVRr0xqSInNTXoWfzSqseh62AGkakTCCk2hvCyuKWoQL_pw3K4gVNi0XgGuvmHd7Uh8fSUL1PUa1HvbslvzITuGoTXsQv-yfcB5BZsIfvf_OLNsEgLm89EOEtpOfGY-w7OI4lKxOmqZFuW1pBwMG3Ltrsne1LYXGJ-FDg0zy5NwBzUNojTaMM",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJExGRZdBLzDERqU7Krbh_zZs",
+         "plus_code" : 
+         {
+            "compound_code" : "4M32+X4 Petaling Jaya, Selangor",
+            "global_code" : "6PM34M32+X4"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJExGRZdBLzDERqU7Krbh_zZs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 216
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "5J57+5R Curve Nx, 18, Jalan PJU 7/5, Mutiara Damansara, 47810 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1580958,
+               "lng" : 101.6138072
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.159336730291502,
+                  "lng" : 101.6151001802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.156638769708498,
+                  "lng" : 101.6124022197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "KidZania Kuala Lumpur",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 360,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117458826855646020126\"\u003eKidZania Kuala Lumpur\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vHxMWr4ndpYfgr_z5ZMbKzBsa0oX182UvTJ6Fv44e6nsOhjC0F8dfgH_Vk3NU6k9sHfmG8FiwIgQqpt-F1f26CW7JgSbY2CmOOFaY7TYG0aRuJpdG8msW6WG55uthKa-Rp9BFAiZl4EymE2lFmlsZdRHAPIri3-L7JloY699Dla1u1cSHLq1sLmm3AJd2gKih_14209omC5EhwouOlBQLz2j7ZDYBt08m9VM-ibYIuPZByyt1-tC38VWfG4ckxiFjc3l6U-iFnxYanNBYBJo1N7m07pWH4Zuj_YsbUGLVWGUnapMKZPs1klz3MO37b9q7Fe2O4W_-qcx2FM6x1w8CJu76KxxDAWUwIInlvF-0N-sIuBKKEwcGMp4JUoZFMIhLbBpki-NK3A8odK06A4kAupMR9hnEo9c0iBuJIEvY",
+               "width" : 640
+            }
+         ],
+         "place_id" : "ChIJebTp9RxPzDERzQPNcVUbckY",
+         "rating" : 4.6,
+         "reference" : "ChIJebTp9RxPzDERzQPNcVUbckY",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8545
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Teknologi 3/5, Kota Damansara, 47810 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1560369,
+               "lng" : 101.5687219
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.157460080291501,
+                  "lng" : 101.5699961302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.154762119708498,
+                  "lng" : 101.5672981697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Chocolate Museum Malaysia",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113917570238405364798\"\u003eee putra\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sdFmYVzJb-64eVNXczUUJwmYUQ42QahBOXfrkvV6wrsNHAgQ2HXrM97v9HfLeBIf-Oe03J49qHHOa9_tJMXThu66-9bx0AAKyNO7MZQVDSzC59ql_raKah0uNP1ET5uQZD3-TNxrz9TQhpsyiPcWvwaVvhtgLuyA6pJaXfOckBp2VNUhpB7EAmn1b6WKwRLPnWJidAhgAtU8eOddqtkeOhzUPjf4A44z8Oj3DqLQ1ExFy4o6CT1liEuAZw6x5a7jlWYTZocAZtaJz7jxBuSNlgDiS-HuPAubnArJwXN6FqM-WDvma8iP972RjgEmmT2ZEEeuI86Us0PolP14WdK36a49phORDY2X3Q8HUmwePXydWZB-uTKlIfdVdmANaEgfmcs1Z2EPTVXMhp_gWHYjh14er5cBvDSx_RmAR12MKCAQ",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJcXoUaKpPzDER2ErtDp1aKgc",
+         "plus_code" : 
+         {
+            "compound_code" : "5H49+CF Petaling Jaya, Selangor",
+            "global_code" : "6PM35H49+CF"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJcXoUaKpPzDER2ErtDp1aKgc",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "museum",
+            "parking",
+            "point_of_interest",
+            "store",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1192
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Dataran Boulevard, Seksyen 52 Petaling Jaya, 46675 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.09928,
+               "lng" : 101.6445865
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.100628580291502,
+                  "lng" : 101.6459012302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.097930619708498,
+                  "lng" : 101.6432032697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sembang PJ Art Lane",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110160205934950212667\"\u003eSembang PJ Art Lane\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tT1onyBom0LKH5fKi3CewW8tWU6u0ZqLzz6ldNigaHiSqQ2zuxAYwBS0B3dGqJoLlUxMbeY5dzt_Xi9YGVvDtlsPoz_XT6MvfliG-V6obdEcvPCP62AN8bC7Zqq0EwPBVZTP4JnGWsMBi_SijMGMcW9o3nmvX8w-lhyfUG4muEyiiioLXgfZwHxE4k5OBVsVC-GgbGBpNBRzYXAwlAql0-9Pnm2A5XT-qhOBbC_DxA1VqFFX7QwypgfML4C51WOJySlBbMcNvbZa14pyF0n-wyO_XKjTsKKT-fNcIadLr7pw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJNXXrPcNLzDERx7C7o5bh__Q",
+         "plus_code" : 
+         {
+            "compound_code" : "3JXV+PR Petaling Jaya, Selangor",
+            "global_code" : "6PM33JXV+PR"
+         },
+         "rating" : 4,
+         "reference" : "ChIJNXXrPcNLzDERx7C7o5bh__Q",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan 52/8, Pj New Town, 46200 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0985126,
+               "lng" : 101.6454701
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.099890380291502,
+                  "lng" : 101.6468189802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.097192419708498,
+                  "lng" : 101.6441210197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "PJ Street Art Lane",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3263,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102448908538681205264\"\u003eJeffrey Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUSzL2MOx1Gkh_ebRC5Bcmazu6vBKOT1anff-CejAVpyETad0KpbeF__lA31XzoStwYZPQiYXyu-RpcvEGlEDso5mh1_hcPu2MnG6HSn0yXXXVnl_xvSmughP-BXBarN_oaYDlDDRFfGGQXKZSKHL3Hd7ZiVLasM_tC7FzKEsXMFZIpYOYfAO1veRB7tsPq_EvsmR_cl7-TAdi4FEAcYqNlmQCVc-BB8oR-ZF-zv5ZG131duxxrV9f8_DtGCHAd-SUFlK0-m2XVTo1pS4R7Jki0zT84rzpIPybzromRXnzP9TlgPh59KM0qTbdeAIVMTHWmn6QpKXAeIpF85wMH44e4mKXpBDTwvJ3CpPHHbe_eXVmwdVLXcd7rH-CMfj484lzK2PMdSv9OiQucw93DbhdygAFgYmcqU1m5UoGVQiLTA",
+               "width" : 2067
+            }
+         ],
+         "place_id" : "ChIJ3SctGMRLzDERpGlq11MP7Os",
+         "plus_code" : 
+         {
+            "compound_code" : "3JXW+C5 Petaling Jaya, Selangor",
+            "global_code" : "6PM33JXW+C5"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ3SctGMRLzDERpGlq11MP7Os",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 31
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Yong Shook Lin, Pj New Town, 46050 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0978525,
+               "lng" : 101.6444188
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.099366480291502,
+                  "lng" : 101.6458098802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.096668519708498,
+                  "lng" : 101.6431119197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Laman MBPJ",
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109517239149450102768\"\u003eSy Yuan Lor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-slloPi_D7RumHPrq4PePC-iYEOW9mYA2s6ASGr6Zc2ul-DrLrS1_rb7WCSe-c4uBXu9j6zf5aK6PAV0tUs0UcH9l_6JIdAnnwmtnKE4cqxDWmbOiO4hlScnpNuLo7ywcPemvysgAOcoAKN1XG2sXgxlTv305inMKbdKj9I7Mw9hzhR5PAVf6oKj9dXBG43nUK0lU001pFtJ2wf9aR2g290T6QlvS-uaHRhC5x8wNBVfoYArZr24r_87RTzvBvbpE46KMoK_lFGYCK1kO0Sm3r5dmmau0d9kkfn-UFRJcKL1rwsixee3mHCbFRcOeNyNi7NW7E-e50Xh373qBeZH9ea3ySgFA9I-D6u_XFU35mKivIgAQNOvMiXXvjmomiqXwHWIYXVxiGLh-LyaS4TVzrWRZNH9kQ0BoOmySX736vk-A",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJo8euJOlLzDER5Uw9tuIo88c",
+         "plus_code" : 
+         {
+            "compound_code" : "3JXV+4Q Petaling Jaya, Selangor",
+            "global_code" : "6PM33JXV+4Q"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJo8euJOlLzDER5Uw9tuIo88c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 50
+      }
+   ],
+   "status" : "OK"
+}

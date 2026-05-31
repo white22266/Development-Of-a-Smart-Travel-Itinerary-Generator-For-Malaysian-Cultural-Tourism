@@ -1,0 +1,1206 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uLjEFKJsmiDnquTXIWMcBwTff9nftBf42g_tAvXSC2lgPLS6bzW3dZCpb_d2ZDRO9l-D0mtiIP1xxM2Q0w5dYux-hbVqYUqevoTBeuUpwNYT92AFKxttyfhbjSKXIGPhSGrLEJ9kGJW7Hbj8RzmZAVug_eBlkcMt_RBWtP5kHVbCGhoJmQ1l9NY3S2VIg0XudozoaB7cfm5IQzyqL-1UbyFkEoncHBpnPzyC7j1uQXRmAftx3bwxX22ZQ1adpRCdIWvUwxg5EhLzQwzJqi9DbbJeIosmttXgsHYM4qGr82xA6-sODUq8E5TmEiTD433-k7sIAygSKcM3duNK9PGhVQm5d47XJW2b4QHTlky2QYN0VLaEGOVsG-CvxzLspLe2bE9z3vYZmMoypGN_MAXltSHrQvCnHtD9K_AST1dOQWR23t1CqJ6KqfmjlY0KWae3sYWH1SgXUogWZ-ECbPy9cB2gsxiX9vW8VfzUeUOkS6FqRLYzXr46BsrDCYd-NgmOTxCDnQDnWdvDRXt7MajgNuGYNLORe2ORxzHmXva7RmQ1_TauGv4eqCNiE5ghpY12NFJT2BY1wG5Qz-PyYvqrTvEtGq9aMfwJCD4CAxn5hog8HRpUqyBYsuQjhiUYh_d47_EqjcGk-SyeA54jPnLm6KtMWDu1aFpnbRcSCjVpa_pQ9KGGVKVB9oGow6-vWShV194URc1BJrffsWbeebeUZkQ27TGz6kJtoy6DEd7dNc-zenNAksd6hlEAV1171CVMNG-HCSKyF0gCKxcp8OpUdfVDhlIj5jGv9B0Z23nb85hFpwsIeLRCa0DJUvZRA26fKH5z947-w",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kampong Orang Asli Sungai Bumbun, Kampung Manikavasagam, 42960 Pulau Carey, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8518794,
+               "lng" : 101.4038193
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.853313580291502,
+                  "lng" : 101.4051215302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.850615619708498,
+                  "lng" : 101.4024235697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mah Meri Cultural Village",
+         "photos" : 
+         [
+            {
+               "height" : 3955,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113759658927879484555\"\u003eMah Meri Cultural Village\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vq_AvvrGCHR9N2CQ4ICwo47Ri3osp-0XdcUGoFSGbtsyr49OVoSSZUbGK_wWizWXdLS0FoSSZtI32yV4ziAiZPGGzfA7q1IIAi2rCdjrIgBNtieLsqI52Rb4gbikOLYovMCLMKmsT_8rFW6uRw5k-xnSqeOa-P-ehf7gvi4si0kxx7RiFVjjOio2YcBezPP6nNlZvjtf89D9X-DqFTIrX6Vwn9YJnktEAW0OfCpKlTvDrB-UGFx4k1HfcmG6ZXvgr27rUg12Md0hR0K2Sm_6g7Tqu7qdxlnX-pqtvVrj3pYhAVep4Fx-83CRTj2pcOQP0XPHWFZ8Wgy4_kcono19zSXFDUeA19jvnJh4mnsbDQwWaXR3P6V3bfEgM6HQarz_Xc1pvNfXDT9cbpgwydRM6ciyzsjOd6tYgqAbq5uD94iIc",
+               "width" : 2412
+            }
+         ],
+         "place_id" : "ChIJCTpP6USmzTERBwUVbiGiVaU",
+         "plus_code" : 
+         {
+            "compound_code" : "VC23+QG Carey Island, Selangor",
+            "global_code" : "6PJ3VC23+QG"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJCTpP6USmzTERBwUVbiGiVaU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 334
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bandar, 42700 Banting, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8596709,
+               "lng" : 101.4412593
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.861041180291502,
+                  "lng" : 101.4426810802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.858343219708499,
+                  "lng" : 101.4399831197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Istana Bandar",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2792,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106762591549475995156\"\u003eMun Choon Chan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-svbaX6yUrh6_lZdInYpcOuZug2jcKKR5XivrOKs7VSk9EaFac41dasWB_bPdNM0j-pZ0uMDIYKqyp80Q7MiTrR2zI9aQc4D_stD4C6xzlQL8g-Gr__UuEOtCyYTsZ1k28B4EsyexHqC_V_uIS-l8GlYaqjrQy5yR8b86rRM0XZ6EUO3knRfHtVJyayXQNwQmAbmiEl6KPEMDuTNJ6i-b61uaRE-ANWQ3io6lLXdFXYWcdXsBnlRKK3KDqb0OnrBOeOd1X-TjsKjLk6u_OUlRcPso_qETYGgsKcPHm6ee5Lx0f6v_VpAKT612CmJjSH30C28DKclJSB3TRCN727iWyqgK8gyTnjX0DSUYKLlFFM9tKti66KkC_lVmEzPdtflyzYf03B2K99fB-IVylFpHBY-bf1p1-xBVUxnco2bfFHHgIR6J3ULVt8KuopWuE2",
+               "width" : 3726
+            }
+         ],
+         "place_id" : "ChIJhX3crtulzTERZYI5Xqx4NDo",
+         "plus_code" : 
+         {
+            "compound_code" : "VC5R+VG Banting, Selangor",
+            "global_code" : "6PJ3VC5R+VG"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJhX3crtulzTERZYI5Xqx4NDo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 534
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bukit Jugra, Jugra Lama, 42700 Banting, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8359244,
+               "lng" : 101.4180136
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.837272530291501,
+                  "lng" : 101.4193632302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.834574569708498,
+                  "lng" : 101.4166652697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Jugra Paragliding Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115392454810315958640\"\u003eYohann Ong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vtdUPCl3D_A9_o1rtW_fpQq10rkIfxrO6eGJ3G9tkl_DBPxlyIZB2AMsoi6cD3li7-wtgi-WuVctCGqxQfEkFlfco9HOjqPzTZ5HYAkzUywC2ak02X9kXtWkZBiDeRvS6Xr4yzlvD75V86B1TfdqG31Muh_O2z0JMftPjC4006g85w_-z-dmmsCNu_rI6Uv8W7RaU5BxuLHVfmdGj-oC9IsXC5J9Jfza7l26TY2im50OsmIqXJU8teCF08x6wEH2W2cPrv6xADF-Xfw2cHztwt93vBEGu0sueScn7N2QO_cf8vfDNZum9eqjqS-c_u9XQv_YCdDGK7OrPmpswZavRmOf6Vi2AIlkNHld9lY3zVu5ywCkRtWPPYRpQspwYbGl9uWu73N9vwTu9H0uCHtQwZf5Q3aNjzFTYbvsHalzhQ5tg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJlzIHUommzTERwYa1yPnhFws",
+         "plus_code" : 
+         {
+            "compound_code" : "RCP9+96 Banting, Selangor",
+            "global_code" : "6PJ3RCP9+96"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJlzIHUommzTERwYa1yPnhFws",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 316
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "408, Tanjung Layang, Kampung Batu Lapan, 42800 Tanjong Sepat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.6934259,
+               "lng" : 101.4970422
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.694674430291502,
+                  "lng" : 101.4983332802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.691976469708498,
+                  "lng" : 101.4956353197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuan Wellness Eco Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113711147579684305477\"\u003ePutera Lee Q\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uJStJ8Cmd0a-glBj8SMtbMd1AIOyXWpJowXxSuqK7U0mba-AOv_4BdWj7iSKcgvUhj_k_7EYygaT2Ylu1SnEjXZVdyZjIj9NZMRYY5Lt46G-AHh714ErltnGSiAsfIcXQfq8xdGcO-gTqVX_5WDXsTrrXZcELgepPfePQwhWYWhYmsLT-hx_0MUeJnkxY0T7uliMbTHmOdzjSHNEsSvpnsKm6HjR9k3rP2VaJYfIlgNbNjBO10suhxXYtKKtabahtWm6S86OPoqX-HVRKsc2qooZoaQfbwzpk5IBHCwiql2T-5W95ZUYCWUAQlW5YXkZFCyBPua9t95BL6hJU_kCGvVBeQj6XAl_eAIQtrQ4DkuABkJhIYy-G4TwkvkCE6Q8XHbP3KSNS2CnQwGQ_Wa3K4h9Y1qN8YtXTvlMUzq8OZ2A",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJiYqQtQKzzTERom06LDdTna8",
+         "plus_code" : 
+         {
+            "compound_code" : "MFVW+9R Tanjong Sepat, Selangor",
+            "global_code" : "6PJ3MFVW+9R"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJiYqQtQKzzTERom06LDdTna8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 388
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "QC3R+JP, Morib, 42700 Banting, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.7540706,
+               "lng" : 101.4408645
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.755494530291502,
+                  "lng" : 101.4423788802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.752796569708498,
+                  "lng" : 101.4396809197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Morib Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103742552912970014037\"\u003eLANIMAH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vgVPyU9F63iChHIEwE3txrT_AoidH9wV2d-6TJ0r0liIWJve6u5VSy1mHDrRdK2Bo3F7doslgbX0MMBXt8KlMR-9sgmuytu6AKLKZohtc2TZBKoS4vi6Zm91jZeAifudgU7BvRZuMtRHB4-BdW1rf0DINf8medmPcTfZ6MSlyvpDZiP5xIdq7SZS0w1wj9eg07l2ufv7-DfT4NmzNlQdVveEDoo9GdfgWxrm4DdXbGpnBLFovveg_54zMsSRgm7UaKuSHCC7CIhUHB5enA1l9OPPCQAXB9xUvaUc6PVC_47w6rDYyiC4WURs-4Hqhh_uKXSNYRbnw3sBjUEDtqOA6Y-SUSDPzOg4-7tvIzmstIhyCyoG8VWkXtdaJx06CNnT1jU9CHLiU6dATrFUWRaTEfDZwE22MxT_CtQezIDbFqT_6I",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJMXGtIy-izTER_H5Ya3VbYRo",
+         "rating" : 4.1,
+         "reference" : "ChIJMXGtIy-izTER_H5Ya3VbYRo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1847
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "39, Jalan Mendaling, Bandar Kajang, 43000 Kajang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.991960600000001,
+               "lng" : 101.7866747
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.993323280291502,
+                  "lng" : 101.7880900802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.990625319708498,
+                  "lng" : 101.7853921197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kajang Heritage Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103083043629984305570\"\u003eSui Lai Khoo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s5GenYSroBn3p-qIVUDyBHHTKAXOrTArx77HCxKw1pQ9-C-rI9WVrmKASB5vVPadb5rCIxYmhUP-rpdkXbdhv9a8j1bu2x_oP2CHpUc-jtipBLYoajrcP08ViCmpzYTdv5VCOQnBG7lr2Q6Zpupv8U3xAmjBbQEQgcCXpQcJJOVmNmfiTq9R1EJjY-iIwoo9arIIF1H4DcLhhJBQxZ2erOJQweA6IfZuPOIfxKt6HvVJUMjT5qXHottnPvx3rh1JSnEEz768NlG2avkUhMt2o0Xn0VWYijXBzfa3dyS8f8XwaslmKdw9hKRRDep8MjTlZnrfjKLx22iqIr5LWpjY39xPlmu3L3koEU-2SMQ6eYeeB2rHzlB6Oa5lY8hk3feV5EF7QBabs-zqcG1xgSsBd-1rQfUZ2kojE1mbiDt0qMFw",
+               "width" : 1868
+            }
+         ],
+         "place_id" : "ChIJBUOBtYLLzTER5_Zo3qj_voE",
+         "plus_code" : 
+         {
+            "compound_code" : "XQRP+QM Kajang, Selangor",
+            "global_code" : "6PJ3XQRP+QM"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJBUOBtYLLzTER5_Zo3qj_voE",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 68
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PT2297, Jalan Sungai Buaya, Taman Melati, 42600 Jenjarom, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8680808,
+               "lng" : 101.4917904
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.869120130291502,
+                  "lng" : 101.4929538802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.866422169708498,
+                  "lng" : 101.4902559197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fo Guang Shan Dong Zen Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3458,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114838669339026162946\"\u003eBosco Lim Hearted Moments\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tXU1HN-hgEvnJ831Xg3XekOH8EG6chcqVhveqN-GY8dPNj4oCK-V1ku_MUYYcGw6BvuE_ojvVmXcdYrPr4RGsa7-pMl8lV1vpC2ZswVAb2SKhqkoki9w7FahVeyZEEcqn45GnO_M_bnOKJMiJqQB0neyAvgODKvW67NV3FKFdJEsKcA46IwRQqBE-H8jP5i2V3Mzz6ZFU34gY3rcXy6KvFCSrBHbt0GwzhqIofm1gtP0xL3kvmr6aHzZ8Z8zlGwdFsG6JwOaF87jZ2fPscFznNaLjlHEdnJitdjugXmm3DFY_tGEhm6oaUpy-x0pIYMQCYht0Nhb0iiYJ_MUcfxS-BHeOPl2_kQqhUCmbsvANKfkTumPFv0SsuByue9X8hpyhst6-zVdpimKIfv15cqA3q4IxIoBJSZyFjUasJRvw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJK4qZD2GlzTERXbqYIxlKKsw",
+         "plus_code" : 
+         {
+            "compound_code" : "VF9R+6P Jenjarom, Selangor",
+            "global_code" : "6PJ3VF9R+6P"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJK4qZD2GlzTERXbqYIxlKKsw",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2390
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM 4, Jalan Dengkil, Banting, 43800 Dengkil, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8603798,
+               "lng" : 101.6287688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.861727130291502,
+                  "lng" : 101.6301290802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.859029169708498,
+                  "lng" : 101.6274311197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Paya Indah Wetlands",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4618,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109064793795432058999\"\u003eNafizal Nayan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tKpN_F5rETM3VY44cm6BQDP58XGmXqmx6q35gyum7uAZiq0uFuVcEoef2bw4rd-iVsy7Sg-MxYqQp6muYeilenKM71dJMImuGN-cgRGorWYr8MHziSyPlUkx-njXmfdGc5-3woHol9jCrFcIDRd3R4JjPv_tN00GpcIT4p3A50lCD8nG0nsppp6tPmshdznBieq7lpmCjWIXkgNU8qLgN0iW1g0sbu1_mBZ75Cl7YitvbwY1d3kHmJQDhyFgWtwBb_c9oQvwCKcDRTkolFhIutzxGWlzfgkg3pLspuy7Mn_4jZG1YENUXN58es7D0MP-JJ-eqREwwR0ZqA36CIsBs-BSr5ZhNTn8XaO2_2J2GiZikPuAgzv5ZGo-TLH6Pl2QoQrNnQA5fpU0AQ_Sb7NQr-Sw4VHDJGTTiroTscLUgnqw",
+               "width" : 3464
+            }
+         ],
+         "place_id" : "ChIJJ3O0Eji4zTERCOvcseuVnnA",
+         "plus_code" : 
+         {
+            "compound_code" : "VJ6H+5G Dengkil, Selangor",
+            "global_code" : "6PJ3VJ6H+5G"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJJ3O0Eji4zTERCOvcseuVnnA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1697
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "MY :, 45000 Kuala Selangor, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3416401,
+               "lng" : 101.2463485
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.342437780291502,
+                  "lng" : 101.2490101302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.339739819708499,
+                  "lng" : 101.2463121697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Malawati Hill بوكيت ملاوتي",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102546794971378318513\"\u003eWatie Ikmal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVLw7r05OksRRmEvBkxBOuhCrAfZoDK0Df585_gPlc9VGTNH6Q2VrCW0KhoDHjp2CZ3vv0148YMkf0lgqrACQkheayRTLS6pNi6yvk_w6dTgx9uB0_2nh0DNa67P2q9N5ec7WztwrYbNj_bKwI5VG0Awv0KrCU447dsEMFgMyhRyMbkXtREwuhWWYF_Sr_wY1D8DnqHv5O5VEXobz88pMzn5dz2miZplwzbP3qQm5v-00prFhO5kq0b5CXGJlcopdnNNwfXj1YRVq-4HApsvedBtO7MVPDxjmSvqOl3nzYjboy34Fv-v4aWb60n0B6kSjla5JsV31UU7sJO5_fLUd-j_GCg1nBAB3nONOHmmJdwlBNFi9S7IFa4WlYdyUeOdUp_jKkMiA_HdHdVHQ9NMmRKnpVKt3PQccR38BG6V9YhiJ9",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJDbHKEVnzzDERB0onrkufykA",
+         "plus_code" : 
+         {
+            "compound_code" : "86RW+MG Kuala Selangor, Selangor",
+            "global_code" : "6PM386RW+MG"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJDbHKEVnzzDERB0onrkufykA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5785
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "45000 Kuala Selangor, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3412187,
+               "lng" : 101.2449326
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.342544380291501,
+                  "lng" : 101.2461759302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.339846419708498,
+                  "lng" : 101.2434779697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Altingsburg Lighthouse",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104333266434644550131\"\u003eSelvakumar Appavu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-td3h4sw3Kadem_MQb6_fSYaH1wFNKpCcJ4_1WoDtu4mUXT2EOIjD5GJQFs1gn5LuI3KOQJZJTHf7ipgjjrEPM1peOD9KC0gALC_KHBAxtFd7_W3DKaFDGuOCcSYNKrTfS3rJC5W5t5lkLv5FI9BULwY_6FhSrnoRpSO1Nc18KctIZQvn-lFTIxYZq_Iffo_lMLIkFDR-GbfpzDVuII_pdOIrLskV4U5M9XkPZGNNLgZG07DB4DJhbgPfkjV7hTGu8rwz0Bbuy86vsYDcyouz7LSyHEXiuGuMttSrUXKsTtWwrnG5zpgjBbHM5DJO03YWSvCIh1N_fbA_atwLxRm8tAETctDOAiNrvFlCqwHkQVj_EOIdmxDN4258dN03hsKWglyXOTlSt9oa9FUP8aKgM4iR7WMwJ_XManZM4c-3NgPA",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJOdHfD1nzzDERtAKG2Sorwnc",
+         "plus_code" : 
+         {
+            "compound_code" : "86RV+FX Kuala Selangor, Selangor",
+            "global_code" : "6PM386RV+FX"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJOdHfD1nzzDERtAKG2Sorwnc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 210
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Budiman, 42700 Banting, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.8030492,
+               "lng" : 101.4946436
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.804652380291501,
+                  "lng" : 101.4957509302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.801954419708498,
+                  "lng" : 101.4930529697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Dataran Banting",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111827498501360581806\"\u003eSaiful Hakim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vg3MbVjrqiyf53U7Km91A6UuGy3sf9qfsIA_4fnnMl91FfANuPpmIOTE51X91yrf71RS_IhCIihP7DiY0hHA93mHiwoD6toHQY9ADXJKtnycfMmYiC0mRVp1dOI43wo6dkwe1swc3WRjpKZOXBP3Sgs-OC_GoQtmaIHYDeIty0dtHyicRPBtjXtPlXCN62icl6ipZ3z-yTvnG4LWJw8iqxVFpINvaxRcG2Izn7bwnn3WUK9PLpnrY7_sfgl7Thrg-aAqrUz2ixEOL7pt-6Kp7ZS0PP3Furl1_HVbsr7LxVjp3d5QC3ldEo6R2RUPUAYbhhnc7EUqqgeofcHViSCZBcDWDeyKdR_aGmnUsggBaplLkSrNK_dN7nDiAxbOiy3tgIMIorT5ID6baiU0N-SbVyRpFGgzOnv6TKG0JtKfrBMWna",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJLyqtT5ykzTER4OfvRE8gPk4",
+         "plus_code" : 
+         {
+            "compound_code" : "RF3V+6V Banting, Selangor",
+            "global_code" : "6PJ3RF3V+6V"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJLyqtT5ykzTER4OfvRE8gPk4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 310
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Air Terjun Sungai Gabai, 41300 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1660921,
+               "lng" : 101.9090289
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.167347830291502,
+                  "lng" : 101.9098659302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.164649869708498,
+                  "lng" : 101.9071679697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Air Terjun Sungai Gabai",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114567647498869187867\"\u003eSufizal Azwar Sulaiman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uHzZ9m328N4ZE_z8Dy8a5koiJYoXUJVsKnKaUsV4ID1gtSR9apCkozWqVAdTE_h4ShriW8bor11VUNmJA8fjrdZDbzv5XWvEm6HBqFEPdCdP9HvwArhwMla1sLTcpzVdutrbKxk2bSvJoXJHnpKrsqWruHHgNOOmXTm1d2DbaYh54Cs6bJTPbTsoqLSx8rxhfWWNHo6ptwcbcLNUGLrfiZokM7nkqNXDhCMI5jfKGKL-a1RWArDAe58GSTM7JRychGCeza9j30qBPrTD5GNyC-KaBuKCaNg11xDhhgEMvyjRqHwqfvpyx07_lPOB7cFLnMJj9ofLExDpx82gP5Jf1nwcLHXcOX1m7hEFh22Me3Htn6LLZxC0ki1oO3sxax-lhmOAgyQ5ptoEWsCv5CMzecfZim3IR8Uv_HGaEX45eoVz6k",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJRXVLAMEvzDERc3dmxRjWzNQ",
+         "plus_code" : 
+         {
+            "compound_code" : "5W85+CJ Hulu Langat, Selangor",
+            "global_code" : "6PM35W85+CJ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJRXVLAMEvzDERc3dmxRjWzNQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 963
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sasaran, Sungai Buloh, 45800 Jeram, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.259268,
+               "lng" : 101.3065975
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.260567180291502,
+                  "lng" : 101.3079884802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.257869219708498,
+                  "lng" : 101.3052905197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sasaran Art Park Kuala Selangor",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115687710804688317819\"\u003eCynites\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sJJPYmZS07ivQ2tltl7_VTVuF63P0VuM_Xxyqe-BO2hOhjWJ_zOyg6w8epTRtFU-VPa16r1Ho73h0FufI7mbOQESUBAtuXNypD1bzSCgFBCZDGtdpio1oTCL8Ra4B_Jlr2ktrTtaaxiBy79ru_enyPDzK89_QcsKEV-zZdGCP7PtMJYL2fmiSNdgKXO7eUzQi-gZat9VoagqSOcgGEVsYwrzNcUoLxbtYPmG4HZfu2HQ33E0YP7ZPAhUslblwVOlh4UkOLAtUD3PVr16FsTmjjHfatqudClFelhEqqYancb9A-aezb-OCibR1-PT7h-LezeMo7cawsdz9fr8P9L_WWQ4LgYDGZ0CVLfRFmzOIDiLodft8anQaOOOpHXLYYqnhMR6gQqBQzXyCDrQkDlehoTVkFrELUXzLFQKhgtDKq0g",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJke6JeGb2zDER0TAsXeF4BnM",
+         "plus_code" : 
+         {
+            "compound_code" : "7854+PJ Jeram, Selangor",
+            "global_code" : "6PM37854+PJ"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJke6JeGb2zDER0TAsXeF4BnM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3065
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Stesen, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.041323,
+               "lng" : 101.4491882
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.042709080291502,
+                  "lng" : 101.4504340802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.040011119708498,
+                  "lng" : 101.4477361197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sultan Abdul Aziz Royal Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116070391410908330491\"\u003eDin Sham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t_vSJjLM47dwJ305iampGWk9wqXopXUyplCpEixtnKbEuLmWti3uIfzRGOOMZT3Bs4rXWkaScLbtP8BtFkaP1A3Nt-UOzBVlt88T4jJbJcz7eMBaylIH08Ledt1HOWYLGt7QIt0ENKU36qhyjOxmHbW66ivairWT4-i6kXAizTuDDCn9bJtzQEyVEbGGkBJz2sQ8QuTbWFTZeM5TLgMQ20pVfaPgEHaXGxCb7rjdsBV3Fdnd7JhE5SzhIQ3zowlLXe8ImSZi-4Y3jIJAk9SAtLXhfbLIclWT32Xg-eHaPaUHBO2hSWNWM8JHbDCl4P26PU1OGZiOKINueXStnJtIr-3Kc7omz2RzLK7GCeq3_HZir1nBkvgfJRw1YRSZ_LKHL9bT-kubrG5pwFuIPFeYhuYR8NIZ3kqJwsNcKRMe5riQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJJwdomU5TzDERLuRfw43IhXs",
+         "plus_code" : 
+         {
+            "compound_code" : "2CRX+GM Klang, Selangor",
+            "global_code" : "6PM32CRX+GM"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJJwdomU5TzDERLuRfw43IhXs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 320
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Orang Asli Crafts Museum, Jabatan Muzium Malaysia, Jalan Damansara, 50566 Kuala Lumpur, Perdana Botanical Gardens, 50480 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.137701,
+               "lng" : 101.6884631
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.139112030291502,
+                  "lng" : 101.6898292302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.136414069708498,
+                  "lng" : 101.6871312697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Orang Asli Crafts Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111445015174027470368\"\u003ewoelly william\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v0AaJzPyqiW3rMf31n63x_JhtAo3S831JzrBiEAl5_nUGo9YvwtWV7EPfIMb44lXX0KN4RTaA1fL6mWQkBnclTMCAVAEKEJE3c3FFK5TTPYoGIWPr-Hr-9ETVtrbmLK4D5_5DzQzpGj2QX_hk7ns9kLyKy9NoO-qJ0bzBZn3ieg_HOzseQxLoDo4M-hAEOYO5Fh-Om-02FbQLSUfziZELGVoYh_TWwfJUp_05c2fVdIWqxhwS078xF9ofmAlYoYF3_n_K38hBHjRCPU3FjdjLxgyAuYR0sjo-HITw4eQDdR7ud-T-qI4FCmwFSgWOUX-keWq0xo9Vym1Fg04AyzvUBOPtIGQDoI3pWCZNidC47C_1T5_M7Yn2ex5Z-HV-mrMw6mjoKyJzpk3wMpH6iU3KqpsgaW_wzfdWB8dDT2QM",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJ5Yo1z7lJzDERjQ0Y3YzFkVA",
+         "plus_code" : 
+         {
+            "compound_code" : "4MQQ+39 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MQQ+39"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ5Yo1z7lJzDERjQ0Y3YzFkVA",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 237
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM24, Jln Gombak, Kampung Batu 12, 53100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2942924,
+               "lng" : 101.7321237
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.295662880291502,
+                  "lng" : 101.7334416802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.292964919708498,
+                  "lng" : 101.7307437197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Orang Asli Gombak (MOAG)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114846080547263753599\"\u003ecea\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tQf8kklnE_UAPcVab18D9nYHL_YxoD1s73M_FOEfWCZqRfGU-8lLHH8SCOldWLRQKxn_bUVqmO4oLiLdFx3JLj2dPVqLCYzXqSmKjul1CvWPMHrZPXD-gwwkO7XCvU_oy2DHSkqrhcp3akCpDGyk6zkUus-fs9Rsgt8Zb-UuvivjfL8jhnyGpl5Zu73eJc-uwb1UoQOwtyh6rY-mN5jXG3c13KdAh7TyfjXK-KtTpd0IAUciBnpgX2Y2UYpgsvnWknRzCK_wIAuxuzoirruGaFNxm53OkKoj446oRVuCzGjujN_qBnjQzAs-z5U_M5Fi8FpkNoi94Gd6g1E98BFEoY2W23fJIVVN7wxMrnntDPspDxlgOZ5MQjVxZjAQouS9WDKwk9EIJ7Xf2EERiOe2upncDmwm2bG1SIJfJhEH8nZg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJPRPXkhQ_zDERlQ_RmCgIwy4",
+         "plus_code" : 
+         {
+            "compound_code" : "7PVJ+PR Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM37PVJ+PR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJPRPXkhQ_zDERlQ_RmCgIwy4",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 376
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Fakulti Bahasa Moden dan Komunikasi, Jalan Upm, Putra Square, 43400 Serdang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9997214,
+               "lng" : 101.7158917
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.001151980291501,
+                  "lng" : 101.7172513802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.998454019708498,
+                  "lng" : 101.7145534197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Warisan Melayu, Universiti Putra Malaysia",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 300,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103813266336241569351\"\u003eMuzium Warisan Melayu, Universiti Putra Malaysia\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tOyjSbcaBncSf-UfW8yEr5ffl1dw8F8InvaDA8rJhEByPfW-9quZh_oN2P4BCKDdsagpL5GShE9HdnjYcJ00j8u5MTZui9AQ85fU2BiBqr2zOBwS3sIAX3fxCXO0O5RMbzXMhE1cqK0wpoDmXq0HUxmFH8ztSgFIW-vHx51JYntwbsxr7Gh4YqOoNEE7VmhvNZO7mUtFfjdCZASRMlIwJCymy50ZbngnU2xOr9AF5YPLMVR_QhAnFuTfSOWne4gFPXsmc4Qde4N9nYGvlL28c05fjHm3gu1SNmvzbAUOnJvMmPRNWdPIdBXKy5aXSQcwqZSTclrbnLbsATmRU552NsOXZz01BS3g3kVGjCHxUFHZdFLbUmh7k9Yjn2BuH-bWdFA0uSHnMFkuWUh_0Cr6WRRSk4_p93PBqvpeG3quB_qAto",
+               "width" : 448
+            }
+         ],
+         "place_id" : "ChIJhwyaaVi1zTERE8FMnv4PMYg",
+         "plus_code" : 
+         {
+            "compound_code" : "XPX8+V9 Serdang, Selangor",
+            "global_code" : "6PJ3XPX8+V9"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJhwyaaVi1zTERE8FMnv4PMYg",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 240
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bukit Cahaya Seri Alam, Taman Botani Negara, 40000 Shah Alam, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0944963,
+               "lng" : 101.5104943
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.095804380291502,
+                  "lng" : 101.5118510302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.093106419708498,
+                  "lng" : 101.5091530697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "National Botanic Gardens Shah Alam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3423,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102716332102962668619\"\u003eAnnuardi Mohd. Ali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tsHRPqvRDBuNQ10R-uIx8XZZBlnzcTVwQr6V62CJHbBKRFZGmhszKbdP8t4dN92Pbxr7VvpcZkkIf3Fo1byJ_0k0XYSk4xYDBgbyhw-WOa-tGMltvoMtUI-hhPTW38F2fikj4NI6y5xgn9lyB4A--G_erTC1XEWXCmtv5q4iFMYf-5oMHnJ7E-ez6FBaManSv__IIq868MNtS0ACYr_msC0f0DDM9noVu16zW3hfKnJuNYWqTdWFAPlY1CuPpRMk1vCh_9onc0BT2AgmlU7hu0lxGMOp9Z5SUNVqzxjbxN85SQmOT2oO_HWmHaACespLeig3cpdgFlaYUlQZCpDmt5vuLHe1JFoHsFsboFkegLZQIzSXqV_MDBma_4KjTmV34A_Zdk0rJ_Cy6dCEkJbucaWDYB_yMreHogjdcfNuxUKC7x",
+               "width" : 2567
+            }
+         ],
+         "place_id" : "ChIJVVVVVRpSzDER6HL4kTQP1uI",
+         "plus_code" : 
+         {
+            "compound_code" : "3GV6+Q5 Shah Alam, Selangor",
+            "global_code" : "6PM33GV6+Q5"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJVVVVVRpSzDER6HL4kTQP1uI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5184
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gombak, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2378844,
+               "lng" : 101.6840385
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238803480291502,
+                  "lng" : 101.6852723302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236105519708498,
+                  "lng" : 101.6825743697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Caves",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103716561345803065971\"\u003earavind sp\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-spyrMoMJyFvZgUxXp0p40_G3de7qHAMo66GG7RN65pY7leUpXi6-b2NzhBu0hXAOxW77flrV6nOGAla3n84J7MpD7PwmRzYMtWsG7wLS-P3xSykgvUuv6rEht-SMhY0XW5SFSKnuni8oLDVSxDZP1p_4YWpcnpPJY78XkO80PYriI81O4i0ssWiVU4fgqNrrNWYRaDUKmWBXGIJyTscrK_yW1BO1sb7Z2rgdm7hi-ItOAlMVv7PGMofe17olYBHpACgxoNDHAQVp62ihjq8clenQwnBr6REhy5wxFZPlBHWvf37ZkUwHM7-SKOD7B8RvJTX6tSPvBYKdXa8JAEm6q_5j8J9ugP9jvTbGK4yMst0g8YYbl3uUhmHjLc6v74DIcnVhKNsGlP31hgsfE7iE4GP2JJQBDkoCl5jbiFeOdU8-Kq",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQM+5J Batu Caves, Selangor",
+            "global_code" : "6PM36MQM+5J"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 78754
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2 Jalan Punchak, Off, Jalan P. Ramlee, Kuala Lumpur, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1528762,
+               "lng" : 101.7038516
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.154193180291502,
+                  "lng" : 101.7050922302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.151495219708498,
+                  "lng" : 101.7023942697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Menara Kuala Lumpur",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118189487791872795219\"\u003eJelle Pera\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sdlVRWkRORp7oR9VKCJkq20Iv5WeHq8iH7KyQlg1WHVLDKp-3wUBcLnZgHrBGbrc6XkME1SBXgPTCl8ADhxxoXQ7MVw0bCYcxgvvSXvHexw5EDlcuqNjuSdAqYQ6fPWgJ3tAhTf0d-7k_PqTbH0fsn-kbSkMbltklqwGQiWMeVk-0DXD0TNkXYryoGiG2cfjJMl0Gp1dEz60mR-z1qJUdDHZmiPA7rfpzISaysJI11LbGX6ps0Pmi19gUucA1Tydi4GBsr585QUDZTqXBBhVvdipYyjN_hPfZf3ATGCbzHe--rd5toOiUAMunqFwYawh9EIu9Q_Sp5kGxmdXz26WYcuPkVhvcIhsQThc2vtsRb8BC4nvmcwUVrg8PxtGR2Pio7SpPWv58WodJOT5gPAq4GH9Ha6EMnJzuR7Q5dFQml4z8m",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJE1jNHStIzDERujrDO85YYBA",
+         "plus_code" : 
+         {
+            "compound_code" : "5P33+5G Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P33+5G"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJE1jNHStIzDERujrDO85YYBA",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 41515
+      }
+   ],
+   "status" : "OK"
+}

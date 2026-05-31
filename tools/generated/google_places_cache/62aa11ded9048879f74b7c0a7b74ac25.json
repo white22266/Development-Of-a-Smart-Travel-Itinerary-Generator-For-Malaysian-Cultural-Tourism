@@ -1,0 +1,370 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Istana, 33000 Kuala Kangsar, Perak, Malaysia",
+      "formatted_phone_number" : "011-1769 6364",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.764092,
+            "lng" : 100.9508587
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.765320880291502,
+               "lng" : 100.9522496302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.762622919708498,
+               "lng" : 100.9495516697085
+            }
+         }
+      },
+      "name" : "Ubudiah Royal Mosque of Kuala Kangsar",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1730"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 12:00 PM, 3:00 – 4:00 PM, 5:30 – 6:00 PM",
+            "Tuesday: 9:00 AM – 12:00 PM, 3:00 – 4:00 PM, 5:30 – 6:00 PM",
+            "Wednesday: 9:00 AM – 12:00 PM, 3:00 – 4:00 PM, 5:30 – 6:00 PM",
+            "Thursday: 9:00 AM – 12:00 PM, 3:00 – 4:00 PM, 5:30 – 6:00 PM",
+            "Friday: Closed",
+            "Saturday: 9:00 AM – 12:00 PM, 3:00 – 4:00 PM, 5:30 – 6:00 PM",
+            "Sunday: 9:00 AM – 12:00 PM, 3:00 – 4:00 PM, 5:30 – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100377958301743326698\"\u003eMohd Ruzian Mohd Mokhtar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s_8SXw1bAbGsJIWcD540pEK2vSEsx9YG0iaR3lKCuzptt8HKkUl5amf1qBPTGRz8PZVOMrpveCEkXD_10FFKx29pSZQHnpKrHoU1_23_3lHXiXNsvpDN5wDRQtsF00dr6jSNwyD2O_8aTRPEhD4u6poEWlGQPZqcscyr-tmhsllNU436_evzTSoeZ3-Kizy4yXqcVyBetDpwEqpWyKRvoR9WDRdsUT_Tg_wltHdzB9T8I0YamydOstbCI5D8e5WT8otgmqzbvAzzI93w9ZCLwq4091ET9amJYhM_hxmCEyaZpT9MO7LreVsFh0etZVeUFZArm9AHhVnB_lZHafKw8zoLwceSjlCKWDVVgpOQh93jQRGX8QgQxD3SVEcEOCDMDP5ia6fNsp2Y9sO-QlKF9KdRT2Z0iAeAqOZP0i28AKecs2",
+            "width" : 3600
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109118466222587254325\"\u003eShaiful Samsudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tTKlXOmfJqPjGqrqpTuuRBHhhfZotjY4YNn2doMtEi0rzOIwCNwc4a3BAO3SJ302ODAUvodKEP4UE8NKOUGEfRl6Gv0R1eRLhr0DtPP5yEG_Y6KtYimbguV-Mrvjpxh3zwKIFehm0BIh_5zuz5paO041YMs2NoSWmRTodlKoklnTSTyWWCYC-EyBD0l5YNKZU97cIVZk34eXBxXf4ihrqpzV8w3X5-93ekiHEbv6h8IRlYM6Y8OOBTDK116iSoQkDUOXqbhPoAnSPYYJgCXK3UHxnRywHghotFYVTFo2-Ayo4JKATRp5tdZs0DScq74dIjedwNBZ1SCpeziAUjPE3vwehPT0gFtbDbQMuCZ2vBsJejAcJ3w_jlKBk3q-zwNGRKs8u4j0YxyHA9Yx88yL2L2JbbLSBPRI8DEW_WgrCNKA",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108539661434104769356\"\u003eTakayoshi Tetsuka\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u-mpqaNvecKKmv8x1rB5XrKenSnlHOZvhIxHLaRv9ekkGkXr_Y12kBiK3aoAm_tIjzqOwq1Pl_lPpKrG1YBnWW4cgGvEdoweZyrtQhiTg57_G7xb89boJ_Yx2PTrKVblIyuPDJROUHVynhx0wBWqKqGhV6O9i3BLlObuEpkWVlh7aj-_CX6l7mUUBryIpd4CwmNLsi0LHcxbnnf1bw7iuYkVRWKY-UOE80K4SPFlbuZVk7MtmJVzeWtEKDSRd3I9ESJlU7H-9jyd-rP7RiqsYZ6Dr8Ep__gbI4aOsXrE66Yj4P4gJIHguPp-086k22ALDnzdWURU4xuSza9ekE4rnOoPoldOjFcwvdjh9Kk5cM20lj2FNDUpE6WhK00xzTmLmN1XfticGqMFOi8Un492ND0ihRxW8x_Pqp3otUg5FE9wo",
+            "width" : 4032
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114382871718265669361\"\u003eIAMKIRIN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t-mZdomMNqerYzqTHiKqK1qKPF81TubtNZFE6PE01_-53ci-2M-pxyin_l68-oCxGzdnqevEcjnmSzb8ysDExn81sIflfQ0j2zO5TJDwDaMGrPryjumnvEhBEOOAgix53zsdO9-WHBWRpgkyRfCGB90cvs2xNfypu0ckdCDF_ofqCUF5xi-XCzBBayyJMPfyEJINwGDETUOGpK7Hh-C8dnBiMXVuJFQIIkDFi4b3_PBsRe3vd3Czs5RmuMnzl-dSgfjgnLvUxij6AJ2y9dI86sBg0F9sNifsPBf9SOq3of14pS1rDrxYPZtW4Yl4brA3pY8K5ChD-4sUBmZfJ4jbusKEiDqt5uAV8RTfBIRHWTvWPGHoQ-wJ98FixB-Z_AiDp8tnJCFEJuaU2txjTQi5jL-NLr6pCDHChh8UYpMWokhg",
+            "width" : 4608
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102784674923902243926\"\u003eCB D\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uD-Wt_cvDGx50FtJNpVyYdoFNOCUp048tXqCFYQZIBa3uGU9HDmQLkNcPD5STzaABKpMbdwVM5m3aEAydGCOUSylxMiZFDo0LixCw_F-kjPJmLRPsDipUpNbQx0MBbnNOVYTxU3rUNLncOCj4i2UJ67kXkHIJtBJo7OYMbMcW03AFCh4BblMCblfMg2EgZ12m2b0jdf92gyPh8R4wFwMqZqmJZALLgppfUIRkZ1yDGbD-LXjtfaazSYCerKPcfzZ4qXpaNzIA-K_Kxetb3JS40zUgsLgOO8ihWs4L1qH5T-l2lpTjL5GsaY5Ru24sFw8jgddziAFyPzr3rjyuC3rEXp7NNTx82B9Y7p1lUDq0odXH-MmweCiRT2b8Pqma7aKrLRMLuaGoZRldg8M__UVQx4zmTNpNO2DXhnTFtaauv7g",
+            "width" : 3000
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100766217857999857369\"\u003eIzzat Zulkhaireen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sR2ACsjXl5cqUhOCxG1j3Os72XMwaLTvYKFvF0kJXUbaDC_KCwor0ywzdDtDGwM9e22tfH9XgBhULZBO1cQpFfvy4zWmAVGcFZMS3pH4NTmjb6dSpRq5f5KAwpFlS0s8Pqw92M_jdD4w0s7ULb6iDuvhbmWnzQ8mhCM69kpNJpR5yP1_9KYlJNnrlvVZIQP7yNmdijrSb0H_-x0oPUJWtpiimlo34seZGEnKKRxqNeCIFfPGjTV9Ac5LHcCOnBD8lMuVFEbYtzruwixNNvL4JlJd40Xpq3UzNsbRsnelInQUoUUc_K7X3baEdB9AihudEGdU5fp-DG0t8Su7VcFbvHcktSs728Bg4x-u1AJ6ktZhSoGbl-mO5JY_6uzKEe3rCa6BKhkmqWgxXMn9Sv9Vo6d2cXwxdK1hgy5NtYfmlYHpPJ",
+            "width" : 2448
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111755574124358785225\"\u003eMu&#39;allim Kamil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sUPwFOYAq8xcrYbIxB6_tUwyMX2XZby9ZvcM7Ch3EnON3hxBC68TQ6rmFHoB2-x6802mfRp9BGvasJ3TZqNj9hgVaUlNSOf3sA37S-YAEsZWRm3KzUSHIaH3W6i_ILogq2z_Jr-dUKIJh5Q2bc14lVuqsttQpmj2iIV1K2E2f3N5GR6pRfmvUKp_Y4zPYT9JFf-nPDBOxf0n_x_-3gKiGmD1OJ4Pj9rdZHB-1KkkeII9UFRIEMNYNUaQuuH0yR7U_w83qJC_V2m8w1zlRIj0NPkvwb-qTIiQBCSrw7c_GiyJR30p3ZXPE9zIRX5w9E_QF0DusEK2XNhDVMszK1ZnGQA0AaDH-cr5AkTwnfj-of-8WaZSMv5-GJ-2_Tk-bntkCGVLSkNbNnEehos_8PW9JCe9e2m-7d8dRNAMSvbevY-ZAicIqFgSzD6iLM6nz6",
+            "width" : 4608
+         },
+         {
+            "height" : 893,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103903843843472235932\"\u003eamer faishal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vys7fvYh8QhnqoQ5bYi1VF_bpAiWdMWJPVG3J3sqlMLTO4ZICUJ5YzdBaugagMIrLMvo9obtajarO7JHeeREiME0dQ-wA9E4yiGL-KnoL32wo-hSrM7hrz1Su8qptC0G0Wxg3fFifHMQ1zHABHwZzildbv-LvDjIZpr6r7bIUsbAuDBJixHwVBNjqfj2xj4xG5quG8KHk3jWLaaj0cK0UcP4Lr-LwL-7sfDpH-8A-_I7VQN4m1cn3XRP_0ukW3gHQMsQp-ypx8uOsJzmVfBnfFB8GwsQi1Ue-DC-gx5gx1G7mTmgwqi_zJFFEGSDSgAnmCBxwk0ivoVje1INbTzRvnQFEdZFmX8LllsDT08EoxSWEFt2Ip81VxEMoYibu2tpsbVckDrOtJcTSsniZkAHp1VJspVxjyejN25BMxIdVSxZ65lClxCBGJ9nvRHaMj",
+            "width" : 1265
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100327572588942949338\"\u003eAlia Marini Abdul Majid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t7IjGh0ZE13xBHzXN2EpZkXldADk3gj6IQkvyc0JpaSI7hU4l-ytnz4_w4uIFOekVXPIgHQanT_d2GEqQUMKgqkRQimoLETut3oD8azMEL1myeTzx5CQ-JGe-uFyNdnc3uo4rY9Poy3bUFISrhEX_otjtNjKigrqvvnG4WtVgZzzGj3hnoF0wGa4yI7OTSH-eGSryk700seK5XVX71TJgdb8BRRxtfByivTljPe7mFelh_0Ck17lkWT8KT_8JWFQUxj8Qy7wgcF0L5e-PQdWRjtpiC34aOTID47mMfACNvbxO6NmFiWGWD69lEE9w9MCWATDNAGJ263XDnHV5rHhWh1Pd5-Tvcji8a1qsInaAMAHzvVO7s5MhvmFtEcCTEWlXFZsYoWF2JOvgK7M9SKL6FRlePLYdAQ1jUDFd0smVRmg",
+            "width" : 2448
+         },
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112682254902702508495\"\u003eStefano Gusmaroli\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ty_oTTTJcTGiyMeziYFM9myLnSPqyFPWjPA7q_yEFX-1--ZBqRYs0J9IeVLnb8y9puhbri9HEFmD-V-mNFw3G2n6y1G9BeaVvxM-PHE7itRPOyHmBChed-FJpp7heiRHC3rXfPeypZpetkpAJm1US4-_iFzmnAI4wGMU9T0SVHijNJbHmtQsUxhtaUIoQDgR3G9U_KbMmBIs9UmU0bWQne0rT_1zMTIGE2wrFMG4IzZnH7bq8RB3S885Zu61vXs3Qy4z5UH4V18q2gJGC-jCWXk1bK9B4e-ij-ew_xsFkLZMh-Kpp8uL9T-FTEFq8Wr9p4GsSqHDKSIvKD9dpl2PxhIoIcZ63CPOV99WSWf22vJMc92ZYgluU7N12VFVXykO3fEtDfcDdtRrVmcf4zvLPJXiKHgQMRCsc5vBjMoYKO-HtX8s0wuutTha_F5KgV",
+            "width" : 2604
+         }
+      ],
+      "place_id" : "ChIJt0F32Am9yjEReVg4W40n0U4",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5679364093165197433",
+      "user_ratings_total" : 4093
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,77 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Beluran, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0248303,
+            "lng" : 117.5545669
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.026179280291502,
+               "lng" : 117.5559158802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.023481319708497,
+               "lng" : 117.5532179197085
+            }
+         }
+      },
+      "name" : "Air Terjun Mandagu",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113824597192782914060\"\u003eIvan Joshua Michel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tEHXUl_OtdEv0wu576eoFdUaADqGrgCSiugubtELzoRmUYIhLmhOoP5eiB9E09wdiikZnvwBld8HFQJyKNF6MQWLZtC7Deuu-ZZ1VyTRZbyqiZG5X5myYZC2mcMgmqHJcfkQ2C_ekyT6mp-tGLDkPZFjIwYWP2KET5N9xRS60nCLk5q1_CYjvwraCRRGW0XgowlNC2YPM49TbtESEHjCDSs5O-6Mv83JGffwDDhN0qt-7Qss5eFcMShFJHFVMsrbdbeNfA-AFZJmHosgwoSSTwZooel6Jk6ma_wK0zcgO9kp7BZ98JxSUjx8hKnlg4Xm-L15XYlshY24R4FXHVlNJpY91p3oVOTU4H1AuU07vCkIzwbbMXxr3t4skElcTQi_56oQhUcObqNxZF6jj1Kg3-pKKRVSbWETeODnygyv3r-0sB",
+            "width" : 3264
+         }
+      ],
+      "place_id" : "ChIJh6DNqsA5OTIRMfSAdQlclIQ",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9553361905255511089",
+      "user_ratings_total" : 5
+   },
+   "status" : "OK"
+}

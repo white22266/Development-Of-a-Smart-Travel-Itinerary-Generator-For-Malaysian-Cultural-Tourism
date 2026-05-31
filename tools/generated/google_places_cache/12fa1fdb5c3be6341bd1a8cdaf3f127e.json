@@ -1,0 +1,94 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Limbawang, 89800 Beaufort, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3726801,
+            "lng" : 115.6979141
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.374032930291502,
+               "lng" : 115.6992666302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.371334969708498,
+               "lng" : 115.6965686697085
+            }
+         }
+      },
+      "name" : "Bulatan Limbawang",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103074690695020739957\"\u003eLissa 96\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u3yD3qxrIzKIFRnYwrD_CpVQje0BKfDlx2KTPOJSMOBDp44IGo56J3J37PQP8HOimNudU3GP-ku1ZhVzcUx_blSSNYw0xCwGxM6rO4yhh9in8K1BLZU2Wlo61DR_82G34sPL1qK8KKSQCRslYaArFNSYrwyxsFNlYmDdo8TC-NM3x4ZrwH2z-N2BlM4DOJmLNeMggXTcCEZL_XR7Y17o0HMsuValTe-wbtk9W3coEXukMZwQGqlqj3-FLR8ZypxZMhcoNmJYhZlIWQw0vikPldxuc1jgkWrZ0mutvqOA3EMYVT-Z_T_4UKy-BuwfM8YvlmOCdngrNax2S6YI5Xp5Fg0BJfaXH9HtoQZ1napX8J6oGeH04NdUjYjepKfpZudxrQjB0SHD3DZyUbNDCu-_5hkCWjol330tuekkawO2w",
+            "width" : 3120
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103074690695020739957\"\u003eLissa 96\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-udV-4cImUFc2M1IxnqOzIdaFRj7R9BgMW5HPKtpTh7GV1C0rvSO__9ElLTOqKxnqe92tz0qNmSPZ4QUL5m24MPzBkKDAYbN4vMiTpreX4xn3Fy2gF_Yx8PJyNEUA13F1IeTtTLDBd6gGlfLaIQsDD5EghqojbhcMoKqjMJxcodrWpS2hzCGMh7k0VMnzPf3Dtn7-CzdKoZSyB4etlu34eki3xz1uk6ilY2p-ghJVcOWg6WTRGmtFu48b4jWOrJeYU4LWkTQuxXpQYarS_MP4wIr5u9f3WqEN1HBMwCcbOoq6epJDlbsTrk5f_mXiTQwqw6OwficaKryteBA9NVFpRFAG2joyBMDK-N9xtxZlf6pCbJvyQJcg17QwTnhd9QPWfx_Z-py0-zcsa7sTPyl22i_RroRJ9Ca2tc1t2ZYmASng",
+            "width" : 3120
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103074690695020739957\"\u003eLissa 96\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s_q-iEBKwklFAstuFz9k_bRsCJA3EGmC0XWRFfdOcAxvPxqU7QZFrkMnUxoxh1pKGWE-o0HCTjGwiOOiTRY6aC9nI-fNQEz3Hc0J_F2-LpxCURlb56U-0UGCLAK9rCW51u5L3HwFG5oUbwyrrpPlyUaCliMYwSxpBtKK201dQLD9Jl1ErPZL1vTSIyzw5qWOKeofICXJqWzFr91iZBOEamvfwj4vlv23R0hh-VYoRA1FM9BZsP885Zd2VSTPWhr0scb91o-zwqwBoAkFL-Yv7eKV_ZAFbvyeVL5MiYfjO_MsYd44AHqAUXAkJYUrU4p0zemG9J3W2nt1soKJgdurtgU7OjRTpAtcVrVAz5gc0xwSG8vd6G3fSY5tFPIuCiiTZxH_tpXETjsR_pzZ8eMFKH4c1zGiEVepbgpyJQlnNVrPIS",
+            "width" : 3120
+         }
+      ],
+      "place_id" : "ChIJWTF3ifnNPDIRbxKBLQmvmgI",
+      "rating" : 3.8,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=187654788442296943",
+      "user_ratings_total" : 8
+   },
+   "status" : "OK"
+}

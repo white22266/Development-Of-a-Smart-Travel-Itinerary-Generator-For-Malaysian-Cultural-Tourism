@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "65, Persiaran Endah, Taman Persiaran Desa, 50460 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2274 7088",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1219525,
+            "lng" : 101.6876678
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.123622130291502,
+               "lng" : 101.6892546802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.120924169708498,
+               "lng" : 101.6865567197085
+            }
+         }
+      },
+      "name" : "Thean Hou Temple",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 8:00 PM",
+            "Tuesday: 8:00 AM – 8:00 PM",
+            "Wednesday: 8:00 AM – 8:00 PM",
+            "Thursday: 8:00 AM – 8:00 PM",
+            "Friday: 8:00 AM – 8:00 PM",
+            "Saturday: 8:00 AM – 8:00 PM",
+            "Sunday: 8:00 AM – 8:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106009050344640864582\"\u003e山田正実\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSiW8WK3z-uO8RENR7mCn6Dp1PZkvGNoV7b5nnyxyUCKpy59d30QN-kK7PuyLDDJnNWuJcZCLDr6TBSY9l5eHjXAfJO6rTtUNYUMQlR7YwASMXNkifMT27dbsPMnsJEz7QuLxsmLGsmD6-Ga6cc2191gVODRUibgTyrjek2iOjnGLfRpNoQIONFW0RQs3EzZdQw1mdcBLpaLcaLHEd1CFg6nFb1MMNXieiR2iiVNW2eKbY1MyRl-zQrguSst8ulfjP-aZdKydv1SxAqeTmjWFEc3T3ggNRAThuOfMqHQ6PX7kHwOyMZwbz7bXF4sMOK2_5hIqzDgjpA8O5VZnPmwFlfYWdAFVMXcSbfekWlFVlb3o1qzykkkhDnlMvbqto0l8syj3PphCF10A13NIIzgVYea2ONiFAwzUlPgI0RWhKS7IKBEVrIxhLeGGpmw",
+            "width" : 4800
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100900730347456710771\"\u003eธูปหอมมั่งมี\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v0ZuvuduGpX53V3AYsk7E3sTiemDTB2GEvfRB51_b0XEofN98zUQiqYasALmSicioNhEh9T-8kUz6aA4c0CF9rA2EDJRGK6Q6Xhd0dzNejr8jbJ1gc4AJIPjFcQ7oFP6OGujX4ShdDW247MpF0BaEzxuiXwVC_hOTLcwER-xfkY7vNUaferKavJM4v1-Xdc8rvoeOiIynd15Vwn8dRxOUdv5NVelkJPPTRcG3k5J3L7A3rGhJ5ec_-ZfC6Yr0ENCLq6aEshIZPkG6JrqAobuVGsmTW8gaeTeiuAMaVx0u5RTrfJX73yLij0GcUcEqY2bGmljaSh4WkDm7WwhZWkmEz44fFv_9Lv3RRjZjmxC9hF2Hwn8o6mNeDd023uq58WI1FisbKo0Sh5euLGUOd4yanPj0Gn2rDMBYxXIFTIQk",
+            "width" : 3264
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117796559790020773811\"\u003eKoushikey Chhapariya\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sScw4yI6yjFj7rpKOxqXxjkOPIUCRwlubRaMJSw1lLzLeXd-HfRKNz-teJaLOpNmeC4kY5E_XvcB4TwhTaqZrTsVjtu-j918HiK-FeaQV6SWQBj3Lx5yHSiuJQ-4yuRnwuLS5yzfyUA8mx9dcSQohpHgY4TaZU-G9aYSlX5PSP2lzOmbMUj01OrsRaY4OasaKsZj2g4OX9OFh1c4RrfHAiGCkonMyF9fPXX749kikhQziYDlOv-ehZONUwmm4E_q1O1p0DOLYJBMwzHyfMfGm1pEDiHTTroxs_JUW30_N13oRe0XR1YmlqOzlsJzk-TIdFTEAJUdx6uGIUQPWFUQY1kQmpUFpdgra3sjd54byY93DInp6qcsCFaFuHZmSvx6yaaYy1uzImDQSF7Q-jd6f95EN_9qkVPf6msbZuNzeKiZVu",
+            "width" : 3264
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111083137364653085457\"\u003eSif3ra\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twKbQIEpHx0Jd_Y9x_M5mY94BLdX5P0rz7HL0ChaqOvTtP3wCf8LaO-tIn9TchIdLcANUcXAcJjTQIyqvnvJreIUAw0kQOmk1ds53_-jzmqv-zPJEpJi7GK1EyIWqsuF2U140gYgyk7MiRcTshOjBs5FrTeLVUhtWDIcDRp4NnB_tLa0_1dPhAM8H9Dm814ZCIEhtVsZTCf5zAasyfOPAQOvhFmnB2KEE7SHdthK5Sa4vHO4vCBEgOPsjwYHiqn4YWBhXawgF6tdwej8ohwnhQUXAcnh7jAqINlOpEzkS8tzTmcb-rAtR-6hjcN6Z1V_oVV7Q_kQNj1VH1rUVE_RAzkRQc0jnQpWhvXqj9ftl7O486X-pAIUT73zyWvAUKo0-3FT36_M8ub4RjQkDcgvjY5OLw7dLfzMiuP7XE1NgXpmyt",
+            "width" : 3024
+         },
+         {
+            "height" : 2750,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113077546317289825120\"\u003eJip\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ucNNn2P3sIoi6Hiz7KpIRYt8WvGg4GsEJWdYOlDj2k8w7qGhrt2R07TUwzJENouuK_y7ETEMeE-wuxb_xGtn1knTneGGJ0vngZCKTxh8DGx6e-UnDZa8iYu6rhhGQSv4WNd_dohvvSieAeWcjye-s30NBHlZllqPS4DkbuEpKsM2GmmE6nlsClV1Xf-mpVX6DNap5EnMYwge8J7RAVzmZU0Qt1xlIIt1bjxcR9vXaitYWCa26O4FInJJaWg859wjyIgN9Umdo7J9JMG-76xDAUszX0A4YETeIdmazItIkQ-kfBMY79vtokzeZhb-F1bxqsPE0tiLgfC6jebHgAoIOomZYARJ528CUdnVvcC98DMCAAkVGROsDgdHRLgfiic0r7At5XsAqO2FHQMFHTWJVKEKoPffgYP7emJR-Vd5aNWTY0",
+            "width" : 3639
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111733750004359317513\"\u003eavayip\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZhpoRI6KHfKqgXfv2wkflRyKawXEVdWlH8d1WnL3azCoey1KXJsuojXq4vJjq_2ybAQCDqZI6h2FFc7kFZwWFoPgap1qDTI2eEoJRJgOUx0dXv9vI2hcMTZYecMtRcJ4SgeyC7Rg8u4Gbb5m0kJSOAm801WFktO8nQ6GORX1OrdpQjD-N14lgDw1-cT7iNg_7EpBcaQAswmJThA_A4mdjOyTrpZQV4VT0gWWVtYS-uTn5gPTlD5SdDu0PSsdow7zFAhDjm1ov3FK2cEDwRTVxDtfQpWMAJhTFugZ_IRVB7Ucerc6146XQUYy-l7Oph5oIKxcO5HeFVlzThRao28nn1Pg-mktMn-LDw8oPNr9JcEHVYLPR252_0MuwuR5heup5vMJRiykUWTGZlvRpU6a_pUesL1Y9ZgCe8YAZaYOzfNutY2LDZyTy_oSMuMk2",
+            "width" : 4800
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102773996021769244469\"\u003ewilliam jc\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vWm05NLBds7L_2tuPrrXmlVpC4yn2zNA_XREDby09jJ7xWuJ9i9xpnwO3fjVx8RZBQR22fOj9mXhQ4vHPAV_pu5VR7YwN3OLFUhUrlDSoWL4fwsbBj54yijfPoedPSFXg0UX5thksp9hcNTCgzUwlP6YWp73d6lnf0Um-osFBnhNb2FmSPPm6QI0vmA-czZlls9i6pB2sUa7uND3QhlNPMmGiL6NjUtHGCWSi3Xr0E2mbu6oExnpkBoU0Yf6PE42-af4Ugig5Mmuha94ThZIAQRsY2ttJP0DsueivV9dzJJ1XlzkJlNy3LLkeTZAoT_2hJ2iviPb6VOccuhxI6zHGEik14QHYl4RWpUIJt9uhYlZaDSW_4rM18sQ4eD7AeLUmuJWgqKpAB27IqsFoxsLcTHi3Upb1tzevsHMQ6In-C3g",
+            "width" : 4608
+         },
+         {
+            "height" : 3840,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100561516120536910822\"\u003eErik Lassi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sfdK-AKriGmJqexIwZq56jaFND72TBaqDFkBBH4kp92gaWL75etgYYo0V6EALkRtJixTBfP_cL305VFPtX3xH2y3mp6JwXoQt8eZ4GWrxpdJBZbgpUi0R187Wku-mqIyioJm-ZpATTQQe5Wvv21dzUuSxfUOwRvad-IcbWvlQRjRM7BwVeaIDf1fbFUCAfOiKbSDpJRjlAYqP7ptPKIvhWY5A9fuKi5wewSkjfL0LiRvPvoljeq3HqSqtJ6j6Ere_xQwI4-q5cLvuQ5k4mQRRUtkOSmeSYb6NO0xyVXe9k5ge8mg3VMnx0mMDzGREjT_YwIRsTP6UrBwtVsTsCrRVDnRKLnxNCPIEKQ7-uRvfwHBdnEn0dD7YHkUqtxM4Vx2leRS5aTi2MYVKXfclorSk2h3Bg7C3QtpUX5NtarKG7BOwM",
+            "width" : 4800
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100203758620813919542\"\u003eSee Fong Jong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uEZJpnRqRyZR7txP4d028FDq_vS4VkOlD1GGZvtKkalOpF1dJL95WhSjcYRISRn7kOIY-unN6UTe5qbhy50fm8higiLheINiqn38D2FBNNeAGPqogtoxbySLR-a81gpzbENVTf9xLpWP-0tMSeQlkWByK_B5p0yw7Kxexk6qHXjP5V0u9Nnzobo2vyspLcJ-FwNDTJi7k2l5Oklbkqm434L22-3S_z65D-CsAnbOxoWHIT5U-zNhbHh5hfqxFFZ3tfQtuJYYchj5IwnaFUSLCuDre_tt6hHiVBSh23eOFv8zutKpIagZpkdmjtNraOyCmfN4f2eQjf11I7saR4lDzS7-qG5xwrpFVgDLtYsxIswIqf5tIiZgKlq4iRzuLzaAHRxsGY0yYF-kxelbyxyXSSP9FpSGaFm7050vsx7k4",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112421299550658000303\"\u003eDeechai Rattanaphutphong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tOBhHEEbbxvwANIbJkbRqrLurt8GqnWp554pG7ROwCw3HSkj9fKzDnxQgaeBn4L05HScCa_SHyKUz6zPx2IlCe7XtCt3qISCybszzX82R_yeif-kWcQwMiyp1rUD878DwvMw7ACPss7s7qXG1mKonuZYgZN-R_2D2CvAgde9cVfs6zqNQoPphFykmpnVQ2z4lPwOOxrWJOpukfCX7T0sUrzR67DeML25k0-rtEYuGUGG3Pe8oEM-EY6iw2b3eTk26c-HfpB2PjJEMzd-MyisiwClcRHPISwHwaK3w7IP_k0aNaxplLNtuxxLb0TGVI1y065lEawAZEwbMxql01YvwZ2KHzQghZBNhYwolBRmrSmpn_Jbb3pxpzPd-mRl0mu_tIp4wEKZ7loobSo6Koy2W2I3zRvb9NQjZHrg3u0ufJ4MX8",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJqSc-d_JJzDERbOlsCf-UmNs",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=15823561113861941612",
+      "user_ratings_total" : 16244,
+      "website" : "https://hainannet.com.my/"
+   },
+   "status" : "OK"
+}

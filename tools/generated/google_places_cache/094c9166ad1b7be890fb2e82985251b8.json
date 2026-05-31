@@ -1,0 +1,1139 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tUBUUqBEz_fgoOeUqIY5JAYA0DYwt5vwv_Vk6XmEJpzKIxldoDdexV5PZXjoxGHG2q8UlbCQJxICZvFjy401V63p8j0U1vaJNzJFcJeE-B-UCEmdLZd_S4icCCeZpUTONfPa5AFtQV9_V3D-Tu0xD71Q8uW6in6-kiIXEb1zdPxz18Z07aZN7ZTWOmsQOhRo4a9d4_0iGPBtGz-xvZM1PnMXTuRP6IDhNDxpcvmDe41ifca9StyI9BocCzFdVSXeybnN-TCZFYb-tOnTeiu_H7K2t1pse0BRRXrc_eJz4MCp1rAt6iqZYC8IbBY5Rr_2xk_yOWj72XKVYcMF8Cv6g3JLnYPn7iAgQhOWDlMgXduz35dvoWndRY0s6CT4mViIRcQWYMT1LMSAmCwIaOSBU2UzqnQozWF34I05V37wuJ8sGbteiw7UivAjzmITA0j30WzdqlvzvKv9g-Ht1ypeLVnqhIzK672wbEeXH9ET6fkrFMKgfOc7PJ8_ea-_8A66kdU5IVjkfm5LL7VK14FAwLQyt_PjBLXPchvOcsf_E5zaOdv0lqeAYR7bs6I7S7lM6W7CWJ2GdmIM1DxNwP8H4DBYG9l2W7tejwjK2W01pOoWoWNeU2n_0p06QMklck0r5NUfZYyYn8NPRAhNZYmDpYRYN7MRvWJeAWV6V75j2nV0PoCeHb5m6d4UFAxTFo9XMEMdqRZOxvG6WhJJsCybkRioRwy-VSPghI4e6COExfx3F1jK9INei2UOaGQ0yAOS3yVgZp4nFWkTIpZ9W3KIuJGEU59FLB919fsLXV8zrw19a6ohvTw3-aH66PfDjTjd9UnpZ6SI6Y",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "D23, 17200 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.022355600000001,
+               "lng" : 102.0872401
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.023737330291502,
+                  "lng" : 102.0885902302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.021039369708499,
+                  "lng" : 102.0858922697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Uttamaram",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112573016541566903622\"\u003eSteven Ng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v21ci1blZpXeVQFHXnn41_5mPgBI0yyMsPIXsdQA2ExvoYFYHK7Rv2BKom4CfEvbomqyvbreac9xpNESXxD_1R0Rmbhx43Sj4HDnFEGtL7oMqSvHAdrJDyw_I5eSpQfPNIpPvnebhPaWZHsTra4IWzw3SUjROD-LxUKyJkHwWnkvs3tmR96sk8I9O84nWkxkGXZv9xpN5FQ6iZqGAZZGP9F2uzGppKBHgYBhsq2l78cjncvqWI8D6_s7YaXX_jdYj3ssULOdhZB8eL4Z2TSR6j-6Aj0TXAWyjINkc-smyiml9IwXhSXfNVjul48gSPY-wiMF2BzO1BMZ_OyMlq7u0znoNWAmrzkXRCdrepf6qSL-HnjEVKsCZEhzjPlxGS3K_zPbTkb9PEwCV86jiUQDslt53qwex0tRYs2i9XbBGBkcPv",
+               "width" : 4435
+            }
+         ],
+         "place_id" : "ChIJs-OrPEyntjERaJGP5Mr5R5E",
+         "plus_code" : 
+         {
+            "compound_code" : "23CP+WV Pasir Mas, Kelantan",
+            "global_code" : "6PR423CP+WV"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJs-OrPEyntjERaJGP5Mr5R5E",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 276
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan, Kampung Bukit Jarum, 17050 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.941593900000001,
+               "lng" : 102.1304049
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.942943880291502,
+                  "lng" : 102.1317597802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.940245919708498,
+                  "lng" : 102.1290618197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Danau Tok Uban",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114996501646031641388\"\u003eAdam Bala\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t2GKvbmLKHAc1o0vUhtseVmXTtGZrkdueoWz3v7YPtuliPWLymz_XNxKL2ITjvFP-lXll2qT3QpLvKdYOwo7B6YqHVdTBDX59foYPV12PFbFyqcU8nidFlK710PzcpGGYbyKxZYPFzCFmVb_mtpm5R6bdJJdu9QB7n6dpylwda-9qVDLed6DdmIZcnGKZ5NgotHIw6MToa2SIGh4ixTk44nWZZuVVN9-n24edBeWX_xclgjO185FU03_TlHL3jIG9nJMBa7AugpWMiYmQsnu_rSv4CGgiYYTon5sIwfIOKdHySqXfYMZ6brr1Y2oqCi4xQ_6z26FHSTddaBOISylp2fxfb8xrhHSzoON0KDHX5JFATFPbav-AV0HICex-52iFtuYUdFlZ0J785_3OZZScql3cArplHCFx800GKBIU9cnU",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJc-tT9dqhtjER6k7SM9CrXAE",
+         "plus_code" : 
+         {
+            "compound_code" : "W4RJ+J5 Pasir Mas, Kelantan",
+            "global_code" : "6PQ4W4RJ+J5"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJc-tT9dqhtjER6k7SM9CrXAE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 136
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17200 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.002863199999999,
+               "lng" : 102.0866715
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.003936130291502,
+                  "lng" : 102.0881315802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.001238169708498,
+                  "lng" : 102.0854336197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Rekreasi Tengku Anis",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106210453350872470089\"\u003eFIRDAUS DAUS\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t6BB6UO0XyX4nVbTfQ6vFlMW5-9dRjA3acNbiP_CiaT00LMy0uumO3Zf3WSCX6hEOI8sr7ABKj35qCicUN6zd_O87l-Qa3edEQ5nOtbDCTPY2INZMICqn0PTADe1TW4_YUmRcmcqqXCTXgcWNy2qk2gaoUz4QQ_1PMmUL8MSJ5_AGdQ_jN2z9Zg5WO39T1Dt2XAR5NCSXCrpVqm8dby1fgCiGKH-miC7ptT2iNcTLoi7S4fRbbuKrFowknPJWpGuA-9c3rW4349crVx9KDxncScNf5LepY8XMBFjEvF9BewmFcB-DrpuQqOxRJ_fG1-eAuPfgr0M8qXzGffM5TEN1TkBHvMOpfIVlm0zrznt-_Spon7ZL1G5ylIjz-MvlHTFBEHJ-YmYNyPwnLmnl5ioIC0jReQQFUJhXDLckAZiEUMyTf",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ6Y-6lrugtjERg-3-km7XWTE",
+         "plus_code" : 
+         {
+            "compound_code" : "233P+4M Pasir Mas, Kelantan",
+            "global_code" : "6PR4233P+4M"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJ6Y-6lrugtjERg-3-km7XWTE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 148
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Limbat, 17020 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0873817,
+               "lng" : 102.152501
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.088797630291503,
+                  "lng" : 102.1538808302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.086099669708498,
+                  "lng" : 102.1511828697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Panggung Anak Limbat",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116574968067067798113\"\u003eche zarhana\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sKN1x83gOQaS_u0-Gmj99mDjVIr4ao8tz5Sh-DRJsceCvZ2Y2DtUPjgotDvLMQuChyxjoeIJG0TzUHyEz1TjA7uE-3jeznkPG4DPyGVmWyl0ifwqudhfN_eflnnoWI_pkFU36LRNPGNRWiPeg_HUBe4qsjcOQ9qCk0o_5sFTcQn7dAHyz1pHlrqnJAUWUNUZIkMcNoAwv-GQFe931FA1rOvQRfX6JJKQVXERYWemSFh8z_df9SEvHoOrTu5HmdxDNtV5RtttrTRZN_1d35OVFCpaXXLIiI7wd1UQqarghzlstRaorbViIzDVHzP7bYWmDO2ei9BSyJ8iA5E73_ZU2GDAKiTKpTKLB6EItQG5IEGdF0nAVq6iAspEmfDVN9lZFg2bJO4BqcW3cuRUDAsWCGDbJ4USuT6sjCGFBOyzLl7vDdKw4W34LNVRG0foeP",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ0ywbJgCntjERj_f1uq7fjXE",
+         "plus_code" : 
+         {
+            "compound_code" : "35P3+X2 Pasir Mas, Kelantan",
+            "global_code" : "6PR435P3+X2"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ0ywbJgCntjERj_f1uq7fjXE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Mahmood, Bandar Kota Bharu, 15200 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1223616,
+               "lng" : 102.2409879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.123820080291503,
+                  "lng" : 102.2425140302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.121122119708498,
+                  "lng" : 102.2398160697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cultural Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3179,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106011121149801903346\"\u003eWan Muhammad Izzul Wan Nor Anas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sQiGmf6FGS92v0DwptVHLa_YpQS3dbyIDOJlVSqLqrsGzXiMLob6_EPwKc0kQdtfeP-kP6UJj9nweXXQSwxQYIsdCX40xmh3m0qiyyeb80iUNymUryVKwcvMbfJd6mPfcX5S8wi1eBLtc6V-zoFEWOYcUF7vzqazTFPppg48QdSHjrIilLJbyPbmVH8ZHf50iPyszJATfLsutNrHZsJ985TsD2eH9QWtAbE9A1o8XcEYZklhLYpp41dlRDo9w8nLGht3BPvDgkGPCeANvaZI3koMqVBBK6-34W30xYTwXtMB1GhlW2NDyfHBPhL6jk66qXO1Qs8F8O1vc161ZdHCIof_HqVbmecclEvcy45DbXdC0YUjdjpQ1SneBmDtrLBe-9l71vV0w3Y2KhjCq78usc6eFsyVw38tthYlH7YFofsDPY",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "plus_code" : 
+         {
+            "compound_code" : "46CR+W9 Kota Bharu, Kelantan",
+            "global_code" : "6PR446CR+W9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 140
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "448, Kampong Laut 1, 16040 Tumpat, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1543854,
+               "lng" : 102.2308399
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.155697630291503,
+                  "lng" : 102.2321829302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.152999669708499,
+                  "lng" : 102.2294849697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Laut Cultural Heritage Site",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111375701848852733818\"\u003eSyuib Yusof\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tU9aaWkhhOz-1meTHUoYZN24zu0Qzr1cakpR4wpXwVKwxR-gJgWOLoiyUwIThZ1XQQjSnYfr2tGlQu9jDbEbhSwrKm6BV2_hCUIGYdVQWahiout-4T-_-K_kpioDpYw1TYyyZl8io4X2e_SR82vFFFPcB_TScUp7ukq99yb_6fh4ZlBXZ-I70qIwxYNC0-Y2PlvCKVj8QZEOVaAZyP30Jhf20OoPZNyQX-7XbFog2mvGDs0E7EH3iztcNpMI6Kib6-aob7Mx3kguOXpsnFESOtmXDI6nxq3FMI5QdCT7AyZazBKn--zZV9Qe9C72vXYuxsBoog3hxSBHclr2BvmU9qABimK1yYvDoP2O1-7G_7R4PfCCThL1FW2PecYtq7bwT7xbsXNzuKIiZG-Mb2lOKpKSCvxP2wIGhuK4N2sEo",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "plus_code" : 
+         {
+            "compound_code" : "563J+Q8 Tumpat, Kelantan",
+            "global_code" : "6PR4563J+Q8"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 775
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9106988,
+               "lng" : 102.1369864
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.912273130291503,
+                  "lng" : 102.1382887802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.909575169708498,
+                  "lng" : 102.1355908197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "AGRO VALLEY",
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111231939967419584132\"\u003eTwelve Less\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tb6r4DnThLkJxqug5fT8pDdic1-G2vhcc9xSPI-wIDWbcyGZ9p1jzEAW5Gqnli4L6PxNX57eZOjMiVpSrKeba1RR29TpFRCvFnmUi5DQnt6OayA4tJu8M2lXaJQe-YjygloNaqAxdDX5EWgce2BmR2qzHxCdYGzK9SxnSUQAuRzmTk7PdSN_Q7MLb4Qx7frwe8JPrqWtm8tWFzyo_exzJtkOEkWmsadjKIRpXpnimVmxvGFnL9qTDY2tbiwNWdSJctH83C0GuqZLvwZWg6fXolT5OoyxjfZzhyFBKCLtTgUQF9DdDGN8nHHeC9xILO7PPoCCRMJaFtqqTooTR1BhJycm-j5zC2oqoGzIWF3_JT-dcbeeSj81NhY3pBPwL2YQlY5XzroKEqMXxcDoAJXRBdAfg5WX58P3-22p4AGLSxvQ",
+               "width" : 3200
+            }
+         ],
+         "place_id" : "ChIJsU7EPfOftjER7IxOHlA6anQ",
+         "plus_code" : 
+         {
+            "compound_code" : "W46P+7Q Pasir Mas, Kelantan",
+            "global_code" : "6PQ4W46P+7Q"
+         },
+         "rating" : 5,
+         "reference" : "ChIJsU7EPfOftjER7IxOHlA6anQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Hospital, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.124954,
+               "lng" : 102.2382817
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.126429580291503,
+                  "lng" : 102.2396325802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.123731619708498,
+                  "lng" : 102.2369346197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kelantan State Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBR1GTR1E1AUjGvr0fOcwfGyXgoT8Qjsxwq46FmxnAdYCywQfvYZ6HYuS8Vz80608k5-kfCT92q3b_taPdEW0hlmygam6m13MTVwpR7U8t4GeZBIxugOcV4CFvWPIGHCkdg6NDeny93hqiW3AHc3YU9LFuBJGv1PCh2wgo78qqUlwtXXjx3FbPsFXwIb9q3UJqQYlIaCXvYT8-5G5u4tB1KC_8n6BGGrIHe15WNBY1sJ0cDN6W4atp_F2WmTExmMrk-hJRQ1G5zI5dhW1JUSMTkfW32-EHeO2phqcHSn6TrMnVUc4TyHMvC_131pf9cPW44odcAgWJxDPa_2i-VNlNnf0yUbKillsLH96RenvuBlCqxMJ-wH6B0B5t15Q9ja6JNzSgh1c1uXT014LjNfhFtpmkKc_y-mJ-M0Rt39VfHg",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJyVINLsSvtjERmTNXTsi2dXo",
+         "plus_code" : 
+         {
+            "compound_code" : "46FQ+X8 Kota Bharu, Kelantan",
+            "global_code" : "6PR446FQ+X8"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJyVINLsSvtjERmTNXTsi2dXo",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 575
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.131556499999999,
+               "lng" : 102.2371368
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132847530291502,
+                  "lng" : 102.2384208802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130149569708498,
+                  "lng" : 102.2357229197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Istana Jahar",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104920201070722561378\"\u003eWerner Luzi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tlg7yGQ9YxqZLRURbjbNCUPkhMjoLHHzMPceX3LR0L2ACXvmLqZhzIkpasDvJwC2F2MzCBndO9ZwaCuVOzniM4S66Fm6dK40MYrw03NLcqNxbhfeD5weCeEKexFoey7kDauBOn56K2-S5Aer1DabTVUgnpJ4IaxShiWDvJFbn4anRi6xvZDlH9m9t3f1KL1tpjaM7Ixa1RXGtuD78wS1Bo6rLaa5aqOMnuVvNbbexfmNBn_ByAVc4EVxaWtZJUYoo9zjgikiwUdnn9oVMrgLz2cv6FD2eFp8PjX7uGczP64fEknOzI7CAGcl_BZ61UBEGgJVrtxYQd4bEkojCVkP9Rl3LPXDCvu9cBKCZX3byaNTT7w3ME36BY3iGWDrYUsR9SCgqMlO3-IMXb24lRyaGZqO_fu-Y14R-UEnoOnn5QsSmJ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJy03XMcmvtjERvsS90H5bKYw",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+JV Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+JV"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJy03XMcmvtjERvsS90H5bKYw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 633
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Baru Pasir Mas, 17200 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0059588,
+               "lng" : 102.0967992
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.007202280291502,
+                  "lng" : 102.0981908302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.004504319708498,
+                  "lng" : 102.0954928697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Dataran bandar baru pasir mas",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107124337218812542242\"\u003eBusyairi Ahmad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tXr205dbS9nGIzpzla5pKycXJAVuKCy37m-fwbD21NbYcTSpTjV-A93r-CsjS0IHes4ldFYLP7NXEyNPePpw9dDmLZ7_U73kXhGbJKDt-s4xrRNTVZwL9TNwUTig50bUuCGfp1WdsGluKHvDMYhMP3P-JXSRTMJXh2hBsv-Zj55_8SHn_R82y_RK61ysERD0TH8fr5BEaUkUQO6DQO3YUHSsvvWRoA77DrXBHikKhySzwnmUWMuc3a5OV_W2DNmX5mSTSHbMSSm0WFR2wv3srEND0kqN8YZ0NXMu5pbCAPBvgIOkBzGbAB3AvT8Yi5Frud7iMKS2BOCVUARGCV9SdH6s8oTZqqWI_Ml6s_uE54t64GKM5N17uFiB8pxpA9Wicx8VUaNzLoUvqDw9Q3t8erW9JGYTvLQgK5iXlrAkvDANhk",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJG3EfK9ahtjERkCRbGDwnO4I",
+         "plus_code" : 
+         {
+            "compound_code" : "234W+9P Pasir Mas, Kelantan",
+            "global_code" : "6PR4234W+9P"
+         },
+         "rating" : 5,
+         "reference" : "ChIJG3EfK9ahtjERkCRbGDwnO4I",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "X298+RC, 17200 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.969478400000001,
+               "lng" : 102.0158159
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.970832480291502,
+                  "lng" : 102.0171401802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.968134519708498,
+                  "lng" : 102.0144422197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Simpang 3 Kubang Kuau",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100185884518538795642\"\u003eReeze 67\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-um_BKo4N6fllSsv8cgOCUmVv4hmvIqTGaAw-HaR686c-eJybpZ-mrJPeau6VCBocrU6Jqb9YHHMDSLkxIkF2J234FXaB-9EZ6rz0aLXEiGuwa-wYFyx24ytAlfnQ0DSVwr1fIEq1VgCapMBXiJHA4UdF58g__W-slP9fGVZyab6J7LngsrfmHICTwCZs3W-V1Mi0OknlWdIMkIDZ3JVS0O1mEBK2AAviUhT9KnWine3AL4TkevW9iw8Dcuu4aAwbZHA8DFJpawvP-rgwxHh7r1l-MaaslyhMMX5IWXVAxrWyKGPxOAU_Mzg1L-TGw99M2zajViy4k9EVToximqxjqAQOVidScsdzAr0Qfd0YJw0q2gE0BCEM77FtJ1WBMzDd_uaIKMpBwayXyNhDHrRWJnVHva86VTX7C23ebHnIY",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJdfgh4QAftDER_02HJEI9Puo",
+         "rating" : 5,
+         "reference" : "ChIJdfgh4QAftDER_02HJEI9Puo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "VXH9+Q7, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.879421499999999,
+               "lng" : 101.9682352
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.880500530291502,
+                  "lng" : 101.9693906802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.877802569708497,
+                  "lng" : 101.9666927197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Muse Ecopark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 555,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100366334675056005539\"\u003eMuse Ecopark\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t9k-jn7bbLBAwXLQdLB5LzlkjuQMV05bQfV5ssrKppX3kJV_1LPwIPS-2E3RBXHmHBBLi5qQNb1pzgJhhShm1iMuU6CgLfB7ATeFl5-kjiVWLzdFxtQo0X7x__rBugDJWUKvlJVnGzAl4WZGS9P1VshHaQqWw2Gvit5Kb0cMXM2vcOCzYC1Hn4V16YNcJ6tiaEiFJXaWWnJDqHMq6aaGpbQ55ZcABOMx4Amv2YrKFg5DZfUj0_k_7AdaE9ov0lEHNBp6fNquSWnSEIJq1zhJs-rQS3sdw-yedgaKeBeW72WQ",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJVQeVLx0HyjERj_UIEBWuJpo",
+         "rating" : 4.5,
+         "reference" : "ChIJVQeVLx0HyjERj_UIEBWuJpo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 628
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Banggol Che Musa, 17000 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0863226,
+               "lng" : 102.1105693
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.087793580291502,
+                  "lng" : 102.1117684802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.085095619708497,
+                  "lng" : 102.1090705197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "KAMPUNG BANGGOL CHE MUSA",
+         "place_id" : "ChIJq5IRAgCntjER2ssiM2NTWMo",
+         "plus_code" : 
+         {
+            "compound_code" : "34P6+G6 Pasir Mas, Kelantan",
+            "global_code" : "6PR434P6+G6"
+         },
+         "rating" : 5,
+         "reference" : "ChIJq5IRAgCntjER2ssiM2NTWMo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Besar, Pekan Pasir Mas, 17000 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0417387,
+               "lng" : 102.1452396
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.043076680291501,
+                  "lng" : 102.1465959802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.040378719708498,
+                  "lng" : 102.1438980197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Dataran Air Muleh",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 540,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109328514743930396012\"\u003eAilat TG\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sD91y5v-MaJRqxg-32R8jCsiU0KJbUEEjCCZkI0WAqDMCYAcWM1rpfdyGFgjfSotd4jLup8iHRIKBflbo_X92Kmzhft-DWQPC_SZYieHmZslm4WX6aKvpjZezXdd7e-bPnRkcM1OnDXR4HRO5V7t9eMYb_P-BdVwqHiv3Nbn2GuANgdZjF72gyfzI4u7UDtVYgEU8_YaP4H8O9J19R3awTyBMvEcjcqgBHiNclidMKa_ubYq8Qrg0wjb3YzqXVQ96d0kQ41RqvvoG-OGGU0XY9PsxEXJf7YnkDfaNDBIJ4H3LnlQb7NiWQT-eH4MJU8qAi-u9UAAvywVUq-vWnzRK-tNe-umHSV_lp9JtInIxJ_2emkcajTNyrjNYwuVj9OwpQ4QU_q9o7rdr5N8b0QgG28UABslrCU3H9i9aB_kALEQ",
+               "width" : 720
+            }
+         ],
+         "place_id" : "ChIJV-QuBpSmtjERlTO-JlWpV7o",
+         "plus_code" : 
+         {
+            "compound_code" : "24RW+M3 Pasir Mas, Kelantan",
+            "global_code" : "6PR424RW+M3"
+         },
+         "rating" : 3.5,
+         "reference" : "ChIJV-QuBpSmtjERlTO-JlWpV7o",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 40
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1313685,
+               "lng" : 102.235678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132816580291502,
+                  "lng" : 102.2370574802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130118619708497,
+                  "lng" : 102.2343595197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Padang Merdeka ڤادڠ مرديک",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2950,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112515227116811717512\"\u003eMohd Tamizi Bin Mohd Rusdin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVRv9dLS9tkJIBeEE6xLsmeecMEsMJFoszD1CktEcC4v1Vyr1rGjN2xbBytAyWbvo3ROgt-ZnhovkTKeHtLATkWnr3GU7mYrkGPXO2iutXXScoAAIspJed0G256udxyUyjl3db8KGHfU6w2VN5ULFsPa3iMejKk78wODl3O56_DoBSXTnMnsG3Bgpvy9dN-kUCfjJ_6oAfVdbHES7ePuXfaYeevgtwLMRE-ViqPqDzFYp7RaWhglUII66WSNaraBZeeC7ZhepzCLhMauZ3-oV2wYHGCI0aRongtIvn9en3HeOVuacC42jk7Q8KKP2kIwLGC3d97imLktoIYygBsQBrXRsfDt38E73OLA7Bg8kQ5y_Bgw6A64YOnVoBLgj44u0FH0FV46gNFnMogLPg27UJqJGsS5yBcsX2RNvD2fpTCg",
+               "width" : 3934
+            }
+         ],
+         "place_id" : "ChIJGceDpcmvtjEREUIjMumc3U4",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+G7 Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+G7"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJGceDpcmvtjEREUIjMumc3U4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 73
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, 15350, 15350, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.216342,
+               "lng" : 102.241514
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.217670430291502,
+                  "lng" : 102.2428423802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.214972469708497,
+                  "lng" : 102.2401444197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Mek Mas Kelantan",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103198985157622539490\"\u003eQuah Ewe Teik\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uK9R6_U6tmlhZodRfMt-YXLi2uGQ4XjL2y7wimq5EI4lj49g61PKzWuu99VjH0SCnqT0K8XnNgJ6sbqy5pM0RyWFmbr2ONztXhy7i1bveeVZCZYJx_tzC0ZWk8N_7gZueGu2o-Ajw35nPiadCYI8RC9_Z3hoMZzKsb2Pn1S9q28a5HJsndklRaCQBvOwSXpJv1Cg4unsYKLvLrr9aexmeU-fQWKGuxeyqFFFPM2D04esFT6jivt4Oyj9e6TUlzmDLtTFLO6cnhTdXCY0V1uwH7d6ZE8WiHYBIY3b25k4mZHpUDhyrJdcm6ADyrWy9MCmMFFF3i2_rKGrRO1-o2oZ9SpohBqTNDUo8hB2FvW-aR5eGaiDZFjr2J2lH8JIJWZcZrmvPXvfEF0pGnAJmPyg85Ji6sEHQ5_CkaPX4ThZhwn47Y3KpRDIEALrwzug",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJz9ZY4hKttjERa3bTnJVF0LY",
+         "plus_code" : 
+         {
+            "compound_code" : "668R+GJ Kota Bharu, Kelantan",
+            "global_code" : "6PR4668R+GJ"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJz9ZY4hKttjERa3bTnJVF0LY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 58
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "603, Jln Alternatif ke Pusat Bandar, Kampung Rantau Panjang, 17200 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0140727,
+               "lng" : 101.9752117
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.015367080291502,
+                  "lng" : 101.9768991302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.012669119708497,
+                  "lng" : 101.9742011697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kubang Chenok",
+         "place_id" : "ChIJZSDlsZMZtDERlKm-mtSEV_4",
+         "plus_code" : 
+         {
+            "compound_code" : "2X7G+J3 Pasir Mas, Kelantan",
+            "global_code" : "6PR32X7G+J3"
+         },
+         "reference" : "ChIJZSDlsZMZtDERlKm-mtSEV_4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, 15100 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0304012,
+               "lng" : 102.1792431
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.031692630291502,
+                  "lng" : 102.1806474302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.028994669708498,
+                  "lng" : 102.1779494697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Balai Cerap Kota Bharu",
+         "photos" : 
+         [
+            {
+               "height" : 2592,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103481755400900778637\"\u003enur ms\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uUZg6sZARZv_J5IDqW-rlAsM_4-HCcSAJ7N-Dyi9xhvKyiMe3LQM4XTKKWypaox7-ol_gnXgIMhZkSfgDC1PkTB_xKWRyp2-2Hyd5I7R_8BY8NLgVVnltBk03iX_YvNlX7Msz5drPfONE4IXN8et2k-39KyDhRiYyhllbAdHYf2FkQ8NQz5bENL2bKf4t2-JCVtvnlK4qmPoAgneFf1kzG360-FA7N81pPslqw3ZUZrwW9xMDLYBcRoxvWU68uklmP4QuQROUBuNpE5iKMoYv4jT0NRTWFdXuv9MqaowOC9OS4EsEQQRDHu6JsuTROPzjQOWhi2ZD6V8kDt3Z4aaH955s0t7WVUpdMtbZM4jN0Oszax-c0UgSc59hbLqbkVBS_MNc-NkFpzBxLhdVu2sK9WvIZXypKeMAtIAM8azM-OQ",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJj88rSRGktjERN8TQZy6m1wI",
+         "plus_code" : 
+         {
+            "compound_code" : "25JH+5M Pasir Mas, Kelantan",
+            "global_code" : "6PR425JH+5M"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJj88rSRGktjERN8TQZy6m1wI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 51
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Baru Pasir Mas, 17200 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0062386,
+               "lng" : 102.0967117
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.007649030291502,
+                  "lng" : 102.0982126302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.004951069708497,
+                  "lng" : 102.0955146697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Bandar Baru Pasir Mas Recreational Park",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102236549579415874233\"\u003ePG rantau panjang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u2IexNHgDYFKUMkDwZYLmhwKmc6T0-s2TAK9L-HWnDlbV18vjUc9ATMACkQH2PyL9qAfgtCUxAWr5rFz3sU-YwdewslycGaA6vaKNUt1GsyvHJjz6ot7EsOmegtpNCvJHJc--PdYsDBqpQ1LnouiHxqAlrh4B8Tla9Z4fdNUClVnI_GpJKjp2na-Onp5Dl2ekQwI8MWiWh5uH0FPsX37iR2WMLEQblZfkQbMtGXwVoiDP6uOUxH9lUZv5giV5MFziExSQTZrg5NGkslghby27k4CdI22RnQurDhBpYuqF68mIxq03yODHtY8YcoYJxtrYg7jv_xdCLH7EiM7ZGHGkJXz0GeQV1Tybh_biTrl_V1szOSXSIQQflXKk2cCTbIg8MVisK-mGxyQlxpFKDJzg-YpbUqQOBOpy-ODdIBi740Q",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJVap9kxOhtjER_fwAAxp1fy4",
+         "plus_code" : 
+         {
+            "compound_code" : "234W+FM Pasir Mas, Kelantan",
+            "global_code" : "6PR4234W+FM"
+         },
+         "rating" : 4,
+         "reference" : "ChIJVap9kxOhtjER_fwAAxp1fy4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kg Kekabu, 17000 Pasir Mas, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0195516,
+               "lng" : 102.1500002
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.020895930291502,
+                  "lng" : 102.1513804802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.018197969708497,
+                  "lng" : 102.1486825197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jambatan Kampung Kekabu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106111521474013963939\"\u003eAm Am\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s9SRavYSZ-qfiAKa90yITzgL9vdWchc30KxSJsok6ku_LRea558k60OE0ODJhYXxvElMjMnjWZreO0sFPVcxu_wYSbDOftrPfet17jtuKnFSJ5R8tHHww1XwtmVvuS6LD6A1q1OBDhAuVKykQyLsX6NipLpj_G7n1xKaLiDNyEyvz6nK21CAJ4PFlFIKEIis3S5Mu7r3IYwvH0xMDflJRymTtEskC0NUJT0vP9B8GnDHMM5inQZRNOAa-6YwWSIWm7FHX7kp1fKayhUhzX_IiceK7_nd1CfH9pEhW5v_XrNz9jlJn32WbZY3DkkybRJcuJnyR-573cQVpIKKte5mUT0lsTIsF1JAnAjh0cPrWS__JxnuX4n7_sHhcUz9lWmzhQb4TrzrdrAIRaGcDsaessMAz7eaVSpLqLuxpCp5lyOCgs",
+               "width" : 768
+            }
+         ],
+         "place_id" : "ChIJ5S77QwCntjERugqxumi11fU",
+         "plus_code" : 
+         {
+            "compound_code" : "2592+R2 Pasir Mas, Kelantan",
+            "global_code" : "6PR42592+R2"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ5S77QwCntjERugqxumi11fU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      }
+   ],
+   "status" : "OK"
+}

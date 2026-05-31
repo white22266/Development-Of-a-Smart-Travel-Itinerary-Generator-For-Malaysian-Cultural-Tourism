@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "G5FM+M5, 18000 Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.524137899999999,
+            "lng" : 102.1828879
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.525226180291503,
+               "lng" : 102.1841578802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.522528219708498,
+               "lng" : 102.1814599197085
+            }
+         }
+      },
+      "name" : "Kluak",
+      "place_id" : "ChIJN4y3sNx9tjERuuDB8fHz5qY",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12026568075408171194"
+   },
+   "status" : "OK"
+}

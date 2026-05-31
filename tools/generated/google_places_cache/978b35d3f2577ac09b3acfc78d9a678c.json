@@ -1,0 +1,390 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "MXV7+QW, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.694388399999999,
+               "lng" : 116.9648106
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.695765830291503,
+                  "lng" : 116.9662517302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.693067869708498,
+                  "lng" : 116.9635537697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pitas Bay View",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111127390081517472203\"\u003eFred Raymond Kisel\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tWQmU0804V2KCR2TDm5l4PulERytDUo4TVitEXjjFaXn88ugnM0Hyg8529pgN2gOFzVAboHyIHWpFr7NgQZCZRgz0DqdvcIWyxsnByYOW0JnYhEaE1-I7Ap2aGs-dHbax7X_UpsXUxEZC4QOpq8mAKcMT1BfhR6LXyGcbtyp4vwRsbEBimxK_d5u60exwUxx-pxfbLL4E5FFouPhFE_MauwSECrKs0ngdkxBaNkU35g509_3s-uIvW6JqUtpB4z6EEgaVp5YSiKYIdLGw_l9AZuXmxGFOESfQvETvtMmITO_QM72WqzE5c4Rk-uBRcVm8yECwipMIzZ5oMaZMj2Og-lEzwq0jCmQmULOsaG0TinKu6TahpUVWlNgagJcwbaNayO84cRTqWc9XPTnqlkoKWQSZAm-Hleu7PBTsF8igaq7c",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJv0zyfqcXOjIRoPMmdh1dKEY",
+         "rating" : 4.1,
+         "reference" : "ChIJv0zyfqcXOjIRoPMmdh1dKEY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 178
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bukit Piniapat Kg Dingai Pitas, Pitas, 89100, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6792718,
+               "lng" : 116.9751565
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.680609480291502,
+                  "lng" : 116.9764775302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.677911519708498,
+                  "lng" : 116.9737795697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Piniapat Pitas - PINIAPAT HILL ECO TOURISM",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104724012967656289502\"\u003evv v\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vZbyeSZ2xXlhJB9dcNRSqa5b5PZ3Nh1yxvKn1k1RImZECuJFj9IXD0OZihGjM7CNxV9_palWCXZOiy6sSgw0H6-E3ldmLl03dWYmCIckHueKzatQtm-Q4lL6ZfP_LPyqXPHM_BYY40LtL5RAcf-nLxO1Obs1LgTy91Z2pN52AzqI57XMH_KDIbU3cjXUbEYCBrwH3Y03imxUhw5t3wYWM5UX_AUf98fG0PYsYClFbLu-kWmwYvAjl-aRBE376nFAw3rdpUBnFOi1rDfJHHj7X9Himj0c6BDe4l1AbgzvDQU5AKBczn1rOI3o3dojWq2doSPxpMqXTTyoUf9t9xPSSsuQSOeImZEtubfWpNR3sTAPr6MsByfifAbVdXWd2RxKEV5SArCXpDMMmC_DBq-_BxDK_aUBIbHzpY-cjMffs",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJr2xGBToXOjIRDy6X13ml9eU",
+         "plus_code" : 
+         {
+            "compound_code" : "MXHG+P3 Kota Marudu, Sabah",
+            "global_code" : "6PRRMXHG+P3"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJr2xGBToXOjIRDy6X13ml9eU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 209
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg Malubang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 7.0103113,
+               "lng" : 117.0808838
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 7.011660280291502,
+                  "lng" : 117.0822327802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 7.008962319708497,
+                  "lng" : 117.0795348197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pitas Floating Coral Bar",
+         "photos" : 
+         [
+            {
+               "height" : 4128,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111744260052243268531\"\u003ekongsyn lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sJ6d7LUuIeb8NOv47agKYjDv7ncgP4BODKalrAygCsjiIIAvqSYx7jPucWp2Saj4BH1EwWZNUXuHYQM9iLPxlKElpLUdwFd4Vhqi8t18lw6QNyw3oe3VBGoHnP2zeEme0L9iDiVp1toJF2b54wTb2lZK4nYineNVGU4Vz2EwB4WkKjEp97oC9J8jjmB1F0CGvKanW1qXVxEgjdmxgeTvrbZtlOJF2S-rx0RVbcbMlufqDEPeJ-5MpeQrDhC7zUkUejR9XMMvtznDF46y86qSqjL-S-5HmLTnZLmnvUEpsCMGQnjUBFKl3ZU7aa5AvxRqw206xAE0diYMv7IivfU0Yc42z874Cb2C_9LQG3MS0raT7ubINLgCa3XvCuTh9v9mABwMhARgvbVV5zrJ016Hocg5yWjMXD4yOhyh2oG_G-mA",
+               "width" : 3096
+            }
+         ],
+         "place_id" : "ChIJXXYISu2rMDIRdlAupK8JfhE",
+         "plus_code" : 
+         {
+            "compound_code" : "236J+49 Karakit, Sabah",
+            "global_code" : "6PVV236J+49"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJXXYISu2rMDIRdlAupK8JfhE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pitas, 89100, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.700704600000001,
+               "lng" : 116.979981
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.702039980291502,
+                  "lng" : 116.9813174802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.699342019708498,
+                  "lng" : 116.9786195197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "ROSOB PITAS MANGROVE",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104724012967656289502\"\u003evv v\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s3k13KBsnT0TBVbH3_fnIiEvAcnYgF3m_V0-IWXR2YUl9hhKpSQjcpYYy8_4z-8NPQPAzk4Sl3zjcqvSGdgNUVChEUYJIzxlP8vOLd96G18zd08KuoBelzWJLN2zagQs_IlvPcIFMOzUfYYKrDOYfclkArmSbM6buSAUH-rRtOzmTYaQbXxyEmP6xP1QIvKZYrMlcj5vtKeWSSSgW2D42vNzYJqzSjuPG9NNMALmZYo-zpjgmDrbUeY49NXEXESvGFNJRO-oY0WLpqlrD5WRQjvTY6JnyTG2Gb48R2BQGGeUAd075LPR5WGD2jbTBT3y-7NRt8TP77N2Dze7Xkuzsu0P2JumB8L2xnL0N0oVH2vRPZ4PS_nsFUK-TDK7hI9xjBEuqB7KHMLoPEjw4Ks7eYejWKuVNvlGbRnzm0ihc",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJKxSR124XOjIROdTHoeUNCs8",
+         "plus_code" : 
+         {
+            "compound_code" : "PX2H+7X Pitas, Kota Marudu, Sabah",
+            "global_code" : "6PRRPX2H+7X"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJKxSR124XOjIROdTHoeUNCs8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 32
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.9583051,
+               "lng" : 117.0600846
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.959679730291503,
+                  "lng" : 117.0615456302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.956981769708499,
+                  "lng" : 117.0588476697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kg. Malubang",
+         "photos" : 
+         [
+            {
+               "height" : 2610,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109946912354196853388\"\u003eSham OSMAN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uHBeIr6HOgm8C6rnv7IB3RMWc-UWGfjklhSORKNPM6cPPjb5UoPS7LYQkVq1ymBhJz7cbYvhTn96CZhmRu4WusGilFtMg1EHkSTPYdtGCMarV8wthqq02MyQa6kWSuinCiJH9ejavUbTU3UlchRd1bzOhOmhb9gElrRTWH_jglZ1WY6qSubvQsvJXRkGjrgx2hkEdihamAprjC8WNO03eQIW2QUbYN9OIs0m2aSsgKoGHcHlQfU20kpGBdBiVHOYI0Bqv9JvddRoEVhukN6uqe-7zYt1QVOhX0YC6StjHWXS2S-LqpiD_Lxj4qtDjLVLsQ_voDtm09GNAm26yEvisMQeZS79ciuQp-nYUwtoYaUXlm7CMAdhIhc8-6daRwcRMRhqHRXan449sOt07bzvqHieP4Y5IQonSm2OPPhNFBPA",
+               "width" : 4640
+            }
+         ],
+         "place_id" : "ChIJkyFCV-qpMDIRYGoSawoEVrs",
+         "plus_code" : 
+         {
+            "compound_code" : "X356+82 Karakit, Sabah",
+            "global_code" : "6PRVX356+82"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJkyFCV-qpMDIRYGoSawoEVrs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 40
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "P2RX+PH, Pitas, Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7398763,
+               "lng" : 117.0486486
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.741235030291502,
+                  "lng" : 117.0499598802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.738537069708498,
+                  "lng" : 117.0472619197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Gusung Senaja",
+         "place_id" : "ChIJC7VqIr4bOjIReWqXNPsTaN0",
+         "rating" : 3.5,
+         "reference" : "ChIJC7VqIr4bOjIReWqXNPsTaN0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bangkau Bangkau, Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7448479,
+               "lng" : 116.9773986
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.746099030291503,
+                  "lng" : 116.9788515802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.743401069708498,
+                  "lng" : 116.9761536197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/camping-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/camping_pinlet",
+         "name" : "Pitas Sea Side",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114305345785981264063\"\u003eShafyPie Ch.\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u33VuJO9-ZOhG6NLgnwl_u-xpVDh4I3pdZwfqa6IfvY1_7yEh-p0CIjiQeVhfrmVczK7MmGAL6ebAV8aElsJ9B4e4nLBHU6b1zXXXws8SzcJ_TrVQCsU1Feaj0NI5GExZgCOYV0YYAI7ZFDsWnbopuUL3mifgKJfs0ieESeXSzQ9ixUbZTnM6Ez-Bfuj2mJdu9divJfmDIDxn1gY5g91q8FIT9CpLVS_oq_VUy6nmFnMcPnu8BuCdj1-UaVQ3GnKhE-VXOBRz0mG2RASwCMl9P2i7zwl7EQmOmigdU6KLWRdhtn-M4wyYyY4DRCHLMW3AD3AIzEayQveUbJ4YP4H9Q3w3k83xmF1Mg4tIATGqLD5am3NfauZqWPkxUBbyrJ98xXE5l1h3S1pZ04yRRiIKyVjnFw_rouBiyo2M0V4n86WE7",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ845rbW4ROjIRsnEMy6ZrP6E",
+         "plus_code" : 
+         {
+            "compound_code" : "PXVG+WX Kota Marudu, Sabah",
+            "global_code" : "6PRRPXVG+WX"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJ845rbW4ROjIRsnEMy6ZrP6E",
+         "types" : 
+         [
+            "campground",
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 17
+      }
+   ],
+   "status" : "OK"
+}

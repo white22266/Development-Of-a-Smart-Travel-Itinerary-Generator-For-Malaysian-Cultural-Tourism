@@ -1,0 +1,51 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kampung Delong, 23000 Kuala Dungun, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.8136296,
+            "lng" : 103.3106902
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.814948580291501,
+               "lng" : 103.3120397802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.812250619708498,
+               "lng" : 103.3093418197085
+            }
+         }
+      },
+      "name" : "Tuntung Kampung Delong",
+      "photos" : 
+      [
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102734800798336748688\"\u003eMuhammad Iffat Bin Yusof\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v1SzErXgn9lCXbhDSKCfxUPdD62sK5OB_7_2J5g4U9Jm-ELZe-GPAuJICNNjahdeS0eH6m4WMN42VgUqPnfcOo30J9jQ_KKWpfZsJ0-wNkrmQvoM0K1gxvtKnybJZg5q34xov3bVf3dZf_GczMh0UGdbHW7xNhCG93vi-gOJw8_5Sg9pu0Qy_lnsbM8nsX27bn0RKBkNkVCnZ7IrgroUlFD_MF7Hcz0pJdnfUwuEtsimNWndmee6ix1qd2EtF_O_siO0uKIahwHsnMTLlLKJOVX_vAh4Sw2-MISFBXtpu6vJYIGkivoAD9Bv7Sqeo2qpr57h1HGRdkA71QtfluhFnZtPeP4MNmDzWqi2vl98H_U5qD6VeeTOdqz3iUP0lD6I0Bm4iwjyF8qQyRL7CoW5NvdnIPepwty-5TMo721e1c5ls8TaDFX3KE2wkKQeZM",
+            "width" : 2560
+         }
+      ],
+      "place_id" : "ChIJf9tgCAAbyDERLRQD17g5xP0",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=18285803853075125293"
+   },
+   "status" : "OK"
+}

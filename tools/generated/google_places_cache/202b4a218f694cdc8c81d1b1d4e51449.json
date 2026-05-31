@@ -1,0 +1,1147 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vNP1pvcfY-vQL8cI0oXoR4OLlUFs0pONP9584wAqopYd3R8moluJthoQH3cVzkMl7ztX2yLSgmWnkSTVRr-QtX63bLzqRhBdu0-cFU0s4Rjy8S3iRO5xAcu-_9YNRfxmYszE5NfZmmIU7vD5kAi63kkZv3tXTvhyKm25GeBi2atSvEQ0zLtIbGMexQUhy8a_ikwlwUPL3J8uGsrs78qTBsceDcEZI5OHtOMlISDzldKMqCfmU8B3DmcLEbVKHywFeO4bU2xZ9D711qxweDNAq-zmd0Jfhbz-ut4LJdoJcwDTAikKhiU9J1i_KUBzYOXt1ix9ju7DztlIjpoP-QeeYUE7gaEtf_KpBFvlqNDzXEx8ZLSTzVfIENVZ9EYA4rVaivPQCqGi1zsygDBSeyUcBevaRzSCNssnLD9s-wCckXHVv4UbA2dbUWbzoD_suc0XwufzPi9rGl3m7VDRhgntmnAiMqs9ztbf7sh9RGTXKq4ZbmOSLnNWJc7NGAz-j_gELmq2Y6MfKgfhEUutG6Z8oBmQisHkRTjbBKX1sQQZ33EJiwkOavP7rgkOoYbs1TUdlunuKpKmgL2IaekzSUbObpvvX7T5PudtmUys7L5D_3E0t29FJn9Xpgqmx4BaBd-jQFj_1T5Jze5Lim3UwkOZ9hvsaK36TSu26hAWk_DU6ne0iyluSruvDK_LolvPwCpKivKU12hQf48LbFPlOBn-0TvlH8REzGo_OkusByJkEZjS9V9zEM2mtafft0jJsJV8wtgmyL7ggYlTd4mtPcpinNFtxpnqYw1b392GH2mcs9v9Bij1KHk4Tlg9avOH2x5KE8oFGaTXtP",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sungai, 89150 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.198392600000001,
+               "lng" : 116.227034
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.199682080291502,
+                  "lng" : 116.2284860302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.196984119708497,
+                  "lng" : 116.2257880697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Linangkit Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117847187210470562194\"\u003eIno\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vlv2SAFENWQDvArSpy3wUFniXwWb4egsyEG14PCK1FLFWeIqjqqJ-gp-WpC2qMAxefGflcE9bs0Q5Ys1_y_bqJaeeMseXWFz_GDv9DVxsLO99-N5PXFxGpumCNUuqa2zogBRtU3HbVmczH-0q8MvAUSbmAr5J8l4R5_aX5YBHzOi1n58pVIJQdtrf6Jj4ac8Zj3ozN-Pjs_h3dy4zXApNm666SWUcHtbbJVwFY1XCs4Vw_HBvFnBqPnZH9WrcEUgzyL86HEafiOs2VmXOpz4YUhYf_vbd-rCvotLMH-PxprWpJooDr72nk-eatp1Rsa4Ps5QF_czTzUAE0VIvpsh_VZB8xVrl6BLekqPrZ93stnt6EpbBojNap8NPy8qJ9JJ8GIlV_GaJ7qAw2pGoWffJQj2CwrbVG0w8QRcbkUaHteg",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJO-O-8x4QOzIRE8soQSkW2Vs",
+         "plus_code" : 
+         {
+            "compound_code" : "56XG+9R Tuaran, Sabah",
+            "global_code" : "6PRR56XG+9R"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJO-O-8x4QOzIRE8soQSkW2Vs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 130
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89150 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2047133,
+               "lng" : 116.262355
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.206120730291503,
+                  "lng" : 116.2636711302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.203422769708498,
+                  "lng" : 116.2609731697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Peak of Hope",
+         "photos" : 
+         [
+            {
+               "height" : 3968,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116846082514672029416\"\u003ekelvin chai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vokUqOkz_vHZH4a3wjZ8mfLmNsH5EoaV2mMpYvgprIxBRQGMBqYSTpGYsQdk92Ezimb9jC3hqMTsPTGtYzMBBewx5an-PaUTnWMf-a1mSaVxocedGTlAW-jnMcpdAGe-6mJ-0crTuGk8E9_bsCksYofzW6kGCo6xgLGYREGn7H3Yvx8JSAR8eHUFmYruvDyq3dp4Hc5oTNZJd6EAaawV77-7CYZaO34_m65jgfbhCZgQjWD4KCE7C5IfvVbAOYmjJFLoYP67Do070dsGA3VNACjuooBmFJXVik-MSQfuUYl5Ba12dA67_20Q30P7U2Q6xFDGSPyTx49FFlG1xH1QUEcVEV3GKz5Lhni1XZG-x8fCKHRTXmsLDTsCSt1EfeZuIn_JaHNWBmvsU-VDCpe8dQyXiUDRGkNwgsrG_G8y0TYthS",
+               "width" : 2976
+            }
+         ],
+         "place_id" : "ChIJbVLV5KwPOzIRhrB-2N7U8aY",
+         "plus_code" : 
+         {
+            "compound_code" : "6736+VW Tuaran, Sabah",
+            "global_code" : "6PRR6736+VW"
+         },
+         "rating" : 4,
+         "reference" : "ChIJbVLV5KwPOzIRhrB-2N7U8aY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 277
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Rd,, 89200 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1584314,
+               "lng" : 116.1738028
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.159806980291503,
+                  "lng" : 116.1752284802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.157109019708498,
+                  "lng" : 116.1725305197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tuaran Crocodile Farm",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117132878832249253983\"\u003eLee JiaYun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s820JHhmU4lTcvtADaNgX7_yvMWWvi-9kp48lhWN6v9EBvqsY52kRgbeq-kMeqWAC7-rEC-E-hfBctB9G_6BCAjm4job4OHnj1t6M1dkFaWOJy_xSZYJE6sMllU76SCeIrdx2g2H7bXw6KkF_GY2QXEPB2kLa4gPxhwiKzeDe2Zuc9gP5s32M_34Z7P15HZU5yOGxrcyCVIbA5dQUI2jL3POwdgmpPOpXUpiHxNJ4xKYDr9wtnQjpHsP1K1UpFc59geJQQaz-Le5j4-ctR2Szu8JEKnH0eIt5cuYs0fwHaJpmvx9Al2An3c2gdBnHNNp4C7SSo6hf4fCrTmzl4klJJD3aaonnTWQ8pzMU_4k-THxcDPS4Rc4EbdoELLaYlXm4Ph9C8A3PzFBms8IGgNsGs4DZ2X4aX4VTggSrBD4Z1cdE",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJmyR033IROzIRyYcfh_k4098",
+         "plus_code" : 
+         {
+            "compound_code" : "555F+9G Tuaran, Sabah",
+            "global_code" : "6PRR555F+9G"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJmyR033IROzIRyYcfh_k4098",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1227
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89150 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.176269,
+               "lng" : 116.23279
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.177635980291502,
+                  "lng" : 116.2341526802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.174938019708497,
+                  "lng" : 116.2314547197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "pekan tuaran",
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103116065773704692490\"\u003eTong Ng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tAoEGh1S4SxBBZ7ZF1MVsXAXfiL6wsmRt3ndyP7oKyViruPjtjmeKBPh6gyni9cRdO9vhzx_ScOrS3CdCpNjm_iTiKlgWnQr4_XnNA3xioQrFyebzOqMXubL0kpnyCD5Y__jv12lv2kV-Fnpm0xyYsf80kjfXpvgCbljBt-7hiO5gEUrgaxFHEL-SZYlwMTQGDixRramfBDiS7_u9YI8yNVnVfKkXifB5R9H679Hbe-yuSiya3Hcm7sq3dulrl5gnlYNKT11llDK-kwGqs_ae75otX6Nafp0bg1OuJYQBxPO2q0trJVIT-XZjqOltj4eK-6B-w0yODg40Ztetq43HGEKnkEHQDBGjg09UZBKP23-swMIKqD9RQUik0g4HdmJtPnfxzncepDH7rChKpcPI19aNyCf9rGYOlulBd5T3hplA4XZuJs7vSKUDc07ol",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJMz3fPQAPOzIRLffI551p4lw",
+         "plus_code" : 
+         {
+            "compound_code" : "56GM+G4 Tuaran, Sabah",
+            "global_code" : "6PRR56GM+G4"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJMz3fPQAPOzIRLffI551p4lw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 47
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Mile 21, 89250 Tamparuli, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1443045,
+               "lng" : 116.2539788
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.145620630291503,
+                  "lng" : 116.2553151802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.142922669708498,
+                  "lng" : 116.2526172197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Upside Down House Sabah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111050714402101619760\"\u003eJun Yin Kam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sSl6bLqc6AzC7rjBK7MyUNuj5SWtL9WyYXWaxhsCpkKheNfm0QhVYOAMvmDKho1QUw1bCZXK-SRlFyfCXpzTb-M50pCkQp15T2mE-Dkhkd4rEOt-9pf7Za8UqQto-x6RIZU7C903Gpqj_W4NM0dv-V8_OYkxnfzc6JCAM7uYgMGCn_5AGwXV3Zq9X2U-I-h7GfjIWK4hQUSkXsgl-XwM9oWHMgEfcVtbh5LGk7_nvegkTElbNRbq7SRkmkZpR64IWHaGBx76lqKteIWQJHDkowNyEHtJGaqwyB5y98aFfs-j1wRRWv0_UG7VjZuE0WLDeswR4cJW2bsky5yqssSz9rXTCAqwMuu19zlvvCT0xURVzvHWgdy_7wNJormrjwrFYmMlW1zotQt9TVZhGeBoYv2pDl9vnCFVX7Y4t-OK_OZg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJabg2TA0OOzIR-p1dwBrNWw8",
+         "plus_code" : 
+         {
+            "compound_code" : "47V3+PH Tamparuli, Sabah",
+            "global_code" : "6PRR47V3+PH"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJabg2TA0OOzIR-p1dwBrNWw8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3608
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "22, Jln Teo Eeh Tee, 89150 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1747684,
+               "lng" : 116.2339026
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.176026380291503,
+                  "lng" : 116.2353929302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.173328419708498,
+                  "lng" : 116.2326949697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tuaran Buddhist Ling San Mission",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105615100216312058319\"\u003eTan kianboon\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tfkdukORlWCxMwIRvWVAqihZBeIGErlkbfuQ4vujtTB5UnzaqZaNcUKHjND6_1yQEcVmXtUKW9OBTrkwwZhpJ95goOUvZAJ_OUHIFCTpBM8wKoDyGmzYFCSj-dhZNTOJpn4u4gcT2NfM52foUFigYSjPJU1gHiYs2MluvKbuW0bPqkiB7XKnBqYcmDaT6WFkjDyJ2dhfpug1Nz1-QvCeXI8bNcnukThhUcZBuRjKype91-fSdn_tSdf7byMjq1dwTeq_LendrLpmhwbJdkr3jfCviBqAUo6ehJb5t0NYnN31wKPKFux2sjVgEWKECfaXlmAxZxoKD2PvmRq_HoyQqXxgHDRW8euQM1kU7hj3KOiQZHGxyPC4bc_bDa9V99hPvqVZvtXbML4hwhvj_P-CYYXzJ4jBYWRX3-1nnPOq2GAw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJw9puLysOOzIRLioTjUyU7MY",
+         "plus_code" : 
+         {
+            "compound_code" : "56FM+WH Tuaran, Sabah",
+            "global_code" : "6PRR56FM+WH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJw9puLysOOzIRLioTjUyU7MY",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 186
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Road, Jalan Kionsom, Inanam, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9736958,
+               "lng" : 116.2036688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.975209080291501,
+                  "lng" : 116.2049043802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.972511119708497,
+                  "lng" : 116.2022064197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mari Mari Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1748,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115764917221730916604\"\u003eMari Mari Cultural Village\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vITdCBJMDduVXxSotpw-nccIx0wayFMbnJ63n9AbuDKTCZ1eGj1xCtIRixcG2LShmjN0PX0Br4wWQvjohwy0sZHkgO9JsE8k_cG4Fllji8PbuquxixWzM6BmydhR7A7-e29Tr01kLRXSc3-vcUW-wjiKmQjRDjmlxlAmV5fqa6a0OTiiQxrBLtIwHGyqag90A982WH5D4plK5lwBbj30kWRrycA-obDER0YUI1ZAtDdlnDHIpZCHQfEvWwZoariDL8wTPjrdqu3WExXmhz7oa8qc7Q5UtCYnsSBRiGL8uohfsERg59YOaKGmVlI0Dr4vi_r3BZnZ_zCjnrUH3VRrEDiI8nnoTEVmCoGHAyP2G75ASu0pxLZuFn6vLMJ3cuD6XgBYBMvxy8F0hk7g7MFWVkuKVXFZM2aDqnVb9URZGRMKoys84iO6-tZbZFyTOU",
+               "width" : 1240
+            }
+         ],
+         "place_id" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "plus_code" : 
+         {
+            "compound_code" : "X6F3+FF Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX6F3+FF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3851
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "652G+PX, Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2018333,
+               "lng" : 116.1774444
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.203161730291502,
+                  "lng" : 116.1788364802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.200463769708497,
+                  "lng" : 116.1761385197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai shahbandar",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107961207540035552316\"\u003eFadli A\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s1hRXSpwr4BXashGufuZSOsov4O_Ze9vqBOxlOWpQ_sx03RE9UyAd0clsODhGtkCiIWR6eyQ5WDbnTK_SDdWmB906ab2LiohA_22bEbisCHYIrJTv0xQUn-CvO1Q4UqP_OCLTtkBHIDwgUFKTPsFnPjGRkZzpjiFGZvFdT8_PfjhDIPYfyYwaMDCdMR4sb_Mqwq2jNmHod1g-FO9ZSICg3c-_BTSVwLXru_FXoUGu2rQKVEOJoYlKJkRoGayLsermNKFvjnszlz7P_-jZjkVa0xveVGF87NJudnHYKhQv4kwk3mKq4T3Ouhf8v9dnXYdO0L09fTcPkGnZqDBhmezWfFoewrHab3XpjLRsERXPOZOyXxh4iBjkWrCRywyHCKAJDnCaAslM9GYBgkOMRqX9FUrNHnrh9yFkbKxWPHcA",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ5TeJWQAROzIRUwUzdLgNjoc",
+         "rating" : 4.5,
+         "reference" : "ChIJ5TeJWQAROzIRUwUzdLgNjoc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 84
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89200 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1471094,
+               "lng" : 116.2007695
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.148411680291503,
+                  "lng" : 116.2021097302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.145713719708498,
+                  "lng" : 116.1994117697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Tradisional Nelayan",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111321166893699241924\"\u003eRaneizah ally\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVejx5R7r0Y_QyoWsu4KygFQjLLHnQh_0X77ol7qhIefYiTZDU5xCtMA9VQkRvq_23hHzLXPeElVzVpTvOigXpFbXCabXqAwsgg_zCyzipYUcflyF0jFIPVg-ka-ZIb7AlpbNpesVOOBFWBrp-K7ZtUH585TqqpSjarBMWWEYN2psOFf3VVfs5ZBE-BCPbvg4BBKXQDfEHXsU9YAjwsANKuH3wchoBFpO6MtoIeLUzAlyuWW-hjLow8sTFbphk6amVVucekTZFYt9jxLCqm9Q3CVrMGdfkKzpPZ_k0hnuJ308CzZkyjNfW9JXOn7oaTapYLfDkc-q1uCw-D2mlBT3ggG2KqAzZUWItmTDVZS37GGSp4X1tkpZxuEKcIW9os5pE-7nQBM1VNRhWX4I9d5mmzbUX3aAnamhA0VfBDdevdz8",
+               "width" : 2340
+            }
+         ],
+         "place_id" : "ChIJlQMr9rwROzIRL7nSQ0x30YI",
+         "plus_code" : 
+         {
+            "compound_code" : "46W2+R8 Tuaran, Sabah",
+            "global_code" : "6PRR46W2+R8"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJlQMr9rwROzIRL7nSQ0x30YI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "542V+JM, 89200 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1515233,
+               "lng" : 116.1442369
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.152127830291502,
+                  "lng" : 116.1467191302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.149429869708498,
+                  "lng" : 116.1440211697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Dalit Beach",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108042238556333654099\"\u003eHILION\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sH8V0BU9SRQEVJPR9v4PkGXmZoh_CVQz5Yc9z_YAn2dZWiufQ5eNOQgf6HWxcct452hKrNA6ughgU3a3AZNfd3baEgTN68c7duirH5GmrIsgyGEdW5t5kY9sZRr_eltiPbVxjTCE98AX1H0eLQo9-7EOFzJ-3_pgathSHs8rFwBU0ul3_Qoj8vu8NvD1h-Wz6NsoCIczaZP2wJcvC2AgRtdgkoc3yCtKmf8Yd9p0lXEeC5-yYWRceo-jMuQyS-QzuTO1FXZIp02rpGClnNABx60davyNaU7WoBegs5z_fLnhslBrZyH8mFg8co1K5O0mPtIZ4LjM4Mu2AMcKEPO9Ip_1h-y-m-hVrpY8MhvXDq7legpfD1ZzbS2m8O7z_kp_koyr9P5hrFKmCDaOm_O--uZ2cV4EQgT--D_S0qZNZZigA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJHc6_D3oROzIR1QHL7xl5bkk",
+         "rating" : 4.5,
+         "reference" : "ChIJHc6_D3oROzIR1QHL7xl5bkk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 31
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89150 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1937818,
+               "lng" : 116.1825764
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.195062580291502,
+                  "lng" : 116.1835134302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.192364619708497,
+                  "lng" : 116.1808154697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sabandar Mangrove Park",
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109552612582996415064\"\u003eKonstantin Ozerov\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vDNK4ukIPxQVLA9GZiBpCzsNJT2kl4BYFZNHR5kIDeXiqvWi9iZQ_Y0BFs51526Nhx7lRWBMUv_N97n--XsgvsFQQ65YmEgMr81DpVlXjHySNsJPS5EvYKoOGtkKW8p8ipf9zQgNg1rd9b152gvZ7QtMJmGRneZDfp2CzpNRSgBXl1JUdxvUP2T8ZELqYLHlnKoEuzDUaf5U6pt7dPEie0CqIl0FwGH60rupFcA81ajaRYIQmecC74DRR_iTQuuOKIhK0xFw6bY-LUu-w58G_r6y3qtAWSN8IYwofU3uWIwOvtemMmNks_UfEVAaMxQpPoyGYmnjWB_7EsYqiEOUA2axjPzA4dIzsCQgDNPRJWCGoBc9jB_NhQAOAng3pb0T8bj1lDYskN05zsQzJlyOHUJR9y5cW-UfARX4q3dtb9Xw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJl0Q-jfUQOzIRTqfwUgMpzuM",
+         "plus_code" : 
+         {
+            "compound_code" : "55VM+G2 Tuaran, Sabah",
+            "global_code" : "6PRR55VM+G2"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJl0Q-jfUQOzIRTqfwUgMpzuM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 81
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "654H+3J, Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.205171,
+               "lng" : 116.179113
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.206536930291501,
+                  "lng" : 116.1803520802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.203838969708497,
+                  "lng" : 116.1776541197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tuaran Sabandar Beach Land",
+         "place_id" : "ChIJxdhAFAAROzIR1G672j6wEA0",
+         "rating" : 5,
+         "reference" : "ChIJxdhAFAAROzIR1G672j6wEA0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "The Cape Club Dalit Bay, 89200 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.140589299999999,
+               "lng" : 116.1537354
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.141867930291502,
+                  "lng" : 116.1551169802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.139169969708497,
+                  "lng" : 116.1524190197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "The Cape Club (TCC)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113393714094633646874\"\u003eThe Cape Club (TCC)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v-2E2v7slxT6Bt68e41jLaYkn3C0euPKQxOKXiCzq5_hwzSnvXFJLblA5DErciOhQQ5an270kVNZLQlxgpEzFTV8vXhtikrpsQK-F6yUNu5OUmGC1bxUKqhg0oldXHi-jePfrMV4cD8fUoSc1QNGow9mMkG0njTv3u2xD8kpj-GiccbmOzZfmY3Krr616NJWb4pho4CYYW1gj5VBzynoUPOYy3GXAXrw4UISoq8rsmdUluNcOTrgI_Xbc8Nq4EuHCPgaUajeQRqR16XahjwDJJmny05eCwZ0ZuQG3oJ_bPV85vPySvQU32RRtGSFd1W0dMURM0S5mk2ge2qXYtew2CA7B73E-S0cJda232uD4Msx0ESHQHW7rKG1Auv7IFFj6VmaVjO5Nkhwn-_SH_4cTNWlQW0dHP9euzbcQTvUXgXtw6_K47nMJ53eTrXQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJHRUkDKUTOzIRCvtU1qG2gIA",
+         "plus_code" : 
+         {
+            "compound_code" : "45R3+6F Tuaran, Sabah",
+            "global_code" : "6PRR45R3+6F"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJHRUkDKUTOzIRCvtU1qG2gIA",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 125
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "p/s 323 Kampung Minangkob, 89257 Tamparuli, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1289298,
+               "lng" : 116.3452801
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.130279980291503,
+                  "lng" : 116.3465891802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.127582019708498,
+                  "lng" : 116.3438912197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Murug-Turug Eco Tourism (MTET)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104969922964133543048\"\u003eCheng 7go\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tfgyy9KzPENa14rCW3QgAl70koweqCbUod3tk3YsriULQHCBFQrIiIRoLbde4roDAibSfazhEt2yjKAgRrJRjH0rOJVZIBoCrSMVcaGV-UtAH818RdRJSxBsIlZ4R_vJQvPc_1YnwKnwrZGab2I_ZLeMivudbeZSSFizzDivuHJ2RfhJQ9xWO5N6UxxPPz2Fqvv-m-mlTt-Pwz9xWelO3gvgJ4PEbG4P3BkEYRO4YEiHOzC4oOwm_aMoRW-pn3BUN3qfB7xnx_FvXZCWOLywJteO9LbDHC7aq3I-iZ70yObOwc4sZi8TjTyldsp01UiGgMbc39xTSXQJSMH9d5kDvc5z71oOfMMzuhhnEq38a1H6rt3rDki2nW8WpOVR5X4_9p1sxmWVAEzgZli6hE6EttfH7cRwEEClhhgSvUwmsy9XSn",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJp3E0rOELOzIR6-levinqznM",
+         "plus_code" : 
+         {
+            "compound_code" : "48HW+H4 Tamparuli, Sabah",
+            "global_code" : "6PRR48HW+H4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJp3E0rOELOzIR6-levinqznM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 504
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bontoi, Tamparuli, 89250 Tamparuli, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.134221,
+               "lng" : 116.2668585
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.135517430291501,
+                  "lng" : 116.2682327802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.132819469708497,
+                  "lng" : 116.2655348197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tamparuli Suspension Bridge",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100608498919195824285\"\u003eJasni Gindono\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voNAoO8kC_09O-Nu9X6RnUX81W0kN1o40Ur75INfWZDuWiCP_fDExTkyKLdIcImd7Cxw52RXLl9ZifillCxxedo13NwJsbQZPUFTcDQluGNOI-UkU-xTM7jX6hfz9PGqfgyjParDR0nkRLM2lpgsPGAM3CPRFxeQZektpVqnzP7NuCE4Xql-gutsCfAq3QTudK33SE0Qtr8yazRIiQWFJxvlFuQJ1GkSKLbvDfcyw6PJiuSjWJ_P0kgwuhzUzzdGFhfFVGXgn3TBiRi473ExoBj58nTm1CqmZybysCyP8K3-6b-AEMQuXmQerYqt8f3JNKl7yWl6fieoZ50-HLRGOZh5D_-QlN1dRXZu-lInTHEApPblpAKHRJkVAPhtPZwUPCE7zbNJwEavNY6t3h7jZWAFhoWZLBmk3CdtUCrCQV2Q",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJSY2b8dcNOzIRvux8nrVRmHc",
+         "plus_code" : 
+         {
+            "compound_code" : "47M8+MP Tamparuli, Sabah",
+            "global_code" : "6PRR47M8+MP"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJSY2b8dcNOzIRvux8nrVRmHc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4425
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tamparuli Kiulu, kg Rangalau lama, 89208 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0972678,
+               "lng" : 116.268725
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.098645480291501,
+                  "lng" : 116.2700613302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.095947519708497,
+                  "lng" : 116.2673633697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Hidden Kiulu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "place_id" : "ChIJWd2-mkENOzIR7KfDyz6IU74",
+         "plus_code" : 
+         {
+            "compound_code" : "37W9+WF Tuaran, Sabah",
+            "global_code" : "6PRR37W9+WF"
+         },
+         "rating" : 5,
+         "reference" : "ChIJWd2-mkENOzIR7KfDyz6IU74",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sabah, Tuaran, Unnamed Road, 89150",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.2018983,
+               "lng" : 116.1783193
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.203068180291502,
+                  "lng" : 116.1797150802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.200370219708497,
+                  "lng" : 116.1770171197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "SHABANDAR FIREFLY, 반딧불, 萤火虫",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105661816575834422493\"\u003eLC LEE\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-skzV1HR5JgkbvtmO5LVgjoaEqi4_81ieRTlqD8kV4MW-mAMjHV65zy5QI1WCPbAkgoyMyHoPgQP0yyfwk9s1joE1ny4ubb9Rgie4NNgQ15qyFOG7FGaO54_f0vqjtflICyxC4uEm59joFcOiT-6Mez44YTZMorRZoCo-x3gKpS_1t8i5XQG4e93nrZE5ebRe3KADaCS3M4IRKb4r-ET1541_h3AZxtSiJULlW0cjgBPT2GbJ2vGsHJHDn2hbYDYqLUhTVgrgU4NxBnWyS5TNBaeB8YC5pXtACWHqz37eLHdvHrKFG4Q0IRTlanCGJag0Obk19_y_L-g48BkL8EUYSnbyoMhV0UDA-CYGDIuBI0xCtmWCRmC6SeyvVgwHLGGqK4Byn-RuUeBwavV4E6mPraNHfQi8caVtc4umxwxmmVn7IB",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJ38BWsL8ROzIRBG8fTT-GfRA",
+         "plus_code" : 
+         {
+            "compound_code" : "652H+Q8 Tuaran, Sabah",
+            "global_code" : "6PRR652H+Q8"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ38BWsL8ROzIRBG8fTT-GfRA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "River Cruise Tuaran, Jalan Benakal, Kampung Serusup, 89150 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.241687499999999,
+               "lng" : 116.2253734
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.243102030291501,
+                  "lng" : 116.2268384802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.240404069708497,
+                  "lng" : 116.2241405197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tembara River Cruise",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 577,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108704700978218471358\"\u003eTembara River Cruise\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tDr5aY3ItoEgzppHugaKAd9S1h5KF1ZVzuhoIVlIvVsuL9sElQbDJJEI0mjcSXoSBA6qimOI3aDT0UCOPwcgRoY-JOxq39PEv-fTuPkPnWR0xW4G-Rge1RiDNNLsZjipzKL8-oRwsydIa33qyIT6-OzJbYV_TWNaOJ5G40kgM8OWPjNbDO6RiK9vuUzXr4oQIEPe-B4trUdUHZZcR7TCF9QdZWKt2Jryo4kNm2u4WUDg7tgFkL8QxaVIfWR2gJ6BIkM58WN1wzRxapPJ2GZpBp_dhgQCvlT3UOGVDdpRwk8_mnIZIB0IOP2zzwKML71eE0aYYQ6vpVnyasrKoMUcRmPiO3jccoKkKNGuhMZVf9v82d9inRLvSRUzb7i8dBH6GAXSpcAwWj717RKauOue5bItNrWHseGZQqfAmZw5m9ZJY3w4VBpCnIHy-ibn2-",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJZffe7BobOzIRZp4EdCrnFro",
+         "plus_code" : 
+         {
+            "compound_code" : "66RG+M4 Tuaran, Sabah",
+            "global_code" : "6PRR66RG+M4"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJZffe7BobOzIRZp4EdCrnFro",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 85
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Hussien Onn, 89200 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1104154,
+               "lng" : 116.3595672
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.111728430291502,
+                  "lng" : 116.3609248802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.109030469708499,
+                  "lng" : 116.3582269197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Borneo Biodiversity Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111142017585207087328\"\u003eJoris Heylen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tniNIWusCVvFy2AQQ9XeEsf8pTH6isE85DkQyEMmXTPHjXRDApkQ37PTztUalB7Qmvc056FqzxWn8VLJlUm0vFqXDYE1731FoezsRFU_rlGUBECWcOA1DP5u8yu-XY82CyNcRGKWqTbY8YPKn8EE8kBn0L_5H_S63RiYw9MKhKf5ziCg2VjjtT6g_k3-r_JD_OgAtk9mbZC_2UOSix8v0Ob4Ha8Q1dQt575Jfd_HgHE93uRaP7ZMzFrNoSQpRCEHaeqSthd5LjiSO39w5G1VnhiOXHovJj395Gu_eKvIvTJJEc91UABH02foaXSZTCDMMrTIQNOhfsZNOwGbUGuzgZnIO-IVzso7CXTHhQQW_fQlps9Uinivl7yoHihm9cwLo1CiEdgbmWG9vqg_KL04EipUiNfCH8tPrOMUT4zeg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJF002p_oLOzIRUnIE2Yg-huk",
+         "plus_code" : 
+         {
+            "compound_code" : "4965+5R Tuaran, Sabah",
+            "global_code" : "6PRR4965+5R"
+         },
+         "rating" : 5,
+         "reference" : "ChIJF002p_oLOzIRUnIE2Yg-huk",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "lodging",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89150 Tuaran, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.174137699999999,
+               "lng" : 116.1984844
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.175364880291503,
+                  "lng" : 116.1998516302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.172666919708498,
+                  "lng" : 116.1971536697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bulatan Kuda Tuaran",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1728,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109843718027404082051\"\u003eridzal samat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v81WoLT74BUKt8SJSeIFNbeJs9f_8UfuRAFAiB_65tV2Nl6M0OiFF-O1YXmYqFf3Ck8IvgOWNwsyOdNQluBtl69xQGE53iShWTMYOdccdd9hZ0MiVNCCnbuEwgkHcr-prnpxnxTVwXHtnP5LldSAA-l8FQYGF-aaobTc_wPZ6PhaS85wr7Fdhlzljr63006Zu5dBCkf7zhPgHMZBza7bHWz6e4amn4sA3VlhEgNJp0O5Uq7SY3i0gIic4QdToOBxVyx_O7XHt7Oz5zjRiSPX-9GH02-6p7T3N3ZWE6_g-jzYL60lM6otbvk2-8wByc_U_F7bMBd_mRrIGcw-GeWyulCSD2TlOVrFiAgrUIxK8qow4oB4be9Tjc6ThBoHl0Pyv3lq3ZN9XM9yGTeRrhZ942iwnrh1LyV_DtpSuibbNwfA",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJcW9Ij98ROzIRxJx_i_YC6wM",
+         "plus_code" : 
+         {
+            "compound_code" : "55FX+M9 Tuaran, Sabah",
+            "global_code" : "6PRR55FX+M9"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJcW9Ij98ROzIRxJx_i_YC6wM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 199
+      }
+   ],
+   "status" : "OK"
+}

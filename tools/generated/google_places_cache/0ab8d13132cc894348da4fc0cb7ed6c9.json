@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Bandar Serian, 94700 Serian, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.167035,
+            "lng" : 110.5665059
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.168383780291502,
+               "lng" : 110.5678660802915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.165685819708498,
+               "lng" : 110.5651681197085
+            }
+         }
+      },
+      "name" : "Farm land.",
+      "place_id" : "ChIJdb3aUQCJ-zERXKBlYZAEw5o",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=11151762120455331932"
+   },
+   "status" : "OK"
+}

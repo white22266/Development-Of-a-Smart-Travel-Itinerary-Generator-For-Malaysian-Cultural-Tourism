@@ -1,0 +1,86 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "98700 Limbang, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.773138599999999,
+            "lng" : 115.0010985
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.774375630291502,
+               "lng" : 115.0023692802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.771677669708498,
+               "lng" : 114.9996713197085
+            }
+         }
+      },
+      "name" : "Surau Setia Muafakat Kampung Buangsiol Limbang",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117759596066013391138\"\u003eJaved Iqbal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u5uQV-w1VRHZ7Hv233x9ZxAVwfaNYUVSzOpieoonHK1VIyHJcc1hs3zRgL7wqE-ssm9PAzJKivJMIklOmBDsFeadKuxk9CkWb5nqyWvGvjW-Ywt-pM73PyJps18aU3xDpGBaO9HB-ccsh9Bw7iHhyGxJCVA-rMjI1cvAbsplwfgdqXIyvHlfrE3rLV09ka0fhG5useJ8BsjARlM_AIqZypyffaHyIqHe5HUlzyDSUkMCBiJ8eRVDJf9fYNnoiX6FSSLKnhg_NTrBstDLF5cvM9zoseJ5MvOwHeQ-RaA8GJdNWhG5HsLVWvs_udTzJ2vdCdFW9wnKfrRDON34ImEK_o5S8IMUwYZyP1dVqMqhlJHdXgWhBPZpPVaNrPoNWHDf-OdXvKyd3ne7ocIXZP2GHFlAb1_99Q3tw6fIArPW9JxQ",
+            "width" : 4032
+         },
+         {
+            "height" : 1960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117759596066013391138\"\u003eJaved Iqbal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u8Ko3t5OTGmjKowuqto-ztK53mmxYXbk7tq-Nq6GK72NjnO7LMkAPC4jbd9qB4rVXwxc99uLLvY4Q_IpxODjD_JQcs6Rs3tlQYzFD1ZoYOq-bOmxu45fERhdoLsFgofX5dEh0x4GxEGuIVm3ERLMB39kljFpb8Dfl6LCNoPB08_blr5Jw1lDpp6olHXunVwYspoCLhHKaHN4uuONEVS45Kwi9JDcSps2HpokEyunKlwFpsdVfEO-E9Gf2KQpzDNrlSTCrrWXx5NjIbKEaqwdXFt80sdYrwg_JyVi2VJRp8fkTHAB1fJCevRhD-GgJwPIvxp7stpO37QJU_z47d7nWzNLPrRBfkuFf5FvS0xFldlkje2B9rfgfj7VWXw9d7G2sAp5gXPSxlTFiEYswcKyQpaYo4Qzczpy3mXVyXrl10R2Un",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJd_hSaz-PIjIRNunSVQjyFcQ",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=14129465523558345014",
+      "user_ratings_total" : 9
+   },
+   "status" : "OK"
+}

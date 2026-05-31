@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Department of Museum, Jln Damansara, Tasik Perdana, 50566 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2267 1111",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.137711,
+            "lng" : 101.6874214
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.139254730291502,
+               "lng" : 101.6883823802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.136556769708498,
+               "lng" : 101.6856844197085
+            }
+         }
+      },
+      "name" : "The National Museum of Malaysia",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1566,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104293599118587308603\"\u003eEmna Esseghir\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vmXV155F0AhrtEkh0pHWBEfAEgdK0rW_Jl-nJJ_NM2orvw7UtkWULPYmwXovipfClvN6u7Bi-qKqdSgZP41o6x8Ah205LE5WooGIuyejqPcyIX-hWRt9ZucZxkSiiUVx1Wcc0vXKvuuJyOGdTLBQ0XpsFFVbYTuZWvr1kg18nbZcypAZ5O8K_UsbIGRfx4ChjnSpJW_8iTqg5bXQDMr9xErXvxID3KErdjp8koGF6S9dQ_1cK8U_Zp0HFRwOKFwrQ2YebgjKmQbD5V8aYfb1FG2Ff3pDzewKek_yH8YWJzp6HuNePR4cFSdIX3BPEtzj80AECRoJg5X_vWo_rTxVmcmo3l7bPVdYcpRpFkHS9GCDVxeVKmZQM6bsP_hi2oaX0iuqzqHptd2Wb8hFS0VBv3QQLupHkrkcIGXgrlahv5vsXH",
+            "width" : 2048
+         },
+         {
+            "height" : 1200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112027106578850168354\"\u003eBaskaran Ramasamy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sMr8uxRmkpKekTQoVW7ydW0S6r0xTFWvel0FPK9c4Dbi91yiQ6ZHstmQR-UpU7N0gnkkBCHzU7YGMdaxFH-ZE7VsZp5z3pCCTOEzJdZUbias7tI1SAC6P9lBhwPPRRYS8ErnT4x1-k6uvQwhLvZO0a7C-gZwm8UTgYv59XO-7eFRHchZ-U9P2KsIooou7AdBAa2Fl4gB0DuG5c1KMqKPxSMaxN56D7ZxFka3Mj5rUWqexJPTFPPxKH_U_anEqXoShVljoY-v9phHhffSs6cqy15-XF8eLeIEsNS0wdxZLAFi_xpXrNBh56s8PL4N6nWap7ZaUwPqB_nToJNZHjtU-2AqhyvH_AjFEJl1eY9JFR-gqYLIackIdDA25IeEQ2c6F4gJQw4G6jpdlwMQn9pRXl9zhIxezRqVFVubSTClQsBw9j",
+            "width" : 1600
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118041331435612421651\"\u003eChee Weng Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tkrpri7IatacK9k1UcWBhyLRCuma8jz-f6YUj3EW-YOO4ixHGVA9VDVpOLYzTH5G_9RvtIZ57vKsWkEnvVj-aAD8u_msVe8nl56e7HXOIi7AuQBSazi7lK939cJpihXaizMcrXmlqKFbNfE35jXnoxIiibyGuue_XKSOL20Lhq7ud7GM1MqIaa4UZ3ZiAmdKK3n1uX4wxXlyAE0b7QfabI2dZWRz_5W__JA27zlaf4Jgg7g96cbzDpcHkZUWS6qk5dm81YgmwlviHnFTeK5t6fOR3I1IFvXlUIKTAE0To3BibfYttaN1ya-B_2S2tiJgacpSbxL23yM7XpX_Qu9RXOmpdjeLhtNLF5l88tdMTeRs0nfBl3VwFWYUrn9U1i_DWXbBWq2Ga1j2xPnQPXxHcdqnlnIhJBMaZadptNcHLBYsbM",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110289275840637213691\"\u003eGuanny G\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tQWVVkAvf59sU-jI-bKYZwCsCmt6ZZHHcOWTs42jxAHwm_OtJfeEeZI73BFk2GqTwSEgvr_uo5ifoohtKf--uuxOp_dZQn7cYT79PU9E7moZRgSo9AagsVGewN9nRpfDZygpTOdaWcSJFPUxIcL3hncCIzYkAN05s3k0wosKlOtLhAOvC2loPar5cdtoGjlY6T6e4daK5Sbzp6_eJnpP02LyJ-w-HIF_E4RICylwo0tb7VCuM4vtNgDj8eDSx12PaJZqZ1hYh8yaOGEIC_1Zl8Wn7ySpGKPQfXsT0QpAQq0kFp0NbeGAeKqyDmsJjGQZMhIM8wJki-V-TJitynr9mqH9BxAcFaBtQtG_kcPqg0koVC_hb7j7AygooSYkbAyFjqoj38B1YSzAFFaqpYoBDixwNaZ1cPETVkUA292N0CSh8",
+            "width" : 4096
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101386360832300024342\"\u003eLawrence Hiun\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sWFrFvOFaUkbe119JtAawsxBhexFiHHMsqSRxI2w_ezn_Y53JIBB1zhwLTa-bvDcjbO31ATH1sf3A5vVQ9ebwhJtLwfvQ39O4yXXNQ1xMAKYfbbW1UvKXHkfq4spXIKy2JdOCcFNg4OO8b0PkGb7IQiquRGluub9poC5mGzpySB0D4va84IQm9UnFAjU4XHgkyf9Tt5j52r1kKzwj35tyjrMyxNKJH5Yf8wfnXDZdWVbkM3lSntaEgvxcBgU8rzyyhwycGuLK0VRwISFUMSP6sBjJH-C4Sjb7HYBGDXYiyU7UKc-27uqRDHYMILFM14j4hbS3_rDX6l-DBBXsREFha2HGKitfqhcgfNL6Yi7ygtAc28g8kNuLPJpoZX6OHI5DQ8Z7NpLVASaymy3tNlnzFaYLnTgQPmuYWOrbwaartX6sKPkiIraXaL05m4nSC",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100234331600740025841\"\u003eWilliam V\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sLc9uISIoxRntNRMkqkvZ7BYbdKQoAJxglUOdHBrGPxD3GyRi7zb2N3yKyDL-nyOn0QS4toOuvCIPdxJPlD6J7ZkThyGNE1MHu3r4xS8UPEyAW9Shyn5KYWHqttVRWxv5fGn_C_2BXYCWqYl0gDoKjr0kX1ChbdUkSJsvo5Y_8GF3fDrrAGnjn3BMb9CkMQNifttN6XkkQODOLSr29gVSE-HlNmValGw43qHa6oIK2vxX6YH8_H-qQxu-QJMV0GczdW5skCAIrq6cF_YxDFhxe4fpocsP5FJ8R3x3NpYHvED4sjMa5JxThmwz_mwqk_yvBmClXMJTJBRs6u92iXv1oM7AaLtYr78vqxVO5Wse7gX3qSaO35sx_IVnXnXKgEEfDZ39dU7asVmyOUpwlH7VMN69AvUEZm81VKpJSZqDNlCp79-uOQgmZ2nTzFvne",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100414450686289205248\"\u003eQuang Vu Nguyen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sVHmcmiI05wSFPsfya83GQJUDoEAXAJWvlFNgshJObk1g9vu1MQ1NvOBDrJpMuMuo9N3EQ6eM-c4WuNkOb6kBe4sCkR9SlgM43dCqhZbioY6y9Ry-L96dJD2VfTNxYW8aoyFmGO6dy2wNr5OktdFYXIIwuXh1tqwssFVVp-L0tUXw4ct0WK97ZJPM7ZmoAsGkX4LoDvs1Pnw2-MR35t-BZxU6d3RMp9xP5OJOtnRhmRH7Zhi6hqwqSkuZWvoD5vgtYbEKzkUDHHSTv458GZKxu9YoogSo1whTQlPlDKRQIXgYjdi1PHjvz3ubBerVrYEGJ-Vn1RqQ6ZbAnU4i9fms-R_YWi7CxnTXTHXAC9CFa_L_jLDrq3dFJ05dBoTCQrl80D60Gl-BcAe_cOQYtCjBtNx0OjGryPSe_AHm7exQ",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106324768434277847446\"\u003eKevin Wang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-usHX0dyc-MiVTvJUgzxwSYQmT6_H-zQMugnXIxvbYyflwnz5itSXgBsi8COZhqM_xSzJks78QWQjb8lPbtt1DNFoJzDMiQVMFstZIgcEgxqvCUeBAw9jLm6zj3FpPCYDXolDvxLaZ7aaTQmwQ0uy6XHIKHocueEy-K1b03gLEQYOesRtzjLFg_cuRTFaA1VU_W-oL4Hyev_gA_9xW8pMW7xpn478pOfIftwl9DTGJOdOnhULNFLbBnTVeDlkkM7JLfdIlguocQLPOF6l-GeIuWMC8H1bg5vd7Ow6dGJ4CBEK-FJNuOYLjqSopcrff8fjIh_obQ9Htg8WsEqCWJOhpt4vxF8O979fi_m_opcfIP90izXUzt6HQqzuwnRWbzgMo_DwwuQIdtTITviQz_iTb7bnjFYnPa5mvamoekJKV7znx6",
+            "width" : 3024
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110423160687583409045\"\u003eFelix Y\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-scrjc_UsVfptb8oF-xw9dmPD9UDlTw76Yi0o1eRLDocwxbwM7RHWSJUIg1hohKic1-y6sin3uDI1KSyVLge1Q_5vblyvAoM1Kjf6QF3swSJ9osotzruUEqBoPcq3sCwYgGRfbecQb9DsMolz68qnxJWN1Hykn-knSoDaYMqO688yvXwWegoq58oSKmhLj4II56po1sTLSgrZcPTmD14-laGimmxP1Jw0U4ossiisHjrl-1XjZX-NTNvdiKeg2IxduZxVem1LU3I3_HfD4hlV0d3lcFSogFwyHaNkBZPh2nx9bDYlkMZySm6yJc_tWGaZ3s1BRnyTRKxoNu6CBMM1bBVU8cuBvMihhE0VnyhI37dhSVp5p942gk5Go7TpVGuZzx6VgMSiMg8_H1-9Hx0CINRzkVgBrjVBTHwRSQWs7WYK-Cs1PBOJtWMa6isw",
+            "width" : 4096
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105745057526756456785\"\u003ekenny fo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u2v34n918rFfhDoSDkcaNfxYL3j6iI40YaCrwbaDK0r_KoSjiuAZLOGuyMRyf-9zMZumrhhSppch97wwqQg7XB06PWoivD6x_aQl_wjbvvstoNllR-RoPzleaYoJ7u8BwmZkfmYkx-F8FCEu8bpcMyy9mImWKqEfQDaNCsU_FE8A7MRdRl3dovsILP6ttqQCg9-6o-r_0wSeA-8gVqhv3EyF_Gy_B__DucEtqwlHllvsswKvLq9QJn8kyfsQ78LjCS_DGcu5csoaz4PJH0cQOkvlVKL8I7pEPfN-wM2dcl9a_7aZwfovEy2wnrEVSJZ53Ob8nJoujPRAiIiS1z5rt2Prm_vynuDHoIHC8b0ViebeyrdZnvJ9O4sfnHWKFAvPu5oyAxDFw2TA1uhcyzbAqMBNNPlPkEc0XB1dyEQ5d4yg",
+            "width" : 4096
+         }
+      ],
+      "place_id" : "ChIJ9_6dH8dJzDERC7k4SHbqU3o",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8814646689432910091",
+      "user_ratings_total" : 14376,
+      "website" : "https://www.muziumnegara.gov.my/"
+   },
+   "status" : "OK"
+}

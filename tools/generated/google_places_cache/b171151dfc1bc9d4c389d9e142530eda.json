@@ -1,0 +1,54 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan GOLF VIEW, 89008 Keningau, Sabah, Malaysia",
+      "formatted_phone_number" : "087-336 153",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.369712,
+            "lng" : 116.1709475
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.371122280291503,
+               "lng" : 116.1722227302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.368424319708499,
+               "lng" : 116.1695247697085
+            }
+         }
+      },
+      "name" : "LOT31 , TAMAN PASIR PUTIH , JALAN GOLF VIEW",
+      "photos" : 
+      [
+         {
+            "height" : 1638,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113855328012711424719\"\u003eMohamad Shaiful\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sCuoVGILAHO7AahEXsfkoSgTLdVkyukaHigDGxryVX8PPgAUdw7F0w8lXqcOl44JpBx_Dk9k3ZJUJxtIe5cIC8sfF770u0IxD6cOV42AATkmgEGs5Uh6ImDIxMyA50dQggoh3aQ0-k_0Cbwqakg6A9Nknt_Jl37-uT_mjT0UmYya30wIXJDoEC8ICc6IIHAztOYi_Fypy5XUoRzkwzlRYkctj8eGYBtRXaBlJyHn6GSsfBTDlEBg46DNtmAEzKKMn-O1XTrbVb_uqJs87cFOc-BUEoyT8ISeLYq_W_5SeQvMp4VsPp1qIiis52N_-EtKlaqlVu9YMqK8eARSdOzGOk3xawwq83kLBqoptAud1CXwBP2DH8g61AtfiWZgl-wfcFylfnSElEtZTAsWBYeRxyMY9L2C4ZPYMIx-hpyH0",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJIziItJzuPDIRmqTl97h4r6w",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12443297031276307610",
+      "user_ratings_total" : 14
+   },
+   "status" : "OK"
+}

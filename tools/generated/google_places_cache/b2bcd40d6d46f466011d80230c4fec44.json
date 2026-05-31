@@ -1,0 +1,95 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "AH150, Telupid, 89100 Kinabatangan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.6805257,
+            "lng" : 116.9561446
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.681884330291501,
+               "lng" : 116.9574662302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.679186369708496,
+               "lng" : 116.9547682697085
+            }
+         }
+      },
+      "name" : "Telupid Arts Wall (Tembok Seni Telupid)",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1680,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106338729160473711885\"\u003eMalinda Nataniel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uFacTrYIZZH24ZO5pJB2OtHfsSA6fH70lP3OEbapqJrvjmF_JPXd4PAQzMjm7aacNWxNRKSx2pCEze0pNBDlenMsO9x_kskw_8nvjFUX0M9X8KfZREZecfA2xODEQDCYuIaGIiHj6Bws__Y4AvQSfm_MfWzzCM6ZfhSDMVdBOKKdVoyZVErzLysOEg7MV-ETZEFNUQnas8wm87EilidQ-_Z_FPMDmLwyzIl2ZOOyjtqY-NWVYgaQPm9w-msgxawEcwMhJBmNzir_Pq63BDwxxQ_YFQDvtbhPGox7vBXmyKtQiMPZdSLKLKMjERI8z8R2OLqIyWE6YltI7mG3ggycYbVhyxBTUnT6bm7JUMfjFCC_a4D3uflSiHsKSbWw32AlqGxU-tZnTofPlRg762t0r-_Zcp3PV0wMRiaeQ",
+            "width" : 3648
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106338729160473711885\"\u003eMalinda Nataniel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vAIGGI1sPeiNnyTDtCnUbCqEIB39AngCKjZ8t7iFpLd84I9I-V3LQYP5ezxoV-HLhadDF2jvkKDq6Ke59usP-c5QdYu-XTxF-_vdQeu2PIkarsf3196CSpTEWZeF8boRirPRphdIrNdxq1c6KBUOI5uT4BaUSc_mX5HeVIYbDHRlPQ1UhCyo0qKr2yUqa5OV3oggAvXHHBhwfXEGeeGeB8YTgJZ1bOMC4NXKgxwdVTIfMlYXPhgwa30rp8zOoetg561OzbHr4a_9RgiYVekCpI8cMRShc9ZhYJgNrWqaKn1uau8BVeKtSEHmJK3DlbvdQ8AXhIf88abRyIpZjla9xFiStXCuvEqgRfWaPR79RYv-yMfqW76h7qBY4frNszrgxQfwzfix7iKX0wNPom0ezi1DtLHivIl-bRqHK7nw1Jig",
+            "width" : 4800
+         },
+         {
+            "height" : 1680,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106338729160473711885\"\u003eMalinda Nataniel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tAHTFxWqyPAs0kgqvLbvW-yZ_mT6TVysC7G3UTLt8MDLqbCxosJsoC3B3PSS1f2Z1Rb8OxnOKUNDm7qZ2wVXFqHiRLRajVjXRky4S7mXJcOqA__Z5ai5WuDVrVqF0ly54yjFpCSpcRDhYVQPp_L2CIW4ukrS2WKC2F7lFwn6cjTbuIlJDfSEm8WsDvYlA5YmvkW9ABMBZ2q55wCweOxuidFJWQAA1YFKAUfAtN5Y0s3T3XKNUvhSZJQHt3qmiCaMOBjR1Gs_l2MwTtQp1sSBG8-mFliCymo40glNbHQ3-h5MtAyFmG5TS8whZ4qHLajF7ukmbqJ4h6KagqBXHzYcOLrZiC5vO5J6bDV1UPls-b7xul5MlCnrMm3t7v73utO7SwBSxKgqhu2W7XPztc5KZgO5ozr8eL1ug3yJ_lxCAWwQ",
+            "width" : 3648
+         }
+      ],
+      "place_id" : "ChIJW3DSongJPDIRONJfnyfiwa4",
+      "rating" : 2.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12592594692910076472",
+      "user_ratings_total" : 4
+   },
+   "status" : "OK"
+}

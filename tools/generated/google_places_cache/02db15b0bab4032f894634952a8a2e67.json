@@ -1,0 +1,1223 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vo2phpyDO0vtXPmwbvC7nFPthVTCunhXg5uxvmyVvg-9JZze6pbS0k8xSYJ3X6HJPud2c0u97fvvmuxX_-fhPGSE33B7IkdvByi8yrU9nRzwo9_mSqnfpSxrLyCRN9TSEQa7Qf1axejzRffGtS9AK8yAm2DKo_7q4UN3AlfydZeAkmRWHROPUl-_LAG_S_BORj87GiXh7xCgYt-sLnYnAMWPaBSCnt1CJKh9q-1gq2NLbCTbLpd863OS3XibDhgo2qbabczFctfSpU9PT6MhxhNYQ3Rzuf4OQxfc6FKntRqePzXjlYcJ4R9xR6OMY_MejUszhImbTAcAUdZZ19y0ptJ1a6GTJQPFXRuzRhIIVCiQWUihYSprsz8uxEIV1E1smDfz7anYVjjie5W1k0sJxf1GuCr_pskpPMDmv14wEoyU1XgDYY9COy0LsbZIRa-ZOtS6bTaVB0M-lNgP8kCWIq_VqMz2mjq5ET-8gQGDhfe8h5tM4MDJ5NAFz5krlhsuSW23slTTgbMhMKTMi4G9ad-_X77BXw3-21qGXnsHkLl6wqxss6TIhUtcfg4O5WVKwtCFklyWycX-Hzy2cDAiK0qTzIyznSojuuU8ZEoUmYSQpBlC0OeqIh1GS4YtkAEgdP0ngTfEuHwIwlNukYeimYwtEhv-binStR-P0jv_PesVOeLLrhgXjkgTyHLOCGFWC8AZCtBmeWxgjL0Yummu7HV67xRa-m-M3_DVv_f8CoVE2waGwOsTKzK_j5-augUSlUNKcl1kX5ylljpixHr8zX5uwCRkCNLMj84pZGzsgM37FblW3es06cAEHIOROcelA3b8S4LOAD",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan tamparuli Kundasang, 89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9818082,
+               "lng" : 116.5600735
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.983164030291501,
+                  "lng" : 116.5612810302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.980466069708497,
+                  "lng" : 116.5585830697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "August Kitchen",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1848,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112066239852973715695\"\u003eAugust Kitchen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vEorQua24oJPeogTG8d9uTDV6cdJfoZSGS0VZ7CbQhF-aNV48U_3b28_ZDW9OICJcJQhpzkpWFrHWdo8kprdhi54tQmmguYfJJEKMnYkR9JiGFt5pBjuTLcEsszbWwJw25jlPFBZnomUdOOcgUCZPgnbFM2t_-9iT5l1kkVlacu2CrlEhaAfSZlrlZ_uEt_eDzLFDh1RTWBw1X--FG_GIX2Hl9b9i4tpAEt-38qftvhGGmpo4mdD-vS6S60wiaSk_KERShyAWubgeYgsGKrv7RNjrV_lR2G87JrI46F8QcFQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ1esWV0SZOzIRVp5iw1P7Ekg",
+         "plus_code" : 
+         {
+            "compound_code" : "XHJ6+P2 Kundasang, Sabah",
+            "global_code" : "6PQRXHJ6+P2"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ1esWV0SZOzIRVp5iw1P7Ekg",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 316
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Langkon Pitas, Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7256407,
+               "lng" : 117.0414586
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.726959080291503,
+                  "lng" : 117.0428185802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.724261119708498,
+                  "lng" : 117.0401206197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Restoran Pitas Seafood",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113565290023645154993\"\u003eMax Jr\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u57OmvxdUtHpNcI3KrGbclMDrb57qbYuPga657o5v8XSWnzXWYsCcaXRJWwIXqAzfk3Et6IopdA7x5V0l434RuZTFKPr7ASx9ur5I0zXO9ttbvDEU_pSGexD3AEl_A2um0xi8rdFOwrxL1Mz-YDzhA7zKZl_eF2UBatspBBkYEoM21b3bqZDcKqMrQyaQf9hJCuqCZWx5Cg3oxjnKU2qIpixIhqVa5IlFX9DYS4iTe019AUqB1I_jtSKAiNZhBMCL3_lL8MzVwxLgWlq9tG3sW4Yso8Hjdw1Nes2oLW_HsVIcrckqql_N1VJ4dDWgnqJR8yVzI7QX8veYBlQXlJdYXPKUsMc8I0fESUeuZqLJ5qcuh1WKd_HYfpQlS4NcUCLOAmFRXoyXlOntl3m8tKprx3hLqqt7_02G2WnQXwULNWLSn",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJlfKL3sgbOjIRiNbJYzebssU",
+         "plus_code" : 
+         {
+            "compound_code" : "P2GR+7H Kota Marudu, Sabah",
+            "global_code" : "6PRVP2GR+7H"
+         },
+         "price_level" : 2,
+         "rating" : 3.6,
+         "reference" : "ChIJlfKL3sgbOjIRiNbJYzebssU",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 217
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Langkon Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7225326,
+               "lng" : 117.0377968
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.723899380291503,
+                  "lng" : 117.0389840802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.721201419708498,
+                  "lng" : 117.0362861197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Kedai Kopi Good Luck Pitas Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102153080890166033836\"\u003e231 foodcourt\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u54ljfu6Fwoh6fbc0orFjqz4iB701iIVP8nuUTQB6bfLfzCaeBSEJyflKwaRSclOp_TzyDWpeHOptDUHRLn2BeeYGwQnTTiM7cqfs-eXH8aCXULJxZGhwEja4nJrvMP4__kY3xJls4aIicTpDHUoslvyW2pclXyUcahtLr_nVw5k_TPOXmd1Tp4OaB8jIH2dhCMNdsOuW4XgU4D5wkQdK1oxKxSpGs-JB87vSAB3O6qt7J5fqG0KtQPHXoan2ckSv4z9dWGmA9MXfqQIbQaARvahlnhcjCIenIVXXYo3BrDZxdE7ObVAYB_UW0V_GkZ5-2ScOFMm3meS-eh9n2K4-9XltC1P1s_VhnfRqxDlrcxdShzAqY8gXDBKA7RH8tgaC7Oc4M6KeUxSOwG5cbo7Y_OTWxcJYTEruB00hTARxFz8K3",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJxWsbW1wbOjIRg6V949TSLfQ",
+         "plus_code" : 
+         {
+            "compound_code" : "P2FQ+24 Kota Marudu, Sabah",
+            "global_code" : "6PRVP2FQ+24"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJxWsbW1wbOjIRg6V949TSLfQ",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 123
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Mile 7, Pinausok, 89308 Kundasang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9645122,
+               "lng" : 116.6015814
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.965882430291503,
+                  "lng" : 116.6029347802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.963184469708499,
+                  "lng" : 116.6002368197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Bw Bus Restaurant 小陈巴巴",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110543454915664683700\"\u003eChristopher Foo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uu_EvwZQEpYPat-ABJr-65zeF5B6X2PhWlA3U9HtybkhQj5vrZg80Y693dIc_g4nqV2oPEWrMYLhsaauDRFtsmCOTazdMY8nbuIS3mykNtNfc3IAI4acqd40ivMDat-YVhCd8_pSm-7BlyERxrgvMggoeRXbMGhVoq-l1Qso4JPJ78fhBAv76EajnENij24vQQ178PO2HUO3meAKlCwoWgKUljZWWoVSJM3e72UB5LAV57WzMPJWEg8WYAXINQvo396KEnjJFBB2fGphCSSTd3d0HM80DnjCWuKzX6w99Cz-Iq7gZ3oB6Nw-i6dSqpSvPDS1vqFFoeWCMSGw997Cx4L2iq1jrLJCh3TLY40WTxF1-eZs5ri375ljp0pTKYfVHl_ghSKmqZ0wcNUc-0nWiRdETlZhhNlxVzvAl10PY",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJMTV_i1KZOzIRby_lWfXIFR8",
+         "plus_code" : 
+         {
+            "compound_code" : "XJ72+RJ Kundasang, Sabah",
+            "global_code" : "6PQRXJ72+RJ"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJMTV_i1KZOzIRby_lWfXIFR8",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1378
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kinabalu Park, 89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0105066,
+               "lng" : 116.5406929
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.011757380291503,
+                  "lng" : 116.5418170802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.009059419708498,
+                  "lng" : 116.5391191197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Liwagu Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104780646457931338490\"\u003eS L Chong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vdZX8yJDONTXNI0ffIH7WExI4yPup6cpVcozsDiMtzQKr-OmXcmn4dXzBNRuariIE8n-oS2-d0p-teqPMq-VtQFgpw5Jz7gauliSQDDeVy1Kx2G0yYyIygdlLxzit3GmquRTiJenpexqwS45wVCNxmdXW7136IiGTLJSTy5slppqayF-WMhqaFfqTjTglQzl9lInY_aPQl9glg2ZWtYhp6Rj3XmACiibGOW3JiUsOhQOtdsNoUqAVVVgtpPznnvd9xN7a5Xv_H3-i7zsOq3nemnljSmKQIRL36MoAC4JbEOcNU48s7lf3Id1pbYrP3stYtlkxx_WeE6TOsKK8GSZ5vUXFMZo4__rVmETrBAAivxm5BmB7bNPHeXw4btRq-lhz4C1CoDXgxPD2DCjcrqQrAW6heBDt7UFGFcizArO0DqG9B",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJN8DW1uaYOzIRmOGjqFa5ZwQ",
+         "plus_code" : 
+         {
+            "compound_code" : "2G6R+67 Kinabalu Park, Ranau, Sabah",
+            "global_code" : "6PRR2G6R+67"
+         },
+         "price_level" : 2,
+         "rating" : 4.3,
+         "reference" : "ChIJN8DW1uaYOzIRmOGjqFa5ZwQ",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 580
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Langkon Pitas, Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7134271,
+               "lng" : 117.0345811
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.714774530291503,
+                  "lng" : 117.0360151802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.712076569708498,
+                  "lng" : 117.0333172197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Uncle Bob Petronas Pitas",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3648,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104261504727505425367\"\u003eArlin Aras\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tHQQSy6EDJB2lHyPNsfyLxssPuUVAI_8iLUSw6MXpr1kIVxRc1QwudU-7TgvzBZwfz2gRd7njgPP6BnzHDjUAUdvEN05euL7VfWN_3_8wqZIMjdhWqYFy_vkzrKrcXizghUeOnjmVdDfpqIliTQhprE0bGpzDA7rN8URdxIrJeVoQP4S7UKdI_sAc5a0-pjRn9co73-Ha8jjxb60itrx2NVq2uK0sa0HliY7MP3jWxfUgfJoYj38REG74X4EP-knDVFDTbT_EUtOVInu497EeK9_k3kRDk8OORhM-5sZHQK207FLW7-Q1Nx7GjbLWgNfO-d2jonlaFlavLVKBrKs2D1UPYxljnPVQJFBvmIkGz8Mv3nxDnLepJW7lTB1hlLxztY35IGvPDF5BnY3_JDxIfJX2mnizMCvVelbvCjzW4mlSd",
+               "width" : 2736
+            }
+         ],
+         "place_id" : "ChIJZeKOCOMbOjIRoTzpDBGBj5U",
+         "plus_code" : 
+         {
+            "compound_code" : "P27M+9R Kota Marudu, Sabah",
+            "global_code" : "6PRVP27M+9R"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJZeKOCOMbOjIRoTzpDBGBj5U",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "meal_takeaway",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Plaza 333-5, 89500 Donggongon, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.923655699999999,
+               "lng" : 116.0775569
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.925011730291502,
+                  "lng" : 116.0789458302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.922313769708498,
+                  "lng" : 116.0762478697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "D’Tintap Cuisine Local traditional Food & Catering",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109945976434251772898\"\u003eNg Chok Chen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vNrJZQ0k3XxkRlzi4noFuemG8sDapcIqDW384ApUR2CbAfBLkslBIcB5LBwgvMDjJQmCYMMtr3Tg9xQQIA79PG7vlQFUB-fcinfuk6KnNVpLPe8dIpNZdDKSvbYrH5JnnjtHMJdi3-w5u9artV5iwgqIKsXMpeuXcSQWA16PjGToVYPBu3QyLVF1k126tN_QCNotkMa_IKRQ22Dh4radcCoMQpE-ksFNVDbe_Kq_PvwQO9Ek8xcnc7XUE9jW4NrDSXMmZuCngXyaP-ZNv2WT3N8bIvdJe_C0v0tszTcEuIlBmceNbZ5EbigXhwPiPqRKK2WATmnPP-JuOX_ZpZ49NQCr9iVcYy9xJvfRI4YURkZZGK7_5KVAVPDHonIBPV05x1_fFk_JIl-NCxBSEocsxUjvea_chiSiN-eeQP3zfNS-GL",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJMw3IXgBpOzIRyIcGkW60yJU",
+         "plus_code" : 
+         {
+            "compound_code" : "W3FH+F2 Donggongon, Sabah",
+            "global_code" : "6PQRW3FH+F2"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJMw3IXgBpOzIRyIcGkW60yJU",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "9, Jalan Laiman Diki, Kampung Air, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9783909,
+               "lng" : 116.073957
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.979722780291502,
+                  "lng" : 116.0752707302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.977024819708498,
+                  "lng" : 116.0725727697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Restoran Sri Melaka",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111327476371408031465\"\u003eBorneo Fullforce Tours\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vG5Eo_39CEGlGF5wKLx8-pWcjgpQDIwnUSuozX0shuhcGgQ5caBT3d4GvRbTCNEROva2ohUebOUIdYmHjM6X02wDUZAgt2WlfQa39tOnyhvXP7r6_O4o5kSztMAoqnnLR4BLiGReuV4l4dGMjMiUmJj0dE63YXP2LfDRRCdvAjyT3X3bQ_qOXRRkQX8vNF6W0Ou35gTcXr2jFUMDSqd415299fVFrXZmdU4vP4raFk8C6WhawVcgW3lxl-xbN0GiKsfsYTFVqIX5OSfaPyKM038rCpgj5CV_j7xXHM3dpr-6Qf1ddyHJjHsjSHZZY9ealqOs_CiAchqS_tO5FEgW9LUKJIeAQ_wtAoOe2wCWf7e4QV0TcxShS2_E5TfiTpSUpQEXBSZ67CX59vHjCHz44rUkIPmD2hJ-LCIAUl7pdYCw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ7ZNU_JBpOzIRJ1dkksMgC7E",
+         "plus_code" : 
+         {
+            "compound_code" : "X3HF+9H Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3HF+9H"
+         },
+         "price_level" : 2,
+         "rating" : 4,
+         "reference" : "ChIJ7ZNU_JBpOzIRJ1dkksMgC7E",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 713
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Ranau - Tamparuli Kundasang, 89308 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9943475,
+               "lng" : 116.5539769
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.995621280291502,
+                  "lng" : 116.5553032802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.992923319708497,
+                  "lng" : 116.5526053197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Kloud Restaurant & Kafe",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111153941930890288808\"\u003eSam VanHeukelom\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-voFYOhJ7QlHMUGHC6D6ZNm6bN-cphFzeXhD_rABLWFywhZOfLqHd8BmNMtjrZNPHxIt7llb0RyUMpthICJ7KZ2CJOdi_OGx0opFWM9_pYi9AhHIlWaKjcH28IDjGsypCWf2TOx8HfGsxa722PVAHMR3Wnq4ErcXEG0Y0W9_A5ihSQZi31SY20xFzivnSI7FTrxBwDJCbsBa-sXJ2S4rckiSX_Bm-NtsDBTJ8VnK3JL6ShJDivxlF2cVr8exw6Qb3mep4fHmE1W8IpQUwBp535gzQ8mkDGkQuN-R6nXuvt5ke_C6SWyL16wVeQqTLbT4ZT5s3DYGWzg-Fpsj8tfWdZqNirx6c_UBK1k2g5Nj-pa4H4ywdBZoa-Rpth0GPAIFYUD52sWWA7IQo_RlD-cMTiPF2_MC4Ut_mPOPlBoBeldcvpbtulMLgNukWUa2ZBv",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ1TVAZQaZOzIRIPR7C_JtC6I",
+         "plus_code" : 
+         {
+            "compound_code" : "XHV3+PH Tenompok, Sabah",
+            "global_code" : "6PQRXHV3+PH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ1TVAZQaZOzIRIPR7C_JtC6I",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 379
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3A, Lorong Dewan, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9843077,
+               "lng" : 116.0784858
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.985674280291502,
+                  "lng" : 116.0797450302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.982976319708497,
+                  "lng" : 116.0770470697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "Little Sulap",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2751,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100557970387259827266\"\u003eLittle Sulap\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vcXI-aKes887ElGLsx2y-CxgcQdb7Zpe7UdF4RpSDGtmW14a8-j3DPxMSYJwVoCB65MPG3oV5Fhu2w_94UPIX_fo90zw6yMnEBG06pE-VXbNyqMWJz5sikbRt2BAoSU3jSC7U11K1UU26v859PwHdXvfdFKZwIJmG5jqH7-A_BJNGTGrq16KoJ_XuIKss3lWQL9-UAiQ5MbsOCR7JTCfI226V1OEj-yCc1Pn-dVV6rsOta1WMrt7mqgczRfzB3FWl75QFbBY98xp6zHJXHXfz50mmoDXOhhpc4a73pviPYOg",
+               "width" : 2751
+            }
+         ],
+         "place_id" : "ChIJU0wSH61nOzIR7ANkOVGl7PI",
+         "plus_code" : 
+         {
+            "compound_code" : "X3MH+P9 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3MH+P9"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJU0wSH61nOzIR7ANkOVGl7PI",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 364
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7069417,
+               "lng" : 117.0334271
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.708298080291502,
+                  "lng" : 117.0347378302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.705600119708499,
+                  "lng" : 117.0320398697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Warung Kak Siti",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103872073843284877755\"\u003eshella anne\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vj9sfa6s8UYtwnHJ_eHsV-zSvZfNwbcTbYL_u05WK9X7Vwz1xeFhZFfMd_zXQY5OOqfRlE9nYb9GHaBGBk7nDDBGylzbRbBZItBF2k1YqEkUagllf0jUBBe72tF1SWIX5P8-kyYvQcXgs4GiDFos82wiMUr2PrymPWxenZlZD5BHQEDDfR1Jv0cWtPPPHfSBAHexopkRA48Ty50mNllPD6tRgbmemQQAF55WcszlZ8MdQwknX4fVRxZiOo6Z4V847NndyY7_YoburqjFwk-ztx1WM4vohFcfVMK4V2fi5suY_QSZtIT4WqGB2Qtax7AStbdQt_mUYmn9IX3047c9o_5J_2HRRKyCsyzCMkdcvhsNKdIeC8qzAo2cqbW8FsZBRst1nXZXdDHHJnUBJ2silL_lb8pjKzTanu-7EYKJ1B1EOq",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJJUyxpX8ZOjIRrAsd_CWsJxA",
+         "plus_code" : 
+         {
+            "compound_code" : "P24M+Q9 Kota Marudu, Sabah",
+            "global_code" : "6PRVP24M+Q9"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJJUyxpX8ZOjIRrAsd_CWsJxA",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 33
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "127, Jalan Gaya, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9824534,
+               "lng" : 116.076551
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.983827330291501,
+                  "lng" : 116.0778499802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.981129369708497,
+                  "lng" : 116.0751520197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Yee Fung Laksa",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1668,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101641717743524072041\"\u003eAston Lin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vQz7uaBpLkDfRncmaQOczOjyYnJ-T-FRkv-8UAFBd803F5zzlV_Y6d39m98qrwxB-2Y777rXRs9fi8PmUWBEQNbqBmt6Oz4GnRLkPzwZBN2LPeZkwCp5XguBr0qFvBuj1LmOA_CPRlq_DWaIBYbtt-ZqWTnVZcVhfHwCOEm9QhuSj65cOqRwMfqz22XyBvnMzvqi8_gdcOp-ETzQUmgVo0xJ5tu0hmOJLWVAIuE4QemWp-RiaaEWu90wCVBLDm6d2ALMzfqwUCpwQhbowXuFWhZEEKg-ROuuF6eCqwhq5HgqcjqKGutbAHkl16oIpKdiQJzpoI555CBPSJ7bDln5O3iWRWmHbwfNNC6bOFbyRWBOJ_ltNwEtiDu_9seaq_B754w7hpTLD1BSYrFWE2KWKoBOih28SCjU9wcS0Rx83KY5Je",
+               "width" : 2968
+            }
+         ],
+         "place_id" : "ChIJ4d6vjI9pOzIRDUVH5gLGGBw",
+         "plus_code" : 
+         {
+            "compound_code" : "X3JG+XJ Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3JG+XJ"
+         },
+         "price_level" : 2,
+         "rating" : 4.2,
+         "reference" : "ChIJ4d6vjI9pOzIRDUVH5gLGGBw",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 4044
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "P24M+H9, Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.706426,
+               "lng" : 117.0334575
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.707775980291503,
+                  "lng" : 117.0346466802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.705078019708498,
+                  "lng" : 117.0319487197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Singgamata seafood",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106881719438218565703\"\u003eSinggamata seafood\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vWtsiOvTRZ5cunUxE7lkQxrYDPqvYTDtnf414eVyR_ZtPotJ1wFpHlLX_-gdL1UqCZ-0UQBIRHW0unO8ZIagBuPJsbSG-7o7QydHEfu93AAplJwaDVxT4L6LYwnPUXaWbxnQs3lkuC88ZyKZNBsJZqTQm0kVb8ULE8k5nhKP_RVav9KzAjwxUfvaiRfzFo7b_3ay1Jr7xyXyxXRwlaA6jzzP90TbZtusApRcIVUF_ha2a7Bwl8aKf2CMM57y0TY9q4UcQ5kX66gs_1FxLK-rv-bUbMHbuJ7_XcHqKdAv4F7QW18PvUEhOI-cYQzovWWZBxS9y8dGXbKD9vkcoh5x5CtvGXhY4wxsBishrAhUkHBFn-jZIaVaa0cNLr5gXAn0stWFsd8VhJ9RS-qMhQkDzLGH_QVluk_ReD7vXwbFllag",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJTwGGuQkZOjIRxFggqXbEjQI",
+         "rating" : 4.8,
+         "reference" : "ChIJTwGGuQkZOjIRxFggqXbEjQI",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pitas, 89100 Kota Marudu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.724266099999999,
+               "lng" : 117.0517613
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.725515280291501,
+                  "lng" : 117.0530995802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.722817319708497,
+                  "lng" : 117.0504016197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Restoran one borneo",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "place_id" : "ChIJ4fLRU0MbOjIRuZC4mZmLf3U",
+         "plus_code" : 
+         {
+            "compound_code" : "P3F2+PP Kota Marudu, Sabah",
+            "global_code" : "6PRVP3F2+PP"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ4fLRU0MbOjIRuZC4mZmLf3U",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "4, Jalan Tan Beng Heng, Pusat Bandar Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9777987,
+               "lng" : 116.0741768
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.979191380291502,
+                  "lng" : 116.0754496302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.976493419708498,
+                  "lng" : 116.0727516697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "KK Garden Seafood Restaurant • Sedco",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102286725381031158548\"\u003e현아\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGvmNIV2TyiHb1RG8e-E2rBFoJmL-cyUV5lkSAsq0-7F-AUwFCpjlrrtdXHTRe2lwuvsyETZPV4MAF0s3VNHcb_s72PKtRZyPST850RXuNR4fhrEOeXN7ONnK761XtULDLTRkt4Ww1w_8XWt7zGTBdT4RzMIKXJ3I0GVIZYKj3JQAt6CMI59DdcEqEau3pTlvqFR9J5_wGKr_3bJm2yg0Tb5YUfA93PLH58qR1l1Weaf8hXlset0sWowecYywiJyZehM54ZblRTw3HjzopuQ6vO0hcqxOswsyibCAnFFKQdbXLR7ZEFC4-SqQF6HH8YUHreKPyuqe7VbRZVp30WGBASVymQ7T7wddsE4drKS7Pi63F-GkllSmpy18iwkmGGV1g4ZTnTcXU5faE0npx_5LrVkgysVASsvwF-iSW8onlEbuluUqsIlvRLy72wDoM",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJge_-9V9pOzIRl882DHxfCFc",
+         "plus_code" : 
+         {
+            "compound_code" : "X3HF+4M Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3HF+4M"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJge_-9V9pOzIRl882DHxfCFc",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 5838
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "21 Block C, Lorong Perindustrian, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9902568,
+               "lng" : 116.1282764
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.991644230291502,
+                  "lng" : 116.1296737302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.988946269708498,
+                  "lng" : 116.1269757697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Yii Siang Hainan Ngiu Chap",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1020,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106389715863690927608\"\u003eYii Siang Hainan Ngiu Chap\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sr5EUOvYWaXY0YVgWrf9YkmjOxIPsqvaloi6XYbphtdY-CRGqgX3K185uspTCnAfCnyo76uqsj1Xa2rADHqTjGIF8zyVQYeu_xoEv-PAI4GpvpYS419b-f2WtJgSl0JuFqYQnO2rwvdK03TDKOqXgcgQjyJbZm-V2rqVKsq3wNcALe5LE9gCTaGq7ivsJeyz6r50zmuzCMcNqqmw3Z1PkJbvEp_oeJ6KytUYqRUl9k0n11ec1PrtCTVIs7-sn8khckpzn7o2Fpo2Aux2NAdhIhR6IbPsHVKfgU4gIFkKdqD6BqM18ADrObrzSaHwXxlGLlMPLg0ehP-dPXLkMU_IPaLp8JfhnE-F2lMqqIb3fe2K_HZ3xoXX5QtPvzA4mf36-wZyff1nHkW0EvPuUn__N9MNcFPVPV1AhLp8e510c",
+               "width" : 917
+            }
+         ],
+         "place_id" : "ChIJP1R1tP1rOzIRjOrXKUrqkgE",
+         "plus_code" : 
+         {
+            "compound_code" : "X4RH+48 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX4RH+48"
+         },
+         "price_level" : 2,
+         "rating" : 4.5,
+         "reference" : "ChIJP1R1tP1rOzIRjOrXKUrqkgE",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1610
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot No. 1-0, Luyang, 1, Lorong Lintas Plaza 4, Lintas Plaza, 88300 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.945870999999999,
+               "lng" : 116.08856
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.947158030291502,
+                  "lng" : 116.0898874802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.944460069708497,
+                  "lng" : 116.0871895197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Brass Monkey Cafe & Bar",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118370025218583557807\"\u003eKyungsin Kim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vmLhGdN5bNz99tEZ1-HM4G0k_FiG3rsbsKgLS3p0MwgPbNyenYc0r4iHVYd3isXq_SdzZgzNHHqI4s-0_yh9DqZOu6LPrWmHLJk2RQ3VCD1o2s7SIaL3CmYEhmumXPTQSeCFbKCnvpGBgViVuNadSu18D0-AbcEOTYwGe7yWq_ra6UN-5NRltj1a33q-O36XfW_fJMr8XxQCzPiA5MOb96vBB3VlyUbhrPhCF2XXMYfU1PyP7k7ggSbpKqZZhpcXEas_VDOeg_O8Ckq5L9QXJRsrJ_n1t8xDdYPxFa6Zpysajh4D6zjUyQAppFLByPSKNESDTUsszQaXgwA4UNhRQeIFNA-IuXcJbdVHAj1uPaPnYlfd653bi8ika7Gf5Z8r7u2MPxT_GRKVx4E4hX4yz1iVOYOURj4XySjYL_UPNf4NI",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJJ31pHlZoOzIRBf8qhqmI8Ko",
+         "plus_code" : 
+         {
+            "compound_code" : "W3WQ+8C Kota Kinabalu, Sabah",
+            "global_code" : "6PQRW3WQ+8C"
+         },
+         "price_level" : 3,
+         "rating" : 4.4,
+         "reference" : "ChIJJ31pHlZoOzIRBf8qhqmI8Ko",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 523
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Hyatt Regency Kinabalu, Kota Kinabalu, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.985165599999999,
+               "lng" : 116.0750504
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.986603180291501,
+                  "lng" : 116.0762755802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.983905219708498,
+                  "lng" : 116.0735776197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Tanjung Ria Kitchen",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3234,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109547041816037686594\"\u003eTanjung Ria Kitchen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sEOsxHYzhh-bS194QfTsCfjcKDODxqz7o5WOtFOYCkBsHrcPSEMb1p-jaNC8ApCUYzH8m6ABKMwCeO9yDxK3yToBX-_srtgC_G4OkVRnpZqb5exxSKUqN6Bhh3GFegeBlbNUXaVLuP-UXIDHuYxLAhQye6qfplWQXISnk5AEe-oSR0q5WgA2PsG373srfTTYyNOMxrZh5tAfOnpVq_0lcFsKsp1SXoTz6tRSfEkOTxuvjTbW0hFyVn9WMHFHBI2SljANzucV4DByhSYEbFmGNkUJF-o7Paes98qpzv8dG0C0VJJnG_n4dUaj-cQtP_c5z0v_Divp8snSYnjPR9qV-Gu8UpECo2OLEitrjoUZg5z6Oe3UM6q0rngfB5kgNigMixsB2RtZFOkYccHkZQ7ZGKjtagx12syJ8CjxyVIXLqSPA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ1_bz7OxAOzIR_1dQFqEUWq8",
+         "plus_code" : 
+         {
+            "compound_code" : "X3PG+32 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3PG+32"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ1_bz7OxAOzIR_1dQFqEUWq8",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 163
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 15, Beverly Hill, Jalan Bundusan, Grand Industrial Centre, 88300 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9263495,
+               "lng" : 116.0941023
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.927560130291504,
+                  "lng" : 116.0953483302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.924862169708499,
+                  "lng" : 116.0926503697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Welcome Seafood Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116822826349661520614\"\u003eRyan&#39;s Review\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sYDxNxNgqbJmDCdkk8b1lZznpqOGJiFXGMSVtST2rpCJKhQKkcEbNQrGB3mduxHJeBTkDrFskpxucwCH7EBEGYHSXpZ3qjnZNyM4oVuY1TM_DkJT11bJC9Qgk6itIREdMA94d-thSzIkkzc_xPv1THaxY0LRJVQSsD_OKTcQDCGh51-09nrpOUAdBLbyVQ2ju-qrXB0KL-Tx5DQv5Vn38RrcTvQ8n43T1KXyq0V_cE-DNJabgLEx69_FlIn1XRDK9524pSzv1BvixHJRFDFmErhBDpsHG6QQQlh5aoGMyaaRDrRXltGy5W0ZCgGdyoIJloS2661aQ-M71O_dIaB1E-LF-inRwllXPlLSZxHVA399_su5-pPhqkRollS84oIGYapKJ_Svx0NEUBvp_qADEI1nDNV0B2eLay_WYXGwX7Kz3_YTarkVrfP-XlTw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJYZMCSYloOzIR6TKYY4-aU-s",
+         "plus_code" : 
+         {
+            "compound_code" : "W3GV+GJ Penampang, Sabah",
+            "global_code" : "6PQRW3GV+GJ"
+         },
+         "price_level" : 2,
+         "rating" : 4.2,
+         "reference" : "ChIJYZMCSYloOzIR6TKYY4-aU-s",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2417
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89308 Kundasang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0053176,
+               "lng" : 116.5823432
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.006658730291503,
+                  "lng" : 116.5837240302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.003960769708498,
+                  "lng" : 116.5810260697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "Hooga Cafe @ Kundasang Farm Ville",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114918971190472690485\"\u003eKH Seh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vYmNJ1w6MUPmH1ssFLazlHF7QLNLclrAEpoQ9teQg4rj7H_ArW1j76itVBlIiOvOcynpb5d8Xeey9ka577pPdTtG7rAvMXh64M-5vBdnUQ00BAm1cAYhMzX47lMF-cvoraQIxr8lPqr53utHpPj-cgs_wgAESzYZNyQzKoFKPF95yyXdbFOqcR31BtIUfQFby9-kTP7pMqjbuJyZcsBOrkG99eyAPWJEl9edxDvsrWHEc6FFdKYNke52g5IS2JNUL1Ke90TDJQCP4NPETPBS3QsdKWMZdSYPu41MweRQaXRIjwH9I9d0SYR0KZjWkGK_Blx8II5JKQb16R6OMH7RrY8mnIGiiebKQZHw2sfCx576sGtZamykGVIep5eQvZBkyHpyvAdQ4cPqZvJwWdVRgivdT5_OEoKE7hNH2ZqR1-yQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJc3qIM46ZOzIRz_N6OYue4RM",
+         "plus_code" : 
+         {
+            "compound_code" : "2H4J+4W Kundasang, Sabah",
+            "global_code" : "6PRR2H4J+4W"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJc3qIM46ZOzIRz_N6OYue4RM",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "store"
+         ],
+         "user_ratings_total" : 1214
+      }
+   ],
+   "status" : "OK"
+}

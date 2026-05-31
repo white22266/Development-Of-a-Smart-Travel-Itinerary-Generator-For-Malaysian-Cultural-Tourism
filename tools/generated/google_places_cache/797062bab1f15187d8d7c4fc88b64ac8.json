@@ -1,0 +1,1138 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-si5K8Yj7Gaej9jfOsG--E-9kE79DH5lAdhNcOrfR-3yIznGCO4g_FnYvIbM68zNuXfr_SGUBLtRVLdIcM5p2VGFSdA61J6rCBLFkpyb0ZisaGOXKZU8ry8E2hkH3zj1vqF41jPfI6sr8tTX3ACUmwYzLKetOLPt5AjFFhySa4t3YxijAAGwLL6qX5tTRIC57CPkq29MAaldQ2Nf3VZt-6LV1imV1A91Mt5mfeVdY7UaYiduitf35WfxxzQGeDGHu5KV_DpHP_K92jN3CL7B89tRBS-RZolITXEYHw-rxS7uezqqWY82ZnTKNVAkHyCUferBzHXY01nhT53celABCQPH0rqhw_qiWi9DoFFKdmfEcJ3HdOMSVgiKRdnaSv_WiSPp9ma0fUE65GQsSnRtiYFnHjGwe1IkxDHBSyUzCLd0DSsYpsv3lrWD88tbRfea09prRQLm1DwnggZcEQtBNu38Z7tRrO_bQjK9y_-I6UBGJWU31DIqjndVifHw4VEPy2njwSKiqDONLvNRY0H59IKtkOLc5WVSSD8cthANw1gNAC1MaE-J31x68VP9xVus0X2CP1y1k8mNGPxau-Cq-vxfJQ6SyGc8nYxFs1e3qFHz0DNaiyUxm-xLabGgrVs6eUmUfgdv6JeoE9SHdsr1ze3xsP_lyXqdaOo79zf8fBA-Kb7kyGUu96NLsGP7OMLSBkxP1SS23EEm8NX0xtpHebc9KRMHgPytm3P4OWpYLNpwUkYQwKFjz3wMdxwbrwCYqhW096dzcDfhIdtzOt3kCDhh5oKF4AQ2tHx_fpuKC_zATSFknjG6ZPErBnGwujQS-tIMXf5xa-l",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Razak, Taman Tumbina, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2040272,
+               "lng" : 113.0475777
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.205394430291502,
+                  "lng" : 113.0488806302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.202696469708498,
+                  "lng" : 113.0461826697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Tumbina Zoo",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110013096629554994091\"\u003exian en\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sCU93iXirMal1UJKS1NGt-F2m0UqWZ4kzLwAVOiIZCs-cHkYJV8tVFyPrhWdLfcD7lNzl3i8tgHOAWU-nAzXflx_Wg4-0oY1O4oZdRAcIV9GL-MajJOuFo2jgDbjkV6J9SkIa-2r43g8fkDdqNx4qNQZxajNRugTqx174R4gaBPbYQa2RWPWIjvOlAsGKbpklm11gBkXqftwNUgki0uiK7UI-CC6YkaoZETn4fN9oucDH08GdFitEnaS2NrTwti-VH8r4DRgNiWsXo7g-oP3WhiuZZnOCTCWnqfHV5dUOx1oaUDM4-JDlt5bC6W6Nm3YoHtTI0PqIlDGLb2k6uF507IqKMLpYvv4Z48hVK27noaz5HBTBI7D3FihUjeHZ94GOVd4Dm67Hf-pBiXAZaBCzzq9xA3Ckn_V_kJBKPkDhFdA",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJydx27J_BHTIRenh9uNKXVnQ",
+         "plus_code" : 
+         {
+            "compound_code" : "623X+J2 Taman Tumbina, Bintulu, Sarawak",
+            "global_code" : "6PMM623X+J2"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJydx27J_BHTIRenh9uNKXVnQ",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1456
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1795492,
+               "lng" : 113.034009
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.180971380291502,
+                  "lng" : 113.0354344302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.178273419708498,
+                  "lng" : 113.0327364697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bintulu Waterfront",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117716121041864033674\"\u003eJames Ong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sSm4ctz6z8nvcVB9LItFDatZG8hPb_JzcgtDviGtSNw01zCEFIb_fQlcB_sNL73KIfq2jLA4UaT08faYcQvgnTgf0IVTXSOP7YkllYlQU50O_o692YxkuU_5s8zgIJSHOIzFXsf1eiZ-ZxZczEEGKR5XBmPxjDiDoSRJll-uA30PBnEBtvFG3ZwlWLkSgS7kJ2wW7SbugR4geyH4wBtkKEaxb1DCqhN9BotFmVrYqCprG-TaICBaPdVT26gp6ODwWzQwrB395Ii8vPX_txpyPkv810T5DUOzjXXPsUWlENtY4zrgDtmYrmBTPzPIrbmqo2YXLh2AgCOBXRXm5Di5eYWODqKYupH9fbDXSoEbzlbohuiB4t2Ftur3YqJwFFwGguvt3IKNm5CWUUfbtNrqxxsZH4SGvap7q81dcJvpw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJOQc6XU7AHTIRA8Mg18NQiIA",
+         "plus_code" : 
+         {
+            "compound_code" : "52HM+RJ Parkcity Commerce Square, Bintulu, Sarawak",
+            "global_code" : "6PMM52HM+RJ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJOQc6XU7AHTIRA8Mg18NQiIA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 85
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3229854,
+               "lng" : 113.1290773
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.324103430291502,
+                  "lng" : 113.1301867302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.321405469708498,
+                  "lng" : 113.1274887697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Batu Mandi",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110722125780302033119\"\u003eG. Gustave\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vplhyN7QB9zELGnak3FQnxNui4jLdWDh0LZy1TNmDm9RItfJ3KyhY8rkzFBzqd_PfnwLO9Kfp58aIcuZFVeyPcdHl55vcEWPV71LL-3qTulYuf0vbUBA4siaDIGFkVxE1oqfO2BsfbYBvh2qBUKoReaHvXdb5EOqi1Vp5Cmwj_-p4cM19BrXmaiEOUd0HJYtWd0u8iEBMRys6nb67nZ0QqEaaquj0K8IM29I1UQyZni5cWV5vMX_-rLNq3zoRE5O7CzT-pxbWq48A3ubVEFjQ5Q-24RLapIIxUJsqn3br-LFYhgM51LwBHAF1LBhpiSJPQPmhnqRvTws5zfuxafyFToPijJlyghBCI2Tov7Uj8mn-2lvY8JyF7dOIcauwW3xAeXalmkmvxQeFpFLnnEkyJmoP9GgjxnWyZm9RJaQt2Yg",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ8X5y9LPbHTIRBZ760bT2pKw",
+         "plus_code" : 
+         {
+            "compound_code" : "84FH+5J Tanjung Kidurong, Bintulu, Sarawak",
+            "global_code" : "6PMM84FH+5J"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ8X5y9LPbHTIRBZ760bT2pKw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 104
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2045085,
+               "lng" : 113.0531834
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.206982900000001,
+                  "lng" : 113.054249
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.2030556,
+                  "lng" : 113.0512369
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tumbina Hill Peak Point",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101468564685090484914\"\u003ePaul Ball Bearing\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sugGpm2XK-YjV1YwU3BFZceGy1ELeYJeuGzKiyXPxUgTiuYzPbuBknAO1NuUwzt961lMl-3s97ZAKIcXHMXOXgrPrIsFB8j0f3SUbCLfPNqR411Qnf1m-WXZc7ByZVLqDBvoe2tmczKQ-CWYAzHdjSMevv89OnY6RA53Ug8Y3p8csqWmcCcCWshyXDcZaLLkrTQaTPGEYqVlNDCmN4oo3yzBFA4h-cQzNHNbcDyX5E0BcOEI83hXI1E-Lq2D69Oeb_H92pY4D9hAEEfIS6SM-2Aq6yAjBcyT_ZhDcrhG1AgtQY75skkyyfsP9rkx86xrNqP0Jw4nI3q2sNI4W4rqnGQ9vAhY-YdrmX5r4TFp6EdzXsYb8W8jgSRp74PCe68DyHeKTiPDx7UmIg56evrUESmywGwGrFOwIarBz_3NpqC0WAeiLs7T_Q1zm1p1e7",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ-_lt7XTBHTIRRlnQY4HgMvY",
+         "plus_code" : 
+         {
+            "compound_code" : "6333+R7 Taman Tumbina, Bintulu, Sarawak",
+            "global_code" : "6PMM6333+R7"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ-_lt7XTBHTIRRlnQY4HgMvY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 62
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Main Bazaar, Shahida Commercial Centre, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.170598,
+               "lng" : 113.0404608
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.171984530291502,
+                  "lng" : 113.0418702302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.169286569708498,
+                  "lng" : 113.0391722697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Pasar TAMU Bintulu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2322,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103261960396962431007\"\u003eAshGive TV\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRXH0X26MvbsLQtA-h_rTGoRAi56WJRyA_8zw8wtXxdyPKQqdd1fBC9E2nfEGiuQac1maW-5cgvK1d2ZNa4Kl-nKENCE5pMKUieCDCYBw6m5MBxt31r-9MJZoiLUXABJ7tAauFaaD35lEk1TUneGpkKJjA3RzenOf0i6viCTJaP7Q6AV3dg1NvCJnEa37g1CA_2OTEH1HAW5KfPYIMm-C6FgWqwUOyvi7nFePWqgPWatTAullk3BrBd69RFQdrU2EfXqQOZPuU-5SMUxysX97txDQBtaybQfnIxPa_VxD1Wc5Yrcarti8r73SwzrLgIJBMN7j1fydVTv2HXOetf38m_Wt2933SUj_nSHmPkLCqEP-k76ikjLsNIdN79XsLVqJ8s1lDatBnyJ-dGpmZkirgf9DFthD1MLPZE8tbLwMJwpF-",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJ7YYveVvAHTIRfxWThrypnTk",
+         "plus_code" : 
+         {
+            "compound_code" : "52CR+65 Shahida Commercial Centre, Bintulu, Sarawak",
+            "global_code" : "6PMM52CR+65"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ7YYveVvAHTIRfxWThrypnTk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3378
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "624W+MG, Taman Tumbina, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2067417,
+               "lng" : 113.0463438
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.207997980291501,
+                  "lng" : 113.0477288802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.205300019708498,
+                  "lng" : 113.0450309197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Butterfly Gallery",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106329123222421816385\"\u003eKenyalang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIuh6rK1AsPgJ7IoL2PAzO_6NLDksL4qUAnUFYTTAWfrhkyXgRwYx0F6rCsQ9R24R4_TTOC_wL6gF9gElfJPkDuQsHMCOn-FSEedJOg1SfgJSymI4X5VCc1k6OstcQ9u6ErN9CYyb8SVN5WdjrK14G9i8FyAYn6zZJYVI7T5FwB5ttV2CiU1zjbbXsrOS-ylkvjuU1azEf_EC-utXbpeFY-ivNABCZ2PQKlv0TPSPA5zc69vnoIKe2OuYCJJoKyvNuEjF2nx4S9MbA2p1Hzyp94g0qRIRa1rHsafjx2ozpZAYlLeSZOzEfX431rLvezmx2dAb8uGoYRRWiqU9-szZieymvDqyyhPMdozpGZuYpNKMfXGqbFC4HOvLFqMcQT9kOvk1pdpBQNf6jDvkzwTD7w6oabk-yC6vr5n-kumfOTA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJjSC7DgDBHTIR78oFZQ_UulM",
+         "rating" : 4.3,
+         "reference" : "ChIJjSC7DgDBHTIR78oFZQ_UulM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3953168,
+               "lng" : 113.1752562
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.396665780291502,
+                  "lng" : 113.1766051802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.393967819708498,
+                  "lng" : 113.1739072197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Turtle Beach 1",
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100548468720097747548\"\u003eElferrerious Alim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukU2M9bPmaSVLY8RFDRvfjpKI392nUCt-UnrH75Lb6I3IZlDMs_zpUfhvUVnWG2Nh4aklWroNTDPqcYwOEVUR992yNAVxVek4jExrxBdR0NBOmMwVgxcS_GGUaYyPLOCecg-7zVgUwa6YdpS2Qa7sUK27KWjSKNRv9fU3pQBk2SmOwHpbymRiXEY8ufTipXCLLwjDeEdLn_mUwlCSdxOmvs-0c0Vxwj4wpTNvfmQR0lhr1rbcbCsAcW6QEUPTvlH-J4-THH_lgDAgB0wotUZ_Ji_UT1AFYc72DUvyBEZJvk2tL0MoHuccPBN6LE3eWLG4iep2pybu1wP2iTSUx3zCNGdAesJ-Xb3bclRg5RBdU5y_56t8-Estk70pVVZ7XekyciXPWJjaUWhCSA8Bcu5ZHbtJZ1geB9571SFGUo0FnNQlP",
+               "width" : 2880
+            }
+         ],
+         "place_id" : "ChIJAQZy68bZHTIRZV-kSyBMn8M",
+         "plus_code" : 
+         {
+            "compound_code" : "95WG+44 Tanjung Kidurong, Sarawak",
+            "global_code" : "6PMM95WG+44"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJAQZy68bZHTIRZV-kSyBMn8M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "4, Jalan Tun Razak, Fortune Park Commercial Centre, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.17543,
+               "lng" : 113.0396283
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.177181030291501,
+                  "lng" : 113.0411594302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.174483069708498,
+                  "lng" : 113.0384614697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lasar Kenyalang - Bintulu Festival Park",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111772322291379739336\"\u003eHAMZAH BAKAWI\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uvO9pNxtUTuqnGWRomUIE7St4cGGzXoARbnkHzSapSwQme_cNf82yE1xi5oVAe9XbIVI4OWmDDO0zsE_e_kZHW0Wp91SLURha1286VCFB5WK7M5RD5RelU7lssZFzLOsYTMYFKHqiMsyVbzzL5rrpjgtrHi4lYsL4igiRFTYskDk3D6BHWdxW-iwIEU55lqCNVyOlFJ15v1RvCMMiWg0YG0uGBHwg4MDclMHY30_G6tjGS9UYcEj9hm_EEeZHDD5OZI_TFMGs3qLJLmhYuiwYLRYfVKcEUNnWkH6GCyDvRPXxesSRAri1FxXLR0bvSbjOaWpdOhJxfvaDGvFDL_jGf897mfTKnHhGv8ZvVFe_d-B8qgrdYMQocOgrL6bDVCr90dw0fmBKEUFJOt-oALTt9Zjou0oIbOXyvcLFyiFHKAXmQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ90IGnRvBHTIR9xJ1HZ1TgH8",
+         "plus_code" : 
+         {
+            "compound_code" : "52GQ+5V Fortune Park Commercial Centre, Bintulu, Sarawak",
+            "global_code" : "6PMM52GQ+5V"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ90IGnRvBHTIR9xJ1HZ1TgH8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 16
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1763492,
+               "lng" : 113.0380545
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.177748780291502,
+                  "lng" : 113.0394773802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.175050819708499,
+                  "lng" : 113.0367794197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ujana Square",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111772322291379739336\"\u003eHAMZAH BAKAWI\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vnu8qCe7Z7u3fMdGUYYNO03soeY4qYTWa_TpsLDEdZ-E-Tk5pjcVYexAngoxNrlZmfOc_nKRW9zzMYCQQWna618goV8IhK7o1Ox7PjxzwhJ5oSzWRhgynuORQUwnmY5pvxtK497_J255vMYBYuDDgy2ENtrmci2HDZrTann4G5ClTvBiJH5EAosyXtvcZz3WtC8TroJ6kirYEwB1rMP1HJO2X6zUv0FGq9_ybc15Rx-waYpJcCinCRoXTrRJP6LlrjUau-G23lT_k08gcXpB02PiR2vXmP_NS7edNyKk9j6vpe7c0mw0jvtNspX7aS0CD-bYl20-XNaOAQPKASvClgWQp57jhFWo1NoilDmTacFTSg8h_Wpb2AujPTUOBNcwuhQ6E7wtQzUx3pO_zby9IQTtlmhFiZvvQx_gRMCfu3xGuz",
+               "width" : 2250
+            }
+         ],
+         "place_id" : "ChIJveHvZ0HBHTIRukN3QqIMIK4",
+         "plus_code" : 
+         {
+            "compound_code" : "52GQ+G6 Shahida Commercial Centre, Bintulu, Sarawak",
+            "global_code" : "6PMM52GQ+G6"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJveHvZ0HBHTIRukN3QqIMIK4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1759351,
+               "lng" : 113.0387609
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.177354980291502,
+                  "lng" : 113.0401479302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.174657019708498,
+                  "lng" : 113.0374499697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ujana Walk",
+         "photos" : 
+         [
+            {
+               "height" : 2698,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111140989123492324290\"\u003eTan Kian hui\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vobOHOnUIxd_BtIwqgdHsIfI4GZES3q5PBBQvT0p84dn3UVs_b23NIy-9vQh49-zE34q0DHco94CYZYVsRNSQ0VmHIGW5Pbv5bs_zOGKIMPgac6wNnDAC14IJBm9LkB-JkdeexDGp0teIDivjrzvyJGnz7iG5vdfaKlt-8Aw0vS15_YhgCAB1PeaIudzviaAGZchchHnzBtVufcpzmYDBowq7oQyE4G09dyGufUgTOMkgyIDtfHlnMi1fewJR9Tuhqa1kvLZrEj48PWeeKVQEpNy_Nkbg-Rw9WV3euXh7RkHxS88hOlt03Y2QUUDvYpalIYI82Cj3UYUHyAwMiamPy8yGkCzzE-dm2aMdcTsUioi8M73nmLqMlEMySCs2i8uxWrxfPpEWCN7lHBRwjNc2YoKozYHvwFeqN16ooQqfHirSQ",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJkUrXQuXBHTIRD_lsW2Q91xc",
+         "plus_code" : 
+         {
+            "compound_code" : "52GQ+9G Shahida Commercial Centre, Bintulu, Sarawak",
+            "global_code" : "6PMM52GQ+9G"
+         },
+         "rating" : 5,
+         "reference" : "ChIJkUrXQuXBHTIRD_lsW2Q91xc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Abang Galau, Taman Sinong, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1702424,
+               "lng" : 113.0413795
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.171705880291501,
+                  "lng" : 113.0427918302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.169007919708497,
+                  "lng" : 113.0400938697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Bintulu Esplanade",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102339277497038453412\"\u003eFara Ghazali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vzX9tVwRgAI-8JMqrF-3E6vn_3JMjBp4-FYhtIRafY2kLTlJILjZh4GxICM6j1u_7ry9qT2_8j9bIWOYZKC8PPZhyWfGcN-xUDJREZrZgXefUNIlUn6XGNP7xPTpkJH2Ydh8-v4LHTWo7OwufF92TiOLTbZKC53E48hsd4fTZUuzY9eWunaI9N4jIdtxpVPEGNZTqlF75aBp5HFmv-6mJLsQQZv6sbETqH-7RlywPagj7WJrO3TCsep46eWtabDFB7xOAymmUnICMMdW4jNJGYedEfGxY3gPy2FsDaeWPCvaIol9wyeEFviBGABFT1nY6JAjEEKlkIne3RyIMcpwmQq_M_cIDhByZEoZHkTSQaJS8Xq8fjv4OuzFEp2waf2hSk3uOkaQMrhSqCyErFc8bfyL9tEOSE-hflE57KOYFHX-Q",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJeU4Wc1zAHTIRqFPeRXcACXI",
+         "plus_code" : 
+         {
+            "compound_code" : "52CR+3H Taman Sinong, Bintulu, Sarawak",
+            "global_code" : "6PMM52CR+3H"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJeU4Wc1zAHTIRqFPeRXcACXI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 46
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.261, First Floor, Parkcity Commercial Center, Phase 4, Jalan Tun Ahmad Zaidi, Parkcity Commerce Square, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1808929,
+               "lng" : 113.035957
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.182287380291502,
+                  "lng" : 113.0373007802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.179589419708498,
+                  "lng" : 113.0346028197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mural \"bintulu\"",
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111334631967330816538\"\u003ekiong lung chung\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sQX3zuoyDvayxAvYJPrNdAWRHZZ2vCCuA_2Lh87xheDItywOxzOtDUr54e5-DGO3tPE084ZvnEW1G8Y3eUtj6uuNSnf0Cvubi43eL_dYxSlQzpamebz1XZB3YL8YfRQRqpAmxQiT8usHAM7fJnA-Qe4fe_NWq-rP_T6okKP3HdcQkUWLH-NO4D1Ysj_1z1pjPRm6skwrfblLomh2arcTlTaxdBvoTavSw6KPcJqYDYy2ZNLNcpPz86mVSLkrIBl-PO1WFZKmxuGYJjKAouPQmb2IE1REx1dPdwu9KrM0Q37EXa1moDNRLr_i8ANjg2Chb0_izfR6XFDHEupy2DfwXz_H91W0lTIIWncfqwaaqwxR7BD_UrPmDei7z3EwJZs_QL3RdDX5BHSs8lcphnoXExn9yy8-kDbk5ALIBbk1I",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJE5LxSu7BHTIRk4dQHR0mwPQ",
+         "plus_code" : 
+         {
+            "compound_code" : "52JP+99 Parkcity Commerce Square, Bintulu, Sarawak",
+            "global_code" : "6PMM52JP+99"
+         },
+         "rating" : 4,
+         "reference" : "ChIJE5LxSu7BHTIRk4dQHR0mwPQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "168, Jalan Tun Ahmad Zaidi, Parkcity Commerce Square, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1823364,
+               "lng" : 113.0401892
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.183578580291502,
+                  "lng" : 113.0414077302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.180880619708498,
+                  "lng" : 113.0387097697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Parkcity Bintulu Cultural Park",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115876437155681787210\"\u003eFelix Liew\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v3eBLmXh9ogkAzzLkhuEThofYrOdTtr20CMmTHvMhzGGxBg-SUHHoq5USnpfHDT6warDOlwgC36E1FtEni1otFGh61n32h4jw_jxybfn3GFsWjLytf6cwqpimfzCgvOm-2nK0XC9cKSlyx0iciBXcY1ttcRu8BUR33VqMu53kiATRel9boZd8ab5JuadOykuyHe7sgEOJBoYusZIJfCyKB22lz32ZBC916MfKYMXVFcLILkAHRJN-tSCUnstDOhO_34WK_uzLIWRtclp7RKlWg_HTCEE_nLeUAmVKj3sx9zlM_biUwIvWWPecSZHGVs8WIzjxLpbW-lYnry4_S8Ngjjy4HQukAKAelAoHMJWh-tbau9S8LTkZcq2yZJSrOGECA_cCAd25uwB0q9Bv1RlujujIfly4ofwwwu0XzJW0Fgw",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJDebgAFPAHTIR51wEFmNDAxg",
+         "plus_code" : 
+         {
+            "compound_code" : "52JR+W3 Parkcity Commerce Square, Bintulu, Sarawak",
+            "global_code" : "6PMM52JR+W3"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJDebgAFPAHTIR51wEFmNDAxg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 59
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Zoo, Jalan Tun Razak, Taman Tumbina, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2042372,
+               "lng" : 113.0479206
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.205490680291502,
+                  "lng" : 113.0491761802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.202792719708498,
+                  "lng" : 113.0464782197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Title Pond",
+         "place_id" : "ChIJo8xlRADBHTIRU6S4t9JoOeE",
+         "plus_code" : 
+         {
+            "compound_code" : "623X+M5 Taman Tumbina, Bintulu, Sarawak",
+            "global_code" : "6PMM623X+M5"
+         },
+         "reference" : "ChIJo8xlRADBHTIRU6S4t9JoOeE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 555,Lot. 4368, 7, Jalan Kambar Bubin, Parkcity Commerce Square, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.187328,
+               "lng" : 113.0375492
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.188703930291501,
+                  "lng" : 113.0389300802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.186005969708497,
+                  "lng" : 113.0362321197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Bintulu Memorial Hill",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3968,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108594922731037208731\"\u003eNorman Lau\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-spoxU09M_lQmEnHwkn-fSCmWKUxPFyqkCAhtDeRGXUN_CAjdoeoIaELVh_yFsprtmZnqRQ4AZn-csqOnFWQ_tn81YKGPOfpL_msit8L7tGqcgPUAIssLMLUaPMxuhv2M0ioLvjA70D69BLPnykeQCRun3955zaZmIvOvr1wy22kPkgeNpK1-JhZMKV3FGIHtt7EIfmsC1R-wUKnEd68XboO5TGaEyUHJApSlCdBGLxeyDkg_RU02xm142xfBg4X_QJfaO9EbhfRJBJ1DMxrCPuEJa4gf_OojaT9NKusnJS5l9DQtiHPQBih9WIgOZTG0CpvFfmJdwcWiUo_sFgP_nu5ZbPFSmAhmgWj-nPZWaEI90-Tv_yhsP-XYQ-jYKRVcNEMWoxz4WyMgWnen9V48ZPU649Zgjxq-GnMNIsugL67sg",
+               "width" : 2976
+            }
+         ],
+         "place_id" : "ChIJT_kJkK3BHTIRDh7dczbCpnk",
+         "plus_code" : 
+         {
+            "compound_code" : "52PQ+W2 Parkcity Commerce Square, Bintulu, Sarawak",
+            "global_code" : "6PMM52PQ+W2"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJT_kJkK3BHTIRDh7dczbCpnk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Port Road, Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5899159,
+               "lng" : 113.3418143
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.591264880291502,
+                  "lng" : 113.3431632802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.588566919708498,
+                  "lng" : 113.3404653197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Kura-kura (Tortoise Rock)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3468,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114668414927416802864\"\u003eMH Ngu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v6iFS9uZIyLFlL_HNsq8frCFMJzZJFe8gTGXUo0rHeBYAm7Kyp8LL1U-w-xzZMknllukJSMZdK4OcxkofbkI0CqqNl6po_sdo5UINHWPh5e40unHvsAu-EG0ziyWhEI_K6IRedHgNsdyN9Am241ekLOT3SDyb7ZzZ6pVlyLLDi0hiZy_-2O28pDlLlXJ29zTLYz_SJoHh4OtFJ2maSSBcJnKjrrojvPm28xEV-5FKxDIk0tffJX67SHM6zubRXVS6uOqnC-ASGh19f8wPmxBRSb9a9SBy2jp3Hl_E6U84hOpVsD7crNS6_LCl0AL2uhClG7WFdA-xbRMCA6di2vuF3J2PYgfBRYm_0ioS91NuJtskSyDnsYPNhoOVFItHNRdoyUR4RFydmPKo-xvBlxIUHV5z5Ka6frd2-pkjVGwmfkow",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJK6ml2JpjHjIRp_HdR7vuQQA",
+         "plus_code" : 
+         {
+            "compound_code" : "H8QR+XP Similajau, Bintulu, Sarawak",
+            "global_code" : "6PMMH8QR+XP"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJK6ml2JpjHjIRp_HdR7vuQQA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1976133,
+               "lng" : 113.0426816
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.198976030291502,
+                  "lng" : 113.0442628302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.196278069708498,
+                  "lng" : 113.0415648697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Palm Spring Beach",
+         "photos" : 
+         [
+            {
+               "height" : 3840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108994269169117039747\"\u003enur azmina\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vNYysw6IDSdPbfHrifG8hkiF1RYvvsl3Z59_-ZAo7nIbqeR8_s3nj15iiS0kAwvlkhLVVwCwQYvD8BOP1OTquUgk7uHzBcgx5YYMYKty8Acrn3rb2zFE7Rdbazhpskz6TG_zyMRBzA5MNgOMR8pZdtS3w0uoyZ1TAgVxvAToI38ZjlKWIstpYpUirBOAAo7p4XIUn5qAUhwBRa-ehd8v6iXRkNuAQTVZq0rUib5jDQ7_8AqRLEvDzjkOpVHPrkvy2CfyQQGa0vdcNJ2yLREiNHrXN7ZfqtHS7TWxN9YWxBqhC-NwMsZJV0Dghwe48jmiTZ8kArsLHTgIbkaZwTnF1piGnc8OePUx5a0PzHdfl2xrOW62rRPNJ6DvD4ObtsgJy9ZlT1rLZ2_dD-Ae-Q8fU_-DIYxdVwREbamGQK4tA",
+               "width" : 2160
+            }
+         ],
+         "place_id" : "ChIJyy5ifwDBHTIRd0mC9GBidvM",
+         "plus_code" : 
+         {
+            "compound_code" : "52XV+23 Kemena Commercial Centre, Bintulu, Sarawak",
+            "global_code" : "6PMM52XV+23"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJyy5ifwDBHTIRd0mC9GBidvM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Similajau Halfway Waterflow, Similajau National Park, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3068555,
+               "lng" : 113.1214041
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.308490330291502,
+                  "lng" : 113.1222170802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.305792369708498,
+                  "lng" : 113.1195191197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "SIMILAJAU WATER FALL",
+         "photos" : 
+         [
+            {
+               "height" : 3468,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102150843155261068246\"\u003epikay Karong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufJsoAeRVaXw3ubMRTPxeIsmr5wt5hiV2UoPWj3mhCpGkvXaB1Pq8mleoExGvOXlb-7DaQMd0nukGLC_9zsbfdRBFtk5lRZ3nlxgR3R53sL8VhyJP8jZZIXB2tAnREWWWC7L44kQwrUTP79kb4rAajp-OhH4wfb0Irwo4Haih6AUKHlgq52yY_eZmzkWR6HPQ1O9X9HIUkMhbWRprbB9nX013h422hXdG2OxfK1E4bhOBqAeuT0VWriKZj5wKYpcyedCPq0tNQs_8XwwCqx0UOoQG5T2bD-iDORyA2cpxOH_H3ZLpLqKOZwbtWUVMPNNSm2cxQpcDZUnvRXF4MxZKdT0a_W21rBnxDXF6yJiOEIUVJ_9sAuqynKi6aniK3CG64X43T3Hd_D9sUxVYc0StsBHwDp9PLIHxZ7d-JWIQ9vRXZ",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJ24F4uy_bHTIR3r3LGE-_WS0",
+         "plus_code" : 
+         {
+            "compound_code" : "844C+PH Tanjung Kidurong, Bintulu, Sarawak",
+            "global_code" : "6PMM844C+PH"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ24F4uy_bHTIR3r3LGE-_WS0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Razak, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2012093,
+               "lng" : 113.0485647
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.202529880291503,
+                  "lng" : 113.0498622802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.199831919708499,
+                  "lng" : 113.0471643197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jungle Trekking Taman Tumbina Bintulu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100595860059443753876\"\u003eKiew Seng Boon\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s8d6XxAInz9Hk8djQndkIznNTMUVDzVbxNaxrAt2rDhp-JsQkLuJQKTMU3B1g-MB7t1oskSm1U6qNZg9s7hkoiLrfYJ1sMkfSuyx-ek0wIFsw9q1raoygt8raj8Kqq3EDz-Zi-Nz9DFWzi49wCawAlS7JNT2hubrVz3Eb4KaRYfLdxNMFS40mkXoVXE4FZ3NcBf7MN1nlJTpRugJxModt0N9JTzChc8XX41RsGaQVMpAlzYN5o_yGea8QoXgmOdDuGl8AorsImmzewhmGkjARQnP1mYjQuHrdpXfPEq01RPqDXGhBy5OI43XWUckmeNYWNno-3EYCINpdDkyRSZuYvuTNepvhBPge_uZhQZ57QvLfLbGCNk2UU7Kjo-2QJU8AvknHaaOQGDgfQ-61ZAlCc2rowgAsiLgm8g_JrHUngoaxq",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJT_3UDKDBHTIRD1eYOOzyd98",
+         "plus_code" : 
+         {
+            "compound_code" : "622X+FC Kemena Commercial Centre, Bintulu, Sarawak",
+            "global_code" : "6PMM622X+FC"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJT_3UDKDBHTIRD1eYOOzyd98",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 32
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 698 & 699, Jalan Sultan Iskandar 2 ½ Miles, Light Industrial Estate, 97000 Bintulu, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.187175,
+               "lng" : 113.0544241
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.188564880291502,
+                  "lng" : 113.0557105802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.185866919708498,
+                  "lng" : 113.0530126197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Eco Panorama Sdn Bhd",
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102872653443925368952\"\u003eJAIDI BAYA (JAIDI Ed)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v_nTrb34XMprQTKYHihn3lGV7IVy7sX41XWtSIvQxJSffYgmbImHiFNcCKRfeRe9Xd0FOOUV3t-e8aeaT_LYAMsUqkBhbgkS_QwSqgWqNPj6Cb7-TF_ICEme1fc5nKL9uZuymZHhD6MjlQWGwNigfDTPKt5j2VmdfZqeRnauFSEOtQM1oA_N1-5Hc7p3UYlGgvWto8kEw8X0rcHTpohwd8pBTaE09CaTepquu1KMpzVxcHPSxfmg1Zzb8PaQ2W1qOQHNRiD2aIiiUMvnm1geSb0XCTq8DD-3iptcxgt0h9Y57yLVyzd2Fu_WKceMvvg0oEIn7krkFtH3bgZGG5K-PjhsETzqDn92aI5cfOK3F4Dh0DqXZzweohDWLt5Vv9D_SqiWl7JXDM1RdJwgXNY-hAEI4UooOp_2zBrPLqqIIxFCTC",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJgfuQ_rHBHTIRow_ksoteT78",
+         "plus_code" : 
+         {
+            "compound_code" : "53P3+VQ San San Garden, Bintulu, Sarawak",
+            "global_code" : "6PMM53P3+VQ"
+         },
+         "rating" : 1,
+         "reference" : "ChIJgfuQ_rHBHTIRow_ksoteT78",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      }
+   ],
+   "status" : "OK"
+}

@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "C9P7+HM, 94300 Kota Samarahan, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.4364172,
+            "lng" : 110.3642056
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.437486330291502,
+               "lng" : 110.3657575302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.434788369708498,
+               "lng" : 110.3630595697085
+            }
+         }
+      },
+      "name" : "Lubok Bulat",
+      "place_id" : "ChIJQzg7QACh-zERzKVnCY7yQ7w",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13565953194427131340"
+   },
+   "status" : "OK"
+}

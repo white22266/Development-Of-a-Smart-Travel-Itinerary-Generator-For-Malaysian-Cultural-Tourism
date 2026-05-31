@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kunak, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.7648382,
+            "lng" : 117.8608822
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.766187180291502,
+               "lng" : 117.8622311802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.763489219708498,
+               "lng" : 117.8595332197085
+            }
+         }
+      },
+      "name" : "GHUSTOK",
+      "place_id" : "ChIJ7Xb7SwA1PjIRTyUKL0byOUg",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5204457227654145359",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

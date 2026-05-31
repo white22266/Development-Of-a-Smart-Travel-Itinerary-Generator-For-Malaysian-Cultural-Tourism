@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Sri Jaya, 26500 Maran, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.6767452,
+            "lng" : 102.872494
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.678058780291503,
+               "lng" : 102.8738605302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.675360819708498,
+               "lng" : 102.8711625697085
+            }
+         }
+      },
+      "name" : "Kampung sri jaya",
+      "place_id" : "ChIJQWB5BQDVyDERsCIBeFm6Vq0",
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12490375509986845360"
+   },
+   "status" : "OK"
+}

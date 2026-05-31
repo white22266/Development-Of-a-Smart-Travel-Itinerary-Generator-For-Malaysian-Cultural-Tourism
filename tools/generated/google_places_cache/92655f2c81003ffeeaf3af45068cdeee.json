@@ -1,0 +1,152 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "85W5+43, Kampung Tuarid Taud, 89000 Keningau, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3453165,
+            "lng" : 116.1577321
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.346749380291502,
+               "lng" : 116.1592217302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.344051419708498,
+               "lng" : 116.1565237697085
+            }
+         }
+      },
+      "name" : "Muzium Warisan Keningau",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1472,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117583613440666130804\"\u003eDean\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vtO-gXDM-HeA03ta92fm0aUFGZhOz64sRcpI0rmrgcgqHSD27dXxndbEgnTPYlw_imOaz5SMjD4faPJ2Z663mD7Ewvl7hT4qJi1e0j9wcsBdnOD1e3cPTGdii3J6KvQSuM4zh6HnRFIWyn_D9j0SbVKrcsCLVxyMxTXfxZcS1mNxFSiEyLrUHVKx5dLpCI8XvwdNtlppu1mN82Zhh2YPDvYIavjGpicTRQexhlIYuIt3Ci9y7O3W3PLwzp_RRu_F2Tq6pbDtGnzgDQvRupbn6XNCeD8MeOnmqu9_Juea3jroeCLUDx1j4NoH-gr54FvmjSUZ-7uxQScVAfJhH0kHkM6qLdyR2fytdpf3O1P4CqIWpm4AKY5HWW_7OW8Zxh2B8-unXl2pqlfrC-5Q04JUnIkhNI0Q_JpjXGPUu3foSxe3u2vh2GHvbKYsLqmG5B",
+            "width" : 3264
+         }
+      ],
+      "place_id" : "ChIJqViFbwDvPDIRqC2aeci_AD8",
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=4539839292143971752"
+   },
+   "status" : "OK"
+}

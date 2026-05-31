@@ -1,0 +1,235 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Benteng, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1477516,
+            "lng" : 101.6952781
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.149124580291502,
+               "lng" : 101.6965050302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.146426619708498,
+               "lng" : 101.6938070697085
+            }
+         }
+      },
+      "name" : "River of Life",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 12:00 AM",
+            "Tuesday: 6:00 AM – 12:00 AM",
+            "Wednesday: 6:00 AM – 12:00 AM",
+            "Thursday: 6:00 AM – 12:00 AM",
+            "Friday: 6:00 AM – 12:00 AM",
+            "Saturday: 6:00 AM – 12:00 AM",
+            "Sunday: 6:00 AM – 12:00 AM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110487111221184891517\"\u003eWinson Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tpE2m2xWwsQ7-sY71grftoxuszUk2c5oj7JZvuEOlPGl3ydX42nQUTeX77CgBBNXgkVgolFxt4-se-kWIvAzU_V48Z_ojn1b8tYh9IGogIKvjZV0bKzuZoNy_v8i72QQqHEUP8dJoWRWLPUlJXSC_ojU7BgnV7BGu8BJ3GUIRbkdf_oElLe6l1FsTavOR2WbUVDMTn-mcMgEzKrgwALZRuX_rtjGG-Pjx9Mo-IPhPp8iEBmRtpW797paCJXJobRhMzWBYo3ub4nVzR9_KQuBNXmB7k9X8EHBuTAXlmSWZX6zrqGVQlIyKL0wQsONETRPwAzgVg4i94d-IhR3Dpko2Wbu8ZSoV_X21iTxIT1UYimcgB2qBjE9G65kgnZy97DFvVuGlE9spue-DL5I0N4JTn_bviURG8rS7d2lruGTdeiu24F5u2wu0AbXyTzkiK",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109404760884412579390\"\u003eC. Houston\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tEXFFHKlFOcaQrICiaQBYfxS4yaky4Mwpqy5B8RbJzNMelFdljt3hkxM8pERJ3yJmpswZ_07iPj5PG_iwIvm3PUNjueF2Rg1rxOlC2fkvx8jBVI9tMU_cvysMj2-iVPtO0EaJ11B1zbk1fVaAiC97rTzQ8qnnIQoVtBt1m1FsGOlBTa0yOgd9X9ws2fBW1zl0rGQlYIWfm4CUDXmztBEzR37ubCpKXzQ6gdDEtW5q4ITzMw_1cN1pOvGGie_9V9pgr-8e4gwr762WlFU8M1XPmJbwgW-ZkJbnI-YwrcfeVn01NdEWlCpapPDW5uATMLr9Nn-PGe2TUTgl489hxmVPFcEuYNUyo3lZQ4IvNHzny1iy6MHyTHwswxpu3WDVRuE57L-YJDjYRcK9ecLYlmBPctjPF4oWSBG3PiaWgwF1ANSR4",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115154969156130905844\"\u003eCinderella Indie\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uIHl9AqqkL6Ei43OPqDPhAnL3udLwiluUdsCuCmQP70CDm4TAfbq62rsTu-wvfUzBMkV6-OPvNgtkER5EgjprBpWBJ1IlAGpY0XbgZyIacM0a_HodtQBQW7K-vuJWS9Xy5ouHJ4ak30SbRD4pchZFOflfenmL84Ap5lNotj_CBh6REGXBrJQia9SrzuiYfASESirLo8Ge_gdP_4w8AB2uWxeTh_lXBQ0_lxh7xKdzBIeM8yhxmHdLPJemV9Xs358KCouyKkzJNgDBG_EAtv28uMjP5wthuPx6622e_-W-r-6dk0W8g9Ggb3wRWk4g_ijMaDGJIsUznYISGICqit84jcA-8zWYxO2fv7YJwtU1A9Dm2Vl_AhZUCDKjaHnLnkEJy8dDOH6Ipssx8xOCzumOeDrneWK-iogNXBIvQXbL60DyeMqZINYHxQZKoUlDf",
+            "width" : 4032
+         },
+         {
+            "height" : 2883,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109243125213682583986\"\u003eWisanu Tuntawiroon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vJyFdq8B1ACdJ7-JsRZ_Y1XBQzYyz04BUbfpZyullvLmPhs2iyDOsvqbP4YbUzusdZgGHAPKoJwRdvBCfyYLvaiBVNc9q5iUV91bnHoxz_74xATrB9m8XbYm-VvT8xNvn0Rj4HGkBQ6HBIelZfMk0GhvMwMB8fAI2RWIkXSSTA9KeNqyt2cuHE3xZcYSYkuULniyAXaitayspsmT6FQcbVq8RtaveBrC-TutCD0h9SUIxlgyNKaiMLN7M_50t9uPGGBBpxG60kDq8LE9CHfqgaA3KSdZxONZBbyfus1zlIRTKbtJUlEtkA5ivO7g5kqKqfG_G3t1N7P0q9A_A9WBKkH0wprNxQAubNsDbih88FoZYTkChrDPIUtTnVkgxCETc8XeJv6LrKGyVHsW2liiLeNpmdWXs4bOJsF6NcInALJ4pnIX2hPy-VLef7mkWH",
+            "width" : 4800
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107034372420504092780\"\u003eHồng Hạnh Nguyễn Thị\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tf73b6dpxohb1IkTrIsY1Fw0tOC9Ad1TOFV7RpgWVZNx4W-qwjjzUEkZauchCs4mCj4zqTmqIpzndvkBmzCmGiRTeiNw_wWC4-RRy3tA1xC5fDGlAeRnJdQqVbwLS-8zgYFwy8VVMLrwEfFFjONIiTJ_XIV8xM_dpxuirQtdYQBTYqvs3fp0bN9pXZaDHgVfuLSYsNilDxuHeptSn4gXMzTuOXAFXx7YkME_ck2DYywL9HtwZ8GnCIihy2jtHjwXkPD0tkIyNLTq_Q1cSQUpPh6UMjkdv6-B4VEiY2FPfDnsJYGqYndBgYYQZp0v48nMloE5z2qJmVKT5Np0KgsoUbJq4ptiKhff50UIv3GO1-nATBE2RWrMwim9yrSfmCSeYJTHm8sUpdUB-Fow7eaaXeLigZ2NqgyFKy1q724N4",
+            "width" : 2048
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106100143945363713701\"\u003eMd Khairul Bashar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-um9kES2Yha3tan-9ALoJDj9kPKNOfVMXkBdatXVCrD2UAYWv3u7HqBInB3u43OCAaaxCq6lUEH3Uih71HF6rHnlYQTNA6Wf6RfoMqYuyix0yBMkAjZKuWKRqPVSn8qhUBz2rnlVyf6rLVu-5B2aUvpJFxbBMFas-BmUP5NXT7ZKHsDeSQL99UVYNmIA2SCNxt-AovdVamwj2VOJp_2lxRA0cwgYgNJx1BoiUW8A5j0MDej_MAfB1RD7l4yLxZEQwz_sXWhrBVg6YY_MoPWtZdfsxFEC0_JqriF1qVsKlsltcr6555JC39WVSlLm4OQH9cABwN61P7jUet_DfEtZPVbkZoSHSQ6Fy7oPuCWKAOnq7efRVLJvkk6bPdfMm7sVTDeDHpG5b_pdONLHzF25X7-OkINGbJhNbdmYAA40s2s5b8",
+            "width" : 4000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103748899703358411169\"\u003eThomas Heebum Jung\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uHjTwADVw2reXYqkTQyrnqV-sl46HPOwJ6ykBzcJfb7Zvjt7d5ecLN1pttEfUqxxTDkRMM52Q_ZWaVifC3mBLVAXwh7neJdfU_AT_Q3VGWHlgQvnPEN7BlNTu7jzTfb9ZU7Km_02h3sLMpqYoJ5gk70J2Dx1abwMecC5UsvmpbF0nEcVJfeHMkxH6Z4xr1JbArbnXZ3aRx95Qz5IcjC9mhkSYX27K2cpk7AaqSMJBAe1CqmJKNIxQXiRbmWCKv0og5lbLI9g2Yjbr-97HiSo1l7LQrWnL0ubxncMmD9EWQdq_qf8q1ytvKKz6gOmXfEAFLU3JXM6X0QnwunrL_v5ZOaOGtRl0W9ITFcmZQkmXbFDob9nmLIRpnfZ42t2G1pzs6ach1YVWsE3ZWmcwK5hRY1ddzRwpNSDx73SxhZIB4736UnmH4L3Sz-Ne_Xg",
+            "width" : 3000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104182060713702331869\"\u003eBumblebee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sr_wIzlHJw8yFZlmZxNGVgsLHWAU7QA5bPMc6w-B0K0vy7qrIKquc46NOSc2bjRdXCjOthpagGGfWYPEGw0sxPROra9dXK_ARpj6r6h9iJgjKshMoJ1GRBnnY7QtppvnqMeM_mlYm24WJbEZ51IlTpM1hw2eyZ8ArvuUYjWBNJ2pKT5BANbNDhf5BPO3XaZhbIJnHeY66anZbk_ZfXNpuJkzSW6m4g7-G3cEv2EzIlMMc_10R9FgRwc1flJ74jTWicnbYXaAuDRxT4Dq3OzltL-2GuLibZ0alfhmFSGgetnDAInYVguhsxn3AIWnDHV6GZygiJEAwE7aHc-l1MIhnF-U4KtwB8fIUYX-DKb5MAQB-XUa-O7ngJ3QLr56N_JIPsTjaKCsJUE9sIWo4sBNwLPmTMMpZtvKOoMOu_WVhjXZo",
+            "width" : 4032
+         },
+         {
+            "height" : 3868,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105601755836265851657\"\u003eSEK KOK FHAI\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uUkylSDGPeOFU2bwv5yRHLNLQHhgEKrf0bpb5ks7Elt3rWRbPHMM7bE9CbIleOYiIXaVuqmMdBVGWtjxaxqJNE8ObK0H1tJDDZgjCpaQnJS5vFNpUpHrb5_4FgxSH44brXhKgWlFl0c3WtxVZquvb9050jZme5W6Sd5ZbpN46TZ0VbjUJz-v6BXxNzUeu7PTw0kDzcDpIh6spGySumqtmdr-9dxUBzRVDHIorl7OP-SmOV5NDGaM6a28diTqjI1kzg92CeFkAeqELOWnAnoLx5H-eCliuyxwOYZ1TY-vM6QlPgU0F_rG470G3ngdReLFEsIA7mwRx-aQX2Ichn2KrttSLRBnGNkTdJ9wVLVsQG5h7hUjSiPjSRxR4XToK8yG-2sLOkQe9HglceE2juC0VrwchP77NV3LCmvm7ZfvDIeQoA",
+            "width" : 2649
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116629711640557041538\"\u003eSebastian M\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tb5izubOZHd69eLr7aBTCRrxeRXj_WlUtIhvRDojgxYkqqSVwaTZ2Y9KbLgBscqMBdTf5ZB-IwuelpE8NANRwW5ty8C5Pdhz9EqHEi_HOX4LhanIxCjW6ggW5e1svPlRYA5FCHZ1JILq0PsjocRlxGcy95ywJYxzZEiNnczdsz7HgwU0x54fSysBBOzo947Gw7iIyIlLgc423hBoAAw-B4T1dqWY_ni6FKZJL1t0HN5-mr6Ti3Zg7R9cvtnsNQD3h7cxEp8DndoKH_pK0h9NYg2tcJYQ412j_FiOnL7J6taNj7HnXv17u7O9VB6GA7_lhQWCbi96KJK6JC80bwrKEy_uEijjh2uCy7qXgaeJyadG1a4HRxjJmq2uXUbhpmGJvZIQbWVrV-J8JBHQJLbVzueyM9_JUP07x9e_fiRg9t28z2",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJkSBUv7hJzDERQbxP_WdwMrU",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13056621861634292801",
+      "user_ratings_total" : 1300
+   },
+   "status" : "OK"
+}

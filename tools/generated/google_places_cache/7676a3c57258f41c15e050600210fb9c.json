@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "43100 Hulu Langat, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1507549,
+            "lng" : 101.8929845
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.152873280291502,
+               "lng" : 101.8953058302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.150175319708498,
+               "lng" : 101.8926078697085
+            }
+         }
+      },
+      "name" : "KenidaiLui @ Tuntung",
+      "place_id" : "ChIJX-viMP4vzDERV52z80GvkdI",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=15173101317384281431"
+   },
+   "status" : "OK"
+}

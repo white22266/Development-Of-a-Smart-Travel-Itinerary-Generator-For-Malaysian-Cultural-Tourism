@@ -1,0 +1,321 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "No. 42Jalan 2, Batu Cavtre Point, Batu Caves, 68100 Batu Caves, Selangor, Malaysia",
+      "formatted_phone_number" : "03-6189 6284",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2374497,
+            "lng" : 101.683972
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.238515530291502,
+               "lng" : 101.6850437302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.235817569708498,
+               "lng" : 101.6823457697085
+            }
+         }
+      },
+      "name" : "Lord Murugan Statue",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2030"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1630"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2030"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1630"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2030"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2030"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2030"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2030"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2030"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1630"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 1:00 PM, 4:30 – 8:30 PM",
+            "Tuesday: 6:00 AM – 1:00 PM, 4:30 – 8:30 PM",
+            "Wednesday: 6:00 AM – 1:00 PM, 4:30 – 8:30 PM",
+            "Thursday: 6:00 AM – 1:00 PM, 4:30 – 8:30 PM",
+            "Friday: 6:00 AM – 1:00 PM, 4:30 – 8:30 PM",
+            "Saturday: 6:00 AM – 1:00 PM, 4:30 – 8:30 PM",
+            "Sunday: 6:00 AM – 1:00 PM, 4:30 – 8:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1342,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105039223820464255462\"\u003eRaghu R Gowda\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uNFhy4Yaci1HdBTAF-yX6ZZWKwFbgVtm0bF0BnH11bz5zraMT0VcihB5Thk-ipU2FdYFUJccIzQFpTwgV5Y47R82L4uG56cp8d_8JYt_UlvEiEj1rqhymQkyuV3zvqEvcLAwFz4md_equUN7rjoMaNfsvfUC8VZuy8vareitV-1oFHX_RCvQEBtR_xvZoaZ5MBLh8vWJGCdMZjo-q6e4rfv4OuGU0a68GcxFOCaqmVrEJJ7ByFV_yEvvO7Fq0p34BLgnMkpRAUMXHTlXVS8d6BdU1z3Y3au9l6LpmIu2jgjntW-Cfi4jJ0FP7ByIKZcJ_LOFH3eojrGNEMxQdHl2Qrwh52prV7fLmIQz4t3YwmtU9XZv3cjZ7FTsiNwrkBMKoqz3NVq6YqGO9A6Wwid_FiVfxujPQmm06-z9Ih-h_-hw",
+            "width" : 1080
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101822697855329493472\"\u003eJulien Gouttenoire\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-shD8QeZAb5xTEGbqIP9jvAyxBS3sez3oxvv_mHp0Mnnf9onxZMMRNdLiQTkKM_z79athAggj14N6j61EneBSSalv3-_6p40zbrvZZJVXGXx7cz52wyxqUpBL2hjNkcIYzbiToeEdkHmOc5F_cpAjpaNdJJVEuQFCVh_U2oak2AIpYgpjBIeDL1G1QFsOi64umjPMaOd_egRWDyJPfI9IkK04wnenA8DZizzFbfSXPWpYucLWmq2RdzpMB1n1B6pMKkM-25uO3XgLU80qGlY4PHqYb3_7FPRP2k1KTvcQMR2xKIqfNLQYMB0U4ANuJxPMx9ggNzyqxbcGNqGR7VZ7v_BI6c1t7duNhg4RAHmceE1YB8Syw9bRaRPUmnL311vV1yaFXK1AlKmz8JZN23-TJn9bZToVE-ziyiRJgUOT118A0",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113425185680876233748\"\u003eSubramani Selvaraj\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vZTjlQJx9k5dciiumgFcVBM2oVd-2vHB0C7mMol_Omq_2qxMrtOYYNDgOknJKNJ3ZowK9cxZ7zpOHUAOgf28AGwVPqTVlPGfqMja6exaS9dM4Wb-TouOGvnRX9MZlLRBUwsVReis8RqL6wLvnYg98plK9jZoqWUy7sB-6rs5BCKv_a_wXqwHv2ipYLEjHaIMFbiTgQb7z6Wa_ONnB6jp2Gfz98OdodCIA33JoNpOfYYCpO-Yc6i2rEGiTNFaylUzdUgNt9GfMeRIIwekp4SPIt1R8KkPKCy2foPfyqb0hO2c-l8_5atdpdRHhpCGZK8701VaVLUgo6_KJU5yrm6aIEouv6_92Fydv7ujch8tbKSkFxHtqr-AHwvMmIi4o-awcXTxbY_OLZwp55iMReM7xlAqRftoKrgAVZtVyUNNAJ8AY",
+            "width" : 3024
+         },
+         {
+            "height" : 778,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112989296722308117958\"\u003eExplorewithrohitmaurya\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-spq8K70Xr4BjZwhVr316NXgxIKr7SYqJqjaq6u_czCpQfEhhnuGuKLofm9gJjjxA_4G87L3bWdYbUheBGikdA09_tAVfcY37fkUQuliWegG71GXeLBQziUGNaGZQ4vibki7C6fZ2BLkdHTRcKl3Fq9VMQk6zgDNHYTLUyuHYMCgM3kgzuzzTcXVzDSqAWd885QgbVRNMR3PpWFPLb1FXx9p7vT-Ay0Y4YxrFtEeR1jl0-8ViJ0bcTvRxWhIBkvKl82np7WAo7feYwqo03eoIT8_vR1hUzv2QLV_pn4h6K-O9ianzdNpVFf-H9u-1wpoGGwCnxvZBVsk9NVqp3TDaeZ72T0S8YAlwaC6vT-g91axo73BqgU17CjG7_1ughwnXHCy-oXJ9R_UYL0GIbg1EaW2RVdXwYMM1fzqi1kuukAArOnkMoIZseQI3QKiO1B",
+            "width" : 1080
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108842848321308838504\"\u003e極簡旅行\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFbXHpj6Rit7g9hFJ-hgYHUiYq-61IOaj2E66XGDKvouclLhqQETPi18DSgYFVayUxQf65lu8-krYF6rztFvhxWMEql1S0Ehg0s1wtvLnRPQJq5jG88TL9XdbHLc7UnsLzjxg1FZKAXheP8Zyykk65KUYH97p_3ZyreBbEgDlxN-qYJ_AlnGSu9mbEjQG4Mv_0te7Fa1praLgsQMvBo-hJN7Gbnbj6KEazYUOjO_Ufn-JHpcjI9GbfeALxHcC-aFKgX57AuiYZ-423qgZXIq4mXwAGAyVj7wHqi0UcwLre3IOEkuul4PHdXp-2pjSEUfwQQdVHms1sPo0eKI_2Ipg5r22Ri-Dc8ofNM-wd6rBFCq9zWmLrABrgvuXtMXv9KfOctYGq6pBu5XF_7GTt4ueE_Tb4mMeEE_kVcFW9HtYnBeY",
+            "width" : 2304
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110301533043450545462\"\u003eAn Ch\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXCaNgqjUinHmCcCSSIHlqO6z-bswj3RZk3DX4NjO_u39SQ9uoL00PiT14OAjPs_MjuLRJ-HY0zLexYPF81T1-Ico87DCna64uX6jNhQOSdhI1TtLXJ8M2V69wJM4P65x1fDaAsPvpY1kPQQyxXx_38FiM-jRxR9ofbgegHDWsStC2p_Ghy877tzyrUoFnJ5EQFP6tKH4pT2VW1KANFkyQT_kjE2UcvxKTmc4rPGKET4gu5hak39mOHFwZgNRb0168HDR89-AnTDVD_x8h7-LbGsosGvHK1VGgRwTGj92DMPb5v1UlMSts9oxAmTPuKAUg-vujrgJQYPnsMfczTzhBpoyIp4H7nVenf_vduiB9Sn312wvxRxU6wauC6HauGINyqcZAE5XeWOjwd9bZ8zmmyUmOdOYEdUsvCA-dfx-wfXEn",
+            "width" : 3024
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103985584403050981371\"\u003evenugopal dwaram\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tzwKaf17KQjGYbS7JsSucquxt-rRrGP3iwH25IXlsiZON172wRN1y7BUVCIaq3nFNNZODo1y0gxnPINbImKJ82I27GepFyKzX6WAQJE77YcGCHmQHdPgcEcmfOu5AjIBqUrBEAFAOtaFZgfwvrM3JZcrFMvX-zAoukSv2hEseOium_yl41w3AHndDUzGK7X8BQpme1hGrrmcUxewKtH0YkT04M4-W6E2__K5lPoIVEFQrsWZ97O3yGbliyyIvXfWnzp8rGBMXCkWbIpBBsk77m7hlyHSNvSKdn1PfQam1gdkjZi-xNgGvyX11CQQ6Aqbh43SIsNPPXuJuwfAUFJdlLt_lW7uKTiO-ovUn355rfFKzt5rbY3DD_M0FkLUXus5ijRZixaQHmGB-_cusIeU6EcQsEqW-3T-mDZncUTgrIvA",
+            "width" : 4608
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118239000730832510726\"\u003eNooraldeen Mohammed ALkhawlani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-thnzKVMR8M3aeBOe3ZxKhzfQSvm0A0qjij7Id3RpLhw_mk_ZYtNxzh3hNaVNgsy5UHWeOc2hfusiUelZU_KjV8N-5LFDguwLG0O00db2x1ta7PD8qlIPEaZ8UeiaHBdrzfjHFw-4NmU3jRBxU0pyxyDOAR2kKwLp6RJ_XxvZp8cws5C67l9lJ9BlsrFKZYkQfujbdAXxloyittDH0L1YwPwV8F_FIQwTrWrq2OEd-N_EWpg-xFzAIKX7ow7pfH-613eexQceRReF-IONefNdNzoDQt0onIaoHStyipz2Oze7Ptf_eLAN0fArrrtAgFnKFRwiT4jTxqyXgP0X5ilGrN57YbrnmaK11Wp3uS0WIvZvhykoo9_2VoTehmqhoJS9n7WIFlFDTOr8Stk14C7RfAH-f3fbvc6fE_znbNPeA",
+            "width" : 2144
+         },
+         {
+            "height" : 2608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100007994456748086512\"\u003eKaptan Türk\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vCMqU-R9fBoyy3EjJTbZJZQ0oVNj0rQbgnVSClVn_vPN8fx3WJAMtHy6byYbZnMEbse3BHQkt6jQCYyyEzI18hikernr-8n11wH9A7x8eOOpyoWV-EKgnoSTHNMsP2W-dDNGCWVjfJzIS9ZIPcUba8OI16gPtvelD45fF3ZHjRI4egVrKA3IxSUBcM5FHz8kOTnOFvfulRHE5eDIMPXX7eg92DrINF60FequW3hpNmwuNj1-pHo82_ECBOBwQVQ0XWEU-QHkSuvRDEOMXcHNlj_Q15u-n-wqN_Oh2IO-UEI8DtvSbal6kTZEgnagu3C8coyXwT3f5Aeub6H2Gkg3ZMePHuG-DyuZX0JmB3IlYxZHSqjrgRGlPQc_iPOjIFZOxlzTZiTHXltW8mWKDfSJWGRp45laPZJQU",
+            "width" : 4632
+         },
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107222797058313128290\"\u003eAl-danawi Channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vEhlF9eC_dulOfQ4ho8AhMmqGdNWD3Q48aGO4p2dx5lqa4fmQMH_llG_C1uTkhSSsP3Jv6-lDSZS68I6ZkfeaCKbJbrizDyzMOeJ30JG4k8RRNFpLx9zoVbevrCzBv_eG-1B2xRb7tsLqgquIStmjmKXOzMSdbtjCKdFHlXyRmgfc_IS7qll7WQJlh9mIP2gR3_1yUtqUOB3TY9sLJpW8bNGPTQM7OPtEt9AD9IDLJCpdixm0iPdSCMEk_IlritwXKHnqWvDclOh3ms0eXw5XdUgsFv_QwZcKnqojQxSvYJLny2Ue5tbB9_SYDXhXOV3cAZRzkb37h25UnmKSyhy8qw74J8htc8tpEz_C-r9LT0fCrxc9HnwEND-UllsT-5a2C_I00R_h2t37ARaxgsTYz5hWs5LN1nlHS0vAOAJgfC3FC",
+            "width" : 4080
+         }
+      ],
+      "place_id" : "ChIJ9d_bR_NHzDER31TrGM2bNyQ",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2609725814273168607",
+      "user_ratings_total" : 1637
+   },
+   "status" : "OK"
+}

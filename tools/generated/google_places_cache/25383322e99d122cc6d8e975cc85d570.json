@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "4VC5+7J, 08210 Sik, Kedah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.120744900000001,
+            "lng" : 100.8590483
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.122101880291503,
+               "lng" : 100.8602722802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.119403919708498,
+               "lng" : 100.8575743197085
+            }
+         }
+      },
+      "name" : "Taman Negeri Ulu Muda",
+      "place_id" : "ChIJjVmBEQC7tDERdDhYP80M1gg",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=636710472990079092",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

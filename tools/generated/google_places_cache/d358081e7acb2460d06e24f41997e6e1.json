@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "95700 Betong, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.4159632,
+            "lng" : 111.5331868
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.417254030291502,
+               "lng" : 111.5344491302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.414556069708498,
+               "lng" : 111.5317511697085
+            }
+         }
+      },
+      "name" : "Surau Setia Kpg Baru Hilir Betong",
+      "place_id" : "ChIJ7da6RUYV-TERznbpIPKUsFg",
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6390771638893901518"
+   },
+   "status" : "OK"
+}

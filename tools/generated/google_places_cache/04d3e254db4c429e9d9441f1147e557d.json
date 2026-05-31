@@ -1,0 +1,1187 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vxB6S8pc3mW7i4EsbVR68_mccTBBZ08662z40vsv6B_JHjG4t7yYgKyARIwKo_n-9gQu42cRkf_gwbitzvtgCnAn4SPM-yL4d53S3BMl1y9xKhskvfdPU7UNpoJigK_GgHD8EEQv3ligUdDjGBC0hIf5_XOPKLcqfGS45lGlfeYRWUk24opiwmxUsa6jtflSckblaCCFcITQx7Pee13pA_sbaoVex0MHeEg3InZ6Tp8Hu2wNcCQzX_aCUiHAuoueOJaGpIf18G78fRH8feSqqlNB1x_f1FEysDLt5rXF4pTzwDwB6c-p9tGMeHzqZVC5pXYUymob27W0UngvXlIxkd8xvdDb-M_lUJGfGf5Pm1C3oPRl5NzSZlTSyb6dkto441ECwP4Ku2hx51OfHWlm6DT_q9YisAZQWEaX6YPxDFaJnaP3xemQht_KKs8kqg-dPel-BfjYc7otj5DU6sTqxRvx7u5I14gJGz-JFuUlaL6cOEMT6lu-9O7kJ6wmUjYzjtasFPteQctVSpg_5KaJll7ytUJ0C9ap-dsPFzH9fCL-2W-c8otGupAo7tzenyqpJIzgfl1tJ0SwH7t5fvUwHIV7_jBijlwGWecQqSZm0Aq9OVOOaRry5RiU4h28KBekHN3cs0Dj_FwmvZEsmUvvYBwfu8IHTa6HrfXaE4ywdZ9e9NTsCs5pS6WlR4y4wEIVJ5KAcUVsjYGJuuoKbMyXGFM3cM7aZrkgHKg__mug8zj30KwnPRJx-yOY5ve6nVbg_fQquuzSaWJ07ZljMhQyKv0dnI-9-UI18UHMrBO2PH__RuzS98srV0fEeechZlJ862TQljqmo",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Kubu, 96800 Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0169692,
+               "lng" : 112.9402453
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018464530291502,
+                  "lng" : 112.9415877302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.015766569708498,
+                  "lng" : 112.9388897697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kapit Town Square",
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101231324543707587445\"\u003eThen c.n\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tELNEzq4GLL5E8rLRHpsFCrcN3q2uNwnymZWmPvXrYIxJy6OHX6uYep1HLz-bzJqG1l88LRyHKz7UyoUH8WRP2B6uSTNIYnI7ul2J0mXqiTF5lKhcyavkjbKNoufBobmMptCSYOgtxyn5kG_a1j9DefV6_m8HS7_SoGYiIfzU0yD37fQ5idrr84L-gvEFNTv093wrNTI1d6QmuZPEezDJByGwX9ujkwjz9uw_mStlw6gharZR6rRZLs--aIZ4t3TDT12nrIuIHelTi4d9zCv00eFX6bhXgXf1SDG-6MVbqRuCGYhKcvg2pB0jCgqyKjLYmjJeD7DZD13D10v70QAtzR8PsvoUdSP8qZP0-eEi1tT6D3Cj1LxZventiFWD-0F_5HO5Pyvnu3M4jwgjVpYoEXGXUsVF78t-xnXrM600L76c_",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ4dE7HAC_AjIRUiwVvmflMkI",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8R+Q3"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ4dE7HAC_AjIRUiwVvmflMkI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 943
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kubu, Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0172155,
+               "lng" : 112.9419233
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018707930291502,
+                  "lng" : 112.9432692302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.016009969708498,
+                  "lng" : 112.9405712697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Fort Sylvia",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105168479090807422472\"\u003eKanokporn Christine Toweerasootr\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uvA63OiygBUPxLR8G8DVEmT6yw9D2D70CPt8Uws3H0gSjUzn-T_f9deumnKluTgUiRR3l7B_10x4NZUqvhUIEqEFN4YAhmHAF9xZiSNvINnyworA54ts0SOZVuokrwm1M_wmkLr3EfOPYpQJFWraCg9eEbgCUf9N9MgH0HHzkpgzHv6Ek-MZDr7GrgpIEFl5hfbPOHArK127wNOAozundxPTuml6OmecHuWBDQJ4pxMIv43KKck2xJl_dZb2nRyZGlwgxQhefM9vex7xoC0HtC7GoHzEx7FnyqvJKTswLycw_x10ANTHdn1W034S9K4P-WDjmc9-2Ihu1erh67j08_Z_0TJHTOikHdLOESsT7HXakcaIvZ3wYinrZiMaFg7UA-801Wc-S8xG6V74ALvs-LI9bA9hxEQffvI_4O0xc1YJzu",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJHWeeC_q-AjIRgJ016MvIPs8",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8R+VQ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJHWeeC_q-AjIRgJ016MvIPs8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 101
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Projek pulai ari, Jalan Abang Sulaihi, Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0174574,
+               "lng" : 112.9324995
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018746780291502,
+                  "lng" : 112.9338689802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.016048819708498,
+                  "lng" : 112.9311710197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Kampung Baru Kapit",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114061209664973731218\"\u003eKHAIRUL ASLAM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ujuIaZbC6Eoy-Ht2LZeXLqeBfsPAQXCzH7dyqOeIdgFUEeyTmj77Qd15B2wfaL8xlZW__sYKtr092Ankc-dlEsFRv10oNKlxvSjB-Y1hAZ_w6BuDX4d0CvEUBLIdm1b9Oglkmy3gQhBwjgMbCKUXuDGRsXiZfNshWRwdexpELqzd4WRZHxVpRSxEXIf0ULFBH7KzCBV9-ySYjv5c-XHslnuN9zpc-wccnnDFtBm86qPvcZ7M0s-8bTImsQlr-G1KFnAxydE_mo_1Vv-gKDcgowb3EfJsZjywd-xNFn315bD0rrYu7iAkU1UlSou2FnuWdjNgelwi7Eiq2QXsm6O_eqmy4RbpYNyVi7sdOsWvOd0lQAjj0eTuJSE5JGC1Dd5Qm1msFSTyOnNJTXSOHgY5W4b4u59_xxpD_Ju9EPJ456etY7",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJ1-G2CCS_AjIR9WLQzWjmmtI",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8J+XX"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ1-G2CCS_AjIR9WLQzWjmmtI",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuching/Serian 95000 Pantau, Sri Aman Sarawak, Jalan Sri Aman, Pekan Sri Aman, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2397314,
+               "lng" : 111.4618751
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.240883830291502,
+                  "lng" : 111.4628683802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.238185869708498,
+                  "lng" : 111.4601704197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fort Alice",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113659172198635034941\"\u003echristabelle cindy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s2nH7u_HHxgoecX2t3lHCLV2UHAaHLcMLsQmwRFIGEPeq8AccMIl5EHjkNAF7VO4NDecBGqjDr-nWJV8Q2NxgMAo1UrEvgCPhXo05jIot1Zo7IkEz3ff7ANdA4Nlj6fnYMKc2Ku3zh25c0l2OV69ym1CS6wJEkzGdpCl_5Ssisch-GSyizKXm1GWT0UwTHclHtF8NPIHED3MzdGzjuSk6XSfxSn3vUDPzImB6psH8SJAfs1nI7w5IhJb978ABKa_yHalrBFmbje5zPLDehx_lHZAgbbbLAMluGYC-a2yyfN5EknVH7hMal8mfvBEz3QhUY-Npl_7gkrJFfApoROZASP8iX32FQGMSKjwOYVCn82qbkUQFQOQcRWaNJ5Ew8pGGWgwsaDDdAmOVxG9vW91uGJ0hc-kOZQS-48MeImrKJsg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJo0igJDJI-TERipFIlhejDdM",
+         "plus_code" : 
+         {
+            "compound_code" : "6FQ6+VQ Simanggang, Sarawak",
+            "global_code" : "6PHH6FQ6+VQ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJo0igJDJI-TERipFIlhejDdM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 407
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tan Sit Leong, Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0161338,
+               "lng" : 112.9404635
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.017511980291502,
+                  "lng" : 112.9418485302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.014814019708498,
+                  "lng" : 112.9391505697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Hock Ing Methodist Church (SCAC) | Kapit Town",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117248389370685881845\"\u003e5335 jackie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uOrMDnMPfvBOckxz6LNq3dTWnUX6R6GlYeIKVOkR6PR1IPdLYka1eCCiqpRH6IT5BpI-x7KUP7mKIX2QVXRXRALVLTYsdFsmxVa7hnKHBl8K6CP01ejj49YRi06UV_Ljq9fOHQC7bofdRvoMprYkLtYEm1xWoPpVgl7Kid6Ag_PLX9BNDVB_Vum6CVWEmgsTmrLv2Ql1RETatC48GTB0WH9Te3rozYc0C8OKkNfwKfEXV_-blCwfa5Wd1mXPN779JBE2gsaw2JEdoBsMI5qFBwkWBkYwIIN6VAQsECMD8Tqy7R165J4YJlk74RRzSSOmNDDQOM04HWprBB4-OVjdPSf5yE6CdsDf42uUWs5Ab8LJnJDadjcrel0QN3AZD8_wcXXpzLtNO0Da_D8vSK5Owvlh6p0PD27YNNbpjC-tRIDWyP",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJbzBQSfe-AjIRBNRn-VN6yqY",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8R+F5"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJbzBQSfe-AjIRBNRn-VN6yqY",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Fort Margherita, Petra Jaya, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5606039,
+               "lng" : 110.3494709
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.562103030291502,
+                  "lng" : 110.3508236802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.559405069708498,
+                  "lng" : 110.3481257197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "The Brooke Gallery at Fort Margherita",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101082974947388379231\"\u003eTerence yeo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uMx0HtdvWrHxYjFTpRtFVT-b8-PnXsIfsXdD2IjE39xWfSMSXP_UCEacazVfPjEfCJLX3AiRTILfM_0lQG1-0z9eObcayqMsF0AlgzTNlj2onp0sSdZgJFVT3DMvVPkRtWSgF7daAK4Ko3lrVHLGmJ3jbPxDKqCn6NERpSvb-TK3jQp8JTbgX_tct2W8kyp-U4BcXp911H-2Dug_QRsGGNltFS5nPJdhRf8MRnIKJp-nwCHFsNVOJz0fqic7QSuK7G7poobdHzwhUJZD2ahJc-h_BoND9V3gXCF3EKSdCD0j6Ja9hXS4pppyX-NHHHGFzOhP9kh0B031GjbGwZZinqr0gklRiyZIz5vRNMHKLcEJLKrqFD3i79O1w0XNdGRjgvC58vMeTInaPpI24uTzQ_xZVWkBQwxUVVqOqg1reTNw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJH9FWyein-zERxLxt1qpWjtY",
+         "plus_code" : 
+         {
+            "compound_code" : "H86X+6Q Kuching, Sarawak",
+            "global_code" : "6PHGH86X+6Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJH9FWyein-zERxLxt1qpWjtY",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 954
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3411, Jalan Datuk Patinggi Udin, Kampung Gerakan Daya Wawasan Betong, 95700 Betong, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.414457,
+               "lng" : 111.527991
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.415829530291502,
+                  "lng" : 111.5293412802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.413131569708498,
+                  "lng" : 111.5266433197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fort Lily",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111259347015536327984\"\u003ePaul Gerarts\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uE6zZSoRMVda1rPYi1My2mu0OXpJNKqHEnGjGWtWh35aryXnhm7Aw5Wnvj7aeVT4qY_ZhgCz41NAW97RKMbMZRASQVm7cA90YIEvr3GIvB3bLthiAnaNO_bmMnOXom87aPYjs42XMMmTyxkIS4QuCQZ390lYbXA3O_U4a2rg4k5tBOZLhxE6TIftYRYp0kvD3iU6JpQP37-Ackjd9p6vULv2LcX6qVynl61PtPUSsKO_c5UWd5sA_9yKSzy_ko4ALk3agLAUVfzQQlUxqGEeZd1_JLsjaixVI55Yt89WHc7LwgfjanTUoifHzq42x1JSs7j6NgdJzw9NRi3Hyt2R3pyFX4sGzNk2HmM8bEQ2n6gNFtrEeDTQSFoBO6nlCSiHLasQKBcPBWEIBYn4CE8mWofPrCWyNzX6WRGEUZ5d8vlz9D",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJqangDio--TER7Mqe5vw5-gc",
+         "plus_code" : 
+         {
+            "compound_code" : "CG7H+Q5 Betong, Sarawak",
+            "global_code" : "6PHHCG7H+Q5"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJqangDio--TER7Mqe5vw5-gc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 23
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Bleteh, Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0091956,
+               "lng" : 112.9248834
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.010452730291502,
+                  "lng" : 112.9264530302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.007754769708498,
+                  "lng" : 112.9237550697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Jabal An-Nur Mosque (District Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101282480240036420409\"\u003eDaniel “JC”\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vLj0G9IYgu0GKuK1WbbcKSwJre0pI8SEZp-37RDbm80EdaHXO9aXcIxE1mb_CVKmjZRtxHqno18YnxewX6RWSAjjnZD5HM4vWoZv0aMuHxTHvdIPA78J9nAEQhG1OYNcU0qspuculLl9uEbqZ_DmCtMaT6si09-FDVoIrx6zbWGd27d8e4oaPVaSNF0Neup9IXtER5IZUjf0gej0wYEYKK02btTTh8WX2MFNadvP3Pn-UW5IdpPnWUyXVZhiGKk3M_OgBUUcxxBvRYkQiYsfiHh6c1fB-tV_hfE_HZz2ln6xClsAp8byUTdW3dPmkT-5RyaxZBgauSWPhkzQbuaE0Fr0mWDBCdFYvUosU-JRt7EK8uETL7L47MCMaTaX_ZzvF2nrUjG6jdJ9BXF-aVUEKN63vNHhnXMoJU-eounL_-6rQw",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ4bUhcmG-AjIRhaKYMCuU6_8",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W5F+MX"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ4bUhcmG-AjIRhaKYMCuU6_8",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 33
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.003644,
+               "lng" : 112.962122
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.005283880291502,
+                  "lng" : 112.9632184802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.002585919708498,
+                  "lng" : 112.9605205197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "BEM Kapit Church",
+         "photos" : 
+         [
+            {
+               "height" : 3468,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115536147065732269597\"\u003eTeofilus Thomas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uAXHg9hr4ITApiQw9b7Xdzip5p7ONOqpc9Y9sN0BLCQcy0zBoRvQIcoRkAu6VPFiLA4B7nF6YN2Tw2-dMXLwmm2F_rh0laySyEfD0hu8g3Bbdlj3n5YHC5gOx1OWGYH9g6GdFmrTzxmmOBK5lFjCeWjGdoXacob7X7s4r-lImcZzfM026KgyC1-U_bLeHIfryllJsSwhmjizxasiEnQbChzqlSrfhvr6NzRN6uP49HIMNfJmk32QHDByPf9ZBRXazKDFARO3HGaXdDirn6dDsdoM5oyhteJ3q8IF6A-rph8KfTyYR-rMy9Xfi3gTKCGCHQ-RYo1qTwIbD6QcFom4rTe2w9GsX_swy5ic3u9QOhxanipwY5MMta5isX-YCLNi-nc7RihZYZe-j9NGrH6ZsLHKZovGJCHI3TPkcjP6bUP4Th",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJA-DWS66_AjIR915tVwGcLdo",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2X36+FR"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJA-DWS66_AjIR915tVwGcLdo",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Airport, Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.015347,
+               "lng" : 112.9365772
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.016852080291502,
+                  "lng" : 112.9379885302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.014154119708498,
+                  "lng" : 112.9352905697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Church of Mary Immaculate Conception",
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105573101256760516160\"\u003eDavid Ho\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uT4lFad2UfIJ9frFlf0wgOk3oaX_yMitGPfHeNMjavSmhHkvxo5PjOJO46IroDQao1aibK_guXA1rwqNvojtUWjADaMt7YKucv9Qql6_5JFqx6CELflU_pyMdUOvmvWJF8txYLRbrprglfxJaeU-YbpHVK3FeRNvhTkiZ45--b2ocXDqfuEg16tCtc8BWMFU5bFJHP-rm3szv0FO-F4o-qX7BVrZ0oE75xzDq8XAAqy6oOa2ot2p77cBMBPEsn5O0GnBoZAIxFMIY8iG5lfrCtwi-K8Fl8VUd4QWzc1VAdj7vOcv_nC-mdvFdhJ0hMrgWuEVpFG0nC6blnkeISdxHSHQOKCxnaKzvEQkO5TrdwIul9m5jccdhRwPw-ltAYtd_jlg17rBrEl-vhcKESMcABbl2cx2qea1egvUp7CwA",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJi0r2vPa-AjIR_GXy6ZEiL70",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8P+4J"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJi0r2vPa-AjIR_GXy6ZEiL70",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 22
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Penghulu Nyanggau, 96800 Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0151207,
+               "lng" : 112.941963
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.016531380291501,
+                  "lng" : 112.9434948302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.013833419708498,
+                  "lng" : 112.9407968697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kapit Lily Pond",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117141491457803032905\"\u003eWan Akmal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sV7fdVW6yZm9RfFLExe3sLWb1UuJajZrgsfrtGiR7CAJElsbwn0d-diGezs3YHjB32sJzjveupclHAeHdMYEXkoG9ndaFJicmi3J7DFB5XE7O-j1wo9cNEuFcodxMU0RsAusBeP33eko97G8ViwjATivU0hAggbU7X44mNDxlRkkGDO2kplKnRmV1NHeeekAo4Ecu1412_70I8HEe3naNCZ6ADfIOjZFOinOLMDlEe1XXjb8TD8UFHqVPljgnS00m4R5i6xfIjKJ6foLbjFCCUfnJTIu6proRB3HZagGzimzXaZ_FX62h-RRNvCLGJnyTh55XIwBo0zS2giJfeB4mmxUr95Zo3aFDsReTM_rHsMSuEa6p-gkSXzxTt0sftigKwg6UnsSvpgVkaJLghd6VsckLgV7fVFFzHZOy0yeC_4A",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJmf_qQsu_AjIR3dm1TD8VOuU",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8R+2Q"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJmf_qQsu_AjIR3dm1TD8VOuU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 53
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0156242,
+               "lng" : 112.9394271
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.017038930291502,
+                  "lng" : 112.9407079302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.014340969708498,
+                  "lng" : 112.9380099697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Gelanggang Kenyalang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108612781221640738429\"\u003ezero 86\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ublNRTRtl38fXB0xTs4LEw0C3yf9QJT41VxYKRASEs1bjbjlDoVfh9bwuIOStFBZzAkqxdqX_4XjznOmmbH3GuEAT6rcQCQTFVfsDauMvY93OpbozW7raNM4fuMQBda14jbvWyECFPXv262i19FXlF4zjpsRsCka3tfK6W2AaXoNNebpXmOfxvnSvkyxx6FTtxVBVbBc-NDXTbra-FSdwCIEXHlLQtmWfcln_hojqcQJKRecX3wKap3-bNon7O11RgwzTOgtvppkskHFufWOs0e0i06mOMw30ljZbYyfznfJ2sR6gD3rdvSbNPcUfv1BsBLNT89swJ41QAebAiJ3WToicr7N2_7VIBWZ6xe5DtWbZ5qnZnyyXqejo_HjZvZ_Jc3hEfcB0TflMI8f9MfPAhAihmAovMTn7G9VEwgHZU8ON8",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJb6K5Jfe-AjIR5IrvLUbcKEc",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8Q+6Q"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJb6K5Jfe-AjIR5IrvLUbcKEc",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 471
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0169019,
+               "lng" : 112.939272
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018253080291502,
+                  "lng" : 112.9406735802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.015555119708498,
+                  "lng" : 112.9379756197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Market Teresang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114061209664973731218\"\u003eKHAIRUL ASLAM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uP0zwJ32ek9t4qtj5niEYn8YJBLls9aIQz4wM7fIM5b1N6dKOthBAU9CpfP-ulR8Kqc8sgZ5l4Utin166CTEONSoT_Km0HqHOfShOQXFUg-TE3p4pT8jxBulhGXDr_oX9yc7B8RPxNV8bYxy5Hto4mqAsZSQQAYbtnk6gFDtXOA6TMCJzU4PqAsZ7KNUdYy8lFwOXlUO7eWf2PPPrSDP2XmBrHwokWDgNop3lyxAgp3Xoov4PD3Shz05NOIP23S02lazqWwEFh98YxNFspvVYzjvQbuui7GlT7JGvqzpI_IgaEoy28Fy3JrVQ2Fpqfqr4gT9w-nN2KvQLwKdj4c52DOXqLbUTqLzx5PwVVA7krQHSJ4LOo8aM2Ny5UY5rmAAm996EogxjKK3-jXlB9sVJA4Kqdg5Lh749r5GOLRLJAAw",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJ31jY2fC-AjIR8w6pz0O01dw",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8Q+QP"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ31jY2fC-AjIR8w6pz0O01dw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 342
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0177513,
+               "lng" : 112.9419747
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018976180291502,
+                  "lng" : 112.9433224302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.016278219708498,
+                  "lng" : 112.9406244697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Waterfront Kapit",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105453247699849811022\"\u003eKu Adriani Ku Ayob\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJNeAL67wfI2pNIb98cl7N3j_rwgcioI27y2xX4a8Lo-_HCK7ZwpiAlvriSjbIGumDLCY7LaA1aVqfcYt-9fLDAl653dN7tVc4h-pdpnoVN7ZQP_18xADnm2VDr9qQfnAQX1_zTVeLuehYdOJe1_qGfDeQXZLScnORHRVskB7mgjFW4K22tg7J9RV_92M3jmvQ6pZ3Bxp0g1fRJTtAj64LQ1loEY9g71j5nMR5Cr_Fqs8SC_QAFCwayin1bUxjzKRzUl2bKsVBsPNYaGh4Ima7oHmcTlIVAkBGIcVLbfNM4JNq2Esx6Bp8p4NLTB9ud-oeEBAwhr5TG7aif11jyja12OBh02H2uYxUQjF-kKIjics1Ox6gbDJweBCsHafJ_8QfGToJVDmytqR1X6qVx_lhN2bHz8sxJSxCF39LxmMzUPRV",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ17j4Tt-_AjIRgUX1mXTnHzk",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W9R+4Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ17j4Tt-_AjIRgUX1mXTnHzk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 21
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Damai Santubong, Kampung Budaya Sarawak, 93752 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.7500924,
+               "lng" : 110.3159462
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.751424330291502,
+                  "lng" : 110.3170867802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.748726369708498,
+                  "lng" : 110.3143888197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kampung Budaya Sarawak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113103868486256084260\"\u003eGinny Toh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vkXJ5ItAfXbuxdxEFdw8yif3QD6ic4fUYYxRhAYCdXxFPwVLNJSjqzI1i2SAyDGc3sZotLZkoVTKh12uHnQN0MwDtNEGR-H18JpnRpg4ihmzWpp7eGauuNeuvmrOgpThLhHdMwHKYnDMqLpDTCdJQh4TGCWv7ZPbm0y7-0nPFpn97dqOtCwj_kvijNq3rRYTnkZCmfBqHN3al7_RDCHIhC50LidwfNVE2Yndt7GNAh8YKOFD6K9BRGO7PNEury-B76_WInnrjqZybtbVzTJ5GFuldvkDX_SgaWINVL-6zjyAxK6jnSTAikazcaSICqB6uJO3070a656iDai-BIw2sZipL3oloDCqEU1XKJxzrT2dciAzaTwOVW676YoSppSPN4wR03bmWjMeMjK-qmzLiTOpu4u2E0pHWGbPsYfG4",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "plus_code" : 
+         {
+            "compound_code" : "Q828+29 Kuching, Sarawak",
+            "global_code" : "6PHGQ828+29"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4790
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Abang Haji Openg, 93400 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5554849,
+               "lng" : 110.3423788
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.556625730291502,
+                  "lng" : 110.3436167302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.553927769708498,
+                  "lng" : 110.3409187697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Borneo Cultures Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103344279283666478021\"\u003eAllen Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sXznJtGwAyzq9LH9fFGQXC4zKcVN351zDa38Vk06JYgysIhuqCHGvuYtiW00CHIbh9roiYvuRp0Xqcn_q9poUAeG_ii-uc4-UQvK9tJIx9Deip_AL1lJ-epz7Hzi1MUtDnOFpGdGReuUMSCC_N__qIGZKrELDZIMoY25DEd67XaxxyLn-JyHYGsCxHzhDeXeBlxbfWGP9BJhEvl5r6Zzvrtrv_EMBP8uwqeLe8-qVlVhMJ4V8s9JazmpsnHoBeEl8OtLEGlIbGRGyE_9fSwlvZGp6BOLX3oK5AFmNgkqxLY_oWG92AmGpmdHc5w64wAJwKr6OWkqxwkqYEuprb-TSLxtjK18GrqXzyQ_CTF9Pa1DP7b2aYDygWLi_WuL_o2YzoUMoLSm5QRYUTwqaqRKPHIAP56Qq9GM72eGb6Twxmdg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJQQqoDGn-zERTw2i1LGpqnk",
+         "plus_code" : 
+         {
+            "compound_code" : "H84R+5X Kuching, Sarawak",
+            "global_code" : "6PHGH84R+5X"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJJQQqoDGn-zERTw2i1LGpqnk",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4493
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Datuk Patinggi Haji Abdul Rahman Yaakub, Petra Jaya, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5811945,
+               "lng" : 110.3434185
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.582468880291502,
+                  "lng" : 110.3449500302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.579770919708498,
+                  "lng" : 110.3422520697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sarawak State Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 537,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118089967942202378024\"\u003eHASWAN Niaga\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s5keDux-fF6bMlcLGztv9acV9CCMD06U0FrtP0t6IqXqo_mHPg2bF8aO7ebz8rbyYZQum-_e8Bm534AjRfTEmKK3zCSlo0-_fgQ5DqQIjZsmXLxFy8i1zItCyPKbI0emlS17ziO4L2PKJ2YUicLKPM0RbOJhc9rWgtG-dqoPx0IQtAEJR2EcR25TwpTJxJSGOUSLjNyC1U3Ed3jPuL2fI0g0rHDktCd26ZOJCU3jhphyTykyyibOC5t5yuq5c-2WYgBqCEeaPIdI-DyVVEKc569NfU7W_lTLAHExhBjSptq4q1_oba91F_OocF7p88sT9tUX2EMswVHlWukiweNw_t6sj_iHTpLxv5OMD9Av4NCBYtF3qU1yXLntJ78zOaJMF0OaURAzW71-z2UGkFSlcrT2d2sqFdQWBhnp_lwa92QqE8",
+               "width" : 800
+            }
+         ],
+         "place_id" : "ChIJ-8tECwOo-zEResptdrNSvO8",
+         "plus_code" : 
+         {
+            "compound_code" : "H8JV+F9 Kuching, Sarawak",
+            "global_code" : "6PHGH8JV+F9"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ-8tECwOo-zEResptdrNSvO8",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1118
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "93000 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5608975,
+               "lng" : 110.3434765
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.561990180291502,
+                  "lng" : 110.3448049802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.559292219708498,
+                  "lng" : 110.3421070197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "India Mosque Kuching",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102365311169685864175\"\u003eRidzwan Mohamed\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-urwd7196FaY8zJtU2J2blRKgK9gMgkfeUARVOqrkIlFcktySfU-x70dAiz24Sw6vlB8hP0swUKAaB7ua3zws1BP7VQZHRS1wxDy212xzostVgFaaZ7bt0w_j-zMMLffpsVFxswEMWXTrwiiF41Nc3BuUTGo-PpVbF4RSAmM-4h5Wg11Wh3VNmUzxEF_XsNVl0Re3IfH12A4zw0iQ6SmLnV-t2W8qHKDBgPInumfsyY0IsMs4DHdqElY2GWvlXebj3iEQl_pXkgg-bSDwcXwPeWbQLb2V9blqOlwHVkVB7kVlDkhN_cCge19f6pRAdXv6c7vNWIxx4MUbnMz1g9XfYcoKbgIOyyBLbb-4Q4CivVUezuFfgVAfFHygX52hv8yNKoPyY-lnZSfllUNpwpMiiFrID1RRtl6HlFpIFE-_immIgW7z_t5XcsSG3UjR0n",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJITf-y--n-zERF0iCY5Q0uLM",
+         "plus_code" : 
+         {
+            "compound_code" : "H86V+99 Kuching, Sarawak",
+            "global_code" : "6PHGH86V+99"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJITf-y--n-zERF0iCY5Q0uLM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1268
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.7066874,
+               "lng" : 110.4663249
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.708036380291502,
+                  "lng" : 110.4676738802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.705338419708498,
+                  "lng" : 110.4649759197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Bako National Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 500,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106923459455881613717\"\u003emuhammad muaz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tSdWwduSqI3B9CxICS7CpACNduqfagnQeBWeaj4yjyaJ7TFHnJkwhqj6hGu_t4EwYjh8B9xvTCcqmCGUwgEA1LnR65SEPb9bsY4dILZ_l_zQYEoQQRtIkwYT4BWWgwrrtWWEvtBmSxKbx_ZYwCcRkWgoPP2-O-gsfm8hXZM4lpAH7XOgSrq-bAhNhKPY9h81cyYuP0C_12sXeT5hYlIpyVLEO0pC93PDd3YXTnhuMG3ZquG7YUndXB6lRe90YBtbX5kuCTdMbcnbfAJaEUxVHhoLRapcVz1QdryqH8oAg-ZLKSF69Yyrac-8J3texlI8aaR_1U7Q-ukr3nLadwv6q4x_ldzn67ootsZDxtHdE1zplexqBJ6sRbBp4JlWFzmzkQct1AD9xq18dxk3eUlRdDj1gQglSYx9CXbsWvaBI",
+               "width" : 800
+            }
+         ],
+         "place_id" : "ChIJB2jltixT-jERpv3vxRTzu1o",
+         "plus_code" : 
+         {
+            "compound_code" : "PF48+MG Kuching, Sarawak",
+            "global_code" : "6PHGPF48+MG"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJB2jltixT-jERpv3vxRTzu1o",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5549
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96800, Lot 334, Jalan Airport, 96800 Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.016082700000001,
+               "lng" : 112.9381784
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.017470580291502,
+                  "lng" : 112.9395176302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.014772619708499,
+                  "lng" : 112.9368196697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Hotel Meligai Kapit",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103958545361792454090\"\u003eHotel Meligai Kapit\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uEr448hSXxXFfbnaVssc03HvEWt9gOvhuIEATMFwtAwtCa5HM-i35fPAUxFvs-uTvPbMp3HNrrynAACoLy_xky50k6PdhKMYdMK0EkX5RZPChYXoF1A_QB66Lc0yDx3sQOaEQBTu6DAQjzfTuZ6a9A8RJswyCer3FT7p-zLDXisZOQO_4TgefBcpxoWDe-2BbHVlFePsmFn4GF8-gzjEJUz9ZbFPtXIo0dV2yDY_3zletYu5jqm5X6_AYNeO0hg704ZEokL6AmL2xcsNoeX2APkypkLfHFyUHOMdFuC8ZA9UNP1Ru35W_MgFvKwuimzUx3vmctCXjxK4sje6rsSOU1vgZErfe_-Msutl5hMYCgkVlcFUss_J3_02fE_vDnHX9JeYkPgrFrn3QAXyQMYYuoFk8vcVpddGdWaVSHsV_YjQ",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJASNDoGC-AjIRY-S96TshH2c",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8Q+C7"
+         },
+         "rating" : 3.2,
+         "reference" : "ChIJASNDoGC-AjIRY-S96TshH2c",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 482
+      }
+   ],
+   "status" : "OK"
+}

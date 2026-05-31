@@ -1,0 +1,239 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "2 Jalan Punchak, Off, Jalan P. Ramlee, Kuala Lumpur, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2630 3033",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1528762,
+            "lng" : 101.7038516
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.154193180291502,
+               "lng" : 101.7050922302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.151495219708498,
+               "lng" : 101.7023942697085
+            }
+         }
+      },
+      "name" : "Menara Kuala Lumpur",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 10:00 PM",
+            "Tuesday: 9:00 AM – 10:00 PM",
+            "Wednesday: 9:00 AM – 10:00 PM",
+            "Thursday: 9:00 AM – 10:00 PM",
+            "Friday: 9:00 AM – 10:00 PM",
+            "Saturday: 9:00 AM – 10:00 PM",
+            "Sunday: 9:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118189487791872795219\"\u003eJelle Pera\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u3DecyYom3xdz3FtPq631v-vR0ZewnbyYlRr6gr1UbBhYfzDX1EW-E2fkDH9p7MjjExAlu13wzWFOCOQq8sHDFEDJ0BouRFxsSHrqvK4pqK7OzeFpRh2mZR66ccnbZPEhxJcHrRkAfChpfitVhUP5IAHPl992VH0N2KlUaoMeAsn0AqLdlfMYAvoSv4KY3_Osgrl9-EwZWZsXaGcyivMD6UjVKfmGlVUgyaNZAP5eD9qhvs8FLGuws03MEonBMUEkNbgHtFkegHXlEpT-fVCBNA12mOinCSGpqkzB8XNyhueRwy8varVNFBdql4AgJ_NEB5kemLcfK5qb9EjtcRJSVXJdFY4EcVsURCgplE94Hu1rMsBsCP2Jc8551--YnP7-FZnEI_DrFAqFpJj_T0t845VHO07zCS88TXiOwQzxKbcxH",
+            "width" : 3600
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102887635571392959842\"\u003etery kurtev\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tYi7RiInnlhTrSWUyORTeXwATmF1zWNvXFdI7ke3hMefxy2hVvh757Gzd5G60Enmok3w-VE4UECBOtgghMlENxn5mXIdEkBCi5tMs-9CuNl5XMLHKZ4QtmTiptvxFehXxlh4CYSvg6KURX0oBctcc_jXBL03ZugJJLaSHxXIOPyscmRy9shHnnISFQ-hvP6SMKhqy0joYmBkBFgZ6hu7kE-mOyUp5n2SplqE_4V5IkmdkHpuJ7pI_U6BXDfmG5tmhFoGnggqcDAWDsNWv3aZ3EhcXr2XIl3EVb3Mq78r8IK33NmbUTDKnADv-GxCAuaxyltV7BggyfFsN0P8pO0eEhH3uWZKHGFLvSdykwbK4eXcyHxakikWqQtsEIMfafPSKfR2b6p3lO2L23muhnSkXjq0GZ-yoz1UEAu8fB3_qzcyph",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105429441619554264528\"\u003eChristopher John Alparas\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v4R0VK1472ASRyj0mi8oRiM_WEGi1UhpbsRTppZud-n9K-UmcTq3sn0P-L1_6gAKeQenedSi3DWpcpw-ziAV92lwgetuaAtPFghzshjH_vT_oz7ppe5Vu1O3HeS8YG0-su3ZKRrslib2AbfB8grKNiABfXM2g4qyPH4ehPSH9ZD8euBJkQTn52okerYreRkkOLE2MzzXxKREgcYwvdXY7xxBOhjiqO8cBT-5blkb0vXOqdfcGpLW8sddLRVhzdiphFKVxpTSbHsuD_fDIc4GgkaW7PpAflDAhQ9Y0TbeCnknRcUaBa404MCHzO6nOtiBINS-x4cdS4aTnj-Tz9IYMj7rEgY3Bcld6et1QUfiMq1_Lc3htSyfdifJ7ZxltwvjcwbOL4Zjy_AMgJCOU6sHqcLwFPB5fHMMOTypTPimqUjg",
+            "width" : 3024
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104599174140295984927\"\u003eGirls like to explore\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3eOh391_rOhlOGnC3uvX3goxd6PYILbM9UzBUbIlP6S7YESp4-PcBafuNmb0NZ9Up7UqaY2mHclB5HuDEXnB59rVVwPYabI2nZvrO0unyt8pnFD2ZDabVNgvGOn1Vpr0FWQwKZwyWsS6slnAsklgY3bkPHX3qyKza33UG5Dwr0Q1h7Wpusxxl8b27EQXl_1LcXei02_rM_89R6CShUiDVhgOL_cRMS48p7S11b3f6aplIzKdSpoflxFQQaISodeKpr6Awdr_LJSXTkmw9SJHwNfy0ufuuZsNXOm02NEEk3AaYYr4sP2Rpbjx2zWKIy0hkf7j9lkSx8mp8CMy4ht05dYfnNH6R4IVHzjzJv-FiLrXNiyLBhonyYpp1gYAUCM7KWi9Bus5ZfVaaVSpQVPAWvebNpgkVNLjIfNKTav8",
+            "width" : 3072
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108104018242672248413\"\u003eJeff Kirchoff (Jeff)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tY_Y6aRGkAep2-TyiVCeS1TK3Nn7H0JJNHG2ZgsUQRq6rsGmz27xliu3HhJPUwjmcj0IaJB48R3ChHS09RqLidriA7B4qFA-mRRC_IX5tMeBuh0IBk7ya8N3AXvkzY3meq52r2ZBqfqWuEJOviWarZwCUPpsuMqrwMLeF83w5aSHXfLL2_iNFyXS7rw8hVtTpmOVRRqy6-WiLy4HftYI4-ZArgp8svGbnMzPZmWiHEq2LDrdokCovVZf5wj1qamXp2TAN-unfWXs2QO_zj77r-EOVJlnPVcexFNJP_KKQOvLSg_4KD2gvdcbZtFsyIRm6Xe5V2eoCqb3rl0QkmrQt0DDNiQK2yHZsjCfsEcI1xRT5bYhQ8OYp2HxyoRcNsgijHaOfi8DhcSzQ9yzVwEEmtL8L_armiRMZZAyN6NXLKzA",
+            "width" : 4000
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117018417074811318852\"\u003eRajat Narayan Saha\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3KLBMTm9Fd31_xal9iOy5aE0N9sYY5VYrRTrb9d6QWaAeoW7qnt47_-BNSCM4jeNIg83REHms7f0VXhWvQE99OPiuVwCi6Pc77iWEGq7EHGkYHy9lOacnxi3PJsn0kWaRdf_YM3UVRlL4NchoWJ9-JpDd1vrzqIl4brl4nMqjY-svGfmXvfy05EDZOJ3j1Fm5BtgKl6W_TUiYh_vorZz-HkwcVrizhEh5u2ZN1WTsoQ1c2VDOof0p_x49Ro3CaaA529FjOsQZad03z2ZMQ5GDoXyzmQU0y8QZaaOlGcOW22d4gxYCvqGV0-HIUCaHN3aF4PoCxx488LNocuulF3znR_nwOJdj9asxd13MgsoYnk-G6IeP78EL4t4d97yyVdLArhPTJVXDaNmuD_z3uXkf7SOeO1FT-k71AQ0ZdWrIqeAm",
+            "width" : 3072
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112061287787172201855\"\u003ejiri balasko\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uF-LYlc3CD6wPrCpVX2VGQ6lPz7ucu0afgSE33en03ZBt_R_N7viL621mCb5bOhEyZvKAbS9RvtXkK9YXrIey1DwTcb-sTan_nSkZeBp_Amw-oKVk6fXDTkjUJ3NuB2poZnzh_CXpYqPG0t6ENFlZcJnYHaCAWM0Ekzfbnv8iEpbKldppDLK8TZjqMdSHas0ZebU64BHmjTyS78mgjI9XV7QM3YFXjBh3Dd3kYanF4Nwh2QrLdfND6R0wFrnB5pvCOyGHuPD4Ra5M6fStLmfB5WAlA2UerYI2_IMHm-6D9-sqItueh1rIcAB78CyYSch0NC7bsOK-6eEnkLiaFBXbOIFAcZfPv6sNx99isICD13FTeUsBfbn_gsmzR-m7iKgczHuLCG74mJgvComhcUTUZxPBZ3ZsgSBaMFkN7ZPLPog",
+            "width" : 4096
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117568231317732864347\"\u003eAjay Gupta\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vVYriMNqeR-AUHaiSTjpCisQZpo_EUqRGmCpQZiEAlKwUeb9s0lRhE7ZGdMNkMxx_7nGb4B3_dXeWwRhLBTCBavRFLsYy7nx5zv5-g93751vvMR0nFAbOfVZ1AAB0nw6rbjQU85C1ECpI6mHXOxY12SpkV8fJwiXfStdePPO8Un_kQ2wcCsLan8b0wNRwaT5hqa-xGpmLoQc1ezSW7FV-Il0NF7d60XopdSBqTdB4VJqYpEXjBndTGbiZlP5Q1EOM8EcKdvIKfmQKS1zNJQGSJIBkMTjTlLLvhdhfeqMMsqFbe_2NdEWOZJkQ4L7DyIGlCHfWw3_IIjSVwqqkshlPH3HxSNPI7KF10c3a2phGP1lseVcWJXykbpzyCiC9CFK2kruwJvecnL0nKk2Q105CIZs97ovFngX-ukCk0WVU",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118396623084749141095\"\u003eDesmond Chai\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t78vuPfhwoNbe5O5oGTiHOFiGA3hA3sAw5b6LIE0RmrhI-hZmMpMc0hrniwQUEDe1czpjc_USgYKgjkWk-dO0-_bHB34wQcMSOYkVK2T4ysGUKdcbwGdM_p_VMMDHIqtImXXUgsoTDGWiei0C7UY6kbx79Sy_4bVUHZ1xU9NBusTMUa2sxeClRm5BKigq9f0XbJWCOGLmjBCf14gnSuAs3nIRH_zJUtri9PvkMGFLb8tibko5d3kP4B3KRxrGugaWzvx1gzMFNErd6a9yGiVqErdxkLYaQecYtLQ5bEWwGOo_jEvciMLlLjkctccAz48-EB2Dm3Kr6KHKOXdUroZYCEVG06slnzffooTvaVRvgt0U13Xj1ouk8-aScaEuDACc-wA5kZD3r4PY0USEU4lMsTPXefKQfLbu-983gSxybNFdc",
+            "width" : 4032
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102292825463645109055\"\u003eBrian Ong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tx9EkrN7gLwaFcP7udn-lXIqdnvuLOOAC8E3uePUTjTdeZcUA2JZpWCrsOL20GtR6YeaKqmKz1ldm1hpuOlus3samvOJYd_VN_zjSV7ZYnb2P_1ZghsoaciwYc4fgHrJCUXNAQmPIHfaRIgB0HrgB-you5_O7lNeEUx09M6-dmMtOJU_mXBxVoapzRi4U65RGbZdYkJ5txDra5W56IfR8US6fzukB-pAxnNoJtigQ2A8mApQvcMu0I343HV78mIxTwLLpwyi3Mop8REp6E8TW3I2dKxlikMOv9tsoJEf1Ig2dqciykvXZeJaDMZDZJviyc3PVolj63yKjrF2HpA-hLR4VmAddd4ky0mqkbEwbsxzmJkRFWgLe9GqFG1P8BZlZyXT-GOHlaNI2MQphvcVEMbI-nbQDCQskQAo-f-zBrDg",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJE1jNHStIzDERujrDO85YYBA",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "food",
+         "point_of_interest",
+         "restaurant",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1180040745160227514",
+      "user_ratings_total" : 41515,
+      "website" : "http://kltower.com/"
+   },
+   "status" : "OK"
+}

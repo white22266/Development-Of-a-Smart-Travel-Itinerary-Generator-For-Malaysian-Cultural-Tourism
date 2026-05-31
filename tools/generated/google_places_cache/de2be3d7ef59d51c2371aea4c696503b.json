@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "CG7G+PQ, Kampung Gerakan Daya Wawasan Betong, 95700 Betong, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.4143592,
+            "lng" : 111.5269529
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.415705030291502,
+               "lng" : 111.5283136302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.413007069708498,
+               "lng" : 111.5256156697085
+            }
+         }
+      },
+      "name" : "Surau Al-Jannah",
+      "place_id" : "ChIJpyerOHI_-TEREKA8-JN8ha0",
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=12503536915430809616"
+   },
+   "status" : "OK"
+}

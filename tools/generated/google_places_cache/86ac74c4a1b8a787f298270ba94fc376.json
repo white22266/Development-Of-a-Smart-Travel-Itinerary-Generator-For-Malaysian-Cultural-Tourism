@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "WW69+VG, Kamabong, 89900 Tenom, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.9121366,
+            "lng" : 115.918874
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.913383080291502,
+               "lng" : 115.9201148302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.910685119708497,
+               "lng" : 115.9174168697085
+            }
+         }
+      },
+      "name" : "Funfair",
+      "place_id" : "ChIJaQFhfQA5PTIRPj8SxBIcuzc",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4015834359655448382"
+   },
+   "status" : "OK"
+}

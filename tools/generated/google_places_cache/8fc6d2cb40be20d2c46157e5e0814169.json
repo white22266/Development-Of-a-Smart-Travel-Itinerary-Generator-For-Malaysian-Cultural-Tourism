@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 898, Reservoir, Off, Jln Air Kuning, 34000 Taiping, Perak, Malaysia",
+      "formatted_phone_number" : "05-807 2663",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.8207441,
+            "lng" : 100.7520321
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.822052680291502,
+               "lng" : 100.7533758302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.819354719708498,
+               "lng" : 100.7506778697085
+            }
+         }
+      },
+      "name" : "Spritzer EcoPark",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 9:00 PM",
+            "Tuesday: 10:00 AM – 9:00 PM",
+            "Wednesday: 10:00 AM – 9:00 PM",
+            "Thursday: 10:00 AM – 9:00 PM",
+            "Friday: 10:00 AM – 9:00 PM",
+            "Saturday: 10:00 AM – 9:00 PM",
+            "Sunday: 10:00 AM – 9:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 425,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112085623022062225473\"\u003eSpritzer EcoPark\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-usqLe153CLaOp4Zz_36Ucrv0hTDZrdUbVsbMzdylISQ2EfiKsN5d3zqjH4avr6A2XKlJAp28-5FX83-lgp0GZzncx_MjGz1oZj8VhjAND-IOewJPadX4-m4kbWgPf-bT5tVwzZdxlXb2a59Q0N6SQoB50yt2ItLrJgPxbkL_MjqgV8yCnIfHcUsvNoLU2kY1PSu22_xbGY8UGhQlhIgcV3hKumtl8-I98ZDpTCaRC3WU1ySCmIpKIJszbV0VAaKO76dbwNAVOQb2uTK4gW_e4CCQKhK7cW6JRvUaWZXOgOHyAoqvgooKHQfqYD1SKazLFFO5eUKmBG_NMmlhz3JR3s7tVR7xB3_wspDCcGRYXSoszJZ8XKi-9xoH0LlYOm_mNVc2fuT-B7fszKKHlcf1SkSNOlRaxVU03EMviU5f0",
+            "width" : 639
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105389153354056589504\"\u003ePhooi Shan Lam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vs0pzqcsj_bFs0LJMiD_V-KfVfp589_N3ssM2BDy-NRQZA4XchIFOdPkx4UiPU2w9jAW1zoI1lvuhKVr1ZiZRLff3_--u5oyVGjicR5zHUg01Pj8TjtILAgBlVjj4Q86C5R0EyDwORUcT_o9giuMscqjgxoGFkcI6fywPyqmfhLx3m7eEfDKCbOCEWjtRMCOaZr10mczmRn1D4odwrxvbTm8cQOPKFLNjL_u0c9mzww9i_Cyl3LDTrtF3fqU9VE8EpnCqFcJ4VjHxTQiexcOusFnP1tDcsEb5trfkr07JZ5p-zNwzRe2qE96nIv9zYnCFHIkThJ4mIkRXYAcVaXX8D1JDF5d6Spx8u53Jpf2xdv1X1B1aFYZaOjmHahJeK9oMUi7XWsNcpH4H0u0zl-7HZKCmIfy8eIId2qrOdG830UAx5",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114443845259888466692\"\u003eAmirah Akhyar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t4oQHGMXC0CYnq57bY4QwYIPMIhMoXnSK67Ma1kt180uAtwBCtJf5XcCQ2RsXRHQj_YXXyzfRMpabRCN5fr4t0iZ-IcKnfsUhrxpRBSAhIZQHgiwgxt6_Xe65AAaOHII3f2oSXl1u6JKIjgSC4BNC8dHqPvMtBNLRipSSYtoMfhuKyVbbuZjfagDlbeFpGSRFKFZ8CimfP9vMd0mFFm-7pGohqMoFSs560MFcgVSsZSZSTjxA3H6xaRG7TjVDlyOh8l2yHKUAAg4aN31ULgpH8JS429WIsgNs7z_z7c8FM5us31GJUmlEbp1CGPCUd9T3nFhAQ6K-JGYOFuYFpC7-vdDtYLECO4Ltm36tuIZ_PFzva4JIRkv7VYtaaUSpqLxtMgElVvvs2U1fuKdwN-L-no1amVTgdrO58EpWGMQfpkwUE",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106136147814352083369\"\u003ezhikeat ping\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s6OV1rXKc0cYOe6q24iK_Wzyy3XAn0v4YIS330qqZDuzCLNeOlZLI2rv_O-ECCu-WA6dvPNjagldhwB67bmQ5X7e4g-UDNR-9Zk-L8NFROIDK7yOl5dE3QmThCTfSlbOi9Oqut75kpID0MKejjQaYQMGa09iXXfsFrYFoIEi7FOW7edbCpMzIjE70Q1gggtLoInTui1jLjfSbUUSbDmLs1h4WfJZy-kIVBgn85L3mLtRo-t_GjQ_RWSJKGxFF-S_nljZyRBIT5Ral9mejofw2lJGePBuyHcsVhbh960ot_S3jbPQLdy5Uv-qIjz9U_Trq6H7xEMMd3YvZoUQl_dThXNr0LmHynFcyZT_eo1K0NSagH9IadhkS3QXHjTEmilbRb57Togw8ZNsNg6sqqMQeYTLQyyzhj7tDl9fyCpngRSA",
+            "width" : 4000
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114843183430452139085\"\u003eDakwah Ummah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uhDZAtfRkBITjlrp_xIKUG-Lf-karM1jlwIFNpemISrv52bOQVmNv-Dp5TNmOAuPDl_CCw3DWDOSW4LC3iefssTue2Mgeg4PpTf3ls3Z2IuJ2zbgDN_LqMzI7aDk3Zhf7XV01FfWFBYtqM8GG6hMFPmEHFVCMVIoRPGJcVRyBOh1cevaC3zHZvMMLmBxIU_-gHTl4-WQGrP3g13nu0MkCTq6XFcvDBOzFs8zMzqxSs3WFZYmqOI0HdYylNxYlh2RDnj_3BCNLDIPJkBr-Jkl6_9phN451Loucir_yFkYwW3zE-3Xoo7QZQO4NOmRy55-Ro7ofGDZtMDsQ5lTtaMpRVGlpgA5czlMopn51HVP7WGpHYcm3qMxdah60Za_q2u_6BKVLBum8xXv5gBAUqs0aY53aJo5E_DPe1bPrMUpN-jg",
+            "width" : 3600
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113567953944349259860\"\u003eE C\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sA1GSwep397rJXXBxwwzXxpZzfib1lzNlVXS-i-BWkJ1o-KAPBm63RDfBfvQqLQkPWisSdkqLq9WusBmipM36pPgQAWV1YAe0TQb8KNCtL4wmL9BbvjI5BQFJG7rjuOAL7V8rWLyfTmdRX6WU63sHSWM5S8FYgru4lEUmpBDBSJ_loRvtBhDbKpgo3N0wry3yfZSPg1SkTdsNVITpGaTxx62tH9Je9Q4wsP5P7uEmFbjt-Wnv-pPXizNv1U91cDga-Z7rulNlvjFLLRwPWShXo2uWiNF2onM_bJDhQ2bUv0I_FyANlXDJxIQRYMlTqir16xUzxS0fiAkBBpPgQCvcAlQlNVC4XGkF9NSpTU2fLVfOYoEVJk0DQe-DVbgrnQH0_bCM-fvX3T1Fnl7O_fXhMVYwEJD3u5gg60yucTtBmQV4",
+            "width" : 4000
+         },
+         {
+            "height" : 1836,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106266047681410235303\"\u003eChai Kokmin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuzDzTH2K2DQvdxvkXvgBFnIHazeQmSF_hvbU_y8PjrEFoux9QX0VxtLxzNe3CZAH8wMG2ObNPwfxrUkc-X-TInb-9eXgnm3BLti8a7Z1wOVARttH8tPdrMzlpvkda9r8RFlQs1w_ese4cHBIvuL_OJMg4WHrEi1OuYtGts58aHvuZYsp4rpeXM3dxa__YgzOlog42xhrl61EkleNN-NQjLszDNP7BGp2kfFXTgbeoYE0OEyvpZtO90DfBGJYmqohCn96cCt-INA8p3Al2YgWpqoXfLem9x--ToVsrrOTHvl3m7SSjKPvBeYRWk-mtolUMwSdqADwMA4VD8U3vp5BS2zno6Ill_OAqJDGz-P2v281_yxKsYXNjYUaMIUvlBjZyjMQ38JVDQ7XsyqfJ6lx57TnE0ldoeHXizCYO7IM",
+            "width" : 3264
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103272921353977496742\"\u003eYCLam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vku2Iv51EyEsD7mTOU7CMJOnfDihjTsIfxHDo7NZAITdwLoIQFKKcN9NMQFYNce-qO5vKD3JtvedWlSET8nfLjqogWJj-TnRxJZNdsDd9InIhxB_Lo76_42mdanxLIve04YrVMhnEzJ9LaHKm6GgrKljxnJ35Dq1hj88e_iYhHzSEESE317gjhQORAXC-SPFwxIJy8F0LpdjZ0XBhOwwt9eaOUvLeGfcz45k6AlIl9NtG6f6YW26tnNZ-qW9ythYwD2B2DO8RVSXzaRowdLcqImDgFDLwAACxY5KGssE8bXgKNG3oWJ_008dJ4TJOvXyzwC6DDMZvcLkO9Q-jtyEi70fJ5OfvZKp98pPLNC8WIxJ5hgPgI7jLbDDztNZvFvBWzzcCcaBg10-VuctL_uJRCqy06vzLYVd7BqwcbAHIM6w",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111951610740468795751\"\u003eCS Chai\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vBfv0zenH-Yj4iFvnrAgiHjN4IreTRb00U7xSRC4xcPwNcll4lREpt1LBIPLUHjGV_YnyYSwTlp-m8lrWD0RbAYI8i24wFmiFk3Kp0Bde5eH5guGatoOc5So1FGCXMRvcV-blZeOAYqH1kXntWPIv5e73jBs_jfLcpiy3gJDAs4v9qdLEm1XERD9bFNBHfKRSUMIBz-V6mz4bQNJScwiVEdntjzsm9xz9MLbMiM9sAwUy2fOFAPbXQDNHZ0eDgrHvN9xadFL3fRpRxyBHvU4-dmNkoS7dQ0apxLUcbaRo9dL5kOlyo5pbgkMfl2jaCY7-fsWJZwqbzyMu2WKW2ijK7X35p0SGCyEGAlZvkyvJvseIWrObsjWc3S9MEmE5ZTWIrBHDvd_jR5ERkViPnIaR0FW9k9RJsTXoIesCVPw4",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117850048749060687184\"\u003eMichael Ang Khai Ching\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sLPYaVrYL5fJXEwVAQ2Xpf6NykMRUj96Lsm8a19sBtvaYV2yF859hYdiyE5lL1ndE2JQmwJx0Q_19ry8UxmNN5P75xydrttqITNKiPdD-zlQpXLy5_0DOT8Qtf-CHytuvQqtPtacI-3BBRTqnx5xysAEOAscfbQJrGgtgLDk22lW2vGlcUlYcYca9FE2f5_br0VNBjMmAQG3mAXwj85qfvNAVWTDnRFv6ayvAngomvsNAgiSFRuxNShE1qbWlP3vZd2W9WaeP5euFcXJkYC6O0D56Nof6vH_Ze3ofRQ86WyiHz3dbZ1k0SD8auMAbQ0FrrLCOqRw3zo4HcqsmjMP5AENYhTtNAWzAFJaWS9_huAL7pZGMtkQehXuPXuUalPszFh6ZKCOSH__OWVHr9El-Cp1NRyXO864prXdNMJwo",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJa7rUjzSuyjERMBfHpDTufw8",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1116873142481393456",
+      "user_ratings_total" : 3647,
+      "website" : "https://www.spritzer.com.my/corporate"
+   },
+   "status" : "OK"
+}

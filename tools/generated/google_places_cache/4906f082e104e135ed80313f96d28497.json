@@ -1,0 +1,225 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "16, Jalan Market, 30000 Ipoh, Perak, Malaysia",
+      "formatted_phone_number" : "05-255 0007",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.5959699,
+            "lng" : 101.0773164
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.597369380291502,
+               "lng" : 101.0786640802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.594671419708498,
+               "lng" : 101.0759661197085
+            }
+         }
+      },
+      "name" : "Funtasy House Trick Art",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 6:00 PM",
+            "Tuesday: 10:00 AM – 6:00 PM",
+            "Wednesday: Closed",
+            "Thursday: 10:00 AM – 6:00 PM",
+            "Friday: 10:00 AM – 6:00 PM",
+            "Saturday: 10:00 AM – 6:00 PM",
+            "Sunday: 10:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118356888607396638738\"\u003eKeane Ryan Peter\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vluR17GTEzPIrsZFTcew_XwLFCVVwXFba7jvnOZnjXy8lwqKhUhwxRaEGmjlDpCr7fo4lbiTktreGf1CI-xnw4JCvnA_-C0by6DYc0xQ0KM9D-fmpgUSJVMydtptqKBnPpq0xItjz1exvfMIgpjfApBQgpjw4Zm7-sSRvNMfn8cY9lS9TSM2kA-tNZ1yr5GWDmiQ3z269vXJ2dFPTiSspb4kit7BwshKd7NI_biF267Uv4XR7bwHToLYwHwGzGAosgiDMvsgopPxTsMwOmSnUHiq6sX13pudhL3fpaun2T4K5-IGqRhpKkIFIU7K1sIK8ei4dq_FzahIxDONJE0KZrsCDGFc16rnn2VvM-N_UBAZkm2mls-MKnEYUzNDOR8-259Du1S35Pccxuez5PloFPJhFwGoP51WCWyXrGJWVKJ1U",
+            "width" : 3000
+         },
+         {
+            "height" : 1200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111989080354662574710\"\u003ePriya Ramadas\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sqavS0k2Z6bDsZ7ma_XXhib_RCBCHnfq03vwe_e3KG6AApYaHRrq8nH04ND-7XA9K-F4hX91yuxIjSWKix6ttGiFoD1KJhQdp9_dPlhJjmQ4UCRaw-UQ__iPYyzm6bh2PUKUd1ELT1BM9vVMsrsNQ9WfgeXzxpRNKhhc2zWjRZLREPraV0c4UVk7MEu6E6UTycb5jjTX1RPoxEeo4-y20GARW7LQHtOl8H5Pbl1ksyB_tcT9m3REjTGFjoPtvZpsDpC7zyfyyyUbjwbnhHWXmjhd259iD4riGgRLd42_3tSVbsASeEB9DnSaMQvQNuImd3XOF7sskaAlPr002XTzrU4ajov423190XnVXsMyW5v3bz3QkI9nVgj-Wiw3yv-MxLOp7t8CWHGLvlfckUI_1DwPsAxfDqx68ovHTy2IbLMA",
+            "width" : 1600
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113173235596445751767\"\u003eRIDHWAN SAID\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ur525R_XrfV9DeCXynJA-ak6auvMVCh51Qu-vK2Qq5D1m5wboxlKTDjo8iZBm74C6hUm-jvP7JNWRORA7VSoy3yPjenHvgsOTdERCZEJ_FmZheailL0A4F8vH9DImaUL6F_25Vedsep696JPWUEfLYO0YJcshzH9e6-al_NAqydlJIgXIK-0wcgUSwpWfp5Zxo4gINlI9WXtul4-Meb1WCs64lJ9jkEdqKKRast-L4B99DPk81BuTfs1FG4TiNNfdqbgo70SZ5IhMrSkDWmJ8XUXZtFnYkA1LB6qA5Ro8HX3o3Id7nOUWa_JYEUP5QVWXg3dcZFEj2-JEVBoMi0FgstGdBTj5KRX-f3gOAttF7r5nJyxEEFB6ZbeztFMhsfzdx_o3_gXykTM9xBodItckp6-SffAZw8gAs1kAfZmWh4g",
+            "width" : 3000
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114603742503046450598\"\u003eJejak A\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZd-MlSkEL6NEj1ZECyZnGdHSnTSZHhEBQUpj_tt83c7Vfh-AdbpIByHj9SqVARRWt15-RMGGvt6cgwSrsZJ2QcMSQe1xZDBTMAjcxLUJDQD6omSaiCRjKAqwrPU3rLDTfXF34p5f0Kepbvhc6DTC1HOsmN9oZquAVJB_jEXX97SPfN_pGzraWUNTeLywglrrz6cKomFUj6iBVY35XXBHz0FonPHvCmuDSsUs50hISbawcImckq35-Tn0w1HeSMdEkA_KIeJuQT6xw3JlqCiOFuaWnJhZ0ZDFk0mpSb9-zQwc5f8EoivvDcoLvZkR8fp9gCOq6d0hIEAjI5OtH4dK8b1U6tkBxhSdsNKqFcad93Z79ou0c1JeXAlEmn8XtBpO8pUStBIMm-EeDIw0LkECo8SN5xs5vBJ1IEs0K5QF6Tg",
+            "width" : 960
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105460667879452251765\"\u003eBoey Calvin (CalvinTuner)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9QBNEulOwrtxrNLu8Bbkaxj3VqOoidqCKZjGFmioQGzdzRl8jtnA_vDf6_HrWljysCqGLqqM0MXeUOgUuNGk2J7dVOYtyIx4wM_wIrvK_5jjmXAASFRXERei55WGm8GyLdZ1YCAK1JIN8VSF6sfva4YkhLbQ-2hBCAU458mlvpBUabMXuGeIXsWtFx7MTkSktHhWmrCx5Z7-NVDcNDD1w3bDU4lEPWKsPW49RFnsetT8HCSwZ6soNiW9UhqvRLnnDZCnPfBZeI76UK2hrGVf7NmwxNzC4a83-XsnzP7JxNkx2hbBoRt5Fm45MQLXDxZuJfafUYx4M5aV32i_W7U746LcOOOFvruQ_Argpr07HmWdBVYRQDQBegzKvFtWPlQhv_RmUnunHGY84hzTWrV0J2uDsLYWnhXRHu_eOvj4PyA",
+            "width" : 3072
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105460667879452251765\"\u003eBoey Calvin (CalvinTuner)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-suws5gVPygWW2wV4JGsbtK0qKkyV-Nr4zvef-vuiXwiJu-q29ntBjLRbcGn3zN3we7y3qIY2htovHC7MFHYUJ2WaXnx-TUBXr10LZftaT-KdrfdaVOemDWzhFhLNlL321zUJhHy81Pt5TWisLMm1s69jSiDYSQHDRuFVo_a82pqf2IK7IR1Qyglv7H5n91AS8r1V8tP4opIV5d9_AjlJeJU990-UtCMo-TEUTJ2Ixny_3YGqqfWaDYSmWNtdAYhOmbBCaPbTsWkTzPsdLCeSA28zGXhoUxcgqTRAAqQE-n6XDSOpzVXnzq8GWTj_tngJZsQAAa357S_5mC4EzM96YFAUPNYf8mn7QxZ_adDXbgaQydQkPtRhs114d3c-RHpY3W6TRAtGFKe-rYBYGEtEqOhVH14p_OpW_MEFjScVTyHA",
+            "width" : 4096
+         },
+         {
+            "height" : 3204,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115124677922200088050\"\u003eQuan Teng Ho\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sQV24LLncrbYf4-6tISHvmWpHeC7JtiFl7A1eSqizzljlMFRCHsAHdooh_hbLO4mgLJCu2o36HiHGsBg2NcVnDDJDfwc6NxEG4z2TwyLqmSuGqIeh-9HU5fgShyWdtWnjlWe0Dx-n-kTcfwYg_Wt1bCL3KiLC1h653jW2GsrdcNNt0eIOvd4mR69lWqMAwIUP2w19O767XTNe1kDRQu2Zv_VG08_I1A6muN1P1thLeXM__YtjuDEQwdOo-Gc6b6W1VXkj3bfZMLq747n9HlbBi6-VijbrfsQeIoZUwEKVJCV2bvQfx66g_EOU-VuZuBsz7MbWLeQMVKlQcG-jmNKHEmMi3Gaq0QaoL6MFhGN_wwnPLvLrwYjDrYBNm-7-TZC_TMVjVePkXydGsLZrccg3YVnqqrii4yliZGu-uz11BSRc",
+            "width" : 4800
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100958078775636465047\"\u003eWan Mohd Effendi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vrkFlWgKQLh09m19se1ZmDG1Mo_D0D1f3A88sgimRwX58HtG7YboeHTc7bQ0SQtCsnCps3yMEsrHPqpIW_SmMopL_s4M2ws7TKhKcBAmAQQEliUNR2sXCyrX34lvHOWYPQOr07LItWLUsv4Ss17ebFP4k8oWnZlDySWXeYVT52diK27m7CUIK20NOpulWM-XuuqqM8Rkyv8uXlQ_BaaH4isQ9ak7YxFuXnCgXZPIyUsw0UVS_Q_6HwwRNqs6SVlcoRUIDFkG_BBa0sFY3_OVTfUAqM3frKB54d6b7fbRaQHxQjG10iY9RBfgIQxani_T2mcw43fntLKn7_ONQFpin9GPSzJB_HgbsFE9BLgVYRrX-uxZCwkbC59TuRDuKmFLKRURtI6B51yr1X4xHz5VFGQ7dEidYna5fVrsUvEac8VA",
+            "width" : 3024
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107812753080285778588\"\u003eshukri mahadi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v41-VtpJPN2dOmdAqHKmCCcTQNQEIMn3QeX1WdKbNarZEcqAwvzrxhbMzyEkzNAOu_FOXtRcNtxURhNLBUyDaL2suIecuwTLDa26Bvj5pY66uE6TAkkoIYWwGt2t0JWsQSCZzAGkiyOj6Lqa0Tzjv7cjWFXlLKKdlhWpGXG6_5Cy4E3PXMM49lw6f7U8J3Yiy3bI2l8xAlPuFJCmlUW2EVyQiLIgaaQCnZfPVKax66jwIzo2TtTUaD_Gx04ynQ8i13uDqhI3Rz-93y1GhAZnjb3dCGvnhwAmxKyyhB4IVcB1hlCDXqdbiP8gixet-kyfraX4Ejvw_AwNzC3oxnNQsbaDP_BEQB3mA6-OlqVOkbCJ96KDR0qiKxeMW0ZuuxdqETtqXNsZXjx00nikR_JNpqtut0Y80Px_e6skUuWc5dNA",
+            "width" : 4000
+         },
+         {
+            "height" : 3266,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103232015271501261570\"\u003eNitesh Lama\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stBHFVT2CTgYGWgpzBJM95qgdfl3bhQvhHnRaz11lDgGboVsGMspKU34B07CQFg452WAdNSSX1xGgSgtBiSmjq2isOrsyLZRyCLVxWhSKf8fltcUEIx8ME5rjhGRRK6s57jWOEN04iGDASH-D2epIQEevErN4wdalD-6kpHdZI6oK0DJJdZvMEfWSHwW6d34zal-ZciEOi93UpbtXfhOSeiT2kld1N7pmbVvz2U9yoMxsmAI0idBFD3F-OrAJ_075-VeNcroo7Co8Goya0Nw8Jr78zmMb5XX7FHDCrHl5N_glB9Rp2GRqz6rwwkuubPy-QmPDjJjlFqDhxGSBFUQ6ZcfmcT3ErwWbKKprtoJLCXr2jN0ICQ_xgMSP0q0KKEMAs2cBhKgL8K9bsijZYS01-QlR-aE1A9GCKZR4NdNeYbfrn",
+            "width" : 4516
+         }
+      ],
+      "place_id" : "ChIJxbVxJHzsyjERlog4LARx_Gc",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=7492988142773373078",
+      "user_ratings_total" : 802,
+      "website" : "https://www.madeinipoh.com/"
+   },
+   "status" : "OK"
+}

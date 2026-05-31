@@ -1,0 +1,1206 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-t9Kb5xzfuNk_U4ykZkTUp9rrXRCqUYgq0HHxBQRQ4fiuquI-NHYx3Q35X_OklxDTen_yIXWJlq4suCUloz-_XeZ4n2Dh9QK-D8KgAWXZQRqCqbQbbehNHOBKXeGMa6FtfAnyPGRZ9vKNYVyX54xzknaLdhE6r3tT6b5o8cDF-n0K_RBCql-GH1AU1V_BkuLDBcfAnvk2lvW0k5p_wwlz5n0u3Q-mhV35bgdFpOgnXOVU6daANPADrKRAJUf8j1RB2nqmNteO58kwhsMxx-AFqXZetlgoOrRTcHrpyjhVVs6uPuKAa-xpnV-bn_NYe0lNA2OBBGvBJ67OXQVsw2mQet9nLPMpFe8XSnRxKJ3TiTXZy6VS5X7WOtlvZBp6QJFfn-8uQykuFgb9wTz_tuWnx7hndcZOiYx0gz3a3QR1d0yZmpDKO24Me98jA-vP4epgqNrKfm8fHfoMHIyU05zXhIlEPYbu4nE7fC1CHrXbXF2J3wd7LED1Mq9rovOKfI6XphGkhN1x90qewulaaZruN5l-tkI5hsolXvTwAf4MSuW12Quo9KMPS6_i8_jLR7WYOa9wGM9D7J47VMx_UOum-7ZmYISPpRcUhJ16JXx5QI7XHfNjHojawsFzbG72t-SI51fR8E5M7R9tUOZe1f9qEQG88IO0CuB1iy7QF_Uz1Xk_y4_lVJpkAv39ckrwrUS4-UuIeGqtRmHC2I4JHCW0czFIj40tzBA4geJjgYttjrADiR_PiO6G1o1xD_FEfTZUV5csfEECKsgo7bQ6RwdET5TlPViJbkuTQan8iEOfbNAIRv8xIEfW5KIFEOp3-6tYyvPKg3sHY",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1044293,
+               "lng" : 101.7817852
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.105774980291502,
+                  "lng" : 101.7829321302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.103077019708499,
+                  "lng" : 101.7802341697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Saga Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102131998867388891818\"\u003eKiaseng Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vvf3rs90vnTCwJETXib0DwLP-Qxp8zTLlhPXit5u7jLvqFnXLcarbaCyr8vrjXykjAf-wCN1ivtiLWwP9BzVpbygUs1H1OuQ99DYw7TWmEr4QPLXcSm2327uLhOfa08W1hAGfF2srhPrz99QsTfKTYbeo2DT0Csse7gzc92G2eIZJIc-d5RCwDaGlVJ3hn4xko2hS5Qko2peqYKiPmvpA5gjykUEoVuTbnnmxD-elU_lXGbPqSEUeT744SVaQwQJdInDSUlWQwzS-MDfFSDgoXtCm0avoTF1wwNsQoDfLcvayZo8xHEBQl19R2VCDhpD9wyQzNUt-_6SiiQU9jNwj8kzkX4kYUHVMF8lVYXqf3wgDlIYLjEv75JSJZzxXbHNB66dE_kbYBN4Z51kzo8G27anwyXcqD9zfDhLdLcS9Sx-VL",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ-76uwxs0zDERWNE2S4tQhwQ",
+         "plus_code" : 
+         {
+            "compound_code" : "4Q3J+QP Hulu Langat, Selangor",
+            "global_code" : "6PM34Q3J+QP"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ-76uwxs0zDERWNE2S4tQhwQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 243
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 20, Jalan Sungai Congkak, Kampung Padang, 43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.209053,
+               "lng" : 101.843517
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.210411380291502,
+                  "lng" : 101.8448877302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.207713419708498,
+                  "lng" : 101.8421897697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Sungai Congkak Recreational Forest",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108355327128842071095\"\u003eSamad Talukder\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vQeXhFE6CcVN56zSCjxLKCYPWCs8JB90bjtKikViCLPFJ2m0shCtefNfnkMv0yj_vLFksPS0-qSAhdjHKjMvtpjxu5swOkrGmK0TDmFcZFW4UQe9uJFCVvWY5lh0D27oJY8CiITBRSDcAR-t93qk4exPbeOzyUq1IdaYhRuKxqGTM5-fn0oCab-AUvH_X9g6-wxRzoTRdDcd8iQ2TXrlgJBdKulnAXGR1G6z67K7WQC-pvMBFWP9W9mX8zqiG0fRmQ4uY69W5iE6G-Vjk0azk-AhFHAvEgDCGQ7iXYkTs1EKA9eIaY7WyvE2bunDroch4Dgwg-C6zBV4Zni7yF781meIsC5-syknZQtB8LjwhMTwcxiHZM_WyS9Xt5rr4qwOItwSoVyahTMy77_TgHM2Mp0rAtFhlCpODmkDtUtcg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "plus_code" : 
+         {
+            "compound_code" : "6R5V+JC Hulu Langat, Selangor",
+            "global_code" : "6PM36R5V+JC"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJmRVm_186zDERbiEsL4UTo48",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3489
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tasik Permaisuri 2, Bandar Tun Razak, 56000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0980475,
+               "lng" : 101.7190424
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.099396730291502,
+                  "lng" : 101.7203894302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.096698769708498,
+                  "lng" : 101.7176914697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Permaisuri Lake Garden",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107125517772525860139\"\u003eSamuel Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vEoUaUbq0OJx4ciepddfyHAzgoOvYWXTw8kzig7xxwbSbgTjC586bUE6KGU-mpHHCXH6FXx2kjs4WFfOyjHjBY1UGoardzijFa33qmx-CC_vqMMF-SOazIOXzYWudzVWdmFX996pBIvPvoIEPGuu9pmfWxORPthA9ZxyicGzNOcnxrlDzptfj7yL79Z4bd6GNDuNjV_xzhExTN2z6aR4wOEC2NrwknT5o7cmBtpkDxLT0-p8Kj6uug-2WRWS_cXgfLLD5PQszk39E-fghnMLtZqKB5fwhJVhg0BjVr2CKmVLp0X0vaI0GUN7La_KrtXmJ-JTE0dGOauy5T4vEPoVHn9CSk0cm00sEzCnb_2_6Il1q460RgR8vD2-PRWkjVJBDHcEviFoHpNQIHJxWf_MYEu3Te9jDivsy8x638UyytTQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJAVSjyu81zDER6sCHJuwNNzI",
+         "plus_code" : 
+         {
+            "compound_code" : "3PX9+6J Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33PX9+6J"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJAVSjyu81zDER6sCHJuwNNzI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6823
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "43100 Hulu Langat, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.251107,
+               "lng" : 101.8658741
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.252455980291502,
+                  "lng" : 101.8672230802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.249758019708498,
+                  "lng" : 101.8645251197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lepoh Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3507,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105446303785684232285\"\u003ekijal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sc5tOz3xW2pSdaGlh1rmJ-pEmkacvlmCRQm7XSoOb1_rpRiJ78NjBHRbkZLf91uz19tLjEJZLIHmGJG35BB32nDt4AC6s7TLgBpybWdJ0ATJqojzby37TLVAilgwpEVPSsVdIuV57Ah4RTxeG8Iww75A709EOhtO1IrfarpHE30ir5V15ccK4FzehnG6NdNvwrDb1_XNqqz7anD-xB1s5nLJykmGd10I9GbeQtXnfFgmwhZXDw-Zx1R2XBps9eud6fTz6fSFW6d6JKqsVC1W0w8tuZfUz5YE38UEqTCExm2vG-teUERkeIT8NL3XxeqORPAjNlGNGQPckMEdxbg7cPdMhcQAT1RkbVrizOLfzK8eJc2za_fkUrsiW0ZBVrN95U8X59gEPm-IO10pVKlzF581KsJ_ZNY9CIX-txHpQ4Tw",
+               "width" : 2629
+            }
+         ],
+         "place_id" : "ChIJoRmQcGo7zDERjpTXeCXFxx4",
+         "plus_code" : 
+         {
+            "compound_code" : "7V28+C8 Hulu Langat, Selangor",
+            "global_code" : "6PM37V28+C8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJoRmQcGo7zDERjpTXeCXFxx4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 494
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kebun Bunga, Tasik Perdana, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1441872,
+               "lng" : 101.6864769
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.145536180291502,
+                  "lng" : 101.6878258802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.142838219708498,
+                  "lng" : 101.6851279197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Perdana Botanical Garden",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113750221100667321443\"\u003eMonique Bailey\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uWRMJ9yQdrN9077iC-HK0fbvYYMHdyazo0NHkK1pdI0mLfTViVXM-XC3HqE3TlfFwim_zMy4qYG_4W09VH_NxHd7_1YW1eKn11xwizRGM0lWOhCL83GDcVkyLcDYgst2IZRQwV32h_NYTl8vRPtbd2SeVArmGKWFmndjQePLjvjDMbSyyglJ8F5Ctm0NU-p3kitt6kyTUKGneCuX_OSQUuo2vroPClAsTDv1u4DrNNKKXPxPfYoH2aUHBqeDU-Q_hpoFRE6Ksv-fjKDtVr0WwsoqlsQEKM-hDuHZOwKPK8TbJrF52VVTAfy-jfhLyqbmye2aXdmZ6_N6AMdwXz_KL4Ggk0QnFVqLecjrkU2c22WzARQoaEUEZlEj_62_qH8m6aqeQ2rxl1Diy_nGCRO-5rkEf90fuNyq3T55w1KVXUkji2",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJEWkeL7ZJzDER38lq7GVsWyk",
+         "plus_code" : 
+         {
+            "compound_code" : "4MVP+MH Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MVP+MH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJEWkeL7ZJzDER38lq7GVsWyk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 27097
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur, 57000 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1506078,
+               "lng" : 101.702256
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.152247580291502,
+                  "lng" : 101.7036481302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.149549619708498,
+                  "lng" : 101.7009501697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kuala Lumpur Eco Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3648,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117148199602544876966\"\u003eShi-Ting Chu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tOcp8dlpG6dlIhubB3vEBhM97H-QLMlB2nXex5O48D0gT5HZBNmb0klBoQoNupbduqCBM11G0JIN30fL2yQ3OokYDYEcBtJRf_YH3MOJe42xqcPh8Ai7q9saS0vU7L4i4wNmTC0BSeTC2U-9zDmfoOQtur4unx38Yj59VsQp26WLXBwXniH1yBqSLjkA6M7MS4FRngiRK659fm6pETgSNEYz3PhV_DhZKhGmwmxe2CMX9j9f3-PU3Zd7H-OBnHM2RkpSTpygb7BFT0jvuFiFGX118JiA1D1iLizfa6QuoWsZWLtRW65nK6UwFzhZ_hcTzXD1qpiVxgSeWzW5qHOgEr2mpolB30l77OFbuYigscS8Yqx_iuhBtrUCisaEJFHFxd6HAXs6BVBfXlfwszjQfAe9Iwdy3dK2FuCMGmClR9Fsw",
+               "width" : 2736
+            }
+         ],
+         "place_id" : "ChIJvwv8fxI1zDERRB1idU9EsJE",
+         "plus_code" : 
+         {
+            "compound_code" : "5P22+6W Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P22+6W"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJvwv8fxI1zDERRB1idU9EsJE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8731
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Ketumbar, Taman Cheras, 56100 Kuala Lumpur, Wilayah Persekutuan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1030065,
+               "lng" : 101.7531968
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.104348680291502,
+                  "lng" : 101.7545498302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.101650719708498,
+                  "lng" : 101.7518518697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ketumbar Hill",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108539661434104769356\"\u003eTakayoshi Tetsuka\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uwccsiBi_3yNbYhhKhrztFBpYU9uBfKjkwXCY0O0VnEs3r68NVj_9LWJxsPtepTGrHNY8hNFGMZ4KdDWq2_e3pUah-5ti5F6O86wICwKoArpf8WQZWElS1Lx5BCfFZBt7LiguL10A7loM62e6ZfmqbmkwbeGfSoV4ZK5mh_Yz5WrZNOtMzb5S3oqzuFDA_Tl1cNmpD2Dbdyy8MfgjVuXLB6Z3sZTaFUuqsy2YnAXvztH-YT8gfItuuWwUddmcPcUdtsM1b6r52sSWKdCVdCuMVKFD8axO4jYMjp_ibqpWLsafonXvDtS4v6D2x9xius-hIpGVhwurZ8J7o9bYF4IdCB8JG3QQBuo36xJ7_vGxkcCIJSdj17hiNaUUAlVaLh5ZAK4uRyTt8Jik5TT2xeJYVBEudk5RUPacGKu3aMbGlyYk",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJSUHyVzI0zDERs_mBL4AkGc8",
+         "plus_code" : 
+         {
+            "compound_code" : "4Q33+67 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34Q33+67"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJSUHyVzI0zDERs_mBL4AkGc8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1542
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan 13/155c, Bukit Jalil, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0522222,
+               "lng" : 101.6755556
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.056442000000001,
+                  "lng" : 101.6799158
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.050439799999999,
+                  "lng" : 101.673922
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Bukit Jalil Recreational Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113397791738657218271\"\u003eRosita Faisal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v1WX-NqPTv-P1HXPFnK_AoIqX-Ande7X4Q65rRwwwUdWIwM9XXl2VLpcLzN_Iqdb9Q2DBU2K4oyz2dNyrs53QsUQD-91mZMHVQ7gavlpU5NHWlD33nX-w8x9x97F--qkcETFoqq1YQF2_iUMi6ka1-c66zbxoPa4n_s2Qso3v1Xs4uGHZwtaDkdlaqpGdrZ8LugS_xsnxQzd7Z5DkUAzzlZtli0_ctwPNueVeOlaF65U63eWFq-_B1klG6XXt6fgf-BhcuFIw0gKaWdDSEFmc9NDQWyy_P0AUo3aHxOTr2hp3OuX1HJaHu1f1W8uYxJ3S2Pw3K5Q-dAZXuLdRV__E9qKB-3FFPh5XOlDFbqnSEiWE1FbXFuakQPx5mDLTfZpkmlUbkteIkJpbIJjZlYcpdE0bdRBLIIgVdDqL7P_2KAw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJX93dYsJKzDERN0oBQxHIIm0",
+         "plus_code" : 
+         {
+            "compound_code" : "3M2G+V6 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33M2G+V6"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJX93dYsJKzDERN0oBQxHIIm0",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6264
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "B23 Jalan Hulu Yam Bharu - Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3125463,
+               "lng" : 101.6978055
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.313910680291502,
+                  "lng" : 101.6991100302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.311212719708498,
+                  "lng" : 101.6964120697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Eko Rimba, Sungai Tua",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105336118624380460381\"\u003eFarkhod Dadajanov\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tPSyWqXZDxGP6-p8mNlaw7KlrvGRI8YYZpBxfGP8LI24HNOPGJ0opyeXFkpasJ6UIa0sMaK7aeBTg7DT3lfFitTS2fHakyTCE07q29D2RtNb0cBfZYZi75QdEc3r1GB9PMTzMloxhfGluuP3bE2vGg_qUQLuzL4VXXw0_t87dspis-anx31INLr578JfnDBlImVqwsaYkadcuS4qmkwLUobUZ5-jDF0-Qgu4x92oWJCR83TVgB0YAZdBQvqNSOVfMKPty9nsWHs84lz6ozkAYMg5H7-af-jkNN3S9jLCJnUykq_fzbY6r0Oel0lpQXjkp4XeXa9OlLW_vvnXuT4_cLb02WxCGfQDOdalbqNSt7Od-vlI4PbBsNkpRgMV9dqyvwlB3TLpjb8fnv4o-EF__3VFBzQG8iqwLd6otZ5Uo",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ2xGZnXtAzDERK_92fAIY0Ys",
+         "plus_code" : 
+         {
+            "compound_code" : "8M7X+24 Batu Caves, Selangor",
+            "global_code" : "6PM38M7X+24"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ2xGZnXtAzDERK_92fAIY0Ys",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1134
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Alam Damai, 56000 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0676924,
+               "lng" : 101.7406386
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.068904880291503,
+                  "lng" : 101.7421038802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.066206919708499,
+                  "lng" : 101.7394059197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Alam Damai Recreation Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114977475705580260161\"\u003eAzli Sham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uwS5lYf-SuVnwJapZQLhoHgq5L0D2Po2i0msv0EPmdiKFVKM839qBIRHamZ0AxwOrUpV-fD8I4PKu01Fpzd6sfZep1I37R0WpoL7hX1KF4jDkAr5pqgtlBdnlzUF51rtD9roBSsFbcEvmRq3ih9ysCV0rQ328q_FUJDRstF2TI6U8999jdjbm_JWI2SLxkM1xs8oL_aIlqr_9uq_FE9Uihr0deYSJZtAUB5TjFKSG8aje7KGPoV1uVbcycjiaPHV6W9fTH-5R2rSOoaTrI1dIzTeYAAXaDzGtXwzZX0fUcGFLZIW0ruSsz_7BOES-idd1qKzQX_x7wA2aotFX5LuwZOY9vLcnj7AukoMGQRhreT5TwLyT-cS8sLr8Z0EiWIFBxZB55Q9Z2KvjBZmyn9e-C1hHegh54CYIfuxOv97KO3C28",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJi_zdrwg1zDERN6VxwFSTSPA",
+         "plus_code" : 
+         {
+            "compound_code" : "3P9R+37 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33P9R+37"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJi_zdrwg1zDERN6VxwFSTSPA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1230
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Bukit Cheras, 43200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.072283,
+               "lng" : 101.7483194
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.073543280291502,
+                  "lng" : 101.7496703802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.070845319708498,
+                  "lng" : 101.7469724197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Bukit Cheras Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100762832704712316628\"\u003eazli sham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4papz36N-A4F1bTgoYzwwKNREc9T12B-ut3fbxmWD2tj6UsHrW_yiilCKhSreGhf0dLYKMDBtq2VJDXnN_6YJ_1o7HC2Ix2cP33xMy86VgdkyfGElH2ci0R4xLbxCYldqvCqTjIYz-7u88P6xxzoi8saJDYkwIGja6BrP_WONQWn-G1lBZeP4_J4SWEW4I55GbxvDu1G9EuT-Gd73LmdNeiFgVPKlaYw47H9V2TTZgakEPhZPn2_JYlwYWuPXNVxHlPkVe_Te8nJNiRJShkxX2JGzKP2vKSlz0dYDlRJKL0gL0PSTEKjTlX_0qq9FQe6eL0HpARQF1vXGjmXCmtjIh8HHr6QruFR4xmK64h6dDwJOy1jr67SzrtGky_XjIzqPXMxjVMCMav8DVPtkGR8UvAsHNBUEYK_78ap3pRY94ks",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJDe_7Yvg1zDERBn-DjD5Qiis",
+         "plus_code" : 
+         {
+            "compound_code" : "3PCX+W8 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM33PCX+W8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJDe_7Yvg1zDERBn-DjD5Qiis",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuantan, Titiwangsa, 53200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1777324,
+               "lng" : 101.7071919
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.180919400000002,
+                  "lng" : 101.7078912302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.177732399999999,
+                  "lng" : 101.7051932697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Titiwangsa Lake Gardens",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108021241025747663076\"\u003eYen Yen Lai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vNzCaoilExtSWZucGhGVxAXO9zNt4i-D9bly2nyACyjF7aGkwdScFrsmB9vcNpIOvMQN1bNZ0RIt8xxgYaB691E1pfEqtT_qzKnPGlLB7j4Qm0SAMAttCmcapJliPXCOxK1CBZ1MnbcWHrXUF9N0W3bjHH7qdiAuU8WMp7YPNjvVtwdbrxt0TfeIfurabFYGTvNMqOcpvGW_VNjrXSIXNkRbFmsfE9cFO1tE8iLNTy8mYOBAgPbaEDek3xU-LQoRXRDItt5-DvynrMF_94s2j9IZRBmn6e2A6GuTT5QHDaDBVP84JsQ0xo1w7tKnAlWwTQNpv2oWPikFjOwTf5PNuWTU-UngyXZkWxoMj9DaNtzGdIi5nh7Rz_qoFZpWh91k0soHlMeGHBlyqGvvKbvTLhwGOYCYGZKK7qWbd3trU",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJgw_35Us3zDERGSdDxaWqe_o",
+         "plus_code" : 
+         {
+            "compound_code" : "5PH4+3V Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35PH4+3V"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJgw_35Us3zDERGSdDxaWqe_o",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1781
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 2, Jalan P.Ramlee, 50250, Kuala Lumpur, Wilayah Persekutuan, Kuala Lumpur, 50250 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.150578700000001,
+               "lng" : 101.7015589
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.151839280291502,
+                  "lng" : 101.7025542302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.149141319708498,
+                  "lng" : 101.6998562697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Bukit Nanas Forest Reserve",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111552365568874446717\"\u003eIqx Azmi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-taWTJpbo4K9mXlzJ-CsEDo4vk1_W_od0J3ATSUHTi-d1j8G6q7m54HKdDOd-7nClEgFdH-Sw22o2tzuq0PgNaZudT8TbA87BAeTqMwJl7pJEn6C_IE_Rpjj3AKLCVq1763FovVNp7y2ePWsla4TyWMRKPf-Ux7CZcmQEe1nyh8uhSa-AWxalCjKsi5HgZjGFFnVgC8U6m15NQz4BepBSF8aMRpS7vL_vEhaORyg3XqAqZ9BnQg2n7jLj6x7qby6kxzRr8rP59gC5bNmBAvcq8B1G28EK2udoQIHbbCdPVx978XqipRXuyA8NyQ37QJWRsk7UGjeblCXZ_LQwDKSo4AMfZAYvXzBA6H0yHlcff6QRQrozRk5AmYU4kzvwpeZq3gl6w8EPFQVA8ZGpJ38e0FnA5Z-IXyqRgDGNhVZE-pYDXl9YvqyWlZ4rMCiQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJxcY5rypIzDER6p_q3M7Fi2w",
+         "plus_code" : 
+         {
+            "compound_code" : "5P22+6J Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P22+6J"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJxcY5rypIzDER6p_q3M7Fi2w",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 223
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "E8, 53100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3062369,
+               "lng" : 101.7351596
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.307605430291502,
+                  "lng" : 101.7365049302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.304907469708498,
+                  "lng" : 101.7338069697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sungai Pisang Waterfall Trailhead",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2256,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114739021764891615384\"\u003eMohammad Ali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZtb78D_vZ9q1LAoPxE5q2AUnAU9M_DCXCrbwhYitQvu0osz0q4xZPK94qxTroJVHY5tMNpK9j5S8SjmNHC1Tthv8l2bAPzFuRe6Q2SBhYNT93qbGhIKBcremg0iSCXE_NqkgglgKaW8gZ3sBYJETttWY4mjoaYYcX1DocpqkIcTBQMLGFQ4WeEL41C-7mFjlGHbtFQg_ZXEMWB4PGnoHWzJEfuHQSwrWeTWMTW2kyTEsUoBOU3XT1V2-fVr4fLMY9GfCqXFGvkZ79s7u4l5LGYOAWbPWj8OzPkmIU7H83h5EChmLCPvR3uMiWddtGN8bLMyF4MoigyL8Zman5XzoA-zvz6Lz5m_Qm0RsyCV2rPve0ubIoztpsYh-R8IcB8NPiCs6jo6b0sB5vJlPGwCHPdgD1n-QojQJS3P_uk3aZJfqB",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJTYDynzE_zDERbZiCWRohO3M",
+         "plus_code" : 
+         {
+            "compound_code" : "8P4P+F3 Batu Caves, Selangor",
+            "global_code" : "6PM38P4P+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJTYDynzE_zDERbZiCWRohO3M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 375
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Klinik, Taman Alam, 45000 Kuala Selangor, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3390018,
+               "lng" : 101.244805
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.340359930291501,
+                  "lng" : 101.2461503802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.337661969708498,
+                  "lng" : 101.2434524197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kuala Selangor Nature Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112210254915487837769\"\u003eHowsy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tWsIl0jWH-2bF1K9Jqd5lEJ2suNPIdCny3SvRApf49v81ovKEncj6Fsk-L_PkRHt9ZJJ3I555sxJuJrbcciW7WWD_XgQBjeSStGk-TJuB-mEsdNgULFqSPoN1rzuIuN45Xv6CnEhnRGXMB_JT_nE8ydwG3MUtTjdobuGF0ExYxIirecJPSXQnzZI-mvslxvIL1WniHpy9JZQmGpdkjHLce_TEVCuvqKxGcrT70zNgiW-WKBp9EvSLUljT1HAWpHH_uJ9_lALEhvLNU_d-o17WdOsWLEeQifPALLpslaIFcSwxvjuk9jaz7HPKT0BV-i2ZftllUznF6eT-2Txp1gx14IWvD6welwNopdTylORPF1xabQHd3Ia2QmBczfbx-1tFa_c-DHkZ7qVh4aZgYU7b0sRsdJ_JSXO2Pb_yUJuJ5Ld-a",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ1-SA517zzDER0GcHxWFCFjc",
+         "plus_code" : 
+         {
+            "compound_code" : "86QV+JW Kuala Selangor, Selangor",
+            "global_code" : "6PM386QV+JW"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ1-SA517zzDER0GcHxWFCFjc",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1409
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "CC5H+4W, Kuala Tahan, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.407805499999999,
+               "lng" : 102.4298223
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.409154480291502,
+                  "lng" : 102.4311712802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.406456519708497,
+                  "lng" : 102.4284733197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teras waterfall - cascade de la grosse bèze",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111237620294167911846\"\u003eEduardo Canales\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sTqHTgH988Y2kLYEzRR6pf946MaqtpsKGT7SVhWPqsHDrPCDZtBpFsGEUGYxpgSe0nz5Bcj7JmiHDjCZFhbvIUL-92_QvF6Bs2Wd_umaIL8FvWUXV_0FraWYCdoKmbV2d65K6KZAR5WXJ63NzylE3_p54yfqyb6jpXVjF1KGUnPFBd69zxGEsV8qm22b0JJUCnkCJnBzRRvXWrHg37pIJYz6u5OurUA-bB5YCxdPbZOt-lx84KCRl3PxASUaMEVMdrU5J_y1flJWrNGSE9rVpsVEhOI11FciEgzftD-7IUNWtXqgVB2kNtUq4FUnNbD0wcktKoIDsUi9iD55efq4wBTig8jSgR8mBLk_CSikwBqpJlXhnytYJwsILbyGSu6PQQM8m391b6_x8SgHKltXA-ramnOEqGkqnLKNBG7bm6O1s",
+               "width" : 2497
+            }
+         ],
+         "place_id" : "ChIJSwEVQ8-ZyTER1AWUAktlF1s",
+         "rating" : 4.6,
+         "reference" : "ChIJSwEVQ8-ZyTER1AWUAktlF1s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 27
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur, 50250 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1513603,
+               "lng" : 101.7020853
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.152718380291502,
+                  "lng" : 101.7034584302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.150020419708498,
+                  "lng" : 101.7007604697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "KL Forest Eco Park Canopy Walk",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107125517772525860139\"\u003eSamuel Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vhjkuTJj5fi1RHQSW92YIDDacIidPROBuMW7howhtD5zUt-bbIjxucp-avBha7EnjECjPtkr46g7RsbT1bixQg1kQa79abQi8gaaVi4-WzSZhGs1hOdrcwbSYzhlKYYhu4OY5k-34yCCM0G1O58myiBMzfrsOX7wPIX1xr7qfd3G5PblbCBEuMbIBMfAnxFDkC3QdoljW7IuUFJS1645De-EzYN6UhUiLooKPH1dCdOxdHZaeTOQlqT__8L1-Iy12SA4Q9BOZ1XhUG7Vns5j2jXqvkvyGK2KxwTk76LGBeXf0j8NGzpiRe0zearsqRCG6SXVi9o9ePU-dpoEns7rVcJqdQb9mhsmXHH4dFbYSwqObFAld1yyjEiWcgS-cz6yF-Uygijvl2m7tpeJs09kivS8V7YAgSnrQhcQRELZECRb2J",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJtSrDOSVJzDERFb1rIJsO1u4",
+         "plus_code" : 
+         {
+            "compound_code" : "5P22+GR Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35P22+GR"
+         },
+         "rating" : 2.9,
+         "reference" : "ChIJtSrDOSVJzDERFb1rIJsO1u4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 115
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "920, Jalan Cenderawasih, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.143164,
+               "lng" : 101.6884845
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.1468967,
+                  "lng" : 101.6920468
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.1399879,
+                  "lng" : 101.684326
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "KL Bird Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102807950424620157242\"\u003eLaila M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uzNagD6O0cj-iZaT7Pt0dDveISIuL0ycwfhFQpqLd4aCHX-_UYXHRydFFTzt3Z7MHhXL7HKJM5DpdgTjgJHfk8jKUD4z04K1O_GnksGAL7JBksd4ou-sXKQBUw_eRtdJvVag6QGFOebS5TJUn_0aiTm5auP9CcBCbYYa8WVeBU3gblkoeSx4UDpmbcpFuUb3lEYUc1Fs5SN43G93XbTaBvT_ALtzSqMXt0zjj2hujk3DrbmRSz0VCvGnossNfBNQwHpps60JoORtTubovb0ReN39vqxzbytkRaAGPOocr-MItlVE6BCYq9cADLlmzHKycrQud84RaJFmarwgPVct5MhuoS49ykdD2mq2YscbVy4LNF_2qFfokpUbn0Y5rkwPO_vaBjuAH06pL0FCwL1B58Wxi4qIy1KiGrmYIl1MVsKZ8",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJu8zWwchJzDERhcsx4AhQ1oo",
+         "plus_code" : 
+         {
+            "compound_code" : "4MVQ+79 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MVQ+79"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJu8zWwchJzDERhcsx4AhQ1oo",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 16274
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "86a, Jalan Saga 28, Taman Saga, 68000 Ampang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.111116,
+               "lng" : 101.7717658
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.112489630291502,
+                  "lng" : 101.7731014302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.109791669708498,
+                  "lng" : 101.7704034697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Saga via Taman Saga",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116427134994038865226\"\u003eRakesh kumar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vHxobNeNCuLCuqMD8nPdbfu1kdYo4P54tzBdnXJJWPHCAWAuF4xzZB9Ivhz7pjkK6Pldf8a25VvsBGv9CMAQp3lS9cvzTg6cfsHUR-T-gFF65hWeGowV-H8-29vpQ7Wx3awWjTWEE-Guck6mIXVg3fJvJRQNyC-x9VobhyPCkMohCoTBABUcebeu7g4QDgs7wMH5T7oSyhLKEPH_GVQ1zmF6ztrGXcmZHZDjKFSYiLkO2OKZ-3Tu4GSopMFRQEvAwdZfhREg1zL5pgDUTv6GLtbThth02cqrdL-EMKL_9-0zaRWiwbRlso17V8tIlkeYlZgVvsYsTl6a69UQQnJrDd5e7PAn-0shAESwxzWzLuRaLyXqHapuEM9AD5Qc78QKo3ROH7_hU_9vyP4uoRkRE3SdK1brqeTsnsH4aoM1pFYUp-",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJE1t60Z82zDERXEQPjvw23f8",
+         "plus_code" : 
+         {
+            "compound_code" : "4Q6C+CP Ampang Jaya, Selangor",
+            "global_code" : "6PM34Q6C+CP"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJE1t60Z82zDERXEQPjvw23f8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 758
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Merbah 10/1, Seksyen 10 Kota Damansara, 47810 Petaling Jaya, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.169146,
+               "lng" : 101.580949
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.170578330291502,
+                  "lng" : 101.5821676302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.167880369708499,
+                  "lng" : 101.5794696697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kota Damansara Community Forest Reserve",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101377304822790563468\"\u003etama tham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-scoXKpvOFdrM15xHirOf1Jj83Mx70E4f2GIvo67HgG-gh8X1dUpZSjpHsmGniQlk9azdQvK_SKGHZF3JRFph6C-yVr24hEoOr9u-kLG412YZkEP3jPjxuwZFrSuzIpxoU0vr-mx1h60Iu4d9uP0nZ_hOYlGW0zqzSinBhz75bnBPmCjhyYq322nN-3jAD2sRuJ6AKvvB6D0g2erTgvEnNETkhybeY53Co8wYt4Yl5UAW_0AVPG0WATEIqy04ARQw41LIQHGrniFvBPVgWV5Vj9kytIVYQLHVdWeGTVxqdJlysBybT3TiJykvlruMTg5wddUUb_SDYlXZdX-eCvaVa2oKcRHntX82qTbGOKO_t6ScqZXnh6-UetQRTdiXEy4Pfsz4md05-OBZCjZz3e6CSjJsBm-KvB2_KYf_2fhao",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ-7Yfjg1PzDERHAK64I7acIA",
+         "plus_code" : 
+         {
+            "compound_code" : "5H9J+M9 Petaling Jaya, Selangor",
+            "global_code" : "6PM35H9J+M9"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ-7Yfjg1PzDERHAK64I7acIA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3048
+      }
+   ],
+   "status" : "OK"
+}

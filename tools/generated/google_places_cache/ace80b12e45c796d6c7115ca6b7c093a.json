@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Bandar Sunway, 47500 Petaling Jaya, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0683743,
+            "lng" : 101.6024829
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.069719780291502,
+               "lng" : 101.6038318802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.067021819708498,
+               "lng" : 101.6011339197085
+            }
+         }
+      },
+      "name" : "Subang",
+      "place_id" : "ChIJs_lxBwBNzDERxTPcBqdb1tQ",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=15336546353989563333",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

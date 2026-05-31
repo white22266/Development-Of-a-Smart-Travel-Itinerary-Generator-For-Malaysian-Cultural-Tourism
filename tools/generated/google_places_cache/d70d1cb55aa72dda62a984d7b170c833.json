@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "168, Jalan Tun H S Lee, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "010-442 1988",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1440375,
+            "lng" : 101.6967316
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.145403280291502,
+               "lng" : 101.6980183802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.142705319708498,
+               "lng" : 101.6953204197085
+            }
+         }
+      },
+      "name" : "Guan Di Temple Chinatown Tun H.S Lee",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1500"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1500"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1500"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1500"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1500"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1500"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0730"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:30 AM – 3:00 PM",
+            "Tuesday: 7:30 AM – 3:00 PM",
+            "Wednesday: 7:30 AM – 3:00 PM",
+            "Thursday: 7:30 AM – 3:00 PM",
+            "Friday: 7:30 AM – 3:00 PM",
+            "Saturday: 7:30 AM – 3:00 PM",
+            "Sunday: 7:30 AM – 3:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3614,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106989464273510583906\"\u003ebikram barua\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOqu9DzDTgeN9lQqk2wjk27ZAtytp1cWAStB6fcfU4cg51QjJSW21M48R3zEjqSiDTVvYOXPCu2g0KlZDW9Tnt5rdsvaCHf20kT3HE9sg_WOcLgKCesbW58coSUtCxWGyEF3yGAT1W5hs0X9Yhx6CpuHPxs1Xlzt4kB_fSGpEsITE6iu9u6i1y_Xa29zxPlmEgo85GUESD7hohVt_qWj8VD3g2YjOJWdCkUAAIzamkinsXkksjYqawdR0YM8zLjzqdRVN-4ipQWbPsC23REXf1OR1lphYUvUdg_0y--t7JBOcgl9wejj1f3RXlSyZDkvrxFmgcqVOr02RUTabbmWURJ_8EL8YNVEi_F4l2omKJ1JYSjjdx7sVNH3-LlOJ8mbtzQ9SjBRCB3v9XBXgsKus33r_jtPuZEXJi785dVBrfEE6J",
+            "width" : 4800
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117744541095508819557\"\u003eStephen Abraham\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4AUc2eZZ9SIkKB174fjn75tWclFtpcAeIMHxhuxEkToClWMpFg_te57H7wHwj9oc54yCR5JLp-eeD5LvGLi-drkJYWG7sXZN-wcqwzkwCjAaxnuYybXUAVftJiyO7EdXsDwa_n2mh50Wv2jF61CugCHr2SX-5h33SMZZAeN6EYlLENofh2xzxIQzhTBdfm02DFfLHo8OjgQ_poVGa-xqGmwzLSFILfV6F5F-Q8OaHlYIn6wl1iWkRf2JV94kGxKmnO8SEH5SChapIwbN8TaqHOcwCjwPnhlsO2-T_089wZay7VagcMSK5pq5BHrpY06lLutSaNy6BGDjK52AwTAA_Ou2k8YAvGrsXkpEV5YzYnp1VTd8qoK-zGdIGcYnKxnN2g0qt84LX1rlg0kLA8XRpNYZfH5C-6acNvIzdLzcRPvIR",
+            "width" : 4800
+         },
+         {
+            "height" : 2560,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110093242417472844034\"\u003eAlex Alder\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-svrLrbIIGuXzHt3JVuxv2Pc_EqGn6wjOojhJKr4odbh9wqcRotkh8wVUX5d8tb34ca6Ao1Y5LSzEqGlW9prthdaWrM-4DKqLbdnSOiU7GRz3iz_kVwOP8upyEmR4W2I5g4gOkQPiAyd38Y-TetL2nrfQ2aiUhVVaMJMjj6FxSAgzAhkjefhwMOakfSyIlhk7eqQMNJ5PfAU_rQ8W5IuP7tCgt_kGWUkAciNdy6I8xLLug04dPiiNlNK_4sPR35jBx7HmhtKc_fd6OvGpgcQayT5tA5NN-zFoZQuM1w8TO2ra3HOb7v1_C4kwE-Cn4USwgakpKcuoakWBefWgjsMyJRPBOXQLTvDJKSwCCWziuqkX9wZSTqSxe9UYHWIPUgF5FChWGV1xF8bNVqrGIf6lrouiVQPfMox1d7MHvkFA1nJw",
+            "width" : 1920
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103512752006601248944\"\u003eTeenaSanFran SanFran\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNpSUkD0JWTVSU1AouRbl8w1QUaBvCVgkajJM6QpDUq6oCPGluKnQp6VgW2fY2NRh6mcxiP4JnyVi1oJd3pqA39VhZx1AFxlVvVbJPyFn0Nesr-5WQ9NbIJGH2SeW4IOIIL83iYHFKq1uHbOLgRzuwBxWwTNKwJ6wyhLgFJ8wm8yCAhRs_jkNjP2jzYDs49P-q1Ss2ciXXYTebLcULpOpTOEDrMa5oQ_xT1B-4-yR_gK86WEdjnk1cWd-yrwQmvN_X69aoue-5jY9OQIyKGqjVBSMPsi7eCwnrmeQW2UU1pc65-vUnAnE7YetLnXi1khoJScrqhvZedm1WuC5uyl7tReSChlwFt8IH_71Q7xs9WeoJKJaB_pB3AZeto069ikpvfUBSThaLzjKm0PTMacV0lUz0KIpkVcpYEZx0yDwM5reG-pRK3rI5Iz3EygD9",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102299092698566050540\"\u003eVaibhav Bhave\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sgi7vP40sW1Ry3N33eSM2lT-B4Urv6liUQG4E6HIfPZ7n9KQ08idZDYedUnwYBaQJl727jL8oC62xc3OIv3JSot1QqkYv0yTq-EIteioPtoFP0zVjBuXMvsZpaV7Y1KhYYkhjL0BFIVvhM2NV26Qu1YoHp5Gtz6cHf8ub1lE9MBB-5olzJvrlkYm_LA6tgOUJZ0seXPMNfktCse_-LJK43Dbsuvobt0G-yC2tC7XkuuSTQElBTkaEPB73NwGPP0uEf1VDK-DJui7HomjA3Kr5R6WX5dd3BOygUT1UW5Rfh6gwtsQY-OQo_kssbHpUfq0TAVIqfxdmur1QeLt1KMh-rh5uoxPLsE2rpE7N3a2ofnwR9_aG_n5UBY3xts5N0YIWP4mKPztTV6KmvNdhY5kJ5NGD4Dvta5JFxkd-xaau3lg",
+            "width" : 4000
+         },
+         {
+            "height" : 1868,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102765495493738332555\"\u003eAVYNASH DA ESHWARAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vcOGnZ7FsJeR02JpXs9avnCbP504ilm6jE6nlEN1sI9WwfrmmF27tuJBOMeooejHe520wnORZtzWEogQE3JcYDy6mP01qaktUPhqj42bH4xwUwUcRQIeSKLM3yW4VY6Qhhp-dPjalR1LIvIQ8Do7l88ArQVYLs4pBeoetG8NOQ_sqRSPx9dl1NKqUHO1DYVqxVYP-4ppR3uwIRlQFCCewfggxU1DVtS-u7zUaXdiD_rTD0CFsAcTEGCrHGzcHqq2-8autjzYEuGisiKhV2gj6GD3TJqeXTfQjlqfuB_lvhABxf_pRUY2qCoiS2wkLs562y3evRyO_iE62fZTYgO1XNffeFdFjuCbwbdin4zfrH2fD_e4Pcc17FlHn6na2uATopf3tlPwL8DkYmR4R83Xe6WMkXvdchqC6OS9-NI2Sd320l",
+            "width" : 3282
+         },
+         {
+            "height" : 2551,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101170702024721005089\"\u003eJaat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t1cNC26lD9PY6XZ2klsteEULvFdhzAzGDDcHqY4h89AoQRn8u4Gfus60KFfAu8VVYI6PpgjYSSDLV--tyBl959nebHIaR4-_0LuAZOUDU8QYHdqEvyNWArFYHBL43lx4s8Ty61mxUxuhNiZYXiL9e4TOyyjyU7kIvEyA8ZQ6UPN_K6pjPuF-uV985fXYllA9kuhepXR1FAZ7HS0_Rmb9xZROo9Seu9CZ2beiOPUjEk4o_GZmx3R_uZQZ5U1A70Bwu2CzYxMFnSdU-01KybMmnnwZu-Rv2L0Z2uiXlayGWsR2_a1OdLhBeIyK8zLYS2NO3CeKD3QDjrijC0cMfFMTujPq3EC2-km_GnqXQjWB-WUSwI4qqkvt2g2kiwyrmgMpHndbsnhEKG7d2rYSqgmDSUdzDkcJRf_lj1_AD9QX2foA",
+            "width" : 4154
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113853669718188930176\"\u003eUlla Siracusa\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uZg8EqNu1Kjcf0NaKNlSzCNset39_PYKdmNtbWRoJR0UlDgBo497UEMjueNQeFK_Sjg_yAKjRDL7_s5IlFpNi1BL-_uEGF1GN3qcppuWFYB8PtkRdQK4mycZbVTgDvymwt6JsgJo2sxkA_nwpYZMW7NXbcMda__UlvSv6iRtMEJmgjs2XXzoB6YJMF76JTJfk6jnssHRN8w6Lff036nmTdD_pQT2Cp3iUjL1hvD47zWExYY2GG5O593BlHMIk8Fjzg2-47TxtF-ClX18lTWiEKoiGieE34HSiifKqcqEjjxh9yXhFVcbmt4h3V28XNWwhm078OBP3s9RspCf6X10-5tuQsCFa-ZsDP7mRzjKavBSSchHcMZ0J6l4VNEm3L6Vk4idyF2TdVGwcvuxFGtfbRE4jToSm3d6DIzCp1ExL63g",
+            "width" : 2048
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111150153623728349286\"\u003eBhavesh K\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-su6zJPAl3Vmi75j7D7ctqIIz2FNUf81Sfs_GMHAIzGMJpoHWWB5tHmmwgVPPBaur-BvUOJvkU8FSgw_wQQNY9CkifgfjhJ6C5Cc3NkKDykgy5Y0tB2_MDxnX-5Eg4dZ0At_tu9DuBo8mz5D8-W7Gdj9dQpKPBcnkedzmydegXLJb-veuYUt4QYq6iQ4oo2SXPT5vCTFJHvxO-_p8jsclFOYiLzhMzqf3JfUfuHa1gWUq70Z0tBWVUZyunSRnAkkuj_gyPb93FYct9vTZnfG4ckwMwV5n-VN8pBGOyRkSD-HXy2vm4ZgJZUGVllSKI5bcEgz-V2myhYwIRDc_Iz2F5guIsTGMzqA2V7RJBModk0jDoz3CG6NMLp9G40sZHrNAIla7yNhKY_eT46XTxiXn0jvksRs4nmXeSLt7XyGOPhDIYD8CNUBxzdBZ9zkNVj",
+            "width" : 3024
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101772047322993864747\"\u003eLuis Hoyos\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKsacrXoRO8l3Zgitx1bu5ZyFxA788ZBDdU7hygVvK80A9rTQqoupozl7kr__aiVPBcFRg1uslqGDCpF0EqYacYzcxYncPWz4-35yPzOXpq7yQM0_kUmulIbkA_BBw5LSMNVRqxHOqzWyBQxFSg2J0acu1XMpmc6c3nGvPi3Ilx9dS5dmcThYtOu3m9RXJv9AGET65GYerY4IqWcJqOhN33iCJYGrkZR4VbQzvkfkk6pjGbJyhv1em-7aA92GPM5ZVgHPzXG6QYZpEMWcgJqdpiZ3yYTxQs_cyuj-WwuDp91VTYy3FpCmtT1gc1uSwgqUwZHeCyEQlVa3Q8Ltf94jO47uXxpicMaGo1wzbtinidSqXaWQvZdJcY7yO0xML4w9qOLcKhEsc3qO5A-MMn8zCEIitDKskemmSKvQuYK32fzue",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJlcM2NdBJzDERx4IcsKsVa4E",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=9325571280538993351",
+      "user_ratings_total" : 1650,
+      "website" : "http://kwongsiew.org/"
+   },
+   "status" : "OK"
+}

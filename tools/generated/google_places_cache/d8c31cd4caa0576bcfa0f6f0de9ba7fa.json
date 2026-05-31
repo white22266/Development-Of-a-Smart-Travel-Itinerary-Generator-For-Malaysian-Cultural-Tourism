@@ -1,0 +1,1161 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-u4sVmWJg3DgNZ-7RU2dUr7slZ16sePdMNQiER2Wly7xyG5ewqGQ0bP-IdN9nKRlCsTbkz0A7SfEoTWxu0rJRz8Cl6fAcTc8AikYgeSj82w5kRS1YySXWt98F5zoqL5cTcS86hlB902WEM9RGLnZfGDzw7gduEKSuxdI7CcwVsviU4P8TzoUC2yYJ2qlo5hs94Nhk0yU2vcaNnsyqmsyJdaIt4ThoDEsCQYsAYLOSemQ1Ao-F2Er5_Gt0bCuYWCemOISLBrUpr1irAMoocqqhDrfdEwZfZDTxWq8CrrNQNoY2m0nI1UZQ1x9DrzZw0fpg0d4Box0E7GbB4tsbRjcD_-GtR1HMoUES5Kbc4BxCL0iXfUsiQo4Lx8ji1vmXbUYk66I8NEdC0fBundXvg-tIa4ZGMQtgJBn0WR3AK7DA5wN5dGZIBlO0WZBnJc-zPICI3p4dRNv0uUOKLRAPAEV_FXaL2oRiVTdQwfVFezWt0TFzTkyAc6CXg9V7nRDEqBwJOGXzBwBiiLUlRc9ZfknWaQDZWcN8C4cHrncUPiZH9Wuwm73KZGc_EcXEFx7V0pHkLqwDOwlf8cs9Jgb4yI0Q2TOUd7Wclt6szA1b9iVGT7GPBgs55Xy5rA8QsgzOXaVHel1oRTMUj1YHtSRmSbJZBOFo_q6I2Oh3Zm34GcrqQH7iCLBxzNLHS_0iRUax-p9ktwhOY-YUyvd33Q1EdSVWsoqmfvFPTUdEoImsx7ktL8kAKm-lTMenI3Zy4AxU4jbrKmW6_zJfJH1fA-JhmUKtg_JAmcIKjEsnlEOmnKS4L8a_VeRuJod305rCloXDNypD78xtbsOhqh",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "274, 08300 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.795564,
+               "lng" : 100.4372706
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.796977780291502,
+                  "lng" : 100.4385405302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.794279819708497,
+                  "lng" : 100.4358425697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kompleks Telaga Tok Sheikh",
+         "photos" : 
+         [
+            {
+               "height" : 2592,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102760993957044650728\"\u003eSiti Aishah Yusop\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t3RLSDpnWbF7c_Qb0XY1RpGXMHR9JH9aFlTwEb6Exssx7v8i1YOv1R1PR5rr273hphx5-N4Sh-xIFZ7DRqkrlcDe_XfK2wIUyoQ25_JkQVva6mBnkCGiIRxQEMUDeGKZKkEWUbbvAz_WAFSpKOkCiSPvSilgqKD5PQoIEUAMFJysplDHGpa8J2cri0-mDMrl0QYscBHJo2_jLkRh8pYADY8Fu0WNcrsfcoIzgndj8d9KtK1v16Ii6caH-JexcsJvVi0NrNa3JDG2OL3FQiKcUTnd5jLnKQMJBjGtDLTaTiiZ1Psv0Sj8S0oKNo_iSKcrEWkAB_i7rn3LU81e-QYgH0xdQt4hD4-6ekCvnw39mtuWwHNnhQbfrM4fUDnwzdTPB2uNHrHf-Dx0tx8TW__13BngExnDmAHY3Xo4OI1_e9lnIH",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ-66-elYlSzARlpejmZ09I_A",
+         "plus_code" : 
+         {
+            "compound_code" : "QCWP+6W Yan, Kedah",
+            "global_code" : "6PQ2QCWP+6W"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ-66-elYlSzARlpejmZ09I_A",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 98
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.77595,
+               "lng" : 100.3990529
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.777425530291502,
+                  "lng" : 100.4000954302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.774727569708498,
+                  "lng" : 100.3973974697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Waterfall Batu Yan",
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113112252983577596557\"\u003epobie Pooh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vOneh4labpd6qamNXcO3lS30OTlsy1JQeQYNgkhuxUe3IWw0toaynFfc4TlmuIthG9upiJMiw-aQw6SD6eU28iUNjtuVPWW1Ohjwk2JChJ6u-s-ZumxZA786-HKVTzZyWXG9X_vnZQ3YZmvmo9bgDJE7vIM74zuRZgV0H3Rd4WuDqx7_TmS3MiSDizKxLCQB-0rkHyJFAKJ7MKicYsW2cse4ahFDP-mWqgt4qo4OtMUUwCK2YUR6jmqWNrTqhdDHLmd67z2QoG8yEOMlBTSvOolE4X7Mb49eA-zOrjGSgadf9C1-YPjr7CvKvqNCu9AQ0HW89ir3Uy63iWULrM_OXGApKHVwIR4ZOVzVjD1XFUT7R2R9LvV95w1YEz_gpFa6AdFt2QMs3n_8DfFVheuI_67qMtKF5H89kIHZ6QRomqmqk",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJfw84GBwlSzARjnZZmzZ_oRQ",
+         "plus_code" : 
+         {
+            "compound_code" : "Q9GX+9J Yan, Kedah",
+            "global_code" : "6PQ2Q9GX+9J"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJfw84GBwlSzARjnZZmzZ_oRQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 115
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "08300 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.792364,
+               "lng" : 100.419886
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.793712980291503,
+                  "lng" : 100.4212349802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.791015019708499,
+                  "lng" : 100.4185370197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Air Terjun Puteri Mandi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJ0zkMD76f5tlxtO9qTCD7m6J5jIHC81l-rklPH4QJkTI5MGHMvL_ZOAI8YRjB1tYCYnVrxyS95alVOcI86mybHRnoO_w7Ly1S0SPc62zwTbzEtVRdne4tDfn8JnkAeX2bbsqu1Fj7_WxWojBeMd-B7SmFf7VblpOVmBPL44hZFn8ZgSoWiebeGz1b8_8EBSzRx8bBr_TQkhSbWXR9ScvojKn1APXJZrN9vgBy9s_U-v32HuLVodGPaXcbKIz5LOh2kEsOz59Q6h1G4l6PtrhkDnJ785ucgd0U3SM_QPgTAr1aKEj_waIEmTH5p_EvQ1oAlt0jjg2VJlUW71DVhZyj51vBYx0-h23GZXVqG_KLy7tz3zcPWUw1oBegTn6RBSSrrfJ69vR7KRldNq0hftczmPjcMDQO4rCMwJGQ7CscO4ZRiyVXjkH6Y4yArA",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJFSyiEHMlSzAReHm1zy9rHtI",
+         "plus_code" : 
+         {
+            "compound_code" : "QCR9+WX Yan, Kedah",
+            "global_code" : "6PQ2QCR9+WX"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJFSyiEHMlSzAReHm1zy9rHtI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 37
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "R93G+CG, Titi Bakong, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.803670899999999,
+               "lng" : 100.3766355
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.805051030291502,
+                  "lng" : 100.3779201302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.802353069708498,
+                  "lng" : 100.3752221697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gunung Jerai View Point",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115239993223232207133\"\u003eSalimi Talib\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vChJ2twLM9kf-fao-TDmwNN3NKDyO43sh3ZeULmfWTbrdA3lWh4Wr2GVMyUwcBWygclBcT_aCBxJci1p-F9JhuoLQfaYBMVZ6iZw2GPZoFK5jYgxRB6qKlzmG667OCD4GO7riDa2OWbWEkiZDj2S4OUnpPCRizG2Z9mBY9alTZKwaDHPllyZALf9i3hZ18nfDMxYGSfET8OmTzOk5RX9sm3RsTsIi9w1fgQhPieebKDtSsR5n4VgnL_SpYKGhwShhoC0lveUw9EKvF3T_zWNHqo8RH4FqOGrdVzVv_QViE4w8LxxGQ97j319f1MXzDACxqbYaj0yd7opUeirGXxywxcjqzc7Wd7VyhpRVssAx-_T1wEgw-8iXXxl89OqH2b-m9ZLu_kxELth7W9oLykNhyETFux-XMX6IqHND_CkQnq3joU9O97OXUSuFAqfM5",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJww2dnIM7SzARIczbGCUD0-s",
+         "rating" : 4.7,
+         "reference" : "ChIJww2dnIM7SzARIczbGCUD0-s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 138
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.793501,
+               "lng" : 100.403483
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.794904480291503,
+                  "lng" : 100.4047624302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.792206519708499,
+                  "lng" : 100.4020644697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Hutan Lipur Titi Hayun",
+         "photos" : 
+         [
+            {
+               "height" : 3036,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105967705775715526479\"\u003eAmjad Aslam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ulPFBOGyIOkU8_0GJ4KkYJf8Lh4Rc_jUTXE6Oz3meEBK-eGt95Adna70WIh58PAHtI6fXfvQUlaummJRKeUMKydtFhAs1xP3KfJ3NmFaDr3mt-61y3Uj3HZdjOQ5Egh5MNxkNrRtUjvwcMxkTtncyI-0A_s2MRfqG7khRwtSqWU5sSVkLt2sltvd0C3io597wHBAWRBV8ZI_RlcpRDEyh0Y842zISWbHhgiKcdIO7rL9GmGO9HtqkwayuyyqTRkHn4Irv97ISIwWDaluhgaGr65N_arVNsNejXxaA0AY7hmVGnwa1uXnNxz1x3MACnxTruMSSlVm2QlaHMtrGBMTy9m3wsev1_4CnP80kmRkZhTITnAuI_tpo0o2EbePCXJFWDJRD_SAONKApx9JJAPGub7IDFrVPTiUOgnpatsgiA6z2y",
+               "width" : 4048
+            }
+         ],
+         "place_id" : "ChIJR-B9oS8lSzARGe3qrnxClio",
+         "plus_code" : 
+         {
+            "compound_code" : "QCV3+C9 Yan, Kedah",
+            "global_code" : "6PQ2QCV3+C9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJR-B9oS8lSzARGe3qrnxClio",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1084
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Perigi, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8091542,
+               "lng" : 100.4079037
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.810763330291502,
+                  "lng" : 100.4086717802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.808065369708498,
+                  "lng" : 100.4059738197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Waterfall Seri Perigi",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113996156033902948240\"\u003eAdiputera Ab Raman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vdVMklNbnIuGLkqbA9f7cO47U0BuPR3FBvIBN4nPWgf9-iaxrKsd0PNL2rMOE5pPIV4moiendzwHuRVsyQPN0_4vhkBC00fZKQoGoS70O3IxEyRm0AuXCIYmJOsb_eVWd6EGAQOzz706WS9Oydu_wUiSqqJMD_5eJEyWVIYa9GVkZ_uMzdjU-pnG8aV1VRQDzsLW2v-r8XIjzWK6m3B_q42LxyDcYINqeQfotLsu_BLKHLjLwv-SdF6cj5ZdKX--nk7sxSbj-yDKv9qPR1DFy8cE5Z29m8ID2HTdiwbUVWyMq4tFBxG81YHQfCjc3YZN7dHObo6_J4Zj2Che3axZ2RSY4yi32eAUThbZdTYbp5YdoEbACKlVq5V2vHsr7O-x1XB0wn_UbIFp0kkui-wXit1u4ZYk3Y9DCp-K1E-ayV5bPp",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJzR36Hzg7SzARzlyCsPoVE-o",
+         "plus_code" : 
+         {
+            "compound_code" : "RC55+M5 Yan, Kedah",
+            "global_code" : "6PQ2RC55+M5"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJzR36Hzg7SzARzlyCsPoVE-o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 731
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bukit Tumboh, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7940068,
+               "lng" : 100.4025604
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.795267380291501,
+                  "lng" : 100.4039033302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.792569419708498,
+                  "lng" : 100.4012053697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Peranginan Titi Hayun",
+         "photos" : 
+         [
+            {
+               "height" : 1840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115486147062935140188\"\u003eAtok vlog YT\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vcBhk5HJvnINZpzL_33D6tOap1xWOxKmIm4V-e5ydwbzUiM8adDRNUTdGgl57SxAJLGWWuo4GvKSHnq6qUtzFGP19JI1h5aiqU9HVCF1cMTK_Zh99a4YWGk4sysQeV_ALGhOYwOvxqQtpxkkRx2AR64Z3alppIo14d0XiVGNO0gMkQG_cR9wfza7Yr_pqGl2EHE0N-FZHi27ZKsySjnA4mWgPIzqezaeDTz9Xb8gN40CLF3nwWJx6RtubGB79FaGb04CQBUQG9_jMB-4J76D2Y8nE3dADbTeoNgzmL0z5FdfaAaltVSROzI2CAd77YE3IoWVpXvoj-4NYSbVCFE1S029jPJDxD-sYSRQ9Xu3TL-Jxi02BtDBVrOnnCzRPA8Ju7gNe_1Uw8sc7sjSOgQXC3JOL_dAqBj6w7om2WtGwdcUwV",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ8ZHlAQAlSzARBcScIAZT-7c",
+         "plus_code" : 
+         {
+            "compound_code" : "QCV3+J2 Yan, Kedah",
+            "global_code" : "6PQ2QCV3+J2"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ8ZHlAQAlSzARBcScIAZT-7c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuala Dulang Kechil, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8467989,
+               "lng" : 100.37297
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.847801080291503,
+                  "lng" : 100.3743807302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.845103119708498,
+                  "lng" : 100.3716827697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jerami Kampung Kuala Dulang Kechil",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 538,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106248102659296237644\"\u003eSantai Saja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vO-Ixp6R5Amv812HHrtvgi79G83awy_HxbAe6S6MgbYAdK2r7tQ-jONkcGqZ8Sck8u4fNUxtduj-UWzFUqzbq9vJalDn4R3pOCNJBNatv1y8vJoRuBgIEkaKoCU5ZD__pZDyD-97aqZgKnNIwDFlOpLUlsbga4-WEW_TrroQPK29Zd-uGkx96qjBn_7g95jKYrQHnBD7yC35TM1XCHFVHxBhVqxEXnDx_qB2h9NKkKvfnIBXExVanzs6f_74TMqC-kQZ9ZT61IuRpbJ8XyFiLc1JTmW0_El1faYM_x_BCtspEpyAk9MXbtSp4fgAODqtOzXcgzLVTe20RBbmZVqKSWAfnLmynnBz1cAwm4Nf_7uog8rnvqhiOr0HcQBB643yUfbZeqQeB2xkDsGQYYeLWpfh5HaDhD7JnnKwU_1MPGGms",
+               "width" : 719
+            }
+         ],
+         "place_id" : "ChIJTzWauRM7SzARrqZaI8e-2TQ",
+         "plus_code" : 
+         {
+            "compound_code" : "R9WF+P5 Yan, Kedah",
+            "global_code" : "6PQ2R9WF+P5"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJTzWauRM7SzARrqZaI8e-2TQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8497387,
+               "lng" : 100.3640411
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.851340280291502,
+                  "lng" : 100.3654126802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.848642319708498,
+                  "lng" : 100.3627147197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "kuala dulang kecil",
+         "photos" : 
+         [
+            {
+               "height" : 912,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107742757116964376166\"\u003eincik Foofie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sYuEVkiAyRirYxUjuUY8jM1A2oFJ6GuE1chRfRjbKqSxW2jHkhoBVRqAeLscSDteKnl9x8XooDrPuLISrqbjvXbEhacaqpQwAj3tTAT9Kg9rmB4BtfmMHE-1CtVW5QGp7aU2T6HbSNFPVKoPQV83aNihkhezFUjJWXKqkx6A5EcYwZ74oQbXJWvXbm3c2SsRQ2HkkKxkjnpHK2nnHsdw_BDdsfkv50C9vTiQdQv2Sk3FzJHPRtOWfGzGprKpL17FCT9T_ldxYey8X8xJs4r3AXBL36nJFHZSFISZl4O8vwNCro9iq4zdjESXk7ky_XpunYv-T76Dmrr6FUHAQTIduao3f6QoQwi5NO0P-zFWj70ZlX9zIl0CBLeGlLwTruLwGTBc_mPywt4DLKEac4l3ZgkJ2oLrBPyaqv5pSs6NkvyVLI",
+               "width" : 684
+            }
+         ],
+         "place_id" : "ChIJL6DIid47SzARjY02FHtaRg4",
+         "plus_code" : 
+         {
+            "compound_code" : "R9X7+VJ Yan, Kedah",
+            "global_code" : "6PQ2R9X7+VJ"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJL6DIid47SzARjY02FHtaRg4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Kampung Kelewang Jatoh, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.749666299999999,
+               "lng" : 100.3612802
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.751005880291503,
+                  "lng" : 100.3626350302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.748307919708499,
+                  "lng" : 100.3599370697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tanjung Jaga Geopark",
+         "photos" : 
+         [
+            {
+               "height" : 1124,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107561790034397172634\"\u003eG - Da\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sMP_EKaMjycOasTAklqoFlLV17Iu_g8eNlQMiPT8Ygj-g3fmlBmHooSqd0pJUlOw1QarkkVkQk0pjcAWppHZJToLML8Ev5YcuqiTLluXDYkftcFp2BcV9_m35aSPpc6OLePzvMvhtouidYuFNlrYF2BJquMDDi0d5TnJtNGCTB34REc5JqLV3OBCmDkkfFKbo6NebfTHD_2iEARZV59bn7w2GpVHMcslJXRAvR4W1CxP4QN_3IXsTMlrHew-t7bNX3W1-EejVW31xrp4nEqyryFYNBHIB_tvh2uXyM3skzgbWpnx686OFCYZxRGZgciPEDlQ85h0ajUspE4I3OHHQtJ9VAJioGu4D1J35Y_i95qBpWt49F7V_eLn7S_RHCiZ9kROBECg36A9ZNtH26yc5i4fmSZKwiW4J_FKInSbiiluVa",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJbYgctt4lSzAR3bh7lpoFs_k",
+         "plus_code" : 
+         {
+            "compound_code" : "P9X6+VG Yan, Kedah",
+            "global_code" : "6PQ2P9X6+VG"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJbYgctt4lSzAR3bh7lpoFs_k",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 34
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Gunung Jerai, Kampung Titi Teras, 08300 Gurun, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8431656,
+               "lng" : 100.4667565
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.844551080291503,
+                  "lng" : 100.4680468302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.841853119708499,
+                  "lng" : 100.4653488697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kaki Gunung Jerai",
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100650981964210332924\"\u003eNazrin Fazrin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sa3bEkTke9DhOay19rxEsji6bHUPCmNIPQDeQBdbZNKhLEXnezvu9_NMKcGrxrpayzJnCs3MmisnPIBUzUPYiqXE_tNw31-w_IjKmsabs9cCqJ5K-SytkYywNfDu1HcH-Wsr2Z-NhXjbHplfpBuEhNuRfJG59vZqJWr9lSyXskf5XoFnGeDynWS8Xnnon57tjuH2uWjbnNdDn-HoCJcslEi4HicY_ltJaTs-XIKAZreEom9fWmkm7gUeitgp7Ua-mQrb7ihrRY2oObJOOBePFV-lMMZuZ-d4y1y5nMR22O6O2Xd-mWOuGXAI4flBg_wWI-IU8vZCJRTa8FP19foOVwkEaVhhAGIooAdOgB7UCpA_XYt00uTgbPntdGIDudTRY6TylGxOm1J-Uu7RJXtAJwKocDpZWnAiyLDO41bgyL3A",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJFfjw8_UwSzARKaM3UF8oXXw",
+         "plus_code" : 
+         {
+            "compound_code" : "RFV8+7P Gurun, Kedah",
+            "global_code" : "6PQ2RFV8+7P"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJFfjw8_UwSzARKaM3UF8oXXw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1351
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "08300 Gurun, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8056512,
+               "lng" : 100.4351357
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.807166630291502,
+                  "lng" : 100.4365161302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.804468669708498,
+                  "lng" : 100.4338181697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Perhutanan Negeri Kedah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103829039368533265062\"\u003eLyndi Low\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sCqRVPWQhZCl3cdvhcBUAcQNlJQWQAvKVOzVBbfDhs3wHvvlaZojicIEzCpgrK4madSjrAnPXCr11pJ1ZAtcqbaudgv78uP49gQwnORVG-MpqrAKch5kctHt7fqAOgkxKlgE_gfYTHlPzuque8FintNeK2t3BJ-vHAPRCkKd96nH0uTwVOhQY0oFQ_Gv4ttV7oZb6GQfHhWUm8y_0E4vHEEIaQhgHKJ8o3x74Rg8eR8yaXdCYdgOGOvd66eI1rVLlI4yo0N3pISYIr3ulHLxLFMeRguK1A6Z47wils-9bae7P5WHGElShcn1IWu3ofALhBTS_pRepMPZkX0ne9AGVnVamVxodjVrtakGOSChIUthPFdu8AkCjNFct0zrUMRrNylD4MYwVuUnm_TPm8jparuRgYAO2TLc7l6mmLDDKe1AQ",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJcxtV26s6SzAR59nH1h6oP9A",
+         "plus_code" : 
+         {
+            "compound_code" : "RC4P+73 Gurun, Kedah",
+            "global_code" : "6PQ2RC4P+73"
+         },
+         "rating" : 4,
+         "reference" : "ChIJcxtV26s6SzAR59nH1h6oP9A",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 106
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Yan Besar, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.796717800000001,
+               "lng" : 100.3725198
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.798014080291502,
+                  "lng" : 100.3739584302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.795316119708497,
+                  "lng" : 100.3712604697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Yan River Waterfront Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 648,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118040389063745997663\"\u003ehashim sidi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-srSNZbNR_Bp2_e2AbIscdw68EjDksYw_m3HjgmG_2ak0iMLrJgNp2MD2YQFu4lN4lqKUbPKP1nLLGi_STGvvvPySNBvvM02U_iOxReYrmTOKlK_vtCNgW5wHODbLrmyQ-j_Uaqe-e23wLyKFlxrUK-BUqKahAmD18lZPAkDxEVy6qhe9vYBFZeLDx2MBhn8sI9vO1c-FAQB-KWzOFnq001khsPnstg90Ip5y0ax_JDtxVODoU7xpuWwnnN1hQcy1hFiSYzf_2F4QPZ4xua4-4RJwciHIU9pAFIckv6o3UyV07BYll2NKS_NntBMqMKLTaja3H4ctdcTrMifAQAqMzsJZiQ7P9a1DYS3mXX6rAJL50YRuxEFNvTfFD0HmbJFa1yRUJduPxe_lN_MWDSTUdMTv9kDQJ9E_S7KoUaVv8",
+               "width" : 1007
+            }
+         ],
+         "place_id" : "ChIJqfgS5MkkSzAR2BNnlBb1G0A",
+         "plus_code" : 
+         {
+            "compound_code" : "Q9WF+M2 Yan, Kedah",
+            "global_code" : "6PQ2Q9WF+M2"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJqfgS5MkkSzAR2BNnlBb1G0A",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 121
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "berhampiran dengan Sungai Batu, Bukit Batu Pahat, 08400 Merbok, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.738085,
+               "lng" : 100.4144983
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.739396780291502,
+                  "lng" : 100.4158883302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.736698819708497,
+                  "lng" : 100.4131903697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Bujang Valley Archaeological Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118215423548122168943\"\u003efar east\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tpdIHF3Jhs-GlevRI4HZeH1SBOR4LJPdUjeIebeIfnfEMR8EG8G4T5Gf1I1oNiJrD4d53w-jzRFdLsQT3wOqqWMfUnAyZgx0cBD5XN8dkzI-YxHGzaZv6NsjArIqjRTHu1m3IKWrmiN_h0BjoERDgT25i6629NPh0lKAcaUee4hlX2hqartaMulwZoRtTka2WJDSe4JvUjdakgxuwuJhmuHs4o2zDmt7aiLYgNfpeQKcww7G_JSHTWHun1_SM-2-pjMq1aBRiU3qlv1r84uWjDdOVtNo4O6oNbJRqzk5lLjxD6i3BDWrz8DlYIiIeLJnFdQRcTOnShuGsQEdpx2yHeact7A8QaqmxWfAAnx_W9VzDggpESVlIZrb89D_8dai4-ggThOc1IvycC9cUXO3Uxv1xQnVKYzmEwq1VdbQ9fcIW6",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "plus_code" : 
+         {
+            "compound_code" : "PCQ7+6Q Merbok, Kedah",
+            "global_code" : "6PQ2PCQ7+6Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1227
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gunung Jerai, 08300 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.790737,
+               "lng" : 100.4350041
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.790979730291503,
+                  "lng" : 100.4361739302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.788281769708498,
+                  "lng" : 100.4334759697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Padang Tok Sheikh & Batu Shaff",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117342517679951566418\"\u003eKw Mark\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uJW6Rn0SaxzbN1YrSKUY06VoXMQFidZIGz8qAzL_-YMAkJUGud--0pA1AF_PjNBvqvVzkNPYv4ahXB5r_HApaaGMiBVQssFPsPriNBp2RTQzWk9NJ4RR92M-gKuCcfVIMHxHt_zdkwgFdtP2bEw1DwfM21CzfgTHanw_9MgLBwBMxUtctFj01ec7YXfVvMSgjsCLwqx3_gGfQ7SORr5JB2Kq9rIaXQqRY5_RMApB2U2VMpsN6swoDYQ1X7-uJVUmDkh6NJ24EKGbfOnqLeCiSv1wFW5SydjF3lYth9sY_l6AmWyksjbgSqWwaFj4maQ0TRlmJ0tlP_VrssBqbovewOFjPIWNettOXmz_fi82RSth5mS-1lMVSrG9VVUmVqu6CnaDOTPMomXwh0tFMDCAvmMqmqymm89WP2lL6V3gNd_g",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJzX1C71klSzAR4g8rYBAwNZE",
+         "plus_code" : 
+         {
+            "compound_code" : "QCRP+72 Yan, Kedah",
+            "global_code" : "6PQ2QCRP+72"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJzX1C71klSzAR4g8rYBAwNZE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 87
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Hutan Lipur Titi Hayun, Lot 60400, Jalan, Kampung Bukit Tumboh, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7940365,
+               "lng" : 100.4016001
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.795343430291502,
+                  "lng" : 100.4029436802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.792645469708498,
+                  "lng" : 100.4002457197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jerai Geopark Heritage @ 日萊幽境",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108360988855055460007\"\u003eChun Siah Khor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sqyFn6x9GZggwYxxhafyINFiPCJDHiTKl9FYa7auGWD-rHGzLlj9DFR7bqh6LeGS28PXgMwOPKV3F1bjQdC5ImRg8zXQDXdFd-b8SbIDLnzW3B7_zY7zg-luYWz8zFl-AyvH0U_SqTvjkVS4kQdlXQfzuDwRGvf7HAIKlEHlJjUCCye1lG0sj1XwhJMl-3t8SNsszEYUpPQixcVLIahDaqUCEmO4pZ2--2pzCBvNixDNk4VT2mwpJedHYJK2pPC-xnjNgckdLJTWwkCQsikXq0QDKyw8Z5lWMdKR9SQ1Vx5Zmjapxw2bbEBOnVa2RmZJpS9kBdQjmaDocGy7i2loz8OljwjKHqXMK4vyEJnKDTwdctX35edWB-IINm1tiSFDq9bOTb8bUr0SLq73KubarbOPt2LDlbe7KL-IwMsfg0rg",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJX-wRoT4lSzARgsig3QBEhbc",
+         "plus_code" : 
+         {
+            "compound_code" : "QCV2+JJ Yan, Kedah",
+            "global_code" : "6PQ2QCV2+JJ"
+         },
+         "reference" : "ChIJX-wRoT4lSzARgsig3QBEhbc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "5, Jalan Pantai Murni, Kampung Pantai Murni, 06900 Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7948645,
+               "lng" : 100.3675553
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.796175280291504,
+                  "lng" : 100.3690000302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.793477319708499,
+                  "lng" : 100.3663020697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Murni Waterfront",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112205777276932850673\"\u003eAhmad Firdaus\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sbqVPGl2GGqQhQd9QG1vnvSHFNtckiH-gVHJa0CcGe8CtokA9CVS_FuFyRuMWes7siMpkqv5segClv4Pzsb4976EI63IOVtZn27ec9G8diyHkNO6BJ9zN_qjKOmDw8BfsJCqB23J_xvlxDeYF2-gBZJRGFM1Iu8vzIbIAu7isESrf8rpQePmzRtL6az9J7VZssDFrRtLghOXSPu7ML6Neyrt2jYD339y7ygoIK489Y4uXGJ1Tqt1GL9SFKxgzman2BiW30lsJDkJKupQMpG2hX044KAmUVno6d7yucgPSVmy8wP764SmgX72uyhLf9yaArBwLd0FDuQzM7Q87QJBRYilfqvbJpyzqLG3kkM18KVbssgeBT4I4XxRp9fzpPowLl2yhk1CqXlB1TbJsVoWVHMBOAC5sxm0jNChRzPDy_Mr8O",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJy4DR4rkkSzARBUQZdKHvPis",
+         "plus_code" : 
+         {
+            "compound_code" : "Q9V9+W2 Yan, Kedah",
+            "global_code" : "6PQ2Q9V9+W2"
+         },
+         "rating" : 4,
+         "reference" : "ChIJy4DR4rkkSzARBUQZdKHvPis",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1153
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "R76R+RR, Yan, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8120625,
+               "lng" : 100.2920625
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.813411480291501,
+                  "lng" : 100.2934114802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.810713519708496,
+                  "lng" : 100.2907135197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gua Sampah",
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108448421568208503998\"\u003eForest Ang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tBMlwtSPLlP2WSgRoFWC4uNtgi3RmXG4AvYbCzB7gtta1eYp63BMROYYwHozVQg4-HlWtp6A73gK4RrCUDOgw-sk2yDmRAy2Ix8Ap0e1v0cJP-PjnKo6VQxrU9E9kgWWeYY5rVEqEhqu6UHEqHvCgcmzoRCoEX_2f3o9_eikmVttQSTbGPlTo962tqT2VUwbONXKb18ClM5NCkoz1_GCUNJdXedTA6tdfBHmna5KCM239hbw4G-Aduqvn9WbqE0YnjFaGMNosc-R3_v5nkWhJW0TYs3GG-4zIMkxr_0FylIXMota9F98Od1HgiWWLL0-0ETJuJtJv0Uw_r41Bd-LnciqW_u772781O2Csj_OVcP0l2Az9WsvvVclQllXjAPTGNmMR_bMBzQ8vj_D_LHlub5tKND78wqU6ISG2kZ-94P5sdvHxF6VTmtQrLSS-C",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJgcGdJwA9SzAR32me93nMfb0",
+         "reference" : "ChIJgcGdJwA9SzAR32me93nMfb0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pejabat Perhutanan Daerah Kedah Tengah Pejabat Hutan Daerah Kedah Tengah Sungai Petani, 08000, Yan, Kedah, 08000 Merbok, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.748882000000001,
+               "lng" : 100.442991
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.750180480291502,
+                  "lng" : 100.4442789302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.747482519708497,
+                  "lng" : 100.4415809697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hutan Lipur Tupah",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115684913713031959669\"\u003eBCC\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-txVPvELhCgeKh9JHR7XiJMRji1C67Lw9XhvGsizJCUMqCTc00TMZr4vdiyC6nxAxDgOj14Lc_PJIe9ynz9F-zpxKa-whJjcm3HxMnr4lwkwG-AYM47QGXdrEVFEr2rX0JTXLFV_6Qybd5gZheipVAUjE2m9HMkn139Adgy0ted0wGxBLlMZ0umTJbz9ERPPhR2FHH7pjiGEZYGvAvqdCjb6ctxFEiOaj1057B_2yY0cCc4d2Uwl4Kc88zwZm9C2c4znVa_7-V-1pgbMpv10Lzwl6dbitfzlDIa5HIoI69l92nijvUdFu63yP8HppKkO5t_dDBm4YGx_AI7-TCQTwOS41HpE5d3rkaB-vsfmTVh8Ev5NONcTHZ5kDrPGnG4y34duW5UAKNk4NtKxutAQPpXW4GDGCNnl50yRzpU5ZtReg",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJ71NfJGMvSzARyF405-uflxA",
+         "plus_code" : 
+         {
+            "compound_code" : "PCXV+H5 Merbok, Kedah",
+            "global_code" : "6PQ2PCXV+H5"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ71NfJGMvSzARyF405-uflxA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 149
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 710, Kampung Permatang Samak, 08100 Bedong, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6953653,
+               "lng" : 100.4540643
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.696659130291502,
+                  "lng" : 100.4555067802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.693961169708498,
+                  "lng" : 100.4528088197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sungai Batu Archaeological Site Kedah Tua",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 574,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108432031277787130744\"\u003eSungai Batu Archaeological Site Kedah Tua\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vMbp-yrNrxB_gJ0nqNoPTVbfr_rzq_X7tWFYbbKQB-rllVfDWk4-kAniGIPhXR8TyrWUUMuq5jRn72I5fKpJBA0QU_AFjo17ubHVBRFkLuFrYhl7SgLd7MW3vMIwyTC3HdcTVKLkTOth0eyxsX-TIsDmYPkHNxstvWwzJoNb47FUbenc1pRC2T9mMZ80k3MPE-SAfCK3FjhLVv4l7u1a7753PO-yh-jcFy--rOguTH-1hsm7syrq-xvr15GdRO-tEg61i_p9GbxF2EU8aUbrek5SWY_5__NU-x00ZVSPyOwA",
+               "width" : 1020
+            }
+         ],
+         "place_id" : "ChIJrU27kJcoSzARdbk2kzi_cNA",
+         "plus_code" : 
+         {
+            "compound_code" : "MFW3+4J Bedong, Kedah",
+            "global_code" : "6PQ2MFW3+4J"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJrU27kJcoSzARdbk2kzi_cNA",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 332
+      }
+   ],
+   "status" : "OK"
+}

@@ -1,0 +1,187 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Satu Pantai Bno, 45200 Sabak, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.7673174,
+            "lng" : 100.8733739
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.768593280291503,
+               "lng" : 100.8750863302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.765895319708498,
+               "lng" : 100.8723883697085
+            }
+         }
+      },
+      "name" : "Pantai Bagan Nakhoda Omar",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0300"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0300"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0300"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 3:00 AM – 12:00 PM",
+            "Saturday: 3:00 AM – 12:00 PM",
+            "Sunday: 3:00 AM – 12:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110794805514852942933\"\u003eAnuar Afandi Saidin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uw489drbDFqkX8ykXEKz37AO7EaR--2_gwdev7mJ-ncPC50huqHTbe8b4O0EDA5bZUlcHBvRFJyf7nS1Gs0LR283JihyurWnEzxXe1ScVeGzvdDhYf4_mtVf5acJ4tuqQ3iDR7DVwFZxYOjqwWcPa0vHOC7GTgW2rinF6ZxSFRieu9S76lfLG6R4nrJPynHD5T5dqSD0EUp9-Xjbcp3a8r0ZV7VqXMuwdlKauKSXQPYKT6lfXilccmGzC_Q-fEbrhLCxZS5JnRKZONi2QIcRvmls2gfinToKCUtWmxkK6Y2btJxNlknRSJBtP8EON34tU4WuRFMHioeXNSCB1PZepFuUkLFHNAsOjc_hc4q_Stk80Jx3ijtb-J6YBsefGU0HMp9PCgXdwhUqWE9UwQqvw2dfgTVEGTex_vRMxbQZw",
+            "width" : 1920
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101648036331549013760\"\u003eSyafiq Azim Amran\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s6RlYqxXAlja7s5Al2myXnVsnk6-hEeEGOs_UwwF4dSDLgF4JrzmSN5L53zp2dMyXshKscEDc-c2SQ6mw79tiGijVXYUh4MVbKKitVwvlNM39jLzJc5kVsjGq1PlYI1fw4Sz2f4dBj89Gbz5dd5QozkhTZ42b-U19b3y6UoJTQy0Q4VeqLUYlhShvjsipsfYBHdldINzyE4Ixq14HSr6bobnFgLL0c2egPAIlQh15xLVu7K_aWYv53x0HkbkRziwPV7MkT9asulbn2DQEs_bR1GKsF3Trc65aGsTJd27QP44OS-Gfyyqy7BCp197GdJFkQIplFtP7iJdB1MbFEc6M4jC7dlQQKXbvStADQmpfhqUi55H5ctOctI7Mgmq4jteb415LIa0HNyR9XH__eX0wxOpylQ31eud5yhQSIAHHLKw",
+            "width" : 2560
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105988328570051938886\"\u003eFirshaz Store\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v2LVFNv_T-yQ8PdmBGu4A6fpzrBFahyW7UthBQWgqodFTHy8ElB690xQGkR6YEjLUtPt3UTFib3hlwBNUwFcIY1gQ4HxuQzCMT6BWmi7tIVugQgil4zCMEaDWUoGoScD32bM8NNLe3RWeHPjNs46XtriNCzTbvUNXUjEhhupTykU4c0_ZuA-htP_Sv1cP-ruNn5HwlMk4UiL3rA2MMhmYzWrUgx9lF5BUEY_9tc2buvnqu88_oAE6bdrGCnycvJQqDPcH7_k3tIV3e2c3s6Q26pKaYpF_ASY6Mu3bwohoviQybLW-4zOqm59jjzIvUfU1k6kvLksbX-ecSTIoBGDNJSrc8l6kaTq8Nz74h7Wb11eQkK8p1rqRWG_d_0wfWkzd4aq6DMEDV4Fi3g79Je61kiWMQwIlJzhFNvyL9vFw",
+            "width" : 4096
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115362890722949587011\"\u003echon yew loke\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4fgxK0A7IFFnvZyKybvwYER1OoMqjjMSRGRfwsh-sMmFtQsjmlQXqvk9DlvY1Fhyp3Rq3arFqHD4Zjw5cVUisncmDpQuI64W5D4RTcV_mOt-9wWNXsoE-qgr2mfp13abh7hhXKTv6M8_4Sp9kcj4V84gTv40sQRREdCMgsoHpNwVV_Vuxe2B-WYKDP60uwfSF1eiWllQmbaAe2hhSNsQrJiRMD90MpsC50UkD4k32YJ4JRAqoT8HPhotovb2hCt3CVVi_Wty8gsgu0XaI4loEaUQig2Dcsk-PCmfW5wKsXSwVywozIEBN5nKm9e4ebv2d1UKRf62bkJRYR9oW7f-Z9NgDDkVOGHKajKfqvAX2dvFsh1P_RwLJGGaUumINeOSS4ZxOUCp3Vvvt-0BVDKKVRs-vBSea2Te78aU2NrsBsPTh",
+            "width" : 4608
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111113972531943411170\"\u003eNurul Hafizah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSk0K6V7LNY9JUD-0i0xbS9_m_hPUPxVM8eXFh3DCqlrGTQkvwqIY6cSFKsa2P-bNbS7QeSvMr6FuuKFZGExiZ-TUQ-_Od8_xMjmUaXnVatqM45QEk_NaYbhabtomUKD2FUThj2jEvePtVhuNcqIQogdDwldFO8oZrnUTL0561gg6Y6orKKfBkFbmQmxp8rBgLEheheyE0nQ78LyhEsnHBXOCouPtg4Uu06IBn1jlxu7Fk10mSCMQdZgcN3MpuPudAWyz4Zu4YDCWeIC5XBKnCjXn_Sdpkq1HN0PGM9ZEG3L3FywZIyspln3enSn6LtbkMsHtiQAd9R9PwnEOWxlNnq5Ajwt-J1PMEsqZ26-Hx3_lc2E27iOQC-DQ7cDKmAJAP0p5leVEk3phQqer78WEIuHWEbRFHuzKj_0DzEXyBpQ",
+            "width" : 3120
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104626022019689957209\"\u003eimran Mr\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOTqNOzxw0__C_GU2o4iH2g_mdpb5AZLamEweWBpnwkZ7yjoMK4zlw2YB5qhYyE1E8adeX0QPQeED6xOG3-MdBGoXYl_AXm53DWx5IjBqDih2NJuDzG_DPLxduvuMnPicxa06CrysW1p9i4iViS_1FvolfsQ0_apUWeQ8OXotJCjEgt-12sn1rijUO62ee4sEoUGA8a2Wmhz7mrXazqowIAO7ENYUC-9BOW9X_JMKAbE7zNee-Pt_Vg6-yDyT7XehurYRP4RfDcOgMR2J0Z2RsPOJm_gLGKAAxWPCdpX10ObtN8jZbERbJjstyjIGcfEsmsKG3nysaPxP_rXW_K2NCxST_Tkf70VpkzSxQ8eFj5QKkF0PZmqoWDnhHTjOX8ekmMC44sww-3aaJlTgr_rR7lPhV76CmPgR7uasWWXINC2_C",
+            "width" : 3600
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104344998873906732902\"\u003eazwan roy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-seG9lOPDIIUDAaZzL3Ia-P5Fxf4u-Qi-kcz1Hcy7tnslz4soqhrgFtjnJe5OeS2fJGi3MOk7FY5byzH7DSSAFjtHMQKSi0l6-RdST4EWICwWKXucdPCfBYD3Xqnn8G3-4fSia7tGTvKVuan4C-q11TzDGg3iydUD-MwhfolRBI67laHpaca2S7ji6GmtGtiEfI6gOrX92rSJzARhDmADsqXgn8wzD8_hV0SD9h7ttvyYYWWLtBC2tKEDIO2eAtosfuTg664SP5Nd2RDKfWZhv97tbPREdRFQcfmFAyrGSSVoiwArWWScRNXpat1McEQ99U09a-OUzxjVmZUOKU-34cfN5Mw7hVg2QncHJXkDEH-8lBCbJwUpCFwfZMyJVugQ6ikLxJSnDpXvUaaddcWO59oKvULbW0BCugX1FGCx-4K_Ia",
+            "width" : 4096
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104626022019689957209\"\u003eimran Mr\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4wkY_hMMn3K21aukR858GnyUJWRqEf91O2lh_wit10ju2XSOVTwxIovl-d3GBN1ODQocH7W3oocZayeNsth8o-wKXO3PGdLYYy2nuA8BiaPt6B4M3giN2N3g_V2WImEjf2J1r-kZ6cxbuBIwdyuHeeFQUwEjBjJkgGwNZsC0rdAiX1h1cmhB7R43ZnPW0jAIiC6oKNO7BMzrEkGF17JVvpkyeMBZtnMKc0Ck5o0xTj3kneoRGbhL2NuupCLmLRimQXtRLRzZGnTzZ2KNRyv2qJAul_q3CyE1qHfHRZ9w34eN7lpSLdATGovQvcwNsR9JhfpuHbJ7pOeyRyyA2oxGd5Ot8SJZCTPb9EvxguqAF_vzQZRbP7OrpWGXd3KCQ_uWZU04TGfbw1VJGLGLrij5zN-3WVkeu3T28JSrvFvTPT-1F",
+            "width" : 3600
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105839904952811573053\"\u003eShaharudeen Kamaludeen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v0Nk5xIvquwh599sOvyseT3Elyo-DrR3ZRzZmwhGg0pB9C03QXKUAnkIK0q_14Al9HDLaJnxgDBgmoHD-MaiEgzUD5OoJc7G9RiqeRUoSqw9_0v0LoSpPWo86ONzIyAhaEADk4w9djoidl2_tK8BXaO62wV6XgtyeoVYQuwhC8WVY4oAj0Jb8xg8sfjsyaFhbXPk6QsjGgPLnG5jdkf71Nxr0ox2CweRsMnY1WbibTKcraG8ryJ6RxprFqd5c5GiPn5DiBVHRMl6Pl0oKkzw7jz3-YzbBpCpd-KvZ3tcu3TaDHrzc3A_3N6BI1o09JI5OqZrB5qjXWxEU242nZe8pkNqNFQUa1TV51golgLFZDEbQ59de0Q33LdtDcg8jspH4fSFysPcBqRYg3FQVVezt4_FHC9S1MhlIGN4aAEkjiQ5GG",
+            "width" : 4032
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107136646136826355843\"\u003eNur Darlynee Syuhada\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v3ya7ZvTSatWLAnbihpc9ERXpcuroTWi0cHEJOx4HgogLMtzr2Uxpg5xWLoM6FoI7-6AqJgOGY16lSJa3NIDqySuIX6PQCU90VS410Ib2ReC62gxEKCMzu8aFkuvQO1ihupgxhD_suBxJfnCEhZt-uSwHSJzsj1lRuNEO51CIGKLOjMr8JXTtVjOOlj2iyj90HZwMFqkIhrGOqFusY_PhdrQ2MIgCO4r8juFoZxoE6KBg0ck4lRs8_ZnSMxe_9tkcAozQYA3-POtjLg-4iMdfm55_XIy3Q-YFlx0_ilounh_uCLyECj3YZ8iNYVV3bVWLvBgJyw-X6rJ2ZT6ABeHTvk8mvRZQSo106voiumVJV6sa4_utIGtNRVRnK-L9-xltfdPrmkKQ0DzArX5qp0I6bfPcbZn1cds0M0Ja1ES1tGjCq",
+            "width" : 3060
+         }
+      ],
+      "place_id" : "ChIJhS5wp-hbyzERns3kLuE3oR0",
+      "rating" : 3.9,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2135049138644241822",
+      "user_ratings_total" : 985
+   },
+   "status" : "OK"
+}

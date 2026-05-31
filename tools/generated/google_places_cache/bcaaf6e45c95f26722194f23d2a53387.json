@@ -1,0 +1,1143 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uLGrpAGtcyuEeHjDDjDm0URCqjyAaxMonymgt2SuwwcpBEjoeurpUzI7CGBXHmJb1DwkH3U5RfAVwU9KRsjKu6wRDSe2cAwhSAGAmV-0psT8swuzV8z4Z9DuBboLA7LJv8etwXgZ5KWZIUVBccYWmxhYqhdsrmzQt44oWkkRH9ZT8SyIMyIRK5FnC6bc6rbliFvmEGzw6zMpYdGFephcPOljKgFJB53H6IyurGACrbadg7xh8DdzJXilZEZKdpI0uBEG9fkVA5OzYWXI9h4giUzOqQ9gvUlszQRL88edU7fwEUcmw3hOFM2AVh-UNBYegAq72GYou3Vl1LxIGx7EhJwT1Wo38dwzIRK9Un0Ojn3S3b35lyb0EBPrj_lYzhMIqbHYcxh04lbCj8dyeg3bq0jtuveM89yUE8c-P6L0ou0GNbLqhAPgLJ0r_ASiJj6i-oMuV5y-j22zuXOYAwhrwDXuS2ItJqaiwipW8GfdQ-7xBvO6qESB42ESPok9B0lmOiQVbA5iKVJqLFHbnWYxymt4YGCFEJLPcff8VrQ_zrAbbNH8nA8Mu9LaDEjkDrIgbYGo3JrLGPEbIF9GEWGX_Bgp2fMedwawV4a9CW6MDumhnNMF38LE734AWYQ4iIMbQNpCKdixdCgLexK5UcIlWQNyDcimLaQBfM3NZLuUK3RLJJejVwR69YzoR_9QGbZ9sIJ1u7byjErAUHF8qAmCAD79b-iZq0fjRSNFhPAFlWni72xZFPyRMpZp-TCBpP7DgSuXhA3jgQkM4hMluNYhrwGi_us_aLlfy_DC5zsgp_SUovMmfRF7NWyUJixE8eG37ombUaBolN",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Todak Seberang Jaya, 13700 Perai, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.394035,
+               "lng" : 100.3947562
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.395282680291502,
+                  "lng" : 100.3960533302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.392584719708498,
+                  "lng" : 100.3933553697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Penang Bird Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101262832833451847952\"\u003eMrkhoh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vUAf1cRw64dvkrwRIuAGQVf2dNtaUax0F7FknDApwiM3rr5CtX3fuSjJELheLO6pMo84KWGckoM7INGgJeDIt7OncFdbBjbWCqnhU3ObnyU9oEDeYQ86NRYkOwanLbal6TORlqEsdkWbFzEDFx3KlPgXECfMqfaPCcFJ8qcW-OC19nRBuj6R-Ke2DDjnhIDZy8oWBOymwIpAWRX_IOoXwfFvS-FGo7pDYMwxDlP5Ir4z1VLd_aHcJK9dGO0K2a__bjFG-2okYBtTWygBZ7--TQBKvS06yfHZoUS3ENCrgXwmi6EIBc9qv3PQm1yoMKgv2qgMf6f_aBdmgSAcv1b5d0bOg0y6dZUocvRQ0btVXOyvfW6tqo6j1dvMYnYIEJ_iBIDXqy1eMxvpkOnuWnr_UJnJ6EeUanTEnAhsb4jwCOIQ",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJT2S65tLFSjARUNwYR2gTwJ0",
+         "plus_code" : 
+         {
+            "compound_code" : "99VV+JW Perai, Penang",
+            "global_code" : "6PQ299VV+JW"
+         },
+         "rating" : 4,
+         "reference" : "ChIJT2S65tLFSjARUNwYR2gTwJ0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 1864
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Lorong Permatang Tinggi Indah 2, Taman Permatang Tinggi Indah, 14100 Bukit Mertajam, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2956474,
+               "lng" : 100.4796374
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.297033180291502,
+                  "lng" : 100.4809779302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.294335219708498,
+                  "lng" : 100.4782799697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Permatang Tinggi Circus",
+         "photos" : 
+         [
+            {
+               "height" : 3088,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111181138177688137151\"\u003eChew Yang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZuu-mQCRiWi5kpwHVCOb4IkSx1nHKHnvWeo5jow89qK742bniRBEANTFcKufn0F-gEubuo8M-jB5a7iOgIVof391T8aK9Dw0yqinufWjXZD1evBzvpjgzRyGPQ6NxGWy-YNf5qif3DCiLJGTi8nlYNxbQnkXfOlQImRGDDaVHj_aSc6iIHbAIjaRWi4qqKHOhsTf_7u9xTRFhpbfpPm5BjSFT0_SIEy3-E3bG4unv3JiS4rJza_H5OEgKNLlPgzlp8USWbP0-nbyaGWIYuqeZC9rzrVj9o8xkdCQrI2Egs60MyDHpJGXZ-B7AorGmWFA5c2VHCnDbqGPNIPxosQ3EDQnMH6SHgGKywjt2RGeO8fH-fCiOBY40v-VnHZkq4XmdIWyQZnVmC4KTnr-m9VdFjg5SxFd0WM_QC3pDVfsREpnV",
+               "width" : 2316
+            }
+         ],
+         "place_id" : "ChIJBxYlZQC3SjAR_OFrP8HU0Ec",
+         "plus_code" : 
+         {
+            "compound_code" : "7FWH+7V Bukit Mertajam, Penang",
+            "global_code" : "6PQ27FWH+7V"
+         },
+         "rating" : 5,
+         "reference" : "ChIJBxYlZQC3SjAR_OFrP8HU0Ec",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Siong, 14300 Nibong Tebal, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.165568299999999,
+               "lng" : 100.4772195
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.166946330291502,
+                  "lng" : 100.4785806802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.164248369708497,
+                  "lng" : 100.4758827197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Nibong Tebal Culture Street",
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107856157582790582403\"\u003edetans detans\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-utf2ZswanRWfZNKXSoLcYC9kqyJfPxwy_L1eU9MsEbooB0b-3GvW9GNsVQ7ZqU6DIffay7tUrdztizZAtqkGVZRnYwM2ZE8fTJTgGZQWE5Wi-9DR_LAeoznd000EMYRFSWR72SBWYEFOr8e0CYmOwGRos5Sfa9MT0_4o5oc8DC1SIv80GPOF9eTDtJwcgZBpHmN81Jn49QAUFDHmR5Ccv46cF_DbjBbSZO-jpPKfo1MIIjjXxm7FXoW-yPC6Ndh3eZsoC-yIyxa4cf9ScVAwpois9qFK6mffkcYM8t8xC6mDE1wp_CDSKvYSlk_nYKAXKrW9ZkiT7tk1P9P_BH8BOODKdy131ckr4A5eOFvSKalzYQky8N91sAJ1hbOzT204gpLeyeZLLocijRoYrv9_uxWC-Pj355oCO97nCVgvf-uw",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJS8yoMd-xSjARit9FZ3ZUs-o",
+         "plus_code" : 
+         {
+            "compound_code" : "5F8G+6V Nibong Tebal, Penang",
+            "global_code" : "6PQ25F8G+6V"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJS8yoMd-xSjARit9FZ3ZUs-o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Besar Kampung Permatang Ara, Sungai Bakap, 14200 Sungai Jawi, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2231704,
+               "lng" : 100.4964133
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.224528830291502,
+                  "lng" : 100.4977780802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.221830869708497,
+                  "lng" : 100.4950801197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jawi Kongsi Kee Heritage Building",
+         "photos" : 
+         [
+            {
+               "height" : 2536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114289913644508413771\"\u003eTEO JOO HERN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vT7QljaJ2dl0YhLCMv4Z21BZz3KcWxxwxJjr8KE1fzdaXOoo-MCg9zJv1yaVJCgUw5Rv6LBR0-z-FY8qkDrpXN3VBlJnT4XdCH3b-7qaJ08kRSby3HK6cq9J9rfGMrYg7v_SRlP4wQEIUhGKblPqXyy6NQN4tJetGYv1HvRbFKhN8wus6Ldp5P2-8HYMIYHWAane70sEO04oKRXCy9TOusV2IzFUC6Altrgny8NL00MAFfqWXnfs5MnXqXG7QlnmQ_hl81-pj3Jsk9dPic4-dcFbkzLRUZMBaoreVVtApGbmAOObuZhh5TzIXDa9y6rF9dXVHpCRWU8urOGMX_SxrXryH_MsyHAxVLwBUy3xLPOgi3gWKk3-T6j6g3FIQnxSMUmFrzphr5pzlFNY5lieSDFCvDRtvfcb5MfbDPaxw1_0UkaM-k5D9D9qVAaCnc",
+               "width" : 3383
+            }
+         ],
+         "place_id" : "ChIJfzLUmES3SjAROPe5s4hs3tM",
+         "plus_code" : 
+         {
+            "compound_code" : "6FFW+7H Sungai Bakap, Sungai Jawi, Penang",
+            "global_code" : "6PQ26FFW+7H"
+         },
+         "rating" : 5,
+         "reference" : "ChIJfzLUmES3SjAROPe5s4hs3tM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1938-B River Park Jalan Perusahaan Auto City, Bandar Perai Jaya, 13600 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.335986500000001,
+               "lng" : 100.427564
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.337461030291503,
+                  "lng" : 100.4289230802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.334763069708498,
+                  "lng" : 100.4262251197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Penang River Cruise",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2296,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104093785804395297671\"\u003eKok Hooi Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v-NfP1iRgGOcQkwyHOE2izRkWD4R1nrq2rSwMiCHPpbgAR2KJhOfsOfhrkNOKhWqYwh9WKZgnvUcuTVkYwwJH8JZm6zQU-tbQumJkg1R3tjacubgGgy7DZd7h1P4ns9dlMSn9kzKjCRaouXPU23G0-VSocWs5xhqXSIk1GQx3vddibSRRwUdNDtiw3HPX0pAfPMand9KJratFcogp7fNxZsjaEwjeZcEdl_jjxu3eFl_poCmOZrJiYIBfuG-YTgEN-BsBG7t-48MqLYe7OY_qINMhDkxJvbeFrGj-xD--hJHu2oacO7yBnyJomTrW-czmuayHJ51k02CYw0ZWeOqEEQf0cSnrLNKqD3QLdTDncrLd95bo0UoHnrGi9Xt2OWt-fBghP5K2oiqQQIk9o_Ssay4KimlYwAoxdrMj1dYYpRZ0_BNtC1b183MS_hnMX",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJybul6H_HSjARsOghx_1b9TY",
+         "plus_code" : 
+         {
+            "compound_code" : "8CPH+92 Perai, Penang",
+            "global_code" : "6PQ28CPH+92"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJybul6H_HSjARsOghx_1b9TY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 170
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pengkalan Weld, George Town, 10300 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4128345,
+               "lng" : 100.3396559
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.414257180291503,
+                  "lng" : 100.3409637302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.411559219708498,
+                  "lng" : 100.3382657697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Clan Jetties of Penang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108963896199521831144\"\u003eJulius Chang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vU2sS36eYUitDQxTWZuYeMGEi2f7cqQX7WDbPB0NZVdqcdM7QBKor8Ku8mNzU7FahYEuYwIP4JqFJHJ5vzSvIC8hYILuR66n4McZgm0QNQfqMVdAEbIhaU0kn6tK_if9QJreAXcsaXDfLvV_ZF75ZeW2xQOIvAeWEGLQIgtVqqLUZLLuT99h4StI_VcheAcCLFdBHls4J4_DJuDPucJyis6kn_-p1E4DtrLJjmFsMrHgkxYEUYCeP_dD3HLQSFZ4ttHC75SEX_FZ5JjnYAaLGPgxXNav2vdrq2MgiBdxnys13OPs9bDqL41vAk6c7Yv36CWkYbAmAgkbrzD4h9cOJzShMbPORaIzp1C60cEcpYvQNjSi-OLzgKydR0I3tg4GHPqhSGHLcIt3r1NmreLxRj3IEoq_8MzwdHjq3QBWa21A",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJESJTC43DSjARiVDKy9hsY74",
+         "plus_code" : 
+         {
+            "compound_code" : "C87Q+4V George Town, Penang",
+            "global_code" : "6PQ2C87Q+4V"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJESJTC43DSjARiVDKy9hsY74",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4152
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Todak, 13700 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3965691,
+               "lng" : 100.3963659
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.397908730291502,
+                  "lng" : 100.3977326802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.395210769708497,
+                  "lng" : 100.3950347197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Street of Harmony Seberang Jaya",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113834605979682842612\"\u003eStreet of Harmony Seberang Jaya\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vpAKkTJfduRNAoytkujzRSiE8BLkF-9SuhavlXWv8WOKEl6FVopoVmn1glAwrQT2ILZ1AeKDWdO3C9g2696Z_MjAvWs2YLCQw-tQWpLQ_h2JG1pHbXur5Y1YMGKv0_vGLyZKpt_4zJYkQEbXrZAPtchVX2LteLMrZCoML0K_O5IdbM_K71KBBtl6-IhqdMotouhKRl5IUrqD6AX-Y2vCT73t6VSOVvjEDvKbelmOez1VUN-9MRq4dwZpE6G6g8BDKlvn5JvLwJITYy484tshP_YiKVg_AVuAb3cMaRbO20kg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ9T0F4zbFSjARJJCgM_CRT1g",
+         "plus_code" : 
+         {
+            "compound_code" : "99WW+JG Perai, Penang",
+            "global_code" : "6PQ299WW+JG"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ9T0F4zbFSjARJJCgM_CRT1g",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Tenggiri, Seberang Jaya, 13700 Seberang Jaya, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.388674000000001,
+               "lng" : 100.402351
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.390185830291503,
+                  "lng" : 100.4042696802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.387487869708498,
+                  "lng" : 100.4015717197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Tunku Park (Seberang Jaya)",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105089899556602492221\"\u003ePHILIP Lew\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ve7cXuHHEPJ0hbspTBdMIBgvmNk6fdYHujTPYb-yc7oFN6iUwtNR3pUZLlS725wdGaq9dyYcVchJ__aoou0HKKPF-DRSqwaMIsCDUV-NN4-nOHaKNMfOq_UAyXojjwNmIhQrboh1Yb3CdOS6b_6TSoBuv7U3asgfZZ5KBOAMsjcZl27vyGLZIwSJ7w5l9w2tj2BgVx_NvQnmgYc7b0Aa2ASMjlOH3l5szPgnCpXqCy2zvecWRK-0hpjksPOdeErDd_ajq-MimReNKQiWsxedMaLqwgxs7dLNp_2rRjD4E3jAZI_h5E3e41Z4BjUdAsvppxW5UBZkjRSBtVSfvPjHmzwHaJPc7iycOWD-5BdJ5I3X0jA22XHsjEB1kSIbtOLuHeteqqJS1at79zMZsrkHGIBquiCHcuZUHD1zdr6GSP9nyh",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJVVVVFXzGSjARPlf26717aAg",
+         "plus_code" : 
+         {
+            "compound_code" : "9CQ2+FW Seberang Jaya, Penang",
+            "global_code" : "6PQ29CQ2+FW"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJVVVVFXzGSjARPlf26717aAg",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 806
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "29, Church St, Georgetown, 10200 George Town, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4178275,
+               "lng" : 100.3412046
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.419255480291502,
+                  "lng" : 100.3426059302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.416557519708498,
+                  "lng" : 100.3399079697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Pinang Peranakan Mansion",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103777026416219040033\"\u003eDylan YU\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uEN6yWbOKtVxGReTAU0tiQ28Nug0dAPYHytbXl8TMg_RwNEepiI-ST9hjequT64hVzpILqgaW8VTFhdwyyK5Yd8dc6wsnYJsNMGxgpSNKJa55-aOlFF0UKEGS-iyp4d7MHHuEAZZ8s5vnd3SJbXxBc2Hq6Ld7seoaQmiTEUjdYCJIQjWdWYaEji27aGY5zlN9-TKFRRhlGZ3bl_noKhTS5v3IBj5AgIrq2RtGvqSPvEO7HuYfHFX4Q2ZWYs-0-T2UEQ5HVZu68z5G28S1bVrBbXQ2anogjYP6k8xcatiboQQ1N5YTB8SA2sa_Z4qTDrqRR6YTWk7grYxhoZyrNrhHjVjNnhGeSAnOxGRNYMAVKrtIbnvNajcUEm60273qtk9TAq6iWDuBF6k3XRIelox2KfVZ7VbHCgg8uQFTiPSlGVYqp",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJCWvz3I_DSjAR5hveCXjdfIs",
+         "plus_code" : 
+         {
+            "compound_code" : "C89R+4F George Town, Penang",
+            "global_code" : "6PQ2C89R+4F"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJCWvz3I_DSjAR5hveCXjdfIs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6190
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Taman Bukit Negeri, 14300 Nibong Tebal, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.1600434,
+               "lng" : 100.5480337
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.161447130291502,
+                  "lng" : 100.5494164302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.158749169708497,
+                  "lng" : 100.5467184697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Negeri Bukit Panchor, Pulau Pinang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106523520972281294821\"\u003eFikri Ridzuan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tqqiNpVslA7abAHrn0OyO57JTcGV-pm5KrfHRvZWa-3JuP8VB2phQD-veK2DDeLR5H1Vjz-Q4Ts8cMH9eAehZiBsnOTAqMcNxJOe9hZkKqpgczhfV-kSH3g0A1ZYyCMdjvzIBiG1rFauyAAEj6VWA7BjjhpsRsjEkb-WvpsqyARKAxiOzRdF1Beia-iW4bawhda0MxXo1gyGA7ZD6_spxx-SvPCrfzJ9IBvTaXW8JWC3q6X9fjl8hjT_msp8brA-0qyMn1PrkHM5oV-URW0auphm1DUOX28e9iB3tCzenwmpf6kLdrbgO8m93H5H146Lz80SGsruKCFx-bv5BSxZ8qR5Neyw4mWeD2axpeLG6fhQkxyHx6twU5R3-PlhqfQChdPY-gohK6yUdcRyGsyWf6PzO8Li-Foap_0-k-OdboUw",
+               "width" : 2000
+            }
+         ],
+         "place_id" : "ChIJiWMlPT6ySjARHixSpSe14TQ",
+         "plus_code" : 
+         {
+            "compound_code" : "5G6X+26 Nibong Tebal, Penang",
+            "global_code" : "6PQ25G6X+26"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJiWMlPT6ySjARHixSpSe14TQ",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1160
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "14000 Bukit Mertajam, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.352135,
+               "lng" : 100.4781652
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.353494980291503,
+                  "lng" : 100.4793284302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.350797019708498,
+                  "lng" : 100.4766304697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Saint Anne Church (1888)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114039594531750623870\"\u003eE T\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ubY8ADl9n9KYBDBUvF32_lQO78H5thEur3L9NoioxKdkeTB-yxNGBki_0u2YyQ4O-97O5NATTYHfQVsaEAxJca13QcIGNuSGcS9bN0B4VMFUP-UPJ-iJg18Fe4FEQJD-My1GZ46KUeUt3AHzLu41oherOBtiYQ1uAIfpgaHobk1MWR6EzrmlqC6ZPVXtZbnMWW3G6r_qtmJeOjkm42KOCrIOS9JHAQVgAsi-Z5XMEjwY7r1lfIvhxly6kDx0OPEH6aqpXCUJLNNU034cBojygerpEzre3BYcXWaXfMcLTZDJ4OSftYtnRWz0bo969vLrL2DDEBtOq4ryUJmbpZa62v351xISYnbASAd3tzsIa9ALR_HGKDSK8caXfHvosPbqlxB6jtc6m1raovDREQnSZO-cJJPRJ3OPTrfIE5u1Aw8vV_-L3FdG3D3mWZ_8-q",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJYWI13MPJSjARg-iIi5KLwhw",
+         "plus_code" : 
+         {
+            "compound_code" : "9F2H+V7 Bukit Mertajam, Penang",
+            "global_code" : "6PQ29F2H+V7"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJYWI13MPJSjARg-iIi5KLwhw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 51
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "20, Lorong Sembilang 11, Seberang Jaya, 13700 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4052111,
+               "lng" : 100.3968673
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.406550330291502,
+                  "lng" : 100.3982079302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.403852369708497,
+                  "lng" : 100.3955099697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman mainan sekolah",
+         "place_id" : "ChIJ-aAQUwDFSjARZKm7UKyZdcw",
+         "plus_code" : 
+         {
+            "compound_code" : "C94W+3P Perai, Penang",
+            "global_code" : "6PQ2C94W+3P"
+         },
+         "reference" : "ChIJ-aAQUwDFSjARZKm7UKyZdcw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "14100 Simpang Ampat, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2748154,
+               "lng" : 100.4451542
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.276157030291501,
+                  "lng" : 100.4465163302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.273459069708498,
+                  "lng" : 100.4438183697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Baru Bagan Bukit Tambun",
+         "place_id" : "ChIJIe5qIDe3SjARK6_hJ_Wtcic",
+         "plus_code" : 
+         {
+            "compound_code" : "7CFW+W3 Simpang Ampat, Penang",
+            "global_code" : "6PQ27CFW+W3"
+         },
+         "rating" : 4,
+         "reference" : "ChIJIe5qIDe3SjARK6_hJ_Wtcic",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tidak Ada Nama, 14000 Bukit Mertajam, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.373370899999999,
+               "lng" : 100.4783238
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.374715580291502,
+                  "lng" : 100.4796715802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.372017619708497,
+                  "lng" : 100.4769736197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Berapit",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3968,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108541334371797571486\"\u003ePoh Ban Soon\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u9Zv_DGtjPq-2Ukvryao7RJNCqzkPvkZLCidWGy2BNl44Q02-MdxXm9shtdN7PIt1H7rz0ZByRKuCMol9C2X2TijViy5El8NvSS11fwy5P91p2oMpG1U-Y92DvG24pO1hY1yjtmnbhpd2sikA021lerex75F50AIVUD3YMOyBjnD769hULg6LlknlZoxmTwKOGQSDf9RxGbGtAqWetoKZuIsTunwjT9VwD9bXdqpvRPc4AdlJXnKRbARwgLcMBrvxjhY86VrfDbBAsyX3ldiKmueX_PPOMA_mh-PaR3tgMR8P-FPh3WWBhGIO_AKycR3-o0PWq6fJth44swRN5g3IlBP2BufJSOlZjJFhOo7xRhcMAVVxltXXEWf8plQMfj75D0wCm4zfven0SgvrXtOzSUReOA5xEh4bM4wg3vVeW0pUl",
+               "width" : 2976
+            }
+         ],
+         "place_id" : "ChIJ83qj2NvISjAROGFjN3Krcsw",
+         "plus_code" : 
+         {
+            "compound_code" : "9FFH+88 Bukit Mertajam, Penang",
+            "global_code" : "6PQ29FFH+88"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ83qj2NvISjAROGFjN3Krcsw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 296
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2999, Jalan Todak, Seberang Jaya, 13700 Perai, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3962644,
+               "lng" : 100.3954723
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.397536530291503,
+                  "lng" : 100.3967756302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.394838569708498,
+                  "lng" : 100.3940776697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gurdwara Seberang Jaya (Sikh)",
+         "photos" : 
+         [
+            {
+               "height" : 606,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118353619858599571679\"\u003eShaarad Ram Singh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v5s6jjd4gFHX4g3-wi8CiRHkHL5qICltLFRbE1fzz0NcoxhAzmFKJ2Z0E-lFK1OG2_765G8_Omy6e-cLs_LCb5ynx5wucvpD0FKQ-7uDg7n4AjFjjUS9CWIq_jaCbYz0Zv86vN72AuW77Q_N7J3SmcCtmMW7KJo4__4LKDCqFROLnXL4V0qnwwW47MXEBjoMU8px_0aC179y7KmpkuTKX4q_BnYyiUZsE9xhAggyxERF6RjC-v3tRNLl0La-cCpejYqmr3mKVxIO3nE2IwD294fC7Lw-D2751DunX5EhUzfAaKivuinG1pqcRT2RLabmrYGNpATxQFdD1KnQyBo2h3xUErXT6oXj-d-KCYXoUS-T-6UejpOlIMzDkhWJ1D2Ylfv-pRrBOrhV_3zta1OvakvChGx50lCtWLpD1VYJwdvw",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJJ9pnijbFSjARbB3EYWwM2Y0",
+         "plus_code" : 
+         {
+            "compound_code" : "99WW+G5 Perai, Penang",
+            "global_code" : "6PQ299WW+G5"
+         },
+         "rating" : 5,
+         "reference" : "ChIJJ9pnijbFSjARbB3EYWwM2Y0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Lorong Bagan Luar 1, Bagan Luar, 12000 Butterworth, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4095609,
+               "lng" : 100.3703333
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.410921530291502,
+                  "lng" : 100.3716466802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.408223569708498,
+                  "lng" : 100.3689487197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Butterworth Art Walk",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110694517235557472790\"\u003eSim Ai Gim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-se5f7FiUv8Xs0k2jcAfRct2PaUVx1ME7vYSOoFDhVrCXSZ2DOsy3O3Qehm5ISqLSGC3VN97GFMKhHXZyHNv37fLBVjCEFcenZKe-vX5W2Aa175uZR_5zckqTWP8AKno-Ri3IGI8mIHuBRrggqXpDstEY1WihTLuwzzOfS580h2NPkW3_18qJn4x3Cv5Gbf0VEkQYdYytgYQ91cj3eu8RR8VJz5rRQqcncIuzcKok-DNRyf-fw7lu9fFq_EuZrIcLHW-T2vRQNrpP16i0mgwIjbWiWBKNIYn3V5OglbsqoLbq4wlC9-97ajt9R6Vt5Ns7YIbwFQH4gQGZduJ0zwT5gY7DhWGx8WFnfJFgP_W_X8VeOQQMSB8llKhfzNCE9UtKbIWkaKw1KOQnnaMDsybYExUkqKYaW3VQEvJBgQNCQFHXhx",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJsXvOMhXESjAR8oY2zabZ2Jg",
+         "plus_code" : 
+         {
+            "compound_code" : "C95C+R4 Butterworth, Penang",
+            "global_code" : "6PQ2C95C+R4"
+         },
+         "rating" : 4,
+         "reference" : "ChIJsXvOMhXESjAR8oY2zabZ2Jg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1088
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Bagan Luar 2, Bagan Luar, 12000 Butterworth, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4097949,
+               "lng" : 100.3703324
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.411133680291502,
+                  "lng" : 100.3717113302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.408435719708497,
+                  "lng" : 100.3690133697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Butterworth Street Art",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101192809825688743813\"\u003eKano Ky\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vETyeXJS6Y1uwojUXo6aLqJ3I8a6yS4Q3U_ZrqAGdrhvgQkSThE-0Glew52ETegsL_eCkAS1uWzTFBo4Marc5bOv44MF-SoIUmNTcMW5YsEl_dGtJlLMuH2Yo2aKfCSUcwOSZTNjNY1eC5ZTjl8i3HNuwYSbRIluyRK9EgZDDR7ACjBzLKbYJoVr8fSo9-INT5UIWq3qExJ4qnaYCYndngwf8Qw5jQs7TYSB2T42aRkB--FHTZtxxqat_lv0FDkMKIN3HFXdgWQdCPmQZpR4MCSAQwNV8QsXKZY2M9B8uK0WE8lNJ_qWK2E-Cw0Qu-JZVJKQ5OKVAU1YHwTLLCN9PLvIXpUNEbdJS1iYXrR30NUa3cBnDfUy_UUVb1PyOBH9Qcw0SSV3e5GkGd1S79q6wFFgIxKL0twYFJNN7OIjvGXA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJfwN42GLFSjARB8DJzDpWlWY",
+         "plus_code" : 
+         {
+            "compound_code" : "C95C+W4 Butterworth, Penang",
+            "global_code" : "6PQ2C95C+W4"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJfwN42GLFSjARB8DJzDpWlWY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7C84+79, Simpang Ampat, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2656971,
+               "lng" : 100.4059467
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.267066480291502,
+                  "lng" : 100.4073595302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.264368519708498,
+                  "lng" : 100.4046615697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Musang Jetty",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117925966378670636345\"\u003eRavidu Nipun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uvu2VvpzI0b8cqyn7lb0rU1n1XUxtuTRR6-UB96_gG7Z6de1RFFGWPqJzqrNlL1HZwL2DlNhuHJQvHSv1RdrUvhxi6HjVAOrGPKx08irxZa4-3C4jdZLW0j_yiSU46mWE15v8Af4uvLJXCVlWEW52Bbml0Wrxlx_6wb1bjNDkUhkf8f00fUxfnadugGjl0_O1orc6nXjogOtQMDs4-l_goeYEA6UQatMBKZgWbhYfF58iil8M038csoFbQcVMuBOo_PP-O5aCCeg_HwJKOq-cppeSWxEqmryUKKks8O-0wWtnIvpyQoh63Wk0gOK5Zj1UkKpQCc04HsiHbD04zC83atG-RNFiIsmtiosERQE0x-gYrUNFfP-DnNqhpBlftFrRufjjotbsDZXS1fn5bx9eZVbqeLgTzhW2WKj1voJ13jw",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJdZiD_p-5SjARrw4MdaR8-5c",
+         "rating" : 4.4,
+         "reference" : "ChIJdZiD_p-5SjARrw4MdaR8-5c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 131
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "57, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4137354,
+               "lng" : 100.3348618
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.415110880291503,
+                  "lng" : 100.3362340802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.412412919708498,
+                  "lng" : 100.3335361197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Ghost Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103519540283888579637\"\u003eMiles\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sUkH7l2STekZKBiifps5wo5a0j3OsyTDMDTGLGHx9Xom5BdcI599qcZWm2GsdyDQjvJrC71wZxT8x7usiBH-U_Vi-1K2tuoScx4zCiTKxdnvvFE6BAlPj3yvbYCrJ4uG3u7eAD58pECNyIEyI1Je9GYphY7ZTwtRyQ0VcsQdu8TCvKNIuaS6b4jTE636P4kesmhy2sWd4tHCAcpl8PwnNSPHX-s6nKRtCQFWpPoKdqzJKonvnjEAYibwU5O7-dw8OzyuQm3lIcyCcmoAcWfQ8GguO17Oi1omvkBffooyKLOHOLNIoQcM3g_evG_pWCR_5yrlAAjv7ltJyBPVOPsNFYtAqk-46ghJ7aWp0YkItzOmVhjv6HmLeOaM0RRRsWHeg1QWBIKG5mKUGznfzQ4OB0xxjkzaCG6Dl46wfSCcGtnw",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJMVwPuZPDSjARUbEIN3RoO_Q",
+         "plus_code" : 
+         {
+            "compound_code" : "C87M+FW George Town, Penang",
+            "global_code" : "6PQ2C87M+FW"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJMVwPuZPDSjARUbEIN3RoO_Q",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 4247
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Seberang Jaya, 13700 Perai, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.404202499999999,
+               "lng" : 100.4003315
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.405506080291501,
+                  "lng" : 100.4015552302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.402808119708497,
+                  "lng" : 100.3988572697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Sembilang Taman Rekreasi Awam",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108448421568208503998\"\u003eForest Ang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u5CLjfpaShg5T18ScXds2HgWx1ZrDLzPxGP5hRtGQoHOjS5e75OJOj-PS9-hWIkX-PAAnFjtpKFXdcWP5oHDXT1ZiOg5F3tEN_F8Ob_Zd1RpwC6vVvdfqX50MBR7J9yJwxoU8F8ra0NgqWyV_4iHGxfIemvAYLf1fqcySmODzkuHUyCkK0XI8izT9RzJDtLRjtdseOpuNdlr7aeA-OduZ1qs-wPpKc0fC-xaYV8wRtulqw4QpNVsPHSmtk6lb80P_XdxfLrt6xxHS8xDM01rgnS9Uf2BLtJvpyTW6_drYHFOYDe2KH4y1-SWevX27KNuU-JmLeCFhC-y5nyhn1YrjHMFfGRgFXoPoqR-uiHeuLJzHdoCG8B27S76dQZl2-GXIvF9ebSN46i0o-zoceHeatnh1GbGmWzkMbMHuGhKqZbA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJVVVVFXzGSjARgdo_A3bO-5g",
+         "plus_code" : 
+         {
+            "compound_code" : "CC32+M4 Perai, Penang",
+            "global_code" : "6PQ2CC32+M4"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJVVVVFXzGSjARgdo_A3bO-5g",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 136
+      }
+   ],
+   "status" : "OK"
+}

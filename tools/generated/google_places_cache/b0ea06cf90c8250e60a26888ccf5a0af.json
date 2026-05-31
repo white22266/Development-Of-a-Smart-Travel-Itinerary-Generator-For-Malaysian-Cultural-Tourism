@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "2, Lorong Permatang Tinggi Indah 2, Taman Permatang Tinggi Indah, 14100 Bukit Mertajam, Pulau Pinang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.2956474,
+            "lng" : 100.4796374
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.297033180291502,
+               "lng" : 100.4809779302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.294335219708498,
+               "lng" : 100.4782799697085
+            }
+         }
+      },
+      "name" : "Permatang Tinggi Circus",
+      "photos" : 
+      [
+         {
+            "height" : 3088,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111181138177688137151\"\u003eChew Yang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-viF0QbqiSMEzNDEXLvD5yh_kQPX04ViL7Ld7_6BpmmUNbXSCca32RmLF4cN8REPG64iehDVryNnmlcxsNOgc-ZbiBvyKzUddGNFPJnWx0l2ZG_YLt7lhSP_-VRw5QMwWvrHKngIY5-IhlZ8LBhXfMZuimxAS2rwdzv2xIffZr581cymnz33L0uoeWxSAj04fW1qXVFw1OB9qDUBI_-IT2Wx_NXR_2x2OymgNlUG7__ZGfJ1WY_N6xbU1ONX2nonMJ3X_cXfqT3lOTrqr8sPxYLf6k37AulnrVYu402jFS1O5h1RgFR9AzKaVu8sz3JG06_RnGh7roXcyoRpoT2OQvCG7wh0fZVjJ_ATexW61YYFJpwJCdfNYs-bVz0moAAk3Pv00q-_n1BhJsv9_wQloCi510gsKCkS_cZ6hO35i3RdBH-",
+            "width" : 2316
+         }
+      ],
+      "place_id" : "ChIJBxYlZQC3SjAR_OFrP8HU0Ec",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5174869898306511356",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

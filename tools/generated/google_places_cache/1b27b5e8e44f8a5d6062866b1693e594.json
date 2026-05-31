@@ -1,0 +1,85 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "AH150, 98700, Pekan Limbang, 98700 Limbang, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.7513517,
+            "lng" : 115.00791
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.752678030291502,
+               "lng" : 115.0092873802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.749980069708498,
+               "lng" : 115.0065894197085
+            }
+         }
+      },
+      "name" : "Memorial of 1962 Insurrection",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3648,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102227567030753284400\"\u003eBern\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOZwFiegqFEFjfhPXG3lbjpZwWPoI7BVuCt-jGUKndsmlwSatUuDz22b-6dEWE11-AMk-h5sdZ3vEoxJIFwV5UJk8rNCzKWe-Nhij78qVL4FzK3KCKkQtd9UY4mlYQIwFxX6wy4yPwYOeTOsw2jM10wOytpZlHtTymwncnLnt3XbQiVyXuWAjdjLa-CjUO1QtGMegsoPYn4kL2qBFsmlHC7ax7s0kkwBsbCkn2oZH9AydOArSmxC8tYbDEn1wjMxWuVPA36qBiA3SczIw7wl88zuK0jpKldv3zTNmn8eRdsn-rZ01K2WjXXi4nV0puasIAgPw_ZximlX-8KZ2es7uTNiVXsGh9KBEeMjF1Nc7sFrZy8IKl6bONRELnIckMGfXO5GxGMklDLbMRhYxiNyWMUc-tGj_5Tpv4wKyX-ilg0A",
+            "width" : 2736
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104920201070722561378\"\u003eWerner Luzi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-unD5GGlCEVt3xGKJLcSnrHzjFzMRs6eDd4zCLHbzdXHnUpNQbLuvvMOEfxt1hLHmISjn8swcI6UzAqCP1UfXOz6rbM7F_bcbNIpihB2OiJXTXz_1DNerH3mynDX-yNkECyh-LEjyJa4lQy_ozMH16-i9rhNzZMKaWlaK6dYSS43zyyKNl8DV9iuSnuVXmMMQGOLImiabZ_95CImAxJVocuxIrdsFMBhrAMphnvNISiak1RAqQupk5nNURLj8YnHTBofUejj0rH4LWpwycF5kRdO21fl7r5LQZLfywcKCakoXYwi_Bg9sYX0cX6ve5kl-E6tTk6TsxsUQuh_umH7LGMsImBqaICgUbwQI51n4rGP4v3QpIN_SZ-bIjFXRFR_zQTX00JB-oqZdtWHahgBqDS18OEUmzL6B7kIaGtTP_xURk",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJb9Mz2raPIjIR0LNSC36SvJw",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=11294063035591865296",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

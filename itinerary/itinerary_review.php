@@ -755,8 +755,8 @@ $startDate = $it["start_date"] ?? null;
         <!-- ===== Hotel Selection ===== -->
         <?php if (!empty($hotelsByState)): ?>
         <div class="card" style="padding:18px; margin-bottom:20px;">
-            <h3 style="margin-bottom:6px;">Select Your Hotel(s)</h3>
-            <p class="meta" style="margin-top:0; margin-bottom:14px;">Choose a hotel for your stay. Match score is based on price vs. budget, rating, and proximity to your itinerary places.</p>
+            <h3 style="margin-bottom:6px;">Select Your Hotel</h3>
+            <p class="meta" style="margin-top:0; margin-bottom:14px;">Live accommodation suggestions from Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>
 
             <?php foreach ($hotelsByState as $state => $hotels): ?>
             <?php if (empty($hotels)) continue; ?>
@@ -774,19 +774,20 @@ $startDate = $it["start_date"] ?? null;
                             default   => '#ef4444',
                         };
                     ?>
+                    <?php $hotelDomId = preg_replace('/[^a-zA-Z0-9_-]/', '_', (string)($h['google_place_id'] ?? $h['name'])); ?>
                     <div class="hotel-card-review"
-                         id="hotel-card-<?php echo (int)$h['hotel_id']; ?>"
-                         onclick="selectHotel(<?php echo (int)$h['hotel_id']; ?>, '<?php echo addslashes(htmlspecialchars($h['name'])); ?>', '<?php echo addslashes(htmlspecialchars($state)); ?>')">
+                         id="hotel-card-<?php echo htmlspecialchars($hotelDomId); ?>"
+                         onclick="selectHotel('<?php echo htmlspecialchars($hotelDomId, ENT_QUOTES); ?>', '<?php echo htmlspecialchars($h['google_place_id'] ?? "", ENT_QUOTES); ?>', '<?php echo addslashes(htmlspecialchars($h['name'])); ?>')">
                         <span class="hotel-select-badge">Selected</span>
                         <div class="hotel-name-rv"><?php echo htmlspecialchars($h['name']); ?></div>
                         <div class="hotel-meta-rv">
-                            <?php echo htmlspecialchars($h['district'] ? $h['district'] . ', ' . $state : $state); ?>
-                            &middot; Rating: <?php echo number_format((float)$h['rating'], 1); ?>/5
+                            <?php echo htmlspecialchars($h['address'] ?? $state); ?>
+                            &middot; Google rating: <?php echo number_format((float)$h['rating'], 1); ?>/5
                             <?php if (isset($h['distance_km'])): ?>
                                 &middot; <?php echo number_format((float)$h['distance_km'], 1); ?> km
                             <?php endif; ?>
                         </div>
-                        <div class="hotel-price-rv">RM <?php echo number_format((float)$h['price_per_night'], 0); ?> / night</div>
+                        <div class="hotel-price-rv">Estimated RM <?php echo number_format((float)$h['price_per_night'], 0); ?> / night</div>
                         <!-- Hotel match score -->
                         <div style="margin-top:8px;">
                             <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;">
@@ -853,7 +854,7 @@ const ITINERARY_ID = <?php echo $itineraryId; ?>;
 const itemStatus   = {}; // item_id -> 'accepted' | 'rejected'
 const replacementMap = {}; // item_id -> selected replacement place payload, saved only on Confirm
 const originalCards = {};
-let selectedHotelId   = null;
+let selectedHotelPlaceId = '';
 let selectedHotelName = '';
 
 // Initialise all as accepted
@@ -1003,19 +1004,19 @@ async function replacePlace(itemId, day, state, category) {
 }
 
 // ---- Hotel selection ----
-function selectHotel(hotelId, hotelName, state) {
+function selectHotel(cardId, placeId, hotelName) {
     // Deselect all
     document.querySelectorAll('.hotel-card-review').forEach(c => c.classList.remove('selected'));
     // Select clicked
-    const card = document.getElementById('hotel-card-' + hotelId);
+    const card = document.getElementById('hotel-card-' + cardId);
     if (card) {
-        if (selectedHotelId === hotelId) {
+        if (selectedHotelPlaceId === placeId) {
             // Toggle off
-            selectedHotelId   = null;
+            selectedHotelPlaceId = '';
             selectedHotelName = '';
         } else {
             card.classList.add('selected');
-            selectedHotelId   = hotelId;
+            selectedHotelPlaceId = placeId;
             selectedHotelName = hotelName;
         }
     }
@@ -1047,7 +1048,7 @@ function resetAll() {
     });
     Object.keys(replacementMap).forEach(k => delete replacementMap[k]);
     document.querySelectorAll('.hotel-card-review').forEach(c => c.classList.remove('selected'));
-    selectedHotelId   = null;
+    selectedHotelPlaceId = '';
     selectedHotelName = '';
     updateStats();
 }
@@ -1112,7 +1113,7 @@ async function confirmReview() {
                 action:       'confirm',
                 itinerary_id: ITINERARY_ID,
                 rejected_ids: rejectedIds.join(','),
-                hotel_id:     selectedHotelId || '',
+                hotel_place_id: selectedHotelPlaceId || '',
                 replacements_json: JSON.stringify(replacementMap),
             })
         });

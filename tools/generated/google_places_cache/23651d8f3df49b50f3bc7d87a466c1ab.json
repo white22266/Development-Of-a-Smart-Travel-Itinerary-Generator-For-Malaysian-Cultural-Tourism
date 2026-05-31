@@ -1,0 +1,83 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "R928+JW Sungai Sapi, 89100 Beluran, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.8015468,
+            "lng" : 117.3673004
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.802769430291502,
+               "lng" : 117.3685595802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.800071469708498,
+               "lng" : 117.3658616197085
+            }
+         }
+      },
+      "name" : "Gereja Anglikan St. Barnabas, Penimbanan",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: Closed",
+            "Saturday: Closed",
+            "Sunday: 9:00 AM – 12:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 544,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109250549717610159272\"\u003eMichels Mainsal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uqLJODZRZBtya9NSTcxdEkBdNArUu8TfKbc7hE9MBrQHDdXbf1CdIUBzDIQ_4hr7_FwAxylA27SypO4NV5eHV07o0e28VA01_tYDvNeXEixLrP_NHmhvJBGz3Ct3qFFHnuTvrEZcb1Y5Z_fbjy8l6SbNAnrzxIAZyBSveGzLi8v4tTXDnKCiW63-bKUikkhDVgZIJZZKDKBKXuxBUquUxRobqiwgf5ypB5DkIWZ167J_RXGe6Kd4Zvxsl70V_PntIYV7yMPBx8GteSea3DZf5Esq963h5IaI1U-6f0t14oIerolmGXvoVVA9keMmeyy6HWp5Nslyqo467K7bdvVM74BTTgxyxBvj0ntLVsrr24cvazjJ_Dbk8l1qaMxsKuSPwONtj3vesPR7pDv4BXS_CQ7LRM2h8rc4HRxMPaoWtdZ3PB",
+            "width" : 960
+         }
+      ],
+      "place_id" : "ChIJGZ1GL9tPOTIRcALupvoNRXk",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8738406022175916656",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

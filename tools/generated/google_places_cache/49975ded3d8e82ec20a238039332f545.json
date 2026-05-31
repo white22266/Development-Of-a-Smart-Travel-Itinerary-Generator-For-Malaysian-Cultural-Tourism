@@ -1,0 +1,1242 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vPBqW8RtWCxJGXL9dQWqp5iPkQSKUe6ANIDrGsIDyHYKT0HQHA6AGUcPyBtmGxTzwBXAGTrkokpXeQ_LSK1vEjFV1i4TNg1Im43GMJMZnpMittcddFxJqB5q3Kr2cjuHPlV7pVXtzkJthI3iygJu-m3f3P5xS3jMRYDoqj_Z3PQTbLYW6P-Jqm7iADK1yGZ9YOKp3CFKEwMhqWBPiS7Bx8Yim9XfcWOLKaagXeOylit7UL_tpQ8klzC3uZH2TfXXu0mSO6eYGqhvGXoAoHeO6wS5QpQ9MW95qmA4mVe6tBGTnkBbkijbU3BTICZATvI73E29ywJLwDKfpIVSojIC9zWTXkftOmbWL2-BsKu9My9dgZYj6yNarjKDCD1bk7W7NbtoAoJMzAyc16lqY-a3haQcVKEX6Ef5juGMPEf-y18z2OwtO9u7ihmGEbk9vUOO2VyqmE23dgnjMBPIBY2xLSdYaET2exehPZEfXJNhxXbW7XQQal869RQQQHBjWZtsNZNe3gkT2_CPFx1lGDeGCJLjRhAKysz6p5I6lKtdPGi3-OIcmanq29QCLIe18_Aa8cVkW_jUdJAXAFDk3pOcHNNuBz7xK7TMiyVYB9_6U7zBeCJ5CyelBdI7YbIfXZNKZrpf-WA7nbsDM0cpFe1KUGasXqYWJokh8bNXSWZNkoYJ0r2M_7M9gEZntw1iPvdKIn1Jo-JHk2m1UuKojQHuYVovmKqy6-zMPFKdOZQXGeBHpK9VrFS_dVSO3d0CzeKGD-sHe9yUAxw4VAm4iZqOc5GmohWOYkiUy6HYTtUgDBaJct11YKYriH2LxPq9YjvJBQmCdAccg",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "42J, Jalan Segambut Utara, Persiaran Segambut Utara, Kawasan Perusahaan Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.184685,
+               "lng" : 101.6763829
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.186101730291502,
+                  "lng" : 101.6777729302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.183403769708498,
+                  "lng" : 101.6750749697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Restoran Yu Ai",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117247631817033482866\"\u003eKee Ming\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJbWGk5XddZlJE4VazAiFjshyIaKz0GliC0SW6m3_CqdPYcondsKCDP8kzpmRjUu9Jja25KbbiT7zcz3GYgAx6-6_7czbJZJsPMS8zKfrHaa-L9hUAvD4UUyE3g6jLMXMbSUpafEJTcy-qok8el7Sz9eHwMCR4stxz3KEgGm2YLDtxqYnlV2EDTWgSq0Y6uIwColb9W61fy6BBV1_htyuHkjhQ88Zxvj7f8zxp506U-OrUa7GvErBDLc7IyZNmNQb1IyOQ8d5OB01rQupzPy2greW3-S_fZFvVGvTpkR5i7DdPcFil-btbvzXRx6KX_C2S13gk88MM3P-n4irIepobeWXTwUadrI_CzYpAaAkw1vbkVn5DhS1yReP5ORdS40xlY6cVaf1ItM8SmOfoHzPqHPaaiSxWzS-ROI4kiPL47UE",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJ7_UiPnFIzDERIXNtTUtHGJU",
+         "plus_code" : 
+         {
+            "compound_code" : "5MMG+VH Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MMG+VH"
+         },
+         "price_level" : 3,
+         "rating" : 3.8,
+         "reference" : "ChIJ7_UiPnFIzDERIXNtTUtHGJU",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1184
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "69, Jalan Segambut Pusat, Taman Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1857954,
+               "lng" : 101.6770648
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.187120030291502,
+                  "lng" : 101.6784637802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.184422069708498,
+                  "lng" : 101.6757658197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Laos Thai 5 to 9 | 老泰私房小厨 | HQ | Segambut",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109085649184434382328\"\u003eAlan cheong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uqp2hjrWB1Pl-bZEsaljah4A-Ge8Q_9yhRtHVFknpyiU30UPm35VCR0q8vDpzev6ED6veZxG8cKirDlIaD6NazSVl9Zrs3lORjRzw535s-q3hATGueAc_rDbG_rzIupbTnJBPs78WDNANftYeAVxJdWDtEgKaNBq4rwfMU5yoH0ZiDESqq3V24Hug-lfV0Eq2IJCSS5F6mVzmRrcC31X6iWQjRONPIE57IBygqqNaI5T6jZfRLZziHtd5IQACy7kJgIP9fzG1ON6S1WLI6gMIR0T-HJ3QA8eevzxcJp_TKW8dPAw4nEBJ32JX3pi3Jc2ZrOMYFFOftaRfckl7LQ_qx1ao3TCr3f7e494Bw-bOpys5EAjUJllY64LlxWBCAhvRTj4YThJdNmA4TjL4PqJXyZxGT9YUGxNsz8jnGroSMPJYF",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJEw5OGX5JzDERwfZKfLBBTvw",
+         "plus_code" : 
+         {
+            "compound_code" : "5MPG+8R Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MPG+8R"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJEw5OGX5JzDERwfZKfLBBTvw",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 346
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "67, Jalan Segambut, Taman Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1817418,
+               "lng" : 101.6788335
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.183074830291502,
+                  "lng" : 101.6801004302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.180376869708498,
+                  "lng" : 101.6774024697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Segambut Yong Tau Foo",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101432409937348059009\"\u003e泗岩沫酿豆腐 Segambut Yong Tau Foo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vivogk-045CDkMpfekuKehujiatWDQ38gwbmL9oOzOJVAyvDB7Znd9qMXlPJwmyG7A7ksqhbwvJ96q0kNOEFKbY2SKegDlV0d4AALXNSCwj4DllT1za4OLndJ0h7qea7coZWZoY6zFAsGDhucSUDMqlnKpTodMYJQHxmy2dkRkbCRsPfyDkAAY_AS2ejF7rSBc_qBVZuQ7rVeP6WQEDyTSMcIcdgSM8_jU3okhgkGnCTS_Cp5OT2FZ-79nlxpcRt1Flq80YCpIwAdF7b7H2s-k3STeaeEszhfqWdVVTs4l9w",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJpVToBHJIzDERZ07FEaT96-c",
+         "plus_code" : 
+         {
+            "compound_code" : "5MJH+MG Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MJH+MG"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJpVToBHJIzDERZ07FEaT96-c",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2359
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot P10, Bamboo Hills off Lebuhraya DUKE, Taman Bamboo, Segambut, 51200 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1932327,
+               "lng" : 101.6738578
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.194684830291502,
+                  "lng" : 101.6751491302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.191986869708498,
+                  "lng" : 101.6724511697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/bar-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/bar_pinlet",
+         "name" : "TAP ROOM KL",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107152522991216570940\"\u003edani\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vI8vs-4-4nd6AmhOsUium8aYhVsEc1M4dENB1KVzDaY0bJsPmvdI6ec-MdVGl5JX9Y_KtD37YiFkfaXJdm_kVEDfFHJhP0QyEgEsZuySDmoLWnPhIrcXLChY33TYB_2trTe-HQcS2CxWJCnKGHl7p1Oblv9FMadqQq5czcOkUiS9Bm66L9J_BG34d4KXMDYptiN7DVCtbUQCypkULSwXuYHXR12gE-SHOeUraIA9phn7IIads2NiM_hltDvT3GOGMKRjkDTvHxeqRMBS5aVWTQ031j_4g0Gcx7lOv7bF6Gfv8qgdD2BsjaOpN0vJB0PB4Ap9GCEFjLz9L-biXf8vjZCckUS_pI469xOoDJOJZ0AAXB3jsMWD1Tp-V7FTVu4cC_DaeDOljLFx4_eIXQyBfccr65DrIwDKEcntbZyFjo3uL0",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJoxBKOlxHzDERCryhX6SVBok",
+         "plus_code" : 
+         {
+            "compound_code" : "5MVF+7G Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MVF+7G"
+         },
+         "price_level" : 3,
+         "rating" : 4.7,
+         "reference" : "ChIJoxBKOlxHzDERCryhX6SVBok",
+         "types" : 
+         [
+            "bar",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 3194
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No.1, Jalan Segambut Selatan, Taman Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1855166,
+               "lng" : 101.6763
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.186882880291502,
+                  "lng" : 101.6775965302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.184184919708498,
+                  "lng" : 101.6748985697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Hoi Kee Restaurant • Coffee Shop",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 692,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102917390592221388556\"\u003eHoi Kee Restaurant (Coffee Shop)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uLS9cBy0e89ZuY9VloqtKnkMtBLnzKubRPep_nrATdDxeMxu4Xuflz1ApTeUHlL9rq3HQzff1PoyVd7vP2Qq49VntyisNIcjcQ8_jyvQ0VY1V7L4hTGzgY6hMXITPEFIr47U0UHRoi-I0HDLGyVNGVxeU3ianh1widGXW4i8H_wfrQ-ydF87QeMtLO5gGiat5Grv_m9B5BPt_vEUpFCa3g-ycCetJ8OiYvZUP8hLWAP8m8k4pQeLhmFoizckZ9Wiu-WpC-4USIU6LkWebDm7vDQlUZW7tAcVWIhLoeOxAPBa6fbhsEgevTe1qTtTlFBqBZyejz5wFrYXXR1-aO3mQH7BA2v2M_QZo1KRIHsc6ItRl6FJp9UOP0OUxofaqPnVVaLW5yDeKktc1v2N5XyV5IbRf3IjcWqQ7dDJZAgdAFTQ",
+               "width" : 919
+            }
+         ],
+         "place_id" : "ChIJgQyuOnFIzDERFi81t3HWT78",
+         "plus_code" : 
+         {
+            "compound_code" : "5MPG+6G Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MPG+6G"
+         },
+         "price_level" : 1,
+         "rating" : 3.8,
+         "reference" : "ChIJgQyuOnFIzDERFi81t3HWT78",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 784
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan 2/57d, Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1839579,
+               "lng" : 101.6696919
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.185435730291502,
+                  "lng" : 101.6710349802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.182737769708498,
+                  "lng" : 101.6683370197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Kedai Makanan Soon Kee Segambut",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103630865595125738526\"\u003etsn WONDER\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sEb7hsoSVXpiX5KqfFC70he0OYmdfnw9fk1e5fBQUpQ2-0qyM4_nAkl1_9b_dSwm3vay26d6Qs6fAvh4ckR9aeLYkJEipnGvvGqUsvzCoKIs-i036I6gXCHhYxaz2LHo9hmxodt2qlvTxQ7-bnwLZPtMS-09aa8-MLXXxJ9IbU3kNMyrji-_nBHHnKaLit5-BATI_J5IvJvvBcAXJJdmhgfkTQhTQ658ugslo1j8t88c3Z3va8eI8DyceRGc01SRuPpdG2oupXg61JLrosdQVz5y-jtzOLmyxvxZI9ZqCyNStJbtcWqYLlFr4Zrzz6hGknoTrEHGeYknwtdpYzGAxw3igAWU1rNDNlKMbs7hfAOdsLCntIcVy92ySHzi6FIpSSpwtS9DoUEDSsKoUnWYwE_cJP5B4qGLS3yXSBEj-_lag",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJi_e3q3tIzDERMhQaH9z5kdM",
+         "plus_code" : 
+         {
+            "compound_code" : "5MM9+HV Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MM9+HV"
+         },
+         "price_level" : 2,
+         "rating" : 4,
+         "reference" : "ChIJi_e3q3tIzDERMhQaH9z5kdM",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 282
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lrg Arfah 3, Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1902043,
+               "lng" : 101.6711084
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.191603530291502,
+                  "lng" : 101.6726695302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.188905569708499,
+                  "lng" : 101.6699715697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Xan Ling Segambut",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111819197146447357557\"\u003eVern Chia Pang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-syHjAfM9tLJ5m9YRpyo7ZNqe3u6N11phrlymreJqHhhBY1sCy2b2p97O2C_KMkpndae4_Hq-CFXu2fK9eH2a7nhGh6l-VJ9KF6ofdRWldUNy5mk4pt71otH5nnjUn2LAl0Y3j0VTbx2yrLMXNFqgsbgM5WVv0oZg0zSEa2DjQn-XG2o2tTV2diQLC1p0Tb_mVTlLrPYwLK6abLzARck5kUI9G7Zm96SY4y1UP_P7T45_oh8jUbM_wVqrFqrD3mJ7hidcdptdxlt4Jm389QBAB-yheYeR1g6xfZuxmwoyFYbTOxR2alYPO5u8MYFHzCNYdiJxGfosijdONAmyysxQ3r5mritHniDU-eBMuXJMqKAwwlKqiceiuVc9V7O-5nYLHV3ph-71_5EKzo5rr3lSx_3Hzr62mvUtJwOJNLnJ7ONpeV",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ3b9gbHhIzDERRd75mGuxGLw",
+         "plus_code" : 
+         {
+            "compound_code" : "5MRC+3C Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MRC+3C"
+         },
+         "price_level" : 2,
+         "rating" : 4.1,
+         "reference" : "ChIJ3b9gbHhIzDERRd75mGuxGLw",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 451
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sentul Perdana, 43A, 0-9, Jalan 3/48a, Bandar Baru Sentul, 51000 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1818075,
+               "lng" : 101.6971467
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.183191480291502,
+                  "lng" : 101.6984384802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.180493519708498,
+                  "lng" : 101.6957405197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Lau Heong Seafood Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106131981582521664820\"\u003esj chuah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uf2ktDtETrkVPSnw1LEcwOTXUuRenILUKVanaDgzvgdm_Aux8t0Sl9ATlVczdaUM7ZB4_swRldXRuk4laTK3LEJCvQAjnGbMyEJepIru_UH2mwZsq9H4rgX6DJKTxAZNsOZQaa8Ls_7WEZax-PII1f12N_M63NAG-ymG7QKPgLnWGYN4ecfB0aKn7CMULg9jwnQAZbAbwVsfVCcRGNdPiEDnHXn-hBJOhEeSEfq33jnPZXPwMumFoFP3oaY3Gq3CGGzr9htmpBevKCvw8fNaLwHNOGOERS5D1ZNozn8Am6MxAQoZLjBqrzhIUFKhFnj3k-EYObkkz_Bnr5J3BGrw34L5YwYa1vV1-rO_p4WrYZTFJd1P8-F4gjUgWbt4GDoSZFb1bkYssvFQTlT4Mpqiyd2GDZzuW64it4wVm2kYIR7A",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJv4WQBxBIzDERhpSH9lEBfqI",
+         "plus_code" : 
+         {
+            "compound_code" : "5MJW+PV Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MJW+PV"
+         },
+         "price_level" : 2,
+         "rating" : 4.2,
+         "reference" : "ChIJv4WQBxBIzDERhpSH9lEBfqI",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2627
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot P02-2, Bamboo Hills Taman Bukit Bambu, Off, Lebuhraya Duta - Ulu Kelang, Taman Bamboo, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.193366,
+               "lng" : 101.6736234
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.194718530291502,
+                  "lng" : 101.6750295302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.192020569708498,
+                  "lng" : 101.6723315697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Locarasa Restaurant & Patisserie",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110534099829736417087\"\u003eLocarasa Restaurant &amp; Patisserie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-umR3rKqr_AV-i6cq62HVB-tPHFDjBqXMa7NqusXhmNg-q7ajyrfBHsb10pfOqj1Direnj6q9izRFQAGhcasJgZ06UMhlALx6a6Piml3IUUUPTXkylXpYLGO6mEmvEtIN4uBVTluvGlCc0zf-nYwTiPDbqayNTe0h37zRCxJFD1oFOeVVkfxJX8QYKXrn-3Exm4dVmhmiltMEBXvP4TGzRwX3DXzB7KIkzmAW0M-TqD3errfNhnZ3g-8pZrPaaMGchFrZSwIq6HIBJxKTYH1U4AgZWqGdBR42rIERrqBwFV6g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ9eCYKntHzDERUPHooNbuxx4",
+         "plus_code" : 
+         {
+            "compound_code" : "5MVF+8C Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MVF+8C"
+         },
+         "price_level" : 3,
+         "rating" : 4.7,
+         "reference" : "ChIJ9eCYKntHzDERUPHooNbuxx4",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 5253
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "49, Jalan 15/38D, Taman Sri Sinar, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1888349,
+               "lng" : 101.6518175
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.190231130291503,
+                  "lng" : 101.6531911802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.187533169708499,
+                  "lng" : 101.6504932197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Xan Ling Hometown Dishes Restaurant (Tmn Sri Sinar)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113002233508376356494\"\u003eXan Ling Hometown Dishes Restaurant (Tmn Sri Sinar)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sT_OUmycur2In3B9GEQ7VAMjeEhnFyWdT1-nBoPxK-UEcW9bpG6FRa1ns_tW88iSZoCw6I6vygqMKxuVeYQIXRCZwa_1zHZ06Lklj85sQAbGUMvHdqNUNrYMY0bTAobt7mPUbslGOsWkJRNDPxRIeL8mxu1yoSX0vcxUU2HHdNJskQ-s6RpA10EmUrX_KrSFTi9ZTazBq06Yjad6LclXXL9MLJDqVmoFh2H8x7KjjFo52fImOWgDMNZ7hWux1-ND2QpyDjrnQW4mGJsKjhbBwhpQ6kLlNQV7wTRaESkee6QA_Kn0CnhqElXY1rWqr_6nWu4W4_C8rRtH1SwfIoCUtWGVSVka1u7WZ-oFH4Vf_PDMHKqIm9eyjrHHnb2GGVFpZPkBxJ3sk-VyPdX3u7IcFAV3fl-5S1tDuqm5jw9oKrsw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJTZwHEINIzDERNZpnzeCh_Yk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MQ2+GP Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MQ2+GP"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJTZwHEINIzDERNZpnzeCh_Yk",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 260
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "H-0-3A, M-Avenue, Jalan 1/38a, Segambut Bahagia, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1861496,
+               "lng" : 101.6563225
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.187504830291502,
+                  "lng" : 101.6577796802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.184806869708499,
+                  "lng" : 101.6550817197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Isan Thai Restaurant Segambut",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 854,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113406751785658773529\"\u003eIsan Thai Restaurant Segambut\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vTFewjBAR13hcra-TEBPkMRe5NZeatiYw9fhjhi2-1Hcg791EFaPsGclWuAqbgvoMFQT8tcOz9eFLwm0zkKN9AVXDAHwdrTjQR-9iB4UsJiqSvTxBlQCFwdRij5gXjY9dBXBYM1l1_9ZmBrVeQAMYlhLTE_VnDa9ujinA5duEbtyPANFw2kzeeoZC-Fcz2HTzzbLrCmXFltd1QtcULPwW8ZIZOfk4ykZygxW6bXp6fTIDb4_c_Yeei8K789YoTtNDVKyEaVmknQUg04tdGlMK1nTqhoBE5MVead9jzghuWAzhmMyATyZZiU62alQnKzffhc59OazdqX7MQG4cVSfA-YlVfqPjan3kMDeqJlsFnFtW73gdE_1U1eZFzoR4EcgeDigya0F4STFU7zMucNm2veiXHXogs78yscaevEyG-aBWTDrXnaZMcswhTsKRQ",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJSxh0oxhJzDERkK_ZFMxqGYY",
+         "plus_code" : 
+         {
+            "compound_code" : "5MP4+FG Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MP4+FG"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJSxh0oxhJzDERkK_ZFMxqGYY",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 188
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Dutamas 2, Segambut, Menara The MET, KL Metropolis, Mont Kiara, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1805871,
+               "lng" : 101.6645149
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.181927830291502,
+                  "lng" : 101.6658452302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.179229869708498,
+                  "lng" : 101.6631472697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Phoenix Gastrobar Kuala Lumpur",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102518111718623843890\"\u003eValen Zhang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJxMKCDy4wOlo3EtCYdI3R-2pVSWKqGze5n2qAzidCgpSpc-o1EI9SHHZXEjBgA0Hmok5JqT4OOAkR1c5tWxjpfhhhJ300MGO2GdzOEhCZkOrBoNfklL98RFntkrVGg4eFnVgDjyb9vubOVww9Z8wCb2aZYIdo7EoBECDr2AIiwBdKcIGAKq-xgYLtyKXPN2qF8XaJ5oaEU9c8OCZgmmdhGwTwUq_uoAoojQoZL8QJjCDDdiGhmC2kvrGzrjRxfG3oWyVqbdDCG339c4WfASghe3OgD7800AEFEDRTTa1qDTh71IJPydAPXP25S8uuRpF1vQGLXgVsVM7dlEjA1vRIIyeiKnRL66p002ZUvoT8NspV-utGvpqm6SPPjxGuywa14yn9awV31JF65VgfYU5fD5W9rfBbViguHNJTIFPi7LcCL6CMlWxNa-APPbXg",
+               "width" : 3600
+            }
+         ],
+         "place_id" : "ChIJXwSnEHVJzDERHXc3E6UZUns",
+         "plus_code" : 
+         {
+            "compound_code" : "5MJ7+6R Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MJ7+6R"
+         },
+         "rating" : 4,
+         "reference" : "ChIJXwSnEHVJzDERHXc3E6UZUns",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 33
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Off, Lebuhraya Duta - Ulu Kelang, Taman Bamboo, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1936311,
+               "lng" : 101.6739365
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.194886230291502,
+                  "lng" : 101.6752129802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.192188269708499,
+                  "lng" : 101.6725150197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Bamboo Hills",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113745902595673213449\"\u003eYC Khong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-taT1pivrXT-T07DeGrHf_Wo_P2RJseiUD4ieR7X337DZ8iimb6vRZOrsZoqP-271bjGiexVwMbeFJo06GeiD_LLGR03l4GinzFJq8lLEuxMQydVhogfu8ti41R-r4pK43SGp3lh-eo2qvEpGk_u34swhwJNT2fo-LeaGOZvhmhFr4A5SJPEwJiHVVJZQgslTskXQKng2GahVB_MFnu6r-b2g_QjfPO3oyyuX1nbW_JF8m7dlG3poaFAFWw_TvnUyP4lP7IkNx9pjgaWFH0yQEpNw_S4aEEAA4wIvU4D4POdZnQl4pvQwEhEjctHxaiMTSmDFJb2i6QmPlTCVs00jKJ5CdsAXzHXiIuDmogrHNa6jYdUaI9xFDQVFtA4ZLwXxeTMuLBC5qDDW1g2neMNgBJpzQOkI1Botl2u2pNqPjQig",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJie93wWRJzDERN-So3SXRlpU",
+         "plus_code" : 
+         {
+            "compound_code" : "5MVF+FH Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MVF+FH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJie93wWRJzDERN-So3SXRlpU",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "park",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4425
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "P-09, Taman Bukit Bambu, Off, Lebuhraya Duta - Ulu Kelang, Taman Bamboo, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.193716100000001,
+               "lng" : 101.6741223
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.194919030291502,
+                  "lng" : 101.6754368302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.192221069708499,
+                  "lng" : 101.6727388697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Botanica+Co at Bamboo Hills",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104140940305325718810\"\u003eAidan cook\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vIvqdsFaeFDxHj5fKFJNN7dgVTaNJRA3iBAIzoESqM79wC3A4BKLFhuH88s-BGCLlRg6oLDk3Hmly4ASE__jlFQUVmlXEthqm9mrpq_d2xSv6Vbu4O8ffhUUA7mjXVCfPSlEwJhr7wKcOnlbkhrlJTQCUkXPH99xc-D8AcoJlhI63TsCqjZE4H4MPkB5rgDFu7G86Y0YUW6bRdBznD-aPF_tG7IhxN7eCU5vBj45ArnBi3kVce0vkat9mN2s05PeMD3BjID6fKvBFXzwrFSs1NJjpbE-vvKY8DrdNoLGYIM5kyZM0Z8XiK82JWacGEhteOG62kEADG1_m77u_BwH7_CewoRzL0Eun8xPb627x75E3G6yU8s-MdqMkdzhrBIkmA38YBvzOsHHQAOe_FXDewl3wvZ1rccSTw0Lg2G1ltOjyxBA71RnIfnujsNOBk",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJHT_ZQSNHzDER21PkB8u6Dtk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MVF+FJ Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MVF+FJ"
+         },
+         "price_level" : 3,
+         "rating" : 4.5,
+         "reference" : "ChIJHT_ZQSNHzDER21PkB8u6Dtk",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2857
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unit P03, Bamboo Hills, Taman Bamboo, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1935213,
+               "lng" : 101.6730937
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.194867180291502,
+                  "lng" : 101.6743871802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.192169219708498,
+                  "lng" : 101.6716892197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "The Qing Banquet & Restaurant",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 908,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115620719677345117583\"\u003eThe Qing Banquet &amp; Restaurant\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t6s3fQ_SG3MgzhzuUPXTrrLEK0gyzEtCxGqLjW8ez3dOdj_95VMOdgmO_8611T8SqeBA9H9nofmkadoGGd7qnOmYhRZ7Qo2oZq0bHg-Vita2y55uDNCIBXHkXv1EU0bo3RLoWHHM0ZH2gMdlP27A3Bp2ZhlVUw3K18khhcwr3DzisEugRZOZt9rryinD5epd6lu_u-tgecpx5MW16d7V9oFmGtHr_AvK4CsBaX9aRUU4gtIXTpmQbMt6rS_rr1uCg9r39D43l75B7TICPMEmvYAF5lNDAcfiMmK2UaZlEcsdTOKjSa-cPS8nMi1Y5r7tpp4-DpcfafvRAy3avI6tx-8dbF79qSX72C4IvpjdEnmjy45KA54Tvs2QlzYzR5R1J5JMd5ucpGKvivw4IbDOd95a9dbMO9AxsdXnSY0Gw7oRoR9oB8ZNil78ViiQ",
+               "width" : 1360
+            }
+         ],
+         "place_id" : "ChIJqTeeXVtHzDERsW98yrSl_ZM",
+         "plus_code" : 
+         {
+            "compound_code" : "5MVF+C6 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MVF+C6"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJqTeeXVtHzDERsW98yrSl_ZM",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 2109
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Rain Tree Rain, The ERA @ Duta North (Residensi Era, Jalan Segambut, Kawasan Perusahaan Segambut, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1822627,
+               "lng" : 101.675289
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.184040330291501,
+                  "lng" : 101.6768686802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.181342369708497,
+                  "lng" : 101.6741707197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "THE KYANPU キャンプ Yakiniku Japanese BBQ Grill @ Segambut",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3202,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102497226551578287118\"\u003eTHE KYANPU キャンプ Yakiniku Japanese BBQ Grill @ Segambut\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vInGG4odFPD2xqZDSaULOcidlSdRjghcebtx6iI9dIbIjwsyFuzoJHabCr91e5pMLWPq0haPw1KJYZzPu2qOWU-IJgrfG2eFwJA90C4tI_m4FDJ51e1RhWgVr9fPCMizoF6aqQgOYLzLDckgySgSz0pJbqw3CncVCOYNdAb7zE7tjl2xJZVuAml4Pd97lKw8pD4GLk0RTYFRuyuiE6-QklmFoQbg_t4kx7gzkWHAUlct-712vvpXETkgX0zUFgGrgJ--6IevqWexB04ZslhyO84J-goR2Bi0aDhXgfePr1Gg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJKbVjbP1JzDERTjBQ_mbFcY0",
+         "plus_code" : 
+         {
+            "compound_code" : "5MJG+W4 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MJG+W4"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJKbVjbP1JzDERTjBQ_mbFcY0",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 847
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "RainTreeRain @ The Era Duta North, 208, Jalan Segambut, Kawasan Perusahaan Segambut, 51200 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1821145,
+               "lng" : 101.6753078
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.183909380291502,
+                  "lng" : 101.6763763802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.181211419708498,
+                  "lng" : 101.6736784197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+         "name" : "Zen & Co Duta North Japanese Fusion Cafe",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101712548629111106753\"\u003eZen &amp; Co Duta North Japanese Fusion Cafe\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-usRF0R8Y3qpVTr9zMKKnHq0g-zEj6JH49TmS2orY8a_Fq_Tu4PtN8T6TsDeVfY-t8h-LhD9cPdVPbYlWHzrFlLxA5l0H8lMBbWwjNxJ9kxsjrJ0rEZaYOLyc3KMd50bmxGdovZZ7EjbtBHcufmwR53KvubK_PcTsbmMJzaSjMm_EZBFjqABhFrHY2HruIzsG8qHw2T8GnYCEbpAIUpzTxrN1Xl5ohBzEflNPvan4-SAt7VVOR11exgTXZkj4ktI8oK1jpnPvg4d3xvcY5qlPZM9NeR6kczLUBNEY7xvJDGkG7CCyISEPSEFC_tmLXNFKGN21gvyd7j72UJwrvVs7Ktko3_KDzfcRUqxPT8m-pPViq-BDZprv7PmmhWnIk3QwJ9V9Hjai8Vy9De5uxP7c0NE2iXY70UA4bPBXfG8iOqxiXr",
+               "width" : 3276
+            }
+         ],
+         "place_id" : "ChIJd8W_hhdJzDER-xTmrmfkdqg",
+         "plus_code" : 
+         {
+            "compound_code" : "5MJG+R4 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MJG+R4"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJd8W_hhdJzDER-xTmrmfkdqg",
+         "types" : 
+         [
+            "cafe",
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1297
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot P10, Bamboo Hills, Taman Bukit Bambu, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1932758,
+               "lng" : 101.6739855
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.194702530291502,
+                  "lng" : 101.6753528302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.192004569708498,
+                  "lng" : 101.6726548697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Pizza Duo - Bamboo Hills",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103034672725396004262\"\u003eC’estLaVie\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vvIJ5sxFqs2rlu7uU9l-cMmDK7_L3Pk7V0nDjtVHsdsy0UHjC4cijL1r4KxPXevJkCnyAgKiYM8W0m93-HLZUFwre3gMvjMZcgfeNZMxDPtuTfk63h9pHj9PMMKbb_21aAmPHWvP2GThdVHZTmGynHwJiENwJ8H9cpN5xandGBK4tF5iRAF_pAaAWI7QfSJQWNcUT4dF8AmyZRe2f48-L8267JJEZBr_YRBE4PfTRm8WndVAkeNYnKmES62pOk8o-Ng0nzmYKahRtPeFN0VDZUCHCyaCobq1p5Fx-Vtp4PntF_84nevSQnjxX1CX4Vsod2lQwSs-2TtJiP6IW_RQh5KYZ0SxBr3d5tYhWA8s_2sTJXDFMiSxDGVoiDCMNEeWO6tAyf2SgnzJMz30hIGMmVZbWBaQ1MxEWQEKnusKr6UfKyKmRf_QkZU27sm5M0",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJCzELbLtHzDERHs-udZQ2fqk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MVF+8H Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MVF+8H"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJCzELbLtHzDERHs-udZQ2fqk",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 522
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "217, Jalan Segambut, Taman Goh Nam Huat, 51200 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1831115,
+               "lng" : 101.6765861
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.184484480291502,
+                  "lng" : 101.6778833802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.181786519708498,
+                  "lng" : 101.6751854197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Bbq Golmok Segambut",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107812245043829466453\"\u003eBbq Golmok Segambut\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-twx3fnOxG820l101F2bGoW_PTOjIpKwtaEb1lmtxn44elp-JKrj-G768PzdU3MY_Ch-hHIHcjdIkqp1FAmEM1kUons3c6oQlIWbhdW6E2Xqr8iZo8aSPzpvejY9Ap7mv1s-UWHo-LVKCLBAUqZdi6_0uC-f4AdQV7TDgsLlsBCvaWRt_bt6bnrZKjVdTDnQMiO_iX-681UvhchTe3psNxjIvwb5NHBIlhRtbSj-v8BiSP5PtJJ8hUXIpwNEgLnjB9R8uT3r-FGfHSjG4A5nIXQ-il4melHhIlInKjAMPfYjA",
+               "width" : 2160
+            }
+         ],
+         "place_id" : "ChIJFSYfZopJzDERo5K7VqRoT7k",
+         "plus_code" : 
+         {
+            "compound_code" : "5MMG+6J Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MMG+6J"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJFSYfZopJzDERo5K7VqRoT7k",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 100
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "P1-2, Bamboo Hills, off Lebuhraya Duta - Ulu Kelang Segambut, Taman Bamboo, 51200 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1933168,
+               "lng" : 101.6731416
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.194660030291502,
+                  "lng" : 101.6744170302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.191962069708498,
+                  "lng" : 101.6717190697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+         "icon_background_color" : "#FF9E67",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+         "name" : "Hanam BBQ @ Bamboo Hills",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113935565147278652158\"\u003eHanam BBQ @ Bamboo Hills\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBOb7d9Smpf-6JCe--NXwhXtI5oVsgjyU9eVoCoI43E5uOG0S-BOMGE49f1HArweZ97G_s6QXQk0pNGBVVoiFBIqWhpSHeqmK8zouk6yumXxb6l5IVH8D3FBgwqHQsfshgRxrB-3rALrrNvk6DkdQI-_M_nMsmw9sWumeXinemAZ5sHRBZma1iYagjWBDCTbNFy4_EJmbOUIsveNXoDsSghGeR_w3iLfRHLMCyZPEG5J2YOCF7xrkdmnl5RCUN7XxFEJPPkVWxggXn_CMzhwOdoUKxohK5H2fsacOxLwDCPw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJiSKc_cJHzDERiGa6xh7orBs",
+         "plus_code" : 
+         {
+            "compound_code" : "5MVF+87 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MVF+87"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJiSKc_cJHzDERiGa6xh7orBs",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "restaurant"
+         ],
+         "user_ratings_total" : 1263
+      }
+   ],
+   "status" : "OK"
+}

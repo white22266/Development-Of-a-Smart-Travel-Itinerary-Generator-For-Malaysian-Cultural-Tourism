@@ -1,0 +1,235 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "PIAZZA @ Level 3, Pavilion Bukit Jalil, Persiaran Jalil 1, Bukit Jalil City, 57000 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0509124,
+            "lng" : 101.6723658
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.052404180291502,
+               "lng" : 101.6736362802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.049706219708499,
+               "lng" : 101.6709383197085
+            }
+         }
+      },
+      "name" : "Piazza of Pavilion Bukit Jalil",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 10:00 PM",
+            "Tuesday: 8:00 AM – 10:00 PM",
+            "Wednesday: 8:00 AM – 10:00 PM",
+            "Thursday: 8:00 AM – 10:00 PM",
+            "Friday: 8:00 AM – 10:00 PM",
+            "Saturday: 8:00 AM – 10:00 PM",
+            "Sunday: 8:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101418599883177837531\"\u003eMer “洪吗” H\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uF8wuuET11nBVu5h6UyEAE6GA1a1-tVBjR6661PDaBbcl2_qMDyjDWbsYUi_c6ekNPLTa8VE43fkYkJFC0p9LQKKijirDufw9DwBZAOGyFY0KDV_lJizd9Ui3wmSRlkSs7oQFdG6FqcSuMF6DdsSGHYpFk1XfrvpeRQ4IrfrGbeSgmOg_9BTXHSkUIkPPWLzN7YPgkhUzCyH1lqlx25KZLdN7C26-V6W78i17PPz4IPf6VIMLU54VAAkY8sypBVbcjjPkbA1ASRhRYmZ0aOuA-Y44CvaNQhANX2WZPEjUgpRowCFuYZG7X7LR-deZC0Yf2nhahddSXdM3Azqmo2qOpp-2yLEc43jW0mwxdikBhrzeYHyEgx5eOwjhyscoEkcIZpW51caupgK8Hw6DqOv-Rxzpe6tI2fV71EKXt101drg",
+            "width" : 4800
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110244909166581876810\"\u003eVH Koo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sEq-g25mwK81LK4zB-jKvblwNgWvU08-W-crbMGlup-iHxll-oss5wyWGnrnmHEyBmNLurZPMgPg0MEbE0RckTcujJN7zfU52hskGPqq5csg5oT9UO7Wruew2mGU-KGVgBb9oKrGcYaognOr5phy2_YIsuq8gmGY7FEbGFIkmGTnINrScXGHC2Lgb5gCy8im5e1p21zKWFimnDmcGW5ln6Bz-kvXbSJdgAFcDbAw5ebd9h7lU0oOBQcuoN_LMHvkHzK8uUDQF8qeekP8UeVYG1Bo86Ol7zOEvy1hYu_3S1gHkcu-AnbbyhhHAJiHc7tRSbwN2mKP5lH3zV2MhWE4elu2uwS202uDtuZvTFLz-rswR2jLzV2vIZ289umSt9kLaO3WfKbMEKRvGqg1bDzDgYCA5SNSrg6gC300BjC8IobVDP",
+            "width" : 4000
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105650435424829759138\"\u003eHenry CMLim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uEC_em1tA-Pnl00mezn_OfZAyiiv-Wu2u1clymQRxX1bQCNFtFr2K2GFXhrfOHGwTwxOO2qWz0rkT4ZfdGgjFQwNIOxQrqr7lALk5TWwI4Fiw7Zdjt7sgbRh783jgtOo3HEhrsTY1yaMEmApkUGN_sjJDKCRjG0BDcI1ojmhL1EQzEAuF_fwDzOrYR4ssmte9syJDugrsh-oj7o96lDwarKTQQStrMQY0rTChqplF_7nIeWkzAlew8X8_TOeFQhk0E2I3pnpOLdov_EoRXeGxTqT4-82QgzrSzGCpCvF3448jyTwdG7WVbWXrsAxA3c2jVhQ1_Bh2Yly1Ix2Vwax0KcwRrbMMBCp41qNI_020bvsUjHPh6MGigwg8lzVlbkb3QrGimNZJNggs-ZBnxmt7cVWL_yMsAL3BuY_p-6tl1DA",
+            "width" : 4608
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117896577464342136686\"\u003ekeng khian koh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tJDlEZ8lhaUaGs8HNyI1rih_n93nidHYWf4dxztNCZXCQOlTne4tmG7aRGvky2KTvtF5K4Fa1jaoRESrSdKal-C4eZqyN__ylhvgBV6ly3tVucLFYPg5iitwqGxz5Mf3B1MlovqFxJS-lW7V2Ii6qpSfYdjcITrbSf1wezAXl2UQrGGnP1TPghL1091KR8g9JHxxm5HN1xGJT_2yfCu3CSyQ3Fud4OZodTy8TId2NpanJEriqyG4A_mjXF3CDFLzIjhVd_DHKyqmV78UYtfOjw3RX2uYO0eI4IHwdvjRS5BUm2ncrI3Tp4w9t5AbaZY7231XJm2p34Pu77sVHd0R2_ZMndScndcGhuCQTXaJhS02IiUorwj8bBoU9AopKm-3sMAb-3L-v4-Fbcgy-ea_b4Cun7kCnv33OlMDSiG6wmy_lO",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116890720888528290182\"\u003eJosiah Ng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sj634mdvxwbQmlv9W86SKL6YD89oAMcpehto50fnl_Y1d_e4K5WK5b4cM7FiH39peXpxeE8a5zg3XZg-00kQv-DmBHwTAYbwFNPaSY0noG1cudIzgcbKVTFIhXaGi9t-QtCXY8mX5vLueah1q2ZOkrLfnmZXbx82XmKiTWi3BHg4RRKwPxy_h9VY75G-8FRctWOpxeBioDhkQn4ZQZvL6MXWeEtzghyOj58m7Vc-rWHRNlSv3LF3Zqz-h-AzvKY51J5EWA9AHKLzCNBQ6GG8VD3fUp9sL1IE4tS3UVJyDVtwul9ZsaAFf1w-NqibV1wWnKrLOM1S5fyirwnBqF35lp2oFKw8mCUNe-HkemK_SRUNYRrQsUBrdntZ4sH3GhGcRbsY3IWkzbysFwp_7qeH8dOuYeWcM3aMq_lKRU1cU",
+            "width" : 3024
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101418599883177837531\"\u003eMer “洪吗” H\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uHXLjtr8n4sqN-tOaCzkOD6vIbcvDQkecDnwbBdrVCPNmGllOxb6ZRf_yHe474HZooMKKQCFE4z9-h0iP47QGgz4qxNEgKUDrK4lzW0wsAsguXjuVZEcFC4hQBsGbARVfXvpg2qwy_tAfUKYXGOebrZKfvEnys_-vCZssc9JAe37wgff9N79M2xdzEhLX_MRkK6x_iruwEZboe0YQBzkdzXYvhnbFVXilkA4TEM_Uz99ktGi66cxtGBSX50m0ptnEkTyQdfh4ufwh9W-4hf7lJGWsHXGYP74TYGqOc_R3cec6aewPRM2anW5iXslQEXak6BVndK6UBXCmRx0kv6GwELlLTsIzBN4FwOgbBkFUzOpkIUpNSPlPkcHwCJBfQKmQAk2Z0tmtE430UDHihhugP7AxKtZstVTRT_Atj4qYqEw",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101418599883177837531\"\u003eMer “洪吗” H\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vBgMlRDxvd5EJIlZRTkMu0Mv452mjWQmbO20eIrKoD4rSvljicF24Pwaa9493YyaAfP3jliOJfQd4VagTmj4HU97bWNuvKv_A4dxkGv_-D3nZvhTmSTroXxykWJQNEiP_gV_AUAH2OzL4_DXlBFuDFh9UziLz4B-bCAO9AGlMHCBMu-WuGLLLlRjkXvNZh7vl8W4ozOeTtOcX6JHsUhV6DQKt5jdesK8R0YWjfkNHk6b4LDOPAFtTtUjpamYAxMvUmq-TFTSlqLYnACLQY8tffIOING4iHVFOWW2ysl8F5wHk_yj-AJ4J-7qQMuIGqQiDERFLZrODAaz1m2-ktDWsEt6g9chVvklwnjVwW3QC2vYGyNLILOUVi_psj1axm4VxGme-LRJpmt376sjEV-1Cw4VHP7Q9d5R0fVGl-a7jrXA",
+            "width" : 4032
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102466864016213250899\"\u003eMac Chen (Macci)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uJu98g1SEa1Ey4wW0JWG7yXc9lyEXBngodcicObAGG1u23hXnnRNFnlZ5IASbZr28IT8PuczjLlZZLYOQDbvC5RKQWhR-iz0Oe4s7vWzKj7u2Xn2yvHUnjzR3uvRyy47v2bRVuIRApjXRhvkDsSUnRtUOkqRiHci-nwP8tsfLDezVkVLx5ZWbKIu5HIVIGFxmerP9shPmDKA8dqpNRU-CSn2YC4IzpJkymAM8p3Fij1esEtg8Ji9eJDa0-T6OeHsTTBpDMzP7eudkZLCjAAu1GMK13r6nYHwFRbEc4TOfVQlzUJ5VuR2OpPKuMEWFvJAr9QZt5fN_KgPz6AmQAayiW3j33CIth7qd3Cm8SadeywWAjcBN49dcLy9slq2Zu8cdkBHsL_sccVC6kQ7zJ78uZqwZxgKlUuZ8DEDhMR3oVRkC2",
+            "width" : 2296
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107763520250702709560\"\u003eSean Yam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v33xX9WaE3y_BWqlRCvV5EikJrZuid-4wGWp2ESg4qde8aF93bxGyvBdqiLS-N__eWPu7ORamvgSvFiE3lhZ_j-CUKipNlgY_mNtzceszyW4b2uQBl8oU7v2n4pcAcPeEOxSi_GBSNAlmokOwpZlKxiIYn5OfkefK0ZVZ0cxURfdt-7akJebKZMZ3Xhfd0Y5GzhdZjAR6i8bfaF7gmZp8sjgzCznA5D1COYRxeIuNrpmPP5uk-ur5bldmpRrCYViRYdAgGujegRJ81Csyn9-9aVkvq3Oj-_MkiFi2GkxnmXKllwcoz2wncy_FHq6Ds4jS4XtJeelU0NdjSohCRzmtUAlYX9eZwDCYv0IS6Zrc9HNQj72sHheQajw-DARYpUW0IgzKdVcLeD1guXjk3hjiXqtDJMVIgM-IzN3V7dJmFWs8",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116890720888528290182\"\u003eJosiah Ng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8dnvn562o_XK2eDO9210T2NZ0IGz_b5Lz7ScEKQl-yJML3PrHhT-ksBjIH5Qm-TgAJ2iQLtuLQc6gyfc3fr2pFXc2HTOj8Pad5NDpgh6hRiK2g_6wvDqcksR8Fs0Jdn0orhQbGhh3FtIJhTKYxxTU6ANcd5k2UtYBJqyz3b2dsiw3lbopEKBkb4IuXmhHUglXXqswMTKqu7LFmQObolblKobUXXrv0PLTNyCFHddIkqt17kuqbkC93dceRDzpHrt64ILga9ESYrTnkX8NvJDE6ERqe4TPzGazn7TIEsUqFjLt_cXJU22dWivD_XPUhh8-cyMBz6-n9S-EqYnMXeejs0lYJGGc_U4x8xm-8vm93JyBV6YamJ0qX1Bqdw6_cNYax-q2lKRhoH8ucXjpQRbFEqGqpFhBgHbtaQbZD1wrMA",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJUSzRPHNLzDERav_trjo18t4",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=16064961346943188842",
+      "user_ratings_total" : 165,
+      "website" : "https://www.pavilion-bukitjalil.com/events"
+   },
+   "status" : "OK"
+}

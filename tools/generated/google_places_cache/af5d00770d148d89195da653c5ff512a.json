@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 710, Kampung Permatang Samak, 08100 Bedong, Kedah, Malaysia",
+      "formatted_phone_number" : "011-2345 4748",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.6953653,
+            "lng" : 100.4540643
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.696659130291502,
+               "lng" : 100.4555067802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.693961169708498,
+               "lng" : 100.4528088197085
+            }
+         }
+      },
+      "name" : "Sungai Batu Archaeological Site Kedah Tua",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 4:00 PM",
+            "Tuesday: 9:00 AM – 4:00 PM",
+            "Wednesday: 9:00 AM – 4:00 PM",
+            "Thursday: 9:00 AM – 4:00 PM",
+            "Friday: 9:00 AM – 4:00 PM",
+            "Saturday: 9:00 AM – 4:00 PM",
+            "Sunday: 9:00 AM – 4:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 574,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108432031277787130744\"\u003eSungai Batu Archaeological Site Kedah Tua\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vconvQi_FNNtEf8OiMb1yJO-k7NDtbBSYTghkfAFzqJcbMHShtwUWOQ9zgnb76Aotvl9YJExbmoxL6b9tWrKxcXS8kV3eOfYeTJkXEDbJAQSVJKsYnxvi5sj1d3EETDAb48B1dkPvUyatIiMg-Xcgql0rh4YLqAfmfpiQrG1P1y9ofA1421vDu13kyizWIC23AayN9UjurynkhaMb3hfa_lHFAslU6pqpjKNS-nsh-keXkRZIf_oa5zZKnv-XLhBSpXzn0AoQR2Qzzaos9Pb24wxppNTscKUxVXbr2RvqB6EsFi3bKYoWSvFzGPhIKPNE7w1nUzwlHtYAQfgHT34Bv9lEZ6gbYEXDG_yxuZ44TZrqGHaflY6dEz1bftJkQaeJ00rdA6gR0vHN8BmAtelxx0QZQ9MzXIOEWtjP3ez5r9du5bPqEMcMUR6JOlrsV",
+            "width" : 1020
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107577815205343235650\"\u003eMohamad Khalil Kamarudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8lP58N1oFEnJaCdCqhHqAdPgriUzlcjNiWokd3DZPva0k6G-HXp25yEoeJKkRD79GoBnE5Zkphv8FBYKtLAjDIsadHfQE0QBbcduVrQtUETKnu1RXC4VzAuQe83RgvZh-3Z5kKfSzpoI9n7w7Fajyo42nHeHHK9CMoXyh_oSDzpulGV7IhHnHEtqDFi0ZqqM-BKeCGvZXgUbqzf-gnlq6LOB6W7XxTr6B3KwwVQCSfWFNGlG8BOTH_H0BWm_nyuUFBonC5OyfLrSYTrZ64Lu8FJdW5IpfLtzQY2zmmLRhTbk_jHIfDsVCOFUEgpP2lPBRU4QVWwPwAjXoHpB5Um42yGKAgliWUMNwjGkl19ksFqr2iOMTdXF4fc06xCOFgOrzrDlnSy-JVczAHmcfXpZ3-g2xzwgsY4Pe-ipTMcE",
+            "width" : 3968
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108092066138650604238\"\u003eSharif Salmi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-su3U8YCcRVzgkuGE8O7uNwanWI50Uaj6mWns55G_XC-7PNgTckpuX-vqAbJSYVVkYY5eDEyFalMOJYtZ0s74nJaqw81GLKMPvYAWJxh4drG4DetOPaEB9vbVxTiOf4J4izmnZiX8GLArkpykZW4auP8RvV6Pf0U2pduTR4jIsiBCSOLDlaFm9qGa361ixB0EZlgfAIV0vMFTMXrWwii8t2EpxwUXeUWXUqiU1_w8GwTG3_biGKgbKA7FP5w6-xG6kiaPwIJyNTQGP413kLme5fSHd9RNHhdWdtm_0nfTIXv1fWyMKWneXwEu4ifPbbTnEDlKW16goil1diELNSf7COV1taUBxKT2X0fReRzMnQdIcNeINAKTlfj-6StOegPYJLsv3S83DygUu5125aMo_Y_YqhK2aaZUsHKBqnS09XTg",
+            "width" : 4032
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100546811129396069543\"\u003eEu Jin Ang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKaemEYpWBXRueVKZ3kDPbhBwCq0C5S8N4ZVT_0v56jhLddqv5eHPD6O8fLhCvYkxkiE5QLaLGMscDNT9-E_qFr1OibSmKONigq-ctq0vA12JRxolqA9bJy6qLr2CVIStVn8L8wrrVhuVilQCnk3gZUYeuH9RluGlh8pv6rv5kwMR6L89gF9ED9yZguY8lQUIP7PdinMnAkNGcFQ62u0PysNxp9RoCw8fCclF_sGUn53RMxT9yx6H4hDUm65J-xJI0YQI3dY7qEd5rCb_CFnF7gCJzBtn3FUIfbDizXWU6pgGND-Qo57OtIMhEN_GinWgbqUDWmFHbRJOBLO851zoo_VTXhfUQJvLefogo7r7NErzKUx2wqM4z7QNqYGAwWtasjudal13u07vvivwLOK7dfJSsIRRViwHutsGCCSMwnw",
+            "width" : 4608
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112509486344642225203\"\u003eJeremiah Voon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-suk72SA__PDz374NJAG2TidIyHtg7EgLNPTugOp-hVZUzUr4kpPofvEHzAAoFGb8rGW3sn2e6rq_zYRVYfbp8xuG3-WGVi540PROmGw8pWMeIbOe5OPWRyEGfgXqMgIYhtDwYp2wM-CgeJ58TWQ_IUToz6gjsyQABJgkjRvNYt8YPeQU0Y4E79RzFyzaxCkj2pFZ3mop4nTLPUA7B1GGA92d-8nXa9imT6ITZjEajM-NhnHdp0RbATvLrjNmDRI1jDbQJWHhKFK73MFKUJXW5LY_0U4vF3enpVGiGBUch_i7ZgGSTYwaTUb3ONusnH2vYBqWYf5B1SG2aSj7QvzgEOn7wx4HtSOl7CBaU-AdUnNpfMKqmD61r6-lAUNEtEBJ1g48Fm2e8u5JP4wQ1IHm46gySZ9Wx2tS7gZPRL97DszF4",
+            "width" : 4160
+         },
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107577815205343235650\"\u003eMohamad Khalil Kamarudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNGqcksEjoO56miK-1i_iB27pIFKkEQM_3ApqClar201GlwNXQY1eRTLtpccgrsTYLiapIb_eqkpglvb9MGIsUxDiAXrUGE-OxStMt6CBOcPnWoHQAtbRlGMG1LIMWBvSXeD3zAFX1J_4AnKhLyHegJJanTxE80TWLlUCavFk0FpknA-i3IDjRns0jdkhOp_huuy_04s1YzZYfVGlAiBDJ5QuKv9EWsk0RquW7hcli01mbw9BnvrciY7kJf6OxyiywB0NTTTRkpDl8zt8laCce_veK-4835srqSz-NkkF63hHfUqQ-3zyTXiCMC8x8axfnx8SXvaEJD2zQukYDN7vu0MYl6P7GLYSN78IPXDGQvyd-HdkSEIBHP6IT1kTTQBhB2C1iB3GBCk3jLMBnc1hk1JrNxgfEuVuKgcXtgVM",
+            "width" : 3968
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118058529032168837082\"\u003eZakwan Hanif Abu Bakar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-shOUqYwVUjb5LadqA0TcH5xImtkDmpYVU5s-K2ptwZ6HOs0iKT40fIkSN_oANaAXToiJo9o_AaN7uprLgFW8PM7HKDQTCvC26-hjHQV2CKa9etVVCs0DJCwDkEYfMqSimzPlXAABZCdzgQtuEdcrjpzNeDFGgpDLR8LFV_dW5nufHdB-eAwSLGmixyyVvsx6Ej8ub0szWejl1WHSOBluqXM3PBxrT50I0CTeQhwPmeyhXypGpHb6EKVu5pv4RpJIfjJhbvhk-p0F-R785sVTu578DQuI9PZ-5ffvMfgXGuqSzN4Jsow6j0Ogze7bM3f1x5siDbk9I1oBUSmRrMwk1BK3hRrOdf4xCzvB_9X4nUvETJiFvpHfWKKPA3SQoqc0Nq-Kd_Qu1rBizO147T96GOwp9es7IKoqDffDYrq3-Z-hXB",
+            "width" : 4000
+         },
+         {
+            "height" : 2659,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114289913644508413771\"\u003eTEO JOO HERN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tjmfHg6RayWFEM-GinlqS05RGMmqfIT4RlFcLz7QwrqeyZva1M86NASiNDLxUmDxmlDNr3Q2l7Pa-5479L0l-mdkHV2sogED3zDdc43tD1ex9Hsc8fCtiFK6veBb_6tLM29xNnD1ihwHbHb54V9GQkBI7ztMuvmf5paGReckfBzX7nOXLx3lEkA32G4qGIr0dFUWWAQYfN63GUPICqJaalbWp0I1QAc_3bPzs5seZZxVBkmyZ564ENRjAjVk7fX_SYZd70S63Hd3FvDejLwUkmHxZAA8zOTvJlTYQELUhqk0xpEEA8gVF0-LwaVJBVIgRSTCBnwYEcTwQimTuGdPNuvmhebuI-YWbTdAzsBTN6jVU29FUTF51ZXo_V0-12eH4zKSFN8z16-nOftBLtJGeMNBazfrU6P1yVq-qQyBVLFjw8J3QZGWH5XDh64jIR",
+            "width" : 3547
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104698695980650881792\"\u003eβigcat 6öhömё\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uvsNQk7M-X9ORJHPsNsNdMAzUAfgkfVmKqDUAPUxM3FA_jxmFQ29AtwWV8SrmfufYclMIq0tUqItU_JpRXvBwOxYpEHtgV7XrVy9ZVdYLM2uWvRLqFvSHI9DS_GGTC4EZ6cttjvYBxG0O98_eoQQZmTe4Nw7g3XUGo9M7V3uv2VU8OVGgSMkfkd1pa5sLipvvIuZXtTKJoFB4uATQYL0YeD2RTe92HedTXyosmCubSoWg2Nb4pu2QlOPbqypznDhNBKIM8ltI9pG2crfTutnK0nZ81moLLvYy2hP1__lWutlPh5Gt5eW1h4MwGki6q2HzAQSygQrO9RK0UAQ3ubGxcy4w9r3P3eh5uoPXOa_QWk5TXg09CiXAahHRZQTOnN19g0MwknXA9e1SdR5AxSGe1nU39Fb-i13JWkNFP8MScXTRXul8w0EBv7OVgjA",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106045791385364949904\"\u003eYa Mohammad Nazir Syah Ismail\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vf2yQHtR18yacmHTqofYP_Yb2aqqoAWUJEPWnuI3qioE0Hz8r3mWeXNcChPY80kN3UQeA0MbJ5bcI14f0a7XAUwEEZ-4aiMhqdlQK-XdiS46lIBJBJwyRqU9HnYO-g0QIxFj75qiry1_iSmO4D8K2rzHmwv2J_qK2BHFIKBUfR0hDs-9SZEmRe59vHnK2LkW5cmjuTpSRAIi7yPsl9uiqL2k8SHFMPSODxq09I-mOAqFQfXcBbJe83diwkgQAD2dIqn0ctnskYpO7Kwd363WEi5JAqW4rgR18CLDq1VJNE8rmSzLy7HnEo2Ib5d7ZbCRz_jL3wYyLxwE0wVp8JFUvuAE52jNdNpj102HVAn5uz7QlKgNQY_GbAZya5bKS80ArKtvjmhxyWBx4VYz1EcAb_gM6f2kvg8bWR0xSTY6rWdQ",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJrU27kJcoSzARdbk2kzi_cNA",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=15019715006989515125",
+      "user_ratings_total" : 332,
+      "website" : "https://linktr.ee/ancked"
+   },
+   "status" : "OK"
+}

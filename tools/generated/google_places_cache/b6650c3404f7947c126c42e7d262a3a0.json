@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "123, Jalan Berhala, Brickfields, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2274 1141",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1280426,
+            "lng" : 101.6870828
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.129252380291502,
+               "lng" : 101.6884675302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.126554419708498,
+               "lng" : 101.6857695697085
+            }
+         }
+      },
+      "name" : "Buddhist Maha Vihara",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 10:00 PM",
+            "Tuesday: 6:00 AM – 10:00 PM",
+            "Wednesday: 6:00 AM – 10:00 PM",
+            "Thursday: 6:00 AM – 10:00 PM",
+            "Friday: 6:00 AM – 10:00 PM",
+            "Saturday: 6:00 AM – 10:00 PM",
+            "Sunday: 6:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4460,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100197571922956442206\"\u003eBuddhist Maha Vihara\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-snN30DtmAltVc8HlqtMw9_0Vs3NgFwxOxEDDsIMetCd4a7iUcD9P1fhqRujpIuAmIiuEkZLR7EeVMXZ1OCbgfAp1WRXl0RVLRb6NUDRIg-33XRejwZ3oPd19tAA5kCSDbVaGWhsqwZ5FigWO37Bsc98Q-cEQ1t6mtvB1IGJI-3X2CR5UUVMt3R5TipwHQ8jeVFemMqIjsEkM1K1HSp0NSd3m2Lgo9ByTkkaxuE4y-y0V9MIdw9tlAP0PDMe1lxm7cwr5WpfASguzQLeYTcZi-n4BWdwmRwqy4vZkRVfg0",
+            "width" : 3456
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113474302113816084483\"\u003eGokLoon Chiew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sXUMjNuxyQcpX_eJ4fhUKm9VF2lSkLGU0NT7PJbdXLglAGti80bxVf05VUU8LlaD-jHxVNcK3SDE3GbJBoytxMHc6HGZ6Ttjy-U-TCNZPgNrJmveYi_hoB5I-gObT_et3SS_EY4XEVitMl3yJ3brP2fRgKDl1jenjZCJsnLf-qUxdBWaYRdhGKxR23n2Zn8Gdi_USVzP2h7aatSKceH0BR6-vcSxul1gOkfip182TnnpT7DcoIAMyL5NjtnNjpl52l3QPVB3qc8R1DlXZqgE4B66j3TWq1v3w3PLZ9QLNscrxGSCa6qNQPbPlr4f0plaoB0Acu3K64k8mcWGiL3kG4djONzheCIUX_REacNnuCBomctekVzTybuMZ3OFAPp92sCfDo8JgAQ5dQ-XBaKU3RkGQwHjaMD4GVm_F-I0vtXA",
+            "width" : 4000
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112576710287160511979\"\u003eNabeel Tirmazi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sw7gWFbgX6_2HkxjuGNqgth12_4DTZcG32SIdaunFt0YsBTtUUWTH9XXzyWQtnvr28QmcaiTd2JJv-vqUwET0Y_fUUcPJ3ZE89dXcHbElAmGBNcyNeotVdf6BKy2hu3Qrd8o26gZCvFqfsp6zkwQdWy7JXRhc5keIXuPyYc1TEX_iBfer4XlhIzmfSQgwbbOO6auUMmU4pXaCbZWKPyfj5L8nTeYda55dojAqDBaY6rZ8l7fenYBYdcoEo0pm4QvtBq8BCrsHfsANzuH32WCT1uwMz5aJwo0Tr70fDPGfoI2BoQAbxD40by7X1HdWQ5B2FfSPncaA5QfG0HNw3TTq03Q1l_PKaDuIXbnfIfM1kYlP5WY5XWDB4WVX9ByX3BeNEUXZu49vXJdXq59e1Nz_8jArp0f8himyuyb1GQzw",
+            "width" : 4160
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100197571922956442206\"\u003eBuddhist Maha Vihara\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u585QGcw-vorktpTDuHer69ug_PE4urb8RGZRvz_DnPhe3ya1EyyPUdfCpKp6RBPrOPvXaL2b70zMzwNl8rmn32natXdUuJo-mMh3pyjCGfs6V4cMinCO8LleEv_YTlu9pBth93r5JnIUw02vfwlAczv4NN1Siybil57gc7-bqB3ZQHo76rEO2sZ0N1NnaoKn7ZLZXVqkNmb6O8vjSljm9oJOfuIPnYJLXDImBHExYLb0J92Lpwdoo8HuondID3PSLZy85_WalNwlO9kZh-a_hvn4kUJX6KhnkpVajdj8",
+            "width" : 3456
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100361862109143670992\"\u003eSer Hui Teo\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tDDoZdo7GMM9NWfef2_R6-vzoNIsEP_hBFKdrwxCR9OUxy8E1kSxoIkdDDMBJ4uZQ7GNSRUF4WKCZS3guXgIkzXfKswwgfUpifbB0ZDVFC0pqu_-mO1N_jDSb2_t85UTHPjUEmdC0Y93IgFq9yq_AI2maKC8w-nA0WSDly8fL4XKRGOXw--Z7LRikDFqt7iyKvDrpFsDURGiMA_dO_WccsdNdwmqAnxec_MWzjMkTyhiyZ7iXqShTCjpvSr9-olKWlCYrS2mD6GkAUIjCC6NTm81eqmQm4P26PUSSJDKgP88JlX0br2z0kXCQID5E7JyLrhd-IIQc6MRrxx6SmvytYpYhf425sa3D1T0O0GN3oIfb7j3oR3tukC-QWvUIGnIpIp__JxXWA6URJ2aONGQ3fD9ntVSlEjDwpat5kWtsf3zMnNu7sljZM1Blw3nev",
+            "width" : 1748
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118120102354118328156\"\u003eChatura Ratnasooriya\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vsX7N3eMtZt5fSLWnmJX9kj20nG_udvIiOD_cj-TIq2RvUBYahX72JM1UnAMYyDrI8Bq2FVlLOm5zFRrkKOxxPnVQJQVQSvtYEyCnHUwiZ-SxrYQhBBVGJ7Jd2P8EGcBvUWzb6ENd5ebCCLn7bH3m0_qyKL8nNYCMwDQwcvGNRUl2EzKH86v6PY4cqk2PZrHCUgj7qq_Kqt7bgwpHa5sRZaZXUlSJ9goNuD79Ls_lwl4QbyrU6sGehcgFgUTkASxS64EAArN6Pp9X_3jcDtSEiGcpcRwzaVUl06ero-3zXjiVaZr_EFndkIJyHftYD3ceppNKcVz-6V2eNjuCpC7lZRGY-8hXLKh430zDNP2RJSQrxxg1lBYHyAhqxFLmlE86g0dcngLMrGgB9HvwxoBQiWNEIBjD5SvnwNn0ugLc36JVO5fEKQx-RPw4zGMUe",
+            "width" : 2340
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109683553858808542017\"\u003eWa Ka\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ttxsPtQ7XeRuZU1UuUdKWRc_iCPVOcwUaLTgc5XN84PVKsskVo3WfQkjQdR41yxIuxLCXPcDNo8LnbCijkaRSGcgTYxODJstpUNJ7peSstz4BB7zfAFa_RLE2VH7J6Ip71tyVdSPvVuxF1yPs2tY9O8nxgzjHZwjYCs8WBhwbz2PggTX5ilwewXvqaPpNSEmv0VjP-t4mRow4p9J3wsQRWibsp2XqQFobNTl0bb2xY9auNSw38hNcB5Csc-89XCUj0-coWs9KicZq89KVHLzSY_gs6vJRUMbBejv3DvTs7Bbx1ihySuA_VWpfgBzny39eC8bWa0gBftQAbgYBEtE7F1fvjGFnVGySu8h65RUeUIFkluE4Q0XEUU2fd_MZRa3deaNqxK9Uei-bW85mvBUX6LLW-BEkB-jd7INZrxIon0Wf0I9ZCmBgp0ferfbCo",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115365587610218489232\"\u003eKelvin Swee Chuan Wei\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vqam3YBrsg_tZK0gejEd2EFoQi6ukzrCoWH3Cjc_z39bMHV_oNv1rIt7N-8uMFisF1uvxB5Q5pXQ-_hpj_cQYev94Gj9x0CEOJhMA3iAj48aoqbmSXfqvI-tcCk4gd3YEXqbeiAkQ8Xy-bEnZQ8n4L1pbNPdo1QbiGrRpaMhTvrvmGku3mGUFsJ_EaaXc97eiNGABkoTO1PoGaEiUF887nluOYQ38ZQ74UacounGY1n1y0_xTATlZKCqZ8JXqB5H0XJVLNyOwH__XWtf2WJ3CoMnMm0Zk_SafYURGYamZ3DV9r6-X577Oq-NqIHBJSC_UbPQ0PK_GVxNjxTKKc8lrgT0kvmgxmPlmcapVeZhexy-DispD5D693D0qj-3CHaA02qpYvg1scNEEBUEnMZUvifrox09t5XD9X2Pxj_or8GUlH",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109878781869073276187\"\u003ePrashath Thiyagarajah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-thoiUPZVyO77tOM-IVoAmGG1XopPoVFQB28CdZkotkbIRH3XlY8-MgrPcvga_7OiQMWJnfE_HS4ocVsmAlxe4iowcnwL9VwAiV8NNohOpJyTdSYZcFGLf821uzLKAELUoM4bucQMx6sFoWBCR9braRousz9q1R67MTmHM9WnXEswSuachkmr9P_BEF95BiOa-1A7-Ayd4VoNdWatQCU-BIciXoP6VFn9dEjljiJWi3aacNGllWcKVH_w4EE1w9JwULt_uOz4cfV84uaNxizstsIJu0Kz6r7wdWH49asxOmxK95FihFSmWrL-Jt07KsaKfRXlyawia2eNy2zcZqbDtCKDwQmZhvvTJJLoTZ_GXRsOZFbdId_YJf5am3iXv9gQrhuiQNsfB3IQ4JLHucm60V10unyXY6Z4U5Z6swOve9VCM",
+            "width" : 4032
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104647175001844301437\"\u003eVictor Kum\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sniXQGECjUiz0sQx3GcQUgibUmHuv-naj8QiLtR3rGYDQlK54wQA_HcubFjkmbxeB7NbO_Vt_96AC44KvYngSkR-CVjVefXw-C-ENh98m0eV3y0NnffCqEnFIqOsI_fzDqih-hu6a3M6yl7HEssat_F33To75gfk81Bno94pkociCTULnNwiklR2ehWorAZxNb4zfxIwj4wkJVtrxMEPPvw5TGceBsYQ4FxCdTwmF2TzcCoP46AgTmX8v5OazQsU4LF4YNJyIH-ZvGyA1YaWEWYls_fIWP9FBSA9SDSkbegusNdw6wic6DqJIuY5i9BCgMKb93SmgK7sqv4TUzeDJnx32kVQvk5kqTrnzvoar18cFYZeDS85T8IEvDmwQ5kdEMRhDMu10Yu_3_vAxkMTKAbk-tRs_CxWpUUCla3fX-hdgb",
+            "width" : 3264
+         }
+      ],
+      "place_id" : "ChIJDbZymetJzDERkjwdFIKToy4",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3360691933841013906",
+      "user_ratings_total" : 1617,
+      "website" : "http://www.buddhistmahavihara.org/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "7MJ6+M6, 28300 Teriang, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2816585,
+            "lng" : 102.6605285
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.283007480291502,
+               "lng" : 102.6618774802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.280309519708498,
+               "lng" : 102.6591795197085
+            }
+         }
+      },
+      "name" : "Bukit Bertangga, Bera, Pahang",
+      "photos" : 
+      [
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116942999255737656054\"\u003eUma Mageswaran Perumal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s9mvzFXGV0HbAFXZv8sxoKQWL0OSrpTTLmVQPLwaL5rwmiKw7zjkIRi93lDZu0ObCxVfDhgRSFbdCQ8-zmxpjltKioEPPvJB8PUX2eP_kx3Eeron9-DfiOWoKUF_XXzusboWnZdDzDQXsd4EW_pPlOEIPOPbWeLIU6j_GA1gsnzNhBCPb6iwa9yq3r8UQfu5hJsmjSYY44ft-T8WWJuR23z7iCKHrFuKA_huhdoekg_QbI8ojjIhnzBIH_efJKi4myGnWOtuJ8wYa4wGJ5B3FB2BhMPPYOCe0OyPOj7oOBLi8mvk6oHMpaSDYzPoeQ6MI_JM8A6nT-vLFkhlfYuAClYBIFNWJjRwk-8i5C_HmjC7WR8LOjskApsxqBlZZtkhGpyC36IAKNzPFEpsH441jmrkoIPSGy2mEFgiQdliFIZZmMkElP0Cew1aA1bL0N",
+            "width" : 4096
+         }
+      ],
+      "place_id" : "ChIJ2Tu5AQDnzjERHPZSPJLGTi4",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3336822705307711004",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

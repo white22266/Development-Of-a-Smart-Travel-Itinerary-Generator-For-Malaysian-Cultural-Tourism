@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Tanjung Parang, 94300 Kota Samarahan, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.4427573,
+            "lng" : 110.4977108
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.444452230291502,
+               "lng" : 110.4985560302915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.441754269708498,
+               "lng" : 110.4958580697085
+            }
+         }
+      },
+      "name" : "Tajur",
+      "place_id" : "ChIJLUuhCwCj-zERPJgNiK_aL5M",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=10605936094917531708",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

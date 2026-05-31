@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Perdana Botanical Garden, Jalan Cenderawasih, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2693 7141",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1417537,
+            "lng" : 101.6870311
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.143246630291502,
+               "lng" : 101.6884714302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.140548669708498,
+               "lng" : 101.6857734697085
+            }
+         }
+      },
+      "name" : "Memorial Tun Abdul Razak",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 12:00 PM, 3:00 – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111291653184300497175\"\u003ePaul Ciprian\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uHmVIGxqmtU61HMnv7XEdX3bY8ofMmMr4euzHqxmtT0eY-krb8Mjl0GTk8a1vS148j91wI1e0mGMmbbJuT_sGnfk4LW7uOpd5lY6IsLxDWlp-z0pUG4lLdnOcl1W5hEIBzD70QvVLjaPpDoIUG9NP8M1yReNjfO7GWlElESqCB9qQjwE7LdLiaEgK1sicWH03U3vCw_UF8QP-8Tgb7jbQhQji2yD5IYfUChY3jtUfrAYcBGJO2vypeIovbx3Ds88ftRg2plxkJYKzl2N44S_mVngsfNrhq-vi2XQkEkrUnjCUqQJ7WEDdsviT9HZhMQpeLwOoH4OZu6BVUj51lMA3cIOnoW_2AuoNNxwP-65nvcVuO-YJJhJwDLqoI_jAB4ZExFdw9_ekizOmDsijD8YziVG56SQd4XtQdO52O5PDvaZe3e2_DWxmXAOuvvG_w",
+            "width" : 4000
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112515227116811717512\"\u003eMohd Tamizi Bin Mohd Rusdin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-trlm_WvjZW5bHLL3OyHyTb-gK2wTbI3cwI_6lZKxZtJUmzrHdhwzDU1Jga7TDBiVYS2yqJBCwRtvlByxb-KX7HAGd3TDjjlN3I3PEpWPfOZdh8nk4nKNIsRXCBWFZcRQ9ElsFfY1HQrnOv03vIJKO07yuK2hi-p77bme5o5jGPD7vRvsjJec11mi2OGFPT0id3LNxyG9gII6f4uqKOeoKvkqypNRCaqN0aGy-G0gJSN2E6LyAleE7dR4BXQ1rCDvo04K5pXUesqLsdCc1gryOQhz54Z5a4jv4eYpPMsXTsJo4-x2nFQtqSwZvOCdtSXFFzF4YBcugWkoEaGZi2hftI8f6pHKaAUBpHSUs8N-9p9JP77cbkbsr4XOgZPyGi08Ur4gvlgiDI52B-z1aFYbIWWn4avWCPWNgrY9IEc2S5NEzQ",
+            "width" : 4608
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tqsqG9gBb9KqEql9Cbf3Z6NrXQiwQUDRQj1n6yhY8Y1nd3jx60P4kqqJLoKSAAglBybsP71pQEqa2zKzXYrjBtssxKwtePJfDkObfwudnnwxJ_voEwmMsRMqIFbS3QkkI50e21qDsBAiTLGLra5uwwSY-pWp4Aystoqn2dfA-IcdIdTLck_FsiIyBW91pUrdxRWNl596KndaVtx-kE6V_pGgdiT9eTj2OBu-eDVfpedk7yFGSjghqn2f5E4cRZAeCVGFfD5YrMaWDP0OTDdFZkK8TJVh_B4Hr-ZyB6AjI8te7X2FDI9kue7RWc5lHXN-TwhTLs8GgCILJjMg0PY43M86DidmkSclwVbBrgroF21_kjQYiFpAEq-FAE6sQTSgW9wObWDByWO10tWWl0L7RG-wPJ0QCdBT6UodPNA3fhfg",
+            "width" : 4096
+         },
+         {
+            "height" : 3048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103528729955179533609\"\u003eMaster AS\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sRgoejPT0H9SbZ0ntp4s9PfiNmEi80GIebL9sYBSlzDTBFyys3kgx7eh63sFgzEuRPQ9McOsusyT0UD1h9fa-FDJtNj_kZSoNVGEDQjphfOX7i-6gjn-W5ORD22lddPwDNE0HcgvwyG2GfkUtw4_3JoiPlK8EjvzUZxVarC7hE9_1JUC11Nz7W5z0lMf1ZSM7mPpywE5gJY74EaBwvcafiUAjykSDwA5Z3EpjvYFS_0sUxsfIivpq2v-sKHrx1C_agXP5NFI4G-c0HHCQLGqB2FD87fsZtS2_PRYJdvY4WHCw2sBXZn_zJNhLsOgZ_0hB_bZzUuG_1WeiFPBuWm5KL_d5ZXy0ToHjS1wS-bEoSvXovIzQUd39KUVCVVnsePyUG_HIIUJ2k-i5mykxJD13DXMxbbyrETXlFXkrFpLo",
+            "width" : 4064
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117116001825633556085\"\u003eAiman Azhari\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uOIXLxP6p-9Dkh28rk5dJjWU6Uqeil-7PYpyB-uOvMJw7ab6oNheRmoIxHs8Bph4U6dCdSnEnbXv1PwIumoJNB8oCR081adv4Nn66L2_H_A6WhS8eHyDmyr25IwmDLHzSgdu2w83vMKn5WncEll6KUOr_xvIghD7qVU-NCZjZIRIwCt7rIr_4UBAAarbsqOkB-AOUKn3uhvb0ANri-NZbjpI0gmNrpIRUGFvfqNLJUoWuHe3uW2gBkYb5CEsPAPao6ZhOJIZlqJMc0vejG_8A3To_S9y9TjgypPYwBeVd0EcIn7fn34j11TOU5bhgwml7koSSnNvS4KJOudfY0VWpMnf_K0JDAfoZfSXJOwhtLq4A4oTmuKgdVq9bmBQaazY-V3-0zzJjBBGNn6kPVnp671kJ7bxRfQx9HE7fYPKUgeA",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114389342210806642170\"\u003eShaoping Sun\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sloPyHoceGHopzEA9Wka4V8PKDopo-Flg6Jn9NDHIcRArdyO-d0jaiBoQRMGhaI0Xv8bKCbXriP4Kp_fX77rXMo2XUss-MFdYfDIMKRfAysAdFbUVUeL5jxjeMoY1ktLwzq2x_ot-UtYt9CxFEvqSNtCjAjzQ_iZS5imYysV9i1ZLXM1OEJKjadyudjcxam33skw7IPZwG4LlK7MQNJUDx7pyaTvRhTgP20uONJX0JwTdBUK8nlnf8CL21DD3NPQCye33XJEwiuiSxt4rDK5s3pM6qcFuW93TEZJlneucCW9w5Dn1-sQlE47a9rf2vxmo6kfiWEUknFg9ZlilxUgu-c31i2TBkIAigWXaZMNjzICJpdeIY9SC83cxwr9E4ySKMphaoZXQ-43X_hYv4F820yJs6ADHTkNxR0cJ8dpeoWTkA",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101628606345972759098\"\u003eMarcin Bohdziul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t1FGzhXBpVXTB9n3BtRf2rS5RdnmIeCOPztKREtPeAZJbM33I4z6CZ2HR4iVQUCZLeKQm-RTQIhGTejtcB0Ms4Wg66Uuiaj5gghMXYOjNaRlyliamLCR2JcMr4NZwo1NJMe8i7UZrZp3hKg5OTCNmQ8c-33u9TjJIiK_uItUkOxImmozodWym7FOv2pvv74fIqnzu7g_EewMMevADFPflEaI8tFNr5A67-yjBVZ2NH985orXEDZktw7O24LQcja9zBC3VwlWKVJ_sN1Y7vpMtm2-epV3fr5n0wSZGEKELEBEBnbqh8yPDjyt8rq-DoHUtssb6Vbvo_i4v66KQUnqNhV-nX_jgTtJyRvJeGiPlPDZI3zRewBOyu3j_zUz4-feH6_rkeWO-aewLR_huRroU5pSGSZY8wnTmgcgssIOJJag",
+            "width" : 3024
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104400098795109927489\"\u003eMuhamad Shahrizal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-unbRTCnKJGPVLePBpkkSupLkBbW931Xy-P3a5D6L1us8f8UQfkjlzYQ75zCDHz27ABK3tlF7hdmyL7LH9dtcsfTdJSuuMWyJRQC8g4fuAb-Ru-QI72EXzu6UMNsBzGjS2XQVH1p6WOZh3gkg3ScVNP7W6-8hoYAjEw6WYbf5w12BO68rHM_lPSIMlDM88eXNeoIpB3pFT16fYppHRWiUQ-EpoJTyDFYx6rNQpaHXIghR9Q-wAWhIv9e6dj_dXxGm-uHVuadexnWjTZPunoswhxXSJY5syuH4JP5UgSDSCoW8a7gR71oO-Bpejb_AzMcsymC7zyDSiuj_BGRvGdsNBvAFmeOmWMQf60cl2xjEXVvO-SfFhM-LHh7wFw3AXw_u78Cgz54NXwyC1eGbyiGyef2DAoXtBebBEHBvtBgvGotrE",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113573124014204194306\"\u003eJC MONTE CARLO\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tHbx4yODKfiQ6ztaDKC56L87wk4phj8aVWfJRaorJhGsachibHDOHTwTCnr3H4ngG9vTK76AAsuKwvDbprd_lr62cJNieDg2MxRck6eaNmyzjdOBQhLe5v_dYrgTKbBW3fOVok4VWZDuP7-VrbqcjHoQILG7fixWD-Q2YBF4petrDCqbnnIzoai2TXx4owHBPPYwie66zounei1o7BcEBqthV0InBC6z3s-ax9caypbSO6ZvFX24ak9oVchYuggg3lFGbjgHe92-UXowY1cpJuFP0OAJ56YSp_CHEyDawE8HxFOIIOfCbp35jlO2lCz9H4nwlffxl_sE6rMHLEFbLRloWzSVIe-5ynyzh01y_09vhwkNc_RXhM0uvdWNjKaZ1KE_yBROUhHe8qFjGA3h8R_pdJW5q92s8c9_UVTmdYKF20",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109966915054959993723\"\u003eRobert Green\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vI23DA1JroJ237J1oFw7sdiwRTM7N7YZhrmIyByh71UrQFkYXDXYYcokCsZ2Nlwi_n6GaZuj9bDLT8i7_Rg4PeK4RC4230PGmDmMy7L5uS1Q6QPY5khwx64icVGG6Surh4a5kS70HO6PGVZp33CxuSNtbyY-WIE4VhfHRVll6OgNPOQOw93-2ie_an925AeRChq2OF_vqw62lcBeMt9dmkMBS74Y4j2ov8wm5o6u3XA0FoqC7SLPHpalSlXNdVWFrBBhuE6NK2okBa4ZzlZeKO1FwjRgxzCn5d1oEudNgLOL0WLzZpW68LnzGR8Qqxn8iOIuqyNkJRAcbWtME1MIJCN7Szm83mMF04J3UbhYuIUNI-HR7xXVcmBXz8GqvuVaU2DoUT_u4Vn0jPSA0Kv7Zxhw944gci5v-nlIcF_8TIjw",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ3fONYshJzDERvrF1u1Aqbbc",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13217267007633076670",
+      "user_ratings_total" : 194,
+      "website" : "http://www.arkib.gov.my/"
+   },
+   "status" : "OK"
+}

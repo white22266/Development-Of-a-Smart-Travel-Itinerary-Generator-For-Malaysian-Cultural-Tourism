@@ -1,0 +1,1101 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vjVJFsPFn2Bd9_e1biZZdr-xk-7uyiYxmyTeyNnuKIlL0loa7Ht7HHp4O1lU2HaQBN2mmxopQCDJjJvpXYUUDSufF3KHus8ontsbNhzQ0wdpva6TeA31EusLW580JM3i3ZKy6LDh-G299Fl71lbzgDB8f26BE34Ur-bQG82lfrD7k-ekaf7052D_PpOoN_1RhFvCLX4M9zwkbeExi_BctwQbQAgFgWal7-qdqLwg2LnRsPtP-BA_KUl0RolYqlgD4wktakzQFqvA8sFVHZs6NzcpHdwnNTDzzNzvz1R7c_lj_mpciDMZczhhldZ3eVv8knZmP28ZtLA8cDP1shoU9ryHfqIur-f1dv0kxBpYL_93Qjbafc0T7IkQyntFfVYGKQ63CidUHkK9UZ2PIUePB0UY4AmjrC_LFxKUnd7J1RPyhYZJY0PPgTxiCQabN2OturemW284nFo5Wea-XvwOErHUaR4TkapMdAKzK5NIB8SB9ioAdShW6ej1fR_IOJeAUTAxcNcqYoz1y41W6j0-i6vTmcn64SBRuAwhxRgwDoJcODf0WfUTbBPJkDy50kwIqJegzUypJje30x89l5HjNXOCBgQ5yPoRjL1Vu45hvG7UvreAhMvMGNS70EKOMp9oMtHjr5FkSPilMzzGzeD-NCTmKDmZIKkwWTtDS8DOS8krgj6f8XXZ8hO82O5R_TVVQoOLOEDmGzL8OJ7Ts7mw8aGNKyLGCmrZ7j-yoJkUuC52J-DSWfxWIa9lSU0PhRNn3vAfYBnlI5DeQaCz3XxdbSlIhSTyRaA_89a4jVjX6TFQVCoJjGxtqkgaJoXVSnBb6h733ImzmW",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 0.9690677999999999,
+               "lng" : 110.5197747
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 0.9704649802915021,
+                  "lng" : 110.5211025302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 0.967767019708498,
+                  "lng" : 110.5184045697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Silabur Cave",
+         "photos" : 
+         [
+            {
+               "height" : 3840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116771135630868603683\"\u003eMadeleine Kho\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vwY-zRgaiuuWQCpREddChSVjSfHi5M-XUlXaCVJrC2RZcgECkBksd1dAfn3uBYC-vrV2lWR5D7ID-WJWxxUdJgmIpMqWzh7uIkBScz7Q5BO2qcFv7p5xeaebUbwqkHMwRQ4RokxvbF_gABntqxxg_Dn8OyanqVgJ-FumW2cVCZgpysyWD4kYysN5BWAa-mA5Spne-DMEMrEooRweFaw4oWagpYeV96AcL7dgfoYJHu9OP9R-s9RxycqJXDyxB2M54Mq-xH6DhLVnKhPMwVxMdv0Od6P17SXmLXmLwYgf7mvJiiuKf3U8Lr_k3eslmfxjqPG8qscv9NTMzT3hAyq58RAdaR-Mjv8U5QSqDg7fsaxplmxKxJSKcteiWCkoVikFPY3FfnFDNWI46xev5MNDc3kyIiZw4qfK1l4VeZvrY6HRGy",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJV2iY19Jl_DERecgM70OGwgI",
+         "plus_code" : 
+         {
+            "compound_code" : "XG99+JW Serian, Sarawak",
+            "global_code" : "6PGGXG99+JW"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJV2iY19Jl_DERecgM70OGwgI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 119
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 230, Serian Bazaar, Bandar Serian, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.1663578,
+               "lng" : 110.5671757
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.167704880291502,
+                  "lng" : 110.5685331302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.165006919708498,
+                  "lng" : 110.5658351697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Serian underground tunnel",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116334447378560554951\"\u003eMat Medo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uFSqp49InFh7SYCmRDTARHoCra4FL1psV_Z5sjEN_ZNhkaGb28XZVt5DTPxHupq1XYknauWzulWfg5QZ2xjOqpBc_1H6jsYvN-htBvdt7Q4kUx5QhXXEH565nqEh_KU3Y83gDiCij4ishZB6hty1MKT38F65hgc9NT9I2QeysrC9Uc9KSokfOCFAK0nuDINmuq7nj6x04T5RYDXJOAPrShb5Xeoso37oIHuWxlJexi0_2TOV0ee6XCwzAiYKE0ehQMa_0TuYWJmCO4E6u9FZetyAQ2MhZOAYMTvzUxYApfe59uMJL-yMImtOe4jn3ozdflll9bHazyzVC8Az4b4uI4bxuJLRzZXbae5R_90EYM7IHStNGRruPHhF8pKM9UNUCFO5X4f4iSdWnWkBUo4Tle6qHyZu1FIzzI3Z16MkReyt0",
+               "width" : 2250
+            }
+         ],
+         "place_id" : "ChIJsX4UUVmJ-zERRs6h9r8Ck_8",
+         "plus_code" : 
+         {
+            "compound_code" : "5H88+GV Serian, Sarawak",
+            "global_code" : "6PHG5H88+GV"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJsX4UUVmJ-zERRs6h9r8Ck_8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Taman Rekreasi Ranchan Serian, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.143419,
+               "lng" : 110.584451
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.144756880291502,
+                  "lng" : 110.5857846302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.142058919708498,
+                  "lng" : 110.5830866697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Ranchan Recreational Park",
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101019812492901683571\"\u003emarlvein ringkai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t6OGk_o_Ajnj1rzEe3vKumSosFvOpqtWhTTdwX03bg9VTsOBD_hc4N9cOADKelR-2wPpRH1hVsv1aO_tXVYR6pluXLy23qsHZO8NXQqBvvx2X17QTpZuxd2BNbv0PSKy5Qm577zl_29CEEpiC8PW9aV_ftRc-HgPH_ytrmvztSrq0b7cwmvdsp1XJvtJxjyvmWPgG9mgDrSHcJ-0sctSd5qGgrU3s24XbkXo2v7sjDqO3dsOtwnCd4EgRa220Vp1VSUPljBnnCj32IEN-h4Yn_Ka2RLN5U4ltTYQdP9fTPfSKdPFwOELXkBEsdRCV37Q_yQKHA2H01GrgM0sVEm1E-8xyjEvzNhZh-52ocPDu7hQUwzCZ4VacIR4EuwVRITJQiw0TAEJDCqUHkumDjrJOTA1cV5P5x-ve5nvA-C-I",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJO09IKduJ-zER5OKuEmgLE8M",
+         "plus_code" : 
+         {
+            "compound_code" : "4HVM+9Q Serian, Sarawak",
+            "global_code" : "6PHG4HVM+9Q"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJO09IKduJ-zER5OKuEmgLE8M",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 950
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "46, AH150, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2089391,
+               "lng" : 110.5300613
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.210243280291502,
+                  "lng" : 110.5313845802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.207545319708498,
+                  "lng" : 110.5286866197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "mercu tanda bandar serian",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114127458215739045747\"\u003eSylvester Rejang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ue_UNV8OwDnssYq2GZtB2J7sUTqTG4LKtP9-3ZO1b_sHX8ZJbjg_ZCA387wsDa72rhR-l1zYOkZXpC5_sxa2OGDbHZS9RtAG_XzqDjEM8jjpVz03rsh44QYH0izucdataXBbtahmcjFO55XkHvDP-aWxrwtlaTKRozJvac2ipCelaDa206a0r_R47WLhJGAcKhqHGheI6d-kQRMZjK70xrbvLUnjo5N5aDnWlo5ApaL2bz9DUoKEY0Qb7e-rwRUjG6j2YaaWZeOQnif2l2NkI8Snct3qAhqS4voWzsYUgDwUXcScAuXFWmCdVUoibMtlblhrwlCxgPhRYHws8MQ7wbWUmkNVBX1ObUTuf4N1LjtfcMpVWwMio9RAH_87Nf14BeNh-wWpPUZn9lDH3kVnRLaHHird_Uha3pLkQSYjTvOIE",
+               "width" : 2296
+            }
+         ],
+         "place_id" : "ChIJoY4BWHmP-zERQsNxaL0Gi20",
+         "plus_code" : 
+         {
+            "compound_code" : "6G5J+H2 Serian, Sarawak",
+            "global_code" : "6PHG6G5J+H2"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJoY4BWHmP-zERQsNxaL0Gi20",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Serian, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.1743243,
+               "lng" : 110.5658314
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.175655180291502,
+                  "lng" : 110.5671540302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.172957219708498,
+                  "lng" : 110.5644560697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Golden Durian Statue of Serian",
+         "photos" : 
+         [
+            {
+               "height" : 4608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114545828797808454186\"\u003eKho Yong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJ_bO8CrzDxlXapuT09i9uNHUHnSIOF-ch4BRKzBfu5F8tyDEezTHFEpBvt8mDlXvXv5IEHFIlQmOLe_18TeUl5ff_VHSmiirsAYH763XT5qrzwy2DyAVEHoRcr7lnua2T98phof48TFEdzMsbgweW7il1EJBlHN6PmIqpbEx1IGN7DVuDOYeh_LULKg3w7XKt3zKPB6kF91ahJHYwmNVNt1hmQSX9Kn9D6dSNaLmpEg67FkROapBB8OsFgecn6zIBohzmdJavKa7PttwQnjHt3Idm7DtGjfckLddGoM4QP1B8nC4VewJxL4_MflO7cr-Xp17cQnVcY6mLTCnTv3pk8LwPpajLLKQ0Cmr7E2_PwdFxXf9uSl1XERFUELNSGhnMutiwhydP13bgZh39e21pzWRklb3SFG_Nw_wwrnW5lSHIaQyQP9mljglCKZN0",
+               "width" : 3456
+            }
+         ],
+         "place_id" : "ChIJxbgtneqJ-zERC51ldTQ9OzE",
+         "plus_code" : 
+         {
+            "compound_code" : "5HF8+P8 Serian, Sarawak",
+            "global_code" : "6PHG5HF8+P8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJxbgtneqJ-zERC51ldTQ9OzE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "94750 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.066667,
+               "lng" : 110.5
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.068193780291502,
+                  "lng" : 110.5011826802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.065495819708498,
+                  "lng" : 110.4984847197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Labak kara",
+         "place_id" : "ChIJLyk6LQB5_DERkFvguAjF3OI",
+         "plus_code" : 
+         {
+            "compound_code" : "3G82+M2 Serian, Sarawak",
+            "global_code" : "6PHG3G82+M2"
+         },
+         "reference" : "ChIJLyk6LQB5_DERkFvguAjF3OI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 85, Kayan Land District, Jln Pangkalan Amo, Tebedu, 94760 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.0174412,
+               "lng" : 110.3659158
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.018916980291502,
+                  "lng" : 110.3673221802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.016219019708498,
+                  "lng" : 110.3646242197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "KLB GARDEN",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102234954057629533237\"\u003eKLB GARDEN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ttw4WRh0ftZSiyEHx4mWmOHT_KxVcWIVBk9FwU_yXuz0UlsXlk6A7j-FB53qLip7HHVTEs9DFa10soMob-uGgNgkQqWqOd1CwIhd5ZtTviOe9eqokr1CJbuFRsDff0yDYrFqi9QthTvziCkqKiCZ4Tk_jfO6mcZP2W9o_E2keYqBG4m7jjF-mEWMK36EmV8hMb89bLbxFBG1wxGImxrUmV6-5QD-MT8hiYx_-eeZVGjLpbCsyA8iAkpqcWyYRkPN3KnL6iOWzxc2LK_ZZ-8SOs_ukuRYq3oZG4cO3AEOm3HqZrXEy6okDXEvWML4RMEHTIYFnFUoM8F4IKqZhKOv24B9FIsIRbIafJow4yEqGzOIBYXOhUAAHbAyyV327xOzW8sC_GhmhZf_1eDTOBbLDxzuJF-uJqoJZrAPIBkixt2A",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJY3XIiBB9_DERWWdWe6R4_J8",
+         "plus_code" : 
+         {
+            "compound_code" : "2988+X9 Serian, Sarawak",
+            "global_code" : "6PHG2988+X9"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJY3XIiBB9_DERWWdWe6R4_J8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 1227
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.1973114,
+               "lng" : 110.4854901
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.198660380291502,
+                  "lng" : 110.4868390802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.195962419708498,
+                  "lng" : 110.4841411197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bung Sadung (Mount Sadung)",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102429295109391593826\"\u003eKL Y\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tVPImPdqkKNFE3yhVImXd05xWgA5QBnL7mBw8t42hwsIfvKL4UqWDOROYotzartGjlczjzjeJv-vcPNzuuFrXvETwbl91TbrZqP9q2jpIvHMnqZheTBPOludMd2WBaqGrKhGR6U9wG2UBE4N0Tzd-TPaBMSegnsnXPnrrXSu4mezq_Y0b76Cn_QoT15RwzydlGPO3XylTMuOIL2TwBz0FcJUkI1DkEUG8JzY35PmFB6LkqfEb1Ncd2XAO2L4FBrvMLpY7E8EjyrYgehADLxjWpyb4RsS1vts-snChRcS8HsRQKBeAzYjaR6m_k78TY_gk7ai_FwmwbZ9HDpOVGUKTPIKL1tBzXmokbwXTCUQRv87ZS99nwhR94xRJGBLetFL0WWL5fpd7kYR_FAs_R2tT92vmb42lpHvf6aFAlbqctAA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ_z98x5iH-zERg0tLnJ8cmU0",
+         "plus_code" : 
+         {
+            "compound_code" : "5FWP+W5 Serian, Sarawak",
+            "global_code" : "6PHG5FWP+W5"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ_z98x5iH-zERg0tLnJ8cmU0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "kampung daha kisau,jalan serian Mongkos, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 0.937816,
+               "lng" : 110.4844817
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 0.9391772802915022,
+                  "lng" : 110.4858084302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 0.9364793197084981,
+                  "lng" : 110.4831104697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Daha Kisau",
+         "photos" : 
+         [
+            {
+               "height" : 540,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104288153975705014840\"\u003egarry shelling #stuffedshirtmanangdupsungkuhxfb (#officialmanangdupsungkuh)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tXezUokg-n52-OrkRHmK_RGSC8uFo0-JKfnKUYcXBuJ1AsjYDu1I8jIo_HDsEzn07Rv5LCQrE2Xn7_TaLLgq-KvlyglQyyO1PnoWIoIUhEiTVk2eXaHmac4t48mc2pK5fJ-L_8mR0sIh7nO5x5GQVFCObhK-NhTYy2QaxodxWQvICuVofS2vw4mf7nORpjZdueInPCI8d1yg_60i2HTC8j6O6B2zvFDxbH5CWv-xw5JfQkFFuvfBYayHHPFSynbL1Xc-U5MbnR1GNy6CkORgle-uniQGjFYWnIOXM92b63sJNugCQHC5ApVDqHk-i_VaGP_dZUt5lN78VJKB3Oc3h8cc8a1luVov405_S4pAwJuIQB-DurtoTl_m--t2QRH0M0mw0FUxZal7kh4Xkb65P0B07Ns0BuFxPEInsTHBWlVFRc",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJCXKOETtl_DERjhqxdLigKyc",
+         "plus_code" : 
+         {
+            "compound_code" : "WFQM+4Q Serian, Sarawak",
+            "global_code" : "6PGGWFQM+4Q"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJCXKOETtl_DERjhqxdLigKyc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 22
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "XF28+HP, Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 0.9516070000000001,
+               "lng" : 110.4674559
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 0.952926180291502,
+                  "lng" : 110.4688161302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 0.9502282197084979,
+                  "lng" : 110.4661181697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Daha Seroban",
+         "photos" : 
+         [
+            {
+               "height" : 540,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104288153975705014840\"\u003egarry shelling #stuffedshirtmanangdupsungkuhxfb (#officialmanangdupsungkuh)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t89yBVpEIVhr7DR23GXCmIm4pwrO_27Ggn57rkxBqgZAfw5Z6CxoMHqEbKi3pwB1h1NrKHNDXn3Vw71KAN_OcevJ51Uy3xzHvX38RYcxL1IcTonlURjiFYBwzcVM4bkB-kLrsDzrDOQRcrb1ydtTocSUtikUqZrBrghHzXa1ZsBZSFDSt78EEbkl33gg1KAywFsDjoQXCZboYTA2vp42241IlEDS2Vc4lZCzbccJ29etULnv4EZqRSBNdKzlO4bt4eLBj4E-p8AKzLwLW7T7v5IC9qNmIPzcSFMxc2htdz845pxG140rcNTql6HU0pyja-Qr_jx7lviJBXuWApWNZrGznphAU47_Z3PcwLgyJ4zcXscZNVMJDyNEjk_jYfnLYahDdJwe4tFBXVlT2GqLHZCPeYvrNJFFsXnlxRNMaMdg",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJNRzv_PJl_DERtXTgCQcgvcg",
+         "reference" : "ChIJNRzv_PJl_DERtXTgCQcgvcg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong 29 Kampung Taee, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2067004,
+               "lng" : 110.4663076
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.208061730291502,
+                  "lng" : 110.4676559802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.205363769708498,
+                  "lng" : 110.4649580197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Zone Entagan Danu Kali",
+         "place_id" : "ChIJMXMFOz2H-zER-eTXzKpaDBw",
+         "plus_code" : 
+         {
+            "compound_code" : "6F48+MG Serian, Sarawak",
+            "global_code" : "6PHG6F48+MG"
+         },
+         "reference" : "ChIJMXMFOz2H-zER-eTXzKpaDBw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Baki, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2144805,
+               "lng" : 110.5026714
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.215809730291502,
+                  "lng" : 110.5039906302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.213111769708498,
+                  "lng" : 110.5012926697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "M32 BungaLodge & Adventure",
+         "photos" : 
+         [
+            {
+               "height" : 300,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113420572792146292118\"\u003eM32 BungaLodge &amp; Adventure\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-syb_sn0cRWASYXfhn3kknhE9RRUfbhuJqfuC1oPgcyDPwZ7Ck-nE7z5KkdUqTGXh2Pw8xTcoTdbijEBfi4hmALs21BZMG_s1uG6Ya2NJMXnaUlxoIW6oigrgq53D8C-V12LYkDaVPs9naX1D_KH34cioy1F1NKl3RAr4woCdYNiV-4rhELJiCfJ2GBv6Q19UzQhNl_z-3U5mf4rlgPHabk8dHeA4GN-ZkG9bJzdvLAmQ1JZAk4T4KOtpZbmoNWJAMK4i2IqaDNEtJNLG2SDzGNm0b5E7LqehSugf59RfWUMA",
+               "width" : 533
+            }
+         ],
+         "place_id" : "ChIJscoBbe6F-zERw3FnKhOLdgs",
+         "plus_code" : 
+         {
+            "compound_code" : "6G73+Q3 Serian, Sarawak",
+            "global_code" : "6PHG6G73+Q3"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJscoBbe6F-zERw3FnKhOLdgs",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bantang, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.1806346,
+               "lng" : 110.46363
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.182350780291502,
+                  "lng" : 110.4653428302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.179652819708498,
+                  "lng" : 110.4626448697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sireh Cave, Serian Sarawak",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105221920248159097977\"\u003eWilson Chin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sbRhP13Yqd-EuTV7TKYhTELIMmy0Lge9VOOp6dsa6huaFeXiGiYeqDr9SQ3S2NEEj1AryiORSfs_uTiVVNTQdZsEw0jFmhha7jLUau46zmlDmK4pYZDqQQaqPZiNPJtxbWwUTrNh6RImGcSyTRTbC8uhuNXizTKJKOdA5wa4uPBY7ty3rVOnsWj0T5RQjj6Wp7weseG-kxn4rA4cvliY5bTmWAAEGCtvNbxHl8EAqXYsXjWvL75JwldleOZkoRMJpsyFzjsTIDIob0Z0eJS6DP_WunSXmi0FHKvkokHk0e1rXeQXEjYD0NbTfEQwYxxUPOUX0BXlKS-dHdeM0GcfjlXYxiA8XzyUS0aOWkm4Z2QK9qQJBZPMVbWWo3lS3WccADqnDkuRYcN5uwUjei1gI5PsRKD_bSBgyEtm5E7BvyQ3l5",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJAaxuxwOH-zER4NROVh2a6T4",
+         "plus_code" : 
+         {
+            "compound_code" : "5FJ7+7F Serian, Sarawak",
+            "global_code" : "6PHG5FJ7+7F"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJAaxuxwOH-zER4NROVh2a6T4",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1305, 93050 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2536955,
+               "lng" : 110.4507454
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.254977630291502,
+                  "lng" : 110.4520809302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.252279669708498,
+                  "lng" : 110.4493829697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Panchor Hot Spring",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3179,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104682915457576628220\"\u003eKhye Shen Sim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s0heGlwO97sqvtxYgd6adiyWrTFUYFE-BUE9E8ia_-afUobWVbj54uPcNXjZM8Ztv9vXNFVEOVND0JVHP2O6NBFx8sa_EJ2FIiSZFNJJbl5THFbB2sjJiD_Rg57s_RrGcVb6yGYlVH6sKEgd25rxHk30VOixDaDTLEyJ512uP20LjXYcwvsBCSoxTEndxDWMjN5bsUQMHD03BdqOFUH4DJaw9iMXU_zJuglNfPVXDWw8werNMzdO5aBHmTgCedgf7PtzVbRWsm4B_rGNCNbRInoeur0T7lDPYxvwrAIBlpfewqpXhMrfZDsPBe5sG7DubSjFItpE1lQTDc298Lq62mnmp4ATh8EqZRqa5QutsOQZZd9kCzclApj751btd2Zu1wG--9xuCQmVLeGREDTxFWKirULKS7sgcTa5GoLgA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ8xGvHwgP-zER83LGtAG7UAg",
+         "plus_code" : 
+         {
+            "compound_code" : "7F32+F7 Siburan, Sarawak",
+            "global_code" : "6PHG7F32+F7"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ8xGvHwgP-zER83LGtAG7UAg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 535
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Serian, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.167035,
+               "lng" : 110.5665059
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.168383780291502,
+                  "lng" : 110.5678660802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.165685819708498,
+                  "lng" : 110.5651681197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Farm land.",
+         "place_id" : "ChIJdb3aUQCJ-zERXKBlYZAEw5o",
+         "plus_code" : 
+         {
+            "compound_code" : "5H88+RJ Serian, Sarawak",
+            "global_code" : "6PHG5H88+RJ"
+         },
+         "reference" : "ChIJdb3aUQCJ-zERXKBlYZAEw5o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Serian, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.1658195,
+               "lng" : 110.5669963
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.167165630291502,
+                  "lng" : 110.5683512302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.164467669708498,
+                  "lng" : 110.5656532697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Serian Durian Monument",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111404074660653598985\"\u003eEdmund Ng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-toI73IYMQdV1JzAyriLJ3JScn4oiFL4SAmua4pbafckh_NxUh3nIiZrDZOAgBfHzplVXtcERbsGM_Rl7LZSwSVHiDb7rGMZ46eVQ1Y5av0yb6Q0PPkjUu0HJL5YFbww3mmY1t7rBUjsMEA4RU0co1PEU8Fi_B5uM4fq7Zi0rugC3uvu8wQPNQYxUvN0xW6pNpd_3WzZdYnTfyPyz9pX2xLuJnZrIpEizCDRfAPmfZAbySCmYmhnUXUmiQJrGeqkxx5unn8b5ZOs1Gysx3BTR5RI6jvoGmUGbPqyO5Wcck_o-yFTjnTf3v2xuvmQykU0dSHSO2VFsqjsz0RjVOThCDIjY2oVZw0oBtdkz3QR3Hd7w7u6HZSl5cpkWWKEt9LQEybM4r6NDExv5g2LnA5qG6bxPhrWYi-bmFFAZr8GoO2_Oi2b9GaxBhoFex7Mg04",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ11X8b1OI-zERk6eknZGeSo8",
+         "plus_code" : 
+         {
+            "compound_code" : "5H88+8Q Serian, Sarawak",
+            "global_code" : "6PHG5H88+8Q"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ11X8b1OI-zERk6eknZGeSo8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "207, Jalan Datuk Michael Ben, Bandar Serian, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.1669347,
+               "lng" : 110.565785
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.168267830291502,
+                  "lng" : 110.5670767302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.165569869708498,
+                  "lng" : 110.5643787697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Buffalo Statue",
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102190276368980027212\"\u003eJoel Jo&#39;ez\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u0YHBcyyER4C6YMvl2DBDfg4VewUhC83Hajtr7d5E5_yi7gcgRBZGPa2PgydfoKvfH-BGi4tJYTGS4t4NMa03CfBmbc5NlzXJDxSBAo6ZZ2xvzm_xdEcoIlzu2AwTIzfiniOMBRJk-okMuDBc2Sn_bN1uBH202GCWS43k0bjBZa66vofIr4bjczQRIcWjpFcKP5cMaojuxsDmqcXMtgrqYScZRz6xhh9ipVCvg912vngEqb1c5CfhTKCR8ras4i6QovLUf0KWeI-7zEb2Ei-lJCUETNZ0UIxysmNIFMPebb0J60IygjDqC9Ap_4KRW3Kazu0OoqjhYEqjw45GjLJ6OxoiTQ9cyTg5sibAca2xEI3JJsYxWleK9xz4b7wsocacxqBtwrkwnNTtzGpqrLCWReNz9cYyrf5fo2Pt0KkT8_g",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJM7EXYe2J-zERjWzVcheOw1o",
+         "plus_code" : 
+         {
+            "compound_code" : "5H88+Q8 Serian, Sarawak",
+            "global_code" : "6PHG5H88+Q8"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJM7EXYe2J-zERjWzVcheOw1o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 17
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuching - Serian, 94200 Siburan, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.3640379,
+               "lng" : 110.4121772
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.365352530291502,
+                  "lng" : 110.4134798302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.362654569708498,
+                  "lng" : 110.4107818697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jong's Crocodile Farm & Zoo",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 900,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105035216462761183120\"\u003eJong&#39;s Crocodile Farm &amp; Zoo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v0TWXDsJsewQg4qMAUyEwWomOEyN9gl9oHq3SSA4vQJfd0TRbTFSxLlQGyI49PHmqxBCpHHRz_OZCCYZSvH8QHX2KwV9ltcX7VucMbAa-yt3hjwf0fOZloFO_ISw7r6yJrUVGEM8dKb9WEYFVuzXKha1Z4mOsqZNVsPS3Ti36nWO-hV6MWq5rCClUNZk2mw4P6xb5HFFjXw1gXiRwCYMN-uEQpc5PsVPsMV5HNEmH41f8ndx0ZsfdQ9h5cCF2cXN8FQ2QYd0znz8JAT7jphPSqGTfSFbuXmoT9mdEkAg3H1A",
+               "width" : 1200
+            }
+         ],
+         "place_id" : "ChIJn-Bz5uOf-zERYsApfMOfeug",
+         "plus_code" : 
+         {
+            "compound_code" : "9C76+JV Siburan, Sarawak",
+            "global_code" : "6PHG9C76+JV"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJn-Bz5uOf-zERYsApfMOfeug",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 3346
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "kampung linsat batu kudi, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.0600897,
+               "lng" : 110.7226282
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.061577030291502,
+                  "lng" : 110.7242024802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.058879069708498,
+                  "lng" : 110.7215045197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Telaga Kumang",
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102747266800929405639\"\u003eJoe Hary\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vphs-ItXJ4n1koqGzW5-Eklc-pB0UjkJMXRoKeacOrDXMSg3SiKjRNV9h6qresbR3N6uSiQ_VVUnbFFfIIH2bk1OcSOzAIZ6eNmxBP6GTmK266wo97wjZFj5HmpWUdqCKHjqROM6nXt9c_wW5lKxuy81kDAC_KBud9RnAgrImlWEAFi82dRj3wMtveJi_xlerEdLJfJW4YVsS3M4uFCZvOowA1GW9f6Tnno50rdzrWX3dLgPTH66WCYdA4xO_D_lB1pv1AqNhN-1aVpSY8w6yhiLLwDEvUJkKmhgKBIyXMXSWuVowGhg8dIDucczArD56FSGY2FKY0IhUnmq6lFrnh6mABiE4Pxjfimr9IySJoUOE-_oJu8lxctObJeIe-RVc1687g4fc3kTAbdz-_J6G1Lj7VEt19Y4oivngwtG3qQAy5kuZZ_kWNMy99Y__x",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJfwKPWQAN_DER0G6A5tQfwwA",
+         "plus_code" : 
+         {
+            "compound_code" : "3P6F+23 Serian, Sarawak",
+            "global_code" : "6PHG3P6F+23"
+         },
+         "rating" : 5,
+         "reference" : "ChIJfwKPWQAN_DER0G6A5tQfwwA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln KAMPONG TAEE, KAMPONG TAEE, 94700 Serian, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2094056,
+               "lng" : 110.466109
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.210738580291502,
+                  "lng" : 110.4674274302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.208040619708498,
+                  "lng" : 110.4647294697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "BARIE TIPEN TAAN",
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102609193120891024567\"\u003eBARIE TIPEN TAAN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uQNbK2b9v8dgW-3ASwFuD3Wdixp4-ml2baKRJfHCvW8BP0-n4grqm-eel0DkwvfRhOmcXperzuWUIAx2Ed2Q7wE7NixjjRyLQgKtElbH8Un21CluPGw2a2jyMWDeNFka7C2Lu2nf7uMPRKXylBMA02qK6riivQmJMybOUgoer7THKpSVSQzaAsyMAdmQIsKY-CqsDUc4iJZwxl7wKwY98cH0W2iJ9WVFJH-slvyAuVP3JhOpoWo0m31Ntnc3_eFs_GgBYhD8G6kEhDGVI5eK9H7DwLwOr-LnYMA5wDXOdi2w",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJJTrf4UCF-zERmQygbdRRKlk",
+         "plus_code" : 
+         {
+            "compound_code" : "6F58+QC Serian, Sarawak",
+            "global_code" : "6PHG6F58+QC"
+         },
+         "rating" : 5,
+         "reference" : "ChIJJTrf4UCF-zERmQygbdRRKlk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      }
+   ],
+   "status" : "OK"
+}

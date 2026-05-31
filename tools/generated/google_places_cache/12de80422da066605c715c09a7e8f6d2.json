@@ -1,0 +1,225 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Ilmu, 50603 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1182613,
+            "lng" : 101.6532152
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.119662580291501,
+               "lng" : 101.6546268302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.116964619708498,
+               "lng" : 101.6519288697085
+            }
+         }
+      },
+      "name" : "Museum of Asian Art",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1215"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1445"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 4:30 PM",
+            "Tuesday: 9:00 AM – 4:30 PM",
+            "Wednesday: 9:00 AM – 4:30 PM",
+            "Thursday: 9:00 AM – 4:30 PM",
+            "Friday: 9:00 AM – 12:15 PM, 2:45 – 4:30 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112791995300847741414\"\u003eKhaled Shukran\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s4Jv3653YA0EH-4ckAb1l6XN3OQS1XS6jNLUDj-zW5mHyEcxhlXRh3HmDl3HPT7Ji5dwR1oR5aH7uaMtbG5pRN3Hv4ph5VI4bn4gZ5GAkrte4eWX-SQi6JxLciSCb7MTFH3qaNOYxiGnhLnyet12nNqvk3vkex1Ej7kxRy25nN496UNvJhRjiG_vkK_xY01HFHCOXS3V58kvb7NdyNfUDX6gzH9W7dpRtIJ_JRvDiZJAOX6JcrDiJUDNARoQDrfw6hidkJsREPwkcKp_GLxXboy_tw8QUtRBpdcn7VDvHx43NMHmPue7024vElEaaXagNbw9zIFhC-lbmutzyHn6uohpiPXapg9is-S-VPGgL4NHe1mri5UY72tDuxcdgr7VnjKnPMVIfE397s8FEwvshAcMwINQJoQ1z3GFECuek",
+            "width" : 4160
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107653222910252458397\"\u003ePaulo Miguel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uTaRSCKFHasA5QdYu3Dr44izGn7YJTjQ5P5KRl8dKCpsGhGYGT7__pQqIMisuag3iXbeLIvthD8AdFyj7PQyXwQK4abCy4FxGM1e3WO_Nk5F4nRYFaxocgg1mkwG12ffNKEBkXHN6snNV2Ft3-zPHhKS3OaALvm-oVdd4A39yMeoLKlKQ9Wem7i1Ra8KbtnsbmKhTQ_7BjXwKMqyU4tSu-Hl3cFSvlmtDL6fsAhf8iY2kLh5pRGc5gBnbRMPn40OvBNszzmgSzPcaq0kebjzOe9qSX4EMZFW7-H0l9VyGL4Z-g3fnemCRfCDffinJ9yCNxKxalGZtCrW8Db5hu72g5sQnWwXJ80XmhNXTuOyCviF8chUJMS9MdtzX4DtNb7gSXzmXBAiLkIYMXJaC5-4Z34xEFeJlrSx8_PJADo0mb_yW1",
+            "width" : 4032
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104780646457931338490\"\u003eS L Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uhxz-DPPhua8jxO4wVZNkPKCZ9doZr2KQ2iIFSMVe3hMUwSnXTyjIBh1XJ4q0XJp3efakWR9gFnTcrDr6R1__ji5cHaCSWTi8uj9kwK6uHof26UwyPbACs3qI_T2mKMD2Qp2qvPyd99uPQ9tBQqbttlQLQXxCSQFXfvDC8Mw8phQ2WBf9JFtmxKVHcDkAa1XLSGCwMvDwIiijQ8NhZLrMMLdQ_kh3BRPgDVas13uC1EOcWXLfZRra85kTJkZewQHpZLgcWkuDBbopeFpeBtIHJ181iQOJjIzI-X_9eb4pQAmo99JWf2BG2PGh_drMqXFoGwEr0XhHKRVKyiDPISqVsMLWfreXzQAoYS78_HS8w7uxs44T4m7Ez2we6OgZCSaOQ1AM-oCvDBOUuJXSCNuhpJolSLLvwJJEgHUk",
+            "width" : 3000
+         },
+         {
+            "height" : 2048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107428834960682305474\"\u003eRedherring “Redherring”\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vcPifQuqenlp11OX-sNr_HOXOghgbzJwEwED096sAoSedsRnz7Hjc26fOZYxYfblKbgaNSWg1L0lPg5CHLTj3GzUKMqTBQb1lYelwQ96pPySlJsiZb8nZ5JCzC0GwKnMoj5dG0_3n91CGUA5UOhV4DG2mYnwea0SCqodchW65YskVl1qmJOcY0SU2xAu8KcrLzxnyQ37Leda8eVEBCuojt4jlzBahBg8OMrmnXNiSNoLyO-Lfa0LnthqQyZ8viNROsqLDxgAaVEaCkAdKFBjQvzeODry_u_6pzO0DEuoE2SJPIblZ-_70IDpAn5voimx5OkERKwrPPQX89VeNRgfMwq6R1Ok9D36N_PFocAOY-Ip0D4uhfonT3UGCQA4YAiNTiecTr05qjZvd34pQu2E0T_6nFQ7DDOyDvjvRmSdk",
+            "width" : 1291
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105900809790140455098\"\u003e王老师史神教室\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNd84q_D9B4ic7WxSg7RZZ_NoxdEUFo5Vow8zJXO2HA4hBHU3uU7Q0yaoZ7zamkbZOg5n_s7CAmm4JE6aImzfC4qAog5w8xPcPro38_CkhueTFK7km1Ll0QeedgHBLZkr_AcLP776as15Y5vbNHyxBAJaUSb9sGxqHbekKtyOCQNOyLr6J2uPmpIqRiyc62irvLwfXjM-7durdu_HD1xF8tQkWNRuMs8oLjyJGz2eUqmJEnvBL0BQ1M_tRzGkquhyJguPqhsf9WbUhj13g8FwaodGk5dZihtotxnIRN0lgCgA3nGP5LrsQI5ZCr4oaGxHl8mQOP3QHGrdfV5ud_nw-XSS-tDdsbqjIiUZPqoOvqtqRr8Ay9-visbOyeqOSQP31_nUh_JKWCnINV3ZTkdeNdYNTAOW88J2iAmTbxQgV9g",
+            "width" : 3000
+         },
+         {
+            "height" : 1800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107428834960682305474\"\u003eRedherring “Redherring”\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vJEFJWnfKsDoDJAG0OMqkPFuoYPKDwLJ5v59jw-LNZXag7VfgXyGYFiJDyy6ZulVITkfPDJnb9bQPtsQJiW7B7WLxLRu8RZyVmkJULNoO8N5KgsvsUMUSYACqoJML9IXG3CLytSG5qf4BRkiCnmhPe5LKrauHbH1KMl2mvD27BCmtS9lVk95keiJSOfHrXXp37BjOMV_Mbfi9G_O1Jyur_yxtC2S7r9ifxox8Qq8rODw3f6OvjyXg3OEprzDABTKZPEtC-PTrqXD3EFmUTKps4-MTqcnXxmKYxP80LT2xdN6b9Sqkzu07GrIziVRepXywWDzHOgA88tMRBrTXCJrJeTivtfx_7lCYz-InrSDOwku89EjI0bkzqGI_uFk_EXacGiTwnUs3kMVn1uu5vGzcWPcDjGW425yoO_OUy644FxA",
+            "width" : 1354
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104780646457931338490\"\u003eS L Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vT_Lqq008cbCd27ftMa9woqSwXh0tbT8L015Uuykk-KfvhCQ24S2G4R_BabCULFAqtSfTw_dOY9DfGKZmxqngf7cRguFaBqSVdesWAakPL3MquyZZmQ-d1T43eqbrE66yQj7hfnrF2dNz0VFG248qDDTwzOi5gWxA8RAhH76tRCaYIAFb8jQL9wpF8l75vJ9_gN7NXYhnoOx8TJShYczF_fnoS4t2L5LlPC6co6wqDivaf89_T4JB-MA-x_n5c8IBpNSarZSkWjnTS_dVTgfXvRg40wZDQu4tMsJq70sRGSn1cmQP3dxJvUoIeZbxYB5YDM0kqQlD4iUs4YwfT-paICFS1DCT-dZIMePxve5Ig6Z6vymKssB4QteDUDXUKpu7EVrcfyUyyDuV0_JbA5eTaL1msIWkg0HhyojWyDgKvCBQy",
+            "width" : 4000
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107428834960682305474\"\u003eRedherring “Redherring”\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sCuyt0Cn3koLe5vreHg0qmkvNTY5MOi_FpZKWs8fGkLM2s46ilVpfTyoIgRSgvUeuxHTpETeyHnJA-aUOwayAaX09oEVfL6-Pm0qGFIVbDX2GEkcYNhREAlbJlGObkuFdk82pG_qnL6Fi935bT0oAVNMPTnxW-ukFf40hrt1m0ggb_mpNL0i7iLNv4_gkljY2MTx4Pb8EEoMoyoEj26FKWEqmTIq0IfebNYk7jhjwoZ1bvEMzt4wZTe5q3boNAr60i1UJ784mBsRw--6pxhIpmoOpYtdjKcLK-vdkuviyER5k4-m0Y4dHO7HOlqhYli1UuX3jo_g4_X6rjYFqxtPejd8IHiP1XX9XOw5cLwrsWDy1kAY6UQFK7LwGVUxnSC73iJOy5Yts6Mh-codH7231TVu61nudxBXzqK7EKYDI",
+            "width" : 1286
+         },
+         {
+            "height" : 1800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107428834960682305474\"\u003eRedherring “Redherring”\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-syraVdHpUbur2xQ_8_TnGE9ukWFIcWx63BbPjpN27_IYD92wfdvUfklzQKMsuL6Szx7-Re3XYGQ6k7HeWQ3dBpo_wIqc__R8KrbRXb6Y4-G3qsP7jfGzNPQjv3Ny-Allou7ZMZWKwx_7OiPjKd8V6HfUS65m0ITwuXVeSg10mml9tqt06SDJ5i9SfjcrCGuQt2a-SEF0o6FOM-IoxK72vZBA_3SPRr_aJnMHawu4KMbbUhIJNsFVq-xQfbfIElJllC6FF79G2KEVS_CgVBW0UU-5bAwGgKIZvE0YrbyTU0kF47xCI_x2MbsX5V54L0Qq_OugNW0hRsMK37A9QBlUKlJk1Or5TiphkWSO1tOLjji-ENx_sFTrmNqqrbZ5dhtuAXnz1WjWK8HA3rOmafdHIaX887p-7nNxkTRfdhWN2lGSGo",
+            "width" : 1288
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104400098795109927489\"\u003eMuhamad Shahrizal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tBMkAgL8-oCKqNdOE_XxBSB5rLWE8DAHcgcaJTnkEP5YMYSxDJXp5NMbKL7c8WnVsHQ9fmjcnIGnJp2I9aqOMjkn2S8znKuaL1bsZE3gQTuCH1vFeBtow_aE8svP7wxCij6XnaUzruG6QN5o-aJW7rA2e8GJLuxsb-vGZ8GeuGqJGOvcE3wCtamCTKc9koZgNuBcLE2oo7oxJEqtmjNT7OfA9T5CWJ67l6VGJkXEHztGqyMdhuqRHqiagDAtHZX9b2ualR53SHxQ401VMBVp1JH7foKclio9B99caMeuAk07UuRYV_7opiHrhTGecKna2ifLauNbencsAaqdNSqfwl92Mmt-se-fdYDVcwRqE-dl-TQ-V-iDqWhBhLC_y3Blc8F15taQckcXgcuk6fqpCDT7vqVx33J7SibdtJHhEECo4",
+            "width" : 4096
+         }
+      ],
+      "place_id" : "ChIJT9DV6DBIzDERFw6zIWIHKjA",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3470594580895960599",
+      "user_ratings_total" : 147,
+      "website" : "https://museum.um.edu.my/"
+   },
+   "status" : "OK"
+}

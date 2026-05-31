@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Tun Razak, Taman Tumbina, 97000 Bintulu, Sarawak, Malaysia",
+      "formatted_phone_number" : "086-337 709",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2040272,
+            "lng" : 113.0475777
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.205394430291502,
+               "lng" : 113.0488806302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.202696469708498,
+               "lng" : 113.0461826697085
+            }
+         }
+      },
+      "name" : "Taman Tumbina Zoo",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 5:00 PM",
+            "Tuesday: 8:00 AM – 5:00 PM",
+            "Wednesday: 8:00 AM – 5:00 PM",
+            "Thursday: 8:00 AM – 5:00 PM",
+            "Friday: 8:00 AM – 5:00 PM",
+            "Saturday: 8:00 AM – 5:00 PM",
+            "Sunday: 8:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110013096629554994091\"\u003exian en\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uWKeJ9yglCt90XrAapFY9TQMGUSHyoATHPG11atkydbSa4JAD30A63MrYqyANUFRpngLPPsMbJ69KnelK0DtVHWf8QXV84PZPIQ45mr7BooL4SufU6Da_cuyRb57D4cyEwudRZ2CczDxYB0NpsXYN9xr8V4whkiSk9LFgIArhvFh-eZX9_5kGW1wAroBZEAAXKDdeZFktUjWbrwhOoQ3WMddNxaizKE2bM5IOZCv8FSxCFU9J2fXkNXPeomwP7cBVO4cXZjlZkAe-4B6E07tnckAl19--0dnccokp718IiPrFvbpq3fX-D9WLHE1-1ac0tHIHI26fJm_3RtTZkIfCDvvQyrZz6eFtuVy9gY5E-DVLsHdH3iWV-FpCLX8qQcTtJmEAMRn47DQZ5Pt3FrDZ_nyuUMvy9gAeL8cPcLp0ekA",
+            "width" : 1080
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102224862876852208058\"\u003eFayyad Firdaus\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twTvSBfcsdorv4ig_9Jkk98ZOjChDa-2iojs-U3-7-AwlkyS6Vd_vOwkk91fxru49-eemeY25vSR07IjXDthtfNYnAUGkNr4TeK0ep5tWUrrbYL5OlPW8CS9x0CPd6v9xDhfCvrjyRjPDZaFKgaZVkR1ro1pUkLBIL_exVBhySGZ-VHS46Uq1BcjpHZ0838iuKqzrCrn_aCq0FRvwlw20GqGl-rF0NvP7-CTFXwUEMHdgojPSze4nrrgGx7MUJzzl1UiD_LX6mstSAx1zKZ0LVqra40m9a6ljcZ1ijOUT6rkSk88ngIfGedtCfrQPHPYh8w-94YaDDhzHGyyqeExEH3e9pU5E7_5VDem5M8uA1PWRVQ3YBaLIc6IJINJRVzpKBhNWUhWai1dLe8tzfwF92lTRUHWaptMxBES6nj-81Uchj",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109322192317074710631\"\u003eNia\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vKAXh3yFB_c_LanLsJMT6TJH3ls5dE7lJCwkADvXP1wAvMH6jcRKLavYplv-H6FTvhCDGj4-QUOxnHbn9mqVKtVmwN9JMSEq5RKd0_zW_wtj1cUq9-4TJqbEL4RvguI2LoNGkg2lwk1HteyOjpSsrjE_IcuSowfZuyYMXN4tIXEoQ4fGpvqzn2YrI75mNLoX9YQuORlRQvEX6wrLA8MkT78Hhnxzyo9DSZ51r4uu8ihycpomO3HigqnDBJV7fgElx6ACoV1nsl3dyb5RClD19meHkasVjvlx_BDovWfwe7NED4HSnb2SmR7ivcRT2qVikRWmGnScQQ7PASGXolS9O0EdAwcigII0MpZUvbC5p9_TGBfdGcFCvdhMrqSDmKD1N9Zckqro8qI8GA4r9Dbqyc7QK5oMK61y87NGt2ULfI6w",
+            "width" : 3024
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113177047191598964345\"\u003eMel Law\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sC_3ymG8KeQp5Q_9pT3516_PUyiuu4grH_J257wXKgepgHoENxsrHYNiWC3_9-R9sq4pZnF8USW1iZLhSNgYKc1UfJdhGAGbdFcm4EPakiWF9ZNGDzh9gY_GjJDie3ptdRIGLoAugnMOCHO5LZcZKFmjcnz2bhE54HSH6YmIykXZbHfXw0D5ZtRRGpyB9kOVKPywD_HzxsuhkuEbTMs61gqKg73ii8PzQ7ca0tgeOvnRlpzOQeOBgYjMrCrOnaB1usL_xgWPe9eeXnW0fRgLQSQQTaZjHO1CdsVbEs_5xcBQeVGQoQ7WPdoNAQOM19ZbVe-TUBr3Hxxiw2TUks9lfrIToT3lVh48Z3ehteorrYNNKGBhEZHf406oSk0AFkeH2ccSKAxC5H-mJDQHMKm5dJemhRJZyAZCP6H7ceN4Ivl1E",
+            "width" : 4160
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114948955361813337090\"\u003eMohd &#39;Afif Mohd Sukri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOelu58Md4s7eMfkJzppy3WOAEUYJnyvQEjBxJyLsIFjzVDmwRCrUbIidoHrkio4YG9hDMlOmQB_jeXNXoYh5eXAu9KarRMJ76d2wR7Y6lMaoEFUFfMHmsPg2bO5-jQyQtsrJYrfln8mwZs1CKBnikD8eB7yUDoPv0XEWBTEfYOgn5x6xj48hY9UCqYSXCAbwPiRNJATy7TEKsO5HQ08kIosB3VliQIe5S3o-4YrsJJA1E90qmzjpd8cyjUCoCujb4yiX-fDgqXunH7qAZs0DCkpFRWDV9zImd-TvZexNKNOfCBuSlED7UuzmmHaITKxE9K48y3nzcmNwEQyy53n2fm7VUHzpmQQeT4qQZ9l71uDUbpXl4Q76W0290YZPjIl7rTRNkBEy8paz8kWZFNzs9UbX1rkd1DnHMXrCuJDOeQt70",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102446478486774677061\"\u003eMohd Afindi Bin Ibrahim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sS8OqdxRUjknFwMgRRinbQde7ChGckL-xSq2z6rdj0_N_oV1Ylx23R7pFn5nBNCW_1nmjWSWxvlhrNkQIQPRqQpH6E_WoNc_BjImGxiUwzscpgr1Ylsuqp5izKstWvFQ_1faqj_Yl85nSQ8byPN2LrhZxQO1-xKR_lSgNH-epUmOtjlAsKmUjA9Rz72zpdmq75RiVQsMipOWklHYf_BEzM_SVJtyvqBvFZ8lN7hl3uQDuUtIoMe10ugViChjo__r3uQS5siLi125bmNlMyQ59LP42bIekRJlT7E1k_vCD8Q11q7y0spmaK3JCs5egSGzp3JCVyrE6lfu971YiVN7io3RekierTpwCjBhpCnF3LrDNN4U46dMuq18rugFYJiOqCCTs37emK-6-SKuwmAyLOYt5wb6PNmngX0q9V2sAlAJU",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111851520931709507822\"\u003eClyong Meimei\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vAGbU0CiYcZmYfnpHkXtp6H_R6349NdEsXZlbp10UA_CNZ1zkEP2x2uTxdBosnGaLQPZ62UhoDDX0Wpzm2lnqTRQgnMtk6WkKg9Mk5UqwmYDCmmi0rpQ1SE14Ofa3fyeDpVvBDhQIyk_1ct2cBO7GdpozSV0bvsUmAsJllfRnN5LrfzvUXNK3MQqAFCb78uB-5sDFH8g1Ew9vANyCVO2yseuErSihIr1StuXCp5ysEuJSYmTM3w2sO57o8umc7c_PCSvNma_3kOn8xCTF-RslPPPunUJgaYiuX3XmA5HN6bHKcw4eO77twD5kwwzLNRIpSMyzVNM_54Ya7ll5kHWhO1LgE0sPrZZpuFd41sabFoT4Lwr9z0E9cMPt95qYTtUll1Wy4qoOBzL0JnIkus6OKu_wHjep6nf9Y4z0wpieVcFdo",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108666215552769663897\"\u003eVivia Alvita\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u94nqZ2QBaa2egRdPTq-unrsHBgJEEBjsh5HEMRdSb8LuDUC_BYZc3uiEyyM24Jrhis31fZwKMQn-NcIWE1NdXH1-LbTdbJHb2_vJg_FcgWi09ZBIRK7XmekVds3F1_S8rW39bLzoFY123wkGV3IEbj0n4gx2h8IGcFL12KGmqwyVo7oTfKmy0JleL0hXdQ5z7A7wjVTtSggIZvKYlwxYDU7UkTRa5-QXDREVi8s4fqLOLsDWGBc_pEUNfE0ac7GErJAS2nrZ2_Ixnvo97wiM6hEG2g2ywVL3LgokMILKc7OmwbQ6wkv-jaQmKRjTj_FX_lvupEijZoZYd0jvw4BhF3XMuHHgfOt2eZ1-UEvmZcL1fE-la7BljNAjVdiYpYK_MxYsQJlupHw2BRjpwLhSPKYXK5HALR6Z0s758-FPmzuAl",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102502376222576820045\"\u003eMuhammad Aniq Shazwan Bin Mohd Sharil (Aniq)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uli9t6qBVA2tnVeY1iYXM2qVHrlTpwfHBE6kn2r0Jy6SP4Sf4D5rZmaHGDP2w6FhONUMBWoUSDTl7dosFx-rL0mckpQ0zpHZYWaxgx3sD0B_9zd0XBBontv0vuzrUdLuXzB7-VprTEyadrxSYIaExk6s6wbgrA8WqDoYuKM5vcgq1km2Xx7fxrie1FAdDG3GsUEYa7nkF-UW_HRLWfDkyNJjZUI7ALG8UFifmcdxexdKKdFBCZrV5vTLvIobuT5VlLtKMOzEpqYl-OMeqFxqQB4DIKrkosSuIP3n-zbPbjPyqHxvFYnrkaAmC9BpTZmaTuzsG9XUbGfbLO90dhNKs7vry9YdlvbLyFTSvZV5ss7CD4uDFvPJOY37vGV6yLnEbrd2PsL6jzQVuyNhjU5bxCmPOpB7myNk3ucSms5cnC_3Xr",
+            "width" : 3024
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117203000520916527952\"\u003ePeru D Nithiyananthar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t0z4PAAXAGWJroXvQhDEWWboXdUDh4ZoLye1k4MWYba_kEEgDWLk4cliP4xYt6kxJtnSK6-Y-a56HfmvBkDyhsIWyZiPri7gNcyDC35HV6Zmm1-jj_Mvs5c8gzKjz5qTh7ssSIunDrrTIG3Yjla_rBVRp1xee6TkHVIxaNqzr8tBWiTNL2s4DGU3UEs59F7EYQOgkC3ymNImXw0ip90xOTL6wnZ14pqtk3nrwayF2uweJGwyPJCv5RIx9FAZ2uDoU-iCQj0XQr8QRgCQv1rFYkyhzVx0LioIFb5rPot2kov2fNtP6uJ10mRY9hJoPXbAwXv2QZ0HeQGIgTuJ70k4e9SYiO5GKHXXwtxI_k5ebZPD5xFEml3VEg2--_9EmVrCmYMqz7AGJ61wGauWMPbBMpORjdkHMRAJxaWQysbfU4qw",
+            "width" : 3060
+         }
+      ],
+      "place_id" : "ChIJydx27J_BHTIRenh9uNKXVnQ",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8383054687690913914",
+      "user_ratings_total" : 1456,
+      "website" : "http://www.tumbina.com.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,43 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Arau, 02600 Arau, Perlis, Malaysia",
+      "formatted_phone_number" : "011-1128 5932",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.4275729,
+            "lng" : 100.2711685
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.428933930291501,
+               "lng" : 100.2725339302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.426235969708497,
+               "lng" : 100.2698359697085
+            }
+         }
+      },
+      "name" : "清凉居佛教学会",
+      "place_id" : "ChIJwUa7tHyiTDAReB4YGL8xY54",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=11413020577499717240",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

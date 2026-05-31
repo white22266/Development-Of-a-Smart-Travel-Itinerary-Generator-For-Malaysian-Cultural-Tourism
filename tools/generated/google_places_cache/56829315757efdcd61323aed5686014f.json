@@ -1,0 +1,239 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "60, Jalan Tunku Bendahara, 09000 Kulim, Kedah, Malaysia",
+      "formatted_phone_number" : "014-956 2389",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3585175,
+            "lng" : 100.5534364
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.359825680291502,
+               "lng" : 100.5549110802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.357127719708497,
+               "lng" : 100.5522131197085
+            }
+         }
+      },
+      "name" : "Kulim Bird Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 10:00 AM – 6:00 PM",
+            "Wednesday: 10:00 AM – 6:00 PM",
+            "Thursday: 10:00 AM – 6:00 PM",
+            "Friday: 10:00 AM – 12:30 PM, 3:00 – 6:00 PM",
+            "Saturday: 10:00 AM – 6:00 PM",
+            "Sunday: 10:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1036,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106993056638431317451\"\u003eKulim Bird Park\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ss4ilQzZWOm8PG7WWTRiK8vlOfyHd_NzFZUlhwYJBfLk-3NRHWB7ia7Uzni9Ls_c8hBhn3Ce6ZFHPM-838_i3pXsx6PozU6FjHvUkRxkwD9Y1VvTyxktbbSFAF92MSMjK7itMcmvIkRT9ljvcj0DDqgcxdzjNiI6WRbyaHfNNY901tSfWx0utY9KK4L1en6gM4PWjr_zeBF1AL2BXilMLGbimTWVWdgphbQXwLNkNe-1fg18gBQiey2DzDBQf1ZDXZP4NfSPYwnyqccWV7QKsNXtCpS3r8rIFb0h-riiZmjetPLE7akYpJvfwllZdSAdbQp6VpcVbTm_6Wj7BMabQbWPbr72oiOBSEhYs3zNBKzYlJuAzEGKKpBKusJt1qqrsdgHZkRpIDgyZk8yhzJhK8WNUjFDWKzLtcpMBJDho-RQ",
+            "width" : 1037
+         },
+         {
+            "height" : 2560,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106618407925684924162\"\u003eIzzat Roslan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uil3ucejb2FGR9DnGVyoFEh0DVwN0dsCoSORWXRwgfxDku8vjblnKhXpEigcZdJfkiQsnbkqp935Xz_tagBKnWkhsZFaNAZ4oXMSJEnowHW4oSAkiYxckdA7YXMH0ZqP4JHMJJj1CWHrOtJ-whwq94uGyaN7YKDYPukF09hPlOe-gESW0EOLMNlWLxvylaiKSbIEY2ObJ4tmsCogs5Qr9fN68gcxc0Qi4yLx-8L7fww-D3gp3euXGeTOjQ9UiYEMxHdxa1OLmLq3FvmZwfvemr0voeXe6tGk6qfH4qKo1TL-K2gETrMPSXViqZTLu1ksRyoNOJv5CdjPQhBgP1UTJF_Bf0mFCxIFz4xY7FGXLV2JfSjqW8QQKzHca0jRjUov0VdKeKfXKVZyadYA9pPzJFQj9xH09QDnSqRl9kkaja7c_kNhurwkqenPCfGg",
+            "width" : 1440
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103340633061532156410\"\u003eafero channel\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uFZwIN3FZVZ6oEiSNCWNYwYxNjN0oIIko9709liIJZ75UtP0LziQU1yTT2W9r4b8XpmYdjBd9EKjYuIL_0rNK7gpgl3w110KQja8f3FOt--91LF0IDKCg2wo7Q7c97iq7JTqFLev1UgRqj2cV-UQWR1bymJjKZxOGda93qQ2zIZiPLN3ofnp1XEKo2B7sQRt6N3_NJVO-wpG0NI3xolpQUXLZO8RV3QR4uUfRaL5ZVNW15qacQt5VlZNjVWFNumanX72YEhvJtGupeXh20cLXLePi5cWwkIkTImHHLMX3op0iQAKEsp9zqfWxQlZ6qMqSy1xZNb2D3VGnCNY2qqHqtZTBCifoas-sCP3gtZxYC6wcifN3IUjcnjqu2W7Eyl0JSUQzpLiiAc3BqqkBGTdMlfCQyKD5zI1L7o44Ds7tmQZZT",
+            "width" : 3264
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107942825163770168043\"\u003enur al-farhan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-twcjdKUx4AcNuQN2bzIbSn418Y2A-67C5PPKRdWgNwm8ELd_Yu6D9VE0o5uVUm7QRtaOpIaAF1Y9OdSzkkG3JFBpyPAYnvh-oJOYzKmqjqTNXgoDFY8rz1EMj9Pp0oL0EEZSBG-jypaCzZvHMsCYjdUr5kQ9nj_97NZ0fySS3AfN_EGApLFyiMvtrwxWgTr9s5AFhrZY8WTesgjCjww5PIDJeNQjiYBKpGOu6QbLODYl9n3sSdx-wFijO3yt3RzMAJgSZ9oS-ykGYodohjukn3CT5nbSqQwCquSjS6nwLSIcgawhvMpVnQSgdRV_T_uO7ZozuyrAC05fSdwf4qLDCVRsIRahD0pr1ELkNaY2kOtTTVmdpzXFLJm3nQ9IBQuBqZd0pq52dimrJ2H8EQd2EYS3MExHoImnYXIw-oiMZlSg",
+            "width" : 4608
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103565160814791475769\"\u003eAmmarAsri89\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uQgQCDrr8pb62Go-0jFx-o7xaz2IlMUxtwrYmdUQ3RIjlcq4Rgj0z3VAUCCGkEJ6S8OPY-QN0woQ4nGLKT6TIzVnidyZMclkPEdWGBzIXMX9dSyjWEsSm5XWJhOlj35Jdbs6eTWG02cFI35WffjYSyB7JKs5uF-KVfHPYFonKygumzPZ4i-wx5svBL6BpsMSEJFIWNwbfMOrxTg64unbh5uvexhpC9f2D-CuJQQ32BpSP45uWbvjHzdEGiWgQfOs64HfA1WFbeBeJbE_z0vbDSAFHmATLY2sAjK7PVdh1Xi-JTDnYeWY6hQAwQ6irI2s8sp9nar0DucDVPuyHcKtQL0kLw5KYJa1X0RZhWmKfr6J5Wtk5o4vSae6ZQonkdRilMzHL1amnCUQn9CE_ov05OxG-4N-JcHtMU70iqpeY2Brpp",
+            "width" : 4032
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110666944934421364601\"\u003esky cc\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8_gIGHh6tbf5Gh7ZVa8m7RPzLkfa3RanuQDcdZ8a_p4Kgs2J5U31Ti6XwzLasYPfkDI3aHSBBemYbWTP06jqqkf5ye-Xb2bGkKlnNG5V699eWtX69fpgEeGQoejBvL4te9Dry7ql31uaWbbnIGm5nGCoMyDRNZpx2KoSuNMZsCmMxPi-f1dsXdjDOETegNsY8I4BE3LrUD1ZnZsCxv79PC7TDKzI1O59ap-XGOcyjN0yJcCVEhuiNwbwmNhARawmvHmihQPkyAhYBrB37ZdX21Ahm8HfRpyEkJYB3yGRHvSWcbWGtE7zN19p7MuejJ-7m_BKSJW80RNVkXFOrOL8GHOEpVGaQHkWaSD4ZuTeBeW2MmGYwEngOXDOuNz35AAct5ajeSkxJS_zcfGqHueDa6V6sGiT7djznwp55st_sSQ",
+            "width" : 3000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108363307149725542722\"\u003eSyed Ahmad Fathi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-viak0PBly0njETpjauULs1-SWzYOPHCR5jLzV4OlTU4VUbc33axAXwSNn3Oj3jSMX1u1pxfvEhnwbjSqDVUQpDsi62HFXJflu_rCeTd4BC5GeOMyOokVv-pwfVmxBIG5dQONJaCnSe8WzQhK2vw1MHV_2ZKXxEpaHFB2ML5AuAXNJ-7SBtXtYpKZVKIYX292mr9ssisT14HvfBoXOD9wH4e3SCpb877bdU5qD8ZLSZpT-hpBYCSS8v4cwm9I82xm0UJCGOgfPoToyt3xSqtivwz--3WYI0wj35cII96kotVXZ-xjYDc7FbrjFgZCtV2Kulm4pqDTs4gypTcnqAL2gZHAeZAHl3AS3VC62LA6yv0005GPKfILruCSA8cRWjo8uXrEHjCXDpnpqx9C8PGtI-YM82yHZ-G_VSGeJct67ssUia",
+            "width" : 3000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114020303557727127578\"\u003eMichael Mah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tUjk8ptrJFvW1Mxn8IWZpAkrant-ArHn9yGtbw1U0LnShyuwAuOg3i3AVUElP1SdPcuh1WooET3VDDCEDKMJMKq2Iu66N2uu433nzbHkKw6pFrnaeDrypqCoKwOHD1D21NbYl8NH19TXg5iMCdpA3JHIQzDWCXHB4sa-9Ycfb6ajIttJcwY7SbeF1n9847Iqk7BnfpjKLW-RfmG62aARB4lyf395d9EoDAPnmo95aJ24da4_RGFtwK005m69Pyu63MHrsZYkTuOWgRdH-_HNfnKS246B-yUVyrHE15pPDHuqyFnrtjqNgoib7qMBpBbtPCJue-eCvn2esQ8lpz6yffyOrL8E1ZfzrLSb5cm5rmWma8cvH5O4uRzHorn_puvtW-Gtfc4VZA_--dATtfUOQ9In85Fgc3oOkLQsDe9-cgG_UgOMCHOl9aK3DoHH6D",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111238928205351499879\"\u003eMohammad Afiq Zambri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sV54Ns-l2Iv9XansB-hxn-2DzojvDGmbdfqeHI6fZBFqau8moxRpbvgamIM5ezco_XXZRLSW5kwBfKcAolLT4XoHIdSJYdNhdS_G4AiXMUhhxJD_3W6zfXxdoVGe_fu72js3oaXVqTAftTa9yY5TWNfAD8-05jh4OLicbeEkKAh1EbykwKDQQ5OlDDaktTFfdwlUAmpd23_WxB0bbr5KPx60u_VyRdfXnj6duIJuoGCgVPdAXA7J8LBqR0kMPZhBJKh4otv3hpEH2d0TDGYUAN-pq66f9GDA1PB1nbkexfQqDw2hAqq49VaTO4aJXn1KJ0tRbE5gz_1pkny-qnCTH8My_InGfTzTw_ZxeG6XnL-Vh8_HtwENtVVKaaW1Z19WHBY5Smb6Qlez7U4mkV3yUwFvQItDZKFHnoqvayrSsh8Q",
+            "width" : 3024
+         },
+         {
+            "height" : 1600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108104430961858655696\"\u003eVimala Vimala\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vMow-Hpt6Fzv8ThSTEV33feEabmcEeb6aqxpz9KuuYZzj6VzGuMocTS1LPDBURAkCDmREOsheUhZ7Bd0HMkBeoCrLyNAB01SrVQclwTSXLdULw1G-Hl7JcBs-6TwLH5roc8kUAJnIYuuo47kb_mu7pRjQg0G5vqKKTaYlPDtEVmb-0MfItwD16HnRaNMENuQf9RfMmA6U7jH4jemCzvrfihIjASGO1c1DelzSwtdCjL2l6mlDWbNY6aaWRUw84WK_DI5B306QybIUIUuLwETDyreYb8CGXYQm81rVouc9fzWF-3gXa8jVmM_Hb7LjDD1HnZdqhL2GNhhPFOKWNJ0LIVS9htZ6HH8LaYEuNhHnd6sVeD5VPRSkzxmnUf5dX5fgtk9ZjDGBKBz1Mz_9KmcJeNblUKdM-SIbwaQND9JLC2g",
+            "width" : 1200
+         }
+      ],
+      "place_id" : "ChIJcQj0wLjLSjAR9fWhXnFbSek",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=16810067626614191605",
+      "user_ratings_total" : 1619,
+      "website" : "https://linktr.ee/Kulimbirdpark"
+   },
+   "status" : "OK"
+}

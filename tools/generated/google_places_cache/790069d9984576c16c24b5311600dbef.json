@@ -1,0 +1,68 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "14, Jalan Shantung, 88300 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9531484,
+               "lng" : 116.0813804
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.954781080291502,
+                  "lng" : 116.0826849802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.952083119708498,
+                  "lng" : 116.0799870197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sabah Art Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108553702070809925323\"\u003e純英曾純英\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sjTpcwBmhZlEGL7p7lLa-P-JetiHOV5kGnoOY7tMVXfMu9pOIRUN1pNsbGljkg-VWxQxD8VMjRHAzPcgOsfecj8uSpR8hVadjk9PXD1lK5NqqAcO2wxa71JxZhqJiqlOZ0RHZWDIdxkyr2SYjxzB4mWVq8SgcbhfKaUWVFN7k5ohNh5a7BYiL1V1o2w0gK31XRXfgTdF-1fk0-2YhREDP77kiOy9-M78MBK2MNPUA8KKxwoTw7dIaCbp6zuouvOgYSl3330r8bAcNOI6awuy9GDXrY2WSInezKtR4hzSlzJnt4J4UTYv1AWOeEsakFVywXBNUdXY1KULr96-2o-79v4rzWx_lg3NPEwqEoseGBuNENlK4GFUs03C2Hq6ksR2KTvswHxTqSpPs7b_P63Ykw_e0vUgqAJznt_SiZOmdVtg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJD5vbv6xpOzIRUgx9DoD3eYs",
+         "plus_code" : 
+         {
+            "compound_code" : "X33J+7H Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX33J+7H"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJD5vbv6xpOzIRUgx9DoD3eYs",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 768
+      }
+   ],
+   "status" : "OK"
+}

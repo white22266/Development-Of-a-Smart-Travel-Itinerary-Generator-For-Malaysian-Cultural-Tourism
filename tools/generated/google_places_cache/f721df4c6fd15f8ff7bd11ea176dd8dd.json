@@ -1,0 +1,1151 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-u_UNgDj97fD0Ffj-t2tTHIWDCdMxCccvkPY2IcpviGt41DNxeVFLUHO9gspWeSTApFvHNJGk1VWL5RPnEMcV1qWqEif3QUPy8NaZiQb1i0pta8JI_YG2UsU3utJXBp7ACCrn992uInXkbnKR9OTfz98WGCthbOk4OqRtLDQmujg-k5EM32vBw2QGo7HqZU_twySGoeyFNQF5OPppaYczTrQatad6wo9UOMYiBANE1NuTyPjElbLmnDWkNFLkrU04A_VepwQW1ho4IASuV0WAAXztv7Fo8WHVwAXMbjecSgS-1sFXvLGYVlvBr8h5hMWgcvKttIg1zRi3kYMoEldx-peGU0CP5_t2Nx4AcJRp9FDZSfCVC94lcJVtflSF-cERjWhooOJ0ejEtGGtu4s8ptilHDyjW-Yv0E4pQYijp4N_axAejgixtH8LSXsFePEjvbBO13FwBIa25sxJJQK4Xf0HQPnQCm4j3wroYqiU8H_qCZKOiC-zkC1HaQd1rFhfgD-8O3AGAxJDhe2ZurqR2ssLZep4joxu1dAGobR-B3wsGE_cCHVkLnoTYBwwrEt28LRdOr75OCaDl_sAJksNRvvvKsImdYvk1o-Ag0Q8fppVKyNz1Yf49-oOzRll_h7P7MU0GF3KCS3hmHgaQ9SDroHB-9px_S9K2eReC7YdU2i6xRTAGQGQGmRy9W8pwUv0xPTe_5ZxhC5slvWrkzoo-jwLErezzgHdsEn4BK37zVMIxw4tZWuOsuKYtunRmqLzdHQnKp-agvxXoLcfznsMD9v3lrOruW78DF-iaeZ6KVFhEIiSAiiyLOSkQuGF-uScUw7ozSuRA8M",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "13, Jalan SM 1c/6, 32200 Lumut, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.1987251,
+               "lng" : 100.6699802
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.200081980291502,
+                  "lng" : 100.6713207802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.197384019708498,
+                  "lng" : 100.6686228197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Doodle Art Manjung",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102513127505168886073\"\u003eRizal A Kudus\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-unsPV7He8_XnSI-djglj77gagd-veryFZet15HhgrQ6uSvHg1Oms1uYXMghoMnjc_9fV3e_cMH7Hrxx9atgUNATWLc63gCWG3tKLnu-odX0XwokP_pr3mU7Kl0QQn3ZNB1rhqS7LunSxInWGOXti-z42tdV51seae8RdMyF4Fia_R3cSq9MO5v-G84aLVwzTMG4jiJSJ-mpTGfAiMPtb88tLHVSXcL8Pw2YezDFCdGFokw95rKNrQfMtqU3ZKODreY8eRXiuUbOscneJpMf3z3U80DFqWF6l2efeYXxLwoli2bKWsU8BwJjW8_RLYaFuP5fxomFd5MKREzuI0XpnXW76dJxHfRtA5awUK6b9iz2Uka9f2bjLox4uGZbHJv1LAiTUBa2vcJ0siSB9EUeeAVSsvfzt6N1BPS5Rl2bjD0-qMAOmowae1WIJ62DM5N",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ3dy_QwAtyzERPn_r9WO0j1M",
+         "plus_code" : 
+         {
+            "compound_code" : "5MX9+FX Lumut, Perak",
+            "global_code" : "6PP25MX9+FX"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ3dy_QwAtyzERPn_r9WO0j1M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Samudera Baru, 32040 Seri Manjung, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.2127186,
+               "lng" : 100.6577998
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.214046030291501,
+                  "lng" : 100.6591257802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.211348069708497,
+                  "lng" : 100.6564278197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "TAMAN SAMUDERA BARU MURAL UNDERWATER",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110930778792865339529\"\u003esharulizwan bin sezali sezali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uu_-tRkjQ7UndAAkNTPmtwRWTF0iCiMG8fQzUpGm-5_HivTSNgCbH2AvewL9qYOL-htP1BjktMkDuz-a95NoDidrRUOh-8RApFEzsGa5KmZTLgVWBP9v39bDT9b2YfZap5jmaTtpjv2Muuj482d0nzd9Hevvi2OPkdIQaOXpEi_NrUQCXblk_-BRppmvYMDDimSnyCDIMhGmol1dM5_iql1jE7LzqoLBFrIz0SA5KyoNGq1bzGHu78KIaMew6r2w_aiWDR5n0ok9waREH-scpIXVrnuFFjNUqccwfh6DnCwesSDR8G7u-w08n-sgK4naNo8IIOaLL9u3yTw2wvwilw-TtJFhlcSa6KwR-bQrkvHvoIWGa-rV0mkGKo03ZOMOoX77sefOZrGZgNoJV8EOd3b0h9XZsGDWPKoDxg9KQuU7E",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJD4gucQAtyzER68UD2iQOO7A",
+         "plus_code" : 
+         {
+            "compound_code" : "6M75+34 Seri Manjung, Perak",
+            "global_code" : "6PP26M75+34"
+         },
+         "rating" : 5,
+         "reference" : "ChIJD4gucQAtyzER68UD2iQOO7A",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "32200 Lumut, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.1989223,
+               "lng" : 100.665841
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.200274080291503,
+                  "lng" : 100.6671899302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.197576119708498,
+                  "lng" : 100.6644919697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rock and Roller ( Seri Manjung, Perak )",
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107520690548781910053\"\u003eAzran Mizam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uwb0P1bmajcrIRX5k5pufVQL7j__WdAmiRknRya-dR-meI0UVeAClw_mldGNMxw_GMdlcfuOkaizDrM-NfGic4j4rsfHDWZyLpNqQBA0lByaCgw1tDI3p27MLDXE0oD6pBwNhBVc3cliiR1GuDMYcU1aUWzh05jtnrL_eUWbSbgfJODjShsTMhc2aDS05BuuR0cQTYu8vK7S9rftYqhdlIzmljs6Tp0EUVKxq2W3a9l0HzrbU_5YWQihJfNQyy8RLNcrOXcQaU6_rIrhy7uZc65V2Q_eNOvokUHJ_uvEHKcM0Hs2QRZcN0se_vtev7jlRxYhO6MPNK9H4OAwMolnHjfcl3DY4faL35KC9vvivYRiuw2a4mhOfHr_6W5WCULIFwTpZpyAcF8IgTK6jiAayCkpe8bjsk-oM7wE6CpS-EvlS4",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJjVYsC_0tyzERVtZ48udT0fM",
+         "plus_code" : 
+         {
+            "compound_code" : "5MX8+H8 Lumut, Perak",
+            "global_code" : "6PP25MX8+H8"
+         },
+         "rating" : 3,
+         "reference" : "ChIJjVYsC_0tyzERVtZ48udT0fM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "K6, Jln Lin Chen Mei, Kampung Koh, 32000 Sitiawan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.1962192,
+               "lng" : 100.7002144
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.197673630291503,
+                  "lng" : 100.7016267302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.194975669708498,
+                  "lng" : 100.6989287697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sitiawan Settlement Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106051825357860800121\"\u003eSitiawan Settlement Museum\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sLWCsQ-VkjyN3JH5LSYlWA2EFpzbYESIvk36Jjo3zd9CkB4OFnNS4XAcxi_EQDKIFj3Hbyx-w5WNY_6pqT8X2QYp45-1fzynjTNb4oIoGUrRI4qG5WB3z28bORKXD-ygtCxoV_6UMGFqMh2oxt5_aUqmNecu2uZIv82uCmDIZ0ilRypl2rEDtVUHs1SmfoH3swDWZSSMeX2CIFgzT8loPV5xv2aW612VaTUUT9wn3T3pcWSb-f6Ul53qsW42hBgQ6rHXSP56DpPzkvyWo2QiajB9IO6hfyKAB0eWtCBfaLjg",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJoT7oO9ItyzERYCKaYJeEsJQ",
+         "plus_code" : 
+         {
+            "compound_code" : "5PW2+F3 Sitiawan, Perak",
+            "global_code" : "6PP25PW2+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJoT7oO9ItyzERYCKaYJeEsJQ",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 473
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "5, Taman Desa Aman, 32000 Sitiawan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.193300499999999,
+               "lng" : 100.7010454
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.194658130291502,
+                  "lng" : 100.7024285302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.191960169708498,
+                  "lng" : 100.6997305697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cultural lane/ mural street Kampung Koh",
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110435826083202874790\"\u003eChooi Ling Sun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vncDkm2jNX6w_47wodVGz-T2aFD5pKI6xUbEXsT7ALwY92eFFTQxwPUrkScv1saoQmudae1lNQd4XX4CGIV518iby7UtOi_SEmx6gl5kZ3SnQIisYtbweoCecjdcZ9Mz190sLo56kZmxrxapvjREfEaHuCbIJ69yWgMndd-7-xvgvFyTW-HojAkhpuozecZsJ2B41SkuyQTCDIwaBDKTj1LwLk5pkQFA1TKpFA0-Lxshsmm7tUejwSlpjPXJrbqWMFyYnaWyBLbTYmP6ZmfUqjj4xradNdehfK6YO7jPmKcT__80SNTQA-nZkr6B87tdmF-YjEVuS0hXI9XCQRE3IGIXHM1qHsvd0oKcRg2a9Z7epZDuDOVw4eM5u90cEJyev_eqEqTqKCSLbPcZIfAhjRB01-G6H7xDR-P-zJZAY4AC_n",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJR-hCcAAtyzERXQ4_GCpm_3c",
+         "plus_code" : 
+         {
+            "compound_code" : "5PV2+8C Sitiawan, Perak",
+            "global_code" : "6PP25PV2+8C"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJR-hCcAAtyzERXQ4_GCpm_3c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "32300 Pangkor Island, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.200525,
+               "lng" : 100.5758053
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.201969830291502,
+                  "lng" : 100.5772309302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.199271869708498,
+                  "lng" : 100.5745329697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dutch Fort",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108687962917213389285\"\u003eZul Yusof\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vs_8o1EeMON7N9v4VXB54hJE5GLD17RfS61Y4qriKgL3Ynf-xPT61hUXr29JkoGQ7z_kNgC9Qs3gW9uRgRePnmeSVxTT-R1VU3mVMFwqpEPn1OmBjP9RktB0_sBwwEcKpm5uend2ic4KYxikgmH8nF7Ju2KIoJPe8LH4OYuNa5wLMOjba7RGTaeZrQhWQcy1bqHYoAy1Jk6uvVwkhlO5iNiEY_dKmTCWq83Wsj84HoM073lyrD_WgyBHx92So1iWmkNwbfkw_jGMmPH_7zCuC5Fi8cSdtf5KpiKXQmUSM7dNrdxh7JzjMCwOy_08lmZJJGpo8ff7_jTD3ntFEyQ96RH8zPRFtV4I2n1RRpBWh9-kb6my3Jcu4ubWFbQiWFj5P8C7QCBj6Q9sImj1L1ktoe3kMOCt2BYaucsRv7Ou6HYoq0IjdR6ysc96kipGqE",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJx4fHlf_SNDARR7vFO1aZXEM",
+         "plus_code" : 
+         {
+            "compound_code" : "6H2G+68 Pangkor Island, Perak",
+            "global_code" : "6PP26H2G+68"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJx4fHlf_SNDARR7vFO1aZXEM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2725
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "34900 Lumut, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.362922699999999,
+               "lng" : 100.5813904
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.364218630291503,
+                  "lng" : 100.5826794802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.361520669708498,
+                  "lng" : 100.5799815197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Segari Turtle Conservation and Information Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114859684519591674266\"\u003eAlvin Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tQZdQgSZoR8zRCnPUYI78bhzTj5GgOn9LvDniNACvxIyRojIYr2ZXrqZg2aQqGcUnIwq5FMfSPXq1H9LeHzIsTS0oTJp-4qIaKAMnAYoKGrVqAKjGGmP1ygudu2gX2FgtST8EmrF1czdc2YQL_JFVfKc5m8Bg4pQUlE10mdjgjO3oyv7otPN6pyU199M0Q9VJssC5tpclLMGP8LAz3yjOTyqbiMVLVm89So3TdiRZezlP1NcRjtQpk8CoDe2Qt03d7KS04sABqzxUuGnG9eztU1h60F08OsNa5oJCirhq9H4chDwkVYgXcCAGqY9ArLSZjoF42OydMeWZ3d0VGThdOgjJTQoeqGZVdTh0wFjkmDG9JxOyYMMBZtsrw8dKYBb-xIIYM_ffBWiejiMP3cJXBhfUVYSlC_myxhDs5CKg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJkw2R7f0qNTARHeSLG32O7TY",
+         "plus_code" : 
+         {
+            "compound_code" : "9H7J+5H Lumut, Perak",
+            "global_code" : "6PP29H7J+5H"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJkw2R7f0qNTARHeSLG32O7TY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1414
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "5PR2+RJ, Taman Desa Aman, 32000 Sitiawan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.191820799999999,
+               "lng" : 100.7014323
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.193161780291503,
+                  "lng" : 100.7027497302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.190463819708499,
+                  "lng" : 100.7000517697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sitiawan Cultural Lane @ Mural Street",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105303677823991045766\"\u003eSibyl Tate\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uS5HNpPwNI1R3L78K4bo3km01XOgDz7ffyKlFRBuD5KgXjV9zlYvTIbmsr_EA7Qz5orfik5D5HEuM5KxqhSV0obSoJuE8fUirs36ALFHh9PN4QXSfXQBrSfUb5gPTGH5CyolJFJBId5TNuxvIegDh9xTSSddU-Dw3vyrDXcpiWCpG9mwV_RuFM5HNnAfbzRKsihsGfmXwRCuIUY2J0Zc3Zr258dyVXtGV0fiQFtD2xB9XZfQ3R1B0brihYTpXgL0oOAJJU_Z-_rXblbyC_S3GX-9gWBndSpd1M_zZIZJuPQLqnmz8mk1LWjU3vTrD9ibv_rbglQpqI_jSe4ThjdV8hRdC-4E5jqDGlDindf0ioofy8r5NliiQ6loRR43sLnbIUbIZ2f6YB7zUikInPgoDdwAWSCi_wdwAajFacN05by0uXSORtgy8_1WxrsA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJSWc8bgAtyzERarx9cjZom08",
+         "rating" : 5,
+         "reference" : "ChIJSWc8bgAtyzERarx9cjZom08",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "908, Medan Bauhinia 2, Taman Bauhinia, 32000 Sitiawan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.193416099999999,
+               "lng" : 100.7009857
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.194772980291502,
+                  "lng" : 100.7023689302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.192075019708498,
+                  "lng" : 100.6996709697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sitiawan street Mural art",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101192809825688743813\"\u003eKano Ky\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJA3eFT8pQ2OQ__EAjkAvzl2s1J8gGpnm73yELxCCZOVvBQdUbJ_DSEsfV8sPl9K7_je94sA8rmlCENlBDK4tJhTTIqDk28cMTJiS6q7-zGNCeFrYudXm3Hk-r7eDJ-VswdW-PhbNfKT-SNDo4Fu82gzXw4a8mR4QoOSYdVl2yMgLc820lFuQtuyWz22kjl-P1qapuwpEb8ovnnXJ9YLFViUeOF9xygls1ElQFhGLSuwovjIF0sBjci62_b9N2fYWFz760QJwV05jMoaePyQrROcgNrlyJllcFiQBxt2NzG16u0-jf0NVbFcwxdc5XefLI4N4XXiaHV7K7z-TQzVtBU_ITDq4eD2LyjUOUEdQI64F9vjqlAenmEI3HzoP48gcsFDGer5peEeztdbCNwJr21gbdjFjOTiBu6WpHefZQ8WYu",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJtyMwAswtyzEREna5VvCDwPk",
+         "plus_code" : 
+         {
+            "compound_code" : "5PV2+99 Sitiawan, Perak",
+            "global_code" : "6PP25PV2+99"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJtyMwAswtyzEREna5VvCDwPk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 34
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "21a, Jalan Pasir Bogak, 32300 Pulau Pangkor, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.209394899999999,
+               "lng" : 100.5579629
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.210895030291502,
+                  "lng" : 100.5593560802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.208197069708499,
+                  "lng" : 100.5566581197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pasir Bogak Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2731,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118206411392938319779\"\u003ekelvin gan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thKqrek_akxqEqk7xb_IH48sUKYFhEUdt3ZIojWDSwnDazIU4dZYVOyHMzfAWO8a02jZdoHhN2lp81ucyyjID31Un9U4xzofg8-In6iAB0KJ5GzOZwviFW0OnFTZV51SZQdT8BSOu-9eJJNVqc847KMtnaZGE8gJQQFe8kEJKkfTOYzGKsIvTOcoqchHZttVv68t1l2xjgFaMLgnwAIHHLt3blrryaT7_7rmOT5tT2CJj2LwGO-X-Iy-yd1BwJckvK0GfS1sgpTjhDk1SA4-DVbnIMNiJjp-2c38Qc6xwbXqyyGxAfqbU4NVOn4pU1pB8qSZalhaoclL1beLv1s1nccHWpMHu_LE9iXYSjtdkLvpRFdHXIRi_ealmFG0OErKwsWnBlK8BfazrbFef4WK0RUne9KKkPJNDowhC49-qTq_rUqrvQmnGJThzL",
+               "width" : 4092
+            }
+         ],
+         "place_id" : "ChIJ81BFLLHTNDARt9jwGd0sIhM",
+         "plus_code" : 
+         {
+            "compound_code" : "6H55+Q5 Pulau Pangkor, Perak",
+            "global_code" : "6PP26H55+Q5"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ81BFLLHTNDARt9jwGd0sIhM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1129
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "5PR2+RJ, Taman Desa Aman, 32000 Sitiawan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.1917105,
+               "lng" : 100.7014561
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.193052230291502,
+                  "lng" : 100.7027765802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.190354269708497,
+                  "lng" : 100.7000786197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lorong Budaya Setia Kawan",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114147785774446630981\"\u003eEanne D.\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t0j9xRYu1hBeBcTekoSXNYS2LO_Yv5G2RdNzN7Ip3in6HCHHeVXaAsnrGbykMdL7L9bEQxh-RHCQbZlA0_JUWeSKssNfDkTO2xGMpv60wZRg9-3Gyzj2F6LbR2WE_2aAv1gmABINLaWBzt6iPgoyrR2Mnmq3fvRXbeyKme_DeIjZbmm_0YGtsOfWaKV2XSDwgXaKEfIlGD0orrHp3hySGoU6h1WtucyfMYwPD8Pqv3Yv6sdkZs9aTkyrwJAJ_ZF6T8MtY_FJgB6xSQ2T_bzCFfbvWux0-SjA5YgIefOE5ZQs-6t4e-W7gDvwQ1V-aWvTq6FrG_qMDrjLmsv8qunX7J70Q7eWzrZrmaDDbwu_SHB66opeYaJ27Iuegd3zlnLWNE6GQ0ApKbqVtrNP30QfaPgkHOhICIJcSxApIX5ykah6ijKoA3Jm7vBRzqGg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJOW-aKwAtyzER7yIY1BGy8Ps",
+         "rating" : 4.4,
+         "reference" : "ChIJOW-aKwAtyzER7yIY1BGy8Ps",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasir Panjang, 32000 Sitiawan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.1628527,
+               "lng" : 100.6883548
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.164197830291502,
+                  "lng" : 100.6897005802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.161499869708497,
+                  "lng" : 100.6870026197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tua Pek Kong Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116702127385389772902\"\u003eJustin Kuek\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-txjtiingqeyc5XE--ea3PSSJRvrCnx9q-QbOEMCvP6zjb_0dTSq4zX40AK-JkCXOzwmQLkJJQA6SNdPzoZe9RMpVN0j7F3Hnyv81UFPnpYGBJL0hD-ssTUdsujI3wMwh2VBmB2xBItEdkGQ1rFp25VpnjfRClJlBMGKT5UMQ9dJbPPuaYnf1qfrtsgZ36sEZG_KJXQVsOpfu8akdjkn4DyryOtbqObbyiyCSVt_xGKeCyKRpsMHjw8lfKjdaF9ZZarHjZ14sR__O0mJJWVo5jawKEKVxYtneobDinZ2IijUMusrOGd3H2I-xFXZ_lKNDYZfZ6DqaGvMqJv8lRJXFzZcd9DD196a3iOvmdMRUAd-uOg6Al4tOjzPjuBM8epgXF3RFf3w-aP4E3cmAG8o4ZGXx7nn6jzwDybkaJCdy0",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ18WdacItyzERETEIzn_KuDE",
+         "plus_code" : 
+         {
+            "compound_code" : "5M7Q+48 Sitiawan, Perak",
+            "global_code" : "6PP25M7Q+48"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ18WdacItyzERETEIzn_KuDE",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4332
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Teluk Batik, 32200 Lumut, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.186903399999999,
+               "lng" : 100.6080611
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.188302730291502,
+                  "lng" : 100.6099469302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.185604769708497,
+                  "lng" : 100.6072489697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Candlelight Teluk Batik",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111784107911267694048\"\u003eCandlelight Teluk Batik\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u_5Cb_nA2r1yd1t97ko29_RTWhPhrfUVO1hb_QGSY4sLuBkQ-1deOm11o3_tKk0kwQIs2PRn_YUV0leTIe877WUggvslnlqyzpNwXUAvnFDhVhVfdfDWgTLJewbEhU_h2jiqyXYxJ2q7uKPpMWHDLyQN25kkS8_EyRjldUl2Jz72iiPamHy2Cymfsv58cjHVfnZFw_XebBoxG6On-IayTUZ4XPvVN8_V-qOrdapEhU08I7njfJ6IOneCe5DtLc0-1AktIKKlmPeTMisUxm6paD5g_vsQI1k0yAzMVD8FpCilwHDvd6SrPBuCxhO_NZqT0P-El9B2DUAMGPFN0MKXdYJLaEeiDDZ1sTYYQ6RqhYyiAtC9xVUkmH6ozX_D2t7hUiyrwLrYkM2W0WZAnv-JZI-1efefIdWy8OvmO6cgjmcQ",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJo-RJ-cXSNDARB3SXxDryW80",
+         "plus_code" : 
+         {
+            "compound_code" : "5JP5+Q6 Lumut, Perak",
+            "global_code" : "6PP25JP5+Q6"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJo-RJ-cXSNDARB3SXxDryW80",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3781
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "32040 Seri Manjung, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.1972665,
+               "lng" : 100.6660938
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.198494030291501,
+                  "lng" : 100.6673243802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.195796069708497,
+                  "lng" : 100.6646264197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Hati ( Seri Manjung, Perak )",
+         "photos" : 
+         [
+            {
+               "height" : 2608,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107520690548781910053\"\u003eAzran Mizam\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vwoqhRYaLFYKoANrz3dUeuz7SOB5o6HSNRnJFC_meJafNldAnpk12X_8pdVCkQSCKU0bXXM4l53RQ1GaMlkMHR64hVy32tkV_seKO0DQ0cRUURuyuBzsQkUWyZAA1KM2q6OCZtqxakmzHCdFCPi8iTz98LtS-h7epObMupm6_QQCranZqvj7zaEQhQYv4A4qwZbk8Jlb6rEXzkIk8Y4eZVuvdS43pxja6aprPgMDyEGkxKT6H_Frb_46h9YQZtGu4ap1GTRSiQiDxd2t73LQFMEtoUHwZasUFho5Zj7gfcDxmW24YiPNC0FyiOrO34cgsxfbk_cA9R0QqcbFLMyH7uGvOW-iMriZUPBZl9z-tgFQU3DEdP14vd5jIx7ioKSWQ2VqFLy7DPpd46dc2dijrg_5b-891wcpb6Rag3-9E6eA",
+               "width" : 4632
+            }
+         ],
+         "place_id" : "ChIJlzAPaqotyzERUeMCOMeucEk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MW8+WC Seri Manjung, Perak",
+            "global_code" : "6PP25MW8+WC"
+         },
+         "rating" : 4,
+         "reference" : "ChIJlzAPaqotyzERUeMCOMeucEk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Teluk Nipah, 32300 Pulau Pangkor, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.2319023,
+               "lng" : 100.5470594
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.233269780291502,
+                  "lng" : 100.5484097802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.230571819708497,
+                  "lng" : 100.5457118197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hornbill Feeding",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117413729254750745202\"\u003eSascha Tils\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vptfbW-EGnrD7OJoRxM8L_92siCuUiCaWlFdSHJxQGsCaGYM-epXpcASas4YLYicKLryzPXs58HHbImAyj-lzoBfhEQkApiow0a55QkD7ta8A7eNuuIZ9EZgWWHXyy--BmTZwi3MvrGPEMfXvXTF0w5TB2bn4ksbq7FNDW5LIvgtiZyiK0PLfGCyDa9hD-xYuWfrD6MG8RXSeVI2v5eVmezB1SCjC96b9TFDXaW0aAgsC6ueK3FJXp8yo--G6h7pqkHXiUAbD_CRhmS-g5fp5WtQMn_9ebFuWZTsVZlzuyDDmmisEXF86SWe66_IE-ngJzgKYjLJv-il2P_l-aVKkPQiinO9nf_vd7jAJfTXHt29AdtkH2dyLi6lLmpVj7XBpgluE3FE3Ev4iNGrVw3suq4DXZR6sJioB8yJ9jjrmfMQzidBn-Ka0xQbP3fBFy",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJaRLwJ8jTNDARVEoNuIMR7Kk",
+         "plus_code" : 
+         {
+            "compound_code" : "6GJW+QR Pangkor Island, Perak",
+            "global_code" : "6PP26GJW+QR"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJaRLwJ8jTNDARVEoNuIMR7Kk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 178
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "32000 Seri Manjung, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.2064508,
+               "lng" : 100.6721858
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.207868430291502,
+                  "lng" : 100.6735982802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.205170469708498,
+                  "lng" : 100.6709003197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "MANJUNGDISTRICT",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "place_id" : "ChIJU3ZNRAAtyzER4mISNOHgjT4",
+         "plus_code" : 
+         {
+            "compound_code" : "6M4C+HV Seri Manjung, Perak",
+            "global_code" : "6PP26M4C+HV"
+         },
+         "reference" : "ChIJU3ZNRAAtyzER4mISNOHgjT4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Teluk Nipah, Kilometer 6.1, Jalan Pasir Bogak, 32300 Pulau Pangkor, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.2311033,
+               "lng" : 100.5452746
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.232418530291502,
+                  "lng" : 100.5467234802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.229720569708498,
+                  "lng" : 100.5440255197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teluk Nipah Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101473043833109945820\"\u003eYatie Hussin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGPvLGIGrWAJzpQ1rDZlnwuuE-PvpBitG_Q-8_buGqOdPayWH15rOGlh6Vx_n4xEwn2Af-k3-Kzbtf36tYYJe849SsYn0_zkR5jtANf1wRdN2YtpFOoj7VEKUvHP0VHEGtM2MFFGsw09kt7rQaKD8sEvneipexshq9GsjXtBxT3XpfwdRvqidCMWpr3Hl5UM3Czete-ftfHm11yW00TpUusIb_XfT0jAhC5wLC8lZm6-VfXjoVm0NusP_9S8xc0Ak2BoVZO1SMeDc0VE9k6bA3GNIJHTufo656igohWJiJFlJXm2Yq_5NDcqRzSa-kwYIgrzxB0A2o_4wVOx8xgqkfpSvwgi4MDvBqqiPt6QnorKnwHgQc_-0vIeoQTSU4a-gkeD0nZfvpq4t8Uy3Kniy7eeAwAytnj-3-MQa0RFRhkw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJD4rzHe7TNDARgFosq3ov1Qc",
+         "plus_code" : 
+         {
+            "compound_code" : "6GJW+C4 Pangkor Island, Perak",
+            "global_code" : "6PP26GJW+C4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJD4rzHe7TNDARgFosq3ov1Qc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1996
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "32300 Lumut, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.194427999999999,
+               "lng" : 100.5448849
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.196117880291502,
+                  "lng" : 100.5466976302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.193419919708497,
+                  "lng" : 100.5439996697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pulau Pangkor Laut",
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105517614694292159610\"\u003eAlan Liew\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-upfSo-5RcXZyTtXbZ3bMacy677ZEH28Pfo43poM7ZgIviO6RNsgn41usRcu6RnNX3qtEE3y3YJKB9x68rE58M1fAPXc2urOWbPkk2rhNlMyAIS7_xpNPA1cpJt7-s9C8484dNLjogqGEoB_EBrCH6ZuUhUg3S8GySNLr0aZxazB-khCLnr5DVfjuZGRPZRwt7Adjb2uDybXWk1cZAy8sEtaBxnQE3WhbJGS4cb9cbTC6BPQi1B_GZd728sTVRV4ErvQO57_f25v_65paOM5wNDuvX3gvXDiFEnMDSMSRZj-DE0wdAUmltLvqVVRzQshwnI3AfsdjlObcihlIDz3csgWgIIQHi946WqBH4rB_gtiVEAHB8qUX3lK0fzRAateElvRaqXhgx1o2OA3269AcSBkCdY-WxHKT7gAo-Gp-8",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJXT3kkTbSNDARub5ULXzhJVo",
+         "plus_code" : 
+         {
+            "compound_code" : "5GVV+QX Lumut, Perak",
+            "global_code" : "6PP25GVV+QX"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJXT3kkTbSNDARub5ULXzhJVo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 81
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bota Kiri - Teluk Sena, 32600 Lambor Kanan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3288008,
+               "lng" : 100.8883515
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.330138880291503,
+                  "lng" : 100.8895586802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.327440919708498,
+                  "lng" : 100.8868607197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pulau Misa Melayu @ Kg Kepayang, Bota Kiri",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104504404759877736502\"\u003eKuroHanae\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vBnHLCLhvRfJvSp6sEsxc3D1LLqpvPiv_xQQF6Hm5zhsHsoOR9M7o4q2AcfwPA4PT3GUYiF5unPbm-CVjklu1Cq3n88pLLoSCscTP8j7WZJhhwJJVBYpGhaskse7HqO7AITUQotmXaX43-04LpwcacrI7x-t4sQzVxzz_6mY_H1QpHD4l879DtR0uEn65d34I5UWZHI7925Dj1VYHT4mOgnKvW2kRgpR2dINQ0lGRlWH3egx-fkQUkAzjZT4-IwE0Ml_5DgFg7N0ROv1dI8XODKRS2vzRExa8IyWuMCz6_WTYEUXKURhW3KonYzSLfXsPaxWtICDTAWEbf1X7WmV1hohjPDHgl0XbAgcDLgheGajj9AiWTndpR5ZfsHSqraAregh605PQw1QmAnFF2wh_CBLrHLaGDUmFuHf-GuJZixeMFf5ZVzkK_vm5YZdqf",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJp0nlBgLZyjERObOangwaADE",
+         "plus_code" : 
+         {
+            "compound_code" : "8VHQ+G8 Lambor Kanan, Perak",
+            "global_code" : "6PP28VHQ+G8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJp0nlBgLZyjERObOangwaADE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 85
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "32300 Pangkor Island, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.2203836,
+               "lng" : 100.5702012
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.221795830291502,
+                  "lng" : 100.5715991302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.219097869708498,
+                  "lng" : 100.5689011697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fu Lin Kong Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101577590257211390866\"\u003eDudo Dodo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tw0mIrIiVv3F06qqvBzpKZFGy84tZH_0prLnUnA2AL-ySwWxqChOd0pvaY2eOG9o-3PvTfIg6PFmG89wsAMEo296TE81HnkerZ292MEiyQ1jL-TeHmN-zTIQhSOjYx2cv0cHjCgO9zQ7Ygh90di_cZTEbU44B_adddRWu9eJ33bbKh02J-1CCBvqeTMp3O1Kf2F1rxGnMTBxPlRrUU1Du6bCBNQLAUu1vG_tgFsi56deGOnIIH_FGiy0QLAFpQ4ihcrk1lHqR6mq-IvnfgQDP8PIEenls1tLa86_wrUQosyvt-NJk4SEopimRo75U9WCv0il4YYQcGGEd0pYJ2u_qiS_DuLnCy52OEiGWih_GHmVrEB2JG2fUOUBmThlTQgIisjiAP5NSRmCHTj7C5ATl9oCXQm_cIYJVXKC-1wLWOTg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJD74nlqHTNDARHJMs5OiUEpk",
+         "plus_code" : 
+         {
+            "compound_code" : "6HCC+53 Pangkor Island, Perak",
+            "global_code" : "6PP26HCC+53"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJD74nlqHTNDARHJMs5OiUEpk",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 835
+      }
+   ],
+   "status" : "OK"
+}

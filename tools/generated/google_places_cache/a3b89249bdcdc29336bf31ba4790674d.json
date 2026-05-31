@@ -1,0 +1,1175 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vRoE7sRWx6oWdh7Y-9Grt0E-Mhlmetl4jm5UResyfwFB8WrB6N0UfVG5cP1Tu_pW2PtK8bYKv6hgsHeoHM9GSXawEVzP1b3SNh2XfLrtx_tgE-yb0GxQ6jkt4uP4Xhw6ApHEchXz2CpQtXq6yOck6C_FEYNcszriQGt5mWCNRebtaQvAu0rZFDRavr4KvJHq1gEY5coy6cLW5eYxVZWNRrI3AFaxi7hn4XgiKsCmbUKwtFHg7UBlVNrn3Lt7UX4hlRVz51m7-n-vpXxQzThoGCQLZy-oDjxQthMxrwfBBOPKbLbf59T5xDOcIwvXklnOr-78LjAaegyVvhcSp1KnaSLxOogKUL8bPJ0zLh81GX7tXbVKvp1G7uXoydPu6Xmmzm0Tqtvci84FcTgL3CHyylaii7ZtiXTYff2GtA0kzvMjgQt7I9du77EQvzXJyfhdMaaDVoWJT83-gPUVxudHeB0578vNlB4VU1KUaekoJ_4CHV4RmM8CS1ircg8tkFS3yfQeofqPfZNNX8Mo3P0IoGNqYqvEnVC_YXhJ70LpC68A6AqxfwzQ94gDET8PVBEG5Nd-GiugZlFeg0BfQfa5X2C29jk_P2v7g8IVqmr2CP8qbvEcorV-Z1iIiTSEr5rj7Kod7H345mKZpiy4c46K3a67cVNSlDfGz0C1V4M3OfEQTA4Bgdrm7uVtc809wNm9u0Z0VE8-ZpZw0wlJ8lqnKELzUikWRuetVqaSV2wVrd18ghLgG_fwduDJE-UVI_CXood00Nx9vc8brG56Rt7FbUdrCdb9cQnIdF9ZiNva7vJ_Ki4xwj-VS-vxXNX0d1DsgYTvWHJS8",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Mahmood, Bandar Kota Bharu, 15200 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1223616,
+               "lng" : 102.2409879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.123820080291503,
+                  "lng" : 102.2425140302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.121122119708498,
+                  "lng" : 102.2398160697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cultural Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3179,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106011121149801903346\"\u003eWan Muhammad Izzul Wan Nor Anas\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v9fqyjVIa2wDZ12eg9KpO3adrH21--hqy7mHoiSpJAwTdXxq6_AEGJPrczBRJsJWsz3vPyWvTNxwB3-Rbmb03ilV77U_Brdssy-GdcCC7wGwHp4wVICmOAXj_DDBmtxjW3VOD9tfYrAR-3x4GHrbnyIXOy0fC7F2pOoiJ26NKNzIqiv1Fspkvo62MKgYEGUlsLWjUwXc8hftvRXE1wDhXpq0P68xlSnLkbWimdo0vSIY_RFwGkrJmMDwecFcBW6tZtRcOpBzZafI80qnyiwJOC432Vy4QXPb9WqRUgHLsg674ROuZR3GLfaQLbpUSSnGiuAudb0jTY_s6GB5L3vZoS5SllgQ0yUSg80R8Y5KOGlmlKLtB0INCU9OuP83yw3JDxwgXCqRJmYA5RIan9WAbHBwMz4iF5p4NhJ8XHhHQfdsKw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "plus_code" : 
+         {
+            "compound_code" : "46CR+W9 Kota Bharu, Kelantan",
+            "global_code" : "6PR446CR+W9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJF6K3e8OvtjEReX1uOnkOCjE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 140
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Hospital, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.124954,
+               "lng" : 102.2382817
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.126429580291503,
+                  "lng" : 102.2396325802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.123731619708498,
+                  "lng" : 102.2369346197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kelantan State Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vrCb7s8yCslWYj5VDmhWUSaSR_srGjfFwr6sCtMjsnDBm3VZYUodFyJQlhYr2TuED15gqHxfcz00FJ9rHYHf-bfjZKsHoAp9sE75q5s6uUiDvT0txJx6m9X-4_V8jMEzK8VPcEleEQy0048809MlNa2gnftAtMIeAMepsl9X7LyY0rT36T3QZY2uHT1rxcTsA7PdlJInxBfHFvR9LwE68TYlVk945mGmmwAvNbDJOINyIfs2r_M2Ebxftfg_HUXeuhRKcm8rKQSIwEp5MwY7zTwhA40vTDCztPvvxXQr_mjLJ0BfTIo7wKVT_ARnvqdte3rWrbVse-XhkR1C_NbHuwlk0ObL2m1C_dHrn7bvTTmQtqvJ1YILSmUtNrhgZNZ98UWui2yNoti6XFSa2QIdxu2HA7R9DotCce01pRUW-bMA",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJyVINLsSvtjERmTNXTsi2dXo",
+         "plus_code" : 
+         {
+            "compound_code" : "46FQ+X8 Kota Bharu, Kelantan",
+            "global_code" : "6PR446FQ+X8"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJyVINLsSvtjERmTNXTsi2dXo",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 575
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.131556499999999,
+               "lng" : 102.2371368
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132847530291502,
+                  "lng" : 102.2384208802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130149569708498,
+                  "lng" : 102.2357229197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Istana Jahar",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104920201070722561378\"\u003eWerner Luzi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sReAZIfeYwTD5SotcQj9xz0giWbPfodsfWFabKzBRMnlz-UReM91Q2XJ5AXIRzpI9ZhDreFuD8tc5aJvm6o7kyG7iyrj-A_reYK4l8GObEXy-q203cWOEO42UpepX_fmzB9abE_0WN92TT9Id605ySoEPExeGRCqvrKhwEv8uwQ9LeIkGvIuJyHKQdlwF-E83zDYValF9QViV8uO4n8nEH9h37tP5-esEJT9l8jwPDnunBmdk2ZVIWPgFrXuyfDEdg7Q15-kCgYSbN0PyxyUrEkmYcfHveJBQgGjgb3DLiVRMloH_reA6PeGWpiyvWHBxTY4JBFTW8AJpM1EZfLYCgo3HRI9KIuWvcyoHIVpprlN0dk4ORbP3otOGR-3qdyEckMSqxH0JCLcYsmDlfpD5zuWxezGR9VvCOWMkxlYh4YhZ4",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJy03XMcmvtjERvsS90H5bKYw",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+JV Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+JV"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJy03XMcmvtjERvsS90H5bKYw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 633
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "448, Kampong Laut 1, 16040 Tumpat, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1543854,
+               "lng" : 102.2308399
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.155697630291503,
+                  "lng" : 102.2321829302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.152999669708499,
+                  "lng" : 102.2294849697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Laut Cultural Heritage Site",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111375701848852733818\"\u003eSyuib Yusof\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uaoA6jllyjRhnsjBlSe1B8qQKCEG1utt489eW-POO3VABJowsfI-ClUXTbiODDay_VZ-X8bSWssiNMK7_abyq0XkprXro6ValJzMnSAcdu_v6Ycxq10ITpHO4LMLs9CdvcYRljeVDnwGTO5ECFDwYQ-Cp91xLUs-OT1gtj4HFG6K3BCnL1ZWCkzzRKGHmafs0Bxjky7WB7xcCCXxMRfIC6hpECwGDme2OT0GBCUEQWvstiAY4Kq4x-gDhJjXUsgNJZVPJBehHHAX33aEK7fRoLwIfoN7O5zpFBrlLdeBw0ouvRZuLZIKek6UdV9h8W0QPMfS5UKvczCgZagTFL3WTt4Pc-BwnPWu56kvnhW9T0INc3n0AVfE9NaOckTW0WjVzsWB-nPfPoH1BxsFJjpA-fZ6Rud-m-DJGu1VU8Fts",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "plus_code" : 
+         {
+            "compound_code" : "563J+Q8 Tumpat, Kelantan",
+            "global_code" : "6PR4563J+Q8"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ11je4UGvtjERlqWTRB68Jys",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 775
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1310568,
+               "lng" : 102.2369614
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132408280291503,
+                  "lng" : 102.2383110802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.129710319708498,
+                  "lng" : 102.2356131197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Al-Quran Rehal Park, Kota Bharu, Kelantan.",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101676497256600774501\"\u003eDeechai Rattanaphutphong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vgazOcoE-EtTGtumuh5anSwg_0HQTXbrAlVtfdxbmeL8Vg26qGmA-sdqBYlteFsYwLXgZ6wlEKKZG2bs04QEMZzbqbEDMeWhiHpFeK4EQL6ZrMhNU1u_ToV7tFtqnrkqlwxs5PSkdZ87koB-lBL-Dsi8C1fjQYbDJETDf3u-05-fdRqP7zBjYgY_sUT7ZigCe_PD6X9Q5hON-JvJWvmaG1EgwDxUHntv6Xckstqo2HAPOF2NtnWWziBiaBODmbgkwPLdHfkb_TjdLTGqAXtfhGhN-7U7_rVQS2O3Z-JfqnteuSDJ-ZXW5LtJOVnxVbOl_3HbNewPZImdE4lnTXxaeTPyz9Dz9gq6wndTed2NmjIAlbBftHomvqA5jL_HCdrIzEql-gEf05havOXUqCSV3-195v_ljJZhqtXe5QzdC8gA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJmfBrJsmvtjERhpy1Uq8DL2o",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+CQ Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+CQ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJmfBrJsmvtjERhpy1Uq8DL2o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 394
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan, Bandar Kota Bharu, 15400 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1317229,
+               "lng" : 102.2343124
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.133142930291502,
+                  "lng" : 102.2356770802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130444969708497,
+                  "lng" : 102.2329791197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Menara Tinjau Tambatan Diraja",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109175839420631527140\"\u003eyee yong jing\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uyXsFQFr5hgfoTrMsBj_Kn5OCzjjxK4vOSeHE1uoi-NhfBBGbpCFlZqyHgjP_Q3pgRhHxtCWjlotp9QQse2o98MvlaUFXzeWAfVGxeSkTjSYZT1mOnQA9k0ZUyddi_k7nPqhXKBixkwDUEvdZa3eBPhDgSWpzyhDN1T5XMfV3OTfAsnWD44HD9GV682h2lMOabCvovPAkJbIj99sDyF36s10_hkgmdmMKk9etxhJnvIFUd1AafI1Ocn6lEsktnqx1Zx2T3A31QinbFfEcxtoSSVNXrA_PCVjJpvOLiNV2Jvj45OD1Evug7LjJBYcYBj7ip9pdlpbrSye-W9fNW4_6XG_EqEZS64PDxEpPZ_UpP2-fXtCYkVh1vYOQIFuuwpRNFvySfyAX67PfcfU1vz6T8FeRVWkkhP2sCHI1NrUvxe0Y9k71PQJ-CXAshaiB1",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJATT2o8mvtjERRvKf4LThrSg",
+         "plus_code" : 
+         {
+            "compound_code" : "46JM+MP Kota Bharu, Kelantan",
+            "global_code" : "6PR446JM+MP"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJATT2o8mvtjERRvKf4LThrSg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 351
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tengku Puteri, 15300, Kota Bharu, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1321015,
+               "lng" : 102.2373202
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.133425430291502,
+                  "lng" : 102.2387812302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130727469708497,
+                  "lng" : 102.2360832697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Diraja Istana Batu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109989381337927575220\"\u003eordie hayati\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vpImWPkBo_8Jak9zFXUeNkRrwpNms5idQJ0Iw4ZGtB3IamcC79eJvxbQaqQFKroFi45fq6N2qcj0dfaDOzPJWyCSxnmEPoeddhJTRB4g55HfrwPFvB4N5yIN17d9xccs8ZGZoUGZySIf5yqoz74NV7Sjgc0peEjJu3EUDbys-R59U3rYdLdIlxeOi4m7mWI_PttWUMstns09p-cnOxqZqtvARixI8EC3pFf1SbA5s81IcgFNzhpknhQ2hdTbr19eMHP1U6aug8sojBCQ6KJLaFxSmx3LJiNRX9PLEozr8oxemeRyf-fy9UJHImSdFNVXi0ba1FbMQpmPT1DWBgn_YlXQ-7cY_k14wIlxNWzMd8NvQvduwaidXCx0vcFZPgPFghDhkqXe3a9KT502qhOZMjPxob4b-IdIogTOJTagHMo_vH",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWa5F3MuvtjERaEtJy9M1YLw",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+RW Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+RW"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJWa5F3MuvtjERaEtJy9M1YLw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 88
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1313685,
+               "lng" : 102.235678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132816580291502,
+                  "lng" : 102.2370574802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130118619708497,
+                  "lng" : 102.2343595197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Padang Merdeka ڤادڠ مرديک",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2950,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112515227116811717512\"\u003eMohd Tamizi Bin Mohd Rusdin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vqtVbRczfg9Jmd_0ODiUlX8jx9tWQUXQZhBh_IzgxluTAMdZJBx9CX0zzdc0Cv9rchhEKu5LXqLzQMaeMXQMe4r7e7T7QY7Xx-nDTyWmV5LMNho6NIBd7TD2zX50z6TtgpxE6SaZ-ekykwYxoergx-Rw12h-KNY-lmPXH4bPqFUkbLeNG3LE0fzdWy1U2fOvAPuIUYXt9Dw08jdyTPSsW61zQgcN20b5bw8AJqo_3UHNMvCh83o5jnueS52RKmrtg-SUC1VINZ3koHmFDu2oJnuAsVCB0syQ93vmM-5_GOs2bHDvngG9VifnglcpsXTop4v-SLe8I20eIq5aHdwsDE3p6vuYT-DNWP2UzFlA_O5t4M92B4ACr1jAUCw0ZB44nVeg32OVbX0yCriw9ByQhM8RM2UJMQkJJrd05RPqh7FA",
+               "width" : 3934
+            }
+         ],
+         "place_id" : "ChIJGceDpcmvtjEREUIjMumc3U4",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+G7 Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+G7"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJGceDpcmvtjEREUIjMumc3U4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 73
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pejabat Pos Lama, 15300, Kota Bharu, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1318495,
+               "lng" : 102.2354559
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.133116980291502,
+                  "lng" : 102.2368244302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130419019708498,
+                  "lng" : 102.2341264697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "War Museum — Kerapu Bank",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112515227116811717512\"\u003eMohd Tamizi Bin Mohd Rusdin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s4KQZiQwu0hY-ESEyYmroBJscDjuY-H2eHIiESajFy8mrzUBHG4c0MJ3olSzYlXPC3wgUyeSDmCuKdbKyR_TMhqid-z6QhtiaJKMGqrIracqCIbetycV21Z80QAC47Tvzlolpl4diLWMkKKbimtDwQjFHfiv5X3cAU60sDYqME8lh0I6JwuCMtShEZNN-qh9QnpYHE7ubrxRuMDvOnhH_IbNUUZlq8LWDxuWyyTQTd-llqJ3bYG3kLJvCvaPJQBbWZIAwRlp__-01FKr8dgiNNAo423DC8c37w7mP869CSLNsYDJhXeQUFDpxh6oruZAC-ae20Tm_HLqGfEFTUk-JCQzu6wyEIPe4MedeGthgu_pHLTIGytVhCAmD1dPQ140Jxzz-JS5tTyu1QC3HzumtQRAsvoS1nCVhP4cW3MXg2-Q",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJNXCODcmvtjERG1ZC3FuUrL0",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+P5 Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+P5"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJNXCODcmvtjERG1ZC3FuUrL0",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 152
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Istana, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1308906,
+               "lng" : 102.2372231
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132242630291502,
+                  "lng" : 102.2385608302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.129544669708498,
+                  "lng" : 102.2358628697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pitis Bank, Kota Bharu, Kelantan.",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112440727705039900436\"\u003eTest 123457\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sSef9IeTqE8PfqxXgw6B120QdTBF9Ekvg18PRY1WrEzwkjvpujARXf2w4A7qqeWKq_fUngagsqDOLZMhb5nRpd7o45acJ0b_lzxjgQgN94HWqF6Vk3kPhlLYS2kAw6yMXkSV4Z-NvuoIhrMqJ6isevV4BEG7NOGP2ZODirXHu4CqfB6c4g3Oh6beWBFi7lBvod436TLOCIIN8i8AKLRj7oNOu5OaqIhURxgwtBVOHOKvlraKAuFrD0HRHEvo4aWRCKOYOvT91OQdMKNdIno0pwRD13eXqLV7tCMvfAgphWc7B5WrDpISiKADPRabX5RO4fUknN0rCEbhOtxVY6T6Uii_WgJ-zgylaE7cHkJX86KVDleH4GWHVWpjDGY1DcOUcgozlrCilc29JY8MlTSMHhrrnz_c4flbC4Pzqc4sCeLw",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ0T12KcmvtjERKlSUhVEvVPA",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+9V Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+9V"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ0T12KcmvtjERKlSUhVEvVPA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Cina, Bandar Kota Bharu, 15300 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.143678,
+               "lng" : 102.2353467
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.145059830291502,
+                  "lng" : 102.2365658302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.142361869708497,
+                  "lng" : 102.2338678697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mek Tin Hin Kong Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110349710176311277214\"\u003eTeresa Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t_rn2tYFS1ahQUCqb5NFUaTwgoKFULzzx3jtCM9B8C-dcxfGP4r8gcfazKZg7URwkvJIEG3nvqoWck-FSOo3PnSAhjsO2OQKlOz1c_SoFcSufyvyQjPIZy84SQuTTJLg1r7wjqguDUkkfJN0sZJ2BycoAMS9-0ehHfCojxmS9bcIRBiOrKduOrMcDyzzLO91CFvNmHusrIYzxBebr1jWNrU-ENf9mhvKWVSUN2P_fn4-qO9qeFetXtyj8YGXRjbtxE32JfkZPFsswBGK_oLHmKSaXqL5QJd-qp__bszDJloCuFXzhgU-NSzoZCBRfHVKBlEkEqfaU3i_XJhRlKgr8CX9DyKpqLvlmVlaLHgMKFlMSkXBWUGsnBaCZvkbfDnB2SV_9mtybkGT-MIHvej8Zl4KHYIIssBVqMYaynb8IHyA",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJrTlreDautjER7nnngWweVHA",
+         "plus_code" : 
+         {
+            "compound_code" : "46VP+F4 Kota Bharu, Kelantan",
+            "global_code" : "6PR446VP+F4"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJrTlreDautjER7nnngWweVHA",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 344
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "D1, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1322462,
+               "lng" : 102.2364253
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.133190080291502,
+                  "lng" : 102.2379010302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.130492119708498,
+                  "lng" : 102.2352030697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Muhammadi Mosque (State Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117258352304738504744\"\u003ezawiah daud\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uVY7efix8bXPp6YUXUFGOZAOpyl_shEviXGRCt8dyCaxMAGBmNTF2WQhhso8kCpCaEkw4F9HroDZfbF3Z2aFSbfE12L9Ab1k-X3_cl1g3kQHcSHarIUsOHx0kW_NXbgJKWZyJwwimU0_gDlkJY0DRx8pvywrd-EOI_lsem90ZTorhuW4NKXDi90qv-oRmJt86YLGtz3xVKLRbBKbkulkK0d-p5AYDiM_hX-TAGlY4B61MCPpzhOUUOY0J2uqjXuN8CNxFRzp7-y8HBYzIW5zlzhBTWjPYyrGvt3iw7YZck4tABQ7RaHewkUbyPjKoRweKX9OpeKNllRgDAZg1ZDPWh-yFFpnn0x7MWALcldtDkn0rxqEEWRYNjcdCUw0bqlAD8dxYJdQ4-_D_dTVkD9n6WLAetuItYZ3YhdEAyTuOsD1BP",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJQ-jrRsmvtjERQW9n8V-jODA",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+VH Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+VH"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJQ-jrRsmvtjERQW9n8V-jODA",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4380
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Buluh Kubu, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.130089099999999,
+               "lng" : 102.23925
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.131305430291502,
+                  "lng" : 102.2402454302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.128607469708498,
+                  "lng" : 102.2375474697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Siti Khadijah Market",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2283,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112625117718198587470\"\u003eJaty Ariffin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uqUKPWmi3n22Eq_MPHhuhhXS4q7-HTCWde_7mKlIghpv7PI-1AH3bR34GAVdOKQSnItFDbtTk1VrTgOoc6s0EPlTPINzIzk3gYBCvHaEu8Qnvg-OeFBKhwhfmrYd2tVib8fVHFXPBuDg5L0Ks-IeqzC4WibKpaGTjI6tPjC6PV9AebwQ_kbYpBbWpyIc2d4eF4jyrLApyxft7FQFc-UnMKv7B2BX8e10Zz6DKIx4jv-stkjOM867GIE7m4gWAMZYh0J66RbWwamUAAnPU3mnmN-uZcCbkFBB-AIUf4YH85Hyz77l3GyUuCkRpmi0fSHBQXjcE70fsyvAKF2C4GBl5qfdRB1H44zTjiFQJf2rPnCWqYZnN5g2sUYazIpNB8jwvAG2D1nLHcBQMXFoi59C8fDDGVnQJF_1d2F_eBuFUwof31",
+               "width" : 2722
+            }
+         ],
+         "place_id" : "ChIJt571H8-vtjERTPvte-nQKh4",
+         "plus_code" : 
+         {
+            "compound_code" : "46JQ+2M Kota Bharu, Kelantan",
+            "global_code" : "6PR446JQ+2M"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJt571H8-vtjERTPvte-nQKh4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 21938
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Min House Camp, Lot 1287, kampung Pulau, 16150 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0901461,
+               "lng" : 102.2908636
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.091486430291503,
+                  "lng" : 102.2922178302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.088788469708498,
+                  "lng" : 102.2895198697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Min Fireflies Garden",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115134558802749607521\"\u003edylan ong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tKf7LoqjrEaHpxM6GIhIibyhSs9Nv8CkC9NufVwoz_5eRSrERqvkq8f847oy7MLOEcVkmAT9_zIyhNYYSn26Y3rHSWjhno785FMs5qAbLDQbmqftE8FmyxaF204h_Kn74WxY5L24qNabGWUW1FJkgwArZIfP6CQJSUmEzwIPD-uK44A-BloSb7fQSOVulg_uDLG7jCOAFtzEMJ3A2mMFHsgV9oJQQC3LiVUeL9DkUZRdw7VnMGk0KhgydGmAHZFJ7KNMisSPj5d8L-LZj_h79Yu_vgsUgRaA6OXcw4vWlQiRR117PCSsq4IWNKDFM4M5acb0R91moIHDE_n5KYIgUscBbXBJKIq7VvgiMT0WWbI-SPsvIMsHyqLgu8eWQ_aQXHQiAaYNRookY_57bKNMfQxECWvb60hx5ggoFX3vnaXYTKDsw6KpF0VUsId-Wy",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJpcZ4nYS6tjER5-MhZREczOU",
+         "plus_code" : 
+         {
+            "compound_code" : "37RR+38 Kota Bharu, Kelantan",
+            "global_code" : "6PR437RR+38"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJpcZ4nYS6tjER5-MhZREczOU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 28
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "D1, Bandar Kota Bharu, 15050 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.120694599999999,
+               "lng" : 102.2344773
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.122209230291501,
+                  "lng" : 102.2360589302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.119511269708497,
+                  "lng" : 102.2333609697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Istana Kota Lama",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109156177535933740653\"\u003ezainudin Din\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tfXcwbvGXJPVG9YoB4SA5RLw4qGa_hB29CyMZ_SKMahNTvojJHOcKeeJvxiVDwhSNSRKDTU0GcF26AbD2pGeMBVoVR4PGDTMtH3osll80-ApFmXLuiiCmfiK_9ik3h_AcNoPc1LOih2UKq5LiivEFm3ROVJZe7roGvc84QN1PW3vinxIcg9M_mGUqq8jEf5aooBtMVJwDD1y2JlgnAzSQGc9dGh_MbNEvOmbtEGRRzbA6x6dgs8WZHbIHau7c_npBzrGWGqMD9wpis2qkheWIjQAD7GHFyOV_7aVJWJ83RtyiwWqzTYenoLOto8Fn8CUzUwE-Vv9QHLMNIfM6PuTeloUfHB3LORfVMTJI6yIi_FYUwVos6W6nnbNG8tFNSKUZeQ0618psVZNxHZeXraapVHEqKdzkPjtIP4_kJIF80Qdrt",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJn2sSAMGvtjEReJokC6xACL0",
+         "plus_code" : 
+         {
+            "compound_code" : "46CM+7Q Kota Bharu, Kelantan",
+            "global_code" : "6PR446CM+7Q"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJn2sSAMGvtjEReJokC6xACL0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 121
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1272202,
+               "lng" : 102.2376722
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.128546780291503,
+                  "lng" : 102.2390194302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.125848819708498,
+                  "lng" : 102.2363214697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lorong Budaya",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101457561793981481959\"\u003eYAP FLY\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkNBtlGJwoQ5r1Ls_L7rO6qrDLWLNAsSYV-mbxh0FhFWz8hcU9Uzy6nKh1ExiAb6HaHFY5EjIiG8SlLGDuuj1I3uTnhATvdtV8-slSvdBHmXsl9XQVULkr21f-8YPcSNNm2gkUp_psg-iNVTTn8oHPyE8I9P9PMx6IFr3oXHtge4gghlhhvhjZeuMmGiAkMd4y6LyaBr8KXxj4BuBfRV6XdPGBub_NOGHFqzKe-bSM_TrGhjjRqsCh4irTbHBIzA9ESJeTGm0Yt7zzvb72Rf6leCguk5S4buHTrbKEbHPGT8pJERoQ5pDZq1PnYu9TDT8NKTE57Woe8sVEQLMF9JAbfjR8RXy0PSwjRCXyDyhhFNRbO94Gt6_UI1DFfun3LM6TURWPoQrhLlOTLBRtRxnjJcT3ezkY43PfahLqF5xNe1xj",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJL3SAWgCvtjERZdk9_He4ZTE",
+         "plus_code" : 
+         {
+            "compound_code" : "46GQ+V3 Kota Bharu, Kelantan",
+            "global_code" : "6PR446GQ+V3"
+         },
+         "rating" : 5,
+         "reference" : "ChIJL3SAWgCvtjERZdk9_He4ZTE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16020 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.163774999999999,
+               "lng" : 102.347275
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.165024630291503,
+                  "lng" : 102.3484708302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.162326669708499,
+                  "lng" : 102.3457728697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Senok Beach",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3492,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101556396877743137571\"\u003eKah Lian Yap\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tl75xLcirarTObSx292IX15PUINSjdqVqgwI_meUSZXnUGnQOvnazpMxg3q311LmNYlZh62928NoJuNzsI1LxyGnWjONTG5QJNBj-VlGUdRkrWtHqXHXEwt6bc4IkdeJaowDqGsV24rFaXA7UerrJVlkOUcJnLLqSBOk76mh0I6ByMTskfyLTfAkiG2AqUj2sG6e628R_7yfHqnK5hQxOR9dkeoMGJFXQzWGgSR349ovDERrt3U6Umquv9u48TwRoo5D7eS9jJgN8MMwMOyaS41GbGDZgUlF2x55p_JpG8pEFrQmf1UDDme027OCmv3Iqqt0rRaBli0Iqn2sQZ7LDIg9tpJ3oBM30L8vQ3cIYCFyJaUiJ62Coh12cCBZeysL6h0G8IReciNqm9NRIukHeCbeSRLtQBlcb6I389PWXHPGW4",
+               "width" : 4656
+            }
+         ],
+         "place_id" : "ChIJj7YgtzO3tjERfJsgd1pjIhI",
+         "plus_code" : 
+         {
+            "compound_code" : "587W+GW Kota Bharu, Kelantan",
+            "global_code" : "6PR4587W+GW"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJj7YgtzO3tjERfJsgd1pjIhI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3782
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "D1, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1312215,
+               "lng" : 102.2367495
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132561680291503,
+                  "lng" : 102.2380969302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.129863719708498,
+                  "lng" : 102.2353989697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gerbang Kota Sultan Ismail Petra",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102032948349157342877\"\u003eAmal Adli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tjg5KO9bsY4Ut2IxzJSZXwUAr77EwTFv2O1QRReC3IpsKD4ygy-lV6j0ZfN9fEJaVx4EzVjmJVTqOw2hD_Os6mLuBOmJ3zPKETfbKd4GGcr0FvuRrgRdyOCQwyfPQ7kJ_d8e6AopHU-iJXPoYuGEJ5xDfgvubjgO0fDqCon6hD77c4QWmNakI_41kBn9q7jQeUVOWU90Af7MurXzhp7sema3mIqBMXzzpXeK7T0R3vma2BjksB70OgDhqeJMTcE3EGySNb7y0Xi06a4Z9_1eIxtutMCLZwDhbD78PjgVzsYb6YNjIIsxrUtB4C1aUtex4oSwzxCrfzV8tKgmQ6B_Xd4lRFOKP56hWy9PNeUkm3rUjXH8hF7OqzGcM6eb4zrUZHw3n5OJ4g-5sH6ckjxUfTcRLCcO21ejQ-qmCDWb4",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJKzeYHMmvtjERZxRX6iIxpjg",
+         "plus_code" : 
+         {
+            "compound_code" : "46JP+FM Kota Bharu, Kelantan",
+            "global_code" : "6PR446JP+FM"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJKzeYHMmvtjERZxRX6iIxpjg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 138
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "16100 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1355381,
+               "lng" : 102.2873594
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.136757280291501,
+                  "lng" : 102.2886468802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.134059319708497,
+                  "lng" : 102.2859489197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "PusatHiburanPanji",
+         "place_id" : "ChIJja9gLACxtjER2mHVhwTM-vg",
+         "plus_code" : 
+         {
+            "compound_code" : "47PP+6W Kota Bharu, Kelantan",
+            "global_code" : "6PR447PP+6W"
+         },
+         "reference" : "ChIJja9gLACxtjER2mHVhwTM-vg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Kota Bharu, 15000 Kota Bharu, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.131251799999999,
+               "lng" : 102.2348951
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.132644280291502,
+                  "lng" : 102.2362562302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.129946319708497,
+                  "lng" : 102.2335582697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Street Arts Spot, Jalan Tengku Besar",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100909376187475965541\"\u003eCaptain Goose\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uK8zXxUT4DvMhTnrdlx1du1MfCotUBDxpsJaQUtSAPg_K9sJU0fycN-mZMP9y465WwgMOTjlWhBXzN9gtW3q_aU7oS8B7YJ5MUDuZJg5QKDA9wXy8k-8vWiXdYXvkCBZUfrVby8NT_NDauwoLMIi2JvgLE-Cs9CLCKNRnPPwVDDRrCBq06seblVCKCWX5aoPDiPGAWUMIeWlktLVs7eUlty0xVpQuCnzlZEOGP9HAxlt9nzQezZBic_ouBN3KnLdWWguEgYpoAmaITRB95nVfomtDZDmYP05-dHmC5-dmUUYdQwvUvkBjS5y9sop-IVmAXH4llUVuWXxz9nCeu8Ycin2YLqyOu0sjbaE8QNLy4OBI8tr4PSMNP9_u0zz4RODNVCiO9HNg7K6tYQSpqYHQpuvYhv3hQODY6Qs9q3begdQo",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJS47Rb5CvtjERfTgj30pAdv0",
+         "plus_code" : 
+         {
+            "compound_code" : "46JM+GX Kota Bharu, Kelantan",
+            "global_code" : "6PR446JM+GX"
+         },
+         "rating" : 4,
+         "reference" : "ChIJS47Rb5CvtjERfTgj30pAdv0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 7
+      }
+   ],
+   "status" : "OK"
+}

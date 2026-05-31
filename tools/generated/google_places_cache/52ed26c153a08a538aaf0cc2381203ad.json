@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan SG 7/1, Taman Sri Gombak, 68100 Batu Caves, Selangor, Malaysia",
+      "formatted_phone_number" : "03-6185 5033",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2467356,
+            "lng" : 101.7027999
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.248148730291502,
+               "lng" : 101.7043692802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.245450769708498,
+               "lng" : 101.7016713197085
+            }
+         }
+      },
+      "name" : "Masjid Al-Khairiyah (Taman Sri Gombak)",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0540"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0540"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0540"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0540"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0540"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0540"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0540"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:40 AM – 10:30 PM",
+            "Tuesday: 5:40 AM – 10:30 PM",
+            "Wednesday: 5:40 AM – 10:30 PM",
+            "Thursday: 5:40 AM – 10:30 PM",
+            "Friday: 5:40 AM – 10:30 PM",
+            "Saturday: 5:40 AM – 10:30 PM",
+            "Sunday: 5:40 AM – 10:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1984,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105813638525034939201\"\u003eN. Rihhadatul Aisy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t3rgIZQa2ctVSfWq9Wf6cRmTnbk68Wx1jM_oQYTbwWVnYB66xwJrwZ3xuKj12bupIuHjd0-g-PixBeQeHQj9bnUa0g7VE8O1GeaulR3RHXfWeUYVwkDSaBft0A7w_TX6GlEec2rm_b5GeknS8OIFcxDWTtE15V-9uRRL9S9BHPUaRTX5Z4ay0PXZ05TVhWv9fAOD6GCnCfShsBALoBGck6Dc6SzjQqfX3eAxUJ6fSJ4t3tKyzjSHGfm9h_GQYLJjn4kffZDpU3EmV7SejUGU_OHISRNDf3jnHIbzDrJ_Jqe2Eb0D58qJPQDdrON7m9lwXIUgrWR_nKStqjaROvSvj4Xhc4_vNhznDXvMnLDLb-zerdpAeqiSzf4L7b9k6uHZIeCZYOGN73XnkO-_ADKGLmaqfr6cEYCgRywe6I8RHDjA",
+            "width" : 2783
+         },
+         {
+            "height" : 1187,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101346127504435336714\"\u003erosli hamzah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vAvZyMcdEjmniPd6dVM_Zh59NBe24hn9nIr2NDp-zDoAGhZ5zVp2VB0VJobcybnZ1E6axiDsttyN6HnFJF2KRodDFcPAV7Nx709zBqS3q4Ftv1Ih6AaiCTi0EiuG9GC9o6LUEA-SkQfqrThX_YX4c58m99dZFpSbv2udccmKlOEYzrXaPneoVGo8XyBVqs6gXnFNjAcED7wLudpsbOQfmrpa76sPc1pfOQPQCQPaq39AVlLPZbK6rPGuCcAnZPbWvQ8LBi5xJDOYBmG3Ht_Ha4suyYhKZtOcyWAjQiiY4bWBouYj8FfNLznUA5HKqd_Q_4pi8lbNd4qj_QOmYrnPw7Q3AD0PqMB26PBL7epPfnbIhM5EHx45euXNhsVYZMnp3uaiL0nhBcd_iRQ68Vz1Cj69foeQVqSBCweEblUvGB6kpx",
+            "width" : 2110
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112099933036220310944\"\u003eAkim san suria\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vAzoZilISGCL8yKiA20GNTSLpUDKiuCSp-QL56aFsbFoWHQooMKAfYnCm-UmNwAM1q79EIuTHkMTeMFCng5hvZ8cUYww2zQuNFEtgVNEEfKJtKJQm9tlyEr8qvOSiWpls7W60NR5lN_fqomS6wZpy4G24HjlP9JYtKKLAtaJ2Pu_3Wi1EH573u9vMxebM-A9qsT1DOj0SktXl-8nzkgnZtSsn0rLHIWZno0LwnidXjCisAvTQ5WeX2Epm47zu5QefkycXmv3dvDgil_BHTtdTv0nY_jMTq2KOv7Uc1XShSeHg9DT1ddoF5XSQJf-C8Flm5obsAD5X4pWP7w-ZMgBfuobfxNl6xQ1seOHbkuOzUh5GnYoaDyK2EdL7Mt3A19WOK8m_SPGmhWBs_MIxO5Wzg_0eQbTyF_OhKuZoDTQyfgp8P",
+            "width" : 1920
+         },
+         {
+            "height" : 2432,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111657849256231213538\"\u003eAzroy KL\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sH9I0hdbgdgjnHPrT8tFEK7rWNL_qGEWQe5eN2xgdIM3Bc_cleyBS6PNocfdBPceDEY2TRqz6mOOEqccVE21TN_ZxsJvliXiVH5NsbDXI3ZF2nUsieS9CX8ZZ_aX_1qMDIBI1KPsqUBKrAyZT6zXgpi3O3gVQrCghBM6u5CtMd5b1KcuygvvBzJOZOzCxji3OxABdu0ZA1w_-nOpoQrUv2Soz0VECSHOuNBn2qzF1kAGQMBTvJOtcybKyocXyXIlXaqBMDoE2UPhCW6yA5BeTC2bbbIY_tau0mqYfAZWGxx5iJmDYFQU59xc4-fmvw9S7hZHQvUpwoJgLQtAChSGVNGtYcQEIJj2wobvf9TEG74fO2UldZdk8SnAE4TSdVG6HF3zLiLS1RT0puViQ8ZzWuvkqXspnlCgrogCGXOIM",
+            "width" : 3286
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104152291845649083026\"\u003eMizie Shashinshi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sYpTC2BNCR6pHfMTVvQGYIYHHOCEdOtNtG5PEonJXcDrH1RdwXgdFDPcSoCgFFrzNarGIi5I_O63SPGulKlNI2FNYny-gyWUSHKCJfjsAlTYPxCgUwS4eAJxo2TDryAlM-t-JryopI1H77HV_lRekv0pBeeWtItPnC9o0SHaIrdIKkHvlw9pupptPt2qcW1q6uPr28s7sp2NLnbSq8I-LcFLO4SG7jWzHUfglKi5M42Zc0TlI58k7Mi8Qms4Yy5GBBuHDvVE7cEyqE4XkUgcr09mmMcvMx0hT2sta3_HVFBLS_z0DMXs1vyC42dbwU3ykckJPMbu103ucIE2RmZmCCYnyqcO6H40p5F0-bhknZgpQu5_puJAiy8706yhYDu8dXOt0F5Gj3Q7Qo1hq9eKFU_Rom0eKMJxkgwy-CP05EiQ",
+            "width" : 4128
+         },
+         {
+            "height" : 399,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111746463899016589999\"\u003ejawami ahmad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tnmddKntiDN0bFPe8L8CBZpFC_T97wWz3hZPmOaSY-YNY3MwOynnwm93sll-xm87YfyOy4Aq9AbohpoPgc6VsX0JhaOywg94Tx0Zic1zzXb12y4dhvcKcve2TgCk23tEbugF4jwZLXkg-KvMZfzT2ro5FAD4KPRj_fkc2my8CltgCnLxtygYCQSvAsMd3Zk63V6bdsW7tg-d_YjUVOHQl4W91VrwznDuVTW4xOwE8-Kt7tHiVPa5mpBzk-hGL4r6Qy4hrKBRYcZve-2S6k1cP_TcK7qAdsldRtUm6akq0sU1yYsp9q2eweBO_E3guBgFiOz873ZviX9a1TUYTT5n6HUc9h1R-CiRy79_mVr9RnCeL9osD8vPVm1hsNSGPThuaINd87Kh8ZY8qsXq-UBgClY_QYQMI9-rkxpsBLjFAS5g",
+            "width" : 669
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104152291845649083026\"\u003eMizie Shashinshi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t4P4JEGSZltKqKXChOfq9ub8QQTBHtWym0ma6v_yl5EX1xq4nM0ls9s4p7qzRvvqSP3u0ivJG1iW_QzF9TwDXTfpzGzfcF_LqjsXnSzs2502o6C3VsGc0mGrwkMewlNw-jUOxlRi8NzCNd1pdRtZ473At7MBKClHVofSyu2c998TjaYpiRSndv_lBz-yhPDFUfLL7-NcVGRvHA2kqc6UwU6sqmOcMhGXnOGp3ZdL3u9GbhhfIN1RXVHddSdVGSdcwxCMGutTtNfKYc0Q4HDThKwrv1uD6TUFOzcpDbxQYJ-idHaCMx-8bcXL--g7yiINK-xMkIxNPyS6jGLahEX3P3JADeeK_WMzPJrFj_Utpxsb3tZlW_hqwDDKDylJUXyCSVSD9o5tUn_JGI_10Vwrj1iylbkAxUndhRETzFovUroLXe",
+            "width" : 3264
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101715975533310759829\"\u003eFieda Ayob\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stwmgzwkYEqNzXgiSadnnotlAPcLIPjyHKKQLAJHTz6hFc72t2fMlpBhvfxPMmP97Qy80jWtDp885qHgv05o05PFJD3wUYfbIhykXs0WETZANC7Mmtcvy5OqCM3wwe9e9x7ayL14JcMAi0L1HLqPj7XdnHpAQXLJ6bW36eYBfficg4OVend422oYUXPmBVkH29rT91uRhdXm-B9XMGa_sIxzAr2db15Bw9L8G_-O8J1nRo6Xvg4rcLR5FmiRdj9nwmCXBsBdZ2Bd41CB7j7_MZLqYaaRdKUp3fU5w0snqhM1POAi7XDBbhVjADkagAsS0Husw38iYqNHNqxSMfjmVRPgMJD9g2ixqTjYtJDBHtPBL93j4Ltnly5klf7pcBvSY8MsEWy20AHSi91Jbq48SZn7iGZFwWXFCGDNFyZZ-Vu3zLdnHMGmdmCIfV-qvu",
+            "width" : 4096
+         },
+         {
+            "height" : 750,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110571044090647680736\"\u003eAIMAN IDRIS\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ue-eWtwTUVnWZYiXiLnpay8bhU8s17uyMDEZ5d0Ob6C8an6GXA_dVUhCeX-ZVNJ2bjcocA1UKpygcBdN6IvpNMKyucfYXHdDpU9QHE_LsP_N6uAwFO-gNKZyuoyCNGBvOgIxy5BWqNuu245QrUw-7QHU4qmneuFIovSDRi8UTY1Ot2_MooEqPdKtkPHv60X4ltosFXn_jMOGajOHECwR1Ks_xtZq8LLIbBAKEdq2pZOvAP9CX0NQWL3_wNmHOT3OqRzVXwKP8XMSuP55eVjDbcCEw7bRNc6EAbllZB7DYP5ubGfppXSoFf5BvimgCV8-VAJn8nFINFBLFhvf4FPr0fpZAbQscfE4jwgYUxJvX-n7LZeUdANvMbngBhUFn3FR9Ot0uAmOrSrB4S_TGBg8tnFEiAfdBSBy80qWgkbZG10UY",
+            "width" : 1000
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116381207623629875319\"\u003eThe Khairuddin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tXqr6sY3zRJwfyJ4VyEhZA5BeHeCY1Q7qFPedikt1m9q9nieZ1zPtja8Gd8662QeZZxqsAUWH43Ola-RCSxeTwLdrAj45boNCB9Shxn_0sZJ5Gajo3uGGX2hJq3XrDJAa2C0t-d1XNHLJ0weGbhXIMRVMoS1c4kC0poLLiIqTOoOIHxE18v2VMZObixa7vApH11McDv9xkpaVCoIypFugRS07lTbDkkx7NYilM-jb_E3hhLELbajiw8rSvJM5kj4aIynlKUgqiS_9U6aE5g1rKeawKqCzv7yrbRGB2meXU5eTvSfdnwCmvhHKgiocqdr5ygy01HE2evl-plG_aHtqxHTUSdS13KwcIMlmA8rRbrSequy4FnDZsNWzmgk2WO9BNhXb-oLceXyJ3UKdMSTneLNEGbBivrF4VY_n4K2AG7VU",
+            "width" : 1080
+         }
+      ],
+      "place_id" : "ChIJda8jF2FHzDERI-5xSl4Gzbc",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=13244249081212169763",
+      "user_ratings_total" : 852,
+      "website" : "http://www.alkhairiyah.org/"
+   },
+   "status" : "OK"
+}

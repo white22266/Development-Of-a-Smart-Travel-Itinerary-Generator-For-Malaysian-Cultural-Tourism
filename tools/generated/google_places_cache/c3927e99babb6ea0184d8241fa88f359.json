@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "94300 Kota Samarahan, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.4694158,
+            "lng" : 110.4330126
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.470000680291502,
+               "lng" : 110.4344689802915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.467302719708498,
+               "lng" : 110.4317710197085
+            }
+         }
+      },
+      "name" : "Ct Paw Island",
+      "place_id" : "ChIJBzMLgiej-zER7DiyYNIUeAc",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=538203049268754668"
+   },
+   "status" : "OK"
+}

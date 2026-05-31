@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Unnamed Road, 89100 Kota Marudu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.5179719,
+            "lng" : 116.7457716
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.519319280291503,
+               "lng" : 116.7468880302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.516621319708499,
+               "lng" : 116.7441900697085
+            }
+         }
+      },
+      "name" : "Pusat simpan Jati",
+      "photos" : 
+      [
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116753680998162403888\"\u003eHamdan Manap\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stjPcMHAtsmE6Jcm4ABrji5W_JFKqy-clUU6LZX0VeBT7pMGSPHlfZ7XyFdIGyYpG-WFCctcgHsyL4SpKBzYoWHPrIEgBVz5r55RM9QtGb_08uWMpd3sPU5YtEZKdOq8WYBPMdmeAWz3-5PEJQM2OPbi1KihoRAHdWD0Ihia8oIhYt9Pe498Qhql1Hj6fbRG5PzG0N_OIpYBwiVPvpOGh_fdPVWolxz0fQMWqHvXbYXjteC3qUwdULMpf5KeqGpSjQm7-WNTEJuXurz8CO8FWeoa6v83iscwLSWRki9e1RZONL2Ci4tjTrWPA8pUechinUJ3Z2w-5urovDUnwcHqzSMOb-3cGx5oLM_LV4wSUy-3HkFMu9Egb488L17O5_ZjbKrNOxrIvs-6cJ8k7rss5qkf5jlj7ftD4S-DaCSyofrA",
+            "width" : 3072
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118086045513451526016\"\u003eKirai The Great\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s2aMLy8vaqOHP0Sk4C_4oETyt8QtueQ6o8cFV_be0KOoR7XO3OCK1vFpiEEtK_9tRhqdbYs52QRWTmyl9ceGM5K7ZPh2nEydrYZOiudSRjevheKI4f-97ni1qkP1EIYLkLdVJSzG8bgTxBv5R7-X9wZuDfnQtj9TIWDYl9aeUhn_d9P_qNXpe50f1ImLj5n1ToMsdwr96qcySzapU1EstE3iZtB9KPwhxiGntqIOo4FAVTd7WhgsIspxfpOPpR2SNZX-9s1sv5knc8235E6-iDGO4Br8MiWSe0OFLxJhOMhLZuQDdby3urc3VuiIBmuGAw3rKZ8LnzekzBzwb4tZ7Ig-vF_lFyxWE8sAG0L9SxBuDPO30t935BYNn-7BwA0kAdp8Ghukh1rIooM2cdfj9e7ltQ4RDUIpPXPdtLa5rJhl891gjgQYTd-PzF5rNa",
+            "width" : 4624
+         }
+      ],
+      "place_id" : "ChIJqaQNnA5HOjIRdUtxFjDl1_I",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17498706871869066101",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

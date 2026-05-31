@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "27600 Raub District, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.803159,
+            "lng" : 101.8374345
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.804743230291503,
+               "lng" : 101.841724
+            },
+            "southwest" : 
+            {
+               "lat" : 3.802045269708498,
+               "lng" : 101.8374345
+            }
+         }
+      },
+      "name" : "Sungai Raub Dam",
+      "place_id" : "ChIJS094UADxyzERZZFG5IKVRZ0",
+      "rating" : 3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=11332628426755838309",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

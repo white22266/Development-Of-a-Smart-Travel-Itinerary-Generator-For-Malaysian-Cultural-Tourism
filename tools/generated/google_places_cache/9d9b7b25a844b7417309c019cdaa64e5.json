@@ -1,0 +1,1138 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-sNG647uQ1Nk-cADB-2zEMKHJII7gXOS8BqULW6tgSAIP_6Qj5m4Ug94Ka7YxBb0BA4qTlz4BQjMb0ZK2itfGuKRWDzwlwBgF0cog-x__KP2AfniXv6YLuWLSyn53wYMGRqAw3odYtXV-v70gYpMZJFTNtdkXKbr5PmIkwnTlSoxu8FC7BYovnA-b8oJl5U5m2bto1rRARbfz94T31q25aT7nlarDgyhNNlqkhekzhY-nTJck2Rai_ErcFasOAfcir2YHTrE0PTdfCe6TGGcjqK5O6rDbqCgwc3L7Ehkg9V4FHW_2a4qJcvsxVqLyaZbpJkRSr6A8mb5l-7RM9jfmo4zzwUnU66Trs50gOPxsMS76YPonwva1vDpATgv8Vc4trF0cbR7SUawzX8pw2Jl8G0TatQCx5QxMQDueeaCVyP0tCuPeuR1Rk1BQNZd6fu8AWVuIhNaF6Al2MTIK5k907tQ5DDDiadkfq0DM_2XY8uryxdhxpBn1D6l896lipAj1azj54N5IzgRO1DRUHRoNTZfGqY1YbuEh1KbRCHfkQ9kuNWfVDPxWqnrxDljFo6rHmWW6_WyM0QdpZGwwR2mHrACcqRNwSeoozSpyzXdBNNg-NLVOkulffyHppILEN_N9A2VlzQx9oK_uQpzm9Cy2AjXoRzzFUq2AuQpabIEwyqzrXZnZzmbGhXFc7UfIABN6Qrfalrr6yTcXCDIRPUW5lNvymsPXEIQ4qiEz6hub8t-kKqgvkjXViwl6jG3pR-RxZoHXp4HpuGbODGCB6vfpy1oVrGaQi2ayjYWp2Ke2-Mtgysc7Rq6LiNy9hJoQmweoWgC0GXiDM",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung, 73100 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5984205,
+               "lng" : 102.1522157
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.600722430291502,
+                  "lng" : 102.1533599302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.598024469708498,
+                  "lng" : 102.1506619697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Miku",
+         "photos" : 
+         [
+            {
+               "height" : 3840,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110259475156142330123\"\u003eAlan Tee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ttRcs-Z9OjZIjMFY5m8VniT8DPpI7aXq-c2rK0GGQzedYrncXkGe1naqU6fC1414pc22J8EeovzIpS2xlUOfp2qRmTTnczax-4tA6D_1WpDrKDFFmsTtyRU2Qwu0xnk3YKZ-sSK154J-XdE6T9MBj4cZxdj7RK0r3sfOa1mr1NLuesHc50Cu3X5LKzmnokAUJqcBUHSd__o70E0r9lTkDcVghw64mQgJo4D50zMgIhxq-xttcudCGzC9L1gammCbZXjDUhBYUaqaUw5_pXgceRp6FhiKSjR56B39ZDq41WOkJRIdQL2g5_tzcNS2dAyol52yrmAWXR8zG_GLgjCZz-LxwZV_GR7vZtzfmKYVwbyqcA4rI-0foFQXToCb_YxhjQg9Yx9LeAV9X5uCn920MS3iIuUbau6uRip80kRWNTHNJB",
+               "width" : 2160
+            }
+         ],
+         "place_id" : "ChIJCcVDSbgJzjERwFUT80xizJ0",
+         "plus_code" : 
+         {
+            "compound_code" : "H5X2+9V Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4H5X2+9V"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJCcVDSbgJzjERwFUT80xizJ0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 54
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "71350 Kota, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5055956,
+               "lng" : 102.1154406
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.506964980291502,
+                  "lng" : 102.1168212302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.504267019708498,
+                  "lng" : 102.1141232697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Replica Royal Palace Melawar (Rembau Museum)",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106223756461185375557\"\u003epablo mendoza\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tDGcUfLwzerf29QvAl6SFAY8SWa6Gj0crS_3GV1EWJq1SCdNPXLfUaRRZckdkeHj8ZQW2hW5A4xoeMXDOTIt0t4X3NeFtJfhapXl0BnYmkaiMgrrSbxquyOswrCDvjq9XMoYnOkJQBdZpCMWaqaR2gcfPlFCb9EashuPsrbJbf6L-hKrwusp5ZWxMwcPV6vMI7eXtu86KfM3eLVGlbrDFDRLCYtGg90z1CqG8RcP_lbPcYMAfg41vsvfsNvFIM5Oza9IpvMoprPCWgffrYE2x-1LRI5feOzLvd5u13HQp8NqNBdN_wpAk75cEtQfh0PSvmB77ARgGY7ZXVvlSjuRNAuBXi9VFnqu04Chux28AW9JZg3WSSd8ZjVixeT9yFYJcWoC0L-XCD93Nko6nn6dG0zdhMI_EwohA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJrVmLSx4HzjERswVtuzkjwu8",
+         "plus_code" : 
+         {
+            "compound_code" : "G448+65 Kota, Negeri Sembilan",
+            "global_code" : "6PJ4G448+65"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJrVmLSx4HzjERswVtuzkjwu8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 218
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Bintongan, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.6024035,
+               "lng" : 102.1228981
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.603866230291501,
+                  "lng" : 102.1243110802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.601168269708498,
+                  "lng" : 102.1216131197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hutan Rekreasi Kg. Bintongan",
+         "photos" : 
+         [
+            {
+               "height" : 4624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115826593325863632766\"\u003eRamlee Ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uCP6sXAlo9zzCLz9Ye7Kjx308swEIaEFk0i40km8E_dwjTf7o8ZEotmCfxo9gJRK1aGtwHS7V96HiF9_VBVeNFH3zNZ1lY4SmQcl1QW-4a32uqckFlPz6PICHTYOQTBIJMjXljkn2EdWvitJ4pMFiOSQrbmuU85uq6HUw_MO7VcHJIl_DozwUqWkQTkcSnMgxHIUyJpS7v-4YvzDYm0e4dPqntq4lZR_M3srW6ej3KceNHee9nIKFEAbTDkUO4Bnk4fKt0ucyjNmCvyT85pSl9HI6E8quoRQevryryMO-STisbbC6eZ5SpY_JeUcz9RG8c9k6crg8zVRZwla8rvF2iHVoA9cwh_gc3K6VRxTeg0Msz3WI7bMviAMP5zxxHCJbBKJ3-BrVaMYYD-FjbTnSIX73Gfa0wlVXtlEVXLd7Es1yA",
+               "width" : 2604
+            }
+         ],
+         "place_id" : "ChIJpR9RKQwJzjERj4VPkr36_ZM",
+         "plus_code" : 
+         {
+            "compound_code" : "J42F+X5 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4J42F+X5"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJpR9RKQwJzjERj4VPkr36_ZM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan jeram peti Kg Senama, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.601555400000001,
+               "lng" : 102.1083872
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.602919130291502,
+                  "lng" : 102.1097740802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.600221169708498,
+                  "lng" : 102.1070761197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Temuan Hills ATV Rembau",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118117947518788965522\"\u003eBanjaran ATV Rembau\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tRm3Cl7MevTayFMtt9rbE6KeScBbXx2Dw0HojElmsX2SBvlzj1w8qk9SzekAQLKshEJqz2eDfzTrLD-bU49wE09Hpty4vrdOR21e9-sQwpLS63FvJLz9UbVvX00H-EclMTPqlHjyYAJStX1scKlvDxTm37fKghix7N8tzN-8Z8z1DYUhBXTdq7zT7g3osdyr3P2lWC65DxsDIVEpEsbiJF3RAcqfjNt5cxDf8Dy0KLh1Za4ZGFQV2YGd961xuOQ16Oqb5egwqrVKLeoe4Rtgoz1TA-OaMF843PsDOgdvh4UBdqgvQEV8JYrkybGuPf-PPN_AJYAUIQhVcKpbpr7pGiTAKNTvLLOvJ2tzG2LMBjBQw2HHKP5vl5QD9ufePHvYFUCWTEB5PP4vbHsfuRFf4zrGBJ1ru7WZA37xQBCILehSdEde-sboco11e9eQ",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJxQhhmgoJzjERwYMWXorD76M",
+         "plus_code" : 
+         {
+            "compound_code" : "J425+J9 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4J425+J9"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJxQhhmgoJzjERwYMWXorD76M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tanjung Berangan, 71350 Kota, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5440439,
+               "lng" : 102.1369489
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.545280480291502,
+                  "lng" : 102.1382508302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.542582519708498,
+                  "lng" : 102.1355528697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chengkau Hot Spring",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107305109175461376128\"\u003ealong lah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u03a2W59r0y6kgLGMv0NrkorKb0Tzq5_jYp3hE2vlDgZ_jFYo9iKSwS936dem4LhpDKBmzDoXg0dORXWzQes6ePKmrgMwStljaPPQPb3tgtx_K2Twwdzsf4ExSfAR1LEblZKvUEb0NGClXanS9-EWErMafXIFPLxyRZP-nbtQdUUWLD-Orl_AQXgKtDTwDblZcnnCq_R1CDufQVmCSbE3dg8Y93XV1lKB36oia2NbloBm44AE44UgwFaJ7kqoBtSZWNb9e-soRIeywpeH4jGsrYlOQE3zpFnAEZskMnQyX7KOUQ2_hxmk22x-NKjNMnDJmz77gzhPWbOhbCUsTAms2HbRtpaY30dcKQd3rwAZ6nryj0pzoMby_SNpmuAGdYlUoJFaRU4C3_cdj7KLG04Ip7PseXyAT0a8MqFojYz1Ncw",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJC9ovAj8GzjERrPMxsVgKFo8",
+         "plus_code" : 
+         {
+            "compound_code" : "G4VP+JQ Kota, Negeri Sembilan",
+            "global_code" : "6PJ4G4VP+JQ"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJC9ovAj8GzjERrPMxsVgKFo8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 325
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Rekreasi Sungai Talan, Kampung Bintongan, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.6023626,
+               "lng" : 102.1228923
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.603815080291502,
+                  "lng" : 102.1242873302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.601117119708498,
+                  "lng" : 102.1215893697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Jeram Rekreasi Sungai Talan",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118419242323663177589\"\u003eShahranie Khalid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uTdqXG7pVX1SEp_NFEObjAlxG52OGnMNypExHdW9WM9uAduFiPuMgx-xnVZNWBrLay_3L5l89Q_OdOQSq5BDyxPu1725Ik2cujE1Ri_3KnWuVm1sa9iOWkG0kk8GAVJEQ2Hr_NUNXzu0m1_YCZyMVepDEN1SoLcDTPHc9liqzgRjKsmYvMIUJi4bzxUGhVyLZpnHyxbmlPqhdN0zZfpVyLF9_13z7Tp-rwvWTZJDxi6lbnRO8RWM66xqaxMKPULkqWGPILXgbU2UdlJhphsl0Pp2wlnHvBK1P5LaEwejEoIwYljSZ82fGhJHOUAUwD1g-77wep9fFlp2prBYkGeuouYil-Hgux_LF918A11IyGJFvJVvx1QWbH1q6xvBHGGb8BgsyO9wIpJBGDOOcMrk2mvLbDzQGoxfULOcbV43siKQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJFdlFuQAJzjERTqbDzZD9NM4",
+         "plus_code" : 
+         {
+            "compound_code" : "J42F+W5 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4J42F+W5"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJFdlFuQAJzjERTqbDzZD9NM4",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 292
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kota - Lubok China, 71350 Kota, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5057917,
+               "lng" : 102.1150652
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.507033280291501,
+                  "lng" : 102.1166416802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.504335319708498,
+                  "lng" : 102.1139437197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Rembau",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106762591549475995156\"\u003eMun Choon Chan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-szqKZ_3og3En5MbdZuFw2tVg27Yg2BoHki_ZsyiO4TrkWjmYjTHnPNG6iCl7WJqK9Qp8mAmHoWqE72-S6gQZDGf1QMQBAtP3iXEVTGkjmEazozd1TzqkjB6D29KYUct23P2WuBV-HwgtN3QTWBvW3G3AthAh14PDXLj23PA5jTatlpkS7B42UqkJg-qnh2Bmk583v9W0nsA76WzZ9-RoMWGyyYQvC2U-ViUx_4UtE-oXG3s_TKNisnZVbvzKee61CKHYmudsytsue6KPn8AAVDSNNud7F8XwVmNzq-itUCTqYn6LS_URgBSrJzLfaEtfAhtn0r7RgrUac8mKOC4Wz3G8gbJBOBRkC1BZkiyg6LZlRU0Cg3Rr7wV9I7nWYH_EbAGocNeMOQMDrCGUp29220fvCo2shU5WOJrsRM4SCDsHem",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJTw74pfYHzjERxJusnM2Ptf8",
+         "plus_code" : 
+         {
+            "compound_code" : "G448+82 Kota, Negeri Sembilan",
+            "global_code" : "6PJ4G448+82"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJTw74pfYHzjERxJusnM2Ptf8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 56
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kem Bina Negara Ulu Sepri, Kampung Empang Batu, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.6539435,
+               "lng" : 102.0905155
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.655435630291502,
+                  "lng" : 102.0918777302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.652737669708499,
+                  "lng" : 102.0891797697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "0 km KWN (Kem Wawasan Negara - Ulu Sepri)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114158861723215396126\"\u003eAFIRDAUST MUDA\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vbTe7Wa7NlwsdYNoWTP_adb_pahcxt359qOCELRl5buSJ_ZBzbcKtXGnwA8JQkBOmBXRGReHLLEWeBBqdF5YmKlU_dti7VZCnwKlsb17kxBLVd98iEWApd-3jd_vH7UBxFDmQJaWGymJisp7VeMsqMXy3Y4K7YVL3JpA8Bi9ZwjTJPVJrjpkohKPw2hWraXGqoereFIsE0ZZzGdoBgTX3So3pCDb2e35bmarRxdxmQ2N0kCuC9zO-JKyCB5QS36QsGLhRv83ZyvJ2GIaZyC8As8mcSNc39G4yKz4-LQq0cEnjxszx_cT-ITyAUz9NOdf6ns9UDzbVlup0Ix1uIHz5RlPJ2Ib3oytkGXcFVRMHzS6wTJhdo1DmlgKJkPMcaM6aSdMW_Z1C-a1BWUl7e7PRdhdG4m0Hyzm2F7fo007w8M5wLzG91-EYRGrnRBA",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJS8AME4kLzjERfOMOu6K3E_g",
+         "plus_code" : 
+         {
+            "compound_code" : "M33R+H6 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4M33R+H6"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJS8AME4kLzjERfOMOu6K3E_g",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "N109, Kampung Batu, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5893666,
+               "lng" : 102.0922063
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.590724830291502,
+                  "lng" : 102.0935637802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.588026869708499,
+                  "lng" : 102.0908658197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "0 km Rembau",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113156708463332645737\"\u003eمحمد شهر‌ئزان\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t6K-JMBYw30rkqeg1vMhuVZUfUClPxiaR6to1HOs50rob9NRP91GpjNnhocs9nz4JeUKVt-0z-DxG9ZU0MEroqklIjIGVHvIQve2E31_Vc9S7sxxXf3xe7Bz5o4hneXfbVVnTkisVhR7BJr2ea6IPcWcNvMfA12nlu9iXLow-2aSQNFnUOYMLNfo-iMsjJx6OhBxCM6rKtDlrntJPh_OzA-iuc_1R6xQFvOtrBKJUBYFrKr2ObrwOKki50BC0WuRbXBXXCAtCFlHjAWTrPld6JN2k1BLIlxWqgWAM1vvQucAsp8gbgFF1CE6n_yXOFXHPeeJBfcAweTolebUjsaYb2VAeOWAndJdgoVUNZLigOddbc60W9luRYnmf50JbyPqdCLWfy1F8MHcHj4DWo1QPAVoXyHhmNuQNz1o33e27GWowS",
+               "width" : 1872
+            }
+         ],
+         "place_id" : "ChIJ13kCUfAJzjERtMlh5TKQbwM",
+         "plus_code" : 
+         {
+            "compound_code" : "H3QR+PV Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4H3QR+PV"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ13kCUfAJzjERtMlh5TKQbwM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2000, Jalan Mahkamah, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5885899,
+               "lng" : 102.0952549
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.590172580291502,
+                  "lng" : 102.0964728302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.587474619708499,
+                  "lng" : 102.0937748697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Permainan Dataran Rembau",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114397773074113677514\"\u003eShamsul Soed\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vYMzGbXSWMW2eh6XuQMjVUF46d_05ktU3DQ__XqeJr6d_kHyAxI1z1EYz6qh9SAhsApD1hIEy4PhYrYbSWi5ZKYCLAN9awjhgvpgsFesyzDieXpYIuI3iQ336xevzAg-jbQbTMBX63gLzQYjA8ecH_N14LqVnHmaBYxJioUzr6dBw8M-EfyCHK2s-JGdL82rKc4jAPRY8Iyp8U0lP5k9-XGtgwkwcvRks6Ra2dHYD2xh5Aqcq9fcuXrr1D0-5hvdPWPcUqbCGKkofL0TJlQ3SoLwg220hQmSzL0lbNKAFP6f4JQUcRmvyEU502c6O4ZYhGsvpWqqvddSwws5TOABbDSM3WrVO3R7gktzmI-bwUq7s3G-wh78ppAGCJlhy5ONOhmjVcnRffUxFskedlRgZRTrhYGAnM17OB7yWnQhk",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJ85YYHuYJzjERS6bYbW_VVWA",
+         "plus_code" : 
+         {
+            "compound_code" : "H3QW+C4 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4H3QW+C4"
+         },
+         "rating" : 1,
+         "reference" : "ChIJ85YYHuYJzjERS6bYbW_VVWA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "71350 Kota, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.543545,
+               "lng" : 102.16913
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.544638530291502,
+                  "lng" : 102.1704348802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.541940569708498,
+                  "lng" : 102.1677369197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Gunung Datuk Recreational Forest",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1500,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101785123782264375462\"\u003eElven Kim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vZ7VxO0Nuyln5-IEJXeEyrkodY9RRMpsiVGQhyid0cRMxq013o_yLL8cVJ1JG6PP8koWwqOgCI1YO6wNwRz_t-_pz_qJ28enj0-dppZ7nJQW1mA6OnK8iWtNlTuAyX-vfGbD9_buJuwhMvxsLnNo-BbMSnqL86JogAoPIMo1_i9ipDOwvchqg9bLxYLs-SlGq7jtd-bBnEaoAUELZQRxABzv2jf3mXkchAy5vh-W490FT3rvMWx2Fit6ThsCfQjKxj_JGF56Mdtada6EoMnxouGimOlhGL95oXaKKZxUoLyRZ4l57EeP21Q1IKY11gMCMCpPf9OQ9wFDhWowpxCYGyevEkvxmEvF-fHcCPyUdKW6I4didZmB-GUYvLCzDnIabodA8s2N5k9fdJzLG7uRbZpcTUtN8z-XK2GvBUJVS0pg",
+               "width" : 2000
+            }
+         ],
+         "place_id" : "ChIJISNy0-YFzjERIR_FZdl6szI",
+         "plus_code" : 
+         {
+            "compound_code" : "G5V9+CM Kota, Negeri Sembilan",
+            "global_code" : "6PJ4G5V9+CM"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJISNy0-YFzjERIR_FZdl6szI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2656
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tbr 1, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5906296,
+               "lng" : 102.0859983
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.591959180291501,
+                  "lng" : 102.0873000802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.589261219708498,
+                  "lng" : 102.0846021197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Rembau Waterfront",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111461324858096080401\"\u003epawieification\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uBxkJktyJMRKJyP389rlLXFxv-hvU91HU5zQcLZpo6vSj9Y9N835Vnv4PB7-MuWl7vWjrUb-tx538xMWN1TFt6AVUF9D3qkaA10auZWVbV1xSGr2xkBITIAtQ8ulLpmGib3BOPqXejdKC_kQKLNCjBWXJ3ewN7F41amu-TClKXD4LoF_1whLES-7lA9yRPpg7A1iZDczNfknGyv6USMHSzDd4lM8xEHHC3DqioIQe6LEgz6Cx7bUi2noBY260_c1_6aiOF9llgXaQItDAdtmrONjg-zyjq-32yAIg5XoxndpHtNKZeCTFkTUxuZGl0eWEYLBMQ20SIzEs59VnL-M0cJYQXVN-QeMqZZSFa0ZqYRCgXvi3Crbnr8CklLLE3gY2EHk7UNWvWM82wvbFqhtAzeb-BXVrLjo6oD-XJspIp2g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ2ctAZl0JzjER_GByMdoGiFY",
+         "plus_code" : 
+         {
+            "compound_code" : "H3RP+79 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4H3RP+79"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ2ctAZl0JzjER_GByMdoGiFY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 47
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5903054,
+               "lng" : 102.0983143
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.591491980291502,
+                  "lng" : 102.0997324802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.588794019708498,
+                  "lng" : 102.0970345197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Jambatan Gantung Tasik Rembau",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109836157490103219531\"\u003eTomato Tim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ufvpFAFtouyMgGJvNDFjEKfPTEA5AnSqIoLl2ZQu6nT0i1NbwiBppqbSw77H-AbuoNja3z8UoMUdDoO-xKS6KQ5QGFiNGWzm15x69n3-nU09KUi5LFWftaYYgGH3e6ph_dUqavcnNFB8U3fjIL8IkjOTdWd33BuY4sBI2BPw2wWtaE2NzHnQ6ZTMDa58xAEaoTQFTOvkAAAZU2mHf_tEtyt5PSycfqS0YP98vQAxjbYz4aRVCCSAxn1KhSWN-F4dJpGt65ypTZ3q9eFgPFWVv4LWcYFyw-hb3AnBPBwJSrS2JrP5yiRtFWjsma_Oh62CNRWOKZdczK7v6VaBULEm2mUQW-DRfJjOx98XBdhfRBC4sWjdO1tjYDNF-qAbLNnUmzkoNeeJdPACsHz3PRtjEQYVSZhjAvERdXhUax1nz03w",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ72pSNrEJzjERc4bIZiNqT9s",
+         "plus_code" : 
+         {
+            "compound_code" : "H3RX+48 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4H3RX+48"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ72pSNrEJzjERc4bIZiNqT9s",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lubok Rusa, 73100 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5924885,
+               "lng" : 102.1327438
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.593889230291502,
+                  "lng" : 102.1340523302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.591191269708498,
+                  "lng" : 102.1313543697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Land Site Lubok Rusa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110543632832860181599\"\u003eAmirul Ariff Affandi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tGGLbdKc74NeQpQAtmOGRpzT9jFgVEpReTpaHByQQ6l_PT0pSUHGf1CvdQT6PsFaKrHE4vtu-RssPW0ZrwOq5LYAP5_VsXRQdubrw8Nw-mALL4p1ZoCm-8chXla78eIPQO1SbzOSFwP3de0AD8TvQN458X-1KrTZCBLs4zzzHjujGHgTHhGcTimCiw5XCVcB5ztA6UutqrWDOeyV8bDJjoL3QdMVAqcV-B5-x1i-n4GkSRwu7bF_L4YGSEPytmBJnxWw5yxLQAPU8xH5wBZRTkLdNT_kJEguPOPdaYZUrZvztPs20KKuyI_VmdMTlyFKq27BuAsLyjaC2lfp3NKWOgmHRxDaTIhUn_eiw5g04Ql27CVgALoMAHg4TDtGWaWl-ubz24G5OupGlvjfBoLl5sBRwhz0ACR0veCZudTH8",
+               "width" : 2252
+            }
+         ],
+         "place_id" : "ChIJdfkZdAAJzjERTWkSuAjtQ9Q",
+         "plus_code" : 
+         {
+            "compound_code" : "H4RM+X3 Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4H4RM+X3"
+         },
+         "reference" : "ChIJdfkZdAAJzjERTWkSuAjtQ9Q",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Port Dickson, Pengkalan Kempas, 71150 Linggi, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.4504728,
+               "lng" : 102.0152054
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.451903630291501,
+                  "lng" : 102.0165648302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.449205669708498,
+                  "lng" : 102.0138668697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kompleks Sejarah Pengkalan Kempas",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111461324858096080401\"\u003epawieification\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vRcxEDxIHm-IsjMe2toxgqq1ZsDiTMOFifZw0j_7aQcozpajdT74T0ku65OXxsDfJ-N2spQLJLYSw3ilOqvsUCCs8hXJzKV1ZfiuML25mCATPVfECRk0gUq6tW0MB9A0ON30pp4iNQ_1ib2kqfDFEaalie334bATc-QY7C7EyTyp7bAe2OcgEVuhJER09Flwrdam2QOzYNlX_sgn8qABX0JZkx_0t0tcKrVGG7m-8r9jwWULAfHr0qiZJLTGmvAgfnxzb6HpmbqmbEbTLyHau0yhKgRDnW-z0bgFF_fZHbC-NcFqF62yv9ml7Yn6v0cGMeWHf4Z9Jab3MZOQxVxjl8spK6o-9bYSjiqPamPqGlUSO7eyuwAI9UAfh_Z3nr_CmkIPlh8X-TpFFOx3isn71-M73RoYK2b_M5LIaZ50ytAEM",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJLwkmUfv-zTER247WskMa1SA",
+         "plus_code" : 
+         {
+            "compound_code" : "F228+53 Linggi, Negeri Sembilan",
+            "global_code" : "6PJ4F228+53"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJLwkmUfv-zTER247WskMa1SA",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 93
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Sungai Ibor, 71400 Pedas, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5920805,
+               "lng" : 102.0503712
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.593457930291502,
+                  "lng" : 102.0517066302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.590759969708498,
+                  "lng" : 102.0490086697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "LANDMARK REMBAU PEDAS",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109347373913738095674\"\u003ealaisutida Resources\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-skShqVrYWcmUIDJL4ivEpx3ZicpvBOqmXMn8fw5yiacLGItMf9C0hCeKHD9H5b6UytyIzyBRaVwfo-Djs9zA2DvQEJjJEGC_zx14-eum0hyVsFuqwHy_9C5GbkhbIqLEXP3YLUGi717KpVT40dNLkYFlhI-0hNFGN7u1np_sE927Xg_samBGd9DmFYgjz31EPSFwQJYu9JMdPIEBhXIc2lJJwk14BaceP0DqcTbQIenHB9YOq7RD9_wpQSuovUhU87nSe7-xvQGTMmOWQ6XV-kUBJqKtZcP0TextscFezqplIucw-hFzkwUnD6qV019gh3QX8oWsEZc-urSYuC4SpqF3DrQNtp3dJdg6itP_l3bm2bXMgI3WJ2dwyU0laeW8omo4XRIEyJDGHer8a3l1QkKpzApAOOsQpss41VhGKU2EsESbj2hZU0-vmyFZeL",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJ4bbNcgDjzTERM0_FQ1xqFqU",
+         "plus_code" : 
+         {
+            "compound_code" : "H3R2+R4 Pedas, Negeri Sembilan",
+            "global_code" : "6PJ4H3R2+R4"
+         },
+         "reference" : "ChIJ4bbNcgDjzTERM0_FQ1xqFqU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tanjung Berangan, 71350 Kota, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.5378038,
+               "lng" : 102.1432685
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.539169430291502,
+                  "lng" : 102.1445315802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.536471469708498,
+                  "lng" : 102.1418336197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Makam Undang Luak Rembau Pertama",
+         "place_id" : "ChIJNUQzgBEHzjERH3gtajBt_Zk",
+         "plus_code" : 
+         {
+            "compound_code" : "G4QV+48 Kota, Negeri Sembilan",
+            "global_code" : "6PJ4G4QV+48"
+         },
+         "reference" : "ChIJNUQzgBEHzjERH3gtajBt_Zk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kem Bina Negara Ulu Sepri, Kampung Empang Batu, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.6433373,
+               "lng" : 102.078876
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.644665480291502,
+                  "lng" : 102.0802234802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.641967519708498,
+                  "lng" : 102.0775255197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "KAWASAN KERBAU",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109347373913738095674\"\u003ealaisutida Resources\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJy1hBx9Or5PXWdAi2X_1zOfdjlG2Ivm_1ua8_KF6n2fpRxwzHbxnagMVR4-KUn2EYqeNAw8_ljEIBDu7P-9WRPRK5fI7z2Es6ZuvYQG7kf-FigSRfKhFIj4NDVGWdi5O_pbOPmyVYLeFDYXxMnffJEDqysytm86sTQr3ZtNrTnkmTkN9WyU4EyEgy7DtimiGhugl9LA4zr43zDO2-_XtgoeKQNPQlVT6hVNS5BFcTFSOJsTJobhYw51V4oDgKfDlFqxGRiraHSYBoIAqqD0gyc8jIClpCwJdskHIehVaypnvUA1NGLk58qdSz86hnN9FsDiZCLgftNF_IRTfzbZ8aa2lVviJFVnlil5PkpcWOjWvdhwPSTSRcTbi54UcDM0lFXCxHeZ3KdUcv26bSTiIWBjMZcCO6wjxhiJkg6k0ZiRmo-3klINkN4CQ2dk8u",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJ6y6oMQALzjERyAU4UQVssh0",
+         "plus_code" : 
+         {
+            "compound_code" : "J3VH+8H Rembau, Negeri Sembilan",
+            "global_code" : "6PJ4J3VH+8H"
+         },
+         "reference" : "ChIJ6y6oMQALzjERyAU4UQVssh0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "361, 70400 Seremban, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.727429,
+               "lng" : 102.0585657
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.729017480291502,
+                  "lng" : 102.0599141302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.726319519708498,
+                  "lng" : 102.0572161697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Replika Tengkolok Gergasi",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114888674006974479944\"\u003eSmg 266\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZmU_trvMPgGhl1L9tKB2LIFFS8a279ftqupxQM7OtQF6D3vG5EWAtcS0JmhOe2wPbr26rMtuUmluD9A2tDyobz3SbAz7Xt90K0wS9Ra5yRnt71O7tB_tLr-Hurd12VqfsB_4jh-TANgw4seLI48cShlflRkXDxchk-wdsGioEA-hSwpF-ApjUsCDBqg52GI8Ujq7Bcf3D7_v6q-KOe00Xf9N8ljr22duioMVl3WEhkPghBl2dxV8zdsgoJ9xaE63NpQYFQQY8XVz1hAUN4Ynppsyid4jfuRwZrOduXTlBDQJ8HT2Q3WFG9DVa1K_cR5hWjKqo2S2MmuXkY5r2ikMYbLvGq_f5azRQX376lVuuJwvemRwkwnpXU5PlmsZ4EWWVqRDfn_9A6PGwC03edSgH_OThSgLcJLp3KhJ1o4bFqA",
+               "width" : 2880
+            }
+         ],
+         "place_id" : "ChIJB0c5hcHfzTERSKpKPe1WOLo",
+         "plus_code" : 
+         {
+            "compound_code" : "P3G5+XC Seremban, Negeri Sembilan",
+            "global_code" : "6PJ4P3G5+XC"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJB0c5hcHfzTERSKpKPe1WOLo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "J427+PV, 71300 Rembau, Negeri Sembilan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.601856,
+               "lng" : 102.114691
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.601897580291502,
+                  "lng" : 102.1172841802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.599199619708498,
+                  "lng" : 102.1145862197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "MykebunAzmanRembau",
+         "photos" : 
+         [
+            {
+               "height" : 1040,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100559417139522617534\"\u003eMykebunAzmanRembau\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tKpQtuPsUgvjWp3_AjWMhZAA5Jm2FKCGueQRpTA6RF0rUivxoBAEkIGNr09zmizerxQ6x_-hYUVhWNco9OINflKqf96K8xlci-rYCtI7Og1f3ndYMcr-E1uFMPNwZs0M-SDF4g98S4f0QlcCD80dtHZ32DcDMfP-ihdFnQ5fm8jEhFCsVhwA6c4P1VyfSQrYI0eqowjYqduSuqWMaPyKuybfmCrTEnlx7UuLTdJDzdxG1VL2cr3pZKBssovXGf6Fwz8mNJl8AB5x4eerhqvnb6ONKoxVvBdVr_14NKgMZF5rIEfwdrRnQccsoF81AlPSDEKgpA5soTLLB5FD8wGwb_gOP6FqRI8_dtSn_UdwhVVoX8gSyM1FwbEGNY3Sxs6As3G6N0NkDEOtR4924JnqI98SlwkBdJ1rb91_4gSVU",
+               "width" : 585
+            }
+         ],
+         "place_id" : "ChIJ7bejIwQJzjER9wZFHYEEMp4",
+         "reference" : "ChIJ7bejIwQJzjER9wZFHYEEMp4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      }
+   ],
+   "status" : "OK"
+}

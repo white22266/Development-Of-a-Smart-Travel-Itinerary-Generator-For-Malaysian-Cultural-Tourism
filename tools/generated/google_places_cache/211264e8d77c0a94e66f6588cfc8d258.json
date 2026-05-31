@@ -1,0 +1,323 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "16, Jalan Maarof, Bangsar, 59000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2284 4652",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1263889,
+            "lng" : 101.6761111
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.127834880291502,
+               "lng" : 101.6776169802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.125136919708498,
+               "lng" : 101.6749190197085
+            }
+         }
+      },
+      "name" : "Arulmigu Sri Ramalingeswarar Temple",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1030"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 – 10:30 AM, 6:00 – 9:00 PM",
+            "Tuesday: 6:00 – 10:30 AM, 6:00 – 9:00 PM",
+            "Wednesday: 6:00 – 10:30 AM, 6:00 – 9:00 PM",
+            "Thursday: 6:00 – 10:30 AM, 6:00 – 9:00 PM",
+            "Friday: 6:00 – 10:30 AM, 6:00 – 9:00 PM",
+            "Saturday: 6:00 – 10:30 AM, 6:00 – 9:00 PM",
+            "Sunday: 6:00 – 10:30 AM, 6:00 – 9:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110329794338897667740\"\u003eKelvin Chiew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-taiQBg89FdiPRvDXDxee4l-0g-XdfA7_hRp7gGJK9rG_3CvjOH9Y5Yx4USQbpABK8QjRSaTYsPr7SdGHsWvogW9nrgCmcKguOy_YY2nmitP5vneCl_e5GU6RY0M9BT-rFZBYOjLA2gdUEJWsDBxZopE_a8CcK5o1oOtpDYiic1uIt4r_xaDoxHB26F5bRXueWcdzm9di0kfOaoOIy3sfp6vP6zWphVBIAQ2H8z5r3PzTFM1bUC3hDmB_dkPNch0AqEdDG4usoaRTkOiHdRGxZCtZW5Qm9zgwpg9IlQdXaXYn4kuKCQ9WQg18DExCwotBaNk-ldS94WYIa4yyY1r7oInluYUMVaTs4e6xcGbSsU48vmOOPltNUlrBA0f8IL9iK-81ucR2OQsrpET3senAqVP8HCbom_DL73UyX7GZNPaQ",
+            "width" : 4608
+         },
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102091160508868215769\"\u003eEllamaran Murugiah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFg8aRxDuqPx97k_wPgJjbMFtRl_i40Vgh_CYef4_d6wnchZFgDDsrjAszTSDNnmbtwWPe8X6Yw7hBcYd9pgXWU-mpLchW1Z63H-6zR3Bg4jWmaYm5WS7NTH87AU7HahKoDNXN1TCXjkOlDs1LoY6hiHxNWYoKW_wgcnAer-E_ewmiP7pBMAGUrCZu5To5OyVLUs1oQdLQ7rKBuxbwhWISSFKJYXrrFaFfhzNbiEIB6-zN1Y6Nnnic2TtKxG-Goopz_r5FSYhnrDCvw7a8CtCE83Pn2CZ3R86lX3eZrSAccgfsKsXP_ub7WaOBm7qImpEG_4Y7kcWcRhKx5rXd1lcI4kuZYanyqKkS1DqzovuSaMqQEb47uWWBM1XCKw2sMo9RxnaD7yg3QI6tgp3DjD3ty-d5EyC_Xvb3hapthQFgBRwb",
+            "width" : 1080
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107040275234801226935\"\u003eMarmayogi 1951\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-saIUIvRRGz6Z8RXhZCLiJfsyc_m-OVxTFCNp3QZehYhzu-pZLQrsgGuKPMoOEqb-_gErggX5SHQ7pn1sOYdgHQY9egd0pPnwaezJoyTnH_M5xYpEf0iWgjYBw26ae00PYaq0x3whs7U03S23l1V8PjryV-Kfhrz3rJ0BkOGKPeX0ffW9vOe3fa70N9z86Aw57vo9ha26PYElx8T3PX9bPOl4SpmzNGG52IraqxxeXIK1lO7ZQZPu5xFkn9o_6s2vxbR3TvhnXEe24u8028DBxp5aAG5Kl9-nS3w25OkRgdWRx6Pr4t8ceAwmjgtH-Zb1QUmKXBLP-oXQ6rm4R5RDK4SEbkL3rk7X8EpalFe7T2d15uBAAqulsIJM1mmiEFM4O22ROJ6AuTvpLWgkPrtLo7y_PogCV4NmpaWyidWC6ediE8mmpHsjjAPToFJA",
+            "width" : 3072
+         },
+         {
+            "height" : 2160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104555172905248474833\"\u003eSureshram Balaram\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-seR-F3WvrxyIrUPdrqy3yIRsCa_vOiXNKb9w9IfDNnXGY74ghWN12EP7VcG9qUC5QT7R0xXUCAbCF_8v226WL_uHw0Ssc_c5F1xbnaPV0FjJDES_v61OEn4kV5FX2dQ2cgE_D_ZB19-IwTWZOZcjZyWV1CN0y1f9Qr14Iv_S5pLJpnhSaQeJo7hpcB2cVumTYuNL4KT-fiFqB1pdTqFNFgE7D9pEnatdsJoEFT4J5_synzhO5AJ5ldtRvFU0aMPieFcWFU1BVq-y6tM7QlpXanFvg1bHiwfntaEbLIoUnBeEesbW6EXYle7I4GSUXF3nmRU1I8iwSZNKWjkHUoBvRHPsaAmjVo_yTb6O7Ximjg3odmJE6L0_l4KncvrbEGpR6EEA70geFcEQnFLMkdVsfNE4aMLTQi3CQdlze-2wFipw",
+            "width" : 3840
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107040275234801226935\"\u003eMarmayogi 1951\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s6UnnETc2SigK4BrUKo5RSqrbZKjoDUkorQWys4P7A-JyU9k9L6D71zGiA7hKd72eZJngnkwySn_ABWt2c0H2ejRdzaoo1t3O7Ikt__IxyenAQRMbuWchFvusgS6ejXJehG3fq3RPHc8KXxUBQaLz96MkpT__1TVEZD2_rS9uXkb0mUYOwhhfOSDzwVd-tyGFndl9LpHhA3mQHPdIHbZBXiDGzXwTS_gKe-5s7NvLZlVvQPADe4ssxTJtMSukxnwmxTXaw6N1CJCjMh_9bTIAgyt6qAXfV54aBydxJ1FEPmDUprXwX1t_Se9ZAkpfcLTbOrajxt8aJBSLeMnmYt8FZqTD0OjQ2jaeO3-Dc-G4UJS2vlR170GUL_ajXgfGqEIl2S1Yde50cCcpsyN12dVG4LNvt1X_w40k7dhNk3z7mJ-P2IdqLF56N11sq_xmP",
+            "width" : 4096
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107040275234801226935\"\u003eMarmayogi 1951\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uG6EBIfOeu1SFEoKZmMXN1xmUA-iIOIXLAYz3FJEHf4zyuEkMzBJkIS_W_RK4KWBQlMWjMflpr0vuX1lbqZjj0Qgn0xLwEra9y0GeCzzhlifar2kBJCOQVo98MtorUbYqFCbg24Gg03_QjpJ6EDUT-s1v6PRVIyG3YUUh2gVkSoqQQUwooDo9hBd37xc0GPXV_fWQlUIY3epwa7ysXJDijxqPQBSoEpPBfNJVlfWLw9Xfy-4bDfPUKAOSB45KHoxyf9n1Ypegg_bt8lmfSweCXklr7zX6hDf5zAcCnToSyvOeAubqf97X2q1NK8lknwF2muz2iYJTkJEoOAsWVKKiQK-M_-8s5At7pEDEpEyw0uz7qSMchP5QSLebKrTfMdL5MNxRsltvj-rE0_ShIJp17zbOvHbq6SqhBLBC16Vwvu4iEGnYw3W3LVVr5sKdK",
+            "width" : 4096
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107040275234801226935\"\u003eMarmayogi 1951\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ucRGuJGJvyy_SBu0hcutSPpZQdd6lhxpxmFucbI_KBV53XUNd9OVSx9s2cgMQcF10HU4yIom10lIiDz4bRJlAa5fPF93I6qyCi0KFZUe1AEpx7W-MQN31NnPWZSN6chIptfyRvCt7h2E22JbUHPpUtbfH3g2AGHslZdQ7J0VJ9zg577YTIyeTwghBkiTY-Pw1s1ldk53jM2Px89ASiH7HP1b6zR0Q3bNYaptflw3-VZyET8aGr6ktBiMFVxeB0p3J21nfBrVy4tXLXSzIu0DR8nQQkFN1KP02PVIaED3_5MZ-qFnmJiwf-meSjcpXKfanHgQXedjF3CNB55M3DSOwS3J2faQZAwuXsvFVu_fKMRdpDywdCV_dk9dWX15mM733GFi_h1PE8pZCakHh2rWXhJEU1nCtk_c5pp2EM2cPzVoqG2OS4yRDkmVQtSNT7",
+            "width" : 3072
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115889165801954801599\"\u003eSundar Balakrishnan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vZGCgfji-UGW3wAJCzT26SfgB_CsqgZ9A_F3ntOzBJaSjbevO5AnEg7ogCjIwBkMzGIqRXHQZSd4GyikX3yldFfCXr4j-xtsm1F4hlaSTohJEhZK3r62FVUPljuBw7akbGxhTvrwN9JmmJnSrTYLWOH_yFmZqVYhugdhFBJo8iqRDCAzoTCMjb5ZhzpF7_SFI5zaKyiPpO7PRGtjWURUK80TuSfCX0sxBKPNjak4-M_ukkiOfN5W1Na00ZknaVE_pZRilLzOY5kGfLeXhOo5TDioU_Ghuo1sOLmkLpbiKOCS8pod4SWMHimnH1PXLGHM7U5UgosEamDGzSzIhOBfq80zPd_ywJYSEvk8R9IVK95bJj1kUf77zcOlc6sS4Tdyi-f2-WRQlmrvyLnJ4cRrIMLLFSETR1IhKmvYEVAY62WA",
+            "width" : 3648
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102091160508868215769\"\u003eEllamaran Murugiah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v_4jrEd87nPWWQO30rmRw-ZGhtDtGHGlyTSEVyXGnpSX8MfVXBhvXzPQEzvVoNeFH_5W4YjJhD5hS0fI4FdUzBj_IKe06IZO80_RpopVw3Z7AFo48WBbYX3P6En4awOBOeyuJKs6_qk4V3qM9hTCh7MhodfrnaoTS1X7d3Q1QTxZ65A2XAH7yisBvu6K5WIUtFrUsloLJ56zG41O1Og54TXKMRo4UJR0OordzsIvOhAkQf6aJGOqOocRFlssYBnYU7cWVVvVPXEFNWEpqnjsOeXlXE6gT8yM5KQ-gKVz2FzQwfzM5GUcq9LJDw8R5kXdXawqn0KnDmTiA2p4VVIGIMvLjhbuQhwCbQy6obK8ND9Jai45oNkOFrw6lwufOc2fa6f4hAiUXhyqt8SX-knOcbLbVX50Q-GAINVzBqMpBt9Q",
+            "width" : 810
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102952700607933292157\"\u003eSteven FAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v7ETDuqLDYeOQ3Zn82h3aHgCQYy5GkjjeP3JSGjHzvm5PODT13hV5Q2RwJUHzwwyWYtYzEudyy4w6jTpkxYPhwQqEFTmLCvxTQzJMwRX8VoVU-d3EUUgotC5pN09VA9FDvuLQQzZaaR-xNLd6dKAhMNM0E5KKcUhR6Bh6Cj9o0BxoGc0sOwlAyOAa62CDGlnNQfsNasXEDNgVcSM-pwjMBwJyYHvWhCgTN7EPLnJT6QkNIiwCIYae95wx6X7zjVDKJNaxAO-hMVM49RKi3KR0zbvdDWEr32N4HoTK1SUZ6s4URvCZT3pw-eJGnafcnrzCb22c0-QqlUPwYZwCDlUK8BXnWHrz1450Vh-tY7txPimadI6TEFK-pjzfIrD9v59P0UaU-4lX_4OZYZX4XzuUdnoLkpqPr6LxwT0iymXCYr7w",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJL74SgpdJzDERFmNgF5ZS-Wc",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "hindu_temple",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=7492110259698295574",
+      "user_ratings_total" : 869,
+      "website" : "https://www.facebook.com/Arulmigu-Sri-Ramalingeshwarar-Kovil-Bangsar-Kuala-Lumpur-1641157602838607/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,1157 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vOAEXPYi7NoRqiIdFpCYLhqVJPaa3RRCpnC8dTKOVBg5eHjCe96zUxCy1pq3SE8ZVCDCTbBYm_Mh31a3ApaGu0p0zyh7rsYvk-ERUa3x7ntWOWbKFRLM6mpnS1mscuYprqdp8KFAnwbShOZz1_hdf1xbDsSvlNgy0TQHj0EWqNTw0fVeu3CDLapW0wC95K3kSIdHBJcuXFZkhcOoOqGE4ZjhgFvDaAl41Tm9WWr4k-0CLYeW_FlyLUxApNJMjSamxzgAZ4Eiz_WEbH3QuN4blhfF1hxVIvnr71TrOZulA526XJZoqQSH4UMOSilA1gl2hBZTnqGVjhrHipTRS_ITt6p01K4r0g9Um09TsKlUYMUZrnKa82VXS1c_UHvL4oD_CZtdd5R1PP8rame4RYFvaQRjfPDL0Yafe4ee9Jq5pPRFr6TwWRfKhgQ7uEEOY-qLeljB1FgzpGh2V10q7i22z0n3Zc1C_dNJ9FB0q6MkjURJoOvEllTDONmQ2FL9_9J6eF-LTc6gUXUR7UD3f5HFus7n_xrWJ57ALCoJaTvOdfmXise8JsGu3Iunk5-C0yxgXdukfuyKqQCLSPV8uTwq_MOkluueuK7ijrlI0dFa6EGrMck2mWHwuplORi8uJHSOaTdcTtzalg1EBIDNcyl1jKO13XfiNW_bXBpnAnSJxc6r1cNZmgqL1H1aS9958XfJ5bfa8DcYQiX8_4R8-KbbulTr83SUJV5RFG0UsxvflqphbON4vI98e-ue6-ziPz12wTYB-KboIYc1SXpDF8oEcPb0r9CPBjIeuzBGwoHc0rvAWYzFlHEQfmfaacAAAT7PB8gpOLxxc",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.240706,
+               "lng" : 111.4597879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.242105980291502,
+                  "lng" : 111.4612590802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.239408019708498,
+                  "lng" : 111.4585611197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sri Aman City Mosque (District Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115329419793715758199\"\u003eHelmi Nahrawi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vV2Fvpoq8H8FYdLNKbr1j-ScnS_Foy96Bz229pHuI6LoEGYr5BLgEWaDJRvuBJyY_jOqTN1CZkI9zlixnGColy-QEUjLZGQc518Rrgja0IuT8ptjS8sAglHbqPHV-_RD46sw3i7yCNGv49axeWMZiJHVxpr5EyaQao9KZ5q1zCvUZPZT5LANjuoezdT4QcxdLhRYs9_T0x_OvWhZpGKUn14DjfTnoUVbi9RWv7sbaWXpNjLXytYTo0D59lGs0d_X-PQmYgdWYrvNb1ZL49dfT4JIc5kut3eh4dOAkU3r03I_o2pdH4K7FxD9Vd-3KVHSGVC87vnp9dbR_P1YrMNOFgBDt5mSRE7laYOHHRitbPb8Ts4nvK3QPL7dTZq7vIxta8jQgoyIOUxUCwsrGJQw1b5KYDgSmqknODrTYwB9z4KOw",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJHQd7cDFI-TERgacHp_mJkK4",
+         "plus_code" : 
+         {
+            "compound_code" : "6FR5+7W Simanggang, Sarawak",
+            "global_code" : "6PHH6FR5+7W"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJHQd7cDFI-TERgacHp_mJkK4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 77
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuching - Sri Aman, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.0661836,
+               "lng" : 111.3000736
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.068606380291502,
+                  "lng" : 111.3018210802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.065908419708498,
+                  "lng" : 111.2991231197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Mount Hosanna Chapel, Simanggang (1997)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113648322106215942052\"\u003eRodger Chan SABC\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sn8UpLk8Vh9DLrQ8c6TmnnsBD2t_KwEoQcF46GK02_AkAHq8iE2J3fg6Euu8dZcxqNGMl0tbESuIhAla1jr5wVPTuE3Geo3z0w5-w3-S_67mjVET7MfhzZX6uKXc4W7G0VASq8mfQLddBRimSKwseXgk-cMGAaTZqym9yBE8jdxoViwZpo9uyqDEbOL7WwMovff9EDBk98YhkTLXOQaoBqDboduRktmzxePi8_ysmHjaVEg9ifFvi2y6dspqX7nrqipaKccFBkXGTVf6GOjTppoU5qg-jgESjtwFbAKxSyOT9UqgPVi8qKiaREjRMXktv-9QhQsUnvDVWCkFoHlaBVTCdLYjlI99oUEvGXFteQrSzNsRslw99QVFdFH8E2P-6DFd_-nSlz3KRQQd48ywlP_PnvIlX7LTI7iaytF6mr1zMQ",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJU4T4iRCy_jER7adoJ77I01w",
+         "plus_code" : 
+         {
+            "compound_code" : "3882+F2 Simanggang, Sarawak",
+            "global_code" : "6PHH3882+F2"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJU4T4iRCy_jER7adoJ77I01w",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 298
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuching/Serian 95000 Pantau, Sri Aman Sarawak, Jalan Sri Aman, Pekan Sri Aman, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2397314,
+               "lng" : 111.4618751
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.240883830291502,
+                  "lng" : 111.4628683802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.238185869708498,
+                  "lng" : 111.4601704197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fort Alice",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113659172198635034941\"\u003echristabelle cindy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAu11nwynqnDg2Ho_gpN-2i9WJNafOt1rXPKMeP0fhIgVgavkX8Nm3FLzPImvOMBvn7JxCY9qlNMftlDbdWjGcWpGYzXRnVKpgy1Hft3ZdtuASUUs85si-aeibcmbtE3SurHuLDKxjUJF-uayQAtKmDIImXRDS8moY4-y77n_rai0Yw225mae9hXIhodK6rvW_CZzgpxbff_VmmdjVPSyXGpvqoW3ceR201KzAENOiIhq_reDmKBK-4XmQP6FaP-Ud6dW_K2O-wJSJsDl56Hsg6zs1wV6Wmx-FU_bfgHYo8pXHKv2Ad-XSiRlIeJ8NPVPNnovz94muVvjoLO3tKf2_RZSRemObQAUfyz47rivANpCxesaZK67aVoILUJBDv6o4Bovi7kghLsVd5pRgOc2I5MVCOgz6IH3EwhBf1hUzqw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJo0igJDJI-TERipFIlhejDdM",
+         "plus_code" : 
+         {
+            "compound_code" : "6FQ6+VQ Simanggang, Sarawak",
+            "global_code" : "6PHH6FQ6+VQ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJo0igJDJI-TERipFIlhejDdM",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 407
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Astana, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2418706,
+               "lng" : 111.4563191
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.243124880291502,
+                  "lng" : 111.4575743802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.240426919708498,
+                  "lng" : 111.4548764197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Rumah Sri Aman",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116405550143542534447\"\u003ema mat\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRvpSRaaW1n2dh7BNE_KQKQ7hST7y8DtlcpKPMOSBVzHhzo0zsCxiow2cZ0zwDrVhBNPIvl6tEJzZ8f7bQp0Gz_ueotiZbpTcY6nFyD0-C2TE6CLrEUr4gTl9nTaUS2NdD52QPTZQrwBv5r-Y2bnJ953aGh6sdo9ov_sDaySiyMt7sZ4ElOwAvSrvp-4GLomhAM2dkn7VuVZycrcgSu-dESz-a3OB8UG-2HKs1fizsw2832pMaD5Q0adywFWBluKllpcSSd1nc1cKcgQXUCtC708_zmpWscnQ7RjJFB64BxPcQIu8IzvsVlQ78bHIO9xkdkIAtHxN1x-pbaXbD69M3opCRw5semrW9X8T_QTW7D4eAeY2NWEiJ7EuzDfCavxOK5ZMxxdEEo49OIrAHGqphW8CksUaJWNBZB_1ntnzZVw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ2diwwTZI-TERrnQBI9YoWGw",
+         "plus_code" : 
+         {
+            "compound_code" : "6FR4+PG Simanggang, Sarawak",
+            "global_code" : "6PHH6FR4+PG"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ2diwwTZI-TERrnQBI9YoWGw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 34
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2400379,
+               "lng" : 111.4612892
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.241285430291502,
+                  "lng" : 111.4625435302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.238587469708498,
+                  "lng" : 111.4598455697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Panorama Benak",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115714650131475963136\"\u003eLorenzo Lenjau\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vRYFhxIPIBmTM2VaydAMZ8GIVusSq2yhqNUIRPKGAe73LDP6p0tUs3w5AMBz1OMWEnWPMQnXDIWyIjnOULnLeZH2dh8Vb3gkAmVkGP_L0Ia_8eG-idXusFHbSmYc--ibRTZV4FIVNbTNzZHcrPPyVuYqFAsbtRW9UJTOrqZs3FqRBXNX6_oeb_IaTzV4z1X84-xo7_Fg2htc1ZDQ4TI3kDPrGsFJqujXeQoxomxfEBIrXshAeeawHPPB4d12PDUU9WD2aKb9h4ZkmB0ITNsQERye_CWk2diTnp9V4B_NFrkwt3Z1pGbZI3jEShUxtOXhaQk_riM96He-EIb48K6ISXrs3IUigOxVLxFYAO1j8vANEsnvvYIZ8ZYYfe33xWlT0CZc6-uLjPdvtwzDRcsqDs74f3Nx47c2liYT3hkuO0P_sw_50tAWJYM5gPUg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJkU2fJzJI-TER3VF-GsjYZJA",
+         "plus_code" : 
+         {
+            "compound_code" : "6FR6+2G Simanggang, Sarawak",
+            "global_code" : "6PHH6FR6+2G"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJkU2fJzJI-TER3VF-GsjYZJA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 61
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Sri Aman, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.238082,
+               "lng" : 111.4634812
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.239372780291502,
+                  "lng" : 111.4647726302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.236674819708498,
+                  "lng" : 111.4620746697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chinese Temple 慈云阁",
+         "photos" : 
+         [
+            {
+               "height" : 1500,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113099820774036148520\"\u003eC K\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t2l3g7TQ5JxvXDHPfXg2MYwQd2Q3SxDFbDGCicGHRS70mc_bmo2cxUP079snVL4c50ZEsdR6f4UIi9zxgQcQW7W6W8tpn70mZX6219iMBiieTXBxCc5201w-bPM0Qf3T92ukVL_sWw3xWnzG9EPAoH3MnmMUNk8YbaZlwLR2ceyzNxUXfFVBsmDh7sQx62jqyE2ihTxQKFmaTtYxlabmz7G79YyQu_8gretH0JgxC8uaBoPtRkcWecGE3mabIhpdvSxVZ1M1nTglEwzyE5yEH5N5OYnVzs30HQzA-xJQI8I2dZkd1CKNkMBlzGFGvrmWIC3jmBIScAPvJNxnQIhEoGzsYEPXcHqh2Tba6AkxlW6W9cYUQCIBbCquX9E_tdl8_p6VfiZ7N-bIS6NjqBcwJgGYMwz8NPe73r2MPpHp68zw",
+               "width" : 2000
+            }
+         ],
+         "place_id" : "ChIJWc7FgC1I-TERKwdHvwNHWIs",
+         "plus_code" : 
+         {
+            "compound_code" : "6FQ7+69 Simanggang, Sarawak",
+            "global_code" : "6PHH6FQ7+69"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJWc7FgC1I-TERKwdHvwNHWIs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 27
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3411, Jalan Datuk Patinggi Udin, Kampung Gerakan Daya Wawasan Betong, 95700 Betong, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.414457,
+               "lng" : 111.527991
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.415829530291502,
+                  "lng" : 111.5293412802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.413131569708498,
+                  "lng" : 111.5266433197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fort Lily",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1836,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111259347015536327984\"\u003ePaul Gerarts\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uhEO4mLcpFeLSHnmi9Gew0e3yXMMp0TTbXz8pmq4xdlcE9fv1qCVn8q470j2lQPZAUsGPxUMDFj8OxQ8cq1qC_Y75Ju85csmoGZeaDeTHxhds4GlRtTCl3Iq-C8RtyulEdeb1sKWwWlEy0y1EmeTyffFcTL2mqwq5FbN4dGDpaLkDO5LFdS6c4b0Augb4uYD1GuNvpohRZJ_wfcnxolXCEV-GjWjdDvP6oye8grZKzWlklH_IoRgURzlzFZuiGgOHpkbUUkV5jvMBMdIpvchyt2cu8Kfj0kHUf2GpfJn1KTUiwLlj1g3QXt9nIfcykJzQUoHskMBuP9_NpHjamDAA8__b3-2i16rWuWngqBiGowxcKlVFuYuNzk3jKnyMaXwkkbQ_Qbbe6fTYtJ9kzQ27dyH4kPtd42BhdBz_6tywzGEom",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJqangDio--TER7Mqe5vw5-gc",
+         "plus_code" : 
+         {
+            "compound_code" : "CG7H+Q5 Betong, Sarawak",
+            "global_code" : "6PHHCG7H+Q5"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJqangDio--TER7Mqe5vw5-gc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 23
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2420758,
+               "lng" : 111.4546536
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.243420630291502,
+                  "lng" : 111.4559846302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.240722669708498,
+                  "lng" : 111.4532866697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Peace Park, Sri Aman",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116212980698020310538\"\u003eCalvin Chang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tctGdZZjQI8Q7Yevw34WpohdUUTeNqYpw2fWbTr__W8wVv8vfmZjp2agT3o6x22DXy28HKqPb4UI6yP6bWl0Zhq-Ca3XBQtW1ykymom6k__eVkKPIiCLJhSRKhNbN-bMHfOGqRzfdBVCxvS9WaG4ptr8ne_KXugqmiGUg7PuWEAO2D6rfXw5iPP_kEJmVg7rJX8HpLM1_fg_qmWQSWpgxejU8kViLVCv0VzRTF5ZHjrOynHEMNjIsRTImvyv5_35YUVkrqDn8zl7-d3bzgp7ree3mb3w6FC3F5jEhmNprK2c4hQUZlyzBVs1lyWOlwdfTuvnrf24LKIuFfbLObTZKYuiJF7De1URrfMjDCbzDpALDywSA9Ii5yvITvDTXCDIYxcJKyz5v9bFRDakxgUkcaZLGmHbbuBWTcZEm1GSI",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJYyxnhylJ-TERaS_VGLQPsyM",
+         "plus_code" : 
+         {
+            "compound_code" : "6FR3+RV Simanggang, Sarawak",
+            "global_code" : "6PHH6FR3+RV"
+         },
+         "rating" : 4,
+         "reference" : "ChIJYyxnhylJ-TERaS_VGLQPsyM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "36, Jalan Main Bazar, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2359606,
+               "lng" : 111.4660057
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.237368280291502,
+                  "lng" : 111.4674042302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.234670319708498,
+                  "lng" : 111.4647062697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Lama Kampung Tengah",
+         "photos" : 
+         [
+            {
+               "height" : 1600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113118586630128587803\"\u003eAbg aisy aniq Abg mohd sasyim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u-lazEo9x7HhoiDgwDSokVll64JpwR0RBagafBmTLOjVVyTKCDK4_86JtBN_k1cDUIonlPjKzupNUkqFaxoxYUdLclfDmQGluQfDWmy-wI0s4XRzFCmtAozsLfwD7vcGnclLuJn_ra60le1OQD1-CrR4JwvVATuIqGPhisIzjYhESmuQXBBVhOzSUMmDluwBnDpoK8WgNqhrDM6rGhSjYX9na1s8aVokzKWEJozJPCSuezJU2_yBq1tBkS0BcIupknpflScGrGwrCeJAMgRK7CaoV7w86cFpK2H-f84P8S4DzObydS5vmXniCClBJ0GS82asfBaigvyM9s2cJLIuC6xAtoHleTYk9ATnVE0Fj2KG6YGHercJW1ixCggqVUTaw0p5eLoCEjVSjRFYkbNFREKAuH4kTZOsOo795o2l0_LH6lIZupM-3pDpzdmw",
+               "width" : 1200
+            }
+         ],
+         "place_id" : "ChIJy1FIZOpJ-TERaJxd7K-Gy4g",
+         "plus_code" : 
+         {
+            "compound_code" : "6FP8+9C Simanggang, Sarawak",
+            "global_code" : "6PHH6FP8+9C"
+         },
+         "rating" : 3,
+         "reference" : "ChIJy1FIZOpJ-TERaJxd7K-Gy4g",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "0137021706, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2192214,
+               "lng" : 111.4621189
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.220558930291502,
+                  "lng" : 111.4635952802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.217860969708498,
+                  "lng" : 111.4608973197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Darul As-Syakirin Kampung Muhibbah Sri Aman",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101633164719216638174\"\u003eFazakkirTV\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-te_dKfPxLuvYqyUa5RqZWqH62bzbBsLYBqqNCxVZyvQX_CzMT9jxNdPNr_rkqV2QJlirpzwQRifwZQBpN03BIncM65bF_TV0PYqosSsyKnbEy8WgUREJzx3rV5pvvNKM3wu6oX_VKom_75VxAyVKPs9nRk0P9rfsfPT6bv507rLGKG4DZ5Xx5GTYlL1fAcgjATJLt9gU1ICQODz7euwsK5T44zmSyraSCUHeU2mQlvPc59uSPx5x-R127ZX9BgViog9kUCtj4SuJZp5NXwV_Ue2mYMlfY6ep_F891WqdXYVF7pv7I36SnOxlPFdWXQ1nvUU4tqw0mUHXiKZQ2m27ToDqmMbr-QLr5WrHCDhMmUkp_4M5y8wOXrTIq94YpTovYFx2Z-y5R12zL16w48myrCvFR-l2JsQMQmExHM6wRasaRuN-0XoOsnDcFm3TqW",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ5xDWx-FJ-TERXaCvVuzgkTY",
+         "plus_code" : 
+         {
+            "compound_code" : "6F96+MR Simanggang, Sarawak",
+            "global_code" : "6PHH6F96+MR"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ5xDWx-FJ-TERXaCvVuzgkTY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Datuk Tawi Sli, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2364322,
+               "lng" : 111.4561037
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.238003330291502,
+                  "lng" : 111.4573829302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.235305369708498,
+                  "lng" : 111.4546849697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Catholic Church of Our Lady, Queen of Peace (OLQP), Sri Aman",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 807,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105356304465013133293\"\u003eJoanna Harry\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sE5UaEPT30d5hmtcE3vyxLppDB33OyfT_KB89c5mim4lg3rn6oxr0hTlyx5BH75M1Cp2XZy8CI7JMEa8tkkBBabq2aP0faMXi3S3eoZSINFUZ028WqlBzNkf-Y45njjEYsQUnzfTrCYI-i24Altnn7ClBpv7Jx1vWWj9VALc2-SV579FUQqYwbnKiogFP0GDSJYH3CuNccxWogjWOrNdmd7JwEhrCbSdVUhnhy6pl0NMlcy8YteYvDwTksGcvp9-wKWTiu0IPDjS6weABONI-KDGuwQGWlyycTXuE4ub7yDCnEvJ10l1fz2_zBCmghdn3zG4kpSN49Ac7qtjGRJAl2CahfucaoXcC-psfcwKeitoaUcuixfm696yIt84mcB6ZQM6F857YqIzLAywLTEHSZeYB4WEK9vf-mswPMjQOy1w",
+               "width" : 807
+            }
+         ],
+         "place_id" : "ChIJhZK0htJJ-TERJ-g1ahCH9VQ",
+         "plus_code" : 
+         {
+            "compound_code" : "6FP4+HC Simanggang, Sarawak",
+            "global_code" : "6PHH6FP4+HC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJhZK0htJJ-TERJ-g1ahCH9VQ",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 29
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2097751,
+               "lng" : 111.4778497
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.211053180291502,
+                  "lng" : 111.4791454302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.208355219708498,
+                  "lng" : 111.4764474697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al Amin Taman Sri Jaya",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106003563681841543713\"\u003eDream Away\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u26kjkoMzh-YPFrWz9ig8ALNsEfqFSUxbnZTvaKM3ZU5Zo42qFuMX8KF_PvqwkSPmUzhODWNjYJxrvZANXAObatZnu--Z9OyyexY9CNv2HzqO3En7afgQoY9NxsjgaN20Qctj5ApjrX4D8zv0KU3TCMFokfVaGWQlQmJfEJwKevhmJVw0cY5bEHUghsYUMBnRuc0PhnrNUv0MkMt0C-Ms69wtEEBMdZ55yarPm_C2lMRDiN2MkrwYaUPLcYTprexp2j-5vgJeIGcQSyXvanNShKrXadawm6sURrgESI0f0tgvgijSdtEP30fUTBsYh2kuWeUWhRWdPD6SXKNtEKcz2BgbLBVJqBMNGukmnwZMYjs0dbz8fNVNXv4Em1xnoZtGbb7CTvf2URZKF4mQCohSvGgAkQKF__XKr5DR2SxugrA",
+               "width" : 886
+            }
+         ],
+         "place_id" : "ChIJCznPIR02-TERAcU9lcOoy2g",
+         "plus_code" : 
+         {
+            "compound_code" : "6F5H+W4 Simanggang, Sarawak",
+            "global_code" : "6PHH6F5H+W4"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJCznPIR02-TERAcU9lcOoy2g",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Brayun, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2230707,
+               "lng" : 111.4765334
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.224351130291502,
+                  "lng" : 111.4779678802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.221653169708498,
+                  "lng" : 111.4752699197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau Penjara Pusat Sri Aman",
+         "place_id" : "ChIJKXtSJQA3-TERyUXg85F4RWo",
+         "plus_code" : 
+         {
+            "compound_code" : "6FFG+6J Simanggang, Sarawak",
+            "global_code" : "6PHH6FFG+6J"
+         },
+         "rating" : 5,
+         "reference" : "ChIJKXtSJQA3-TERyUXg85F4RWo",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 32 Lot 310, Sub Lot 1, Block 3, Simanggang Town District, Chung Hwa Commercial Center, Jalan Chung Hua, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2300182,
+               "lng" : 111.464446
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.231368080291502,
+                  "lng" : 111.4658023802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.228670119708498,
+                  "lng" : 111.4631044197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "BEM (SIB) BANDAR SRI AMAN",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103817425714121742259\"\u003ePhill&#39;s Lat&#39;z (Bang Lat&#39;z)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tyX-v9sPQaysWquAezzTtEFICcZyH5TkYYay7X-XBcW_PK31u-KVqtPZnL1MjL0sgSp86dK-tCe1FgfPMl_um39nuMU_sh9RuOBljW-vTgzwClUAiLmuEuHyrjOJy0YXHP0CsgtSjMO-PVr_q4mJoEpz15_SWPmjHm21PuTDGi5U6T-ECnfL-0Pa3xRCDbZmHm2DmVH37VaBvEWxBk_p2vBNx3ql7jgQEACKZ0um1R2j3mcYsAYU4u1nvYDGXvPBYMYD3vKHhpwEifnJf-XQQ7MOMiZRbtLWn34Nw-7lh7U3sd7dKvrFUZdE2XGH8Rq4-qEUvk4juFlTlnxrHKZehEjz_BCtA0_3ym5RxhOTTvDLQnnZbHUIB-Td1HzAfRN06UwiAhb8u2bIMOqM80_yQzaPuQ5ed0xFqGu4FHE-M",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJXyhJMURJ-TER8qID7W-0Tr4",
+         "plus_code" : 
+         {
+            "compound_code" : "6FJ7+2Q Simanggang, Sarawak",
+            "global_code" : "6PHH6FJ7+2Q"
+         },
+         "rating" : 5,
+         "reference" : "ChIJXyhJMURJ-TER8qID7W-0Tr4",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Abang Haji Openg, 93400 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5554849,
+               "lng" : 110.3423788
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.556625730291502,
+                  "lng" : 110.3436167302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.553927769708498,
+                  "lng" : 110.3409187697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Borneo Cultures Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103344279283666478021\"\u003eAllen Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t41tBpv6bxiO3swYHfA3C-4FP94n14NPIKDB73nWcD-FCnLw03WtRLdebHVolbTn-kCGpo46TvKYTqj3x_uf5A6LU2nXSWiHGeVLszKOU6ZhngJT5xinpJaMouvp71L6RHIemuapqRhlG-_qrMLEHOT1zsHtiTRmehJFIHzrrYU_7jxO_rmn-GWNb71Id3PkGhaetnst7GJEzmo9ALAsy8Y-KHb_J2XlcVPp_lPyqzqJ3z2l8J_VEFDgfhPl9vH4Lp50Oy6_RIrnFXiyc2GnKz4aFNjMWpkr5A-WcPGmKq8N2Tf6l10B80KjLBD0okFiHW9rY3nQX0Qhqo8Hd5BFq_vifsrAp9EpZqp9eoi1qa6Z4cAL8UHlIYscLg7-ATZFYdo_YERH5kfkli_byWq0e9jV8hQ8GGU3xShFikW3GzMQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJQQqoDGn-zERTw2i1LGpqnk",
+         "plus_code" : 
+         {
+            "compound_code" : "H84R+5X Kuching, Sarawak",
+            "global_code" : "6PHGH84R+5X"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJJQQqoDGn-zERTw2i1LGpqnk",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4493
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Damai Santubong, Kampung Budaya Sarawak, 93752 Kuching, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.7500924,
+               "lng" : 110.3159462
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.751424330291502,
+                  "lng" : 110.3170867802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.748726369708498,
+                  "lng" : 110.3143888197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kampung Budaya Sarawak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113103868486256084260\"\u003eGinny Toh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tP9iFS4grnpm8p_2GjjUfEGQYroJrNlF7mU-FLWqH18F_vnKStRgIPspk73E-85XDOx3APgIdzZxZ2pheay3uJOwe9njZpDXW1lgWI4yOmaAtzS_gi6qRaIy5NFNxwbzSx_PVLkko_KIWiarYMImvxLMjMOibcr8wJEi2iE94u4z57hJnEbH99S9lJapZIvCMs7CRZOjs0cw61t079iGkhB3DAU3FFUncjHKlF7TN0LhSlSF8wZx6OYNVH_J718lRhcV7ZDLyMXLOXXqOb1QnETjdiX6PaByvk2aNdCjmqlfmKzsUnmTmOewkiCSVfk0XeR-S-Pf_bNt9NcuzMB8RYZ77CPKbhhf1kWio3u3zD2Y-gE4cnS731fN6HFCek8vSAICiQ0VFIf2FzAF1GEgo-yulEyG0_qc_mFf6PED8",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "plus_code" : 
+         {
+            "compound_code" : "Q828+29 Kuching, Sarawak",
+            "global_code" : "6PHGQ828+29"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJWS6-eJz_-jERUyRZ7Zr1P4s",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4790
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "First Floor, Taman Gamang Height, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2070043,
+               "lng" : 111.4751447
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.208384280291502,
+                  "lng" : 111.4764858302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.205686319708498,
+                  "lng" : 111.4737878697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Victory Life Church, Sri Aman (VLCSA)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117754310708188172984\"\u003eYL\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ug5EbJHoZMXi6XpF4CBSPw2esTGhZAqMERFJl7qaJT5U-bbTHdSz7AVlUttqx-BaWfPh4DiQiTL6CuKK-iA66RTt_1bJoziuLZ0TOBGA1H3hzUuudtcK71vwiBeTd0O09r89yAlmD5jyHmeWRcjio8p3epR4OUWVaJwNfdCtdZovKOFZMA1iXw_khMBnjDjQwhV4TTXlotIwkOD_arscr2IZRpWQLp2posRWxn3llMvjI2MdKKyEzBDx_IxLZVPRNEWpJ2bH3SdmzABtNUakSxJh4FA4q9xtkndIPkOa76qPSpG3GfB49A_my0VJo9sc_esN6fxSliW99Z_UCyt5Dq9exxu71nHVNQEA6TaHLMzUNgBt4NUKz7jKNhr_76Ao13ITQvYVi2wVTBsEw_LkdUdQ0UNrMM5-sIW5Bsm60bst4a",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJWYrNNehJ-TERsWsnP7h82O0",
+         "plus_code" : 
+         {
+            "compound_code" : "6F4G+R3 Simanggang, Sarawak",
+            "global_code" : "6PHH6F4G+R3"
+         },
+         "rating" : 5,
+         "reference" : "ChIJWYrNNehJ-TERsWsnP7h82O0",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.2205049,
+               "lng" : 111.4659414
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.222006730291502,
+                  "lng" : 111.4676314302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.219308769708498,
+                  "lng" : 111.4649334697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kompleks Sukan Sri Aman",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107127842732564447884\"\u003eBee Haerizan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v6iaxQR-9EnNWHNvtR5cNpNLQGZj5a1vB8E7TnhlxMhGGw_HPLV4HL1NY496JeuYgYVT1KwZk9rSaac-_xG-3Azl8DelGt0T79j45FyHsR4lryyVKPEkEJw3aitYXDHX1qjcsWl6dH36RT8-GprJ4scNKKEwvdsx49vwJMu9LPCqBUkxnin6G6LwcICEZeGuCC6PfTLRu2kfZjUiucVU2CQ1VEEuzIJ96CN7q_vqpsN80rJNvnEEHXJfckZGzlMTFEAYCPi7FxVw6dcY5gfF2oLrhPqVnAVW95775DhvaU-C-LcvcUpbsQ6TYP-zedKCBy0-h08VtLly5FJQB3XG_DAdJp_m4vv3LDDiqzHGbfoe_JiTE_PmuBAGUXE_Wr5uXZWflmB3GSXyiZEEP5Od14VAxdeo9Uk10VX55UMXXyJg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ9WeyOHxJ-TERQo46HdZ0E14",
+         "plus_code" : 
+         {
+            "compound_code" : "6FC8+69 Simanggang, Sarawak",
+            "global_code" : "6PHH6FC8+69"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ9WeyOHxJ-TERQo46HdZ0E14",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 41
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.229916,
+               "lng" : 111.456553
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.231274830291502,
+                  "lng" : 111.4579954302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.228576869708498,
+                  "lng" : 111.4552974697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Place2Stay Hotel @ Sri Aman",
+         "photos" : 
+         [
+            {
+               "height" : 2539,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109843337235996275710\"\u003eKhilal 1976\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-viadiX2HAE5QLO6RCNv6u9GwvtnswLs6mMnLrYWyeXX6SJaNI6iwzrqPXGQzvyjQNn6ebCx7-jiIHc4Ra7Z6VXZPk0HCZIBvA7YXsdJEH9UfVa75dhQT_mrC_hL_VBaFzFj2CHTWgVEAL_8ttRDRyeZp1_Rbxp4QVcMRq-lgX9uAfiO20_qoMxHyIMqR9_8uxmxmSBtb0KN2PSq7tuZPfgyxBmg1R2GR7GYu0UASFtB8BDJSNJR9osW0fF0luSpWvfiMeE-AF_gDDb-nclmUI1EAPVS1lpql7XHa_QO8ojp2Uq3MFYDNLXxNNsukGry7d8MSYjPE4DyXsEQ4oqgKXOyihXNECLHXU-jNW3pak7HM_TpNOJT_ORc6UKUV3Y7V4humhuwwjFXECD40KuwMfdtw-07AqFAEX5MIgUxlr3WoLP",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJK9UlKqZJ-TERZKhfsPXpraU",
+         "plus_code" : 
+         {
+            "compound_code" : "6FH4+XJ Simanggang, Sarawak",
+            "global_code" : "6PHH6FH4+XJ"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJK9UlKqZJ-TERZKhfsPXpraU",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 262
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "lot 834 floor, 2, Jalan Sabu, Pekan Sri Aman, 95000 Simanggang, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.235753,
+               "lng" : 111.46353
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.237163380291502,
+                  "lng" : 111.4649721302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.234465419708498,
+                  "lng" : 111.4622741697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Latter Rain Church - Sri Aman",
+         "place_id" : "ChIJUb-rVS1I-TERZUH8udS2ARw",
+         "plus_code" : 
+         {
+            "compound_code" : "6FP7+8C Simanggang, Sarawak",
+            "global_code" : "6PHH6FP7+8C"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJUb-rVS1I-TERZUH8udS2ARw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      }
+   ],
+   "status" : "OK"
+}

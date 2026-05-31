@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan, Kaki Bukit, 02200 Kaki Bukit, Perlis, Malaysia",
+      "formatted_phone_number" : "019-541 1105",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.6448981,
+            "lng" : 100.202778
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.646145280291502,
+               "lng" : 100.2043041802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.643447319708497,
+               "lng" : 100.2016062197085
+            }
+         }
+      },
+      "name" : "Kelam Cave",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:30 PM",
+            "Tuesday: 9:00 AM – 5:30 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:30 PM",
+            "Friday: 9:00 AM – 5:30 PM",
+            "Saturday: 9:00 AM – 6:00 PM",
+            "Sunday: 9:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107207715528715708742\"\u003ezalizee mohamed ali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vDg0Y0qHrhF1Oe5kZUmlPe_68VghImXOQ7Sdpy1IPfoDkdUFe7dzVR5e5hEI4jPgWCVKHI9ykSpfKAiQ8s7FpLa1PDTtVQM3fzmGUHUzdUkAeSWG-g2gI98wLZwCJrXgRMpDYX9RUDjS-75Jy2KJG_dr8ZHv04KUtASEqNV6ZbIJruBVhetXBv03t8LdnYasnU5Btk31YhenVAa7Nl7KQFlqcvLpdq9Mp5cDWoafW0FlGWd4VZyPUwyaekshYZjpGUxjlSGqUFaUHE4N1nGur8q4cAxlQJyBBbhpRsso7tmPvXUVU8-XSA5sQyoa7lnWHuwsv7rMbmGbb_MkxugTzW02nyJkXSA_YGvMHiD8UsfSU6sqZv2qWGtzH-YHvfoeWHmwRrAYq20UP6dC7EpgVTIoXyva_nWk1ydBgZOdjEEw",
+            "width" : 810
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102877662746327932108\"\u003eurs Muller\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-soc33P4jr4eVTkNLhpyxW3Ii_kzYcU05Qs768fG4_5LvGhui0s82OfMEbsEyXsN7yUbT-ONNw4PsDHZeRxzTj9CVVmUOfHKs7xhMEnNT5fWqpBbLUVamJSdM9QMBgBIH9VkKd4lvVkHsjKkTAc-BFErWnqfq1rG0mHuZXATx8qq7Nf9p5k2qmYB4yQdFVA9ciKfb8gpxnB0ADc0tI8Dv7uGe04C43tPl5O94Z8yiDdj6GSnhysSeFt86gs9O7TjtxapPazfyUmxdojMu5hIzFUF62rOZCvUEaWpYvc2-W-407TYwcZQfGD-r_EYUFjtkr7rSZQOgleBTYeVY9Q6GKS_oEoG8ad0snYm-b1hdaRJSoRYGNfCG9TaCzYBeDMcIy4df-dR95ooo4ZkYdVOG6ndRIChrEKi7vq1sI_XqmhRFk3-bbH3PHDv4RIPw",
+            "width" : 3648
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115399739697762235740\"\u003egillian bun\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sdOI0nKpi3gP2dRs_Zq-k817uze6lMeHySXILP4JtjEwuBY26EH0wdCoUbFe_f-enAnbu74uKPl2WsazlGxdUKRPX3i5pb69UGTAimai2iBGjxmqYTI1oP42fE5eE_LENpyKMqs3dQeyWrXmMF2EedbR28cFLa38JqBEOIdzk-oOK4uy_6J42T3SIjMIvwva56LrG3DSOu9QO2_FwM5d0QZ6eIbR6xLeflRm8kVMeewe1Jk5Alx910D27LEjvk1kGVMKrR3HWYSH6BDmNnsdBJ1d5v4PIAytLRMP6yE-5GTYL-4aCt_n0Bo0UDBzVYm-9UfakArMzMkJfjQjO4urNeUustFoE4pOlCrNf7GBdqeFlllx1ZFc8JDUlT2BH8u-1eAqvUn41ReqMaNqgeRcWnrijIKWnnDYh3EwBK5F9LLg",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102953246552820121934\"\u003eAthirah Azizan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vc2OM9tEnq_hQjlu-iwsFCiCXkD1xrs9pg-aqEaZ6rSbE21qA-2tgnLFvoI1zMRfUAoSi43iqHwtpgtBOc76SoL_jo4uHIGGx4hVyaWmsJNQm6fe_ScN6PdljvT_uS5Ai7I5_39nKx_AyGeMZ1U7k5pA6l2hXkiHIp-1duAOBaAVHh_yoYBPSjNexxLUdmouqSGoW25ZtSXe3vSZnWDikYNRvVnNoJ1Jc96NP6OX5DEXW06DDUGZX0a7kd2Pr63wl46gZScUT0ZuZqySKQt9J_FsjXEsw2HFtcmrL6LOfiZk4nWRg92c93FWVYAHTPq0gmuJfULjfkCgUbl7odATzZSKCKU6NmxZIq5lbovBV11ZA2PD8UjfSuDnX28JhF3ohcTCiW9laekaQwUbJ9Y11_4FGQ8OdYoncq9FNGOzqFag",
+            "width" : 3024
+         },
+         {
+            "height" : 3472,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107519988669901809523\"\u003eAcAi Azfar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tco0kPPdB9u7_Wsk2TtT4LkYMs2xLLfLlfrbFCGFETHDAsOZC0ov_SmO7iMP_lzWMGaqfP4JL_at-ns_gkNGDDdTo16kqquq73s_qQWjTe9iaADTTArF9ucSAXJZ56DqdATEWLLSWoRCDJ3x1EOd8eXHe5-LUFislzLYN0DZKg1Nl1MB2YIWvOBojbvOORRxoodH_YW3he0cCZRDYXR_l-2Zd7TyzAGw4o2BWud3wK9_gkOxGBLVpbKr7f4QPMgtUbYaEOrfvyRTnfB6kky-mgLjt1xpmumyUDMoa2ipHvwMvmm-5Mm6mfW96BP1qgTp06FoHj7YETYPcTFT_-y3u_JCd2zJKx4oy87FHZ9b64pZhykRmHkrp44IcG1jyBXm3EkG8DEJ2ZKuNOrK8bosGdbme1x6DgAHKkXLqPL3U",
+            "width" : 4624
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115473806474331114615\"\u003eZahirah_85 Anuar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v1YGLPc_7ra1E-yiLD-IWBc2GYvsik84lqqP_7fQMjeJ8k1bbGbyCUoFVIG0Hkwjb1V0o6v76fsIkxFBYb6XC_1y8ahymzLqpYezfxnJ5tM0FAigDk0vzmHNQ57oCV16A7RSXMzix5YqKZdTqG0Z8-vp0NNbTGJqETpLtVNSfPJuvD6aulHmr7O20qyc-jonuZYZxdR3LbpNBpUZVyLvxSHhKCxbjLaq44LwXneOht-bTN4Jzz_yQTZlwLJNgUm4AjW58pMMz0Uhj-JJVDz0zgzZOS4a99gxa8Ujizc16WmlGNA2d6g87R_YJYEQZl1h5Y56PgccuQDlnJIiUrtwbJ0-ylhwbb7SPrQeuWgX_C73VjasZl_lf88tWzWQjMiZwbGzx4Rk_LyLZbpoakWEwx99iqLNDBFMBMZehPKJQ",
+            "width" : 3000
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117359158637726903003\"\u003eHazrul Haron\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tPFN-WcRrQcVzAXuCKADweuLiK6bGzddbNyWwotpXrbFP2uioouda0aPYeBIlzuebLv3nATTyNn6xV0jKmD6egDYziKbc3kq1DkoPve0JmwP5WjNiXu-93uCn3RZ6RPT-s5j33S4lZp2Kdvo89Tw8GdPUDe8l8r5OmvTPQV-nWI_jVfAiyhEs4eGjRN5uGRgVbgLjhhbToUphFSWktR1d2l1RmUrx80KhSwrnoGcfH47jkrWzP7V8T0ZFK0p-ZiCQCa33tY4HXrWTKqKdja7FUljGXqXuPPfB4LzK4b1sSxli1Kj_JNaNR6cQR7L29ovfqEUYPDs98amYyvObPrBioGpKgh2m-r6GelBiXUv9a2_IDkifbciWYPXjgXFIDlEhZkB2CORGXKcEk7WoRgQR3JIhyExRnQbjPhEj1DvoBmaMuxrqf4icHWcvmB8fq",
+            "width" : 4080
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112279841809576880078\"\u003eMohamad Firdaus\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vrD4nhqXg_dWF5bPZPajfb4SBRX2GhpO-Oygvc56S1kva6n_BNOkTpEbByK4csKFlwWihXIFAVLwWFgIs41HHDCAAvtLAFH-GXc7oKlIyPU8WMJqIWFtAxjtlL9BN9K5oL-gDN6fXWjFYuTQsu7O6z3ptfQUEXlRPZFWW6Zl7jPtRzrVWrSJjwY1VGMLeTm7huuVdBGEkRDiis74Ainc_wWEGxG7H_i7lKujAsQewF6ihrwro5irclWlv0REmTRCPU-9huJnD2HJG1ixgVCJikZqDwpdO9cdTrpzeJ0xGLHkUjzbQZSfy61ddwr_Ia8ksjuYPMgYeaulDOXLmZjJVvsDAcxGhMw55PNcTgJfQOmwvC5CuKC04VJYC8d4WiG7Mu5nuYKyXa7bjrNG_lOWpfjdvLlX9hmzQBL0VmULMdJw",
+            "width" : 960
+         },
+         {
+            "height" : 540,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104697381236564862504\"\u003eMak Ndak Tv\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t1H_H6yVS-J3rRdKsLIQLNQQlEJXa6D0alDELj21D1FdYMo_ZM5JApkI5fejXhGIBToh2teHWveCtxzwOqX0SmarfbRiVnP-79szz0U_6DfPKKrvSeUIzc4pbvJ7w5b3QdwpJ9EV7PGceBCNqAQ65GWbRCeUdq0aCfIEWi3HrSBkExhgNdmQcd9TWq-HxLg2-pSVgcxQo-SUl2HZoE_HgMAW8sE6y4nMPd0Dep6RLoNnTOXKglyRu8TLEP5W0LQkhYbh7AAxt4ybTB-JZeDvFe7YjGp2k00M5JHJXlE1kLeyuWaAPa5H-JBNNfVso4BOus0AsPGOIBrMHo9PDliouzsBftoAbMjx-3SW_dVlgw0CelwdnEJQ5wy3Vd0GqQBZ7hmAjV6MqnVa7JZigVYxc3ADI1zKotyRDU9jsHSYS10Q",
+            "width" : 720
+         },
+         {
+            "height" : 621,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109249388584854843373\"\u003eShuqo Yaakob\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u48HqXXRUAlPKg2ruVPTBFhDee1h1ShUvF-VTM5r69LD0eWjKioLGx-sLVb4PECE4t8Oqp1960Ayq60oTXwpXLrV106ww9Z4n2kRoQcO1LlC0zAacR7LiS_Qqi4yMJh5H8TDPH_WzFdfZBSOuohr-VC3oEapskrx5S63DRe4MylMfm0pOEterwoFAsUioCaDH23kyQKib4g01azBwRir7XavpRslSGIJJ5U8qihJtHv5j8ZgDuUTnfzXxURy0tsA_th_GHvZuvPqPXZM_fN_rtWqF4GfGktvjyuu2BCZ07Lui_8UIfkScbwNLM0kb_ESTSo5I36dDa-kJhUasR5yTxWBUY2z47QhP5DKihAyuyls816p-KUnfgZ1BmF5WFlTrRG8SQPwLAUNEf2UrKv4c3M4Oo6OPMCb-raiTp9hUHYoZ4",
+            "width" : 828
+         }
+      ],
+      "place_id" : "ChIJkagyqDLrTDARg_FYNlTR3SM",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2584451920799789443",
+      "user_ratings_total" : 2812,
+      "website" : "https://forestry.perlis.gov.my/index.php/ms/eko-pelancongan/gua-kelam"
+   },
+   "status" : "OK"
+}

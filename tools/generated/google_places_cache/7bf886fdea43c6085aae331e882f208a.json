@@ -1,0 +1,63 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Unnamed Road, Nabawan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.038823,
+            "lng" : 116.423424
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.040117680291503,
+               "lng" : 116.4246364302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.037419719708498,
+               "lng" : 116.4219384697085
+            }
+         }
+      },
+      "name" : "CCC Nabawan",
+      "photos" : 
+      [
+         {
+            "height" : 1200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112596542852469108417\"\u003eEni Lio\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vtpgfaeBIL6oCAyFhM6WTqOXd3XXnfi634QUHnezAYNSVliIxYEyBIxScqV2MZuI-GKACsRHMgDMPCr_dIu6DqUyUR2RsYZ6ip_Sv2n_zVI4Z4HE55ngjSxLpgl_qRm4GLEaRrs3IzvEiWY0KBH6txpdHqe9IjWaCWSFJTpyP1fR2and5uBaVdTg9znfc5Hdiusn9SnEDfIbGL4001Euv_S0UrIZzKII2ADLrTvNEovWtEYyMTWF1yldB7SkOtpN9SKwi_bonaS07En1KaV8Xabu8nF_95Ewk9l93zZOX7HsFwQiJSG0ut-PFDNurDFqdwX58wyVfy303qaWC4zUs9hed7rAle80JaijW3zXCJ6by_m0O375wEXdo3XsLCQNSz1uG789RbEcyaJ9FhLOveogRUuaRMBSC_BD-EV95M_KR0xW6kaJlEIkxVIQeF",
+            "width" : 1600
+         },
+         {
+            "height" : 1200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112596542852469108417\"\u003eEni Lio\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uQ5pUS2Ftqwo8LcWdPeVWKL8BWe-ySSV1FghVMzdWmnTrPhevxLlv_xZJYibxFz2rnbqWOBxfMvR6Dq3MEzkjG771C6SaGdawGf-QgIMJ34L8ORLAgWkkS_EwKD0iJiGSvK4mOCkPlols7YGtPb_JD8OmyGC6V7uTumflvv_PEH6dHFGboBpVRBJRhJMrpjGzp4OS_xwQASX6Y29hlL3G-PPiGkBlr0UE6aAqgB2dutSe0bpGA1Dy5X3Ja2SMLAMBhvaGKJESYmzlbL2b0eHGb0t4LXBFvbEnQNgANQrmpE2XaKhS9w1kIy2VSZvPEH7LOlDdmuVwE9AN-yUpYZhhLHQnmuZwtaidvmqLTC86fUFZkPcrbvGXc9ZbSk12kfVrlVdzy8SOWgy1oLFPbkSK1U8kW-No-EXXD9Il0seu_yGaQZ0FfMwqqo7vyBYpE",
+            "width" : 1600
+         }
+      ],
+      "place_id" : "ChIJDeG3C_CpPTIRzp5PyOtFlQo",
+      "rating" : 5,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=762592590889459406",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

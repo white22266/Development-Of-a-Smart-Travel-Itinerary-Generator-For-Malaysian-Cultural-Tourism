@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Berhala Darat, No Rumah 90, Jalan Sim Sim, 90000 Sandakan, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.856353500000001,
+            "lng" : 118.12825
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.857676030291501,
+               "lng" : 118.1295821802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.854978069708498,
+               "lng" : 118.1268842197085
+            }
+         }
+      },
+      "name" : "Sandakan Waterfront",
+      "photos" : 
+      [
+         {
+            "height" : 588,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106003563681841543713\"\u003eDream Away\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sp5kwg5iriMj8LCJ2QyRzAHHQsXhyWPdJ-gdsV2CIkMw6PO9FSwuWJc7SvkZWYApWftyUPDeXaoxbyYaA8l-tTQ5mpKin0IVs588x0pEKWV_NuHs3Uucd0ngHhbF13Ar1OdDhIQy0_pFR_03EAeDmhFZmhGmCbQReoYhYtEGYPrYMD5S1cEg6MHNSAF20u-JhOeJIFmGc8B9rNbl4hPy3W5zyTdBd1Nju7p7-L5ZnWsvzuXrKsBC6s0lerkgmF2g9TY7sfiOzD0dgfeESqZIM7QVPDFgCiPN1bP1HbuDy9TsyPZMlPk3sizF2SQix6oJNUTX_zlnBkj1zKxIbJ6a4op667Wo3yX_TUkmuiEa59rG3RTQlpCm9MQmO-0fQTleqD61RfT7ilUPR3znpXTWul5w4NR7ODq3wdQMVlTuQZUw",
+            "width" : 1040
+         }
+      ],
+      "place_id" : "ChIJoe0iXA_FODIRRWfOtlmU-kc",
+      "rating" : 2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5186621033910527813",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

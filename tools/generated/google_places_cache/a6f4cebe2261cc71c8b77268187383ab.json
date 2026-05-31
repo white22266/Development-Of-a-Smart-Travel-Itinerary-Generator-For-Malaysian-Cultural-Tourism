@@ -1,0 +1,71 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "4VG3+G5, 43100 Hulu Langat, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.126325,
+            "lng" : 101.852947
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.126754430291502,
+               "lng" : 101.8568284
+            },
+            "southwest" : 
+            {
+               "lat" : 3.124056469708498,
+               "lng" : 101.8523891
+            }
+         }
+      },
+      "name" : "Tekali Valley",
+      "photos" : 
+      [
+         {
+            "height" : 1201,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113335613652079599842\"\u003ewilliam py wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXmpmMhRPn3rCO9zJ30cxjKNdD1rno7Uzvqktw0y-AulDX4WUzoMelbXdOUw40qn14qCrSJnSEfNcZr2NfITDnERlkTXzxSBYFIbcL_HEAbR3e1zfu5OWYUkqlhxDxlzaxqKofIivkdWRlU_8W9jRu3ib27ezB0xzXb1AfEUeh8hTkeVqwfffPCGvnZHT-reNbvpW5-7yJreESNyCH2iVokZLeAANYPKpFP8wpMGd8kb75N2I-Si8ClnczNE6DYzhsR_EMVQOx_vaop3Wd1TbAGboPD9nge4hemQ9fb8vBajJjEtj3pxUPoSlEjwuVxAjF66QHUlfkHHUThIGkwKbA8MF4CZPg-5zLw646TzXRAOwgyEGFBZh6qUvFgM90Oh9osAmDEWpy8FOqBeHxVOmzp7gA6ZODA6Rx2MgXO4SXFSwovjKPE_hScEphXg",
+            "width" : 2156
+         },
+         {
+            "height" : 2172,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113335613652079599842\"\u003ewilliam py wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5W-6FicHVl5egNjprJt8HwQVmOlviGjMszZn2N3Ztzm9-LFeVRV-oj40bUa8eI1xez1R3buxb2TnMSSZ6aqgcjE8K1-jW4lMSv8UObJOmLuFCD4yX9LvkhVi3igif5HVdeMAFwIYEteSn1g4h7cOUKPXlABidHc1KDCTaMmGj6A7z9nix_vNWdLD6Dag07YVFvXhdpNB2pmWYGpPos2SPPg2D1Nkl4J2UpweNzXjAmngVYLZImOrgcrVVpErERi-vBZr73-s-YaKK-KstOJ4Wu6zrgDzzT6IUgCd9-3i7XUHNOXryYEGq-Wwu_uFbt60_Jc_oG_JfgSoPn6z0BoIZCptPdWSe3gQJXqaN0_DzVvtRTnqJNaQgR1i45T7Zq7MZ36VGvkuMxO_XX4fT-hYIgCKjbk2N-R7-vvryXFrwqGe-RNTodoq3PH8_FA",
+            "width" : 3327
+         },
+         {
+            "height" : 1188,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113335613652079599842\"\u003ewilliam py wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sMyGKiklCvtIRNUZ4K1In6DoYBLJGbShTyeJE7ZXtts0KcMJ3rgEvsddXnVQ-vYngwfaudix50ro3QSHIoKsnZ9AFNxFDMTsicdu-MwQVh3U3As3RAYASPEAp5c0QcGwhb-t73sXSjc7vSMKBEQhq89RBH4Pidi8SP7khVdUUi-K4SDO-7hgFZjbr5hR_yRc6fRnuYrAXbfbuSSCkO64i93Go54ch-e-n_yWO6X3e11m0rDWOahOjpmTv2CHf0VwFt6BwnZ-wHIfusNp-fffLj-Th9G6iiJSJ4CD7AVPUmZVUPfDf1htt222advy7QmW1YVXOTSn3c1dzPDSQkQR0KiObJALiVCYYcF37pv4TTrN3MPdczegWBWKHDtxZIeLYD1tM4nodLAhfwUd6QcpSN0ff-u8_oxY4PJaagL-7SShwO-iXStRNMUO59ha2S",
+            "width" : 2156
+         }
+      ],
+      "place_id" : "ChIJA4AjT_8xzDERDebKJCE0GKU",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=11896315732655007245",
+      "user_ratings_total" : 8
+   },
+   "status" : "OK"
+}

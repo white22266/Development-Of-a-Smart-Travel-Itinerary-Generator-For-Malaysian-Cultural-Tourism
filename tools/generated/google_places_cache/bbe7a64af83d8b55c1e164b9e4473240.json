@@ -1,0 +1,213 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Tuanku Abdul Halim, Bukit Damansara, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-6200 1000",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1614817,
+            "lng" : 101.6634404
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.162807380291502,
+               "lng" : 101.6644343302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.160109419708498,
+               "lng" : 101.6617363697085
+            }
+         }
+      },
+      "name" : "Istana Negara",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 5:00 PM",
+            "Tuesday: 8:00 AM – 5:00 PM",
+            "Wednesday: 8:00 AM – 5:00 PM",
+            "Thursday: 8:00 AM – 5:00 PM",
+            "Friday: 8:00 AM – 5:00 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101526570359255428171\"\u003eÉva Rázó\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vGnp00R3tM92pAcQl14K8XoRa5-wp-nXQMxivLHS-jxOKD-jvQ0YwqptaXFfSWcZxdQ9Zm6nMa9C3xTLm6NQZhwX11EQAseAhUCBRcdDu0zWImeTK5jjFqs2pqXZ1N22ttmguCiJScAvlxKT_TYtMizarmd9x8BaqAy4IP1ZW6bWcC-yJTKCi_8ZLqYoC9_T3oIMgVxqIZQ4XJwAo-Wa6giiNzucOsFpNGwkqn8Q26JZDn5wVOpqTFf15k1iUry0tS5gYtJZvDxl4teeW7OF46oM7ch212mxUp0_BRbwpQ_1VsD8gDmPvPdQLVBVuix29MWD_tFgofHc5FX_lSkU4SXqD-oEWrtJuEcf8HtGCeBbwiBLXEDFaqT4J9K9m8Z_qyxbPHgVI35n5ZFeOkGJxsh8U4bWjblqEyD35xx9nR7h7q",
+            "width" : 4032
+         },
+         {
+            "height" : 2993,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102049311396058872659\"\u003eBYC\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tI2IUWoEKEpg99p5NYZ6YvwrHEdFH0_zWOt59oiICOHEdcokH6dGi20uTaZwrZEeK76vmjqnyDIXe6lXAYK30m1XFv9eZS3lD0Lf51cxN-qwEy5kD6LJPmqeXB_DQ6C0w81Avi03bcrBd9AtVNDyjrGgAfGlKP_d2usfs7aspVqeco5ufpGpSTct5eGyEO0Qmb7Vanw0Qb1v92dkf56Qv4TSTqfM3_wrDMDjPoCuSPekXoEpVK2Z-YbL1IaZ0BAWCxIMFHmn0u_B9xpydIPlZy8gTap4ZKquHn_-Z7OqsIxnkcYM6IYJ69F3Vvps9pXsJln0HiBGan2RI3zfidkJM-hFLvVFBqJ0FnJVwo4bC6SLzoc2sLdCvDsLbl-1pcuKovNKmFEc9bMTQYAJgBL_gFNP2bZnk9dbNc1y7wL4A41tE",
+            "width" : 3868
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102534008279647971877\"\u003eN V Ramaraju\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9PiE3g2TcCmA6aS9SIdCkGA3QBHSrudWXvP9P3LkloxbjpKDbs2uDyLC18dEWlqCIzjDuYhESWpIwilbcybEx_yaIUqoG755ap7skPdPsFFDWZg_kcwE2m_1G_6WazIY2dDkaen9zPPIRuJ82rrL3n5naGAGZ3D72Nf9e24BvYbgig8482r-D7Y-mkyBEKPN23udPn7bX0LDOlbU-V_d0MPrlwFjMHDhrU-ScWGY6iJrhLWGjqMz11OSmlX2d1H6iXkLv2EcAjKqbhZEx1oRweu_D7cAKzWSOjSc5qtM6Xwvgnow88A9p8z2QyPmlI1eOhhSJy3-O6mIGeb5z-agEGpZacaXvO0oVAq9VMP5q0Ww982ueq4uKcRAeDEL1KTRndV5DfBWI7C4FAqdMNe2BclrXK6KdosUYVuKb9bp8QBCsrRW-SunO_fnxTg",
+            "width" : 3264
+         },
+         {
+            "height" : 4067,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107645624835208691121\"\u003ephilippe legrain\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tWQjjs9pX1EjzDUIRePjkQyydKy1haWHLaarJ5RFuSueU211uVju_dLiIglF2e6cTTr9hfA4p2j22L4ygt8qwRPuzBEYFBwX217mKZ17BNV7c0FDdLnCfA0qC8KFCdCcuhp9Br2pVdDdg3phV1cLq_j_zzQOzxZt8OVsXHjswb8uU6ZfSC36Q0sA5AVzup72Abtt2Nk4Q_vMGOGAZ8gsqO6baAU83M7DmBIQGBZI8Ked3JLVoWCd21-our2oms-XAvSLx2Glgp2YCGhxE1COdQQE7TTd2My-J7dQ9WzETmqX5ZomXon93XR2B9msTgSZPDpy2BqcVxIW2burwY4xgddWrnNo1SDKhdzSkgTjzka7HLyf6x_HvHOGm83q5n41UnGLAalFSIl01jr4Y9jMHFbmxfGm3MHBTM5slgN1FZqDSi",
+            "width" : 2876
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117321753924038419347\"\u003eKevin Choi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v-KzakTmT0gwuVRIYqY1E_eqIilYCFbOb4p0MGh-pnmHuMpN3nw1AcuZPCw0ZXn1nsih49NZtOl3k3BoN1Ii1edrcqWckWNgqSEXyjTf6_R8Bn6p6spTrCb3HOXfEiVF8kCNklFh8_dtef-5jA5Nwpd4wMnZNkq2JqBQWuuq46GEZtDVImxaqV9NPS6l7Yb7vamyl2EPJKfWyYKSbfGq_c78L2SwjugFOs1gm1pwT0aj_1lXP_6gNS_OjVPL9VSZVCYsowPfvYVCInjjrBSTd4m7H65UOo3tatAE1KVMckEKUe6zunY5U2epwntvpWkzaEREJpL73KpqAeV3kl9PmIfxPjy63TMtuO0csyVgFFfkwNWrzL3Kpn3T2VUtnYzrCtuYf5HA8pFZ0IkmEBE70O5EX73ZSys705PWS7ahN5BbSO",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110897838467532033235\"\u003eVaratharaj Kannan Soundararajan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-usEOc5RaHK1GVCKa_IwrKj04Xq5eU5U8iRJgIhMxEvE-HLVUpumHtvMLfTaofdcPQh6aGey1BZf-CEvF4EPhqxt3wprKayZ4ZWb6NbYDIGjQxE89pEIEKBhMjzibFUw84_33S4rzdevM3xl2ou3FR0p-a8EWwmOjwz0LC7n69bpsB-TyuVtleOZzlk4s4SDMTGAZFM81iEL8nnAGDFuHFhzfXbpBdDsEO52-Jc2-R_NRhdGqaP7LoaeYIfbzF1UWD4t14sFMWtBSN-ek-820qWGT2ZeQR-bySkLv_2nL1O5Dmiw6LT6QFrYT5CNKrYPlOt5RtrIWp44QIc9fc38oj-b1m-QI9p7-ae86p26bxfiWMZsFVOgdVneXy2OB2RtjrXzLXZMRmj-4a9C95XJnHS8eQ_8EbcaVIgLOjoR8jBkp4",
+            "width" : 4000
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110422593650506038605\"\u003eJoeHazrul\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vwATIKgMjpLsaqVGY4foe4io7Ey_m738eof4PX0r5uHZjzJfNWf1-CCK_16rkuGfgsu5BFe63QOXC6VRuWyCLLa1oekIxObucEiwZ8ROVC3utTrwF96B8oB12KIgUfCAciEbK8-i3CwGWy_qTwhVy9Vk3EqJbJQms2uBmjmbLqOcYB97CZbsq-lQl3reb9lVy3fIWM2gPOvpS2bKhcpBRB0JVGVhYDYiRFwuji0DLFEpq3Kztjq-PoHEzdngjfFvkFzMDizRHVEGpTePoS31y_x3Snwg8BU0AYq7QCZNlGhy-6_U1oeXUOIEehzFwZ17X7Nxywws2jg90JLGRLQBgH7LpDK8vY6XubxmGdGSQjgzb-qPzgt9KFEAVxABjmfcLvw-s4ynzPz9nuC1kFQZJRl58xjZw01CJWiVQXE2EZEPPn",
+            "width" : 3648
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115027645991525045303\"\u003eMr JW\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vTqerj5z7K-OjcNreS_AAdy7nTJhmWpq80A4tuvijOSTpkYi9xA4t54H0w2AZ6mVU6vWYUpHPyNO6hUoNEN5WUak4jwU6KOnPNwdtCNH4m2zI2AZq8-Wes__uZKWuUOR2eH1436TfNy_b0n0ft-Hwh5QE1slSGRHkcAHsbNaDogr0AwckTSg377Q7v4jv5O4iBNACPGRj2GSVGamrve2HKZrPGV53RguIEhE9sy1QmSYv4hnTPcNrEmHEWlGxeQkjkIzs_czCQnQ3rNFQWzSUJwJmiFByMkECgY8DCY4tcbX5PWkueTI3wNhCcxXJl-lV95OQqytaxYKhcf74tltFwh911tftKGHTSfmi6dExQ7968ktu22fjxfA8AyZM_SvJBMUoyuRXBqP8LGiZzjXGGufITOJ-ePD9S_qODQpqBAMyKGbKSS0sJTKBimQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107790157174004513891\"\u003e환환\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vWi5t4cz0ZcZOrmQNcEmZ6ECntQOd2G83DP1lxvtun1nBnsuhriUEBrLkHH5KsVZJn7QpNmHJft2mD7brSsuHL8tVjTfedDuwNLfjEn7cNW66MudMWjwBLMEiB7GtJfnqs_xfyBAFqq4VhSW_kMZF_BzWfEl6GnsbvSytJBYWbvkntKb5jmos2zvKcaVzTbr1VTQHpMOLq3X8_0_pG-vABzUgHJBGGewoGIZ9zVy4NUYmyhNP1-El9q1ABXD6tBJCxNrXI7tBURuuqHgFjaey9-C1hI1tIHf8J4XsXyjVn_77s8WL1Ow1WbDM2UURFf1X_qOTGORNfXWu4XadEhRcIryCAj3MnGWOHS7M3pqXYhPuehHcbIPqLwphStJN4AqIu-AE4zSQ31VtN-UQoVLP4XXZjARoaPkEPjhTS3-50kQ",
+            "width" : 4032
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103275987152654146418\"\u003eMajd Zahalka\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s6FBPlmPnfbqo9q72iPHLCqIcbOMP3dqlhPYyfi6VcjXP_jTbp1YybutQHLNUxGj9m2SywTRIY7I7OT5IiQYP9Yd8BNC2o0shccJNlpXm3JiQ3HQ-27bP4e0D_szmskRmmLGaWgMNf55HGaTz3FVoZdrAV17FbvG4ctbCzUn3hq6Acw7sEEbsQqibbNih9F2QvRblxrRWSiIQugfFZTDgo58KKRujktjSBWPDMbmSnq95BH9u1nV68_5ncAAIn9C3-aXxtKZc1oOKUabMMJV59vSb--8_gs7tQzCl8_0y_NVrtplzQgRkn1ajBuOxpb6xymAm7yrRQI-5vEEVEIyvgg5yCeQ_acv_AuMHsTqqS22aHrLyw94PsnB6iYFMIBiCbna8A8V5lEnpqg2n0mMG9RCjSnaUqmi_fycafmFqEuUXrCuoDjPz902gR4Q",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJrcImKFhIzDERyKp873i-bdM",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=15235042541087533768",
+      "user_ratings_total" : 7646,
+      "website" : "http://www.istananegara.gov.my/"
+   },
+   "status" : "OK"
+}

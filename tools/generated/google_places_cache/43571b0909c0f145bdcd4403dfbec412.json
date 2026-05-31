@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Raja, Kuala Lumpur City Centre, 50050 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2267 8910",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1487179,
+            "lng" : 101.6944582
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.150026280291502,
+               "lng" : 101.6956531802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.147328319708499,
+               "lng" : 101.6929552197085
+            }
+         }
+      },
+      "name" : "Bangunan Sultan Abdul Samad",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 10:00 PM",
+            "Tuesday: 8:00 AM – 10:00 PM",
+            "Wednesday: 8:00 AM – 10:00 PM",
+            "Thursday: 8:00 AM – 10:00 PM",
+            "Friday: 8:00 AM – 10:00 PM",
+            "Saturday: 8:00 AM – 10:00 PM",
+            "Sunday: 8:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103774206695926550293\"\u003eAdo J\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uiUuFSkWjjc_CDKzGi_uW4wTkahwHVh6vjqICtDcbWZcy6cdL5-d5D6ocFOWkhYRJNWHzsfjPsoZT0fE27C3yhQkG4HMrFM9R-5KkdA_gpVo6ixXqTgVsspDm4R4T54onJHRoRDIVFoBKbh4jKD3wyqzygRDS5dcVJ6OOxCGjCV_NqUL28iZ5DDoWHZEkYablkQ9licgbPemTz8lHEU4o91rJzXKzP3nCW-EgdAHz6aqNo1htcFSvWUeEI0xhQo9M26Zc2TFBBVgjbHbn_YqJIPeP5Cd1GcFJi8yYGPLUvyi_aRozjmalDL0m-TQtYwCXw3YufILbt96DQbQ5xwk2qZFI3mj1APgNaq4HHDGy_HXwLNgJj3MvVsA8-LhuJCtWKYnzRhQgFYJ_oL_sQSkLSMSsq82NUlE2XLW_OCyoQyTaXzquvsZ4lyyRL9Q",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117423068230328374840\"\u003eAzmi Reiserleiter\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vKGL0lZ_pv5fiOUB6FRpmOBsWvbcecCjzfAP5PyVj8wsLozR8H_d1v9kfgg95jHAq7I9FmAPSOui0WCv0P6Q-UtIyG27tCv49HHnmRAXytTUtsHyEdeO6yJpSI09dQtWesprIwRYbi2RgNb8Ys7JEEz1wZHl4xFWQ70SZUEmP5CPycDbRsa5fYVEjrsc_La4CrT5yMnmnfHvxNHs-AtMmxiKm1NRPVVP6iwjLc0Y2rbF5wPI1U92qHDQH8tfDVzlaFK4GwnLZqkmd243F3qO2iosnVRMxdab6E-ok89gpLehfLXLhUIUouyqHL55jsCAhlF5vj0aChsmjudxw0PvLfOQ1ReN_yogsfyGKzBVdR2vJlljG8mEvkHcxJptXUd1hhbit9GM8iMDcfByEOAUVwN17vW5gbeJKN93L_hFCa1Vs",
+            "width" : 4800
+         },
+         {
+            "height" : 2982,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110487111221184891517\"\u003eWinson Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-txV9tQJv4uH22X86o88IcnTqlxUp0YDG2wWptEUyj0Oj3WvR_MadTBXMcVf5tnjQgNnfQP66qvVQcDG4dMLbsDqap8RPQ1HnhdfAd-ONynMePZ0z7t2hLZR_L1FETHggRBTcGSsMkLE17UBaQScaE1ElSGhM23CQ70XKPMJdjCyjoWZ-Jr8BstMzoWtyL1Wt0mfKpfD8obDtnqeoffBWLe_2LUDnFXEnu92OJtU3yEcv3462H8wSdyMpPI0sAR_CvoSjt59_NT14J3pPIvDacVkDNyGFbUCbDuVs6niag8VQSoQIOm7u3g--T8LZZs6hBJlLjDsVmuqWklS8iXnEx1rJgyAT36Dg3pejXySHFsYs4IMwiSZc47H1tZjw25gYf05UdT-GYjrVMiX_9IAYTOHrQT5gsSiZA7UHOhEioLaVONVVeg71fNXdIHS-dE",
+            "width" : 3976
+         },
+         {
+            "height" : 2486,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101170702024721005089\"\u003eJaat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t5iOgtvyZPnHW9osVBj96MaXj3I-ZNrpogq6-BQXRqMYCmqp6bplw2QHOvDBJSGOs63sY2iTyypL8qmGWaiFwVmjrTczN1nAY_0zksNQhtOy4R6GTM4Bw8O7YwJ9d-veMjk9lzgNKJDhUIF6KB16sso7f7e5cFGvG-7WSWxIVnCxmlHb_8BxjddNvHRMldNibao2MgROk2wzWK-Uoi-hkvGHIdROFPCxHXpJA_jR0N3iTlsAjNZcnrQLPhj_V-c-EvcUc8qmaYKv_E1joF_lWvau3QBc46quh1nSO7E6jLKoHuTRmhcebA1bl8eL5NatgdcRzWFCM5ZciXLm9qhNr3JeR1lBVcFEqr3RF_4wDB7-2sCcn7Cw2ddydvJHd7UKkMOQQSVYk_HzzIgwGfCwpIP4Q7_By_KdP9oaDs5-EC9A",
+            "width" : 4021
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103063850286351472710\"\u003efirst _Aqilz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tP1PtIJMoHROpE6kI1riXNttjy7X3CzY6M-ddfhJaGuP682dKYY5OLPji2zuUamd-HxTm8Mhqy-qQOiB6hlr1aDF35BmFQrAURRqNEmniVawN327UjYvuhR09c3-OX_-U4Ukh_vHaDDQZbWa1QW2n3ir6M-L20FGTaLS-kY4iEeBBRYRAbjRgift-i5Oj1o8gMdGbDRe1i8C0zIR0aNxoHXQ2uXDuLH44VJCm4O0uKusdoi4YyaU28IP9OsJRoKV5UHhswi2SAfxTbVba61jyIr2vb3bcEPjeGqxjFXu882OtsJm5VlUVLiSXW_uyHrfufXCYm5IZCLonYG_wSm6wwJTCg_unyoFeHPUWfILsNX6eAsdcPiqBNF2M9qHHXDId6o1v0ZWuCJNKCVUOoryNKU30iVgloIKkUTtl_Lic",
+            "width" : 2252
+         },
+         {
+            "height" : 3516,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103774206695926550293\"\u003eAdo J\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t456F3Plzoe4908Pu6UfEZoM0X9TvLzUt5Y4JOMhw833XcXNYXb8WQj5AuHvnScOGzpqvbCdEzdbUxxGkaM5-QMmtmk6F0bkJZDl7dvzt6EX-fDIwk0g2Kfqnz3jD3ylTngk5VI8vsjkzO_23hpANeSj11PBd3YGVbbSbdeljCVYVTJ_pS73tu67zOCWz6p0S_tNydOc41DdFWVze8s_0RJaVCqa9op1RiNHY-SJSzD9jSaYR957u9zEPsh8c9OC6La6MmYMZ1fXIgljFee2Hv63UHqMbZwk60PH6gun_i3qblf1std5Ow21R54vOaSci3RM8QHTyXAcjpPBA3OtEZptAeu_JnLRCBV70Y9tAhMYcS9wpwJ83eam_VMc4AMPVlnUoTl2TJmfiSOspDkBNrb5-Xse3f5Ss7QaCfarinog7CPpmS_VLbwSghVDAu",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111461324858096080401\"\u003epawieification\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tkYiTp7pq0N7hvmaL-YJeb2kpHxUUAne73ZVKsEND59zZdHsBcVNaCYb2FS-WDUnLRIQS8n0L6t99FBa_guYFoe4Ys_HsYHMmuT7U9SXFvRQYd9kxAicVtmP-pnxT6YwlDbYLxWDEkank24DpbjnLkjuMtfyPoH0nshO5KIEjTAhJAwKeVl_mvOGEPzYWIUw0rjMEzqIZ_IzjU1S0rmRyPRwC8ZCjbeIcDLf1i42a9j3sMPGRy_krtxJuNm9ep8qKRM8CpIResKfgQY-lG4xbGDy4qoddeZqAyQkcITwdKpi6JbEg1WdyXjxNl6PgW65KyVnGanIwUL_Uwb-cl_r5kRjTcutScTPyUkbolJ6jpH8zl_21oVI_fmXFbOui5hSnlM6Dsvt40yRjKaI2iwpP1XvMgyh9NJBkfhTwU9t50c0-f",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107339326125795813686\"\u003eVincent Carter\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uvRRdGCRWe3E4rFEtxT3Ak3_f7wqscrYbooykLwv1Zb5loyS8pEmI2jgCgTvWoxNSpUwIySYRuejPl1QA7bt6IAQEkj54JBNmZ3SCndkTiW4md2afLjYGq3BtiSHnPuprYpo-f71fg18UJmq8pBDTAZHZw-HvOWLKQAP4kpCSimiJyyDS1ts71fTMP-Pzf8AZWpto069x69gzkUTNgP3oJU4xN2mU5FWlYnZTpItmh3PHOjgGgvsmhu2kfo3vLs6vAIkW5i2aydE_vo-AKzOlRptOFMmfd36mjRviuifV2VXRlVOiA3CaPoTQbe70y9vK78ZvGwOmdF7I8yPe8h6zbA-_Ipvp2fMb4GpMZJjQAniDifoHC6jPP4ciFIS2kudobRSYy15aWwHnvIr2GWeyVuNj88_CGSJSCy1yyVpw",
+            "width" : 4080
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101460127561310879806\"\u003eChan Ronz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sPBrBOj0j8OsngaGHbhz5YCGA1Ju0rcgCxXbgZYr_A-R3T-zIzO7O84U4GPiq10rCA6C5l6PKFe4dBKE1bUO3OLlaUUoPKHsuA5f4gv59SkKbHZWJWOY-J_dtHqbeIlrm5-jFtZlnhGll9qpSgUL5oUJgPWK3w_5mgz1S5VAVwCfx-qetyxUAZnt0me7M-Bi42rnauyS6_ufp2aLx44xG3FY3miJ4wf1r7qRYitOTR0xDc4_-SlWuyRH8wgv97knJY4u7nx0ivNID1-aF2JyZEzwphZRl1EIoFhM5KYflm4ninZOxpSt0V14edNG1CnkUSSDcI4AkQ07Fu75GG_mfWRgwEEyh0oXZjwaGLkCHdnOl7Qudzifyuu5vk2GKNhTGvHP4tDq1AfoUsnkubm9TsxVSaX8tIPpuyMmJMOqDibBjKm_3eedOgT_kVvhfY",
+            "width" : 3072
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115338445120156477065\"\u003eВсеволод Т\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vuDlHnn52209PHfN03U4Sni8PB-eqPgX1uLe3KvKsvhpIxKmXuYS7lYEmnT82nnKEuyqPjubRuV9_9nANWrNm02Vym7brDPaXbhQzEdbJGslmwRhr546Lhu89FBxt4oBUYDNfABK1QHNQ_9ULau7E8RT9kl93hVPPLermh4at8l9UoxisGUB90cWHiI0H6C4ILuOoNJhLIsB3DnKYK2gkfy4qL0sgD1MxFv-EI1oIiXisYu7hIU5V4EX5mKEbvNATSriYmt8z14uVy1n1BpsRlSQl1VNpyYP9JAKb-LdB-ewhk9H6rDMa34c3iQfPbM6Jg_Jtx8oP_wIn6RsWrUtFYPPRH4Rn8reszelfxCHsLDmQFGNeMpicRqJ2E86N1BKq-Ck6LOXb50ds7q66H_biM6ChbNp776twGKeZNsvXuF63sO0n0Vq2Z6mZwjRzA",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ_Y2Rm81JzDERKAawVfuGOd8",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16085035958162949672",
+      "user_ratings_total" : 2971,
+      "website" : "https://bsas.com.my/"
+   },
+   "status" : "OK"
+}

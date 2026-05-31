@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kuala Krai, 18000 Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.536974,
+            "lng" : 102.1975081
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.538427280291502,
+               "lng" : 102.1988708802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.535729319708498,
+               "lng" : 102.1961729197085
+            }
+         }
+      },
+      "name" : "Rumah Kraftangan Kuala Krai",
+      "place_id" : "ChIJQTLLgWh8tjERCUhVCiknVSs",
+      "rating" : 2.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=3122444973871810569",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

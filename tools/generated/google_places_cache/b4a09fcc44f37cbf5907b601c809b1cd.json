@@ -1,0 +1,1157 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vS2IJNGbVz2gG0Un0dONaSl9-7LWpzczQAiu805OwQ2dXGvxqs60iZYSREn1Vx7O7N936N9ZmNs2FbWrf3uueCTJu87mLLGOicJGUZ7i2q1NJm9y8AHsCMR6Dxg8QJGB9f47KLlzJtq_VYY5B9ULtdZilb-fz5ZWUBA7pnpBE-m2zcKWDW2hWX1it9ItotLTJA68G-KDbHuiW7XLoOyIBbuQAJZ-FYun6I_mLnPOVFPtpA3IdBIaK1E_bmnylqN7zvlAh7C1K8EmC4QCYa-3oBg4WS8zL45If_J61zxJtXUSQdEzOGkz7HJAEmtjjqWN6J-OUzpGdms1EPQSrDIKibDCmBTlYaqXHBg1sRXT9slmZvb6hRvflUGzSC4qZswGq5chtHMflEL-v0JsldSkTXRAwG4FretBx62xr5D2MrxqQMJ-ZM6RMGOOTJxA11HUzgR_gNHZNYtGJjVXsaJy8KO4FjaTm-aUkh_GmcE0StdPEBYCQo9cbEsRi43-RaKsNXTOyC1gp3sXZ_oVmGpwrOHTj4SCsRg9msMv36z9nGA-RFs1JzR1GBo6enTRMljQL2bWgrH9zFYtJfF5LhlbVAcES8YnA0rZ59Rh4-xQc-733SYG_5jxueaI2IZ2syv8dtXJ9rAD9pnOIzCVqfwf7YbYUL7o1i1QQym_5ApmX2rC6YcKyB9PJZj-5lg0twnhd5hKIkjT4Gw7TEgxkQQ72AA9vLoYeztvKeFuJFG2ELbwIq1Cjjsng1iGl_S-wHl39HZNce98rsFDkn03sdlOafdHWdXkZfEQf2gVZdp0UVwtOTOKi15GiXEKZvWn11zDCP72f5HaY",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Chamang, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5292833,
+               "lng" : 101.90549
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.530633530291502,
+                  "lng" : 101.9067096302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.527935569708498,
+                  "lng" : 101.9040116697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Haji Ahmad Shah Bentong",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105519949914222617625\"\u003eKhairul1625\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uYdf43buGP6nTDlCsa1-Pdf1AilI3o9uShRbLVlPuubbghpmiF05G-Adq-KE6HgB5yzXrncD_yUNoLZLvASliGL6hkZGXYNZOrMybqQJSrf2BgQIIRD4qb7swvZSDTlDvHd7vX8YkXZjOOUsGyVCZuO90aJJ9ub7oIKLn5EAE-WVgXokFN8UbD_v0jk0vrQBkmA5Ry7MKXhvhtZvb7BIiylv7galjUrsVmk3chMDifzhp3iwz2ipyOfTfqm_UdZQbKyesXmPouFtJbB5H1qvWtwVF7j6L1EwvvudQoSYkzDRb98rSXyPxzSHHF0ncgcmZ4wcuVzgHz33OGMMIJfqfrkfGS7ZwByi2S73I39Hr9x17fTZlLB-_zMAM0MjHR31GUvQb73oWp3zIwMGUNpOeKNICxsLx1aiFCld1hBPYe4UAoOvwgxbvcdwih8Opt",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJQ8mwj2oFzDERXostAoSQ5sk",
+         "plus_code" : 
+         {
+            "compound_code" : "GWH4+P5 Bentong, Pahang",
+            "global_code" : "6PM3GWH4+P5"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJQ8mwj2oFzDERXostAoSQ5sk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 273
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KG. ULU PERTING No. 94 KG, ULU PERTING, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5136851,
+               "lng" : 101.9017955
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.515060530291502,
+                  "lng" : 101.9031798802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.512362569708499,
+                  "lng" : 101.9004819197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "God of Wealth Temple Bentong",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100486898237011381131\"\u003e文冬正文武财神\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vL3rFsSXvhlECLJ3m6D1Y0sa6uVVGZcfcmw8UnZHkKSg_xsd5vn-lsz9THL961AYPzZdou0vj49nU6cPkBVloV72dXGMZZB5H0VpA2hBdVC5GyNbEbhcBcIUd_-UbLE9l_79HeqiRzpFpEY2hFAeWXMDusyik6D5UCPCsiT-2ynIN23pZIgx45IdN8P_PRO4jJwdrup-kd46XA81ULG4oTk87VvFejfOQ0hzFx9xug6ERhQEsg9xRlzhibF3_zGfbBgQgtp_WStP90Kg8uh6gIHOT7JmFmv8m2xUmbyFLR5w",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJ3dVR7E8FzDERZbC__x-kuSs",
+         "plus_code" : 
+         {
+            "compound_code" : "GW72+FP Bentong, Pahang",
+            "global_code" : "6PM3GW72+FP"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ3dVR7E8FzDERZbC__x-kuSs",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 490
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Baru, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5154085,
+               "lng" : 101.9120617
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.516787880291502,
+                  "lng" : 101.9134533802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.514089919708498,
+                  "lng" : 101.9107554197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Tunku Azizah Iskandar",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110203501895758272021\"\u003eZainal Abidin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uqKzg8mWVRz5s5yftq-HNwdTcTVMdVVPvub7ZdvzfpKk1T6RKMegM4ikPrXNr9HqvV6gekAZ_H6Y4CZWgoRWvB3JdVEVIKagIsj83l9AKFiuvyzOlbWQRjHCCz9HzTk6_NM3mpqRsErOiqCrx5PHmVEZeRgCvBjSYUfo-y_nvAiL7mD4z_QFNsF6YpENvQGq6HUxMaGPt9-vTUEx8twXCy9JrqLt9kMFCe9FMTkb8EPyqg40U0UVXgcCJ-j0OTdI-ki1_tc4-6vl1UOKyw2-B-Bxi2mwQ3zPiUsuI2M2gcv4PMzq7WncH7yVlQ425nxuMRL8rh5krERgR6mDY7Kv3dEovKsT5iWqmCHPvb2AW74KfPQUkwUUmrAeA4UKdtgNR6VcuFY6Jro1cToGOKa51QK84TvrxVzHG5GVpr9tPconI",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJrUG0CjgFzDERL_1N0jUa7bk",
+         "plus_code" : 
+         {
+            "compound_code" : "GW86+5R Bentong, Pahang",
+            "global_code" : "6PM3GW86+5R"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJrUG0CjgFzDERL_1N0jUa7bk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 74
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Sungai Marong, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5050825,
+               "lng" : 101.9148724
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.506170080291502,
+                  "lng" : 101.9161175302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.503472119708498,
+                  "lng" : 101.9134195697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Daerah Tengku Sulaiman",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105757363328093334199\"\u003eNUR AZAM Zulkafli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sQDoTETJdJVt9YZXud6Ala_la54NDXTJUVq48onnlmqQvj70DmNVXoKj-nCtWPB0O3_lxNN2Jrvwo4eV44ai7D_ZFxr1c2tQoCvZ1Wal3-vUv5MlD-Id8JVXK4mid2V9BeXE8L4VQ2hqjrtkj8zepDKcnYKY4Eel57IJDxrRQsBINFDrIoyIlKGX1KGdTEnWJlgop-jry6nG2Azfsbex6tFBW0UfLk4wWQ7X__e-rT9LhWFRWVMqrXqULU3tsHf0jcqCyLAAOuAukqeBmImnQ8FiferEMHbuRyupKnQCLoO8RwjMV5KDgxqGHyc7zuOM96KPPtwMjay6y_VE7yBNPsSur5_iYkJDtLoFAzDhI7ybm3yLcH_IqTy0i-QF43VxmalP2yT66sa3blwxMKitC4F6X-mlD4yayQYuMibt3huqsk",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJvVOE1zQFzDERxFvgWdvjlkU",
+         "plus_code" : 
+         {
+            "compound_code" : "GW47+2W Bentong, Pahang",
+            "global_code" : "6PM3GW47+2W"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJvVOE1zQFzDERxFvgWdvjlkU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 246
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "E8, Kampung Lentang, 28750 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3900944,
+               "lng" : 101.8887365
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.391433130291502,
+                  "lng" : 101.8901885802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.388735169708498,
+                  "lng" : 101.8874906197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Lentang",
+         "photos" : 
+         [
+            {
+               "height" : 1152,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102729474831124843422\"\u003eBadli Shah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sdRGqhu_w-Dh4jwaSucQLBYP8jl-kWBHy9IIPxSegeI4uhy-YOOB9iVgunYRMo61LoqvN3NexbikK6pdnywL6mAN5PF60wiPLubdiesHmWaifiJTXiKRzwQpqpKeGErDe0KSBlDHz9WCkHesVuYrRb_mtLs_zWKWirXvSYF24seUVlxvD5_9ovgFStcjiQsWX-sOjFfPCB2ZaxGpfeDWDSZDIOrCzvFxcbWi8nlaiXsXTMvB4MhOsOg7aoEn8Quxugkkl3ane-LL3PovRkIUNu7bVxCyn2bglfO-nV3zZE4W3ZdWlknNlthrbV0iYDmbKNkLLVqRR3XM3bPd34Clp_H90tV7BAr_cfJ01i-aN9fO8Ya3n-x3XS9r26YDbRG8gM962YNUtGko7RQ7XEL_QjK3RMUJu7Y4iPI5KXqzznBgVp",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJK49GGn4XzDERTaQXMMlfL8c",
+         "plus_code" : 
+         {
+            "compound_code" : "9VRQ+2F Bentong, Pahang",
+            "global_code" : "6PM39VRQ+2F"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJK49GGn4XzDERTaQXMMlfL8c",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 201
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu 6 1/2,, 3280, Jalan Tras, 28700, 27600 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.6013648,
+               "lng" : 101.8823754
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.602851530291503,
+                  "lng" : 101.8838273302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.600153569708498,
+                  "lng" : 101.8811293697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Mahamettaram (Wat Thai Bentong )",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110808798997786366949\"\u003emichelle lua\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vrMtSGE3CIIdIoeQRMTG2XabXZKcdGYoB5kfegNng8u-1LrUjrU9phFPDl0MILtU_V6-oHIW_lDyefNFkCkSTQwkDZQRLmYPFE5QNjel1yNaM0SglUHmCWYbwjSr4Pss5sjfNhoVaBG0kWhEj7NgLQleVPpQEhNqkJjf78FuzB4h5pwaydrHW6cIjPVaj1l1SBOe84BcoDZUK6y6zB2VIgDBoYAHwCVwCfZF7xEUOF_aIkL-EfEToDVqcY1D5rJhrpU1cDQD0SKDRQSiG86HxLuGdJ95AMRCzfF72Sm1sGLuBc2alg5eU5sHJPQLc54bHlAxkak12ChOmk4ia2_AWOfQvTJ_c3TMzUg_zsWXHLvaeoJIt10zmvrVu8-7uwKbWAZktYPThlxXC_LtaTRm8h7n4qeU2lZ7MOmHop_fAfrA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ3c6m6aMIzDEREEpipfs8NXg",
+         "plus_code" : 
+         {
+            "compound_code" : "JV2J+GX Bentong, Pahang",
+            "global_code" : "6PM3JV2J+GX"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ3c6m6aMIzDEREEpipfs8NXg",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 45
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Wawasan Utama, Kampung Hayat, Simpang Pelangai, 28740 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.175345,
+               "lng" : 102.203455
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.176702280291502,
+                  "lng" : 102.2047746302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.174004319708498,
+                  "lng" : 102.2020766697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Sultan Haji Ahmad Shah",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112813207080446497413\"\u003eAzli _\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tZ88TykKFuMukr45IvBkXPKVokOow6083Z9L8ljU8yjSPg9lFXe1XAvAO0fFkK9LhPb9_2rtoZaWwLkdlK0CHLim-35XtAyVWQUJpaG8nHwPvXZiOpMZK5876Ril-4tVF1QwHYF4hMhoIKOSJ2AufJUz9kyiYHRI-3H9M5ES9ck7nBho_bukNBy5JsvkuHf3bl_LiZqnWfViyBTzvxJLhe0Ysy4b6OpzdHYL_vyvqoh2h9bMpiz_2WQH9TIEJbytBoGkCdNfKshnG61zXY4TA_FBr54TBFFFB8Vgskj7NDMGUMKFYC_yAIBh6uQnSDsejYORX1w1LmOS8TrsfsoHYs7Ay1eB051iLH-gkcdoWQeFNvXxJPy8awr9vMwkXAoAi4FS6nZhMzIn9djTCoK1fvbS1iHYkQNIZ7pLYtFzixibOzleOSALvMLabDxk2C",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJk_aDVNeEzjERYrNTge1YkZQ",
+         "plus_code" : 
+         {
+            "compound_code" : "56G3+49 Simpang Pelangai, Bentong, Pahang",
+            "global_code" : "6PM456G3+49"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJk_aDVNeEzjERYrNTge1YkZQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 27
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Baris, 28740 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.190565,
+               "lng" : 102.2459119
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.191913580291502,
+                  "lng" : 102.2473341302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.189215619708498,
+                  "lng" : 102.2446361697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Baris",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114128010001833186929\"\u003ealbayan sHaH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-siBNCUVVXlK4jxk_LpTVBN6kMcT1EbpjksG_EgIYzEuKneSPEWNigT_IPQrPRAcGKgB8yikDcaoaig2xaw-GHcHC2X7s-_XeJ7KN0vzUVkMp0s2gPKaKUEVRO5kdUYyfYBE5GYQ9WA_d9xfvzEEuRlouGR2m-AubEoRDMO7swUy8oAHS161kjv_oxoY9czAarwt55sKaN4XuNf7kggOxr6t7DDa9ROAdcDYeiRH6xN00i6B0WiCeXDs3QwcQ2lGS7_lGkDi9DFrH-ZL0sgO0LaQa3msSwW5lPX7mFlfLqc8j_y1sMYFK8lA4lR4iIVuTe0YbSO9MTOPBqHjAUvu3NRpLcCErXTpFgMaMWsHgDPzBGF-eyRfK-Xj24WrPX0C2mIgfTPQbPk5wGNIrEt-hRFP9a2FwXPVhfl7ymScvyZIg",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJ7-oQXq6azjEReTtkgwBCkTw",
+         "plus_code" : 
+         {
+            "compound_code" : "56RW+69 Bentong, Pahang",
+            "global_code" : "6PM456RW+69"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ7-oQXq6azjEReTtkgwBCkTw",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "129, Jalan Permai 3, Kampung Kuala Repas, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5342281,
+               "lng" : 101.9013882
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.535659930291501,
+                  "lng" : 101.9026128302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.532961969708498,
+                  "lng" : 101.8999148697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Chamang",
+         "photos" : 
+         [
+            {
+               "height" : 1846,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110306662394588589407\"\u003eTajul Azwa Haris\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v5nE9yONgXjKZ0OihmhrKw5L0CIK4ECJcoXmurUBEhLtxHdL-W5nbwMG0xphgeC5yALTmKZt1ibdFKwczvEo2AkDRhdgxzi_ZzPAsKK94mvaVu-Lt8A1xvoN255bvTp4i9Au2OGXVhX7RPclrdV4ma3vIAqK1AYZhYiwrWJvsO6BNsYbLZsBSRt9G_HqtwN3iWAP33ux6qXGFcVSK23ndEVZW8jU8KxT9dqqZYDtiyjmWQezNMvr9YCZht53fOECfBfNAKBpZtR0n8GaAMgmiKLFPMONqMTbhFynVEk2WUFWVxQpITUUR9zgoyMyHtAppPU2HFuahol9yeArd49oDfnuyFylRQR0y_MpCTGL8KcwPeuWzHqB4xqAZWSEMukkfT-vTM4ZMAZymvLTvmuLiKxSuQgF4E0KjwcgliZeeX0Er4IZUmgc8hL_dPVfYd",
+               "width" : 3280
+            }
+         ],
+         "place_id" : "ChIJB-HpAXAFzDER4G_Od8iXhDg",
+         "plus_code" : 
+         {
+            "compound_code" : "GWM2+MH Bentong, Pahang",
+            "global_code" : "6PM3GWM2+MH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJB-HpAXAFzDER4G_Od8iXhDg",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 38
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM48 Persimpangan Bertingkat, Lebuhraya Karak, Bukit Tinggi, 28750 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3868388,
+               "lng" : 101.8293012
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.388302580291501,
+                  "lng" : 101.8305571302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.385604619708498,
+                  "lng" : 101.8278591697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Berjaya Hills Resort",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117453901612550432047\"\u003emuhamad basil\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u-lGDvE634yAlgBqFtPzogJKXqhZ3OMsr5Op5zL4xWcBn31xKZWrbkIA7Er010aNKXb_lvX-8xc_O1kT7EOoJ8Bs8jUT4Ms4OiIpgpnLMTPzdRWHFfBrMbTY4zHjAg_R8xx4sByd-nMKj8pOEJTlQpqRlHFv0Ze2XC-zD53_Zd27-RQyiBgIUjS1sPB46aIHj-7kToLt1ngIUtbFQjtWik2v5m0jugTKHR-QRc2dEmgNzr7lCRngsK7h-HdSNuCrTpj2TxsQDcS0Nhb35tGia5cAq_K9KJtCKCSfVHKtGjN_Aw2AIWL7TSRMV3nt-C3x9acR6tCpt-vcaCVaRiiA3hTkPU3BtCGN6WvQw03AylunJ5YcoPUtc91jefl-W26ygBsbrQPSNmAwR4LDeTdaCT_LXrdWbQhpe5H5tqJ1rl6KHkmaxRkP2u0B6hLmNp",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJpYRLyfcWzDERlKggM4fiVUU",
+         "plus_code" : 
+         {
+            "compound_code" : "9RPH+PP Bentong, Pahang",
+            "global_code" : "6PM39RPH+PP"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJpYRLyfcWzDERlKggM4fiVUU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 76
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "68, 28750 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5098226,
+               "lng" : 101.8565157
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.511243430291502,
+                  "lng" : 101.8586538802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.508545469708498,
+                  "lng" : 101.8559559197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chamang Waterfall Bentong",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100052889902076872977\"\u003eSyed Najib\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vGONygnpcs_Zf7Lw6JrcbjDzQCjJq3aqCLHBLaumroUU7xrp1fyiG2-vNpc8bcMmpCmA_RI7T0DBPuWpyTHgIGzVzjvBPIZelKag1Ubp3W6uGBtLEqZhEfdROD12uossD-hgofLsoWKajQUnM5vIzCtHgoodGao9Ao39GubBjHJEHa45-2j-H6oTex1HxFzUhtNYGAiQmOCXDLVIqtH1LcoMS97YmTcXVTPYz1PaSem2IbZPo_cAuKux2G0d7WyG3vgPWaOy11qEZF2axooNDwEk7yfnJv9dogaxE5YUyRRyxpW4zST0WF-vnn_VveccOZ05Hd9-BOdO5GEp1SvMjOYI6aSaUmlio5T-3D4UnN5_nVRV8Qsb7xfGXUbIW8XVO0-QFFoGFxUg5I-yrBMUGHz1JCqH-3uuh1pDxWubT5f_Q",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJE9A34bUXzDERAqSqfyM5zRE",
+         "plus_code" : 
+         {
+            "compound_code" : "GV54+WJ Bentong, Pahang",
+            "global_code" : "6PM3GV54+WJ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJE9A34bUXzDERAqSqfyM5zRE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 564
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KM48 Persimpangan Bertingkat, Lebuhraya Karak, Bukit Tinggi, 28750 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3868609,
+               "lng" : 101.8292185
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.388296730291502,
+                  "lng" : 101.8304951802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.385598769708498,
+                  "lng" : 101.8277972197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Bukit Tinggi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3048,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114343271237961361031\"\u003eMuhammad AliHassan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v0YD_8vheEMXlzHLYw8JQGSYnXcDbawQuPqFHVP1KPP6HiNVzyPQ3XdHQ3bug2O3Yp9H2ezjllkrbpkMKZ3yYENpzFIiLbAyYHQZSgg_DwOe2vRWMHb7smN8mPaz4RxqvNm9BtBmaZDmBmICqKrq2QDwY4-0Q0dV0Vz8pKs-kquS_ZRyazAc1bkx-x4nUa4JA-ohIM-Qo49NEFlpwAT0tLXAmunP-dYT6dTPcXdlrwc3rCstPlF7J8UuD2BF1Ff0WXw9AiigfnD0DLYaxr9jMickUbO8Otgd4MCNkHXQNKIHDE_7QfE7WMSb2lh-M4TZLge-67DAH1ubEleEz0W-6BVE3V2YdxlOy_9gLN1TC82nepJY-vdoP91jjhO7FAq1FHd7l4tJzuXyUvwSohLV4ABjdq4uVBYCkglIdhvDdjUezwj-yEpHt5R4QDSDqN",
+               "width" : 4064
+            }
+         ],
+         "place_id" : "ChIJifZKmVgWzDER90YxbWB1NUQ",
+         "plus_code" : 
+         {
+            "compound_code" : "9RPH+PM Bentong, Pahang",
+            "global_code" : "6PM39RPH+PM"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJifZKmVgWzDER90YxbWB1NUQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 48
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Shafie, 28730 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.206995,
+               "lng" : 102.1558201
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.208236130291502,
+                  "lng" : 102.1572227802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.205538169708499,
+                  "lng" : 102.1545248197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Shafie",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106904657552765778631\"\u003eNur Syafiqah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJ6jkk2R6HkFcZYwQAFk4DsN-KlEoQLwN0aIfw0WGgyRcfTGmJeKE2DHxPjKHh7irkcLzenxYO2_RkVYjNQQ7JuzGVnsvk0zTQNV1VPdF_Hv63xcfrlW48dW402MlL7FoyDy3C3FVlXpQzmZZae1nJ39Os5L9_5ACz_J--h0-vy7bZ8M5hVrlihLXpojx4O60L6tbNOP_bREcbBAHWpeOk4pyWdVtXKMW07jzxOKkR8SRs7iXskL61XeHE7-KPLHrbhyxysAuVz-uXw49VttUe05WKD0SjYInTpUvVHSRZpE8DbPauw-xgND34LF4Vmz7tFPDY_h49w5urBWLsEgeHzQwYNkcTmMZvcWeBrz0rNH8jYNvVrRRE81nT7DjUkYrwDd_NPV4KbIzGJyoHSf_MNxrpn-M78NGzOSBd6GFNaxFRqSpZQ7q240LMnlP8",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJp2Ub5piczjERV8ue9bATaL8",
+         "plus_code" : 
+         {
+            "compound_code" : "6544+Q8 Bentong, Pahang",
+            "global_code" : "6PM46544+Q8"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJp2Ub5piczjERV8ue9bATaL8",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 21
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "C/O, SMJK Katholik Bentong, Jalan Utama Bentong Makmur, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5193235,
+               "lng" : 101.913525
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.520606880291502,
+                  "lng" : 101.9148173302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.517908919708498,
+                  "lng" : 101.9121193697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Sacred Heart Church (1936)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109002841655279355879\"\u003eaf\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ui6FqIQbuHb0s6PJUeybaZkO8VjqBzOotBznbSTmW3wJ1IRSZdXbFilZVqHyTkdxwM_-rrLsnZeQcu472PkDRQzQT1gDvLmJC9S7rcrWg9fZ4drY2O642czCu2Z3Y5X_kEE4iMr912Rd9QE9MbPsbUdoi6Gi3f-Fno7IMI_VIMJgsblrkY4vidnf3ZFGyR3Oimw5LwZ2fnff1d2gLco_2f2IVBQ8G74hJGVPYHDeW91zElDTfvxbs59ckDzJzL7bwxhx1fkxXvCEO4bvyrRN8JzNTa0VGk4HQTQLQfzy7y8r6wouUgpeQOUKq5teeJ_lA-92l_n2NAoAOUayyXc6PfcDGEpI1P-X1dNFTcUuVXyNDxWnl488aQUpIhmLobGwIDnEptASqr3qIUDdI56qPIImdXzbidlQ2ShBCIBsrArOsr",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJPYZZND8FzDERoSwcTmi9I-s",
+         "plus_code" : 
+         {
+            "compound_code" : "GW97+PC Bentong, Pahang",
+            "global_code" : "6PM3GW97+PC"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJPYZZND8FzDERoSwcTmi9I-s",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 20
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Exit 68, Genting Sempah, 28750 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.4125879,
+               "lng" : 101.7881491
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.413970280291502,
+                  "lng" : 101.7894816802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.411272319708498,
+                  "lng" : 101.7867837197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chin Swee Caves Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3599,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102114309243626759457\"\u003eWeekends with Andy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sv8zQ75kzb1GAW2LN3x3OgJXPGLnlC-Na3OcrXe7oInIfiOo4hxVP8WhkEpijiCpkfSerJAvO0JPFK0x4F_HfbgPyeolG0Aer1EtTAnupVpNbqZSYPqAyMq3-c4EiDUGvr3x4GW0wIsjKZXLdSQZbiOCiiTADKZpxSIvpB88tSejfkIn_cdC78ehtJmi-9O65QDEuBpVsgQbUfsH7mjuQQu6l0fT02xI89vYe1cnsvhGWKvhFaROlf_ws8Xn3mY-qcw80FnJf1DeUjBA4XQU69X8ALphyIL_rZAqdy5O-J-NWNGCVqxQD3TDu4U1dNE666esznT6Y9vQPZNe-GS3DuDKeINgMsjrUZdeT8vDOU61Mk1ng1WpAgfneqtUoYuuJswbg1cqPv_cCOZmgaoYFn3RAf8zHst0Ney0MnuRxoFg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ3TA_tz0UzDERRBwN5murefk",
+         "plus_code" : 
+         {
+            "compound_code" : "CQ7Q+27 Bentong, Pahang",
+            "global_code" : "6PM3CQ7Q+27"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ3TA_tz0UzDERRBwN5murefk",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10608
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bukit Tinggi, 28750 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.3942772,
+               "lng" : 101.8390359
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.395587380291502,
+                  "lng" : 101.8404977802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.392889419708498,
+                  "lng" : 101.8377998197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rabbit Farm (Bukit Tinggi)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108242441352166613310\"\u003eNuyun Nuyun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vfCZ4PGWyupzIAIOk4xYEQsD6VZRk_PpiHtk9mNPKAWrrMR8NZU-6FtcZCy-tbjAJUUDl61QXCdZM5IFsdFkHAfiYCtCdw2GsBdWkcMWeABLQmRA-ooSVj9EqvGQI1JJfJKxOv9mu2zjyQxm-7ciRgiWWO8BPb6Ar9yA7BEkCOXqlRkKu39zRVDLOAfhE3N1o8xwoUoLjkc2q14OByaFgHJfFedtlYyjZJ6msxY_D9GEWe3qhfloJFZELDXToCZgWrK2D2Y5S1uz8cZSs1OMC7rEQGjmaeh32RskxNKQ3cpmYynGFlsuFgtVom3JvdEame0BkUveFNZ84YcA78h263rqplO1xHjhWFpOcGwojm1QnIVqB2Is1CiZkXfncvZYY6RCCH9nZLdBXYNfRGPgSwS_bv0tbDseLBtlQ2EuJTXhuX",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJl8ae8vwWzDERRSUH5VG5cB4",
+         "plus_code" : 
+         {
+            "compound_code" : "9RVQ+PJ Bentong, Pahang",
+            "global_code" : "6PM39RVQ+PJ"
+         },
+         "rating" : 3,
+         "reference" : "ChIJl8ae8vwWzDERRSUH5VG5cB4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 1662
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 38&41, Jalan Chui Yin, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5250311,
+               "lng" : 101.9056746
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.526358130291502,
+                  "lng" : 101.9069942302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.523660169708498,
+                  "lng" : 101.9042962697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Bentong Chinese Methodist Church",
+         "photos" : 
+         [
+            {
+               "height" : 4160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106290914793516280253\"\u003eJoshuatly Tee Lien Yu\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-skDIBLtKz5mp4jpuOt6BLMSOxP1Kg3JqJzfumf9Atx52T-VBuf7Hi7BNCq5xCawt79bQqPoL3aJbkjsSYO-N0LrFFU1o3dcTvqplRg-lkjH-PNpiXRwhpJ5luT8Z28jzU29KgMv304lrRCb89Ag-11QX3_jFyldEVwZEZ0vF6yM-G-R-ISwRxRUBAUHiKHwkzUaiV3spWWEBdpfJusTbSuIP29UqMQUvyF0NVcDbHbDxvVDZhct8BxwTYrYj1ZHYmkytcZBWoKPvaIpSrYuMEK-0k8jacFmlidPB6h7inQjJoLtswGQAk9Kwd56XtWHqqoNbLA_D32HV8UNkniwMElUlN5tro1Vn5h6HE-vZc8N2p3-59pgpxroN05xY-phN7Bo4kD4ifufYfYCn2lvn57ETYKZ1jJfj92qvLNCR8jUg",
+               "width" : 3120
+            }
+         ],
+         "place_id" : "ChIJOwh_8kEFzDERrPXOKwp0DGQ",
+         "plus_code" : 
+         {
+            "compound_code" : "GWG4+27 Bentong, Pahang",
+            "global_code" : "6PM3GWG4+27"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJOwh_8kEFzDERrPXOKwp0DGQ",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "GXRG+MM, Mempaga 1, 28600 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.540905,
+               "lng" : 101.976698
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.542294330291502,
+                  "lng" : 101.9780381802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.539596369708498,
+                  "lng" : 101.9753402197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kompleks Penjara Bentong",
+         "place_id" : "ChIJW3MpWwAFzDER2CRCU144imY",
+         "reference" : "ChIJW3MpWwAFzDER2CRCU144imY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Felda Kemasul, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.288245,
+               "lng" : 102.2254677
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.289552080291502,
+                  "lng" : 102.2268270302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.286854119708498,
+                  "lng" : 102.2241290697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Felda Kemasul",
+         "photos" : 
+         [
+            {
+               "height" : 2992,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118294441943794731445\"\u003eMad Izam Isma\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tH7Pk_yDASf-WeZgq_57mJLx48kG1qBbTEA9exrkAJ0X6tjYLxOKc_h7zxE6OQjoqDDVdqr6ODWFWfry-ISi0jbi744zZvLbc6MdHLdFkmj9YnBsRtk63Fk2_7_WgXvNSn1Cog0NfKbAlZ70FM1b6nkucdsT7oTIlSCfe4qamLHIzqxvauv7-xJHAOj8ic9LZTFwKokM6s_MJMW68B3PR3dVavR7p-Tnz7LuDwmn-CQAliTni4XhHu7rPdzIKoMtkEPTm_jdfTF9ZYTFmGe_DcIH29zk1171tpUXw1elUzzxHBfNQW4J9jeXCEDSyKPPG6094sP1lpTs7Ic_L8aLk3c_2ksbgVp6xhq0ty8rz0W1iki6QIklL_5rk9lHAKyBfeEv66T9fvlCIx47slr4UQsqn_U7CGbXoHKqND01dMRxA",
+               "width" : 2992
+            }
+         ],
+         "place_id" : "ChIJiXXu-7uZzjERMr67UUD23qQ",
+         "plus_code" : 
+         {
+            "compound_code" : "76QG+75 Bentong, Pahang",
+            "global_code" : "6PM476QG+75"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJiXXu-7uZzjERMr67UUD23qQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 26
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Sungai Marong, 28700 Bentong, Pahang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5099899,
+               "lng" : 101.9149708
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.511326180291502,
+                  "lng" : 101.9163212302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.508628219708498,
+                  "lng" : 101.9136232697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Bentong Gospel Hall",
+         "photos" : 
+         [
+            {
+               "height" : 448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108828107230128467539\"\u003ebos pages\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vBrJq6Bm78VttGyRNik0yE8HllkjdLjWqExnT1kXeLxFGZ9lPoDf7eJzPIYqArhWC7UpjeJLfwJc2ri-g15J1X-svYeXhpEcHxGOJkgiihV2GXdWokngThPRjjSPzdmpcXzGmqzO9skGfF-KjeG6bhnV2dMgl1KiC9WV7C3USK5zUuX2zIfiAQonJQTEpImAbqrgUKcw9tWYXgbOV1fNZTA5HdVUu9dqEPRTIkyncw3K0DM9yA9w0PAhBk8q2_Bti6_Ci65_o3aphOiWCHS8muvlEoPhRxPgy47fIT8eJ1N4S6m8VRsphJOkZjQhACvCG2SThe07n0sJsSkzWtTYu8OtY91nmZnou4jq52BTIlRFLFLmwZHLb99pEV5_AaHTfue5i2NVvgTg2vgmXZSpcGAUOknCUnRWkGjUA8DDKpL3UR",
+               "width" : 940
+            }
+         ],
+         "place_id" : "ChIJm1giVjYFzDER2MKyttVUCsI",
+         "plus_code" : 
+         {
+            "compound_code" : "GW57+XX Bentong, Pahang",
+            "global_code" : "6PM3GW57+XX"
+         },
+         "rating" : 4,
+         "reference" : "ChIJm1giVjYFzDER2MKyttVUCsI",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      }
+   ],
+   "status" : "OK"
+}

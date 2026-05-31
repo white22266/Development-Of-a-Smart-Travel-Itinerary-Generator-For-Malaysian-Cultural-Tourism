@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "359, Jln Kepong, 52000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-6256 3800",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.2095517,
+            "lng" : 101.6495568
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.210657030291502,
+               "lng" : 101.6509983802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.207959069708498,
+               "lng" : 101.6483004197085
+            }
+         }
+      },
+      "name" : "Kuala Lumpur Tzu-Chi Jing Si Hall",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 4:00 PM",
+            "Tuesday: 9:00 AM – 4:00 PM",
+            "Wednesday: 9:00 AM – 4:00 PM",
+            "Thursday: 9:00 AM – 4:00 PM",
+            "Friday: 9:00 AM – 4:00 PM",
+            "Saturday: 9:00 AM – 4:00 PM",
+            "Sunday: 9:00 AM – 4:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101413129715177010901\"\u003eAlfred Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u7i-63DjH3AuGEVyT7l7tf_B8raDfQi6jIDNvUWs7MWklinHdpx0XS8VNq73tmEgsPfYjfi7iu9psyPRpU4rMJf2e8AmNB9_EjhBz9xisInk5lRFLuFoZl0Ogb27d5k8Nv2uLJT_yEwbSEqLJkOx-W-zjCoiFEh910JcEkAcrKYB774qKgcYnN1rT6WycWGw12oMLR0KSW-0QIrWAzkkDhGVUXMXnqPuPvpfiA2bSSQu3LFRdX3bkfy-Zy0s8GIIDi6nNlXQ-LbJNUSBQiSBi_KmVaqk0dR374SC7MMPaTrdTxQiWvjMXcZCJfxrds-sjYzjjTHsxTgA8ceL8IoITJ6NtDDUcGJ7Lh5W1qsU3N5eolTgLc816HhKV21Or35fx16jC8htJ8lL5Nv0aJTH9NwJ7Tu5CETHWJjOYWx_4Sog",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109749449914491011949\"\u003eShakir Ameer\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sP--Iuu3tfNKwTAyOmzYIxreI2rnOu_AA1TkA-bMwKe8CKNbQGlxJ3HFDZp-C2P9gMO5DrrEScgIyLx6H4Bfho-jZzaKfLNTFdAKIjRoGpXbUSNSDrMPXJ2U12TxPculx6A_x2PYO-0Kw4p_KL4FfyJiarDI7rlxdWN6ULKktLEASMfuj3mwtr-pLMjva4w-a9WsNDOp7nZM6qv2X6KoNx__6HI849rfSskZer0DADpwB25Sc2D3lRaYZXzPTXXhZOoA8_IqZJntxUYH87ctXM-66llxldCRWri94NZoFbQhiBJzVsO4nuVz8XRgwKznQbGbyV-TWiVqayXSYY_jlggzQsL4CwQU-HlEjYt8YA5AwwVL-Ib-ASIRsXFT-k_tDTcI2se7sucQSpzFFfZzDyhoy51VMt0zH42PSNvDQAe8gBMgv8-xaKgOGfs-n0",
+            "width" : 4000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110186793197967851824\"\u003eVincent Yong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uNymhzOxCkuCgLI1moB4hTuoCbg3RqNUaDnbmpIRL69D4lMCLXehC9AbZSUlQV9yyGiff2MzSLYXnU_hbaI2rzSELL1Yid7FK5p9sgY-kb-rmdnuXN1aF24bX5QEZ3ngf2gntsR08BP-abAA3CkZAtSs5-7nViYGriXaY6ckwGbLOFB8B01F3j0CxEbHCKiUeDlBnpvIi1nCzKXHeZVC4vbWk9Hgy1GOrDjTsZaC6sLwAkfkJoNmqO3USikpnl89JtehWdFvKInr0qxKItiTTk8Nk3Iv9JXjAgZC0fvKI3wYTi0n2owX0hHWE0bNNAaPRKLvcbOb1JOAcJfJEhph273L_AUdQtoVP0RTbuAwUoaHgEvPUvSLYF7t5ALR4udX27-8okmfHBzZTPog250rS1dw4DbRi2TXEXfeL_fBYrL169gzZdZ-0vZ96-Ug",
+            "width" : 4000
+         },
+         {
+            "height" : 1200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105743909160405754465\"\u003eeddy lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vApTYyBlvZKsOGZ-jeDKo45Koi0lFC_XEqQvneemuJ6ndDJ3BhsdLRAuTMfUOpmmNqXfXXpqTUr9drvIc6x8I4ZSZ0Y5c10GeDhKW-X2S6lXanE8cV2jU2SisgZJhQrptBqYJ7k0cbMDiiUYL0Gxpj4ZNnHZaSHDn4TlZvYFgrg4_NMc4nVF1Rn6cmczDsKXtZQJhDl4SsbPNtgxswtWVYrn6EXxBlCGJWMd6KQEuyJM3ZDKumno0NMesotvLpkbowTkTXRjof92AB-Wjb-AXTWJZM82YeilTYyJzcNPiI78dcQ6l0O0A1w8G3ea5Z6Uxf-ZX-fRqvARwdTuL0Dzbkcjc2w4-5AGrpkUY62NCmd4ZZss3TEU2h1X1nHPiG8M9J6_yZB5YzgMEuX9cqiCQSC_1EKVP4GXFZ1oXr9DrXVA",
+            "width" : 1600
+         },
+         {
+            "height" : 2322,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116237753997212594656\"\u003ekhoo chee hoon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sxHYgG_e9tzUdwTIvq1jrkOTzvDoq4XgE-ZnkHXoxYYX_wLsvZgj-v-Z6_Efa3qSjr5-KE5WO2ztX1pu56HhppguObK_HGMKDacxC0dD-vI1i4pGKYCllV2_A8ti0a8RqsWZVrIvhVgWZiJIeuaTc4PZxg1lGCp5-mzHvMfVw-jGKLu8DeFh35WbWKifoE5vLYJ59Ds0K7AFeV2daTrl6yUmXUoAhG7KmTvpIKWJlyBmqgZqUbMHYLteiWTQ5GAHt_ldCG_TerbpC1JQi_csKlBX97vXElUGU6ID0U2hRYUgJgWKCD8nAuAE1enre9uKUsN5spa0PlTZsvglO7Bsvt0ZkaCo8R2_uHJVHR4QshOYNiHuirQ_WGIK-pVbETh_v-55AIHKSKJ_G1dzgchggVI_ff6v9qrVhLVEvOwIOtMg",
+            "width" : 4128
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105025785156947417840\"\u003eAlister Lok\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vQswsvsumkG-ab312-SyEygqRCd2G6eieUwecDj0u5IdeWzyNUgHGSzr-IPJwaTbGlsnbgpTy9VPj_RE7oTzYJbEfFyA4aZLmSneevYdY4W_9qnfwxbEmsiGVs7qQkoYwIckBwQqrobrIQllMZIAnS1joXMprVc_-RO4cKf6GqLr-NwfUMja-2pZtiFa9nowlvaF9TOt7FMk4FStdXzb9U0GGqIqvjL5Oz0BulOhn61B6cl9U2IGnG39JJhkjRl4yyMu3dL82iI0sfOfHH0VcSDXthcSIwozwXXVLM3zgigFHv8sYAtoVcL_W3RXlPEuHxDtoiwPr4J9hMP2MsQXFQ14hreXkc4n4QMdbY3U-zsYQUMjPydwFOjZsJaR4uHwQyaJ_1s2fGR_J54fDJHNiZYoiB0DX3Aunkb7eTmq3Zgg",
+            "width" : 4032
+         },
+         {
+            "height" : 2779,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115203000844468547233\"\u003echoon Wooi Loh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sqhcg293yLZ3qyv7XeFoCsaJc_l7hvi6g2XlMvigWiU5DdOR2kr_tBb2eaMje1FzMgETQSmFPk9xhUVmiuTqMDIGqwOOmZ2g3STHHzEjJPIYQXiQzrxelw_ZGdxmk9Dbu2NMIlCTwgurKmKHTvwIzv-RgB9XOSdoyW1oWTFKUDXPoEwx6jaO42TiBMIJ6lJePSoQ6cMmrIJfnoY4Mk4XM2NHW1jEARC0fmpj4UJBcDVXLPK-ltqMIp0gVufdB4c6DI2zRK__hM9DbY43SksGzuoQE_kFyI9A3dJxzi6PFabJo5wpcdqMONiBSmTi6a2meNnwfNPGvS8TChk0cmOUb8kRs_C_hBqdfVs-ggdeH0eeNnVn1eW9CYFe6wk-V1Sv8C8bcdswYV37RdxA-dGcm5K0-KfA9gOVBjjPc4TsI",
+            "width" : 3586
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107676775803642134203\"\u003elai sook yin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v3pFclhMhsXq5vsMMgKHt_nQAdyJZ_e5Qo1KsUhHiYB3_gvHyC3woP57tpmowfqCkw9mHtarghiCepbw9hi1py8y6eRfsr0i1Eb9ihXbIE4nkOqlZNnisbal-Rfno_CxjfHOcQtmG6jRi7BXqAoaUezpZJvM7m_WItOjj2AtIGB4b10L61UgZ8_tHMIygUVxpj4L0rbTWOgB8LI-0Ky90LVXzrSbV-plKjjf6gLyiJW3wbQ0DrechwCLztG3VeGSmIyMXh64QR9ZSni2-4kULbz39xRfcbvCajIp_Z592_2QWxTFvL5wyOew97bwOsungYLBYdO3zj1to8FN9oZ3Rau0DiedE6PH5wLi4rTQROOAz2j96JKaiMkZQtZr5HXjKy4LiOStwSd8rhdi_294PoOLwg-vRFolVIwZQXjByR-Q",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114204807726289813254\"\u003eJaena Ong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uac_twfJJqmGpmM-nRnnMqq0vCg5JntpfHt_2-kYFzHawaesPHAICeuoAmpKeh8x1tCEw1RL9lceuvf-7Rx3AuMeQAHtUuHpqgv7zADfC1cJP0EUk9k44CKZbGf5cKqg8z-ikoc3DuwWcJZulzl6OsSlMLTwBP8X-Xl3d2G29frROaQxpQrv_rpLYeGbsMxeDuRy-lgVBcVgSmUC0C6GdrPjSYZ0O9lVr4vX0KJdZKD2bPwxnb99SlUv0-qvIkzfXN9AhRngiYzHL60xP-QypC1uFcFBM8Opxu3xwO_j67f881mLxOG5ubIwvOikhp2Yh2ZEDiP95f0nf_NTdP2JZo-8R-SZphB4ice_PuLu6oBSMiZD_DuhNSXqJqlWb7vzn899RPXhciLn7uyWg-mG44jinwM8buskwio7ycN0GSgiX4",
+            "width" : 3024
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100830914444731315208\"\u003eJessica Ng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v18rkgO4I3FDgPw0OIm0g68LHv88VFSJ_Aj5C5NyBziGGy66hZcuHvf-UAO50OaEJcK5B-iDHpOR4pM86ZFMA7AitjcopwGhHi75Zs8nlrNyDRXJpY5Wm2T6-oNhOF3I31kyhYUz4WssEQRXyNAPJPZyWehfwAjn8DNS9yds0wXfR8KiLqh5VwgwsO0uYJJBMneMLb51WxisWtVsy8iJTBTVLwQMsoAZH5O50ZU4mMKNi2si5IC-k1bVsEBHiNu475TJzzVsUn0qACotLxhrSfTrKGkA57g_FZeMRsFpHck4sJKI8tw_xdWKTAKxDg0RJYPajgARPLVDNI6bBXBDbe4GZJz91a4zfRGa-OOFOEwjpdjP1Rw15U03fCZ5Y8ka99MrHXtHQQDSDRhCnr140sfiYyoyPAl7jaZy9W1SVyt3E",
+            "width" : 3456
+         }
+      ],
+      "place_id" : "ChIJ5St0GDhGzDERceXMUjagxNs",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=15835958344919344497",
+      "user_ratings_total" : 1819,
+      "website" : "https://www.tzuchi.my/"
+   },
+   "status" : "OK"
+}

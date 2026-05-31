@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 10725 Tingkat 1, Jalan Besar, 73000 Tampin, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.4744221,
+            "lng" : 102.2237816
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.475754530291502,
+               "lng" : 102.2251325802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.473056569708498,
+               "lng" : 102.2224346197085
+            }
+         }
+      },
+      "name" : "Tampin Cultural Center",
+      "place_id" : "ChIJeYformUDzjERR4hCzU1Yp00",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=5595538153210546247"
+   },
+   "status" : "OK"
+}

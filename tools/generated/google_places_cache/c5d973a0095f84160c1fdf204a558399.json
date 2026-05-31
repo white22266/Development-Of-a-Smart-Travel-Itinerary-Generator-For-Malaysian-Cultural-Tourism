@@ -1,0 +1,240 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot P10, Bamboo Hills off Lebuhraya DUKE, Taman Bamboo, Segambut, 51200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "012-942 8525",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1932327,
+            "lng" : 101.6738578
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.194684830291502,
+               "lng" : 101.6751491302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.191986869708498,
+               "lng" : 101.6724511697085
+            }
+         }
+      },
+      "name" : "TAP ROOM KL",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1100"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1100"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 11:00 AM – 12:00 AM",
+            "Tuesday: 11:00 AM – 12:00 AM",
+            "Wednesday: 11:00 AM – 12:00 AM",
+            "Thursday: 11:00 AM – 12:00 AM",
+            "Friday: 11:00 AM – 1:00 AM",
+            "Saturday: 11:00 AM – 1:00 AM",
+            "Sunday: 11:00 AM – 12:00 AM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107152522991216570940\"\u003edani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uErEJkOmXIAJBC_SBnHgGzvUZzIYuZsGsg2UqYi9aAxYEU3WzCDr3O9yyWOfUe0353dXpKkeM3dYcmVRD2xTZeNkVBZD8ImbAjLpEonbhW8nWPt2-E7cMYhvk5kcUc_wtXEnmvFZnT3v4r2JR0xmO7QKuCtkxbg3Bf2uZorZwv9VI_4I13BUOxRiGEOYQPwwwaeTwPivjHLtBWX1byJMEW2cfkfNuxa8pWqSpy7TpavyfILX1FRlTbyMGSd3ajxRj0gs6wxe5sBZKe8IKJ9ZgOTVs_r59X7HHpNZZ7WMT5jNijvtlJk1VQK_X-UG3o8CWM5gfUtLxzUE-9-K4D1dQnEwmWihFfSf7IaufRLAUCeb1dKQFO2JtQeBi8aztiEUobQBfSpFGqk4BOdPq_cn8RoKgtHb1BuDAoYYX1I5MP8UlE",
+            "width" : 4032
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117621846344525135333\"\u003egnoos\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t6tUzgNSIuH-3--_zYD3IZzGiBagWBg1Ru7lXIePT9khuyFp_UTOFSSkk5Ne_jMYqSvLd1PqgbI1KudxisXcW5bxw1J4dmgCHkKPRMX9ZZwxtluE-WKpc_i5x0hRwKEawVemxddYtB3ZVtWkCiqIQMFK5dk-cw8LpAlu5E1MQlACCb6b_RzYxiEAqLA9oqf_Mc8OAheXwEl1SriHAovp-AZUYxtiWI68M_mWZ_1Qr5V8vzqE6PpE2KPkHDuoZyN_oCI26SAsGxYfeqSVzWtvZQap2gs63Kyke3E39Ox2-bewgK_DEjv9V-rfwJHmxJyHikihbb5IqNmPWPOIgEzf1-yihaSpRlE3vjiBhwbgNaazesZaHfqamEUEhEEiVeM903x7fIXXlIcmstMKch3T5LjJAs_SI_FwL1LHP1KLial_Q54xSYXvzRlvrVFQ",
+            "width" : 3060
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106404839897182813528\"\u003eDJ T\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tdPOuJRd-P1OvqNWMIgrkmlleDXb3rSOpcGP3LqMvf1sd4fDGu9Cj1-IBeq01482hLRUy5XB_tODe1dQ8PFEz48xBpCQ6S7B6mVBChgTVouZGg9l9t9Khfl32ifFpvI6I81baxKbU-KNcvM5Ltq70yf2Hksd6wanG5wRy6ql0buV2bu8zoNHUY5RGa8_YDDThHAqyPSD6BEYUwUA51WtkAHtCEK-wTudc1N3E9zNHjy9_jQiwlRcTkSPwEwo1wqg3OklMBikI9c4HHnVFvNohyd_fMs491BaYGserlhp7NPrFLDfqSSy4KshA8RTk48VWlkLuLWZvTpCnO6gmXDtpbOt0VYsD9v-WgA6nW4LVPc_rZt8BnfwMo422LM-TtgKzy_5Zt9FQM_F9kSImrcY7AZxTOsYot2UjCbd1VzgsxjGfHLVXMdNamVLBDwMG1",
+            "width" : 1280
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105730064374943941876\"\u003eMa YiHui\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uQZLVLLdq018LGJ9XLM7pspFRtKG_6Hor1801_7eSYDubAZP3H4eC3IRbXeUWpG45llxas5iEg5g-rXXXnwhEDrPf_TzVoolYL0aVG3d_Lf4oDzyWP2fvJOwk6RIYAJFlh1wnIo5yO_KvpjQl-i5mGs2VO7bMjbTCf4Q73_3U6hjt0rtZYobtd8Oq3ZnWmHA6GfokAlmbSRMYch9uRc3FsL-kdVkbTrdvLsOMEI_jumCSEDf1yJGOzVw2vGH--mihKpaecKS-i_ClXaByppd0X0YlmTBiIxyfo5U-AngdvV7HCHoXLlIE5mTq8gm7ir-WaCt1Izrd1p8FwtmRopTYOebXkIrxd_FjT6ga1zxv_HHrxCbNpgzdYLr-hX7Gi4lfauOLh1seBZBLrzB0S4cPCL7GT2qLXz-rjJqxeLLIMOvCWowblZD8hciCKIQ",
+            "width" : 3600
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110715451703220114511\"\u003emadelyn phoon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vvMB4aEJxA6qPDKFqzp9rilEmLEHuEMjhjVj2ImgFJpr5W78SRljnELLJngosro9lXm7AJfCWy0F8PiYCaWFbA8PaM5pmBvisZ91uqXYnP0plADXa5RsJCnRUF_crxbAx3rUCNauM78c4K2l_f85gsoUqN-hdK120ShxkIyAtCZobwn5KEXoFR_u-NTxYZJRdlI6OOO3idnrXqENGz54D_VRZeYr1RaL4PzRf43T4d2perZrRnyJgwE5gLiDQxmFE7udyIrPRWbSfTjceQ8bRc2VPfyOWsiJC7G2OrSneLQryT6Y6oSxFwq4rLy47sXXfy8zDjtxB40eQCSp1JOW-hWOeLzO1FOXyVPi0toibFOah5EZwUHbdAH5PWokWsnGwxUnuKKa_1905wIEtCCNvE1pkAs6H0NBbRtD9JaMthEP6LmvqAIR-noUYcMQ",
+            "width" : 3600
+         },
+         {
+            "height" : 586,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106863504425540546454\"\u003eKenji Aiba\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vBGAyBJa90M5Ix3EkaE9ruRb0762fOKLmw3wKx0jLrVfKps44CpcNL753-cH9gXFFmeEfLSJgM3IZY7suHBswafXzUtyKaUko8mwZ1lpX2aDVsx76JhOmwO2n5bOjdeNNK6nyVAz5lq1TsnrgFlDC0SDIdcdkNFBxP847EUk8AjEErd1sCGkG9RmiVkL0wQB59zIm9kMmXdxtL7gk3VicjCHrd9XXoPm6HPFn92-at9Axo5FFAbxKSiKqA8sEmwX5EdRBzE57pfQCnR1HqYqG_gdZokAsf3aSVGFfndPJW6AdqYdk2lFuqjp_9TUtLp3jwz48vY-_QuwrriXaKpaOmUu9rjcXlmh0y9xPtY6-cLPqY_TFBAORZVY9ty9Zk5TpQ6Yf9-TofiksBLG6aTr6CHNMzAFd2NqEAShX5vNXP6ZiBxfmqEEygYsHbyN3o",
+            "width" : 619
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116978191013727637001\"\u003eLi Wen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4KFFGlMCODHVjSzjnOdQdB4CIfPUBByzHSzW225rshcNwQxLeJKA0bmA2CTvH6kgZ71Cmzf87v0_KMUXHjf0nytMDiP7JSLZSkkikt1t-OT8w59Ng-t0q0g-Q9kMRzVW-J5pUGCsX24qAE6-2nhfMhUIW1y6IGXZEusFE2F883lsqCGjZ6tfOx5DXNkIb7uFZqS6oIlx6k3Wk04jPrq9PrjZHM4r-Z1A6PF_HxVEMPrF3L3TCTzJInD7yfB6RgBmeIuoZtGXCIKnH1mZHGFVjDx50gXZRazsUW03AG1l4XNNnnDmFmIUxmET_wJXLUq4vK5dKKeepkJM4AoXNRDAg-sTp0sgEHr9ilt93lAqi9S-fTgBNpMX545dnHgRdbmm4y73C2l6neLMzcUJPeWT_8d2xPvgcxmL3xjCNV-y6wEGhc0NcvgCAQr5wEur4",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118345294877444438357\"\u003eSharonlili\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sM7fim6dJgT1LSjYugoAjsN5leV8Ust2ILGQXaI5cpspQGxI07gjKN7HeeOZZyjfSHrmjXd439tDAP6VLSnVV6T2bBQNGmbiv8Qp2sjzK2GxLJdqhPT7pZQPbp5gz0xmd7WLWBDTwME6wIdbnPeMJhVBxqXmyHgtnf5a4eZn85Xlwoh8TYtvAI3TR-HYANVPLQhe7XzMqvu7Ic-IcYRh8P0bxrOZEFkbuNRuwTfsa4n4pRTyehkB8w_piDjOn9-8R6cbpbV0ofd7tvTL-9NfKOgH3N0nDleJJa2iJqpkgBPkwhBOSD0sKW-yDYuB5TajUT0oIB2sxEsXn8riWylL8qKETHAhJF-JqDTPxL5NhxYcTrcAo9hyYQK8mlnJ9UTk4AL225BgK0jTpGekF2SsmrmOC4EA9_osF065HSq-VClJQPpuBsjsCRVfCnWe-7",
+            "width" : 4032
+         },
+         {
+            "height" : 412,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108279841531159754995\"\u003eKirk Marshal\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uqiQh2dMWWGn_7B4YnvIVaqfeChTGH-c4x40tz4OAeaIZ0r9L50SOytbgJwZC2VrQWzP0JsCURgKSUVcG7VHSAKlBjru888kTb2aTEoa8_V5ypkfEankMV5I67XXBahUxv5aN-H1yWcdYI5m0F40LnybKCHY2dZVfXDWqu--_oheekscvLl7O9ma4XT4zzt6Hg8zDyOMwF_uueMwxNhp3fwDcgc8-VnfrT0xgmFlMcOof3ZgqNSsAYDdIEnRdgF9Rg5NOZaVuqobffwmoN6SHTt2fASbCfM6VPSFFrdee2NdkdLSjBKuzAUwMvpy7Gwf4qE6mKld4le7eo2187b9aiMEoXy-0XVKQNzNjMio2E6XRhylioGCXs1dRj-4lxoXR3pwTwp3gSq4AbGtCM_08eEJmtIbQlcQx-UUzfMOUyY-l4W6BuCAE0a0i1phRd",
+            "width" : 550
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109721200530464012918\"\u003eLeonard Leow\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s7l6l-jP7iM7yqRkzDxbGbhDgEVkMCp0qrwAvWaua7FxD3OiwC32CmxNBGYJ1i-byak7djynCfmsBJ-vebDGU5n_CioHc5Vztmrct4wx8G7HQRdFSglIlwV-9R2y0ZqcX7vb24-9xIF-nqf9e2PvftFU4z4cG46aD1hr98lMAkrZV3ajobq30d-z4LoFO10dd3wdNs_dfgzEeFFxfbVyybiONwUHqekkYxglrGJ60CXjSpUi1eGa0jmpbz0EcJjQ8q6Guw0usAz8pT_soSSdTBtrbUPw57iqk9TA66v01fC40TMzHdy3zTdT72tvpn2-JiM0-EqAn7w3pMZgjZrAxY9Min8Jw1aZsWynX_rZMhPVd5pPi10lynSqQ6s8BMdB6dSuyF5u6GEenHo8sY4CyGWsUciC_Vey3UgalWTCb_KhOSPW-VpTBMVXoi1PTs",
+            "width" : 4800
+         }
+      ],
+      "place_id" : "ChIJoxBKOlxHzDERCryhX6SVBok",
+      "price_level" : 3,
+      "rating" : 4.7,
+      "types" : 
+      [
+         "bar",
+         "establishment",
+         "food",
+         "point_of_interest",
+         "restaurant"
+      ],
+      "url" : "https://maps.google.com/?cid=9873743766268001290",
+      "user_ratings_total" : 3194,
+      "website" : "https://linktr.ee/tap_room"
+   },
+   "status" : "OK"
+}

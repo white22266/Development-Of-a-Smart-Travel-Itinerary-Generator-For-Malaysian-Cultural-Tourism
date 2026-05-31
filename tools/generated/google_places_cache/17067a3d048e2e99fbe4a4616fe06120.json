@@ -1,0 +1,201 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Felda Aring, Tasik Kenyir, 21700 Kuala Berang, Terengganu, Malaysia",
+      "formatted_phone_number" : "09-859 1550",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.1500186,
+            "lng" : 102.795791
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.151488830291503,
+               "lng" : 102.7966634302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.148790869708498,
+               "lng" : 102.7939654697085
+            }
+         }
+      },
+      "name" : "Kenyir Elephant Cultural Village (KECV)",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115121281446496370716\"\u003esuja nosa\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s5xH-jFfb9IuEu2ispKSoY1EY5dNBQ6tzhBHjS3B1U4fIZFxwY7cf_OY3x95vSIOsQaX3oDZm5iOrAh3wr5z1qcFScO8I5J-_-efjknQFyLgCFpV5fIoC4YJfTLKdnyKwnH85iY4-Dvnts7cvVIcP0WCU7-mi1PJv5QHkFcQD49_8rah2V0B-NHAvxc-XeexY9r_FKKQJvOitoHpS1scMDxfyGcYFGkUWppaoLdiP3shJgnqZbVY1_xl8nWkwCocb9YHKP2qRnf5GGQy3bOVTJjvwWHA4kE878-IIcgkAaLK68GL2FSXa_BC82pKRn9CGJCukketdcUsiUevv7se9viSbJrQ-O9jeqPRZLqBEnod2Xcfac3xI0hk9I2QsEIUsBu5SxI3ZYs7BsAe0_nXKYEkCB6yfa41Xy1x9Oxw9ESvs75E7CgONslyGafIII",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115330693519862171609\"\u003eCS Santai\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-thn9iUe_7MLhtLs8AR4QeNTfW4vcCGhRSdNvxuqvm--Ldt4PgMugC1NhlT5E6X9Pk1mMQOx824m1QEl-P2WguHLps5O0giFHGPOR2bWRfoG3306IDP27QmbPomJoVbfYvupptAYwWMXwqN6JtZwtUA9AjXGf-kloPf6-meuKgBjWqQ0QsJKZAzdCgoR75PdgIdygiEAlGirk3gJ8tl_aPhiAQSxZkwui6f6TF182LtU4A_xsUoXkvnYnQIYg2y3VNF16wLQll8dQ9CW25s5fpG9Jo8oebB1p9oj0WYBpRUxICO1tRyRKxaWF85nwLX-gYc6HALQ7-nBC5zzhWs-gttdIiIBRGBi8flGrQSLhNlnMIUtKTVOq4jki1iqfuPswUQhsv_Uky0HdeHueJ9cM7GalIyrNOoWGmrHtDvZ3HH8Q",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112737963256220338451\"\u003eDaniel Imbaumgarten\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tVy7ovY8ONltveLaVl2WPezleGDe_yMmn7JmqI4KsfUUfYaRNGWncjvNIBX2DraxIbSgsplbtc2QidqlJUP43NoSXoldUhcjDrkVCeKPq21hosz088nzaLMBbTMwcndiLPvlywmDfDrUV4Mt6ezh9Go_vLJ68XtTyAd7GN7o1Q1RRK-mCRgg6z3TXIRg2fAALOYKkViwDc7bpzX060QmTM9T3Q5mVi_DVk-FhZIMsYPBWFgt9Y_hcuDqeC6rXSB7KijRo-ipJ5aWyWMJWsFBSTRRb_6roG5GG27cUEGaceqz2L-lfdCfWnYdvrvqvBNt90hEUPsfJ8LWaISYPXwvK67jxWCz_Zg6iD8ugnq0D4GjTTAgRJIToBxetttGzovg6xAjSlCE78NzOG0PqujwxWqCVdUAj0zD-MkaK0b1JFnw",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105138132269078756273\"\u003eNgew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v7zBa9LJfY2lJOt5hBojCn4WrzNBQEzVOQXuBzb0OqX3LRfCxabMRXEv5Sfc_xD2v9XDpV1RihRbz08ByFzwmJQkL3wv2ArWNBic7e2NWzc7qAQ2dMCxcpezWFrLrVkvvCAMVvzxp1j4zwM5SSsGsmTmJ52jI7rQ5MhSY1cjYVOr7dH32xtVORU57EoUki7eXrQAAk15_KMneohLmgPzi4RlJMnaZ9IjRZzADuTlFG1yKdETQFILkFsfYrWKqJCKKL0vr9w75wI06Eos8f5TxMBzzrsCPfRNu782CSslxwjmNyffiRLHSA5H1BzZiM6RwDqv9aXZ2IqWXXoKXdfOAvmtIe2T-OgjV8kNb7bFiWWKy6cISefzMMuWuT_-FZMaHKQj5GNiYBPFDhxmo05IBmUyBhhDfY5O3DBmXYFOIliPYQ",
+            "width" : 4032
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111437675995110649890\"\u003eRizal Xheckz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v0ODqx-liGmJqVJ3aCDXw1D9A0qSIA0tTwNiJIj4wkpSWADDBqCu0dpZjcsGh9-JvdVNxouEuGAc5xkVcDQFZa6CHF1UYNG0PxoD6dC4tSLbUYrQhP5Q3qwhQcU2EDPay5SAGS5bslYgaAMw4McMak-1D8rbdU_TWV0Qjp1fFw7X69VZRBYAzAoiagrduGJoi3LroQCk0HYyhbQSbwJQTOsBnASCrB1RPlaFh_6x63KI916Dv_OXqHPvJAkQGoRoRLlXxB3Xqg9vkiiKSC0c6V4E6CATaeujUY6wPicw5Fn-b6BNrcCVaiz05SaVtAae86a327d8BjBj9H0cg8myq4ZdGUsdJBxxm3jIL6NMso3vjCo_oJWaglaN7lxh2FLWM7yxE_Ki8GYpMTORKHZzOQjwNbVLAXOHRlAMAwJpW6jf0u",
+            "width" : 3072
+         },
+         {
+            "height" : 2304,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116437800942347748221\"\u003eJA Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uS8RehBK8cLlXAVaLGPONAxSgkOnZq-veeiUZjnKNgw8BE6tpSKpbd9LxoRD-ed5vIG1tlXIFAGzWWCcUBrY5GuL2wEYzResFspCzOqrgbFcVYISZSI9fH-hg9rf3FhQAQv_9odvF3zE_pRHBbFWMp3RUTNed46dSkECpXVNiM7FrV1y9yk5q7gaZSbuwPZNMBYozfb_aWTu--vLRzWOEwZDb2MwmKirNzE9-6b6PP1-lytc7NqJv-YHL3OJsDqu-NtAK0w03pz9WkhNPJCEi_MMN1hTNh0wdS9tTAEOtubZ0bX_AI7w98ry0VGyfayvgUF72qazDWpqiUWiOOTIqImRbOPwBaZSYqDYAjbFs6kczwEDkoTnmhkocSAAvOYLKTq_KtXqaEPMnB_AKsil2lfk5kd7br5_qL0aLHdvs",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115330693519862171609\"\u003eCS Santai\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tp6JH59XtgpLxP0xAU-w7QALyXpq7pabG4JJuREq2gsYlr1MMEcM9W6c7_XVIRk-uqVEfnDPk0krCC-Ik6iJ2Ck8jTtjwPGRcF6rlK6El1XnD76Qed0aDUNtbG0bibfwcxFtsP7820uc9G-vCOzz-bqJ2PwazD1NDVSR3PJZQHLrHf-3laDJuWjLtU2366IU2LBO_vEc5JGHT7QUU3VFdrmGVprt5ymlsrdiDCLGAVLKcPOj0rzud1TnlUc5jxqKizFksEG8c-NxazRAw5ozIMjQdTEHmJ75JpARD6Q82F3VDAS6ua8FVVfLdCHTWKiv1Egbm7ZrQHu4VtUzZXw1NKKUZ5lK-zrpzEiJiPY97GSzB8tO6GDRWe5WVeW31hVXkRy4k_D0UBL7BpmVdA_J-9CS_agQrV8_pMZoQpa1KDzA",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112317580258599733068\"\u003eMichael Sumper\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sdGZ3qzmChAR-2qs8daUTCzvCXR5ONlczk3__PJWQYaYJfHg6RU7GXd98IBFBMoNuie6TPzntRYssaerWrk36s2reKppxXDENRDpt5D0TFd0jIbR9F9_sRDlLihgyvGxQYar1XpqaiY65hqK-Def-TN7Gc_28q5kg3brMOKc9FBYy--Fa8FbYOZXGzR8YPCKv_uE3_8CZECk2l28nHiIuBCfkr7mTZrGKaq8f-PQ5qqEnK2JdL6kYNCv7SEWVmmNpXZcBn5RTNEA7sWOcThlxWtjPcyn8gSTiz0srif3LIL470CqcSQckpRN5WsLbGRG-wnHZbffBklYq6X-JPcXC3vtxIsFywI2RgEhUyRKWjahH20vpmGGII_niKv0_7eOWaYFws9hPwkFo7g57rnXP9YT4jQ2m7GiLS33ROxtInOw",
+            "width" : 4032
+         },
+         {
+            "height" : 3472,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109801083506880993494\"\u003eMinox6 Minox6\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t_pVVYHQd_ZYmFd1J8LcwJTzE1PsKftogWd1FZEiNHVzdcCJ_LU6ZJW6h3AlNAFygYKc6S_kgzBJRZyZeitb2ut_WZ9OlsRIqD05yJCisaM6qFb9Jk7Zh5qN63XG-w8uNSpSpbNEGFmIEzHfAs1cOEDCuSiwPqqqRfw8SoO_1JZ2t8rEjLEzOk-WOihxFBhSKbijZ4-8x0QbSDi6nFrxyZeeTxwHcU78NUBkgDQ2r4K6WlG2cZCqAX7FGLgyKidRwfr5bjAMMxT9sE309d4odwdecPhq8qELouxfvNN1cUbKnB8HutSFlA67kcTwOHaJB8mNv1yV05SzIkEcBw3-On1J01CEHZ2iytLTqg69MdY4shG6uRJnexeilSGx1Nr1ZEhzZlc2131PFxAJcF-oDNMJxJQMM4VAc2kcTFUU3F6_GC",
+            "width" : 3472
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104189790278451238182\"\u003eWong T Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOrvWL9LSlUmekVjTB4f5Zjj8H1k3kMIXpM81zxfmDMjVxwV28S9kA1D7YtxAXh96nz7jnAkK2aVjzE4fQMZikvTjrFnAemR-4CadnSv0TV9xZ9Tbt7lNlR8ZyadAaY2CiUJvj6JlcAMRH-mvXI_ZjDunspq1fbhGULBEC_6pIJB3HOhDHRzR8suFUS71RxB_tOirJm-2zk002yXNyTLYIQklSkscr0GjwTRT5lpPUPaE1GJilBDj2Q1ij8TpZlpfyAtr7LYzHIy0mwAfRwGbOGXtRUiXdaBBVbET6VRz6aHtW4ohbIJ_wRqJiENTLaQM_TdWw5lqduT87WDX4bG_on7NXNVRJW0YR-mnBaQkP-gG7gBmIY5kE8ViD5kfXkOFA8wmUPW98noMYMDinvkcvBhwKNQ0i69SHGXRi2vbDEyru",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJuSDMFjAztjEROT7MdsPqozk",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=4153421406598348345",
+      "user_ratings_total" : 646,
+      "website" : "http://m.facebook.com/KECV.TasikKenyir"
+   },
+   "status" : "OK"
+}

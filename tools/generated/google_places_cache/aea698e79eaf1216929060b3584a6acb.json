@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "23000 Kuala Dungun, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.8134061,
+            "lng" : 103.4206492
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.814746880291502,
+               "lng" : 103.4219837302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.812048919708498,
+               "lng" : 103.4192857697085
+            }
+         }
+      },
+      "name" : "Tanah Kuala Abang, Dungun",
+      "place_id" : "ChIJYz2HWh8FyDERjY7klopBfZQ",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10699780353195019917",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

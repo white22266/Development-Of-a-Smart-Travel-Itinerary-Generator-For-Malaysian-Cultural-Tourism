@@ -1,0 +1,1165 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-ufw29NS0jfdguLNrlGui-boNjlAlxue2sUmYnZKtATfTzSU7rA4urEeGQ-oVrZ_3EPvkh7J5xOjXnLTKj8bhSE5EP2J-z847o131OrTyv300JkNsQrMKTPlhQlFs6A1kT6lG4SiIrJQa5_qZ5p9ecF2QVp9yKJXUyj04VTbmPxvGNQ_O6W_-7VwfdsscNbOEEg-fvBdUjv15xhBFj2Yk8_MeyxmUqbaL6eJTm0tG84i6uTGKb9GWNCCHrFuKGUkWgNKrWOPzjkKb6CHl63xD1EO3fgxwiQlaJ6RpWLnT9eTiqsEakagGTYRggYhxsG4kHxasMB-Vg2Wcj9_HV73FR1Oon4mIeENjvo8xaaQfH8-nKqKvLm0ZStb3M4MtJ22VRFFzhqjeXxV7AKe5hnczdMHz7EoeVbHKk4yS2CAohf-WN1aV9WTb1fOmLh7ZA09OJUxsI6HwGPoSZqFLwAvbS_5_bzDEmcgMlmFkbbZ-ZXJ3NKm8tuf4_LgvCFQwXsWlq4726UNWzXV1o33jzZaDpDYIoL44T85U7dahjnL7lMPqyvQhXijg0waI4JNm72yMe5nWAj37QKUXfSmw0axKnpqYvbijBv8Dvmjctmpaaie-_kAo8QkG8RO-KSTEMwK9JgUMoA31RoV6EjCPKTeCjagEik4oxbMXfY7e8s5KzrgKNBUno_xl1RJXkFcPnBlABEkLCDutSQzJfhYDfRgD0fbSWLofnWQoItpQp5ejINEHCMK4Z2dv0XKMTtFXJGdi9nIL-x2VjqEXQYdw17k-C5EXiZE0MHlfEdZsD0wroF2UrCJQ-iA-3ojXfNY9zzergwFH5_dJHR",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Stesen, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.041323,
+               "lng" : 101.4491882
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.042709080291502,
+                  "lng" : 101.4504340802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.040011119708498,
+                  "lng" : 101.4477361197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sultan Abdul Aziz Royal Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116070391410908330491\"\u003eDin Sham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-udm8CPjyHyZY3m5NnOwHxc4T7obRb50caWPwFG1hFRnIh5cHJioe0CQuZSPt5TkrwSKzoHYTR8nw81xuBqb9x9mepMVQXoU2YBh_2tGosoRThzX8gIz-9pHjK4Bk2ajPTgpBaeMbw2gpJJU8lADlmZRZpehlPzWaGb0vU0pWHyWTA1L8E0b254KvhzgRvGHlvWHxyyQctYnFtzThe_7Gm75X9eUnw9t-ncm6vr1XUvEktD7KJMx_n3UCvOjLrA6px-LbVkqS6dQ0ceLI2b8CwN_AcJjLaQHKeb-_OZnnpoUpAIlh77TUkkjfR_9_hlBLQUa0ZXhk9WEUrbjlVVijsoSIYWIDC47PKhVSFzkI4fKr8t2tlhbhQ0zQweS9MRgdrkRdIrs6cdhMiLGmywCjqEUSMX5VupqsIDfiQKm49AWw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJJwdomU5TzDERLuRfw43IhXs",
+         "plus_code" : 
+         {
+            "compound_code" : "2CRX+GM Klang, Selangor",
+            "global_code" : "6PM32CRX+GM"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJJwdomU5TzDERLuRfw43IhXs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 320
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "41100 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0551028,
+               "lng" : 101.4347394
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.056148830291502,
+                  "lng" : 101.4363001802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.053450869708498,
+                  "lng" : 101.4336022197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cultural Village Projek SMG",
+         "place_id" : "ChIJ2awxaQBTzDERE2rrEffpDY4",
+         "plus_code" : 
+         {
+            "compound_code" : "3C4M+2V Klang, Selangor",
+            "global_code" : "6PM33C4M+2V"
+         },
+         "reference" : "ChIJ2awxaQBTzDERE2rrEffpDY4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Raya Timur, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0427378,
+               "lng" : 101.4496135
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.044152980291502,
+                  "lng" : 101.4509890302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.041455019708498,
+                  "lng" : 101.4482910697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jalan-jalan Klang (巴生历史户外学堂)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1150,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110038780564647501415\"\u003eJalan-jalan Klang (巴生历史户外学堂)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vY_MdOU1d5gERZUP69qgD91hixvl-PNKSwdQTD0VARvS7ytP2YGIyWwG67TG4qefddd81n63NBedkZMu6WL3q0UZlnnG4YMXsL3L3Eh0gAzuRiuknh3RCItLJCWVlXlkfMn-cb4XxCvsSkpoAcMgPQ-uXOWxNwPKgfrz3J_AQ_q7gS_K5khc6nNZSIYX20HDR8yajMRDCUZLOUKGCaAUToaPvdXqYOUGQfT5QWREZz5gTYkBIqyO9gQbRTTLBipbHySzA4uvZj7sPS9SVVRp0hYBnPNi2qAdr2yyVsESu4yA",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJzaKE8QlTzDERvyDDF-pB4ns",
+         "plus_code" : 
+         {
+            "compound_code" : "2CVX+3R Klang, Selangor",
+            "global_code" : "6PM32CVX+3R"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJzaKE8QlTzDERvyDDF-pB4ns",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 22
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "124, Jalan Kemanis, Pandamaran, 42000 Pelabuhan Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0114117,
+               "lng" : 101.4181209
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.012787430291502,
+                  "lng" : 101.4195090802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.010089469708498,
+                  "lng" : 101.4168111197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Papan Pandamaran",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3203,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116237591113209234099\"\u003eRumah Papan Pandamaran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tw1Y4MZtLKZBsl-bXQG9T8OpAqEOUaxEv3t9zTwUJ95B5rJm52QucXDqoFwtox_j-7JnGYulI7qZHUxYYiblDFcTB-duXzF3aZCsyCpLZ4jqIO0cZ_O9qgjDZvkJQtQpMb-M3dSjRe52ax0Kiw_W-pc4JemCiKiAWFnKFPBfYZ9FQV6QEfqmCQR7dINhVZCYEerJLpZBA1mKGmFa6F62_-M3d2onoj1YiV3P5Qs2ovDtiJbQfBsniUWeLAJldmNFjVtw9rAm7zSiwxUE5PRak5LS6nL1KHX__5PSjAjthkPg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJN9pyMcirzTER5JKrjquMyOE",
+         "plus_code" : 
+         {
+            "compound_code" : "2C69+H6 Port Klang, Selangor",
+            "global_code" : "6PM32C69+H6"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJN9pyMcirzTER5JKrjquMyOE",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "lodging",
+            "museum",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 253
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kawasan 1, 41100 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.047312,
+               "lng" : 101.4429051
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.048372830291501,
+                  "lng" : 101.4445676802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.045674869708498,
+                  "lng" : 101.4418697197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Awam Pangkalan Batu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103987728269591166982\"\u003eAZ-Zakwanul Faiz bin Zakaria (AZZakwan)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vrynoK3cKkCfW46tmQ7xt8SauVRnYppWEWBPmFNcVyJbslcdsX8HMXItO978ZwVnkrJf0dxBkleVPt_-mDwZsq3GanF-ESPFD4KCMQSECG8YosKQ53W_kq98uivFTjOBpN5OMx2kkpbc0-CAw78KIxvc8K74eNq_a_dcjxR14fxB4BFLfdNKJrh5qfTLMEXq9PJ74r0tiNL-qPWSe__2iED2UZ8G9ZPmu1rOFMWwsQANfBoeIhGw_WWks6hzrNNZwGCUg9l6DjdkbUpkgLG-lVU5ecrPbsWOIhh5Rg7xqwjJS59MfFtULh3vBtmvse9nAiBxU95OTZvq5eZ0yjlPdwYzrGlvjC20015hsRA7_6MiZ_fImCv_YQCwNo3VuxFCSUVDaS7M3w515fzZHnlIRQDaSPuv9pU26IgC72JbU34A",
+               "width" : 4208
+            }
+         ],
+         "place_id" : "ChIJAaQz81pTzDERVVG9wFKNHHk",
+         "plus_code" : 
+         {
+            "compound_code" : "2CWV+W5 Klang, Selangor",
+            "global_code" : "6PM32CWV+W5"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJAaQz81pTzDERVVG9wFKNHHk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 412
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "15, Jalan Stesen 1, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.041548,
+               "lng" : 101.4483412
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.043046880291501,
+                  "lng" : 101.4497587802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.040348919708498,
+                  "lng" : 101.4470608197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Klang Art Street (Safari Jejak Warisan)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113991439441548615669\"\u003eAndrew Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-smsYOx0xWNhPH356jXlITLi3qUN4SmwztZnIXjJLHCdtasD3RWHanJF4mu66OI8_P4hbXm9GO0Godb5kkW270TZ0Z6yOj5HD3R9Q8QQkjnl_AI2UyzBdmdcE-xWdix3yH7XE3LZW_BGo5_ITH8hyLz2m0o2CnxAwKys1BTq7An8jlDK5xJigkKBSLzDyub8zzb7WYtEPbWWuh2tjjs4DHGWhqndGFsI8HhEwpkeZWq0myodGzKDAWTY9IiReUBvoW2SBW-TC4CRkVWkWSL9fpDadtNoiUzrKgNSarhtZ1IZlTJPrc3lxM9II86ioljvnW3Cs6wChpf0ajn7axAcoDvE3O4NYs3tcTIFM9RjlL_ZJbD4m0q_nfkroO1afTgI6yseVRto6nHfoyFRDwSY3pgmCmbURgDI0Y3fxZd4Ig4UQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJRd-ok5tTzDERRMl1f_QjbIU",
+         "plus_code" : 
+         {
+            "compound_code" : "2CRX+J8 Klang, Selangor",
+            "global_code" : "6PM32CRX+J8"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJRd-ok5tTzDERRMl1f_QjbIU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 60
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2CWW+8MM, 41300 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0458375,
+               "lng" : 101.4466719
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.047186480291502,
+                  "lng" : 101.4480208802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.044488519708498,
+                  "lng" : 101.4453229197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kota Bridge",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102258065092472992485\"\u003ePohboon Yeo\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ugGKWqxzrinWJ9OiKcLwEbU7-zlMAG1Vymd_7wFpAeVtOb85LyE0JNGi7cTHOJNmCZS43xZVOuhZjsYpRAtpQLZSOixs54VqVVmYG97fLMfiBhzESe746O0q1uT2J4VMnJaV8qPeod5SYQ09xVaL47SJw0n1_17mknSWWfO51fJxGNxTWg4IehfrYhw2Dj2nF14q7fhxoUFVg9j7ccMl1Uf2s6GZlyAiewpv9glv2AMMiQULOSWttnmZfL29krZNQ9g__6u7EnaDurmvq_9XGM6C3an8iznVfts56EWMyKcJTtac0hecPLwPq6vqR3HiIV7_cV2ere6iGHE6XQrq5xHBz6KXTJVYmXhigC_xrWpSyzCyvz4GCYjkfOcjRy6Fr4-u3Ym0HmE1oTsLfoU0QPbQDuVZaCqrFt3-f950ZLCg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJwwtv9U9TzDER8BN5fsmLoYE",
+         "rating" : 4.2,
+         "reference" : "ChIJwwtv9U9TzDER8BN5fsmLoYE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 199
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2, Jalan Stesen 1, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0427529,
+               "lng" : 101.4483866
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.044062430291502,
+                  "lng" : 101.4497132302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.041364469708498,
+                  "lng" : 101.4470152697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Flying Crow Street Art",
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107876839137229379660\"\u003esiew chee-chung\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sY3ECe_UzRdnXkT3K0CpNhnVvC8rXObw9LSTE3RQndhmLA3hGSLX-71CPuGtED8CYOFppI8BiCfnmqGK6NReqJlJF5sfLxBefNPReR40fBZF1f2SrPMgd-CJH7_yzKed_kAbkAaWq7Vrdnve4GbzDFwpFoi1w8KR8xhSFI6x09_N4s5J0yYwoIMg3I0eD2XwnwDSK3md2ojg6yeUlYvkC-qXUofVuIjF_YPvmgh1G-fMytej3eMaLk26Jsz7kVnxIgVItU7AyaYIBNPHP3tjwaKkbXntuTjM7HGFm0AS1eZu1Ki_ED_8lLlneJSlGKHxLX3zTqNYeeKZ7l5xb8HroFvP4WCO0DUHdZEaVS6lCmU4lCVGkJ6kW9JkpY1rMAHMHg-umbIFfrhzSDHyAaIU0VsiiQ_9fSixA00nI-jQhGiw",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJbev6B85TzDERWNTFB1_C9a0",
+         "plus_code" : 
+         {
+            "compound_code" : "2CVX+49 Klang, Selangor",
+            "global_code" : "6PM32CVX+49"
+         },
+         "rating" : 5,
+         "reference" : "ChIJbev6B85TzDERWNTFB1_C9a0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "15, Jalan Stesen 1, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0415656,
+               "lng" : 101.4482255
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.042758430291502,
+                  "lng" : 101.4495237802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.040060469708498,
+                  "lng" : 101.4468258197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "巴生壁画",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111621668331656910053\"\u003eVic HP\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-soGzMF3HxoUvU9SP3c_h77F_7pwCruQquBC-cMCWpBsfT1LZCi6fMQ9u95LKpLmKcv-8y9YtjJNIe09rsRV0ug30rFAmDOti0MMrtlbSLCia-QaqLVlywdycjpQns_vUPJNO90AaOhBrQa-cy5FO90mWomoyMyEc33lEiSvb1WtT2keJkmrXiNDPD3D1bdYJENOQQdhBR6gyuOBTKw8hU1IlVuOG2B99Vge8rFccD9Dc-pNu2wXIn9bSNqswVNTj74CUYC1vQs9qIsBfaTOzVr3D99ejd0l7mhe5uwROsn41l8w7uFZkoyn60EGgntoqVYRodcmD3SZ6Tt5l2MpUJ6Om4FR8jP9-Z6-aDYL45VJi8N0fZBfglaIFx3YFlcRGmzqeFB1z2fuI2aCLsAv9cYhm0Obx1n4pAOFx4fJ0bnVdh4",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJUeYnhR1TzDERzdUgxJ_FrmA",
+         "plus_code" : 
+         {
+            "compound_code" : "2CRX+J7 Klang, Selangor",
+            "global_code" : "6PM32CRX+J7"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJUeYnhR1TzDERzdUgxJ_FrmA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 33
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tengku Kelana, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0408419,
+               "lng" : 101.4471122
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.042203080291502,
+                  "lng" : 101.4484293302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.039505119708498,
+                  "lng" : 101.4457313697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Klang Little India (கிள்ளான் லிட்டில் இந்தியா)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103592028156937116807\"\u003eAndrew Ang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u3rJFT5J7V7i1edwY6X-l8jKrfbulfGk_0lq4qgBE3F_VX4A2wTkY5FvrqqNhI6fjOYuxYpgZivJ6qm7Fl7xm_Phm_sYn-S6ievJlmLEd3iqnmYNw6zLI3qFgGrrVAnzTqkFbvY3G5RsRdStRWZE_ydkYpesr3Mlfm5-d6jOA5JblDaqz3wn68O2UU0XNeTNIbK8oAowELTVMlUrsY03cnWarp20WrEOgjyr_Vswc5oqtwF-gYGY5kZI6BnPg29Ct6ASAFls3JaV45JFYirdW8Ijmddw1aswjp41-hq6Lw2ad184SZ-cI6xiRxhtUpXgtM2EeYJtsNaKaqsH-KCeZLCEFC3-OaGy0SaRPq4fJf0nfbqm5EsL5labqoCAqyL52kt5A5EvEOnZoQlIGNhqajMOzWMWR1RCG5WTU_iIxXSnlQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJoy5GMQBTzDERtWAkiIGmElE",
+         "plus_code" : 
+         {
+            "compound_code" : "2CRW+8R Klang, Selangor",
+            "global_code" : "6PM32CRW+8R"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJoy5GMQBTzDERtWAkiIGmElE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 125
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0427702,
+               "lng" : 101.4484216
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.044065680291502,
+                  "lng" : 101.4497402802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.041367719708498,
+                  "lng" : 101.4470423197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Klang Heritage Art deco",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101192809825688743813\"\u003eKano Ky\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vsX4CfHsDXrIQ6DsVP4Y6aJu-2OUPAYon80UvrEsBpUJVhwsO4WqAYvNu2ze0KpPpHoIoUxlP_VvOHy28TjtXtRfjRFrkk2RCFZ-5VcO_FScodxNRLbCpPSct40HERgcMqn7OD3eZTq8mSXMbqo-Dsd38rSLchcqBcuVr9n67hDH5ivFhY_PW6stimYEeENj9XRZdInBaCoSmnbqnrvRNuxkdcn0vn0Uzxyl-Ngg5FeRDf3nmgqqzEc8slj9SCb3yn8i18vyjsWdNC6a6Kv3rnSmk1NTc4C0OfzkFiPSFRWErnUQDxXR_4ZHvXnIm_J-MjNMFfjTNeFBWOq6VtJrrRW8EbaLML3awQBMQ0YfpYuFHrjNfIWI7-e2SofKQsCzHKNbylrZSJ52IzvfPnpP2Veqxn1ITVGAGX4XMRQtPJzuHk",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJR9JnNL5TzDERa2T4Z5WrVJI",
+         "plus_code" : 
+         {
+            "compound_code" : "2CVX+49 Klang, Selangor",
+            "global_code" : "6PM32CVX+49"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJR9JnNL5TzDERa2T4Z5WrVJI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "No. 2, Jalan Bukit Jawa, 41000, Klang, Selangor, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.04245,
+               "lng" : 101.4455304
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.043661430291502,
+                  "lng" : 101.4470238302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.040963469708498,
+                  "lng" : 101.4443258697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Nagara Thandayuthapani Temple",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115922450690105252850\"\u003eEngTeck Teh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uvz-SS1_RvKU5QOs2IRmjDJjMWTB6sZOb6Kuy3R1hGJWIhd7s4apqJVPFR3WeBgtyVA6pJDD-jayb5Kpr_dOf_KRSmRAnYQIdOkOPVcuAsExRQVE3pr2-E27wn9Y216zctMzRw6qS3s-4d_mJjqpKqUQ_BvU6HgaAAW63LrCplX7mNHl-GjJskqASB5FaifXhoJUkSRMD7BYyo7MTdCbv6zBgKuenfzRSRBd_EZtt_Dz3BU51sWwhDJaduqajCFmNLD03gASov9ea0cEmSdAx6KnlhFdfpFDhx08MgPsdqPaRPNtUop0dTgrN07dAx26s-_vu2Y7Axean19M4U1sPXoSJUFchdwrI5hkTVvNRATD7eyF-gIC9b8YCuIqBZmQUNGg391q1tscxqI8rVzI77Fb048-E6DK3i7TzU7xWgqA",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJK3hAGU5TzDER7X20XEnLWn4",
+         "plus_code" : 
+         {
+            "compound_code" : "2CRW+X6 Klang, Selangor",
+            "global_code" : "6PM32CRW+X6"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJK3hAGU5TzDER7X20XEnLWn4",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 161
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "30, Jalan Raya Barat, Kawasan 6, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0375624,
+               "lng" : 101.4424898
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.038922180291502,
+                  "lng" : 101.4439165302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.036224219708498,
+                  "lng" : 101.4412185697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "PERSATUAN PENYOKONG RUMAH BERHALA KWAN IMM KLANG",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2353,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101200607262154155817\"\u003eXinPei Yeoh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t6KvL1Egu1IFqlCSQ82IlADQn1s4BVy_7lUQ_ly_sU0LUoo973J1Db8WCV5VATyFOyAD3UWXMlPc__dPWIuXux4KHBXkbfNANGuaZCcE_typqopfNYHPsYewCeGVXJPpQ9zUu3ElIl1TubnqkqxXRHC2LV1vC4rMH1_1hx2C3BicT7lzbPKTRWMRfyzOoh2jBUGL8AN7dhjriMfrPlrEccdQLTQkmnOXr8XQMt7VmKHT4oVRm25S6iAxM7hgmjPpN7c9HXyxPk893ne3RRfYTautmhDDxDEkNMNHe7pnnliuzpZa_sAH4OdOGzlAwukxWqTyenX352I1SWt3j3E_t03NECVRT2rV1vEpwai-Dk-rwEpAQD766Id6qe1BkLWuiFHjUnsL1xK8nk51V02ajcNtR46WAgYcTmNgG_0WiyzLR2",
+               "width" : 2842
+            }
+         ],
+         "place_id" : "ChIJP03O4FJTzDEREAzBKVVpV3s",
+         "plus_code" : 
+         {
+            "compound_code" : "2CQR+2X Klang, Selangor",
+            "global_code" : "6PM32CQR+2X"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJP03O4FJTzDEREAzBKVVpV3s",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1712
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Mural Wall Art, Jalan Parang, Kawasan 13, 42000 Pelabuhan Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0017376,
+               "lng" : 101.3967831
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.003055330291502,
+                  "lng" : 101.3980697802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.000357369708498,
+                  "lng" : 101.3953718197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Port Klang Mural Wall Art (The Workman with a Hard Hat) by Judith de Leeuw",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103451483795299164791\"\u003eMichael Lee Hock Tay\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uAsiYcqGXu5AqrP7Dfi72k36yp3S0hvIrIpV2tZOHqLNHlY72iqwApoRZdV3Ac9d7beXhtXzo8-5SktM-_W_qaqRTEAz7SAsqWL6JFf-knadxM9lfFcaXlj43IKTiKnAXhKli6oWNUqhBNj7rsCZpze-eTTG131sE3rA_gR48XPfLJy23vimdF7hHhCSIta1MH2KrhNDVW0HLnG8_jJnhvB7zKChXJ18DNhj_gl_bHcgpXZIs_LdK0qumNBxY7eC6KF0Ddc4464F_p1reBO4JHc1-xNEJSYooyLcCxMICYbV2GveuiLjYeHOxYNQDBLZRBF-NYAtNsGjUEcwFn-WIcmYmMRF33OyE6IVlLwJqqM3Vk4i_seflQ7C01lfgCANkUZbYqvvoAqs_cCRKIqVc1C8Q3vS6ZoF0xEVO0DZxdNFDCOE_b5TJ5h3ekQy_0",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJPYcHVgerzTERhgBhVyKXxxY",
+         "plus_code" : 
+         {
+            "compound_code" : "292W+MP Port Klang, Selangor",
+            "global_code" : "6PM3292W+MP"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJPYcHVgerzTERhgBhVyKXxxY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 3115 & 3116, Jalan Siakap, Jln Tepi Sungai, Taman Teluk Pulai, 41100 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0502735,
+               "lng" : 101.4275537
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.051256730291502,
+                  "lng" : 101.4287895802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.048558769708499,
+                  "lng" : 101.4260916197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tian Hock Kung",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101336532499234537913\"\u003eRaymond Lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkM5xV1LW3xDWxUm0lJSkxGj1tbrsZZe-ZUATtBpm5d7AH5eLYw_GsR-1_LpnVfFSLKyllIkRBQs9HjxAgyEvFl73xyHQ2hRzd3cBdunMlAiXNNUBVKU4Y9F7oloL_va8NJcBzlyYJft0WX96nVOdbAhVDIT-Z4eHOwcu_K6Ar2GWXKEI7ygoknRU9DWNEHYlx7GeWnOrEAvo6tL7AwSwyJtNhx6RD6ES3-t-ykR8PdCToPtEAuMTbQbKPwTAl9iI7vQKRri1RVIpz3nlsL8SLcknaZ8tlstCI5By9abbV83SujlZKffabtF-ds7yc6W73bJqxCc-fOa24VTXItCeedQjC4_hjqAFNOKievTL9LayU_hhVEPNDrstnPMlhuGqK97WD5Gu1jKgiUfNJLao-f2srxao53JSGqTTCzH5QiaNX",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ2cXWPKRUzDERBPo4cGNfJHQ",
+         "plus_code" : 
+         {
+            "compound_code" : "3C2H+42 Klang, Selangor",
+            "global_code" : "6PM33C2H+42"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ2cXWPKRUzDERBPo4cGNfJHQ",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 387
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "26, Jalan Tengku Diaudin, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0414157,
+               "lng" : 101.4487336
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.042971830291502,
+                  "lng" : 101.4500174302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.040273869708498,
+                  "lng" : 101.4473194697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Padang Laman Seni Safari Jejak Warisan Klang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108198810009330794571\"\u003eHsien Yi Lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAeZEBPrNMW-3XDs_2eKHlg0Gak-shegU1232owbnhVp31FJ42S2RPxgC3TArnOLOi3T-zYJ7ePfWVsazGE2WpRRmVvQl-RCxb8uckEGRSWctUP4asjJARc6By7lhT511n3Y_c2kONijxeqlx8IFHEqOhgJGmtKekI3U9FdSVP-YjqEpSIRHRoA4WB3v4g_2k2nqNZhId794lSUySHrfu_TaDjHly3hFPso7y0y7BD0kNMFhKkD8Nj820S75t8rOEqc2fcgEjikkDxEbBH9TO2BcDwNawaGqnUsIdIzzYgIx4p9L2WcY5u7j1AQBZ4ujiV2-Ts9dH9mHZhx3Qjujw5JuJauyFmKp-s0cd3lMNOZGmXs8QAWNE-oJ-UqHRmFRd4KvYB6H7FNzGncPKsBn_eQt02sphFALJgQ7C5C9X1zQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJDUoqDUJTzDERGBmzm2eqbjQ",
+         "plus_code" : 
+         {
+            "compound_code" : "2CRX+HF Klang, Selangor",
+            "global_code" : "6PM32CRX+HF"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJDUoqDUJTzDERGBmzm2eqbjQ",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 47
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Seksyen 14, 40000 Shah Alam, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.073281,
+               "lng" : 101.518461
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.074644580291502,
+                  "lng" : 101.5198760802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.071946619708498,
+                  "lng" : 101.5171781197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Klang",
+         "place_id" : "ChIJSxzDbQBTzDERi379ozUD9PU",
+         "plus_code" : 
+         {
+            "compound_code" : "3GF9+89 Shah Alam, Selangor",
+            "global_code" : "6PM33GF9+89"
+         },
+         "reference" : "ChIJSxzDbQBTzDERi379ozUD9PU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "28, Jalan Raya Timur, Kawasan 1, 41000 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.04205,
+               "lng" : 101.4511362
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.043410480291502,
+                  "lng" : 101.4524959302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.040712519708499,
+                  "lng" : 101.4497979697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rainbow Umbrellas Klang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117066434074962659257\"\u003eJo Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t4Z3q4dvXEAZNU3xm44cq_PH-ltmMG2rlRkUnrC9VmjhP-NmqztsT18Tqn7eiLDcFdAIB-07x6TMjS95XnZYvsEsrShJWYRqKGtSvdRviFtPxdt4lubQjCIibnPmKFManTiuTJcNmQg3QueYCewwunzYmYtj5N7fCOMLSA8H1xhvh2tVENNP5e803Pc7w7DmGA2KukttEEXzhrUwDFejhhYzTUFyVV8Mr6dwwU38A6eVPHRs_FBzVzwKF6lZNfnUHECrsm6OgFXgYhR__NsCXtIq8vse5FicNW-37Iq_DVsVB5mXQePNl_OB_Q_QYOvGa9L0pO53HgDdMl9zZjJE4wgIOXqHqK1Riqx4hNLyKTVvHEjDcvdyckdT8bdQROPL9aPlAPhD7jv-16SI5VBR5YTGCrz1FpH1bfhl-Q-7PZqh4",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ_-dac4pTzDER3phljgKT2R8",
+         "plus_code" : 
+         {
+            "compound_code" : "2FR2+RF Klang, Selangor",
+            "global_code" : "6PM32FR2+RF"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ_-dac4pTzDER3phljgKT2R8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Istana, Kawasan 1, 41200 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0363576,
+               "lng" : 101.4456283
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.037839680291502,
+                  "lng" : 101.4468448302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.035141719708498,
+                  "lng" : 101.4441468697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Bandar Diraja Klang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113466740962182475635\"\u003eYok Kwee Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vaReHpLiNAbbpEkhZAtI4XMUglfiqRNEZ62FGF-eXoQYSOZtSu3gKRpZUBRDv_3BoQ2w98kHWLzcS6EYYn-5j3JgkU9ASRrOmNW613eDggqMHihNLbgShXitIpxCL3g1Iu7YP29BhdFQ4sHXk69uMEq_sp8Jj4qIoQ2HYnO-t_YBGVQn6Xla1CXRT5XbbrtTCvtaxGstpmGFFOJv5yJ4Rd-AhaFqWyP8fxDzgw0IdxDd7DPrGFKn6s5ZiNPbacuQI2L6fGrA2wsq1PlghR4fHOoOPs64kWwnemBRu7dkTxODLN9jAC7FEX2yYbynq66MXNTb4h1muTBxXOmyi0xSAcxS6nd4jFpDwOnlQ8I1JdAMQe9yvU3oOXyd1WdPTaLeA_GXKu4U_pul5DghMvJMda9ZKmh11063GytZ5_0OE",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJQS9-U01TzDERFFRnNanT44U",
+         "plus_code" : 
+         {
+            "compound_code" : "2CPW+G7 Klang, Selangor",
+            "global_code" : "6PM32CPW+G7"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJQS9-U01TzDERFFRnNanT44U",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 95
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "41050 Klang, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0977775,
+               "lng" : 101.4257179
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.098253430291502,
+                  "lng" : 101.4270575802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.095555469708498,
+                  "lng" : 101.4243596197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The Crown Of Klang",
+         "photos" : 
+         [
+            {
+               "height" : 2238,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113890247374438145186\"\u003eahmad azka hj mohd zain\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vLh_N_GjKKqmgHD7fl8tesY0qFEMjPCftkfD-_d4Iy4ySUORoWRzI83gaQnc6ygIJRjSgWDBMDSXdD9zyk66vkxb7v9jMuQ1JTkRgmLBpHnq1GUudMygwdBjiqynUa4rRUGBWRo51YVZZH5ucqpQkAORvhU8QwvbyLJIZ0kVFB-sDwUWLfXpL1w6ekDVbDsligvzgcMUHrAwp1MegM5ZLHTECiJcbTzGfX0rnZsICuRSEOKlODU_fUnPR4oEVJ171_4zpGe_TGb88v5LPZBFbPX36_QZ41OLPM0loESHpzjYZ12JPNFwZkzGvi0WEoU8x56bnmQPqOJd7eNOU5brh1KyRkcoA3yBUIlpGKuAt24vbAWy8269gtI-7b2Kt5zDFRqR1rADprKrEdM6g5pvb5YvBMP_JN-LQ0_YjmCfYzP-k",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJB77uKgBVzDER4RRE-7dgpKM",
+         "plus_code" : 
+         {
+            "compound_code" : "3CXG+47 Klang, Selangor",
+            "global_code" : "6PM33CXG+47"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJB77uKgBVzDER4RRE-7dgpKM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7
+      }
+   ],
+   "status" : "OK"
+}

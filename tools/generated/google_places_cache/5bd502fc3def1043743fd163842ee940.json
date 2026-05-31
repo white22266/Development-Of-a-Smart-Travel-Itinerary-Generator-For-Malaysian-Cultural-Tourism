@@ -1,0 +1,1121 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-u77Gn1MBDgTMrLW2oRRiY6QzUnTA42swA2C7I-UrqZkuvU3lmhmEwGL3RTIfapBrNQOwCmEABkJZlvnhmviaq0y2qXH5O1IvIu7kO8ZkfJaC1Pqt0ph7RDV80NQJDTVCzAP6U8wCZffpsmsrvj3cr3RcZ2dZbFysr0_d_aRdesqJGtu6u1GuoIw1N2wle6KOTbhEbQKco4U7LhxpuJAwdAC_Ze8DKx-PJzYt8slJ87bjdFDcVr9SXhLjxfIxssDxdQ6YA34sSy1yoNBU5sAypfBnvd5jD6LE4GEdsEES7XlKxY2ga4lbfWYXApoAiLiJLP2F5RBkYDNXx11k2q5kMI1cCSWnvb-Kv9Q6nm8FC30lDJCnj1I7x8IWcFIpufJg1rutTO1NF_dQGByIk0fnmXcXD9-SdQQKIsJxROcBFCF-jPSMRYi8ZlSaA8uEAhsdoJeeL6RzI-RN5w9u-w36V669ixhm1XHIXF2Rc0dFV4SUKYFXyaiV3P8f3BBU-6mJcernpLOb5lWSFXPbOxZFc3eWkx7V4n7tp1uw8RCg7f7DG6CzeYBXhM0HHLP7yxrZfVzcfrKg5VS2xfH1XvZ7eNgMJ_neC3BE8aJZXWwu3TRX4kEIue1khRZkBZi_YMSegxetqhVDAhRicPnOtN1Ut8-YXK-e6BpLiYmMSdTgK5fdWgi3C6PzTZw7AKr7ZuXsrcpI4OeDX2mULRCrGEoQhOE4sWadCnxuvzShPQUhtICQbNHAmkbPzaB4injeXB2ha2YMDVWhfF3xe0JnDxgUX6xuUjMKRYZkg9E380i7qfnT1YNXw-EhS2ufhBqqyR6lebOs_LBIU",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6211576,
+               "lng" : 115.5917354
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.622538380291503,
+                  "lng" : 115.5932262302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.619840419708498,
+                  "lng" : 115.5905282697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Linsuk",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113205433825702919517\"\u003eKurnia Agung Robiansyah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tZK0lnr82a3MOBOgKTXgAPxHqm5fdfSnxGUG-eRejfMYuHB_FAGuQgv_oDyN-yqsqrD1snhRuB9NORCIzSMWypeVLBQqKBDA_dqgwMSRIt9X6TLxNjExq4pyP5pVpq3qNu2xzIiUythJt5sHtQ9jxI7tKRNAd5bvu0-4ueHh6UCqjm_uSBV7VC_3Z_moIJltbEIcyJdqqU3SPmVBaL9f54LhIwqG5He4sJ3axzHGcTeUi-EcGDOk2XyvZ8slxk5bfP8V5aPMDWpKm27RakFlB04Td7KhwQKvjrZKHuhhxTo42il0i1QVraP097AbEaffwCMoQJPH5P2boXFCX4EsFzR0Ej8bna3oQZQ2hDJBuD0f8HVWGqgNHUbbqpC539ciUey_rcKs4zfvDxWnY1mT065l_gYnhI6OA-Eox3lZeoP6Iarh0BRihwWCtlN4MY",
+               "width" : 2256
+            }
+         ],
+         "place_id" : "ChIJfdo0GwBNIzIR7GUeocXP0r4",
+         "plus_code" : 
+         {
+            "compound_code" : "JHCR+FM Kuala Penyu, Sabah",
+            "global_code" : "6PQQJHCR+FM"
+         },
+         "rating" : 5,
+         "reference" : "ChIJfdo0GwBNIzIR7GUeocXP0r4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89709 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.57174,
+               "lng" : 115.600115
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.573158230291503,
+                  "lng" : 115.6014165802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.570460269708498,
+                  "lng" : 115.5987186197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Pulau Tiga Park (Administration Office)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114674827458178178696\"\u003eEric Simon\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tEJi7atUR2Ji2mbLwFKbc_66h5magefwMYF60gAxtRfIZPWYEgxMoCp4Ri5Zjgc_hSVg-ZHWYACmDMwTH7wFwsgD_FdFFwHIPf-EsYD7KK3JFgQtPRJRwmgf4_fdhQPGoOtRtOBmVNPBqOfFAq18Kt-XaP157vgYmkTO4CBt9JjGSYsnzTXc99nnsCPbjmMOBat52vVVVuunDDyMBGg4f6etdQvhG62sVYwCCFWxSiN27mXr4BtVcFJ3BKNNTe9puSn1afe5gy6cH_ftS4bTYEIc-UsjmRRcmeNi0ZGRuQT6CvY75cWpTdZ0UagKcQDpbZL-3ZGcetqzFhM0qG7CvVfgG5bJK5E9XPWKSNnZNzyRwCJ3hPwetg60bNs5c02EPMghVm3bSHdps_cSKYSBBQ4K7HijRr_YjeBJQ7BpyI8jd75AEl2gOiMK0HITxs",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJhc4H1GlMIzIRb_upznOAbUE",
+         "plus_code" : 
+         {
+            "compound_code" : "HJC2+M2 Kuala Penyu, Sabah",
+            "global_code" : "6PQQHJC2+M2"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJhc4H1GlMIzIRb_upznOAbUE",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 128
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.531507299999999,
+               "lng" : 115.5366663
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.532663130291501,
+                  "lng" : 115.5377177802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.529965169708498,
+                  "lng" : 115.5350198197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tempurong Golden Beach Resort",
+         "photos" : 
+         [
+            {
+               "height" : 2700,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100729334877404945152\"\u003eKian Koh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uqfzZRHP0nb9yaEWBZ-0rVgAOqJscQUpVnPdspigqqQCikr-9wFnSwPBvVLg243T-aq88IbuSazDLkg2L7dhJGPPjF_HmqwJJqztiIKy-NLqHBFvW1M7DrfzFIrVdDkhOo7swBSz4WFtd-8YqyvufQW8PP-ig7XeLvER52f8Jp3o9CO1i0JdQgPwjZRnsU3B9ZDaU4L77ESPIxyufBGJamGfrkrUAF7cNrbJI_thc3DlxiZZwuz7LqRy4Lp_idRLIrsCNMt99mvhcJ7c3JnAu1Kkba9_tPAACIU5Vd5zsd0yJeCO0jI0XNU8oWiKL3Jpa5Xg0CS3cOYTCm1QE0XOAvFVy6nXg5Au9rGOe6HFQXFVs0_y5MC9dJkQQegb50vwmoZuZF648w48jvQufm3zi7YiAnJiBX5vDq0BIaXJViN9E",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJqTA3MhFJIzIR1KsczW4qxkw",
+         "plus_code" : 
+         {
+            "compound_code" : "GGJP+JM Kuala Penyu, Sabah",
+            "global_code" : "6PQQGGJP+JM"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJqTA3MhFJIzIR1KsczW4qxkw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 111
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4971307,
+               "lng" : 115.5440984
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.498567030291502,
+                  "lng" : 115.5454403802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.495869069708498,
+                  "lng" : 115.5427424197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumbia Information Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110467330916057827082\"\u003eawang abdul hamid\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vM1bNJtr6mAorJ1HB0NVrHGl9gWc6s9yHP1faX4WmmZJB9NFd7U5pbz2BRgDqdlfLBGl50B2p56I3NxyndSWVITXButR0RhuG-fJ2HdJrsjsazESz32mOLkAnQLE9XQSHXKsmcR8fwbDsGIioOyqczCAT8CHixBMYO85YoipODGFibh-OVqk8gBuzMte7u8rDTy3exa5FWDslVUmANl2Qtk4ecZiQSuOSoxX3RVIsbnyCLmW_GAxRJDtU8oIG-8VVYmnSqYHm6cgwpkjiCfkFzIUJNHqtvrln7YHwJQ8cY5r1Ycxrk606pBEJMtuphugNd1DZtZHfYKjUV_n9VSAKcg5t0uXrk0PX-mXPWdV8MFE1G04PMy4VndJjenw3nvcA7aEfsVAggBvrwXLfDAMWTSuI4jufPmPVkZDyOk04L4uyF",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJCwF6EMBJIzIRmzDxaAdI_X4",
+         "plus_code" : 
+         {
+            "compound_code" : "FGWV+VJ Kuala Penyu, Sabah",
+            "global_code" : "6PQQFGWV+VJ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJCwF6EMBJIzIRmzDxaAdI_X4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 174
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89709 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.571717,
+               "lng" : 115.5971459
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.573251030291503,
+                  "lng" : 115.5985643302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.570553069708498,
+                  "lng" : 115.5958663697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "KP Mud Volcano",
+         "photos" : 
+         [
+            {
+               "height" : 2048,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108635932764713422294\"\u003ehornchung\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tatdzDqZt4OEO9eObxxq5nJMMToLBqC4c1lUeNq_fI7tx4uATTl-y9O7jc0UHGbyrskxjOJ-dbwBSIAwptgJxWgpz10SFrX6U7SD2xjVEpL_atj6h3EOysY8ky30Xx5w8ACqewWP0LbuJ3SFfOanqZl5Qx1Iyg7nr3xRxmHYK6AoaLkHGgWP-LlKTdoCUESeUMuDQPTiyhTBg88EHN51bozU4jtH_ML8J0K3R6QHrRbfon5cH_zuNKSlr5VeJavPuvlh0xgazKBPlBw70mgoC3q-AeMvtm9BUhR0ni-gUtxh3xB_BLxg1hMyB2JS-wElImJrxKJKXeyXHZty_Shgah2AUNC9vFqoyFwfTRHLQThrb0I7zCQjyxdSOSek19y8bVUEttJjVNyJJKzxHcoxD8UHt-VjH6ptgq-DYnNwGkv7yV",
+               "width" : 1536
+            }
+         ],
+         "place_id" : "ChIJ24GMDOhNIzIRiFTUAE5DsNw",
+         "plus_code" : 
+         {
+            "compound_code" : "HHCW+MV Kuala Penyu, Sabah",
+            "global_code" : "6PQQHHCW+MV"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ24GMDOhNIzIRiFTUAE5DsNw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Bandau Kuala Penyu, 89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5656474,
+               "lng" : 115.5959977
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.567002130291502,
+                  "lng" : 115.5973510302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.564304169708498,
+                  "lng" : 115.5946530697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sitompok Bridge",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1999,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105596636534752167904\"\u003eAzlan Raiman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tHrMxf-Mo_3dlj0Iy1mULcROiW3csVt3uEgoydXjsHj2gZtqNMjw05TJcAS8ROsqGvFLbOGTQRNdkbCMlOkftkm23d_U1CRIEBWTIZporLNX0LGE1sair_ZMo_-HZJiWTjjj7Z95mvPOcXWikO7LkTVHvsy62DLAVPKBc3b-2Uhl_5CALBOCoGb8eS7riIB6JcJgu2WWZnOiR8UoMXMpB4WWvFr4UTyBFWE3bhe7QCymfMCWoQmtzQy9biuA7dLClzgwMX3B04RS13y_ap_BLoxpk9O_JZsxqXB99XKJdkOtYxwsTniDnwoYF3zjHyJUzpohxcYCq0cpKKdcCIPD5ASMtjryar2mPL0VBDV-TTHGj201BggrcB6FEZtJ120VFL_vR1yxESWAYoN2C-b5o1jCwQ00CGZq-s2URgzEQ",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJR2_vRmxMIzIRocHjHNHBoBU",
+         "plus_code" : 
+         {
+            "compound_code" : "HH8W+79 Kuala Penyu, Sabah",
+            "global_code" : "6PQQHH8W+79"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJR2_vRmxMIzIRocHjHNHBoBU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 114
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "GG4X+GV, 89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5063283,
+               "lng" : 115.5496556
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.507668580291503,
+                  "lng" : 115.5510031802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.504970619708498,
+                  "lng" : 115.5483052197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "KG. TEGILUNG",
+         "place_id" : "ChIJDyTgPnFJIzIRwhOrguogF3Y",
+         "rating" : 5,
+         "reference" : "ChIJDyTgPnFJIzIRwhOrguogF3Y",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Klias River Cruise, Kampong Kota Klias, 89800 Beaufort, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4442783,
+               "lng" : 115.6311893
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.445595030291502,
+                  "lng" : 115.6325194302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.442897069708497,
+                  "lng" : 115.6298214697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Klias River Cruise",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104183861438228820461\"\u003eKlias River Cruise\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tXUoWjrRYrQIpDNQLO43HocAb4RYgwjLaVRULNuSR5OfAyNtI3scwaRPszobj89fb6mhddjOoWbiOmjrb7Aw-mVqBarL6g2gQxOCnJ3VB86IbPJNmzVFKX_N8pGslI6E3K1RjNXNnryLEq3KmjUVBStuSiybatE7kTeQG0A4_zQi4jUrF4f2dNIMngKSval9e9w9JpqlVS1gxnoS5Ca4JSC9CsdwQg-FYsbdBJYu62rKibOpUpj-eInSe27taAhTFhS9hUwP31B48SRtoXtkzD-NVyg5vCzeenKqALSXYs_g",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJZaBRExo1IzIRfJv5hwLyxzk",
+         "plus_code" : 
+         {
+            "compound_code" : "CJVJ+PF Beaufort, Sabah",
+            "global_code" : "6PQQCJVJ+PF"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJZaBRExo1IzIRfJv5hwLyxzk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 322
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.72884,
+               "lng" : 115.653966
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.730188980291501,
+                  "lng" : 115.6553149802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.727491019708498,
+                  "lng" : 115.6526170197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Pulau Tiga Park Malaysia",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100393736429207275690\"\u003etet tshung vun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tjvT91OheWxTHaPvq5sC_DN-lr0tavr7cNpNhFkVG83SAmsU6z0dflowjUeLtlN6MNYhED52Re-cGOgro8A7oh8oQNbwbMhje4fTEkK1Z8j73tJ1Pl8pOd5vfmM1oRFoLFBr0PxARjsBB-Xyo52W7KWFp26Q-IRFksmGAJLb5FAKguZzkAtpqaXGV7hV_7tj4qEwog25O6ygoHc-b4zbv_B3gu7ca1LH9BFhX7RMJtSCbdzwfcG3EU01nY2Mxr9pAxItmzcvqf0h9fzRpHAfzG8rsJpk413XymTnlTTzqZjl6HSt1tAsWx6ravpbp8p2rYhixby9WjeHR2gc3lkGZFDmmTHfSLirka6xU7tnCbCmXitydxsYeqmwX5XtDnz7fdPbZAE47lWrJ5ncnNDnRUZ-ANSlEmfQR3I0KcTEUYv3_y",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ44ErJFVVIzIRghYu9M2aOBw",
+         "plus_code" : 
+         {
+            "compound_code" : "PMH3+GH Kuala Penyu, Sabah",
+            "global_code" : "6PQQPMH3+GH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ44ErJFVVIzIRghYu9M2aOBw",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 189
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pantai Batu Luang, Jalan Kekapor - Temporong, 89740, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5244952,
+               "lng" : 115.5240646
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.525444530291503,
+                  "lng" : 115.5256584802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.522746569708498,
+                  "lng" : 115.5229605197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Luang",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111048647500484692500\"\u003eHoh Jian Meng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tg6je9y9Y_tQ3bFxzKvZ6CDu8v6ghuTUZ2DCXcP_Ln9cM7Nra6nNJSveddfzStFkiIpiQiHL4lgpcSVoX9BLYcFVvvptng_LOgdRlYkWlsCPxqoGn7V6RQwOkGrqRZ8B1c3sq8gwJIqqXI8jPW2AqRV9Oh3Z9gSwoM2oJkDvoOquNkf2BsCQJf4yUq6Cf9iBkU4Q-P6BBgH2UjDd5MLGJwaiV77dAwnx7QuylaD4Tc8Wm1upowtTQC5YT1FK4CTY67WYp3GbX9qYlGNTIesxRP_Y2XUwXaZEFb-YbQReMvuk3MCNMD09C8L4z8fM_lKLeG4zwJyosWl4XG73_nZti-fpLxc8wQZ1lIOoirCNgm0dGyqiwhWWdA-m9BPihWuzvYdGsrbUJIhzGgMRWv5JVW1qjmQUWF5NEC53JR-At2zeNCQdo0OLRUOova8JL9",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJJQXgrQNJIzIRt1MtbBqvpUw",
+         "rating" : 4.5,
+         "reference" : "ChIJJQXgrQNJIzIRt1MtbBqvpUw",
+         "types" : 
+         [
+            "establishment",
+            "natural_feature"
+         ],
+         "user_ratings_total" : 150
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pantai Sawangan, Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6255026,
+               "lng" : 115.6066488
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.626787280291502,
+                  "lng" : 115.6079480302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.624089319708498,
+                  "lng" : 115.6052500697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sawangan Beach",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116198444596552152537\"\u003eRussell Jimbangan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tsG3WXAk0xtZywaZTF5lz1uIr1tFdReTWNHpkxfs7WHwZc3z0Lomx9gFSfYXWD3ZvLmBxQicCzPU1m_T3lwR7-rdRGuBmxPI726niY_ghdvuO0ZNiuwfNxRrHnyBK9qG5yNbD9tupsjCqIGpXsojCtclCaSLjoWSBPjug3f0b1km7EHWmisnS3E2Ll6IuTqdV_IbcAvku1ebU_5SQh6GIWjtIEHTLRfDLy4TKrMY0M5EpJbac-eqZiRiw8Vyor4RePDNLU4C4k2G2SzQM8-OREwolMN2URL-joVGcGVsL5dlgh88eDs6NLGdyi1h8O0EsP7rT2R0c-fZ4XwXa46ZUWRTzFUDhOXPsLg7h1wUcCw00HJNOhTK5GTf7u0qLWLDr7jFLgesM5apwEetSoWuAxlt4omwdgCR3CQUOZbq0",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJHTxGgYRNIzIRSJMjWXzj4Rk",
+         "plus_code" : 
+         {
+            "compound_code" : "JJG4+6M Kuala Penyu, Sabah",
+            "global_code" : "6PQQJJG4+6M"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJHTxGgYRNIzIRSJMjWXzj4Rk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Tempurung, 89747 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5352592,
+               "lng" : 115.5416549
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.536616030291502,
+                  "lng" : 115.5429962802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.533918069708498,
+                  "lng" : 115.5402983197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Tempurung Seaside Lodge",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102571181360340583498\"\u003eNurul Iffah Zainuzzaman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v_Mc1oH1XPZY3QCAuPOIkWkcfg16w3-qqgAIHlde76a9nwM0TEjDMR2Zgt3qVtWJoMk3d7gngiCAY3ozMJ9PFP77dzjkUNiGVJE_qRl0KLPuqCbSOmL6-D8v5Ew2tuxsi5P91ePuqibp6UVfAVDoFdKMdWfrhGX6-uWQYXYJsOrQCKnwqPjiGSiWzLCZWHi_OHnaMwuEP2JzhCV6qBlSCi9sehFcQgXHA3TzuwLE4odi8j7z9dlazqvgJ-OueqW61S91q5ZG3_xgc-DXtRQlV0vFFl8s5PEIxAOC1VEwS7RfFGroSg_iT2RANhXebh2vZgXaihD0HLY5AOUsfbS5OkTWwv2HzlvwWtMad8i80CLtpvyMDM7B_KmcZ4jfFDqq0B1IuD02nO7KVRCg8KIdLKHxwcxtF0NX3IucSWirzM3iw",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ4y6hhrVsIzIRlCzEs621mGI",
+         "plus_code" : 
+         {
+            "compound_code" : "GGPR+4M Kuala Penyu, Sabah",
+            "global_code" : "6PQQGGPR+4M"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ4y6hhrVsIzIRlCzEs621mGI",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 359
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89900 Tenom, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.222283,
+               "lng" : 115.989236
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.223780930291502,
+                  "lng" : 115.9906215302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.221082969708498,
+                  "lng" : 115.9879235697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Murut Cultural Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103808495218573924609\"\u003eCornelius Gudongz (Katikkatik)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vV_MQ5sEhXq4nlSj-PbSVkmTwyVf4__sAF5MnxXx3_dqYrFu2n5ZH0MBIizAFkRoEqdFVGtmx3PROJW4xIS17vnQ8uwMIrlpNcfwyc-hVzBhU3_DfU7wmecbAoBHdIjgICvtdem5QqBfgmG2L6-LbYRX5U28TxEgdboc6evt2II7_cIWanycyT2TLY3xOukiMzoKsa0WtGn-Oa_8a421lDoQZU2JbegPewV8_QIhISuJtrP3d_evpG2f6hx0YfM8HYrJEuF0QwBe4GGk2BcZl_FUeP4x6ytsH7qfIFknne0xsTd2spn2vGdajUW9pTYVUY4Vb9FQz7qof1qJaN78sbJZ8UgU7lKrg3IkKG8eWR7efjKzjCRTXteW8C3VejmQlWpSxb-E2k2oaZOOkgKn8ib7UI2YUcIIcKjo278EewikJz",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJnVYWZIbePDIRmvWT7b-3pa4",
+         "plus_code" : 
+         {
+            "compound_code" : "6XCQ+WM Melalap, Tenom, Sabah",
+            "global_code" : "6PQQ6XCQ+WM"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJnVYWZIbePDIRmvWT7b-3pa4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 251
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kuala Penyu Tamu Kayul, 89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5047761,
+               "lng" : 115.5669236
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.506050930291502,
+                  "lng" : 115.5683030302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.503352969708498,
+                  "lng" : 115.5656050697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Tamu Pekan Kuala Penyu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2232,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104172900250225189604\"\u003egrace tandian\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v-tiRzs-eh6S8OGeF_W4P7y6QxYqa_v8CtnFDZ0QcT0aPMQ_RtltywGQIVQ-bVOAPHhm_4nlNj1kTe_ysy4OKHLP7eBjeay2qQxu1CAuSzH9Nj1zBEpgEJke5fohhujVj158GEE8HHCRd3xi9JBedGFlz7yX8HV1PaepI2rGTsILjhYVIQzqF-WWRdGPLUuy9WUDOCvyN4a28MjVduQTrloEpD0BNeBPHEYnOECceeLIXWIpBHadOtI3RYKFiadvZPgO6XZ17FfcE1vO1xu7ARCY0dNkNgPg93KLihYg2kcGaBIw7q2Hav4p83-RbsdyS82hArE8AQdYnzKr271BAYlot2CPl2reJ0SEf0uStLBTma-nUhBE6KfG8g3b64LaguLrprpjfNM7z1V8GCXoMz4YqF_4FRemrIF3JQk9wkGG6o",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJ-UJJOYhJIzIR-bd8i2SsZY8",
+         "plus_code" : 
+         {
+            "compound_code" : "GH38+WQ Kuala Penyu, Sabah",
+            "global_code" : "6PQQGH38+WQ"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ-UJJOYhJIzIR-bd8i2SsZY8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 76
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4551972,
+               "lng" : 115.5039252
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.456353730291501,
+                  "lng" : 115.5060560802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.453655769708497,
+                  "lng" : 115.5033581197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kualapenyu",
+         "place_id" : "ChIJVzXcRAE3IzIRtueygttqDHE",
+         "plus_code" : 
+         {
+            "compound_code" : "FG43+3H Kuala Penyu, Sabah",
+            "global_code" : "6PQQFG43+3H"
+         },
+         "rating" : 5,
+         "reference" : "ChIJVzXcRAE3IzIRtueygttqDHE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "formatted_address" : "Kuala Penyu District, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4977429,
+               "lng" : 115.5444231
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.755613975052156,
+                  "lng" : 115.6742098142296
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.241531929175165,
+                  "lng" : 115.339623778612
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuala Penyu District",
+         "photos" : 
+         [
+            {
+               "height" : 2250,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115973707662722910352\"\u003eAlexander George\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vRFEMiAZXbIir6tK57KaUvYoaK587FTEeLEjxpKOsz1eMEhUVguuhqaKdCPlwedmBnbHRZGPD7vQIqw17Fga1UPwxPQlV7yTRhQFzVzHMqTnBxJLlIh5nCpCDL_mHjMEbW0gAEBZe-9TGNMapEJkxDBG1gToFJMLR_yTsT0FKlPVikXIqHYbcnrDIQU-717WpKi1HhTMHNMvDauitjJ9aVCYlD1z8FtlPHCR8WrvaGT1mmZeMSbTCxJSg0fNUfgpaR6RUtsmRJmXbO1z2_910iYb997pDaMnxd74D2D-4K0CF-oEj-wg8cf1YeE4MbUDg89BheWRFMScYvmBD_BdLq3Kg6s7sQwI5m6Sd7VDFM3GlV_RxOexnlfITb0lEfVqOTyOlRjsfjeou3MU0r-J9atDqMoN9NT2gCG7HvoPculg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJgYxZ8Qw3IzIRhXMveIomtIs",
+         "reference" : "ChIJgYxZ8Qw3IzIRhXMveIomtIs",
+         "types" : 
+         [
+            "administrative_area_level_3",
+            "political"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tugu, Pekan Beaufort, 89800 Beaufort, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3432843,
+               "lng" : 115.7466243
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.344666130291502,
+                  "lng" : 115.7479968802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.341968169708498,
+                  "lng" : 115.7452989197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Starcevich Memorial Monument",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112902654422916702099\"\u003eJ Bz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBxMLliK94wZ_BFY5F0Mgv0PR2L3l0HYVVilvUcNI9mFCzZaCH6ZKDnze_7xFORpWKZgtvFFrDUhUWZBZ5Zo3dJ12QlXvVi-2XE-9ZOgKF5m62bNuCAFSl_wMVH47Y2kYYoySD2q5hUj5lgJvsBFflvUFzgGc29uN6_iBkKZdx9CUleju0189UfeI-_6cAQErQywTzVNZbLR8rWHFol8YYBNzKdVJDGF6lkoO6aNbd3v7LaRZtn2YxExz5Xod_pfWPjTknZlh06B8nRBWGPw9t7rDshsjEvBLVk1ceJ5NiGWYSyw9lGmbOLxOvCPKh_6oqN07Jtj4dwxLP2HRIfdQjL-_8wMayLqO3-tsSrsdYubG8rylLpQ93sUuY0cptWjC0hNvbYrjKiv1x_NKF8o_OVjbr0NAPrVxibzi-W5c_wpYF",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJ_UHj99rNPDIRLFqFqefJcgI",
+         "plus_code" : 
+         {
+            "compound_code" : "8PVW+8J Beaufort, Sabah",
+            "global_code" : "6PQQ8PVW+8J"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ_UHj99rNPDIRLFqFqefJcgI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Mai Aman, 89600 Papar, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7031295,
+               "lng" : 116.0159732
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.704463380291503,
+                  "lng" : 116.0173126802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.701765419708498,
+                  "lng" : 116.0146147197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Borneo Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101635438825356268697\"\u003ewoo choule ho\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uciydG-tDI0H_f5N8XUSa1rMFwNO0KiDI6pymR-s7_V1gtUB3tojXVX-rZO6zx8g5gnxuekjPr49aM-IANo7KWh1herpf8Fsl8mP0eThgMLgygA6gUPAddgAOrQ71DIsixD3snJPzSy_9zK-v_hULobHW3TNT761vBMomNV9D-vmigT9EghGRWO0Y0-cbmqY56EE4Qi8vWtRpLsZkRz-24NRIybex7VpSlzaDqJhzyJHIhFi4VeM8ljsvZ8j0kF5w7-5Ev05NwHREd4JCTlhFwywSxEX-dxxawm0FtJ3Xty5JGK3d9WEkdKWZ2QSmJ3C2dt4bYGRtTdXwMbiSPZHBI-e1O3Mu294YKYanln9nIC_V3fFnhRzZFzNWfNpGXMPvvED9b05n0soh4P_C8UbobHo5CPwPXDZgVTVX7zBbx-nXCxs8tsjiiKflBzA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJXTbh4ZShPDIR6Wpn_2utpWw",
+         "plus_code" : 
+         {
+            "compound_code" : "P238+79 Papar, Sabah",
+            "global_code" : "6PQRP238+79"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJXTbh4ZShPDIR6Wpn_2utpWw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 129
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "89740 Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4169721,
+               "lng" : 115.4170394
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.418059280291502,
+                  "lng" : 115.4183854302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.415361319708498,
+                  "lng" : 115.4156874697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "CLUB MED RESORT",
+         "photos" : 
+         [
+            {
+               "height" : 1952,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107677838463461741457\"\u003eR-mhattzly M. Majid (Mhattz M.)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u5rmLkLuYt2X8jZMTSOGuz2peGzlGhkPpEWf0ED6-f7lt2as4icFY8gAV3IggLB9QEPi78Tl5tVrMjIkRXXB46BFWa8asoTjVaZzg3IwBKAY6FZP9hsmGERhgzbiSiUzwUJpuDHo_mbsJhZ9TdAmJFvsYC-dsEaty60j6xVoIbT4xnUeP851uThIXkHZSB816Y97HZkuADIaZjv3LCwfpnL28XqbUiwUMBvh-3BSRcIwPR6NlroDtHoSlKoJcJn4OPVMbsrTGUjI9t6hZGmID6iU9tMNhHC_evO3-TCqMCS7u6wbd_HigY9tNGP9sMvWHyunTsoA18VdRTLVP_-EPMrYJsvXg_BcU4Cn1NPWZh0Tu1BFRkB-PG8LVg-kZ1iGknmCnp3IMupm_0G4ZeqAKeUQUdjy3r-uF749Gz_v9GFcvK-WZsmuUrJl3rEg",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ5TKrSqE5IzIRpFI9Me_L7Bo",
+         "plus_code" : 
+         {
+            "compound_code" : "CC88+QR Kuala Penyu, Sabah",
+            "global_code" : "6PQQCC88+QR"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ5TKrSqE5IzIRpFI9Me_L7Bo",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 19
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sawangan Beach Rest House, Kuala Penyu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6233331,
+               "lng" : 115.6119442
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.624734680291502,
+                  "lng" : 115.6133024802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.622036719708498,
+                  "lng" : 115.6106045197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
+         "icon_background_color" : "#909CE1",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet",
+         "name" : "Sawangan Palm Beach Cabin",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100110931186183736352\"\u003eTec Chung H L\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vyoLMbXK2Gwv5Y9HVlJOAwV2owlWMDBvgtFM7doV-eXg8eqhNXMpNEBT_K-aQIWl4oTQN9U2rxR6t2Cc7qcZpYnZZEox9DUZlFJIF0XGko7LK-HqupVIAm63NAwUdtuphZhSzdIYBrCtv_43wtRRxhaaDhTgrHh4xKkZoCsr8_JlwQxrnwkjfmUhdMFMiPKsznrXloB0TX_Nh8lyU10J5A1MDSd4Vbe1bDdbBz19qnivIbQEXa7bwb7vDxal-MpNypM4Cs8WaDVg6hKqVDe37yfwPEl_J946R1SZ8DQb1hRdo6FHHP3J3wZFdGpteLhD8ds3VpjnXEtTtX_nLNG72eFO4C4aw0MAz1JeghSku5mE-kR47zETYvM33Ax1rnMq3Dnt3BOCXIbfqvQGL8lelA75A-drzaVVDm5PstcYGVl-I",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJBe43RadNIzIRKf3kGnC94qw",
+         "plus_code" : 
+         {
+            "compound_code" : "JJF6+8Q Kuala Penyu, Sabah",
+            "global_code" : "6PQQJJF6+8Q"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJBe43RadNIzIRKf3kGnC94qw",
+         "types" : 
+         [
+            "establishment",
+            "lodging",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 24
+      }
+   ],
+   "status" : "OK"
+}

@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89900 Tenom, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.1720316,
+            "lng" : 115.970872
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.173326680291502,
+               "lng" : 115.9724141302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.170628719708498,
+               "lng" : 115.9697161697085
+            }
+         }
+      },
+      "name" : "Natatun",
+      "place_id" : "ChIJ_wWcAwDfPDIRjSvzqnQB3iA",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2368332054639356813"
+   },
+   "status" : "OK"
+}

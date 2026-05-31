@@ -1,0 +1,323 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "3, Jalan Tebing, Brickfields, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2274 2987",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1339481,
+            "lng" : 101.693301
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.135300080291502,
+               "lng" : 101.6946471302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.132602119708498,
+               "lng" : 101.6919491697085
+            }
+         }
+      },
+      "name" : "Sri Kandaswamy Temple",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1330"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2130"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1330"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2130"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1330"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0530"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2130"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:30 AM – 1:00 PM, 5:00 – 9:00 PM",
+            "Tuesday: 5:30 AM – 1:00 PM, 5:00 – 9:00 PM",
+            "Wednesday: 5:30 AM – 1:00 PM, 5:00 – 9:00 PM",
+            "Thursday: 5:30 AM – 1:00 PM, 5:00 – 9:00 PM",
+            "Friday: 5:30 AM – 1:30 PM, 5:00 – 9:30 PM",
+            "Saturday: 5:30 AM – 1:30 PM, 5:00 – 9:30 PM",
+            "Sunday: 5:30 AM – 1:30 PM, 5:00 – 9:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3530,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111123585447339414312\"\u003emassimo gnasso\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sK9hjZRY91rVqiHlnwe0Cr-8G_ODr04p7pPKh4KLjf9KO113kzsd1dx6dp_lczZ9pFMNDiaHbfv1MGxK-U95CNrFgmp9tOoTkSVnK9CisMNpu2ti0HI2KxCYdPjeecdFSGhPnNmUkViqXTzn3r04UrXluiGfDnyle1eHsh9nG851INIY8z3dHe14FSR6TGnkbA7IsYLy_C9vb2xWSNKlBEDgpOqEIoItqfRcHMqSOi0xFfGQtBpmmcIVKjml6GtJG7-1jyYPryOFW7mzvrM8dv4LlG3Pqi-w4MsPqoMw5bkKWVBDBBoHJvHHTC_OItsGua-ZXL0UjcyISm9WMS57TkYJsQGAUiRCZSEYC_uFWVgJwvbFltVkOP5dSK6PutogOejpnWBswEihOGAUyHlhOHKZinOcM9S3K27iB6SdsZ5M61",
+            "width" : 4800
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106138237737161841170\"\u003eCYBERTITO\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sG_aWb6DfYwKd5UCW5B7JzcbLEaKmf5XQsymtDlP0FxpzUo5_i3eedIlEfaNphisushWNrO9L9uX9EAjEQJRPKHPHp-aNSjX9el9aRfRfq77_M0pCmkp21GnjS1OGRWOp1ecJxPf12WMb1NIen497Te4bqglIuajNlwk_FqQy7181teA7gUkf6lNsLgos831MeURALW1sjW2ATvRO3oYfkJjDDttJnpayfPrxE9NJSKsEAh0O9beoresrn0aeXyIIFfJRSuFt9N-O2EE44iWXVquSSvHSznoRtrWrn4FB6ZAuTeI6toPUIlbMAE4gHi-d-MxOCq_WTpR4FyHEJ3CupiN2dQYj5MiQfIh__Z59ccdTGpkJkq7bZnimKREqjVd6x5oFhF7moXHjpt_aqiC-nQjr5xWSf1DknaP4O6zmfr3Tg",
+            "width" : 2048
+         },
+         {
+            "height" : 3201,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110284273859362427211\"\u003eRay Davies\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tXVC74NZYChNoE6zi02B5RGFQAIkyERJBHF2yekAb3kbYgBoIscmK4rSf7awDvWZZLPcnoyFGa4S85CKu_-lGEsOyTLSlj6u7ELDgUoJwJaEaLfkzr-kHe_KdUrbjfDVgY47l9xUp0N3Q6IvuEdzDAP6rbTjWaTpuEJPS62W5xzVIEDT7_L8rpoAeGQDu0ICK3mIyn7-4iWjGeXLURft4KFHN5AKAnPyg8jbtZD_RsFZX6ECkekmkxh1Zu7g5-h1YVuoh-9kDMi0-h9Z6MM8Tdcd96AKwuAAGAAce51bTC6JvF6hBdAaBNAJd76vLJwu7Z41NEmRHLAbkL9swOILE5jUaOJo-7-M7Shp9LOvlsP4x5G0W90SOXHKuBq11KiwhGj1idQGNHLCNDV3XKAYsowM0rwxIHaFeGcwpW4yY9OoI2Hn2Xt8-vq5Hu8ezc",
+            "width" : 4800
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104232011833239872846\"\u003ethomas L.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t3qlrHnYZIRVpJXkKlLf0zI3URIqzb96CKzOQS6_RUxIr2tYy3SerZ6p2xZpunQxxfBfXsnTlnIVPg3Tk43VVTPZX3qGWH-5PK-0ChIIMZ8v46r_b7OvTddqBHj9y9iGd6L9Zr5d4wvLSnJrEmoRpvRleEqI9l9Xk0RdosOeSH8X7oPu4XuHbCdTj5LX4fvY1BvP4cKoyDdlcFehgXo1pjUBUBdwYP9JB8Juq1cvxoL-ewPvn-xby0Ntomjm5bk7Iv8lAN40up1DgiZvGe0Ekr_ma2F3xMGAJQ1EY_yY0fxaOZgEuACA-2O8anBNnH9PUnWbBKjlvNcXwwFETuAUQpT6AApG3sfHAOvMIgZqy29D-evQFpYH4UL1joSaFqqNJvrydRv9sAtxbcLNI00hEZQmbBwDF9by3f_K_0etSjylmI7xZd_YLxAOyy_Gro",
+            "width" : 3600
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106479110846525383826\"\u003eMaxim Shesterikov\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uWg0YsY12d9faKAdoUP6sWD8rEUwOMd680o2FyTePvx14IbEyc6kwh5RHAWtRHOB5fANHzsbdDg5g0F-YZ1F0kyCUJsTDdNoyvThCGZhu9XPYhP1preCRShyUFyS9DD03EQbFDLjpe5fmtUVnjc6gEhBtvjCNsXj4Jx8MXwjJZr5B2eQEuc8xxhNEx-4hnEiZiE6SyLF-ZZuifVA80LZjlJbEzo8jHh2DbeBYz4EXr4rrpr0IhtXrI5K7kKzWBqVm4kF6qlQzJDLBYwUSoTaasSiBA9oD30FaXJCxmoNSOfT8vw11w94kYguaz1k7ilnNJUBSWsQtBqFsUZCXkSKHDLFQMZHOaeNLkUL6MaUXaY70V4gKrgIoMGDfhGcCWGzn6BjFukBvm-SZd2GBoDYCjs1H5L7loJAlDQBs1AJR3Lxa9",
+            "width" : 4800
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117553296275685131272\"\u003eMaeva JACQUET\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tHNRduV-Qbkmy7WDFvIfG-DxPRQ99TwcO6MWzms99eE-fgdcd5I5s779c33AuqMT5R4i3YHt7B0reYyrTTr7u_JA4kp3gnmPVGrehIzZiXqRRVipdlvXBjpxMv9Vn9UITNXThh6EyOsBzCW9Xdcr0rh4eEiclBAPZdr7nOE5Suw06GzkkmdNwE3tcDVbi99EI5_Ib55ejD3c-95vIGdtahVCaZ66pVR8euLoLsBjs8d3R6MrWLryFsGO1AOFMIq2AD6Tgu1_FM8auFkb-eZTSnTPo9tfODlD1rvA5C23Cf82Lgqh6q2WafTG-d4I1XGIhHOlaSRQ-dah1RfQXaq_75USCd0srGIQ5b2rTpJeOnQtn2ikFzguKUDz9_w_gUHdnA0GMcXXneaudSX-KdaxXPv_00e2YZTs6S7Lq65GHa-w",
+            "width" : 2700
+         },
+         {
+            "height" : 2267,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105746350239538574390\"\u003eLidka Gátarek\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFKhFNPJ6nMtPOlTu1G8MVGq2NDpkPJa4m8IbwrL_Dtw203V9H2XiXDwI65UycCBS0jK0mu5zmsY2tNBcZwb0sthPeOPvQMNLTJeeMZy22mV5_h2JWdGWGnzwL7uG0osBHeRNi9CJtVWMRWY5cRutnjvUdpZeqnUrBY1gqZlmthSY9W8j3riJXFVtmH8NEY4pekgKNqLkCQEE8y7XxbWEzAUN5x6YmkwNIKGaM4njOEYkemN566i1CMz2RVPR7hCAp-85s27IaALj07QU9Lu5daTFFdZ6JbiyMxGkOUFnCKAT8_BwGugAAm6iJvlb3aqdNO0OdYZhVbOFrD3tnH3YvKqHB4vPHFH_JAeWSPP6yfyPB2rUJ0s7z1kQJPbhkKQcULRnzpkpMxZ54t95GYYbc1dVy8vTH2SiBPlf5F7xFQ_CcA6CXZTBE2p3VUTYs",
+            "width" : 4000
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106488481426009476197\"\u003eisabella cheng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vvgwiIp-wd4BJWocxqeMe7b2zr3NNVRUK0mQHdAI3Q2lIdSg8INrYMVv7UnQ6-bh73Wb62EonbvVDpZfnu_DYWqlkfiGe9wgKT3wE38PXNASb3-shUp1rJIiJbg3lzw2YFvchLyE5gbuCJKfb5aymqRJ2GOyWLs7s6Q1EGFfdrfMBwBZyj1qFeQiFGRHmi2Zy10FVUJVgrZeMYlaCjqcZnWoTI5HMhJQFeEg6sfIP5E16CDc-4gfgBEWlE9XdFT8zo_ABWWFPMBxO-irGbeG3K77JsjW3WWljjJEPGSwH8rCsZ__imWIRAzw962L2loXKmRwDyXW0dH6yd8DlkJ2cuKEGvFhJOkCS-YTJpEmfEiQHrVxar3ZdRtAfNnWNM3B56ssfogtj7hhR_SMWzjDDg7LGlfXzdLKSlqnqTLb0Si98EBqIlj9Dm44KF0w",
+            "width" : 3072
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111305464665914474969\"\u003enanthan sivva\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vvOv-zRBhAUCTtlRh5pWqHFZ1gJqGlO-ukb_mzKYGgWOSOAam3SoebuMIpTmMhElfmFFt-4Fnsi3h21xM12RHAj-NquMAarQzjb8a7jiA6QWFG9Ese_6NXc9z-cyl-Tix7hMI6AeuDYVSANTR9U_38Rh-wOpZn7C_OP2oBeqpFhFj7b9QL7HSqiiN_6DMu9ydb-xuPBRgoANT_b0jF3OLGUi9TAfQTnY1WiYG9ZvKuaNOEX5HiUEOPe7eTM2_EiPlUqDqXktHqlz-hkUEHbOoDYCIWvezXZ74zK2EgNwnD98m7OL82yMWuEGdEkfnPWtyWF7do4ivVSyEByBSTBz59_lpapa2xuSQSo8EgahzW3kgLgLKdBFqJhJNZFuJ53WT46uZ_3ha0ugJkYSkE1jPgH2zc7M_waQ4fKcgYWrYDSg",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115758938939214530255\"\u003eEugene\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tU0oRbeQPoxRf_khLaGKJHz7hX6FttIQwvjQ3rdqALRps649vlmUBoWRU_P6bum4Q-JnuigVKacJlqWBmqDgy6jdNZ_VpRPwFKCt34k8MBuG5Jl-MvWCcQl5GgMyH478ULIaYvomXbPgap-hCQs2BbM-gRjOTs7Frlc0kvb_zll1x6csYo34cEMr05tBt1Qpfc1mxMRZIp9zbrnYV-T-JDBx4QlGUwF0CvxDQenXDaYGt24VhCQzD2Yqo2M1tiIf2JzGL3GlJ11B0zJRjezDTqwiGy6NhgZ3yy7Lk-F2Za79-bpcakip2P6ouBo_0ehnbj2gw2aHpJ2QVor9PeYmm__ULbcRLBH5R21ZJVifFzwAnbJ5NsMylEGethh2E-xnxAnK327dG2XDsWZiw-dswkCY6ECHs9Oxiy_ii7kF3xryRa",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJCTDm5MJJzDERL0UOj6rn-Vc",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "hindu_temple",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6339352670231217455",
+      "user_ratings_total" : 689,
+      "website" : "http://www.srikandaswamykovil.org/"
+   },
+   "status" : "OK"
+}

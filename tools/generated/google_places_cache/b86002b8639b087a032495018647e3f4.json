@@ -1,0 +1,240 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "3, Jalan PJS 11/11, Bandar Sunway, 47500 Subang Jaya, Selangor, Malaysia",
+      "formatted_phone_number" : "03-5639 0000",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0693932,
+            "lng" : 101.6067533
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.0721122,
+               "lng" : 101.6123884
+            },
+            "southwest" : 
+            {
+               "lat" : 3.0663095,
+               "lng" : 101.6016649
+            }
+         }
+      },
+      "name" : "Sunway Lagoon",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 11:00 PM",
+            "Tuesday: 10:00 AM – 11:00 PM",
+            "Wednesday: 10:00 AM – 11:00 PM",
+            "Thursday: 10:00 AM – 11:00 PM",
+            "Friday: 10:00 AM – 11:00 PM",
+            "Saturday: 10:00 AM – 11:00 PM",
+            "Sunday: 10:00 AM – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 701,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114106066209471280678\"\u003eNameless NoName\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tJQhApvCafLmtFosuOO9-myg-sV0xdXUh0ZDk87-HNx2uKUFx3BS4fqTps7jpTk0vdaetFFH_vMXzR4IePXPYlhBnlx6EZqqzkiB2Z1NqsdLmSIey8SCrEbkITeLset2w2b7tegSWPW3d016CotAOskZyvPbqwj5dq24QXBOb6_B-LhHJ4GQjNDQcipnMZShHC8HQUYtHEpffAPcQ6839hag27Adkk-TzQzIKgq6-y1uoNfqvgANdaIGdOXuyNGqZWdkp8nBLO4el2ttY97CQ6wNSCKYg26cvWxzKC1Ge4VGAZqRtPaAMY9xBzidfPAvShkIv4yPQu3AJNHd999mBP93PfDjFosaUmAZkB6RDs-s5zbNDE6NlmJDUDHxMU2JIPN5LD_7BvYi5rdmhU2VKWXRknn_FDd2YM8X0gt6bzGA",
+            "width" : 1024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115705653059661156960\"\u003eBalqies Arafia\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-srT5sg0WI9qZc5LYNnG0_OuGhiNQ4YmOEKo-Yw78spYVa58RQZbanJ18otLXtkYItcr-C2D6acWhTrbzyggvSrHA-8g8kvvkuPvjkcnT38twlPGPj8RL-WlNJkFGFlReE1lqD560hcYuYsySaqZYoX0MifKebRfmKjWVFjLfeKmuSI8MM93_JYdM3nKv8qQUkfradg8o060Y5oV7tlRIDKSmw-Qee3DIIcHdNbsJc7tBupToYzJKOxDho50aNJ6RIBxY80Znonc6hwfeJ_pxgLIAr0AE-5WCWy58eiv9OA4F9B43IFVCUewe92isRfuOKdvpPsbroNHbuRehYw26Z_QRoIO4KmUcNMbUmtNNYwtbTQI-S6qMOsZiSFzttXsNZv9YfMSBE6UzThQVmLapgXrGq78l4pOjdUbgWK-JU",
+            "width" : 4032
+         },
+         {
+            "height" : 446,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106495803904731245853\"\u003eShreyash Pote\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u-6oQbhR_rn-miUhGdrIIgvt_wyfY1Acazem8LWEFY74IJpQXVfTHuNdC8zQp1H22QLUXy55akmUqbYJXKC-BuNz-iD4DQZwzFbAfePZK6nuthFx56-EkiEXtoWUUoSrzdtYCQyHzQLcqpW3UnEo09ObsY7ZbNJONHlr_ixtVlBEKrJkTJHDt6uBOEBrqtp05958B4EcZMgWOMt1sq_W-XU9VoL8OnCbYpCC7eqMsIFqKtc0yofAj1ZZq47gg5CqdupymhcJEwNPebn5cZ7ySzS3pQxjl84MHu0SKjih9f0fEaNAxUdjEKeux5FbyMeYVp4VuuPRryN-bX7gSI7h-QXx7IOVHEV_RxGehboFcLxtruv0UAHGCPR3nYl_PZVrmrGeHTrIuZkh9WQBBhVB8wAwVGMcC8OWQRhFDa8oD-I0pY",
+            "width" : 669
+         },
+         {
+            "height" : 619,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114059378361693583805\"\u003eLeon Yue\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sph2Xjy2TKAF6XptvbVKVMpPdE5B0X3isfH18fiLKSgnQHT1owywdwWST9d8FqgOwOmREoX6Dr2VKdxKxbG14kBsIf22fnYUntUGmVQOZv41x5r2HXlyhEaUD67apluKBWc9SY2dP5Eqnr9JtG1IXTa7eq_oYTkyl7_Sjg_DqXNGmU5SP_Q_y8T8QZUZckHXFVCIKejGhzXgN0jiobfzvTzgCCJFFo7hcfci0DSfGb-aZoH-GY7TgyCv4TjMdqU6PRwf9meMMeY8ikyST3Upu5fkGVN-o5SV-6v_bZ8PFWl-x_nhUvAcDnH30SwwHkQzvc8qvVlQqUAtQclu_1ryMXLZ3OQINWl4UCr0JGjfIq0bUTrLe_72ibiEuesNuhjzDPrpqvfNHAKszP3GqEWP0OdcthCHSTeTjSy5jFlhtPZYxh",
+            "width" : 1100
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101927872808961309893\"\u003eSrinivas Enamandra\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sWUyQwLf3ZbctlgkesLRinb1cowILR3VhQApu7d0cNq1ZT4ZV5Z80wO3xlKFQMOvEPnIgtsKgCMwT6Ywp-Oljzn1v9g3d3M4Cg-cVUihFKCEpROH8VM2RMKWK0VXDXjrwOTXFknLz16rAq9Msd-cFIEiLPWDaGbtl79QyzyL3eMxO-yt9gQOaFwvYDb4kAvOroK48hKPRhbRIHDoJ9JPn501Mz_LigQExDAGzlEmjMICF9tQlsOGwq8xbD1u-AmcoJF58oUv7-5tjI9TzlvtT4U1--Z3epf4r4MnIuk_tyRhxLEmDkGAhoWb_KRJWJE3KKC9gYLUVPbRQ1rAwXcil3RkHwDOphbUlbdJLZD6cUSGxSYoERZpsZNpnUY0on4EtGcmISb5GKgzVpP7SzPVC83a1Rqt5lvQZ3B-HrqTlEEA",
+            "width" : 4608
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106479246487214302212\"\u003eSiddharth Bajaj\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sbcezAHWN1cT9CGdTjAavw6NT5PREaNtWR5BJrPWVyPRaQ-Ve6QS4qk1U9glM4_ePxoCLbrR4Oj8_F7L4ZxkGmi3YBVYr4Q0sSWpjjScIBtxh7aQl_Y5X87bl0ecVMVzAOV_iB7_soG1TscPJxufF2PBLoOOFCzg6qCtsHT_AJd5qr0w5SHsagrV62jNAyFYZGID6CP0it85fNRZCULxyU2EQMLLdSO4DvoF05vDZ_4NthY17iilkdfciPtZkjFjUm_ag8wv0RprOVfyKGS_I5teYJYz4bi4rmeUBj_IYl6wOpwspbh3vmAN-JUiWz09r3I2KOAuw-YgmuujQWvr3Eq7DojXEzuuerHSxwwbVTHqc-F0GPgPv2nN5o-5CGTwtIvL21OXvlSkTU5Hz9cRYwQ5_5-QGOV4PL6DSnBPBFTnnu",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111303877208855575155\"\u003eAmjad Ahmed\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sU-H1lYmCaDPMAcGonPNRq90Qf7X0IRtId1FsBfV7GT4jNDCzG9E7P9fzdhh-SG-YCdY4Z-djwmmUIlA3eVmm96t2-AnTfo73cbUP1RAwKoqPhIfG2Q_YdqgOBYbMy1ZkQo5f0r6DjuuZV00OGtkyBa1tvFLuMFmbnlsO0so2yzLdz0BZfIECdHEAM4nmSUJF5532ZEwGO0QLogsaJafVGFp--YNZAcTZ2gTFb8OzIRO19sLBMtEAAsQfYt1MjMTralJV4gvabdg7DmD2imIaXm2bZFmVdpknzrqcGkoybolh6qw5FIxRdF9e6GnZWy7BZ658v53nQP-P-AQyCmvdwgek9Wjf1QgIkjJCpZhFiKVTXRcYbhRwp0VVMEBBp3YThiOk1KKo3sHnLYeCZi6aUAizQwg-Hd9QeQvlBp9aOaQQ",
+            "width" : 4032
+         },
+         {
+            "height" : 690,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104580667144791662087\"\u003eJason Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-szxyEMT2kz_IpG3ESzvhWxSmSgzsAdkIr2BdC-pu1YjdXrFML2FfFrM3_w5hp4uoE-1xpiLHducTUwdzAtV1BTDIcjlQC7w5jwqvahqQJ8nvgVzWFMF2ucorhkfcbsUGSCqBlEExh8zTmtH6qH7DhPYKc2_JVZc-d3o6KxvQQW1qknZD4gsaaqdmL1YNpbLWJxKAL75SFXlAz0HBzmpsCvdwcACv7QaTL_m332dDVp9uvhmojY-gtaY5Tq6mnWvleQL1fVPNDUh6W8gc955Qp_Uj6aSXJspZ764o1ZwEOKxRg-z5p4pAkvxhe8mp3zgHO9-0avpKEKhC9nGE6cRzG6uuIYyYYk5V0jC1PcYPi81JJB6M6vOdLn1lYWSOnwwDfxvjLY6aJwNEMHn7QltE1QPeXBNy05YywRKFhs326BHA",
+            "width" : 1024
+         },
+         {
+            "height" : 3036,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109250010056449032062\"\u003eSamir Al Bulushi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vDq6Cer1HYQnmxPJ5xWJetvtpnULP8VMkAhLKNsgIgObDOm6t-ZycPOPQCexPSM676FIId7vsUBf1rbPU2RuUS6jV2RXHw2gCjuf5JGJbDZ2wjc3KgfLqRrEvfTx3lA4LpNeNLqfYpNCxBG0ClitxA5ovAsDxS184nm6-qw7Nk3Acs7xWmyfEfIwhDXcIRrzARXO84q4vPEFKedNP55ADvDkyhvjd7aedoHfanwfBx2BYFCwB7EkmM65FSp7S9E16qZT1KWvNlkJPI5U2rcTQh1rIDKJmfg_UxOn2G4Y6350xGxxPtt3tkpMpy0QgKnkPDechPtJWzCw7IqHGlDVmTW733dMPMk14iyUt2z8jbzt6JTemxr4QHexOW-nNpiHhmjk-LRvKr7QIfNvlFSWedTa2u5MicBgk0lfIJav_5Jg",
+            "width" : 4048
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115954795117151304597\"\u003eDarcy 윤 (Darcy)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3dcUU87gKpis2GDKZCdHhhwAqZxoKMo_H8hCGSqmhMqbfp5TnE2apuC4BJCnu4NIBX5DvlIExObkR1Pgb7cDDMlhKz2WGfTxoPg8FlQVm8zxozTJtnQn51N5LpwkQ9jO8v0AZ2zr4J-DWeBRuQ15ao0tiVwvUXnBw-9LUt01_oj6yAWTza7IiqNVifBkMkDJpKR57G2tWMxAmIyNZi4rkacOT8hahx_VfczOo1RtlPZfkMRvhVgFE6MRnwqsa5U0Z18Wm6E9wBoY2IMLwAJM9bIBE7VlI-rK7dEKGJ3xWEkAfN2idsYUyFM69PqbPgz495z7BnyBh9X9Xqi5IJv27dfkpCotVLWMGDwZCIx3ecKSQbMYl9QF3sqiPIaKG8vEE09nM5JYJAhDscI5kRZLhKRcFcqHfxtNl0Y7HyeSLAQ",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJJTHt3YhMzDERvM3wesdMZds",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "amusement_park",
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=15809126486598798780",
+      "user_ratings_total" : 28497,
+      "website" : "https://sunwaylagoon.com/"
+   },
+   "status" : "OK"
+}

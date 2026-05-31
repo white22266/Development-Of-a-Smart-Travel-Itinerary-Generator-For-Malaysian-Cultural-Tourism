@@ -1,0 +1,144 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Tamparuli Kiulu, kg Rangalau lama, 89208 Tuaran, Sabah, Malaysia",
+      "formatted_phone_number" : "010-888 1888",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.0972678,
+            "lng" : 116.268725
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.098645480291501,
+               "lng" : 116.2700613302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.095947519708497,
+               "lng" : 116.2673633697085
+            }
+         }
+      },
+      "name" : "The Hidden Kiulu",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 7:00 PM",
+            "Tuesday: 10:00 AM – 7:00 PM",
+            "Wednesday: 10:00 AM – 7:00 PM",
+            "Thursday: 10:00 AM – 7:00 PM",
+            "Friday: 10:00 AM – 7:00 PM",
+            "Saturday: 10:00 AM – 7:00 PM",
+            "Sunday: 10:00 AM – 7:00 PM"
+         ]
+      },
+      "place_id" : "ChIJWd2-mkENOzIR7KfDyz6IU74",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13714455093561239532",
+      "user_ratings_total" : 2,
+      "website" : "https://www.thehiddenkiulu.com.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 99, Lebuhraya Darul Aman, Bandar Alor Setar, 05100 Alor Setar, Kedah, Malaysia",
+      "formatted_phone_number" : "04-720 2234",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.124412,
+            "lng" : 100.3670848
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.125965780291502,
+               "lng" : 100.3683480302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.123267819708498,
+               "lng" : 100.3656500697085
+            }
+         }
+      },
+      "name" : "Alor Setar Tower",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0830"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2230"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0830"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:30 AM – 10:30 PM",
+            "Tuesday: 8:30 AM – 10:30 PM",
+            "Wednesday: 8:30 AM – 10:30 PM",
+            "Thursday: 8:30 AM – 10:30 PM",
+            "Friday: 8:30 AM – 10:30 PM",
+            "Saturday: 8:30 AM – 10:30 PM",
+            "Sunday: 8:30 AM – 10:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114430980863566472919\"\u003eronnachai angsakoon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ueMXSrmik7ST0_H2VjoauSavCUpLPyR5zFWrUi8CZkf0foVuY7Fkx4ait14LITLsrxwcj8mbhuhpicIrPuczE5BXoUTsXzR5o80XqdBjHknqRP0NJuH3JTvDCdjZxdNRsxfdcshGgRrvYkXY7pXPcluSSToK9tLmcmGVMV1qOPBWhQZdwBTvZwOu_A8u4PgKRjdVHHWw6rl1W5qLPR1ZfHJOaq6b2qbFj1GeYY7YQunXcrA9UJbKVzKJZIsDj88Z-tJdi0SA1MHg3VlbchnHtXLxr8Df2PYIV5DUdnE5hoYWY2wze7_oWfYPjCna4qqm2EfzhYcilXiX6CG3wGs3pqrOQmEhAjHBG3myfQqY1EaZCQ8TskuEhnna_VvZqvbob7fSFbTsdgqUrIrm9fVMfR0xg-DU44EGQZZ5aXWzyJtg",
+            "width" : 3024
+         },
+         {
+            "height" : 3048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110925342217942253409\"\u003eMuhd Ibrahim (Dr. Ib)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sKafc_Rffpk2ZAP9JeH975fYwTeTMlxAiuxWDzhJh6Zk7WPKNxpRdcmI6_ZpTFpLYqI2n-HND_lpGWC032IYU5cKTUh2YmHqEjE1g1H3LR8jaCVx4GlFvdSibHxmSCS6f8RtGIm5XDuPL3-jsx0cBpSLINiBK5GlovGpQBIN_9xU-J_JyeuFiRtrygwFmvP3WAmWccbGUBbRjoMZkbBRPqUYf4pI2-nJVlt7_2nP_iZChLFICF6g58klTJqjU1aPacMtrp0BBg5Z6JFltEv9biiJZ0xDTwYiVMhjlUr5CvMab6WffAXorV_z4WQ_IauIMMT-FvQoL8Q42iplDCDMrtVhgdmPmXouwYIm-z7W8Zdo6b67oXBuFnmg-NYxj6I1UYIXC_WVEZTxBlz7Iu18Sqmd_mQmxw1z97woMFaShjSQ",
+            "width" : 4064
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107385691437136582910\"\u003eFiz FIZA\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vmUXyqgXmO88Kt_te5Zjdh3PCcXRE8ucy-zlk92xGWfevtqA5aKZdhTn0A-Q9VttL9fr_aLnRWwIIa57N6-fjrcvfadU0dH6yuXuYFSoaBmJLhEVEaHOGTTh-yMITa-_6uuB91ngv1Qt-lM3jafW_GodcoEoNE-Q5ZcTZv4rcVqNdoWE3kM0cgJG0p2QBzfLgnkKOOMelx0DFpc8icNeCVnprbiiwnTsGIPuDjzp_APzLGWKnAzHJr5NAtuK8KAz_M6Kl1Ll6XxBdMmA5HyWnx5arTIHGioZI0xaglftxigsWvBnOrTW8QGUnbuDhC4DjPOCAXuVwejMVuFcjERW6lLpdpJ4A_-ubNbK-wSfhhxVBezmXH-2Se9VErJISixLig46XiutXCfJXFaQ4jnr0m5DNqxyF0CRs4ngSTPN2vLg",
+            "width" : 1080
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105248145662267774370\"\u003eDasuki Ahmad Ishak\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u2xWMpM2sGO8q9gWdNpaKEzd4g95oNPXl0NxcKG4vb37C1lsH69CDjAM_yiwhcluJabsr5G_wXNKi2xE_uis7jdlNSlKO6r-cZkeOh-tqwfCwst5NpLxWR0v1VaDACnmVFgyhhIh5sje5rSLpb9bP5Cnwr6XIpIcMSvKi2IHyFzy4IVMuWSZyldcv-Q9KpoF34yQh9fGrMJFyC8Z1KzO0ZFqyesJcg0lHXLsAmDJg8JDDeVyadU5Y92NxMM4SSrO6TJ3tNn6qyPRLQS6AYx0iNVoXVq0qm_fE2f5URVks3iEnu4XZEI8PFnfFe1MsqrmSVQyIXKjGC0awmqNrf5azcmuwrLiYprK71LYVgAwsS7j_wurUp3MWnmbfkozBj3V5vI7JCpgyWnb_7WJRjRT8EoplrtD6QxcXtUjpXABBHyA",
+            "width" : 1280
+         },
+         {
+            "height" : 4027,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117710093164511058084\"\u003eJose Raymond Tarroja\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vDdGriZTQGos1uqFTzVu5k0SS-1clb8ANy-D0H8Grynq0z7SaacuOSdlwB0K-7k291BXNgQm_Eu1w8w_flG-8b19UMTk-un348N16In28COWLJZBNADQaD6UFnex-ssY5lK7Xilo4qcPHRKiw5XIpvboK5lXBcd4CFxm0bKVWyryvr7OBaSA5yRo2LuuO16s-FLtr3p2DLK8DUzZwX-Er8z0exL3V8i4dLeib92dCVMVlTQnMdriZ7TqZfwqnO_pEePuSH_AiH5f3cjY4Uc-kdkoCFF3QHcsZFmGGyH-B0rSKM_irZjYoWGbPgQ4OxztLimgvp_5q2PTwBNp1leTzWVFtDKuA4WJeI7IMF2cNFIx8Ycr9OKDRxJgWKa_Fa-B-1Xfg_wky0UvJROVx_aeaJqW2YO8dz6QwA7oEBk8SUXw",
+            "width" : 3020
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106232804239482778981\"\u003eMohd Zia Zamani\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuuAq5PbBUaTS9ovmhaHNeN-lgRXCHlv6Ac0dDsj0o92BXx1fq-XD4kRJUmoPEBQpwz9_Oozn4CaF9rKBjgvnPzTHBA4Z45Psw-RTXsX442pT_t6MKXbBTk3xkKEevk720HA_Z5my3Rr9XvnuUSD7dT_yNGducl7IQD-BkG2za6WcLaWnp3C76HI8QKdzxW2plBd1SPZ1turqwAcvZ0CMQ46MdmN6O8SJI3DylKMdfXFKORR7rpJdutjj1xBlRcK4WfrRfvdPqerp8z-bq1-sFUTukchaYRyZSkgPi8A1KLqJodkuZwEV1dQlU9K8noss0W1UAnw6WsgkOEdNIXFyuuagdze5lr2bczkq43IXR2KbjtyZ_tekLltDiL4lruTD0M6l_t6aDphQFbqKgBclq8EQfqRWSQ2YNTx98nWgqDVkG",
+            "width" : 1816
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102716332102962668619\"\u003eAnnuardi Mohd. Ali\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4QHtlh6m7q5h08l4kTLmRjSu9J2vjlSgebGBs48kZdDTWcM76TQYyUCThYeLP3-xO7Zoz9IHfOpvK_oMFp6W-UsOswSUnWICEF21YgFgFprhkljsjLdwGHJQ3IZ0kyasGElYtA4DW6P9DJ5WhBV7BqlY6C0647bL1MsyRJDX92F5ttbNXVNiLBQMj2dxPXdaVee0AcLINJe1fLXQW1QnmJ0SYAJGM1EOPa_RfR1Syau-5_xb_8C5QMFORCEI8E4xgUCgoGralqydjNTSLHy9udlyRaH4lvI6Kw-9VJSULbhPL8PsJ85g4QvcMTrKo8kJ2nZf6xMRKI7qLcopruULcX073diMUcGFAFcrWlalKXb65StMoNzS0-JZP9SWzRgA0OGoKS0VjtvCK75uvO5IK1aiTJ5X2nzxe-lPfjGOd-jak",
+            "width" : 1440
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111178387813209405882\"\u003eAlexander Ecsedi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vo16ypt_lAGvjsYzT88hE1ZpY5PQuQA_VZYsakna5SgdrQ8F8m8_dM6yHo6Wb1ig7UHYsD0irW022yATE3x2FaIpcKMAVwUWkIHh3vI16xkc8lmnDNYQd_wmPQZRLrzibxB9VLGicTb1yUu3c1qfsrELk_XvyFEgD8QSZwo4WV05H8ak8yXoyiL7hFtr4BkXwm2w5VMc6kA4SHyVdWPW5d4_Wrje6mXXwG7cWGwRFgVHDkrx-lk_0bscpac5CpEItFhZCR0Ho_ToJRgG04Ad1oweSLdX3iAVs6nmiHzpgpbEs7_TpkX3f05pj79mnOnG6Gap6OXPFIIM56ujH-MLteEUmhBUnl7cY380L4-Oy-2cW4FeIbr4OyqkiLwu1nbq9859MZTk5Pi9RSsU9rGR-bFNiivSemc-zgqoKyuBgnAg",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112900930678472083853\"\u003eivan how\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t-voGbrf7IeGq2pFKMgM1Mp56qGiYmcgw_hEP_R-0r-7gqS6TUfGQFpJLysjxd_n53hZhc2z5lBc-i0GtZJX7J1b2OA1iKvaUa061JR1VftGKQyrPPJFzTe3ajMcRdm_d7gr6_0kG1LuwnzO4wCGvg7-8ndWZ9dDak3sGrAahjnvy_HA3I2f41RRmp9aGN59nDvOtQObrjeaVWm7Mb9rkYzMPExTJGrL3xup5rf7RETrhYurYitYherTzd_ZvNDjXZdF-iq3wIPgTGNT43zJX1youURE00BP-I_RC_uonLIwCIOet1y7SlTx97Iz3lCNbJUVqKWtSZiEzaANw2nAn8EF7gdjab1EAZajB6svfNCmAat0IeauCgzd7Cg25rk3CcdP_OIm-3WLWy9ygdlnclw2Fve-BzvwHJweug5ajDJw",
+            "width" : 4000
+         },
+         {
+            "height" : 3227,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100896934877918086775\"\u003eJeremiah Seelan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uiTIA8YsahgpqJrvmkbvEaqEl4xmD5qXskZlC8oGlgplxgEBKPewr40-wYEAM4HxGS4A9ksGYf8xItfPNJ5Vj3nOqV_08JMr9_6vwv-ILl1XTUbh1VRPzfuWO6-Nf5hKcG_f96R8nKw46wiWPYuRnZLp2RLumT1LkyxGu71wparB3gxfAQ94qQLBg1QUbjKM9aXybEAx1qUTRIhhUya6SSLNI71w6gWJ8keVKNQOXy1Oz_zBwTn7JTUqWWHxLRSi7aSSrLrhcnxXnOW8O8CY7SnukbB9JFKQEHZtKy_CX1Z6mc6AawUVh7bLMRLGhE-mD6q9yjIXl9pJw-igdG806dus-Av5Ndiu3-9waxCw-HtRiXTh9jdp8RqaGN9gTiywxF23dRxwE_9cc6WiO0vAjyeS4icvx6A9QiT9_zB4I",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJmxLxkLlESzARZsnwJMh8clU",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6157120839623952742",
+      "user_ratings_total" : 9012,
+      "website" : "https://www.facebook.com/menaraalorsetarofficial/"
+   },
+   "status" : "OK"
+}

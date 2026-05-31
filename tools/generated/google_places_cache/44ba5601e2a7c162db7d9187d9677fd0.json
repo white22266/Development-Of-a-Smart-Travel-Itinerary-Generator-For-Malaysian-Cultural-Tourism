@@ -1,0 +1,1130 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vJc4x41lrn_dShE9IFmMKIitu4-uXVh5-rbIpzR8jtHpx1A86ZDSypIAAdkovfW_j_TAv1-JqheF9VoIa6cfZe8lXDHQvIEyTw90Xk5JMfysqizrmI8N9oQvnjRACY00_67Y1wJUYQ5-JcjLMHFvujXEWh-pw_AqAVp1prmB-PippMMZjwlMn8OOaiha-_yao-qaufBEesETE6ffN-EzRxFrHZX4grrfsKR3KL-qIg9LsN3VnwX5LXIehDB5UY2i_7Q0m5hdI4ry4SHj-9Nb0S_PRKDiyvt7xMCzLPfReMVzc6Pr5GxJdlWuFThwUd2jnW6AqzSEEQFfbQdWB4TiIvWWzUodWJbkBO-YRsXGFnwoJ9jDOoH8Y66NAVS5t9oJeEfirouM9aHvLKxYCNyI9BfdU8rCMpi22jLTSXHyRiRZWZZW2r1Fy7S0iD40ea25brD9fBuX46q01sEH8wq-Fiklf181ZXc5Lt_sPrx35hlml08Fwah54VjDUIhw0UIE34R4NeEasPsiZxZAV3371kHuK-PmeFp2O9RwF_iLKL8siOtmuv6T4oYdDsHbVMM6M_SgtUaHltB5wyQFsQnlflngoInwAwLeUe-aFNf6zT2RpgiZzUipf_ir3VFJWG2BuivooUyqVgYmhb2Fv2CYcRchJEffI4_OOTPO7WAHXZJssamRUhkRvuWhkx_7lUwJIrSuh7KZrt0HYaDuNo91vCDPKv8v75hQIlUl9Haxv-MBwU-orb79k0Y2Yn9SLNeV1ArroMBRr9vb2iHiMG4wh9WQRNzOZ_vXZVHm4gDbxKmMcV9YWXRE8cDLfDLzuXCkWQSnmg7j-K",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.655444699999999,
+               "lng" : 100.2808079
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.656980680291501,
+                  "lng" : 100.2821500802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.654282719708497,
+                  "lng" : 100.2794521197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ladang Burung Unta Perlis (Ostrich Farm)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2928,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v27TqOTuBTFTE2vqkKQAGBZc747jqCclvb_0NnzmHVnJ7sfk1xMb43NNx18tH1FysJFsbHfnF73wQUmOt2ouvKei71dLDzdFAkqvSGvJjYnDPPclP4lc6M2rTj0HJPkhSisbyCLvScfTj2IvneOFMn--kIs9TS1FwHLZQg1tiQjHu9fiskdXIC4CAeXHBLUaXw7yv63skshzQPh5baUISQclnrZPxPwiDWnB4lVoPzhluUg9diKZ3fVfZ2YCCNsoD1lwFbI4tGXL8yaeuRlVRZDr4vwWVaFJ_nsiCjPVdE-s4BJcokQ17MKJJDiI-W1QhLylNqyw24_Tcd98v7QCSs9dgv0VfP29vGTf1MBC6LiQqIXsyq11gDmnD80ICpCGtLtZ5EaxjJ0NE9MeOsu2JH8EnLSi8t8B3NPSfUoYJaBKg",
+               "width" : 3904
+            }
+         ],
+         "place_id" : "ChIJr1jOBRPATDARY3wzdgK1CpE",
+         "plus_code" : 
+         {
+            "compound_code" : "M74J+58 Padang Besar, Perlis",
+            "global_code" : "6PR2M74J+58"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJr1jOBRPATDARY3wzdgK1CpE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 953
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Stesen Institut Penyelidikan Perhutanan Malaysia (FRIM, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6509125,
+               "lng" : 100.2404774
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.652193130291502,
+                  "lng" : 100.2419094802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.649495169708498,
+                  "lng" : 100.2392115197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Titian Kanopi FRIM Perlis",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113827221270217218963\"\u003eAbdul Rahman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uGr36XFRKX9YdRxa4bGn1cDYyqHadoQjWEsnwn_c_xCvo4YHHfjzDRH_5dZFQvC0gilxbrOn2GpJDSQU2XvHy3jZsNk1y6Yr2Z4yw7OzI4ctJs3gOGA9OElLKZ7vOzaXf6u1P7L_kEjaKxfXQWiPk-QvpzDiEsxKDkwW31cyij-0KBftG8ocVmyFuAY9Kiy7vsp0iWlAU94bHWr8Pj8TbdTDw1DQnPhfurho3eipHwfbdjBTr3ZSgH7Afy7hIb3FJBl5fLTkhW09btSSo2fvFwlliFGSPd8pzp4fD3dKpKPJ1T4KlGaeEBDMAQO0ZVf7c14f_5GsWm3MzugXXdlNvo15aU5QFKF2qXk9fJSNTrSwQa0LGh5NFDWc_YNQdHSEd577R9R9fhFJFIoWFwkDc43c2z90P3SFwqZ3Wr_O0",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJpcKdI5PrTDAR9zzGyHBftAM",
+         "plus_code" : 
+         {
+            "compound_code" : "M62R+95 Padang Besar, Perlis",
+            "global_code" : "6PR2M62R+95"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJpcKdI5PrTDAR9zzGyHBftAM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 26
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Jati, KM 28, Jalan Padang Besar, U, Titi Tinggi, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6464921,
+               "lng" : 100.2420014
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.647830580291502,
+                  "lng" : 100.2433196802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.645132619708497,
+                  "lng" : 100.2406217197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teak Eco Park",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106734779403132620276\"\u003enoor syahirah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tW3e1M_pg0k_CxMcRHFUM80NSYqZV1Fl9sxW7ue9YtPLkmYsE2z1_AK23Gl0ns4mAtvpwuMDnQZ96yQ5EgGKV3fXf7A5fJGyo8EvX-Y6JpH2nQ42eT7fhoOCZE6KYKyVblHPM5qqIu33TMDHhDZoTFW-YqG7_549WTveFT0MTcn_qefwMJo6ufwJkovSceDMhowSDTNGj47YZm3b5cAWvc8OZmuNyCv47GxYU40sE6Kaj86jY7XxxuP1VyIYDewfVuWqJ8gU82snkXxAZxsRGXAW8hvfEIqwuLMab7Wl2i7j0wuzNJzY7KYcMiOS2KDoMoN1wcDerEDkdeISyVBTy9mH_71_827ZXu6-U1TFx8IRslax8dgmATHsiBUhnZR1ZTLuYRzFfEFiDwTWdmWWBSiMFTZeC3E0hLrGXMdhmLV9ZbRRswOyuFP27W4VNT",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJx2ddLgDrTDARxJD5mQ5bpcE",
+         "plus_code" : 
+         {
+            "compound_code" : "J6WR+HR Padang Besar, Perlis",
+            "global_code" : "6PR2J6WR+HR"
+         },
+         "rating" : 5,
+         "reference" : "ChIJx2ddLgDrTDARxJD5mQ5bpcE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Padang Mawa, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6453913,
+               "lng" : 100.2793293
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.646709130291502,
+                  "lng" : 100.2806737302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.644011169708498,
+                  "lng" : 100.2779757697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung Padang Mawa",
+         "photos" : 
+         [
+            {
+               "height" : 2288,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110886860748442573602\"\u003ekrelfahmi2\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tD7XrkHaVcDUiCmNi2ljd1ylwuXj6d1phA4n5jGuVQCRzBuoa_3MRR4lcBmEQG3y8dYYVyCe1x-EvZYmZSiRerWDqPxa7M9AllgUmINrm1pE836-crKsBAJPU0eEYiXbehS1QHBRYij-OSPpNyrrjx3en49KKIEeFDgyjQmK7nrBh27RsCIJLO4f3-SxYPfBKWhsxiF9VqWAhYJhI7PkLSXT3spd7qMVpW80Uk2dKRujIYBvAsvmveTcyPV48nVnrrGqp6MBZPb-LS3SNCPMKF5JrPCQI0Z9_69JGFgw4Nfr2LKtNMvJZ-qETqcgyDwn0iOGzwqeBxZwvdJPKaJVoVyY9dTBCbN62aQMs_Ig9rjS7ddXycCPsx-OZvVPcTtghYShFIxPdz0bpr8B6a01WY1e30sSTMcItSzlSugeI",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJN_QJdQDBTDAR7HAyy9i4xRk",
+         "plus_code" : 
+         {
+            "compound_code" : "J7WH+5P Padang Besar, Perlis",
+            "global_code" : "6PR2J7WH+5P"
+         },
+         "rating" : 5,
+         "reference" : "ChIJN_QJdQDBTDAR7HAyy9i4xRk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan, Kaki Bukit, 02200 Kaki Bukit, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6448981,
+               "lng" : 100.202778
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.646145280291502,
+                  "lng" : 100.2043041802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.643447319708497,
+                  "lng" : 100.2016062197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kelam Cave",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107207715528715708742\"\u003ezalizee mohamed ali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ti2sBW2VZfNGx0y7OHDUR3ydNExJIdjHTSSjKOCNOSnAb_mcn2DXunfYCQXcmStOI7cEADV-3OpMeWRK6BdWxsZW9KXI4CMXi-Yq2w9RiZUohc6WYs4ousgV8H-z7fdgHpKXG6Tm52RcpFwoD-C3_tjtznPM5ze44GiPq5b2lASHKo7-IJ7MtkamTN076o31AZ87b6GsMhpC7uwmMSi_iCOPM4fvKzz97kvKlxulp8gV4d4rBrKbgtnfaXe56wMgX1mFariygSN62Pf9hjsJCkYFMntamQdBH3uxo_QYXVjev1il6_Vp5PabZ7IUwUFfycIQSkBn5cy8VFJ73SvBhpwb5880zlSMiogj21Ge3zqzvkhYaAtljxPukfJz9GQIxUJdL1OIT4hgNjqwIn5Sfl6omKxhXa4ymQfruFCdApVw",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJkagyqDLrTDARg_FYNlTR3SM",
+         "plus_code" : 
+         {
+            "compound_code" : "J6V3+X4 Kaki Bukit, Perlis",
+            "global_code" : "6PR2J6V3+X4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJkagyqDLrTDARg_FYNlTR3SM",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2812
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "02450 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.626804799999999,
+               "lng" : 100.2905514
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.628156730291503,
+                  "lng" : 100.2918166302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.625458769708499,
+                  "lng" : 100.2891186697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kolam Ladang Kenaf",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100748354366746747543\"\u003enovi Indrayani\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sMhF220ChyBYt3wGrt5r4h54dmBEj8uVSTTxrrL-olymLq2K9dagMzyosDnmpCsucITffl1Nr0dwaZvwGZMz2rZGP3M4u_-zugYdXYiVp8eXbl8eqa-wfz0zyG39Fkri68CN10aMZR0VQ6wdAkVKDeUy0ou1UL5sRukqahijkCkzrGd4Cd8opl0XQ9D4qq9Md1DlObUswJ7w-Ocz7ROFuimK9hPvzrsn4RUo4wMAGnehCK0NAm9ve6C5dRf4QXTw2CESoNH06JXhlCNaf1xkdjkyf-5NUSMso8WuxBjNx5vWB6DEUHbALzYbRkLvFcyoz6izkyzT_DtrAQUsAS1W6-nDCLrsXniJ_arNMdSPvBRgiktrKN4hnBpjmd5rkA9FEqQogyCCvFCdnZ3HM9FYeu-v41PdkTAvlsZXnrDpdpYDA8",
+               "width" : 1836
+            }
+         ],
+         "place_id" : "ChIJP4r1Jsa_TDARNpgOp3mNTE0",
+         "plus_code" : 
+         {
+            "compound_code" : "J7GR+P6 Padang Besar, Perlis",
+            "global_code" : "6PR2J7GR+P6"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJP4r1Jsa_TDARNpgOp3mNTE0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "R125, Kampung Kok Mak, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6494819,
+               "lng" : 100.2820344
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.650826180291502,
+                  "lng" : 100.2834147802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.648128219708497,
+                  "lng" : 100.2807168197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kok Mak Village",
+         "photos" : 
+         [
+            {
+               "height" : 2288,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110886860748442573602\"\u003ekrelfahmi2\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t4YZ7W5_W-LoAwY18eNs4WfXVWLYzIg9irg69VBUnUxc-Sx7k62Sdh4jprSjamwztfv9UuHqpGr0lCssebgnQzQrXfZs2EIApbxre1VJEpEnFnaY8SNV4brKWLgdB-qIxSgsGmI8J4tyxuDmMiVRcvdRJfgDkWAPgnXieqKqXjHbsT4tQlTj0JdM4h5igGWD49Op5vBV7N7SACwO2-yer4ahRsW5hbTiEk9yMsOxPQ3qVCwWUAlirUN8wCgBJIU07YLMLPYtota0cFcanRT0wykrSvN7Cy0nrizxq_M2u8m6-dtPObkAKl_VMPQsluNfxz2TaYWszkIC-4AsNtBVmzZlNtBaKghWG2HK8pI14KoRSOxWRwHSnYeqT4vuTDePQ6uMGxJVXMffcte8ykHMBb0hC-OecKyu1HLkD0dlw",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ2eDrbQDBTDARCErcvzo5uqQ",
+         "plus_code" : 
+         {
+            "compound_code" : "J7XJ+QR Padang Besar, Perlis",
+            "global_code" : "6PR2J7XJ+QR"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ2eDrbQDBTDARCErcvzo5uqQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "J7JQ+6J, 02450 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.630567399999999,
+               "lng" : 100.2890493
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.632225930291502,
+                  "lng" : 100.2904220802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.629527969708498,
+                  "lng" : 100.2877241197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "PIP View Point",
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101930112365376597848\"\u003eCK MING\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ss0P79zOKvsXdd7-AqTJqt63kbA6iqe4K5eWFn_hFuK02Zo8YGFZsSP_8lewc2fCRzqD-IgSgP0w-7cEX6bYuTi5z6-3U_gAw5Y6o9ETx6Ndy40cf1qeRxn6wmV511915zML8p5k9roEYSL02gt9N_asME5i-JThtR9Bjyn3Ein6er5cxJ8Zu3pFI7A4CWo3FIdEgu1sRubrRrCrYLySEWi_9_ikI-RCGkYnvnjuxL11Vi79dWpj2bSGSloB7KYeCpNZCNWLDaDKnOH3lO79OR8r28h1XLUndg0zKZUIW1MLfIvMun-IlgzPhsIUq0Zo9sVB-IkpBxt7QwA2eChIPMNNC6dgaOCsuOnh6qs6mXTTCbozyiiuufIcN2naQAttUVrdw_FxBP9f-3umD3uRdwwwl02_Vgf6cQALd7wrYYECTFvjGXvP2gRNgeP8It",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJg_7CL_q_TDARbD6gbs0IaYk",
+         "rating" : 4,
+         "reference" : "ChIJg_7CL_q_TDARbD6gbs0IaYk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan bukit manek, Kampung Bukit Manek, 02400 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.5767795,
+               "lng" : 100.231633
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.577853830291502,
+                  "lng" : 100.2330774302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.575155869708498,
+                  "lng" : 100.2303794697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Empangan Timah Tasoh",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114274315182432319383\"\u003eKuang Hong Chuang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-szQISf4aNbzaVz0SB8RCROnslTR_w73-spJ_3FeDlWQ5VIXI73uQZ0XN-_zMtQ1ot3HgiZS-Y0qFFvZQCI1P3I7TpuKtzmiLm_UKir3GWmpFaPRCrcbHDzlDQKFNMgnoo145urPPSpJvMZZD492TUKHt6spTBdd0fyXtOzngCvSzpdA_EqF5Dj0OjjAOdGcsAbKWuIh1X--UTZTF7nr2J9nKo22ssXKArJHV-ZDsH6mwq27u5vaBanW8snHe0xhxN30RFGaW7dXn7Liw-vnQ8m5sEP6K5SjC-_TNh22HQpBijPVA5aRhqjscm2bNoZE2X6U_kP5d9VjwUUigbNelsoqnwesRBR47bbRCecfgyWf1nFcYEmUkt1sNyL620HRp0rNJWSfkFPYJm6TsejhJS5KYSc63s_nWWKChkqPECfQdBJ",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJu0NU1dOVTDARy_M9X_4kpbI",
+         "plus_code" : 
+         {
+            "compound_code" : "H6GJ+PM Kangar, Perlis",
+            "global_code" : "6PR2H6GJ+PM"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJu0NU1dOVTDARy_M9X_4kpbI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 662
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "02200 Kaki Bukit, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.665737099999999,
+               "lng" : 100.2013518
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.667172680291502,
+                  "lng" : 100.2027207302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.664474719708498,
+                  "lng" : 100.2000227697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wang Kelian View Point",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114607113934452319784\"\u003e黄子宇 tze yu wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s6T2XUy9IFJJ3vgTThxhcfzLBByFjUPBJLBW-_ttlKVdT67AXlUOQXLZnQm0346FcLMPeoQ9OXCYAaeiX-PoK3xuPiOO6QB-sd5WaFDHC-fenIxghoXQTGbwRv8HSfWYkGdCcNZ4ESzDM7Op0BJyxvEqDuuCeUHTJzCf3US9KPXd5SYcczPQJ2fOFm2mXZ6ejXvW_HvZ7ndZFq94brV5Sr6ISOs_S72Gngu_OG_ofqFvWftS5pqLmQXMi7pElaF4UXCIW38Pqs_5Qu5k6DtWwjg-1WSmec2FYOJPE7SPhxVev70UInCQ_-RKiKYFXwCfXTNMRZ8dc-0VB5jqwj0IhqYM_8aw02m-nJi4WXdW_sTAw_q9rg2cKE7OC9vP0odOzgRk2bYRdAXL8i3e0YCa8DdgEO-zNHW1zho085t4k8GBmuTzFXuQGxfXeTClZd",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJB9KYyxfrTDARxdiFveVIeC8",
+         "plus_code" : 
+         {
+            "compound_code" : "M682+7G Kaki Bukit, Perlis",
+            "global_code" : "6PR2M682+7G"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJB9KYyxfrTDARxdiFveVIeC8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3582
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gua kelam, Kaki Bukit, 02200 Kaki Bukit, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6436685,
+               "lng" : 100.2047625
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.645194780291502,
+                  "lng" : 100.2062614302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.642496819708497,
+                  "lng" : 100.2035634697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gua Kelam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103151704744438600704\"\u003eMing Jing Hoe\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vEBEcuXN9b8IvVy0RzFqO02HqUYW2mAo1z4dGjzPMp4rnrCwsZmg83UGZhJpHIyrOAZ85EHaAaAD7lqbV4gTSxjdMgQtTsyfQeizET-FjiJijktZdVVETEv8WgIts9wcudnoXtm30cRczl1SWrlNX4Cz6NUqGYlJN6orGkLkttvj5nShM8Aln49n94apiquq8xL-9Q4W0_-kWxUP5pQu31aIbb0_MLrqmlgxAx8-joQjfUyrnNzNT4gs0HyVzb1Fd5NJIt2XKjhxfLI72UA8_qpe8WjMNNX3b0OLnu57MAS01xIShy8EP30ES97jdAN9PaHYKUiCSV9U0ErB6X8n8356hpUgiuXYSBKV1Ygo-lGYdk2zE_MIFUcuM2LmPAkNKU08IVLzXA1T8vNmbDvdsrjRLDr14APlSgknoFx4SLCXvY",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJRW56mdnrTDARDPC92TY7K5s",
+         "plus_code" : 
+         {
+            "compound_code" : "J6V3+FW Kaki Bukit, Perlis",
+            "global_code" : "6PR2J6V3+FW"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJRW56mdnrTDARDPC92TY7K5s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 174
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "G6WG+64, 02400 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.545611099999999,
+               "lng" : 100.22525
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.546905630291501,
+                  "lng" : 100.2265929802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.544207669708497,
+                  "lng" : 100.2238950197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran wau Padang malau",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102662562792258713155\"\u003emuhammad syazwan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sOiBtDskYm6-pNZsZ3-y-vNg5IgWxGAYFNl8uxv9INmrKmxtHqzXIHvHMaGp70-5HUqI61J1E8BcesamdI758PODI31EmumZCq2ePIqsaDmpWCLDVZGWZxoWDxA7KLwNeLd2t8pNX6wOx9cCZAu8arauOBylkdVrajaBilUpKnVO1TaCDtPXmBf2pzp_Pgf31e5_OiW-kSLQ-6_yJhOySDI626uPUfrg3i7UWRiGxKgfD_vt2pPxOUL7YNqgM01ZHVBau_Tz6SCRYpLgPNlneMu2vemuYgayR_lNIrqVMGLlIKt6s0Ix3Z0iwHHby7TEl0LseuTsHL7vZDLKP6om4pYkIXUQPsrCTdQEAW2u7fawMDjP2Uyr5kH4CEn8LDONA0UCcspBE5TbOkAWjKqswdOzdvYvcd97PS7yMhpTFxow",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJUeUgCACXTDAR8opz9AaHzGg",
+         "rating" : 5,
+         "reference" : "ChIJUeUgCACXTDAR8opz9AaHzGg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "P665+27, 02200 Kaki Bukit, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.7100914,
+               "lng" : 100.2081918
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.711440380291503,
+                  "lng" : 100.2095407802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.708742419708498,
+                  "lng" : 100.2068428197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gua Wang Burma",
+         "photos" : 
+         [
+            {
+               "height" : 1867,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101793127318563664843\"\u003esir blackdoomsrimayangkala\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sc5ri0kJh0x1nXq9ieHda5e5UdhjOf0CzbR_Kchf_Whw1fc1kg9WcYhruQ0tjmPGweFOA0Bp-cvCmPz_4BoBdDSRhM83Blv2vkQkyz8Pgj6lDejT7Gx6VsAwcDoDHUHmxT3nuKWOMr1hQ3O_b8eTngl-qA_VYKT_hDykVQZrGkGAk1cjq1v6OiKSjb4AidS1nKUZWxYvn20lKZSAvjE5BqWlbp4gZqB3n1qnZRwr2iikbY7VU6hOkQ_b_Xp_8WyDkUwaWdDka4L-aQyq2kbvDda8avOXg2TJlczFmC4_HnobJctObsr-u-Cpc0Pj0PilhEIiZzk6tv9EOJj62VAPGGY7ZAIMH35CWp_QIt7k4bsB_6uhcXJs8m-1rFTAvJNqtkFr9PMC7nlxj8rZwiBK0PP4gsx8KShI8Jk48ntGURx222on4pG1s4JiQn3VD_",
+               "width" : 2494
+            }
+         ],
+         "place_id" : "ChIJEUvBAnDrTDARjajTAGtZRBE",
+         "rating" : 4.4,
+         "reference" : "ChIJEUvBAnDrTDARjajTAGtZRBE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "J7X4+JJ, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6490383,
+               "lng" : 100.2565654
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.650325880291502,
+                  "lng" : 100.2579303802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.647627919708497,
+                  "lng" : 100.2552324197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Montperlis",
+         "place_id" : "ChIJq2RwDgHrTDARewK9W1aIxNQ",
+         "reference" : "ChIJq2RwDgHrTDARewK9W1aIxNQ",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "R119, Kampung Lembah Tuwi, 01000 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.5183317,
+               "lng" : 100.1745107
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.519635180291504,
+                  "lng" : 100.1758487302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.516937219708499,
+                  "lng" : 100.1731507697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Perlis Vineyard",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113287514221484411829\"\u003eXiao Qi Keok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vt6fxOZiQiRK4qznVWPxU5k5YVTLlpZ_r4tfE8dNoUHyiSMmCiq67ktUE57Fk6vwhmhjGazPfLlhXvCQG2hMLCLdfbLlyOvLBtmXIZy3Le1Taw5NJupzHk9RlIhKhum9QQq27B8uzAyDkLnzkqHQARjmLBCxaxgBEmLs-JVJeAF4BWm8xMonBs9gg6w38LaAvRxtuDB4l2tpFCIaWBjTOt54l6g6oK2FJJnssDIw2iOp8r5DRXeTXrfwdGdMf59XN_cFjk_HwQbnHM0cjQRIwOcSduI5vhALkjV331YOqPiNrYF-nfdl3in2Y3StoOr-8GcVOPVsX04T7K0aKAkIwj0DL_JOiWQ1k553Ko-T1bDuPEmu2JWX0km3D7GB_jkFnxjx-QXcSiGBwsERVGLeZVC1hfg8ip_ZNVdDdYCPXmCQ",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ-erVjNWWTDARcxvOlp2ZitA",
+         "plus_code" : 
+         {
+            "compound_code" : "G59F+8R Kangar, Perlis",
+            "global_code" : "6PR2G59F+8R"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ-erVjNWWTDARcxvOlp2ZitA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 779
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "C44F+FX, 02000 Kuala Perlis, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4061327,
+               "lng" : 100.1249707
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.407513080291503,
+                  "lng" : 100.1263723302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.404815119708498,
+                  "lng" : 100.1236743697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Patung Ketam Besar Seberang Ramai",
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118145326794040014994\"\u003e747boro747\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vLF6GH4XR47AIgs9nbrcXQEcVdbcgkSEqTSAuO32pgYIjlTemXzU9lYvF904A8jfm5i2VLROXrXFRydM_q3K1VVXrQ748DQsBuAMXrik6O4ITSie0K8XdbwrC1WqipHCyigWSw2HCXTJ5f2UXYsplAhNIANSq6MnjJkvyCbNfk0NgZTkuFfMXdu0nUUvMcLqvQQGy0VSQtqtoIs3pWOYE-OJSj8lXnTMDlFDe1DRWt0P8e_5pB0UX0-Hmsan0go1ChqlSsIo1xPbF4cM-i5GIbgvzpXSBGTjEOm3CXbixU6pb0gOSyrQL3SONFOGZU9GkmYOrag9Y7P_hyZAbm61jQQDqhd1aniLkM0K6tkgWDeMXadRHsWD1uxg555EbeXbWi9l7xqqzgIgYGqewrIp4OQM4pUGWAfprC0dcsQ7YvHA",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJQfedVY-bTDARWZAXCIh6fiA",
+         "rating" : 3.8,
+         "reference" : "ChIJQfedVY-bTDARWZAXCIh6fiA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 119
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Terminal, Padang Besar, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.6618802,
+               "lng" : 100.3212687
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.663210030291502,
+                  "lng" : 100.3227013802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.660512069708497,
+                  "lng" : 100.3200034197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "0 km Padang Besar",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116277995399364771845\"\u003eShikuray TK\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVELl4yIBASA0UKmy7dY6W-5b2r_xb3BUjEkDcU6mrarQfqVwAaYRL5YgcuCXuGFSYTCB5gErDSwDHeVpCicpeAdEWRA-16fu0q2YRhZxRYdkqzKEn_cqcyNwxZ2Usyxl6Rphcg7b-z7qH2_tPmdF7fgxXSdc6MFbmllIts2P-LU7hbV0r4U_wW66JJeFfBo-VrIggXYRYp1mvmwbc6Uqz9y3X1-C5376UkKndX0hkPb4yjqSuEGp-cGuhPhssEqFho-DHZ3TSGPQlHZOXb2YrfJ4XzobyTH-dq0xLDlR3k9JVYX-g_MA6u5ullXiak6xVzFoROCvJiCGEwyid6L6DOS49eaWGx-1NDBZ1qcFl4Z7mjUl74iJ2Yk3otHOTKcsXk76pn8CX3_LcUQv3rM6_OQfCvbzX4hZFTem0C1Ox9BaMl4qTRIvd4ivqEg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJJ_ABrDfBTDARcU1fvAepSig",
+         "plus_code" : 
+         {
+            "compound_code" : "M86C+QG Padang Besar, Perlis",
+            "global_code" : "6PR2M86C+QG"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJ_ABrDfBTDARcU1fvAepSig",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "79, 02500 Kangar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.5633456,
+               "lng" : 100.2975915
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.564725980291503,
+                  "lng" : 100.2989729302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.562028019708499,
+                  "lng" : 100.2962749697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Yellow Pass",
+         "photos" : 
+         [
+            {
+               "height" : 2592,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117439023290099288497\"\u003eLEE 李 KOJURY\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ueg3kDp6ZCIGLUvaSNgxGpbFQ20QoV3HuKyYA6wjkEIHiaw5H6Jj-fEAsiYPUcubnCOPMYHR7Gau02lVWoMubICcZ9H1URrOH6ZOcwyxroSYA_Ne0l_ev2EJr3wbtwnkgr62U6dZBuNE29xkdsPKgkPx6d43pA-02kpYhFDH5yAAJ33MXp1kW96g-OfvhZYfbWwDmmFTnc_BXO2uGCLtDKOQeo6LoNWC7qtRrItG-7Wxdefb6J2BUcwyjG_iuCa_sFZjczIcK7_wTA0pSpqtyLoOB7FnhF2eBrDBbAUiQudU6Mi98iYX2vNTHDfbAtsPQOFi7lO3KNHxmpy-N1E3q0Ht6bWcz6-r3Aon-wg67FgN1tM3yL_EUTVEZR5ql3N_C8XhfKSJQQe-BIxbK16UUwU7QY_YeOzLPd5ajv_7Q",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJYxVNSMy_TDARn6wYiaGF9Zc",
+         "plus_code" : 
+         {
+            "compound_code" : "H77X+82 Kangar, Perlis",
+            "global_code" : "6PR2H77X+82"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJYxVNSMy_TDARn6wYiaGF9Zc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "02000 Kuala Perlis, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.4156508,
+               "lng" : 100.1487503
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.416960630291502,
+                  "lng" : 100.1502061302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.414262669708497,
+                  "lng" : 100.1475081697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kota Kayang Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101801694538394586220\"\u003eLisa Zahran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vF0bGRdWZQXOW0HtG1M-lnvpNJtzHrLdYek9iKT2oB-AYX6QkHpcSxzrdwI7Cbkva5kDQx-5_ZxCVEZwemu42iUwd3rKM6bbt0oV2FJO8Uz6bAelue5ReoTj0TD22MoqhIRoR9tubz_VWpyWBjrChbPuL0aTcHC5KtD7f7xIfDrbt6FFL7VPGSpzwdnoGzkzD5W0CHlYzI9JglGKds4jdolPhGnxyyToJmQbKEG0gKEtJKHx2v7CQoR5sXOxR8PYx-QlQ0d-OjRCEqp6GdpKZOHJqUDR9lVjziWqIReb9cL5Rqf2387Z7STr8Kew9uT1yE5-K36dxtmq3PTYdWChboG1xsPneX3dKPURDawWIYWcCavwpC0oKAwYeyM0TUsIJFPabOxdHOj5FnA7AKgwJoLD0F2h79gcHldiNUeqSiIw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJh7OxiMCbTDAR8Eyd1NKutsw",
+         "plus_code" : 
+         {
+            "compound_code" : "C48X+7G Kuala Perlis, Perlis",
+            "global_code" : "6PR2C48X+7G"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJh7OxiMCbTDAR8Eyd1NKutsw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1241
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gerai no 7, Medan Selera MPK, U, Padang Besar, 02100 Padang Besar, Perlis",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.662214,
+               "lng" : 100.321715
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.663472280291502,
+                  "lng" : 100.3230599802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.660774319708497,
+                  "lng" : 100.3203620197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bulatan Padang Besar",
+         "photos" : 
+         [
+            {
+               "height" : 2288,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116571269333651445972\"\u003emr millenium\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sj7iVQRs7_yQD15cVEnZu7th1w7udwzE_IZmc-wnjIGHaGHVcyHEKwCNoOs09X9MuRK4GO_PiYziwAh4p1rK4KBFpj6hbZ-V4J-e62Tbeo9n5-0QihHDUa-MpRaF-cwe6DzBtTnYaGsuZvPfK6aqmCfr_iaGhtUIQzx9G1YFOkb4gCmvYuqrqH_OHBxZoGKJ7VJE7ZAWzv_kQFvqIwHdNDFE9qv2bhIEt_XSRTGxtFjsCWLhzeu6BKWTYRjQW8nJYJ9qp9H87UZM65qEnbUGHRmJeMi5cDO1hpbPUM_5uJ5O3QHMgSn2IFhwYo9OOu6LSk7qNb--IYACncaoh10SFhRdtY3cKqZnHfUZts7rfG-50TBM-BO-EP5JCBWnsb6QERWyDVs8xo_WnFLx4b0S9WoVdXrlttOD-1snNwXEkJofA_A7ftBbI66WpIHqnc",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ_1HqUADBTDARm2vTBAaI6PE",
+         "plus_code" : 
+         {
+            "compound_code" : "M86C+VM Padang Besar, Perlis",
+            "global_code" : "6PR2M86C+VM"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ_1HqUADBTDARm2vTBAaI6PE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 5
+      }
+   ],
+   "status" : "OK"
+}

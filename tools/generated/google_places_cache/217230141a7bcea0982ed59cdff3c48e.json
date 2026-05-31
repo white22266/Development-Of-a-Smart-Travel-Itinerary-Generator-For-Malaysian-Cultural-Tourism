@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "94750 Serian, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 1.066667,
+            "lng" : 110.5
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 1.068193780291502,
+               "lng" : 110.5011826802915
+            },
+            "southwest" : 
+            {
+               "lat" : 1.065495819708498,
+               "lng" : 110.4984847197085
+            }
+         }
+      },
+      "name" : "Labak kara",
+      "place_id" : "ChIJLyk6LQB5_DERkFvguAjF3OI",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16347157388700179344"
+   },
+   "status" : "OK"
+}

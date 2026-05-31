@@ -1,0 +1,53 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "MXXC+6R, Lucius, janing@herry janing, 89600 Papar, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.6963186,
+            "lng" : 115.971734
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.697688330291502,
+               "lng" : 115.9730232302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.694990369708497,
+               "lng" : 115.9703252697085
+            }
+         }
+      },
+      "name" : "Kampung rampazan",
+      "photos" : 
+      [
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109180715025356234602\"\u003eJeffrey Soon\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uUUdmrGNpL_V_64kup_jbBC22JVl2LPUmPOWO79IgmNDuqILRXf1BQFAwgecp-_22r9tHxXvegmnJjN5v-daPLbrKiED01COMwe210TGFOX2UaUTfAV-_eBBCTeqC6lq3xDi50H93DFMlxFB4sF-4-YXITLnf9hkTcIryPTbcCaix3yuETTrcHW5mokyA5t9DNym_LIFjqSe__h5LCzlyIJ4nYc9rgDIfgNCQ9AKxZ4N8Slte0PnQQmY0VfA-KScy7tGwXAg2pTovX0JYIHtYCK7kDWux-xnJmn-wyaLkh7_loYrU0n7MVzWxQKKBvtbHEnjWwEig6RZ2c2TmSNYyuJojJiuCR89RmWHe3QFM8dvmOtk2egWIFXm-PM2DJ8KGGwasCB3iTBUEXx_-vvmZXBqNM3l7g2gXfcSCGMMoHDQ",
+            "width" : 2299
+         }
+      ],
+      "place_id" : "ChIJwU2zuHahPDIRURWXgJdyRnM",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8306452557754471761",
+      "user_ratings_total" : 8
+   },
+   "status" : "OK"
+}

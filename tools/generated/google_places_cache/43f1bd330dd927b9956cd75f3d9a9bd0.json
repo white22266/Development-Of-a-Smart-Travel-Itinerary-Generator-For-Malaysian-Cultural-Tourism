@@ -1,0 +1,71 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Mak Lagam, Kampung Dato' Ibrahim Fikri, 24000 Kemaman, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.202583,
+            "lng" : 103.3296857
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.203921380291502,
+               "lng" : 103.3310255302915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.201223419708497,
+               "lng" : 103.3283275697085
+            }
+         }
+      },
+      "name" : "Bukit Jemalang",
+      "photos" : 
+      [
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109904473473819346401\"\u003eEmy Jefni\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tG9ffzxaY863iV8YKV3rrsToMPF1dQ0qM8OvCz896cfOiSNYNqwpdc-k4FMJpuS6KpsNW4dkt2EjJFCezDoSOoYF24TL-Cukge0TtjwfeWjjNWQotJpEVC3-6iMc4b9QoXfxrJYcxjo1biUzM-9doj6ZaKDuLM6ry-AT8HwZD7LvdyVjrJe3GIg2MLGcwhnh8nWrxP7crF8hqabyNUfYPF7Nt4NnMjb8pABhEEdlRDlrn--j9bLZbKqw1DnUJSX5g7E1PdFL4Vq8y-JBrtD8fsEUiuvlyiPUxSc_8-8hJJ1NOUMX6_dJCffO-TZw_1iXUk9FkFQUuRBOLjmFcNZLBTt5IvnGY5RQi_BpwH1p7gfCjHlSPs7Nmm8gijmd5G66tgOB9ECkBYqykLkZ2UX5OOFygnAKl0JTGGnWQQgpwslw",
+            "width" : 1080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107478526380438463639\"\u003eKervin Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u4OBetbktcIYG7jQvj8nAry65DbFcKyu6LsrmfwD1Xx7p5aSNs5rImGohASyQynFFY5tQrHNLKjwmuKgE_PbAhVTY-1lq1X_pkZZIT5EFoRahoC-p5fWISN0Hvqt9JQO-aYfNxIE1vPtPbaj4eLurJyIqx4FmXl3YgaNnN4TGHspGSxBJFD2kDP2dhU3hOwkcI4a295rhTk3V7RTFBkvWUONQ5CYRqQNH6WVZNJkEB-AP1Z_qsReNCzDTK1PZpLRYHDhm7eI0q00vf4fV_mII0Oqfhx-XlLIJllM7JouQD1BPy2N0eMslg_B6nZfKaddMuHcvDSNTH0jvGHnYLYSAWvIGfLZwzUE51m8IlycMF4c8EOd0ZU3L9vqM_xCuB93mBvhqYIG_vAbWxPDnDZzt2Ese9IzBaCa5LPaVjI7l7Ws44",
+            "width" : 4032
+         },
+         {
+            "height" : 569,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101355333056201959739\"\u003eMat Jenin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sAZxnBGyxeNqmvcWv0_nSznIIV6DVQ5vtKde5_yRwr6TdAko5Vx-Hdx6G1dQRIl_55LoA81cSiz_gzxdp-1s_uLyyzL-IX7NdsqHpCT-xe1EJFEEsEjmvlJgD2EevyddhIXXYSDAK7iBnnoxDZCXcbnyPtR3-PvwCwHnyxBirPZw7pvcK8zTr40A3dAHFJjiA9_wm49490XMfu4DPl5nu4DGHA_inwK2yIc_j4j9M2sdCa4fnQH-ICb_xFbkSlRrrO17Xj9nBSDWhPdUxd5tBovU0RGq1ijIo3kD5G-alSN1Lh2H2g0ZiN9qSLrwT0GWksdXgfdIdlUGLAAX384aN4q9HZeOX8nFO0liyKfqNrJDiw5LsNPaNNreFaWTvegYkwBwwQg8hd28qpVzup0P0AZT_yH7vb9nfmhC6ZX7QLHQ",
+            "width" : 1070
+         }
+      ],
+      "place_id" : "ChIJRz2JVeWJyDERqYyjR1eyLxo",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1886922856825326761",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

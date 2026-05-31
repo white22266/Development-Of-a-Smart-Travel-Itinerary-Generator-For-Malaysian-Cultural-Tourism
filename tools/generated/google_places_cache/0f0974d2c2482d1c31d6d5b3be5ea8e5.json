@@ -1,0 +1,200 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "33, Jalan Masjid, Pekan Beaufort, 89800 Beaufort, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.346633100000001,
+            "lng" : 115.7462913
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.347896780291503,
+               "lng" : 115.7474619302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.345198819708498,
+               "lng" : 115.7447639697085
+            }
+         }
+      },
+      "name" : "Masjid daerah Beaufort",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0500"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0500"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:00 AM – 9:00 PM",
+            "Tuesday: 5:00 AM – 9:00 PM",
+            "Wednesday: 5:00 AM – 9:00 PM",
+            "Thursday: 5:00 AM – 9:00 PM",
+            "Friday: 5:00 AM – 9:00 PM",
+            "Saturday: 5:00 AM – 9:00 PM",
+            "Sunday: 5:00 AM – 9:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112298666305104770822\"\u003eSahrul Tengah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tiwpWY8dQ1sytN0x5NLsfh3tunV1g5qUbgOXECKp0ASJCM6enkZCt8hN7gSHOTjLSUVKI8xNGBb81mz67SRmgeBicwv-boK8YJ3w-ZVGvoXcbmduDwHZmxZqiHmonpp2uLHP_aC80oW7ioN9L1stFeKFistXw5Vi_0FQZCUrtGSpWRt-0HsG7vLRLGuQTSv8hAta5Ua70PJ1P17Nqny48oT2wvFn7nkHNIDAQ6r64Z8GTzDFIsaaRAH0hxz6EvYFMdCpykSSpkKhiWRm7kA7eBA4HHCRP9JY_u6wkVkptOxQ9Idggsx89-Q1pko_xa6sdI3zMO74hVCtCO0w7Q__z3vAJAqdpEe29xPMPumKrmuGTUNmNcNwZXKsYFfrUB8EYOEuc8F2jTQEzwUQ3Cj2qlegtYdu_SSYdxaFoa_681TJKRIzPskxGfaHHwqOJe",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112298666305104770822\"\u003eSahrul Tengah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sAc9SIaIgCU_U0b34fO9uXxaGimuU7sm7YpT2SRdo1TbjTnbuanyYqnjcoT7NDUFtvx-I88zr37h-ebVfmZiBacNy12oFeBnfYRUTzN2bXuH8_6bh2Ji7AaQt2-bXRMcEuKdPKdehAPvwod4lun_kmtKGRUTDpZlBtH8L2e0Xe2m7tgepKur2o9XEWL3AtY7sfx-ulXzxwUw4NWo94UW-ihmIYpDS6F12DauKSxSGp-WCjX3iu4UqsotICn1TaD3GNzkgz7avwZSGJpi_bD2iz-V9I3kOtrYB-1vZlOrWxqjPlKKWZOswsO60Ti_P9FIQFQcoFNsdAZZ40fkoeLvYRsNU7aXeTLJ2p8C7jCtvqpoSzAu7fr9WPT3nQA2PnUYh0tnDdz3QTyGPyU876UIZ0MWnOF7eBVH-8PgqfTMHOUOikEIh4Ef03edmx8Q",
+            "width" : 3024
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112298666305104770822\"\u003eSahrul Tengah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sgXSS5Cry83GXa7nZoJQIaVTCoYb6Gb5fIVGTPWevDErSeE-YYSD22ykup6RhJMwusXBFfqgpgIEUcdr0nzU9NTgTB37ViLhJ7R2Uo7Wl7BRW55ddSyR2Tr24iHzEKa5csM6MjdaJtk65f4Qeon2YYgO7onDoBK0hqlsr-Q1gEdeDSoeCuqh0B2teWAcdpaTbxfrEIGXZVVtTow3u-LXTz33TecWqamODO2Akmh7Lvyu_QCitnG_-t9IY7RUD6ugYLWaW-CM-FLHugeZ03mzgxZo-VEOxsL7iBWqcai5sbUihtNgLJN9zOB-2bI94VqjZjm9IibK3tp1jpUe__sozOqs5g8tFEe1pY-PMp5Aj0O_EeFwH5gMD6qvp29CBSvgYoKHMtqJ2rgusFVxCrCEBGdpPN4T3gxAZcJSv9d3fjX9fx9nTuABKs0pzCgk-G",
+            "width" : 1453
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112298666305104770822\"\u003eSahrul Tengah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u8OznLGdMtF89BRLDOIOjzBrjj5NPcqhvn7W0BM7wxlhlmfJvFwGA8dh83FN--vCTu91GxkGNcV1vbU1hTmAorSjB5RmEc6AMJ8HJbGvDfYwT8ddqLx28bJbROoepqmNavMtVNH9GvqCwMeXgdJ0o-6pYo3bJJUs2UYRMzXiHhJga_V0Itp-J1hxgqt8HqTuGFMyrmJBddswc7htCbzbupwqAMm8x5jQPUkzoBqDOWh3nr80fF2E-W0BXJyCGGj5zP0imDIFiPU0yRxQIQVvwurPAhOeW4ZuwdIQTqK0ht6BSqIte4krpxmudLgKF9EWRpw8Dofprf1jYLv4BK5xmfz8X0T0Tk2KCQuV5of0FMpjKa82eH8TJZ2c7XiD1BLY_LVN9O4mDV5SnSnmEd3cLhMBAIRFYN_-9McCNXd-vO4aaT74Wrk3_Ad-CnhCqg",
+            "width" : 3024
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113519205123758959895\"\u003eady zubir\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tpdRBb5bDB4LH1TtzqrCK0YlutajN3sXLdtYO9Xt1Zb7MyMVfeeIEYnaaZqQDHSeqRONuPG1YreivitvvQfATv7vR5vEE5L3SedScfrEhC4ky-TD8T127xJeLwZWobu3d4BuWyVmcl6yEKxh-L_ZUCBJOmn4LWlngQqzAGCKCCEdnuV-q0KdbBgLjpHLjKj7kd_4THryFrFRmHjdSvLtsoWB67SbZr5l91cdUi768PD1Usv9szzIifsA7xDfXjduHdyZWun6U9xH2rhJCEkCGlHzdR1F36sMrkqncHvWtJZGo0n3vvBM-xbNyxEZifrJqRvnZVkI7SxJY3ojBURRTU5Z__p9jaQoZ_u0CondjUbBwxZXtBvrTabHWIVMcLHdnIBlKLH7uUuKif-dZgdC1MScpii3BfJMnA_n9jUZig23CGNa8MchbMyCPauw",
+            "width" : 3072
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116936264690864395011\"\u003eIr. Ts.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uypUlfGpGwG3JNmqFWItC2EXnH1DyPsL8-_C83E3V6ZLDC4rHus-4BvlLK68jMjqd1L5XrBgdjHLJ3mBH8tFgEtiFNQmtc6W-xYw6fBvLVejHm9i2j8rPGfwROb-xhDiYMHVZ6paMXzQk10P0v-vpAsDolgA4zBhE4ezAcDFWTJSxoBPboJBWRohnKe5WkccO2u7MRjEV9flUu5X23cMJB2jQi6UkGXkP1fOke4EX4vMrVn20WXjuqZvizJAOA4YWlvEQazF-F8Fu7NyIqAkZGRbkbTosbl2CpiziQ2WO2w4k3xwwsO24gHoBkimQAMS8orUV7yS_pNgSvSKe6APQXD8DFzsMOp-aGSJwGVkSr_lQx0HMUMToEY3zM6i_JTRETCYVADpFCBnUfZCuWHqW5H-S5tVla7Ouj-XRQRHvJyD9PQBOFdGbewRQYePIf",
+            "width" : 3072
+         }
+      ],
+      "place_id" : "ChIJVbKMTwDNPDIRndn7_AUHqgg",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=624319220644829597",
+      "user_ratings_total" : 6
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,71 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 3.04 & 3.05, Level 2, Annexe Building, Central Market, 10,, Jalan Hang Kasturi, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1464747,
+               "lng" : 101.6955059
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.147085180291502,
+                  "lng" : 101.6967541302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.144387219708498,
+                  "lng" : 101.6940561697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Art House Gallery Museum of Ethnic Arts",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tYhYZXGui0ljdIwvE_5gU72PGM2BPAtMdtirFAL1x93E-gCC0Bv9LQ_VZSJxKX0LSFMI1tMMeXUwp5Tkoq8ZmmywutTze8mStYqLO_EMiCLV-xXiTeGPVU8LL6APM5Q-gmVDYjf1DimX3XCzqKejiZNs1HEjyH_xkqiaOXEyBEPEzbkAyzJoR5wF65FFDs_NXO9VoiJqcrjCmukQ6EglMP4GKneAwlZpyKMjlDpYILDvO9m3_mr6SvnH_d_p9t9B5ylk95-5_sj9JZ5SsR2hMS00DlqsWhCeQKNvY7FnnuaiXJ3oBiUh-DmSzLWaKvPN2VsKrsXuhKrs2s39DdPBbHM4UaTWIZ8aJhYyMqJSfLc7lxCwp1rrsbVq02TBNb7O8wSlYtjDC4yR3zmbs5pwaTcdsJKx9EEDc3xZRJ3RMsYCS7",
+               "width" : 2304
+            }
+         ],
+         "place_id" : "ChIJwZUFgFs2zDERvM72M2ukZ1U",
+         "plus_code" : 
+         {
+            "compound_code" : "4MWW+H6 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MWW+H6"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJwZUFgFs2zDERvM72M2ukZ1U",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "home_goods_store",
+            "museum",
+            "point_of_interest",
+            "store",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 336
+      }
+   ],
+   "status" : "OK"
+}

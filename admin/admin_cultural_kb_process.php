@@ -115,6 +115,60 @@ function update_festival_dates(mysqli $conn, int $placeId, string $category, ?st
     $stmt->close();
 }
 
+function update_csv_place_extra_fields(mysqli $conn, int $placeId, array $data): void
+{
+    $map = [
+        "halal_status" => "i",
+        "is_outdoor" => "i",
+        "best_time_to_visit" => "s",
+        "dress_code_required" => "i",
+        "website_url" => "s",
+        "phone_number" => "s",
+        "avg_rating" => "d",
+        "rating" => "d",
+    ];
+
+    $sets = [];
+    $params = [];
+    $types = "";
+
+    foreach ($map as $column => $type) {
+        if (!table_has_column($conn, "cultural_places", $column) || !array_key_exists($column, $data)) {
+            continue;
+        }
+
+        $raw = trim((string)$data[$column]);
+        if ($raw === "") {
+            continue;
+        }
+
+        if ($type === "i") {
+            $value = (int)$raw;
+            if (!in_array($value, [0, 1], true)) continue;
+            $params[] = $value;
+        } elseif ($type === "d") {
+            if (!is_numeric($raw)) continue;
+            $params[] = max(0.0, min(5.0, (float)$raw));
+        } else {
+            $params[] = $raw;
+        }
+
+        $sets[] = "$column = ?";
+        $types .= $type;
+    }
+
+    if (!$sets) return;
+
+    $params[] = $placeId;
+    $types .= "i";
+
+    $stmt = $conn->prepare("UPDATE cultural_places SET " . implode(", ", $sets) . " WHERE place_id = ?");
+    if (!$stmt) return;
+    $stmt->bind_param($types, ...$params);
+    $stmt->execute();
+    $stmt->close();
+}
+
 $action = strtolower(trim($_POST["action"] ?? $_GET["action"] ?? ""));
 $currentAdminId = (int)($_SESSION["admin_id"] ?? 0);
 
@@ -131,7 +185,14 @@ if ($action === "import_csv") {
         fclose($handle);
         back("CSV file is empty.", true);
     }
-    $headers = array_map(fn($h) => strtolower(trim((string)$h)), $headers);
+    $headers = array_map(function ($h) {
+        $h = (string)$h;
+        // CSV exported by Excel/PowerShell may add UTF-8 BOM to the first header.
+        $h = preg_replace('/^\xEF\xBB\xBF/', '', $h);
+        $h = preg_replace('/^\x{FEFF}/u', '', $h);
+        $h = strtolower(trim((string)$h));
+        return preg_replace('/[^a-z0-9_]/', '', $h);
+    }, $headers);
     $dupeService = new DuplicatePlaceService($conn);
     $hasDistCol = table_has_column($conn, "cultural_places", "district");
 
@@ -243,6 +304,7 @@ if ($action === "import_csv") {
         $newPlaceId = (int)$stmt->insert_id;
         $stmt->close();
         update_supervisor_place_fields($conn, $newPlaceId, $cost, null, (int)($data["visit_duration_min"] ?? 90));
+        update_csv_place_extra_fields($conn, $newPlaceId, $data);
         update_festival_dates($conn, $newPlaceId, $category, $festivalStart, $festivalEnd);
         $imported++;
     }

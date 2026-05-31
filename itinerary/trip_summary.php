@@ -526,16 +526,15 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             <div class="card col-12">
                 <h3><?php echo !empty($selectedHotels) ? "Other Recommended Hotels" : "Recommended Hotels"; ?></h3>
                 <p class="meta">
-                    Nearby hotels based on your last itinerary location.
-                    <?php if ($budget > 0): ?>Filtered for budget up to RM <?php echo number_format($nightlyBudget,0); ?>/night.<?php endif; ?>
+                    Live nearby accommodation from Google Places based on your last itinerary location.
+                    <?php if ($budget > 0): ?>Estimated around RM <?php echo number_format($nightlyBudget,0); ?>/night for planning.<?php endif; ?>
                 </p>
                 <?php foreach ($recommendedHotels as $hotel): ?>
                 <div class="hotel-card">
                     <div>
                         <div class="hotel-name"><?php echo htmlspecialchars($hotel["name"]); ?></div>
                         <div class="hotel-meta">
-                            <?php echo htmlspecialchars($hotel["state"]); ?>
-                            <?php if (!empty($hotel["district"])): ?>&mdash; <?php echo htmlspecialchars($hotel["district"]); ?><?php endif; ?>
+                            <?php echo htmlspecialchars($hotel["address"] ?? "Google Places result"); ?>
                             <?php if (!empty($hotel["distance_km"])): ?>&nbsp;&middot;&nbsp; <?php echo number_format((float)$hotel["distance_km"],1); ?> km away<?php endif; ?>
                         </div>
                         <div class="stars" style="margin-top:4px;">
@@ -550,11 +549,11 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                     </div>
                     <div style="text-align:right;">
                         <div class="hotel-price">RM <?php echo number_format((float)$hotel["price_per_night"],0); ?></div>
-                        <div style="font-size:11px;color:var(--muted);">per night</div>
+                        <div style="font-size:11px;color:var(--muted);">estimated/night</div>
                         <div class="hotel-actions">
-                            <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotel(<?php echo (int)$hotel["hotel_id"]; ?>)">Confirm Hotel</button>
-                            <?php $lat=$hotel["latitude"]??""; $lng=$hotel["longitude"]??""; if ($lat && $lng): ?>
-                            <a href="https://www.google.com/maps?q=<?php echo urlencode($lat.','.$lng); ?>"
+                            <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotelByPlaceId('<?php echo htmlspecialchars($hotel["google_place_id"] ?? "", ENT_QUOTES); ?>')">Confirm Hotel</button>
+                            <?php $mapUrl = $hotel["map_url"] ?? ""; if ($mapUrl !== ""): ?>
+                            <a href="<?php echo htmlspecialchars($mapUrl); ?>"
                                target="_blank" rel="noopener noreferrer"
                                class="btn btn-ghost" style="font-size:11px;padding:5px 9px;display:inline-block;">
                                 Map
@@ -728,11 +727,11 @@ function renderHotelCards(container, hotels) {
         const meta = document.createElement('span');
         const price = Number(hotel.price_per_night || 0);
         const rating = Number(hotel.rating || 0);
-        meta.textContent = 'RM ' + price.toFixed(0) + '/night' + (rating ? ' - Rating ' + rating.toFixed(1) : '') + (hotel.district ? ' - ' + hotel.district : '');
+        meta.textContent = 'Estimated RM ' + price.toFixed(0) + '/night' + (rating ? ' - Google rating ' + rating.toFixed(1) : '') + (hotel.address ? ' - ' + hotel.address : '');
         const button = document.createElement('button');
         button.type = 'button';
         button.textContent = 'Confirm Hotel';
-        button.addEventListener('click', () => confirmHotel(Number(hotel.hotel_id || 0)));
+        button.addEventListener('click', () => confirmHotelByPlaceId(String(hotel.google_place_id || '')));
         card.appendChild(name);
         card.appendChild(meta);
         card.appendChild(button);
@@ -795,8 +794,8 @@ async function confirmItineraryChange(itemId, placeId) {
     }
 }
 
-async function confirmHotel(hotelId) {
-    if (!hotelId) return;
+async function confirmHotelByPlaceId(placeId) {
+    if (!placeId) return;
     const loading = addAiMessage('bot', 'Saving selected hotel into your itinerary and cost summary...');
     try {
         const resp = await fetch('review_replace.php', {
@@ -807,7 +806,7 @@ async function confirmHotel(hotelId) {
                 itinerary_id: ITINERARY_ID,
                 rejected_ids: '',
                 replacements_json: '{}',
-                hotel_id: String(hotelId)
+                hotel_place_id: placeId
             }),
         });
         const data = await parseJsonResponse(resp);

@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89600 Papar, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.737368099999999,
+            "lng" : 116.0290961
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.738757980291502,
+               "lng" : 116.0299106802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.736060019708497,
+               "lng" : 116.0272127197085
+            }
+         }
+      },
+      "name" : "Pusat Rekreasi GOPU",
+      "photos" : 
+      [
+         {
+            "height" : 1872,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112783914066475004999\"\u003ecyril charles\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ueKMyVh6-JRomeSbxNe1TZqV9k36mFyfkYgq8RM14w9t3rPQwg-xPBRfB262aD6a3gIixqjarUioEVBoX88jywFqr5GwSM2WCNlQmE_x_wMnnFUp98-ea1X9NJOhgMD_gE_XeukK2iRvvOYYTXXmYzi3QxglgBizT2eNRhjTPNWF8LH6lGNJP1S2aFjVyH4aztlf06mSmdoYIWySFH3p1TmfcokOiwZcJk8W6HXP66XtHtgR4tcTNlfnoiP0UHEVpdXXz5eP6zTMZT97upmt0mPmlQBuKqjW9aupRb5LuyTqsiliDqGxezOgQzkpn46wMB692rCIz2SDx9AavtwSjLCR9yt5zetmUoRnLNBLnmDJRIBrfHjSQikQHi33vYnX5KtUxkRUdP4l61Qp45_cMwq0Rz4m6ZxqfNrwxOW4j-H0pK",
+            "width" : 4160
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112016139373073165255\"\u003eWayangTokou\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tPA1TjU2o-0oZ3f-8YWrlnPig61IXqtmzhUA3PM27ISrkulNLqINUDTeJgJVm3ZHvID40LdhT6VFpD4ZUlfQ3X1dqRQxe9DkrD9odSkXOwYeHdv1idsLL6e2-89JIBUIwEjDcJtjGysrn62Ez7vQoJQxiY7DneZl1Qf1pnpnRW9TawAkN64xVDccXpqCuiwYKahbIYWfXQxzi70ogDCOuGJ4NbX01mWS54VKsIdIa3snV08UCFmzLmXhCTJXbv5V7DlaQcMqm4RHJA2JrKwoDPggIQOYxLEtfBer_BaVb26Gj2U_oBXuqPOsM5huGBeZwq9xIz5wVHcFPixA57EuXSbmMLRQoTFk2hesCPLKpqro6JHpS2pAtbEAfM86w4TVqWjT-KUni4cufwi4gnQVDVAmJo7WAuLcuM2mcfb6w",
+            "width" : 3264
+         }
+      ],
+      "place_id" : "ChIJdaLvv7yhPDIRi7xxjAT6DLE",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12757846741876849803",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

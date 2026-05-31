@@ -1,0 +1,83 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Persiaran Jubli Emas, Arau, 02600 Arau, Perlis, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.4446147,
+            "lng" : 100.262992
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.445947480291503,
+               "lng" : 100.2643387802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.443249519708498,
+               "lng" : 100.2616408197085
+            }
+         }
+      },
+      "name" : "Laluan Rentas (Flyover) Arau",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116932896497935981671\"\u003eNORHAN BIN ABDUL RAHMAN (KBAA005)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uSsu7y9Ry1nvnEJTGRiw-yisv9WqXhddW55gcEK4iMfiY7kiYt6hhnsiYKbC4_wmbDlwguX0KvA5PH2JtoFc4ZjghEJetSJwlOgWPMNHGgPIallq3i3xorDnxKROttuozthde3i3MOZdHkehrhgd1TZh83e2PKQ-N2MQBpKFrJqrWZYsPrcmzIGJujhiOdY9IvcuMXDf8yhQJrDbsBarpBeFBfOsPnrZ5h-oRV2ROH8FIWTxHkX_MVqUi1N4gb_8YTrScfPhqowRer8NwsyCAjXmbFqXb2vEjdM0HvLq11D8u81m8isB1Mj-fxx8TDAr9_i1Y-r40fH6CYtQsb-dZrcnZZ0khHJRqEDPsgCyOxvCEnaKDEtFr6fFD4P7BMSlXQCiShjj2QTiEu44IvwRyUeflAvdpNKjQA63slXjs",
+            "width" : 2080
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103438126279877321405\"\u003eneut neut\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vMqKz9pXSn9d5uOmdO9QcOIEE4JNYjr5MEvuoW1wqrjx-lHTqdIbv1NGfkzdCibcQJOrzWnRqjl_iT_tafwjIgV9TT20JAsQSBJotELKH2ZzcpBSdxZAUdqkSfepkGzwGTR7x2j5N4iO45qGfmWnRfKZeg775KHU4DMKKNZUzmwLvUuVwGAH6dO4fYtY7JFj6Sa8lS5bGF23RlClPDVObdDXdJlN9TEruLM2BOU4ygaAAAt4iOarGI5KrRfkQsuY5Duu_bT6pyfJ90IUIBbQx-Z3RsF0Cwmhf8-x5MhScYuhc3ohm6EgN4IvnUc53lpMcE9LSitYl1Vc6vmh84Ig-0IKaFSYs-P7ogmpXqXD8KCvFnLbiOYLCPcAXmarDTshbtCrlgpKQ8AIOfnqqakgNM2zFWFW2sRuQdZe42eqdyig",
+            "width" : 4000
+         }
+      ],
+      "place_id" : "ChIJQzZQxkWjTDARraVWDn25kPo",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=18055134852890928557"
+   },
+   "status" : "OK"
+}

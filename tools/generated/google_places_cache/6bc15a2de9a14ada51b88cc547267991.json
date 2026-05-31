@@ -1,0 +1,177 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "408, Tanjung Layang, Kampung Batu Lapan, 42800 Tanjong Sepat, Selangor, Malaysia",
+      "formatted_phone_number" : "012-283 4668",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.6934259,
+            "lng" : 101.4970422
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.694674430291502,
+               "lng" : 101.4983332802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.691976469708498,
+               "lng" : 101.4956353197085
+            }
+         }
+      },
+      "name" : "Kuan Wellness Eco Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: Closed",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113711147579684305477\"\u003ePutera Lee Q\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u_5O5DWxNix6cZsDxqa-bW572Bp3uk4vay4hI-l9vfZfkJP49eYBid7FPICcbBpcIC8Xq0PaGsX5NK8LAvwIew6nmM9gMWqQfBNX6Q2FEL4Utzh_byWqpOsmO9ogBANI20sWrxRZUrcTYv0E92AgHd-zR7ZJu-0Eh2Qz0ZowGHRoHZqlcZv4nFm_3-8GaZQ8i5qtKo4716h0UNIDjm0Jfyqc8-PtDaFkxLfGHl-njzaW0DUG4EfSWoqHkZXoGHOBOmSD3YLlOvayRPuravyzNaMg9lxnwEF-VG5f4n2O4PNdQh3WaaXmnH6CJSRN5Xm76Nf_w3Sivtrtj-SC7c17TYLM5mDFhML0rVbs7uZWLnlRAPrRNs5FbFM4sM92rZOkAgfqCRGLB1_FAhY_U3WO3jEQvTObSaGj9o-nD63zP1nQ",
+            "width" : 4160
+         },
+         {
+            "height" : 667,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112060436529572545156\"\u003eluvfeelin 乐飞翎 (乐飞翎)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s3JVDd7FiMTDbKfWTGeJAwjkeKf3eGsg2FzW-oBgEC19Lppb0CJP6eKZ2o4I5mK7TLUL8nnwCGkzTr5GqUOwnUsqAAP3FsNAfgP2dLeZ89uk_yspn1uDRp32mz0MdNwnyOqyR7FQ-zhDkGrr5K4h7T6B8zPHHHGKWWG0ECbI5HnRDhb4FmcSrrGPnxXL7bDGAx9fMZ0c7OwLuh6RwNrEFi4aokmXhf2N4rnVopipgvVqNQ5BhDlwOShty4CRKEy6NLZ5d0TJ_YRp4IUYphFTCc7KvvIHSWR_ymWMbCkua5XGh5lYIfjZ8fwGJWWkrEAZ9daGZ4f4KARW4s1prcMZkiiOFi3ZYdhzzBgQivbIlYDNGa_Ptm9uotuzC5ZWRb1GammyodJaZw3xUAUSC7rSLB4iYZqUNC20FB92Ehm0qGZg",
+            "width" : 1000
+         },
+         {
+            "height" : 3464,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111719406489100056001\"\u003eYuon Seng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uIPQgppGjO2s8QrlNZPfnApDDtCyXI0bLvZlAeoxODmritVLCAMuyF1FRQH2fVrcs9gZ9DYuNY3HsupuSS9PDkafCl4fTVznmwBVCfWr-wt0JYz6OwPblfzQP5-4-KGEJ6yiH7Ly4l41sFIlli4mRp-ax1lsGuKbaWyl4-1LK5BCa14GJLSD2TIpzFRBWZx0LHaS6dwMrhJV_Z9Z7lxMbB3Sx-o1je5DXbqjHzYRtVF2ExdUuE304PpMuqgjTLxg0ZtwtnmUvY2UtrLy-sRBhHGE74ts-sM2e7Gd8SUE4iE1W0hlN5NGDrh70yZjLSwoBTaQxepctPZBVxli6sgSxa1SB40jWSI-OM8YAJSu95ECGY1FtP5MEpl8M0SrsIpbQDiowGXZrS0yBmizfKBDhAixe2OoKCuwqwnC0OhiIpMg",
+            "width" : 4618
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114848903427814313302\"\u003eKing Hung Hii\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vR_J3FEbyE2upyjnN2XV55-0K5h8zypqt-4fYWq1qtaTSLS6N3ZT07AE27uSt0c8EpUQI7oaertPJm6loosw5rka1rKACrQeatQbLP4HunlSBBblvdZeLNeNZavtobT67Co6qq-gU3p93HHMdqYGGFpSti2ZtFrmFQ2ii4Mzs-yNQ9ncQwhUpC4AzLX5xTrSwqg2VtAGVCuhZjkKMc1sUx7iUQvfRsFKpt88lB3T7kwrgz_ZJHf5GX6j7Wi9TFMpZV5IeYIQNBo93TU5DFAUH0cHmPgYwZ-_fmFmc8ON4v9wy6GX8SC1UqGafSTUfQLTe9wE7rK4SmBjxmmPSARDUwrydxIbPfq4lS4OMH9Tt7kK_Kqwr5-B5HeTUIqsgcHJZ30MlRQGHQqwagWjUcSXypeO6_y6cnwJcJsrWvExb8mw",
+            "width" : 4032
+         },
+         {
+            "height" : 1356,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115749432019391801438\"\u003eKuan Wellness\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sCfTGQwC-3GSpt3RufcC0k2NO2Nz3bnDEoGrVAyuS3eDNjHZgMeYYKbTAFfWGfgWRQd1K9B57-qcMIoqoyouwyOhLHI2XOfOjFt3GX8H4fPnjt0ClmnW3LV_Y2uGIL2XJW-tLOej2NeYapQYv3ayCFalFhRBVMYxVLNA6w1KSnG4a4lRyXTBAY0qxGOP2JB2Cvc2RIjqqsqcX0Lrs6EgDIFHzkTSk7mfUo60Dy5MNNimOZV9r7JTkav_3YfDtHy-oe50UUS26w8dFdEDWnqMSbHSxKsVJO7IuaO-rW4CyNq8VOcxaUzdqzTZl_1kA8FvJ7ey3gADf8jP27urf5dx4BprdNrjhxGZhACJj8KZs2McOipuEIqiwayWU0u0UHl9a45r-yxK-hIlK6GkImRDtefO5Ho4XI51-jLeUsJOSRpA",
+            "width" : 2048
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101549425930419819296\"\u003eLim Wai Meng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uirpWdBhauBf8dpleg12NxulWajXLxtaGpYXA72B_BD46rK9Mn6KiqVneXedDK3zbgSXL3a7ZOxk9KpHdJKKrvMEysojJY7Ed1E2KtGd4KEm5_mAITzZQEbdm4dXUaQRo1M1yMAZmPx3xmPESmYrNdZMB3FwaRdEy6d2Xcoiawx17u06w7rxYZ3Z0lYYBj7HA3TryQnRsntrOOiRw_U3TO33SbH6ychHlOsU4mNG14CO_tnm6jliNwxPnodJsBpyzSiJeTlu5ZLQeqIraUZOoTmAfkXQVK9ig3-1SujC0q85bOarSTw6oNMTBn_Da1DYAiX4h3KuryGRunWf4onkWoXeRsdCvfvahSGrCFQE-dluWXCOqY_Ce0l8TDiYreppSEpWtxmX9-nRcGs4pIEykblV8y_7FGcDY0i77-Q2EkOg",
+            "width" : 4160
+         },
+         {
+            "height" : 2736,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115818222514275695141\"\u003eSteven Low\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sOqbRCmu2yz_SeNfEsZONM6IYWhvtI0Yb721qmVNr3rlz3o1U7bTmfWi36NRQA7gnq58JBe4lRFCDNdOWmm84KOYrsiBe4GE4z5f4Xr92O9dP0-oZlG9WiFaBsPohkayWyu7jZXZENe7i0V7cT_v-tfB-Ox0hoYBhdH41mk-TOVGVDeCpyUXkTtbPDoiSd87hX-n8n3DD7yaE5P1iLBXxYAJBnLHS3zJzpyE_TrxTQED6ABXEMaBPkfETqAotjqxZtu_9JVPuJRWPf7rEq9nAzzvdS5tTyv-Wj4Wra0r3VMBup3IkuTZ_ayQY2L8T6uhS3tmdNIumtUBdUt0zCgpleMG-RRSUoPf8wvsCOfIai4bLGklQGxpiSw1pWoO7hRssryBydTP1Cmb5EW73FGuaEd1keEWwm23gGv_ZnIxUZZgVS",
+            "width" : 3648
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103456720376731009174\"\u003eray yii\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uhC1oBmHHwdISqjIFFCjczzYxiJlBho8BMZxDO-W0luuBXZ47ncJeB2PrI_RnStQ993Inu2lP0dk1bV56XD2WFcNOJswmA_ngrMqjFbr78rPHHGo_oOr7xRUuiC2db6bkMa0eOPB52LsaIKKQO67Ixz8IMe4MD1wfVi_QF7kcBnbQdS8Y8Uxn95xoLXXMB_Z-wpNdklXA17-PKkTVL7izwUK7ZmzkfwnGnbVvZaIIJitRHnVdEgERc1khkTmN_0MeduDbWrmlNiIe0aWF1kRz6TWauSeioVH6ybMu9ljdKIWwOFKZf_OFBXdT3Tb1Mehila1dWeLYSw9QuphrcpDA5o4tRn6_L-h08lopgCuX2ge6kKZKVmndoWo189HftE3MukWYBzGIihQzl_LlsY2zCJyzaCqGKHhY-jCvF1qXUZA",
+            "width" : 4608
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107706673058299818649\"\u003eDd James\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vOKLn3m3-pi_vpBcDWYgDDG91-7rknNHL1gHonw3DH236lh_rMC-6yMA_iJsGmHWWjybhK9hY9DNJDKwfm2pJgKUSGF0O242Uoa7SDc25am9kgg8zrf0LbEycjWCCaa7eZ5zHem-cbsubTZAnFDpwG_skh7y3haQZw5VkI4NmUsS3CqKwQUh0FQpTFWRXiH0IqJWU60xiXKVBeZi49rh3vC3MB-4QTjT8Nr-xDv04ZNwYE184DHAVbJ2VMX7kCPH7MIBVk2HtKu0eatEgi0OA4lh8GRfOAYL5CW0qxDLwf7_fCCydbxHB0QhfNSBA8aYgTwT1U5nyLTH9ShpigljmTWjBVeyfyuWjyiojM14EE1i3d6bUeqDTm6taX__-kGop6CbIxQgvwlXhy425YB_Mrn6SCUK72u2yBHNXUpu6ENuI",
+            "width" : 3000
+         },
+         {
+            "height" : 1356,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115749432019391801438\"\u003eKuan Wellness\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tQSlZQEZQvcX3YCgYUckX7dJwlX4yW2J1C2vcC9_m0DT_U4Slfi5zvSCOq_5LixloeA7YBepxKE7dt0_9TUwj4XEThDUbWW5Agl3ee6CVR7MFEO8WKLJ0jpxqHzXw-aVtZUJ34uUNmam-bVdS4Ro9OQdaF51n7glj3ZM-WRpQsuiIAMUlX3S5TWKhyv_OyfcK3CwWzwDyDPnWc2ly2tEhWYU5dYl-V3h3K7tyi_XSnnGzJrQEvgCK5ndo5oSbZiBD1NSFKsjRWq14nkQLmPksdx1JhbqGVi0l8Rr0cdTMJJiG_rEwjstLcI5vLno7txwD6otQ2GL3CnAb6ZHaqC1dLGGRcLsCObhFdQ5GNc1a3PuJ5KcL-nseETuJWOkrYF9DouXyOYnoljGwp7M8goU7fto433rmJJpU9GDQPDKU5-w",
+            "width" : 2048
+         }
+      ],
+      "place_id" : "ChIJiYqQtQKzzTERom06LDdTna8",
+      "rating" : 3.6,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12654362024411295138",
+      "user_ratings_total" : 388,
+      "website" : "http://www.kuanwellness.com/"
+   },
+   "status" : "OK"
+}

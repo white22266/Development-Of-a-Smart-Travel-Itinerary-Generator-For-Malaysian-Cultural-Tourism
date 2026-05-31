@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "V58R+GH, 91100 Kunak, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.8663532,
+            "lng" : 118.1914075
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.867702180291502,
+               "lng" : 118.1927564802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.865004219708498,
+               "lng" : 118.1900585197085
+            }
+         }
+      },
+      "name" : "Ikan",
+      "place_id" : "ChIJMcLAZAC7PzIRMn9Mk9gxw28",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=8053335364922539826"
+   },
+   "status" : "OK"
+}

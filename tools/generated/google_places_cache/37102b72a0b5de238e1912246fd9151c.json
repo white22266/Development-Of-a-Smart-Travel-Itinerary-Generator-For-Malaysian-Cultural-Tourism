@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Hutan Lipur Sekayu, 21700 Kuala Berang, Terengganu, Malaysia",
+      "formatted_phone_number" : "09-681 1259",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.9636947,
+            "lng" : 102.9495472
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.965043680291501,
+               "lng" : 102.9508961802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.962345719708496,
+               "lng" : 102.9481982197085
+            }
+         }
+      },
+      "name" : "Sekayu Waterfall",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1600"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 4:00 PM",
+            "Tuesday: 9:00 AM – 4:00 PM",
+            "Wednesday: 9:00 AM – 4:00 PM",
+            "Thursday: 9:00 AM – 4:00 PM",
+            "Friday: 9:00 AM – 4:00 PM",
+            "Saturday: 9:00 AM – 4:00 PM",
+            "Sunday: 9:00 AM – 4:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113263265347728617223\"\u003eFasri Syafi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uHt3DZKhrHMVNvW5DQxpcqRc-pXhJn-G0LKGl3h0duFiSl4X3YEAdO4h4d4S_5hO9Vg6U4EAGEOQY9rs_s66_5AAkxbgnGO8DSJYBCD28MrWkdgd6VYcoa9PSXQhl284t3ZLnK770-r095Xq3me6C6T9I8-ElCYDqczmzsDKZ7qo84Inbce85su-tJvC__QWXprsR5rzsV5jRAmtAVF6Kwfk4Ec1Iga3fngoJUaAd-QqHPoJav5a0P_jkuI-_jNw-XAPUaVRe58v9BLXnnY-J7eYCFZi3fyW-bJHbU4eoKwChN8qKukhRDeLu6o7pfOH8gVMw-fD0utrYANLtnrc3RRZ-PfEwANy0eM75Eb3J40S_AEN8oNd6z2QWdSb3iILymQrPCP0_st5AKcmUodHrq49y9Ka0qmiOj5QAqY8tYMw",
+            "width" : 4000
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107509212695327709331\"\u003eAroll “Wak Aroll”\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-th1Q76mVdes-6iFN6gn_1sfZLdBBHJQfbiV-gzpz1Cswl4w3yL4RZv3Nbh4995fmc0Gx28A2oQhCUoEk4ax1l-SfYnia4f7wSwZkx0uhkC_8-LUyWAn0f7d4G2bHuskpdvFj7T7bIfcAP4mrLZTGbZOZl8oYCPIfbyvOTzQQh8u9TTJQVLeWDuauCiiaVgVVTkMhfrjfyhECIlaoy5iMBvqMkTIuYUBwRqQSaugKKxgdfEaqY6kcBHC7RkvGruXsZt2Mzhel17SuH9edca5ltp_jnkYuQV7EtsRH0TyVMYCdfT3ThK0MAP-65J194SNgg2D0tBFhCFLb1NOp0Hb0Y0fSovwUcGqSEGd4jqHKH_pTsWb0l4tk3M3qBb3JAwQpd1AMGQgDQ507dqBM1N7tRJOfsjy8f11yy88ixDODgJCNw",
+            "width" : 958
+         },
+         {
+            "height" : 2988,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108794857854879202264\"\u003eTimur Saliev\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sdepGDENfDh84vyqOgZOiwfPM3bwzGleEMti3amKaeg6LH6RnC8ygFWlI-mf_NAYvIBaXeP6dQ-dqMu5FdeeloYYHD6FQdFgQOk_rmlkJ4c9Jaodr3RuWUN9vqrEDcPIkSJmL5-HKbARKZ_RyaXRrh-PTGEH-kDMWxmSCBkwuFrGFmUp4e4SyiO7f2FbreZC1Vo2Wm3xcVgBuFTHaX8_HvCZkdXU-I0oHOLs1TiHzDOU0SLhAaOY9LKO40a9u6-_gUvQ24NjxX7G9b-woAxBb1QwfcVSPcfhLGvb_L72QU96yoZDxCAkCz_pBIjujdGUcbHg26d9OasrVlaJNll9eftO_neZDOn6fVL9Y9eSe8Qd_LyONOa1v2XpY_rN1AQI2RQ9hBTDD-qsp0ZTpDlVx_hPJ5xL7jpN3UoxOHTTSdKg",
+            "width" : 3984
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107742757116964376166\"\u003eincik Foofie\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t8USJ7K6mOD6-1Ir0u_0otRswctcpDfu_vHFNyT1js_luco5ULVZIMzObLsQ4un0VhbqffnVEbfOxjxYkv2R--s_bdwUWpPkeJ-19U2y4u13lSjCTIFeqAdWaxdoeC1Ofv-DnU02OlqZdjrTDxezPPQHByKbbYcJyra2Ufl69-lFTtOGPAcP16nV-5KrdPIOBRDHpdsowRHxYM0h2bdZDiVE3_MEHGqnPUlZDxJ0q6VBF688uqBi9ENJDZ343N6nAmP8euq9JfrMd_I944ZArrP8W-l0BbpLgA_pXSKcjJXtYqqHNvQOQ4QciZNCHDWZEUscokIclVtdHJvaLekVnHPF1l7X3ID6G47jKEaXJvBU0FG9kY0mZNZnda4Ptf9o3xqCIHzc39qU0gqb8ReBOdGXTzwNLV9JP0z2mvpofztgSSUXs9b6eUepeyjw",
+            "width" : 4000
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115558771873066162366\"\u003eوديع الجابري Wadeea Al_Jaberi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vD4kp9esPWHQQWvK1lPpZi5OfvRkfSUTg3vDnn8wJSafZoUF1KrDhlDTvzeZ4OTzD4HP3cXpzVsPccjcb8QLbIo6ULeUA-2XOT0Ge9-q6U_4bLRTkQHH7wMTZ-JFYaTiCL8e3wGIIAk_3kkRE7YiTYL9m889eOxmMg9mljoBEroXVT1kz55xURzPb9U-HeJ6bMtBa3pcIyo_aafP0SYLDhsMlkX8OMnluO1IFm2hVb8MHl_J-pp_sXAgWmyrsJ8CYeqctqDbIAi5u8u_GQ2WJ5kPkWrM0C-vHXhnb115zkESgWPQhxI7HLfaTJVR6FDCxOtlvdgyYkHTwvOct7RQmqFePQcYVzKh4kiopBzuTwO3yJf1Zvw6H4YnXsFo9xuRCeOJ5tvM4ogUkLG__yCx2PfnXaVaoNnDa3Umf_MLD9MHMd",
+            "width" : 4608
+         },
+         {
+            "height" : 3492,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114723462997042259395\"\u003eAmirul Iman\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vad6pXLR-Ltn7skYkJjCgHtdcGzv9ZdCssYLeE3C5lQ8HpAwSpIYtCEcaYlmiLv0YY28XNESVaxFCjFPAktUF-qlJs_NQRz1YccLa86813I_3LY5tVYxLI3NNkfdaeKSThYwVWhY5OA8XRTRTevHi7xHMjr68VQxzR5OCqx7H65ZUjv8m13CxD57dXT7IsLxNM5Oo5if7691IUn-1PCXY8Yr08Bt57EsqVa-YxQhLsoj5VbalQwuh8lWlakDIVffXMkqIYQwkvwIvEje_k7O4FgavVUCRjrfTvo17ZHqUePMra1R7AB4APK846KPZhK8pYMbH5rpUAjdEMgJN7AizNT78W_kihZtje2bsqd57d8Bu--0v4Va2SFnuldFXiyKPopdPfmuulgqUIQEgEqwl1e1d85gjXQOhoy6gEPeH7AB66",
+            "width" : 4656
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107742757116964376166\"\u003eincik Foofie\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-si_BeILXTVOHrjneWr6KyAWyg4lMGp4KgUqh8tCJvz9jeXHXYAMWAHG7EFNKhKmYvrZ-as_5zmieE5fGbRJ-Utc1n_MLwfMsfesRwcpYW3WDXEPsVfsEJ4vmUbO7bO1vyGUdhkhA9G1vVdCBQ8wSuTl8Zm8NJ350Lfo02vDUX2skK00lLyymvDJevLOnttmhyGMTGjBLCl8v7DRGDT95YzrAslrVcnmTMrX6wi8TcC8XwMndHYVnIxSIFwvk2PqHfWy6OBvlTV_BFRLBiCSNtHziHljZFWHRacXGBYOAPoBNME5XlOABw3149SaFmsiMdt2GCHvf3w4_CqXi88XFFjuYJu4HIRo3uirj22nnjHiw0OT5W5MRLOUQL8krHYC30H2rzYKiAauM9l1XTbuJgnqd6IJtEK5d2AuvyD1Tjo6l8jlj9SUeWceE9GIUQ3",
+            "width" : 4000
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108849758203411681364\"\u003eHELME ATHRAH JAAFAR\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSk_NHX5D2twpRQwG2G1a5u4_tTc2SGU0suDYlZO-fjoQi0F5JPk8ItyErIeMgXgPI93WWIpgr5RsoxAHaSa2sjYOiZ9ZJutCG3a1ADcunSqjNLyZ7foNzssM4THDPGKKL4-ItSyIGrxpWCBPURad52WzXBik9kiFu2yWba0HGm4uxnqZpl4JUzqcpwcEo1w4dnHrahcv-0Ss9K_Y74iCXjktLV2VlMXiCCGy5sNNmLk_MI3fTk1DI7z7eNTQ8ueS3wDqtPyDLgQfo-xtgcztQC8kc8kcQM2byocZgdfFz6YxZvpLtOG6rPt9btZv7EHmdzPTgDnlbDjQTQyR3zkdDXH93MdPavu-sDrrMmKQ32ld12UJ8Ty9-6tMmvGWuo0_s_Fy0BJtSXHfJeE3jz00IjiP6-DogiG6KyB-CRBLgjHMswmEPOpBl4Aj2nx-H",
+            "width" : 3456
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102377857696372105812\"\u003etok_semian street83\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s-E_LxDiVrKZyn8RXJjdEDMw179yU5i01226O2R_GnzJSNcpmgrtly-o0XhoGDfJA0opQevDJckKrGWMbcbiap2QcUFCrl1COs3BjEbgNrO9KIAE4A3H725JJEGgdx-DgPkyuZbXHG7L0mtpy2qpcu1y89502LG3s-jlJNdCwWDyaFwhjGHe5OH7QBqoniNTnVmYoU2tG35NjvYjKSeeHshiRJUXsD85VtbcDW4x2ngRIsiNNb3Ek5Ojeg3G2optQhcOg9IzWG-KrebAtf2ik1KMsCls_xeK3tdOITSAe8R3FpTImHadJ7SsIAMbzuBikdeCUNKcBwNO1ga1ZJV2EbTUigrd83-5P9dRH2orJH2ixb6t8lA3jkaQohzdc8JeMDRICWjka6dSEBsJTR3NYKI92QsO928_aRTC-BcjuxiQ",
+            "width" : 4032
+         },
+         {
+            "height" : 4624,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103348823988753918093\"\u003eABDUL FATTAH KAMARUZAMAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uCvTM098tfyUq7TPS1jvnuO34MVe3uEHVujygWs4Qencb4lZEsfdeq1vB7-bp79nJNgoIYTlSRz_eoAmI_wwNSFhel56_EPRmk8omluJY-GasGduzDO3y6u2E3QKQWJ5WVdwXN9EIv8K4YkV6HnUNc9kN8aYG8hfyAhKr8OGCjqdHdYkuwFlX7wFLpCF4m6kf7-NEUMFHhIq8QVOqI0-kOJ3TxN-FZhTrs4iXwE-lMnCpWI60JqcpkDOUoHPZ7UdfxkRa66I5DIZ6HC28xyeufPZae8b6YVj-zSFO-RxWswf1n9AToXJoC81lJI36jomJYumBDRMGG7MGWRGNUY3zgkVXXEnqOKtim3LnYZ4d8qUt2IdbC5FuZdK7DLVkm9AKWY88_q3JZQoQDdMe8tqRCLruBsjJCR3N7hpq1v0qjvXXu2MfkojorYFW99w",
+            "width" : 3472
+         }
+      ],
+      "place_id" : "ChIJVQQ8Z6_XtzERdbDTfkmdquk",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16837443095863996533",
+      "user_ratings_total" : 286,
+      "website" : "http://waterfallsofmalaysia.com/35sekayu.php"
+   },
+   "status" : "OK"
+}

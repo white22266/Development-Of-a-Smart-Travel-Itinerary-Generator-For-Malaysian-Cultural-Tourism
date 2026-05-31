@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "96, Jalan 2, Pekan Batu 9 Cheras, 43200 Cheras, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0719947,
+            "lng" : 101.7678687
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.073360380291502,
+               "lng" : 101.7691908302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.070662419708498,
+               "lng" : 101.7664928697085
+            }
+         }
+      },
+      "name" : "WCO Cultural Gallery",
+      "place_id" : "ChIJdVD1CAA1zDERhE-rWfPJWzQ",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=3772831159871557508",
+      "website" : "http://www.wco.asia/"
+   },
+   "status" : "OK"
+}

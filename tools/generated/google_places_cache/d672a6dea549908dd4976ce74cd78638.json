@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "1-76, Jalan Bintulu - Miri, 98000 Miri, Sarawak, Malaysia",
+      "formatted_phone_number" : "011-6572 9433",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.198371,
+            "lng" : 114.042873
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.199349580291502,
+               "lng" : 114.0442939802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.196651619708498,
+               "lng" : 114.0415960197085
+            }
+         }
+      },
+      "name" : "Taman Negara Bukit Lambir",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1400"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 2:00 PM",
+            "Tuesday: 8:00 AM – 2:00 PM",
+            "Wednesday: 8:00 AM – 2:00 PM",
+            "Thursday: 8:00 AM – 2:00 PM",
+            "Friday: 8:00 AM – 2:00 PM",
+            "Saturday: 8:00 AM – 2:00 PM",
+            "Sunday: 8:00 AM – 2:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108925388543644090290\"\u003eCM Chong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uPqKLZfmQHmOn4ftgpXgNtgdOB26SDLG3KwPzn6Tv3MvKEjjTinh_BWYBNf10lb3byR1oHbWo3f73-LIRAbUQwX8PpeYPkbsT-vt_rRHT9XkQ-eQh38NoQpxh-lMZcjCGYjr-0A7fnGrKurGXaJV7on5myfbI0LdsmzjuSUud-N9C_6CRTotJ3FBxHV0CX73tkGwqvZPGXIKZBB0xSShb1SBXIpXAecMPwAkeVTtLdAr_kvT8CaxuBamCIomnXtD9iGinEWkyj6jgNCIsfHZ_aFop8-fBL_GzeXX59ShMnNAWXhTN5Bv4aRCZYUocPxcXR3rAdgj_AH-i91NvqTSno1Zcfy83KdB9MLwzckxgWmMpd9lJzqkTpuRydcXRojPRidE790cFht7nV5DHwE3Rz35yekrxtM-N_bUUH366jrk4",
+            "width" : 2048
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110236640893645108433\"\u003esrihari kapu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vb0S6VbJ7bxzmgXIKixwI8fyyLYHdfvdZKZMm9dsVWAbkfgMdJcomV3uK2DrjGRmz7mo-qDrZquCWnWwGxlBBAXlXy5o-t-BEVRsXHmHJe7YXDiQsWlAUQ88F8NO6uIcZ5BlRsuwGOVXfaRzrPuv90VIAdBkqT5fLGPdoNBmwVEPcqc6bXgY5Z_dXXaO2GR-2z0zu7SX04bcUHbld-wgfP0fd9KkzuzeShf1K5avT7nJ5Yde0OS-vpXqaaGUO5F3QVrbTzjhwm45nvx7AaKrgNb1vkgcPtRAhjY4Nuljds9J_eKCXBBn8ws7rFATwhmV-HZKJMs_fecEosEnw-sXkJ89KE6Qh_P2HYXI_BHc0pdLKr5KFCOZTVR4BqigU7Vf7VJmQT8-mPxkSpkNlGbZHcgj_tl-46r42Cn5KkpWmbFA",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110364206544703170096\"\u003eChajchawan Nakhakes\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tRFUbmnZNRE--Gr7AsawR5f75ofsdudJjzg7KgE6RUYK-kUhPrZZOgZZjOx12009lo0uBUskhdy6oSRJIB5UEl00kVmjkiYaszAXTS8o9ZjwZunOH8PpU3fWNDdxV1F-ZwL3awWVfZePERKhfKrhKp2g3UvjBpvUmBSyGx3pajvLj9zpxHUe4IdeVROl37UR8F3YnE8ROFcrRLhz6XazLUPNh5KXWtTGBs-8c9dEPYs-qyJHZfRHr3TU9Z1ym3heWJpZgngBvPQiKsg7Ryd8pjYz25L1JPTROGu1SeiWfWDuWTtSv0fA4yW44tvs-w4st-hPJpPgAGApX8IREGHsmxyGtZ6yBOu1tToqMOECtqdPzu0d15QlKB6QhpvPFB2YJE6YsveU7C-f2_AlBQ-eQbVHALo9uED5N_V_1SC_a6sg",
+            "width" : 4032
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109855480191471940591\"\u003eBIN WANG\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vCQPe_Pw_-SC6U-W_QqJbIE0HF6CEbylI3LwqcluqV1bEXmrul80FEXnoHJhSWBNGscUlQMBB7WLELj5Mb8_U9mCAdvijsy8a3p_R4bQ29Sf12LlBayz_K-uDcXqZHo3qoIleUaph5CV1sfS4jbKrfngwb5AXRWYUvVGX-JU-w1wk5mFkORt4tXVrI0bSFbZDY47R6VN5mnazrY7HHsGQesmUn6jchUvbC1ikefhYBIjpo2e9N-kDfYhib6GPD4lLMpT7MYfSJ_l5vYGZjrkRLQggjs8bxirfRx7LOQeJ0xlhQmyZFtBoH4IK3aZv9Lte7YudFrwPmCuSXll35dzgU8WeITfrRSdZSSXAB6KYQcCCSF5R24_xmC2zL9HVveswwVVUYdZ53wu8JsgLKeH2BGzRZpmiGy-jRZPkCM3567OsD",
+            "width" : 4608
+         },
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115712460206623537593\"\u003eSven Dutoit\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgrvrExIoJIuIog1sZ6FxepLZqNqBP-aEJFFEMQ84_-5YycfRLVWHIOow3qNuCao4VX9fVWmmuaCQEY_INl0lDpi07MCw3p1NgeMHcIZ82kLjqyZZBQYzG0D8Exa3Xg1C64No9r8zXb_gvCU9HIwy40wIvXEssOu2bIF8gfQCnQ3tbdONc68YUfH-Fd3iZXVcxMjgdXIn77EJV0BwpCrMhCZEkzcvlNzwfxz9I9Vubh6vrG09hDoBr3PB_R8AI7DBnqBTf8nG8L8MiHWTnn1kOLQsQNOQIJVPzIapp2s5pyB29lNLVXspZrzg4GZc93r5l8XycAc4JPiew-huS6EsGXY0pf7YJW4oEyVwWT3xFGQRDJTQPsTEnwiJgOFD4hpzEhTsNn_pQrNRoZ_Nd2ogmCaR_CqiXzYrJj6dohwWbpg",
+            "width" : 1024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111629436338277070147\"\u003eJL X\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-saBXAh_C4X9pyYiIn5vIoUMMLuGBjPqUU693TtiH-PZFHIPwHlZwGQG1-_pMX7e6Fsw7Tvv4fXuR6RfQn8dvy0N29l6YpdGphoEodS1l322a_0qV1ijGkxKDNx4POep5mPWm9xorcva64_e1dhOhOgElM-6cgdqjP-Np7dA0oW6b2cDrMoFfUA3fIEBePUwJ18BOzgaAxqJPzpiBfpjJPiArPxnxs3vECsm_Lv1jyu4VWwNaxdGs9PF0Z0LOTFVmq2N74F-yfW9RMIqmUdixrrPTRRA3vuTESR41LjQnmn8U8lruAGu642UxYgoZ2htOWJdOD3mfrNI2vMUVPKQIdiEee3-TrPeB_Pak3JWUnCcRXlNI8ujuJi0mcb8ewOP2EYtUPpPbf0ZGthKaIQYGDWWiSSJkurfnqNZLCXXss6zH-JKNNoqLruhRa7VZm5",
+            "width" : 4000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109901583439985965302\"\u003eHock Lye, Khaleel, CHAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t51orxNEh9pwVU3MpHSkUmN2DOMbw-99M7z6BczqQq6U40Qt7I81gSb6y1Hg8L6bqV_4gk7_4hy3uMjQ8172VfBFs6zMxrq9dP_Yx6P3hPTnWN8y_c47aKlOdxG3Wd8UtMUfJKqA00yafD9MKk4xGP8oqM088ZL-faNdXm5h0XcgJegCxxsNbW9So4JWaV2CeOFUfaRoisfweNoDB5L1Jtsb3S-UItLadMq0Djb8thQr7vNqgTmq1wg58ObDY6MBn0XiT910f4zKnIOL-HAKpD4WpMvh87qZEu-L4in_e9JVMEq6r_muk-HXboO6TqYhlJLq42wqk-1K_A2ZAYtP3IGUjf90iwdMjvEQpCn-CCipqP0reetkgXUetpXwWqYBCwd4bZUCn4tuPvCuzL1WMFz-xCH6s8tHF82mgH46S8SsSGQXgfD206TDI5LuO9",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109603871100680593467\"\u003eTai Yong Seng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u6J8faBaOa0Kd0g83_0U7sydTXREzbF3b6QiMzDdR0qtpCVbaT98y19fUssx-MdFDq3Kc-mniyQkN1mYIw82v5bqbUCCh5gq1tMkyM8p1HXnCwhj2m_dHNKos0OMdUSSma3CPEufMALLXigftB8uIBscZQdBfAlsNrhcTyid72l-ZjFZZQ5r1rOxkmJS-VSLv0KQA_la0NDTeohfX_CTrj4BMZYDmb2heapHkLjraZ4Rm8EhWlDRsUoTNOoV_EBeDcI523Kewx0Lahau62LSJoNnZrRdzn9WkvkYz-T11YdD-UmiCRNQiXhoNXmqPSOXF8_Y6Qt_qKUWnyxkGrs4LMT9EF06fLoV5INcTpHEEvyECl2upy_JI-IfncVI2HbFm-4ZA_VlEPjINNRc8WcbEQBXDaf2xlWgpcCpk6Ql5A7g",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117604676601228616085\"\u003eValentino Mumba\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vZRkXfW-D9wpRwz_lIDKeSefj8ZER9fZWEaVrpJroFRFDyJBrDT-5YvmNzybr2urPmVPQUXGClUljO0RWY9eD1-FtbpqAlDVyup8HqKMg6sq3pe6hRjrD9F7xajQg5hDETgzJ6a_8smeLKwDI5iFtqiJoGZhZYL83auuuNGW4dgTYhiiDJfSPb3i1qr6Y9kVerUD-TstHEnknOoQLMB_y50N71Ko7wQ_iPdWa54-_WrKFZeVzsQYH6YtbEGcfarJ-1lkxlmT_z7-_fqlysl0DMP_7m9eVBaY_wkoK3CTXFRPBDuWICnIYWyPegZ4QdXR5DGK_3OnTRWQJOd3bZolaNFqSwIf2KPG97EVCm6Eq8g_oXhdlmnHgXvVKIdcvdq19lcnZj6JJDbhX8nh6O3CU_a4xvsrqdhQspEdrs9KZGVWKwnuZFY24FjlafXsqh",
+            "width" : 4032
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114964389829775835655\"\u003eLewis Mindy\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sxCoWmrzuOpjThs_VBXpral8Sr5aBuecLFQm03v4RjOYmmP2yzrDwj0Hd7oKZs0NVV5XAmpYfWOEoqOeec9QsOEkBrkRt6US4t9UNzrZw7p7WJz2q1-tw6IvQ85_69RgApd4cnymIIZrEaHD4tWLJSMcVGJiRONddjPagIFgP0TPYCte22GUY-8JklmyyqGFllMKQZeEnZaalmZqNQrl8a-Nn6SZ9SX5Gc9olCb-mtUE8o8RyVxtTMe0Vh5evVarbbBzbwNKNXwFaMxFl60D2K_RMfe_BjjgbweGDFanX7FioCgk90Urssf2mtjOU3iGoxvKEuC0DaJ1dBgaVtozGFSM5PuNkFnC4zM8gNWg3xqL8dbuAgwHKVhZUZNb9xuh1ocOM-zjmzXZtCMLp5s5xBxMPvdByLsAkMAyK0QdQodA",
+            "width" : 3120
+         }
+      ],
+      "place_id" : "ChIJCZ6heIYxHzIRBmMre0Zy08c",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=14398978080673325830",
+      "user_ratings_total" : 852,
+      "website" : "https://sarawakforestry.com/lambir-hills-national-park/"
+   },
+   "status" : "OK"
+}

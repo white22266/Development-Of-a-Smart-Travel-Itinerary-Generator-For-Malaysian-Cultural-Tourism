@@ -1,0 +1,160 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "5F84+MC, 06400 Langgar, Kedah, Malaysia",
+      "formatted_phone_number" : "013-592 1414",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.1666476,
+            "lng" : 100.4561147
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.167652980291503,
+               "lng" : 100.4573168302915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.164955019708498,
+               "lng" : 100.4546188697085
+            }
+         }
+      },
+      "name" : "Bukit Singgora",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100302066272725399797\"\u003eBukit Singgora\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ttru1_g4u416kiGJcEsAwLJvyLbgqMpnyL8qVwDyDnaLt5tSDcDq5xggLCVQ5SymAykWseHJ6NmsUDjjta-Zji2KUJ2vLe3d9SUWmpUXXmCBDCB-hNqCV9Sts6QSGYN3vDpmcU8dgdFN1H4s2QvStorlcj-PSwvIpAnXd_oDxv6niPN2vAlYLfcyw-VOdhZ1ahtO13ZUwclvlgK5W1rqSZLSuTLcPvXyrdUOKuzdxWOCNarPGjrP6OAaYhVqZAVIf0OnXwqnT485oPBPpWTdTMbK3zfbgOLWW7pQrL9jE8kQ",
+            "width" : 4000
+         },
+         {
+            "height" : 1000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100302066272725399797\"\u003eBukit Singgora\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tI3AUYNqkTxiyE_nIBxUu3uDembckWnyGl-8tTEcjOz2b0h25_-czIwazNB8lCUh8gXl7a_YfJiC2eLzeAWgnxirq7SFzhmZScrDAc-yQ6HcRhRmMbpabIVFO-HL8rUsy-WI_RUVwO_a7W_dEIK4QZ5G3cx9T8UXHmYld-MMfokLvaljDLcVxzrs8e7RqiL_gm4xR_LYG64hd419kepefSFBitVY0nRtTB-isgQaTkLMB1Q87OwmItUdiTqFkN7Pj47i_bwBl_v7cI45YORncCSCCAicwHYS7Pi_5MYfxyPg",
+            "width" : 450
+         },
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108860421359349911672\"\u003eNazri Nizam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tcXPHZO3Ip-7d6O6G7PIXSRZX0uUNPh-gZmgzEXNN9sFqKVnNolOke7khLjfNGd68tk5zPwihvLcB0z1NE8jCFexFAwNUnq3bN2M1z0mv8bXd--PZgcGiM1iK8LWSbP51ILwu_u6_51hpIllowLT9HA23U4ir6RhgWElqRqyAKx-6KeR6ICdPDZxy_5YjLqjKZ5-P-u_tHp421U4ZZNTXa-DNgn_yQlHR83onyGBZwniN0TtpEWMmA2-QXltsATwb8rnbr1Z0JSRzpOQC3lhQjSSmi5Bq_xOgVd1-9u5eFc6n22nWBgcImMaVf4QPAzRCqpZyR9qSi8oX6v055X14w746w8Tk32n98wi54JoNaXMvLMXwJns9YBD88tZiuLJDjysXrysWxfYkPy4g93HT-ODom7ZmThrQOeY-LHIotVw",
+            "width" : 720
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100302066272725399797\"\u003eBukit Singgora\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v3ETUJMmdp0_T9SfQb2sL-AIoWNKyLPxBuRdgI2GgoxNbNjrf6gLPfQ-s7dy3aZE3RsffHJo9bmrV8v2kqt3zWF4RTSopZM5-9niHfYUPG8VZJCf8p5-xs9oTzgEFzeiGK6ZF3YFmM--2SAE8KdydFN27x_Snk-UMWQCo4X35rQNkz8pSxm2E5FCqL-6ty33NXbt8tQAl7JJAA4gFzKEuJyNFaK4zZ0-ooj2PehzGDPaSpS1VtxrXoPlcjDrUOH43xCE4MyJWYTFNtzGL9t-D6Ijx8U-J1s6VYkGLGLl9HkQ",
+            "width" : 960
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108860421359349911672\"\u003eNazri Nizam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-us4ESglzRWNqglVqrwIAQaymxWBSBXVvrbdRUMqJuvki_0bGvXW3ar6ztzC_7czO-2IMJ8tFHK0clPdLf3hzIPkscIlRrpaFiP6R-Lq907Zs7vOsq1Ky9rT-rlu2yLNPbJquMnW6IfkFAW1SZUMDvRk0ChOlgYmHWa3vOkJxHa_wekcC0fKIvYUA9v5qJQ8FWKSyuHYLMKalwLZRItul98VLMEGCKTZ90-xFTOa7Hw2xsHKH3ykhE6l7xu-rZwBHmiDj18TzqfTcAAtBZC6qnzHvA8VyVw_XGQ3-i7DiIy7L7x9_SC46Dz4QYYzo9leu9iQg_aOjLDAUqCp6sm_WX_WK1R-MAatU4skjFcl3wNNtulre6dbHJTY6A0So0P4vQgJrK4FaRGCa3Xs0BgF4EpH4Wgd3FMdxxaPplKIm0PJA",
+            "width" : 3000
+         },
+         {
+            "height" : 1280,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100302066272725399797\"\u003eBukit Singgora\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uZQsb88gUwbjaYms9dTwipnzYyB8ah7kCIhlQH330S_7AQUFvXlrXug2HRFFCg8GOtwU9XX1wHrojZKBPrxQJ0OHF2Z3vImw-RJpQtZ1UtWNRE7QVeb5gYS2kvl3t8Ae42P4G9-WlQ65c1r9L5SPOYAaapVe-HfS-ROB06S1Vs-a3BLUXLpQVmWHtMZQnmHkWxTYvC8GZTFPgXV4oBzcLC1ysqTdySWVJryDKlDqHrQkgd8y3YCdhYuBY7dNhC7oXOeLHW6qoxf5ZZrRLovr-OQJDa7W308qlZNxO6QAVodQ",
+            "width" : 960
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108860421359349911672\"\u003eNazri Nizam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tKTOko7GzAL2j4ueW-rS7y1xxXs4onWGz9_F722pbqQyjzNWL2TyMO-YVp_t4pbUnNn_80ereDRTt6lPgY0BMIZYENxENqqywnkSfrPISglujzNLZPlLZsJ0zKF3aK5FdbTvw4cyahmf0ZNcGA27If64xuZJBoQ2R6JkkOd0MG5T9-Dd0zdKAulpvwfHgv9WyQM3VD620EKC-fLOxjBsCiHu0aprnwhlZJ-K0b3RKCfrUmXCMKEigJHsWo-OOEXpfoj6OB8RbtH3-SO0X9AlVf-XU1ibhDfMdvoJmtPaRHOeQyH0B9bRCZvXdCXkISXvha6onyeV7oWoHFuzQEQyG-LN9PN3EUVIngLT8pC2_I8hCpmkZlcIIf-VVtMGOsGBx5zPf4BrH06G_vx0izdsoLPzTBRA5U9XVaPIMZgEclo_E",
+            "width" : 4160
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100302066272725399797\"\u003eBukit Singgora\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u3gzmU6zyxEcyOleS0WxA3FeaejLW1BrOV32FUaxUqPUK-I8MamfhydNY6eIqTviMMCqsnaS3wWPmy5u68ijZ1z1D4Ymx_WXVTKvbVjRzqZ9wCqz66SquSxPzGrjpkta-CFGKyF_SWjM5NYBvxuul58nGBXHjYZU3L_JmFECY8AM7Df7zgrRAWOW0UjQd_QnBfxr6HMSZgn9UmW_fKRb1SnniEkVMxnE36XB3TAgf4_aMb0YMOlXcsSeHUQJnSAdO97Jp-MbRiOn4vt3ulGmP86X1SqQ2sNi5EoXhfLrQexw",
+            "width" : 4000
+         },
+         {
+            "height" : 1800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108860421359349911672\"\u003eNazri Nizam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uk-H5gsqFx0lHUMFokxCzIMCn-1bZdSP57up0bYSbE59vxNjmfY-0Sue-MiDzTjODzGoALP0d00hPwIek_E7ZsTFZaQg_tG4wVvcNGYSHs_-kgceV7Ztl80s6isk7ctxG40ODRmXZIpXkR-R-NFyV_zdMhwnI1nE6sglLMEleDfXs8_cYzJBAk5CzHfwaSTT2m2yevbRNoWKggeONxjXId6pA9ydxn7p3U2v_dkUfbNAxeAEf7Q8IvpznXCOtvQXTodJUgY5AKhYGlOVq3dleJvsw4jBAU6708P5O0mF-PLiNickjnxru7EgK6ZmMJhAilmFIUktNFsSRs3V9nmjxAUU-h6EObyn-FezsJnfDlyk4jZ2nFBRhY-wqAh9__ZkBPDP177MDMtCH391kjU-p3k3RL7ZxgVfhKqeNDnRE4nA",
+            "width" : 4000
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105498494560018842937\"\u003eNazri Nizam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u_mkGJQSifaTVGnGM7Q0_AXZeWWM-PoJvfn4WhnEVyqWUlIyy7s1XinPy6G2Xg7cD8gyvuNK56gpfw8NMKgJOwf2L14M7A0w7vEzI5Ej-n9_ukyAgR8PpGo0nC4pX5EOlsbJ1Fekoc3pDtKJpmp3Ee-hAJU5omuHFDsBcAZzu9eV9bnmqa2f2KtMmzmkWul0EYO1aSC0wlXPGVX-Jd6YvO-95FVeYEkK7lDRTZf3DqcOAozbjFf9biTVUq_9-g4PDK7Vff0WLkg4K7iEJAmVm6lFr2zowCihpxuSuadesox6dMdcmkoWB8v9fuHBcLEWcM48dlaNFD7regFnNwqNaTh-D9P_l_apgppiL22shb2vaDhCjfqv113Pc3cdmBpyFEYHyP20JLjuFmJJoaofwQjbNWHVcRCQ-B_PIJvNfr8Q",
+            "width" : 3120
+         }
+      ],
+      "place_id" : "ChIJ0X2aMxJRSzARXFDYoGXwS1E",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "health",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5858040059606356060",
+      "user_ratings_total" : 3
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,139 @@
+state,district,existing_count,target_count,needed_before_cushion,generated_rows,status
+Johor,"Johor Bahru",16,10,0,0,already_complete
+Johor,Kluang,16,10,0,0,already_complete
+Johor,"Kota Tinggi",17,10,0,0,already_complete
+Johor,Mersing,17,10,0,0,already_complete
+Johor,Muar,14,10,0,0,already_complete
+Johor,"Batu Pahat",17,10,0,0,already_complete
+Johor,Pontian,15,10,0,0,already_complete
+Johor,Segamat,16,10,0,0,already_complete
+Johor,Kulai,16,10,0,0,already_complete
+Johor,Tangkak,15,10,0,0,already_complete
+Kedah,"Kota Setar",6,10,4,9,ok
+Kedah,"Kubang Pasu",0,10,10,15,ok
+Kedah,"Padang Terap",0,10,10,15,ok
+Kedah,Sik,0,10,10,15,ok
+Kedah,Baling,0,10,10,15,ok
+Kedah,Kulim,0,10,10,15,ok
+Kedah,"Bandar Baharu",0,10,10,15,ok
+Kedah,"Kuala Muda",1,10,9,14,ok
+Kedah,Yan,0,10,10,15,ok
+Kedah,Langkawi,2,10,8,13,ok
+Kedah,"Pokok Sena",0,10,10,15,ok
+Kedah,Pendang,0,10,10,15,ok
+Kelantan,"Kota Bharu",5,10,5,10,ok
+Kelantan,Bachok,0,10,10,15,ok
+Kelantan,"Pasir Mas",0,10,10,15,ok
+Kelantan,Tumpat,0,10,10,15,ok
+Kelantan,"Pasir Puteh",0,10,10,15,ok
+Kelantan,Machang,0,10,10,15,ok
+Kelantan,"Tanah Merah",0,10,10,15,ok
+Kelantan,"Kuala Krai",1,10,9,14,ok
+Kelantan,"Gua Musang",0,10,10,15,ok
+Kelantan,Jeli,1,10,9,14,ok
+Melaka,"Melaka Tengah",9,10,1,6,ok
+Melaka,"Alor Gajah",0,10,10,15,ok
+Melaka,Jasin,0,10,10,15,ok
+"Negeri Sembilan",Seremban,2,10,8,13,ok
+"Negeri Sembilan","Port Dickson",2,10,8,13,ok
+"Negeri Sembilan",Rembau,0,10,10,15,ok
+"Negeri Sembilan",Tampin,0,10,10,15,ok
+"Negeri Sembilan",Jempol,0,10,10,15,ok
+"Negeri Sembilan",Jelebu,0,10,10,15,ok
+"Negeri Sembilan","Kuala Pilah",1,10,9,14,ok
+Pahang,Kuantan,3,10,7,12,ok
+Pahang,Temerloh,0,10,10,15,ok
+Pahang,Bentong,1,10,9,14,ok
+Pahang,"Cameron Highlands",0,10,10,15,ok
+Pahang,Raub,0,10,10,15,ok
+Pahang,Jerantut,1,10,9,14,ok
+Pahang,Lipis,1,10,9,14,ok
+Pahang,Maran,0,10,10,15,ok
+Pahang,Bera,0,10,10,15,ok
+Pahang,Rompin,0,10,10,15,ok
+Pahang,Pekan,0,10,10,15,ok
+Penang,"Timur Laut",9,10,1,6,ok
+Penang,"Barat Daya",0,10,10,15,ok
+Penang,"Seberang Perai Utara",0,10,10,15,ok
+Penang,"Seberang Perai Tengah",0,10,10,15,ok
+Penang,"Seberang Perai Selatan",0,10,10,15,ok
+Perak,Ipoh,3,10,7,12,ok
+Perak,Kinta,1,10,9,14,ok
+Perak,"Larut, Matang & Selama",2,10,8,13,ok
+Perak,Manjung,0,10,10,15,ok
+Perak,Kerian,0,10,10,15,ok
+Perak,"Hilir Perak",0,10,10,15,ok
+Perak,"Hulu Perak",1,10,9,14,ok
+Perak,"Batang Padang",0,10,10,15,ok
+Perak,"Perak Tengah",0,10,10,15,ok
+Perak,Kampar,0,10,10,15,ok
+Perlis,Kangar,5,10,5,10,ok
+Perlis,Arau,0,10,10,15,ok
+Perlis,"Padang Besar",0,10,10,15,ok
+Sabah,"Kota Kinabalu",7,10,3,8,ok
+Sabah,Sandakan,1,10,9,14,ok
+Sabah,Tawau,0,10,10,15,ok
+Sabah,"Lahad Datu",0,10,10,15,ok
+Sabah,Keningau,0,10,10,15,ok
+Sabah,Semporna,0,10,10,15,ok
+Sabah,Kunak,0,10,10,15,ok
+Sabah,Papar,0,10,10,15,ok
+Sabah,Beaufort,0,10,10,15,ok
+Sabah,"Kota Belud",0,10,10,15,ok
+Sabah,Ranau,0,10,10,15,ok
+Sabah,Kudat,1,10,9,14,ok
+Sabah,Kinabatangan,0,10,10,15,ok
+Sabah,Tuaran,0,10,10,15,ok
+Sabah,Penampang,0,10,10,15,ok
+Sabah,Putatan,0,10,10,15,ok
+Sabah,Sipitang,0,10,10,15,ok
+Sabah,Tambunan,0,10,10,15,ok
+Sabah,Nabawan,0,10,10,15,ok
+Sabah,Tongod,0,10,10,15,ok
+Sabah,Beluran,0,10,10,15,ok
+Sabah,"Kota Marudu",0,10,10,15,ok
+Sabah,Pitas,0,10,10,15,ok
+Sabah,Tenom,0,10,10,15,ok
+Sabah,"Kuala Penyu",0,10,10,15,ok
+Sarawak,Kuching,9,10,1,6,ok
+Sarawak,Miri,1,10,9,14,ok
+Sarawak,Sibu,0,10,10,15,ok
+Sarawak,Bintulu,0,10,10,15,ok
+Sarawak,"Sri Aman",0,10,10,15,ok
+Sarawak,Sarikei,0,10,10,15,ok
+Sarawak,Kapit,0,10,10,15,ok
+Sarawak,Limbang,0,10,10,15,ok
+Sarawak,Mukah,0,10,10,15,ok
+Sarawak,Betong,0,10,10,15,ok
+Sarawak,Serian,0,10,10,15,ok
+Sarawak,"Kota Samarahan",0,10,10,15,ok
+Selangor,"Petaling Jaya",3,10,7,12,ok
+Selangor,"Shah Alam",2,10,8,13,ok
+Selangor,Klang,1,10,9,14,ok
+Selangor,"Subang Jaya",0,10,10,15,ok
+Selangor,Gombak,1,10,9,14,ok
+Selangor,"Hulu Langat",0,10,10,15,ok
+Selangor,"Hulu Selangor",0,10,10,15,ok
+Selangor,"Kuala Langat",1,10,9,14,ok
+Selangor,"Sabak Bernam",0,10,10,15,ok
+Terengganu,"Kuala Terengganu",7,10,3,8,ok
+Terengganu,Kemaman,0,10,10,15,ok
+Terengganu,Dungun,0,10,10,15,ok
+Terengganu,Besut,0,10,10,15,ok
+Terengganu,Setiu,0,10,10,15,ok
+Terengganu,"Hulu Terengganu",0,10,10,15,ok
+Terengganu,Marang,0,10,10,15,ok
+"Kuala Lumpur","City Centre (KLCC)",15,10,0,0,already_complete
+"Kuala Lumpur","Chow Kit",0,10,10,15,ok
+"Kuala Lumpur",Brickfields,1,10,9,14,ok
+"Kuala Lumpur",Bangsar,0,10,10,15,ok
+"Kuala Lumpur",Cheras,0,10,10,15,ok
+"Kuala Lumpur",Kepong,0,10,10,15,ok
+"Kuala Lumpur",Setapak,0,10,10,15,ok
+"Kuala Lumpur","Wangsa Maju",0,10,10,15,ok
+"Kuala Lumpur",Titiwangsa,0,10,10,15,ok
+"Kuala Lumpur","Bukit Jalil",0,10,10,15,ok
+"Kuala Lumpur",Segambut,0,10,10,15,ok
+Putrajaya,Putrajaya,10,10,0,0,already_complete
+Labuan,Victoria,0,10,10,15,ok
+Labuan,"Labuan Town",0,10,10,15,ok

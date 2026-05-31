@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Ground Floor, The Labs City Centre, 2, Jln Hang Tuah, Bukit Bintang, 55100 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "012-784 2661",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1398681,
+            "lng" : 101.7091548
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.141290630291501,
+               "lng" : 101.7106862302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.138592669708498,
+               "lng" : 101.7079882697085
+            }
+         }
+      },
+      "name" : "Immersify Kuala Lumpur",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 10:00 PM",
+            "Tuesday: 10:00 AM – 10:00 PM",
+            "Wednesday: 10:00 AM – 10:00 PM",
+            "Thursday: 10:00 AM – 10:00 PM",
+            "Friday: 10:00 AM – 10:00 PM",
+            "Saturday: 10:00 AM – 10:00 PM",
+            "Sunday: 10:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111960780617151853672\"\u003eImmersify Kuala Lumpur\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ttGg9fB0vvi_rElgt3S5t4K_7i1e3VaHrHDxmspULZHjvY147vhdz8xJ6pADnOG0NUBJOurj71wqlyTnKAbB9BXP0eSIMtu2Q8mXqZSMBcSDQhCyL3fNAwO0r8P5jN8LEJdDLw62BKxTS-vPKgcKpOpgh8j_AatkPtc5AIqW3OLpKoEHiY8J86N_3czixTFuHdE3IUbhe4zRnUGL8d83S0jr_wkfMVACLQsj1vRGWDQmpm9wuN3L9Up7XXCGwkqCk73_VE-Kc-CM6QNOODiXUU9qvxlhtk76xsHGPwnoA",
+            "width" : 4800
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100451296733492878644\"\u003eVishwas R\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ufYhW9D4mFfjfmbV9HQCCIC4XmQrWlh4lBVK5RyGi9kjoCRECpQV3cxVBjJt1bzN09qOhDDLwCnoXNM_gAAaSEhwZW5u1ubrv6tqUUEEYNLs-TKYWa6k-kxOBXWzIbKBCjtP3GYQs_wLr6otAr89ZxaP9Gwff1ei1iJQUXr0iRWwBKhM3ph8th3UjCisBfwA6mHgnrKn1h-EIQ-BS_0nT_kkr5Z0VOVxff9ZHmoKsjs_CqCbIzQYxGh7jeyvGoAmqQUk0hnnjpSEDQEkIm8m_ePf4aVI7W3oaG92MMUAI0ld1pboMxeMuxu-pRnj3RL3QWgAvkZ0ykjKLror5-2hCQ9YRoAg-K0NFDHKm_iqd51LxR07U-3SOSZ_ZKVC3ey4laXtvQLmpRG54bElRzYHoWMLpbjFwbx0DqfmrvFu94NFBFBhT_JHzaQjVFKkih",
+            "width" : 4080
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104262116782456266619\"\u003eSyazanna Che Johari\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vaZlvJgVJIwpdIybVxOt2hTJygJvzvsDfgOOzo6PF9XFRXP6QyG7yqzcyAHJ9mVN2pzEAOTeIpM34JIEZ5TnTcb-jukmG28DDGaPuCWbiVerjdirKauVlDu_zTiB8T8hzdS0Hy_CLdI9SCpY80OnhuVkz6dJz8dv93zlDNyrzWopQKYyndtl6rsK2K1a4U9ZZDtbFK9gAi-ag4_5Z7MPCUDN5_T1w1riaOuR-CiA-LxbgUyUNgJSqYwJWDfy9sRYi_NQzvBWw7BPpIfy2j83-fIsjWn6t0EWhpjkeKA4KBharqnA66w0ihSNWb8Bk3ePXa9lcMd_aWaOi8JNwJV928szx7z0stggh50JiKvikYZNq7OF0ifZa8VBV0NV5YgdJcx1bcDpG7G2Tbuc04hdwUjxhlyTvPmJnExPDUsL9yUuK0_PPWoykxpaB8E8Nx",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106136982670075481258\"\u003eFauze Ardi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uT8NPgJqf4bmnL8AqndD6FGEcjN22AtkiMs8BkA3u325OmJ96KnVCbW-7Z6-qXkyBB5NWk9pxbRAa0LpUhuV48Hm09_DwbDQpctXagHJJdzFHwTJLbrsm1xsYx66QiQkaksNfntIE5dm3_mmsHRGYi1IFzuzSWU9H_tdqbeNfA0YLBkOs9SsI6vnV1Pr2lYO-FR4A_dlCMBh95V2mvLntK6gVMWsxPtBuVCI5ms90VKmeLM9rWo6tOsX6cbgC1JQGZKrZ6aFbWBHaPVqvjWx1ZSkzpiF6xRuyJgux0ZJJpzCeyon-DGhZAVrreNc36d5kYVL4VvJZ-RkBfDFQNROcpw_Ajs_2Vkk93Hsm3Xbi2H0wBivZhWchAtCr2X9mPvUamQi177qnv_BTPacqCECFLOvyd1MbN1rBY5fFbLQGei6dQXXMLMBc_1rA989ww",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101070206382540851182\"\u003eVivace M\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sHF2UXtKRDc9uCX0V_5b-zwNO89jIXCexh2lJ8SgcgwBj2n0Zhh8HVUi8iMmwVT43z5-OpKk0au5b-T9SSTlONSSB3txIMYfBlZ-ODArvltm5-3r3ro94BKtZr5DSP0RYQ5z9kkPfdiRkNb4gi2FuJoxIihZy9j7qvmU9HBOIBdnPnUSjf-saghDqGIrnrCslGvKlQ1HKXKNIgjRFx82QayJCe7NBUlEM9K67dIOZOkH29SsKySX28ma6sgdRD2g9CTYmIV8LFWGW_1fe30g_A-MtB-Rrd_JY-yS5w4gSdMA9URL8ootJcYzWIoNBKTAPX8YoSvLq3RrBnHxEjmmzLuIAzhhR93ho3_W95Qm2YudpxMBYpvErABY0TzEBDQ7eA6ifIf6tDLFnoA5tGlyuaTZIxttxa0yvCavIiqQh5ypfcf4Ux6MsnN-Bqs-jR",
+            "width" : 4032
+         },
+         {
+            "height" : 2604,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107908811882404755812\"\u003ethasneem m.s.\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-si-6avKctFH2yqw9efe3rL6Q_qkZ9GKteMOHvsjw60ma7s3yOsmGHB_JqOG-LxX2AySLN8WgsJ_SH43yV_-qrZOulnWUl0ws2afDzl4c6lhu9l6WCC-Bk1Po7LzL0-Dlyh_1-mA3bDKeZcDKW4gxgCaeucgeEkib4u6J0V2BFzkzKWTDh1B1wCSa2Rog3UVh6sRBT44Na0gYgb-dSjMOzBJ_o-L3OSmS8ZWkrq8RzAzdARz0g6zoLF_LE9HpdOUwhfd9nUMBQZMIDqcMdiEIXp6GdCOlwYFjA2n_NEm67QssCyHTVXST4j4FRoCcYBo5wCcM-SYpMQ-Zs0HuQQ5xNq3DulJuc1qvxLwvFqn2s218amES_sYtjigpDz-aNnZpOwe6ySfXXR3MgJ_-vLpiwUiMX-QuMTJQ9Hud9Vt-vnsLSr-t3gl_F8uvZ54rON",
+            "width" : 4624
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117280324897358348169\"\u003eDevina Devina\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uriH3dxizVZEYT5pOjJWuBH2PTrA5nnSJpBl2Te1X1DJ9WOpZzXxr4GlZ5-bpKD2-ALikKqTdZjCjjOuDa_In3N2Fj1OlBhKFMV-99yCxkQISj_n3Pnmqykckl7Vw0RBNGkF7ExypJyk5dbDEKlxPrFTPcaCq9ZcG4MfPBpqu50QHntT4xV6VVZpXiCSDnv2f8CNQF8n0QrZf1rETZozEfuTR0boIfe2ldXEKGGZmM62YzsnERjlj3Me6K2uQ13iXjZ-x51vPPo1GWsO7ZCl7Q0MEWd_ElYqYgYOTQ4k3ANIGlW71XDPvbowzbryX_c2nhhsE2cLd5T5VXHWvi4NLanxnbabMoILsTV0g1rTsZanEjXCL_kWbDM9dvjcq5m__2wMYALhjLxi_QLEqcn0j2LbbEaRnQQuoLSBoAngWWp-JKcnMUw9KfNniTN_W6",
+            "width" : 3072
+         },
+         {
+            "height" : 750,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105957051091975454959\"\u003eSiang Ong Cheah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vE3nY4Y8b6RYyx3cWOrssbP_-uDEG2b7ovKW-ZtSQh56eHfZREekJJJfMRuEZv9YWC-fdPua5JyO3WF71l3g13EavLlHdOn_dC8azyQB6CjCY3aJ6gGzAlCnRR1rU17Cf3DeXaLAc__RYkWTqMTuwXJLYthg3DyjQTNCU8XOIv6B_cT-Ys2jCW3GYt7RmruIogN54q-uSibJ44-_k_Rjnp_9elSfaebysX0jEOQRUAxU79Hcim_SNiLzZsje5Dnx-rVnmRNhrQObxv7QxDXZBqbKHoOOQ1_M1pzzm6YZpNVXjfceMYGfi0CKh2-YKDpS_xddU3LE5JKO7GtdQdJBGIQNWENoU6fZV14qUdN-avcIcqZGMRoTDtx2pNv5TkCCGDz8AyV0PWNEnHd3k952xGq0mD067GjmrOxpoowY1yNdmp3HDXJ-dfVXr8foRA",
+            "width" : 1000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100344220908166217036\"\u003eTaylor Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vxF3kwFG-wBS8cgeaJupLo-15ydbq28248Y4wF7rSc2Mq_e684kleyc9HozfemPcFByjo5SYcFz3wnMiHETv6qu_Pt4GPLR1MNO4u_MKHtBDOt4URT6SfpDrDdXrV3f09f75lkPg1G5meogjuVEEe3sKWp2Znqq-3tesJUkXkH8JjfBxrgeH6ePELTz8TQ9F8ZfISkkBWHHDEjBk800qp-w7sd4lsDCW-BQn-pXPODcp1N_W20goVAE3YedoIG0oCHMky_ovRQjPZdQR5a1lP7xShv8V2GEG1MNkCAbMJFQwV4qNipQ4uveGOyqIPueh-aBcFReztVVqmT61QFMv5f4uexVV65T6SfvTLEFgwJSMPs9S1ypZmsqr1oln56HgTc4DkT4F2myNsPO9LBGNrLlMlDCuUZ-gNjpTspLhhXhw",
+            "width" : 4032
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108519069589256190858\"\u003eSuiz Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sBS5vT_nwkbRI2wE1Xbk3EDs9tr9eoAtXAk75OH6C3WJnyJu4jalXCu4PkjPtfOPjkmgSeljAuqEA--2whIMn3soLQ092PtxTeqBXe_BbIxCEB4G-pdQ-SdgJFVHwxy3H0xw7sBz49R0EJlBka5X1cTMwnwOAu4gi_IMwqvW6lur5DuXx3MREenVUY-gn50t5tTTFPx4CKNqR94h_07jvpA7plxVrTEn2yFZv7_rIB74loYhFLm4FKUtnmHIBki0l_mUwOYrRcZLwaXp60BogsVHQvteA9v7Y2IxGuRhU-hKTWwgV2rPZj9gsbRqonAo-utNZ9mppEsV85nV9XcIxxLmABDTx-WHbQJudJkQxX1BvL1qmLABaDQZLa7SpunU_gj5ZdS1BMmM4gq_TTP-hMppWnQ3qBUv7dWvN18ddlqqWHvZiD2SKRWUQ-oQ",
+            "width" : 4800
+         }
+      ],
+      "place_id" : "ChIJd0G2TQA3zDERNqcOIcoUuD8",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "art_gallery",
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=4591442678474778422",
+      "user_ratings_total" : 1845,
+      "website" : "https://immersifykl.com/"
+   },
+   "status" : "OK"
+}

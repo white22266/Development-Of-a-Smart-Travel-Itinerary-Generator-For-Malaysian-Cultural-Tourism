@@ -1,0 +1,239 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Pasir, Jalan Teluk Likas, Kampung Likas, 88400 Kota Kinabalu, Sabah, Malaysia",
+      "formatted_phone_number" : "088-205 418",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.9954925,
+            "lng" : 116.1082195
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.996832780291502,
+               "lng" : 116.1095913802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.994134819708497,
+               "lng" : 116.1068934197085
+            }
+         }
+      },
+      "name" : "Masjid Bandaraya Kota Kinabalu",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 10:00 PM",
+            "Tuesday: 8:00 AM – 10:00 PM",
+            "Wednesday: 8:00 AM – 10:00 PM",
+            "Thursday: 8:00 AM – 10:00 PM",
+            "Friday: 9:00 AM – 10:00 PM",
+            "Saturday: 9:00 AM – 10:00 PM",
+            "Sunday: 8:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113151283152419518959\"\u003e서진\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vHS-xxbAjr7X1FT6XOAKWQwpb0xM-asGkFpkkh2WatXrxr5JEKVbwJQXRebd0yT8J6eFnjakN3IXsPpfHCs32BeXTH8todtNKRxnWLUcjKZBTYVaA0upHZJLjgIin54WWLWJ1d-7JetR5V-r3yxSQlDwGoG3GM9Fx-zpy_N3qtZLIL-mrlvg5qfz39GZOTFQSMEQEHtRmZLPU6Y7u4hcNkMLbNOiN4EoDPTADgHR2_eU0NdgtdXkJKFydU0kK5pCuTk0et3Klm_pdjpe1UyY6lbYxmKjQHPsxzb6bRKm5T96mvwTgP_jk1qtmr91BI2QVoIGypeATVjftOe89OyfZQSoyCu2rRGolu6mgVIjxzdxkGxBZADV3K1WBebpEvUfVCIXsUuNa4-gLzWosxpYIuPz5npy3KxZvjsvta45oo3Wdc",
+            "width" : 4800
+         },
+         {
+            "height" : 768,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101992069404039502506\"\u003eAmin Rahim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t38Xtq-tCwEsmnt8B0z4tD9PwYBoM-YASsFOZooToKgPDngIcvmWeaHcLDPZDQzr0pnVAQ6FVXnr4sAvq3bb7u9Pe4wdtZunUvyAKKTKUIKrBvFAnmXKiAY5l2mmZUyIdzyLXYpulkSd8iMJ8wynZC0lcZ9V1fhlGw80bZ7W37-ILbfD9gzFStnfJDm4XnEQcnablaBvBr7mnru77n4sW67YqG1-aW3PqO2FblCKg8Mu6g4SAjTK9zIi06ikFPpMCr-Abs5_iXtyCU-F3qRnKjr3HLuKYQQi1V3LODiYtYTyMD_3zVhCPAP-6qmgck9MhdJnocA8uAr1fjMhyUKHsQ8KrQrl9p-o_UkmGxUC-KeJAPi_blARaFFu63brkZ8ZHRapNMO46Wtljd0D50m-Z959iNqFAQ8tRKMDx13yA",
+            "width" : 1024
+         },
+         {
+            "height" : 1512,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114760886262056940391\"\u003ealiana Wu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ugule3qFNql_r50hyFhaCSEp9aO9Io15kNnMMbYC9b3kuqFbGcYuGaLRotUntNk8DNzKfUx92EwDUHjQQG1ZjOKiITWdbw06MXvnOTCLSoCqfYRIjZ-rVPJBQaMtZCUFWV4K6GFq4-brW-N-U6wwnvalEdslFgEOOVUxenxcEo1746DxwEBQRitjzSdbtSegu3nmbW1zS_Dl-IwAAObrJxQmbBaXvL5BDSPS8lZxx1HdAR3k380MzAZBeYFQvQHWImBKybJx_z6BHhjr_ILbfd0eIK5LfTQiP5V3EvVMJO2sI4-RQZCpRH2DrgNMe7j5vqSPDRUi36EvN3ufJdumgSq5nqyc_lWRCb-X1JWuLKz-ExLZ3Eyen8wmBbl8cd9ICnB3KPTb4bGIOlQd-Hf7zWDbQI5i1LPJoVDSBdNSu37w",
+            "width" : 2688
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111501151855757328063\"\u003eDanny Ho\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vy61nQPKdclsag06VCqrdF4WQZmUVn0QJWDhnoX4o1Win7DxtRH7m7Xu3Hv4yyUxpll7y46kEHNtoNjmi_Sk7ysWriQkmCKAUikld7kqAkZnKzpxA_ZpkTkIJg7jRPMtZdObqPsNwBdBlmdAak5dApWkBfbB05CchmHaqjSvne91R8VCWhxfNcYo2maQUVlGYeBBBz5XmczBBIPd_qPrXqbrNbehW7SVjjxWUvA_KZOEv9yIcM0DlLTdGSbkSwNPeIRqaghyfc97gNeB6zpZ1bEfpC7a2Q4hHTm2Cwilqr3riwtWpQeEjETMEaliZULNNPzzmvRW3COowWZJkr950-Eiscm5021Rqs8buEAXlxy6UUCiaDKZ9etihGIv2XIL5iBDg8DNbXxiSao-PQDwMcEDdB6DfefPsMzFLcsT6PHGk",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103206047497650408718\"\u003eJw P\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vdnAuXuyLF7YOc9jUqgYGA9xY-jvShT5YfuKJJP9wh26l2EL6Pg1z0PRqBUKNGRTDi8Jr3BM6FvdBxvFKkUmcp8IURdSOCAOWV61JxfWoKxPMWnNt35gOb67mKV2g-cE6qAweedE1bHPfNG3D-CsbtEW4mhAIzVKpc-YJ1NF1wpKhVxeemrrqS2vpwN5GrFEUqWANc8ZwwfYpJhUDXtCZOE30yEeFUflnI9cvlQ8FQggNPiyK7WGVj2i923jMinCUPdZhZNfx92vrbysbbLNggZRRusjOjQ2DpVyKEbDHaKDucSDbYD-w27onuBsOnkRggyNznlij1LcAHufj4NwxN3nIUDVM7BLf5zTiz284lmXC2tYYGoVPiZ6OWM3F6AZffyN8QtuKKF8E_5KTY_F-G4yxDoNv3uCuZ-3tZlFrnEUau",
+            "width" : 4000
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107691223355958451393\"\u003eE.C. Yoong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-utcJfofzs6bTVXpvrIhbGg_gQfo7aJqFfNKKnYdIwSc75VNeEl-LcOFRq1rqLSTm0Z9tweFB0VWD_mwUJylpEilvQCP2Se5wyPtfDh9XjgL6gAlINDnT-J-gxziDht2Arkvm2FhIbPvElVBBV6iYj_8cRqZmfEMdSyimmA7bNw5_-1UyI5sxu96vNBl6ToZgkMVUZLFgijJortFwMa7oHq8B_jdUBwFOKfJ2L1a4mYyc9-aJiwQfdwVeg-vsb6NHXmgIRqL9m1mX_URQwmJd-znxe_BxepkOzZSRhFTbyUOo0XJw4UVqyRD5sCkTV6umPXMhUzlwp8-gHwjFosgA6ObqwK94joIgcoBH_HsLqC_MzjXCVnnU1QfropAmVxnedLQQiR8SHy0u7sPUfPN8AQeGhJAGYOd4M7aq5WJgrICSU4qiTD6iMk-eFBXG-M",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118407848951441920342\"\u003eAdwin Lee Onsiong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uN5YqU5hn6o51qSA4FetW-gapxlYXL3-EHmkWI918N0ymSputGlWG-VBiK9zNLA_xXuvPtxcauhf8axNX_0sMPVrewCytKtSwjtIkkRH744mkzzQHDfaOvztVIaj3z7pk6XyKK8VSqJI7KqHRphPPxaeOppR6TfESu25NpZ2tAaB1Oo1_80c-ciT2wz094QiJHsdYZN63emWZQw_rQWHDHX-w6h3RurIV8AatX8PvwTPYKLvw0BYdCCx_eb0v8YRvkER22Bra-7sdO_pue73cFik0vZO8f3uDGzDn7eNAfb4wh3qMNArNh_LoE2TwVyrxLuRybGWYO_ZOghKzkYpkpcFWTnEp0BAq17renb6_fDXMWCFT3KnSFH-nvndQe0uqQeZmb1SpITUSMv2zV9wm-wRxdKX-l6Q6Qxd1o2xOqnXBH",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107734381465248551438\"\u003e구래팬더\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tROb-YVVi_FUUzuZ9Wfz_PI4H1kgUS2XZ1STjjUGrXWhqpQ2x679bBPTs7HZb6cQNqR1V9_09CXIkVjp5GFR9Wi4KS6fqUG6TTrY-M1IicOzb1F0eFm4p6HnVTNjBF73kSS7I7F9F9KeRlZCOrnJFn5Aa-mvX0JZfCRDKIXYFKWXq2K4EIHnpYdsyN_FYvMZCkxTUiEpIl5yF_RMwYJ0Ug6V-tWCXzOAzjVqFGAM6KfPQ_iF4oXJajRQESUyf-bDLxRIYanNhGUvvsETEUUgNaWPkJWrNYyblcWCdicfIiuGcMS6Zg6-45IH0PCjSIQ9lNGJMptMAhI1nOWpL5xPFH3_rybMo_d9In6TbDHlbD4Yc8IOoRi8I3yeIbCo8o6mpq87r87ax-qAVPPhl_OskQTuqXVcpEvoij2UrSbENdzg",
+            "width" : 4800
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113168426782237835132\"\u003eharby nanad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uJKyhlUZbW9Eur1rkEV4wd4wvrObqqdHkXFdYUIYFiFLtvmh5wMmJy8OzDIRS9INx2wgwKAhNiY2CQPrHtQkhypViks-9u2tmgMpXdQ9KHBdN9t4Y7Pa_m0U6q6gseP0vD0iKOURGfu-gm9wbc5enDCb_5xnalirIs0S1WrSd-oZBQtQzZvOT9K_0QkIOp6Iaq9_1ggT8ofn0CMGyZBJJFILwqM4XjT8LkWDiM8_92RW4igHA8jSv235gQg6oHiQvu-637u4-zlsYXyvYko3gBI-dgxOrxqL6BBNuZdvAaFVdyMUyEStiDzcGzawf5L-mGSSkZPF9FuBu0ZirJO7feJIJBrmse1IrGoXmOyBmm6jiGB2UqghmPmmcrDTGJPOz2PJN73N24TAPr7zwZJ3-uNPMgvOoCrpNtMuSxHi2Khg",
+            "width" : 4000
+         },
+         {
+            "height" : 1848,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117641113493043419427\"\u003eStylon Wang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-teErnIhoudGk9VzPdkPbSGaE4kKJ-zWnlG_BLnycoOx3o4iwJZhz_U0H_0UER66JkdVQ0oU9P7o3i1KENh7EiDULqfIYtYyU7xVcunyBzP93s_jpZi8M8MT_e75PBwl0W6yN7M1p_PO85hteS0t0rPxp25DHQxEW0xY2HhuWHJsDBcSkRypap1GNPTphVIlE0kvIvLlCS_nSe39papAXQD5CFL74COC3i-u_lCHticvbS_PuxGIJwQGYppptnuTnEU5LUTQKFhtx-G8YtZgrLgwXPtEWBKdKPsn3W-bCQsdP6ryFn-cWS0VKjiqrNOqBW5lCNyBUWfjFJq4Ts96_BdXa-xK5VFYVzfdB6bHxWm42izQiOFRYjDK76MxOn5dV9U3UgNrIWlySkDEcxLE76qe_yd68yGOLTbtSeRuXmNApYu",
+            "width" : 2784
+         }
+      ],
+      "place_id" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6055474541319108902",
+      "user_ratings_total" : 8852,
+      "website" : "https://sites.google.com/view/mbrkotakinabalu/home"
+   },
+   "status" : "OK"
+}

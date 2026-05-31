@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "71200 Johol, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.6847726,
+            "lng" : 102.334934
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.686168380291502,
+               "lng" : 102.3371801802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.683470419708498,
+               "lng" : 102.3344822197085
+            }
+         }
+      },
+      "name" : "Kebun Cili Kopih",
+      "place_id" : "ChIJE3SQPgATzjERqyXBySOpiqI",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=11712359752104224171"
+   },
+   "status" : "OK"
+}

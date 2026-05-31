@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "28200 Bandar Bera, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.3094819,
+            "lng" : 102.4724537
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.309801580291502,
+               "lng" : 102.4749011302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.307103619708498,
+               "lng" : 102.4722031697085
+            }
+         }
+      },
+      "name" : "Tanjung Bera",
+      "place_id" : "ChIJz7PZcwDrzjER6yXlsUZX6PA",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17359220724843488747"
+   },
+   "status" : "OK"
+}

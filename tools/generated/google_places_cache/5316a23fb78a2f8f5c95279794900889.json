@@ -1,0 +1,1212 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-veiriuTWTp9iYvjL9YfLxco8nU0n1BWKVRV3IZlheqxU3Q_EbSXlY_MIgCtjJriNVhmepI8AENeocUcLaA5KEDvSpidPS91cY6Jl6Nstx_QMb6Gg6t7h7aOq71q2gDF5vkZ3WMOBEjV178-Qs5zRXx2ZZu3Ytr7sOCUEl3dzzvlBrIrQwLpoKLiq9PBUh2Qx2Gr5TNFlGFJiZEILpK4OLKUW7kzWeInwCmvpJQv1U-0XN90f_v1WYO_lt7lcWNxDXar6I1HClBduq5glk8LrDfAjrFC8CJWRcefVpvFENRDXf-_TOEpH60FAyrASWsD5vkK0P50t6hVQTmHTUhucwFuOgh6ny4v6QSy1s7t9AvLNHq_zeemLpVc4kHErGL3zNOY54Hunsb-tLyGY5U3-uDt8TRdVlyzQhJdb1NqWsZLYk-Kc7lSzBP6qDQbNivnXmtYjELXZbXj29x0svM9tp-kMPCXyh9FVEL_lklZKtbUCrJ_BC3g60-6m0TjUgXgQnlewkx1ET3YINcjXWJq1mi2i44yYlkTKfG4rdi8KHdsn3yYhr2eF7AUF49B_ijj1XftYvGH7PSMwb2cdRiDvdng82JC3GSLTURPimXJCsbJ-LiH8JpKomFxMQR0FYiroJF8gEo7MT3-ttl6kWfriLdp_DLEAOvgesl9oA2cDfR_WNrzcKe8hbKrTxvqIocKgJgVit-hj09BI7ZMNGkOgZbL8KnCi8apLkeBc-Jd_FpyHrgJbbduZhmsMQkn78NS8krLY0Hoc-CiX3ktCYJ2DuFNpw3zb5FRm5ckybOQK5gDVPYBhnkFki5XoPHqQjhy3g3xZ4grQNP",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Parameswara, Banda Hilir, 78000 Alor Gajah, Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1917988,
+               "lng" : 102.2503678
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.192846530291502,
+                  "lng" : 102.2513751802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.190148569708498,
+                  "lng" : 102.2486772197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "A Famosa",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 562,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101202297290851884473\"\u003etakumi yamaguchi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uUw-6VJtFf7YGykMs15gJdJgX2jiQEidnTOOIrOWxxkk9tKNIOR7p1QP_uvTzmjeqiD3dlrSMj0SJi6640Yj_fYdxeXLFZHqHkM8a0o7fINW6M5sh9MiAugpyF6vAvgTk6mBfRWRSHAAVvhrNc1yu7kN8KXv59gv5S3uirowGnJqjF2SkazxGOR5jEhz5w2dMiZsNddwK9dxMIcP-e2AEHuyF2uqcugXPs1bAvs6XeddBrQoQ_eJBJz5m9wB0ZdqM-qo-uHmgqQBeXVpPsikemy2eF29tyHn4aocOWt-oECtzCWI1mWNeT8q0uR1YfHeA2KfL-yUdd_-jRTmdl-j0BwZe_FrU8sqQZrH0mbOCtCxoKLUFKoOAQnbHTEkmj1_lpggW9A8PyE7Zl63jIe7EuJY3E1kJ07inkVrahHbEIM0jI7yh9gGxZ48xnG9nt",
+               "width" : 750
+            }
+         ],
+         "place_id" : "ChIJHWino-Dx0TERtWMOoXza5MI",
+         "plus_code" : 
+         {
+            "compound_code" : "57R2+P4 Alor Gajah, Malacca",
+            "global_code" : "6PJ457R2+P4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJHWino-Dx0TERtWMOoXza5MI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 19481
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kota, Banda Hilir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1925752,
+               "lng" : 102.2505773
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.193406680291502,
+                  "lng" : 102.2521401302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.190708719708498,
+                  "lng" : 102.2494421697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Istana Kesultanan Melaka",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109819893728274545511\"\u003eMuzium Istana Kesultanan Melaka\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s06a2SyxLxP0OPUbKws7gcJaJ1EWnl6Ay3TX8u-1aQom-g5nPUzpBmcIc64BRCf4T-h_3fZsouMpcmqtyXc9Ys0fCTXwGaX9lMvFXf_bp9MzgQtx06Pl9KbiZPkWtC9KNdZko1oOv6ES3cFT_SkcemzmUfscNkqY0m_8rOU7qpIsEaSpuPmiy-_BCVDl0s250bj14QuouQe7IrxbfnpLAIMkK8lKAo4KI5C7I_3EsrtQ-NWAUuNhFUKl6SnQMQVKOZOGWLutMldOfqPIxnRDwlA49GO-G34BJdTaUElsK3TfMqNljnWNJQoBVCUPhEbDcZbDWI8VoSzSSKAfo4YYA9y6Ep_NN19kPfwnNrm1Wba-0-hRvZ3SJjmaN5MNkfW3iiqF8mUHpFkwn1S_OoKTDo_dJo1oslKFJ2krJd0KaIXE-x",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJDwQOGN7x0TERp2vFcEAklvQ",
+         "plus_code" : 
+         {
+            "compound_code" : "57V2+26 Malacca",
+            "global_code" : "6PJ457V2+26"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJDwQOGN7x0TERp2vFcEAklvQ",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2282
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "51, Lorong Hang Jebat, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1953013,
+               "lng" : 102.2486742
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.196628030291502,
+                  "lng" : 102.2500066802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.193930069708498,
+                  "lng" : 102.2473087197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Cheng Ho Cultural Museum, Malacca.",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1536,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115066912578736214944\"\u003eJoanne Tseng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v5pIxR5CG4uyFqkqvchMKuWOi6ZD4iOrQxSIa2b3EXWBNPnILj2gmeXIhN1sP91HLNytkxMOJF-eh3Dq8cSXa53XjXGZVcd8K3lble0XCRD0DeEMdlFnhep0OasDPb7vw-0mEiEUQiUPPbvKkCsmU5XimYzBgTWQcnLLJdSZ90AEPrM7NNsWZBBjBwa1pWCiiCNr_1fJqQA1C6_IteGN7InJkbzyrYZnnfgLUhgKhb4KI02fzUtRhaMHaWOkEWgkvT8chuB7c9806vCcYQlSlalYjQu8W_w3O_xOxir-GUTt_AiW0H-YlELug_Gi2XZmP0vRrvjpiNYSLmwuBVH5zI0nJQ4e5OIz9Y9XR7lkSoeQdNMlazGTOh0Spib9SbhqtfZx1Mj8ZninKW4X_BGIAOwC50KeyhkJbBCjsvuUanFao",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJVVWFJdzx0TERMv7qo6qtDSQ",
+         "plus_code" : 
+         {
+            "compound_code" : "56WX+4F Malacca",
+            "global_code" : "6PJ456WX+4F"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJVVWFJdzx0TERMv7qo6qtDSQ",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 437
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "48-50, Jalan Tun Tan Cheng Lock, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1953382,
+               "lng" : 102.2467179
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.196655830291502,
+                  "lng" : 102.2480359802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.193957869708498,
+                  "lng" : 102.2453380197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Baba & Nyonya Heritage Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 368,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116982791158106319276\"\u003eBaba And Nyonya Heritage Museum\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBVWtu4vmEG1TBQrtiloCVKHFLLvNnMz95FGzJZaTO6rusNlLfQeMZ8UYhzpwrx3JZsEJYveDuwOHpcj3xyeQspkNjQIuH6ygCYLSEKkCRx36JcsiREAlcB2qSbTfxNHnRjDR_pa0nnEMnJvbHo6QZmS1MOGoRyz6IIfV1vuAl-DozzyvbSuP5RTWgx8Eene8QQb2VuqrrOD5CxC7J9M5yhlApKvVFPGeMjlpsNwwA3SHwZ7z88Zh7j9qViIk9UdgRX9BLlDkQt1RZvAgIA1zQMONk3mrzcX8GLHRg_qeUgkc_bdKqCNMSdZtl0wr_vXUmAb5K2kxC1GY-x4HtbeGTkifynGGw57pWIuksrX4oUyv59qkd8r2-YpVVh5ia1w2xo6UTp_8alYBPkpVaT61qkrh1lk3WgdtA3U6CKovBFQ",
+               "width" : 550
+            }
+         ],
+         "place_id" : "ChIJfdXRW9zx0TER8SK9p2bE-kg",
+         "plus_code" : 
+         {
+            "compound_code" : "56WW+4M Malacca",
+            "global_code" : "6PJ456WW+4M"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJfdXRW9zx0TER8SK9p2bE-kg",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2325
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Ujong Pasir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1897151,
+               "lng" : 102.2643907
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.191187430291502,
+                  "lng" : 102.2657032302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.188489469708498,
+                  "lng" : 102.2630052697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "St John's Fort",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115474408549787660680\"\u003eXiang Yan Pok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uwG2UqVOv-KmGE6xjcETzD2_MyahxezVGG9bslsT6Bq7hfXiBGWJ9BIeFh1lcHHsBpGjC1WuS5JKVXtXszvQinkw8kZMXUpcw1IP98gNaR091tmT3wgVOr0kQODzdTpMDql-rIBO-xsRSUweiJsRPa3vZlbfTXitV730zz5IoUy9XDSw2-KsG9441VyDGbJLNLoBZ7GrMidfhBIeaVdwT2gVOEIaFtbz3DGm8leuhjP2D9PhqM2vc8iDxsjvKpI-xpYB4WUh63ofCMAxehxfVGqdUwpBC7OekCKnAAR0JbYx6xJU9_OnikvRUITlDYWjVrFODhRbOvhIMeV1QR3z3Gmlh_8xphiQLeE2PKPBLve26mYpM1A51UOn08Td5iSEVCuTbSxditqxyl3JGIDMjCsflQ09N9Tzv48R1jmn_85I2f",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJITcHtxnu0TERoCLukXcZuxE",
+         "plus_code" : 
+         {
+            "compound_code" : "57Q7+VQ Malacca",
+            "global_code" : "6PJ457Q7+VQ"
+         },
+         "rating" : 4,
+         "reference" : "ChIJITcHtxnu0TERoCLukXcZuxE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 334
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "17, Jalan Gereja, Banda Hilir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1942778,
+               "lng" : 102.2488942
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.195574130291502,
+                  "lng" : 102.2501834302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.192876169708498,
+                  "lng" : 102.2474854697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tan Beng Swee Clock Tower",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3603,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102846660093872771895\"\u003eLee Frank\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vVnMvw8vOE9duqMPdxfQ_cg0SjTYDYgbWHlwzaX9VT2O8xdj42mywSQo6qo250JUAAsS14Jskr-3EHPOgbNNS68c3ckFhpS6L-HBWFMQUE_BoeGwE5jDAt1pzsXA4o6zz1uDVK--D2fNejJEotKKOcgoK6lVYeXuHqW6IQ39ENpgrEZvXEVbc1AA7-wKuWg5qO9GzHCzLrEYqiOUEURrnYCfNCsQN_BsUMyWHvlwTqvbeuKMjJQUkJpUaHnQnbggAUUOqSGSicivMXplvEaMuL1iuxqds0KEHoBWCdZrIY_YeMAgqvoKFMrxFz9wVauXQt3TM4X7ypauoJscoKDK-4fumPjZI5mFaZtqbjFzOeh0QG_svkZQyDsj0_Vmx3FR13C6PHERtvf2FbLyhjLSXJfpDPQponrvT3c29FkyJjPFox",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJxSBF1t3x0TERGlTEQEXzNtk",
+         "plus_code" : 
+         {
+            "compound_code" : "56VX+PH Malacca",
+            "global_code" : "6PJ456VX+PH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJxSBF1t3x0TERGlTEQEXzNtk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 461
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kota, Banda Hilir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1940602,
+               "lng" : 102.2489723
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.195481230291502,
+                  "lng" : 102.2502219802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.192783269708498,
+                  "lng" : 102.2475240197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "The History and Ethnography Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3199,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112453760463630182084\"\u003eKurt Brunner\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v23AXR3As0afAzJLO4jnoIB3oEExNsh3Bjsc1GRH4r3CIxH1ag_YQIzG-R4Z2Dx90kXOZ2L2XEjd2B4WHcoy8WAKqXwOqQOW4KO-AvIK1pTrbTTaElR_4mnJ0nMhXSCSvf7FfLXLKPazWudrgyUOFMu3S8gO-d8tHcGkDBFKhqg09txO05MIqnao0PT4SrtJ1tDwlo_DZfYhpMjkRw2SkIBiCv54ceRLQ8mt3oIC3u5OlMVvxKm-cMLNzft4AwaTr-BkklEhg8XotiDbq6yXZIJB-o4NsPbwYipTYe56wy9nWWgE2qUdG1D5sl9Wd0Jj2xOktQHHB8hSfa6tP4aHvlkXhYbAb1q1jYJkK4qK7uRMnCMwOIfeRGQOtrhJFfNVQwVZdu73YeMZ0QmEqzTawSrDKZwfFygW5H6p4Ya_8",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJiZjld97x0TER5GUuRxTpMQc",
+         "plus_code" : 
+         {
+            "compound_code" : "56VX+JH Malacca",
+            "global_code" : "6PJ456VX+JH"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJiZjld97x0TER5GUuRxTpMQc",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 374
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Banda Hilir, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1943649,
+               "lng" : 102.2489877
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.195641380291502,
+                  "lng" : 102.2502383802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.192943419708498,
+                  "lng" : 102.2475404197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dutch Square (Red Square) Melaka",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3468,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106313870101341572791\"\u003eSeyyah Gurme\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vqjcjpEAlaRrcJ767rc00gXp6jsPOgCfKEB5nGFl8Xi_gZIZ65xEtL_grQP10HlMSy6IqGb3BYo2AOw9XqIGewlMJi1YWFjzFvH5SJA9C8fjBoYi0GgNEuXB5eJRylt1jyR4VXqgE3mf0_4qdazjjerSlmlq_vFQBxEHqWuyFeYguX9CX6iWrRLs1SduS1gLsLdI7aTo9aOBHHIK92TtI54qMeouut_V38FigTuKfpzntUiW6eBsXdRNoxoQFw9mNt7zfyL7ENEJWMxDH50PdKr68y2d5qMmbeKjgnL3cL0M1UKYDfdrB517lTUyo7bFKrTA3hRSl0YoDVV-tHD4yXOL3cIQmdYL1S7fO6xCk9hLkfY299JwMp5C_6YVN1oztd9pXSGT-m8FfKg5RYpT-eB5I2MkR0-RepytFT6B_LAg",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJ--gR1N3x0TER9UPh4KKBRFY",
+         "plus_code" : 
+         {
+            "compound_code" : "56VX+PH Malacca",
+            "global_code" : "6PJ456VX+PH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ--gR1N3x0TER9UPh4KKBRFY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4243
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "G12 & G14 & G16, Plaza Mahkota, Jalan PM7, Banda Hilir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1892574,
+               "lng" : 102.245728
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.190652780291502,
+                  "lng" : 102.2470988302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.187954819708498,
+                  "lng" : 102.2444008697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Upside Down House Gallery Melaka",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103575915200460095036\"\u003eばとさい（緋村）\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tGFWkR2GgSEQlH-b4yN5ecUng0pAg5mUK0WP0YBdhQPFMzuadNMpaBQ96ubCdo8ugdLu7c-v53_yqZAuLVBe42DdEzbMPe9D9ZyXqNLpPZpwDmfIoKnSR9SyrBZpsR8qPepFshTXJsaNqq2HIPY0hlIiwnZ7p6eftt9Yb0W3FSBE1D93Ayd9JfV2eNx1Y89rLMLfVYcdNBQ9DFSutCFl847ROlbbUugSjFwKDXFt6o2gJ09_gcsck2X3zh_K-mbinvCIGpIICnfrrCXJuklqh1yX8AU46msziyMuixlxjQy5doebksBo-L0eMVTlezkWgwCpNSqyOjTOopicif3BNUYtp1uv1qSws2Ir0A4FIjiO4OX8WM5nVnWdzeImvGS0oDBEbEEbJ21THxl9ztL4axB0YP5b04xQfIXVD0c5gzNA",
+               "width" : 810
+            }
+         ],
+         "place_id" : "ChIJec8sWubx0TERsxW6bl8L7g0",
+         "plus_code" : 
+         {
+            "compound_code" : "56QW+P7 Banda Hilir, Melaka",
+            "global_code" : "6PJ456QW+P7"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJec8sWubx0TERsxW6bl8L7g0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2344
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Merdeka, Banda Hilir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1909232,
+               "lng" : 102.2469033
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.192185180291502,
+                  "lng" : 102.2483339802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.189487219708498,
+                  "lng" : 102.2456360197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Menara Taming Sari",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110627463285346921461\"\u003eHaris Darus\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v39MSSLV_bUH2XK_Wi-MZ2iJ-SBT__12nRuw7oPDUbXVTQwl6Msdvg-XJDBen9bymdv03hUbI8fW-etKWkJ3im8nVoSYO67XCPpZ2WBjH3f_uFgI6epJTE340vCkoaOMxBJV6EVjHjx-khd21w3ztS5jUXcHT-TzGxIz6vBpjm--fLNOAxLluMtP8nzeCiTme4UsMQH_6YZvMxkccJLLVHK3Iuo1SvBwl4QGayiH1HXT9Kln-sLytow9a8DO0AYXAjLPfPU9Fhn_bUx6KZnBVMHx4cPFsPEI4pLKoNyC2WekMGNUQCZXrfSru-WJ1UKPWQW793Sy5iE0hFQbYK484jKtRcXAtmIlbCKRZDckQhDCGyYjIMFgel9_fRFwHBJXz3RaT8Mso2fd3upFBuC_rIOHgJxoXQt_pFsqRSZvAtnw",
+               "width" : 800
+            }
+         ],
+         "place_id" : "ChIJOXdXEefx0TERIBvPIoH5sX8",
+         "plus_code" : 
+         {
+            "compound_code" : "56RW+9Q Malacca",
+            "global_code" : "6PJ456RW+9Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJOXdXEefx0TERIBvPIoH5sX8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 23917
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Hang Jebat, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1960789,
+               "lng" : 102.2470999
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.197454430291502,
+                  "lng" : 102.2484750802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.194756469708498,
+                  "lng" : 102.2457771197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jonker Walk Melaka",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101991866776157996361\"\u003eJoo Seng Cheng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sETLCBXEmdPm7-z1VBSWsAwtBZrnI1aQnXBBWc0eOZI6VMQgmnyZkrkV8Nc-2kzHb6FyupV1wkPhOMxfrwafPWw8lOA6OMx511V81PjUY4eOxEmTInrSD1E2BVettjtg2NeJbylKOljsCPho7R4OJwgJ01e39pT39gYQHgPVdDwXyaJqMAdjlBKHRVEoTSqsF3QLP96L0P4rdEtJJwOvtnYlIbYs3IhaXCNGwHIxR26mYuxoHg5bEUQQ7_CcroqGQ5-F6mHcWIBwOVZipOLiRlMOpPyiWPe645OXhxTlL29wrOKUK4MXMWSW63lQMclgwnFUhNcdcoWoESGDp1sf5Zsbq3lvROkSEuNmbar5OoRcyVrLDFQ598N2JELzg2ZyYnX8gPqpzdaeuWWDG9GykaBT2B-UqZN7n7uijp4uzY7g",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJvYKdENnx0TERAhHXV2CtZAo",
+         "plus_code" : 
+         {
+            "compound_code" : "56WW+CR Malacca",
+            "global_code" : "6PJ456WW+CR"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJvYKdENnx0TERAhHXV2CtZAo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4953
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "82, Lorong Hang Jebat, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1958092,
+               "lng" : 102.2494793
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.197173780291502,
+                  "lng" : 102.2508226802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.194475819708498,
+                  "lng" : 102.2481247197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "House of Museums Melacca",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1480,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102214180243473434474\"\u003eTony Kansai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-usmtuEacqltmdyct704Zl7jeOPlX5MnDuNbW4dmBnLvcxF-c8kB1RD1G3FIVXvX7gspXBHKuW2AMSeu-PG3b1rlHeX1NUAmjqiKQnk7pMDsrGM6CRPTs5lbaPlLbMBxtMY7QfH78S0eO4xINp2Ll_ssuODRfmVwLB3PTv3meX28vk2T6e31YIv5WAd0SQON0118DfISSmeWoISkdDIHUlnWF0au-IhMv_c_oFpcGjTbT0UBx-aCumTR0RDl_X03BNE5vduZmLbK8T90Y04vkq2fnSd8zPlwldeLvmjbkvpjCJhmm8Ela11wa4fPt7v-6Mgj5XZqWVdNAVgLD0WcrekOihTGaFLtDreQvuaP6uqll66dCpXNpCkWhBP6I-QfMzEHroIFcCKJ8cTawTYG1HpDjCjUrdOlQ7inslDqBDbdz8y",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJcXG_mN7x0TERQR4yL4-e7oc",
+         "plus_code" : 
+         {
+            "compound_code" : "56WX+8Q Malacca",
+            "global_code" : "6PJ456WX+8Q"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJcXG_mN7x0TERQR4yL4-e7oc",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 90
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Exit Lebuh Ayer Keroh, 75450 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.2823631,
+               "lng" : 102.3038163
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.283766430291502,
+                  "lng" : 102.3052024302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.281068469708499,
+                  "lng" : 102.3025044697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Malaysia Heritage Studios",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1365,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103678615977688633425\"\u003eMalaysia Heritage Studios\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uSNm5GeKoMlUztEMtetp29-sMg-xCt570FqHgMy4VSFDtrFU5HK44vBto-T9rIIyDMwqXlf_JLQZAHWp2JbrN7D3T55Xi3s2EY50CVVJSfm7986U7lfGc1HVZXoAPJ30eI7HgCXdJR2yjg-HVf3juMj08FIXw5pbKAalvBZq6HodLr6OpBnxcrnmhNN7dP1B2ONh61kT4Vvu9ZaaZvaXeUKlUK3yU287KwWerf9IorfAv7VwLxjealRK8VJmkoX-rPQAxMQmBh_n_1T30ByJXQQdCFhjxikx-nEmDsvpc2Ag",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJQX8JdKnl0TERrH-_MJ4dnNI",
+         "plus_code" : 
+         {
+            "compound_code" : "78J3+WG Malacca",
+            "global_code" : "6PJ478J3+WG"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJQX8JdKnl0TERrH-_MJ4dnNI",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2879
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Gereja, Banda Hilir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1943706,
+               "lng" : 102.2491011
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.195640630291502,
+                  "lng" : 102.2505500302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.192942669708498,
+                  "lng" : 102.2478520697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Queen Victoria's Fountain",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106662006853147812936\"\u003e이원진\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGLTuGXD37GtTsQYa6QXtT5T4xubZgDeQYdZB-AIe9Zn8-BYHHPedyZXzGI24pnU-WqFT100lp-q5E9w4kLpYSy7G9hZ1ctB2GqzEqjBwoqIY9zldWiNtjwI_FKYWjoIq3auEDncDSBGXcn8Fw2A4jRkrZoHB_IOTShrHLTc3MvhzWUFmdF4FdYOn6CJB6-cgr7DHEsM1Gz8Rhw1tqylDgrC81-NXL3Ov8KTycFZSjxd65DnvB9WZpPlA88Rt7yXHtZR2C_I_Oh6LhcK_IgxjmNrS45RMO7jXC__NsiRvvWpPSJqwDz4zrHhl-yp8PuPdiaht7pZi3DhmXotGVcZKONNjvXmuTweVvx3lR3Cfqxs5wFeLu99RTDZpDk4H_kqvLSY9gjXydaV4FPfs_VHxSyi3yoNwNPlsbrl0kiXFAcw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJL14hed7x0TERpCBh752SY4A",
+         "plus_code" : 
+         {
+            "compound_code" : "56VX+PJ Malacca",
+            "global_code" : "6PJ456VX+PJ"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJL14hed7x0TERpCBh752SY4A",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 306
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "88, Jalan Hang Jebat, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1969311,
+               "lng" : 102.2467327
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.198171430291502,
+                  "lng" : 102.2479829802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.195473469708498,
+                  "lng" : 102.2452850197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Jonker Walk World Heritage Park",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 590,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100042227135379851934\"\u003eJaniraymond Janiraymond\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vBGaCjLnBdCjpfWiqu8IgsJNJhPAM5RHXs-QNb451wakzuXd4nn67-ahnLSiVwjqLCIh6cCSht3xki639ohFgWkqpEtCOYqsVtKURUk9F7XayqpsU7oFJbIjcO5F-SKzZVOZhZePU-QAcufYzcln8_xvm8Cixv10LcPY6gZqwJI2kYceTDL-WCntyTQX6BV0Z4l2Lel3KVlmL4It6uCj_9x9Xl3w__g5XVw7J-ZUTvcA_YSuqcny0mMrXiY8YezBaE9jTgOg35mu8VjGPgrlM8UEiMDtRTnC5Qgn5iTeClBfyCH_ygV_w-R3jO2Me7Iu0QcdwjHApn1YhVx6I7oWzkyOEbvnqcL17ZaS2-9dW-JBLl4gge4IxZVLs1pZCFD-KREaLJQ3W2rgGgLMPknyz0UF5iOkeqFm_72CxjwEB7WfxJ",
+               "width" : 786
+            }
+         ],
+         "place_id" : "ChIJx5yHe9zx0TERAR7Lf9ysFsw",
+         "plus_code" : 
+         {
+            "compound_code" : "56WW+QM Malacca",
+            "global_code" : "6PJ456WW+QM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJx5yHe9zx0TERAR7Lf9ysFsw",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 895
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "25, Jalan Tokong, Kampung Dua, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1974982,
+               "lng" : 102.2468323
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.198917080291502,
+                  "lng" : 102.2482466802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.196219119708498,
+                  "lng" : 102.2455487197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cheng Hoon Teng Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2966,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100842445239131545793\"\u003eCreator of\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t7Vbz1F1uuMWOVG4mJHtYWybQgS7nP1ClCkWDdD8amn1-pxjI7cxaeOvMX6FrLXE1E1jzW7dJRY4QrJg-dW5pRl_lYqYOj06Gu64dSKm3LYUeCZwZXCEitTurQ2U-BzjVwOScuAVvwDXLN_EAycyRH3aA0gFh_qDzePc8JvBl7qrYesG5IcNPw3bCavVcpqDQ77Czh7JD93JKbFMyFXXsF-KxwaNcq-MKbXYdxfccQVsLEQzSloRvHY_8YDXNFgKb_6k_MF0HWOZ4MBNA3oyZ3co-8KTO21OZzbsg1dTctSSRwqSMDyOpHxSX89k9JuSPtIX4INxxYrt4kVGOatK7svB8oV3NojSENUUjp2E1Z9oArCH8P3E5CwO-Ee1oTH7NyR8-hg0oSyHTVAhUHvnlHieQCBoF_vIgxZNHE4cNsAbQ",
+               "width" : 2966
+            }
+         ],
+         "place_id" : "ChIJZ5Kbjtvx0TERkjbMYA169LU",
+         "plus_code" : 
+         {
+            "compound_code" : "56WW+XP Malacca",
+            "global_code" : "6PJ456WW+XP"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJZ5Kbjtvx0TERkjbMYA169LU",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2738
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Memorial Pengisytiharan Kemerdekaan, Jln Parameswara, Banda Hilir, 75000 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1919189,
+               "lng" : 102.2508899
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.193078530291502,
+                  "lng" : 102.2522378302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.190380569708498,
+                  "lng" : 102.2495398697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Proclamation of Independence Memorial",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114021011959367760613\"\u003eHuang William\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uaEOmkUoben1S0Qz105Vm7u2Y2cAXlxYAMFme3iYLO-baz7aQxQyPOzvyRqwvDjnLz3p_mahoa_aWJugRM0vUDyUsbWlVKu9eY4aB3W-dAxqWAC9pUT8vk9PJRehSJK79HoX5zyrhaKP6-BpwB7DYwGoiebvOaoiVhc1tvP1I7cjcUQlBXHQ8hQs7YQo3NT6ZxIVRJQAZejrAH5fzOAfrfzzQ2AIU-mwHqaVPa8fXNEg7KMcAOcUHvx0zHjS8tf-aA0nGbAB0Fd6r-v4E5v8EnHVUx0zpw1RU5YtifXbcw7i-z3Y6NpaPiSX5HjdKrpfK793v67bvqeGDPv7gmtFsNogl0sn8-u_qjE1rgk4LL2gYx0MK-gnnnh2aYbIlqQ-DnjMSYN2aZXbyaouPIeSOHnUJ2aj2C1gFHqM3xIfn1xig",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJgah8Tx7u0TERsG1uMVUKSMU",
+         "plus_code" : 
+         {
+            "compound_code" : "57R2+Q9 Banda Hilir, Melaka",
+            "global_code" : "6PJ457R2+Q9"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJgah8Tx7u0TERsG1uMVUKSMU",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 263
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Tun Abdul Razak, Taman Budaya Negeri Melaka, 75450 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.288556,
+               "lng" : 102.3060431
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.289954980291502,
+                  "lng" : 102.3073921302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.287257019708498,
+                  "lng" : 102.3046941697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Panggung Seri, Taman Budaya Negeri Melaka",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107865826964757363400\"\u003eNAA\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vsfBPpE4ma3vN-OwC1IeZu63iN57PHatitF8aXwmdU82iYXXlRUXrd9gs9o2iooRiPSu3dhtA2rO0tGcqF6F1EMg98JJd16rkxUptrVYfwZLZ-BgeBArCh-R1bIRgSgJu8bj5slHltiOaodON7RtLa_01zBMwaKlhI4y5A3reQYMvuccjUbWwUo_VsATyMltIP-aNdrBCyDtFnKQkWHuoFFM0vhYUwxKrVYiPCuGeV8KA4fUbfS-zyDTD9i_i32Mpv-0lldJEpmy7mwlWjDnTBggIpuOHR7lDVrvN2Nh1aEhOasmUerdb3LJ1ujVPFwdkO5CWT3p71MC0g2n_CzjImSrG3-wKoeaVd5MQoG-KHtAACiVtySCfT35tapbT_SsU9x-8rwZz_Sb4Or-dm6PrQYHS9p4s8XEFwgqX2Nl5k9w",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJT0IYqVTk0TERw1IgkIcJnD4",
+         "plus_code" : 
+         {
+            "compound_code" : "78Q4+CC Malacca",
+            "global_code" : "6PJ478Q4+CC"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJT0IYqVTk0TERw1IgkIcJnD4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 121
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "ARAS 9, GRAHA MAJU BUILDING, JALAN GRAHA MAJU, Banda Hilir, 75300 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1927796,
+               "lng" : 102.2470267
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.194167930291501,
+                  "lng" : 102.2486026302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.191469969708498,
+                  "lng" : 102.2459046697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Melaka River Cruise Jeti Quayside",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108396025731620874181\"\u003eXamC\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vnmep0T9JcaHaW5hvv4IrCK1CVeeOtb2er0KMAcNMKxA7lMG_2U6ylj1d5GYSuL1iOFq_96C_5MSG0enA9G9u5kPdwavBbPAa1YLvdMskIKHTBQROZYtbA1nLvZqTt5AXIJ9D-6dWHdSSWXKg-9ujZwCWFcnZVpyR2vRqPr5kQSFgegJ7YyGdTnqrTM1Ewcergblh-g6bxeTxNL9kdwhVzd7aW0MtNzEY7bz8FCiN7gWCzRbj1ljDISosLTix1b2rOxGi5HmgByzhBPpb_EaTTXZGhAkIzxYvKD0AeEv8ugiVVU9QL9RpXfFTixCJoISA7UBr82bnGj0oFlRiWRts3jdxlocWneNFUWpARdvNMfJ3tEkTvfoQ61MO1bDt7eZZcZLnHvEkb0IOK5fAVQpNPKxr5X2cxiRTWN8b0JEw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJKdrwz93x0TERwWfudAgTzow",
+         "plus_code" : 
+         {
+            "compound_code" : "56VW+4R Malacca",
+            "global_code" : "6PJ456VW+4R"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJKdrwz93x0TERwWfudAgTzow",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8655
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "51, Lorong Hang Jebat, 75200 Melaka",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.1946871,
+               "lng" : 102.2478403
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.195991530291502,
+                  "lng" : 102.2492228302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.193293569708498,
+                  "lng" : 102.2465248697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Cheng Ho Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108287843971176868290\"\u003eYulianto Maliang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tDwoZUOH98RcnNBhapl07-px0_jeIjZdn6lQ1W8BwcZS5pU6qNA5UaARdV7UYpIJV1DL7oHOU5rxPHCV9HBFkY11Z4XiTiBGqDWGhV3lKowM0kzMpRioJWwMlDY0xPQgLXYqKulTlY_4EWWBft7stAgnlXcsAIDbK9ChmhkfHmX90iI0kAA5g6v6WyGNsJfCL5_huscaPSiSXeGjmD-G4elhhDxlVt34VdB-j0WcSVLhOjickbV7UxL6kRSrXbYW-x81UOBn1Lr1uYwebqHVVm_Bz30RdyV5Kv9R2wWNI4V_KEAbR7fLVnUz820m6JWol6u7tH9wg1IOaXpPnfwbCsliahHtxriJqRpABhBPgRECZ3_OHz7BOruI2NjSPsB07fI-fvvOk6apFfBiJKWsZEw3RH70B9eflClUBDgXyruA",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ28dwdN7x0TERsvngI10xCHs",
+         "plus_code" : 
+         {
+            "compound_code" : "56VX+V4 Malacca",
+            "global_code" : "6PJ456VX+V4"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ28dwdN7x0TERsvngI10xCHs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 76
+      }
+   ],
+   "status" : "OK"
+}

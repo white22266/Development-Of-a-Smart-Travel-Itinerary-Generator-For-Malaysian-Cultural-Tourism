@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89740 Kuala Penyu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.4551972,
+            "lng" : 115.5039252
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.456353730291501,
+               "lng" : 115.5060560802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.453655769708497,
+               "lng" : 115.5033581197085
+            }
+         }
+      },
+      "name" : "Kualapenyu",
+      "place_id" : "ChIJVzXcRAE3IzIRtueygttqDHE",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=8146003317029529526",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

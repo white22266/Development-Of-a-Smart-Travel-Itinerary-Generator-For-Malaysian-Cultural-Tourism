@@ -1,0 +1,54 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "26600 Pekan, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.5009817,
+            "lng" : 103.4006564
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.502265830291502,
+               "lng" : 103.4019356802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.499567869708498,
+               "lng" : 103.3992377197085
+            }
+         }
+      },
+      "name" : "Masjid Jamek Al-Ehsan",
+      "photos" : 
+      [
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107776182661449882410\"\u003eMohd Jamil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sne2mMWUNz-udj6Nx9IqcTSO-IgvwwXK9bjvDQ6AkVGoBcXEMbYpFrFSSLxADIhDx24xwDE_ApYXyq1SsgWGOdwS1DIeDL6XGJyL35FN1bNoYYWzRo3xEDWyQJ19W_erxV4RUj9ApSKxF6Af9ycgWHvlX4cU0KQrXRhSnGWCfU1kWQDQs-PICJo06vmoFAwaQLci3GMal4zZolmHlGEhyGaP2e_u0JjiFhMe4eNmdw-ti6Yo9PtZ6M1ptsPAehH5hq6N_IdsWhu6DouuTNXJZVtJcqTHqtfafd1m9vuH8Vfpl5sS4sR9X29zPC39x8k6XcnAK4eaqG9jGv0Xp0Hs2HYbCuXaPgfMF530ekP1HlNEYLjVJXCah-zjAqCJ0b9Iioh0RHY_J8qr7K-AnznqGpdpMJuI5MLevmf0drXIalfw",
+            "width" : 2560
+         }
+      ],
+      "place_id" : "ChIJVZYgGWFQzzERTvF9eCGlVgU",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=384676381360779598",
+      "user_ratings_total" : 6
+   },
+   "status" : "OK"
+}

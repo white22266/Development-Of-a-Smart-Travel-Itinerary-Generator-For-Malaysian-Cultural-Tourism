@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Sang Lee, 27600 Raub, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.65382,
+            "lng" : 101.8443719
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.655148830291501,
+               "lng" : 101.8458228802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.652450869708497,
+               "lng" : 101.8431249197085
+            }
+         }
+      },
+      "name" : "TMKG",
+      "place_id" : "ChIJ0a_wY0wJzDERUyj1EEDj4aM",
+      "rating" : 1,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=11808969562244065363",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

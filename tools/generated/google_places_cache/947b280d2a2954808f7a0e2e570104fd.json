@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "7CXV+PQ, 77000 Jasin, Malacca, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.2992538,
+            "lng" : 102.4444645
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.300527830291502,
+               "lng" : 102.4458106802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.297829869708498,
+               "lng" : 102.4431127197085
+            }
+         }
+      },
+      "name" : "Baruh",
+      "place_id" : "ChIJ2btdIr7d0TERtDDT2vgTyvk",
+      "rating" : 2.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17999220820283699380",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

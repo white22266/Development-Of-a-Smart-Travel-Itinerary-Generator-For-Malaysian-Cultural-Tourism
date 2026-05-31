@@ -1,0 +1,42 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "27600 Raub District, Pahang, Malaysia",
+      "formatted_phone_number" : "011-5500 7817",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.8119656,
+            "lng" : 101.9028127
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.813259380291502,
+               "lng" : 101.9040164802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.810561419708498,
+               "lng" : 101.9013185197085
+            }
+         }
+      },
+      "name" : "Wealth & Prosperity Memorial Park",
+      "place_id" : "ChIJ-cGDyU_7yzER3XJQ-YKCepM",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=10626949769774265053",
+      "user_ratings_total" : 4
+   },
+   "status" : "OK"
+}

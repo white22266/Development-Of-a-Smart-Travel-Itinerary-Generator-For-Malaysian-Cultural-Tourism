@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan 13/155c, Bukit Jalil, 57000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "011-3084 5106",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.0564088,
+            "lng" : 101.6739905
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.057764430291502,
+               "lng" : 101.6753523802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.055066469708498,
+               "lng" : 101.6726544197085
+            }
+         }
+      },
+      "name" : "Pintu C, Taman Rekreasi Bukit Jalil",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2200"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 10:00 PM",
+            "Tuesday: 6:00 AM – 10:00 PM",
+            "Wednesday: 6:00 AM – 10:00 PM",
+            "Thursday: 6:00 AM – 10:00 PM",
+            "Friday: 6:00 AM – 10:00 PM",
+            "Saturday: 6:00 AM – 10:00 PM",
+            "Sunday: 6:00 AM – 10:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114605567274706915017\"\u003eRuks A.R\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tIXwmx75vB346NtRlZrE9su3hgelnEgJ9UZqZ9ESKsdLpVw2OZH4IHa5KtyqpfNKW27I7fkzqh-AG6FvkBc5sRseKXY1ZrnFSNtZchtXo8CA-dSilb7ERhloprexc6ctq5_YfehdJAfmzDTkjkYkWa1BmltqMY2VZc3i_xBoBPnNLpUmAoPzXlONGqhty7bUB9chm934DVNdbPzP2_7Xcda2v8Jel-KX3U9CgPGOtHytgyC_vL07HmMldMyc7HEUrmrWiq_TRChMkKnZm1oVp5XR4kk5QxmzwshAdI3XLnc8aYJRd5aRzM3zCPj71XOg7zgFt_e7i2mjK9HwHrtVxba75soIrzwCe2BcXLJmWlYAKQcppFkJXWgKzdt2yCRTwT5UF172mPui7D1Pb7uy-oKISqG_1IKqSdFLs71TA7NqjR",
+            "width" : 1920
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116844534975968984048\"\u003eJoseph Gan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u93lCBYMNGNPL6zwmbVpCVSw9HCn_2qiPrpLbyHxxRiQm1RFFvKo3WQrjiF38maNA_gmAyq-xSdQDjhMuI4BVKXSvoTUZRJTLFt4aP1Ux-LZB7fWF8w6ysibsPDldZ-eSZaZw6LBZYdp2_HvzoiXTsFR5lJbh-sQbaKxajXszpdFjmFSFzNAjD2MCHHUacbXHYTQrEXep5puEnrzZNW4veMN2V4W3Hl58PTkuu7zlDWhGPow4DYuVJnnil6TyU7ysJJUlshYwz_oe35DPil6DaU-BYcl2hR5nAE1w_NufvX_lp3INleiEWHpxUu92VBSDDh6_kTEQC4Bv_xnxDZsvQeMgeUCG6SAE470Hm13Nm5VynJkOeqZLP2rPe9bYEqLGBCkH6BSAgLriNQ1Fmr-oQ0mmxmIxuXHmishxbQ9uy7yop",
+            "width" : 4032
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116844534975968984048\"\u003eJoseph Gan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uoSXxurcu5ZMXlvn9jmYRg3NK28aaOcP_jmtFziT1bhkA4uive3B9r_ZkGIuSVwSEiTjLqmQNpeOomPv4qGr-LRsT6S4noaqy11i9gCtvLAwpSGm9bFu1K4ngmHCIwPeXgWQHoo68SVqwTitXhsw_zRX3Pd5WViZZeg2_W2jISmUuUs_YbXATLKiLjbM_3hR0JbBiegxwlPyKdwfzdTF2w9sPXwfKq8or7u5YldrOFMKv4J-OaztZlR_LFwvq1hu94e0_pP-BPjTWyNvqY0tTEzDalfkr-w9-TLYqzOVZvVeMlZWDQ6rdz-wK5qkMYTBqJkXaEiKtyv8kw1cCVfy-hM04GC-NuiXi66UM813XZNSRFojv9q26GzxYqbyHjfbK29m7Y6FGNTQ_Y6DmVS5qEaDjTl7jqWJfh-BHqUYg",
+            "width" : 4032
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114605567274706915017\"\u003eRuks A.R\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sEPjwB6-S3fQAGQ_U07CfRQv3BQZo5zqXTaBewWiNye5wlbsKnACWoxRmxAkHoEwAk3LjkbCbQLeL1Su-SeErk28htHMI1eUwy-pAiX5vcUYiZ8okDFuIVeZNj0D-rAVsWEDqpSpMVYZFgMMy0mvj6ZpPt7JfkUunuQuEGB6JoQUWWfBA4KOi_Ipyk-Ulu1oR-p2rZEiS4JfWveJ9TXTH-JdmiOBKr-daRBWgYIppNOq0Pfi2SES-Z9yY75ImezIdBZCxdD2WZY00BReO34SsSBRagoaKT9hz9VKIPbM2PvZkyQ0U-AjuwX8Ze8WOvqLu89yEqS_BJs-BZIi3evzdSIlrtuFLIn6PDT8NM_f5kfmXz2AobDqImNsPJt-Ivhh4qjHoilfebItS3duxJhYpI7eWaSBtEhSNPrFH6kK0mzw",
+            "width" : 1920
+         },
+         {
+            "height" : 2988,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103015605561983879458\"\u003eSwee Hiang Poh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-to-yFquSpd4tMYCW6KgmcHTpiuDehYKhMWpym9te1lvmjX_hS-W2cJo9AQkGLKy4qJ8LiRFBvqiSuhReRhHn7DDiof1cxOxPIupv9TK3AVYpveDJ6LNJIet-bQ83qTciCZxR0hUwMOugUeKfuuejEQotT_xYay8XjDfzvStS0pUC4h93SLX3UDwP7WSYFCklrkXrmuZFUgqb9I3-5O50XAmsutM2KvlAymf47lchMF02RtEZ8XWfCrb4Vg10qszVIj8yKosyUm-Fw78tlyDnRwD5s-YcrJHcbabpR08PZNfjEJ5PmwNEbobGppiIWuAZP0ErZjH68xmc4SiLe_pFx4CLVQEK6TRZG9Wu92IBpimCUwewu8im69_xU8R2ipdenIH-lti2chKtSH-dC75XfM6MA_tZSibwN6NBlCBMMCygHI",
+            "width" : 3984
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114034733298603844650\"\u003eDan Tang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uJTxoN8uFHELD-z-3rThXIJk0HOKust_xrB4limFDqG6HZUjG-MfbCG1EUr4dBk9FbV1EmLg0T5ccSKtXpLIrleXAPmsJyefhh7H0ITesWIyzMDUvVa0eDABJsgOItWkuw8zAZGl-tQrfbjgB88tt4ZIFAjSTu9h4A5UtnvY16RGNqPsKedWawDDPz3q2pg39UEJULFWzDYCWWxKIL_TXvmALxfGE6nM2TOPlAFsEZmQrZaWtLOFFOxNuILrBUKFBgxeg4DiDZJ4yh0t88miV50nYuHfk5SEVXanqsX3TuLSC7lxHeWgRTjF4hUSR7nobfceXUSW0KCRS4FZ8qbeJKM1IqGhrn6tMkX28hTRK0PZazBqbR70hHliLBxqNWX9cpQ9ZOM-ltSkiLsR-5v__YqgQr5xOCFA2R2LS1rekr-Q",
+            "width" : 4000
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114034733298603844650\"\u003eDan Tang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vuGCyNpEMfIiRK9-H78TjGR3i_uXru9MchDbgRSfL9ANmwLluZgVjEr8ZaYwjg-guYyNMjG0_A0fF9Y2XMwaiXO-u90BjjbE1rhD8i6wnhfVKqAiBOxvOGC6voi8NmMGS80crtsp4Eg8EBN7ETCkJxizfx8YL5F275euPgX1iXeMiH1RvbY-7eSMbk2wnGVuUT73Rg6sOrAswHbYlp-F7cZlAKk91QfIpj93ceM0YzaYT7nCMnRv3o7Moixm9HyG9llgLN8rokA1jRZfqOq2JURd2LaovAd0PISEeOV7yQrwrCokkojLtQcgAlfs7_s71LSEadK4oLCt3bvfmutxGgRfVtvI5hCLgTP57DW1uLRJw2nJvFh_KOTL_pQVKVjZBTQfZGa2pVk2APLvk8pX6AV9mUy8Yh424KaMiczObZULGKxqMmjQfwvVjxXXap",
+            "width" : 4000
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114034733298603844650\"\u003eDan Tang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uosjQYjIrSiV8iVAPbKC8bXvpqfPVke5T25G6R45V_F6nQ0WCR-UDmW9WO3yZUCJ57zF-Y_-z9lmAahXKxTLkN06RJe5OLkGesXSL9HFP-2YCWFNngbM6eBGyfkiduutToMTMzaIxQJtC9AZvT-WlvxX5S0eoruibq_ZS66O9zNcsV4CeiEWVb5VhdXJ8CAm9reZqfCMK018RSrSbVabj0q7uezNfm8PUXSgRorePf6YF_3SEw1yAs5c7QLvklwxMGjgHgVpteSJmIsMkKwHwFyxXqlt9YyXrohAWTsfC3ROgRt84qf9XMZEikVxThzqzhcwsr0lS7knE7NiQNSxo2dSlz0v8IgAaUBFHSyAIElbM9ytz1GTHJ9zPB8VScYU3Z6b9DSm79d0fT3HLL77O9PkFzVzeHH1iawR2Mc7FBwquC",
+            "width" : 4000
+         },
+         {
+            "height" : 2604,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108084993252022248233\"\u003eSHC\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vq8GgUkJWcxBt5wsgJtmUZY8_duBhxDmgQDTgU5okdF18GKGZfOqJ4eXqMVePxLfjG39kqSTSMU-pMM_2GBHSxbz9C_oFOM-cVdL2uj4yHU2rUT0IVLfe2UV-iz5kfUNV1WHBqGLRkUT1hps3d7IGUa65DUq8HIEpXwhBVIKI-pAuAfE7ovOctH_Fl7fqsYzhtRB13YTLF0jyuL-FLkfRYOwYrCApOol2rtE_iTGmz3bikc6AEpK1bUlp3iAggYkZTLF6eAST6OzT3iQqbj2KQWQfeSv5GevpyET3AnPu3ZRDsnlm9LOQq7-JJvq5unqSnNmR8cr1V9k8blq_Q6XUos5NFwdJa-kPP8w-7ky9Xu1__SKb8vZJSUUrNeLtTgvNTvsvYkcfe68YsFpXPZJY69_87dcK1TYHg9-wYFM9cYoNb",
+            "width" : 4624
+         },
+         {
+            "height" : 2988,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103015605561983879458\"\u003eSwee Hiang Poh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s9Bt8tmjEJUDPN0NxV1skxl6LdoXNf1mPhCYcmhk19xb0cKs2RrNiaGijtuFWXWUn4VDu93L6XtVNZkaFLTsw_SStn2BQfnRUnPkPhyJS4PHVqAayBnEJ47ipwSNLI54O7LNkLMf3SSDp7msUybUOJYHptAoDKTOkAR1GDK9FG_QOq6n9Jl2fDMWgTasQe3OV_EawfSD23y6lx2zCvaGNFV8x1xzt6dqAZhZDu8gQPtdXyCLn3nRdUgKR2Fl3Wc-tpLZ6qimrtAfMr1G7j0Rej8-5bUwvWiBC1i06PHzVw-uwc3X4N0Gw_nlz-Jn5kNpAbJgAXIuTXc9OQw05MgSjGu5c3aWIATQb7KnyK4UR46wpNXpHBk5PqkNxAPaKQ4wxpmrLYPcfXgMV4P2QVH0ivmgXESxI7zZTpfTk9Y6I",
+            "width" : 3984
+         }
+      ],
+      "place_id" : "ChIJXSq3jLtLzDERidMD8QBw74c",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=9795170863899988873",
+      "user_ratings_total" : 50
+   },
+   "status" : "OK"
+}

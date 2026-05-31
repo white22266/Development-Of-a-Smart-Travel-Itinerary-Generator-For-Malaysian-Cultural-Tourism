@@ -1,0 +1,1112 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uoFwUsod3C-enwF2Q04tetej8t_vRlTd11E6CiKEkS0JuxHPCs-DRA_GDJ2fijxQTgfVQ6z335AIpfVoRc_dQOoEakhlJjXn1_Vt1lvljr2w1eQX-SYzGVJxmjEiT2s1zH-_W3Z82TkJe1CZUejyjShhl5XBvuIzcaathD6DDtzz9uMR32bSuUK8UfpE_qkGTy_qbk3mL8hn3TU7YXwlefQGnAqvr8cDPV4voLhJnUKZ-lsj_EU_-yJtc-14nSGzq_-6rDKZ5sxQ1wvnfTboXAbyGZjKjbBjLuCetdMg0AglJfVwPLwPGvcmmlXOKIDOx3E9FYTB4l2ChLBMPiWpC7taWiZgBEBZHKdMDS_bXLDZSrWfJpadVohEFyymCudM7pNoMoGP-22VOseDxGJyWDJXbU1kmyLC98SaWiuaF7wxrvlC_9vQaeKqjY4jyiB_82AY_v9PWKMr8n2MmYesS3biiCNoXJCKrxpKEXS8hFoEAl004alJ9WKqw1LbvYXsFuKsLdgp1ormNNmcfUsxn3OEGNxDVMxi5HtlQ5h_rUqiw3aMGGimKOA2m7FDvbqLZK-af5hUICEaAdNeaSOJkF6qVgHc1k8SdLxU1Fwdh3KpPvVVBDPaNNwJWgKWD8pxBYebwp3W46mFlPb5S5HaGwhC0mRFrgd0RMcA24eN5qGokojTXS4TAuonS6ntDE6TsTiJnKhKK_egZv9KgKheKHG7fEKfsHmCPvwtmSpgoKsXgYShMMPubngicaq3TBVpBn5iJyN7kAyvWelEqnEZhxtQye1iMulvKNOTrixEkVwtA8AkOAQECrlFJLjsfsv8cFrzGTK_Q_",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "VXH9+Q7, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.879421499999999,
+               "lng" : 101.9682352
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.880500530291502,
+                  "lng" : 101.9693906802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.877802569708497,
+                  "lng" : 101.9666927197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Muse Ecopark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 555,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100366334675056005539\"\u003eMuse Ecopark\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vNFoCh6yqjnjKj7DBI4fEsQaPaMUxNbSvYZq_FNGp-XZpYDFHDCHSjrkXq5fb0DKEJXTm93YpeTbBFLHwEMXnu6N2LIfp5aGgRujGUrlQPuESDQvEtMf-RFsqJ_ySmwMD7QjQsqeH_Iak6RFtBJ7EqdH9vfx_j5zWctUPScVwbnD1Vq4AGJ_rQL7N6Ifjzwv1zEAScT5lIIe6Ul0HGRsIY4M3rOzt5kfxMovpGCM_g0jdm149N_JfQBkTrtngyRtc7x2U_xZmjxPg0qFBFDnTwJU8bKWSooyF1y7c0qH6duA",
+               "width" : 1500
+            }
+         ],
+         "place_id" : "ChIJVQeVLx0HyjERj_UIEBWuJpo",
+         "rating" : 4.5,
+         "reference" : "ChIJVQeVLx0HyjERj_UIEBWuJpo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 628
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bandar Baru Gua Musang, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8651599,
+               "lng" : 101.9559135
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.866144230291503,
+                  "lng" : 101.9572642802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.863446269708498,
+                  "lng" : 101.9545663197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taman Tasik Gua Musang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106343499097558246273\"\u003eJoe 2024\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tS7JK8cUbAt_R1Qt6GeCrL4n8iz-0B0T6bWZLxx1riP5iUiMH1Jk6VsUGMIff65clRrIdajOun1cdu3GkY3ij20qWR6VhqRGlEvB8XBTBChVLVstk73UTjO-DmyrSTMYxPrwwGjQDrlrf1o8or5O1tLj4NyTbdlrpgFUUWmzqWK9GqoW_kGKXgYP77nWWjcjF6e5QYANM2bb-QqQSVzko2zRIWA7GJY-sqMHzEcGcjFGSiv0SCOMz-wYZ2u3oom0z457ZDtSOqnlrUaJwEfIuVovtlbPaxgFi68u3vLi2DxIeNiT7FAC-qg4bp9hn3FlSqg11rCJZKU4rmkJp6WfvIcLpvkLMSLdJiFxlfbVn00MwkTdPKSNXVHba_2tN9EU_EaflxfYUhDR-ukJSQlGGCDuYJv4DoeB0lJO2qJj7WTTgI",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ-Uv07iEEyjERrNmqPQNTGKA",
+         "plus_code" : 
+         {
+            "compound_code" : "VX84+39 Gua Musang, Kelantan",
+            "global_code" : "6PP3VX84+39"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ-Uv07iEEyjERrNmqPQNTGKA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 201
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7911012,
+               "lng" : 101.9442086
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.792498680291502,
+                  "lng" : 101.9455969802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.789800719708498,
+                  "lng" : 101.9428990197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Shui Yue Gong Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100316963594176885341\"\u003eOng See Meng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uUU7ZcERqeefr76DIKzd-2bUr5gQ0TQLCSCaDYeozNi-NZm_ND2HaFv4LnG6mRIEFFUBUYV0nlmzxqVXqnOf3pk7myh9Cq8ptzIQ7Fe1NBuDTjiCRmTV0jYxwibMkkqI3CxTIYdx9ZPJeCgIuxExXzuHUAZnjC1lxkK5UquPGermwl_0xCaQfqspNQfg5Ljd7_fWR3IK_q3JFUPJPGDxoJO2uJnpW2ilIodcirB5Ha8XB5tM2bvv6DHW8dEVSBlXrdZ8dNirC681d8UdXK0_mvgEfB5pxsAZpu022dRzWQyHXSxwtnNYAHqmFJfxPLViR9hBNC16pHC61L_VsSFpxi8z3vw5rz2P_gbtifdW5dnZdKwoV0XVQORK-2YIj0In7WjTo1DoBNSRmwGHfkF86RZVud6_bfFl_571z5edEoOEson94Q7QgNzaZRwEEN",
+               "width" : 3610
+            }
+         ],
+         "place_id" : "ChIJIfSCTdIEyjERToqRVU0NoTg",
+         "plus_code" : 
+         {
+            "compound_code" : "QWRV+CM Gua Musang, Kelantan",
+            "global_code" : "6PP3QWRV+CM"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJIfSCTdIEyjERToqRVU0NoTg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 462
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Gua Musang, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.884278999999999,
+               "lng" : 101.968178
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.885597580291503,
+                  "lng" : 101.9695180302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.882899619708498,
+                  "lng" : 101.9668200697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Fox cave",
+         "photos" : 
+         [
+            {
+               "height" : 2246,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104564992554617133009\"\u003eTravel Ler\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uMoFiMCMDp0o2Zo7kMzVaTYDx5ZFEcWmDdi8tfiqrNu7BsTyJRT4qDJDQipLLy8lIRqW1RNafPyt9ist_wmbldtMzrwg5D_8zYlNjLAnnXtgH6cijm8HHNzdWpEsDCH0lpcuTFfakzklriWno8rgxRz-Oojwli-TqnU1n10Kb24-TUr46beDs-HGXsnW4LxxOd-cgsVnG_Wso0ykkQd0f16m1Edq0M7acB7uILox0j8pfF9vf6GYUACfonmtQi2g62-gqVyspADn5jjIbMCMpDKDVpRF2NjMbNoR7IpTyEnBSS_EQrMQVpufbEbuYi-RL5ZtvUNy-DD07s_lVq12Qm-cK7U2_F7dIbRswzi05zphlyN57QIVyqh-0wth0m3NLV2TFgnyGErsByfuKJbSmen4VrShktB7ANl3ro9a-KpKKH",
+               "width" : 1266
+            }
+         ],
+         "place_id" : "ChIJLYlOss4HyjERHZAthtjQQ00",
+         "plus_code" : 
+         {
+            "compound_code" : "VXM9+P7 Gua Musang, Kelantan",
+            "global_code" : "6PP3VXM9+P7"
+         },
+         "rating" : 5,
+         "reference" : "ChIJLYlOss4HyjERHZAthtjQQ00",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gua Madu, Jln Kampung Batu Papan, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8360449,
+               "lng" : 101.9508525
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.837930880291503,
+                  "lng" : 101.9513241302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.835232919708498,
+                  "lng" : 101.9486261697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gua Madu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102706177551417725845\"\u003eCrystal Ang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thvKh1wGbWjmnwAb6uu31loBEExgpTUM-uOF4sPwXX7Jisdg_iqCHgM6NT0WAtJd33n82KD3kdN0naTPXB0SZfahTDegwRfpU_cW3y3sX3VVcgYiBN45SgkKCJCCziak5qRDZOr-sV_BpIVlmUuqoEQTSLaaYgEqkBcOVDJlqAfuv6oSkmcxDw8ZAjrWc5p5p39vWWoztmfeGgCkyJmuOV5fYSA8TnZD0qX2qH-VuWE1Q8Aeu3k_tIpXPG-ijBXWcR3yoqPjnQxdLSxC0jLYZY27jVW8At9OoTT1MRsBzmyiumEyIElge_yJvaTd8FLWZdPtp1OP6aVqe5Nf4GfIThb650OtbDPDayX0E9MGHx28ZZf2Mw17zRQ7fSoUpL0h2c4BayZk3l1evIxyWVYpkJ7n6Aj8GLxlvguMRT1_y-0Z20AmZwFvspl0uEMg",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJHdE5Tx0FyjERp3C797PWVLs",
+         "plus_code" : 
+         {
+            "compound_code" : "RXP2+C8 Gua Musang, Kelantan",
+            "global_code" : "6PP3RXP2+C8"
+         },
+         "rating" : 3.1,
+         "reference" : "ChIJHdE5Tx0FyjERp3C797PWVLs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Gua Musang, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8843779,
+               "lng" : 101.9676535
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.885747780291503,
+                  "lng" : 101.9690087302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.883049819708498,
+                  "lng" : 101.9663107697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampong kundur",
+         "photos" : 
+         [
+            {
+               "height" : 4096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110810573064158122902\"\u003eMohd Sabal Saripal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uAhOGpp7BgzYk5s_0HxdH8DLlwZoVvpahtARdtg7btqFJ4QhbwFcGioDgxReOvQZuyMCQO_zTU3SL9zf7PepxUb9cSkf3nTgf5WVtU93pabTCuEfVx9h2OxrTgOzpIVEf6ohPYC8i26etLzRq_VwQg75DDTAcEXQQ0Z5okgYFtwF607WsnX3TBfK3KsfA-i592hlN2l_mFTuODCB1YkhigDevsoSoA91tLHwizHrg5c0sszdbdyutcnAS3aUC6hF0ETxVMCtfwbmoBenaMHnlFl--VJtMRNv7218aJBz-OF_hnwEj1JQOpzRePlFDJJJGKgpwsMvK2R61TH9SyaT42KEB7Ek5QoUFZouoZll5vnGXqSlEDMAW8bCmFUitu0jp13PeLO0AOqy_8UEVpOL4sKS9JvKIhzqW7t4nUoqE",
+               "width" : 3072
+            }
+         ],
+         "place_id" : "ChIJp7NZheEHyjERqHACT86Ywc8",
+         "plus_code" : 
+         {
+            "compound_code" : "VXM9+Q3 Gua Musang, Kelantan",
+            "global_code" : "6PP3VXM9+Q3"
+         },
+         "rating" : 5,
+         "reference" : "ChIJp7NZheEHyjERqHACT86Ywc8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Gata, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8710415,
+               "lng" : 101.9609242
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.872281530291502,
+                  "lng" : 101.9620979802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.869583569708498,
+                  "lng" : 101.9594000197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Rimba Sungai Ketil",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103146021677774696722\"\u003eMohd Rizha Abdul Wahab\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vgz-iNjL3CizA6UsLHFMYtGqm1TsxI8GnCy9qxyf6aeMTmXAQiNie-x3G7DdZ1kjKUTEnRhtio_kFbVWzoC6cRhFNc5JKRD_PkDAIuknWBceu4Cc-QeCzyrz829n5FZr13mZbGGRQi3_jeQPp7BjOu0EDOqo5ZCEa-QcalwF7UBsjulLeRVAxrg6jnCxVlXSISrjX9md7Zhjhq0Rpuf8AiNyrpxBT-s4Z-177MDUVqPA19d6EkMC3mSuc-GY25WMffDS15jAHpHoyH0XZa3QRKlWIhUlrgIBIlwuZHphVqXa1xBo56jtG4hxZ4VSZ4EIFFpdouBugh-3WzEpZTrQHOmfRM8TtrjIeDpJGfG1lNnS_MQzQTiBO_TzyHhnwqBEDEftK66lsPMMHjJW0fp4vCNjOWRCdrnU7edmgqnv2WbRc6d6d0zyCWrNs42i-G",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJbcpDVQAHyjERfaFvR6uKWWA",
+         "plus_code" : 
+         {
+            "compound_code" : "VXC6+C9 Gua Musang, Kelantan",
+            "global_code" : "6PP3VXC6+C9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJbcpDVQAHyjERfaFvR6uKWWA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7856254,
+               "lng" : 101.9749065
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.786953280291502,
+                  "lng" : 101.9761378802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.784255319708497,
+                  "lng" : 101.9734399197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Gua Musang Wildlife Conservation Centre",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118437697790086151502\"\u003ewan azhar wan ghazali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-to2SvSjBlbfesSNl_3adMdC7XGXzmZOVAhLRq7b_upouvB8xYWDmIdV557XvdzvUMNh3vmR_gSFBBj2vwWlMBJGBBJpfK4A8xzIEAi9H5pjZ0034iciW9jOr09Uv30HUktofXfoxfB99q2qebPbXuFksUXvU3ugaMXFFizD5tIE-7Fu9k9G7ZIGcdzOYAPFROpMjTI5pR7CJYUX8ITior556bhxaZmVBZPqlKfhzzcobZ5dfo7EjnMTiqF2Wqn6yQpjZshmh9QeSM1TzHwl6Y2mm5BjgPB2vlCjt2F0pGzoXZIJl7V8bnL4iuLNvaKSRqqevSY6N8im4xmEW53BPWrsBYEmHsMHtCpsgGsMC9XqTRjbBUzvpi7R9IxxBGw5uDhjHhblYcYWTHFYWZdzh1zE3EPAG-VQi4XiL-icf3XeibReiZaeW6xCwgqky2h",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJZRDaglQbyjERTbRgoIop5NI",
+         "plus_code" : 
+         {
+            "compound_code" : "QXPF+7X Gua Musang, Kelantan",
+            "global_code" : "6PP3QXPF+7X"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJZRDaglQbyjERTbRgoIop5NI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Gua Musang, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8839492,
+               "lng" : 101.969277
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.885287230291502,
+                  "lng" : 101.9705502802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.882589269708498,
+                  "lng" : 101.9678523197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Stesen Kereta Api Lama (Gua Musang)",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104106785128729084028\"\u003eEira Hamzah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tbFhRyqDkZF5KEtTsItgVmodP1k1lbyLOJADRYNYr3CpmPCmj4izeH_qDOmkZTZ3Hh1KESXm2anaRPztmDajliufYHZWAs4mkD3sq1NDAaKT0libw1wX_DcMeH4RSFpSnycBmeNsEGF0dWEmZVsfvosZAII3JnPHbEwMePS90YJFm4mOwAI62Gvs-sVH4ieJ6i6S07Nc9YZD2PEk36C7zbLSf13Pjhb9xkPMMMkZ9vNCK6w4Buh595paD8nBccxEp9iFvuArUGSmzmaozGFs8GUVeBjIjGn2JPcSzXK6k8V_8di3Moc-v59LoorYQublEkF1-36cxj_glHX8tIy2TI8g0WnP2BRnauRHawG_UAZmlt7lBLtZHMA7ZdI-1BaFdcW0_MoYVx1aQ3UDZgjztg8naU6SPQyY_nvj00yLDpbH_RqImcfSs_Nn62ctUX",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJQZmWpd4HyjERiCXZFbI2x4I",
+         "plus_code" : 
+         {
+            "compound_code" : "VXM9+HP Gua Musang, Kelantan",
+            "global_code" : "6PP3VXM9+HP"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJQZmWpd4HyjERiCXZFbI2x4I",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 27
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg. Kala, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0636914,
+               "lng" : 101.977807
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.065034680291502,
+                  "lng" : 101.9791893302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.062336719708497,
+                  "lng" : 101.9764913697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mata Air Kala",
+         "place_id" : "ChIJ4QiteFz7tTERmyD9jSKOtvE",
+         "plus_code" : 
+         {
+            "compound_code" : "3X7H+F4 Gua Musang, Kelantan",
+            "global_code" : "6PQ33X7H+F4"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ4QiteFz7tTERmyD9jSKOtvE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuala Renok, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.9555924,
+               "lng" : 102.0069375
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.956798080291501,
+                  "lng" : 102.0085514802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.954100119708498,
+                  "lng" : 102.0058535197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Awang's place",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105980959468635983494\"\u003epoulisw\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ty-h7IABSUeeyzE7DTVYLZXnp7olZ7X356iT02AWc99BqS0ByJsBrSXW3VTJC8OAt2vt0FQRsMudzzWfMauuM15tQs7gNi17fRhLkxD5i7NUlVgo5eNTlNe8TcGeJNDDqO78G4W7eguu8y4_p9Db6-_Kx-msvdr21afjTj4s2UP3mhjqZ0qHzkUmyXBbyqKvpJ1i3fZGzF1FfoWlQX8x7FIqGv75T0WF-1V0gngOdMpQGoxFWU0e8zQyCTib446fYkW6OOK7tmQhsuGZ8LyEJnxGcnJtm364yDFBSi2MK9aWgmBU4x7xILNBIatXfUnF--TfXgW7OMq5oBNOJgsYzzNqYRXpS5jTnGrfxW_IMM31o8WsIxyZ_pcfy2sF4YYiebb0B23TVd4ptbMB24MsD-xQQoJE8DJCGqzdQ5J-bpjezn",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ7YDp4IP_tTERhGuJtS5frNY",
+         "plus_code" : 
+         {
+            "compound_code" : "X244+6Q Gua Musang, Kelantan",
+            "global_code" : "6PP4X244+6Q"
+         },
+         "reference" : "ChIJ7YDp4IP_tTERhGuJtS5frNY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7763, Jln Persiaran Raya, Taman Mesra, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8736459,
+               "lng" : 101.9627481
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.874994730291502,
+                  "lng" : 101.9641329802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.872296769708497,
+                  "lng" : 101.9614350197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "0 km Gua Musang (Route 8)",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3357,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106326556561578172660\"\u003eboon hoe soh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ungby6YKGEy-ji1gwP_ShbCS-rC2A6NFSX3Dg7dAEI5JSmACvlzcuO_tZ0Tc-qFhyiuizbLRMfOYJe6gGnTNc9_KemAoVY-k9iar_4zhM_PcN-Wrosy7ew1AAuNvkY51MTFvHumdsLD3nDeZFh5N34EJTRHWthiKEvUmBUUh4j1qw4J6hKbYLyi07GkP9LIBtGPzEz0_5bue-CknV2vlVuizv_Y9XZw8CZ4mtS1I6R7vM0kx_tDkg2xYC6KDeJ2InMw2NGRqTxHLsRFpWPVO6ihJ5-dw7yrWNH3Y6eAqdhlYr9B7CRa7oa3DUPK5YFYrHBaCyT29FIhnezvwwP7mcmkNGjwkAzH33SLm5yxDgiRjOPAkugaJ5yScE1LkGJtkBrdEFIyUhXfLhS_uus4XQ3WJ3-21eiEJwkOTdO-CEz7gHg",
+               "width" : 2264
+            }
+         ],
+         "place_id" : "ChIJ-eoU_GIHyjER78TLFuzOAbA",
+         "plus_code" : 
+         {
+            "compound_code" : "VXF7+F3 Gua Musang, Kelantan",
+            "global_code" : "6PP3VXF7+F3"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ-eoU_GIHyjER78TLFuzOAbA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7763, Jln Persiaran Raya, Taman Mesra, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.873723399999999,
+               "lng" : 101.9630157
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.875070980291502,
+                  "lng" : 101.9643113802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.872373019708498,
+                  "lng" : 101.9616134197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sign Board Gua Musang",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thABS-KqnO3v0y-Wc4k_Hihn3JJYHmDa9CjKAHaU8CKqK7l1VdL8DZELc5XVWAUikgsKhurPSFVPF4WiXnwh1lDlCGIxE-RgW8WIJkxwnqCuLnrZZNAUNDhiqhfMO3tnEnNHAAqtY7EJeHM0YLnnphuegUdufaBjvqBXIum_wNKL_KVxPlBfSwTIzkMSI37HCQ2Tuu8UGlw936EwqwRazapJYtFbDz3-3Zu3_7SDGxmSil9WOEMPtoslR0xd8PTsP0FJvr0CTIsFGQDySiwN6e_MhSlL2bmu6bVx7AGwixChjn1-7-KPbg3fc3o04_3NMiHe7dhW0NMoS9ehbsmBEnjzaghvumprztTwWOpiStP4lAxkRLfC-3SZKi6LOzaFcfFB9f3GGuA6V046fM8IiuQ2WHQCTZzRECMdwpSeOdKJ8IZFad_r1Hf-bqDw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJmWw3RFIHyjERdcfz2gOJVIU",
+         "plus_code" : 
+         {
+            "compound_code" : "VXF7+F6 Gua Musang, Kelantan",
+            "global_code" : "6PP3VXF7+F6"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJmWw3RFIHyjERdcfz2gOJVIU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.911165,
+               "lng" : 101.926676
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.913799080291501,
+                  "lng" : 101.9299249
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.911101119708497,
+                  "lng" : 101.926676
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Star Valley",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "place_id" : "ChIJp0lTd_QHyjERH4XpbVzXYPA",
+         "plus_code" : 
+         {
+            "compound_code" : "WW6G+FM Gua Musang, Kelantan",
+            "global_code" : "6PP3WW6G+FM"
+         },
+         "reference" : "ChIJp0lTd_QHyjERH4XpbVzXYPA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.9016819,
+               "lng" : 101.9785839
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.903040930291501,
+                  "lng" : 101.9797648302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.900342969708497,
+                  "lng" : 101.9770668697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Durian",
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114418190861551504445\"\u003ePatrick Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t2W7KkFv4fXO_cB6iQ43dPEOJSX6VE2908ulkNFpWNOZCKpjTc58QUgW6TiaiE2-rRttivDMKIASWge9p0Y_cFln3mGp3cXzXmkCgZ6Xd_yO-JKTG2lmDgmQUDaSuf7Wla9VdkKT-z0WDyJPWS13RA2v8uoquH86ZoXeAlTECTxxtqQoe75aUbr_89PiiYrE5QbDcXaRCWYWGMpXyYqbVlRe68qUKhXr6R8PXeXoOb2q7Ol5UFVpfvvFDlwvHsW7_FM4K4Pl5Z3G-D8NCpinJSlwDbuJZMneU8ulbCECD9MkHghl_xGQeiVZEznMUrFXAw0Q-cPENvXuAiYysT5v9-t8NjMtogOV4hn3TSS3XNhP_RUKSQLeG2xx-TQj34MLJ_hFAiVmgDevoyu2vL_58c5ZdxvzjuRZqtRxvqpSplINb4",
+               "width" : 2701
+            }
+         ],
+         "place_id" : "ChIJv5iLbXEHyjERdFXSKITUzaE",
+         "plus_code" : 
+         {
+            "compound_code" : "WX2H+MC Gua Musang, Kelantan",
+            "global_code" : "6PP3WX2H+MC"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJv5iLbXEHyjERdFXSKITUzaE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.837930099999999,
+               "lng" : 101.9631263
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.839365980291502,
+                  "lng" : 101.9644679802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.836668019708497,
+                  "lng" : 101.9617700197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gua Neon",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112170259624255364549\"\u003eZulfaqar Sa&#39;adi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vgJcbdkmiaM7aSiL2LiMvMfxDFNANfWBhQLe4k-xJ4XebGfllHwW3GlBRwqQ3jon2XBwQLfTNdzSSX6ZH5tiHbtU2y4zt72k4rrsXsqQhVkJgRIWU4XGfrF1lqRptG37kfcVggfB5haYhCQlChD8j3z-6u5GFAjw0qAFk1J-28R_HUcjmtZEx5xn4xuvLo0WHldqTYSGNYJzLhFf4RxPE7k_LGG-vZ91OkN6ctH2oug_k0ckKuhdErRdu_oTH0Fwo-QC2SH_0b8-6u8LBWCHNC8feuubVEvKYxOrsWcaRSJ4k2kg9uQ21F2HNDiMLAzKtZorszuVDFTIpUUVkJM2Wx7w5pQJJ1C8Vq8FivAQzP_7jsCvuh-htEo62czgTztZ-sdhMBZ0rLYcpY6Eh_djvOYAkekfi434XsVmFLxu0HdDM",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJw_NeLgAFyjERixmxOVfOJEE",
+         "plus_code" : 
+         {
+            "compound_code" : "RXQ7+57 Gua Musang, Kelantan",
+            "global_code" : "6PP3RXQ7+57"
+         },
+         "rating" : 5,
+         "reference" : "ChIJw_NeLgAFyjERixmxOVfOJEE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7932252,
+               "lng" : 101.942076
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.794547980291503,
+                  "lng" : 101.9435316302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.791850019708499,
+                  "lng" : 101.9408336697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Princess Hill Cave",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111048647500484692500\"\u003eHoh Jian Meng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v2k73gBNqksPVyt6lR2IMCU58T9HVs0EkbB3rHlLt1DEy_axt1MF5wJYlQzA4MsnoRjXSibEYu4Hbxd5amTGMMyNBlt8jDd7BrR5Ml-pWJ0XxRLEJiY4LrFaQKyrXCzJS_dGUavytA2ZqLGy2mZVr3LNviZo8Dl0y9G5rcNBTKTvS4RVvi7L7eBJcOZM0r1fzQfRhDbZ-X64ZA8tYepFK-EKHO4DJtIGQkzR2KBHn1UfZddP2dxptteVeBQ-hZJUE8HhzjMSuRuk9ZPpxeZF07WNZCVPtpu_tq7-1wJYZffGYk41T5Bz9CpQXztyvGCzjSmCFmAMLCDJM6-PmyBf4_QrJ6OzIQ8Fq7D8kfjVO5ejJRj1h96DYhzJz7b8OgSAsJ8mUrDR6iSzr2MbvhSpkRun_h0qCMgfLFV5Jpp4MILUq_kZ72nkxbKvZDD5Bd",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJV6iY9scFyjERQRLuno7Dmpg",
+         "plus_code" : 
+         {
+            "compound_code" : "QWVR+7R Gua Musang, Kelantan",
+            "global_code" : "6PP3QWVR+7R"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJV6iY9scFyjERQRLuno7Dmpg",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.9341257,
+               "lng" : 102.0038224
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.935499830291502,
+                  "lng" : 102.0051203302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.932801869708498,
+                  "lng" : 102.0024223697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Uthissak Thammo Wararam Gua Musang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115392454810315958640\"\u003eYohann Ong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uZWLCkW4r09FEwu2v9qegsiG2ngbG7UiG198q1e6pUbGKQh6oGnkw_yWKDmgn7C2XnQ1C46Z7cDA4GUhlWa15GC364TXRlxjmchYLGlVtW6pDIrY7WlcJaaPCyx_z5HS6PhZ14rJ69N9qxYBGilBD-owKWsVztdRmi0JxTUkaXe0OM8D6of7v7aZvUQglIJBn4M67HepstxmUVjQ26YU_xtVu9_Dgg1MYRs6s6muuXvfXRd3-r-HWtZbgNxaCosavnyERaiFMNfHv16r31JaeF2r5VMfhts0mZh_OYzZ8tiMHAF4PrIAh32mlUNwZwywEbmxOyxY7EuEe7w7TVspgzVEGVCw65p2CkE2iYGKj-fDBpLAmEhaxTfxTmCokqe2HxeSJS6EY-NAJTxVDydqKhDiIcHcIkWnevRPSEojVwy-bryHC0-luVIaoOagTo",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJo5PU-pUAyjERkWQzDr3E5Wc",
+         "plus_code" : 
+         {
+            "compound_code" : "W2M3+MG Gua Musang, Kelantan",
+            "global_code" : "6PP4W2M3+MG"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJo5PU-pUAyjERkWQzDr3E5Wc",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 44
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Kampung Batu Papan, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8346692,
+               "lng" : 101.9511851
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.835577330291501,
+                  "lng" : 101.9531295802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.832879369708497,
+                  "lng" : 101.9504316197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gua Madu",
+         "place_id" : "ChIJh-2aVVcFyjERiMADSqNKJxk",
+         "plus_code" : 
+         {
+            "compound_code" : "RXM2+VF Gua Musang, Kelantan",
+            "global_code" : "6PP3RXM2+VF"
+         },
+         "reference" : "ChIJh-2aVVcFyjERiMADSqNKJxk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "QWRV+GH, 18300 Gua Musang, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.7913489,
+               "lng" : 101.9439391
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.792669380291502,
+                  "lng" : 101.9453222302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.789971419708498,
+                  "lng" : 101.9426242697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung baru pulai",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116107695474885710530\"\u003ePoh Keng Goh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tClYZY3ABXsmihxLkMMM-fk3IYuN8tNpclRZdBeY9SM3fy3R9C16wvDKKbHvcpyLbMs2ixblXLqMlDvjHhoy0qgEXTwly6-8FFIZE6_itiB6-ndB2IfZqGSfOQzRZf-f1-8HgsZC90rvsjYuEYQXejf1bsFnFITWFgIQwNSinJrqELzquubrn8NmTlYh6EC3E9Q84KvDczXSeTn0UUXRTa3MzfArGwqLabIu2OkdJ04HkT5mJi7KmNGXzjTSKMXUYMA_v32PQcbmsG8QJfgsvrjmC1I3LmwL5eEzg5Z2u_X2s6yjpltXaTHvvgyaKL3x5A6Savb9ks8tmgnyfyTx1IA6PAjZe8BKtdES0Y_bKK9oeplSteDrmAEFdltLimTU2KyqWVVB-U7CRSex33_ZWujfDpoYZ9ClYsxItRf-FkZkLEelQynwiGjJWZfijp",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJPw_sGQYFyjERbCyni-ERbVE",
+         "rating" : 5,
+         "reference" : "ChIJPw_sGQYFyjERbCyni-ERbVE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      }
+   ],
+   "status" : "OK"
+}

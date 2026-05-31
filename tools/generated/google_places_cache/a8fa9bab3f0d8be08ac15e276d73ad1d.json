@@ -1,0 +1,1025 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-vyolVZkEFxw6F1_I4tT_ZqetKP3nN15Jwh2ctZYjqK9lQqRrDzGROhgr268qBotB2qLLoy2j9qXP47fcp1EH15IwfetI2SPK6-rRjQgvsjJ2AmBtKa7Spl8bKgdc_uh_7sPEOVZ2a9ZH9-2nGvx3ooBePF9g4LMO1dTX24n0ad8RZ5Pr5lC9dCTO4AnrYSpaZ9EPmdScO5-mNQ89zfJnRn_hnvmei7z9O426EqTaAXnD4io6G3uCBrYFjGgzIMcJmdj0JM0qxFT0pfEwK0wkoDNaVOj-rAyFnLiBBqKQGvS-ybyMCJgSgsW16STXfDqkeRRBrXi9ipFMafRkPnxGi6_sRT-EMdyJD11rMOHunsSoRqZD41Bq2VzolKog3TxBp7dBZXF1Iz4PKIRwpJabLlpsSAZMdTfFuCtW8IotTMmeW6ETSLThw9Ub1X85kw1nfH0jCMBnjlfeFmqbQzyOC7I-w6d9eLm4B2nkmqjP2z4D5r6Dv0Q3DJbGjinZyiuiBWADXrfkyNaxILIhCn75clrMBjGyazbvL0DQjsmflYDircYHtNPtj-FxxKsS8S-l0_-WJ6wDC5bseytrf4WqSg6oV3KYDNhGNP_ooxpqWpdDw9nIKw_0TCbN7XL2imtzROqojnm1BCyMmnkf1JZ17OQKjZ_UhZPEAm0a_zAnx_5ccizqkOijxM-vVpuBO6wszgYZhBuRqGapboVIOpVBlBgslUPalock7RbkvVEyOipdZXtfDPICf9JceAJYPTFRyKN0qy7G7uCQuMomYLemNdgZdWr_Ph5XfLQTGTXrLttF511h66gzgLvic-QWdxIZpP0vtBdLy-",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pekan Kuala Krai, 18000, Kuala Krai, Pekan Kuala Krai, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.530736999999999,
+               "lng" : 102.196506
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.532047380291502,
+                  "lng" : 102.1978751302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.529349419708497,
+                  "lng" : 102.1951771697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tangga Krai",
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101897200575207677765\"\u003eAna Faiz\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-td54MC2QxHmuezubM9Ws6d21o66DnbeMid3iiz07useEShNf5AG19Aa2sb8LLiSuFR5qxRsWR_1zW5NV_YnfgmUXUT7dE56oxXPkg9bLoxq5iviq3wwssjZ2lDPsOtMEPsM_wifRPz_EfpbStHKefqbJDeu4C0q-ctbkahMy8sGp19EnfoPLYb0SIZNtZasx6f7BrSZvW5b_9Sh6DO7BBRDV-QkbzEuU4WEP7TK56LXufubRhQRIAkdZKWl77u3pU_syiKg9N91GNLZCTR64ZbVA-2_2NhfDkdWeUeygzfYbqpZ9DNEZT5MftMyTU0i7lH3_NUsHoYV75VMg1VpZNtpQk1YjL7dLoIFzHi4JFEHqBnLk7xlUn_xNz5jq6YVpksUzgatZeeVCOwTjul3eGlSAb0WtsU8OFBNyH9Qmj5hQ",
+               "width" : 2000
+            }
+         ],
+         "place_id" : "ChIJH9io7G98tjEREOU1f9IOWv4",
+         "plus_code" : 
+         {
+            "compound_code" : "G5JW+7J Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G5JW+7J"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJH9io7G98tjEREOU1f9IOWv4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 153
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Mini Zoo, Pekan Kuala Krai, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5371859,
+               "lng" : 102.1974386
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.538533180291502,
+                  "lng" : 102.1987857802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.535835219708498,
+                  "lng" : 102.1960878197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mini Zoo Kuala Krai",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109744574185013354517\"\u003eMuhammad Ilyas Isa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJydHQJX8KyR-AiTfv7Aml-FP83DUeJXOnmGWh_ViwM7wHB10MLEQxWuZtRdW2oljDZLBe85M0c8Eb5tY36hwYYAVEQfa0oM-Bv4ddzR-qJefj8w_ciD-yKGWzMnkOU4H61TYI2Qme4ZWxKDeBJX2MOv2oEfIJDaWOFEYT1sJNx_8-TqhN3utb1PNyNOVG-tQf9ii8-lx2xHWTFtrojxMMs2hozlFrg2tJbVDxxIn3TlsY4gPvLDlwHSzvbV33C1M3_fAp1-FJxH1NmgmTfqhlrzXhskMGUalSAb3QLqyUlswVOVju2Ll7HCA0p37W7ncGPpXtX6aortcN9B4FcW3x3yGzM_pP1SOIFeEscNTU62Uf510Nm3HOcBaJHQ_eg01vD3U42C1G4l0DAOLdr-Ptq0NmVWlkCSpBV5v1GdhRmyiu",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJlzZFfmh8tjEReMiaC_SIDq0",
+         "plus_code" : 
+         {
+            "compound_code" : "G5PW+VX Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G5PW+VX"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJlzZFfmh8tjEReMiaC_SIDq0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 485
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kg. Sungai Pas, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4472437,
+               "lng" : 102.3264821
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.448679280291502,
+                  "lng" : 102.3277881802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.445981319708498,
+                  "lng" : 102.3250902197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Lata Berangin",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108438298713640146476\"\u003eRuslan Yaman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-udBqEuvRxM4u1GiuuNgYkx1eyfqZVDvKojQds6edeMAtb5ckfKhGl9m-FPWIO0UyAC9emyReY2i3ZX7Nv13IYgQFsHNFMCxed4t6dW3OaqeIewH9pHHvvscB0SX86bzk3I6jQX1ITzY72bvV44D6eW-Zl5l_AFk1tWq-rZNS45oxxnxYleNF00OgrWu9StKL6mF3BTArziNM8X-7Ft_nWCh2JhhQvYg9_opEN_3dfbcmj-Qe3P4EEWudW9eFJGd9bZF6Pxge3Z8pjaZ1x99ow30rdxM4Z_bpAYcJau_GzPU2N4nu3Bw24anUQ7b2jceBn9CHl7bm1yHZAm5mv8BlMQ3JvHDNhvox7v3ejWY5R7hNfDOSrcmLjTugn3ocktyDHs9tbv51S3bfZ8h1TbI40Il-XrEkd1YCLRn1p4cd7BL6On",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJQ6vkqu1ltjERSOahn_TMCt4",
+         "plus_code" : 
+         {
+            "compound_code" : "C8WG+VH Kuala Krai, Kelantan",
+            "global_code" : "6PQ4C8WG+VH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJQ6vkqu1ltjERSOahn_TMCt4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 553
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Enggong, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.570304699999999,
+               "lng" : 102.2629684
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.571661230291501,
+                  "lng" : 102.2642430302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.568963269708497,
+                  "lng" : 102.2615450697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Krai Park And Training Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3096,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107457137565353593208\"\u003eZalmanuddin Othman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vf1wnX1Ems5ZnZkRzEqJ_m322nOiVEQD8uj3vMf_mj_107AnJ2QuN1-kT1nXp5sRNCrN_d4UQQZDn0qSi7dFcKAtRHiFViv459pdSXgxyCn8PtcXfZpX9Rwd2IWxze4nD5L78Xe306vwXMKA5bO8tiU52FfN83VK7QDlVTfs82kZVpo4bm1e0HRxD9uALrafEJhXGLXz0TyP3uIjmPQSxQd1jn6LXF_SalwKExTfZ0F0S6UZ_lhoirYR5Zdkq5vQuZjNweIMaZXdyvGNSE3xfitr284l0nGHHnc8AleU4Ee5fgsna4R2S-Fzj6GKP9JnQimRXG8oDKwKix1VXTHBx4VrZwpsHtJxaokKWIZXsS4hhRnUWH_Z1tN2-GiRA5v_mZELpA25bfkyzzRhuzF0Wou7y0ZH64yKHtY4rH_Y6pgA",
+               "width" : 4128
+            }
+         ],
+         "place_id" : "ChIJ8WqPNs5itjER2Xv6cNwQIJM",
+         "plus_code" : 
+         {
+            "compound_code" : "H7C7+45 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4H7C7+45"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ8WqPNs5itjER2Xv6cNwQIJM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 50
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuala Krai - Gua Musang, Pekan Kuala Krai, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5360007,
+               "lng" : 102.2092337
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.537345280291502,
+                  "lng" : 102.2105739802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.534647319708498,
+                  "lng" : 102.2078760197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Persimpangan Krai Central Park",
+         "place_id" : "ChIJOfjKYht9tjERMd1TEmAUP14",
+         "plus_code" : 
+         {
+            "compound_code" : "G6P5+CM Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G6P5+CM"
+         },
+         "reference" : "ChIJOfjKYht9tjERMd1TEmAUP14",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Lata Rek, Jalan Kuala Krai - Gua Musang, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3113531,
+               "lng" : 102.2982547
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.313029330291502,
+                  "lng" : 102.2996856802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.310331369708497,
+                  "lng" : 102.2969877197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Air Terjun Lata Rek",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111151663863052533014\"\u003elarey2 larey\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tAuSvb6VAqgcBf4s17x9WyDSL3oEwu6HPEdJ7ebpr00QxkFiaAqW0FqyLcGlCuxc_IivxTHXK0P7MSVT57XMAbB2W04Dazt_orljqdOL7aR5gCeTHAka6ll23k7tQ5G1av4_SMspXMTozvD2tDLFS3RtfzPJE9HONRP1LYX8lLcIk9bYZvm1Zcl3j2BY8ksBMsuJMdKFp2Ru7H_VqvqGMT05_Ft5kMImN7eYSRXJcOtaG-1VMf7-NX1wbddNFN0pLqIcGTw-q5ZHxTyUYILn-2ng6IJzxYUXk9RRwdLYCXsT02M07zwtYq9Bf-uF1NWz34luckrGljt99Qh81YUzsocJrkTD8jPweJ5DZTCCSjL9DlSZtH65KwCskUeLkGg4Z402m4smeUXSKL4lijkiRD9TlekS090Kq9vxQDRWdz9cQR",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ6dErewBttjER2zP0vw64O7o",
+         "plus_code" : 
+         {
+            "compound_code" : "876X+G8 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4876X+G8"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ6dErewBttjER2zP0vw64O7o",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 147
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Lama Guchil, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5539676,
+               "lng" : 102.2009974
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.555310180291503,
+                  "lng" : 102.2023654802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.552612219708499,
+                  "lng" : 102.1996675197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Ghetoq Lamo Guchil",
+         "place_id" : "ChIJAVRrMd59tjERIwfjelQH7wI",
+         "plus_code" : 
+         {
+            "compound_code" : "H632+H9 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4H632+H9"
+         },
+         "rating" : 4,
+         "reference" : "ChIJAVRrMd59tjERIwfjelQH7wI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan Yahya Petra, Pekan Kuala Krai, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5390372,
+               "lng" : 102.2001249
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.540398280291502,
+                  "lng" : 102.2014399302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.537700319708497,
+                  "lng" : 102.1987419697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Persimpangan Cintawangsa",
+         "place_id" : "ChIJEXiYrOV9tjERkeMfNcu2GA4",
+         "plus_code" : 
+         {
+            "compound_code" : "G6Q2+J2 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G6Q2+J2"
+         },
+         "rating" : 5,
+         "reference" : "ChIJEXiYrOV9tjERkeMfNcu2GA4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kuala Krai - Gua Musang, Guchil, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.547380899999999,
+               "lng" : 102.2004451
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.548734630291502,
+                  "lng" : 102.2017379802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.546036669708498,
+                  "lng" : 102.1990400197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Persimpangan Batu Balai",
+         "place_id" : "ChIJ-T2iUAB9tjER4GnZSmC5Mzw",
+         "plus_code" : 
+         {
+            "compound_code" : "G6W2+X5 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G6W2+X5"
+         },
+         "reference" : "ChIJ-T2iUAB9tjER4GnZSmC5Mzw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4290954,
+               "lng" : 102.2226672
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.431067630291501,
+                  "lng" : 102.2240454302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.428369669708498,
+                  "lng" : 102.2213474697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kampung lebir",
+         "place_id" : "ChIJaczeGwBxtjERWHWZY9mLhtk",
+         "plus_code" : 
+         {
+            "compound_code" : "C6HF+J3 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4C6HF+J3"
+         },
+         "reference" : "ChIJaczeGwBxtjERWHWZY9mLhtk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "F95H+MF, Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.459210199999999,
+               "lng" : 102.3787306
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.460559180291502,
+                  "lng" : 102.3800795802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.457861219708497,
+                  "lng" : 102.3773816197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Hidden River",
+         "place_id" : "ChIJx-4ZXABntjERUHjhGzOitFw",
+         "reference" : "ChIJx-4ZXABntjERUHjhGzOitFw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Dataran, kampung Mambong, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4565509,
+               "lng" : 102.1600554
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.459071530291502,
+                  "lng" : 102.1619906802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.456373569708498,
+                  "lng" : 102.1592927197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Kampung Mambong",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111292073048233317351\"\u003eKay adventure creative studio\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tSPmSvxRdX0KVzKHEH8hby0C0Ywa8rWeG17pEf_AyYYsYtaK3MC1S6GTroyt2-sefOXf40ybuQ4gR3K5NNKnUAaqr3qNdlO5MfNFWQ5oeJmmennScoD2-CWbHS9ZBpkJALMv7FYc1LrJeFOQ0yyd-qIiStAs7WM78NTKnqjA2ZfKE6ndB2c0of0mMPocFMq74dImEbBQuQhusPuSMhXPobZIm9rfjfCD2QCmzj4zs9Xx5aNdiQqhkEUKsGzBKhAkEYfvb7QaZ4Q2qsoFjjOOsTR3GtOixaDgBVfTBwJ3Qe1RyAK_4I11RFbjoNZP2nnM8KpHoLLkfhY7iIPMEHAUJaym5xvv1Js5v0XtonUugOb_cQ4AbpKOPQFYN2kN1p66ijKHtZvO-FZBthSfwepjUTZr5OyxptmSX1nGIkKqv8t1_I",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ7T7cEgB9tjERj0ytXShjJ-M",
+         "plus_code" : 
+         {
+            "compound_code" : "F546+J2 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4F546+J2"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ7T7cEgB9tjERj0ytXShjJ-M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Krai, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.530684,
+               "lng" : 102.1978494
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.532027180291502,
+                  "lng" : 102.1991285302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.529329219708497,
+                  "lng" : 102.1964305697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Kuala Krai",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3614,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111763703127592492186\"\u003ezieya adam&#39;s\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ssadFVzv8ciCCHDmJOEetbgGVOx_2BhV_0tS00K0EsKMA0sYEzmJBUcYQNx0wbNbTaAHxpsZ_Qe8hlPb49TE6vMuMN0n9vej5mFK7F7tZVJPrNZa-YwS63yQ3RPwDHtl7dD5KSTWb-qF1K69neFEZq2mzBeskacCyJwkQ1oCfti_LrVOVJAWfIwYKVjvXNjQbkNqi8RyBlkjnQLHHL32--2zxqWbgTrMGEMtKclgPLCj9FzwfVOSUFFSJb2dOdOZN1tJ726kTo3WN_85xm2I-syFx68kalL2N2Mv9bK06k6Ogtyb--G7t2segPfSSSc99IHl_Xouih1AEK6nmVsCdcm6uwWYOBbRqBlw7ik6vMvf2HnRWi_JNP31fs3eViMVaIiHQsU35P0pgHMPJnq78ggLf2rwKpiVXbcivv07JqCzyj",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJhWmfGY59tjERwmg8hWw7c5w",
+         "plus_code" : 
+         {
+            "compound_code" : "G5JX+74 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G5JX+74"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJhWmfGY59tjERwmg8hWw7c5w",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Air Terjun Stong, Kampung Jelawang, 18200, 18200, 18200 Dabong, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3412622,
+               "lng" : 101.9805613
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.342615580291502,
+                  "lng" : 101.9819493302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.339917619708498,
+                  "lng" : 101.9792513697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gunung Stong Waterfall View",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2276,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112290006964459146201\"\u003eWinnie KL\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sxhlNme4AYGmiDAsAbCce_bmSwkUJhF07Iz0TdIpyD_-qQS91iptMcT5zFCOt5op7uqsagvfvmu_iWjYGpNfbwOPWhUCSnaWQ9cwbm-vH--IpDalScA9LS63rk5XSZNE-FwUBV1PZaNZR_fBTx-GnZUlvMqe21FKOT00WAYyN34nCmXka9HYEdZxrX_F0VY8F6RrmxWbYjNWe9lEmu6Qiq-gX_gLSL_5QU3iuW3av3gx6_01NzIL8CS3JnUaZMynXDtck51WvOG6UcFBPZnUsrBZMoubjQ4BkyPxSORC-jcnV07AlPx_zRe5k61cuYCFXMWRRE01awop9ClmcXO54VDBTk3YGtktLEahARI_jgDGlqdUvTjuMQT2CruuD67oM7TIpiREp0G7TO8tklefIpGKZQ417dHU5FCReMouI",
+               "width" : 2602
+            }
+         ],
+         "place_id" : "ChIJTYcHMMndtTERv2dC0j_5AXA",
+         "plus_code" : 
+         {
+            "compound_code" : "8XRJ+G6 Dabong, Kelantan",
+            "global_code" : "6PQ38XRJ+G6"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJTYcHMMndtTERv2dC0j_5AXA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 346
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Krai, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5364828,
+               "lng" : 102.1979346
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.537817830291502,
+                  "lng" : 102.1994894802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.535119869708497,
+                  "lng" : 102.1967915197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Laman Tamu, Taman Tasik Krai",
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108640115040005714616\"\u003eaishah kay\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tkR4xxrPpXaMH9YjXsyEO_-Rzf_jfs_zOSBdB0usK8s0cqKngzarachFX2Lf-RLYzJSA0-MkM4xkdWhg9C4Y357QeINhRNwvELkB7nRKTDC65M5dJgsLAkX2l_toEE_oGOkwOJChExoyFRopHwLAln7mC7tislBHoQxnNrcM36qb_JQAN9wGyuiYSOrgwm20kbzoNSrVk_xLOPE0VgEce_MkiLKgOjA37vjC_Hpn1oR0_9-K8vQvSwiFM8-kf4cgHZPyjZgQ7qV4-dWILmj2sfnSMJ5TYdHvSLGQbP294U8ERIUYDqAtktGUuSt_er53qnGoF6WY3KxNK90WdjBZ9bivdkNyUQh47wtWcicouYAxbBwztDUZUFAVx_0sXtcatSwETItV63BZxHAzlaZNTJLE4YXOqvKGAZoEaCrS8HnBWA",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ8SEAJmZ8tjEROXg9agsg9fk",
+         "plus_code" : 
+         {
+            "compound_code" : "G5PX+H5 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G5PX+H5"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ8SEAJmZ8tjEROXg9agsg9fk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 40
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Laluan Persekutuan 8, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6027458,
+               "lng" : 102.191745
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.604069980291503,
+                  "lng" : 102.1930244302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.601372019708498,
+                  "lng" : 102.1903264697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jambatan Gantung Sultan Ismail",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104679448565787699726\"\u003eTun Teja\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u3ZEZK-nINQsvVSNLRvooZphzASc8VJCwne9djT9LKzG4VtOOSKFJZOtBiCbbAoe7yzbSPERrHGKon9Us_GnTUkCFOhI-Oawff1z1ypRlLH9fBQFQH5GX0-Xd3dtAlo7GNmauEpaY5UG-JfjgHC2Trq7_-FK0tKgS57_WChcOtIS3nQE9QoM9y0-sxDOhi-P2sPInkLcWiZsn4tfIP1sQKrQ8n_lD7pDsBLu3a-l0O0VecPND9B4I_qAtOwFrjdj8r3oMwVrPQRQjwEpNu2egoFwWl1s8rUhl1aFoXU_aV09kS-CzLtE7uBo3zP_jAfxR5rpmBNbG1Q6w1bbEz72U7KpV_GUtbP4mW3d5bRAfk_Ne9Ui8MPdHVwbW67PqN_xCRDMxFlNB8MmgGkPecTOUvwUAcKemXgFlY4H8SF-E",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJnSQO9WGHtjERVo7zPj1igSQ",
+         "plus_code" : 
+         {
+            "compound_code" : "J53R+3M Kuala Krai, Kelantan",
+            "global_code" : "6PQ4J53R+3M"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJnSQO9WGHtjERVo7zPj1igSQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 62
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Jelawang, 18200, Dabong, 18200 Dabong, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.341436799999999,
+               "lng" : 101.9665558
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.342785780291502,
+                  "lng" : 101.9679047802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.340087819708497,
+                  "lng" : 101.9652068197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Jelawang Waterfall",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 810,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100268429138980049856\"\u003eWan Othman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-svPHE4CtsP-LDRKm275GbsITDSlETJfxvoMZcqUbSMY1zQPUF9HdCHLaS1SIiv3K3IrbwHJdOjo8ziW_cUfggs3uSivQSKvq0bPNe8cCIEygCPjgaTx2j93gBhmHIdEzCNNZOSM85QQHc3hJra1TtxuKaQaSbRK68TvtQilauJCoo4ltw_K4Za1OphzghdrFmkNKAjQADOsEWtbjBnktEnFByyThW3YprlTVbx8LFsVkpJya2bfwcdA4R2LtL04OepVD5mSKn1nFBX1lrPIuHQ0ihlVhPRTrPFfJxAuQ1AH_FHTvVm_7Vpw9SDUTJNYLWxxRt6D_qrVHuvbuEi4I6xcxL5xTNpvBbM8Z4LNWFPrirDGCAwFRwNcKlW-wWGaOHGvUeqkqtJKLZrlfDfqHz6EQUKF8zyz7G0VJRYqpzHR9E0",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJgUv2qRfctTER7jUVm_DZrx4",
+         "plus_code" : 
+         {
+            "compound_code" : "8XR8+HJ Dabong, Kelantan",
+            "global_code" : "6PQ38XR8+HJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJgUv2qRfctTER7jUVm_DZrx4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 326
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Krai, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.536974,
+               "lng" : 102.1975081
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.538427280291502,
+                  "lng" : 102.1988708802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.535729319708498,
+                  "lng" : 102.1961729197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Rumah Kraftangan Kuala Krai",
+         "place_id" : "ChIJQTLLgWh8tjERCUhVCiknVSs",
+         "plus_code" : 
+         {
+            "compound_code" : "G5PX+Q2 Kuala Krai, Kelantan",
+            "global_code" : "6PQ4G5PX+Q2"
+         },
+         "rating" : 2.5,
+         "reference" : "ChIJQTLLgWh8tjERCUhVCiknVSs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 2
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.5697668,
+               "lng" : 102.1693282
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.571221830291501,
+                  "lng" : 102.1706793802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.568523869708497,
+                  "lng" : 102.1679814197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "tasik kuala krai",
+         "place_id" : "ChIJb7cwFK59tjERWLJvmDsG49k",
+         "plus_code" : 
+         {
+            "compound_code" : "H599+WP Kuala Krai, Kelantan",
+            "global_code" : "6PQ4H599+WP"
+         },
+         "reference" : "ChIJb7cwFK59tjERWLJvmDsG49k",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "G5FM+M5, 18000 Kuala Krai, Kelantan",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.524137899999999,
+               "lng" : 102.1828879
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.525226180291503,
+                  "lng" : 102.1841578802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.522528219708498,
+                  "lng" : 102.1814599197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kluak",
+         "place_id" : "ChIJN4y3sNx9tjERuuDB8fHz5qY",
+         "reference" : "ChIJN4y3sNx9tjERuuDB8fHz5qY",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ]
+      }
+   ],
+   "status" : "OK"
+}

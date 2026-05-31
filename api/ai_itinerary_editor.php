@@ -643,11 +643,10 @@ function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?a
         "source" => "last place in this day",
         "sql" => "
             SELECT ii.item_title AS title,
-                   COALESCE(ii.item_latitude, cp.latitude, h.latitude) AS latitude,
-                   COALESCE(ii.item_longitude, cp.longitude, h.longitude) AS longitude
+                   COALESCE(ii.item_latitude, cp.latitude) AS latitude,
+                   COALESCE(ii.item_longitude, cp.longitude) AS longitude
             FROM itinerary_items ii
             LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
-            LEFT JOIN hotels h ON h.hotel_id = ii.hotel_id
             WHERE ii.itinerary_id = ? AND ii.day_no = ? AND ii.item_type <> 'hotel'
             ORDER BY ii.sequence_no DESC
             LIMIT 1
@@ -661,10 +660,9 @@ function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?a
             "source" => "previous night hotel",
             "sql" => "
                 SELECT ii.item_title AS title,
-                       COALESCE(ii.item_latitude, h.latitude) AS latitude,
-                       COALESCE(ii.item_longitude, h.longitude) AS longitude
+                       ii.item_latitude AS latitude,
+                       ii.item_longitude AS longitude
                 FROM itinerary_items ii
-                LEFT JOIN hotels h ON h.hotel_id = ii.hotel_id
                 WHERE ii.itinerary_id = ? AND ii.day_no = ? AND ii.item_type = 'hotel'
                 ORDER BY ii.sequence_no DESC
                 LIMIT 1
@@ -677,11 +675,10 @@ function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?a
             "source" => "previous day last place",
             "sql" => "
                 SELECT ii.item_title AS title,
-                       COALESCE(ii.item_latitude, cp.latitude, h.latitude) AS latitude,
-                       COALESCE(ii.item_longitude, cp.longitude, h.longitude) AS longitude
+                       COALESCE(ii.item_latitude, cp.latitude) AS latitude,
+                       COALESCE(ii.item_longitude, cp.longitude) AS longitude
                 FROM itinerary_items ii
                 LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
-                LEFT JOIN hotels h ON h.hotel_id = ii.hotel_id
                 WHERE ii.itinerary_id = ? AND ii.day_no = ?
                 ORDER BY ii.sequence_no DESC
                 LIMIT 1

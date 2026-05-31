@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Kampung Cina, 20100 Kuala Terengganu, Terengganu, Malaysia",
+      "formatted_phone_number" : "010-841 6533",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3339018,
+            "lng" : 103.1320122
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.335262880291502,
+               "lng" : 103.1333636302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.332564919708497,
+               "lng" : 103.1306656697085
+            }
+         }
+      },
+      "name" : "Pulau Warisan River Cruise",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1730"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 5:30 PM – 12:00 AM",
+            "Tuesday: 5:30 PM – 12:00 AM",
+            "Wednesday: 5:30 PM – 12:00 AM",
+            "Thursday: 5:30 PM – 12:00 AM",
+            "Friday: 5:30 PM – 12:00 AM",
+            "Saturday: 5:30 PM – 12:00 AM",
+            "Sunday: 5:30 PM – 12:00 AM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105679651605935849262\"\u003eCY Lee\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v5IMjuXr-V-hy1K9inmKTbr-vTjnj9k9CJUDKX3MEtmBnFh5t1jLqrIHUu2upGqmPp1eKOry4cVcWLIYYUpeEVZRErFDYAemsxhXrkx1tEQXj7THaIeRQ4N-XdZfAV20Pf6UZavXciOWJ8n_nN8x3OQC6j60viJaON0L3k8nIupdNakSqg8KSD3ayLReSZA64AvpBDqshoxU-Nm5xtI4Ku8ERBpbDMR1lZqKKkXD59I2Q7znXJPyIFg9S0UlENkCaSomNWfZfjLVfHv9NrBz7dMwMUK4IN6f9CDkmBD76wkvvak2admM7GBFdd6H3ntjSGXUwapxIMKt0Aw14L74yOmVkP8cIcOhwRYqj6wASbaoUEzkMc2GK1M7x1kunOPKn_ZzZ4CMjVpCXcW9mDA1Mb32XuUhcBcrhOdHTH7RhQdQ",
+            "width" : 4000
+         },
+         {
+            "height" : 544,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111746463899016589999\"\u003ejawami ahmad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vgxM87HlNeMhVOFvcXH3oytbiKmB9dn2Q5hLGh8w1BPSJc0Bo1OnrpWR4Sl2ie-SNKKGbjmiWCJG-2DRFc5A34b_GnYFsgak8A1p2qtjJFRfNbvqCdVSONnAJWE0OXFPL-XkriSr3D-ulSJm851pHZqDrbOXlPJ-wKfDlY7bbbkELhLrz9dbsX4cDv0Trf6QTkDnhB23u3L6zbiqrgzg89xtCBwA18eWTgkTqgbQRbG1q0h1brksXzSlP3Mn4Ts026X9tJqHaHvuRl1sUQi8HTvR6vvESWiom7a2Jsa3CWHowEjny10IVv5N2_nIDy2IaB7OdLnspEnY7kfPhP1W0VjkXat0m8Zzjjo0zvv_kS0sGq1AXRAi0X4p11SFusqSsl12V7rJxLUzJwtpjjAETDrlorwsQ8Ty8-jvz8r8QKGg",
+            "width" : 406
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102535422431982681137\"\u003eNomad Wanderlust\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sZDWqYAaZCGkvLQ4E5ylPM43caDj1499NZfGFiLdLtF7L01MjSEBRdTEn0dG9nf2kmWnC5dmfyptlh61Rg_cT541cBRPI_gOv3FebrMbHwHKMoXD42P1cyxh4k5_tBAC1mbbeA_zxaQCvN69b2GxReOj5Oowv1vwqMnMP_Fm3OEAx8SN7Qu1yKMHMu6zhtzp4sUGGpbE3Lv5dhNKceh2Vu9v6EgwnHWMVh-G-JdtDuSRWkHTXRDCsz9smoX2-RuIIImCfj7TInkv7upAunHnG3qrDFCfnEqsXMD_1XTqMVRQIhOojJgv1FpoNBa46-5q4kWBy4tPJssQOnLjFrJjUySyjBg7iX4YO0qWGwmtdAxxdOgBEEemvqBEcEYBOrqOQZ7PolvS_X4mrHx1l0m6yPD_sqRNq_3-3SYNAC-xI1ww",
+            "width" : 4000
+         },
+         {
+            "height" : 1840,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105516539455666146082\"\u003eBanjong_贤善\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v5EtcUI2sYzADcCvNQvT8GFxZY0p3TszfbkgDOT78flvSd3o4zW2Yae7UfB4ELccwbnMNFg2C4o5s1t49RM4nsYyCjM0_bteRWYz8MuKyA2aSqFTv9SPN9OjxZ1p4fQv6wPDNeeXZoOuTiL5wTNNAIapOCFSXH8xH-x4fHhuEUEji89siYcnResk1H6CJHKP0ghbtf-XcIRKfkBFxW4N--iObfpNFDMXJ82w64os03W2-lQg1Vd7fEbWMlf9FP_VKvv83iHX-O7ysr3bievMTNuZZUm-Ht_9T_fV3djQTXMTor0HvNMOWrAkwE0OvcWbx8qVyNsxCvVZQUgI-Z8MRTVAxpPlZnQU1hTcw2HPJP0NjBsf43tGojZQfgutnZ9552uZgSPeBNnGWldZsIvgCYPfHb54wJdpGOCXhCf-Fl1CA",
+            "width" : 3264
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114040257468254007894\"\u003eAllauddin Mohamad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tCL7mhxjMumuGDxywf9ogzHaPZDgZibQB5XGDbHKTm8xJxGaYr1arJuVTb6gKrlcDZ84OCpM7n8ZnDwv0ZB3eKCzrbMtS7wTWYz9tCAuua41RPEzoLQRd5guc6tdFJvzaHi64nfZwh-0uIjRE1fHXhjkmh3kjleycKsf2qanhhlBXfHCE9ICsx_jB_CNw69C5oj1Ogn3VWXDIGKTXpX4L1pZum9XzvcSI0paewFoelOPMazBR4oeMUgyOs0NG2ndJTZc8fp_M3UWib1BocspPCBxBrKVasIAGQheyrjO4c0AxjbOgA7skBv8bjLYSLvP48usM9wj4E-_rS-sCmCfxy95NkNYJKZwS99aEEZJiHAcJX5Z2rkGGk-23ND6TtjsYIVG7kim7lMGWgMFj9eYxrXG4QeIdZsQV7pQ25VDQ",
+            "width" : 4608
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105223628459615282019\"\u003eEngku Ghapur\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v6Dd41AtjMJFBoHqnFGjoRKyPuV91iGXgtY3F53hr3Jlbdw7xZ6cp4JSDuHsX1soMvGE-IQ-Mgmy7pz3thkKqn4wlMeXHjwXte1RyAiGl3-tyNnJJsdErTf-POZzfzbtn1058VxhCXyjWwNU4dyEiFFmcULtq3MRBdQksn0L3W_tTDgm0OgAQRlf_0L5RpUDmqf09tyaq2l5cvoNHe6hZDTWqqLPhGpGctPVSLUfOo1Z2idkpNmSXicdHw9XqGEtcArDIjXtfW6xIpLByrIurn8eHx59oE8-x9I38Yf2octyPhIUO450Ux0QHxdxDg-oBxpclFXfidrZP6WZb8RmpcBtzsQIz-1GPGMffCqO-LKZH5fEdbSfwSo1aYl6jmKpeeFALieioGD0gNM18EBdC1U4JZV-xp9Q8igGExZdNuYrC5",
+            "width" : 4080
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113826607639532739655\"\u003eFahruddin Najumudeen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u9ytqdhFK2xwxITpW_47MaKZBh-CkZRsCFFrVa52dU6c9yx74fMdJBKfSnD8sOBVNfsm85ViUKUwb5g-7MZzML4_b-C1u2OiQFW0UtSUDGIcLEIucye5CIWkuXvoVSlGjmloES79N8Q7TEx7-JerYwU8XyMoaTDafupPFyyRnRRPSki2BUrLkosHtNHn6QOfh1NuhLbEuehNQJBZxHmhLAwVD-3vLYkpT2rhGHmNhO9YwhBKPQpdwCwGInMqPNV1VKMjabfEZYFsINUr6__JIgxJidAQINOhOzANgGizS2IfgphyObQm0Ox5SA9_VNJZgCV6sX4cDsxGEFTWBMGdmI_Lw9RAOD9WtRoH6gnZyePdlwuj8enyHPC2IyrIluBXs4eGz3pffDOfsuc41iVQXA6zBJAOiesJVfw6dcGc0",
+            "width" : 3024
+         },
+         {
+            "height" : 684,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102316923050019688220\"\u003eZhenke Toh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sX2TDAE2p1_inp8I8nccGT4eRX4paaTRp6twzYKoQ_pElPwChw5N9rUGhOnfFpcx6OdHCdQqcnAa3OiVGLTjpm93qeuTj_qTV6m0P2rEr5S3RGr3QB6w9hPydKnK6fQKoviIiv1oOprE1BfRRvbe1yjV3Kx5k3HGivpnv2pnwXbIud6A85umjG17Elr_-L220I3rbIHV73JhmY_a9NTcGCMst_BXsFJsR5pDWOLyxoYKz3yOW7YurZXbfrohdg6TWSdBOXAvIYJaTmQy0xIRIdaEjyPDXOSIi-EmVKU666O9A8p_MYG626Pniz-f8rXY_ZSwf912Q1WQEg57nnMQnL1qRbpbDQSl1tG_qAIQHc0h7aEcSrJ0adAmDvO1aXTSuJQcHrgd4WVOhSnDLGKZJ4LjbK8tsKAv27iVTaP_spbp8t",
+            "width" : 912
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101497473523332924278\"\u003eScooter Atv Pulau Warisan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s9ExGKl9YlMNFh7_z_-WYFQLwWiLxiU0VvDvXIdSynYXCd6vjMoSMjadj5H9MSi2HULSKrIbhSFlE_lWqKzO1yIQFVnB3rta99wZrTdwaFVGGaqx55S0RncArQWmWOhxU06zUaYknuNOc-x5f-WSASxdYHxWGdrDTDdhmAMMoyI7JBdvwknSKrOmmhCxpe6VECNk8no_OwkK0tq72BDbTfyhrKdMpn5e3qcQ7BIDFgCUNOopLkVHZoKS_iZhRzun23amAudfGLlOois5JkLAoeia-_pUlNUht-TtcgKULNW6eRpqV8md-BUhuLLjr9BPJ-84mSQLGTWpZJsxS53JoCMYJJ8fZ-O4tpGwvJYvnB-O-p1oSNfGiBYmkLlreW6H53L17yWYAbvste6zWErUx2k7vKnvruArUJQnKzthYayw",
+            "width" : 4160
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111107443766622908678\"\u003eJain Mahmud\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSl1jK2OrPKf8qAhJgkVTDelBKMKUtR09LIVDBZzjvqw0RggJzx2XD5hhDE9uYJMt-1kgqA_6RRmbrGCH9O5183x9T8PcfQdMhHhPmfGywqOwrskiP4bmo65mKUfSFA0QFlCIPesXM_UxrHHXyUkN6QfkDjn6tmpqjNH681jgPyIPDpz5W9ZpomUgE-vZiMjWdNKMAVEJjKIwGBmD7BWeH2LGrS3pTYB89NYhpC0MSS-BgcHc80Ohh3duR68DBhMz8nRTyvqj8jdIYlJowyWNq5OC93jY7qkalXWOcHokOb8G7zuq4ZveXkiuviE2pxfGuJHb-GWzr6XMV5MCTynsrtYqWWd6YHhyrx0VTwdQenBHw3hvvC2LrF5LfYrYTVJNv7puxLWnMTOkrialYI3pRPNLSJj7jpTDcaeQUkcM",
+            "width" : 4160
+         }
+      ],
+      "place_id" : "ChIJrUDOXX--tzER0WXAN1T-E1E",
+      "rating" : 4.3,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=5842292779295729105",
+      "user_ratings_total" : 2462
+   },
+   "status" : "OK"
+}

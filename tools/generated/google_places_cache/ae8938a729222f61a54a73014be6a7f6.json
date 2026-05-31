@@ -1,0 +1,95 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 448, Kampung Serating, 21600 Marang, Terengganu, Malaysia",
+      "formatted_phone_number" : "012-989 8752",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.0654854,
+            "lng" : 103.28391
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.067330880291502,
+               "lng" : 103.2846955802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.064632919708497,
+               "lng" : 103.2819976197085
+            }
+         }
+      },
+      "name" : "Serating Beach",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1430"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0230"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0230"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: Closed",
+            "Wednesday: Closed",
+            "Thursday: 2:30 – 6:00 PM",
+            "Friday: 2:30 AM – 6:00 PM",
+            "Saturday: 2:30 AM – 6:00 PM",
+            "Sunday: Closed"
+         ]
+      },
+      "place_id" : "ChIJyTpPdlTltzERRfRsGfHpSqU",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=11910589386257658949",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

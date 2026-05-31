@@ -1,0 +1,64 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "18, Jalan Toh Puan Hajjah Kusnah, 89900 Tenom, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.1241036,
+            "lng" : 115.9431816
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.125445830291503,
+               "lng" : 115.9445249302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.122747869708498,
+               "lng" : 115.9418269697085
+            }
+         }
+      },
+      "name" : "The Church of God in Tenom",
+      "photos" : 
+      [
+         {
+            "height" : 1769,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114411497650601486806\"\u003eMercyGrace Chieng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tvhNS6gyXvgpEh_g1oxQq00JVfFkUv3aM-0loujihVhrxChU15LVnsZiXNorYOOS2wN5KtnpMI4279zZHYN3Yl3SOCH2MHlPpR3-15LrZdeVFhG9Mxfl66drmeji1LjHgZoxgck8wHPgk8mE_bfhyIpcVECaQOXSYAjGeIS44jvT6mrUwDBWUUfNYauWxj-5ZtlnjnzJREqPxsLeM4kNlQlw9HvL2k_6uptNGwMmWuTa_a9WqNtVg5Gw_G_nUwLnzrIZg0gk904__oAO-rrcOeeN9tivkXV6kBMV1CV-qJpexiVXc_GmFDBdu5OqE47WQOdafsZSB4_GvAhiUxgD7snKYcU9-qBFrAWIu81Gmi9MEh6xK3BW8gariprvJqsYdwaBxbYgb-aR7XhObur_xlwkExXzTgR6nUhrgLsS7NLpR6",
+            "width" : 1170
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114411497650601486806\"\u003eMercyGrace Chieng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGxtR105gsUFOShhDuDxYE5LuJJpAVdXMLpQf3_v1LC-5tI3Q9idBBiyj5ewMQxl5gAOcOoB4LJqnYAsFKiOMawBHiH8jY5xGwWCG_dFvGnf-AIBPDYYZrKfyzEgEg4lMfC8rjNM6MQSVaNgWwLFmUhcFbpifEx1mrPcQ1LER5BZEmCCu1kuy5Vnt2B3UwvqZQxo2Z6qLQQcbuQ1Ck0jebJTap4l7wGR-1gqay04v-o5uGyKKx1X9A-r5vM0N3qv1Hbh4Qzwo3VjB5rwjhFyzStV8T9eGKsGq7YINMSy00bS3hAvnBxHa7K9_6Xr-ecbC4CHVvzOLrswBgZRRoMkyly0aCSnSVre8fbTBZxTCrkS7b6njdrVAMH8s88AUGWiQ_0ApKUx_uEicpd45PjWHKLI_iwU25_PG8GTad6DWjuJtN",
+            "width" : 3024
+         }
+      ],
+      "place_id" : "ChIJwQCG6uUnPTIRl6GzY7r9CI8",
+      "rating" : 5,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=10306766724215841175",
+      "user_ratings_total" : 1,
+      "website" : "https://www.gbc.my/"
+   },
+   "status" : "OK"
+}

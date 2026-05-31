@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Kuala Besut, 22300 Besut, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.828590699999999,
+            "lng" : 102.5542305
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.829953680291502,
+               "lng" : 102.5555582802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.827255719708497,
+               "lng" : 102.5528603197085
+            }
+         }
+      },
+      "name" : "Bulatan simpang kuala besut",
+      "place_id" : "ChIJV5ExFAvvtjER-DLr5xGP80s",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=5472875279253451512"
+   },
+   "status" : "OK"
+}

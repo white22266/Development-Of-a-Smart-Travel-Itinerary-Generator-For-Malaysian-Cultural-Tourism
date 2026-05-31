@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "4, Jalan Usahawan 6, Setapak Jaya, 53300 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-4145 6000",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1966646,
+            "lng" : 101.724434
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.198410480291502,
+               "lng" : 101.7255428802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.195712519708498,
+               "lng" : 101.7228449197085
+            }
+         }
+      },
+      "name" : "Royal Selangor Visitor Centre",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114502926442884900837\"\u003eRicardo Nuno Rodrigues\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sdgqjST2YCj4L7oV2iOnIZBrZsvx5HW_84Aigeb9Ko3kj5wsaOwkjbGKG-GeKGohEv4h1X9i7XBUHsBZKEBjOe8LDKllwAn_Ay9UEWcuzUF2ue-s6Y2cC4ooE1N7I-Qz6B_9QvpHK4neTMuETW3McSDMpjbBSMAa-naEzoPYCkJ5VsTOrT-48no6DSxjtbpZmFxb3Rh8KlFU1GFVvJ_79oOXJkl9OOhAXzlFqnQj0-x0en0NhMHFw_Qn-961doASzsBvGjcwUu8mRECTyx95nVTPZr7LvuvTBT_VWdZ-_ljhRXOCmtcEX2t-k3Z6RvIkgHsCZu2F4VNIMyqlqqIMCnSxchjQtIc_5jbtfSWYOKPJhDki_XRAEfSah5Jb13xVGMilYCNaVEN5HgTCYYe1gP1IuQpkXiBdZwtikLeWQ",
+            "width" : 3000
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112621059862455919573\"\u003e陳渝峰\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uUapocY7eSWh2nmfL4JN4ETG51axSmakl61NAus-IMViSrGdmanXO239hDXopE5NiRcGfD2wQVXQ3Bv1P3dFqvGW3-Y7Y63boYv3SDTedf7HgczuCuLlNrDJWEJmrXMIk9MaP3TiH0abmZ0mQ-f4DcJ_YMo2CJDs0BG2WGIi_q25IPh4Htnr-WTsuY4HKfYU0C5b59bidJB1ZsSwEVmcL-H-Ls4yXb9wWUmDzwKNtnQwErHQLMSYVQqnOP_ek8N0j7NfIgnywh7D7QflEhRpeLrGPbfpGuGt4x-4vTO-UuuYGwaArvOoOW21I8qt6-Iyr5XquUUgEjcGCxTe6lwqZGYPJ35g9wIC1bSd41jJDZRBwnqpXTKnWvnipumYHmJgXPicIHgOWFeRDfQcU8EOxcw3Wj_27VSWdK1JQ5ckyyPw",
+            "width" : 3024
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102800900989380901040\"\u003esi9 dan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tqdQvbsIqu_8IxTZUmEnxeD4wNbHL1oyG3s7jfnV3DjHyH_vnvI3YCHCwhB-3T6hk8ows8cle_5eCs6Rkah-prl3ApZinDw5tCTfhu1_QXGZfKQ-dNgPW9ODIAajx51-Hlmpj_gTD4zVIGBjnwor_qd6LL-7j4QunTP7_rq0X64NWK7At8MPOCdE_JqFZCxGx-mdVEJlZ03IrRkAXELXMXeHy5zaYpsy2lH-6kOy3PdVszhhWFuFSdEBwxByYVCD_Teh61Knb84T-I8fQYtEXYOQvovgoEpEnLfwsxPhl-TSsyuH3FVTBxgTsLF38646PLFkHjZzNs1wj_E6xyoJVsv8PFUTTrqMLfU5YnJhhGxCYSMHy87rUr1GzUD3sFO_T1K-rNXbEAvxWovXIfIo1ZphaeGveXly8vHoCGpyhPRg",
+            "width" : 4032
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116539111116383827699\"\u003eSung Yong Kim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vDxvlFHIh2fvHT5NFN4e0th0yeQ_B9Xk0nGjLYor5VwlgXhdspQhjafChE47Fr8a_f6lnURIU2oZO6ocT1defKkKW0LICHGrHyts6gL9eeMqAoLow06QzPt6PSDMqjt_KFyxHavls_zwORnREB9VlYCqqSGqr-k1WQN69loFai2EzBnOe_5DAFmyXzUsbCwbBlNTkhe0nX42_uFSXBOYwxIZuFPvhSh2o6gx2iXODYO37xZDXOXozo-a5-dQwy--urjZRcZYteKtpzCiMgai2Xm5ewmk4IZTyDyy0Nb-Dz_lREdy0Hr5_RAq5F01eYfYJ_gS1zv1nXEdTT1cScbMM7lHwJFZtkSszJab_6mCOUcdb-7Yz22Vrgwff8OEuWFpSW-nb6mdzxUup6nLY1JjmnYoHBJ6x1xSnx83iTjha5h7NZ",
+            "width" : 4000
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117820653313852530604\"\u003eJohnny Chiu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sq4MvxzGep9VSJiOI-iA4BT7TO53R4GHlp4qj95QLAcNe6C_HI3LOU2u72VlZ4vmyMHA-M22rNdbnxaivXRI5HJre85MBlKnmQ-kDpBqS1QlJSuxPTS2qgpg8Su0pGFVb0HUF8mPtNIYFt0VUhgCkEwVhby2UYYPlRctj8k1hBDtVcxG5Ka8alCVdEEcs8lvr1m0rYxvyN7zEtLjwvyt1UQHCacGKw78lp3iGxyjAYhpfMAy0IH8M06fhtZAxNBpTefRZ4wYWKXnHZ28j16cL0FbI5Ht-PrYl1h4JZ6Ryyb2GzB5eK_9mEyTqM-RsC7JVNfXhuSIKFMMwOvhmUXkvalRN8RTi9oYGJ5-TvYorIKxEbumfRtG0Czpz19-kglX9Y2vvAlhgbGgJ_PLdY9qlBv-6XhG59NlsyCutKk2F456NG",
+            "width" : 2250
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106899441320663502817\"\u003eMikeson V\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uU7UoDb22QxESDd4sJrhOJAO0rDRHU6KuhL0Nf3klcNf15U-LphbQC_Z3YXtjfCNyExugcJAMUMLrl_vGsFsXQXVCTjWA7hABILqj5kcrleHaDNjE58pRAHccV6TPSski2DzMzsvaFfPnfzw9Vz4kEmlyA90ST-h06TezpkvjCB24e3U67meXsHeMh0ylyeFWk_KOBrGOFG6ft8a207eUjgVHXZzklO16ohFFoVjoFAU9qzaxz7P5H5vMrX39Ikka8hxBW-nqQmjFTsnM_y4Ix_QNLycPzgbxFBIcatCyqUQxKrHwIFmspoVmGr8zEazSveAMTb9mLxhSXA2aA904Sbr70RF71aGsQUrQAeCei2LAyN8e9W7GlzjzKVXsIrNo0RUw_FQmoUt641KdSmjfB1ErwAIYOL1PWupSI3HZl5Q",
+            "width" : 3024
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108560522045971392812\"\u003epoklevin vin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vlg6L8C7lYP-XMT6E0kWHZj6aJbsmU_q0P8clJSGul2QJkrQWQKYljMmPj2NIodQD8_YIXgBUs1yS17GMxcMyjQrsd46u5F276kRro0jzebxJ1_2wIRsHjrCDQpSRMQCCIaZeCM934r1oKFFzD25rLwBGbY_az5EshcKpCHuF8J9BFDVIhzNq0iuItNaJEor_k5XV0fn_aVlVpxyx2VhlX8bg7wZwkECHmtj-Tb5oBjywxT1ReRQnfAimK7CkboFdEYMxR3KUiunJ2CCbqqFUEX47dOKzanwHZr_HQFBppKDaSRZCnMeos76BMNN9ZyOr0a9gnh2jV9NlCwrG3JtICd19ktq_I_lTHjAA4Ws2cRA7cSNtJPoO7njeT-y-SJIi2JMAx1PKQ6LHrjlA2rfPxFrsVRbuohCRRXi9cX-IlSnaO",
+            "width" : 4096
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100256720246936421712\"\u003ePelageya Volkova\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v1cNU6us6AzymZHhxKTfZzDAxfCJITzjLIrjuWCLZPdltGDuBaK8vc4kYyefF2gm_X9EP9useTzgZhcuHTJ_Vh7anz7v_MltiXg2Q6Yjve3WyYjRCoRoonIZaNyRK-kDFQlTa9xfK6kudTuRJNrDUs5eNA99e02ELSUj8fwSRm6DhbC1kLxhi5Ny2BwCguRxwO0zzvPCREvD1X_d0vkWkYN_D2knjvMbGsBc53mRDucKNzqvTjtUIDMo-CDlJ7N5QsKy91RSOOYypRKDU3hbDSgg2Thgj6hBe5YV336Lyk1K-xVHGbH6KtAogYKcG_9cCiC_udUTA3DVLzvST_u2aJj8KB1-QasoCf7ELOyg-PNYnf3cY7uvnXjAdVimhQod3DpBPWnB-oEuC4YNg3nzlP9Wq4VX5QDcP48Tei2VXhT8U",
+            "width" : 3024
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106366982826092836912\"\u003eWang Miss\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9dyVyaGhEtkui3LlS2B886fioNRINDENEOrEfeJnq1ui8xu2nFNly2t8AL_vCBM-r6PS2rSAQkrN5QjgJh9rEjmBitqIkKbofJMFwkzwoMwZKWssvHXGsM53HjKMZ8q5NDE_lxU3EaM8fmQfuyZUWOPYRiA0sTBvO64Zno2U-nee78yPssSkC3K2co6Tmy3EQXME8s2ajKIxfgAPKpyvfjES3QKWoNHRNLfSwekG3aWzl3ZP5wf60D4WlsU_WFKsXoGDUor85FJeuOJNld6gLDCaRlrFaTejGelJHRiZ-_HeNMz8gBbEbDb_e87DWuX04dwIoeDzLY0_knjsEuqaBzSuhLbcqteahttioaMq8nlwuabJ8ih9v_FlFBjki8LdhCHyodXfs8y4cFBVjhqUx6n_kbDEL-qSFOJ8hS_EmjQ",
+            "width" : 3600
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110296156049104621690\"\u003eひろくん\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vaY4m2HCoCIUCHpe1bz2F9ILED2ip3IDIn7wzytItrN4LM46ocr_wr1XUTh_4vOdYOc4_ReUfbk1cfdqh65vz7AcmhSYcfz0fF0g_1_cYWms2zZPmFgRhsz4ynBFCH5ulROHDJfcQHKeamCm-mi6rNSad4w0-5eM2fGp1RpYwuCNWnckNoxdhsUXm3qvlPIQenCzL-VBJir9UU6dUHdoVy1X9lksliUWL79KvZdJWVn4P7gqdU8euBBBiyuTF1UfTLw8qdE0hfcKHqLwAhEGBEj96mVCVG5gHD5mdfd6S2EQbUxrhwHTnFPjElURqQBZcS_9jsZcdcjHiSeEwv3Ohb5XYR6yxW1uq2MGm9NHdhkOLZmbHDo1dNVF_G60cM9VCtTrjKu6RWypHpHp-fLz9VV8-9gxTQcHq4CTqt5-f4rlhn",
+            "width" : 4032
+         }
+      ],
+      "place_id" : "ChIJ380v_Rs4zDERg-ayesQ7RaY",
+      "rating" : 4.5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=11981048098747246211",
+      "user_ratings_total" : 5617,
+      "website" : "https://visitorcentre.royalselangor.com/"
+   },
+   "status" : "OK"
+}

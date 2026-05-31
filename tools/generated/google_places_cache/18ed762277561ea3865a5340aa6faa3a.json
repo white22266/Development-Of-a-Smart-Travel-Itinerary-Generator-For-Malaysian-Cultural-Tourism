@@ -1,0 +1,225 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Level 5, University of Malaya Chancellery, 50603 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-7967 3780",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.12046,
+            "lng" : 101.6576814
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.121854780291502,
+               "lng" : 101.6590236802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.119156819708499,
+               "lng" : 101.6563257197085
+            }
+         }
+      },
+      "name" : "University of Malaya Art Gallery",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1630"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 4:30 PM",
+            "Tuesday: 9:00 AM – 4:30 PM",
+            "Wednesday: 9:00 AM – 4:30 PM",
+            "Thursday: 9:00 AM – 4:30 PM",
+            "Friday: 9:00 AM – 4:30 PM",
+            "Saturday: 9:00 AM – 4:30 PM",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 960,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116170866508009506091\"\u003eMOHAMMAD UMAIR BIN ABD RAHIM\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s1NWlny4NfTfQs4A0so3jJVb3p1VJNg0ghk3MSQeKgNJxlpttWOHaBv0uRdy2mH50lotGXbI9N6Ne8wzEziPyoOG1oWkSzN5snwWKFEoLhLXykpT8-1tGInUs7_cF7iR2g_5fHdwJ170LDiFQFQH3GQvlpb3ceXFfIyIlotn4iowpao6yx6j0iIYBt4YJ3bi-c3MYCA3B4T-HZrP_v4hCrMTISML2FzeAASyuNaEwGQ6hS-SYOcFt63KfP-Hw3AEjTnHhB4nu-P8ymBkArwMW_yyYD1IUXlXUwe2Y7jDJYmujZtVJG-QeZ1zpu4UPuiguD3HKuVRUZawmTaGZ1SCGrYCIyPqv5suozVmVtcPeiCvC7mak1JAk7PbWU_ppBHdNGu1DcO_07rjfyhiS4xAsxYb5zRdy8fylTti_ie3qgT7kzPUZujZNpkSSyxQ",
+            "width" : 1280
+         },
+         {
+            "height" : 2340,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115902498170975539091\"\u003eAkmar Hisham\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s8wzzuVj6f48u01NLdRTlWU64OKs_MvaFCi3DU0pgidH7PTEgxOTqizNH0YCm-5XOpdqqCLZIdQ3h-ZbRD5VXaMSG-wC8sF35BPbFrSipIdSCRNdTklm2DuPlT-AuX85RimfvNSRylXDbp81z5JXw7UXzE5ugC7IjtbuSIQjpClaVFKy-8njFlrwz5wB4X5xS5tTnTky2RL7_1ZOohn5H4aEdgxikIUaXgTmvRruKm5xxbpCLv-8-zsowtLPHssxE38JlivT3Gd9Q2XhMKJZ_HDbsqoG03XJT-W0NxyYQLiYMzu0RqM2o1eLOqBISKnXXuCfBbK4oEL40HVGZaIfiIdrFGp6JbBlDgyl3ksM7zpr5rQEDXDxrrK5LJRZGf9dHBcnsEzCWan0AmoK-3fixIN-a1kmBH3sBbqmGWVuHWWA",
+            "width" : 4160
+         },
+         {
+            "height" : 4128,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101272910961007661771\"\u003eNurfatin Syahirah (iera)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s1Y2LVxnzYEL9stgYH7WCqWuq9CRAYkeqE2g0PTfU19LUXBmdFAtq8YyW8izIa8D0ODlJjxgC42ya__HBy3Lviz6DkJWCfwfFbr6-8Aw7DaAzkXHHCYnoWYBWVz8lcxcwOO9Eh--hPEC7NwBFof9QhKHaOFuZybXB_lcIVHFU4H0XlwEgCeVZVg-TEahXcNZ0z-fA8LPYuwd4sdjKJLzrZDO3wJSfFH2P1mcyh8UTVDCE_QPevTa_GO_uj9eBwUinHRjvDePGrlYyiQ9dITC6osfaaZ89kvtKFH0aG1n6kWKm13tzmOf_WY_76hvmQP1OPU86m9sB90pKuMSH-cxVEslSnl0Pn7iuxKULEF9bbU4gvMnQjqzzYsM4a_zM9ulMzLlLF7q8lXsJJjY6hEpZ5PnfCimysPaWUbS7yFcUf9w",
+            "width" : 2322
+         },
+         {
+            "height" : 2268,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108184159571608490271\"\u003eIlly Syafiah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sawPyk_HeUGCnJgs-3M7MlXNTam63djJoBu_1rABMmCH6uluqLSCMq3rjgTygp0Ky58qAJNd962QceHEV9XS67Pz5AbE5R-URWW1eeRKjwCbVZMlVvI9xmBcciN1y0a_zy72C262zM5Yyt0WcOW3o8jRPWHq_W9CLdIgYBTYqPUCvVwUIetR_L-8O32daJ9a_YYByBH1DdbBydEKcKhk8vncMHk4gPQI06UPTq-KbwHQZiG2NWPkbfJyGqdBwOZyV62glNxnZHAmqsmB753AhpkMKRVKZMEy1sh-hu6Lk1URIbIqKdNP59np1FlHw_J4_I0rgcdzCeA35EW0sGMpiAeTs_4uiPC-TdPVAZQVgAh79GIwDJ4eZ7uEh1FXxThGZ2dQ0dcXJ5cj6csS5vjAB8kg9YaPVcV833s32wiyc",
+            "width" : 4032
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116895968072095533315\"\u003eTheofrenz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vNTI62ckTmTAVV8eORN6t3GhSwBNY8QWPqDaL25rqKeXSPbdJ25kN73VgYK7L73cUhKxxbnp-4xlsPG3qAGOYPwNxRh3ZyjS9jzy8BMjRm-fEL5tS2xge9qKxjiSVL6L7BT507nhj_f8HTPgJ3FYkFH7zvvpGmubQmtx5Y5GUDLhzxGliFtv6iN-VY6FEFla8uWDis3dPHdwhMSZhHadpYqRgD8E3DsqcVgieIKOrnUJt0rhwxzDvU7VoH9URDWYesOysDwYCH6zM8pTeByIUwmOydk8l3o2hivDJtpRIHv8D9PzuiX2a0LQo4Tu625Y_ysiMhubVlBd9-UnR7_4qunZpgRx6VSrVxk9A6SD5Ru_c5BqX9w2ooSWEUZfwML4c0We4GjWmfPjaW3z06j3a8ossSI7SSrbn8jrmCF1dIfrlY",
+            "width" : 3120
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116895968072095533315\"\u003eTheofrenz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u0g-uBzg5MwOxoc8HsK0UEQUsMjshXtTbXfKHJBvljz1tuZA9rfu93d3WfBW2rmPcN2h4cXAyfD-QYZFwMNSqmeP6xwRd8j6AgvLAMZAssgCXJ1n10dU4VOcFF-1bHB0M3QU8iSHvS-cbU6BocbbFwu9HhoVu5Vm1OrXzlN1PgFkaHbW0w0E90Ty9NrMnoBcTvPwN2nPoheYs_nrFUmRgSQuQOfFaDV6QQWZo25DcrxBIeXzZplUZopXLFxOKSc19cEARVNVFJC1Oh0fBqRgDKbH7tRxStGm3SbO41kgujt2hSwID2Cp_RkysYZXZOBlnET8Vb0zwjLju4k9s0I77SIxq0tYjfxprwMakYnsPOmFkC1OroyRQJxfC5clYDyWRkNue48egXgECItkrw8rJ7k93BnPQIcYnOAwTty1sfaUWr",
+            "width" : 4160
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112661286441252283103\"\u003eD MB\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uB5cONPu6Ph3VmBHBn6yKjCWTm4BZN0KntfbHVGgoBxZTjAckF7tBjn0SPYhQi-BiZrRe8r2yM2RtNlIUopsa-XFKkmAbIt-sZkhkqh3vWeuMCE5kKXKFz8zFFOAmQo4FXCf3jYiEdWq50YQv6_tKvvhCyQIwOJxza6DtJ9eocVEKT18_cLDBcNObTRA6aA67YD6ajQOCFrGCPOMe5BSRI4fGin4012TH7CFQZeIA9hkGstfyik7lZTPdBfY016DaLKekQW23HxCiVrBSi-JfwLNVvEXHlt5EsNmeQDBTxbckRj-ligTZDcv6NT9OWclPwG3OTZT_4E7wNPFOlq88ipLSCfpzsvI03n_i9V9d9_vhrCA_wl5u6UaP5bk29wSf9RF7ISZvlPa39DhGuOM3L3aUUuOYEXoCF5YABelvwwvsz",
+            "width" : 4608
+         },
+         {
+            "height" : 1936,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110420261018137343927\"\u003eKhairul Ehsani Sapari\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uk43g0mUGQk_30FuIvJHgopuTBIwh8u7yRT1DZtShz67gEd7ldYfyLLk5NeziNtMk9SZEr-7UV_6I5GmOsSQUC4Qb0-iHDqTwdT4OsBILntnCdk3OP7CBi3zUgtanhLbaUswJmFhuEsTiM6NMapJ5vjVDtB9nQmUDresgBNDzuNHwrnCz8utbUuVJVXC4yYR3vj6TW8NlTIDsTsVmlB65_H3QSsuM0TWsYFzaJK0Rmd01Uv74ZZ4jYZhMVd-zjPSuIrJV_0XvrFniYpuOQrh8v4OruncNoFbi4xFeagHWgkGUa3sfEWqCkhvo1Km8m2QV_fBbi5ikTpcrO_VWQLhID2hX1qaH9wq64ob369kumN4VM4ZGK5uk-N6dcnuyyH_VxxlwCGK2qTiDYwi2O7kXpI2GlnDPBQN0dRnEcEEGYAKjy",
+            "width" : 2592
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116895968072095533315\"\u003eTheofrenz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sw_9hf9hpu3LrhTW7oJGV1sC5cTKGDaUi-DvDVqaztSbkRlQTeHcoDoA-zABAkdQxfahjyMc3yzB_a8uESef5pspO2KxcHcsx1yK93abuSuAZumikdk3WUU-qkrZezvfTID4zYLWmIEEoLyqnLRB9oiFnAyK8FeI6EBTsVC4er77PDMS6UovYtRIvXGoiVvAcrnzPT4ENkfdkjYTcPOChGjIR5gXzC6_v8adqovnUGqRH1-PKpwSfI6NWeQ5E20a1N2xKk6Ry-XioccFlZYd3JnVcc0OglKo8oI8VX5Fofs0pefPoIKf7XyQ4UPgKkslIRWODbDdXCFcXhcAOjim7LEGLbq9EVTVE_hQzrdliy0_0g1PQmSOtrn4d5P6l0yMsLD05N9MExUxrCzagDyzPH-9FUPXwua5jC9AK3HZvuk_4",
+            "width" : 4160
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116895968072095533315\"\u003eTheofrenz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tf3ZXWHNLhl2E99aIrnYkRCHhVm7o_SMA63h_d5VUIab_b8lO3Hcwsf2f9ft0UjKyQFCNY8qTtDceJ_RNmo-JD_Ue35LRTIRaCjGI7KLfdDkM1AIM9udLsJE_JctkDIeXLHKLEwh2UQNlABnHvyXBSQM-N56DQqEKbAgHlQ3jJ-Y-7-st9yGybyGLQ2R6tcc5-bhDhiXv9yTSHTLOd1aWa0-mZ5dar_AAkpLb-mwRnJjgxOGs82fnD3yqvGYp4Xm70n1neEc4Oi243oxYNgTE5q239LMMj8YQVWEu8g-s2SjTr0cHQW8JizNO9s5PGBzMuXElsNTonS1NhCZ4eQq0Uqr4U_uJV6iZYNGwhXefyJZtmuCesx7GSWO4o_-BaIRzEsajParjiRQLSvHeU6GeZnLLMILn-4doBJsnbk0Sz7Q",
+            "width" : 4160
+         }
+      ],
+      "place_id" : "ChIJZ-AqvnlJzDEREO-qBuNeIio",
+      "rating" : 4.6,
+      "types" : 
+      [
+         "art_gallery",
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=3036093427963588368",
+      "user_ratings_total" : 92,
+      "website" : "http://artgallery.um.edu.my/"
+   },
+   "status" : "OK"
+}

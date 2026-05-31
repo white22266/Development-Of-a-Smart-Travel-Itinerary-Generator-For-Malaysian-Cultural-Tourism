@@ -1,0 +1,41 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "8W24+R7, Kampung Bukit Nenas, 21500 Sungai Tong, Terengganu, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3017407,
+            "lng" : 102.9056535
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.303090930291502,
+               "lng" : 102.9069949802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.300392969708497,
+               "lng" : 102.9042970197085
+            }
+         }
+      },
+      "name" : "Ghettok Sa’ari",
+      "place_id" : "ChIJq1kCCwC3tzERdKct66k7Sw8",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=1102040134803367796",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

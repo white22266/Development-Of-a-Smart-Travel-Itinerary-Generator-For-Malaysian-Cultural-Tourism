@@ -1,0 +1,201 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Amboi Dua, 89900 Tenom, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.1070703,
+            "lng" : 115.9405228
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.108329880291502,
+               "lng" : 115.9419503302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.105631919708498,
+               "lng" : 115.9392523697085
+            }
+         }
+      },
+      "name" : "True Jesus Church (TJC) Tenom",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "0745"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0630"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1300"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 7:00 – 9:00 PM",
+            "Wednesday: Closed",
+            "Thursday: Closed",
+            "Friday: 7:00 – 9:00 PM",
+            "Saturday: 6:30 – 7:45 AM, 1:00 – 6:00 PM",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 750,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118331582795112413175\"\u003eTrue Jesus Church, Tenom\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vYbWNRHJi82vjnP2SdSJ-z02FNFiR5mNCCviuYGPVlq-sOZvA5pOG_B4uWfjeQOusxNAh9Zf5KxYUn33sEXAvEOZxnW27l4n-Pto05vcpXDU-IzL-PTQBvAbqdZqzY2P1XYZE8Wdt3cBFjqXNn-P1A0KL0Qp68JBtkJLAI_vo-EixL6Em0bt5Km4IajXImOhP3Y5MZhsxzqfTBC2TLLK5n5k9zIIZDGiiqp7tKjj3Q0ZI_FWrx55j6BOl-E2OB91_Ey0bR32151tv5VkhN6UBcSkTQuO8O4CeFeC1DIcUyfVy0HRBTUphW8V9YoleewrSL2h3KW1Rkv3TAKBZXR8XYSGDuMJCl1c55qBsppdUh4pKWLsEw2fJVfddHvm6vYlzbggPtdgMT55x1fI8bmqhIdEu4vlMA09xKWjw4DzMuCQ",
+            "width" : 1000
+         },
+         {
+            "height" : 1840,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118331582795112413175\"\u003eTrue Jesus Church, Tenom\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u1eK3tGpkaCrQQxJheFLeeliAfqqkhgkNu2oGIMtfPWAe1fYXE5ps2AG4oNyhFBlOz3bLCyrgAtoBjtB7ICsCy5avOet8ZvM4ZJ_gRhBELsUvTTrQCN3pKh0XLCAnTkNMZ_gHUFTxLJu2uquvyaBTqxezudZu-yeHmlViPjXO8vEWnnQAqtPMiqeQIdeDUKCjSvhRSV8-q--ma_1u_N2D6lwW22kkw6yLVkPfC4C32tNwuikjSUL7MmWHuAQ3ae4T0OjSWO_EtqecwCXM7MpoCAnvYbjuHbII-SxF2tpCEU4s-Dqx3nH5VKPb6-uQfwGQUNzR3lI2kTQpq8KR4P8jb7wieKT8-WBbPqnKqtVyHAeIAfeT2T9hoRrxDwB5gLofjus5sfxJN8BoTOiZX8ZaeB18rQOgywy6WE59bmBsHEA",
+            "width" : 3264
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115133164638703704547\"\u003eWilson Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tS8AYM9xCvB1d4chE4FXT57qiDWDenIxl7DpA3qjvFcYgRlNkNd1ROW0lgyEulEOWPq4hl__575pW-7MgsZYp6gfsy7mUYwTrzrPCYk_siESweMwms1a5aoT2rjED-eThCom7bgsBSG0ldTWJ93aJBLjHMSSNtLTL86telqLlWzHASxEXeH1miNZ1Apd8F8kgHOQyNAW4y66RAGoR9zfgu9t_L5w2DWfew9lavkEOxA68N1gg867SjVIBhbJqwNILkRtXDmF6EpCu5__NQ75YiPV8zQItvnH_KXsmMdWPTpp39wBKFaMOTWeKnF5saOsT8mRAWKgg8gh3KbrexC3AOsnuNZWbXQzlzAKqfiJkNu_04TCCthD5BHqRdrsjXilfJIdwgANwJcENJGPYwfyLafhU7v3dnEJqcrB9Q_7qRx9U",
+            "width" : 1920
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115133164638703704547\"\u003eWilson Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8bulkZC944M5HR5fLO-bafarPJeHO8zTZZgGIovwcKB_jH8W1p0nDphA2TPZWGkODSP4l0jCgwoS4JXapMayzUHKzMrV6eJEeDFxgySPwzYIWRWjjb5nWL0DtslfggFHoFd3yy-2UUFLC75x3TVIvPNRLkkqP7L0zLhvwW02vGSnZcPmXa8dMt6n42UyfXtOAbwd51WD_l6WKXUeR1Hwg8BAMXEX_k8wQcQF5qMyejOqgAMyE3TrMchU-0pKFHA96vtAu-cPYeMXhpw76dns3uipgN5bojz0KPfDP8sEq_70ZsoTMM_DpxQcHq3D7z3k4rvcHcvwLwKuHnt4xJICbDrDlWto8Jw6DSLyaCDjRRfo-w-xULa_fbVKhOsLVk1az5ZouaBAEm1PweETTreyircPo4GJMLL9_0t882SyBoQ",
+            "width" : 1920
+         },
+         {
+            "height" : 1840,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118331582795112413175\"\u003eTrue Jesus Church, Tenom\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uSzySFljAUaFQGe9PULAd7qlVdSqJAVX5ZAhPnC41QIwgBcA_2krwx03D0eIofMHHc4RvCXUjpgWJa3YEQ0Uh8PT7gVGQaTgaXxvfxLZfo7vBeA4XCLxrmgbtVeAry-8mkYAhfL-CHziuDqgeLPYFV9xbCUm_AYzChuj5eSuj_yPID5fDN6VHTiOJUMslXx6c8MNBEMI-RpvoEpE0s3jX4Dfafe89NoQisa0TQPPJsqXHfhonERHdtt-v50JqxGiQ5ner5wWBkdnlkrWLMx-rHt-ktQiPUom5ykQ58QTUwoQArywOIHXOgrjz0mzDQCIYJSFwcE6tqLW86qvMR-kfUEE1JReh5JUKmjCtyTVqSpy3HpRTQpcBDOCCTB9HG-rLqGC-VArC1fYde1WUFYSX77UuVBKqeg-l3OdwL5scHxNyX",
+            "width" : 3264
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115133164638703704547\"\u003eWilson Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tBgxA4R2RCgaYDTTwsdhYWb7q3fkgw54b0paCfAg4LWmDX4mI2MonqweKysFYn3-ake9UxxckAoasFqk6Ic8HhQ5TNFj8DyrWUQ_Cdenqr2ZRehJqQY9UpYDjfJR2qgviZox4MdtK0i3V7GclhcGIBflr_fTQJTAEMCX8-5EOkvVPPEmW-K7xo_pLc_2kBOSp0FtWUjlWLV8H1WloRGpq1JqSnfwWVhqsWqyfIzp2AP03FavtPvSm5kU5BEX64it2aCAJ3sM5RJkAaP9lUUSgrd_Qd3z1NgetdKfBWN76-VXqZ0DeX6VeKn2CaVhBo_yGA83Wuq5jukeF75amwoH9l08LOJjkn2N2XAGk-aBWmLB82h6lTgb9py1a637kVcHXA-LFhG3ZHJO6BrsJUg40Z_0qqmMNlC6t066lbkA4O4wXt",
+            "width" : 1920
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115133164638703704547\"\u003eWilson Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXeWKjWc2Ht1p64jXdsz_FYSRLYTp9wOFAKd8pVmxrRIVP0MRZ67uBZ-jGFmc3CtW02V-5JVwJycVfDKgLg2cIJlyzc0-1kzXtXSLy8ouoBXnXR1K_FUUq845kNmwy43ylCQRajdlaUlEIkvuBWp1OwaTka5s0T63dyANMZKrj8dXqcuitCzdMTxrLey99wiiWKbYwEPP2zg1_IWvPkKAh3R8XXBvHopk_qJMBENVsXRKbzk8UPZ-i_jBq4Xvt2hwAi1_B9zpGaIt4XTNCI7cJqDgdcriB394Ej2K_0Ihkd_5D6aYwxr6H2bk6tRro84g_QwWYqLJprsxTHT3LKgvOYLh2O7iTH4FQxSElG6g2TzW3RAdmS3q0y-hOXrYuuaKwTscvGP0kemKS6BfU2Hksyib2BVvKiaxgEMUgUlfqSg",
+            "width" : 1920
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115133164638703704547\"\u003eWilson Wong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ukCjflTwj393VpzvE2YNxK3au5ohmPoJ0pT09LjbR0aDFh8A7SwxEPXW5YfdvBExDFm4DE-jCbELeR2lyABCpypvp7qN7MJJgS2mSWvFLjZ8KnnxwnD8svKIiQ9IkCkseCcrOfzm8pMI1l83vammOvREhd9XELy94Pyw921oHXJUq9x_uEbid_RuYOOjfbmQOtgw1UOPLo_E5_yO-MwgChC4vPbso4uMdJCAxteIrGYuiTTDbTCl8-QNaqDFYxaOSXZMfnlDAP8TGyKvcPjCQ-a_bwv5yUSSKewNs22zcYl5qNOeVL0TE90huy3v69-rEidrR3MHOj116kMC6K365Xp_-PpJ5dBoM5pQWbfcpQtHW8SESXY5djFBjVTXecQznw4ov-Pk69UJYtM9ULOeyYBMGJSSDQFGtlNy9U35kbdA",
+            "width" : 1920
+         },
+         {
+            "height" : 1840,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118331582795112413175\"\u003eTrue Jesus Church, Tenom\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vI8QkUmleiPFcQUEdbr7_H_cI8W0KBlCqel7uzhAGo80s-AevfUhcPyqfXLGFTzcrnV5NHBLluHuyiZmT81fbWqGk_Br4HmRDUD3QCSIrF758egQgxLPSTKmCthMPOayf2wwQXsuEvq0JuvJ3-HS8T09w3vhIRwrWdVjNdEgJklUKdJfNXpJujJGm7xg7WkW9Dx4WibbnZBsxztqAg882Zvly8PBZ93vDA3cS7on-9GmsjFejXyPG6uDp1rZY3PzGDpsIaNExG9RbhBQuvgIlbZjKZH_RL8157Kw2M1EaoQMc2f4r8tX5EhxHNW_yKRBPNzsBthy2IjDyE0-kJFNQM2b34MYdgj5VcACKtIFq5snYGPsDnEU2a7jU2yiPDPNNmezZT0XoGRYCih4IMbAVbnC1T5PKnpYcTd35k8H3F0A",
+            "width" : 3264
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107153868981631632411\"\u003eDaniel Fong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tMWyufh0SDBS331-CazRgcJxGSFP8RCGXOAp6SKfV98qqp9-mT7V_RiPRjV3hEUEcEgtultqxL_Ezh5DvVpWq3YgdbAp1QAx3xIQmPYU3R_kxz_wAaUZo_FkGSdCrp2LmmwQHAjn_DgcX7fR1abtyyMGvbgx7cdNK9RxEMDJZGGHhi0jEIZbH4Hj11lgPPoOdRRhRhKmb8yDxYTHtooIzoCRZ454lefxtzeK-IYIrXHpy4bpWmsqGsWlnV6lB8sWFVTrypd0G6TMjSZUcbd-uYAYFpG-nNeE-WFIJnorZUOe9-BWUlKIVgy_XpZHZs_RBCsNsW5O-pfpWiLyXtBVp25iI_rI23-gtaQZ-03SHnAOsw6N4mrJPVs-X1oeNa8oDZgCJa92qKytDnmcUDzB6Az6EB32-O-RWl_VpoECg",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJfQ3GPTMnPTIRH9qzySHSMmc",
+      "rating" : 4.8,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=7436236977301871135",
+      "user_ratings_total" : 6,
+      "website" : "https://tjc.org/"
+   },
+   "status" : "OK"
+}

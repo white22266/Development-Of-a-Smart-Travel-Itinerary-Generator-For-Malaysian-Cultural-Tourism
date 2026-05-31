@@ -1,0 +1,109 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "96, Jalan 2, Pekan Batu 9 Cheras, 43200 Cheras, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.0719947,
+               "lng" : 101.7678687
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.073360380291502,
+                  "lng" : 101.7691908302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.070662419708498,
+                  "lng" : 101.7664928697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "WCO Cultural Gallery",
+         "place_id" : "ChIJdVD1CAA1zDERhE-rWfPJWzQ",
+         "plus_code" : 
+         {
+            "compound_code" : "3QC9+Q4 Cheras, Selangor",
+            "global_code" : "6PM33QC9+Q4"
+         },
+         "reference" : "ChIJdVD1CAA1zDERhE-rWfPJWzQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lorong Panggung, City Centre, 50000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1414715,
+               "lng" : 101.6976131
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.142823530291502,
+                  "lng" : 101.6989490302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.140125569708498,
+                  "lng" : 101.6962510697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kwai Chai Hong",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105654883031126629144\"\u003eKwai Chai Hong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sW95f7YKGQJlT8Dv36Lu-7W16UnXiqsDHAx5ueiNTyzgP7UlT5RDbF4weB4TLfB7brniNFsSwu99Cu-nJBVKD7zbZqoZ5BSCH4fqGLA04iCxsqcZ-ycNUi9va_XyIdRTM-Kp3oDmm5QOz00u6ksGS5_gLG9sVke4a7ABqXY_nhw5UGOBoyiQAxHG2SUTDomcgg10PcUKYwg16qtWPGxEpg94LGYjQi3t4BTi6PCa3LHQ0QXQwUXCu9K7cNLHtGqqwi10LLhKzIXggHLC8pvDpVQOvmaWvAfFHrge3fV0nUWw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJAY0UL3BJzDERgtnOxJhzC8k",
+         "plus_code" : 
+         {
+            "compound_code" : "4MRX+H2 Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MRX+H2"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJAY0UL3BJzDERgtnOxJhzC8k",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3976
+      }
+   ],
+   "status" : "OK"
+}

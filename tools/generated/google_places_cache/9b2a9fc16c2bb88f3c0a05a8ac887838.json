@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "119, Lebuhraya Kuala Lumpur - Gua Musang, 27300 Benta, Pahang, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.0103927,
+            "lng" : 101.9593471
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.011751780291502,
+               "lng" : 101.9606991802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.009053819708497,
+               "lng" : 101.9580012197085
+            }
+         }
+      },
+      "name" : "Lipis Geopark sign",
+      "place_id" : "ChIJlS7pMQDdyzERwCVxLlJ_rQA",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=48835161914156480"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Pantai Tujuh, 16200 Tumpat, Kelantan, Malaysia",
+      "formatted_phone_number" : "012-972 7540",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.218620899999999,
+            "lng" : 102.1318107
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.219109730291502,
+               "lng" : 102.1328561802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.216411769708498,
+               "lng" : 102.1301582197085
+            }
+         }
+      },
+      "name" : "Pantai Sri Tujuh",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0700"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0700"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 7:00 AM – 11:00 PM",
+            "Tuesday: 7:00 AM – 11:00 PM",
+            "Wednesday: 7:00 AM – 11:00 PM",
+            "Thursday: 7:00 AM – 11:00 PM",
+            "Friday: 7:00 AM – 11:00 PM",
+            "Saturday: 7:00 AM – 11:00 PM",
+            "Sunday: 7:00 AM – 11:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115271824260427068953\"\u003eNico Lo (NicoSid)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vgt1oETPTn59w3TCQ6h1liWYqeyViFznS9B7VS03kGPtiHtOrtwRs10f8oPlC1B8DMY6Giq0CiYmk7Gqtz6gm-Q0Jp6Pz5JBnAd7LmdL77a-n8HB4biNYgaFVl8VVMBOytHsNAsplwlRgv5EjVbHg4FeLbuMi-T0j7bNP2Hre0DDZfbJsWEfaVVbRXgtqZVAswswO474-yTzdBtRml4SavqUD7gAEL8RUg_Mg2zT3v2e_gxdZMeTNPF-WBhfNDQx61th4odrxOf6w_JqFP620fIw9CZxGRV23AAh7SQxyRoUU60WrVRTLwsDan2O31anj05mvE0AcFnCGQjmLBzqgtzG1i3lVNTQzEgnWPHL1O1V97ldiM1GmbN_rvpPC3GrGC3AU4KfdBDhZBreAXgePoXEQC9hHSImvkOSSaREqUxzM",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115271824260427068953\"\u003eNico Lo (NicoSid)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-trdTRafWTYopQ5nJV1Q-AhotuQn0krgP3wr8xSaHdDrrOhfSIJbC4lTHKnZXZQQmHe39ww2jiJzIrFiCMIEaQlPsC7yad6XhNAAPlaSTO408_fnmuoeE-9LvGZWi6lsPlbPAkkMOKY4Gvx3Y1Cv8ARQZ5sSJ82_B-iUs3UcaRroUQcBmuIGhx6GgOs3eIpq1-FFrfvL3qaFq9Xub4tXS8RbLiC8SHOtMqssmL7An8qR3yjoFY0kCnAEAkoEPjt55LjtdQYYbiQcHmI3nqiefIg-uWfM5x1_jkWmBX7OCQW6WYQ1zJaY29hr3nv4KluxqstZXnlOUfkL9xSj7l9jMUVuoBzUNZP0v4mIfsJhoqkTRFxoiMP4_ZKjeTgz4ucRCmj6G-bQNxZEdVrpyX-tQpVsRzp_hI7kn-yxwlkelWbsVqk",
+            "width" : 4800
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106722453256352568286\"\u003eTonyNg. my\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-shD-uIBQOWDFE0n6yI9FixYzIe52Yk9tGv9QGtZLy-wQF2P9HeuMMl4CCBeeq1Wz_h8P5w9HFW4b43W37xfTces-Ay9Vvzug5A0S2VWycmbjvPlO5Di4BeIs5zj6zGaJCs40nD1_z7VzFHmCoGAGRseBTXpGQSQeHrU12Zi0oYY5bxZyjRLcOWYz1vOTPfBNcn4rSZUldOeTcrwcB6tfos9jFPAij-naeiXoVXdavDy5ODSmEpfbF_qK1wXW-JfiHFbFT7Bsonpm4qZ1L-GP5t-RW5UVH8hHvJ7YjlgmojwRYtsSP2G5dZn0JorBdLH5rJ_fyMF6kBFC9t-cku1HXxwoy4EDB4MbBNB4wM_br_kSQx06uYReL77xncnToya4IjCaRPMDZNkwEC-7TtHoOLQhDtGhhyA2eD8UFvBtTxaqk",
+            "width" : 4080
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109420451129488808322\"\u003eMuhammad Safwan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t8_p9vou6gaq9ySO-N99x_vXUMlct8fgMcSsL5Ff4zngRql_HMQ1by6tmz1zjG4DGrNhYlG961xUo-ZhmICFtwqDrY3w4n5UrYK9jZ5SIBY7eDFDkEaQUWs1mq71Z-p0bVL-U0QorJKPBZrauk14KwPubwqzJJAqiX2YwyxQiQjfINy4UKZPyaWexBmaMATBXlY92DlaPqwgGhDqAPdLoAMBX1d62bFjDlm9tJlYAjSs4Kl5kIzb3z9NeFjx9HUNe2-bGtJI4dW_isyy1j6O0vW6QVqWglgamqldUPmAjCtzSz87HqyaUiAYwLogMW56auuXf0YeTEazTw4p6JRVRlElncug9w7S15RTGQPsf3lcF-pdtblRgBxqDYfvFXO_pSbSsTPRsz7bxC9X9v4md5he_7CBOSqKZezqJukINKCql5",
+            "width" : 4608
+         },
+         {
+            "height" : 2250,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103028605543319566086\"\u003emohd sabri\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNychH2t1M7kjUiNAVyMSR-lA_4YjopHviUOzXFyMQ1_TuEi3-TXEcObRCo6OxtVTZT_UjV_pkR0fL2R8UCpT-_EB-kPQxqYTv9IKyWFTa_ZKbuUcrUu9D9ftX57GrQN5r23R41EB9zf-6dZEDJ_JZovJhLsj1Ty5PGrKaTALLlgq46S1POP7ChtOYBfDRUCAqQibauIcdSdUAUDkMZff9p8QCMITNZDxdQMkMWrWDpefhVyq6HfsS8lY0AxEsvwqzlofe9fWyDhjGhA4Xq25SwpUIuUCUAlHd13qNZmTO7YOqMZkHkm1Kb5RIM2IDs7JctDUpOeg4MGBj1IQ1f7eejyYalc9-_t0OCfR2aY9g0Pz3oH8OsXy44z4azZN7zfdh6HPqDeGLTKPKV32lk7TkAf2wXwYXHTHC9N7IWp7ZvQ",
+            "width" : 4000
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104189790278451238182\"\u003eWong T Lim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v8TAF9T1OdivgwAwl3RkagVtGiETLlyEn-_NrsPfXPRVrmTiWPL3TfUR3DxI7gDLnB6BKPDLm9Sh3aFaeU3jZIZs7nzjfqKhZVv0EJSaMOBa0etRqtcUQnQt8wXd5KGInIW3HivcLU7PHhkiI_0EtNa1sFMY6kkIYWzcloxXHfvwdjTZxFX81WfblJ2AAcAFCw_QhqMdC82nKENi27uI5ddfRncTfGF1z0qzNTLngVUqcLpUMnEceismIT03S9LyGZs333Hgb_2m3A56fg47Z4b97d9ZJYmnp_mdTLPpz2dCJ4Wf9L-G6bv-6pL-C6YiLd4adet4OSn0gSgVPz4X9KV5XKNX8-5PJ69x584tVdBReMHxb5dUuKOXfNETTzdTJMuJUQgaLLm5kEHRttSo3X2QpLiv3p5LKjGdS13pdZ2Q",
+            "width" : 4000
+         },
+         {
+            "height" : 2252,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118092511448231516268\"\u003eEdmund Leong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vD3JacPu0v7LP_j_AA_FtfV6fhFHjcXZwRmAm1wnU7PQlOS6zrXcEVr0tdeaibbLpEps7hHRmZxIeygyPLFU7NYFBWwunyK2kKML3__FX-myndgRMXY3dAjRUmdG62K7NtKoIQYm8Q5Zy7LjY0PiZA8dHCMNkjPXSuj54y0dHiNZMUEObvyGWs9CpReFETyU4RIHIVb7yZxVGKi7kJVFCMrxfHFfFQ5ZL1HEyRNqwVNjTRgEDEu8uW9tl8LsdMsmZ9dE3Evl3AvGjme44bR-x-2WwI5zx26Itx_SklEkvkO7Ph0xwRSmMYOcjHZPk_8gN3wQPcSy5ms1BomlIFvnR5P2QP7Br74b3dTCR2XRfv2_wIaR5zcDV5NG50BmVV2kFGy0hP-ClUmKYTh8LoTcND8vTFZoKstERo8YDmGAPOR2Alzc2AYC_l6v354g",
+            "width" : 4000
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106624684465031024842\"\u003eAfiq Aslam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u1qomkCsvQsJFGLnl_SedSRUYrC7jAI1Ar6oclZ9s11pklhEywx2gxX_EHRD0CPrR1MXHVBmJASxLweZW9jDt8MmY4tbCtfwgbfR-3PZK_AGJKnf9Tyw3BGVKhrdDFA6GVPj2AyeyWA23gxnLt4ejXW13lkV89qo3QO33TEW-VjpecIYAD-yzs7keYQfG4A--tL13xI5fa1n2Hq8RUPr2xDYpI5ll3RBkaJsNf12_fetjxj4GbC7f0oAKU6beA6hHIenN4cBrdpmHGJoXDRvKJoeup5ksByMQrJ8nvNWLp2puG7oDhe9I6-ivQWFVZEP1G2PXMr_Io6phtpJ1zBBcBwa2HOcIqJLKj4rTnhtnGtrDLJ07yIAuF9G0aN-pMhZjDXMGSTYcI74kEBB6IuJXj_oqePr-vFNkhMfi2zLSEWeLg",
+            "width" : 2560
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114992519760987267862\"\u003eHalim Pedrosa\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZ_DDu3w9juvfPjvbd63buS1_QZ99mLjdf21hyYO6MHq8wpGit8yaojWf5oMG2DzCF75CGP_YClSSphOWOHxWqb56xMB8VT9PoItn8XPuEZM0v5b9vnEBd5smmIph17ZeSaHNk4RZQ6vh0lqz0KAwAdJjtOunGibeKaCgsvvgUMcZmHkOeo_emJERVnTEe3cYdo6y9cz2KgbRlBshF7WjBd_bav9qmxtLqdnIq1ox34cDPfemxOZgMR0D-nrA-7BlRSFjKtWg5prDwgTzfv-iRtznZ9aKMmJcTFMD00MTf9Wky-D_0j3I_0j_a82c5PqWUV8bAbd7-5irfybPjHmj54fSUQ1MdtDS8b1U4pNAnzvHtjHlJ_ErntDas0uH5ph6tTIGcJEUP4YsQ1JhhPpyA_QTGer33PSOgWHTLVvU26yuE",
+            "width" : 1080
+         },
+         {
+            "height" : 3060,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117168447824935412793\"\u003eKHIM TAN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s07U4EpkASdZ4yZZl1Opw1i4b1nqonPjLaXdulWisS8ZgMu3JeAg2vHughQIovDvZOPRhpsAa3puReett-bz_hdVbbylAt5OyTAU9HlEtdgO9MXyz4fyhKz2R0uCo4R1fhfc75a_UxLeKH3-miB3IrRO5AmfX7Rzi9RFszrmAiR8tz_NREk_tcA6Q1VNudHzb3tR8n1tyVt4oRIKT_cqrnLD_MWtk6CWePewPPDzABQswZaUC1S-gh3clL5iMnyBJgQFjghjB0Z8IdVtJJK5SdD_XMWbs5HvqDrFrMy1fgZ80Y8MhS8Iw0_u-ReZFlDPlJB3piqWtSl93boHcMqVqF5LdytXEzNXM7Pp85g26jrh_kRMYcEXGLUGHOMTfQk7ALUnXtRn-7FbVg4H-tdsxp-2I5O-X7SpwN2F5Uf_e1sA66LYiuxRuVwAWixgZo",
+            "width" : 4080
+         }
+      ],
+      "place_id" : "ChIJgYsvxq-rtjERbRNNcsNTM5A",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10390740864175248237",
+      "user_ratings_total" : 561,
+      "website" : "https://www.malaysia-traveller.com/pantai-sri-tujuh.html"
+   },
+   "status" : "OK"
+}

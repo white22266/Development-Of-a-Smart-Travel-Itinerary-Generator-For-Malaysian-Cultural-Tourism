@@ -1,0 +1,54 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Projek pulai ari, Jalan Abang Sulaihi, Kapit, Sarawak, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.0174574,
+            "lng" : 112.9324995
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.018746780291502,
+               "lng" : 112.9338689802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.016048819708498,
+               "lng" : 112.9311710197085
+            }
+         }
+      },
+      "name" : "Masjid Jamek Kampung Baru Kapit",
+      "photos" : 
+      [
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114061209664973731218\"\u003eKHAIRUL ASLAM\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vFyrH3-TgtvLipstz7cPmkiwS4k94dwLx1JezeqXOyvYSiyrvGqx-bJblf2J0V1hp6q5OUz9fTVp0kP9gR-oTxgzzljqckkAnAKYPTkqzjZQU-1rgUsMVbXvYxDhNwE3-g4dPQjazfthWez36XyqWdu-c4gxSTyOwpXY-TBOIF8pKym6iOdQ7OoP84uKvjKKFzb4zront1DaGOXWAnAAw3ZpwSjTpFcm3oGblFGq9hHS9nEGV_uIj7vkO9gjghJrGkIht29vmhV0ugaaytKsw7RvnIRbn_fkhXT0_BK6HVStqxyAR2yPSFqzMZnexrVwfht8u6kI7-qqr3iyXWZu1qQ2Mceupnqd-ZoSoeqclwOuCmlNjABmVvIWt2QOXE_ebKgRI3zq4F8hCkNYQ7PP5g6521zwZL2619DEUeRTLGKVM5",
+            "width" : 4096
+         }
+      ],
+      "place_id" : "ChIJ1-G2CCS_AjIR9WLQzWjmmtI",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "mosque",
+         "place_of_worship",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=15175695232182280949",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}

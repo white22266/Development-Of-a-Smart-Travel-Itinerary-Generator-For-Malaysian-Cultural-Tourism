@@ -1,0 +1,1212 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-tQp76j4Na7bwnkURkhRKazr_SPFBvJyqibtkCHw0NsIJ3v4GTHgYXgOHYG58SLzIlrkf1iq_K2Qg8rnB78vk6o9EVqq6XAqWTDmRQS_dcKPG9oUUcVaues9Rc6YrnXmeyueUysep_BSITeLs9CGnCVkx4JvmdFvGrHJHYXi_v6gnmqJThUFodJGMW6sEVwM70_wbWMoo-H2UXNvbPP-Gw4a4SWJDjbPmhgb7LhDkfeL8eYdDvRD_TBjqstlFeOSF0lCMjhs7hFLzGMmPEiATPi8wvFzBf5pitcVcQKIDpki8bHMxK-0WRdMFS5pzCQeG3qeU9qUJlB-BjbV-adcyidLdTcYbta79yy7fEdBEUv_JAa2lZL09fsHlt1a6NdxcJqrRv6CfNnOwAArGvTv3ws1uWrqTNCRWBXfCceh7hhbh1ZjRTvbk2yV9Rn3VW4S6FvrSIWvz_kfDHv2DIXfil_Czgi6VDjcUA9i0r7Q8R18yImgbM2HOKWH2RH0FfRlgrzRzPUS2yDc0p8f6leBaaMSVfFO_5f2vh0fBtjCFwilMY_ZrjMNllETmSaEz7KYsJyG7DzNh454Y0Vl-lPLHv5_MqjAmTUY0cJfXjebwP78CurRAODuMKmfDhsPEMT4PV3H0WEpKSmGK8as7hPyv8zRYTmoSzO2aaimTE6wW296o3vHYluCqMoI5olxpQ7lh44D1KHFuceTzVQGKlnK_k1FTh2v6sJtoyCOn0o3YFPIN1cQ72EqXqZAA9JDCCp80JxA2rdv23R-fgOPCFqkoUbJMvLSAPWEXCZFX9XhD6W03ivg7oA08js_4KEFkJMswDRzVxCJonr",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bota Kiri - Teluk Sena, 32600 Lambor Kanan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3288008,
+               "lng" : 100.8883515
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.330138880291503,
+                  "lng" : 100.8895586802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.327440919708498,
+                  "lng" : 100.8868607197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pulau Misa Melayu @ Kg Kepayang, Bota Kiri",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104504404759877736502\"\u003eKuroHanae\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tbe1jmNpJra_DazEEgxOMXPZGOQPdwcVn4yZAPHkrWUMXuEGGlu-k6zHgFoNsHnTUu7MKCEtOvFcT426fn7dD1pYbDLdncU6WxHsGRmBgei2oTZexSC4MyBDG2h4xdS8CxYTZLe1EPkXlxPhAEaGyjPgE-vHk0__TaEl_rolNcvHowO49nhJrA5rKfV6AFMzyN4uAO-qXoe34f4Vy0XM5tiEBRA9Sy7uLH3la3Mdo8TFsHlM6nkJcnuPWOYdNgEUn1h2aQQI47elgAEX0Qdzy3B16AV3uYD-YP6RlDB-PA6AmjadSYQr5vIJN71xHZFluJm2-PKSDPs0miUQQ73Vgi01MPpHTF9eUdDk1UGVDKdwwBZNRKoyYPrOF4dFgdpEYWEf49o4BdGXGTMMabGJLX6XA_R59ysTvUcTLLNZL8tJ26gz1h7ztraR-it52B",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJp0nlBgLZyjERObOangwaADE",
+         "plus_code" : 
+         {
+            "compound_code" : "8VHQ+G8 Lambor Kanan, Perak",
+            "global_code" : "6PP28VHQ+G8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJp0nlBgLZyjERObOangwaADE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 85
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Bandar, Pekan Teluk Intan, 36000 Teluk Intan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.0252228,
+               "lng" : 101.0193968
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.026441530291502,
+                  "lng" : 101.0206764302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.023743569708498,
+                  "lng" : 101.0179784697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Teluk Intan Leaning Tower",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114567827656090907885\"\u003eMenara Condong Teluk Intan / Teluk Intan Leaning Tower\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vm9qN_exIQKrmf2LXLFO9X6hwTP37wUid8tLHdx2U92XDx8fN8G5imlzOiNce5DohraEZVKdyoWa_d8PZCCqyi7yPsCsFj3EwdPokTKqDDk-l6OhAtX69eQEFtQLznTdnZCHbTlmvjPgxtnT3zUD2mrX1z_yx6AzTJQAX7zFl3viHhpLblvEn07Qp6lXG8sgsl0EmJGrlXA73qgdXfSv9-mbdI7avXSbHq1LI5VRXCdbHGbdGjRcopAHU52h_7QXKAnPjkSZnEbzYtWP8jmrdu1OxvDt6RMCvagiI4yCLaBp0adsEx834lPtL-jkE2yAE7W0TnlfRRUJuOFmzcHzgY1ZbkAAdcFPXo8sMyN7uodBqnDeHmbbYidgdOchdjPm-0PHP6np1COUX5Nxpn6BqjM8ZV54ZoEGQ3DigMGSU4_q5NnmMyXTl3oZl3u30n",
+               "width" : 1344
+            }
+         ],
+         "place_id" : "ChIJTz0EugQVyzERdvVsShasQgA",
+         "plus_code" : 
+         {
+            "compound_code" : "22G9+3Q Teluk Intan, Perak",
+            "global_code" : "6PP322G9+3Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJTz0EugQVyzERdvVsShasQgA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 21252
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 48436, Kompleks Pelancongan Kellie's Castle, KM 5.5, Jalan Gopeng, 31000 Batu Gajah, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4744585,
+               "lng" : 101.0877699
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.476228380291502,
+                  "lng" : 101.0889689802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.473530419708498,
+                  "lng" : 101.0862710197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kellie's Castle",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118186141807918535635\"\u003eMohamad Affiz “Majin VII” Che Ghazali\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGkJfKnU94NKvS2DZXih6caoZVvBRWWlCvjY8Amw9htTyHSCwuevFtl3qr0pqp86y-OrWBmmGjTTPuK3wxGvaaYnKyuLoamwy9u1brZZkoe7hHljW9vIzzQRxt0uruZ4AErQJ4EoYZ_y23-Q0PihTsLYw3imCL9kUWY-B5_CIOMgM7migLsb6V2ZkS25Dzg5mHlYECc1NZykn7tmLicxksLneB_jz7hoTl_HaDlRpS1cIODpwvX1AT9Y2JiWJDlmhhYoZLKIWDIVuhj6SGvKyd9zvSdnkJU01LpqGKWxl-PT-HCeiJgTjP-NM-E8gOgA9EFXiczxC1l_krXtFt-nsCfkIuOwu8CB4ybyEWwVZExfSttqivJJlS2Lqda9qO9ErloDf_ALpzUQgYyWBrssx1QCo9-wAPUeP-I-2cT_WpXQfV",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJqXqBeF7vyjERuoLNbn1cvJM",
+         "plus_code" : 
+         {
+            "compound_code" : "F3FQ+Q4 Batu Gajah, Perak",
+            "global_code" : "6PP3F3FQ+Q4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJqXqBeF7vyjERuoLNbn1cvJM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "store",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 14933
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "106, A188, 31550 Pusing, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.514713899999999,
+               "lng" : 101.0120083
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.516084080291503,
+                  "lng" : 101.0133947302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.513386119708498,
+                  "lng" : 101.0106967697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Papan Heritage Village",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114246159604331627855\"\u003edan_dan ton\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uMYDFkB8XSGMRz2QbAnFmXcW1qZiMwCa4zPgRT31_rw20HPuJrfOkq6qagUoBXI8fhG2LhXHDJoxBrJFJyvFV7Dfc_qGlW3G6XMsrfdMM0ibQuXIZdr9dwRN5yMKPkZ6j2n2xy6hP4Tz-dsDWqVxMVcg_NCVynpcZ0V4Tt7OqJUbDlIK76s5TNjfZ89C3vE3vXdgNOAOreu5R1F8XlzFjNiYTw0q83hHL0rtBVub9P9GeZHJJr1yu1AeFK_rzvNzXGQCWckx8kw9Oi5Pf6uOh8SJcDfMYLV1isrbvFnwKCe8XclVXmZmUHEdEetZDrv8FiVs6WKTatWt32iDkO-LNl3aOXeeLf6I3jhBt0RzLz75bFNMuXscmLPfF1nL2mlbfbioq_sXeF09rOblO_RI_e5k3cPrgaGz4xSmtMwZz5N-wggd961y-Wu6si516S",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJyanW1EfpyjERsBevNVAaDO8",
+         "plus_code" : 
+         {
+            "compound_code" : "G276+VR Pusing, Perak",
+            "global_code" : "6PP3G276+VR"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJyanW1EfpyjERsBevNVAaDO8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 261
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kompleks Sejarah, 36800 Kampung Gajah, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.173149,
+               "lng" : 100.9470529
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.174413730291502,
+                  "lng" : 100.9483010302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.171715769708498,
+                  "lng" : 100.9456030697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kompleks Sejarah Pasir Salak",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3204,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102515933426049658302\"\u003eKompleks Sejarah Pasir Salak\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t7Ygki3_VmaLSDwHjzjmdSt4gxlhzHrFaKmqqMeSFqo0f4knCJ3yBC_SSUclEKtrQAoWVo6nRHYwzsyvTCE9iT3wEClNAQjH9-B9TfiL8irGQXula1l8k3WmeHR8jqRpJVYBVB_Zk7UtO5c5QgiPK22upqBlYFP7DrPSa02c_0n7dOxglM4lw_bQKYbYc_ikHQxDPdtQRiGZLhumi5UBYo4yP4ngPydArq885rZiWxH48iNyXDmoRRr2Q5XwfU95AzHEIHw6YROoVKu5IPZifLJ8GVZInSYa5SnIKghmpr3A6_sHh37ggtZE70PGxs9mV-wcPhfDK-IqFwVNOasx9H76NCdDgxEpXe5IkQoyXvUqksOoEvSeQHwwCgO9R0HtBVN5PexD3xqmreoWJCXXve8qwyAWH8H9C4j9U45dA6_w",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJW5SovoQjyzERlgdalu0v2hc",
+         "plus_code" : 
+         {
+            "compound_code" : "5WFW+7R Kampung Gajah, Perak",
+            "global_code" : "6PP25WFW+7R"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJW5SovoQjyzERlgdalu0v2hc",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 324
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "63, A188, 31550 Pusing, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.515248,
+               "lng" : 101.011362
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.516573130291503,
+                  "lng" : 101.0126712302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.513875169708498,
+                  "lng" : 101.0099732697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Papan Middle Alley",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3464,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114418421546919566838\"\u003ePeini\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vCcUOSLsobe_McbJKDlKHDecjyKQsvYcelTto4gv0rsoFBJySrd2KRtNLeW805Z-Odb6QZc3ZLuMMkZz19xu2H-4XpqHeMLrJIQyls6S-1axfze0pe8AYWqgOG_hs1S5un4-3KK2nbtmm18svdl5Lxi23fvV-YrfhN6pISO_nGM90W0P2FfF5DDuaM_8Fvw-5NzgiK6kFAw-R_vtLalzu9OQmj175b6IDcTA2l0U7Sad2ersxEH2QeNKvIMsXqHxd61t8w-laSZ_C2Z_4MblZnjPIow_iOsPLf9I9wODZAxBNJI6zVyvo9u49CbQ5LL6zqLrxqSV4R4SNs_TvQbl5bILrXSQI3yHEw6N9D00ry1CnkS1RvfpKM2H_kNNNtwBLwTZah_gVstn6JLK_LTu-WV8xD5r4OrA3jr669uT8iX8zY",
+               "width" : 4618
+            }
+         ],
+         "place_id" : "ChIJfcYLM8vpyjERDYOCGASbqEQ",
+         "plus_code" : 
+         {
+            "compound_code" : "G286+3G Pusing, Perak",
+            "global_code" : "6PP3G286+3G"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJfcYLM8vpyjERDYOCGASbqEQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 49
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "22-24, Jalan Tun Sambanthan, 30000 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.5977502,
+               "lng" : 101.0784301
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.599108730291502,
+                  "lng" : 101.0797461802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.596410769708497,
+                  "lng" : 101.0770482197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Timah Explorer",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3204,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108151237149590319736\"\u003eTimah Explorer\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uqJK_nIpihMRJo0EhM7-ShiBjISZc-G-cqPbiYYPCilnkABlz5Oz_3AfD-i7XIDvCq0L5fuJE5vRsrrDaicyMMpaX4wehmoDCsydjPyt1uD8rWz_hu3ANStiWENK6wUIC4efn5DK0c9NuG3139jCJbAbbbvwphlntVTo0-yyEL5V4IAtcS8qfrlg-ma7aq_PIc7tlWGpGq2H4KUt4G-t-aFSXWAAYv6bkbkHWjMpHhClOoGwRHvamJTdyC2hPBX_fy8rdgz_o0DwdG4ccGk7EcO8-XThR-jj2_qvIMu90s1STlnNnjiv4mxVbCJ75zaLweTRVLOqusdFneu10fG4w4pg2PFcPQwOYxcF7JkJ25d3QjesVFvuyoKPWUREFg-hTEYsYifAXeMcjdoXTSD2uL-YWzZfWAR4CGcVM-m2cJpTT8LmoPqYcP5X7eFqoF",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJdV1z9ZvtyjER4w_-Z2Lz6oM",
+         "plus_code" : 
+         {
+            "compound_code" : "H3XH+49 Ipoh, Perak",
+            "global_code" : "6PP3H3XH+49"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJdV1z9ZvtyjER4w_-Z2Lz6oM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3, Jalan Bijeh Timah, 30100 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.5963007,
+               "lng" : 101.0790465
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.597622480291502,
+                  "lng" : 101.0803431802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.594924519708497,
+                  "lng" : 101.0776452197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Han Chin Pet Soo",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100822289094074813781\"\u003eAmber H.L Chuah\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uYjrbN_YjZ-3Uf12vB3ZdR3WZ6GLhsaGhLe-HvtHcbZEwdXFNE14l9o1H1wQHgxIRZW178J0QTEuB95vgPhUCGFfFwxK4ahNrehqeLYOip7NX_2vj6baC5jMQlSvef5y79d9cMF8X_i_vxuA9xY1JhxYM3rYYJLqSeor4zlXwYbWonXJHkMiN1SIB8TKtEai4BNHp961Ll8qsyI1zhdEAkBq7FksfiHSAVkarBD_txo2oMsb3ixUzzF3KNjWklJ8VYuEu-jsyEryThTisZXpuMD_wWe21oxVqokSoJ3QYX3pt6BT7F1_2ZhkrqzrzP8ab3ANJiK23P5A12lPtrcIsbVOOJqhl8jxYotDwbXa82SVtTQlWrjb26VRNs7p06GVgzDgqU5zoRHC1Kmo98K_6F2HKEv3Zoy6bWdg1dFV9cOA",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJ79sYUHzsyjERtPkfWlkqPSU",
+         "plus_code" : 
+         {
+            "compound_code" : "H3WH+GJ Ipoh, Perak",
+            "global_code" : "6PP3H3WH+GJ"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ79sYUHzsyjERtPkfWlkqPSU",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1123
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Telok Bakong Hulu, 32900 Lambor Kanan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.2989118,
+               "lng" : 100.9023475
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.300234130291502,
+                  "lng" : 100.9037396802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.297536169708497,
+                  "lng" : 100.9010417197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Padang Koba Telok Bakong",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114008619194273700150\"\u003eAsmadi Muhamed Redin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sTkcaGsUlBcBsj11heXcJ_TbiRjRXrlcdWW0dLi5Y3ydGIYiOEcOc9jrcSWOnq2331x1nbdYyZBt1qJCmcgyggV58zbu-zaKeDx-5AXSTvoMRl5pbCKtRnMSrHNw6BYVMwcVW9Z4ys-9lC3khIoDQuTbeglrbTjd_1stJmOYtjV6rVf-6aY9XnLZ13CzBYMW27kEkdCul6gTLeVmC30_vgK_lc1DvMzhZ8XMHRRZjmTv89E032gfom8X5DcpQCHdI85n3-DuMZQh73OsjabYCBVHOZy_kd6B0yXZ_lIYOcxfEAATTDo1uHZPHsCFCFSjG4lkbOmwjiJ7fR-5nfMJ7nF74Y9X5WpJBDPsSti-OrWo0URWWMmf0vwWAF3KLRONF9S6YfBKN-cM7NwbfuSBnqcgniaRBy3L0Xz9P_7jvaQNar",
+               "width" : 1800
+            }
+         ],
+         "place_id" : "ChIJlQ2ND7ggyzERwxjbqKm7RBk",
+         "plus_code" : 
+         {
+            "compound_code" : "7WX2+HW Lambor Kanan, Perak",
+            "global_code" : "6PP27WX2+HW"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJlQ2ND7ggyzERwxjbqKm7RBk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 129
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "31650 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.5968149,
+               "lng" : 101.0761305
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.598030330291502,
+                  "lng" : 101.0774663802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.595332369708498,
+                  "lng" : 101.0747684197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Birch Memorial Clock Tower",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1152,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105571765415954843204\"\u003eHector Seneviratne\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tKOPNwiITH0GgYPAPQ25b_Cz3YAqocC7dbRyD7WFVrlbMYWITSylYo1wWe7-Cy4R5NYPEZgdS1xDqCkns2vpx1yj1bG71VAtalxm5403rf1zqHLS_LIl8La_48dqCLih-yyON2spXvkIMdty0iJ7hvmViSrTryV2Ponb8AoK-_YpP_V54koNl7m51E1TSgZkBCXYCJMCHsXa8_K_JotdnyKbRAsnOBZG5wu8NqRxisDa2JM-YEMA0GysYMvHFAP2w1WJEJBLmDkLI0TqNFqvFcXuNPJpzn84xN38hJ25nIv5w3C59tF5Q-vuzfpSM286CFulMqR37tvi6H38BY1l42bcQMds6k6X1qmwlDJEqUZVFPbI36qAoPSmT-7Faf81zjxRJE3vEFmV9j2iGnp8APp1MrFdX0X9haBp5fvc4",
+               "width" : 864
+            }
+         ],
+         "place_id" : "ChIJYWDeh37syjER2RQ6KJeWypY",
+         "plus_code" : 
+         {
+            "compound_code" : "H3WG+PF Ipoh, Perak",
+            "global_code" : "6PP3H3WG+PF"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJYWDeh37syjER2RQ6KJeWypY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1305
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Room 1A, (Third Floor, Labrooy House, Jalan Dato Sagor, 30000 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.5967829,
+               "lng" : 101.0765612
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.598126080291503,
+                  "lng" : 101.0779352302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.595428119708498,
+                  "lng" : 101.0752372697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Heritage Trail Ipoh",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103512752006601248944\"\u003eTeenaSanFran SanFran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vt2DUL0M68NxjH9XOaY7BCSDp-K3onffRGhhcgEAnMQnk_tjVydkvQwlgEfnB9mxlA6OWBsPS-5wHWJ07TrqAQ0AxwuXZzDk2zLHCM6PxRcYu47zCzme0YhRy_gsxYpvi8sp1SV70mVVwazKtc5BnjncWaJCTet8BVLuWoKQ8z-R-4D4DRewFKaSlXOFb0g7ctS_r6D9IId0A9_Yur-PPVHI2f1CmR1Os3FTTC3kVtJhUSx-yza7W76cS4X3mB_VvubOjBwxyOHiYDykfGF9Sa36qikK7XBXzCG3-oXKnIJbXPQE7MmhvlOyPSsRTaj9L5v7EEAlSR9DqnCKo8OJZJLMHAI0rzJaMvd0A74gRMYX6-laenJ3JyLyWio0lJqNm796yVnzyxTKAMBytMPFNApN7NMpVPjH0rYj1oRlhUti_vqgAZwTNXdb2Rlv9J",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJGTyiv5HtyjERihy5MjG0qz8",
+         "plus_code" : 
+         {
+            "compound_code" : "H3WG+PJ Ipoh, Perak",
+            "global_code" : "6PP3H3WG+PJ"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJGTyiv5HtyjERihy5MjG0qz8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 116
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "70, Laluan Rasi Jaya 8, Taman Rasi Jaya, 31450 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.5735728,
+               "lng" : 101.0341395
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.574917030291502,
+                  "lng" : 101.0354877302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.572219069708497,
+                  "lng" : 101.0327897697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "万里望文化走廊道",
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110435826083202874790\"\u003eChooi Ling Sun\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tguusS7leuWNis3v33qUOCtizPSpt7LU1088sx0DF0GqeFTIcZZaJYzxSQaMQea3NVbWk3A4O4J-4BXldKqtScS9ViwS30GwNb7FnT1s2DjOsrFyzobE0wANCU2HlyhOAENHN3NNHp6X9uCmn2pcPJGj-SnuugBitDZUMohP3tg42sWw5BY3Xdm7HQnv8jG5JGkp7Mj9-pARCCBWmx9yMQxtV_3M3cuBpDdVUARyPvJxYnhPyV9BYueL_vXYF__jW_ILZpzMXcY2bFuYlb84ZKBaeKlPF4lA5kNRhZUYXFvaWSqpqDRkZVzY09YzUTLC2rimXtclXXUMWFp4OwnPu1LZstedMiyvW6stE8S_y8gCSbsBjzhM690zOuQd4fhyCMya0rWH5xfYseNZCjid1ci4SCl7zZFgcHpUKNa3k",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJIUwaxKXryjERRm-3XwJFxQo",
+         "plus_code" : 
+         {
+            "compound_code" : "H2FM+CM Ipoh, Perak",
+            "global_code" : "6PP3H2FM+CM"
+         },
+         "rating" : 4,
+         "reference" : "ChIJIUwaxKXryjERRm-3XwJFxQo",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "K6, Jln Lin Chen Mei, Kampung Koh, 32000 Sitiawan, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.1962192,
+               "lng" : 100.7002144
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.197673630291503,
+                  "lng" : 100.7016267302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.194975669708498,
+                  "lng" : 100.6989287697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sitiawan Settlement Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106051825357860800121\"\u003eSitiawan Settlement Museum\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4PQ08jFJ3IVlmHVZ2RQxwa-AhMpBJ7GXbwrYXnXsN7NZbC_UIJQi7mQ4Hgbr4wEiOSEVCW_b8aJQ0IGrsWvgfXrgr03jIRxcSlFSjWq9ES-tFahiJaJLeXukFXtSXq38bqxt_oLXgNdcRUcO-gSqswKlXx2zTVcMOzbNDVJTbSBpLxDQh7HEihurBdQ5VyJPr1bB-5EukuyGiVhGApTQL026HFcAgCEKlYuRRxMRMVc89a_rh-pLx6dXqYDMqyKGYewGqGwrv5UsXFxqQsUuxO5u6Xzr86tWVLmXh9tM8SQ",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJoT7oO9ItyzERYCKaYJeEsJQ",
+         "plus_code" : 
+         {
+            "compound_code" : "5PW2+F3 Sitiawan, Perak",
+            "global_code" : "6PP25PW2+F3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJoT7oO9ItyzERYCKaYJeEsJQ",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 473
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "23, Jalan Panglima, 30000 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.5967461,
+               "lng" : 101.0782954
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.598061030291503,
+                  "lng" : 101.0796033302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.595363069708498,
+                  "lng" : 101.0769053697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Time Tunnel Ipoh Old Town",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115435766872919300359\"\u003eCasper Liew\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-spFPy5ot-_en5rtEtexi-jA_seFiT3T3S_63j5ZXOmBPbJabBjNSEl2d_2qB4NKl3wYizr2vxoefrR1plHPSPp1GXAdHM-295jUycMamt_knI5ETmJvurk2-jx7otISDBJAktKak24agXPUyUPJI3L7az3xg-S_7lpUnEnWPZjs-dVP2M0MOdJYayxpA6qsCe0IotX4KC9r6gxXPtp5_9GCEf-SfdGE4SkGdV3HoCIycqQocVWjvRI-qVMutNZ4gP05OXgL55_81G-B20tmpB1i1en2xp0WeuqOfUjuorJU6w3sZgubK-N56rj1b4MJOQMHCZvMazeYMNfQ4CTcBSauWPt-mtwJuBcRyLbDnEv1aY_-YRxmKK--z7hAiuG9kXeLj86i5ncz2U3GCSjOzeVlzEzPsbVylv002c9-uI",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJacrLIlDtyjEResJvADzU6Yo",
+         "plus_code" : 
+         {
+            "compound_code" : "H3WH+M8 Ipoh, Perak",
+            "global_code" : "6PP3H3WH+M8"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJacrLIlDtyjEResJvADzU6Yo",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 148
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Muzium Darul Ridzuan, Jalan Panglima Bukit Gantang Wahab, 30000 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.604564,
+               "lng" : 101.0780859
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.606119830291502,
+                  "lng" : 101.0791215302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.603421869708497,
+                  "lng" : 101.0764235697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Darul Ridzuan",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100439627432138335365\"\u003eMuzium Darul Ridzuan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tjLvlOAYSgHAvR2DF_yWrO5lvSVFttykWKBQ_caQJ_iRlbuI_HC6zAFeuZVgbquXTo0IenbgUVDD4n81FOU0nWwxMNWdI3Kk9X_jNIqA1h9ViMOLKReca_PjELXo8bRBHKAkGz_PwSD3QuFRYlO-0ods5z_U4vMzP8gS_5jA_0KRze02tdBwY3j_M9x7wJH29Lfh6vrwgjYd2b2hG93KL6FlVHcy2JMXBFOK3_ycmPvgbTmsvXeKL1RiZJhyWQem-l8l8yGS3roACYlaqUa2BSEa9haRqGmycEssaXVcu61A",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJXyLL1YDsyjERT3PtXrIOy58",
+         "plus_code" : 
+         {
+            "compound_code" : "J33H+R6 Ipoh, Perak",
+            "global_code" : "6PP3J33H+R6"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJXyLL1YDsyjERT3PtXrIOy58",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 364
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Bijeh Timah, 30000 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.596308,
+               "lng" : 101.0790445
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.597690180291502,
+                  "lng" : 101.0803596302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.594992219708497,
+                  "lng" : 101.0776616697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Ho Yan Hor Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112896312272435241674\"\u003eMuzium Ho Yan Hor\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tjH7H9EaJHW9QQdrrvzX7m-KFEPnpbl8fjvSrg7cVmkBWr2Qt3ZTxN9JkBPQJgG9mUSalJEGduyzaY-a4pujzhO37X-Wrz9AJiFR97WRweDIE3bnoScRulE_sTZcqjYlw26MdhSphRWPzrAtQ1rL3bcsg1xbLyhiWqVXPJrn-xKbF2uIIqhzvrwfP8avQHwH9zDOn1NGkesJtn_HM2yXu4Z6rkw9otn-wH2bJgkOZ665fdQ3t9LRDJujD_y1ZwySJaglp_zQ_zOJJmFlL1yNFAVsyNqaFI9st2uegDWRIjqw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJcTw5UHzsyjERwB5tGpnqk5k",
+         "plus_code" : 
+         {
+            "compound_code" : "H3WH+GJ Ipoh, Perak",
+            "global_code" : "6PP3H3WH+GJ"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJcTw5UHzsyjERwB5tGpnqk5k",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 946
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln. Kuala Kangsar, Kawasan Perindustrian Tasek, 31400 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.64424,
+               "lng" : 101.0993698
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.645757830291503,
+                  "lng" : 101.1003792802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.643059869708498,
+                  "lng" : 101.0976813197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Perak Cave Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100122696146366287069\"\u003eUncle Chin Life\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tOY6oPpm2NFkmGnttBu-uXxIPUxyl0plxJ48NK_QFQqb-CqvjQbfTlnEi4NjNT-9sLEYQwZ6aC7gpFZ-oUmpyxaQHuW_JXu1I74xZL9rWEn__I6mjv6Qb56qaqp4cUzvi2nls1OCKkznQYSbYJKclM6pz1pLD1w6UfeiugNIjohFlouCp1IArHJ6m8i9cyxAaE9qjhjXmkMXPBbVI0lsilf2Cv7vMGwxZBugq3P9DRbCRQku2V7kva-NfCUi2cCGuOudC_6Q0NaBmq-pCc54SSRv7OFEl4v8YDYIrW3XMDNG2XRgkRd7Re8GgVx9XiFGHoVJcTin2Z_g7uBvKFCO-yzazcCr34wXQv7RUliT9IYgrUhGp8Ku12BSXqpe_oYXn1bLwYaaekBMq6VoS8wLs-ld3JkmLxJpgomQBBVY0X3igz",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ6TVmAzSTyjERlG847zZUu-w",
+         "plus_code" : 
+         {
+            "compound_code" : "J3VX+MP Ipoh, Perak",
+            "global_code" : "6PP3J3VX+MP"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ6TVmAzSTyjERlG847zZUu-w",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3701
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Gua Tempurung, 31600 Gopeng, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.4160094,
+               "lng" : 101.1876852
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.417490880291503,
+                  "lng" : 101.1889115302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.414792919708498,
+                  "lng" : 101.1862135697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Gua Tempurung",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108546762035133752837\"\u003eGua Tempurung\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sPZBUVF-gMg5W3d4IICWJt1-QyZm5g6C4yuomdxuB7agDw-nxaYL6SZz5lNE0PZMo4TQUzb1LzfYf_B19fCd6TDx22UIjOvKN2xEDtX5eGq3eNkfWXTjf17nOY831V4Sq5Wsl8AbI9MQWGKdtW8xTBDGp1EaXDiTtXYDLvZm5lWYHGZYNsxDTMw6o2X2tx8s0_iTH_noSBcmqoeCJZWZTcsl9Gdxyhb7MgdDC1dN_5qDe0xpx61m9nS7vaCrAGYLukil4L-SVxRhwLuVhCX_PASwE6yJkc_lKlcjPWUXNUdQ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJLXS42xT7yjERos4Leo07sKw",
+         "plus_code" : 
+         {
+            "compound_code" : "C58Q+C3 Gopeng, Perak",
+            "global_code" : "6PP3C58Q+C3"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJLXS42xT7yjERos4Leo07sKw",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3979
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "22, Jalan Tun Sambanthan, 30000 Ipoh, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.597861,
+               "lng" : 101.0784738
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.599025730291502,
+                  "lng" : 101.0797570802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.596327769708497,
+                  "lng" : 101.0770591197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "22 Hale Street Heritage Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110593379970035987059\"\u003e22 Hale Street Heritage Gallery\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vDlKdyAxEJvvYNfFrzdf86FxVgaDbWwBHkdE_cfiCH2jCLlSd2aIgBWZINZDrSP0LcbznJxcNUJ4r2mVAGaNmA9JQsUen_LmFxbETlwG9xFFbBgdvMrskdgbmYQT172K7Q1Zyu4Z7bYszD-6Zq_MYnb-PB6sJOp5KaPLBOzK2-FXlgOBOUoR5DsmTrqLdFErHl1XyBP3z3x3a4J975y0ax7pNlWq-7ZokTit33u3eCI1583YjhLQa9L_88C04z9tzzto3Ro0s4KD-YogCobxYuMOMtL4wPg6Wisa9ul0FCFQlgb4Dr61M5pOFwXZK837QHiR7qXz5AwAVPGzcsij15Rqkfer0LqiYVw_OuQQBgaJEpfSr-JnBiiF5DYbtMckV_E5tho5gXv9fuz1FGgEwlSrL_ikmFNKrK9QFc36Qc6sOQ",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJgaROuH3syjERv8PsY2-k-go",
+         "plus_code" : 
+         {
+            "compound_code" : "H3XH+49 Ipoh, Perak",
+            "global_code" : "6PP3H3XH+49"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJgaROuH3syjERv8PsY2-k-go",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "store",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 362
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "9th KM, Jln Tanjung Tualang, 31000 Batu Gajah, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.3965511,
+               "lng" : 101.0527207
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.397946680291502,
+                  "lng" : 101.0540187802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.395248719708499,
+                  "lng" : 101.0513208197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tanjung Tualang Tin Dredge No. 5",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100896934877918086775\"\u003eJeremiah Seelan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uL6dk18wqxZkDki6-MfMwkn9vOY--MTUnUBHhl5o5Qb_us6R9fSMB6qDHs8TgzcvldtbsJm-uXq-RU3PoBbAxpQxNZ8tWPzv1c3w1pZLNvkwREFin0R7V3Qd1Rs4TpNSh2xgX-G9RrG8pZGVBr_-atQD5vkmfYwUXZC240OYG-iYwn5RNwyuw3e7mnl4Nz0tFamJbJab_leRcgJzhy2srQDRGWV8ghCdUSywsdRemi8qDdO9LgIhlaCaV3ErQ-eKmgoeBYUSLJRWcEkH5EeH__2C30ReMJ878V6F2tMEJ96otZqA8IiIvHimor9Z7ClpJK9vJtiXRFHPriWF4QfVTRsJc1eKb5fWGaKxazSJZXpNuvrQG3Kj9LCgKmp0P7g-JIGKLiB7mQdzmz-k7Z3HANOT1z_aJXcO2K_Qu15oIUSg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJ41JT0vhyjER6TeoCVWsi6Y",
+         "plus_code" : 
+         {
+            "compound_code" : "93W3+J3 Batu Gajah, Perak",
+            "global_code" : "6PP393W3+J3"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJJ41JT0vhyjER6TeoCVWsi6Y",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2738
+      }
+   ],
+   "status" : "OK"
+}

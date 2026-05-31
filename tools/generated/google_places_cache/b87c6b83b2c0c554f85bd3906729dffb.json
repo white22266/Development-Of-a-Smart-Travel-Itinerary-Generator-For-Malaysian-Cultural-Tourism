@@ -1,0 +1,141 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Arau, 02600 Arau, Perlis, Malaysia",
+      "formatted_phone_number" : "04-986 1226",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.4315883,
+            "lng" : 100.2710104
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.432927080291503,
+               "lng" : 100.2722909802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.430229119708498,
+               "lng" : 100.2695930197085
+            }
+         }
+      },
+      "name" : "Galeri DiRaja Arau Perlis",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: Closed",
+            "Sunday: Closed"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106753221877603537251\"\u003eYan ::\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vLkTywkjg4a7aApshiD1UuqjzjEwEZeDNFKhPNcAS6YTPeFQLck8Wgydwcs2iA-zJ6aF60G4E1iLlNJlv3hmusw_qw3APDcsboKnS3EVaSrsDyY0dEXecrkEgnyalZeMy4jR-7GrhG5RtViQg82bjZNuKe09TJYkUyKgjsUZakN-XWIFkxzRpwpYWs6pdIp7nMaA7QpsvEahUlnddUMo4OQGvxlHwQX8fyYw5p24N1r6Y8WL0iYkargcsWY2zGsUMFkZ4NRMsSy4kWutx0f4kyqh2ejuephIn_Etxx8iLj-jqItgGMg4-tcDkzZ4sVc1jOlyVYOi5Wtmpe1x59mpt8kk0wFD1ZrlExqEMV-l1WXCjGw3Cwpp7M2fCqqH5n_AbcyyN-SuJCnJgRIUMIqnIP6g60QnyWNh1WBjpl8uE4dYUe",
+            "width" : 4032
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117100436106124668430\"\u003eSharifah Ibrahim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ss45zM9deT7OpTYSg3Pcd-GqKjdGcGx3ZskqShLMZkUt6T_eYpc0-K1WO-PbIa5TIaz6JHw0pneCRlHRSrBxjPbM7eac4bBEVvaMmJnjh3DFNHzr-HBaXvSpKRDYC93Zy6-7vq6gABn1C41yOQ9dZb8h5z-nvaLniqGYWb7RqZ5V1Ev_p5sTABqOxYAGRT5VIh4-KCaZ6kdq605lRS906pNjcgVZJ5XbwpYhYOJHF0UD7RZ2uPeQW2l3uXdI531TSwoZ3NjEpFUi2ia7Q4fmRtBRUDNcH9RvFsClEuvlHlM7H4jAVuVE6WboDY8bUaVmM6QVxqQHiMx83cA2JKi5uJ1JRbwFZfQNMmYTqhJgMOZQEdIh5kBu2HsRm-GSASLzbkeeu-RiwRQRGFQfe8VZ1TYhmuQbGuk9-0yma9SzcPxOI4qk48cd7NoYe42LXb",
+            "width" : 4096
+         }
+      ],
+      "place_id" : "ChIJIX07V5-jTDAR85rH34CNihA",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=1191920636042648307",
+      "user_ratings_total" : 6,
+      "website" : "https://dymm.perlis.gov.my/index.php/info-diraja/istana-arau"
+   },
+   "status" : "OK"
+}

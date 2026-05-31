@@ -1,0 +1,460 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kubu, Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0172155,
+               "lng" : 112.9419233
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018707930291502,
+                  "lng" : 112.9432692302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.016009969708498,
+                  "lng" : 112.9405712697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Fort Sylvia",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105168479090807422472\"\u003eKanokporn Christine Toweerasootr\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tb9xMsZSVLlT_xev8JbxeVFXvDbnHm-Wk-CuXvSYxS7sO_kpRNV-UQdx35TjQvGnNoxssUCTS9KgsL1wk_0zrc4jX8ENVIgv9ltLmsOXHXTEGrfvo8OGROLibtJlocLy428RIXzwcSQx7w85x8D0klrcTkl_uX9yXe2Q5noxka6gDi38JXp3-ASTk0CK6iVuBW0nkzl0IEEJfwvb2cCl9_YMdV-f4epgaVWYhghm-e-p8BGMC9Dk-2p2uFnzZxGUOSLRkyLTaubMT6qQkjKPUG7d9PTY06XE6ymcnj5kuNnLK-rEc7Hljw4V5Icz7RUYz-KIoad0trU7xeWiq1UH9j9aq2-ZjTMinnqGGldCYISgAtD_VIdhE0dt9kIF2SkBGpf4w3wK8cbQMmkHJISnWH7C2w0QtrG5GZUKky0QWj8y6x",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJHWeeC_q-AjIRgJ016MvIPs8",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8R+VQ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJHWeeC_q-AjIRgJ016MvIPs8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 101
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jalan Kubu, 96800 Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0169692,
+               "lng" : 112.9402453
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018464530291502,
+                  "lng" : 112.9415877302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.015766569708498,
+                  "lng" : 112.9388897697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kapit Town Square",
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101231324543707587445\"\u003eThen c.n\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t8DZp2wgR7bJeupfrahhar2FX8b1r7S3zQJDTTMlSXkxjnWWObOJf6AGkyGoIZv-UTPEzyeHSQIzjCUGlgPsnXrZDUrYNg2-ueZR3u2DHS4g9PucbAvU9g10a4qNh4UZIT1EQAC5fI8I7JUsuzoI-xF--yZFNy7OPn2MtC6dcPfXEBXVppq6pKtPcIytauXvWYzTCcuHnRBCx4iiNGE5pBJmfTyPMAsk2pty9hQBdC-tQeXGgJkGmY04bOVEjgOa0RLMPPvvWxnZsGPOAIPSX97aYp9fZO3qfIyTFg-02SzFRFoEeFL8dQcRHvMOo-DVxrygDQ_9oMXFA7n5ewiJEnjl-YJ6fg-qpepI0-5RHQd7-D_4CxYZojro68e34p6bnduhzYxu_E9TEYwEXuimCiIpY-sCvrAfCvD3muHkRof4fI",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJ4dE7HAC_AjIRUiwVvmflMkI",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8R+Q3"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ4dE7HAC_AjIRUiwVvmflMkI",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 943
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Penghulu Nyanggau, 96800 Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0151207,
+               "lng" : 112.941963
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.016531380291501,
+                  "lng" : 112.9434948302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.013833419708498,
+                  "lng" : 112.9407968697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kapit Lily Pond",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117141491457803032905\"\u003eWan Akmal\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tcckVErtxbotQHudHsXcRKtu1r2C0f8LGNzbAtn_3nVK6lOS9kUOXFdLXl92qAU2bADG3hNyeB9cYHwmGBFRzi5rfmJ3J7dOv-auB424OLN6ZXzgyPGLg4hL--44ONoe9dOnjSGztCpJvWJ718km4Rv1gte4yZLiQ17Wg4zX6Jm1u4pgq1c2SnQtnOcC7Kui4cyo5ltNd3NbQtk1tyebbp1P6WaBFK4_-ae2tr_t_o8OPN0bah88jeitf2ayUrpoDns4IayRza9o98hiXG_XMN73RXR1W6l9R00G_5TVgtA7bkYg3dOY-VzlMN6kq-Tfs9QFLreSXiJt1gFIby-VgWv_z9wpPgYRM5EN4oQW9viwx_hHvI-5NOu6ghLkkWdp1ZPteBisQySJuxKeeRr22dmM2uvOqc8s3ZDqL-pXQ0AA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJmf_qQsu_AjIR3dm1TD8VOuU",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W8R+2Q"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJmf_qQsu_AjIR3dm1TD8VOuU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 53
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.5719799,
+               "lng" : 114.4197898
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.573328880291502,
+                  "lng" : 114.4211387802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.570630919708498,
+                  "lng" : 114.4184408197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Long Singut, Baleh",
+         "photos" : 
+         [
+            {
+               "height" : 4080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108465720326570088833\"\u003eSony 93\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t4HgJfiXnVS8kzuv9LMz_V8ROSX13sAdAtbZehN-crxfOOquQuGo7EcDvYUH_ywNi7ki9PGYPPetbYiAj-q8FR1bgpKXZojKnnN-uIZh8AZ4kUCgzvvVrxn0ZyiYMejvMYtrNlYwRePZFrxvb6AT439sbea1dZMeYFrJfmtmnbRBqlBKMsajcaxYA_Ylo3rRQz3SmI8AuxwDyj0ss5uwj3H9GDiR-YTbYAY7qNpNpM1kk0wKzl4BIZjUALlwHiVE8_2Lf8SSqvfBa-92j5D9o2q_8JIihA66wtLy1vWI7zrmmxXKmWmji2f8oLzCOET1hClbX11JJwtXuPglS42VxBsaIV2-NoKkrmiDhtYVDsvr5GB-oQpfAL7Z17PdZCctgJh3ixu1zz0kmlcjKpgJktNszyHIXeFA_Zij3OP54cWWni",
+               "width" : 3060
+            }
+         ],
+         "place_id" : "ChIJ-TaQm9dDBDIRfuo2PFeeg6E",
+         "plus_code" : 
+         {
+            "global_code" : "6PHPHCC9+QW"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJ-TaQm9dDBDIRfuo2PFeeg6E",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 27
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Tr william ubu, tembawai sandong atas, sungai sut, Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.9234812,
+               "lng" : 113.0538296
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.924908980291502,
+                  "lng" : 113.0551828302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.922211019708498,
+                  "lng" : 113.0524848697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Rekreasi Sungai Pinih",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114061209664973731218\"\u003eKHAIRUL ASLAM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tCL5KyRpZ_XJWzu46Tq3V5Ypxz4sUwRmCedTJddFAd6m2qsxG2S4g0i6H__i3YIpes5OhnRfHw15o1EzRN4M3mHV9T77iGVbrh8_zOyGwbDJg-KMioIc32ARI28O-SdX1szhPIe8_xna39Oa05WusyIP2l0NUVemsp6Hgfvjq2_azeV_6WC6peHGMBf2-DN1OzX9F8IOz2q2WuHxjE5r8daFqyBeDGXs2QuDCG-tbxrhykz0f7Oy6RWeHnxZfMMd7v0WqVex3s9calM_iHrysqX10WpnG21GvzOBVPYryksbhSgR796zmD171UaJjyFZFw_5u2liEFAEEptaO2x9wS_eieBhX5VAweFGgZAjhV9Ee5w4ITFMZPdI_SLr-A4SyvdhwQZqoD3GbpwjpN1d0Rg_Nf6q1UvhhYgD0TvyFH2iW0",
+               "width" : 3599
+            }
+         ],
+         "place_id" : "ChIJ71baWpXrAjIRiqXjb19zbTU",
+         "plus_code" : 
+         {
+            "global_code" : "6PHMW3F3+9G"
+         },
+         "rating" : 4,
+         "reference" : "ChIJ71baWpXrAjIRiqXjb19zbTU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0177513,
+               "lng" : 112.9419747
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.018976180291502,
+                  "lng" : 112.9433224302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.016278219708498,
+                  "lng" : 112.9406244697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Waterfront Kapit",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105453247699849811022\"\u003eKu Adriani Ku Ayob\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t49Hgc7RETNHst0uwsH82ZewoNObTCLhBGzm2xSODQTIIdIkV_IiCHOZyhlV3_dF6IL-xA36YnxgPSbi28THyKERNxfJx8EG018yY2_IwxphG2mDGp_gA6mOST_T176eeXC56L4OYVW7Oms6sSkKV_6gnWz8jg6QDWzuGKogBmW5YV_La3Toi_fYJndsAjXNyZXbV6X4S0xNVM0j6ybNco6wnUva7lAUwFQccpAFiB0LaiKjsTRDNeeE1fqPJvt-Asjfzl0X0EGJbs-pBlzLDzlB-BCsJXAHa84PVqMLiS7c5Lv2iGm4iuFQdL7ioWr3qqnAoh6uPva85uhcoi0hRJ9A5kaPGrW-694wuIMQr2awbSgd5MU2gJHrV6l065p5H1V2xmYpud-Ufh_6P7CmenKD6UqlCEgJWWgCZmfZGVGJ44",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ17j4Tt-_AjIRgUX1mXTnHzk",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2W9R+4Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ17j4Tt-_AjIRgUX1mXTnHzk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 21
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Rh william ubu, Sg sut, 96800 Kapit, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 1.9237375,
+               "lng" : 113.0540368
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 1.925033380291501,
+                  "lng" : 113.0553504302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 1.922335419708498,
+                  "lng" : 113.0526524697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Pinih river park",
+         "photos" : 
+         [
+            {
+               "height" : 3599,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114061209664973731218\"\u003eKHAIRUL ASLAM\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ttbiU7JeP-CdgvanhDPZltxp31v7iE4Rw_HzIHTX8wqFn6pyBzsqQqBuIqm_EloO-pua9Dxg5lvbD-2Yde1pAw2eZ_pyDuQkrhWydNRaWQiw-4Zb9Gxk-8J3w5NxsrTbpJDgL4CxoVDKKOGexweUGfa89oN3cx_r0_dUVmZ9467_jdFVAC1a9gUPRT75b6A-eBw-Wo4TLoNQAdU0yxUQMOO15IfN5hEnbg0iJfv_akt7aHQurrRVUA6woFkxdM_mSJNO3PZlJipmkIBpPr5A829NirBFI9PsapoRJFU2Vh7OCtjxhAJQ4yLdjTeqt1iWZjVTh3qwwXqe6fRTobq0K8DUJkem7ZebcQp--afDgNwxm0aox6mWxze5lO7RZ1XPoYqCM84A-BTk7T1AWP2Eh7dDlQheu9rGGCuMKqMofisg",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJwZsAywzrAjIRXcK7kolOceU",
+         "plus_code" : 
+         {
+            "global_code" : "6PHMW3F3+FJ"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJwZsAywzrAjIRXcK7kolOceU",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Takan, Song, Sarawak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.0077032,
+               "lng" : 112.5483669
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.009047530291502,
+                  "lng" : 112.5497667302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.006349569708498,
+                  "lng" : 112.5470687697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Song Kapit, sarawak",
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116484882504661330188\"\u003eAUGUSTIN\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vCq2v7aZGHTdjsgKHrP1_xMl74eRpff4sCVVZ58r7z8CG4Fv_D-KBrQOXOdrVFB9ppPd5iIORy3deP7l-4T-bd6oBO4BWFn6E2KmrezD9rsVCXMVtCPrzOsR8SmVy0I8EgkgtEnf6MAJy2V66Rb_sFBwpttKDfnHUNCfPZGpyvBybv_cTDuD9DOaEVQJxBCqAel5xJxNPFV1apnuJf_w3dyjBOrVNpbV3MR_U7Vkf1m70gvpW6gZxz_ckqFxIOgMQ5kNDkSnLOOgnV_YI07cf3uZsYy3jSAlYCdf89kYhItIW239qSuFWB9ZKPqyHReY2GVQA-XJf_pAbyZDrxhkI4Ds9mmMD-hR2JVtRlA5ZLD4Ae8laM9213q5SIKfKCPOJmIyVJqJGmEeEkJb9j242r4w74G-vQ0N5WJpZW_RcDaeLMsz8117355xOC3A",
+               "width" : 3599
+            }
+         ],
+         "place_id" : "ChIJ92YMGNgL-DERg8jXVZBljn8",
+         "plus_code" : 
+         {
+            "global_code" : "6PJJ2G5X+38"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ92YMGNgL-DERg8jXVZBljn8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      }
+   ],
+   "status" : "OK"
+}

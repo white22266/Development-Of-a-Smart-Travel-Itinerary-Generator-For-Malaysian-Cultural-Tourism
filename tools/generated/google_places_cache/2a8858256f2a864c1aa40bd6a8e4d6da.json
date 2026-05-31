@@ -1,0 +1,142 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Terusan, Beluran, Sabah, Malaysia Terusan, 90100 Beluran, Sabah, Malaysia",
+      "formatted_phone_number" : "014-955 1868",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.2922767,
+            "lng" : 117.6223701
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.292297280291502,
+               "lng" : 117.6239663802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.289599319708498,
+               "lng" : 117.6212684197085
+            }
+         }
+      },
+      "name" : "Trusan Sugut Forest Reserve",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0800"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0800"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 8:00 AM – 5:00 PM",
+            "Tuesday: 8:00 AM – 5:00 PM",
+            "Wednesday: 8:00 AM – 5:00 PM",
+            "Thursday: 8:00 AM – 5:00 PM",
+            "Friday: 8:00 AM – 5:00 PM",
+            "Saturday: 8:00 AM – 5:00 PM",
+            "Sunday: 8:00 AM – 5:00 PM"
+         ]
+      },
+      "place_id" : "ChIJFUn8jT2hOTIRq1-alhwONVQ",
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=6067771588900183979",
+      "website" : "http://www.thinkbigadventure.com/trusansugut"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Lot 2511, Batu 19 3/4, Kampung Lubok Kelubi, 43100 Hulu Langat, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1893348,
+            "lng" : 101.8508903
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.190686780291502,
+               "lng" : 101.8522431802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.187988819708498,
+               "lng" : 101.8495452197085
+            }
+         }
+      },
+      "name" : "Kebun Langat",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1300"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 1:00 PM",
+            "Sunday: 9:00 AM – 1:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110609892848584534281\"\u003eKebun Langat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tui3En59RfdhtXpMMpRGqT8jzg9u6gznv9fmEf08Tl616cmIM7E7oa3UdD7MzmUtRovP20PNgSmvuMjpLKarrDl2TlklDK_ZvcnEnBwKZ_v8RCFNDczEf_QlcIg1SJx26D9pUb44zKe9PtkDuE8MSWhT9v4TVs20tJy7GOQWUxLrjAPDmwg2X4dKHyXVnkFcPIiIGtj6cZqIgKPfI8N1CexKtLFBc0W2c9YZ6o-rAUH_gdFizdIQLtOV5ta8fi5o86GHJwqxNGzQurDrRM3K46C0Ujm1fCpV7CHnf-BeLL1A",
+            "width" : 3024
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115367869364258157144\"\u003eFaizul Aziz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ukhyuFW6Q4BlkbQukkheQ_IALroQbHfN7vMOWOhxIfSt3kLEGT0LsdHbhUuoc0GHE6GQE3pz5mn8A6NiFQSjCaOaNtDXbGPEwSBgFUx1Sd8CZ0gbqhM60jsWrkhqXQ03elHkkzMPpTWfjpz4ds7e_AYdo6Rf_hZaJgKVc87a4F3nHhSGqF0n5ZO5wU4HWRrpP-VRjMgsfbvAJkOdWrZ_my3BKTxtsoBXakMDYAJO4l6cz2VQxjFCYAmifdeDD1jjp231IwFsgpfwBwHBrxyAZGYbBhkZOsHpld5WWUxcn6jYf2E2fjhAjM0OuIgA3S5PQ617YJWUG9O4lwfGDsmh5xYAq9jSc8cTybbsCI1UTZdeJzeM27OVJJyjr6E2ZZYYRkAW9SxL9tJTiz9vq8JVd5cBRX7nsYmdH02ftmMf7yIOW_",
+            "width" : 1920
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104399123703242873213\"\u003eAbu Bokkor\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vkt4S5TmXG3NDLY-UTkHGxsnMjiSb3yZ9sv6TVj2Sb3Edwhm7zv9n4jnCEJ17PjZWob8PUyAhYCBAQWQDIbBPKozRTf31g9rUNbVS1axf_LZEtWpDNr6_npO1Pyj3qbFMjtVeYjP0jafApd-sl7NyMSOVGdumzO1M1CAuw4pFmQNYVNJJJqA_ZdQEjFTTKLWWfceI6TvxQBZhudtYikIrPd6S1XB7z1KntEZGi7pyfqs9WQZ8de9d-M1150MtueLf5HxlJaisSPEkpm1hC5bE8-mQ3aQjdNOuHKymoazlpXStQHnwu4bEtzcTcrAzfne7FCgEZ7yM_n_aEY22B4P-ubR2Fnpikivd22Fun3RchUL_8JTT6eW8T3_ce6FqDOJh6bi6PlxUpSXbc-99rlmdo8S1nyz2yq31y7PMzDqmx0tDXd3Bl95r0dMrZIjJj",
+            "width" : 810
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110609892848584534281\"\u003eKebun Langat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uVA-gRpXnQ5TuGi2ixw-Y2khrx8nIL9AjvuguN2p4-BTjAHePjBqZIxSP-Q7dT2ETZ0lzpyWgza5dc8WZD1MommKPSibtMd6e9IBvFA-tyYUML3lbdYC6e849uYlUL5nRpxDAOQ_luA6qPWD4mlZdd6T6_sqq2yGNvaOg78COKamqyww2UHWgJKetKoDbQGoQKKnBGev47EZ0q3WCsElFfyTSzM-4vu1isQDHT_Qu602MlqSnaEwbn6f1nNWGD2UfqOEo6mETL2S9j32O55t-efR3CKWK4uYBvpvF9LcaHaw",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110609892848584534281\"\u003eKebun Langat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tttkF5gnAN2XoYixU8dhZTYwoZlowuz_5fo2FzL9RbEETwaH_wnCFqXYLc5Vswkyz_hiHaqwJdG1A3Zy-a2oE1IC3A4cEi0n-atSVvlIvRtUttG0J6IN1b-lEiMlHsY1naw04fU1mM14yiZtzA3Ta9B75evtReqVgsBd5ivsuqBZHya7xx02DPEzh9m0OHcBoYh-um3KuDCxFRkVeiZhpOcNg9Effe_nanPt-dXd4xIKcnY8pkx7B1RN3cBAyll3_vc4191ZdKzSN8Z0s68CFwfTZQPRZ-ia-XZjqtyOqmXg",
+            "width" : 4032
+         },
+         {
+            "height" : 1024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110609892848584534281\"\u003eKebun Langat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vCiWN32nTdq-cmQTFCEauWvQhjp-MpM0FtZSrokWJVc9wAJG13yojhZTf8y9Jpo9FJTkYLLoajE0nm0hQdpYSiEKwa4eu1SMGjbcpjd5Nb8IsMcz33ty_Ru4Cj80sHuI7aXwmFAuf4bR9TtOETHZ3etgaUq0g-7kgb5xaIH3ux69EQXs5wrIsM1av1PYif8qN8eypk9yHkMlMfFIo8ssER3us29ps4jnBpeDLKGDxGdOg4AXKcKftvqXutoV9CUcigNg417WyxLWqpd3YSFmSDYOGWcm_zjNS2hVdxrHJRoQ",
+            "width" : 768
+         },
+         {
+            "height" : 1920,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115367869364258157144\"\u003eFaizul Aziz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t5rRiPhnBgcaI59SRfUoPoI935rzb71sZynZMF2fgAVczT61TQOH1b4ljGynJddzGP9CfURSJ_m6ULvYTIMbZ6cdwdkfNG-jnwNkEx6QyuaGuUFsknRUAMxwALX_Qu_7ne4WWARgvh2h6NkoAoYO4cpWhwZz8olEQ9JGVzubg1EHCDarF7IFTcfeZtttVQhzDsrvtZUE3IuAEG4HaKN7-CRYdFDRxaioeffkuLYznWmjUUqSub4jgME35QiO2ITPh5rV0zpl-cedbBAmnmLJxQUqmhDpzvcXi73-77KEamF5WqIPkbEa0lpb06SjmGq2sKuD7NYseF5dZk5bVsDJPEZoLfBh-FoAqPAFHsQPH1_pPousWXLFlNxtmAqYMeafimNeD7nLCG9TNFUyfirLkRw8ZyVAz9UPa7bKfkWTbGJtvH",
+            "width" : 1080
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110609892848584534281\"\u003eKebun Langat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uXkUyB3bKFzJcZcDxemFFG7ANoUryJsJIJmT_LvNFxn1GmRDzrrV3BaV2ohlWHdWHJEfZ2nksIAtsD2kGGVl56LfGqWtU9rVE9pURkhB8fMF-bV0_ic0VCbTZyH-CyzgAd6a5P7J2_GF5NmuJde4m7O7iR5EHr1RGxj3ZJjIk47F8Nj0f5OyrWySXVcAe_xo5emP9d61uGREv1spsrC-24ttrpITRbYWJ70LnvzzKt1utfXcSWhQnfeNGBTFnqAR3nIyLjk_1areV0dyd_UQBZkQIc3CfwaHycw1SWZ7q-BA",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110609892848584534281\"\u003eKebun Langat\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t-OBzxRZ354gfqCh_BOtIZp464cg9-EbPDyb-fuCd9Aqc0JptVdbBqOUuinrdoXNaIbvOKCLzSFCGWMTrMLZsEQRLJNGedrdhBZlannRTI4qYCs7lkkXuOhJFGQUHKLJFY2nGfD8VYIBsVKHOk1Ya7ne1PXON5Wbp7s0lwKHHX2MpCe_JQXzDllkHWcvniDqJRnb5D99cOlQ2LiuXX1X4EabIRG_Tk0r0ftxqcZ1obfqcYfAudX84ZkYL0EjNA4-9DVM40jdqJ8D60V1-6-6KOiBGmCMXXisiDJ4FyuxLFBA",
+            "width" : 4032
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104399123703242873213\"\u003eAbu Bokkor\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-txXYjLEBdxOsWz3pSxwAfkw3h4ISPXQkur7MlIeVi36hBMzY33JQB_QULnzgULpk8ArnaVD6SMz-5UU1ERF6khelQuQGriBMgEs_7_KXXD9GhP10t8yXBTFn3mZF-4xR7WXR1f4PT1n4WHOnWqlnHX_FzJMHu9TmcoS7H_eDXnSEEhrLIZu5n6RXPR_CKaD1xDorIUD0DhvWmRS-pcDoax6ZkIwZT2d1bMhwnzKUDPoH5Zsf2jJePvw6IFbx9_14ZTgj1NVG7c0lqXpwtP5NoTCPWnRpiVZvWiJDgH6wsHyagz7-bLWCiaiR6U113FvHy8UYV5npM6VMln76xdy8ZuijoodsdhiKI4SeuePuna68DvXQdjeQRiR_gHvGJjCn8aMuI0gIxgu8ZdFRodwBxiTH5kca88BLRTlCQFwATNH9rDtM4Cx8pKS92pn0Nk",
+            "width" : 810
+         }
+      ],
+      "place_id" : "ChIJCS95JoU7zDERP8r-tEixxq8",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=12666005927858457151",
+      "user_ratings_total" : 4,
+      "website" : "http://kebunlangat.com/"
+   },
+   "status" : "OK"
+}

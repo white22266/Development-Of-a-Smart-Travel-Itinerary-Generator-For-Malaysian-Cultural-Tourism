@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Losong, Jalan Panglima Perang, Pulau Wan Man, 21000 Kuala Terengganu, Terengganu, Malaysia",
+      "formatted_phone_number" : "09-627 8891",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.3207343,
+            "lng" : 103.1153406
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.322239430291502,
+               "lng" : 103.1166419302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.319541469708497,
+               "lng" : 103.1139439697085
+            }
+         }
+      },
+      "name" : "Taman Monumen",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1430"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1900"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 6:00 PM",
+            "Tuesday: Closed",
+            "Wednesday: 10:00 AM – 6:00 PM",
+            "Thursday: 10:00 AM – 6:00 PM",
+            "Friday: 9:00 AM – 12:30 PM, 2:30 – 7:00 PM",
+            "Saturday: 9:00 AM – 7:00 PM",
+            "Sunday: 9:00 AM – 7:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111053115707481822687\"\u003eHani Isma\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vnil0L9spmAE49CIIHWBL235anfT7P5GAVysG6eNHVVeXMaNtJvi4Tw2uneyDz8oQ2lqMvUm2kDb8bxTKCnlKKJ-wGnTVEKT1zVYhkETvA9R-QurxLIGbUU6fhTjIIAYKmN6bmXPFTCo9ERkBTD6CQUoMgDCdKF-H0P-VOqKOlo7T8ptwBP11oSNCT2TG7_iken1JYSqMx7ULAwFLJgsMO74IT0ilgWhP5r79plUOV44vZXgaeRfE99JJS6gah_cUmh7Yt1GrMBcakrxHLoamLHw3oM3xaNlKoZLttRsg0s7TIgKhpc-kzGjCcPTW3mzzzTEgvoKA-XrNS4_Bh-vRwwecX14Elqu2AX1Ad5oaPbrgCqkkaQN4Fh5pSK9WnkIIP6HcwHzjcN_p8ZRPY041L284ZhwsU3UDPJ8ADkVwzYg",
+            "width" : 4000
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115663487011040564504\"\u003eMohd Yusof Tawil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tNYadOPqj1H2N0buMFLyJnDQMRFWtbaSVCtieHg9OIDBBAs0k8FEcT0SvLyr_D6fzB897ZuE2swfDts97hNbThHf41nN6Ck1fZzVs4vzmuv9VuWh7yAL224f5NlQKxErPPd_Vw2XomT_CunVbFL2bBlPDO_QTceDxp3DZ3futXt_vRcKMvz0evmBkDEx7CdBZ15mCasqgQLRGX4OLSK81YXFodQ1rqdGcnoWhWDC6t6OC5ekTxlESj9p2H42hhY-wZVK1p2G6JkUjQ1pnHgt0Uyv88aSfcSrr1g4JWNkwt12HQlqGrb143sNr2rwqq61AJzD76gAE-SC372CiLcA6RiDFXhmCg5FkgN0aDDdkE3Opjzu3lDSxY1pXEvzOz58234SwT0hJASDev3S8E8NdXDFiOA_Ka8136vawVggsh-Fg",
+            "width" : 2560
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116871656587898702771\"\u003eAhmed Boughardain\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSLCQ3JkzqZlIJ54fvY0SMzlVt80FDclSRzogPZ-3EY3sxTrqyYVCT-fvFPDhyJur7vT5gc0_NbW1G72qtxqbpsHZxJQ3bBycwUpg8dvIT-nriqo_RteQRGd9y31puZ3LBpANP2uQRr7Z1BKneqr38TSZno4LblWKg7lbZFvu-7WMDprK8w6Grony7sSCauOKwhMVXtQwhxzWK3A02Sc47Xr962P88lgq-QhsUhmuotmJbUX82eVU5Ll5clFJHshojg06l9NLnW4IG1Ke_QE-NTRp-9acdX-pVijI-LP8A4Z2SoRSyPMRajd7n6k4mgN2-2tEW6HsN_kYQoaAj5Itkp7YSfm7oR7ZK8g-89rTUtrtBLkht7exfHdRenmXWuffBptgHDxhfsgssbMdY4Yl_WtnI3FIHMBI6Ja4Br3ZYy4BQ",
+            "width" : 4032
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115663487011040564504\"\u003eMohd Yusof Tawil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uR557xmgwa0Hsx3JY8jQSDIiEnqR6cioeYI7tyYwtMZaC3N1OSGuP5zuthAu7Okts1qJR2qDOSCWY37LuSVuscC8tZhET2aJGuBKMkOqy7saleiQC5QuSxTV_1dLDr12C7OqiEkID28nzIJJbU1b7xgVplgp7QEzcsShmPfSZf2Ketm_5xhRjq46YPEO6Yl14LPMPlodTR4iA06yz_VYoMhwxpCPh5SlCeafLpTT1cZgfpgWFmaiB9ZLtVhM5eqK1WJccrG-BW8gczafbvjxefKlJxNQUaWyqSuljSe21yi9VsCN6R-MXoIlWObrcIF0GswWFdWrIHdsmgof5E3cBuV_cmDASGVSIkwqKTk7_t_SzSxR1FeYwtard45Rw2i8nOB2l4SXL_M65eBMXLc4E-O7OtxsyJlWP8zfpLkvk",
+            "width" : 2560
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102631655542770637499\"\u003eMd. Asif Hossain\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tkvR2iq9bUAZBcqUPybP9KLEdsSon3mWMOBHDg4SY5yubYfOLRvbpa-WlKDOyllzqbF00yMiXn8HbYvVrPKbp9eZj4J5N9paamMtJBYtqhA1QuQXnUZyL-nW4jguF-sqf1EeA9iCM0WmUQ_Z61NUReqvFN5vN_tv6YXW5Up14eQt62RvQAWlNNS_iTREUIQscfAUUIe1WYKxR5U3LhYQpJ3l_evb6U7vDX2brtjz2NNIcrK2_4D_WjS-85y3ZyWByzhpo1jUCq7wk4_A9r9mKTX_B0YVo4YtnxO8XXnAG7z2wovBBmaQASJS4BMGnxhuoXJDW880fqQKcKujndJ97uuyN9K980Hjwf8c54S0ATgOoiCleM8-gJP5kJuOCYliHwYUGNd5Z3EsAfm5RYTBXZhgCbZSpTQeSKqhpqqU2XSQ",
+            "width" : 4800
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113646487811010233567\"\u003eMohammad Bakkar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vriJm6ibQG3MbW_avViuaMuhJ_MmLesWhwXXbISqXldmOj_6EKwtnh2C9OQjXKCTJ7I94gX9LvD981QnKA8MdE33oevQ8u14xqwbXoswtO9hOOs0xsoU1syBZCQEKsWVcNRKP30Lwq1Qp1Z0VEFrB_tdTcwfTjd80c0kOG5OUfoVbjYfAQFRaoidPnXYAjSCY9kSMqW9JAPGdxn6oX7vYlFrty9WxxDKXISp-5_jUrnPRh94RXy9rLaDUYwaBwsiLF7_abzfcrmVNUd3_v2MFbFzeQSE6GCHjy70Up_BAifC6RNEUrlcij5AoeWnVOMbB4AC9UoTXD0xfD4iQ8dbIqIQMhDXk3eAySWgMbsIlPgVLj98KLJGea66-hAOZiu3_oEgK50Ou8nYnVqHA_46AxwJq04bhDyWYCraPnuO0vo3dd",
+            "width" : 4080
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111053115707481822687\"\u003eHani Isma\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vDvSj-_CfGewIWdvOUZvg0kJM60SE5qx7Pg64MlOVjFaZuCIMRRLDM4Cx2HwnRm32TyKMwMGwBFYBHlVaoOitZmlO76AydO6oz-z8aoxIn_qRNO5yulaPVmzX_z9CcluDIoMmH4YABraOhaGtLSktEFFUxsBTSGkUiJZ2Fcga7cRzIvoxyxqJN3mibf7ArPVKmLAuAQ3bIcIltuMws7LbEFI855gDqcwSzlbs0nnaCwUU1B9riVDhYOsoSqn_Nb9g13HltM-J0p8E36mh-BdSBrmSnEtOPmuZfr6IidcV8RGNhSICitupkl8b8VwGjCVz2U1agDK9v8B6XKf3xr8r1__UPKc_J35jFiOzKLtBKmnz3MTk3wVWMdRuFp_d0xP20TyUpLR2kkgpsF9E73-39J7-g1HQrMRg6O86J6lI7tg",
+            "width" : 4000
+         },
+         {
+            "height" : 724,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112398421582768365975\"\u003eTaman Monumen\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sLKV0M0yx4l1Z7gWdZK69_TioyD6wV01PpMxM06g0drKW_vSFBlKKBTl5R005IHqQ5k_Bqc3RgiwSamWTTlsd_4zBu7oVK3ylBKoRUFrkYbz4BDqJGznM6fsCSqoLmGtfgWLvdfkz0iO6XLripBgUXLgCJ_LH5IeFdHIrJ7xPaRPkBhWyOvsCfooUxACnISBDfGXxtA-0lHL0RZG7PWHh5v4kpLRck6lJA5nZyWsiQF1AZBF-zHjEhVME3Q1CUsn24XBrTiPqyFe4dstgbLrzWDq0Oh93lJOBHYPLQD_rVbQ",
+            "width" : 724
+         },
+         {
+            "height" : 1440,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115663487011040564504\"\u003eMohd Yusof Tawil\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u77a0SSLJgJYiqG-MY2qC_f-VDIJ8Oy8ZrWkeIxpRl2-v0K9Rn2VrzZmt8KOej6-fWDwpsC1fOP4dUCR3Werq682jU8DSb0yOSoNrL0WUYSVXnQowZtKSt-MVbxY_XHhJEDNBs8w3FK5qftMp6haO8E7AI5Vg-XfVasOqjlDF0S9AOHWznjkz5yBX-0dDOsn_BZyDhcEGgo-zxJMwAAeTSykM2Rm_VnMLOtGhuyr2MoTOxINFmgPCw00F_nsKd9d2a4ufCZcduxkUqlGPRNib2WBzesHXZdozQzGCJDSgxEF-8m5_5L_wSTk-Uj2UxmyZQNWZ03yhirEo-L6_GxNFhDHO7HEz9j2zpWkbt6Olv1zMh3lTtsEygI9muCQZOpA-0UVdNMmSfuDj8pN5tvNhxEyFb7VoMyND-SDirFFkDhg",
+            "width" : 2560
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113646487811010233567\"\u003eMohammad Bakkar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vNLPQiBQa0MuYcDWho_yonkecCeVNy7EF6o8mzyt05F-MBfv0n7qTqQjxEM5Yz43RqYgJATNTSxEqSPpvKyVbWx5A9lfKA6Srv7bAQP9xJJBI1-dcvXHb8cxVPQpoRBn-FDSZh9Zaha1KznoQYEDJ9LfKcclTcH5TWtdDw0LmHmUwf_pv0ZrEfo-QBGaWiPUtfo17ryBYvc0yb4tpjwUl-neVWoJzRESexhpmptnCyaNf0R0qE1pS7vhbxxE20CxT00szlfT32Eq0YYhhs5ZE_UsxT0oYOCdAfodHOd_ZFcEZnlWRzsTQHA1Hr0c2HgkGq3WlnLdkthvVt5OhigHu8nEGGWcLZVWmUgDhCLsX-pVYT1TAokDn5_UqYWIHOGFhjhnWa7-v3S26Xl13XtHIPnINek3Thrg27EdzEBOJLUg",
+            "width" : 4080
+         }
+      ],
+      "place_id" : "ChIJTS8UIY6-tzERTasg7dQWXAo",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "amusement_park",
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=746496742003878733",
+      "user_ratings_total" : 54,
+      "website" : "http://www.tti.com.my/"
+   },
+   "status" : "OK"
+}

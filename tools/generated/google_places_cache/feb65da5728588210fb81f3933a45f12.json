@@ -1,0 +1,1160 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-sPbNRR5bpPunrOoWxDm7X2H9h_F-cNh4CQZ0jlFnfn0hzTUQPhew8lD3uOhMcU6mnkzDSYboAMvtcZpxILc60VVJQDmBCwe439rTjULREFg26WdGbU0nxtFhDKIxpMWtWT5Z5QQRPQtsg1NuvWrqALD-sSg_-dQE80gW5DKHn2S5YebjTDot0kZ0xZ2QnoP9doFaj5pLsr8cruS-6dV54GMNneMsQiopvpnrg85rB1RS5r1E2ExGy-kOEPTQH4cjtYn2byRawvXjGGLEos-RHnwHLWK1p17BHB8Y1j1FHwOwbIB3hviF6D8SVThhKnQ27P2EG9nZrzDyTASpuZyXR2X01vvubNb3Mp8nPMMZTJloCzUX62kObrTJt2OruQmGuaCuVpAalQFz_WM35AeEyumJLLaFLHIQWPvwxo6TrOV_CJfIbI46-7ARv5ye4b9VK1H_R2EP356u6lQjJ__KBghVecvIAbzDXTI5ZHz5KTUs-J5LBJmVCFlEH5NCZGIzXR6VVwrHU66Dcq-BxywdxTvdb-pphUHRfjO-SyE8muKDk38Ysrls5-vyDoF1A-R0DCJt5MFYtrivbcSh7efdtaYnPwQ8QRLkfqvbJn5DuZqYjk4nnJdLoYaFIw56eE5lEwyJRirr23wMTF3M-MCd7tK3zxmeExwDRJHYdRjK6pv3xSrA8-7vvGCbcSbRGkYyJDuXieh2PfxqL7DC-dHeKaUK7CwxvtrS0r60zducBpQXmRc10KEJckDI8QQg5iVxaL0YlKhvGGHivqOYtFsfpuJYQpfbnxz8whCFJzCzUuswb77iSneEd6FclYWfP_PgWFzVEmF8M",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Charok Padang, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7961021,
+               "lng" : 100.7110993
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.797452980291503,
+                  "lng" : 100.7124195802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.794755019708498,
+                  "lng" : 100.7097216197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Charok Padang (Bottle Temple)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104783761558581266199\"\u003eteh bak heong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sAE5IeJXKSeRxQM1CseEmGY6jmsFc_F7Ec-L7Iuju8wjYRMN_QR-b9dwcwujNV-I_ycwf4q37TvAzzdRhxvp1Zrvt4OVQnaXetpzGe87lr4UJir81Sl1CzAiuy-v-MZBUqXe9nXFQOZLECN5kvxZ3032t7CKEfafAeBMIZOogy1w5A-MwPHrBXR3zUkgauGdLkNOC1iL95t_ubIB53gmXY0jQYnYjs690y83UWWesXxsX1lBdsdCSNzF1lFw2Ctli2D4NLObqmm02i3BniX_25K7z-nQqB3DIAni4-vemoeejGOmHLkxNji3bkFqAMk0WKeeQEanPya0Vi8BQSjGGj1Xp_6vVVPkXKWBrXZO6MI6NmrpIvTXRuMRL2O0WLrHSA2u1PCtco16_7s4XTBI8Q2fEmozxWyZ21IDNoVI0",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJBY6dxP_RtDERf5po7i5Qi-o",
+         "plus_code" : 
+         {
+            "compound_code" : "QPW6+CC Sik, Kedah",
+            "global_code" : "6PQ2QPW6+CC"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJBY6dxP_RtDERf5po7i5Qi-o",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 169
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kura, 08210 Jeniang, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9405926,
+               "lng" : 100.668252
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.941957230291502,
+                  "lng" : 100.6696365302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.939259269708498,
+                  "lng" : 100.6669385697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Kura",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2928,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tZjtw9_6z8wZ_JJYdTpwhZeYDzwThPvK6p36ppBdxD7S_K6JyIwEhI4CNGIqwsUPzZ1EqToVvBG1l191NoHL7UTFQCe_lDZKQvKgFU5nLazr43Pj1JY6ppl7r-vOwEWqEZioyusOnriiH-sWVuMiruANSlHf-PVSE7l_o_vdJP0QqIDamRblHJWIomVt1J04z-O5OlBR8SrlYpcfdUS4SpolnfR0hy9kGkch5QktnM73IKJUOEB84qe4kcFdGgWNg2wJUVCZmEwgxcVwRThtyt3VyRpedzRygpiWc8WUn3ej0l3nR-panreBOo8uryCrbC68YaQYhpdrkRied9ckamwU1mU0AzYpq7lRZ8-kiqrJp9M2xWSZMPfEEuzgKd1XRMwXMCSfkOkWx-2OVhkNQyEFQ3m_JkkZkP9P5wN-gdgA",
+               "width" : 3904
+            }
+         ],
+         "place_id" : "ChIJ_x8I4V7KtDERdq99ehlE5MM",
+         "plus_code" : 
+         {
+            "compound_code" : "WMR9+68 Kura, Jeniang, Kedah",
+            "global_code" : "6PQ2WMR9+68"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ_x8I4V7KtDERdq99ehlE5MM",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 109
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Perak, Bandar Alor Setar, 05150 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1202722,
+               "lng" : 100.3651758
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.121663830291502,
+                  "lng" : 100.3663881302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.118965869708497,
+                  "lng" : 100.3636901697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Zahir Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110063498323626512897\"\u003eRuzend Mohamad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vQac0OKWp907QQ0DvYCOG8d8mq7mVo7maMrDEvxzUNUsyXejvQjztXJBxxh840dvpEl8lMTBajMHYmRWXOhEuxXHGUAXQIP6uIN8tDlc8tkrDwENEMpG-I7v4w-4GGDIgwXtPRtLqy3HqeRfRUfVYttFTVGu3YMAOaPphDDOPRh4WqqsHceOcHrR4glzlffNnArj_DFB2Ez9FTNCJq0sAw3ZMPByEzKUgNS5UhVpdTlqRucgzkEzUt-y-YI_WXT2eA76PQIIwQljExXx894yhIFT3muZWnWmtFK2wl0QJR-jtr1vM8WWOPOKWSOAYfxu78-m6LqgGLPAWnZTiuJibEevX7DOYv1G3ZN9OUT8-p4ol35sflcD5_LQldVkq-PGXYt5QbAlhMg6nNLLModaiQ05HT59BapVcw3Z3Fyl5Z-Q0Lxd7YDKDQzmLEFg",
+               "width" : 3602
+            }
+         ],
+         "place_id" : "ChIJM8lHErxESzAREyhjhGEgPSQ",
+         "plus_code" : 
+         {
+            "compound_code" : "49C8+43 Alor Setar, Kedah",
+            "global_code" : "6PR249C8+43"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJM8lHErxESzAREyhjhGEgPSQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5289
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "berhampiran dengan Sungai Batu, Bukit Batu Pahat, 08400 Merbok, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.738085,
+               "lng" : 100.4144983
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.739396780291502,
+                  "lng" : 100.4158883302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.736698819708497,
+                  "lng" : 100.4131903697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Bujang Valley Archaeological Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118215423548122168943\"\u003efar east\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRMRvKoeFDJWtKZgBCk28D67hVSovxb7QQ1MqMWx35xejamwkJDzEIxfBvy1T5CdYNiLq2CW6Wa1Zp_tbQspS9NzcPAglMEkn1Q01RN_1fjGBGhW2PruF-gwMdwYq0J6s89MiHf0bmEGSw_TaOjD0uzFGdjGr0p73A1EpoWHpl0pKaVLV3rPu9EFVqDshKMv_p3Z3DFvL-6IxcVjXx97uz0QSPQNwH2PCqWFxYhEtKTXR9awulL1hrvVY9jWbVHXdbV1vKKDmP3mw5Gitjt-ULzFK_1a5d9WKAS_Iw4GasfvJcqVlMT3NbDegEBEdOEKVjdqwLI_vOqMfgI6GJNbJM3Afq5eXfgujV78Iv9M42_txN0JpHKgytwYkJL7p3aNVqW_dmfF4vJmNAu-R9-KbNSkH5zBnUp2Q5fpXOr9VFyxG9",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "plus_code" : 
+         {
+            "compound_code" : "PCQ7+6Q Merbok, Kedah",
+            "global_code" : "6PQ2PCQ7+6Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJE1pyfy4AQRARWLndnLy_qds",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1227
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Batu Seketol, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.977816499999999,
+               "lng" : 100.8036985
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.979095480291503,
+                  "lng" : 100.8050693302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.976397519708498,
+                  "lng" : 100.8023713697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Seketol Temple",
+         "photos" : 
+         [
+            {
+               "height" : 2928,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uCZsa0sBFjJ86niE-mAB7vs0G3SFXKtXh9avwmKBucK8LHCvbtEVITZ2_aO8hZTYP_eapzxqiqsXiVmUpJ7h6ay67x6Pdvue-OWYC3k5Jc_uNWhgWGxUV5FToRDKWaFY2Ge_90TDlTzod3xrwTL7ljun-oVrGcCX-IzhRKDqQG0Nrt-uxtsG5313FEN1GIxBNk0oLLE12NMBwJ75ZZs0U23XcOZutc74jiweNhKOBPLGRFc6M1ZBwZfwYwV6zCMObXoBS-BjZdoN7KIlAUKIbXCN6nSXXCvDaxGp9ua-KLfOI160QdYFqEGCtpdP9LqK0Sf77ph7kTReMPWeSUoZOYlUajHQW89BngKR53bifxfhCLJpx62BZqZWax-qDOI52jRVjAPhHDaq0gm7vP2UFy2fwC7tr_L4IP_QV3C5f77g",
+               "width" : 3904
+            }
+         ],
+         "place_id" : "ChIJo8FXAWW5tDERgvvyaKi5pss",
+         "plus_code" : 
+         {
+            "compound_code" : "XRH3+4F Sik, Kedah",
+            "global_code" : "6PQ2XRH3+4F"
+         },
+         "rating" : 3,
+         "reference" : "ChIJo8FXAWW5tDERgvvyaKi5pss",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Taman Tunku Habsah, 05150 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1251919,
+               "lng" : 100.3719975
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.126791280291503,
+                  "lng" : 100.3734599302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.124093319708498,
+                  "lng" : 100.3707619697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Nikrodharam Buddist Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113595255627363150028\"\u003edeTraveller\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s49YWqH4x3_LQBDkjoL8U2_FRqUJ25YdA_7PEcti5OVH7066P2ellyy5C_Z7dhK7K55p-l0pM_pjuZ7UKwwBv4o79mpmbKDgDsifi7TuF3HPi2oTNsqIIuhGT6eF8iSzKKddG3bGJJndnlqU6q2WCNIDeEYiGGeK7xjgDrQKnEFW3WNKbruIjNonu8hVSboOwqFLdC760cMdKpllWRYoC3Qj4lAZNi-AA5LZ4jOfNlxF5WO1NUytAAOt0RHVRGsGJpdz30P9t8Kyh3i8Q9OFA91o44sSkLcIusrt42YIrk7sOmnTsWbRAtFvvQ4BoM59W_ackEmtx1CDa5I_HFHZYzBwQDNkgQLCFQ6eBSzPTjHbg93rMUNygM3B8no_V2jzureslUcbm_UoespGfIhD_AOfW8eRAU3g9CsCYSpJoeG9WRxvr-TsadkbybP_xn",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJf1B4BbhESzARCOLOeDYzYvU",
+         "plus_code" : 
+         {
+            "compound_code" : "49GC+3Q Alor Setar, Kedah",
+            "global_code" : "6PR249GC+3Q"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJf1B4BbhESzARCOLOeDYzYvU",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 208
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Langgar, Bandar Alor Setar, 05460 Alor Setar, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1323019,
+               "lng" : 100.3875596
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.133858680291501,
+                  "lng" : 100.3894015802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.131160719708497,
+                  "lng" : 100.3867036197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Albukhary Mosque (Main Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100264430583353872417\"\u003eMalik SA\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u2Tiy_CLozPqaWmNUogJHF0CWFmTXFSQUpNUXevrQXzmNJF204WzYHjwpF3O8Kjxu1D9VDk-sFhJkqYbHy8MFlx-vfbSgSdMUa-artkyoUADOZ8gTQ6xv2pCHLAt4CwvDtcQRFZ_0Z8zBC6iou9n2gN32f5bcOcrPxXwyxCcmqd_1BFQbBoOrQasDY9-dD1H84oyjgElpOjM1IMOxxxWGgMOEu5gHIDE7FlhS3-w1GPSjfH7wO-QA9rEwAcbnEGqe6sacezEJ7-VSSxl1WTvFGyGAxZrSJKiBz1N3KuIfp-GzVcgUocHZDBiApz_gmRMr2sH1FbWLxFdPJVduvx8HkSRUmQ4cNWcMj4ErC67B3cG-gqf7dE_V6BHdaCzdNzKC1OsO2tnfElcHg-IHIS-ITQWTje7sjUq6dA4bTo_dYcw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJZ6o3UypbSzARPZmXamGyFrU",
+         "plus_code" : 
+         {
+            "compound_code" : "49JQ+W2 Alor Setar, Kedah",
+            "global_code" : "6PR249JQ+W2"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJZ6o3UypbSzARPZmXamGyFrU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2072
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kalai, Mk. Jeneri, Jeniang, Kedah, Kampung Galai, 08700 Gurun, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8404094,
+               "lng" : 100.6134622
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.841756730291503,
+                  "lng" : 100.6148435802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.839058769708498,
+                  "lng" : 100.6121456197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Kalai",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115742727106393137440\"\u003ekim peng lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tjE7VlomTWb9Y9Je87vDaimHITI_unCLs1ZpNLI4zY_Lk_A4cd6wsrB_MsTYOphtRgbo7Lkse1mQS99VEuCrFdTuYl6gf-Ff-1_MI43NA19Q6vbI096AwU8ieGESQixgVs77BwTpTnYkHq1pYGkuB72nQ1On12gN0m4Cn2o4SUXLuZI1lP5HYbhkpplvbsrpjTyUB3IMPTqnUEuWeN3zY6JuE-BWMI8vSnh52CNAYLtdzX-1OHp_26UZ2n500Fnsi-X32EVtmdKrEH8iawvimvDn0nVAUxGlSV7Zaj4tzzIV7TcXXM4ue4CBpcft-muBFprlTCXzfKr5S2DcUupEjpCd3hSH82TN3U3-X8Fsz_8H_oL0SJCj0e-AaDUSxHOh_CGzRCN_aEewoVSihEP8xDlofQRkiT4ZSi_AHMSvDZlg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJfwwrvs0ySzAR57LP2ezqyAY",
+         "plus_code" : 
+         {
+            "compound_code" : "RJR7+59 Gurun, Kedah",
+            "global_code" : "6PQ2RJR7+59"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJfwwrvs0ySzAR57LP2ezqyAY",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 124
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "MJFC+QC, 08010 Sungai Petani, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.6745214,
+               "lng" : 100.621086
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.675779730291501,
+                  "lng" : 100.6224361802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.673081769708498,
+                  "lng" : 100.6197382197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Aman Temple Kelaka 2020",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1008,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108278227819964536254\"\u003eC.Puvanrajs\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tlQUHmtUoKq19VvblzvJktgYuNrXAVEgXd398WA4SoMX07n8Ghmst2nRQmjOZcI7TpRUQDJ07CDON7KoX20D1vit5p5n8tSTANtTusYbyLIvw5PX7iB33NcW9JL_ZybCYCKZLAAN1rZqExM1G0S8U4WhvzhsJt1oZrSsjcrq1JPmoZ1xWAfWJR4gmx-tlHz2hifllj5VkDBtR-o9pT5ehhJ_OV6V4qBZBOiUC9fDUzoBiBp0uGmGLfWcXy5s9HYqZistNeUbAQQktUr6795DoZLCwmTXPiCjdSg-23L6QIR5uz8k6rB5A67wUKQsHFsnbv616LOPzk_PaL8FfLDh40Mo7OqjXbil-Czk2Qx81vmim3ures889LdOzSui0dgLKrDB3xGystNGHP3nMZK0HTncllIMV7R6jTOstW6IWr4Btb",
+               "width" : 756
+            }
+         ],
+         "place_id" : "ChIJy0zhWhXVtDERLvoLZdLvmwY",
+         "rating" : 5,
+         "reference" : "ChIJy0zhWhXVtDERLvoLZdLvmwY",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Seberang Kota, 06600 Kuala Kedah, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.108730599999999,
+               "lng" : 100.2866717
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.110281030291502,
+                  "lng" : 100.2877908802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.107583069708498,
+                  "lng" : 100.2850929197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Muzium Kota Kuala Kedah Office",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2592,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105126722502299865751\"\u003eFar OFF\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJWwuXYmFhV5ZSO8xm_1HqH4iwdCKTAKQTeYjhE67rULb0Fxjp19wGa9d8sX0QSxUBDCe6u-gZdOgHDsAigJvWD-Y1G7mHpn5maNud53DrSX97lhkVNYzMBBpD0RrldvVJULkvaFSVKR7wlHyRPj6LDGq2M3TN9jVgnjp2aGu7AdUn8t1X9Gda4YNL4H2OUwdH8FlVQ-snCewMiqQzWOv2lxbdm-SYx2M3jz4S-m-49YyiuIwkNz1QPQzC_S-or3TPHD0hpjBGGO-eSC927lgB_K36oXXPHKuwI6JYsKbV5CruJTEWk9rD4Rl2ipRRmbtDPby5NooOdHjrvqdo2PvZn5I99rXPdF2dALXBjb2TC3rJkGGGd-4veOn2M96BcWKmNrxH_oUOAKIXGRBKrv2TQa0j-AQM2J3S3B2v2zLW_llL",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJzcqMuO1CSzAR9U93LaUdHJw",
+         "plus_code" : 
+         {
+            "compound_code" : "475P+FM Kuala Kedah, Kedah",
+            "global_code" : "6PR2475P+FM"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJzcqMuO1CSzAR9U93LaUdHJw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 682
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Kampung Charok Padang, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.805745300000001,
+               "lng" : 100.7231734
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.807104580291502,
+                  "lng" : 100.7245014802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.804406619708497,
+                  "lng" : 100.7218035197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau An Nur Al Aziziah Kampung Titi Semang",
+         "photos" : 
+         [
+            {
+               "height" : 1456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111127703182179730913\"\u003eMizan Husen\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s-iuyrOjNENpCJF19XrclkAzGSx5GZsSBYKQU2xWZrgpBddtBFJ4idQQN5LFE4u5EobNYu503uonH_48ESIR8I0UfKAN8o5vDowEw515r1ZPpcm9l8aQBfRam_a8OCMP1psINYWc7BbLhyyhGLXHqvOFU6FPW5BWs_rZ1Bz2r6KnqoVeWGIJnLSyVrLT6i7oaKmKltZQcTmegM6bQCtpoj-GFWCPSYyU8GlgJGPJrcRb8sTDnHyL5O_y4NlpcykunUvN8vejG5789-Bq7-bjyVbwY0cQwHGQOeDNZT9kCmmccFukpn6qShmmKnuRQqBKIR9l1V0eOMDqITdqGT0N5TR-GuW-x4l3DOTYOs0vNa5zt2K5jhg6ufEvTemW7_ftaaYEgiyVtrLfUqex8FhSnCVt8XSm_baty9EPARZOWMVofg",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJ2aV32X_PtDERohY76FKzsSU",
+         "plus_code" : 
+         {
+            "compound_code" : "RP4F+77 Sik, Kedah",
+            "global_code" : "6PQ2RP4F+77"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ2aV32X_PtDERohY76FKzsSU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 23
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "RM48+6C Masjid, Jalan Kampung Sungai Pau, 08200 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8055625,
+               "lng" : 100.6660625
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.806995330291503,
+                  "lng" : 100.6674968302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.804297369708499,
+                  "lng" : 100.6647988697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Sungai Pau",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111826317013816465625\"\u003eADIB Firdaus\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u_YTAu1PmGcLZY-BfTtu2q1ODbDqcGBCxc1sx7fdvUiCntFd6WkgZqTesh_PeD6jTcKLa0Z7CARe3LDxtGmK_JZjzBJH9LBrPGuTDWyNRab-Kz6TVkGPUxdtLfdWA25rrpzOsI59YyKU0XXWtWV4zZ0zh8VmNFOB_eIwNt6EQMLgKkhxp-4UAUSsCRXbhG1tY1BtPCErNAHIVW4XKypRrba_YT7vu74Q3_Ma2zOolGO1kyE4UhI3brh4eCshpRVp6c_0MTwmRdcvB51ZoxdXo5d4vFsxlCl-LpHe6TKfMmgt-ly3mNtMBfiOsfvqpRsYGpm4LLQxns5hUHZzXmlPLwhrPoYDycPtOPMc19UF7z2wroR8kMqOLnChGBcnx1gsIefhtCiQ_HprmrHZRReA_AS3JVpuV5trwMV5msvt1JyUhoTCWFz81PLMaXVTRH",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJ9VY_uYPNtDERQO6a1WFU2L4",
+         "rating" : 4.6,
+         "reference" : "ChIJ9VY_uYPNtDERQO6a1WFU2L4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 90
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Sik, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.817034,
+               "lng" : 100.742139
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.818288480291502,
+                  "lng" : 100.7435742302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.815590519708498,
+                  "lng" : 100.7408762697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Ar-Rahman",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101428078211118187566\"\u003eSHAMSUL ANUAR Zakaria\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-slnlDw2kZ7_47-XFN7BV4fo2fgoFu40v-y__gS_ny0FYa3XorbizI1mqL4o3xaZzgxwZzlvbKZi4VqBhZrCr4wa6kE9c01yjUa6rD2QVhDqvpax2Gvefe47x-MOHkbNxFofJQ1ds_PRcSvexMiQ7WNqKpoJUiev6og-rd3gh3klNcC4ruD4Y3THJ3WWzVuewLYkz7ph4HB7zecTbegEqcJWZzdsDqUTxR2NICtZcshWVgXqwJ5UDClnSUVSop7ou1XkU3HKZdgFfJHELb5ijuAvT6uLyRe6_BFYZVdLfNoiB8NVhQ8us6SB_dTRN8QF9YsBWAmZ7AI_Yb_Vx1bDJi1hUXJwCcCEOZkbCZCB0NgFi6AUxKIlp3pD7mNe00YSFg-SJNUc6fT15Eqzhaf91a8ITR5itRCNxnW_X4MisLbFA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJYb47i0fOtDERXeVNWBvLmMo",
+         "plus_code" : 
+         {
+            "compound_code" : "RP8R+RV Sik, Kedah",
+            "global_code" : "6PQ2RP8R+RV"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJYb47i0fOtDERXeVNWBvLmMo",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 54
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Charok Padang, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8098794,
+               "lng" : 100.7225417
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.811193130291502,
+                  "lng" : 100.7238768802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.808495169708498,
+                  "lng" : 100.7211789197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Hajah Zaleha Kampung Batu Lapan",
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101592898187285047167\"\u003eMutalib Mutalib\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sZdE3110g3HDYbZepNwh2PiJbFJykVP1ALStEg90PxjwOrg6QiPIS-sroZKj3-KWYmNt0CoCscdw6XBXwCx1BWWCt2FA9ONKou_j4Y4U0BQ_vzYwzU1oxnA0RrhHgSVj30_NsqvXki4FJOVu90RqYqxkUNToYTItGEF4w8hPCO8SEqp_OH65iCIWb3t5LC6YCC7FCCpRyLmQcNIReTXN7mpr8VY_nqG-j6pihT9PHEe2Bo2u9Hs5gij9sxZ-UseeyfFrH3eJ2n6Mppcjh17PB5fVqrn3p6WZ41A0wsH0Q5MObRVERqhhHBrTxCngGhVIEhJuhlMR8fonU57nK0g9lNyuP5OD11wDawlfRzLIxa98SmIcbpDqWls2rgv3jGxTVUimrqhKt8TA1AtQAw-KIDhfz-wuW4FuPIv9isYCdUig",
+               "width" : 720
+            }
+         ],
+         "place_id" : "ChIJ6Vs0thHOtDER1NHW-pzbe0A",
+         "plus_code" : 
+         {
+            "compound_code" : "RP5F+X2 Sik, Kedah",
+            "global_code" : "6PQ2RP5F+X2"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ6Vs0thHOtDER1NHW-pzbe0A",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Tupai, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7539361,
+               "lng" : 100.7167587
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.755362480291502,
+                  "lng" : 100.7181466802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.752664519708498,
+                  "lng" : 100.7154487197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al-Ehsan Kariah Kg Tupai",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109710321431486324038\"\u003eBalqish Wahab\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-seV00g9aQ6PVYHUChOq3b9wEVVFjxgTEqVdWv1eDrf9aQCJR5q-SbB4cg9W9az9GzeF89vHq405YbnebATydfUe2JiclSjybdd5qdhXvpQQ8Q55B1nrrPdfQD2WJv9m1isGSRFkPTV9g0jxf86IQYxrNpGpQ7ejERbchi_V2xrMCqfLrWnevDFJ5vql00xdhJabl0kmD5rkDA2c9iPYxG71PgQ02WdIRhx_FjQHifWXcI39W_HD5vBD5MzVNdVfGsOWoQ558mPya0jryqzaCtkA2QJ9KgollH3KkbFZXFPkVpLJlC8EFvCe0uz2_m-H5OBXgYEJtMKiviNRAnGz8fNWo4xDO4w3Qv-I1fqflXRgMSI1Z45D_DFEzek4W8oQRjqkSqR_Bc_9Y2mwZurt4i1nCgCWFGmtSYlLmNpEHh0RqOm",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJEX2AvnjRtDERrOCNZOwk8Wo",
+         "plus_code" : 
+         {
+            "compound_code" : "QP38+HP Sik, Kedah",
+            "global_code" : "6PQ2QP38+HP"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJEX2AvnjRtDERrOCNZOwk8Wo",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kedah, Kampung Teloi Tua, 08200 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.7733286,
+               "lng" : 100.702695
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.774624480291503,
+                  "lng" : 100.7040040802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.771926519708498,
+                  "lng" : 100.7013061197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Kampung Teloi Tua",
+         "place_id" : "ChIJRyUFOC7OtDERzyWlohrcefE",
+         "plus_code" : 
+         {
+            "compound_code" : "QPF3+83 Sik, Kedah",
+            "global_code" : "6PQ2QPF3+83"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJRyUFOC7OtDERzyWlohrcefE",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Naka, Nami, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.0517123,
+               "lng" : 100.7448224
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.053122680291502,
+                  "lng" : 100.7458654302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.050424719708498,
+                  "lng" : 100.7431674697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat Buddha Rachanusorn Kampung Sungai Kap",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114366474949857282034\"\u003eพระชวนเชิญ.ประภัสสโร บุญมาประเสริฐ\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vKO0T1gy6BaGlfInbarKzbuMmYS9pkquNULvL5QDUEQm0NoZt1p4WhP9YKq05DYYecY_QvNHhQRFnvbRL17tkaypQQVnzq_OKy2HoVZECNTYbkJMedHKHE9hQLai6q5QOkB_yBGwIsLJfTwKxUomMOlT2gbYg8Qakm9ISiTauKS2ZaT48UgIYx5yBmG7SDB5k5orv4RLgsbJuZ9SIKs0x9aympcKwpBa1EqtROwgSqTEme2DWMTXbwplrSatx27kq7kJmlLHg8u-5V4IcKF6DjOJpfQj0_mWdzxf92Nc8lv110eAejWbuotc-QO9ofmf4IDjqZW2pI7zk1xYY0FEnmJ5fSMpiu1O-xCNYIvXnqdz0Pvu9NzcoMCaY0QdpH5KyD8sv01EvWwqjD8Zt1PVwPqwqdNjb4h-aP3MRoekpDWQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJUb_eFi6xtDERKjShSWjjZOE",
+         "plus_code" : 
+         {
+            "compound_code" : "3P2V+MW Sik, Kedah",
+            "global_code" : "6PR23P2V+MW"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJUb_eFi6xtDERKjShSWjjZOE",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 27
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "06400 Pokok Sena, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 6.1239619,
+               "lng" : 100.6287012
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 6.125309130291502,
+                  "lng" : 100.6300627302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 6.122611169708497,
+                  "lng" : 100.6273647697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wat paya sidang",
+         "photos" : 
+         [
+            {
+               "height" : 720,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110398403512104683454\"\u003eเพชรกะปอม กลิ่นจันทร์\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thW9Hwup2DiUcNf8LWQs2s4Aq92NSnxkkFQTE_pEc3jl2PjdVvWXxkTjJtZC19eGGLvQb5QJ7sjlXITKy2d3wAS4aJNECBQh-ZeDUTRiSfbpq020RY3IcKhYITgHuMuLTxaXQZTve7F58rl1rB8CKTfrXmH7xS-mPSOfYbPleZv3wZ7wbU_TlDXK8IPVQecRDqAv21yusRHkcXijqqV5VmZqauD6i2xYVjqm7vsA3P-ym6w3Tz5Xf2PP90EnY7zJywghB1I4oIQIQ8g7_3FAP5QDU1y3Vn84i_svm7EMCOJthnjDkrHrMgvVjpS8dkzFNppLwetvWLyffyzZSNhu3itl8D_yS3Dc_JyL7Z3-TNMRbYNDYf0vCWG6d0M_uIF2ThOwpOGzVoeQ3g91w7Ma3RVvFyoiAQnvNXLIhpM2mUNA",
+               "width" : 960
+            }
+         ],
+         "place_id" : "ChIJVXP0p6-ytDER_71osl6gRpA",
+         "plus_code" : 
+         {
+            "compound_code" : "4JFH+HF Pokok Sena, Kedah",
+            "global_code" : "6PR24JFH+HF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJVXP0p6-ytDER_71osl6gRpA",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 30
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "175, Pekan Sik, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.810692899999999,
+               "lng" : 100.736416
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.811985480291503,
+                  "lng" : 100.7378012802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.809287519708498,
+                  "lng" : 100.7351033197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Surau Kampung Kemelong",
+         "photos" : 
+         [
+            {
+               "height" : 1153,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106915568266848010860\"\u003eMohammad akmal Haji Saad\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tmM8FD7uiSe-Jk1FSYLLpFyJHLi4nHOuJgyrR8PEm_Pxe_iAcsoiITuoVc3W3hqaIa0ytwo8Zllpqq8E6vgReyKbcoj_wT_dBS0EMM1vxo4IePLa_Usrn3PAjipxb0iris_VW_kesYrvHEz9fPYC6MYPZRMlLhOW5tB2EL4EBViVlNE1RRbTDjd3z-g0ljJrM0IMSMq5RfG7_yJiqvX3xKHrphq-0mQwUblzvDXBnElAes86v8WF9a3yNuSJGv5CtmsiNLR5-PBTWO2JAvVY5jrzzhsZp4G99qmot-69B7ZdX10UdVmaUBfK3Fu78RWjwhPgtWt_gpVuwtJUpB6HkTRzCap2zTz0Mm19bTaFW4OtfQrRuJmja4q4K15uGZccQVKTBJMQ3DZVgU0P4ShWTCh-n0PtLZvmYHKn0OLJ2azvii98aBNj4RAK1yA01M",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJ9_pmPjzOtDERRMzY7cHb0mU",
+         "plus_code" : 
+         {
+            "compound_code" : "RP6P+7H Sik, Kedah",
+            "global_code" : "6PQ2RP6P+7H"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJ9_pmPjzOtDERRMzY7cHb0mU",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "RQHH+Q6, 08210 Sik, Kedah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.829489499999999,
+               "lng" : 100.778093
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.830904480291502,
+                  "lng" : 100.7796205302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.828206519708497,
+                  "lng" : 100.7769225697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Perubatan Islam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104412509713520955332\"\u003eShipping Clover\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uurExr2kDyTUEsPQ55JeqEfk5QVWs-pGA1v3OalTtIni7c6YYEffzIbkuMuhfJkMBt9LPT69TTBSTWS7qRF9HbYH0SVGT939o_Lt30mg9dAI3X81mrG2M0NRrUk1hyZJK_SXAAQ8xbc89u5D0izCsPxIqi0k8W67oD82h5kVA56Gv9nHdZrCKR57h_YsPBNH7gUzvsuRPoHupqgBkW7k_MNdnb_4WL-jYScQrL_L-oUBiIuh-hAFgk_D6Kv5XaNr77OJ6tTj9JKeweWK12fti0BMgd4TlY4P3ZIWnhi3vXHjvpsSM2FOo5M7zRXD-_sPtnu8FvDb_tOO-eOWR2y16CxZ71qY2eOsg9IKk2_FqKPYOeOgAadLL5oXL3UGC1sDY2YMvkVuf1jVQgaGM5GMRPaECAGAwXfWZcBVbaZxylrg33",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJqf7wRknPtDERPKmrGTOXW-4",
+         "rating" : 5,
+         "reference" : "ChIJqf7wRknPtDERPKmrGTOXW-4",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      }
+   ],
+   "status" : "OK"
+}

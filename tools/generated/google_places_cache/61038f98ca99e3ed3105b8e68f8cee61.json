@@ -1,0 +1,237 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Level 1, Green Zone above Cold Storage Supermarket, Sungei Wang Plaza, Jln Sultan Ismail, Bukit Bintang, 50250 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "011-1009 9374",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1439685,
+            "lng" : 101.7109116
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.145275180291502,
+               "lng" : 101.7122918802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.142577219708498,
+               "lng" : 101.7095939197085
+            }
+         }
+      },
+      "name" : "MinNature Malaysia",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1000"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2100"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "1000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 10:00 AM – 9:00 PM",
+            "Tuesday: 10:00 AM – 9:00 PM",
+            "Wednesday: 10:00 AM – 9:00 PM",
+            "Thursday: 10:00 AM – 9:00 PM",
+            "Friday: 10:00 AM – 9:00 PM",
+            "Saturday: 10:00 AM – 9:00 PM",
+            "Sunday: 10:00 AM – 9:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100940401411909188324\"\u003eMinNature Malaysia\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vXonC0gHfu4P9Rqx1uSVe5A0WSA2C9o6bbKXYz_WSRx5VqpxK3wSgfIpBi6caT1RHnfFbdubCX4ozLeywCBwbsqfof6M8qgxwuT-ZfBlBqWkR1YEgH7wwro93n2gHnJUcmalaa48rXwW2AQysDF0nU8PXjw-xPwWDiFQuNVKfsbebDRKNqTXSyCPqO3cGEZ3DccAj9tU1cNKjtrFGsfkiQgUb5hsMsuyiL6CgQdpmiE5DCHB_8Rt9qvznIvKOmgvuCnk8ToWrl7vCXFqxyuF1DN5JPkR3SI7s09gHW2uWVkRk7asfdc6SdcY2Ue0EYVO6p30uOEfoecyXnfQWYgwEESbewIe5ijK2EyUfhpMDGb9XJ6WE7tEVhouJozjO0HjYupDMO2vtt9CjlvCfOZNbE5Vtko86-wI3V-ro1riQNHw",
+            "width" : 4800
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117621846344525135333\"\u003egnoos\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sSnY_f2-SaO05qrTaEYyKVjJdMQsXbR5MR9kKmYxH_o0tYhMQ9YKdaT6M3R2AmdL7keHfG3OhzIFaPuSnbJea_XgkTJOmyOvxJDNHX906j_ibGThXWsP-iJIv6ASNjYuwS4_fHHMUY1AwscNlDaqFMs0geNMmeOIqFZhKZYyWfuYY8_pQJ87EZ1alGZ0h4KSStzEW_0VfgJnDSnh0aHaT555rZRhLz7ty33Z1rS_9FyuQcovIRjQp64DicF2VmjyIu9afEPDOVMwZ2lR3axWTl6VsjhydQobGnh5GxAGT3PGYrjbHQfA1KwfGUw9ZF-EPNlOpwsKAGub_wLUZYpQhIT1BOrJ7NHC9wNkO6DUtIv3RbV-PYLGTPCK6OOG26bHLccRpmjagRGdWTEe0Tqt52pHzFi_uPSCOYRV-gbvzkiGo",
+            "width" : 4128
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117621846344525135333\"\u003egnoos\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u0jHoWLfMMi3Au5yyAnOrlCHEDvf9MV3EirQItm6dQFlw1tiAZFf6F3oj8OcyxtycsbA3Md6fR2x1bRvNq03LLCHnN9BOzQ728YDA2DMUqbOzbxgbvTveWIWUOHiE1gEkAIeWzkHi3tl7J4wnGnUmZN42XTgcVWJO94GTVVhBbM0Odobc_YZG72tIxVK28QN71_w0Roc0OIe4Mt465so-iyB1OmF6QeO-o_mdW4sKkMBPOsfWQbupQh8xCzbl7rIYoz9goP5OSEpB-hRthPSUDV1TkSjbpTi4b7NtYbJA-qZ_DyQCPs9uJKVX8S6LSxbVp3vSh683yn_RZqyrJewHruMtpNAuQEEzkxjY2sSEDPcrhSbD4R0ttBxLad1k44oHO09913ErVzJNhZWW2w0CXYBYO4sJjV1b_7BE-rRwqYQ",
+            "width" : 4128
+         },
+         {
+            "height" : 810,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110415649774940518470\"\u003eChua Boon Aik\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uWA9pARavecrA9kvBRr4rQCz-MFKsptakKTeXWgfHKqF5i5-7OKr9SN25AGIxTBnD9eV318IbpPi9AT70jXioTPPySL_S8ZNilmSKkwL6DLs4FUcHiw0M0KCXKVdGOFvjyr7jjN1GowOWcBXD3CdDZhU0Hi4JeD-1cYFHtRLd2KKiu1WaS1PKRPO11UJlFbORs0JXApM4Wp_SHz8Qkwo8QwmiObtv33-4ZI986rvlErac3pRElrCZDZoJRUKP_vKoFKrIVHWrF0LUsjtQJRvmd8m2phJusJiBrbPR8WYfvTDQHCSF3Y0EvM8c5sfcRDAHbIh0JaSyrE3E7d1cMrfbwPQaZPm8CVxU3QRiEwrfK5FeDYQnSO3Ke4sKtCven_8vgMDAF0fxIfqD4b1rRRU0UwOFbAG6auL1jRhMLxbEeFg",
+            "width" : 1080
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114502391070329005021\"\u003eDeviant DJ Jehuty\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vQcdlhvqlSLMTIFDO88uY-NLZ_GzoYuQq78-Adw3tqmGkU5cvHFZJozSs5BlL6MBCIOrdNpiKHHn0RVW15fYM1ip7mUQe3Xc3z_wJOmwIqGKx_aI_FfQPxE7L-FujHu2gFOkt9V65WdHPEETIQD16R9tNw1PE5RJci09wf5cXecobckpKetpMRv39KYq0sH9JcyX1uYdTVT6OrVdoS04CQI1PxHNiMdnnU9Rguw0KwAp5guyrZcNYtcbncgT8jcvbojocbHSDwaBupXVX9fKzQmAVnBkdZmXfoh0aVBnraD51jSquMecswwyDkIC1ofFEj1qZIcmENxrKWYRQZZBdUrpvkj0OlCa7yvgUrZoHEiXi2XzLPfTun6GWDKdAv7q6u40Pj45J3kWSAbpLyLC3-9aVkw5K5d4RlEtmWkkEPx2xvbuSWv_je1LLM_N6L",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116737412183913680388\"\u003eSinu Sahadevan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sS3Tf73stNsa06w8_UjudFUocTrE2blyfKYWAKGPIhNKNsK_X5Rtn7hkwFUKOv9EMF6FOCnUwJa4jxWRQdYtk8PJ6OVczTFNp3DIXEPTqvpAKMuk-bLEjlWCAgePiDbYEqh7NDbQwHXD2NC7j75Zc-1TWXPKut-uu-i2WGoC8-zRCOeol5j_r_-gNy02JEXjUo6i5IcK4vxcp6jkZf1eqh5Im6t0hYlBR67aPWLvYShem2sM1euHyuGzwqgaEVW8TBmJTZqS3jiURiGVEJZ97JgMRiDecVnLLRsy0K_AR8rIxMUA5Y8KI10Qa86W-q4S6oaP7fSg_sYTCcylg7iu4aMYOhJ4qCqE_Dj06G56hsTXgLW7HyFIbyQZswJgH8uPWuxdcUocCG48FEA3vn87ExIB5CUQSguCVIRmznL8nJHg",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116911074696682258843\"\u003e남유진\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s-sZt-9dVNos4jNMgEzvrcNpkQ9LleTTUvrnMarBNx8J8rd9QZOHNGmh9IF62A-tV3rbjXQ5GnU0g-raAiDOK6iQLVe_LSM8Vvklb8loyrG53znhVKRrWyL9Q9qF5K7_jNgO5u57A024OzBH-_fSio178unSfBk3tgmwhvvgiM6qbnvXBIi6h5_hg2sN_rFREBdwfJ9rC8tj9039RxJe58LsqlDbpGyHuaTsaN7wO2OQz_oVFpvuoOkl18KsusWjDuT2676FB9rOG73z6InPENVzvAyibm8VOVMYjV8iCQWloKFChYOoM1xfORPSlrK2f_PBHKXnJu22Y_ySYKXC5ZqLwPg3xJwaKAFwNaoZTFTNOusm6SFv3DV50E2e8Zri82J9kvFuc2EnxhPo6UQugM7kEqnmNu-qTzsjbPtjQ",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103158195866034501601\"\u003eBrendanKVD\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u_a1WsNWwpRwZpXZrOWaEglMQgnluZkERR0CAU0TaS1AgXP0DMY3zfHiz9MwVbuXGt2TjJ5vbNGailPz_bKpjmkOD-3aMVsGtU8eT76oUjqIzSjONC7w26YpRYwEzd-Do7X014pWB_Lh8S-fBI04TbZhAN8il-4SsQnlg_bxaPWMAnUtQwxfgZFLWNQ0HQRxW_64pCh4P53MRnrMyI7p1ZKaU-7Zkv2UdX4nKUKhTZo2PBK8FhOy9WAooHvH8agVWBanVFA3zr2flfwmJpdI8cO45WYR45UJ9DncXmehyTK_PP4d1xpYNwbtT5gHI8TmENiaLLcvC0f3B1GN_KgtgIHLewJhXTTCkRSojtFYV40HAf_TWMYeWAuQdai9e0QA_n5lYDBd3509HZsBPj6Ua3QE3MEByyMeSuZl2KUoV7Ug",
+            "width" : 4000
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101282480240036420409\"\u003eDaniel “JC”\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sc6dzn9nZ-74cgCFAFfhWN2JjJI-4GKn9MZU4gMsgM4bUjekA9noCEoGL1OI3LMlCpxER2T3nEJNS1Q4--3oZFGMSeLSRnRx50KrGwD7x5aQIdS9wiglgBOWqbzfPBg-UvuedjyENnrwCied9xRWRmrMEUjaZ-mgVTCFsVaPpCZJztII_ZluW2fiJnrVZ7qxXUNPM3rAId_BAyVX2Ig-K5qPl3boYE2F172yMGRNdS04PsP2t77d0n0vOV6ZkhryIEwtV9b17Ci3BRoNwSVqouR3NXBiOPgSVr8I_cwhXaeaW3Ohhzk6OqCMD1M1PfZbQq3O11CIl12FTj3bR0XdQ3UiLB8J20RnSNlWU6k_Y01xq1Ig1dZsilYyOKGbGZ8MQXctrQmkYkFzt0Ry6ycsG_ImvLsNFHjNlCXOs_nwS4JZEQNeiOW-5HWQLZPXfQ",
+            "width" : 4032
+         },
+         {
+            "height" : 2296,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107837745421956021329\"\u003eL\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tR-ENOPNf2t-VBSlNGOCmfk75vrCDTv90rrdKfmLBT0iNhIgAgYSHXtSfXdkf_r7X6c97WUIVfkOt-fYWlbVBZtTytZZYLv0xCuymT9fCmL6kcwWG4U0vBKqWW1LD5gkYycY4BMeIXE0I82ry58NVqCJKGK8SG5UqRbfWM7lpOLC7vybn8cRuYJjvMjbGFUwRw1YzfL20Buxh7mdKLB7Vq48GzrFP4QYRY5-XCGRM4dpk21ESkrui362UPfhsddvSnTpvlgF4sDZFLBVgkjhmb0hs_hFoemtjsbLJ2m5vLayRRSzF-AjPJUwMzGztn9xmEeInhpPAEYsbjEgltpf2gv7-HsrcTFezlvfsdMyVgpd2WVSUSQTstSKYwmUyUx5hcFmLQIpIDdsrAJUXk3gkTFwt4d0yHsSMCP4kU8UqSZw",
+            "width" : 4080
+         }
+      ],
+      "place_id" : "ChIJ27V2U5NMzDER5BiqIB-t7fQ",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=17648952863938451684",
+      "user_ratings_total" : 1581,
+      "website" : "http://www.minnature.com/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,1229 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-s4YqBIuKYucS_uW_mxquEDAl34UVc4RAJBOtAPaOhIvvRwE3W8M7JdBMRSy8o-fESOliTp8-F4_WIasHL7I6dD934grTJ9a09BPCD595SpbudZUvuTfkl3pt51lhGRjyHVQoRfG_vVHQWcI8l_BQpE1C0DI4IJgoQuVKfvJfbOyiqW-eXUHgPMRRKIWfVRrKRR7n6I5B1FrlxUaUOXCSoh4uVDrLYwsLXhKQBecsh7_Po2Ec3PW_CvOIkEuB6-BGruU0R5g6INDMB6ut7ujn94zA7K4m33WV0_wRwOCbTJs52SdesqVV-vJHf20c8M_YhCV_Oam5Z1riKGkapYaCplllQ07oZkF0u8K8GUIcL6GpDivYddHEMy0PBXlb6qlD6lpijTMZlbxRLKAR5mT-FDipo2VW0rRrVh328i01zpnQ3cIFbvaXD11gZcF4BHVHhkZovJ_59WQbJ0tnphDqw_JCElRchRgXWrCN5StZKSIonq4BTku-4lPbWIi3sTuDav3pUHrFqwMIbDnqZlEngH9bcmdX-p7Rkxpq_pVLG8DMrmW3u7bQvq7IJA0261LDI_QfE0QpGCYVrNrgi7UIiuvltvxK_Dz1Mkxm94uab4Zg9p6PE4679QfFQhwkJkqF2zdDfTrWRipDRQMxVb96SASJVPETS2_V_WWk0BQQzFzN2xJTEMZJgtzp0BG-tAWgmko2mNnfSGXDLkJ7V9JuQJyGDxWPdoHW6T_4Qi5tPoqbe06qqi1ki9XK43uD7YgfMe-QJowHMCUZpN7MHlBQsg1IvoUgwshAxZU5ahR_dviCQ9HB6pc7Nvww2t81062-XUvE1vTxfa",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pengkalan Weld, George Town, 10300 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4128345,
+               "lng" : 100.3396559
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.414257180291503,
+                  "lng" : 100.3409637302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.411559219708498,
+                  "lng" : 100.3382657697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Clan Jetties of Penang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108963896199521831144\"\u003eJulius Chang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-u5byO_UiePFTITXrWIii0BH7BjEbw6bZor9-GZf1ZuRiK9tgFphCLGthw1tbfaaZv1lxcl8T7gqpAUNGTLO5176nmTMDR1EtuxrAmn-X2ubIoRAM8KWya0NX9xSwNR5Vw1sPAkEF4oHsHPWgoxkthY5sXeVF_TIuPFB2TM5QKkrnueveQr7CZhLWVNETCknp3V7A5K4I9Upu13_NdCTO0yEW8Oyq9sRkk_nNCzNQessaZYZS-71TyxUjG0cxlNpUcXLSXe7t63osav8X5Vh9B4YVZGWiRrlY1Ey1fBZ7iTyN1ZftgG5fkAhV_k_B1sXbzDAM0gd1PQYTy5nYniCRgnFMZXj8yxcFS-3QRHqGTo39hN7QRda5kIqsiIoPH7HIFZc8hWfMZgUBDkftBri_dOL5q3hYdo56Dpdz3G3cYVLg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJESJTC43DSjARiVDKy9hsY74",
+         "plus_code" : 
+         {
+            "compound_code" : "C87Q+4V George Town, Penang",
+            "global_code" : "6PQ2C87Q+4V"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJESJTC43DSjARiVDKy9hsY74",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 4152
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "29, Church St, Georgetown, 10200 George Town, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4178275,
+               "lng" : 100.3412046
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.419255480291502,
+                  "lng" : 100.3426059302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.416557519708498,
+                  "lng" : 100.3399079697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Pinang Peranakan Mansion",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103777026416219040033\"\u003eDylan YU\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sC1yOrIU7nhvHsqg8aI7cUePAZwyNlRezHgJzzgqfl-nLqRaK3X2SQl1u92UfsfwU_3B1QsxciaHjDJm1lL0TakbnvNoISL6yfppMFZwL5A6rhhU8Ib1WXjO_svgoAmBccH_gZwhtoTknyDgihJ07EUWkNBonZ1upwks9vpfpiw7KlXppVdKmNab7EWMwL5hhDwWMXaLIVMUmkJ2M8aI3dCqBVpu9TqetIpSVOLakpq1cFCllteZvYJyFnuQ3TsWsSwDXo08Yci8oVGN3WCHzCMtpnr8eZdJgZRqTvhq2MCf3JdoJ9Ez8TTcAkKmLiGEzLH3zbEGHqvePutq_-9QOI7EXGI8bzFpLV3KUoTRF6zbwU8EMIK2Srho5isB5DR0ZGl3uhJH2vuXa8SsIB1FD5sfphUf1ND-WiolvqiHw15ukI",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJCWvz3I_DSjAR5hveCXjdfIs",
+         "plus_code" : 
+         {
+            "compound_code" : "C89R+4F George Town, Penang",
+            "global_code" : "6PQ2C89R+4F"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJCWvz3I_DSjAR5hveCXjdfIs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6190
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "120, Lbh Armenian, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4157093,
+               "lng" : 100.3362209
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.417063580291502,
+                  "lng" : 100.3375711802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.414365619708498,
+                  "lng" : 100.3348732197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Sun Yat Sen Museum Penang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114794334144915105614\"\u003eAntonella Sciortino\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-umrAZiO_xlYjx0Q-Yu4EaYFmh1xLR1Ga_Z5KazHntwPWQRiP3f5TXXHK8grRMXDwMG9pi3e-qsg1iViJy50TeXbFveYcG-DWr1Y9pdRkh40Fda2jMb4zX_FaKjAaWBLFQSlDCW_t1zoVRfNTJ9TV-4EAfmOWQ0VtYcUWsDmpcxUuBKPBt-I1XTWPZmbdafOh464Fs1noUiJLMCQ5hZBxgsSaCOTRIh97I75xPuTdl_-gxEr8krbLVG38hHvskJmRNv1S9Yy0IqbzoGjjj8rLAjg_7asGGC276oLSbU3LLAjx7WTp8cr10lPyJHPAbkqkJBOMAyvTLwhyl_edKRSrVaZ-jI-l1ukv00qGQBQfLbMrtyTmZz7Sd8DleP2VVvEYQcBG0o11yPCKiLslG8ni6oYcXMhlhVdjVeLU4mK47E1NAAUYJq61eG1uOcdd8U",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJb4Pwg5HDSjAR64Un_Vq8DCE",
+         "plus_code" : 
+         {
+            "compound_code" : "C88P+7F George Town, Penang",
+            "global_code" : "6PQ2C88P+7F"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJb4Pwg5HDSjAR64Un_Vq8DCE",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1281
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Georgetown, 10300 George Town, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.412717499999999,
+               "lng" : 100.3397723
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.414159480291502,
+                  "lng" : 100.3410696302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.411461519708498,
+                  "lng" : 100.3383716697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Chew Jetty",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101782729131823301845\"\u003eJean-Paul SCY\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uSg4d_M8LdTB8LOMdx9E7z1TR8kGberYFGRfQ7BuR-HNUoFBOaqrovwhgnxtqfPUE8WC_wwzqqehWiAOTcYagP1w57Z3qEvVjLsKD7JuPMyt-IPigeQgxjzpK8T7oXfQJWCAmqoaJsBtzJY998OVvF5y0iNx273gbRE3IBQYWz_AlT5EOuksp33VTStaTRj-d1tVZVwLU5eqFPCjMe1eIigrTfVIT8uJYo_4Qrs-dlmaLQ0IlUGpPL87QevFV4r62Gk0fthKcMXgkPd9P8wgOLS0Kvc2molg658VnJ6Jo_u_cSeBj9jozQf6AwSpgg6Wral8OrEYpJHXhzmjXR3qvVHnoT-KtE4q8RpORuVXk06aydMt4XU477BtSh4BKakSI68ra48m5s-7X6xfYU-DlrwBBFyeiI9Dw-D5VVRMcYmQ",
+               "width" : 1620
+            }
+         ],
+         "place_id" : "ChIJ50W1D43DSjARlPqYV1MqscE",
+         "plus_code" : 
+         {
+            "compound_code" : "C87Q+3W George Town, Penang",
+            "global_code" : "6PQ2C87Q+3W"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ50W1D43DSjARlPqYV1MqscE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10196
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "316, Beach St, Georgetown, 10300 George Town, Penang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4145962,
+               "lng" : 100.3382558
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.415988730291503,
+                  "lng" : 100.3395903802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413290769708499,
+                  "lng" : 100.3368924197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Penang Street Art",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3188,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103423865344883218531\"\u003eFungSwee Wong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vqjz8su1T7qyRmsShUZodJrzGHSFbtW8oB81_FHwI-czNZLilk58fWoW921sazypOeNH32JqhJF005OTw6itZBIlbKeq8qOaSc3UeagsOF6h4RsvZdIrNDXZviGfS1Wkn-D9a64B1hCDDNsBOd5Vj8TSvhk-dC3TOm7dKdpnyu05R3pqIGO6jvnCkzdr93pXfTN5iZ5BpdqwM1RVYrxiK34iPIU3G6tS7vPO1FbN88iNdK117S9-KHb9cq2IR6ijdbDDCGcGRxyCmgopf5g1pr7YJlxnYSZQ3PG0BzFtL3UgBM50ZiG04oq_6WzbORgNdcIx95EC-pruedSjmOEAH8aNqwgVZSLxs0P8_zEGMYTXzHcFJo96fLKnPUPWOqHlrm-adcL9J0BwVQfoa0eH94s_jFJH1uyCjOwk_we2oSwaFDYyv-jYlD3mN3zFw5",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ-cCMa5LDSjARF1sg9FiPauc",
+         "plus_code" : 
+         {
+            "compound_code" : "C87Q+R8 George Town, Penang",
+            "global_code" : "6PQ2C87Q+R8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ-cCMa5LDSjARF1sg9FiPauc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 11919
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kek Lok Si Temple, 86s, Jln Balik Pulau, 11500 Ayer Itam, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3996413,
+               "lng" : 100.2736126
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.401296980291503,
+                  "lng" : 100.2749307802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.398599019708498,
+                  "lng" : 100.2722328197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_dharma-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kek Lok Si Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117098485636146060270\"\u003ekarolina aleksa\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uHeXckBow-vnFMWkmP5dTlIjHXPoXwfjyhI3Q7_ZZdw_UhfJzt6AkQsGpCfVptOd0eHTSNvSSMCqbyJRmX_vMSjbHMgiW_KmBKxanvsUmH4QChvZjRHFHHQuGRKqyUh9XUM6JTiRb2KFf-xvjzLRzLzcEGrIegZxapAI_7MLSNYKvtaKL9ut8WuqJLikuixb2AL1c5HZ3uah6RZmBupsN9WboEEh67I50T3lHkanrMknvFYnstXdu6Iappe5zHBruuEhhcHi3ZWJQGyzzp6OrWBDwKIWK1os9vSiMYfVoW1R1SH4R3jecKtFWuhW1FDSaoNuu0xlR3PoE8m1WYAZZA1IEaLayoI7ern3mRDjF91Xt9Enu-k7vrNY-8CvhMdFFbBD_KLbEcNErd4IYM5hW0wTHsJBctlNDzBeKXdQZnBuX2",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJZYb8XRjCSjARxD5Df-qEkCw",
+         "plus_code" : 
+         {
+            "compound_code" : "97XF+VC Air Itam, Penang",
+            "global_code" : "6PQ297XF+VC"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJZYb8XRjCSjARxD5Df-qEkCw",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 14744
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "87, Lebuh Aceh, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.414949099999999,
+               "lng" : 100.3361145
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.416324380291502,
+                  "lng" : 100.3374897802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413626419708497,
+                  "lng" : 100.3347918197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Penang Hajj Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115461881748882347812\"\u003eKingsley HUANG\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vInbm2DHex95O7vB03mDaxPM5Ry0hDUYcRe5I5ScF0fFI0OmR05fCMTqPf-eWYitkG0pKFNd0qowQVhOQOIvxGmB0EC7jEq7yplYdslm-x3MrzUEHVHM51MIZoTmjhT3-qbr2SebAKq3FxM2pUOvgLy4omYviGTwxCapTfQNbDDor-kd5qng4K1DZSlsEcQ2_zPapHSSInvTVLvbWimjo7pyyKYcEaohpvD5IuivN8elcHLrnseaetc0bf-YLu_yfcd_Vba0yQfnbEP3uCy6lgt7a5XkgyBfUtyNIhdwMKErcMstYbJ5Mm9_E8jRrioAmBt4BWVQqZaC2DOzbCNmoO8kl93CHa8Ng08s0W8R7QmHF32Pq1sogoEIg2TJs50rl4CFr_rgmFQwMDltkkjIltP2MWTV0MD-lrAxbj5nb6MQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ7WZMKZLDSjARshdvuGqrqtQ",
+         "plus_code" : 
+         {
+            "compound_code" : "C87P+XC George Town, Penang",
+            "global_code" : "6PQ2C87P+XC"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ7WZMKZLDSjARshdvuGqrqtQ",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 9
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "138, Jalan Hutton, 10050 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4218813,
+               "lng" : 100.3277942
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.423143730291502,
+                  "lng" : 100.3291016302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.420445769708497,
+                  "lng" : 100.3264036697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Penang Malay Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118318922119726505595\"\u003eChuah W Pang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vOhOvhCXMK-NmADnaRn7OEDgX0TTydRZJfJOh3SrrEcmTSmXfyGD2PbwaqYtdQaBWZvRtl9kE77w5S_KSTIV04rvnA5IH-gLf3GeKnaS2q66QuQslTz18q6v4rNSf8XAAgxPhuQaClnYE_1_IX9sLe34zUReIMXfCV7tKalGq6HmLasfX9Kv3-wnKfU8oF079Gsg9ZLVTa_v72_RHiVpa80ibbcHwE7Z8K7E0hjq1sz7_SxB_BhAqwxwu6AtAFKU1E3zGsUcepXhJMAJixd7oEGnVE5WIRGrfHj6DiKGaBWKkzJYDLwE69OlI2S3t7dtg1ERae0nMtyPAUsJjsgfWNaKmdFEEiXhyqZE0JQCCLKd3QvyVPAibHvwDNaDyJ-xijE8wVRT23mpvMh_uZVZ4_VqwI2k5gohn8VPbkU2Qmlyn5Vlubb2uFQ0Xzbw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ1RzMcpjDSjARKKqjGkwttOs",
+         "plus_code" : 
+         {
+            "compound_code" : "C8CH+Q4 George Town, Penang",
+            "global_code" : "6PQ2C8CH+Q4"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ1RzMcpjDSjARKKqjGkwttOs",
+         "types" : 
+         [
+            "art_gallery",
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 70
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "18, Cannon Square, George Town, 10450 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4145737,
+               "lng" : 100.33719
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.416129330291503,
+                  "lng" : 100.3383587802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413431369708499,
+                  "lng" : 100.3356608197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Leong San Tong Khoo Kongsi",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110034906481132738675\"\u003eMatt Jenkins\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uj6EFU2hOsQIBJDwZN2HtfGvw1I2s9Y9bYqbtVrZan67NT0KUt9Exod7j58aKDz2jn---6_RR-YkLa_9AP2r715IxaWyHOvIgbpweJJstrLBFCmghgvAoT7u0Jr1ggyKPmpq4r5rndF3iBgGdDljyCaBwSCrdl0O1-8dzjmq4tch-bN8uDdyvPoCO-yMb_1qlsxsGc11LRTJ8lN2ngs5YbCl5WfRyO8EOA3YGeNUiWfQQSav9-bNth4QAYUkqiYirlvisc-bGpyGIsW0cMw7dUBXhF_ODL5z5RCdkY2_BZQJwlp4uLQHzDMpjRERD3kR5M-419T3FAiCThPFi-mwFm8RnQYEN6zMV_tbDbJT3b5t_94bR8PW-BXmHej1kdGFuHZzY6iW8CaFZ1HxzhSmHOVWdfyAYCvsfidpXixx9tU-A",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJny-BJpLDSjARtmEDgFcyASw",
+         "plus_code" : 
+         {
+            "compound_code" : "C87P+RV George Town, Penang",
+            "global_code" : "6PQ2C87P+RV"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJny-BJpLDSjARtmEDgFcyASw",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2017
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 595 Mukim, 2, Jalan Teluk Bahang, Teluk Bahang, 11050 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4634881,
+               "lng" : 100.2293398
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.464894630291503,
+                  "lng" : 100.2305216802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.462196669708498,
+                  "lng" : 100.2278237197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Tropical Spice Garden | Events Venue | Cooking Classes | Spice Store",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2911,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101211037424958036429\"\u003eTropical Spice Garden | Events Venue | Cooking Classes | Spice Store\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-scTQcSPc7sTz_TMPteOypeUqQn3kEMi1h5ReX4IggRN5tCAzugLw3BBt_0clhzm-mxKLhtrXlMkPvpIXsLcKaDCDxXXT60Oc8XxO0M1rm3uCtkSs9N54b4z4aDgv29ytJx4obxPWLDGOdQ_5EmpqZcaEUU-x9zSxVrsr2uq6KZk0yXSoCLJBRXRw2lwWjYPxj7dLJALisrNowlnB08ZzhRxpHGymKleH_agc_6wH9JzjCshdW55CbwUaEVqOjoGQnltnX4lsTvElUXjX7cLIw5Vj8pkdPI-r7ca92lWhcTXuk6gzl0jwf1kYG9okkyq9m61Cy9FFcGnYOf2TWwG-ak8T_0MdzXrZ1HFQseLq9u4YmABi6t7BY4pSVNkPIv7UFMWBM6cPo5ioYHGphKp8YlEUJ7E2z1HG6kK9-bdDn2vKjq",
+               "width" : 3640
+            }
+         ],
+         "place_id" : "ChIJt0Sxll7oSjARG1NtQ92FCc8",
+         "plus_code" : 
+         {
+            "compound_code" : "F67H+9P George Town, Penang",
+            "global_code" : "6PQ2F67H+9P"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJt0Sxll7oSjARG1NtQ92FCc8",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "park",
+            "point_of_interest",
+            "store",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1998
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "159, Lbh Chulia, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4170037,
+               "lng" : 100.3379775
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.418365780291502,
+                  "lng" : 100.3393544302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.415667819708498,
+                  "lng" : 100.3366564697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Georgetown UNESCO Historic Site",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101642608104358003228\"\u003eYang Wi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t_pMbWjNOZBrFtXJfF3vhkzx5YbMrPs7oDWoDM3JyUPc2Ix6hOf_7ak6NqwV0JthhiINdgpAo-loD6lFWlmiikH2NC4k0qSiQC28YN7tHv3OEdNemmjnnAZuUuvF3Qy--L52pj-7DfT3tMvOcBdT5U409VqzcF9TKhtP0BnrwdmMGwZyAnD1ItAYWYmL8nFNL8Gv2wDCd9Fl1qcseM7TEpc2ruUbMNFbjFRE17Tva7TkosoV-Byi2U6VJ3UPz5VmH3y6fh1tIW4VGD2lJs1c_ZRE91k0jUQhLW5DDfylgY-P6Wdo6R5AZj_B3UbYua3id9UF15AdBZHoGThFmoQYXJ35qQVBQ4NXsjIwJB_jkl40YQXQS8eB17NLydT7OvK4VMXQMlETYV2Wk4C-gR8SuSfz5hGRfKM0eL2P0X6QDiSw",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJ0ZhzIZHDSjARWcrnjUdMN-M",
+         "plus_code" : 
+         {
+            "compound_code" : "C88Q+R5 George Town, Penang",
+            "global_code" : "6PQ2C88Q+R5"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ0ZhzIZHDSjARWcrnjUdMN-M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 13460
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "7, King Street, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.418635099999999,
+               "lng" : 100.3404086
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.419999130291503,
+                  "lng" : 100.3417346802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.417301169708498,
+                  "lng" : 100.3390367197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Penang Straits Oriental Museum海峡东方博物馆",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 933,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111111470576789454024\"\u003ePenang Straits Oriental Museum海峡东方博物馆\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tfmRUdEIuNEPZ1zrW9zP8hqolHiuC6hmGTfLYV-O3a6YqJIkMOaBZCgw7G7wPJbJW_peikF47nPKQLGqvy4zpNt4eFBvyGhYFlhi366Omvx2th_RFCVmWEgAljvVT2j7dHgoS7j_p5lv8X45g9NDcXek7cU28YvOjElBF7fmqtgts0ea_1BwwmanqEZnwAEHbLd7JBclldvZNvBB_pIAqSl3ghS3U4CHEloBMaPjJR3Ay0vancYwxVvQlA8VcT2bFt8ll_33HpwfXPDptu_oRwcLrjNfqaidh3NJf0lWU",
+               "width" : 856
+            }
+         ],
+         "place_id" : "ChIJ3_7CQ7LDSjAR6ct1ibV1sjI",
+         "plus_code" : 
+         {
+            "compound_code" : "C89R+F5 George Town, Penang",
+            "global_code" : "6PQ2C89R+F5"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJ3_7CQ7LDSjAR6ct1ibV1sjI",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1743
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "114, Pintasan Pengkalan 1, George Town, 10300 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4105932,
+               "lng" : 100.3371825
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.411955730291503,
+                  "lng" : 100.3384880802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.409257769708498,
+                  "lng" : 100.3357901197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Yeoh Jetty 姓楊橋",
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108819344844558744444\"\u003eKhanh Nguyen (Bomquay)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vaTRUJ5ERq2YOImIRFm2vSnxqV0cvJ9A3nEFmUHhteg0Rh1PWADqGREUXAno0wW8HPfLF5bcl_gu9nHiSUUHLrPoi0IS4rcW54TbbvwekHLMjJqNv4NP_quChO1qWXxLNxMYhfeKSqAny8SDFiW3kj8gL4m93KQU3gBOum3r7L9GbmXl02szixNAE-NZKoqQz5A1R6jz0h_jjEi160Qt2DSA3ExmB4Q9H7g99ts56ovPq4zAXHZ8SXC5LaLiSzshleXttalDWhmOzTfePgzPfhgVQYl1JpDc0v071VeU7Q3jFcGTczei87-jow8csPHwLlofPtQJOWTZ0yZDdseMlq3BHrcQuTDV9Jctgknm0I4lXdyMbYJnCQRqS6JTJg2R049CUaOpAy9Wbn3l3-hhtfdzPWwd7_FHH2TxisX2iZ-Q",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJLXITs5LDSjART6l46f_oA2s",
+         "plus_code" : 
+         {
+            "compound_code" : "C86P+6V George Town, Penang",
+            "global_code" : "6PQ2C86P+6V"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJLXITs5LDSjART6l46f_oA2s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 162
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "57, Lebuh Melayu, George Town, 10100 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4137354,
+               "lng" : 100.3348618
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.415110880291503,
+                  "lng" : 100.3362340802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.412412919708498,
+                  "lng" : 100.3335361197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Ghost Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103519540283888579637\"\u003eMiles\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-viSzTeuLgWy-3hmxaZr8fXaZ6-1gp8rVO3S4x3aipv3RAz_c_BW106ED6aAkIZL5_KnTTHxka1zMcX2Osxd_ssDremtxinG2jv1qgoZCTE7NpId9NbweG5pgJBlmFIBp1PcD3vHh36yr2ibIGZCOE8oEqOsfz1qxbpKtlD3vQwXX0RDsr_RCV18ouD-oMHiAWMfEGsCTigKfAK9zHHX91DJ97HW901OO5uY2oIJaZU7I-uarM0BVfUQIDv82RCo3Xb_6CrOEpThld8oFWEodlpXYPBPztadCMFlxvN9LLkFJTPmBu02e8QcnyjH1R2naLdyVkv-JAk-2fN_Svrp_g24XyDfWX6Pz8ZziRTjIOtzD2q3hrFTDvZPMx-HSpxPAy9j7vGRgb8Na4moENeEjIwUOo9Oa1egRluAIPUqKyFOQ",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJMVwPuZPDSjARUbEIN3RoO_Q",
+         "plus_code" : 
+         {
+            "compound_code" : "C87M+FW George Town, Penang",
+            "global_code" : "6PQ2C87M+FW"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJMVwPuZPDSjARUbEIN3RoO_Q",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 4247
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "45, Lebuh Kimberley, George Town, 10100 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4158046,
+               "lng" : 100.3335296
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.417196080291502,
+                  "lng" : 100.3348941802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.414498119708497,
+                  "lng" : 100.3321962197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Upside Down Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105407811583576588227\"\u003eSaso Ristevski\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tBPWLdpo-YuZ7y4XRhHSJVoB6GYIeos9ILlnyoam59p-lNtnZxdXAbTTCaC_rksH5PbEE8h_6vbkpNAZOTTy3PPbUf5_KP0U9JuHUnIScp44IcELALZ9PM__ucHhLe2dnhjCA1_RY2iRs5TnuocLAQ3UDxQxWCkSDpFHY1qMNVYC3-sf1pvHb9DRsN9Ag9xz7PsYUNb0bQFrKOrdh3UwlAUcvLjwVLPn9PfPAKL6FYZZ8SxAZbTP1qMmqSPoknBgta1hPvTVB3aQ2h-A4lETKFhXQW4x4DSogYy1uQjxmAy_cBvr-k3yPq8nc4oBjahrUovkiUSvRvq5ina1vSpHdRFKeESKerrGu9N1ik7Cpf7cpAEt6xUIBIn_BF2cBONYEqENOqiI7aPLtPL8rm0fWod0HO-mDcniFsOoCvy1U",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJLfBSUJHDSjARUKdRl_svCpA",
+         "plus_code" : 
+         {
+            "compound_code" : "C88M+8C George Town, Penang",
+            "global_code" : "6PQ2C88M+8C"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJLfBSUJHDSjARUKdRl_svCpA",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5761
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1, Jln Penang, 10000 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.414454399999999,
+               "lng" : 100.3295496
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.415800380291502,
+                  "lng" : 100.3311064802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413102419708498,
+                  "lng" : 100.3284085197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "The TOP Penang, Theme Park Penang",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102715149159225409202\"\u003eFaye Zufairi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s79MiW5Ppkat9Nm6yQoiuzqTNCv1uDis_dUxrUG7qKIwU6K1B3QrASQerRcUYLHEyVXS7i0FZPyfUZ4P70ExTZzLEWhvIkLjLuN3_SzN2Nbh9Et4NL6w1uDCNIl78AIoFot_4-BLwprV16bRcfspQPDVhA2HOJSfeoEGLQXSMF3jGjSud_9XRxEQ54l3BD0LRQhERuw7xIwdrG0ommp2n1DueN2YbFsqg4rcKiOSCZ2_glZoqcpGBQy5u2_FU1bZpZxv8amLiOUuB_Y76M1m20cMpJ91xDFaCYbAPRZ_DdwACRlxBq954p6IsRxaGIn2jd0dMPW4HwPDqRgKUfFFVJXmj06L-WJQmw1Mvbo1WZfSoQDehJAGJYO79lcUqXG9RgnOv4khN8H61mkPN4WQWo_NrIDIXIcNOg2-ZNbz0XONgw",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ-8pjzpXDSjARhqQbf7o4ang",
+         "plus_code" : 
+         {
+            "compound_code" : "C87H+QR George Town, Penang",
+            "global_code" : "6PQ2C87H+QR"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ-8pjzpXDSjARhqQbf7o4ang",
+         "types" : 
+         [
+            "amusement_park",
+            "aquarium",
+            "bar",
+            "establishment",
+            "food",
+            "museum",
+            "night_club",
+            "point_of_interest",
+            "restaurant",
+            "spa",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5789
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "50, 26, Jln Penang, George Town, 10000 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4213261,
+               "lng" : 100.3337983
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.422732680291502,
+                  "lng" : 100.3350845302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.420034719708497,
+                  "lng" : 100.3323865697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Street Art - Trishaw man",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113191940995349377822\"\u003eJJ Z\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tnSrvU0vx8lprQR_zH-2Ne5zN8g2KByIeGY2U6aW3ZRI_lrQVbaU0ibfr2I_nxW1b8BbIHHR4nykZRSJc__pz56wvSUi59UZSZuyIgNNJnlceX10uESW1DK3G7C7s0EcBJUPDlYTZ1x3-A79ekLwX7clfjoR2Wmy1msvrjvE5NUu3sMv7GRhnViyv4XOQcjeQjUel5p8N9HfAICrpIR2oCYIqXI6ZqyEnmV0KnSl9ZYT4ODPflQSm0jHxF1BmgDHbSJUmIPWeTCjin8MNMiKish6m1GIKqP3k_bAma80kulIJDcLjG6fjliORic5euB7kMgA67r12f61kXRokvMJnmcOld19aWo-lxgjmJuxsVgbLyYetG8BKZW0jTnE5doxOlnsQc8cdasHEpOwu1W2Mr0vv06dzblomp-ubE8xl_cg",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJaxn2F5rDSjARtqt5KT8s9gM",
+         "plus_code" : 
+         {
+            "compound_code" : "C8CM+GG George Town, Penang",
+            "global_code" : "6PQ2C8CM+GG"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJaxn2F5rDSjARtqt5KT8s9gM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 67
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "8, Lbh Armenian, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.415188199999999,
+               "lng" : 100.3383087
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.416355780291501,
+                  "lng" : 100.3395014302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.413657819708496,
+                  "lng" : 100.3368034697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "世德堂謝公司 Cheah Kongsi Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104345840107288666107\"\u003eIan Chow\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vmDRDIF_OyxxxbzlK12AX-BtyW7nvm__ZWmx_FQ4dcnvZrylS3mvT8Vf5Vpe1UZOAYGnffIsjk6_HEzCQ2x1JI-rjTIyFnDNKqW20nBVBmhKe1p-urWnUKK-mQEV-NgbfcytIfkl_YFuHtqv03NuN8h8ruLdsH4XBMiijM_b7gO_aQhDypGfGDdzt1Ob0BdcesZWnKyMMnv2Y8X2zdCKODZDxJ8qYj31Pm14x4TedxGDRMvuNaXkF86LapeNZBOHwN9gl5dz1b3FwQYVtJZ7xsNIHfzo2Khw6GAD_ehba1_nZkwCeb6phFSKJCoFkrz-IWk3rpOyQsjow8s2iNDFi7cq6HezAnvIgdORcTbKShXehAzpB3yo9cu-ukWRmy_oNpkJmRQx69xi_n__gQhqqMtD9OBURpwGmA3qY1zetpS86IlQ9_wPFcPg53UA",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJ81DUBZLDSjAR7At5WcU-o3E",
+         "plus_code" : 
+         {
+            "compound_code" : "C88Q+38 George Town, Penang",
+            "global_code" : "6PQ2C88Q+38"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJ81DUBZLDSjAR7At5WcU-o3E",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 341
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "65, Jln Macalister, George Town, 11400 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4156129,
+               "lng" : 100.3242694
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.417154530291502,
+                  "lng" : 100.3256971802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.414456569708499,
+                  "lng" : 100.3229992197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "槟城孙中山纪念馆 Sun Yat-Sen Memorial Centre",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2853,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104863196627298177718\"\u003eRony Suleman\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tGKDOIGKFegShNzCaXfZ8CXE5dTNZTMYhVgICGnYQKFHQaFTW6j5Az_JffEbVwN3yNAhceo44RIgKkfP5XT9s_Xu3MxinQUzNUI2DI3MVGQ8idx82uhOnC-_H2zm6tKfrG-t8_N6Xrb8JhHZOJ_aCtYdizZzC30FTfqfjmznLPdcPsnNM-Zw1Y_NqJJ7Gjw_c-CePeTPE9QgXY8XYH_XP0ZYG0H7jYK6P57L09FlUTH0-U9n5YUqh3IpIrxlcqRi2knB8oOFeZan7a1dPWku5T1ixAYRVF9q3-DG3uNzFT9-ijjFicEebLbfL-Njt5avkU2kjJNjcffm1_F2LY6ObxQ-gUOxyWI66lqFZmAr-aJKR8L48MivLtrE1Dzrno3WUt3tsZs5f-BuCc7VcmT7rAGRYY_Rxur6UC7K5myhITQA",
+               "width" : 2629
+            }
+         ],
+         "place_id" : "ChIJSyeRMrzDSjAR4_b1Lgh9H-0",
+         "plus_code" : 
+         {
+            "compound_code" : "C88F+6P George Town, Penang",
+            "global_code" : "6PQ2C88F+6P"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJSyeRMrzDSjAR4_b1Lgh9H-0",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 266
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "59, Lebuh China, George Town, 10200 George Town, Pulau Pinang",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.4162913,
+               "lng" : 100.340406
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.417617230291503,
+                  "lng" : 100.3417307302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.414919269708498,
+                  "lng" : 100.3390327697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Penang Little India",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2531,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117765812784595449463\"\u003eKahPeng Loke\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ubtKETYIcL2u2N93eRYupF8ugFvpb5FtdDBnlbBJiy-9sX6HPZQX4rn0u5Mhmz6ivFtAgVjLvXzQ_eiC3VHIONYiQuVxfndCxUDxauX1qmGQCVrdg8MDWVQAwNKopRnV9KRG8sNo8EZftedwADKItpMoBCYC2qnLAAWqCQaumlTYEDYowug81-zP57tggilGQvV9I82JvphQlMmD0yQS7rOUNU5YyBajAonX6xy1E9KbAnr0m36DkRavHwLVsyZmJbPJ74cNEJF1dbkKiMFdpJB6aJbiTrC5kjX2itRbxSl0XeNfT_usqHV88OuRAYZS95HQbjxpCjMxZlzpHWIUZwarCVKeGKjWvR-uHycuxnb6K6SZR7U_wi1z2EXRSitxdVy4BIRd3fQdjcNGu4Zoj5eFbJs3aY9D6EXMapyPU",
+               "width" : 4500
+            }
+         ],
+         "place_id" : "ChIJvSXoM47DSjARJx_AFWVTwcU",
+         "plus_code" : 
+         {
+            "compound_code" : "C88R+G5 George Town, Penang",
+            "global_code" : "6PQ2C88R+G5"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJvSXoM47DSjARJx_AFWVTwcU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 17003
+      }
+   ],
+   "status" : "OK"
+}

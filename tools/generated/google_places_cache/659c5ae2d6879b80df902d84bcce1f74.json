@@ -1,0 +1,236 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Ulu Kelang, 68000 Ampang Jaya, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1578799,
+            "lng" : 101.7990623
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.159234230291502,
+               "lng" : 101.8003944302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.156536269708499,
+               "lng" : 101.7976964697085
+            }
+         }
+      },
+      "name" : "Hutan Lipur Ampang",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0600"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "2000"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0600"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 6:00 AM – 8:00 PM",
+            "Tuesday: 6:00 AM – 8:00 PM",
+            "Wednesday: 6:00 AM – 8:00 PM",
+            "Thursday: 6:00 AM – 8:00 PM",
+            "Friday: 6:00 AM – 8:00 PM",
+            "Saturday: 6:00 AM – 8:00 PM",
+            "Sunday: 6:00 AM – 8:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2699,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110914650757522223825\"\u003eAndy Lew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v9z4SKOTwF4X1b-61jbjuYf6iit8hryZBCvqlZZnBSxRyDbF-yDDHCgGaOeWUzrJrTw8nFbldHGAoZkMZNsmUKv2vBUUBVRLKKlEK3rSK8syI6Oelm4XrwOhz1VEzOUqL6BMKjM7HHHqkVxvYUFsKior08sZjjjbo-QZPGjh_FvLWEZpdQNTgwAwarolUPBRLwXhEkyb4xxVoNRgC7dm1dzRc7Ie15fDN3Faouw2G1KjgjHg2Se17s5i6LphR5iBjsYUXSuOJ1NTz5k3Rsvs_6t1nrSedl0VBfETkX_OZYFQknnaceRXmbYoNXtr0M2lsMXbaDa4dSF-B2YXmX30PgSEmHNgaxhFQW23DfiJltEnoTuguPL73Z2mCVIyzvEGaOAq6MBXP7sGA74tkE9IoBJ6Jpxy3Cj2RLmYrywiTFKQ",
+            "width" : 3600
+         },
+         {
+            "height" : 2700,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110914650757522223825\"\u003eAndy Lew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-udYS3PI8iAo5vBZD0kG7bP3Bk2vuVA8dZYXqprBKS_lnP3QYdPA_mC89Po42ngj56kWuXOifi93iIecpXJNiIkAt2WtnfFWc_Y5zSGpaXsCO5PTYjRy7B3s7QxT84WtfRPwojZG4HJV09XYPzSnIFLTpar34EzGTa5jAAUqViqOfYTtzfAX77Q7TmoOLISFwWxQCKKOr14UBelKn_ZKyt0ZXeCXBdGhxUURJvOGZ8BVXHUH72ncRaimSIj7mwRUlvO6EJQDHN5okWrJK8LiAK3sA4MKiDpf9xt-fF52eVyPPNHd7dBgRjqzJ7QcC75_mLjSPlmPWBoLIYtkSPNP3YvN0MN4qNAoS8LfaRuc5l0scmeIYHC8wvGDU1BVPGHVVpiMF3w8DMu6SgPCg7yZhJG2uzuSfE1JMh9s8klZj708Q",
+            "width" : 4800
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110914650757522223825\"\u003eAndy Lew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t7dk1Kxaf49WiIxwXZQzRkSrNBNJig0rNVEZlEg4qeBmUzD9tUyO6MNM5wsbdnAcNMOL3tfQY0iKou-JBfM26Yd9VghnUnFIXUwXSwdCVd37Glqev6Slg65NW2_GC9WiGBBEdQiDNV_DbKpuFsLKHtDH0jD4-BKUiNN_kdau9mcZnnbto3kVf8MS8ziABGnN_lAMWc9_siPS4rAZLnJm11xkhM4fdEASpGXEdsC_1DAlDF7gCvHiVCdm_FhjJkdrhW6PyEuWhVd1BcLBeK0PSva6sFno3kj3SxKIavmEK-CIWPHuDrfBy5ZPfmkwWICZG31y42KuSvvS5oBMQQD_Dncxt3b6GdrZL4XeMOoLK2ME9Cn5pLso1SuurmM0L7H3VWVGbltL1m0rBtLEwIEYMi4W4puZaKMP__O3oelLSpLrLx",
+            "width" : 2700
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110914650757522223825\"\u003eAndy Lew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vTnyh8MJfjeJGTJbG-3pwG6dFIbzl9BspzfrcCENpLMg8fBggrxATKwlDHX9nfpPM9tNPA-FuvVpMCpHqovbQC0fTxYdnb7mCHMuDlPvxqD2aEVoN-CgXRRspHR168_TSVbrRY_t_QZdw_og1DKpXcNrqDYzTzxh5dir7PHAahXM_2hpcWSbuUBn_leRbzTtysq9UITwEUM_5Ju0h0_eI8hGHA6bq5pyxAcdZx0yAqoQTV_gPecWqLyuvCnrwTK0VzGaFv-1dWwO3F74tzpxlQxo-awQ22lhQyztb6aAZux1Dv8ZkkcnC-w_ldNMFDlGQDpa3NBoOq5EXCA5oXcFRA0KvLaApjAz4ba06OGpC76tAI1lCwktooqQ87R2cLU0HS4c-hU3cXnFKjMgiBPHB9PjSPYQPWUJ3Gu86W35buSsUG",
+            "width" : 4032
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110804772600703046083\"\u003e김k i e\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vGPIaB8hHgxqcmvzxjIABA4c4vThJtuSGefekao7eUDc2AyZdiOr3um8TgI2hnfNvthzlIi7ryCMJ4O_S7FIMzVeH17ppNIupbw2fP9IbYVDVLWIpG4_47CGxI-yTWi50NVj-8goVI-gsWUaWvIY2_rYLq0lPtWOBpEVzBwyvMsOEbHYoRFRgE0uou4V5JelYY2Pv6-d6o6Aku4MwLMdT2tcr_OwMTq38GCXGB48gx1d07J04NVu4cwf3iBgIahiHi6CaUc6fDIHfQswgt8hsSbOA1zOpK5cuyccHNrYhNrEY-noazLY3PLqFyCZ0qTRosCyOuWRlK__KN6ipqox5P-RX0AWsAV3olWkQXw11xq0XWkP-4IWNW-lsfJe8bKTuGYX_wrsc9_t28lqSZdE51SL-UFb9yvbUEuBw3KUg",
+            "width" : 4032
+         },
+         {
+            "height" : 3096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/110336318258293506298\"\u003eshahril sahlan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sspIv5fFCoWTb-BMWylocXthljnq8kRXxb0BacHil-JWz_ADsOIctQwpDInjIQ_LoX6Ynnr26WgYqcrasfLyP-J7gcvq3l8YaX2LF1KDGxJDxXD3s-DrUyeBQqf9oQxdyF0C15qD-rAOl0eisexN2_4TK-89S4xB0FjK8IFp7x-Wtvj40clOe_Yq06m2-Ukmy68glW9C8E9X3TDVmDhnj1taHINOrI3vtSmfgV9hsdn6WkoVjT_GiglIx42SLTzRFS_fu5TUpSpfo-13lWXsO2ptJEeMwSvCnUU7SwFfgmeRF2R9cnLqNlA0Bne20Bu8ms5fQy2buklwksjYqKsV1kPbx5YozK4nAfZ-8llU4eiXxCdsg1FVqiguQrUZi_x5aM_bIfcnr4jbENpl527BWQxVc8E5qEhDfM_uOCGrOjb8Vb",
+            "width" : 4128
+         },
+         {
+            "height" : 2700,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118355447743445352565\"\u003eAl Azami Abdul Ghaffar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sZq5pesSeflvA2Iyg95sPMwkxXWkZTGhAjMRe9kKN-ImVW4RQ5RwtGyuXYca3f5zFfWGSUuDmYnqFam3muOAsPW_YfkaaAnHhpO0Gf2k5org6vlQ46FsPt2MsZwWCDzpLAXkucYpWep06moMgOdbkzIcubJzfFpr-cf-gpvNd6lUsqSmULEGxq0O2CDvU5w5IoPluUFIkilO4kyot7X7U2Tj2ZGnPocHXndB1xvpgMtSV2QDPBUgPnCUbkZ9n_-BgYulv1WNvGHU64wn01PAsFipA6fHowQmtt9VrYEAp7RXlXgMxlDnToOWf92qFC0bPkRekGsz-DRSCNjZJIDsJTOdPyYjBzLts8uQSubcURACKkTW9foFlLUVS-zpX9GJB1E3A7JpPa9e-58xYuglvNCXd_oTXm4UywasUoVjg",
+            "width" : 4800
+         },
+         {
+            "height" : 2448,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106797242718610645070\"\u003eDelita Seri Delita Delita\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tmWPwj9VVAwTinepQVUAokYPWZCUi-U2VuinRrwidhnMhncinTJ4BdilOdg6_LW6OEDDDLvBa7heQ0MxtAvc4jgtbcE25i6eRIAhmnEFG3cjzEnJ4p54rrIzNf8w3_oO8xkAlKDxk3fCxk8OEwfEKBm4GxnhRhvL1jaiLe9ke1Tk7bOoEoZZFan8d9VN_mcYklWDsp42a1agbx9k8zPVAH1cBdZA7uLknjqyR3rG-SLUrC3LDNjNWVWChuQBU2qLJDzGjwrTo2yySPwBV-TLTS9nlEMngEWJGaaYiQv8VUS31AlUOaqYTF7W4syxMwSGVFCSS7HyDItqTSJ9ttipTJfGzrqbOqlNIqbLMxF6kMv3Mr1z9gUYUV_kDZmjuSb6ANET3gxJlAJYiSJMipuongqaWWEp11qIXMcJUdX2sYLg",
+            "width" : 3264
+         },
+         {
+            "height" : 4160,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113013145635153525489\"\u003eBujang Lapuk\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tx3DG3E4TAodyGVD9BVrDmhsONdFJAgrdorRrsTCZ_TX2sxAPH4DJRhEkj2Tml5xq7IC-xOBa5CCgZIQNJrC5e6vgtn_CM5lnvYo7i7012xYhSyVtEQaAaixQDGqq_P0CYto21XF2EeaV1GnByTeYELkSBEp9PLWE7ZPP4tU-w-oxhtAj9aIP6vCabxhe7ZYe8tIEKhDiy_zbB2zGt4d8cf3WXmHxEYkDIyF6gbBpCfdvZ0vqyu5xXQ2QK4_t9BjUlGuqc0VfbjmV9hZvx7vlCfFDUlXWGyJNFsqwgiyqMCnWSuYZk_yoTHIqQA3RRJnszZkS7kuKRq-Zzb1ZxRjzjpynZKSKi_3MTJw7RV7G63kTUHq0BAf9I5LpYvQktnIm7hMr52hDc7gRD_5A00yJsUTrTunTTZpPVik6TWW1chQ",
+            "width" : 3120
+         },
+         {
+            "height" : 3264,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106797242718610645070\"\u003eDelita Seri Delita Delita\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uLjwqcF7mOrajutIzV4e4qiDx5DkPnTzTRgfZtew78dSUHXwM2L8UvhvbLSpeMlVdfsrKhBL7rW6JSyCMubvfytg8ROTPTBpgPIgrVX13cX6gr0YRxPo3skgELm8gNalymL5UihSwt751YGqsi5ONtq5X5Aq4h0xMc3gUkH0vqcqEK2qwAcbWiNt5ldysh-vKpbJhnY_Rk0cJd1nVO_3Gop0DHF93TwtOZ6yP3V6MTwD8Uedctaky8qhrXG4V3BkBNYEPQlVAwsNFasocLAr3Bflw0AHtIngIq8tj7aQSYMUnO3GuljjWvrG1z3LBPjlQZsIfSZBT6ig0xP6b89Z8jSGKzLDB8N8ER63SmgNv0PhNkhuSG5iu3EgogL8M8Nz0lmQEKEqL7ArJsf7UV4HzMLN3fNdCSGB7C885tfdJcOoPR",
+            "width" : 2448
+         }
+      ],
+      "place_id" : "ChIJLSvJ3tIwzDERdWR0RiZ06CA",
+      "rating" : 3.7,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=2371272911550178421",
+      "user_ratings_total" : 53
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,1212 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-t5dvBcEGJYtgCKjRlkaInYQrjywAgTYn0YTfmmIGKv2_aGdgNLXWFKZxt3rhdFbnzuCC1qGYE7TEXEXc51tjmb4sPlBYMDM28bSuRkPvOuwNzj0FhCK760ktXs4ZI04JIhkXzd4XVXa2vnLyuDDqwW1jgiZTX_7zSLu78eGDKhp5PhmITDVIjRr0_ckeX9bQwO4PWhgawi4J05HYbECV93TW50biyOY0GrxyYydv9a42Rrjm_0OgFDgA5Lr8l8mJksDZB8Dpy2xw5H2awE2kt-26Fpw60OmhqL6TVoIuXofCKmxk4xkJ9M9HTdzFihuVwsbeVCXbGPYhJDoteXMFLnQnwR7_UE8qSJtNAXsC34DudGUtwL3IejBn5CCtmB0W4kzFoXWPKTzE1AmZefRrV_YSC3qn3MfhKZsq2wuwRTkga1xR1LG-vMR2pMXAbCOWQ7_1Rr9dmb7WpHxSsaV3BNyU9_7dbNKT4B0U0C054gcqrqj8m4t5uiG_who8sjFPqffdfeTlI4s_wkVdKlyG20PiJW99gRWtchattF1VOqUGB7snOs1RlxoR7YndM0S0Dg6KO_t6zcbUD0ARPOJJMXOruuEo_8tdRltpgiM-6TSHO9kFIy3mMGtArf01gB42ugRB251jRz0LQ8sETkmoFMj8TctkVhnI5NytnoCsFzPUcLsrl3-blMXzI1vNl1ENGcvM8DpHuMGxhye0SbmUVm2oSkdmVWTxPqMUNdc8x6DKDrfId0XJkjvAqHFuHw0_qNGnvoNRJVmRhasp9wOvFEjb-O3Hr6Vk-OA7x2-V8ZGJt3AYV_SbzGlCiGj1jilvQCueGk8eAz",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8619416,
+               "lng" : 100.7931018
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.863303530291502,
+                  "lng" : 100.7944632302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.860605569708498,
+                  "lng" : 100.7917652697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Larut",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104417494509664178798\"\u003eFitri Adenan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sHaFzaAeiFqxEkbpJTO8p5yhz90E_y6Y9Ax3wCy0yifbTZGYuc-0o7R6VmReOKM2c5H1eJUrou5IXMCnp8VyKMi0scNLmnyoU-ilUk_IyQr_nRMNN2ECL2XWr5DAopqmwObbie0Wc7o7NT_Y6plgy9dzeSl2Dwy6TdVPAS9Gf5LQ9AgnDe8YhrLmmu4SnWodL_QuC-aJMN4cV0d-arjfpX_RaoNcp9NE7hnSiJjNBCL45AKknLVSaml2gvVA8BxCdYago5rxeJ0lZp1CqW_wsLceI28BT-tnvDvXrG_8OvcRn1OjFupb5FRAio4gWoMFEucULlovXV8TYKEOVIN8tNmQG3bNYIP7Crz8MqBM3LSL3X65_dVy5LJ-slLxedmVD-PQ4VmjHwPTUUg12Kh6UN-Wr1uaT3UJz-fxOcefEDv8cNIGdFdqV6TEckmbAK",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJV1qeaWSvyjERhEUQaN2qRec",
+         "plus_code" : 
+         {
+            "compound_code" : "VQ6V+Q6 Taiping, Perak",
+            "global_code" : "6PP2VQ6V+Q6"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJV1qeaWSvyjERhEUQaN2qRec",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 605
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 3644, Pejabat Rekreasi, Jalan Air Terjun, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8565457,
+               "lng" : 100.7562574
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.858147880291502,
+                  "lng" : 100.7570791302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.855449919708498,
+                  "lng" : 100.7543811697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "ATV Adventure Park Larut",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106129347494437746829\"\u003eATV Adventure Park Larut\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBaGhWEVVpcxN-XhBg8kiJOhsnckVCvpPWIo5IsZgRTHzv-yIH0quzFQn86b5Wk0TOb2oioEwVt_-8NLofTqSz393RTi-xDzEa3kWFasREy-p_hYylmsDanXO_59LFG8oiK50sTVpb-dBZ0x5TIm4VhlDlLlpdLYiFw1G_nZsy0Ts7bMf68LQuWUleKitRNdCJrQJ2IPusjZ_5njrlMzxgw91hKSETtW5PndaWuVkyLNv2zYJYRJK8QcPzkUdPETLpKDNZdRmnkNUCwItSaqL5RFuTphytmVkPvdZjmwd4byHTNtB-Rj4ciQsgAzY1xT8GtccX9c5DZ2_19-s4R7LHP0BuLMDkZ9ZvjsswA20pI06xX4DRputB9B3LlehD-TXcWsN2RN3Mfmixfby7mypHwH46JYcOQEO_HQqjJZQrKrVx",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJZ2Y00RyvyjERjtlqBK2D4j4",
+         "plus_code" : 
+         {
+            "compound_code" : "VQ44+JG Taiping, Perak",
+            "global_code" : "6PP2VQ44+JG"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJZ2Y00RyvyjERjtlqBK2D4j4",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 532
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Taming Sari, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.860418,
+               "lng" : 100.7453769
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.861635580291502,
+                  "lng" : 100.7468349802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.858937619708498,
+                  "lng" : 100.7441370197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Perak Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114366474949857282034\"\u003eพระชวนเชิญ.ประภัสสโร บุญมาประเสริฐ\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vSCYjqBtFYirYOBdS22pQ3dci3wcmRWnD5FtGh2lMI52AJCUWxmYKPkAzVwu6-0C5PsIV738pS9C6si8Y-0vwWFHULCHDYl_eWyFlzE4dNRZ_BeVD4AaxdgayRH9MtWa0UWjWQ0jddL1hdM58AGUuz0_ztFZVS1ojHMtfRj0WpIgU1J5I65WzdYQ2hFypwhwSzA20psFaKvOOE2OsmL4lkmYhLLBIR7LcmmSYzoA6otkIA1CApHNflpolsyd25afriZfLXxvEEf2GBPi8PjS9gpFSCt3Yn9MJtUzLMhjT3QYku4aNLMqhxdUqPptIUuzcODoCEksZNlhBYuC8xLb6eV-vo1pDx86Smp9auvtvLWVz3m6I8GzHVMH607_HoUjD8230LZVjdAIWmGnW6vWDHlY9API9PhQ3iL0iY3hwXSQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJFwxaMPeuyjER1PLyYIdc6c0",
+         "plus_code" : 
+         {
+            "compound_code" : "VP6W+55 Taiping, Perak",
+            "global_code" : "6PP2VP6W+55"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJFwxaMPeuyjER1PLyYIdc6c0",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3261
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "lot 1626, Lrg 1, Kampung Setia, 34700 Matang, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8750224,
+               "lng" : 100.6758984
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.876371180291502,
+                  "lng" : 100.6772468802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.873673219708499,
+                  "lng" : 100.6745489197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Wonder Farm Mushroom",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1356,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114199772995988708848\"\u003esusan chow\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uv7MmIXF_GHXDgNwOYmzSISYA18FYRdrDOAFkhmR4ZhwHwYtdvvxtS010iIWS7LRtATrJExYh_cTQRrHAF8pZ8gdVM2hzJGpO5rsfVSSRuT9z7qqe9l8S5glUjUx2OuH-BdhSWB10TdThWbpHl2HvfuTOkop57w14EzSgL9GAcLrKxPgOp-xgc1VkpsBPBEHTIJjDeK3CU6iKLRqeq0MfPRPbPpYk23MPZFi8_znrWRFL4L3Ml_Dvey8reEuY3ewut-Bq--7uPJ6olD76ZMlUsft_KWVxR3YalkrHi8YAb-8JBBVejzciLf9zmWMUJ732heDUR6DhWh2fJgHtVpazTJlA3oVtLFpfAtKJ52w_wzEp9drr2YW05oKormJ7biNn05ry54OXu64aCEax-wRM0O0JXUBYB4azADR6qaYDYNwo",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJqdv32G6syjERtivjgnDmqio",
+         "plus_code" : 
+         {
+            "compound_code" : "VMGG+29 Matang, Perak",
+            "global_code" : "6PP2VMGG+29"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJqdv32G6syjERtivjgnDmqio",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 366
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "2664, Jalan Stesen, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.855151999999999,
+               "lng" : 100.741576
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.856441880291502,
+                  "lng" : 100.7426805802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.853743919708498,
+                  "lng" : 100.7399826197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Taiping Telegraph Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 756,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108349119772528839907\"\u003eSB Jan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-syvLVsesWcVBravpFDi315_UbA4oRklqzEV0F-ZzBasnlMm8nbttO3zRNUPYUMWjZymR8ZhqhesQ7fC1tIkXGbkuBrxrbXkkrUzgXlx8Ptaq3aOPIImHJSNYfZdBSNjgw72UI7o3iN5arkWiJY8jhZ48R2HZPnMB1L_izCrlU74J4yKNKfqpL_-x5GEYAa66jVY7dGIbHrON4g5rQZkKdZXCjH0d0XZpvIahUUhkfJe9XK7je7Y-qpPTJuuhBZvZ6MOT3DXK9aGjW3dK_UDDQzfFohv6rwAOZoc7t2krkXVQgvOrqGp0NopBNtVsonC8cgIyxHkaL93A_Q6m2ZCgIe-soS1jf604AC3ffOQWc61QtDNRnjp8Bt90qA8e2H8Q7KafaXMbZRM8NffuC5BbhTG-4xbvzZ6C9E3oPnVgTpPw",
+               "width" : 1008
+            }
+         ],
+         "place_id" : "ChIJOf_zxPCuyjERM58nS8rUApQ",
+         "plus_code" : 
+         {
+            "compound_code" : "VP4R+3J Taiping, Perak",
+            "global_code" : "6PP2VP4R+3J"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJOf_zxPCuyjERM58nS8rUApQ",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 345
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "1897, Jalan Taming Sari, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8542175,
+               "lng" : 100.7433977
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.855472380291502,
+                  "lng" : 100.7448068802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.852774419708498,
+                  "lng" : 100.7421089197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Dataran Warisan Taiping",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113512138350653531129\"\u003eRavi Shankar\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t469WQ9e5kH8O-yZdBGwRDWB3Kfu-LVXBeu5uEQ199B7TUqIUkEkK5Kyn0wiuUhVyLy99sKfUP9XpjHHy34-DPMNyHgWEKCdilQzv3kx1tE2ao_pzMbr7CTDII04pRcIfCqRLIYPkduEVdjrwXy7BO0PEOru9QhsE3XGYKJrZ7fosQr4aXFyyGYLZuyiYO-ddeK6dhkvXnqIY8V_Lvgu3mbnsjX4sp3RiQsAhWG-KubZeSlTF1E9yyjuMXEi1ZziGaRm6Qx-Rd_k1PFkXsx5VKHqiPsTNSOrnucgbqyrtoDqqJDC6HiWGYK4S_SQ3DqTU1Ngon_jBRhG134peYM4jhxODpG3-eVs4UNrGoAMFKZkG8StSyEIRTBGvwr5vhn3gHf4aNHJDx8-Vf_f3okmN4yIqqhyO2Ly9Ma-tWG9o8xpi-",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJhVEaq_CuyjER3JY1NQQNo2s",
+         "plus_code" : 
+         {
+            "compound_code" : "VP3V+M9 Taiping, Perak",
+            "global_code" : "6PP2VP3V+M9"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJhVEaq_CuyjER3JY1NQQNo2s",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1453
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung hujung Matang, Kampung Pekan Matang, 34750 Matang, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.813187399999999,
+               "lng" : 100.67624
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.814536830291502,
+                  "lng" : 100.6776793302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.811838869708497,
+                  "lng" : 100.6749813697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kota Ngah Ibrahim",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113820037215452072337\"\u003eJuliana Rosli\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vhLE4sHtUCKf1PSy05asP02y-Rb-iguCx60hSbfGE9FnlCSYYJ7MaZsmrKAG3hoVOwfampXOSdx4ddG5_ZI02H7s1PoP5vlRHFWMDgehwSOHMihcP8NDY9hN90ZLKfvJgSvsr5cLr4kGdd9yu514f0YOirM_2UeaRs-gzpx0sBfdJ9bX0knHk_3i5ikhIODUSPjjPkZDysX8-s-dL0GkyWp6IaYCavRktpFX40YvVeO1E9126sz0-SdOye_Bg94Wf35SqsbFHEYTGqJPi1nIeV_WSnyNEwoJ8vXI40_6qk2-idSMU0q_HiOWAM_LXHMjNIZ1RpWyyw3xH-nlBp9mJxfe8zsoOlOlTgy1HK154vttVOsC3gSi6zjxMycgDa-o9RGAxwBvUxfPlz-i21BzRhMPDl6KL2bylTNrxvO1tG5A",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJ7ZsMJ4atyjER4TEb_ddhq10",
+         "plus_code" : 
+         {
+            "compound_code" : "RM7G+7F Matang, Perak",
+            "global_code" : "6PP2RM7G+7F"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ7ZsMJ4atyjER4TEb_ddhq10",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 362
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8604866,
+               "lng" : 100.7602957
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.861803280291503,
+                  "lng" : 100.7616339802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.859105319708499,
+                  "lng" : 100.7589360197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Larut Office",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3472,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114924682503611763984\"\u003ePeng Wai Lau\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uROIm8Vp92ovgZOCDTWleOZ6oIMxuCRxlZ4Ez3oFb24oPIydWTL86fEaL8ZFk6wi4ZI3-3diMqmvqyAEK5XY-6VJ0w_B2LatEAw_Ac9vpAnQyGlCTgKt3j_IYHJnnzT-U-jQCxkP8lg7jclKgjln8PRfPF0CfpJJuCMgGwwLAsaYfaIVIaVTZxWe2SxUCkvo4bK_Ey0D1HhB80NPghLkB2Ddz4rNpjwMYXM3eu1qmKPwpYZ6oHS1v25zMsWO5GKlRzQeCQngLNkNHIH6VeLVgzZgmDBDy4Ya-Kb71Owhrd_n63JH---31_UtExPrzknhUckc5LWS86ru2jEeuQ8Uar3RWjTV7xadYrYgU7qiSzYKpkbOFcmwSci9K5mcWDMQ5bpNzvtjX5JykQBYSiYYWoLJhsXXfdPLe19shT9aeB-w",
+               "width" : 3472
+            }
+         ],
+         "place_id" : "ChIJy7GRnhyvyjERXVlCnTjwQug",
+         "plus_code" : 
+         {
+            "compound_code" : "VQ66+54 Taiping, Perak",
+            "global_code" : "6PP2VQ66+54"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJy7GRnhyvyjERXVlCnTjwQug",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 221
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PW105, Jalan Stesen, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8548276,
+               "lng" : 100.7411657
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.856230380291503,
+                  "lng" : 100.7423817302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.853532419708499,
+                  "lng" : 100.7396837697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taiping Municipal Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3008,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112598854240446452449\"\u003eDaniel Sin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uNsR_2x87yhNN8JczCVSSxHwwEtw3oCaLGxLMO3szR3w9tVaGDR0l4FewsT9S_NvBt6iEQMi3usg6pFbe_bybGvL581tdLI_WHNL0fuM33mNP5sHcDl5UeVSzwyZJ8WBbV9UAikraNyTIy4syYWjfInD7WL60rg8mO1PgU6LoGuAeK2ytYUJnycWtGXKbEheUzXOou5DzDFBH81QVr1p8mWPpC_jhGnKN7QrmNQGvT3hnezbvSJl9am4rlnGOGDdf8uPdfMmXWNMS2QvAKphVuzCfgaIramxyBOGpnDwh2nNhJHa_p7QPf26wLF8Qq-ql5tRiqHDQLzqLu9iJI750f0UqD6K6I3u-5gJaFr_q0Dwu-Od4GcTc7kSkmU6QtuEEGSUeZW3nUq6K37KPVAXfiHuMGvAOezkRii3-3uRF5iMM",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJ8VqV2fCuyjERH7PDWqTvH6s",
+         "plus_code" : 
+         {
+            "compound_code" : "VP3R+WF Taiping, Perak",
+            "global_code" : "6PP2VP3R+WF"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJ8VqV2fCuyjERH7PDWqTvH6s",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 120
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "25, Jalan Maharajalela, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8503911,
+               "lng" : 100.7447326
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.851793980291502,
+                  "lng" : 100.7460410802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.849096019708497,
+                  "lng" : 100.7433431197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "5D Art Paradise Taiping",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2592,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114511794178792283562\"\u003e灵魂\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-slxCVcO-cSvcinhZ0lE9VeVRDuqZ4-5BflcKm83N3rDGCrsRSGYMyAYpjaQTCPLitivpp74ipb8v-GS0F1Y0fSDeQCJkmO2jCrWXrdNqCezVnLsJugmbPBym3EDc4woQSl7g6IjkNRYBrpocPWopaga-RhRhEsFyBFfxAA6cz4YeOdkttCiuSs-K6zuLz0YavzxIdKaNbvO6J3rnzY4CM2T0tHIoLDpkXruGINUDYBkaucKLrfLgzVbk9mv4kS_VjRgvG0oCjITUCny5PhI5fFfoIZD_ZoGbDvPU118ljgpJj-NIVhDGUs-NdmCqMMt8WbmJB1YEVkb2dzEmOpgbrMzxjYlImXqvrAzSqXbLFq5htT9TOIgyEHz6DEmXur9-wtPRGxHQJQbtD0KZ-bV9F8Lmvo7qGOkD-b75oXBeXaEA",
+               "width" : 3872
+            }
+         ],
+         "place_id" : "ChIJyTplPviuyjERVvnvFM5JNp4",
+         "plus_code" : 
+         {
+            "compound_code" : "VP2V+5V Taiping, Perak",
+            "global_code" : "6PP2VP2V+5V"
+         },
+         "rating" : 3.7,
+         "reference" : "ChIJyTplPviuyjERVvnvFM5JNp4",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 151
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Pekan Matang, 34750 Matang, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.812628999999999,
+               "lng" : 100.6758821
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.813907930291503,
+                  "lng" : 100.6772749302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.811209969708498,
+                  "lng" : 100.6745769697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Matang Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117679035958801272020\"\u003eAl-Amin Abdul Razi\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sfxSEkfr5ZEY5HaEK8y2XyhKyetKF6zluA4ZO2vHC6xf7THm5o3d2I6Y6KBi-eZIg6tnbrbqtYZEFL5IX0X55dbr1QcFz739ggmex1g8TYp_T_ibecMyp-OyOu4cGTU8CPV-HcTj7ziHLyapZSJqOM2cnXb70WTsa2SZdi40AOS1dQJ0r_6CfGMyqiYHP_Ud_J9M-HFt0QZzDKO77hCwDohchc4isBakVtNom0I6eGnPZc7Zl-B-PMEo0qhrtRVf5vHTegP-CUzUd86D_6cfS9ayxlHFuGKdKBE7X9Td0JHH0y6aznvVQVXkv4CQBmwn50qDTbGn1FNa6uKgiRdtRN5NZnwjQFl6LD-fqcXGdpYlE7RppGO_MqrY1QubPtHq_M38m5vzBQwHxEgclYUY5eIh7TkzM1sm61jlC_tTt_EQCA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ7ZsMJ4atyjERivUghzb_TYE",
+         "plus_code" : 
+         {
+            "compound_code" : "RM7G+39 Matang, Perak",
+            "global_code" : "6PP2RM7G+39"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ7ZsMJ4atyjERivUghzb_TYE",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 166
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sungai Manggis, Kampung Kuala Sepetang, 34650 Kuala Sepetang, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8348879,
+               "lng" : 100.6275123
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.836336130291503,
+                  "lng" : 100.6289993302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.833638169708498,
+                  "lng" : 100.6263013697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuala Sepetang Eco Tourism",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108391074288589096738\"\u003eKuala Sepetang Eco Tourism\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uoS_Yblz48XmelLsSowOJ3diUO_DTV-bPzLCuoN75wPRmO0p0yRfLvKUljbWNifFjWiDgeNW9K6rqN6Swgi7Vi1Irjmujf8NT_Y40vCYJ4yK5c9CyC8ggCoz-5fWACFc86Iz1fSZMsvpeJEAkTJROjqTGaXXJZkn86DrRKXXVtTIRnGXEGqNJ7Hnuqr2SJozfIqsTVMR-vp8ZabdMzJQCpubJZTHGRZGyeAhaaljH1hPOH1C5Xklb7FBzaXsPgBSzKTDQPDTwVAk96-S0UdW2X011dMkg6UjDfaBhvAQIPoUsT19Z-S-6tIIjniX_mAiNkEKPRhqbotRQzwJQuuXuXCn9oX3bYgIVqlQUtQVFbpBHh-yQk5E_O-AIiBVlquZUQvxkORQrhiMgekTDPk_UEm8y4cHi5Q8hQRf11AbDad0Io",
+               "width" : 2400
+            }
+         ],
+         "place_id" : "ChIJceUdPA2uyjERHaNvGr0kVMk",
+         "plus_code" : 
+         {
+            "compound_code" : "RJMH+X2 Kuala Sepetang, Perak",
+            "global_code" : "6PP2RJMH+X2"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJceUdPA2uyjERHaNvGr0kVMk",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "park",
+            "point_of_interest",
+            "tourist_attraction",
+            "travel_agency"
+         ],
+         "user_ratings_total" : 1079
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot 898, Reservoir, Off, Jln Air Kuning, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8207441,
+               "lng" : 100.7520321
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.822052680291502,
+                  "lng" : 100.7533758302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.819354719708498,
+                  "lng" : 100.7506778697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Spritzer EcoPark",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 425,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112085623022062225473\"\u003eSpritzer EcoPark\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s3CJy9q2UWMXwikQ3-zMXPT6SsWIQ9vDf2nTvZk65oTpMEzzIvppZ3AwHzIbTwUElw6oYu6g1VfJPw5p73mlN-eAylz6Z4KuW5upgrRxWxYnEQRwwkRlEobc4wvupMpk1HGKvqZVD-vZ2lCLM6tnfOy-5usrAA6EY1cHqTT7fvCh4a8s-cvsJfv9MuTM4Bn1YSoQFnUX0LsoPVky28a05UbkgL86t3OESxbuwzH2ibrbNX9c1ridj8upinesTiqeFGfD6piOVMqQTTImJUG1i8eCp0QPKRgYLMiGOeNV30v3C42iK94LCuw63hQ_q_AnnZzvCAuwrnaQDlc4s3vg0faJZywDIq_XU9oyK9yTgl2QsGhNkc23-uwI70tF8oftehnaxsxtDNRjFvjJqMnYI5rCkGDq8dNhcgckrDxrM",
+               "width" : 639
+            }
+         ],
+         "place_id" : "ChIJa7rUjzSuyjERMBfHpDTufw8",
+         "plus_code" : 
+         {
+            "compound_code" : "RQC2+7R Taiping, Perak",
+            "global_code" : "6PP2RQC2+7R"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJa7rUjzSuyjERMBfHpDTufw8",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3647
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Taiping - Kuala Sepetang, Kampung Kuala Sepetang, 34650 Kuala Sepetang, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8403524,
+               "lng" : 100.6360046
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.841715280291502,
+                  "lng" : 100.6373992802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.839017319708497,
+                  "lng" : 100.6347013197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Matang Mangrove Forest Reserve Eco Park",
+         "photos" : 
+         [
+            {
+               "height" : 780,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107031098453171142635\"\u003ePusat Eko Pelajaran Hutan Paya Laut Matang\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sdkU72ASKHL36ZEtpoR3eZwrmb2YAI7DIAAlj5ErbT-X9hDY9rVvSTpDCFKlDNz0C1m-P1SGMuWcs_GIRp4jlLOB8EsRA692x3dH6WAYWl7r_yX0DOb-fUQ28mZp1Pmxxy2nOoZfJUOykIVniI0Ure4wX2hqs4inRMG7mD8GsYaRz70eTtx95wI-LjQ7-WtSIM_oYiCdYd5n1uQjbwXRbnW88tmwQjsFCm1pdUJ1BfK1GPIa_KY4ObqkHPhMrqVnUeuCHKGl-pXOuYDsFh0XIRs-Ee2Hsou6PfSPGuiTqDzw",
+               "width" : 1040
+            }
+         ],
+         "place_id" : "ChIJB3CjQDutyjERO9olxUnllJU",
+         "plus_code" : 
+         {
+            "compound_code" : "RJRP+4C Kuala Sepetang, Perak",
+            "global_code" : "6PP2RJRP+4C"
+         },
+         "rating" : 4,
+         "reference" : "ChIJB3CjQDutyjERO9olxUnllJU",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 376
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Hutan Lipur Kaki Bukit Larut, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8605214,
+               "lng" : 100.759891
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.861926430291502,
+                  "lng" : 100.7611127302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.859228469708498,
+                  "lng" : 100.7584147697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kaki Bukit Larut",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2736,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114982158074259182692\"\u003eTeddy Teoh\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tQRvEX3cRUAavQQCrf64d5rRbHo4rblpMKuGkoEIN7OBzFQCraj74D3rZwf331vEb-XZqBfyeSpgsiDdCqfwziItGFALVYBSdBYPYBPAH95NlRobDIsxfY8D7NdigKT_6SIpWYlzZLFWA8qjejUT3AQqc_CN_PZYGk8D4jFQQjBpM0dqeJT8cysaAJdapHZJaWPQRH8cx0MBWauFyTueOCeBAUu4fx2a2Z4fETqvFHDNTvAvUSPTY8HfCrsin2z393LPa0AG6gVT3o8Xo8_ek52MGE1cabJl60RhcSq4dWNqGm6ODmpcKpRwPalaZLS36OH8SBYbbCYOinwZrbomex74yJ-CRTVtZqgzQaQbOe1D8De1Yl9-ooFggncUPRC99SqpMUvDoAUltdIBrlkDOfNleBr8whxvNuBYwPA3vtPw",
+               "width" : 3648
+            }
+         ],
+         "place_id" : "ChIJAb6bnByvyjERDZkGa3McJOA",
+         "plus_code" : 
+         {
+            "compound_code" : "VQ65+6X Taiping, Perak",
+            "global_code" : "6PP2VQ65+6X"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJAb6bnByvyjERDZkGa3McJOA",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1617
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "VP3W+QW, Jalan Pekeliling, Taman Tasik Taiping, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8524883,
+               "lng" : 100.7495145
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.853928730291503,
+                  "lng" : 100.7496785
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.851230769708498,
+                  "lng" : 100.7469596
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Taiping Lake Gardens",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110556648929952429580\"\u003eS. Hendra\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-stURd2VRDRursXuN-aGYRWBRfYUAXXsa5ZUy7_R56-qUqF4dQXxtL7kas8N8_16Hc8zYhCX7GjzmcRB3yD_eFkDsL0s-ctVznh8I-Q3aomZuDUWy1KzRLpy5onY2rBXRAkb_xpvNtdNL3ocENEH5LWHy9AunmdrekH1Hpab8sUcYVMnCjPGdblpjH1y1GDt7MirvV80Bg8E86lBll4Ej15DaHA4ZoZ5Pp8iXl9Z548PhTu_MvqyQQgbeyTe66j12UiOsEgGgR335aszQmGIix6kIKU0I323xi11YgxhB7nOfsZGZ9-XRzX8k1WGbzOOBPSvk7PG2Hb9VTlTKZV8kxvFb9g5xU3a3A2QW5ZzkBUs7S4Gc-0bZYJdpvKrSaAz1PnficREzqgVyC8ul3hCxh1FClVGZfbWI9XvVBfWx5Lo26-",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJoWZRRfiuyjERbfWNdXK5PuI",
+         "rating" : 4.6,
+         "reference" : "ChIJoWZRRfiuyjERbfWNdXK5PuI",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 10274
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8577279,
+               "lng" : 100.7549572
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.859054080291502,
+                  "lng" : 100.7563035802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.856356119708497,
+                  "lng" : 100.7536056197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Botani Perak, Taiping",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/107217435944037790661\"\u003eHILFI\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thPh1VOSwj0AwlGdlTl52en5WyAgYkxtESm6MzJuhuerqbXv79pevGENSbJ4Hn9eQogDH6RFvgOTwEOifkh6ErScbnf8jZpxGI2nTvpiEDA5HPEp1PWW4ixrKfqU4V-FJ_2MpvIXIQnoUjIoe1_wOKz2S79Lhma0wHaUetfq0TcWfaWF7mpdIb0T2H82TjGs7p0DhG9UPcpaHS0P-Zw_XIqWbR1FITf1IY9p0s5zojrBibsJQTAjTkDAaqpFaBIPdMMqPT3x7jz6q_-dLNzV9IXXotbyVIKGT-inhBqV6kOoq1yORnnEfvCMrbyDvZwywYsgiRj0vvIUNiFPnEcP7RF4seUFbms6EzVgytEZUpTgRtOsT9_jqhmeT5ZA59TeUBR5gOx0ynOZqd0omTSO6bu_urr8tDAW28bBRPPcMYFSXi",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ75lX6syvyjER5lY887D7MO8",
+         "plus_code" : 
+         {
+            "compound_code" : "VQ53+3X Taiping, Perak",
+            "global_code" : "6PP2VQ53+3X"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ75lX6syvyjER5lY887D7MO8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 90
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pekeliling, Taman Tasik Taiping, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8549951,
+               "lng" : 100.751032
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.856246430291502,
+                  "lng" : 100.7526143802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.853548469708498,
+                  "lng" : 100.7499164197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Zoo Taiping & Night Safari",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101839741199333921198\"\u003eMohd Shahir\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sg2QsuouB4PJIuH_1C8VZLTO-4Kc914HGRd_N5fKeixRnEIANM2Bm1AibX1_NuVjP09Fkkqmperr9Ci9jbwSCB8U3hyQg4zD6PLUgGL8i7QIFvBs8WwaYsU3HdhIr7rTmQor4Pfj7D_5efvjAXoVQS-2kKEBFz3cJmIxhiQOOK2WNBHycNSNxPXbuIo87SCrPr9XIH-f9sRYfMvcTVykz_dPD7aGYO_Kx1lxP7JiyDxEEgFwjCODZgS8Y_Quad6PtD9khWU6ptD0v3ZUgYH18h3W6xOh-4NoWrrbQAhdTUUKzdO979fJLjwvpPCjqIPmiXd3UVAZuX0HhDuow1qeBHVKhYivVcnwX8-mqTwrLrvzpakjEWHo4aBPZegbTPR7xamQdBQUtXnF_KqOOvnEPLzzCdYRcnx3k3Rra2Ve0k3sA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ71vv90OuyjER4NO-ZIP7j_M",
+         "plus_code" : 
+         {
+            "compound_code" : "VQ32+XC Taiping, Perak",
+            "global_code" : "6PP2VQ32+XC"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJ71vv90OuyjER4NO-ZIP7j_M",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction",
+            "zoo"
+         ],
+         "user_ratings_total" : 16458
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "153, Jalan 2, Taman Sentosa, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8539638,
+               "lng" : 100.7610335
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.855450880291502,
+                  "lng" : 100.7621618802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.852752919708498,
+                  "lng" : 100.7594639197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Burmese Pool",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2336,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117493061646571646956\"\u003eSue Yenn\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uTxo6k1GdWknyV4EYysDjDr1EB3k-ra27CZACmL9a4x91L4_8To6rl4cczFJaZ71P1SWD_2jg3f9wBlidyVQ89W6vN5Uf5ZC507mCnYcc7LwlMiWjob_AoyddNB5O6PfvYZlrteHb0JxFrh2xhq7QWbYRYDB6zUQVipXUfXwkgQLF-z13Txsb4szPa19YN_jrg8AVNE5jBGf_axDw4P5JYujL2ln8giOH0XvI1DC5gkOv8whZO997_GTO6afGHih3gJ34AbYLgWl4Bg5JSxDqclz-ddAsxJ6e-SO5OsvWaQyCJ_ODXnLBhKmXkUUAaeDPzd6UxvFuLkH9O8nhNTYui1paaDidFeDsxL5xHD8P0cUlSI-CQJbT0OGAK_J3G1YKB52Ud_WaXLoNSWunhs0uxrdw6Y-9hedljleqqaJq91g",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJE6yIBwSvyjERrwT-lfd3Vqk",
+         "plus_code" : 
+         {
+            "compound_code" : "VQ36+HC Taiping, Perak",
+            "global_code" : "6PP2VQ36+HC"
+         },
+         "rating" : 4,
+         "reference" : "ChIJE6yIBwSvyjERrwT-lfd3Vqk",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 839
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Bukit Limau, 34000 Taiping, Perak",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.8305618,
+               "lng" : 100.7651356
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.831930780291502,
+                  "lng" : 100.7664945802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.829232819708498,
+                  "lng" : 100.7637966197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Limau Rest House, Taiping.",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115206009047732534316\"\u003eCheng sammy\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uDq2Wz8PBFm32MR4oRcngb7egNal8yofp_zRwNk5R8cr1TmmnNAhBP3Y5a17qkgx0LiT52-mnSdXf9rMugeXTQAPikyYfLRyFlnfbv8pUqkAd0Zfsf5XAl6tDd9zvxatd47MYt0TSgcvouwBGHmqDOjs_4xmO28DFmGhOhcd0R940kgRw7jVzmHuIYjztIn3mrHRizNVfUu7uWTvAT_mo2ql8bCq_cCwfkozCWIWwR27EquEAma7UfEytWe6R53-oeq3_AzhI_wqb5p_4PUcdPAEunmklU19JcoA8CjozezvBR8KdUeCYp_mV2ro5P7imR-1OQK1yc9JPktVYCYvmMy2yowyM1_0fGgFUF0LjEKPwXtGL54CPwdTARhc89Rm_BzAJTmhHTF81_y0kLq2faa69KcAgmluefbDQ-e2KWug",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ39avGPmvyjER6FQRVkeka3Q",
+         "plus_code" : 
+         {
+            "compound_code" : "RQJ8+63 Taiping, Perak",
+            "global_code" : "6PP2RQJ8+63"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ39avGPmvyjER6FQRVkeka3Q",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 11
+      }
+   ],
+   "status" : "OK"
+}

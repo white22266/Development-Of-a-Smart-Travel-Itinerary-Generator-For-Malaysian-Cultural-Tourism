@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jalan Todak Seberang Jaya, 13700 Perai, Penang, Malaysia",
+      "formatted_phone_number" : "04-399 1899",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.394035,
+            "lng" : 100.3947562
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.395282680291502,
+               "lng" : 100.3960533302915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.392584719708498,
+               "lng" : 100.3933553697085
+            }
+         }
+      },
+      "name" : "Penang Bird Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1800"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 6:00 PM",
+            "Tuesday: 9:00 AM – 6:00 PM",
+            "Wednesday: 9:00 AM – 6:00 PM",
+            "Thursday: 9:00 AM – 6:00 PM",
+            "Friday: 9:00 AM – 6:00 PM",
+            "Saturday: 9:00 AM – 6:00 PM",
+            "Sunday: 9:00 AM – 6:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101262832833451847952\"\u003eMrkhoh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s2jHbp1mpsAop9B7XkZw7XBcEtk6C5HhRxYoEcGptKqQxVc6fs3fgzBSKTRsXPlgTMimiWV5xwbCCLBHrAbDv3V4104-G0yd5E3UQHbra3iBLqzd8lbkjrp1tNpHKoZhgtQY13y-RcHUnqyMf65OnL-kNlMSurEJofcb6fVhj6l8sxC_OYrX24SlIe8Hnegca2UVqSAZuqK-OY53Ap3jMpKn0k_nTubIUR1g-h4JrvpJc97qovXlnGH6ToQkETD98mAJs6wV-oIan3jmHrxDeNYJ8VcbGvU7n3B-hY_q6KX11tu6oa8BXx32wsfhHbyfgdWD87VF2CWkkB4zZOqW7F3xyBPM4ERRP_iLibo5_2fwNQjtjlwE8CayzgoPUpcX33em8ipgox8Fb_6xH2VXVTVD8BQuZoy0pvfggRbOkqnQ",
+            "width" : 4608
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113871355381028965419\"\u003eClevto Vamp\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uwawBgZFxMErvmOja7kNScm3aWl9CNp5KUgJl39pmBnHwi4mGnD_meCI9k12mqUMSDR_NA9DsE4UJ9_Skwq3BAwne0bPemqguyQffB6pTeXIl9Ac27UYRROPhYGGI6D11AfyiLnsUJLGoDXgvr9YozkeAZiTpf0oSBCPZH2JONrfYiN16Bih7rvOizi7ld_QTfHtpVJynpzosgsX1DpodJEstmr310flosKpI8oa5Kxme7aMioxBpLn-tDXZwnbuQHNQBpqOU8D2lSrccNllJhOKV0pF4wvHhBGq5zRKAhGSqvSyJta3OjEkbP21HZxM9q-8yHFFXx6G1TEzT68hUi9TFMTFuEe9agLm0U5PBCR3syjJP40oqinHe4i0RsxVeGVSp7McwZnVGRDFQUbOf3u6zHj5_T2oK2IU0oeYKI9g",
+            "width" : 3456
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116499032896906913111\"\u003eALPHA TAM\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vKYksiDYdmWx6ASbvNE32QzbukMYSDWironOcgb-sMnR1Z9Guxm91sxHlYhN3TpOTWHSVB3Ud7ZK2iWEA6jv-sx5C1vffaY608Dpl-HVvIUWZRTnLYGr0koEnWDX3TZkWZztcArw0wuxkDMHS9hvEXC7J3M99uBD35hAHCSzOk-D2nGgBwlpmp_nvpoxzdPlhbSr8kn_FPd4KUqs20uEMC1hU5s2986mq3QopvgdKdoZwn752clIaE1iaQseA_UvBLRJwMUYtEjXvFnPu9v9XUIfJ0n6z4pc94Zf5sbczCleY8bdpruRPQX7taNwHNIb-MM7vOQGbe1N4XReQsWWaVl6kCjphGpH2YNJson0tWSMJ-EfOfKIAhlM4_yQVd3m6SDA-wCacdwO2GsnpSonAH1-_zIe1_HVOSUduWKTof3Q",
+            "width" : 4096
+         },
+         {
+            "height" : 2560,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113523911500125400876\"\u003eIM REX\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tu1L4iwnG2i8MU6bDaan5U7I5wyrTCv6GB7t4oO2eptNdah3SwF9ubCO4HbrsotIxYXrSQT2fvG_obavV_-ws1DsF2gl0m_rA-56ehYKXrF-PEjpF_CDatQGd492g_8h7JKUAGRpvNHt77lOB3AdqRbtiIe0QiSaHUUEEPFVZwVcKLTKjst2iNjjCIwykeXQhb-qSj22nDeihH_8hg6vIP0uwApTLHIENNkxFGXoTTR2ksqNP0IxmQPKLh_dhRl3rcJwLciPAflk7UbCegLg5-0cqMYWL2eRINDtAgNLuF7njiWz67lid7iHuhZStyuGVKdLCq460QjoN7a6sK2HpeG83PuGdIzIfAWEZWi8se2wPfC9bkEv7G9AlyatECR0a-8JRGMFLOaNRWvVx_yuG-pGWELheCohcYIrF3LV96bqQRrixFwtANyK0LJBzn",
+            "width" : 1920
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108228614271402164467\"\u003eShanarai\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vJUtuK0qQXbHmo555XxmvrCmumbEJxKGCW2U3-zoUENyEYxN_BFyND5H-IdmloYEVW0XJrIQ1ImeHmJZ4M3dnkUM-qHZJcUZ_RR0PrzimX4K2dZ_aurhJb-5W1CYvcX5WIwggpWLEugwb2oE-ypKLBpzIrCnJES8JTyPbxB4dfFpNAIRPrzsiEosnOUi5i1onqLUkbD8EcBJgcAbDCoNpS5Qc_nbITTsYS8GaswHhllgKcqHicZQ3MItN7nFW16T_qerFYtLLf_9-YFDY8vjxSJCzehDpIT6wGqc5jwW5qD9kN7SIKP0zOllfal6m5uMgL7luwJ3Nvz6cGAi3FvGXgi1WLJa9_HxEapbivXuEh6OQOwL8ALAQtjU_A2wdT_KSAWgHwOG372j3M8uTlpOGhgt9n1JUxlMdfBj7oKf-KXQ",
+            "width" : 3024
+         },
+         {
+            "height" : 3472,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103362249076978531515\"\u003eFatimah Hasmad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uibgC5Flo_7XcqnRrv5-mf9SiexfqCyWY0C6eiAuviRAkxiIQTg3LUl9xVNnk98wcxK9E0udcUmLEomOUi8RssaGOEHN-tBswHnr-edWFZrz1MQNbC3eG9QR-kQ9myfSZmHcm79ZD5c8ppKUUjZIPnSHe4d1nUMnS00rMkGzT694uZZVIm0y9fOpqSShE6tirZWZhW3Kc4Vcaexxbk0j3oig_rDRbVhsBndl4ILyvmb2h_5Vk91OZqpTljqHJCdOOmTKOYR72DVenBRf9qxDtMhsSFSxBJ18DueiW1x2ELLgX43US8zShKjrYeQ9Yv64WJif8dPboU02Bjd_O8qe5z2mnloIpMr3Pz40c-2pSw-DnYDiE_LfUl1uTCcN7QUvvO-zYKTlHtJt3sdJU51JaMRrfgKDlL_i-g79_b5DeCDg",
+            "width" : 4624
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/108735239699663028909\"\u003eWaeyah Arwae\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-td7_zW7X3mkh_VT3uG1QS-cLM78amn80_pifqWwCaxk5lzLgUR9QLZ500j_q3QmusiZsDOmwbxi8L1jYV_iXaGd9US3NK1E2Ao7OnkhQGbN0mE_Iu1baQq4dXqQvd-Hx5i-mDCbiXbZaVp02RRgJkkgBpupvjrGrofpN66fN4OvVnVp3bLh5Rj_jK81C4N9qJLIhdda41HYEdqkekLaF6uZAkiJOTz7-V9e6YbGp4OPIAa4nONhq4NsXjUMtMRtw6j-GogcfXSF8zLbUIK6VOwIPDSwIAsIELVz58wA89MHxcgrCsEAQxGg_XZSxcQCdPlZoDMdDy4JpXnvLRmKCLPgkUvLVYyXCK5lI8BaXK_VsUhLrxHxzQWlWGwUT830Yy_BJ5dkEilaiyPizuZeqzaBb3p9dKgOIg45dDe9ns3ifoC",
+            "width" : 3024
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103349480975887963978\"\u003eSpeed Rabbit\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uOYZ_IpqVusjpmFMs9r-zUTJzh3VYilRPpXEwRHQuGMehUvP1PbSiCk7udGbdQdn-J1U-V4c3qXpHJscbPP9Vr6tcHBMchGMhvJYgw-IMFk09ABh1TcZGJbvy_PyT5yPDIzmWfcUqWe9dCwOtPD382fed7ryixKHngJHhVD839PH3gCi_vBKn9Alum42dTs5bD5wms9AVXKX38SWUzJsq7gWbhainh-7JLpGNMDfLG2YjXL-GVpJEn8HeuLy4EJVhIvHxH0JcnYWlssBeYGOP7dxvIJa2Yo7jp-yqYgQuVJ549na3_JjXIkPxpL4zoCiZo1ojm5tg5fx1QdWUWB82bZrvHVVMqvU-SPxJm1ACF1r59XPy2nKpbaVVVRfR3Q8y3OH2LOmX0TmtPl_BZU74G1ubwnXcfiTcN98xR2e57T4k",
+            "width" : 3024
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102416203395020357947\"\u003eShafiq salmi\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sJ5JkKOR1dTS4qYIIMQTGxsdGaHPXJKsodZ0ySKK-GV2dUAxEhA5JlEqDkVqnT2WYG5WO2c9zES2ya_stTjhxgVueok6IFKmoDR8eaUz4z0pF4H8VpjcApsMK5Qk5nMc2Tekxm14uC_pRzWw5rqvAfLHRjDtmrLBFe-OUnj8wuuHO08JHRWO12xaxrmzZE-O07DnpXaUg5JfcxV7a54v6tC3Gh5oZ5oXIQahH7PBuBXp92JdXMvPeQN8Q4a-LO9po4UUGhhz3seUgjht-sSpqS3ly_jkPtlzy9GJ8raTM2KnIige0KQ27vQQdWVrBI6f2m3iaC6ynRFKOyvkebN9dKarZTxX5DrWQ8TZEd2Ktrf6Hl7GULdqiepE9fmc2nd6Z7Ou865rBRP66D76Vm3xV4Yeo5rpkE4X425HfZb7ko_Qhz",
+            "width" : 4000
+         },
+         {
+            "height" : 4608,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114599739913368628786\"\u003emohamed suhail\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v-cr9xbP7t04cpxbgUFlvYLkIJYkM7N7MnPs2nsTNSNhq2V1nhOGpWLuUuQiz9QbIpQnm_Az5ueKWzG4qx8iRhdD13IwPGDp62GmMbtECYHQVfFDtog_ZaqFRSi9s_BfSndvOlsoHOSvA2f3Y2HyHqyPsXFJormmugsd2cQdgTEqj3RcgtUzaozK3hw7evQLxhXw-wzX1o1Y-5QfELQPPi0wtT-fZ7IVED4jidoO5TWKehC3t6ei_lN8ETWYQAry4eQPL3SE7s8N5B0XSBLC2gnlb7Ws3jzQ69madZkxmW7YO36e4wwCUyCkbMrtrVAl0RhpljdyDkzA0n4HANvu9AhE8QGfjNb8rAgHM8uVXkkZtIgtBxSpQ2ERcbl3JH9DLdjwnE9VyqW26ISjFmj6kr-4oOvA9OpsMO5YAqgow6O-U",
+            "width" : 2592
+         }
+      ],
+      "place_id" : "ChIJT2S65tLFSjARUNwYR2gTwJ0",
+      "rating" : 4,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=11367106798073470032",
+      "user_ratings_total" : 1864,
+      "website" : "https://www.penangbirdpark.com.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "V277+5M, 71600 Kuala Klawang, Negeri Sembilan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8628939,
+            "lng" : 102.0142049
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.864932830291502,
+               "lng" : 102.0154196802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.862234869708498,
+               "lng" : 102.0127217197085
+            }
+         }
+      },
+      "name" : "Kebun undang jelebu",
+      "place_id" : "ChIJo8zxCizZzTERQChT5iYS4rU",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=13106057823883831360"
+   },
+   "status" : "OK"
+}

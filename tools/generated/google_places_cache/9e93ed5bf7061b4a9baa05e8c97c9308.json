@@ -1,0 +1,38 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Tiga Papan, 89050 Kudat, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 7.0021683,
+            "lng" : 116.7496554
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 7.003476730291502,
+               "lng" : 116.7510210802915
+            },
+            "southwest" : 
+            {
+               "lat" : 7.000778769708498,
+               "lng" : 116.7483231197085
+            }
+         }
+      },
+      "name" : "Kampong Kunyit",
+      "place_id" : "ChIJ5zG7PQCfMDIRmup1F6GfSgo",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=741580602888022682"
+   },
+   "status" : "OK"
+}

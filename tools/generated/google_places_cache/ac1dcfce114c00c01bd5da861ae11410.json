@@ -1,0 +1,238 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Permatang Pasir, Jugra Lama, 42700 Banting, Selangor, Malaysia",
+      "formatted_phone_number" : "05-519 0050",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8358746,
+            "lng" : 101.412795
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.837202330291502,
+               "lng" : 101.4140583802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.834504369708498,
+               "lng" : 101.4113604197085
+            }
+         }
+      },
+      "name" : "Jugra Insitu Museum",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1200"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1445"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0930"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Closed",
+            "Tuesday: 9:30 AM – 5:30 PM",
+            "Wednesday: 9:30 AM – 5:30 PM",
+            "Thursday: 9:30 AM – 5:30 PM",
+            "Friday: 9:30 AM – 12:00 PM, 2:45 – 5:30 PM",
+            "Saturday: 9:30 AM – 5:30 PM",
+            "Sunday: 9:30 AM – 5:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 667,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112060436529572545156\"\u003eluvfeelin 乐飞翎 (乐飞翎)\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-txVo3FbxYBHg6tdxbjJiLq7zrqsdq2t8EwERXkW5j6-OqdmX8Du3n_qawqBbIZ1u28t0MnMxBhRA-dFC2ZvA461jodWZ7va1b4nP6ql8CLA8GuoK7U9SnwENh1t4IuDaKeDsMBkDfP2AXBdP3i3ndFxNRmMlpVjX4cWO6j_p_Y3Kh2mLcRGx97Q2D7Ppmf-FIK7xmvIA68EY1d7PTK6BegJtadmwDw8gIYWXuXgjIulRLFCiRPPxZy8ONZ3SddDrXc_nj-sHJENKWJF5BHUoI6eykkUK5tbUjxS_pSs-2bE84u_xg27kWvUR3oFvrZvtAjkSNI4N4_RBgFq6HMtN008peVMu3dmxZLP4l-SMegt0kJhWAjlFuQvyNOsYe3Vou2mecs6h6Ba7nsDNGXFKmeqJrDoUk8R7wY_JNuqHRrdNs",
+            "width" : 1000
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107659815459184470878\"\u003echee koon tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v-lZcTDTn1LAJzaS1SSzHy3jH9-udh0_nIIELQ9N1oSVmGXX0iEHu7pEzg7XS25kinnaOOnJBRMDKjSENqD-OXLkLrH1dPGik5uFzH3dUzLbc6ZyNZEikfHZJJUHZmMw6vaab5Zcsp9YB4UGSHYJRMxAXRTh4klDZyNp4Knsfc1vFNKlGCIwMuJDxyalYTcUHX3JdQmACONuCNqkCWR1uB8TDfIKQ-OKqjZ2hrFvZQdYMiShUhxnLsYuPq7cqyoeUxlJ467lRaQ-qYwPtlFnKH8yi9p7GPoVmYYssjHJtmSd-vGauyXviRS3c-K2qdrArOEKwB_cLrftbNvgMW0ijjs9h1YcbrbyZzm8VCeCaxuyJ2ClUbQh317S56rqIvlNPIhpzWEpzgcUj2aPjbfRtJ0dh3W6-WUzrUcw47ZiDCkrU",
+            "width" : 4800
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/109415029701167269187\"\u003eAfiq Daniel Daud\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sMqhwSXtXhHfeJ53D-SzjPgqqo0FgfqStq_OsZLIIJVowL2pDTmTEmrhWLnvnx0v3AXBnNPciJHjjLzlh9_-P_-PokQhNZwLUBNCwuDgU9yqtc1NeE4-kSLcmqCFhkLr4tJFALaLsC_vzINFC2HoGm1TB9l93-ZxRAJsyRRbU-hVKP27nGvWOtjtRU-YPpSHZ5eT0jx_yGSBkMi9FDX7_bq0dbN3CZwL3AO3iORQ5Ok4BAoh_54h3mLGnHanuyA3N2Q93L0CzzxcnAe1GF_q3E6deeUUYX1HEhFvaAtYSSVKzzfsKjO1SbjhekDSlbBMsP9nx52CKxw3_Lh94OUJt7Z0OzR8zYh34kWmMVoZzRY2REmhXo1KbpB_mihfu0VkZUNDoIGwdkQLDobOylbWhw4B5cDehZJe6VElFpAQpZwwMP",
+            "width" : 4800
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/111461324858096080401\"\u003epawieification\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u7cB5jnbN4G5BLoaAl04tZt0KK-7CHuzvp27XAkN2Fqu0OA-ZIUeg2NOrTdaMfjS-W7hzfUUrwyDvfxHzlSwCBkLxoj_SVD9hA5Q9eAcdw_6XIpUR4jIwpAf2Bza4s1wVD7XDxZSBR8UMXaUBcyJPWnOZ6GzYm-54WYKUtNf0i0KuAu1B_wpWS799TtryDR_lDTMqiVkx-sQlsbkFYSY0mjIOpzgsUx4J3ddd00c-JnRGRmNvRTioqQzOnhvktrI2VTkAgkyYXCvcU3TJ4uNirjfGxGWwr2wO15eWjcIE72-bGBzxbh8097lRBSsKs_fFXFh39eEn8qET1zReCVmorNpY3PXdMPd2enWheJal57fwfK4msYYwl3xMa6s-YEc85zDnpOQWAXM_IOs5VIwe4FbVatcZqQu-rNVokQd8ZL_VF",
+            "width" : 4032
+         },
+         {
+            "height" : 4800,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101087893186849049015\"\u003eRocket Man\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-shebZdw_Y3EigBdLChbNE78eaVKBzFOvzEGpM_HpcDoqk0TeUSvaGskWMGlhmE1z9Mww8L0PttxCG4PcON34gniX0-RqeGukCSEYulgkHGUuEPvvj9Jy_I961LMAcp5CH6q4IMJRuw_mUIczZcAXXyG8KzIgqjOfU0YZL5NQhJUNB9RDKvHGlEJ0g33diQQcF23wG0nUDpKLfCOQ5VTzBD20zY9js5nAWoi8iogHs8_5OU-gU0QgGC6mukK5YmhvJQ1_B6YaDwVY1bmt9nQ0Wepr6ZjuV_NUNvofJejWV8IQNeUjOQJmja8d4J37BHTfA_bsfMeDySw8O9rJ8bl5K87WbNhkG2JRbhHdGOz2tcbgDTXPNDXj-utUNUvy0O3l0OIiqkrwr8rJORssiPKMzLZlXfwV43SFsn-tWrryM",
+            "width" : 3600
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117744541095508819557\"\u003eStephen Abraham\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-stM6LqlcLpYu-065qq__PqWvUe7wwuKKswOwACUQHHV1feweDYTd6-iHmm6AYXmGXXOKxi46VksKvO-RW_ajYWySAWPthpnm0D6EvEnUpKPKOhKFZ2xKmFS4B5MEfVDoByLZR9Zh_Kud6GxuIzQU5X_is4dRC-K_mG_FeZLEG2bvncLnedarWwzx1MTh42v-NaWVv13oxZDcjuDJljotYc8sADHhVXCMQZ0e_uMiLbjsDiWqTZqvchmgaUvU3Qhwec007iKtIGr0Iey9rDfWbWXiKD5wRMGgMgS69VwcnDPagw15f4z699vnZbkIHP99WPKDh6n17Q3420CClxMVrtZpps21BZgwMIi-zYENmbikqyhDK85VQtSqZKJM3aUn5z0c1kNxyBES-0AJEWICP-qfSh6lTfjqcKJSAwQX0HqWMt",
+            "width" : 4032
+         },
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115762716612339804644\"\u003eBenjamin Tan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tWEeXvVJE74QyVmZAGMwh0jh81vJ2puXl9CHX-gmmX4-ZG5uoM4th8AtxjX_oPxlp_oJs4kx9obDiIllzawr-D5GWJtsJLeQ7z5UfSWp04gDwPN6XDVzXDP_M95ND0cqrZnb79253RImAwMC-u7u05luf6nA0XTIJHtqXHSXgVdO8HCDDBJUTZi8_nxQ1Z_BWUnm4RU78DK_ZCRtdLn6VK6WM0psA53Owb7ux9p4GO093FqGi5kpn_3Any4fyTm0TecZkTyCqa8wGtZp2VcLNzh4sdHD7gVahrwYlktcZY2CiKc2okYLbfk101leCr0H8YYQWEtDUlCDFLtrpTqTSK_4NdExKuCXMyLcDXG5065N2lXnUpc6y5SSKI0zhLjE64YFQ6hnKPU9tsxbcAl-GHqRZigV7a_I3--UHXVbu8ghrE",
+            "width" : 4608
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/103322071572125912519\"\u003eumairah sallehudin\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-srSC43dNzQctY1HcSB14KUbJdTMayscKhiEldRzkF6p24zsJPB3oJ55G_2CZqTWTiKedjeUnAxgZnyankFXoyLiD_TgDAxJ6m4rtH86zYP1TC-4owqBaJsZMnso__UE2ILbxORDDuWpt4aqHaSuJ8CfWD611AztQj9oIJg9yvcaczqhNab_R5xJPvvEtp0anljMir-FxGW6UTxoTFPxJca3MftfC5DHKPFnlGRNBcpSot_O6CMUVNJvuNW7Ys-6Ulk1pWQfcUuS4DuEDFdN0so2yEAUFWjeZ97LFRrHhfArW9DS8Al4fneNQzvLD1sVIddlrfsiNLe5Jdp8HAttD1UHp99uFIdcPx_gL7CmIrVBtto7Okrdy9xGu1H6p5Y7hujdwdObt-mtGJ4O7FB4FOJEjhfHp8aoImNy4Aj5qIhcexu",
+            "width" : 3000
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112971417993994586058\"\u003eJeremy Koh\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-soSpZRnBxhWVCR-EkdkyX3p3oOzIWsu1gOBGfql3Ed-5HNCQZcWVtw0ZgCz1MCWrQ_s1tsY5eIm51moNAq_yx2mvzYu3u3kHrLNaD8bHkC8A2ADSjMRTa5oFFpO9eozIWLreUDsvwLIxglZFqmNyVcujMiH_b9JmN9usP8FthVQRQLCjMScA0zDhlWTp0Xr9fDIVwZrJ0wCPaQlibcYfCINc9UPrVTpI4MCwzQ0kPziZx6uhc76nB6QXeOlNVQnSFqxekPCkvziQfvClJiu9m5i7Be8CTCeCqY6-BbgGk8_aqqbuMh4vbelA9v6jW9_8yTzkKhTj5BXFqrZJOTwFsNlycqVvt0j88FBXMgDOKK0SdBSJsLPl30vSxWEZtp5hOfFLKU51at_6qmpENplx_jqZDFOf1doQdxK0GaVg-RLcs",
+            "width" : 4000
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113295503239818946682\"\u003eJeff\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-u0-4sYNxKND2BYoUxGCfOjmiqxidkfgJaOrOWR0zF36cs2mOqiAZOuW3q4yveediPZP5CYMwikf9MZyJD5B9WC-44ZQr_T0TCdKU91IFS1tgy9KpPC7DTKU1YL7vegd3m0Gabo55IS6Rgi8UPg1tu3NyDCzgVFWaoDluYixTF2RJC8rh5R2fmqzVlDDohQaunfZu4Lgqeu5DvTXR8uOWvTintPMi9ummueL8TJrX_fO9Dxy3uDVezFRARMp1L2A-gKiqXcFIrKDlSqQQ30BSzqb0yeCE8JRaK5XR7kWsTVHhGieZkCfsMoocT__yEB9y29OlryZ_1Kq0mb_3vZL0Saq9GBIkhx0GxPrGDTrDGi6Zy4wHTYuh-FI2_um0r9ioXWHofwYcY6euHm1NfOOgpRJZcvzkoZSKDyjbp9LjxxQw",
+            "width" : 4096
+         }
+      ],
+      "place_id" : "ChIJBdVqZ4umzTERvOJPHjxT2rw",
+      "rating" : 4.1,
+      "types" : 
+      [
+         "establishment",
+         "museum",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=13608280741725070012",
+      "user_ratings_total" : 283,
+      "website" : "http://www.padat.gov.my/v2/index.php/my/"
+   },
+   "status" : "OK"
+}

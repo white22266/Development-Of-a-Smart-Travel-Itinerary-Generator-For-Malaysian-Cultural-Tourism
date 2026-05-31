@@ -1,0 +1,247 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kampung Bandar, 42700 Banting, Selangor, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 2.8596709,
+            "lng" : 101.4412593
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 2.861041180291502,
+               "lng" : 101.4426810802915
+            },
+            "southwest" : 
+            {
+               "lat" : 2.858343219708499,
+               "lng" : 101.4399831197085
+            }
+         }
+      },
+      "name" : "Istana Bandar",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1230"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0930"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "1445"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0930"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:30 AM – 5:30 PM",
+            "Tuesday: 9:30 AM – 5:30 PM",
+            "Wednesday: 9:30 AM – 5:30 PM",
+            "Thursday: 9:30 AM – 5:30 PM",
+            "Friday: 9:30 AM – 12:30 PM, 2:45 – 5:30 PM",
+            "Saturday: 9:30 AM – 5:30 PM",
+            "Sunday: 9:30 AM – 5:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2792,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106762591549475995156\"\u003eMun Choon Chan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tTjBHgdndOMIkLMmvFGEYr0V1d9cA6zVk9NXP8bwwAMYPjBO32gkZn69tvHK-MC4aekqT2qXS04HB-q994cgBSia_A0aKeI3LLBAAiydhcFgeX3OiCwwL8XvGAX4LJe9CAKGZA7Gxuo7tREjpSd-G_1yrRVmSUGRnE-YNeQwl16pY7fBjGEg8BCVxQt8mxLfaj1htHAnFIZBaCSJurDSpqwwE8RxnkceY2wGtmrGg716OSB6ClYQ-QwBMzfaGMQzkXFdzzPEZxqFQwIiJgkAziz7PS2Gd4Di10BJOSW6pv_7oKp_FoPnVVBSrVQckfyMET-Z1nyfHNPsmmtQoFpzmNvfMRUlhmKX_BRtZEcrt0zQcdq_BcOfHl5qjZT7HTcn_8Muf4Qqkclhl6aHVhxRbpZ7fWYRrF192V4pal5AfEQg6PvPZxA5SolBbDZ9kj",
+            "width" : 3726
+         },
+         {
+            "height" : 3456,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113114686064616861992\"\u003eAkmal azrul Abdul aziz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vXCbgYY-pxaosjfMxfUGImbpTYR0AQjrCEkH0p1gz8PjZq1vjfaSRlIcfUavwk5nkp3XCFO970Q9RlsE5aRTWv9CrsPOry6aJf0BhOi4S6DWP_stNak0Jvc6Fj0928V38MkAB6RuN5GznPh4P6YXNBa4o4ivelakCCmi6YG-btshAay7LHyPMtVpaexY8533aPAdBZ6v3yoB0ZdWZnXrj_AdTCNPZcCflvl8RjdPtevyqFSBmp9c80P9u8yCCSzrtKjuRE5lTL8InzAlvIcDUYO0PYRc0KOafyqlAu_VEylhFSpKKrLjkGoLex08zVcPm8im04kCyoZsmmsk1qoCFaf6Y3d-Ri-14S4tSTCCKy0JflpyhoXDko7cOU0fKh25Mh0sknTASRQPxhYmDmUKy8vc0qv9UPkorU6jXdFMhNsA",
+            "width" : 4608
+         },
+         {
+            "height" : 3072,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101660649751007491274\"\u003eIbrahim Adzim\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t2835k96iP6d9i-3LmYf42XgQCZzP-huXoYilRTQSRI9ReH1dAThgy7Mr-ntQOSFbl57SNUL7F3GDzEHtWiLASIJSM1bp4N6NP7_9UnfxvGXENIowddbjK5UH_Fjs2CjuZwMv_fCVFa8Hgmzlq7JTGJ6aTCQ5jgAiTrXaBHL4FKhshNJZnzjFGF1rLodeR--S36x_NRr4wZ2jSZciJhHGSnKzSjQAw2cPRoHwYVMy1q55LZIkYbZts09hPxv-DwBU4yaLoN88km-ABQ2CAMrJ59LMKamicDbxczCj_z7Bh_-sLeHfD2wmnbGTSnM00E49-znEAFrTJJFol6nk06NsVZnM1sz-wuvieex1FNnThv_WxQg1LBOIjuZTqPKQSRE2ccQxBj2NngzlNhETAh06qti_pAi1HaqHSoYq2s2qflvc",
+            "width" : 4096
+         },
+         {
+            "height" : 3024,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115135471118087783960\"\u003eJamilakhwan Yussof\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uiF1TIoPZUxhFrativzUu6l9C6-VPy1w7UfB5jpv-RCiYahRQu8MYrPrIxzhOqLh0R77zJX7D9LHVQOz-yZohxnTXC-9hLFK50oEj1SqbS3LssCP4h3q2wmjZ7AsJSp5CBbJhbSQzh8ubj5P7O605GN3_nd_o8-eRwpCeXYfHYr_odWa8o5rIXFY7FM7cwOtAJRJ_klkHMz1qyfLG6Duh8ZVP8I_GmWpHpE_wK2G-yXAH_WU_IFp9FJYmvstNfV5Pds2q58vynUqo7h8HsBH5_saKY_c1gn2j2xKwSp3bkyJvOu8xM-vvZJAOXnaEbXJiHZSBzogKDZiktWepG3-oYgubbwwcj-Ef2iiZCK6wjBTJDf56jngpG1O2pehZinTTd_CjTsOZrxe55cE4-A1mN-RgQ6hp3tjDT4ShH2maD3g",
+            "width" : 4032
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107544142100108067939\"\u003eYong Yik Weng\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-upZMmWo8yoJzN2G1-KMQM5UWiyyqttNqGHBfQrIB51M7cOjwDazsDJ80OF7cgtZ-r-r_ClPyCxZJBVfJvL3VB_wzVcTPkjwIcPVKKk_LRQujR36EwBIP26_BDp9MVuRMKWTZolBcnJpaqUfoVzI_6B7Y0lleDgJQAw36o0LYdn8vjXDL1hbiuzZFAdnBC7QR7nM7xiWIBHvbjBpJA_KqItnOcm8uFQH8-WxWa-OIuOnMdYEwigXQpmr3DaIh8z1peE-wT4QW2SqUBzGDIeXdsmilpJ-mob-PeuBytIpVaVC_PtjKnLbj7XBqp-imrNsK0Z7ACakXa3IU9pCCMAQN4hauD_V-cuDmMz2d-MG3jsY3g3ET3FwKLY1PM28JisCn7llHZsQ5M6_EotJBdOcahtCMJwPsNer-HoAkR3YgPpN3LX",
+            "width" : 4000
+         },
+         {
+            "height" : 3565,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106762591549475995156\"\u003eMun Choon Chan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v1-3Xu7u778bk3SAAgfDTwIVOSWw3txp66URoq8b8jq1Ja7HmQDMoj5H-pBMnhQIjZpH2h-yhZwuY0OTDdhsee9OJO6-xezPVFZzBfaJoiAnwYYs30qp-FLUsSFOTaajiLD3rh6RLo7beYK3PS1ifoKpMI9h14rqayRRI0qNEOypgEjDF3Rg6p0HlsWC7b8-mbDJv49ei9PooM-fvvRYutPetTGulyE7ZPIxmp4ZJezyE4Fq_FANq0FHlefC-0i_XOU8riCEkuLPCkBlsO7LMTsVi9wsgRohYNkjlZPHwI34l-ZOcFCzcOByVRkLEQtrV2QxDS3d7bRB8CWwYyof_0jQWPd_yhD1tBJpN4lMiGUYMQu8rzcT5esLgJuZRL6uO7xcxTx5wtSsB_RAe8ZGx4UbD4O2JHxSCF5wvHmmKrDLA1dnRSJbzEo3EeD0KI",
+            "width" : 2673
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116124020531040851310\"\u003eAdznee Ahmad\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uFMaIq2nY1N7Zg7lQdUkxOZqBDl47A8U-b2h_8hxCTQH6bjLBbjcdcC3fgbWUZWjCSym-7W_UBe5zs30DazlMD9uos7cWv5jf2MqKe6q2bFtXdVYxV-uCn55aZF6ncWZTjYw7l2M4RG9EZcyoY05zn1KybQmhW4LOiB4xWODRhQ9TWcNK7tUNxgTV1DajJnDUaEFrn-GAppaiJddmYbUprH3mtYNz2rPgHHuPyQuQKq5GS6pcTw6Dy1q3YvlFUOXHLkHSe0CQAMuQW99CzQuTIfqoKA17he6ECTkQgIQHexXfJeot6ncWtHvTfELKQitA5BrdRRkUuFhDe3TD2W8xdyBMs6__RuNEEs75AaIPhl8piPblNHxNcE3pkDTjNb76EJ4-3td2NKTylVT9p1Ecc06YbeB7_ow98ux3fBXc",
+            "width" : 3072
+         },
+         {
+            "height" : 2238,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/113077546317289825120\"\u003eJip\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uMHbDK_1_hXcuGa5ZoinZpou98cF5AjotXlk05foJ-evaB6v2LTFMAorjJBVIH6oyA8TzeBtxrYuqgZgU41e4JrouNvpqknyZ8EG-aPy4SrwFGqS7KzX3YCDjlCfZzfd71_OPSzpLh6YgDBTPBJssicr2ygSqh1LTDlJWrGqcqxe4p7BeNlVAKKQHeQwtnRa3dZN8ixYTBV2xOroK7kVZ1XmXnuR2do5obqlXRjWYP3muoioE9tdaMk1zv_5Pn7jK4bLYEsghQGllqofuMPt0X4e0q7NUykv4NswHDbIraXwoVarfRUvhdsIB1h_O3Qc1j0aknN7KhJXwNRz8-FcP4hkAqkgp3Y1loUH7LuI0GrCk-ZnfHigtvX8eZT-XROhT8FdBGlBdXOJol1T-d-XmYi2vlEOldiSgsquXMppI5ug",
+            "width" : 3134
+         },
+         {
+            "height" : 1600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101390495790623843590\"\u003eYu Fatt Pang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-srdLyYv0mqH-0NA2FZt6u4dXgCflWP7LQ3Gpgg3OJgh1LVYb7ALTcTeqAfOlU9z85cULfXwEvmGCQuKR3c9a2FbPqsxwRIrOc_5e7ncy3JfVbK-jd9MCqHQZBvqLDQTT1QIFd3Fks8jsbyCaxkG9KIF26u28uwDb9ZV5IvesgXXlESObLk9OST4QoxNWLIwZ3o_GyuTSHwmJi4u90Mga9OAea1VsduuyqDATKgNtcjsVPnvFOeZbZTARmJfHYnWfoNrGvBnRv7c_lvuvpdIDYVKpXZVdLoKY0dSNgWTl6SXu67fMI0IJwSUD5LITjtKja8XwFm2X3JIdvNfMcTV3dKip2L83YOaK5_rIHIzPJng0ApgFxK3AtPmncV1cU8vZnIAwj30D63zKw4fAY8tYGxSMGXQDd2usonG1kewWRSpw",
+            "width" : 1200
+         },
+         {
+            "height" : 1080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106768431195922552372\"\u003eTew Yuh Ling\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tgQ1-o-vVGklN11PurAa7aIjbTZhAi_6rP9pAvIeMurtEW1JcLNChZyxyaQddeQOuPFuFX0f1-290528icTjqH5QPlE6poDlpxCFutLgQ_08fTROX_0X9Jc3iWkuGzPYmHQ15qO-G3uECLm04fxft9l6aUcLWhSJbIlpo4uJEAbJXLnuRlc0nkR3rQZ6BO4S_2HUtQSRZcBkb9bkBoWGmcingHXedid5M5jpGz2xUM_9z9IHKsqGpqPdtxTQnzelsHdoUotH3nAE329fMrHjsKEXpV7lzw-WI6da82om5NmB07wHNxu3Y5qBz8sy4OjYKT7HL7K9FnzCsDe-oM_LXCyJwkKeuijifvRuMVXH3vw38DqhNaP_BlPdW_IGRuzUgkZQPPFbWFmZaKxs639zEhIpqst5s71wMq3Urv7T0hV7E",
+            "width" : 1920
+         }
+      ],
+      "place_id" : "ChIJhX3crtulzTERZYI5Xqx4NDo",
+      "rating" : 4.2,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4194109834699309669",
+      "user_ratings_total" : 534
+   },
+   "status" : "OK"
+}

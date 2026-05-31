@@ -1,0 +1,51 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "89150 Kota Belud, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.2261761,
+            "lng" : 116.4515872
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.227527880291503,
+               "lng" : 116.4529900802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.224829919708498,
+               "lng" : 116.4502921197085
+            }
+         }
+      },
+      "name" : "Maulana place",
+      "photos" : 
+      [
+         {
+            "height" : 1550,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/107539202612884705367\"\u003eMiku Hatsune\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tuS9Iw4cAsXQU4TnP4hQ1Mwzi21nrGybkYX9T2Nod6dM2FwhJ_Wx0bgrh2NgCUDuu4TQowCY4dx4JPrhCG4hby90HKprNJVK2-zFnqNl0SiVS5_-iOSNpwDA3AAX6J1zVedWO9ST0NxT60oZ2tQSVFqM_27dyw5gXWqKOavvkjI5KXkIQGBJK9_2mgsfulVqvcJQa-J1-AePrn8JCN9mcGcJMWtPTdAZB8_KoRRvu6sP0tLQpoEWOr6cMExfH6EJhE_jGRxGhWlUik4Y89nZAlLQoSvxHXV3eXeQ3f61qAn4v66z2-fyxYI6NQG5DfCjgDtzxM-w9tVRPW3RNWf_8pM7fdoSqas44RzLaHnyH-no1fEeG2vBnUQCLc6gxs7hjGc2iu_ubkCHMqHO-FHnFniQekzYN11e-Oi1RoMP1Mouk",
+            "width" : 4800
+         }
+      ],
+      "place_id" : "ChIJ4zMxFgCpOzIRrw1pqJ0tljk",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=4149554261827063215"
+   },
+   "status" : "OK"
+}

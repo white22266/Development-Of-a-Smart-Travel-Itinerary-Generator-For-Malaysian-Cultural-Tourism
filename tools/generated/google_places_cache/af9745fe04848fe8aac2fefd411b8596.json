@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Long Pasia, Sipitang, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 4.4052453,
+            "lng" : 115.7301071
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 4.406641630291502,
+               "lng" : 115.7313709802915
+            },
+            "southwest" : 
+            {
+               "lat" : 4.403943669708497,
+               "lng" : 115.7286730197085
+            }
+         }
+      },
+      "name" : "Natural Mud House",
+      "place_id" : "ChIJC8SiIgD3FzIRvDnAi3FoCuI",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=16287945839224043964"
+   },
+   "status" : "OK"
+}

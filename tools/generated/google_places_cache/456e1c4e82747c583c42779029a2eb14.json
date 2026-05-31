@@ -1,0 +1,39 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "F95H+MF, Kuala Krai, Kelantan, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 5.459210199999999,
+            "lng" : 102.3787306
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 5.460559180291502,
+               "lng" : 102.3800795802915
+            },
+            "southwest" : 
+            {
+               "lat" : 5.457861219708497,
+               "lng" : 102.3773816197085
+            }
+         }
+      },
+      "name" : "Hidden River",
+      "place_id" : "ChIJx-4ZXABntjERUHjhGzOitFw",
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=6680142487692081232"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,1199 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uwNfX22-UY4faOtZUuV7QfTzu94DsxmbTouhADrE8yj9DhYzTOmb9pHitP15hYmJcYk07TDOQH4NPZAIznB-YGEbDBnVfCmYXUhdaTqvyUuR48GGjERJaP-Q5O296TMB1oUlTF7_2i1GV4khVIjc93tOze_3FoNZ3usWXAxaJUuPWa4UJ6WzoOlPf2prSNQXhfGWMbGmTrFaJpl9D9ADUsu3uAoE0zLvWOiomn7BTXL4Ld1MuVDQgmFD9ZNxt26LXrTIFKgwLXeRiuZhNVItXBwOgOAheDu3NR3SUqEPK-fUdRQPneNIV2sbKpZdIO0tpm9txCxTyXHwSW_wP-C8V8yQKoHNsIQa12afB5A4Cm5jL3WceKk7Awkiz9RI7d5rdyfQeoxsJl6bJLG1Ns0sXsmYEltZTGdaBJaPaNtrC_fU_JJOVND1uonl5XexpuR8gLnRibVpcbk4AzsoKOqNgP_lt5ophbgxm5aOWiH0Jz-keShATkBZ_QggW696mKHJOdADMJBFn04Id7PLcP9TPZuRwyEVTjWa459WsAQPQEGUAWoefiG9qNlOPMKLj1BFAjaIPqRPbVQjJVQFGLUq6neEbcol69LVAzjtDMhxhQ0fja2h7xj3KTMlbhAsv5KdxmlvjMmVdUNIayIiLVi8IUajYcjFuIH1mSxUaqQH0DIn_801V1NeUR2jr5dD_E87Bp-OBZDjnk7AhvqJ2phOowrpF9_j5-3KD7YT7t1-mHapZbs7PzfYRVyAKSodCzO2197BHC-4X9Eh-Q5gx9MvR6m0334Ag7q50hVXX-WRv8q5_aQkwxFVcyuKORD-X0_0lqLRWU7pw",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Terengganu State Museum, 20566 Bukit Losong, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.318730299999999,
+               "lng" : 103.1028244
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.320328530291502,
+                  "lng" : 103.1033712
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.317630569708498,
+                  "lng" : 103.1005582
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Terengganu State Museum",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101676497256600774501\"\u003eDeechai Rattanaphutphong\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGkCGHyqfpwL5TcXZ9ToSxeh-y6my3mCdkwNRa0CVzTBHUyD-sppTcKJMz4ftNYoiPB4zD3fWwEsAh4ni-bNW4Sm8GyTBwfIqc9sjqoGNnppokKY8gwdQreoNyOR43X5nYmwQJu6IfQgg2o8wzPOt8eRZHYoW9uIxwZH93PW-QBtpaNGSXFYSrQk3T7ExCup4VuQ34dkUQWAokjpMWRdqilYsppRhcgo2aMRnuieWWFuaVTSj9N5jjLwalGi9UKxfIoYa10YGib9yMjQPNNtpJjETK3Ks1v_2qYUyXQhLkAYhZR283B-7QKHWXu5AM6SOrwr91E7kWjgKjj4nxM_VHVWGvaL4_TIC5FABRctPUCrbT4DjPFuObPepN9xlRLf90lqO4IlkNKt5HgFPO7GozlTDXsPLrg5kZeHGoRcjNJrMs",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJ87fwbL6-tzERh7qMNrpZS7Y",
+         "plus_code" : 
+         {
+            "compound_code" : "8493+F4 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ58493+F4"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ87fwbL6-tzERh7qMNrpZS7Y",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5073
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Chendering, Kampung Laut, 21080 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.2697214,
+               "lng" : 103.1516768
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.271052430291502,
+                  "lng" : 103.1529326302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.268354469708497,
+                  "lng" : 103.1502346697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Pusat Sains & Kreativiti Terengganu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101205164496296139274\"\u003eSarina Ismail\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ugksK44gjEHYcrts-7g5-AVvKWlU_S38ZYE02PWGrp3G7_HNmfolnklbkiuK50Z5vUi_4Jn-eqrn5YtLlvMegNfppiG9Ya847RGmp02p047spkcyh-LrD8gZypimcru8kodLrlslQ84gEeGEyL6gmDBWod-BRp3KhbnCQLmqa7EYjFa5veD46u-HzOV3yVaURVPF4xKdik0mZq2dBHfp4myDwvlplIoyrkdxyekfrNcg4C5Nlk1Rih5MDwFtdDbi1jPhmROskJpwGFfCh1FasAjIdutDzb67wkBjB-tx8yN1nuAIr1bbZDa9aWn_HsdUOhs6BiVXvSpPNdqBmv0GnHYaA2t6DLal5_KKBqezT1I7-9ju51_W15VkF-eiS1f2l5C5n6PuoS5VN0lV_oeaWMASWz87WeNQsiQdGSdKU",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJq3ZuT-u_tzERKuLI1qr23xs",
+         "plus_code" : 
+         {
+            "compound_code" : "7592+VM Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ57592+VM"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJq3ZuT-u_tzERKuLI1qr23xs",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1547
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "83X8+5G, 21060 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3487575,
+               "lng" : 103.0669478
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.350014880291503,
+                  "lng" : 103.0683384802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.347316919708498,
+                  "lng" : 103.0656405197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pura Tanjung Sabtu",
+         "photos" : 
+         [
+            {
+               "height" : 2252,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113991439441548615669\"\u003eAndrew Tan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s9dHX45RvHchYJxwet_dHMiVmfsYAw-SOaDU4IqpwL1IlJMhrxdu8AtnFSBIGjMmaJEtAegY_Hc_H3tqu25lFuCOELn5Rir6nXJIOBwK23xyiec7_zy1rRhidNaU_hRZWME-98aICV7w90ZNLvnlZMC8Pu-KkaoXgNAKhNc_GHIOf90lXJR9ovowIl-8nDa4ZL7PAp1DasFUr78VTWx3kOoVGYLNOUVwG_NGXBTKvwbKpqS4dakr1xPYAdsrBbuwW-fFoxb2oVyPQBMUvyMAykWVgYs5vKXeANk5MjGmNFqQTBWhpj2wVYPKxP3DWJ1B8ERpK4O6g3YXVJ_Xs4MiqXOOs08sXjrpOR5JHmqq9KN-TiVs1ePLiMbCqov8f0z2SXrWIPERGHzC7H3b9ZLUiX1pbvCMrtaxaaXgq7tbOCew",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJieQgD--7tzERzwfeSXX6L2c",
+         "rating" : 4,
+         "reference" : "ChIJieQgD--7tzERzwfeSXX6L2c",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 69
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kampung Cina, 20100 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3339018,
+               "lng" : 103.1320122
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.335262880291502,
+                  "lng" : 103.1333636302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.332564919708497,
+                  "lng" : 103.1306656697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pulau Warisan River Cruise",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105679651605935849262\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ttsaK4LmsJ21pXl-nYpDsfVWbs-cRNz2LHDG6BmceFAn4bUea4mzw3y-1K2ZJ3tXd0ReFvqFztONVFiU8ApsvEvNXBFHKD6IGXeiTy3H1fTvBktiGlQF1avQjCkHtoAcLFgBZgapQdCovuVQRxYcwYK0zP08tPdAN8biOfARgENhbxovjRdtE0-9hKJAR8D1JgQoo0x1FZ4-suq-ve5_x2PczqX2SlhiE4UNVkbQfsGGUGxEvNiS8TbyV0HfOr2T1sUOXC3BTQmlGx6B_3l1SBL2Hho0YZA4ASRUSwOA0jfYabYkQORc2tTGhhmaS0pg2o2fFlQ7_zDwiGNnFh5yZfbqY8s06FBJu1N6ahByfzkYciQok9Q9Ab0xvBIJD2jWbxNyGIpDJTJ8Iw3lIpPHg2E-3Bd3aaByDGneoAE7V2Cg",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJrUDOXX--tzER0WXAN1T-E1E",
+         "plus_code" : 
+         {
+            "compound_code" : "84MJ+HR Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584MJ+HR"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJrUDOXX--tzER0WXAN1T-E1E",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2462
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pulau Wan Man Losong PanglimaPerang, Pulau Wan Man, 21000 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3219257,
+               "lng" : 103.1166229
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.323152880291501,
+                  "lng" : 103.1179886302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.320454919708498,
+                  "lng" : 103.1152906697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Tamadun Islam ( TTI Management Sdn Bhd )",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2349,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116640930074400251890\"\u003eanwar osman zainuri\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJQv9SyzIf6Ln6PYSoZ_6mrxzfMizkG9RC6uM44qohMmS9m8TZSHeMW4phg3nHr56UixerboBAoCO_YPsoSd_bxvndP-VlRvE_zbFkE8FwYMpaS_uCSm3xoGfWzKCStuR_qRqZplmblMiKBFv1UZ6HfHc28wLE0tDG17oSFxGwetdsQI5zXBo_lO9BzyxraHEpGknaqNRFG-tT9cUPqqQAUwbVp2LODqeyEIOzzH3GULJR8JcKbj6Dvf9TCW5jjOZ1hpd01_4xGVWWjzA8ks8McrgHqFJ04kssxVdh1OTM22KH3eVW-eePLFt10uS_p1HptANGJ6cFdULRL0kM__AbU5TY1DEAR3K-GmZb2KcKswU2nLZoG5L4xLK67gvQ9gTtFXDEfCwLUpzHDXu-hV0kseo59w7UHU5mQjYUvS8",
+               "width" : 2869
+            }
+         ],
+         "place_id" : "ChIJN3Fo4ZG-tzERQnuQ-Qw_PJU",
+         "plus_code" : 
+         {
+            "compound_code" : "84C8+QJ Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584C8+QJ"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJN3Fo4ZG-tzERQnuQ-Qw_PJU",
+         "types" : 
+         [
+            "establishment",
+            "food",
+            "lodging",
+            "park",
+            "point_of_interest",
+            "restaurant",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3966
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan Zainal Abidin, Kampung Panglima, 20000 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3365504,
+               "lng" : 103.1370735
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.338100580291502,
+                  "lng" : 103.1382098802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.335402619708497,
+                  "lng" : 103.1355119197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bukit Puteri بوکيت ڤوتري",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116398553882170469361\"\u003eSyamsul Amran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ucVeenTLl9B_lhd80HiPjQ25Ksdx2_vuMsOBeyRjQDj1za9kMD9SpmRWyg5M6oMmzuPs_huotUQYFYQLAW0s9pYgG3-yXwP1IVs5EiQMrcWi1uBbYowOQUwKW7drCGE6iWc47FnQVIwGubA5ZPng9jAyCeqetFnXmGrw2UTptlTTT6QFMRYtidUsMhQjlcMGJesUc9OEuhszAiSVFUtgMby4a3iX2onCZz206xv7HPjHcTgnB-miqcUS_gm1AOhR1KUN54e0pBCSDOoqh1chmIpqN4Jmfz3s0XX7STyx-wcBsMEHKSW2pCTS6kyXKaWH8AfpO-YIQU2mPRe6xpyf9GoBFF0iPVE5cCkr5_iycpsN4gr28EVhFfCtYr8IigYsTonxHb3MHbhpthMGDEjNembfJbVAWvwg_O4mzGzaA",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJaw3is9e9tzERpEXaQQIDImM",
+         "plus_code" : 
+         {
+            "compound_code" : "84PP+JR Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584PP+JR"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJaw3is9e9tzERpEXaQQIDImM",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 78
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Terengganu State Museum, Kampung Bukit Losong, 20566 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3181538,
+               "lng" : 103.1009157
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.319613680291503,
+                  "lng" : 103.1022193302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.316915719708498,
+                  "lng" : 103.0995213697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kampung Budaya Terengganu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2304,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118358522352978367967\"\u003eCikgu Farid Class\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v4Ndd750g5kYpcmBxcr9m0RwxEgRgTCPWAqPfoUotgPRid6dSTxrdQGJaxTlMYQY1oEb5GGDSe6yOp4lNLysB0L1pL5jjNbY4ZQewWNjp3NGuAor58sMbHMLoXGYm7l7e-2r099urVgxiS_aWFSsuYPhs9233ZWzoPNdq3iQu5NW6efQRsxJaUY0UZsyIES65HzUJdIWOu2LTEXk6NvUXFCfuwWCHtIZF15qis0OT-WjmrjKSJtRdkkfmDoy0H3zlY_wiCQAw4qtAm90wQvxaZVtx2eSsZUMOPYlHRYLKMeX5rmikJKxhChn3paiMypIkNvuuPKYXFEY9YeoncHvPQpBMq9h1vpyg66qCyFV-EtmxtrNI2r9BQGbYTaF8xHszsJCvimPa49YiBPWn3HeoJvH2DaVJCIr2n3_fe134",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJdwdTffO_tzERbDYP16Iw9Ws",
+         "plus_code" : 
+         {
+            "compound_code" : "8492+79 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ58492+79"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJdwdTffO_tzERbDYP16Iw9Ws",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 604
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Balik Bukit, 20300 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3256209,
+               "lng" : 103.1320279
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.327008380291502,
+                  "lng" : 103.1333634302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.324310419708498,
+                  "lng" : 103.1306654697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kuala Terengganu Waterfront",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1152,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109028556025329417039\"\u003eCY Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sK-mi18kV5ePM6e1795opjUsZOru4QwEvXc_KDauDw6RgL9zdfMVAJJqYZODe_yqXVwsTv1HXOBcYF-54o9OPd2gsBZim6nDVo_ruhQSSOK2A5e53x9qo6OxU06FId6R6YitkLjAB2QKERWdHhLP2zKQkFjPTPGTwOQ2nNVZHg1HvLUjEkOtjfD5PZzap3IfVdK1G8ed1uvyBwPYlnB7B4wR1eGCN6hlieTFU9Mr1aYYkGMBiQq9DlHgY4HXHiSf_I-p9otMylJVXssU9ATkArGfzD-P_uxV6j7sFLiL5wndJP4LqfW_me9Y1_8rogi-jF8tq7yB0NW13rbKo-vWrqYNT9R7nC4tfdGvpfkM2bHYS2rfgM3DVT_MfJplwVuUId6OeZ8RhotcRjLzPCfpDldy5xR-aFK7V0OqkbYiQtt5HG",
+               "width" : 2048
+            }
+         ],
+         "place_id" : "ChIJaXyqyXy-tzERslIQCEdBJMc",
+         "plus_code" : 
+         {
+            "compound_code" : "84GJ+6R Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584GJ+6R"
+         },
+         "rating" : 4,
+         "reference" : "ChIJaXyqyXy-tzERslIQCEdBJMc",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1840
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Terengganu, Kuala Terengganu, Jalan Pantai Batu Buruk, MBKT Club Exclusive邮政编码: 20400",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3177652,
+               "lng" : 103.1564458
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.319126730291503,
+                  "lng" : 103.1578236302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.316428769708498,
+                  "lng" : 103.1551256697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Cultural Centre",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117406116218692968613\"\u003ezacH .H\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tAGLXjHXY5f8fY3GWKk-tUADMlmpb8Q7SdEJLwhFbXFXgu21ZKh5CFEkrqpztXdUWhu-CuVJWejxUOqn7ZMwV8m4SVaPE9cWbLo3be4onShjFBjHCa8XkIwyHGe5i8Ogi7ne5WP7Vf8dOW2jJvxWFtYK47-tFbqVcAGTAqNW8ySZDocCVKUHmgtqPQCa70r6INr7NUgsOdyiwa6RVtPUMzdjt9O9TBHTcG1Sm2Ph4sMgbCI64TVoWQnwFRv2DlD1alvkZJlK8PJ5rODSPFMiPlDeI-d0B5fTwKuwWeklqRn43-yKswcz442iuhTvqj6k55Iqxd6og53N5cBShjftdtlGRNrIj-70E3dHkPQsVc1Y3MvW76jWWuPgFYm3P35Qffbfo5gUQlBtsuTgjvWgceDXaiA9ZlTFGQ0WqTpuL1PA72",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJfxiUjhK-tzER-0USAyoVUZw",
+         "plus_code" : 
+         {
+            "compound_code" : "8594+4H Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ58594+4H"
+         },
+         "rating" : 4,
+         "reference" : "ChIJfxiUjhK-tzER-0USAyoVUZw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 359
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Losong, Jalan Panglima Perang, Pulau Wan Man, 21000 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3207343,
+               "lng" : 103.1153406
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.322239430291502,
+                  "lng" : 103.1166419302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.319541469708497,
+                  "lng" : 103.1139439697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Taman Monumen",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111053115707481822687\"\u003eHani Isma\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-thx-2vF1OFgW-HC6vYFMJLBqgVO0Kqgemix7-pbHmAW88QMEh1Y3IdnazB2vzBL_iRD6OlUFYdOLRAgTCf9TvPTCYHS5QjmyrFqw7q89Z4zhqKAbJL_QvnLfCUp-rg_96ZbRB7dEfZGwM-shLugugW6P-8zWd68zY9mk5PsyzKiBMbWfdDLxy_RuO5Z_LbObU87ZU7NnvaYOJTmev5F2g6HKcFO1NotEdaP-Qkk0Em8nypO4aofBS2DNdyobOZ4FpcXC1X0jF29gRmJ_uRdSZ5iSMJ8GG9Kyw6qiDqV-DNJXBlwPJe6BRKpeOym-m0815YZyXhzEJHUEQVEfJ3QvV9Fhvqjs00vgI4FApGccp1A2uZ_6gxoYtumBfbSr8w9hCn79ESeA7C2RCzwxvobyjVG4C6KYVh_qAnGAk5gsWhHQ",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJTS8UIY6-tzERTasg7dQWXAo",
+         "plus_code" : 
+         {
+            "compound_code" : "84C8+74 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584C8+74"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJTS8UIY6-tzERTasg7dQWXAo",
+         "types" : 
+         [
+            "amusement_park",
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 54
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Rd, Pulau Duyung Kecil, 20100 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3363958,
+               "lng" : 103.1272778
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.337744080291502,
+                  "lng" : 103.1286533802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.335046119708498,
+                  "lng" : 103.1259554197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kota Lama Duyung",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102466097451038171135\"\u003eJosef Vanžura\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ub00PsGInruNnY81z6OQNkep201itos8qOvhjKZ8UQBvQ1Ykh1paDY0qH3DxDV4WW-q6xfCLIWxqRCW1lGDCPgGDe6rqwfITzWjak6BzAZIpzir1KxOEVoP2H9z4vFI22jw9IRbgtmq3HCehhXUQQ0xNuFeBF92zde704P1w5abjMgvgD9tZ-1bp8uElRkrQwac8YtPJXdvBLkjR_P0bRb4hMeOgxC3gFwDJDz_Y-wqSUINPL5dbz2W_U6XDNm7tpWmx8UjRIbGaFAxxwl_KDtIdvtk_rPBYliXZpzu_5yQ_UiszGGPjQPRSOQm5gL9dAsnhYWjlWzYxWbfDXo1QqXorl8ngjdlF6Nja6HADD3BBdhrKEGO-MXERHCHg9oBkBVCwGQoSSXQBP3moeVoYR141iKjsAk8k2gzdUJsOVuqwZa",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJPd7fsCq8tzERs3mG5vegkMU",
+         "plus_code" : 
+         {
+            "compound_code" : "84PG+HW Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584PG+HW"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJPd7fsCq8tzERs3mG5vegkMU",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 240
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "haji sue darul iman, Kampung Losong, 21000 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3188964,
+               "lng" : 103.1252006
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.320184230291503,
+                  "lng" : 103.1265716302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.317486269708498,
+                  "lng" : 103.1238736697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Haji Sue Country Home @ Rumah Warisan Haji Su",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101734256495813778211\"\u003eAii Nee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vm_GCM5DbC7c0NPhJXvyIevhWNvOLleoCc9mQInQ1CsH_auTr3ebGyZtBMeuJhkAUriOx7ALM2sQkYs8f8U8atMdoRLzu83NK-U9MznCHKIdPwBJsRe6yDmZbjnrsnmbygX6GUr1gmVZdPLoG2KfA_2nWZfXBWhqNuppBhJk2_zAzHIPphXGqkEcBSDYTLKaIDw1JH7dMBALF-EDp-rt1WKtUjJmJM94itT0d75aq6rns4sPVffwyY12vfNiRUuvnFzzppubr-V-4eITW7dWmZy-J5K-nRHe3srUcvEgaNgh8lO8TW1YvJdYP8c617ATPQHzfUSe5ToaKWx7OYsm9jVDZq9UZCFBYrNgtjdgpnseVw5-AqEO48UCA6F_IEF0n676fPzr2TqSpUhHIBAKqB_ercYA_ik6iJcXt4tP8",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJ9fx0tYu-tzERjcEGuzybTa8",
+         "plus_code" : 
+         {
+            "compound_code" : "849G+H3 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ5849G+H3"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJ9fx0tYu-tzERjcEGuzybTa8",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 63
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "214, Jalan Kampung Cina, 20100 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3321042,
+               "lng" : 103.1320195
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.333433530291502,
+                  "lng" : 103.1333149302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.330735569708497,
+                  "lng" : 103.1306169697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Kuala Terengganu Turtle Sculpture",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108567504656009888345\"\u003eRaymond Pau\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s1MFj3z2CirmsMC3WarU64UG8oqCf_1LCVosGMdNzuqTzSqmK0xQXmF-uaUnel83wS-VaxQn3FrnfDSs_VpPRaXAoBN8X-kgCMFemRZhojtTy0o9tYHp_1fPWi2mpNy0SAr54q17KnZx6mKTF6pvEsBur0BH73QL4dek2luSYZXuaCm21-NUBTJrDv7apxiECFLqTAfRV8o0qnZrpamwbAQ95Ja4aCLk--8Izzi2SK1j1o6R_Ilot9ejejewm4zxTSmxdzZkfkKqRQlI5af-6OaT6sIvy5BBS2Tm74VWPm7S3XQzIsahi3PCxKC7M1oCCFv9YJKu8CuDVGEX1Y_ZXityIsbzUUfNHM7li2fqk6d-RAT9IzMrajvaqULPDuGeeO4hxcsBLAjMPB4xgehU9J6eZ3FUuaZ1S-5twp-7O8SQ",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJcUxO6X6-tzERhjSplRr_LE0",
+         "plus_code" : 
+         {
+            "compound_code" : "84JJ+RR Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584JJ+RR"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJcUxO6X6-tzERhjSplRr_LE0",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 41
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "20200 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.334063,
+               "lng" : 103.1311794
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.335255280291501,
+                  "lng" : 103.1328847302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.332557319708497,
+                  "lng" : 103.1301867697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Bandaraya warisan pesisir air",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118081046538124931819\"\u003eJarod Lee (Jarod)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sy0Ovtxlpdo1Oe274gGiTCWnlJUDq5Fi8hfUC9fCkjaXchrheJXO95gpk9d6uCwxDNLftGUYkyejog4mgi-m9dW6Yb44TZ91BwCfwZ7xEWASjYpKhHd7nMRILr6KxP9uwfn92iic4ogHkNvz88CpFv6aa7eJ1FcSmoF8DcY2kAivyTi8z444dxtMItai03bZ3ciBdqUWqZOQs22v_GRAEbukj0uHTf8mzVIq67lYJYmdpemtTKO14MCijg1DceZ8-06ZefXVh19ACUF7EpLl4TThUn1ft-z_4a8pUljNYZUQQ3B3mx6DL6M6A8bEoo7jDq_M5Ji34_DZIwsM15xfqEEiRkgs4BXS-uUlIKEhdncPxj2Ut-u8dGXQ0dwZ3Tv8agirrF11K-nXi2G3X37o1vqghHZcFekCtwngaO2_zwFn-O",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJLyoUwqW9tzERbY_MnZLUAPw",
+         "plus_code" : 
+         {
+            "compound_code" : "84MJ+JF Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584MJ+JF"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJLyoUwqW9tzERbY_MnZLUAPw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Sultan Zainal Abidin, Kampung Panglima, 20000 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3365626,
+               "lng" : 103.1378728
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.338066380291502,
+                  "lng" : 103.1391701302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.335368419708498,
+                  "lng" : 103.1364721697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Istana Maziah",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112850936260991744299\"\u003eEdward Chung\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vWUB2l5VPCpfmdtUEFNKoyAbIRawIKgOfDHxOGyvLzuViXFavMb16yzgv-uNIoqWWJmpEqZxWDEke77pRbyaeU8mL13ZJ7fuqruFnNrOa6WQz6xYpnjh1WJSRNFubx_G7JG65tT4PKiA8DnDbjOoRUWI8GzdPHbAu_gfUPakinE996mL_8OvlJZRTxVdrkWhYnFL2WccgBMydWE5A5QGnxDd7zVuKyuTdFzZ5f5dTt6QmdPW9-5qJJDFkAYGEP0cuuwwJKLZaBu1fi-4bhKDs_WXeYsVs7K3UxtRKqTZSAd8pF362Fw9Oanv4-vtzMqrJ9hiUXP5Vwp1Nu8B9rMRwOpgHIkMn1ao0qCwbMtx2v33Q7ErI9BlrvSQR8pxkI5Iy6zM-i200Al1DiMynu_dl6zpO2MlM-SVUBp4D3fs8",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJexjG2te9tzERz30TeLXO7fQ",
+         "plus_code" : 
+         {
+            "compound_code" : "84PQ+J4 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584PQ+J4"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJexjG2te9tzERz30TeLXO7fQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 134
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "219, Jalan Kampung Cina, 20100 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3320623,
+               "lng" : 103.1320139
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.333433430291502,
+                  "lng" : 103.1333151802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.330735469708498,
+                  "lng" : 103.1306172197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "لوروڠ ڤڽوLorong Penyu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2160,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/100888579298044219083\"\u003eTan EH\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tBg6gSerB_VCk_UZG-EGXDXdZnN-DEVxF7S1d_Vu-5WqpV5N9PCcj9-MhNdi1y_nOCxRdAKeS8SAWPzZO2xzyDGebyPB42R6YxydAsSJO8oIDdj0kNhv7xX6ev_AkkDl2QbZuVgavqMmcN470v0kMUKwmqcVPDV_Qo-eoTS4P8NthCKq4E0uPqggHNehtLu4jkJjnLdxjFA61vMDrwCLgB_eBWKeWlA1kN8WTmOgrlMuQU4-JNFSA7fw9vjgYoDOuFOyBrOiec2uKm8-3gErvGWx2E3J3kKHCQHbJS7nydqDWBYlGzqc1ZVbLmfpmEcnfA1ou3d3DdnP8AdaYsGm-vkfkmrxgzECW8oD68J_d0VcvQEsHCksdTX0dXAcsd13zuBW2wlDvDEeBFhmNaftSF88e3EfN2rcpbSSbtq4wR8Q",
+               "width" : 3840
+            }
+         ],
+         "place_id" : "ChIJEXajwH6-tzERBvphRZc8yv0",
+         "plus_code" : 
+         {
+            "compound_code" : "84JJ+RR Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584JJ+RR"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJEXajwH6-tzERBvphRZc8yv0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 382
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "19, Jalan Sultan Zainal Abidin, 20200 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3381918,
+               "lng" : 103.1374916
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.339529480291502,
+                  "lng" : 103.1388453802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.336831519708498,
+                  "lng" : 103.1361474197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Payang Walk, Heritage Rickshaw",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3072,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117004090073252057479\"\u003eHaffiz Hissham\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tc5k22S6_ozGDRvZ0ZnVJkfgljfmYiZ-GT-7PTsJt3GuvuiAary2vxUIPE5SogKpnf8FDx0vZ3Biq5jxrBQjbFBglboumzfIQjEQ0jgzML2vFCqyR_WnDZtxsPaNVH_hSrQRNl6EyYEoDW6WH2ElELGMGw2mokn4NYrBO1Cm_wZ5LVaiNiAwe0hK84aUssWu5wVWThtuJLozVpKwURY75I7xZ-v-UQRONo6oajrzLhMU1ogule1G4rGAepONQ6WImfdYgvSzW22Q3rauycU-JvKYZct8ZavFINVb6VMjb4fF0YsgkfTqj2tnIUJrtG8RaPmQhyLoQfUqpPM3djGtzYnZMFPzPtExshH-fBkRn2VKtR-nY0EV4yE-PKS4isRkRwHvPxZYvZ7bYCb9MNbwe_YJT1VjiiUFzm_P-qjZmkH3HAgcFKVsfxZkXXUpLo",
+               "width" : 4096
+            }
+         ],
+         "place_id" : "ChIJmYzScC69tzERjYIrIVRFmNQ",
+         "plus_code" : 
+         {
+            "compound_code" : "84QP+7X Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584QP+7X"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJmYzScC69tzERjYIrIVRFmNQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 60
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "20300 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.330196,
+               "lng" : 103.1333278
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.331532330291502,
+                  "lng" : 103.1349833302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.328834369708497,
+                  "lng" : 103.1322853697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Makam DiRaja Bukit Keledang (Makam Sultan Zainal Abidin I)",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101157637138472655616\"\u003eRamblin Robin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sHNzi3biv61UCysSenaKGriPcZPMsoQbPUWy9fg7wqc2w8k2Sx5oPAUYlU8tgcj9sD8uXMgZRBFRt7bEdjzwBTvTTDcf3maKCYMVk8DBY626WqLlM4N8nU-j8CxsyELgWxc4M0e4i7ntXM-W_KhoY7K0WW3dcU--azbCEpjVyZP4iYQcuics35W6fjVTH_iLc3JtPmYt0CpLtys95oBVwH23bTP6KMY0p5sOHIKfVZbOuAnXuIlDX_4sUmrveEenK7z3F3n7cD-mwp3pa8WmNrCMxe96j3X-7ajY8U5oqReWD7M24y60K9xIPokFW7bsTLRheVPdPQq4i-vrdvD687DDdExVGg_OEwLJ7SXgXkV-e38qwRmtBCdhmqNGeYDPV__YgvRy8LHOcdhPGez7MTeyRKBdvGWFwfXlvgEYOCLA",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJseX5AXy-tzERc8NHvS8i0P8",
+         "plus_code" : 
+         {
+            "compound_code" : "84JM+38 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584JM+38"
+         },
+         "rating" : 3.4,
+         "reference" : "ChIJseX5AXy-tzERc8NHvS8i0P8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "T132, 21070 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.261431,
+               "lng" : 103.0408214
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.262777680291503,
+                  "lng" : 103.0421964802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.260079719708498,
+                  "lng" : 103.0394985197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Kalang Warisan, Serada",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112549691586126952723\"\u003eAzlan Bahrum\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tSH9fQ7bfElwzvCtgBTtM6rJwDwi1TnXszhDtLJO5DSbJyRpAC843fLoIO2po04_TA3s-NUm6EOD1yANNHAOGKvoK-wivbgSJ3Y6v0YW5PPQNWf9Wo_Hn2u-koG--nRzSEY_PjNKUajwSuFt4UuHKe8DFo1G2TObskD1OFUv1cpeB3SYeiJt2RQVjFtdQSCbnVWI1fMJWyLROLnrOiSHAQx47TOa99Jo1ppgtDNBlBYB_wPvV2XVtlxW8kK71qEM8fl6g2cnJHPYfANY1UByEjawuoOqqQuoAzEP-gE8e-eEnZRVrYNz6yQ8YWe3GsY1LGZJH1G1ogMRAcKyyla0B6vJiagAdHsa20HK-3h4H5oWFmvvfPDBjOeqfPsVb3pBe-X0wEB0HfLpLCIlXzpNNTbJQHrFIyyQvZi457SRK8aw",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJK0x8Xfa5tzERnuMMB7yVbFQ",
+         "plus_code" : 
+         {
+            "compound_code" : "726R+H8 Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ5726R+H8"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJK0x8Xfa5tzERnuMMB7yVbFQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 145
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "51, Jalan Kampung Cina, Kampung Banggul, 20100 Kuala Terengganu, Terengganu",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.3348509,
+               "lng" : 103.134513
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.336164630291504,
+                  "lng" : 103.1358686302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.333466669708499,
+                  "lng" : 103.1331706697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Street wall art",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 809,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113223285773193225432\"\u003eStreet wall art\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t1ipOKkOOzxlRU116Ld2AwG-hn3kAe5HdTm4CEFf7Wv1ArO2DU-d1Qd5objTuhfHFmorCwPvxKTI1_1qhTy_wD6C9UNaQxm-PGtUk3_oBBHDo-_o_ZJUnGO2vP6W-8XclnEX-OaPPC4cOa2_kVZPxUsz9ZNZHSK28TTOoqu_L28pL76-E-L7kvENOJCczN6HLdbuDTPdsV9ssNZVkmvn_qmy976WdCszbEjTg6H4r_Mz4rH4HEscmfrETQ_Hj1LgHhe88TceBDU9KGdGOZkJMjLA1EoB7PJXu0mSFm4-DrxBFeWcersmtqZqqSFlRnsxSmvNBqV1bkSWTGe2LYHlhm-_yGATH_JQy20_PMuVfWjUphpVpevlU78eN4kSuuH_1LuHRTI4kK1EubZ9IXpn3ec80PTR4df8YKLTuP4qU",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJfyBZjSi_tzER3FTU_EIog6Y",
+         "plus_code" : 
+         {
+            "compound_code" : "84MM+WR Kuala Terengganu, Terengganu",
+            "global_code" : "6PQ584MM+WR"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJfyBZjSi_tzER3FTU_EIog6Y",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5
+      }
+   ],
+   "status" : "OK"
+}

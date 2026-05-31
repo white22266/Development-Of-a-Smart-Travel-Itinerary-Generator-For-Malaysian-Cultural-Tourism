@@ -1,0 +1,62 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "MM68+G7, Kota Marudu, Sabah, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 6.6591961,
+            "lng" : 116.6619666
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 6.660545080291501,
+               "lng" : 116.6633155802915
+            },
+            "southwest" : 
+            {
+               "lat" : 6.657847119708497,
+               "lng" : 116.6606176197085
+            }
+         }
+      },
+      "name" : "Kinobon",
+      "photos" : 
+      [
+         {
+            "height" : 2048,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117642708928341540423\"\u003eSyabil Ilham Syah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tT-ic1GqrqblHUQjrcOdnEXiDGC7HUNbLR-f9n_TWg4ZPn5I4RN2yQM3k_cHqsOIcJT28ZoJ7Pp6MS8pQEISn7hbbROPq6oU9_82Pkvwd-zPHGliwqsEhaln5IWaJebiVQ5B2VWcaEnL2YHJGudsX0TmMrEb0XZfBtkgKXLJqvMFx0q2aUXm5Ln6iyGpHEM0r0J07teQO9Ut_ccjCXrdhD4TLnVOFSTxemjiDAZ_3NGab9ZHMOD3cuB9phj72MpdVgi41vqnF4ORqGArb-g_5UM284LabyfYodl83N5ersh1gARBssyIlKHWao-qm7q70yYPPu3qcOsGzL7CTTWb4uROIO6P7GzPNXdaBsYqWeMqyZTFk_WBcKZAYcpo5PbhB2JTEfOGrbRifZNMyoi6fk3F9Qxf5o5wQbstg9ukRy9OQL",
+            "width" : 1536
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106052447301497596003\"\u003eMally malliam Besar\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vgsUGUmShEeCWqoz0kbShbIye--3s1sKD8D3xxIpLPF8LtGcduPouETQ2CzZHtUZkX_OZd_vOcJNSQzrxgpyYPkJs2lxsKjV6mWZFeWMWY9eKMhYKPef0G-E6ZgxFoQYdo7Nq7UmSGE2R7U_ueIv6rafJ-SOI3BnamF5WFkcC2UTzr-DeYs2V84kyllgrn-XzfTbGG6wsXOS4qnRtLCxoGw1wSexstxKgP11wbPF0ujXY9Ps5WAI2b7mrWTMhd5h3vwe5qOFeklyilUp_gja7iaz03DH0uRIu8FFDpTI5TsXvPoQL7UVOSgRrh-BP5bETje7N9X6-rWejAN_s1uqe5cx4tMHbnV3TIYwOQ5BizLPwPpq5iq9fyrOGDNvZzhvJ0Ak_EVhZXjf1c1j0ZLp5c8vDJ0BTRe0xGvpvvKkqV6jMwlgSboY9yYdjUvyMB",
+            "width" : 2256
+         }
+      ],
+      "place_id" : "ChIJqSBTcwBpOjIRJjbDRXvZOg0",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=953313394616907302",
+      "user_ratings_total" : 2
+   },
+   "status" : "OK"
+}

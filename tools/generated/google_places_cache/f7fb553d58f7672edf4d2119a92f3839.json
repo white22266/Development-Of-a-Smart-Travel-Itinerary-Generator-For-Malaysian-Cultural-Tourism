@@ -1,0 +1,1191 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-uC-meTk0eCnZDESe0jZ8ZAaO-m8do-7EkrPkhX8740iU7r-MEJmlLMT0sDjUAjJjI30lFOT9BWBKeTDfwoKUsxEAE94z6mBiE4uWxIskQrByDhs01CpnPI7SPKZln-s5Ox8hqYj-G3tch1p1h_CJUxPNSovV-xinp1_uw6jPAsthqxSpSsXbjN952b9ua6jMAzjJie22OEd0EvQfKQu9JMa9M18lm4j2u0rKAFaDqpEDTk2D6u6l2mgEtMLmfC58LQ61yl9HPwyZuvSePEfJdCEDkhbRAxbRoYgiztswu8dyKN-HbIaSXU7DOo_0e4qa1m8LwZ4Dyxe7mweMfUrTcGxYM0NJGQwXDfcGzJ3ipRb6M8hvkbZ8yf4mqfT7oBjDeZxv4Fdbe1JXwab-QFO-IIjRzM1cz9SUlIIi8TLPT3IEbcj7bcsuCU_ixlycQ2Y5RjhZUIVG4pUGjyYU9YtxshPWVd-yb2_-TbmSsdY8-tjcXf6sROzRSqrgF0GMt8UxwEIlInpLMFbvt94U0y3ICL4Q684LGl4TMn36yhCsrLAExMfqz607pcygWsAPDNHVy8ISgAIcl4H3WY-LUVVJNxzigu_EMRYdZ8dYjSj8hu_d-N7qIxA-V5Myxj4xDO15zoL5IgCaG6Vimsz3wzam6XDUcON4LYUsmVjxGavmjRFQx_5YqDkrsKDSRkTNNG0-eMJxCv_PKEHpqk3EDVEOrDKkImX481rOcIV9nHCFujo1eDeT4aCKIh0fOacFUTDfuqdn4YV9gGd5ZZAJB3Z_9cKBqPXeBqVDJ9-2H8tr0ofz5olYy-e0DwmLYho8XstvgPub_1stg",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.085232899999999,
+               "lng" : 116.4508915
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.086571380291502,
+                  "lng" : 116.4522242802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.083873419708497,
+                  "lng" : 116.4495263197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Church In Nabawan",
+         "photos" : 
+         [
+            {
+               "height" : 3000,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105456275370960012224\"\u003ePeter Hue\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sBvciA1vTWUKvr0Kii6TZiX1kn_o1FzY9PbsECwEmU7XRFBcj6OOIJ7dlG6myob4j8_LrPebx6x7VT-7EHbbjPH17Yh4MqwZTBH0zNnW8287t7Vqbv-yKEIndU2pur1G1ItUfzFlVNeNC835asdRT4CsfmF6Fqyu08lhSELl9ING7_OZrWqOUi3hr_D7WVtL_cKBvGvmxKf5wVzltyKT7pocxyK_DT0703WIgQUjJCQEyKWsswKE1t7IsW_vsS0UdYNUPGlngmbqirrObFu7y1zsq4Sj3vwrzbG3rVpLFRgisxNMxz2q2AS8Fn78FysAQ9YEyUuKA9dTF9J2ubZa4Kmc43-nNVG18JBez3x88mGGvlI4bFzhZSYrjo5IfGVnsBokoIAS9jhgT1IHBj98ABwqQDkkhPjn85NxRa-3yt7UBbWjp1nLsc1JmeqAOd",
+               "width" : 4000
+            }
+         ],
+         "place_id" : "ChIJTdBdKQCrPTIRM9-NvNxx8w4",
+         "plus_code" : 
+         {
+            "compound_code" : "3FP2+39 Nabawan, Sabah",
+            "global_code" : "6PQR3FP2+39"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJTdBdKQCrPTIRM9-NvNxx8w4",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 14
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Tunku Abdul Rahman, 88100 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9599249,
+               "lng" : 116.0671212
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.961133430291503,
+                  "lng" : 116.0684115802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.958435469708499,
+                  "lng" : 116.0657136197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sabah State Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3382,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114844356429605351994\"\u003eZENG PhotoArt\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vO2DP_kP7EtXwUESjzRmxg7qeS1CYmMSSwEvIuXUc2wI0HYZl9n5rPAWe4TPKLp2MNLdsUp_nbNjYN8t1iNOmxGv4z5aPWJMWDiTS3tdQwDYTETPV8eoxSKaWgiikqj3hb6ymsOFHyOXBgY6RsmWaQ-WzCC-03ZKVW7E5g-3C6DrfVgiX3t2xTBkaQ_sYnH8-pYAR8mdzy8r-4ClpeSgojCfexZ6bvWZmZNWs9qVb8F80IZNtlzSu8U7gMsj6mq8jfUNoOP1aWXpt1MC47SRt9Cd_VJJ0EDw_PR0ZrPkZ7GzZhAhd9W5O7Wdwpl3-579HN71dSRdHGeEtXd7CDBAViCludfav-1PA_zPWVH822FudQW2vAUmpOqa1s9y425QdczNYzyfmTBxsCaa5Yzes_qBxxnpou2rkTttI7bpdjWQ",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "plus_code" : 
+         {
+            "compound_code" : "X358+XR Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX358+XR"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJOZsjod5rOzIRjV9rWWkNp8E",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3288
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.028123,
+               "lng" : 116.4156386
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.029395080291502,
+                  "lng" : 116.4166452802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.026697119708498,
+                  "lng" : 116.4139473197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "True Jesus Church (TJC) Nabawan",
+         "photos" : 
+         [
+            {
+               "height" : 960,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/108710868408681823191\"\u003eVnV Agency\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tJRDrbLeA9CatREb9KjHkaIGlvx70jZDalAtOMamAI_ijBfyAxv-tohIHKPm4zxkn4TiMNO24q4iBKqO9ax3Th1G6Y1tiZ6dlLIEylhEFBjhFM-vlrlFOagLPaKnAIgLKVqxz7Jyq_zhsLpMF4cIM3xj4nTEzcZE7563SP4n_zTdDRXOws7Xr9tfnipJxRcaasKmO8aHI1eR-59H196Sqk93jzrT7yKWnd60iTdZ33Kv7aG783G3NCFDOXHJv2IN93V5g09wL6O6fx40lfdCNSy6vUuKlahq-l27Zns79hR7bhQ9EfL6mwWJrBQXlVilnIKOFatmSJjzfKUlnlVuDOug9q2MDxXNWEcdxiVEWWUoQezRg_5lO5xHZ4pyyRrgHimdbsPHPZaGPozbsrROfbQsa5GYtSNylQH0EyV5fvxVYf",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJz_bagGoHPTIRMdE_WDFnXCY",
+         "plus_code" : 
+         {
+            "compound_code" : "2CH8+67 Nabawan, Sabah",
+            "global_code" : "6PQR2CH8+67"
+         },
+         "rating" : 5,
+         "reference" : "ChIJz_bagGoHPTIRMdE_WDFnXCY",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0365432,
+               "lng" : 116.422036
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.038010880291503,
+                  "lng" : 116.4233332802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.035312919708498,
+                  "lng" : 116.4206353197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "SIB Pekan Nabawan",
+         "photos" : 
+         [
+            {
+               "height" : 2448,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104853829814459372342\"\u003eJulesa Corye\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tdBraNqFIPVeqz5d3elkEVEcJT6YLeED6vIvkGnx8FNmJwCK6ImfQknjinV0UZuSIrir2OYy3jCiJnsGWKp2qwRSHAs0Xagu_pvF6PC9kMP4enUet6oCDQWSbXkJw5YSgoxi38ruTXQHaUEojm4C0UGuSJuk_ahFBW3IQtxFJ9NRQo0A7avgv_8RHmoCgf4uFGakcpYqgkCMsX3AEA-ooeTXYaXAlwiOMMjeaiIwm5Ml9rhmtwioxKb7W8CnmHh00tikpXj1njZUFR6QdD1yZk5gyWnt6Oyne1SJXHyG0Xc283aKDN6owIyyN4qfOl_jmPzBMaaB5INi6KK5Z83huxCjY9FLoF_mZe8Fi2SbwohEATP9j3UhnZKE7B0qH-QJCqhFWVsowFIbyiFizr9C227gDZa2TeHQstw6cAAibVsMEj",
+               "width" : 3264
+            }
+         ],
+         "place_id" : "ChIJV_1e1mSpPTIR2sOIx5W7hV4",
+         "plus_code" : 
+         {
+            "compound_code" : "2CPC+JR Nabawan, Sabah",
+            "global_code" : "6PQR2CPC+JR"
+         },
+         "rating" : 5,
+         "reference" : "ChIJV_1e1mSpPTIR2sOIx5W7hV4",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0466659,
+               "lng" : 116.4325135
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.047986780291502,
+                  "lng" : 116.4339466802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.045288819708498,
+                  "lng" : 116.4312487197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "St. Bede Catholic Church Nabawan",
+         "photos" : 
+         [
+            {
+               "height" : 3120,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106096178406169196203\"\u003eStail Sabahan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vFhvwRmiBt186MYR7osonIIG2nBHF3UNcK-W0bR_CrMv96_yg4VGqBqhMypScqpDz2dkLW4bFI_IyQ6RDxsohpOYg61NoANGWiig8HO2-qN7e3vh9H71GrzMU11wSpgRiYWuen0JL7KooY3V-Vll_UVBTowtlXVBt8DUn0vKQRLYum41qr-v7t-ul7jVZDPbWgNAVNMKZh57e0dQivqWCscV4O7kihEi_hfn1BhkhUO2C9gPzN6nlKsa4_C5QyXK_iJppDr-zYqLWJCzYZMJfM3fkFswdAjW9TshoJ2wIYuHvQfhbmyeEjIG5LXfyeRxLmt02m2i2jTKjicbo2L42j4WA9DWofHZycj54DunY-89zsbetan6rO0LdAKof0nbkIjnb1KHP_4nOoe7N2fEzsSswVbyNR-U5NpcZH3pSE1g",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ03lYdO-pPTIRzewLNrRiRJo",
+         "plus_code" : 
+         {
+            "compound_code" : "2CWM+M2 Nabawan, Sabah",
+            "global_code" : "6PQR2CWM+M2"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJ03lYdO-pPTIRzewLNrRiRJo",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 8
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasir, Jalan Teluk Likas, Kampung Likas, 88400 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9954925,
+               "lng" : 116.1082195
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.996832780291502,
+                  "lng" : 116.1095913802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.994134819708497,
+                  "lng" : 116.1068934197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Bandaraya Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113151283152419518959\"\u003e서진\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-svGJhdTOyHuStBz4X3mdVe64-nM07QnNu0pop19nYJgd3ngmMHD-xDJUat2GYRNU4VNw-l196jkrdtGxvCCOj4mxxqlJneU_hrOpzIBS4vvtYz17gcZjTcJLqBDaErKU4y4PeVIPqVFrp0Lus4lkp9tjEPLlX5rW2b5Bpvu5VXDcXVguctJrkke147b2OSo_bPAog9LEz-dGSwv3pXZbAudfA8SE1YRpz8sZJBeBNaETb0u4QmOHXvFb8IGCsuAptV0E3dqAIw4YU1htQ7fuOIk7PMWJ-PKL2D7lGpDgXl9i3tjPz8sZVesgfPlpwrrU640_4kzp9yKX3BDgp6KWM5Hnb1JY7DBSwzk5qIn5IJ38CO7LkhjekDGpd4uQRkVnhQ-AhqJYxcXQUzuz3I84mIm_e3MGm51yBzZtUlEhfLsbCV",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "plus_code" : 
+         {
+            "compound_code" : "X4W5+57 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX4W5+57"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJFeI0ZtxrOzIRJjm_FQNeCVQ",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 8852
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Kuai Kandazon, Jalan Putatan Ramayah, 89507 Penampang, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.888837199999999,
+               "lng" : 116.0792522
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.890174430291502,
+                  "lng" : 116.0805849302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.887476469708498,
+                  "lng" : 116.0778869697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "MONSOPIAD HERITAGE VILLAGE",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1052,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106808489000555769947\"\u003eAida Athira\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vjuqgXshCBjgYbEGMDfikH3Va37zGJQK3z6m9KXczsfiPVHwYPx8d0l9-GOvMMVeLF2VsjDL_nAor3nesALpjviadLVyc5PL2sJk9nYShTAPhwFmvLOrvF8A2vdky-bqKBqEVfk8PnSgt75H-feHjU_rzMfGmaV5cLxCScLly-trmzUBZk3FusPJPByqKZx47IzVGduexRM_TDKFSUGbaJg-lqUyZoWJh7FZGU2p3Mur83lxcaahTjTnMIthMyM7nLP1CA9YPv2aacC2U6OOQRqG2lA6PmXEV9_Xqi8hJKwUNeV_W6dNV0eN8joEUysIfp93mNtJBL5y9R7ThKx4RMGZwQmDFt_UBW7BJBKLUSjwQjVB8JpLCew4Tc7ZNgxXNB-Zebaiu16oLsrCTQ7DB_0hiG3HfWBMyOMyu89enhRew",
+               "width" : 1052
+            }
+         ],
+         "place_id" : "ChIJO0gCaUFnOzIReYSeyOoQrXA",
+         "plus_code" : 
+         {
+            "compound_code" : "V3QH+GP Penampang, Sabah",
+            "global_code" : "6PQRV3QH+GP"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJO0gCaUFnOzIReYSeyOoQrXA",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 325
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Kundasang Kauluan, Kundasang, 89300 Ranau, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9871801,
+               "lng" : 116.5764041
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.988422930291502,
+                  "lng" : 116.5774022802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.985724969708497,
+                  "lng" : 116.5747043197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/park-71.png",
+         "icon_background_color" : "#4DB546",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet",
+         "name" : "Kundasang War Memorial",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4128,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114252140600021714502\"\u003eLe King\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vim5WMZ_WKKSPhrU9QsEsQoZiX_XcaZj3NOCxVZ1AnogHg7sb0rEWs6UXqNrLmrZV7g7KPvYEJ62kVFcJTp6HPpXpMazjGnXuNvYS8MAOU7ysrvfnCec2Zwc5gtDzkVyUsT77hR3DiN-_1ic59Xufz9h0SKY-ZstKr00iNWKsGGfcNBhFV7SJyYhG35Os2H7rRXv6Tm8ZfAeHkslGK4CTXggl-8l8hUvhb746wGiT8IJOwkadzyNk_01PXjcXA6up56nacyGTnUfWx72-xhj-Ua8HBWgoYydbyX6d_mSUKTOB273RV1w7VQNZKfZT9e1Vq_lNgO7hAhsIp1NDF4hNkTf7KE3yGtdOqRvlrYTjBvJtIX22zRqmU3J7lxL665zw5tg0WbXuXmxeNP76BoBeh1VTzp0T7J3Ujq_yXapk",
+               "width" : 2322
+            }
+         ],
+         "place_id" : "ChIJ9VaFSrGZOzIREG2KZeWQ9tc",
+         "plus_code" : 
+         {
+            "compound_code" : "XHPG+VH Kundasang, Sabah",
+            "global_code" : "6PQRXHPG+VH"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJ9VaFSrGZOzIREG2KZeWQ9tc",
+         "types" : 
+         [
+            "establishment",
+            "park",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 6539
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.87014,
+               "lng" : 116.19045
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.871418080291503,
+                  "lng" : 116.1916679802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.868720119708498,
+                  "lng" : 116.1889700197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Gereja Katolik Santo Yosep Kg. Lumiri Tengah",
+         "photos" : 
+         [
+            {
+               "height" : 1872,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106096178406169196203\"\u003eStail Sabahan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vJ7yy7qyR49VTpbMRbb5i7V4sLzXvqKwWQCW6o8KANWG9MMRg7kjKPsQJTlXedfjMPwXweh2m7cthYcEBUzzli1cl4rtpnAgH7GmJxCbs_YZFfW_3-fggjtlAAtWAmea7ou9dvFrRXfDb06iIY2giMtxV9wjfjM1Dv4Iwob5p2Tik-zCLYbiBGB_jAngDRznNk4KHDFdTm19KdASiiatCgGyA2lykcm1qFTPjrp76JzQoQFbM2WMxU6WrpJZjaFBbCLPN8v5H4VL10BkuQpdyD_sgJHYBwz8WTFOjJ9ctLz8cK15eHpx-139gXNyj4CUrWV_D064V7ePJEP_1smAKj9VkkULlTL77nEs8b_R8wFTUGfuhMoEYaAxPEWfUm7M97HhqhfN9FUM4sHzt4XxmjcFEvrJJEYifbJYREohl2Qe--",
+               "width" : 4160
+            }
+         ],
+         "place_id" : "ChIJ7TNGizkTPTIR6QYdjqLQbXs",
+         "plus_code" : 
+         {
+            "compound_code" : "V5CR+35 Nabawan, Sabah",
+            "global_code" : "6PPRV5CR+35"
+         },
+         "rating" : 5,
+         "reference" : "ChIJ7TNGizkTPTIR6QYdjqLQbXs",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Inobong Putaton Bansadon, Kampung Inobong, 89507 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.903789,
+               "lng" : 116.1328509
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.905131330291503,
+                  "lng" : 116.1342387802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.902433369708498,
+                  "lng" : 116.1315408197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "Sacred Heart Parish Church Inobong",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3060,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115998366216010865635\"\u003eCeds B\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sGox3-8W-_eG9VEhFtmDpUtGVGuZD3gWiImkv_KqANeKQp0feFT8J4kLN0zPBezGrodB2GcQKuPtCpZuEICi4usZvW2NtuUPn8v59jZqtrj6KbSuDiDUVmAYC5pO0bk64iNoe9aQKPOpguld9_xw2ftV2XGt71-58AJI6rUdNt88uY8dLflPB4TSnr94uoX718YlH8WYBphCp5Xq8PYupnb_dicCuzrfsfyjw9QSOEjZ1i2o0QC-EEk7RmQOSBZJEyniOzkh_v7FC4u4_hV80tFEEbyEu67KGXTz0dqYXhd8uUBGCn_qwfaEiYNymc0lLhQzFWMITRSDfDxSOHNufc4dIgOpFDj-IuCr2vanxo1AsgzdPgBVnXlwIlJVTECExp3hfxSXrI8vIuD2RJM9efF6410l5-cPTcVekYyngT4wU",
+               "width" : 4080
+            }
+         ],
+         "place_id" : "ChIJ_Uq7_wZmOzIRoQDCEPy5jBY",
+         "plus_code" : 
+         {
+            "compound_code" : "W43M+G4 Kota Kinabalu, Sabah",
+            "global_code" : "6PQRW43M+G4"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJ_Uq7_wZmOzIRoQDCEPy5jBY",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 86
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Masjid Usia Bandar, Bandaran Berjaya, 88000 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.979184999999999,
+               "lng" : 116.0764256
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.980749280291501,
+                  "lng" : 116.0776772302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.978051319708498,
+                  "lng" : 116.0749792697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Usia Bandar Kota Kinabalu",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 570,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116035491432860806164\"\u003eMr Sumpit (Belalang Hitam)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tNTQdHrgWvOD61B1sSiGLoGk7UTMK-I7GzKDxBoggOWerY17fWlFnkYdG_TNvR775EY5gY29O4gCyCduK_iYrWks6bexuyuQNF-IncSC_FndN1jPOo6ydPf78kj1mDseicklZdPEfW1T8tw-e6TO-JWTFdVkMjs0RJ55F0yzQomEbW8i4pS7iew4pogJT4j1KrSgOC-bFIir0BE4ZyIT5IXwhIEBZg1NcV3YRYxAJcFF4gp84fFnwzHWUnG_ZHD75ENyLuI21jpyxQn4kO6c-PxDPwTG41niu_7RQCc7I_HUEJJ4s6OjfjxuLyQuzf5siL951ixC95oD9-JmfaK9g8NgYNCuGg6782-Zcn8N49blWxI2CaBWYdnwhapMBtMsxd7jxkjkSioNL4lXlT89PFWufu6x-SotA4_mrsuJWIqq0D",
+               "width" : 840
+            }
+         ],
+         "place_id" : "ChIJt8PfcJBpOzIRCb70AJoOQYc",
+         "plus_code" : 
+         {
+            "compound_code" : "X3HG+MH Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX3HG+MH"
+         },
+         "rating" : 4.5,
+         "reference" : "ChIJt8PfcJBpOzIRCb70AJoOQYc",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 196
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.043618200000001,
+               "lng" : 116.442293
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.045100380291503,
+                  "lng" : 116.4440230802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.042402419708498,
+                  "lng" : 116.4413251197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al Hidayah, Nabawan, Sabah.",
+         "photos" : 
+         [
+            {
+               "height" : 3264,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/104454234843636844819\"\u003emohammad nor ihsan bin md zin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tFf9eAMb3jCdaTvB23j81QU7QWrsQ1_ni9Z1rFrl6yKrMWog7B0NRS9_qaWc-QdKUcgBdY9F3QntL125c-Cy6cfIdESmCN_vlJwhBq5PXtUoJjSga3JJnP5_97uCGMQHNtDwv-FUtFbfltzlru7zZ1YvAA-p5_778hmnRM_22DB4PZXJ3CHFMtx5PsYloxijqBf_ten3kLj0Vhc_2NMR5WOx0VU_n1juEl-NHfmrxmwz093tV0mcJ2w_dOOuLU5jLxNDU-23JP24fbZ05m0WXj_gYEOxWYKQWEOUbXxtsJJ10Rhhq5TpG-1wPTU7ibGaKD1C3Q_I9PMyclV42kdlO7k8y6tpR13F3WMnK5dN47b07aa2KrM-tmQ1jkOfxt7Z8VlpMSPKpvhzSA8VAUvqHrCWB1-g1ESza_W17Se3vhzQ",
+               "width" : 2448
+            }
+         ],
+         "place_id" : "ChIJI86YVuupPTIRC0WEOC00XNw",
+         "plus_code" : 
+         {
+            "compound_code" : "2CVR+CW Nabawan, Sabah",
+            "global_code" : "6PQR2CVR+CW"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJI86YVuupPTIRC0WEOC00XNw",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 18
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "KAMPUNG MALAMPOI PETI SURAT 60 89957, Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.980665,
+               "lng" : 116.462932
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.981939680291502,
+                  "lng" : 116.4643282802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.979241719708497,
+                  "lng" : 116.4616303197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "IFGF Malampoi",
+         "photos" : 
+         [
+            {
+               "height" : 768,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/113673390182063462005\"\u003eElvianaedilla\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v9GddFvVOd3rkDCSG-bSckhzDRTQ2n8PBv9gj87vl4ecW9C0ldt-OV4rVfV_mYqTjEi_i3SDE_A4e1EgM808gwyVwcBr1PKkgOszkPE_D-KFFbvVMWKwuBAp617mmghtKBEZNV6YVobkko712G5akoTRTuvG9KcO-2yaK9t-NwEvIlEcs9AZmynwipYq1ZE0eaOVpJjOL4jYimPuStC53Xkw1AA_n59a8a23rq2ubH7lrCpmwQbXYcYRkng8rwhNX2mabFC2TjdBkwYFnd81LMJE6Ae9gswguY19VFq4TcLDheQydPlkHpeXFFoT-FrsYQ0USBQQVSCytwqdXndJTD8TNxLyyiQD585Z7HLXbohVzSsJmJ4DpRCOh_siZm3fGWRvPZoIGw9yjU4s-8-pI0eM2tQ4R25ZzrlMKmcNPiSXGh",
+               "width" : 1024
+            }
+         ],
+         "place_id" : "ChIJkx7KVxqnPTIR0wAqmnXSeo0",
+         "plus_code" : 
+         {
+            "compound_code" : "XFJ7+75 Nabawan, Sabah",
+            "global_code" : "6PPRXFJ7+75"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJkx7KVxqnPTIR0wAqmnXSeo0",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 16
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Unnamed Road, Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.038823,
+               "lng" : 116.423424
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.040117680291503,
+                  "lng" : 116.4246364302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.037419719708498,
+                  "lng" : 116.4219384697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_general-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_christian_pinlet",
+         "name" : "CCC Nabawan",
+         "photos" : 
+         [
+            {
+               "height" : 1200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112596542852469108417\"\u003eEni Lio\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tBwU8Ratak9w3bc6Pup5MOP2b6tVNZL_dypki7IfwIT01_xP8p46fVylfUaO0a9iuy_2rswH1NbLO5V7nu32VVksBBRqM6yxZihXZEqOgmdRln0au4fhcqz46hrw47eImAhltLDPndbQj1vgQmMxmHHLNLEZ865hZMWt_48-b_obsewFqTDHEL4V3gQVDYvy9vtrRN0r_UPmqh_P1goIA4XrnRIlU-A-9Mhyacxd9hZ1nXj2tKkwG-_cUGE97U9lFaNzB6T1zSk8JeQQXf9P8sztQ-T_2Pn9HjJzl5-Ue7tCZc9-QLUvYxps4BjRXSQarKebrT4AgRUdDTHOeDJucEcv7BVgA9EAmUr6wPdD2I1FcrVDgrWOEwSJuoRip6Q1LclnFMtl71Q8EDdJ6QRLXiXBG2fXicwoicjAXFZ54-j2rrBg_XDL4W5RC7EGa2",
+               "width" : 1600
+            }
+         ],
+         "place_id" : "ChIJDeG3C_CpPTIRzp5PyOtFlQo",
+         "plus_code" : 
+         {
+            "compound_code" : "2CQF+G9 Nabawan, Sabah",
+            "global_code" : "6PQR2CQF+G9"
+         },
+         "rating" : 5,
+         "reference" : "ChIJDeG3C_CpPTIRzp5PyOtFlQo",
+         "types" : 
+         [
+            "church",
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 3
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sapulut, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 4.6232869,
+               "lng" : 116.6205396
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 4.624635880291502,
+                  "lng" : 116.6218885802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 4.621937919708499,
+                  "lng" : 116.6191906197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Punggul",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114712031134697964596\"\u003eMurphy Ng\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vTGwlkRcjKLo28VzcAuhwixipefoSgr9TTs2ocCBJRTTfOjmu4D6F8_l3O1S4HFHyFYMZU12dayfjdCL8ZH-vu7oo2NVldBbAAeTIJ2Tk8j9MgLBuWU-S0sOub7ze_0s_fwbvjyHV-Dpe5jL9NBpwFk-wi5L8SAck35n1v0pBF4xrZ8om5WhGaZvmGI4u-SBxGKZhH-hpCBKwQAYHCXFd5os7w6_CMa7bSZ4yFfGHoSyZnR9CqiCu_UittFFl4hQhDKgQ38BRahP4kn-ybKZEIW-LK_sESOjiwIg2GoMA2b4kryaubjbypeQcx3a10dpwyhfsehzbZeTFqh1og2xej43lfCzDKLc_LzVT-VlXQhICFeHZnTYRRHS0uTmFw44dCPBd6SlB3OECTIqhs9qaeQrZimL7b411M5pC1h4h4FO4MuGOuBX01JSyvqF0r",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJJTcReRiPPTIR72U0Z8y3qDw",
+         "plus_code" : 
+         {
+            "compound_code" : "JJFC+86 Sapulut, Sabah",
+            "global_code" : "6PPRJJFC+86"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJJTcReRiPPTIR72U0Z8y3qDw",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 16
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Road, Jalan Kionsom, Inanam, 88450 Kota Kinabalu, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.9736958,
+               "lng" : 116.2036688
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.975209080291501,
+                  "lng" : 116.2049043802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.972511119708497,
+                  "lng" : 116.2022064197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Mari Mari Cultural Village",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1748,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115764917221730916604\"\u003eMari Mari Cultural Village\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t5FuUETjkSrRnUfeA4SPVbvd3NfT9UJNAtK0p-zuSelxRd140cf6dq4dkv7wzwY6LjHaRBfRcuD74gKHubmWZ2wo2XNImaFXX9qTPpyKnPNVY6oeEDI_6X4y3YkcCmvkdkB0l7dlSrtfurvWd-Y7XFz76cNrHHCddSk4dml6Obz-9_p_kSBMY5EcrslN8CHwiezjk0niBBPSogpi3HEg9S7QtDVty_q7Nuga58rExIAsJ8vgChTr-_iD_W3OQi-pcpH6UJi2_Wt_n3hL-kRwSh_9W05M_FS9Gi2iukAfO7qaikwOzk_aEulDisHyN4qNqCzmq-1x2LKmohsGvWD8BRiQfo-2OFT3CnpXlpWeydRVWRZwbVGjhwx27Sa8AtTQXQpDw7hLKv6Y6wUTGKl-k5bBNuPiyhQVxPFQ1cbl0HhgUnnPCPCRNL4Bv-JKn3",
+               "width" : 1240
+            }
+         ],
+         "place_id" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "plus_code" : 
+         {
+            "compound_code" : "X6F3+FF Kota Kinabalu, Sabah",
+            "global_code" : "6PQRX6F3+FF"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJBz9ZrIhpOzIRG6BIRQ4WRDs",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 3851
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Nabawan, Nabawan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.0452788,
+               "lng" : 116.4360173
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.046489480291502,
+                  "lng" : 116.4373992802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.043791519708498,
+                  "lng" : 116.4347013197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/civic_building-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/civic-bldg_pinlet",
+         "name" : "Nabawan District Office",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 533,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112371814193132748515\"\u003eAzlina Daud\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vq2Hy5-XPfoQyhr6mvKelyWYEnW3YWrKiQqlQMKRl6PI0-8vcUTQ7TV5KOdCyIwbcq2qHIJF9Rh0gSjiomp9w3htiG5jwNtR5i-n7ycbRiXmsCzDbDc9RjsxNiyCZXVPn3PPU4fQy6ouCA9uwG0KPIIz9-C7IWmXQlOvjO5JMwgts8K7Bpie4BPwcMzKOXkVU86OLBkshUunnW7ZtEsrMMHHstN78RcsJQgS4sm7DTrlGtbCPi9bO-XtzD9lswJlekgHfp7-4e0hSmkvqHvgd7olZfU9fZRLvJXq1wFBDQkq7pmnJRWAt8fcKW0AVH_-3eEIN-blG-gCKFGR66XtdsXVKT67JSsbM7Xg54nowi1rgZruMXg6uZfpn4H_-3yPhNsrsKi2TBYJOO6NVXVPmJQlyhwGmS30YVDc6SrfG8Ewzc",
+               "width" : 800
+            }
+         ],
+         "place_id" : "ChIJuRDRu-6pPTIRbIfvLW-shfY",
+         "plus_code" : 
+         {
+            "compound_code" : "2CWP+4C Nabawan, Sabah",
+            "global_code" : "6PQR2CWP+4C"
+         },
+         "rating" : 2.9,
+         "reference" : "ChIJuRDRu-6pPTIRbIfvLW-shfY",
+         "types" : 
+         [
+            "establishment",
+            "local_government_office",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 10
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Persiaran Persekutuan, Presint 1, 62502 Putrajaya, Wilayah Persekutuan Putrajaya",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 2.9360702,
+               "lng" : 101.689213
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 2.936832730291502,
+                  "lng" : 101.6911379802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 2.934134769708498,
+                  "lng" : 101.6884400197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Putra Mosque",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101871907543931816623\"\u003eAISHA - M\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tnuBW8Temd_300PhMGhhzYTNzgg4Oud1gp8Iz3USzPgdW05Clbaa32DleZsWH-niDq5Dg9LtUN0E-qGdJcZp9sGXcwkgfb-ynAbxLXTAb9vuI-4Nxhg_-QIkyPIfycgVE07cIAPTSH7QXwwp2gdqiGohicVEav_8f0E10qmwnAVr5Rm1Q3AVyJD-WgYz6dr8wvVPaTczcfPn5rpYsDIO0H7Zmdq3ZtWj8cfHgIgJ9bKMJ0dNcWMtMqfVw1IzHc12Fpb7e_lt6i0Qo63S9Zg4Up2aVIDxuJfWA-182f2Yzc4E5G7oWJCOVSy_lehMkAtsWSNlszGjkqJLUSGZViQz_4Th6Ixh83xccgb9H8GjgIG2xIJsPDjJ24E6UENMa3GrvGzzNaa76NwdhL5qZM-Ne6zaTLri2C-i_RqOoT8Q_-9QJJ",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "plus_code" : 
+         {
+            "compound_code" : "WMPQ+CM Putrajaya",
+            "global_code" : "6PJ3WMPQ+CM"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJXW0EGBi2zTERiKBASs5S8lM",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 23924
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "296, Jalan Utara, 90000 Sandakan, Sabah",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 5.8428086,
+               "lng" : 118.1161937
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 5.844164080291502,
+                  "lng" : 118.1175385802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 5.841466119708497,
+                  "lng" : 118.1148406197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Agnes Keith House",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/115474408549787660680\"\u003eXiang Yan Pok\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vd-dNgBWV8xoq3zfHRBGFO4I7jD1mcUyY72_qiRn6NM64mOHQ6pIfhjjSCxUP3SruzAqRi9yV-BBUEZStcu7ai7LyJepkkzJJ5W6Fita_nUpHGqRNuZZVohhozVXUFzjWOUsXAHjoCnnkystVzU1x4Nxv3zUMvVx0RF75_pbQz4KUW1L1PpqUu7aTLooiVBAJsH0BwJ2Nxcq2HPMm0cK_N4ibYPQUe-nPpg65tpXFp2kh-ePZslCi2JCAefhDtC8s706BOJyaP93hpBCpBenr4OsL1KCpKCUpowHIFZyLf4QyXoZfQZSIQTWOoQ5AQeCK3vthpV_MX-u4tUb-2Y8W_wIDKhdAku5qWEsaIoky7CP4bp6j1Gz4kmdd2gVT2bexLrWyKPF_MKYRELN0piBfgTq-bzYPIvsl65bv_W0BAfH1S",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJh3-SrCvFODIRuCIa5kDztis",
+         "plus_code" : 
+         {
+            "compound_code" : "R4V8+4F Pusat Bandar Sandakan, Sandakan, Sabah",
+            "global_code" : "6PQWR4V8+4F"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJh3-SrCvFODIRuCIa5kDztis",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 664
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jabatan Agama Islam Wilayah Persekutuan, Jln Tuanku Abdul Halim, Kompleks Kerajaan, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1718992,
+               "lng" : 101.6710787
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.173105580291502,
+                  "lng" : 101.6730600802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.170407619708498,
+                  "lng" : 101.6703621197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Wilayah Persekutuan (The Federal Territory Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1800,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110188376846481365368\"\u003eJoe 9⃣7⃣\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vXsoUePUluGTbJXddU4rPPTlf3V6RB6iHaWycd6BTeK4mIv2GVA59JmtfwjEJbqIXz8SPN7vQ2eKOJB8N8a0pwyPyY-BiWHFkdS7tu7T5r3gesDAGcXrFqXjjnC-Vz0mP4_CCkaQlvfOXcxfaD2srIOhoU8xCVobiWWzCXsjZFVN2_7NCeyFeoYiHHFOzZxjaC09mTuSpOUIE3D6jRKma8UYZ_jjfNizQx5gPPQduaii8Abp0hSOxFHvfqgQyDIYVsMHeoPReJ1QYagFkcnIGYqaCfrnvi0qIdDWRUDvUdeV6jVrmOMCInoGGLRMl8hZ5xnz1wCbXZdsnkqiZ4cDHHm8lKdyYLubTBa7gitmo1_4zjPS-ABl-olzNlV921LYMc3P65nn_EGmyj_jrNrKRpE3glFx2A1Dw7ilkMVb0",
+               "width" : 1440
+            }
+         ],
+         "place_id" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "plus_code" : 
+         {
+            "compound_code" : "5MCC+QC Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM35MCC+QC"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJaQT5kWdIzDERkFBKWK-bNEk",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 7514
+      }
+   ],
+   "status" : "OK"
+}

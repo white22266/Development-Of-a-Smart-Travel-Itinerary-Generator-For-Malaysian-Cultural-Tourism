@@ -1,0 +1,239 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "920, Jalan Cenderawasih, Tasik Perdana, 50480 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2272 1010",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.143164,
+            "lng" : 101.6884845
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.1468967,
+               "lng" : 101.6920468
+            },
+            "southwest" : 
+            {
+               "lat" : 3.1399879,
+               "lng" : 101.684326
+            }
+         }
+      },
+      "name" : "KL Bird Park",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1730"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:30 PM",
+            "Tuesday: 9:00 AM – 5:30 PM",
+            "Wednesday: 9:00 AM – 5:30 PM",
+            "Thursday: 9:00 AM – 5:30 PM",
+            "Friday: 9:00 AM – 5:30 PM",
+            "Saturday: 9:00 AM – 5:30 PM",
+            "Sunday: 9:00 AM – 5:30 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2976,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102807950424620157242\"\u003eLaila M\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t9SgUuQxV5vyccLOvt6FSC9_3vN0-mR9tcXLW47XpeRvUQdi8_Btry-7ixvQj-TRaKNAs6eHOBNuZilYjr5z9KFQOXFErvJnHYI9Cn3sX_6V-fxgfdwslf9nUq9gAtqn7fw2-D3oZOH5o0kp6UMndFSfXRAEA4-SY-guVcEKyXY3m1qDEwXRv2ENCQW2iL1-swsOaZ5pKkB5anzo23vnd-WWNmOIg1BI3rVkJrnriebfg79tM5QcpPIaMjQEtxhM1hCf3TC2LuP7e9UcEvcuC2tjW9M81asXwql06sJ16RNEoPpHG5Ew3_LwW8O-F21y1Bcg_w-PgO_JyoJiElg9FgyzqZkrt-GwZng2ZjPTBxq5IBdUDGkmAmp42iF2MSveaKZzL_xuT-N_U0-t12LLw-cxT0UhMKiMIDcPpVDX4WDio",
+            "width" : 3968
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/104829649458716114237\"\u003ePrijs Beer\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t7UiV8gtfVCk9jdX3MCe2q9wz_nTqazhDC4VDE3bRZJw1YiAOuY4aWEyhvYYhZU8jwXp7oHQTRxO-hs-OYjLIhGRUjU6Wz0dAAQXeYzIt4h4I1wGvY5zarcHEf0hWLeaUxQsuPlkM5_3bNHcZsyXpJ0u1cy2mobTmTGR-xl9s9szeq-6hg6a2UAQ74nTb62zab3lS1kUCXzno41EYAkXJjvCtV9yDb92_f_BLa6BT_asFZkeDxfoeSonI2RPQIAyXdnaZCxwBuGe2ZK8fiuwtCvGm-gn-pYh-af3LidN69zT1tEjEyfTEnHDfvtIFwNm0H3Fo7KqoD10htNuxl5yoy6CN8Gy74A6TPfi9EauMlPGtKFWLNGN2pUTDAyCetJ5r88HfOiWv2cAEnXhfL-h_nahTznxoXYdxSfYd0toysTA",
+            "width" : 4800
+         },
+         {
+            "height" : 900,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117190877055280724191\"\u003en. Farhana\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tGy87DzzcbPqTwaAt0TDWewCZDkbleZrWLO4CFsPYXtrwC2gRN7QLf-CGEjuyl2fTeIaJNeOA4vv-ZlelP_vjQdDfIVgDJsBbLYKhyNT1R-EFjFJpb3vqQar3bNkePs9yuJp-RCrXLAIiehiHWC9Rv2CAKkAXi8yN3MCLcQ5CAiEer0gpv1i5bNEl7qIEqc4k1UHaTF222YwD58K0AlBXPaeOKc1uIMLr2J5mdwABzEoTyteGjpOXiRp6UrFlRtjdhafTEdtzysezbpOoHVkhptHaYs3SogLBuTvLymVhZuiJAOfPlGy238kBC6Nt3HzN18P6nk5HyBhOLPpf46WzanoC5NSK7FeC0TmJ5hpainN01B85qnx6iw_O8iYTlZFBTslTTPCixRulgvFbf69M6_G-11cC_CNCErmfAGLc",
+            "width" : 1200
+         },
+         {
+            "height" : 4032,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100613279177687466070\"\u003eAli Ashfaq\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sxK6jc_f3fibstqKZWke6_-Q6wHHHLdmCoF7OqG7eac_VRfovhugns9OpOWzS6enkpoVOidfVvfH_Uk75a_Z_W82q2x2zg7mBIyCAp2qNYQA3xaUsSCsYdfiVoA5X47xDFBGcmbBpjg6ba8ddXvIE-TcFP-vqbYH9cqW9pOJmx4mZZcfGYlAz1ffcVU6Ns9dHGo0NRExUh3zHsPB6LPF2Ep3HCapqzd3hkj2wnpXVjeclaJJiiATo7Cy5GqqWdftV_XNYTd7SdN1O3Dsrvnx2DivyYvnqnmMDTjyqlngNqOxGxx0SzIY0cveIC3GANxGiggOG1M3xdsci6PaxqvZGGiVlkSGlGyx8ri9zZzDvyaBpsblSXMN4vRGXogFBpVTEl70x0gkoOdtyiONvE5GVLC8R8O5wZy-lbnU3_O-lcKb8X",
+            "width" : 3024
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117423068230328374840\"\u003eAzmi Reiserleiter\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tZ65y2y2V96nTrQXmffWHFPCkp1geQftjiVLKgDhJRRcj0_7_SSAlSCcS3uN18fCmFVtmiCUh5fxykv2APgTtZUIi12mG5T-1cCicLTeM8ponjWxpfI0MudCQ4s50tLFjRItX4nNM7mcnQ-EsuaWyF7aGy-4fASQvcuAbIdtclB_IKvScFStFvdywUZhhZ_m_NIaBAVbJm_FOreO8tb4pWG_ndFfHGnbhjzTBr4nt8VlvzzL5XQDmAngOJ9yP3G_x5p7-fJ3v7UWQbMKxUBBrTkEWpQ3DW5msO0pKpNlxZlimgKKrUTMuU2_uvGfM_k7xGFDYxKR7H4QwclGzkLxRUfUtOrgSZ4C5y6Lipqabwyr1qs458KMhV_PjMoepb5B8U6qtMltZKOVfECzag130GDHfzEowq59d-QgisMN3ezQ",
+            "width" : 4800
+         },
+         {
+            "height" : 4080,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/101880008194097598936\"\u003eDave Yeung\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sO0MEAuZuxmgOgrAZ5jj5nPlZPJtoU_6Zs5EW_vPqACMZUU1Wr_Z8PcG7RWXoNVSrWUaLC-Lbuh9xYaOB90WRwCgnp_Sw6tkb4s6dEmcZgxTN-HD1ZADtys2Ts6yw4p_DgK6tzj90KjamqB8r3RJXl3b3freDXwTd127aWkY40msmxxZGIO2LUgFF2c1da1LbF1nWoENtZh-d_bx9XXaISSIOgeqi61hL8O45AxzVgZ0FE3MLLicbvXRbGxYcrIoqfMdtClKr5_fN3TPu8u_UhdbYxuM7kjL1Nc-Fq_tzR8MEDDKOMWt4_UXQFu0E0AiYqZVFBSqitQy1vULkLCxhF9Q94EzzJ4MJy_4fCp4M-5E9HoGziIwB5Cs3O2sxTZuk-DsSFVa4zSssKqZWaaaCcQ8EyYF63Apovxma7UlXoDA",
+            "width" : 3072
+         },
+         {
+            "height" : 410,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115678671608857407099\"\u003eHasan Doğan\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tIzhhwC6nNhMOgTXnA_VP_Ymv-19k3zBQLw9Tq6_UuYypWlhwMvxJn38W0VBHRS2ny5JwEl1KVu5kUQq8UnISZtQuf8tjjepw9GRtWioTLx2cOU7gEW9LrYxppYdj1l0sOuWIs16uUGS3Xcm3gNqSvE9D1E1zS04ONMSkjAhMzzEHskAxIHCN3u8oBYuRYIcGP2pyQjUyehMoRAUQweMFleDLYT9T5vS50-D2xskFrhaViEnQlnFjnWPD8FGVkohqOxRvmzKWSzhonthh0axWqopO9hhXx-1tr7HOIxfD9M2W4tKidMifIY81eDZCxJIpCBIRqbaSFarN7M7L9bGGwklr22lxUDFUIA7nPbO5MWLU0GzEDVpsW5IFCxtaDFNNLQJD51ULSaQ5NLENMfqgze7xYtoew2X_OVuHfvGTJI6g",
+            "width" : 700
+         },
+         {
+            "height" : 533,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/114962395452478908179\"\u003eSulaiha Zamzam\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tU7UTKGGrFtKjJfd1yY7oGlB3yQ090PnBuYfkzWEGAKrMIK-JNqtbHMPc43Qexlwc_YKlYUxgrcS1oSqUW9sDcAbztBRW-F5aC-79kqYct_Tc978pB2NMCPKQUo8r7uh_AwiFqwsJZuGngU4IK94NApjfpsAnl6bavAc-2pYhFddqL9cQKLn1V1U9HD0lYgdhGUSDt-4wq2vc7Ebq4w2eWdqxGnL3BIZo84zeGAs4Jsz33HPMmhrO5B6SQAwJ3SUhQ_p4KRjQ_PVCawFrfv5uUfjP9siZG-15Jn8X-tsk017xihbE38EQ2gx_ZMOlfYkCifgxHNS2NHwQwkYr3At6aUyLgrL9yqvtf6eMc3oya0PR7tS5Nk_yuMxfw5p4f_2ds-bRxEWrxgMhXoPLKD7oRyan43fD4Bdk28XsnED6Slg",
+            "width" : 800
+         },
+         {
+            "height" : 3468,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/100387428027695826619\"\u003eZakiah Mohd Yaacob\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-ud15wKkX54ZPDgaA3ApyLEHSAb15YfnO0DOyt_4cJSoIPAcamAep1FUbmjRTuQiR_ki9eG77mxc1t_BAJQlLjyfX_HwjMV7VG706irv8ZFbytiAJltFYYNqXi7RBHk73ezzW5KAZc4IHxCsUPTa3MeCZSKKM-iquwBoaQqXb4kTSHF-pjpORaW87K1taYxhhnX5l9JLVzMoAgWZXhh43dVWMV0UXobrKZ8Zm3mLLOqyHLr7_CUZ9bYF7Qvplx1jCA25_RlP0PCp260-zfdgdIZrYO3-04rg1egF_n_UMHQ4oJj6gZRMthzQCY1KvHilDelJKQsPhrNmgesWYPM85CPW1lyvwZzy2LvK0CyYMjUHu0s8WIadt4gw5FcHf6YEXI-jSaUNSu5pXtCoqnUHV21Bsd9BW3Gh_nfKS-H70_vHixn",
+            "width" : 4624
+         },
+         {
+            "height" : 4096,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/105582147309934158437\"\u003emuhd zahid\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vab96FX0Et1cMNKS3vMLcbpjd9Oc4OLar0tfR78OxxJtmvIqzY4Q8H_xGpnKCOJDQNoSk0cyZFLdlFrpEVCTcfI5sRrcIlJNl13dcc_M0D2p9CPXBOExtG158llvhchvLGGYFrYWmIGjbKF8zP_tbZ6nUEvWienWg9t0DdhlNWKDcFkE7jOXJyEbm0Wo5-nWualgSJMuBdPjDlcxOD8lBO9T-I5H28EnR1rWdsdKgiqdkfHmjI8PL2PbZs5rPiYYOqWkVxd7rRaxMBkZIBy_y90eTuu5JfeQE_gfEU0uK3qjcItHc7A1aIkREgaMbgfaoBh_asLPDAdtcm6OU0ol1t4pNSLPzmTNM7GR3pMVSHtHdv6wk_PGgXwW9mX0mMRdnLE3ddh5hPfvUrtN7BrPgejgM08E1ypUsvfwYor1pvbaZTFNsiJpT6uWx-nkTV",
+            "width" : 3072
+         }
+      ],
+      "place_id" : "ChIJu8zWwchJzDERhcsx4AhQ1oo",
+      "rating" : 4.4,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest",
+         "tourist_attraction",
+         "zoo"
+      ],
+      "url" : "https://maps.google.com/?cid=10004271621301455749",
+      "user_ratings_total" : 16274,
+      "website" : "https://klbirdpark.com/"
+   },
+   "status" : "OK"
+}

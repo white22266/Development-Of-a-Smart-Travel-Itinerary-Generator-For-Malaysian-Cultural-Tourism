@@ -1,0 +1,1145 @@
+{
+   "html_attributions" : [],
+   "next_page_token" : "Ab43m-unMhQcbb6Q52oMSCGdsrq4DZyeRSyVNbLia3QJrTwDeWZZlxtIkzJKWw2vNfb7QJxUl30H0nwIlRwJrX928CNz8RazB1CTJVW6aW0q-VfUSfJqkhjLYJXWK7lsPzo7IyhWuwoPx9RGOeE8_41vir5xwFzRtueRgu3dA2-S36122IuXk505jYydWzqEon-FhgEtsGfPePSU1vTouq1HKQ9UW9FFXmejtkquGBClii37H0J3A0LH1D82uekcXVwgE1GuBcSNikNeRD7GEZPwB6cr9MDxclIGT_MZ62LjRIshqO9hAr0Vj8EFjx5LKl8jm3UeUJLSQSzF0NKuE2-JZRyaQppaUsGXGH4iMQ6IGkMTuYu2Jh1cEQBFFBk7ngvJkFnPDYUJygqVDnvge8y58g_-jyAPQYHYd3wuOuPRb2WLSjtjQyAXhMq0sFgMgPWGWDQbw1p5wNEj-KGB1CrKQSkr5JsziGmQ0cyZJTPIqdQr3dMo86XuDm1iswa4TYZipvuJbmrKVbMjmI6085sgHDsRf78-0AC8jQJ4uwV7RPwkVMHZmdocHuE_uH-O2hGU_PhHEBxUT3VEwaHJ4EBttchshLT1K7VZDnfFqQwKfl-64LiKJqAAo54FsROcYcQ72Lg3NpiVoVch_IDgTcmv6vfaUSOc8pVmlsGuFlWYqnmoEqZxJktNMIjnjCQtA8hyT5zulN-hViQQ2l30Q_29zxHTQpMHKbwdFs9Wg8hWbTrgjA-p3TmX2ESI9-_RZ7Lu-Kwml6XH-6x4TKwjljfVM6zL7Vviu_P4uJc5jkAYtgVKErk1kP3KUiZIr0Zxd0WISzMDHMgQ1f_d",
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Sabak Bernam, 45400 Sungai Besar, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.680645999999999,
+               "lng" : 100.989499
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.682038730291501,
+                  "lng" : 100.9909010802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.679340769708497,
+                  "lng" : 100.9882031197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Makmuriah",
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111078080341916785800\"\u003eSyaza Suhaili\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vmtTgkIUEK2R157YBBPx5NYs7bWCHztX5A8V9_WMDyxZEfc4FM-KGIEAbEKEAg-cKwu-umFMXnVR_btSakOG7dc4sXrl0VeRTgg3ahMPpAI4KhHal72iPu7WFnVPlLJs376MjIydAnpzH8G5fmwp0VMoCyFadhBtNLApnv8r4Bo-RCZcsP_-5wAYsM8FuRpUmX4wx5zzyAjyRXDZJ5I1pQvp5P2BNIDakieZ_486nfNQ1QYYEUeYKE60NrgJvY_0YR8Ypm4JfTozfiMIj9PodpSdmEhnWoMHbnWZxuleln7QaKUvFlMPNGPQJZvGCvdozHQWrPcgDEXktZSYLF-SZUzfDiL9-2pkRjawtAVPJ2SYPwp0sRLdXU-pRLF4qsKrO3ibQAYhI0DrRWLtL3128LOABI510-z53VnxwYyoQGlA55Mpx00J_UC1uCm6Gq",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJdaADhgRgyzERPCWsqVQBPKY",
+         "plus_code" : 
+         {
+            "compound_code" : "MXJQ+7Q Sungai Besar, Selangor",
+            "global_code" : "6PM2MXJQ+7Q"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJdaADhgRgyzERPCWsqVQBPKY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 227
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Selangor, Sabak, Pekan Sabak Bernam, Jalan Tepi SungaiNo 15邮政编码: 45200",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.769829199999999,
+               "lng" : 100.9824414
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.771089530291502,
+                  "lng" : 100.9838132802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.768391569708497,
+                  "lng" : 100.9811153197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "沙白安南天福宫 Sabak Bernam Theam Hock Keong",
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/101091476837507526745\"\u003eMing Xuan Lee\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ucJ3x9UJh88-1V1Zio0R6t6R2PUCE3etE3QHnnvvruwBdhkZoRUhsIaAvh8rVEyD_jNOhWCH2y2Vdi-agTAwFLRBBoYUndN_Ovsy5pKQmYnn-6EzyrJo4zjdJ-XyBHR2iiFgw2vePw8Jm9KUeRLuijhFEnTif7R5xiXDI9vbMdBId6VFdDWexN-cKbZmxERN_f-fULznyefdKePSxF5XNl69I7l6Mig-DoRqjUvZLMdDRmwvi-ts5Pmfn6UUDH1VotGnoUmhHQw64JNDPNI8jA19NkCzqYC_sKr3Z_rXiHjvF-vpV7GrSqNVl98bK9bKQFNXofcbT0Ulft4m8T6zCmGEz1VZOm88iFEbPZOpd0KUfNxX-9OJ3x_foS44W_qKxDPpW2G8sePXV8kqaq8VRxmNlDNwsqQ1dVstqLJcL-RvM",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJkSbElkpnyzERQ5_Xw1Pjj58",
+         "plus_code" : 
+         {
+            "compound_code" : "QX9J+WX Sabak, Selangor",
+            "global_code" : "6PM2QX9J+WX"
+         },
+         "rating" : 4.8,
+         "reference" : "ChIJkSbElkpnyzERQ5_Xw1Pjj58",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 12
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "3°45'34. 100°59'08., Jalan Ladang, 45200 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.759617,
+               "lng" : 100.9857239
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.761036430291502,
+                  "lng" : 100.9870241302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.758338469708498,
+                  "lng" : 100.9843261697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Thirumurugan Temple Sabak Bernam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3456,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/118281758501198141663\"\u003eSuresh Chandran\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uI3IY1TRa2IRqIfYsVZMbPF2Doc8dp08gtUUZTzjDmJcwHloGqr7kob6Eptp5bkYtg8kVzrTtj_CfkGrWL65J30_wADo0J_e5ZJwhSr93lSiOUGWjqGdEOaYBHnYEN22XGY8_RsTKbELVbVL6CSndUR24Zak10VLA-mIMeM5Cn8jgDmQZd53UmMVlkyjevfDQ_atW32f-5hxhNQnH7RZnRCs0uV7XI9u_hFE0Wrhrlszy4PzeVekeKE687T0wSZFoaQ8WKWih7HUHsz_FUT_Vo0oucSuA9kMUFsZFNBh20OUB6mcr-3kQ8BgS3nsakmA--ssBgjWbugzxbALWlK1sawbxKNQY9xpipJDQosFe8QA5vqeTpwE8Ws4V9E-2SYjdDSZFWJsD0yY3OBXbinHEhsMkcR2_vXro46RMQ_6s_7xKj",
+               "width" : 4608
+            }
+         ],
+         "place_id" : "ChIJdX9fA1RnyzERmXicMETs584",
+         "plus_code" : 
+         {
+            "compound_code" : "QX5P+R7 Sabak, Selangor",
+            "global_code" : "6PM2QX5P+R7"
+         },
+         "rating" : 4.9,
+         "reference" : "ChIJdX9fA1RnyzERmXicMETs584",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 13
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "PXVX+VM, 45400 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7446887,
+               "lng" : 100.9991477
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.746179330291502,
+                  "lng" : 101.0005894302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.743481369708498,
+                  "lng" : 100.9978914697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Maha Mariamman sabak bernam",
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106422255772982250029\"\u003eCOSMO TUBE\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ujjklOiMKfbvlG8H0hAJCDeNg3LjOf3M2LoUBHklSRD8MrqIF9kLbAVhjjkeAB65xSnSl9FhZPBoZFbaCkeq1yxSi-_Z86CEM57zkyDHl7VUzgplaIh1PIs6n8yV1P9e8y9qLASZ6NBOnmE5G-fh5ccb97fjaF3g8Hs2_B1ByvgW4glts1qto6v85v3d8IwduAkBbt4nIUleZe8clkQPs8QPIfAaiEUTmWlRcBRRjljx6sMaXwQwYdYPFpS-O0j3-sp83f0Rd_PF6NG5-8lbhFZrvw3xKNWBoP0oDQ670V5nfYV0RQvW8OClyBxywP4pv6YLBKUZzpzH0EtESIVqawsarKNKnkuNLvzLMl95LC3k8YNVjvqrzQaStnrdmsffJl5kZ-pd3CcY59USJh7fFO-0aQrwuwpNRemi8Hheew5A",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJnYioXydhyzERMW1hLAvMfag",
+         "rating" : 5,
+         "reference" : "ChIJnYioXydhyzERMW1hLAvMfag",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 1
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Panchang Bedena, 45400 Sungai Besar, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.6957003,
+               "lng" : 100.960364
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.696992730291502,
+                  "lng" : 100.9615488302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.694294769708498,
+                  "lng" : 100.9588508697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Old Mosque Panchang Bedena",
+         "photos" : 
+         [
+            {
+               "height" : 1280,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114068789291106455889\"\u003emfridz 93&#39;s\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sKX0fdZaIap7UUmqo7Da_wY2eU3tBvaPEEbljzgRLAu8Uhd0R-wOURoBGPgtt7ZdIxlRcXyhAizO7oabLuC-1GD0_BxR0QI1BeAMfQ197egr9_YH2hIsr00f3wsPOy2YcJbTlzm9Yi0sLFaaDa7c5poRPK2xdhjf-HxOacuTP5JcmED6bsIFLatihYvrK-qCKsW6-tOTmPZWnaUWk5wL2NXoa9JyYN4yQsVnGK4j9Bqd38Dzam0ovnllOLPztASMs9s2w63-oMBn5n9adJJHRVTpzxdR48nuiGPAgObaXCcuHfkVDwlhhs-eTq7FlIIneKhas6R8Oxv2Lp69mKUR05e1Z7mHp7wsCkQAndxKFLfmQ-pyGOO0OnM4YUSdnlCpd-b3u_vv3mFPZoNllskp2Kvr8e8bxY4gBGtJYj6V7RHg",
+               "width" : 1280
+            }
+         ],
+         "place_id" : "ChIJOTHePcBfyzER4UzyHgJLMp4",
+         "plus_code" : 
+         {
+            "compound_code" : "MXW6+74 Sungai Besar, Selangor",
+            "global_code" : "6PM2MXW6+74"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJOTHePcBfyzER4UzyHgJLMp4",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 33
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Lot No, Ban 2, 9990, Jalan Tali Air 5, 45400 Sekinchan, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5208461,
+               "lng" : 101.1287333
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.522136380291502,
+                  "lng" : 101.1299353302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.519438419708498,
+                  "lng" : 101.1272373697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Paddy Gallery",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102893842587731667248\"\u003eDiyah Nyanyan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uWawL9Isv1BZwofHx4CP4HmGtJ_FUHdVBYHlHq4Lnyoc6T4KmUBW59ocJ4hTgtFygPn_0JGvJCSE35ZK0hswZ6agM-Pj1BpnLJUCIRH50P6xztiSsP9jOdva9vdS4HsrxKl3H-Xyke04eJxVrrUwqCaO0-lBgl6IHUbH0ZCWW5jGmqAEP53x0NwokxVxjPcob3eM1x7NUzQ6EjEAIOJIDuNu5EMC2iswqJ9V5Do5jk1kHtC-8FlXUiC4UJKJFsYyrTpck5oUGSvuEzgt_gXwVh1eDCkjM5l8Y1OJ4RfhLcUNTUcKRmnhx3pe5GGV7tfzYSq8puUcOMgba8IPoCWSuxHhrjkifJgOOxO2tQKvBBTC6m44QClp_L0iNexe1MXmZHdafiGTtP01K8ygYe9fq3eTFay9y7WJe_DO3Wmc8",
+               "width" : 1080
+            }
+         ],
+         "place_id" : "ChIJNelHQJuazDERxnf45-Lfdhk",
+         "plus_code" : 
+         {
+            "compound_code" : "G4CH+8F Sekinchan, Selangor",
+            "global_code" : "6PM3G4CH+8F"
+         },
+         "rating" : 4.1,
+         "reference" : "ChIJNelHQJuazDERxnf45-Lfdhk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 5380
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Gombak, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2378844,
+               "lng" : 101.6840385
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.238803480291502,
+                  "lng" : 101.6852723302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236105519708498,
+                  "lng" : 101.6825743697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Batu Caves",
+         "photos" : 
+         [
+            {
+               "height" : 3600,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/103716561345803065971\"\u003earavind sp\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sRLiwbcFCzuZpTCpK43Yc5LPxuJzFZgjYPWpEKT-PN3XWErtboajn3ZRpUv-UuM9ORXo4YbzoKGuelTysozwXTfot17j_5L19OoylypLQ6BGSX_bC1QNvZG98pQioYB-UOtFopdgFp-_TWQ7CWAN6cD6b1lXiJEdaBGj213F-FGGieTsu3MKD04O_KPMzqPfdvu9Ayy8mMEO-sn_3qfLLWVD1GLZbmp7M5iz-RgbSjHN3kWsL_w46ZNRDa_lLflCXt6AuaNUvnwz4ZMU12YnH2XKw8VerT-cTJaxIIqKrETnrmICow89fii6Mu4M_aKcgllrZSitLVjhc-gG_pfYPjq7S2pnglL_Bjg_CNCvaNwjKKpQqd9sUfgPl3Fj44I9MTQC4k_hJWIcmVGYQ4-_JWyW1U8bG-04N7iO7WOcG5bcub",
+               "width" : 4800
+            }
+         ],
+         "place_id" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQM+5J Batu Caves, Selangor",
+            "global_code" : "6PM36MQM+5J"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJBahJiQxHzDER-Z5vs7Lrv_I",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 78754
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Selangor, Sabak, Kampung Bagan Tunjang, Unnamed Road邮政编码: 45200",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7766204,
+               "lng" : 100.9880259
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.778146180291502,
+                  "lng" : 100.9889032802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.775448219708497,
+                  "lng" : 100.9862053197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "沙白河畔关帝庙（关帝庙戏台）",
+         "photos" : 
+         [
+            {
+               "height" : 2976,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102412596743482771394\"\u003eBeign Lime\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-ukzzD8xy_YaFc43nzs_c60Nz0RXcjelcQRJ6K0tPoOhYMyxSctYQL78fwVC0ya8oDZpJ-Qb447q6xT5h7k2VN5Mq88F34DCgVC9bRB1oGaTeU6GNTFvEo9lwDILlUZ-kVPu8ma05XNcE6dE3OCOHtow5qTwW-NUrznCfpq8b2X-OHWIqvMocf0hGpvvR15-8-qUs1O3xwZqCket3Pky2kGAbzspwvMoQWupm6fNFRGDm7y_BUq_4SWbaIbSGzn5Vdd6O1BJRhp0qaXao9ebDECYe1QpdU0ztBqnn9wqDLUNryBb8swkBYPg82m8g6gddoJi75O1Tx314IKrUmX5pZDvpIwyo7k-tQF1UcBUD2VT3IdlJN1hcVDSdq3mvq28d4KUmZl5uu0o22TYRfNgMhPNY1EKRpnlxJ-A85rLEiQRQ",
+               "width" : 3968
+            }
+         ],
+         "place_id" : "ChIJPw_gMQdnyzER0XU5A3jB0dU",
+         "plus_code" : 
+         {
+            "compound_code" : "QXGQ+J6 Sabak, Selangor",
+            "global_code" : "6PM2QXGQ+J6"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJPw_gMQdnyzER0XU5A3jB0dU",
+         "types" : 
+         [
+            "establishment",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 16
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "25, Jalan Jpt, 45400 Sekinchan, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5031263,
+               "lng" : 101.0948436
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.504443880291501,
+                  "lng" : 101.0961468802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.501745919708498,
+                  "lng" : 101.0934489197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sekinchan Wishing Tree",
+         "photos" : 
+         [
+            {
+               "height" : 4032,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/105343229590966791238\"\u003eadmen Lim\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sgNvukf2VyF9CFSdO2_pa9bdEFb_tj1I88VNMlsUy0o5Z5rl1_poR2v3Of6OqzCtbeP_06r1WAoLkJM3fqYZKJ5uHTl-89cC8iXuZonn4zIObGGobctrtUW7ASc0Hm2tsKL-LY8PbdBAeB2eQs8hLobUgQZU2fTjTjtVpQCkosX1ecjNJ_rh4j2ze_sh4pLPILyE7Y_DSMJZLTjcpz7H2opQP-QGl6QXrP_-csR1GvGw2GRvU24fUtRztIBRBiB5UxvqqmSX50COkN20-A5O1dpy35Z3HWSn-Qb4SAvWXgqCNKO08z177BA5J6leBEvrVMD7LjK8pbkTfMozWJ_AuPJyeK-OlxOiviIX5qN3p-LmyLrSGeIkkC8DChg2jP4XGvBcrfTlOum9qpk4_o8VRjV6FpaX-iaIM5OVsRGlNcvQD_",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJRzDaw5eQzDER_DU27R9vJSk",
+         "plus_code" : 
+         {
+            "compound_code" : "G33V+7W Sekinchan, Selangor",
+            "global_code" : "6PM3G33V+7W"
+         },
+         "rating" : 4.2,
+         "reference" : "ChIJRzDaw5eQzDER_DU27R9vJSk",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 2335
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Raja Chulan, Pekan Sabak Bernam, 45400 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7705556,
+               "lng" : 100.9852778
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.771861830291503,
+                  "lng" : 100.9866974302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.769163869708498,
+                  "lng" : 100.9839994697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Sultan Hishamuddin Jamek Mosque, Sabak Bernam Town (Main District Mosque)",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/106450192855083668163\"\u003eMaliah Jamaliah Said\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vd9Zx-p5bo7ldgiwRpstDVvTpp9-OtwgwanAWM8K3bJUaQVUW1-eznmq7Qk_8EsBKBv_245n-FQtU_A7uQspBewaBvQa5JKgZib1MeECKybBQGlgBGrZ2s6WjX9D8ahsKSBpEE0N0klxFWKpvcpqJUyDk_bLWFBQDJwJBMihT84rwJ9EGXOwuQy2A_M0MrqXnI77ElcCnsEN7s400xUc4-233bFAlIM6s4FlI83AP6YqUPktnzdNCZ565VzTHobyFqP7K0QW-ksdbE4q-6r7p4USNkuabx5Od_Q8QK5ZKIfdGTMducA7lxHq_7lyd7fBZyS2NqdoV-1x75OfaC21CHw4eTeyw8bX3E5hTQRjECZl4uGWlpBAab3cNTBFhKWtAHuMKOWbn5ud7fcjO0BmVhBkldUT0--7uWm-2N8ZFcsw",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJT52rsF5nyzER0L8N6tN5dE0",
+         "plus_code" : 
+         {
+            "compound_code" : "QXCP+64 Sabak, Selangor",
+            "global_code" : "6PM2QXCP+64"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJT52rsF5nyzER0L8N6tN5dE0",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 172
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "45400 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7525679,
+               "lng" : 101.008849
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.753896430291502,
+                  "lng" : 101.0102526302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.751198469708498,
+                  "lng" : 101.0075546697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Sri Periasamy Kamatchi Temple",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1920,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117935156738971368345\"\u003eKogeelan kannan\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uSxId_UZ0D2BtpEZTO23BeTGe7Uj0Yp9RdH2lMnf1gQnKH9AYQIJ_96f8MLOroyBhQcVCw1zsz4h9UehnRLCbgbgzHBMGCOY6Ta3YM27CYU_k_s8cSOl1TBUodwKkuvxwFLUdl_tpjJw67QlyLmBR8nZjBkyZJbv6jcNoJH8zetliNqbng6vdhyvi-v7whM8c22y2KT9HycyGB35XuSKdTw3gOodkVm3-UV-oKDGO-3PygTm6xF48KbuMw8D9MtDvHSC_n1MlSFuNEO530no2PemvrdXGXnBlPOaIXHXMkdSBkxgWGZjCkxSYxY4TrxAChvGCuZJAM8aTEm0zcxoR_nitojKMpN4OPNOEm_7RVorn0pTU7zIHUZuvrhR83L7rHk5ovIeHtn9E-4RQIDQCJLTiAftWVKCoCvNPlyAuaWajP",
+               "width" : 2560
+            }
+         ],
+         "place_id" : "ChIJsWy7fctgyzERuWieFfrfRbk",
+         "plus_code" : 
+         {
+            "compound_code" : "Q235+2G Sabak, Selangor",
+            "global_code" : "6PM3Q235+2G"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJsWy7fctgyzERuWieFfrfRbk",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 15
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Batu, 37 Darat, 45200 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.737596,
+               "lng" : 100.9563203
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.738996880291502,
+                  "lng" : 100.9575693802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.736298919708497,
+                  "lng" : 100.9548714197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid An-Naim, Batu 37 Darat",
+         "place_id" : "ChIJ-5qa315eyzERDdMwFjQQdlY",
+         "plus_code" : 
+         {
+            "compound_code" : "PXQ4+2G Sabak, Selangor",
+            "global_code" : "6PM2PXQ4+2G"
+         },
+         "rating" : 4.6,
+         "reference" : "ChIJ-5qa315eyzERDdMwFjQQdlY",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 11
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jln Klang - Teluk Intan, Panchang Bedena, 45200 Sabak, Selangor Estate, 45200 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7617401,
+               "lng" : 100.9798789
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.762881780291502,
+                  "lng" : 100.9812729302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.760183819708497,
+                  "lng" : 100.9785749697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Arulmigu Sri Maha Mugambikai Temple",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "place_id" : "ChIJs71S41dfyzERWi7kJwHy3dE",
+         "plus_code" : 
+         {
+            "compound_code" : "QX6H+MX Sabak, Selangor",
+            "global_code" : "6PM2QX6H+MX"
+         },
+         "reference" : "ChIJs71S41dfyzERWi7kJwHy3dE",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest"
+         ]
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Haji Mahmud, Kampung Baharu, 45200 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7877834,
+               "lng" : 100.956031
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.789152830291501,
+                  "lng" : 100.9573720802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.786454869708497,
+                  "lng" : 100.9546741197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Jamek Mahmudiah",
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114343896419674708579\"\u003eMohamad Sharizal Alias\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-v44XWFT0DVIxfJFGt1iSXgT1pVysEY7FQw1wSHT8loGbDnjPJZfEyHbaGK3xC_mQALkUu3Sx4pKABHjw1bMD0wuTfyexM6H7xAHnokOpMQEO6grDLGQQCUzRNwDJl2cVg06q7tm1ug_Y0MkoTjFCe1TCa1R1MpmTkyu-lvf5eAcg6yiu7_KCjBLyGe_l1bAIx5FHCpDvHunhM-B9BxwNbdKmyW2I6CfMzbY_89ziq7je86cTSmXfhj7yv5lcmUWzyOrB6SXEdgZ5HrGg94WRW89Vifh0Z5Q_NAxsnjOf6UOUFLBKCtg6OPadrUCJNqQzOImJo6idAbe68ZIfYcJ5HJ-O2yp1V9fA-Y4WiJiAs4-cNRZizktRg_W2RdBW8lMMME9JMRALZg_AEoL3_ngQMeuDaCIR3cy0umJOJY6EcWAj8",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJMRsJSyddyzERGRwD_9OIr_I",
+         "plus_code" : 
+         {
+            "compound_code" : "QXQ4+4C Kampung Baharu, Sabak, Selangor",
+            "global_code" : "6PM2QXQ4+4C"
+         },
+         "rating" : 5,
+         "reference" : "ChIJMRsJSyddyzERGRwD_9OIr_I",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 4
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Pasar, Pekan Sabak Bernam, 45200 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7709677,
+               "lng" : 100.984171
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.772388580291502,
+                  "lng" : 100.9854437802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.769690619708497,
+                  "lng" : 100.9827458197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/museum-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/museum_pinlet",
+         "name" : "Agriculture and Fisheries Museum of Sabak Bernam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 667,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/112060436529572545156\"\u003eluvfeelin 乐飞翎 (乐飞翎)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vFHxdW4xqT-ITzdoTP3zYnolZVpphp8ZObFxjqQxHGAkFuCnpNeam0Xnr5fBvExPylZYun235v6_xxHlv1WE32twys8HH6Kmzvci3r_LVDCtLrNMPrQ2O-xuS19OKDcIy_GfLR43GA40uyRaxTeEMwsZgJ68bM8sYAgzCqw92HWwDOeFRG3eRf8BTO4c5DbSYUwtvRW4nss4QVsrIas07Hj-lPFwWUrR-ZX7zTpJR9_bzCXGE2Lgxq6-nKtNfor6SJtpon8hioUALmF8RJzoz6gX0SBM4K8872YXEsnBPr8XaBc7lxBE8x4hsAaPO2FCuQolC92LQ6WDBZnOhv6GUMTRebabb-PxjI7E74WmdlSLYo9qw9-97gGoybWTA1ADtiHyyZdLaGdrJeMj_te57eHekZqkWEWQPWowiNXCWsRQ",
+               "width" : 1000
+            }
+         ],
+         "place_id" : "ChIJe4mzwl5nyzERqsnkTnJjwKc",
+         "plus_code" : 
+         {
+            "compound_code" : "QXCM+9M Sabak, Selangor",
+            "global_code" : "6PM2QXCM+9M"
+         },
+         "rating" : 3.8,
+         "reference" : "ChIJe4mzwl5nyzERqsnkTnJjwKc",
+         "types" : 
+         [
+            "establishment",
+            "museum",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 98
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Satu Pantai Bno, 45200 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7673174,
+               "lng" : 100.8733739
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.768593280291503,
+                  "lng" : 100.8750863302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.765895319708498,
+                  "lng" : 100.8723883697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Pantai Bagan Nakhoda Omar",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1080,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110794805514852942933\"\u003eAnuar Afandi Saidin\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sroyXe4L4dP1y5gTdQeTDUzTgNNh-DAxQsMyN-_LiJwCrVBlh80gRdLVOfUtO3U8eF-bn3PCjV4x8iuSSJ0z8WPFAYqNDQmsVYDuWqc6gyEJLH9OvBh42dJDEremt2oWCqm4n3HvP4jnwEyCA4ONsDpLYnKBdDifdUf3sI-umVXCzoK1VW_PrxK4mN7NYVJINrh-jfWITW8uniIODrgD-O9eorK72LnMOTKbkzoEck9_3Q_dNzA26An-UVL54iqIdZPwqBn7K8fH3Pjxpm3GlH4opF0WXzBpx3PIkGVtVvr8N68N3apf6Ji-zf4XLHXiM3ZrMLfJFqDbCPbaE3Al6UxE_Jn97H_xPXg7HiKZS4zkML5gZn7RQYrsQGJO4UEfYKAYgrRskYJmL7Otk0DSYa755phDTFPL5MmcnvWVM",
+               "width" : 1920
+            }
+         ],
+         "place_id" : "ChIJhS5wp-hbyzERns3kLuE3oR0",
+         "plus_code" : 
+         {
+            "compound_code" : "QV8F+W8 Sabak, Selangor",
+            "global_code" : "6PM2QV8F+W8"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJhS5wp-hbyzERns3kLuE3oR0",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 985
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Batu Caves, 68100 Batu Caves, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.2386421,
+               "lng" : 101.6816297
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.239420180291502,
+                  "lng" : 101.6834786802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.236722219708498,
+                  "lng" : 101.6807807197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_hindu-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_hindu_pinlet",
+         "name" : "Ramayana Cave - Suyambu Lingam",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111884011050592843748\"\u003e陳徐行（Mark）\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-tYOH53GU617OgyEEROcFOJMB13rDhJWJRsCMeidzimoqNe3CTJuSXlfFLcTx6C2FP1BcG37sns-8ApOnFnXbiIYxwqSbU09JiFcHAuHLlxjhWiBmCp74VomB2v9Jx9Obd9H20RNmk3hqVsly8lBV2UdSsIyL4Z47Z0W1XncE0_o02QzKr6byVlgy-FvpdXab3Cc-d0arHQ_TwIzzHB74T85F1en842N0aJRfz9DtnvnMgg9EisF09yOmscUEKB5S6SdNzI3XsopPzeP9UfNIJTkfpD7Z9NRJerLdSmNSafa1FJKnvpZAO7QlZUof9pu1BZdBTnUL6oZa8IH-44tMMGJLA9SYJM-8VoI5bgTo3xIIAKvOUl4-UKqnOvOaVr6DD83aWTFZ3ilTBSe7hYq-YFVKBwmggN24FPDe90Atl6FA",
+               "width" : 3024
+            }
+         ],
+         "place_id" : "ChIJC-2QDg1HzDERDSzG4ioNJ-Q",
+         "plus_code" : 
+         {
+            "compound_code" : "6MQJ+FM Batu Caves, Selangor",
+            "global_code" : "6PM36MQJ+FM"
+         },
+         "rating" : 3.6,
+         "reference" : "ChIJC-2QDg1HzDERDSzG4ioNJ-Q",
+         "types" : 
+         [
+            "establishment",
+            "hindu_temple",
+            "place_of_worship",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 646
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Pekan Sabak Bernam, 45200 Sabak, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.7693575,
+               "lng" : 100.9825995
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.770757780291502,
+                  "lng" : 100.9839946302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.768059819708498,
+                  "lng" : 100.9812966697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/shopping-71.png",
+         "icon_background_color" : "#4B96F3",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet",
+         "name" : "Sabak Bernam Market",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 2048,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/110972839356137109915\"\u003eHasimah Hj Zailani\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-uB7fV44ccM_zi_m-JOA8wQwtt5BTuyBlDlaH6bq4c89dPlzktz1SuMy71vlYxzt_0hWI31DlUV486D89av8uHBFJ7HjcmfJqz4ug7RQv2wxymnfHCMikJlI2kq5z4Oy08u-K6d4savE6i64T6xVj0Xkn4YHvwUQMICNcNSWV2YLdj_tw_PeQgrfG4OFfSQimrKcYFCcWIABQRUyCF5gnuHCwFOSQgFlN25Qrxg9fvEkzrF2Dq87QauLMdkyQPLz7j8rcZLHxC6yR6s5gzoimKlcOowXuk8SbxzRnYExx0aFEh-A8vaQgDoCQ9_s1F2QSukwY75U6eEHu_L-iAB4Kbc5-J8dxukSLvo-ZFc-yZXVsGi5CixZxKshfsNsPwaPuGAJCv_R6E-mNC6xMcKW9zmryaSTO3un82QyTsPc0lOcw",
+               "width" : 1536
+            }
+         ],
+         "place_id" : "ChIJk0x7z1hnyzERGBnzmQqwzcQ",
+         "plus_code" : 
+         {
+            "compound_code" : "QX9M+P2 Sabak, Selangor",
+            "global_code" : "6PM2QX9M+P2"
+         },
+         "rating" : 3.9,
+         "reference" : "ChIJk0x7z1hnyzERGBnzmQqwzcQ",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 295
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kampung Parit Baharu, 45100 Sungai Air Tawar, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.8165884,
+               "lng" : 100.8442608
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.817944180291502,
+                  "lng" : 100.8457941802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.815246219708497,
+                  "lng" : 100.8430962197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/worship_islam-71.png",
+         "icon_background_color" : "#7B9EB0",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/worship_islam_pinlet",
+         "name" : "Masjid Al - Ma'arufiah",
+         "photos" : 
+         [
+            {
+               "height" : 2268,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102836372412825424995\"\u003eShari Yusof\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-t3tVY_xD55sK9CzR1BTTlSMiDvW0Y9tJ8SobkUlWsEo3CflOnVoVg3h8ILzdm5HQSNcufNoP0z9LM9qcOMqOaNmjy61mS3XnBX7CY3QKWvzUXioorkhdeVLcw5sCUqOXEjU4Hz74rTFoM1cp-9ReXzG-nSgG7sAQ4bFr_5HjC-xKqYtxloCHhYpMWBzwDQqiA92NfU4KMW2LlAwWOiwG0art3bucQIMgtuVN1pqBuoV7mZWHkWWXNrjcZgOKPEE9qUKlW-ZMzb85FceBdHT50PnmvGyPtY7VB996v0umaI8QHZtzPIdslyb025LkBxrJQqMg18_YVkZrt_uVHn3yG8K01uSsYr9CW7mLO1o4pSCy-hFdli-uxJHMEzV1jbyXNNOQdkCwFRVTqmt3qs_N4bhJal4xn8oBFhflIAYGQK075Q",
+               "width" : 2268
+            }
+         ],
+         "place_id" : "ChIJSehnbCNbyzERHlMotOF36Ow",
+         "plus_code" : 
+         {
+            "compound_code" : "RR8V+JP Sungai Air Tawar, Selangor",
+            "global_code" : "6PM2RR8V+JP"
+         },
+         "rating" : 4.7,
+         "reference" : "ChIJSehnbCNbyzERHlMotOF36Ow",
+         "types" : 
+         [
+            "establishment",
+            "mosque",
+            "place_of_worship",
+            "point_of_interest"
+         ],
+         "user_ratings_total" : 55
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Jalan Parit 6, 45400 Sekinchan, Selangor",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.5293999,
+               "lng" : 101.1239613
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.530633280291502,
+                  "lng" : 101.1251368802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.527935319708498,
+                  "lng" : 101.1224389197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Sekinchan Paddy Field",
+         "photos" : 
+         [
+            {
+               "height" : 4624,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/116094299379209837831\"\u003epiko (happy san)\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sxhVsjDT6UYgD_E0lSA8aO9MnvmoVg1mE3d8LbTNgGN2w03WUxihD1lq6UiMdNw-5h7jRLUIP1OXAK23aqDnP7LiDCF_ZJMOc6m8naA5dnQyVva8MFknR--MVgj2JpGRPcA6wYXoHUIQNHAuAalRoCt9JBwiAlysV_BWYNNsoM63TtFn5Fj_CZXP5urZBZVJvN5MkIoQCK1KrprwpP4YuDK1QEupyCZoL6iZzejBb8hZpPkIM5eBTMkJYYSEr20SlO9rWytEvet33SRt5ZbZwrLNHeMuyEWsuyzIVtjRGJJk95KQnHsPOuFxOPHJgapjWoNJJ685oO299TomcnifWkXfJCixF_V38wVqq2AJF-kXNfJhNXl3SBcJhmH8e6-Jk03oWFTuXBKHLdCrbi9bbaZuf92sFRb3cHPVX6Yxjje2SR_q1gv17XR7e7C48S",
+               "width" : 3472
+            }
+         ],
+         "place_id" : "ChIJnX4YJIyazDER6XdYEZfDPHE",
+         "plus_code" : 
+         {
+            "compound_code" : "G4HF+QH Sekinchan, Selangor",
+            "global_code" : "6PM3G4HF+QH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJnX4YJIyazDER6XdYEZfDPHE",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 240
+      }
+   ],
+   "status" : "OK"
+}

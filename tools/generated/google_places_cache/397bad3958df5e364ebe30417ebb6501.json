@@ -1,0 +1,239 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Jln Raja, City Centre, 50050 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur, Malaysia",
+      "formatted_phone_number" : "03-2692 8672",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.150278,
+            "lng" : 101.6934342
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.151594080291502,
+               "lng" : 101.6946634302915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.148896119708498,
+               "lng" : 101.6919654697085
+            }
+         }
+      },
+      "name" : "St Mary's Cathedral",
+      "opening_hours" : 
+      {
+         "open_now" : false,
+         "periods" : 
+         [
+            {
+               "close" : 
+               {
+                  "day" : 0,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 1,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 1,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 2,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 2,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 3,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 3,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 4,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 4,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 5,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 5,
+                  "time" : "0900"
+               }
+            },
+            {
+               "close" : 
+               {
+                  "day" : 6,
+                  "time" : "1700"
+               },
+               "open" : 
+               {
+                  "day" : 6,
+                  "time" : "0900"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: 9:00 AM – 5:00 PM",
+            "Tuesday: 9:00 AM – 5:00 PM",
+            "Wednesday: 9:00 AM – 5:00 PM",
+            "Thursday: 9:00 AM – 5:00 PM",
+            "Friday: 9:00 AM – 5:00 PM",
+            "Saturday: 9:00 AM – 5:00 PM",
+            "Sunday: 9:00 AM – 5:00 PM"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 315,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/118387134074303806684\"\u003eSt Mary&#39;s Cathedral Kuala Lumpur\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s7GPK7Oh8oJIlEVHmgHb8sbtJJvhHEP84khVLOga9cy2w-26sXhY0sqnLvZyqY5l9pNfP59fYqKik64EFv0N8EwhKxfqLn8Zn7scze0Q4TacxZ85xGPdssiylKqGYAAodrTdVqjG2A2Bcsq4B3_eMYhudBc7IfXAqO9VYDWnvBKyNj3KpUCK6YF5-kU9o_mzlFFVdAYwONtn6SYnM2yKG_vwvREUW0pli88RedMeyuWrsUAE0eFh7UtjoaFTp0G5HlmT2qngaT3CE9m8pNIZwBraxw3vgwCor4Unj2qX5FdzulTWBsB_XILOA4bYKxPdawnt2sdlBgR2RtE68T3ak7yRIYIMFeWnCYkXrfnyp2HcsI8NPQzPYDV2bPisWvyOjWljB2krgUxsBTuGBfSWqTj2bBm053PTJCMIVgFb7tGZSN",
+            "width" : 851
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115313733280453451187\"\u003eKok Leong Khor\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-t97U4s_mkmAihvZfCmjxGVZGA2zIg3ZdwO9DaKA67xiqKVw5Dk-lpL6uIm1L-9s8vYLuB-ZB6GwJYQYbltO-46RqIMcJZ6Fqr69G2A3m1J6m4_adfTTvYjcduSQMsULKbwTUWuUfGuWKytEKMkx5wXJehQxUP_WUYe5huEyzFVtDmvBICDqpRVi5yN1j7V9adxTL6P1nwh1c_uY4eohJ9wAHJkNXN_A0JNmFD7adwL4usFa9ndXUuMCZgBdKyvDrlJnkw-YY5nO4z4rd5HqKXTRWvPKvRfmkIXr3zZ6WmW5jdWXlJiwODVM2QNXA8G8QnN_tvuHPR5tpeKHJgx1poiiKMLTx200fezsf400MCMD24WbF3jZwxBpLukKl53O8sZJ7gR3v4O1p_3-CdgwKrpO_XqXQ-xjsooZPk3bwGEWw",
+            "width" : 4000
+         },
+         {
+            "height" : 2962,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/112569775212669920308\"\u003eJ Razz\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vlHW1Gjd0b4qz_Sk2hMVKMtxrbnTUES_Vl3r4PlnRhDxw59r4esDMGT32kraE_nZX56ibP2c90nJ9o2mEHnEpPFe3Ig0MTv4nefD2eSYbOOoT6qq1m6aK6gL6Ne4kKP8A72SMXwe2gkmA5WRdrxJQO2nzTeAc35C6mr8cX8V3VKSECh-V0hhaZb-O9euCXf1VldNS5CiMBQ4ZngjFMzZMn7HKOedeGwLKPgmVdSile4VEgLv-PwUoOIjnPobnsS0F3UKSjSs9ZOuJ2fx4ue-uT_-Q6UMOpG-ZJ0f0dt8fyrBxs8DpAbiTT3-AJS-wQLxJRoB323K_Eol_7YlfYOxrVH7GyYlLN9mWOriO3AoAeXRTArLeFTuHbaiWWQ_gvCYMKRu-XZanORcCodmrEoYvXE92A5jhT09fmR66tW2rdcw",
+            "width" : 3950
+         },
+         {
+            "height" : 3200,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115022096161609899906\"\u003eAisyah\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sNuOfTWjCYDGwRMPrawYhd6lI40IktFlux2AIA0gfvDrsV_D0D9MQmOGrvwwLgx3ZLR89LCoPv_HKuE7928DGPaY7GcnatfIEaotwPC0zSy6zsek7WbwvbQNT6W-awDUce3TzeleGh9tkuTfrYr5_NRDtmJj9rbfE7QdFPVkAOitPg-WDASiQAXSk4i9bzuxqeIhQJgjKqR248a8L98E3RnbOvEFfkpvsJT3l0btWsYk5ejR-kqvCi2WruG_kjetSKiMrCrHHtC69IdOsRRqHYKbRm06pAs1s8wJlmwUUcjfP6T3PmqrodYNIityqOOiSgYVo0a2BODEvs_-r29Ipnjq_SRs_pCnCsyDptrYXfY1gjCy-GiB0m-X4WnpcSLKIiXzRbCqHt88zPPrlF6YQkp71JBP81_0M6DMd7o4kG4Jy9",
+            "width" : 4800
+         },
+         {
+            "height" : 3120,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/102161486280576233223\"\u003eJOHN PETER KONG 777 YEE PENG KMN\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-vbX4Me2_lJRFTU79XnG8HDrXj1MyrwEtBgVdS0OOZeV4y4Wt79_sgcI99g3fJI5nxEIB-UV5qQ3muHkocH6xxawDghmDj0M4aya658UxYRmB5_B2VREMf-MPTYrnRQCixzYaqVNl92vMQ75H9r968gfhW1MiH95gXUEzT8cSA06PnxgIx7UuW9g8f5qgT4BoO2L10cuS-8VKxEKk7i9sWAUUDDnUbUIJQWBkYEghju8HyXqrM4Gyo4nUfebt21yR58WSvxyq9HaTKLVYJJaIqpkPVX8dq3RSAij7qAfO4rQ9-8lPEZRnpiepwwHTh_j_oAgy-tPvIGzfgJwxYF9EVv3FMs_UmT1fTYjIomLw4FxE63oqbTlmML4DrBSHJX_l6_nAl9ib9Dnfsbu7jrmjgMQyfRzwH_IfwWEydQcjuGTQ",
+            "width" : 4160
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106138237737161841170\"\u003eCYBERTITO\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sj5CUQbZJxCqVlvi7ZT9RzE3CDLI8iVpkixnAyA2cmYn4m3PzXGjYuaM5v9V7u8uv-4q_CT91fCE-Dtgn3pZj6ARZmJyoMPg3SinDB-_mXmSgyblXq2U0esdXEYROI-LASvqefg5RtQhZ0nULVI6g3yVxW_hPNDndz-JJRcd_2tGh62PKiOvG45PKSfK4SDlrO1syuzlQuA89NHacbC84feyO-pZRF4J-spnri1RXTYbHD_LwdSzTxKKjrckaY2H-X01zo1mbezdL90ppfLwPT16csal4-Dqio6phDjf5un6u245wZWJXWk5Zy1EStrRROaxf4uzEi-Kdj2N4NeC8Ibh4wJ2Aqi8lsi6YICML-SZWsM9JlhQ66P-4EdQPk0diQRXWEqkd5T7L8mZiJeNmBBjCdsGT_IsrBLhWY5OIlII0s",
+            "width" : 2048
+         },
+         {
+            "height" : 1536,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/106138237737161841170\"\u003eCYBERTITO\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-sdirCJQLGIpAj-DhxQsQIHjH990jHujwuqoeLzWkqVTmIdYjmdIF6YN395J69WJLhTs4X3asHHox4CQb8xzykXxy99OVoyk6GbTu9DcpW0tBU0SgkZZtn3usM9s-l6dG3RyBBnwQJJs-OCWlNiwqu2bMsXtpC26lrxTIADaaB_Vx0NLHbmi9pYCkDLux51VGWeEeT4Dgl-epuUaFHY06UABNbEouIpJBZssMGu-e6On5IAjHW56-Z-OzhOyC92NJuW9LBxq-Nq_xm0sAbaRVlf0WeaEkmSSOdZG0KSYLsp3_k_AhId6QsjshCxwwra72GLpNEVrwUpRxb8LmOQfKJtL93yfN7tAoU0C-Pxf1ZFlMf_BAceTPki4nenTgGHlE0c58cNHpqZf56Cx9Kq8lp8dchbutl1FRGpN1LpOQI",
+            "width" : 2048
+         },
+         {
+            "height" : 3000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/115774575344802673652\"\u003eFaithful Liew\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-tFzVVYgyfAofoLCMJOpnN1UWIhPxKyv3VXUNOz31qSEXokSb_pkpZL9VSBPshDT-JR7U1xXu7fKkewibJNt74UpOq-6nohHBUbreDncOEGDPLJTKJfddBSxlszFMFLRt3HCxlgJhajKOKq5SeBt4CStm27kzOUYoTkamS0eFYPm8bLZVusiLJOiMQ0gy9nHnPRdLKlA0PsbYLgj-AfrCdOjhAx9LBlH65EX0nAhcz8_DGGIEzXqf6ZYk_WHtxWmDW9_iLfH197ssfkLRRmpLE3BPVJRDITTebA4aQNJ66fCN0pFzqEfgsuR3GiOwJuXhSR7uuSIIiddqSDIHmWHgVCCwfDc4-bNNvxk_QXOzNMXz5hOjR5d9t6QyXdfP3x5DnyAYVJqaBETY-hyp3gLvwTQN_Rh8HfsZ63pkztR8flZA",
+            "width" : 4000
+         },
+         {
+            "height" : 3600,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117791038175203398713\"\u003eVăn Cam Lưu\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-s2gQOOwFemFCKBvWS01gKYxLpuBoRUmI7SVFONqEzM38IhAMUwzK0ZYoBhJ-xggEnPAUS9yo4PWOIS8JAJ7slXwVKGQWFKh4zMiaHA5eKAC_ycnJeBkPLgqYMI_LmC-_2aDnPOLLUp22XtM1ky9Njwzhuj48Wso5xake4Ca_Vo5fV9Z3O91-BWncqYtBjcMA_vl6u3e0jnaXRYt5oO4um8ckDkYbzqAcyPSUoiKHk0iLJew4Ud_zYaRowDB3B7gIHk26Wtkbzy34KQDUq9ehvYicINXsvfjnzM6rW0OrBw5Rft9Mq12xR5onZbrvDA4GX2v4IAJ7Du2qOP2Lgt-XCQtneRJm49GdMKgtLV6vHRFiPN4PG02qRdFoNBhRCLByc5IWDgkxWRSpFPibetWxohkAo0HKYwu35xuaUzwtOmvQ",
+            "width" : 4800
+         },
+         {
+            "height" : 4000,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/117146073996186729047\"\u003eWang Wee Siang\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-v92v1elaE8RiSaVRr2ZcHF4-4nFMsaNaHkg7UzTtQYCWTYU-llXHqzT7Xl9zu8VgHZpZxEo7UvM5ihcDEeLFost6XPUJPijf58xUI4v0dSSeFWaorNHE90B9sTJZ7e9ch3ucg6cWWVQvwPOnb-rT7D_win7oED4TeB75auX2YySJas6Oy55bwUoRNQfevYrzUWsp4TUf2e5nVu-KbQa6r5AOTFLUNg2Xjj2o-veondlJAbrVfnGnwtAfigBhH3fAbHXgb2aktGky0vWvGLCEWJXxf34g_0ek2W3ce4jxU1F0dkImkBVrGs-M5xg0zEaeLO3Mka2uhC9_bNnpd6Jpwp0Bi4x8Omf8ZWHv2hDqKim9wKIOp_GgW0eR1DaeVtAxNRNYTsT0WR-eHdnLvgBEyi-AT3CQIKx8sLsRccb9JzYPMM",
+            "width" : 3000
+         }
+      ],
+      "place_id" : "ChIJMVJtPc1JzDERzgjwHeAcP40",
+      "rating" : 4.7,
+      "types" : 
+      [
+         "church",
+         "establishment",
+         "place_of_worship",
+         "point_of_interest",
+         "tourist_attraction"
+      ],
+      "url" : "https://maps.google.com/?cid=10177885431781132494",
+      "user_ratings_total" : 602,
+      "website" : "http://www.stmaryscathedral.org.my/"
+   },
+   "status" : "OK"
+}

@@ -1,0 +1,187 @@
+{
+   "html_attributions" : [],
+   "results" : 
+   [
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "229, Jalan Tun Sambanthan, Brickfields, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1292791,
+               "lng" : 101.6841595
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.130512630291502,
+                  "lng" : 101.6854548302915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.127814669708498,
+                  "lng" : 101.6827568697085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Little India Brickfields",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3472,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/109906514634916270388\"\u003eDeva Bala\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-vC8BWev0Vqp1Eu878YJtMeU2ahq_4CJqGtTfORWbj_4Gjc_7HoOgj4scttPwdaL16l2ecftDuBwj5K3yiN9QvrkoOdx0Cm1LEEBFH288sD4SRJNDyDA2pJ4wxaBJgb65SCQYtZZQLhTkIv0nagidK7dPQwKb9F4UQExEAGp-hA8W3x62T3vxp7UVieirWWpW0a8vJxVJ_9mBwcrGAFejjhOZUem08R9Vo77m71ggL97y6N2E4uO8dvLLBzKBUia9G9Eo0AoJ9GLg_qwR8mbbzoBCv2dafzht9AWTAuHhwOXhntr6yQo643VE7nJ7Wl5wHI29gI34__GyvvCIRL5scUsVO34frD2UHrb8BsJFObEv2yFc-Jl3XkbWEzLJ81scxJ94-FOpOrylQopGeSpmfTNwRTc_TXrfDkkKnd6BT0Uw",
+               "width" : 4624
+            }
+         ],
+         "place_id" : "ChIJsWt9K-tJzDERi0F5PDgI908",
+         "plus_code" : 
+         {
+            "compound_code" : "4MHM+PM Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MHM+PM"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJsWt9K-tJzDERi0F5PDgI908",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 14010
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "235, Jalan Tun Sambanthan, Brickfields, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1291052,
+               "lng" : 101.6839422
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.130437180291502,
+                  "lng" : 101.6853468802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.127739219708498,
+                  "lng" : 101.6826489197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Brickfields",
+         "opening_hours" : 
+         {
+            "open_now" : false
+         },
+         "photos" : 
+         [
+            {
+               "height" : 1200,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/117765198354805050883\"\u003egiovanna caruso\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-s8haEAlSzqCQAp1cB0ELx7BpLFmoA1vmHZ8goa16Ht6TesRq9hTc0n8DA3k_7KPRYpDTHP_qBif-Mf7yl7YBHwomO53BwFOIGcMCh2Y0nelvHfzNC_bwqj-Bi4aag2OXdhPOSpxqPqUOpy8zDitcyHUXEcSwbi1_ifhD7heuFZ1ljHmxbEQMiKFke4qUMedkUXqtmJ5ahzOIZ-w7mXQQXXvK3s9ctKNt6_ctdALBPPIgD-0UGUjtaLHP68Z8bMZNjtUVpVWOPPGvVOQlgZ7VbIKGja7YpBLjfiGRUnwVxoq0bK60GYgt6n2ZoOex5XVnWDOAV4ZayWyeK4Igse-AY-JU_a_6yrgnKXok_h64HPCJIzqI0PChDexN660bnJBYPspiupkbcZUsRn89VHQ5TO3WiknZJ6glH22yFB4AP83A",
+               "width" : 1600
+            }
+         ],
+         "place_id" : "ChIJyU3S7epJzDERr1ORhNIZAoY",
+         "plus_code" : 
+         {
+            "compound_code" : "4MHM+JH Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MHM+JH"
+         },
+         "rating" : 4.4,
+         "reference" : "ChIJyU3S7epJzDERr1ORhNIZAoY",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 1277
+      },
+      {
+         "business_status" : "OPERATIONAL",
+         "formatted_address" : "Kuala Lumpur Sentral, 50470 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+         "geometry" : 
+         {
+            "location" : 
+            {
+               "lat" : 3.1301974,
+               "lng" : 101.6839787
+            },
+            "viewport" : 
+            {
+               "northeast" : 
+               {
+                  "lat" : 3.131590580291501,
+                  "lng" : 101.6853452802915
+               },
+               "southwest" : 
+               {
+                  "lat" : 3.128892619708498,
+                  "lng" : 101.6826473197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+         "icon_background_color" : "#13B5C7",
+         "icon_mask_base_uri" : "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+         "name" : "Brickfields Arch",
+         "opening_hours" : 
+         {
+            "open_now" : true
+         },
+         "photos" : 
+         [
+            {
+               "height" : 3024,
+               "html_attributions" : 
+               [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/114715756151690313371\"\u003eDesmon Lai\u003c/a\u003e"
+               ],
+               "photo_reference" : "Ab43m-sp8tJCr6W7G_Go1NzSNQ7_uz3UhwlHQEqr0X3ETBul6K2aAwtKNuYzUJw8zm-WyrccPktIGe3Pjl3FSLq-09At3kS_w-kj_DSXQLfYfEcPjwqWa1LdOfwLLfYFzKjyzwYmWFIq2JbajYq67jhJTr8hHGknbM9FGrrQ0vD0BmVQp_gjD8-uxX5dflZ3bp03oj3T745trYeMectW26R724vIcygR7C6KD9eQjVepiXDe8IuGbIXaOoJJrQ0mEnwCSQvKZccdJwKIWoSCHHqB_MW_wwChaONx4g-DgqWUQbwLdacRIz_r9Rmeupd0T1DD6I36pX8sY63w5M7jCO8iU234URerPJvWsK-90Fk5F4T0vos5YrkCL76iHcgMIeYGwIvU6S4Q8bDidsHkzq-_JbJOIbwT_QsZ9pruJ3MdPhcjZPi195F0GiyZGwXlvJ9t",
+               "width" : 4032
+            }
+         ],
+         "place_id" : "ChIJXw8Sw8BJzDER_aG6Sh2weB8",
+         "plus_code" : 
+         {
+            "compound_code" : "4MJM+3H Kuala Lumpur, Federal Territory of Kuala Lumpur",
+            "global_code" : "6PM34MJM+3H"
+         },
+         "rating" : 4.3,
+         "reference" : "ChIJXw8Sw8BJzDER_aG6Sh2weB8",
+         "types" : 
+         [
+            "establishment",
+            "point_of_interest",
+            "tourist_attraction"
+         ],
+         "user_ratings_total" : 15
+      }
+   ],
+   "status" : "OK"
+}

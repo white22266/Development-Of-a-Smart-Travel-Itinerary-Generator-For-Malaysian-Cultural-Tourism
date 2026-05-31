@@ -1,0 +1,77 @@
+{
+   "html_attributions" : [],
+   "result" : 
+   {
+      "business_status" : "OPERATIONAL",
+      "formatted_address" : "Kepong, Bandar Menjalara, 52200 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia",
+      "geometry" : 
+      {
+         "location" : 
+         {
+            "lat" : 3.1948007,
+            "lng" : 101.6275296
+         },
+         "viewport" : 
+         {
+            "northeast" : 
+            {
+               "lat" : 3.196546280291502,
+               "lng" : 101.6288484802915
+            },
+            "southwest" : 
+            {
+               "lat" : 3.193848319708498,
+               "lng" : 101.6261505197085
+            }
+         }
+      },
+      "name" : "Zhineng Qigong Kepong Centre",
+      "opening_hours" : 
+      {
+         "open_now" : true,
+         "periods" : 
+         [
+            {
+               "open" : 
+               {
+                  "day" : 0,
+                  "time" : "0000"
+               }
+            }
+         ],
+         "weekday_text" : 
+         [
+            "Monday: Open 24 hours",
+            "Tuesday: Open 24 hours",
+            "Wednesday: Open 24 hours",
+            "Thursday: Open 24 hours",
+            "Friday: Open 24 hours",
+            "Saturday: Open 24 hours",
+            "Sunday: Open 24 hours"
+         ]
+      },
+      "photos" : 
+      [
+         {
+            "height" : 2592,
+            "html_attributions" : 
+            [
+               "\u003ca href=\"https://maps.google.com/maps/contrib/116243952450186221730\"\u003eKen Leong\u003c/a\u003e"
+            ],
+            "photo_reference" : "Ab43m-uoEu9SAUtORDjgOZiWheAfNtvdZKlBZQdk5LN_bVM64bolHwsJPwE3I5bz8aLHXHWT5aWt_exd2d3g51nZnS_GKn4_nAJffFUv2sgdzXPdZSqmsxoU1TuBfpYNpXognzL0alPvKZc_7nfwj1IUU_OW8fMw0viqZVcd7x6Gi-xodED_wJmE9nuUqMmBiLtJDQuEwLEnzbCElTDykP47JKXyVDlFdJ4rp5xWALpk4RuEQCQUWN_EPN9LmyMEBBSb8OrVWX-x0ogFS-FdEW3nS_LRREH3fpdtCss3YqUwFWlapD0O9eEnMAYWLwshpSZCM_55JqqkoA98JI9oG06jtBa71KMcoJYD1VELo-GCIxwWoiD9nUCaqb-8eE6JjElTi3LAdEIyBeVP84AC7t80n0RPUjVgIbdi_YGH_SYfa1-ZfVc1GoduEL_U3j_BM9yf",
+            "width" : 4608
+         }
+      ],
+      "place_id" : "ChIJQ6WA9UJHzDERTBJKvJ34heM",
+      "rating" : 5,
+      "types" : 
+      [
+         "establishment",
+         "park",
+         "point_of_interest"
+      ],
+      "url" : "https://maps.google.com/?cid=16394783374864683596",
+      "user_ratings_total" : 1
+   },
+   "status" : "OK"
+}
