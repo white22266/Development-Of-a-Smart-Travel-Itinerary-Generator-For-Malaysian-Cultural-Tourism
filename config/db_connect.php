@@ -4,6 +4,7 @@
 // Configure values through server environment variables or a local .env file.
 
 require_once __DIR__ . '/env_loader.php';
+require_once __DIR__ . '/security.php';
 
 $host = getenv('DB_HOST') ?: 'localhost';
 $user = getenv('DB_USER') ?: 'root';
