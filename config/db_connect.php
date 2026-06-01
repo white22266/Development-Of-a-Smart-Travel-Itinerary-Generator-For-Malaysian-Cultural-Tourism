@@ -14,7 +14,13 @@ if ($pass === false) {
 }
 $db = getenv('DB_NAME') ?: 'travel_itinerary_db';
 
-$conn = new mysqli($host, $user, $pass, $db);
+try {
+    $conn = new mysqli($host, $user, $pass, $db);
+} catch (mysqli_sql_exception $e) {
+    error_log('Database connection failed: ' . $e->getMessage());
+    http_response_code(500);
+    die('System temporarily unavailable. Please try again later.');
+}
 
 if ($conn->connect_error) {
     error_log('Database connection failed.');

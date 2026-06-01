@@ -1,6 +1,7 @@
 <?php
 // preference/preference_form.php
 session_start();
+require_once "../config/security.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
   header("Location: ../auth/login.php?role=traveller");
