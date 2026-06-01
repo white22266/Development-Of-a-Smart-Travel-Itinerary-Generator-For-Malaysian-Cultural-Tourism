@@ -1,6 +1,9 @@
 // assets/itinerary_review_hotel_loader.js
-// Loads hotel suggestions near the final itinerary stop and renders selectable hotel cards.
+// Loads hotel suggestions near the current final kept/confirmed itinerary stop and renders selectable hotel cards.
 (function () {
+    var lastHotelQueryKey = '';
+    var hotelLoadTimer = null;
+
     function getItineraryId() {
         if (typeof window.ITINERARY_ID !== 'undefined') return window.ITINERARY_ID;
         try {
@@ -61,11 +64,15 @@
         return target;
     }
 
-    function renderLoading(section) {
+    function renderLoading(section, finalStop) {
+        var finalText = finalStop && finalStop.title
+            ? '<div style="font-weight:800; font-size:13px; margin-bottom:8px; color:#475569;">Based on current final kept stop: <strong>' + escHtml(finalStop.title) + '</strong></div>'
+            : '';
         section.innerHTML =
             '<h3 style="margin-bottom:6px;">Select Your Hotel</h3>' +
-            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Hotel suggestions are generated near the final stop of your itinerary using Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
-            '<div class="hotel-empty-state"><strong>Loading nearby hotels...</strong>Please wait while the system searches accommodation near your final itinerary stop.</div>';
+            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Hotel suggestions are generated near the current final kept stop of your itinerary using Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
+            finalText +
+            '<div class="hotel-empty-state"><strong>Loading nearby hotels...</strong>Please wait while the system searches accommodation near your current final stop.</div>';
     }
 
     function renderEmpty(section, data) {
@@ -76,29 +83,44 @@
 
         section.innerHTML =
             '<h3 style="margin-bottom:6px;">Select Your Hotel</h3>' +
-            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Hotel suggestions are generated near the final stop of your itinerary using Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
+            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Hotel suggestions are generated near the current final kept stop of your itinerary using Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
             '<div class="hotel-empty-state">' +
             '<strong>No nearby hotel suggestions are available right now.</strong>' +
             escHtml((data && data.message) || 'Google Places did not return hotel results for this location.') + stopText +
-            ' You can still confirm the itinerary without selecting a hotel.' +
             '</div>';
+    }
+
+    function renderNeedFinalStop(section) {
+        section.innerHTML =
+            '<h3 style="margin-bottom:6px;">Select Your Hotel</h3>' +
+            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Hotel suggestions are generated near the current final kept stop of your itinerary using Google Places.</p>' +
+            '<div class="hotel-empty-state"><strong>No final kept stop selected.</strong>Please keep at least one itinerary stop before choosing a hotel.</div>';
+    }
+
+    function clearSelectedHotel() {
+        if (typeof window.selectedHotelPlaceId !== 'undefined') window.selectedHotelPlaceId = '';
+        if (typeof window.selectedHotelName !== 'undefined') window.selectedHotelName = '';
+        var statHotel = document.getElementById('stat-hotel');
+        if (statHotel) statHotel.textContent = 'None';
+        document.querySelectorAll('.hotel-card-review').forEach(function (c) { c.classList.remove('selected'); });
     }
 
     function renderHotels(section, data) {
         var hotels = Array.isArray(data.hotels) ? data.hotels : [];
         if (!hotels.length) {
             renderEmpty(section, data);
+            clearSelectedHotel();
             return;
         }
 
         var lastStop = data.last_stop || {};
         var lastStopText = lastStop.title
-            ? 'Based on final stop: <strong>' + escHtml(lastStop.title) + '</strong>' + (lastStop.district || lastStop.state ? ' (' + escHtml([lastStop.district, lastStop.state].filter(Boolean).join(', ')) + ')' : '')
-            : 'Based on the final stop of your itinerary';
+            ? 'Based on current final kept stop: <strong>' + escHtml(lastStop.title) + '</strong>' + (lastStop.district || lastStop.state ? ' (' + escHtml([lastStop.district, lastStop.state].filter(Boolean).join(', ')) + ')' : '')
+            : 'Based on the current final kept stop of your itinerary';
 
         var html =
             '<h3 style="margin-bottom:6px;">Select Your Hotel</h3>' +
-            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Hotel suggestions are generated near the final stop of your itinerary using Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
+            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Hotel suggestions are generated near the current final kept stop of your itinerary using Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
             '<div style="font-weight:800; font-size:13px; margin-bottom:8px; color:#475569;">' + lastStopText + '</div>' +
             '<div class="hotel-grid">';
 
@@ -129,6 +151,7 @@
 
         html += '</div>';
         section.innerHTML = html;
+        clearSelectedHotel();
 
         section.querySelectorAll('.hotel-card-review').forEach(function (card) {
             card.addEventListener('click', function () {
@@ -138,19 +161,69 @@
         });
     }
 
-    async function loadHotels() {
-        if (window.__itineraryReviewHotelsLoaded) return;
-        window.__itineraryReviewHotelsLoaded = true;
+    function getActiveFinalStop() {
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.place-card'));
+        var activeCards = cards.filter(function (card) {
+            var id = card.dataset.itemId;
+            var status = id && window.itemStatus ? window.itemStatus[id] : card.dataset.status;
+            return status !== 'rejected' && card.dataset.status !== 'rejected';
+        });
 
+        if (!activeCards.length) return null;
+
+        activeCards.sort(function (a, b) {
+            var da = Number(a.dataset.day || 0);
+            var db = Number(b.dataset.day || 0);
+            if (da !== db) return da - db;
+            var ia = Number(a.dataset.itemId || 0);
+            var ib = Number(b.dataset.itemId || 0);
+            return ia - ib;
+        });
+
+        var card = activeCards[activeCards.length - 1];
+        var itemId = card.dataset.itemId || '';
+        var replacement = itemId && window.replacementMap ? window.replacementMap[itemId] : null;
+        var titleEl = card.querySelector('.place-title');
+
+        return {
+            itemId: itemId,
+            placeId: replacement && replacement.place_id ? replacement.place_id : (card.dataset.placeId || ''),
+            title: titleEl ? titleEl.textContent.trim() : '',
+            card: card
+        };
+    }
+
+    function hotelQueryKey(finalStop) {
+        if (!finalStop) return 'none';
+        return [getItineraryId(), finalStop.itemId || '', finalStop.placeId || ''].join('|');
+    }
+
+    async function loadHotels(force) {
         var itineraryId = getItineraryId();
         if (!itineraryId) return;
         var section = ensureHotelSection();
         if (!section) return;
 
-        renderLoading(section);
+        var finalStop = getActiveFinalStop();
+        if (!finalStop) {
+            lastHotelQueryKey = 'none';
+            clearSelectedHotel();
+            renderNeedFinalStop(section);
+            return;
+        }
+
+        var key = hotelQueryKey(finalStop);
+        if (!force && key === lastHotelQueryKey) return;
+        lastHotelQueryKey = key;
+        clearSelectedHotel();
+        renderLoading(section, finalStop);
+
+        var url = 'review_hotels.php?itinerary_id=' + encodeURIComponent(itineraryId)
+            + '&item_id=' + encodeURIComponent(finalStop.itemId || '')
+            + '&place_id=' + encodeURIComponent(finalStop.placeId || '');
 
         try {
-            var response = await fetch('review_hotels.php?itinerary_id=' + encodeURIComponent(itineraryId), {
+            var response = await fetch(url, {
                 method: 'GET',
                 headers: { 'Accept': 'application/json' }
             });
@@ -166,16 +239,97 @@
                 renderHotels(section, data);
             } else {
                 renderEmpty(section, data);
+                clearSelectedHotel();
             }
         } catch (e) {
-            renderEmpty(section, { message: 'Network error while loading hotel suggestions.' });
+            renderEmpty(section, { message: 'Network error while loading hotel suggestions.', last_stop: { title: finalStop.title } });
+            clearSelectedHotel();
         }
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadHotels);
-    } else {
-        loadHotels();
+    function scheduleHotelReload(force) {
+        clearTimeout(hotelLoadTimer);
+        hotelLoadTimer = setTimeout(function () { loadHotels(force); }, 180);
     }
-    window.addEventListener('load', loadHotels);
+
+    function requireHotelBeforeConfirm() {
+        if (typeof window.confirmReview !== 'function' || window.confirmReview.__hotelRequired) return;
+        var originalConfirmReview = window.confirmReview;
+        var wrappedConfirmReview = function () {
+            var finalStop = getActiveFinalStop();
+            if (!finalStop) {
+                alert('Please keep at least one place before confirming the itinerary.');
+                return;
+            }
+            if (!window.selectedHotelPlaceId) {
+                alert('Please select a hotel before confirming the itinerary.');
+                var section = ensureHotelSection();
+                if (section) section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+            return originalConfirmReview();
+        };
+        wrappedConfirmReview.__hotelRequired = true;
+        window.confirmReview = wrappedConfirmReview;
+    }
+
+    function wrapActionFunctions() {
+        if (typeof window.acceptPlace === 'function' && !window.acceptPlace.__hotelReloadWrapped) {
+            var originalAccept = window.acceptPlace;
+            var wrappedAccept = function (itemId) {
+                var result = originalAccept(itemId);
+                scheduleHotelReload(true);
+                return result;
+            };
+            wrappedAccept.__hotelReloadWrapped = true;
+            window.acceptPlace = wrappedAccept;
+        }
+
+        if (typeof window.rejectPlace === 'function' && !window.rejectPlace.__hotelReloadWrapped) {
+            var originalReject = window.rejectPlace;
+            var wrappedReject = function (itemId) {
+                var result = originalReject(itemId);
+                scheduleHotelReload(true);
+                return result;
+            };
+            wrappedReject.__hotelReloadWrapped = true;
+            window.rejectPlace = wrappedReject;
+        }
+
+        if (typeof window.replacePlace === 'function' && !window.replacePlace.__hotelReloadWrapped) {
+            var originalReplace = window.replacePlace;
+            var wrappedReplace = async function () {
+                var result = await originalReplace.apply(this, arguments);
+                scheduleHotelReload(true);
+                return result;
+            };
+            wrappedReplace.__hotelReloadWrapped = true;
+            window.replacePlace = wrappedReplace;
+        }
+
+        if (typeof window.resetAll === 'function' && !window.resetAll.__hotelReloadWrapped) {
+            var originalReset = window.resetAll;
+            var wrappedReset = function () {
+                var result = originalReset();
+                scheduleHotelReload(true);
+                return result;
+            };
+            wrappedReset.__hotelReloadWrapped = true;
+            window.resetAll = wrappedReset;
+        }
+
+        requireHotelBeforeConfirm();
+    }
+
+    function init() {
+        wrapActionFunctions();
+        scheduleHotelReload(true);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    window.addEventListener('load', init);
 })();
