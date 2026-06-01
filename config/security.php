@@ -72,41 +72,12 @@ if (!function_exists('itinerary_review_keep_fix_assets')) {
     {
         $css = <<<'HTML'
 <style id="itinerary-review-keep-fix-style">
-.place-card.confirmed {
-    border-color: #16a34a !important;
-    background: #f0fdf4 !important;
-}
-.place-card.confirmed .place-actions button {
-    display: none !important;
-}
-.place-card.confirmed .review-status {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #dcfce7 !important;
-    color: #15803d !important;
-    border: 1px solid rgba(34, 197, 94, .28);
-}
-.confirmed-note {
-    background: #dcfce7 !important;
-    color: #15803d !important;
-}
-.hotel-empty-state {
-    margin-top: 10px;
-    padding: 12px 14px;
-    border-radius: 12px;
-    border: 1px solid rgba(245, 158, 11, .32);
-    background: #fffbeb;
-    color: #78350f;
-    font-size: 12.5px;
-    line-height: 1.45;
-}
-.hotel-empty-state strong {
-    display: block;
-    margin-bottom: 4px;
-    color: #92400e;
-    font-size: 13px;
-}
+.place-card.confirmed { border-color: #16a34a !important; background: #f0fdf4 !important; }
+.place-card.confirmed .place-actions button { display: none !important; }
+.place-card.confirmed .review-status { display: inline-flex; align-items: center; justify-content: center; background: #dcfce7 !important; color: #15803d !important; border: 1px solid rgba(34, 197, 94, .28); }
+.confirmed-note { background: #dcfce7 !important; color: #15803d !important; }
+.hotel-empty-state { margin-top: 10px; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(245, 158, 11, .32); background: #fffbeb; color: #78350f; font-size: 12.5px; line-height: 1.45; }
+.hotel-empty-state strong { display: block; margin-bottom: 4px; color: #92400e; font-size: 13px; }
 </style>
 HTML;
 
@@ -116,25 +87,21 @@ HTML;
     function markConfirmed(itemId) {
         var card = document.getElementById('card-' + itemId);
         if (!card) return;
-
         card.classList.remove('rejected', 'replacing');
         card.classList.add('accepted', 'confirmed');
         card.dataset.status = 'accepted';
         card.dataset.confirmed = '1';
-
         ['btn-accept-', 'btn-reject-', 'btn-replace-'].forEach(function (prefix) {
             var button = document.getElementById(prefix + itemId);
             if (!button) return;
             button.style.display = 'none';
             button.disabled = true;
         });
-
         var status = document.getElementById('status-' + itemId);
         if (status) {
             status.textContent = '✔ Confirmed';
             status.setAttribute('aria-label', 'Confirmed');
         }
-
         var replacement = document.getElementById('replacement-' + itemId);
         if (replacement && replacement.classList.contains('visible')) {
             replacement.innerHTML = '<span class="pending-change-note confirmed-note">✔ Confirmed replacement</span>';
@@ -145,17 +112,14 @@ HTML;
         document.querySelectorAll('.place-card').forEach(function (card) {
             card.classList.remove('confirmed');
             card.dataset.confirmed = '0';
-
             var itemId = card.dataset.itemId;
             if (!itemId) return;
-
             ['btn-accept-', 'btn-reject-', 'btn-replace-'].forEach(function (prefix) {
                 var button = document.getElementById(prefix + itemId);
                 if (!button) return;
                 button.style.display = '';
                 button.disabled = false;
             });
-
             var status = document.getElementById('status-' + itemId);
             if (status && status.textContent.indexOf('Confirmed') !== -1) {
                 status.textContent = 'Kept';
@@ -165,37 +129,21 @@ HTML;
     }
 
     function installKeepFix() {
-        if (!document.querySelector('.place-card') || !document.getElementById('btn-confirm')) {
-            return;
-        }
-
+        if (!document.querySelector('.place-card') || !document.getElementById('btn-confirm')) return;
         if (typeof window.acceptPlace === 'function' && !window.acceptPlace.__keepFixApplied) {
             var originalAcceptPlace = window.acceptPlace;
-            var wrappedAcceptPlace = function (itemId) {
-                originalAcceptPlace(itemId);
-                markConfirmed(itemId);
-            };
+            var wrappedAcceptPlace = function (itemId) { originalAcceptPlace(itemId); markConfirmed(itemId); };
             wrappedAcceptPlace.__keepFixApplied = true;
             window.acceptPlace = wrappedAcceptPlace;
         }
-
         if (typeof window.resetAll === 'function' && !window.resetAll.__keepFixApplied) {
             var originalResetAll = window.resetAll;
-            var wrappedResetAll = function () {
-                originalResetAll();
-                restoreReviewButtons();
-            };
+            var wrappedResetAll = function () { originalResetAll(); restoreReviewButtons(); };
             wrappedResetAll.__keepFixApplied = true;
             window.resetAll = wrappedResetAll;
         }
     }
-
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', installKeepFix);
-    } else {
-        installKeepFix();
-    }
-    window.addEventListener('load', installKeepFix);
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', installKeepFix); else installKeepFix();
 })();
 </script>
 HTML;
@@ -214,11 +162,7 @@ if (!function_exists('csrf_inject_html')) {
             $html = preg_replace_callback('/<form\b([^>]*)>/i', function (array $matches) use ($escapedToken): string {
                 $attributes = $matches[1] ?? '';
                 $formTag = $matches[0];
-
-                if (!preg_match('/method\s*=\s*(["\'])?post\1?/i', $attributes)) {
-                    return $formTag;
-                }
-
+                if (!preg_match('/method\s*=\s*(["\'])?post\1?/i', $attributes)) return $formTag;
                 return $formTag . "\n" . '<input type="hidden" name="csrf_token" value="' . $escapedToken . '">';
             }, $html) ?? $html;
         }
@@ -248,7 +192,6 @@ if (!function_exists('csrf_inject_html')) {
                 . '  };' . "\n"
                 . '})();' . "\n"
                 . '</script>' . "\n";
-
             $html = str_ireplace('</head>', $csrfHead . '</head>', $html);
         }
 
@@ -260,13 +203,13 @@ if (!function_exists('csrf_inject_html')) {
             if (stripos($html, '</body>') !== false) {
                 $loaderScript = '';
                 if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
-                    $loaderScript = '<script src="../assets/itinerary_review_hotel_loader.js?v=20260603"></script>' . "\n";
+                    $loaderScript = '<script src="../assets/itinerary_review_hotel_loader.js?v=20260604"></script>' . "\n";
                 }
                 $html = str_ireplace('</body>', $reviewScript . "\n" . $loaderScript . "</body>", $html);
             } else {
                 $html .= $reviewScript;
                 if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
-                    $html .= '<script src="../assets/itinerary_review_hotel_loader.js?v=20260603"></script>';
+                    $html .= '<script src="../assets/itinerary_review_hotel_loader.js?v=20260604"></script>';
                 }
             }
         }
@@ -278,20 +221,11 @@ if (!function_exists('csrf_inject_html')) {
 if (!function_exists('csrf_enable_auto_injection')) {
     function csrf_enable_auto_injection(): void
     {
-        if (defined('CSRF_AUTO_INJECTION_STARTED')) {
-            return;
-        }
+        if (defined('CSRF_AUTO_INJECTION_STARTED')) return;
         define('CSRF_AUTO_INJECTION_STARTED', true);
-
         ob_start(function (string $buffer): string {
-            if ($buffer === '') {
-                return $buffer;
-            }
-
-            if (stripos($buffer, '<html') === false && stripos($buffer, '<form') === false) {
-                return $buffer;
-            }
-
+            if ($buffer === '') return $buffer;
+            if (stripos($buffer, '<html') === false && stripos($buffer, '<form') === false) return $buffer;
             return csrf_inject_html($buffer);
         });
     }
@@ -305,11 +239,5 @@ if (!function_exists('secure_html')) {
 }
 
 csrf_token();
-
-if (!defined('CSRF_DISABLE_AUTO_VERIFY') || CSRF_DISABLE_AUTO_VERIFY !== true) {
-    verify_csrf_token();
-}
-
-if (!defined('CSRF_DISABLE_AUTO_INJECTION') || CSRF_DISABLE_AUTO_INJECTION !== true) {
-    csrf_enable_auto_injection();
-}
+if (!defined('CSRF_DISABLE_AUTO_VERIFY') || CSRF_DISABLE_AUTO_VERIFY !== true) verify_csrf_token();
+if (!defined('CSRF_DISABLE_AUTO_INJECTION') || CSRF_DISABLE_AUTO_INJECTION !== true) csrf_enable_auto_injection();
