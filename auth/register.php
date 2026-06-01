@@ -1,6 +1,7 @@
 <?php
 // auth/register.php
 session_start();
+require_once __DIR__ . '/../config/security.php';
 
 // Force traveller only (ignore ?role=admin)
 $defaultRole = "traveller";
