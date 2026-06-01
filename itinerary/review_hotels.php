@@ -1,6 +1,7 @@
 <?php
 // itinerary/review_hotels.php
-// Returns live Google Places hotel suggestions near the current final confirmed/active itinerary stop.
+// Returns hotel suggestions near the current final confirmed/active itinerary stop.
+// Google Places is used for hotel discovery. SerpAPI is used only for optional pricing enrichment.
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -9,6 +10,8 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/HotelRecommendationService.php";
+require_once "../services/HotelSearchCacheService.php";
+require_once "../services/SerpApiHotelPricingService.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -22,6 +25,7 @@ $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_GET["itinerary_id"] ?? $_POST["itinerary_id"] ?? 0);
 $requestedItemId = (int)($_GET["item_id"] ?? $_POST["item_id"] ?? 0);
 $requestedPlaceId = (int)($_GET["place_id"] ?? $_POST["place_id"] ?? 0);
+$lookupPricing = (string)($_GET["lookup_pricing"] ?? $_POST["lookup_pricing"] ?? "0") === "1";
 
 if ($itineraryId <= 0 || $travellerId <= 0) {
     http_response_code(422);
@@ -121,6 +125,14 @@ function review_hotels_load_database_last_stop(mysqli $conn, int $itineraryId, b
     return $row;
 }
 
+function review_hotels_has_serp_prices(array $hotels): bool
+{
+    foreach ($hotels as $hotel) {
+        if (($hotel['price_source'] ?? '') === 'serpapi_google_maps_price') return true;
+    }
+    return false;
+}
+
 // Verify ownership and load budget context.
 $stmt = $conn->prepare("
     SELECT i.itinerary_id, i.total_days, tp.budget
@@ -174,23 +186,6 @@ $state = trim((string)($lastStop['state'] ?? ''));
 $district = trim((string)($lastStop['district'] ?? ''));
 $placeName = trim((string)($lastStop['item_title'] ?? ''));
 
-$tripDays = max(1, (int)($itinerary['total_days'] ?? 1));
-$budget = (float)($itinerary['budget'] ?? 0);
-$nightlyBudget = $budget > 0 ? ($budget * 0.30) / max(1, $tripDays - 1) : 0.0;
-
-$hotelService = new HotelRecommendationService($conn);
-$hotels = [];
-$source = 'live_google_places_current_final_stop';
-
-if (review_hotels_valid_coord($lat, $lng)) {
-    $hotels = $hotelService->recommendNearPlace((float)$lat, (float)$lng, $placeName, $state, $district, $nightlyBudget, 15.0, 8);
-}
-
-if (empty($hotels) && $state !== '') {
-    $source = review_hotels_valid_coord($lat, $lng) ? 'live_google_places_state_fallback_after_empty_nearby' : 'live_google_places_state_fallback_no_coordinates';
-    $hotels = $hotelService->recommendByState($state, $nightlyBudget, 8);
-}
-
 $lastStopPayload = [
     'item_id' => (int)($lastStop['item_id'] ?? 0),
     'place_id' => (int)($lastStop['place_id'] ?? $requestedPlaceId),
@@ -203,23 +198,98 @@ $lastStopPayload = [
     'source_item' => (string)($lastStop['source_item'] ?? ''),
 ];
 
+if (!review_hotels_valid_coord($lat, $lng)) {
+    echo json_encode([
+        'status' => 'empty',
+        'message' => 'The selected final stop does not have valid coordinates.',
+        'last_stop' => $lastStopPayload,
+        'hotels' => [],
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
+$tripDays = max(1, (int)($itinerary['total_days'] ?? 1));
+$budget = (float)($itinerary['budget'] ?? 0);
+$nightlyBudget = $budget > 0 ? ($budget * 0.30) / max(1, $tripDays - 1) : 0.0;
+
+$cache = new HotelSearchCacheService($conn, 87600); // Permanent practical cache: 10 years.
+$cacheKey = $cache->makeKey((float)$lat, (float)$lng, $placeName, $state, $district);
+$cached = $cache->get($cacheKey);
+
+if ($cached) {
+    $hotels = $cached['hotels'];
+    $debug = [[
+        'stage' => 'hotel_cache',
+        'status' => 'HIT',
+        'source' => $cached['source'],
+        'has_serpapi_prices' => review_hotels_has_serp_prices($hotels),
+    ]];
+
+    // Only use SerpAPI when user explicitly asks for pricing and cached hotels do not already have SerpAPI prices.
+    if ($lookupPricing && !review_hotels_has_serp_prices($hotels)) {
+        $pricingService = new SerpApiHotelPricingService();
+        $hotels = $pricingService->enrichPrices($hotels, (float)$lat, (float)$lng, $placeName, $state, $district);
+        $debug = array_merge($debug, $pricingService->getLastDebug());
+        $cache->set($cacheKey, (float)$lat, (float)$lng, $placeName, $state, $district, $hotels, 'google_places_with_optional_serpapi_pricing');
+    }
+
+    echo json_encode([
+        'status' => 'success',
+        'message' => $lookupPricing ? 'Hotel suggestions loaded from database cache with pricing check.' : 'Hotel suggestions loaded from database cache.',
+        'last_stop' => $lastStopPayload,
+        'source' => 'database_cache',
+        'pricing_lookup_used' => $lookupPricing,
+        'debug' => $debug,
+        'hotels' => $hotels,
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
+$hotelService = new HotelRecommendationService($conn);
+$hotels = $hotelService->recommendNearPlace((float)$lat, (float)$lng, $placeName, $state, $district, $nightlyBudget, 15.0, 8);
+$source = 'live_google_places_current_final_stop';
+$debug = $hotelService->getLastDebug();
+
+if (empty($hotels) && $state !== '') {
+    $source = 'live_google_places_state_fallback_after_empty_nearby';
+    $hotels = $hotelService->recommendByState($state, $nightlyBudget, 8);
+    $debug = array_merge($debug, $hotelService->getLastDebug());
+}
+
 if (empty($hotels)) {
     echo json_encode([
         'status' => 'empty',
         'message' => 'No nearby hotels were returned by live Google Places for the selected final stop.',
         'last_stop' => $lastStopPayload,
         'source' => $source,
-        'debug' => $hotelService->getLastDebug(),
+        'pricing_lookup_used' => false,
+        'debug' => $debug,
         'hotels' => [],
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
 }
 
+foreach ($hotels as &$hotel) {
+    $hotel['price_source'] = $hotel['price_source'] ?? 'planning_estimate';
+}
+unset($hotel);
+
+// Do not use SerpAPI automatically. Only call it when lookup_pricing=1.
+if ($lookupPricing) {
+    $pricingService = new SerpApiHotelPricingService();
+    $hotels = $pricingService->enrichPrices($hotels, (float)$lat, (float)$lng, $placeName, $state, $district);
+    $debug = array_merge($debug, $pricingService->getLastDebug());
+    $source = 'google_places_with_optional_serpapi_pricing';
+}
+
+$cache->set($cacheKey, (float)$lat, (float)$lng, $placeName, $state, $district, $hotels, $source);
+
 echo json_encode([
     'status' => 'success',
-    'message' => 'Live Google Places hotel suggestions loaded.',
+    'message' => $lookupPricing ? 'Live Google Places hotels loaded and pricing lookup completed.' : 'Live Google Places hotel suggestions loaded with estimated prices.',
     'last_stop' => $lastStopPayload,
     'source' => $source,
-    'debug' => $hotelService->getLastDebug(),
+    'pricing_lookup_used' => $lookupPricing,
+    'debug' => $debug,
     'hotels' => $hotels,
 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
