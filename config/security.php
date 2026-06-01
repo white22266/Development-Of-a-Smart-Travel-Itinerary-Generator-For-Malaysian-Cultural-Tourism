@@ -164,34 +164,7 @@ HTML;
         });
     }
 
-    function fixEmptyHotelSection() {
-        var hotelCards = document.querySelectorAll('.hotel-card-review');
-        if (hotelCards.length > 0) return;
-
-        var target = null;
-        document.querySelectorAll('.card').forEach(function (card) {
-            if (target) return;
-            var heading = card.querySelector('h3');
-            if (heading && heading.textContent.trim().toLowerCase() === 'select your hotel') {
-                target = card;
-            }
-        });
-
-        if (!target || target.dataset.emptyHotelFixed === '1') return;
-        target.dataset.emptyHotelFixed = '1';
-
-        target.innerHTML =
-            '<h3 style="margin-bottom:6px;">Select Your Hotel</h3>' +
-            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Live accommodation suggestions from Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
-            '<div class="hotel-empty-state">' +
-            '<strong>No hotel suggestions are available right now.</strong>' +
-            'This can happen when Google Places returns no lodging results, the Google Maps API key is missing, Places API is not enabled, billing/quota is blocked, or the itinerary location has insufficient hotel data. You can still confirm the itinerary without selecting a hotel.' +
-            '</div>';
-    }
-
     function installKeepFix() {
-        fixEmptyHotelSection();
-
         if (!document.querySelector('.place-card') || !document.getElementById('btn-confirm')) {
             return;
         }
@@ -211,7 +184,6 @@ HTML;
             var wrappedResetAll = function () {
                 originalResetAll();
                 restoreReviewButtons();
-                fixEmptyHotelSection();
             };
             wrappedResetAll.__keepFixApplied = true;
             window.resetAll = wrappedResetAll;
@@ -286,9 +258,16 @@ if (!function_exists('csrf_inject_html')) {
                 $html = str_ireplace('</head>', $reviewCss . "\n</head>", $html);
             }
             if (stripos($html, '</body>') !== false) {
-                $html = str_ireplace('</body>', $reviewScript . "\n</body>", $html);
+                $loaderScript = '';
+                if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
+                    $loaderScript = '<script src="../assets/itinerary_review_hotel_loader.js?v=20260601"></script>' . "\n";
+                }
+                $html = str_ireplace('</body>', $reviewScript . "\n" . $loaderScript . "</body>", $html);
             } else {
                 $html .= $reviewScript;
+                if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
+                    $html .= '<script src="../assets/itinerary_review_hotel_loader.js?v=20260601"></script>';
+                }
             }
         }
 
