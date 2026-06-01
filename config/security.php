@@ -58,6 +58,136 @@ if (!function_exists('verify_csrf_token')) {
     }
 }
 
+if (!function_exists('is_itinerary_review_page')) {
+    function is_itinerary_review_page(): bool
+    {
+        $script = (string) ($_SERVER['SCRIPT_NAME'] ?? '');
+        $uri = (string) ($_SERVER['REQUEST_URI'] ?? '');
+        return str_contains($script, 'itinerary_review.php') || str_contains($uri, 'itinerary_review.php');
+    }
+}
+
+if (!function_exists('itinerary_review_keep_fix_assets')) {
+    function itinerary_review_keep_fix_assets(): array
+    {
+        $css = <<<'HTML'
+<style id="itinerary-review-keep-fix-style">
+.place-card.confirmed {
+    border-color: #16a34a !important;
+    background: #f0fdf4 !important;
+}
+.place-card.confirmed .place-actions button {
+    display: none !important;
+}
+.place-card.confirmed .review-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #dcfce7 !important;
+    color: #15803d !important;
+    border: 1px solid rgba(34, 197, 94, .28);
+}
+.confirmed-note {
+    background: #dcfce7 !important;
+    color: #15803d !important;
+}
+</style>
+HTML;
+
+        $script = <<<'HTML'
+<script id="itinerary-review-keep-fix-script">
+(function () {
+    function markConfirmed(itemId) {
+        var card = document.getElementById('card-' + itemId);
+        if (!card) return;
+
+        card.classList.remove('rejected', 'replacing');
+        card.classList.add('accepted', 'confirmed');
+        card.dataset.status = 'accepted';
+        card.dataset.confirmed = '1';
+
+        ['btn-accept-', 'btn-reject-', 'btn-replace-'].forEach(function (prefix) {
+            var button = document.getElementById(prefix + itemId);
+            if (!button) return;
+            button.style.display = 'none';
+            button.disabled = true;
+        });
+
+        var status = document.getElementById('status-' + itemId);
+        if (status) {
+            status.textContent = '✔ Confirmed';
+            status.setAttribute('aria-label', 'Confirmed');
+        }
+
+        var replacement = document.getElementById('replacement-' + itemId);
+        if (replacement && replacement.classList.contains('visible')) {
+            replacement.innerHTML = '<span class="pending-change-note confirmed-note">✔ Confirmed replacement</span>';
+        }
+    }
+
+    function restoreReviewButtons() {
+        document.querySelectorAll('.place-card').forEach(function (card) {
+            card.classList.remove('confirmed');
+            card.dataset.confirmed = '0';
+
+            var itemId = card.dataset.itemId;
+            if (!itemId) return;
+
+            ['btn-accept-', 'btn-reject-', 'btn-replace-'].forEach(function (prefix) {
+                var button = document.getElementById(prefix + itemId);
+                if (!button) return;
+                button.style.display = '';
+                button.disabled = false;
+            });
+
+            var status = document.getElementById('status-' + itemId);
+            if (status && status.textContent.indexOf('Confirmed') !== -1) {
+                status.textContent = 'Kept';
+                status.removeAttribute('aria-label');
+            }
+        });
+    }
+
+    function installKeepFix() {
+        if (!document.querySelector('.place-card') || !document.getElementById('btn-confirm')) {
+            return;
+        }
+
+        if (typeof window.acceptPlace === 'function' && !window.acceptPlace.__keepFixApplied) {
+            var originalAcceptPlace = window.acceptPlace;
+            var wrappedAcceptPlace = function (itemId) {
+                originalAcceptPlace(itemId);
+                markConfirmed(itemId);
+            };
+            wrappedAcceptPlace.__keepFixApplied = true;
+            window.acceptPlace = wrappedAcceptPlace;
+        }
+
+        if (typeof window.resetAll === 'function' && !window.resetAll.__keepFixApplied) {
+            var originalResetAll = window.resetAll;
+            var wrappedResetAll = function () {
+                originalResetAll();
+                restoreReviewButtons();
+            };
+            wrappedResetAll.__keepFixApplied = true;
+            window.resetAll = wrappedResetAll;
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', installKeepFix);
+    } else {
+        installKeepFix();
+    }
+    window.addEventListener('load', installKeepFix);
+})();
+</script>
+HTML;
+
+        return [$css, $script];
+    }
+}
+
 if (!function_exists('csrf_inject_html')) {
     function csrf_inject_html(string $html): string
     {
@@ -104,6 +234,18 @@ if (!function_exists('csrf_inject_html')) {
                 . '</script>' . "\n";
 
             $html = str_ireplace('</head>', $csrfHead . '</head>', $html);
+        }
+
+        if (is_itinerary_review_page() && stripos($html, 'itinerary-review-keep-fix-script') === false) {
+            [$reviewCss, $reviewScript] = itinerary_review_keep_fix_assets();
+            if (stripos($html, '</head>') !== false && stripos($html, 'itinerary-review-keep-fix-style') === false) {
+                $html = str_ireplace('</head>', $reviewCss . "\n</head>", $html);
+            }
+            if (stripos($html, '</body>') !== false) {
+                $html = str_ireplace('</body>', $reviewScript . "\n</body>", $html);
+            } else {
+                $html .= $reviewScript;
+            }
         }
 
         return $html;
