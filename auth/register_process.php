@@ -55,6 +55,16 @@ if ($fullName === "" || $email === "" || $password === "" || $confirm === "") {
 if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = "Invalid email format.";
 }
+if ($phone !== "") {
+    $normalizedPhone = preg_replace('/\s+/', '', $phone) ?? $phone;
+    if (preg_match('/[A-Za-z]/', $normalizedPhone)) {
+        $errors[] = "Phone number cannot contain alphabets.";
+    } elseif (!preg_match('/^(?:\+?60|0)1\d[-]?\d{7,8}$/', $normalizedPhone)) {
+        $errors[] = "Invalid phone number format. Example: 012-3456789 or +60123456789.";
+    } else {
+        $phone = $normalizedPhone;
+    }
+}
 if ($password !== "" && strlen($password) < 6) {
     $errors[] = "Password must be at least 6 characters.";
 }
