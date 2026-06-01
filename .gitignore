@@ -1,0 +1,27 @@
+# Local environment secrets
+.env
+.env.local
+.env.*.local
+
+# Composer dependencies
+/vendor/
+
+# Runtime logs
+*.log
+logs/
+
+# Local IDE/editor files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# User-generated uploads should not be committed
+uploads/
+*/uploads/
+
+# Local database exports containing real data
+*_dump.sql
+*_backup.sql
+backup*.sql
