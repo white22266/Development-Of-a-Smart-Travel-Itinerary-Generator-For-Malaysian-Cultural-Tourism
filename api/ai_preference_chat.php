@@ -190,19 +190,10 @@ function call_ollama_chat(string $model, string $prompt): array
             ],
         ],
         "stream" => false,
-<<<<<<< HEAD
         "options" => [
             "temperature" => 0.45,
             "num_ctx" => defined("OLLAMA_NUM_CTX") ? OLLAMA_NUM_CTX : 512,
             "num_predict" => 140,
-=======
-        "keep_alive" => -1,
-        "options" => [
-            "temperature" => 0.2,
-            "num_ctx" => 512,
-            "num_predict" => 80,
-            "num_thread" => 2,
->>>>>>> c59493183e4c5e0707aa7f8f2c48df751fa2593a
         ],
     ];
 
