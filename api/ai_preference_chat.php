@@ -322,6 +322,18 @@ function parse_trip_date(string $text): ?string
     if (preg_match('/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/', $text, $m)) {
         return valid_date((int)$m[3], (int)$m[2], (int)$m[1]);
     }
+    if (preg_match('/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-]+([a-zA-Z]+)[,\s\/\-]+(\d{4})\b/', $text, $m)) {
+        $monthKey = strtolower($m[2]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[3], $months[$monthKey], (int)$m[1]);
+        }
+    }
+    if (preg_match('/\b([a-zA-Z]+)[\s\/\-]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-]+(\d{4})\b/', $text, $m)) {
+        $monthKey = strtolower($m[1]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
+        }
+    }
     if (preg_match('/\b(\d{1,2})(\d{4})([a-zA-Z]+)\b/', $text, $m)) {
         $monthKey = strtolower($m[3]);
         if (isset($months[$monthKey])) {

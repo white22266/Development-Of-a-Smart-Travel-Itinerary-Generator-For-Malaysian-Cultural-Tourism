@@ -905,6 +905,11 @@ foreach ($preferences as $pref) {
         m = String(text || '').match(/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/);
         if (m) return normalDate(Number(m[3]), Number(m[2]), Number(m[1]));
 
+        m = String(text || '').match(/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-]+([a-zA-Z]+)[,\s\/\-]+(\d{4})\b/);
+        if (m && months[m[2].toLowerCase()]) return normalDate(Number(m[3]), months[m[2].toLowerCase()], Number(m[1]));
+        m = String(text || '').match(/\b([a-zA-Z]+)[\s\/\-]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-]+(\d{4})\b/);
+        if (m && months[m[1].toLowerCase()]) return normalDate(Number(m[3]), months[m[1].toLowerCase()], Number(m[2]));
+
         m = String(text || '').match(/\b(\d{1,2})(\d{4})([a-zA-Z]+)\b/);
         if (m && months[m[3].toLowerCase()]) return normalDate(Number(m[2]), months[m[3].toLowerCase()], Number(m[1]));
         m = String(text || '').match(/\b([a-zA-Z]+)(\d{1,2})(\d{4})\b/);
