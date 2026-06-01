@@ -195,7 +195,11 @@ function call_ollama_chat(string $model, string $prompt): array
             ],
         ],
         "stream" => false,
-        "options" => ["temperature" => 0.45],
+        "options" => [
+            "temperature" => 0.45,
+            "num_ctx" => defined("OLLAMA_NUM_CTX") ? OLLAMA_NUM_CTX : 512,
+            "num_predict" => 140,
+        ],
     ];
 
     $ch = curl_init($url);
