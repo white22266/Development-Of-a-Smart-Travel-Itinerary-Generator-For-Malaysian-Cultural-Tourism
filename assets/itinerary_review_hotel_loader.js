@@ -1,6 +1,16 @@
 // assets/itinerary_review_hotel_loader.js
 // Loads hotel suggestions near the final itinerary stop and renders selectable hotel cards.
 (function () {
+    function getItineraryId() {
+        if (typeof window.ITINERARY_ID !== 'undefined') return window.ITINERARY_ID;
+        try {
+            var params = new URLSearchParams(window.location.search);
+            return params.get('itinerary_id') || '';
+        } catch (e) {
+            return '';
+        }
+    }
+
     function escHtml(value) {
         return String(value == null ? '' : value)
             .replace(/&/g, '&amp;')
@@ -132,14 +142,15 @@
         if (window.__itineraryReviewHotelsLoaded) return;
         window.__itineraryReviewHotelsLoaded = true;
 
-        if (typeof window.ITINERARY_ID === 'undefined') return;
+        var itineraryId = getItineraryId();
+        if (!itineraryId) return;
         var section = ensureHotelSection();
         if (!section) return;
 
         renderLoading(section);
 
         try {
-            var response = await fetch('review_hotels.php?itinerary_id=' + encodeURIComponent(window.ITINERARY_ID), {
+            var response = await fetch('review_hotels.php?itinerary_id=' + encodeURIComponent(itineraryId), {
                 method: 'GET',
                 headers: { 'Accept': 'application/json' }
             });
