@@ -18,7 +18,8 @@ if (restore_remembered_login($conn)) {
 
 <head>
     <meta charset="UTF-8">
-    <title>Smart Travel Itinerary Generator - Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Travel Itinerary Generator</title>
     <link rel="stylesheet" href="assets/style.css?v=20260513">
 </head>
 
