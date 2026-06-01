@@ -192,7 +192,7 @@ $context = [
 
 $fallbackAnswer = build_local_editor_answer($proposals);
 $model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://localhost:11434";
+$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://127.0.0.1:11434";
 $assistant = new AiTravelAssistantService($model, $baseUrl);
 $result = $assistant->answer($message !== "" ? $message : "Suggest improvements for this itinerary.", $context);
 

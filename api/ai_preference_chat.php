@@ -178,7 +178,7 @@ function call_ollama_chat(string $model, string $prompt): array
         return ["status" => "error", "message" => "PHP cURL is not enabled."];
     }
 
-    $baseUrl = defined("OLLAMA_BASE_URL") ? trim((string)OLLAMA_BASE_URL) : "http://localhost:11434";
+    $baseUrl = defined("OLLAMA_BASE_URL") ? trim((string)OLLAMA_BASE_URL) : "http://127.0.0.1:11434";
     $baseUrl = rtrim($baseUrl, "/");
     $url = str_ends_with($baseUrl, "/api") ? $baseUrl . "/chat" : $baseUrl . "/api/chat";
 
@@ -206,6 +206,7 @@ function call_ollama_chat(string $model, string $prompt): array
         CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
         CURLOPT_TIMEOUT => 120,
         CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
     ]);
 
     $raw = curl_exec($ch);
@@ -214,6 +215,7 @@ function call_ollama_chat(string $model, string $prompt): array
     curl_close($ch);
 
     if ($raw === false || $err !== "") {
+        error_log("Ollama preference chat request failed: " . $err . " | URL: " . $url);
         return ["status" => "error", "message" => "AI service is currently unavailable.", "source" => "ollama"];
     }
 

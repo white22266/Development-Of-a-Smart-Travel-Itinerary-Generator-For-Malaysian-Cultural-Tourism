@@ -10,7 +10,7 @@ class AiTravelAssistantService
     public function __construct(?string $model = null, ?string $baseUrl = null)
     {
         $this->model = trim((string)($model ?: 'qwen2.5:3b'));
-        $this->baseUrl = rtrim(trim((string)($baseUrl ?: 'http://localhost:11434')), '/');
+        $this->baseUrl = rtrim(trim((string)($baseUrl ?: 'http://127.0.0.1:11434')), '/');
     }
 
     public function answer(string $question, array $context): array
@@ -63,6 +63,7 @@ class AiTravelAssistantService
             CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
             CURLOPT_TIMEOUT => 180,
             CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
         $raw = curl_exec($ch);
@@ -71,6 +72,7 @@ class AiTravelAssistantService
         curl_close($ch);
 
         if ($raw === false || $err !== '') {
+            error_log('Ollama AI request failed: ' . $err . ' | URL: ' . $url);
             return [
                 'status' => 'error',
                 'answer' => 'AI service is currently unavailable. Please make sure Ollama is running.',

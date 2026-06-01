@@ -29,8 +29,8 @@ class AccessibilityNeedsAnalysisService
         $this->model = trim((string)($model ?: (defined('OLLAMA_MODEL') ? OLLAMA_MODEL : 'qwen2.5:3b')));
         if ($this->model === '') $this->model = 'qwen2.5:3b';
 
-        $this->baseUrl = rtrim(trim((string)($baseUrl ?: (defined('OLLAMA_BASE_URL') ? OLLAMA_BASE_URL : 'http://localhost:11434'))), '/');
-        if ($this->baseUrl === '') $this->baseUrl = 'http://localhost:11434';
+        $this->baseUrl = rtrim(trim((string)($baseUrl ?: (defined('OLLAMA_BASE_URL') ? OLLAMA_BASE_URL : 'http://127.0.0.1:11434'))), '/');
+        if ($this->baseUrl === '') $this->baseUrl = 'http://127.0.0.1:11434';
     }
 
     public function analyze(string $rawText, string $travellerType = 'solo'): array
@@ -96,6 +96,7 @@ class AccessibilityNeedsAnalysisService
             CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
             CURLOPT_TIMEOUT => 20,
             CURLOPT_CONNECTTIMEOUT => 3,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
         $raw = curl_exec($ch);
@@ -104,6 +105,7 @@ class AccessibilityNeedsAnalysisService
         curl_close($ch);
 
         if ($raw === false || $err !== '') {
+            error_log('Ollama accessibility request failed: ' . $err . ' | URL: ' . $url);
             return ['status' => 'error', 'message' => 'AI service is currently unavailable.'];
         }
 

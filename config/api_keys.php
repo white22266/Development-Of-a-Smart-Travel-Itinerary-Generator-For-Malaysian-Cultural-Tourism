@@ -26,4 +26,4 @@ define('SMTP_FROM_NAME', trim((string) env_value('SMTP_FROM_NAME', 'Admin Smart 
 
 // Local AI for traveller chatbox and AI itinerary assistant.
 define('OLLAMA_MODEL', trim((string) env_value('OLLAMA_MODEL', 'qwen2.5:3b')));
-define('OLLAMA_BASE_URL', rtrim(trim((string) env_value('OLLAMA_BASE_URL', 'http://localhost:11434')), '/'));
+define('OLLAMA_BASE_URL', rtrim(trim((string) env_value('OLLAMA_BASE_URL', 'http://127.0.0.1:11434')), '/'));

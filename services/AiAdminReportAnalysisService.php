@@ -14,7 +14,7 @@ class AiAdminReportAnalysisService
     public function __construct(?string $model = null, ?string $baseUrl = null)
     {
         $this->model = trim((string)($model ?: 'qwen2.5:3b'));
-        $this->baseUrl = rtrim(trim((string)($baseUrl ?: 'http://localhost:11434')), '/');
+        $this->baseUrl = rtrim(trim((string)($baseUrl ?: 'http://127.0.0.1:11434')), '/');
     }
 
     public function analyze(array $reportData): array
@@ -67,6 +67,7 @@ class AiAdminReportAnalysisService
             CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
             CURLOPT_TIMEOUT => 180,
             CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
         $raw = curl_exec($ch);
@@ -75,6 +76,7 @@ class AiAdminReportAnalysisService
         curl_close($ch);
 
         if ($raw === false || $err !== '' || $code < 200 || $code >= 300) {
+            error_log('Ollama admin report request failed: HTTP ' . $code . ' ' . $err . ' | URL: ' . $url);
             return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'AI service unavailable.'];
         }
 

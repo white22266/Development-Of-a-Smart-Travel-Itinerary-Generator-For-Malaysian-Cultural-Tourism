@@ -416,7 +416,7 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
 function build_ai_analysis(array $report): array
 {
     $model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-    $baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://localhost:11434";
+    $baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://127.0.0.1:11434";
     $svc = new AiAdminReportAnalysisService($model, $baseUrl);
     $ai = $svc->analyze($report["raw"]);
     $ai["analysis"] = clean_ai_report_text((string)($ai["analysis"] ?? ""));
