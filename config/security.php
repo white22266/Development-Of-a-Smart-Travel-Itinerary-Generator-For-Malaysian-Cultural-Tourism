@@ -91,6 +91,22 @@ if (!function_exists('itinerary_review_keep_fix_assets')) {
     background: #dcfce7 !important;
     color: #15803d !important;
 }
+.hotel-empty-state {
+    margin-top: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 158, 11, .32);
+    background: #fffbeb;
+    color: #78350f;
+    font-size: 12.5px;
+    line-height: 1.45;
+}
+.hotel-empty-state strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #92400e;
+    font-size: 13px;
+}
 </style>
 HTML;
 
@@ -148,7 +164,34 @@ HTML;
         });
     }
 
+    function fixEmptyHotelSection() {
+        var hotelCards = document.querySelectorAll('.hotel-card-review');
+        if (hotelCards.length > 0) return;
+
+        var target = null;
+        document.querySelectorAll('.card').forEach(function (card) {
+            if (target) return;
+            var heading = card.querySelector('h3');
+            if (heading && heading.textContent.trim().toLowerCase() === 'select your hotel') {
+                target = card;
+            }
+        });
+
+        if (!target || target.dataset.emptyHotelFixed === '1') return;
+        target.dataset.emptyHotelFixed = '1';
+
+        target.innerHTML =
+            '<h3 style="margin-bottom:6px;">Select Your Hotel</h3>' +
+            '<p class="meta" style="margin-top:0; margin-bottom:14px;">Live accommodation suggestions from Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>' +
+            '<div class="hotel-empty-state">' +
+            '<strong>No hotel suggestions are available right now.</strong>' +
+            'This can happen when Google Places returns no lodging results, the Google Maps API key is missing, Places API is not enabled, billing/quota is blocked, or the itinerary location has insufficient hotel data. You can still confirm the itinerary without selecting a hotel.' +
+            '</div>';
+    }
+
     function installKeepFix() {
+        fixEmptyHotelSection();
+
         if (!document.querySelector('.place-card') || !document.getElementById('btn-confirm')) {
             return;
         }
@@ -168,6 +211,7 @@ HTML;
             var wrappedResetAll = function () {
                 originalResetAll();
                 restoreReviewButtons();
+                fixEmptyHotelSection();
             };
             wrappedResetAll.__keepFixApplied = true;
             window.resetAll = wrappedResetAll;
