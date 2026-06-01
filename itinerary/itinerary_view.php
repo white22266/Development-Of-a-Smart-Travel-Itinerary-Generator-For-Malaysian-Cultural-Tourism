@@ -1904,13 +1904,16 @@ async function sendAiMessage(event) {
     const loading = addAiMessage('bot', 'Writing answer...');
 
     try {
-        const hotelIntent = /hotel|accommodation|stay|room|住宿|酒店|旅馆/i.test(text);
-        const editIntent = /replace|change|swap|modify|regenerate|alternative|better stop|change stop|arrange|empty|add|extra|fill|day\s*\d+|day\d+|更改|替换|换掉|换|改行程|重新推荐|安排|添加|加|空|没有|补/i.test(text);
-        const endpoint = hotelIntent ? '../api/ai_hotel_assistant.php' : (editIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php');
+        const originIntent = /\b(starting\s+location|start\s+location|starting\s+point|start\s+point|origin|start\s+from|starting\s+from|depart\s+from|leave\s+from)\b/i.test(text);
+        const dateIntent = /\b(start\s+date|travel\s+date|trip\s+date|travel\s+on|go\s+on|visit\s+on|arrive\s+on|depart\s+on|date)\b|\b\d{4}[\/\-.]\d{1,2}[\/\-.]\d{1,2}\b|\b\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{4}\b|\b\d{1,2}\s*[a-zA-Z]+\s*\d{4}\b|\b[a-zA-Z]+\s*\d{1,2}\s*\d{4}\b/i.test(text);
+        const weatherIntent = /\b(weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella)\b|天气|下雨|热/i.test(text);
+        const smartHotelIntent = /\b(hotel|hotels|accommodation|stay|stays|room|rooms|sleep|overnight|check\s*in|nearby\s+hotel|budget\s+hotel|cheap\s+hotel|luxury\s+hotel|place\s+to\s+stay)\b|住宿|酒店|旅馆|旅店|民宿/i.test(text);
+        const smartEditIntent = !originIntent && !dateIntent && !weatherIntent && /\b(replace|change|swap|modify|regenerate|replan|reroute|alternative|alternatives|better\s+stop|change\s+stop|arrange|empty|add|extra|fill|more\s+places?|another\s+place|new\s+place|remove|delete|skip|dislike|don't\s+want|do\s+not\s+want|too\s+far|too\s+expensive|nearest|nearby|improve|suggest\s+place|recommend\s+place|reduce\s+cost|cheaper|lower\s+cost|save\s+money|budget\s+friendly|day\s*\d+|day\d+)\b|更改|替换|换掉|换|改行程|重新推荐|重新安排|省钱|便宜|安排|添加|加|空|没有|补/i.test(text);
+        const endpoint = smartHotelIntent ? '../api/ai_hotel_assistant.php' : (smartEditIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php');
         const resp = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams((hotelIntent || editIntent) ? {
+            body: new URLSearchParams((smartHotelIntent || smartEditIntent) ? {
                 action: 'recommend',
                 itinerary_id: ITINERARY_ID,
                 message: text,
@@ -1931,10 +1934,10 @@ async function sendAiMessage(event) {
         } else if (data.pending_action) {
             renderPendingAction(loading, data.pending_action);
         }
-        if (hotelIntent && data.hotels && data.hotels.length) {
+        if (smartHotelIntent && data.hotels && data.hotels.length) {
             renderHotelCards(loading, data.hotels);
         }
-        if (editIntent && data.proposals && data.proposals.length) {
+        if (smartEditIntent && data.proposals && data.proposals.length) {
             renderChangeCards(loading, data.proposals);
         }
     } catch (e) {

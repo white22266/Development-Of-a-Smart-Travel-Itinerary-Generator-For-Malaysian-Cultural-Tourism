@@ -459,7 +459,9 @@ function is_add_or_regenerate_request(string $message): bool
     $msg = strtolower($message);
     $terms = [
         "empty", "arrange", "add", "extra", "fill", "day 2", "day2", "regenerate",
-        "replan", "more place", "more places", "complete my day", "plan my day",
+        "replan", "more", "more place", "more places", "another place", "new place",
+        "recommend place", "suggest place", "nearby place", "nearest place",
+        "complete my day", "plan my day", "fill day", "add stop", "add attraction",
         "没有", "空", "安排", "添加", "加", "多一点", "重新安排", "重新推荐", "补"
     ];
     foreach ($terms as $term) {

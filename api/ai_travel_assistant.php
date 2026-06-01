@@ -177,6 +177,31 @@ if (($result["status"] ?? "") !== "success" || $answer === "") {
     $answer = "I can help with this trip, but the local AI service is not available right now. You can still use the rule-based itinerary generator, hotel confirmation, and route tools.";
 }
 
+$combinedDetailText = trim($message . "\n" . $answer);
+if (empty($pendingActions)) {
+    $aiDate = parse_trip_date($combinedDetailText);
+    if ($aiDate && (is_date_detail_message($message) || is_date_detail_message($answer))) {
+        $pendingActions[] = [
+            "type" => "update_start_date",
+            "start_date" => $aiDate,
+            "label" => format_display_date($aiDate),
+            "summary" => "Update this itinerary start date to " . format_display_date($aiDate),
+        ];
+    }
+}
+if (!array_filter($pendingActions, fn($a) => ($a["type"] ?? "") === "update_origin")) {
+    $aiOrigin = extract_origin_name($combinedDetailText);
+    if ($aiOrigin !== "") {
+        $pendingActions[] = [
+            "type" => "update_origin",
+            "origin_name" => $aiOrigin,
+            "label" => $aiOrigin,
+            "summary" => "Update starting location to " . $aiOrigin,
+        ];
+    }
+}
+$pendingAction = $pendingActions[0] ?? null;
+
 if ($pendingAction) {
     $answer .= "\n\nI detected " . describe_pending_action($pendingAction) . ". Please confirm if this is correct.";
 }
@@ -267,11 +292,40 @@ function parse_trip_date(string $text): ?string
         "nov" => 11, "november" => 11,
         "dec" => 12, "december" => 12,
     ];
-    if (preg_match('/\b(\d{4})-(\d{1,2})-(\d{1,2})\b/', $text, $m)) {
+    if (preg_match('/\b(\d{4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})\b/', $text, $m)) {
         return valid_date((int)$m[1], (int)$m[2], (int)$m[3]);
     }
-    if (preg_match('/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/', $text, $m)) {
-        return valid_date((int)$m[3], (int)$m[2], (int)$m[1]);
+    if (preg_match('/\b(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})\b/', $text, $m)) {
+        $first = (int)$m[1];
+        $second = (int)$m[2];
+        $year = (int)$m[3];
+        if ($first > 12) return valid_date($year, $second, $first);
+        if ($second > 12) return valid_date($year, $first, $second);
+        return valid_date($year, $second, $first);
+    }
+    if (preg_match('/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)[,\s\/\-.]+(\d{4})\b/', $text, $m)) {
+        $monthKey = strtolower($m[2]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[3], $months[$monthKey], (int)$m[1]);
+        }
+    }
+    if (preg_match('/\b([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-.]+(\d{4})\b/', $text, $m)) {
+        $monthKey = strtolower($m[1]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
+        }
+    }
+    if (preg_match('/\b(\d{4})[\s\/\-.]+([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?\b/', $text, $m)) {
+        $monthKey = strtolower($m[2]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[1], $months[$monthKey], (int)$m[3]);
+        }
+    }
+    if (preg_match('/\b(\d{4})[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)\b/', $text, $m)) {
+        $monthKey = strtolower($m[3]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[1], $months[$monthKey], (int)$m[2]);
+        }
     }
     if (preg_match('/\b(\d{1,2})(\d{4})([a-zA-Z]+)\b/', $text, $m)) {
         $monthKey = strtolower($m[3]);
@@ -325,6 +379,9 @@ function is_date_detail_message(string $message): bool
 function extract_origin_name(string $message): string
 {
     $patterns = [
+        '/\b(?:change|update|set|use|replace)\s+(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s+(?:to|as)\s+(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s*(?:is|=|:)\s*(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:i\s+will\s+start|i\s+start|start\s+me|route\s+me|start\s+from|starting\s+from)\s+(?:at|from)?\s*(.+?)(?:\s+(?:to|on|for)\b|[.!?]|$)/iu',
         '/\b(?:start(?:ing)? from|depart(?:ing)? from|leave from|leaving from|from)\s+(.+?)(?:\s+(?:to|on|at|for)\b|[.!?]|$)/iu',
         '/\b(?:my starting location is|starting location is|origin is)\s+(.+?)(?:[.!?]|$)/iu',
     ];
@@ -332,7 +389,8 @@ function extract_origin_name(string $message): string
         if (preg_match($pattern, $message, $m)) {
             $value = trim(strip_tags((string)$m[1]));
             $value = preg_replace('/\s+/', ' ', $value) ?? "";
-            $value = preg_replace('/\b(?:on|at|for|to)\s*$/iu', '', $value) ?? $value;
+            $value = preg_replace('/\b(?:on|at|for|to|please|pls)\s*$/iu', '', $value) ?? $value;
+            $value = trim($value, " \t\n\r\0\x0B,;:");
             if (function_exists("mb_substr")) return trim(mb_substr($value, 0, 120));
             return trim(substr($value, 0, 120));
         }

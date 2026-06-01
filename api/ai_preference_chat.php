@@ -410,22 +410,39 @@ function parse_trip_date(string $text): ?string
         "nov" => 11, "november" => 11,
         "dec" => 12, "december" => 12
     ];
-    if (preg_match('/\b(\d{4})-(\d{1,2})-(\d{1,2})\b/', $text, $m)) {
+    if (preg_match('/\b(\d{4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})\b/', $text, $m)) {
         return valid_date((int)$m[1], (int)$m[2], (int)$m[3]);
     }
-    if (preg_match('/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/', $text, $m)) {
-        return valid_date((int)$m[3], (int)$m[2], (int)$m[1]);
+    if (preg_match('/\b(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})\b/', $text, $m)) {
+        $first = (int)$m[1];
+        $second = (int)$m[2];
+        $year = (int)$m[3];
+        if ($first > 12) return valid_date($year, $second, $first);
+        if ($second > 12) return valid_date($year, $first, $second);
+        return valid_date($year, $second, $first);
     }
-    if (preg_match('/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-]+([a-zA-Z]+)[,\s\/\-]+(\d{4})\b/', $text, $m)) {
+    if (preg_match('/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)[,\s\/\-.]+(\d{4})\b/', $text, $m)) {
         $monthKey = strtolower($m[2]);
         if (isset($months[$monthKey])) {
             return valid_date((int)$m[3], $months[$monthKey], (int)$m[1]);
         }
     }
-    if (preg_match('/\b([a-zA-Z]+)[\s\/\-]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-]+(\d{4})\b/', $text, $m)) {
+    if (preg_match('/\b([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-.]+(\d{4})\b/', $text, $m)) {
         $monthKey = strtolower($m[1]);
         if (isset($months[$monthKey])) {
             return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
+        }
+    }
+    if (preg_match('/\b(\d{4})[\s\/\-.]+([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?\b/', $text, $m)) {
+        $monthKey = strtolower($m[2]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[1], $months[$monthKey], (int)$m[3]);
+        }
+    }
+    if (preg_match('/\b(\d{4})[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)\b/', $text, $m)) {
+        $monthKey = strtolower($m[3]);
+        if (isset($months[$monthKey])) {
+            return valid_date((int)$m[1], $months[$monthKey], (int)$m[2]);
         }
     }
     if (preg_match('/\b(\d{1,2})(\d{4})([a-zA-Z]+)\b/', $text, $m)) {
@@ -494,6 +511,9 @@ function extract_planning_context(string $message, string $reply): array
         $context["hotel_requirement"] = sanitize_text($message, 180);
     }
     $originName = extract_origin_name($message);
+    if ($originName === "") {
+        $originName = extract_origin_name($reply);
+    }
     if ($originName !== "") {
         $context["origin_name"] = $originName;
     }
@@ -503,6 +523,9 @@ function extract_planning_context(string $message, string $reply): array
 function extract_origin_name(string $message): string
 {
     $patterns = [
+        '/\b(?:change|update|set|use|replace)\s+(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s+(?:to|as)\s+(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s*(?:is|=|:)\s*(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:i\s+will\s+start|i\s+start|start\s+me|route\s+me|start\s+from|starting\s+from)\s+(?:at|from)?\s*(.+?)(?:\s+(?:to|on|for)\b|[.!?]|$)/iu',
         '/\b(?:start(?:ing)? from|depart(?:ing)? from|leave from|leaving from|from)\s+(.+?)(?:\s+(?:to|on|at|for)\b|[.!?]|$)/iu',
         '/\b(?:my starting location is|starting location is|origin is)\s+(.+?)(?:[.!?]|$)/iu',
         '/(?:从|由|出发地是|起点是)\s*(.+?)(?:出发|去|到|，|。|,|$)/u',
@@ -510,7 +533,8 @@ function extract_origin_name(string $message): string
     foreach ($patterns as $pattern) {
         if (preg_match($pattern, $message, $m)) {
             $value = sanitize_text((string)$m[1], 120);
-            $value = preg_replace('/\b(?:on|at|for|to)\s*$/iu', '', $value) ?? $value;
+            $value = preg_replace('/\b(?:on|at|for|to|please|pls)\s*$/iu', '', $value) ?? $value;
+            $value = trim($value, " \t\n\r\0\x0B,;:");
             return trim($value);
         }
     }

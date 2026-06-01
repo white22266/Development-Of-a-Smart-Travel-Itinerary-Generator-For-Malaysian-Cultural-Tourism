@@ -899,16 +899,25 @@ foreach ($preferences as $pref) {
             jun:6,june:6,jul:7,july:7,aug:8,august:8,sep:9,sept:9,september:9,
             oct:10,october:10,nov:11,november:11,dec:12,december:12
         };
-        var m = String(text || '').match(/\b(\d{4})-(\d{1,2})-(\d{1,2})\b/);
+        var m = String(text || '').match(/\b(\d{4})[\/\-.](\d{1,2})[\/\-.](\d{1,2})\b/);
         if (m) return normalDate(Number(m[1]), Number(m[2]), Number(m[3]));
 
-        m = String(text || '').match(/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/);
-        if (m) return normalDate(Number(m[3]), Number(m[2]), Number(m[1]));
+        m = String(text || '').match(/\b(\d{1,2})[\/\-.](\d{1,2})[\/\-.](\d{4})\b/);
+        if (m) {
+            var a = Number(m[1]), b = Number(m[2]), y = Number(m[3]);
+            if (a > 12) return normalDate(y, b, a);
+            if (b > 12) return normalDate(y, a, b);
+            return normalDate(y, b, a);
+        }
 
-        m = String(text || '').match(/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-]+([a-zA-Z]+)[,\s\/\-]+(\d{4})\b/);
+        m = String(text || '').match(/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)[,\s\/\-.]+(\d{4})\b/);
         if (m && months[m[2].toLowerCase()]) return normalDate(Number(m[3]), months[m[2].toLowerCase()], Number(m[1]));
-        m = String(text || '').match(/\b([a-zA-Z]+)[\s\/\-]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-]+(\d{4})\b/);
+        m = String(text || '').match(/\b([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-.]+(\d{4})\b/);
         if (m && months[m[1].toLowerCase()]) return normalDate(Number(m[3]), months[m[1].toLowerCase()], Number(m[2]));
+        m = String(text || '').match(/\b(\d{4})[\s\/\-.]+([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?\b/);
+        if (m && months[m[2].toLowerCase()]) return normalDate(Number(m[1]), months[m[2].toLowerCase()], Number(m[3]));
+        m = String(text || '').match(/\b(\d{4})[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)\b/);
+        if (m && months[m[3].toLowerCase()]) return normalDate(Number(m[1]), months[m[3].toLowerCase()], Number(m[2]));
 
         m = String(text || '').match(/\b(\d{1,2})(\d{4})([a-zA-Z]+)\b/);
         if (m && months[m[3].toLowerCase()]) return normalDate(Number(m[2]), months[m[3].toLowerCase()], Number(m[1]));

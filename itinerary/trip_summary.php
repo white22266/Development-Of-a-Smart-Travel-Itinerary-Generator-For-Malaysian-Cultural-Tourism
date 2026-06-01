@@ -1106,15 +1106,18 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             clearAiPendingCards();
             const loading = addAiMessage('bot', 'Writing answer...');
             try {
-                const hotelIntent = /hotel|accommodation|stay|room|住宿|酒店|旅馆/i.test(text);
-                const editIntent = /replace|change|swap|modify|regenerate|alternative|better stop|change stop|reduce cost|cheaper|lower cost|更改|替换|换掉|换|改行程|重新推荐|改掉|省钱/i.test(text);
-                const endpoint = hotelIntent ? '../api/ai_hotel_assistant.php' : (editIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php');
+                const originIntent = /\b(starting\s+location|start\s+location|starting\s+point|start\s+point|origin|start\s+from|starting\s+from|depart\s+from|leave\s+from)\b/i.test(text);
+                const dateIntent = /\b(start\s+date|travel\s+date|trip\s+date|travel\s+on|go\s+on|visit\s+on|arrive\s+on|depart\s+on|date)\b|\b\d{4}[\/\-.]\d{1,2}[\/\-.]\d{1,2}\b|\b\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{4}\b|\b\d{1,2}\s*[a-zA-Z]+\s*\d{4}\b|\b[a-zA-Z]+\s*\d{1,2}\s*\d{4}\b/i.test(text);
+                const weatherIntent = /\b(weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella)\b|天气|下雨|热/i.test(text);
+                const smartHotelIntent = /\b(hotel|hotels|accommodation|stay|stays|room|rooms|sleep|overnight|check\s*in|nearby\s+hotel|budget\s+hotel|cheap\s+hotel|luxury\s+hotel|place\s+to\s+stay)\b|住宿|酒店|旅馆|旅店|民宿/i.test(text);
+                const smartEditIntent = !originIntent && !dateIntent && !weatherIntent && /\b(replace|change|swap|modify|regenerate|replan|reroute|alternative|alternatives|better\s+stop|change\s+stop|arrange|empty|add|extra|fill|more\s+places?|another\s+place|new\s+place|remove|delete|skip|dislike|don't\s+want|do\s+not\s+want|too\s+far|too\s+expensive|nearest|nearby|improve|suggest\s+place|recommend\s+place|reduce\s+cost|cheaper|lower\s+cost|day\s*\d+|day\d+)\b|更改|替换|换掉|换|改行程|重新推荐|重新安排|改掉|省钱|安排|添加|加|空|没有|补/i.test(text);
+                const endpoint = smartHotelIntent ? '../api/ai_hotel_assistant.php' : (smartEditIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php');
                 const resp = await fetch(endpoint, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     },
-                    body: new URLSearchParams(hotelIntent || editIntent ?
+                    body: new URLSearchParams(smartHotelIntent || smartEditIntent ?
                         {
                             action: 'recommend',
                             itinerary_id: ITINERARY_ID,
@@ -1135,10 +1138,10 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                 } else if (data.pending_action) {
                     renderPendingAction(loading, data.pending_action);
                 }
-                if (hotelIntent && data.hotels && data.hotels.length) {
+                if (smartHotelIntent && data.hotels && data.hotels.length) {
                     renderHotelCards(loading, data.hotels);
                 }
-                if (editIntent && data.proposals && data.proposals.length) {
+                if (smartEditIntent && data.proposals && data.proposals.length) {
                     renderChangeCards(loading, data.proposals);
                 }
             } catch (e) {
@@ -1202,19 +1205,25 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             if (!container) return;
             proposals.slice(0, 1).forEach((proposal) => {
                 const place = proposal.new_place || {};
+                const isAdd = proposal.proposal_type === 'add' || !Number(proposal.item_id || 0);
                 const card = document.createElement('div');
                 card.className = 'ai-pending-card ai-change-card';
                 const title = document.createElement('strong');
-                title.textContent = 'Day ' + proposal.day_no + ' stop ' + proposal.sequence_no + ': ' + (proposal.current_title || 'Current stop');
+                title.textContent = isAdd
+                    ? 'Day ' + proposal.day_no + ': add new stop'
+                    : 'Day ' + proposal.day_no + ' stop ' + proposal.sequence_no + ': ' + (proposal.current_title || 'Current stop');
                 const meta = document.createElement('span');
                 const cost = Number(place.estimated_cost || 0);
-                meta.textContent = 'Replace with ' + (place.name || 'new place') + ' - ' + (place.category || 'place') + ' - RM ' + cost.toFixed(2);
+                meta.textContent = (isAdd ? 'Add ' : 'Replace with ') + (place.name || 'new place') + ' - ' + (place.category || 'place') + ' - RM ' + cost.toFixed(2);
                 const reason = document.createElement('span');
                 reason.textContent = proposal.reason || 'AI suggested replacement';
                 const button = document.createElement('button');
                 button.type = 'button';
-                button.textContent = 'Confirm Change';
-                button.addEventListener('click', () => confirmItineraryChange(Number(proposal.item_id || 0), Number(place.place_id || 0)));
+                button.textContent = isAdd ? 'Confirm Add' : 'Confirm Change';
+                button.addEventListener('click', () => {
+                    if (isAdd) confirmItineraryAdd(Number(proposal.day_no || 0), Number(place.place_id || 0), button);
+                    else confirmItineraryChange(Number(proposal.item_id || 0), Number(place.place_id || 0), button);
+                });
                 card.appendChild(title);
                 card.appendChild(meta);
                 card.appendChild(reason);
@@ -1312,8 +1321,9 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             }
         }
 
-        async function confirmItineraryChange(itemId, placeId) {
+        async function confirmItineraryChange(itemId, placeId, button = null) {
             if (!itemId || !placeId) return;
+            if (button) button.disabled = true;
             const loading = addAiMessage('bot', 'Applying selected itinerary change and recalculating route/cost...');
             try {
                 const resp = await fetch('../api/ai_itinerary_editor.php', {
@@ -1334,10 +1344,44 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                     clearAiPendingCards();
                     setTimeout(() => window.location.reload(), 700);
                 } else {
+                    if (button) button.disabled = false;
                     if (loading) loading.textContent = data.answer || data.message || 'Could not apply this itinerary change.';
                 }
             } catch (e) {
+                if (button) button.disabled = false;
                 if (loading) loading.textContent = 'Network error while saving itinerary change. Please try again.';
+            }
+        }
+
+        async function confirmItineraryAdd(dayNo, placeId, button = null) {
+            if (!dayNo || !placeId) return;
+            if (button) button.disabled = true;
+            const loading = addAiMessage('bot', 'Adding selected place and recalculating route/cost...');
+            try {
+                const resp = await fetch('../api/ai_itinerary_editor.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        action: 'confirm_add',
+                        itinerary_id: ITINERARY_ID,
+                        day_no: String(dayNo),
+                        place_id: String(placeId)
+                    }),
+                });
+                const data = await parseJsonResponse(resp);
+                if (data.status === 'success') {
+                    if (loading) loading.textContent = data.answer || 'Place added. Reloading the updated summary...';
+                    clearAiPendingCards();
+                    setTimeout(() => window.location.reload(), 700);
+                } else {
+                    if (button) button.disabled = false;
+                    if (loading) loading.textContent = data.answer || data.message || 'Could not add this place.';
+                }
+            } catch (e) {
+                if (button) button.disabled = false;
+                if (loading) loading.textContent = 'Network error while adding place. Please try again.';
             }
         }
 
