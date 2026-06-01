@@ -1,6 +1,6 @@
 <?php
 // itinerary/review_confirm_nightly.php
-// Applies itinerary review changes and saves one hotel per overnight night.
+// Applies itinerary review changes and optionally saves one hotel per selected overnight night.
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -220,7 +220,7 @@ function nightly_insert_hotel_item(mysqli $conn, int $itineraryId, int $dayNo, i
     }
 
     $locationBits = array_filter([$hotelDistrict, $hotelState, $hotelAddress]);
-    $hotelNote = 'Hotel night ' . $nightNo . ' of ' . $totalNights
+    $hotelNote = 'Optional hotel night ' . $nightNo . ' of ' . $totalNights
         . ' | Nightly accommodation after Day ' . $dayNo
         . ' | Source: ' . $priceSource
         . (!empty($locationBits) ? ' | ' . implode(', ', $locationBits) : '')
@@ -266,15 +266,6 @@ $hotelSelectionsJson = trim((string)($_POST['hotel_selections_json'] ?? ''));
 $hotelSelections = $hotelSelectionsJson !== '' ? json_decode($hotelSelectionsJson, true) : [];
 if (!is_array($hotelSelections)) $hotelSelections = [];
 
-if ($totalNights > 0) {
-    for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++) {
-        if (empty($hotelSelections[(string)$nightNo]) && empty($hotelSelections[$nightNo])) {
-            echo json_encode(['status' => 'error', 'message' => 'Please select a hotel for Night ' . $nightNo . '.']);
-            exit;
-        }
-    }
-}
-
 $rejectedIds = [];
 if ($rejectedCsv !== '') {
     $rejectedIds = array_values(array_unique(array_filter(array_map('intval', explode(',', $rejectedCsv)))));
@@ -313,21 +304,23 @@ try {
     }
 
     $hotelTotal = 0.0;
+    $selectedHotelCount = 0;
     for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++) {
         $selection = $hotelSelections[(string)$nightNo] ?? $hotelSelections[$nightNo] ?? null;
         if (!is_array($selection)) continue;
         $hotel = $selection['hotel'] ?? $selection;
-        if (!is_array($hotel)) continue;
+        if (!is_array($hotel) || trim((string)($hotel['name'] ?? '')) === '') continue;
         $dayNo = max(1, min($nightNo, $totalDays));
         nightly_insert_hotel_item($conn, $itineraryId, $dayNo, $nightNo, $totalNights, $hotel);
         $hotelTotal += max(0.0, (float)($hotel['price_per_night'] ?? 0));
+        $selectedHotelCount++;
     }
 
     if (nightly_table_has_column($conn, 'itineraries', 'selected_hotel_name')) {
-        $summaryName = $totalNights > 1 ? 'Nightly hotels selected' : (($hotelSelections['1']['hotel']['name'] ?? $hotelSelections[1]['hotel']['name'] ?? 'Selected hotel'));
+        $summaryName = $selectedHotelCount > 1 ? 'Optional nightly hotels selected' : ($selectedHotelCount === 1 ? 'Optional hotel selected' : null);
         $upd = $conn->prepare("UPDATE itineraries SET selected_hotel_name = ?, selected_hotel_nights = ?, selected_hotel_total_cost = ? WHERE itinerary_id = ?");
         if ($upd) {
-            $upd->bind_param('sidi', $summaryName, $totalNights, $hotelTotal, $itineraryId);
+            $upd->bind_param('sidi', $summaryName, $selectedHotelCount, $hotelTotal, $itineraryId);
             $upd->execute();
             $upd->close();
         }
@@ -346,10 +339,10 @@ try {
     nightly_recalculate_total($conn, $itineraryId);
 
     $conn->commit();
-    echo json_encode(['status' => 'success', 'hotel_nights_saved' => $totalNights]);
+    echo json_encode(['status' => 'success', 'hotel_nights_saved' => $selectedHotelCount]);
 } catch (Throwable $e) {
     $conn->rollback();
     error_log('Nightly confirm failed: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['status' => 'error', 'message' => 'Could not save nightly hotel selections.']);
+    echo json_encode(['status' => 'error', 'message' => 'Could not save review changes.']);
 }
