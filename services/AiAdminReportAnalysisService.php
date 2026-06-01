@@ -55,7 +55,11 @@ class AiAdminReportAnalysisService
                 ['role' => 'user', 'content' => "Admin report database snapshot:\n" . json_encode($reportData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
             ],
             'stream' => false,
-            'options' => ['temperature' => 0.35],
+            'options' => [
+                'temperature' => 0.35,
+                'num_ctx' => defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512,
+                'num_predict' => 180,
+            ],
         ];
 
         $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';

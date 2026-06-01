@@ -85,7 +85,11 @@ class AccessibilityNeedsAnalysisService
                 ],
             ],
             'stream' => false,
-            'options' => ['temperature' => 0.1],
+            'options' => [
+                'temperature' => 0.1,
+                'num_ctx' => defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512,
+                'num_predict' => 120,
+            ],
         ];
 
         $ch = curl_init($url);

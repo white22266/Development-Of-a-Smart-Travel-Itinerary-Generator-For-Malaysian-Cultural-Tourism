@@ -59,7 +59,7 @@ class AiTravelAssistantService
             'keep_alive' => -1,
             'options' => [
                 'temperature' => 0.2,
-                'num_ctx' => 512,
+                'num_ctx' => defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512,
                 'num_predict' => 120,
                 'num_thread' => 2,
             ],
