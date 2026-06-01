@@ -37,7 +37,7 @@ if (restore_remembered_login($conn)) {
             <div class="entry-list">
                 <div>Preference-based itinerary generation</div>
                 <div>Route map, cost summary, hotel and food support</div>
-                <div>Local Ollama AI assistant for itinerary refinement</div>
+                <div>AI assistant for itinerary refinement with local fallback</div>
             </div>
         </div>
         <div class="right-panel">

@@ -1,6 +1,7 @@
 <?php
 // services/AiTravelAssistantService.php
-// Local Ollama assistant for itinerary explanation, route writing, and improvements.
+// Gemini-first assistant for itinerary explanation, route writing, and improvements.
+// Ollama remains the local fallback when Gemini is not configured or unavailable.
 
 class AiTravelAssistantService
 {
@@ -25,10 +26,6 @@ class AiTravelAssistantService
             ];
         }
 
-        if (!function_exists('curl_init')) {
-            return ['status' => 'error', 'answer' => 'cURL is not enabled.', 'source' => 'ollama'];
-        }
-
         $question = $this->truncateText($question, 700);
         $compactContext = $this->compactContext($context);
 
@@ -46,6 +43,18 @@ class AiTravelAssistantService
             . json_encode($compactContext, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
             . "\n\nTraveller question:\n"
             . $question;
+
+        if (!function_exists('curl_init')) {
+            return ['status' => 'error', 'answer' => 'cURL is not enabled.', 'source' => 'ai'];
+        }
+
+        $gemini = $this->callGemini($instructions, $input);
+        if (($gemini['status'] ?? '') === 'success') {
+            return $gemini;
+        }
+        if (($gemini['message'] ?? '') !== '') {
+            error_log('Gemini AI fallback to Ollama: ' . $gemini['message']);
+        }
 
         $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
 
@@ -102,7 +111,7 @@ class AiTravelAssistantService
             error_log('Ollama AI request failed: ' . $err . ' | URL: ' . $url);
             return [
                 'status' => 'error',
-                'answer' => 'AI service is currently unavailable. Please make sure Ollama is running.',
+                'answer' => 'AI service is currently unavailable. Please check Gemini API or Ollama fallback.',
                 'source' => 'ollama',
             ];
         }
@@ -121,7 +130,7 @@ class AiTravelAssistantService
             error_log('Ollama AI HTTP error: ' . $code . ' | Response: ' . $this->truncateText((string)$raw, 500));
             return [
                 'status' => 'error',
-                'answer' => 'AI service is currently unavailable. Please make sure Ollama is running.',
+                'answer' => 'AI service is currently unavailable. Please check Gemini API or Ollama fallback.',
                 'source' => 'ollama',
             ];
         }
@@ -134,6 +143,90 @@ class AiTravelAssistantService
         }
 
         return ['status' => 'success', 'answer' => $text, 'source' => 'ollama'];
+    }
+
+    private function callGemini(string $instructions, string $input): array
+    {
+        $apiKey = defined('GEMINI_API_KEY') ? trim((string)GEMINI_API_KEY) : '';
+        if ($apiKey === '') {
+            return ['status' => 'skipped', 'message' => 'Gemini API key is not configured.', 'source' => 'gemini'];
+        }
+
+        $model = defined('GEMINI_MODEL') && trim((string)GEMINI_MODEL) !== ''
+            ? trim((string)GEMINI_MODEL)
+            : 'gemini-2.5-flash';
+        $model = preg_replace('#^models/#', '', $model) ?? $model;
+        $url = 'https://generativelanguage.googleapis.com/v1beta/models/' . rawurlencode($model) . ':generateContent';
+
+        $payload = [
+            'systemInstruction' => [
+                'parts' => [
+                    ['text' => $instructions],
+                ],
+            ],
+            'contents' => [
+                [
+                    'role' => 'user',
+                    'parts' => [
+                        ['text' => $input],
+                    ],
+                ],
+            ],
+            'generationConfig' => [
+                'temperature' => 0.2,
+                'maxOutputTokens' => 180,
+            ],
+        ];
+
+        $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        if ($payloadJson === false) {
+            return ['status' => 'error', 'message' => 'Gemini request could not be prepared.', 'source' => 'gemini'];
+        }
+
+        $start = microtime(true);
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json',
+                'x-goog-api-key: ' . $apiKey,
+            ],
+            CURLOPT_POSTFIELDS => $payloadJson,
+            CURLOPT_TIMEOUT => 35,
+            CURLOPT_CONNECTTIMEOUT => 8,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        ]);
+
+        $raw = curl_exec($ch);
+        $err = curl_error($ch);
+        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        $duration = round(microtime(true) - $start, 2);
+        error_log('Gemini AI request duration: ' . $duration . 's | HTTP ' . $code . ' | Model: ' . $model);
+
+        if ($raw === false || $err !== '') {
+            return ['status' => 'error', 'message' => 'Gemini request failed: ' . $err, 'source' => 'gemini'];
+        }
+
+        $json = json_decode($raw, true);
+        if ($code < 200 || $code >= 300 || !is_array($json)) {
+            $message = is_array($json) ? (string)($json['error']['message'] ?? 'Gemini HTTP error ' . $code) : 'Gemini HTTP error ' . $code;
+            return ['status' => 'error', 'message' => $message, 'source' => 'gemini'];
+        }
+
+        $text = '';
+        foreach (($json['candidates'][0]['content']['parts'] ?? []) as $part) {
+            $text .= (string)($part['text'] ?? '');
+        }
+        $text = $this->cleanAnswer($text);
+
+        if ($text === '') {
+            return ['status' => 'error', 'message' => 'Gemini returned an empty response.', 'source' => 'gemini'];
+        }
+
+        return ['status' => 'success', 'answer' => $text, 'source' => 'gemini', 'model' => $model];
     }
 
     private function compactContext(array $context): array

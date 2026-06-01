@@ -3,8 +3,8 @@
  * services/AccessibilityNeedsAnalysisService.php
  *
  * Converts free-text accessibility notes into a compact rule profile that the
- * itinerary generator can use. Ollama is used when available; deterministic
- * keyword parsing is kept as a fallback so preference saving never depends on AI.
+ * itinerary generator can use. Gemini is used first when configured; Ollama and
+ * deterministic keyword parsing are kept as fallbacks so saving never depends on AI.
  */
 
 class AccessibilityNeedsAnalysisService
@@ -49,15 +49,111 @@ class AccessibilityNeedsAnalysisService
             ];
         }
 
-        $ai = $this->callOllama($rawText, $travellerType);
+        $ai = $this->callGemini($rawText, $travellerType);
+        if (($ai['status'] ?? '') !== 'success') {
+            if (($ai['message'] ?? '') !== '') {
+                error_log('Gemini accessibility fallback to Ollama: ' . $ai['message']);
+            }
+            $ai = $this->callOllama($rawText, $travellerType);
+        }
         if (($ai['status'] ?? '') === 'success') {
-            return $this->buildResult($rawText, $ai['tags'] ?? [], (string)($ai['summary'] ?? ''), 'ollama');
+            return $this->buildResult($rawText, $ai['tags'] ?? [], (string)($ai['summary'] ?? ''), (string)($ai['source'] ?? 'ai'));
         }
 
         $fallback = $this->keywordFallback($rawText, $travellerType);
         $result = $this->buildResult($rawText, $fallback['tags'], $fallback['summary'], 'local_fallback');
         $result['warning'] = $ai['message'] ?? 'AI service unavailable; local keyword fallback was used.';
         return $result;
+    }
+
+    private function callGemini(string $rawText, string $travellerType): array
+    {
+        $apiKey = defined('GEMINI_API_KEY') ? trim((string)GEMINI_API_KEY) : '';
+        if ($apiKey === '') {
+            return ['status' => 'skipped', 'message' => 'Gemini API key is not configured.', 'source' => 'gemini'];
+        }
+        if (!function_exists('curl_init')) {
+            return ['status' => 'error', 'message' => 'PHP cURL is not enabled.', 'source' => 'gemini'];
+        }
+
+        $model = defined('GEMINI_MODEL') && trim((string)GEMINI_MODEL) !== ''
+            ? trim((string)GEMINI_MODEL)
+            : 'gemini-2.5-flash';
+        $model = preg_replace('#^models/#', '', $model) ?? $model;
+        $url = 'https://generativelanguage.googleapis.com/v1beta/models/' . rawurlencode($model) . ':generateContent';
+        $allowed = implode(', ', self::ALLOWED_TAGS);
+
+        $payload = [
+            'systemInstruction' => [
+                'parts' => [[
+                    'text' => 'You analyze accessibility notes for a travel itinerary system. Return JSON only. No markdown.',
+                ]],
+            ],
+            'contents' => [[
+                'role' => 'user',
+                'parts' => [[
+                    'text' => "Traveller type: {$travellerType}\n"
+                        . "Accessibility notes: {$rawText}\n\n"
+                        . "Choose only these tags when relevant: {$allowed}.\n"
+                        . "Return exactly this JSON shape: {\"tags\":[\"tag\"],\"summary\":\"one short rule sentence\"}.\n"
+                        . "If the notes are vague, infer conservatively.",
+                ]],
+            ]],
+            'generationConfig' => [
+                'temperature' => 0.1,
+                'maxOutputTokens' => 120,
+            ],
+        ];
+
+        $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        if ($payloadJson === false) {
+            return ['status' => 'error', 'message' => 'Gemini request could not be prepared.', 'source' => 'gemini'];
+        }
+
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json',
+                'x-goog-api-key: ' . $apiKey,
+            ],
+            CURLOPT_POSTFIELDS => $payloadJson,
+            CURLOPT_TIMEOUT => 20,
+            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        ]);
+
+        $raw = curl_exec($ch);
+        $err = curl_error($ch);
+        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($raw === false || $err !== '') {
+            return ['status' => 'error', 'message' => 'Gemini request failed: ' . $err, 'source' => 'gemini'];
+        }
+
+        $json = json_decode($raw, true);
+        if ($code < 200 || $code >= 300 || !is_array($json)) {
+            $message = is_array($json) ? (string)($json['error']['message'] ?? 'Gemini HTTP error ' . $code) : 'Gemini HTTP error ' . $code;
+            return ['status' => 'error', 'message' => $message, 'source' => 'gemini'];
+        }
+
+        $content = '';
+        foreach (($json['candidates'][0]['content']['parts'] ?? []) as $part) {
+            $content .= (string)($part['text'] ?? '');
+        }
+        $parsed = $this->extractJson(trim($content));
+        if (!$parsed) {
+            return ['status' => 'error', 'message' => 'Gemini response is invalid.', 'source' => 'gemini'];
+        }
+
+        return [
+            'status' => 'success',
+            'source' => 'gemini',
+            'tags' => $this->normalizeTags($parsed['tags'] ?? []),
+            'summary' => $this->sanitize((string)($parsed['summary'] ?? ''), 160),
+        ];
     }
 
     private function callOllama(string $rawText, string $travellerType): array
@@ -129,6 +225,7 @@ class AccessibilityNeedsAnalysisService
 
         return [
             'status' => 'success',
+            'source' => 'ollama',
             'tags' => $this->normalizeTags($parsed['tags'] ?? []),
             'summary' => $this->sanitize((string)($parsed['summary'] ?? ''), 160),
         ];

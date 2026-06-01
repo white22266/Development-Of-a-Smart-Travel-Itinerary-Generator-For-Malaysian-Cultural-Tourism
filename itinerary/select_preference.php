@@ -1119,7 +1119,7 @@ foreach ($preferences as $pref) {
                 }
             })
             .catch(function () {
-                pending.textContent = 'AI service is currently unavailable. Please make sure Ollama is running.';
+                pending.textContent = 'AI service is currently unavailable. Please check Gemini API or Ollama fallback.';
             })
             .finally(function () {
                 sendBtn.disabled = false;

@@ -1,6 +1,6 @@
 <?php
 // api/ai_preference_chat.php
-// Ollama chat assistant for a selected traveller preference. This endpoint only
+// Gemini-first chat assistant for a selected traveller preference. This endpoint only
 // advises; it does not create or update itinerary records.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -72,10 +72,7 @@ if ($detectedDate && is_trip_date_intent_message($message)) {
     exit;
 }
 
-$model = defined("OLLAMA_MODEL") ? trim((string)OLLAMA_MODEL) : "qwen2.5:3b";
-if ($model === "") $model = "qwen2.5:3b";
-
-$result = call_ollama_chat($model, build_chat_prompt($preference, $message));
+$result = call_ai_chat(build_chat_prompt($preference, $message));
 if (($result["status"] ?? "") !== "success") {
     http_response_code(503);
     echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
@@ -111,8 +108,8 @@ $pendingAction = $pendingActions[0] ?? null;
 
 echo json_encode([
     "status" => "success",
-    "source" => "ollama",
-    "model" => $model,
+    "source" => (string)($result["source"] ?? "ai"),
+    "model" => (string)($result["model"] ?? ""),
     "reply" => $reply,
     "ai_draft" => $draft,
     "pending_action" => $pendingAction,
@@ -165,6 +162,103 @@ function build_chat_prompt(array $pref, string $message): string
         . json_encode($context, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
         . "\nTraveller question:\n"
         . sanitize_text($message, 450);
+}
+
+function call_ai_chat(string $prompt): array
+{
+    $gemini = call_gemini_chat($prompt);
+    if (($gemini["status"] ?? "") === "success") {
+        return $gemini;
+    }
+    if (($gemini["message"] ?? "") !== "") {
+        error_log("Gemini preference chat fallback to Ollama: " . $gemini["message"]);
+    }
+
+    $model = defined("OLLAMA_MODEL") ? trim((string)OLLAMA_MODEL) : "qwen2.5:3b";
+    if ($model === "") $model = "qwen2.5:3b";
+    return call_ollama_chat($model, $prompt);
+}
+
+function call_gemini_chat(string $prompt): array
+{
+    $apiKey = defined("GEMINI_API_KEY") ? trim((string)GEMINI_API_KEY) : "";
+    if ($apiKey === "") {
+        return ["status" => "skipped", "message" => "Gemini API key is not configured.", "source" => "gemini"];
+    }
+    if (!function_exists("curl_init")) {
+        return ["status" => "error", "message" => "PHP cURL is not enabled.", "source" => "gemini"];
+    }
+
+    $model = defined("GEMINI_MODEL") && trim((string)GEMINI_MODEL) !== ""
+        ? trim((string)GEMINI_MODEL)
+        : "gemini-2.5-flash";
+    $model = preg_replace("#^models/#", "", $model) ?? $model;
+    $url = "https://generativelanguage.googleapis.com/v1beta/models/" . rawurlencode($model) . ":generateContent";
+
+    $payload = [
+        "systemInstruction" => [
+            "parts" => [[
+                "text" => "You are a controlled preference assistant before itinerary generation. Understand the traveller's natural message, but do not create or save a formal itinerary. If the user provides date, origin, hotel need, accessibility need, or trip requirement, explain it needs confirmation. Keep replies short, practical, same language when possible, plain text only.",
+            ]],
+        ],
+        "contents" => [[
+            "role" => "user",
+            "parts" => [["text" => $prompt]],
+        ]],
+        "generationConfig" => [
+            "temperature" => 0.25,
+            "maxOutputTokens" => 180,
+        ],
+    ];
+
+    $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    if ($payloadJson === false) {
+        return ["status" => "error", "message" => "Gemini request could not be prepared.", "source" => "gemini"];
+    }
+
+    $start = microtime(true);
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => [
+            "Content-Type: application/json",
+            "x-goog-api-key: " . $apiKey,
+        ],
+        CURLOPT_POSTFIELDS => $payloadJson,
+        CURLOPT_TIMEOUT => 35,
+        CURLOPT_CONNECTTIMEOUT => 8,
+        CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+    ]);
+
+    $raw = curl_exec($ch);
+    $err = curl_error($ch);
+    $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    $duration = round(microtime(true) - $start, 2);
+    error_log("Gemini preference chat duration: " . $duration . "s | HTTP " . $code . " | Model: " . $model);
+
+    if ($raw === false || $err !== "") {
+        return ["status" => "error", "message" => "Gemini request failed: " . $err, "source" => "gemini"];
+    }
+
+    $json = json_decode($raw, true);
+    if ($code < 200 || $code >= 300 || !is_array($json)) {
+        $message = is_array($json) ? (string)($json["error"]["message"] ?? "Gemini HTTP error " . $code) : "Gemini HTTP error " . $code;
+        return ["status" => "error", "message" => $message, "source" => "gemini"];
+    }
+
+    $text = "";
+    foreach (($json["candidates"][0]["content"]["parts"] ?? []) as $part) {
+        $text .= (string)($part["text"] ?? "");
+    }
+    $text = clean_ai_reply($text);
+    if ($text === "") {
+        return ["status" => "error", "message" => "Gemini returned an empty response.", "source" => "gemini"];
+    }
+
+    return ["status" => "success", "content" => $text, "source" => "gemini", "model" => $model];
 }
 
 function call_ollama_chat(string $model, string $prompt): array
@@ -237,7 +331,7 @@ function call_ollama_chat(string $model, string $prompt): array
         return ["status" => "error", "message" => "AI response is invalid. Please try again.", "source" => "ollama"];
     }
 
-    return ["status" => "success", "content" => (string)$json["message"]["content"]];
+    return ["status" => "success", "content" => (string)$json["message"]["content"], "source" => "ollama", "model" => $model];
 }
 
 function preference_interest_csv(mysqli $conn, int $preferenceId, string $fallbackCsv): string

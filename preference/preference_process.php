@@ -175,7 +175,7 @@ if (!empty($errors)) {
 }
 
 // Convert free-text accessibility notes into compact planning rules. This uses
-// Ollama when available and falls back to deterministic keyword parsing.
+// Gemini/Ollama when available and falls back to deterministic keyword parsing.
 if ($accessibilityNeeds !== "") {
     $accessibilityService = new AccessibilityNeedsAnalysisService();
     $accessibilityAnalysis = $accessibilityService->analyze($accessibilityNeeds, $travellerType);
