@@ -1,6 +1,6 @@
 <?php
 // itinerary/review_hotels.php
-// Returns hotel suggestions near the current final confirmed/active itinerary stop.
+// Returns live Google Places hotel suggestions near the current final confirmed/active itinerary stop.
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -148,10 +148,6 @@ if (!$itinerary) {
 $hasItemCoords = review_hotels_table_has_column($conn, "itinerary_items", "item_latitude")
     && review_hotels_table_has_column($conn, "itinerary_items", "item_longitude");
 
-// Priority:
-// 1. Current frontend-selected replacement place_id
-// 2. Current frontend-selected original item_id
-// 3. Database last stop fallback
 $lastStop = null;
 if ($requestedPlaceId > 0) {
     $lastStop = review_hotels_load_place($conn, $requestedPlaceId);
@@ -175,6 +171,8 @@ if (!$lastStop) {
 $lat = $lastStop['latitude'] !== null ? (float)$lastStop['latitude'] : null;
 $lng = $lastStop['longitude'] !== null ? (float)$lastStop['longitude'] : null;
 $state = trim((string)($lastStop['state'] ?? ''));
+$district = trim((string)($lastStop['district'] ?? ''));
+$placeName = trim((string)($lastStop['item_title'] ?? ''));
 
 $tripDays = max(1, (int)($itinerary['total_days'] ?? 1));
 $budget = (float)($itinerary['budget'] ?? 0);
@@ -182,25 +180,24 @@ $nightlyBudget = $budget > 0 ? ($budget * 0.30) / max(1, $tripDays - 1) : 0.0;
 
 $hotelService = new HotelRecommendationService($conn);
 $hotels = [];
-$source = 'current_final_stop_nearby';
+$source = 'live_google_places_current_final_stop';
 
 if (review_hotels_valid_coord($lat, $lng)) {
-    $hotels = $hotelService->recommend((float)$lat, (float)$lng, $nightlyBudget, 10.0, 6);
+    $hotels = $hotelService->recommendNearPlace((float)$lat, (float)$lng, $placeName, $state, $district, $nightlyBudget, 15.0, 8);
 }
 
-// Fallback only when coordinates or nearby results are unavailable.
 if (empty($hotels) && $state !== '') {
-    $source = review_hotels_valid_coord($lat, $lng) ? 'state_fallback_after_empty_nearby' : 'state_fallback_no_coordinates';
-    $hotels = $hotelService->recommendByState($state, $nightlyBudget, 6);
+    $source = review_hotels_valid_coord($lat, $lng) ? 'live_google_places_state_fallback_after_empty_nearby' : 'live_google_places_state_fallback_no_coordinates';
+    $hotels = $hotelService->recommendByState($state, $nightlyBudget, 8);
 }
 
 $lastStopPayload = [
     'item_id' => (int)($lastStop['item_id'] ?? 0),
     'place_id' => (int)($lastStop['place_id'] ?? $requestedPlaceId),
-    'title' => (string)($lastStop['item_title'] ?? ''),
+    'title' => $placeName,
     'day_no' => (int)($lastStop['day_no'] ?? 0),
     'state' => $state,
-    'district' => (string)($lastStop['district'] ?? ''),
+    'district' => $district,
     'latitude' => $lat,
     'longitude' => $lng,
     'source_item' => (string)($lastStop['source_item'] ?? ''),
@@ -209,9 +206,10 @@ $lastStopPayload = [
 if (empty($hotels)) {
     echo json_encode([
         'status' => 'empty',
-        'message' => 'No nearby hotels were returned by Google Places for the selected final stop.',
+        'message' => 'No nearby hotels were returned by live Google Places for the selected final stop.',
         'last_stop' => $lastStopPayload,
         'source' => $source,
+        'debug' => $hotelService->getLastDebug(),
         'hotels' => [],
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
@@ -219,8 +217,9 @@ if (empty($hotels)) {
 
 echo json_encode([
     'status' => 'success',
-    'message' => 'Hotel suggestions loaded.',
+    'message' => 'Live Google Places hotel suggestions loaded.',
     'last_stop' => $lastStopPayload,
     'source' => $source,
+    'debug' => $hotelService->getLastDebug(),
     'hotels' => $hotels,
 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
