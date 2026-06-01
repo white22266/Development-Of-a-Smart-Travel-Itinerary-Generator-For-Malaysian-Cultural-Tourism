@@ -443,6 +443,59 @@ foreach ($preferences as $pref) {
             background: #4f46e5;
             color: #fff;
         }
+        .ai-confirm-card {
+            margin-top: 8px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgba(79,70,229,.22);
+            background: #eef2ff;
+            color: var(--navy);
+        }
+        .ai-confirm-card strong {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+        .ai-confirm-card span {
+            display: block;
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+        .ai-confirm-card button {
+            border: 0;
+            border-radius: 8px;
+            background: var(--orange);
+            color: var(--navy);
+            padding: 7px 10px;
+            font-size: 11px;
+            font-weight: 900;
+            cursor: pointer;
+        }
+        .ai-memory {
+            display: none;
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, 0.09);
+            color: var(--navy);
+        }
+        .ai-memory.show { display: block; }
+        .ai-memory-title {
+            font-size: 12px;
+            font-weight: 900;
+            margin-bottom: 6px;
+        }
+        .ai-memory-row {
+            font-size: 11.5px;
+            color: var(--muted);
+            line-height: 1.45;
+            margin-top: 4px;
+        }
+        .ai-memory-row strong {
+            color: var(--navy);
+        }
         .ai-chat-form {
             display: flex;
             gap: 8px;
@@ -554,10 +607,10 @@ foreach ($preferences as $pref) {
                     <div style="height:14px;"></div>
 
                     <!-- ===== Start Date ===== -->
-                    <label style="font-weight:800; font-size:13px;">Start Date</label><br>
+                    <label style="font-weight:800; font-size:13px;">Start Date *</label><br>
                     <input type="date" name="start_date"
                         style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:8px; font-size:13px;">
-                    <div class="meta" style="margin-top:5px;">If left empty, weather will show current conditions only.</div>
+                    <div class="meta" style="margin-top:5px;">Required for festival checking, weather planning, and day-by-day schedule dates. You can ask the AI assistant to fill it, then confirm.</div>
 
                     <div style="height:14px;"></div>
 
@@ -592,8 +645,7 @@ foreach ($preferences as $pref) {
 
                     <!-- ===== Starting Location ===== -->
                     <label style="font-weight:800; font-size:13px;">
-                        Starting Location for Route Optimization
-                        <span style="font-weight:400; color:var(--muted); font-size:12px;">(recommended)</span>
+                        Starting Location for Route Optimization *
                     </label>
                     <div class="origin-group">
                         <div class="origin-input-wrap">
@@ -609,7 +661,7 @@ foreach ($preferences as $pref) {
                         </div>
                         <input type="hidden" name="origin_lat" id="origin_lat">
                         <input type="hidden" name="origin_lng" id="origin_lng">
-                        <div class="origin-status" id="originStatus">Choose a Google Maps suggestion or use your current location. If empty, the route starts from the first selected place.</div>
+                        <div class="origin-status" id="originStatus">Required. Choose a Google Maps suggestion, use your current location, or ask AI to confirm a starting location.</div>
                     </div>
 
                     <div style="height:18px;"></div>
@@ -631,10 +683,14 @@ foreach ($preferences as $pref) {
                     <strong>How this assistant works</strong><br>
                     Select one saved preference in Generate Itinerary, then ask a question here. The AI reads that selected preference, so you do not need to fill another trip form.
                     <div class="meta" id="aiSelectedPreference" style="margin-top:10px;">Selected preference: none</div>
+                    <div class="ai-memory" id="aiPreferenceMemory">
+                        <div class="ai-memory-title">AI noted details</div>
+                        <div id="aiPreferenceMemoryRows"></div>
+                    </div>
                 </div>
                 <div class="ai-chat-window">
                     <div id="aiChatMessages" class="ai-chat-messages">
-                        <div class="ai-msg bot">Hi, I can help check your selected preference before you generate. Ask things like "is this budget enough?", "suggest route style", or "should I include festival places?"</div>
+                        <div class="ai-msg bot">Hi, before generating I need a confirmed Start Date and Starting Location. You can tell me naturally, for example "I want to travel on 30 Jun 2026 from Kuala Lumpur", then confirm the detected details.</div>
                     </div>
                     <form id="aiPreferenceChatForm" class="ai-chat-form">
                         <input type="text" id="aiPreferenceMessage" placeholder="Ask about the selected preference..." autocomplete="off">
@@ -781,12 +837,20 @@ foreach ($preferences as $pref) {
 })();
 
 (function () {
+    var genForm = document.getElementById('genForm');
     var form = document.getElementById('aiPreferenceChatForm');
     var prefSelect = document.getElementById('preferenceSelect');
     var input = document.getElementById('aiPreferenceMessage');
     var messages = document.getElementById('aiChatMessages');
     var sendBtn = document.getElementById('aiPreferenceSend');
+    var startDateInput = document.querySelector('input[name="start_date"]');
     var selectedText = document.getElementById('aiSelectedPreference');
+    var memoryBox = document.getElementById('aiPreferenceMemory');
+    var memoryRows = document.getElementById('aiPreferenceMemoryRows');
+    var originNameInput = document.getElementById('origin_name');
+    var originLatInput = document.getElementById('origin_lat');
+    var originLngInput = document.getElementById('origin_lng');
+    var originStatus = document.getElementById('originStatus');
     var insight = document.getElementById('preferenceInsight');
     var summaryRows = document.getElementById('preferenceSummaryRows');
     var analysisRows = document.getElementById('preferenceAnalysisRows');
@@ -829,6 +893,168 @@ foreach ($preferences as $pref) {
             .replace(/'/g, '&#039;');
     }
 
+    function parseDateFromMessage(text) {
+        var months = {
+            jan:1,january:1,feb:2,february:2,mar:3,march:3,apr:4,april:4,may:5,
+            jun:6,june:6,jul:7,july:7,aug:8,august:8,sep:9,sept:9,september:9,
+            oct:10,october:10,nov:11,november:11,dec:12,december:12
+        };
+        var m = String(text || '').match(/\b(\d{4})-(\d{1,2})-(\d{1,2})\b/);
+        if (m) return normalDate(Number(m[1]), Number(m[2]), Number(m[3]));
+
+        m = String(text || '').match(/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/);
+        if (m) return normalDate(Number(m[3]), Number(m[2]), Number(m[1]));
+
+        m = String(text || '').match(/\b(\d{1,2})(\d{4})([a-zA-Z]+)\b/);
+        if (m && months[m[3].toLowerCase()]) return normalDate(Number(m[2]), months[m[3].toLowerCase()], Number(m[1]));
+        m = String(text || '').match(/\b([a-zA-Z]+)(\d{1,2})(\d{4})\b/);
+        if (m && months[m[1].toLowerCase()]) return normalDate(Number(m[3]), months[m[1].toLowerCase()], Number(m[2]));
+        m = String(text || '').match(/\b(\d{1,2})(?:st|nd|rd|th)?\s*([a-zA-Z]+)\s*(\d{4})\b/);
+        if (m && months[m[2].toLowerCase()]) return normalDate(Number(m[3]), months[m[2].toLowerCase()], Number(m[1]));
+        m = String(text || '').match(/\b([a-zA-Z]+)\s*(\d{1,2})(?:st|nd|rd|th)?[,]?\s*(\d{4})\b/);
+        if (m && months[m[1].toLowerCase()]) return normalDate(Number(m[3]), months[m[1].toLowerCase()], Number(m[2]));
+        return null;
+    }
+
+    function isTripDateIntent(text) {
+        return /\b(start|date|trip|travel|go|going|visit|arrive|depart|leave|change|update|instead|actually|plan|planning)\b|no[, ]|not|wrong|不是|改|更改|换|去|出发|日期|行程|旅行|玩|到|抵达/i.test(String(text || ''));
+    }
+
+    function renderAiDraft(draft) {
+        if (!memoryBox || !memoryRows || !draft) return;
+        var rows = [];
+        if (draft.start_date_label) rows.push(['Start date', draft.start_date_label]);
+        if (draft.origin_name) rows.push(['Starting location', draft.origin_name]);
+        if (draft.hotel_requirement) rows.push(['Hotel', draft.hotel_requirement]);
+        (draft.requirements || []).forEach(function (note) {
+            rows.push(['Requirement', note]);
+        });
+        if (!rows.length) {
+            memoryBox.classList.remove('show');
+            memoryRows.innerHTML = '';
+            return;
+        }
+        memoryRows.innerHTML = rows.map(function (row) {
+            return '<div class="ai-memory-row"><strong>' + escHtml(row[0]) + ':</strong> ' + escHtml(row[1]) + '</div>';
+        }).join('');
+        memoryBox.classList.add('show');
+    }
+
+    function normalDate(year, month, day) {
+        var dt = new Date(year, month - 1, day);
+        if (dt.getFullYear() !== year || dt.getMonth() !== month - 1 || dt.getDate() !== day) return null;
+        return String(year).padStart(4, '0') + '-' + String(month).padStart(2, '0') + '-' + String(day).padStart(2, '0');
+    }
+
+    function displayDate(dateText) {
+        var dt = new Date(dateText + 'T00:00:00');
+        if (isNaN(dt.getTime())) return dateText;
+        return dt.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+    }
+
+    function clearPendingCards() {
+        messages.querySelectorAll('.ai-confirm-card').forEach(function (card) { card.remove(); });
+    }
+
+    function renderPendingAction(container, action) {
+        if (!container || !action || (action.type !== 'fill_start_date' && action.type !== 'fill_origin')) return;
+        clearPendingCards();
+        var card = document.createElement('div');
+        card.className = 'ai-confirm-card';
+
+        var title = document.createElement('strong');
+        title.textContent = action.type === 'fill_origin' ? 'Confirm starting location' : 'Confirm trip date';
+
+        var meta = document.createElement('span');
+        meta.textContent = action.summary || (action.type === 'fill_origin'
+            ? ('Use ' + (action.label || action.origin_name) + ' as Starting Location')
+            : ('Fill Start Date with ' + (action.label || action.start_date)));
+
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = action.type === 'fill_origin' ? 'Confirm Location' : 'Confirm Date';
+        btn.addEventListener('click', function () {
+            if (action.type === 'fill_origin') {
+                confirmOriginFromAi(action, btn);
+                return;
+            }
+            if (startDateInput) startDateInput.value = action.start_date;
+            btn.disabled = true;
+            appendMessage('bot', 'Start Date filled as ' + (action.label || displayDate(action.start_date)) + '. Now confirm your Starting Location before generating.');
+            clearPendingCards();
+            if (action.next_action) {
+                var nextMsg = appendMessage('bot', 'I also found a possible starting location. Please confirm it so route optimization has coordinates.');
+                renderPendingAction(nextMsg, action.next_action);
+            }
+        });
+
+        card.appendChild(title);
+        card.appendChild(meta);
+        card.appendChild(btn);
+        container.appendChild(card);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function confirmOriginFromAi(action, btn) {
+        var originName = action.origin_name || action.label || '';
+        if (!originName || !originNameInput || !originLatInput || !originLngInput) return;
+        btn.disabled = true;
+        btn.textContent = 'Checking...';
+        if (!window.google || !google.maps || !google.maps.Geocoder) {
+            originNameInput.value = originName;
+            appendMessage('bot', 'Starting Location filled as ' + originName + ', but Google Maps is not ready. Please choose the suggestion manually so coordinates can be saved.');
+            if (originStatus) {
+                originStatus.className = 'origin-status err';
+                originStatus.textContent = 'Please choose a Google Maps suggestion to confirm coordinates.';
+            }
+            clearPendingCards();
+            return;
+        }
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: originName, componentRestrictions: { country: 'MY' } }, function (results, geocodeStatus) {
+            if (geocodeStatus === 'OK' && results && results[0] && results[0].geometry) {
+                var loc = results[0].geometry.location;
+                originNameInput.value = results[0].formatted_address || originName;
+                originLatInput.value = loc.lat().toFixed(7);
+                originLngInput.value = loc.lng().toFixed(7);
+                if (originStatus) {
+                    originStatus.className = 'origin-status ok';
+                    originStatus.textContent = 'Starting location confirmed: ' + originNameInput.value;
+                }
+                appendMessage('bot', 'Starting Location confirmed as ' + originNameInput.value + '. Coordinates are ready for route optimization.');
+                clearPendingCards();
+            } else {
+                btn.disabled = false;
+                btn.textContent = 'Confirm Location';
+                appendMessage('bot', 'I could not confirm coordinates for "' + originName + '". Please type the location in Starting Location and choose a Google Maps suggestion.');
+                if (originStatus) {
+                    originStatus.className = 'origin-status err';
+                    originStatus.textContent = 'Could not geocode this location. Choose a Google Maps suggestion manually.';
+                }
+            }
+        });
+    }
+
+    if (genForm) {
+        genForm.addEventListener('submit', function (event) {
+            var missing = [];
+            if (!prefSelect.value) missing.push('saved preference');
+            if (!startDateInput || !startDateInput.value) missing.push('Start Date');
+            if (!originNameInput || !originNameInput.value || !originLatInput.value || !originLngInput.value) missing.push('Starting Location');
+            if (!missing.length) return;
+            event.preventDefault();
+            var message = 'Before I generate the official itinerary, I still need: ' + missing.join(', ') + '. Tell me your trip date and starting location here, then confirm them.';
+            appendMessage('bot', message);
+            var helper = document.getElementById('ai-travel-assistant');
+            if (helper) helper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (input) input.focus();
+            if (originStatus && missing.indexOf('Starting Location') !== -1) {
+                originStatus.className = 'origin-status err';
+                originStatus.textContent = 'Starting Location is required and must include coordinates.';
+            }
+        });
+    }
+
     prefSelect.addEventListener('change', updateSelectedPreferenceText);
     updateSelectedPreferenceText();
 
@@ -836,14 +1062,29 @@ foreach ($preferences as $pref) {
         event.preventDefault();
         var preferenceId = prefSelect.value;
         var text = input.value.trim();
-        if (!preferenceId) {
+        var localDate = parseDateFromMessage(text);
+        var dateIntent = localDate && isTripDateIntent(text);
+        if (!preferenceId && !dateIntent) {
             appendMessage('bot', 'Please select one saved preference above first.');
             return;
         }
         if (!text) return;
 
         appendMessage('user', text);
+        clearPendingCards();
         input.value = '';
+
+        if (!preferenceId && dateIntent) {
+            var msg = appendMessage('bot', 'I detected your trip start date as ' + displayDate(localDate) + '. Click Confirm Date if this is correct. Please select a saved preference before generating the official itinerary.');
+            renderPendingAction(msg, {
+                type: 'fill_start_date',
+                start_date: localDate,
+                label: displayDate(localDate),
+                summary: 'Fill Start Date with ' + displayDate(localDate)
+            });
+            return;
+        }
+
         sendBtn.disabled = true;
         sendBtn.textContent = 'Thinking...';
         var pending = appendMessage('bot', 'AI is checking your selected preference...');
@@ -861,6 +1102,16 @@ foreach ($preferences as $pref) {
                 pending.textContent = data.status === 'success'
                     ? (data.reply || 'No reply returned.')
                     : (data.message || 'AI response is invalid. Please try again.');
+                if (data.ai_draft) {
+                    renderAiDraft(data.ai_draft);
+                }
+                if (data.pending_actions && data.pending_actions.length) {
+                    var firstAction = data.pending_actions[0];
+                    if (data.pending_actions.length > 1) firstAction.next_action = data.pending_actions[1];
+                    renderPendingAction(pending, firstAction);
+                } else if (data.pending_action) {
+                    renderPendingAction(pending, data.pending_action);
+                }
             })
             .catch(function () {
                 pending.textContent = 'AI service is currently unavailable. Please make sure Ollama is running.';

@@ -668,14 +668,14 @@ if ($export === "csv") {
         .ai-analysis-box { white-space:pre-wrap; line-height:1.55; font-size:13px; color:#334155; background:#f8fafc; border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:14px; }
         .ai-generate-panel { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
         .ai-generate-panel form { margin:0; }
-        .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; align-items:stretch; }
-        .chart-panel { border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:14px 16px; background:#fff; height:370px; overflow:hidden; display:flex; flex-direction:column; }
-        .chart-title { font-size:13px; font-weight:900; color:#0f172a; margin-bottom:8px; }
-        .chart-box { position:relative; height:210px; max-height:210px; flex:0 0 210px; }
-        .chart-box-doughnut { width:min(100%, 340px); margin:0 auto; }
-        .chart-box-bar { height:210px; max-height:210px; }
+        .chart-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; align-items:start; }
+        .chart-panel { border:1px solid rgba(15,23,42,.08); border-radius:10px; padding:16px 20px; background:#fff; min-height:0; overflow:visible; display:flex; flex-direction:column; }
+        .chart-title { font-size:13px; font-weight:900; color:#0f172a; margin-bottom:10px; }
+        .chart-box { position:relative; height:200px; max-height:200px; flex:0 0 200px; }
+        .chart-box-doughnut { width:min(100%, 320px); margin:0 auto; }
+        .chart-box-bar { height:200px; max-height:200px; }
         .chart-box canvas { max-width:100%; max-height:100%; }
-        .chart-data-list { display:grid; gap:6px; margin-top:10px; overflow:auto; padding-right:2px; }
+        .chart-data-list { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); column-gap:18px; row-gap:7px; margin-top:14px; overflow:visible; padding-right:0; }
         .chart-data-row { display:grid; grid-template-columns:12px minmax(0, 1fr) auto auto; gap:8px; align-items:center; font-size:12px; color:#334155; }
         .chart-data-row span:nth-child(2) { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
         .chart-dot { width:10px; height:10px; border-radius:50%; }
@@ -935,7 +935,14 @@ function renderReportCharts() {
                 },
                 scales: chart.type === 'bar' ? {
                     y: { beginAtZero: true, ticks: { precision: 0 } },
-                    x: { ticks: { maxRotation: 35, minRotation: 0 } }
+                    x: {
+                        ticks: {
+                            maxRotation: chart.labels.length > 6 ? 35 : 0,
+                            minRotation: 0,
+                            autoSkip: false,
+                            font: { size: chart.labels.length > 7 ? 10 : 11 }
+                        }
+                    }
                 } : {},
                 cutout: chart.type === 'doughnut' ? '54%' : undefined
             },

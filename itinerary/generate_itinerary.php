@@ -58,6 +58,19 @@ if ($startDate !== "") {
         $sd = $startDate;
     }
 }
+
+$requiredErrors = [];
+if ($sd === null) {
+    $requiredErrors[] = "Please confirm a valid Start Date before generating the itinerary.";
+}
+if (!$hasOrigin || $originName === "") {
+    $requiredErrors[] = "Please confirm a Starting Location with map coordinates before generating the itinerary.";
+}
+if (!empty($requiredErrors)) {
+    $_SESSION["form_errors"] = $requiredErrors;
+    header("Location: select_preference.php");
+    exit;
+}
 // ===================== HELPERS =====================
 function normalize_list(string $csv): array
 {
@@ -1267,6 +1280,10 @@ if (!$stmt->execute()) {
 
 $itineraryId = (int)$stmt->insert_id;
 $stmt->close();
+
+if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {
+    unset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId]);
+}
 
 // If no places at all, still redirect to view (no error page)
 if (count($places) === 0) {

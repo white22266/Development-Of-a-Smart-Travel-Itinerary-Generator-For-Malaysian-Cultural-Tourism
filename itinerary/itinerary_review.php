@@ -122,6 +122,15 @@ function extractReasonSelected(?string $notes): string
     return trim(substr($text, $pos + 7));
 }
 
+function js_arg($value): string
+{
+    return htmlspecialchars(
+        json_encode((string)$value, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP),
+        ENT_QUOTES,
+        'UTF-8'
+    );
+}
+
 // ---- Load nearby hotels per state ----
 $statesInItinerary = [];
 foreach ($days as $dayItems) {
@@ -183,26 +192,43 @@ $startDate = $it["start_date"] ?? null;
     <style>
         /* ===== Review page styles ===== */
         .review-header {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-            color: #fff;
-            border-radius: 16px;
-            padding: 24px 28px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
+            background: #fff;
+            border: 1px solid rgba(15,23,42,0.08);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
+            gap: 18px;
+            box-shadow: 0 10px 24px rgba(15,23,42,0.06);
         }
-        .review-header h2 { margin: 0; font-size: 20px; }
-        .review-header p  { margin: 4px 0 0; opacity: .85; font-size: 13px; }
+        .review-header h2 { margin: 0; font-size: 22px; color:#001a4d; }
+        .review-header p  { margin: 5px 0 0; color:#52627d; font-size: 13px; line-height:1.45; }
+        .review-summary {
+            display:flex;
+            align-items:center;
+            justify-content:flex-end;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+        .review-pill {
+            min-width: 96px;
+            border:1px solid rgba(15,23,42,0.10);
+            border-radius:10px;
+            padding:9px 12px;
+            background:#f8fafc;
+            text-align:center;
+        }
+        .review-pill strong { display:block; color:#001a4d; font-size:18px; line-height:1; }
+        .review-pill span { display:block; margin-top:4px; color:#64748b; font-size:11px; font-weight:700; }
 
         /* ===== Place card ===== */
         .place-card {
             border: 1.5px solid rgba(15,23,42,0.10);
-            border-radius: 14px;
-            padding: 14px 16px;
-            margin-bottom: 10px;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 12px;
             background: #fff;
             transition: border-color .2s, box-shadow .2s;
             position: relative;
@@ -210,16 +236,17 @@ $startDate = $it["start_date"] ?? null;
         .place-card.accepted  { border-color: #22c55e; background: #f0fdf4; }
         .place-card.rejected  { border-color: #ef4444; background: #fef2f2; opacity: .65; }
         .place-card.replacing { border-color: #f59e0b; background: #fffbeb; }
+        .place-card.replacement-pending { border-color: #f59e0b; background:#fffaf0; }
 
         .place-card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 286px;
+            gap: 18px;
+            align-items: start;
         }
         .place-title {
             font-weight: 800;
-            font-size: 14px;
+            font-size: 15px;
         }
         .place-meta {
             font-size: 11.5px;
@@ -227,47 +254,58 @@ $startDate = $it["start_date"] ?? null;
             margin-top: 3px;
         }
         .place-actions {
-            display: flex;
-            gap: 6px;
-            flex-shrink: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
             align-items: center;
+            justify-self: end;
+            width: 286px;
+        }
+        .btn-accept,
+        .btn-reject,
+        .btn-replace {
+            min-height: 38px;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background .15s, transform .12s, opacity .15s;
+            white-space: nowrap;
         }
         .btn-accept {
             background: #22c55e;
             color: #fff;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background .15s;
         }
         .btn-accept:hover { background: #16a34a; }
         .btn-reject {
             background: #ef4444;
             color: #fff;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background .15s;
         }
         .btn-reject:hover { background: #dc2626; }
         .btn-replace {
             background: #f59e0b;
             color: #fff;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background .15s;
         }
         .btn-replace:hover { background: #d97706; }
+        .btn-accept:disabled,
+        .btn-reject:disabled,
+        .btn-replace:disabled { opacity:.7; cursor:not-allowed; transform:none; }
+        .review-status {
+            grid-column: 1 / -1;
+            justify-self: end;
+            min-height: 24px;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 11px;
+            font-weight: 900;
+            background:#dcfce7;
+            color:#15803d;
+        }
+        .place-card.rejected .review-status { background:#fee2e2; color:#b91c1c; }
+        .place-card.replacing .review-status,
+        .place-card.replacement-pending .review-status { background:#fef3c7; color:#92400e; }
 
         /* ===== Match score bar ===== */
         .match-score-wrap {
@@ -403,7 +441,7 @@ $startDate = $it["start_date"] ?? null;
             flex-wrap: wrap;
             z-index: 100;
             box-shadow: 0 -4px 20px rgba(15,23,42,.08);
-            border-radius: 14px 14px 0 0;
+            border-radius: 10px 10px 0 0;
             margin-top: 16px;
         }
         .confirm-stats {
@@ -453,7 +491,7 @@ $startDate = $it["start_date"] ?? null;
         .ai-chat-fab {
             position: fixed;
             right: 22px;
-            bottom: 22px;
+            bottom: 96px;
             z-index: 160;
             border: none;
             border-radius: 999px;
@@ -467,7 +505,7 @@ $startDate = $it["start_date"] ?? null;
         .ai-chat-panel {
             position: fixed;
             right: 22px;
-            bottom: 82px;
+            bottom: 156px;
             z-index: 160;
             width: min(390px, calc(100vw - 32px));
             max-height: min(620px, calc(100vh - 120px));
@@ -563,6 +601,15 @@ $startDate = $it["start_date"] ?? null;
             font-weight: 800;
             cursor: pointer;
         }
+        @media (max-width: 980px) {
+            .review-header { grid-template-columns: 1fr; }
+            .review-summary { justify-content:flex-start; }
+            .place-card-top { grid-template-columns: 1fr; }
+            .place-actions { width:100%; justify-self:stretch; }
+            .review-status { justify-self:start; }
+            .ai-chat-fab { right: 14px; bottom: 104px; }
+            .ai-chat-panel { right: 14px; bottom: 164px; }
+        }
     </style>
 </head>
 <body>
@@ -600,20 +647,26 @@ $startDate = $it["start_date"] ?? null;
         <div class="review-header">
             <div>
                 <h2>Review Your Generated Itinerary</h2>
-                <p>Your itinerary has been generated! Review each place, check the match score, and accept or replace any stop you don't like. When done, confirm to finalise.</p>
+                <p>Check each generated stop before saving the official itinerary. Keep leaves the stop in the plan, Remove deletes it after confirmation, and Replace previews a new database place before saving.</p>
             </div>
-            <div style="text-align:right;">
-                <div style="font-size:22px; font-weight:900;"><?php echo $totalDays; ?> Day<?php echo $totalDays > 1 ? 's' : ''; ?></div>
-                <div style="font-size:12px; opacity:.85;"><?php echo htmlspecialchars($it["title"]); ?></div>
-                <button type="button" class="btn btn-primary" style="margin-top:10px;" onclick="toggleAiChat()">Open AI Chat</button>
+            <div class="review-summary">
+                <div class="review-pill">
+                    <strong><?php echo $totalDays; ?></strong>
+                    <span>Day<?php echo $totalDays > 1 ? 's' : ''; ?></span>
+                </div>
+                <div class="review-pill" style="min-width:180px;">
+                    <strong style="font-size:13px; line-height:1.2;"><?php echo htmlspecialchars($it["title"]); ?></strong>
+                    <span>Generated trip</span>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="toggleAiChat()">AI Chat</button>
             </div>
         </div>
 
         <!-- Legend -->
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; font-size:12px;">
-            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Accepted</span>
-            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Rejected</span>
-            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> Replacing...</span>
+            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Kept</span>
+            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Removed after confirm</span>
+            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> Replacement pending</span>
             <span style="color:#64748b;">Match score = Category (40%) + Budget (30%) + Rating (30%)</span>
         </div>
 
@@ -687,9 +740,10 @@ $startDate = $it["start_date"] ?? null;
                         <?php endif; ?>
                     </div>
                     <div class="place-actions">
-                        <button class="btn-accept" onclick="acceptPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-accept-<?php echo (int)$item['item_id']; ?>">Keep</button>
-                        <button class="btn-reject" onclick="rejectPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-reject-<?php echo (int)$item['item_id']; ?>">Remove</button>
-                        <button class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>, <?php echo $d; ?>, '<?php echo addslashes(htmlspecialchars($item['state'] ?? '')); ?>', '<?php echo addslashes(htmlspecialchars($item['category'] ?? $item['item_type'] ?? '')); ?>')" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
+                        <button type="button" class="btn-accept" onclick="acceptPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-accept-<?php echo (int)$item['item_id']; ?>">Keep</button>
+                        <button type="button" class="btn-reject" onclick="rejectPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-reject-<?php echo (int)$item['item_id']; ?>">Remove</button>
+                        <button type="button" class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>, <?php echo $d; ?>, <?php echo js_arg($item['state'] ?? ''); ?>, <?php echo js_arg($item['category'] ?? $item['item_type'] ?? ''); ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
+                        <span class="review-status" id="status-<?php echo (int)$item['item_id']; ?>">Kept</span>
                     </div>
                 </div>
 
@@ -808,15 +862,15 @@ $startDate = $it["start_date"] ?? null;
 
         <div class="confirm-bar">
             <div class="confirm-stats">
-                <strong id="stat-accepted">0</strong> accepted &middot;
+                <strong id="stat-accepted">0</strong> kept &middot;
                 <strong id="stat-rejected">0</strong> removed &middot;
-                <strong id="stat-replaced">0</strong> replacement(s) pending &middot;
+                <strong id="stat-replaced">0</strong> replacement pending &middot;
                 Selected hotel: <strong id="stat-hotel">None</strong>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
                 <a href="my_itineraries.php" class="btn btn-ghost">Back to My Itineraries</a>
                 <button type="button" class="btn btn-ghost" onclick="resetAll()">Reset All</button>
-                <button type="button" class="btn btn-primary" id="btn-confirm" onclick="confirmReview()">Confirm &amp; View Itinerary</button>
+                <button type="button" class="btn btn-primary" id="btn-confirm" onclick="confirmReview()">Confirm &amp; View Trip</button>
             </div>
         </div>
 
@@ -836,11 +890,6 @@ $startDate = $it["start_date"] ?? null;
     </div>
     <div class="ai-chat-body" id="aiChatBody">
         <div class="ai-msg bot">Hi, I am your local AI chatbot. Ask me about this generated itinerary, route order, budget, hotel choice, or places to replace before you confirm.</div>
-    </div>
-    <div class="ai-chat-prompts">
-        <button type="button" onclick="askAiQuick('Act as my travel AI chatbot and review this itinerary.')">Review</button>
-        <button type="button" onclick="askAiQuick('Suggest better replacements for low match places.')">Replace ideas</button>
-        <button type="button" onclick="askAiQuick('Check whether this itinerary is within budget.')">Budget</button>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
         <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
@@ -878,20 +927,28 @@ document.querySelectorAll('.place-card').forEach(card => {
 // ---- Accept ----
 function acceptPlace(itemId) {
     const card = document.getElementById('card-' + itemId);
-    card.classList.remove('rejected', 'replacing');
+    if (!card) return;
+    card.classList.remove('rejected', 'replacing', 'replacement-pending');
     card.classList.add('accepted');
     card.dataset.status = 'accepted';
     itemStatus[itemId] = 'accepted';
+    const status = document.getElementById('status-' + itemId);
+    if (status) status.textContent = replacementMap[itemId] ? 'Replacement pending' : 'Kept';
+    if (replacementMap[itemId]) card.classList.add('replacement-pending');
     updateStats();
 }
 
 // ---- Reject ----
 function rejectPlace(itemId) {
     const card = document.getElementById('card-' + itemId);
-    card.classList.remove('accepted', 'replacing');
+    if (!card) return;
+    card.classList.remove('accepted', 'replacing', 'replacement-pending');
     card.classList.add('rejected');
     card.dataset.status = 'rejected';
     itemStatus[itemId] = 'rejected';
+    delete replacementMap[itemId];
+    const status = document.getElementById('status-' + itemId);
+    if (status) status.textContent = 'Removed after confirm';
     // Hide replacement result if shown
     const rep = document.getElementById('replacement-' + itemId);
     if (rep) { rep.classList.remove('visible'); rep.innerHTML = ''; }
@@ -903,10 +960,13 @@ async function replacePlace(itemId, day, state, category) {
     const card = document.getElementById('card-' + itemId);
     const btn  = document.getElementById('btn-replace-' + itemId);
     const rep  = document.getElementById('replacement-' + itemId);
+    if (!card || !btn || !rep) return;
 
     card.classList.add('replacing');
-    card.classList.remove('accepted', 'rejected');
+    card.classList.remove('accepted', 'rejected', 'replacement-pending');
     card.dataset.status = 'replacing';
+    const status = document.getElementById('status-' + itemId);
+    if (status) status.textContent = 'Finding replacement...';
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner"></span> Finding...';
     rep.innerHTML = '';
@@ -958,7 +1018,7 @@ async function replacePlace(itemId, day, state, category) {
             updateCardMatch(card, data);
 
             rep.innerHTML = `
-                <div style="font-weight:800; color:#d97706; margin-bottom:4px;">Replacement selected</div>
+                <div style="font-weight:800; color:#d97706; margin-bottom:4px;">Replacement pending</div>
                 <div style="font-weight:700;">${escHtml(data.new_title)}</div>
                 <div style="font-size:11px; color:#64748b; margin-top:3px;">
                     ${data.new_state ? escHtml(data.new_state) : ''}
@@ -970,7 +1030,7 @@ async function replacePlace(itemId, day, state, category) {
                 </div>
                 <span class="pending-change-note">Pending: saved only after Confirm</span>
                 <div style="margin-top:8px; display:flex; gap:8px;">
-                    <button type="button" class="btn-accept" onclick="acceptPlace(${itemId})">Keep This</button>
+                    <button type="button" class="btn-accept" onclick="acceptPlace(${itemId})">Keep Replacement</button>
                     <button type="button" class="btn-reject" onclick="rejectPlace(${itemId})">Remove</button>
                     <button type="button" class="btn-replace" onclick="replacePlace(${itemId}, ${day}, '${escJs(data.new_state || state)}', '${escJs(data.new_category || category)}')">Try Another</button>
                 </div>
@@ -978,16 +1038,19 @@ async function replacePlace(itemId, day, state, category) {
             rep.classList.add('visible');
 
             card.classList.remove('replacing');
-            card.classList.add('accepted');
+            card.classList.add('accepted', 'replacement-pending');
             card.dataset.status = 'accepted';
             itemStatus[itemId] = 'accepted';
+            if (status) status.textContent = 'Replacement pending';
         } else {
             rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: ' + escHtml(data.message || 'No replacement found.') + '</div>';
             rep.classList.add('visible');
             card.classList.remove('replacing');
-            card.classList.add('rejected');
-            card.dataset.status = 'rejected';
-            itemStatus[itemId] = 'rejected';
+            card.classList.add('accepted');
+            card.dataset.status = 'accepted';
+            itemStatus[itemId] = 'accepted';
+            delete replacementMap[itemId];
+            if (status) status.textContent = 'Kept';
         }
     } catch(e) {
         rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: Network error. Please try again.</div>';
@@ -996,6 +1059,7 @@ async function replacePlace(itemId, day, state, category) {
         card.classList.add('accepted');
         card.dataset.status = 'accepted';
         itemStatus[itemId] = 'accepted';
+        if (status) status.textContent = 'Kept';
     }
 
     btn.disabled = false;
@@ -1039,12 +1103,14 @@ function resetAll() {
             card.dataset.category = originalCards[itemId].category;
             card.dataset.placeId = originalCards[itemId].placeId;
         }
-        card.classList.remove('rejected', 'replacing');
+        card.classList.remove('rejected', 'replacing', 'replacement-pending');
         card.classList.add('accepted');
         card.dataset.status = 'accepted';
         itemStatus[itemId] = 'accepted';
         const rep = document.getElementById('replacement-' + itemId);
         if (rep) { rep.classList.remove('visible'); rep.innerHTML = ''; }
+        const status = document.getElementById('status-' + itemId);
+        if (status) status.textContent = 'Kept';
     });
     Object.keys(replacementMap).forEach(k => delete replacementMap[k]);
     document.querySelectorAll('.hotel-card-review').forEach(c => c.classList.remove('selected'));
@@ -1104,6 +1170,13 @@ async function confirmReview() {
     const rejectedIds = Object.entries(itemStatus)
         .filter(([id, s]) => s === 'rejected')
         .map(([id]) => parseInt(id));
+    const keptCount = Object.values(itemStatus).filter(s => s === 'accepted').length;
+    if (keptCount <= 0) {
+        alert('Please keep at least one place before confirming the itinerary.');
+        btn.disabled = false;
+        btn.innerHTML = 'Confirm & View Trip';
+        return;
+    }
 
     try {
         const resp = await fetch('review_replace.php', {
@@ -1124,12 +1197,12 @@ async function confirmReview() {
         } else {
             alert('Error: ' + (data.message || 'Could not save review.'));
             btn.disabled = false;
-            btn.innerHTML = 'Confirm & View Itinerary';
+            btn.innerHTML = 'Confirm & View Trip';
         }
     } catch(e) {
         alert('Network error. Please try again.');
         btn.disabled = false;
-        btn.innerHTML = 'Confirm & View Itinerary';
+        btn.innerHTML = 'Confirm & View Trip';
     }
 }
 

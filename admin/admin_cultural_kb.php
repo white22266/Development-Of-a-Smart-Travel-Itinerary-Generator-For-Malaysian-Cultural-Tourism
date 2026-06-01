@@ -722,20 +722,36 @@ $stmt->close();
                                     <a class="btn btn-primary" href="admin_cultural_kb.php?edit_id=<?php echo (int)$detailRow["place_id"]; ?>">Edit</a>
                                 </div>
                             </div>
-                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:10px; margin:14px 0;">
-                                <div class="chip">RM <?php echo number_format((float)($detailRow["entrance_fee"] ?? $detailRow["estimated_cost"] ?? 0), 2); ?></div>
-                                <div class="chip"><?php echo ((int)($detailRow["is_active"] ?? 0) === 1) ? "Active" : "Inactive"; ?></div>
-                                <div class="chip"><?php echo (int)($detailRow["visit_duration_min"] ?? 90); ?> min visit</div>
-                                <?php if (!empty($detailRow["best_time_to_visit"])): ?><div class="chip"><?php echo htmlspecialchars($detailRow["best_time_to_visit"]); ?></div><?php endif; ?>
+                            <div style="display:grid; grid-template-columns:repeat(2, minmax(160px, 1fr)); gap:10px; margin:14px 0 16px; max-width:560px;">
+                                <div style="border:1px solid rgba(15,23,42,0.10); border-radius:12px; padding:12px 14px; background:#f8fafc;">
+                                    <div style="font-size:11px; color:#64748b; font-weight:900; text-transform:uppercase; letter-spacing:.04em;">Entrance Fee</div>
+                                    <div style="font-size:18px; font-weight:900; margin-top:4px;">RM <?php echo number_format((float)($detailRow["entrance_fee"] ?? $detailRow["estimated_cost"] ?? 0), 2); ?></div>
+                                </div>
+                                <div style="border:1px solid rgba(15,23,42,0.10); border-radius:12px; padding:12px 14px; background:#f8fafc;">
+                                    <div style="font-size:11px; color:#64748b; font-weight:900; text-transform:uppercase; letter-spacing:.04em;">Status</div>
+                                    <div style="font-size:18px; font-weight:900; margin-top:4px;"><?php echo ((int)($detailRow["is_active"] ?? 0) === 1) ? "Active" : "Inactive"; ?></div>
+                                </div>
+                                <div style="border:1px solid rgba(15,23,42,0.10); border-radius:12px; padding:12px 14px; background:#f8fafc;">
+                                    <div style="font-size:11px; color:#64748b; font-weight:900; text-transform:uppercase; letter-spacing:.04em;">Visit Duration</div>
+                                    <div style="font-size:18px; font-weight:900; margin-top:4px;"><?php echo (int)($detailRow["visit_duration_min"] ?? 90); ?> min</div>
+                                </div>
+                                <div style="border:1px solid rgba(15,23,42,0.10); border-radius:12px; padding:12px 14px; background:#f8fafc;">
+                                    <div style="font-size:11px; color:#64748b; font-weight:900; text-transform:uppercase; letter-spacing:.04em;">Best Time</div>
+                                    <div style="font-size:18px; font-weight:900; margin-top:4px;"><?php echo htmlspecialchars($detailRow["best_time_to_visit"] ?: "Any time"); ?></div>
+                                </div>
                             </div>
                             <?php if (!empty($detailRow["description"])): ?>
-                                <p style="line-height:1.6; color:#334155;"><?php echo nl2br(htmlspecialchars($detailRow["description"])); ?></p>
+                                <div style="border-top:1px solid rgba(15,23,42,0.08); padding-top:14px; margin-top:4px;">
+                                    <div style="font-size:13px; color:#64748b; font-weight:900; text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px;">Background</div>
+                                    <p style="line-height:1.65; color:#334155; margin:0;"><?php echo nl2br(htmlspecialchars($detailRow["description"])); ?></p>
+                                </div>
                             <?php endif; ?>
-                            <div style="display:grid; gap:8px; margin-top:14px; color:#475569; font-size:13px;">
+                            <div style="display:grid; gap:10px; margin-top:16px; color:#475569; font-size:13px; border-top:1px solid rgba(15,23,42,0.08); padding-top:14px;">
+                                <div style="font-size:13px; color:#64748b; font-weight:900; text-transform:uppercase; letter-spacing:.04em;">Location Details</div>
                                 <?php if (!empty($detailRow["address"])): ?><div><strong>Address:</strong> <?php echo htmlspecialchars($detailRow["address"]); ?></div><?php endif; ?>
                                 <?php if (!empty($detailRow["opening_hours"])): ?><div><strong>Opening Hours:</strong> <?php echo htmlspecialchars($detailRow["opening_hours"]); ?></div><?php endif; ?>
                                 <?php if (!empty($detailRow["latitude"]) && !empty($detailRow["longitude"])): ?><div><strong>Coordinates:</strong> <?php echo htmlspecialchars($detailRow["latitude"]); ?>, <?php echo htmlspecialchars($detailRow["longitude"]); ?></div><?php endif; ?>
-                                <?php if (!empty($detailRow["website_url"])): ?><div><strong>Website:</strong> <a href="<?php echo htmlspecialchars($detailRow["website_url"]); ?>" target="_blank" rel="noopener">Open official/source link</a></div><?php endif; ?>
+                                <?php if (!empty($detailRow["website_url"])): ?><div><strong>Website:</strong> <a href="<?php echo htmlspecialchars($detailRow["website_url"]); ?>" target="_blank" rel="noopener">Open source link</a></div><?php endif; ?>
                             </div>
                         </div>
                     </div>

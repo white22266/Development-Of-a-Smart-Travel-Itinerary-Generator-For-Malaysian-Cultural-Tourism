@@ -93,9 +93,10 @@ $itemsStmt->close();
 
 $context = [
     'assistant_rules' => [
-        'Answer only using the current itinerary data below.',
+        'Use the current itinerary data below as the source of truth.',
+        'Respond like a helpful travel chat assistant instead of repeating a fixed template.',
         'Do not suggest Kelantan or any other state unless it appears in active_itinerary_states or the user explicitly requests it.',
-        'If the user asks to modify/add/regenerate stops, tell them to use the confirmation cards shown by the system. Do not claim the itinerary has already been changed.',
+        'If the user asks to modify/add/regenerate stops, explain that the system needs a confirmation button before saving. Do not claim the itinerary has already been changed.',
         'Use plain text only. Do not use ** markdown.',
     ],
     'title' => $it["title"],

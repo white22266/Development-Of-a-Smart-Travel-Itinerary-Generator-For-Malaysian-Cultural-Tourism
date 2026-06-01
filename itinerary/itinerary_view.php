@@ -76,6 +76,8 @@ if (in_array($transportType, ["public", "publictransit", "public_transit", "tran
     $transportType = "walking";
 }
 $startDate     = $it["start_date"] ?? null;
+$originLat = $it["origin_lat"] ?? null;
+$originLng = $it["origin_lng"] ?? null;
 
 // Hotel recommendations are loaded live from Google Places in Trip Summary/AI Assistant.
 
@@ -221,6 +223,18 @@ $travellerType = strtolower((string)($it["traveller_type"] ?? "solo"));
 $tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $totalDays);
 $costService = new CostEstimationService($transportType, $totalDays, $budget, $travellerType);
 $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
+$selectedHotelCount = count(array_filter($allCostItems, fn($item) => strtolower((string)($item["item_type"] ?? "")) === "hotel"));
+$missingInfo = [];
+if (empty($startDate)) {
+    $missingInfo[] = "Start Date";
+}
+if ($originName === "" || $originLat === null || $originLng === null || (float)$originLat == 0.0 || (float)$originLng == 0.0) {
+    $missingInfo[] = "Starting Location";
+}
+if ($totalDays > 1 && $selectedHotelCount === 0) {
+    $missingInfo[] = "Confirmed Hotel";
+}
+$missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?: "[]";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -768,24 +782,6 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
             color: #334155;
             border: 1px solid rgba(15,23,42,0.08);
         }
-        .ai-chat-prompts {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-            padding: 10px 12px 0;
-            background: #fff;
-        }
-        .ai-chat-prompts button {
-            border: 1px solid rgba(15,23,42,0.12);
-            background: #fff;
-            color: #334155;
-            border-radius: 999px;
-            padding: 6px 9px;
-            font-size: 11.5px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-        .ai-chat-prompts button:hover { border-color: #4f46e5; color: #4f46e5; }
         .ai-chat-form {
             display: flex;
             gap: 8px;
@@ -1200,19 +1196,13 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
 <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
     <div class="ai-chat-header">
         <div>
-            <div class="ai-chat-title">AI Chatbot</div>
-            <div class="ai-chat-subtitle">Chat with the local AI about this itinerary.</div>
+            <div class="ai-chat-title">AI Travel Assistant</div>
+            <div class="ai-chat-subtitle">Chat about weather, hotels, dates, route changes, cost, or trip details.</div>
         </div>
         <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">Hi, I am your local AI chatbot. Ask me anything about this itinerary, route, cost, culture notes, hotels, or improvements.</div>
-    </div>
-    <div class="ai-chat-prompts">
-        <button type="button" onclick="askAiQuick('Act as my travel AI chatbot and explain this itinerary.')">Explain</button>
-        <button type="button" onclick="askAiQuick('Suggest a better route order for this itinerary.')">Route</button>
-        <button type="button" onclick="askAiQuick('How can I improve this itinerary within my budget?')">Improve</button>
-        <button type="button" onclick="regenerateCurrentDay()">Regenerate Day</button>
+        <div class="ai-msg bot" id="aiInitialMessage">Hi, tell me what you need for this trip. I can discuss hotels, weather, dates, route changes, cost, and place suggestions. I will only save changes after you click a confirmation button.</div>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
         <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
@@ -1229,6 +1219,7 @@ const HOTELS_DATA  = <?php echo $jsHotelsJson; ?>;
 const DAY_COLORS   = <?php echo $jsColorsJson; ?>;
 const TOTAL_DAYS   = <?php echo $totalDays; ?>;
 const WEATHER_KEY  = "<?php echo addslashes($openWeatherKey); ?>";
+const MISSING_INFO = <?php echo $missingInfoJson; ?>;
 
 // ---- State ----
 let map, infoWindow;
@@ -1241,6 +1232,17 @@ let dayVisible   = {};
 let currentTransport = <?php echo $jsTransport; ?>;
 let googleMapLoaded = false;
 let ACTIVE_DAY = 1;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const initial = document.getElementById('aiInitialMessage');
+    if (initial && MISSING_INFO.length) {
+        initial.textContent = 'Before this itinerary is complete, I still need: ' + MISSING_INFO.join(', ') + '. Tell me the missing details here, then confirm the detected information.';
+        const panel = document.getElementById('aiChatPanel');
+        if (panel) panel.classList.add('open');
+        const input = document.getElementById('aiChatInput');
+        if (input) setTimeout(() => input.focus(), 120);
+    }
+});
 
 function showMapLoadError(message) {
     const panel = document.getElementById('mapErrorPanel');
@@ -1884,14 +1886,8 @@ function addAiMessage(role, text) {
     return msg;
 }
 
-function askAiQuick(text) {
-    const input = document.getElementById('aiChatInput');
-    if (input) input.value = text;
-    sendAiMessage();
-}
-
-function regenerateCurrentDay() {
-    askAiQuick('Regenerate Day ' + ACTIVE_DAY + ' with suitable Johor places. Use the previous night hotel as the start point if the day is empty; otherwise continue from the last place in this day. Do not use Kelantan.');
+function clearAiPendingCards() {
+    document.querySelectorAll('.ai-pending-card').forEach(card => card.remove());
 }
 
 async function sendAiMessage(event) {
@@ -1904,20 +1900,22 @@ async function sendAiMessage(event) {
     input.value = '';
 
     addAiMessage('user', text);
+    clearAiPendingCards();
     const loading = addAiMessage('bot', 'Writing answer...');
 
     try {
         const hotelIntent = /hotel|accommodation|stay|room|住宿|酒店|旅馆/i.test(text);
         const editIntent = /replace|change|swap|modify|regenerate|alternative|better stop|change stop|arrange|empty|add|extra|fill|day\s*\d+|day\d+|更改|替换|换掉|换|改行程|重新推荐|安排|添加|加|空|没有|补/i.test(text);
-        const endpoint = editIntent ? '../api/ai_itinerary_editor.php' : 'ai_chat.php';
+        const endpoint = hotelIntent ? '../api/ai_hotel_assistant.php' : (editIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php');
         const resp = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(editIntent ? {
+            body: new URLSearchParams((hotelIntent || editIntent) ? {
                 action: 'recommend',
                 itinerary_id: ITINERARY_ID,
                 message: text,
             } : {
+                action: 'chat',
                 itinerary_id: ITINERARY_ID,
                 message: text,
             }),
@@ -1925,6 +1923,16 @@ async function sendAiMessage(event) {
         const data = await parseJsonResponse(resp);
         if (loading) {
             loading.textContent = cleanAiText(data.answer || data.message || 'AI assistant could not answer this request.');
+        }
+        if (data.pending_actions && data.pending_actions.length) {
+            const firstAction = data.pending_actions[0];
+            if (data.pending_actions.length > 1) firstAction.next_action = data.pending_actions[1];
+            renderPendingAction(loading, firstAction);
+        } else if (data.pending_action) {
+            renderPendingAction(loading, data.pending_action);
+        }
+        if (hotelIntent && data.hotels && data.hotels.length) {
+            renderHotelCards(loading, data.hotels);
         }
         if (editIntent && data.proposals && data.proposals.length) {
             renderChangeCards(loading, data.proposals);
@@ -1942,12 +1950,116 @@ function cleanAiText(text) {
         .trim();
 }
 
+function renderPendingAction(container, action) {
+    if (!container || !action || (action.type !== 'update_start_date' && action.type !== 'update_origin')) return;
+    const card = document.createElement('div');
+    card.className = 'ai-pending-card';
+    card.style.marginTop = '8px';
+    card.style.padding = '9px';
+    card.style.border = '1px solid rgba(79,70,229,.22)';
+    card.style.borderRadius = '9px';
+    card.style.background = '#eef2ff';
+
+    const title = document.createElement('strong');
+    title.style.display = 'block';
+    title.style.color = '#0f172a';
+    title.style.marginBottom = '4px';
+    title.textContent = action.type === 'update_origin' ? 'Confirm starting location' : 'Confirm trip date';
+
+    const meta = document.createElement('span');
+    meta.style.display = 'block';
+    meta.style.fontSize = '11px';
+    meta.style.color = '#475569';
+    meta.style.marginBottom = '8px';
+    meta.textContent = action.summary || (action.type === 'update_origin'
+        ? ('Update starting location to ' + (action.label || action.origin_name))
+        : ('Update itinerary start date to ' + action.label));
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.style.border = '0';
+    button.style.borderRadius = '8px';
+    button.style.background = '#4f46e5';
+    button.style.color = '#fff';
+    button.style.padding = '6px 9px';
+    button.style.fontSize = '11px';
+    button.style.fontWeight = '900';
+    button.style.cursor = 'pointer';
+    button.textContent = action.type === 'update_origin' ? 'Confirm Location' : 'Confirm Date';
+    button.addEventListener('click', () => {
+        if (action.type === 'update_origin') {
+            confirmTripOrigin(action.origin_name || action.label || '', button);
+            return;
+        }
+        confirmTripDate(action.start_date, button, action.next_action || null);
+    });
+
+    card.appendChild(title);
+    card.appendChild(meta);
+    card.appendChild(button);
+    container.appendChild(card);
+    const body = document.getElementById('aiChatBody');
+    if (body) body.scrollTop = body.scrollHeight;
+}
+
+function renderHotelCards(container, hotels) {
+    if (!container) return;
+    hotels.slice(0, 1).forEach((hotel) => {
+        const card = document.createElement('div');
+        card.className = 'ai-pending-card';
+        card.style.marginTop = '8px';
+        card.style.padding = '9px';
+        card.style.border = '1px solid rgba(15,23,42,.10)';
+        card.style.borderRadius = '9px';
+        card.style.background = '#f8fafc';
+
+        const name = document.createElement('strong');
+        name.style.display = 'block';
+        name.style.color = '#0f172a';
+        name.style.marginBottom = '4px';
+        name.textContent = hotel.name || 'Hotel';
+
+        const meta = document.createElement('span');
+        meta.style.display = 'block';
+        meta.style.fontSize = '11px';
+        meta.style.color = '#64748b';
+        meta.style.marginBottom = '7px';
+        const price = Number(hotel.price_per_night || 0);
+        const rating = Number(hotel.rating || 0);
+        meta.textContent = 'Estimated RM ' + price.toFixed(0) + '/night'
+            + (rating ? ' - Google rating ' + rating.toFixed(1) : '')
+            + (hotel.distance_km ? ' - ' + Number(hotel.distance_km).toFixed(1) + ' km away' : '')
+            + (hotel.address ? ' - ' + hotel.address : '');
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.style.border = '0';
+        button.style.borderRadius = '8px';
+        button.style.background = '#f59e0b';
+        button.style.color = '#0f172a';
+        button.style.padding = '6px 9px';
+        button.style.fontSize = '11px';
+        button.style.fontWeight = '900';
+        button.style.cursor = 'pointer';
+        button.textContent = 'Confirm Hotel';
+        button.addEventListener('click', () => confirmHotelByPlaceId(String(hotel.google_place_id || ''), button));
+
+        card.appendChild(name);
+        card.appendChild(meta);
+        card.appendChild(button);
+        container.appendChild(card);
+    });
+    const body = document.getElementById('aiChatBody');
+    if (body) body.scrollTop = body.scrollHeight;
+}
+
 function renderChangeCards(container, proposals) {
     if (!container) return;
-    proposals.slice(0, 4).forEach((proposal) => {
+    proposals.slice(0, 1).forEach((proposal) => {
         const place = proposal.new_place || {};
         const isAdd = proposal.proposal_type === 'add' || !Number(proposal.item_id || 0);
         const card = document.createElement('div');
+        card.className = 'ai-pending-card';
         card.style.marginTop = '8px';
         card.style.padding = '9px';
         card.style.border = '1px solid rgba(15,23,42,.10)';
@@ -1989,8 +2101,8 @@ function renderChangeCards(container, proposals) {
         button.style.cursor = 'pointer';
         button.textContent = isAdd ? 'Confirm Add' : 'Confirm Change';
         button.addEventListener('click', () => {
-            if (isAdd) confirmItineraryAdd(Number(proposal.day_no || 0), Number(place.place_id || 0));
-            else confirmItineraryChange(Number(proposal.item_id || 0), Number(place.place_id || 0));
+            if (isAdd) confirmItineraryAdd(Number(proposal.day_no || 0), Number(place.place_id || 0), button);
+            else confirmItineraryChange(Number(proposal.item_id || 0), Number(place.place_id || 0), button);
         });
 
         card.appendChild(title);
@@ -2003,8 +2115,94 @@ function renderChangeCards(container, proposals) {
     if (body) body.scrollTop = body.scrollHeight;
 }
 
-async function confirmItineraryChange(itemId, placeId) {
+async function confirmTripDate(startDate, button, nextAction = null) {
+    if (!startDate) return;
+    if (button) button.disabled = true;
+    const loading = addAiMessage('bot', 'Saving confirmed trip date...');
+    try {
+        const resp = await fetch('../api/ai_travel_assistant.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm_date',
+                itinerary_id: ITINERARY_ID,
+                start_date: String(startDate)
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = cleanAiText(data.answer || 'Trip date saved. Reloading...');
+            clearAiPendingCards();
+            if (nextAction) {
+                if (loading) renderPendingAction(loading, nextAction);
+                return;
+            }
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (button) button.disabled = false;
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not save this trip date.');
+        }
+    } catch (e) {
+        if (button) button.disabled = false;
+        if (loading) loading.textContent = 'Network error while saving trip date. Please try again.';
+    }
+}
+
+async function confirmTripOrigin(originName, button) {
+    originName = String(originName || '').trim();
+    if (!originName) return;
+    if (button) {
+        button.disabled = true;
+        button.textContent = 'Checking...';
+    }
+    const loading = addAiMessage('bot', 'Confirming starting location coordinates...');
+    try {
+        if (!window.google || !google.maps || !google.maps.Geocoder) {
+            throw new Error('Google Maps is not ready.');
+        }
+        const geocoder = new google.maps.Geocoder();
+        const result = await new Promise((resolve, reject) => {
+            geocoder.geocode({ address: originName, componentRestrictions: { country: 'MY' } }, (results, status) => {
+                if (status === 'OK' && results && results[0] && results[0].geometry) resolve(results[0]);
+                else reject(new Error(status || 'Geocode failed'));
+            });
+        });
+        const loc = result.geometry.location;
+        const resp = await fetch('../api/ai_travel_assistant.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm_origin',
+                itinerary_id: ITINERARY_ID,
+                origin_name: result.formatted_address || originName,
+                origin_lat: String(loc.lat()),
+                origin_lng: String(loc.lng())
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = cleanAiText(data.answer || 'Starting location saved. Reloading...');
+            clearAiPendingCards();
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (button) {
+                button.disabled = false;
+                button.textContent = 'Confirm Location';
+            }
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not save this starting location.');
+        }
+    } catch (e) {
+        if (button) {
+            button.disabled = false;
+            button.textContent = 'Confirm Location';
+        }
+        if (loading) loading.textContent = 'Could not confirm coordinates for that location. Try a clearer city, hotel, landmark, or address.';
+    }
+}
+
+async function confirmItineraryChange(itemId, placeId, button) {
     if (!itemId || !placeId) return;
+    if (button) button.disabled = true;
     const loading = addAiMessage('bot', 'Applying selected itinerary change and recalculating route/cost...');
     try {
         const resp = await fetch('../api/ai_itinerary_editor.php', {
@@ -2020,17 +2218,21 @@ async function confirmItineraryChange(itemId, placeId) {
         const data = await parseJsonResponse(resp);
         if (data.status === 'success') {
             if (loading) loading.textContent = cleanAiText(data.answer || 'Itinerary changed. Reloading...');
+            clearAiPendingCards();
             setTimeout(() => window.location.reload(), 700);
         } else {
+            if (button) button.disabled = false;
             if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not apply this itinerary change.');
         }
     } catch (e) {
+        if (button) button.disabled = false;
         if (loading) loading.textContent = 'Network error while saving itinerary change. Please try again.';
     }
 }
 
-async function confirmItineraryAdd(dayNo, placeId) {
+async function confirmItineraryAdd(dayNo, placeId, button) {
     if (!dayNo || !placeId) return;
+    if (button) button.disabled = true;
     const loading = addAiMessage('bot', 'Adding selected place and recalculating route/cost...');
     try {
         const resp = await fetch('../api/ai_itinerary_editor.php', {
@@ -2046,12 +2248,46 @@ async function confirmItineraryAdd(dayNo, placeId) {
         const data = await parseJsonResponse(resp);
         if (data.status === 'success') {
             if (loading) loading.textContent = cleanAiText(data.answer || 'Place added. Reloading...');
+            clearAiPendingCards();
             setTimeout(() => window.location.reload(), 700);
         } else {
+            if (button) button.disabled = false;
             if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not add this place.');
         }
     } catch (e) {
+        if (button) button.disabled = false;
         if (loading) loading.textContent = 'Network error while adding place. Please try again.';
+    }
+}
+
+async function confirmHotelByPlaceId(placeId, button) {
+    if (!placeId) return;
+    if (button) button.disabled = true;
+    const loading = addAiMessage('bot', 'Saving selected hotel into your itinerary and cost summary...');
+    try {
+        const resp = await fetch('review_replace.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm',
+                itinerary_id: ITINERARY_ID,
+                rejected_ids: '',
+                replacements_json: '{}',
+                hotel_place_id: placeId
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Hotel confirmed. Reloading...');
+            clearAiPendingCards();
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (button) button.disabled = false;
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not confirm this hotel.');
+        }
+    } catch (e) {
+        if (button) button.disabled = false;
+        if (loading) loading.textContent = 'Network error while saving hotel. Please try again.';
     }
 }
 
