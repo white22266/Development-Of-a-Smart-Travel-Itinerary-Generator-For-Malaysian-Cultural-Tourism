@@ -260,13 +260,13 @@ if (!function_exists('csrf_inject_html')) {
             if (stripos($html, '</body>') !== false) {
                 $loaderScript = '';
                 if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
-                    $loaderScript = '<script src="../assets/itinerary_review_hotel_loader.js?v=20260601"></script>' . "\n";
+                    $loaderScript = '<script src="../assets/itinerary_review_hotel_loader.js?v=20260602"></script>' . "\n";
                 }
                 $html = str_ireplace('</body>', $reviewScript . "\n" . $loaderScript . "</body>", $html);
             } else {
                 $html .= $reviewScript;
                 if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
-                    $html .= '<script src="../assets/itinerary_review_hotel_loader.js?v=20260601"></script>';
+                    $html .= '<script src="../assets/itinerary_review_hotel_loader.js?v=20260602"></script>';
                 }
             }
         }
