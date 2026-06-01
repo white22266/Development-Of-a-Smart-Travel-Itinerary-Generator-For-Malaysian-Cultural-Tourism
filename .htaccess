@@ -1,0 +1,33 @@
+# Apache hardening and routing rules for production hosting.
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block direct access to local secret/config templates.
+    RewriteRule ^\.env - [F,L]
+    RewriteRule ^\.git - [F,L]
+    RewriteRule ^composer\.(json|lock)$ - [F,L]
+    RewriteRule ^.*\.(sql|bak|backup|old|log)$ - [F,L]
+
+    # Do not expose internal folders directly.
+    RewriteRule ^config/ - [F,L]
+    RewriteRule ^services/ - [F,L]
+    RewriteRule ^vendor/ - [F,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(self), camera=(), microphone=()"
+</IfModule>
+
+<FilesMatch "^\.(env|git)">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sql|bak|backup|old|log)$">
+    Require all denied
+</FilesMatch>
