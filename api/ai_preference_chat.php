@@ -18,7 +18,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $preferenceId = (int)($_POST["preference_id"] ?? 0);
-$message = sanitize_text((string)($_POST["message"] ?? ""), 900);
+$message = sanitize_text((string)($_POST["message"] ?? ""), 450);
 
 if ($travellerId <= 0) {
     http_response_code(401);
@@ -145,31 +145,26 @@ function load_preference(mysqli $conn, int $travellerId, int $preferenceId): ?ar
 function build_chat_prompt(array $pref, string $message): string
 {
     $context = [
-        "selected_preference_id" => (int)$pref["preference_id"],
-        "trip_days" => (int)$pref["trip_days"],
+        "days" => (int)$pref["trip_days"],
         "budget_rm" => (float)$pref["budget"],
-        "budget_tier" => $pref["budget_tier"] ?? "normal",
-        "transport_type" => $pref["transport_type"] ?? "car",
-        "traveller_type" => $pref["traveller_type"] ?? "solo",
-        "travel_pace" => $pref["travel_pace"] ?? "normal",
-        "dietary_preference" => $pref["dietary_preference"] ?? "none",
-        "preferred_visit_time" => $pref["preferred_visit_time"] ?? "any",
-        "accessibility_needs" => $pref["accessibility_needs"] ?? "",
-        "interests" => $pref["interests"] ?? "",
-        "preferred_states" => $pref["preferred_states"] ?? "",
-        "preferred_districts" => $pref["preferred_districts"] ?? "",
+        "budget_tier" => sanitize_text((string)($pref["budget_tier"] ?? "normal"), 40),
+        "transport" => sanitize_text((string)($pref["transport_type"] ?? "car"), 40),
+        "traveller" => sanitize_text((string)($pref["traveller_type"] ?? "solo"), 40),
+        "pace" => sanitize_text((string)($pref["travel_pace"] ?? "normal"), 40),
+        "diet" => sanitize_text((string)($pref["dietary_preference"] ?? "none"), 50),
+        "visit_time" => sanitize_text((string)($pref["preferred_visit_time"] ?? "any"), 50),
+        "accessibility" => sanitize_text((string)($pref["accessibility_needs"] ?? ""), 120),
+        "interests" => sanitize_text((string)($pref["interests"] ?? ""), 160),
+        "states" => sanitize_text((string)($pref["preferred_states"] ?? ""), 120),
+        "districts" => sanitize_text((string)($pref["preferred_districts"] ?? ""), 120),
     ];
 
-    return "You are an AI Travel Assistant inside a Malaysian cultural tourism itinerary system.\n"
-        . "Use the selected saved traveller preference as context. Answer the traveller's question with practical, concise advice.\n"
-        . "This page is before official itinerary generation. Do not invent a full day-by-day itinerary or fake places. Help the user understand or fill missing generation details.\n"
-        . "Do not ask the user to re-enter all preferences. Do not claim bookings are made. Do not write to the database. If the user gives a date, hotel requirement, origin, or other detail, say it needs confirmation before use.\n"
-        . "If the user asks for route or place suggestions, explain the rule-based generator will select places from the database after they click Generate Itinerary.\n"
-        . "If festival activities are mentioned, remind that festivals should only be included when their dates match the travel date.\n\n"
-        . "Selected preference:\n"
+    return "Task: Answer the traveller briefly before itinerary generation.\n"
+        . "Rules: Do not create a fake itinerary. Do not claim anything is saved. If the user provides a date, origin, hotel need, accessibility need, or other requirement, say it needs confirmation before use. Reply under 90 words. Plain text only.\n"
+        . "Preference JSON:\n"
         . json_encode($context, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
-        . "\n\nTraveller question:\n"
-        . $message;
+        . "\nTraveller question:\n"
+        . sanitize_text($message, 450);
 }
 
 function call_ollama_chat(string $model, string $prompt): array
@@ -187,7 +182,7 @@ function call_ollama_chat(string $model, string $prompt): array
         "messages" => [
             [
                 "role" => "system",
-                "content" => "You are a controlled preference assistant before itinerary generation. Do not create a fake itinerary. Help the user clarify details for the generator. Keep answers clear and not too long.",
+                "content" => "You are a controlled preference assistant before itinerary generation. Keep replies short, practical, and plain text only.",
             ],
             [
                 "role" => "user",
@@ -195,16 +190,30 @@ function call_ollama_chat(string $model, string $prompt): array
             ],
         ],
         "stream" => false,
-        "options" => ["temperature" => 0.45],
+        "keep_alive" => -1,
+        "options" => [
+            "temperature" => 0.2,
+            "num_ctx" => 512,
+            "num_predict" => 80,
+            "num_thread" => 2,
+        ],
     ];
+
+    $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    if ($payloadJson === false) {
+        return ["status" => "error", "message" => "AI request could not be prepared.", "source" => "ollama"];
+    }
+
+    error_log("Ollama preference chat payload size: " . strlen($payloadJson) . " bytes");
+    $start = microtime(true);
 
     $ch = curl_init($url);
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_POST => true,
         CURLOPT_HTTPHEADER => ["Content-Type: application/json"],
-        CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-        CURLOPT_TIMEOUT => 120,
+        CURLOPT_POSTFIELDS => $payloadJson,
+        CURLOPT_TIMEOUT => 60,
         CURLOPT_CONNECTTIMEOUT => 5,
         CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
     ]);
@@ -213,6 +222,9 @@ function call_ollama_chat(string $model, string $prompt): array
     $err = curl_error($ch);
     $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
+
+    $duration = round(microtime(true) - $start, 2);
+    error_log("Ollama preference chat duration: " . $duration . "s | HTTP " . $code . " | URL: " . $url);
 
     if ($raw === false || $err !== "") {
         error_log("Ollama preference chat request failed: " . $err . " | URL: " . $url);
@@ -304,7 +316,7 @@ function parse_trip_date(string $text): ?string
         "sep" => 9, "sept" => 9, "september" => 9,
         "oct" => 10, "october" => 10,
         "nov" => 11, "november" => 11,
-        "dec" => 12, "december" => 12,
+        "dec" => 12, "december" => 12
     ];
     if (preg_match('/\b(\d{4})-(\d{1,2})-(\d{1,2})\b/', $text, $m)) {
         return valid_date((int)$m[1], (int)$m[2], (int)$m[3]);
@@ -355,7 +367,8 @@ function clean_ai_reply(string $text): string
 {
     $text = preg_replace('/\*{1,3}([^*]+)\*{1,3}/u', '$1', $text) ?? $text;
     $text = preg_replace('/^\s{0,3}#{1,6}\s*/m', '', $text) ?? $text;
-    return trim($text);
+    $text = preg_replace('/\s+/', ' ', $text) ?? $text;
+    return sanitize_text(trim($text), 900);
 }
 
 function is_trip_date_intent_message(string $message): bool
