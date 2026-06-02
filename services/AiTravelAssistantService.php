@@ -35,7 +35,7 @@ class AiTravelAssistantService
             "Do not invent live traffic, booking prices, opening hours, or saved changes.",
             "If information is missing, say it is estimated or not provided.",
             "Reply in the same language as the user when possible.",
-            "Keep the reply concise, practical, and under 120 words.",
+            "Keep the reply concise and practical. If the user asks for a longer explanation, give a fuller answer but keep it clear.",
             "Plain text only. No Markdown formatting.",
         ]);
 
@@ -69,7 +69,7 @@ class AiTravelAssistantService
             'options' => [
                 'temperature' => 0.2,
                 'num_ctx' => defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512,
-                'num_predict' => 120,
+                'num_predict' => 260,
                 'num_thread' => 2,
             ],
         ];
@@ -174,7 +174,10 @@ class AiTravelAssistantService
             ],
             'generationConfig' => [
                 'temperature' => 0.2,
-                'maxOutputTokens' => 180,
+                'maxOutputTokens' => 360,
+                'thinkingConfig' => [
+                    'thinkingBudget' => 0,
+                ],
             ],
         ];
 
@@ -216,6 +219,7 @@ class AiTravelAssistantService
             return ['status' => 'error', 'message' => $message, 'source' => 'gemini'];
         }
 
+        $finishReason = (string)($json['candidates'][0]['finishReason'] ?? '');
         $text = '';
         foreach (($json['candidates'][0]['content']['parts'] ?? []) as $part) {
             $text .= (string)($part['text'] ?? '');
@@ -224,6 +228,10 @@ class AiTravelAssistantService
 
         if ($text === '') {
             return ['status' => 'error', 'message' => 'Gemini returned an empty response.', 'source' => 'gemini'];
+        }
+
+        if ($finishReason === 'MAX_TOKENS' && (mb_strlen($text, 'UTF-8') < 80 || preg_match('/[-:]\s*$/u', $text))) {
+            return ['status' => 'error', 'message' => 'Gemini response was truncated by token limit.', 'source' => 'gemini'];
         }
 
         return ['status' => 'success', 'answer' => $text, 'source' => 'gemini', 'model' => $model];

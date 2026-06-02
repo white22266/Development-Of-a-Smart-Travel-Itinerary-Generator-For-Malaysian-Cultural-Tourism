@@ -207,7 +207,10 @@ function call_gemini_chat(string $prompt): array
         ]],
         "generationConfig" => [
             "temperature" => 0.25,
-            "maxOutputTokens" => 180,
+            "maxOutputTokens" => 300,
+            "thinkingConfig" => [
+                "thinkingBudget" => 0,
+            ],
         ],
     ];
 
