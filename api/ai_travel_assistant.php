@@ -1,6 +1,6 @@
 <?php
 // General AI Travel Assistant endpoint.
-// Handles conversational questions, trip date detection, and weather checks.
+// Handles conversational questions, trip date detection, weather checks, and explicit date/origin confirmations.
 // Database changes are only made by explicit confirm actions.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -86,10 +86,11 @@ if ($message === "") {
 $items = load_itinerary_items($conn, $itineraryId);
 $parsedDate = parse_trip_date($message);
 $parsedOrigin = extract_origin_name($message);
-$pendingAction = null;
 $pendingActions = [];
 
-if ($parsedDate && is_date_detail_message($message)) {
+// Only create save/update confirmations when the traveller clearly asks to change saved data.
+// Do not infer updates from general questions such as "explain the trip" or from the AI's own reply.
+if ($parsedDate && is_explicit_date_update_message($message) && !same_trip_date($parsedDate, (string)($itinerary["start_date"] ?? ""))) {
     $pendingActions[] = [
         "type" => "update_start_date",
         "start_date" => $parsedDate,
@@ -97,7 +98,8 @@ if ($parsedDate && is_date_detail_message($message)) {
         "summary" => "Update this itinerary start date to " . format_display_date($parsedDate),
     ];
 }
-if ($parsedOrigin !== "") {
+
+if ($parsedOrigin !== "" && is_explicit_origin_update_message($message) && !same_origin_name($parsedOrigin, (string)($itinerary["origin_name"] ?? ""))) {
     $pendingActions[] = [
         "type" => "update_origin",
         "origin_name" => $parsedOrigin,
@@ -105,13 +107,14 @@ if ($parsedOrigin !== "") {
         "summary" => "Update starting location to " . $parsedOrigin,
     ];
 }
+
 $pendingAction = $pendingActions[0] ?? null;
 
 if (is_weather_question($message)) {
-    $weather = build_weather_answer($items, $parsedDate ?: (string)($itinerary["start_date"] ?? ""));
-    $answer = $weather;
+    $weatherDate = $parsedDate ?: (string)($itinerary["start_date"] ?? "");
+    $answer = build_weather_answer($items, $weatherDate);
     if ($pendingAction) {
-        $answer .= "\n\nI also detected " . describe_pending_action($pendingAction) . ". Please confirm if this is correct.";
+        $answer .= "\n\nI detected " . describe_pending_action($pendingAction) . ". Please confirm if this is correct.";
     }
     log_ai_chat($conn, $itineraryId, $travellerId, $message, $answer);
     echo json_encode([
@@ -123,7 +126,7 @@ if (is_weather_question($message)) {
     exit;
 }
 
-if ($pendingAction && ($pendingAction["type"] === "update_origin" || is_date_detail_message($message))) {
+if ($pendingAction) {
     $answer = "I detected " . describe_pending_action($pendingAction) . ". Click the confirmation button to update the itinerary. I will not save it until you confirm.";
     log_ai_chat($conn, $itineraryId, $travellerId, $message, $answer);
     echo json_encode([
@@ -139,9 +142,10 @@ $context = [
     "assistant_role" => "conversational travel planning helper",
     "safety_rules" => [
         "Use the current itinerary as the source of truth.",
-        "You may ask follow-up questions and help the traveller clarify hotel, route, date, budget, weather, accessibility, and preference details.",
+        "The saved start date and saved starting location in the itinerary are already confirmed unless they are empty.",
+        "When answering summary or explanation questions, do not ask the traveller to reconfirm existing start date, existing starting location, or hotel.",
+        "Only suggest a confirmation button when the traveller clearly asks to update a saved field.",
         "Do not say anything has been saved or confirmed unless the system returns a confirmation result.",
-        "If the user gives a detail that needs saving, explain that a confirmation button is required.",
         "Do not suggest a rejected state or unrelated state. Keep recommendations aligned with the itinerary states unless the user asks otherwise.",
         "Use plain text only. Avoid markdown symbols.",
     ],
@@ -177,42 +181,15 @@ if (($result["status"] ?? "") !== "success" || $answer === "") {
     $answer = "I can help with this trip, but the local AI service is not available right now. You can still use the rule-based itinerary generator, hotel confirmation, and route tools.";
 }
 
-$combinedDetailText = trim($message . "\n" . $answer);
-if (empty($pendingActions)) {
-    $aiDate = parse_trip_date($combinedDetailText);
-    if ($aiDate && (is_date_detail_message($message) || is_date_detail_message($answer))) {
-        $pendingActions[] = [
-            "type" => "update_start_date",
-            "start_date" => $aiDate,
-            "label" => format_display_date($aiDate),
-            "summary" => "Update this itinerary start date to " . format_display_date($aiDate),
-        ];
-    }
-}
-if (!array_filter($pendingActions, fn($a) => ($a["type"] ?? "") === "update_origin")) {
-    $aiOrigin = extract_origin_name($combinedDetailText);
-    if ($aiOrigin !== "") {
-        $pendingActions[] = [
-            "type" => "update_origin",
-            "origin_name" => $aiOrigin,
-            "label" => $aiOrigin,
-            "summary" => "Update starting location to " . $aiOrigin,
-        ];
-    }
-}
-$pendingAction = $pendingActions[0] ?? null;
-
-if ($pendingAction) {
-    $answer .= "\n\nI detected " . describe_pending_action($pendingAction) . ". Please confirm if this is correct.";
-}
-
+// No secondary parsing of $answer here. The old logic parsed dates/origins from the AI's own explanation,
+// which caused false confirmation buttons for already saved start dates and starting locations.
 log_ai_chat($conn, $itineraryId, $travellerId, $message, $answer);
 
 echo json_encode([
     "status" => "success",
     "answer" => $answer,
-    "pending_action" => $pendingAction,
-    "pending_actions" => $pendingActions,
+    "pending_action" => null,
+    "pending_actions" => [],
 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
 function load_itinerary(mysqli $conn, int $itineraryId, int $travellerId): ?array
@@ -305,51 +282,35 @@ function parse_trip_date(string $text): ?string
     }
     if (preg_match('/\b(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)[,\s\/\-.]+(\d{4})\b/', $text, $m)) {
         $monthKey = strtolower($m[2]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[3], $months[$monthKey], (int)$m[1]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[3], $months[$monthKey], (int)$m[1]);
     }
     if (preg_match('/\b([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[,\s\/\-.]+(\d{4})\b/', $text, $m)) {
         $monthKey = strtolower($m[1]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
     }
     if (preg_match('/\b(\d{4})[\s\/\-.]+([a-zA-Z]+)[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?\b/', $text, $m)) {
         $monthKey = strtolower($m[2]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[1], $months[$monthKey], (int)$m[3]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[1], $months[$monthKey], (int)$m[3]);
     }
     if (preg_match('/\b(\d{4})[\s\/\-.]+(\d{1,2})(?:st|nd|rd|th)?[\s\/\-.]+([a-zA-Z]+)\b/', $text, $m)) {
         $monthKey = strtolower($m[3]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[1], $months[$monthKey], (int)$m[2]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[1], $months[$monthKey], (int)$m[2]);
     }
     if (preg_match('/\b(\d{1,2})(\d{4})([a-zA-Z]+)\b/', $text, $m)) {
         $monthKey = strtolower($m[3]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[2], $months[$monthKey], (int)$m[1]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[2], $months[$monthKey], (int)$m[1]);
     }
     if (preg_match('/\b([a-zA-Z]+)(\d{1,2})(\d{4})\b/', $text, $m)) {
         $monthKey = strtolower($m[1]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
     }
     if (preg_match('/\b(\d{1,2})(?:st|nd|rd|th)?\s*([a-zA-Z]+)\s*(\d{4})\b/', $text, $m)) {
         $monthKey = strtolower($m[2]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[3], $months[$monthKey], (int)$m[1]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[3], $months[$monthKey], (int)$m[1]);
     }
     if (preg_match('/\b([a-zA-Z]+)\s*(\d{1,2})(?:st|nd|rd|th)?[,]?\s*(\d{4})\b/', $text, $m)) {
         $monthKey = strtolower($m[1]);
-        if (isset($months[$monthKey])) {
-            return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
-        }
+        if (isset($months[$monthKey])) return valid_date((int)$m[3], $months[$monthKey], (int)$m[2]);
     }
     return null;
 }
@@ -366,24 +327,50 @@ function format_display_date(string $date): string
     return $dt ? $dt->format("d M Y") : $date;
 }
 
-function is_weather_question(string $message): bool
+function same_trip_date(string $newDate, string $currentDate): bool
 {
-    return (bool)preg_match('/weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella|cuaca|hujan|\x{5929}\x{6C14}|\x{4E0B}\x{96E8}|\x{70ED}/iu', $message);
+    $current = parse_trip_date($currentDate);
+    return $current !== null && $current === $newDate;
 }
 
-function is_date_detail_message(string $message): bool
+function normalize_place_name(string $value): string
 {
-    return (bool)preg_match('/start|date|travel|trip|go|visit|arrive|depart|going|\x{51FA}\x{53D1}|\x{65E5}\x{671F}|\x{53BB}|\x{73A9}|\x{65C5}\x{884C}/iu', $message);
+    $value = strtolower(trim(strip_tags($value)));
+    $value = preg_replace('/\s+/', ' ', $value) ?? $value;
+    $value = preg_replace('/[^a-z0-9\s,.-]/', '', $value) ?? $value;
+    return trim($value, " \t\n\r\0\x0B,.;");
+}
+
+function same_origin_name(string $newOrigin, string $currentOrigin): bool
+{
+    $new = normalize_place_name($newOrigin);
+    $current = normalize_place_name($currentOrigin);
+    return $new !== "" && $current !== "" && ($new === $current || str_contains($current, $new) || str_contains($new, $current));
+}
+
+function is_weather_question(string $message): bool
+{
+    return (bool)preg_match('/weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella|cuaca|hujan|天气|下雨|热/iu', $message);
+}
+
+function is_explicit_date_update_message(string $message): bool
+{
+    return (bool)preg_match('/\b(?:change|update|set|move|reschedule|replace|confirm)\b.*\b(?:start\s*date|travel\s*date|trip\s*date|date)\b|\b(?:start\s*date|travel\s*date|trip\s*date|date)\b.*\b(?:to|as|is|=)\b|\b(?:travel|visit|depart|arrive|go)\s+(?:on|at)\b|改.*日期|更改.*日期|换.*日期|出发日期|旅行日期/iu', $message);
+}
+
+function is_explicit_origin_update_message(string $message): bool
+{
+    return (bool)preg_match('/\b(?:change|update|set|use|replace|confirm)\b.*\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b|\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b.*\b(?:to|as|is|=)\b|\b(?:i\s+will\s+start|i\s+start|start\s+from|starting\s+from|depart\s+from|leaving\s+from|leave\s+from)\b|起点|出发地|出发地点/iu', $message);
 }
 
 function extract_origin_name(string $message): string
 {
     $patterns = [
-        '/\b(?:change|update|set|use|replace)\s+(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s+(?:to|as)\s+(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:change|update|set|use|replace|confirm)\s+(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s+(?:to|as)\s+(.+?)(?:[.!?]|$)/iu',
         '/\b(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s*(?:is|=|:)\s*(.+?)(?:[.!?]|$)/iu',
         '/\b(?:i\s+will\s+start|i\s+start|start\s+me|route\s+me|start\s+from|starting\s+from)\s+(?:at|from)?\s*(.+?)(?:\s+(?:to|on|for)\b|[.!?]|$)/iu',
-        '/\b(?:start(?:ing)? from|depart(?:ing)? from|leave from|leaving from|from)\s+(.+?)(?:\s+(?:to|on|at|for)\b|[.!?]|$)/iu',
-        '/\b(?:my starting location is|starting location is|origin is)\s+(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:depart(?:ing)? from|leave from|leaving from)\s+(.+?)(?:\s+(?:to|on|at|for)\b|[.!?]|$)/iu',
+        '/(?:起点|出发地|出发地点)\s*(?:是|为|=|:)\s*(.+?)(?:[。.!?]|$)/iu',
     ];
     foreach ($patterns as $pattern) {
         if (preg_match($pattern, $message, $m)) {
@@ -490,17 +477,10 @@ function fetch_current_weather(float $lat, float $lng): ?array
 
 function log_ai_chat(mysqli $conn, int $itineraryId, int $travellerId, string $message, string $answer): void
 {
-    if (!table_exists($conn, "ai_chat_logs")) return;
+    if (!function_exists("table_exists") || !table_exists($conn, "ai_chat_logs")) return;
     $stmt = $conn->prepare("INSERT INTO ai_chat_logs (itinerary_id, traveller_id, user_message, ai_response) VALUES (?, ?, ?, ?)");
     if (!$stmt) return;
     $stmt->bind_param("iiss", $itineraryId, $travellerId, $message, $answer);
     $stmt->execute();
     $stmt->close();
-}
-
-function table_exists(mysqli $conn, string $table): bool
-{
-    $table = $conn->real_escape_string($table);
-    $res = $conn->query("SHOW TABLES LIKE '$table'");
-    return ($res && $res->num_rows > 0);
 }
