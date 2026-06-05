@@ -14,23 +14,18 @@ class CostEstimationService
     private int $partySize;
 
     private const TRANSPORT_RATE = [
-        'car'              => 0.60,
-        'motorcycle'       => 0.30,
+        'car' => 0.60,
+        'motorcycle' => 0.30,
         'public_transport' => 0.15,
-        'walking'          => 0.00,
+        'walking' => 0.00,
     ];
 
     private const DEFAULT_HOTEL_RATE = 120.00;
     private const MEALS_PER_DAY = 3;
     private const AVG_MEAL_PRICE = 15.00;
 
-    public function __construct(
-        string $transportType = 'car',
-        int $tripDays = 1,
-        float $budget = 0.0,
-        string $travellerType = 'solo',
-        ?int $partySize = null
-    ) {
+    public function __construct(string $transportType = 'car', int $tripDays = 1, float $budget = 0.0, string $travellerType = 'solo', ?int $partySize = null)
+    {
         $this->transportType = self::normalizeTransportType($transportType);
         $this->tripDays = max(1, $tripDays);
         $this->budget = max(0.0, $budget);
@@ -61,9 +56,7 @@ class CostEstimationService
 
     public static function resolvePartySize(string $travellerType, ?int $partySize = null): int
     {
-        if ($partySize !== null && $partySize >= 1) {
-            return max(1, min(1000, $partySize));
-        }
+        if ($partySize !== null && $partySize >= 1) return max(1, min(1000, $partySize));
         return self::defaultPartySize($travellerType);
     }
 
@@ -95,6 +88,33 @@ class CostEstimationService
         return max(1, (int)ceil(max(1, $partySize) / 2));
     }
 
+    public static function wholePartyItemCost(string $itemType, float $perUnitCost, int $partySize): float
+    {
+        $itemType = strtolower(trim($itemType));
+        $units = $itemType === 'hotel' ? self::roomCount($partySize) : max(1, $partySize);
+        return round(max(0.0, $perUnitCost) * $units, 2);
+    }
+
+    public static function itemCostLabel(string $itemType, float $perUnitCost, int $partySize): array
+    {
+        $itemType = strtolower(trim($itemType));
+        $partySize = max(1, $partySize);
+        $whole = self::wholePartyItemCost($itemType, $perUnitCost, $partySize);
+        if ($itemType === 'hotel') {
+            $rooms = self::roomCount($partySize);
+            return [
+                'unit_label' => 'RM ' . number_format($perUnitCost, 2) . ' per room',
+                'whole_label' => 'RM ' . number_format($whole, 2) . ' for ' . $rooms . ' room(s)',
+                'whole_cost' => $whole,
+            ];
+        }
+        return [
+            'unit_label' => 'RM ' . number_format($perUnitCost, 2) . ' per person',
+            'whole_label' => 'RM ' . number_format($whole, 2) . ' for ' . $partySize . ' traveller(s)',
+            'whole_cost' => $whole,
+        ];
+    }
+
     public static function budgetTierDefaults(string $budgetTier, float $budget = 0.0, int $tripDays = 1, ?int $partySize = null): array
     {
         $defaults = match (strtolower(trim($budgetTier))) {
@@ -102,7 +122,6 @@ class CostEstimationService
             'luxury' => ['hotel' => 280.0, 'meal' => 35.0],
             default => ['hotel' => 150.0, 'meal' => 20.0],
         };
-
         if ($budget <= 0) return $defaults;
 
         $days = max(1, $tripDays);
@@ -110,29 +129,19 @@ class CostEstimationService
         $people = max(1, $partySize ?? 1);
         $rooms = self::roomCount($people);
         $mealSlots = max(1, $days * self::MEALS_PER_DAY * $people);
-
         $mealCap = ($budget * 0.25) / $mealSlots;
         $hotelCap = $nights > 0 ? ($budget * 0.30) / ($nights * $rooms) : 0.0;
-
         $defaults['meal'] = max(6.0, min($defaults['meal'], $mealCap));
-        if ($nights > 0) {
-            $defaults['hotel'] = max(60.0, min($defaults['hotel'], $hotelCap));
-        }
+        if ($nights > 0) $defaults['hotel'] = max(60.0, min($defaults['hotel'], $hotelCap));
         return $defaults;
     }
 
-    public function calculate(
-        array $itineraryItems,
-        float $totalDistanceKm = 0.0,
-        float $hotelRatePerNight = 0.0,
-        int $mealsPerDay = 0,
-        float $avgMealPrice = 0.0
-    ): array {
+    public function calculate(array $itineraryItems, float $totalDistanceKm = 0.0, float $hotelRatePerNight = 0.0, int $mealsPerDay = 0, float $avgMealPrice = 0.0): array
+    {
         $attractionBase = 0.0;
         $scheduledFoodBase = 0.0;
         $selectedHotelBase = 0.0;
         $selectedHotelCount = 0;
-
         foreach ($itineraryItems as $item) {
             $type = strtolower((string)($item['item_type'] ?? ''));
             $cost = max(0.0, (float)($item['estimated_cost'] ?? 0));
@@ -150,8 +159,6 @@ class CostEstimationService
         $rooms = self::roomCount($partySize);
         $vehicleUnits = self::vehicleCount($this->transportType, $partySize);
         $nights = max(0, $this->tripDays - 1);
-
-        // Assumption: cultural place entrance fees and food place estimates are per person unless future pricing_unit says otherwise.
         $attractionCost = round($attractionBase * $partySize, 2);
         $scheduledFoodCost = round($scheduledFoodBase * $partySize, 2);
 
@@ -185,7 +192,7 @@ class CostEstimationService
             : $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2) . ' x ' . $partySize . ' traveller(s)';
 
         $totalCost = round($attractionCost + $transportCost + $accommodationCost + $foodCost, 2);
-        $withinBudget = $this->budget <= 0 ? true : $totalCost <= $this->budget;
+        $withinBudget = $this->budget <= 0 || $totalCost <= $this->budget;
         $budgetDifference = $this->budget > 0 ? round($this->budget - $totalCost, 2) : 0.0;
 
         return [
@@ -202,26 +209,10 @@ class CostEstimationService
             'room_count' => $rooms,
             'vehicle_units' => $vehicleUnits,
             'breakdown' => [
-                [
-                    'label' => 'Attraction / Entrance Fees',
-                    'amount' => $attractionCost,
-                    'note' => 'RM ' . number_format($attractionBase, 2) . ' per-person place costs x ' . $partySize . ' traveller(s)',
-                ],
-                [
-                    'label' => 'Transport (' . ucfirst(str_replace('_', ' ', $this->transportType)) . ')',
-                    'amount' => $transportCost,
-                    'note' => $transportNote,
-                ],
-                [
-                    'label' => 'Accommodation',
-                    'amount' => $accommodationCost,
-                    'note' => $hotelNote,
-                ],
-                [
-                    'label' => 'Food & Meals',
-                    'amount' => $foodCost,
-                    'note' => $foodNote,
-                ],
+                ['label' => 'Attraction / Entrance Fees', 'amount' => $attractionCost, 'note' => 'RM ' . number_format($attractionBase, 2) . ' per-person place costs x ' . $partySize . ' traveller(s)'],
+                ['label' => 'Transport (' . ucfirst(str_replace('_', ' ', $this->transportType)) . ')', 'amount' => $transportCost, 'note' => $transportNote],
+                ['label' => 'Accommodation', 'amount' => $accommodationCost, 'note' => $hotelNote],
+                ['label' => 'Food & Meals', 'amount' => $foodCost, 'note' => $foodNote],
             ],
         ];
     }
@@ -230,13 +221,32 @@ class CostEstimationService
     {
         $result = [];
         foreach ($itemsByDay as $day => $items) {
-            $dayCost = 0.0;
-            foreach ($items as $item) $dayCost += (float)($item['estimated_cost'] ?? 0);
+            $wholePartyItemCost = 0.0;
+            $attractionAndFoodCost = 0.0;
+            $hotelCost = 0.0;
+            $itemDetails = [];
+            foreach ($items as $item) {
+                $type = strtolower((string)($item['item_type'] ?? ''));
+                $perUnit = max(0.0, (float)($item['estimated_cost'] ?? 0));
+                $labels = self::itemCostLabel($type, $perUnit, $this->partySize);
+                $wholePartyItemCost += (float)$labels['whole_cost'];
+                if ($type === 'hotel') $hotelCost += (float)$labels['whole_cost'];
+                else $attractionAndFoodCost += (float)$labels['whole_cost'];
+                $copy = $item;
+                $copy['_cost_unit_label'] = $labels['unit_label'];
+                $copy['_whole_party_cost_label'] = $labels['whole_label'];
+                $copy['_whole_party_cost'] = $labels['whole_cost'];
+                $itemDetails[] = $copy;
+            }
             $result[$day] = [
                 'day' => (int)$day,
-                'attraction_cost' => round($dayCost * $this->partySize, 2),
+                'whole_party_item_cost' => round($wholePartyItemCost, 2),
+                'attraction_cost' => round($attractionAndFoodCost, 2),
+                'hotel_cost' => round($hotelCost, 2),
+                'party_size' => $this->partySize,
+                'room_count' => self::roomCount($this->partySize),
                 'item_count' => count($items),
-                'items' => $items,
+                'items' => $itemDetails,
             ];
         }
         return $result;
