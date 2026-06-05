@@ -30,3 +30,9 @@ define('SMTP_FROM_NAME', trim((string) env_value('SMTP_FROM_NAME', 'Admin Smart 
 define('OLLAMA_MODEL', trim((string) env_value('OLLAMA_MODEL', 'qwen2.5:3b')));
 define('OLLAMA_BASE_URL', rtrim(trim((string) env_value('OLLAMA_BASE_URL', 'http://127.0.0.1:11434')), '/'));
 define('OLLAMA_NUM_CTX', max(128, (int) env_value('OLLAMA_NUM_CTX', '512')));
+
+// Page/API-specific hooks are intentionally loaded outside db_connect.php.
+// The bootstrap itself checks the current business endpoint before doing anything.
+if (isset($conn) && $conn instanceof mysqli) {
+    require_once __DIR__ . '/business_request_bootstrap.php';
+}
