@@ -6,6 +6,7 @@ session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/RuleBasedItineraryPlannerService.php";
+require_once "../services/PlannerIntegrityService.php";
 
 if (
     !isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true ||
@@ -54,6 +55,9 @@ if (!empty($errors)) {
 }
 
 try {
+    // Strict festival safety is enforced in application logic, even before the SQL migration is applied.
+    PlannerIntegrityService::deactivateUnverifiedFestivals($conn);
+
     $googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
     $planner = new RuleBasedItineraryPlannerService($conn, $googleMapsKey);
     $itineraryId = $planner->generate($travellerId, $preferenceId, [
@@ -62,6 +66,10 @@ try {
         "origin_lat" => $originLat,
         "origin_lng" => $originLng,
     ]);
+
+    // Enforce a cumulative whole-trip attraction budget after route generation.
+    // Paid visits that exceed the remaining attraction budget are removed where this does not create an empty day.
+    PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
 
     if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {
         unset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId]);
