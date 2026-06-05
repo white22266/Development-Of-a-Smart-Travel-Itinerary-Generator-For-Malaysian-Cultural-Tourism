@@ -1,6 +1,7 @@
 <?php
 // config/security.php
 // Common security helpers for forms, AJAX requests, and POST endpoints.
+// This file intentionally contains no itinerary-view route or cost scripts.
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -57,15 +58,6 @@ if (!function_exists('is_itinerary_review_page')) {
         $script = (string) ($_SERVER['SCRIPT_NAME'] ?? '');
         $uri = (string) ($_SERVER['REQUEST_URI'] ?? '');
         return str_contains($script, 'itinerary_review.php') || str_contains($uri, 'itinerary_review.php');
-    }
-}
-
-if (!function_exists('is_itinerary_view_page')) {
-    function is_itinerary_view_page(): bool
-    {
-        $script = (string) ($_SERVER['SCRIPT_NAME'] ?? '');
-        $uri = (string) ($_SERVER['REQUEST_URI'] ?? '');
-        return str_contains($script, 'itinerary_view.php') || str_contains($uri, 'itinerary_view.php');
     }
 }
 
@@ -154,26 +146,6 @@ HTML;
     }
 }
 
-if (!function_exists('itinerary_view_origin_assets')) {
-    function itinerary_view_origin_assets(): string
-    {
-        $it = $GLOBALS['it'] ?? [];
-        $origin = [
-            'name' => (string)($it['origin_name'] ?? 'Starting point'),
-            'lat' => isset($it['origin_lat']) ? (float)$it['origin_lat'] : null,
-            'lng' => isset($it['origin_lng']) ? (float)$it['origin_lng'] : null,
-        ];
-        $meta = [
-            'origin' => $origin,
-            'budget' => isset($it['budget']) ? (float)$it['budget'] : 0,
-            'transportType' => (string)($it['transport_type'] ?? 'car'),
-        ];
-        $json = json_encode($meta, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE) ?: '{}';
-        return '<script>window.ITINERARY_VIEW_META = ' . $json . ';</script>' . "\n"
-            . '<script src="../assets/itinerary_view_origin_distance_fix.js?v=20260605"></script>' . "\n";
-    }
-}
-
 if (!function_exists('csrf_inject_html')) {
     function csrf_inject_html(string $html): string
     {
@@ -227,21 +199,12 @@ if (!function_exists('csrf_inject_html')) {
                 if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
                     $loaderScript = '<script src="../assets/itinerary_review_hotel_loader.js?v=20260604"></script>' . "\n";
                 }
-                $html = str_ireplace('</body>', $reviewScript . "\n" . $loaderScript . "</body>", $html);
+                $html = str_ireplace('</body>', $reviewScript . "\n" . $loaderScript . '</body>', $html);
             } else {
                 $html .= $reviewScript;
                 if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
                     $html .= '<script src="../assets/itinerary_review_hotel_loader.js?v=20260604"></script>';
                 }
-            }
-        }
-
-        if (is_itinerary_view_page() && stripos($html, 'itinerary_view_origin_distance_fix.js') === false) {
-            $viewScript = itinerary_view_origin_assets();
-            if (stripos($html, '</body>') !== false) {
-                $html = str_ireplace('</body>', $viewScript . '</body>', $html);
-            } else {
-                $html .= $viewScript;
             }
         }
 
