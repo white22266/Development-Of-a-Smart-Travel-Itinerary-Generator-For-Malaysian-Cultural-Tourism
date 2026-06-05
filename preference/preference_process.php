@@ -5,6 +5,7 @@ session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/AccessibilityNeedsAnalysisService.php";
+require_once "../services/CostEstimationService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -64,6 +65,27 @@ function save_preference_junctions(mysqli $conn, int $preferenceId, array $inter
     }
 }
 
+function ensure_party_size_column(mysqli $conn): void
+{
+    if (pref_column_exists($conn, "traveller_preferences", "party_size")) {
+        return;
+    }
+
+    @$conn->query("ALTER TABLE traveller_preferences ADD COLUMN party_size int(11) NOT NULL DEFAULT 1 AFTER traveller_type");
+    if (pref_column_exists($conn, "traveller_preferences", "party_size")) {
+        @$conn->query("
+            UPDATE traveller_preferences
+            SET party_size = CASE traveller_type
+                WHEN 'couple' THEN 2
+                WHEN 'family' THEN 4
+                WHEN 'group' THEN 5
+                ELSE 1
+            END
+            WHERE party_size IS NULL OR party_size < 1
+        ");
+    }
+}
+
 $errors = [];
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
@@ -73,6 +95,7 @@ $budget    = (float)($_POST["budget"]       ?? 0);
 $budgetTier = strtolower(trim((string)($_POST["budget_tier"] ?? "normal")));
 $transport = strtolower(trim((string)($_POST["transport_type"] ?? "")));
 $travellerType = strtolower(trim((string)($_POST["traveller_type"] ?? "solo")));
+$postedPartySize = trim((string)($_POST["party_size"] ?? ""));
 $travelPace = strtolower(trim((string)($_POST["travel_pace"] ?? "normal")));
 $dietaryPreference = strtolower(trim((string)($_POST["dietary_preference"] ?? "none")));
 $preferredVisitTime = strtolower(trim((string)($_POST["preferred_visit_time"] ?? "any")));
@@ -105,6 +128,22 @@ if (!in_array($budgetTier, ["budget", "normal", "luxury"], true)) {
 
 if (!in_array($travellerType, ["solo", "couple", "family", "group"], true)) {
     $errors[] = "Invalid traveller type.";
+}
+
+$partySize = CostEstimationService::defaultPartySize($travellerType);
+if ($travellerType === "solo") {
+    $partySize = 1;
+} elseif ($travellerType === "couple") {
+    $partySize = 2;
+} else {
+    if ($postedPartySize === "" || !ctype_digit($postedPartySize)) {
+        $errors[] = "Party size must be a positive whole number.";
+    } else {
+        $partySize = (int)$postedPartySize;
+        if ($partySize < 1 || $partySize > 1000) {
+            $errors[] = "Party size must be between 1 and 1000.";
+        }
+    }
 }
 
 if (!in_array($travelPace, ["relaxed", "normal", "packed"], true)) {
@@ -162,6 +201,7 @@ if (!empty($errors)) {
         "budget_tier"         => $budgetTier,
         "transport_type"      => $transport,
         "traveller_type"      => $travellerType,
+        "party_size"          => $partySize,
         "travel_pace"         => $travelPace,
         "dietary_preference"  => $dietaryPreference,
         "preferred_visit_time"=> $preferredVisitTime,
@@ -183,9 +223,12 @@ if ($accessibilityNeeds !== "") {
 }
 
 // ---- Insert to DB ----
+ensure_party_size_column($conn);
+
 // Check optional migrated columns (graceful fallback)
 $colCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'preferred_districts'");
 $hasDistrictCol = ($colCheck && $colCheck->num_rows > 0);
+$hasPartySizeCol = pref_column_exists($conn, "traveller_preferences", "party_size");
 $hasSupervisorCols = pref_table_exists($conn, "travel_interests")
     && pref_table_exists($conn, "malaysia_states")
     && pref_column_exists($conn, "traveller_preferences", "budget_tier")
@@ -195,11 +238,11 @@ $hasSupervisorCols = pref_table_exists($conn, "travel_interests")
     && pref_column_exists($conn, "traveller_preferences", "preferred_visit_time")
     && pref_column_exists($conn, "traveller_preferences", "accessibility_needs");
 
-if ($hasDistrictCol && $hasSupervisorCols) {
+if ($hasDistrictCol && $hasSupervisorCols && $hasPartySizeCol) {
     $stmt = $conn->prepare("
         INSERT INTO traveller_preferences
-            (traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type, travel_pace, dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
+            (traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type, party_size, travel_pace, dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     ");
     if (!$stmt) {
         $_SESSION["form_errors"] = ["System error: unable to save preferences."];
@@ -207,13 +250,14 @@ if ($hasDistrictCol && $hasSupervisorCols) {
         exit;
     }
     $stmt->bind_param(
-        "iidssssssssss",
+        "iidsssisssssss",
         $travellerId,
         $tripDays,
         $budget,
         $budgetTier,
         $transport,
         $travellerType,
+        $partySize,
         $travelPace,
         $dietaryPreference,
         $preferredVisitTime,

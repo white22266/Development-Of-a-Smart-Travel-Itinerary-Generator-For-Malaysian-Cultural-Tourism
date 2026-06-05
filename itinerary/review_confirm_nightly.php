@@ -147,7 +147,8 @@ function nightly_recalculate_routes(mysqli $conn, int $itineraryId): void
 
 function nightly_recalculate_total(mysqli $conn, int $itineraryId): void
 {
-    $stmt = $conn->prepare("SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type FROM itineraries i LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id WHERE i.itinerary_id = ? LIMIT 1");
+    $partySelect = nightly_table_has_column($conn, 'traveller_preferences', 'party_size') ? ', tp.party_size' : '';
+    $stmt = $conn->prepare("SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type{$partySelect} FROM itineraries i LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id WHERE i.itinerary_id = ? LIMIT 1");
     if (!$stmt) return;
     $stmt->bind_param('i', $itineraryId);
     $stmt->execute();
@@ -169,8 +170,10 @@ function nightly_recalculate_total(mysqli $conn, int $itineraryId): void
     }
     $itemsStmt->close();
 
-    $costService = new CostEstimationService((string)($meta['transport_type'] ?? 'car'), (int)($meta['total_days'] ?? 1), (float)($meta['budget'] ?? 0), (string)($meta['traveller_type'] ?? 'solo'));
-    $tierDefaults = CostEstimationService::budgetTierDefaults((string)($meta['budget_tier'] ?? 'normal'), (float)($meta['budget'] ?? 0), (int)($meta['total_days'] ?? 1));
+    $travellerType = (string)($meta['traveller_type'] ?? 'solo');
+    $partySize = CostEstimationService::resolvePartySize($travellerType, isset($meta['party_size']) ? (int)$meta['party_size'] : null);
+    $costService = new CostEstimationService((string)($meta['transport_type'] ?? 'car'), (int)($meta['total_days'] ?? 1), (float)($meta['budget'] ?? 0), $travellerType, $partySize);
+    $tierDefaults = CostEstimationService::budgetTierDefaults((string)($meta['budget_tier'] ?? 'normal'), (float)($meta['budget'] ?? 0), (int)($meta['total_days'] ?? 1), $partySize);
     $breakdown = $costService->calculate($items, $totalDistanceKm, $tierDefaults['hotel'], 3, $tierDefaults['meal']);
     $total = (float)($breakdown['total_cost'] ?? 0);
 

@@ -846,6 +846,14 @@ function apply_addition(mysqli $conn, int $itineraryId, int $dayNo, array $place
     return $ok;
 }
 
+function editor_table_has_column(mysqli $conn, string $table, string $column): bool
+{
+    $table = $conn->real_escape_string($table);
+    $column = $conn->real_escape_string($column);
+    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+    return $res && $res->num_rows > 0;
+}
+
 function recalculate_itinerary_routes(mysqli $conn, int $itineraryId): void
 {
     $metaStmt = $conn->prepare("
@@ -909,8 +917,9 @@ function recalculate_itinerary_routes(mysqli $conn, int $itineraryId): void
 
 function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
 {
+    $partySelect = editor_table_has_column($conn, "traveller_preferences", "party_size") ? ", tp.party_size" : "";
     $stmt = $conn->prepare("
-        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type
+        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type{$partySelect}
         FROM itineraries i
         LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
         WHERE i.itinerary_id = ?
@@ -937,17 +946,21 @@ function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
     $itemsStmt->close();
 
     $budgetTier = strtolower((string)($meta["budget_tier"] ?? "normal"));
+    $travellerType = (string)($meta["traveller_type"] ?? "solo");
+    $partySize = CostEstimationService::resolvePartySize($travellerType, isset($meta["party_size"]) ? (int)$meta["party_size"] : null);
     $tierDefaults = CostEstimationService::budgetTierDefaults(
         $budgetTier,
         (float)($meta["budget"] ?? 0),
-        (int)($meta["total_days"] ?? 1)
+        (int)($meta["total_days"] ?? 1),
+        $partySize
     );
 
     $costService = new CostEstimationService(
         (string)($meta["transport_type"] ?? "car"),
         (int)($meta["total_days"] ?? 1),
         (float)($meta["budget"] ?? 0),
-        (string)($meta["traveller_type"] ?? "solo")
+        $travellerType,
+        $partySize
     );
     $breakdown = $costService->calculate($items, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
     $total = (float)($breakdown["total_cost"] ?? 0);

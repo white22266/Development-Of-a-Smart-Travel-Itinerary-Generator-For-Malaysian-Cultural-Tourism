@@ -131,8 +131,9 @@ function recalculate_itinerary_routes(mysqli $conn, int $itineraryId): void
 
 function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
 {
+    $partySelect = table_has_column($conn, "traveller_preferences", "party_size") ? ", tp.party_size" : "";
     $stmt = $conn->prepare("
-        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type
+        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type{$partySelect}
         FROM itineraries i
         LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
         WHERE i.itinerary_id = ?
@@ -163,16 +164,20 @@ function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
     }
     $itemsStmt->close();
 
+    $travellerType = (string)($meta["traveller_type"] ?? "solo");
+    $partySize = CostEstimationService::resolvePartySize($travellerType, isset($meta["party_size"]) ? (int)$meta["party_size"] : null);
     $costService = new CostEstimationService(
         (string)($meta["transport_type"] ?? "car"),
         (int)($meta["total_days"] ?? 1),
         (float)($meta["budget"] ?? 0),
-        (string)($meta["traveller_type"] ?? "solo")
+        $travellerType,
+        $partySize
     );
     $tierDefaults = CostEstimationService::budgetTierDefaults(
         (string)($meta["budget_tier"] ?? "normal"),
         (float)($meta["budget"] ?? 0),
-        (int)($meta["total_days"] ?? 1)
+        (int)($meta["total_days"] ?? 1),
+        $partySize
     );
     $breakdown = $costService->calculate($items, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
     $total = (float)($breakdown["total_cost"] ?? 0);

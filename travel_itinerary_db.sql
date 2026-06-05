@@ -2360,6 +2360,7 @@ CREATE TABLE `traveller_preferences` (
   `budget_tier` enum('budget','normal','luxury') NOT NULL DEFAULT 'normal',
   `transport_type` enum('car','public_transport','walking','motorcycle') DEFAULT 'car',
   `traveller_type` enum('solo','couple','family','group') NOT NULL DEFAULT 'solo',
+  `party_size` int(11) NOT NULL DEFAULT 1,
   `travel_pace` enum('relaxed','normal','packed') NOT NULL DEFAULT 'normal',
   `dietary_preference` enum('none','halal','vegetarian') NOT NULL DEFAULT 'none',
   `preferred_visit_time` enum('any','morning','afternoon','evening') NOT NULL DEFAULT 'any',

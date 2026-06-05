@@ -262,9 +262,11 @@ function activity_text(string $type, string $category): string
 
 /* ------------------------ Load itinerary ------------------------ */
 
+$partyCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'party_size'");
+$partySelect = ($partyCheck && $partyCheck->num_rows > 0) ? ", tp.party_size" : "";
 $stmt = $conn->prepare("
     SELECT i.*, tp.budget, tp.budget_tier, tp.transport_type, tp.interests,
-           tp.preferred_states, tp.preferred_districts, tp.traveller_type,
+           tp.preferred_states, tp.preferred_districts, tp.traveller_type{$partySelect},
            tp.travel_pace, tp.dietary_preference, tp.preferred_visit_time
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
@@ -325,9 +327,10 @@ $budget = (float)($it["budget"] ?? 0);
 $transportType = (string)($it["transport_type"] ?? "car");
 $budgetTier = strtolower((string)($it["budget_tier"] ?? "normal"));
 $travellerType = strtolower((string)($it["traveller_type"] ?? "solo"));
-$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $tripDays);
+$partySize = CostEstimationService::resolvePartySize($travellerType, isset($it["party_size"]) ? (int)$it["party_size"] : null);
+$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $tripDays, $partySize);
 
-$costService = new CostEstimationService($transportType, $tripDays, $budget, $travellerType);
+$costService = new CostEstimationService($transportType, $tripDays, $budget, $travellerType, $partySize);
 $costBreakdown = $costService->calculate($allItems, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 $perDayBreakdown = $costService->perDayBreakdown($days);
 

@@ -19,8 +19,15 @@ $googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_K
 $errors = $_SESSION["form_errors"] ?? [];
 unset($_SESSION["form_errors"]);
 
+$hasPartySizeCol = false;
+$colRes = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'party_size'");
+if ($colRes && $colRes->num_rows > 0) {
+    $hasPartySizeCol = true;
+}
+$partySizeSql = $hasPartySizeCol ? ", party_size" : "";
+
 $stmt = $conn->prepare("
-  SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type, travel_pace,
+  SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type{$partySizeSql}, travel_pace,
          dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts, created_at
   FROM traveller_preferences
   WHERE traveller_id = ?
@@ -52,6 +59,19 @@ function pref_interest_label(?string $csv): string
     $parts = array_values(array_filter(array_map("trim", explode(",", (string)$csv))));
     if (empty($parts)) return "-";
     return implode(", ", array_map("pref_human_label", $parts));
+}
+
+function pref_party_size(array $pref): int
+{
+    $type = strtolower((string)($pref["traveller_type"] ?? "solo"));
+    $fallback = match ($type) {
+        "couple" => 2,
+        "family" => 4,
+        "group" => 5,
+        default => 1,
+    };
+    $size = (int)($pref["party_size"] ?? 0);
+    return $size >= 1 ? $size : $fallback;
 }
 
 function pref_location_label(array $pref): string
@@ -94,6 +114,7 @@ function pref_analysis_rows(array $pref): array
 {
     $budget = (float)($pref["budget"] ?? 0);
     $days = max(1, (int)($pref["trip_days"] ?? 1));
+    $partySize = pref_party_size($pref);
     $perDay = $budget / $days;
     $tier = pref_human_label((string)($pref["budget_tier"] ?? "normal"));
     $interests = pref_interest_label((string)($pref["interests"] ?? ""));
@@ -113,6 +134,7 @@ function pref_analysis_rows(array $pref): array
 
     return [
         ["Traveller Profile", $tier . " " . pref_human_label((string)($pref["traveller_type"] ?? "solo")) . " Traveller"],
+        ["Party Size", $partySize . " traveller(s)"],
         ["Budget Level", $budgetLevel . " (" . pref_rm($perDay) . " per day estimate)"],
         ["Route Scope", pref_location_label($pref) . " first"],
         ["Activity Rule", pref_activity_limit_text($pref)],
@@ -132,6 +154,7 @@ foreach ($preferences as $pref) {
             ["Budget", pref_rm((float)($pref["budget"] ?? 0))],
             ["Transport", pref_human_label((string)($pref["transport_type"] ?? "car"))],
             ["Traveller Type", pref_human_label((string)($pref["traveller_type"] ?? "solo"))],
+            ["Party Size", pref_party_size($pref) . " traveller(s)"],
             ["Pace", pref_human_label((string)($pref["travel_pace"] ?? "normal"))],
             ["Location", pref_location_label($pref)],
             ["Interests", pref_interest_label((string)($pref["interests"] ?? ""))],
@@ -617,10 +640,10 @@ foreach ($preferences as $pref) {
                     <div class="route-info-box">
                         <div class="route-title">Travel Pace Controls Daily Schedule Density</div>
                         <ul>
-                            <li>Relaxed preference: lighter schedule with longer rest gaps.</li>
-                            <li>Normal preference: balanced schedule with standard rest gaps.</li>
-                            <li>Packed preference: denser schedule with shorter rest gaps.</li>
-                            <li>Breakfast, lunch, and dinner stops are added when nearby food records are available.</li>
+                            <li>Relaxed preference: target 3 places per day with about 90 minutes rest between stops.</li>
+                            <li>Normal preference: target 4 places per day with about 60 minutes rest between stops.</li>
+                            <li>Packed preference: target 5 places per day with about 30 minutes rest between stops.</li>
+                            <li>Food places count as real itinerary stops and are costed for the full party size.</li>
                             <li>Food-only preferences become a food trail with about 4 to 6 food stops per day.</li>
                         </ul>
                     </div>
@@ -633,11 +656,11 @@ foreach ($preferences as $pref) {
                     <div class="route-info-box">
                         <div class="route-title">&#9654; Rule-Based Nearest-Next Routing</div>
                         <ul>
-                            <li>Places are filtered by your <strong>preferred state &amp; district</strong>, interests, and budget.</li>
-                            <li>Each day, the system picks the <strong>closest unvisited place</strong> from the previous stop (Haversine distance).</li>
-                            <li>If a starting location is provided below, Day 1 routing begins from your origin.</li>
-                            <li>Category diversity is enforced, so consecutive places avoid repeating the same category.</li>
-                            <li>Outdoor places (nature/festival) are deprioritised when weather is unfavourable.</li>
+                            <li>The selected state is a hard boundary. The planner will not move to another state unless a new preference allows it.</li>
+                            <li>District and interests are applied by tiers: selected district + interests first, then selected district fallback, then nearest same-state districts.</li>
+                            <li>Interest is a soft preference, so it will not create empty days while valid same-state places still exist.</li>
+                            <li>Each next stop is chosen from the highest available tier using score, distance, opening time, budget, accessibility, rating and category diversity.</li>
+                            <li>Day 1 begins from the confirmed starting location. Later days continue from the previous day's last stop unless a confirmed hotel is available.</li>
                         </ul>
                     </div>
 

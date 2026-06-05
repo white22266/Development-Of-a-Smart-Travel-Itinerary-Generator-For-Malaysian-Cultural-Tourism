@@ -1,0 +1,1010 @@
+<?php
+/**
+ * Unified rule-based itinerary planner.
+ *
+ * The planner keeps the selected state as a hard boundary, treats district and
+ * interests as tiered preferences, and calculates costs for the whole party.
+ */
+require_once __DIR__ . "/RouteService.php";
+require_once __DIR__ . "/CostEstimationService.php";
+
+class RuleBasedItineraryPlannerService
+{
+    private mysqli $conn;
+    private ?string $googleMapsApiKey;
+
+    private const VALID_INTERESTS = ["culture", "heritage", "food", "museum", "nature", "shopping", "festival"];
+
+    public function __construct(mysqli $conn, ?string $googleMapsApiKey = null)
+    {
+        $this->conn = $conn;
+        $this->googleMapsApiKey = $googleMapsApiKey !== "" ? $googleMapsApiKey : null;
+    }
+
+    public function generate(int $travellerId, int $preferenceId, array $options): int
+    {
+        $pref = $this->normalizePreferences($travellerId, $preferenceId);
+        $startDate = $this->normalizeStartDate((string)($options["start_date"] ?? ""));
+        $origin = $this->normalizeOrigin($options);
+
+        if ($startDate === null) {
+            throw new RuntimeException("Please confirm a valid Start Date before generating the itinerary.");
+        }
+        if ($origin === null) {
+            throw new RuntimeException("Please confirm a Starting Location with map coordinates before generating the itinerary.");
+        }
+
+        $profile = $this->derivePartyAndCostProfile($pref);
+        $pool = $this->loadBroadCandidatePool($pref);
+        if (empty($pool)) {
+            throw new RuntimeException("No active cultural places are available inside the selected state boundary.");
+        }
+
+        $this->conn->begin_transaction();
+        try {
+            $title = $this->buildItineraryTitle($pref);
+            $stmt = $this->conn->prepare("
+                INSERT INTO itineraries
+                    (traveller_id, preference_id, title, start_date, total_days, origin_name, origin_lat, origin_lng, total_estimated_cost)
+                VALUES (?,?,?,?,?,?,?,?,0.00)
+            ");
+            if (!$stmt) {
+                throw new RuntimeException("Unable to create itinerary.");
+            }
+
+            $tripDays = (int)$pref["trip_days"];
+            $originName = (string)$origin["name"];
+            $originLat = (float)$origin["lat"];
+            $originLng = (float)$origin["lng"];
+            $stmt->bind_param(
+                "iissisdd",
+                $travellerId,
+                $preferenceId,
+                $title,
+                $startDate,
+                $tripDays,
+                $originName,
+                $originLat,
+                $originLng
+            );
+            $stmt->execute();
+            $itineraryId = (int)$stmt->insert_id;
+            $stmt->close();
+
+            if ($itineraryId <= 0) {
+                throw new RuntimeException("Unable to create itinerary.");
+            }
+
+            $usedPlaceIds = [];
+            $insertedItems = [];
+            $totalDistanceKm = 0.0;
+            $previousDayLastStop = null;
+            $previousDayMainCategory = null;
+
+            for ($dayNo = 1; $dayNo <= $tripDays; $dayNo++) {
+                $dayDate = (new DateTimeImmutable($startDate))->modify("+" . ($dayNo - 1) . " days")->format("Y-m-d");
+                $dayOrigin = $this->resolveDayOrigin($dayNo, $origin, $previousDayLastStop, $pref, $pool);
+                $dayPlan = $this->constructDay(
+                    $dayNo,
+                    $dayDate,
+                    $dayOrigin,
+                    $pool,
+                    $pref,
+                    $profile,
+                    $usedPlaceIds,
+                    $previousDayMainCategory
+                );
+
+                if (empty($dayPlan["items"])) {
+                    throw new RuntimeException("No feasible places could be scheduled for day " . $dayNo . " inside the selected state.");
+                }
+
+                $seq = 1;
+                $categoryCounts = [];
+                foreach ($dayPlan["items"] as $planned) {
+                    $place = $planned["place"];
+                    $category = strtolower((string)$place["category"]);
+                    $categoryCounts[$category] = ($categoryCounts[$category] ?? 0) + 1;
+                    $itemType = $category === "food" ? "food" : ($category === "festival" ? "festival" : "attraction");
+                    $notes = $this->truncate((string)$planned["notes"], 255);
+                    $cost = $this->placeCostPerPerson($place);
+                    $distanceKm = (float)$planned["distance_km"];
+                    $travelMin = (int)$planned["travel_time_min"];
+                    $startTime = $this->minutesToSqlTime((int)$planned["start_min"]);
+                    $endTime = $this->minutesToSqlTime((int)$planned["end_min"]);
+                    $placeId = (int)$place["place_id"];
+                    $title = (string)$place["name"];
+                    $lat = (float)$place["latitude"];
+                    $lng = (float)$place["longitude"];
+
+                    $stmt = $this->conn->prepare("
+                        INSERT INTO itinerary_items
+                            (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, item_latitude, item_longitude,
+                             start_time, end_time, estimated_cost, distance_km, travel_time_min, notes)
+                        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                    ");
+                    if (!$stmt) {
+                        throw new RuntimeException("Unable to save itinerary item.");
+                    }
+                    $stmt->bind_param(
+                        "iiisisddssddis",
+                        $itineraryId,
+                        $dayNo,
+                        $seq,
+                        $itemType,
+                        $placeId,
+                        $title,
+                        $lat,
+                        $lng,
+                        $startTime,
+                        $endTime,
+                        $cost,
+                        $distanceKm,
+                        $travelMin,
+                        $notes
+                    );
+                    $stmt->execute();
+                    $stmt->close();
+
+                    $usedPlaceIds[$placeId] = true;
+                    $insertedItems[] = [
+                        "item_type" => $itemType,
+                        "estimated_cost" => $cost,
+                        "distance_km" => $distanceKm,
+                    ];
+                    $totalDistanceKm += $distanceKm;
+                    $previousDayLastStop = [
+                        "name" => $title,
+                        "lat" => $lat,
+                        "lng" => $lng,
+                    ];
+                    $seq++;
+                }
+
+                arsort($categoryCounts);
+                $previousDayMainCategory = array_key_first($categoryCounts);
+            }
+
+            $costService = new CostEstimationService(
+                (string)$pref["transport_type"],
+                (int)$pref["trip_days"],
+                (float)$pref["budget"],
+                (string)$pref["traveller_type"],
+                (int)$pref["party_size"]
+            );
+            $cost = $costService->calculate(
+                $insertedItems,
+                $totalDistanceKm,
+                (float)$profile["hotel_rate"],
+                3,
+                (float)$profile["meal_price"]
+            );
+
+            $totalCost = (float)$cost["total_cost"];
+            $stmt = $this->conn->prepare("UPDATE itineraries SET total_estimated_cost = ? WHERE itinerary_id = ?");
+            if ($stmt) {
+                $stmt->bind_param("di", $totalCost, $itineraryId);
+                $stmt->execute();
+                $stmt->close();
+            }
+
+            $this->conn->commit();
+            return $itineraryId;
+        } catch (Throwable $e) {
+            $this->conn->rollback();
+            throw $e;
+        }
+    }
+
+    private function normalizePreferences(int $travellerId, int $preferenceId): array
+    {
+        $hasPartySize = $this->columnExists("traveller_preferences", "party_size");
+        $partySql = $hasPartySize ? ", party_size" : "";
+        $stmt = $this->conn->prepare("
+            SELECT preference_id, traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type{$partySql},
+                   travel_pace, dietary_preference, preferred_visit_time, accessibility_needs, interests,
+                   preferred_states, preferred_districts
+            FROM traveller_preferences
+            WHERE preference_id = ? AND traveller_id = ?
+            LIMIT 1
+        ");
+        if (!$stmt) {
+            throw new RuntimeException("Unable to load saved preference.");
+        }
+        $stmt->bind_param("ii", $preferenceId, $travellerId);
+        $stmt->execute();
+        $pref = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+
+        if (!$pref) {
+            throw new RuntimeException("Selected preference was not found.");
+        }
+
+        $travellerType = CostEstimationService::normalizeTravellerType((string)($pref["traveller_type"] ?? "solo"));
+        $partySize = $hasPartySize
+            ? CostEstimationService::resolvePartySize($travellerType, (int)($pref["party_size"] ?? 0))
+            : CostEstimationService::defaultPartySize($travellerType);
+
+        $interests = $this->normalizeCsv((string)($pref["interests"] ?? ""));
+        $interests = array_values(array_filter($interests, fn($x) => in_array($x, self::VALID_INTERESTS, true)));
+        if (empty($interests)) {
+            $interests = ["culture"];
+        }
+
+        $states = $this->normalizeCsv((string)($pref["preferred_states"] ?? ""));
+        $districts = $this->normalizeCsv((string)($pref["preferred_districts"] ?? ""));
+
+        return [
+            "preference_id" => (int)$pref["preference_id"],
+            "trip_days" => max(1, min(30, (int)($pref["trip_days"] ?? 1))),
+            "budget" => max(0.0, (float)($pref["budget"] ?? 0)),
+            "budget_tier" => $this->oneOf((string)($pref["budget_tier"] ?? "normal"), ["budget", "normal", "luxury"], "normal"),
+            "transport_type" => CostEstimationService::normalizeTransportType((string)($pref["transport_type"] ?? "car")),
+            "traveller_type" => $travellerType,
+            "party_size" => $partySize,
+            "travel_pace" => $this->oneOf((string)($pref["travel_pace"] ?? "normal"), ["relaxed", "normal", "packed"], "normal"),
+            "dietary_preference" => $this->oneOf((string)($pref["dietary_preference"] ?? "none"), ["none", "halal", "vegetarian"], "none"),
+            "preferred_visit_time" => $this->oneOf((string)($pref["preferred_visit_time"] ?? "any"), ["any", "morning", "afternoon", "evening"], "any"),
+            "accessibility_needs" => strtolower(trim((string)($pref["accessibility_needs"] ?? ""))),
+            "interests" => $interests,
+            "preferred_states" => $states,
+            "preferred_districts" => $districts,
+        ];
+    }
+
+    private function derivePartyAndCostProfile(array $pref): array
+    {
+        $pace = (string)$pref["travel_pace"];
+        $target = match ($pace) {
+            "relaxed" => 3,
+            "packed" => 5,
+            default => 4,
+        };
+        $rest = match ($pace) {
+            "relaxed" => 90,
+            "packed" => 30,
+            default => 60,
+        };
+
+        $foodOnly = count($pref["interests"]) === 1 && $pref["interests"][0] === "food";
+        if ($foodOnly) {
+            $target = match ($pace) {
+                "relaxed" => 4,
+                "packed" => 6,
+                default => 5,
+            };
+        }
+
+        $timeWindow = $this->timeWindow((string)$pref["preferred_visit_time"]);
+        $access = (string)$pref["accessibility_needs"];
+        $travellerType = (string)$pref["traveller_type"];
+        if ($travellerType === "family" || str_contains($access, "elderly") || str_contains($access, "low_walking")) {
+            $rest += 15;
+            $timeWindow["hard_end"] = min($timeWindow["hard_end"], 20 * 60);
+        }
+        if ($travellerType === "group") {
+            $rest += 10;
+        }
+
+        $distanceLimit = $this->distanceLimit((string)$pref["transport_type"], $pace);
+        if (str_contains($access, "low_walking") || str_contains($access, "wheelchair") || str_contains($access, "elderly")) {
+            $distanceLimit *= 0.75;
+        }
+
+        $defaults = CostEstimationService::budgetTierDefaults(
+            (string)$pref["budget_tier"],
+            (float)$pref["budget"],
+            (int)$pref["trip_days"],
+            (int)$pref["party_size"]
+        );
+
+        $nights = max(0, (int)$pref["trip_days"] - 1);
+        $rooms = CostEstimationService::roomCount((int)$pref["party_size"]);
+        $foodReserve = (int)$pref["trip_days"] * 3 * (float)$defaults["meal"] * (int)$pref["party_size"];
+        $hotelReserve = $nights * (float)$defaults["hotel"] * $rooms;
+        $transportReserve = $distanceLimit * (int)$pref["trip_days"] * CostEstimationService::getTransportRate((string)$pref["transport_type"])
+            * CostEstimationService::vehicleCount((string)$pref["transport_type"], (int)$pref["party_size"]);
+        $essential = $foodReserve + $hotelReserve + $transportReserve;
+        $emergency = $essential * 0.10;
+        $availableAttractionBudget = max(0.0, (float)$pref["budget"] - $essential - $emergency);
+
+        return [
+            "target_places" => $target,
+            "rest_min" => $rest,
+            "start_min" => $timeWindow["start"],
+            "suggested_end_min" => $timeWindow["suggested_end"],
+            "hard_end_min" => $timeWindow["hard_end"],
+            "daily_distance_limit_km" => $distanceLimit,
+            "hotel_rate" => (float)$defaults["hotel"],
+            "meal_price" => (float)$defaults["meal"],
+            "available_attraction_budget" => $availableAttractionBudget,
+            "food_only" => $foodOnly,
+        ];
+    }
+
+    private function loadBroadCandidatePool(array $pref): array
+    {
+        $stateFilter = (array)$pref["preferred_states"];
+        $where = ["is_active = 1", "latitude IS NOT NULL", "longitude IS NOT NULL"];
+        $types = "";
+        $params = [];
+
+        if (!empty($stateFilter)) {
+            $placeholders = implode(",", array_fill(0, count($stateFilter), "?"));
+            $where[] = "state IN ($placeholders)";
+            $types .= str_repeat("s", count($stateFilter));
+            foreach ($stateFilter as $state) {
+                $params[] = $state;
+            }
+        }
+
+        $sql = "
+            SELECT place_id, state, district, category, name, description, address, latitude, longitude,
+                   opening_hours, festival_start_date, festival_end_date, estimated_cost, entrance_fee, is_free,
+                   halal_status, is_outdoor, visit_duration_min, best_time_to_visit, dress_code_required,
+                   avg_rating, rating
+            FROM cultural_places
+            WHERE " . implode(" AND ", $where) . "
+            ORDER BY state, district, category, name
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            throw new RuntimeException("Unable to load cultural places.");
+        }
+        if ($types !== "") {
+            $this->bindDynamic($stmt, $types, $params);
+        }
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $pool = [];
+        while ($row = $res->fetch_assoc()) {
+            if (!$this->validCoord($row["latitude"] ?? null, $row["longitude"] ?? null)) {
+                continue;
+            }
+            $row["category"] = strtolower((string)$row["category"]);
+            $row["district"] = trim((string)($row["district"] ?? ""));
+            $row["state"] = trim((string)($row["state"] ?? ""));
+            $pool[] = $row;
+        }
+        $stmt->close();
+        return $pool;
+    }
+
+    private function constructDay(
+        int $dayNo,
+        string $dayDate,
+        array $origin,
+        array $pool,
+        array $pref,
+        array $profile,
+        array $usedPlaceIds,
+        ?string $previousDayMainCategory
+    ): array {
+        $route = new RouteService((string)$pref["transport_type"], $this->googleMapsApiKey);
+        $target = (int)$profile["target_places"];
+        $currentMin = (int)$profile["start_min"];
+        $anchor = $origin;
+        $items = [];
+        $categoryCounts = [];
+        $dailyDistance = 0.0;
+
+        while (count($items) < $target) {
+            $choice = $this->selectNextPlace(
+                $pool,
+                $pref,
+                $profile,
+                $usedPlaceIds,
+                $categoryCounts,
+                $previousDayMainCategory,
+                $dayDate,
+                $currentMin,
+                $anchor,
+                $dailyDistance,
+                false
+            );
+
+            if ($choice === null && empty($items)) {
+                $choice = $this->selectNextPlace(
+                    $pool,
+                    $pref,
+                    $profile,
+                    $usedPlaceIds,
+                    $categoryCounts,
+                    $previousDayMainCategory,
+                    $dayDate,
+                    $currentMin,
+                    $anchor,
+                    $dailyDistance,
+                    true
+                );
+            }
+
+            if ($choice === null) {
+                break;
+            }
+
+            $place = $choice["place"];
+            $seg = $route->getSegment(
+                (float)$anchor["lat"],
+                (float)$anchor["lng"],
+                (float)$place["latitude"],
+                (float)$place["longitude"]
+            );
+            $travelMin = (int)($seg["travel_time_min"] ?? 0);
+            $distanceKm = (float)($seg["distance_km"] ?? 0.0);
+            $arrivalMin = $currentMin + $travelMin;
+            $visitMin = $this->visitDuration($place, $pref);
+            $startMin = $arrivalMin;
+            $endMin = $startMin + $visitMin;
+
+            if ($endMin > (int)$profile["hard_end_min"] && !empty($items)) {
+                break;
+            }
+
+            $notes = $this->buildReasonNotes($place, $choice["tier"], $choice["reasons"], $pref, $profile);
+            $items[] = [
+                "place" => $place,
+                "distance_km" => round($distanceKm, 2),
+                "travel_time_min" => $travelMin,
+                "start_min" => $startMin,
+                "end_min" => $endMin,
+                "notes" => $notes,
+            ];
+
+            $placeId = (int)$place["place_id"];
+            $usedPlaceIds[$placeId] = true;
+            $category = strtolower((string)$place["category"]);
+            $categoryCounts[$category] = ($categoryCounts[$category] ?? 0) + 1;
+            $dailyDistance += $distanceKm;
+            $anchor = [
+                "name" => (string)$place["name"],
+                "lat" => (float)$place["latitude"],
+                "lng" => (float)$place["longitude"],
+            ];
+            $currentMin = $endMin + (int)$profile["rest_min"];
+        }
+
+        return ["day_no" => $dayNo, "items" => $items];
+    }
+
+    private function selectNextPlace(
+        array $pool,
+        array $pref,
+        array $profile,
+        array $usedPlaceIds,
+        array $categoryCounts,
+        ?string $previousDayMainCategory,
+        string $dayDate,
+        int $currentMin,
+        array $anchor,
+        float $dailyDistance,
+        bool $repairMode
+    ): ?array {
+        $tiers = $this->buildGeographicTiers($pool, $pref, $anchor);
+        foreach ($tiers as $tierNo => $candidates) {
+            $best = null;
+            $bestScore = -PHP_FLOAT_MAX;
+            foreach ($candidates as $place) {
+                $constraint = $this->passesHardConstraints(
+                    $place,
+                    $pref,
+                    $profile,
+                    $usedPlaceIds,
+                    $dayDate,
+                    $currentMin,
+                    $anchor,
+                    $dailyDistance,
+                    $repairMode
+                );
+                if (!$constraint["ok"]) {
+                    continue;
+                }
+
+                $score = $this->scoreCandidate(
+                    $place,
+                    $pref,
+                    $profile,
+                    $anchor,
+                    $categoryCounts,
+                    $previousDayMainCategory,
+                    (int)$tierNo,
+                    $constraint["distance_km"],
+                    $currentMin
+                );
+                if ($score["score"] > $bestScore) {
+                    $bestScore = $score["score"];
+                    $best = [
+                        "place" => $place,
+                        "tier" => (int)$tierNo,
+                        "score" => $score["score"],
+                        "reasons" => array_merge($constraint["reasons"], $score["reasons"]),
+                    ];
+                }
+            }
+
+            if ($best !== null) {
+                return $best;
+            }
+        }
+
+        return null;
+    }
+
+    private function buildGeographicTiers(array $pool, array $pref, array $anchor): array
+    {
+        $districts = array_map("strtolower", (array)$pref["preferred_districts"]);
+        $interests = array_map("strtolower", (array)$pref["interests"]);
+        $hasDistrict = !empty($districts);
+
+        $tiers = [1 => [], 2 => [], 3 => [], 4 => [], 5 => []];
+        foreach ($pool as $place) {
+            $district = strtolower(trim((string)$place["district"]));
+            $category = strtolower((string)$place["category"]);
+            $interestMatch = in_array($category, $interests, true);
+            $districtMatch = $hasDistrict && in_array($district, $districts, true);
+
+            if ($hasDistrict && $districtMatch && $interestMatch) {
+                $tiers[1][] = $place;
+            } elseif ($hasDistrict && $districtMatch) {
+                $tiers[2][] = $place;
+            } elseif ($hasDistrict && !$districtMatch && $interestMatch) {
+                $tiers[3][] = $place;
+            } elseif ($hasDistrict && !$districtMatch) {
+                $tiers[4][] = $place;
+            } elseif (!$hasDistrict && $interestMatch) {
+                $tiers[1][] = $place;
+            } elseif (!$hasDistrict) {
+                $tiers[2][] = $place;
+            }
+            $tiers[5][] = $place;
+        }
+
+        foreach ($tiers as $tierNo => $items) {
+            usort($items, function ($a, $b) use ($anchor) {
+                $da = $this->haversineKm((float)$anchor["lat"], (float)$anchor["lng"], (float)$a["latitude"], (float)$a["longitude"]);
+                $db = $this->haversineKm((float)$anchor["lat"], (float)$anchor["lng"], (float)$b["latitude"], (float)$b["longitude"]);
+                return $da <=> $db;
+            });
+            $tiers[$tierNo] = $items;
+        }
+
+        return $tiers;
+    }
+
+    private function passesHardConstraints(
+        array $place,
+        array $pref,
+        array $profile,
+        array $usedPlaceIds,
+        string $dayDate,
+        int $currentMin,
+        array $anchor,
+        float $dailyDistance,
+        bool $repairMode
+    ): array {
+        $reasons = [];
+        $placeId = (int)$place["place_id"];
+        if (isset($usedPlaceIds[$placeId])) {
+            return ["ok" => false, "reasons" => ["duplicate place"]];
+        }
+
+        if (!$this->validCoord($place["latitude"] ?? null, $place["longitude"] ?? null)) {
+            return ["ok" => false, "reasons" => ["invalid coordinates"]];
+        }
+
+        $states = (array)$pref["preferred_states"];
+        if (!empty($states) && !in_array((string)$place["state"], $states, true)) {
+            return ["ok" => false, "reasons" => ["outside selected state"]];
+        }
+
+        if (!$this->festivalDateAllowed($place, $dayDate)) {
+            return ["ok" => false, "reasons" => ["festival date mismatch"]];
+        }
+
+        if (!$this->dietaryAllowed($place, (string)$pref["dietary_preference"])) {
+            return ["ok" => false, "reasons" => ["dietary requirement not verified"]];
+        }
+
+        $distance = $this->haversineKm((float)$anchor["lat"], (float)$anchor["lng"], (float)$place["latitude"], (float)$place["longitude"]) * 1.3;
+        if (!$repairMode && ($dailyDistance + $distance) > (float)$profile["daily_distance_limit_km"]) {
+            return ["ok" => false, "reasons" => ["daily distance limit exceeded"], "distance_km" => $distance];
+        }
+
+        $arrivalMin = $currentMin + $this->estimateTravelTime((string)$pref["transport_type"], $distance);
+        $endMin = $arrivalMin + $this->visitDuration($place, $pref);
+        if ($endMin > (int)$profile["hard_end_min"]) {
+            return ["ok" => false, "reasons" => ["exceeds daily hard end time"], "distance_km" => $distance];
+        }
+
+        if (!$repairMode && !$this->openingHoursAllow((string)($place["opening_hours"] ?? ""), $arrivalMin)) {
+            return ["ok" => false, "reasons" => ["closed at arrival"], "distance_km" => $distance];
+        }
+
+        if (!$this->accessibilityAllowed($place, (string)$pref["accessibility_needs"], $arrivalMin)) {
+            return ["ok" => false, "reasons" => ["accessibility requirement conflict"], "distance_km" => $distance];
+        }
+
+        $reasons[] = "passes hard constraints";
+        return ["ok" => true, "reasons" => $reasons, "distance_km" => $distance];
+    }
+
+    private function scoreCandidate(
+        array $place,
+        array $pref,
+        array $profile,
+        array $anchor,
+        array $categoryCounts,
+        ?string $previousDayMainCategory,
+        int $tierNo,
+        float $distanceKm,
+        int $currentMin
+    ): array {
+        $score = 0.0;
+        $reasons = [];
+        $category = strtolower((string)$place["category"]);
+
+        if (in_array($category, (array)$pref["interests"], true)) {
+            $score += 25;
+            $reasons[] = "interest match";
+        } else {
+            $reasons[] = "interest relaxed to prevent empty day";
+        }
+
+        $travellerScore = $this->travellerSuitabilityScore($place, (string)$pref["traveller_type"]);
+        $score += $travellerScore;
+        if ($travellerScore > 0) $reasons[] = "traveller type suitability";
+
+        $score += 15;
+        $reasons[] = "accessibility accepted";
+
+        $timeScore = $this->timeFitScore($place, (string)$pref["preferred_visit_time"], $currentMin);
+        $score += $timeScore;
+        if ($timeScore > 0) $reasons[] = "preferred visit time fit";
+
+        $partyCost = $this->placeCostPerPerson($place) * (int)$pref["party_size"];
+        if ($partyCost <= 0.0) {
+            $score += 10;
+            $reasons[] = "free place supports budget";
+        } elseif ($partyCost <= max(20.0, (float)$profile["available_attraction_budget"])) {
+            $score += 8;
+            $reasons[] = "fits available attraction budget";
+        } else {
+            $score -= 30;
+            $reasons[] = "cost pressure";
+        }
+
+        $rating = max((float)($place["avg_rating"] ?? 0), (float)($place["rating"] ?? 0));
+        if ($rating > 0) {
+            $score += min(8, ($rating / 5) * 8);
+            $reasons[] = "rating considered";
+        }
+
+        $sameCount = (int)($categoryCounts[$category] ?? 0);
+        if ($sameCount === 0) {
+            $score += 10;
+            $reasons[] = "adds category diversity";
+        } elseif ($sameCount >= 2 && !(bool)$profile["food_only"]) {
+            $score -= 12;
+            $reasons[] = "category repetition penalty";
+        }
+
+        if ($previousDayMainCategory !== null && $category === $previousDayMainCategory && !(bool)$profile["food_only"]) {
+            $score -= 15;
+            $reasons[] = "avoids repeating previous day theme";
+        }
+
+        $distanceScore = max(0, 14 - min(14, $distanceKm));
+        $score += $distanceScore;
+        if ($distanceScore > 0) $reasons[] = "near previous stop";
+
+        if ($distanceKm > ((float)$profile["daily_distance_limit_km"] / max(1, (int)$profile["target_places"]))) {
+            $score -= min(25, $distanceKm);
+            $reasons[] = "detour penalty";
+        }
+
+        if (($currentMin + $this->visitDuration($place, $pref)) > (int)$profile["suggested_end_min"]) {
+            $score -= 15;
+            $reasons[] = "late-day penalty";
+        }
+
+        $score -= ($tierNo - 1) * 3;
+        return ["score" => $score, "reasons" => $reasons];
+    }
+
+    private function resolveDayOrigin(int $dayNo, array $origin, ?array $previousDayLastStop, array $pref, array $pool): array
+    {
+        if ($dayNo === 1) {
+            return $origin;
+        }
+        if ($previousDayLastStop !== null) {
+            return $previousDayLastStop;
+        }
+
+        $districts = array_map("strtolower", (array)$pref["preferred_districts"]);
+        foreach ($pool as $place) {
+            if (!empty($districts) && in_array(strtolower((string)$place["district"]), $districts, true)) {
+                return [
+                    "name" => (string)$place["district"],
+                    "lat" => (float)$place["latitude"],
+                    "lng" => (float)$place["longitude"],
+                ];
+            }
+        }
+        $first = $pool[0];
+        return [
+            "name" => (string)($first["district"] ?: $first["state"]),
+            "lat" => (float)$first["latitude"],
+            "lng" => (float)$first["longitude"],
+        ];
+    }
+
+    private function buildReasonNotes(array $place, int $tierNo, array $reasons, array $pref, array $profile): string
+    {
+        $tierText = match ($tierNo) {
+            1 => "selected district and interest match",
+            2 => "selected district fallback; interest relaxed",
+            3 => "nearest same-state district and interest match",
+            4 => "nearest same-state district fallback",
+            default => "same-state nearest available place",
+        };
+        $reasonText = implode("; ", array_values(array_unique(array_filter($reasons))));
+        return "State: " . $place["state"]
+            . " | District: " . ($place["district"] ?: "-")
+            . " | Category: " . $place["category"]
+            . " | Tier: " . $tierNo
+            . " | Reason: " . $tierText
+            . ($reasonText !== "" ? "; " . $reasonText : "");
+    }
+
+    private function buildItineraryTitle(array $pref): string
+    {
+        $days = (int)$pref["trip_days"];
+        $location = !empty($pref["preferred_states"]) ? implode(" & ", array_slice((array)$pref["preferred_states"], 0, 2)) : "Malaysia";
+        $interests = array_map(fn($x) => ucwords(str_replace("_", " ", $x)), array_slice((array)$pref["interests"], 0, 2));
+        $theme = !empty($interests) ? implode(" & ", $interests) : "Cultural";
+        return $days . "D " . $theme . " Rule-Based Route - " . $location;
+    }
+
+    private function timeWindow(string $preferredVisitTime): array
+    {
+        return match ($preferredVisitTime) {
+            "morning" => ["start" => 8 * 60, "suggested_end" => 17 * 60, "hard_end" => 19 * 60],
+            "afternoon" => ["start" => 12 * 60, "suggested_end" => 20 * 60, "hard_end" => 21 * 60 + 30],
+            "evening" => ["start" => 15 * 60, "suggested_end" => 21 * 60, "hard_end" => 22 * 60 + 30],
+            default => ["start" => 8 * 60 + 30, "suggested_end" => 19 * 60 + 30, "hard_end" => 21 * 60],
+        };
+    }
+
+    private function distanceLimit(string $transportType, string $pace): float
+    {
+        $limits = [
+            "walking" => ["relaxed" => 3.0, "normal" => 5.0, "packed" => 7.0],
+            "public_transport" => ["relaxed" => 15.0, "normal" => 25.0, "packed" => 35.0],
+            "car" => ["relaxed" => 30.0, "normal" => 45.0, "packed" => 60.0],
+            "motorcycle" => ["relaxed" => 30.0, "normal" => 45.0, "packed" => 60.0],
+        ];
+        return (float)($limits[$transportType][$pace] ?? 45.0);
+    }
+
+    private function travellerSuitabilityScore(array $place, string $travellerType): int
+    {
+        $category = strtolower((string)$place["category"]);
+        $outdoor = (int)($place["is_outdoor"] ?? 0) === 1;
+        return match ($travellerType) {
+            "couple" => in_array($category, ["nature", "food", "culture", "heritage"], true) ? 10 : 4,
+            "family" => in_array($category, ["museum", "nature", "food", "shopping"], true) && !$this->isLongVisit($place) ? 10 : 2,
+            "group" => in_array($category, ["culture", "museum", "shopping", "nature", "food"], true) && !$this->isSmallOrNarrow($place) ? 10 : 2,
+            default => $outdoor ? 6 : 5,
+        };
+    }
+
+    private function timeFitScore(array $place, string $preferredVisitTime, int $currentMin): int
+    {
+        $category = strtolower((string)$place["category"]);
+        $best = strtolower((string)($place["best_time_to_visit"] ?? ""));
+        if ($preferredVisitTime !== "any" && str_contains($best, $preferredVisitTime)) {
+            return 8;
+        }
+        if ($category === "nature" && $currentMin < 11 * 60) return 8;
+        if ($category === "museum" && $currentMin >= 9 * 60 && $currentMin <= 16 * 60) return 8;
+        if (($category === "shopping" || $category === "food") && $currentMin >= 17 * 60) return 6;
+        return 0;
+    }
+
+    private function accessibilityAllowed(array $place, string $access, int $arrivalMin): bool
+    {
+        if ($access === "") return true;
+        $nameText = strtolower((string)$place["name"] . " " . (string)$place["description"] . " " . (string)$place["category"]);
+        $outdoor = (int)($place["is_outdoor"] ?? 0) === 1;
+        if ((str_contains($access, "wheelchair") || str_contains($access, "avoid_stairs") || str_contains($access, "avoid stairs"))
+            && preg_match('/gunung|mountain|hill|cave|stairs|waterfall|trail|hiking/i', $nameText)) {
+            return false;
+        }
+        if ((str_contains($access, "avoid_heat") || str_contains($access, "avoid heat")) && $outdoor && $arrivalMin >= 11 * 60 && $arrivalMin <= 16 * 60) {
+            return false;
+        }
+        if (str_contains($access, "elderly") && $this->isLongVisit($place) && $outdoor) {
+            return false;
+        }
+        return true;
+    }
+
+    private function dietaryAllowed(array $place, string $dietary): bool
+    {
+        if (strtolower((string)$place["category"]) !== "food") return true;
+        if ($dietary === "halal") {
+            return (int)($place["halal_status"] ?? 0) === 1;
+        }
+        if ($dietary === "vegetarian") {
+            $text = strtolower((string)$place["name"] . " " . (string)$place["description"]);
+            return str_contains($text, "vegetarian") || str_contains($text, "vegan");
+        }
+        return true;
+    }
+
+    private function festivalDateAllowed(array $place, string $dayDate): bool
+    {
+        if (strtolower((string)$place["category"]) !== "festival") return true;
+        $start = trim((string)($place["festival_start_date"] ?? ""));
+        $end = trim((string)($place["festival_end_date"] ?? ""));
+        if ($start === "" || $start === "0000-00-00" || $end === "" || $end === "0000-00-00") {
+            return true;
+        }
+        return $dayDate >= $start && $dayDate <= $end;
+    }
+
+    private function openingHoursAllow(string $hours, int $arrivalMin): bool
+    {
+        $text = strtolower(trim($hours));
+        if ($text === "" || str_contains($text, "verify") || str_contains($text, "varies") || str_contains($text, "open area") || str_contains($text, "always") || str_contains($text, "24")) {
+            return true;
+        }
+        if (preg_match('/closed/i', $text) && !preg_match('/\d/', $text)) {
+            return false;
+        }
+        if (!preg_match('/(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:-|to|–|—)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i', $text, $m)) {
+            return true;
+        }
+        $open = $this->clockToMinutes((int)$m[1], (int)($m[2] ?? 0), strtolower((string)($m[3] ?? "")));
+        $close = $this->clockToMinutes((int)$m[4], (int)($m[5] ?? 0), strtolower((string)($m[6] ?? "")));
+        if ($open === null || $close === null) return true;
+        if ($close <= $open) {
+            return $arrivalMin >= $open || $arrivalMin <= $close;
+        }
+        return $arrivalMin >= $open && $arrivalMin <= $close;
+    }
+
+    private function visitDuration(array $place, array $pref): int
+    {
+        $duration = (int)($place["visit_duration_min"] ?? 90);
+        $duration = max(30, min(240, $duration > 0 ? $duration : 90));
+        if ((string)$pref["traveller_type"] === "family") {
+            $duration = min($duration, 120);
+        }
+        if (str_contains((string)$pref["accessibility_needs"], "elderly") || str_contains((string)$pref["accessibility_needs"], "low_walking")) {
+            $duration = min($duration, 105);
+        }
+        return $duration;
+    }
+
+    private function placeCostPerPerson(array $place): float
+    {
+        $fee = (float)($place["entrance_fee"] ?? 0);
+        $estimate = (float)($place["estimated_cost"] ?? 0);
+        return max(0.0, $fee > 0 ? $fee : $estimate);
+    }
+
+    private function normalizeStartDate(string $date): ?string
+    {
+        $date = trim($date);
+        if ($date === "") return null;
+        $dt = DateTime::createFromFormat("Y-m-d", $date);
+        if ($dt && $dt->format("Y-m-d") === $date) {
+            return $date;
+        }
+        return null;
+    }
+
+    private function normalizeOrigin(array $options): ?array
+    {
+        $lat = (float)($options["origin_lat"] ?? 0);
+        $lng = (float)($options["origin_lng"] ?? 0);
+        $name = trim((string)($options["origin_name"] ?? ""));
+        if ($name === "" || !$this->validCoord($lat, $lng)) {
+            return null;
+        }
+        return ["name" => $name, "lat" => $lat, "lng" => $lng];
+    }
+
+    private function normalizeCsv(string $csv): array
+    {
+        $parts = array_map("trim", explode(",", $csv));
+        $parts = array_values(array_filter($parts, fn($x) => $x !== ""));
+        return array_values(array_unique($parts));
+    }
+
+    private function oneOf(string $value, array $allowed, string $fallback): string
+    {
+        $value = strtolower(trim($value));
+        return in_array($value, $allowed, true) ? $value : $fallback;
+    }
+
+    private function validCoord($lat, $lng): bool
+    {
+        if ($lat === null || $lng === null) return false;
+        $lat = (float)$lat;
+        $lng = (float)$lng;
+        return is_finite($lat) && is_finite($lng) && !($lat == 0.0 && $lng == 0.0)
+            && $lat >= -90 && $lat <= 90 && $lng >= -180 && $lng <= 180;
+    }
+
+    private function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float
+    {
+        $earth = 6371.0;
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLng = deg2rad($lng2 - $lng1);
+        $a = sin($dLat / 2) ** 2
+            + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) ** 2;
+        return $earth * (2 * atan2(sqrt($a), sqrt(1 - $a)));
+    }
+
+    private function estimateTravelTime(string $transportType, float $distanceKm): int
+    {
+        $speed = match ($transportType) {
+            "walking" => 5,
+            "public_transport" => 30,
+            "motorcycle" => 55,
+            default => 60,
+        };
+        return max(1, (int)ceil(($distanceKm / max(1, $speed)) * 60));
+    }
+
+    private function minutesToSqlTime(int $minutes): string
+    {
+        $minutes = max(0, min(23 * 60 + 59, $minutes));
+        return sprintf("%02d:%02d:00", intdiv($minutes, 60), $minutes % 60);
+    }
+
+    private function clockToMinutes(int $hour, int $minute, string $ampm): ?int
+    {
+        if ($hour < 0 || $hour > 24 || $minute < 0 || $minute > 59) return null;
+        if ($ampm === "pm" && $hour < 12) $hour += 12;
+        if ($ampm === "am" && $hour === 12) $hour = 0;
+        return ($hour % 24) * 60 + $minute;
+    }
+
+    private function isLongVisit(array $place): bool
+    {
+        return (int)($place["visit_duration_min"] ?? 90) > 150;
+    }
+
+    private function isSmallOrNarrow(array $place): bool
+    {
+        $text = strtolower((string)$place["name"] . " " . (string)$place["description"]);
+        return str_contains($text, "lane") || str_contains($text, "small") || str_contains($text, "narrow");
+    }
+
+    private function truncate(string $text, int $limit): string
+    {
+        return strlen($text) <= $limit ? $text : substr($text, 0, max(0, $limit - 3)) . "...";
+    }
+
+    private function columnExists(string $table, string $column): bool
+    {
+        $table = $this->conn->real_escape_string($table);
+        $column = $this->conn->real_escape_string($column);
+        $res = $this->conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
+        return $res && $res->num_rows > 0;
+    }
+
+    private function bindDynamic(mysqli_stmt $stmt, string $types, array $params): void
+    {
+        $params = array_values($params);
+        $refs = [];
+        foreach ($params as $i => $value) {
+            $refs[$i] = &$params[$i];
+        }
+        $stmt->bind_param($types, ...$refs);
+    }
+}

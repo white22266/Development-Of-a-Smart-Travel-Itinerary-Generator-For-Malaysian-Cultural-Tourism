@@ -95,12 +95,13 @@ final class ItineraryEmptyDayFallbackService
 
     private static function loadContext(mysqli $conn, int $itineraryId): ?array
     {
+        $partySelect = self::hasColumn($conn, 'traveller_preferences', 'party_size') ? ', tp.party_size' : '';
         $stmt = $conn->prepare("
             SELECT i.itinerary_id, i.preference_id, i.total_days, i.start_date,
                    i.origin_name, i.origin_lat, i.origin_lng,
                    tp.preferred_districts, tp.preferred_states, tp.interests,
                    tp.travel_pace, tp.transport_type, tp.budget, tp.budget_tier,
-                   tp.traveller_type
+                   tp.traveller_type{$partySelect}
             FROM itineraries i
             LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
             WHERE i.itinerary_id = ?
@@ -396,9 +397,10 @@ final class ItineraryEmptyDayFallbackService
         $budget = (float)($context['budget'] ?? 0);
         $tier = (string)($context['budget_tier'] ?? 'normal');
         $travellerType = (string)($context['traveller_type'] ?? 'solo');
+        $partySize = CostEstimationService::resolvePartySize($travellerType, isset($context['party_size']) ? (int)$context['party_size'] : null);
         $transport = self::normalizeTransport((string)($context['transport_type'] ?? 'car'));
-        $defaults = CostEstimationService::budgetTierDefaults($tier, $budget, $days);
-        $service = new CostEstimationService($transport, $days, $budget, $travellerType);
+        $defaults = CostEstimationService::budgetTierDefaults($tier, $budget, $days, $partySize);
+        $service = new CostEstimationService($transport, $days, $budget, $travellerType, $partySize);
         $result = $service->calculate($items, $distance, (float)$defaults['hotel'], 3, (float)$defaults['meal']);
         $total = (float)($result['total_cost'] ?? 0);
 
@@ -417,9 +419,9 @@ final class ItineraryEmptyDayFallbackService
     private static function dailyQuota(string $pace): int
     {
         return match (strtolower(trim($pace))) {
-            'relaxed' => 2,
-            'packed' => 4,
-            default => 3,
+            'relaxed' => 3,
+            'packed' => 5,
+            default => 4,
         };
     }
 

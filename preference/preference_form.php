@@ -97,6 +97,12 @@ $oldBudget    = $old["budget"]              ?? "";
 $oldBudgetTier = $old["budget_tier"]        ?? "normal";
 $oldTransport = $old["transport_type"]      ?? "";
 $oldTravellerType = $old["traveller_type"]  ?? "solo";
+$oldPartySize = (int)($old["party_size"] ?? match ($oldTravellerType) {
+  "couple" => 2,
+  "family" => 4,
+  "group" => 5,
+  default => 1,
+});
 $oldTravelPace = $old["travel_pace"]        ?? "normal";
 $oldDietary = $old["dietary_preference"]    ?? "none";
 $oldVisitTime = $old["preferred_visit_time"] ?? "any";
@@ -337,6 +343,18 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
+              <div id="partySizeGroup">
+                <label style="font-size:13px; font-weight:700;">Number of Travellers / Party Size *</label>
+                <input type="number" name="party_size" min="1" max="1000" step="1" required
+                  value="<?php echo htmlspecialchars((string)$oldPartySize); ?>"
+                  style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+                <div class="field-help" id="partySizeHelp">
+                  Solo is fixed to 1 traveller and couple is fixed to 2 travellers. Family and group trips must enter the actual party size.
+                </div>
+              </div>
+
+              <div style="height:12px;"></div>
+
               <label style="font-size:13px; font-weight:700;">Travel Pace *</label>
               <select name="travel_pace" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
@@ -459,6 +477,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 <div class="summary-item"><strong>Spending Style</strong><span id="summaryBudgetTier">-</span></div>
                 <div class="summary-item"><strong>Transport</strong><span id="summaryTransport">-</span></div>
                 <div class="summary-item"><strong>Traveller Type</strong><span id="summaryTravellerType">-</span></div>
+                <div class="summary-item"><strong>Party Size</strong><span id="summaryPartySize">-</span></div>
                 <div class="summary-item"><strong>Travel Pace</strong><span id="summaryPace">-</span></div>
                 <div class="summary-item"><strong>Dietary</strong><span id="summaryDietary">-</span></div>
                 <div class="summary-item"><strong>Visit Time</strong><span id="summaryVisitTime">-</span></div>
@@ -545,6 +564,35 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
   var backBtn = document.getElementById('wizardBack');
   var nextBtn = document.getElementById('wizardNext');
   var submitBtn = document.getElementById('wizardSubmit');
+  var travellerTypeSel = document.querySelector('[name="traveller_type"]');
+  var partySizeInput = document.querySelector('[name="party_size"]');
+  var partySizeGroup = document.getElementById('partySizeGroup');
+  var partySizeHelp = document.getElementById('partySizeHelp');
+
+  function syncPartySize() {
+    if (!travellerTypeSel || !partySizeInput || !partySizeGroup) return;
+    var type = travellerTypeSel.value || 'solo';
+    if (type === 'solo') {
+      partySizeInput.value = '1';
+      partySizeInput.readOnly = true;
+      partySizeGroup.style.display = 'none';
+    } else if (type === 'couple') {
+      partySizeInput.value = '2';
+      partySizeInput.readOnly = true;
+      partySizeGroup.style.display = 'none';
+    } else {
+      partySizeInput.readOnly = false;
+      partySizeGroup.style.display = '';
+      if (!partySizeInput.value || Number(partySizeInput.value) < 1) {
+        partySizeInput.value = type === 'family' ? '4' : '5';
+      }
+      if (partySizeHelp) {
+        partySizeHelp.textContent = type === 'family'
+          ? 'Enter the actual number of family members travelling together.'
+          : 'Enter the actual group size. This controls transport, meals, attraction tickets, and hotel room estimates.';
+      }
+    }
+  }
 
   function showStep(step) {
     currentStep = step;
@@ -565,8 +613,10 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       var days = document.querySelector('[name="trip_days"]');
       var budget = document.querySelector('[name="budget"]');
       var transport = document.querySelector('[name="transport_type"]');
+      var partySize = document.querySelector('[name="party_size"]');
       var checked = document.querySelectorAll('[name="interests[]"]:checked');
       if (!days.reportValidity() || !budget.reportValidity() || !transport.reportValidity()) return false;
+      if (partySize && !partySize.reportValidity()) return false;
       if (checked.length === 0) {
         alert('Please select at least one interest.');
         return false;
@@ -586,6 +636,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     var transport = selectedText(document.querySelector('[name="transport_type"]')) || '-';
     var budgetTier = selectedText(document.querySelector('[name="budget_tier"]')) || '-';
     var travellerType = selectedText(document.querySelector('[name="traveller_type"]')) || '-';
+    var partySize = document.querySelector('[name="party_size"]').value || '-';
     var pace = selectedText(document.querySelector('[name="travel_pace"]')) || '-';
     var dietary = selectedText(document.querySelector('[name="dietary_preference"]')) || '-';
     var visitTime = selectedText(document.querySelector('[name="preferred_visit_time"]')) || '-';
@@ -598,6 +649,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     document.getElementById('summaryBudgetTier').textContent = budgetTier;
     document.getElementById('summaryTransport').textContent = transport;
     document.getElementById('summaryTravellerType').textContent = travellerType;
+    document.getElementById('summaryPartySize').textContent = partySize === '-' ? '-' : partySize + ' traveller(s)';
     document.getElementById('summaryPace').textContent = pace;
     document.getElementById('summaryDietary').textContent = dietary;
     document.getElementById('summaryVisitTime').textContent = visitTime;
@@ -618,6 +670,10 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       showStep(Math.max(1, currentStep - 1));
     });
   }
+  if (travellerTypeSel) {
+    travellerTypeSel.addEventListener('change', syncPartySize);
+  }
+  syncPartySize();
   showStep(1);
 })();
 </script>

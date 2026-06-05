@@ -158,10 +158,10 @@ class CostEstimationService
         $rate = self::TRANSPORT_RATE[$this->transportType] ?? 0.60;
         if ($this->transportType === 'public_transport') {
             $transportCost = round($totalDistanceKm * $rate * $partySize, 2);
-            $transportNote = number_format($totalDistanceKm, 1) . ' km × RM ' . number_format($rate, 2) . '/km × ' . $partySize . ' traveller(s)';
+            $transportNote = number_format($totalDistanceKm, 1) . ' km x RM ' . number_format($rate, 2) . '/km x ' . $partySize . ' traveller(s)';
         } elseif ($this->transportType === 'car' || $this->transportType === 'motorcycle') {
             $transportCost = round($totalDistanceKm * $rate * $vehicleUnits, 2);
-            $transportNote = number_format($totalDistanceKm, 1) . ' km × RM ' . number_format($rate, 2) . '/km × ' . $vehicleUnits . ' vehicle unit(s)';
+            $transportNote = number_format($totalDistanceKm, 1) . ' km x RM ' . number_format($rate, 2) . '/km x ' . $vehicleUnits . ' vehicle unit(s)';
         } else {
             $transportCost = 0.0;
             $transportNote = 'Walking transport cost RM 0.00';
@@ -170,10 +170,10 @@ class CostEstimationService
         $hotelRate = $hotelRatePerNight > 0 ? $hotelRatePerNight : self::DEFAULT_HOTEL_RATE;
         if ($selectedHotelBase > 0) {
             $accommodationCost = round($selectedHotelBase * $rooms, 2);
-            $hotelNote = $selectedHotelCount . ' selected hotel night item(s) × ' . $rooms . ' room(s)';
+            $hotelNote = $selectedHotelCount . ' selected hotel night item(s) x ' . $rooms . ' room(s)';
         } else {
             $accommodationCost = round($nights * $hotelRate * $rooms, 2);
-            $hotelNote = $nights . ' night(s) × RM ' . number_format($hotelRate, 2) . '/room × ' . $rooms . ' room(s)';
+            $hotelNote = $nights . ' night(s) x RM ' . number_format($hotelRate, 2) . '/room x ' . $rooms . ' room(s)';
         }
 
         $meals = $mealsPerDay > 0 ? $mealsPerDay : self::MEALS_PER_DAY;
@@ -181,8 +181,8 @@ class CostEstimationService
         $defaultFoodCost = round($this->tripDays * $meals * $mealPrice * $partySize, 2);
         $foodCost = max($defaultFoodCost, $scheduledFoodCost);
         $foodNote = $scheduledFoodBase > 0
-            ? 'Scheduled food RM ' . number_format($scheduledFoodCost, 2) . '; minimum estimate ' . $this->tripDays . ' day(s) × ' . $meals . ' meals × RM ' . number_format($mealPrice, 2) . ' × ' . $partySize . ' traveller(s)'
-            : $this->tripDays . ' day(s) × ' . $meals . ' meals × RM ' . number_format($mealPrice, 2) . ' × ' . $partySize . ' traveller(s)';
+            ? 'Scheduled food RM ' . number_format($scheduledFoodCost, 2) . '; minimum estimate ' . $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2) . ' x ' . $partySize . ' traveller(s)'
+            : $this->tripDays . ' day(s) x ' . $meals . ' meals x RM ' . number_format($mealPrice, 2) . ' x ' . $partySize . ' traveller(s)';
 
         $totalCost = round($attractionCost + $transportCost + $accommodationCost + $foodCost, 2);
         $withinBudget = $this->budget <= 0 ? true : $totalCost <= $this->budget;
@@ -205,7 +205,7 @@ class CostEstimationService
                 [
                     'label' => 'Attraction / Entrance Fees',
                     'amount' => $attractionCost,
-                    'note' => 'RM ' . number_format($attractionBase, 2) . ' per-person place costs × ' . $partySize . ' traveller(s)',
+                    'note' => 'RM ' . number_format($attractionBase, 2) . ' per-person place costs x ' . $partySize . ' traveller(s)',
                 ],
                 [
                     'label' => 'Transport (' . ucfirst(str_replace('_', ' ', $this->transportType)) . ')',

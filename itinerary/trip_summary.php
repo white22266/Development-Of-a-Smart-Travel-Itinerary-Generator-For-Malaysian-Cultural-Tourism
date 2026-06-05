@@ -24,8 +24,10 @@ if ($itineraryId <= 0) {
 }
 
 // ---- Load itinerary with preference data ----
+$partyCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'party_size'");
+$partySelect = ($partyCheck && $partyCheck->num_rows > 0) ? ", tp.party_size" : "";
 $stmt = $conn->prepare("
-    SELECT i.*, tp.budget, tp.budget_tier, tp.transport_type, tp.traveller_type, tp.interests, tp.preferred_states, tp.trip_days AS pref_trip_days
+    SELECT i.*, tp.budget, tp.budget_tier, tp.transport_type, tp.traveller_type{$partySelect}, tp.interests, tp.preferred_states, tp.trip_days AS pref_trip_days
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
     WHERE i.itinerary_id = ? AND i.traveller_id = ?
@@ -98,12 +100,13 @@ $budget        = (float)($it["budget"] ?? 0);
 $transportType = (string)($it["transport_type"] ?? "car");
 $budgetTier    = strtolower((string)($it["budget_tier"] ?? "normal"));
 $travellerType = strtolower((string)($it["traveller_type"] ?? "solo"));
+$partySize     = CostEstimationService::resolvePartySize($travellerType, isset($it["party_size"]) ? (int)$it["party_size"] : null);
 $originName    = trim((string)($it["origin_name"] ?? ""));
 $originLat     = $it["origin_lat"] ?? null;
 $originLng     = $it["origin_lng"] ?? null;
-$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $tripDays);
+$tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, $tripDays, $partySize);
 
-$costService     = new CostEstimationService($transportType, $tripDays, $budget, $travellerType);
+$costService     = new CostEstimationService($transportType, $tripDays, $budget, $travellerType, $partySize);
 $costBreakdown   = $costService->calculate($allItems, $totalDistKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 
 // ---- Hotel recommendations ----
