@@ -26,6 +26,15 @@ class AiTravelAssistantService
             ];
         }
 
+        $capabilityAnswer = $this->capabilityAnswer($question);
+        if ($capabilityAnswer !== null) {
+            return [
+                'status' => 'success',
+                'answer' => $capabilityAnswer,
+                'source' => 'rule',
+            ];
+        }
+
         $question = $this->truncateText($question, 700);
         $compactContext = $this->compactContext($context);
 
@@ -35,6 +44,8 @@ class AiTravelAssistantService
             "Do not invent live traffic, booking prices, opening hours, or saved changes.",
             "If information is missing, say it is estimated or not provided.",
             "Reply in the same language as the user when possible.",
+            "Answer the traveller's actual question directly. Do not repeat the full itinerary unless the traveller asks for a summary or explanation.",
+            "When asked what you can do, describe your available travel-assistant functions instead of summarising the itinerary.",
             "Keep the reply concise and practical. If the user asks for a longer explanation, give a fuller answer but keep it clear.",
             "Plain text only. No Markdown formatting.",
         ]);
@@ -143,6 +154,39 @@ class AiTravelAssistantService
         }
 
         return ['status' => 'success', 'answer' => $text, 'source' => 'ollama'];
+    }
+
+    private function capabilityAnswer(string $question): ?string
+    {
+        $question = trim($question);
+        $isCapabilityQuestion = (bool)preg_match(
+            '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|what\s+can\s+u\s+do|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b|你能做什么|你可以做什么|你有什么功能|你可以帮什么|你会什么|可以做什么/iu',
+            $question
+        );
+
+        if (!$isCapabilityQuestion) {
+            return null;
+        }
+
+        if (preg_match('/[\x{4E00}-\x{9FFF}]/u', $question)) {
+            return "我可以帮助你：\n"
+                . "1. 解释整个行程、每日安排和地点背景。\n"
+                . "2. 回答路线、交通时间、距离、预算和费用问题。\n"
+                . "3. 根据你的要求建议酒店、景点和替代地点。\n"
+                . "4. 提供天气规划建议，并提醒你核实实时天气和开放时间。\n"
+                . "5. 建议增加、替换或重新安排行程地点。\n"
+                . "6. 在你确认后，更新行程日期、出发地点或所选地点。\n"
+                . "我不能直接完成酒店预订，也不能保证实时价格、交通或开放时间。";
+        }
+
+        return "I can help you with:\n"
+            . "1. Explain the full trip, daily schedule, and background of each place.\n"
+            . "2. Answer questions about routes, travel time, distance, budget, and estimated costs.\n"
+            . "3. Suggest hotels, attractions, food places, and alternative stops when requested.\n"
+            . "4. Give weather-planning advice and remind you to verify live weather and opening hours.\n"
+            . "5. Suggest adding, replacing, or rearranging itinerary stops.\n"
+            . "6. Update the trip date, starting location, or selected places after you confirm the change.\n"
+            . "I cannot complete hotel bookings or guarantee live prices, traffic, or opening hours.";
     }
 
     private function callGemini(string $instructions, string $input): array
