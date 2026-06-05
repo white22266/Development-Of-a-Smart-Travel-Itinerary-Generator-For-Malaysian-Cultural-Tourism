@@ -1,10 +1,11 @@
 <?php
 // api/itinerary_route_context.php
-// Returns the confirmed official origin used by the saved itinerary route.
+// Returns the confirmed official origin plus whole-party cost context used by the itinerary page.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once "../config/db_connect.php";
+require_once "../services/CostEstimationService.php";
 
 header("Content-Type: application/json; charset=utf-8");
 
@@ -22,10 +23,18 @@ if ($travellerId <= 0 || $itineraryId <= 0) {
     exit;
 }
 
+$partySelect = "";
+$partyCheck = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'party_size'");
+if ($partyCheck && $partyCheck->num_rows > 0) {
+    $partySelect = ", tp.party_size";
+}
+
 $stmt = $conn->prepare("
-    SELECT itinerary_id, origin_name, origin_lat, origin_lng
-    FROM itineraries
-    WHERE itinerary_id = ? AND traveller_id = ?
+    SELECT i.itinerary_id, i.origin_name, i.origin_lat, i.origin_lng,
+           tp.traveller_type{$partySelect}
+    FROM itineraries i
+    LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
+    WHERE i.itinerary_id = ? AND i.traveller_id = ?
     LIMIT 1
 ");
 if (!$stmt) {
@@ -50,6 +59,10 @@ $valid = $lat !== null && $lng !== null && is_finite($lat) && is_finite($lng)
     && !($lat == 0.0 && $lng == 0.0)
     && $lat >= -90 && $lat <= 90 && $lng >= -180 && $lng <= 180;
 
+$travellerType = (string)($row["traveller_type"] ?? "solo");
+$partySize = CostEstimationService::resolvePartySize($travellerType, isset($row["party_size"]) ? (int)$row["party_size"] : null);
+$roomCount = CostEstimationService::roomCount($partySize);
+
 echo json_encode([
     "status" => "success",
     "origin" => $valid ? [
@@ -57,4 +70,6 @@ echo json_encode([
         "lat" => $lat,
         "lng" => $lng,
     ] : null,
+    "party_size" => $partySize,
+    "room_count" => $roomCount,
 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
