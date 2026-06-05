@@ -34,11 +34,18 @@ if (!$conn->set_charset('utf8mb4')) {
     die('System temporarily unavailable. Please try again later.');
 }
 
+// All confirmed AI/review itinerary changes must pass the same official itinerary rules.
+$scriptName = basename((string)($_SERVER['SCRIPT_NAME'] ?? ''));
+if (in_array($scriptName, ['ai_itinerary_editor.php', 'review_replace.php'], true)) {
+    require_once __DIR__ . '/../services/ItineraryRuleValidationService.php';
+    ItineraryRuleValidationService::validateCurrentRequestIfNeeded($conn);
+}
+
 // Load the official-origin route-map controller only on itinerary_view.php.
 // Output buffering keeps this isolated from JSON endpoints and other pages.
-if (basename((string)($_SERVER['SCRIPT_NAME'] ?? '')) === 'itinerary_view.php') {
+if ($scriptName === 'itinerary_view.php') {
     ob_start(static function (string $html): string {
-        $asset = '<script src="../assets/itinerary_route_map_fix.js?v=20260605-part1"></script>';
+        $asset = '<script src="../assets/itinerary_route_map_fix.js?v=20260605-part2"></script>';
         if (str_contains($html, 'itinerary_route_map_fix.js')) {
             return $html;
         }
