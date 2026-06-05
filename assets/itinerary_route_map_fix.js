@@ -1,10 +1,12 @@
 /*
- * Official itinerary route map controller.
+ * Official itinerary route map and whole-party cost controller.
  *
  * My Location is a separate convenience marker only. It never changes the
  * official itinerary origin, route, saved sequence, distance, or cost.
  */
 let OFFICIAL_ROUTE_ORIGIN = null;
+let ROUTE_PARTY_SIZE = 1;
+let ROUTE_ROOM_COUNT = 1;
 
 function routeFixValidPoint(point) {
     return point && Number.isFinite(Number(point.lat)) && Number.isFinite(Number(point.lng))
@@ -31,6 +33,59 @@ function routeFixDayOrigin(day) {
     if (day === 1) return OFFICIAL_ROUTE_ORIGIN;
     const previousItems = DAYS_DATA[day - 1] || [];
     return routeFixLastPoint(previousItems, true) || routeFixLastPoint(previousItems, false);
+}
+
+function routeFixMoney(value) {
+    return `RM ${Number(value || 0).toFixed(2)}`;
+}
+
+function routeFixItemCost(item) {
+    const perUnit = Math.max(0, Number(item?.cost || 0));
+    const isHotel = String(item?.type || '').toLowerCase() === 'hotel';
+    const units = isHotel ? ROUTE_ROOM_COUNT : ROUTE_PARTY_SIZE;
+    return {
+        perUnit,
+        whole: perUnit * units,
+        unitText: isHotel ? `${routeFixMoney(perUnit)} per room` : `${routeFixMoney(perUnit)} per person`,
+        wholeText: isHotel
+            ? `${routeFixMoney(perUnit * units)} for ${units} room(s)`
+            : `${routeFixMoney(perUnit * units)} for ${units} traveller(s)`,
+    };
+}
+
+function routeFixUpdateCostDisplay() {
+    const itemById = new Map();
+    for (let day = 1; day <= TOTAL_DAYS; day++) {
+        (DAYS_DATA[day] || []).forEach(item => itemById.set(String(item.item_id), item));
+    }
+
+    document.querySelectorAll('tr[data-item-id]').forEach(row => {
+        const item = itemById.get(String(row.getAttribute('data-item-id') || ''));
+        if (!item) return;
+        const cells = row.querySelectorAll('td');
+        const costCell = cells[cells.length - 1];
+        if (!costCell) return;
+        const cost = routeFixItemCost(item);
+        if (cost.perUnit <= 0) {
+            costCell.innerHTML = '<span style="color:#94a3b8;">Free</span>';
+            return;
+        }
+        costCell.innerHTML = `
+            <div style="font-weight:800;">${escHtml(cost.wholeText)}</div>
+            <div style="font-size:10.5px;color:#64748b;margin-top:2px;">${escHtml(cost.unitText)}</div>
+        `;
+    });
+
+    for (let day = 1; day <= TOTAL_DAYS; day++) {
+        const box = document.getElementById('day-' + day);
+        if (!box) continue;
+        const total = (DAYS_DATA[day] || []).reduce((sum, item) => sum + routeFixItemCost(item).whole, 0);
+        const candidates = [...box.querySelectorAll('div')];
+        const totalElement = candidates.find(element => /^\s*Day\s+\d+\s+Total:/i.test(element.textContent || ''));
+        if (totalElement) {
+            totalElement.textContent = `Day ${day} Scheduled Places Total (Whole Party): ${routeFixMoney(total)}`;
+        }
+    }
 }
 
 function routeFixClearAllDays() {
@@ -70,20 +125,23 @@ async function routeFixLoadOfficialOrigin() {
             credentials: 'same-origin'
         });
         const data = await response.json();
-        if (data.status === 'success' && routeFixValidPoint(data.origin)) {
-            OFFICIAL_ROUTE_ORIGIN = {
-                lat: Number(data.origin.lat),
-                lng: Number(data.origin.lng),
-                name: data.origin.name || 'Confirmed Starting Location'
-            };
+        if (data.status === 'success') {
+            if (routeFixValidPoint(data.origin)) {
+                OFFICIAL_ROUTE_ORIGIN = {
+                    lat: Number(data.origin.lat),
+                    lng: Number(data.origin.lng),
+                    name: data.origin.name || 'Confirmed Starting Location'
+                };
+            }
+            ROUTE_PARTY_SIZE = Math.max(1, Number(data.party_size || 1));
+            ROUTE_ROOM_COUNT = Math.max(1, Number(data.room_count || Math.ceil(ROUTE_PARTY_SIZE / 2)));
         }
     } catch (error) {
-        console.warn('Official itinerary origin could not be loaded.', error);
+        console.warn('Official itinerary route/cost context could not be loaded.', error);
     }
 
-    if (typeof map !== 'undefined' && map) {
-        renderAllDays();
-    }
+    routeFixUpdateCostDisplay();
+    if (typeof map !== 'undefined' && map) renderAllDays();
 }
 
 // Override the page map renderer. Default map view displays only the active day.
@@ -136,13 +194,18 @@ renderDay = function (day) {
             }
         });
         marker.addListener('click', () => {
+            const cost = routeFixItemCost(item);
+            const costHtml = cost.perUnit <= 0
+                ? '<div style="font-size:11px;margin-top:4px;">Cost: Free</div>'
+                : `<div style="font-size:11px;margin-top:4px;">Cost: ${escHtml(cost.wholeText)}<br><span style="color:#64748b;">${escHtml(cost.unitText)}</span></div>`;
             infoWindow.setContent(
-                `<div style="max-width:230px;">
+                `<div style="max-width:240px;">
                     <div style="font-weight:800;font-size:13px;">${escHtml(item.title)}</div>
                     <div style="font-size:11px;color:#64748b;margin-top:4px;">Day ${day} | Stop ${stopLabel}</div>
                     ${item.address ? `<div style="font-size:11px;margin-top:4px;">Address: ${escHtml(item.address)}</div>` : ''}
                     ${item.opening_hours ? `<div style="font-size:11px;margin-top:4px;">Hours: ${escHtml(item.opening_hours)}</div>` : ''}
                     <div style="font-size:11px;margin-top:4px;">${item.start_fmt} - ${item.end_fmt}</div>
+                    ${costHtml}
                 </div>`
             );
             infoWindow.open(map, marker);
@@ -152,11 +215,8 @@ renderDay = function (day) {
 
     if (allPoints.length >= 2) {
         const travelMode = getTravelMode(currentTransport);
-        if (currentTransport === 'public_transport') {
-            renderSegmentedTransitRoute(day, allPoints, color);
-        } else {
-            renderWaypointRoute(day, allPoints, color, travelMode);
-        }
+        if (currentTransport === 'public_transport') renderSegmentedTransitRoute(day, allPoints, color);
+        else renderWaypointRoute(day, allPoints, color, travelMode);
     }
 };
 
