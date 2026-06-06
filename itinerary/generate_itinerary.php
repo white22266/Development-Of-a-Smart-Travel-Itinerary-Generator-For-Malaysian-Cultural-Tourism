@@ -7,6 +7,7 @@ require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../services/RuleBasedItineraryPlannerService.php";
 require_once "../services/PlannerIntegrityService.php";
+require_once "../services/ItineraryTargetRefillService.php";
 
 if (
     !isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true ||
@@ -55,9 +56,6 @@ if (!empty($errors)) {
 }
 
 try {
-    // Strict Festival filtering is installed by config/business_request_bootstrap.php
-    // as a connection-scoped candidate pool before the planner reads cultural_places.
-    // This avoids mutating the permanent cultural_places records during generation.
     $googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
     $planner = new RuleBasedItineraryPlannerService($conn, $googleMapsKey);
     $itineraryId = $planner->generate($travellerId, $preferenceId, [
@@ -67,9 +65,19 @@ try {
         "origin_lng" => $originLng,
     ]);
 
-    // Enforce a cumulative whole-trip attraction budget after route generation.
-    // Paid visits that exceed the remaining attraction budget are removed where this does not create an empty day.
+    // 1) Remove paid places that exceed the cumulative attraction budget where possible.
     PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
+
+    // 2) After optimisation and budget pruning, refill each day toward the travel-pace target:
+    // Relaxed = 3, Normal = 4, Packed = 5. This uses the same saved preference, state boundary,
+    // district/interest fallback order, opening hours, dietary and accessibility checks.
+    ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $googleMapsKey);
+
+    // 3) Re-apply budget integrity after refill so added paid places cannot silently exceed budget.
+    PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
+
+    // 4) Final refill prioritises free/low-cost valid places if budget pruning removed anything.
+    ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $googleMapsKey);
 
     if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {
         unset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId]);
