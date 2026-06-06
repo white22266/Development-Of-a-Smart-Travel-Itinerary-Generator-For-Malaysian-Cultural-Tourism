@@ -14,6 +14,7 @@ class AiAdminReportAnalysisService
     private int $connectTimeout;
     private int $numPredict;
     private int $numCtx;
+    private string $keepAlive;
 
     public function __construct(?string $model = null, ?string $baseUrl = null)
     {
@@ -25,6 +26,8 @@ class AiAdminReportAnalysisService
         $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
         $this->numPredict = max(60, min(220, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 110)));
         $this->numCtx = max(256, min(2048, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512))));
+        $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '-1')));
+        if ($this->keepAlive === '') $this->keepAlive = '-1';
     }
 
     public function analyze(array $reportData): array
@@ -74,7 +77,7 @@ class AiAdminReportAnalysisService
                 ['role' => 'user', 'content' => "Compact admin report database snapshot:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
             ],
             'stream' => false,
-            'keep_alive' => '10m',
+            'keep_alive' => $this->keepAlive,
             'options' => [
                 'temperature' => 0.2,
                 'num_ctx' => $this->numCtx,
