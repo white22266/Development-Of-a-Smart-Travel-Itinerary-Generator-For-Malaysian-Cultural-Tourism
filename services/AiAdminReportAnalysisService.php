@@ -2,23 +2,41 @@
 /**
  * services/AiAdminReportAnalysisService.php
  *
- * AI analysis for admin reports. Uses local Ollama and falls back to
- * deterministic local insights if Ollama is not running.
+ * AI analysis for admin reports. Uses local Ollama when enabled and falls back to
+ * deterministic local insights when fast mode is enabled or Ollama is unavailable.
  */
-
 class AiAdminReportAnalysisService
 {
     private string $model;
     private string $baseUrl;
+    private bool $fastMode;
+    private int $timeout;
+    private int $connectTimeout;
+    private int $numPredict;
+    private int $numCtx;
 
     public function __construct(?string $model = null, ?string $baseUrl = null)
     {
-        $this->model = trim((string)($model ?: 'qwen2.5:3b'));
-        $this->baseUrl = rtrim(trim((string)($baseUrl ?: 'http://127.0.0.1:11434')), '/');
+        $this->model = trim((string)($model ?: (getenv('ADMIN_AI_MODEL') ?: 'qwen2.5:3b')));
+        $this->baseUrl = rtrim(trim((string)($baseUrl ?: (getenv('OLLAMA_BASE_URL') ?: 'http://127.0.0.1:11434'))), '/');
+        $fast = strtolower(trim((string)(getenv('ADMIN_AI_FAST_MODE') ?: 'false')));
+        $this->fastMode = in_array($fast, ['1', 'true', 'yes', 'on'], true);
+        $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 25));
+        $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
+        $this->numPredict = max(60, min(220, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 110)));
+        $this->numCtx = max(256, min(2048, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512))));
     }
 
     public function analyze(array $reportData): array
     {
+        if ($this->fastMode) {
+            return [
+                'status' => 'success',
+                'source' => 'fast_local_report',
+                'analysis' => $this->fallbackAnalysis($reportData),
+            ];
+        }
+
         $ai = $this->callOllama($reportData);
         if (($ai['status'] ?? '') === 'success') return $ai;
 
@@ -35,16 +53,17 @@ class AiAdminReportAnalysisService
             return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'cURL is not enabled.'];
         }
 
-        $reportType = (string)($reportData['report_type'] ?? 'overview');
+        $compactData = $this->compactReportData($reportData);
+        $reportType = (string)($compactData['report_type'] ?? 'overview');
         $typeInstructions = $this->reportTypeInstructions($reportType);
         $instructions = implode("\n", [
             "You are an admin analytics assistant for a Malaysian cultural tourism itinerary system.",
             "Analyze only the selected report type: {$reportType}.",
-            "Use only the KPI and section rows provided in the JSON snapshot. Do not invent missing data.",
+            "Use only the KPI and section rows provided in the compact JSON snapshot. Do not invent missing data.",
             "Do not analyze unrelated modules or report types. For example, only discuss AI usage when report_type is ai_usage.",
             "Follow this exact analysis focus and headings:",
             $typeInstructions,
-            "Mention concrete numbers from the selected report. Keep the report concise, practical, and suitable for a final year project admin report.",
+            "Mention concrete numbers from the selected report. Keep it concise for a final year project admin report.",
             "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
         ]);
 
@@ -52,13 +71,15 @@ class AiAdminReportAnalysisService
             'model' => $this->model,
             'messages' => [
                 ['role' => 'system', 'content' => $instructions],
-                ['role' => 'user', 'content' => "Admin report database snapshot:\n" . json_encode($reportData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
+                ['role' => 'user', 'content' => "Compact admin report database snapshot:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
             ],
             'stream' => false,
+            'keep_alive' => '10m',
             'options' => [
-                'temperature' => 0.35,
-                'num_ctx' => defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512,
-                'num_predict' => 180,
+                'temperature' => 0.2,
+                'num_ctx' => $this->numCtx,
+                'num_predict' => $this->numPredict,
+                'num_thread' => 2,
             ],
         ];
 
@@ -69,8 +90,8 @@ class AiAdminReportAnalysisService
             CURLOPT_POST => true,
             CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
             CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-            CURLOPT_TIMEOUT => 180,
-            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_TIMEOUT => $this->timeout,
+            CURLOPT_CONNECTTIMEOUT => $this->connectTimeout,
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
@@ -95,6 +116,30 @@ class AiAdminReportAnalysisService
         }
 
         return ['status' => 'success', 'source' => 'ollama', 'analysis' => $text];
+    }
+
+    private function compactReportData(array $reportData): array
+    {
+        $compact = [
+            'report_type' => (string)($reportData['report_type'] ?? 'overview'),
+            'period' => (string)($reportData['period'] ?? ''),
+            'kpis' => array_slice(is_array($reportData['kpis'] ?? null) ? $reportData['kpis'] : [], 0, 6),
+            'sections' => [],
+        ];
+
+        $sections = is_array($reportData['sections'] ?? null) ? $reportData['sections'] : [];
+        foreach (array_slice($sections, 0, 6) as $section) {
+            if (!is_array($section)) continue;
+            $rows = is_array($section['rows'] ?? null) ? $section['rows'] : [];
+            $compact['sections'][] = [
+                'title' => (string)($section['title'] ?? 'Section'),
+                'note' => (string)($section['note'] ?? ''),
+                'headers' => array_slice(is_array($section['headers'] ?? null) ? $section['headers'] : [], 0, 6),
+                'rows' => array_slice($rows, 0, 5),
+            ];
+        }
+
+        return $compact;
     }
 
     private function reportTypeInstructions(string $reportType): string
