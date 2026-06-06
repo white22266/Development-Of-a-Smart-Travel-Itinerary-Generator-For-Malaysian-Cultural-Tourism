@@ -55,9 +55,9 @@ if (!empty($errors)) {
 }
 
 try {
-    // Strict festival safety is enforced in application logic, even before the SQL migration is applied.
-    PlannerIntegrityService::deactivateUnverifiedFestivals($conn);
-
+    // Strict Festival filtering is installed by config/business_request_bootstrap.php
+    // as a connection-scoped candidate pool before the planner reads cultural_places.
+    // This avoids mutating the permanent cultural_places records during generation.
     $googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
     $planner = new RuleBasedItineraryPlannerService($conn, $googleMapsKey);
     $itineraryId = $planner->generate($travellerId, $preferenceId, [
