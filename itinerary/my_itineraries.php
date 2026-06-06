@@ -20,8 +20,8 @@ unset($_SESSION["success_message"], $_SESSION["form_errors"]);
 
 $stmt = $conn->prepare("
   SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost, i.created_at,
-         COALESCE(SUM(CASE WHEN ii.item_type <> 'hotel' THEN 1 ELSE 0 END), 0) AS place_count,
-         GROUP_CONCAT(CASE WHEN ii.item_type = 'hotel' THEN ii.item_title END SEPARATOR ', ') AS selected_hotels
+         COALESCE(SUM(CASE WHEN ii.item_type NOT IN ('hotel','origin') THEN 1 ELSE 0 END), 0) AS place_count,
+         GROUP_CONCAT(DISTINCT CASE WHEN ii.item_type = 'hotel' THEN ii.item_title END SEPARATOR ', ') AS selected_hotels
   FROM itineraries i
   LEFT JOIN itinerary_items ii ON ii.itinerary_id = i.itinerary_id
   WHERE i.traveller_id = ?
@@ -49,6 +49,103 @@ $stmt->close();
 
         .btn-danger:hover {
             background: rgba(220, 38, 38, 0.12);
+        }
+
+        .itinerary-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+
+        .itinerary-table th,
+        .itinerary-table td {
+            vertical-align: middle;
+        }
+
+        .itinerary-table th:nth-child(1) { width: 26%; }
+        .itinerary-table th:nth-child(2) { width: 9%; }
+        .itinerary-table th:nth-child(3) { width: 5%; }
+        .itinerary-table th:nth-child(4) { width: 6%; }
+        .itinerary-table th:nth-child(5) { width: 20%; }
+        .itinerary-table th:nth-child(6) { width: 8%; }
+        .itinerary-table th:nth-child(7) { width: 9%; }
+        .itinerary-table th:nth-child(8) { width: 17%; }
+
+        .itinerary-title {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.35;
+            max-width: 100%;
+        }
+
+        .date-cell,
+        .number-cell,
+        .money-cell,
+        .created-cell {
+            white-space: nowrap;
+        }
+
+        .number-cell,
+        .money-cell {
+            font-weight: 800;
+        }
+
+        .hotel-cell {
+            min-width: 0;
+        }
+
+        .hotel-badge {
+            display: inline-flex;
+            align-items: flex-start;
+            max-width: 100%;
+            padding: 7px 10px;
+            border-radius: 12px;
+            border: 1px solid rgba(37, 99, 235, 0.14);
+            background: rgba(37, 99, 235, 0.06);
+            color: #1e3a8a;
+            font-size: 12.5px;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .hotel-name {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+        }
+
+        .hotel-empty {
+            color: #94a3b8;
+            font-weight: 800;
+        }
+
+        .table-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .table-actions .btn,
+        .table-actions button {
+            min-width: 70px;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .delete-form {
+            display: inline-flex;
+            margin: 0;
+        }
+
+        @media (max-width: 1100px) {
+            .itinerary-table {
+                min-width: 1050px;
+            }
         }
     </style>
 </head>
@@ -115,7 +212,7 @@ $stmt->close();
                 <div class="card col-12">
                     <h3>My Itineraries</h3>
                     <div class="table-wrap">
-                        <table>
+                        <table class="itinerary-table">
                             <thead>
                                 <tr>
                                     <th>Title</th>
@@ -130,24 +227,39 @@ $stmt->close();
                             </thead>
                             <tbody>
                                 <?php while ($r = $res->fetch_assoc()): ?>
+                                    <?php $hotelText = trim((string)($r["selected_hotels"] ?? "")); ?>
                                     <tr>
-                                        <td><strong><?php echo htmlspecialchars($r["title"]); ?></strong></td>
-                                        <td><?php echo !empty($r["start_date"]) ? htmlspecialchars(date("d M Y", strtotime($r["start_date"]))) : "-"; ?></td>
-                                        <td><?php echo (int)$r["total_days"]; ?></td>
-                                        <td><?php echo (int)$r["place_count"]; ?></td>
-                                        <td><?php echo !empty($r["selected_hotels"]) ? htmlspecialchars($r["selected_hotels"]) : "-"; ?></td>
-                                        <td><?php echo number_format((float)$r["total_estimated_cost"], 2); ?></td>
-                                        <td><?php echo !empty($r["created_at"]) ? htmlspecialchars(date("d M Y", strtotime($r["created_at"]))) : "-"; ?></td>
                                         <td>
-                                            <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">View</a>
-                                            <a class="btn btn-ghost" href="trip_summary.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">Summary</a>
-                                            <form method="post"
-                                                action="itinerary_delete.php"
-                                                style="display:inline;"
-                                                onsubmit="return confirm('Delete this itinerary? This action cannot be undone.');">
-                                                <input type="hidden" name="itinerary_id" value="<?php echo (int)$r["itinerary_id"]; ?>">
-                                                <button type="submit" class="btn btn-ghost btn-danger">Delete</button>
-                                            </form>
+                                            <strong class="itinerary-title" title="<?php echo htmlspecialchars($r["title"]); ?>">
+                                                <?php echo htmlspecialchars($r["title"]); ?>
+                                            </strong>
+                                        </td>
+                                        <td class="date-cell"><?php echo !empty($r["start_date"]) ? htmlspecialchars(date("d M Y", strtotime($r["start_date"]))) : "-"; ?></td>
+                                        <td class="number-cell"><?php echo (int)$r["total_days"]; ?></td>
+                                        <td class="number-cell"><?php echo (int)$r["place_count"]; ?></td>
+                                        <td class="hotel-cell">
+                                            <?php if ($hotelText !== ""): ?>
+                                                <span class="hotel-badge" title="<?php echo htmlspecialchars($hotelText); ?>">
+                                                    <span class="hotel-name"><?php echo htmlspecialchars($hotelText); ?></span>
+                                                </span>
+                                            <?php else: ?>
+                                                <span class="hotel-empty">-</span>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td class="money-cell"><?php echo number_format((float)$r["total_estimated_cost"], 2); ?></td>
+                                        <td class="created-cell"><?php echo !empty($r["created_at"]) ? htmlspecialchars(date("d M Y", strtotime($r["created_at"]))) : "-"; ?></td>
+                                        <td>
+                                            <div class="table-actions">
+                                                <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">View</a>
+                                                <a class="btn btn-ghost" href="trip_summary.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">Summary</a>
+                                                <form method="post"
+                                                    action="itinerary_delete.php"
+                                                    class="delete-form"
+                                                    onsubmit="return confirm('Delete this itinerary? This action cannot be undone.');">
+                                                    <input type="hidden" name="itinerary_id" value="<?php echo (int)$r["itinerary_id"]; ?>">
+                                                    <button type="submit" class="btn btn-ghost btn-danger">Delete</button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php endwhile; ?>
