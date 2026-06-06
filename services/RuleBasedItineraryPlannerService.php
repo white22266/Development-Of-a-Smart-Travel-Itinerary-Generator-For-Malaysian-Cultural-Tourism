@@ -287,17 +287,18 @@ class RuleBasedItineraryPlannerService
         $dailyDistance = 0.0;
 
         while (count($items) < $target) {
-            $choice = $this->selectNextPlace($pool, $pref, $profile, $usedPlaceIds, $categoryCounts, $previousDayMainCategory, $dayDate, $currentMin, $anchor, $dailyDistance, false);
+            $isFirstStopOfDay = count($items) === 0;
+            $choice = $this->selectNextPlace($pool, $pref, $profile, $usedPlaceIds, $categoryCounts, $previousDayMainCategory, $dayNo, $isFirstStopOfDay, $dayDate, $currentMin, $anchor, $dailyDistance, false);
 
             // Insufficient-day repair now runs whenever the day is below target, not only when it is empty.
             // It relaxes only soft selection pressure. It still obeys distance, opening hours, hard end time,
             // dietary, accessibility, duplicate and state-boundary constraints.
             if ($choice === null && count($items) < $target) {
-                $choice = $this->selectNextPlace($pool, $pref, $profile, $usedPlaceIds, $categoryCounts, $previousDayMainCategory, $dayDate, $currentMin, $anchor, $dailyDistance, true);
+                $choice = $this->selectNextPlace($pool, $pref, $profile, $usedPlaceIds, $categoryCounts, $previousDayMainCategory, $dayNo, $isFirstStopOfDay, $dayDate, $currentMin, $anchor, $dailyDistance, true);
             }
             if ($choice === null) break;
 
-            $planned = $this->buildPlannedStop($choice, $route, $anchor, $currentMin, $dayDate, $pref, $profile, $dailyDistance);
+            $planned = $this->buildPlannedStop($choice, $route, $anchor, $currentMin, $dayNo, $isFirstStopOfDay, $dayDate, $pref, $profile, $dailyDistance);
             if ($planned === null) break;
 
             $items[] = $planned;
@@ -306,16 +307,18 @@ class RuleBasedItineraryPlannerService
             $usedPlaceIds[$placeId] = true;
             $category = strtolower((string)$place["category"]);
             $categoryCounts[$category] = ($categoryCounts[$category] ?? 0) + 1;
-            $dailyDistance += (float)$planned["distance_km"];
+            if (!$this->isDayOneOriginLeg($dayNo, $isFirstStopOfDay)) {
+                $dailyDistance += (float)$planned["distance_km"];
+            }
             $anchor = ["name" => (string)$place["name"], "lat" => (float)$place["latitude"], "lng" => (float)$place["longitude"]];
             $currentMin = (int)$planned["end_min"] + (int)$profile["rest_min"];
         }
 
-        $items = $this->optimiseDayRoute($items, $origin, $route, $pref, $profile, $dayDate);
+        $items = $this->optimiseDayRoute($items, $origin, $route, $pref, $profile, $dayNo, $dayDate);
         return ["day_no" => $dayNo, "items" => $items];
     }
 
-    private function buildPlannedStop(array $choice, RouteService $route, array $anchor, int $currentMin, string $dayDate, array $pref, array $profile, float $dailyDistance): ?array
+    private function buildPlannedStop(array $choice, RouteService $route, array $anchor, int $currentMin, int $dayNo, bool $isFirstStopOfDay, string $dayDate, array $pref, array $profile, float $dailyDistance): ?array
     {
         $place = $choice["place"];
         $seg = $route->getSegment((float)$anchor["lat"], (float)$anchor["lng"], (float)$place["latitude"], (float)$place["longitude"]);
@@ -326,7 +329,7 @@ class RuleBasedItineraryPlannerService
         $endMin = $arrivalMin + $visitMin;
 
         // Revalidate after real RouteService segment, not only Haversine estimation.
-        if (!$this->routeFeasibleAfterRealSegment($place, $pref, $profile, $dayDate, $arrivalMin, $endMin, $dailyDistance, $distanceKm)) {
+        if (!$this->routeFeasibleAfterRealSegment($place, $pref, $profile, $anchor, $dayNo, $isFirstStopOfDay, $dayDate, $arrivalMin, $endMin, $dailyDistance, $distanceKm)) {
             return null;
         }
 
@@ -340,9 +343,9 @@ class RuleBasedItineraryPlannerService
         ];
     }
 
-    private function optimiseDayRoute(array $items, array $origin, RouteService $route, array $pref, array $profile, string $dayDate): array
+    private function optimiseDayRoute(array $items, array $origin, RouteService $route, array $pref, array $profile, int $dayNo, string $dayDate): array
     {
-        if (count($items) <= 1) return $this->revalidateRouteOrder($items, $origin, $route, $pref, $profile, $dayDate);
+        if (count($items) <= 1) return $this->revalidateRouteOrder($items, $origin, $route, $pref, $profile, $dayNo, $dayDate);
 
         $remaining = $items;
         $ordered = [];
@@ -366,23 +369,24 @@ class RuleBasedItineraryPlannerService
             array_splice($remaining, $bestIndex, 1);
         }
 
-        return $this->revalidateRouteOrder($ordered, $origin, $route, $pref, $profile, $dayDate);
+        return $this->revalidateRouteOrder($ordered, $origin, $route, $pref, $profile, $dayNo, $dayDate);
     }
 
-    private function revalidateRouteOrder(array $items, array $origin, RouteService $route, array $pref, array $profile, string $dayDate): array
+    private function revalidateRouteOrder(array $items, array $origin, RouteService $route, array $pref, array $profile, int $dayNo, string $dayDate): array
     {
         $validated = [];
         $anchor = $origin;
         $currentMin = (int)$profile["start_min"];
         $dailyDistance = 0.0;
         foreach ($items as $item) {
+            $isFirstStopOfDay = empty($validated);
             $place = $item["place"];
             $seg = $route->getSegment((float)$anchor["lat"], (float)$anchor["lng"], (float)$place["latitude"], (float)$place["longitude"]);
             $distanceKm = (float)($seg["distance_km"] ?? 0.0);
             $travelMin = (int)($seg["travel_time_min"] ?? 0);
             $arrivalMin = $currentMin + $travelMin;
             $endMin = $arrivalMin + $this->visitDuration($place, $pref);
-            if (!$this->routeFeasibleAfterRealSegment($place, $pref, $profile, $dayDate, $arrivalMin, $endMin, $dailyDistance, $distanceKm)) {
+            if (!$this->routeFeasibleAfterRealSegment($place, $pref, $profile, $anchor, $dayNo, $isFirstStopOfDay, $dayDate, $arrivalMin, $endMin, $dailyDistance, $distanceKm)) {
                 continue;
             }
             $item["distance_km"] = round($distanceKm, 2);
@@ -390,16 +394,20 @@ class RuleBasedItineraryPlannerService
             $item["start_min"] = $arrivalMin;
             $item["end_min"] = $endMin;
             $validated[] = $item;
-            $dailyDistance += $distanceKm;
+            if (!$this->isDayOneOriginLeg($dayNo, $isFirstStopOfDay)) {
+                $dailyDistance += $distanceKm;
+            }
             $anchor = ["name" => (string)$place["name"], "lat" => (float)$place["latitude"], "lng" => (float)$place["longitude"]];
             $currentMin = $endMin + (int)$profile["rest_min"];
         }
         return $validated;
     }
 
-    private function routeFeasibleAfterRealSegment(array $place, array $pref, array $profile, string $dayDate, int $arrivalMin, int $endMin, float $dailyDistance, float $distanceKm): bool
+    private function routeFeasibleAfterRealSegment(array $place, array $pref, array $profile, array $anchor, int $dayNo, bool $isFirstStopOfDay, string $dayDate, int $arrivalMin, int $endMin, float $dailyDistance, float $distanceKm): bool
     {
-        if (($dailyDistance + $distanceKm) > (float)$profile["daily_distance_limit_km"]) return false;
+        $isDayOneOriginLeg = $this->isDayOneOriginLeg($dayNo, $isFirstStopOfDay);
+        if ($isDayOneOriginLeg && $this->crossesMalaysiaRegionBoundary($anchor, $place)) return false;
+        if (!$isDayOneOriginLeg && ($dailyDistance + $distanceKm) > $this->extremeDistanceLimitKm($profile)) return false;
         if ($endMin > (int)$profile["hard_end_min"]) return false;
         if (!$this->openingHoursAllow((string)($place["opening_hours"] ?? ""), $arrivalMin)) return false;
         if (!$this->festivalDateAllowed($place, $dayDate)) return false;
@@ -408,14 +416,14 @@ class RuleBasedItineraryPlannerService
         return true;
     }
 
-    private function selectNextPlace(array $pool, array $pref, array $profile, array $usedPlaceIds, array $categoryCounts, ?string $previousDayMainCategory, string $dayDate, int $currentMin, array $anchor, float $dailyDistance, bool $repairMode): ?array
+    private function selectNextPlace(array $pool, array $pref, array $profile, array $usedPlaceIds, array $categoryCounts, ?string $previousDayMainCategory, int $dayNo, bool $isFirstStopOfDay, string $dayDate, int $currentMin, array $anchor, float $dailyDistance, bool $repairMode): ?array
     {
         $tiers = $this->buildGeographicTiers($pool, $pref, $anchor, $repairMode);
         foreach ($tiers as $tierNo => $candidates) {
             $best = null;
             $bestScore = -PHP_FLOAT_MAX;
             foreach ($candidates as $place) {
-                $constraint = $this->passesHardConstraints($place, $pref, $profile, $usedPlaceIds, $dayDate, $currentMin, $anchor, $dailyDistance);
+                $constraint = $this->passesHardConstraints($place, $pref, $profile, $usedPlaceIds, $dayNo, $isFirstStopOfDay, $dayDate, $currentMin, $anchor, $dailyDistance);
                 if (!$constraint["ok"]) continue;
                 $score = $this->scoreCandidate($place, $pref, $profile, $anchor, $categoryCounts, $previousDayMainCategory, (int)$tierNo, $constraint["distance_km"], $currentMin, $repairMode);
                 if ($score["score"] > $bestScore) {
@@ -460,7 +468,7 @@ class RuleBasedItineraryPlannerService
         return $tiers;
     }
 
-    private function passesHardConstraints(array $place, array $pref, array $profile, array $usedPlaceIds, string $dayDate, int $currentMin, array $anchor, float $dailyDistance): array
+    private function passesHardConstraints(array $place, array $pref, array $profile, array $usedPlaceIds, int $dayNo, bool $isFirstStopOfDay, string $dayDate, int $currentMin, array $anchor, float $dailyDistance): array
     {
         $placeId = (int)$place["place_id"];
         if (isset($usedPlaceIds[$placeId])) return ["ok" => false, "reasons" => ["duplicate place"]];
@@ -473,12 +481,18 @@ class RuleBasedItineraryPlannerService
         $distance = $this->haversineKm((float)$anchor["lat"], (float)$anchor["lng"], (float)$place["latitude"], (float)$place["longitude"]) * 1.3;
         $arrivalMin = $currentMin + $this->estimateTravelTime((string)$pref["transport_type"], $distance);
         $endMin = $arrivalMin + $this->visitDuration($place, $pref);
-        if (($dailyDistance + $distance) > (float)$profile["daily_distance_limit_km"]) return ["ok" => false, "reasons" => ["daily distance limit exceeded"], "distance_km" => $distance];
+        $isDayOneOriginLeg = $this->isDayOneOriginLeg($dayNo, $isFirstStopOfDay);
+        if ($isDayOneOriginLeg && $this->crossesMalaysiaRegionBoundary($anchor, $place)) return ["ok" => false, "reasons" => ["origin crosses West/East Malaysia boundary"], "distance_km" => $distance];
+        if (!$isDayOneOriginLeg && ($dailyDistance + $distance) > $this->extremeDistanceLimitKm($profile)) return ["ok" => false, "reasons" => ["route distance is too high for selected transport"], "distance_km" => $distance];
         if ($endMin > (int)$profile["hard_end_min"]) return ["ok" => false, "reasons" => ["exceeds daily hard end time"], "distance_km" => $distance];
         if (!$this->openingHoursAllow((string)($place["opening_hours"] ?? ""), $arrivalMin)) return ["ok" => false, "reasons" => ["closed at arrival"], "distance_km" => $distance];
         if (!$this->accessibilityAllowed($place, (string)$pref["accessibility_needs"], $arrivalMin)) return ["ok" => false, "reasons" => ["accessibility requirement conflict"], "distance_km" => $distance];
 
-        return ["ok" => true, "reasons" => ["passes hard constraints"], "distance_km" => $distance];
+        $reasons = ["passes hard constraints"];
+        if ($isDayOneOriginLeg && $distance > (float)$profile["daily_distance_limit_km"]) {
+            $reasons[] = "day 1 origin transfer distance allowed";
+        }
+        return ["ok" => true, "reasons" => $reasons, "distance_km" => $distance];
     }
 
     private function scoreCandidate(array $place, array $pref, array $profile, array $anchor, array $categoryCounts, ?string $previousDayMainCategory, int $tierNo, float $distanceKm, int $currentMin, bool $repairMode = false): array
@@ -568,6 +582,31 @@ class RuleBasedItineraryPlannerService
             "motorcycle" => ["relaxed" => 30.0, "normal" => 45.0, "packed" => 60.0],
         ];
         return (float)($limits[$transportType][$pace] ?? 45.0);
+    }
+
+    private function extremeDistanceLimitKm(array $profile): float
+    {
+        $recommended = (float)($profile["daily_distance_limit_km"] ?? 45.0);
+        return max($recommended * 3.0, $recommended + 15.0);
+    }
+
+    private function isDayOneOriginLeg(int $dayNo, bool $isFirstStopOfDay): bool
+    {
+        return $dayNo === 1 && $isFirstStopOfDay;
+    }
+
+    private function crossesMalaysiaRegionBoundary(array $origin, array $place): bool
+    {
+        $originRegion = $this->malaysiaRegionFromLng((float)($origin["lng"] ?? 0));
+        $placeRegion = $this->malaysiaRegionFromLng((float)($place["longitude"] ?? 0));
+        return $originRegion !== null && $placeRegion !== null && $originRegion !== $placeRegion;
+    }
+
+    private function malaysiaRegionFromLng(float $lng): ?string
+    {
+        if ($lng >= 109.0 && $lng <= 120.5) return "east";
+        if ($lng >= 99.0 && $lng <= 105.5) return "west";
+        return null;
     }
 
     private function travellerSuitabilityScore(array $place, string $travellerType): int
