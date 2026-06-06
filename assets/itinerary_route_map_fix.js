@@ -23,16 +23,88 @@ function routeFixLastPoint(items, preferHotel) {
     const reversed = [...(items || [])].reverse();
     if (preferHotel) {
         const hotel = reversed.find(item => item.type === 'hotel' && routeFixValidPoint(item));
-        if (hotel) return { lat: Number(hotel.lat), lng: Number(hotel.lng), name: hotel.title || 'Hotel' };
+        if (hotel) {
+            return {
+                lat: Number(hotel.lat),
+                lng: Number(hotel.lng),
+                name: hotel.title || 'Previous night hotel',
+                source: 'hotel'
+            };
+        }
     }
     const last = reversed.find(item => routeFixValidPoint(item));
-    return last ? { lat: Number(last.lat), lng: Number(last.lng), name: last.title || 'Previous stop' } : null;
+    return last ? {
+        lat: Number(last.lat),
+        lng: Number(last.lng),
+        name: last.title || 'Previous day last stop',
+        source: 'previous_stop'
+    } : null;
 }
 
 function routeFixDayOrigin(day) {
-    if (day === 1) return OFFICIAL_ROUTE_ORIGIN;
+    if (day === 1 && routeFixValidPoint(OFFICIAL_ROUTE_ORIGIN)) {
+        return {
+            lat: Number(OFFICIAL_ROUTE_ORIGIN.lat),
+            lng: Number(OFFICIAL_ROUTE_ORIGIN.lng),
+            name: OFFICIAL_ROUTE_ORIGIN.name || 'Confirmed Starting Location',
+            source: 'official_origin'
+        };
+    }
     const previousItems = DAYS_DATA[day - 1] || [];
     return routeFixLastPoint(previousItems, true) || routeFixLastPoint(previousItems, false);
+}
+
+function routeFixOriginLabel(day, origin) {
+    return origin && origin.source === 'hotel' ? `${day}H` : `${day}S`;
+}
+
+function routeFixOriginTitle(day, origin) {
+    if (!origin) return `Day ${day} Starting Point`;
+    if (origin.source === 'official_origin') return `Day ${day} Starting Point`;
+    if (origin.source === 'hotel') return `Day ${day} Starting Point - Previous Night Hotel`;
+    return `Day ${day} Starting Point - Previous Day Last Stop`;
+}
+
+function routeFixOriginSubtitle(origin) {
+    if (!origin) return 'Route start point';
+    if (origin.source === 'official_origin') return 'Confirmed Starting Location';
+    if (origin.source === 'hotel') return 'Previous night hotel';
+    return 'Previous day last stop';
+}
+
+function routeFixCreateOriginMarker(day, origin, color) {
+    if (!routeFixValidPoint(origin)) return null;
+    const position = { lat: Number(origin.lat), lng: Number(origin.lng) };
+    const label = routeFixOriginLabel(day, origin);
+    const marker = new google.maps.Marker({
+        position,
+        map,
+        label: { text: label, color: '#fff', fontWeight: 'bold', fontSize: '10px' },
+        title: routeFixOriginTitle(day, origin),
+        zIndex: 9999,
+        icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 17,
+            fillColor: '#111827',
+            fillOpacity: 0.96,
+            strokeColor: color || '#fff',
+            strokeWeight: 3
+        }
+    });
+
+    marker.addListener('click', () => {
+        infoWindow.setContent(
+            `<div style="max-width:240px;">
+                <div style="font-weight:800;font-size:13px;">${escHtml(routeFixOriginTitle(day, origin))}</div>
+                <div style="font-size:11px;color:#64748b;margin-top:4px;">${escHtml(routeFixOriginSubtitle(origin))}</div>
+                <div style="font-size:11px;margin-top:4px;">${escHtml(origin.name || 'Starting point')}</div>
+                <div style="font-size:11px;margin-top:6px;color:#64748b;">Not counted as a travel place.</div>
+            </div>`
+        );
+        infoWindow.open(map, marker);
+    });
+
+    return marker;
 }
 
 function routeFixMoney(value) {
@@ -169,11 +241,14 @@ renderDay = function (day) {
     const origin = routeFixDayOrigin(day);
     const firstPoint = { lat: Number(items[0].lat), lng: Number(items[0].lng) };
     const allPoints = [];
-    if (routeFixValidPoint(origin) && !routeFixSamePoint(origin, firstPoint)) {
-        allPoints.push({ lat: Number(origin.lat), lng: Number(origin.lng) });
-    }
 
     dayMarkers[day] = [];
+    if (routeFixValidPoint(origin) && !routeFixSamePoint(origin, firstPoint)) {
+        allPoints.push({ lat: Number(origin.lat), lng: Number(origin.lng) });
+        const originMarker = routeFixCreateOriginMarker(day, origin, color);
+        if (originMarker) dayMarkers[day].push(originMarker);
+    }
+
     items.forEach((item, index) => {
         const position = { lat: Number(item.lat), lng: Number(item.lng) };
         allPoints.push(position);
