@@ -8,6 +8,7 @@ require_once "../config/api_keys.php";
 require_once "../services/RuleBasedItineraryPlannerService.php";
 require_once "../services/PlannerIntegrityService.php";
 require_once "../services/ItineraryTargetRefillService.php";
+require_once "../services/ItineraryTargetRebuildService.php";
 
 if (
     !isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true ||
@@ -65,19 +66,20 @@ try {
         "origin_lng" => $originLng,
     ]);
 
-    // 1) Remove paid places that exceed the cumulative attraction budget where possible.
+    // Remove paid places that exceed the cumulative attraction budget where possible.
     PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
 
-    // 2) After optimisation and budget pruning, refill each day toward the travel-pace target:
-    // Relaxed = 3, Normal = 4, Packed = 5. This uses the same saved preference, state boundary,
-    // district/interest fallback order, opening hours, dietary and accessibility checks.
+    // Append valid places first. If this cannot meet the pace target because the day is already late,
+    // rebuild the short day from its official start point using a full-day planning window.
     ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $googleMapsKey);
+    ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId, $googleMapsKey);
 
-    // 3) Re-apply budget integrity after refill so added paid places cannot silently exceed budget.
+    // Re-apply budget integrity after rebuild/refill so added paid places cannot silently exceed budget.
     PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
 
-    // 4) Final refill prioritises free/low-cost valid places if budget pruning removed anything.
+    // Final pass: budget pruning may remove places, so rebuild again if any day falls below the target.
     ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $googleMapsKey);
+    ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId, $googleMapsKey);
 
     if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {
         unset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId]);
