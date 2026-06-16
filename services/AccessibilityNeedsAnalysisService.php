@@ -49,6 +49,18 @@ class AccessibilityNeedsAnalysisService
             ];
         }
 
+        if ($this->containsChinese($rawText)) {
+            return [
+                'status' => 'language_rejected',
+                'source' => 'language_guard',
+                'raw_text' => $rawText,
+                'tags' => [],
+                'summary' => 'Only English is accepted. Please enter English.',
+                'stored_text' => $rawText,
+                'warning' => 'Only English is accepted. Please enter English.',
+            ];
+        }
+
         $ai = $this->callGemini($rawText, $travellerType);
         if (($ai['status'] ?? '') !== 'success') {
             if (($ai['message'] ?? '') !== '') {
@@ -287,6 +299,11 @@ class AccessibilityNeedsAnalysisService
             'summary' => $summary,
             'stored_text' => $stored,
         ];
+    }
+
+    private function containsChinese(string $text): bool
+    {
+        return (bool) preg_match('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{F900}-\x{FAFF}]/u', $text);
     }
 
     private function normalizeTags($tags): array

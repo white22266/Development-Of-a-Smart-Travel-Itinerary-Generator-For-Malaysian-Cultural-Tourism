@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once __DIR__ . "/../config/db_connect.php";
 require_once __DIR__ . "/../config/api_keys.php";
+require_once __DIR__ . "/../config/ai_language_guard.php";
 
 header("Content-Type: application/json; charset=utf-8");
 
@@ -19,6 +20,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $preferenceId = (int)($_POST["preference_id"] ?? 0);
 $message = sanitize_text((string)($_POST["message"] ?? ""), 450);
+ai_reject_chinese_json($message, "reply");
 
 if ($travellerId <= 0) {
     http_response_code(401);

@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
+require_once "../config/ai_language_guard.php";
 require_once "../services/AiTravelAssistantService.php";
 
 header("Content-Type: application/json; charset=utf-8");
@@ -22,6 +23,9 @@ $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
 $action = trim((string)($_POST["action"] ?? "chat"));
 $message = trim((string)($_POST["message"] ?? ""));
+if ($action === "chat") {
+    ai_reject_chinese_json($message, "answer");
+}
 
 if ($travellerId <= 0 || $itineraryId <= 0) {
     http_response_code(400);

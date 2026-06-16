@@ -18,6 +18,14 @@ class AiTravelAssistantService
     {
         $question = trim($question);
 
+        if ($this->containsChinese($question)) {
+            return [
+                'status' => 'success',
+                'answer' => 'Only English is accepted. Please enter English.',
+                'source' => 'language_guard',
+            ];
+        }
+
         if ($question === '') {
             return [
                 'status' => 'error',
@@ -187,6 +195,11 @@ class AiTravelAssistantService
             . "5. Suggest adding, replacing, or rearranging itinerary stops.\n"
             . "6. Update the trip date, starting location, or selected places after you confirm the change.\n"
             . "I cannot complete hotel bookings or guarantee live prices, traffic, or opening hours.";
+    }
+
+    private function containsChinese(string $text): bool
+    {
+        return (bool) preg_match('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{F900}-\x{FAFF}]/u', $text);
     }
 
     private function callGemini(string $instructions, string $input): array

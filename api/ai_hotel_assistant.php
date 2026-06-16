@@ -6,6 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
+require_once "../config/ai_language_guard.php";
 require_once "../services/HotelRecommendationService.php";
 require_once "../services/AiTravelAssistantService.php";
 
@@ -21,6 +22,7 @@ $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
 $action = trim((string)($_POST["action"] ?? "recommend"));
 $message = trim((string)($_POST["message"] ?? ""));
+ai_reject_chinese_json($message, "answer");
 
 if ($action !== "recommend" || $travellerId <= 0 || $itineraryId <= 0) {
     http_response_code(400);
