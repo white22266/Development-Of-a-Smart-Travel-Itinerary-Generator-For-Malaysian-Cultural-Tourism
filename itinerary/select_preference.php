@@ -201,6 +201,10 @@ foreach ($preferences as $pref) {
       justify-content: flex-start;
       margin-top: 10px;
     }
+    .generate-actions .btn-primary {
+      min-height: 42px;
+      padding-inline: 18px;
+    }
     .notice-box {
       border: 1px solid rgba(245,197,66,0.45);
       background: rgba(245,197,66,0.12);
@@ -449,7 +453,7 @@ foreach ($preferences as $pref) {
               <label for="origin_name">Step 3: Starting Location</label>
               <div class="location-input-row">
                 <input type="text" name="origin_name" id="origin_name" placeholder="Type a city or address, e.g. Johor Bahru, Kuala Lumpur..." autocomplete="off" required>
-                <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn">Use My Location</button>
+                <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn">⌖ Use My Location</button>
               </div>
               <input type="hidden" name="origin_lat" id="origin_lat">
               <input type="hidden" name="origin_lng" id="origin_lng">
@@ -459,7 +463,7 @@ foreach ($preferences as $pref) {
             </div>
 
             <div class="actions generate-actions">
-              <button type="submit" class="btn btn-primary">Generate Itinerary</button>
+              <button type="submit" class="btn btn-primary">▶ Generate Itinerary</button>
             </div>
           </form>
         </div>
