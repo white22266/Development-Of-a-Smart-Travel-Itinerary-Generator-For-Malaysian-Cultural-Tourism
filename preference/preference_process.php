@@ -174,6 +174,6 @@ $newPrefId = (int)$stmt->insert_id;
 $stmt->close();
 save_preference_junctions($conn, $newPrefId, is_array($interests) ? $interests : [], array_filter(array_map("trim", explode(",", $statesStr))));
 $_SESSION["last_preference_id"] = $newPrefId;
-$_SESSION["success_message"] = "Preferences saved successfully. You may proceed to itinerary generation.";
-header("Location: preference_form.php");
+$_SESSION["success_message"] = "Preferences saved successfully. Please confirm your start date and starting location to generate the itinerary.";
+header("Location: ../itinerary/select_preference.php?preference_id=" . $newPrefId . "&from=preference_saved");
 exit;
