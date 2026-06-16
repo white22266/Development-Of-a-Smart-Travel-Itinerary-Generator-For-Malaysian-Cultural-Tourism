@@ -30,9 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 }
 
 $preferenceId = (int)($_POST["preference_id"] ?? 0);
+$redirectTarget = "select_preference.php" . ($preferenceId > 0 ? "?preference_id=" . $preferenceId : "");
+
 if ($preferenceId <= 0) {
     $_SESSION["form_errors"] = ["Please select a saved preference first."];
-    header("Location: select_preference.php");
+    header("Location: " . $redirectTarget);
     exit;
 }
 
@@ -52,7 +54,7 @@ if ($originName === "" || $originLat == 0.0 || $originLng == 0.0 || !is_finite($
 
 if (!empty($errors)) {
     $_SESSION["form_errors"] = $errors;
-    header("Location: select_preference.php");
+    header("Location: " . $redirectTarget);
     exit;
 }
 
@@ -89,6 +91,6 @@ try {
     exit;
 } catch (Throwable $e) {
     $_SESSION["form_errors"] = [$e->getMessage()];
-    header("Location: select_preference.php");
+    header("Location: " . $redirectTarget);
     exit;
 }
