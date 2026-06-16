@@ -1,0 +1,32 @@
+/* Smart Itinerary Generator: keep the original purple help-box and location-button design */
+details.help-box{
+  border: 1px solid #c7c9ff !important;
+  background: #f7f7ff !important;
+  color: #1f2a44 !important;
+}
+details.help-box summary{
+  color: #4f46e5 !important;
+  font-weight: 900 !important;
+}
+.help-subbox{
+  border: 1px solid #c7c9ff !important;
+  background: #f7f7ff !important;
+}
+.help-subbox h4{
+  color: #4f46e5 !important;
+  font-weight: 900 !important;
+}
+.help-subbox ul{
+  color: #26364f !important;
+}
+.help-subbox li::marker{
+  color: #4f46e5 !important;
+}
+.location-input-row .btn-ghost{
+  color: #4f46e5 !important;
+  background: #ffffff !important;
+  border: 1px solid #c7c9ff !important;
+}
+.location-input-row .btn-ghost:hover{
+  background: #f7f7ff !important;
+}
