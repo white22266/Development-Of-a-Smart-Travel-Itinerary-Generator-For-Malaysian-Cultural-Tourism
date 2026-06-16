@@ -170,7 +170,8 @@ foreach ($preferences as $pref) {
       margin-bottom: 6px;
     }
     .field-group input,
-    .field-group select {
+    .field-group select,
+    .ai-chat-form input {
       width: 100%;
       padding: 10px 12px;
       border-radius: 12px;
@@ -184,6 +185,21 @@ foreach ($preferences as $pref) {
       color: var(--muted);
       margin-top: 5px;
       line-height: 1.45;
+    }
+    .location-input-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+    .location-input-row .btn {
+      min-height: 41px;
+      white-space: nowrap;
+      justify-content: center;
+    }
+    .generate-actions {
+      justify-content: flex-start;
+      margin-top: 10px;
     }
     .notice-box {
       border: 1px solid rgba(245,197,66,0.45);
@@ -235,13 +251,92 @@ foreach ($preferences as $pref) {
       padding: 12px;
       background: rgba(2,6,23,0.02);
       font-size: 13px;
-      margin-top: 14px;
     }
-    details.help-box summary { cursor: pointer; font-weight: 800; color: var(--navy); }
+    details.help-box summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    details.help-box[open] summary { margin-bottom: 10px; }
+    .help-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .help-subbox {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      padding: 12px;
+    }
+    .help-subbox h4 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--navy);
+    }
+    .help-subbox ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 12px;
+    }
     .status-good { color: #6A4C00; font-weight: 700; }
     .status-bad { color: #991b1b; font-weight: 700; }
+    .ai-assistant-card { margin-top: 16px; }
+    .ai-chat-body {
+      min-height: 150px;
+      max-height: 260px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(2,6,23,0.02);
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    .ai-msg {
+      width: fit-content;
+      max-width: 90%;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 9px 11px;
+      border-radius: 10px;
+      margin-bottom: 9px;
+    }
+    .ai-msg.user {
+      margin-left: auto;
+      background: var(--navy);
+      color: #fff;
+    }
+    .ai-msg.bot {
+      margin-right: auto;
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .ai-chat-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+    .ai-quick-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
     @media (max-width: 980px) {
       .generator-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .help-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .location-input-row,
+      .ai-chat-form { grid-template-columns: 1fr; }
+      .location-input-row .btn,
+      .ai-chat-form .btn { width: 100%; }
     }
     @media (max-width: 520px) {
       .generator-steps, .summary-list { grid-template-columns: 1fr; }
@@ -313,7 +408,7 @@ foreach ($preferences as $pref) {
         <div class="generator-steps">
           <div class="generator-step"><div class="step-num">1</div><strong>Select Preference</strong><span>The latest saved preference is auto-selected.</span></div>
           <div class="generator-step"><div class="step-num">2</div><strong>Start Date</strong><span>Choose the first day of your trip.</span></div>
-          <div class="generator-step"><div class="step-num">3</div><strong>Starting Location</strong><span>Search a place with Google Maps suggestion or use current location.</span></div>
+          <div class="generator-step"><div class="step-num">3</div><strong>Starting Location</strong><span>Search a place with Google Maps suggestion or use my location.</span></div>
           <div class="generator-step"><div class="step-num">4</div><strong>Generate</strong><span>Create a day-by-day cultural itinerary.</span></div>
         </div>
       </div>
@@ -352,18 +447,19 @@ foreach ($preferences as $pref) {
 
             <div class="field-group">
               <label for="origin_name">Step 3: Starting Location</label>
-              <input type="text" name="origin_name" id="origin_name" placeholder="Example: KL Sentral" autocomplete="off" required>
+              <div class="location-input-row">
+                <input type="text" name="origin_name" id="origin_name" placeholder="Type a city or address, e.g. Johor Bahru, Kuala Lumpur..." autocomplete="off" required>
+                <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn">Use My Location</button>
+              </div>
               <input type="hidden" name="origin_lat" id="origin_lat">
               <input type="hidden" name="origin_lng" id="origin_lng">
               <div class="field-help" id="locationStatus">
-                <?php echo $googleMapsKey !== "" ? "Start typing and choose a suggested location from Google Maps." : "Type a starting point and the system will find its coordinates before generating."; ?>
+                <?php echo $googleMapsKey !== "" ? "Required. Choose a Google Maps suggestion, use your current location, or ask AI to confirm a starting location." : "Required. Type a starting point and the system will find its coordinates before generating."; ?>
               </div>
             </div>
 
-            <div class="actions" style="justify-content:flex-start;">
-              <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn">Use Current Location</button>
+            <div class="actions generate-actions">
               <button type="submit" class="btn btn-primary">Generate Itinerary</button>
-              <a class="btn btn-ghost" href="../preference/preference_form.php">Edit / Add Preference</a>
             </div>
           </form>
         </div>
@@ -374,15 +470,48 @@ foreach ($preferences as $pref) {
           <div id="preferenceSummary" class="empty-state">Select a saved preference to view the summary.</div>
         </div>
 
+        <div class="card col-12 ai-assistant-card">
+          <h3>AI Travel Assistant</h3>
+          <p class="meta">Ask the AI assistant if you are unsure about the start date, starting location, route plan or selected preference. AI gives guidance only; the official itinerary is still generated by system rules.</p>
+          <div class="ai-chat-body" id="aiChatBody">
+            <div class="ai-msg bot">Hi, I can help you understand your selected preference and decide a suitable starting location before generating the itinerary.</div>
+          </div>
+          <div class="ai-quick-actions">
+            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="Suggest a suitable starting location based on my selected preference.">Suggest starting location</button>
+            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="Explain whether my selected preference is suitable for generating an itinerary.">Check my preference</button>
+            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="What should I confirm before clicking Generate Itinerary?">Before generate</button>
+          </div>
+          <form class="ai-chat-form" id="aiChatForm">
+            <input type="text" id="aiQuestion" placeholder="Ask AI, e.g. Is KL Sentral a good starting location?" autocomplete="off">
+            <button type="submit" class="btn btn-primary">Ask AI</button>
+          </form>
+        </div>
+
         <div class="card col-12">
           <details class="help-box">
-            <summary>How does the system generate the itinerary?</summary>
-            <ul>
-              <li>The system uses your selected preference, including trip duration, budget, transport, pace, interest, state and district.</li>
-              <li>Only verified cultural place records from the database are used for official itinerary generation.</li>
-              <li>The system applies rule-based logic to filter places, arrange route order and calculate travel time.</li>
-              <li>AI support is used only for explanation and assistance, not to directly create the official itinerary.</li>
-            </ul>
+            <summary>Planning Rules and Route Strategy</summary>
+            <div class="help-grid">
+              <div class="help-subbox">
+                <h4>Travel Pace Controls Daily Schedule Density</h4>
+                <ul>
+                  <li>Relaxed preference: target 3 places per day with about 90 minutes rest between stops.</li>
+                  <li>Normal preference: target 4 places per day with about 60 minutes rest between stops.</li>
+                  <li>Packed preference: target 5 places per day with about 30 minutes rest between stops.</li>
+                  <li>Food places count as real itinerary stops and are costed for the full party size.</li>
+                  <li>Food-only preferences become a food trail with about 4 to 6 food stops per day.</li>
+                </ul>
+              </div>
+              <div class="help-subbox">
+                <h4>Route Strategy: Rule-Based Nearest-Next Routing</h4>
+                <ul>
+                  <li>The selected state is a hard boundary. The planner will not move to another state unless a new preference allows it.</li>
+                  <li>District and interests are applied by tiers: selected district + interests first, then selected district fallback, then nearest same-state districts.</li>
+                  <li>Interest is a soft preference, so it will not create empty days while valid same-state places still exist.</li>
+                  <li>Each next stop is chosen from the highest available tier using score, distance, opening time, budget, accessibility, rating and category diversity.</li>
+                  <li>Day 1 begins from the confirmed starting location. Later days continue from the previous day's last stop unless a confirmed hotel is available.</li>
+                </ul>
+              </div>
+            </div>
           </details>
         </div>
       <?php endif; ?>
@@ -450,9 +579,9 @@ function clearOriginCoords() {
   lngInput.value = "";
   const originName = originInput.value.trim();
   if (originName === "") {
-    setLocationStatus("Start typing and choose a suggested location from Google Maps.", null);
+    setLocationStatus("Required. Choose a Google Maps suggestion, use your current location, or ask AI to confirm a starting location.", null);
   } else {
-    setLocationStatus("Choose a suggested location from Google Maps, or click Generate to check coordinates automatically.", null);
+    setLocationStatus("Choose a suggested location from Google Maps, or click Generate Itinerary to check coordinates automatically.", null);
   }
 }
 
@@ -504,7 +633,7 @@ async function geocodeOriginIfNeeded() {
     }
   } catch (error) {}
 
-  setLocationStatus("Location coordinates not found. Please type a clearer starting point or use current location.", false);
+  setLocationStatus("Location coordinates not found. Please type a clearer starting point or use my location.", false);
   return false;
 }
 
@@ -512,9 +641,53 @@ async function reverseGeocodeCurrentLocation(lat, lng) {
   try {
     const response = await fetch("geocode_origin.php?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng));
     const data = await response.json();
-    return data && (data.address || data.formatted_address) ? (data.address || data.formatted_address) : "Current Location";
+    return data && (data.address || data.formatted_address) ? (data.address || data.formatted_address) : "My Location";
   } catch (error) {
-    return "Current Location";
+    return "My Location";
+  }
+}
+
+function appendAiMessage(type, text) {
+  const body = document.getElementById("aiChatBody");
+  if (!body) return;
+  const msg = document.createElement("div");
+  msg.className = "ai-msg " + type;
+  msg.textContent = text;
+  body.appendChild(msg);
+  body.scrollTop = body.scrollHeight;
+}
+
+async function sendAiQuestion(questionText) {
+  const question = String(questionText || "").trim();
+  if (question === "") return;
+
+  const prefSelect = document.getElementById("preference_id");
+  const startDate = document.getElementById("start_date");
+  const originInput = document.getElementById("origin_name");
+
+  appendAiMessage("user", question);
+  appendAiMessage("bot", "Thinking...");
+
+  const body = document.getElementById("aiChatBody");
+  const thinkingMsg = body ? body.lastElementChild : null;
+
+  try {
+    const formData = new FormData();
+    formData.append("message", question);
+    formData.append("preference_id", prefSelect ? prefSelect.value : "");
+    formData.append("start_date", startDate ? startDate.value : "");
+    formData.append("origin_name", originInput ? originInput.value : "");
+
+    const response = await fetch("pre_generation_ai_chat.php", {
+      method: "POST",
+      body: formData
+    });
+    const data = await response.json();
+    if (thinkingMsg) {
+      thinkingMsg.textContent = data && data.answer ? data.answer : "AI response is unavailable.";
+    }
+  } catch (error) {
+    if (thinkingMsg) thinkingMsg.textContent = "AI service is currently unavailable. Please try again later.";
   }
 }
 
@@ -523,6 +696,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("generatorForm");
   const originInput = document.getElementById("origin_name");
   const currentLocationBtn = document.getElementById("useCurrentLocationBtn");
+  const aiForm = document.getElementById("aiChatForm");
+  const aiQuestion = document.getElementById("aiQuestion");
 
   updatePreferenceSummary();
 
@@ -552,6 +727,23 @@ document.addEventListener("DOMContentLoaded", function () {
         () => setLocationStatus("Unable to get current location. Please search a starting point manually.", false),
         { enableHighAccuracy: true, timeout: 10000 }
       );
+    });
+  }
+
+  document.querySelectorAll("[data-ai-prompt]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const prompt = btn.getAttribute("data-ai-prompt") || "";
+      if (aiQuestion) aiQuestion.value = prompt;
+      sendAiQuestion(prompt);
+    });
+  });
+
+  if (aiForm) {
+    aiForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const question = aiQuestion ? aiQuestion.value : "";
+      if (aiQuestion) aiQuestion.value = "";
+      sendAiQuestion(question);
     });
   }
 
