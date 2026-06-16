@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/api_keys.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
   header("Location: ../auth/login.php?role=traveller");
@@ -17,6 +18,8 @@ $travellerName = $_SESSION["traveller_name"] ?? "Traveller";
 $errors = $_SESSION["form_errors"] ?? [];
 $successMessage = $_SESSION["success_message"] ?? "";
 unset($_SESSION["form_errors"], $_SESSION["success_message"]);
+
+$googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
 
 $hasPartySizeCol = false;
 $colRes = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'party_size'");
@@ -310,7 +313,7 @@ foreach ($preferences as $pref) {
         <div class="generator-steps">
           <div class="generator-step"><div class="step-num">1</div><strong>Select Preference</strong><span>The latest saved preference is auto-selected.</span></div>
           <div class="generator-step"><div class="step-num">2</div><strong>Start Date</strong><span>Choose the first day of your trip.</span></div>
-          <div class="generator-step"><div class="step-num">3</div><strong>Starting Location</strong><span>Search a place or use current location.</span></div>
+          <div class="generator-step"><div class="step-num">3</div><strong>Starting Location</strong><span>Search a place with Google Maps suggestion or use current location.</span></div>
           <div class="generator-step"><div class="step-num">4</div><strong>Generate</strong><span>Create a day-by-day cultural itinerary.</span></div>
         </div>
       </div>
@@ -352,7 +355,9 @@ foreach ($preferences as $pref) {
               <input type="text" name="origin_name" id="origin_name" placeholder="Example: KL Sentral" autocomplete="off" required>
               <input type="hidden" name="origin_lat" id="origin_lat">
               <input type="hidden" name="origin_lng" id="origin_lng">
-              <div class="field-help" id="locationStatus">Type a starting point and the system will find its coordinates before generating.</div>
+              <div class="field-help" id="locationStatus">
+                <?php echo $googleMapsKey !== "" ? "Start typing and choose a suggested location from Google Maps." : "Type a starting point and the system will find its coordinates before generating."; ?>
+              </div>
             </div>
 
             <div class="actions" style="justify-content:flex-start;">
@@ -426,18 +431,28 @@ function setLocationStatus(message, status) {
   const statusBox = document.getElementById("locationStatus");
   if (!statusBox) return;
   statusBox.textContent = message;
-  statusBox.className = status ? "field-help status-good" : "field-help status-bad";
+  if (status === true) {
+    statusBox.className = "field-help status-good";
+  } else if (status === false) {
+    statusBox.className = "field-help status-bad";
+  } else {
+    statusBox.className = "field-help";
+  }
 }
 
 function clearOriginCoords() {
-  document.getElementById("origin_lat").value = "";
-  document.getElementById("origin_lng").value = "";
-  const originName = document.getElementById("origin_name").value.trim();
+  const latInput = document.getElementById("origin_lat");
+  const lngInput = document.getElementById("origin_lng");
+  const originInput = document.getElementById("origin_name");
+  if (!latInput || !lngInput || !originInput) return;
+
+  latInput.value = "";
+  lngInput.value = "";
+  const originName = originInput.value.trim();
   if (originName === "") {
-    document.getElementById("locationStatus").className = "field-help";
-    document.getElementById("locationStatus").textContent = "Type a starting point and the system will find its coordinates before generating.";
+    setLocationStatus("Start typing and choose a suggested location from Google Maps.", null);
   } else {
-    setLocationStatus("Location not confirmed yet. Coordinates will be checked before generating.", false);
+    setLocationStatus("Choose a suggested location from Google Maps, or click Generate to check coordinates automatically.", null);
   }
 }
 
@@ -448,6 +463,29 @@ function fillOrigin(name, lat, lng) {
   setLocationStatus("Starting location confirmed with coordinates.", true);
 }
 
+window.initGooglePlacesAutocomplete = function () {
+  const input = document.getElementById("origin_name");
+  if (!input || !window.google || !google.maps || !google.maps.places) return;
+
+  const autocomplete = new google.maps.places.Autocomplete(input, {
+    componentRestrictions: { country: "my" },
+    fields: ["formatted_address", "geometry", "name"]
+  });
+
+  autocomplete.addListener("place_changed", function () {
+    const place = autocomplete.getPlace();
+    if (!place || !place.geometry || !place.geometry.location) {
+      setLocationStatus("Please choose a location from the Google Maps suggestion list.", false);
+      return;
+    }
+
+    const label = place.formatted_address || place.name || input.value;
+    fillOrigin(label, place.geometry.location.lat(), place.geometry.location.lng());
+  });
+
+  setLocationStatus("Start typing and choose a suggested location from Google Maps.", null);
+};
+
 async function geocodeOriginIfNeeded() {
   const name = document.getElementById("origin_name").value.trim();
   const lat = document.getElementById("origin_lat").value.trim();
@@ -457,17 +495,27 @@ async function geocodeOriginIfNeeded() {
   if (name === "") return false;
 
   try {
-    setLocationStatus("Searching location coordinates...", false);
+    setLocationStatus("Searching location coordinates...", null);
     const response = await fetch("geocode_origin.php?q=" + encodeURIComponent(name));
     const data = await response.json();
-    if (data && data.status === "success") {
-      fillOrigin(data.formatted_address || name, data.lat, data.lng);
+    if (data && data.lat !== undefined && data.lng !== undefined) {
+      fillOrigin(data.address || data.formatted_address || name, data.lat, data.lng);
       return true;
     }
   } catch (error) {}
 
   setLocationStatus("Location coordinates not found. Please type a clearer starting point or use current location.", false);
   return false;
+}
+
+async function reverseGeocodeCurrentLocation(lat, lng) {
+  try {
+    const response = await fetch("geocode_origin.php?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng));
+    const data = await response.json();
+    return data && (data.address || data.formatted_address) ? (data.address || data.formatted_address) : "Current Location";
+  } catch (error) {
+    return "Current Location";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -493,9 +541,14 @@ document.addEventListener("DOMContentLoaded", function () {
         setLocationStatus("Current location is not supported by this browser.", false);
         return;
       }
-      setLocationStatus("Getting current location...", false);
+      setLocationStatus("Getting current location...", null);
       navigator.geolocation.getCurrentPosition(
-        position => fillOrigin("Current Location", position.coords.latitude, position.coords.longitude),
+        async position => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          const label = await reverseGeocodeCurrentLocation(lat, lng);
+          fillOrigin(label, lat, lng);
+        },
         () => setLocationStatus("Unable to get current location. Please search a starting point manually.", false),
         { enableHighAccuracy: true, timeout: 10000 }
       );
@@ -524,5 +577,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+<?php if ($googleMapsKey !== ""): ?>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo rawurlencode($googleMapsKey); ?>&libraries=places&callback=initGooglePlacesAutocomplete"></script>
+<?php endif; ?>
 </body>
 </html>
