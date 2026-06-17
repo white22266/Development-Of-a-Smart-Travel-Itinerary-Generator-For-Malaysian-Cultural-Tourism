@@ -165,7 +165,6 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
     $hasSuggestions = table_exists($conn, "cultural_place_suggestions");
     $hasReviews = table_exists($conn, "ratings_reviews");
     $hasTravellerActive = column_exists($conn, "travellers", "is_active");
-    $hasTravellerCreated = column_exists($conn, "travellers", "created_at");
     $hasDistrict = column_exists($conn, "cultural_places", "district");
     $hasSelectedHotel = column_exists($conn, "itineraries", "selected_hotel_id");
 
@@ -349,12 +348,12 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
             WHERE 1=1$itDate GROUP BY Status ORDER BY Trips DESC
         "), ["Average Trip Cost", "Average User Budget"]);
         $highestTrips = money_rows(rows_query($conn, "
-            SELECT i.title AS Itinerary, t.full_name AS Traveller, i.total_days AS Days, i.total_estimated_cost AS Cost, tp.budget AS Budget, i.created_at AS Created
+            SELECT i.title AS Itinerary, t.full_name AS Traveller, i.total_days AS Days, i.total_estimated_cost AS Cost, tp.budget AS Budget
             FROM itineraries i LEFT JOIN travellers t ON t.traveller_id=i.traveller_id LEFT JOIN traveller_preferences tp ON tp.preference_id=i.preference_id
             WHERE 1=1$itDate ORDER BY i.total_estimated_cost DESC LIMIT 15
         "), ["Cost", "Budget"]);
         $lowestTrips = money_rows(rows_query($conn, "
-            SELECT i.title AS Itinerary, t.full_name AS Traveller, i.total_days AS Days, i.total_estimated_cost AS Cost, tp.budget AS Budget, i.created_at AS Created
+            SELECT i.title AS Itinerary, t.full_name AS Traveller, i.total_days AS Days, i.total_estimated_cost AS Cost, tp.budget AS Budget
             FROM itineraries i LEFT JOIN travellers t ON t.traveller_id=i.traveller_id LEFT JOIN traveller_preferences tp ON tp.preference_id=i.preference_id
             WHERE 1=1$itDate ORDER BY i.total_estimated_cost ASC LIMIT 15
         "), ["Cost", "Budget"]);
@@ -369,8 +368,8 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
             ["label" => "Over Budget Trips", "value" => scalar_query($conn, "SELECT COUNT(*) FROM itineraries i JOIN traveller_preferences tp ON tp.preference_id=i.preference_id WHERE tp.budget > 0 AND i.total_estimated_cost > tp.budget$itDate"), "note" => "Budget comparison"],
         ];
         $sections[] = section("Budget Fit Summary", ["Status", "Trips", "Average Trip Cost", "Average User Budget"], $budgetFit);
-        $sections[] = section("Highest Cost Itineraries", ["Itinerary", "Traveller", "Days", "Cost", "Budget", "Created"], $highestTrips);
-        $sections[] = section("Lowest Cost Itineraries", ["Itinerary", "Traveller", "Days", "Cost", "Budget", "Created"], $lowestTrips);
+        $sections[] = section("Highest Cost Itineraries", ["Itinerary", "Traveller", "Days", "Cost", "Budget"], $highestTrips);
+        $sections[] = section("Lowest Cost Itineraries", ["Itinerary", "Traveller", "Days", "Cost", "Budget"], $lowestTrips);
         if ($hotelRows) $sections[] = section("Hotel Cost Summary", ["Hotel", "Trips", "Total Hotel Cost", "Average Hotel Cost"], $hotelRows);
         $sections[] = section("Monthly Cost Trend", ["Month", "Trips", "Total Cost", "Average Cost"], money_rows(rows_query($conn, "
             SELECT DATE_FORMAT(i.created_at,'%Y-%m') AS Month, COUNT(*) AS Trips, SUM(i.total_estimated_cost) AS `Total Cost`, AVG(i.total_estimated_cost) AS `Average Cost`
@@ -389,10 +388,12 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         $intentRows = $hasAiLogs ? rows_query($conn, "
             SELECT
               CASE
-                WHEN LOWER(user_message) LIKE '%route%' OR user_message LIKE '%è·¯çº¿%' THEN 'Route writing'
-                WHEN LOWER(user_message) LIKE '%cost%' OR LOWER(user_message) LIKE '%budget%' OR user_message LIKE '%è´¹ç”¨%' THEN 'Cost and budget'
-                WHEN LOWER(user_message) LIKE '%culture%' OR user_message LIKE '%æ–‡åŒ–%' THEN 'Cultural explanation'
-                WHEN LOWER(user_message) LIKE '%improve%' OR LOWER(user_message) LIKE '%suggest%' THEN 'Improvement suggestion'
+                WHEN LOWER(user_message) LIKE '%route%' OR LOWER(user_message) LIKE '%direction%' OR LOWER(user_message) LIKE '%map%' OR LOWER(user_message) LIKE '%transport%' THEN 'Route and transport'
+                WHEN LOWER(user_message) LIKE '%cost%' OR LOWER(user_message) LIKE '%budget%' OR LOWER(user_message) LIKE '%price%' OR LOWER(user_message) LIKE '%cheaper%' THEN 'Cost and budget'
+                WHEN LOWER(user_message) LIKE '%hotel%' OR LOWER(user_message) LIKE '%stay%' OR LOWER(user_message) LIKE '%accommodation%' THEN 'Hotel planning'
+                WHEN LOWER(user_message) LIKE '%date%' OR LOWER(user_message) LIKE '%weather%' OR LOWER(user_message) LIKE '%festival%' THEN 'Trip date and conditions'
+                WHEN LOWER(user_message) LIKE '%culture%' OR LOWER(user_message) LIKE '%heritage%' THEN 'Cultural explanation'
+                WHEN LOWER(user_message) LIKE '%improve%' OR LOWER(user_message) LIKE '%suggest%' OR LOWER(user_message) LIKE '%change%' OR LOWER(user_message) LIKE '%replace%' OR LOWER(user_message) LIKE '%regenerate%' THEN 'Improvement and changes'
                 ELSE 'General question'
               END AS Intent,
               COUNT(*) AS Total

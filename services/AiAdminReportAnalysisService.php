@@ -1,4 +1,5 @@
 <?php
+
 /**
  * services/AiAdminReportAnalysisService.php
  *
