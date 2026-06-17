@@ -23,7 +23,7 @@ class AiAdminReportAnalysisService
         $this->baseUrl = rtrim(trim((string)($baseUrl ?: (getenv('OLLAMA_BASE_URL') ?: 'http://127.0.0.1:11434'))), '/');
         $fast = strtolower(trim((string)(getenv('ADMIN_AI_FAST_MODE') ?: 'false')));
         $this->fastMode = in_array($fast, ['1', 'true', 'yes', 'on'], true);
-        $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 15));
+        $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 20));
         $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
 
         // This value controls Ollama response length. The previous 220-token cap was too short
@@ -44,9 +44,7 @@ class AiAdminReportAnalysisService
             ];
         }
 
-        $startedAt = microtime(true);
         $ai = $this->callOllama($reportData);
-        $elapsed = round(microtime(true) - $startedAt, 2);
 
         if (($ai['status'] ?? '') === 'success') {
             $cleanAi = $this->cleanOllamaReportText((string)($ai['analysis'] ?? ''));
@@ -54,7 +52,7 @@ class AiAdminReportAnalysisService
             return [
                 'status' => 'success',
                 'source' => 'ollama',
-                'analysis' => "AI Source: Ollama\nGenerated in {$elapsed} second(s) using {$this->model}.\n\n" . $cleanAi,
+                'analysis' => $cleanAi,
             ];
         }
 
