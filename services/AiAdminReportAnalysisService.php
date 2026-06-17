@@ -27,8 +27,8 @@ class AiAdminReportAnalysisService
         $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
 
         // This value controls Ollama response length. The previous 220-token cap was too short
-        // and caused outputs such as only "1. Preference Summary". Allow a fuller report.
-        $this->numPredict = max(120, min(1200, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 700)));
+        // and caused outputs such as only "1. Preference Summary". Keep the report complete but concise.
+        $this->numPredict = max(180, min(600, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 350)));
         $this->numCtx = max(512, min(4096, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 1024))));
         $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '30m')));
         if ($this->keepAlive === '' || $this->keepAlive === '-1') $this->keepAlive = '30m';
@@ -36,17 +36,11 @@ class AiAdminReportAnalysisService
 
     public function analyze(array $reportData): array
     {
-        $fallback = $this->fallbackAnalysis($reportData);
-
         if ($this->fastMode) {
             return [
                 'status' => 'success',
                 'source' => 'fast_local_report',
-                'analysis' => "AI Source: Fast Local Report
-Ollama was skipped because ADMIN_AI_FAST_MODE is enabled.
-
-Default Fallback Report
-" . $fallback,
+                'analysis' => $this->fallbackAnalysis($reportData),
             ];
         }
 
@@ -59,32 +53,17 @@ Default Fallback Report
 
             return [
                 'status' => 'success',
-                'source' => 'ollama_with_fallback',
-                'analysis' => "AI Source: Ollama
-Generated in {$elapsed} second(s) using {$this->model}.
-
-AI Analysis
-" . $cleanAi . "
-
-Default Fallback Report
-" . $fallback,
+                'source' => 'ollama',
+                'analysis' => "AI Source: Ollama\nGenerated in {$elapsed} second(s) using {$this->model}.\n\n" . $cleanAi,
             ];
         }
 
-        $reason = trim((string)($ai['analysis'] ?? 'Unknown Ollama error.'));
+        error_log('Ollama admin report failed, using fallback: ' . (string)($ai['analysis'] ?? 'Unknown Ollama error.'));
 
         return [
             'status' => 'success',
-            'source' => 'ollama_failed_with_fallback',
-            'analysis' => "AI Source: Ollama failed
-Ollama was attempted first and did not complete successfully within the configured timeout ({$this->timeout} second(s)).
-Actual elapsed time: {$elapsed} second(s).
-
-Reason:
-" . $reason . "
-
-Default Fallback Report
-" . $fallback,
+            'source' => 'local_fallback',
+            'analysis' => $this->fallbackAnalysis($reportData),
         ];
     }
 
@@ -101,14 +80,22 @@ Default Fallback Report
             "You are an admin analytics assistant for a Malaysian cultural tourism itinerary system.",
             "Analyze only the selected report type: {$reportType}.",
             "Use only the KPI and section rows provided in the compact report snapshot. Do not invent missing data.",
-            "Do not mention JSON, dataset, snapshot, prompt, or provided data in the answer.",
-            "Start directly with the first required heading. Do not write an introduction such as 'Based on the data provided'.",
-            "Do not analyze unrelated modules or report types. For example, only discuss AI usage when report_type is ai_usage.",
-            "Follow this exact analysis focus and headings:",
-            $typeInstructions,
-            "Write 1 short paragraph or 2 bullet points for each required heading.",
-            "Mention concrete numbers from the selected report. Keep it concise but complete for a final year project admin report.",
-            "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
+            "Do not mention JSON, dataset, snapshot, prompt, or provided data.",
+            "Do not write introductions such as 'Based on the data provided'.",
+            "Do not write closing sentences such as 'If you need further analysis' or 'please provide more details'.",
+            "Do not use tables. Do not use pipe characters. Do not use Markdown tables.",
+            "Do not repeat the same finding in different sections.",
+            "Output must follow this exact format only:",
+            "Report Summary",
+            "Write one short paragraph with 2 to 3 sentences. Mention the most important KPI numbers.",
+            "Key Findings",
+            "- Write one clear bullet point about the strongest pattern.",
+            "- Write one clear bullet point about the weakest or lowest pattern.",
+            "- Write one clear bullet point about budget, transport, cost, destination, or usage depending on the selected report type.",
+            "Admin Actions",
+            "- Write one practical action for the admin.",
+            "- Write one practical action for improving the system or data quality.",
+            "Keep the whole answer under 180 words.",
         ]);
 
         $payload = [
@@ -181,8 +168,23 @@ Default Fallback Report
         $text = preg_replace('/^\s*Based on (the )?(JSON )?(data|information|snapshot)( you( have)? provided)?[,\s]+/i', '', $text) ?? $text;
         $text = preg_replace('/^\s*Here is (a|the) (summary|analysis).*?:\s*/i', '', $text) ?? $text;
         $text = preg_replace('/^\s*Based on .*?:\s*/i', '', $text) ?? $text;
-        $text = preg_replace('/^\s*#+\s*/m', '', $text) ?? $text;
-        return trim($text);
+
+        $lines = preg_split('/\r\n|\r|\n/', $text);
+        $clean = [];
+        foreach ($lines as $line) {
+            $line = rtrim((string)$line);
+
+            if (str_contains($line, '|')) continue;
+            if (preg_match('/^\s*-{3,}\s*$/', $line)) continue;
+            $line = preg_replace('/^\s*#+\s*/', '', $line) ?? $line;
+
+            if (stripos($line, 'If you need further analysis') !== false) continue;
+            if (stripos($line, 'please provide') !== false) continue;
+
+            $clean[] = $line;
+        }
+
+        return trim(implode("\n", $clean));
     }
 
     private function compactReportData(array $reportData): array
