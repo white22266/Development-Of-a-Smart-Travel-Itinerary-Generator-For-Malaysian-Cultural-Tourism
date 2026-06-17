@@ -3,8 +3,8 @@
 /**
  * services/AiAdminReportAnalysisService.php
  *
- * AI analysis for admin reports. Uses local Ollama when enabled and falls back to
- * deterministic local insights when fast mode is enabled or Ollama is unavailable.
+ * AI analysis for admin reports. Uses Gemini first when configured, then local
+ * Ollama, and finally deterministic local insights when AI is unavailable.
  */
 class AiAdminReportAnalysisService
 {
@@ -41,6 +41,12 @@ class AiAdminReportAnalysisService
             ];
         }
 
+        $gemini = $this->callGemini($reportData);
+        if (($gemini['status'] ?? '') === 'success') return $gemini;
+        if (($gemini['message'] ?? '') !== '') {
+            error_log('Gemini admin report fallback to Ollama: ' . $gemini['message']);
+        }
+
         $ai = $this->callOllama($reportData);
         if (($ai['status'] ?? '') === 'success') return $ai;
 
@@ -49,6 +55,101 @@ class AiAdminReportAnalysisService
             'source' => 'local_fallback',
             'analysis' => $this->fallbackAnalysis($reportData),
         ];
+    }
+
+    private function callGemini(array $reportData): array
+    {
+        $apiKey = defined('GEMINI_API_KEY') ? trim((string)GEMINI_API_KEY) : '';
+        if ($apiKey === '') {
+            return ['status' => 'skipped', 'source' => 'gemini', 'message' => 'Gemini API key is not configured.'];
+        }
+        if (!function_exists('curl_init')) {
+            return ['status' => 'error', 'source' => 'gemini', 'message' => 'cURL is not enabled.'];
+        }
+
+        $compactData = $this->compactReportData($reportData);
+        $reportType = (string)($compactData['report_type'] ?? 'overview');
+        $typeInstructions = $this->reportTypeInstructions($reportType);
+        $instructions = implode("\n", [
+            "You are an admin analytics assistant for a Malaysian cultural tourism itinerary system.",
+            "Analyze only the selected report type: {$reportType}.",
+            "Use only the KPI and section rows provided in the compact JSON snapshot. Do not invent missing data.",
+            "Do not analyze unrelated modules or report types. For example, only discuss AI usage when report_type is ai_usage.",
+            "Follow this exact analysis focus and headings:",
+            $typeInstructions,
+            "Mention concrete numbers from the selected report. Keep it concise for a final year project admin report.",
+            "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
+        ]);
+
+        $model = defined('GEMINI_MODEL') && trim((string)GEMINI_MODEL) !== ''
+            ? trim((string)GEMINI_MODEL)
+            : 'gemini-2.5-flash';
+        $url = 'https://generativelanguage.googleapis.com/v1beta/models/' . rawurlencode($model) . ':generateContent';
+        $payload = [
+            'systemInstruction' => [
+                'parts' => [['text' => $instructions]],
+            ],
+            'contents' => [[
+                'role' => 'user',
+                'parts' => [[
+                    'text' => "Compact admin report database snapshot:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+                ]],
+            ]],
+            'generationConfig' => [
+                'temperature' => 0.2,
+                'maxOutputTokens' => $this->numPredict,
+            ],
+        ];
+
+        $ch = curl_init($url);
+        if (!$ch) {
+            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Gemini request could not be prepared.'];
+        }
+
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json',
+                'x-goog-api-key: ' . $apiKey,
+            ],
+            CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            CURLOPT_TIMEOUT => $this->timeout,
+            CURLOPT_CONNECTTIMEOUT => $this->connectTimeout,
+            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+        ]);
+
+        $raw = curl_exec($ch);
+        $err = curl_error($ch);
+        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($raw === false || $err !== '') {
+            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Gemini request failed: ' . $err];
+        }
+
+        $json = json_decode((string)$raw, true);
+        if ($code < 200 || $code >= 300) {
+            $message = is_array($json) ? (string)($json['error']['message'] ?? 'Gemini HTTP error ' . $code) : 'Gemini HTTP error ' . $code;
+            return ['status' => 'error', 'source' => 'gemini', 'message' => $message];
+        }
+        if (!is_array($json)) {
+            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Invalid Gemini response.'];
+        }
+
+        $parts = $json['candidates'][0]['content']['parts'] ?? [];
+        $text = '';
+        if (is_array($parts)) {
+            foreach ($parts as $part) {
+                $text .= (string)($part['text'] ?? '');
+            }
+        }
+        $text = trim($text);
+        if ($text === '') {
+            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Gemini returned an empty response.'];
+        }
+
+        return ['status' => 'success', 'source' => 'gemini', 'analysis' => $text];
     }
 
     private function callOllama(array $reportData): array
