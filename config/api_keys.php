@@ -41,10 +41,11 @@ define('OLLAMA_BASE_URL', rtrim(trim((string) env_value('OLLAMA_BASE_URL', 'http
 define('OLLAMA_NUM_CTX', max(128, (int) env_value('OLLAMA_NUM_CTX', '512')));
 
 // Admin report AI defaults: try Ollama first, then use the local deterministic report if Ollama is unavailable or too slow.
+// A simple warm-up request can take about 8 seconds on local machines, so report analysis needs a longer timeout than 10 seconds.
 set_default_env('ADMIN_AI_FAST_MODE', 'false');
-set_default_env('ADMIN_AI_TIMEOUT', '10');
+set_default_env('ADMIN_AI_TIMEOUT', '30');
 set_default_env('ADMIN_AI_CONNECT_TIMEOUT', '2');
-set_default_env('ADMIN_AI_NUM_PREDICT', '160');
+set_default_env('ADMIN_AI_NUM_PREDICT', '140');
 set_default_env('ADMIN_AI_NUM_CTX', (string) OLLAMA_NUM_CTX);
 set_default_env('ADMIN_AI_KEEP_ALIVE', '-1');
 
