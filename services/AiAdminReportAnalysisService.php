@@ -3,8 +3,11 @@
 /**
  * services/AiAdminReportAnalysisService.php
  *
- * AI analysis for admin reports. Uses local Ollama only and falls back
- * to deterministic local insights if Ollama is unavailable or exceeds the timeout.
+ * Admin report explanation service.
+ * PHP first extracts verified facts from the database report, then Ollama only
+ * rewrites those facts into a concise admin-friendly explanation. If Ollama is
+ * unavailable or exceeds the timeout, the same verified facts are rendered by a
+ * local deterministic template.
  */
 class AiAdminReportAnalysisService
 {
@@ -25,10 +28,7 @@ class AiAdminReportAnalysisService
         $this->fastMode = in_array($fast, ['1', 'true', 'yes', 'on'], true);
         $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 20));
         $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
-
-        // This value controls Ollama response length. The previous 220-token cap was too short
-        // and caused outputs such as only "1. Preference Summary". Keep the report complete but concise.
-        $this->numPredict = max(180, min(600, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 350)));
+        $this->numPredict = max(180, min(500, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 280)));
         $this->numCtx = max(512, min(4096, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 1024))));
         $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '30m')));
         if ($this->keepAlive === '' || $this->keepAlive === '-1') $this->keepAlive = '30m';
@@ -36,76 +36,68 @@ class AiAdminReportAnalysisService
 
     public function analyze(array $reportData): array
     {
+        $facts = $this->buildInsightFacts($reportData);
+        $localSummary = $this->buildLocalNarrative($facts);
+
         if ($this->fastMode) {
             return [
                 'status' => 'success',
                 'source' => 'fast_local_report',
-                'analysis' => $this->fallbackAnalysis($reportData),
+                'analysis' => $localSummary,
             ];
         }
 
-        $ai = $this->callOllama($reportData);
-
+        $ai = $this->callOllama($facts);
         if (($ai['status'] ?? '') === 'success') {
             $cleanAi = $this->cleanOllamaReportText((string)($ai['analysis'] ?? ''));
-
-            return [
-                'status' => 'success',
-                'source' => 'ollama',
-                'analysis' => $cleanAi,
-            ];
+            if ($this->isValidNarrative($cleanAi)) {
+                return [
+                    'status' => 'success',
+                    'source' => 'ollama',
+                    'analysis' => $cleanAi,
+                ];
+            }
+            error_log('Ollama admin report output rejected; using local verified-facts summary.');
+        } else {
+            error_log('Ollama admin report failed; using local verified-facts summary: ' . (string)($ai['analysis'] ?? 'Unknown Ollama error.'));
         }
-
-        error_log('Ollama admin report failed, using fallback: ' . (string)($ai['analysis'] ?? 'Unknown Ollama error.'));
 
         return [
             'status' => 'success',
             'source' => 'local_fallback',
-            'analysis' => $this->fallbackAnalysis($reportData),
+            'analysis' => $localSummary,
         ];
     }
 
-    private function callOllama(array $reportData): array
+    private function callOllama(array $facts): array
     {
         if (!function_exists('curl_init')) {
             return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'cURL is not enabled in PHP. Enable extension=curl in php.ini and restart Apache.'];
         }
 
-        $compactData = $this->compactReportData($reportData);
-        $reportType = (string)($compactData['report_type'] ?? 'overview');
-        $typeInstructions = $this->reportTypeInstructions($reportType);
         $instructions = implode("\n", [
-            "You are an admin analytics assistant for a Malaysian cultural tourism itinerary system.",
-            "Analyze only the selected report type: {$reportType}.",
-            "Use only the KPI and section rows provided in the compact report snapshot. Do not invent missing data.",
-            "Do not mention JSON, dataset, snapshot, prompt, or provided data.",
-            "Do not write introductions such as 'Based on the data provided'.",
-            "Do not write closing sentences such as 'If you need further analysis' or 'please provide more details'.",
-            "Do not use tables. Do not use pipe characters. Do not use Markdown tables.",
-            "Do not repeat the same finding in different sections.",
-            "Output must follow this exact format only:",
-            "Report Summary",
-            "Write one short paragraph with 2 to 3 sentences. Mention the most important KPI numbers.",
-            "Key Findings",
-            "- Write one clear bullet point about the strongest pattern.",
-            "- Write one clear bullet point about the weakest or lowest pattern.",
-            "- Write one clear bullet point about budget, transport, cost, destination, or usage depending on the selected report type.",
-            "Admin Actions",
-            "- Write one practical action for the admin.",
-            "- Write one practical action for improving the system or data quality.",
-            "Keep the whole answer under 180 words.",
+            'Write a concise admin report explanation from verified facts only.',
+            'Do not calculate, rank, infer, or create new categories.',
+            'Do not mention JSON, dataset, snapshot, prompt, user request, provided data, or missing data.',
+            'Do not ask questions. Do not offer more help. Do not write a closing sentence.',
+            'Do not use tables or markdown table syntax.',
+            'Use only these exact headings: Report Summary, Key Findings, Admin Actions.',
+            'Report Summary must be one short paragraph with 2 sentences.',
+            'Key Findings must contain exactly 3 bullet points.',
+            'Admin Actions must contain exactly 2 bullet points.',
+            'Keep the whole answer under 140 words.',
         ]);
 
         $payload = [
             'model' => $this->model,
             'messages' => [
                 ['role' => 'system', 'content' => $instructions],
-                ['role' => 'user', 'content' => "Admin report for analysis:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
+                ['role' => 'user', 'content' => "Verified report facts:\n" . json_encode($facts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
             ],
             'stream' => false,
             'keep_alive' => $this->keepAlive,
             'options' => [
-                'temperature' => 0.2,
+                'temperature' => 0.1,
                 'num_ctx' => $this->numCtx,
                 'num_predict' => $this->numPredict,
                 'num_thread' => 2,
@@ -136,14 +128,8 @@ class AiAdminReportAnalysisService
                 '. cURL error: ' . ($err !== '' ? $err : 'none') .
                 '. URL: ' . $url .
                 '. Response: ' . $bodyPreview;
-
             error_log('Ollama admin report request failed: ' . $debug);
-
-            return [
-                'status' => 'error',
-                'source' => 'ollama',
-                'analysis' => $debug,
-            ];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => $debug];
         }
 
         $json = json_decode($raw, true);
@@ -159,203 +145,333 @@ class AiAdminReportAnalysisService
         return ['status' => 'success', 'source' => 'ollama', 'analysis' => $text];
     }
 
+    private function buildInsightFacts(array $reportData): array
+    {
+        $type = (string)($reportData['report_type'] ?? 'overview');
+        $period = (string)($reportData['period'] ?? '');
+        $kpis = is_array($reportData['kpis'] ?? null) ? $reportData['kpis'] : [];
+        $sections = is_array($reportData['sections'] ?? null) ? $reportData['sections'] : [];
+        $kpiMap = $this->kpiMap($kpis);
+
+        $facts = [
+            'report_type' => $type,
+            'period' => $period,
+            'summary_points' => [],
+            'key_findings' => [],
+            'admin_actions' => [],
+        ];
+
+        switch ($type) {
+            case 'user_preferences':
+                $facts = $this->factsForUserPreferences($facts, $kpiMap, $sections);
+                break;
+            case 'destination_demand':
+                $facts = $this->factsForDestinationDemand($facts, $kpiMap, $sections);
+                break;
+            case 'attraction_price':
+                $facts = $this->factsForAttractionPrice($facts, $kpiMap, $sections);
+                break;
+            case 'cost_budget':
+                $facts = $this->factsForCostBudget($facts, $kpiMap, $sections);
+                break;
+            case 'ai_usage':
+                $facts = $this->factsForAiUsage($facts, $kpiMap, $sections);
+                break;
+            default:
+                $facts = $this->factsForOverview($facts, $kpiMap, $sections);
+                break;
+        }
+
+        $facts['summary_points'] = $this->limitNonEmpty($facts['summary_points'], 4);
+        $facts['key_findings'] = $this->limitNonEmpty($facts['key_findings'], 3);
+        $facts['admin_actions'] = $this->limitNonEmpty($facts['admin_actions'], 2);
+
+        if (empty($facts['summary_points'])) {
+            $facts['summary_points'][] = 'The report was generated from available system records for the selected period.';
+        }
+        if (empty($facts['key_findings'])) {
+            $facts['key_findings'][] = 'The report provides database-backed indicators for admin review.';
+        }
+        if (empty($facts['admin_actions'])) {
+            $facts['admin_actions'][] = 'Review the report sections and update system data where gaps are visible.';
+        }
+
+        return $facts;
+    }
+
+    private function factsForUserPreferences(array $facts, array $kpiMap, array $sections): array
+    {
+        $records = $this->kpi($kpiMap, 'preference records');
+        $topInterest = $this->kpi($kpiMap, 'top interest');
+        $topState = $this->kpi($kpiMap, 'top desired state');
+        $avgBudget = $this->kpi($kpiMap, 'average budget');
+        $lowestInterest = $this->firstRow($sections, 'Lowest User Interests');
+        $lowestState = $this->firstRow($sections, 'Lowest Desired States');
+        $transport = $this->firstRow($sections, 'Transport Preference Analysis');
+
+        if ($records) $facts['summary_points'][] = 'Preference records: ' . $this->kpiDisplay($records) . '.';
+        if ($topInterest) $facts['summary_points'][] = 'Top interest: ' . $this->kpiDisplay($topInterest) . '.';
+        if ($topState) $facts['summary_points'][] = 'Top desired state: ' . $this->kpiDisplay($topState) . '.';
+        if ($avgBudget) $facts['summary_points'][] = 'Average budget: ' . $this->kpiDisplay($avgBudget) . '.';
+
+        if ($topInterest) $facts['key_findings'][] = 'Strongest pattern: ' . $this->kpiDisplay($topInterest) . ' shows the highest user interest.';
+        if ($lowestInterest) $facts['key_findings'][] = 'Weakest interest pattern: ' . $this->rowPair($lowestInterest, ['Interest', 'Total']) . '.';
+        if ($lowestState) $facts['key_findings'][] = 'Lowest state demand: ' . $this->rowPair($lowestState, ['State', 'Total']) . '.';
+        if ($transport) $facts['key_findings'][] = 'Transport pattern: ' . $this->rowPair($transport, ['Transport', 'Total', 'Average Budget']) . '.';
+
+        $facts['admin_actions'][] = 'Prioritize itinerary content around high-demand interests and states shown in the report.';
+        $facts['admin_actions'][] = 'Review low-demand interests or states and improve cultural place coverage only where it supports system completeness.';
+        return $facts;
+    }
+
+    private function factsForDestinationDemand(array $facts, array $kpiMap, array $sections): array
+    {
+        $mostDesired = $this->kpi($kpiMap, 'most desired state');
+        $leastDesired = $this->kpi($kpiMap, 'least desired state');
+        $mostGenerated = $this->kpi($kpiMap, 'most generated state');
+        $records = $this->kpi($kpiMap, 'destination records');
+        $topDistrict = $this->firstRow($sections, 'Highest Desired Districts');
+
+        if ($mostDesired) $facts['summary_points'][] = 'Most desired state: ' . $this->kpiDisplay($mostDesired) . '.';
+        if ($mostGenerated) $facts['summary_points'][] = 'Most generated state: ' . $this->kpiDisplay($mostGenerated) . '.';
+        if ($records) $facts['summary_points'][] = 'Destination records: ' . $this->kpiDisplay($records) . '.';
+
+        if ($mostDesired) $facts['key_findings'][] = 'Strongest user destination demand: ' . $this->kpiDisplay($mostDesired) . '.';
+        if ($leastDesired) $facts['key_findings'][] = 'Lowest user destination demand: ' . $this->kpiDisplay($leastDesired) . '.';
+        if ($mostDesired && $mostGenerated && strcasecmp((string)$mostDesired['value'], (string)$mostGenerated['value']) !== 0) {
+            $facts['key_findings'][] = 'Demand-generation gap: users most desire ' . $mostDesired['value'] . ', while generated routes most often include ' . $mostGenerated['value'] . '.';
+        } elseif ($topDistrict) {
+            $facts['key_findings'][] = 'Top district demand: ' . $this->rowPair($topDistrict, ['District', 'Total']) . '.';
+        }
+
+        $facts['admin_actions'][] = 'Compare desired destinations with generated itinerary output to improve route alignment.';
+        $facts['admin_actions'][] = 'Increase or refine cultural place records in high-demand states and districts where coverage is weak.';
+        return $facts;
+    }
+
+    private function factsForAttractionPrice(array $facts, array $kpiMap, array $sections): array
+    {
+        foreach (['active attractions', 'free places', 'highest price', 'average price'] as $needle) {
+            $kpi = $this->kpi($kpiMap, $needle);
+            if ($kpi) $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
+        }
+        $category = $this->firstRow($sections, 'Category and Price Summary');
+        $popular = $this->firstRow($sections, 'Most Used Attractions');
+        $completeness = $this->firstRow($sections, 'Data Completeness Check');
+
+        if ($category) $facts['key_findings'][] = 'Category coverage: ' . $this->rowPair($category, ['Category', 'Places', 'Average Price']) . '.';
+        if ($popular) $facts['key_findings'][] = 'Most used attraction pattern: ' . $this->rowPair($popular, ['Place', 'State', 'Used', 'Price']) . '.';
+        if ($completeness) $facts['key_findings'][] = 'Data quality issue: ' . $this->rowPair($completeness, ['Issue', 'Total']) . '.';
+
+        $facts['admin_actions'][] = 'Review attraction prices and usage patterns to keep itinerary cost estimates realistic.';
+        $facts['admin_actions'][] = 'Complete missing attraction data such as coordinates, images, opening hours, or visit duration.';
+        return $facts;
+    }
+
+    private function factsForCostBudget(array $facts, array $kpiMap, array $sections): array
+    {
+        foreach (['average trip cost', 'lowest trip cost', 'highest trip cost', 'over budget trips'] as $needle) {
+            $kpi = $this->kpi($kpiMap, $needle);
+            if ($kpi) $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
+        }
+        $budgetFit = $this->firstRow($sections, 'Budget Fit Summary');
+        $highestTrip = $this->firstRow($sections, 'Highest Cost Itineraries');
+        $monthly = $this->firstRow($sections, 'Monthly Cost Trend');
+
+        if ($budgetFit) $facts['key_findings'][] = 'Budget fit pattern: ' . $this->rowPair($budgetFit, ['Status', 'Trips', 'Average Trip Cost', 'Average User Budget']) . '.';
+        if ($highestTrip) $facts['key_findings'][] = 'Highest cost itinerary: ' . $this->rowPair($highestTrip, ['Itinerary', 'Days', 'Cost', 'Budget']) . '.';
+        if ($monthly) $facts['key_findings'][] = 'Monthly cost trend: ' . $this->rowPair($monthly, ['Month', 'Trips', 'Average Cost']) . '.';
+
+        $facts['admin_actions'][] = 'Review over-budget trips and adjust hotel, food, or transport cost assumptions.';
+        $facts['admin_actions'][] = 'Use high-cost itinerary records to verify whether the estimation logic is realistic.';
+        return $facts;
+    }
+
+    private function factsForAiUsage(array $facts, array $kpiMap, array $sections): array
+    {
+        foreach (['ai questions', 'assistant responses', 'itinerary questions', 'active ai users'] as $needle) {
+            $kpi = $this->kpi($kpiMap, $needle);
+            if ($kpi) $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
+        }
+        $intent = $this->firstRow($sections, 'AI Question Intent Summary');
+        $user = $this->firstRow($sections, 'Most Active AI Users');
+
+        if ($intent) $facts['key_findings'][] = 'Most common AI question intent: ' . $this->rowPair($intent, ['Intent', 'Total']) . '.';
+        if ($user) $facts['key_findings'][] = 'Most active AI user pattern: ' . $this->rowPair($user, ['Traveller', 'Questions', 'Last Question']) . '.';
+        $facts['key_findings'][] = 'AI usage data shows how travellers use the assistant during itinerary planning.';
+
+        $facts['admin_actions'][] = 'Improve AI assistant responses for the most common question intents.';
+        $facts['admin_actions'][] = 'Test AI answers against real itinerary records before the final demonstration.';
+        return $facts;
+    }
+
+    private function factsForOverview(array $facts, array $kpiMap, array $sections): array
+    {
+        foreach ($kpiMap as $kpi) {
+            $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
+        }
+        foreach (array_slice($sections, 0, 3) as $section) {
+            if (!is_array($section)) continue;
+            $row = is_array($section['rows'][0] ?? null) ? $section['rows'][0] : null;
+            if ($row) $facts['key_findings'][] = (string)($section['title'] ?? 'Section') . ': ' . $this->rowPair($row, array_keys($row)) . '.';
+        }
+        $facts['admin_actions'][] = 'Use the overview to identify system modules with strong activity and weak data coverage.';
+        $facts['admin_actions'][] = 'Keep report exports as supporting evidence for final project evaluation.';
+        return $facts;
+    }
+
+    private function buildLocalNarrative(array $facts): string
+    {
+        $summary = $this->limitNonEmpty($facts['summary_points'] ?? [], 4);
+        $findings = $this->limitNonEmpty($facts['key_findings'] ?? [], 3);
+        $actions = $this->limitNonEmpty($facts['admin_actions'] ?? [], 2);
+
+        $summaryText = implode(' ', $summary);
+        if ($summaryText === '') $summaryText = 'The report summarizes available system activity for the selected period.';
+
+        $lines = [];
+        $lines[] = 'Report Summary';
+        $lines[] = $summaryText;
+        $lines[] = '';
+        $lines[] = 'Key Findings';
+        foreach ($findings as $finding) $lines[] = '- ' . ltrim($finding, '- ');
+        $lines[] = '';
+        $lines[] = 'Admin Actions';
+        foreach ($actions as $action) $lines[] = '- ' . ltrim($action, '- ');
+        return trim(implode("\n", $lines));
+    }
+
     private function cleanOllamaReportText(string $text): string
     {
         $text = trim($text);
-        $text = str_replace(["**", "***", "__"], "", $text);
-        $text = preg_replace('/^\s*Based on (the )?(JSON )?(data|information|snapshot)( you( have)? provided)?[,\s]+/i', '', $text) ?? $text;
-        $text = preg_replace('/^\s*Here is (a|the) (summary|analysis).*?:\s*/i', '', $text) ?? $text;
-        $text = preg_replace('/^\s*Based on .*?:\s*/i', '', $text) ?? $text;
+        $text = str_replace(['**', '***', '__'], '', $text);
+        $text = preg_replace('/^\s*,?\s*(here is|here\'s)\s+(a|the)?\s*(summary|analysis|overview).*?(\n|$)/i', '', $text) ?? $text;
+        $text = preg_replace('/^\s*(Based on|According to).*?(provided|given|supplied).*?(\n|$)/is', '', $text) ?? $text;
+        $text = preg_replace('/^\s*you[’\']?ve provided,?\s*/i', '', $text) ?? $text;
 
         $lines = preg_split('/\r\n|\r|\n/', $text);
         $clean = [];
         foreach ($lines as $line) {
-            $line = rtrim((string)$line);
-
+            $line = trim((string)$line);
+            if ($line === '') continue;
             if (str_contains($line, '|')) continue;
             if (preg_match('/^\s*-{3,}\s*$/', $line)) continue;
             $line = preg_replace('/^\s*#+\s*/', '', $line) ?? $line;
+            $line = preg_replace('/^\s*\d+\.\s+/', '', $line) ?? $line;
+            $line = rtrim($line, ':');
+            $lower = strtolower($line);
 
-            if (stripos($line, 'If you need further analysis') !== false) continue;
-            if (stripos($line, 'please provide') !== false) continue;
-
+            $forbidden = [
+                'here is', 'here are', 'provided', 'supplied', 'given data', 'json', 'dataset', 'snapshot', 'prompt',
+                'would you like', 'how can i', 'please provide', 'feel free', 'anything else', 'further analysis',
+                'additional data', 'not specified', 'not provided', 'missing', 'unavailable', 'urban planning',
+                'marketing strategies', 'research', 'if you need', 'do you have', 'can i assist', 'elaborate', '?'
+            ];
+            $blocked = false;
+            foreach ($forbidden as $phrase) {
+                if (str_contains($lower, $phrase)) {
+                    $blocked = true;
+                    break;
+                }
+            }
+            if ($blocked) continue;
             $clean[] = $line;
         }
 
         return trim(implode("\n", $clean));
     }
 
-    private function compactReportData(array $reportData): array
+    private function isValidNarrative(string $text): bool
     {
-        $compact = [
-            'report_type' => (string)($reportData['report_type'] ?? 'overview'),
-            'period' => (string)($reportData['period'] ?? ''),
-            'kpis' => array_slice(is_array($reportData['kpis'] ?? null) ? $reportData['kpis'] : [], 0, 6),
-            'sections' => [],
-        ];
+        $lower = strtolower(trim($text));
+        if ($lower === '') return false;
+        foreach (['report summary', 'key findings', 'admin actions'] as $heading) {
+            if (!str_contains($lower, $heading)) return false;
+        }
+        $bad = ['feel free', 'would you like', 'please provide', 'json', 'dataset', 'not specified', 'not provided', '?'];
+        foreach ($bad as $phrase) {
+            if (str_contains($lower, $phrase)) return false;
+        }
+        return true;
+    }
 
-        $sections = is_array($reportData['sections'] ?? null) ? $reportData['sections'] : [];
-        foreach (array_slice($sections, 0, 6) as $section) {
-            if (!is_array($section)) continue;
-            $rows = is_array($section['rows'] ?? null) ? $section['rows'] : [];
-            $compact['sections'][] = [
-                'title' => (string)($section['title'] ?? 'Section'),
-                'note' => (string)($section['note'] ?? ''),
-                'headers' => array_slice(is_array($section['headers'] ?? null) ? $section['headers'] : [], 0, 6),
-                'rows' => array_slice($rows, 0, 5),
+    private function kpiMap(array $kpis): array
+    {
+        $map = [];
+        foreach ($kpis as $kpi) {
+            if (!is_array($kpi)) continue;
+            $label = trim((string)($kpi['label'] ?? ''));
+            if ($label === '') continue;
+            $map[strtolower($label)] = [
+                'label' => $label,
+                'value' => (string)($kpi['value'] ?? '-'),
+                'note' => trim((string)($kpi['note'] ?? '')),
             ];
         }
-
-        return $compact;
+        return $map;
     }
 
-    private function reportTypeInstructions(string $reportType): string
+    private function kpi(array $kpiMap, string $needle): ?array
     {
-        return match ($reportType) {
-            'user_preferences' => implode("\n", [
-                "1. Preference Summary",
-                "2. Highest and Lowest User Preferences",
-                "3. Budget, Duration, and Transport Pattern",
-                "4. Admin Actions for Personalization",
-            ]),
-            'destination_demand' => implode("\n", [
-                "1. Destination Demand Summary",
-                "2. Desired States and Districts",
-                "3. Actual Generated Destination Pattern",
-                "4. Admin Actions for Destination Coverage",
-            ]),
-            'attraction_price' => implode("\n", [
-                "1. Cultural Place and Price Summary",
-                "2. Category and Price Coverage",
-                "3. Data Completeness Issues",
-                "4. Admin Actions for Knowledge Base Quality",
-            ]),
-            'cost_budget' => implode("\n", [
-                "1. Cost and Budget Summary",
-                "2. Over-Budget and Within-Budget Pattern",
-                "3. Hotel and Trip Cost Observations",
-                "4. Admin Actions for Cost Accuracy",
-            ]),
-            'ai_usage' => implode("\n", [
-                "1. AI Usage Summary",
-                "2. Question Intent Pattern",
-                "3. Most Active AI Users",
-                "4. Admin Actions for AI Assistant Improvement",
-            ]),
-            default => implode("\n", [
-                "1. System Overview Summary",
-                "2. User, Trip, and Cultural Data Status",
-                "3. Operational Gaps Shown by the Report",
-                "4. Admin Actions for System Readiness",
-            ]),
-        };
-    }
-
-    private function fallbackAnalysis(array $data): string
-    {
-        if (isset($data['sections']) && is_array($data['sections'])) {
-            return $this->fallbackSectionReportAnalysis($data);
+        $needle = strtolower($needle);
+        foreach ($kpiMap as $label => $kpi) {
+            if (str_contains($label, $needle)) return $kpi;
         }
-
-        return $this->fallbackSectionReportAnalysis([
-            'report_type' => (string)($data['report_type'] ?? 'overview'),
-            'kpis' => [],
-            'sections' => [
-                [
-                    'title' => 'Available Data Snapshot',
-                    'headers' => ['Metric', 'Value'],
-                    'rows' => $this->flattenFallbackRows($data),
-                ],
-            ],
-        ]);
+        return null;
     }
 
-    private function flattenFallbackRows(array $data): array
+    private function kpiDisplay(array $kpi): string
     {
-        $rows = [];
-        foreach ($data as $key => $value) {
-            if (is_array($value)) continue;
-            $rows[] = ['Metric' => str_replace('_', ' ', (string)$key), 'Value' => (string)$value];
-            if (count($rows) >= 12) break;
-        }
-        return $rows;
+        $value = trim((string)($kpi['value'] ?? '-'));
+        $note = trim((string)($kpi['note'] ?? ''));
+        return $value . ($note !== '' ? ' (' . $note . ')' : '');
     }
 
-    private function fallbackSectionReportAnalysis(array $data): string
+    private function firstRow(array $sections, string $titleNeedle): ?array
     {
-        $reportType = (string)($data['report_type'] ?? 'overview');
-        $type = str_replace('_', ' ', $reportType);
-        $kpis = $data['kpis'] ?? [];
-        $sections = $data['sections'] ?? [];
-        $headings = $this->fallbackHeadings($reportType);
-
-        $lines = [];
-        $lines[] = $headings[0];
-        $lines[] = "- This {$type} report was generated from the connected system database for the selected period.";
-        foreach (array_slice($kpis, 0, 4) as $kpi) {
-            $label = (string)($kpi['label'] ?? 'Metric');
-            $value = (string)($kpi['value'] ?? '-');
-            $note = trim((string)($kpi['note'] ?? ''));
-            $lines[] = "- {$label}: {$value}" . ($note !== '' ? " ({$note})" : "") . ".";
-        }
-
-        $lines[] = "";
-        $lines[] = $headings[1];
-        $findingCount = 0;
+        $needle = strtolower($titleNeedle);
         foreach ($sections as $section) {
-            $title = (string)($section['title'] ?? 'Section');
-            $rows = $section['rows'] ?? [];
-            if (!is_array($rows) || empty($rows)) {
-                $lines[] = "- {$title}: no data available for this period.";
-                $findingCount++;
-                continue;
+            if (!is_array($section)) continue;
+            $title = strtolower((string)($section['title'] ?? ''));
+            if (!str_contains($title, $needle)) continue;
+            $rows = is_array($section['rows'] ?? null) ? $section['rows'] : [];
+            foreach ($rows as $row) {
+                if (is_array($row) && !empty($row)) return $row;
             }
-            $first = $rows[0];
-            if (!is_array($first)) continue;
-            $pairs = [];
-            foreach ($first as $key => $value) {
-                $pairs[] = $key . " = " . $value;
+        }
+        return null;
+    }
+
+    private function rowPair(array $row, array $preferredKeys): string
+    {
+        $pairs = [];
+        foreach ($preferredKeys as $key) {
+            if (array_key_exists($key, $row)) {
+                $value = trim((string)$row[$key]);
+                if ($value !== '') $pairs[] = $key . ' = ' . $value;
+            }
+            if (count($pairs) >= 3) break;
+        }
+        if (empty($pairs)) {
+            foreach ($row as $key => $value) {
+                if (is_array($value)) continue;
+                $value = trim((string)$value);
+                if ($value !== '') $pairs[] = $key . ' = ' . $value;
                 if (count($pairs) >= 3) break;
             }
-            $lines[] = "- {$title}: leading record shows " . implode(", ", $pairs) . ".";
-            $findingCount++;
-            if ($findingCount >= 8) break;
         }
-
-        $lines[] = "";
-        $lines[] = $headings[2];
-        if (strpos($reportType, 'preference') !== false) {
-            $lines[] = "- Use highest preference items to prioritize itinerary content and use lowest preference items to identify weak demand or content gaps.";
-            $lines[] = "- Add more cultural places for high-demand states, districts, and interests so generated itineraries have enough variety.";
-        } elseif ($reportType === 'destination_demand') {
-            $lines[] = "- Compare desired destinations with actual generated route destinations to detect where the generator lacks enough place data.";
-            $lines[] = "- Increase cultural records for high-demand states and districts that appear weak in generated itinerary output.";
-        } elseif ($reportType === 'attraction_price') {
-            $lines[] = "- Review very high and very low attraction prices for data accuracy.";
-            $lines[] = "- Complete missing image, coordinate, opening hour, and visit duration fields to improve itinerary quality.";
-        } elseif ($reportType === 'cost_budget') {
-            $lines[] = "- Monitor over-budget trips and adjust hotel, food, and transport assumptions when needed.";
-            $lines[] = "- Use highest-cost itinerary records to inspect whether the cost estimation logic is realistic.";
-        } elseif ($reportType === 'ai_usage') {
-            $lines[] = "- Use common AI question categories to improve itinerary explanations and route-writing prompts.";
-            $lines[] = "- Test the assistant before final demonstration and make sure itinerary answers are specific to the selected trip.";
-        } else {
-            $lines[] = "- Keep report exports as evidence for supervisor evaluation and final project documentation.";
-            $lines[] = "- Review sections with no data and either add data collection or hide the feature from final demo.";
-        }
-
-        return implode("\n", $lines);
+        return implode(', ', $pairs);
     }
 
-    private function fallbackHeadings(string $reportType): array
+    private function limitNonEmpty(array $items, int $limit): array
     {
-        return match ($reportType) {
-            'user_preferences' => ['Preference Summary', 'Preference Findings', 'Admin Actions for Personalization'],
-            'destination_demand' => ['Destination Demand Summary', 'Destination Findings', 'Admin Actions for Destination Coverage'],
-            'attraction_price' => ['Cultural Place and Price Summary', 'Price and Data Quality Findings', 'Admin Actions for Knowledge Base Quality'],
-            'cost_budget' => ['Cost and Budget Summary', 'Cost Findings', 'Admin Actions for Cost Accuracy'],
-            'ai_usage' => ['AI Usage Summary', 'AI Usage Findings', 'Admin Actions for AI Assistant Improvement'],
-            default => ['System Overview Summary', 'System Findings', 'Admin Actions for System Readiness'],
-        };
+        $out = [];
+        foreach ($items as $item) {
+            $item = trim((string)$item);
+            if ($item === '') continue;
+            $out[] = $item;
+            if (count($out) >= $limit) break;
+        }
+        return $out;
     }
 }
