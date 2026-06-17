@@ -89,12 +89,12 @@ if ($message === "") {
 
 $items = load_itinerary_items($conn, $itineraryId);
 $parsedDate = parse_trip_date($message);
-$parsedOrigin = extract_origin_name($message);
+$parsedOrigin = safe_extract_origin_name($message);
 $pendingActions = [];
 
 // Only create save/update confirmations when the traveller clearly asks to change saved data.
 // Do not infer updates from general questions such as "explain the trip" or from the AI's own reply.
-if ($parsedDate && is_explicit_date_update_message($message) && !same_trip_date($parsedDate, (string)($itinerary["start_date"] ?? ""))) {
+if ($parsedDate && safe_is_explicit_date_update_message($message) && !same_trip_date($parsedDate, (string)($itinerary["start_date"] ?? ""))) {
     $pendingActions[] = [
         "type" => "update_start_date",
         "start_date" => $parsedDate,
@@ -103,7 +103,7 @@ if ($parsedDate && is_explicit_date_update_message($message) && !same_trip_date(
     ];
 }
 
-if ($parsedOrigin !== "" && is_explicit_origin_update_message($message) && !same_origin_name($parsedOrigin, (string)($itinerary["origin_name"] ?? ""))) {
+if ($parsedOrigin !== "" && safe_is_explicit_origin_update_message($message) && !same_origin_name($parsedOrigin, (string)($itinerary["origin_name"] ?? ""))) {
     $pendingActions[] = [
         "type" => "update_origin",
         "origin_name" => $parsedOrigin,
@@ -114,7 +114,7 @@ if ($parsedOrigin !== "" && is_explicit_origin_update_message($message) && !same
 
 $pendingAction = $pendingActions[0] ?? null;
 
-if (is_weather_question($message)) {
+if (safe_is_weather_question($message)) {
     $weatherDate = $parsedDate ?: (string)($itinerary["start_date"] ?? "");
     $answer = build_weather_answer($items, $weatherDate);
     if ($pendingAction) {
@@ -352,19 +352,79 @@ function same_origin_name(string $newOrigin, string $currentOrigin): bool
     return $new !== "" && $current !== "" && ($new === $current || str_contains($current, $new) || str_contains($new, $current));
 }
 
+function safe_is_weather_question(string $message): bool
+{
+    return (bool)preg_match('/weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella|cuaca|hujan/iu', $message);
+}
+
+function safe_is_explicit_date_update_message(string $message): bool
+{
+    return (bool)preg_match('/\b(?:change|update|set|move|reschedule|replace|confirm)\b.*\b(?:start\s*date|travel\s*date|trip\s*date|date)\b|\b(?:start\s*date|travel\s*date|trip\s*date|date)\b.*\b(?:to|as|is|=)\b|\b(?:travel|visit|depart|arrive|go)\s+(?:on|at)\b/iu', $message);
+}
+
+function safe_is_explicit_origin_update_message(string $message): bool
+{
+    if (safe_is_timetable_start_time_request($message) && safe_is_invalid_origin_candidate(safe_extract_origin_name($message))) {
+        return false;
+    }
+    return (bool)preg_match('/\b(?:change|update|set|use|replace|confirm)\b.*\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b|\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b.*\b(?:to|as|is|=)\b|\b(?:i\s+will\s+start|i\s+start|start\s+from|starting\s+from|depart\s+from|leaving\s+from|leave\s+from)\b/iu', $message);
+}
+
+function safe_is_timetable_start_time_request(string $message): bool
+{
+    return (bool)preg_match('/\b(?:rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|itinerary|trip|day)\b.*\b(?:start|begin)\b.*\b(?:at|from)?\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/iu', $message)
+        || (bool)preg_match('/\b(?:start|begin)\s+(?:at|from)\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/iu', $message);
+}
+
+function safe_is_invalid_origin_candidate(string $value): bool
+{
+    $value = strtolower(trim(strip_tags($value)));
+    $value = preg_replace('/\s+/', ' ', $value) ?? $value;
+    $value = trim($value, " \t\n\r\0\x0B,;:");
+    if ($value === "" || strlen($value) < 3) return true;
+    if (preg_match('/^\d{1,2}(?::\d{2})?\s*(?:am|pm)$/i', $value)) return true;
+    if (preg_match('/^\d{1,2}[.]\d{2}\s*(?:am|pm)$/i', $value)) return true;
+    if (preg_match('/^(?:morning|afternoon|evening|night|noon|midnight)$/i', $value)) return true;
+    if (!preg_match('/[a-z]/i', $value) && preg_match('/^\d+$/', $value)) return true;
+    return false;
+}
+
+function safe_extract_origin_name(string $message): string
+{
+    $patterns = [
+        '/\b(?:change|update|set|use|replace|confirm)\s+(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s+(?:to|as)\s+(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s*(?:is|=|:)\s*(.+?)(?:[.!?]|$)/iu',
+        '/\b(?:i\s+will\s+start|i\s+start|start\s+me|route\s+me|start\s+from|starting\s+from)\s+(?:at|from)?\s*(.+?)(?:\s+(?:to|on|for)\b|[.!?]|$)/iu',
+        '/\b(?:depart(?:ing)? from|leave from|leaving from)\s+(.+?)(?:\s+(?:to|on|at|for)\b|[.!?]|$)/iu',
+    ];
+    foreach ($patterns as $pattern) {
+        if (preg_match($pattern, $message, $m)) {
+            $value = trim(strip_tags((string)$m[1]));
+            $value = preg_replace('/\s+/', ' ', $value) ?? "";
+            $value = preg_replace('/\s+(?:at|from)?\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b.*$/iu', '', $value) ?? $value;
+            $value = preg_replace('/\b(?:on|at|for|to|please|pls)\s*$/iu', '', $value) ?? $value;
+            $value = trim($value, " \t\n\r\0\x0B,;:");
+            if (safe_is_invalid_origin_candidate($value)) return "";
+            if (function_exists("mb_substr")) return trim(mb_substr($value, 0, 120));
+            return trim(substr($value, 0, 120));
+        }
+    }
+    return "";
+}
+
 function is_weather_question(string $message): bool
 {
-    return (bool)preg_match('/weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella|cuaca|hujan|天气|下雨|热/iu', $message);
+    return (bool)preg_match('/weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella|cuaca|hujan/iu', $message);
 }
 
 function is_explicit_date_update_message(string $message): bool
 {
-    return (bool)preg_match('/\b(?:change|update|set|move|reschedule|replace|confirm)\b.*\b(?:start\s*date|travel\s*date|trip\s*date|date)\b|\b(?:start\s*date|travel\s*date|trip\s*date|date)\b.*\b(?:to|as|is|=)\b|\b(?:travel|visit|depart|arrive|go)\s+(?:on|at)\b|改.*日期|更改.*日期|换.*日期|出发日期|旅行日期/iu', $message);
+    return (bool)preg_match('/\b(?:change|update|set|move|reschedule|replace|confirm)\b.*\b(?:start\s*date|travel\s*date|trip\s*date|date)\b|\b(?:start\s*date|travel\s*date|trip\s*date|date)\b.*\b(?:to|as|is|=)\b|\b(?:travel|visit|depart|arrive|go)\s+(?:on|at)\b/iu', $message);
 }
 
 function is_explicit_origin_update_message(string $message): bool
 {
-    return (bool)preg_match('/\b(?:change|update|set|use|replace|confirm)\b.*\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b|\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b.*\b(?:to|as|is|=)\b|\b(?:i\s+will\s+start|i\s+start|start\s+from|starting\s+from|depart\s+from|leaving\s+from|leave\s+from)\b|起点|出发地|出发地点/iu', $message);
+    return (bool)preg_match('/\b(?:change|update|set|use|replace|confirm)\b.*\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b|\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b.*\b(?:to|as|is|=)\b|\b(?:i\s+will\s+start|i\s+start|start\s+from|starting\s+from|depart\s+from|leaving\s+from|leave\s+from)\b/iu', $message);
 }
 
 function extract_origin_name(string $message): string
@@ -374,7 +434,6 @@ function extract_origin_name(string $message): string
         '/\b(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s*(?:is|=|:)\s*(.+?)(?:[.!?]|$)/iu',
         '/\b(?:i\s+will\s+start|i\s+start|start\s+me|route\s+me|start\s+from|starting\s+from)\s+(?:at|from)?\s*(.+?)(?:\s+(?:to|on|for)\b|[.!?]|$)/iu',
         '/\b(?:depart(?:ing)? from|leave from|leaving from)\s+(.+?)(?:\s+(?:to|on|at|for)\b|[.!?]|$)/iu',
-        '/(?:起点|出发地|出发地点)\s*(?:是|为|=|:)\s*(.+?)(?:[。.!?]|$)/iu',
     ];
     foreach ($patterns as $pattern) {
         if (preg_match($pattern, $message, $m)) {

@@ -20,7 +20,7 @@ if (restore_remembered_login($conn)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Travel Itinerary Generator</title>
-    <link rel="stylesheet" href="assets/style.css?v=20260513">
+    <link rel="stylesheet" href="assets/style.css?v=20260617c">
 </head>
 
 <body class="entry-home-page">

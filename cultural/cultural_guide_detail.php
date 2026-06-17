@@ -148,7 +148,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Place Details | Cultural Guide</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         .detail-wrap {
             display: grid;
@@ -604,6 +604,8 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             </section>
         </main>
     </div>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>
+

@@ -39,6 +39,16 @@ if ($viewRow) {
     $duplicateMatches = $dupeService->findMatches($viewRow, 6);
 }
 
+function pending_image_src(?string $imageUrl): string
+{
+    $imageUrl = trim((string)$imageUrl);
+    if ($imageUrl === "") return "";
+    if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0 || strpos($imageUrl, 'data:image/') === 0) {
+        return $imageUrl;
+    }
+    return "../" . ltrim($imageUrl, "/");
+}
+
 $stmt = $conn->prepare("
   SELECT suggestion_id, state, category, name, created_at
   FROM cultural_place_suggestions
@@ -56,7 +66,7 @@ $stmt->close();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Validation | Admin</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
 </head>
 
 <body>
@@ -181,10 +191,12 @@ $stmt->close();
                             </div>
                         <?php endif; ?>
 
-                        <?php if (!empty($viewRow["image_url"])): ?>
+                        <?php $pendingImageSrc = pending_image_src($viewRow["image_url"] ?? ""); ?>
+                        <?php if ($pendingImageSrc !== ""): ?>
                             <div style="margin-top:10px;">
-                                <img src="../<?php echo htmlspecialchars($viewRow["image_url"]); ?>"
+                                <img src="<?php echo htmlspecialchars($pendingImageSrc); ?>"
                                     style="max-width:100%; max-height:240px; border-radius:12px; border:1px solid rgba(15,23,42,0.15);"
+                                    onerror="this.onerror=null; this.replaceWith(document.createTextNode('Image could not be loaded.'));"
                                     alt="suggested image">
                             </div>
                         <?php endif; ?>
@@ -224,6 +236,8 @@ $stmt->close();
             </section>
         </main>
     </div>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>
+

@@ -122,6 +122,51 @@ if ($action === "confirm_add") {
     exit;
 }
 
+$requestedStartTime = extract_requested_start_time($message);
+if ($action === "confirm_retime") {
+    $startTime = normalize_requested_start_time((string)($_POST["start_time"] ?? ""));
+    if ($startTime === null) {
+        echo json_encode(["status" => "error", "answer" => "Invalid timetable start time. Please use a time such as 9:00 AM."]);
+        exit;
+    }
+
+    $ok = retime_itinerary_days($conn, $itineraryId, $startTime);
+    if (!$ok) {
+        echo json_encode(["status" => "error", "answer" => "Could not rearrange the timetable because this itinerary has no scheduled places."]);
+        exit;
+    }
+
+    recalculate_itinerary_total($conn, $itineraryId);
+    echo json_encode([
+        "status" => "success",
+        "answer" => "Timetable rearranged to start from " . display_time_label($startTime) . ". The existing rule-based route places were kept; only the schedule time was updated.",
+        "reload" => true,
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
+if ($action === "recommend" && $requestedStartTime !== null && is_timetable_rearrange_request($message)) {
+    $label = display_time_label($requestedStartTime);
+    echo json_encode([
+        "status" => "success",
+        "answer" => "I detected a timetable change request, not a starting location change. I can rearrange this itinerary to start from {$label} while keeping the current rule-based route places. Nothing will be saved until you confirm.",
+        "pending_action" => [
+            "type" => "retime_itinerary",
+            "start_time" => $requestedStartTime,
+            "label" => $label,
+            "summary" => "Rearrange timetable to start from {$label}. Places stay based on your saved preference and rule-based itinerary logic.",
+        ],
+        "pending_actions" => [[
+            "type" => "retime_itinerary",
+            "start_time" => $requestedStartTime,
+            "label" => $label,
+            "summary" => "Rearrange timetable to start from {$label}. Places stay based on your saved preference and rule-based itinerary logic.",
+        ]],
+        "source" => "local_rule",
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
+
 $items = load_editable_items($conn, $itineraryId);
 $addMode = is_add_or_regenerate_request($message);
 $additions = build_addition_proposals($conn, $itinerary, $items, $message);
@@ -465,8 +510,7 @@ function is_add_or_regenerate_request(string $message): bool
         "empty", "arrange", "add", "extra", "fill", "day 2", "day2", "regenerate",
         "replan", "more", "more place", "more places", "another place", "new place",
         "recommend place", "suggest place", "nearby place", "nearest place",
-        "complete my day", "plan my day", "fill day", "add stop", "add attraction",
-        "没有", "空", "安排", "添加", "加", "多一点", "重新安排", "重新推荐", "补"
+        "complete my day", "plan my day", "fill day", "add stop", "add attraction"
     ];
     foreach ($terms as $term) {
         if (str_contains($msg, $term)) return true;
@@ -787,6 +831,160 @@ function apply_replacement(mysqli $conn, int $itineraryId, int $itemId, array $p
     $ok = $stmt->execute();
     $stmt->close();
     return $ok;
+}
+
+function is_timetable_rearrange_request(string $message): bool
+{
+    return (bool)preg_match('/\b(rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|start\s+(?:at|from)|begin\s+(?:at|from))\b/i', $message);
+}
+
+function extract_requested_start_time(string $message): ?string
+{
+    if (preg_match('/\b(?:start|begin|starting|beginning)\s*(?:at|from)?\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b/i', $message, $m)) {
+        return build_sql_time_from_match($m);
+    }
+    if (preg_match('/\b(\d{1,2})(?::(\d{2}))?\s*(am|pm)\b/i', $message, $m)) {
+        return build_sql_time_from_match($m);
+    }
+    return null;
+}
+
+function normalize_requested_start_time(string $value): ?string
+{
+    $value = trim($value);
+    if (preg_match('/^(\d{1,2}):(\d{2})(?::\d{2})?$/', $value, $m)) {
+        $hour = (int)$m[1];
+        $minute = (int)$m[2];
+        if ($hour >= 0 && $hour <= 23 && $minute >= 0 && $minute <= 59) {
+            return sprintf("%02d:%02d:00", $hour, $minute);
+        }
+    }
+    if (preg_match('/^(\d{1,2})(?::(\d{2}))?\s*(am|pm)$/i', $value, $m)) {
+        return build_sql_time_from_match($m);
+    }
+    return null;
+}
+
+function build_sql_time_from_match(array $m): ?string
+{
+    $hour = (int)($m[1] ?? 0);
+    $minute = isset($m[2]) && $m[2] !== "" ? (int)$m[2] : 0;
+    $ampm = strtolower((string)($m[3] ?? ""));
+    if ($hour < 1 || $hour > 12 || $minute < 0 || $minute > 59 || !in_array($ampm, ["am", "pm"], true)) {
+        return null;
+    }
+    if ($ampm === "pm" && $hour < 12) $hour += 12;
+    if ($ampm === "am" && $hour === 12) $hour = 0;
+    return sprintf("%02d:%02d:00", $hour, $minute);
+}
+
+function display_time_label(string $sqlTime): string
+{
+    $dt = DateTime::createFromFormat("H:i:s", $sqlTime);
+    return $dt ? $dt->format("g:i A") : $sqlTime;
+}
+
+function retime_itinerary_days(mysqli $conn, int $itineraryId, string $startTime): bool
+{
+    $stmt = $conn->prepare("
+        SELECT item_id, day_no, sequence_no, item_type, start_time, end_time, travel_time_min
+        FROM itinerary_items
+        WHERE itinerary_id = ?
+        ORDER BY day_no, sequence_no, item_id
+    ");
+    if (!$stmt) return false;
+    $stmt->bind_param("i", $itineraryId);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    $byDay = [];
+    while ($row = $res->fetch_assoc()) {
+        $byDay[(int)$row["day_no"]][] = $row;
+    }
+    $stmt->close();
+    if (empty($byDay)) return false;
+
+    $update = $conn->prepare("UPDATE itinerary_items SET start_time = ?, end_time = ? WHERE item_id = ? AND itinerary_id = ?");
+    if (!$update) return false;
+
+    $startMin = sql_time_to_minutes($startTime);
+    if ($startMin === null) return false;
+    $updated = 0;
+
+    foreach ($byDay as $rows) {
+        $cursor = $startMin;
+        $prevOldEnd = null;
+        $prevNewEnd = null;
+        $hotelRows = [];
+
+        foreach ($rows as $row) {
+            $itemType = strtolower((string)$row["item_type"]);
+            if ($itemType === "hotel") {
+                $hotelRows[] = $row;
+                continue;
+            }
+            if (in_array($itemType, ["note", "transport"], true)) {
+                continue;
+            }
+
+            $oldStart = sql_time_to_minutes($row["start_time"] ?? null);
+            $oldEnd = sql_time_to_minutes($row["end_time"] ?? null);
+            $duration = estimate_item_duration_minutes($row);
+
+            if ($prevNewEnd !== null) {
+                $travel = max(0, (int)($row["travel_time_min"] ?? 0));
+                $gap = estimate_old_schedule_gap($prevOldEnd, $oldStart, $travel);
+                $cursor = $prevNewEnd + $travel + $gap;
+            }
+
+            $newStart = $cursor;
+            $newEnd = $newStart + $duration;
+            $newStartSql = sql_time_from_minutes($newStart);
+            $newEndSql = sql_time_from_minutes($newEnd);
+            $itemId = (int)$row["item_id"];
+            $update->bind_param("ssii", $newStartSql, $newEndSql, $itemId, $itineraryId);
+            $update->execute();
+            $updated++;
+
+            $prevOldEnd = $oldEnd;
+            $prevNewEnd = $newEnd;
+        }
+
+        foreach ($hotelRows as $hotel) {
+            $travel = max(0, (int)($hotel["travel_time_min"] ?? 0));
+            $hotelStart = max(20 * 60, ($prevNewEnd ?? $startMin) + $travel + 30);
+            $hotelEnd = $hotelStart + 30;
+            $newStartSql = sql_time_from_minutes($hotelStart);
+            $newEndSql = sql_time_from_minutes($hotelEnd);
+            $itemId = (int)$hotel["item_id"];
+            $update->bind_param("ssii", $newStartSql, $newEndSql, $itemId, $itineraryId);
+            $update->execute();
+            $updated++;
+        }
+    }
+
+    $update->close();
+    return $updated > 0;
+}
+
+function estimate_item_duration_minutes(array $row): int
+{
+    $oldStart = sql_time_to_minutes($row["start_time"] ?? null);
+    $oldEnd = sql_time_to_minutes($row["end_time"] ?? null);
+    if ($oldStart !== null && $oldEnd !== null && $oldEnd > $oldStart) {
+        return max(30, min(240, $oldEnd - $oldStart));
+    }
+    $type = strtolower((string)($row["item_type"] ?? ""));
+    if ($type === "food") return 60;
+    if ($type === "festival") return 120;
+    return 90;
+}
+
+function estimate_old_schedule_gap(?int $prevOldEnd, ?int $oldStart, int $travelMinutes): int
+{
+    if ($prevOldEnd !== null && $oldStart !== null && $oldStart > $prevOldEnd) {
+        return max(15, min(120, $oldStart - $prevOldEnd - max(0, $travelMinutes)));
+    }
+    return 45;
 }
 
 function sql_time_from_minutes(int $minutes): string

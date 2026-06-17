@@ -110,30 +110,32 @@ $costService     = new CostEstimationService($transportType, $tripDays, $budget,
 $costBreakdown   = $costService->calculate($allItems, $totalDistKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 
 // ---- Hotel recommendations ----
-$hotelService      = new HotelRecommendationService($conn);
 $recommendedHotels = [];
 $hotelBudget       = ($budget > 0) ? ($budget * 0.3) : 200.0;
 $nightlyBudget     = $hotelBudget / max(1, $tripDays - 1);
 
-if ($lastPlace && !empty($lastPlace["latitude"]) && !empty($lastPlace["longitude"])) {
-    $recommendedHotels = $hotelService->recommend(
-        (float)$lastPlace["latitude"],
-        (float)$lastPlace["longitude"],
-        $nightlyBudget,
-        25.0,
-        5
-    );
+if (empty($selectedHotels)) {
+    $hotelService = new HotelRecommendationService($conn);
+    if ($lastPlace && !empty($lastPlace["latitude"]) && !empty($lastPlace["longitude"])) {
+        $recommendedHotels = $hotelService->recommend(
+            (float)$lastPlace["latitude"],
+            (float)$lastPlace["longitude"],
+            $nightlyBudget,
+            25.0,
+            5
+        );
+    }
+    if (empty($recommendedHotels) && !empty($lastPlace["state"])) {
+        $recommendedHotels = $hotelService->recommendByState($lastPlace["state"], $nightlyBudget, 5);
+    }
+    $seenHotels = [];
+    $recommendedHotels = array_values(array_filter($recommendedHotels, function ($hotel) use (&$seenHotels) {
+        $key = strtolower(trim(($hotel["name"] ?? "") . "|" . ($hotel["state"] ?? "") . "|" . ($hotel["district"] ?? "")));
+        if ($key === "||" || isset($seenHotels[$key])) return false;
+        $seenHotels[$key] = true;
+        return true;
+    }));
 }
-if (empty($recommendedHotels) && !empty($lastPlace["state"])) {
-    $recommendedHotels = $hotelService->recommendByState($lastPlace["state"], $nightlyBudget, 5);
-}
-$seenHotels = [];
-$recommendedHotels = array_values(array_filter($recommendedHotels, function ($hotel) use (&$seenHotels) {
-    $key = strtolower(trim(($hotel["name"] ?? "") . "|" . ($hotel["state"] ?? "") . "|" . ($hotel["district"] ?? "")));
-    if ($key === "||" || isset($seenHotels[$key])) return false;
-    $seenHotels[$key] = true;
-    return true;
-}));
 
 $startDate = $it["start_date"] ?? null;
 $states    = $it["preferred_states"] ?? "-";
@@ -188,7 +190,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trip Summary | Smart Travel Itinerary Generator</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         .cost-card {
@@ -800,8 +802,8 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                     &mdash; <?php echo date('D, d M Y', strtotime($startDate . ' +' . ($day - 1) . ' days')); ?>
                                 <?php endif; ?>
                             </div>
-                            <div class="table-wrap">
-                                <table>
+                            <div class="table-wrap mobile-card-table-wrap">
+                                <table class="mobile-card-table">
                                     <thead>
                                         <tr>
                                             <th>#</th>
@@ -832,8 +834,8 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                         ?>
                                         <?php if ($showOriginRow): ?>
                                             <tr style="background:#f8fafc;">
-                                                <td><strong>Start</strong></td>
-                                                <td>
+                                                <td data-label="#"><strong>Start</strong></td>
+                                                <td data-label="Time">
                                                     <?php
                                                     if ($originTravelMin > 0) {
                                                         $departureTs = strtotime($firstTravelItem["start_time"]) - ($originTravelMin * 60);
@@ -843,7 +845,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                                     }
                                                     ?>
                                                 </td>
-                                                <td>
+                                                <td data-label="Place">
                                                     <strong>
                                                         <?php
                                                         if ((int)$day === 1) {
@@ -861,10 +863,10 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                                         <?php endif; ?>
                                                     </div>
                                                 </td>
-                                                <td><span class="chip">Origin</span></td>
-                                                <td>0.00</td>
-                                                <td><?php echo $originDistance > 0 ? number_format($originDistance, 2) : "&mdash;"; ?></td>
-                                                <td><?php echo $originTravelMin > 0 ? $originTravelMin . " min" : "Not recorded"; ?></td>
+                                                <td data-label="Type"><span class="chip">Origin</span></td>
+                                                <td data-label="Cost (RM)">0.00</td>
+                                                <td data-label="Distance (km)"><?php echo $originDistance > 0 ? number_format($originDistance, 2) : "&mdash;"; ?></td>
+                                                <td data-label="Travel"><?php echo $originTravelMin > 0 ? $originTravelMin . " min" : "Not recorded"; ?></td>
                                             </tr>
                                         <?php endif; ?>
                                         <?php foreach ($items as $r): $dayTotal += (float)$r["estimated_cost"]; ?>
@@ -881,15 +883,15 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                                 : ($r["travel_time_min"] !== null ? (int)$r["travel_time_min"] . " min" : "&mdash;");
                                             ?>
                                             <tr>
-                                                <td><?php echo htmlspecialchars($rowNo); ?></td>
-                                                <td>
+                                                <td data-label="#"><?php echo htmlspecialchars($rowNo); ?></td>
+                                                <td data-label="Time">
                                                     <?php if (!empty($r["start_time"]) && !empty($r["end_time"])): ?>
                                                         <?php echo date('g:i A', strtotime($r["start_time"])); ?> - <?php echo date('g:i A', strtotime($r["end_time"])); ?>
                                                     <?php else: ?>
                                                         &mdash;
                                                     <?php endif; ?>
                                                 </td>
-                                                <td>
+                                                <td data-label="Place">
                                                     <strong><?php echo htmlspecialchars($r["item_title"]); ?></strong>
                                                     <?php if (!empty($r["state"])): ?>
                                                         <div style="font-size:11px;color:var(--muted);">
@@ -909,16 +911,16 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                                         </div>
                                                     <?php endif; ?>
                                                 </td>
-                                                <td><span class="chip"><?php echo htmlspecialchars($typeLabel); ?></span></td>
-                                                <td><?php echo number_format((float)$r["estimated_cost"], 2); ?></td>
-                                                <td><?php echo $distanceText; ?></td>
-                                                <td><?php echo $travelText; ?></td>
+                                                <td data-label="Type"><span class="chip"><?php echo htmlspecialchars($typeLabel); ?></span></td>
+                                                <td data-label="Cost (RM)"><?php echo number_format((float)$r["estimated_cost"], 2); ?></td>
+                                                <td data-label="Distance (km)"><?php echo $distanceText; ?></td>
+                                                <td data-label="Travel"><?php echo $travelText; ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                         <tr style="background:#f8fafc;">
-                                            <td colspan="4" style="text-align:right;font-weight:900;">Day <?php echo (int)$day; ?> Total:</td>
-                                            <td style="font-weight:900;">RM <?php echo number_format($dayTotal, 2); ?></td>
-                                            <td colspan="2"></td>
+                                            <td class="mobile-empty" colspan="4" style="text-align:right;font-weight:900;">Day <?php echo (int)$day; ?> Total:</td>
+                                            <td data-label="Day Total" style="font-weight:900;">RM <?php echo number_format($dayTotal, 2); ?></td>
+                                            <td class="mobile-hidden-cell" colspan="2"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -1109,12 +1111,14 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             clearAiPendingCards();
             const loading = addAiMessage('bot', 'Writing answer...');
             try {
-                const originIntent = /\b(starting\s+location|start\s+location|starting\s+point|start\s+point|origin|start\s+from|starting\s+from|depart\s+from|leave\s+from)\b/i.test(text);
+                const scheduleTimeIntent = /\b(?:rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|itinerary|trip|day)\b.*\b(?:start|begin)\b.*\b(?:at|from)?\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/i.test(text)
+                    || /\b(?:start|begin)\s+(?:at|from)\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/i.test(text);
+                const originIntent = !scheduleTimeIntent && /\b(starting\s+location|start\s+location|starting\s+point|start\s+point|origin|start\s+from|starting\s+from|depart\s+from|leave\s+from)\b/i.test(text);
                 const dateIntent = /\b(start\s+date|travel\s+date|trip\s+date|travel\s+on|go\s+on|visit\s+on|arrive\s+on|depart\s+on|date)\b|\b\d{4}[\/\-.]\d{1,2}[\/\-.]\d{1,2}\b|\b\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{4}\b|\b\d{1,2}\s*[a-zA-Z]+\s*\d{4}\b|\b[a-zA-Z]+\s*\d{1,2}\s*\d{4}\b/i.test(text);
-                const weatherIntent = /\b(weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella)\b|天气|下雨|热/i.test(text);
-                const smartHotelIntent = /\b(hotel|hotels|accommodation|stay|stays|room|rooms|sleep|overnight|check\s*in|nearby\s+hotel|budget\s+hotel|cheap\s+hotel|luxury\s+hotel|place\s+to\s+stay)\b|住宿|酒店|旅馆|旅店|民宿/i.test(text);
-                const smartEditIntent = !originIntent && !dateIntent && !weatherIntent && /\b(replace|change|swap|modify|regenerate|replan|reroute|alternative|alternatives|better\s+stop|change\s+stop|arrange|empty|add|extra|fill|more\s+places?|another\s+place|new\s+place|remove|delete|skip|dislike|don't\s+want|do\s+not\s+want|too\s+far|too\s+expensive|nearest|nearby|improve|suggest\s+place|recommend\s+place|reduce\s+cost|cheaper|lower\s+cost|day\s*\d+|day\d+)\b|更改|替换|换掉|换|改行程|重新推荐|重新安排|改掉|省钱|安排|添加|加|空|没有|补/i.test(text);
-                const endpoint = smartHotelIntent ? '../api/ai_hotel_assistant.php' : (smartEditIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php');
+                const weatherIntent = /\b(weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella)\b/i.test(text);
+                const smartHotelIntent = /\b(hotel|hotels|accommodation|stay|stays|room|rooms|sleep|overnight|check\s*in|nearby\s+hotel|budget\s+hotel|cheap\s+hotel|luxury\s+hotel|place\s+to\s+stay)\b/i.test(text);
+                const smartEditIntent = scheduleTimeIntent || (!originIntent && !dateIntent && !weatherIntent && /\b(replace|change|swap|modify|regenerate|replan|reroute|alternative|alternatives|better\s+stop|change\s+stop|arrange|empty|add|extra|fill|more\s+places?|another\s+place|new\s+place|remove|delete|skip|dislike|don't\s+want|do\s+not\s+want|too\s+far|too\s+expensive|nearest|nearby|improve|suggest\s+place|recommend\s+place|reduce\s+cost|cheaper|lower\s+cost|day\s*\d+|day\d+)\b/i.test(text));
+                const endpoint = scheduleTimeIntent ? '../api/ai_itinerary_editor.php' : (smartHotelIntent ? '../api/ai_hotel_assistant.php' : (smartEditIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php'));
                 const resp = await fetch(endpoint, {
                     method: 'POST',
                     headers: {
@@ -1153,21 +1157,31 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
         }
 
         function renderPendingAction(container, action) {
-            if (!container || !action || (action.type !== 'update_start_date' && action.type !== 'update_origin')) return;
+            if (!container || !action || !['update_start_date', 'update_origin', 'retime_itinerary'].includes(action.type)) return;
             const card = document.createElement('div');
             card.className = 'ai-pending-card ai-change-card';
             const title = document.createElement('strong');
-            title.textContent = action.type === 'update_origin' ? 'Confirm starting location' : 'Confirm trip date';
+            title.textContent = action.type === 'update_origin'
+                ? 'Confirm starting location'
+                : (action.type === 'retime_itinerary' ? 'Confirm timetable change' : 'Confirm trip date');
             const meta = document.createElement('span');
             meta.textContent = action.summary || (action.type === 'update_origin'
                 ? ('Update starting location to ' + (action.label || action.origin_name))
-                : ('Update itinerary start date to ' + action.label));
+                : (action.type === 'retime_itinerary'
+                    ? ('Rearrange timetable to start from ' + (action.label || action.start_time))
+                    : ('Update itinerary start date to ' + action.label)));
             const button = document.createElement('button');
             button.type = 'button';
-            button.textContent = action.type === 'update_origin' ? 'Confirm Location' : 'Confirm Date';
+            button.textContent = action.type === 'update_origin'
+                ? 'Confirm Location'
+                : (action.type === 'retime_itinerary' ? 'Confirm Timetable' : 'Confirm Date');
             button.addEventListener('click', () => {
                 if (action.type === 'update_origin') {
                     confirmTripOrigin(action.origin_name || action.label || '', button);
+                    return;
+                }
+                if (action.type === 'retime_itinerary') {
+                    confirmItineraryRetiming(action.start_time || '', button);
                     return;
                 }
                 confirmTripDate(action.start_date, button, action.next_action || null);
@@ -1324,6 +1338,38 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             }
         }
 
+        async function confirmItineraryRetiming(startTime, button = null) {
+            startTime = String(startTime || '').trim();
+            if (!startTime) return;
+            if (button) button.disabled = true;
+            const loading = addAiMessage('bot', 'Rearranging timetable with the confirmed start time...');
+            try {
+                const resp = await fetch('../api/ai_itinerary_editor.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams({
+                        action: 'confirm_retime',
+                        itinerary_id: ITINERARY_ID,
+                        start_time: startTime
+                    }),
+                });
+                const data = await parseJsonResponse(resp);
+                if (data.status === 'success') {
+                    if (loading) loading.textContent = data.answer || 'Timetable updated. Reloading the summary...';
+                    clearAiPendingCards();
+                    setTimeout(() => window.location.reload(), 700);
+                } else {
+                    if (button) button.disabled = false;
+                    if (loading) loading.textContent = data.answer || data.message || 'Could not rearrange this timetable.';
+                }
+            } catch (e) {
+                if (button) button.disabled = false;
+                if (loading) loading.textContent = 'Network error while rearranging timetable. Please try again.';
+            }
+        }
+
         async function confirmItineraryChange(itemId, placeId, button = null) {
             if (!itemId || !placeId) return;
             if (button) button.disabled = true;
@@ -1392,16 +1438,14 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             if (!placeId) return;
             const loading = addAiMessage('bot', 'Saving selected hotel into your itinerary and cost summary...');
             try {
-                const resp = await fetch('review_replace.php', {
+                const resp = await fetch('../api/ai_hotel_assistant.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     },
                     body: new URLSearchParams({
-                        action: 'confirm',
+                        action: 'confirm_hotel',
                         itinerary_id: ITINERARY_ID,
-                        rejected_ids: '',
-                        replacements_json: '{}',
                         hotel_place_id: placeId
                     }),
                 });
@@ -1435,6 +1479,8 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
     <?php if ($googleMapsKey !== ""): ?>
         <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars($googleMapsKey); ?>&libraries=places" async defer></script>
     <?php endif; ?>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>
+

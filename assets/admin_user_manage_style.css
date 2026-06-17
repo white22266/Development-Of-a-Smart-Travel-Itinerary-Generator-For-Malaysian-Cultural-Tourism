@@ -1,6 +1,5 @@
-/* assets/user_manage_style.css */
-/* Reuse dashboard_style.css (DO NOT edit dashboard_style.css) */
-@import url("dashboard_style.css");
+/* assets/admin_user_manage_style.css */
+/* Page-specific additions. Base shell styles are loaded by admin/user_manage/index.php. */
 
 /* User management specific */
 .filters{

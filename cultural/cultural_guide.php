@@ -206,7 +206,7 @@ $imageFallback = "../assets/place_placeholder.svg";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cultural Guide Presentation | Traveller</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         .place-grid {
             display: grid;
@@ -534,5 +534,7 @@ function updateDistrictFilter(selectedState) {
     }
 }
 </script>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+

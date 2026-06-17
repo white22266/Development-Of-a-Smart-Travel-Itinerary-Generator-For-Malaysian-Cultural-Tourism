@@ -72,6 +72,7 @@ function base_admin_sidebar_users(): void
     ["Content Validation", "../admin_pending.php", false],
     ["User Management", "./index.php", true],
     ["Reports", "../admin_reports.php", false],
+    ["Profile", "../../auth/profile/profile.php", false],
     ["Logout", "../../auth/logout.php", false],
   ];
 ?>
@@ -288,7 +289,8 @@ unset($_SESSION["old_input"]);
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>User Management | Admin</title>
-  <link rel="stylesheet" href="../../assets/admin_user_manage_style.css">
+  <link rel="stylesheet" href="../../assets/dashboard_style.css?v=20260617j">
+  <link rel="stylesheet" href="../../assets/admin_user_manage_style.css?v=20260617c">
 </head>
 
 <body>
@@ -346,14 +348,16 @@ unset($_SESSION["old_input"]);
                 <input id="phone" type="text" name="phone" value="<?php echo h((string)($old["phone"] ?? "")); ?>" placeholder="e.g., 012-3456789">
               </div>
 
-              <div class="field">
+              <div class="field password-input-wrap">
                 <label for="password">Password</label>
                 <input id="password" type="password" name="password" required minlength="6">
+                <button type="button" class="password-toggle-icon" onclick="togglePassword('password', this)" aria-label="Show password">👁️</button>
               </div>
 
-              <div class="field">
+              <div class="field password-input-wrap">
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" type="password" name="confirm_password" required minlength="6">
+                <button type="button" class="password-toggle-icon" onclick="togglePassword('confirm_password', this)" aria-label="Show password">👁️</button>
               </div>
 
               <div class="field full">
@@ -482,14 +486,16 @@ unset($_SESSION["old_input"]);
             <input type="hidden" name="id" value="<?php echo (int)$user["id"]; ?>">
 
             <div class="form-grid">
-              <div class="field">
+              <div class="field password-input-wrap">
                 <label for="new_password">New Password</label>
                 <input id="new_password" type="password" name="new_password" minlength="6" required>
+                <button type="button" class="password-toggle-icon" onclick="togglePassword('new_password', this)" aria-label="Show password">👁️</button>
               </div>
 
-              <div class="field">
+              <div class="field password-input-wrap">
                 <label for="confirm_password">Confirm New Password</label>
                 <input id="confirm_password" type="password" name="confirm_password" minlength="6" required>
+                <button type="button" class="password-toggle-icon" onclick="togglePassword('confirm_password', this)" aria-label="Show password">👁️</button>
               </div>
 
               <div class="field full">
@@ -578,8 +584,8 @@ unset($_SESSION["old_input"]);
 
           <div style="height:12px"></div>
 
-          <div class="table-wrap">
-            <table>
+          <div class="table-wrap mobile-card-table-wrap">
+            <table class="mobile-card-table">
               <thead>
                 <tr>
                   <th>ID</th>
@@ -592,16 +598,16 @@ unset($_SESSION["old_input"]);
               <tbody>
                 <?php if (empty($rows)): ?>
                   <tr>
-                    <td colspan="5">No records found.</td>
+                    <td class="mobile-empty" colspan="5">No records found.</td>
                   </tr>
                 <?php else: ?>
                   <?php foreach ($rows as $r): ?>
                     <tr>
-                      <td><?php echo (int)$r["id"]; ?></td>
-                      <td><?php echo h((string)$r["name"]); ?></td>
-                      <td><?php echo h((string)$r["email"]); ?></td>
-                      <td><?php echo h((string)($r["phone"] ?? "")); ?></td>
-                      <td>
+                      <td data-label="ID"><?php echo (int)$r["id"]; ?></td>
+                      <td data-label="Name"><?php echo h((string)$r["name"]); ?></td>
+                      <td data-label="Email"><?php echo h((string)$r["email"]); ?></td>
+                      <td data-label="Phone"><?php echo h((string)($r["phone"] ?? "")); ?></td>
+                      <td data-label="Actions">
                         <div class="actions-inline">
                           <a class="btn btn-primary" href="index.php?view=reset&id=<?php echo (int)$r["id"]; ?>">Reset Password</a>
                         </div>
@@ -627,6 +633,23 @@ unset($_SESSION["old_input"]);
       <?php endif; ?>
     </main>
   </div>
+  <script>
+    function togglePassword(inputId, icon) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+
+      if (input.type === "password") {
+        input.type = "text";
+        icon.textContent = "🙈";
+        icon.setAttribute("aria-label", "Hide password");
+      } else {
+        input.type = "password";
+        icon.textContent = "👁️";
+        icon.setAttribute("aria-label", "Show password");
+      }
+    }
+  </script>
+  <script src="../../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>

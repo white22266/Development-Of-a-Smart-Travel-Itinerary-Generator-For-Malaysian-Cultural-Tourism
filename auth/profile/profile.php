@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <title>Edit Profile | Smart Travel Itinerary Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../../assets/dashboard_style.css?v=20260617j">
     <style>
         .readonly-field {
             width: 100%;
@@ -276,28 +276,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         <p style="font-size:12px; color:#64748B; margin:4px 0 8px;">
                             Password must be at least 6 characters.
                         </p>
-                        <div style="position:relative;">
+                        <div class="password-input-wrap">
                             <input type="password" id="new_password" name="new_password"
                                 <?php echo $forceMode ? 'placeholder="Required"' : 'placeholder="Leave blank to keep current password"'; ?>
                                 style="width:100%; padding:10px 40px 10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
-                            <span onclick="togglePassword('new_password', this)"
-                                style="position:absolute; right:12px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:16px; color:#64748B;">
-                                👁️
-                            </span>
+                            <button type="button" class="password-toggle-icon" onclick="togglePassword('new_password', this)" aria-label="Show password">👁️</button>
                         </div>
 
                         <div style="height:10px;"></div>
 
                         <label>Confirm New Password</label>
-                        <div style="position:relative;">
+                        <div class="password-input-wrap">
                             <input type="password" id="confirm_password" name="confirm_password"
                                 style="width:100%; padding:10px 40px 10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
-                            <span onclick="togglePassword('confirm_password', this)"
-                                style="position:absolute; right:12px; top:50%; transform:translateY(-50%); cursor:pointer; font-size:16px; color:#64748B;">
-                                👁️
-                            </span>
+                            <button type="button" class="password-toggle-icon" onclick="togglePassword('confirm_password', this)" aria-label="Show password">👁️</button>
                         </div>
 
                         <div style="margin-top:14px;">
@@ -319,13 +313,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (input.type === "password") {
                 input.type = "text";
                 icon.textContent = "🙈";
+                icon.setAttribute("aria-label", "Hide password");
             } else {
                 input.type = "password";
                 icon.textContent = "👁️";
+                icon.setAttribute("aria-label", "Show password");
             }
         }
     </script>
-
+  <script src="../../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>
+

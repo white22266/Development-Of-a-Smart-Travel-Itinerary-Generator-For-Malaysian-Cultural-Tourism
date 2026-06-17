@@ -196,13 +196,15 @@ if (!function_exists('csrf_inject_html')) {
             }
             if (stripos($html, '</body>') !== false) {
                 $loaderScript = '';
-                if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
+                if (stripos($html, 'itinerary_review_hotel_loader.js') === false
+                    && stripos($html, 'data-native-hotel-review="1"') === false) {
                     $loaderScript = '<script src="../assets/itinerary_review_hotel_loader.js?v=20260604"></script>' . "\n";
                 }
                 $html = str_ireplace('</body>', $reviewScript . "\n" . $loaderScript . '</body>', $html);
             } else {
                 $html .= $reviewScript;
-                if (stripos($html, 'itinerary_review_hotel_loader.js') === false) {
+                if (stripos($html, 'itinerary_review_hotel_loader.js') === false
+                    && stripos($html, 'data-native-hotel-review="1"') === false) {
                     $html .= '<script src="../assets/itinerary_review_hotel_loader.js?v=20260604"></script>';
                 }
             }

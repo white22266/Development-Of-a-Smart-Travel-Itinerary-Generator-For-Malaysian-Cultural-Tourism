@@ -245,7 +245,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($it["title"]); ?> - Itinerary View</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         /* ===== Layout ===== */
         .iv-grid {
@@ -857,10 +857,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
             <div class="actions">
                 <a class="btn btn-ghost" href="my_itineraries.php">Back</a>
                 <a class="btn btn-ghost" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
-                <form method="post" action="share_create.php" style="display:inline;">
-                    <input type="hidden" name="itinerary_id" value="<?php echo $itineraryId; ?>">
-                    <button type="submit" class="btn btn-ghost">Share Link</button>
-                </form>
+                <a class="btn btn-primary" href="trip_summary.php?itinerary_id=<?php echo $itineraryId; ?>">Trip Summary</a>
             </div>
         </div>
 
@@ -1025,8 +1022,8 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                 <?php if (empty($schedule)): ?>
                     <p class="meta">No places scheduled for this day.</p>
                 <?php else: ?>
-                <div class="table-scroll">
-                <table class="timetable">
+                <div class="table-scroll mobile-card-table-wrap">
+                <table class="timetable mobile-card-table">
                     <thead>
                         <tr>
                             <th style="width:90px;">Time</th>
@@ -1053,7 +1050,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                         ?>
                         <?php if ($showOriginRow): ?>
                         <tr>
-                            <td>
+                            <td data-label="Time">
                                 <div style="font-weight:800; font-size:12px;">
                                     <?php echo (int)($firstTravelItem['_travel_min'] ?? 0) > 0
                                         ? minutesToTime((int)$firstTravelItem['_start_min'] - (int)$firstTravelItem['_travel_min'])
@@ -1061,8 +1058,8 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                                 </div>
                                 <div style="font-size:10.5px; color:#94a3b8;">depart</div>
                             </td>
-                            <td style="font-weight:800; color:#64748b;">Start</td>
-                            <td>
+                            <td data-label="#" style="font-weight:800; color:#64748b;">Start</td>
+                            <td data-label="Place & Activity">
                                 <div style="font-weight:700;">
                                     <?php echo $d === 1
                                         ? htmlspecialchars($originName !== '' ? $originName : 'Starting location')
@@ -1082,8 +1079,8 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                                     <?php endif; ?>
                                 </div>
                             </td>
-                            <td><span class="type-badge">Origin</span></td>
-                            <td><span style="color:#94a3b8;">Free</span></td>
+                            <td data-label="Type"><span class="type-badge">Origin</span></td>
+                            <td data-label="Cost (RM)"><span style="color:#94a3b8;">Free</span></td>
                         </tr>
                         <?php endif; ?>
                         <?php foreach ($schedule as $idx => $item):
@@ -1098,7 +1095,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                         <?php if ($idx > 0): ?>
                         <!-- ===== Transit row between stops ===== -->
                         <tr class="transit-row" id="transit-row-<?php echo $legId; ?>">
-                            <td colspan="5">
+                            <td class="mobile-empty" colspan="5">
                                 <div class="transit-row-inner">
                                     <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                                         <button class="transit-summary-btn"
@@ -1138,12 +1135,12 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                             data-lng="<?php echo htmlspecialchars((string)($item['longitude'] ?? '')); ?>"
                             onclick="focusPlace(<?php echo (float)($item['latitude'] ?? 0); ?>, <?php echo (float)($item['longitude'] ?? 0); ?>, '<?php echo addslashes(htmlspecialchars($item['item_title'])); ?>')"
                             style="cursor:pointer;">
-                            <td>
+                            <td data-label="Time">
                                 <div style="font-weight:800; font-size:12px;"><?php echo $item['_start_fmt']; ?></div>
                                 <div style="font-size:10.5px; color:#94a3b8;">to <?php echo $item['_end_fmt']; ?></div>
                             </td>
-                            <td style="font-weight:800; color:<?php echo $isHotel ? '#64748b' : $col; ?>;"><?php echo htmlspecialchars($displayLabel); ?></td>
-                            <td>
+                            <td data-label="#" style="font-weight:800; color:<?php echo $isHotel ? '#64748b' : $col; ?>;"><?php echo htmlspecialchars($displayLabel); ?></td>
+                            <td data-label="Place & Activity">
                                 <div style="font-weight:700;"><?php echo htmlspecialchars($item['item_title']); ?></div>
                                 <div style="font-size:11px; color:#64748b; margin-top:2px;">
                                     <?php echo $activity; ?>
@@ -1166,12 +1163,12 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                                 </div>
                                 <?php endif; ?>
                             </td>
-                            <td>
+                            <td data-label="Type">
                                 <span class="type-badge <?php echo htmlspecialchars($typeBadgeClass); ?>">
                                     <?php echo htmlspecialchars($isHotel ? 'Hotel / Check-in' : ucfirst($item['item_type'] ?? 'attraction')); ?>
                                 </span>
                             </td>
-                            <td style="font-weight:700;">
+                            <td data-label="Cost (RM)" style="font-weight:700;">
                                 <?php echo (float)($item['estimated_cost'] ?? 0) > 0
                                     ? 'RM ' . number_format((float)$item['estimated_cost'], 2)
                                     : '<span style="color:#94a3b8;">Free</span>'; ?>
@@ -1907,12 +1904,14 @@ async function sendAiMessage(event) {
     const loading = addAiMessage('bot', 'Writing answer...');
 
     try {
-        const originIntent = /\b(starting\s+location|start\s+location|starting\s+point|start\s+point|origin|start\s+from|starting\s+from|depart\s+from|leave\s+from)\b/i.test(text);
+        const scheduleTimeIntent = /\b(?:rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|itinerary|trip|day)\b.*\b(?:start|begin)\b.*\b(?:at|from)?\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/i.test(text)
+            || /\b(?:start|begin)\s+(?:at|from)\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/i.test(text);
+        const originIntent = !scheduleTimeIntent && /\b(starting\s+location|start\s+location|starting\s+point|start\s+point|origin|start\s+from|starting\s+from|depart\s+from|leave\s+from)\b/i.test(text);
         const dateIntent = /\b(start\s+date|travel\s+date|trip\s+date|travel\s+on|go\s+on|visit\s+on|arrive\s+on|depart\s+on|date)\b|\b\d{4}[\/\-.]\d{1,2}[\/\-.]\d{1,2}\b|\b\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{4}\b|\b\d{1,2}\s*[a-zA-Z]+\s*\d{4}\b|\b[a-zA-Z]+\s*\d{1,2}\s*\d{4}\b/i.test(text);
-        const weatherIntent = /\b(weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella)\b|天气|下雨|热/i.test(text);
-        const smartHotelIntent = /\b(hotel|hotels|accommodation|stay|stays|room|rooms|sleep|overnight|check\s*in|nearby\s+hotel|budget\s+hotel|cheap\s+hotel|luxury\s+hotel|place\s+to\s+stay)\b|住宿|酒店|旅馆|旅店|民宿/i.test(text);
-        const smartEditIntent = !originIntent && !dateIntent && !weatherIntent && /\b(replace|change|swap|modify|regenerate|replan|reroute|alternative|alternatives|better\s+stop|change\s+stop|arrange|empty|add|extra|fill|more\s+places?|another\s+place|new\s+place|remove|delete|skip|dislike|don't\s+want|do\s+not\s+want|too\s+far|too\s+expensive|nearest|nearby|improve|suggest\s+place|recommend\s+place|reduce\s+cost|cheaper|lower\s+cost|save\s+money|budget\s+friendly|day\s*\d+|day\d+)\b|更改|替换|换掉|换|改行程|重新推荐|重新安排|省钱|便宜|安排|添加|加|空|没有|补/i.test(text);
-        const endpoint = smartHotelIntent ? '../api/ai_hotel_assistant.php' : (smartEditIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php');
+        const weatherIntent = /\b(weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella)\b/i.test(text);
+        const smartHotelIntent = /\b(hotel|hotels|accommodation|stay|stays|room|rooms|sleep|overnight|check\s*in|nearby\s+hotel|budget\s+hotel|cheap\s+hotel|luxury\s+hotel|place\s+to\s+stay)\b/i.test(text);
+        const smartEditIntent = scheduleTimeIntent || (!originIntent && !dateIntent && !weatherIntent && /\b(replace|change|swap|modify|regenerate|replan|reroute|alternative|alternatives|better\s+stop|change\s+stop|arrange|empty|add|extra|fill|more\s+places?|another\s+place|new\s+place|remove|delete|skip|dislike|don't\s+want|do\s+not\s+want|too\s+far|too\s+expensive|nearest|nearby|improve|suggest\s+place|recommend\s+place|reduce\s+cost|cheaper|lower\s+cost|save\s+money|budget\s+friendly|day\s*\d+|day\d+)\b/i.test(text));
+        const endpoint = scheduleTimeIntent ? '../api/ai_itinerary_editor.php' : (smartHotelIntent ? '../api/ai_hotel_assistant.php' : (smartEditIntent ? '../api/ai_itinerary_editor.php' : '../api/ai_travel_assistant.php'));
         const resp = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -1957,7 +1956,7 @@ function cleanAiText(text) {
 }
 
 function renderPendingAction(container, action) {
-    if (!container || !action || (action.type !== 'update_start_date' && action.type !== 'update_origin')) return;
+    if (!container || !action || !['update_start_date', 'update_origin', 'retime_itinerary'].includes(action.type)) return;
     const card = document.createElement('div');
     card.className = 'ai-pending-card';
     card.style.marginTop = '8px';
@@ -1970,7 +1969,9 @@ function renderPendingAction(container, action) {
     title.style.display = 'block';
     title.style.color = '#0f172a';
     title.style.marginBottom = '4px';
-    title.textContent = action.type === 'update_origin' ? 'Confirm starting location' : 'Confirm trip date';
+    title.textContent = action.type === 'update_origin'
+        ? 'Confirm starting location'
+        : (action.type === 'retime_itinerary' ? 'Confirm timetable change' : 'Confirm trip date');
 
     const meta = document.createElement('span');
     meta.style.display = 'block';
@@ -1979,7 +1980,9 @@ function renderPendingAction(container, action) {
     meta.style.marginBottom = '8px';
     meta.textContent = action.summary || (action.type === 'update_origin'
         ? ('Update starting location to ' + (action.label || action.origin_name))
-        : ('Update itinerary start date to ' + action.label));
+        : (action.type === 'retime_itinerary'
+            ? ('Rearrange timetable to start from ' + (action.label || action.start_time))
+            : ('Update itinerary start date to ' + action.label)));
 
     const button = document.createElement('button');
     button.type = 'button';
@@ -1991,10 +1994,16 @@ function renderPendingAction(container, action) {
     button.style.fontSize = '11px';
     button.style.fontWeight = '900';
     button.style.cursor = 'pointer';
-    button.textContent = action.type === 'update_origin' ? 'Confirm Location' : 'Confirm Date';
+    button.textContent = action.type === 'update_origin'
+        ? 'Confirm Location'
+        : (action.type === 'retime_itinerary' ? 'Confirm Timetable' : 'Confirm Date');
     button.addEventListener('click', () => {
         if (action.type === 'update_origin') {
             confirmTripOrigin(action.origin_name || action.label || '', button);
+            return;
+        }
+        if (action.type === 'retime_itinerary') {
+            confirmItineraryRetiming(action.start_time || '', button);
             return;
         }
         confirmTripDate(action.start_date, button, action.next_action || null);
@@ -2206,6 +2215,36 @@ async function confirmTripOrigin(originName, button) {
     }
 }
 
+async function confirmItineraryRetiming(startTime, button) {
+    startTime = String(startTime || '').trim();
+    if (!startTime) return;
+    if (button) button.disabled = true;
+    const loading = addAiMessage('bot', 'Rearranging timetable with the confirmed start time...');
+    try {
+        const resp = await fetch('../api/ai_itinerary_editor.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                action: 'confirm_retime',
+                itinerary_id: ITINERARY_ID,
+                start_time: startTime
+            }),
+        });
+        const data = await parseJsonResponse(resp);
+        if (data.status === 'success') {
+            if (loading) loading.textContent = cleanAiText(data.answer || 'Timetable updated. Reloading...');
+            clearAiPendingCards();
+            setTimeout(() => window.location.reload(), 700);
+        } else {
+            if (button) button.disabled = false;
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'Could not rearrange this timetable.');
+        }
+    } catch (e) {
+        if (button) button.disabled = false;
+        if (loading) loading.textContent = 'Network error while rearranging timetable. Please try again.';
+    }
+}
+
 async function confirmItineraryChange(itemId, placeId, button) {
     if (!itemId || !placeId) return;
     if (button) button.disabled = true;
@@ -2271,14 +2310,12 @@ async function confirmHotelByPlaceId(placeId, button) {
     if (button) button.disabled = true;
     const loading = addAiMessage('bot', 'Saving selected hotel into your itinerary and cost summary...');
     try {
-        const resp = await fetch('review_replace.php', {
+        const resp = await fetch('../api/ai_hotel_assistant.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
-                action: 'confirm',
+                action: 'confirm_hotel',
                 itinerary_id: ITINERARY_ID,
-                rejected_ids: '',
-                replacements_json: '{}',
                 hotel_place_id: placeId
             }),
         });
@@ -2340,5 +2377,7 @@ setTimeout(() => {
 showMapLoadError('Google Maps API key is missing in <code>config/api_keys.php</code>.');
 </script>
 <?php endif; ?>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+

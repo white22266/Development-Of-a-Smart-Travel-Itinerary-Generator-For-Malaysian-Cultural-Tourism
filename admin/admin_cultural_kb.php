@@ -239,7 +239,7 @@ $stmt->close();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>State Cultural Knowledge Base | Admin</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
 </head>
 
 <body>
@@ -713,8 +713,8 @@ $stmt->close();
                                     <h3 style="margin-bottom:6px;"><?php echo htmlspecialchars($detailRow["name"]); ?></h3>
                                     <p class="meta">
                                         <?php echo htmlspecialchars($detailRow["state"]); ?>
-                                        <?php if (!empty($detailRow["district"])): ?> · <?php echo htmlspecialchars($detailRow["district"]); ?><?php endif; ?>
-                                        · <?php echo htmlspecialchars(ucfirst($detailRow["category"])); ?>
+                                        <?php if (!empty($detailRow["district"])): ?> Â· <?php echo htmlspecialchars($detailRow["district"]); ?><?php endif; ?>
+                                        Â· <?php echo htmlspecialchars(ucfirst($detailRow["category"])); ?>
                                     </p>
                                 </div>
                                 <div style="display:flex; gap:8px; flex-wrap:wrap;">
@@ -802,7 +802,7 @@ $stmt->close();
                                             <div class="meta" style="margin-top:6px;">
                                                 <?php echo htmlspecialchars($r["state"]); ?>
                                                 <?php if (!empty($r["district"])): ?>
-                                                    · <?php echo htmlspecialchars($r["district"]); ?>
+                                                    Â· <?php echo htmlspecialchars($r["district"]); ?>
                                                 <?php endif; ?>
                                             </div>
                                             <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;">
@@ -1097,5 +1097,7 @@ if (filterStateSelect) {
 <?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>
 <?php endif; ?>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+

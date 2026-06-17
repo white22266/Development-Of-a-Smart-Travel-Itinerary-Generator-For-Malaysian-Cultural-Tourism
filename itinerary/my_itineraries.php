@@ -19,13 +19,13 @@ $errors  = $_SESSION["form_errors"] ?? [];
 unset($_SESSION["success_message"], $_SESSION["form_errors"]);
 
 $stmt = $conn->prepare("
-  SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost, i.created_at,
+  SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost,
          COALESCE(SUM(CASE WHEN ii.item_type NOT IN ('hotel','origin') THEN 1 ELSE 0 END), 0) AS place_count,
          GROUP_CONCAT(DISTINCT CASE WHEN ii.item_type = 'hotel' THEN ii.item_title END SEPARATOR ', ') AS selected_hotels
   FROM itineraries i
   LEFT JOIN itinerary_items ii ON ii.itinerary_id = i.itinerary_id
   WHERE i.traveller_id = ?
-  GROUP BY i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost, i.created_at
+  GROUP BY i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost
   ORDER BY i.itinerary_id DESC
 ");
 $stmt->bind_param("i", $travellerId);
@@ -39,7 +39,7 @@ $stmt->close();
 <head>
     <meta charset="UTF-8">
     <title>My Itineraries</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         .btn-danger {
             border: 1px solid rgba(220, 38, 38, 0.25);
@@ -62,14 +62,13 @@ $stmt->close();
             vertical-align: middle;
         }
 
-        .itinerary-table th:nth-child(1) { width: 26%; }
-        .itinerary-table th:nth-child(2) { width: 9%; }
-        .itinerary-table th:nth-child(3) { width: 5%; }
-        .itinerary-table th:nth-child(4) { width: 6%; }
-        .itinerary-table th:nth-child(5) { width: 20%; }
-        .itinerary-table th:nth-child(6) { width: 8%; }
-        .itinerary-table th:nth-child(7) { width: 9%; }
-        .itinerary-table th:nth-child(8) { width: 17%; }
+        .itinerary-table th:nth-child(1) { width: 29%; }
+        .itinerary-table th:nth-child(2) { width: 11%; }
+        .itinerary-table th:nth-child(3) { width: 6%; }
+        .itinerary-table th:nth-child(4) { width: 7%; }
+        .itinerary-table th:nth-child(5) { width: 23%; }
+        .itinerary-table th:nth-child(6) { width: 9%; }
+        .itinerary-table th:nth-child(7) { width: 15%; }
 
         .itinerary-title {
             display: -webkit-box;
@@ -83,7 +82,7 @@ $stmt->close();
         .date-cell,
         .number-cell,
         .money-cell,
-        .created-cell {
+        .date-cell {
             white-space: nowrap;
         }
 
@@ -142,9 +141,17 @@ $stmt->close();
             margin: 0;
         }
 
-        @media (max-width: 1100px) {
+        @media (max-width: 640px) {
             .itinerary-table {
-                min-width: 1050px;
+                table-layout: auto;
+            }
+
+            .itinerary-title {
+                -webkit-line-clamp: 3;
+            }
+
+            .hotel-badge {
+                width: 100%;
             }
         }
     </style>
@@ -168,7 +175,7 @@ $stmt->close();
                 <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
                 <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
                 <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a href="../auth/profile/profile.php"><span class="dot"></span>Profile</a>
+                <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
                 <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
             </nav>
 
@@ -211,8 +218,8 @@ $stmt->close();
 
                 <div class="card col-12">
                     <h3>My Itineraries</h3>
-                    <div class="table-wrap">
-                        <table class="itinerary-table">
+                    <div class="table-wrap mobile-card-table-wrap">
+                        <table class="itinerary-table mobile-card-table">
                             <thead>
                                 <tr>
                                     <th>Title</th>
@@ -221,7 +228,6 @@ $stmt->close();
                                     <th>Places</th>
                                     <th>Hotel</th>
                                     <th>Total (RM)</th>
-                                    <th>Created</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -229,15 +235,15 @@ $stmt->close();
                                 <?php while ($r = $res->fetch_assoc()): ?>
                                     <?php $hotelText = trim((string)($r["selected_hotels"] ?? "")); ?>
                                     <tr>
-                                        <td>
+                                        <td data-label="Title">
                                             <strong class="itinerary-title" title="<?php echo htmlspecialchars($r["title"]); ?>">
                                                 <?php echo htmlspecialchars($r["title"]); ?>
                                             </strong>
                                         </td>
-                                        <td class="date-cell"><?php echo !empty($r["start_date"]) ? htmlspecialchars(date("d M Y", strtotime($r["start_date"]))) : "-"; ?></td>
-                                        <td class="number-cell"><?php echo (int)$r["total_days"]; ?></td>
-                                        <td class="number-cell"><?php echo (int)$r["place_count"]; ?></td>
-                                        <td class="hotel-cell">
+                                        <td class="date-cell" data-label="Start Date"><?php echo !empty($r["start_date"]) ? htmlspecialchars(date("d M Y", strtotime($r["start_date"]))) : "-"; ?></td>
+                                        <td class="number-cell" data-label="Days"><?php echo (int)$r["total_days"]; ?></td>
+                                        <td class="number-cell" data-label="Places"><?php echo (int)$r["place_count"]; ?></td>
+                                        <td class="hotel-cell" data-label="Hotel">
                                             <?php if ($hotelText !== ""): ?>
                                                 <span class="hotel-badge" title="<?php echo htmlspecialchars($hotelText); ?>">
                                                     <span class="hotel-name"><?php echo htmlspecialchars($hotelText); ?></span>
@@ -246,9 +252,8 @@ $stmt->close();
                                                 <span class="hotel-empty">-</span>
                                             <?php endif; ?>
                                         </td>
-                                        <td class="money-cell"><?php echo number_format((float)$r["total_estimated_cost"], 2); ?></td>
-                                        <td class="created-cell"><?php echo !empty($r["created_at"]) ? htmlspecialchars(date("d M Y", strtotime($r["created_at"]))) : "-"; ?></td>
-                                        <td>
+                                        <td class="money-cell" data-label="Total (RM)"><?php echo number_format((float)$r["total_estimated_cost"], 2); ?></td>
+                                        <td data-label="Action">
                                             <div class="table-actions">
                                                 <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">View</a>
                                                 <a class="btn btn-ghost" href="trip_summary.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">Summary</a>
@@ -265,7 +270,7 @@ $stmt->close();
                                 <?php endwhile; ?>
                                 <?php if ($res->num_rows === 0): ?>
                                     <tr>
-                                        <td colspan="8">No itineraries yet.</td>
+                                        <td class="mobile-empty" colspan="7">No itineraries yet.</td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>
@@ -276,6 +281,7 @@ $stmt->close();
         </main>
 
     </div>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>

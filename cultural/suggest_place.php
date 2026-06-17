@@ -88,7 +88,7 @@ function sug_label($s)
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suggest New Place | Traveller</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         #suggestPinMap {
             width: 100%;
@@ -121,11 +121,15 @@ function sug_label($s)
                 </div>
             </div>
 
-            <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="../cultural/cultural_guide.php" class="active"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
-            </nav>
+      <nav class="nav" aria-label="Sidebar Navigation">
+        <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
+        <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
+        <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
+        <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
+        <a href="../cultural/cultural_guide.php" class="active"><span class="dot"></span> Cultural Guide Presentation</a>
+        <a class="nav-profile-link" href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
+        <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+      </nav>
 
             <div class="sidebar-footer">
                 <div class="small">Logged in as:</div>
@@ -557,6 +561,8 @@ function escapeSuggestHtml(str) {
 <?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initSuggestMaps" async defer></script>
 <?php endif; ?>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>
+

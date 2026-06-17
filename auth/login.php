@@ -84,8 +84,9 @@ if ($action === "reset")  $view = "reset";
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Smart Travel Itinerary Generator</title>
-    <link rel="stylesheet" href="../assets/style.css?v=20260513">
+    <link rel="stylesheet" href="../assets/style.css?v=20260617d">
     <script>
         function togglePassword(inputId, icon) {
             const input = document.getElementById(inputId);
@@ -94,9 +95,11 @@ if ($action === "reset")  $view = "reset";
             if (input.type === "password") {
                 input.type = "text";
                 icon.textContent = "🙈";
+                icon.setAttribute("aria-label", "Hide password");
             } else {
                 input.type = "password";
                 icon.textContent = "👁️";
+                icon.setAttribute("aria-label", "Show password");
             }
         }
     </script>
@@ -151,12 +154,10 @@ if ($action === "reset")  $view = "reset";
                             value="<?php echo htmlspecialchars($old["email"] ?? ""); ?>">
                     </div>
 
-                    <div class="form-group" style="position:relative;">
+                    <div class="form-group password-input-wrap">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" required style="padding-right:40px;">
-                        <span
-                            onclick="togglePassword('password', this)"
-                            style="position:absolute; right:12px; top:50%; transform:translateY(0%); cursor:pointer; font-size:16px; color:#64748B;">👁️</span>
+                        <input type="password" id="password" name="password" required>
+                        <button type="button" class="password-toggle-icon" onclick="togglePassword('password', this)" aria-label="Show password">👁️</button>
                     </div>
 
                     <div class="form-group">
@@ -176,7 +177,7 @@ if ($action === "reset")  $view = "reset";
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>
 
-                <div style="margin-top:12px;">
+                <div class="auth-secondary-link" style="margin-top:12px;">
                     <a href="login.php?action=forgot&role=<?php echo urlencode($defaultRole); ?>">Forgot password?</a>
                 </div>
 
@@ -220,18 +221,16 @@ if ($action === "reset")  $view = "reset";
                     <input type="hidden" name="email" value="<?php echo htmlspecialchars($_GET['email'] ?? ''); ?>">
                     <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token'] ?? ''); ?>">
 
-                    <div class="form-group">
+                    <div class="form-group password-input-wrap">
                         <label>New Password</label>
-                        <input type="password" id="new_password" name="new_password" required minlength="6" style="padding-right:40px;">
-                        <span onclick="togglePassword('new_password', this)"
-                            style="position:absolute; right:12px; top:50%; transform:translateY(0%); cursor:pointer; font-size:16px; color:#64748B;">👁️</span>
+                        <input type="password" id="new_password" name="new_password" required minlength="6">
+                        <button type="button" class="password-toggle-icon" onclick="togglePassword('new_password', this)" aria-label="Show password">👁️</button>
                     </div>
 
-                    <div class="form-group" style="position:relative;">
+                    <div class="form-group password-input-wrap">
                         <label>Confirm New Password</label>
-                        <input type="password" id="confirm_new_password" name="confirm_new_password" required minlength="6" style="padding-right:40px;">
-                        <span onclick="togglePassword('confirm_new_password', this)"
-                            style="position:absolute; right:12px; top:50%; transform:translateY(0%); cursor:pointer; font-size:16px; color:#64748B;">👁️</span>
+                        <input type="password" id="confirm_new_password" name="confirm_new_password" required minlength="6">
+                        <button type="button" class="password-toggle-icon" onclick="togglePassword('confirm_new_password', this)" aria-label="Show password">👁️</button>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Reset Password</button>

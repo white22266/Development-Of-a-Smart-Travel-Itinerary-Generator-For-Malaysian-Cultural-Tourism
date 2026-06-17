@@ -78,7 +78,7 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo h($it["title"]); ?> | Shared Itinerary</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         body { background:#f8fafc; }
         .public-wrap { max-width:1050px; margin:0 auto; padding:24px; }
@@ -156,5 +156,7 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
         <?php endforeach; ?>
     </div>
 </div>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+

@@ -6,7 +6,6 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
-require_once "../services/HotelRecommendationService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -131,47 +130,17 @@ function js_arg($value): string
     );
 }
 
-// ---- Load nearby hotels per state ----
-$statesInItinerary = [];
-foreach ($days as $dayItems) {
-    foreach ($dayItems as $item) {
-        $st = trim((string)($item["state"] ?? ""));
-        if ($st !== "") $statesInItinerary[$st] = true;
-    }
-}
-
-$hotelsByState = [];
-$hrs = new HotelRecommendationService($conn);
-foreach (array_keys($statesInItinerary) as $st) {
-    $hotelsByState[$st] = $hrs->recommendByState($st, $budget > 0 ? $budget * 0.4 : 0, 5);
-}
-
-// Compute hotel match scores
-function computeHotelScore(array $hotel, float $budget): array
+function reviewLastSchedulableStop(array $items): ?array
 {
-    $W_RATING   = 0.30;
-    $W_PRICE    = 0.30;
-    $W_DIST     = 0.40;
-
-    $price  = (float)($hotel["price_per_night"] ?? 0);
-    $rating = (float)($hotel["rating"] ?? 0);
-    $dist   = (float)($hotel["distance_km"] ?? 5.0);
-
-    $ratingScore = min(1.0, $rating / 5.0);
-    $priceScore  = ($budget > 0 && $price > 0) ? max(0.0, 1 - ($price / ($budget * 0.4 ?: 300))) : 0.7;
-    $distScore   = max(0.0, 1 - ($dist / 30.0)); // 30km max
-
-    $total = $W_DIST * $distScore + $W_PRICE * $priceScore + $W_RATING * $ratingScore;
-    $pct   = (int)round($total * 100);
-
-    $label = match(true) {
-        $pct >= 85 => ['Excellent', 'success'],
-        $pct >= 70 => ['Good',      'primary'],
-        $pct >= 50 => ['Fair',      'warning'],
-        default    => ['Low',       'danger'],
-    };
-
-    return ['pct' => $pct, 'label' => $label[0], 'color' => $label[1]];
+    $last = null;
+    foreach ($items as $item) {
+        $type = strtolower((string)($item['item_type'] ?? ''));
+        if (in_array($type, ['hotel', 'transport', 'note'], true)) {
+            continue;
+        }
+        $last = $item;
+    }
+    return $last;
 }
 
 // Day colors
@@ -181,6 +150,7 @@ $dayColors = [
 ];
 
 $startDate = $it["start_date"] ?? null;
+$totalNights = max(0, $totalDays - 1);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -188,7 +158,7 @@ $startDate = $it["start_date"] ?? null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Itinerary - <?php echo htmlspecialchars($it["title"]); ?></title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         /* ===== Review page styles ===== */
         .review-header {
@@ -379,40 +349,122 @@ $startDate = $it["start_date"] ?? null;
             border-left: 4px solid;
         }
 
-        /* ===== Hotel section ===== */
+        /* ===== Optional hotel section ===== */
+        .optional-hotel-card {
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+        .hotel-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+        .hotel-night-panel {
+            border: 1px solid rgba(15,23,42,0.12);
+            border-radius: 12px;
+            padding: 14px;
+            background: #fff;
+            margin-top: 12px;
+        }
+        .hotel-night-head {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 12px;
+            align-items: center;
+        }
+        .hotel-night-title {
+            font-weight: 900;
+            color: #001a4d;
+            font-size: 14px;
+        }
+        .hotel-night-meta {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .hotel-night-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .hotel-results {
+            display: none;
+            margin-top: 12px;
+        }
+        .hotel-results.open {
+            display: block;
+        }
+        .hotel-message {
+            border: 1px solid rgba(15,23,42,0.10);
+            border-radius: 10px;
+            padding: 12px;
+            background: #f8fafc;
+            color: #475569;
+            font-size: 12.5px;
+        }
+        .hotel-pricing-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .hotel-price-source {
+            display: inline-flex;
+            width: fit-content;
+            max-width: 100%;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 11px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-top: 7px;
+        }
+        .hotel-price-source.live {
+            background: #dcfce7;
+            color: #166534;
+        }
         .hotel-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px;
             margin-top: 10px;
         }
-        .hotel-card-review {
+        .hotel-result-card {
             border: 1.5px solid rgba(15,23,42,0.10);
             border-radius: 12px;
             padding: 12px 14px;
             background: #fff;
-            cursor: pointer;
             transition: border-color .15s, box-shadow .15s;
             position: relative;
         }
-        .hotel-card-review:hover { border-color: #4f46e5; box-shadow: 0 2px 10px rgba(79,70,229,.12); }
-        .hotel-card-review.selected { border-color: #22c55e; background: #f0fdf4; }
+        .hotel-result-card:hover { border-color: #4f46e5; box-shadow: 0 2px 10px rgba(79,70,229,.12); }
+        .hotel-result-card.selected { border-color: #22c55e; background: #f0fdf4; }
         .hotel-name-rv { font-weight: 800; font-size: 13px; }
         .hotel-meta-rv { font-size: 11px; color: #64748b; margin-top: 3px; }
         .hotel-price-rv { font-weight: 900; color: #4f46e5; font-size: 14px; margin-top: 6px; }
-        .hotel-select-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #22c55e;
-            color: #fff;
-            border-radius: 999px;
-            padding: 2px 8px;
-            font-size: 10px;
-            font-weight: 800;
-            display: none;
+        .hotel-card-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
         }
-        .hotel-card-review.selected .hotel-select-badge { display: block; }
+        .hotel-selected-note {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: #dcfce7;
+            color: #15803d;
+            font-size: 11px;
+            font-weight: 900;
+        }
 
         /* ===== Spinner ===== */
         .spinner {
@@ -491,8 +543,8 @@ $startDate = $it["start_date"] ?? null;
         .ai-chat-fab {
             position: fixed;
             right: 22px;
-            bottom: 96px;
-            z-index: 160;
+            bottom: 22px;
+            z-index: 1200;
             border: none;
             border-radius: 999px;
             background: #0f172a;
@@ -505,8 +557,8 @@ $startDate = $it["start_date"] ?? null;
         .ai-chat-panel {
             position: fixed;
             right: 22px;
-            bottom: 156px;
-            z-index: 160;
+            bottom: 82px;
+            z-index: 1200;
             width: min(390px, calc(100vw - 32px));
             max-height: min(620px, calc(100vh - 120px));
             display: none;
@@ -607,8 +659,8 @@ $startDate = $it["start_date"] ?? null;
             .place-card-top { grid-template-columns: 1fr; }
             .place-actions { width:100%; justify-self:stretch; }
             .review-status { justify-self:start; }
-            .ai-chat-fab { right: 14px; bottom: 104px; }
-            .ai-chat-panel { right: 14px; bottom: 164px; }
+            .ai-chat-fab { right: 14px; bottom: 14px; }
+            .ai-chat-panel { right: 14px; bottom: 72px; }
         }
     </style>
 </head>
@@ -708,6 +760,7 @@ $startDate = $it["start_date"] ?? null;
                  data-place-id="<?php echo (int)($item['place_id'] ?? 0); ?>"
                  data-state="<?php echo htmlspecialchars($item['state'] ?? ''); ?>"
                  data-category="<?php echo htmlspecialchars($item['category'] ?? $item['item_type'] ?? ''); ?>"
+                 data-title="<?php echo htmlspecialchars($item['item_title'] ?? ''); ?>"
                  data-status="accepted">
 
                 <div class="place-card-top">
@@ -806,66 +859,64 @@ $startDate = $it["start_date"] ?? null;
         </div>
         <?php endforeach; ?>
 
-        <!-- ===== Hotel Selection ===== -->
-        <?php if (!empty($hotelsByState)): ?>
-        <div class="card" style="padding:18px; margin-bottom:20px;">
-            <h3 style="margin-bottom:6px;">Select Your Hotel</h3>
-            <p class="meta" style="margin-top:0; margin-bottom:14px;">Live accommodation suggestions from Google Places. Price is a planning estimate; confirm only after checking the real booking price.</p>
-
-            <?php foreach ($hotelsByState as $state => $hotels): ?>
-            <?php if (empty($hotels)) continue; ?>
-            <div style="margin-bottom:18px;">
-                <div style="font-weight:800; font-size:13px; margin-bottom:8px; color:#475569;">
-                    Location: <?php echo htmlspecialchars($state); ?>
-                </div>
-                <div class="hotel-grid">
-                    <?php foreach ($hotels as $h):
-                        $hs = computeHotelScore($h, $budget);
-                        $hBarColor = match($hs['color']) {
-                            'success' => '#22c55e',
-                            'primary' => '#3b82f6',
-                            'warning' => '#f59e0b',
-                            default   => '#ef4444',
-                        };
-                    ?>
-                    <?php $hotelDomId = preg_replace('/[^a-zA-Z0-9_-]/', '_', (string)($h['google_place_id'] ?? $h['name'])); ?>
-                    <div class="hotel-card-review"
-                         id="hotel-card-<?php echo htmlspecialchars($hotelDomId); ?>"
-                         onclick="selectHotel('<?php echo htmlspecialchars($hotelDomId, ENT_QUOTES); ?>', '<?php echo htmlspecialchars($h['google_place_id'] ?? "", ENT_QUOTES); ?>', '<?php echo addslashes(htmlspecialchars($h['name'])); ?>')">
-                        <span class="hotel-select-badge">Selected</span>
-                        <div class="hotel-name-rv"><?php echo htmlspecialchars($h['name']); ?></div>
-                        <div class="hotel-meta-rv">
-                            <?php echo htmlspecialchars($h['address'] ?? $state); ?>
-                            &middot; Google rating: <?php echo number_format((float)$h['rating'], 1); ?>/5
-                            <?php if (isset($h['distance_km'])): ?>
-                                &middot; <?php echo number_format((float)$h['distance_km'], 1); ?> km
-                            <?php endif; ?>
-                        </div>
-                        <div class="hotel-price-rv">Estimated RM <?php echo number_format((float)$h['price_per_night'], 0); ?> / night</div>
-                        <!-- Hotel match score -->
-                        <div style="margin-top:8px;">
-                            <div style="display:flex; align-items:center; gap:6px; margin-bottom:4px;">
-                                <span class="match-badge badge-<?php echo $hs['color']; ?>"><?php echo $hs['label']; ?></span>
-                                <span style="font-size:12px; font-weight:900; color:<?php echo $hBarColor; ?>;"><?php echo $hs['pct']; ?>%</span>
-                            </div>
-                            <div class="match-bar-track" style="height:5px;">
-                                <div class="match-bar-fill" style="width:<?php echo $hs['pct']; ?>%; background:<?php echo $hBarColor; ?>;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
+        <!-- ===== Optional Hotel Suggestions ===== -->
+        <div class="card optional-hotel-card" data-native-hotel-review="1">
+            <div class="hotel-toolbar">
+                <div>
+                    <h3 style="margin:0 0 6px;">Optional Hotel Suggestions</h3>
+                    <p class="meta" style="margin:0;">Hotels are loaded only when requested. Suggestions use Google Places near the final kept stop for each overnight day.</p>
                 </div>
             </div>
-            <?php endforeach; ?>
+
+            <?php if ($totalNights <= 0): ?>
+                <?php $lastOneDayStop = reviewLastSchedulableStop($days[1] ?? []); ?>
+                <div class="hotel-night-panel">
+                    <div class="hotel-night-head">
+                        <div>
+                            <div class="hotel-night-title">No overnight hotel required</div>
+                            <div class="hotel-night-meta">
+                                This itinerary has only one day. You can still browse nearby accommodation around the final stop, but it will not be saved as an overnight itinerary item.
+                            </div>
+                        </div>
+                        <?php if ($lastOneDayStop): ?>
+                        <div class="hotel-night-actions">
+                            <button type="button" class="btn btn-ghost" id="hotel-toggle-night-0" onclick="toggleNightHotels(0, 1, false)">Browse nearby hotels</button>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="hotel-results" id="hotel-results-night-0"></div>
+                </div>
+            <?php else: ?>
+                <?php for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++):
+                    $stop = reviewLastSchedulableStop($days[$nightNo] ?? []);
+                    $stopTitle = $stop ? (string)$stop['item_title'] : "Day {$nightNo} final kept stop";
+                ?>
+                <div class="hotel-night-panel" id="hotel-night-<?php echo $nightNo; ?>" data-night="<?php echo $nightNo; ?>" data-day="<?php echo $nightNo; ?>">
+                    <div class="hotel-night-head">
+                        <div>
+                            <div class="hotel-night-title">Night <?php echo $nightNo; ?> - after Day <?php echo $nightNo; ?></div>
+                            <div class="hotel-night-meta">
+                                Suggested near: <strong><?php echo htmlspecialchars($stopTitle); ?></strong>.
+                                Selection is optional and saved only after Confirm.
+                            </div>
+                        </div>
+                        <div class="hotel-night-actions">
+                            <button type="button" class="btn btn-ghost" id="hotel-toggle-night-<?php echo $nightNo; ?>" onclick="toggleNightHotels(<?php echo $nightNo; ?>, <?php echo $nightNo; ?>, true)">Load Nearby Hotels</button>
+                            <button type="button" class="btn btn-ghost" onclick="skipHotelNight(<?php echo $nightNo; ?>)">Skip</button>
+                        </div>
+                    </div>
+                    <div class="hotel-results" id="hotel-results-night-<?php echo $nightNo; ?>"></div>
+                </div>
+                <?php endfor; ?>
+            <?php endif; ?>
         </div>
-        <?php endif; ?>
 
         <div class="confirm-bar">
             <div class="confirm-stats">
                 <strong id="stat-accepted">0</strong> kept &middot;
                 <strong id="stat-rejected">0</strong> removed &middot;
                 <strong id="stat-replaced">0</strong> replacement pending &middot;
-                Selected hotel: <strong id="stat-hotel">None</strong>
+                Hotel nights: <strong id="stat-hotel">None</strong>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
                 <a href="my_itineraries.php" class="btn btn-ghost">Back to My Itineraries</a>
@@ -900,11 +951,12 @@ $startDate = $it["start_date"] ?? null;
 <script>
 // ---- State ----
 const ITINERARY_ID = <?php echo $itineraryId; ?>;
+const TOTAL_NIGHTS = <?php echo (int)$totalNights; ?>;
 const itemStatus   = {}; // item_id -> 'accepted' | 'rejected'
 const replacementMap = {}; // item_id -> selected replacement place payload, saved only on Confirm
+const hotelSelections = {}; // night_no -> selected hotel payload, saved only on Confirm
+const hotelResultState = {}; // night_no -> lazy-load/collapse state
 const originalCards = {};
-let selectedHotelPlaceId = '';
-let selectedHotelName = '';
 
 // Initialise all as accepted
 <?php foreach ($days as $d => $items): ?>
@@ -1002,6 +1054,7 @@ async function replacePlace(itemId, day, state, category) {
             card.dataset.placeId = data.place_id;
             card.dataset.state = data.new_state || state;
             card.dataset.category = data.new_category || category;
+            card.dataset.title = data.new_title || '';
 
             const metaMain = card.querySelector('.place-meta-main');
             if (metaMain) {
@@ -1067,23 +1120,189 @@ async function replacePlace(itemId, day, state, category) {
     updateStats();
 }
 
-// ---- Hotel selection ----
-function selectHotel(cardId, placeId, hotelName) {
-    // Deselect all
-    document.querySelectorAll('.hotel-card-review').forEach(c => c.classList.remove('selected'));
-    // Select clicked
-    const card = document.getElementById('hotel-card-' + cardId);
-    if (card) {
-        if (selectedHotelPlaceId === placeId) {
-            // Toggle off
-            selectedHotelPlaceId = '';
-            selectedHotelName = '';
-        } else {
-            card.classList.add('selected');
-            selectedHotelPlaceId = placeId;
-            selectedHotelName = hotelName;
+// ---- Hotel suggestions ----
+function currentLastKeptStopForDay(dayNo) {
+    const cards = Array.from(document.querySelectorAll(`.place-card[data-day="${dayNo}"]`))
+        .filter(card => card.dataset.status !== 'rejected');
+    if (cards.length === 0) return null;
+    const last = cards[cards.length - 1];
+    const itemId = parseInt(last.dataset.itemId || '0', 10);
+    if (itemId && replacementMap[itemId] && replacementMap[itemId].place_id) {
+        return {
+            itemId: 0,
+            placeId: parseInt(replacementMap[itemId].place_id || '0', 10),
+            title: replacementMap[itemId].title || last.querySelector('.place-title')?.textContent?.trim() || 'replacement stop',
+        };
+    }
+    return {
+        itemId,
+        placeId: parseInt(last.dataset.placeId || '0', 10),
+        title: last.dataset.title || last.querySelector('.place-title')?.textContent?.trim() || 'final stop',
+    };
+}
+
+function hotelToggleButton(nightNo) {
+    return document.getElementById('hotel-toggle-night-' + nightNo);
+}
+
+function setHotelToggleLabel(nightNo, label, disabled = false) {
+    const btn = hotelToggleButton(nightNo);
+    if (!btn) return;
+    btn.textContent = label;
+    btn.disabled = disabled;
+}
+
+function toggleNightHotels(nightNo, dayNo, allowSelect) {
+    const target = document.getElementById('hotel-results-night-' + nightNo);
+    if (!target) return;
+    const state = hotelResultState[nightNo] || {};
+    if (state.loaded && target.classList.contains('open')) {
+        target.classList.remove('open');
+        setHotelToggleLabel(nightNo, 'Show results');
+        return;
+    }
+    if (state.loaded) {
+        target.classList.add('open');
+        setHotelToggleLabel(nightNo, 'Hide results');
+        return;
+    }
+    loadNightHotels(nightNo, dayNo, allowSelect, false, true);
+}
+
+async function loadNightHotels(nightNo, dayNo, allowSelect, lookupPricing = false, force = false) {
+    const target = document.getElementById('hotel-results-night-' + nightNo);
+    if (!target) return;
+
+    const stop = currentLastKeptStopForDay(dayNo);
+    target.classList.add('open');
+    setHotelToggleLabel(nightNo, lookupPricing ? 'Checking prices...' : 'Loading hotels...', true);
+    if (!stop || (!stop.itemId && !stop.placeId)) {
+        target.innerHTML = '<div class="hotel-message">No kept final stop is available for this day. Keep at least one place first.</div>';
+        hotelResultState[nightNo] = { loaded: false, dayNo, allowSelect };
+        setHotelToggleLabel(nightNo, 'Try again');
+        return;
+    }
+
+    target.innerHTML = '<div class="hotel-message"><span class="spinner" style="border-color:rgba(15,23,42,.22);border-top-color:#0f172a;"></span> ' + (lookupPricing ? 'Checking SerpAPI hotel prices...' : 'Loading nearby hotels from Google Places...') + '</div>';
+
+    try {
+        const params = new URLSearchParams({
+            itinerary_id: ITINERARY_ID,
+            item_id: stop.itemId || '',
+            place_id: stop.itemId ? '' : (stop.placeId || ''),
+        });
+        if (lookupPricing) params.set('lookup_pricing', '1');
+        const resp = await fetch('review_hotels.php?' + params.toString(), { method: 'GET' });
+        const data = await parseJsonResponse(resp);
+        renderNightHotels(nightNo, data, allowSelect, dayNo, lookupPricing);
+        hotelResultState[nightNo] = { loaded: data.status === 'success', dayNo, allowSelect };
+        setHotelToggleLabel(nightNo, data.status === 'success' ? 'Hide results' : 'Try again');
+    } catch (e) {
+        target.innerHTML = '<div class="hotel-message" style="color:#b91c1c;">Hotel lookup failed. Please check the Google Places API connection and try again.</div>';
+        hotelResultState[nightNo] = { loaded: false, dayNo, allowSelect };
+        setHotelToggleLabel(nightNo, 'Try again');
+    }
+    const btn = hotelToggleButton(nightNo);
+    if (btn) btn.disabled = false;
+}
+
+function renderNightHotels(nightNo, data, allowSelect, dayNo, lookupPricing) {
+    const target = document.getElementById('hotel-results-night-' + nightNo);
+    if (!target) return;
+
+    const hotels = Array.isArray(data.hotels) ? data.hotels : [];
+    if (data.status !== 'success' || hotels.length === 0) {
+        target.innerHTML = '<div class="hotel-message">' + escHtml(data.message || 'No nearby hotels were found for this stop.') + '</div>';
+        return;
+    }
+
+    const lastStop = data.last_stop && data.last_stop.title ? data.last_stop.title : 'final stop';
+    const hasLivePrices = hotels.some(hotel => hotel && hotel.price_source === 'serpapi_google_maps_price');
+    let html = `
+        <div class="hotel-message hotel-pricing-row">
+            <div>
+                <strong>${hasLivePrices ? 'SerpAPI price data loaded' : 'Hotel suggestions loaded'}</strong>
+                <div style="margin-top:4px;">${escHtml(data.message || 'Hotel suggestions loaded.')}</div>
+                <div style="margin-top:4px;">Search anchor: <strong>${escHtml(lastStop)}</strong></div>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="loadNightHotels(${nightNo}, ${dayNo}, ${allowSelect ? 'true' : 'false'}, true, true)">
+                ${hasLivePrices ? 'Refresh SerpAPI prices' : 'Check prices with SerpAPI'}
+            </button>
+        </div>
+        <div class="hotel-grid">
+    `;
+
+    hotels.forEach((hotel, idx) => {
+        const placeId = hotel.google_place_id || hotel.place_id || '';
+        const selected = hotelSelections[nightNo] && (hotelSelections[nightNo].google_place_id || '') === placeId;
+        const name = hotel.name || 'Unnamed hotel';
+        const address = hotel.address || hotel.vicinity || '';
+        const rating = Number(hotel.rating || 0);
+        const price = Number(hotel.price_per_night || hotel.estimated_price || 0);
+        const distance = hotel.distance_km !== undefined && hotel.distance_km !== null ? Number(hotel.distance_km) : null;
+        const isLivePrice = hotel.price_source === 'serpapi_google_maps_price';
+        const priceLabel = hotel.price_label || (isLivePrice ? 'SerpAPI price' : 'Planning estimate');
+        const mapUrl = hotel.map_url || (placeId ? `https://www.google.com/maps/search/?api=1&query=Google&query_place_id=${encodeURIComponent(placeId)}` : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + address)}`);
+        const payload = escHtml(JSON.stringify(hotel));
+
+        html += `
+            <div class="hotel-result-card ${selected ? 'selected' : ''}" id="hotel-night-${nightNo}-card-${idx}">
+                <div class="hotel-name-rv">${escHtml(name)}</div>
+                <div class="hotel-meta-rv">
+                    ${escHtml(address)}
+                    ${rating > 0 ? ' | Google rating: ' + rating.toFixed(1) + '/5' : ''}
+                    ${distance !== null && !Number.isNaN(distance) ? ' | ' + distance.toFixed(1) + ' km' : ''}
+                </div>
+                <div class="hotel-price-rv">${price > 0 ? 'Estimated RM ' + price.toFixed(0) + ' / night' : 'Price not available'}</div>
+                <span class="hotel-price-source ${isLivePrice ? 'live' : ''}">${escHtml(priceLabel)}</span>
+                ${selected ? '<span class="hotel-selected-note">Selected for this night</span>' : ''}
+                <div class="hotel-card-actions">
+                    ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">Select for Night ${nightNo}</button>` : ''}
+                    <a class="btn btn-ghost" href="${escHtml(mapUrl)}" target="_blank" rel="noopener">Map</a>
+                </div>
+            </div>
+        `;
+    });
+
+    html += '</div>';
+    target.innerHTML = html;
+}
+
+function selectNightHotel(nightNo, idx, hotelJson) {
+    let hotel = {};
+    try {
+        hotel = JSON.parse(hotelJson || '{}');
+    } catch (e) {
+        alert('Could not read this hotel selection. Please reload suggestions.');
+        return;
+    }
+    hotelSelections[nightNo] = hotel;
+    const panel = document.getElementById('hotel-results-night-' + nightNo);
+    if (panel) {
+        panel.querySelectorAll('.hotel-result-card').forEach(card => card.classList.remove('selected'));
+        const selectedCard = document.getElementById('hotel-night-' + nightNo + '-card-' + idx);
+        if (selectedCard) {
+            selectedCard.classList.add('selected');
+            if (!selectedCard.querySelector('.hotel-selected-note')) {
+                const note = document.createElement('span');
+                note.className = 'hotel-selected-note';
+                note.textContent = 'Selected for this night';
+                selectedCard.appendChild(note);
+            }
         }
     }
+    updateStats();
+}
+
+function skipHotelNight(nightNo) {
+    delete hotelSelections[nightNo];
+    const target = document.getElementById('hotel-results-night-' + nightNo);
+    if (target) {
+        target.classList.add('open');
+        target.innerHTML = '<div class="hotel-message">Hotel skipped for this night. Nothing will be saved unless you select a hotel later.</div>';
+    }
+    hotelResultState[nightNo] = { loaded: true, dayNo: nightNo, allowSelect: true };
+    setHotelToggleLabel(nightNo, 'Hide results');
     updateStats();
 }
 
@@ -1113,9 +1332,16 @@ function resetAll() {
         if (status) status.textContent = 'Kept';
     });
     Object.keys(replacementMap).forEach(k => delete replacementMap[k]);
-    document.querySelectorAll('.hotel-card-review').forEach(c => c.classList.remove('selected'));
-    selectedHotelPlaceId = '';
-    selectedHotelName = '';
+    Object.keys(hotelSelections).forEach(k => delete hotelSelections[k]);
+    Object.keys(hotelResultState).forEach(k => delete hotelResultState[k]);
+    document.querySelectorAll('.hotel-results').forEach(el => {
+        el.classList.remove('open');
+        el.innerHTML = '';
+    });
+    document.querySelectorAll('[id^="hotel-toggle-night-"]').forEach(btn => {
+        btn.disabled = false;
+        btn.textContent = btn.id === 'hotel-toggle-night-0' ? 'Browse nearby hotels' : 'Load Nearby Hotels';
+    });
     updateStats();
 }
 
@@ -1133,7 +1359,8 @@ function updateStats() {
     document.getElementById('stat-rejected').textContent = rejected;
     const replacedEl = document.getElementById('stat-replaced');
     if (replacedEl) replacedEl.textContent = replaced;
-    document.getElementById('stat-hotel').textContent    = selectedHotelName || 'None';
+    const hotelCount = Object.keys(hotelSelections).length;
+    document.getElementById('stat-hotel').textContent = hotelCount > 0 ? hotelCount + ' selected' : 'None';
 }
 
 function updateCardMatch(card, data) {
@@ -1179,15 +1406,14 @@ async function confirmReview() {
     }
 
     try {
-        const resp = await fetch('review_replace.php', {
+        const resp = await fetch('review_confirm_nightly.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
-                action:       'confirm',
                 itinerary_id: ITINERARY_ID,
                 rejected_ids: rejectedIds.join(','),
-                hotel_place_id: selectedHotelPlaceId || '',
                 replacements_json: JSON.stringify(replacementMap),
+                hotel_selections_json: JSON.stringify(hotelSelections),
             })
         });
         const data = await parseJsonResponse(resp);
@@ -1284,5 +1510,7 @@ async function parseJsonResponse(resp) {
     }
 }
 </script>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+

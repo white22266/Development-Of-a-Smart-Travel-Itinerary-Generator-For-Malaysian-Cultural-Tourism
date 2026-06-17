@@ -28,6 +28,8 @@ body {
 body {
     margin: 0;
     padding: 18px;
+    min-height: 100vh;
+    min-height: 100dvh;
     background:
         radial-gradient(900px 520px at 12% 12%, rgba(245, 197, 66, 0.11), transparent 58%),
         radial-gradient(820px 520px at 88% 14%, rgba(230, 126, 34, 0.10), transparent 58%),
@@ -179,6 +181,45 @@ select:focus,
 textarea:focus {
     border-color: rgba(230, 126, 34, 0.55);
     box-shadow: 0 0 0 4px rgba(230, 126, 34, 0.10);
+}
+
+.password-input-wrap {
+    position: relative;
+}
+
+.password-input-wrap input[type="password"],
+.password-input-wrap input[type="text"] {
+    padding-right: 48px !important;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 8px;
+    top: auto;
+    bottom: 7px;
+    width: 32px;
+    height: 32px;
+    transform: none;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #64748B;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    padding: 0;
+}
+
+.password-toggle-icon:hover {
+    background: rgba(100, 116, 139, 0.10);
+    color: #475569;
+}
+
+.password-toggle-icon::before,
+.password-toggle-icon::after {
+    content: none;
 }
 
 .btn {
@@ -383,6 +424,7 @@ textarea:focus {
     margin-top: 18px;
     font-size: 13px;
     color: var(--muted);
+    line-height: 1.5;
 }
 
 .form-footer a,
@@ -490,23 +532,92 @@ textarea:focus {
 
 @media (max-width: 820px) {
     body {
-        align-items: flex-start;
-        padding: 16px 10px;
+        align-items: center;
+        padding: 18px 14px;
+        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .main-container {
+        width: min(100%, 560px);
         height: auto;
         min-height: 0;
         grid-template-columns: 1fr;
+        border-radius: 18px;
+        overflow: hidden;
     }
 
     .left-panel,
     .right-panel {
-        padding: 28px 22px;
+        padding: 28px 24px;
     }
 
     .left-panel h1 {
         font-size: 25px;
+    }
+
+    .left-panel p {
+        text-align: left;
+    }
+
+    .entry-list {
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .right-panel {
+        gap: 0;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .form-subtitle {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
+        min-height: 48px;
+        font-size: 16px;
+    }
+
+    .right-panel .btn,
+    .welcome-panel .btn {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .button-row,
+    .panel-actions {
+        gap: 12px;
+    }
+
+    .form-footer,
+    .auth-account-switch {
+        position: static;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 6px;
+        margin-top: 18px;
+        padding-top: 2px;
+    }
+
+    .auth-secondary-link {
+        margin-top: 16px !important;
     }
 
     .role-grid {
@@ -518,8 +629,8 @@ textarea:focus {
     }
 
     .register-page {
-        align-items: flex-start;
-        padding: 10px;
+        align-items: center;
+        padding: 18px 14px;
     }
 
     .register-page .main-container {
@@ -529,15 +640,57 @@ textarea:focus {
 
     .register-page .left-panel,
     .register-page .right-panel {
-        padding: 20px 18px;
+        padding: 28px 24px;
     }
 
     .compact-register-form {
         grid-template-columns: 1fr;
+        row-gap: 14px;
     }
 
     .compact-register-form .form-group:nth-of-type(3),
     .compact-register-form .btn {
         grid-column: auto;
+    }
+
+    .register-page .btn {
+        margin-top: 4px;
+    }
+}
+
+@media (max-width: 420px) {
+    body,
+    .register-page {
+        padding: 12px;
+    }
+
+    .left-panel,
+    .right-panel,
+    .register-page .left-panel,
+    .register-page .right-panel {
+        padding: 24px 18px;
+    }
+
+    .brand-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        margin-bottom: 14px;
+    }
+
+    .entry-kicker {
+        margin-bottom: 12px;
+    }
+
+    .left-panel h1 {
+        font-size: 23px;
+    }
+
+    .entry-list div {
+        padding: 9px 10px;
+    }
+
+    .welcome-panel {
+        padding: 18px;
     }
 }

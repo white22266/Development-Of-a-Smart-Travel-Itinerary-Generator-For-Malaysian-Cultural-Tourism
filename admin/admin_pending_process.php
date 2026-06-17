@@ -27,6 +27,61 @@ function table_has_column(mysqli $conn, string $table, string $column): bool
     return ($res && $res->num_rows > 0);
 }
 
+function download_remote_image_to_uploads(string $url): ?string
+{
+    if (!preg_match('#^https?://#i', $url)) return null;
+
+    $uploadDir = "../uploads/places/";
+    if (!is_dir($uploadDir) && !mkdir($uploadDir, 0777, true)) return null;
+
+    $body = false;
+    if (function_exists("curl_init")) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_MAXREDIRS => 5,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 20,
+            CURLOPT_USERAGENT => "Mozilla/5.0 SmartTravelImageFetcher/1.0",
+            CURLOPT_SSL_VERIFYPEER => true,
+        ]);
+        $body = curl_exec($ch);
+        $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if ($status < 200 || $status >= 300) $body = false;
+    } else {
+        $context = stream_context_create([
+            "http" => [
+                "method" => "GET",
+                "timeout" => 20,
+                "header" => "User-Agent: Mozilla/5.0 SmartTravelImageFetcher/1.0\r\n",
+            ],
+        ]);
+        $body = @file_get_contents($url, false, $context);
+    }
+
+    if ($body === false || strlen((string)$body) < 200) return null;
+
+    $info = @getimagesizefromstring((string)$body);
+    if (!$info || empty($info["mime"]) || strpos($info["mime"], "image/") !== 0) return null;
+
+    $mime = strtolower((string)$info["mime"]);
+    $extMap = [
+        "image/jpeg" => "jpg",
+        "image/png" => "png",
+        "image/webp" => "webp",
+    ];
+    $ext = $extMap[$mime] ?? "";
+    if ($ext === "") return null;
+
+    $fileName = "suggest_google_" . time() . "_" . rand(1000, 9999) . "." . $ext;
+    $targetPath = $uploadDir . $fileName;
+    if (file_put_contents($targetPath, $body) === false) return null;
+
+    return "uploads/places/" . $fileName;
+}
+
 $action = strtolower(trim($_POST["action"] ?? ""));
 $suggestionId = (int)($_POST["suggestion_id"] ?? 0);
 $reviewNote = trim($_POST["review_note"] ?? "");
@@ -96,7 +151,14 @@ try {
     $description = $sug["description"];
     $address = $sug["address"] ?? "";
     $opening = $sug["opening_hours"] ?? "";
-    $imageUrl = $sug["image_url"] ?? null;
+    $imageUrl = trim((string)($sug["image_url"] ?? ""));
+    if ($imageUrl !== "" && preg_match('#^https?://#i', $imageUrl)) {
+        $downloadedImage = download_remote_image_to_uploads($imageUrl);
+        if ($downloadedImage !== null) {
+            $imageUrl = $downloadedImage;
+        }
+    }
+    if ($imageUrl === "") $imageUrl = null;
 
     $lat = $sug["latitude"];
     $lng = $sug["longitude"];

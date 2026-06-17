@@ -19,8 +19,9 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Smart Travel Itinerary Generator</title>
-    <link rel="stylesheet" href="../assets/style.css?v=20260513">
+    <link rel="stylesheet" href="../assets/style.css?v=20260617d">
 
     <script>
         function togglePassword(inputId, icon) {
@@ -30,9 +31,11 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
             if (input.type === "password") {
                 input.type = "text";
                 icon.textContent = "🙈";
+                icon.setAttribute("aria-label", "Hide password");
             } else {
                 input.type = "password";
                 icon.textContent = "👁️";
+                icon.setAttribute("aria-label", "Show password");
             }
         }
 
@@ -146,18 +149,16 @@ unset($_SESSION["form_errors"], $_SESSION["old_input"], $_SESSION["success_messa
                         value="<?php echo htmlspecialchars($old["phone"] ?? ""); ?>">
                 </div>
 
-                <div class="form-group" style="position:relative;">
+                <div class="form-group password-input-wrap">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required style="padding-right:40px;">
-                    <span onclick="togglePassword('password', this)"
-                        style="position:absolute; right:12px; top:50%; transform:translateY(0%); cursor:pointer; font-size:16px; color:#64748B;">👁️</span>
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="password-toggle-icon" onclick="togglePassword('password', this)" aria-label="Show password">👁️</button>
                 </div>
 
-                <div class="form-group" style="position:relative;">
+                <div class="form-group password-input-wrap">
                     <label for="confirm_password">Confirm Password</label>
-                    <input type="password" id="confirm_password" name="confirm_password" required style="padding-right:40px;">
-                    <span onclick="togglePassword('confirm_password', this)"
-                        style="position:absolute; right:12px; top:50%; transform:translateY(0%); cursor:pointer; font-size:16px; color:#64748B;">👁️</span>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                    <button type="button" class="password-toggle-icon" onclick="togglePassword('confirm_password', this)" aria-label="Show password">👁️</button>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Register</button>

@@ -389,9 +389,9 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         $intentRows = $hasAiLogs ? rows_query($conn, "
             SELECT
               CASE
-                WHEN LOWER(user_message) LIKE '%route%' OR user_message LIKE '%路线%' THEN 'Route writing'
-                WHEN LOWER(user_message) LIKE '%cost%' OR LOWER(user_message) LIKE '%budget%' OR user_message LIKE '%费用%' THEN 'Cost and budget'
-                WHEN LOWER(user_message) LIKE '%culture%' OR user_message LIKE '%文化%' THEN 'Cultural explanation'
+                WHEN LOWER(user_message) LIKE '%route%' OR user_message LIKE '%è·¯çº¿%' THEN 'Route writing'
+                WHEN LOWER(user_message) LIKE '%cost%' OR LOWER(user_message) LIKE '%budget%' OR user_message LIKE '%è´¹ç”¨%' THEN 'Cost and budget'
+                WHEN LOWER(user_message) LIKE '%culture%' OR user_message LIKE '%æ–‡åŒ–%' THEN 'Cultural explanation'
                 WHEN LOWER(user_message) LIKE '%improve%' OR LOWER(user_message) LIKE '%suggest%' THEN 'Improvement suggestion'
                 ELSE 'General question'
               END AS Intent,
@@ -656,7 +656,7 @@ if ($export === "csv") {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reports | Admin</title>
-    <link rel="stylesheet" href="../assets/dashboard_style.css">
+    <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         .report-filter { display:flex; gap:10px; flex-wrap:wrap; align-items:end; }
         .report-filter label { display:block; font-size:12px; font-weight:800; color:#475569; margin-bottom:5px; }
@@ -954,5 +954,7 @@ function renderReportCharts() {
 renderReportCharts();
 </script>
 <?php endif; ?>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+

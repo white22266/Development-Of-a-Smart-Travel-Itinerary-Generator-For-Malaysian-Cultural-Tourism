@@ -46,7 +46,7 @@
         return{dayNo:dayNo,nightNo:dayNo,itemId:itemId,placeId:replacement&&replacement.place_id?replacement.place_id:(card.dataset.placeId||''),title:titleEl?titleEl.textContent.trim():'',card:card};
     }
 
-    function headerHtml(){return '<div class="hotel-review-header"><div class="hotel-review-title"><h3>Optional Hotel Suggestions</h3><p>Hotel selection is optional. Each night can be expanded to view suggested hotels near that day\'s final kept stop, or skipped if the traveller books accommodation outside the system.</p></div><div class="hotel-section-tools"><button type="button" class="hotel-small-btn" id="hotel-expand-all">Expand all</button><button type="button" class="hotel-small-btn" id="hotel-collapse-all">Collapse all</button><span class="hotel-source-pill">Optional add-on</span></div></div>';}
+    function headerHtml(){return '<div class="hotel-review-header"><div class="hotel-review-title"><h3>Optional Hotel Suggestions</h3><p>Hotel selection is optional. Each night can be expanded to view suggested hotels near that day\'s final kept stop, or skipped if the traveller books accommodation outside the system.</p></div><div class="hotel-section-tools"><span class="hotel-source-pill">Optional add-on</span></div></div>';}
     function priceSourceLabel(hotel){if((hotel.price_source||'')==='serpapi_google_maps_price')return hotel.price_label?'SerpAPI price: '+hotel.price_label:'SerpAPI cached price';return 'Planning estimate';}
     function selectedName(nightNo){return nightlyHotelSelections[nightNo]&&nightlyHotelSelections[nightNo].hotel?nightlyHotelSelections[nightNo].hotel.name:'';}
 
@@ -63,11 +63,8 @@
 
     function attachSectionControls(){
         document.querySelectorAll('.night-toggle').forEach(function(btn){btn.addEventListener('click',function(){toggleNight(btn.dataset.night);});});
-        var expand=document.getElementById('hotel-expand-all');if(expand)expand.addEventListener('click',function(){setAllNights(false);});
-        var collapse=document.getElementById('hotel-collapse-all');if(collapse)collapse.addEventListener('click',function(){setAllNights(true);});
     }
     function toggleNight(nightNo){var content=document.getElementById('night-hotel-content-'+nightNo);var btn=document.querySelector('.night-toggle[data-night="'+nightNo+'"]');if(!content||!btn)return;var collapsed=content.classList.toggle('collapsed');btn.textContent=collapsed?'Show hotels':'Hide hotels';btn.setAttribute('aria-expanded',collapsed?'false':'true');}
-    function setAllNights(collapsed){document.querySelectorAll('.night-hotel-content').forEach(function(content){content.classList.toggle('collapsed',collapsed);});document.querySelectorAll('.night-toggle').forEach(function(btn){btn.textContent=collapsed?'Show hotels':'Hide hotels';btn.setAttribute('aria-expanded',collapsed?'false':'true');});}
 
     function renderNightLoading(nightNo, stop, lookupPricing){
         var block=document.getElementById('night-hotel-block-'+nightNo);var content=document.getElementById('night-hotel-content-'+nightNo);var stopEl=document.getElementById('night-stop-'+nightNo);var pill=document.getElementById('night-selected-'+nightNo);if(!block||!content)return;

@@ -8,7 +8,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller"; // ✅ add for sidebar
+$travellerName = $_SESSION["traveller_name"] ?? "Traveller"; // âœ… add for sidebar
 
 $itineraryId = (int)($_GET["itinerary_id"] ?? 0);
 if ($itineraryId <= 0) {
@@ -51,13 +51,13 @@ while ($r = $res->fetch_assoc()) {
 <head>
   <meta charset="UTF-8">
   <title>Trip Summary</title>
-  <link rel="stylesheet" href="../assets/dashboard_style.css">
+  <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
 </head>
 
 <body>
   <div class="app">
 
-    <!-- ✅ Sidebar (same layout as your preference_form) -->
+    <!-- âœ… Sidebar (same layout as your preference_form) -->
     <aside class="sidebar">
       <div class="brand">
         <div class="brand-badge">ST</div>
@@ -84,7 +84,7 @@ while ($r = $res->fetch_assoc()) {
       </div>
     </aside>
 
-    <!-- ✅ Main content -->
+    <!-- âœ… Main content -->
     <main class="content" style="padding:24px;">
       <div class="topbar">
         <div class="page-title">
@@ -134,7 +134,7 @@ while ($r = $res->fetch_assoc()) {
                     </tr>
                   <?php endforeach; ?>
 
-                  <!-- ✅ FIX: colspan must match table columns (6), not 12 -->
+                  <!-- âœ… FIX: colspan must match table columns (6), not 12 -->
                   <tr>
                     <td colspan="6" style="text-align:right; font-weight:900;">
                       Day <?php echo (int)$day; ?> Total: RM <?php echo number_format($dayTotal, 2); ?>
@@ -152,6 +152,7 @@ while ($r = $res->fetch_assoc()) {
       </div>
     </main>
   </div>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
 </html>

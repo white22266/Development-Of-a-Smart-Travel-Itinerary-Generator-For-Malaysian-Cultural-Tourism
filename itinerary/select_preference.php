@@ -103,15 +103,27 @@ function pref_short_label(array $pref): string {
 $preferencePayload = [];
 foreach ($preferences as $pref) {
   $pid = (int)$pref["preference_id"];
+  $days = max(1, (int)($pref["trip_days"] ?? 1));
+  $budget = (float)($pref["budget"] ?? 0);
+  $partySize = pref_party_size($pref);
   $preferencePayload[$pid] = [
     "id" => $pid,
-    "duration" => max(1, (int)($pref["trip_days"] ?? 1)) . " day(s)",
-    "budget" => pref_rm((float)($pref["budget"] ?? 0)),
+    "days" => $days,
+    "budget_amount" => $budget,
+    "budget_per_day" => $budget / $days,
+    "party_size" => $partySize,
+    "duration" => $days . " day(s)",
+    "budget" => pref_rm($budget),
     "transport" => pref_human_label((string)($pref["transport_type"] ?? "-")),
-    "traveller" => pref_human_label((string)($pref["traveller_type"] ?? "solo")) . " / " . pref_party_size($pref) . " traveller(s)",
+    "transport_type" => strtolower((string)($pref["transport_type"] ?? "")),
+    "traveller" => pref_human_label((string)($pref["traveller_type"] ?? "solo")) . " / " . $partySize . " traveller(s)",
+    "traveller_type" => strtolower((string)($pref["traveller_type"] ?? "solo")),
     "pace" => pref_human_label((string)($pref["travel_pace"] ?? "normal")),
+    "pace_value" => strtolower((string)($pref["travel_pace"] ?? "normal")),
     "dietary" => pref_human_label((string)($pref["dietary_preference"] ?? "none")),
+    "dietary_value" => strtolower((string)($pref["dietary_preference"] ?? "none")),
     "visit_time" => pref_human_label((string)($pref["preferred_visit_time"] ?? "any")),
+    "visit_time_value" => strtolower((string)($pref["preferred_visit_time"] ?? "any")),
     "location" => pref_location_label($pref),
     "interests" => pref_list_label((string)($pref["interests"] ?? "")),
     "accessibility" => trim((string)($pref["accessibility_needs"] ?? "")) !== "" ? trim((string)$pref["accessibility_needs"]) : "None",
@@ -124,7 +136,7 @@ foreach ($preferences as $pref) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smart Itinerary Generator | Smart Travel Itinerary Generator</title>
-  <link rel="stylesheet" href="../assets/dashboard_style.css">
+  <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
   <style>
     .generator-steps {
       display: grid;
@@ -225,21 +237,48 @@ foreach ($preferences as $pref) {
       line-height: 1.45;
       margin-bottom: 14px;
     }
-    .summary-list {
+    .preference-analysis-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      gap: 14px;
+      margin: 14px 0 16px;
     }
-    .summary-item {
+    .analysis-panel {
       border: 1px solid rgba(15,23,42,0.10);
-      border-radius: 10px;
-      padding: 10px 12px;
+      border-radius: 14px;
       background: rgba(15,23,42,0.02);
       font-size: 13px;
+      min-width: 0;
+      overflow: hidden;
     }
-    .summary-item strong { display: block; margin-bottom: 4px; }
-    .summary-item span { color: var(--muted); line-height: 1.35; }
-    .summary-item.full { grid-column: 1 / -1; }
+    .analysis-panel h4 {
+      margin: 0;
+      padding: 13px 14px 10px;
+      font-size: 13px;
+      color: var(--navy);
+    }
+    .analysis-rows {
+      padding: 0 14px 14px;
+    }
+    .analysis-row {
+      display: grid;
+      grid-template-columns: minmax(130px, 34%) 1fr;
+      gap: 12px;
+      padding: 8px 0;
+      border-top: 1px solid rgba(15,23,42,0.08);
+      line-height: 1.35;
+    }
+    .analysis-row strong {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .analysis-row span {
+      color: var(--text);
+      font-size: 12.5px;
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
     .empty-state {
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -250,10 +289,10 @@ foreach ($preferences as $pref) {
       line-height: 1.45;
     }
     details.help-box {
-      border: 1px solid var(--border);
+      border: 1px solid rgba(99, 102, 241, 0.28);
       border-radius: 14px;
       padding: 12px;
-      background: rgba(2,6,23,0.02);
+      background: rgba(99, 102, 241, 0.05);
       font-size: 13px;
     }
     details.help-box summary {
@@ -268,9 +307,9 @@ foreach ($preferences as $pref) {
       gap: 12px;
     }
     .help-subbox {
-      border: 1px solid var(--border);
+      border: 1px solid rgba(99, 102, 241, 0.24);
       border-radius: 12px;
-      background: #fff;
+      background: rgba(99, 102, 241, 0.035);
       padding: 12px;
     }
     .help-subbox h4 {
@@ -287,7 +326,13 @@ foreach ($preferences as $pref) {
     }
     .status-good { color: #6A4C00; font-weight: 700; }
     .status-bad { color: #991b1b; font-weight: 700; }
-    .ai-assistant-card { margin-top: 16px; }
+    .ai-toggle-row {
+      display: flex;
+      justify-content: flex-start;
+      margin: 12px 0 2px;
+    }
+    .ai-assistant-card { margin-top: 0; }
+    .is-hidden { display: none !important; }
     .ai-chat-body {
       min-height: 150px;
       max-height: 260px;
@@ -334,6 +379,7 @@ foreach ($preferences as $pref) {
     }
     @media (max-width: 980px) {
       .generator-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .preference-analysis-grid { grid-template-columns: 1fr; }
       .help-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
@@ -343,7 +389,11 @@ foreach ($preferences as $pref) {
       .ai-chat-form .btn { width: 100%; }
     }
     @media (max-width: 520px) {
-      .generator-steps, .summary-list { grid-template-columns: 1fr; }
+      .generator-steps { grid-template-columns: 1fr; }
+      .analysis-row {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
     }
   </style>
 </head>
@@ -384,6 +434,7 @@ foreach ($preferences as $pref) {
       </div>
       <div class="actions">
         <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back to Dashboard</a>
+        <button type="button" class="btn btn-primary" id="aiAssistantToggle" aria-expanded="false">AI Travel Assistant</button>
       </div>
     </div>
 
@@ -424,7 +475,7 @@ foreach ($preferences as $pref) {
           <a class="btn btn-primary" href="../preference/preference_form.php">Create Travel Preference</a>
         </div>
       <?php else: ?>
-        <div class="card col-8">
+        <div class="card col-12">
           <h3>Confirm Itinerary Details</h3>
           <p class="meta">Only three details are needed here before the itinerary can be generated.</p>
 
@@ -443,6 +494,17 @@ foreach ($preferences as $pref) {
               <div class="field-help">After submitting a preference, the latest preference is automatically selected here.</div>
             </div>
 
+            <div class="preference-analysis-grid is-hidden" id="preferenceAnalysisGrid">
+              <div class="analysis-panel">
+                <h4>Selected Preference Summary</h4>
+                <div id="preferenceSummary" class="analysis-rows"></div>
+              </div>
+              <div class="analysis-panel">
+                <h4>System Analysis Result</h4>
+                <div id="systemAnalysisResult" class="analysis-rows"></div>
+              </div>
+            </div>
+
             <div class="field-group" id="startDateField">
               <label for="start_date">Step 2: Start Date</label>
               <input type="date" name="start_date" id="start_date" min="<?php echo date('Y-m-d'); ?>" required>
@@ -453,7 +515,7 @@ foreach ($preferences as $pref) {
               <label for="origin_name">Step 3: Starting Location</label>
               <div class="location-input-row">
                 <input type="text" name="origin_name" id="origin_name" placeholder="Type a city or address, e.g. Johor Bahru, Kuala Lumpur..." autocomplete="off" required>
-                <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn">⌖ Use My Location</button>
+                <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn">Use My Location</button>
               </div>
               <input type="hidden" name="origin_lat" id="origin_lat">
               <input type="hidden" name="origin_lng" id="origin_lng">
@@ -463,18 +525,12 @@ foreach ($preferences as $pref) {
             </div>
 
             <div class="actions generate-actions">
-              <button type="submit" class="btn btn-primary">▶ Generate Itinerary</button>
+              <button type="submit" class="btn btn-primary">Generate Itinerary</button>
             </div>
           </form>
         </div>
 
-        <div class="card col-4">
-          <h3>Selected Preference Summary</h3>
-          <p class="meta">Review the selected preference before generating.</p>
-          <div id="preferenceSummary" class="empty-state">Select a saved preference to view the summary.</div>
-        </div>
-
-        <div class="card col-12 ai-assistant-card">
+        <div class="card col-12 ai-assistant-card is-hidden" id="aiAssistantCard">
           <h3>AI Travel Assistant</h3>
           <p class="meta">Ask the AI assistant if you are unsure about the start date, starting location, route plan or selected preference. AI gives guidance only; the official itinerary is still generated by system rules.</p>
           <div class="ai-chat-body" id="aiChatBody">
@@ -534,30 +590,95 @@ function escapeHtml(value) {
   });
 }
 
+function formatRm(amount) {
+  const number = Number(amount || 0);
+  return "RM " + number.toLocaleString("en-MY", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function titleCase(value) {
+  return String(value || "")
+    .replace(/[_-]+/g, " ")
+    .replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function renderAnalysisRows(rows) {
+  return rows.map(row => `
+    <div class="analysis-row">
+      <strong>${escapeHtml(row[0])}</strong>
+      <span>${escapeHtml(row[1])}</span>
+    </div>
+  `).join("");
+}
+
+function budgetLevel(pref) {
+  const perDay = Number(pref.budget_per_day || 0);
+  if (perDay <= 0) return "Not enough budget data";
+  if (perDay < 100) return `Limited (${formatRm(perDay)} per day estimate)`;
+  if (perDay < 250) return `Moderate (${formatRm(perDay)} per day estimate)`;
+  return `Comfortable (${formatRm(perDay)} per day estimate)`;
+}
+
+function activityRule(pref) {
+  const pace = String(pref.pace_value || "normal");
+  if (pace === "relaxed") return "Light schedule with longer rest time between stops.";
+  if (pace === "packed") return "Denser schedule with shorter rest time between stops.";
+  return "Balanced schedule based on selected travel pace.";
+}
+
+function foodRule(pref) {
+  const dietary = String(pref.dietary_value || "none");
+  if (dietary === "halal") return "Food places are filtered to halal records where available.";
+  if (dietary === "vegetarian") return "Food places are filtered to vegetarian-friendly records where available.";
+  return "No dietary restriction applied.";
+}
+
+function accessibilityRule(pref) {
+  const text = String(pref.accessibility || "").trim();
+  if (text === "" || text.toLowerCase() === "none") return "No special accessibility restriction";
+  return text;
+}
+
 function updatePreferenceSummary() {
   const select = document.getElementById("preference_id");
-  const box = document.getElementById("preferenceSummary");
-  if (!select || !box) return;
+  const analysisGrid = document.getElementById("preferenceAnalysisGrid");
+  const summaryBox = document.getElementById("preferenceSummary");
+  const analysisBox = document.getElementById("systemAnalysisResult");
+  if (!select || !summaryBox || !analysisBox) return;
 
   const pref = preferenceData[select.value];
   if (!pref) {
-    box.className = "empty-state";
-    box.innerHTML = "Select a saved preference to view the summary.";
+    if (analysisGrid) analysisGrid.classList.add("is-hidden");
+    summaryBox.innerHTML = "";
+    analysisBox.innerHTML = "";
     return;
   }
 
-  box.className = "summary-list";
-  box.innerHTML = `
-    <div class="summary-item"><strong>Preference</strong><span>#${escapeHtml(pref.id)}</span></div>
-    <div class="summary-item"><strong>Duration</strong><span>${escapeHtml(pref.duration)}</span></div>
-    <div class="summary-item"><strong>Budget</strong><span>${escapeHtml(pref.budget)}</span></div>
-    <div class="summary-item"><strong>Transport</strong><span>${escapeHtml(pref.transport)}</span></div>
-    <div class="summary-item"><strong>Traveller</strong><span>${escapeHtml(pref.traveller)}</span></div>
-    <div class="summary-item"><strong>Travel Pace</strong><span>${escapeHtml(pref.pace)}</span></div>
-    <div class="summary-item full"><strong>Location</strong><span>${escapeHtml(pref.location)}</span></div>
-    <div class="summary-item full"><strong>Interests</strong><span>${escapeHtml(pref.interests)}</span></div>
-    <div class="summary-item full"><strong>Accessibility</strong><span>${escapeHtml(pref.accessibility)}</span></div>
-  `;
+  if (analysisGrid) analysisGrid.classList.remove("is-hidden");
+
+  summaryBox.innerHTML = renderAnalysisRows([
+    ["Duration", pref.duration],
+    ["Budget", pref.budget],
+    ["Transport", pref.transport],
+    ["Traveller Type", titleCase(pref.traveller_type)],
+    ["Party Size", `${pref.party_size} traveller(s)`],
+    ["Pace", pref.pace],
+    ["Location", pref.location],
+    ["Interests", pref.interests],
+    ["Dietary", pref.dietary],
+    ["Visit Time", pref.visit_time],
+  ]);
+
+  analysisBox.innerHTML = renderAnalysisRows([
+    ["Traveller Profile", `${pref.pace} ${titleCase(pref.traveller_type)} Traveller`],
+    ["Party Size", `${pref.party_size} traveller(s)`],
+    ["Budget Level", budgetLevel(pref)],
+    ["Route Scope", `${pref.location} first`],
+    ["Activity Rule", activityRule(pref)],
+    ["Transport Rule", `${pref.transport} route mode with daily distance limit`],
+    ["Interest Rule", pref.interests],
+    ["Food Rule", foodRule(pref)],
+    ["Accessibility Rule", accessibilityRule(pref)],
+  ]);
 }
 
 function setLocationStatus(message, status) {
@@ -700,6 +821,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("generatorForm");
   const originInput = document.getElementById("origin_name");
   const currentLocationBtn = document.getElementById("useCurrentLocationBtn");
+  const aiToggle = document.getElementById("aiAssistantToggle");
+  const aiCard = document.getElementById("aiAssistantCard");
   const aiForm = document.getElementById("aiChatForm");
   const aiQuestion = document.getElementById("aiQuestion");
 
@@ -731,6 +854,18 @@ document.addEventListener("DOMContentLoaded", function () {
         () => setLocationStatus("Unable to get current location. Please search a starting point manually.", false),
         { enableHighAccuracy: true, timeout: 10000 }
       );
+    });
+  }
+
+  if (aiToggle && aiCard) {
+    aiToggle.addEventListener("click", function () {
+      const willOpen = aiCard.classList.contains("is-hidden");
+      aiCard.classList.toggle("is-hidden", !willOpen);
+      aiToggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      aiToggle.textContent = willOpen ? "Hide AI Travel Assistant" : "AI Travel Assistant";
+      if (willOpen) {
+        setTimeout(() => aiCard.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+      }
     });
   }
 
@@ -776,5 +911,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <?php if ($googleMapsKey !== ""): ?>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo rawurlencode($googleMapsKey); ?>&libraries=places&callback=initGooglePlacesAutocomplete"></script>
 <?php endif; ?>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+

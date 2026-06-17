@@ -120,7 +120,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Traveller Preference Analyzer | Smart Travel Itinerary Generator</title>
-  <link rel="stylesheet" href="../assets/dashboard_style.css">
+  <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
   <style>
     /* ---- Dropdown pair ---- */
     .location-row {
@@ -306,7 +306,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
               <label style="font-size:13px; font-weight:700;">Transport Type *</label>
               <select name="transport_type" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
-                <option value="" disabled <?php echo empty($oldTransport) ? 'selected' : ''; ?>>— Please choose a transport type —</option>
+                <option value="" disabled <?php echo empty($oldTransport) ? 'selected' : ''; ?>>- Please choose a transport type -</option>
                 <?php foreach ($transportOptions as $k => $v): ?>
                   <option value="<?php echo htmlspecialchars($k); ?>" <?php echo selected_val($oldTransport, $k); ?>>
                     <?php echo htmlspecialchars($v); ?>
@@ -429,7 +429,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 <div class="field-group">
                   <label for="preferred_state">State</label>
                   <select name="preferred_states" id="preferred_state">
-                    <option value="">— Any State (Nationwide) —</option>
+                    <option value="">- Any State (Nationwide) -</option>
                     <?php foreach (array_keys($stateDistricts) as $state): ?>
                       <option value="<?php echo htmlspecialchars($state); ?>"
                         <?php echo ($oldState === $state) ? 'selected' : ''; ?>>
@@ -445,7 +445,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                   <label for="preferred_district">District</label>
                   <select name="preferred_districts" id="preferred_district"
                     <?php echo ($oldState === "") ? 'disabled' : ''; ?>>
-                    <option value="">— Any District —</option>
+                    <option value="">- Any District -</option>
                     <?php
                     // Pre-populate districts if a state was previously selected
                     if ($oldState !== "" && isset($stateDistricts[$oldState])) {
@@ -536,10 +536,10 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
   function populateDistricts(state) {
     // Clear existing options
-    distSel.innerHTML = '<option value="">— Any District —</option>';
+    distSel.innerHTML = '<option value="">- Any District -</option>';
 
     if (!state || !stateDistricts[state]) {
-      // No state selected — disable and show hint
+      // No state selected - disable and show hint
       distSel.disabled = true;
       distHint.textContent = 'Select a state above to enable this dropdown.';
       distWarn.classList.remove('visible');
@@ -677,5 +677,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
   showStep(1);
 })();
 </script>
+  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>
+
