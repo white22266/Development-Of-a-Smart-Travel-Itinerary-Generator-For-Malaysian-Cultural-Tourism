@@ -4,10 +4,10 @@
  * services/AiAdminReportAnalysisService.php
  *
  * Admin report explanation service.
- * PHP first extracts verified facts from the database report, then Ollama only
- * rewrites those facts into a concise admin-friendly explanation. If Ollama is
- * unavailable or exceeds the timeout, the same verified facts are rendered by a
- * local deterministic template.
+ * PHP first extracts verified facts from the database report. Ollama only rewrites
+ * those verified facts into a professional admin-friendly explanation. If Ollama
+ * is unavailable, too slow, or produces unsuitable text, the same verified facts
+ * are rendered with a longer deterministic local narrative.
  */
 class AiAdminReportAnalysisService
 {
@@ -28,7 +28,7 @@ class AiAdminReportAnalysisService
         $this->fastMode = in_array($fast, ['1', 'true', 'yes', 'on'], true);
         $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 20));
         $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
-        $this->numPredict = max(180, min(500, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 280)));
+        $this->numPredict = max(350, min(1000, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 650)));
         $this->numCtx = max(512, min(4096, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 1024))));
         $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '30m')));
         if ($this->keepAlive === '' || $this->keepAlive === '-1') $this->keepAlive = '30m';
@@ -57,9 +57,9 @@ class AiAdminReportAnalysisService
                     'analysis' => $cleanAi,
                 ];
             }
-            error_log('Ollama admin report output rejected; using local verified-facts summary.');
+            error_log('Ollama admin report output rejected; using longer local verified-facts narrative.');
         } else {
-            error_log('Ollama admin report failed; using local verified-facts summary: ' . (string)($ai['analysis'] ?? 'Unknown Ollama error.'));
+            error_log('Ollama admin report failed; using longer local verified-facts narrative: ' . (string)($ai['analysis'] ?? 'Unknown Ollama error.'));
         }
 
         return [
@@ -76,28 +76,29 @@ class AiAdminReportAnalysisService
         }
 
         $instructions = implode("\n", [
-            'Write a concise admin report explanation from verified facts only.',
-            'Do not calculate, rank, infer, or create new categories.',
-            'Do not mention JSON, dataset, snapshot, prompt, user request, provided data, or missing data.',
+            'Write a professional admin report explanation from verified facts only.',
+            'Do not calculate, rank, infer, or create new categories beyond the verified facts.',
+            'Do not mention JSON, dataset, snapshot, prompt, user request, provided data, supplied data, or missing data.',
             'Do not ask questions. Do not offer more help. Do not write a closing sentence.',
             'Do not use tables or markdown table syntax.',
             'Use only these exact headings: Report Summary, Key Findings, Admin Actions.',
-            'Report Summary must be one short paragraph with 2 sentences.',
-            'Key Findings must contain exactly 3 bullet points.',
-            'Admin Actions must contain exactly 2 bullet points.',
-            'Keep the whole answer under 140 words.',
+            'Report Summary must be one complete paragraph with 4 to 5 sentences.',
+            'Key Findings must contain exactly 4 bullet points and explain what the facts mean for the admin.',
+            'Admin Actions must contain exactly 3 bullet points with practical actions.',
+            'Keep the whole answer between 240 and 330 words.',
+            'Write in a formal final-year-project report style, not chatbot style.',
         ]);
 
         $payload = [
             'model' => $this->model,
             'messages' => [
                 ['role' => 'system', 'content' => $instructions],
-                ['role' => 'user', 'content' => "Verified report facts:\n" . json_encode($facts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
+                ['role' => 'user', 'content' => "Verified report facts only:\n" . json_encode($facts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
             ],
             'stream' => false,
             'keep_alive' => $this->keepAlive,
             'options' => [
-                'temperature' => 0.1,
+                'temperature' => 0.15,
                 'num_ctx' => $this->numCtx,
                 'num_predict' => $this->numPredict,
                 'num_thread' => 2,
@@ -132,7 +133,7 @@ class AiAdminReportAnalysisService
             return ['status' => 'error', 'source' => 'ollama', 'analysis' => $debug];
         }
 
-        $json = json_decode($raw, true);
+        $json = json_decode((string)$raw, true);
         if (!is_array($json)) {
             return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'Invalid AI response. Raw response: ' . substr((string)$raw, 0, 800)];
         }
@@ -151,40 +152,50 @@ class AiAdminReportAnalysisService
         $period = (string)($reportData['period'] ?? '');
         $kpis = is_array($reportData['kpis'] ?? null) ? $reportData['kpis'] : [];
         $sections = is_array($reportData['sections'] ?? null) ? $reportData['sections'] : [];
-        $kpiMap = $this->kpiMap($kpis);
 
         $facts = [
             'report_type' => $type,
-            'period' => $period,
+            'report_label' => $this->reportLabel($type),
+            'period' => $period !== '' ? $period : 'All time',
             'summary_points' => [],
             'key_findings' => [],
-            'admin_actions' => [],
+            'admin_actions' => $this->defaultActions($type),
         ];
 
-        switch ($type) {
-            case 'user_preferences':
-                $facts = $this->factsForUserPreferences($facts, $kpiMap, $sections);
-                break;
-            case 'destination_demand':
-                $facts = $this->factsForDestinationDemand($facts, $kpiMap, $sections);
-                break;
-            case 'attraction_price':
-                $facts = $this->factsForAttractionPrice($facts, $kpiMap, $sections);
-                break;
-            case 'cost_budget':
-                $facts = $this->factsForCostBudget($facts, $kpiMap, $sections);
-                break;
-            case 'ai_usage':
-                $facts = $this->factsForAiUsage($facts, $kpiMap, $sections);
-                break;
-            default:
-                $facts = $this->factsForOverview($facts, $kpiMap, $sections);
-                break;
+        foreach ($kpis as $kpi) {
+            if (!is_array($kpi)) continue;
+            $label = trim((string)($kpi['label'] ?? ''));
+            $value = trim((string)($kpi['value'] ?? ''));
+            $note = trim((string)($kpi['note'] ?? ''));
+            if ($label === '' || $value === '') continue;
+            $facts['summary_points'][] = $label . ': ' . $value . ($note !== '' ? ' (' . $note . ')' : '') . '.';
         }
 
-        $facts['summary_points'] = $this->limitNonEmpty($facts['summary_points'], 4);
-        $facts['key_findings'] = $this->limitNonEmpty($facts['key_findings'], 3);
-        $facts['admin_actions'] = $this->limitNonEmpty($facts['admin_actions'], 2);
+        foreach ($this->preferredSectionTitles($type) as $titleNeedle) {
+            $row = $this->firstRow($sections, $titleNeedle);
+            if ($row) {
+                $facts['key_findings'][] = $titleNeedle . ': ' . $this->rowPair($row, array_keys($row)) . '.';
+            }
+        }
+
+        if (count($facts['key_findings']) < 4) {
+            foreach ($sections as $section) {
+                if (!is_array($section)) continue;
+                $title = trim((string)($section['title'] ?? ''));
+                if ($title === '') continue;
+                $row = is_array($section['rows'][0] ?? null) ? $section['rows'][0] : null;
+                if (!$row) continue;
+                $candidate = $title . ': ' . $this->rowPair($row, array_keys($row)) . '.';
+                if (!in_array($candidate, $facts['key_findings'], true)) {
+                    $facts['key_findings'][] = $candidate;
+                }
+                if (count($facts['key_findings']) >= 5) break;
+            }
+        }
+
+        $facts['summary_points'] = $this->limitNonEmpty($facts['summary_points'], 6);
+        $facts['key_findings'] = $this->limitNonEmpty($facts['key_findings'], 5);
+        $facts['admin_actions'] = $this->limitNonEmpty($facts['admin_actions'], 3);
 
         if (empty($facts['summary_points'])) {
             $facts['summary_points'][] = 'The report was generated from available system records for the selected period.';
@@ -199,145 +210,38 @@ class AiAdminReportAnalysisService
         return $facts;
     }
 
-    private function factsForUserPreferences(array $facts, array $kpiMap, array $sections): array
-    {
-        $records = $this->kpi($kpiMap, 'preference records');
-        $topInterest = $this->kpi($kpiMap, 'top interest');
-        $topState = $this->kpi($kpiMap, 'top desired state');
-        $avgBudget = $this->kpi($kpiMap, 'average budget');
-        $lowestInterest = $this->firstRow($sections, 'Lowest User Interests');
-        $lowestState = $this->firstRow($sections, 'Lowest Desired States');
-        $transport = $this->firstRow($sections, 'Transport Preference Analysis');
-
-        if ($records) $facts['summary_points'][] = 'Preference records: ' . $this->kpiDisplay($records) . '.';
-        if ($topInterest) $facts['summary_points'][] = 'Top interest: ' . $this->kpiDisplay($topInterest) . '.';
-        if ($topState) $facts['summary_points'][] = 'Top desired state: ' . $this->kpiDisplay($topState) . '.';
-        if ($avgBudget) $facts['summary_points'][] = 'Average budget: ' . $this->kpiDisplay($avgBudget) . '.';
-
-        if ($topInterest) $facts['key_findings'][] = 'Strongest pattern: ' . $this->kpiDisplay($topInterest) . ' shows the highest user interest.';
-        if ($lowestInterest) $facts['key_findings'][] = 'Weakest interest pattern: ' . $this->rowPair($lowestInterest, ['Interest', 'Total']) . '.';
-        if ($lowestState) $facts['key_findings'][] = 'Lowest state demand: ' . $this->rowPair($lowestState, ['State', 'Total']) . '.';
-        if ($transport) $facts['key_findings'][] = 'Transport pattern: ' . $this->rowPair($transport, ['Transport', 'Total', 'Average Budget']) . '.';
-
-        $facts['admin_actions'][] = 'Prioritize itinerary content around high-demand interests and states shown in the report.';
-        $facts['admin_actions'][] = 'Review low-demand interests or states and improve cultural place coverage only where it supports system completeness.';
-        return $facts;
-    }
-
-    private function factsForDestinationDemand(array $facts, array $kpiMap, array $sections): array
-    {
-        $mostDesired = $this->kpi($kpiMap, 'most desired state');
-        $leastDesired = $this->kpi($kpiMap, 'least desired state');
-        $mostGenerated = $this->kpi($kpiMap, 'most generated state');
-        $records = $this->kpi($kpiMap, 'destination records');
-        $topDistrict = $this->firstRow($sections, 'Highest Desired Districts');
-
-        if ($mostDesired) $facts['summary_points'][] = 'Most desired state: ' . $this->kpiDisplay($mostDesired) . '.';
-        if ($mostGenerated) $facts['summary_points'][] = 'Most generated state: ' . $this->kpiDisplay($mostGenerated) . '.';
-        if ($records) $facts['summary_points'][] = 'Destination records: ' . $this->kpiDisplay($records) . '.';
-
-        if ($mostDesired) $facts['key_findings'][] = 'Strongest user destination demand: ' . $this->kpiDisplay($mostDesired) . '.';
-        if ($leastDesired) $facts['key_findings'][] = 'Lowest user destination demand: ' . $this->kpiDisplay($leastDesired) . '.';
-        if ($mostDesired && $mostGenerated && strcasecmp((string)$mostDesired['value'], (string)$mostGenerated['value']) !== 0) {
-            $facts['key_findings'][] = 'Demand-generation gap: users most desire ' . $mostDesired['value'] . ', while generated routes most often include ' . $mostGenerated['value'] . '.';
-        } elseif ($topDistrict) {
-            $facts['key_findings'][] = 'Top district demand: ' . $this->rowPair($topDistrict, ['District', 'Total']) . '.';
-        }
-
-        $facts['admin_actions'][] = 'Compare desired destinations with generated itinerary output to improve route alignment.';
-        $facts['admin_actions'][] = 'Increase or refine cultural place records in high-demand states and districts where coverage is weak.';
-        return $facts;
-    }
-
-    private function factsForAttractionPrice(array $facts, array $kpiMap, array $sections): array
-    {
-        foreach (['active attractions', 'free places', 'highest price', 'average price'] as $needle) {
-            $kpi = $this->kpi($kpiMap, $needle);
-            if ($kpi) $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
-        }
-        $category = $this->firstRow($sections, 'Category and Price Summary');
-        $popular = $this->firstRow($sections, 'Most Used Attractions');
-        $completeness = $this->firstRow($sections, 'Data Completeness Check');
-
-        if ($category) $facts['key_findings'][] = 'Category coverage: ' . $this->rowPair($category, ['Category', 'Places', 'Average Price']) . '.';
-        if ($popular) $facts['key_findings'][] = 'Most used attraction pattern: ' . $this->rowPair($popular, ['Place', 'State', 'Used', 'Price']) . '.';
-        if ($completeness) $facts['key_findings'][] = 'Data quality issue: ' . $this->rowPair($completeness, ['Issue', 'Total']) . '.';
-
-        $facts['admin_actions'][] = 'Review attraction prices and usage patterns to keep itinerary cost estimates realistic.';
-        $facts['admin_actions'][] = 'Complete missing attraction data such as coordinates, images, opening hours, or visit duration.';
-        return $facts;
-    }
-
-    private function factsForCostBudget(array $facts, array $kpiMap, array $sections): array
-    {
-        foreach (['average trip cost', 'lowest trip cost', 'highest trip cost', 'over budget trips'] as $needle) {
-            $kpi = $this->kpi($kpiMap, $needle);
-            if ($kpi) $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
-        }
-        $budgetFit = $this->firstRow($sections, 'Budget Fit Summary');
-        $highestTrip = $this->firstRow($sections, 'Highest Cost Itineraries');
-        $monthly = $this->firstRow($sections, 'Monthly Cost Trend');
-
-        if ($budgetFit) $facts['key_findings'][] = 'Budget fit pattern: ' . $this->rowPair($budgetFit, ['Status', 'Trips', 'Average Trip Cost', 'Average User Budget']) . '.';
-        if ($highestTrip) $facts['key_findings'][] = 'Highest cost itinerary: ' . $this->rowPair($highestTrip, ['Itinerary', 'Days', 'Cost', 'Budget']) . '.';
-        if ($monthly) $facts['key_findings'][] = 'Monthly cost trend: ' . $this->rowPair($monthly, ['Month', 'Trips', 'Average Cost']) . '.';
-
-        $facts['admin_actions'][] = 'Review over-budget trips and adjust hotel, food, or transport cost assumptions.';
-        $facts['admin_actions'][] = 'Use high-cost itinerary records to verify whether the estimation logic is realistic.';
-        return $facts;
-    }
-
-    private function factsForAiUsage(array $facts, array $kpiMap, array $sections): array
-    {
-        foreach (['ai questions', 'assistant responses', 'itinerary questions', 'active ai users'] as $needle) {
-            $kpi = $this->kpi($kpiMap, $needle);
-            if ($kpi) $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
-        }
-        $intent = $this->firstRow($sections, 'AI Question Intent Summary');
-        $user = $this->firstRow($sections, 'Most Active AI Users');
-
-        if ($intent) $facts['key_findings'][] = 'Most common AI question intent: ' . $this->rowPair($intent, ['Intent', 'Total']) . '.';
-        if ($user) $facts['key_findings'][] = 'Most active AI user pattern: ' . $this->rowPair($user, ['Traveller', 'Questions', 'Last Question']) . '.';
-        $facts['key_findings'][] = 'AI usage data shows how travellers use the assistant during itinerary planning.';
-
-        $facts['admin_actions'][] = 'Improve AI assistant responses for the most common question intents.';
-        $facts['admin_actions'][] = 'Test AI answers against real itinerary records before the final demonstration.';
-        return $facts;
-    }
-
-    private function factsForOverview(array $facts, array $kpiMap, array $sections): array
-    {
-        foreach ($kpiMap as $kpi) {
-            $facts['summary_points'][] = $kpi['label'] . ': ' . $this->kpiDisplay($kpi) . '.';
-        }
-        foreach (array_slice($sections, 0, 3) as $section) {
-            if (!is_array($section)) continue;
-            $row = is_array($section['rows'][0] ?? null) ? $section['rows'][0] : null;
-            if ($row) $facts['key_findings'][] = (string)($section['title'] ?? 'Section') . ': ' . $this->rowPair($row, array_keys($row)) . '.';
-        }
-        $facts['admin_actions'][] = 'Use the overview to identify system modules with strong activity and weak data coverage.';
-        $facts['admin_actions'][] = 'Keep report exports as supporting evidence for final project evaluation.';
-        return $facts;
-    }
-
     private function buildLocalNarrative(array $facts): string
     {
-        $summary = $this->limitNonEmpty($facts['summary_points'] ?? [], 4);
-        $findings = $this->limitNonEmpty($facts['key_findings'] ?? [], 3);
-        $actions = $this->limitNonEmpty($facts['admin_actions'] ?? [], 2);
+        $label = (string)($facts['report_label'] ?? 'Admin Report');
+        $period = (string)($facts['period'] ?? 'All time');
+        $summary = $this->limitNonEmpty($facts['summary_points'] ?? [], 6);
+        $findings = $this->limitNonEmpty($facts['key_findings'] ?? [], 5);
+        $actions = $this->limitNonEmpty($facts['admin_actions'] ?? [], 3);
 
-        $summaryText = implode(' ', $summary);
-        if ($summaryText === '') $summaryText = 'The report summarizes available system activity for the selected period.';
+        $summarySentence = implode(' ', $summary);
+        if ($summarySentence === '') {
+            $summarySentence = 'The report summarizes available system activity for the selected period.';
+        }
+
+        $interpretation = $this->localInterpretation((string)($facts['report_type'] ?? 'overview'));
 
         $lines = [];
         $lines[] = 'Report Summary';
-        $lines[] = $summaryText;
+        $lines[] = 'This ' . strtolower($label) . ' covers the period of ' . $period . ' and explains the main database-backed indicators that require admin attention. ' . $summarySentence . ' ' . $interpretation . ' The purpose of this summary is to help the administrator understand the meaning of the report without relying only on tables and charts.';
         $lines[] = '';
         $lines[] = 'Key Findings';
-        foreach ($findings as $finding) $lines[] = '- ' . ltrim($finding, '- ');
+        foreach ($findings as $finding) {
+            $lines[] = '- ' . ltrim($finding, '- ');
+        }
+        $findingCount = count($findings);
+        if ($findingCount < 4) {
+            $lines[] = '- The available indicators should be reviewed together with the report tables to confirm whether the pattern is consistent across the selected period.';
+        }
         $lines[] = '';
         $lines[] = 'Admin Actions';
-        foreach ($actions as $action) $lines[] = '- ' . ltrim($action, '- ');
+        foreach ($actions as $action) {
+            $lines[] = '- ' . ltrim($action, '- ');
+        }
         return trim(implode("\n", $lines));
     }
 
@@ -392,39 +296,79 @@ class AiAdminReportAnalysisService
         foreach ($bad as $phrase) {
             if (str_contains($lower, $phrase)) return false;
         }
-        return true;
+        return str_word_count(strip_tags($text)) >= 90;
     }
 
-    private function kpiMap(array $kpis): array
+    private function reportLabel(string $type): string
     {
-        $map = [];
-        foreach ($kpis as $kpi) {
-            if (!is_array($kpi)) continue;
-            $label = trim((string)($kpi['label'] ?? ''));
-            if ($label === '') continue;
-            $map[strtolower($label)] = [
-                'label' => $label,
-                'value' => (string)($kpi['value'] ?? '-'),
-                'note' => trim((string)($kpi['note'] ?? '')),
-            ];
-        }
-        return $map;
+        return match ($type) {
+            'user_preferences' => 'User Preference Analysis Report',
+            'destination_demand' => 'Destination Demand Report',
+            'attraction_price' => 'Attraction and Price Report',
+            'cost_budget' => 'Cost and Budget Report',
+            'ai_usage' => 'AI Usage Report',
+            default => 'System Overview Report',
+        };
     }
 
-    private function kpi(array $kpiMap, string $needle): ?array
+    private function preferredSectionTitles(string $type): array
     {
-        $needle = strtolower($needle);
-        foreach ($kpiMap as $label => $kpi) {
-            if (str_contains($label, $needle)) return $kpi;
-        }
-        return null;
+        return match ($type) {
+            'user_preferences' => ['Highest User Interests', 'Lowest User Interests', 'Highest Desired States', 'Lowest Desired States', 'Transport Preference Analysis', 'Budget Range Analysis'],
+            'destination_demand' => ['Highest Desired States from Users', 'Lowest Desired States from Users', 'Actual Generated Destination States', 'Actual Generated Destination Districts'],
+            'attraction_price' => ['Category and Price Summary', 'Most Used Attractions in Itineraries', 'Highest Price Attractions', 'Data Completeness Check'],
+            'cost_budget' => ['Budget Fit Summary', 'Highest Cost Itineraries', 'Lowest Cost Itineraries', 'Monthly Cost Trend'],
+            'ai_usage' => ['AI Question Intent Summary', 'Most Active AI Users'],
+            default => ['System Summary', 'Monthly Trip Generation', 'Content Suggestion Status', 'Top Reviewed Places'],
+        };
     }
 
-    private function kpiDisplay(array $kpi): string
+    private function defaultActions(string $type): array
     {
-        $value = trim((string)($kpi['value'] ?? '-'));
-        $note = trim((string)($kpi['note'] ?? ''));
-        return $value . ($note !== '' ? ' (' . $note . ')' : '');
+        return match ($type) {
+            'user_preferences' => [
+                'Prioritize itinerary content around high-demand interests and states shown in the report.',
+                'Review low-demand interests or states and improve cultural place coverage only where it supports system completeness.',
+                'Use budget and transport patterns to adjust itinerary personalization rules and recommendation priorities.',
+            ],
+            'destination_demand' => [
+                'Compare desired destinations with generated itinerary output to improve route alignment.',
+                'Increase or refine cultural place records in high-demand states and districts where coverage is weak.',
+                'Use demand-generation gaps to decide which destination data should be expanded before the final demonstration.',
+            ],
+            'attraction_price' => [
+                'Review attraction prices and usage patterns to keep itinerary cost estimates realistic.',
+                'Complete missing attraction data such as coordinates, images, opening hours, or visit duration.',
+                'Use the price distribution to identify records that may need correction before report export.',
+            ],
+            'cost_budget' => [
+                'Review over-budget trips and adjust hotel, food, or transport cost assumptions.',
+                'Use high-cost itinerary records to verify whether the estimation logic is realistic.',
+                'Compare user budgets with generated trip costs to improve budget-fit recommendations.',
+            ],
+            'ai_usage' => [
+                'Improve AI assistant responses for the most common question intents.',
+                'Test AI answers against real itinerary records before the final demonstration.',
+                'Use active-user patterns to identify where travellers need clearer itinerary explanations.',
+            ],
+            default => [
+                'Use the overview to identify system modules with strong activity and weak data coverage.',
+                'Keep report exports as supporting evidence for final project evaluation.',
+                'Review sections with low or empty data before presenting the system demonstration.',
+            ],
+        };
+    }
+
+    private function localInterpretation(string $type): string
+    {
+        return match ($type) {
+            'user_preferences' => 'The indicators are useful for understanding what users want most, which areas show weaker demand, and how budget or transport choices should guide personalization.',
+            'destination_demand' => 'The indicators are useful for comparing what users request against what the itinerary generator actually produces.',
+            'attraction_price' => 'The indicators are useful for checking whether the cultural place knowledge base is complete, balanced, and suitable for cost-aware itinerary generation.',
+            'cost_budget' => 'The indicators are useful for evaluating whether generated itineraries stay realistic against user budgets and cost assumptions.',
+            'ai_usage' => 'The indicators are useful for understanding how travellers use the AI assistant and which question types need stronger responses.',
+            default => 'The indicators are useful for reviewing system readiness, data coverage, and the reliability of report exports.',
+        };
     }
 
     private function firstRow(array $sections, string $titleNeedle): ?array
@@ -448,16 +392,16 @@ class AiAdminReportAnalysisService
         foreach ($preferredKeys as $key) {
             if (array_key_exists($key, $row)) {
                 $value = trim((string)$row[$key]);
-                if ($value !== '') $pairs[] = $key . ' = ' . $value;
+                if ($value !== '') $pairs[] = $key . ': ' . $value;
             }
-            if (count($pairs) >= 3) break;
+            if (count($pairs) >= 4) break;
         }
         if (empty($pairs)) {
             foreach ($row as $key => $value) {
                 if (is_array($value)) continue;
                 $value = trim((string)$value);
-                if ($value !== '') $pairs[] = $key . ' = ' . $value;
-                if (count($pairs) >= 3) break;
+                if ($value !== '') $pairs[] = $key . ': ' . $value;
+                if (count($pairs) >= 4) break;
             }
         }
         return implode(', ', $pairs);
