@@ -3,8 +3,8 @@
 /**
  * services/AiAdminReportAnalysisService.php
  *
- * AI analysis for admin reports. Uses Gemini first when configured, then local
- * Ollama, and finally deterministic local insights when AI is unavailable.
+ * AI analysis for admin reports. Uses local Ollama only and falls back
+ * to deterministic local insights if Ollama is unavailable or exceeds the timeout.
  */
 class AiAdminReportAnalysisService
 {
@@ -23,139 +23,75 @@ class AiAdminReportAnalysisService
         $this->baseUrl = rtrim(trim((string)($baseUrl ?: (getenv('OLLAMA_BASE_URL') ?: 'http://127.0.0.1:11434'))), '/');
         $fast = strtolower(trim((string)(getenv('ADMIN_AI_FAST_MODE') ?: 'false')));
         $this->fastMode = in_array($fast, ['1', 'true', 'yes', 'on'], true);
-        $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 25));
+        $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 20));
         $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
-        $this->numPredict = max(60, min(220, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 110)));
-        $this->numCtx = max(256, min(2048, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512))));
-        $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '-1')));
-        if ($this->keepAlive === '') $this->keepAlive = '-1';
+
+        // This value controls Ollama response length. The previous 220-token cap was too short
+        // and caused outputs such as only "1. Preference Summary". Allow a fuller report.
+        $this->numPredict = max(120, min(1200, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 700)));
+        $this->numCtx = max(512, min(4096, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 1024))));
+        $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '30m')));
+        if ($this->keepAlive === '' || $this->keepAlive === '-1') $this->keepAlive = '30m';
     }
 
     public function analyze(array $reportData): array
     {
+        $fallback = $this->fallbackAnalysis($reportData);
+
         if ($this->fastMode) {
             return [
                 'status' => 'success',
                 'source' => 'fast_local_report',
-                'analysis' => $this->fallbackAnalysis($reportData),
+                'analysis' => "AI Source: Fast Local Report
+Ollama was skipped because ADMIN_AI_FAST_MODE is enabled.
+
+Default Fallback Report
+" . $fallback,
             ];
         }
 
-        $gemini = $this->callGemini($reportData);
-        if (($gemini['status'] ?? '') === 'success') return $gemini;
-        if (($gemini['message'] ?? '') !== '') {
-            error_log('Gemini admin report fallback to Ollama: ' . $gemini['message']);
+        $startedAt = microtime(true);
+        $ai = $this->callOllama($reportData);
+        $elapsed = round(microtime(true) - $startedAt, 2);
+
+        if (($ai['status'] ?? '') === 'success') {
+            $cleanAi = $this->cleanOllamaReportText((string)($ai['analysis'] ?? ''));
+
+            return [
+                'status' => 'success',
+                'source' => 'ollama_with_fallback',
+                'analysis' => "AI Source: Ollama
+Generated in {$elapsed} second(s) using {$this->model}.
+
+AI Analysis
+" . $cleanAi . "
+
+Default Fallback Report
+" . $fallback,
+            ];
         }
 
-        $ai = $this->callOllama($reportData);
-        if (($ai['status'] ?? '') === 'success') return $ai;
+        $reason = trim((string)($ai['analysis'] ?? 'Unknown Ollama error.'));
 
         return [
             'status' => 'success',
-            'source' => 'local_fallback',
-            'analysis' => $this->fallbackAnalysis($reportData),
+            'source' => 'ollama_failed_with_fallback',
+            'analysis' => "AI Source: Ollama failed
+Ollama was attempted first and did not complete successfully within the configured timeout ({$this->timeout} second(s)).
+Actual elapsed time: {$elapsed} second(s).
+
+Reason:
+" . $reason . "
+
+Default Fallback Report
+" . $fallback,
         ];
-    }
-
-    private function callGemini(array $reportData): array
-    {
-        $apiKey = defined('GEMINI_API_KEY') ? trim((string)GEMINI_API_KEY) : '';
-        if ($apiKey === '') {
-            return ['status' => 'skipped', 'source' => 'gemini', 'message' => 'Gemini API key is not configured.'];
-        }
-        if (!function_exists('curl_init')) {
-            return ['status' => 'error', 'source' => 'gemini', 'message' => 'cURL is not enabled.'];
-        }
-
-        $compactData = $this->compactReportData($reportData);
-        $reportType = (string)($compactData['report_type'] ?? 'overview');
-        $typeInstructions = $this->reportTypeInstructions($reportType);
-        $instructions = implode("\n", [
-            "You are an admin analytics assistant for a Malaysian cultural tourism itinerary system.",
-            "Analyze only the selected report type: {$reportType}.",
-            "Use only the KPI and section rows provided in the compact JSON snapshot. Do not invent missing data.",
-            "Do not analyze unrelated modules or report types. For example, only discuss AI usage when report_type is ai_usage.",
-            "Follow this exact analysis focus and headings:",
-            $typeInstructions,
-            "Mention concrete numbers from the selected report. Keep it concise for a final year project admin report.",
-            "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
-        ]);
-
-        $model = defined('GEMINI_MODEL') && trim((string)GEMINI_MODEL) !== ''
-            ? trim((string)GEMINI_MODEL)
-            : 'gemini-2.5-flash';
-        $url = 'https://generativelanguage.googleapis.com/v1beta/models/' . rawurlencode($model) . ':generateContent';
-        $payload = [
-            'systemInstruction' => [
-                'parts' => [['text' => $instructions]],
-            ],
-            'contents' => [[
-                'role' => 'user',
-                'parts' => [[
-                    'text' => "Compact admin report database snapshot:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-                ]],
-            ]],
-            'generationConfig' => [
-                'temperature' => 0.2,
-                'maxOutputTokens' => $this->numPredict,
-            ],
-        ];
-
-        $ch = curl_init($url);
-        if (!$ch) {
-            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Gemini request could not be prepared.'];
-        }
-
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_HTTPHEADER => [
-                'Content-Type: application/json',
-                'x-goog-api-key: ' . $apiKey,
-            ],
-            CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-            CURLOPT_TIMEOUT => $this->timeout,
-            CURLOPT_CONNECTTIMEOUT => $this->connectTimeout,
-            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
-        ]);
-
-        $raw = curl_exec($ch);
-        $err = curl_error($ch);
-        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($raw === false || $err !== '') {
-            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Gemini request failed: ' . $err];
-        }
-
-        $json = json_decode((string)$raw, true);
-        if ($code < 200 || $code >= 300) {
-            $message = is_array($json) ? (string)($json['error']['message'] ?? 'Gemini HTTP error ' . $code) : 'Gemini HTTP error ' . $code;
-            return ['status' => 'error', 'source' => 'gemini', 'message' => $message];
-        }
-        if (!is_array($json)) {
-            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Invalid Gemini response.'];
-        }
-
-        $parts = $json['candidates'][0]['content']['parts'] ?? [];
-        $text = '';
-        if (is_array($parts)) {
-            foreach ($parts as $part) {
-                $text .= (string)($part['text'] ?? '');
-            }
-        }
-        $text = trim($text);
-        if ($text === '') {
-            return ['status' => 'error', 'source' => 'gemini', 'message' => 'Gemini returned an empty response.'];
-        }
-
-        return ['status' => 'success', 'source' => 'gemini', 'analysis' => $text];
     }
 
     private function callOllama(array $reportData): array
     {
         if (!function_exists('curl_init')) {
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'cURL is not enabled.'];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'cURL is not enabled in PHP. Enable extension=curl in php.ini and restart Apache.'];
         }
 
         $compactData = $this->compactReportData($reportData);
@@ -164,11 +100,14 @@ class AiAdminReportAnalysisService
         $instructions = implode("\n", [
             "You are an admin analytics assistant for a Malaysian cultural tourism itinerary system.",
             "Analyze only the selected report type: {$reportType}.",
-            "Use only the KPI and section rows provided in the compact JSON snapshot. Do not invent missing data.",
+            "Use only the KPI and section rows provided in the compact report snapshot. Do not invent missing data.",
+            "Do not mention JSON, dataset, snapshot, prompt, or provided data in the answer.",
+            "Start directly with the first required heading. Do not write an introduction such as 'Based on the data provided'.",
             "Do not analyze unrelated modules or report types. For example, only discuss AI usage when report_type is ai_usage.",
             "Follow this exact analysis focus and headings:",
             $typeInstructions,
-            "Mention concrete numbers from the selected report. Keep it concise for a final year project admin report.",
+            "Write 1 short paragraph or 2 bullet points for each required heading.",
+            "Mention concrete numbers from the selected report. Keep it concise but complete for a final year project admin report.",
             "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
         ]);
 
@@ -176,7 +115,7 @@ class AiAdminReportAnalysisService
             'model' => $this->model,
             'messages' => [
                 ['role' => 'system', 'content' => $instructions],
-                ['role' => 'user', 'content' => "Compact admin report database snapshot:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
+                ['role' => 'user', 'content' => "Admin report for analysis:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
             ],
             'stream' => false,
             'keep_alive' => $this->keepAlive,
@@ -198,6 +137,7 @@ class AiAdminReportAnalysisService
             CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_CONNECTTIMEOUT => $this->connectTimeout,
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
+            CURLOPT_NOSIGNAL => true,
         ]);
 
         $raw = curl_exec($ch);
@@ -206,21 +146,43 @@ class AiAdminReportAnalysisService
         curl_close($ch);
 
         if ($raw === false || $err !== '' || $code < 200 || $code >= 300) {
-            error_log('Ollama admin report request failed: HTTP ' . $code . ' ' . $err . ' | URL: ' . $url);
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'AI service unavailable.'];
+            $bodyPreview = is_string($raw) ? substr($raw, 0, 800) : '';
+            $debug = 'HTTP ' . $code .
+                '. cURL error: ' . ($err !== '' ? $err : 'none') .
+                '. URL: ' . $url .
+                '. Response: ' . $bodyPreview;
+
+            error_log('Ollama admin report request failed: ' . $debug);
+
+            return [
+                'status' => 'error',
+                'source' => 'ollama',
+                'analysis' => $debug,
+            ];
         }
 
         $json = json_decode($raw, true);
         if (!is_array($json)) {
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'Invalid AI response.'];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'Invalid AI response. Raw response: ' . substr((string)$raw, 0, 800)];
         }
 
         $text = trim((string)($json['message']['content'] ?? ''));
         if ($text === '') {
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'AI returned an empty response.'];
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'AI returned an empty response. Raw response: ' . substr((string)$raw, 0, 800)];
         }
 
         return ['status' => 'success', 'source' => 'ollama', 'analysis' => $text];
+    }
+
+    private function cleanOllamaReportText(string $text): string
+    {
+        $text = trim($text);
+        $text = str_replace(["**", "***", "__"], "", $text);
+        $text = preg_replace('/^\s*Based on (the )?(JSON )?(data|information|snapshot)( you( have)? provided)?[,\s]+/i', '', $text) ?? $text;
+        $text = preg_replace('/^\s*Here is (a|the) (summary|analysis).*?:\s*/i', '', $text) ?? $text;
+        $text = preg_replace('/^\s*Based on .*?:\s*/i', '', $text) ?? $text;
+        $text = preg_replace('/^\s*#+\s*/m', '', $text) ?? $text;
+        return trim($text);
     }
 
     private function compactReportData(array $reportData): array
