@@ -7,9 +7,62 @@
     }
   }
 
+  function enhanceFestivalSuggestionDates() {
+    var form = document.querySelector('form[action="suggest_place_process.php"]');
+    if (!form || document.getElementById("suggestFestivalDateBlock")) return;
+
+    var categorySelect = form.querySelector('select[name="category"]');
+    if (!categorySelect) return;
+    categorySelect.id = categorySelect.id || "suggestCategorySelect";
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "col-6";
+    wrapper.id = "suggestFestivalDateBlock";
+    wrapper.style.display = "none";
+    wrapper.innerHTML =
+      '<div class="grid" style="gap:12px;">' +
+        '<div class="col-6">' +
+          '<label style="font-size:13px; font-weight:800;">Festival Start Date *</label><br>' +
+          '<input type="date" name="festival_start_date" id="suggestFestivalStartDateInput" ' +
+            'style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">' +
+        '</div>' +
+        '<div class="col-6">' +
+          '<label style="font-size:13px; font-weight:800;">Festival End Date *</label><br>' +
+          '<input type="date" name="festival_end_date" id="suggestFestivalEndDateInput" ' +
+            'style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">' +
+          '<div class="meta" style="margin-top:6px;">Required only when category is Festival. Admin uses this to match festival events with traveller trip dates.</div>' +
+        '</div>' +
+      '</div>';
+
+    var categoryCol = categorySelect.closest(".col-3") || categorySelect.parentElement;
+    if (categoryCol && categoryCol.parentNode) {
+      categoryCol.parentNode.insertBefore(wrapper, categoryCol.nextSibling);
+    } else {
+      categorySelect.parentNode.appendChild(wrapper);
+    }
+
+    var startInput = wrapper.querySelector('input[name="festival_start_date"]');
+    var endInput = wrapper.querySelector('input[name="festival_end_date"]');
+
+    function syncFestivalDateRequirement() {
+      var isFestival = categorySelect.value === "festival";
+      wrapper.style.display = isFestival ? "block" : "none";
+      startInput.required = isFestival;
+      endInput.required = isFestival;
+      if (!isFestival) {
+        startInput.value = "";
+        endInput.value = "";
+      }
+    }
+
+    categorySelect.addEventListener("change", syncFestivalDateRequirement);
+    syncFestivalDateRequirement();
+  }
+
   ready(function () {
     var app = document.querySelector(".app");
     var sidebar = document.querySelector(".sidebar");
+    enhanceFestivalSuggestionDates();
     if (!app || !sidebar || document.querySelector(".app-topbar")) return;
 
     document.body.classList.add("has-app-shell");
