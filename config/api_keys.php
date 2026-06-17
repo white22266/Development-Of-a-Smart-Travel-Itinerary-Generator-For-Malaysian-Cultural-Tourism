@@ -13,6 +13,15 @@ if (!function_exists('env_value')) {
     }
 }
 
+if (!function_exists('set_default_env')) {
+    function set_default_env(string $key, string $value): void
+    {
+        if (getenv($key) === false || trim((string)getenv($key)) === '') {
+            putenv($key . '=' . $value);
+        }
+    }
+}
+
 define('GOOGLE_MAPS_API_KEY', trim((string) env_value('GOOGLE_MAPS_API_KEY', '')));
 define('OPENWEATHER_API_KEY', trim((string) env_value('OPENWEATHER_API_KEY', '')));
 define('SERPAPI_API_KEY', trim((string) env_value('SERPAPI_API_KEY', '')));
@@ -30,6 +39,14 @@ define('SMTP_FROM_NAME', trim((string) env_value('SMTP_FROM_NAME', 'Admin Smart 
 define('OLLAMA_MODEL', trim((string) env_value('OLLAMA_MODEL', 'qwen2.5:3b')));
 define('OLLAMA_BASE_URL', rtrim(trim((string) env_value('OLLAMA_BASE_URL', 'http://127.0.0.1:11434')), '/'));
 define('OLLAMA_NUM_CTX', max(128, (int) env_value('OLLAMA_NUM_CTX', '512')));
+
+// Admin report AI defaults: try Ollama first, then use the local deterministic report if Ollama is unavailable or too slow.
+set_default_env('ADMIN_AI_FAST_MODE', 'false');
+set_default_env('ADMIN_AI_TIMEOUT', '10');
+set_default_env('ADMIN_AI_CONNECT_TIMEOUT', '2');
+set_default_env('ADMIN_AI_NUM_PREDICT', '160');
+set_default_env('ADMIN_AI_NUM_CTX', (string) OLLAMA_NUM_CTX);
+set_default_env('ADMIN_AI_KEEP_ALIVE', '-1');
 
 // Page/API-specific hooks are intentionally loaded outside db_connect.php.
 // The bootstrap itself checks the current business endpoint before doing anything.
