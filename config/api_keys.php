@@ -47,7 +47,7 @@ set_default_env('ADMIN_AI_TIMEOUT', '60');
 set_default_env('ADMIN_AI_CONNECT_TIMEOUT', '2');
 set_default_env('ADMIN_AI_NUM_PREDICT', '120');
 set_default_env('ADMIN_AI_NUM_CTX', (string) OLLAMA_NUM_CTX);
-set_default_env('ADMIN_AI_KEEP_ALIVE', '-1');
+set_default_env('ADMIN_AI_KEEP_ALIVE', '30m');
 
 // Page/API-specific hooks are intentionally loaded outside db_connect.php.
 // The bootstrap itself checks the current business endpoint before doing anything.
