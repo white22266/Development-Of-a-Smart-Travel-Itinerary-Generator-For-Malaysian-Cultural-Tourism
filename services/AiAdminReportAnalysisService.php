@@ -22,10 +22,13 @@ class AiAdminReportAnalysisService
         $this->baseUrl = rtrim(trim((string)($baseUrl ?: (getenv('OLLAMA_BASE_URL') ?: 'http://127.0.0.1:11434'))), '/');
         $fast = strtolower(trim((string)(getenv('ADMIN_AI_FAST_MODE') ?: 'false')));
         $this->fastMode = in_array($fast, ['1', 'true', 'yes', 'on'], true);
-        $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 25));
+        $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 60));
         $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
-        $this->numPredict = max(60, min(220, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 110)));
-        $this->numCtx = max(256, min(2048, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512))));
+
+        // This value controls Ollama response length. The previous 220-token cap was too short
+        // and caused outputs such as only "1. Preference Summary". Allow a fuller report.
+        $this->numPredict = max(120, min(1200, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 700)));
+        $this->numCtx = max(512, min(4096, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 1024))));
         $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '30m')));
         if ($this->keepAlive === '' || $this->keepAlive === '-1') $this->keepAlive = '30m';
     }
@@ -83,7 +86,8 @@ class AiAdminReportAnalysisService
             "Do not analyze unrelated modules or report types. For example, only discuss AI usage when report_type is ai_usage.",
             "Follow this exact analysis focus and headings:",
             $typeInstructions,
-            "Mention concrete numbers from the selected report. Keep it concise for a final year project admin report.",
+            "Write 1 short paragraph or 2 bullet points for each required heading.",
+            "Mention concrete numbers from the selected report. Keep it concise but complete for a final year project admin report.",
             "Do not use Markdown heading symbols such as #, ##, **, or ***. Write plain report text.",
         ]);
 
@@ -91,7 +95,7 @@ class AiAdminReportAnalysisService
             'model' => $this->model,
             'messages' => [
                 ['role' => 'system', 'content' => $instructions],
-                ['role' => 'user', 'content' => "Admin report snapshot for analysis:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
+                ['role' => 'user', 'content' => "Admin report for analysis:\n" . json_encode($compactData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
             ],
             'stream' => false,
             'keep_alive' => $this->keepAlive,
