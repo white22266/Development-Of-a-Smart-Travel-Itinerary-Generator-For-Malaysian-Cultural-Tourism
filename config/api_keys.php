@@ -38,14 +38,14 @@ define('SMTP_FROM_NAME', trim((string) env_value('SMTP_FROM_NAME', 'Admin Smart 
 // AI assistant. Gemini is used first when a key is configured; Ollama remains the local fallback.
 define('OLLAMA_MODEL', trim((string) env_value('OLLAMA_MODEL', 'qwen2.5:3b')));
 define('OLLAMA_BASE_URL', rtrim(trim((string) env_value('OLLAMA_BASE_URL', 'http://127.0.0.1:11434')), '/'));
-define('OLLAMA_NUM_CTX', max(128, (int) env_value('OLLAMA_NUM_CTX', '512')));
+define('OLLAMA_NUM_CTX', max(128, (int) env_value('OLLAMA_NUM_CTX', '1024')));
 
 // Admin report AI defaults: try Ollama first, then use the local deterministic report if Ollama is unavailable or too slow.
-// Local qwen2.5:3b may spend 8+ seconds loading the model, so report analysis needs a longer timeout.
+// num_predict controls the generated answer length. Keep it high enough for all required report headings.
 set_default_env('ADMIN_AI_FAST_MODE', 'false');
 set_default_env('ADMIN_AI_TIMEOUT', '60');
 set_default_env('ADMIN_AI_CONNECT_TIMEOUT', '2');
-set_default_env('ADMIN_AI_NUM_PREDICT', '120');
+set_default_env('ADMIN_AI_NUM_PREDICT', '700');
 set_default_env('ADMIN_AI_NUM_CTX', (string) OLLAMA_NUM_CTX);
 set_default_env('ADMIN_AI_KEEP_ALIVE', '30m');
 
