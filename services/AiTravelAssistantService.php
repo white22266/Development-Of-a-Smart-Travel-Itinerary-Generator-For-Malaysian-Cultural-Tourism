@@ -36,7 +36,8 @@ class AiTravelAssistantService
             ];
         }
 
-        $ruleAnswer = $this->ruleAnswer($question);
+        $compactContext = $this->compactContext($context);
+        $ruleAnswer = $this->ruleAnswer($question, $compactContext);
         if ($ruleAnswer !== null) {
             return [
                 'status' => 'success',
@@ -50,7 +51,6 @@ class AiTravelAssistantService
         }
 
         $question = $this->truncateText($question, 500);
-        $compactContext = $this->compactContext($context);
 
         $instructions = implode("\n", [
             'You are a local AI travel assistant for a Malaysian cultural tourism itinerary system.',
@@ -83,27 +83,11 @@ class AiTravelAssistantService
         return $this->callOllama($instructions, $input);
     }
 
-    private function ruleAnswer(string $question): ?string
+    private function ruleAnswer(string $question, array $context = []): ?string
     {
         $q = strtolower(trim($question));
         $normalized = preg_replace('/[^a-z0-9\s]/i', '', $q) ?? $q;
         $normalized = trim(preg_replace('/\s+/', ' ', $normalized) ?? $normalized);
-
-        if (preg_match('/^(hi|hello|hey|yo|hai|helo|good morning|good afternoon|good evening)$/i', $normalized)) {
-            return 'Hello. I can help with this trip summary, estimated cost, route, hotel options, and itinerary changes.';
-        }
-
-        if (preg_match('/^(ok|okay|thanks|thank you|tq|thx)$/i', $normalized)) {
-            return 'You are welcome. Ask me about cost, route, hotel options, or changes to this itinerary.';
-        }
-
-        if (preg_match('/^(then|next|continue|more|go on|and then|what next|so)$/i', $normalized)) {
-            return 'Please ask a specific travel question, such as cost, route, hotel options, or itinerary changes.';
-        }
-
-        if (preg_match('/^(help|menu|options|start)$/i', $normalized)) {
-            return 'You can ask about estimated cost, route and travel time, hotel options, or itinerary changes. I will only save changes after you confirm.';
-        }
 
         $isCapabilityQuestion = (bool)preg_match(
             '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+you\s+can\s+do|what\s+u\s+can\s+do|what\s+can\s+u\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b/iu',
@@ -111,10 +95,157 @@ class AiTravelAssistantService
         );
 
         if ($isCapabilityQuestion) {
-            return 'I can explain the trip summary, check estimated cost and budget, describe routes and travel time, suggest hotel options, and propose itinerary changes. I will only save hotel or route changes after you confirm.';
+            return 'I can explain your preference, suggest a starting location, check route readiness, estimate cost, describe travel time, and review hotel or itinerary options. I only guide you; the system rules still generate the official itinerary.';
+        }
+
+        if (preg_match('/^(hi|hello|hey|yo|hai|helo|good morning|good afternoon|good evening)$/i', $normalized)) {
+            return 'Hello. I can help you check your travel preference, starting location, route, estimated cost, and itinerary readiness.';
+        }
+
+        if (preg_match('/^(ok|okay|thanks|thank you|tq|thx)$/i', $normalized)) {
+            return 'You are welcome. Ask me about your selected preference, starting location, route, cost, or itinerary readiness.';
+        }
+
+        if (preg_match('/^(then|next|continue|more|go on|and then|what next|so)$/i', $normalized)) {
+            return 'Please ask a specific travel question, such as checking your preference, suggesting a starting location, or explaining route readiness.';
+        }
+
+        if (preg_match('/^(help|menu|options|start)$/i', $normalized)) {
+            return 'You can ask me to check your selected preference, suggest a starting location, explain route readiness, estimate cost, or review itinerary changes.';
+        }
+
+        if ($this->isPreferenceReadinessQuestion($normalized)) {
+            return $this->buildPreferenceReadinessAnswer($context);
+        }
+
+        if ($this->isStartingLocationQuestion($normalized)) {
+            return $this->buildStartingLocationAnswer($context);
         }
 
         return null;
+    }
+
+    private function isPreferenceReadinessQuestion(string $normalized): bool
+    {
+        if (preg_match('/^(check my preference|before generate|before generating|check preference|selected preference)$/i', $normalized)) {
+            return true;
+        }
+
+        return (bool)preg_match(
+            '/\b(?:selected\s+preference|preference\s+(?:suitable|ready|complete|confirmed)|suitable\s+for\s+generating|generate\s+an\s+itinerary|before\s+generat(?:e|ing)|check\s+(?:my\s+)?preference)\b/i',
+            $normalized
+        );
+    }
+
+    private function isStartingLocationQuestion(string $normalized): bool
+    {
+        if (preg_match('/^(suggest starting location|starting location|start location|origin|suggest origin)$/i', $normalized)) {
+            return true;
+        }
+
+        return (bool)preg_match(
+            '/\b(?:(?:suggest|recommend|choose|decide|suitable)\s+(?:a\s+)?(?:suitable\s+)?(?:starting|start|origin)\s+location|starting\s+location|start\s+location|origin\s+location)\b/i',
+            $normalized
+        );
+    }
+
+    private function buildPreferenceReadinessAnswer(array $context): string
+    {
+        $missing = [];
+
+        $startDate = $this->findContextText($context, ['start_date', 'trip_start_date', 'date']);
+        $origin = $this->findContextText($context, ['origin_name', 'starting_location', 'start_location', 'origin']);
+        $states = $this->findContextText($context, ['preferred_states', 'state', 'states']);
+        $districts = $this->findContextText($context, ['preferred_districts', 'district', 'districts']);
+        $interests = $this->findContextText($context, ['interests', 'selected_interests', 'preference_interests']);
+        $transport = $this->findContextText($context, ['transport_type', 'transport', 'travel_mode']);
+        $budget = $this->findContextText($context, ['budget', 'budget_tier', 'total_budget']);
+
+        if (!$this->isFilled($startDate)) $missing[] = 'start date';
+        if (!$this->isFilled($origin)) $missing[] = 'starting location';
+        if (!$this->isFilled($states) && !$this->isFilled($districts)) $missing[] = 'preferred state or district';
+        if (!$this->isFilled($interests)) $missing[] = 'travel interests';
+        if (!$this->isFilled($transport)) $missing[] = 'transport type';
+        if (!$this->isFilled($budget)) $missing[] = 'budget';
+
+        if (empty($missing)) {
+            return 'Your selected preference looks ready for itinerary generation. You can proceed, and the official itinerary will still be generated by the system rules.';
+        }
+
+        $summary = implode(', ', array_slice($missing, 0, 4));
+        if (count($missing) > 4) {
+            $summary .= ', and other preference details';
+        }
+
+        return 'Your preference is not fully ready yet. Please complete ' . $summary . ' before generating the itinerary.';
+    }
+
+    private function buildStartingLocationAnswer(array $context): string
+    {
+        $origin = $this->findContextText($context, ['origin_name', 'starting_location', 'start_location', 'origin']);
+        if ($this->isFilled($origin)) {
+            return 'Use ' . $origin . ' as the starting location because it is already saved. If this is wrong, update the starting location before generating the itinerary.';
+        }
+
+        $district = $this->findContextText($context, ['preferred_districts', 'district', 'districts']);
+        $state = $this->findContextText($context, ['preferred_states', 'state', 'states']);
+        $place = $this->isFilled($district) ? $district : ($this->isFilled($state) ? $state : 'your preferred destination area');
+
+        return 'Choose a central and easy-to-reach point in ' . $place . ', such as your hotel, a main bus terminal, or a train station. Save it before generating so route time and cost are more accurate.';
+    }
+
+    private function findContextText(array $context, array $keys): string
+    {
+        foreach ($keys as $key) {
+            $value = $this->findContextValue($context, strtolower($key));
+            if ($value !== null) {
+                if (is_array($value)) {
+                    $flat = array_values(array_filter(array_map(static fn($v) => trim((string)$v), $value)));
+                    if (!empty($flat)) {
+                        return implode(', ', array_slice($flat, 0, 3));
+                    }
+                } else {
+                    $text = trim((string)$value);
+                    if ($text !== '') {
+                        return $this->truncateText($text, 80, false);
+                    }
+                }
+            }
+        }
+
+        return '';
+    }
+
+    private function findContextValue(mixed $value, string $needleKey): mixed
+    {
+        if (!is_array($value)) {
+            return null;
+        }
+
+        foreach ($value as $key => $item) {
+            if (is_string($key) && strtolower($key) === $needleKey) {
+                return $item;
+            }
+
+            if (is_array($item)) {
+                $found = $this->findContextValue($item, $needleKey);
+                if ($found !== null && $found !== '') {
+                    return $found;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private function isFilled(string $value): bool
+    {
+        $value = trim($value);
+        if ($value === '') {
+            return false;
+        }
+
+        return !preg_match('/^(0|0\.0|none|null|not provided|not set|unknown|n\/a)$/i', $value);
     }
 
     private function containsChinese(string $text): bool
@@ -186,7 +317,7 @@ class AiTravelAssistantService
             return [
                 'status' => 'error',
                 'answer' => $timedOut
-                    ? 'The local AI took too long to answer. Please ask a shorter question, or use a smaller Ollama model such as qwen2.5:1.5b for faster replies.'
+                    ? 'The local AI took too long to answer. Please ask a shorter question, or use qwen2.5:1.5b for faster replies.'
                     : 'AI service is currently unavailable. Please check whether Ollama is running.',
                 'source' => 'ollama',
             ];
@@ -319,6 +450,9 @@ class AiTravelAssistantService
     {
         $preferredKeys = [
             'itinerary',
+            'preference',
+            'preferences',
+            'selected_preference',
             'items',
             'hotel_options',
             'hotels',
@@ -329,6 +463,7 @@ class AiTravelAssistantService
             'budget',
             'start_date',
             'origin_name',
+            'starting_location',
         ];
 
         $compact = [];
@@ -339,7 +474,7 @@ class AiTravelAssistantService
         }
 
         if (empty($compact)) {
-            $compact = $this->trimForPrompt(array_slice($context, 0, 8, true), 0);
+            $compact = $this->trimForPrompt(array_slice($context, 0, 10, true), 0);
         }
 
         return is_array($compact) ? $compact : [];
@@ -365,7 +500,7 @@ class AiTravelAssistantService
 
         $result = [];
         $isList = array_is_list($value);
-        $limit = $isList ? 6 : 14;
+        $limit = $isList ? 6 : 16;
         $count = 0;
 
         foreach ($value as $key => $item) {
