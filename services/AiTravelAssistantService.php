@@ -3,6 +3,7 @@
 // Fast local travel assistant service.
 // Default behaviour: rule-based quick replies first, optional Gemini only when explicitly enabled,
 // then short Ollama fallback with strict timeout so the chat does not stay on "Writing answer...".
+// Answers are post-processed so length-limited model output does not end halfway through a sentence.
 
 class AiTravelAssistantService
 {
@@ -56,6 +57,9 @@ class AiTravelAssistantService
             'Use only the provided compact itinerary context.',
             'Answer directly and practically.',
             'Keep the reply under 80 words unless the user clearly asks for details.',
+            'Prefer 2 to 4 complete sentences instead of long lists.',
+            'End with a complete sentence. Do not stop in the middle of a phrase.',
+            'If the full answer would be too long, give a short conclusion instead of continuing.',
             'Do not invent live traffic, booking prices, opening hours, or saved changes.',
             'If information is missing, say it is estimated or not provided.',
             'Do not say a hotel, date, route, or place has been saved unless the system confirms it.',
@@ -115,7 +119,7 @@ class AiTravelAssistantService
         $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
         $timeout = max(3, (int)(getenv('OLLAMA_TIMEOUT') ?: 12));
         $connectTimeout = max(1, (int)(getenv('OLLAMA_CONNECT_TIMEOUT') ?: 2));
-        $numPredict = max(32, min(160, (int)(getenv('OLLAMA_NUM_PREDICT') ?: 96)));
+        $numPredict = max(64, min(180, (int)(getenv('OLLAMA_NUM_PREDICT') ?: 120)));
         $numCtx = defined('OLLAMA_NUM_CTX') ? (int)OLLAMA_NUM_CTX : 768;
         $numCtx = max(256, min(1024, $numCtx));
         $numThread = max(2, min(4, (int)(getenv('OLLAMA_NUM_THREAD') ?: 4)));
@@ -199,7 +203,9 @@ class AiTravelAssistantService
         }
 
         $text = is_array($json) ? trim((string)($json['message']['content'] ?? '')) : '';
-        $text = $this->cleanAnswer($text);
+        $doneReason = is_array($json) ? strtolower((string)($json['done_reason'] ?? '')) : '';
+        $wasLengthLimited = in_array($doneReason, ['length', 'stop'], true) && !$this->endsLikeCompleteSentence($text);
+        $text = $this->cleanAnswer($text, $wasLengthLimited);
 
         if ($text === '') {
             return ['status' => 'error', 'answer' => 'AI response is invalid. Please try again.', 'source' => 'ollama'];
@@ -370,22 +376,71 @@ class AiTravelAssistantService
         return $result;
     }
 
-    private function truncateText(string $text, int $limit): string
+    private function truncateText(string $text, int $limit, bool $appendEllipsis = true): string
     {
         $text = trim($text);
         if (mb_strlen($text, 'UTF-8') <= $limit) {
             return $text;
         }
-        return mb_substr($text, 0, $limit, 'UTF-8') . '...';
+
+        $cut = rtrim(mb_substr($text, 0, $limit, 'UTF-8'));
+        return $appendEllipsis ? $cut . '...' : $cut;
     }
 
-    private function cleanAnswer(string $text): string
+    private function cleanAnswer(string $text, bool $wasLengthLimited = false): string
     {
         $text = preg_replace('/\*{1,3}([^*]+)\*{1,3}/u', '$1', $text) ?? $text;
         $text = preg_replace('/^\s{0,3}#{1,6}\s*/m', '', $text) ?? $text;
         $text = preg_replace('/^\s*[-*]\s+/m', '- ', $text) ?? $text;
         $text = preg_replace("/[ \t]+\n/", "\n", $text) ?? $text;
         $text = trim($text);
-        return $this->truncateText($text, 700);
+
+        return $this->finalizeAnswer($text, $wasLengthLimited);
+    }
+
+    private function finalizeAnswer(string $text, bool $wasLengthLimited = false): string
+    {
+        $text = $this->truncateText($text, 700, false);
+        if ($text === '') {
+            return '';
+        }
+
+        if ($wasLengthLimited || !$this->endsLikeCompleteSentence($text)) {
+            $complete = $this->clipToLastCompleteSentence($text);
+            if ($complete !== '') {
+                $text = $complete;
+            }
+        }
+
+        $text = rtrim($text, " \t\n\r\0\x0B,;:-");
+        if ($text !== '' && !$this->endsLikeCompleteSentence($text)) {
+            $text .= '.';
+        }
+
+        if ($wasLengthLimited && !preg_match('/ask me for details/i', $text)) {
+            $text .= ' Ask me for details if needed.';
+        }
+
+        return $text;
+    }
+
+    private function clipToLastCompleteSentence(string $text): string
+    {
+        if (!preg_match_all('/[.!?](?=\s|$)/u', $text, $matches, PREG_OFFSET_CAPTURE)) {
+            return '';
+        }
+
+        $last = end($matches[0]);
+        if (!is_array($last) || !isset($last[1])) {
+            return '';
+        }
+
+        $candidate = trim(substr($text, 0, $last[1] + strlen((string)$last[0])));
+        return mb_strlen($candidate, 'UTF-8') >= 20 ? $candidate : '';
+    }
+
+    private function endsLikeCompleteSentence(string $text): bool
+    {
+        return (bool)preg_match('/[.!?)]$/u', trim($text));
     }
 }
