@@ -1,7 +1,8 @@
 <?php
 // services/AiTravelAssistantService.php
-// Gemini-first assistant for itinerary explanation, route writing, and improvements.
-// Ollama remains the local fallback when Gemini is not configured or unavailable.
+// Fast local travel assistant service.
+// Default behaviour: rule-based quick replies first, optional Gemini only when explicitly enabled,
+// then short Ollama fallback with strict timeout so the chat does not stay on "Writing answer...".
 
 class AiTravelAssistantService
 {
@@ -34,28 +35,31 @@ class AiTravelAssistantService
             ];
         }
 
-        $capabilityAnswer = $this->capabilityAnswer($question);
-        if ($capabilityAnswer !== null) {
+        $ruleAnswer = $this->ruleAnswer($question);
+        if ($ruleAnswer !== null) {
             return [
                 'status' => 'success',
-                'answer' => $capabilityAnswer,
+                'answer' => $ruleAnswer,
                 'source' => 'rule',
             ];
         }
 
-        $question = $this->truncateText($question, 700);
+        if (!function_exists('curl_init')) {
+            return ['status' => 'error', 'answer' => 'cURL is not enabled.', 'source' => 'server'];
+        }
+
+        $question = $this->truncateText($question, 500);
         $compactContext = $this->compactContext($context);
 
         $instructions = implode("\n", [
-            "You are a local AI travel assistant for a Malaysian cultural tourism itinerary system.",
-            "Use only the provided compact itinerary context.",
-            "Do not invent live traffic, booking prices, opening hours, or saved changes.",
-            "If information is missing, say it is estimated or not provided.",
-            "Reply in the same language as the user when possible.",
-            "Answer the traveller's actual question directly. Do not repeat the full itinerary unless the traveller asks for a summary or explanation.",
-            "When asked what you can do, describe your available travel-assistant functions instead of summarising the itinerary.",
-            "Keep the reply concise and practical. If the user asks for a longer explanation, give a fuller answer but keep it clear.",
-            "Plain text only. No Markdown formatting.",
+            'You are a local AI travel assistant for a Malaysian cultural tourism itinerary system.',
+            'Use only the provided compact itinerary context.',
+            'Answer directly and practically.',
+            'Keep the reply under 80 words unless the user clearly asks for details.',
+            'Do not invent live traffic, booking prices, opening hours, or saved changes.',
+            'If information is missing, say it is estimated or not provided.',
+            'Do not say a hotel, date, route, or place has been saved unless the system confirms it.',
+            'Plain text only. No Markdown formatting.',
         ]);
 
         $input = "Compact itinerary context JSON:\n"
@@ -63,19 +67,58 @@ class AiTravelAssistantService
             . "\n\nTraveller question:\n"
             . $question;
 
-        if (!function_exists('curl_init')) {
-            return ['status' => 'error', 'answer' => 'cURL is not enabled.', 'source' => 'ai'];
-        }
-
+        // Gemini is disabled by default for VM deployment speed. Enable only with AI_USE_GEMINI=true.
         $gemini = $this->callGemini($instructions, $input);
         if (($gemini['status'] ?? '') === 'success') {
             return $gemini;
         }
         if (($gemini['message'] ?? '') !== '') {
-            error_log('Gemini AI fallback to Ollama: ' . $gemini['message']);
+            error_log('Gemini skipped/fallback to Ollama: ' . $gemini['message']);
         }
 
+        return $this->callOllama($instructions, $input);
+    }
+
+    private function ruleAnswer(string $question): ?string
+    {
+        $q = strtolower(trim($question));
+        $normalized = preg_replace('/[^a-z0-9\s]/i', '', $q) ?? $q;
+        $normalized = trim(preg_replace('/\s+/', ' ', $normalized) ?? $normalized);
+
+        if (preg_match('/^(hi|hello|hey|yo|hai|helo|good morning|good afternoon|good evening)$/i', $normalized)) {
+            return 'Hello. I can help with this trip summary, estimated cost, route, hotel options, and itinerary changes.';
+        }
+
+        if (preg_match('/^(ok|okay|thanks|thank you|tq|thx)$/i', $normalized)) {
+            return 'You are welcome. Ask me about cost, route, hotel options, or changes to this itinerary.';
+        }
+
+        $isCapabilityQuestion = (bool)preg_match(
+            '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|what\s+can\s+u\s+do|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b/iu',
+            $question
+        );
+
+        if ($isCapabilityQuestion) {
+            return 'I can explain the trip summary, check estimated cost and budget, describe routes and travel time, suggest hotel options, and propose itinerary changes. I will only save hotel or route changes after you confirm.';
+        }
+
+        return null;
+    }
+
+    private function containsChinese(string $text): bool
+    {
+        return (bool)preg_match('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{F900}-\x{FAFF}]/u', $text);
+    }
+
+    private function callOllama(string $instructions, string $input): array
+    {
         $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
+        $timeout = max(3, (int)(getenv('OLLAMA_TIMEOUT') ?: 12));
+        $connectTimeout = max(1, (int)(getenv('OLLAMA_CONNECT_TIMEOUT') ?: 2));
+        $numPredict = max(32, min(160, (int)(getenv('OLLAMA_NUM_PREDICT') ?: 96)));
+        $numCtx = defined('OLLAMA_NUM_CTX') ? (int)OLLAMA_NUM_CTX : 768;
+        $numCtx = max(256, min(1024, $numCtx));
+        $numThread = max(2, min(4, (int)(getenv('OLLAMA_NUM_THREAD') ?: 4)));
 
         $payload = [
             'model' => $this->model,
@@ -84,17 +127,16 @@ class AiTravelAssistantService
                 ['role' => 'user', 'content' => $input],
             ],
             'stream' => false,
-            'keep_alive' => -1,
+            'keep_alive' => getenv('OLLAMA_KEEP_ALIVE') ?: '30m',
             'options' => [
                 'temperature' => 0.2,
-                'num_ctx' => defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512,
-                'num_predict' => 260,
-                'num_thread' => 2,
+                'num_ctx' => $numCtx,
+                'num_predict' => $numPredict,
+                'num_thread' => $numThread,
             ],
         ];
 
         $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-
         if ($payloadJson === false) {
             return [
                 'status' => 'error',
@@ -104,7 +146,6 @@ class AiTravelAssistantService
         }
 
         error_log('Ollama AI payload size: ' . strlen($payloadJson) . ' bytes');
-
         $start = microtime(true);
 
         $ch = curl_init($url);
@@ -113,8 +154,8 @@ class AiTravelAssistantService
             CURLOPT_POST => true,
             CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
             CURLOPT_POSTFIELDS => $payloadJson,
-            CURLOPT_TIMEOUT => 75,
-            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_TIMEOUT => $timeout,
+            CURLOPT_CONNECTTIMEOUT => $connectTimeout,
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
@@ -128,9 +169,12 @@ class AiTravelAssistantService
 
         if ($raw === false || $err !== '') {
             error_log('Ollama AI request failed: ' . $err . ' | URL: ' . $url);
+            $timedOut = stripos($err, 'timed out') !== false || $duration >= $timeout;
             return [
                 'status' => 'error',
-                'answer' => 'AI service is currently unavailable. Please check Gemini API or Ollama fallback.',
+                'answer' => $timedOut
+                    ? 'The local AI took too long to answer. Please ask a shorter question, or use a smaller Ollama model such as qwen2.5:1.5b for faster replies.'
+                    : 'AI service is currently unavailable. Please check whether Ollama is running.',
                 'source' => 'ollama',
             ];
         }
@@ -149,7 +193,7 @@ class AiTravelAssistantService
             error_log('Ollama AI HTTP error: ' . $code . ' | Response: ' . $this->truncateText((string)$raw, 500));
             return [
                 'status' => 'error',
-                'answer' => 'AI service is currently unavailable. Please check Gemini API or Ollama fallback.',
+                'answer' => 'AI service is currently unavailable. Please check whether Ollama is running.',
                 'source' => 'ollama',
             ];
         }
@@ -164,46 +208,13 @@ class AiTravelAssistantService
         return ['status' => 'success', 'answer' => $text, 'source' => 'ollama'];
     }
 
-    private function capabilityAnswer(string $question): ?string
-    {
-        $question = trim($question);
-        $isCapabilityQuestion = (bool)preg_match(
-            '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|what\s+can\s+u\s+do|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b|你能做什么|你可以做什么|你有什么功能|你可以帮什么|你会什么|可以做什么/iu',
-            $question
-        );
-
-        if (!$isCapabilityQuestion) {
-            return null;
-        }
-
-        if (preg_match('/[\x{4E00}-\x{9FFF}]/u', $question)) {
-            return "我可以帮助你：\n"
-                . "1. 解释整个行程、每日安排和地点背景。\n"
-                . "2. 回答路线、交通时间、距离、预算和费用问题。\n"
-                . "3. 根据你的要求建议酒店、景点和替代地点。\n"
-                . "4. 提供天气规划建议，并提醒你核实实时天气和开放时间。\n"
-                . "5. 建议增加、替换或重新安排行程地点。\n"
-                . "6. 在你确认后，更新行程日期、出发地点或所选地点。\n"
-                . "我不能直接完成酒店预订，也不能保证实时价格、交通或开放时间。";
-        }
-
-        return "I can help you with:\n"
-            . "1. Explain the full trip, daily schedule, and background of each place.\n"
-            . "2. Answer questions about routes, travel time, distance, budget, and estimated costs.\n"
-            . "3. Suggest hotels, attractions, food places, and alternative stops when requested.\n"
-            . "4. Give weather-planning advice and remind you to verify live weather and opening hours.\n"
-            . "5. Suggest adding, replacing, or rearranging itinerary stops.\n"
-            . "6. Update the trip date, starting location, or selected places after you confirm the change.\n"
-            . "I cannot complete hotel bookings or guarantee live prices, traffic, or opening hours.";
-    }
-
-    private function containsChinese(string $text): bool
-    {
-        return (bool) preg_match('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{F900}-\x{FAFF}]/u', $text);
-    }
-
     private function callGemini(string $instructions, string $input): array
     {
+        $useGemini = strtolower(trim((string)(getenv('AI_USE_GEMINI') ?: 'false'))) === 'true';
+        if (!$useGemini) {
+            return ['status' => 'skipped', 'message' => 'Gemini disabled for fast VM response.', 'source' => 'gemini'];
+        }
+
         $apiKey = defined('GEMINI_API_KEY') ? trim((string)GEMINI_API_KEY) : '';
         if ($apiKey === '') {
             return ['status' => 'skipped', 'message' => 'Gemini API key is not configured.', 'source' => 'gemini'];
@@ -231,7 +242,7 @@ class AiTravelAssistantService
             ],
             'generationConfig' => [
                 'temperature' => 0.2,
-                'maxOutputTokens' => 360,
+                'maxOutputTokens' => 160,
                 'thinkingConfig' => [
                     'thinkingBudget' => 0,
                 ],
@@ -253,8 +264,8 @@ class AiTravelAssistantService
                 'x-goog-api-key: ' . $apiKey,
             ],
             CURLOPT_POSTFIELDS => $payloadJson,
-            CURLOPT_TIMEOUT => 35,
-            CURLOPT_CONNECTTIMEOUT => 8,
+            CURLOPT_TIMEOUT => max(3, (int)(getenv('GEMINI_TIMEOUT') ?: 4)),
+            CURLOPT_CONNECTTIMEOUT => 2,
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
@@ -276,7 +287,6 @@ class AiTravelAssistantService
             return ['status' => 'error', 'message' => $message, 'source' => 'gemini'];
         }
 
-        $finishReason = (string)($json['candidates'][0]['finishReason'] ?? '');
         $text = '';
         foreach (($json['candidates'][0]['content']['parts'] ?? []) as $part) {
             $text .= (string)($part['text'] ?? '');
@@ -287,40 +297,26 @@ class AiTravelAssistantService
             return ['status' => 'error', 'message' => 'Gemini returned an empty response.', 'source' => 'gemini'];
         }
 
-        if ($finishReason === 'MAX_TOKENS' && (mb_strlen($text, 'UTF-8') < 80 || preg_match('/[-:]\s*$/u', $text))) {
-            return ['status' => 'error', 'message' => 'Gemini response was truncated by token limit.', 'source' => 'gemini'];
-        }
-
         return ['status' => 'success', 'answer' => $text, 'source' => 'gemini', 'model' => $model];
     }
 
     private function compactContext(array $context): array
     {
         $preferredKeys = [
-            'itinerary_id',
-            'title',
-            'destination',
-            'state',
-            'states',
-            'start_date',
-            'end_date',
-            'date',
-            'duration',
-            'budget',
-            'companions',
-            'travel_style',
-            'preferences',
-            'food_preferences',
-            'accessibility_needs',
-            'hotel',
+            'itinerary',
+            'items',
+            'hotel_options',
             'hotels',
+            'cost',
+            'route',
             'days',
             'places',
-            'route',
+            'budget',
+            'start_date',
+            'origin_name',
         ];
 
         $compact = [];
-
         foreach ($preferredKeys as $key) {
             if (array_key_exists($key, $context)) {
                 $compact[$key] = $this->trimForPrompt($context[$key], 0);
@@ -328,7 +324,7 @@ class AiTravelAssistantService
         }
 
         if (empty($compact)) {
-            $compact = $this->trimForPrompt(array_slice($context, 0, 12, true), 0);
+            $compact = $this->trimForPrompt(array_slice($context, 0, 8, true), 0);
         }
 
         return is_array($compact) ? $compact : [];
@@ -336,12 +332,12 @@ class AiTravelAssistantService
 
     private function trimForPrompt(mixed $value, int $depth): mixed
     {
-        if ($depth > 4) {
+        if ($depth > 3) {
             return null;
         }
 
         if (is_string($value)) {
-            return $this->truncateText($value, 220);
+            return $this->truncateText($value, 160);
         }
 
         if (is_int($value) || is_float($value) || is_bool($value) || $value === null) {
@@ -354,7 +350,7 @@ class AiTravelAssistantService
 
         $result = [];
         $isList = array_is_list($value);
-        $limit = $isList ? 8 : 20;
+        $limit = $isList ? 6 : 14;
         $count = 0;
 
         foreach ($value as $key => $item) {
@@ -363,7 +359,6 @@ class AiTravelAssistantService
             }
 
             $keyString = is_string($key) ? strtolower($key) : '';
-
             if (preg_match('/image|photo|thumbnail|video|created_at|updated_at|password|token|secret|api_key/i', $keyString)) {
                 continue;
             }
@@ -378,11 +373,9 @@ class AiTravelAssistantService
     private function truncateText(string $text, int $limit): string
     {
         $text = trim($text);
-
         if (mb_strlen($text, 'UTF-8') <= $limit) {
             return $text;
         }
-
         return mb_substr($text, 0, $limit, 'UTF-8') . '...';
     }
 
@@ -393,7 +386,6 @@ class AiTravelAssistantService
         $text = preg_replace('/^\s*[-*]\s+/m', '- ', $text) ?? $text;
         $text = preg_replace("/[ \t]+\n/", "\n", $text) ?? $text;
         $text = trim($text);
-
-        return $this->truncateText($text, 1200);
+        return $this->truncateText($text, 700);
     }
 }
