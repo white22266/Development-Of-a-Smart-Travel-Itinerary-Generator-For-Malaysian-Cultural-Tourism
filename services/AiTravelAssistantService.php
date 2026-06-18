@@ -56,10 +56,10 @@ class AiTravelAssistantService
             'You are a local AI travel assistant for a Malaysian cultural tourism itinerary system.',
             'Use only the provided compact itinerary context.',
             'Answer directly and practically.',
-            'Keep the reply under 80 words unless the user clearly asks for details.',
-            'Prefer 2 to 4 complete sentences instead of long lists.',
-            'End with a complete sentence. Do not stop in the middle of a phrase.',
-            'If the full answer would be too long, give a short conclusion instead of continuing.',
+            'Keep the reply under 60 words unless the user clearly asks for details.',
+            'Prefer 1 to 3 complete sentences instead of long lists.',
+            'Every sentence must be complete. Do not end with an unfinished phrase.',
+            'If the full answer would be too long, give only the most important conclusion.',
             'Do not invent live traffic, booking prices, opening hours, or saved changes.',
             'If information is missing, say it is estimated or not provided.',
             'Do not say a hotel, date, route, or place has been saved unless the system confirms it.',
@@ -97,8 +97,16 @@ class AiTravelAssistantService
             return 'You are welcome. Ask me about cost, route, hotel options, or changes to this itinerary.';
         }
 
+        if (preg_match('/^(then|next|continue|more|go on|and then|what next|so)$/i', $normalized)) {
+            return 'Please ask a specific travel question, such as cost, route, hotel options, or itinerary changes.';
+        }
+
+        if (preg_match('/^(help|menu|options|start)$/i', $normalized)) {
+            return 'You can ask about estimated cost, route and travel time, hotel options, or itinerary changes. I will only save changes after you confirm.';
+        }
+
         $isCapabilityQuestion = (bool)preg_match(
-            '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|what\s+can\s+u\s+do|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b/iu',
+            '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+you\s+can\s+do|what\s+u\s+can\s+do|what\s+can\s+u\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b/iu',
             $question
         );
 
@@ -119,10 +127,11 @@ class AiTravelAssistantService
         $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
         $timeout = max(3, (int)(getenv('OLLAMA_TIMEOUT') ?: 12));
         $connectTimeout = max(1, (int)(getenv('OLLAMA_CONNECT_TIMEOUT') ?: 2));
-        $numPredict = max(64, min(180, (int)(getenv('OLLAMA_NUM_PREDICT') ?: 120)));
+        $numPredict = max(96, min(140, (int)(getenv('OLLAMA_NUM_PREDICT') ?: 120)));
         $numCtx = defined('OLLAMA_NUM_CTX') ? (int)OLLAMA_NUM_CTX : 768;
         $numCtx = max(256, min(1024, $numCtx));
         $numThread = max(2, min(4, (int)(getenv('OLLAMA_NUM_THREAD') ?: 4)));
+        $temperature = max(0.0, min(0.7, (float)(getenv('OLLAMA_TEMPERATURE') ?: 0.15)));
 
         $payload = [
             'model' => $this->model,
@@ -133,7 +142,7 @@ class AiTravelAssistantService
             'stream' => false,
             'keep_alive' => getenv('OLLAMA_KEEP_ALIVE') ?: '30m',
             'options' => [
-                'temperature' => 0.2,
+                'temperature' => $temperature,
                 'num_ctx' => $numCtx,
                 'num_predict' => $numPredict,
                 'num_thread' => $numThread,
@@ -247,7 +256,7 @@ class AiTravelAssistantService
                 ],
             ],
             'generationConfig' => [
-                'temperature' => 0.2,
+                'temperature' => max(0.0, min(0.7, (float)(getenv('GEMINI_TEMPERATURE') ?: 0.15))),
                 'maxOutputTokens' => 160,
                 'thinkingConfig' => [
                     'thinkingBudget' => 0,
@@ -400,7 +409,7 @@ class AiTravelAssistantService
 
     private function finalizeAnswer(string $text, bool $wasLengthLimited = false): string
     {
-        $text = $this->truncateText($text, 700, false);
+        $text = $this->truncateText($text, 420, false);
         if ($text === '') {
             return '';
         }
@@ -410,6 +419,11 @@ class AiTravelAssistantService
             if ($complete !== '') {
                 $text = $complete;
             }
+        }
+
+        $limitedSentences = $this->limitCompleteSentences($text, 3);
+        if ($limitedSentences !== '') {
+            $text = $limitedSentences;
         }
 
         $text = rtrim($text, " \t\n\r\0\x0B,;:-");
@@ -422,6 +436,21 @@ class AiTravelAssistantService
         }
 
         return $text;
+    }
+
+    private function limitCompleteSentences(string $text, int $maxSentences): string
+    {
+        $text = trim($text);
+        if ($text === '' || $maxSentences <= 0) {
+            return '';
+        }
+
+        if (!preg_match_all('/[^.!?]+[.!?]/u', $text, $matches)) {
+            return $text;
+        }
+
+        $sentences = array_slice(array_map('trim', $matches[0]), 0, $maxSentences);
+        return trim(implode(' ', array_filter($sentences)));
     }
 
     private function clipToLastCompleteSentence(string $text): string
