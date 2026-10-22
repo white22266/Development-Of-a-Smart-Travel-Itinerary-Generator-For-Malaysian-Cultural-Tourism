@@ -39,7 +39,15 @@ final class ItineraryRuleValidationService
         if ($end > $profile['hard_end_min']) return ['ok' => false, 'message' => 'This change would exceed the daily hard end time.'];
         if (!self::openingHoursAllow((string)($place['opening_hours'] ?? ''), $arrival['arrival_min'])) return ['ok' => false, 'message' => 'This place appears closed at the estimated arrival time.'];
         if (!self::accessibilityAllowed($place, (string)($ctx['accessibility_needs'] ?? ''), $arrival['arrival_min'])) return ['ok' => false, 'message' => 'This place conflicts with the saved accessibility needs.'];
-        if (($arrival['day_distance_km'] + $arrival['distance_km']) > $profile['daily_distance_limit_km']) return ['ok' => false, 'message' => 'This change would make the route too far for the selected travel pace and transport mode.'];
+        // The origin transfer is exempt. A replacement is only blocked if it makes the day longer than
+        // both the limit and the day's current distance, so an edit is never blocked by an existing problem.
+        $newLegKm = $arrival['from_origin'] ? 0.0 : $arrival['distance_km'];
+        $newDayKm = $arrival['day_distance_km'] + $newLegKm;
+        $allowedKm = $profile['daily_distance_limit_km'];
+        if ($excludeItemId > 0) {
+            $allowedKm = max($allowedKm, $arrival['day_distance_km'] + $arrival['replaced_leg_km']);
+        }
+        if ($newDayKm > $allowedKm) return ['ok' => false, 'message' => 'This change would make the route too far for the selected travel pace and transport mode.'];
 
         if ($excludeItemId <= 0) {
             $currentCount = self::dayNonHotelCount($conn, $itineraryId, $dayNo);
@@ -51,20 +59,16 @@ final class ItineraryRuleValidationService
         return ['ok' => true, 'message' => 'Place change passes itinerary rules.'];
     }
 
+    /**
+     * Request hook still used by the legacy review_replace.php confirm path (loaded from
+     * config/business_request_bootstrap.php). The AI editor calls validatePlaceChange() directly.
+     */
     public static function validateCurrentRequestIfNeeded(mysqli $conn): void
     {
         $script = basename((string)($_SERVER['SCRIPT_NAME'] ?? ''));
         $action = (string)($_POST['action'] ?? '');
         $travellerId = (int)($_SESSION['traveller_id'] ?? 0);
         if ($travellerId <= 0) return;
-
-        if ($script === 'ai_itinerary_editor.php' && in_array($action, ['confirm', 'confirm_add'], true)) {
-            $itineraryId = (int)($_POST['itinerary_id'] ?? 0);
-            $placeId = (int)($_POST['place_id'] ?? 0);
-            $excludeItemId = $action === 'confirm' ? (int)($_POST['item_id'] ?? 0) : 0;
-            $dayNo = $action === 'confirm_add' ? (int)($_POST['day_no'] ?? 0) : self::itemDay($conn, $itineraryId, $excludeItemId);
-            self::guard($conn, $travellerId, $itineraryId, $placeId, $dayNo, $excludeItemId);
-        }
 
         if ($script === 'review_replace.php' && $action === 'confirm') {
             $itineraryId = (int)($_POST['itinerary_id'] ?? 0);
@@ -101,9 +105,8 @@ final class ItineraryRuleValidationService
 
     private static function loadContext(mysqli $conn, int $travellerId, int $itineraryId): ?array
     {
-        $partySelect = self::columnExists($conn, 'traveller_preferences', 'party_size') ? ', tp.party_size' : '';
         $stmt = $conn->prepare("SELECT i.itinerary_id, i.total_days, i.start_date, i.origin_lat, i.origin_lng,
-                   tp.transport_type, tp.traveller_type{$partySelect}, tp.travel_pace, tp.dietary_preference,
+                   tp.transport_type, tp.traveller_type, tp.party_size, tp.travel_pace, tp.dietary_preference,
                    tp.preferred_visit_time, tp.accessibility_needs, tp.preferred_states
             FROM itineraries i
             LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
@@ -150,33 +153,62 @@ final class ItineraryRuleValidationService
         return ['target_places' => $target, 'start_min' => $window['start'], 'hard_end_min' => $window['hard_end'], 'daily_distance_limit_km' => $distance];
     }
 
+    /**
+     * When the new place would be reached, and how far the day already travels.
+     * - Hotel rows are ignored: the 20:00 check-in is not a stop to continue from.
+     * - For a replacement, only the stops before the replaced one decide the arrival time.
+     * - The day-1 leg from the trip origin is a transfer: the planner exempts it from the daily
+     *   distance limit, so it is not counted here either.
+     */
     private static function estimateArrival(mysqli $conn, int $itineraryId, int $dayNo, array $place, array $ctx, array $profile, int $excludeItemId): array
     {
-        $dayDistance = 0.0;
-        $anchorLat = ($dayNo === 1 && self::validCoord($ctx['origin_lat'] ?? null, $ctx['origin_lng'] ?? null)) ? (float)$ctx['origin_lat'] : null;
-        $anchorLng = ($dayNo === 1 && self::validCoord($ctx['origin_lat'] ?? null, $ctx['origin_lng'] ?? null)) ? (float)$ctx['origin_lng'] : null;
+        $hasOrigin = $dayNo === 1 && self::validCoord($ctx['origin_lat'] ?? null, $ctx['origin_lng'] ?? null);
+        $anchorLat = $hasOrigin ? (float)$ctx['origin_lat'] : null;
+        $anchorLng = $hasOrigin ? (float)$ctx['origin_lng'] : null;
+        $fromOrigin = $hasOrigin;
         $currentMin = $profile['start_min'];
+        $dayDistance = 0.0;
 
-        $stmt = $conn->prepare("SELECT ii.item_id, ii.end_time, ii.distance_km, COALESCE(ii.item_latitude, cp.latitude) AS latitude,
+        $replacedSeq = PHP_INT_MAX;
+        $replacedLegKm = 0.0;
+        if ($excludeItemId > 0) {
+            $seqStmt = $conn->prepare('SELECT sequence_no, distance_km FROM itinerary_items WHERE itinerary_id = ? AND item_id = ? LIMIT 1');
+            $seqStmt->bind_param('ii', $itineraryId, $excludeItemId);
+            $seqStmt->execute();
+            $seqRow = $seqStmt->get_result()->fetch_assoc();
+            $seqStmt->close();
+            if ($seqRow) {
+                $replacedSeq = (int)$seqRow['sequence_no'];
+                $isOriginLeg = $hasOrigin && $replacedSeq === 1;
+                $replacedLegKm = $isOriginLeg ? 0.0 : (float)($seqRow['distance_km'] ?? 0);
+            }
+        }
+
+        $stmt = $conn->prepare("SELECT ii.item_id, ii.sequence_no, ii.end_time, ii.distance_km,
+                   COALESCE(ii.item_latitude, cp.latitude) AS latitude,
                    COALESCE(ii.item_longitude, cp.longitude) AS longitude
             FROM itinerary_items ii LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
-            WHERE ii.itinerary_id = ? AND ii.day_no = ? AND ii.item_id <> ?
+            WHERE ii.itinerary_id = ? AND ii.day_no = ? AND ii.item_id <> ? AND ii.item_type <> 'hotel'
             ORDER BY ii.sequence_no");
-        if ($stmt) {
-            $stmt->bind_param('iii', $itineraryId, $dayNo, $excludeItemId);
-            $stmt->execute();
-            $res = $stmt->get_result();
-            while ($row = $res->fetch_assoc()) {
-                if (self::validCoord($row['latitude'] ?? null, $row['longitude'] ?? null)) {
-                    $anchorLat = (float)$row['latitude'];
-                    $anchorLng = (float)$row['longitude'];
-                }
-                $dayDistance += (float)($row['distance_km'] ?? 0);
-                $end = self::sqlTimeToMinutes($row['end_time'] ?? null);
-                if ($end !== null) $currentMin = max($currentMin, $end + 30);
+        $stmt->bind_param('iii', $itineraryId, $dayNo, $excludeItemId);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $isFirstStop = true;
+        while ($row = $res->fetch_assoc()) {
+            $isOriginLeg = $hasOrigin && $isFirstStop && (int)$row['sequence_no'] === 1;
+            if (!$isOriginLeg) $dayDistance += (float)($row['distance_km'] ?? 0);
+            $isFirstStop = false;
+
+            if ((int)$row['sequence_no'] >= $replacedSeq) continue;   // stops after the replaced one
+            if (self::validCoord($row['latitude'] ?? null, $row['longitude'] ?? null)) {
+                $anchorLat = (float)$row['latitude'];
+                $anchorLng = (float)$row['longitude'];
+                $fromOrigin = false;
             }
-            $stmt->close();
+            $end = self::sqlTimeToMinutes($row['end_time'] ?? null);
+            if ($end !== null) $currentMin = max($currentMin, $end + 30);
         }
+        $stmt->close();
 
         if ($anchorLat === null || $anchorLng === null) {
             $anchorLat = (float)$place['latitude'];
@@ -184,7 +216,13 @@ final class ItineraryRuleValidationService
         }
         $distance = self::haversineKm($anchorLat, $anchorLng, (float)$place['latitude'], (float)$place['longitude']) * 1.3;
         $arrival = $currentMin + self::estimateTravelTime((string)($ctx['transport_type'] ?? 'car'), $distance);
-        return ['arrival_min' => $arrival, 'distance_km' => $distance, 'day_distance_km' => $dayDistance];
+        return [
+            'arrival_min' => $arrival,
+            'distance_km' => $distance,
+            'day_distance_km' => $dayDistance,
+            'replaced_leg_km' => $replacedLegKm,
+            'from_origin' => $fromOrigin,
+        ];
     }
 
     private static function festivalDateAllowed(array $place, string $dayDate): bool
@@ -335,13 +373,5 @@ final class ItineraryRuleValidationService
         if ($ampm === 'pm' && $hour < 12) $hour += 12;
         if ($ampm === 'am' && $hour === 12) $hour = 0;
         return ($hour % 24) * 60 + $minute;
-    }
-
-    private static function columnExists(mysqli $conn, string $table, string $column): bool
-    {
-        $table = $conn->real_escape_string($table);
-        $column = $conn->real_escape_string($column);
-        $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
-        return $res && $res->num_rows > 0;
     }
 }
