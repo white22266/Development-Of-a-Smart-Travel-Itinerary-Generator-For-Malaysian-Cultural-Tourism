@@ -13,11 +13,6 @@ if (in_array($businessScriptName, ['generate_itinerary.php', 'review_replace.php
     StrictFestivalCandidatePoolService::install($conn);
 }
 
-if ($businessScriptName === 'review_replace.php') {
-    require_once __DIR__ . '/../services/ItineraryRuleValidationService.php';
-    ItineraryRuleValidationService::validateCurrentRequestIfNeeded($conn);
-}
-
 if ($businessScriptName === 'itinerary_view.php') {
     ob_start(static function (string $html): string {
         $asset = '<script src="../assets/itinerary_route_map_fix.js?v=20260606-single-map-controller"></script>';

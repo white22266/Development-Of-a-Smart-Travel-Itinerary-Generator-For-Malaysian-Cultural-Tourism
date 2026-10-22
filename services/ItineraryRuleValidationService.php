@@ -59,50 +59,6 @@ final class ItineraryRuleValidationService
         return ['ok' => true, 'message' => 'Place change passes itinerary rules.'];
     }
 
-    /**
-     * Request hook still used by the legacy review_replace.php confirm path (loaded from
-     * config/business_request_bootstrap.php). The AI editor calls validatePlaceChange() directly.
-     */
-    public static function validateCurrentRequestIfNeeded(mysqli $conn): void
-    {
-        $script = basename((string)($_SERVER['SCRIPT_NAME'] ?? ''));
-        $action = (string)($_POST['action'] ?? '');
-        $travellerId = (int)($_SESSION['traveller_id'] ?? 0);
-        if ($travellerId <= 0) return;
-
-        if ($script === 'review_replace.php' && $action === 'confirm') {
-            $itineraryId = (int)($_POST['itinerary_id'] ?? 0);
-            $hotelPlaceId = (int)($_POST['hotel_place_id'] ?? 0);
-            if ($hotelPlaceId > 0) {
-                $dayNo = self::itineraryTotalDays($conn, $travellerId, $itineraryId);
-                self::guard($conn, $travellerId, $itineraryId, $hotelPlaceId, $dayNo, 0);
-            }
-
-            $json = (string)($_POST['replacements_json'] ?? '');
-            $replacements = json_decode($json, true);
-            if (is_array($replacements)) {
-                foreach ($replacements as $itemId => $placeId) {
-                    $itemId = (int)$itemId;
-                    $placeId = (int)$placeId;
-                    if ($itemId <= 0 || $placeId <= 0) continue;
-                    $dayNo = self::itemDay($conn, $itineraryId, $itemId);
-                    self::guard($conn, $travellerId, $itineraryId, $placeId, $dayNo, $itemId);
-                }
-            }
-        }
-    }
-
-    private static function guard(mysqli $conn, int $travellerId, int $itineraryId, int $placeId, int $dayNo, int $excludeItemId): void
-    {
-        if ($itineraryId <= 0 || $placeId <= 0 || $dayNo <= 0) return;
-        $result = self::validatePlaceChange($conn, $travellerId, $itineraryId, $placeId, $dayNo, $excludeItemId);
-        if (!$result['ok']) {
-            header('Content-Type: application/json; charset=utf-8');
-            echo json_encode(['status' => 'error', 'answer' => $result['message'], 'message' => $result['message']], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-            exit;
-        }
-    }
-
     private static function loadContext(mysqli $conn, int $travellerId, int $itineraryId): ?array
     {
         $stmt = $conn->prepare("SELECT i.itinerary_id, i.total_days, i.start_date, i.origin_lat, i.origin_lng,
@@ -299,29 +255,6 @@ final class ItineraryRuleValidationService
         $row = $stmt->get_result()->fetch_assoc();
         $stmt->close();
         return (int)($row['c'] ?? 0);
-    }
-
-    private static function itemDay(mysqli $conn, int $itineraryId, int $itemId): int
-    {
-        if ($itemId <= 0) return 0;
-        $stmt = $conn->prepare('SELECT day_no FROM itinerary_items WHERE itinerary_id = ? AND item_id = ? LIMIT 1');
-        if (!$stmt) return 0;
-        $stmt->bind_param('ii', $itineraryId, $itemId);
-        $stmt->execute();
-        $row = $stmt->get_result()->fetch_assoc();
-        $stmt->close();
-        return (int)($row['day_no'] ?? 0);
-    }
-
-    private static function itineraryTotalDays(mysqli $conn, int $travellerId, int $itineraryId): int
-    {
-        $stmt = $conn->prepare('SELECT total_days FROM itineraries WHERE itinerary_id = ? AND traveller_id = ? LIMIT 1');
-        if (!$stmt) return 0;
-        $stmt->bind_param('ii', $itineraryId, $travellerId);
-        $stmt->execute();
-        $row = $stmt->get_result()->fetch_assoc();
-        $stmt->close();
-        return max(1, (int)($row['total_days'] ?? 1));
     }
 
     private static function dayDate(string $startDate, int $dayNo): string

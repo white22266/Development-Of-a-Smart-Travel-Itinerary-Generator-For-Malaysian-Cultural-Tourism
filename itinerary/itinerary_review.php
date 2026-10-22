@@ -277,6 +277,12 @@ $totalNights = max(0, $totalDays - 1);
         .place-card.replacing .review-status,
         .place-card.replacement-pending .review-status { background:#fef3c7; color:#92400e; }
 
+        /* A stop the traveller chose to keep: actions hidden until Reset All. Saved on Confirm & View Trip. */
+        .place-card.kept { border-color: #16a34a; background: #f0fdf4; }
+        .place-card.kept .place-actions button { display: none; }
+        .place-card.kept .review-status { background: #dcfce7; color: #15803d; border: 1px solid rgba(34, 197, 94, .28); }
+        .kept-note { background: #dcfce7; color: #15803d; }
+
         /* ===== Match score bar ===== */
         .match-score-wrap {
             margin-top: 10px;
@@ -981,12 +987,15 @@ function acceptPlace(itemId) {
     const card = document.getElementById('card-' + itemId);
     if (!card) return;
     card.classList.remove('rejected', 'replacing', 'replacement-pending');
-    card.classList.add('accepted');
+    card.classList.add('accepted', 'kept');
     card.dataset.status = 'accepted';
     itemStatus[itemId] = 'accepted';
     const status = document.getElementById('status-' + itemId);
-    if (status) status.textContent = replacementMap[itemId] ? 'Replacement pending' : 'Kept';
-    if (replacementMap[itemId]) card.classList.add('replacement-pending');
+    if (status) status.textContent = replacementMap[itemId] ? '✔ Replacement kept' : '✔ Kept';
+    const replacement = document.getElementById('replacement-' + itemId);
+    if (replacementMap[itemId] && replacement && replacement.classList.contains('visible')) {
+        replacement.innerHTML = '<span class="pending-change-note kept-note">✔ Replacement kept. It is saved when you confirm the itinerary.</span>';
+    }
     updateStats();
 }
 
@@ -1322,7 +1331,7 @@ function resetAll() {
             card.dataset.category = originalCards[itemId].category;
             card.dataset.placeId = originalCards[itemId].placeId;
         }
-        card.classList.remove('rejected', 'replacing', 'replacement-pending');
+        card.classList.remove('rejected', 'replacing', 'replacement-pending', 'kept');
         card.classList.add('accepted');
         card.dataset.status = 'accepted';
         itemStatus[itemId] = 'accepted';
