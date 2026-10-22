@@ -47,22 +47,15 @@ if (!$it) {
     exit;
 }
 
-$hasItemCoords = table_has_column($conn, "itinerary_items", "item_latitude")
-    && table_has_column($conn, "itinerary_items", "item_longitude");
-$coordSelect = $hasItemCoords
-    ? "COALESCE(ii.item_latitude, cp.latitude) AS latitude, COALESCE(ii.item_longitude, cp.longitude) AS longitude"
-    : "cp.latitude, cp.longitude";
-
-$itemSql = "
+$itemsStmt = $conn->prepare("
     SELECT ii.day_no, ii.sequence_no, ii.item_type, ii.item_title, ii.start_time, ii.end_time,
            ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
-           cp.category, cp.state, cp.district, cp.opening_hours, {$coordSelect}
+           cp.category, cp.state, cp.district, cp.opening_hours
     FROM itinerary_items ii
     LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
     WHERE ii.itinerary_id = ?
     ORDER BY ii.day_no, ii.sequence_no
-";
-$itemsStmt = $conn->prepare($itemSql);
+");
 $itemsStmt->bind_param("i", $itineraryId);
 $itemsStmt->execute();
 $res = $itemsStmt->get_result();
@@ -87,8 +80,6 @@ while ($row = $res->fetch_assoc()) {
         'travel_time_min' => $row["travel_time_min"] !== null ? (int)$row["travel_time_min"] : null,
         'opening_hours' => $row["opening_hours"],
         'notes' => $row["notes"],
-        'latitude' => $row["latitude"] !== null ? (float)$row["latitude"] : null,
-        'longitude' => $row["longitude"] !== null ? (float)$row["longitude"] : null,
     ];
 }
 $itemsStmt->close();
@@ -114,38 +105,18 @@ $context = [
     'days' => $days,
 ];
 
-$model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://127.0.0.1:11434";
-$assistant = new AiTravelAssistantService($model, $baseUrl);
+$assistant = new AiTravelAssistantService();
 $result = $assistant->answer($message, $context);
 
-if (table_exists($conn, "ai_chat_logs")) {
-    $log = $conn->prepare("
-        INSERT INTO ai_chat_logs (itinerary_id, traveller_id, user_message, ai_response)
-        VALUES (?, ?, ?, ?)
-    ");
-    if ($log) {
-        $answer = $result["answer"] ?? "";
-        $log->bind_param("iiss", $itineraryId, $travellerId, $message, $answer);
-        $log->execute();
-        $log->close();
-    }
+try {
+    $answer = (string)($result["answer"] ?? "");
+    $log = $conn->prepare("INSERT INTO ai_chat_logs (itinerary_id, traveller_id, user_message, ai_response) VALUES (?, ?, ?, ?)");
+    $log->bind_param("iiss", $itineraryId, $travellerId, $message, $answer);
+    $log->execute();
+    $log->close();
+} catch (mysqli_sql_exception $e) {
+    error_log("ai_chat.php: could not log chat: " . $e->getMessage());
 }
 
 unset($result["source"]);
 echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-
-function table_has_column(mysqli $conn, string $table, string $column): bool
-{
-    $table = $conn->real_escape_string($table);
-    $column = $conn->real_escape_string($column);
-    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
-    return ($res && $res->num_rows > 0);
-}
-
-function table_exists(mysqli $conn, string $table): bool
-{
-    $table = $conn->real_escape_string($table);
-    $res = $conn->query("SHOW TABLES LIKE '$table'");
-    return ($res && $res->num_rows > 0);
-}

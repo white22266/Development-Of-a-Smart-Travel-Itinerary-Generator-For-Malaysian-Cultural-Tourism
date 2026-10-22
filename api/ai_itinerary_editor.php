@@ -225,8 +225,11 @@ if (empty($proposals)) {
 }
 
 $context = [
-    "task" => "itinerary stop replacement suggestion only",
-    "important_rule" => "Do not say changes are saved. The user must click Confirm Change before the itinerary is updated.",
+    "assistant_rules" => [
+        "This reply explains suggested itinerary changes only.",
+        "Describe only the places in replacement_proposals; do not suggest any other place.",
+        "Do not say changes are saved. The user must click Confirm Change before the itinerary is updated.",
+    ],
     "itinerary" => [
         "title" => $itinerary["title"],
         "start_date" => $itinerary["start_date"],
@@ -240,9 +243,7 @@ $context = [
 ];
 
 $fallbackAnswer = build_local_editor_answer($proposals);
-$model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://127.0.0.1:11434";
-$assistant = new AiTravelAssistantService($model, $baseUrl);
+$assistant = new AiTravelAssistantService();
 $result = $assistant->answer($message !== "" ? $message : "Suggest improvements for this itinerary.", $context);
 
 $answer = trim((string)($result["answer"] ?? ""));

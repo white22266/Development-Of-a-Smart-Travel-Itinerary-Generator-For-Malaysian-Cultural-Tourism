@@ -143,8 +143,7 @@ if ($pendingAction) {
 }
 
 $context = [
-    "assistant_role" => "conversational travel planning helper",
-    "safety_rules" => [
+    "assistant_rules" => [
         "Use the current itinerary as the source of truth.",
         "The saved start date and saved starting location in the itinerary are already confirmed unless they are empty.",
         "When answering summary or explanation questions, do not ask the traveller to reconfirm existing start date, existing starting location, or hotel.",
@@ -175,14 +174,13 @@ $context = [
     "items" => $items,
 ];
 
-$model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://127.0.0.1:11434";
-$assistant = new AiTravelAssistantService($model, $baseUrl);
+$assistant = new AiTravelAssistantService();
 $result = $assistant->answer($message, $context);
 
+// The service's answer is safe to show to the traveller even when the model failed.
 $answer = trim((string)($result["answer"] ?? ""));
-if (($result["status"] ?? "") !== "success" || $answer === "") {
-    $answer = "I can help with this trip, but the local AI service is not available right now. You can still use the rule-based itinerary generator, hotel confirmation, and route tools.";
+if ($answer === "") {
+    $answer = "The travel assistant could not prepare an answer. Please try again.";
 }
 
 // No secondary parsing of $answer here. The old logic parsed dates/origins from the AI's own explanation,
@@ -354,7 +352,8 @@ function same_origin_name(string $newOrigin, string $currentOrigin): bool
 
 function safe_is_weather_question(string $message): bool
 {
-    return (bool)preg_match('/weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella|cuaca|hujan/iu', $message);
+    // Whole words only: "train", "photo" and "Rainforest" are not weather questions.
+    return (bool)preg_match('/\b(?:weather|forecast|rain|raining|rainy|temperature|hot|humid|storm|umbrella|cuaca|hujan)\b/iu', $message);
 }
 
 function safe_is_explicit_date_update_message(string $message): bool
@@ -372,8 +371,8 @@ function safe_is_explicit_origin_update_message(string $message): bool
 
 function safe_is_timetable_start_time_request(string $message): bool
 {
-    return (bool)preg_match('/\b(?:rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|itinerary|trip|day)\b.*\b(?:start|begin)\b.*\b(?:at|from)?\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/iu', $message)
-        || (bool)preg_match('/\b(?:start|begin)\s+(?:at|from)\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/iu', $message);
+    return (bool)preg_match('/\b(?:rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|itinerary|trip|day)\b.*\b(?:start|begin)\b.*\b(?:at|from)?\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/iu', $message)
+        || (bool)preg_match('/\b(?:start|begin)\s+(?:at|from)\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/iu', $message);
 }
 
 function safe_is_invalid_origin_candidate(string $value): bool
@@ -401,46 +400,10 @@ function safe_extract_origin_name(string $message): string
         if (preg_match($pattern, $message, $m)) {
             $value = trim(strip_tags((string)$m[1]));
             $value = preg_replace('/\s+/', ' ', $value) ?? "";
-            $value = preg_replace('/\s+(?:at|from)?\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b.*$/iu', '', $value) ?? $value;
+            $value = preg_replace('/\s+(?:at|from)?\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b.*$/iu', '', $value) ?? $value;
             $value = preg_replace('/\b(?:on|at|for|to|please|pls)\s*$/iu', '', $value) ?? $value;
             $value = trim($value, " \t\n\r\0\x0B,;:");
             if (safe_is_invalid_origin_candidate($value)) return "";
-            if (function_exists("mb_substr")) return trim(mb_substr($value, 0, 120));
-            return trim(substr($value, 0, 120));
-        }
-    }
-    return "";
-}
-
-function is_weather_question(string $message): bool
-{
-    return (bool)preg_match('/weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella|cuaca|hujan/iu', $message);
-}
-
-function is_explicit_date_update_message(string $message): bool
-{
-    return (bool)preg_match('/\b(?:change|update|set|move|reschedule|replace|confirm)\b.*\b(?:start\s*date|travel\s*date|trip\s*date|date)\b|\b(?:start\s*date|travel\s*date|trip\s*date|date)\b.*\b(?:to|as|is|=)\b|\b(?:travel|visit|depart|arrive|go)\s+(?:on|at)\b/iu', $message);
-}
-
-function is_explicit_origin_update_message(string $message): bool
-{
-    return (bool)preg_match('/\b(?:change|update|set|use|replace|confirm)\b.*\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b|\b(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\b.*\b(?:to|as|is|=)\b|\b(?:i\s+will\s+start|i\s+start|start\s+from|starting\s+from|depart\s+from|leaving\s+from|leave\s+from)\b/iu', $message);
-}
-
-function extract_origin_name(string $message): string
-{
-    $patterns = [
-        '/\b(?:change|update|set|use|replace|confirm)\s+(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s+(?:to|as)\s+(.+?)(?:[.!?]|$)/iu',
-        '/\b(?:my\s+)?(?:starting\s+location|start\s+location|starting\s+point|start\s+point|origin)\s*(?:is|=|:)\s*(.+?)(?:[.!?]|$)/iu',
-        '/\b(?:i\s+will\s+start|i\s+start|start\s+me|route\s+me|start\s+from|starting\s+from)\s+(?:at|from)?\s*(.+?)(?:\s+(?:to|on|for)\b|[.!?]|$)/iu',
-        '/\b(?:depart(?:ing)? from|leave from|leaving from)\s+(.+?)(?:\s+(?:to|on|at|for)\b|[.!?]|$)/iu',
-    ];
-    foreach ($patterns as $pattern) {
-        if (preg_match($pattern, $message, $m)) {
-            $value = trim(strip_tags((string)$m[1]));
-            $value = preg_replace('/\s+/', ' ', $value) ?? "";
-            $value = preg_replace('/\b(?:on|at|for|to|please|pls)\s*$/iu', '', $value) ?? $value;
-            $value = trim($value, " \t\n\r\0\x0B,;:");
             if (function_exists("mb_substr")) return trim(mb_substr($value, 0, 120));
             return trim(substr($value, 0, 120));
         }
@@ -540,10 +503,12 @@ function fetch_current_weather(float $lat, float $lng): ?array
 
 function log_ai_chat(mysqli $conn, int $itineraryId, int $travellerId, string $message, string $answer): void
 {
-    if (!function_exists("table_exists") || !table_exists($conn, "ai_chat_logs")) return;
-    $stmt = $conn->prepare("INSERT INTO ai_chat_logs (itinerary_id, traveller_id, user_message, ai_response) VALUES (?, ?, ?, ?)");
-    if (!$stmt) return;
-    $stmt->bind_param("iiss", $itineraryId, $travellerId, $message, $answer);
-    $stmt->execute();
-    $stmt->close();
+    try {
+        $stmt = $conn->prepare("INSERT INTO ai_chat_logs (itinerary_id, traveller_id, user_message, ai_response) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("iiss", $itineraryId, $travellerId, $message, $answer);
+        $stmt->execute();
+        $stmt->close();
+    } catch (mysqli_sql_exception $e) {
+        error_log("ai_travel_assistant.php: could not log chat: " . $e->getMessage());
+    }
 }

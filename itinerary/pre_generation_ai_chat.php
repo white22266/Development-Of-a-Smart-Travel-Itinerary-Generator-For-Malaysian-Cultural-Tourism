@@ -36,15 +36,8 @@ if ($message === '') {
 
 $preference = null;
 if ($preferenceId > 0) {
-    $hasPartySizeCol = false;
-    $colRes = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'party_size'");
-    if ($colRes && $colRes->num_rows > 0) {
-        $hasPartySizeCol = true;
-    }
-    $partySizeSql = $hasPartySizeCol ? ", party_size" : "";
-
     $stmt = $conn->prepare("
-        SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type{$partySizeSql}, travel_pace,
+        SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type, party_size, travel_pace,
                dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts
         FROM traveller_preferences
         WHERE preference_id = ? AND traveller_id = ?
@@ -87,20 +80,11 @@ $context = [
     ],
 ];
 
-$model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://127.0.0.1:11434";
-$assistant = new AiTravelAssistantService($model, $baseUrl);
-
-// Pass the traveller's actual message only. Do not prepend generic text containing
-// "generate itinerary", because that causes every message to be classified as a
-// preference-readiness question.
+// Pass the traveller's actual message only. The service's answer is safe to show even
+// when status is 'error' (for example when the model is busy).
+$assistant = new AiTravelAssistantService();
 $result = $assistant->answer($message, $context);
-
-unset($result["source"], $result["model"]);
-if (($result['status'] ?? '') !== 'success') {
-    $result['status'] = 'success';
-    $result['answer'] = 'Please ask about your selected preference, starting location, start date, route readiness, or what to confirm before generating the itinerary.';
-}
+unset($result["source"]);
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 

@@ -35,10 +35,10 @@ define('SMTP_PASS', (string) env_value('SMTP_PASS', ''));
 define('SMTP_FROM', trim((string) env_value('SMTP_FROM', SMTP_USER)));
 define('SMTP_FROM_NAME', trim((string) env_value('SMTP_FROM_NAME', 'Admin Smart Travel Itinerary Generator')));
 
-// AI assistant. Gemini is used first when a key is configured; Ollama remains the local fallback.
+// Local AI (Ollama). services/OllamaClient.php reads these; see .env.example.
 define('OLLAMA_MODEL', trim((string) env_value('OLLAMA_MODEL', 'qwen2.5:3b')));
 define('OLLAMA_BASE_URL', rtrim(trim((string) env_value('OLLAMA_BASE_URL', 'http://127.0.0.1:11434')), '/'));
-define('OLLAMA_NUM_CTX', max(128, (int) env_value('OLLAMA_NUM_CTX', '1024')));
+define('OLLAMA_NUM_CTX', max(1024, (int) env_value('OLLAMA_NUM_CTX', '4096')));
 
 // Admin report AI defaults: try Ollama first, then use the local deterministic report if Ollama is unavailable or too slow.
 // num_predict controls the generated answer length. Keep it high enough for all required report headings.

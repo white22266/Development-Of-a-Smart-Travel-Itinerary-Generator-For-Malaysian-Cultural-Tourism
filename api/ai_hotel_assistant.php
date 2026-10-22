@@ -152,8 +152,11 @@ if (empty($hotelOptions)) {
 }
 
 $context = [
-    "task" => "hotel recommendation only",
-    "important_rule" => "Do not say the hotel is booked or saved. Tell the user to click Confirm Hotel if they want to add it.",
+    "assistant_rules" => [
+        "This reply recommends hotels only.",
+        "Describe only the hotels in hotel_options; do not invent other hotels or prices.",
+        "Do not say the hotel is booked or saved. Tell the user to click Confirm Hotel if they want to add it.",
+    ],
     "itinerary" => [
         "title" => $itinerary["title"],
         "start_date" => $itinerary["start_date"],
@@ -168,9 +171,7 @@ $context = [
 ];
 
 $fallbackAnswer = build_local_hotel_answer($hotelOptions, $nightlyBudget);
-$model = defined("OLLAMA_MODEL") ? OLLAMA_MODEL : "qwen2.5:3b";
-$baseUrl = defined("OLLAMA_BASE_URL") ? OLLAMA_BASE_URL : "http://127.0.0.1:11434";
-$assistant = new AiTravelAssistantService($model, $baseUrl);
+$assistant = new AiTravelAssistantService();
 $result = $assistant->answer($message !== "" ? $message : "Recommend a suitable hotel for this itinerary.", $context);
 
 $answer = trim((string)($result["answer"] ?? ""));
