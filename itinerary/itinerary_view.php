@@ -1904,9 +1904,12 @@ async function sendAiMessage(event) {
     const loading = addAiMessage('bot', 'Writing answer...');
 
     try {
-        const scheduleTimeIntent = /\b(?:rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|itinerary|trip|day)\b.*\b(?:start|begin)\b.*\b(?:at|from)?\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/i.test(text)
-            || /\b(?:start|begin)\s+(?:at|from)\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/i.test(text);
-        const originIntent = !scheduleTimeIntent && /\b(starting\s+location|start\s+location|starting\s+point|start\s+point|origin|start\s+from|starting\s+from|depart\s+from|leave\s+from)\b/i.test(text);
+        const hasClockTime = /\b\d{1,2}(?::\d{2})?\s*(?:am|pm)\b/i.test(text);
+        const scheduleTimeIntent = hasClockTime && (
+            /\b(?:rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|retime|time|timing)\b/i.test(text)
+            || /\b(?:start|begin)\s*(?:time)?\s*(?:at|from|to)?\b/i.test(text)
+        );
+        const originIntent = !scheduleTimeIntent && /\b(starting\s+location|staring\s+location|start\s+location|starting\s+point|staring\s+point|start\s+point|origin|start\s+from|starting\s+from|staring\s+from|depart\s+from|leave\s+from)\b/i.test(text);
         const dateIntent = /\b(start\s+date|travel\s+date|trip\s+date|travel\s+on|go\s+on|visit\s+on|arrive\s+on|depart\s+on|date)\b|\b\d{4}[\/\-.]\d{1,2}[\/\-.]\d{1,2}\b|\b\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{4}\b|\b\d{1,2}\s*[a-zA-Z]+\s*\d{4}\b|\b[a-zA-Z]+\s*\d{1,2}\s*\d{4}\b/i.test(text);
         const weatherIntent = /\b(weather|forecast|rain|raining|temperature|hot|humid|storm|umbrella)\b/i.test(text);
         const smartHotelIntent = /\b(hotel|hotels|accommodation|stay|stays|room|rooms|sleep|overnight|check\s*in|nearby\s+hotel|budget\s+hotel|cheap\s+hotel|luxury\s+hotel|place\s+to\s+stay)\b/i.test(text);

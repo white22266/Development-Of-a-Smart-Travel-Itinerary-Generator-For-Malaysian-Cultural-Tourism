@@ -835,7 +835,7 @@ function apply_replacement(mysqli $conn, int $itineraryId, int $itemId, array $p
 
 function is_timetable_rearrange_request(string $message): bool
 {
-    return (bool)preg_match('/\b(rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|start\s+(?:at|from)|begin\s+(?:at|from))\b/i', $message);
+    return (bool)preg_match('/\b(rearrange|arrange|new\s+timetable|timetable|schedule|reschedule|retime|time|timing|start\s+(?:time\s*)?(?:at|from|to)?|begin\s+(?:time\s*)?(?:at|from|to)?)\b/i', $message);
 }
 
 function extract_requested_start_time(string $message): ?string
