@@ -59,8 +59,10 @@ if (!empty($errors)) {
 }
 
 try {
-    $googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
-    $planner = new RuleBasedItineraryPlannerService($conn, $googleMapsKey);
+    // Keep itinerary generation fast and deterministic. Live Google route details are
+    // still available later from the map / Show Route UI.
+    $planningRouteKey = "";
+    $planner = new RuleBasedItineraryPlannerService($conn, $planningRouteKey);
     $itineraryId = $planner->generate($travellerId, $preferenceId, [
         "start_date" => $startDate,
         "origin_name" => $originName,
@@ -73,15 +75,11 @@ try {
 
     // Append valid places first. If this cannot meet the pace target because the day is already late,
     // rebuild the short day from its official start point using a full-day planning window.
-    ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $googleMapsKey);
-    ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId, $googleMapsKey);
+    ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $planningRouteKey);
+    ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId, $planningRouteKey);
 
     // Re-apply budget integrity after rebuild/refill so added paid places cannot silently exceed budget.
     PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
-
-    // Final pass: budget pruning may remove places, so rebuild again if any day falls below the target.
-    ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $googleMapsKey);
-    ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId, $googleMapsKey);
 
     if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {
         unset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId]);
