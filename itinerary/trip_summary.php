@@ -796,7 +796,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
         </div>
         <div class="ai-chat-body" id="aiChatBody">
-            <div class="ai-msg bot" id="aiInitialMessage">Hi, I am your local AI assistant. Ask for hotel recommendations, cost checks, route explanation, or itinerary changes. I will not save hotel or route changes unless you click a confirmation button.</div>
+            <div class="ai-msg bot" id="aiInitialMessage">Hi, I am your travel assistant. Ask for hotel recommendations, cost checks, route explanation, or itinerary changes. I will not save hotel or route changes unless you click a confirmation button.</div>
         </div>
         <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
             <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">

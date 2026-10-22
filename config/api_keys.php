@@ -25,8 +25,6 @@ if (!function_exists('set_default_env')) {
 define('GOOGLE_MAPS_API_KEY', trim((string) env_value('GOOGLE_MAPS_API_KEY', '')));
 define('OPENWEATHER_API_KEY', trim((string) env_value('OPENWEATHER_API_KEY', '')));
 define('SERPAPI_API_KEY', trim((string) env_value('SERPAPI_API_KEY', '')));
-define('GEMINI_API_KEY', trim((string) env_value('GEMINI_API_KEY', '')));
-define('GEMINI_MODEL', trim((string) env_value('GEMINI_MODEL', 'gemini-2.5-flash')));
 
 define('SMTP_HOST', trim((string) env_value('SMTP_HOST', 'smtp.gmail.com')));
 define('SMTP_PORT', (int) env_value('SMTP_PORT', 587));

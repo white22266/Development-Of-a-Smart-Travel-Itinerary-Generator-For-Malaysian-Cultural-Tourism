@@ -935,12 +935,12 @@ $totalNights = max(0, $totalDays - 1);
     <div class="ai-chat-header">
         <div>
             <div class="ai-chat-title">AI Chatbot</div>
-            <div class="ai-chat-subtitle">Chat with the local AI before confirming this itinerary.</div>
+            <div class="ai-chat-subtitle">Ask the travel assistant before confirming this itinerary.</div>
         </div>
         <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">Hi, I am your local AI chatbot. Ask me about this generated itinerary, route order, budget, hotel choice, or places to replace before you confirm.</div>
+        <div class="ai-msg bot">Hi, I am your travel assistant. Ask me about this generated itinerary, route order, budget, hotel choice, or places to replace before you confirm.</div>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
         <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">

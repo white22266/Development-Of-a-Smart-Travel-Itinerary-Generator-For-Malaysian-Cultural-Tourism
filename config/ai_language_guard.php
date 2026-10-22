@@ -1,5 +1,5 @@
 <?php
-// Blocks non-English AI chat input before it reaches Gemini/Ollama or rule parsers.
+// Blocks non-English AI chat input before it reaches the AI model or rule parsers.
 
 if (!function_exists('ai_contains_chinese')) {
     function ai_contains_chinese(string $text): bool
