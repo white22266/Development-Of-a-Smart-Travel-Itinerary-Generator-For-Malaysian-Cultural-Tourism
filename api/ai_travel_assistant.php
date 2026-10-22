@@ -171,7 +171,8 @@ $context = [
         "preferred_states" => $itinerary["preferred_states"] ?? "",
         "preferred_districts" => $itinerary["preferred_districts"] ?? "",
     ],
-    "items" => $items,
+    // Grouped by day: a small model reads "Day 2" -> stops far more reliably than a flat list.
+    "days" => group_items_by_day($items),
 ];
 
 $assistant = new AiTravelAssistantService();
@@ -252,6 +253,19 @@ function load_itinerary_items(mysqli $conn, int $itineraryId): array
     }
     $stmt->close();
     return $items;
+}
+
+function group_items_by_day(array $items): array
+{
+    $days = [];
+    foreach ($items as $item) {
+        $label = "Day " . (int)$item["day_no"];
+        unset($item["day_no"]);
+        $item["stop"] = $item["sequence_no"];
+        unset($item["sequence_no"]);
+        $days[$label][] = $item;
+    }
+    return $days;
 }
 
 function parse_trip_date(string $text): ?string
