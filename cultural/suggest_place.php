@@ -193,7 +193,7 @@ function sug_label($s)
 
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">Category *</label><br>
-                                <select name="category" required
+                                <select name="category" id="suggestCategorySelect" required
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                                     <option value="" disabled selected>Choose a category</option>
                                     <?php foreach ($categoryOptions as $c): ?>
@@ -249,6 +249,19 @@ function sug_label($s)
                                 <label style="font-size:13px; font-weight:800;">Opening Hours</label><br>
                                 <input type="text" name="opening_hours" id="suggestOpeningHoursInput" placeholder="e.g. 09:00 - 17:00"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            </div>
+
+                            <div class="col-3 suggest-festival-date-field" style="display:none;">
+                                <label style="font-size:13px; font-weight:800;">Festival Start Date *</label><br>
+                                <input type="date" name="festival_start_date" id="suggestFestivalStartDateInput"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            </div>
+
+                            <div class="col-3 suggest-festival-date-field" style="display:none;">
+                                <label style="font-size:13px; font-weight:800;">Festival End Date *</label><br>
+                                <input type="date" name="festival_end_date" id="suggestFestivalEndDateInput"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                <div class="meta" style="margin-top:6px;">Required only for festival records.</div>
                             </div>
 
                             <!-- CHANGE: Place Image below Opening Hours (as you requested) -->
@@ -338,6 +351,32 @@ function sug_label($s)
 var existingSuggestPlaces = <?php echo json_encode($existingPlaces, JSON_UNESCAPED_UNICODE); ?>;
 var suggestMap = null;
 var suggestMarker = null;
+
+function toggleSuggestFestivalDates() {
+    var category = document.getElementById('suggestCategorySelect');
+    var start = document.getElementById('suggestFestivalStartDateInput');
+    var end = document.getElementById('suggestFestivalEndDateInput');
+    var fields = document.querySelectorAll('.suggest-festival-date-field');
+    if (!category || !start || !end) return;
+    var isFestival = category.value === 'festival';
+    fields.forEach(function(field) {
+        field.style.display = isFestival ? '' : 'none';
+    });
+    start.required = isFestival;
+    end.required = isFestival;
+    if (!isFestival) {
+        start.value = '';
+        end.value = '';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    var category = document.getElementById('suggestCategorySelect');
+    if (category) {
+        category.addEventListener('change', toggleSuggestFestivalDates);
+        toggleSuggestFestivalDates();
+    }
+});
 
 function normalizeMalaysiaState(rawState) {
     var s = (rawState || '').toLowerCase();

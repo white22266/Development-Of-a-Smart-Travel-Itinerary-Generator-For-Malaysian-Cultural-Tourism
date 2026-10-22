@@ -2093,6 +2093,8 @@ CREATE TABLE `cultural_place_suggestions` (
   `latitude` decimal(10,7) DEFAULT NULL,
   `longitude` decimal(10,7) DEFAULT NULL,
   `opening_hours` varchar(1000) DEFAULT NULL,
+  `festival_start_date` date DEFAULT NULL,
+  `festival_end_date` date DEFAULT NULL,
   `estimated_cost` decimal(10,2) DEFAULT NULL,
   `image_url` varchar(1000) DEFAULT NULL,
   `status` enum('pending','approved','rejected') NOT NULL DEFAULT 'pending',

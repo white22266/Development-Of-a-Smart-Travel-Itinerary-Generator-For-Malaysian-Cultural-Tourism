@@ -172,6 +172,11 @@ $stmt->close();
                         <p><strong>Address:</strong> <?php echo htmlspecialchars($viewRow["address"] ?? "-"); ?></p>
                         <p><strong>Lat/Lng:</strong> <?php echo htmlspecialchars(($viewRow["latitude"] ?? "-") . " / " . ($viewRow["longitude"] ?? "-")); ?></p>
                         <p><strong>Opening:</strong> <?php echo htmlspecialchars($viewRow["opening_hours"] ?? "-"); ?></p>
+                        <?php if (($viewRow["category"] ?? "") === "festival" || !empty($viewRow["festival_start_date"]) || !empty($viewRow["festival_end_date"])): ?>
+                            <p><strong>Festival Dates:</strong>
+                                <?php echo htmlspecialchars(($viewRow["festival_start_date"] ?? "-") . " to " . ($viewRow["festival_end_date"] ?? "-")); ?>
+                            </p>
+                        <?php endif; ?>
                         <p><strong>Estimated Cost:</strong> RM <?php echo number_format((float)($viewRow["estimated_cost"] ?? 0), 2); ?></p>
 
                         <?php if (!empty($duplicateMatches)): ?>

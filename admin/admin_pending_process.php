@@ -151,6 +151,19 @@ try {
     $description = $sug["description"];
     $address = $sug["address"] ?? "";
     $opening = $sug["opening_hours"] ?? "";
+    $festivalStartDate = $sug["festival_start_date"] ?? null;
+    $festivalEndDate = $sug["festival_end_date"] ?? null;
+    if ($category === "festival") {
+        if (empty($festivalStartDate) || empty($festivalEndDate)) {
+            throw new Exception("Festival suggestions require a start date and end date before approval.");
+        }
+        if ($festivalEndDate < $festivalStartDate) {
+            throw new Exception("Festival end date cannot be earlier than festival start date.");
+        }
+    } else {
+        $festivalStartDate = null;
+        $festivalEndDate = null;
+    }
     $imageUrl = trim((string)($sug["image_url"] ?? ""));
     if ($imageUrl !== "" && preg_match('#^https?://#i', $imageUrl)) {
         $downloadedImage = download_remote_image_to_uploads($imageUrl);
@@ -208,6 +221,15 @@ try {
         $postSets[] = "is_free = ?";
         $postParams[] = ($cost <= 0.0) ? 1 : 0;
         $postTypes .= "i";
+    }
+    if (table_has_column($conn, "cultural_places", "festival_start_date")
+        && table_has_column($conn, "cultural_places", "festival_end_date")) {
+        $postSets[] = "festival_start_date = ?";
+        $postParams[] = $festivalStartDate;
+        $postTypes .= "s";
+        $postSets[] = "festival_end_date = ?";
+        $postParams[] = $festivalEndDate;
+        $postTypes .= "s";
     }
 
     if (!empty($postSets)) {
