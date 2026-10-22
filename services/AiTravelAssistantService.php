@@ -1,7 +1,9 @@
 <?php
 // services/AiTravelAssistantService.php
-// Gemini-first assistant for itinerary explanation, route writing, and improvements.
-// Ollama remains the local fallback when Gemini is not configured or unavailable.
+// Fast local travel assistant service.
+// Default behaviour: rule-based quick replies first, optional Gemini only when explicitly enabled,
+// then short Ollama fallback with strict timeout so the chat does not stay on "Writing answer...".
+// Answers are post-processed so length-limited model output does not end halfway through a sentence.
 
 class AiTravelAssistantService
 {
@@ -34,28 +36,34 @@ class AiTravelAssistantService
             ];
         }
 
-        $capabilityAnswer = $this->capabilityAnswer($question);
-        if ($capabilityAnswer !== null) {
+        $compactContext = $this->compactContext($context);
+        $ruleAnswer = $this->ruleAnswer($question, $compactContext);
+        if ($ruleAnswer !== null) {
             return [
                 'status' => 'success',
-                'answer' => $capabilityAnswer,
+                'answer' => $ruleAnswer,
                 'source' => 'rule',
             ];
         }
 
-        $question = $this->truncateText($question, 700);
-        $compactContext = $this->compactContext($context);
+        if (!function_exists('curl_init')) {
+            return ['status' => 'error', 'answer' => 'cURL is not enabled.', 'source' => 'server'];
+        }
+
+        $question = $this->truncateText($question, 500);
 
         $instructions = implode("\n", [
-            "You are a local AI travel assistant for a Malaysian cultural tourism itinerary system.",
-            "Use only the provided compact itinerary context.",
-            "Do not invent live traffic, booking prices, opening hours, or saved changes.",
-            "If information is missing, say it is estimated or not provided.",
-            "Reply in the same language as the user when possible.",
-            "Answer the traveller's actual question directly. Do not repeat the full itinerary unless the traveller asks for a summary or explanation.",
-            "When asked what you can do, describe your available travel-assistant functions instead of summarising the itinerary.",
-            "Keep the reply concise and practical. If the user asks for a longer explanation, give a fuller answer but keep it clear.",
-            "Plain text only. No Markdown formatting.",
+            'You are a local AI travel assistant for a Malaysian cultural tourism itinerary system.',
+            'Use only the provided compact itinerary context.',
+            'Answer directly and practically.',
+            'Keep the reply under 60 words unless the user clearly asks for details.',
+            'Prefer 1 to 3 complete sentences instead of long lists.',
+            'Every sentence must be complete. Do not end with an unfinished phrase.',
+            'If the full answer would be too long, give only the most important conclusion.',
+            'Do not invent live traffic, booking prices, opening hours, or saved changes.',
+            'If information is missing, say it is estimated or not provided.',
+            'Do not say a hotel, date, route, or place has been saved unless the system confirms it.',
+            'Plain text only. No Markdown formatting.',
         ]);
 
         $input = "Compact itinerary context JSON:\n"
@@ -63,19 +71,198 @@ class AiTravelAssistantService
             . "\n\nTraveller question:\n"
             . $question;
 
-        if (!function_exists('curl_init')) {
-            return ['status' => 'error', 'answer' => 'cURL is not enabled.', 'source' => 'ai'];
-        }
-
+        // Gemini is disabled by default for VM deployment speed. Enable only with AI_USE_GEMINI=true.
         $gemini = $this->callGemini($instructions, $input);
         if (($gemini['status'] ?? '') === 'success') {
             return $gemini;
         }
         if (($gemini['message'] ?? '') !== '') {
-            error_log('Gemini AI fallback to Ollama: ' . $gemini['message']);
+            error_log('Gemini skipped/fallback to Ollama: ' . $gemini['message']);
         }
 
+        return $this->callOllama($instructions, $input);
+    }
+
+    private function ruleAnswer(string $question, array $context = []): ?string
+    {
+        $q = strtolower(trim($question));
+        $normalized = preg_replace('/[^a-z0-9\s]/i', '', $q) ?? $q;
+        $normalized = trim(preg_replace('/\s+/', ' ', $normalized) ?? $normalized);
+
+        $isCapabilityQuestion = (bool)preg_match(
+            '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+you\s+can\s+do|what\s+u\s+can\s+do|what\s+can\s+u\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b/iu',
+            $question
+        );
+
+        if ($isCapabilityQuestion) {
+            return 'I can explain your preference, suggest a starting location, check route readiness, estimate cost, describe travel time, and review hotel or itinerary options. I only guide you; the system rules still generate the official itinerary.';
+        }
+
+        if (preg_match('/^(hi|hello|hey|yo|hai|helo|good morning|good afternoon|good evening)$/i', $normalized)) {
+            return 'Hello. I can help you check your travel preference, starting location, route, estimated cost, and itinerary readiness.';
+        }
+
+        if (preg_match('/^(ok|okay|thanks|thank you|tq|thx)$/i', $normalized)) {
+            return 'You are welcome. Ask me about your selected preference, starting location, route, cost, or itinerary readiness.';
+        }
+
+        if (preg_match('/^(then|next|continue|more|go on|and then|what next|so)$/i', $normalized)) {
+            return 'Please ask a specific travel question, such as checking your preference, suggesting a starting location, or explaining route readiness.';
+        }
+
+        if (preg_match('/^(help|menu|options|start)$/i', $normalized)) {
+            return 'You can ask me to check your selected preference, suggest a starting location, explain route readiness, estimate cost, or review itinerary changes.';
+        }
+
+        if ($this->isPreferenceReadinessQuestion($normalized)) {
+            return $this->buildPreferenceReadinessAnswer($context);
+        }
+
+        if ($this->isStartingLocationQuestion($normalized)) {
+            return $this->buildStartingLocationAnswer($context);
+        }
+
+        return null;
+    }
+
+    private function isPreferenceReadinessQuestion(string $normalized): bool
+    {
+        if (preg_match('/^(check my preference|before generate|before generating|check preference|selected preference)$/i', $normalized)) {
+            return true;
+        }
+
+        return (bool)preg_match(
+            '/\b(?:selected\s+preference|preference\s+(?:suitable|ready|complete|confirmed)|suitable\s+for\s+generating|generate\s+an\s+itinerary|before\s+generat(?:e|ing)|check\s+(?:my\s+)?preference)\b/i',
+            $normalized
+        );
+    }
+
+    private function isStartingLocationQuestion(string $normalized): bool
+    {
+        if (preg_match('/^(suggest starting location|starting location|start location|origin|suggest origin)$/i', $normalized)) {
+            return true;
+        }
+
+        return (bool)preg_match(
+            '/\b(?:(?:suggest|recommend|choose|decide|suitable)\s+(?:a\s+)?(?:suitable\s+)?(?:starting|start|origin)\s+location|starting\s+location|start\s+location|origin\s+location)\b/i',
+            $normalized
+        );
+    }
+
+    private function buildPreferenceReadinessAnswer(array $context): string
+    {
+        $missing = [];
+
+        $startDate = $this->findContextText($context, ['start_date', 'trip_start_date', 'date']);
+        $origin = $this->findContextText($context, ['origin_name', 'starting_location', 'start_location', 'origin']);
+        $states = $this->findContextText($context, ['preferred_states', 'state', 'states']);
+        $districts = $this->findContextText($context, ['preferred_districts', 'district', 'districts']);
+        $interests = $this->findContextText($context, ['interests', 'selected_interests', 'preference_interests']);
+        $transport = $this->findContextText($context, ['transport_type', 'transport', 'travel_mode']);
+        $budget = $this->findContextText($context, ['budget', 'budget_tier', 'total_budget']);
+
+        if (!$this->isFilled($startDate)) $missing[] = 'start date';
+        if (!$this->isFilled($origin)) $missing[] = 'starting location';
+        if (!$this->isFilled($states) && !$this->isFilled($districts)) $missing[] = 'preferred state or district';
+        if (!$this->isFilled($interests)) $missing[] = 'travel interests';
+        if (!$this->isFilled($transport)) $missing[] = 'transport type';
+        if (!$this->isFilled($budget)) $missing[] = 'budget';
+
+        if (empty($missing)) {
+            return 'Your selected preference looks ready for itinerary generation. You can proceed, and the official itinerary will still be generated by the system rules.';
+        }
+
+        $summary = implode(', ', array_slice($missing, 0, 4));
+        if (count($missing) > 4) {
+            $summary .= ', and other preference details';
+        }
+
+        return 'Your preference is not fully ready yet. Please complete ' . $summary . ' before generating the itinerary.';
+    }
+
+    private function buildStartingLocationAnswer(array $context): string
+    {
+        $origin = $this->findContextText($context, ['origin_name', 'starting_location', 'start_location', 'origin']);
+        if ($this->isFilled($origin)) {
+            return 'Use ' . $origin . ' as the starting location because it is already saved. If this is wrong, update the starting location before generating the itinerary.';
+        }
+
+        $district = $this->findContextText($context, ['preferred_districts', 'district', 'districts']);
+        $state = $this->findContextText($context, ['preferred_states', 'state', 'states']);
+        $place = $this->isFilled($district) ? $district : ($this->isFilled($state) ? $state : 'your preferred destination area');
+
+        return 'Choose a central and easy-to-reach point in ' . $place . ', such as your hotel, a main bus terminal, or a train station. Save it before generating so route time and cost are more accurate.';
+    }
+
+    private function findContextText(array $context, array $keys): string
+    {
+        foreach ($keys as $key) {
+            $value = $this->findContextValue($context, strtolower($key));
+            if ($value !== null) {
+                if (is_array($value)) {
+                    $flat = array_values(array_filter(array_map(static fn($v) => trim((string)$v), $value)));
+                    if (!empty($flat)) {
+                        return implode(', ', array_slice($flat, 0, 3));
+                    }
+                } else {
+                    $text = trim((string)$value);
+                    if ($text !== '') {
+                        return $this->truncateText($text, 80, false);
+                    }
+                }
+            }
+        }
+
+        return '';
+    }
+
+    private function findContextValue(mixed $value, string $needleKey): mixed
+    {
+        if (!is_array($value)) {
+            return null;
+        }
+
+        foreach ($value as $key => $item) {
+            if (is_string($key) && strtolower($key) === $needleKey) {
+                return $item;
+            }
+
+            if (is_array($item)) {
+                $found = $this->findContextValue($item, $needleKey);
+                if ($found !== null && $found !== '') {
+                    return $found;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private function isFilled(string $value): bool
+    {
+        $value = trim($value);
+        if ($value === '') {
+            return false;
+        }
+
+        return !preg_match('/^(0|0\.0|none|null|not provided|not set|unknown|n\/a)$/i', $value);
+    }
+
+    private function containsChinese(string $text): bool
+    {
+        return (bool)preg_match('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{F900}-\x{FAFF}]/u', $text);
+    }
+
+    private function callOllama(string $instructions, string $input): array
+    {
         $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
+        $timeout = max(3, (int)(getenv('OLLAMA_TIMEOUT') ?: 12));
+        $connectTimeout = max(1, (int)(getenv('OLLAMA_CONNECT_TIMEOUT') ?: 2));
+        $numPredict = max(96, min(140, (int)(getenv('OLLAMA_NUM_PREDICT') ?: 120)));
+        $numCtx = defined('OLLAMA_NUM_CTX') ? (int)OLLAMA_NUM_CTX : 768;
+        $numCtx = max(256, min(1024, $numCtx));
+        $numThread = max(2, min(4, (int)(getenv('OLLAMA_NUM_THREAD') ?: 4)));
+        $temperature = max(0.0, min(0.7, (float)(getenv('OLLAMA_TEMPERATURE') ?: 0.15)));
 
         $payload = [
             'model' => $this->model,
@@ -84,17 +271,16 @@ class AiTravelAssistantService
                 ['role' => 'user', 'content' => $input],
             ],
             'stream' => false,
-            'keep_alive' => -1,
+            'keep_alive' => getenv('OLLAMA_KEEP_ALIVE') ?: '30m',
             'options' => [
-                'temperature' => 0.2,
-                'num_ctx' => defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 512,
-                'num_predict' => 260,
-                'num_thread' => 2,
+                'temperature' => $temperature,
+                'num_ctx' => $numCtx,
+                'num_predict' => $numPredict,
+                'num_thread' => $numThread,
             ],
         ];
 
         $payloadJson = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-
         if ($payloadJson === false) {
             return [
                 'status' => 'error',
@@ -104,7 +290,6 @@ class AiTravelAssistantService
         }
 
         error_log('Ollama AI payload size: ' . strlen($payloadJson) . ' bytes');
-
         $start = microtime(true);
 
         $ch = curl_init($url);
@@ -113,8 +298,8 @@ class AiTravelAssistantService
             CURLOPT_POST => true,
             CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
             CURLOPT_POSTFIELDS => $payloadJson,
-            CURLOPT_TIMEOUT => 75,
-            CURLOPT_CONNECTTIMEOUT => 5,
+            CURLOPT_TIMEOUT => $timeout,
+            CURLOPT_CONNECTTIMEOUT => $connectTimeout,
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
@@ -128,9 +313,12 @@ class AiTravelAssistantService
 
         if ($raw === false || $err !== '') {
             error_log('Ollama AI request failed: ' . $err . ' | URL: ' . $url);
+            $timedOut = stripos($err, 'timed out') !== false || $duration >= $timeout;
             return [
                 'status' => 'error',
-                'answer' => 'AI service is currently unavailable. Please check Gemini API or Ollama fallback.',
+                'answer' => $timedOut
+                    ? 'The local AI took too long to answer. Please ask a shorter question, or use qwen2.5:1.5b for faster replies.'
+                    : 'AI service is currently unavailable. Please check whether Ollama is running.',
                 'source' => 'ollama',
             ];
         }
@@ -149,13 +337,15 @@ class AiTravelAssistantService
             error_log('Ollama AI HTTP error: ' . $code . ' | Response: ' . $this->truncateText((string)$raw, 500));
             return [
                 'status' => 'error',
-                'answer' => 'AI service is currently unavailable. Please check Gemini API or Ollama fallback.',
+                'answer' => 'AI service is currently unavailable. Please check whether Ollama is running.',
                 'source' => 'ollama',
             ];
         }
 
         $text = is_array($json) ? trim((string)($json['message']['content'] ?? '')) : '';
-        $text = $this->cleanAnswer($text);
+        $doneReason = is_array($json) ? strtolower((string)($json['done_reason'] ?? '')) : '';
+        $wasLengthLimited = in_array($doneReason, ['length', 'stop'], true) && !$this->endsLikeCompleteSentence($text);
+        $text = $this->cleanAnswer($text, $wasLengthLimited);
 
         if ($text === '') {
             return ['status' => 'error', 'answer' => 'AI response is invalid. Please try again.', 'source' => 'ollama'];
@@ -164,46 +354,13 @@ class AiTravelAssistantService
         return ['status' => 'success', 'answer' => $text, 'source' => 'ollama'];
     }
 
-    private function capabilityAnswer(string $question): ?string
-    {
-        $question = trim($question);
-        $isCapabilityQuestion = (bool)preg_match(
-            '/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+do\s+you\s+do|how\s+can\s+you\s+help|what\s+can\s+u\s+do|your\s+(?:features|functions|capabilities)|help\s+me\s+with)\b|你能做什么|你可以做什么|你有什么功能|你可以帮什么|你会什么|可以做什么/iu',
-            $question
-        );
-
-        if (!$isCapabilityQuestion) {
-            return null;
-        }
-
-        if (preg_match('/[\x{4E00}-\x{9FFF}]/u', $question)) {
-            return "我可以帮助你：\n"
-                . "1. 解释整个行程、每日安排和地点背景。\n"
-                . "2. 回答路线、交通时间、距离、预算和费用问题。\n"
-                . "3. 根据你的要求建议酒店、景点和替代地点。\n"
-                . "4. 提供天气规划建议，并提醒你核实实时天气和开放时间。\n"
-                . "5. 建议增加、替换或重新安排行程地点。\n"
-                . "6. 在你确认后，更新行程日期、出发地点或所选地点。\n"
-                . "我不能直接完成酒店预订，也不能保证实时价格、交通或开放时间。";
-        }
-
-        return "I can help you with:\n"
-            . "1. Explain the full trip, daily schedule, and background of each place.\n"
-            . "2. Answer questions about routes, travel time, distance, budget, and estimated costs.\n"
-            . "3. Suggest hotels, attractions, food places, and alternative stops when requested.\n"
-            . "4. Give weather-planning advice and remind you to verify live weather and opening hours.\n"
-            . "5. Suggest adding, replacing, or rearranging itinerary stops.\n"
-            . "6. Update the trip date, starting location, or selected places after you confirm the change.\n"
-            . "I cannot complete hotel bookings or guarantee live prices, traffic, or opening hours.";
-    }
-
-    private function containsChinese(string $text): bool
-    {
-        return (bool) preg_match('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{F900}-\x{FAFF}]/u', $text);
-    }
-
     private function callGemini(string $instructions, string $input): array
     {
+        $useGemini = strtolower(trim((string)(getenv('AI_USE_GEMINI') ?: 'false'))) === 'true';
+        if (!$useGemini) {
+            return ['status' => 'skipped', 'message' => 'Gemini disabled for fast VM response.', 'source' => 'gemini'];
+        }
+
         $apiKey = defined('GEMINI_API_KEY') ? trim((string)GEMINI_API_KEY) : '';
         if ($apiKey === '') {
             return ['status' => 'skipped', 'message' => 'Gemini API key is not configured.', 'source' => 'gemini'];
@@ -230,8 +387,8 @@ class AiTravelAssistantService
                 ],
             ],
             'generationConfig' => [
-                'temperature' => 0.2,
-                'maxOutputTokens' => 360,
+                'temperature' => max(0.0, min(0.7, (float)(getenv('GEMINI_TEMPERATURE') ?: 0.15))),
+                'maxOutputTokens' => 160,
                 'thinkingConfig' => [
                     'thinkingBudget' => 0,
                 ],
@@ -253,8 +410,8 @@ class AiTravelAssistantService
                 'x-goog-api-key: ' . $apiKey,
             ],
             CURLOPT_POSTFIELDS => $payloadJson,
-            CURLOPT_TIMEOUT => 35,
-            CURLOPT_CONNECTTIMEOUT => 8,
+            CURLOPT_TIMEOUT => max(3, (int)(getenv('GEMINI_TIMEOUT') ?: 4)),
+            CURLOPT_CONNECTTIMEOUT => 2,
             CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
         ]);
 
@@ -276,7 +433,6 @@ class AiTravelAssistantService
             return ['status' => 'error', 'message' => $message, 'source' => 'gemini'];
         }
 
-        $finishReason = (string)($json['candidates'][0]['finishReason'] ?? '');
         $text = '';
         foreach (($json['candidates'][0]['content']['parts'] ?? []) as $part) {
             $text .= (string)($part['text'] ?? '');
@@ -287,40 +443,30 @@ class AiTravelAssistantService
             return ['status' => 'error', 'message' => 'Gemini returned an empty response.', 'source' => 'gemini'];
         }
 
-        if ($finishReason === 'MAX_TOKENS' && (mb_strlen($text, 'UTF-8') < 80 || preg_match('/[-:]\s*$/u', $text))) {
-            return ['status' => 'error', 'message' => 'Gemini response was truncated by token limit.', 'source' => 'gemini'];
-        }
-
         return ['status' => 'success', 'answer' => $text, 'source' => 'gemini', 'model' => $model];
     }
 
     private function compactContext(array $context): array
     {
         $preferredKeys = [
-            'itinerary_id',
-            'title',
-            'destination',
-            'state',
-            'states',
-            'start_date',
-            'end_date',
-            'date',
-            'duration',
-            'budget',
-            'companions',
-            'travel_style',
+            'itinerary',
+            'preference',
             'preferences',
-            'food_preferences',
-            'accessibility_needs',
-            'hotel',
+            'selected_preference',
+            'items',
+            'hotel_options',
             'hotels',
+            'cost',
+            'route',
             'days',
             'places',
-            'route',
+            'budget',
+            'start_date',
+            'origin_name',
+            'starting_location',
         ];
 
         $compact = [];
-
         foreach ($preferredKeys as $key) {
             if (array_key_exists($key, $context)) {
                 $compact[$key] = $this->trimForPrompt($context[$key], 0);
@@ -328,7 +474,7 @@ class AiTravelAssistantService
         }
 
         if (empty($compact)) {
-            $compact = $this->trimForPrompt(array_slice($context, 0, 12, true), 0);
+            $compact = $this->trimForPrompt(array_slice($context, 0, 10, true), 0);
         }
 
         return is_array($compact) ? $compact : [];
@@ -336,12 +482,12 @@ class AiTravelAssistantService
 
     private function trimForPrompt(mixed $value, int $depth): mixed
     {
-        if ($depth > 4) {
+        if ($depth > 3) {
             return null;
         }
 
         if (is_string($value)) {
-            return $this->truncateText($value, 220);
+            return $this->truncateText($value, 160);
         }
 
         if (is_int($value) || is_float($value) || is_bool($value) || $value === null) {
@@ -354,7 +500,7 @@ class AiTravelAssistantService
 
         $result = [];
         $isList = array_is_list($value);
-        $limit = $isList ? 8 : 20;
+        $limit = $isList ? 6 : 16;
         $count = 0;
 
         foreach ($value as $key => $item) {
@@ -363,7 +509,6 @@ class AiTravelAssistantService
             }
 
             $keyString = is_string($key) ? strtolower($key) : '';
-
             if (preg_match('/image|photo|thumbnail|video|created_at|updated_at|password|token|secret|api_key/i', $keyString)) {
                 continue;
             }
@@ -375,18 +520,18 @@ class AiTravelAssistantService
         return $result;
     }
 
-    private function truncateText(string $text, int $limit): string
+    private function truncateText(string $text, int $limit, bool $appendEllipsis = true): string
     {
         $text = trim($text);
-
         if (mb_strlen($text, 'UTF-8') <= $limit) {
             return $text;
         }
 
-        return mb_substr($text, 0, $limit, 'UTF-8') . '...';
+        $cut = rtrim(mb_substr($text, 0, $limit, 'UTF-8'));
+        return $appendEllipsis ? $cut . '...' : $cut;
     }
 
-    private function cleanAnswer(string $text): string
+    private function cleanAnswer(string $text, bool $wasLengthLimited = false): string
     {
         $text = preg_replace('/\*{1,3}([^*]+)\*{1,3}/u', '$1', $text) ?? $text;
         $text = preg_replace('/^\s{0,3}#{1,6}\s*/m', '', $text) ?? $text;
@@ -394,6 +539,72 @@ class AiTravelAssistantService
         $text = preg_replace("/[ \t]+\n/", "\n", $text) ?? $text;
         $text = trim($text);
 
-        return $this->truncateText($text, 1200);
+        return $this->finalizeAnswer($text, $wasLengthLimited);
+    }
+
+    private function finalizeAnswer(string $text, bool $wasLengthLimited = false): string
+    {
+        $text = $this->truncateText($text, 420, false);
+        if ($text === '') {
+            return '';
+        }
+
+        if ($wasLengthLimited || !$this->endsLikeCompleteSentence($text)) {
+            $complete = $this->clipToLastCompleteSentence($text);
+            if ($complete !== '') {
+                $text = $complete;
+            }
+        }
+
+        $limitedSentences = $this->limitCompleteSentences($text, 3);
+        if ($limitedSentences !== '') {
+            $text = $limitedSentences;
+        }
+
+        $text = rtrim($text, " \t\n\r\0\x0B,;:-");
+        if ($text !== '' && !$this->endsLikeCompleteSentence($text)) {
+            $text .= '.';
+        }
+
+        if ($wasLengthLimited && !preg_match('/ask me for details/i', $text)) {
+            $text .= ' Ask me for details if needed.';
+        }
+
+        return $text;
+    }
+
+    private function limitCompleteSentences(string $text, int $maxSentences): string
+    {
+        $text = trim($text);
+        if ($text === '' || $maxSentences <= 0) {
+            return '';
+        }
+
+        if (!preg_match_all('/[^.!?]+[.!?]/u', $text, $matches)) {
+            return $text;
+        }
+
+        $sentences = array_slice(array_map('trim', $matches[0]), 0, $maxSentences);
+        return trim(implode(' ', array_filter($sentences)));
+    }
+
+    private function clipToLastCompleteSentence(string $text): string
+    {
+        if (!preg_match_all('/[.!?](?=\s|$)/u', $text, $matches, PREG_OFFSET_CAPTURE)) {
+            return '';
+        }
+
+        $last = end($matches[0]);
+        if (!is_array($last) || !isset($last[1])) {
+            return '';
+        }
+
+        $candidate = trim(substr($text, 0, $last[1] + strlen((string)$last[0])));
+        return mb_strlen($candidate, 'UTF-8') >= 20 ? $candidate : '';
+    }
+
+    private function endsLikeCompleteSentence(string $text): bool
+    {
+        return (bool)preg_match('/[.!?)]$/u', trim($text));
     }
 }
