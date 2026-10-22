@@ -44,7 +44,6 @@ define('OLLAMA_NUM_CTX', max(1024, (int) env_value('OLLAMA_NUM_CTX', '4096')));
 // num_predict controls the generated answer length. Keep it high enough for all required report headings.
 set_default_env('ADMIN_AI_FAST_MODE', 'false');
 set_default_env('ADMIN_AI_TIMEOUT', '60');
-set_default_env('ADMIN_AI_CONNECT_TIMEOUT', '2');
 set_default_env('ADMIN_AI_NUM_PREDICT', '700');
 set_default_env('ADMIN_AI_NUM_CTX', (string) OLLAMA_NUM_CTX);
 set_default_env('ADMIN_AI_KEEP_ALIVE', '30m');

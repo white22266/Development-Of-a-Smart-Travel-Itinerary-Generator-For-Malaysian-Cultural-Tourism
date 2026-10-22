@@ -9,25 +9,23 @@
  * is unavailable, too slow, or produces unsuitable text, the same verified facts
  * are rendered with a longer deterministic local narrative.
  */
+require_once __DIR__ . '/OllamaClient.php';
+
 class AiAdminReportAnalysisService
 {
-    private string $model;
-    private string $baseUrl;
+    private OllamaClient $ollama;
     private bool $fastMode;
     private int $timeout;
-    private int $connectTimeout;
     private int $numPredict;
     private int $numCtx;
     private string $keepAlive;
 
     public function __construct(?string $model = null, ?string $baseUrl = null)
     {
-        $this->model = trim((string)($model ?: (getenv('ADMIN_AI_MODEL') ?: 'qwen2.5:3b')));
-        $this->baseUrl = rtrim(trim((string)($baseUrl ?: (getenv('OLLAMA_BASE_URL') ?: 'http://127.0.0.1:11434'))), '/');
+        $this->ollama = new OllamaClient($model ?: (getenv('ADMIN_AI_MODEL') ?: null), $baseUrl);
         $fast = strtolower(trim((string)(getenv('ADMIN_AI_FAST_MODE') ?: 'false')));
         $this->fastMode = in_array($fast, ['1', 'true', 'yes', 'on'], true);
         $this->timeout = max(3, (int)(getenv('ADMIN_AI_TIMEOUT') ?: 20));
-        $this->connectTimeout = max(1, (int)(getenv('ADMIN_AI_CONNECT_TIMEOUT') ?: 2));
         $this->numPredict = max(350, min(1000, (int)(getenv('ADMIN_AI_NUM_PREDICT') ?: 650)));
         $this->numCtx = max(512, min(4096, (int)(getenv('ADMIN_AI_NUM_CTX') ?: (defined('OLLAMA_NUM_CTX') ? OLLAMA_NUM_CTX : 1024))));
         $this->keepAlive = trim((string)(getenv('ADMIN_AI_KEEP_ALIVE') ?: (getenv('OLLAMA_KEEP_ALIVE') ?: '30m')));
@@ -71,10 +69,6 @@ class AiAdminReportAnalysisService
 
     private function callOllama(array $facts): array
     {
-        if (!function_exists('curl_init')) {
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'cURL is not enabled in PHP. Enable extension=curl in php.ini and restart Apache.'];
-        }
-
         $instructions = implode("\n", [
             'Write a professional admin report explanation from verified facts only.',
             'Do not calculate, rank, infer, or create new categories beyond the verified facts.',
@@ -89,61 +83,23 @@ class AiAdminReportAnalysisService
             'Write in a formal final-year-project report style, not chatbot style.',
         ]);
 
-        $payload = [
-            'model' => $this->model,
-            'messages' => [
-                ['role' => 'system', 'content' => $instructions],
-                ['role' => 'user', 'content' => "Verified report facts only:\n" . json_encode($facts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)],
-            ],
-            'stream' => false,
-            'keep_alive' => $this->keepAlive,
-            'options' => [
+        $reply = $this->ollama->chat(
+            $instructions,
+            "Verified report facts only:\n" . json_encode($facts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+            [
                 'temperature' => 0.15,
                 'num_ctx' => $this->numCtx,
                 'num_predict' => $this->numPredict,
-                'num_thread' => 2,
-            ],
-        ];
+                'timeout' => $this->timeout,
+                'keep_alive' => $this->keepAlive,
+            ]
+        );
 
-        $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
-        $ch = curl_init($url);
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POST => true,
-            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
-            CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-            CURLOPT_TIMEOUT => $this->timeout,
-            CURLOPT_CONNECTTIMEOUT => $this->connectTimeout,
-            CURLOPT_IPRESOLVE => CURL_IPRESOLVE_V4,
-            CURLOPT_NOSIGNAL => true,
-        ]);
-
-        $raw = curl_exec($ch);
-        $err = curl_error($ch);
-        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($raw === false || $err !== '' || $code < 200 || $code >= 300) {
-            $bodyPreview = is_string($raw) ? substr($raw, 0, 800) : '';
-            $debug = 'HTTP ' . $code .
-                '. cURL error: ' . ($err !== '' ? $err : 'none') .
-                '. URL: ' . $url .
-                '. Response: ' . $bodyPreview;
-            error_log('Ollama admin report request failed: ' . $debug);
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => $debug];
+        // On failure 'analysis' carries the technical reason; analyze() only logs it.
+        if (!$reply['ok']) {
+            return ['status' => 'error', 'source' => 'ollama', 'analysis' => $reply['error']];
         }
-
-        $json = json_decode((string)$raw, true);
-        if (!is_array($json)) {
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'Invalid AI response. Raw response: ' . substr((string)$raw, 0, 800)];
-        }
-
-        $text = trim((string)($json['message']['content'] ?? ''));
-        if ($text === '') {
-            return ['status' => 'error', 'source' => 'ollama', 'analysis' => 'AI returned an empty response. Raw response: ' . substr((string)$raw, 0, 800)];
-        }
-
-        return ['status' => 'success', 'source' => 'ollama', 'analysis' => $text];
+        return ['status' => 'success', 'source' => 'ollama', 'analysis' => $reply['text']];
     }
 
     private function buildInsightFacts(array $reportData): array
