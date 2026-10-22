@@ -43,14 +43,6 @@ function back($msg, $isError = false)
     exit;
 }
 
-function table_has_column(mysqli $conn, string $table, string $column): bool
-{
-    $table = $conn->real_escape_string($table);
-    $column = $conn->real_escape_string($column);
-    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
-    return ($res && $res->num_rows > 0);
-}
-
 function normalize_optional_date(string $value): ?string
 {
     $value = trim($value);
@@ -58,21 +50,6 @@ function normalize_optional_date(string $value): ?string
     $dt = DateTime::createFromFormat("Y-m-d", $value);
     if (!$dt || $dt->format("Y-m-d") !== $value) return null;
     return $value;
-}
-
-function ensure_suggestion_festival_date_columns(mysqli $conn): bool
-{
-    if (!table_has_column($conn, "cultural_place_suggestions", "festival_start_date")) {
-        if (!$conn->query("ALTER TABLE cultural_place_suggestions ADD COLUMN festival_start_date date DEFAULT NULL AFTER opening_hours")) {
-            return false;
-        }
-    }
-    if (!table_has_column($conn, "cultural_place_suggestions", "festival_end_date")) {
-        if (!$conn->query("ALTER TABLE cultural_place_suggestions ADD COLUMN festival_end_date date DEFAULT NULL AFTER festival_start_date")) {
-            return false;
-        }
-    }
-    return true;
 }
 
 function download_remote_image_to_uploads(string $url): ?string
@@ -172,9 +149,6 @@ if ($category === "festival") {
     if ($festivalEndDate < $festivalStartDate) {
         back("Festival end date cannot be earlier than festival start date.", true);
     }
-    if (!ensure_suggestion_festival_date_columns($conn)) {
-        back("Database schema needs festival_start_date and festival_end_date columns for festival suggestions.", true);
-    }
 } else {
     $festivalStartDate = null;
     $festivalEndDate = null;
@@ -234,105 +208,32 @@ if ($imageUrl === null) {
 }
 // ===================================================================
 
-$hasSuggestionDistrict = table_has_column($conn, "cultural_place_suggestions", "district");
-$hasSuggestionFestivalDates = table_has_column($conn, "cultural_place_suggestions", "festival_start_date")
-    && table_has_column($conn, "cultural_place_suggestions", "festival_end_date");
+$districtOrNull = ($district === "") ? null : $district;
 
-if ($hasSuggestionDistrict && $hasSuggestionFestivalDates) {
-    $stmt = $conn->prepare("
-      INSERT INTO cultural_place_suggestions
-      (traveller_id, state, district, category, name, description, address, latitude, longitude, opening_hours, festival_start_date, festival_end_date, estimated_cost, image_url, status)
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,'pending')
-    ");
-} elseif ($hasSuggestionDistrict) {
-    $stmt = $conn->prepare("
-      INSERT INTO cultural_place_suggestions
-      (traveller_id, state, district, category, name, description, address, latitude, longitude, opening_hours, estimated_cost, image_url, status)
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,'pending')
-    ");
-} elseif ($hasSuggestionFestivalDates) {
-    $stmt = $conn->prepare("
-      INSERT INTO cultural_place_suggestions
-      (traveller_id, state, category, name, description, address, latitude, longitude, opening_hours, festival_start_date, festival_end_date, estimated_cost, image_url, status)
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,'pending')
-    ");
-} else {
-    $stmt = $conn->prepare("
-      INSERT INTO cultural_place_suggestions
-      (traveller_id, state, category, name, description, address, latitude, longitude, opening_hours, estimated_cost, image_url, status)
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,'pending')
-    ");
-}
-
+$stmt = $conn->prepare("
+  INSERT INTO cultural_place_suggestions
+  (traveller_id, state, district, category, name, description, address, latitude, longitude, opening_hours, festival_start_date, festival_end_date, estimated_cost, image_url, status)
+  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,'pending')
+");
 if (!$stmt) back("System error: cannot submit suggestion. (" . $conn->error . ")", true);
 
-if ($hasSuggestionDistrict && $hasSuggestionFestivalDates) {
-    $stmt->bind_param(
-        "issssssddsssds",
-        $travellerId,
-        $state,
-        $district,
-        $category,
-        $name,
-        $description,
-        $address,
-        $latitude,
-        $longitude,
-        $opening,
-        $festivalStartDate,
-        $festivalEndDate,
-        $cost,
-        $imageUrl
-    );
-} elseif ($hasSuggestionDistrict) {
-    $stmt->bind_param(
-        "issssssddsds",
-        $travellerId,
-        $state,
-        $district,
-        $category,
-        $name,
-        $description,
-        $address,
-        $latitude,
-        $longitude,
-        $opening,
-        $cost,
-        $imageUrl
-    );
-} elseif ($hasSuggestionFestivalDates) {
-    $stmt->bind_param(
-        "isssssddsssds",
-        $travellerId,
-        $state,
-        $category,
-        $name,
-        $description,
-        $address,
-        $latitude,
-        $longitude,
-        $opening,
-        $festivalStartDate,
-        $festivalEndDate,
-        $cost,
-        $imageUrl
-    );
-} else {
-    $stmt->bind_param(
-        "isssssddsds",
-        $travellerId,
-        $state,
-        $category,
-        $name,
-        $description,
-        $address,
-        $latitude,
-        $longitude,
-        $opening,
-        $cost,
-        $imageUrl
-    );
-}
+$stmt->bind_param(
+    "issssssddsssds",
+    $travellerId,
+    $state,
+    $districtOrNull,
+    $category,
+    $name,
+    $description,
+    $address,
+    $latitude,
+    $longitude,
+    $opening,
+    $festivalStartDate,
+    $festivalEndDate,
+    $cost,
+    $imageUrl
+);
 
 if (!$stmt->execute()) {
     $err = $stmt->error;

@@ -19,14 +19,6 @@ function back($msg, $isError = false)
     exit;
 }
 
-function table_has_column(mysqli $conn, string $table, string $column): bool
-{
-    $table = $conn->real_escape_string($table);
-    $column = $conn->real_escape_string($column);
-    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
-    return ($res && $res->num_rows > 0);
-}
-
 function download_remote_image_to_uploads(string $url): ?string
 {
     if (!preg_match('#^https?://#i', $url)) return null;
@@ -135,17 +127,21 @@ try {
         throw new Exception("Possible duplicate detected. Tick 'Allow duplicate' only if this is a distinct place.");
     }
 
-    // 1) Insert into cultural_places (Knowledge Base)
+    // 1) Insert into cultural_places (Knowledge Base) in one statement, so the
+    //    festival dates are present when the row is created.
     $stmt = $conn->prepare("
         INSERT INTO cultural_places
-        (state, category, name, description, address, latitude, longitude,
-         opening_hours, estimated_cost, image_url, is_active, created_by_admin_id)
+        (state, district, category, name, description, address, latitude, longitude,
+         opening_hours, festival_start_date, festival_end_date, estimated_cost,
+         entrance_fee, is_free, image_url, is_active, created_by_admin_id)
         VALUES
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, ?)
     ");
     if (!$stmt) throw new Exception("Prepare insert cultural_places failed: " . $conn->error);
 
     $state = $sug["state"];
+    $district = trim((string)($sug["district"] ?? ""));
+    if ($district === "") $district = null;
     $category = $sug["category"];
     $name = $sug["name"];
     $description = $sug["description"];
@@ -179,10 +175,12 @@ try {
     if ($lng === "" || $lng === null) $lng = null;
 
     $cost = (float)($sug["estimated_cost"] ?? 0);
+    $isFree = ($cost <= 0.0) ? 1 : 0;
 
     $stmt->bind_param(
-        "sssssddsdsi",
+        "ssssssddsssddisi",
         $state,
+        $district,
         $category,
         $name,
         $description,
@@ -190,7 +188,11 @@ try {
         $lat,
         $lng,
         $opening,
+        $festivalStartDate,
+        $festivalEndDate,
         $cost,
+        $cost,
+        $isFree,
         $imageUrl,
         $adminId
     );
@@ -202,49 +204,6 @@ try {
     }
     $placeId = (int)$stmt->insert_id;
     $stmt->close();
-
-    $postSets = [];
-    $postParams = [];
-    $postTypes = "";
-
-    if (table_has_column($conn, "cultural_places", "district") && !empty($sug["district"])) {
-        $postSets[] = "district = ?";
-        $postParams[] = $sug["district"];
-        $postTypes .= "s";
-    }
-    if (table_has_column($conn, "cultural_places", "entrance_fee")) {
-        $postSets[] = "entrance_fee = ?";
-        $postParams[] = $cost;
-        $postTypes .= "d";
-    }
-    if (table_has_column($conn, "cultural_places", "is_free")) {
-        $postSets[] = "is_free = ?";
-        $postParams[] = ($cost <= 0.0) ? 1 : 0;
-        $postTypes .= "i";
-    }
-    if (table_has_column($conn, "cultural_places", "festival_start_date")
-        && table_has_column($conn, "cultural_places", "festival_end_date")) {
-        $postSets[] = "festival_start_date = ?";
-        $postParams[] = $festivalStartDate;
-        $postTypes .= "s";
-        $postSets[] = "festival_end_date = ?";
-        $postParams[] = $festivalEndDate;
-        $postTypes .= "s";
-    }
-
-    if (!empty($postSets)) {
-        $postParams[] = $placeId;
-        $postTypes .= "i";
-        $stmt = $conn->prepare("UPDATE cultural_places SET " . implode(", ", $postSets) . " WHERE place_id = ?");
-        if (!$stmt) throw new Exception("Prepare update cultural_places metadata failed: " . $conn->error);
-        $stmt->bind_param($postTypes, ...$postParams);
-        if (!$stmt->execute()) {
-            $err = $stmt->error;
-            $stmt->close();
-            throw new Exception("Update cultural_places metadata failed: " . $err);
-        }
-        $stmt->close();
-    }
 
     // Allow optional review note for approval (can be blank)
     $reviewNoteOrNull = ($reviewNote === "") ? null : $reviewNote;
