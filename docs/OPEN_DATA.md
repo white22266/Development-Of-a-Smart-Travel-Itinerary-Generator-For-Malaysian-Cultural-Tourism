@@ -23,6 +23,7 @@ Two things are optional and off until they are set up: real public transport con
 | Weather forecast | Open-Meteo | CC BY 4.0 | map info box and forecast answers |
 | Weather warnings | Malaysian Meteorological Department, through data.gov.my | open government data | road conditions panel |
 | Fires | NASA FIRMS (NOAA-20 VIIRS hot spots, last 24 hours) | open, credit asked for | road conditions panel |
+| Live positions of buses and trains | the operators (Prasarana, KTMB, BAS.MY), through data.gov.my | CC BY 4.0 | under the map |
 | Public transport connections (optional) | a MOTIS server such as Transitous, on the operators' published timetables | per timetable | details of each leg |
 | Live traffic (optional) | TomTom Traffic Incidents API | **commercial, not open** | road conditions panel: "© TomTom" |
 | Map library | Leaflet 1.9.4 | BSD-2-Clause | - |
@@ -133,6 +134,29 @@ into one request; Valhalla answers at once but takes ten points, so each day is 
 - **Entrance fees and visit lengths of imported places** are typical values for the kind of
   place, unless OpenStreetMap gives a fee.
 
+## Live buses and trains
+
+"Live buses" on the itinerary map shows where the buses and trains are at this moment. It is
+on by itself when a trip goes by public transport, and the vehicles of the lines the
+traveller's own connections use stand out. Pressing a vehicle says which route it is on, where
+it is heading and how fast it is moving, and can draw the route's line.
+
+The positions are open data that the operators report to the national Open API (data.gov.my),
+renewed every 30 seconds. In November 2026 that covers:
+
+- Rapid KL buses and MRT feeder buses, and Rapid Penang (Prasarana)
+- the KTM trains (KTMB)
+- the BAS.MY stage buses of Kangar, Alor Setar, Kota Bharu, Kuala Terengganu, Ipoh, Seremban,
+  Melaka, Johor Bahru and Kuching
+
+Rail lines of Rapid KL (LRT, MRT, monorail) do not publish positions yet. A new operator is
+one line in the feed list of `services/BusTrackingService.php`.
+
+data.gov.my allows four requests a minute. So only the feeds of the part of the map on show
+are asked for (three at most), each at most every 40 seconds, and a counter keeps all
+requests together inside the allowance; when it is used up the last known positions stay on
+the map a little longer. Route numbers, names, colours and lines come from the operators'
+timetable packages, which are read again every three days. No key and no setting is needed.
 ## Road conditions
 
 "Road conditions now" on the itinerary page shows what is happening on the route of the day

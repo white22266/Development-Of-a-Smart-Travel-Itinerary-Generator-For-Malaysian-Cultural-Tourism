@@ -360,6 +360,8 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
         .rc-item.level-3 .rc-badge { background: #dc2626; }
         .rc-detail { color: #475569; margin-top: 2px; }
         .rc-foot { margin-top: 8px; font-size: 11px; color: #64748b; line-height: 1.5; }
+        .live-bus-status { margin-top: 8px; font-size: 11.5px; color: #64748b; line-height: 1.5; }
+        .live-bus-status:empty { display: none; }
         /* a phone shows the map nearly full height: this page is read on the road */
         @media (max-width: 700px) { #map { height: 62vh; min-height: 320px; } }
         .weather-chip.wet { background: #fef9c3; border-color: #fbbf24; }
@@ -754,7 +756,10 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                                 title="Puts the stops of every day into the order with the least travelling and updates the times">Optimise route</button>
                         <button type="button" class="btn btn-ghost" id="conditionsButton"
                                 title="Traffic, closed roads, weather warnings and fires on this day's route, as they are now">Road conditions now</button>
+                        <button type="button" class="btn btn-ghost" id="busesButton"
+                                title="Where the buses and trains are right now, from the operators' open data">Live buses</button>
                     </div>
+                    <div id="liveBusStatus" class="live-bus-status" aria-live="polite"></div>
                     <div id="roadConditions" class="road-conditions" aria-live="polite"></div>
 
                     <div class="info-box" style="margin-top:10px;">
@@ -763,6 +768,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                         Day 1 starts from your starting location; a later day starts where the day before ended.
                         Choosing another way of travelling redraws the route without changing the saved itinerary.
                         "Optimise route" puts each day's stops into the order with the least travelling for the trip's own transport and updates the times.
+                        "Live buses" shows where the buses and trains are now; it is on by itself for public transport, and pressing a bus shows its route.
                         Map and routes: OpenStreetMap contributors. Weather data by Open-Meteo.com.
                     </div>
                 </div>
@@ -1068,7 +1074,8 @@ const DAY_COLORS = <?php echo $jsColorsJson; ?>;
 const START_TRANSPORT = <?php echo $jsTransport; ?>;
 const START_DATE = <?php echo json_encode($startDate ?: null); ?>;
 </script>
-<script src="../assets/itinerary_map.js?v=20261112d"></script>
+<script src="../assets/live_buses.js?v=20261112a"></script>
+<script src="../assets/itinerary_map.js?v=20261112e"></script>
   <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>

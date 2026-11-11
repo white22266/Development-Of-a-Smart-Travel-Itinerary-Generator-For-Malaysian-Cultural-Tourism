@@ -84,6 +84,33 @@ class OpenDataHttp
     }
 
     /**
+     * GET something that is not JSON, such as a protobuf feed or a ZIP file, and return its
+     * bytes. Nothing is cached here: the caller keeps what it makes of them.
+     */
+    public static function getBytes(string $url, int $timeout = 20, int $maxBytes = 30000000): ?string
+    {
+        self::$lastError = '';
+        if (!function_exists('curl_init')) {
+            self::$lastError = 'PHP cURL extension is not enabled.';
+            return null;
+        }
+        $host = (string)parse_url($url, PHP_URL_HOST);
+        if (!self::$patient && isset(self::$unreachable[$host])) {
+            self::$lastError = "GET {$host} skipped, the server did not answer a moment ago.";
+            return null;
+        }
+        [$body, $code, $error] = self::send($url, [CURLOPT_CONNECTTIMEOUT => 8, CURLOPT_TIMEOUT => $timeout], self::$patient ? 2 : 0);
+        if ($code === 0 || $code === 429 || $code >= 500) self::$unreachable[$host] = true;
+
+        if (!is_string($body) || $code !== 200 || strlen($body) > $maxBytes) {
+            self::$lastError = "GET {$host} failed: HTTP {$code} {$error}";
+            error_log('OpenDataHttp: ' . self::$lastError);
+            return null;
+        }
+        return $body;
+    }
+
+    /**
      * Download a binary file (an image) to $target. Returns the MIME type on success.
      * The caller decides which hosts are allowed.
      */

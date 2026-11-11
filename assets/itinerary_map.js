@@ -3,7 +3,8 @@
 // between them and the details of every leg. Leaflet draws it on OpenStreetMap tiles. The
 // route comes from api/itinerary_route.php, the forecast from api/weather.php and what is
 // happening on the road from api/road_conditions.php; "Optimise route" asks
-// api/itinerary_optimise.php for the best order of the stops.
+// api/itinerary_optimise.php for the best order of the stops. The live buses and trains are
+// drawn by assets/live_buses.js, which the page loads before this file.
 //
 // The page sets these before loading this file:
 //   ITINERARY_ID, TOTAL_DAYS, DAYS_DATA (day -> stops), DAY_COLORS (day -> colour),
@@ -30,6 +31,8 @@
     var shown = [];          // the points the map was last fitted to
     var myMarker = null;
     var weather = null;
+    var buses = null;            // the live layer of buses and trains (assets/live_buses.js)
+    var busesFollowMode = false; // it was switched on because the trip goes by public transport
     var conditionLayer = null;   // what the road conditions put on the map
     var conditionMarkers = [];   // item number -> its marker
     var conditions = null;       // the last answer of api/road_conditions.php
@@ -299,6 +302,7 @@
             var minutes = 0;
             var estimated = false;
             var missing = false;
+            var rides = [];
             results.forEach(function (route, index) {
                 var day = days[index];
                 if (!drawRoute(day, route, itemsByDay[day], bounds)) missing = true;
@@ -308,7 +312,13 @@
                     estimated = estimated || route.road.time_is_estimate;
                 }
                 if (day === activeDay) updateLegRows(day, route);
+                ((route && route.road && route.road.legs) || []).forEach(function (leg) {
+                    ((leg.transit && leg.transit.segments) || []).forEach(function (segment) {
+                        if (segment.kind !== "walk" && segment.line) rides.push(segment.line);
+                    });
+                });
             });
+            if (buses) buses.pickOut(rides);   // the lines of the traveller's own connections stand out
             fitTo(bounds);
 
             var what = mapDay === 0 ? "All " + TOTAL_DAYS + " days" : "Day " + mapDay;
@@ -481,6 +491,7 @@
         if (label) label.textContent = MODE_NAME[mode];
         draw();
         clearConditions();
+        followTransport();
     }
 
     function showWeather(day) {
@@ -576,6 +587,35 @@
 
     function isoDate(date) {
         return date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2);
+    }
+
+    /** What the live layer has to say, and the label of its button. */
+    function setBusStatus(text) {
+        var status = document.getElementById("liveBusStatus");
+        if (status) status.textContent = text || "";
+        var button = document.getElementById("busesButton");
+        if (button && buses) button.textContent = buses.isOn() ? "Hide live buses" : "Live buses";
+    }
+
+    /**
+     * The live buses belong to public transport: they come on with it, and go off again with
+     * another way of travelling unless the traveller switched them on.
+     */
+    function followTransport() {
+        if (!buses) return;
+        if (transport === "public_transport" && !buses.isOn()) {
+            busesFollowMode = true;
+            buses.start();
+        } else if (transport !== "public_transport" && busesFollowMode) {
+            busesFollowMode = false;
+            buses.stop();
+        }
+    }
+
+    function toggleBuses() {
+        if (!buses) return;
+        busesFollowMode = false;   // from here on it is the traveller's choice
+        if (buses.isOn()) buses.stop(); else buses.start();
     }
 
     function clearConditions() {
@@ -689,6 +729,7 @@
         drawn = L.layerGroup().addTo(map);
         conditionLayer = L.layerGroup().addTo(map);
         L.control.scale({ imperial: false }).addTo(map);
+        if (window.LiveBuses) buses = LiveBuses.create(map, { endpoint: "../api/live_buses.php", onStatus: setBusStatus });
         // The page layout settles after the map is created, and the sidebar can be folded away:
         // whenever the box changes size the map has to measure itself again.
         if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe(mapEl);
@@ -711,6 +752,8 @@
                 optimiseRoute();
             } else if (target.closest("#conditionsButton")) {
                 loadConditions();
+            } else if (target.closest("#busesButton")) {
+                toggleBuses();
             } else if (target.closest("#mapFullscreenButton")) {
                 toggleFullscreen();
             } else if ((hit = target.closest("[data-rc-index]"))) {
@@ -729,6 +772,7 @@
 
         showDay(1);
         loadWeather();
+        followTransport();
 
         // What the last "Optimise route" did, said once after the page was loaded again.
         try {

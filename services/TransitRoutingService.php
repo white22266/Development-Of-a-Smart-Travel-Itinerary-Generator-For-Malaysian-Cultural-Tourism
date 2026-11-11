@@ -11,6 +11,7 @@
 
 require_once __DIR__ . '/OpenDataHttp.php';
 require_once __DIR__ . '/RouteService.php';
+require_once __DIR__ . '/GtfsFeedReader.php';
 
 class TransitRoutingService
 {
@@ -96,7 +97,7 @@ class TransitRoutingService
             $segments[] = [
                 'kind' => $kind,
                 'line' => $ride ? trim((string)($leg['routeShortName'] ?? $leg['displayName'] ?? $leg['routeLongName'] ?? '')) : '',
-                'towards' => $ride ? self::title((string)($leg['headsign'] ?? '')) : '',
+                'towards' => $ride ? GtfsFeedReader::name((string)($leg['headsign'] ?? '')) : '',
                 'operator' => $ride ? trim((string)($leg['agencyName'] ?? '')) : '',
                 'from' => self::placeName($leg['from'] ?? []),
                 'to' => self::placeName($leg['to'] ?? []),
@@ -104,7 +105,7 @@ class TransitRoutingService
                 'arrive' => $clock((string)($leg['endTime'] ?? '')),
                 'minutes' => (int)round((float)($leg['duration'] ?? 0) / 60),
                 'distance_km' => round((float)($leg['distance'] ?? 0) / 1000, 2),
-                'color' => preg_match("/^[0-9a-f]{6}$/", $color) ? '#' . $color : null,
+                'color' => preg_match('/^[0-9a-f]{6}$/', $color) ? '#' . $color : null,
                 'geometry' => $thin,
             ];
         }
@@ -123,17 +124,7 @@ class TransitRoutingService
     private static function placeName(array $place): string
     {
         $name = trim((string)($place['name'] ?? ''));
-        return in_array($name, ['START', 'END'], true) ? '' : self::title($name);
-    }
-
-    /** Timetables often write names in capitals: "BATU CAVES" becomes "Batu Caves". */
-    private static function title(string $name): string
-    {
-        $name = trim($name);
-        if ($name === '' || mb_strtoupper($name) !== $name) return $name;
-        // Words without a vowel are abbreviations and stay as they are: KL, KLCC, MRT.
-        return (string)preg_replace_callback('/[A-Z]+/', static fn(array $m): string =>
-            preg_match('/[AEIOU]/', $m[0]) ? ucfirst(strtolower($m[0])) : $m[0], $name);
+        return in_array($name, ['START', 'END'], true) ? '' : GtfsFeedReader::name($name);
     }
 
     private static function baseUrl(): string
