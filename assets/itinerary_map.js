@@ -1,11 +1,13 @@
 // assets/itinerary_map.js
-// The map on the itinerary page: one day at a time (or all days), the stops, the road route
-// between them and the details of every leg. Leaflet draws it on OpenStreetMap tiles; the
-// route comes from api/itinerary_route.php and the forecast from api/weather.php.
+// The map on the itinerary page: one day at a time (or all days), the stops, the route
+// between them and the details of every leg. Leaflet draws it on OpenStreetMap tiles. The
+// route comes from api/itinerary_route.php, the forecast from api/weather.php and what is
+// happening on the road from api/road_conditions.php; "Optimise route" asks
+// api/itinerary_optimise.php for the best order of the stops.
 //
 // The page sets these before loading this file:
 //   ITINERARY_ID, TOTAL_DAYS, DAYS_DATA (day -> stops), DAY_COLORS (day -> colour),
-//   START_TRANSPORT (car | motorcycle | public_transport | walking)
+//   START_TRANSPORT (car | motorcycle | public_transport | walking), START_DATE ("2026-11-14" or null)
 
 (function () {
     "use strict";
@@ -25,8 +27,13 @@
     var mapDay = 1;          // the day on the map; 0 = all days
     var transport = START_TRANSPORT;
     var drawNo = 0;          // only the latest drawing may touch the map
+    var shown = [];          // the points the map was last fitted to
     var myMarker = null;
     var weather = null;
+    var conditionLayer = null;   // what the road conditions put on the map
+    var conditionMarkers = [];   // item number -> its marker
+    var conditions = null;       // the last answer of api/road_conditions.php
+    var CONDITION_MARK = { jam: "J", road_closed: "X", lane_closed: "L", roadworks: "R", accident: "A", flooding: "W", breakdown: "B", fire: "F" };
 
     function esc(value) {
         return String(value === null || value === undefined ? "" : value)
@@ -126,6 +133,103 @@
         return items;
     }
 
+    /** The lines a leg is drawn with: one, or for a public transport connection one per walk and ride. */
+    function legPieces(leg, color) {
+        if (leg.transit && leg.transit.segments) {
+            return leg.transit.segments.filter(function (segment) {
+                return segment.geometry && segment.geometry.length >= 2;
+            }).map(function (segment) {
+                var walk = segment.kind === "walk";
+                return { points: segment.geometry, color: walk ? color : (segment.color || color), walk: walk };
+            });
+        }
+        if (!leg.geometry || leg.geometry.length < 2) return [];
+        return [{ points: leg.geometry, color: color, walk: !!leg.on_foot, estimated: !!leg.estimated }];
+    }
+
+    function legPoints(leg) {
+        var points = [];
+        legPieces(leg, "").forEach(function (piece) { points = points.concat(piece.points); });
+        return points;
+    }
+
+    /** An arrow in the middle of a line, pointing the way of travel. A line too short to need one gets none. */
+    function arrowOn(points) {
+        var length = 0;
+        for (var i = 1; i < points.length; i++) length += map.distance(points[i - 1], points[i]);
+        if (length < 250) return null;
+        var covered = 0;
+        for (var j = 1; j < points.length; j++) {
+            var step = map.distance(points[j - 1], points[j]);
+            if (step > 0 && covered + step >= length / 2) {
+                var a = points[j - 1];
+                var b = points[j];
+                var part = (length / 2 - covered) / step;
+                var bearing = Math.atan2((b[1] - a[1]) * Math.cos(a[0] * Math.PI / 180), b[0] - a[0]) * 180 / Math.PI;
+                return L.marker([a[0] + (b[0] - a[0]) * part, a[1] + (b[1] - a[1]) * part], {
+                    icon: L.divIcon({
+                        className: "iv-arrow",
+                        html: "<span style=\"transform:rotate(" + bearing.toFixed(0) + "deg)\"></span>",
+                        iconSize: [14, 13],
+                        iconAnchor: [7, 6]
+                    }),
+                    interactive: false,
+                    keyboard: false
+                });
+            }
+            covered += step;
+        }
+        return null;
+    }
+
+    /** A leg on the map: a white edge under a coloured line (dotted when walked, dashed when only estimated) and an arrow. */
+    function legLayer(leg, color) {
+        var pieces = legPieces(leg, color);
+        if (!pieces.length) return null;
+        var group = L.featureGroup();
+        var longest = pieces[0];
+        pieces.forEach(function (piece) {
+            if (!piece.walk) {
+                group.addLayer(L.polyline(piece.points, { color: "#fff", weight: 9, opacity: 0.9, interactive: false, isEdge: true }));
+            }
+            group.addLayer(L.polyline(piece.points, {
+                color: piece.color,
+                weight: 5,
+                opacity: 0.9,
+                dashArray: piece.walk ? "2 9" : (piece.estimated ? "10 8" : null)
+            }));
+            if (piece.points.length > longest.points.length) longest = piece;
+        });
+        var arrow = arrowOn(longest.points);
+        if (arrow) group.addLayer(arrow);
+        return group;
+    }
+
+    /** Make a leg stand out on the map, or put it back. */
+    function emphasise(layer, on) {
+        layer.eachLayer(function (line) {
+            if (!line.setStyle) return;
+            line.setStyle(line.options.isEdge ? { weight: on ? 13 : 9 } : { weight: on ? 8 : 5, opacity: on ? 1 : 0.9 });
+        });
+        if (on) layer.bringToFront();
+    }
+
+    function capital(text) {
+        text = String(text || "");
+        return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    /** A leg in one line, as the timetable shows it next to "Show Route". */
+    function legSummary(leg) {
+        if (leg.transit) {
+            var rides = leg.transit.segments.filter(function (segment) { return segment.kind !== "walk"; })
+                .map(function (segment) { return capital(segment.kind) + (segment.line ? " " + segment.line : ""); });
+            return rides.join(" + ") + " · " + minutesText(leg.travel_time_min) + " with walking and waiting, leaves " + leg.transit.depart;
+        }
+        return kmText(leg.distance_km) + " · about " + minutesText(leg.travel_time_min) + " " +
+            (leg.on_foot ? "on foot" : MODE_PHRASE[transport]) + (leg.estimated ? " (estimate)" : "");
+    }
+
     /** Draws where the day starts and its legs. Returns false when only straight lines could be drawn. */
     function drawRoute(day, route, items, bounds) {
         var color = dayColor(day);
@@ -144,11 +248,11 @@
 
         if (route && route.road) {
             route.road.legs.forEach(function (leg) {
-                if (!leg.geometry || leg.geometry.length < 2) return;
-                var line = L.polyline(leg.geometry, { color: color, weight: 5, opacity: 0.85, dashArray: leg.on_foot ? "2 9" : null });
-                drawn.addLayer(line);
-                legLines[leg.to_item_id] = line;
-                leg.geometry.forEach(function (point) { bounds.push(point); });
+                var layer = legLayer(leg, color);
+                if (!layer) return;
+                drawn.addLayer(layer);
+                legLines[leg.to_item_id] = layer;
+                legPoints(leg).forEach(function (point) { bounds.push(point); });
             });
             return true;
         }
@@ -163,6 +267,7 @@
     }
 
     function fitTo(bounds) {
+        shown = bounds;
         if (bounds.length === 1) map.setView(bounds[0], 15);
         else if (bounds.length > 1) map.fitBounds(L.latLngBounds(bounds), { padding: [40, 40], maxZoom: 16 });
     }
@@ -225,34 +330,53 @@
             var holder = box.querySelector("[data-leg-to=\"" + leg.to_item_id + "\"]");
             var estimate = holder ? holder.querySelector(".leg-est") : null;
             if (!estimate) return;
-            estimate.textContent = kmText(leg.distance_km) + " · about " + minutesText(leg.travel_time_min) + " " +
-                (leg.on_foot ? "on foot" : MODE_PHRASE[transport]);
+            estimate.textContent = legSummary(leg);
         });
     }
 
     function legHtml(leg) {
         var html = "<div class=\"ts-summary-bar\">" +
             "<div class=\"ts-summary-stat\">Distance <span>" + kmText(leg.distance_km) + "</span></div>" +
-            "<div class=\"ts-summary-stat\">Time <span>about " + minutesText(leg.travel_time_min) + " " +
+            "<div class=\"ts-summary-stat\">Time <span>" + (leg.transit ? "" : "about ") + minutesText(leg.travel_time_min) + " " +
                 (leg.on_foot ? "on foot" : MODE_PHRASE[transport]) + "</span></div>" +
             (leg.via ? "<span style=\"color:#64748b;font-size:11px;\">via " + esc(leg.via) + "</span>" : "") +
             "</div>";
 
-        if (leg.on_foot) {
-            html += "<div class=\"ts-stops\">These two stops are a short walk apart.</div>";
-        } else if (transport === "public_transport") {
-            html += "<div class=\"ts-warning\">No free timetable service covers public transport in Malaysia. This is the road " +
-                "distance with an estimated travel time: check lines and departure times with the operator.</div>";
+        if (leg.transit) {
+            // A connection from the timetables: every walk and ride with its time.
+            html += "<div class=\"ts-walk-steps\">" + leg.transit.segments.map(function (segment) {
+                var what;
+                if (segment.kind === "walk") {
+                    what = "Walk " + (segment.distance_km > 0 ? kmText(segment.distance_km) + " " : "") +
+                        "to " + esc(segment.to || leg.to);
+                } else {
+                    what = "<strong>" + esc(capital(segment.kind) + (segment.line ? " " + segment.line : "")) + "</strong>" +
+                        (segment.towards ? " (" + esc(segment.towards) + ")" : "") +
+                        " from " + esc(segment.from) + " to " + esc(segment.to) +
+                        (segment.operator ? " <span style=\"color:#94a3b8;\">" + esc(segment.operator) + "</span>" : "");
+                }
+                return "<div class=\"ts-walk-step\">" + esc(segment.depart) + " &middot; " + what +
+                    " <span style=\"color:#94a3b8;\">" + minutesText(segment.minutes) + "</span></div>";
+            }).join("") + "</div>" +
+            "<div class=\"ts-stops\">Arrives " + esc(leg.transit.arrive) + "." +
+                (leg.transit.typical ? " These are the times now in force for this day of the week; check again closer to the trip." : "") +
+                " Timetables: Transitous and the operators.</div>";
+        } else if (leg.estimated) {
+            html += "<div class=\"ts-warning\">No timetable connection is known for this leg. This is the road distance with an " +
+                "estimated time: check lines and departures with the local operator, or take a taxi or e-hailing car.</div>";
         } else if (leg.steps && leg.steps.length) {
             html += "<div class=\"ts-walk-steps\">" + leg.steps.map(function (step) {
                 return "<div class=\"ts-walk-step\">" + esc(step.text) +
                     (step.distance_m > 0 ? " <span style=\"color:#94a3b8;\">" + kmText(step.distance_m / 1000) + "</span>" : "") + "</div>";
             }).join("") + "</div>";
+        } else if (leg.on_foot) {
+            html += "<div class=\"ts-stops\">These two stops are a short walk apart.</div>";
         }
 
-        if (leg.geometry && leg.geometry.length >= 2) {
-            var from = leg.geometry[0];
-            var to = leg.geometry[leg.geometry.length - 1];
+        var points = leg.transit ? [] : legPoints(leg);
+        if (points.length >= 2) {
+            var from = points[0];
+            var to = points[points.length - 1];
             var engine = (transport === "walking" || leg.on_foot) ? "fossgis_osrm_foot" : "fossgis_osrm_car";
             html += "<div style=\"margin-top:8px;font-size:11.5px;\"><a target=\"_blank\" rel=\"noopener\" href=\"https://www.openstreetmap.org/directions?engine=" +
                 engine + "&route=" + encodeURIComponent(from[0] + "," + from[1] + ";" + to[0] + "," + to[1]) + "\">Open this leg on OpenStreetMap</a></div>";
@@ -266,7 +390,7 @@
             detail.innerHTML = "";
         });
         document.querySelectorAll("[data-leg-toggle]").forEach(function (button) { button.textContent = "Show Route"; });
-        Object.keys(legLines).forEach(function (id) { legLines[id].setStyle({ weight: 5, opacity: 0.85 }); });
+        Object.keys(legLines).forEach(function (id) { emphasise(legLines[id], false); });
     }
 
     /** Open or close the details of the leg that arrives at a stop, and show that leg on the map. */
@@ -295,7 +419,7 @@
             detail.innerHTML = leg ? legHtml(leg) : "<div class=\"ts-warning\">Road details for this leg are not available right now.</div>";
             var line = legLines[itemId];
             if (line) {
-                line.setStyle({ weight: 9, opacity: 1 }).bringToFront();
+                emphasise(line, true);
                 map.fitBounds(line.getBounds(), { padding: [50, 50], maxZoom: 17 });
             }
         });
@@ -333,6 +457,8 @@
         markLegend();
         showWeather(day);
         draw();
+        clearConditions();
+        if (dayDate(day) === isoDate(new Date())) loadConditions();   // on the day itself, without being asked
     }
 
     /** Show every day on the map at once. The timetable stays on the day it was on. */
@@ -354,6 +480,7 @@
         var label = document.getElementById("transitModeName");
         if (label) label.textContent = MODE_NAME[mode];
         draw();
+        clearConditions();
     }
 
     function showWeather(day) {
@@ -404,6 +531,151 @@
         }, { timeout: 8000, maximumAge: 60000 });
     }
 
+    /** Ask the server for the best order of every day. The page is loaded again to show the new timetable. */
+    function optimiseRoute() {
+        var button = document.getElementById("optimiseButton");
+        if (!button || button.disabled) return;
+        button.disabled = true;
+        button.textContent = "Optimising...";
+        var body = new URLSearchParams();
+        body.set("itinerary_id", ITINERARY_ID);
+        fetch("../api/itinerary_optimise.php", { method: "POST", credentials: "same-origin", body: body })
+            .then(function (response) { return response.json(); })
+            .then(function (data) {
+                if (!data || data.status !== "ok") throw new Error("not optimised");
+                try { window.sessionStorage.setItem("iv-notice", data.message); } catch (e) { /* the message is only a courtesy */ }
+                window.location.reload();
+            })
+            .catch(function () {
+                button.disabled = false;
+                button.textContent = "Optimise route";
+                setNotice("The route could not be optimised just now. Nothing was changed.");
+            });
+    }
+
+    /** Show the map over the whole window, or put it back. */
+    function toggleFullscreen() {
+        var wrap = document.querySelector(".map-wrap");
+        var button = document.getElementById("mapFullscreenButton");
+        if (!wrap || !map) return;
+        var on = wrap.classList.toggle("fullscreen");
+        if (button) button.textContent = on ? "Close full screen" : "Full screen";
+        document.body.style.overflow = on ? "hidden" : "";
+        map.invalidateSize();
+        fitTo(shown);
+    }
+
+    /** The date of a day of the trip as "2026-11-14", or null when the trip has no start date. */
+    function dayDate(day) {
+        if (!START_DATE) return null;
+        var date = new Date(START_DATE + "T00:00:00");
+        if (isNaN(date.getTime())) return null;
+        date.setDate(date.getDate() + day - 1);
+        return isoDate(date);
+    }
+
+    function isoDate(date) {
+        return date.getFullYear() + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2);
+    }
+
+    function clearConditions() {
+        conditions = null;
+        conditionMarkers = [];
+        if (conditionLayer) conditionLayer.clearLayers();
+        var panel = document.getElementById("roadConditions");
+        if (panel) {
+            panel.classList.remove("visible");
+            panel.innerHTML = "";
+        }
+    }
+
+    /**
+     * What is happening on the day's route right now: traffic, closed roads, weather warnings,
+     * fires. Asked for when the traveller presses the button, and by itself on the day of travel.
+     */
+    function loadConditions() {
+        var panel = document.getElementById("roadConditions");
+        var button = document.getElementById("conditionsButton");
+        if (!panel || !map) return;
+        var day = activeDay;
+        var mode = transport;
+        panel.classList.add("visible");
+        panel.innerHTML = "<span class=\"spinner\"></span> Checking traffic, warnings and fires...";
+        if (button) button.disabled = true;
+        fetch("../api/road_conditions.php?itinerary_id=" + encodeURIComponent(ITINERARY_ID) + "&day=" + encodeURIComponent(day) +
+                "&mode=" + encodeURIComponent(mode), { credentials: "same-origin" })
+            .then(function (response) { return response.json(); })
+            .then(function (data) {
+                if (day !== activeDay || mode !== transport) return;
+                if (!data || data.status !== "ok") throw new Error("unavailable");
+                conditions = data;
+                showConditions();
+            })
+            .catch(function () {
+                if (day === activeDay) panel.innerHTML = "<div class=\"ts-warning\">Road conditions could not be loaded just now.</div>";
+            })
+            .then(function () { if (button) button.disabled = false; });
+    }
+
+    function showConditions() {
+        var panel = document.getElementById("roadConditions");
+        if (!panel || !conditions) return;
+        conditionLayer.clearLayers();
+        conditionMarkers = [];
+        var items = conditions.items || [];
+        var checked = new Date(conditions.checked_at);
+        var html = "<strong>" + (items.length ? "On the road now" : "Nothing is reported on this day's route right now") + "</strong>" +
+            " <span style=\"color:#64748b;font-size:11.5px;\">checked " +
+            esc(isNaN(checked.getTime()) ? "" : checked.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })) +
+            (conditions.is_today ? "" : " &middot; this is the situation now, not a forecast for the day of travel") + "</span>";
+
+        items.forEach(function (item, index) {
+            var located = item.lat !== null && item.lng !== null;
+            if (located) {
+                if (item.line && item.line.length >= 2) {
+                    conditionLayer.addLayer(L.polyline(item.line, { color: item.level >= 3 ? "#dc2626" : "#ea580c", weight: 8, opacity: 0.75 }));
+                }
+                var marker = L.marker([item.lat, item.lng], {
+                    icon: L.divIcon({
+                        className: "iv-alert level-" + item.level,
+                        html: "<span><b>" + esc(CONDITION_MARK[item.kind] || "!") + "</b></span>",
+                        iconSize: [24, 24],
+                        iconAnchor: [12, 12],
+                        popupAnchor: [0, -12]
+                    }),
+                    title: item.title,
+                    zIndexOffset: 500
+                }).bindPopup("<div class=\"iv-popup\"><strong>" + esc(item.title) + "</strong><div>" + esc(item.detail) + "</div></div>");
+                conditionLayer.addLayer(marker);
+                conditionMarkers[index] = marker;
+            }
+            var where = item.kind === "weather_warning" ? (item.on_route ? "your area" : "in the state")
+                : (item.on_route ? "on your route" : kmText(item.distance_km) + " away");
+            html += "<div class=\"rc-item level-" + item.level + "\"" + (located ? " data-rc-index=\"" + index + "\"" : "") + ">" +
+                "<span class=\"rc-badge\">" + esc(where) + "</span>" +
+                "<div><strong>" + esc(item.title) + "</strong><div class=\"rc-detail\">" + esc(item.detail) + "</div></div></div>";
+        });
+
+        var notes = [];
+        var credits = [];
+        Object.keys(conditions.sources || {}).forEach(function (name) {
+            var source = conditions.sources[name];
+            if (source.note) notes.push(source.note);
+            if (source.credit) credits.push(source.credit);
+        });
+        html += "<div class=\"rc-foot\">" + (notes.length ? esc(notes.join(" ")) + "<br>" : "") +
+            (credits.length ? esc(credits.join(" · ")) + ". " : "") +
+            "River levels and floods: <a href=\"https://publicinfobanjir.water.gov.my/\" target=\"_blank\" rel=\"noopener\">Public InfoBanjir</a>, the official site.</div>";
+        panel.innerHTML = html;
+    }
+
+    function focusCondition(index) {
+        var marker = conditionMarkers[index];
+        if (!map || !marker) return;
+        map.setView(marker.getLatLng(), Math.max(map.getZoom(), 15));
+        marker.openPopup();
+    }
+
     function init() {
         var mapEl = document.getElementById("map");
         if (!mapEl) return;
@@ -415,6 +687,8 @@
         map = L.map(mapEl).setView([4.2, 108.0], 5);
         L.tileLayer(TILES, { maxZoom: 19, attribution: ATTRIBUTION }).addTo(map);
         drawn = L.layerGroup().addTo(map);
+        conditionLayer = L.layerGroup().addTo(map);
+        L.control.scale({ imperial: false }).addTo(map);
         // The page layout settles after the map is created, and the sidebar can be folded away:
         // whenever the box changes size the map has to measure itself again.
         if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe(mapEl);
@@ -433,6 +707,14 @@
                 setTransport(hit.dataset.mode);
             } else if ((hit = target.closest("[data-leg-toggle]"))) {
                 toggleLeg(hit.dataset.legToggle);
+            } else if (target.closest("#optimiseButton")) {
+                optimiseRoute();
+            } else if (target.closest("#conditionsButton")) {
+                loadConditions();
+            } else if (target.closest("#mapFullscreenButton")) {
+                toggleFullscreen();
+            } else if ((hit = target.closest("[data-rc-index]"))) {
+                focusCondition(Number(hit.dataset.rcIndex));
             } else if (target.closest("#locateButton")) {
                 locateMe();
             } else if ((hit = target.closest("tr[data-item-id]")) && !target.closest("a, button")) {
@@ -440,8 +722,22 @@
             }
         });
 
+        document.addEventListener("keydown", function (event) {
+            var wrap = document.querySelector(".map-wrap");
+            if (event.key === "Escape" && wrap && wrap.classList.contains("fullscreen")) toggleFullscreen();
+        });
+
         showDay(1);
         loadWeather();
+
+        // What the last "Optimise route" did, said once after the page was loaded again.
+        try {
+            var notice = window.sessionStorage.getItem("iv-notice");
+            if (notice) {
+                window.sessionStorage.removeItem("iv-notice");
+                setNotice(notice);
+            }
+        } catch (e) { /* no session storage: no message */ }
     }
 
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);

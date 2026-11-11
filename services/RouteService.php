@@ -38,7 +38,7 @@ class RouteService
      * Public transport without a timetable to ask: a hop up to this many km is walked, and a
      * ride takes this many minutes more than the driving, for reaching the stop and waiting.
      */
-    private const TRANSIT_WALK_KM = 1.0;
+    public const TRANSIT_WALK_KM = 1.0;
     private const TRANSIT_ACCESS_MIN = 10;
 
     /** Stops closer than this in a straight line are walked when the road between them is a detour. */

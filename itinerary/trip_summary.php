@@ -745,6 +745,13 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                     <div style="font-size:11px;color:var(--muted);">estimate per night</div>
                                     <div class="hotel-actions">
                                         <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotel(<?php echo (int)$hotel["hotel_id"]; ?>, this)">Confirm Hotel</button>
+                                        <?php if (!empty($hotel["price_check_url"])): ?>
+                                            <a href="<?php echo htmlspecialchars($hotel["price_check_url"]); ?>"
+                                                target="_blank" rel="noopener noreferrer" title="Opens a search for this place on Booking.com"
+                                                class="btn btn-ghost" style="font-size:11px;padding:5px 9px;display:inline-block;">
+                                                Check price
+                                            </a>
+                                        <?php endif; ?>
                                         <?php $mapUrl = $hotel["map_url"] ?? "";
                                         if ($mapUrl !== ""): ?>
                                             <a href="<?php echo htmlspecialchars($mapUrl); ?>"

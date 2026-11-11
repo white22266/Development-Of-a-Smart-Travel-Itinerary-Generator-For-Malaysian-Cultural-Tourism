@@ -73,11 +73,12 @@ class OpenDataHttp
         return self::$lastError;
     }
 
-    /** A cached response of any age, or null. For callers that try several mirrors themselves. */
-    public static function cachedJson(string $namespace, string $cacheKey): ?array
+    /** A cached response, or null: of any age, or no older than $maxAge seconds when that is given. */
+    public static function cachedJson(string $namespace, string $cacheKey, int $maxAge = 0): ?array
     {
         $file = self::cacheFile($namespace, $cacheKey);
         if (!is_file($file)) return null;
+        if ($maxAge > 0 && (time() - filemtime($file)) >= $maxAge) return null;
         $json = json_decode((string)file_get_contents($file), true);
         return is_array($json) ? $json : null;
     }
@@ -256,6 +257,12 @@ class OpenDataHttp
     {
         return self::cacheDir(preg_replace('/[^a-z0-9.-]/i', '_', $namespace))
             . '/' . preg_replace('/[^a-z0-9_-]/i', '_', $key) . '.json';
+    }
+
+    /** Where a service may keep a file of its own next to the cached responses: storage/cache/<namespace>/<file>. */
+    public static function cachePath(string $namespace, string $fileName): string
+    {
+        return self::cacheDir(preg_replace('/[^a-z0-9.-]/i', '_', $namespace)) . '/' . preg_replace('/[^a-z0-9._-]/i', '_', $fileName);
     }
 
     /** storage/cache/<name>, created on first use. storage/ is blocked from the web by .htaccess. */

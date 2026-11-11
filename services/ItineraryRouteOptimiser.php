@@ -158,12 +158,17 @@ class ItineraryRouteOptimiser
     private static function planDay(RouteService $route, ?array $start, array $visits, ?array $hotel, ?string $date, bool $avoidHeat): array
     {
         $first = $visits[0];
-        $dayStartMin = max(0, $first['start_min'] - ($start !== null ? (int)$first['travel_time_min'] : 0));
+
+        // When the day begins and how long the breaks are is read from the clock times, not from
+        // the order of the rows: after an edit the two do not always agree.
+        $byTime = $visits;
+        usort($byTime, static fn(array $a, array $b): int => $a['start_min'] <=> $b['start_min']);
+        $dayStartMin = max(0, $byTime[0]['start_min'] - ($start !== null ? (int)$byTime[0]['travel_time_min'] : 0));
 
         // The break the day was planned with: the usual gap between two visits, travelling aside.
         $gaps = [];
-        for ($k = 1, $count = count($visits); $k < $count; $k++) {
-            $gaps[] = $visits[$k]['start_min'] - $visits[$k - 1]['end_min'] - (int)$visits[$k]['travel_time_min'];
+        for ($k = 1, $count = count($byTime); $k < $count; $k++) {
+            $gaps[] = $byTime[$k]['start_min'] - $byTime[$k - 1]['end_min'] - (int)$byTime[$k]['travel_time_min'];
         }
         sort($gaps);
         $restMin = $gaps ? max(0, min(180, (int)(round($gaps[intdiv(count($gaps), 2)] / 5) * 5))) : 0;

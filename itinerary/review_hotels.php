@@ -35,7 +35,7 @@ if ($itineraryId <= 0 || $travellerId <= 0) {
 }
 
 $stmt = $conn->prepare("
-    SELECT i.total_days, tp.budget, tp.traveller_type, tp.party_size
+    SELECT i.total_days, i.start_date, tp.budget, tp.traveller_type, tp.party_size
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
     WHERE i.itinerary_id = ? AND i.traveller_id = ?
@@ -128,5 +128,13 @@ if (!$hotels && $state !== '') {
 if (!$hotels) {
     review_hotels_reply(['status' => 'empty', 'message' => 'No places to stay are listed near this stop yet.', 'last_stop' => $lastStop, 'hotels' => []]);
 }
+
+// The link for checking the real price carries the night's date when the stop belongs to a day of the trip.
+$firstDay = DateTimeImmutable::createFromFormat('!Y-m-d', (string)($itinerary['start_date'] ?? ''));
+$checkIn = $firstDay && $lastStop['day_no'] > 0 ? $firstDay->modify('+' . ($lastStop['day_no'] - 1) . ' days')->format('Y-m-d') : null;
+foreach ($hotels as &$hotel) {
+    $hotel['price_check_url'] = HotelRecommendationService::priceCheckUrl($hotel['name'], $hotel['state'], $checkIn, 1, $partySize, CostEstimationService::roomCount($partySize));
+}
+unset($hotel);
 
 review_hotels_reply(['status' => 'success', 'message' => $message, 'last_stop' => $lastStop, 'hotels' => $hotels]);

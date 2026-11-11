@@ -318,6 +318,50 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
         .iv-popup { max-width: 240px; font-size: 12px; line-height: 1.45; }
         .iv-popup strong { display: block; font-size: 13px; }
         .iv-popup-meta { color: #64748b; }
+        /* an arrow on each leg, pointing the way of travel */
+        .iv-arrow span {
+            display: block; width: 0; height: 0;
+            border-left: 7px solid transparent; border-right: 7px solid transparent;
+            border-bottom: 13px solid #0f172a;
+            filter: drop-shadow(0 0 1.5px #fff) drop-shadow(0 0 1.5px #fff);
+        }
+        /* road conditions: markers on the map and the list under it */
+        .iv-alert span {
+            display: flex; align-items: center; justify-content: center;
+            width: 24px; height: 24px; border-radius: 6px; transform: rotate(45deg);
+            border: 2px solid #fff; box-shadow: 0 1px 5px rgba(2,6,23,.45); background: #ca8a04;
+        }
+        .iv-alert b { transform: rotate(-45deg); color: #fff; font: 800 12px system-ui, sans-serif; }
+        .iv-alert.level-2 span { background: #ea580c; }
+        .iv-alert.level-3 span { background: #dc2626; }
+        .map-tools { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+        .map-tools .btn { font-size: 12px; padding: 7px 12px; }
+        .map-fullscreen-btn {
+            position: absolute; top: 10px; right: 10px; z-index: 500;
+            background: #fff; border: 1px solid rgba(15,23,42,.2); border-radius: 8px;
+            padding: 6px 10px; font-size: 12px; font-weight: 700; cursor: pointer; color: #0f172a;
+            box-shadow: 0 1px 4px rgba(2,6,23,.25);
+        }
+        .map-wrap.fullscreen { position: fixed; inset: 0; z-index: 3000; background: #fff; }
+        .map-wrap.fullscreen #map { height: 100%; border-radius: 0; border: 0; }
+        .map-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; font-size: 11.5px; color: #475569; }
+        .map-legend i { display: inline-block; width: 26px; height: 0; vertical-align: middle; margin-right: 5px; border-top: 4px solid #475569; }
+        .map-legend i.walk { border-top-style: dotted; }
+        .map-legend i.estimate { border-top-style: dashed; }
+        .map-legend i.problem { border-top-color: #dc2626; }
+        .road-conditions { margin-top: 10px; display: none; }
+        .road-conditions.visible { display: block; }
+        .rc-item { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 6px; font-size: 12.5px; background: #fff; }
+        .rc-item[data-rc-index] { cursor: pointer; }
+        .rc-item.level-2 { border-color: #fed7aa; background: #fff7ed; }
+        .rc-item.level-3 { border-color: #fecaca; background: #fef2f2; }
+        .rc-badge { flex: none; font-weight: 800; font-size: 10.5px; padding: 2px 7px; border-radius: 999px; color: #fff; background: #ca8a04; white-space: nowrap; }
+        .rc-item.level-2 .rc-badge { background: #ea580c; }
+        .rc-item.level-3 .rc-badge { background: #dc2626; }
+        .rc-detail { color: #475569; margin-top: 2px; }
+        .rc-foot { margin-top: 8px; font-size: 11px; color: #64748b; line-height: 1.5; }
+        /* a phone shows the map nearly full height: this page is read on the road */
+        @media (max-width: 700px) { #map { height: 62vh; min-height: 320px; } }
         .weather-chip.wet { background: #fef9c3; border-color: #fbbf24; }
 
         /* ===== Transport bar ===== */
@@ -686,6 +730,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
 
                     <div class="map-wrap">
                         <div id="map"></div>
+                        <button type="button" class="map-fullscreen-btn" id="mapFullscreenButton">Full screen</button>
                         <div id="mapErrorPanel" class="map-error-panel" role="alert">
                             <div class="map-error-card">
                                 <strong>The map could not be loaded.</strong>
@@ -698,12 +743,26 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                     </div>
                     <div id="routeNotice" class="map-route-notice"></div>
                     <div id="routeSummary" class="route-summary"></div>
+                    <div class="map-legend" aria-label="Lines on the map">
+                        <span><i></i>by road or rail</span>
+                        <span><i class="walk"></i>on foot</span>
+                        <span><i class="estimate"></i>no route data, estimated</span>
+                        <span><i class="problem"></i>road problem</span>
+                    </div>
+                    <div class="map-tools">
+                        <button type="button" class="btn btn-ghost" id="optimiseButton"
+                                title="Puts the stops of every day into the order with the least travelling and updates the times">Optimise route</button>
+                        <button type="button" class="btn btn-ghost" id="conditionsButton"
+                                title="Traffic, closed roads, weather warnings and fires on this day's route, as they are now">Road conditions now</button>
+                    </div>
+                    <div id="roadConditions" class="road-conditions" aria-live="polite"></div>
 
                     <div class="info-box" style="margin-top:10px;">
                         <strong>How to read this map:</strong>
-                        The numbered pins are the day's stops in order, "S" is where the day starts and "H" is a hotel.
+                        The numbered pins are the day's stops in order, "S" is where the day starts and "H" is a hotel; the arrows show the way of travel.
                         Day 1 starts from your starting location; a later day starts where the day before ended.
-                        The line follows the roads. Choosing another way of travelling redraws it without changing the saved itinerary.
+                        Choosing another way of travelling redraws the route without changing the saved itinerary.
+                        "Optimise route" puts each day's stops into the order with the least travelling for the trip's own transport and updates the times.
                         Map and routes: OpenStreetMap contributors. Weather data by Open-Meteo.com.
                     </div>
                 </div>
@@ -1007,8 +1066,9 @@ const TOTAL_DAYS = <?php echo $totalDays; ?>;
 const DAYS_DATA = <?php echo $jsDays; ?>;
 const DAY_COLORS = <?php echo $jsColorsJson; ?>;
 const START_TRANSPORT = <?php echo $jsTransport; ?>;
+const START_DATE = <?php echo json_encode($startDate ?: null); ?>;
 </script>
-<script src="../assets/itinerary_map.js?v=20261112c"></script>
+<script src="../assets/itinerary_map.js?v=20261112d"></script>
   <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>

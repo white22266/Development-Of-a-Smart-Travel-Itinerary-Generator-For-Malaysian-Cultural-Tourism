@@ -168,10 +168,31 @@ class HotelRecommendationService
             'distance_km' => $distanceKm !== null ? round($distanceKm, 2) : null,
             'map_url' => 'https://www.openstreetmap.org/?mlat=' . $lat . '&mlon=' . $lng . '#map=17/' . $lat . '/' . $lng,
             'website' => !empty($row['website']) ? (string)$row['website'] : null,
+            'price_check_url' => self::priceCheckUrl((string)$row['name'], (string)$row['state']),
             'phone' => !empty($row['phone']) ? (string)$row['phone'] : null,
             'source' => 'openstreetmap',
             'score' => round(0.45 * $distanceScore + 0.25 * $priceScore + 0.20 * $quality + 0.10 * $known, 4),
         ];
+    }
+
+    /**
+     * Where the price of a place to stay can be looked up: a search for it by name on a
+     * booking site. The prices shown by this application are estimates, and no free service
+     * publishes live hotel prices, so the traveller is sent to check for themselves.
+     *
+     * @param string|null $checkIn the first night (Y-m-d); without it the site asks for the dates
+     */
+    public static function priceCheckUrl(string $name, string $state, ?string $checkIn = null, int $nights = 1, int $adults = 2, int $rooms = 1): string
+    {
+        $query = ['ss' => implode(', ', array_filter([trim($name), trim($state), 'Malaysia']))];
+        $from = $checkIn !== null ? DateTimeImmutable::createFromFormat('!Y-m-d', $checkIn) : false;
+        if ($from) {
+            $query['checkin'] = $from->format('Y-m-d');
+            $query['checkout'] = $from->modify('+' . max(1, $nights) . ' days')->format('Y-m-d');
+            $query['group_adults'] = max(1, $adults);
+            $query['no_rooms'] = max(1, $rooms);
+        }
+        return 'https://www.booking.com/searchresults.html?' . http_build_query($query);
     }
 
     /**

@@ -1238,6 +1238,7 @@ function renderNightHotels(nightNo, data, allowSelect) {
                     ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">Select for Night ${nightNo}</button>` : ''}
                     ${hotel.map_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.map_url)}" target="_blank" rel="noopener">Map</a>` : ''}
                     ${hotel.website ? `<a class="btn btn-ghost" href="${escHtml(hotel.website)}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
+                    ${hotel.price_check_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.price_check_url)}" target="_blank" rel="noopener noreferrer" title="Opens a search for this place on Booking.com">Check price</a>` : ''}
                 </div>
             </div>
         `;
