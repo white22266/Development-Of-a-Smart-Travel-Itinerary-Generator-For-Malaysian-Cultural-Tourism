@@ -11,7 +11,7 @@ require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../config/ai_language_guard.php";
 require_once "../services/CostEstimationService.php";
-require_once "../services/RouteService.php";
+require_once "../services/ItineraryEditService.php";
 require_once "../services/ItineraryRuleValidationService.php";
 
 header("Content-Type: application/json; charset=utf-8");
@@ -64,14 +64,14 @@ if ($action === "confirm") {
         exit;
     }
 
-    $ok = apply_replacement($conn, $itineraryId, $itemId, $place);
+    $ok = ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
     if (!$ok) {
         echo json_encode(["status" => "error", "answer" => "Could not update the itinerary item."]);
         exit;
     }
 
-    recalculate_itinerary_routes($conn, $itineraryId);
-    recalculate_itinerary_total($conn, $itineraryId);
+    ItineraryEditService::routes($conn, $itineraryId);
+    ItineraryEditService::total($conn, $itineraryId);
 
     echo json_encode([
         "status" => "success",
@@ -111,8 +111,8 @@ if ($action === "confirm_add") {
         exit;
     }
 
-    recalculate_itinerary_routes($conn, $itineraryId);
-    recalculate_itinerary_total($conn, $itineraryId);
+    ItineraryEditService::routes($conn, $itineraryId);
+    ItineraryEditService::total($conn, $itineraryId);
 
     echo json_encode([
         "status" => "success",
@@ -140,7 +140,7 @@ if ($action === "confirm_retime") {
         exit;
     }
 
-    recalculate_itinerary_total($conn, $itineraryId);
+    ItineraryEditService::total($conn, $itineraryId);
     echo json_encode([
         "status" => "success",
         "answer" => "Timetable rearranged to start from " . display_time_label($startTime) . ". The existing rule-based route places were kept; only the schedule time was updated.",
@@ -875,30 +875,6 @@ function item_type_from_category(string $category): string
     return "attraction";
 }
 
-function apply_replacement(mysqli $conn, int $itineraryId, int $itemId, array $place): bool
-{
-    $placeId = (int)$place["place_id"];
-    $newType = item_type_from_category((string)$place["category"]);
-    $newCost = array_key_exists("entrance_fee", $place)
-        ? max(0.0, (float)$place["entrance_fee"])
-        : max(0.0, (float)($place["estimated_cost"] ?? 0));
-    $lat = $place["latitude"] !== null ? (float)$place["latitude"] : null;
-    $lng = $place["longitude"] !== null ? (float)$place["longitude"] : null;
-    $districtNote = !empty($place["district"]) ? " | District: " . $place["district"] : "";
-    $newNotes = "State: " . ($place["state"] ?? "") . $districtNote . " | Category: " . ($place["category"] ?? "");
-
-    $stmt = $conn->prepare("
-        UPDATE itinerary_items
-        SET place_id = ?, item_type = ?, item_title = ?, item_latitude = ?, item_longitude = ?, estimated_cost = ?, notes = ?
-        WHERE item_id = ? AND itinerary_id = ?
-    ");
-    if (!$stmt) return false;
-    $stmt->bind_param("issdddsii", $placeId, $newType, $place["name"], $lat, $lng, $newCost, $newNotes, $itemId, $itineraryId);
-    $ok = $stmt->execute();
-    $stmt->close();
-    return $ok;
-}
-
 /**
  * An explicit request to restart the days at a clock time, e.g. "start at 9.30am",
  * "rearrange the timetable to 8am", "change the start time to 10am". Same rule as
@@ -1120,126 +1096,4 @@ function apply_addition(mysqli $conn, int $itineraryId, int $dayNo, array $place
     $ok = $stmt->execute();
     $stmt->close();
     return $ok;
-}
-
-function recalculate_itinerary_routes(mysqli $conn, int $itineraryId): void
-{
-    $metaStmt = $conn->prepare("
-        SELECT tp.transport_type, i.origin_lat, i.origin_lng
-        FROM itineraries i
-        LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
-        WHERE i.itinerary_id = ?
-        LIMIT 1
-    ");
-    if (!$metaStmt) return;
-    $metaStmt->bind_param("i", $itineraryId);
-    $metaStmt->execute();
-    $meta = $metaStmt->get_result()->fetch_assoc();
-    $metaStmt->close();
-
-    $routeSvc = new RouteService((string)($meta["transport_type"] ?? "car"), defined("GOOGLE_MAPS_API_KEY") ? GOOGLE_MAPS_API_KEY : "");
-    $itemsStmt = $conn->prepare("
-        SELECT ii.item_id,
-               COALESCE(ii.item_latitude, cp.latitude) AS latitude,
-               COALESCE(ii.item_longitude, cp.longitude) AS longitude
-        FROM itinerary_items ii
-        LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
-        WHERE ii.itinerary_id = ?
-        ORDER BY ii.day_no, ii.sequence_no
-    ");
-    if (!$itemsStmt) return;
-    $itemsStmt->bind_param("i", $itineraryId);
-    $itemsStmt->execute();
-    $res = $itemsStmt->get_result();
-
-    // The first leg runs from the trip's starting location, as the planner does.
-    $prevLat = isset($meta["origin_lat"]) && $meta["origin_lat"] !== null ? (float)$meta["origin_lat"] : null;
-    $prevLng = isset($meta["origin_lng"]) && $meta["origin_lng"] !== null ? (float)$meta["origin_lng"] : null;
-    if ($prevLat == 0.0 && $prevLng == 0.0) {
-        $prevLat = null;
-        $prevLng = null;
-    }
-    $updates = [];
-    while ($row = $res->fetch_assoc()) {
-        $itemId = (int)$row["item_id"];
-        $lat = $row["latitude"] !== null ? (float)$row["latitude"] : null;
-        $lng = $row["longitude"] !== null ? (float)$row["longitude"] : null;
-        $distKm = null;
-        $timeMin = null;
-        if ($prevLat !== null && $prevLng !== null && $lat !== null && $lng !== null) {
-            $seg = $routeSvc->getSegment($prevLat, $prevLng, $lat, $lng);
-            $distKm = (float)($seg["distance_km"] ?? 0);
-            $timeMin = (int)($seg["travel_time_min"] ?? 0);
-        }
-        $updates[] = [$distKm, $timeMin, $itemId];
-        if ($lat !== null && $lng !== null) {
-            $prevLat = $lat;
-            $prevLng = $lng;
-        }
-    }
-    $itemsStmt->close();
-
-    $upd = $conn->prepare("UPDATE itinerary_items SET distance_km = ?, travel_time_min = ? WHERE item_id = ?");
-    if (!$upd) return;
-    foreach ($updates as [$distKm, $timeMin, $itemId]) {
-        $upd->bind_param("dii", $distKm, $timeMin, $itemId);
-        $upd->execute();
-    }
-    $upd->close();
-}
-
-function recalculate_itinerary_total(mysqli $conn, int $itineraryId): void
-{
-    $stmt = $conn->prepare("
-        SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type, tp.party_size
-        FROM itineraries i
-        LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
-        WHERE i.itinerary_id = ?
-        LIMIT 1
-    ");
-    if (!$stmt) return;
-    $stmt->bind_param("i", $itineraryId);
-    $stmt->execute();
-    $meta = $stmt->get_result()->fetch_assoc();
-    $stmt->close();
-    if (!$meta) return;
-
-    $itemsStmt = $conn->prepare("SELECT item_type, estimated_cost, distance_km FROM itinerary_items WHERE itinerary_id = ?");
-    if (!$itemsStmt) return;
-    $itemsStmt->bind_param("i", $itineraryId);
-    $itemsStmt->execute();
-    $res = $itemsStmt->get_result();
-    $items = [];
-    $totalDistanceKm = 0.0;
-    while ($row = $res->fetch_assoc()) {
-        $items[] = $row;
-        $totalDistanceKm += (float)($row["distance_km"] ?? 0);
-    }
-    $itemsStmt->close();
-
-    $budgetTier = strtolower((string)($meta["budget_tier"] ?? "normal"));
-    $travellerType = (string)($meta["traveller_type"] ?? "solo");
-    $partySize = CostEstimationService::resolvePartySize($travellerType, isset($meta["party_size"]) ? (int)$meta["party_size"] : null);
-    $tierDefaults = CostEstimationService::budgetTierDefaults(
-        $budgetTier,
-        (float)($meta["budget"] ?? 0),
-        (int)($meta["total_days"] ?? 1),
-        $partySize
-    );
-
-    $costService = new CostEstimationService(
-        (string)($meta["transport_type"] ?? "car"),
-        (int)($meta["total_days"] ?? 1),
-        (float)($meta["budget"] ?? 0),
-        $travellerType,
-        $partySize
-    );
-    $breakdown = $costService->calculate($items, $totalDistanceKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
-    $total = (float)($breakdown["total_cost"] ?? 0);
-
-    $upd = $conn->prepare("UPDATE itineraries SET total_estimated_cost = ? WHERE itinerary_id = ?");
-    if (!$upd) return;
-    $upd->bind_param("di", $total, $itineraryId);
-    $upd->execute();
-    $upd->close();
 }

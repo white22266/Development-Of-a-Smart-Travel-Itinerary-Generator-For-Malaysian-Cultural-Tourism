@@ -7,7 +7,7 @@ require_once __DIR__ . '/CostEstimationService.php';
 
 final class ItineraryTargetRefillService
 {
-    public static function refill(mysqli $conn, int $travellerId, int $itineraryId, ?string $googleMapsApiKey = null): array
+    public static function refill(mysqli $conn, int $travellerId, int $itineraryId): array
     {
         $ctx = self::loadContext($conn, $travellerId, $itineraryId);
         if (!$ctx) return ['added' => 0, 'days' => []];
@@ -18,7 +18,7 @@ final class ItineraryTargetRefillService
         $hardEndMin = self::hardEndMinute((string)($ctx['preferred_visit_time'] ?? 'any'), (string)($ctx['traveller_type'] ?? 'solo'), (string)($ctx['accessibility_needs'] ?? ''));
         $partySize = CostEstimationService::resolvePartySize((string)($ctx['traveller_type'] ?? 'solo'), isset($ctx['party_size']) ? (int)$ctx['party_size'] : null);
         $remainingBudget = max(0.0, (float)($ctx['budget'] ?? 0) - (float)($ctx['total_estimated_cost'] ?? 0));
-        $route = new RouteService((string)($ctx['transport_type'] ?? 'car'), $googleMapsApiKey);
+        $route = new RouteService((string)($ctx['transport_type'] ?? 'car'));
         $used = self::usedPlaceIds($conn, $itineraryId);
         $dayResults = [];
         $totalAdded = 0;

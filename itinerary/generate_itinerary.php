@@ -59,10 +59,9 @@ if (!empty($errors)) {
 }
 
 try {
-    // Keep itinerary generation fast and deterministic. Live Google route details are
-    // still available later from the map / Show Route UI.
-    $planningRouteKey = "";
-    $planner = new RuleBasedItineraryPlannerService($conn, $planningRouteKey);
+    // Planning uses distance estimates, which keeps it fast and repeatable. The road route
+    // is shown later on the itinerary map.
+    $planner = new RuleBasedItineraryPlannerService($conn);
     $itineraryId = $planner->generate($travellerId, $preferenceId, [
         "start_date" => $startDate,
         "origin_name" => $originName,
@@ -75,8 +74,8 @@ try {
 
     // Append valid places first. If this cannot meet the pace target because the day is already late,
     // rebuild the short day from its official start point using a full-day planning window.
-    ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId, $planningRouteKey);
-    ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId, $planningRouteKey);
+    ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId);
+    ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId);
 
     // Re-apply budget integrity after rebuild/refill so added paid places cannot silently exceed budget.
     PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);

@@ -7,14 +7,14 @@ require_once __DIR__ . '/CostEstimationService.php';
 
 final class ItineraryTargetRebuildService
 {
-    public static function rebuildShortDays(mysqli $conn, int $travellerId, int $itineraryId, ?string $googleMapsApiKey = null): array
+    public static function rebuildShortDays(mysqli $conn, int $travellerId, int $itineraryId): array
     {
         $ctx = self::loadContext($conn, $travellerId, $itineraryId);
         if (!$ctx) return ['rebuilt_days' => []];
 
         $target = self::targetPlaces((string)($ctx['travel_pace'] ?? 'normal'));
         $partySize = CostEstimationService::resolvePartySize((string)($ctx['traveller_type'] ?? 'solo'), isset($ctx['party_size']) ? (int)$ctx['party_size'] : null);
-        $route = new RouteService((string)($ctx['transport_type'] ?? 'car'), $googleMapsApiKey);
+        $route = new RouteService((string)($ctx['transport_type'] ?? 'car'));
         $rebuilt = [];
 
         for ($dayNo = 1; $dayNo <= (int)$ctx['total_days']; $dayNo++) {

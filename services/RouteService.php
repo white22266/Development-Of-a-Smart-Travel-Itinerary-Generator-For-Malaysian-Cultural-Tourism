@@ -1,31 +1,22 @@
 <?php
-/**
- * services/RouteService.php
- *
- * RouteService — Calculates route segments between itinerary places.
- *
- * Supports two modes:
- *   1. Haversine formula  — fast, offline straight-line distance estimation
- *   2. Google Maps API    — real road distance & travel time (requires API key)
- *
- * Usage:
- *   $rs = new RouteService('car', GOOGLE_MAPS_API_KEY);
- *   $segment = $rs->getSegment($lat1, $lng1, $lat2, $lng2);
- *   // Returns: ['distance_km' => float, 'travel_time_min' => int]
- *
- *   $route = $rs->buildRoute($places);
- *   // Returns: array of segments for each consecutive pair
- */
+// services/RouteService.php
+// Distances and travel times between itinerary stops, without any paid API.
+//
+//   getSegment()  a quick estimate from the straight-line distance. No network. The planner
+//                 uses it, because it compares hundreds of possible legs for one itinerary.
+//   roadRoute()   the real road route through a list of points, from an OSRM routing server
+//                 (an open-source router running on OpenStreetMap data). One request for a
+//                 whole chain of stops, cached on disk. Used to draw the map and to show
+//                 road distance and travel time.
+//
+// By default the public OSRM servers of the German OpenStreetMap community (FOSSGIS) are
+// used. To use your own OSRM server, set ROUTING_CAR_URL and ROUTING_FOOT_URL in .env.
+
+require_once __DIR__ . '/OpenDataHttp.php';
 
 class RouteService
 {
-    /** @var string Transport type: car | public_transport | walking | motorcycle */
-    private string $transportType;
-
-    /** @var string|null Google Maps API key (null = Haversine only) */
-    private ?string $apiKey;
-
-    /** Average speeds in km/h per transport mode */
+    /** Average door-to-door speeds in km/h, used for estimates. */
     private const SPEED_MAP = [
         'car'              => 60,
         'motorcycle'       => 55,
@@ -33,18 +24,21 @@ class RouteService
         'walking'          => 5,
     ];
 
-    /** Google Maps travel mode mapping */
-    private const GOOGLE_MODE_MAP = [
-        'car'              => 'driving',
-        'motorcycle'       => 'driving',
-        'public_transport' => 'transit',
-        'walking'          => 'walking',
-    ];
+    /** Roads are longer than the straight line between two points. */
+    private const ROAD_FACTOR = 1.3;
 
-    public function __construct(string $transportType = 'car', ?string $apiKey = null)
+    private const DEFAULT_CAR_URL = 'https://routing.openstreetmap.de/routed-car';
+    private const DEFAULT_FOOT_URL = 'https://routing.openstreetmap.de/routed-foot';
+
+    /** Longest chain of points sent in one request. */
+    private const MAX_ROUTE_POINTS = 60;
+
+    /** @var string car | motorcycle | public_transport | walking */
+    private string $transportType;
+
+    public function __construct(string $transportType = 'car')
     {
         $this->transportType = self::normalizeTransportType($transportType);
-        $this->apiKey        = $apiKey;
     }
 
     public static function normalizeTransportType(string $transportType): string
@@ -61,232 +55,102 @@ class RouteService
         };
     }
 
-    // =========================================================
-    // PUBLIC: Get a single segment distance + time
-    // =========================================================
-
     /**
-     * Get route segment between two coordinates.
-     *
-     * @param float $lat1  Origin latitude
-     * @param float $lng1  Origin longitude
-     * @param float $lat2  Destination latitude
-     * @param float $lng2  Destination longitude
-     * @return array{distance_km: float, travel_time_min: int}
-     */
-    public function getSegment(float $lat1, float $lng1, float $lat2, float $lng2): array
-    {
-        // Try Google Maps first if API key is available
-        if (!empty($this->apiKey)) {
-            $result = $this->googleMapsSegment($lat1, $lng1, $lat2, $lng2);
-            if ($result !== null) {
-                return $result;
-            }
-        }
-
-        // Fallback: Haversine formula
-        return $this->haversineSegment($lat1, $lng1, $lat2, $lng2);
-    }
-
-    /**
-     * Build a full route for an ordered list of places.
-     *
-     * @param array $places  Each element must have 'latitude', 'longitude', 'name'
-     * @return array  Array of segments: [['from'=>name,'to'=>name,'distance_km'=>float,'travel_time_min'=>int], ...]
-     */
-    public function buildRoute(array $places): array
-    {
-        $segments = [];
-        $n = count($places);
-
-        for ($i = 0; $i < $n - 1; $i++) {
-            $from = $places[$i];
-            $to   = $places[$i + 1];
-
-            $lat1 = (float)($from['latitude']  ?? 0);
-            $lng1 = (float)($from['longitude'] ?? 0);
-            $lat2 = (float)($to['latitude']    ?? 0);
-            $lng2 = (float)($to['longitude']   ?? 0);
-
-            if (!$this->validCoord($lat1, $lng1) || !$this->validCoord($lat2, $lng2)) {
-                $segments[] = [
-                    'from'             => $from['name'] ?? "Place " . ($i + 1),
-                    'to'               => $to['name']   ?? "Place " . ($i + 2),
-                    'distance_km'      => 0.0,
-                    'travel_time_min'  => 0,
-                    'method'           => 'unavailable',
-                ];
-                continue;
-            }
-
-            $seg = $this->getSegment($lat1, $lng1, $lat2, $lng2);
-            $segments[] = array_merge([
-                'from'   => $from['name'] ?? "Place " . ($i + 1),
-                'to'     => $to['name']   ?? "Place " . ($i + 2),
-            ], $seg);
-        }
-
-        return $segments;
-    }
-
-    /**
-     * Calculate total distance and time for a route.
-     *
-     * @param array $places  Ordered list of places with lat/lng
-     * @return array{total_distance_km: float, total_time_min: int, segments: array}
-     */
-    public function getTotalRoute(array $places): array
-    {
-        $segments     = $this->buildRoute($places);
-        $totalDist    = 0.0;
-        $totalTime    = 0;
-
-        foreach ($segments as $seg) {
-            $totalDist += (float)($seg['distance_km']     ?? 0);
-            $totalTime += (int)($seg['travel_time_min']   ?? 0);
-        }
-
-        return [
-            'total_distance_km' => round($totalDist, 2),
-            'total_time_min'    => $totalTime,
-            'segments'          => $segments,
-        ];
-    }
-
-    // =========================================================
-    // PRIVATE: Haversine formula
-    // =========================================================
-
-    /**
-     * Haversine great-circle distance between two coordinates.
-     */
-    private function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float
-    {
-        $R    = 6371.0; // Earth radius in km
-        $dLat = deg2rad($lat2 - $lat1);
-        $dLon = deg2rad($lng2 - $lng1);
-
-        $a = sin($dLat / 2) * sin($dLat / 2)
-           + cos(deg2rad($lat1)) * cos(deg2rad($lat2))
-           * sin($dLon / 2) * sin($dLon / 2);
-
-        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
-        return $R * $c;
-    }
-
-    /**
-     * Build a segment result using Haversine distance.
+     * Estimated distance and travel time between two coordinates. No network access.
      *
      * @return array{distance_km: float, travel_time_min: int, method: string}
      */
-    private function haversineSegment(float $lat1, float $lng1, float $lat2, float $lng2): array
+    public function getSegment(float $lat1, float $lng1, float $lat2, float $lng2): array
     {
-        $distKm  = $this->haversineKm($lat1, $lng1, $lat2, $lng2);
-
-        // Apply road factor: straight-line × 1.3 approximates road distance
-        $roadKm  = $distKm * 1.3;
-
-        $speedKmh = self::SPEED_MAP[$this->transportType] ?? 60;
-        $timeMin  = ($speedKmh > 0) ? (int)ceil(($roadKm / $speedKmh) * 60) : 0;
-
+        $roadKm = self::haversineKm($lat1, $lng1, $lat2, $lng2) * self::ROAD_FACTOR;
         return [
             'distance_km'     => round($roadKm, 2),
-            'travel_time_min' => $timeMin,
-            'method'          => 'haversine',
+            'travel_time_min' => $this->minutesFor($roadKm),
+            'method'          => 'estimate',
         ];
     }
 
-    // =========================================================
-    // PRIVATE: Google Maps Distance Matrix API
-    // =========================================================
-
     /**
-     * Query Google Maps Distance Matrix API for a single segment.
+     * The road route through a list of points, in the order given.
      *
-     * @return array|null  Returns segment array or null on failure
+     * Public transport has no free routing service: its legs follow the roads, and their
+     * times are estimated from the road distance.
+     *
+     * @param array<int,array{0:float,1:float}> $points [latitude, longitude] pairs
+     * @return array{distance_km:float,travel_time_min:int,legs:array<int,array{distance_km:float,travel_time_min:int}>,
+     *               geometry:array<int,array{0:float,1:float}>,time_is_estimate:bool}|null
+     *         null when there are fewer than two usable points or no routing server answered.
+     *         legs has one entry per consecutive pair of points; geometry is the line to draw.
      */
-    private function googleMapsSegment(float $lat1, float $lng1, float $lat2, float $lng2): ?array
+    public function roadRoute(array $points, bool $withGeometry = true): ?array
     {
-        $mode    = self::GOOGLE_MODE_MAP[$this->transportType] ?? 'driving';
-        $origins = "{$lat1},{$lng1}";
-        $dests   = "{$lat2},{$lng2}";
+        $points = array_values(array_filter($points, static fn($p) => is_array($p) && self::validCoord((float)($p[0] ?? 0), (float)($p[1] ?? 0))));
+        if (count($points) < 2 || count($points) > self::MAX_ROUTE_POINTS) return null;
 
-        $url = "https://maps.googleapis.com/maps/api/distancematrix/json?"
-             . http_build_query([
-                 'origins'      => $origins,
-                 'destinations' => $dests,
-                 'mode'         => $mode,
-                 'key'          => $this->apiKey,
-             ]);
+        $onFoot = $this->transportType === 'walking';
+        $base = rtrim((string)(getenv($onFoot ? 'ROUTING_FOOT_URL' : 'ROUTING_CAR_URL') ?: ($onFoot ? self::DEFAULT_FOOT_URL : self::DEFAULT_CAR_URL)), '/');
+        $coordinates = implode(';', array_map(
+            static fn($p) => round((float)$p[1], 5) . ',' . round((float)$p[0], 5),   // OSRM wants longitude first
+            $points
+        ));
+        $url = $base . '/route/v1/' . ($onFoot ? 'foot' : 'driving') . '/' . $coordinates
+            . '?steps=false&alternatives=false&overview=' . ($withGeometry ? 'full&geometries=geojson' : 'false');
 
-        $json = $this->httpGet($url);
-        if ($json === null) return null;
+        $json = OpenDataHttp::getJson($url, 2592000, [   // roads change slowly: 30 days
+            'namespace' => 'routes',
+            'timeout' => 15,
+            'validate' => static fn(array $j): bool => ($j['code'] ?? '') === 'Ok' && isset($j['routes'][0]['legs']),
+        ]);
+        $route = $json['routes'][0] ?? null;
+        if (!is_array($route) || count($route['legs']) !== count($points) - 1) return null;
 
-        $data = json_decode($json, true);
-        if (!is_array($data)) return null;
-
-        $status = $data['status'] ?? '';
-        if ($status !== 'OK') return null;
-
-        $element = $data['rows'][0]['elements'][0] ?? null;
-        if (!is_array($element)) return null;
-
-        $elemStatus = $element['status'] ?? '';
-        if ($elemStatus !== 'OK') return null;
-
-        $distM   = (int)($element['distance']['value'] ?? 0);
-        $durS    = (int)($element['duration']['value'] ?? 0);
-
-        $distKm  = round($distM / 1000.0, 2);
-        $timeMin = (int)ceil($durS / 60.0);
-
-        return [
-            'distance_km'     => $distKm,
-            'travel_time_min' => $timeMin,
-            'method'          => 'google_maps',
-        ];
-    }
-
-    // =========================================================
-    // PRIVATE: HTTP helper
-    // =========================================================
-
-    /**
-     * Simple HTTP GET using cURL or file_get_contents.
-     */
-    private function httpGet(string $url): ?string
-    {
-        if (function_exists('curl_init')) {
-            $ch = curl_init($url);
-            curl_setopt_array($ch, [
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_TIMEOUT        => 8,
-                CURLOPT_SSL_VERIFYPEER => true,
-                CURLOPT_SSL_VERIFYHOST => 2,
-                CURLOPT_FOLLOWLOCATION => true,
-            ]);
-            $body = curl_exec($ch);
-            $err  = curl_errno($ch);
-            curl_close($ch);
-            if ($err || $body === false) return null;
-            return $body;
+        $timeIsEstimate = $this->transportType === 'public_transport';
+        $legs = [];
+        $totalKm = 0.0;
+        $totalMin = 0;
+        foreach ($route['legs'] as $leg) {
+            $km = (float)($leg['distance'] ?? 0) / 1000.0;
+            $minutes = $timeIsEstimate ? $this->minutesFor($km) : (int)ceil((float)($leg['duration'] ?? 0) / 60.0);
+            $legs[] = ['distance_km' => round($km, 2), 'travel_time_min' => $minutes];
+            $totalKm += $km;
+            $totalMin += $minutes;
         }
 
-        // Fallback: file_get_contents
-        $ctx = stream_context_create(['http' => ['timeout' => 8]]);
-        $body = @file_get_contents($url, false, $ctx);
-        return ($body !== false) ? $body : null;
+        $geometry = [];
+        foreach (($route['geometry']['coordinates'] ?? []) as $pair) {
+            if (is_array($pair) && count($pair) >= 2) $geometry[] = [round((float)$pair[1], 5), round((float)$pair[0], 5)];
+        }
+
+        return [
+            'distance_km' => round($totalKm, 2),
+            'travel_time_min' => $totalMin,
+            'legs' => $legs,
+            'geometry' => $geometry,
+            'time_is_estimate' => $timeIsEstimate,
+        ];
     }
 
-    // =========================================================
-    // PRIVATE: Coordinate validation
-    // =========================================================
-
-    private function validCoord(float $lat, float $lng): bool
+    public static function validCoord(float $lat, float $lng): bool
     {
         return is_finite($lat) && is_finite($lng)
             && !($lat === 0.0 && $lng === 0.0)
-            && $lat >= -90  && $lat <= 90
+            && $lat >= -90 && $lat <= 90
             && $lng >= -180 && $lng <= 180;
+    }
+
+    /** Great-circle distance in kilometres. */
+    public static function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float
+    {
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLng = deg2rad($lng2 - $lng1);
+        $a = sin($dLat / 2) ** 2 + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) ** 2;
+        return 6371.0 * 2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a)));
+    }
+
+    /** Minutes needed for a road distance at the usual speed of this transport type. */
+    private function minutesFor(float $roadKm): int
+    {
+        $speed = self::SPEED_MAP[$this->transportType] ?? 60;
+        return (int)ceil(($roadKm / $speed) * 60);
     }
 }

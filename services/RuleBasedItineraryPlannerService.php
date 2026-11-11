@@ -11,14 +11,12 @@ require_once __DIR__ . "/CostEstimationService.php";
 class RuleBasedItineraryPlannerService
 {
     private mysqli $conn;
-    private ?string $googleMapsApiKey;
 
     private const VALID_INTERESTS = ["culture", "heritage", "food", "museum", "nature", "shopping", "festival"];
 
-    public function __construct(mysqli $conn, ?string $googleMapsApiKey = null)
+    public function __construct(mysqli $conn)
     {
         $this->conn = $conn;
-        $this->googleMapsApiKey = $googleMapsApiKey !== "" ? $googleMapsApiKey : null;
     }
 
     public function generate(int $travellerId, int $preferenceId, array $options): int
@@ -278,7 +276,7 @@ class RuleBasedItineraryPlannerService
 
     private function constructDay(int $dayNo, string $dayDate, array $origin, array $pool, array $pref, array $profile, array $usedPlaceIds, ?string $previousDayMainCategory): array
     {
-        $route = new RouteService((string)$pref["transport_type"], $this->googleMapsApiKey);
+        $route = new RouteService((string)$pref["transport_type"]);
         $target = (int)$profile["target_places"];
         $items = [];
         $categoryCounts = [];
@@ -328,7 +326,7 @@ class RuleBasedItineraryPlannerService
         $visitMin = $this->visitDuration($place, $pref);
         $endMin = $arrivalMin + $visitMin;
 
-        // Revalidate after real RouteService segment, not only Haversine estimation.
+        // Check again with the travel time of the route segment.
         if (!$this->routeFeasibleAfterRealSegment($place, $pref, $profile, $anchor, $dayNo, $isFirstStopOfDay, $dayDate, $arrivalMin, $endMin, $dailyDistance, $distanceKm)) {
             return null;
         }
