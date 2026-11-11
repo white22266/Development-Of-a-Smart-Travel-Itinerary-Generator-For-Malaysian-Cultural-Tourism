@@ -102,24 +102,22 @@ class ItineraryRouteService
             $names[] = $stop['title'];
         }
 
-        $road = count($points) >= 2 ? (new RouteService($transportType))->roadRoute($points) : null;
+        $router = new RouteService($transportType);
+        $road = count($points) >= 2 ? $router->roadRoute($points) : null;
         if ($road !== null) {
-            $walkable = RouteService::normalizeTransportType($transportType) !== 'walking';
             foreach ($road['legs'] as $legIndex => &$leg) {
                 $stop = $stops[$legTargets[$legIndex]];
                 $leg['to_item_id'] = $stop['item_id'];
                 $leg['from'] = $names[$legIndex];
                 $leg['to'] = $stop['title'];
 
-                // Two stops a few minutes' walk apart: nobody drives round a one-way system for
-                // that. Show the walk instead of the detour a vehicle would have to make.
+                // Two stops a few minutes' walk apart are walked, whatever the transport: show
+                // the walk instead of the detour a vehicle would have to make.
                 $from = $points[$legIndex];
                 $to = $points[$legIndex + 1];
-                $straightKm = RouteService::haversineKm($from[0], $from[1], $to[0], $to[1]);
-                if ($walkable && $straightKm <= 0.35 && $leg['distance_km'] > $straightKm * 2) {
-                    $walkKm = round($straightKm * 1.3, 2);
-                    $leg['distance_km'] = $walkKm;
-                    $leg['travel_time_min'] = max(1, (int)ceil($walkKm / 5 * 60));
+                $walk = $router->shortWalk($from[0], $from[1], $to[0], $to[1], (float)$leg['distance_km']);
+                if ($walk !== null) {
+                    [$leg['distance_km'], $leg['travel_time_min']] = $walk;
                     $leg['via'] = '';
                     $leg['geometry'] = [$from, $to];
                     $leg['steps'] = [];

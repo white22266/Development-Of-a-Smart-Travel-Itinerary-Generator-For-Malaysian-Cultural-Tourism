@@ -7,7 +7,7 @@ class ItineraryHotelService
 {
     /**
      * Replace the hotel nights of an itinerary. Call it inside the caller's transaction, then
-     * call ItineraryRecalculationService::refresh() so numbering, routes and total follow.
+     * call ItineraryEditService::refresh() so numbering, routes and total follow.
      *
      * @param array<int,array> $hotelByNight night number (1 = the night after day 1) => a hotel
      *                                       as returned by HotelRecommendationService
@@ -52,7 +52,17 @@ class ItineraryHotelService
         return ['nights' => $nights, 'total' => round($total, 2)];
     }
 
-    /** The hotel goes last on the day before the night, half an hour after the last stop and not before 8 pm. */
+    /**
+     * When the hotel row of a day starts, in minutes after midnight: half an hour after the
+     * last stop ends, not before 8 pm and not after 10.30 pm.
+     */
+    public static function checkInMinute(?int $lastStopEndMin): int
+    {
+        if ($lastStopEndMin === null) return 20 * 60;
+        return min(22 * 60 + 30, max(20 * 60, $lastStopEndMin + 30));
+    }
+
+    /** The hotel goes last on the day before the night. */
     private static function insertNight(mysqli $conn, int $itineraryId, int $nightNo, int $totalNights, array $hotel): void
     {
         $dayNo = $nightNo;
@@ -67,10 +77,11 @@ class ItineraryHotelService
         $last->close();
 
         $sequenceNo = (int)($row['last_sequence'] ?? 0) + 1;
-        $startMin = 20 * 60;
+        $lastEndMin = null;
         if (!empty($row['last_end']) && preg_match('/^(\d{1,2}):(\d{2})/', (string)$row['last_end'], $m)) {
-            $startMin = min(22 * 60 + 30, max($startMin, (int)$m[1] * 60 + (int)$m[2] + 30));
+            $lastEndMin = (int)$m[1] * 60 + (int)$m[2];
         }
+        $startMin = self::checkInMinute($lastEndMin);
         $startTime = sprintf('%02d:%02d:00', intdiv($startMin, 60), $startMin % 60);
         $endTime = sprintf('%02d:%02d:00', intdiv($startMin + 30, 60), ($startMin + 30) % 60);
 

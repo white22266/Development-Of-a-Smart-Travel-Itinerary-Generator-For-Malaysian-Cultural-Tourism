@@ -76,9 +76,12 @@ class ItineraryEditService
     /**
      * Distance and travel time of every leg: from the trip's starting point to the first stop,
      * then from each stop to the next. A new day starts where the last one ended (at the hotel,
-     * if one was chosen). These are the same estimates the planner schedules with.
+     * if one was chosen). The figures are measured on the road for the trip's transport, with
+     * one request for the whole trip; without an answer from the routing server they are estimates.
+     *
+     * @param RouteService|null $route a service that already holds the road figures, when the caller has one
      */
-    public static function routes(mysqli $conn, int $itineraryId): void
+    public static function routes(mysqli $conn, int $itineraryId, ?RouteService $route = null): void
     {
         $metaStmt = $conn->prepare("
             SELECT tp.transport_type, i.origin_lat, i.origin_lng
@@ -93,9 +96,9 @@ class ItineraryEditService
         $metaStmt->close();
         if (!$meta) return;
 
-        $route = new RouteService((string)($meta['transport_type'] ?? 'car'));
+        $route ??= new RouteService((string)($meta['transport_type'] ?? 'car'));
         $itemsStmt = $conn->prepare("
-            SELECT ii.item_id,
+            SELECT ii.item_id, ii.day_no,
                    COALESCE(ii.item_latitude, cp.latitude) AS latitude,
                    COALESCE(ii.item_longitude, cp.longitude) AS longitude
             FROM itinerary_items ii
@@ -105,7 +108,14 @@ class ItineraryEditService
         ");
         $itemsStmt->bind_param('i', $itineraryId);
         $itemsStmt->execute();
-        $items = $itemsStmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $days = [];   // day => [[item id, [lat, lng] or null], ...]
+        foreach ($itemsStmt->get_result()->fetch_all(MYSQLI_ASSOC) as $item) {
+            $here = null;
+            if ($item['latitude'] !== null && $item['longitude'] !== null && RouteService::validCoord((float)$item['latitude'], (float)$item['longitude'])) {
+                $here = [(float)$item['latitude'], (float)$item['longitude']];
+            }
+            $days[(int)$item['day_no']][] = [(int)$item['item_id'], $here];
+        }
         $itemsStmt->close();
 
         $previous = null;
@@ -113,23 +123,28 @@ class ItineraryEditService
             $previous = [(float)$meta['origin_lat'], (float)$meta['origin_lng']];
         }
 
+        $chain = $previous !== null ? [$previous] : [];
+        foreach ($days as $items) {
+            foreach ($items as [, $here]) {
+                if ($here !== null) $chain[] = $here;
+            }
+        }
+        $route->preloadChain($chain);
+
         $update = $conn->prepare("UPDATE itinerary_items SET distance_km = ?, travel_time_min = ? WHERE item_id = ?");
-        foreach ($items as $item) {
-            $here = null;
-            if ($item['latitude'] !== null && $item['longitude'] !== null && RouteService::validCoord((float)$item['latitude'], (float)$item['longitude'])) {
-                $here = [(float)$item['latitude'], (float)$item['longitude']];
+        foreach ($days as $items) {
+            foreach ($items as [$itemId, $here]) {
+                $distanceKm = null;
+                $travelMin = null;
+                if ($previous !== null && $here !== null) {
+                    $segment = $route->getSegment($previous[0], $previous[1], $here[0], $here[1]);
+                    $distanceKm = (float)$segment['distance_km'];
+                    $travelMin = (int)$segment['travel_time_min'];
+                }
+                $update->bind_param('dii', $distanceKm, $travelMin, $itemId);
+                $update->execute();
+                if ($here !== null) $previous = $here;
             }
-            $distanceKm = null;
-            $travelMin = null;
-            if ($previous !== null && $here !== null) {
-                $segment = $route->getSegment($previous[0], $previous[1], $here[0], $here[1]);
-                $distanceKm = (float)$segment['distance_km'];
-                $travelMin = (int)$segment['travel_time_min'];
-            }
-            $itemId = (int)$item['item_id'];
-            $update->bind_param('dii', $distanceKm, $travelMin, $itemId);
-            $update->execute();
-            if ($here !== null) $previous = $here;
         }
         $update->close();
     }

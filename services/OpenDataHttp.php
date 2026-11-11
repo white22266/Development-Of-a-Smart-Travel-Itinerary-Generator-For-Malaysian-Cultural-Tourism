@@ -18,12 +18,17 @@ class OpenDataHttp
         'overpass.kumi.systems' => 2.0,
         'router.project-osrm.org' => 1.1,
         'routing.openstreetmap.de' => 1.1,
+        'valhalla1.openstreetmap.de' => 1.1,
+        'api.transitous.org' => 1.0,
     ];
     /** Wikipedia, Wikidata and Commons, whatever the subdomain. */
     private const WIKIMEDIA_INTERVAL = 1.0;
     private const DEFAULT_INTERVAL = 0.2;
 
     private static string $lastError = '';
+
+    /** @var array<string,true> servers that did not answer during this PHP request */
+    private static array $unreachable = [];
     private static bool $patient = false;
 
     /**
@@ -132,7 +137,15 @@ class OpenDataHttp
             $curlOptions[CURLOPT_POST] = true;
             $curlOptions[CURLOPT_POSTFIELDS] = http_build_query($fields ?? []);
         }
-        [$raw, $code, $error] = self::send($url, $curlOptions, (int)($options['retries'] ?? (self::$patient ? 2 : 0)));
+        // A page must not wait for the same dead server again and again: after one failed
+        // attempt the server is left alone for the rest of this request. Background jobs
+        // (patient mode) keep trying.
+        if (!self::$patient && isset(self::$unreachable[$host])) {
+            [$raw, $code, $error] = [false, 0, 'skipped, the server did not answer a moment ago'];
+        } else {
+            [$raw, $code, $error] = self::send($url, $curlOptions, (int)($options['retries'] ?? (self::$patient ? 2 : 0)));
+            if ($code === 0 || $code === 429 || $code >= 500) self::$unreachable[$host] = true;
+        }
 
         $json = is_string($raw) ? json_decode($raw, true) : null;
         $ok = $code >= 200 && $code < 300 && is_array($json);

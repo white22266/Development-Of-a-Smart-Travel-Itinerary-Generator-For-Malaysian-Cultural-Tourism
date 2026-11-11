@@ -3,6 +3,7 @@
 // Rebuilds days that remain below the selected travel-pace target after planner/budget repair.
 // This is stronger than append-only refill: it can relax preferred visit start time and rebuild the day from its official origin.
 require_once __DIR__ . '/RouteService.php';
+require_once __DIR__ . '/OpeningHours.php';
 require_once __DIR__ . '/CostEstimationService.php';
 
 final class ItineraryTargetRebuildService
@@ -212,7 +213,7 @@ final class ItineraryTargetRebuildService
         return $endMin <= $hardEnd
             && self::festivalDateAllowed($place, $dayDate)
             && self::dietaryAllowed($place, (string)($ctx['dietary_preference'] ?? 'none'))
-            && self::openingHoursAllow((string)($place['opening_hours'] ?? ''), $arrivalMin)
+            && OpeningHours::allows((string)($place['opening_hours'] ?? ''), $arrivalMin, $dayDate, min(30, $endMin - $arrivalMin))
             && self::accessibilityAllowed($place, (string)($ctx['accessibility_needs'] ?? ''), $arrivalMin);
     }
 
@@ -369,11 +370,9 @@ final class ItineraryTargetRebuildService
     private static function festivalDateAllowed(array $place, string $dayDate): bool { if (strtolower((string)$place['category']) !== 'festival') return true; $start = trim((string)($place['festival_start_date'] ?? '')); $end = trim((string)($place['festival_end_date'] ?? '')); if ($start === '' || $start === '0000-00-00' || $end === '' || $end === '0000-00-00' || $end < $start) return false; return $dayDate >= $start && $dayDate <= $end; }
     private static function dietaryAllowed(array $place, string $dietary): bool { if (strtolower((string)$place['category']) !== 'food') return true; if ($dietary === 'halal') return (int)($place['halal_status'] ?? 0) === 1; if ($dietary === 'vegetarian') { $text = strtolower((string)$place['name'] . ' ' . (string)$place['description']); return str_contains($text, 'vegetarian') || str_contains($text, 'vegan'); } return true; }
     private static function accessibilityAllowed(array $place, string $access, int $arrivalMin): bool { $access = strtolower($access); if ($access === '') return true; $text = strtolower((string)$place['name'] . ' ' . (string)$place['description'] . ' ' . (string)$place['category']); $outdoor = (int)($place['is_outdoor'] ?? 0) === 1; if ((str_contains($access, 'wheelchair') || str_contains($access, 'avoid_stairs') || str_contains($access, 'avoid stairs')) && preg_match('/gunung|mountain|hill|cave|stairs|waterfall|trail|hiking/i', $text)) return false; if ((str_contains($access, 'avoid_heat') || str_contains($access, 'avoid heat')) && $outdoor && $arrivalMin >= 660 && $arrivalMin <= 960) return false; if (str_contains($access, 'elderly') && $outdoor && (int)($place['visit_duration_min'] ?? 90) > 150) return false; return true; }
-    private static function openingHoursAllow(string $hours, int $arrivalMin): bool { $text = strtolower(trim($hours)); if ($text === '' || str_contains($text, 'verify') || str_contains($text, 'varies') || str_contains($text, 'open area') || str_contains($text, 'always') || str_contains($text, '24')) return true; if (preg_match('/closed/i', $text) && !preg_match('/\d/', $text)) return false; if (!preg_match('/(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:-|to|–|—)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i', $text, $m)) return true; $open = self::clockToMinutes((int)$m[1], (int)($m[2] ?? 0), strtolower((string)($m[3] ?? ''))); $close = self::clockToMinutes((int)$m[4], (int)($m[5] ?? 0), strtolower((string)($m[6] ?? ''))); if ($open === null || $close === null) return true; if ($close <= $open) return $arrivalMin >= $open || $arrivalMin <= $close; return $arrivalMin >= $open && $arrivalMin <= $close; }
     private static function estimateTravelTime(string $transportType, float $distanceKm): int { $speed = match (CostEstimationService::normalizeTransportType($transportType)) { 'walking' => 5, 'public_transport' => 30, 'motorcycle' => 55, default => 60 }; return max(1, (int)ceil(($distanceKm / max(1, $speed)) * 60)); }
     private static function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float { $earth = 6371.0; $dLat = deg2rad($lat2 - $lat1); $dLng = deg2rad($lng2 - $lng1); $a = sin($dLat / 2) ** 2 + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) ** 2; return $earth * 2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a))); }
     private static function minutesToSqlTime(int $minutes): string { $minutes = max(0, min(1439, $minutes)); return sprintf('%02d:%02d:00', intdiv($minutes, 60), $minutes % 60); }
-    private static function clockToMinutes(int $hour, int $minute, string $ampm): ?int { if ($hour < 0 || $hour > 24 || $minute < 0 || $minute > 59) return null; if ($ampm === 'pm' && $hour < 12) $hour += 12; if ($ampm === 'am' && $hour === 12) $hour = 0; return ($hour % 24) * 60 + $minute; }
     private static function columnExists(mysqli $conn, string $table, string $column): bool { $table = $conn->real_escape_string($table); $column = $conn->real_escape_string($column); $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'"); return $res && $res->num_rows > 0; }
     private static function bindDynamic(mysqli_stmt $stmt, string $types, array $params): void { $params = array_values($params); $refs = []; foreach ($params as $i => $value) $refs[$i] = &$params[$i]; $stmt->bind_param($types, ...$refs); }
 }

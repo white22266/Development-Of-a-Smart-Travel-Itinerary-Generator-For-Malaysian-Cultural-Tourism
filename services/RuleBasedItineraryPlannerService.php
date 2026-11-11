@@ -6,6 +6,7 @@
  * AI may explain or suggest, but it must not directly generate the saved itinerary.
  */
 require_once __DIR__ . "/RouteService.php";
+require_once __DIR__ . "/OpeningHours.php";
 require_once __DIR__ . "/CostEstimationService.php";
 
 class RuleBasedItineraryPlannerService
@@ -341,33 +342,35 @@ class RuleBasedItineraryPlannerService
         ];
     }
 
+    /**
+     * Put the day's stops into the order with the least travelling and time them again.
+     *
+     * The best order is not always possible: a place may be closed when it is reached. Then
+     * the next best is tried, and the first order that keeps every stop is used.
+     *
+     * Planning works with estimated travel times. When the whole trip is planned,
+     * ItineraryRouteOptimiser measures it on the road and orders each day once more.
+     */
     private function optimiseDayRoute(array $items, array $origin, RouteService $route, array $pref, array $profile, int $dayNo, string $dayDate): array
     {
-        if (count($items) <= 1) return $this->revalidateRouteOrder($items, $origin, $route, $pref, $profile, $dayNo, $dayDate);
+        if (empty($items)) return [];
 
-        $remaining = $items;
-        $ordered = [];
-        $anchor = $origin;
-        while (!empty($remaining)) {
-            $bestIndex = 0;
-            $bestScore = PHP_FLOAT_MAX;
-            foreach ($remaining as $idx => $item) {
-                $place = $item["place"];
-                $distance = $this->haversineKm((float)$anchor["lat"], (float)$anchor["lng"], (float)$place["latitude"], (float)$place["longitude"]);
-                $categoryPenalty = (!empty($ordered) && strtolower((string)end($ordered)["place"]["category"]) === strtolower((string)$place["category"])) ? 5.0 : 0.0;
-                $score = $distance + $categoryPenalty;
-                if ($score < $bestScore) {
-                    $bestScore = $score;
-                    $bestIndex = $idx;
-                }
-            }
-            $selected = $remaining[$bestIndex];
-            $ordered[] = $selected;
-            $anchor = ["name" => (string)$selected["place"]["name"], "lat" => (float)$selected["place"]["latitude"], "lng" => (float)$selected["place"]["longitude"]];
-            array_splice($remaining, $bestIndex, 1);
+        $start = [(float)$origin["lat"], (float)$origin["lng"]];
+        $stops = [];
+        $categories = [];
+        foreach ($items as $index => $item) {
+            $stops[$index] = [(float)$item["place"]["latitude"], (float)$item["place"]["longitude"]];
+            $categories[$index] = strtolower((string)$item["place"]["category"]);
         }
 
-        return $this->revalidateRouteOrder($ordered, $origin, $route, $pref, $profile, $dayNo, $dayDate);
+        $best = [];
+        foreach ($route->bestOrders($start, $stops, null, $categories, 24) as $candidate) {
+            $ordered = array_map(static fn($index) => $items[$index], $candidate["order"]);
+            $validated = $this->revalidateRouteOrder($ordered, $origin, $route, $pref, $profile, $dayNo, $dayDate);
+            if (count($validated) === count($items)) return $validated;
+            if (count($validated) > count($best)) $best = $validated;
+        }
+        return $best;
     }
 
     private function revalidateRouteOrder(array $items, array $origin, RouteService $route, array $pref, array $profile, int $dayNo, string $dayDate): array
@@ -407,7 +410,7 @@ class RuleBasedItineraryPlannerService
         if ($isDayOneOriginLeg && $this->crossesMalaysiaRegionBoundary($anchor, $place)) return false;
         if (!$isDayOneOriginLeg && ($dailyDistance + $distanceKm) > $this->extremeDistanceLimitKm($profile)) return false;
         if ($endMin > (int)$profile["hard_end_min"]) return false;
-        if (!$this->openingHoursAllow((string)($place["opening_hours"] ?? ""), $arrivalMin)) return false;
+        if (!OpeningHours::allows((string)($place["opening_hours"] ?? ""), $arrivalMin, $dayDate, min(30, $endMin - $arrivalMin))) return false;
         if (!$this->festivalDateAllowed($place, $dayDate)) return false;
         if (!$this->dietaryAllowed($place, (string)$pref["dietary_preference"])) return false;
         if (!$this->accessibilityAllowed($place, (string)$pref["accessibility_needs"], $arrivalMin)) return false;
@@ -483,7 +486,7 @@ class RuleBasedItineraryPlannerService
         if ($isDayOneOriginLeg && $this->crossesMalaysiaRegionBoundary($anchor, $place)) return ["ok" => false, "reasons" => ["origin crosses West/East Malaysia boundary"], "distance_km" => $distance];
         if (!$isDayOneOriginLeg && ($dailyDistance + $distance) > $this->extremeDistanceLimitKm($profile)) return ["ok" => false, "reasons" => ["route distance is too high for selected transport"], "distance_km" => $distance];
         if ($endMin > (int)$profile["hard_end_min"]) return ["ok" => false, "reasons" => ["exceeds daily hard end time"], "distance_km" => $distance];
-        if (!$this->openingHoursAllow((string)($place["opening_hours"] ?? ""), $arrivalMin)) return ["ok" => false, "reasons" => ["closed at arrival"], "distance_km" => $distance];
+        if (!OpeningHours::allows((string)($place["opening_hours"] ?? ""), $arrivalMin, $dayDate, min(30, $endMin - $arrivalMin))) return ["ok" => false, "reasons" => ["closed at arrival"], "distance_km" => $distance];
         if (!$this->accessibilityAllowed($place, (string)$pref["accessibility_needs"], $arrivalMin)) return ["ok" => false, "reasons" => ["accessibility requirement conflict"], "distance_km" => $distance];
 
         $reasons = ["passes hard constraints"];
@@ -661,19 +664,6 @@ class RuleBasedItineraryPlannerService
         return $dayDate >= $start && $dayDate <= $end;
     }
 
-    private function openingHoursAllow(string $hours, int $arrivalMin): bool
-    {
-        $text = strtolower(trim($hours));
-        if ($text === "" || str_contains($text, "verify") || str_contains($text, "varies") || str_contains($text, "open area") || str_contains($text, "always") || str_contains($text, "24")) return true;
-        if (preg_match('/closed/i', $text) && !preg_match('/\d/', $text)) return false;
-        if (!preg_match('/(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:-|to|–|—)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i', $text, $m)) return true;
-        $open = $this->clockToMinutes((int)$m[1], (int)($m[2] ?? 0), strtolower((string)($m[3] ?? "")));
-        $close = $this->clockToMinutes((int)$m[4], (int)($m[5] ?? 0), strtolower((string)($m[6] ?? "")));
-        if ($open === null || $close === null) return true;
-        if ($close <= $open) return $arrivalMin >= $open || $arrivalMin <= $close;
-        return $arrivalMin >= $open && $arrivalMin <= $close;
-    }
-
     private function visitDuration(array $place, array $pref): int
     {
         $duration = (int)($place["visit_duration_min"] ?? 90);
@@ -745,14 +735,6 @@ class RuleBasedItineraryPlannerService
     {
         $minutes = max(0, min(23 * 60 + 59, $minutes));
         return sprintf("%02d:%02d:00", intdiv($minutes, 60), $minutes % 60);
-    }
-
-    private function clockToMinutes(int $hour, int $minute, string $ampm): ?int
-    {
-        if ($hour < 0 || $hour > 24 || $minute < 0 || $minute > 59) return null;
-        if ($ampm === "pm" && $hour < 12) $hour += 12;
-        if ($ampm === "am" && $hour === 12) $hour = 0;
-        return ($hour % 24) * 60 + $minute;
     }
 
     private function isLongVisit(array $place): bool

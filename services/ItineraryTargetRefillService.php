@@ -3,6 +3,7 @@
 // Repairs generated itineraries so each day continues filling toward the travel-pace target.
 // Hotel/origin rows are not counted as travel places.
 require_once __DIR__ . '/RouteService.php';
+require_once __DIR__ . '/OpeningHours.php';
 require_once __DIR__ . '/CostEstimationService.php';
 
 final class ItineraryTargetRefillService
@@ -275,7 +276,7 @@ final class ItineraryTargetRefillService
             $arrival = $currentMin + self::estimateTravelTime((string)($ctx['transport_type'] ?? 'car'), $distance * 1.3);
             $end = $arrival + self::visitDuration($place, $ctx);
             if ($end > $hardEndMin) continue;
-            if (!self::openingHoursAllow((string)($place['opening_hours'] ?? ''), $arrival)) continue;
+            if (!OpeningHours::allows((string)($place['opening_hours'] ?? ''), $arrival, $dayDate, min(30, $end - $arrival))) continue;
             if (!self::accessibilityAllowed($place, (string)($ctx['accessibility_needs'] ?? ''), $arrival)) continue;
 
             $category = strtolower((string)$place['category']);
@@ -307,7 +308,7 @@ final class ItineraryTargetRefillService
         return $endMin <= $hardEndMin
             && self::festivalDateAllowed($place, $dayDate)
             && self::dietaryAllowed($place, (string)($ctx['dietary_preference'] ?? 'none'))
-            && self::openingHoursAllow((string)($place['opening_hours'] ?? ''), $arrivalMin)
+            && OpeningHours::allows((string)($place['opening_hours'] ?? ''), $arrivalMin, $dayDate, min(30, $endMin - $arrivalMin))
             && self::accessibilityAllowed($place, (string)($ctx['accessibility_needs'] ?? ''), $arrivalMin);
     }
 
@@ -428,19 +429,6 @@ final class ItineraryTargetRefillService
         return true;
     }
 
-    private static function openingHoursAllow(string $hours, int $arrivalMin): bool
-    {
-        $text = strtolower(trim($hours));
-        if ($text === '' || str_contains($text, 'verify') || str_contains($text, 'varies') || str_contains($text, 'open area') || str_contains($text, 'always') || str_contains($text, '24')) return true;
-        if (preg_match('/closed/i', $text) && !preg_match('/\d/', $text)) return false;
-        if (!preg_match('/(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:-|to|–|—)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i', $text, $m)) return true;
-        $open = self::clockToMinutes((int)$m[1], (int)($m[2] ?? 0), strtolower((string)($m[3] ?? '')));
-        $close = self::clockToMinutes((int)$m[4], (int)($m[5] ?? 0), strtolower((string)($m[6] ?? '')));
-        if ($open === null || $close === null) return true;
-        if ($close <= $open) return $arrivalMin >= $open || $arrivalMin <= $close;
-        return $arrivalMin >= $open && $arrivalMin <= $close;
-    }
-
     private static function visitDuration(array $place, array $ctx): int
     {
         $duration = (int)($place['visit_duration_min'] ?? 90);
@@ -464,14 +452,6 @@ final class ItineraryTargetRefillService
     {
         $minutes = max(0, min(1439, $minutes));
         return sprintf('%02d:%02d:00', intdiv($minutes, 60), $minutes % 60);
-    }
-
-    private static function clockToMinutes(int $hour, int $minute, string $ampm): ?int
-    {
-        if ($hour < 0 || $hour > 24 || $minute < 0 || $minute > 59) return null;
-        if ($ampm === 'pm' && $hour < 12) $hour += 12;
-        if ($ampm === 'am' && $hour === 12) $hour = 0;
-        return ($hour % 24) * 60 + $minute;
     }
 
     private static function estimateTravelTime(string $transportType, float $distanceKm): int

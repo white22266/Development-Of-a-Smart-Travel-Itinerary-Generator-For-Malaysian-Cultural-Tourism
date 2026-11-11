@@ -13,6 +13,7 @@ require_once "../services/RuleBasedItineraryPlannerService.php";
 require_once "../services/PlannerIntegrityService.php";
 require_once "../services/ItineraryTargetRefillService.php";
 require_once "../services/ItineraryTargetRebuildService.php";
+require_once "../services/ItineraryRouteOptimiser.php";
 
 if (
     !isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true ||
@@ -63,8 +64,8 @@ if (!empty($errors)) {
 }
 
 try {
-    // Planning uses distance estimates, which keeps it fast and repeatable. The road route
-    // is shown later on the itinerary map.
+    // Planning uses distance estimates, which keeps it fast and repeatable. The finished
+    // plan is measured on the road at the end.
     $planner = new RuleBasedItineraryPlannerService($conn);
     $itineraryId = $planner->generate($travellerId, $preferenceId, [
         "start_date" => $startDate,
@@ -83,6 +84,18 @@ try {
 
     // Re-apply budget integrity after rebuild/refill so added paid places cannot silently exceed budget.
     PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
+
+    // Measure the finished plan on the road for the chosen transport, put the stops of each
+    // day into the order with the least travelling and time the days again. When the routing
+    // server does not answer, the plan keeps its estimates.
+    $conn->begin_transaction();
+    try {
+        ItineraryRouteOptimiser::optimise($conn, $itineraryId);
+        $conn->commit();
+    } catch (Throwable $e) {
+        $conn->rollback();
+        error_log("generate_itinerary: route optimisation skipped for itinerary {$itineraryId}: " . $e->getMessage());
+    }
 
     if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {
         unset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId]);

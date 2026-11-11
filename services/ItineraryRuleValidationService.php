@@ -3,6 +3,7 @@
 // Shared validation used before AI/review changes are saved into official itineraries.
 require_once __DIR__ . '/CostEstimationService.php';
 require_once __DIR__ . '/RouteService.php';
+require_once __DIR__ . '/OpeningHours.php';
 
 final class ItineraryRuleValidationService
 {
@@ -37,7 +38,7 @@ final class ItineraryRuleValidationService
         $end = $arrival['arrival_min'] + $visit;
 
         if ($end > $profile['hard_end_min']) return ['ok' => false, 'message' => 'This change would exceed the daily hard end time.'];
-        if (!self::openingHoursAllow((string)($place['opening_hours'] ?? ''), $arrival['arrival_min'])) return ['ok' => false, 'message' => 'This place appears closed at the estimated arrival time.'];
+        if (!OpeningHours::allows((string)($place['opening_hours'] ?? ''), $arrival['arrival_min'], $dayDate, min(30, $visit))) return ['ok' => false, 'message' => 'This place appears closed at the estimated arrival time.'];
         if (!self::accessibilityAllowed($place, (string)($ctx['accessibility_needs'] ?? ''), $arrival['arrival_min'])) return ['ok' => false, 'message' => 'This place conflicts with the saved accessibility needs.'];
         // The origin transfer is exempt. A replacement is only blocked if it makes the day longer than
         // both the limit and the day's current distance, so an edit is never blocked by an existing problem.
@@ -213,19 +214,6 @@ final class ItineraryRuleValidationService
         return true;
     }
 
-    private static function openingHoursAllow(string $hours, int $arrivalMin): bool
-    {
-        $text = strtolower(trim($hours));
-        if ($text === '' || str_contains($text, 'verify') || str_contains($text, 'varies') || str_contains($text, 'open area') || str_contains($text, 'always') || str_contains($text, '24')) return true;
-        if (preg_match('/closed/i', $text) && !preg_match('/\d/', $text)) return false;
-        if (!preg_match('/(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:-|to|–|—)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i', $text, $m)) return true;
-        $open = self::clockToMinutes((int)$m[1], (int)($m[2] ?? 0), strtolower((string)($m[3] ?? '')));
-        $close = self::clockToMinutes((int)$m[4], (int)($m[5] ?? 0), strtolower((string)($m[6] ?? '')));
-        if ($open === null || $close === null) return true;
-        if ($close <= $open) return $arrivalMin >= $open || $arrivalMin <= $close;
-        return $arrivalMin >= $open && $arrivalMin <= $close;
-    }
-
     private static function visitDuration(array $place, array $ctx): int
     {
         $duration = max(30, min(240, (int)($place['visit_duration_min'] ?? 90) ?: 90));
@@ -298,13 +286,5 @@ final class ItineraryRuleValidationService
         $ts = strtotime($time);
         if (!$ts) return null;
         return ((int)date('G', $ts) * 60) + (int)date('i', $ts);
-    }
-
-    private static function clockToMinutes(int $hour, int $minute, string $ampm): ?int
-    {
-        if ($hour < 0 || $hour > 24 || $minute < 0 || $minute > 59) return null;
-        if ($ampm === 'pm' && $hour < 12) $hour += 12;
-        if ($ampm === 'am' && $hour === 12) $hour = 0;
-        return ($hour % 24) * 60 + $minute;
     }
 }
