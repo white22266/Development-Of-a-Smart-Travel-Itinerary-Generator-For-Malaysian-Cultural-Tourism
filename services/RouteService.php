@@ -77,12 +77,15 @@ class RouteService
      * times are estimated from the road distance.
      *
      * @param array<int,array{0:float,1:float}> $points [latitude, longitude] pairs
-     * @return array{distance_km:float,travel_time_min:int,legs:array<int,array{distance_km:float,travel_time_min:int}>,
-     *               geometry:array<int,array{0:float,1:float}>,time_is_estimate:bool}|null
+     * @param bool $withDetails also return, for every leg, the line to draw, the main roads
+     *                          and turn-by-turn steps
+     * @return array{distance_km:float,travel_time_min:int,time_is_estimate:bool,
+     *               legs:array<int,array{distance_km:float,travel_time_min:int,via?:string,
+     *                    geometry?:array<int,array{0:float,1:float}>,steps?:array<int,array{text:string,distance_m:int}>}>}|null
      *         null when there are fewer than two usable points or no routing server answered.
-     *         legs has one entry per consecutive pair of points; geometry is the line to draw.
+     *         legs has one entry per consecutive pair of points.
      */
-    public function roadRoute(array $points, bool $withGeometry = true): ?array
+    public function roadRoute(array $points, bool $withDetails = true): ?array
     {
         $points = array_values(array_filter($points, static fn($p) => is_array($p) && self::validCoord((float)($p[0] ?? 0), (float)($p[1] ?? 0))));
         if (count($points) < 2 || count($points) > self::MAX_ROUTE_POINTS) return null;
@@ -94,7 +97,7 @@ class RouteService
             $points
         ));
         $url = $base . '/route/v1/' . ($onFoot ? 'foot' : 'driving') . '/' . $coordinates
-            . '?steps=false&alternatives=false&overview=' . ($withGeometry ? 'full&geometries=geojson' : 'false');
+            . '?alternatives=false&overview=false&steps=' . ($withDetails ? 'true&geometries=geojson' : 'false');
 
         $json = OpenDataHttp::getJson($url, 2592000, [   // roads change slowly: 30 days
             'namespace' => 'routes',
@@ -111,23 +114,64 @@ class RouteService
         foreach ($route['legs'] as $leg) {
             $km = (float)($leg['distance'] ?? 0) / 1000.0;
             $minutes = $timeIsEstimate ? $this->minutesFor($km) : (int)ceil((float)($leg['duration'] ?? 0) / 60.0);
-            $legs[] = ['distance_km' => round($km, 2), 'travel_time_min' => $minutes];
+            $entry = ['distance_km' => round($km, 2), 'travel_time_min' => $minutes];
+            if ($withDetails) {
+                $entry['via'] = trim((string)($leg['summary'] ?? ''));
+                $entry['geometry'] = [];
+                $entry['steps'] = [];
+                foreach (($leg['steps'] ?? []) as $step) {
+                    foreach (($step['geometry']['coordinates'] ?? []) as $pair) {
+                        if (is_array($pair) && count($pair) >= 2) $entry['geometry'][] = [round((float)$pair[1], 5), round((float)$pair[0], 5)];
+                    }
+                    $text = self::stepText($step);
+                    if ($text !== null) $entry['steps'][] = ['text' => $text, 'distance_m' => (int)round((float)($step['distance'] ?? 0))];
+                }
+            }
+            $legs[] = $entry;
             $totalKm += $km;
             $totalMin += $minutes;
-        }
-
-        $geometry = [];
-        foreach (($route['geometry']['coordinates'] ?? []) as $pair) {
-            if (is_array($pair) && count($pair) >= 2) $geometry[] = [round((float)$pair[1], 5), round((float)$pair[0], 5)];
         }
 
         return [
             'distance_km' => round($totalKm, 2),
             'travel_time_min' => $totalMin,
-            'legs' => $legs,
-            'geometry' => $geometry,
             'time_is_estimate' => $timeIsEstimate,
+            'legs' => $legs,
         ];
+    }
+
+    /** One step of a route in words ("Turn left onto Jalan Kota"), or null for a step not worth a line. */
+    private static function stepText(array $step): ?string
+    {
+        $type = (string)($step['maneuver']['type'] ?? '');
+        $modifier = (string)($step['maneuver']['modifier'] ?? '');
+        $name = trim((string)($step['name'] ?? ''));
+        $onto = $name !== '' ? ' onto ' . $name : '';
+
+        if ($type === 'arrive') return 'Arrive';
+        if ((float)($step['distance'] ?? 0) < 10) return null;   // a few metres between two turns
+        $turn = match ($modifier) {
+            'uturn' => 'Make a U-turn',
+            'straight' => 'Continue straight',
+            'slight left' => 'Keep left',
+            'slight right' => 'Keep right',
+            'sharp left' => 'Turn sharp left',
+            'sharp right' => 'Turn sharp right',
+            'left', 'right' => 'Turn ' . $modifier,
+            default => 'Continue',
+        };
+        return match ($type) {
+            'depart' => 'Start' . ($name !== '' ? ' on ' . $name : ''),
+            'turn', 'end of road', 'fork', 'continue' => $turn . $onto,
+            'new name' => 'Continue' . $onto,
+            'merge' => 'Merge' . $onto,
+            'on ramp' => 'Take the ramp' . $onto,
+            'off ramp' => 'Take the exit' . $onto,
+            'roundabout', 'rotary' => 'At the roundabout, take exit ' . (int)($step['maneuver']['exit'] ?? 1) . $onto,
+            'roundabout turn' => 'At the roundabout, ' . lcfirst($turn) . $onto,
+            'exit roundabout', 'exit rotary', 'notification' => null,
+            default => 'Continue' . $onto,
+        };
     }
 
     public static function validCoord(float $lat, float $lng): bool

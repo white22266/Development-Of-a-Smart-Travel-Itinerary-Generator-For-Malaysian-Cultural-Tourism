@@ -223,7 +223,8 @@ function renderPendingAction(container, action) {
 
 function renderHotelCards(container, hotels) {
     if (!container) return;
-    hotels.slice(0, 1).forEach(hotel => {
+    // The answer names the first hotel and lists the next two: offer the same three.
+    hotels.slice(0, 3).forEach(hotel => {
         const price = Number(hotel.price_per_night || 0);
         const meta = (hotel.kind_label || 'Hotel') + (hotel.stars ? ', ' + Number(hotel.stars) + '-star' : '')
             + ' - about RM ' + price.toFixed(0) + '/night (estimate)'

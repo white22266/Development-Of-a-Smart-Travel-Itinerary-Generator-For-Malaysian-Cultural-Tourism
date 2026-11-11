@@ -10,6 +10,7 @@ require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
 require_once "../config/ai_language_guard.php";
 require_once "../services/AiTravelAssistantService.php";
+require_once "../services/WeatherService.php";
 
 header("Content-Type: application/json; charset=utf-8");
 
@@ -433,6 +434,10 @@ function describe_pending_action(array $action): string
     return "your trip start date as " . ($action["label"] ?? $action["start_date"] ?? "");
 }
 
+/**
+ * The forecast for the trip date at the first stop, or today's when that date has no forecast
+ * yet. Written from the forecast itself, so the language model cannot change the numbers.
+ */
 function build_weather_answer(array $items, string $date): string
 {
     $point = first_weather_point($items);
@@ -440,37 +445,26 @@ function build_weather_answer(array $items, string $date): string
         return "I cannot check weather because this itinerary does not have a usable place coordinate yet.";
     }
 
-    $dateNote = "";
-    $target = parse_trip_date($date);
-    if ($target) {
-        $today = new DateTime("today", new DateTimeZone("Asia/Kuala_Lumpur"));
-        $targetDt = DateTime::createFromFormat("Y-m-d", $target, new DateTimeZone("Asia/Kuala_Lumpur"));
-        if ($targetDt) {
-            $diff = (int)$today->diff($targetDt)->format("%r%a");
-            if ($diff > 5) {
-                $dateNote = " Exact forecast for " . format_display_date($target) . " is not available yet from the free weather endpoint, so I can only show current weather and planning advice. Check again closer to the date.";
-            }
-        }
-    }
-
-    $current = fetch_current_weather((float)$point["latitude"], (float)$point["longitude"]);
-    if (!$current) {
+    $days = WeatherService::daily((float)$point["latitude"], (float)$point["longitude"]);
+    if (!$days) {
         return "I could not reach the weather service right now. You can still plan normally, but check weather again before travelling.";
     }
 
-    $answer = "Current weather near " . $point["title"] . ": " . $current["description"] . ", about " . $current["temp"] . " C";
-    if ($current["humidity"] !== null) {
-        $answer .= ", humidity " . $current["humidity"] . "%";
+    $target = parse_trip_date($date);
+    if ($target && isset($days[$target])) {
+        $day = $days[$target];
+        return "Forecast for " . format_display_date($target) . " near " . $point["title"] . ": "
+            . WeatherService::describe($day) . " " . WeatherService::advice($day) . " (" . WeatherService::CREDIT . ")";
     }
-    $answer .= ".";
-    if ($current["main"] === "Rain" || $current["main"] === "Thunderstorm" || $current["main"] === "Drizzle") {
-        $answer .= " Bring an umbrella and prefer indoor places or museums first.";
-    } elseif ($current["temp"] >= 32) {
-        $answer .= " It may feel hot, so put outdoor stops in the morning or evening.";
-    } else {
-        $answer .= " Weather looks usable for normal sightseeing, but verify again on the travel day.";
+
+    $today = reset($days);
+    $answer = "Today near " . $point["title"] . ": " . WeatherService::describe($today) . " " . WeatherService::advice($today);
+    if ($target) {
+        $answer .= $target > array_key_last($days)
+            ? " There is no forecast for " . format_display_date($target) . " yet: forecasts reach 16 days ahead, so ask again closer to the date."
+            : " " . format_display_date($target) . " is in the past, so there is no forecast for it.";
     }
-    return $answer . $dateNote;
+    return $answer . " (" . WeatherService::CREDIT . ")";
 }
 
 function first_weather_point(array $items): ?array
@@ -481,38 +475,6 @@ function first_weather_point(array $items): ?array
         }
     }
     return null;
-}
-
-function fetch_current_weather(float $lat, float $lng): ?array
-{
-    if (!defined("OPENWEATHER_API_KEY") || trim((string)OPENWEATHER_API_KEY) === "") {
-        return null;
-    }
-    if (!function_exists("curl_init")) {
-        return null;
-    }
-    $url = "https://api.openweathermap.org/data/2.5/weather?lat=" . rawurlencode((string)$lat)
-        . "&lon=" . rawurlencode((string)$lng)
-        . "&appid=" . rawurlencode((string)OPENWEATHER_API_KEY)
-        . "&units=metric";
-    $ch = curl_init($url);
-    curl_setopt_array($ch, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT => 10,
-        CURLOPT_CONNECTTIMEOUT => 5,
-    ]);
-    $raw = curl_exec($ch);
-    $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-    if ($raw === false || $code < 200 || $code >= 300) return null;
-    $json = json_decode($raw, true);
-    if (!is_array($json)) return null;
-    return [
-        "main" => (string)($json["weather"][0]["main"] ?? ""),
-        "description" => ucfirst((string)($json["weather"][0]["description"] ?? "unknown")),
-        "temp" => isset($json["main"]["temp"]) ? round((float)$json["main"]["temp"]) : 0,
-        "humidity" => isset($json["main"]["humidity"]) ? (int)$json["main"]["humidity"] : null,
-    ];
 }
 
 function log_ai_chat(mysqli $conn, int $itineraryId, int $travellerId, string $message, string $answer): void

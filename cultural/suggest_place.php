@@ -346,7 +346,7 @@ function sug_label($s)
             </section>
         </main>
     </div>
-<script src="../assets/place_picker.js?v=20261112"></script>
+<script src="../assets/place_picker.js?v=20261112b"></script>
 <script>
 var existingSuggestPlaces = <?php echo json_encode($existingPlaces, JSON_UNESCAPED_UNICODE); ?>;
 var STATE_BY_ISO = <?php echo json_encode(array_flip(OsmDataService::STATE_ISO)); ?>;

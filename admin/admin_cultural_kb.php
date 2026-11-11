@@ -924,7 +924,7 @@ $stmt->close();
             </section>
         </main>
     </div>
-<script src="../assets/place_picker.js?v=20261112"></script>
+<script src="../assets/place_picker.js?v=20261112b"></script>
 <script>
 var adminDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
 var existingAdminPlaces = <?php echo json_encode($duplicatePlaces, JSON_UNESCAPED_UNICODE); ?>;

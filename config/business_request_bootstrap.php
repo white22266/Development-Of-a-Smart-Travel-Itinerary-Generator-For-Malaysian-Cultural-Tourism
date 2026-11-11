@@ -12,17 +12,3 @@ if (in_array($businessScriptName, ['generate_itinerary.php', 'review_replace.php
     require_once __DIR__ . '/../services/StrictFestivalCandidatePoolService.php';
     StrictFestivalCandidatePoolService::install($conn);
 }
-
-if ($businessScriptName === 'itinerary_view.php') {
-    ob_start(static function (string $html): string {
-        $asset = '<script src="../assets/itinerary_route_map_fix.js?v=20260606-single-map-controller"></script>';
-        if (str_contains($html, 'itinerary_route_map_fix.js')) {
-            return $html;
-        }
-        $bodyEnd = strripos($html, '</body>');
-        if ($bodyEnd === false) {
-            return $html . $asset;
-        }
-        return substr($html, 0, $bodyEnd) . $asset . "\n" . substr($html, $bodyEnd);
-    });
-}

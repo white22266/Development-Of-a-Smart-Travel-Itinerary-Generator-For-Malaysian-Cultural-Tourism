@@ -109,6 +109,10 @@ $stmt->close();
 // "under RM 150" in the message is a budget for this question only.
 $askedMax = preg_match('/(?:rm|under|below|less than|budget)\s*([0-9]+(?:\.[0-9]+)?)/i', $message, $m) ? (float)$m[1] : 0.0;
 $budgetForSearch = $askedMax > 0 ? $askedMax : $roomBudget;
+// "Somewhere cheap" without a figure: look for places well below what the budget would allow.
+if ($askedMax <= 0 && preg_match('/\b(cheap|cheapest|budget|affordable)\b/i', $message)) {
+    $budgetForSearch = $roomBudget > 0 ? min(80.0, $roomBudget * 0.4) : 80.0;
+}
 
 $hotels = [];
 if ($lastStop && $lastStop["latitude"] !== null && $lastStop["longitude"] !== null) {
@@ -129,7 +133,7 @@ if (!$hotels) {
     ]);
 }
 
-// What the language model may talk about: exactly these options, nothing else.
+// What the language model may talk about: the first option, and nothing else.
 $options = array_map(static fn(array $h): array => [
     "name" => $h["name"],
     "type" => $h["kind_label"] . ($h["stars"] !== null ? ", " . rtrim(rtrim(number_format($h["stars"], 1), "0"), ".") . " stars" : ""),
@@ -140,9 +144,9 @@ $options = array_map(static fn(array $h): array => [
 
 $context = [
     "assistant_rules" => [
-        "This reply recommends hotels only.",
-        "Describe only the hotels in hotel_options; do not invent other hotels, prices or ratings.",
-        "Prices are planning estimates, not offers. Say so once.",
+        "This reply recommends exactly one hotel: the one in recommended_hotel. Do not name any other hotel.",
+        "Use its name, type, estimated price and distance exactly as given; do not invent a rating.",
+        "The price is a planning estimate, not an offer. Say so once.",
         "Do not say the hotel is booked or saved. Tell the user to click Confirm Hotel if they want to add it.",
     ],
     "itinerary" => [
@@ -154,7 +158,7 @@ $context = [
         "last_stop" => $lastStop ? ["name" => $lastStop["item_title"], "state" => $lastStop["state"], "district" => $lastStop["district"]] : null,
     ],
     "room_budget_per_night_rm" => round($budgetForSearch),
-    "hotel_options" => $options,
+    "recommended_hotel" => $options[0],
 ];
 
 $top = $hotels[0];
@@ -167,9 +171,21 @@ $assistant = new AiTravelAssistantService();
 $result = $assistant->answer($message !== "" ? $message : "Recommend a suitable hotel for this itinerary.", $context);
 $answer = trim((string)($result["answer"] ?? ""));
 $source = (string)($result["source"] ?? "local_fallback");
-if (($result["status"] ?? "") !== "success" || $answer === "") {
+// The first card under the answer is this hotel: an answer about another one would mislead.
+if (($result["status"] ?? "") !== "success" || $answer === "" || stripos($answer, $top["name"]) === false) {
     $answer = $fallbackAnswer;
     $source = "local_fallback";
+}
+// However the answer was worded, the traveller must be told what kind of price this is.
+if (stripos($answer, "estimate") === false) {
+    $answer .= " Prices are planning estimates, not offers.";
+}
+$others = array_slice($hotels, 1, 2);
+if ($others) {
+    $answer .= "\n\nOther options nearby: " . implode("; ", array_map(
+        static fn(array $h): string => $h["name"] . " (" . strtolower($h["kind_label"]) . ", about RM " . number_format($h["price_per_night"], 0) . ")",
+        $others
+    )) . ".";
 }
 
 hotel_assistant_reply(["status" => "success", "answer" => $answer, "hotels" => $hotels, "source" => $source]);

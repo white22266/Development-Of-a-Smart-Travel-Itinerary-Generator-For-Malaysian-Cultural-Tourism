@@ -780,7 +780,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             <button type="submit">Send</button>
         </form>
     </div>
-    <script src="../assets/trip_ai_chat.js?v=20261112"></script>
+    <script src="../assets/trip_ai_chat.js?v=20261112b"></script>
     <script>
         const ITINERARY_ID = <?php echo (int)$itineraryId; ?>;
         const COST_CHART_LABELS = <?php echo json_encode($chartLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;

@@ -192,8 +192,10 @@
             });
         }
 
-        // A map created while its box was hidden or still being laid out has to measure itself again.
-        setTimeout(function () { map.invalidateSize(); }, 250);
+        // A map created while its box was hidden or still being laid out has to measure itself
+        // again, and so does one whose box changes size later.
+        if (window.ResizeObserver) new ResizeObserver(function () { map.invalidateSize(); }).observe(mapEl);
+        else setTimeout(function () { map.invalidateSize(); }, 250);
 
         return {
             map: map,
