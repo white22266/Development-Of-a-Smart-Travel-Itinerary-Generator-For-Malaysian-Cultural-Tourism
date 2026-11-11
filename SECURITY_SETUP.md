@@ -1,7 +1,10 @@
 # Security Setup Notes
 
-This project does not store SMTP passwords or database passwords in PHP configuration files. It uses no API keys:
+This project does not store SMTP passwords or database passwords in PHP configuration files. It needs no API keys:
 maps, place data, routing and weather come from open services (see `docs/OPEN_DATA.md`).
+
+One optional feature has a key: live traffic from TomTom (`TOMTOM_API_KEY`). Treat it like a password. It belongs in
+`.env` only, it is sent from the server to api.tomtom.com and never to the browser, and it must not be committed.
 
 ## 1. Create local environment file
 
