@@ -12,9 +12,11 @@ DirectoryIndex index.php
     RewriteRule ^.*\.(sql|bak|backup|old|log)$ - [F,L]
 
     # Do not expose internal folders directly.
+    # tools/ holds command-line scripts, storage/ the open-data cache, database/ the migrations.
     RewriteRule ^config/ - [F,L]
     RewriteRule ^services/ - [F,L]
     RewriteRule ^vendor/ - [F,L]
+    RewriteRule ^(tools|storage|database)/ - [F,L]
 </IfModule>
 
 <IfModule mod_headers.c>

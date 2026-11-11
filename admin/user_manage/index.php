@@ -70,6 +70,7 @@ function base_admin_sidebar_users(): void
     ["Dashboard", "../../admin/admin_dashboard.php", false],
     ["State Cultural Knowledge Base", "../admin_cultural_kb.php", false],
     ["Content Validation", "../admin_pending.php", false],
+    ["Open Data Imports", "../admin_place_imports.php", false],
     ["User Management", "./index.php", true],
     ["Reports", "../admin_reports.php", false],
     ["Profile", "../../auth/profile/profile.php", false],

@@ -10,6 +10,9 @@
 *.log
 logs/
 
+# Cached responses from OpenStreetMap, Wikimedia, OSRM and Open-Meteo
+/storage/cache/
+
 # Local IDE/editor files
 .vscode/
 .idea/
