@@ -54,3 +54,7 @@ if (!function_exists('load_project_env')) {
 }
 
 load_project_env(dirname(__DIR__) . DIRECTORY_SEPARATOR . '.env');
+
+// Dates and times are Malaysian time everywhere in the application, whatever the server is set to.
+// (XAMPP ships with Europe/Berlin.)
+date_default_timezone_set(getenv('APP_TIMEZONE') ?: 'Asia/Kuala_Lumpur');
