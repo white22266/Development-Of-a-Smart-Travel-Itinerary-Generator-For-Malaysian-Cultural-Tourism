@@ -2,7 +2,8 @@
 // admin/admin_cultural_kb.php
 session_start();
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
+require_once "../config/map_assets.php";
+require_once "../services/OsmDataService.php";
 require_once "../services/DuplicatePlaceService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
@@ -218,7 +219,7 @@ function place_img_src($row)
 {
     $imageUrl = trim((string)($row["image_url"] ?? ""));
     $placeId = (int)($row["place_id"] ?? 0);
-    $dynamicFallback = "../api/place_photo.php?place_id=" . $placeId . "&v=2";
+    $dynamicFallback = "../assets/place_placeholder.svg";
 
     if ($imageUrl === "") {
         return $placeId > 0 ? $dynamicFallback : "";
@@ -240,6 +241,7 @@ $stmt->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>State Cultural Knowledge Base | Admin</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
+    <?php echo leaflet_tags(); ?>
 </head>
 
 <body>
@@ -360,7 +362,7 @@ $stmt->close();
                 <!-- Add / Edit Form -->
                 <div class="card col-12">
                     <h3><?php echo $editRow ? "Edit Place" : "Add New Place"; ?></h3>
-                    <p class="meta"><?php echo $editRow ? "Update one verified place record. Duplicate detection still runs before saving." : "Create a new verified place record. Use Google Maps autocomplete where possible to fill address and coordinates."; ?></p>
+                    <p class="meta"><?php echo $editRow ? "Update one verified place record. Duplicate detection still runs before saving." : "Create a new verified place record. Search for the address or pin the place on the map to fill in the coordinates."; ?></p>
 
                     <form method="post" action="admin_cultural_kb_process.php" enctype="multipart/form-data">
                         <input type="hidden" name="action" value="<?php echo $editRow ? "update" : "create"; ?>">
@@ -448,7 +450,7 @@ $stmt->close();
                                     value="<?php echo htmlspecialchars($editRow["address"] ?? ""); ?>"
                                     placeholder="Start typing a place or address..."
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                <div class="meta" style="margin-top:6px;">Select a Google Maps suggestion to auto-fill coordinates.</div>
+                                <div class="meta" style="margin-top:6px;">Type a name or address and choose a result, or pin the place on the map below.</div>
                             </div>
 
                             <div class="col-3">
@@ -465,6 +467,12 @@ $stmt->close();
                                     value="<?php echo htmlspecialchars($editRow["longitude"] ?? ""); ?>"
                                     placeholder="e.g. 102.9330000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                            </div>
+
+                            <div class="col-12">
+                                <label style="font-size:13px; font-weight:800;">Location on the map</label>
+                                <div id="adminPinMap" style="width:100%; height:300px; border-radius:12px; border:1px solid rgba(15,23,42,0.12); background:#f1f5f9;"></div>
+                                <div class="meta" style="margin-top:6px;">Click the map or drag the pin to set the exact spot. Latitude and longitude follow the pin.</div>
                             </div>
 
                             <div class="col-3">
@@ -916,6 +924,7 @@ $stmt->close();
             </section>
         </main>
     </div>
+<script src="../assets/place_picker.js?v=20261112"></script>
 <script>
 var adminDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
 var existingAdminPlaces = <?php echo json_encode($duplicatePlaces, JSON_UNESCAPED_UNICODE); ?>;
@@ -953,127 +962,41 @@ function updateFilterDistricts(selectedState, selectedDistrict) {
     });
 }
 
-function normalizeMalaysiaState(rawState) {
-    var s = (rawState || '').toLowerCase();
-    if (s.indexOf('kuala lumpur') !== -1) return 'Kuala Lumpur';
-    if (s.indexOf('putrajaya') !== -1) return 'Putrajaya';
-    if (s.indexOf('labuan') !== -1) return 'Labuan';
-    if (s.indexOf('penang') !== -1 || s.indexOf('pulau pinang') !== -1) return 'Penang';
-    if (s.indexOf('malacca') !== -1) return 'Melaka';
-    var known = <?php echo json_encode($stateOptions); ?>;
-    for (var i = 0; i < known.length; i++) {
-        if (s.indexOf(known[i].toLowerCase()) !== -1) return known[i];
-    }
-    return '';
-}
+var STATE_BY_ISO = <?php echo json_encode(array_flip(OsmDataService::STATE_ISO)); ?>;
 
-function componentLongName(place, type) {
-    if (!place.address_components) return '';
-    for (var i = 0; i < place.address_components.length; i++) {
-        var c = place.address_components[i];
-        if (c.types && c.types.indexOf(type) !== -1) return c.long_name || '';
-    }
-    return '';
-}
-
-function formatOpeningHours(place) {
-    if (!place.opening_hours) return '';
-    if (place.opening_hours.weekday_text && place.opening_hours.weekday_text.length) {
-        return place.opening_hours.weekday_text.join('; ');
-    }
-    return '';
-}
-
-function generateStarterDescription(place, state, district) {
-    var name = place.name || 'This place';
-    var type = '';
-    if (place.types && place.types.length) {
-        type = place.types
-            .filter(function(t) { return ['point_of_interest', 'establishment', 'tourist_attraction'].indexOf(t) === -1; })
-            .slice(0, 2)
-            .map(function(t) { return t.replace(/_/g, ' '); })
-            .join(' and ');
-    }
-    var location = [district, state].filter(Boolean).join(', ');
-    var sentence = name + (location ? ' is located in ' + location : ' is a Malaysian place of interest') + '.';
-    if (type) sentence += ' It is listed on Google Maps as ' + type + '.';
-    sentence += ' Add verified cultural background, visitor etiquette, and local significance before publishing.';
-    return sentence;
-}
-
-function initPlaceAutocomplete() {
-    var addressInput = document.getElementById('adminAddressAutocomplete');
-    if (!addressInput || !window.google || !google.maps || !google.maps.places) return;
-
-    var autocomplete = new google.maps.places.Autocomplete(addressInput, {
-        componentRestrictions: { country: 'my' },
-        fields: [
-            'name', 'formatted_address', 'geometry', 'address_components',
-            'opening_hours', 'photos', 'formatted_phone_number', 'website',
-            'rating', 'editorial_summary', 'types'
-        ],
-    });
-
-    autocomplete.addListener('place_changed', function() {
-        var place = autocomplete.getPlace();
-        if (!place || !place.geometry || !place.geometry.location) return;
-
-        var nameInput = document.getElementById('adminPlaceNameInput');
-        var latInput = document.getElementById('adminLatitudeInput');
-        var lngInput = document.getElementById('adminLongitudeInput');
-        var stateSelect = document.getElementById('adminStateSelect');
-        var districtSelect = document.getElementById('adminDistrictSelect');
-        var openingInput = document.getElementById('adminOpeningHoursInput');
-        var descriptionInput = document.getElementById('adminDescriptionInput');
-        var imageInput = document.getElementById('image_url');
-        var websiteInput = document.getElementById('adminWebsiteUrlInput');
-        var phoneInput = document.getElementById('adminPhoneNumberInput');
-        var ratingInput = document.getElementById('adminAvgRatingInput');
-
-        addressInput.value = place.formatted_address || addressInput.value;
-        if (nameInput && !nameInput.value.trim() && place.name) nameInput.value = place.name;
-        if (latInput) latInput.value = place.geometry.location.lat().toFixed(7);
-        if (lngInput) lngInput.value = place.geometry.location.lng().toFixed(7);
-
-        var state = normalizeMalaysiaState(componentLongName(place, 'administrative_area_level_1'));
-        if (stateSelect && state) {
-            stateSelect.value = state;
-            adminUpdateDistricts(state);
-        }
-
-        var district = componentLongName(place, 'locality') ||
-            componentLongName(place, 'administrative_area_level_2') ||
-            componentLongName(place, 'sublocality');
-        if (districtSelect && district) {
-            for (var i = 0; i < districtSelect.options.length; i++) {
-                if (districtSelect.options[i].value.toLowerCase() === district.toLowerCase()) {
-                    districtSelect.value = districtSelect.options[i].value;
-                    break;
+// The map, the address search and the pin come from assets/place_picker.js (Leaflet and
+// OpenStreetMap). A pick fills in the name if it is empty, the address, the state and the district.
+if (document.getElementById('adminPinMap')) {
+    PlacePicker.attach({
+        map: 'adminPinMap',
+        search: 'adminAddressAutocomplete',
+        lat: 'adminLatitudeInput',
+        lng: 'adminLongitudeInput',
+        searchUrl: '../api/geo_search.php',
+        onPick: function(place) {
+            var nameInput = document.getElementById('adminPlaceNameInput');
+            var addressInput = document.getElementById('adminAddressAutocomplete');
+            var stateSelect = document.getElementById('adminStateSelect');
+            var districtSelect = document.getElementById('adminDistrictSelect');
+            if (nameInput && !nameInput.value.trim() && place.name) nameInput.value = place.name;
+            // Moving the pin a little must not wipe an address someone typed: only a search result replaces it.
+            if (addressInput && place.address && (place.label || !addressInput.value.trim())) addressInput.value = place.address;
+            var state = STATE_BY_ISO[place.stateIso];
+            if (stateSelect && state && stateSelect.value !== state) {
+                stateSelect.value = state;
+                adminUpdateDistricts(state);
+            }
+            if (districtSelect && place.district) {
+                for (var i = 0; i < districtSelect.options.length; i++) {
+                    if (districtSelect.options[i].value.toLowerCase() === place.district.toLowerCase()) {
+                        districtSelect.value = districtSelect.options[i].value;
+                        break;
+                    }
                 }
             }
         }
-
-        var openingText = formatOpeningHours(place);
-        if (openingInput && openingText) openingInput.value = openingText;
-        if (websiteInput && place.website) websiteInput.value = place.website;
-        if (phoneInput && place.formatted_phone_number) phoneInput.value = place.formatted_phone_number;
-        if (ratingInput && place.rating) ratingInput.value = Number(place.rating).toFixed(2);
-
-        if (imageInput && place.photos && place.photos.length) {
-            imageInput.value = place.photos[0].getUrl({ maxWidth: 1200, maxHeight: 900 });
-            imageInput.dispatchEvent(new Event('input', { bubbles: true }));
-        }
-
-        if (descriptionInput && !descriptionInput.value.trim()) {
-            if (place.editorial_summary && place.editorial_summary.overview) {
-                descriptionInput.value = place.editorial_summary.overview;
-            } else {
-                descriptionInput.value = generateStarterDescription(place, state, district);
-            }
-        }
     });
 }
-
 var adminCategorySelect = document.getElementById('adminCategorySelect');
 function toggleFestivalDateRequirement() {
     var category = document.getElementById('adminCategorySelect');
@@ -1095,9 +1018,6 @@ if (filterStateSelect) {
     updateFilterDistricts(filterStateSelect.value, <?php echo json_encode($district, JSON_UNESCAPED_UNICODE); ?>);
 }
 </script>
-<?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initPlaceAutocomplete" async defer></script>
-<?php endif; ?>
   <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>

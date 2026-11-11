@@ -1,9 +1,8 @@
 <?php
 // cultural/cultural_guide_detail.php
-// Enhanced: Added nearby food recommendations + nearby hotel recommendations sections
+// One place: its details and background, traveller reviews, and food and lodging nearby.
 session_start();
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
 require_once "../services/HotelRecommendationService.php";
 require_once "../services/FoodRecommendationService.php";
 
@@ -120,25 +119,44 @@ if (empty($nearbyHotels) && !empty($p["state"])) {
     $nearbyHotels = $hotelService->recommendByState($p["state"], 0, 5);
 }
 
-// ---- Image helper ----
-function img_src($imageUrl, $placeId = 0)
-{
-    $imageUrl = trim((string)$imageUrl);
-    if ($imageUrl === "") return "../api/place_photo.php?place_id=" . (int)$placeId . "&v=2";
-    if (preg_match('#^https?://#i', $imageUrl) || strpos($imageUrl, '//') === 0) return $imageUrl;
-    if (strpos($imageUrl, 'data:image/') === 0) return $imageUrl;
-    $imageUrl = ltrim($imageUrl, '/');
-    return "../" . $imageUrl;
+// ---- Where the details came from (kept by the open-data sync; older places have no record) ----
+$source = null;
+try {
+    $stmt = $conn->prepare("SELECT osm_ref, wikipedia_url, description_source, image_source_url, image_credit, image_license FROM place_sources WHERE place_id = ?");
+    $stmt->bind_param("i", $placeId);
+    $stmt->execute();
+    $source = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+} catch (mysqli_sql_exception $e) {
+    $source = null;   // the table arrives with database/migrations/20261111_open_place_data.sql
 }
 
-$img = img_src($p["image_url"] ?? "", (int)$p["place_id"]);
+// ---- Image and map helpers ----
 $imageFallback = "../assets/place_placeholder.svg";
+
+function img_src($imageUrl, string $fallback): string
+{
+    $imageUrl = trim((string)$imageUrl);
+    if ($imageUrl === "") return $fallback;
+    if (preg_match('#^https?://#i', $imageUrl)) return $imageUrl;
+    return "../" . ltrim($imageUrl, '/');
+}
+
+/** Link that shows a coordinate on OpenStreetMap. */
+function osm_point_link($lat, $lng): string
+{
+    $lat = (float)$lat;
+    $lng = (float)$lng;
+    return "https://www.openstreetmap.org/?mlat={$lat}&mlon={$lng}#map=17/{$lat}/{$lng}";
+}
+
+$img = img_src($p["image_url"] ?? "", $imageFallback);
 
 $mapLink = "";
 if (!empty($p["latitude"]) && !empty($p["longitude"])) {
-    $mapLink = "https://www.google.com/maps?q=" . urlencode($p["latitude"] . "," . $p["longitude"]);
+    $mapLink = osm_point_link($p["latitude"], $p["longitude"]);
 } elseif (!empty($p["address"])) {
-    $mapLink = "https://www.google.com/maps/search/?api=1&query=" . urlencode($p["address"]);
+    $mapLink = "https://www.openstreetmap.org/search?query=" . urlencode($p["address"]);
 }
 ?>
 <!DOCTYPE html>
@@ -416,7 +434,14 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                             <?php if (array_key_exists("dress_code_required", $p) && $p["dress_code_required"] !== null): ?>
                                 <div class="row"><span class="k">Dress Code:</span> <?php echo ((int)$p["dress_code_required"] === 1) ? "Required" : "Not required"; ?></div>
                             <?php endif; ?>
-                            <div class="row"><span class="k">Opening Hours:</span> <?php echo htmlspecialchars($p["opening_hours"] ?? "-"); ?></div>
+                            <div class="row"><span class="k">Opening Hours:</span>
+                                <?php $hoursText = trim((string)($p["opening_hours"] ?? "")); ?>
+                                <?php if (str_contains($hoursText, "\n")): ?>
+                                    <div style="margin-top:4px; font-size:13px; line-height:1.6;"><?php echo nl2br(htmlspecialchars($hoursText)); ?></div>
+                                <?php else: ?>
+                                    <?php echo htmlspecialchars($hoursText !== "" ? $hoursText : "-"); ?>
+                                <?php endif; ?>
+                            </div>
                             <div class="row"><span class="k">Address:</span> <?php echo htmlspecialchars($p["address"] ?? "-"); ?></div>
                             <div class="row"><span class="k">Coordinates:</span>
                                 <?php
@@ -430,7 +455,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                 <div style="margin-top:12px;">
                                     <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
                                        href="<?php echo htmlspecialchars($mapLink); ?>">
-                                        Open in Google Maps
+                                        Open in OpenStreetMap
                                     </a>
                                 </div>
                             <?php endif; ?>
@@ -443,6 +468,25 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <div style="color:var(--navy); line-height:1.7;">
                         <?php echo nl2br(htmlspecialchars($p["description"] ?? "No description provided.")); ?>
                     </div>
+                    <?php if ($source && ($source["wikipedia_url"] || $source["image_source_url"] || $source["osm_ref"])): ?>
+                        <p class="meta" style="margin-top:10px; font-size:12px;">
+                            Sources:
+                            <?php if ($source["description_source"] === "wikipedia" && $source["wikipedia_url"]): ?>
+                                description adapted from
+                                <a href="<?php echo htmlspecialchars($source["wikipedia_url"]); ?>" target="_blank" rel="noopener noreferrer">Wikipedia</a>
+                                (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>);
+                            <?php endif; ?>
+                            <?php if ($source["image_source_url"]): ?>
+                                photo<?php echo $source["image_credit"] ? " by " . htmlspecialchars($source["image_credit"]) : ""; ?><?php echo $source["image_license"] ? " (" . htmlspecialchars($source["image_license"]) . ")" : ""; ?>,
+                                <a href="<?php echo htmlspecialchars($source["image_source_url"]); ?>" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>;
+                            <?php endif; ?>
+                            <?php if ($source["osm_ref"]): ?>
+                                place details &copy;
+                                <a href="https://www.openstreetmap.org/<?php echo htmlspecialchars($source["osm_ref"]); ?>" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
+                                contributors (<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">ODbL</a>).
+                            <?php endif; ?>
+                        </p>
+                    <?php endif; ?>
 
                     <hr class="sep">
                     <div class="section-title">Traveller Ratings &amp; Reviews</div>
@@ -545,7 +589,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                     $flng = $food["longitude"] ?? "";
                                     if ($flat && $flng):
                                     ?>
-                                        <a href="https://www.google.com/maps?q=<?php echo urlencode($flat . ',' . $flng); ?>"
+                                        <a href="<?php echo htmlspecialchars(osm_point_link($flat, $flng)); ?>"
                                            target="_blank" rel="noopener noreferrer"
                                            class="btn btn-ghost"
                                            style="font-size:11px;padding:3px 8px;margin-top:6px;display:inline-block;">
@@ -561,29 +605,19 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <?php if (!empty($nearbyHotels)): ?>
                         <hr class="sep">
                         <div class="section-title">&#127968; Nearby Hotels &amp; Accommodation</div>
-                        <p class="meta">Live Google Places accommodation near <?php echo htmlspecialchars($p["name"]); ?>. Prices are planning estimates.</p>
+                        <p class="meta">Places to stay near <?php echo htmlspecialchars($p["name"]); ?>, from OpenStreetMap listings. Prices are planning estimates, not offers.</p>
                         <div class="nearby-grid">
                             <?php foreach ($nearbyHotels as $hotel): ?>
                                 <div class="nearby-card">
                                     <div class="nc-name"><?php echo htmlspecialchars($hotel["name"]); ?></div>
                                     <div class="nc-meta">
-                                        <?php echo htmlspecialchars($hotel["address"] ?? "Google Places result"); ?>
-                                        <?php if (!empty($hotel["distance_km"])): ?>
+                                        <?php echo htmlspecialchars($hotel["kind_label"] . ($hotel["stars"] !== null ? ", " . (float)$hotel["stars"] . "-star" : "")); ?>
+                                        <?php if ($hotel["address"] !== ""): ?><br><?php echo htmlspecialchars($hotel["address"]); ?><?php endif; ?>
+                                        <?php if ($hotel["distance_km"] !== null): ?>
                                             <br><?php echo number_format((float)$hotel["distance_km"], 1); ?> km away
                                         <?php endif; ?>
                                     </div>
-                                    <div class="nc-price">Est. RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?>/night</div>
-                                    <?php if (!empty($hotel["rating"])): ?>
-                                        <div class="stars">
-                                            <?php
-                                            $r = (float)$hotel["rating"];
-                                            $f = (int)floor($r);
-                                            $h = ($r - $f) >= 0.5 ? 1 : 0;
-                                            echo str_repeat('&#9733;', $f) . ($h ? '&#189;' : '') . str_repeat('&#9734;', 5 - $f - $h);
-                                            echo " <span style='color:var(--muted);font-size:11px;'>(" . number_format($r, 1) . ")</span>";
-                                            ?>
-                                        </div>
-                                    <?php endif; ?>
+                                    <div class="nc-price">About RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?>/night</div>
                                     <?php
                                     $mapUrl = $hotel["map_url"] ?? "";
                                     if ($mapUrl !== ""):

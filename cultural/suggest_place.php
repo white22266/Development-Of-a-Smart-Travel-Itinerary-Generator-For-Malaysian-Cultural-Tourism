@@ -2,7 +2,8 @@
 // cultural/suggest_place.php
 session_start();
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
+require_once "../config/map_assets.php";
+require_once "../services/OsmDataService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -89,6 +90,7 @@ function sug_label($s)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suggest New Place | Traveller</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
+    <?php echo leaflet_tags(); ?>
     <style>
         #suggestPinMap {
             width: 100%;
@@ -187,7 +189,7 @@ function sug_label($s)
                             <div class="col-3">
                                 <label style="font-size:13px; font-weight:800;">District</label><br>
                                 <input type="text" name="district" id="suggestDistrictInput"
-                                    placeholder="Auto-filled from Google Maps"
+                                    placeholder="Filled in from the map"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
@@ -214,7 +216,7 @@ function sug_label($s)
                                 <input type="text" name="address" id="suggestAddressAutocomplete"
                                     placeholder="Start typing a place or address..."
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                <div class="meta" style="margin-top:6px;">Select a Google Maps suggestion to auto-fill coordinates.</div>
+                                <div class="meta" style="margin-top:6px;">Type a name or address and choose a result, or pin the place on the map below.</div>
                             </div>
 
                             <div class="col-3">
@@ -230,7 +232,7 @@ function sug_label($s)
                             </div>
 
                             <div class="col-12">
-                                <label style="font-size:13px; font-weight:800;">Pin Location on Google Maps *</label>
+                                <label style="font-size:13px; font-weight:800;">Pin the location on the map *</label>
                                 <div id="suggestPinMap"></div>
                                 <div class="meta" style="margin-top:6px;">Click the map or drag the marker to correct the exact place location. Latitude and longitude will update automatically.</div>
                                 <div class="duplicate-warning-box" id="suggestDuplicateBox">
@@ -267,11 +269,8 @@ function sug_label($s)
                             <!-- CHANGE: Place Image below Opening Hours (as you requested) -->
                             <div class="col-12">
                                 <label style="font-size:13px; font-weight:800;">Place Image (optional)</label><br>
-                                <input type="hidden" name="image_url" id="suggestImageUrlInput">
-                                <img id="suggestGooglePhotoPreview" alt="Google place photo preview"
-                                    style="display:none;width:180px;height:120px;object-fit:cover;border-radius:12px;border:1px solid rgba(15,23,42,0.12);margin:8px 0;background:#f1f5f9;">
-                                <input type="file" name="image" accept="image/*" style="width:100%; padding:8px;">
-                                <div class="meta">Google photo is auto-filled when available. Upload JPG / PNG / WEBP to override it.</div>
+                                <input type="file" name="image" accept="image/jpeg,image/png,image/webp" style="width:100%; padding:8px;">
+                                <div class="meta">JPG, PNG or WEBP, up to 5 MB. Use a photo you took yourself or one you are allowed to share.</div>
                             </div>
                         </div>
 
@@ -347,10 +346,10 @@ function sug_label($s)
             </section>
         </main>
     </div>
+<script src="../assets/place_picker.js?v=20261112"></script>
 <script>
 var existingSuggestPlaces = <?php echo json_encode($existingPlaces, JSON_UNESCAPED_UNICODE); ?>;
-var suggestMap = null;
-var suggestMarker = null;
+var STATE_BY_ISO = <?php echo json_encode(array_flip(OsmDataService::STATE_ISO)); ?>;
 
 function toggleSuggestFestivalDates() {
     var category = document.getElementById('suggestCategorySelect');
@@ -378,167 +377,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function normalizeMalaysiaState(rawState) {
-    var s = (rawState || '').toLowerCase();
-    if (s.indexOf('kuala lumpur') !== -1) return 'Kuala Lumpur';
-    if (s.indexOf('putrajaya') !== -1) return 'Putrajaya';
-    if (s.indexOf('labuan') !== -1) return 'Labuan';
-    if (s.indexOf('penang') !== -1 || s.indexOf('pulau pinang') !== -1) return 'Penang';
-    if (s.indexOf('malacca') !== -1) return 'Melaka';
-    var known = <?php echo json_encode($stateOptions); ?>;
-    for (var i = 0; i < known.length; i++) {
-        if (s.indexOf(known[i].toLowerCase()) !== -1) return known[i];
-    }
-    return '';
-}
-
-function componentLongName(place, type) {
-    if (!place.address_components) return '';
-    for (var i = 0; i < place.address_components.length; i++) {
-        var c = place.address_components[i];
-        if (c.types && c.types.indexOf(type) !== -1) return c.long_name || '';
-    }
-    return '';
-}
-
-function formatOpeningHours(place) {
-    if (!place.opening_hours) return '';
-    if (place.opening_hours.weekday_text && place.opening_hours.weekday_text.length) {
-        return place.opening_hours.weekday_text.join('; ');
-    }
-    return '';
-}
-
-function generateStarterDescription(place, state, district) {
-    var name = place.name || 'This place';
-    var type = '';
-    if (place.types && place.types.length) {
-        type = place.types
-            .filter(function(t) { return ['point_of_interest', 'establishment', 'tourist_attraction'].indexOf(t) === -1; })
-            .slice(0, 2)
-            .map(function(t) { return t.replace(/_/g, ' '); })
-            .join(' and ');
-    }
-    var location = [district, state].filter(Boolean).join(', ');
-    var sentence = name + (location ? ' is located in ' + location : ' is a Malaysian place of interest') + '.';
-    if (type) sentence += ' It is listed on Google Maps as ' + type + '.';
-    sentence += ' Please add or verify its cultural background, visitor etiquette, and local significance before submitting.';
-    return sentence;
-}
-
-function initPlaceAutocomplete() {
-    var addressInput = document.getElementById('suggestAddressAutocomplete');
-    if (!addressInput || !window.google || !google.maps || !google.maps.places) return;
-
-    var autocomplete = new google.maps.places.Autocomplete(addressInput, {
-        componentRestrictions: { country: 'my' },
-        fields: [
-            'name', 'formatted_address', 'geometry', 'address_components',
-            'opening_hours', 'photos', 'editorial_summary', 'types'
-        ],
-    });
-
-    autocomplete.addListener('place_changed', function() {
-        var place = autocomplete.getPlace();
-        if (!place || !place.geometry || !place.geometry.location) return;
-
-        var nameInput = document.getElementById('suggestPlaceNameInput');
-        var latInput = document.getElementById('suggestLatitudeInput');
-        var lngInput = document.getElementById('suggestLongitudeInput');
-        var stateSelect = document.getElementById('suggestStateSelect');
-        var districtInput = document.getElementById('suggestDistrictInput');
-        var openingInput = document.getElementById('suggestOpeningHoursInput');
-        var descriptionInput = document.getElementById('suggestDescriptionInput');
-        var imageUrlInput = document.getElementById('suggestImageUrlInput');
-        var photoPreview = document.getElementById('suggestGooglePhotoPreview');
-
-        addressInput.value = place.formatted_address || addressInput.value;
-        if (nameInput && !nameInput.value.trim() && place.name) nameInput.value = place.name;
-        if (latInput) latInput.value = place.geometry.location.lat().toFixed(7);
-        if (lngInput) lngInput.value = place.geometry.location.lng().toFixed(7);
-        setSuggestPin(place.geometry.location.lat(), place.geometry.location.lng(), true);
-
-        var state = normalizeMalaysiaState(componentLongName(place, 'administrative_area_level_1'));
-        if (stateSelect && state) stateSelect.value = state;
-
-        var district = componentLongName(place, 'locality') ||
-            componentLongName(place, 'administrative_area_level_2') ||
-            componentLongName(place, 'sublocality');
-        if (districtInput && district) districtInput.value = district;
-
-        var openingText = formatOpeningHours(place);
-        if (openingInput && openingText) openingInput.value = openingText;
-
-        if (imageUrlInput && place.photos && place.photos.length) {
-            var photoUrl = place.photos[0].getUrl({ maxWidth: 1200, maxHeight: 900 });
-            imageUrlInput.value = photoUrl;
-            if (photoPreview) {
-                photoPreview.src = photoUrl;
-                photoPreview.style.display = 'block';
-            }
-        }
-
-        if (descriptionInput && !descriptionInput.value.trim()) {
-            if (place.editorial_summary && place.editorial_summary.overview) {
-                descriptionInput.value = place.editorial_summary.overview;
-            } else {
-                descriptionInput.value = generateStarterDescription(place, state, district);
-            }
-        }
-        checkSuggestDuplicates();
-    });
-}
-
-function initSuggestMaps() {
-    initPlaceAutocomplete();
-    initSuggestPinPicker();
-}
-
-function initSuggestPinPicker() {
-    if (!window.google || !google.maps) return;
-    var mapEl = document.getElementById('suggestPinMap');
-    if (!mapEl) return;
-    var defaultPos = { lat: 3.1390, lng: 101.6869 };
-    suggestMap = new google.maps.Map(mapEl, {
-        center: defaultPos,
-        zoom: 6,
-        streetViewControl: false,
-        mapTypeControl: false,
-    });
-    suggestMarker = new google.maps.Marker({
-        position: defaultPos,
-        map: suggestMap,
-        draggable: true,
-        title: 'Suggested place pin',
-    });
-    suggestMap.addListener('click', function(e) {
-        setSuggestPin(e.latLng.lat(), e.latLng.lng(), false);
-    });
-    suggestMarker.addListener('dragend', function(e) {
-        setSuggestPin(e.latLng.lat(), e.latLng.lng(), false);
-    });
-    ['suggestPlaceNameInput','suggestStateSelect','suggestLatitudeInput','suggestLongitudeInput'].forEach(function(id) {
+// The map, the address search and the pin come from assets/place_picker.js (Leaflet and
+// OpenStreetMap). Whatever the traveller picks fills in the fields that are still empty.
+document.addEventListener('DOMContentLoaded', function() {
+    ['suggestPlaceNameInput', 'suggestStateSelect', 'suggestLatitudeInput', 'suggestLongitudeInput'].forEach(function(id) {
         var el = document.getElementById(id);
         if (el) {
             el.addEventListener('input', checkSuggestDuplicates);
             el.addEventListener('change', checkSuggestDuplicates);
         }
     });
-}
 
-function setSuggestPin(lat, lng, panOnly) {
-    var latInput = document.getElementById('suggestLatitudeInput');
-    var lngInput = document.getElementById('suggestLongitudeInput');
-    var pos = { lat: Number(lat), lng: Number(lng) };
-    if (latInput) latInput.value = pos.lat.toFixed(7);
-    if (lngInput) lngInput.value = pos.lng.toFixed(7);
-    if (suggestMarker) suggestMarker.setPosition(pos);
-    if (suggestMap) {
-        suggestMap.panTo(pos);
-        suggestMap.setZoom(panOnly ? 15 : Math.max(suggestMap.getZoom(), 14));
-    }
-    checkSuggestDuplicates();
-}
+    PlacePicker.attach({
+        map: 'suggestPinMap',
+        search: 'suggestAddressAutocomplete',
+        lat: 'suggestLatitudeInput',
+        lng: 'suggestLongitudeInput',
+        searchUrl: '../api/geo_search.php',
+        onPick: function(place) {
+            var nameInput = document.getElementById('suggestPlaceNameInput');
+            var addressInput = document.getElementById('suggestAddressAutocomplete');
+            var stateSelect = document.getElementById('suggestStateSelect');
+            var districtInput = document.getElementById('suggestDistrictInput');
+            if (nameInput && !nameInput.value.trim() && place.name) nameInput.value = place.name;
+            // Moving the pin a little must not wipe an address someone typed: only a search result replaces it.
+            if (addressInput && place.address && (place.label || !addressInput.value.trim())) addressInput.value = place.address;
+            if (stateSelect && STATE_BY_ISO[place.stateIso]) stateSelect.value = STATE_BY_ISO[place.stateIso];
+            if (districtInput && !districtInput.value.trim() && place.district) districtInput.value = place.district;
+            checkSuggestDuplicates();
+        }
+    });
+});
 
 function normSuggestName(value) {
     return String(value || '').toLowerCase()
@@ -597,9 +466,6 @@ function escapeSuggestHtml(str) {
     });
 }
 </script>
-<?php if (defined("GOOGLE_MAPS_API_KEY") && trim(GOOGLE_MAPS_API_KEY) !== ""): ?>
-<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars(GOOGLE_MAPS_API_KEY); ?>&libraries=places&callback=initSuggestMaps" async defer></script>
-<?php endif; ?>
   <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 

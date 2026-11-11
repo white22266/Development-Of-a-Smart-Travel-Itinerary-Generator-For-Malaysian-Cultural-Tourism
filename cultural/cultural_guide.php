@@ -142,7 +142,7 @@ function safe_img_src($imageUrl, $placeId = 0)
 {
     $imageUrl = trim((string)$imageUrl);
     if ($imageUrl === "") {
-        return "../api/place_photo.php?place_id=" . (int)$placeId . "&v=2";
+        return "../assets/place_placeholder.svg";
     }
 
     // If it's an absolute URL (http/https) or protocol-relative URL, use it directly

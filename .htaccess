@@ -17,6 +17,9 @@ DirectoryIndex index.php
     RewriteRule ^services/ - [F,L]
     RewriteRule ^vendor/ - [F,L]
     RewriteRule ^(tools|storage|database)/ - [F,L]
+
+    # uploads/ holds pictures sent in by users. Nothing in it is ever run as a script.
+    RewriteRule ^uploads/.*\.(php\d?|phtml|phar|pht|cgi|pl|py|sh)$ - [F,L,NC]
 </IfModule>
 
 <IfModule mod_headers.c>

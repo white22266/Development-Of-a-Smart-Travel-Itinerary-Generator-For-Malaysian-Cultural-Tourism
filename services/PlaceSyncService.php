@@ -736,10 +736,7 @@ class PlaceSyncService
             $fee = 5.0;
         }
 
-        $addressTags = array_filter([
-            trim(($tags['addr:housenumber'] ?? '') . ' ' . ($tags['addr:street'] ?? '')),
-            trim(($tags['addr:postcode'] ?? '') . ' ' . ($tags['addr:city'] ?? '')),
-        ]);
+
         $phone = self::firstValue((string)($tags['phone'] ?? $tags['contact:phone'] ?? ''));
         $website = self::cleanUrl((string)($tags['website'] ?? $tags['contact:website'] ?? ($wd['website'] ?? '')));
 
@@ -749,7 +746,8 @@ class PlaceSyncService
             'description' => $description,
             'description_source' => $descriptionSource,
             'wikipedia_url' => $wikipedia['url'] ?? null,
-            'address' => !empty($tags['addr:full']) ? (string)$tags['addr:full'] : (count($addressTags) === 2 ? implode(', ', $addressTags) . ', ' . $state : null),
+            // A street without a town is not enough for a place page: publishing then looks the address up.
+            'address' => ($osmAddress = self::addressFromTags($tags, true)) !== null ? mb_substr($osmAddress . ', ' . $state, 0, 255) : null,
             'opening_hours' => OpeningHoursConverter::fromOsm((string)($tags['opening_hours'] ?? '')),
             'phone' => ($phone !== '' && mb_strlen($phone) <= 20) ? $phone : null,
             'website' => ($website !== '' && mb_strlen($website) <= 300) ? $website : null,
@@ -1084,11 +1082,8 @@ class PlaceSyncService
             $name = mb_substr(trim((string)($tags['name:en'] ?? $tags['name'])), 0, 200);
             $kind = (string)$tags['tourism'];
             $stars = (is_numeric($tags['stars'] ?? null) && $tags['stars'] >= 1 && $tags['stars'] <= 5) ? (float)$tags['stars'] : null;
-            $addressParts = array_filter([
-                trim(($tags['addr:housenumber'] ?? '') . ' ' . ($tags['addr:street'] ?? '')),
-                trim(($tags['addr:postcode'] ?? '') . ' ' . ($tags['addr:city'] ?? '')),
-            ]);
-            $address = !empty($tags['addr:full']) ? mb_substr((string)$tags['addr:full'], 0, 255) : ($addressParts ? mb_substr(implode(', ', $addressParts), 0, 255) : null);
+
+            $address = self::addressFromTags($tags, false);
             $phone = self::firstValue((string)($tags['phone'] ?? $tags['contact:phone'] ?? ''));
             $phone = ($phone !== '' && mb_strlen($phone) <= 60) ? $phone : null;
             $website = self::cleanUrl((string)($tags['website'] ?? $tags['contact:website'] ?? ''));
@@ -1183,6 +1178,24 @@ class PlaceSyncService
         $dLng = deg2rad($lng2 - $lng1);
         $a = sin($dLat / 2) ** 2 + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) ** 2;
         return 6371.0 * 2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a)));
+    }
+
+    /**
+     * A postal-style address from the addr:* tags of an element, or null when they do not say
+     * where it is. A house number without a street says nothing, and is left out.
+     *
+     * @param bool $needTown true: only an address with both a street and a town or postcode counts
+     */
+    private static function addressFromTags(array $tags, bool $needTown): ?string
+    {
+        if (!empty($tags['addr:full'])) return mb_substr(trim((string)$tags['addr:full']), 0, 255);
+        $street = trim((string)($tags['addr:street'] ?? ''));
+        $number = str_replace(';', '/', trim((string)($tags['addr:housenumber'] ?? '')));
+        $streetLine = $street !== '' ? trim($number . ' ' . $street) : '';
+        $townLine = trim(($tags['addr:postcode'] ?? '') . ' ' . ($tags['addr:city'] ?? ''));
+        if ($needTown && ($streetLine === '' || $townLine === '')) return null;
+        $parts = array_filter([$streetLine, $townLine], static fn($part) => $part !== '');
+        return $parts ? mb_substr(implode(', ', $parts), 0, 255) : null;
     }
 
     /** OSM lists several phones or sites as "a;b": take the first. */

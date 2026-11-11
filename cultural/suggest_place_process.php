@@ -52,73 +52,6 @@ function normalize_optional_date(string $value): ?string
     return $value;
 }
 
-function download_remote_image_to_uploads(string $url): ?string
-{
-    if (!preg_match('#^https?://#i', $url)) return null;
-
-    $uploadDir = "../uploads/places/";
-    if (!is_dir($uploadDir) && !mkdir($uploadDir, 0777, true)) return null;
-
-    $body = false;
-    $contentType = "";
-
-    if (function_exists("curl_init")) {
-        $ch = curl_init($url);
-        curl_setopt_array($ch, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_MAXREDIRS => 5,
-            CURLOPT_CONNECTTIMEOUT => 10,
-            CURLOPT_TIMEOUT => 20,
-            CURLOPT_USERAGENT => "Mozilla/5.0 SmartTravelImageFetcher/1.0",
-            CURLOPT_SSL_VERIFYPEER => true,
-        ]);
-        $body = curl_exec($ch);
-        $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $contentType = (string)curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
-        curl_close($ch);
-        if ($status < 200 || $status >= 300) $body = false;
-    } else {
-        $context = stream_context_create([
-            "http" => [
-                "method" => "GET",
-                "timeout" => 20,
-                "header" => "User-Agent: Mozilla/5.0 SmartTravelImageFetcher/1.0\r\n",
-            ],
-        ]);
-        $body = @file_get_contents($url, false, $context);
-        if (isset($http_response_header) && is_array($http_response_header)) {
-            foreach ($http_response_header as $header) {
-                if (stripos($header, "Content-Type:") === 0) {
-                    $contentType = trim(substr($header, 13));
-                    break;
-                }
-            }
-        }
-    }
-
-    if ($body === false || strlen((string)$body) < 200) return null;
-
-    $info = @getimagesizefromstring((string)$body);
-    if (!$info || empty($info["mime"]) || strpos($info["mime"], "image/") !== 0) return null;
-
-    $mime = strtolower((string)$info["mime"]);
-    $extMap = [
-        "image/jpeg" => "jpg",
-        "image/png" => "png",
-        "image/webp" => "webp",
-        "image/gif" => "gif",
-    ];
-    $ext = $extMap[$mime] ?? "";
-    if (!in_array($ext, ["jpg", "png", "webp"], true)) return null;
-
-    $fileName = "suggest_google_" . time() . "_" . rand(1000, 9999) . "." . $ext;
-    $targetPath = $uploadDir . $fileName;
-    if (file_put_contents($targetPath, $body) === false) return null;
-
-    return "uploads/places/" . $fileName;
-}
-
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: suggest_place.php");
     exit;
@@ -179,14 +112,16 @@ if (!empty($_FILES["image"]["name"]) && ($_FILES["image"]["error"] ?? UPLOAD_ERR
     // CHANGE: Use uploads/places for traveller submissions
     $uploadDir = "../uploads/places/";
     if (!is_dir($uploadDir)) {
-        if (!mkdir($uploadDir, 0777, true)) back("Cannot create upload directory.", true);
+        if (!mkdir($uploadDir, 0775, true)) back("Cannot create upload directory.", true);
     }
 
-    $ext = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
-    $allowed = ["jpg", "jpeg", "png", "webp"];
-    if (!in_array($ext, $allowed, true)) back("Invalid image type. Only JPG/PNG/WEBP allowed.", true);
+    // The file must really be a picture, whatever its name says, and the stored name is ours.
+    $imageInfo = @getimagesize($_FILES["image"]["tmp_name"]);
+    $ext = [IMAGETYPE_JPEG => "jpg", IMAGETYPE_PNG => "png", IMAGETYPE_WEBP => "webp"][$imageInfo[2] ?? 0] ?? null;
+    if ($ext === null) back("Invalid image type. Only JPG/PNG/WEBP allowed.", true);
+    if (($_FILES["image"]["size"] ?? 0) > 5 * 1024 * 1024) back("The image is too large. The limit is 5 MB.", true);
 
-    $fileName = "suggest_" . time() . "_" . rand(1000, 9999) . "." . $ext;
+    $fileName = "suggest_" . time() . "_" . bin2hex(random_bytes(4)) . "." . $ext;
     $targetPath = $uploadDir . $fileName;
 
     if (!move_uploaded_file($_FILES["image"]["tmp_name"], $targetPath)) {
@@ -195,16 +130,6 @@ if (!empty($_FILES["image"]["name"]) && ($_FILES["image"]["error"] ?? UPLOAD_ERR
 
     // CHANGE: Save relative web path into DB (varchar)
     $imageUrl = "uploads/places/" . $fileName;
-}
-if ($imageUrl === null) {
-    $imageUrlInput = trim((string)($_POST["image_url"] ?? ""));
-    if ($imageUrlInput !== "") {
-        if (!preg_match('#^https?://#i', $imageUrlInput)) {
-            back("Image URL must start with http:// or https://", true);
-        }
-        $downloadedImage = download_remote_image_to_uploads($imageUrlInput);
-        $imageUrl = $downloadedImage ?: (strlen($imageUrlInput) <= 950 ? $imageUrlInput : null);
-    }
 }
 // ===================================================================
 
