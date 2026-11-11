@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
   header("Location: ../auth/login.php?role=traveller");
@@ -19,7 +18,6 @@ $errors = $_SESSION["form_errors"] ?? [];
 $successMessage = $_SESSION["success_message"] ?? "";
 unset($_SESSION["form_errors"], $_SESSION["success_message"]);
 
-$googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
 
 $hasPartySizeCol = false;
 $colRes = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'party_size'");
@@ -463,7 +461,7 @@ foreach ($preferences as $pref) {
         <div class="generator-steps">
           <div class="generator-step"><div class="step-num">1</div><strong>Select Preference</strong><span>The latest saved preference is auto-selected.</span></div>
           <div class="generator-step"><div class="step-num">2</div><strong>Start Date</strong><span>Choose the first day of your trip.</span></div>
-          <div class="generator-step"><div class="step-num">3</div><strong>Starting Location</strong><span>Search a place with Google Maps suggestion or use my location.</span></div>
+          <div class="generator-step"><div class="step-num">3</div><strong>Starting Location</strong><span>Search for a place or address, or use my location.</span></div>
           <div class="generator-step"><div class="step-num">4</div><strong>Generate</strong><span>Create a day-by-day cultural itinerary.</span></div>
         </div>
       </div>
@@ -520,7 +518,7 @@ foreach ($preferences as $pref) {
               <input type="hidden" name="origin_lat" id="origin_lat">
               <input type="hidden" name="origin_lng" id="origin_lng">
               <div class="field-help" id="locationStatus">
-                <?php echo $googleMapsKey !== "" ? "Required. Choose a Google Maps suggestion, use your current location, or ask AI to confirm a starting location." : "Required. Type a starting point and the system will find its coordinates before generating."; ?>
+                Required. Type a place or address and choose a result, use your current location, or ask the assistant to confirm a starting location.
               </div>
             </div>
 
@@ -579,6 +577,7 @@ foreach ($preferences as $pref) {
   </main>
 </div>
 
+<script src="../assets/place_picker.js?v=20261112c"></script>
 <script>
 const preferenceData = <?php echo json_encode($preferencePayload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 const preselectedPreferenceId = <?php echo (int)$preselectedPreferenceId; ?>;
@@ -704,9 +703,9 @@ function clearOriginCoords() {
   lngInput.value = "";
   const originName = originInput.value.trim();
   if (originName === "") {
-    setLocationStatus("Required. Choose a Google Maps suggestion, use your current location, or ask AI to confirm a starting location.", null);
+    setLocationStatus("Required. Type a place or address and choose a result, use your current location, or ask the assistant to confirm a starting location.", null);
   } else {
-    setLocationStatus("Choose a suggested location from Google Maps, or click Generate Itinerary to check coordinates automatically.", null);
+    setLocationStatus("Choose one of the results, or click Generate Itinerary to look the place up automatically.", null);
   }
 }
 
@@ -717,29 +716,15 @@ function fillOrigin(name, lat, lng) {
   setLocationStatus("Starting location confirmed with coordinates.", true);
 }
 
-window.initGooglePlacesAutocomplete = function () {
+// Results appear while the traveller types. They come from OpenStreetMap data through this
+// app's own search endpoint (assets/place_picker.js, api/geo_search.php).
+function initOriginSearch() {
   const input = document.getElementById("origin_name");
-  if (!input || !window.google || !google.maps || !google.maps.places) return;
-
-  const autocomplete = new google.maps.places.Autocomplete(input, {
-    componentRestrictions: { country: "my" },
-    fields: ["formatted_address", "geometry", "name"]
+  if (!input || !window.PlacePicker) return;
+  PlacePicker.attachSearch(input, "../api/geo_search.php", function (result) {
+    fillOrigin(result.label, result.lat, result.lng);
   });
-
-  autocomplete.addListener("place_changed", function () {
-    const place = autocomplete.getPlace();
-    if (!place || !place.geometry || !place.geometry.location) {
-      setLocationStatus("Please choose a location from the Google Maps suggestion list.", false);
-      return;
-    }
-
-    const label = place.formatted_address || place.name || input.value;
-    fillOrigin(label, place.geometry.location.lat(), place.geometry.location.lng());
-  });
-
-  setLocationStatus("Start typing and choose a suggested location from Google Maps.", null);
-};
-
+}
 async function geocodeOriginIfNeeded() {
   const name = document.getElementById("origin_name").value.trim();
   const lat = document.getElementById("origin_lat").value.trim();
@@ -750,10 +735,11 @@ async function geocodeOriginIfNeeded() {
 
   try {
     setLocationStatus("Searching location coordinates...", null);
-    const response = await fetch("geocode_origin.php?q=" + encodeURIComponent(name));
+    const response = await fetch("../api/geo_search.php?q=" + encodeURIComponent(name), { credentials: "same-origin" });
     const data = await response.json();
-    if (data && data.lat !== undefined && data.lng !== undefined) {
-      fillOrigin(data.address || data.formatted_address || name, data.lat, data.lng);
+    const best = data && Array.isArray(data.results) ? data.results[0] : null;
+    if (best) {
+      fillOrigin(best.label || name, best.lat, best.lng);
       return true;
     }
   } catch (error) {}
@@ -764,9 +750,9 @@ async function geocodeOriginIfNeeded() {
 
 async function reverseGeocodeCurrentLocation(lat, lng) {
   try {
-    const response = await fetch("geocode_origin.php?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng));
+    const response = await fetch("../api/geo_search.php?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng), { credentials: "same-origin" });
     const data = await response.json();
-    return data && (data.address || data.formatted_address) ? (data.address || data.formatted_address) : "My Location";
+    return data && data.address ? data.address : "My Location";
   } catch (error) {
     return "My Location";
   }
@@ -827,6 +813,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const aiQuestion = document.getElementById("aiQuestion");
 
   updatePreferenceSummary();
+  initOriginSearch();
 
   if (prefSelect) prefSelect.addEventListener("change", updatePreferenceSummary);
   if (originInput) originInput.addEventListener("input", clearOriginCoords);
@@ -908,9 +895,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
-<?php if ($googleMapsKey !== ""): ?>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo rawurlencode($googleMapsKey); ?>&libraries=places&callback=initGooglePlacesAutocomplete"></script>
-<?php endif; ?>
   <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 </html>

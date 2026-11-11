@@ -25,7 +25,9 @@
         var style = document.createElement("style");
         style.id = "place-picker-styles";
         style.textContent =
-            ".place-picker-results{display:none;position:absolute;left:0;right:0;z-index:1200;margin-top:4px;background:#fff;" +
+            ".place-picker-wrap{position:relative;flex:1 1 auto;min-width:0}" +
+            ".place-picker-wrap>input{width:100%;box-sizing:border-box}" +
+            ".place-picker-results{display:none;position:absolute;top:100%;left:0;right:0;z-index:1200;margin-top:4px;background:#fff;" +
             "border:1px solid rgba(15,23,42,.14);border-radius:12px;box-shadow:0 12px 30px rgba(2,6,23,.14);max-height:260px;overflow:auto}" +
             ".place-picker-result{display:block;width:100%;text-align:left;padding:9px 12px;border:0;border-bottom:1px solid rgba(15,23,42,.06);" +
             "background:#fff;font:inherit;cursor:pointer}" +
@@ -38,13 +40,16 @@
 
     function attachSearch(input, searchUrl, onChoose) {
         addStyles();
-        var holder = input.parentNode;
-        if (getComputedStyle(holder).position === "static") holder.style.position = "relative";
+        // The field gets a box of its own, so the results open right under it in any layout.
+        var wrap = document.createElement("div");
+        wrap.className = "place-picker-wrap";
+        input.parentNode.insertBefore(wrap, input);
+        wrap.appendChild(input);
         var list = document.createElement("div");
         list.className = "place-picker-results";
         list.setAttribute("role", "listbox");
         input.setAttribute("autocomplete", "off");
-        input.insertAdjacentElement("afterend", list);
+        wrap.appendChild(list);
 
         var timer = null;
         var lastQuery = "";
