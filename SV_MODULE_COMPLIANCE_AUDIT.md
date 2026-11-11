@@ -1,5 +1,9 @@
 # Supervisor Module Compliance Audit
 
+> **Historical document.** It describes the system as it was at the date below. Since November 2026
+> the system no longer uses Google Maps, Google Places, SerpAPI or OpenWeather; maps, places, hotels,
+> routing and weather come from open data. See `docs/OPEN_DATA.md` for how it works now.
+
 Date checked: 2026-05-11
 
 This audit compares the current implementation against the supervisor improvement guide. It focuses on implemented runtime behavior, database support, and remaining gaps that still matter for evaluation.

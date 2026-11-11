@@ -1,5 +1,9 @@
 # Smart Travel Itinerary Generator — Changes Documentation
 
+> **Historical document.** It describes the system as it was at the date below. Since November 2026
+> the system no longer uses Google Maps, Google Places, SerpAPI or OpenWeather; maps, places, hotels,
+> routing and weather come from open data. See `docs/OPEN_DATA.md` for how it works now.
+
 > **PSM Project Enhancement Report**
 > Completed by: Manus AI Agent
 > Date: April 2026

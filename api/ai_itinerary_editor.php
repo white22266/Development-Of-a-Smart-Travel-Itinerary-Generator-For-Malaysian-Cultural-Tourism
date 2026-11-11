@@ -8,7 +8,6 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
 require_once "../config/ai_language_guard.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/ItineraryEditService.php";

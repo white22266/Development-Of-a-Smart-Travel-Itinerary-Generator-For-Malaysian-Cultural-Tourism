@@ -1,6 +1,7 @@
 # Security Setup Notes
 
-This project no longer stores API keys, SMTP passwords, or database passwords directly in PHP configuration files.
+This project does not store SMTP passwords or database passwords in PHP configuration files. It uses no API keys:
+maps, place data, routing and weather come from open services (see `docs/OPEN_DATA.md`).
 
 ## 1. Create local environment file
 
@@ -18,9 +19,6 @@ DB_USER=root
 DB_PASS=
 DB_NAME=travel_itinerary_db
 
-GOOGLE_MAPS_API_KEY=your_new_google_maps_key
-OPENWEATHER_API_KEY=your_new_openweather_key
-
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
 SMTP_USER=your_email@gmail.com
@@ -30,18 +28,21 @@ SMTP_FROM_NAME=Admin Smart Travel Itinerary Generator
 
 OLLAMA_MODEL=qwen2.5:3b
 OLLAMA_BASE_URL=http://127.0.0.1:11434
-OLLAMA_NUM_CTX=512
+OLLAMA_NUM_CTX=4096
+
+OPEN_DATA_CONTACT=your_site_address_or_email
 ```
 
 Do not commit `.env`.
 
 ## 2. Revoke exposed credentials
 
-Because old credentials were previously committed to the public repository, delete or regenerate them immediately:
+Because old credentials were previously committed to the public repository, deal with them now:
 
-- Google Maps API key
-- OpenWeather API key
-- Gmail App Password
+- Google Maps API key: the system no longer uses it. Delete the key and the Google Cloud project.
+- OpenWeather API key: no longer used. Delete it.
+- SerpAPI key: no longer used. Delete it.
+- Gmail App Password: revoke it and create a new one for `SMTP_PASS`.
 
 Removing the value from the latest commit is not enough if it already exists in Git history.
 

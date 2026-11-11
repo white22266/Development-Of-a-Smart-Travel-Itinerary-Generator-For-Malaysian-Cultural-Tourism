@@ -1,13 +1,12 @@
 <?php
 // itinerary/export_pdf.php
-// Complete itinerary report export: trip summary, routed map, cost breakdown,
+// Complete itinerary report export: trip summary, cost breakdown,
 // hotel recommendations, day schedule, and place details.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
 

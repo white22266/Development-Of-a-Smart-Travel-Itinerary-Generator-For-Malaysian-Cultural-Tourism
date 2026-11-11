@@ -4,7 +4,11 @@
 session_start();
 
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
+require_once "../services/StrictFestivalCandidatePoolService.php";
+
+// Planning must never see a festival without valid dates. For this request the place table is
+// shadowed by a pool without them; the permanent place records are not touched.
+StrictFestivalCandidatePoolService::install($conn);
 require_once "../services/RuleBasedItineraryPlannerService.php";
 require_once "../services/PlannerIntegrityService.php";
 require_once "../services/ItineraryTargetRefillService.php";

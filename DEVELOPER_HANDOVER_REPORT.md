@@ -1,5 +1,9 @@
 # Developer Handover Report: Smart Travel Itinerary Generator for Malaysian Cultural Tourism
 
+> **Historical document.** It describes the system as it was at the date below. Since November 2026
+> the system no longer uses Google Maps, Google Places, SerpAPI or OpenWeather; maps, places, hotels,
+> routing and weather come from open data. See `docs/OPEN_DATA.md` for how it works now.
+
 **Date:** April 14, 2026  
 **Project:** Smart Travel Itinerary Generator (PSM Final Report Implementation)  
 **Author:** Manus AI

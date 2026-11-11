@@ -353,8 +353,6 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
         }
         .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
-        /* ===== Side panel ===== */
-        .side-panel { display: flex; flex-direction: column; gap: 14px; }
         .summary-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -498,30 +496,10 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
             padding: 0;
         }
         .transit-summary-btn:hover { text-decoration: underline; }
-        .transit-chips {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            flex-wrap: wrap;
-            margin-left: 8px;
-        }
-        .transit-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            padding: 2px 8px;
-            border-radius: 999px;
-            font-size: 10.5px;
-            font-weight: 800;
-            color: #fff;
-            white-space: nowrap;
-        }
-        .transit-chip-walk {
-            background: #64748b;
-        }
 
         /* ===== Transit detail panel ===== */
         .transit-detail {
+            text-align: left;
             display: none;
             border-top: 1px solid rgba(15,23,42,0.06);
             padding: 10px 14px;
@@ -529,87 +507,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
         }
         .transit-detail.open { display: block; }
 
-        /* ===== Transit step card ===== */
-        .ts-step {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-            position: relative;
-        }
-        .ts-step:last-child { margin-bottom: 0; }
-        .ts-step::before {
-            content: '';
-            position: absolute;
-            left: 17px;
-            top: 32px;
-            bottom: -10px;
-            width: 2px;
-            background: rgba(15,23,42,0.10);
-        }
-        .ts-step:last-child::before { display: none; }
-        .ts-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            font-weight: 900;
-            line-height: 1;
-            text-align: center;
-            overflow: hidden;
-            flex-shrink: 0;
-            border: 2px solid rgba(255,255,255,0.8);
-            box-shadow: 0 1px 4px rgba(15,23,42,0.12);
-        }
-        .ts-icon span {
-            display: block;
-            max-width: 30px;
-            overflow: hidden;
-            text-overflow: clip;
-            white-space: nowrap;
-            color: rgba(255,255,255,0.96);
-            font-size: 10px;
-            line-height: 1;
-        }
-        .ts-icon .ts-icon-emoji {
-            font-size: 18px;
-            line-height: 1;
-        }
-        .ts-body { flex: 1; }
-        .ts-mode-badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 999px;
-            font-size: 10px;
-            font-weight: 900;
-            color: #fff;
-            margin-bottom: 3px;
-        }
-        .ts-line-name { font-weight: 800; font-size: 12.5px; }
         .ts-stops { font-size: 11px; color: #64748b; margin-top: 2px; }
-        .ts-stop-row {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 11.5px;
-            margin-top: 4px;
-        }
-        .ts-stop-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            border: 2px solid;
-            flex-shrink: 0;
-        }
-        .ts-time-badge {
-            display: inline-block;
-            background: rgba(15,23,42,0.06);
-            border-radius: 6px;
-            padding: 2px 6px;
-            font-size: 10.5px;
-            font-weight: 700;
-        }
         .ts-walk-steps {
             margin-top: 4px;
             padding-left: 10px;
@@ -636,14 +534,6 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
             align-items: center;
             gap: 4px;
             font-weight: 700;
-        }
-        .ts-fare {
-            background: #fef9c3;
-            color: #854d0e;
-            padding: 2px 8px;
-            border-radius: 999px;
-            font-size: 11px;
-            font-weight: 800;
         }
         .ts-warning {
             font-size: 11px;
@@ -686,18 +576,6 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
         .badge-nature     { background:#dcfce7; color:#15803d; }
         .badge-note       { background:#f1f5f9; color:#475569; }
 
-        /* ===== Hotel card ===== */
-        .hotel-card {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 8px 10px; border-radius: 10px;
-            border: 1px solid rgba(15,23,42,0.08);
-            margin-bottom: 6px; font-size: 12px; cursor: pointer;
-            transition: border-color .15s;
-        }
-        .hotel-card:hover { border-color: #6366f1; }
-        .hotel-card .hotel-name { font-weight: 700; }
-        .hotel-card .hotel-meta { color: #64748b; font-size: 11px; margin-top: 2px; }
-        .hotel-card .hotel-price { font-weight: 800; color: #4f46e5; white-space: nowrap; }
 
         /* ===== Weather chip ===== */
         .weather-chip {

@@ -3,7 +3,6 @@
 // Saves the complete preference profile. Database schema changes must be applied through SQL migrations.
 session_start();
 require_once "../config/db_connect.php";
-require_once "../config/api_keys.php";
 require_once "../services/AccessibilityNeedsAnalysisService.php";
 require_once "../services/CostEstimationService.php";
 

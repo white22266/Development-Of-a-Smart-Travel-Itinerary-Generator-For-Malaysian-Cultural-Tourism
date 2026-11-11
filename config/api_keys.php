@@ -1,7 +1,9 @@
 <?php
 // config/api_keys.php
-// Central configuration for third-party services.
-// Secrets must be provided through environment variables or a local .env file.
+// Settings for the two things this app talks to that need them: the mail server (SMTP) and the
+// local AI model (Ollama). Maps, routing, place data and weather come from open services that
+// need no key (see services/OpenDataHttp.php). Secrets come from environment variables or a
+// local .env file, never from this file.
 
 require_once __DIR__ . '/env_loader.php';
 
@@ -22,10 +24,6 @@ if (!function_exists('set_default_env')) {
     }
 }
 
-define('GOOGLE_MAPS_API_KEY', trim((string) env_value('GOOGLE_MAPS_API_KEY', '')));
-define('OPENWEATHER_API_KEY', trim((string) env_value('OPENWEATHER_API_KEY', '')));
-define('SERPAPI_API_KEY', trim((string) env_value('SERPAPI_API_KEY', '')));
-
 define('SMTP_HOST', trim((string) env_value('SMTP_HOST', 'smtp.gmail.com')));
 define('SMTP_PORT', (int) env_value('SMTP_PORT', 587));
 define('SMTP_USER', trim((string) env_value('SMTP_USER', '')));
@@ -45,9 +43,3 @@ set_default_env('ADMIN_AI_TIMEOUT', '60');
 set_default_env('ADMIN_AI_NUM_PREDICT', '700');
 set_default_env('ADMIN_AI_NUM_CTX', (string) OLLAMA_NUM_CTX);
 set_default_env('ADMIN_AI_KEEP_ALIVE', '30m');
-
-// Page/API-specific hooks are intentionally loaded outside db_connect.php.
-// The bootstrap itself checks the current business endpoint before doing anything.
-if (isset($conn) && $conn instanceof mysqli) {
-    require_once __DIR__ . '/business_request_bootstrap.php';
-}
