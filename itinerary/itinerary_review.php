@@ -412,13 +412,6 @@ $totalNights = max(0, $totalDays - 1);
             color: #475569;
             font-size: 12.5px;
         }
-        .hotel-pricing-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
         .hotel-price-source {
             display: inline-flex;
             width: fit-content;
@@ -431,10 +424,6 @@ $totalNights = max(0, $totalDays - 1);
             font-weight: 900;
             line-height: 1.2;
             margin-top: 7px;
-        }
-        .hotel-price-source.live {
-            background: #dcfce7;
-            color: #166534;
         }
         .hotel-grid {
             display: grid;
@@ -870,7 +859,7 @@ $totalNights = max(0, $totalDays - 1);
             <div class="hotel-toolbar">
                 <div>
                     <h3 style="margin:0 0 6px;">Optional Hotel Suggestions</h3>
-                    <p class="meta" style="margin:0;">Hotels are loaded only when requested. Suggestions use Google Places near the final kept stop for each overnight day.</p>
+                    <p class="meta" style="margin:0;">Hotels are loaded only when requested. Suggestions come from OpenStreetMap listings near the last stop you keep for each day; prices are planning estimates.</p>
                 </div>
             </div>
 
@@ -1175,16 +1164,16 @@ function toggleNightHotels(nightNo, dayNo, allowSelect) {
         setHotelToggleLabel(nightNo, 'Hide results');
         return;
     }
-    loadNightHotels(nightNo, dayNo, allowSelect, false, true);
+    loadNightHotels(nightNo, dayNo, allowSelect);
 }
 
-async function loadNightHotels(nightNo, dayNo, allowSelect, lookupPricing = false, force = false) {
+async function loadNightHotels(nightNo, dayNo, allowSelect) {
     const target = document.getElementById('hotel-results-night-' + nightNo);
     if (!target) return;
 
     const stop = currentLastKeptStopForDay(dayNo);
     target.classList.add('open');
-    setHotelToggleLabel(nightNo, lookupPricing ? 'Checking prices...' : 'Loading hotels...', true);
+    setHotelToggleLabel(nightNo, 'Loading hotels...', true);
     if (!stop || (!stop.itemId && !stop.placeId)) {
         target.innerHTML = '<div class="hotel-message">No kept final stop is available for this day. Keep at least one place first.</div>';
         hotelResultState[nightNo] = { loaded: false, dayNo, allowSelect };
@@ -1192,7 +1181,7 @@ async function loadNightHotels(nightNo, dayNo, allowSelect, lookupPricing = fals
         return;
     }
 
-    target.innerHTML = '<div class="hotel-message"><span class="spinner" style="border-color:rgba(15,23,42,.22);border-top-color:#0f172a;"></span> ' + (lookupPricing ? 'Checking SerpAPI hotel prices...' : 'Loading nearby hotels from Google Places...') + '</div>';
+    target.innerHTML = '<div class="hotel-message"><span class="spinner" style="border-color:rgba(15,23,42,.22);border-top-color:#0f172a;"></span> Looking for places to stay nearby...</div>';
 
     try {
         const params = new URLSearchParams({
@@ -1200,14 +1189,13 @@ async function loadNightHotels(nightNo, dayNo, allowSelect, lookupPricing = fals
             item_id: stop.itemId || '',
             place_id: stop.itemId ? '' : (stop.placeId || ''),
         });
-        if (lookupPricing) params.set('lookup_pricing', '1');
         const resp = await fetch('review_hotels.php?' + params.toString(), { method: 'GET' });
         const data = await parseJsonResponse(resp);
-        renderNightHotels(nightNo, data, allowSelect, dayNo, lookupPricing);
+        renderNightHotels(nightNo, data, allowSelect);
         hotelResultState[nightNo] = { loaded: data.status === 'success', dayNo, allowSelect };
         setHotelToggleLabel(nightNo, data.status === 'success' ? 'Hide results' : 'Try again');
     } catch (e) {
-        target.innerHTML = '<div class="hotel-message" style="color:#b91c1c;">Hotel lookup failed. Please check the Google Places API connection and try again.</div>';
+        target.innerHTML = '<div class="hotel-message" style="color:#b91c1c;">Hotel suggestions could not be loaded. Please try again.</div>';
         hotelResultState[nightNo] = { loaded: false, dayNo, allowSelect };
         setHotelToggleLabel(nightNo, 'Try again');
     }
@@ -1215,66 +1203,48 @@ async function loadNightHotels(nightNo, dayNo, allowSelect, lookupPricing = fals
     if (btn) btn.disabled = false;
 }
 
-function renderNightHotels(nightNo, data, allowSelect, dayNo, lookupPricing) {
+// Hotels come from the local lodging list (OpenStreetMap data). Their prices are planning
+// estimates worked out on the server; the server reads them again when the review is saved.
+function renderNightHotels(nightNo, data, allowSelect) {
     const target = document.getElementById('hotel-results-night-' + nightNo);
     if (!target) return;
 
     const hotels = Array.isArray(data.hotels) ? data.hotels : [];
     if (data.status !== 'success' || hotels.length === 0) {
-        target.innerHTML = '<div class="hotel-message">' + escHtml(data.message || 'No nearby hotels were found for this stop.') + '</div>';
+        target.innerHTML = '<div class="hotel-message">' + escHtml(data.message || 'No places to stay were found near this stop.') + '</div>';
         return;
     }
 
-    const lastStop = data.last_stop && data.last_stop.title ? data.last_stop.title : 'final stop';
-    const hasLivePrices = hotels.some(hotel => hotel && hotel.price_source === 'serpapi_google_maps_price');
-    let html = `
-        <div class="hotel-message hotel-pricing-row">
-            <div>
-                <strong>${hasLivePrices ? 'SerpAPI price data loaded' : 'Hotel suggestions loaded'}</strong>
-                <div style="margin-top:4px;">${escHtml(data.message || 'Hotel suggestions loaded.')}</div>
-                <div style="margin-top:4px;">Search anchor: <strong>${escHtml(lastStop)}</strong></div>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="loadNightHotels(${nightNo}, ${dayNo}, ${allowSelect ? 'true' : 'false'}, true, true)">
-                ${hasLivePrices ? 'Refresh SerpAPI prices' : 'Check prices with SerpAPI'}
-            </button>
-        </div>
-        <div class="hotel-grid">
-    `;
-
+    let html = '<div class="hotel-message">' + escHtml(data.message || 'Hotel suggestions loaded.') + '</div><div class="hotel-grid">';
     hotels.forEach((hotel, idx) => {
-        const placeId = hotel.google_place_id || hotel.place_id || '';
-        const selected = hotelSelections[nightNo] && (hotelSelections[nightNo].google_place_id || '') === placeId;
-        const name = hotel.name || 'Unnamed hotel';
-        const address = hotel.address || hotel.vicinity || '';
-        const rating = Number(hotel.rating || 0);
-        const price = Number(hotel.price_per_night || hotel.estimated_price || 0);
+        const hotelId = Number(hotel.hotel_id || 0);
+        const selected = hotelSelections[nightNo] && Number(hotelSelections[nightNo].hotel_id || 0) === hotelId;
+        const price = Number(hotel.price_per_night || 0);
         const distance = hotel.distance_km !== undefined && hotel.distance_km !== null ? Number(hotel.distance_km) : null;
-        const isLivePrice = hotel.price_source === 'serpapi_google_maps_price';
-        const priceLabel = hotel.price_label || (isLivePrice ? 'SerpAPI price' : 'Planning estimate');
-        const mapUrl = hotel.map_url || (placeId ? `https://www.google.com/maps/search/?api=1&query=Google&query_place_id=${encodeURIComponent(placeId)}` : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(name + ' ' + address)}`);
+        const details = [
+            (hotel.kind_label || 'Hotel') + (hotel.stars ? ', ' + Number(hotel.stars) + '-star' : ''),
+            hotel.address || '',
+            distance !== null && !Number.isNaN(distance) ? distance.toFixed(1) + ' km away' : '',
+        ].filter(Boolean).join(' | ');
         const payload = escHtml(JSON.stringify(hotel));
 
         html += `
             <div class="hotel-result-card ${selected ? 'selected' : ''}" id="hotel-night-${nightNo}-card-${idx}">
-                <div class="hotel-name-rv">${escHtml(name)}</div>
-                <div class="hotel-meta-rv">
-                    ${escHtml(address)}
-                    ${rating > 0 ? ' | Google rating: ' + rating.toFixed(1) + '/5' : ''}
-                    ${distance !== null && !Number.isNaN(distance) ? ' | ' + distance.toFixed(1) + ' km' : ''}
-                </div>
-                <div class="hotel-price-rv">${price > 0 ? 'Estimated RM ' + price.toFixed(0) + ' / night' : 'Price not available'}</div>
-                <span class="hotel-price-source ${isLivePrice ? 'live' : ''}">${escHtml(priceLabel)}</span>
+                <div class="hotel-name-rv">${escHtml(hotel.name || 'Unnamed hotel')}</div>
+                <div class="hotel-meta-rv">${escHtml(details)}</div>
+                <div class="hotel-price-rv">${price > 0 ? 'About RM ' + price.toFixed(0) + ' / night' : 'Price not available'}</div>
+                <span class="hotel-price-source">Planning estimate</span>
                 ${selected ? '<span class="hotel-selected-note">Selected for this night</span>' : ''}
                 <div class="hotel-card-actions">
                     ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">Select for Night ${nightNo}</button>` : ''}
-                    <a class="btn btn-ghost" href="${escHtml(mapUrl)}" target="_blank" rel="noopener">Map</a>
+                    ${hotel.map_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.map_url)}" target="_blank" rel="noopener">Map</a>` : ''}
+                    ${hotel.website ? `<a class="btn btn-ghost" href="${escHtml(hotel.website)}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
                 </div>
             </div>
         `;
     });
 
-    html += '</div>';
-    target.innerHTML = html;
+    target.innerHTML = html + '</div>';
 }
 
 function selectNightHotel(nightNo, idx, hotelJson) {

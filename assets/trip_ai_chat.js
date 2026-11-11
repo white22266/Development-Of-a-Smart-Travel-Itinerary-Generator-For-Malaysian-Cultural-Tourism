@@ -11,6 +11,7 @@ const AI_ENDPOINTS = {
     chat: '../api/ai_travel_assistant.php',
     edit: '../api/ai_itinerary_editor.php',
     hotel: '../api/ai_hotel_assistant.php',
+    geoSearch: '../api/geo_search.php',
 };
 
 const CLOCK_TIME = /\b\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/i;
@@ -224,13 +225,12 @@ function renderHotelCards(container, hotels) {
     if (!container) return;
     hotels.slice(0, 1).forEach(hotel => {
         const price = Number(hotel.price_per_night || 0);
-        const rating = Number(hotel.rating || 0);
-        const meta = 'Estimated RM ' + price.toFixed(0) + '/night'
-            + (rating ? ' - rating ' + rating.toFixed(1) : '')
+        const meta = (hotel.kind_label || 'Hotel') + (hotel.stars ? ', ' + Number(hotel.stars) + '-star' : '')
+            + ' - about RM ' + price.toFixed(0) + '/night (estimate)'
             + (hotel.distance_km ? ' - ' + Number(hotel.distance_km).toFixed(1) + ' km away' : '')
             + (hotel.address ? ' - ' + hotel.address : '');
         container.appendChild(makeAiCard('hotel', hotel.name || 'Hotel', [meta], 'Confirm Hotel',
-            button => confirmHotelByPlaceId(String(hotel.google_place_id || ''), button)));
+            button => confirmHotel(Number(hotel.hotel_id || 0), button)));
     });
     scrollAiChatToBottom();
 }
@@ -297,20 +297,13 @@ async function confirmTripDate(startDate, button, nextAction = null) {
     reloadSoon();
 }
 
-/** Resolve a typed place name to coordinates in Malaysia. */
+/** Resolve a typed place name to coordinates in Malaysia (OpenStreetMap search through this server). */
 async function geocodeOriginName(originName) {
-    if (!window.google || !google.maps || !google.maps.Geocoder) {
-        throw new Error('Map geocoder is not ready.');
-    }
-    const geocoder = new google.maps.Geocoder();
-    const result = await new Promise((resolve, reject) => {
-        geocoder.geocode({ address: originName, componentRestrictions: { country: 'MY' } }, (results, status) => {
-            if (status === 'OK' && results && results[0] && results[0].geometry) resolve(results[0]);
-            else reject(new Error(status || 'Geocode failed'));
-        });
-    });
-    const loc = result.geometry.location;
-    return { name: result.formatted_address || originName, lat: loc.lat(), lng: loc.lng() };
+    const response = await fetch(AI_ENDPOINTS.geoSearch + '?q=' + encodeURIComponent(originName), { credentials: 'same-origin' });
+    const data = await response.json();
+    const best = data && Array.isArray(data.results) ? data.results[0] : null;
+    if (!best) throw new Error('Location not found');
+    return { name: best.label || originName, lat: Number(best.lat), lng: Number(best.lng) };
 }
 
 async function confirmTripOrigin(originName, button) {
@@ -356,10 +349,10 @@ async function confirmItineraryAdd(dayNo, placeId, button = null) {
     if (data) reloadSoon();
 }
 
-async function confirmHotelByPlaceId(placeId, button = null) {
-    if (!placeId) return;
+async function confirmHotel(hotelId, button = null) {
+    if (!hotelId) return;
     const data = await runAiConfirm(button, 'Saving the selected hotel into your itinerary and cost summary...', AI_ENDPOINTS.hotel,
-        { action: 'confirm_hotel', hotel_place_id: String(placeId) },
+        { action: 'confirm_hotel', hotel_id: String(hotelId) },
         { success: 'Hotel confirmed. Reloading...', failure: 'Could not confirm this hotel.', network: 'Network error while saving hotel. Please try again.' });
     if (data) reloadSoon();
 }

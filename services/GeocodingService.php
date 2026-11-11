@@ -85,25 +85,30 @@ class GeocodingService
     {
         $url = 'https://photon.komoot.io/api/?' . http_build_query([
             'q' => $query,
-            'limit' => $limit + 4,   // some results fall outside Malaysia and are dropped below
-            'lang' => 'en',
+            'limit' => $limit + 10,   // results outside Malaysia and repeated road segments are dropped below
+            'lang' => 'default',      // local names, as Malaysians write them ("Melaka", "Pulau Pinang")
             'bbox' => self::MALAYSIA_BBOX,
         ]);
         $json = OpenDataHttp::getJson($url, 604800, ['timeout' => 8]);   // 7 days
-        $out = [];
+        $places = [];
+        $roads = [];
         foreach (($json['features'] ?? []) as $feature) {
             $p = $feature['properties'] ?? [];
             $coords = $feature['geometry']['coordinates'] ?? null;
             if (strtoupper((string)($p['countrycode'] ?? '')) !== 'MY' || !is_array($coords) || count($coords) < 2) continue;
             $name = trim((string)($p['name'] ?? $p['street'] ?? ''));
             if ($name === '') continue;
-            $detail = array_values(array_unique(array_filter([
+            $detail = implode(', ', array_values(array_unique(array_filter([
                 $p['street'] ?? '', $p['district'] ?? '', $p['city'] ?? '', $p['county'] ?? '', $p['state'] ?? '',
-            ], static fn($v) => trim((string)$v) !== '' && $v !== $name)));
-            $out[] = ['name' => $name, 'detail' => implode(', ', $detail), 'lat' => (float)$coords[1], 'lng' => (float)$coords[0]];
-            if (count($out) >= $limit) break;
+            ], static fn($v) => trim((string)$v) !== '' && $v !== $name))));
+            // A long road comes back as many segments with one name: keep the first of each.
+            $key = mb_strtolower($name . '|' . $detail);
+            if (isset($places[$key]) || isset($roads[$key])) continue;
+            $entry = ['name' => $name, 'detail' => $detail, 'lat' => (float)$coords[1], 'lng' => (float)$coords[0]];
+            if (($p['osm_key'] ?? '') === 'highway') $roads[$key] = $entry; else $places[$key] = $entry;
         }
-        return $out;
+        // Someone naming where they are means a place far more often than a road.
+        return array_slice(array_merge(array_values($places), array_values($roads)), 0, $limit);
     }
 
     private static function searchNominatim(string $query, int $limit): array
@@ -113,7 +118,7 @@ class GeocodingService
             'q' => $query,
             'countrycodes' => 'my',
             'limit' => $limit,
-            'accept-language' => 'en',
+            'accept-language' => 'ms,en',
         ]);
         $json = OpenDataHttp::getJson($url, 2592000, ['timeout' => 10]);   // 30 days
         $out = [];

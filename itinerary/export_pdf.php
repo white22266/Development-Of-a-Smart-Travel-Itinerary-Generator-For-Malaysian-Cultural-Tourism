@@ -57,18 +57,14 @@ function extract_reason_selected(?string $notes): string
     return trim(substr($text, $pos + 7));
 }
 
-function is_http_url($value): bool
+/** Full path of a file in this app's uploads folder, or "" for anything else. */
+function uploads_abs_path($relativePath): string
 {
-    return (bool)preg_match('#^https?://#i', (string)$value);
-}
-
-function project_abs_path($relativePath): string
-{
-    $relativePath = trim((string)$relativePath);
-    if ($relativePath === "") return "";
-    $relativePath = ltrim($relativePath, "/\\");
-    $abs = realpath(__DIR__ . "/../" . $relativePath);
-    return $abs ? $abs : "";
+    $relativePath = ltrim(trim((string)$relativePath), "/\\");
+    $uploads = realpath(__DIR__ . "/../uploads");
+    $abs = $relativePath !== "" ? realpath(__DIR__ . "/../" . $relativePath) : false;
+    if (!$uploads || !$abs || !is_file($abs)) return "";
+    return str_starts_with($abs, $uploads . DIRECTORY_SEPARATOR) ? $abs : "";
 }
 
 function detect_mime_from_bytes(string $bytes): string
@@ -78,38 +74,6 @@ function detect_mime_from_bytes(string $bytes): string
     if (substr($bytes, 0, 6) === "GIF87a" || substr($bytes, 0, 6) === "GIF89a") return "image/gif";
     if (substr($bytes, 0, 4) === "RIFF" && substr($bytes, 8, 4) === "WEBP") return "image/webp";
     return "application/octet-stream";
-}
-
-function curl_fetch_bytes(string $url, int $timeout = 25): string
-{
-    if (!function_exists("curl_init")) return "";
-
-    $maxBytes = 8 * 1024 * 1024;
-    $data = "";
-    $downloaded = 0;
-    $ch = curl_init($url);
-    curl_setopt_array($ch, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_MAXREDIRS => 8,
-        CURLOPT_CONNECTTIMEOUT => 8,
-        CURLOPT_TIMEOUT => $timeout,
-        CURLOPT_USERAGENT => "SmartTravelPDF/1.0",
-        CURLOPT_SSL_VERIFYPEER => false,
-        CURLOPT_SSL_VERIFYHOST => 0,
-    ]);
-    curl_setopt($ch, CURLOPT_WRITEFUNCTION, function ($ch, $chunk) use (&$data, &$downloaded, $maxBytes) {
-        $len = strlen($chunk);
-        $downloaded += $len;
-        if ($downloaded > $maxBytes) return 0;
-        $data .= $chunk;
-        return $len;
-    });
-    $ok = curl_exec($ch);
-    $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-
-    return ($ok !== false && $code >= 200 && $code < 300) ? $data : "";
 }
 
 function webp_to_png_data_uri(string $bytes): string
@@ -130,32 +94,13 @@ function webp_to_png_data_uri(string $bytes): string
 
 function image_to_data_uri($imageUrlOrPath): string
 {
-    $raw = trim((string)$imageUrlOrPath);
-    if ($raw === "") return "";
-    if (stripos($raw, "data:image/") === 0) return $raw;
-
-    if (is_http_url($raw)) {
-        $bytes = curl_fetch_bytes($raw);
-        if ($bytes === "") return "";
-        $mime = detect_mime_from_bytes($bytes);
-        if ($mime === "image/webp") {
-            $converted = webp_to_png_data_uri($bytes);
-            if ($converted !== "") return $converted;
-        }
-        if (strpos($mime, "image/") !== 0) $mime = "image/jpeg";
-        return "data:" . $mime . ";base64," . base64_encode($bytes);
-    }
-
-    $abs = project_abs_path($raw);
-    if ($abs === "" || !is_file($abs)) return "";
+    $abs = uploads_abs_path($imageUrlOrPath);
+    if ($abs === "") return "";
     $bytes = @file_get_contents($abs);
     if ($bytes === false) return "";
     $mime = detect_mime_from_bytes($bytes);
-    if ($mime === "image/webp") {
-        $converted = webp_to_png_data_uri($bytes);
-        if ($converted !== "") return $converted;
-    }
-    if (strpos($mime, "image/") !== 0) $mime = "image/jpeg";
+    if (strpos($mime, "image/") !== 0) return "";   // not a picture: leave it out
+    if ($mime === "image/webp") return webp_to_png_data_uri($bytes);   // the PDF library cannot read WebP
     return "data:" . $mime . ";base64," . base64_encode($bytes);
 }
 
@@ -165,84 +110,6 @@ function valid_coord($lat, $lng): bool
     $lat = (float)$lat;
     $lng = (float)$lng;
     return is_finite($lat) && is_finite($lng) && !($lat == 0.0 && $lng == 0.0);
-}
-
-function normalize_transport_mode(string $transportType): string
-{
-    $t = strtolower(trim(str_replace("-", "_", $transportType)));
-    $t = preg_replace('/\s+/', '_', $t) ?? $t;
-    if (in_array($t, ["public", "public_transport", "publictransit", "public_transit", "transit", "bus", "train"], true)) return "transit";
-    if (in_array($t, ["walk", "walking"], true)) return "walking";
-    return "driving";
-}
-
-function google_directions_polyline(float $fromLat, float $fromLng, float $toLat, float $toLng, string $mode): string
-{
-    if (!defined("GOOGLE_MAPS_API_KEY") || trim((string)GOOGLE_MAPS_API_KEY) === "") return "";
-
-    $params = [
-        "origin" => $fromLat . "," . $fromLng,
-        "destination" => $toLat . "," . $toLng,
-        "mode" => $mode,
-        "key" => GOOGLE_MAPS_API_KEY,
-    ];
-    if ($mode === "transit") {
-        $params["departure_time"] = "now";
-    }
-
-    $url = "https://maps.googleapis.com/maps/api/directions/json?" . http_build_query($params);
-    $raw = curl_fetch_bytes($url, 15);
-    if ($raw === "") return "";
-    $json = json_decode($raw, true);
-    if (!is_array($json) || ($json["status"] ?? "") !== "OK") return "";
-
-    return (string)($json["routes"][0]["overview_polyline"]["points"] ?? "");
-}
-
-function static_route_map_data_uri(array $days, string $transportType): string
-{
-    if (!defined("GOOGLE_MAPS_API_KEY") || trim((string)GOOGLE_MAPS_API_KEY) === "") return "";
-
-    $markers = [];
-    $paths = [];
-    $markerIndex = 1;
-    $mode = normalize_transport_mode($transportType);
-    $colors = ["0xef4444ff", "0x3b82f6ff", "0x22c55eff", "0xf59e0bff", "0x8b5cf6ff", "0xec4899ff", "0x14b8a6ff"];
-
-    ksort($days);
-    foreach ($days as $dayNo => $items) {
-        $points = [];
-        foreach ($items as $item) {
-            if (!valid_coord($item["latitude"] ?? null, $item["longitude"] ?? null)) continue;
-            $lat = (float)$item["latitude"];
-            $lng = (float)$item["longitude"];
-            $points[] = [$lat, $lng];
-            $label = $markerIndex <= 9 ? (string)$markerIndex : "";
-            $markers[] = "markers=" . rawurlencode("color:red|label:" . $label . "|" . $lat . "," . $lng);
-            $markerIndex++;
-        }
-
-        for ($i = 0; $i < count($points) - 1; $i++) {
-            $polyline = google_directions_polyline($points[$i][0], $points[$i][1], $points[$i + 1][0], $points[$i + 1][1], $mode);
-            if ($polyline !== "") {
-                $color = $colors[((int)$dayNo - 1) % count($colors)];
-                $paths[] = "path=" . rawurlencode("color:" . $color . "|weight:5|enc:" . $polyline);
-            }
-        }
-    }
-
-    if (empty($markers)) return "";
-    $baseParams = [
-        "size" => "640x330",
-        "scale" => "2",
-        "maptype" => "roadmap",
-        "key" => GOOGLE_MAPS_API_KEY,
-    ];
-    $url = "https://maps.googleapis.com/maps/api/staticmap?" . http_build_query($baseParams);
-    if (!empty($paths)) $url .= "&" . implode("&", $paths);
-    $url .= "&" . implode("&", $markers);
-
-    return image_to_data_uri($url);
 }
 
 function activity_text(string $type, string $category): string
@@ -335,17 +202,16 @@ $costBreakdown = $costService->calculate($allItems, $totalDistanceKm, $tierDefau
 $perDayBreakdown = $costService->perDayBreakdown($days);
 
 $hotelRecommendations = [];
-$hotelBudget = ($budget > 0) ? ($budget * 0.3 / max(1, $tripDays - 1)) : $tierDefaults["hotel"];
-if ($lastPlace && valid_coord($lastPlace["latitude"] ?? null, $lastPlace["longitude"] ?? null)) {
+$hotelBudget = HotelRecommendationService::nightlyRoomBudget($budget, $tripDays, CostEstimationService::roomCount($partySize));
+if ($tripDays > 1 && $lastPlace && valid_coord($lastPlace["latitude"] ?? null, $lastPlace["longitude"] ?? null)) {
     $hotelService = new HotelRecommendationService($conn);
-    $hotelRecommendations = $hotelService->recommend((float)$lastPlace["latitude"], (float)$lastPlace["longitude"], $hotelBudget, 25.0, 3);
+    $hotelRecommendations = $hotelService->recommend((float)$lastPlace["latitude"], (float)$lastPlace["longitude"], $hotelBudget, 15.0, 3);
     if (empty($hotelRecommendations) && !empty($lastPlace["state"])) {
         $hotelRecommendations = $hotelService->recommendByState((string)$lastPlace["state"], $hotelBudget, 3);
     }
 }
 
 $totalPlaces = count($allItems);
-$mapUri = static_route_map_data_uri($days, $transportType);
 $generatedAt = date("d M Y, g:i A");
 
 /* ------------------------ Build report HTML ------------------------ */
@@ -367,7 +233,6 @@ $css = "
   .metric-value { font-size: 14px; font-weight: 900; margin-top: 3px; color: #111827; }
   .section { page-break-inside: avoid; margin-bottom: 12px; }
   .box { border: 1px solid #e2e8f0; border-radius: 9px; padding: 10px; background: #fff; margin-bottom: 9px; }
-  .route-map { width: 100%; border: 1px solid #cbd5e1; border-radius: 9px; margin-top: 6px; }
   table { width: 100%; border-collapse: collapse; }
   th { background: #f1f5f9; color: #334155; font-size: 8.5px; text-transform: uppercase; text-align: left; padding: 6px; border: 1px solid #e2e8f0; }
   td { padding: 6px; border: 1px solid #e2e8f0; vertical-align: top; }
@@ -390,7 +255,7 @@ $html .= "<div class='cover'>";
 $html .= "<div class='eyebrow'>Smart Travel Itinerary Generator</div>";
 $html .= "<h1>" . esc($it["title"] ?: "Travel Itinerary Report") . "</h1>";
 $html .= "<p class='muted'>Prepared for " . esc($travellerName) . " | Generated " . esc($generatedAt) . "</p>";
-$html .= "<p class='muted'>This report combines route map, daily schedule, place information, hotel recommendations, and full cost summary.</p>";
+$html .= "<p class='muted'>This report combines the daily schedule, place information, hotel suggestions and the full cost summary.</p>";
 $html .= "</div>";
 
 $html .= "<table class='grid4'><tr>";
@@ -422,22 +287,12 @@ if ($budget > 0) {
         ? "<li>The estimated total cost is within the traveller budget. Keep hotel and meal choices close to the suggested range to maintain this budget.</li>"
         : "<li>The estimated total cost is above the traveller budget. Reduce hotel cost, meal budget, or paid attractions before final travel.</li>";
 }
-$html .= "<li>Use the routed map and daily schedule together: visit stops in the listed sequence to reduce unnecessary backtracking.</li>";
+$html .= "<li>Visit the stops in the listed order to avoid unnecessary backtracking. The itinerary page shows the road route on a map.</li>";
 if (stripos((string)$it["interests"], "festival") !== false) {
     $html .= "<li>Festival places should only be used when the festival date matches the travel date. Check the event date before travelling.</li>";
 }
 $html .= "<li>Check live traffic, public transport availability, weather, and opening hours on the travel day because these can change after the itinerary is generated.</li>";
 $html .= "</ul>";
-$html .= "</div>";
-
-$html .= "<div class='section box'>";
-$html .= "<h2>Route Map</h2>";
-if ($mapUri !== "") {
-    $html .= "<img class='route-map' src='" . esc($mapUri) . "' alt='Route map'>";
-    $html .= "<p class='muted'>Route lines are generated from Google Directions API segment polylines for the selected transport mode. If Google returns no route for a segment, that segment is omitted instead of drawing a misleading straight line.</p>";
-} else {
-    $html .= "<div class='note'>Route map is unavailable. Check Google Maps API key, Static Maps API, Directions API, billing, and coordinate data.</div>";
-}
 $html .= "</div>";
 
 $html .= "<div class='section box'>";
@@ -460,15 +315,16 @@ $html .= "</td></tr></table></div>";
 $html .= "<div class='section box'>";
 $html .= "<h2>Hotel Recommendations</h2>";
 if (!empty($hotelRecommendations)) {
-    $html .= "<table><tr><th>Hotel</th><th>Location</th><th>Rating</th><th>Price / Night</th><th>Why Recommended</th></tr>";
+    $html .= "<table><tr><th>Place to stay</th><th>Type</th><th>Location</th><th>Estimated price / night</th><th>Distance</th></tr>";
     foreach ($hotelRecommendations as $hotel) {
-        $distance = isset($hotel["distance_km"]) ? number_format((float)$hotel["distance_km"], 1) . " km from route area" : "Same destination state";
-        $location = trim((string)($hotel["address"] ?? ""));
-        $html .= "<tr><td>" . esc($hotel["name"] ?? "") . "</td><td>" . esc($location !== "" ? $location : "Google Places result") . "</td><td>" . esc(number_format((float)($hotel["rating"] ?? 0), 1)) . "</td><td>" . esc(fmt_rm($hotel["price_per_night"] ?? 0) . " est.") . "</td><td>" . esc($distance . "; live Google Places accommodation result, estimated for planning only.") . "</td></tr>";
+        $distance = $hotel["distance_km"] !== null ? number_format((float)$hotel["distance_km"], 1) . " km from the last stop" : "In the same state";
+        $type = $hotel["kind_label"] . ($hotel["stars"] !== null ? ", " . (float)$hotel["stars"] . "-star" : "");
+        $html .= "<tr><td>" . esc($hotel["name"]) . "</td><td>" . esc($type) . "</td><td>" . esc($hotel["address"] !== "" ? $hotel["address"] : $hotel["state"]) . "</td><td>" . esc(fmt_rm($hotel["price_per_night"])) . "</td><td>" . esc($distance) . "</td></tr>";
     }
     $html .= "</table>";
+    $html .= "<p class='muted'>Listings come from OpenStreetMap. Prices are planning estimates, not offers: check the current rate before booking.</p>";
 } else {
-    $html .= "<div class='note'>No live hotel recommendation is available for this route. Check the Google Maps API key/quota or search accommodation manually.</div>";
+    $html .= "<div class='note'>No place to stay is listed near the last stop of this trip.</div>";
 }
 $html .= "</div>";
 

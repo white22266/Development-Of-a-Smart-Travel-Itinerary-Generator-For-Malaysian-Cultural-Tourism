@@ -109,38 +109,23 @@ $tierDefaults = CostEstimationService::budgetTierDefaults($budgetTier, $budget, 
 $costService     = new CostEstimationService($transportType, $tripDays, $budget, $travellerType, $partySize);
 $costBreakdown   = $costService->calculate($allItems, $totalDistKm, $tierDefaults["hotel"], 3, $tierDefaults["meal"]);
 
-// ---- Hotel recommendations ----
+// ---- Hotel suggestions (from the local lodging list; prices are planning estimates) ----
 $recommendedHotels = [];
-$hotelBudget       = ($budget > 0) ? ($budget * 0.3) : 200.0;
-$nightlyBudget     = $hotelBudget / max(1, $tripDays - 1);
+$nightlyBudget = HotelRecommendationService::nightlyRoomBudget($budget, $tripDays, CostEstimationService::roomCount($partySize));
 
-if (empty($selectedHotels)) {
+if (empty($selectedHotels) && $tripDays > 1) {
     $hotelService = new HotelRecommendationService($conn);
     if ($lastPlace && !empty($lastPlace["latitude"]) && !empty($lastPlace["longitude"])) {
-        $recommendedHotels = $hotelService->recommend(
-            (float)$lastPlace["latitude"],
-            (float)$lastPlace["longitude"],
-            $nightlyBudget,
-            25.0,
-            5
-        );
+        $recommendedHotels = $hotelService->recommend((float)$lastPlace["latitude"], (float)$lastPlace["longitude"], $nightlyBudget, 15.0, 5);
     }
     if (empty($recommendedHotels) && !empty($lastPlace["state"])) {
         $recommendedHotels = $hotelService->recommendByState($lastPlace["state"], $nightlyBudget, 5);
     }
-    $seenHotels = [];
-    $recommendedHotels = array_values(array_filter($recommendedHotels, function ($hotel) use (&$seenHotels) {
-        $key = strtolower(trim(($hotel["name"] ?? "") . "|" . ($hotel["state"] ?? "") . "|" . ($hotel["district"] ?? "")));
-        if ($key === "||" || isset($seenHotels[$key])) return false;
-        $seenHotels[$key] = true;
-        return true;
-    }));
 }
 
 $startDate = $it["start_date"] ?? null;
 $states    = $it["preferred_states"] ?? "-";
 $interests = $it["interests"] ?? "-";
-$googleMapsKey = defined("GOOGLE_MAPS_API_KEY") ? trim((string)GOOGLE_MAPS_API_KEY) : "";
 $placeCount = count(array_filter($allItems, fn($item) => strtolower((string)($item["item_type"] ?? "")) !== "hotel"));
 $costTotal = (float)($costBreakdown["total_cost"] ?? 0);
 $budgetStatusText = "No budget limit was saved for this trip.";
@@ -743,32 +728,24 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                     <div class="card col-12">
                         <h3><?php echo !empty($selectedHotels) ? "Other Recommended Hotels" : "Recommended Hotels"; ?></h3>
                         <p class="meta">
-                            Nearby hotels based on your last itinerary location.
-                            <?php if ($budget > 0): ?>Estimated around RM <?php echo number_format($nightlyBudget, 0); ?>/night.<?php endif; ?>
+                            Places to stay near your last stop, from OpenStreetMap listings. Prices are planning estimates, not offers.
+                            <?php if ($nightlyBudget > 0): ?>Your budget allows about RM <?php echo number_format($nightlyBudget, 0); ?> per room per night.<?php endif; ?>
                         </p>
                         <?php foreach ($recommendedHotels as $hotel): ?>
                             <div class="hotel-card">
                                 <div>
                                     <div class="hotel-name"><?php echo htmlspecialchars($hotel["name"]); ?></div>
                                     <div class="hotel-meta">
-                                        <?php echo htmlspecialchars($hotel["address"] ?? "Google Places result"); ?>
-                                        <?php if (!empty($hotel["distance_km"])): ?>&nbsp;&middot;&nbsp; <?php echo number_format((float)$hotel["distance_km"], 1); ?> km away<?php endif; ?>
-                                    </div>
-                                    <div class="stars" style="margin-top:4px;">
-                                        <?php
-                                        $rating = (float)($hotel["rating"] ?? 0);
-                                        $full   = (int)floor($rating);
-                                        $half   = ($rating - $full) >= 0.5 ? 1 : 0;
-                                        echo str_repeat('&#9733;', $full) . ($half ? '&frac12;' : '') . str_repeat('&#9734;', 5 - $full - $half);
-                                        echo " <span style='color:var(--muted);font-size:11px;'>(" . number_format($rating, 1) . ")</span>";
-                                        ?>
+                                        <?php echo htmlspecialchars($hotel["kind_label"] . ($hotel["stars"] !== null ? ", " . (float)$hotel["stars"] . "-star" : "")); ?>
+                                        <?php if ($hotel["address"] !== ""): ?>&nbsp;&middot;&nbsp; <?php echo htmlspecialchars($hotel["address"]); ?><?php endif; ?>
+                                        <?php if ($hotel["distance_km"] !== null): ?>&nbsp;&middot;&nbsp; <?php echo number_format((float)$hotel["distance_km"], 1); ?> km away<?php endif; ?>
                                     </div>
                                 </div>
                                 <div style="text-align:right;">
                                     <div class="hotel-price">RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?></div>
-                                    <div style="font-size:11px;color:var(--muted);">estimated/night</div>
+                                    <div style="font-size:11px;color:var(--muted);">estimate per night</div>
                                     <div class="hotel-actions">
-                                        <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotelByPlaceId('<?php echo htmlspecialchars($hotel["google_place_id"] ?? "", ENT_QUOTES); ?>')">Confirm Hotel</button>
+                                        <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotel(<?php echo (int)$hotel["hotel_id"]; ?>, this)">Confirm Hotel</button>
                                         <?php $mapUrl = $hotel["map_url"] ?? "";
                                         if ($mapUrl !== ""): ?>
                                             <a href="<?php echo htmlspecialchars($mapUrl); ?>"
@@ -803,7 +780,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             <button type="submit">Send</button>
         </form>
     </div>
-    <script src="../assets/trip_ai_chat.js?v=20261022"></script>
+    <script src="../assets/trip_ai_chat.js?v=20261112"></script>
     <script>
         const ITINERARY_ID = <?php echo (int)$itineraryId; ?>;
         const COST_CHART_LABELS = <?php echo json_encode($chartLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
@@ -877,9 +854,6 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
         }
 
     </script>
-    <?php if ($googleMapsKey !== ""): ?>
-        <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo htmlspecialchars($googleMapsKey); ?>&libraries=places" async defer></script>
-    <?php endif; ?>
   <script src="../assets/dashboard_shell.js?v=20260617c"></script>
 </body>
 
