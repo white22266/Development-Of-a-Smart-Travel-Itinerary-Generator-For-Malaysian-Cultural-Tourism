@@ -115,6 +115,7 @@ class PlaceSyncService
             if ($elements === null) {
                 throw new RuntimeException('OpenStreetMap could not be read: ' . OsmDataService::lastError());
             }
+            if (OsmDataService::lastNote() !== '') ($this->log)('  note: ' . OsmDataService::lastNote());
             $stats['osm_places'] = count($elements);
 
             $elements = $this->attachWikidata($elements);
@@ -1047,6 +1048,7 @@ class PlaceSyncService
             ($this->log)("  lodging could not be read (" . OsmDataService::lastError() . "); keeping the current list");
             return 0;
         }
+        if (OsmDataService::lastNote() !== '') ($this->log)('  note: ' . OsmDataService::lastNote());
         if ($this->dryRun || !$elements) return count($elements);
 
         $started = date('Y-m-d H:i:s');

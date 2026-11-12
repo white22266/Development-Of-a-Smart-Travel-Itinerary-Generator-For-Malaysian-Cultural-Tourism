@@ -24,11 +24,21 @@ class OsmDataService
 
     private const LODGING_KINDS = 'hotel|guest_house|hostel|motel|resort|apartment|chalet';
 
+    /** An answer whose data is older than this is used only when no server has a newer one. */
+    private const MAX_DATA_AGE_DAYS = 30;
+
     private static string $lastError = '';
+    private static string $lastNote = '';
 
     public static function lastError(): string
     {
         return self::$lastError;
+    }
+
+    /** Something worth telling about the last answer although it was used, or ''. */
+    public static function lastNote(): string
+    {
+        return self::$lastNote;
     }
 
     /**
@@ -85,10 +95,18 @@ OQL;
     private static function run(string $query, string $cacheKey, int $ttl): ?array
     {
         self::$lastError = '';
-        // A "remark" means the server gave up part-way (timeout, out of memory): partial data, not usable.
-        $complete = static fn(array $json): bool => isset($json['elements']) && empty($json['remark']);
+        self::$lastNote = '';
 
-        // The public servers are often busy. A background job goes round them twice.
+        // An answer is used when it is whole and has something in it:
+        //   a "remark" means the server gave up part-way (timeout, out of memory);
+        //   nothing at all means the server does not know the state's area. Every state has
+        //   places and lodging, so an empty answer is a broken server, not a fact.
+        $whole = static fn(array $json): bool => !empty($json['elements']) && empty($json['remark']);
+        // Some mirrors stop updating for months. Their answers are only a last resort.
+        $current = static fn(array $json): bool => $whole($json) && self::dataAgeDays($json) <= self::MAX_DATA_AGE_DAYS;
+
+        // The public servers are often busy. A background job goes round them twice: first
+        // for an up-to-date answer, then for any whole answer.
         $rounds = OpenDataHttp::isPatient() ? 2 : 1;
         for ($round = 1; $round <= $rounds; $round++) {
             if ($round > 1) sleep(45);
@@ -98,10 +116,15 @@ OQL;
                     'cache_key' => $cacheKey,
                     'timeout' => 300,
                     'stale_ok' => false,
-                    'validate' => $complete,
+                    'validate' => $round < $rounds ? $current : $whole,
                     'retries' => 0,              // a busy server is skipped, not waited for
                 ]);
                 if (is_array($json)) {
+                    $days = self::dataAgeDays($json);
+                    if ($days > self::MAX_DATA_AGE_DAYS) {
+                        self::$lastNote = 'the server that answered has OpenStreetMap data from ' . substr((string)$json['osm3s']['timestamp_osm_base'], 0, 10)
+                            . " ({$days} days old); run the sync again later for the current data";
+                    }
                     return self::normaliseAll($json['elements']);
                 }
                 self::$lastError = OpenDataHttp::lastError();
@@ -110,7 +133,14 @@ OQL;
 
         // Every server failed: an expired copy is still better than nothing.
         $stale = OpenDataHttp::cachedJson('overpass', $cacheKey);
-        return ($stale !== null && $complete($stale)) ? self::normaliseAll($stale['elements']) : null;
+        return ($stale !== null && $whole($stale)) ? self::normaliseAll($stale['elements']) : null;
+    }
+
+    /** How old the OpenStreetMap data behind an answer is, in days. 0 when the answer does not say. */
+    private static function dataAgeDays(array $json): int
+    {
+        $time = strtotime((string)($json['osm3s']['timestamp_osm_base'] ?? ''));
+        return $time === false ? 0 : max(0, intdiv(time() - $time, 86400));
     }
 
     /** @return array<int,array{ref:string,name:string,names:string[],lat:float,lng:float,tags:array}> */
