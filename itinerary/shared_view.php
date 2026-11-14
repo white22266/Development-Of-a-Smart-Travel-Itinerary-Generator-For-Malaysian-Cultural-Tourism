@@ -2,6 +2,7 @@
 // itinerary/shared_view.php
 // Public read-only itinerary view by share token.
 require_once __DIR__ . "/../config/db_connect.php";
+require_once __DIR__ . "/../services/CalendarExportService.php";
 
 $token = trim((string)($_GET["token"] ?? ""));
 if ($token === "" || !preg_match('/^[a-f0-9]{32,64}$/', $token)) {
@@ -141,6 +142,14 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
                                     <?php echo h(trim(($item["district"] ?? "") . (($item["district"] ?? "") ? ", " : "") . ($item["state"] ?? ""))); ?>
                                     <?php if (!empty($item["opening_hours"])): ?> | <?php echo h($item["opening_hours"]); ?><?php endif; ?>
                                 </div>
+                                <?php $mapLinks = CalendarExportService::mapLinks($item["latitude"] ?? null, $item["longitude"] ?? null, (string)$item["item_title"]); ?>
+                                <?php if ($mapLinks): ?>
+                                <div class="meta">
+                                    <?php foreach ($mapLinks as $linkLabel => $link): ?>
+                                    <a href="<?php echo h($link["href"]); ?>"<?php echo $link["external"] ? ' target="_blank" rel="noopener"' : ''; ?>><?php echo h($linkLabel); ?></a>&nbsp;
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php endif; ?>
                             </td>
                             <td><?php echo h(ucfirst($item["item_type"] ?? "attraction")); ?></td>
                             <td>RM <?php echo number_format((float)$item["estimated_cost"], 2); ?></td>

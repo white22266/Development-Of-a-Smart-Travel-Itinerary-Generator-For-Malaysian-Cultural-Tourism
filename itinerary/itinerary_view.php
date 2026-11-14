@@ -9,6 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once "../config/db_connect.php";
 require_once "../config/map_assets.php";
 require_once "../services/CostEstimationService.php";
+require_once "../services/CalendarExportService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -686,6 +687,7 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
             <div class="actions">
                 <a class="btn btn-ghost" href="my_itineraries.php">Back</a>
                 <a class="btn btn-ghost" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
+                <a class="btn btn-ghost" href="export_ics.php?itinerary_id=<?php echo $itineraryId; ?>">Add to calendar (.ics)</a>
                 <a class="btn btn-primary" href="trip_summary.php?itinerary_id=<?php echo $itineraryId; ?>">Trip Summary</a>
             </div>
         </div>
@@ -993,6 +995,14 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                                         &middot; <?php echo htmlspecialchars($item['address']); ?>
                                     <?php endif; ?>
                                 </div>
+                                <?php $mapLinks = CalendarExportService::mapLinks($item['latitude'] ?? null, $item['longitude'] ?? null, (string)$item['item_title']); ?>
+                                <?php if ($mapLinks): ?>
+                                <div style="font-size:10.5px; margin-top:3px; display:flex; gap:10px; flex-wrap:wrap;">
+                                    <?php foreach ($mapLinks as $linkLabel => $link): ?>
+                                    <a href="<?php echo htmlspecialchars($link['href']); ?>"<?php echo $link['external'] ? ' target="_blank" rel="noopener"' : ''; ?> onclick="event.stopPropagation();"><?php echo htmlspecialchars($linkLabel); ?></a>
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php endif; ?>
                                 <?php if (!empty($item['opening_hours'])): ?>
                                 <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">Hours: <?php echo htmlspecialchars($item['opening_hours']); ?></div>
                                 <?php endif; ?>
