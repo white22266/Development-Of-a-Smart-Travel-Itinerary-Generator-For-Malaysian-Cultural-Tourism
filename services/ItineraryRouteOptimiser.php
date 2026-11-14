@@ -8,7 +8,9 @@
 //   optimise()  every day of a saved itinerary (the "Optimise route" button)
 //
 // When the road figures make a stop impossible in every order, that stop is dropped; no time
-// that breaks a rule is ever stored, and no time is clamped.
+// that breaks a rule is ever stored, and no time is clamped. Among orders that cannot keep
+// every stop, the one keeping the most must-see places wins. On the last day of a trip with an
+// end point, the order finishes towards it and every stop leaves time and distance to reach it.
 
 require_once __DIR__ . '/RouteService.php';
 require_once __DIR__ . '/PlannerRules.php';
@@ -29,7 +31,9 @@ final class ItineraryRouteOptimiser
      * @param array<int,array>       $stops each with 'place' (a place row) and 'point' [lat, lng]
      * @param array $day date, first_leg_exempt (true on day 1: the leg from the trip's starting
      *                   point is not counted by the distance limits), budget (null, or items and
-     *                   km of the rest of the trip plus reserve_km), end (the hotel point or null)
+     *                   km of the rest of the trip plus reserve_km), end (the hotel point or null),
+     *                   finish (the trip's end point on the last day, or null; ignored when end
+     *                   is given)
      * @return array{stops:array,dropped:array,minutes:int,km:float}
      *         stops: the kept stops in order, each with start, end, km, min (its leg) and wait;
      *         dropped: stops no order can keep, each with the reason code of its failure;
@@ -42,6 +46,10 @@ final class ItineraryRouteOptimiser
         if ($n === 0) return ['stops' => [], 'dropped' => [], 'minutes' => 0, 'km' => 0.0];
 
         $end = $day['end'] ?? null;
+        if ($end === null && isset($day['finish'])) {
+            $end = $day['finish'];
+            $day['finish_counts'] = true;   // the leg to the end point is a rule, not only a cost
+        }
         $seg = static fn(array $a, array $b): array => $route->getSegment((float)$a[0], (float)$a[1], (float)$b[0], (float)$b[1]);
         $fromStart = [];
         $between = [];
@@ -58,8 +66,8 @@ final class ItineraryRouteOptimiser
         foreach (self::candidateOrders($route, $start, $stops, $end, $fromStart, $between, $toEnd) as $order) {
             $planned = self::schedule($order, $stops, $profile, $day, $fromStart, $between, $toEnd);
             if (count($planned['stops']) === $n) return $planned;
-            if ($best === null || count($planned['stops']) > count($best['stops'])
-                || (count($planned['stops']) === count($best['stops']) && $planned['minutes'] < $best['minutes'])) {
+            $rank = [self::mustCount($planned['stops']), count($planned['stops']), -$planned['minutes']];
+            if ($best === null || $rank > [self::mustCount($best['stops']), count($best['stops']), -$best['minutes']]) {
                 $best = $planned;
             }
         }
@@ -76,7 +84,7 @@ final class ItineraryRouteOptimiser
     {
         $report = ['days' => [], 'reordered_days' => [], 'saved_min' => 0, 'removed' => []];
 
-        $stmt = $conn->prepare("SELECT traveller_id, preference_id, start_date, origin_lat, origin_lng FROM itineraries WHERE itinerary_id = ? LIMIT 1");
+        $stmt = $conn->prepare("SELECT * FROM itineraries WHERE itinerary_id = ? LIMIT 1");
         $stmt->bind_param('i', $itineraryId);
         $stmt->execute();
         $meta = $stmt->get_result()->fetch_assoc();
@@ -87,6 +95,8 @@ final class ItineraryRouteOptimiser
         $origin = self::point($meta['origin_lat'], $meta['origin_lng']);
         if ($origin !== null) $pref += ['origin_lat' => $origin[0], 'origin_lng' => $origin[1]];
         $profile = PlannerRules::profile($pref);
+        $finish = self::point($meta['end_lat'] ?? null, $meta['end_lng'] ?? null);
+        $lastDay = (int)($meta['total_days'] ?? 0);
 
         $stmt = $conn->prepare("
             SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id, ii.item_title, ii.start_time, ii.end_time,
@@ -114,6 +124,7 @@ final class ItineraryRouteOptimiser
             foreach ($rows as $row) if ($row['point'] !== null) $pointsByDay[$dayNo][] = $row['point'];
         }
         if ($pointsByDay && $origin !== null) $pointsByDay[array_key_first($pointsByDay)][] = $origin;
+        if ($finish !== null && isset($pointsByDay[$lastDay])) $pointsByDay[$lastDay][] = $finish;
         $route->preloadTrip($pointsByDay);
 
         $startDate = (string)$meta['start_date'];
@@ -140,14 +151,18 @@ final class ItineraryRouteOptimiser
 
             $date = (new DateTimeImmutable($startDate))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
             $hotelPoint = $hotel['point'] ?? null;
-            $route->preload(array_values(array_filter(array_merge([$dayStart], array_column($visits, 'point'), [$hotelPoint]))));
-            $stops = array_map(static fn(array $row): array => ['place' => self::placeOf($row), 'point' => $row['point'], 'row' => $row], $visits);
-            $before = self::travelMinutes($route, $dayStart, array_column($visits, 'point'), $hotelPoint);
+            $dayFinish = $dayNo === $lastDay && $hotelPoint === null ? $finish : null;
+            $route->preload(array_values(array_filter(array_merge([$dayStart], array_column($visits, 'point'), [$hotelPoint ?? $dayFinish]))));
+            $musts = array_flip((array)($pref['must_places'] ?? []));
+            $stops = array_map(static fn(array $row): array => ['place' => self::placeOf($row), 'point' => $row['point'], 'row' => $row,
+                'must' => isset($musts[(int)$row['place_id']])], $visits);
+            $before = self::travelMinutes($route, $dayStart, array_column($visits, 'point'), $hotelPoint ?? $dayFinish);
             $plan = self::orderDay($route, $profile, $dayStart, $stops, [
                 'date' => $date,
                 'first_leg_exempt' => $dayNo === 1 && $dayStart === $origin,
                 'budget' => null,
                 'end' => $hotelPoint,
+                'finish' => $dayFinish,
             ]);
 
             $position = 0;
@@ -233,6 +248,11 @@ final class ItineraryRouteOptimiser
         foreach ($ranked as $entry) yield $entry[3];
     }
 
+    private static function mustCount(array $stops): int
+    {
+        return count(array_filter($stops, static fn(array $s): bool => !empty($s['must'])));
+    }
+
     /** Every order of the given keys, the given order first. */
     private static function permutations(array $items): iterable
     {
@@ -273,7 +293,9 @@ final class ItineraryRouteOptimiser
                 'trip_items' => $items,
                 'trip_km' => $otherKm + $keptKm,
                 'reserve_km' => (float)($budget['reserve_km'] ?? 0),
-            ], $profile);
+            ] + (!empty($day['finish_counts'])
+                ? ['finish_km' => (float)$toEnd[$index]['distance_km'], 'finish_min' => (int)$toEnd[$index]['travel_time_min']]
+                : []), $profile);
             if (!$check['ok']) {
                 $dropped[] = $stop + ['reason' => $check['reason']];
                 continue;

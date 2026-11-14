@@ -3,13 +3,15 @@
 // The rules an itinerary must keep, written once. The day builder, the generator and the
 // route optimiser all ask here, so no step can undo what another step guaranteed.
 //
-//   loadPreference()  a saved preference, normalised
+//   loadPreference()  a saved preference, normalised, with its interest weights and its
+//                     must-see and avoid places
 //   profile()         the planning profile for a preference: target stops, rest, day window,
 //                     distance limits, visit lengths, accessibility, party and budget split
 //   check()           can this place be visited in this slot? The one feasibility check: it
 //                     returns the visit's start and end, or a reason code
 //   visitMinutes()    how long a visit lasts;  placeCost()  what a place costs per person
 //   projectedTotal()  the trip total, computed exactly as ItineraryEditService::total() stores it
+//   learnedPoints()   the small score adjustment per category from the traveller's own ratings
 
 require_once __DIR__ . '/OpeningHours.php';
 require_once __DIR__ . '/CostEstimationService.php';
@@ -62,6 +64,16 @@ final class PlannerRules
     /** Longest wait for a place to open. */
     private const MAX_WAIT_MIN = 120;
 
+    /**
+     * Learning from the traveller's own ratings: per category, (average - 3) / 2 x LEARN_MAX_POINTS,
+     * scaled by the number of ratings up to LEARN_FULL_AT. So it lies within +-LEARN_MAX_POINTS,
+     * less than half the 10 points between two interest weights (ItineraryDayBuilder::INTEREST_POINTS),
+     * and it never touches check(). A place rated LEARN_DROP_AT or lower is not suggested again.
+     */
+    public const LEARN_MAX_POINTS = 4.0;
+    public const LEARN_FULL_AT = 5;
+    public const LEARN_DROP_AT = 2;
+
     /** Paid places get what the budget leaves after the essentials and this margin on them. */
     public const BUDGET_MARGIN = 0.10;
     private const MEALS_PER_DAY = 3;
@@ -88,18 +100,26 @@ final class PlannerRules
         'DAY_END' => 'would end after the latest end of the day',
         'WAIT' => 'would wait too long for opening',
         'BUDGET' => 'over the budget',
+        'FINISH' => 'too late or too far to reach the end point of the trip',
+        'ROOM' => 'no room left on the days it can be visited',
+        'UNAVAILABLE' => 'not an active place with map coordinates',
     ];
 
     /**
      * A saved preference, normalised, or null when it does not exist (or is not the traveller's).
-     * Only the columns the planner uses today are read.
+     * The inputs of migration 20261115_planner_inputs.sql are read when their columns exist, so a
+     * database without that migration plans as before.
      */
     public static function loadPreference(mysqli $conn, int $preferenceId, ?int $travellerId = null): ?array
     {
+        $optional = array_values(array_filter(
+            ['day_start_time', 'day_end_time', 'stops_per_day', 'adults', 'children', 'seniors', 'accessibility_tags'],
+            static fn(string $column): bool => self::hasColumn($conn, 'traveller_preferences', $column)
+        ));
         $sql = "
             SELECT preference_id, traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type, party_size,
                    travel_pace, dietary_preference, preferred_visit_time, accessibility_needs, interests,
-                   preferred_states, preferred_districts
+                   preferred_states, preferred_districts" . ($optional ? ', ' . implode(', ', $optional) : '') . "
             FROM traveller_preferences
             WHERE preference_id = ?" . ($travellerId !== null ? " AND traveller_id = ?" : "") . "
             LIMIT 1
@@ -111,7 +131,56 @@ final class PlannerRules
         $stmt->execute();
         $row = $stmt->get_result()->fetch_assoc();
         $stmt->close();
-        return $row ? self::normalizePreference($row) : null;
+        if (!$row) return null;
+
+        // Interest weights (1 a little, 2 like, 3 love); an interest without a row keeps weight 2.
+        if (self::hasColumn($conn, 'traveller_preference_interests', 'weight')) {
+            $stmt = $conn->prepare("
+                SELECT ti.interest_code, tpi.weight
+                FROM traveller_preference_interests tpi
+                JOIN travel_interests ti ON ti.interest_id = tpi.interest_id
+                WHERE tpi.preference_id = ?
+            ");
+            if ($stmt) {
+                $stmt->bind_param('i', $preferenceId);
+                $stmt->execute();
+                foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $w) {
+                    $row['interest_weights'][strtolower((string)$w['interest_code'])] = (int)$w['weight'];
+                }
+                $stmt->close();
+            }
+        }
+        // Must-see and avoid places.
+        if (self::hasColumn($conn, 'traveller_preference_places', 'wish')) {
+            $stmt = $conn->prepare('SELECT place_id, wish FROM traveller_preference_places WHERE preference_id = ? ORDER BY place_id');
+            if ($stmt) {
+                $stmt->bind_param('i', $preferenceId);
+                $stmt->execute();
+                foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $p) {
+                    $row[$p['wish'] === 'must' ? 'must_places' : 'avoid_places'][] = (int)$p['place_id'];
+                }
+                $stmt->close();
+            }
+        }
+        return self::normalizePreference($row);
+    }
+
+    /** Whether a table has a column (cached per connection and table; false when the table is missing). */
+    public static function hasColumn(mysqli $conn, string $table, string $column): bool
+    {
+        static $cache = [];
+        $key = spl_object_id($conn) . ':' . $table;
+        if (!isset($cache[$key])) {
+            $cache[$key] = [];
+            $res = $conn->query('SHOW TABLES LIKE ' . "'" . $conn->real_escape_string($table) . "'");
+            if ($res && $res->num_rows > 0) {
+                $res = $conn->query('SHOW COLUMNS FROM `' . str_replace('`', '', $table) . '`');
+                if ($res) {
+                    foreach ($res as $c) $cache[$key][strtolower((string)$c['Field'])] = true;
+                }
+            }
+        }
+        return isset($cache[$key][strtolower($column)]);
     }
 
     /** A preference row (or an empty array for the defaults) in the form profile() reads. */
@@ -119,6 +188,13 @@ final class PlannerRules
     {
         $travellerType = CostEstimationService::normalizeTravellerType((string)($row['traveller_type'] ?? 'solo'));
         $interests = array_values(array_filter(self::csv(strtolower((string)($row['interests'] ?? ''))), static fn($x) => in_array($x, self::VALID_INTERESTS, true)));
+        $interests = $interests ?: ['culture'];
+        $weights = [];
+        foreach ($interests as $interest) {
+            $weights[$interest] = max(1, min(3, (int)($row['interest_weights'][$interest] ?? 2)));
+        }
+        $count = static fn(string $key): ?int => isset($row[$key]) && $row[$key] !== '' ? max(0, (int)$row[$key]) : null;
+        $ids = static fn(string $key): array => array_values(array_unique(array_filter(array_map('intval', (array)($row[$key] ?? [])), static fn($x) => $x > 0)));
         return [
             'preference_id' => (int)($row['preference_id'] ?? 0),
             'trip_days' => max(1, min(30, (int)($row['trip_days'] ?? 1))),
@@ -131,19 +207,34 @@ final class PlannerRules
             'dietary_preference' => self::oneOf((string)($row['dietary_preference'] ?? 'none'), ['none', 'halal', 'vegetarian'], 'none'),
             'preferred_visit_time' => self::oneOf((string)($row['preferred_visit_time'] ?? 'any'), ['any', 'morning', 'afternoon', 'evening'], 'any'),
             'accessibility_needs' => trim((string)($row['accessibility_needs'] ?? '')),
-            'interests' => $interests ?: ['culture'],
+            'interests' => $interests,
             'states' => self::csv((string)($row['preferred_states'] ?? '')),
             'districts' => self::csv((string)($row['preferred_districts'] ?? '')),
+            // The inputs below are null (or empty) when the traveller did not give them.
+            'day_start_min' => self::minutesOf($row['day_start_time'] ?? null),
+            'day_end_min' => self::minutesOf($row['day_end_time'] ?? null),
+            'stops_per_day' => isset($row['stops_per_day']) && (int)$row['stops_per_day'] > 0 ? min(8, (int)$row['stops_per_day']) : null,
+            'adults' => $count('adults'),
+            'children' => $count('children'),
+            'seniors' => $count('seniors'),
+            'access_tags' => isset($row['accessibility_tags']) ? self::csv(strtolower((string)$row['accessibility_tags'])) : null,
+            'interest_weights' => $weights,
+            'must_places' => $ids('must_places'),
+            'avoid_places' => $ids('avoid_places'),
         ];
     }
 
     /**
      * The planning profile of a preference.
      *
-     * Optional keys of $pref that override what the preference implies (later inputs can
-     * set them without changing any caller): day_start_min and day_end_min (minutes after
-     * midnight), stops_per_day, access_tags (a list of accessibility tags), and origin_lat /
-     * origin_lng (the trip's starting point, for the Peninsular / East Malaysia rule).
+     * Optional keys of $pref that override what the preference implies: day_start_min and
+     * day_end_min (minutes after midnight; each replaces its side of the window of the preferred
+     * visit time, and an explicit end lifts the 20:00 limit of careful travellers), stops_per_day
+     * (replaces the pace target; the rest still comes from the pace), access_tags (the tags
+     * column, used instead of the tags in accessibility_needs), children and seniors (children
+     * give the family rules, seniors the rules of the elderly tag), interest_weights, learned
+     * (from learnedPoints()), and origin_lat / origin_lng (the trip's starting point, for the
+     * Peninsular / East Malaysia rule).
      */
     public static function profile(array $pref): array
     {
@@ -156,19 +247,22 @@ final class PlannerRules
             ? array_values(array_map('strval', $pref['access_tags']))
             : (AccessibilityNeedsAnalysisService::storedTags((string)$pref['accessibility_needs'])
                 ?? AccessibilityNeedsAnalysisService::keywordTags((string)$pref['accessibility_needs'], $type));
+        // Seniors in the party bring the rules of the elderly tag; children the family rules.
+        if ((int)($pref['seniors'] ?? 0) > 0 && !in_array('elderly', $tags, true)) $tags[] = 'elderly';
+        $family = $type === 'family' || (int)($pref['children'] ?? 0) > 0;
         $has = static fn(string ...$wanted): bool => (bool)array_intersect($wanted, $tags);
-        $careful = $type === 'family' || $has('elderly', 'low_walking');
+        $careful = $family || $has('elderly', 'low_walking');
 
         [$start, $end] = self::VISIT_WINDOW[(string)$pref['preferred_visit_time']];
         if (isset($pref['day_start_min'])) $start = (int)$pref['day_start_min'];
         if (isset($pref['day_end_min'])) $end = (int)$pref['day_end_min'];
-        if ($careful) $end = min($end, self::CAREFUL_LATEST_END);
+        elseif ($careful) $end = min($end, self::CAREFUL_LATEST_END);
 
         $dayKm = self::DAILY_DISTANCE_KM[$transport][$pace] ?? 45.0;
         if ($has('low_walking', 'wheelchair', 'elderly')) $dayKm *= self::CAREFUL_DISTANCE_FACTOR;
 
         $visitMax = self::VISIT_MAX;
-        if ($type === 'family') $visitMax = min($visitMax, self::VISIT_MAX_FAMILY);
+        if ($family) $visitMax = min($visitMax, self::VISIT_MAX_FAMILY);
         if ($has('elderly', 'low_walking')) $visitMax = min($visitMax, self::VISIT_MAX_CAREFUL);
 
         $days = (int)$pref['trip_days'];
@@ -192,12 +286,15 @@ final class PlannerRules
             'avoid_heat' => $has('avoid_heat'),
             'elderly' => $has('elderly'),
             'careful' => $careful,
+            'family' => $family,
             'traveller_type' => $type,
             'transport' => $transport,
             'pace' => $pace,
             'visit_time' => (string)$pref['preferred_visit_time'],
             'dietary' => (string)$pref['dietary_preference'],
             'interests' => (array)$pref['interests'],
+            'interest_weights' => (array)($pref['interest_weights'] ?? []),
+            'learned' => (array)($pref['learned'] ?? []),
             'food_only' => (array)$pref['interests'] === ['food'],
             'states' => array_map('strtolower', (array)$pref['states']),
             'districts' => array_map('strtolower', (array)$pref['districts']),
@@ -278,6 +375,7 @@ final class PlannerRules
      *   trip_items  optional: the other planned items (item_type, estimated_cost) for the
      *               budget; without it the budget is not checked
      *   trip_km     km of all other planned legs;  reserve_km  km held back for legs not planned yet
+     *   finish_km, finish_min  optional, last day only: the leg from the place to the trip's end point
      *
      * @return array{ok:bool,reason:?string,start:int,end:int,wait:int}
      */
@@ -316,6 +414,14 @@ final class PlannerRules
             if ($start === null) return $fail(self::timeReason($hours, $date, $arrive, $visit, $end));
         }
         if ($start - $arrive > self::MAX_WAIT_MIN) return $fail('WAIT');
+
+        // The last day: from this stop the trip's end point must be reached inside the day window
+        // and inside the hard daily distance (the leg to the end point counts).
+        if (isset($slot['finish_min'])) {
+            if ($start + $visit + (int)$slot['finish_min'] > $end) return $fail('FINISH');
+            $counted = (float)($slot['day_km'] ?? 0) + (!empty($slot['leg_counts']) ? $legKm : 0.0);
+            if ($counted + (float)($slot['finish_km'] ?? 0) > (float)$profile['hard_km']) return $fail('FINISH');
+        }
 
         if (array_key_exists('trip_items', $slot) && $slot['trip_items'] !== null) {
             $cost = self::placeCost($place);
@@ -358,6 +464,25 @@ final class PlannerRules
     {
         $service = new CostEstimationService((string)$profile['transport'], (int)$profile['days'], (float)$profile['budget'], (string)$profile['traveller_type'], (int)$profile['party']);
         return $service->calculate($items, $km, (float)$profile['hotel_rate'], self::MEALS_PER_DAY, (float)$profile['meal_price']);
+    }
+
+    /**
+     * The score adjustment per category from the traveller's own ratings.
+     *
+     * @param array<string,array{avg:float,count:int}> $ratings per category
+     * @return array<string,array{points:float,avg:float,count:int}>
+     */
+    public static function learnedPoints(array $ratings): array
+    {
+        $out = [];
+        foreach ($ratings as $category => $r) {
+            $count = (int)($r['count'] ?? 0);
+            if ($count <= 0) continue;
+            $avg = max(1.0, min(5.0, (float)$r['avg']));
+            $points = self::LEARN_MAX_POINTS * (($avg - 3.0) / 2.0) * (min($count, self::LEARN_FULL_AT) / self::LEARN_FULL_AT);
+            $out[strtolower((string)$category)] = ['points' => round($points, 2), 'avg' => round($avg, 1), 'count' => $count];
+        }
+        return $out;
     }
 
     /** [start, end] dates of a festival, or null when they are missing or not in order. */

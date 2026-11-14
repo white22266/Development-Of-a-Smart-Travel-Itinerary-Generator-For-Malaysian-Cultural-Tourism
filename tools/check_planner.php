@@ -37,15 +37,16 @@ if (isset($options['help'])) {
 putenv('ROUTING_ESTIMATES_ONLY=' . (isset($options['road']) ? '0' : '1'));
 
 // =====================================================================================
-// THE PLANNER PIPELINE. This is the only part that should change when the planner gets a
-// single entry point. It mirrors itinerary/generate_itinerary.php (lines 66-97).
+// THE PLANNER PIPELINE. The only call into the planner: ItineraryGenerator::generate(), with
+// the same trip fields as itinerary/generate_itinerary.php passes (the end point only when
+// the traveller chose one).
 // =====================================================================================
 require_once __DIR__ . '/../services/ItineraryGenerator.php';
 
 /**
  * Generate one itinerary as the generate page does.
  *
- * @param array{start_date:string,origin_name:string,origin_lat:float,origin_lng:float} $trip
+ * @param array{start_date:string,origin_name:string,origin_lat:float,origin_lng:float,end_name?:string,end_lat?:float,end_lng?:float} $trip
  * @return array{itinerary_id:int,notes:string[]} notes: steps that failed without stopping generation
  * @throws Throwable when generation fails (recorded as a GENERATE violation)
  */
@@ -57,9 +58,12 @@ function runPlannerPipeline(mysqli $conn, int $travellerId, int $preferenceId, a
 // =====================================================================================
 
 // ---------------------------------------------------------------------------------------
-// The intended rules, as numbers. Each names the place in the current code it was read from.
-// RB = services/RuleBasedItineraryPlannerService.php, CE = services/CostEstimationService.php,
-// RS = services/RouteService.php, PI = services/PlannerIntegrityService.php.
+// The intended rules, as numbers, written out here on their own. The notes in brackets say
+// where each number was first read: CE = services/CostEstimationService.php and
+// RS = services/RouteService.php (both current); RB and PI = the planner files before commit
+// 6be8df7 (RuleBasedItineraryPlannerService.php and PlannerIntegrityService.php, since deleted
+// and replaced by services/PlannerRules.php; see git history). The rules for the planner
+// inputs of migration 20261115_planner_inputs.sql follow the task that introduced them.
 // ---------------------------------------------------------------------------------------
 
 /** Visit stops per day for each pace (RB:200). */
@@ -129,6 +133,10 @@ const BUDGET_SPLIT_SLACK = 1.0;
 /** East Malaysia; everything else is Peninsular Malaysia. A point without a state: longitude 108 and above is east (RB:608-609 uses 109-120.5). */
 const EAST_STATES = ['sabah', 'sarawak', 'labuan'];
 const EAST_FROM_LNG = 108.0;
+/** A place the traveller rated this or lower is not suggested again. */
+const LOW_RATING = 2;
+/** WEIGHTS is judged only when both categories have at least this many places per trip day in the chosen area. */
+const WEIGHT_PLACES_PER_DAY = 4;
 
 // ---------------------------------------------------------------------------------------
 // Scenarios. Origins are real city centres or transport hubs of the chosen area.
@@ -213,13 +221,89 @@ const SCENARIOS = [
             'interests' => 'culture,heritage,food', 'preferred_states' => 'Sarawak', 'preferred_districts' => ''],
         'trip' => ['start_date' => '2026-12-12', 'origin_name' => 'Kuching Waterfront', 'origin_lat' => 1.5590, 'origin_lng' => 110.3450],
     ],
+
+    // ---- Planner inputs (migration 20261115_planner_inputs.sql) ----------------------------
+    // Optional scenario keys: 'weights' (interest => 1|2|3), 'must' and 'avoid' (place selectors),
+    // 'ratings' (selectors with a 'rating'). A selector is ['name' => exact name],
+    // ['baseline' => n] (the n-th stop the same preference gets without places and ratings) or
+    // ['baseline_first' => n] (avoid only: its first n stops that are not must-see places).
+    'kl_family_car_packed_explicit_window_3_stops' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'family', 'party_size' => 4,
+            'travel_pace' => 'packed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum,nature', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '',
+            'day_start_time' => '10:00:00', 'day_end_time' => '21:30:00', 'stops_per_day' => 3],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'melaka_couple_with_child_and_senior' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1200, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 4,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,museum,culture,nature', 'preferred_states' => 'Melaka', 'preferred_districts' => '',
+            'adults' => 2, 'children' => 1, 'seniors' => 1],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'Dutch Square (Stadthuys)', 'origin_lat' => 2.1942, 'origin_lng' => 102.2489],
+    ],
+    'selangor_solo_car_tags_column' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1000, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'relaxed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any',
+            'accessibility_needs' => 'Fine with long days | AI: elderly,low_walking',
+            'interests' => 'nature,culture,heritage', 'preferred_states' => 'Selangor', 'preferred_districts' => '',
+            'accessibility_tags' => 'avoid_heat,wheelchair'],
+        'trip' => ['start_date' => '2026-12-12', 'origin_name' => 'Shah Alam city centre', 'origin_lat' => 3.0733, 'origin_lng' => 101.5185],
+    ],
+    'kl_couple_car_museum_loved_heritage_little' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'weights' => ['museum' => 3, 'heritage' => 1],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'kl_couple_car_must_and_avoid' => [
+        'pref' => ['trip_days' => 3, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'must' => [['name' => 'Islamic Arts Museum Malaysia (IAMM)'], ['name' => 'Thean Hou Temple'], ['name' => 'Masjid Saidina Othman Ibn Affan'],
+                   ['name' => 'George Town Festival']],
+        'avoid' => [['baseline_first' => 4]],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'penang_group_transit_must_festival' => [
+        'pref' => ['trip_days' => 3, 'budget' => 4000, 'budget_tier' => 'normal', 'transport_type' => 'public_transport', 'traveller_type' => 'group', 'party_size' => 6,
+            'travel_pace' => 'packed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'afternoon', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage', 'preferred_states' => 'Penang', 'preferred_districts' => ''],
+        'must' => [['name' => 'George Town Festival'], ['name' => 'Rainforest World Music Festival']],
+        'trip' => ['start_date' => '2026-08-01', 'origin_name' => 'Komtar bus hub, George Town', 'origin_lat' => 5.4145, 'origin_lng' => 100.3292],
+    ],
+    'kl_solo_car_end_at_klia' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1000, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '',
+            'day_end_time' => '17:00:00'],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865,
+                   'end_name' => 'KLIA Terminal 1', 'end_lat' => 2.7456, 'end_lng' => 101.7072],
+    ],
+    'melaka_solo_walking_end_at_ayer_keroh' => [
+        'pref' => ['trip_days' => 1, 'budget' => 300, 'budget_tier' => 'normal', 'transport_type' => 'walking', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'relaxed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,museum', 'preferred_states' => 'Melaka', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'Dutch Square (Stadthuys)', 'origin_lat' => 2.1942, 'origin_lng' => 102.2489,
+                   'end_name' => 'Zoo Melaka, Ayer Keroh', 'end_lat' => 2.2766, 'end_lng' => 102.2992],
+    ],
+    'kl_couple_car_learns_from_ratings' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'ratings' => [['baseline' => 0, 'rating' => 1], ['baseline' => 1, 'rating' => 2],
+                      ['name' => 'Kampung Baru', 'rating' => 5], ['name' => 'Dataran Merdeka', 'rating' => 5],
+                      ['name' => 'Sultan Abdul Samad Building', 'rating' => 5], ['name' => 'National Mosque of Malaysia', 'rating' => 4],
+                      ['name' => 'Masjid India', 'rating' => 5]],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
 ];
 
 const TEST_EMAIL = 'planner-check@example.test';
 
 // ---------------------------------------------------------------------------------------
-// Connections: one for the pipeline (it shadows cultural_places with a temporary table) and
-// one for the checker, which reads the permanent tables.
+// Connections: one for the pipeline (it runs its own transaction) and one for the checker,
+// which reads only what was committed.
 // ---------------------------------------------------------------------------------------
 require __DIR__ . '/../config/db_connect.php';
 $pipelineConn = $conn;
@@ -248,6 +332,7 @@ if (isset($options['scenario'])) {
 }
 
 set_time_limit(0);
+$roadRouting = isset($options['road']);
 $travellerId = ensureTestTraveller($checkConn);
 $results = [];
 foreach ($selected as $name => $scenario) {
@@ -293,7 +378,8 @@ function testTravellerCounts(mysqli $conn, int $travellerId): array
         $stmt->close();
         return $n;
     };
-    return ['traveller_id' => $travellerId, 'itineraries' => $count('itineraries'), 'preferences' => $count('traveller_preferences')];
+    return ['traveller_id' => $travellerId, 'itineraries' => $count('itineraries'), 'preferences' => $count('traveller_preferences'),
+            'ratings' => $count('ratings_reviews')];
 }
 
 function createPreference(mysqli $conn, int $travellerId, array $p): int
@@ -301,16 +387,138 @@ function createPreference(mysqli $conn, int $travellerId, array $p): int
     $stmt = $conn->prepare('
         INSERT INTO traveller_preferences
             (traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type, party_size, travel_pace,
-             dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+             dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts,
+             day_start_time, day_end_time, stops_per_day, adults, children, seniors, accessibility_tags)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
     ');
-    $stmt->bind_param('iidsssisssssss', $travellerId, $p['trip_days'], $p['budget'], $p['budget_tier'], $p['transport_type'], $p['traveller_type'],
+    $dayStart = $p['day_start_time'] ?? null;
+    $dayEnd = $p['day_end_time'] ?? null;
+    $stops = $p['stops_per_day'] ?? null;
+    $adults = $p['adults'] ?? null;
+    $children = $p['children'] ?? null;
+    $seniors = $p['seniors'] ?? null;
+    $tags = $p['accessibility_tags'] ?? null;
+    $stmt->bind_param('iidsssisssssssssiiiis', $travellerId, $p['trip_days'], $p['budget'], $p['budget_tier'], $p['transport_type'], $p['traveller_type'],
         $p['party_size'], $p['travel_pace'], $p['dietary_preference'], $p['preferred_visit_time'], $p['accessibility_needs'], $p['interests'],
-        $p['preferred_states'], $p['preferred_districts']);
+        $p['preferred_states'], $p['preferred_districts'], $dayStart, $dayEnd, $stops, $adults, $children, $seniors, $tags);
     $stmt->execute();
     $id = (int)$stmt->insert_id;
     $stmt->close();
     return $id;
+}
+
+/** Interest weights and must-see / avoid places of a preference, stored as the preference form stores them. */
+function addPreferenceInputs(mysqli $conn, int $preferenceId, array $weights, array $must, array $avoid): void
+{
+    if ($weights) {
+        $stmt = $conn->prepare('INSERT INTO traveller_preference_interests (preference_id, interest_id, weight) SELECT ?, interest_id, ? FROM travel_interests WHERE interest_code = ?');
+        foreach ($weights as $code => $weight) {
+            $weight = (int)$weight;
+            $code = (string)$code;
+            $stmt->bind_param('iis', $preferenceId, $weight, $code);
+            $stmt->execute();
+        }
+        $stmt->close();
+    }
+    $stmt = $conn->prepare('INSERT INTO traveller_preference_places (preference_id, place_id, wish) VALUES (?,?,?)');
+    foreach (['must' => $must, 'avoid' => $avoid] as $wish => $ids) {
+        foreach ($ids as $placeId) {
+            $stmt->bind_param('iis', $preferenceId, $placeId, $wish);
+            $stmt->execute();
+        }
+    }
+    $stmt->close();
+}
+
+/** The test traveller's own ratings: none, or exactly the given place_id => rating. */
+function setTestRatings(mysqli $conn, int $travellerId, array $ratings): void
+{
+    $stmt = $conn->prepare('DELETE FROM ratings_reviews WHERE traveller_id = ?');
+    $stmt->bind_param('i', $travellerId);
+    $stmt->execute();
+    $stmt->close();
+    if (!$ratings) return;
+    $stmt = $conn->prepare("INSERT INTO ratings_reviews (place_id, traveller_id, rating, review_text) VALUES (?,?,?,'planner check')");
+    foreach ($ratings as $placeId => $rating) {
+        $stmt->bind_param('iii', $placeId, $travellerId, $rating);
+        $stmt->execute();
+    }
+    $stmt->close();
+}
+
+/** The place_ids of the visit stops of an itinerary, in visiting order. */
+function storedStops(mysqli $conn, int $itineraryId): array
+{
+    $stmt = $conn->prepare("SELECT place_id FROM itinerary_items WHERE itinerary_id = ? AND place_id IS NOT NULL AND item_type IN ('attraction','food','festival') ORDER BY day_no, sequence_no");
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $ids = array_map(static fn($r) => (int)$r[0], $stmt->get_result()->fetch_all());
+    $stmt->close();
+    return $ids;
+}
+
+/** One place selector to a place_id, or null. */
+function resolvePlace(mysqli $conn, array $selector, array $baseline): ?int
+{
+    if (isset($selector['baseline'])) return $baseline[(int)$selector['baseline']] ?? null;
+    if (isset($selector['name'])) {
+        $stmt = $conn->prepare('SELECT place_id FROM cultural_places WHERE name = ? ORDER BY place_id LIMIT 1');
+        $name = (string)$selector['name'];
+        $stmt->bind_param('s', $name);
+        $stmt->execute();
+        $row = $stmt->get_result()->fetch_row();
+        $stmt->close();
+        return $row ? (int)$row[0] : null;
+    }
+    return null;
+}
+
+/**
+ * The scenario's place inputs as place ids. A baseline (the plan of the same preference without
+ * places and ratings) is generated first when a selector needs it, and deleted again.
+ *
+ * @return array{must:int[],avoid:int[],ratings:array<int,int>,errors:string[]}
+ */
+function resolveScenarioPlaces(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, array $scenario): array
+{
+    $out = ['must' => [], 'avoid' => [], 'ratings' => [], 'errors' => []];
+    $selectors = array_merge($scenario['must'] ?? [], $scenario['avoid'] ?? [], $scenario['ratings'] ?? []);
+    $baseline = [];
+    foreach ($selectors as $sel) {
+        if (isset($sel['baseline']) || isset($sel['baseline_first'])) {
+            $preferenceId = createPreference($checkConn, $travellerId, $scenario['pref']);
+            try {
+                $baseline = storedStops($checkConn, runPlannerPipeline($pipelineConn, $travellerId, $preferenceId, $scenario['trip'])['itinerary_id']);
+            } catch (Throwable $e) {
+                $out['errors'][] = 'baseline failed: ' . $e->getMessage();
+            }
+            deleteScenarioData($checkConn, $travellerId, $preferenceId);
+            break;
+        }
+    }
+    foreach ($scenario['must'] ?? [] as $sel) {
+        $id = resolvePlace($checkConn, $sel, $baseline);
+        if ($id === null) $out['errors'][] = 'must-see place not found: ' . json_encode($sel);
+        elseif (!in_array($id, $out['must'], true)) $out['must'][] = $id;
+    }
+    foreach ($scenario['avoid'] ?? [] as $sel) {
+        if (isset($sel['baseline_first'])) {
+            $left = array_values(array_diff($baseline, $out['must']));
+            $picked = array_slice($left, 0, (int)$sel['baseline_first']);
+            if (count($picked) < (int)$sel['baseline_first']) $out['errors'][] = 'baseline has too few stops to avoid';
+            foreach ($picked as $id) if (!in_array($id, $out['avoid'], true)) $out['avoid'][] = $id;
+            continue;
+        }
+        $id = resolvePlace($checkConn, $sel, $baseline);
+        if ($id === null || in_array($id, $out['must'], true)) $out['errors'][] = 'avoid place not usable: ' . json_encode($sel);
+        elseif (!in_array($id, $out['avoid'], true)) $out['avoid'][] = $id;
+    }
+    foreach ($scenario['ratings'] ?? [] as $sel) {
+        $id = resolvePlace($checkConn, $sel, $baseline);
+        if ($id === null) $out['errors'][] = 'rated place not found: ' . json_encode($sel);
+        else $out['ratings'][$id] = (int)$sel['rating'];
+    }
+    return $out;
 }
 
 function deleteScenarioData(mysqli $conn, int $travellerId, int $preferenceId): void
@@ -331,7 +539,15 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     $result = ['scenario' => $name, 'itinerary_id' => null, 'days' => (int)$scenario['pref']['trip_days'], 'stops' => 0,
                'findings' => [], 'info' => [], 'seconds' => 0.0];
     $t0 = microtime(true);
+    // Every scenario starts from a traveller without ratings; the baseline is planned that way too.
+    setTestRatings($checkConn, $travellerId, []);
+    $places = resolveScenarioPlaces($pipelineConn, $checkConn, $travellerId, $scenario);
+    foreach ($places['errors'] as $error) $result['findings'][] = finding('SETUP', 'violation', $name, null, null, $error);
+    $scenario['resolved'] = $places;
+    if ($places['must'] || $places['avoid'] || $places['ratings']) $result['info']['places'] = array_diff_key($places, ['errors' => true]);
     $preferenceId = createPreference($checkConn, $travellerId, $scenario['pref']);
+    addPreferenceInputs($checkConn, $preferenceId, $scenario['weights'] ?? [], $places['must'], $places['avoid']);
+    setTestRatings($checkConn, $travellerId, $places['ratings']);
     try {
         $out = runPlannerPipeline($pipelineConn, $travellerId, $preferenceId, $scenario['trip']);
         $result['itinerary_id'] = $out['itinerary_id'];
@@ -342,6 +558,7 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     } catch (Throwable $e) {
         $result['findings'][] = finding('GENERATE', 'violation', $name, null, null, get_class($e) . ': ' . $e->getMessage());
     }
+    setTestRatings($checkConn, $travellerId, []);
     if (!$keep) deleteScenarioData($checkConn, $travellerId, $preferenceId);
     $result['seconds'] = round(microtime(true) - $t0, 1);
     return $result;
@@ -400,8 +617,8 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     for ($d = 1; $d <= $tripDays; $d++) {
         $n = count($byDay[$d] ?? []);
         if ($n === 0) $add('DAYS', 'violation', $d, null, 'day has no visit stop');
-        if ($n < $profile['target']) $add('STOPS', 'warning', $d, null, "{$n} stops, pace target {$profile['target']} (short by " . ($profile['target'] - $n) . ')');
-        if ($n > $profile['target']) $add('STOPS', 'violation', $d, null, "{$n} stops, pace target {$profile['target']}");
+        if ($n < $profile['target']) $add('STOPS', 'warning', $d, null, "{$n} stops, target {$profile['target']} (short by " . ($profile['target'] - $n) . ')');
+        if ($n > $profile['target']) $add('STOPS', 'violation', $d, null, "{$n} stops, target {$profile['target']}");
     }
     foreach (array_keys($byDay) as $d) {
         if ($d < 1 || $d > $tripDays) $add('DAYS', 'violation', $d, null, "stop on day {$d} outside the trip of {$tripDays} day(s)");
@@ -420,7 +637,9 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     $originPoint = [(float)$it['origin_lat'], (float)$it['origin_lng']];
     $originEast = (float)$it['origin_lng'] >= EAST_FROM_LNG;
     $previous = $originPoint;
-    $access = strtolower((string)$pref['accessibility_needs']);
+    $tags = $profile['tags'];
+    $dayKmByDay = [];
+    $lastVisit = null;
 
     foreach ($byDay as $dayNo => $dayVisits) {
         $date = (new DateTimeImmutable((string)$it['start_date']))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
@@ -450,7 +669,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                     }
                 }
                 // START and HARD_END
-                if ($start < $profile['start']) $add('START', 'violation', $dayNo, $title, 'starts ' . hm($start) . ', earliest ' . hm($profile['start']) . " ({$pref['preferred_visit_time']})");
+                if ($start < $profile['start']) $add('START', 'violation', $dayNo, $title, 'starts ' . hm($start) . ', earliest ' . hm($profile['start']) . " ({$profile['window_source']})");
                 if ($end > $profile['hard_end']) $add('HARD_END', 'violation', $dayNo, $title, 'ends ' . hm($end) . ', latest ' . hm($profile['hard_end']));
                 // DURATION
                 $length = $end - $start;
@@ -472,7 +691,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                     }
                 }
                 // ACCESS: heat
-                if (hasNeed($access, ['avoid_heat', 'avoid heat']) && (int)($v['is_outdoor'] ?? 0) === 1) {
+                if (hasNeed($tags, ['avoid_heat']) && (int)($v['is_outdoor'] ?? 0) === 1) {
                     if ($start >= HEAT_FROM && $start <= HEAT_TO) {
                         $add('ACCESS', 'violation', $dayNo, $title, 'outdoor stop for avoid-heat traveller arrives ' . hm($start) . ' (11:00-16:00)');
                     } elseif ($start < HEAT_FROM && $end > HEAT_FROM) {
@@ -484,10 +703,10 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
 
             // ACCESS: step-free and elderly
             $text = (string)$v['place_name'] . ' ' . (string)$v['description'] . ' ' . $category;
-            if (hasNeed($access, ['wheelchair', 'avoid_stairs', 'avoid stairs']) && preg_match(STEP_FREE_BLOCKED, $text, $m)) {
+            if (hasNeed($tags, ['wheelchair', 'avoid_stairs', 'step_free']) && preg_match(STEP_FREE_BLOCKED, $text, $m)) {
                 $add('ACCESS', 'violation', $dayNo, $title, "step-free traveller sent to a place described with \"{$m[0]}\"");
             }
-            if (hasNeed($access, ['elderly']) && (int)($v['is_outdoor'] ?? 0) === 1 && (int)($v['visit_duration_min'] ?? 90) > ELDERLY_LONG_VISIT_MIN) {
+            if (hasNeed($tags, ['elderly']) && (int)($v['is_outdoor'] ?? 0) === 1 && (int)($v['visit_duration_min'] ?? 90) > ELDERLY_LONG_VISIT_MIN) {
                 $add('ACCESS', 'violation', $dayNo, $title, "long outdoor place ({$v['visit_duration_min']} min) for an elderly traveller");
             }
 
@@ -546,11 +765,83 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 if ($km > $legLimit) $add('DISTANCE', 'violation', $dayNo, $title, sprintf('one leg of %.1f km, plausible at most %.0f km by %s', $km, $legLimit, $pref['transport_type']));
             }
             $previous = $point;
+            if ($dayNo === $tripDays && $end !== null) $lastVisit = ['title' => $title, 'end' => $end, 'point' => $point];
         }
+        $dayKmByDay[$dayNo] = $dayKm;
         if ($dayKm > $profile['hard_km']) {
             $add('DISTANCE', 'violation', $dayNo, null, sprintf('day travels %.1f km, hard limit %.1f km (recommended %.1f)', $dayKm, $profile['hard_km'], $profile['day_km']));
         } elseif ($dayKm > $profile['day_km']) {
             $add('DISTANCE', 'warning', $dayNo, null, sprintf('day travels %.1f km, recommended %.1f km', $dayKm, $profile['day_km']));
+        }
+    }
+
+    // AVOID, MUST, RATED and LEARN: the traveller's own place choices and ratings.
+    $resolved = $scenario['resolved'] ?? ['must' => [], 'avoid' => [], 'ratings' => []];
+    $visitIds = array_map(static fn($v) => (int)$v['place_id'], array_filter($visits, static fn($v) => $v['place_id'] !== null));
+    foreach ($visits as $v) {
+        $pid = (int)($v['place_id'] ?? 0);
+        if (in_array($pid, $resolved['avoid'], true)) $add('AVOID', 'violation', (int)$v['day_no'], (string)$v['item_title'], 'a place to avoid is in the itinerary');
+        if (isset($resolved['ratings'][$pid]) && $resolved['ratings'][$pid] <= LOW_RATING && !in_array($pid, $resolved['must'], true)) {
+            $add('RATED', 'violation', (int)$v['day_no'], (string)$v['item_title'], "suggested again after the traveller rated it {$resolved['ratings'][$pid]}");
+        }
+    }
+    $notes = array_values(array_filter($items, static fn($i) => strtolower((string)$i['item_type']) === 'note'));
+    foreach ($resolved['must'] as $pid) {
+        if (in_array($pid, $visitIds, true)) continue;
+        $placeName = placeName($conn, $pid);
+        $named = false;
+        foreach ($notes as $n) {
+            if ($placeName !== '' && (str_contains((string)$n['item_title'], $placeName) || str_contains((string)$n['notes'], $placeName))) $named = true;
+        }
+        if (!$named) $add('MUST', 'violation', null, $placeName, 'must-see place neither in the itinerary nor named in a note row');
+    }
+    $liked = array_filter($resolved['ratings'], static fn($r) => $r >= 4);
+    if ($liked) {
+        $told = false;
+        foreach ($visits as $v) if (str_contains((string)$v['notes'], 'you rated')) $told = true;
+        if (!$told) $add('LEARN', 'warning', null, null, 'the traveller rated places 4 or 5, but no stop says so in its reason');
+    }
+
+    // FINISH: the end point is stored, and reachable from the last stop by the end of the window.
+    if (isset($scenario['trip']['end_lat'])) {
+        $endPoint = [(float)$scenario['trip']['end_lat'], (float)$scenario['trip']['end_lng']];
+        if ($it['end_lat'] === null || abs((float)$it['end_lat'] - $endPoint[0]) > 1e-5 || abs((float)$it['end_lng'] - $endPoint[1]) > 1e-5) {
+            $add('FINISH', 'violation', null, null, 'end point not stored with the itinerary');
+        }
+        if ($lastVisit !== null) {
+            $straight = haversineKm($lastVisit['point'][0], $lastVisit['point'][1], $endPoint[0], $endPoint[1]);
+            // Estimates: the road is 1.3 x the straight line (RS); on real roads only a lower bound is sure.
+            $roadKm = $GLOBALS['roadRouting'] ? LEG_KM_LOW * $straight : $straight * ROAD_FACTOR;
+            $nominal = nominalMinutes($pref['transport_type'], $roadKm);
+            $minutes = $GLOBALS['roadRouting'] ? max(0, (int)floor(LEG_MIN_LOW * $nominal) - 2) : $nominal;
+            if ($lastVisit['end'] + $minutes > $profile['hard_end']) {
+                $add('FINISH', 'violation', $tripDays, $lastVisit['title'], sprintf('last visit ends %s, %d min to the end point, day ends %s', hm($lastVisit['end']), $minutes, hm($profile['hard_end'])));
+            }
+            $lastKm = ($dayKmByDay[$tripDays] ?? 0.0) + $roadKm;
+            if ($lastKm > $profile['hard_km']) {
+                $add('FINISH', 'violation', $tripDays, null, sprintf('last day travels %.1f km with the leg to the end point, hard limit %.1f km', $lastKm, $profile['hard_km']));
+            }
+        }
+    }
+
+    // WEIGHTS: a loved interest gets at least as many stops as one liked a little.
+    $weights = $scenario['weights'] ?? [];
+    $loved = array_keys(array_filter($weights, static fn($w) => (int)$w === 3));
+    $little = array_keys(array_filter($weights, static fn($w) => (int)$w === 1));
+    if ($loved && $little) {
+        $perCategory = [];
+        foreach ($visits as $v) {
+            $c = strtolower((string)($v['category'] ?? ''));
+            $perCategory[$c] = ($perCategory[$c] ?? 0) + 1;
+        }
+        foreach ($loved as $a) {
+            foreach ($little as $b) {
+                $enough = WEIGHT_PLACES_PER_DAY * $tripDays;
+                if (placesInArea($conn, $states, $a) < $enough || placesInArea($conn, $states, $b) < $enough) continue;
+                if (($perCategory[$a] ?? 0) < ($perCategory[$b] ?? 0)) {
+                    $add('WEIGHTS', 'warning', null, null, sprintf('loved "%s" got %d stops, "%s" liked a little got %d', $a, $perCategory[$a] ?? 0, $b, $perCategory[$b] ?? 0));
+                }
+            }
         }
     }
 
@@ -587,21 +878,30 @@ function intendedProfile(array $pref): array
 {
     $pace = $pref['travel_pace'];
     $type = $pref['traveller_type'];
-    $access = strtolower((string)$pref['accessibility_needs']);
-    $careful = $type === 'family' || hasNeed($access, ['elderly', 'low_walking']);
+    // Who is travelling: seniors bring the rules of the elderly tag, children the family rules.
+    $tags = intendedTags($pref);
+    if ((int)($pref['seniors'] ?? 0) > 0 && !in_array('elderly', $tags, true)) $tags[] = 'elderly';
+    $family = $type === 'family' || (int)($pref['children'] ?? 0) > 0;
+    $careful = $family || hasNeed($tags, ['elderly', 'low_walking']);
     $rest = PACE_REST_MIN[$pace] + ($careful ? REST_EXTRA_CAREFUL : 0) + ($type === 'group' ? REST_EXTRA_GROUP : 0);
     $window = VISIT_WINDOW[$pref['preferred_visit_time']];
-    $hardEnd = $careful ? min($window['hard_end'], CAREFUL_HARD_END) : $window['hard_end'];
+    // An explicit time replaces its side of the window; the 20:00 limit holds only without an explicit end.
+    $explicitStart = toMinutes($pref['day_start_time'] ?? null);
+    $explicitEnd = toMinutes($pref['day_end_time'] ?? null);
+    $start = $explicitStart ?? $window['start'];
+    $hardEnd = $explicitEnd ?? ($careful ? min($window['hard_end'], CAREFUL_HARD_END) : $window['hard_end']);
     $dayKm = DAILY_DISTANCE_KM[$pref['transport_type']][$pace];
-    if (hasNeed($access, ['low_walking', 'wheelchair', 'elderly'])) $dayKm *= CAREFUL_DISTANCE_FACTOR;
+    if (hasNeed($tags, ['low_walking', 'wheelchair', 'elderly'])) $dayKm *= CAREFUL_DISTANCE_FACTOR;
     $visitMax = VISIT_MAX;
-    if ($type === 'family') $visitMax = min($visitMax, VISIT_MAX_FAMILY);
-    if (hasNeed($access, ['elderly', 'low_walking'])) $visitMax = min($visitMax, VISIT_MAX_CAREFUL);
+    if ($family) $visitMax = min($visitMax, VISIT_MAX_FAMILY);
+    if (hasNeed($tags, ['elderly', 'low_walking'])) $visitMax = min($visitMax, VISIT_MAX_CAREFUL);
     return [
-        'target' => PACE_TARGET[$pace],
+        'target' => isset($pref['stops_per_day']) ? (int)$pref['stops_per_day'] : PACE_TARGET[$pace],
         'rest' => $rest,
-        'start' => $window['start'],
+        'start' => $start,
+        'window_source' => $explicitStart !== null ? 'explicit start time' : $pref['preferred_visit_time'],
         'hard_end' => $hardEnd,
+        'tags' => $tags,
         'day_km' => $dayKm,
         'hard_km' => max($dayKm * HARD_DISTANCE_FACTOR, $dayKm + HARD_DISTANCE_EXTRA_KM),
         'visit_max' => $visitMax,
@@ -730,12 +1030,59 @@ function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float
     return 6371.0 * 2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a)));
 }
 
-function hasNeed(string $access, array $words): bool
+/** Whether any of the wanted accessibility tags is among the traveller's tags. */
+function hasNeed(array $tags, array $wanted): bool
 {
-    foreach ($words as $w) {
-        if (str_contains($access, $w)) return true;
+    return (bool)array_intersect($tags, $wanted);
+}
+
+/**
+ * The traveller's accessibility tags: the accessibility_tags column when it is set; otherwise
+ * the list after the last "AI:" in accessibility_needs; otherwise the tag names written as
+ * whole words in the traveller's own text.
+ */
+function intendedTags(array $pref): array
+{
+    if (isset($pref['accessibility_tags'])) return array_map('strtolower', csv((string)$pref['accessibility_tags']));
+    $text = strtolower((string)$pref['accessibility_needs']);
+    $pos = strrpos($text, 'ai:');
+    if ($pos !== false) {
+        return array_values(array_unique(array_map(static fn($t) => str_replace([' ', '-'], '_', $t), csv(substr($text, $pos + 3)))));
     }
-    return false;
+    $tags = [];
+    foreach (['elderly', 'wheelchair', 'avoid_stairs', 'low_walking', 'avoid_heat', 'step_free'] as $tag) {
+        if (preg_match('/\b' . str_replace('_', '[ _-]', $tag) . '\b/', $text)) $tags[] = $tag;
+    }
+    return $tags;
+}
+
+function placeName(mysqli $conn, int $placeId): string
+{
+    $stmt = $conn->prepare('SELECT name FROM cultural_places WHERE place_id = ?');
+    $stmt->bind_param('i', $placeId);
+    $stmt->execute();
+    $row = $stmt->get_result()->fetch_row();
+    $stmt->close();
+    return $row ? (string)$row[0] : '';
+}
+
+/** Active places with coordinates of one category in the chosen states (all states when none). */
+function placesInArea(mysqli $conn, array $states, string $category): int
+{
+    $sql = "SELECT COUNT(*) FROM cultural_places WHERE is_active = 1 AND latitude IS NOT NULL AND longitude IS NOT NULL AND LOWER(category) = ?";
+    $types = 's';
+    $args = [$category];
+    if ($states) {
+        $sql .= ' AND LOWER(state) IN (' . implode(',', array_fill(0, count($states), '?')) . ')';
+        $types .= str_repeat('s', count($states));
+        $args = array_merge($args, $states);
+    }
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param($types, ...$args);
+    $stmt->execute();
+    $n = (int)$stmt->get_result()->fetch_row()[0];
+    $stmt->close();
+    return $n;
 }
 
 function csv(string $text): array
@@ -815,5 +1162,5 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     printf("  %-12s %10d %9d\n", 'ALL', $sumV, $sumW);
     $noHours = array_sum(array_map(static fn($r) => $r['info']['no_usable_hours'] ?? 0, $results));
     echo "\nINFO: {$noHours} stop(s) at places without usable opening hours (not checked for OPEN_HOURS).\n";
-    echo "Test traveller {$after['traveller_id']} after the run: {$after['itineraries']} itinerary(ies), {$after['preferences']} preference(s).\n";
+    echo "Test traveller {$after['traveller_id']} after the run: {$after['itineraries']} itinerary(ies), {$after['preferences']} preference(s), {$after['ratings']} rating(s).\n";
 }

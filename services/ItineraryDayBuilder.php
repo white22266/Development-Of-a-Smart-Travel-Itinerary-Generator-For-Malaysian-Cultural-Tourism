@@ -13,6 +13,11 @@
 // Hard rules (opening hours, the day window, rest, distance limit, budget, accessibility,
 // dietary, festival dates, states) are never relaxed. The budget is a running constraint:
 // every candidate is checked against the projected trip total including itself.
+//
+// Must-see places given for the day are tried before any other stop at every step, with every
+// soft preference relaxed but every hard rule kept; the places still to come keep their room
+// in the day and have first call on the budget. On the last day of a trip with an end point,
+// every stop must leave time and distance to reach it (PlannerRules::check(), FINISH).
 
 require_once __DIR__ . '/PlannerRules.php';
 require_once __DIR__ . '/RouteService.php';
@@ -26,6 +31,12 @@ final class ItineraryDayBuilder
         4 => 'recommended daily distance relaxed to fill the day',
     ];
     private const LAST_LEVEL = 4;
+    /**
+     * Score of an interest match by weight (1 a little, 2 like, 3 love). Weight 2 scores what
+     * every interest scored before weights existed; one step is 10 points, more than twice the
+     * largest learned adjustment (PlannerRules::LEARN_MAX_POINTS).
+     */
+    public const INTEREST_POINTS = [1 => 15, 2 => 25, 3 => 35];
 
     private array $profile;
     private RouteService $route;
@@ -43,27 +54,61 @@ final class ItineraryDayBuilder
      * @param array $day  date, start [lat, lng], first_leg_exempt (day 1: the leg from the
      *                    trip's starting point is not counted), used (place_id => true), trip_items
      *                    and trip_km (the other days' items and km), reserve_km (held back for the
-     *                    days not planned yet), previous_theme (main category of the day before)
-     * @return array{stops:array,rejections:array<string,int>} stops in visiting order; rejections
-     *         counts the reasons candidates failed for the first stop (for an empty day)
+     *                    days not planned yet), previous_theme (main category of the day before),
+     *                    musts (must-see place rows for this day, not in $pool), finish (the
+     *                    trip's end point [lat, lng], last day only)
+     * @return array{stops:array,rejections:array<string,int>,unplaced:array<int,string>} stops in
+     *         visiting order; rejections counts the reasons candidates failed for the first stop
+     *         (for an empty day); unplaced: must-see place_id => reason code for those not planned
      */
     public function build(array $pool, array $day): array
     {
         $state = self::startState($day, $this->profile);
+        $musts = array_values((array)($day['musts'] ?? []));
+        $target = (int)$this->profile['target'];
         $stops = [];
         $rejections = [];
-        while (count($stops) < (int)$this->profile['target']) {
-            if ($stops) {
-                $ranked = $this->ranked($pool, $day, $state);
-            } else {
-                $ranked = $this->ranked($pool, $day, $state, 1, $rejections);
+        while (count($stops) < $target) {
+            $stop = null;
+            if ($musts) {
+                $ignored = null;
+                $stop = $this->ranked($musts, $day, $state, 1, $ignored, true)[0] ?? null;
+                if ($stop !== null) {
+                    $placed = (int)$stop['place']['place_id'];
+                    $musts = array_values(array_filter($musts, static fn(array $m): bool => (int)$m['place_id'] !== $placed));
+                }
             }
-            if (!$ranked) break;
-            $stop = $ranked[0];
+            if ($stop === null) {
+                // The rest of the day is kept for the must-see places still to come.
+                if (count($stops) + count($musts) >= $target) break;
+                // They also have first call on the budget.
+                $regular = $state;
+                foreach ($musts as $m) {
+                    $regular['trip_items'][] = ['item_type' => PlannerRules::itemType($m), 'estimated_cost' => PlannerRules::placeCost($m)];
+                }
+                $ranked = $stops ? $this->ranked($pool, $day, $regular) : $this->ranked($pool, $day, $regular, 1, $rejections);
+                if (!$ranked) break;
+                $stop = $ranked[0];
+            }
             $stops[] = $stop;
             $state = self::advance($state, $stop, $this->profile);
         }
-        return ['stops' => $stops, 'rejections' => $rejections];
+        $unplaced = [];
+        foreach ($musts as $m) $unplaced[(int)$m['place_id']] = $this->mustReason($m, $day, $state);
+        return ['stops' => $stops, 'rejections' => $rejections, 'unplaced' => $unplaced];
+    }
+
+    /** Why a must-see place found no slot in a day: at the day's start, or else at its end. */
+    private function mustReason(array $place, array $day, array $endState): string
+    {
+        $reason = null;
+        foreach ([self::startState($day, $this->profile), $endState] as $state) {
+            $rejections = [];
+            if ($this->ranked([$place], $day, $state, 1, $rejections, true)) continue;
+            $here = array_key_first($rejections);
+            if ($here !== null && ($reason === null || $reason === 'WAIT')) $reason = $here;
+        }
+        return $reason ?? 'ROOM';
     }
 
     /** The state of a day before its first stop. */
@@ -102,13 +147,15 @@ final class ItineraryDayBuilder
      * any (ties broken by place_id).
      *
      * @param array|null $rejections when given, counts why candidates failed (at the last level)
+     * @param bool       $must       the pool holds must-see places: no soft preference applies
      */
-    public function ranked(array $pool, array $day, array $state, int $limit = 1, ?array &$rejections = null): array
+    public function ranked(array $pool, array $day, array $state, int $limit = 1, ?array &$rejections = null, bool $must = false): array
     {
         $date = (string)$day['date'];
         $legCounts = !$state['first_leg'];
+        $finish = $day['finish'] ?? null;
         $evaluated = [];   // place index => [segment, check] for reuse across levels
-        for ($level = 0; $level <= self::LAST_LEVEL; $level++) {
+        for ($level = $must ? self::LAST_LEVEL : 0; $level <= self::LAST_LEVEL; $level++) {
             $found = [];
             foreach ($pool as $index => $place) {
                 if (isset($state['used'][(int)$place['place_id']])) continue;
@@ -119,6 +166,9 @@ final class ItineraryDayBuilder
                 $seg = $evaluated[$index][0];
                 if (!$this->softAllows($place, $level, $state, (float)$seg['distance_km'], $legCounts)) continue;
                 if ($evaluated[$index][1] === null) {
+                    $toFinish = $finish !== null
+                        ? $this->route->getSegment((float)$place['latitude'], (float)$place['longitude'], (float)$finish[0], (float)$finish[1])
+                        : null;
                     $evaluated[$index][1] = PlannerRules::check($place, [
                         'date' => $date,
                         'arrive' => (int)$state['clock'] + (int)$seg['travel_time_min'],
@@ -129,7 +179,7 @@ final class ItineraryDayBuilder
                         'trip_items' => $state['trip_items'],
                         'trip_km' => (float)$state['trip_km'],
                         'reserve_km' => (float)($day['reserve_km'] ?? 0),
-                    ], $this->profile);
+                    ] + ($toFinish !== null ? ['finish_km' => (float)$toFinish['distance_km'], 'finish_min' => (int)$toFinish['travel_time_min']] : []), $this->profile);
                 }
                 $check = $evaluated[$index][1];
                 if (!$check['ok']) {
@@ -138,7 +188,7 @@ final class ItineraryDayBuilder
                     }
                     continue;
                 }
-                $scored = $this->score($place, $state, $day, (float)$seg['distance_km'], $check, $level);
+                $scored = $this->score($place, $state, $day, (float)$seg['distance_km'], $check, $must ? 0 : $level, $must);
                 $found[] = [
                     'place' => $place,
                     'point' => [(float)$place['latitude'], (float)$place['longitude']],
@@ -146,7 +196,8 @@ final class ItineraryDayBuilder
                     'end' => $check['end'],
                     'km' => round((float)$seg['distance_km'], 2),
                     'min' => (int)$seg['travel_time_min'],
-                    'level' => $level,
+                    'level' => $must ? 0 : $level,
+                    'must' => $must,
                     'tier' => $scored['tier'],
                     'score' => $scored['score'],
                     'reasons' => $scored['reasons'],
@@ -177,7 +228,7 @@ final class ItineraryDayBuilder
      *
      * @return array{score:float,tier:int,reasons:string[]}
      */
-    private function score(array $place, array $state, array $day, float $legKm, array $check, int $level): array
+    private function score(array $place, array $state, array $day, float $legKm, array $check, int $level, bool $must = false): array
     {
         $p = $this->profile;
         $score = 0.0;
@@ -186,10 +237,25 @@ final class ItineraryDayBuilder
 
         $interestMatch = in_array($category, $p['interests'], true);
         $districtMatch = $p['districts'] && in_array(strtolower((string)$place['district']), $p['districts'], true);
-        if ($interestMatch) { $score += 25; $reasons[] = 'interest match'; }
+        if ($interestMatch) {
+            $weight = (int)($p['interest_weights'][$category] ?? 2);
+            $score += self::INTEREST_POINTS[$weight] ?? self::INTEREST_POINTS[2];
+            $reasons[] = 'interest match';
+            if ($weight === 3) $reasons[] = 'an interest you love';
+        }
         if ($districtMatch) { $score += 12; $reasons[] = 'in a preferred district'; }
 
-        $suits = self::travellerSuitability($place, (string)$p['traveller_type']);
+        // Learned from the traveller's own ratings: small, and only between places that already
+        // passed every rule and every soft preference of this level.
+        $learned = $p['learned'][$category] ?? null;
+        if ($learned !== null && (float)$learned['points'] !== 0.0) {
+            $score += (float)$learned['points'];
+            if ((float)$learned['points'] > 0) {
+                $reasons[] = sprintf('you rated %s places %.1f/5 before', $category, (float)$learned['avg']);
+            }
+        }
+
+        $suits = self::travellerSuitability($place, !empty($p['family']) ? 'family' : (string)$p['traveller_type']);
         $score += $suits;
         if ($suits >= 10) $reasons[] = 'traveller type suitability';
 
@@ -215,6 +281,7 @@ final class ItineraryDayBuilder
 
         if ((int)$check['wait'] > 0) { $score -= (int)$check['wait'] / 6; $reasons[] = 'waits ' . (int)$check['wait'] . ' min for opening'; }
         if ($level > 0) array_unshift($reasons, self::RELAXED[$level]);   // first, so a cut note keeps it
+        if ($must) array_unshift($reasons, 'on your must-see list');
 
         $hasDistricts = (bool)$p['districts'];
         $tier = $hasDistricts
