@@ -6,7 +6,9 @@
 //
 //   1. PlannerRules builds the profile (with what the traveller's own ratings teach);
 //      PlannerCandidates loads the places. Places to avoid, and places the traveller rated
-//      1 or 2, are never candidates.
+//      1 or 2, are never candidates. The twin groups of the candidates (one landmark under two
+//      names, PlannerRules::sameLandmarks()) are worked out once: a trip holds one row of each,
+//      a must-see place keeps its twins out, and so does a place to avoid.
 //   2. Must-see places are given their days first: each only on a day where it can be visited
 //      under every hard rule, places near each other on the same day, and all of them counted
 //      in the budget before any other stop.
@@ -110,9 +112,11 @@ final class ItineraryGenerator
             $loaded = PlannerCandidates::load($this->conn, $pref);
             if (!$loaded) throw new RuntimeException('No active cultural places are available inside the selected state boundary.');
             $mustIds = (array)$pref['must_places'];
+            $profile['twins'] = PlannerCandidates::twinGroups($loaded);
             // Avoided places, must-see places (planned on their own) and places the traveller
             // rated low are not candidates; a must-see place stays wanted even if rated low.
-            $skip = array_flip((array)$pref['avoid_places']) + array_flip($mustIds) + $ratings['low'];
+            // The twins of an avoided or a must-see place go with it: the must-see place wins.
+            $skip = PlannerRules::withTwins($profile, (array)$pref['avoid_places']) + PlannerRules::withTwins($profile, $mustIds) + $ratings['low'];
             $pool = array_values(array_filter($loaded, static fn(array $place): bool =>
                 !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
             // Meals are planned only where they can be stored (migration 20261116_meal_slots.sql).
@@ -165,6 +169,12 @@ final class ItineraryGenerator
             $place = $rows[$id];
             $reason = PlannerRules::placeReason($place, $profile);
             if ($reason !== null) { $this->mustMissed[$id] = ['name' => $name, 'reason' => $reason, 'day' => 1]; continue; }
+            // Two must-see places that are one landmark: the first on the list is planned.
+            $twin = PlannerRules::twinIn($profile, $id, $out['places']);
+            if ($twin !== null) {
+                $this->mustMissed[$id] = ['name' => $name, 'reason' => 'SAME_LANDMARK', 'day' => 1, 'twin' => PlannerRules::twinName($profile, $id, $twin)];
+                continue;
+            }
             $feasible = [];
             $reasons = [];
             foreach ($dates as $d => $date) {
@@ -608,7 +618,9 @@ final class ItineraryGenerator
             }
             foreach ($this->mustMissed as $missed) {
                 if ((int)$missed['day'] !== (int)$dayNo) continue;
-                $reason = self::MUST_REASONS[$missed['reason']] ?? PlannerRules::reasonText((string)$missed['reason']);
+                $reason = isset($missed['twin'])
+                    ? 'the same landmark as ' . $missed['twin'] . ', also on your must-see list'
+                    : (self::MUST_REASONS[$missed['reason']] ?? PlannerRules::reasonText((string)$missed['reason']));
                 $this->storeNote($itineraryId, (int)$dayNo, ++$sequence, 'Must-see place not scheduled: ' . $missed['name'],
                     'Reason: ' . $missed['name'] . ' could not be scheduled (' . $reason . '). Visit it at another time, or change the trip dates or preferences.', $profile);
             }

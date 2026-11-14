@@ -146,7 +146,6 @@ final class ItineraryRouteOptimiser
         $profile = PlannerRules::profile($pref);
         // Meals are planned only where they can be stored (migration 20261116_meal_slots.sql).
         $profile['meals'] = PlannerRules::hasColumn($conn, 'itinerary_items', 'meal_slot');
-        $mealPool = $profile['meals'] ? PlannerCandidates::mealPlaces($conn, $pref, $profile, (int)($meta['traveller_id'] ?? 0)) : [];
         $finish = self::point($meta['end_lat'] ?? null, $meta['end_lng'] ?? null);
         $lastDay = (int)($meta['total_days'] ?? 0);
 
@@ -170,6 +169,18 @@ final class ItineraryRouteOptimiser
             $days[(int)$row['day_no']][] = $row;
         }
         $stmt->close();
+        // The trip's twin groups, as the generator works them out (its candidates and its stored
+        // places): no meal may be at the same landmark as a visit or another meal of the trip.
+        $stored = [];
+        foreach ($days as $rows) {
+            foreach ($rows as $row) {
+                if ((int)$row['place_id'] > 0 && $row['point'] !== null && $row['name'] !== null) {
+                    $stored[] = ['place_id' => (int)$row['place_id'], 'name' => (string)$row['name'], 'latitude' => $row['point'][0], 'longitude' => $row['point'][1]];
+                }
+            }
+        }
+        $profile['twins'] = PlannerCandidates::twinGroups(PlannerCandidates::load($conn, $pref), $stored);
+        $mealPool = $profile['meals'] ? PlannerCandidates::mealPlaces($conn, $pref, $profile, (int)($meta['traveller_id'] ?? 0)) : [];
 
         // One table request for the trip: its visits, hotels, start and end point and, while
         // there is room, its meal places (the others are estimated). The days are ordered on

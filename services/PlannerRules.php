@@ -12,10 +12,13 @@
 //   visitMinutes()    how long a visit lasts;  placeCost()  what a place costs per person
 //   projectedTotal()  the trip total, computed exactly as ItineraryEditService::total() stores it
 //   learnedPoints()   the small score adjustment per category from the traveller's own ratings
+//   sameLandmarks()   the twin groups of a trip's candidates: rows that are one landmark under
+//                     two names; check() then keeps a trip to one row of each group
 
 require_once __DIR__ . '/OpeningHours.php';
 require_once __DIR__ . '/CostEstimationService.php';
 require_once __DIR__ . '/AccessibilityNeedsAnalysisService.php';
+require_once __DIR__ . '/PlaceNameMatcher.php';
 
 final class PlannerRules
 {
@@ -103,9 +106,23 @@ final class PlannerRules
     private const EAST_STATES = ['sabah', 'sarawak', 'labuan'];
     private const EAST_FROM_LNG = 108.0;
 
+    /**
+     * The same landmark under two names: two place rows whose straight-line distance and name
+     * similarity (PlaceNameMatcher, 0..1) fall inside one of these pairs [metres, similarity].
+     * Close together and clearly the same name, or very close together and probably the same
+     * name. Chosen from the place data (docs/PLANNER.md): every true twin within 150 m that the
+     * matcher scores 0.9 or more, and the twins within 60 m that it scores 0.5 or more
+     * ("Sultan Abdul Samad Building" and "Bangunan Sultan Abdul Samad", 41 m, 0.55), while the
+     * different neighbours within 150 m score below 0.5 ("Teluk Cempedak Beach" and "Dataran
+     * Teluk Cempedak Kuantan", 99 m, 0.48) and those scoring 0.9 or more lie further apart
+     * ("Penang Hill" and "Penang Hill Mosque", 179 m).
+     */
+    public const SAME_LANDMARK = [[150.0, 0.9], [60.0, 0.5]];
+
     /** Reason codes of check(), in words for notes and messages. */
     public const REASONS = [
         'DUPLICATE' => 'already in the itinerary',
+        'SAME_LANDMARK' => 'the same landmark as a place already in the itinerary',
         'STATE' => 'outside the chosen states',
         'REGION' => 'across the sea between Peninsular and East Malaysia',
         'FESTIVAL_DATES' => 'festival dates unknown',
@@ -345,7 +362,131 @@ final class PlannerRules
             'meal_price' => (float)$tier['meal'],
             'meal_min' => self::MEAL_MIN[$pace],
             'meal_radius_km' => self::MEAL_RADIUS_KM[$transport] ?? 5.0,
+            // The trip's twin groups (sameLandmarks()), passed in by whoever loaded the candidates.
+            'twins' => (array)($pref['twins'] ?? []),
         ];
+    }
+
+    /**
+     * Pairs of place rows that are the same landmark (SAME_LANDMARK). The names are weighed
+     * against the names of all the given places (PlaceNameMatcher), so give the trip's whole
+     * candidate set at once.
+     *
+     * @param array $places place rows with place_id, name, latitude, longitude
+     * @return array<int,array{a:array,b:array,metres:float,similarity:float}> a has the lower place_id
+     */
+    public static function sameLandmarkPairs(array $places): array
+    {
+        $rows = [];
+        foreach ($places as $p) {
+            $id = (int)($p['place_id'] ?? 0);
+            if ($id <= 0 || !isset($p['latitude'], $p['longitude']) || !is_numeric($p['latitude']) || !is_numeric($p['longitude'])) continue;
+            $rows[$id] = $p;
+        }
+        if (count($rows) < 2) return [];
+        $list = array_values($rows);
+        usort($list, static fn(array $a, array $b): int => [(float)$a['latitude'], (int)$a['place_id']] <=> [(float)$b['latitude'], (int)$b['place_id']]);
+        $matcher = new PlaceNameMatcher(array_map(static fn(array $p): string => (string)($p['name'] ?? ''), $list));
+        $reach = max(array_column(self::SAME_LANDMARK, 0));
+        $latReach = $reach / 111000.0;   // a degree of latitude is at least 110.5 km
+        $pairs = [];
+        $n = count($list);
+        for ($i = 0; $i < $n; $i++) {
+            for ($j = $i + 1; $j < $n; $j++) {
+                if ((float)$list[$j]['latitude'] - (float)$list[$i]['latitude'] > $latReach) break;
+                $metres = self::metres($list[$i], $list[$j]);
+                if ($metres > $reach) continue;
+                $similarity = $matcher->similarity((string)($list[$i]['name'] ?? ''), (string)($list[$j]['name'] ?? ''));
+                if (!self::isSameLandmark($metres, $similarity)) continue;
+                [$a, $b] = (int)$list[$i]['place_id'] < (int)$list[$j]['place_id'] ? [$list[$i], $list[$j]] : [$list[$j], $list[$i]];
+                $pairs[] = ['a' => $a, 'b' => $b, 'metres' => round($metres, 1), 'similarity' => round($similarity, 4)];
+            }
+        }
+        usort($pairs, static fn(array $x, array $y): int => [(int)$x['a']['place_id'], (int)$x['b']['place_id']] <=> [(int)$y['a']['place_id'], (int)$y['b']['place_id']]);
+        return $pairs;
+    }
+
+    /** Whether a distance (metres) and a name similarity make two rows one landmark. */
+    public static function isSameLandmark(float $metres, float $similarity): bool
+    {
+        foreach (self::SAME_LANDMARK as [$within, $least]) {
+            if ($metres <= $within && $similarity >= $least) return true;
+        }
+        return false;
+    }
+
+    /**
+     * The twin groups of a trip, worked out once from its loaded candidates: place_id => the
+     * other members of its group (place_id => name). Twins of twins are one group. Put it in the
+     * profile input as 'twins' so that check() and the meal choice keep one row per group.
+     */
+    public static function sameLandmarks(array $places): array
+    {
+        $parent = [];
+        $find = static function (int $x) use (&$parent): int {
+            while ($parent[$x] !== $x) $x = $parent[$x] = $parent[$parent[$x]];
+            return $x;
+        };
+        $names = [];
+        foreach (self::sameLandmarkPairs($places) as $pair) {
+            $a = (int)$pair['a']['place_id'];
+            $b = (int)$pair['b']['place_id'];
+            $names[$a] = (string)$pair['a']['name'];
+            $names[$b] = (string)$pair['b']['name'];
+            $parent[$a] ??= $a;
+            $parent[$b] ??= $b;
+            $ra = $find($a);
+            $rb = $find($b);
+            if ($ra !== $rb) $parent[max($ra, $rb)] = min($ra, $rb);
+        }
+        $groups = [];
+        foreach (array_keys($parent) as $id) $groups[$find($id)][] = $id;
+        $twins = [];
+        foreach ($groups as $members) {
+            sort($members);
+            foreach ($members as $id) {
+                foreach ($members as $other) if ($other !== $id) $twins[$id][$other] = $names[$other];
+            }
+        }
+        ksort($twins);
+        return $twins;
+    }
+
+    /** A twin of the place among $ids (place_id => anything), or null. */
+    public static function twinIn(array $profile, int $placeId, array $ids): ?int
+    {
+        foreach (array_keys((array)($profile['twins'][$placeId] ?? [])) as $twin) {
+            if (isset($ids[$twin])) return (int)$twin;
+        }
+        return null;
+    }
+
+    /** The name of a place's twin, as the twin groups hold it. */
+    public static function twinName(array $profile, int $placeId, int $twinId): string
+    {
+        return (string)($profile['twins'][$placeId][$twinId] ?? ('place #' . $twinId));
+    }
+
+    /** The given place ids (place_id => true) with every twin of each. */
+    public static function withTwins(array $profile, array $ids): array
+    {
+        $out = [];
+        foreach ($ids as $id) {
+            $out[(int)$id] = true;
+            foreach (array_keys((array)($profile['twins'][(int)$id] ?? [])) as $twin) $out[(int)$twin] = true;
+        }
+        return $out;
+    }
+
+    /** Straight-line distance in metres between two place rows. */
+    private static function metres(array $a, array $b): float
+    {
+        $lat1 = deg2rad((float)$a['latitude']);
+        $lat2 = deg2rad((float)$b['latitude']);
+        $dLat = $lat2 - $lat1;
+        $dLng = deg2rad((float)$b['longitude'] - (float)$a['longitude']);
+        $h = sin($dLat / 2) ** 2 + cos($lat1) * cos($lat2) * sin($dLng / 2) ** 2;
+        return 2 * 6371000.0 * asin(min(1.0, sqrt($h)));
     }
 
     /** A place is outdoor when it is marked so or is a nature place (for the weather rule). */
@@ -426,7 +567,8 @@ final class PlannerRules
      *   leg_counts  false only for the leg from the trip's starting point on day 1, which the
      *               distance limits do not count
      *   day_km      km the day has already travelled (counted legs only)
-     *   used        optional: place_id => true for places already in the itinerary
+     *   used        optional: place_id => true for places already in the itinerary; a place
+     *               whose twin (profile 'twins') is among them fails with SAME_LANDMARK
      *   trip_items  optional: the other planned items (item_type, estimated_cost) for the
      *               budget; without it the budget is not checked
      *   trip_km     km of all other planned legs;  reserve_km  km held back for legs not planned yet
@@ -440,6 +582,7 @@ final class PlannerRules
 
         $placeId = (int)($place['place_id'] ?? 0);
         if ($placeId > 0 && isset($slot['used'][$placeId])) return $fail('DUPLICATE');
+        if ($placeId > 0 && !empty($slot['used']) && self::twinIn($profile, $placeId, (array)$slot['used']) !== null) return $fail('SAME_LANDMARK');
         $reason = self::placeReason($place, $profile);
         if ($reason !== null) return $fail($reason);
         $date = (string)$slot['date'];

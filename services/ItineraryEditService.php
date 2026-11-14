@@ -823,6 +823,8 @@ class ItineraryEditService
             'musts' => array_map(static fn(array $s): array => $s['place'], $musts),
             'finish' => $dayNo === $ctx['total_days'] && $hotelPoint === null ? $ctx['finish'] : null,
         ];
+        // The must-see places of the day win over their twins (one landmark under two names).
+        $mustIds = PlannerRules::withTwins($profile, array_keys($mustIds));
         $pool = array_values(array_filter($ctx['pool'], static fn(array $p): bool => !isset($mustIds[(int)$p['place_id']])));
         $builder = new ItineraryDayBuilder($profile, $ctx['route'], $ctx['meal_pool']);
         $built = $builder->build($pool, $dayCtx);
@@ -1484,7 +1486,6 @@ class ItineraryEditService
         if ($origin !== null) $input += ['origin_lat' => $origin[0], 'origin_lng' => $origin[1]];
         $profile = PlannerRules::profile($input);
         $profile['meals'] = PlannerRules::hasColumn($conn, 'itinerary_items', 'meal_slot');
-        $mealPool = $profile['meals'] ? PlannerCandidates::mealPlaces($conn, $pref, $profile, $travellerId) : [];
 
         $mealSelect = $profile['meals'] ? 'meal_slot' : 'NULL AS meal_slot';
         $stmt = $conn->prepare("SELECT item_id, day_no, sequence_no, item_type, {$mealSelect}, place_id, hotel_id, item_title, item_latitude, item_longitude,
@@ -1498,6 +1499,13 @@ class ItineraryEditService
         $placeIds = array_values(array_unique(array_filter(array_map(static fn(array $r): int => (int)$r['place_id'], $rows))));
         $places = [];
         foreach (PlannerCandidates::byIds($conn, $placeIds) as $p) $places[(int)$p['place_id']] = $p;
+        // The trip's twin groups (one landmark under two names), worked out once from its
+        // candidates and its stored places. They go into the profile input too, so a profile
+        // made again from it (regenerateDay()) keeps them.
+        $loaded = PlannerCandidates::load($conn, $pref);
+        $input['twins'] = PlannerCandidates::twinGroups($loaded, array_values($places));
+        $profile['twins'] = $input['twins'];
+        $mealPool = $profile['meals'] ? PlannerCandidates::mealPlaces($conn, $pref, $profile, $travellerId) : [];
 
         $totalDays = max(1, (int)$meta['total_days']);
         $musts = array_fill_keys((array)$pref['must_places'], true);
@@ -1543,7 +1551,7 @@ class ItineraryEditService
             'profile' => $profile,
             'route' => $route ?? new RouteService((string)$profile['transport']),
             'budget_from' => 0,   // requests are counted from here (see requestsLeft())
-            'pool' => PlannerCandidates::editPool($conn, $pref, $profile, $travellerId),
+            'pool' => PlannerCandidates::editPool($conn, $pref, $profile, $travellerId, $loaded),
             'meal_pool' => $mealPool,
             'meal_ids' => array_fill_keys(array_map(static fn(array $p): int => (int)$p['place_id'], $mealPool), true),
             'places' => $places,
@@ -1732,13 +1740,22 @@ class ItineraryEditService
         return $choice;
     }
 
-    /** Why a place cannot come into the trip (null: it may): missing, avoided, already used, or a rule of the place itself. */
+    /** Why a place cannot come into the trip (null: it may): missing, avoided (or the same landmark as an avoided place), already used (or its twin is), or a rule of the place itself. */
     private static function placeRefusal(array $ctx, ?array $place, int $placeId, ?int $exceptItem): ?array
     {
         if ($place === null) return self::refused('UNAVAILABLE', 'This place is not an active place with map coordinates.');
         $name = (string)$place['name'];
         if (in_array($placeId, (array)$ctx['pref']['avoid_places'], true)) return self::refused('AVOID', $name . ' is on your list of places to avoid.');
-        if (isset(self::usedPlaces($ctx, $exceptItem)[$placeId])) return self::refused('DUPLICATE', $name . ' is already in this itinerary.');
+        $avoided = PlannerRules::twinIn($ctx['profile'], $placeId, array_flip((array)$ctx['pref']['avoid_places']));
+        if ($avoided !== null) {
+            return self::refused('AVOID', $name . ' is the same landmark as ' . PlannerRules::twinName($ctx['profile'], $placeId, $avoided) . ', which is on your list of places to avoid.');
+        }
+        $used = self::usedPlaces($ctx, $exceptItem);
+        if (isset($used[$placeId])) return self::refused('DUPLICATE', $name . ' is already in this itinerary.');
+        $twin = PlannerRules::twinIn($ctx['profile'], $placeId, $used);
+        if ($twin !== null) {
+            return self::refused('SAME_LANDMARK', $name . ' is the same landmark as ' . PlannerRules::twinName($ctx['profile'], $placeId, $twin) . ', which is already in this itinerary.');
+        }
         $reason = PlannerRules::placeReason($place, $ctx['profile']);
         if ($reason !== null) return self::refused($reason, $name . ' cannot be used: ' . PlannerRules::reasonText($reason) . '.');
         return null;
@@ -1831,7 +1848,7 @@ class ItineraryEditService
         $screened = [];
         foreach ($ctx['meal_pool'] as $place) {
             $id = (int)$place['place_id'];
-            if ($id === $current || isset($used[$id])) continue;
+            if ($id === $current || isset($used[$id]) || PlannerRules::twinIn($ctx['profile'], $id, $used) !== null) continue;
             $close = false;
             foreach ($near as $p) {
                 if (RouteService::haversineKm((float)$p[0], (float)$p[1], (float)$place['latitude'], (float)$place['longitude']) <= $radius) $close = true;

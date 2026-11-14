@@ -11,6 +11,9 @@
 //   mealPool()         the food places of a pool, where lunch and dinner may be planned
 //   mealPlaces()       that pool for a saved preference (the "Optimise route" button)
 //   editPool()         the places a change to a saved itinerary may bring in (ItineraryEditService)
+//   twinGroups()       the same-landmark groups of a trip's candidates (PlannerRules::sameLandmarks())
+//
+// A place whose twin is on the avoid list is kept out with it (the profile's 'twins').
 //
 // Meal places come from cultural_places (category food) only. The table food_places is not
 // used: its rows have no place_id, no halal or dietary data and no link to ratings or the
@@ -106,7 +109,7 @@ final class PlannerCandidates
      */
     public static function mealPlaces(mysqli $conn, array $pref, array $profile, int $travellerId): array
     {
-        $skip = array_flip((array)($pref['avoid_places'] ?? [])) + self::travellerRatings($conn, $travellerId, PlannerRules::LEARN_DROP_AT)['low'];
+        $skip = PlannerRules::withTwins($profile, (array)($pref['avoid_places'] ?? [])) + self::travellerRatings($conn, $travellerId, PlannerRules::LEARN_DROP_AT)['low'];
         $where = ['is_active = 1', 'latitude IS NOT NULL', 'longitude IS NOT NULL', "LOWER(TRIM(COALESCE(category, ''))) = 'food'"];
         $states = array_values((array)($pref['states'] ?? []));
         if ($states) $where[] = 'state IN (' . implode(',', array_fill(0, count($states), '?')) . ')';
@@ -118,14 +121,26 @@ final class PlannerCandidates
      * The places a change to a saved itinerary may bring in, narrowed as the generator narrows
      * its pool: not on the avoid list, not rated LEARN_DROP_AT or lower by the traveller (a
      * must-see place stays wanted), and keeping every rule of PlannerRules::placeReason().
+     * $loaded: the rows of load() when the caller has them already.
      */
-    public static function editPool(mysqli $conn, array $pref, array $profile, int $travellerId): array
+    public static function editPool(mysqli $conn, array $pref, array $profile, int $travellerId, ?array $loaded = null): array
     {
         $low = self::travellerRatings($conn, $travellerId, PlannerRules::LEARN_DROP_AT)['low'];
         foreach ((array)($pref['must_places'] ?? []) as $id) unset($low[(int)$id]);
-        $skip = array_flip((array)($pref['avoid_places'] ?? [])) + $low;
-        return array_values(array_filter(self::load($conn, $pref), static fn(array $place): bool =>
+        $skip = PlannerRules::withTwins($profile, (array)($pref['avoid_places'] ?? [])) + $low;
+        return array_values(array_filter($loaded ?? self::load($conn, $pref), static fn(array $place): bool =>
             !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
+    }
+
+    /**
+     * The twin groups of a trip (PlannerRules::sameLandmarks()), worked out once from its
+     * candidates (load()) and any further rows the trip holds (its stored places), by place_id.
+     */
+    public static function twinGroups(array $loaded, array $extra = []): array
+    {
+        $rows = [];
+        foreach (array_merge($loaded, $extra) as $row) $rows[(int)$row['place_id']] ??= $row;
+        return PlannerRules::sameLandmarks(array_values($rows));
     }
 
     private static function query(mysqli $conn, array $where, array $states): array

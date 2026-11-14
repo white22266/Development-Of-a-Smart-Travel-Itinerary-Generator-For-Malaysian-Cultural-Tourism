@@ -40,6 +40,12 @@
 // break a rule (a place closed that day, on the avoid list, already in the trip, in another
 // state) must be refused and leave every row as it was (REFUSE).
 //
+// DUPLICATE also fails when two places of a trip are one landmark under two names, and AVOID when
+// a stop is the same landmark as a place to avoid, both by sameLandmarkJudged(): its own distance
+// and word comparison, not the planner's. The scenario kl_couple_car_must_twin forces the case: the
+// twin of a must-see place that the plan would otherwise visit must stay out, and adding it must be
+// refused with SAME_LANDMARK (runTwinSteps()).
+//
 // Test database only: in Git Bash
 //   DB_NAME=travel_itinerary_db_ctest /c/xampp/php/php.exe tools/check_planner.php
 // Exit code: 0 no violation, 1 at least one violation, 2 refused to run.
@@ -188,6 +194,22 @@ const EARLIEST_START = 360;
 const LATEST_END = 1380;
 /** WEATHER warns about an outdoor stop on a day with at least this chance of rain. */
 const RAIN_WARN_AT = 80;
+
+/**
+ * The same landmark under two names (DUPLICATE), judged by sameLandmarkJudged() on its own
+ * terms, from the task that introduced the rule: two rows within TWIN_NEAR_M metres whose
+ * names are clearly the same, or within TWIN_VERY_NEAR_M metres whose names share most words.
+ */
+const TWIN_NEAR_M = 150.0;
+const TWIN_VERY_NEAR_M = 60.0;
+const TWIN_VERY_NEAR_DICE = 0.7;
+const TWIN_STOP_WORDS = ['the', 'of', 'and', 'a', 'an', 'at', 'in', 'de', 'dan', 'di', 'on', 'for'];
+/** Malay words of place names and the English word they are read as. */
+const TWIN_WORDS = ['muzium' => 'museum', 'masjid' => 'mosque', 'menara' => 'tower', 'dataran' => 'square', 'medan' => 'square',
+                    'bangunan' => 'building', 'negara' => 'national', 'tugu' => 'monument', 'galeri' => 'gallery', 'kuil' => 'temple',
+                    'tokong' => 'temple', 'taman' => 'park', 'istana' => 'palace', 'pantai' => 'beach', 'bukit' => 'hill',
+                    'sungai' => 'river', 'pasar' => 'market', 'jalan' => 'street', 'rumah' => 'house', 'kampung' => 'village',
+                    'kg' => 'village', 'budaya' => 'culture', 'cultural' => 'culture', 'kota' => 'fort', 'fortress' => 'fort', 'gereja' => 'church'];
 
 /**
  * Opening hours written as words, without clock times: approximate hours, taken from the
@@ -432,6 +454,24 @@ const SCENARIOS = [
             'day_end_time' => '11:00:00'],
         'trip' => ['start_date' => '2026-12-09', 'origin_name' => 'Komtar bus hub, George Town', 'origin_lat' => 5.4145, 'origin_lng' => 100.3292],
     ],
+    // ---- One landmark under two names --------------------------------------------------------
+    // Optional key 'twin' (a selector): another row of the first must-see place's landmark. The
+    // same preference without places plans the twin (else SETUP: the case is not forced); with
+    // the must-see place the twin must stay out (DUPLICATE), and adding it to the must-see
+    // place's day, or putting it in place of a stop of another day, must be refused with
+    // SAME_LANDMARK and change no row (REFUSE, runTwinSteps()).
+    'kl_couple_car_must_twin' => [
+        // The preference of kl_couple_car_normal, whose plan visits "Bangunan Sultan Abdul Samad"
+        // and has lunch at "Menara Kuala Lumpur": with the other row of each as a must-see place,
+        // neither may come back (the second one as a meal place).
+        'pref' => ['trip_days' => 3, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'must' => [['name' => 'Sultan Abdul Samad Building'], ['name' => 'KL Tower (Menara Kuala Lumpur)']],
+        'twin' => ['name' => 'Bangunan Sultan Abdul Samad'],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+        'regenerate_must_day' => ['more' => ['heritage'], 'less' => ['museum']],
+    ],
 ];
 
 /**
@@ -446,7 +486,8 @@ const REQUEST_LIMITS = ['generate' => 1, 'suggest' => 2, 'replace' => 2, 'remove
 
 /** The base scenarios that also run as edit scenarios (<base>__edits). */
 const EDIT_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal', 'penang_group_transit_packed_festival',
-                    'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid', 'kl_family_car_must_opens_late_end_klia'];
+                    'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid', 'kl_family_car_must_opens_late_end_klia',
+                    'kl_couple_car_must_twin'];
 
 /** Every scenario: the fixed ones and the edit scenarios built on EDIT_BASES. */
 function allScenarios(): array
@@ -651,6 +692,7 @@ function resolveScenarioPlaces(mysqli $pipelineConn, mysqli $checkConn, int $tra
 {
     $out = ['must' => [], 'avoid' => [], 'ratings' => [], 'errors' => []];
     $selectors = array_merge($scenario['must'] ?? [], $scenario['avoid'] ?? [], $scenario['ratings'] ?? []);
+    if (isset($scenario['twin'])) $selectors[] = ['baseline' => 0];   // the twin must be in the baseline
     $baseline = [];
     foreach ($selectors as $sel) {
         if (isset($sel['baseline']) || isset($sel['baseline_first'])) {
@@ -685,6 +727,12 @@ function resolveScenarioPlaces(mysqli $pipelineConn, mysqli $checkConn, int $tra
         $id = resolvePlace($checkConn, $sel, $baseline);
         if ($id === null) $out['errors'][] = 'rated place not found: ' . json_encode($sel);
         else $out['ratings'][$id] = (int)$sel['rating'];
+    }
+    if (isset($scenario['twin'])) {
+        $id = resolvePlace($checkConn, $scenario['twin'], $baseline);
+        if ($id === null) $out['errors'][] = 'twin not found: ' . json_encode($scenario['twin']);
+        elseif (!in_array($id, $baseline, true)) $out['errors'][] = 'the twin ' . json_encode($scenario['twin']) . ' is not planned without the must-see place, so the scenario does not force the case';
+        else $out['twin'] = $id;
     }
     return $out;
 }
@@ -724,6 +772,7 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
         foreach ($out['notes'] as $note) {
             $result['findings'][] = finding('OPTIMISE', 'warning', $name, null, null, $note);
         }
+        if (isset($places['twin'])) runTwinSteps($pipelineConn, $checkConn, $out['itinerary_id'], $scenario, $name, $result);
         if (!empty($scenario['edits'])) runEditSequence($pipelineConn, $checkConn, $out['itinerary_id'], $preferenceId, $scenario, $name, $result);
         checkItinerary($checkConn, $out['itinerary_id'], $scenario, $name, $result);
         $result['info']['plan'] = planFingerprint($checkConn, $out['itinerary_id']);
@@ -791,6 +840,52 @@ function editPlaces(mysqli $conn, int $itineraryId, array $states, bool $inside,
     $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
     return $rows;
+}
+
+/**
+ * The twin of a must-see place (scenario key 'twin'): it must not be planned, and bringing it in
+ * must be refused with SAME_LANDMARK and change no row. A stop of the must-see place's day is
+ * removed first, so that the day has room and only the twin rule can refuse the add.
+ */
+function runTwinSteps(mysqli $p, mysqli $c, int $id, array $scenario, string $name, array &$result): void
+{
+    $add = static function (string $code, string $severity, ?int $day, ?string $stop, string $detail) use (&$result, $name): void {
+        $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
+    };
+    $twin = (int)$scenario['resolved']['twin'];
+    $must = (int)($scenario['resolved']['must'][0] ?? 0);
+    $days = editVisits($c, $id);
+    $mustDay = null;
+    foreach ($days as $d => $visits) {
+        foreach ($visits as $v) {
+            if ((int)$v['place_id'] === $twin) $add('DUPLICATE', 'violation', (int)$d, (string)$v['item_title'], 'the twin of the must-see place was planned');
+            if ((int)$v['place_id'] === $must) $mustDay = (int)$d;
+        }
+    }
+    if ($mustDay === null) { $add('MUST', 'violation', null, null, 'the must-see place of the twin scenario was not planned'); return; }
+    $refused = static function (string $what, array $r, string $before) use ($c, $id, $add, &$result): void {
+        $result['info']['refusals'][$what] = $r['ok'] ? 'done' : (string)$r['code'];
+        if ($r['ok']) $add('REFUSE', 'violation', null, null, "{$what}: the change was made");
+        elseif ($r['code'] !== 'SAME_LANDMARK') $add('REFUSE', 'violation', null, null, "{$what}: refused with {$r['code']}, expected SAME_LANDMARK");
+        if (editSnapshot($c, $id) !== $before) $add('REFUSE', 'violation', null, null, "{$what}: rows changed although the change was refused");
+    };
+    $removed = false;
+    foreach (array_reverse($days[$mustDay]) as $v) {
+        if (in_array((int)$v['place_id'], $scenario['resolved']['must'], true)) continue;   // must-see places stay
+        $r = counted('remove', REQUEST_LIMITS['remove'], fn() => ItineraryEditService::removeStop($p, $id, (int)$v['item_id']), $result);
+        if ($r['ok']) { $removed = true; break; }
+    }
+    if (!$removed) $add('EDIT', 'warning', $mustDay, null, 'no stop of the must-see day could be removed to make room for the twin');
+    $before = editSnapshot($c, $id);
+    $r = counted('refuse', REQUEST_LIMITS['refuse'], fn() => ItineraryEditService::addStop($p, $id, $mustDay, $twin), $result);
+    $refused('add the twin of the must-see place', $r, $before);
+    foreach (editVisits($c, $id) as $d => $visits) {
+        if ($d === $mustDay) continue;
+        $before = editSnapshot($c, $id);
+        $r = counted('refuse', REQUEST_LIMITS['refuse'], fn() => ItineraryEditService::replaceStop($p, $id, (int)$visits[0]['item_id'], $twin), $result);
+        $refused('the twin in place of a stop', $r, $before);
+        break;
+    }
 }
 
 /**
@@ -1248,6 +1343,18 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
         if (isset($seen[$pid])) $add('DUPLICATE', 'violation', (int)$v['day_no'], $v['item_title'], "place {$pid} also on day {$seen[$pid]}");
         else $seen[$pid] = (int)$v['day_no'];
     }
+    // Nor one landmark under two names (two place rows, sameLandmarkJudged()).
+    $placed = [];
+    foreach (array_merge($visits, $mealRows) as $v) {
+        if ($v['place_id'] === null || $v['place_lat'] === null || $v['place_lng'] === null) continue;
+        foreach ($placed as $o) {
+            if ((int)$o['place_id'] === (int)$v['place_id']) continue;
+            if (sameLandmarkJudged((string)$o['place_name'], (float)$o['place_lat'], (float)$o['place_lng'], (string)$v['place_name'], (float)$v['place_lat'], (float)$v['place_lng'])) {
+                $add('DUPLICATE', 'violation', (int)$v['day_no'], $v['item_title'], "the same landmark as {$o['place_name']} (place {$o['place_id']}, day {$o['day_no']})");
+            }
+        }
+        $placed[] = $v;
+    }
 
     $states = array_map('strtolower', csv($pref['preferred_states']));
     $originPoint = [(float)$it['origin_lat'], (float)$it['origin_lng']];
@@ -1524,9 +1631,22 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     // AVOID, MUST, RATED and LEARN: the traveller's own place choices and ratings.
     $resolved = $scenario['resolved'] ?? ['must' => [], 'avoid' => [], 'ratings' => []];
     $visitIds = array_map(static fn($v) => (int)$v['place_id'], array_filter($visits, static fn($v) => $v['place_id'] !== null));
+    // A place to avoid keeps its other rows out too (the same landmark, sameLandmarkJudged()).
+    $avoidRows = [];
+    if ($resolved['avoid']) {
+        $res = $conn->query('SELECT place_id, name, latitude, longitude FROM cultural_places WHERE latitude IS NOT NULL AND longitude IS NOT NULL AND place_id IN ('
+            . implode(',', array_map('intval', $resolved['avoid'])) . ')');
+        $avoidRows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
+    }
     foreach (array_merge($visits, array_filter($mealRows, static fn($m) => $m['place_id'] !== null)) as $v) {
         $pid = (int)($v['place_id'] ?? 0);
         if (in_array($pid, $resolved['avoid'], true)) $add('AVOID', 'violation', (int)$v['day_no'], (string)$v['item_title'], 'a place to avoid is in the itinerary');
+        foreach ($avoidRows as $a) {
+            if ((int)$a['place_id'] === $pid || $v['place_lat'] === null || $v['place_lng'] === null) continue;
+            if (sameLandmarkJudged((string)$a['name'], (float)$a['latitude'], (float)$a['longitude'], (string)$v['place_name'], (float)$v['place_lat'], (float)$v['place_lng'])) {
+                $add('AVOID', 'violation', (int)$v['day_no'], (string)$v['item_title'], "the same landmark as {$a['name']}, a place to avoid");
+            }
+        }
         if (isset($resolved['ratings'][$pid]) && $resolved['ratings'][$pid] <= LOW_RATING && !in_array($pid, $resolved['must'], true)) {
             $add('RATED', 'violation', (int)$v['day_no'], (string)$v['item_title'], "suggested again after the traveller rated it {$resolved['ratings'][$pid]}");
         }
@@ -1781,6 +1901,52 @@ function nominalMinutes(string $transport, float $km): int
         return (int)ceil($km / SPEED_KMH['public_transport'] * 60) + TRANSIT_ACCESS_MIN;
     }
     return (int)ceil($km / SPEED_KMH[$transport] * 60);
+}
+
+/**
+ * Same landmark under two names, judged on its own (not PlannerRules, not PlaceNameMatcher):
+ * within TWIN_NEAR_M with names that are clearly the same (one name, or the part of it in or
+ * outside brackets, has the same words as the other or all its words of at least two inside the
+ * other), or within TWIN_VERY_NEAR_M with names sharing most words (Dice of the word sets at
+ * least TWIN_VERY_NEAR_DICE). Malay words are read as their English equal (TWIN_WORDS).
+ */
+function sameLandmarkJudged(string $nameA, float $latA, float $lngA, string $nameB, float $latB, float $lngB): bool
+{
+    $metres = haversineKm($latA, $lngA, $latB, $lngB) * 1000.0;
+    if ($metres > TWIN_NEAR_M) return false;
+    $best = 0.0;
+    foreach (twinNameVariants($nameA) as $a) {
+        foreach (twinNameVariants($nameB) as $b) {
+            if (!$a || !$b) continue;
+            $common = count(array_intersect($a, $b));
+            $shorter = min(count($a), count($b));
+            if ($common === count($a) && $common === count($b)) return true;
+            if ($common === $shorter && $shorter >= 2) return true;
+            $best = max($best, 2 * $common / (count($a) + count($b)));
+        }
+    }
+    return $metres <= TWIN_VERY_NEAR_M && $best >= TWIN_VERY_NEAR_DICE;
+}
+
+/** The word sets of a name: the whole name, the part outside brackets and each part inside. */
+function twinNameVariants(string $name): array
+{
+    $texts = [$name];
+    if (preg_match_all('/\(([^)]*)\)/u', $name, $m)) {
+        $texts[] = preg_replace('/\([^)]*\)/u', ' ', $name);
+        foreach ($m[1] as $inside) $texts[] = $inside;
+    }
+    $out = [];
+    foreach ($texts as $text) {
+        $text = strtolower((string)(@iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $text) ?: $text));
+        $words = [];
+        foreach (preg_split('/[^a-z0-9]+/', str_replace("'", '', $text), -1, PREG_SPLIT_NO_EMPTY) as $w) {
+            if (in_array($w, TWIN_STOP_WORDS, true)) continue;
+            $words[TWIN_WORDS[$w] ?? $w] = true;
+        }
+        $out[] = array_keys($words);
+    }
+    return $out;
 }
 
 function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float

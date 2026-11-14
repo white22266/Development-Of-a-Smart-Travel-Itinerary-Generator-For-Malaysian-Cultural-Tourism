@@ -520,7 +520,8 @@ final class ItineraryDayBuilder
         $radius = (float)$profile['meal_radius_km'];
         $best = null;
         foreach (self::nearMeals($index, [$from, $to]) as $id => $place) {
-            if (isset($exclude[$id])) continue;
+            // Not a place of the trip, nor the same landmark as one (PlannerRules::sameLandmarks()).
+            if (isset($exclude[$id]) || PlannerRules::twinIn($profile, $id, $exclude) !== null) continue;
             $here = [(float)$place['latitude'], (float)$place['longitude']];
             $in = $route->getSegment((float)$from[0], (float)$from[1], $here[0], $here[1]);
             $out = $route->getSegment($here[0], $here[1], (float)$to[0], (float)$to[1]);

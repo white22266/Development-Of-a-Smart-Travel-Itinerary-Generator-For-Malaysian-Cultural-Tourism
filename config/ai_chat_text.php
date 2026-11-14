@@ -504,6 +504,7 @@ if (!function_exists('ai_chat_text_table')) {
             'reason_code_UNAVAILABLE' => ['en' => 'the place is not an active place with map coordinates', 'ms' => 'tempat itu bukan tempat aktif dengan koordinat peta', 'zh' => '这个地点不是带地图坐标的有效地点'],
             'reason_code_AVOID' => ['en' => 'the place is on your list of places to avoid', 'ms' => 'tempat itu dalam senarai tempat yang anda elakkan', 'zh' => '这个地点在你的避开列表中'],
             'reason_code_DAY_FULL' => ['en' => 'the day already has its planned number of stops', 'ms' => 'hari itu sudah mempunyai bilangan hentian yang dirancang', 'zh' => '那一天的站点数量已满'],
+            'reason_code_SAME_LANDMARK' => ['en' => 'the same landmark as a place already in the itinerary', 'ms' => 'mercu tanda yang sama dengan tempat yang sudah ada dalam jadual perjalanan', 'zh' => '与行程中已有的地点是同一个地标'],
             'reason_code_LAST_STOP' => ['en' => 'it is the last stop of its day', 'ms' => 'ia hentian terakhir pada hari itu', 'zh' => '它是当天唯一剩下的站点'],
             'reason_code_NOT_FOUND' => ['en' => 'it was not found in this itinerary', 'ms' => 'ia tidak dijumpai dalam jadual perjalanan ini', 'zh' => '在这个行程中找不到它'],
             'reason_code_NOT_EDITABLE' => ['en' => 'this row cannot be changed this way', 'ms' => 'baris ini tidak boleh diubah dengan cara ini', 'zh' => '这一项不能这样修改'],

@@ -75,6 +75,7 @@ is `PlannerRules::REASONS`).
 | End point | on the last day each stop must leave time and distance to reach it | reason `FINISH` |
 | Budget | see below | `BUDGET_MARGIN` |
 | No duplicates | a place appears once in a trip | reason `DUPLICATE` |
+| One landmark, one row | two rows of the same landmark never share a trip (below) | reason `SAME_LANDMARK`, `PlannerRules::SAME_LANDMARK` |
 
 How the accessibility tags are decided: the preference form stores tick boxes in the
 `accessibility_tags` column. Without a stored value, the tags are taken from the free text in
@@ -82,6 +83,27 @@ How the accessibility tags are decided: the preference form stores tick boxes in
 `keywordTags()`). A child in the party gives the family rules; a senior gives the rules of the
 elderly tag. There is no surveyed access data: access is decided from these tags and from
 keywords in a place's name and description.
+
+### One landmark under two names
+
+The place data holds some landmarks twice, as two active rows with different names ("Sultan
+Abdul Samad Building" and "Bangunan Sultan Abdul Samad"). Two rows are the same landmark when
+they lie within 150 m in a straight line and `PlaceNameMatcher` scores their names 0.9 or more
+(clearly the same name), or within 60 m and 0.5 or more (probably the same name)
+(`PlannerRules::SAME_LANDMARK`, `isSameLandmark()`). The numbers come from the data: every true
+twin within 150 m scores 0.9 or more except three: two within 60 m (0.55 and 0.62) and "Plaza
+Tugu Negara" (140 m, 0.57, 0.9 when weighed against Kuala Lumpur names only); the different
+neighbours within 150 m score at most 0.48, and the different places scoring
+0.9 or more ("Penang Hill" and "Penang Hill Mosque") lie further apart. The matcher weighs words
+against the names it is given, so the groups are worked out once per trip from the loaded
+candidates (`PlannerCandidates::twinGroups()`, `PlannerRules::sameLandmarks()`; twins of twins
+are one group) and travel in the profile (`twins`). `check()` then refuses a place whose twin
+is used (`SAME_LANDMARK`), the meal choice skips a food place whose twin is in the trip, a
+must-see place keeps its twins out of the pool (it wins), and so does a place to avoid. An edit
+that brings in a twin is refused with `SAME_LANDMARK` and a sentence naming the place already in
+the trip; the twin of an avoided place is refused with `AVOID`. Rows already stored together in
+an older plan are not removed by a re-timing. `PlannerRules::sameLandmarkPairs()` lists the
+pairs, for cleaning up the place data.
 
 ### Budget rule
 
@@ -237,6 +259,7 @@ rule codes of `check()` can be returned too):
 | `NO_CHANGE` | nothing would change |
 | `AVOID` | the place is on the avoid list |
 | `DUPLICATE` | the place is already in the trip |
+| `SAME_LANDMARK` | the place is the same landmark as a place already in the trip, under another name |
 | `UNAVAILABLE` | not an active place with coordinates, or day starts cannot be stored yet (migration missing) |
 | `EARLY_START` | a day cannot start before 06:00 (`PlannerRules::EARLIEST_START`) |
 | `DAY_END` | the chosen day start leaves no time before the end of the day |
@@ -340,7 +363,7 @@ Finding codes. A violation fails the run; a warning is only reported.
 |---|---|
 | `GENERATE`, `SETUP` | generation failed or stored nothing; the scenario's setup failed |
 | `DAYS`, `STOPS` | a day without a visit or a stop outside the trip's days; more stops than the target (violation) or fewer (warning) |
-| `DUPLICATE` | a place twice in a trip |
+| `DUPLICATE` | a place twice in a trip, or one landmark under two names (its own rule: within 150 m with the same words or all words of the shorter name, at least two, in the other; or within 60 m with a Dice score of 0.7 or more; Malay words read as English, `TWIN_*`) |
 | `START`, `HARD_END`, `TIME_ORDER` | a visit before the day start or after the latest end; missing or reversed times; a gap shorter than the travel time |
 | `REST` | the rest between visits is shorter than planned (warning) |
 | `WAIT`, `DURATION`, `OPEN_HOURS` | waiting over 60 min; a visit shorter than 30 min or longer than allowed; a visit outside opening hours |
@@ -350,7 +373,7 @@ Finding codes. A violation fails the run; a warning is only reported.
 | `CATEGORY` | too many visits of one category without a note that variety was relaxed |
 | `MEAL` | a meal row or a missing meal is wrong (window, length, item type, cost, reason, place, radius) |
 | `WEATHER`, `RAIN` | an outdoor stop on a day at 80 percent rain or more (warning); after planning a rainy day again, an outdoor stop stayed while indoor places were left |
-| `AVOID`, `RATED`, `MUST` | an avoided or low-rated place in the trip; a must-see place neither planned nor named in a note |
+| `AVOID`, `RATED`, `MUST` | an avoided or low-rated place in the trip, or the same landmark as an avoided place; a must-see place neither planned nor named in a note |
 | `LEARN`, `WEIGHTS`, `WINDOW` | warnings: ratings not reflected, interest weights not reflected, a widened window not used |
 | `FINISH` | the end point is not stored, or cannot be reached in time or distance |
 | `BUDGET` | the stored total differs from the total recomputed from the items, or paid attractions exceed their share; a total over the budget is a warning |
