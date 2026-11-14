@@ -1,0 +1,844 @@
+<?php
+// tools/check_planner.php
+// Automated check of the itinerary planner. It saves a set of fixed preferences for a test
+// traveller, generates an itinerary from each one exactly as itinerary/generate_itinerary.php
+// does, reads the stored result back and judges it by the rules the planner is meant to keep.
+//
+// The rules are written out below on their own. The checker never calls the planner's rule
+// functions to decide what is right, so it stays a fair judge while the planner is rewritten.
+//
+//   php tools/check_planner.php                     every scenario, then delete what they made
+//   php tools/check_planner.php --scenario=<name>   one scenario
+//   php tools/check_planner.php --keep              keep the generated itineraries
+//   php tools/check_planner.php --json              machine-readable output
+//   php tools/check_planner.php --road              allow real road routing (public OSRM/Valhalla)
+//
+// Test database only: in Git Bash
+//   DB_NAME=travel_itinerary_db_ctest /c/xampp/php/php.exe tools/check_planner.php
+// Exit code: 0 no violation, 1 at least one violation, 2 refused to run.
+
+if (PHP_SAPI !== 'cli') {
+    http_response_code(404);
+    exit;
+}
+
+define('CSRF_DISABLE_AUTO_VERIFY', true);
+define('CSRF_DISABLE_AUTO_INJECTION', true);
+
+$options = getopt('', ['scenario:', 'keep', 'json', 'road', 'help']);
+if (isset($options['help'])) {
+    echo "Usage: php tools/check_planner.php [--scenario=<name>] [--keep] [--json] [--road]\n";
+    exit(0);
+}
+
+// Without --road no routing server is asked: services/RouteService.php then estimates every
+// distance and time from the straight line. Set before the environment file is read, which
+// keeps a variable that is already set.
+putenv('ROUTING_ESTIMATES_ONLY=' . (isset($options['road']) ? '0' : '1'));
+
+// =====================================================================================
+// THE PLANNER PIPELINE. This is the only part that should change when the planner gets a
+// single entry point. It mirrors itinerary/generate_itinerary.php (lines 66-97).
+// =====================================================================================
+require_once __DIR__ . '/../services/StrictFestivalCandidatePoolService.php';
+require_once __DIR__ . '/../services/RuleBasedItineraryPlannerService.php';
+require_once __DIR__ . '/../services/PlannerIntegrityService.php';
+require_once __DIR__ . '/../services/ItineraryTargetRefillService.php';
+require_once __DIR__ . '/../services/ItineraryTargetRebuildService.php';
+require_once __DIR__ . '/../services/ItineraryRouteOptimiser.php';
+
+/**
+ * Generate one itinerary as the generate page does.
+ *
+ * @param array{start_date:string,origin_name:string,origin_lat:float,origin_lng:float} $trip
+ * @return array{itinerary_id:int,notes:string[]} notes: steps that failed without stopping generation
+ * @throws Throwable when generation fails (recorded as a GENERATE violation)
+ */
+function runPlannerPipeline(mysqli $conn, int $travellerId, int $preferenceId, array $trip): array
+{
+    $notes = [];
+    StrictFestivalCandidatePoolService::install($conn);   // the page does this for every request
+    try {
+        $planner = new RuleBasedItineraryPlannerService($conn);
+        $itineraryId = $planner->generate($travellerId, $preferenceId, $trip);
+        PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
+        ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId);
+        ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId);
+        PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
+
+        $conn->begin_transaction();
+        try {
+            ItineraryRouteOptimiser::optimise($conn, $itineraryId);
+            $conn->commit();
+        } catch (Throwable $e) {
+            $conn->rollback();
+            $notes[] = 'route optimisation skipped: ' . $e->getMessage();
+        }
+        return ['itinerary_id' => $itineraryId, 'notes' => $notes];
+    } finally {
+        $conn->query('DROP TEMPORARY TABLE IF EXISTS cultural_places');
+    }
+}
+// =====================================================================================
+
+// ---------------------------------------------------------------------------------------
+// The intended rules, as numbers. Each names the place in the current code it was read from.
+// RB = services/RuleBasedItineraryPlannerService.php, CE = services/CostEstimationService.php,
+// RS = services/RouteService.php, PI = services/PlannerIntegrityService.php.
+// ---------------------------------------------------------------------------------------
+
+/** Visit stops per day for each pace (RB:200). */
+const PACE_TARGET = ['relaxed' => 3, 'normal' => 4, 'packed' => 5];
+/** Rest between visits per pace (RB:201); +15 for family/elderly/low_walking (RB:205-206); +10 for group (RB:209). */
+const PACE_REST_MIN = ['relaxed' => 90, 'normal' => 60, 'packed' => 30];
+const REST_EXTRA_CAREFUL = 15;
+const REST_EXTRA_GROUP = 10;
+/** Day window per preferred visit time, minutes after midnight (RB:570-573). */
+const VISIT_WINDOW = [
+    'morning' => ['start' => 480, 'hard_end' => 1140],     // 08:00 - 19:00
+    'afternoon' => ['start' => 720, 'hard_end' => 1290],   // 12:00 - 21:30
+    'evening' => ['start' => 900, 'hard_end' => 1350],     // 15:00 - 22:30
+    'any' => ['start' => 510, 'hard_end' => 1260],         // 08:30 - 21:00
+];
+/** Latest end for families and elderly or low-walking travellers: 20:00 (RB:205-207). */
+const CAREFUL_HARD_END = 1200;
+/** Recommended daily distance in km per transport and pace (RB:580-583). */
+const DAILY_DISTANCE_KM = [
+    'walking' => ['relaxed' => 3.0, 'normal' => 5.0, 'packed' => 7.0],
+    'public_transport' => ['relaxed' => 15.0, 'normal' => 25.0, 'packed' => 35.0],
+    'car' => ['relaxed' => 30.0, 'normal' => 45.0, 'packed' => 60.0],
+    'motorcycle' => ['relaxed' => 30.0, 'normal' => 45.0, 'packed' => 60.0],
+];
+/** low_walking, wheelchair or elderly: 75 % of the distance (RB:212-213). */
+const CAREFUL_DISTANCE_FACTOR = 0.75;
+/** Hard daily limit = max(3 x recommended, recommended + 15) (RB:591). The day 1 origin leg is not counted (RB:409-411). */
+const HARD_DISTANCE_FACTOR = 3.0;
+const HARD_DISTANCE_EXTRA_KM = 15.0;
+/** ASSUMED, not in the code: one leg (other than the day 1 origin leg) longer than this is implausible. */
+const LEG_LIMIT_KM = ['walking' => 8.0, 'public_transport' => 60.0, 'car' => 150.0, 'motorcycle' => 150.0];
+/** Visit length: 30 to 240 min, at most 120 for families, 105 for elderly/low_walking (RB:670-672). */
+const VISIT_MIN = 30;
+const VISIT_MAX = 240;
+const VISIT_MAX_FAMILY = 120;
+const VISIT_MAX_CAREFUL = 105;
+/** Accessibility rules (RB:636-645): heat window 11:00-16:00 on arrival, long outdoor visit over 150 min. */
+const HEAT_FROM = 660;
+const HEAT_TO = 960;
+const ELDERLY_LONG_VISIT_MIN = 150;
+const STEP_FREE_BLOCKED = '/gunung|mountain|hill|cave|stairs|waterfall|trail|hiking/i';
+/** Cost rules (CE:16-21 rates per km, CE:45-47 party sizes, CE:76-89 vehicles and rooms, CE:119-136 tier defaults). */
+const TRANSPORT_RATE = ['car' => 0.60, 'motorcycle' => 0.30, 'public_transport' => 0.15, 'walking' => 0.00];
+const DEFAULT_PARTY = ['solo' => 1, 'couple' => 2, 'family' => 4, 'group' => 5];
+const TIER_DEFAULTS = ['budget' => ['hotel' => 90.0, 'meal' => 12.0], 'normal' => ['hotel' => 150.0, 'meal' => 20.0], 'luxury' => ['hotel' => 280.0, 'meal' => 35.0]];
+const MEALS_PER_DAY = 3;
+const MEAL_SHARE = 0.25;      // CE:132
+const HOTEL_SHARE = 0.30;     // CE:133
+const MEAL_FLOOR = 6.0;       // CE:134
+const HOTEL_FLOOR = 60.0;     // CE:135
+/** Attraction budget = budget - essentials - 10 % of essentials (RB:224, PI:56). */
+const ESSENTIAL_MARGIN = 0.10;
+/** Estimates (RS:29-44): speeds in km/h, road factor, public transport walk hop and access minutes. */
+const SPEED_KMH = ['car' => 60, 'motorcycle' => 55, 'public_transport' => 30, 'walking' => 5];
+const ROAD_FACTOR = 1.3;
+const TRANSIT_WALK_KM = 1.0;
+const TRANSIT_ACCESS_MIN = 10;
+/** ASSUMED tolerances for LEGS: stored km between 0.95 x straight - 0.05 and max(3 x straight, straight + 2); minutes between a third and three times the nominal time, +-2 / +15 min. */
+const LEG_KM_LOW = 0.95;
+const LEG_KM_HIGH = 3.0;
+const LEG_KM_HIGH_EXTRA = 2.0;
+const LEG_MIN_LOW = 1 / 3;
+const LEG_MIN_HIGH = 3.0;
+/** ASSUMED: money compared to the cent with this slack. */
+const MONEY_SLACK = 0.05;
+const BUDGET_SPLIT_SLACK = 1.0;
+/** East Malaysia; everything else is Peninsular Malaysia. A point without a state: longitude 108 and above is east (RB:608-609 uses 109-120.5). */
+const EAST_STATES = ['sabah', 'sarawak', 'labuan'];
+const EAST_FROM_LNG = 108.0;
+
+// ---------------------------------------------------------------------------------------
+// Scenarios. Origins are real city centres or transport hubs of the chosen area.
+// ---------------------------------------------------------------------------------------
+const SCENARIOS = [
+    'kl_couple_car_normal' => [
+        'pref' => ['trip_days' => 3, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'melaka_solo_walking_relaxed_tight' => [
+        'pref' => ['trip_days' => 1, 'budget' => 120, 'budget_tier' => 'budget', 'transport_type' => 'walking', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'relaxed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'morning', 'accessibility_needs' => '',
+            'interests' => 'heritage,museum', 'preferred_states' => 'Melaka', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'Dutch Square (Stadthuys)', 'origin_lat' => 2.1942, 'origin_lng' => 102.2489],
+    ],
+    'penang_group_transit_packed_festival' => [
+        'pref' => ['trip_days' => 3, 'budget' => 4000, 'budget_tier' => 'normal', 'transport_type' => 'public_transport', 'traveller_type' => 'group', 'party_size' => 6,
+            'travel_pace' => 'packed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'afternoon', 'accessibility_needs' => '',
+            'interests' => 'festival,culture,food', 'preferred_states' => 'Penang', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-08-01', 'origin_name' => 'Komtar bus hub, George Town', 'origin_lat' => 5.4145, 'origin_lng' => 100.3292],
+    ],
+    'sabah_family_motorcycle_normal' => [
+        'pref' => ['trip_days' => 3, 'budget' => 2500, 'budget_tier' => 'normal', 'transport_type' => 'motorcycle', 'traveller_type' => 'family', 'party_size' => 4,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'nature,culture,museum', 'preferred_states' => 'Sabah', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-12', 'origin_name' => 'Padang Merdeka, Kota Kinabalu', 'origin_lat' => 5.9804, 'origin_lng' => 116.0735],
+    ],
+    'johor_solo_car_halal_food_evening' => [
+        'pref' => ['trip_days' => 1, 'budget' => 300, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'halal', 'preferred_visit_time' => 'evening', 'accessibility_needs' => '',
+            'interests' => 'food,culture', 'preferred_states' => 'Johor', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-14', 'origin_name' => 'JB Sentral', 'origin_lat' => 1.4628, 'origin_lng' => 103.7650],
+    ],
+    'johor_couple_car_packed_districts' => [
+        'pref' => ['trip_days' => 3, 'budget' => 2000, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'packed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'morning', 'accessibility_needs' => '',
+            'interests' => 'heritage,nature,shopping', 'preferred_states' => 'Johor', 'preferred_districts' => 'Johor Bahru,Kulai'],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'JB Sentral', 'origin_lat' => 1.4628, 'origin_lng' => 103.7650],
+    ],
+    'kedah_couple_transit_vegetarian' => [
+        'pref' => ['trip_days' => 1, 'budget' => 400, 'budget_tier' => 'normal', 'transport_type' => 'public_transport', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'relaxed', 'dietary_preference' => 'vegetarian', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'food,heritage', 'preferred_states' => 'Kedah', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'Alor Setar Tower', 'origin_lat' => 6.1218, 'origin_lng' => 100.3676],
+    ],
+    'selangor_couple_car_elderly_wheelchair' => [
+        'pref' => ['trip_days' => 3, 'budget' => 1800, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'relaxed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any',
+            'accessibility_needs' => 'Travelling with an elderly parent in a wheelchair, avoid heat | AI: elderly,wheelchair,low_walking,avoid_heat,step_free,indoor_preferred',
+            'interests' => 'culture,museum,nature', 'preferred_states' => 'Selangor', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-12', 'origin_name' => 'Shah Alam city centre', 'origin_lat' => 3.0733, 'origin_lng' => 101.5185],
+    ],
+    'no_state_group_car_7days_generous' => [
+        'pref' => ['trip_days' => 7, 'budget' => 20000, 'budget_tier' => 'luxury', 'transport_type' => 'car', 'traveller_type' => 'group', 'party_size' => 5,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,nature,shopping', 'preferred_states' => '', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'perak_solo_motorcycle_packed_7days_tight' => [
+        'pref' => ['trip_days' => 7, 'budget' => 500, 'budget_tier' => 'budget', 'transport_type' => 'motorcycle', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'packed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'afternoon', 'accessibility_needs' => '',
+            'interests' => 'festival,heritage,culture', 'preferred_states' => 'Perak', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-19', 'origin_name' => 'Ipoh railway station', 'origin_lat' => 4.5975, 'origin_lng' => 101.0753],
+    ],
+    'pahang_solo_walking_packed_evening_district' => [
+        'pref' => ['trip_days' => 1, 'budget' => 250, 'budget_tier' => 'normal', 'transport_type' => 'walking', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'packed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'evening', 'accessibility_needs' => '',
+            'interests' => 'nature,shopping,culture', 'preferred_states' => 'Pahang', 'preferred_districts' => 'Cameron Highlands'],
+        'trip' => ['start_date' => '2026-12-14', 'origin_name' => 'Tanah Rata town centre', 'origin_lat' => 4.4700, 'origin_lng' => 101.3770],
+    ],
+    'kl_selangor_family_transit_tight' => [
+        'pref' => ['trip_days' => 3, 'budget' => 600, 'budget_tier' => 'budget', 'transport_type' => 'public_transport', 'traveller_type' => 'family', 'party_size' => 4,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'morning', 'accessibility_needs' => '',
+            'interests' => 'museum,shopping,nature', 'preferred_states' => 'Kuala Lumpur,Selangor', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'sarawak_solo_transit_evening' => [
+        'pref' => ['trip_days' => 1, 'budget' => 500, 'budget_tier' => 'normal', 'transport_type' => 'public_transport', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'evening', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,food', 'preferred_states' => 'Sarawak', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-12', 'origin_name' => 'Kuching Waterfront', 'origin_lat' => 1.5590, 'origin_lng' => 110.3450],
+    ],
+];
+
+const TEST_EMAIL = 'planner-check@example.test';
+
+// ---------------------------------------------------------------------------------------
+// Connections: one for the pipeline (it shadows cultural_places with a temporary table) and
+// one for the checker, which reads the permanent tables.
+// ---------------------------------------------------------------------------------------
+require __DIR__ . '/../config/db_connect.php';
+$pipelineConn = $conn;
+unset($conn);
+require __DIR__ . '/../config/db_connect.php';
+$checkConn = $conn;
+unset($conn);
+
+foreach ([$pipelineConn, $checkConn] as $c) {
+    $dbName = (string)($c->query('SELECT DATABASE()')->fetch_row()[0] ?? '');
+    if (!str_ends_with($dbName, '_ctest')) {
+        fwrite(STDERR, "Refusing to run: the connected database \"{$dbName}\" is not a test copy (its name must end in _ctest).\n"
+            . "Run with DB_NAME=travel_itinerary_db_ctest.\n");
+        exit(2);
+    }
+}
+
+$selected = SCENARIOS;
+if (isset($options['scenario'])) {
+    $name = (string)$options['scenario'];
+    if (!isset(SCENARIOS[$name])) {
+        fwrite(STDERR, "Unknown scenario \"{$name}\". Scenarios: " . implode(', ', array_keys(SCENARIOS)) . "\n");
+        exit(2);
+    }
+    $selected = [$name => SCENARIOS[$name]];
+}
+
+set_time_limit(0);
+$travellerId = ensureTestTraveller($checkConn);
+$results = [];
+foreach ($selected as $name => $scenario) {
+    $results[] = runScenario($pipelineConn, $checkConn, $travellerId, $name, $scenario, isset($options['keep']));
+}
+$after = testTravellerCounts($checkConn, $travellerId);
+report($results, $dbName, isset($options['road']), isset($options['json']), $after);
+
+$violations = 0;
+foreach ($results as $r) $violations += count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'violation'));
+exit($violations > 0 ? 1 : 0);
+
+// =======================================================================================
+
+function ensureTestTraveller(mysqli $conn): int
+{
+    $stmt = $conn->prepare('SELECT traveller_id FROM travellers WHERE email = ? LIMIT 1');
+    $email = TEST_EMAIL;
+    $stmt->bind_param('s', $email);
+    $stmt->execute();
+    $row = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    if ($row) return (int)$row['traveller_id'];
+
+    // Inactive, with a password nobody knows: the account cannot be used to sign in.
+    $name = 'Planner Check (automated test)';
+    $hash = password_hash(bin2hex(random_bytes(24)), PASSWORD_DEFAULT);
+    $stmt = $conn->prepare('INSERT INTO travellers (full_name, email, password_hash, is_active) VALUES (?, ?, ?, 0)');
+    $stmt->bind_param('sss', $name, $email, $hash);
+    $stmt->execute();
+    $id = (int)$stmt->insert_id;
+    $stmt->close();
+    return $id;
+}
+
+function testTravellerCounts(mysqli $conn, int $travellerId): array
+{
+    $count = static function (string $table) use ($conn, $travellerId): int {
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM {$table} WHERE traveller_id = ?");
+        $stmt->bind_param('i', $travellerId);
+        $stmt->execute();
+        $n = (int)$stmt->get_result()->fetch_row()[0];
+        $stmt->close();
+        return $n;
+    };
+    return ['traveller_id' => $travellerId, 'itineraries' => $count('itineraries'), 'preferences' => $count('traveller_preferences')];
+}
+
+function createPreference(mysqli $conn, int $travellerId, array $p): int
+{
+    $stmt = $conn->prepare('
+        INSERT INTO traveller_preferences
+            (traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type, party_size, travel_pace,
+             dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    ');
+    $stmt->bind_param('iidsssisssssss', $travellerId, $p['trip_days'], $p['budget'], $p['budget_tier'], $p['transport_type'], $p['traveller_type'],
+        $p['party_size'], $p['travel_pace'], $p['dietary_preference'], $p['preferred_visit_time'], $p['accessibility_needs'], $p['interests'],
+        $p['preferred_states'], $p['preferred_districts']);
+    $stmt->execute();
+    $id = (int)$stmt->insert_id;
+    $stmt->close();
+    return $id;
+}
+
+function deleteScenarioData(mysqli $conn, int $travellerId, int $preferenceId): void
+{
+    // Items and share links go with their itinerary (ON DELETE CASCADE).
+    $stmt = $conn->prepare('DELETE FROM itineraries WHERE traveller_id = ? AND preference_id = ?');
+    $stmt->bind_param('ii', $travellerId, $preferenceId);
+    $stmt->execute();
+    $stmt->close();
+    $stmt = $conn->prepare('DELETE FROM traveller_preferences WHERE traveller_id = ? AND preference_id = ?');
+    $stmt->bind_param('ii', $travellerId, $preferenceId);
+    $stmt->execute();
+    $stmt->close();
+}
+
+function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, string $name, array $scenario, bool $keep): array
+{
+    $result = ['scenario' => $name, 'itinerary_id' => null, 'days' => (int)$scenario['pref']['trip_days'], 'stops' => 0,
+               'findings' => [], 'info' => [], 'seconds' => 0.0];
+    $t0 = microtime(true);
+    $preferenceId = createPreference($checkConn, $travellerId, $scenario['pref']);
+    try {
+        $out = runPlannerPipeline($pipelineConn, $travellerId, $preferenceId, $scenario['trip']);
+        $result['itinerary_id'] = $out['itinerary_id'];
+        foreach ($out['notes'] as $note) {
+            $result['findings'][] = finding('OPTIMISE', 'warning', $name, null, null, $note);
+        }
+        checkItinerary($checkConn, $out['itinerary_id'], $scenario, $name, $result);
+    } catch (Throwable $e) {
+        $result['findings'][] = finding('GENERATE', 'violation', $name, null, null, get_class($e) . ': ' . $e->getMessage());
+    }
+    if (!$keep) deleteScenarioData($checkConn, $travellerId, $preferenceId);
+    $result['seconds'] = round(microtime(true) - $t0, 1);
+    return $result;
+}
+
+function finding(string $code, string $severity, string $scenario, ?int $day, ?string $stop, string $detail): array
+{
+    return ['code' => $code, 'severity' => $severity, 'scenario' => $scenario, 'day' => $day, 'stop' => $stop, 'detail' => $detail];
+}
+
+// ---------------------------------------------------------------------------------------
+// The checks
+// ---------------------------------------------------------------------------------------
+
+function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string $name, array &$result): void
+{
+    $stmt = $conn->prepare('SELECT * FROM itineraries WHERE itinerary_id = ?');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $it = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    if (!$it) {
+        $result['findings'][] = finding('GENERATE', 'violation', $name, null, null, "itinerary {$itineraryId} was not stored");
+        return;
+    }
+
+    $stmt = $conn->prepare('
+        SELECT ii.*, cp.name AS place_name, cp.description, cp.state, cp.district, cp.category, cp.opening_hours,
+               cp.festival_start_date, cp.festival_end_date, cp.halal_status, cp.is_outdoor, cp.visit_duration_min,
+               cp.latitude AS place_lat, cp.longitude AS place_lng
+        FROM itinerary_items ii
+        LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+        WHERE ii.itinerary_id = ?
+        ORDER BY ii.day_no, ii.sequence_no, ii.item_id
+    ');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $items = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+
+    $pref = $scenario['pref'];
+    $profile = intendedProfile($pref);
+    $tripDays = (int)$pref['trip_days'];
+    $add = static function (string $code, string $severity, ?int $day, ?string $stop, string $detail) use (&$result, $name): void {
+        $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
+    };
+
+    $visits = array_values(array_filter($items, static fn($i) => in_array(strtolower((string)$i['item_type']), ['attraction', 'food', 'festival'], true)));
+    $result['stops'] = count($visits);
+    $result['info']['stored_total_rm'] = (float)$it['total_estimated_cost'];
+    $result['info']['no_usable_hours'] = 0;
+
+    // DAYS and STOPS
+    $byDay = [];
+    foreach ($visits as $v) $byDay[(int)$v['day_no']][] = $v;
+    for ($d = 1; $d <= $tripDays; $d++) {
+        $n = count($byDay[$d] ?? []);
+        if ($n === 0) $add('DAYS', 'violation', $d, null, 'day has no visit stop');
+        if ($n < $profile['target']) $add('STOPS', 'warning', $d, null, "{$n} stops, pace target {$profile['target']} (short by " . ($profile['target'] - $n) . ')');
+        if ($n > $profile['target']) $add('STOPS', 'violation', $d, null, "{$n} stops, pace target {$profile['target']}");
+    }
+    foreach (array_keys($byDay) as $d) {
+        if ($d < 1 || $d > $tripDays) $add('DAYS', 'violation', $d, null, "stop on day {$d} outside the trip of {$tripDays} day(s)");
+    }
+
+    // DUPLICATE
+    $seen = [];
+    foreach ($visits as $v) {
+        if ($v['place_id'] === null) continue;
+        $pid = (int)$v['place_id'];
+        if (isset($seen[$pid])) $add('DUPLICATE', 'violation', (int)$v['day_no'], $v['item_title'], "place {$pid} also on day {$seen[$pid]}");
+        else $seen[$pid] = (int)$v['day_no'];
+    }
+
+    $states = array_map('strtolower', csv($pref['preferred_states']));
+    $originPoint = [(float)$it['origin_lat'], (float)$it['origin_lng']];
+    $originEast = (float)$it['origin_lng'] >= EAST_FROM_LNG;
+    $previous = $originPoint;
+    $access = strtolower((string)$pref['accessibility_needs']);
+
+    foreach ($byDay as $dayNo => $dayVisits) {
+        $date = (new DateTimeImmutable((string)$it['start_date']))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
+        $prevEnd = null;
+        $dayKm = 0.0;
+        foreach ($dayVisits as $k => $v) {
+            $title = (string)$v['item_title'];
+            $start = toMinutes($v['start_time']);
+            $end = toMinutes($v['end_time']);
+            $isFirstOfTrip = $dayNo === 1 && $k === 0;
+            $travel = $v['travel_time_min'] !== null ? (int)$v['travel_time_min'] : null;
+            $km = $v['distance_km'] !== null ? (float)$v['distance_km'] : null;
+            $point = [(float)($v['item_latitude'] ?? $v['place_lat']), (float)($v['item_longitude'] ?? $v['place_lng'])];
+            $category = strtolower((string)($v['category'] ?? $v['item_type']));
+
+            // TIME_ORDER
+            if ($start === null || $end === null) {
+                $add('TIME_ORDER', 'violation', $dayNo, $title, 'missing start or end time');
+            } else {
+                if ($end <= $start) $add('TIME_ORDER', 'violation', $dayNo, $title, 'ends ' . hm($end) . ' not after start ' . hm($start));
+                if ($prevEnd !== null) {
+                    $gap = $start - $prevEnd;
+                    if ($gap < 0) $add('TIME_ORDER', 'violation', $dayNo, $title, 'starts ' . hm($start) . ' before the previous stop ends ' . hm($prevEnd));
+                    elseif ($travel !== null && $gap < $travel) $add('TIME_ORDER', 'violation', $dayNo, $title, "gap {$gap} min shorter than its travel time {$travel} min");
+                    elseif ($travel !== null && $gap - $travel < $profile['rest']) {
+                        $add('REST', 'warning', $dayNo, $title, 'rest ' . ($gap - $travel) . " min, planned rest {$profile['rest']} min");
+                    }
+                }
+                // START and HARD_END
+                if ($start < $profile['start']) $add('START', 'violation', $dayNo, $title, 'starts ' . hm($start) . ', earliest ' . hm($profile['start']) . " ({$pref['preferred_visit_time']})");
+                if ($end > $profile['hard_end']) $add('HARD_END', 'violation', $dayNo, $title, 'ends ' . hm($end) . ', latest ' . hm($profile['hard_end']));
+                // DURATION
+                $length = $end - $start;
+                if ($length > 0 && ($length < VISIT_MIN || $length > $profile['visit_max'])) {
+                    $add('DURATION', 'violation', $dayNo, $title, "visit {$length} min, allowed " . VISIT_MIN . "-{$profile['visit_max']} min");
+                }
+                // OPEN_HOURS
+                $ranges = openingRanges((string)($v['opening_hours'] ?? ''), $date);
+                if ($ranges === null) {
+                    $result['info']['no_usable_hours']++;
+                } elseif ($end > $start) {
+                    $inside = false;
+                    foreach ($ranges as [$open, $close]) {
+                        if ($start >= $open && $end <= $close) $inside = true;
+                    }
+                    if (!$inside) {
+                        $text = $ranges === [] ? 'closed all day' : implode(', ', array_map(static fn($r) => hm($r[0]) . '-' . hm($r[1]), $ranges));
+                        $add('OPEN_HOURS', 'violation', $dayNo, $title, 'visit ' . hm($start) . '-' . hm($end) . ' on ' . date('D', strtotime($date)) . " {$date}, open {$text}");
+                    }
+                }
+                // ACCESS: heat
+                if (hasNeed($access, ['avoid_heat', 'avoid heat']) && (int)($v['is_outdoor'] ?? 0) === 1) {
+                    if ($start >= HEAT_FROM && $start <= HEAT_TO) {
+                        $add('ACCESS', 'violation', $dayNo, $title, 'outdoor stop for avoid-heat traveller arrives ' . hm($start) . ' (11:00-16:00)');
+                    } elseif ($start < HEAT_FROM && $end > HEAT_FROM) {
+                        $add('ACCESS', 'warning', $dayNo, $title, 'outdoor visit ' . hm($start) . '-' . hm($end) . ' runs into the 11:00-16:00 heat');
+                    }
+                }
+                $prevEnd = max($prevEnd ?? $end, $end);
+            }
+
+            // ACCESS: step-free and elderly
+            $text = (string)$v['place_name'] . ' ' . (string)$v['description'] . ' ' . $category;
+            if (hasNeed($access, ['wheelchair', 'avoid_stairs', 'avoid stairs']) && preg_match(STEP_FREE_BLOCKED, $text, $m)) {
+                $add('ACCESS', 'violation', $dayNo, $title, "step-free traveller sent to a place described with \"{$m[0]}\"");
+            }
+            if (hasNeed($access, ['elderly']) && (int)($v['is_outdoor'] ?? 0) === 1 && (int)($v['visit_duration_min'] ?? 90) > ELDERLY_LONG_VISIT_MIN) {
+                $add('ACCESS', 'violation', $dayNo, $title, "long outdoor place ({$v['visit_duration_min']} min) for an elderly traveller");
+            }
+
+            // DIETARY
+            if ($category === 'food' || strtolower((string)$v['item_type']) === 'food') {
+                if ($pref['dietary_preference'] === 'halal' && (int)($v['halal_status'] ?? 0) !== 1) {
+                    $add('DIETARY', 'violation', $dayNo, $title, 'food stop not marked halal');
+                }
+                if ($pref['dietary_preference'] === 'vegetarian' && !preg_match('/vegetarian|vegan/i', (string)$v['place_name'] . ' ' . (string)$v['description'])) {
+                    $add('DIETARY', 'violation', $dayNo, $title, 'food stop not described as vegetarian or vegan');
+                }
+            }
+
+            // FESTIVAL
+            if ($category === 'festival' || strtolower((string)$v['item_type']) === 'festival') {
+                $fs = (string)($v['festival_start_date'] ?? '');
+                $fe = (string)($v['festival_end_date'] ?? '');
+                if ($fs === '' || $fe === '' || $fs === '0000-00-00' || $fe === '0000-00-00') {
+                    $add('FESTIVAL', 'violation', $dayNo, $title, 'festival without dates scheduled');
+                } elseif ($date < $fs || $date > $fe) {
+                    $add('FESTIVAL', 'violation', $dayNo, $title, "scheduled {$date}, festival runs {$fs} to {$fe}");
+                }
+            }
+
+            // REGION
+            $stopEast = $v['state'] !== null ? in_array(strtolower((string)$v['state']), EAST_STATES, true) : $point[1] >= EAST_FROM_LNG;
+            if ($states && !in_array(strtolower((string)$v['state']), $states, true)) {
+                $add('REGION', 'violation', $dayNo, $title, 'in ' . ($v['state'] ?? 'unknown state') . ', chosen ' . $pref['preferred_states']);
+            }
+            if (!$states && $stopEast !== $originEast) {
+                $add('REGION', 'violation', $dayNo, $title, 'in ' . ($stopEast ? 'East' : 'Peninsular') . ' Malaysia, trip starts in ' . ($originEast ? 'East' : 'Peninsular') . ' Malaysia');
+            }
+
+            // LEGS
+            $straight = haversineKm($previous[0], $previous[1], $point[0], $point[1]);
+            if ($km === null || $travel === null) {
+                $add('LEGS', 'violation', $dayNo, $title, 'leg distance or travel time missing');
+            } else {
+                $kmLow = LEG_KM_LOW * $straight - 0.05;
+                $kmHigh = max(LEG_KM_HIGH * $straight, $straight + LEG_KM_HIGH_EXTRA);
+                if ($km < $kmLow || $km > $kmHigh) {
+                    $add('LEGS', 'violation', $dayNo, $title, sprintf('stored %.2f km, straight line from the previous point %.2f km (allowed %.2f-%.2f)', $km, $straight, max(0, $kmLow), $kmHigh));
+                }
+                $nominal = nominalMinutes($pref['transport_type'], $km);
+                $minLow = (int)floor(LEG_MIN_LOW * $nominal) - 2;
+                $minHigh = (int)ceil(LEG_MIN_HIGH * $nominal) + 15;
+                if ($travel < $minLow || $travel > $minHigh) {
+                    $add('LEGS', 'violation', $dayNo, $title, "stored {$travel} min for {$km} km, nominal {$nominal} min (allowed {$minLow}-{$minHigh})");
+                }
+            }
+
+            // DISTANCE
+            if (!$isFirstOfTrip && $km !== null) {
+                $dayKm += $km;
+                $legLimit = LEG_LIMIT_KM[$pref['transport_type']];
+                if ($km > $legLimit) $add('DISTANCE', 'violation', $dayNo, $title, sprintf('one leg of %.1f km, plausible at most %.0f km by %s', $km, $legLimit, $pref['transport_type']));
+            }
+            $previous = $point;
+        }
+        if ($dayKm > $profile['hard_km']) {
+            $add('DISTANCE', 'violation', $dayNo, null, sprintf('day travels %.1f km, hard limit %.1f km (recommended %.1f)', $dayKm, $profile['hard_km'], $profile['day_km']));
+        } elseif ($dayKm > $profile['day_km']) {
+            $add('DISTANCE', 'warning', $dayNo, null, sprintf('day travels %.1f km, recommended %.1f km', $dayKm, $profile['day_km']));
+        }
+    }
+
+    // BUDGET
+    $cost = intendedCost($pref, $tripDays, $items);
+    $stored = (float)$it['total_estimated_cost'];
+    $result['info']['recomputed_total_rm'] = $cost['total'];
+    if (abs($stored - $cost['total']) > MONEY_SLACK) {
+        $add('BUDGET', 'violation', null, null, sprintf('stored total RM %.2f, recomputed from the stored items RM %.2f', $stored, $cost['total']));
+    }
+    $budget = (float)$pref['budget'];
+    if ($budget > 0 && $stored > $budget + MONEY_SLACK) {
+        // itinerary_view.php and trip_summary.php show an explicit "Over Budget" state, so this is a warning.
+        $add('BUDGET', 'warning', null, null, sprintf('total RM %.2f over the budget RM %.2f by RM %.2f (pages show "Over Budget")', $stored, $budget, $stored - $budget));
+    }
+    $paid = 0.0;
+    foreach ($items as $i) {
+        if (!in_array(strtolower((string)$i['item_type']), ['attraction', 'festival'], true)) continue;
+        $whole = max(0.0, (float)$i['estimated_cost']) * $cost['party'];
+        if ($whole <= 0) continue;
+        if (str_contains((string)$i['notes'], 'Budget warning')) {
+            $add('BUDGET', 'warning', (int)$i['day_no'], (string)$i['item_title'], sprintf('kept over the attraction budget to avoid an empty day (RM %.2f)', $whole));
+        } else {
+            $paid += $whole;
+        }
+    }
+    if ($paid > $cost['attraction_budget'] + BUDGET_SPLIT_SLACK) {
+        $add('BUDGET', 'violation', null, null, sprintf('paid attractions RM %.2f for the party, attraction share of the budget RM %.2f', $paid, $cost['attraction_budget']));
+    }
+}
+
+/** The numbers the planner is meant to use for these preferences. */
+function intendedProfile(array $pref): array
+{
+    $pace = $pref['travel_pace'];
+    $type = $pref['traveller_type'];
+    $access = strtolower((string)$pref['accessibility_needs']);
+    $careful = $type === 'family' || hasNeed($access, ['elderly', 'low_walking']);
+    $rest = PACE_REST_MIN[$pace] + ($careful ? REST_EXTRA_CAREFUL : 0) + ($type === 'group' ? REST_EXTRA_GROUP : 0);
+    $window = VISIT_WINDOW[$pref['preferred_visit_time']];
+    $hardEnd = $careful ? min($window['hard_end'], CAREFUL_HARD_END) : $window['hard_end'];
+    $dayKm = DAILY_DISTANCE_KM[$pref['transport_type']][$pace];
+    if (hasNeed($access, ['low_walking', 'wheelchair', 'elderly'])) $dayKm *= CAREFUL_DISTANCE_FACTOR;
+    $visitMax = VISIT_MAX;
+    if ($type === 'family') $visitMax = min($visitMax, VISIT_MAX_FAMILY);
+    if (hasNeed($access, ['elderly', 'low_walking'])) $visitMax = min($visitMax, VISIT_MAX_CAREFUL);
+    return [
+        'target' => PACE_TARGET[$pace],
+        'rest' => $rest,
+        'start' => $window['start'],
+        'hard_end' => $hardEnd,
+        'day_km' => $dayKm,
+        'hard_km' => max($dayKm * HARD_DISTANCE_FACTOR, $dayKm + HARD_DISTANCE_EXTRA_KM),
+        'visit_max' => $visitMax,
+    ];
+}
+
+/** The trip's total cost and the attraction share of the budget, by the project's cost rules. */
+function intendedCost(array $pref, int $days, array $items): array
+{
+    $party = (int)$pref['party_size'] >= 1 ? (int)$pref['party_size'] : DEFAULT_PARTY[$pref['traveller_type']];
+    $transport = $pref['transport_type'];
+    $budget = (float)$pref['budget'];
+    $nights = max(0, $days - 1);
+    $rooms = (int)ceil($party / 2);
+    $vehicles = match ($transport) {
+        'car' => (int)ceil($party / 5),
+        'motorcycle' => (int)ceil($party / 2),
+        'public_transport' => $party,
+        default => 1,
+    };
+    $tier = TIER_DEFAULTS[$pref['budget_tier']];
+    $meal = $tier['meal'];
+    $hotel = $tier['hotel'];
+    if ($budget > 0) {
+        $meal = max(MEAL_FLOOR, min($meal, ($budget * MEAL_SHARE) / max(1, $days * MEALS_PER_DAY * $party)));
+        if ($nights > 0) $hotel = max(HOTEL_FLOOR, min($hotel, ($budget * HOTEL_SHARE) / ($nights * $rooms)));
+    }
+
+    $attraction = 0.0;
+    $food = 0.0;
+    $hotelItems = 0.0;
+    $km = 0.0;
+    foreach ($items as $i) {
+        $c = max(0.0, (float)$i['estimated_cost']);
+        $type = strtolower((string)$i['item_type']);
+        if ($type === 'hotel') $hotelItems += $c;
+        elseif ($type === 'food') $food += $c;
+        else $attraction += $c;
+        $km += (float)($i['distance_km'] ?? 0);
+    }
+    $rate = TRANSPORT_RATE[$transport];
+    $transportCost = round($km * $rate * ($transport === 'walking' ? 0 : $vehicles), 2);
+    $accommodation = $hotelItems > 0 ? round($hotelItems * $rooms, 2) : round($nights * $hotel * $rooms, 2);
+    $foodCost = max(round($days * MEALS_PER_DAY * $meal * $party, 2), round($food * $party, 2));
+    $total = round(round($attraction * $party, 2) + $transportCost + $accommodation + $foodCost, 2);
+
+    $essential = $days * MEALS_PER_DAY * $meal * $party + $nights * $hotel * $rooms + $km * $rate * $vehicles;
+    return [
+        'total' => $total,
+        'party' => $party,
+        'attraction_budget' => max(0.0, $budget - $essential - $essential * ESSENTIAL_MARGIN),
+    ];
+}
+
+/**
+ * When a place is open on a date, read from its stored opening hours: a list of [open, close]
+ * in minutes (close above 1440 after midnight), [] when closed all day, null when the text
+ * gives no usable hours. Written independently of services/OpeningHours.php.
+ */
+function openingRanges(string $text, string $date): ?array
+{
+    $text = strtolower(trim($text));
+    if ($text === '') return null;
+    $text = str_replace(['–', '—', 'a.m.', 'p.m.'], ['-', '-', 'am', 'pm'], $text);
+
+    $days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    $perDay = [];
+    foreach (preg_split('/\s*[|\r\n]+\s*/', $text) as $part) {
+        if (preg_match('/^(mon|tue|wed|thu|fri|sat|sun)[a-z]*\s*[:,]\s*(.*)$/', trim($part), $m)) {
+            foreach ($days as $index => $day) {
+                if (str_starts_with($day, $m[1])) $perDay[$index] = $m[2];
+            }
+        }
+    }
+    if ($perDay) {
+        $weekday = (int)date('N', strtotime($date)) - 1;
+        if (!isset($perDay[$weekday])) return null;
+        $text = $perDay[$weekday];
+    }
+
+    if (preg_match('/24\s*(hours|hrs|h\b)|24\/7|always open/', $text)) return [[0, 2880]];
+    $ranges = [];
+    if (preg_match_all('/(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?\s*(?:-|to)\s*(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?/', $text, $all, PREG_SET_ORDER)) {
+        foreach ($all as $m) {
+            $open = clockMinutes((int)$m[1], (int)($m[2] ?? 0), $m[3] ?? '');
+            $close = clockMinutes((int)$m[4], (int)($m[5] ?? 0), $m[6] ?? '');
+            if ($open === null || $close === null) continue;
+            // "5:30 - 6:00 PM": the opening time takes the marker of the closing time when that
+            // keeps it before the closing time. (services/OpeningHours.php reads it as 05:30.)
+            if (($m[3] ?? '') === '' && ($m[6] ?? '') !== '') {
+                $same = clockMinutes((int)$m[1], (int)($m[2] ?? 0), $m[6]);
+                if ($same !== null && $same < $close) $open = $same;
+            }
+            if ($close <= $open) $close += 1440;
+            $ranges[] = [$open, $close];
+        }
+    }
+    if ($ranges) return $ranges;
+    if (str_contains($text, 'closed') && !preg_match('/\d/', $text)) return [];
+    return null;
+}
+
+function clockMinutes(int $hour, int $minute, string $ampm): ?int
+{
+    if ($hour > 24 || $minute > 59) return null;
+    if ($ampm === 'pm' && $hour < 12) $hour += 12;
+    if ($ampm === 'am' && $hour === 12) $hour = 0;
+    return $hour * 60 + $minute;
+}
+
+/** Minutes a leg of this many road km takes at the usual speed of the transport. */
+function nominalMinutes(string $transport, float $km): int
+{
+    if ($transport === 'public_transport') {
+        if ($km <= TRANSIT_WALK_KM) return (int)ceil($km / SPEED_KMH['walking'] * 60);
+        return (int)ceil($km / SPEED_KMH['public_transport'] * 60) + TRANSIT_ACCESS_MIN;
+    }
+    return (int)ceil($km / SPEED_KMH[$transport] * 60);
+}
+
+function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float
+{
+    $dLat = deg2rad($lat2 - $lat1);
+    $dLng = deg2rad($lng2 - $lng1);
+    $a = sin($dLat / 2) ** 2 + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin($dLng / 2) ** 2;
+    return 6371.0 * 2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a)));
+}
+
+function hasNeed(string $access, array $words): bool
+{
+    foreach ($words as $w) {
+        if (str_contains($access, $w)) return true;
+    }
+    return false;
+}
+
+function csv(string $text): array
+{
+    return array_values(array_filter(array_map('trim', explode(',', $text)), static fn($x) => $x !== ''));
+}
+
+function toMinutes($time): ?int
+{
+    if (!preg_match('/^(\d{1,2}):(\d{2})/', (string)$time, $m)) return null;
+    return (int)$m[1] * 60 + (int)$m[2];
+}
+
+function hm(int $minutes): string
+{
+    return sprintf('%02d:%02d', intdiv($minutes, 60), $minutes % 60);
+}
+
+// ---------------------------------------------------------------------------------------
+// Output
+// ---------------------------------------------------------------------------------------
+
+function report(array $results, string $dbName, bool $road, bool $json, array $after): void
+{
+    $totals = [];
+    foreach ($results as $r) {
+        foreach ($r['findings'] as $f) {
+            $totals[$f['code']][$f['severity']] = ($totals[$f['code']][$f['severity']] ?? 0) + 1;
+        }
+    }
+    ksort($totals);
+
+    if ($json) {
+        echo json_encode([
+            'database' => $dbName,
+            'routing' => $road ? 'road' : 'estimates only',
+            'scenarios' => $results,
+            'totals' => $totals,
+            'test_traveller_after_run' => $after,
+        ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n";
+        return;
+    }
+
+    echo "Planner check on {$dbName}, routing: " . ($road ? 'road (public servers allowed)' : 'estimates only, no network') . "\n\n";
+    printf("%-46s %4s %5s %5s %5s %8s %7s\n", 'SCENARIO', 'DAYS', 'STOPS', 'VIOL', 'WARN', 'NO_HOURS', 'SECONDS');
+    foreach ($results as $r) {
+        $v = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'violation'));
+        $w = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'warning'));
+        printf("%-46s %4d %5d %5d %5d %8d %7.1f\n", $r['scenario'], $r['days'], $r['stops'], $v, $w, $r['info']['no_usable_hours'] ?? 0, $r['seconds']);
+    }
+
+    foreach (['violation' => 'VIOLATIONS', 'warning' => 'WARNINGS'] as $severity => $heading) {
+        $grouped = [];
+        foreach ($results as $r) {
+            foreach ($r['findings'] as $f) {
+                if ($f['severity'] === $severity) $grouped[$f['code']][] = $f;
+            }
+        }
+        ksort($grouped);
+        echo "\n{$heading} BY CODE" . ($grouped ? '' : ': none') . "\n";
+        foreach ($grouped as $code => $list) {
+            echo "[{$code}] " . count($list) . "\n";
+            foreach ($list as $f) {
+                echo '  ' . $f['scenario'] . ($f['day'] !== null ? ' day ' . $f['day'] : '') . ($f['stop'] !== null ? ' "' . $f['stop'] . '"' : '') . ': ' . $f['detail'] . "\n";
+            }
+        }
+    }
+
+    echo "\nTOTALS PER CODE\n";
+    printf("  %-12s %10s %9s\n", 'CODE', 'VIOLATIONS', 'WARNINGS');
+    $sumV = $sumW = 0;
+    foreach ($totals as $code => $t) {
+        printf("  %-12s %10d %9d\n", $code, $t['violation'] ?? 0, $t['warning'] ?? 0);
+        $sumV += $t['violation'] ?? 0;
+        $sumW += $t['warning'] ?? 0;
+    }
+    printf("  %-12s %10d %9d\n", 'ALL', $sumV, $sumW);
+    $noHours = array_sum(array_map(static fn($r) => $r['info']['no_usable_hours'] ?? 0, $results));
+    echo "\nINFO: {$noHours} stop(s) at places without usable opening hours (not checked for OPEN_HOURS).\n";
+    echo "Test traveller {$after['traveller_id']} after the run: {$after['itineraries']} itinerary(ies), {$after['preferences']} preference(s).\n";
+}

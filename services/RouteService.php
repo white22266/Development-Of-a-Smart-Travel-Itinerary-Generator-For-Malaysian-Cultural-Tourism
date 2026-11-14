@@ -18,6 +18,8 @@
 //   motorcycle                                   Valhalla, motorcycle profile
 // By default the public servers of the German OpenStreetMap community (FOSSGIS) are used.
 // To use your own, set ROUTING_CAR_URL, ROUTING_FOOT_URL and ROUTING_VALHALLA_URL in .env.
+// ROUTING_ESTIMATES_ONLY=1 makes no request at all: every figure is then an estimate. The
+// planner check (tools/check_planner.php) sets it so its runs are offline and repeatable.
 
 require_once __DIR__ . '/OpenDataHttp.php';
 
@@ -113,6 +115,7 @@ class RouteService
     public function preload(array $points): bool
     {
         // Sorted, so the same set of points always makes the same request and is found in the cache.
+        if (self::estimatesOnly()) return false;
         $points = array_values(self::distinctPoints($points));
         if (count($points) < 2 || $this->knowsAll($points)) return true;
 
@@ -408,6 +411,7 @@ class RouteService
      */
     public function roadRoute(array $points, bool $withDetails = true): ?array
     {
+        if (self::estimatesOnly()) return null;
         $points = self::usablePoints($points);
         if (count($points) < 2 || count($points) > self::MAX_ROUTE_POINTS) return null;
 
@@ -594,6 +598,12 @@ class RouteService
         }
         $speed = self::SPEED_MAP[$this->transportType] ?? 60;
         return (int)ceil(($roadKm / $speed) * 60);
+    }
+
+    /** Whether ROUTING_ESTIMATES_ONLY is set: then no routing server is asked and every figure is an estimate. */
+    private static function estimatesOnly(): bool
+    {
+        return in_array(strtolower(trim((string)getenv('ROUTING_ESTIMATES_ONLY'))), ['1', 'true', 'yes'], true);
     }
 
     private function osrmBase(): string
