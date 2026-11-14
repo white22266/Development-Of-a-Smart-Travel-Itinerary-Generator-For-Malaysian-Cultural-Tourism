@@ -137,28 +137,6 @@ CREATE TABLE `food_places` (
   KEY `idx_coords` (`latitude`,`longitude`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Table hotel_search_cache
-CREATE TABLE `hotel_search_cache` (
-  `cache_id` int(11) NOT NULL AUTO_INCREMENT,
-  `cache_key` char(64) NOT NULL,
-  `final_stop_name` varchar(255) NOT NULL,
-  `state` varchar(100) DEFAULT NULL,
-  `district` varchar(100) DEFAULT NULL,
-  `latitude` decimal(10,7) DEFAULT NULL,
-  `longitude` decimal(10,7) DEFAULT NULL,
-  `source` varchar(60) NOT NULL DEFAULT 'unknown',
-  `hotels_json` longtext NOT NULL,
-  `search_count` int(11) NOT NULL DEFAULT 1,
-  `last_searched_at` timestamp NULL DEFAULT current_timestamp(),
-  `expires_at` datetime DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  PRIMARY KEY (`cache_id`),
-  UNIQUE KEY `cache_key` (`cache_key`),
-  KEY `idx_hotel_cache_location` (`latitude`,`longitude`),
-  KEY `idx_hotel_cache_expiry` (`expires_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 -- Table itineraries
 CREATE TABLE `itineraries` (
   `itinerary_id` int(11) NOT NULL AUTO_INCREMENT,
