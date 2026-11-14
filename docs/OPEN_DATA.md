@@ -20,7 +20,7 @@ Two things are optional and off until they are set up: real public transport con
 | Address search, "what is here" | Photon, then Nominatim (OpenStreetMap data) | ODbL | - |
 | Routes by car and on foot, order of the stops | OSRM on OpenStreetMap data (FOSSGIS servers) | ODbL | map info box |
 | Routes by motorcycle | Valhalla on OpenStreetMap data (FOSSGIS server) | ODbL | map info box |
-| Weather forecast | Open-Meteo | CC BY 4.0 | map info box and forecast answers |
+| Weather forecast (chance of rain, used when a trip is planned and edited) | Open-Meteo | CC BY 4.0 | map info box and forecast answers |
 | Weather warnings | Malaysian Meteorological Department, through data.gov.my | open government data | road conditions panel |
 | Fires | NASA FIRMS (NOAA-20 VIIRS hot spots, last 24 hours) | open, credit asked for | road conditions panel |
 | Live positions of buses and trains | the operators (Prasarana, KTMB, BAS.MY), through data.gov.my | CC BY 4.0 | under the map |
@@ -33,7 +33,9 @@ The credits are part of the licences. Keep them when changing a page.
 
 ## Setting it up
 
-1. Run the migrations in `database/migrations/` on the database (they can be run again safely).
+1. Create the database (see `README.md`: either `database/schema.sql` with
+   `database/seed_reference.sql`, or the full dump), then apply the files in
+   `database/migrations/` with `php tools/migrate.php` (`--status` lists what is applied).
 2. In `.env`, set `OPEN_DATA_CONTACT` to a web address or e-mail address. The open services
    ask every application to say who runs it; it is sent with each request to them.
    It matters most for Wikimedia, whose published limits are 10 requests a minute for an
@@ -46,8 +48,9 @@ The credits are part of the licences. Keep them when changing a page.
    php tools/sync_places.php --all                        # every state, one after another
    ```
 
-4. Schedule `php tools/sync_places.php --all` once a week (Windows Task Scheduler:
-   `C:\xampp\php\php.exe C:\path\to\project\tools\sync_places.php --all`).
+4. Run the sync once a week. `tools/sync_places_weekly.bat` runs it for every state with
+   `--no-publish` (new places wait for review) and keeps a dated log in `storage/logs/`;
+   `README.md` shows how to register it in Windows Task Scheduler.
 
 ### Optional: public transport connections
 
@@ -119,17 +122,36 @@ A day's stops are visited in the order with the least travelling for the trip's 
    step by step) and times the days again. Car, walking and public transport are measured by
    OSRM, motorcycles by Valhalla's motorcycle profile, so each way of travelling can end up
    with its own order.
-3. Only orders that keep every rule of `PlannerRules` are used: the whole visit inside the
-   opening hours of that weekday, the day window, the rest between visits, the distance limit,
-   the budget and the accessibility rules (no outdoor visit between 11 am and 4 pm for a
-   traveller who asked to avoid heat). A stop that no order can keep on the road figures is
-   dropped; at generation one feasible replacement is tried.
+3. Only orders that keep every rule of `PlannerRules` are used (opening hours, day window,
+   rest, distance limits, budget, accessibility). `docs/PLANNER.md` lists the rules and their
+   numbers. A stop that no order can keep on the road figures is dropped; at generation one
+   feasible replacement is tried.
 4. A traveller can run the same step again with "Optimise route" on the itinerary page, for
    example after replacing a stop or choosing hotels (a day then ends at its hotel).
 
 The public servers have limits the code is built around: OSRM takes fifty points in one
 request but makes a client wait about ten seconds before the next one, so a whole trip goes
 into one request; Valhalla answers at once but takes ten points, so each day is one request.
+
+## Weather, meals, accessibility and languages in planning
+
+- **Weather.** The chance of rain for the trip's dates comes from Open-Meteo, asked once per
+  trip for the starting point, and only for dates inside the forecast. On a wet day (60 percent
+  or more) the planner prefers indoor places, and from 80 percent it tries outdoor places only
+  when no indoor place is feasible. It is a preference, never a hard rule, and without a
+  forecast the plan is made as usual. The itinerary page can plan the rainy days again.
+- **Meals.** Lunch and dinner are planned as rows of their own, at food places taken from the
+  imported place data or as a break without a place. No restaurant booking, price or menu data
+  is used.
+- **Accessibility.** OpenStreetMap and the other sources give no surveyed access data (step-free
+  entrances, lifts, ramps). Access is decided from the traveller's ticked needs and from
+  keywords in a place's name and description, so it is a best effort and not a guarantee.
+  Halal and vegetarian choices are decided in the same way, from the place's halal flag and
+  its name and description.
+- **Languages.** The traveller pages are in English, Malay and Simplified Chinese
+  (`config/i18n.php`, texts in `lang/`). The PDF is in
+  English or Malay; a traveller using Chinese gets the English PDF.
+- **Planner rules.** All rules, numbers and the planner check are in `docs/PLANNER.md`.
 
 ## What is an estimate
 

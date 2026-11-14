@@ -8,8 +8,8 @@
 //   php tools/sync_places.php --state="Melaka" --dry-run   show what would change, save nothing
 //   php tools/sync_places.php --all --no-publish           stage new places for review, publish none
 //
-// Safe to run again: nothing is duplicated. Schedule it weekly, for example with
-// Windows Task Scheduler:  C:\xampp\php\php.exe C:\path\to\project\tools\sync_places.php --all
+// Safe to run again: nothing is duplicated. Schedule it weekly with
+// tools/sync_places_weekly.bat, which runs --all --no-publish and keeps a log; README.md shows how.
 
 if (PHP_SAPI !== 'cli') {
     http_response_code(404);
