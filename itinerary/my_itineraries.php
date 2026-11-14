@@ -242,7 +242,7 @@ $stmt->close();
                                                 <?php echo htmlspecialchars($r["title"]); ?>
                                             </strong>
                                         </td>
-                                        <td class="date-cell" data-label="<?php echo te('trips.col_start'); ?>"><?php echo !empty($r["start_date"]) ? htmlspecialchars(date("d M Y", strtotime($r["start_date"]))) : "-"; ?></td>
+                                        <td class="date-cell" data-label="<?php echo te('trips.col_start'); ?>"><?php echo !empty($r["start_date"]) ? htmlspecialchars(i18n_date((string)$r["start_date"], 'short')) : "-"; ?></td>
                                         <td class="number-cell" data-label="<?php echo te('trips.col_days'); ?>"><?php echo (int)$r["total_days"]; ?></td>
                                         <td class="number-cell" data-label="<?php echo te('trips.col_places'); ?>"><?php echo (int)$r["place_count"]; ?></td>
                                         <td class="hotel-cell" data-label="<?php echo te('trips.col_hotel'); ?>">

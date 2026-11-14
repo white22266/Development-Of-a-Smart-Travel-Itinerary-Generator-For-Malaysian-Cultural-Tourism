@@ -198,7 +198,7 @@ $quickTips = [
                 <div class="item">
                   <div>
                     <strong><?php echo htmlspecialchars($it["title"]); ?></strong>
-                    <span><?php echo te('dash.date', ['date' => $it["created_at"]]); ?></span>
+                    <span><?php echo te('dash.date', ['date' => i18n_date((string)$it["created_at"], 'short')]); ?></span>
                   </div>
                   <div class="badge"><?php echo te('dash.days_badge', ['n' => (int)($it["total_days"] ?? 0)]); ?></div>
                 </div>

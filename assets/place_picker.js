@@ -12,12 +12,25 @@
 //   });                                 // search, also {name, label}
 //
 //   PlacePicker.attachSearch(inputElement, searchUrl, onChoose)   // the search box on its own
+//
+// The text for "no place found" can come from the page: a data-no-place attribute on the search
+// field, or window.PLACE_PICKER_TEXT["common.picker_no_place"] (the page fills it with i18n_js()).
+// Without either, the English text below is used.
 
 (function () {
     "use strict";
 
     var MALAYSIA = { center: [4.2, 108.0], zoom: 5 };
     var TILES = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+    var NO_PLACE_DEFAULT = "No place found for that. Try the town or a nearby landmark.";
+
+    function noPlaceText(input) {
+        var own = input.getAttribute("data-no-place");
+        if (own) return own;
+        var shared = window.PLACE_PICKER_TEXT && window.PLACE_PICKER_TEXT["common.picker_no_place"];
+        return shared || NO_PLACE_DEFAULT;
+    }
+
     var ATTRIBUTION = "&copy; <a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\" rel=\"noopener\">OpenStreetMap</a> contributors";
 
     function addStyles() {
@@ -65,7 +78,7 @@
             if (!results.length) {
                 var empty = document.createElement("div");
                 empty.className = "place-picker-empty";
-                empty.textContent = "No place found for that. Try the town or a nearby landmark.";
+                empty.textContent = noPlaceText(input);
                 list.appendChild(empty);
             }
             results.forEach(function (result) {

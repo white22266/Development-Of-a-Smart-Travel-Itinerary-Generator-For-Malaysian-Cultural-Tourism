@@ -90,7 +90,7 @@ if ($category !== "" && in_array($category, $categoryOptions, true)) {
 // CHANGE: total count for pagination
 $countSql = "SELECT COUNT(*) AS total FROM cultural_places cp WHERE $where";
 $countStmt = $conn->prepare($countSql);
-if (!$countStmt) die("Count prepare failed: " . htmlspecialchars($conn->error));
+if (!$countStmt) { error_log("cultural_guide.php: count prepare failed: " . $conn->error); die(htmlspecialchars(t('common.err_load'))); }
 if ($types !== "") $countStmt->bind_param($types, ...$params);
 $countStmt->execute();
 $total = (int)($countStmt->get_result()->fetch_assoc()["total"] ?? 0);
@@ -123,7 +123,7 @@ $listSql = "
 ";
 
 $listStmt = $conn->prepare($listSql);
-if (!$listStmt) die("List prepare failed: " . htmlspecialchars($conn->error));
+if (!$listStmt) { error_log("cultural_guide.php: list prepare failed: " . $conn->error); die(htmlspecialchars(t('common.err_load'))); }
 
 // CHANGE: bind params + limit/offset
 $bindParams = $params;

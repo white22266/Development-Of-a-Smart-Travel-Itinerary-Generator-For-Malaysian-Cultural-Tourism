@@ -606,6 +606,7 @@ foreach ($preferences as $pref) {
   </main>
 </div>
 
+<script>window.PLACE_PICKER_TEXT = <?php echo i18n_js(['common.picker_no_place']); ?>;</script>
 <script src="../assets/place_picker.js?v=20261112c"></script>
 <script>
 const preferenceData = <?php echo json_encode($preferencePayload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;

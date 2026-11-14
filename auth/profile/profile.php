@@ -2,6 +2,7 @@
 // auth/profile/profile.php
 session_start();
 require_once "../../config/db_connect.php";
+require_once "../../config/i18n.php";
 
 // Access control
 // CHANGED: fix path (was ../auth/login.php which becomes /auth/auth/login.php)
@@ -51,10 +52,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // ADDED: in force mode, require password change
     if ($forceMode) {
         if ($newPassword === "" || $confirmPassword === "") {
-            $errors[] = "You must set a new password before continuing.";
+            $errors[] = t('prof.err_force_pw');
         } else {
-            if (strlen($newPassword) < 6) $errors[] = "Password must be at least 6 characters.";
-            if ($newPassword !== $confirmPassword) $errors[] = "Password confirmation does not match.";
+            if (strlen($newPassword) < 6) $errors[] = t('prof.pw_min');
+            if ($newPassword !== $confirmPassword) $errors[] = t('prof.err_pw_match');
         }
 
         if (empty($errors)) {
@@ -76,18 +77,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 header("Location: ../../traveller/traveller_dashboard.php");
                 exit;
             } else {
-                $errors[] = "Failed to update password.";
+                $errors[] = t('prof.err_pw_update');
             }
             $stmt->close();
         }
     } else {
         // Normal profile update mode (not forced)
 
-        if ($fullName === "") $errors[] = "Full name is required.";
+        if ($fullName === "") $errors[] = t('prof.err_name');
 
         if ($newPassword !== "" || $confirmPassword !== "") {
-            if (strlen($newPassword) < 6) $errors[] = "Password must be at least 6 characters.";
-            if ($newPassword !== $confirmPassword) $errors[] = "Password confirmation does not match.";
+            if (strlen($newPassword) < 6) $errors[] = t('prof.pw_min');
+            if ($newPassword !== $confirmPassword) $errors[] = t('prof.err_pw_match');
         }
 
         if (empty($errors)) {
@@ -111,14 +112,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
 
             if ($stmt->execute()) {
-                $success = "Profile updated successfully.";
+                $success = t('prof.saved');
                 $_SESSION["traveller_name"] = $fullName;
 
                 // Refresh local copy
                 $user["full_name"] = $fullName;
                 $user["phone"] = $phone;
             } else {
-                $errors[] = "Failed to update profile.";
+                $errors[] = t('prof.err_update');
             }
             $stmt->close();
         }
@@ -126,11 +127,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
     <meta charset="UTF-8">
-    <title>Edit Profile | Smart Travel Itinerary Generator</title>
+    <title><?php echo te('prof.title'); ?> | Smart Travel Itinerary Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/dashboard_style.css?v=20260617j">
     <style>
@@ -179,46 +180,48 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Profile</span>
+                    <span><?php echo te('nav.profile'); ?></span>
                 </div>
             </div>
 
-            <nav class="nav">
-                <a href="../../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="../../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-                <a href="../../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-                <a href="../../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a class="active" href="../../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-                <a href="../../auth/logout.php"><span class="dot"></span> Logout</a>
+            <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+                <a href="../../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+                <a href="../../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+                <a href="../../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+                <a href="../../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+                <a href="../../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+                <a class="active" href="../../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+                <a href="../../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
             </nav>
 
+            <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
+
             <div class="sidebar-footer">
-                <div class="small">Logged in as:</div>
+                <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
                 <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($_SESSION["traveller_name"]); ?></div>
-                <div class="chip">Role: Traveller</div>
+                <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
             </div>
         </aside>
 
         <main class="content">
             <div class="topbar">
                 <div class="page-title">
-                    <h1><?php echo $forceMode ? "Change Password" : "Edit Profile"; ?></h1>
+                    <h1><?php echo $forceMode ? te('prof.title_pw') : te('prof.title'); ?></h1>
                     <p>
                         <?php echo $forceMode
-                            ? "You must change your temporary password before continuing."
-                            : "Update your personal and login information."; ?>
+                            ? te('prof.sub_force')
+                            : te('prof.sub'); ?>
                     </p>
                 </div>
                 <div class="actions">
                     <!-- CHANGED: fix path (was ../traveller/... which is wrong from /auth/profile/) -->
-                    <a class="btn btn-ghost" href="../../traveller/traveller_dashboard.php">Back to Dashboard</a>
+                    <a class="btn btn-ghost" href="../../traveller/traveller_dashboard.php"><?php echo te('common.back_dashboard'); ?></a>
                 </div>
             </div>
 
             <section class="grid">
                 <div class="card col-12">
-                    <h3><?php echo $forceMode ? "Set New Password" : "Profile Details"; ?></h3>
+                    <h3><?php echo $forceMode ? te('prof.h_set_pw') : te('prof.h_details'); ?></h3>
 
                     <?php if ($success): ?>
                         <p style="color:green; font-weight:700;"><?php echo htmlspecialchars($success); ?></p>
@@ -234,12 +237,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     <?php if ($forceMode): ?>
                         <p style="color:#b45309; font-weight:700;">
-                            Your password was reset by an administrator. Please set a new password now.
+                            <?php echo te('prof.force_note'); ?>
                         </p>
                     <?php endif; ?>
 
                     <form method="post">
-                        <label style="font-weight:700;">Full Name</label>
+                        <label style="font-weight:700;"><?php echo te('prof.full_name'); ?></label>
                         <input type="text" name="full_name" required
                             value="<?php echo htmlspecialchars($user["full_name"]); ?>"
                             <?php echo $forceMode ? "readonly" : ""; ?>
@@ -247,22 +250,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                         <div style="height:10px;"></div>
 
-                        <label style="font-weight:700;">Email</label>
+                        <label style="font-weight:700;"><?php echo te('prof.email'); ?></label>
                         <input type="email" class="readonly-field" readonly
                             value="<?php echo htmlspecialchars($user["email"]); ?>"
                             aria-describedby="emailVerificationStatus">
                         <div class="verify-row" id="emailVerificationStatus">
                             <?php if ((int)($user["is_active"] ?? 0) === 1): ?>
-                                <span class="verify-badge ok">Verified Email</span>
+                                <span class="verify-badge ok"><?php echo te('prof.verified'); ?></span>
                             <?php else: ?>
-                                <span class="verify-badge warn">Email Not Verified</span>
+                                <span class="verify-badge warn"><?php echo te('prof.not_verified'); ?></span>
                             <?php endif; ?>
-                            <span style="font-size:12px; color:#64748B;">Email is used for login and verification, so it cannot be changed here.</span>
+                            <span style="font-size:12px; color:#64748B;"><?php echo te('prof.email_help'); ?></span>
                         </div>
 
                         <div style="height:10px;"></div>
 
-                        <label style="font-weight:700;">Phone</label>
+                        <label style="font-weight:700;"><?php echo te('prof.phone'); ?></label>
                         <input type="text" name="phone"
                             value="<?php echo htmlspecialchars($user["phone"] ?? ""); ?>"
                             <?php echo $forceMode ? "readonly" : ""; ?>
@@ -270,33 +273,33 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                         <hr class="sep">
 
-                        <h3 style="margin-bottom:6px;"><?php echo $forceMode ? "Change Password" : "Change Password (Optional)"; ?></h3>
+                        <h3 style="margin-bottom:6px;"><?php echo $forceMode ? te('prof.h_change_pw') : te('prof.h_change_pw_opt'); ?></h3>
 
-                        <label>New Password</label>
+                        <label><?php echo te('prof.new_pw'); ?></label>
                         <p style="font-size:12px; color:#64748B; margin:4px 0 8px;">
-                            Password must be at least 6 characters.
+                            <?php echo te('prof.pw_min'); ?>
                         </p>
                         <div class="password-input-wrap">
                             <input type="password" id="new_password" name="new_password"
-                                <?php echo $forceMode ? 'placeholder="Required"' : 'placeholder="Leave blank to keep current password"'; ?>
+                                placeholder="<?php echo $forceMode ? te('prof.ph_required') : te('prof.ph_keep'); ?>"
                                 style="width:100%; padding:10px 40px 10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
-                            <button type="button" class="password-toggle-icon" onclick="togglePassword('new_password', this)" aria-label="Show password">👁️</button>
+                            <button type="button" class="password-toggle-icon" onclick="togglePassword('new_password', this)" aria-label="<?php echo te('prof.show_pw'); ?>">👁️</button>
                         </div>
 
                         <div style="height:10px;"></div>
 
-                        <label>Confirm New Password</label>
+                        <label><?php echo te('prof.confirm_pw'); ?></label>
                         <div class="password-input-wrap">
                             <input type="password" id="confirm_password" name="confirm_password"
                                 style="width:100%; padding:10px 40px 10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,.1);">
 
-                            <button type="button" class="password-toggle-icon" onclick="togglePassword('confirm_password', this)" aria-label="Show password">👁️</button>
+                            <button type="button" class="password-toggle-icon" onclick="togglePassword('confirm_password', this)" aria-label="<?php echo te('prof.show_pw'); ?>">👁️</button>
                         </div>
 
                         <div style="margin-top:14px;">
                             <button class="btn btn-primary" type="submit">
-                                <?php echo $forceMode ? "Update Password" : "Save Changes"; ?>
+                                <?php echo $forceMode ? te('prof.btn_update_pw') : te('prof.btn_save'); ?>
                             </button>
                         </div>
                     </form>
@@ -306,6 +309,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
     <script>
+        const T = <?php echo i18n_js(['prof.show_pw', 'prof.hide_pw']); ?>;
         function togglePassword(inputId, icon) {
             const input = document.getElementById(inputId);
             if (!input) return;
@@ -313,11 +317,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (input.type === "password") {
                 input.type = "text";
                 icon.textContent = "🙈";
-                icon.setAttribute("aria-label", "Hide password");
+                icon.setAttribute("aria-label", T["prof.hide_pw"]);
             } else {
                 input.type = "password";
                 icon.textContent = "👁️";
-                icon.setAttribute("aria-label", "Show password");
+                icon.setAttribute("aria-label", T["prof.show_pw"]);
             }
         }
     </script>

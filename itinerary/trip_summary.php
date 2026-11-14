@@ -5,6 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
 
@@ -13,7 +14,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
     exit;
 }
 
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 $travellerId   = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId   = (int)($_GET["itinerary_id"] ?? 0);
 
@@ -127,15 +128,19 @@ $states    = $it["preferred_states"] ?? "-";
 $interests = $it["interests"] ?? "-";
 $placeCount = count(array_filter($allItems, fn($item) => strtolower((string)($item["item_type"] ?? "")) !== "hotel"));
 $costTotal = (float)($costBreakdown["total_cost"] ?? 0);
-$budgetStatusText = "No budget limit was saved for this trip.";
+$budgetStatusText = t('trip.budget_none');
 if ($budget > 0) {
+    $budgetAmount = number_format(abs((float)$costBreakdown["budget_difference"]), 2);
     $budgetStatusText = $costBreakdown["within_budget"]
-        ? "The estimate is within budget with RM " . number_format(abs((float)$costBreakdown["budget_difference"]), 2) . " remaining."
-        : "The estimate is over budget by RM " . number_format(abs((float)$costBreakdown["budget_difference"]), 2) . ".";
+        ? t('trip.budget_within', ['amount' => $budgetAmount])
+        : t('trip.budget_over', ['amount' => $budgetAmount]);
 }
-$hotelSummaryText = !empty($selectedHotels)
-    ? "A confirmed hotel has been added as the final itinerary stop and included in accommodation cost."
-    : "No hotel is confirmed yet; use the AI assistant or hotel recommendations below to choose one.";
+$hotelSummaryText = !empty($selectedHotels) ? t('trip.hotel_confirmed') : t('trip.hotel_none');
+// Interests are stored as codes (culture, heritage ...): show them in the traveller's language.
+$interestsText = implode(', ', array_map(
+    static fn($code) => t_choice('interest', $code),
+    array_filter(array_map('trim', explode(',', (string)$interests)), static fn($code) => $code !== '')
+));
 $missingInfo = [];
 if (empty($startDate)) {
     $missingInfo[] = "Start Date";
@@ -156,7 +161,7 @@ $chartLegend = [];
 foreach ($costBreakdown["breakdown"] as $costItem) {
     $amount = (float)($costItem["amount"] ?? 0);
     if ($amount <= 0) continue;
-    $label = (string)($costItem["label"] ?? "Cost");
+    $label = i18n_cost_label((string)($costItem["label"] ?? "Cost"), $transportType);
     $percent = $costTotal > 0 ? round(($amount / $costTotal) * 100, 1) : 0;
     $chartLabels[] = $label;
     $chartAmounts[] = $amount;
@@ -168,12 +173,12 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trip Summary | Smart Travel Itinerary Generator</title>
+    <title><?php echo te('trip.title'); ?> | Smart Travel Itinerary Generator</title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <link rel="stylesheet" href="../assets/trip_ai_chat.css?v=20261022">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -429,92 +434,98 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Cost Estimation &amp; Trip Summary</span>
+                    <span><?php echo te('nav.trips'); ?></span>
                 </div>
             </div>
-            <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-                <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-                <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-                <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+            <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+                <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+                <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+                <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+                <a href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+                <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+                <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
             </nav>
+            <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
             <div class="sidebar-footer">
-                <div class="small">Logged in as:</div>
+                <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
                 <div style="margin-top:6px;font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-                <div class="chip">Role: Traveller</div>
+                <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
             </div>
         </aside>
         <main class="content" style="padding:24px;">
             <div class="topbar">
                 <div class="page-title">
-                    <h1>Trip Summary</h1>
+                    <h1><?php echo te('trip.title'); ?></h1>
                     <p class="meta"><?php echo htmlspecialchars($it["title"]); ?></p>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>">Back to Map</a>
-                    <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
+                    <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>"><?php echo te('trip.back_map'); ?></a>
+                    <a class="btn btn-primary" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>"><?php echo te('trip.export_pdf'); ?></a>
                 </div>
             </div>
 
             <div class="summary-card">
-                <h3>Complete Trip Overview</h3>
+                <h3><?php echo te('trip.overview'); ?></h3>
                 <p>
-                    <?php echo htmlspecialchars($it["title"]); ?> is a <?php echo (int)$tripDays; ?> day trip covering
-                    <?php echo (int)$placeCount; ?> planned stop<?php echo $placeCount === 1 ? "" : "s"; ?> in
-                    <?php echo htmlspecialchars($states ?: "Malaysia"); ?>. The route is planned for
-                    <?php echo htmlspecialchars(str_replace("_", " ", $transportType)); ?> travel, starting
-                    <?php echo $startDate ? htmlspecialchars(date("d M Y", strtotime($startDate))) : "from the saved trip date"; ?>.
-                    Main interests: <?php echo htmlspecialchars($interests ?: "general cultural tourism"); ?>.
+                    <?php echo te('trip.overview_p1', [
+                        'title' => $it["title"],
+                        'days' => (int)$tripDays,
+                        'stops' => $placeCount === 1 ? t('trip.stops_one') : t('trip.stops_many', ['n' => (int)$placeCount]),
+                        'states' => $states ?: t('trip.states_fallback'),
+                        'transport' => t_choice('transport', $transportType),
+                        'start' => $startDate ? i18n_date((string)$startDate, 'short') : t('trip.start_fallback'),
+                        'interests' => $interestsText !== '' ? $interestsText : t('trip.interests_fallback'),
+                    ]); ?>
                 </p>
                 <p>
-                    Estimated total cost is RM <?php echo number_format($costTotal, 2); ?>, including entrance/activity costs,
-                    transport estimate, meals, and accommodation. <?php echo htmlspecialchars($budgetStatusText); ?>
-                    <?php echo htmlspecialchars($hotelSummaryText); ?>
+                    <?php echo te('trip.overview_p2', [
+                        'total' => number_format($costTotal, 2),
+                        'budget' => $budgetStatusText,
+                        'hotel' => $hotelSummaryText,
+                    ]); ?>
                 </p>
             </div>
 
             <!-- TRIP METADATA -->
             <div class="trip-meta-grid">
                 <div class="trip-meta-item">
-                    <div class="label">Trip Duration</div>
-                    <div class="value"><?php echo $tripDays; ?> Day<?php echo $tripDays > 1 ? 's' : ''; ?></div>
+                    <div class="label"><?php echo te('trip.duration'); ?></div>
+                    <div class="value"><?php echo $tripDays > 1 ? te('trip.days_many', ['n' => $tripDays]) : te('trip.days_one'); ?></div>
                 </div>
                 <div class="trip-meta-item">
-                    <div class="label">Transport</div>
-                    <div class="value"><?php echo ucfirst(str_replace('_', ' ', $transportType)); ?></div>
+                    <div class="label"><?php echo te('trip.transport'); ?></div>
+                    <div class="value"><?php echo htmlspecialchars(t_choice('transport', $transportType)); ?></div>
                 </div>
                 <div class="trip-meta-item">
-                    <div class="label">Start Date</div>
-                    <div class="value"><?php echo $startDate ? date('d M Y', strtotime($startDate)) : '-'; ?></div>
+                    <div class="label"><?php echo te('trip.start_date'); ?></div>
+                    <div class="value"><?php echo $startDate ? htmlspecialchars(i18n_date((string)$startDate, 'short')) : '-'; ?></div>
                 </div>
                 <div class="trip-meta-item">
-                    <div class="label">Total Distance</div>
-                    <div class="value"><?php echo number_format($totalDistKm, 1); ?> km</div>
+                    <div class="label"><?php echo te('trip.total_distance'); ?></div>
+                    <div class="value"><?php echo te('trip.km', ['n' => number_format($totalDistKm, 1)]); ?></div>
                 </div>
                 <div class="trip-meta-item">
-                    <div class="label">Budget</div>
+                    <div class="label"><?php echo te('trip.budget'); ?></div>
                     <div class="value">RM <?php echo number_format($budget, 0); ?></div>
                 </div>
                 <div class="trip-meta-item">
-                    <div class="label">States</div>
-                    <div class="value" style="font-size:12px;"><?php echo htmlspecialchars($states ?: 'Malaysia'); ?></div>
+                    <div class="label"><?php echo te('trip.states'); ?></div>
+                    <div class="value" style="font-size:12px;"><?php echo htmlspecialchars($states ?: t('trip.states_fallback')); ?></div>
                 </div>
             </div>
 
             <section class="grid">
                 <!-- COST BREAKDOWN -->
                 <div class="card col-12">
-                    <h3>Cost Breakdown</h3>
-                    <p class="meta">Estimated total trip cost based on itinerary items, transport, accommodation, and meals.</p>
+                    <h3><?php echo te('trip.cost_title'); ?></h3>
+                    <p class="meta"><?php echo te('trip.cost_sub'); ?></p>
                     <div class="cost-layout">
                         <div class="chart-panel">
                             <div class="chart-wrap">
-                                <canvas id="costPieChart" aria-label="Trip cost pie chart" role="img"></canvas>
+                                <canvas id="costPieChart" aria-label="<?php echo te('trip.chart_aria'); ?>" role="img"></canvas>
                             </div>
-                            <div class="chart-legend-list" aria-label="Cost chart legend">
+                            <div class="chart-legend-list" aria-label="<?php echo te('trip.legend_aria'); ?>">
                                 <?php
                                 $chartColors = ['#4f46e5', '#f59e0b', '#16a34a', '#ef4444', '#0ea5e9'];
                                 foreach ($chartLegend as $idx => $legendItem):
@@ -535,7 +546,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                             <?php foreach ($costBreakdown['breakdown'] as $item): ?>
                                 <div class="cost-row">
                                     <div>
-                                        <div class="cost-label"><?php echo htmlspecialchars($item['label']); ?></div>
+                                        <div class="cost-label"><?php echo htmlspecialchars(i18n_cost_label((string)$item['label'], $transportType)); ?></div>
                                         <div class="cost-note"><?php echo htmlspecialchars($item['note']); ?></div>
                                     </div>
                                     <div class="cost-amount">RM <?php echo number_format($item['amount'], 2); ?></div>
@@ -543,17 +554,17 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                             <?php endforeach; ?>
                             <div class="cost-total">
                                 <div>
-                                    <div style="font-size:13px;opacity:.8;">Total Estimated Cost</div>
+                                    <div style="font-size:13px;opacity:.8;"><?php echo te('trip.cost_total'); ?></div>
                                     <div style="font-size:22px;font-weight:900;">RM <?php echo number_format($costBreakdown['total_cost'], 2); ?></div>
                                 </div>
                                 <div style="text-align:right;">
                                     <?php if ($budget > 0): ?>
                                         <?php if ($costBreakdown['within_budget']): ?>
-                                            <span class="budget-badge budget-ok">&#10003; Within Budget</span>
-                                            <div style="font-size:12px;margin-top:6px;opacity:.85;">RM <?php echo number_format(abs($costBreakdown['budget_difference']), 2); ?> remaining</div>
+                                            <span class="budget-badge budget-ok">&#10003; <?php echo te('trip.within'); ?></span>
+                                            <div style="font-size:12px;margin-top:6px;opacity:.85;"><?php echo te('trip.remaining', ['amount' => number_format(abs($costBreakdown['budget_difference']), 2)]); ?></div>
                                         <?php else: ?>
-                                            <span class="budget-badge budget-over">&#9888; Over Budget</span>
-                                            <div style="font-size:12px;margin-top:6px;opacity:.85;">RM <?php echo number_format(abs($costBreakdown['budget_difference']), 2); ?> over budget</div>
+                                            <span class="budget-badge budget-over">&#9888; <?php echo te('trip.over'); ?></span>
+                                            <div style="font-size:12px;margin-top:6px;opacity:.85;"><?php echo te('trip.over_by', ['amount' => number_format(abs($costBreakdown['budget_difference']), 2)]); ?></div>
                                         <?php endif; ?>
                                     <?php endif; ?>
                                 </div>
@@ -564,8 +575,8 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
 
                 <?php if (!empty($selectedHotels)): ?>
                     <div class="card col-12">
-                        <h3>Selected Hotel</h3>
-                        <p class="meta">Hotel chosen during itinerary review. Its accommodation cost is included in the total estimate.</p>
+                        <h3><?php echo te('trip.sel_hotel'); ?></h3>
+                        <p class="meta"><?php echo te('trip.sel_hotel_sub'); ?></p>
                         <?php foreach ($selectedHotels as $hotelItem): ?>
                             <div class="hotel-card">
                                 <div>
@@ -576,7 +587,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                 </div>
                                 <div style="text-align:right;">
                                     <div class="hotel-price">RM <?php echo number_format((float)$hotelItem["estimated_cost"], 2); ?></div>
-                                    <div style="font-size:11px;color:var(--muted);">accommodation total</div>
+                                    <div style="font-size:11px;color:var(--muted);"><?php echo te('trip.accom_total'); ?></div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -585,14 +596,14 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
 
                 <!-- DAY-BY-DAY -->
                 <div class="card col-12">
-                    <h3>Day-by-Day Itinerary</h3>
-                    <p class="meta">Detailed schedule with attraction costs, travel distance, and time per segment.</p>
+                    <h3><?php echo te('trip.dbd'); ?></h3>
+                    <p class="meta"><?php echo te('trip.dbd_sub'); ?></p>
                     <?php foreach ($byDay as $day => $items): ?>
                         <div style="margin-bottom:20px;">
                             <div class="day-header">
-                                Day <?php echo (int)$day; ?>
+                                <?php echo te('trip.day', ['n' => (int)$day]); ?>
                                 <?php if ($startDate): ?>
-                                    &mdash; <?php echo date('D, d M Y', strtotime($startDate . ' +' . ($day - 1) . ' days')); ?>
+                                    &mdash; <?php echo htmlspecialchars(i18n_date($startDate . ' +' . ($day - 1) . ' days', 'short_weekday')); ?>
                                 <?php endif; ?>
                             </div>
                             <div class="table-wrap mobile-card-table-wrap">
@@ -600,12 +611,12 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Time</th>
-                                            <th>Place</th>
-                                            <th>Type</th>
-                                            <th>Cost (RM)</th>
-                                            <th>Distance (km)</th>
-                                            <th>Travel</th>
+                                            <th><?php echo te('trip.col_time'); ?></th>
+                                            <th><?php echo te('trip.col_place'); ?></th>
+                                            <th><?php echo te('trip.col_type'); ?></th>
+                                            <th><?php echo te('trip.col_cost'); ?></th>
+                                            <th><?php echo te('trip.col_dist'); ?></th>
+                                            <th><?php echo te('trip.col_travel'); ?></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -627,64 +638,64 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                         ?>
                                         <?php if ($showOriginRow): ?>
                                             <tr style="background:#f8fafc;">
-                                                <td data-label="#"><strong>Start</strong></td>
-                                                <td data-label="Time">
+                                                <td data-label="#"><strong><?php echo te('trip.start'); ?></strong></td>
+                                                <td data-label="<?php echo te('trip.col_time'); ?>">
                                                     <?php
                                                     if ($originTravelMin > 0) {
                                                         $departureTs = strtotime($firstTravelItem["start_time"]) - ($originTravelMin * 60);
                                                         echo $departureTs ? date("g:i A", $departureTs) : "&mdash;";
                                                     } else {
-                                                        echo "Before " . date("g:i A", strtotime($firstTravelItem["start_time"]));
+                                                        echo htmlspecialchars(t('trip.before', ['time' => date("g:i A", strtotime($firstTravelItem["start_time"]))]));
                                                     }
                                                     ?>
                                                 </td>
-                                                <td data-label="Place">
+                                                <td data-label="<?php echo te('trip.col_place'); ?>">
                                                     <strong>
                                                         <?php
                                                         if ((int)$day === 1) {
-                                                            echo htmlspecialchars($originName !== "" ? "Depart from " . $originName : "Depart from starting location");
+                                                            echo htmlspecialchars($originName !== "" ? t('trip.depart_from', ['name' => $originName]) : t('trip.depart_start'));
                                                         } else {
-                                                            echo "Depart from previous night's hotel";
+                                                            echo te('trip.depart_prev');
                                                         }
                                                         ?>
                                                     </strong>
                                                     <div style="font-size:11px;color:var(--muted);">
                                                         <?php if ($originDistance > 0 || $originTravelMin > 0): ?>
-                                                            Travel to <?php echo htmlspecialchars($firstTravelItem["item_title"]); ?>
+                                                            <?php echo te('trip.travel_to', ['name' => $firstTravelItem["item_title"]]); ?>
                                                         <?php else: ?>
-                                                            Route to first stop was not recorded for this itinerary.
+                                                            <?php echo te('trip.no_route'); ?>
                                                         <?php endif; ?>
                                                     </div>
                                                 </td>
-                                                <td data-label="Type"><span class="chip">Origin</span></td>
-                                                <td data-label="Cost (RM)">0.00</td>
-                                                <td data-label="Distance (km)"><?php echo $originDistance > 0 ? number_format($originDistance, 2) : "&mdash;"; ?></td>
-                                                <td data-label="Travel"><?php echo $originTravelMin > 0 ? $originTravelMin . " min" : "Not recorded"; ?></td>
+                                                <td data-label="<?php echo te('trip.col_type'); ?>"><span class="chip"><?php echo te('trip.origin'); ?></span></td>
+                                                <td data-label="<?php echo te('trip.col_cost'); ?>">0.00</td>
+                                                <td data-label="<?php echo te('trip.col_dist'); ?>"><?php echo $originDistance > 0 ? number_format($originDistance, 2) : "&mdash;"; ?></td>
+                                                <td data-label="<?php echo te('trip.col_travel'); ?>"><?php echo $originTravelMin > 0 ? te('trip.min', ['n' => $originTravelMin]) : te('trip.not_recorded'); ?></td>
                                             </tr>
                                         <?php endif; ?>
                                         <?php foreach ($items as $r): $dayTotal += (float)$r["estimated_cost"]; ?>
                                             <?php
                                             $isHotel = strtolower((string)($r["item_type"] ?? "")) === "hotel";
                                             $isFirstTravelItem = $firstTravelItem && (int)$r["item_id"] === (int)$firstTravelItem["item_id"];
-                                            $rowNo = $isHotel ? "Stay" : (string)(++$displayNo);
-                                            $typeLabel = $isHotel ? "Hotel / Check-in" : ucfirst((string)$r["item_type"]);
+                                            $rowNo = $isHotel ? t('trip.stay') : (string)(++$displayNo);
+                                            $typeLabel = $isHotel ? t('trip.hotel_checkin') : t_choice('itype', (string)$r["item_type"]);
                                             $distanceText = ($showOriginRow && $isFirstTravelItem)
                                                 ? "&mdash;"
                                                 : ($r["distance_km"] !== null ? number_format((float)$r["distance_km"], 2) : "&mdash;");
                                             $travelText = ($showOriginRow && $isFirstTravelItem)
                                                 ? "&mdash;"
-                                                : ($r["travel_time_min"] !== null ? (int)$r["travel_time_min"] . " min" : "&mdash;");
+                                                : ($r["travel_time_min"] !== null ? htmlspecialchars(t('trip.min', ['n' => (int)$r["travel_time_min"]])) : "&mdash;");
                                             ?>
                                             <tr>
                                                 <td data-label="#"><?php echo htmlspecialchars($rowNo); ?></td>
-                                                <td data-label="Time">
+                                                <td data-label="<?php echo te('trip.col_time'); ?>">
                                                     <?php if (!empty($r["start_time"]) && !empty($r["end_time"])): ?>
                                                         <?php echo date('g:i A', strtotime($r["start_time"])); ?> - <?php echo date('g:i A', strtotime($r["end_time"])); ?>
                                                     <?php else: ?>
                                                         &mdash;
                                                     <?php endif; ?>
                                                 </td>
-                                                <td data-label="Place">
+                                                <td data-label="<?php echo te('trip.col_place'); ?>">
                                                     <strong><?php echo htmlspecialchars($r["item_title"]); ?></strong>
                                                     <?php if (!empty($r["state"])): ?>
                                                         <div style="font-size:11px;color:var(--muted);">
@@ -695,24 +706,24 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                                         </div>
                                                     <?php endif; ?>
                                                     <?php if ($isHotel): ?>
-                                                        <div style="font-size:11px;color:var(--muted);">End-of-day accommodation stop. Not counted as an itinerary place.</div>
+                                                        <div style="font-size:11px;color:var(--muted);"><?php echo te('trip.hotel_note'); ?></div>
                                                     <?php endif; ?>
                                                     <?php $reasonSelected = extractReasonSelected($r["notes"] ?? ""); ?>
                                                     <?php if ($reasonSelected !== "" && !$isHotel): ?>
                                                         <div style="font-size:11px;color:#475569;margin-top:4px;">
-                                                            <strong>Reason Selected:</strong> <?php echo htmlspecialchars($reasonSelected); ?>
+                                                            <strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars($reasonSelected); ?>
                                                         </div>
                                                     <?php endif; ?>
                                                 </td>
-                                                <td data-label="Type"><span class="chip"><?php echo htmlspecialchars($typeLabel); ?></span></td>
-                                                <td data-label="Cost (RM)"><?php echo number_format((float)$r["estimated_cost"], 2); ?></td>
-                                                <td data-label="Distance (km)"><?php echo $distanceText; ?></td>
-                                                <td data-label="Travel"><?php echo $travelText; ?></td>
+                                                <td data-label="<?php echo te('trip.col_type'); ?>"><span class="chip"><?php echo htmlspecialchars($typeLabel); ?></span></td>
+                                                <td data-label="<?php echo te('trip.col_cost'); ?>"><?php echo number_format((float)$r["estimated_cost"], 2); ?></td>
+                                                <td data-label="<?php echo te('trip.col_dist'); ?>"><?php echo $distanceText; ?></td>
+                                                <td data-label="<?php echo te('trip.col_travel'); ?>"><?php echo $travelText; ?></td>
                                             </tr>
                                         <?php endforeach; ?>
                                         <tr style="background:#f8fafc;">
-                                            <td class="mobile-empty" colspan="4" style="text-align:right;font-weight:900;">Day <?php echo (int)$day; ?> Total:</td>
-                                            <td data-label="Day Total" style="font-weight:900;">RM <?php echo number_format($dayTotal, 2); ?></td>
+                                            <td class="mobile-empty" colspan="4" style="text-align:right;font-weight:900;"><?php echo te('trip.day_total', ['n' => (int)$day]); ?></td>
+                                            <td data-label="<?php echo te('trip.day_total_label'); ?>" style="font-weight:900;">RM <?php echo number_format($dayTotal, 2); ?></td>
                                             <td class="mobile-hidden-cell" colspan="2"></td>
                                         </tr>
                                     </tbody>
@@ -725,31 +736,31 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                 <!-- HOTEL RECOMMENDATIONS -->
                 <?php if (!empty($recommendedHotels)): ?>
                     <div class="card col-12">
-                        <h3><?php echo !empty($selectedHotels) ? "Other Recommended Hotels" : "Recommended Hotels"; ?></h3>
+                        <h3><?php echo !empty($selectedHotels) ? te('trip.rec_other') : te('trip.rec'); ?></h3>
                         <p class="meta">
-                            Places to stay near your last stop, from OpenStreetMap listings. Prices are planning estimates, not offers.
-                            <?php if ($nightlyBudget > 0): ?>Your budget allows about RM <?php echo number_format($nightlyBudget, 0); ?> per room per night.<?php endif; ?>
+                            <?php echo te('trip.rec_sub'); ?>
+                            <?php if ($nightlyBudget > 0): ?><?php echo te('trip.rec_budget', ['amount' => number_format($nightlyBudget, 0)]); ?><?php endif; ?>
                         </p>
                         <?php foreach ($recommendedHotels as $hotel): ?>
                             <div class="hotel-card">
                                 <div>
                                     <div class="hotel-name"><?php echo htmlspecialchars($hotel["name"]); ?></div>
                                     <div class="hotel-meta">
-                                        <?php echo htmlspecialchars($hotel["kind_label"] . ($hotel["stars"] !== null ? ", " . (float)$hotel["stars"] . "-star" : "")); ?>
+                                        <?php echo htmlspecialchars(t_choice('hotelkind', $hotel["kind"] ?? '') . ($hotel["stars"] !== null ? ", " . t('trip.star', ['n' => (float)$hotel["stars"]]) : "")); ?>
                                         <?php if ($hotel["address"] !== ""): ?>&nbsp;&middot;&nbsp; <?php echo htmlspecialchars($hotel["address"]); ?><?php endif; ?>
-                                        <?php if ($hotel["distance_km"] !== null): ?>&nbsp;&middot;&nbsp; <?php echo number_format((float)$hotel["distance_km"], 1); ?> km away<?php endif; ?>
+                                        <?php if ($hotel["distance_km"] !== null): ?>&nbsp;&middot;&nbsp; <?php echo te('trip.km_away', ['n' => number_format((float)$hotel["distance_km"], 1)]); ?><?php endif; ?>
                                     </div>
                                 </div>
                                 <div style="text-align:right;">
                                     <div class="hotel-price">RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?></div>
-                                    <div style="font-size:11px;color:var(--muted);">estimate per night</div>
+                                    <div style="font-size:11px;color:var(--muted);"><?php echo te('trip.est_night'); ?></div>
                                     <div class="hotel-actions">
-                                        <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotel(<?php echo (int)$hotel["hotel_id"]; ?>, this)">Confirm Hotel</button>
+                                        <button type="button" class="btn btn-primary" style="font-size:11px;padding:5px 9px;" onclick="confirmHotel(<?php echo (int)$hotel["hotel_id"]; ?>, this)"><?php echo te('trip.confirm_hotel'); ?></button>
                                         <?php if (!empty($hotel["price_check_url"])): ?>
                                             <a href="<?php echo htmlspecialchars($hotel["price_check_url"]); ?>"
-                                                target="_blank" rel="noopener noreferrer" title="Opens a search for this place on Booking.com"
+                                                target="_blank" rel="noopener noreferrer" title="<?php echo te('trip.check_price_title'); ?>"
                                                 class="btn btn-ghost" style="font-size:11px;padding:5px 9px;display:inline-block;">
-                                                Check price
+                                                <?php echo te('trip.check_price'); ?>
                                             </a>
                                         <?php endif; ?>
                                         <?php $mapUrl = $hotel["map_url"] ?? "";
@@ -757,7 +768,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                             <a href="<?php echo htmlspecialchars($mapUrl); ?>"
                                                 target="_blank" rel="noopener noreferrer"
                                                 class="btn btn-ghost" style="font-size:11px;padding:5px 9px;display:inline-block;">
-                                                Map
+                                                <?php echo te('trip.map'); ?>
                                             </a>
                                         <?php endif; ?>
                                     </div>
@@ -769,21 +780,21 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             </section>
         </main>
     </div>
-    <button type="button" class="ai-chat-fab" onclick="toggleAiChat()">AI Assistant</button>
+    <button type="button" class="ai-chat-fab" onclick="toggleAiChat()"><?php echo te('trip.ai_fab'); ?></button>
     <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite" data-itinerary-id="<?php echo (int)$itineraryId; ?>" data-missing-info="<?php echo htmlspecialchars($missingInfoJson, ENT_QUOTES); ?>">
         <div class="ai-chat-header">
             <div>
-                <div class="ai-chat-title">AI Travel & Hotel Assistant</div>
-                <div class="ai-chat-subtitle">Ask about cost, route, or hotel options. Hotels save only after confirmation.</div>
+                <div class="ai-chat-title"><?php echo te('trip.ai_title'); ?></div>
+                <div class="ai-chat-subtitle"><?php echo te('trip.ai_sub'); ?></div>
             </div>
-            <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
+            <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="<?php echo te('trip.ai_close'); ?>">&times;</button>
         </div>
         <div class="ai-chat-body" id="aiChatBody">
-            <div class="ai-msg bot" id="aiInitialMessage">Hi, I am your travel assistant. Ask for hotel recommendations, cost checks, route explanation, or itinerary changes. I will not save hotel or route changes unless you click a confirmation button.</div>
+            <div class="ai-msg bot" id="aiInitialMessage"><?php echo te('trip.ai_hello'); ?></div>
         </div>
         <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
-            <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
-            <button type="submit">Send</button>
+            <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="<?php echo te('trip.ai_placeholder'); ?>">
+            <button type="submit"><?php echo te('trip.ai_send'); ?></button>
         </form>
     </div>
     <script src="../assets/trip_ai_chat.js?v=20261112b"></script>

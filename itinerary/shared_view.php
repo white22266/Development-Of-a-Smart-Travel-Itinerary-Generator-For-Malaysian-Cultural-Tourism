@@ -2,12 +2,13 @@
 // itinerary/shared_view.php
 // Public read-only itinerary view by share token.
 require_once __DIR__ . "/../config/db_connect.php";
+require_once __DIR__ . "/../config/i18n.php";
 require_once __DIR__ . "/../services/CalendarExportService.php";
 
 $token = trim((string)($_GET["token"] ?? ""));
 if ($token === "" || !preg_match('/^[a-f0-9]{32,64}$/', $token)) {
     http_response_code(404);
-    echo "Shared itinerary not found.";
+    echo t('shr.not_found');
     exit;
 }
 
@@ -27,7 +28,7 @@ $stmt->close();
 
 if (!$it) {
     http_response_code(404);
-    echo "Shared itinerary not found.";
+    echo t('shr.not_found');
     exit;
 }
 
@@ -72,17 +73,17 @@ while ($row = $res->fetch_assoc()) {
 $scheme = (!empty($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] !== "off") ? "https" : "http";
 $requestUri = $_SERVER["REQUEST_URI"] ?? ("/itinerary/shared_view.php?token=" . urlencode($token));
 $shareUrl = $scheme . "://" . ($_SERVER["HTTP_HOST"] ?? "localhost") . $requestUri;
-$waText = "Check my Malaysia cultural travel itinerary: " . $shareUrl;
+$waText = t('shr.wa_text', ['url' => $shareUrl]);
 
 function h($s): string { return htmlspecialchars((string)$s, ENT_QUOTES, "UTF-8"); }
 function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"; }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo h($it["title"]); ?> | Shared Itinerary</title>
+    <title><?php echo h($it["title"]); ?> | <?php echo te('shr.title_suffix'); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         body { background:#f8fafc; }
@@ -94,45 +95,46 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
 </head>
 <body>
 <div class="public-wrap">
+    <div style="text-align:right;margin-bottom:10px;"><?php echo i18n_switcher(); ?></div>
     <div class="public-header">
         <div>
             <h1><?php echo h($it["title"]); ?></h1>
             <p class="meta">
-                Shared by <?php echo h($it["traveller_name"] ?? "Traveller"); ?> |
-                <?php echo (int)$it["total_days"]; ?> day(s) |
-                <?php echo h(str_replace("_", " ", $it["transport_type"] ?? "car")); ?>
+                <?php echo te('shr.shared_by', ['name' => $it["traveller_name"] ?? t('common.traveller_default')]); ?> |
+                <?php echo te('shr.days_count', ['n' => (int)$it["total_days"]]); ?> |
+                <?php echo h(t_choice('transport', $it["transport_type"] ?? "car")); ?>
             </p>
         </div>
         <div class="actions">
-            <a class="btn btn-primary" href="https://wa.me/?text=<?php echo urlencode($waText); ?>" target="_blank" rel="noopener noreferrer">Share WhatsApp</a>
-            <button class="btn btn-ghost" onclick="window.print()">Print</button>
+            <a class="btn btn-primary" href="https://wa.me/?text=<?php echo urlencode($waText); ?>" target="_blank" rel="noopener noreferrer"><?php echo te('shr.share_wa'); ?></a>
+            <button class="btn btn-ghost" onclick="window.print()"><?php echo te('common.print'); ?></button>
         </div>
     </div>
 
     <div class="share-box">
         <div class="grid">
-            <div class="card col-3"><h3>Days</h3><div class="kpi"><div class="value"><?php echo (int)$it["total_days"]; ?></div><div class="tag">Trip</div></div></div>
-            <div class="card col-3"><h3>Estimated Cost</h3><div class="kpi"><div class="value" style="font-size:22px;">RM <?php echo number_format((float)$it["total_estimated_cost"], 2); ?></div><div class="tag">Total</div></div></div>
-            <div class="card col-3"><h3>Start Date</h3><p class="meta"><?php echo $it["start_date"] ? date("d M Y", strtotime($it["start_date"])) : "-"; ?></p></div>
-            <div class="card col-3"><h3>Hotel</h3><p class="meta"><?php echo h($it["selected_hotel_name"] ?? "-"); ?></p></div>
+            <div class="card col-3"><h3><?php echo te('shr.days'); ?></h3><div class="kpi"><div class="value"><?php echo (int)$it["total_days"]; ?></div><div class="tag"><?php echo te('shr.trip'); ?></div></div></div>
+            <div class="card col-3"><h3><?php echo te('shr.est_cost'); ?></h3><div class="kpi"><div class="value" style="font-size:22px;">RM <?php echo number_format((float)$it["total_estimated_cost"], 2); ?></div><div class="tag"><?php echo te('shr.total'); ?></div></div></div>
+            <div class="card col-3"><h3><?php echo te('shr.start_date'); ?></h3><p class="meta"><?php echo $it["start_date"] ? h(i18n_date((string)$it["start_date"], 'short')) : "-"; ?></p></div>
+            <div class="card col-3"><h3><?php echo te('shr.hotel'); ?></h3><p class="meta"><?php echo h($it["selected_hotel_name"] ?? "-"); ?></p></div>
         </div>
 
         <?php if (!$byDay): ?>
-            <p class="meta">No itinerary items available.</p>
+            <p class="meta"><?php echo te('shr.no_items'); ?></p>
         <?php endif; ?>
 
         <?php foreach ($byDay as $day => $items): ?>
-            <div class="day-title">Day <?php echo (int)$day; ?></div>
+            <div class="day-title"><?php echo te('trip.day', ['n' => (int)$day]); ?></div>
             <div class="table-wrap">
                 <table>
                     <thead>
                     <tr>
                         <th>#</th>
-                        <th>Time</th>
-                        <th>Place</th>
-                        <th>Type</th>
-                        <th>Cost</th>
-                        <th>Travel</th>
+                        <th><?php echo te('shr.col_time'); ?></th>
+                        <th><?php echo te('shr.col_place'); ?></th>
+                        <th><?php echo te('shr.col_type'); ?></th>
+                        <th><?php echo te('shr.col_cost'); ?></th>
+                        <th><?php echo te('shr.col_travel'); ?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -150,15 +152,15 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
                                 <?php if ($mapLinks): ?>
                                 <div class="meta">
                                     <?php foreach ($mapLinks as $linkLabel => $link): ?>
-                                    <a href="<?php echo h($link["href"]); ?>"<?php echo $link["external"] ? ' target="_blank" rel="noopener"' : ''; ?>><?php echo h($linkLabel); ?></a>&nbsp;
+                                    <a href="<?php echo h($link["href"]); ?>"<?php echo $link["external"] ? ' target="_blank" rel="noopener"' : ''; ?>><?php echo h($linkLabel === "Open in maps app" ? t('shr.map_app') : $linkLabel); ?></a>&nbsp;
                                     <?php endforeach; ?>
                                 </div>
                                 <?php endif; ?>
                             </td>
-                            <td><?php echo h(!empty($item["meal_slot"]) ? ucfirst((string)$item["meal_slot"]) : ucfirst($item["item_type"] ?? "attraction")); ?></td>
-                            <td><?php echo !empty($item["meal_slot"]) ? "In meal estimate" : "RM " . number_format((float)$item["estimated_cost"], 2); ?></td>
+                            <td><?php echo h(!empty($item["meal_slot"]) ? t_choice('itype', (string)$item["meal_slot"]) : t_choice('itype', $item["item_type"] ?? "attraction")); ?></td>
+                            <td><?php echo !empty($item["meal_slot"]) ? t('shr.in_meal') : "RM " . number_format((float)$item["estimated_cost"], 2); ?></td>
                             <td>
-                                <?php echo $item["travel_time_min"] !== null ? (int)$item["travel_time_min"] . " min" : "-"; ?>
+                                <?php echo $item["travel_time_min"] !== null ? h(t('trip.min', ['n' => (int)$item["travel_time_min"]])) : "-"; ?>
                                 <?php if ($item["distance_km"] !== null): ?> / <?php echo number_format((float)$item["distance_km"], 1); ?> km<?php endif; ?>
                             </td>
                         </tr>

@@ -348,6 +348,7 @@ function sug_label($s)
             </section>
         </main>
     </div>
+<script>window.PLACE_PICKER_TEXT = <?php echo i18n_js(['common.picker_no_place']); ?>;</script>
 <script src="../assets/place_picker.js?v=20261112c"></script>
 <script>
 var existingSuggestPlaces = <?php echo json_encode($existingPlaces, JSON_UNESCAPED_UNICODE); ?>;

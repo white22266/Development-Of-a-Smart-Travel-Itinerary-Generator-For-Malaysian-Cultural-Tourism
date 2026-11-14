@@ -544,7 +544,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                     <div class="nc-name"><?php echo htmlspecialchars($review["full_name"] ?? t('common.traveller_default')); ?></div>
                                     <div class="stars"><?php echo str_repeat("&#9733;", (int)$review["rating"]) . str_repeat("&#9734;", 5 - (int)$review["rating"]); ?></div>
                                     <div class="nc-meta" style="margin-top:6px;"><?php echo nl2br(htmlspecialchars($review["review_text"] ?: t('cgd.no_comment'))); ?></div>
-                                    <div class="nc-meta" style="margin-top:6px;"><?php echo htmlspecialchars($review["updated_at"] ?? $review["created_at"] ?? ""); ?></div>
+                                    <div class="nc-meta" style="margin-top:6px;"><?php $reviewWhen = (string)($review["updated_at"] ?? $review["created_at"] ?? ""); echo htmlspecialchars($reviewWhen !== "" && strtotime($reviewWhen) ? i18n_date($reviewWhen, 'short') . " " . date("H:i", strtotime($reviewWhen)) : $reviewWhen); ?></div>
                                 </div>
                             <?php endforeach; ?>
                         </div>

@@ -9,6 +9,7 @@
 //   text in PHP:           $msg = t('dash.date', ['date' => $d]); plain text, escape when printing
 //   text for JavaScript:   const T = followed by echo i18n_js(['common.back', 'common.next']);
 //   switcher:              echo i18n_switcher();              next to the navigation links
+//   date:                  echo i18n_date($date, 'short');    styles: short, short_weekday, long, month_year
 //
 // Texts live in lang/en.php, lang/ms.php and lang/zh.php (one array each, same keys).
 
@@ -137,17 +138,69 @@ function te(string $key, array $vars = []): string
 
 /**
  * Label of a fixed choice that is stored as a code: $group is interest, transport, type, pace,
- * tier, diet, visit or access (keys opt.<group>.<code>). Unknown codes come back as "Title Case".
+ * tier, diet, visit, access, itype (item type or meal slot) or hotelkind (keys opt.<group>.<code>).
+ * Unknown codes come back as "Title Case". $lang overrides the current language (the PDF uses it).
  */
-function t_choice(string $group, ?string $value): string
+function t_choice(string $group, ?string $value, ?string $lang = null): string
 {
     $value = trim((string)$value);
     if ($value === '') {
         return '-';
     }
     $key = 'opt.' . $group . '.' . strtolower($value);
-    $text = t($key);
+    $text = t($key, [], $lang);
     return $text !== $key ? $text : ucwords(str_replace(['_', '-'], ' ', $value));
+}
+
+/**
+ * A date written in the traveller's language, without the intl extension. $date is anything
+ * strtotime() reads (2027-02-22 or a date and time). $style:
+ *   short          22 Feb 2027       zh: 2027年2月22日
+ *   short_weekday  Mon, 22 Feb 2027  zh: 2027年2月22日 周一
+ *   long           Monday, 22 February 2027   zh: 2027年2月22日 星期一
+ *   month_year     February 2027     zh: 2027年2月
+ * Month and weekday names and the patterns are in the language files (date.* keys). A text that
+ * is not a date comes back unchanged. $lang overrides the current language.
+ */
+function i18n_date(string $date, string $style = 'short', ?string $lang = null): string
+{
+    $ts = strtotime($date);
+    if ($ts === false) {
+        return $date;
+    }
+    if (!in_array($style, ['short', 'short_weekday', 'long', 'month_year'], true)) {
+        $style = 'short';
+    }
+    $month = (int)date('n', $ts);
+    $weekday = (int)date('N', $ts);
+    return t('date.fmt_' . $style, [
+        'd' => (int)date('j', $ts),
+        'y' => date('Y', $ts),
+        'mon' => t('date.mon.' . $month, [], $lang),
+        'month' => t('date.month.' . $month, [], $lang),
+        'wd' => t('date.wd.' . $weekday, [], $lang),
+        'wds' => t('date.wds.' . $weekday, [], $lang),
+    ], $lang);
+}
+
+/**
+ * Label of a row of the cost breakdown, which CostEstimationService writes in English
+ * ("Transport (Car)", "Accommodation" and so on). Other labels come back unchanged.
+ */
+function i18n_cost_label(string $label, string $transportType, ?string $lang = null): string
+{
+    $fixed = [
+        'Attraction / Entrance Fees' => 'trip.cl_attraction',
+        'Accommodation' => 'trip.cl_accommodation',
+        'Food & Meals' => 'trip.cl_food',
+    ];
+    if (isset($fixed[$label])) {
+        return t($fixed[$label], [], $lang);
+    }
+    if (str_starts_with($label, 'Transport (')) {
+        return t('trip.cl_transport', ['mode' => t_choice('transport', $transportType, $lang)], $lang);
+    }
+    return $label;
 }
 
 /** JSON object {key: text} of the given keys in the current language, safe inside <script>. */

@@ -2,6 +2,7 @@
 // itinerary/itinerary_delete.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -12,7 +13,7 @@ $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
 
 if ($travellerId <= 0 || $itineraryId <= 0) {
-    $_SESSION["form_errors"] = ["Invalid request."];
+    $_SESSION["form_errors"] = [t('del.invalid')];
     header("Location: my_itineraries.php");
     exit;
 }
@@ -25,7 +26,7 @@ $exists = $check->get_result()->num_rows > 0;
 $check->close();
 
 if (!$exists) {
-    $_SESSION["form_errors"] = ["Itinerary not found or you do not have permission to delete it."];
+    $_SESSION["form_errors"] = [t('del.not_found')];
     header("Location: my_itineraries.php");
     exit;
 }
@@ -37,9 +38,9 @@ $ok = $del->execute();
 $del->close();
 
 if ($ok) {
-    $_SESSION["success_message"] = "Itinerary deleted successfully.";
+    $_SESSION["success_message"] = t('del.ok');
 } else {
-    $_SESSION["form_errors"] = ["Failed to delete itinerary. Please try again."];
+    $_SESSION["form_errors"] = [t('del.fail')];
 }
 
 header("Location: my_itineraries.php");

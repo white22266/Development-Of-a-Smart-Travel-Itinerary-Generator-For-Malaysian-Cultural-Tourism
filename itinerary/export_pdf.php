@@ -7,6 +7,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
 
@@ -16,7 +17,38 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+// The PDF fonts (DejaVu Sans, the only ones dompdf ships) have no Chinese characters, so a traveller
+// who reads Chinese gets the English report; English and Malay follow the language of the page.
+$pdfLang = i18n_lang() === "ms" ? "ms" : "en";
+$pdfIsFallback = i18n_lang() === "zh";
+
+/** Text in the language of the PDF (see $pdfLang). */
+function pdf_t(string $key, array $vars = []): string
+{
+    global $pdfLang;
+    return t($key, $vars, $pdfLang);
+}
+
+/** Label of a fixed choice (transport, tier, interest ...) in the language of the PDF. */
+function pdf_choice(string $group, ?string $value): string
+{
+    global $pdfLang;
+    return t_choice($group, $value, $pdfLang);
+}
+
+/** Label of a place category, or of an item type when the place has no category. */
+function pdf_category(string $category): string
+{
+    global $pdfLang;
+    foreach (['interest', 'itype'] as $group) {
+        $key = 'opt.' . $group . '.' . strtolower($category);
+        $text = t($key, [], $pdfLang);
+        if ($text !== $key) return $text;
+    }
+    return t_choice('interest', $category, $pdfLang);
+}
+
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default', [], $pdfLang);
 $itineraryId = (int)($_GET["itinerary_id"] ?? 0);
 if ($travellerId <= 0 || $itineraryId <= 0) {
     header("Location: my_itineraries.php");
@@ -129,16 +161,8 @@ function valid_coord($lat, $lng): bool
 function activity_text(string $type, string $category): string
 {
     $key = strtolower($category ?: $type);
-    $map = [
-        "food" => "Enjoy local cuisine",
-        "festival" => "Join cultural festival",
-        "museum" => "Explore exhibits",
-        "heritage" => "Visit heritage landmark",
-        "culture" => "Experience local culture",
-        "nature" => "Explore nature and scenery",
-        "shopping" => "Shop for local products",
-    ];
-    return $map[$key] ?? "Visit and explore";
+    $known = ["food", "festival", "museum", "heritage", "culture", "nature", "shopping"];
+    return pdf_t(in_array($key, $known, true) ? "pdf.act_" . $key : "pdf.act_default");
 }
 
 /* ------------------------ Load itinerary ------------------------ */
@@ -232,7 +256,7 @@ if ($tripDays > 1 && $lastPlace && valid_coord($lastPlace["latitude"] ?? null, $
 }
 
 $totalPlaces = count($allItems);
-$generatedAt = date("d M Y, g:i A");
+$generatedAt = i18n_date(date("Y-m-d"), "short", $pdfLang) . ", " . date("g:i A");
 
 /* ------------------------ Build report HTML ------------------------ */
 
@@ -274,17 +298,17 @@ $css = "
 $html = $css;
 $html .= "<div class='cover'>";
 $html .= "<div class='eyebrow'>Smart Travel Itinerary Generator</div>";
-$html .= "<h1>" . esc($it["title"] ?: "Travel Itinerary Report") . "</h1>";
-$html .= "<p class='muted'>Prepared for " . esc($travellerName) . " | Generated " . esc($generatedAt) . "</p>";
-$html .= "<p class='muted'>This report combines the daily schedule, place information, hotel suggestions and the full cost summary.</p>";
+$html .= "<h1>" . esc($it["title"] ?: pdf_t("pdf.default_title")) . "</h1>";
+$html .= "<p class='muted'>" . esc(pdf_t("pdf.prepared_for", ["name" => $travellerName, "when" => $generatedAt])) . "</p>";
+$html .= "<p class='muted'>" . esc(pdf_t("pdf.intro")) . "</p>";
 $html .= "</div>";
 
 $html .= "<table class='grid4'><tr>";
 $metrics = [
-    ["Trip Days", $tripDays . " day" . ($tripDays > 1 ? "s" : "")],
-    ["Places", $totalPlaces],
-    ["Transport", ucfirst(str_replace("_", " ", $transportType))],
-    ["Total Estimate", fmt_rm($costBreakdown["total_cost"] ?? 0)],
+    [pdf_t("pdf.m_days"), $tripDays > 1 ? pdf_t("trip.days_many", ["n" => $tripDays]) : pdf_t("trip.days_one")],
+    [pdf_t("pdf.m_places"), $totalPlaces],
+    [pdf_t("trip.transport"), pdf_choice("transport", $transportType)],
+    [pdf_t("pdf.m_total"), fmt_rm($costBreakdown["total_cost"] ?? 0)],
 ];
 foreach ($metrics as $m) {
     $html .= "<td class='metric'><div class='metric-label'>" . esc($m[0]) . "</div><div class='metric-value'>" . esc($m[1]) . "</div></td>";
@@ -292,97 +316,101 @@ foreach ($metrics as $m) {
 $html .= "</tr></table>";
 
 $html .= "<div class='section box'>";
-$html .= "<h2>Trip Summary</h2>";
+$interestLabels = array_map(
+    static fn($code) => pdf_choice("interest", $code),
+    array_filter(array_map("trim", explode(",", (string)($it["interests"] ?? ""))), static fn($code) => $code !== "")
+);
+$html .= "<h2>" . esc(pdf_t("trip.title")) . "</h2>";
 $html .= "<table>";
-$html .= "<tr><th>Start Date</th><td>" . esc(!empty($it["start_date"]) ? date("d M Y", strtotime($it["start_date"])) : "-") . "</td><th>Budget</th><td>" . esc($budget > 0 ? fmt_rm($budget) : "-") . "</td></tr>";
-$html .= "<tr><th>Destination</th><td>" . esc($it["preferred_states"] ?: "Malaysia") . "</td><th>District</th><td>" . esc($it["preferred_districts"] ?: "-") . "</td></tr>";
-$html .= "<tr><th>Interests</th><td>" . esc($it["interests"] ?: "-") . "</td><th>Travel Style</th><td>" . esc(ucfirst($it["budget_tier"] ?: "Normal") . " / " . ucfirst($it["travel_pace"] ?: "Normal")) . "</td></tr>";
+$html .= "<tr><th>" . esc(pdf_t("trip.start_date")) . "</th><td>" . esc(!empty($it["start_date"]) ? i18n_date((string)$it["start_date"], "short", $pdfLang) : "-") . "</td><th>" . esc(pdf_t("trip.budget")) . "</th><td>" . esc($budget > 0 ? fmt_rm($budget) : "-") . "</td></tr>";
+$html .= "<tr><th>" . esc(pdf_t("pdf.destination")) . "</th><td>" . esc($it["preferred_states"] ?: pdf_t("trip.states_fallback")) . "</td><th>" . esc(pdf_t("pdf.district")) . "</th><td>" . esc($it["preferred_districts"] ?: "-") . "</td></tr>";
+$html .= "<tr><th>" . esc(pdf_t("pdf.interests")) . "</th><td>" . esc($interestLabels ? implode(", ", $interestLabels) : "-") . "</td><th>" . esc(pdf_t("pdf.style")) . "</th><td>" . esc(pdf_choice("tier", $it["budget_tier"] ?: "normal") . " / " . pdf_choice("pace", $it["travel_pace"] ?: "normal")) . "</td></tr>";
 $html .= "</table>";
 $html .= "</div>";
 
 $html .= "<div class='section box'>";
-$html .= "<h2>Planner Recommendations</h2>";
+$html .= "<h2>" . esc(pdf_t("pdf.h_reco")) . "</h2>";
 $html .= "<ul>";
 if ($budget > 0) {
-    $html .= !empty($costBreakdown["within_budget"])
-        ? "<li>The estimated total cost is within the traveller budget. Keep hotel and meal choices close to the suggested range to maintain this budget.</li>"
-        : "<li>The estimated total cost is above the traveller budget. Reduce hotel cost, meal budget, or paid attractions before final travel.</li>";
+    $html .= "<li>" . esc(!empty($costBreakdown["within_budget"]) ? pdf_t("pdf.r_within") : pdf_t("pdf.r_over")) . "</li>";
 }
-$html .= "<li>Visit the stops in the listed order to avoid unnecessary backtracking. The itinerary page shows the road route on a map.</li>";
+$html .= "<li>" . esc(pdf_t("pdf.r_order")) . "</li>";
 if (stripos((string)$it["interests"], "festival") !== false) {
-    $html .= "<li>Festival places should only be used when the festival date matches the travel date. Check the event date before travelling.</li>";
+    $html .= "<li>" . esc(pdf_t("pdf.r_festival")) . "</li>";
 }
-$html .= "<li>Check live traffic, public transport availability, weather, and opening hours on the travel day because these can change after the itinerary is generated.</li>";
+$html .= "<li>" . esc(pdf_t("pdf.r_check")) . "</li>";
 $html .= "</ul>";
 $html .= "</div>";
 
 $html .= "<div class='section box'>";
-$html .= "<h2>Cost Breakdown</h2>";
+$html .= "<h2>" . esc(pdf_t("trip.cost_title")) . "</h2>";
 $html .= "<table>";
-$html .= "<tr><th>Component</th><th>Amount</th><th>Basis</th></tr>";
+$html .= "<tr><th>" . esc(pdf_t("pdf.c_component")) . "</th><th>" . esc(pdf_t("pdf.c_amount")) . "</th><th>" . esc(pdf_t("pdf.c_basis")) . "</th></tr>";
 foreach (($costBreakdown["breakdown"] ?? []) as $row) {
-    $html .= "<tr><td>" . esc($row["label"] ?? "") . "</td><td>" . esc(fmt_rm($row["amount"] ?? 0)) . "</td><td>" . esc($row["note"] ?? "") . "</td></tr>";
+    $html .= "<tr><td>" . esc(i18n_cost_label((string)($row["label"] ?? ""), $transportType, $pdfLang)) . "</td><td>" . esc(fmt_rm($row["amount"] ?? 0)) . "</td><td>" . esc($row["note"] ?? "") . "</td></tr>";
 }
-$html .= "<tr class='cost-total'><td>Total Estimated Cost</td><td>" . esc(fmt_rm($costBreakdown["total_cost"] ?? 0)) . "</td><td>";
+$html .= "<tr class='cost-total'><td>" . esc(pdf_t("trip.cost_total")) . "</td><td>" . esc(fmt_rm($costBreakdown["total_cost"] ?? 0)) . "</td><td>";
 if ($budget > 0) {
     $class = !empty($costBreakdown["within_budget"]) ? "ok" : "over";
-    $status = !empty($costBreakdown["within_budget"]) ? "Within budget" : "Over budget";
-    $html .= "<span class='" . $class . "'>" . esc($status . " by " . fmt_rm(abs((float)($costBreakdown["budget_difference"] ?? 0)))) . "</span>";
+    $statusKey = !empty($costBreakdown["within_budget"]) ? "pdf.within_by" : "pdf.over_by";
+    $html .= "<span class='" . $class . "'>" . esc(pdf_t($statusKey, ["amount" => fmt_rm(abs((float)($costBreakdown["budget_difference"] ?? 0)))])) . "</span>";
 } else {
-    $html .= "No budget entered";
+    $html .= esc(pdf_t("pdf.no_budget"));
 }
 $html .= "</td></tr></table></div>";
 
 $html .= "<div class='section box'>";
-$html .= "<h2>Hotel Recommendations</h2>";
+$html .= "<h2>" . esc(pdf_t("pdf.h_hotels")) . "</h2>";
 if (!empty($hotelRecommendations)) {
-    $html .= "<table><tr><th>Place to stay</th><th>Type</th><th>Location</th><th>Estimated price / night</th><th>Distance</th></tr>";
+    $html .= "<table><tr><th>" . esc(pdf_t("pdf.c_stay")) . "</th><th>" . esc(pdf_t("trip.col_type")) . "</th><th>" . esc(pdf_t("pdf.c_location")) . "</th><th>" . esc(pdf_t("pdf.c_price")) . "</th><th>" . esc(pdf_t("pdf.c_distance")) . "</th></tr>";
     foreach ($hotelRecommendations as $hotel) {
-        $distance = $hotel["distance_km"] !== null ? number_format((float)$hotel["distance_km"], 1) . " km from the last stop" : "In the same state";
-        $type = $hotel["kind_label"] . ($hotel["stars"] !== null ? ", " . (float)$hotel["stars"] . "-star" : "");
+        $distance = $hotel["distance_km"] !== null ? pdf_t("pdf.dist_last", ["n" => number_format((float)$hotel["distance_km"], 1)]) : pdf_t("pdf.dist_state");
+        $type = pdf_choice("hotelkind", $hotel["kind"] ?? "") . ($hotel["stars"] !== null ? ", " . pdf_t("trip.star", ["n" => (float)$hotel["stars"]]) : "");
         $html .= "<tr><td>" . esc($hotel["name"]) . "</td><td>" . esc($type) . "</td><td>" . esc($hotel["address"] !== "" ? $hotel["address"] : $hotel["state"]) . "</td><td>" . esc(fmt_rm($hotel["price_per_night"])) . "</td><td>" . esc($distance) . "</td></tr>";
     }
     $html .= "</table>";
-    $html .= "<p class='muted'>Listings come from OpenStreetMap. Prices are planning estimates, not offers: check the current rate before booking.</p>";
+    $html .= "<p class='muted'>" . esc(pdf_t("pdf.osm_note")) . "</p>";
 } else {
-    $html .= "<div class='note'>No place to stay is listed near the last stop of this trip.</div>";
+    $html .= "<div class='note'>" . esc(pdf_t("pdf.no_hotels")) . "</div>";
 }
 $html .= "</div>";
 
 $html .= "<div class='section'>";
-$html .= "<h2>Daily Itinerary Schedule</h2>";
+$html .= "<h2>" . esc(pdf_t("pdf.h_daily")) . "</h2>";
 foreach ($days as $dayNo => $items) {
     $dayDate = "";
     if (!empty($it["start_date"])) {
         $dt = DateTime::createFromFormat("Y-m-d", (string)$it["start_date"]);
         if ($dt) {
             $dt->modify("+" . ((int)$dayNo - 1) . " days");
-            $dayDate = $dt->format("d M Y");
+            $dayDate = i18n_date($dt->format("Y-m-d"), "short", $pdfLang);
         }
     }
     $dayCost = $perDayBreakdown[$dayNo]["attraction_cost"] ?? 0;
-    $html .= "<div class='day-title'>Day " . (int)$dayNo . ($dayDate ? " | " . esc($dayDate) : "") . " | Day Item Cost " . esc(fmt_rm($dayCost)) . "</div>";
-    $html .= "<table><tr><th style='width:70px;'>Time</th><th style='width:25px;'>#</th><th>Place & Activity</th><th style='width:70px;'>Type</th><th style='width:60px;'>Cost</th><th style='width:72px;'>Travel</th></tr>";
+    $html .= "<div class='day-title'>" . esc(pdf_t("trip.day", ["n" => (int)$dayNo])) . ($dayDate ? " | " . esc($dayDate) : "") . " | " . esc(pdf_t("pdf.day_cost", ["cost" => fmt_rm($dayCost)])) . "</div>";
+    $html .= "<table><tr><th style='width:70px;'>" . esc(pdf_t("trip.col_time")) . "</th><th style='width:25px;'>#</th><th>" . esc(pdf_t("pdf.col_place_act")) . "</th><th style='width:70px;'>" . esc(pdf_t("trip.col_type")) . "</th><th style='width:60px;'>" . esc(pdf_t("pdf.col_cost")) . "</th><th style='width:72px;'>" . esc(pdf_t("trip.col_travel")) . "</th></tr>";
     foreach ($items as $item) {
         $time = fmt_time($item["start_time"] ?? "") . " - " . fmt_time($item["end_time"] ?? "");
         $category = strtolower((string)($item["category"] ?: $item["item_type"]));
         $travel = "-";
         if ($item["travel_time_min"] !== null && $item["travel_time_min"] !== "") {
-            $travel = (int)$item["travel_time_min"] . " min";
+            $travel = pdf_t("trip.min", ["n" => (int)$item["travel_time_min"]]);
             if ($item["distance_km"] !== null && $item["distance_km"] !== "") $travel .= " / " . number_format((float)$item["distance_km"], 1) . " km";
         }
         $html .= "<tr>";
         $html .= "<td>" . esc($time) . "</td>";
         $html .= "<td>" . (int)$item["sequence_no"] . "</td>";
         $mealSlot = (string)($item["meal_slot"] ?? "");
-        $activity = $mealSlot !== "" && empty($item["place_id"]) ? "Time kept free for " . $mealSlot : activity_text((string)$item["item_type"], $category);
+        $activity = $mealSlot !== "" && empty($item["place_id"])
+            ? pdf_t("pdf.meal_free", ["slot" => mb_strtolower(pdf_choice("itype", $mealSlot))])
+            : activity_text((string)$item["item_type"], $category);
         $html .= "<td><strong>" . esc($item["item_title"]) . "</strong><br><span class='muted'>" . esc($activity) . "</span>";
         if (!empty($item["address"])) $html .= "<br><span class='muted'>" . esc($item["address"]) . "</span>";
         $reason = extract_reason_selected($item["notes"] ?? "");
-        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<br><span class='muted'><strong>Reason Selected:</strong> " . esc($reason) . "</span>";
+        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<br><span class='muted'><strong>" . esc(pdf_t("trip.reason")) . "</strong> " . esc($reason) . "</span>";
         $html .= "</td>";
-        $html .= "<td><span class='tag'>" . esc(ucfirst($mealSlot !== "" ? $mealSlot : $category)) . "</span></td>";
-        $html .= "<td>" . esc($mealSlot !== "" ? "In meal estimate" : fmt_rm($item["estimated_cost"] ?? 0)) . "</td>";
+        $html .= "<td><span class='tag'>" . esc($mealSlot !== "" ? pdf_choice("itype", $mealSlot) : pdf_category($category)) . "</span></td>";
+        $html .= "<td>" . esc($mealSlot !== "" ? pdf_t("shr.in_meal") : fmt_rm($item["estimated_cost"] ?? 0)) . "</td>";
         $html .= "<td>" . esc($travel) . "</td>";
         $html .= "</tr>";
     }
@@ -391,7 +419,7 @@ foreach ($days as $dayNo => $items) {
 $html .= "</div>";
 
 $html .= "<div class='section'>";
-$html .= "<h2>Place Details</h2>";
+$html .= "<h2>" . esc(pdf_t("pdf.h_places")) . "</h2>";
 $credits = [];   // place_id => what the credits table at the end says about it
 foreach ($days as $dayNo => $items) {
     foreach ($items as $item) {
@@ -399,22 +427,22 @@ foreach ($days as $dayNo => $items) {
         $img = image_to_data_uri($item["image_src"] ?? "");
         $category = strtolower((string)($item["category"] ?: $item["item_type"]));
         $html .= "<div class='place-card'>";
-        $html .= "<div class='place-title'>Day " . (int)$dayNo . " - " . esc($item["item_title"]) . "</div>";
+        $html .= "<div class='place-title'>" . esc(pdf_t("trip.day", ["n" => (int)$dayNo])) . " - " . esc($item["item_title"]) . "</div>";
         $html .= "<table><tr>";
         $html .= "<td style='width:185px; border:0; padding:0 9px 0 0;'>";
         $photoCredit = $img !== "" ? photo_credit($item, 60) : "";
-        if ($img !== "") $html .= "<img class='place-img' src='" . esc($img) . "' alt='Place image'>";
-        else $html .= "<div class='muted'>No image available</div>";
-        if ($photoCredit !== "") $html .= "<div class='photo-credit'>Photo: " . esc($photoCredit) . "</div>";
+        if ($img !== "") $html .= "<img class='place-img' src='" . esc($img) . "' alt='" . esc(pdf_t("pdf.alt_image")) . "'>";
+        else $html .= "<div class='muted'>" . esc(pdf_t("pdf.no_image")) . "</div>";
+        if ($photoCredit !== "") $html .= "<div class='photo-credit'>" . esc(pdf_t("pdf.photo", ["credit" => $photoCredit])) . "</div>";
         $html .= "</td><td style='border:0; padding:0;'>";
-        $html .= "<div><span class='tag'>" . esc(ucfirst($category)) . "</span></div>";
-        if (!empty($item["opening_hours"])) $html .= "<p><strong>Opening Hours:</strong> " . esc($item["opening_hours"]) . "</p>";
-        if (!empty($item["address"])) $html .= "<p><strong>Address:</strong> " . esc($item["address"]) . "</p>";
+        $html .= "<div><span class='tag'>" . esc(pdf_category($category)) . "</span></div>";
+        if (!empty($item["opening_hours"])) $html .= "<p><strong>" . esc(pdf_t("pdf.opening")) . "</strong> " . esc($item["opening_hours"]) . "</p>";
+        if (!empty($item["address"])) $html .= "<p><strong>" . esc(pdf_t("pdf.address")) . "</strong> " . esc($item["address"]) . "</p>";
         $reason = extract_reason_selected($item["notes"] ?? "");
-        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<p><strong>Reason Selected:</strong> " . esc($reason) . "</p>";
-        if (!empty($item["best_time_to_visit"])) $html .= "<p><strong>Best Time:</strong> " . esc($item["best_time_to_visit"]) . "</p>";
-        if ((int)($item["dress_code_required"] ?? 0) === 1) $html .= "<p><strong>Etiquette:</strong> Dress code required. Cover shoulders/knees where appropriate.</p>";
-        if ($item["halal_status"] !== null && $category === "food") $html .= "<p><strong>Halal:</strong> " . ((int)$item["halal_status"] === 1 ? "Available" : "Not certified / unknown") . "</p>";
+        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<p><strong>" . esc(pdf_t("trip.reason")) . "</strong> " . esc($reason) . "</p>";
+        if (!empty($item["best_time_to_visit"])) $html .= "<p><strong>" . esc(pdf_t("pdf.best_time")) . "</strong> " . esc($item["best_time_to_visit"]) . "</p>";
+        if ((int)($item["dress_code_required"] ?? 0) === 1) $html .= "<p><strong>" . esc(pdf_t("pdf.etiquette")) . "</strong> " . esc(pdf_t("pdf.dress")) . "</p>";
+        if ($item["halal_status"] !== null && $category === "food") $html .= "<p><strong>" . esc(pdf_t("pdf.halal")) . "</strong> " . esc((int)$item["halal_status"] === 1 ? pdf_t("pdf.halal_yes") : pdf_t("pdf.halal_no")) . "</p>";
         $desc = clean_text($item["description"] ?? "");
         if ($desc !== "") {
             if (function_exists("mb_substr")) $desc = mb_substr($desc, 0, 360);
@@ -441,25 +469,30 @@ $html .= "</div>";
 if ($credits) {
     // Photos from Wikimedia Commons and texts from Wikipedia may be reused only with their author and licence named.
     $html .= "<div class='section'>";
-    $html .= "<h2>Photo and Text Credits</h2>";
-    $html .= "<table><tr><th>Place</th><th>Photo</th><th>Description</th></tr>";
+    $html .= "<h2>" . esc(pdf_t("pdf.h_credits")) . "</h2>";
+    $html .= "<table><tr><th>" . esc(pdf_t("trip.col_place")) . "</th><th>" . esc(pdf_t("pdf.c_photo")) . "</th><th>" . esc(pdf_t("pdf.c_desc")) . "</th></tr>";
     foreach ($credits as $credit) {
         $photo = "-";
         if ($credit["photo"] !== "") {
             $photo = esc($credit["photo"]);
-            if (str_starts_with($credit["photo_url"], "https://")) $photo .= ", via <a href='" . esc($credit["photo_url"]) . "'>Wikimedia Commons</a>";
+            if (str_starts_with($credit["photo_url"], "https://")) $photo .= ", " . esc(pdf_t("pdf.via")) . " <a href='" . esc($credit["photo_url"]) . "'>Wikimedia Commons</a>";
         }
         $text = $credit["text_url"] !== ""
-            ? "Adapted from <a href='" . esc($credit["text_url"]) . "'>Wikipedia</a>, <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>"
+            ? esc(pdf_t("pdf.adapted_from")) . " <a href='" . esc($credit["text_url"]) . "'>Wikipedia</a>, <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a>"
             : "-";
         $html .= "<tr><td>" . esc($credit["title"]) . "</td><td>" . $photo . "</td><td>" . $text . "</td></tr>";
     }
     $html .= "</table>";
-    $html .= "<p class='muted'>These photos and texts are reused under the licences named. Each link leads to the original, its author and the licence terms.</p>";
+    $html .= "<p class='muted'>" . esc(pdf_t("pdf.credits_note")) . "</p>";
     $html .= "</div>";
 }
 
-$html .= "<div class='footer'>Report generated by Smart Travel Itinerary Generator. Route and cost values are estimates and should be checked against live maps, traffic, opening hours, and current hotel prices before travel. Routes, place details and lodging listings use data &copy; OpenStreetMap contributors (openstreetmap.org/copyright).</div>";
+$html .= "<div class='footer'>" . esc(pdf_t("pdf.footer")) . " " . pdf_t("pdf.footer_osm");
+if ($pdfIsFallback) {
+    // The PDF cannot draw Chinese, so this line says in English why the report is not in Chinese.
+    $html .= "<br>" . esc(t("pdf.zh_note", [], "en"));
+}
+$html .= "</div>";
 
 /* ------------------------ Render PDF ------------------------ */
 
