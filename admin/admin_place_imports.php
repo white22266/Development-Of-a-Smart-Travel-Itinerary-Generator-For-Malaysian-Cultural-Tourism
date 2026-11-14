@@ -601,7 +601,7 @@ $syncedStates = count(array_filter($overview, static fn($o) => $o["last"] !== nu
             <?php endif; ?>
         </main>
     </div>
-    <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+    <script src="../assets/dashboard_shell.js?v=20261119a"></script>
     <script>
         (function () {
             var all = document.getElementById("bulkAll");

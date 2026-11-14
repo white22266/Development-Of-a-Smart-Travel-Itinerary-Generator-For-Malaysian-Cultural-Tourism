@@ -143,7 +143,7 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
                             <td><?php echo (int)$item["sequence_no"]; ?></td>
                             <td><?php echo h(time_label($item["start_time"]) . " - " . time_label($item["end_time"])); ?></td>
                             <td>
-                                <strong><?php echo h($item["item_title"]); ?></strong>
+                                <strong><?php echo h(i18n_item_title((string)$item["item_title"])); ?></strong>
                                 <div class="meta">
                                     <?php echo h(trim(($item["district"] ?? "") . (($item["district"] ?? "") ? ", " : "") . ($item["state"] ?? ""))); ?>
                                     <?php if (!empty($item["opening_hours"])): ?> | <?php echo h($item["opening_hours"]); ?><?php endif; ?>
@@ -171,7 +171,7 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
         <?php endforeach; ?>
     </div>
 </div>
-  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+  <script src="../assets/dashboard_shell.js?v=20261119a"></script>
 </body>
 </html>
 

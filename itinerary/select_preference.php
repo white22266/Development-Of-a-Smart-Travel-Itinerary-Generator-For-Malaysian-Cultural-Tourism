@@ -693,7 +693,7 @@ foreach ($preferences as $pref) {
 </div>
 
 <script>window.PLACE_PICKER_TEXT = <?php echo i18n_js(['common.picker_no_place']); ?>;</script>
-<script src="../assets/place_picker.js?v=20261112c"></script>
+<script src="../assets/place_picker.js?v=20261119a"></script>
 <script>
 const preferenceData = <?php echo json_encode($preferencePayload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 const preselectedPreferenceId = <?php echo (int)$preselectedPreferenceId; ?>;
@@ -1094,7 +1094,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
-  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+  <script src="../assets/dashboard_shell.js?v=20261119a"></script>
 </body>
 </html>
 

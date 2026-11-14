@@ -60,6 +60,15 @@
         el.classList.toggle('ok', kind === 'ok');
     }
 
+    /** A new action starts: the messages of every other control go, so no old refusal stays on the page. */
+    function clearOtherMessages(box) {
+        document.querySelectorAll('.ed-msg').forEach(el => {
+            if (box && el.parentElement === box) return;
+            el.textContent = '';
+            el.classList.remove('err', 'ok');
+        });
+    }
+
     function busy(box, on) {
         if (!box) return;
         box.querySelectorAll('button, input, select').forEach(el => {
@@ -166,6 +175,7 @@
     // ---- Add a place: search the system's places (api/place_search.php), then add
     let searchTimer = null;
     function search(box, input) {
+        clearOtherMessages(box);
         const results = box.querySelector('[data-ed-results]');
         clearTimeout(searchTimer);
         const q = input.value.trim();
@@ -205,6 +215,7 @@
         const day = box.dataset.edDay || '';
         const title = box.dataset.edTitle || '';
         const pos = Number(box.dataset.edPos || 0);
+        clearOtherMessages(box);
         message(box, '', null);
         switch (action) {
             case 'replace_open':

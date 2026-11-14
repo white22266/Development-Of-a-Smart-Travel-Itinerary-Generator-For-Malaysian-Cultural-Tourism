@@ -786,13 +786,13 @@ $totalNights = max(0, $totalDays - 1);
             <?php foreach ($items as $idx => $item):
                 $kind = reviewItemKind($item);
                 if ($kind === 'note' || $kind === 'hotel'):
-                    $info = extractReasonSelected($item['notes'] ?? '');
+                    $info = i18n_reason_text(extractReasonSelected($item['notes'] ?? ''));
                     if ($info === '') $info = i18n_stop_note((string)($item['notes'] ?? ''));
             ?>
             <div class="place-card note-card" data-kind="<?php echo $kind; ?>" data-day="<?php echo $d; ?>">
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                     <span class="type-badge badge-<?php echo $kind; ?>"><?php echo $kind === 'hotel' ? te('rv.badge_hotel') : te('rv.badge_note'); ?></span>
-                    <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
+                    <span class="place-title"><?php echo htmlspecialchars(i18n_item_title((string)$item['item_title'])); ?></span>
                 </div>
                 <?php if ($info !== ''): ?>
                 <div class="place-meta" style="margin-top:4px;"><?php echo htmlspecialchars($info); ?></div>
@@ -819,7 +819,7 @@ $totalNights = max(0, $totalDays - 1);
                     <div style="flex:1;">
                         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                             <span class="type-badge badge-food"><?php echo htmlspecialchars($slotLabel); ?></span>
-                            <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
+                            <span class="place-title"><?php echo htmlspecialchars(i18n_item_title((string)$item['item_title'])); ?></span>
                         </div>
                         <div class="place-meta place-time" style="margin-top:3px;"><?php if ($mealFrom !== ''): ?><?php echo te('rv.planned', ['from' => $mealFrom, 'to' => $mealTo]); ?><?php endif; ?></div>
                         <div class="place-meta place-meta-main">
@@ -833,7 +833,7 @@ $totalNights = max(0, $totalDays - 1);
                         </div>
                         <?php $mealReason = extractReasonSelected($item['notes'] ?? ''); ?>
                         <?php if ($mealReason !== ''): ?>
-                        <div class="place-meta" style="margin-top:4px;"><strong><?php echo te('rv.why_here'); ?></strong> <?php echo htmlspecialchars($mealReason); ?></div>
+                        <div class="place-meta" style="margin-top:4px;"><strong><?php echo te('rv.why_here'); ?></strong> <?php echo htmlspecialchars(i18n_reason_text($mealReason)); ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="place-actions">
@@ -872,7 +872,7 @@ $totalNights = max(0, $totalDays - 1);
                             <span class="type-badge <?php echo htmlspecialchars($typeClass); ?>">
                                 <?php echo htmlspecialchars(reviewTypeLabel((string)($item['item_type'] ?? 'attraction'))); ?>
                             </span>
-                            <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
+                            <span class="place-title"><?php echo htmlspecialchars(i18n_item_title((string)$item['item_title'])); ?></span>
                         </div>
                         <?php $visitFrom = reviewClock($item['start_time'] ?? null); $visitTo = reviewClock($item['end_time'] ?? null); ?>
                         <div class="place-meta place-time" style="margin-top:3px;"><?php if ($visitFrom !== ''): ?><?php echo te('rv.planned', ['from' => $visitFrom, 'to' => $visitTo]); ?><?php endif; ?></div>
@@ -894,7 +894,7 @@ $totalNights = max(0, $totalDays - 1);
                         <?php endif; ?>
                         <?php $reasonSelected = extractReasonSelected($item['notes'] ?? ''); ?>
                         <?php if ($reasonSelected !== ''): ?>
-                        <div class="place-meta" style="margin-top:4px;"><strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars($reasonSelected); ?></div>
+                        <div class="place-meta" style="margin-top:4px;"><strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars(i18n_reason_text($reasonSelected)); ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="place-actions">
@@ -1719,7 +1719,7 @@ async function parseJsonResponse(resp) {
     }
 }
 </script>
-  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+  <script src="../assets/dashboard_shell.js?v=20261119a"></script>
 </body>
 </html>
 

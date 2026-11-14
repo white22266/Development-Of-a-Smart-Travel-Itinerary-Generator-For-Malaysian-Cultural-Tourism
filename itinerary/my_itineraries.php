@@ -283,7 +283,7 @@ $stmt->close();
         </main>
 
     </div>
-  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+  <script src="../assets/dashboard_shell.js?v=20261119a"></script>
 </body>
 
 </html>

@@ -349,7 +349,7 @@ function sug_label($s)
         </main>
     </div>
 <script>window.PLACE_PICKER_TEXT = <?php echo i18n_js(['common.picker_no_place']); ?>;</script>
-<script src="../assets/place_picker.js?v=20261112c"></script>
+<script src="../assets/place_picker.js?v=20261119a"></script>
 <script>
 var existingSuggestPlaces = <?php echo json_encode($existingPlaces, JSON_UNESCAPED_UNICODE); ?>;
 var STATE_BY_ISO = <?php echo json_encode(array_flip(OsmDataService::STATE_ISO)); ?>;
@@ -470,7 +470,7 @@ function escapeSuggestHtml(str) {
     });
 }
 </script>
-  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+  <script src="../assets/dashboard_shell.js?v=20261119a"></script>
 </body>
 
 </html>

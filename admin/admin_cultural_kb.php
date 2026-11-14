@@ -924,7 +924,7 @@ $stmt->close();
             </section>
         </main>
     </div>
-<script src="../assets/place_picker.js?v=20261112c"></script>
+<script src="../assets/place_picker.js?v=20261119a"></script>
 <script>
 var adminDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
 var existingAdminPlaces = <?php echo json_encode($duplicatePlaces, JSON_UNESCAPED_UNICODE); ?>;
@@ -1018,7 +1018,7 @@ if (filterStateSelect) {
     updateFilterDistricts(filterStateSelect.value, <?php echo json_encode($district, JSON_UNESCAPED_UNICODE); ?>);
 }
 </script>
-  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+  <script src="../assets/dashboard_shell.js?v=20261119a"></script>
 </body>
 </html>
 

@@ -191,7 +191,7 @@ $jsItineraryData = [];
 foreach ($timetables as $d => $items) {
     $jsItineraryData[$d] = array_map(fn($item) => [
         'item_id'      => (int)$item['item_id'],
-        'title'        => !empty($item['meal_slot']) && $item['latitude'] !== null ? t_choice('itype', (string)$item['meal_slot']) . ': ' . $item['item_title'] : $item['item_title'],
+        'title'        => !empty($item['meal_slot']) && $item['latitude'] !== null ? t_choice('itype', (string)$item['meal_slot']) . ': ' . $item['item_title'] : i18n_item_title((string)$item['item_title']),
         'type'         => $item['item_type'],
         'category'     => $item['category'] ?? '',
         'lat'          => $item['latitude']  !== null ? (float)$item['latitude']  : null,
@@ -952,7 +952,18 @@ $editConfig = json_encode([
                         <div class="day-box-title"><?php echo te('trip.day', ['n' => $d]); ?></div>
                         <?php if ($dateStr): ?><div class="day-box-date"><?php echo $dateStr; ?></div><?php endif; ?>
                         <div class="day-box-note">
-                            <?php echo te($d === 1 ? 'iv.day_starts_origin' : 'iv.day_starts_prev'); ?>
+                            <?php
+                                // A hotel night booked for the day before: the day starts from the hotel.
+                                $startHotel = null;
+                                if ($d > 1) {
+                                    foreach (array_reverse($timetables[$d - 1] ?? []) as $prevRow) {
+                                        if (strtolower((string)($prevRow['item_type'] ?? '')) === 'hotel') { $startHotel = (string)$prevRow['item_title']; break; }
+                                    }
+                                }
+                                echo $startHotel !== null && $startHotel !== ''
+                                    ? htmlspecialchars(t('iv.day_starts_hotel', ['name' => $startHotel]))
+                                    : te($d === 1 ? 'iv.day_starts_origin' : 'iv.day_starts_prev');
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -1115,7 +1126,7 @@ $editConfig = json_encode([
                             </td>
                             <td data-label="#" style="font-weight:800; color:<?php echo $isHotel ? '#64748b' : $col; ?>;"><?php echo htmlspecialchars($displayLabel); ?></td>
                             <td data-label="<?php echo te('pdf.col_place_act'); ?>">
-                                <div style="font-weight:700;"><?php echo htmlspecialchars($item['item_title']); ?></div>
+                                <div style="font-weight:700;"><?php echo htmlspecialchars(i18n_item_title((string)$item['item_title'])); ?></div>
                                 <div style="font-size:11px; color:#64748b; margin-top:2px;">
                                     <?php echo $activity; ?>
                                     <?php if (!empty($item['address'])): ?>
@@ -1141,7 +1152,7 @@ $editConfig = json_encode([
                                 <?php $reasonSelected = extractReasonSelected($item['notes'] ?? ''); ?>
                                 <?php if ($reasonSelected !== '' && !$isHotel): ?>
                                 <div style="font-size:10.5px; color:#475569; margin-top:4px;">
-                                    <strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars($reasonSelected); ?>
+                                    <strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars(i18n_reason_text($reasonSelected)); ?>
                                 </div>
                                 <?php endif; ?>
                                 <?php
@@ -1236,7 +1247,7 @@ const ITINERARY_EDIT_T = <?php echo i18n_js([
     'edit.add', 'edit.err_time', 'edit.meal_break',
 ]); ?>;
 </script>
-<script src="../assets/itinerary_edit.js?v=20261117a"></script>
+<script src="../assets/itinerary_edit.js?v=20261119a"></script>
 <script>
 // What assets/itinerary_map.js draws.
 const ITINERARY_ID = <?php echo $itineraryId; ?>;
@@ -1273,7 +1284,7 @@ const LIVE_BUSES_T = <?php echo i18n_js([
 </script>
 <script src="../assets/live_buses.js?v=20261118a"></script>
 <script src="../assets/itinerary_map.js?v=20261118a"></script>
-  <script src="../assets/dashboard_shell.js?v=20260618a"></script>
+  <script src="../assets/dashboard_shell.js?v=20261119a"></script>
 </body>
 </html>
 

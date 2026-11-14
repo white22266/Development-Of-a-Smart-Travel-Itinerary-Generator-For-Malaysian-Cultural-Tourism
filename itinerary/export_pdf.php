@@ -404,10 +404,10 @@ foreach ($days as $dayNo => $items) {
         $activity = $mealSlot !== "" && empty($item["place_id"])
             ? pdf_t("pdf.meal_free", ["slot" => mb_strtolower(pdf_choice("itype", $mealSlot))])
             : activity_text((string)$item["item_type"], $category);
-        $html .= "<td><strong>" . esc($item["item_title"]) . "</strong><br><span class='muted'>" . esc($activity) . "</span>";
+        $html .= "<td><strong>" . esc(i18n_item_title((string)$item["item_title"], $pdfLang)) . "</strong><br><span class='muted'>" . esc($activity) . "</span>";
         if (!empty($item["address"])) $html .= "<br><span class='muted'>" . esc($item["address"]) . "</span>";
         $reason = extract_reason_selected($item["notes"] ?? "");
-        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<br><span class='muted'><strong>" . esc(pdf_t("trip.reason")) . "</strong> " . esc($reason) . "</span>";
+        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<br><span class='muted'><strong>" . esc(pdf_t("trip.reason")) . "</strong> " . esc(i18n_reason_text($reason, $pdfLang)) . "</span>";
         $html .= "</td>";
         $html .= "<td><span class='tag'>" . esc($mealSlot !== "" ? pdf_choice("itype", $mealSlot) : pdf_category($category)) . "</span></td>";
         $html .= "<td>" . esc($mealSlot !== "" ? pdf_t("shr.in_meal") : fmt_rm($item["estimated_cost"] ?? 0)) . "</td>";
@@ -427,7 +427,7 @@ foreach ($days as $dayNo => $items) {
         $img = image_to_data_uri($item["image_src"] ?? "");
         $category = strtolower((string)($item["category"] ?: $item["item_type"]));
         $html .= "<div class='place-card'>";
-        $html .= "<div class='place-title'>" . esc(pdf_t("trip.day", ["n" => (int)$dayNo])) . " - " . esc($item["item_title"]) . "</div>";
+        $html .= "<div class='place-title'>" . esc(pdf_t("trip.day", ["n" => (int)$dayNo])) . " - " . esc(i18n_item_title((string)$item["item_title"], $pdfLang)) . "</div>";
         $html .= "<table><tr>";
         $html .= "<td style='width:185px; border:0; padding:0 9px 0 0;'>";
         $photoCredit = $img !== "" ? photo_credit($item, 60) : "";
@@ -439,7 +439,7 @@ foreach ($days as $dayNo => $items) {
         if (!empty($item["opening_hours"])) $html .= "<p><strong>" . esc(pdf_t("pdf.opening")) . "</strong> " . esc($item["opening_hours"]) . "</p>";
         if (!empty($item["address"])) $html .= "<p><strong>" . esc(pdf_t("pdf.address")) . "</strong> " . esc($item["address"]) . "</p>";
         $reason = extract_reason_selected($item["notes"] ?? "");
-        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<p><strong>" . esc(pdf_t("trip.reason")) . "</strong> " . esc($reason) . "</p>";
+        if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<p><strong>" . esc(pdf_t("trip.reason")) . "</strong> " . esc(i18n_reason_text($reason, $pdfLang)) . "</p>";
         if (!empty($item["best_time_to_visit"])) $html .= "<p><strong>" . esc(pdf_t("pdf.best_time")) . "</strong> " . esc($item["best_time_to_visit"]) . "</p>";
         if ((int)($item["dress_code_required"] ?? 0) === 1) $html .= "<p><strong>" . esc(pdf_t("pdf.etiquette")) . "</strong> " . esc(pdf_t("pdf.dress")) . "</p>";
         if ($item["halal_status"] !== null && $category === "food") $html .= "<p><strong>" . esc(pdf_t("pdf.halal")) . "</strong> " . esc((int)$item["halal_status"] === 1 ? pdf_t("pdf.halal_yes") : pdf_t("pdf.halal_no")) . "</p>";
