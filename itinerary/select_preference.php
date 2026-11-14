@@ -179,6 +179,7 @@ foreach ($preferences as $pref) {
       display: block;
       margin-bottom: 6px;
     }
+    .field-group input[type="radio"] { width: auto; padding: 0; }
     .field-group input,
     .field-group select,
     .ai-chat-form input {
@@ -522,6 +523,22 @@ foreach ($preferences as $pref) {
               </div>
             </div>
 
+            <div class="field-group" id="endPointField">
+              <label>End point (optional)</label>
+              <label style="display:flex; gap:8px; align-items:center; font-weight:400;">
+                <input type="radio" name="end_mode" value="start" id="endModeStart" checked> End the trip at the starting point
+              </label>
+              <label style="display:flex; gap:8px; align-items:center; font-weight:400;">
+                <input type="radio" name="end_mode" value="other" id="endModeOther"> End somewhere else
+              </label>
+              <div id="endPointBox" hidden style="margin-top:8px;">
+                <input type="text" name="end_name" id="end_name" placeholder="Type a city or address, e.g. Kuala Lumpur Sentral..." autocomplete="off" disabled>
+                <input type="hidden" name="end_lat" id="end_lat" disabled>
+                <input type="hidden" name="end_lng" id="end_lng" disabled>
+                <div class="field-help" id="endLocationStatus">Type a place or address and choose a result.</div>
+              </div>
+            </div>
+
             <div class="actions generate-actions">
               <button type="submit" class="btn btn-primary">Generate Itinerary</button>
             </div>
@@ -748,6 +765,60 @@ async function geocodeOriginIfNeeded() {
   return false;
 }
 
+// Optional end point: same search as the starting point, posted as end_name, end_lat, end_lng.
+function setEndStatus(message, status) {
+  const box = document.getElementById("endLocationStatus");
+  if (!box) return;
+  box.textContent = message;
+  box.className = status === true ? "field-help status-good" : (status === false ? "field-help status-bad" : "field-help");
+}
+
+function fillEnd(name, lat, lng) {
+  document.getElementById("end_name").value = name;
+  document.getElementById("end_lat").value = lat;
+  document.getElementById("end_lng").value = lng;
+  setEndStatus("End point confirmed with coordinates.", true);
+}
+
+function endPointInUse() {
+  const other = document.getElementById("endModeOther");
+  return !!(other && other.checked);
+}
+
+function syncEndPointMode() {
+  const use = endPointInUse();
+  const box = document.getElementById("endPointBox");
+  if (box) box.hidden = !use;
+  ["end_name", "end_lat", "end_lng"].forEach(function (id) {
+    const el = document.getElementById(id);
+    if (el) el.disabled = !use;   // a disabled field is not posted
+  });
+}
+
+async function geocodeEndIfNeeded() {
+  if (!endPointInUse()) return true;
+  const name = document.getElementById("end_name").value.trim();
+  const lat = document.getElementById("end_lat").value.trim();
+  const lng = document.getElementById("end_lng").value.trim();
+  if (name === "") {
+    setEndStatus("Type where the trip should end, or choose to end at the starting point.", false);
+    return false;
+  }
+  if (lat !== "" && lng !== "") return true;
+  try {
+    setEndStatus("Searching location coordinates...", null);
+    const response = await fetch("../api/geo_search.php?q=" + encodeURIComponent(name), { credentials: "same-origin" });
+    const data = await response.json();
+    const best = data && Array.isArray(data.results) ? data.results[0] : null;
+    if (best) {
+      fillEnd(best.label || name, best.lat, best.lng);
+      return true;
+    }
+  } catch (error) {}
+  setEndStatus("Location coordinates not found. Please type a clearer end point.", false);
+  return false;
+}
+
 async function reverseGeocodeCurrentLocation(lat, lng) {
   try {
     const response = await fetch("../api/geo_search.php?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng), { credentials: "same-origin" });
@@ -814,6 +885,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updatePreferenceSummary();
   initOriginSearch();
+
+  const endInput = document.getElementById("end_name");
+  if (endInput && window.PlacePicker) {
+    PlacePicker.attachSearch(endInput, "../api/geo_search.php", function (result) {
+      fillEnd(result.label, result.lat, result.lng);
+    });
+  }
+  if (endInput) {
+    endInput.addEventListener("input", function () {
+      document.getElementById("end_lat").value = "";
+      document.getElementById("end_lng").value = "";
+      setEndStatus("Choose one of the results, or click Generate Itinerary to look the place up automatically.", null);
+    });
+  }
+  document.querySelectorAll('input[name="end_mode"]').forEach(function (r) {
+    r.addEventListener("change", syncEndPointMode);
+  });
+  syncEndPointMode();
 
   if (prefSelect) prefSelect.addEventListener("change", updatePreferenceSummary);
   if (originInput) originInput.addEventListener("input", clearOriginCoords);
@@ -888,6 +977,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const ok = await geocodeOriginIfNeeded();
       if (!ok) {
         document.getElementById("origin_name").focus();
+        return;
+      }
+      const endOk = await geocodeEndIfNeeded();
+      if (!endOk) {
+        document.getElementById("end_name").focus();
         return;
       }
       form.submit();

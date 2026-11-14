@@ -2,6 +2,8 @@
 // preference/preference_form.php
 session_start();
 require_once "../config/security.php";
+require_once "../config/db_connect.php";
+require_once __DIR__ . "/preference_inputs.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
   header("Location: ../auth/login.php?role=traveller");
@@ -108,6 +110,54 @@ $oldDietary = $old["dietary_preference"]    ?? "none";
 $oldVisitTime = $old["preferred_visit_time"] ?? "any";
 $oldAccessibility = $old["accessibility_needs"] ?? "";
 $oldInterests = $old["interests"]           ?? [];
+$oldWeights   = is_array($old["interest_weight"] ?? null) ? $old["interest_weight"] : [];
+$oldDayStart  = (string)($old["day_start_time"] ?? "");
+$oldDayEnd    = (string)($old["day_end_time"] ?? "");
+$oldStops     = (string)($old["stops_per_day"] ?? "");
+$oldAdults    = (string)($old["adults"] ?? "");
+$oldChildren  = (string)($old["children"] ?? "");
+$oldSeniors   = (string)($old["seniors"] ?? "");
+$oldAccessTags = is_array($old["access_tags"] ?? null) ? $old["access_tags"] : [];
+$accessTagOptions = [
+  "wheelchair"  => "Wheelchair user",
+  "avoid_stairs" => "Avoid stairs",
+  "low_walking" => "Limited walking",
+  "avoid_heat"  => "Avoid midday heat",
+  "elderly"     => "Travelling with elderly people"
+];
+$weightOptions = [1 => "A little", 2 => "Like", 3 => "Love"];
+
+// Places chosen before a validation error: look the names up again.
+$oldPlaces = ["must" => [], "avoid" => []];
+foreach (["must" => "must_places", "avoid" => "avoid_places"] as $wish => $field) {
+  $ids = pref_place_ids($old[$field] ?? []);
+  if (!$ids) continue;
+  $marks = implode(",", array_fill(0, count($ids), "?"));
+  $lookup = $conn->prepare("SELECT place_id, name, state FROM cultural_places WHERE is_active = 1 AND place_id IN ($marks)");
+  $lookup->bind_param(str_repeat("i", count($ids)), ...$ids);
+  $lookup->execute();
+  $oldPlaces[$wish] = $lookup->get_result()->fetch_all(MYSQLI_ASSOC);
+  $lookup->close();
+}
+
+function render_place_picker(string $wish, string $label, string $help, array $chosen): void {
+  $field = $wish . "_places";
+  echo '<div class="place-picker" data-wish="' . $wish . '" data-field="' . $field . '">';
+  echo '<label style="font-size:13px; font-weight:700;" for="picker_' . $wish . '">' . htmlspecialchars($label) . '</label>';
+  echo '<input type="search" id="picker_' . $wish . '" class="place-picker-input" autocomplete="off" placeholder="Search by place name (2+ letters)" '
+     . 'style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">';
+  echo '<div class="place-picker-results" role="listbox"></div>';
+  echo '<div class="place-picker-chosen">';
+  foreach ($chosen as $row) {
+    $id = (int)$row["place_id"];
+    echo '<span class="place-chip" data-id="' . $id . '">' . htmlspecialchars($row["name"])
+       . ' <button type="button" class="place-chip-remove" aria-label="Remove">&times;</button>'
+       . '<input type="hidden" name="' . $field . '[]" value="' . $id . '"></span>';
+  }
+  echo '</div>';
+  echo '<div class="field-help">' . htmlspecialchars($help) . '</div>';
+  echo '</div>';
+}
 $oldState     = $old["preferred_states"]    ?? "";   // single value now
 $oldDistrict  = $old["preferred_districts"] ?? "";   // single value now
 
@@ -207,6 +257,20 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       font-size: 13px;
     }
     .summary-item strong { display:block; margin-bottom:4px; }
+    .inline-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .inline-fields label { font-size: 12px; font-weight: 700; display: block; }
+    .interest-row { display: flex; gap: 8px; align-items: center; justify-content: space-between; font-size: 13px; }
+    .interest-row select { padding: 4px 8px; border-radius: 8px; border: 1px solid rgba(15,23,42,0.10); font-size: 12px; background: #fff; }
+    .interest-row select:disabled { opacity: .45; }
+    .place-picker { margin-top: 14px; position: relative; }
+    .place-picker-results { display: none; border: 1px solid rgba(15,23,42,0.10); border-radius: 10px; background: #fff; margin-top: 4px; max-height: 220px; overflow-y: auto; }
+    .place-picker-results.open { display: block; }
+    .place-picker-results button { display: block; width: 100%; text-align: left; border: 0; background: transparent; padding: 8px 10px; font-size: 12px; cursor: pointer; }
+    .place-picker-results button:hover { background: rgba(79,70,229,0.08); }
+    .place-picker-results .place-note { padding: 8px 10px; font-size: 12px; color: var(--muted); }
+    .place-picker-chosen { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .place-chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; background: rgba(79,70,229,0.10); font-size: 12px; font-weight: 600; }
+    .place-chip-remove { border: 0; background: transparent; cursor: pointer; font-size: 14px; line-height: 1; padding: 0; }
     .field-help {
       font-size: 11px;
       color: var(--muted);
@@ -355,6 +419,19 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
+              <label style="font-size:13px; font-weight:700;">Who is travelling (optional)</label>
+              <div class="inline-fields" style="margin-top:6px;">
+                <div><label for="adults">Adults</label>
+                  <input type="number" name="adults" id="adults" min="0" max="20" step="1" value="<?php echo htmlspecialchars($oldAdults); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
+                <div><label for="children">Children</label>
+                  <input type="number" name="children" id="children" min="0" max="20" step="1" value="<?php echo htmlspecialchars($oldChildren); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
+                <div><label for="seniors">Seniors</label>
+                  <input type="number" name="seniors" id="seniors" min="0" max="20" step="1" value="<?php echo htmlspecialchars($oldSeniors); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
+              </div>
+              <div class="field-help">Fill in any of these to set the party size from them (at least one adult or senior). Leave all empty to use the party size above.</div>
+
+              <div style="height:12px;"></div>
+
               <label style="font-size:13px; font-weight:700;">Travel Pace *</label>
               <select name="travel_pace" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
@@ -391,12 +468,39 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
+              <label style="font-size:13px; font-weight:700;">Daily schedule (optional)</label>
+              <div class="location-row" style="margin-top:6px;">
+                <div class="field-group"><label for="day_start_time">Day starts at</label>
+                  <input type="time" name="day_start_time" id="day_start_time" min="06:00" max="23:00" value="<?php echo htmlspecialchars($oldDayStart); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
+                <div class="field-group"><label for="day_end_time">Day ends at</label>
+                  <input type="time" name="day_end_time" id="day_end_time" min="06:00" max="23:00" value="<?php echo htmlspecialchars($oldDayEnd); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
+              </div>
+              <div class="field-help">Between 06:00 and 23:00, and at least 3 hours long. Leave empty to let the preferred visit time decide.</div>
+
+              <div style="height:12px;"></div>
+
+              <label style="font-size:13px; font-weight:700;" for="stops_per_day">Stops per day (optional)</label>
+              <input type="number" name="stops_per_day" id="stops_per_day" min="2" max="8" step="1" placeholder="2 to 8"
+                value="<?php echo htmlspecialchars($oldStops); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+              <div class="field-help">Leave empty to let the travel pace decide.</div>
+
+              <div style="height:12px;"></div>
+
               <label style="font-size:13px; font-weight:700;">Accessibility Notes</label>
               <input type="text" name="accessibility_needs" maxlength="120"
                 placeholder="Example: elderly-friendly, avoid stairs"
                 value="<?php echo htmlspecialchars($oldAccessibility); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
               <div class="field-help">The system automatically analyzes this note when saving and applies it to route planning.</div>
+              <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:8px;">
+                <?php foreach ($accessTagOptions as $key => $label): ?>
+                  <label style="display:flex; gap:8px; align-items:center; font-size:13px;">
+                    <input type="checkbox" name="access_tags[]" value="<?php echo htmlspecialchars($key); ?>"
+                      <?php echo checked_val($oldAccessTags, $key); ?>>
+                    <?php echo htmlspecialchars($label); ?>
+                  </label>
+                <?php endforeach; ?>
+              </div>
 
               <hr class="sep">
 
@@ -404,11 +508,18 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
               <p class="meta" style="margin-top:0;">Select at least one interest.</p>
               <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;">
                 <?php foreach ($interestOptions as $key => $label): ?>
-                  <label style="display:flex; gap:8px; align-items:center; font-size:13px;">
-                    <input type="checkbox" name="interests[]" value="<?php echo htmlspecialchars($key); ?>"
-                      <?php echo checked_val($oldInterests, $key); ?>>
-                    <?php echo htmlspecialchars($label); ?>
-                  </label>
+                  <div class="interest-row">
+                    <label style="display:flex; gap:8px; align-items:center; font-size:13px;">
+                      <input type="checkbox" name="interests[]" value="<?php echo htmlspecialchars($key); ?>"
+                        <?php echo checked_val($oldInterests, $key); ?>>
+                      <?php echo htmlspecialchars($label); ?>
+                    </label>
+                    <select name="interest_weight[<?php echo htmlspecialchars($key); ?>]" aria-label="How much you like <?php echo htmlspecialchars($label); ?>">
+                      <?php foreach ($weightOptions as $w => $wLabel): ?>
+                        <option value="<?php echo $w; ?>" <?php echo ((int)($oldWeights[$key] ?? 2) === $w) ? "selected" : ""; ?>><?php echo htmlspecialchars($wLabel); ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
                 <?php endforeach; ?>
               </div>
             </div>
@@ -466,6 +577,13 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 </div>
 
               </div><!-- /location-row -->
+
+              <hr class="sep">
+              <h3 style="margin-bottom:4px;">Specific places <span style="font-weight:400; font-size:12px; color:var(--muted);"> (Optional)</span></h3>
+              <?php
+              render_place_picker("must", "Places I must see", "Up to 10 places the itinerary should include.", $oldPlaces["must"]);
+              render_place_picker("avoid", "Places to avoid", "Up to 10 places the itinerary should leave out. A place cannot be in both lists.", $oldPlaces["avoid"]);
+              ?>
             </div>
 
             <div class="card col-12 wizard-panel" data-step-panel="3" style="box-shadow:none;">
@@ -559,6 +677,106 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     distWarn.classList.remove('visible');
     distHint.textContent = 'Optionally narrow to a specific district in ' + state + '.';
   }
+
+  /* ---- Party mix: adults + children + seniors set the party size ---- */
+  var mixInputs = ['adults', 'children', 'seniors'].map(function (id) { return document.getElementById(id); });
+  function syncPartyMix() {
+    var partyInput = document.querySelector('[name="party_size"]');
+    var any = mixInputs.some(function (el) { return el && el.value !== ''; });
+    if (!partyInput) return;
+    if (any) {
+      var sum = mixInputs.reduce(function (t, el) { return t + (el && el.value !== '' ? parseInt(el.value, 10) || 0 : 0); }, 0);
+      partyInput.value = String(Math.max(1, sum));
+      partyInput.readOnly = true;
+    } else if (travellerTypeSel) {
+      partyInput.readOnly = false;
+      syncPartySize();
+    }
+  }
+  mixInputs.forEach(function (el) { if (el) el.addEventListener('input', syncPartyMix); });
+
+  /* ---- Interest levels only matter for ticked interests ---- */
+  document.querySelectorAll('[name="interests[]"]').forEach(function (box) {
+    var row = box.closest('.interest-row');
+    var sel = row ? row.querySelector('select') : null;
+    if (!sel) return;
+    function sync() { sel.disabled = !box.checked; }
+    box.addEventListener('change', sync);
+    sync();
+  });
+
+  /* ---- Place pickers ---- */
+  document.querySelectorAll('.place-picker').forEach(function (picker) {
+    var input = picker.querySelector('.place-picker-input');
+    var results = picker.querySelector('.place-picker-results');
+    var chosen = picker.querySelector('.place-picker-chosen');
+    var field = picker.getAttribute('data-field');
+    var wish = picker.getAttribute('data-wish');
+    var other = wish === 'must' ? 'avoid' : 'must';
+    var timer = null, seq = 0;
+
+    function idsIn(root) {
+      return Array.prototype.map.call(root.querySelectorAll('.place-chip'), function (c) { return c.getAttribute('data-id'); });
+    }
+    function otherIds() {
+      var o = document.querySelector('.place-picker[data-wish="' + other + '"]');
+      return o ? idsIn(o) : [];
+    }
+    function note(text) {
+      results.innerHTML = '';
+      var d = document.createElement('div');
+      d.className = 'place-note';
+      d.textContent = text;
+      results.appendChild(d);
+      results.classList.add('open');
+    }
+    function add(place) {
+      if (idsIn(chosen).length >= 10) { note('You can choose at most 10 places.'); return; }
+      if (idsIn(chosen).indexOf(String(place.id)) !== -1) return;
+      var chip = document.createElement('span');
+      chip.className = 'place-chip';
+      chip.setAttribute('data-id', String(place.id));
+      chip.appendChild(document.createTextNode(place.name + ' '));
+      var rm = document.createElement('button');
+      rm.type = 'button'; rm.className = 'place-chip-remove'; rm.setAttribute('aria-label', 'Remove'); rm.innerHTML = '&times;';
+      var hid = document.createElement('input');
+      hid.type = 'hidden'; hid.name = field + '[]'; hid.value = String(place.id);
+      chip.appendChild(rm); chip.appendChild(hid);
+      chosen.appendChild(chip);
+      input.value = '';
+      results.classList.remove('open');
+    }
+    chosen.addEventListener('click', function (e) {
+      var rm = e.target.closest('.place-chip-remove');
+      if (rm) rm.closest('.place-chip').remove();
+    });
+    function search() {
+      var q = input.value.trim();
+      if (q.length < 2) { results.classList.remove('open'); return; }
+      var mine = ++seq;
+      var url = '../api/place_search.php?q=' + encodeURIComponent(q);
+      if (stateSel && stateSel.value) url += '&states=' + encodeURIComponent(stateSel.value);
+      fetch(url, { credentials: 'same-origin' }).then(function (r) { return r.json(); }).then(function (data) {
+        if (mine !== seq) return;
+        if (!data || data.status !== 'ok') { note('Search is not available right now.'); return; }
+        var blocked = otherIds();
+        var list = data.results.filter(function (p) { return blocked.indexOf(String(p.id)) === -1; });
+        if (!list.length) { note('No matching places.'); return; }
+        results.innerHTML = '';
+        list.forEach(function (p) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = p.name + ' (' + [p.district, p.state].filter(Boolean).join(', ') + ' - ' + p.category + ')';
+          b.addEventListener('click', function () { add(p); });
+          results.appendChild(b);
+        });
+        results.classList.add('open');
+      }).catch(function () { if (mine === seq) note('Search is not available right now.'); });
+    }
+    input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(search, 250); });
+    input.addEventListener('keydown', function (e) { if (e.key === 'Enter') e.preventDefault(); });
+    document.addEventListener('click', function (e) { if (!picker.contains(e.target)) results.classList.remove('open'); });
+  });
 
   var currentStep = 1;
   var backBtn = document.getElementById('wizardBack');
@@ -671,9 +889,10 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     });
   }
   if (travellerTypeSel) {
-    travellerTypeSel.addEventListener('change', syncPartySize);
+    travellerTypeSel.addEventListener('change', function () { syncPartySize(); syncPartyMix(); });
   }
   syncPartySize();
+  syncPartyMix();
   showStep(1);
 })();
 </script>

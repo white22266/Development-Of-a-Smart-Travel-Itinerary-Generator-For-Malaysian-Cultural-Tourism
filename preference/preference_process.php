@@ -5,6 +5,7 @@ session_start();
 require_once "../config/db_connect.php";
 require_once "../services/AccessibilityNeedsAnalysisService.php";
 require_once "../services/CostEstimationService.php";
+require_once __DIR__ . "/preference_inputs.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -30,14 +31,15 @@ function pref_column_exists(mysqli $conn, string $table, string $column): bool
     return $res && $res->num_rows > 0;
 }
 
-function save_preference_junctions(mysqli $conn, int $preferenceId, array $interests, array $states): void
+function save_preference_junctions(mysqli $conn, int $preferenceId, array $interests, array $states, array $weights = []): void
 {
     if ($preferenceId <= 0) return;
     if (pref_table_exists($conn, "traveller_preference_interests") && pref_table_exists($conn, "travel_interests")) {
-        $stmt = $conn->prepare("INSERT IGNORE INTO traveller_preference_interests (preference_id, interest_id) SELECT ?, interest_id FROM travel_interests WHERE interest_code = ?");
+        $stmt = $conn->prepare("INSERT IGNORE INTO traveller_preference_interests (preference_id, interest_id, weight) SELECT ?, interest_id, ? FROM travel_interests WHERE interest_code = ?");
         if ($stmt) {
             foreach (array_unique(array_filter(array_map("trim", $interests))) as $interest) {
-                $stmt->bind_param("is", $preferenceId, $interest);
+                $weight = (int)($weights[$interest] ?? 2);
+                $stmt->bind_param("iis", $preferenceId, $weight, $interest);
                 $stmt->execute();
             }
             $stmt->close();
@@ -57,12 +59,15 @@ function save_preference_junctions(mysqli $conn, int $preferenceId, array $inter
 
 $requiredColumns = [
     "budget_tier", "traveller_type", "party_size", "travel_pace", "dietary_preference",
-    "preferred_visit_time", "accessibility_needs", "preferred_districts"
+    "preferred_visit_time", "accessibility_needs", "preferred_districts",
+    "day_start_time", "day_end_time", "stops_per_day", "adults", "children", "seniors", "accessibility_tags"
 ];
 $missingColumns = [];
 foreach ($requiredColumns as $column) {
     if (!pref_column_exists($conn, "traveller_preferences", $column)) $missingColumns[] = $column;
 }
+if (!pref_column_exists($conn, "traveller_preference_interests", "weight")) $missingColumns[] = "traveller_preference_interests.weight";
+if (!pref_table_exists($conn, "traveller_preference_places")) $missingColumns[] = "table traveller_preference_places";
 if (!empty($missingColumns)) {
     $_SESSION["form_errors"] = [
         "Database schema is not ready. Apply the latest SQL migration before saving preferences. Missing columns: " . implode(", ", $missingColumns)
@@ -94,8 +99,17 @@ if (!in_array($transport, ["car", "public_transport", "walking", "motorcycle"], 
 if (!in_array($budgetTier, ["budget", "normal", "luxury"], true)) $errors[] = "Invalid budget tier.";
 if (!in_array($travellerType, ["solo", "couple", "family", "group"], true)) $errors[] = "Invalid traveller type.";
 
+[$party, $partyErrors] = pref_parse_party(
+    (string)($_POST["adults"] ?? ""), (string)($_POST["children"] ?? ""), (string)($_POST["seniors"] ?? "")
+);
+$errors = array_merge($errors, $partyErrors);
+
 $partySize = CostEstimationService::defaultPartySize($travellerType);
-if ($travellerType === "solo") {
+if ($party !== null) {
+    $partySize = $party["total"];   // the mix of adults, children and seniors decides
+} elseif (!empty($partyErrors)) {
+    // the party mix was rejected above; keep the default size
+} elseif ($travellerType === "solo") {
     $partySize = 1;
 } elseif ($travellerType === "couple") {
     $partySize = 2;
@@ -111,6 +125,38 @@ if (!in_array($dietaryPreference, ["none", "halal", "vegetarian"], true)) $error
 if (!in_array($preferredVisitTime, ["any", "morning", "afternoon", "evening"], true)) $errors[] = "Invalid preferred visit time.";
 if (strlen($accessibilityNeeds) > 120) $errors[] = "Accessibility notes must be 120 characters or fewer.";
 
+[$dayStart, $dayEnd, $dayErrors] = pref_parse_day_window((string)($_POST["day_start_time"] ?? ""), (string)($_POST["day_end_time"] ?? ""));
+[$stopsPerDay, $stopsErrors] = pref_parse_stops((string)($_POST["stops_per_day"] ?? ""));
+$errors = array_merge($errors, $dayErrors, $stopsErrors);
+
+$tickedTags = $_POST["access_tags"] ?? [];
+if (!is_array($tickedTags)) $tickedTags = [];
+foreach ($tickedTags as $tag) {
+    if (!is_string($tag) || !in_array($tag, PREF_ACCESS_TAGS, true)) {
+        $errors[] = "Invalid accessibility option.";
+        break;
+    }
+}
+
+[$mustIds, $avoidIds, $placeErrors] = pref_check_place_lists($_POST["must_places"] ?? [], $_POST["avoid_places"] ?? []);
+$errors = array_merge($errors, $placeErrors);
+if (empty($placeErrors) && ($mustIds || $avoidIds)) {
+    $allIds = array_merge($mustIds, $avoidIds);
+    $marks = implode(",", array_fill(0, count($allIds), "?"));
+    $check = $conn->prepare("SELECT place_id FROM cultural_places WHERE is_active = 1 AND place_id IN ($marks)");
+    $check->bind_param(str_repeat("i", count($allIds)), ...$allIds);
+    $check->execute();
+    $found = [];
+    foreach ($check->get_result()->fetch_all(MYSQLI_ASSOC) as $row) $found[(int)$row["place_id"]] = true;
+    $check->close();
+    foreach ($allIds as $id) {
+        if (!isset($found[$id])) {
+            $errors[] = "One of the chosen places does not exist. Please choose the places again.";
+            break;
+        }
+    }
+}
+
 $allowedInterests = ["culture", "heritage", "food", "museum", "nature", "shopping", "festival"];
 if (!is_array($interests) || count($interests) < 1) {
     $errors[] = "Please select at least one interest.";
@@ -121,6 +167,19 @@ if (!is_array($interests) || count($interests) < 1) {
             break;
         }
     }
+}
+
+$interestWeights = [];
+$postedWeights = $_POST["interest_weight"] ?? [];
+if (!is_array($postedWeights)) $postedWeights = [];
+foreach (is_array($interests) ? $interests : [] as $interest) {
+    if (!is_string($interest) || !in_array($interest, $allowedInterests, true)) continue;
+    $w = pref_parse_weight($postedWeights[$interest] ?? "");
+    if ($w === null) {
+        $errors[] = "Invalid interest level.";
+        break;
+    }
+    $interestWeights[$interest] = $w;
 }
 
 $interestsStr = implode(",", array_unique(array_filter(array_map("trim", is_array($interests) ? $interests : []))));
@@ -135,43 +194,67 @@ if (!empty($errors)) {
         "travel_pace" => $travelPace, "dietary_preference" => $dietaryPreference,
         "preferred_visit_time" => $preferredVisitTime, "accessibility_needs" => $accessibilityNeeds,
         "interests" => $interests, "preferred_states" => $statesStr, "preferred_districts" => $districtsStr,
+        "day_start_time" => (string)($_POST["day_start_time"] ?? ""), "day_end_time" => (string)($_POST["day_end_time"] ?? ""),
+        "stops_per_day" => (string)($_POST["stops_per_day"] ?? ""),
+        "adults" => (string)($_POST["adults"] ?? ""), "children" => (string)($_POST["children"] ?? ""),
+        "seniors" => (string)($_POST["seniors"] ?? ""),
+        "interest_weight" => $interestWeights, "access_tags" => array_values($tickedTags),
+        "must_places" => $mustIds, "avoid_places" => $avoidIds,
     ];
     header("Location: preference_form.php");
     exit;
 }
 
+$derivedTags = [];
 if ($accessibilityNeeds !== "") {
     $analysis = (new AccessibilityNeedsAnalysisService())->analyze($accessibilityNeeds, $travellerType);
     $accessibilityNeeds = trim((string)($analysis["stored_text"] ?? $accessibilityNeeds));
+    $derivedTags = is_array($analysis["tags"] ?? null) ? $analysis["tags"] : [];
 }
+$accessibilityTags = pref_accessibility_tag_list($tickedTags, $derivedTags);
+$adultsN = $party["adults"] ?? null;
+$childrenN = $party["children"] ?? null;
+$seniorsN = $party["seniors"] ?? null;
 
-$stmt = $conn->prepare("
-    INSERT INTO traveller_preferences
-        (traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type, party_size, travel_pace,
-         dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts)
-    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-");
-if (!$stmt) {
-    $_SESSION["form_errors"] = ["System error: unable to save the complete preference profile."];
-    header("Location: preference_form.php");
-    exit;
-}
-$stmt->bind_param(
-    "iidsssisssssss",
-    $travellerId, $tripDays, $budget, $budgetTier, $transport, $travellerType, $partySize, $travelPace,
-    $dietaryPreference, $preferredVisitTime, $accessibilityNeeds, $interestsStr, $statesStr, $districtsStr
-);
-
-if (!$stmt->execute()) {
+$conn->begin_transaction();
+try {
+    $stmt = $conn->prepare("
+        INSERT INTO traveller_preferences
+            (traveller_id, trip_days, budget, budget_tier, transport_type, traveller_type, party_size, travel_pace,
+             dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts,
+             day_start_time, day_end_time, stops_per_day, adults, children, seniors, accessibility_tags)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    ");
+    $stmt->bind_param(
+        "iidsssisssssssssiiiis",
+        $travellerId, $tripDays, $budget, $budgetTier, $transport, $travellerType, $partySize, $travelPace,
+        $dietaryPreference, $preferredVisitTime, $accessibilityNeeds, $interestsStr, $statesStr, $districtsStr,
+        $dayStart, $dayEnd, $stopsPerDay, $adultsN, $childrenN, $seniorsN, $accessibilityTags
+    );
+    $stmt->execute();
+    $newPrefId = (int)$stmt->insert_id;
     $stmt->close();
+
+    save_preference_junctions($conn, $newPrefId, is_array($interests) ? $interests : [], array_filter(array_map("trim", explode(",", $statesStr))), $interestWeights);
+
+    $placeStmt = $conn->prepare("INSERT INTO traveller_preference_places (preference_id, place_id, wish) VALUES (?,?,?)");
+    foreach (["must" => $mustIds, "avoid" => $avoidIds] as $wish => $ids) {
+        foreach ($ids as $placeId) {
+            $placeStmt->bind_param("iis", $newPrefId, $placeId, $wish);
+            $placeStmt->execute();
+        }
+    }
+    $placeStmt->close();
+
+    $conn->commit();
+} catch (Throwable $e) {
+    $conn->rollback();
+    error_log("preference_process: " . $e->getMessage());
     $_SESSION["form_errors"] = ["Failed to save the complete preference profile. Please contact the administrator if the database migration has not been applied."];
     header("Location: preference_form.php");
     exit;
 }
 
-$newPrefId = (int)$stmt->insert_id;
-$stmt->close();
-save_preference_junctions($conn, $newPrefId, is_array($interests) ? $interests : [], array_filter(array_map("trim", explode(",", $statesStr))));
 $_SESSION["last_preference_id"] = $newPrefId;
 $_SESSION["success_message"] = "Preferences saved successfully. Please confirm your start date and starting location to generate the itinerary.";
 header("Location: ../itinerary/select_preference.php?preference_id=" . $newPrefId . "&from=preference_saved");
