@@ -3,6 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -13,7 +14,7 @@ if ($travellerId <= 0) {
     header("Location: ../auth/login.php?role=traveller");
     exit;
 }
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 $success = $_SESSION["success_message"] ?? "";
 $errors  = $_SESSION["form_errors"] ?? [];
 unset($_SESSION["success_message"], $_SESSION["form_errors"]);
@@ -34,11 +35,11 @@ $res = $stmt->get_result();
 $stmt->close();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
     <meta charset="UTF-8">
-    <title>My Itineraries</title>
+    <title><?php echo te('trips.title'); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         .btn-danger {
@@ -165,24 +166,25 @@ $stmt->close();
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Cost Estimation & Trip Summary</span>
+                    <span><?php echo te('trips.heading'); ?></span>
                 </div>
             </div>
 
-            <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-                <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-                <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-                <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+            <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+                <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+                <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+                <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+                <a href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+                <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+                <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
             </nav>
+            <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
 
             <div class="sidebar-footer">
-                <div class="small">Logged in as:</div>
+                <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
                 <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-                <div class="chip">Role: Traveller</div>
+                <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
             </div>
         </aside>
 
@@ -190,12 +192,12 @@ $stmt->close();
 
             <div class="topbar">
                 <div class="page-title">
-                    <h1>Cost Estimation & Trip Summary</h1>
-                    <p class="meta">View saved itineraries and open details.</p>
+                    <h1><?php echo te('trips.heading'); ?></h1>
+                    <p class="meta"><?php echo te('trips.meta'); ?></p>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-primary" href="select_preference.php">Generate New</a>
-                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
+                    <a class="btn btn-primary" href="select_preference.php"><?php echo te('trips.generate_new'); ?></a>
+                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php"><?php echo te('common.back'); ?></a>
                 </div>
             </div>
             <section class="grid">
@@ -217,33 +219,33 @@ $stmt->close();
 
 
                 <div class="card col-12">
-                    <h3>My Itineraries</h3>
+                    <h3><?php echo te('trips.title'); ?></h3>
                     <div class="table-wrap mobile-card-table-wrap">
                         <table class="itinerary-table mobile-card-table">
                             <thead>
                                 <tr>
-                                    <th>Title</th>
-                                    <th>Start Date</th>
-                                    <th>Days</th>
-                                    <th>Places</th>
-                                    <th>Hotel</th>
-                                    <th>Total (RM)</th>
-                                    <th>Action</th>
+                                    <th><?php echo te('trips.col_title'); ?></th>
+                                    <th><?php echo te('trips.col_start'); ?></th>
+                                    <th><?php echo te('trips.col_days'); ?></th>
+                                    <th><?php echo te('trips.col_places'); ?></th>
+                                    <th><?php echo te('trips.col_hotel'); ?></th>
+                                    <th><?php echo te('trips.col_total'); ?></th>
+                                    <th><?php echo te('trips.col_action'); ?></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php while ($r = $res->fetch_assoc()): ?>
                                     <?php $hotelText = trim((string)($r["selected_hotels"] ?? "")); ?>
                                     <tr>
-                                        <td data-label="Title">
+                                        <td data-label="<?php echo te('trips.col_title'); ?>">
                                             <strong class="itinerary-title" title="<?php echo htmlspecialchars($r["title"]); ?>">
                                                 <?php echo htmlspecialchars($r["title"]); ?>
                                             </strong>
                                         </td>
-                                        <td class="date-cell" data-label="Start Date"><?php echo !empty($r["start_date"]) ? htmlspecialchars(date("d M Y", strtotime($r["start_date"]))) : "-"; ?></td>
-                                        <td class="number-cell" data-label="Days"><?php echo (int)$r["total_days"]; ?></td>
-                                        <td class="number-cell" data-label="Places"><?php echo (int)$r["place_count"]; ?></td>
-                                        <td class="hotel-cell" data-label="Hotel">
+                                        <td class="date-cell" data-label="<?php echo te('trips.col_start'); ?>"><?php echo !empty($r["start_date"]) ? htmlspecialchars(date("d M Y", strtotime($r["start_date"]))) : "-"; ?></td>
+                                        <td class="number-cell" data-label="<?php echo te('trips.col_days'); ?>"><?php echo (int)$r["total_days"]; ?></td>
+                                        <td class="number-cell" data-label="<?php echo te('trips.col_places'); ?>"><?php echo (int)$r["place_count"]; ?></td>
+                                        <td class="hotel-cell" data-label="<?php echo te('trips.col_hotel'); ?>">
                                             <?php if ($hotelText !== ""): ?>
                                                 <span class="hotel-badge" title="<?php echo htmlspecialchars($hotelText); ?>">
                                                     <span class="hotel-name"><?php echo htmlspecialchars($hotelText); ?></span>
@@ -252,17 +254,17 @@ $stmt->close();
                                                 <span class="hotel-empty">-</span>
                                             <?php endif; ?>
                                         </td>
-                                        <td class="money-cell" data-label="Total (RM)"><?php echo number_format((float)$r["total_estimated_cost"], 2); ?></td>
-                                        <td data-label="Action">
+                                        <td class="money-cell" data-label="<?php echo te('trips.col_total'); ?>"><?php echo number_format((float)$r["total_estimated_cost"], 2); ?></td>
+                                        <td data-label="<?php echo te('trips.col_action'); ?>">
                                             <div class="table-actions">
-                                                <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">View</a>
-                                                <a class="btn btn-ghost" href="trip_summary.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>">Summary</a>
+                                                <a class="btn btn-ghost" href="itinerary_view.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>"><?php echo te('trips.view'); ?></a>
+                                                <a class="btn btn-ghost" href="trip_summary.php?itinerary_id=<?php echo (int)$r["itinerary_id"]; ?>"><?php echo te('trips.summary'); ?></a>
                                                 <form method="post"
                                                     action="itinerary_delete.php"
                                                     class="delete-form"
-                                                    onsubmit="return confirm('Delete this itinerary? This action cannot be undone.');">
+                                                    onsubmit="return confirm(<?php echo htmlspecialchars(json_encode(t('trips.confirm_delete'), JSON_UNESCAPED_UNICODE), ENT_QUOTES, 'UTF-8'); ?>);">
                                                     <input type="hidden" name="itinerary_id" value="<?php echo (int)$r["itinerary_id"]; ?>">
-                                                    <button type="submit" class="btn btn-ghost btn-danger">Delete</button>
+                                                    <button type="submit" class="btn btn-ghost btn-danger"><?php echo te('trips.delete'); ?></button>
                                                 </form>
                                             </div>
                                         </td>
@@ -270,7 +272,7 @@ $stmt->close();
                                 <?php endwhile; ?>
                                 <?php if ($res->num_rows === 0): ?>
                                     <tr>
-                                        <td class="mobile-empty" colspan="7">No itineraries yet.</td>
+                                        <td class="mobile-empty" colspan="7"><?php echo te('trips.empty'); ?></td>
                                     </tr>
                                 <?php endif; ?>
                             </tbody>

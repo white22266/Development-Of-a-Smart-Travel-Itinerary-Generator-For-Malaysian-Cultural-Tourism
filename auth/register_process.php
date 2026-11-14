@@ -3,6 +3,7 @@
 session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
+require_once "../config/i18n.php";
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -50,26 +51,26 @@ $confirm  = $_POST["confirm_password"] ?? "";
 
 // Validation
 if ($fullName === "" || $email === "" || $password === "" || $confirm === "") {
-    $errors[] = "All required fields must be filled.";
+    $errors[] = t('auth.err_reg_required');
 }
 if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Invalid email format.";
+    $errors[] = t('auth.err_email_format');
 }
 if ($phone !== "") {
     $normalizedPhone = preg_replace('/\s+/', '', $phone) ?? $phone;
     if (preg_match('/[A-Za-z]/', $normalizedPhone)) {
-        $errors[] = "Phone number cannot contain alphabets.";
+        $errors[] = t('auth.err_phone_alpha');
     } elseif (!preg_match('/^(?:\+?60|0)1\d[-]?\d{7,8}$/', $normalizedPhone)) {
-        $errors[] = "Invalid phone number format. Example: 012-3456789 or +60123456789.";
+        $errors[] = t('auth.err_phone_format');
     } else {
         $phone = $normalizedPhone;
     }
 }
 if ($password !== "" && strlen($password) < 6) {
-    $errors[] = "Password must be at least 6 characters.";
+    $errors[] = t('auth.err_password_len');
 }
 if ($password !== $confirm) {
-    $errors[] = "Password and confirm password do not match.";
+    $errors[] = t('auth.err_reg_confirm');
 }
 
 if (!empty($errors)) {
@@ -94,7 +95,7 @@ try {
     if ($check->num_rows > 0) {
         $check->close();
 
-        $_SESSION["form_errors"] = ["Traveller email already exists."];
+        $_SESSION["form_errors"] = [t('auth.err_email_exists')];
         $_SESSION["old_input"] = [
             "full_name" => $fullName,
             "email" => $email,
@@ -133,19 +134,18 @@ try {
     $activationLink = $scheme . '://' . $host . $base . '/login.php?action=activate&email='
         . urlencode($email) . '&token=' . urlencode($activationToken);
 
-    $subject = "Activate your account";
-    $message = "Please activate your account by clicking the link below (valid for 24 hours):\n\n"
-        . $activationLink . "\n\nIf you did not register, ignore this email.";
+    $subject = t('auth.mail_activate_subject');
+    $message = t('auth.mail_activate_body', ['link' => $activationLink]);
 
     sendSmtpMail($email, $subject, $message);
 
     unset($_SESSION["old_input"]);
-    $_SESSION["success_message"] = "Registration successful. Please check your email to activate your account before login.";
+    $_SESSION["success_message"] = t('auth.registered');
     header("Location: login.php?role=traveller");
     exit;
 } catch (Throwable $e) {
     error_log("Register error: " . $e->getMessage());
-    $_SESSION["form_errors"] = ["Registration failed due to a system error. Please try again."];
+    $_SESSION["form_errors"] = [t('auth.err_reg_system')];
     $_SESSION["old_input"] = [
         "full_name" => $fullName,
         "email" => $email,

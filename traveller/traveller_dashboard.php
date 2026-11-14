@@ -2,6 +2,7 @@
 // traveller/traveller_dashboard.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 
 // Access control aligned with login_process.php
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
@@ -15,7 +16,7 @@ if ($travellerId <= 0) {
   exit;
 }
 
-$userName = $_SESSION["traveller_name"] ?? "Traveller";
+$userName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 
 /* =========================
    KPI + Recent data (DB)
@@ -78,19 +79,19 @@ $stmt->close();
    Static tips (UI content)
    ========================= */
 $quickTips = [
-  ["title" => "Generate a new itinerary", "desc" => "Select a saved preference and generate a structured trip plan.", "badge" => "Itinerary"],
-  ["title" => "Route & time estimation", "desc" => "Review distance and travel time segments to support scheduling.", "badge" => "Maps"],
-  ["title" => "Weather-aware planning", "desc" => "Outdoor activities can be adjusted when weather conditions are unfavourable.", "badge" => "Weather"],
+  ["title" => t('dash.tip1_title'), "desc" => t('dash.tip1_desc'), "badge" => t('dash.tip1_badge')],
+  ["title" => t('dash.tip2_title'), "desc" => t('dash.tip2_desc'), "badge" => t('dash.tip2_badge')],
+  ["title" => t('dash.tip3_title'), "desc" => t('dash.tip3_desc'), "badge" => t('dash.tip3_badge')],
 ];
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Traveller Dashboard | Smart Travel Itinerary Generator</title>
+  <title><?php echo te('dash.title'); ?> | Smart Travel Itinerary Generator</title>
   <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
 </head>
 
@@ -101,70 +102,71 @@ $quickTips = [
         <div class="brand-badge">ST</div>
         <div class="brand-title">
           <strong>Smart Travel Itinerary Generator</strong>
-          <span>Traveller Dashboard</span>
+          <span><?php echo te('dash.title'); ?></span>
         </div>
       </div>
 
-      <nav class="nav" aria-label="Sidebar Navigation">
-        <a class="active" href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-        <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-        <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-        <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-        <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-        <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-        <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+      <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+        <a class="active" href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+        <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+        <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+        <a href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+        <a href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+        <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+        <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
       </nav>
+      <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
 
       <div class="sidebar-footer">
-        <div class="small">Logged in as:</div>
+        <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
         <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($userName); ?></div>
-        <div class="chip">Role: Traveller</div>
+        <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
       </div>
     </aside>
 
     <main class="content">
       <div class="topbar">
         <div class="page-title">
-          <h1>Traveller Dashboard</h1>
-          <p>Access modules, generate cultural-focused itineraries, and review recent plans.</p>
+          <h1><?php echo te('dash.title'); ?></h1>
+          <p><?php echo te('dash.subtitle'); ?></p>
         </div>
         <div class="actions">
-          <a class="btn btn-ghost" href="../itinerary/my_itineraries.php">My Itineraries</a>
-          <a class="btn btn-primary" href="../itinerary/select_preference.php">Generate Itinerary</a>
+          <a class="btn btn-ghost" href="../itinerary/my_itineraries.php"><?php echo te('dash.btn_my'); ?></a>
+          <a class="btn btn-primary" href="../itinerary/select_preference.php"><?php echo te('dash.btn_generate'); ?></a>
         </div>
       </div>
 
       <section class="grid">
         <div class="card col-4">
-          <h3>Trips Generated</h3>
-          <p class="meta">Total itineraries generated in the system.</p>
+          <h3><?php echo te('dash.trips_title'); ?></h3>
+          <p class="meta"><?php echo te('dash.trips_meta'); ?></p>
           <div class="kpi">
             <div class="value"><?php echo (int)$kpiTripsGenerated; ?></div>
-            <div class="tag">Total</div>
+            <div class="tag"><?php echo te('dash.trips_tag'); ?></div>
           </div>
         </div>
 
         <div class="card col-4">
-          <h3>Saved Preferences</h3>
-          <p class="meta">Preference profiles stored for future itinerary generation.</p>
+          <h3><?php echo te('dash.prefs_title'); ?></h3>
+          <p class="meta"><?php echo te('dash.prefs_meta'); ?></p>
           <div class="kpi">
             <div class="value"><?php echo (int)$kpiSavedPreferences; ?></div>
-            <div class="tag">Profiles</div>
+            <div class="tag"><?php echo te('dash.prefs_tag'); ?></div>
           </div>
         </div>
 
         <div class="card col-4">
-          <h3>Preferred States</h3>
-          <p class="meta">Unique states selected in your saved preferences.</p>
+          <h3><?php echo te('dash.states_title'); ?></h3>
+          <p class="meta"><?php echo te('dash.states_meta'); ?></p>
           <div class="kpi">
             <div class="value"><?php echo (int)$kpiFavouriteStates; ?></div>
-            <div class="tag">States</div>
+            <div class="tag"><?php echo te('dash.states_tag'); ?></div>
           </div>
         </div>
 
         <div class="card col-6">
-          <h3>Quick Tips</h3>
-          <p class="meta">Guidance for using the itinerary generator effectively.</p>
+          <h3><?php echo te('dash.tips_title'); ?></h3>
+          <p class="meta"><?php echo te('dash.tips_meta'); ?></p>
           <div class="list">
             <?php foreach ($quickTips as $t): ?>
               <div class="item">
@@ -179,42 +181,42 @@ $quickTips = [
         </div>
 
         <div class="card col-6">
-          <h3>Recent Itineraries</h3>
-          <p class="meta">Your latest generated plans.</p>
+          <h3><?php echo te('dash.recent_title'); ?></h3>
+          <p class="meta"><?php echo te('dash.recent_meta'); ?></p>
 
           <div class="list">
             <?php if (count($recentItineraries) === 0): ?>
               <div class="item">
                 <div>
-                  <strong>No itineraries yet</strong>
-                  <span>Create one via Smart Itinerary Generator.</span>
+                  <strong><?php echo te('dash.none_title'); ?></strong>
+                  <span><?php echo te('dash.none_desc'); ?></span>
                 </div>
-                <div class="badge">New</div>
+                <div class="badge"><?php echo te('dash.none_badge'); ?></div>
               </div>
             <?php else: ?>
               <?php foreach ($recentItineraries as $it): ?>
                 <div class="item">
                   <div>
                     <strong><?php echo htmlspecialchars($it["title"]); ?></strong>
-                    <span>Date: <?php echo htmlspecialchars($it["created_at"]); ?></span>
+                    <span><?php echo te('dash.date', ['date' => $it["created_at"]]); ?></span>
                   </div>
-                  <div class="badge"><?php echo (int)($it["total_days"] ?? 0); ?>D</div>
+                  <div class="badge"><?php echo te('dash.days_badge', ['n' => (int)($it["total_days"] ?? 0)]); ?></div>
                 </div>
               <?php endforeach; ?>
             <?php endif; ?>
           </div>
 
           <hr class="sep">
-          <a class="btn btn-primary" href="../itinerary/my_itineraries.php" style="width:100%; justify-content:center;">Open My Itineraries</a>
+          <a class="btn btn-primary" href="../itinerary/my_itineraries.php" style="width:100%; justify-content:center;"><?php echo te('dash.open_my'); ?></a>
         </div>
 
         <div class="card col-12">
-          <h3>Start Planning</h3>
-          <p class="meta">Use the modules below to generate, optimise, and review your travel itinerary.</p>
+          <h3><?php echo te('dash.start_title'); ?></h3>
+          <p class="meta"><?php echo te('dash.start_meta'); ?></p>
 
           <div style="margin-top:12px;">
-            <a class="btn btn-primary" href="../preference/preference_form.php">Go to Preference Analyzer</a>
-            <a class="btn btn-ghost" href="../cultural/cultural_guide.php">Browse Cultural Guide</a>
+            <a class="btn btn-primary" href="../preference/preference_form.php"><?php echo te('dash.go_pref'); ?></a>
+            <a class="btn btn-ghost" href="../cultural/cultural_guide.php"><?php echo te('dash.browse_guide'); ?></a>
           </div>
         </div>
       </section>

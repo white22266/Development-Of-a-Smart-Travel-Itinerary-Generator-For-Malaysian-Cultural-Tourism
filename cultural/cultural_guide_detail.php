@@ -3,6 +3,7 @@
 // One place: its details and background, traveller reviews, and food and lodging nearby.
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../services/HotelRecommendationService.php";
 require_once "../services/FoodRecommendationService.php";
 
@@ -11,7 +12,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
     exit;
 }
 
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $success = $_SESSION["success_message"] ?? "";
 $errors = $_SESSION["form_errors"] ?? [];
@@ -160,12 +161,12 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Place Details | Cultural Guide</title>
+    <title><?php echo te('cgd.title'); ?> | <?php echo te('nav.guide'); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         .detail-wrap {
@@ -351,24 +352,25 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Cultural Guide Presentation</span>
+                    <span><?php echo te('nav.guide'); ?></span>
                 </div>
             </div>
 
-            <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-                <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-                <a class="active" href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-                <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+            <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+                <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+                <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+                <a href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+                <a class="active" href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+                <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+                <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
             </nav>
+            <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
 
             <div class="sidebar-footer">
-                <div class="small">Logged in as:</div>
+                <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
                 <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-                <div class="chip">Role: Traveller</div>
+                <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
             </div>
         </aside>
 
@@ -376,11 +378,11 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
             <div class="topbar">
                 <div class="page-title">
                     <h1><?php echo htmlspecialchars($p["name"]); ?></h1>
-                    <p>Background information and cultural context.</p>
+                    <p><?php echo te('cgd.subtitle'); ?></p>
                 </div>
                 <div class="actions" style="display:flex;gap:10px;flex-wrap:wrap;">
-                    <a class="btn btn-ghost" href="cultural_guide.php">Back to List</a>
-                    <a class="btn btn-primary" href="suggest_place.php">Suggest New Place</a>
+                    <a class="btn btn-ghost" href="cultural_guide.php"><?php echo te('cgd.back_list'); ?></a>
+                    <a class="btn btn-primary" href="suggest_place.php"><?php echo te('cg.suggest_btn'); ?></a>
                 </div>
             </div>
 
@@ -404,37 +406,37 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                      loading="lazy" decoding="async"
                                      onerror="this.onerror=null;this.src='<?php echo htmlspecialchars($imageFallback); ?>';">
                             <?php else: ?>
-                                <div class="noimg">No place photo available</div>
+                                <div class="noimg"><?php echo te('cgd.no_photo'); ?></div>
                             <?php endif; ?>
                         </div>
 
                         <div class="info">
-                            <div class="row"><span class="k">State:</span> <?php echo htmlspecialchars($p["state"]); ?></div>
+                            <div class="row"><span class="k"><?php echo te('cgd.k_state'); ?></span> <?php echo htmlspecialchars($p["state"]); ?></div>
                             <?php if (!empty($p["district"])): ?>
-                            <div class="row"><span class="k">District:</span>
+                            <div class="row"><span class="k"><?php echo te('cgd.k_district'); ?></span>
                                 <span style="background:rgba(99,102,241,.10); color:#4338ca; padding:2px 10px; border-radius:999px; font-size:12px; font-weight:800;">
                                     <?php echo htmlspecialchars($p["district"]); ?>
                                 </span>
                             </div>
                             <?php endif; ?>
-                            <div class="row"><span class="k">Category:</span> <?php echo htmlspecialchars(ucfirst($p["category"])); ?></div>
-                            <div class="row"><span class="k">Entrance Fee:</span> RM <?php echo number_format((float)($p["entrance_fee"] ?? $p["estimated_cost"] ?? 0), 2); ?></div>
+                            <div class="row"><span class="k"><?php echo te('cgd.k_category'); ?></span> <?php echo htmlspecialchars(t_choice('interest', $p["category"])); ?></div>
+                            <div class="row"><span class="k"><?php echo te('cgd.k_fee'); ?></span> RM <?php echo number_format((float)($p["entrance_fee"] ?? $p["estimated_cost"] ?? 0), 2); ?></div>
                             <?php if (array_key_exists("visit_duration_min", $p)): ?>
-                                <div class="row"><span class="k">Suggested Duration:</span> <?php echo (int)$p["visit_duration_min"]; ?> minutes</div>
+                                <div class="row"><span class="k"><?php echo te('cgd.k_duration'); ?></span> <?php echo te('cgd.minutes', ['n' => (int)$p["visit_duration_min"]]); ?></div>
                             <?php endif; ?>
                             <?php if (array_key_exists("halal_status", $p) && $p["halal_status"] !== null): ?>
-                                <div class="row"><span class="k">Halal:</span> <?php echo ((int)$p["halal_status"] === 1) ? "Available / certified" : "Not certified"; ?></div>
+                                <div class="row"><span class="k"><?php echo te('cgd.k_halal'); ?></span> <?php echo ((int)$p["halal_status"] === 1) ? te('cgd.halal_yes') : te('cgd.halal_no'); ?></div>
                             <?php endif; ?>
                             <?php if (!empty($p["avg_rating"])): ?>
-                                <div class="row"><span class="k">Rating:</span> <?php echo number_format((float)$p["avg_rating"], 1); ?> / 5.0</div>
+                                <div class="row"><span class="k"><?php echo te('cgd.k_rating'); ?></span> <?php echo number_format((float)$p["avg_rating"], 1); ?> / 5.0</div>
                             <?php endif; ?>
                             <?php if (!empty($p["best_time_to_visit"])): ?>
-                                <div class="row"><span class="k">Best Time:</span> <?php echo htmlspecialchars($p["best_time_to_visit"]); ?></div>
+                                <div class="row"><span class="k"><?php echo te('cgd.k_best_time'); ?></span> <?php echo htmlspecialchars($p["best_time_to_visit"]); ?></div>
                             <?php endif; ?>
                             <?php if (array_key_exists("dress_code_required", $p) && $p["dress_code_required"] !== null): ?>
-                                <div class="row"><span class="k">Dress Code:</span> <?php echo ((int)$p["dress_code_required"] === 1) ? "Required" : "Not required"; ?></div>
+                                <div class="row"><span class="k"><?php echo te('cgd.k_dress'); ?></span> <?php echo ((int)$p["dress_code_required"] === 1) ? te('cgd.dress_required') : te('cgd.dress_not_required'); ?></div>
                             <?php endif; ?>
-                            <div class="row"><span class="k">Opening Hours:</span>
+                            <div class="row"><span class="k"><?php echo te('cgd.k_hours'); ?></span>
                                 <?php $hoursText = trim((string)($p["opening_hours"] ?? "")); ?>
                                 <?php if (str_contains($hoursText, "\n")): ?>
                                     <div style="margin-top:4px; font-size:13px; line-height:1.6;"><?php echo nl2br(htmlspecialchars($hoursText)); ?></div>
@@ -442,8 +444,8 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                     <?php echo htmlspecialchars($hoursText !== "" ? $hoursText : "-"); ?>
                                 <?php endif; ?>
                             </div>
-                            <div class="row"><span class="k">Address:</span> <?php echo htmlspecialchars($p["address"] ?? "-"); ?></div>
-                            <div class="row"><span class="k">Coordinates:</span>
+                            <div class="row"><span class="k"><?php echo te('cgd.k_address'); ?></span> <?php echo htmlspecialchars($p["address"] ?? "-"); ?></div>
+                            <div class="row"><span class="k"><?php echo te('cgd.k_coords'); ?></span>
                                 <?php
                                 $plat = $p["latitude"] ?? "";
                                 $plng = $p["longitude"] ?? "";
@@ -455,7 +457,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                 <div style="margin-top:12px;">
                                     <a class="btn btn-ghost" target="_blank" rel="noopener noreferrer"
                                        href="<?php echo htmlspecialchars($mapLink); ?>">
-                                        Open in OpenStreetMap
+                                        <?php echo te('cgd.open_osm'); ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
@@ -464,32 +466,32 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
 
                     <hr class="sep">
 
-                    <h3>Cultural Background</h3>
+                    <h3><?php echo te('cgd.background'); ?></h3>
                     <div style="color:var(--navy); line-height:1.7;">
-                        <?php echo nl2br(htmlspecialchars($p["description"] ?? "No description provided.")); ?>
+                        <?php echo nl2br(htmlspecialchars($p["description"] ?? t('cgd.no_description'))); ?>
                     </div>
                     <?php if ($source && ($source["wikipedia_url"] || $source["image_source_url"] || $source["osm_ref"])): ?>
                         <p class="meta" style="margin-top:10px; font-size:12px;">
-                            Sources:
+                            <?php echo te('cgd.src_label'); ?>
                             <?php if ($source["description_source"] === "wikipedia" && $source["wikipedia_url"]): ?>
-                                description adapted from
+                                <?php echo te('cgd.src_desc'); ?>
                                 <a href="<?php echo htmlspecialchars($source["wikipedia_url"]); ?>" target="_blank" rel="noopener noreferrer">Wikipedia</a>
                                 (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>);
                             <?php endif; ?>
                             <?php if ($source["image_source_url"]): ?>
-                                photo<?php echo $source["image_credit"] ? " by " . htmlspecialchars($source["image_credit"]) : ""; ?><?php echo $source["image_license"] ? " (" . htmlspecialchars($source["image_license"]) . ")" : ""; ?>,
+                                <?php echo te('cgd.src_photo'); ?><?php echo $source["image_credit"] ? " " . te('cgd.src_by', ['name' => $source["image_credit"]]) : ""; ?><?php echo $source["image_license"] ? " (" . htmlspecialchars($source["image_license"]) . ")" : ""; ?>,
                                 <a href="<?php echo htmlspecialchars($source["image_source_url"]); ?>" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>;
                             <?php endif; ?>
                             <?php if ($source["osm_ref"]): ?>
-                                place details &copy;
+                                <?php echo te('cgd.src_details'); ?> &copy;
                                 <a href="https://www.openstreetmap.org/<?php echo htmlspecialchars($source["osm_ref"]); ?>" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>
-                                contributors (<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">ODbL</a>).
+                                <?php echo te('cgd.src_contributors'); ?> (<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">ODbL</a>).
                             <?php endif; ?>
                         </p>
                     <?php endif; ?>
 
                     <hr class="sep">
-                    <div class="section-title">Traveller Ratings &amp; Reviews</div>
+                    <div class="section-title"><?php echo te('cgd.reviews_title'); ?></div>
                     <div class="rating-summary">
                         <div>
                             <?php if ($reviewStats["total"] > 0): ?>
@@ -504,34 +506,34 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                 </div>
                             <?php else: ?>
                                 <div class="rating-score">-<span style="font-size:14px;color:var(--muted);"> / 5</span></div>
-                                <div class="meta">No traveller reviews yet.</div>
+                                <div class="meta"><?php echo te('cgd.no_reviews'); ?></div>
                             <?php endif; ?>
                         </div>
                         <div class="meta">
-                            <?php echo (int)$reviewStats["total"]; ?> traveller review<?php echo ((int)$reviewStats["total"] === 1) ? "" : "s"; ?>.
-                            Your review helps other travellers judge cultural value, cost accuracy, and visit experience.
+                            <?php echo ((int)$reviewStats["total"] === 1) ? te('cgd.reviews_one') : te('cgd.reviews_many', ['n' => (int)$reviewStats["total"]]); ?>
+                            <?php echo te('cgd.reviews_help'); ?>
                         </div>
                     </div>
 
                     <form method="post" action="submit_review.php" class="review-form">
                         <input type="hidden" name="place_id" value="<?php echo (int)$placeId; ?>">
                         <div>
-                            <label style="font-size:13px; font-weight:800; display:block; margin-bottom:6px;">Your Rating *</label>
-                            <div class="star-rating" aria-label="Choose a rating from 1 to 5 stars">
+                            <label style="font-size:13px; font-weight:800; display:block; margin-bottom:6px;"><?php echo te('cgd.your_rating'); ?> *</label>
+                            <div class="star-rating" aria-label="<?php echo te('cgd.rating_aria'); ?>">
                                 <?php for ($i = 5; $i >= 1; $i--): ?>
                                     <input type="radio" id="rating-<?php echo $i; ?>" name="rating" value="<?php echo $i; ?>" required <?php echo ((int)($userReview["rating"] ?? 0) === $i) ? "checked" : ""; ?>>
-                                    <label for="rating-<?php echo $i; ?>" title="<?php echo $i; ?> star<?php echo $i > 1 ? "s" : ""; ?>">&#9733;</label>
+                                    <label for="rating-<?php echo $i; ?>" title="<?php echo $i > 1 ? te('cgd.star_many', ['n' => $i]) : te('cgd.star_one'); ?>">&#9733;</label>
                                 <?php endfor; ?>
                             </div>
-                            <div class="meta" style="margin-top:4px;">Choose 1 to 5 stars. You can update your review later.</div>
+                            <div class="meta" style="margin-top:4px;"><?php echo te('cgd.rating_help'); ?></div>
                         </div>
                         <div>
-                            <label style="font-size:13px; font-weight:800;">Review</label><br>
-                            <textarea name="review_text" rows="4" maxlength="2000" placeholder="Share your visit experience, cultural value, accessibility, or cost accuracy."
+                            <label style="font-size:13px; font-weight:800;"><?php echo te('cgd.review_label'); ?></label><br>
+                            <textarea name="review_text" rows="4" maxlength="2000" placeholder="<?php echo te('cgd.review_placeholder'); ?>"
                                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"><?php echo htmlspecialchars($userReview["review_text"] ?? ""); ?></textarea>
                         </div>
                         <div>
-                            <button class="btn btn-primary" type="submit"><?php echo $userReview ? "Update Review" : "Submit Review"; ?></button>
+                            <button class="btn btn-primary" type="submit"><?php echo $userReview ? te('cgd.update_review') : te('cgd.submit_review'); ?></button>
                         </div>
                     </form>
 
@@ -539,9 +541,9 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                         <div class="nearby-grid">
                             <?php foreach ($reviews as $review): ?>
                                 <div class="nearby-card">
-                                    <div class="nc-name"><?php echo htmlspecialchars($review["full_name"] ?? "Traveller"); ?></div>
+                                    <div class="nc-name"><?php echo htmlspecialchars($review["full_name"] ?? t('common.traveller_default')); ?></div>
                                     <div class="stars"><?php echo str_repeat("&#9733;", (int)$review["rating"]) . str_repeat("&#9734;", 5 - (int)$review["rating"]); ?></div>
-                                    <div class="nc-meta" style="margin-top:6px;"><?php echo nl2br(htmlspecialchars($review["review_text"] ?: "No written comment.")); ?></div>
+                                    <div class="nc-meta" style="margin-top:6px;"><?php echo nl2br(htmlspecialchars($review["review_text"] ?: t('cgd.no_comment'))); ?></div>
                                     <div class="nc-meta" style="margin-top:6px;"><?php echo htmlspecialchars($review["updated_at"] ?? $review["created_at"] ?? ""); ?></div>
                                 </div>
                             <?php endforeach; ?>
@@ -551,8 +553,8 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <!-- ===== NEARBY FOOD RECOMMENDATIONS ===== -->
                     <?php if (!empty($nearbyFood)): ?>
                         <hr class="sep">
-                        <div class="section-title">&#127860; Nearby Food &amp; Restaurants</div>
-                        <p class="meta">Recommended food places near <?php echo htmlspecialchars($p["name"]); ?>.</p>
+                        <div class="section-title">&#127860; <?php echo te('cgd.nearby_food'); ?></div>
+                        <p class="meta"><?php echo te('cgd.nearby_food_help', ['name' => $p["name"]]); ?></p>
                         <div class="nearby-grid">
                             <?php foreach ($nearbyFood as $food): ?>
                                 <div class="nearby-card">
@@ -563,7 +565,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                             &mdash; <?php echo htmlspecialchars($food["district"]); ?>
                                         <?php endif; ?>
                                         <?php if (!empty($food["distance_km"])): ?>
-                                            <br><?php echo number_format((float)$food["distance_km"], 1); ?> km away
+                                            <br><?php echo te('cgd.km_away', ['km' => number_format((float)$food["distance_km"], 1)]); ?>
                                         <?php endif; ?>
                                         <?php if (!empty($food["opening_hour"])): ?>
                                             <br>&#128336; <?php echo htmlspecialchars($food["opening_hour"]); ?>
@@ -572,7 +574,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                     <?php if (!empty($food["cuisine_type"])): ?>
                                         <span class="cuisine-chip"><?php echo htmlspecialchars($food["cuisine_type"]); ?></span>
                                     <?php endif; ?>
-                                    <div class="nc-price">~RM <?php echo number_format((float)$food["avg_price"], 2); ?>/meal</div>
+                                    <div class="nc-price"><?php echo te('cgd.per_meal', ['price' => number_format((float)$food["avg_price"], 2)]); ?></div>
                                     <?php if (!empty($food["rating"])): ?>
                                         <div class="stars">
                                             <?php
@@ -593,7 +595,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                            target="_blank" rel="noopener noreferrer"
                                            class="btn btn-ghost"
                                            style="font-size:11px;padding:3px 8px;margin-top:6px;display:inline-block;">
-                                            Map
+                                            <?php echo te('cgd.map'); ?>
                                         </a>
                                     <?php endif; ?>
                                 </div>
@@ -604,20 +606,20 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                     <!-- ===== NEARBY HOTEL RECOMMENDATIONS ===== -->
                     <?php if (!empty($nearbyHotels)): ?>
                         <hr class="sep">
-                        <div class="section-title">&#127968; Nearby Hotels &amp; Accommodation</div>
-                        <p class="meta">Places to stay near <?php echo htmlspecialchars($p["name"]); ?>, from OpenStreetMap listings. Prices are planning estimates, not offers.</p>
+                        <div class="section-title">&#127968; <?php echo te('cgd.nearby_hotels'); ?></div>
+                        <p class="meta"><?php echo te('cgd.nearby_hotels_help', ['name' => $p["name"]]); ?></p>
                         <div class="nearby-grid">
                             <?php foreach ($nearbyHotels as $hotel): ?>
                                 <div class="nearby-card">
                                     <div class="nc-name"><?php echo htmlspecialchars($hotel["name"]); ?></div>
                                     <div class="nc-meta">
-                                        <?php echo htmlspecialchars($hotel["kind_label"] . ($hotel["stars"] !== null ? ", " . (float)$hotel["stars"] . "-star" : "")); ?>
+                                        <?php echo htmlspecialchars($hotel["kind_label"] . ($hotel["stars"] !== null ? ", " . t('cgd.star_hotel', ['n' => (float)$hotel["stars"]]) : "")); ?>
                                         <?php if ($hotel["address"] !== ""): ?><br><?php echo htmlspecialchars($hotel["address"]); ?><?php endif; ?>
                                         <?php if ($hotel["distance_km"] !== null): ?>
-                                            <br><?php echo number_format((float)$hotel["distance_km"], 1); ?> km away
+                                            <br><?php echo te('cgd.km_away', ['km' => number_format((float)$hotel["distance_km"], 1)]); ?>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="nc-price">About RM <?php echo number_format((float)$hotel["price_per_night"], 0); ?>/night</div>
+                                    <div class="nc-price"><?php echo te('cgd.per_night', ['price' => number_format((float)$hotel["price_per_night"], 0)]); ?></div>
                                     <?php
                                     $mapUrl = $hotel["map_url"] ?? "";
                                     if ($mapUrl !== ""):
@@ -626,7 +628,7 @@ if (!empty($p["latitude"]) && !empty($p["longitude"])) {
                                            target="_blank" rel="noopener noreferrer"
                                            class="btn btn-ghost"
                                            style="font-size:11px;padding:3px 8px;margin-top:6px;display:inline-block;">
-                                            Map
+                                            <?php echo te('cgd.map'); ?>
                                         </a>
                                     <?php endif; ?>
                                 </div>

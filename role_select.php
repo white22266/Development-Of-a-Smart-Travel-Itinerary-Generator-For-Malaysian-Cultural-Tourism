@@ -2,6 +2,7 @@
 // role_select.php
 session_start();
 require_once __DIR__ . "/config/db_connect.php";
+require_once __DIR__ . "/config/i18n.php";
 require_once __DIR__ . "/auth/remember_me.php";
 
 if (restore_remembered_login($conn)) {
@@ -14,50 +15,51 @@ if (restore_remembered_login($conn)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 <head>
     <meta charset="UTF-8">
-    <title>Choose Role - Smart Travel Itinerary Generator</title>
+    <title><?php echo te('role.page_title'); ?> - Smart Travel Itinerary Generator</title>
     <link rel="stylesheet" href="assets/style.css?v=20260513">
 </head>
 <body>
 <div class="main-container">
     <div class="left-panel">
         <div class="brand-mark">ST</div>
-        <div class="entry-kicker">Account Access</div>
-        <h1>Choose Your Role</h1>
+        <div class="entry-kicker"><?php echo te('auth.kicker_access'); ?></div>
+        <h1><?php echo te('role.heading'); ?></h1>
         <p>
-            Select the correct access path for the system. Travellers generate itineraries, while administrators manage cultural data and reports.
+            <?php echo te('role.intro'); ?>
         </p>
         <div class="entry-list">
-            <div>Traveller: generate, save, review, export and share itineraries</div>
-            <div>Admin: manage places, suggestions, users and reports</div>
+            <div><?php echo te('role.list_traveller'); ?></div>
+            <div><?php echo te('role.list_admin'); ?></div>
         </div>
     </div>
     <div class="right-panel">
-        <h2 class="form-title">Who are you?</h2>
+        <div class="lang-switch-wrap" style="text-align:right; margin-bottom:10px;"><?php echo i18n_switcher(); ?></div>
+        <h2 class="form-title"><?php echo te('role.who'); ?></h2>
         <p class="form-subtitle">
-            Select your role to continue with login or registration.
+            <?php echo te('role.subtitle'); ?>
         </p>
 
         <div class="role-grid">
             <a href="auth/login.php?role=traveller" class="role-card primary">
-                <strong>Traveller</strong>
-                <span>Create and manage cultural trip itineraries.</span>
+                <strong><?php echo te('role.traveller'); ?></strong>
+                <span><?php echo te('role.traveller_desc'); ?></span>
             </a>
             <a href="auth/login.php?role=admin" class="role-card">
-                <strong>Admin</strong>
-                <span>Manage cultural content, users, suggestions and reports.</span>
+                <strong><?php echo te('role.admin'); ?></strong>
+                <span><?php echo te('role.admin_desc'); ?></span>
             </a>
         </div>
 
         <div class="button-row">
-            <a href="auth/register.php" class="btn btn-primary">Create Traveller Account</a>
-            <a href="index.php" class="btn btn-outline">Back to Home</a>
+            <a href="auth/register.php" class="btn btn-primary"><?php echo te('role.create_traveller'); ?></a>
+            <a href="index.php" class="btn btn-outline"><?php echo te('role.back_home'); ?></a>
         </div>
 
         <div class="form-footer">
-            New traveller? Register and verify your account before using the system.
+            <?php echo te('role.footer'); ?>
         </div>
     </div>
 </div>

@@ -2,13 +2,14 @@
 // cultural/cultural_guide.php  (CHANGE: add pagination, 12 per page)
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
     exit;
 }
 
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 
 // filters
 $q        = trim($_GET["q"]        ?? "");
@@ -200,12 +201,12 @@ $pageItems = page_window($page, $totalPages);
 $imageFallback = "../assets/place_placeholder.svg";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cultural Guide Presentation | Traveller</title>
+    <title><?php echo te('nav.guide'); ?> | <?php echo te('role.traveller'); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         .place-grid {
@@ -345,55 +346,56 @@ $imageFallback = "../assets/place_placeholder.svg";
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Cultural Guide Presentation</span>
+                    <span><?php echo te('nav.guide'); ?></span>
                 </div>
             </div>
 
-            <nav class="nav" aria-label="Sidebar Navigation">
-                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-                <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-                <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-                <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-                <a class="active" href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-                <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-                <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+            <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+                <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+                <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+                <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+                <a href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+                <a class="active" href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+                <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+                <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
             </nav>
+            <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
 
             <div class="sidebar-footer">
-                <div class="small">Logged in as:</div>
+                <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
                 <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-                <div class="chip">Role: Traveller</div>
+                <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
             </div>
         </aside>
 
         <main class="content">
             <div class="topbar">
                 <div class="page-title">
-                    <h1>Cultural Guide Presentation</h1>
-                    <p>Explore verified cultural places with background information and local context.</p>
+                    <h1><?php echo te('nav.guide'); ?></h1>
+                    <p><?php echo te('cg.subtitle'); ?></p>
                 </div>
                 <div class="actions" style="display:flex;gap:10px;flex-wrap:wrap;">
-                    <a class="btn btn-primary" href="suggest_place.php">Suggest New Place</a>
-                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back</a>
+                    <a class="btn btn-primary" href="suggest_place.php"><?php echo te('cg.suggest_btn'); ?></a>
+                    <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php"><?php echo te('common.back'); ?></a>
                 </div>
             </div>
 
             <section class="grid">
                 <div class="card col-12">
-                    <h3>Search & Filter</h3>
+                    <h3><?php echo te('cg.filter_title'); ?></h3>
                     <form method="get" class="grid" style="gap:12px;">
                         <div class="col-6">
-                            <label style="font-size:13px; font-weight:800;">Keyword</label><br>
+                            <label style="font-size:13px; font-weight:800;"><?php echo te('cg.keyword'); ?></label><br>
                             <input type="text" name="q" value="<?php echo htmlspecialchars($q); ?>"
-                                placeholder="Search by name / description / address"
+                                placeholder="<?php echo te('cg.keyword_placeholder'); ?>"
                                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                         </div>
                         <div class="col-3">
-                            <label style="font-size:13px; font-weight:800;">State</label><br>
+                            <label style="font-size:13px; font-weight:800;"><?php echo te('cg.state'); ?></label><br>
                             <select name="state" id="stateFilter"
                                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"
                                 onchange="updateDistrictFilter(this.value)">
-                                <option value="">All states</option>
+                                <option value=""><?php echo te('cg.all_states'); ?></option>
                                 <?php foreach ($stateOptions as $s): ?>
                                     <option value="<?php echo htmlspecialchars($s); ?>" <?php echo ($state === $s) ? "selected" : ""; ?>>
                                         <?php echo htmlspecialchars($s); ?>
@@ -402,10 +404,10 @@ $imageFallback = "../assets/place_placeholder.svg";
                             </select>
                         </div>
                         <div class="col-3">
-                            <label style="font-size:13px; font-weight:800;">District</label><br>
+                            <label style="font-size:13px; font-weight:800;"><?php echo te('cg.district'); ?></label><br>
                             <select name="district" id="districtFilter"
                                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                <option value="">All districts</option>
+                                <option value=""><?php echo te('cg.all_districts'); ?></option>
                                 <?php foreach ($districtOptions as $d): ?>
                                     <option value="<?php echo htmlspecialchars($d); ?>" <?php echo ($district === $d) ? "selected" : ""; ?>>
                                         <?php echo htmlspecialchars($d); ?>
@@ -414,33 +416,32 @@ $imageFallback = "../assets/place_placeholder.svg";
                             </select>
                         </div>
                         <div class="col-3">
-                            <label style="font-size:13px; font-weight:800;">Category</label><br>
+                            <label style="font-size:13px; font-weight:800;"><?php echo te('cg.category'); ?></label><br>
                             <select name="category" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                <option value="">All categories</option>
+                                <option value=""><?php echo te('cg.all_categories'); ?></option>
                                 <?php foreach ($categoryOptions as $c): ?>
                                     <option value="<?php echo htmlspecialchars($c); ?>" <?php echo ($category === $c) ? "selected" : ""; ?>>
-                                        <?php echo htmlspecialchars(ucfirst($c)); ?>
+                                        <?php echo htmlspecialchars(t_choice('interest', $c)); ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
 
                         <div class="col-12" style="display:flex; gap:10px; flex-wrap:wrap;">
-                            <button class="btn btn-primary" type="submit">Apply</button>
-                            <a class="btn btn-ghost" href="cultural_guide.php">Reset</a>
+                            <button class="btn btn-primary" type="submit"><?php echo te('cg.apply'); ?></button>
+                            <a class="btn btn-ghost" href="cultural_guide.php"><?php echo te('cg.reset'); ?></a>
                         </div>
                     </form>
                 </div>
 
                 <div class="card col-12">
-                    <h3>Verified Places</h3>
+                    <h3><?php echo te('cg.places_title'); ?></h3>
                     <p class="meta">
-                        Total: <?php echo (int)$total; ?> records |
-                        Page <?php echo (int)$page; ?> / <?php echo (int)$totalPages; ?>
+                        <?php echo te('cg.total_line', ['total' => (int)$total, 'page' => (int)$page, 'pages' => (int)$totalPages]); ?>
                     </p>
 
                     <?php if (count($places) === 0): ?>
-                        <div style="padding:12px; color:var(--muted);">No places found with the current filters.</div>
+                        <div style="padding:12px; color:var(--muted);"><?php echo te('cg.no_places'); ?></div>
                     <?php else: ?>
                         <div class="place-grid">
                             <?php foreach ($places as $p): ?>
@@ -453,7 +454,7 @@ $imageFallback = "../assets/place_placeholder.svg";
                                                  loading="lazy" decoding="async"
                                                  onerror="this.onerror=null;this.src='<?php echo htmlspecialchars($imageFallback); ?>';">
                                         <?php else: ?>
-                                            <span class="meta2">No place photo</span>
+                                            <span class="meta2"><?php echo te('cg.no_photo'); ?></span>
                                         <?php endif; ?>
                                     </div>
 
@@ -465,7 +466,7 @@ $imageFallback = "../assets/place_placeholder.svg";
                                                 <?php echo htmlspecialchars($p["district"]); ?>
                                             </span>
                                             <?php endif; ?>
-                                            <span class="badge"><?php echo htmlspecialchars(ucfirst($p["category"])); ?></span>
+                                            <span class="badge"><?php echo htmlspecialchars(t_choice('interest', $p["category"])); ?></span>
                                             <span class="badge">RM <?php echo number_format((float)($p["estimated_cost"] ?? 0), 2); ?></span>
                                         </div>
 
@@ -478,10 +479,10 @@ $imageFallback = "../assets/place_placeholder.svg";
                                         </div>
 
                                         <div class="place-actions">
-                                            <a class="btn btn-ghost" href="cultural_guide_detail.php?place_id=<?php echo (int)$p["place_id"]; ?>">View Details</a>
+                                            <a class="btn btn-ghost" href="cultural_guide_detail.php?place_id=<?php echo (int)$p["place_id"]; ?>"><?php echo te('cg.view_details'); ?></a>
                                         </div>
                                         <?php if ($hasUserRating): ?>
-                                            <div class="card-rating" title="<?php echo (int)$p["review_count"]; ?> traveller review<?php echo ((int)$p["review_count"] === 1) ? "" : "s"; ?>">
+                                            <div class="card-rating" title="<?php echo ((int)$p["review_count"] === 1) ? te('cg.review_one') : te('cg.review_many', ['n' => (int)$p["review_count"]]); ?>">
                                                 <?php echo number_format((float)$p["display_rating"], 1); ?>&#11088;
                                             </div>
                                         <?php endif; ?>
@@ -492,7 +493,7 @@ $imageFallback = "../assets/place_placeholder.svg";
 
                         <!-- CHANGE: Pagination UI -->
                         <div class="pager">
-                            <a class="<?php echo ($page <= 1) ? "disabled" : ""; ?>" href="<?php echo htmlspecialchars(page_link(max(1, $page - 1))); ?>">Previous</a>
+                            <a class="<?php echo ($page <= 1) ? "disabled" : ""; ?>" href="<?php echo htmlspecialchars(page_link(max(1, $page - 1))); ?>"><?php echo te('cg.prev'); ?></a>
 
                             <?php foreach ($pageItems as $it): ?>
                                 <?php if ($it === "..."): ?>
@@ -505,7 +506,7 @@ $imageFallback = "../assets/place_placeholder.svg";
                                 <?php endif; ?>
                             <?php endforeach; ?>
 
-                            <a class="<?php echo ($page >= $totalPages) ? "disabled" : ""; ?>" href="<?php echo htmlspecialchars(page_link(min($totalPages, $page + 1))); ?>">Next</a>
+                            <a class="<?php echo ($page >= $totalPages) ? "disabled" : ""; ?>" href="<?php echo htmlspecialchars(page_link(min($totalPages, $page + 1))); ?>"><?php echo te('cg.next'); ?></a>
                         </div>
                     <?php endif; ?>
 
@@ -516,13 +517,18 @@ $imageFallback = "../assets/place_placeholder.svg";
 <script>
 // Cascading district filter: populate district dropdown when state changes
 var stateDistrictsMap = <?php echo json_encode($allStateDistricts); ?>;
+var CG_T = <?php echo i18n_js(['cg.all_districts']); ?>;
 
 function updateDistrictFilter(selectedState) {
     var distSel = document.getElementById('districtFilter');
     if (!distSel) return;
 
     // Clear existing options
-    distSel.innerHTML = '<option value="">All districts</option>';
+    distSel.innerHTML = '';
+    var anyOpt = document.createElement('option');
+    anyOpt.value = '';
+    anyOpt.textContent = CG_T['cg.all_districts'];
+    distSel.appendChild(anyOpt);
 
     if (selectedState && stateDistrictsMap[selectedState]) {
         stateDistrictsMap[selectedState].forEach(function(d) {

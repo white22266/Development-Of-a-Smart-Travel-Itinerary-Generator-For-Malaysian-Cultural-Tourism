@@ -2,6 +2,7 @@
 // cultural/submit_review.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -22,29 +23,29 @@ function review_back(int $placeId, string $msg, bool $isError = false): void
     exit;
 }
 
-if ($travellerId <= 0) review_back($placeId, "Invalid session. Please login again.", true);
-if ($placeId <= 0) review_back(0, "Invalid place.", true);
-if ($rating < 1 || $rating > 5) review_back($placeId, "Please choose a rating from 1 to 5 stars.", true);
-if (strlen($reviewText) > 2000) review_back($placeId, "Review is too long.", true);
+if ($travellerId <= 0) review_back($placeId, t('rev.err_session'), true);
+if ($placeId <= 0) review_back(0, t('rev.err_place'), true);
+if ($rating < 1 || $rating > 5) review_back($placeId, t('rev.err_rating'), true);
+if (strlen($reviewText) > 2000) review_back($placeId, t('rev.err_long'), true);
 
 $check = $conn->prepare("SELECT place_id FROM cultural_places WHERE place_id = ? AND is_active = 1 LIMIT 1");
 $check->bind_param("i", $placeId);
 $check->execute();
 $exists = $check->get_result()->fetch_assoc();
 $check->close();
-if (!$exists) review_back($placeId, "Place not found.", true);
+if (!$exists) review_back($placeId, t('rev.err_not_found'), true);
 
 $stmt = $conn->prepare("
     INSERT INTO ratings_reviews (place_id, traveller_id, rating, review_text)
     VALUES (?, ?, ?, ?)
     ON DUPLICATE KEY UPDATE rating = VALUES(rating), review_text = VALUES(review_text), updated_at = CURRENT_TIMESTAMP
 ");
-if (!$stmt) review_back($placeId, "Unable to save review.", true);
+if (!$stmt) review_back($placeId, t('rev.err_save'), true);
 $stmt->bind_param("iiis", $placeId, $travellerId, $rating, $reviewText);
 if (!$stmt->execute()) {
     $err = $stmt->error;
     $stmt->close();
-    review_back($placeId, "Unable to save review: " . $err, true);
+    review_back($placeId, t('rev.err_save_detail', ['error' => $err]), true);
 }
 $stmt->close();
 
@@ -71,4 +72,4 @@ if (!empty($cols)) {
     }
 }
 
-review_back($placeId, "Your rating and review have been saved.");
+review_back($placeId, t('rev.saved'));

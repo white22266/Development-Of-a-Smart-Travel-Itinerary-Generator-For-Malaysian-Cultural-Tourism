@@ -3,6 +3,7 @@
 // Saves the complete preference profile. Database schema changes must be applied through SQL migrations.
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../services/AccessibilityNeedsAnalysisService.php";
 require_once "../services/CostEstimationService.php";
 require_once __DIR__ . "/preference_inputs.php";
@@ -70,7 +71,7 @@ if (!pref_column_exists($conn, "traveller_preference_interests", "weight")) $mis
 if (!pref_table_exists($conn, "traveller_preference_places")) $missingColumns[] = "table traveller_preference_places";
 if (!empty($missingColumns)) {
     $_SESSION["form_errors"] = [
-        "Database schema is not ready. Apply the latest SQL migration before saving preferences. Missing columns: " . implode(", ", $missingColumns)
+        t('pref.err_schema', ['columns' => implode(", ", $missingColumns)])
     ];
     header("Location: preference_form.php");
     exit;
@@ -92,12 +93,12 @@ $interests = $_POST["interests"] ?? [];
 $states = $_POST["preferred_states"] ?? "";
 $districts = $_POST["preferred_districts"] ?? "";
 
-if ($travellerId <= 0) $errors[] = "Invalid session. Please login again.";
-if ($tripDays < 1 || $tripDays > 30) $errors[] = "Travel duration must be between 1 and 30 days.";
-if ($budget <= 0) $errors[] = "Budget must be greater than 0.";
-if (!in_array($transport, ["car", "public_transport", "walking", "motorcycle"], true)) $errors[] = "Invalid transport type.";
-if (!in_array($budgetTier, ["budget", "normal", "luxury"], true)) $errors[] = "Invalid budget tier.";
-if (!in_array($travellerType, ["solo", "couple", "family", "group"], true)) $errors[] = "Invalid traveller type.";
+if ($travellerId <= 0) $errors[] = t('pref.err_session');
+if ($tripDays < 1 || $tripDays > 30) $errors[] = t('pref.err_days');
+if ($budget <= 0) $errors[] = t('pref.err_budget');
+if (!in_array($transport, ["car", "public_transport", "walking", "motorcycle"], true)) $errors[] = t('pref.err_transport');
+if (!in_array($budgetTier, ["budget", "normal", "luxury"], true)) $errors[] = t('pref.err_tier');
+if (!in_array($travellerType, ["solo", "couple", "family", "group"], true)) $errors[] = t('pref.err_type');
 
 [$party, $partyErrors] = pref_parse_party(
     (string)($_POST["adults"] ?? ""), (string)($_POST["children"] ?? ""), (string)($_POST["seniors"] ?? "")
@@ -114,16 +115,16 @@ if ($party !== null) {
 } elseif ($travellerType === "couple") {
     $partySize = 2;
 } elseif ($postedPartySize === "" || !ctype_digit($postedPartySize)) {
-    $errors[] = "Party size must be a positive whole number.";
+    $errors[] = t('pref.err_party_number');
 } else {
     $partySize = (int)$postedPartySize;
-    if ($partySize < 1 || $partySize > 1000) $errors[] = "Party size must be between 1 and 1000.";
+    if ($partySize < 1 || $partySize > 1000) $errors[] = t('pref.err_party_range');
 }
 
-if (!in_array($travelPace, ["relaxed", "normal", "packed"], true)) $errors[] = "Invalid travel pace.";
-if (!in_array($dietaryPreference, ["none", "halal", "vegetarian"], true)) $errors[] = "Invalid dietary preference.";
-if (!in_array($preferredVisitTime, ["any", "morning", "afternoon", "evening"], true)) $errors[] = "Invalid preferred visit time.";
-if (strlen($accessibilityNeeds) > 120) $errors[] = "Accessibility notes must be 120 characters or fewer.";
+if (!in_array($travelPace, ["relaxed", "normal", "packed"], true)) $errors[] = t('pref.err_pace');
+if (!in_array($dietaryPreference, ["none", "halal", "vegetarian"], true)) $errors[] = t('pref.err_diet');
+if (!in_array($preferredVisitTime, ["any", "morning", "afternoon", "evening"], true)) $errors[] = t('pref.err_visit');
+if (strlen($accessibilityNeeds) > 120) $errors[] = t('pref.err_access_len');
 
 [$dayStart, $dayEnd, $dayErrors] = pref_parse_day_window((string)($_POST["day_start_time"] ?? ""), (string)($_POST["day_end_time"] ?? ""));
 [$stopsPerDay, $stopsErrors] = pref_parse_stops((string)($_POST["stops_per_day"] ?? ""));
@@ -133,7 +134,7 @@ $tickedTags = $_POST["access_tags"] ?? [];
 if (!is_array($tickedTags)) $tickedTags = [];
 foreach ($tickedTags as $tag) {
     if (!is_string($tag) || !in_array($tag, PREF_ACCESS_TAGS, true)) {
-        $errors[] = "Invalid accessibility option.";
+        $errors[] = t('pref.err_access_tag');
         break;
     }
 }
@@ -151,7 +152,7 @@ if (empty($placeErrors) && ($mustIds || $avoidIds)) {
     $check->close();
     foreach ($allIds as $id) {
         if (!isset($found[$id])) {
-            $errors[] = "One of the chosen places does not exist. Please choose the places again.";
+            $errors[] = t('pref.err_place_missing');
             break;
         }
     }
@@ -159,11 +160,11 @@ if (empty($placeErrors) && ($mustIds || $avoidIds)) {
 
 $allowedInterests = ["culture", "heritage", "food", "museum", "nature", "shopping", "festival"];
 if (!is_array($interests) || count($interests) < 1) {
-    $errors[] = "Please select at least one interest.";
+    $errors[] = t('pref.err_interest_none');
 } else {
     foreach ($interests as $interest) {
         if (!in_array($interest, $allowedInterests, true)) {
-            $errors[] = "Invalid interest selection.";
+            $errors[] = t('pref.err_interest_invalid');
             break;
         }
     }
@@ -176,7 +177,7 @@ foreach (is_array($interests) ? $interests : [] as $interest) {
     if (!is_string($interest) || !in_array($interest, $allowedInterests, true)) continue;
     $w = pref_parse_weight($postedWeights[$interest] ?? "");
     if ($w === null) {
-        $errors[] = "Invalid interest level.";
+        $errors[] = t('pref.err_interest_level');
         break;
     }
     $interestWeights[$interest] = $w;
@@ -250,12 +251,12 @@ try {
 } catch (Throwable $e) {
     $conn->rollback();
     error_log("preference_process: " . $e->getMessage());
-    $_SESSION["form_errors"] = ["Failed to save the complete preference profile. Please contact the administrator if the database migration has not been applied."];
+    $_SESSION["form_errors"] = [t('pref.err_save')];
     header("Location: preference_form.php");
     exit;
 }
 
 $_SESSION["last_preference_id"] = $newPrefId;
-$_SESSION["success_message"] = "Preferences saved successfully. Please confirm your start date and starting location to generate the itinerary.";
+$_SESSION["success_message"] = t('pref.saved');
 header("Location: ../itinerary/select_preference.php?preference_id=" . $newPrefId . "&from=preference_saved");
 exit;

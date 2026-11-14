@@ -3,6 +3,7 @@
 session_start();
 require_once "../config/security.php";
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once __DIR__ . "/preference_inputs.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
@@ -10,7 +11,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESS
   exit;
 }
 
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 
 $errors  = $_SESSION["form_errors"]     ?? [];
 $success = $_SESSION["success_message"] ?? "";
@@ -18,54 +19,40 @@ $old     = $_SESSION["old_input"]       ?? [];
 
 unset($_SESSION["form_errors"], $_SESSION["success_message"], $_SESSION["old_input"]);
 
-$interestOptions = [
-  "culture"  => "Culture",
-  "heritage" => "Heritage",
-  "food"     => "Food",
-  "museum"   => "Museum",
-  "nature"   => "Nature",
-  "shopping" => "Shopping",
-  "festival" => "Festival"
-];
+$interestOptions = [];
+foreach (["culture", "heritage", "food", "museum", "nature", "shopping", "festival"] as $code) {
+  $interestOptions[$code] = t('opt.interest.' . $code);
+}
 
-$transportOptions = [
-  "car"              => "Car",
-  "public_transport" => "Public Transport",
-  "walking"          => "Walking",
-  "motorcycle"       => "Motorcycle"
-];
+$transportOptions = [];
+foreach (["car", "public_transport", "walking", "motorcycle"] as $code) {
+  $transportOptions[$code] = t('opt.transport.' . $code);
+}
 
-$travellerTypeOptions = [
-  "solo"   => "Solo",
-  "couple" => "Couple",
-  "family" => "Family",
-  "group"  => "Group"
-];
+$travellerTypeOptions = [];
+foreach (["solo", "couple", "family", "group"] as $code) {
+  $travellerTypeOptions[$code] = t('opt.type.' . $code);
+}
 
-$paceOptions = [
-  "relaxed" => "Relaxed",
-  "normal"  => "Normal",
-  "packed"  => "Packed"
-];
+$paceOptions = [];
+foreach (["relaxed", "normal", "packed"] as $code) {
+  $paceOptions[$code] = t('opt.pace.' . $code);
+}
 
-$budgetTierOptions = [
-  "budget" => "Budget",
-  "normal" => "Normal",
-  "luxury" => "Luxury"
-];
+$budgetTierOptions = [];
+foreach (["budget", "normal", "luxury"] as $code) {
+  $budgetTierOptions[$code] = t('opt.tier.' . $code);
+}
 
-$dietaryOptions = [
-  "none"       => "No specific requirement",
-  "halal"      => "Halal required",
-  "vegetarian" => "Vegetarian friendly"
-];
+$dietaryOptions = [];
+foreach (["none", "halal", "vegetarian"] as $code) {
+  $dietaryOptions[$code] = t('opt.diet.' . $code);
+}
 
-$visitTimeOptions = [
-  "any"       => "Any time",
-  "morning"   => "Morning",
-  "afternoon" => "Afternoon",
-  "evening"   => "Evening"
-];
+$visitTimeOptions = [];
+foreach (["any", "morning", "afternoon", "evening"] as $code) {
+  $visitTimeOptions[$code] = t('opt.visit.' . $code);
+}
 
 // All 16 states with their districts
 $stateDistricts = [
@@ -118,14 +105,11 @@ $oldAdults    = (string)($old["adults"] ?? "");
 $oldChildren  = (string)($old["children"] ?? "");
 $oldSeniors   = (string)($old["seniors"] ?? "");
 $oldAccessTags = is_array($old["access_tags"] ?? null) ? $old["access_tags"] : [];
-$accessTagOptions = [
-  "wheelchair"  => "Wheelchair user",
-  "avoid_stairs" => "Avoid stairs",
-  "low_walking" => "Limited walking",
-  "avoid_heat"  => "Avoid midday heat",
-  "elderly"     => "Travelling with elderly people"
-];
-$weightOptions = [1 => "A little", 2 => "Like", 3 => "Love"];
+$accessTagOptions = [];
+foreach (["wheelchair", "avoid_stairs", "low_walking", "avoid_heat", "elderly"] as $code) {
+  $accessTagOptions[$code] = t('opt.access.' . $code);
+}
+$weightOptions = [1 => t('opt.weight.1'), 2 => t('opt.weight.2'), 3 => t('opt.weight.3')];
 
 // Places chosen before a validation error: look the names up again.
 $oldPlaces = ["must" => [], "avoid" => []];
@@ -144,14 +128,14 @@ function render_place_picker(string $wish, string $label, string $help, array $c
   $field = $wish . "_places";
   echo '<div class="place-picker" data-wish="' . $wish . '" data-field="' . $field . '">';
   echo '<label style="font-size:13px; font-weight:700;" for="picker_' . $wish . '">' . htmlspecialchars($label) . '</label>';
-  echo '<input type="search" id="picker_' . $wish . '" class="place-picker-input" autocomplete="off" placeholder="Search by place name (2+ letters)" '
+  echo '<input type="search" id="picker_' . $wish . '" class="place-picker-input" autocomplete="off" placeholder="' . htmlspecialchars(t('pref.place_search_placeholder')) . '" '
      . 'style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">';
   echo '<div class="place-picker-results" role="listbox"></div>';
   echo '<div class="place-picker-chosen">';
   foreach ($chosen as $row) {
     $id = (int)$row["place_id"];
     echo '<span class="place-chip" data-id="' . $id . '">' . htmlspecialchars($row["name"])
-       . ' <button type="button" class="place-chip-remove" aria-label="Remove">&times;</button>'
+       . ' <button type="button" class="place-chip-remove" aria-label="' . htmlspecialchars(t('common.remove')) . '">&times;</button>'
        . '<input type="hidden" name="' . $field . '[]" value="' . $id . '"></span>';
   }
   echo '</div>';
@@ -165,11 +149,11 @@ $oldDistrict  = $old["preferred_districts"] ?? "";   // single value now
 $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Traveller Preference Analyzer | Smart Travel Itinerary Generator</title>
+  <title><?php echo te('nav.preference'); ?> | Smart Travel Itinerary Generator</title>
   <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
   <style>
     /* ---- Dropdown pair ---- */
@@ -287,42 +271,43 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       <div class="brand-badge">ST</div>
       <div class="brand-title">
         <strong>Smart Travel Itinerary Generator</strong>
-        <span>Traveller Preference Analyzer</span>
+        <span><?php echo te('nav.preference'); ?></span>
       </div>
     </div>
 
-    <nav class="nav" aria-label="Sidebar Navigation">
-      <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-      <a class="active" href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-      <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-      <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-      <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-      <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-      <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+    <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+      <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+      <a class="active" href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+      <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+      <a href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+      <a href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+      <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+      <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
     </nav>
+    <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
 
     <div class="sidebar-footer">
-      <div class="small">Logged in as:</div>
+      <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
       <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-      <div class="chip">Role: Traveller</div>
+      <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
     </div>
   </aside>
 
   <main class="content">
     <div class="topbar">
       <div class="page-title">
-        <h1>Traveller Preference Analyzer</h1>
-        <p>Enter your trip budget, travel style, location and interests. The system will use these preferences to generate a structured cultural itinerary.</p>
+        <h1><?php echo te('nav.preference'); ?></h1>
+        <p><?php echo te('pref.page_subtitle'); ?></p>
       </div>
       <div class="actions">
-        <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back to Dashboard</a>
+        <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php"><?php echo te('common.back_dashboard'); ?></a>
       </div>
     </div>
 
     <section class="grid">
       <div class="card col-12">
-        <h3>Preference Form</h3>
-        <p class="meta">All fields marked * must be completed before itinerary generation.</p>
+        <h3><?php echo te('pref.form_title'); ?></h3>
+        <p class="meta"><?php echo te('pref.form_note'); ?></p>
 
         <?php if ($success): ?>
           <p style="color:green; font-weight:700; margin-bottom:10px;"><?php echo htmlspecialchars($success); ?></p>
@@ -337,40 +322,40 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
         <?php endif; ?>
 
         <form method="post" action="preference_process.php" id="preferenceWizardForm">
-          <div class="wizard-progress" aria-label="Preference steps">
-            <div class="wizard-step-tab active" data-step-tab="1">1. Trip Basics</div>
-            <div class="wizard-step-tab" data-step-tab="2">2. Preferred Location</div>
-            <div class="wizard-step-tab" data-step-tab="3">3. Review & Save</div>
+          <div class="wizard-progress" aria-label="<?php echo te('pref.steps_aria'); ?>">
+            <div class="wizard-step-tab active" data-step-tab="1"><?php echo te('pref.step1'); ?></div>
+            <div class="wizard-step-tab" data-step-tab="2"><?php echo te('pref.step2'); ?></div>
+            <div class="wizard-step-tab" data-step-tab="3"><?php echo te('pref.step3'); ?></div>
           </div>
           <div class="grid">
 
             <!-- ===== LEFT: Trip Details ===== -->
             <div class="card col-6 wizard-panel active" data-step-panel="1" style="box-shadow:none;">
-              <h3 style="margin-bottom:8px;">Trip Basics & Travel Style</h3>
+              <h3 style="margin-bottom:8px;"><?php echo te('pref.basics_heading'); ?></h3>
 
-              <label style="font-size:13px; font-weight:700;">Travel Duration (Days) *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.days_label'); ?> *</label>
               <input type="number" name="trip_days" min="1" max="30" required
-                placeholder="1 to 30 days"
+                placeholder="<?php echo te('pref.days_placeholder'); ?>"
                 value="<?php echo htmlspecialchars($oldTripDays); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Budget (RM) *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.budget_label'); ?> *</label>
               <input type="number" name="budget" min="1" step="0.01" required
-                placeholder="Estimated budget in RM"
+                placeholder="<?php echo te('pref.budget_placeholder'); ?>"
                 value="<?php echo htmlspecialchars($oldBudget); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
               <div class="field-help">
-                Your total trip budget. The generator uses it to choose lower-cost places, meals, transport estimates, and hotel assumptions before checking the final cost.
+                <?php echo te('pref.budget_help'); ?>
               </div>
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Transport Type *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.transport_label'); ?> *</label>
               <select name="transport_type" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
-                <option value="" disabled <?php echo empty($oldTransport) ? 'selected' : ''; ?>>- Please choose a transport type -</option>
+                <option value="" disabled <?php echo empty($oldTransport) ? 'selected' : ''; ?>><?php echo te('pref.transport_choose'); ?></option>
                 <?php foreach ($transportOptions as $k => $v): ?>
                   <option value="<?php echo htmlspecialchars($k); ?>" <?php echo selected_val($oldTransport, $k); ?>>
                     <?php echo htmlspecialchars($v); ?>
@@ -380,7 +365,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Spending Style *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.tier_label'); ?> *</label>
               <select name="budget_tier" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
                 <?php foreach ($budgetTierOptions as $k => $v): ?>
@@ -390,12 +375,12 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 <?php endforeach; ?>
               </select>
               <div class="field-help">
-                This is not another budget amount. It controls default hotel and meal estimates: Budget = cheaper, Normal = standard, Luxury = higher comfort.
+                <?php echo te('pref.tier_help'); ?>
               </div>
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Traveller Type *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.type_label'); ?> *</label>
               <select name="traveller_type" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
                 <?php foreach ($travellerTypeOptions as $k => $v): ?>
@@ -408,31 +393,31 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
               <div style="height:12px;"></div>
 
               <div id="partySizeGroup">
-                <label style="font-size:13px; font-weight:700;">Number of Travellers / Party Size *</label>
+                <label style="font-size:13px; font-weight:700;"><?php echo te('pref.party_label'); ?> *</label>
                 <input type="number" name="party_size" min="1" max="1000" step="1" required
                   value="<?php echo htmlspecialchars((string)$oldPartySize); ?>"
                   style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
                 <div class="field-help" id="partySizeHelp">
-                  Solo is fixed to 1 traveller and couple is fixed to 2 travellers. Family and group trips must enter the actual party size.
+                  <?php echo te('pref.party_help'); ?>
                 </div>
               </div>
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Who is travelling (optional)</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.who_label'); ?></label>
               <div class="inline-fields" style="margin-top:6px;">
-                <div><label for="adults">Adults</label>
+                <div><label for="adults"><?php echo te('pref.adults'); ?></label>
                   <input type="number" name="adults" id="adults" min="0" max="20" step="1" value="<?php echo htmlspecialchars($oldAdults); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
-                <div><label for="children">Children</label>
+                <div><label for="children"><?php echo te('pref.children'); ?></label>
                   <input type="number" name="children" id="children" min="0" max="20" step="1" value="<?php echo htmlspecialchars($oldChildren); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
-                <div><label for="seniors">Seniors</label>
+                <div><label for="seniors"><?php echo te('pref.seniors'); ?></label>
                   <input type="number" name="seniors" id="seniors" min="0" max="20" step="1" value="<?php echo htmlspecialchars($oldSeniors); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
               </div>
-              <div class="field-help">Fill in any of these to set the party size from them (at least one adult or senior). Leave all empty to use the party size above.</div>
+              <div class="field-help"><?php echo te('pref.who_help'); ?></div>
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Travel Pace *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.pace_label'); ?> *</label>
               <select name="travel_pace" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
                 <?php foreach ($paceOptions as $k => $v): ?>
@@ -444,7 +429,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Dietary Preference *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.dietary_label'); ?> *</label>
               <select name="dietary_preference" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
                 <?php foreach ($dietaryOptions as $k => $v): ?>
@@ -456,7 +441,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Preferred Visit Time *</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.visit_label'); ?> *</label>
               <select name="preferred_visit_time" required
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
                 <?php foreach ($visitTimeOptions as $k => $v): ?>
@@ -468,30 +453,30 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Daily schedule (optional)</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.schedule_label'); ?></label>
               <div class="location-row" style="margin-top:6px;">
-                <div class="field-group"><label for="day_start_time">Day starts at</label>
+                <div class="field-group"><label for="day_start_time"><?php echo te('pref.day_start'); ?></label>
                   <input type="time" name="day_start_time" id="day_start_time" min="06:00" max="23:00" value="<?php echo htmlspecialchars($oldDayStart); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
-                <div class="field-group"><label for="day_end_time">Day ends at</label>
+                <div class="field-group"><label for="day_end_time"><?php echo te('pref.day_end'); ?></label>
                   <input type="time" name="day_end_time" id="day_end_time" min="06:00" max="23:00" value="<?php echo htmlspecialchars($oldDayEnd); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;"></div>
               </div>
-              <div class="field-help">Between 06:00 and 23:00, and at least 3 hours long. Leave empty to let the preferred visit time decide.</div>
+              <div class="field-help"><?php echo te('pref.schedule_help'); ?></div>
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;" for="stops_per_day">Stops per day (optional)</label>
-              <input type="number" name="stops_per_day" id="stops_per_day" min="2" max="8" step="1" placeholder="2 to 8"
+              <label style="font-size:13px; font-weight:700;" for="stops_per_day"><?php echo te('pref.stops_label'); ?></label>
+              <input type="number" name="stops_per_day" id="stops_per_day" min="2" max="8" step="1" placeholder="<?php echo te('pref.stops_placeholder'); ?>"
                 value="<?php echo htmlspecialchars($oldStops); ?>" style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
-              <div class="field-help">Leave empty to let the travel pace decide.</div>
+              <div class="field-help"><?php echo te('pref.stops_help'); ?></div>
 
               <div style="height:12px;"></div>
 
-              <label style="font-size:13px; font-weight:700;">Accessibility Notes</label>
+              <label style="font-size:13px; font-weight:700;"><?php echo te('pref.access_label'); ?></label>
               <input type="text" name="accessibility_needs" maxlength="120"
-                placeholder="Example: elderly-friendly, avoid stairs"
+                placeholder="<?php echo te('pref.access_placeholder'); ?>"
                 value="<?php echo htmlspecialchars($oldAccessibility); ?>"
                 style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
-              <div class="field-help">The system automatically analyzes this note when saving and applies it to route planning.</div>
+              <div class="field-help"><?php echo te('pref.access_help'); ?></div>
               <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:8px;">
                 <?php foreach ($accessTagOptions as $key => $label): ?>
                   <label style="display:flex; gap:8px; align-items:center; font-size:13px;">
@@ -504,8 +489,8 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <hr class="sep">
 
-              <h3 style="margin-bottom:8px;">Interests *</h3>
-              <p class="meta" style="margin-top:0;">Select at least one interest.</p>
+              <h3 style="margin-bottom:8px;"><?php echo te('pref.interests_heading'); ?> *</h3>
+              <p class="meta" style="margin-top:0;"><?php echo te('pref.interests_help'); ?></p>
               <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px;">
                 <?php foreach ($interestOptions as $key => $label): ?>
                   <div class="interest-row">
@@ -514,7 +499,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                         <?php echo checked_val($oldInterests, $key); ?>>
                       <?php echo htmlspecialchars($label); ?>
                     </label>
-                    <select name="interest_weight[<?php echo htmlspecialchars($key); ?>]" aria-label="How much you like <?php echo htmlspecialchars($label); ?>">
+                    <select name="interest_weight[<?php echo htmlspecialchars($key); ?>]" aria-label="<?php echo te('pref.interest_level_aria', ['interest' => $label]); ?>">
                       <?php foreach ($weightOptions as $w => $wLabel): ?>
                         <option value="<?php echo $w; ?>" <?php echo ((int)($oldWeights[$key] ?? 2) === $w) ? "selected" : ""; ?>><?php echo htmlspecialchars($wLabel); ?></option>
                       <?php endforeach; ?>
@@ -527,20 +512,20 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
             <!-- ===== RIGHT: State & District dropdowns ===== -->
             <div class="card col-6 wizard-panel" data-step-panel="2" style="box-shadow:none;">
               <h3 style="margin-bottom:4px;">
-                Preferred Location
-                <span style="font-weight:400; font-size:12px; color:var(--muted);"> (Optional)</span>
+                <?php echo te('pref.location_heading'); ?>
+                <span style="font-weight:400; font-size:12px; color:var(--muted);"> <?php echo te('common.optional'); ?></span>
               </h3>
               <p class="meta" style="margin-top:0; margin-bottom:14px;">
-                Leave both as "Any" for nationwide recommendations. Select a state first, then optionally narrow down to a specific district.
+                <?php echo te('pref.location_help'); ?>
               </p>
 
               <div class="location-row">
 
                 <!-- State dropdown -->
                 <div class="field-group">
-                  <label for="preferred_state">State</label>
+                  <label for="preferred_state"><?php echo te('pref.state_label'); ?></label>
                   <select name="preferred_states" id="preferred_state">
-                    <option value="">- Any State (Nationwide) -</option>
+                    <option value=""><?php echo te('pref.any_state'); ?></option>
                     <?php foreach (array_keys($stateDistricts) as $state): ?>
                       <option value="<?php echo htmlspecialchars($state); ?>"
                         <?php echo ($oldState === $state) ? 'selected' : ''; ?>>
@@ -548,15 +533,15 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                       </option>
                     <?php endforeach; ?>
                   </select>
-                  <div class="district-hint">Choose a state to enable district selection.</div>
+                  <div class="district-hint"><?php echo te('pref.state_hint'); ?></div>
                 </div>
 
                 <!-- District dropdown -->
                 <div class="field-group">
-                  <label for="preferred_district">District</label>
+                  <label for="preferred_district"><?php echo te('pref.district_label'); ?></label>
                   <select name="preferred_districts" id="preferred_district"
                     <?php echo ($oldState === "") ? 'disabled' : ''; ?>>
-                    <option value="">- Any District -</option>
+                    <option value=""><?php echo te('pref.any_district'); ?></option>
                     <?php
                     // Pre-populate districts if a state was previously selected
                     if ($oldState !== "" && isset($stateDistricts[$oldState])) {
@@ -569,50 +554,50 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                   </select>
                   <!-- Warning: shown when user clicks district before selecting state -->
                   <div class="district-warning" id="districtWarning">
-                    &#9888; Please select a state first before choosing a district.
+                    &#9888; <?php echo te('pref.district_warning'); ?>
                   </div>
                   <div class="district-hint" id="districtHint">
-                    <?php echo ($oldState === "") ? 'Select a state above to enable this dropdown.' : 'Optionally narrow to a specific district.'; ?>
+                    <?php echo ($oldState === "") ? te('pref.district_hint_off') : te('pref.district_hint_on'); ?>
                   </div>
                 </div>
 
               </div><!-- /location-row -->
 
               <hr class="sep">
-              <h3 style="margin-bottom:4px;">Specific places <span style="font-weight:400; font-size:12px; color:var(--muted);"> (Optional)</span></h3>
+              <h3 style="margin-bottom:4px;"><?php echo te('pref.places_heading'); ?> <span style="font-weight:400; font-size:12px; color:var(--muted);"> <?php echo te('common.optional'); ?></span></h3>
               <?php
-              render_place_picker("must", "Places I must see", "Up to 10 places the itinerary should include.", $oldPlaces["must"]);
-              render_place_picker("avoid", "Places to avoid", "Up to 10 places the itinerary should leave out. A place cannot be in both lists.", $oldPlaces["avoid"]);
+              render_place_picker("must", t('pref.must_label'), t('pref.must_help'), $oldPlaces["must"]);
+              render_place_picker("avoid", t('pref.avoid_label'), t('pref.avoid_help'), $oldPlaces["avoid"]);
               ?>
             </div>
 
             <div class="card col-12 wizard-panel" data-step-panel="3" style="box-shadow:none;">
-              <h3 style="margin-bottom:8px;">Review Preference</h3>
-              <p class="meta" style="margin-top:0;">Confirm these criteria before saving. The system stores them in normalized preference tables and keeps legacy fields for existing itinerary generation.</p>
+              <h3 style="margin-bottom:8px;"><?php echo te('pref.review_heading'); ?></h3>
+              <p class="meta" style="margin-top:0;"><?php echo te('pref.review_help'); ?></p>
               <div class="summary-list">
-                <div class="summary-item"><strong>Travel Duration</strong><span id="summaryDays">-</span></div>
-                <div class="summary-item"><strong>Budget</strong><span id="summaryBudget">-</span></div>
-                <div class="summary-item"><strong>Spending Style</strong><span id="summaryBudgetTier">-</span></div>
-                <div class="summary-item"><strong>Transport</strong><span id="summaryTransport">-</span></div>
-                <div class="summary-item"><strong>Traveller Type</strong><span id="summaryTravellerType">-</span></div>
-                <div class="summary-item"><strong>Party Size</strong><span id="summaryPartySize">-</span></div>
-                <div class="summary-item"><strong>Travel Pace</strong><span id="summaryPace">-</span></div>
-                <div class="summary-item"><strong>Dietary</strong><span id="summaryDietary">-</span></div>
-                <div class="summary-item"><strong>Visit Time</strong><span id="summaryVisitTime">-</span></div>
-                <div class="summary-item"><strong>Interests</strong><span id="summaryInterests">-</span></div>
-                <div class="summary-item"><strong>State</strong><span id="summaryState">Any State</span></div>
-                <div class="summary-item"><strong>District</strong><span id="summaryDistrict">Any District</span></div>
-                <div class="summary-item"><strong>Accessibility</strong><span id="summaryAccessibility">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.sum_duration'); ?></strong><span id="summaryDays">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.sum_budget'); ?></strong><span id="summaryBudget">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.tier_label'); ?></strong><span id="summaryBudgetTier">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.sum_transport'); ?></strong><span id="summaryTransport">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.type_label'); ?></strong><span id="summaryTravellerType">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.sum_party'); ?></strong><span id="summaryPartySize">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.pace_label'); ?></strong><span id="summaryPace">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.sum_dietary'); ?></strong><span id="summaryDietary">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.sum_visit'); ?></strong><span id="summaryVisitTime">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.interests_heading'); ?></strong><span id="summaryInterests">-</span></div>
+                <div class="summary-item"><strong><?php echo te('pref.state_label'); ?></strong><span id="summaryState"><?php echo te('opt.any_state'); ?></span></div>
+                <div class="summary-item"><strong><?php echo te('pref.district_label'); ?></strong><span id="summaryDistrict"><?php echo te('opt.any_district'); ?></span></div>
+                <div class="summary-item"><strong><?php echo te('pref.sum_access'); ?></strong><span id="summaryAccessibility">-</span></div>
               </div>
             </div>
 
           </div><!-- /grid -->
 
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <button class="btn btn-ghost" type="button" id="wizardBack" style="display:none;">Back</button>
-            <button class="btn btn-primary" type="button" id="wizardNext">Next</button>
-            <button class="btn btn-primary" type="submit" id="wizardSubmit" style="display:none;">Save Preferences</button>
-            <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Cancel</a>
+            <button class="btn btn-ghost" type="button" id="wizardBack" style="display:none;"><?php echo te('common.back'); ?></button>
+            <button class="btn btn-primary" type="button" id="wizardNext"><?php echo te('common.next'); ?></button>
+            <button class="btn btn-primary" type="submit" id="wizardSubmit" style="display:none;"><?php echo te('pref.save_btn'); ?></button>
+            <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php"><?php echo te('common.cancel'); ?></a>
           </div>
         </form>
       </div>
@@ -623,6 +608,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 <script>
 (function () {
   var stateDistricts = <?php echo $districtsJson; ?>;
+  var T = <?php echo i18n_js(['pref.any_district', 'pref.district_hint_off', 'pref.district_hint_in', 'pref.days_unit', 'pref.travellers_unit', 'pref.js_select_interest', 'pref.js_max_places', 'pref.js_search_unavailable', 'pref.js_no_places', 'pref.js_family_help', 'pref.js_group_help', 'opt.any_state', 'opt.any_district', 'common.remove']); ?>;
 
   var stateSel    = document.getElementById('preferred_state');
   var distSel     = document.getElementById('preferred_district');
@@ -654,12 +640,16 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
   function populateDistricts(state) {
     // Clear existing options
-    distSel.innerHTML = '<option value="">- Any District -</option>';
+    distSel.innerHTML = '';
+    var anyOpt = document.createElement('option');
+    anyOpt.value = '';
+    anyOpt.textContent = T['pref.any_district'];
+    distSel.appendChild(anyOpt);
 
     if (!state || !stateDistricts[state]) {
       // No state selected - disable and show hint
       distSel.disabled = true;
-      distHint.textContent = 'Select a state above to enable this dropdown.';
+      distHint.textContent = T['pref.district_hint_off'];
       distWarn.classList.remove('visible');
       return;
     }
@@ -675,7 +665,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
     distSel.disabled = false;
     distWarn.classList.remove('visible');
-    distHint.textContent = 'Optionally narrow to a specific district in ' + state + '.';
+    distHint.textContent = T['pref.district_hint_in'].replace('{state}', state);
   }
 
   /* ---- Party mix: adults + children + seniors set the party size ---- */
@@ -731,14 +721,14 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       results.classList.add('open');
     }
     function add(place) {
-      if (idsIn(chosen).length >= 10) { note('You can choose at most 10 places.'); return; }
+      if (idsIn(chosen).length >= 10) { note(T['pref.js_max_places']); return; }
       if (idsIn(chosen).indexOf(String(place.id)) !== -1) return;
       var chip = document.createElement('span');
       chip.className = 'place-chip';
       chip.setAttribute('data-id', String(place.id));
       chip.appendChild(document.createTextNode(place.name + ' '));
       var rm = document.createElement('button');
-      rm.type = 'button'; rm.className = 'place-chip-remove'; rm.setAttribute('aria-label', 'Remove'); rm.innerHTML = '&times;';
+      rm.type = 'button'; rm.className = 'place-chip-remove'; rm.setAttribute('aria-label', T['common.remove']); rm.innerHTML = '&times;';
       var hid = document.createElement('input');
       hid.type = 'hidden'; hid.name = field + '[]'; hid.value = String(place.id);
       chip.appendChild(rm); chip.appendChild(hid);
@@ -758,10 +748,10 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       if (stateSel && stateSel.value) url += '&states=' + encodeURIComponent(stateSel.value);
       fetch(url, { credentials: 'same-origin' }).then(function (r) { return r.json(); }).then(function (data) {
         if (mine !== seq) return;
-        if (!data || data.status !== 'ok') { note('Search is not available right now.'); return; }
+        if (!data || data.status !== 'ok') { note(T['pref.js_search_unavailable']); return; }
         var blocked = otherIds();
         var list = data.results.filter(function (p) { return blocked.indexOf(String(p.id)) === -1; });
-        if (!list.length) { note('No matching places.'); return; }
+        if (!list.length) { note(T['pref.js_no_places']); return; }
         results.innerHTML = '';
         list.forEach(function (p) {
           var b = document.createElement('button');
@@ -771,7 +761,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
           results.appendChild(b);
         });
         results.classList.add('open');
-      }).catch(function () { if (mine === seq) note('Search is not available right now.'); });
+      }).catch(function () { if (mine === seq) note(T['pref.js_search_unavailable']); });
     }
     input.addEventListener('input', function () { clearTimeout(timer); timer = setTimeout(search, 250); });
     input.addEventListener('keydown', function (e) { if (e.key === 'Enter') e.preventDefault(); });
@@ -806,8 +796,8 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       }
       if (partySizeHelp) {
         partySizeHelp.textContent = type === 'family'
-          ? 'Enter the actual number of family members travelling together.'
-          : 'Enter the actual group size. This controls transport, meals, attraction tickets, and hotel room estimates.';
+          ? T['pref.js_family_help']
+          : T['pref.js_group_help'];
       }
     }
   }
@@ -836,7 +826,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
       if (!days.reportValidity() || !budget.reportValidity() || !transport.reportValidity()) return false;
       if (partySize && !partySize.reportValidity()) return false;
       if (checked.length === 0) {
-        alert('Please select at least one interest.');
+        alert(T['pref.js_select_interest']);
         return false;
       }
     }
@@ -862,18 +852,18 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     var interests = Array.prototype.map.call(document.querySelectorAll('[name="interests[]"]:checked'), function(el) {
       return el.parentNode.textContent.trim();
     }).join(', ') || '-';
-    document.getElementById('summaryDays').textContent = days + ' day(s)';
+    document.getElementById('summaryDays').textContent = T['pref.days_unit'].replace('{n}', days);
     document.getElementById('summaryBudget').textContent = budget === '-' ? '-' : 'RM ' + budget;
     document.getElementById('summaryBudgetTier').textContent = budgetTier;
     document.getElementById('summaryTransport').textContent = transport;
     document.getElementById('summaryTravellerType').textContent = travellerType;
-    document.getElementById('summaryPartySize').textContent = partySize === '-' ? '-' : partySize + ' traveller(s)';
+    document.getElementById('summaryPartySize').textContent = partySize === '-' ? '-' : T['pref.travellers_unit'].replace('{n}', partySize);
     document.getElementById('summaryPace').textContent = pace;
     document.getElementById('summaryDietary').textContent = dietary;
     document.getElementById('summaryVisitTime').textContent = visitTime;
     document.getElementById('summaryInterests').textContent = interests;
-    document.getElementById('summaryState').textContent = selectedText(stateSel) || 'Any State';
-    document.getElementById('summaryDistrict').textContent = selectedText(distSel) || 'Any District';
+    document.getElementById('summaryState').textContent = selectedText(stateSel) || T['opt.any_state'];
+    document.getElementById('summaryDistrict').textContent = selectedText(distSel) || T['opt.any_district'];
     document.getElementById('summaryAccessibility').textContent = accessibility;
   }
 

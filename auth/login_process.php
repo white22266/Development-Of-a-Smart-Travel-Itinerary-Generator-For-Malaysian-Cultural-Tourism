@@ -3,6 +3,7 @@
 session_start();
 require_once "../config/db_connect.php";
 require_once "../config/api_keys.php";
+require_once "../config/i18n.php";
 require_once __DIR__ . "/../vendor/autoload.php";
 require_once __DIR__ . "/remember_me.php";
 
@@ -49,7 +50,7 @@ if ($mode === "request_reset") {
     if (!in_array($role, ["admin", "traveller"], true)) $role = "traveller";
 
     if ($email === "" || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION["form_errors"] = ["Please enter a valid email."];
+        $_SESSION["form_errors"] = [t('auth.err_email_valid')];
         header("Location: login.php?action=forgot&role=" . urlencode($role));
         exit;
     }
@@ -63,7 +64,7 @@ if ($mode === "request_reset") {
         $stmt = $conn->prepare("UPDATE travellers SET reset_token=?, reset_expires=? WHERE email=? LIMIT 1");
     }
     if (!$stmt) {
-        $_SESSION["form_errors"] = ["System error. Please try again."];
+        $_SESSION["form_errors"] = [t('auth.err_system')];
         header("Location: login.php?action=forgot&role=" . urlencode($role));
         exit;
     }
@@ -82,9 +83,8 @@ if ($mode === "request_reset") {
 
     // Security: always show same message
     if ($updated) {
-        $subject = "Reset your password";
-        $message = "Click the link below to reset your password (valid for 1 hour):\n\n"
-            . $resetLink . "\n\nIf you did not request this, ignore this email.";
+        $subject = t('auth.mail_reset_subject');
+        $message = t('auth.mail_reset_body', ['link' => $resetLink]);
 
         $sent = sendSmtpMail($email, $subject, $message);
         if (!$sent) {
@@ -92,7 +92,7 @@ if ($mode === "request_reset") {
         }
     }
 
-    $_SESSION["success_message"] = "If the email exists, a reset link has been sent.";
+    $_SESSION["success_message"] = t('auth.reset_sent');
     header("Location: login.php?role=" . urlencode($role));
     exit;
 }
@@ -108,17 +108,17 @@ if ($mode === "do_reset") {
     $confirm = $_POST["confirm_new_password"] ?? "";
 
     if ($email === "" || $token === "" || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $_SESSION["form_errors"] = ["Invalid reset link."];
+        $_SESSION["form_errors"] = [t('auth.err_reset_invalid')];
         header("Location: login.php?role=" . urlencode($role));
         exit;
     }
     if (strlen($newPw) < 6) {
-        $_SESSION["form_errors"] = ["Password must be at least 6 characters."];
+        $_SESSION["form_errors"] = [t('auth.err_password_len')];
         header("Location: login.php?action=reset&role=" . urlencode($role) . "&email=" . urlencode($email) . "&token=" . urlencode($token));
         exit;
     }
     if ($newPw !== $confirm) {
-        $_SESSION["form_errors"] = ["Password confirmation does not match."];
+        $_SESSION["form_errors"] = [t('auth.err_reset_confirm')];
         header("Location: login.php?action=reset&role=" . urlencode($role) . "&email=" . urlencode($email) . "&token=" . urlencode($token));
         exit;
     }
@@ -142,12 +142,12 @@ if ($mode === "do_reset") {
                     $upd->execute();
                     $upd->close();
 
-                    $_SESSION["success_message"] = "Password reset successful. Please login.";
+                    $_SESSION["success_message"] = t('auth.reset_done');
                 } else {
-                    $_SESSION["form_errors"] = ["Reset link expired. Please request again."];
+                    $_SESSION["form_errors"] = [t('auth.err_reset_expired')];
                 }
             } else {
-                $_SESSION["form_errors"] = ["Invalid reset link."];
+                $_SESSION["form_errors"] = [t('auth.err_reset_invalid')];
             }
             $stmt->close();
         } else {
@@ -171,18 +171,18 @@ if ($mode === "do_reset") {
                     $upd->execute();
                     $upd->close();
 
-                    $_SESSION["success_message"] = "Password reset successful. Please login.";
+                    $_SESSION["success_message"] = t('auth.reset_done');
                 } else {
-                    $_SESSION["form_errors"] = ["Reset link expired. Please request again."];
+                    $_SESSION["form_errors"] = [t('auth.err_reset_expired')];
                 }
             } else {
-                $_SESSION["form_errors"] = ["Invalid reset link."];
+                $_SESSION["form_errors"] = [t('auth.err_reset_invalid')];
             }
             $stmt->close();
         }
     } catch (Throwable $e) {
         error_log("Reset error: " . $e->getMessage());
-        $_SESSION["form_errors"] = ["System error. Please try again."];
+        $_SESSION["form_errors"] = [t('auth.err_system')];
     }
 
     header("Location: login.php?role=" . urlencode($role));
@@ -200,9 +200,9 @@ if (!in_array($role, ["admin", "traveller"], true)) {
 }
 
 if ($email === "" || $password === "") {
-    $errors[] = "Email and password are required.";
+    $errors[] = t('auth.err_required');
 } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors[] = "Invalid email format.";
+    $errors[] = t('auth.err_email_format');
 }
 
 if (!empty($errors)) {
@@ -235,7 +235,7 @@ try {
 
             if ($role === "traveller" && (int)($row["is_active"] ?? 0) !== 1) {
                 $stmt->close();
-                $_SESSION["form_errors"] = ["Please activate your account via the email link before login."];
+                $_SESSION["form_errors"] = [t('auth.err_not_active')];
                 $_SESSION["old_input"] = ["email" => $email, "role" => $role];
                 header("Location: login.php?role=traveller");
                 exit;
@@ -271,10 +271,10 @@ try {
                 exit;
             }
         } else {
-            $errors[] = "Incorrect password.";
+            $errors[] = t('auth.err_password');
         }
     } else {
-        $errors[] = "Account not found.";
+        $errors[] = t('auth.err_no_account');
     }
 
     $stmt->close();
@@ -285,7 +285,7 @@ try {
     exit;
 } catch (Throwable $e) {
     error_log("Login error: " . $e->getMessage());
-    $_SESSION["form_errors"] = ["Login failed due to a system error. Please try again."];
+    $_SESSION["form_errors"] = [t('auth.err_login_system')];
     $_SESSION["old_input"] = ["email" => $email, "role" => $role];
     header("Location: login.php?role=" . urlencode($role));
     exit;

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
   header("Location: ../auth/login.php?role=traveller");
@@ -13,7 +14,7 @@ if ($travellerId <= 0) {
   exit;
 }
 
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 $errors = $_SESSION["form_errors"] ?? [];
 $successMessage = $_SESSION["success_message"] ?? "";
 unset($_SESSION["form_errors"], $_SESSION["success_message"]);
@@ -58,6 +59,11 @@ function pref_human_label(?string $value): string {
   return ucwords(str_replace(["_", "-"], " ", $value));
 }
 
+/** Label of a fixed choice (group: transport, type, pace, diet, visit, interest) in the current language. */
+function pref_choice_label(string $group, ?string $value): string {
+  return t_choice($group, $value);
+}
+
 function pref_rm(float $amount): string {
   return "RM " . number_format($amount, 2);
 }
@@ -65,7 +71,7 @@ function pref_rm(float $amount): string {
 function pref_list_label(?string $csv): string {
   $parts = array_values(array_filter(array_map("trim", explode(",", (string)$csv))));
   if (empty($parts)) return "-";
-  return implode(", ", array_map("pref_human_label", $parts));
+  return implode(", ", array_map(fn($part) => pref_choice_label("interest", $part), $parts));
 }
 
 function pref_party_size(array $pref): int {
@@ -86,16 +92,20 @@ function pref_location_label(array $pref): string {
   if ($state !== "" && $district !== "") return $state . " > " . $district;
   if ($state !== "") return $state;
   if ($district !== "") return $district;
-  return "All Malaysia";
+  return t('sel.all_malaysia');
 }
 
 function pref_short_label(array $pref): string {
   $days = max(1, (int)($pref["trip_days"] ?? 1));
   $nights = max(0, $days - 1);
-  return "Preference #" . (int)$pref["preference_id"]
-    . " - " . $days . "D" . $nights . "N " . pref_location_label($pref)
-    . " - " . pref_rm((float)($pref["budget"] ?? 0))
-    . " - " . pref_human_label((string)($pref["travel_pace"] ?? "normal")) . " Pace";
+  return t('sel.short_label', [
+    'id' => (int)$pref["preference_id"],
+    'days' => $days,
+    'nights' => $nights,
+    'location' => pref_location_label($pref),
+    'budget' => pref_rm((float)($pref["budget"] ?? 0)),
+    'pace' => pref_choice_label("pace", (string)($pref["travel_pace"] ?? "normal")),
+  ]);
 }
 
 $preferencePayload = [];
@@ -110,17 +120,18 @@ foreach ($preferences as $pref) {
     "budget_amount" => $budget,
     "budget_per_day" => $budget / $days,
     "party_size" => $partySize,
-    "duration" => $days . " day(s)",
+    "duration" => t('pref.days_unit', ['n' => $days]),
     "budget" => pref_rm($budget),
-    "transport" => pref_human_label((string)($pref["transport_type"] ?? "-")),
+    "transport" => pref_choice_label("transport", (string)($pref["transport_type"] ?? "-")),
     "transport_type" => strtolower((string)($pref["transport_type"] ?? "")),
-    "traveller" => pref_human_label((string)($pref["traveller_type"] ?? "solo")) . " / " . $partySize . " traveller(s)",
+    "traveller" => pref_choice_label("type", (string)($pref["traveller_type"] ?? "solo")) . " / " . t('pref.travellers_unit', ['n' => $partySize]),
+    "traveller_type_label" => pref_choice_label("type", (string)($pref["traveller_type"] ?? "solo")),
     "traveller_type" => strtolower((string)($pref["traveller_type"] ?? "solo")),
-    "pace" => pref_human_label((string)($pref["travel_pace"] ?? "normal")),
+    "pace" => pref_choice_label("pace", (string)($pref["travel_pace"] ?? "normal")),
     "pace_value" => strtolower((string)($pref["travel_pace"] ?? "normal")),
-    "dietary" => pref_human_label((string)($pref["dietary_preference"] ?? "none")),
+    "dietary" => pref_choice_label("diet", (string)($pref["dietary_preference"] ?? "none")),
     "dietary_value" => strtolower((string)($pref["dietary_preference"] ?? "none")),
-    "visit_time" => pref_human_label((string)($pref["preferred_visit_time"] ?? "any")),
+    "visit_time" => pref_choice_label("visit", (string)($pref["preferred_visit_time"] ?? "any")),
     "visit_time_value" => strtolower((string)($pref["preferred_visit_time"] ?? "any")),
     "location" => pref_location_label($pref),
     "interests" => pref_list_label((string)($pref["interests"] ?? "")),
@@ -129,11 +140,11 @@ foreach ($preferences as $pref) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Itinerary Generator | Smart Travel Itinerary Generator</title>
+  <title><?php echo te('nav.generator'); ?> | Smart Travel Itinerary Generator</title>
   <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
   <style>
     .generator-steps {
@@ -404,53 +415,54 @@ foreach ($preferences as $pref) {
       <div class="brand-badge">ST</div>
       <div class="brand-title">
         <strong>Smart Travel Itinerary Generator</strong>
-        <span>Smart Itinerary Generator</span>
+        <span><?php echo te('nav.generator'); ?></span>
       </div>
     </div>
 
-    <nav class="nav" aria-label="Sidebar Navigation">
-      <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-      <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-      <a class="active" href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-      <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-      <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-      <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-      <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+    <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+      <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+      <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+      <a class="active" href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+      <a href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+      <a href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+      <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+      <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
     </nav>
+    <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
 
     <div class="sidebar-footer">
-      <div class="small">Logged in as:</div>
+      <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
       <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-      <div class="chip">Role: Traveller</div>
+      <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
     </div>
   </aside>
 
   <main class="content">
     <div class="topbar">
       <div class="page-title">
-        <h1>Smart Itinerary Generator</h1>
-        <p>Confirm your saved preference, start date and starting location before generating your cultural itinerary.</p>
+        <h1><?php echo te('nav.generator'); ?></h1>
+        <p><?php echo te('sel.page_subtitle'); ?></p>
       </div>
       <div class="actions">
-        <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php">Back to Dashboard</a>
-        <button type="button" class="btn btn-primary" id="aiAssistantToggle" aria-expanded="false">AI Travel Assistant</button>
+        <a class="btn btn-ghost" href="../traveller/traveller_dashboard.php"><?php echo te('common.back_dashboard'); ?></a>
+        <button type="button" class="btn btn-primary" id="aiAssistantToggle" aria-expanded="false"><?php echo te('sel.ai_btn'); ?></button>
       </div>
     </div>
 
     <section class="grid">
       <div class="card col-12">
-        <h3>Generate Itinerary</h3>
-        <p class="meta">Your latest saved preference will be auto-selected after you submit the preference form.</p>
+        <h3><?php echo te('sel.generate_title'); ?></h3>
+        <p class="meta"><?php echo te('sel.generate_meta'); ?></p>
 
         <?php if ($successMessage !== ""): ?>
-          <div class="notice-box"><strong><?php echo htmlspecialchars($successMessage); ?></strong><br>Now confirm your start date and starting location.</div>
+          <div class="notice-box"><strong><?php echo htmlspecialchars($successMessage); ?></strong><br><?php echo te('sel.notice_next'); ?></div>
         <?php elseif ($fromPreferenceSaved): ?>
-          <div class="notice-box"><strong>Preference saved successfully.</strong><br>Now confirm your start date and starting location before generating the itinerary.</div>
+          <div class="notice-box"><strong><?php echo te('sel.notice_saved'); ?></strong><br><?php echo te('sel.notice_saved_next'); ?></div>
         <?php endif; ?>
 
         <?php if (!empty($errors)): ?>
           <div class="error-box">
-            <strong>Please fix the following:</strong>
+            <strong><?php echo te('sel.fix_following'); ?></strong>
             <ul>
               <?php foreach ($errors as $err): ?>
                 <li><?php echo htmlspecialchars((string)$err); ?></li>
@@ -460,29 +472,29 @@ foreach ($preferences as $pref) {
         <?php endif; ?>
 
         <div class="generator-steps">
-          <div class="generator-step"><div class="step-num">1</div><strong>Select Preference</strong><span>The latest saved preference is auto-selected.</span></div>
-          <div class="generator-step"><div class="step-num">2</div><strong>Start Date</strong><span>Choose the first day of your trip.</span></div>
-          <div class="generator-step"><div class="step-num">3</div><strong>Starting Location</strong><span>Search for a place or address, or use my location.</span></div>
-          <div class="generator-step"><div class="step-num">4</div><strong>Generate</strong><span>Create a day-by-day cultural itinerary.</span></div>
+          <div class="generator-step"><div class="step-num">1</div><strong><?php echo te('sel.step1_title'); ?></strong><span><?php echo te('sel.step1_desc'); ?></span></div>
+          <div class="generator-step"><div class="step-num">2</div><strong><?php echo te('sel.step2_title'); ?></strong><span><?php echo te('sel.step2_desc'); ?></span></div>
+          <div class="generator-step"><div class="step-num">3</div><strong><?php echo te('sel.step3_title'); ?></strong><span><?php echo te('sel.step3_desc'); ?></span></div>
+          <div class="generator-step"><div class="step-num">4</div><strong><?php echo te('sel.step4_title'); ?></strong><span><?php echo te('sel.step4_desc'); ?></span></div>
         </div>
       </div>
 
       <?php if (empty($preferences)): ?>
         <div class="card col-12">
-          <h3>No saved preference found</h3>
-          <p class="meta">Please create a travel preference first. The itinerary generator needs your budget, interests, state, district, transport type and travel pace.</p>
-          <a class="btn btn-primary" href="../preference/preference_form.php">Create Travel Preference</a>
+          <h3><?php echo te('sel.none_title'); ?></h3>
+          <p class="meta"><?php echo te('sel.none_meta'); ?></p>
+          <a class="btn btn-primary" href="../preference/preference_form.php"><?php echo te('sel.none_btn'); ?></a>
         </div>
       <?php else: ?>
         <div class="card col-12">
-          <h3>Confirm Itinerary Details</h3>
-          <p class="meta">Only three details are needed here before the itinerary can be generated.</p>
+          <h3><?php echo te('sel.confirm_title'); ?></h3>
+          <p class="meta"><?php echo te('sel.confirm_meta'); ?></p>
 
           <form id="generatorForm" method="post" action="generate_itinerary.php">
             <div class="field-group">
-              <label for="preference_id">Step 1: Saved Travel Preference</label>
+              <label for="preference_id"><?php echo te('sel.f_pref'); ?></label>
               <select name="preference_id" id="preference_id" required>
-                <option value="" disabled <?php echo $preselectedPreferenceId <= 0 ? "selected" : ""; ?>>Select one preference</option>
+                <option value="" disabled <?php echo $preselectedPreferenceId <= 0 ? "selected" : ""; ?>><?php echo te('sel.f_pref_choose'); ?></option>
                 <?php foreach ($preferences as $p): ?>
                   <?php $pid = (int)$p["preference_id"]; ?>
                   <option value="<?php echo $pid; ?>" <?php echo $pid === $preselectedPreferenceId ? "selected" : ""; ?>>
@@ -490,100 +502,100 @@ foreach ($preferences as $pref) {
                   </option>
                 <?php endforeach; ?>
               </select>
-              <div class="field-help">After submitting a preference, the latest preference is automatically selected here.</div>
+              <div class="field-help"><?php echo te('sel.f_pref_help'); ?></div>
             </div>
 
             <div class="preference-analysis-grid is-hidden" id="preferenceAnalysisGrid">
               <div class="analysis-panel">
-                <h4>Selected Preference Summary</h4>
+                <h4><?php echo te('sel.summary_title'); ?></h4>
                 <div id="preferenceSummary" class="analysis-rows"></div>
               </div>
               <div class="analysis-panel">
-                <h4>System Analysis Result</h4>
+                <h4><?php echo te('sel.analysis_title'); ?></h4>
                 <div id="systemAnalysisResult" class="analysis-rows"></div>
               </div>
             </div>
 
             <div class="field-group" id="startDateField">
-              <label for="start_date">Step 2: Start Date</label>
+              <label for="start_date"><?php echo te('sel.f_date'); ?></label>
               <input type="date" name="start_date" id="start_date" min="<?php echo date('Y-m-d'); ?>" required>
-              <div class="field-help">This date is used to arrange itinerary schedule and opening-time checks.</div>
+              <div class="field-help"><?php echo te('sel.f_date_help'); ?></div>
             </div>
 
             <div class="field-group">
-              <label for="origin_name">Step 3: Starting Location</label>
+              <label for="origin_name"><?php echo te('sel.f_origin'); ?></label>
               <div class="location-input-row">
-                <input type="text" name="origin_name" id="origin_name" placeholder="Type a city or address, e.g. Johor Bahru, Kuala Lumpur..." autocomplete="off" required>
-                <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn">Use My Location</button>
+                <input type="text" name="origin_name" id="origin_name" placeholder="<?php echo te('sel.origin_placeholder'); ?>" autocomplete="off" required>
+                <button type="button" class="btn btn-ghost" id="useCurrentLocationBtn"><?php echo te('sel.use_location'); ?></button>
               </div>
               <input type="hidden" name="origin_lat" id="origin_lat">
               <input type="hidden" name="origin_lng" id="origin_lng">
               <div class="field-help" id="locationStatus">
-                Required. Type a place or address and choose a result, use your current location, or ask the assistant to confirm a starting location.
+                <?php echo te('sel.origin_status'); ?>
               </div>
             </div>
 
             <div class="field-group" id="endPointField">
-              <label>End point (optional)</label>
+              <label><?php echo te('sel.end_label'); ?></label>
               <label style="display:flex; gap:8px; align-items:center; font-weight:400;">
-                <input type="radio" name="end_mode" value="start" id="endModeStart" checked> End the trip at the starting point
+                <input type="radio" name="end_mode" value="start" id="endModeStart" checked> <?php echo te('sel.end_start'); ?>
               </label>
               <label style="display:flex; gap:8px; align-items:center; font-weight:400;">
-                <input type="radio" name="end_mode" value="other" id="endModeOther"> End somewhere else
+                <input type="radio" name="end_mode" value="other" id="endModeOther"> <?php echo te('sel.end_other'); ?>
               </label>
               <div id="endPointBox" hidden style="margin-top:8px;">
-                <input type="text" name="end_name" id="end_name" placeholder="Type a city or address, e.g. Kuala Lumpur Sentral..." autocomplete="off" disabled>
+                <input type="text" name="end_name" id="end_name" placeholder="<?php echo te('sel.end_placeholder'); ?>" autocomplete="off" disabled>
                 <input type="hidden" name="end_lat" id="end_lat" disabled>
                 <input type="hidden" name="end_lng" id="end_lng" disabled>
-                <div class="field-help" id="endLocationStatus">Type a place or address and choose a result.</div>
+                <div class="field-help" id="endLocationStatus"><?php echo te('sel.end_status'); ?></div>
               </div>
             </div>
 
             <div class="actions generate-actions">
-              <button type="submit" class="btn btn-primary">Generate Itinerary</button>
+              <button type="submit" class="btn btn-primary"><?php echo te('sel.generate_title'); ?></button>
             </div>
           </form>
         </div>
 
         <div class="card col-12 ai-assistant-card is-hidden" id="aiAssistantCard">
-          <h3>AI Travel Assistant</h3>
-          <p class="meta">Ask the AI assistant if you are unsure about the start date, starting location, route plan or selected preference. AI gives guidance only; the official itinerary is still generated by system rules.</p>
+          <h3><?php echo te('sel.ai_title'); ?></h3>
+          <p class="meta"><?php echo te('sel.ai_meta'); ?></p>
           <div class="ai-chat-body" id="aiChatBody">
-            <div class="ai-msg bot">Hi, I can help you understand your selected preference and decide a suitable starting location before generating the itinerary.</div>
+            <div class="ai-msg bot"><?php echo te('sel.ai_hello'); ?></div>
           </div>
           <div class="ai-quick-actions">
-            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="Suggest a suitable starting location based on my selected preference.">Suggest starting location</button>
-            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="Explain whether my selected preference is suitable for generating an itinerary.">Check my preference</button>
-            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="What should I confirm before clicking Generate Itinerary?">Before generate</button>
+            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="<?php echo te('sel.ai_p1'); ?>"><?php echo te('sel.ai_q1'); ?></button>
+            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="<?php echo te('sel.ai_p2'); ?>"><?php echo te('sel.ai_q2'); ?></button>
+            <button type="button" class="btn btn-ghost btn-small" data-ai-prompt="<?php echo te('sel.ai_p3'); ?>"><?php echo te('sel.ai_q3'); ?></button>
           </div>
           <form class="ai-chat-form" id="aiChatForm">
-            <input type="text" id="aiQuestion" placeholder="Ask AI, e.g. Is KL Sentral a good starting location?" autocomplete="off">
-            <button type="submit" class="btn btn-primary">Ask AI</button>
+            <input type="text" id="aiQuestion" placeholder="<?php echo te('sel.ai_placeholder'); ?>" autocomplete="off">
+            <button type="submit" class="btn btn-primary"><?php echo te('sel.ai_ask'); ?></button>
           </form>
         </div>
 
         <div class="card col-12">
           <details class="help-box">
-            <summary>Planning Rules and Route Strategy</summary>
+            <summary><?php echo te('sel.rules_title'); ?></summary>
             <div class="help-grid">
               <div class="help-subbox">
-                <h4>Travel Pace Controls Daily Schedule Density</h4>
+                <h4><?php echo te('sel.rules_pace_title'); ?></h4>
                 <ul>
-                  <li>Relaxed preference: target 3 places per day with about 90 minutes rest between stops.</li>
-                  <li>Normal preference: target 4 places per day with about 60 minutes rest between stops.</li>
-                  <li>Packed preference: target 5 places per day with about 30 minutes rest between stops.</li>
-                  <li>Food places count as real itinerary stops and are costed for the full party size.</li>
-                  <li>Food-only preferences become a food trail with about 4 to 6 food stops per day.</li>
+                  <li><?php echo te('sel.rules_pace1'); ?></li>
+                  <li><?php echo te('sel.rules_pace2'); ?></li>
+                  <li><?php echo te('sel.rules_pace3'); ?></li>
+                  <li><?php echo te('sel.rules_pace4'); ?></li>
+                  <li><?php echo te('sel.rules_pace5'); ?></li>
                 </ul>
               </div>
               <div class="help-subbox">
-                <h4>Route Strategy: Rule-Based Nearest-Next Routing</h4>
+                <h4><?php echo te('sel.rules_route_title'); ?></h4>
                 <ul>
-                  <li>The selected state is a hard boundary. The planner will not move to another state unless a new preference allows it.</li>
-                  <li>District and interests are applied by tiers: selected district + interests first, then selected district fallback, then nearest same-state districts.</li>
-                  <li>Interest is a soft preference, so it will not create empty days while valid same-state places still exist.</li>
-                  <li>Each next stop is chosen from the highest available tier using score, distance, opening time, budget, accessibility, rating and category diversity.</li>
-                  <li>Day 1 begins from the confirmed starting location. Later days continue from the previous day's last stop unless a confirmed hotel is available.</li>
+                  <li><?php echo te('sel.rules_route1'); ?></li>
+                  <li><?php echo te('sel.rules_route2'); ?></li>
+                  <li><?php echo te('sel.rules_route3'); ?></li>
+                  <li><?php echo te('sel.rules_route4'); ?></li>
+                  <li><?php echo te('sel.rules_route5'); ?></li>
                 </ul>
               </div>
             </div>
@@ -599,6 +611,7 @@ foreach ($preferences as $pref) {
 const preferenceData = <?php echo json_encode($preferencePayload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 const preselectedPreferenceId = <?php echo (int)$preselectedPreferenceId; ?>;
 const fromPreferenceSaved = <?php echo $fromPreferenceSaved ? "true" : "false"; ?>;
+const T = <?php echo i18n_js(['pref.travellers_unit', 'sel.js_duration', 'sel.js_budget', 'sel.js_transport', 'sel.js_type', 'sel.js_party', 'sel.js_pace', 'sel.js_location', 'sel.js_interests', 'sel.js_dietary', 'sel.js_visit', 'sel.js_profile_label', 'sel.js_profile', 'sel.js_budget_level', 'sel.js_route_scope', 'sel.js_route_scope_val', 'sel.js_activity_label', 'sel.js_transport_label', 'sel.js_transport_val', 'sel.js_interest_label', 'sel.js_food_label', 'sel.js_access_label', 'sel.js_budget_none', 'sel.js_budget_limited', 'sel.js_budget_moderate', 'sel.js_budget_comfortable', 'sel.js_activity_relaxed', 'sel.js_activity_packed', 'sel.js_activity_normal', 'sel.js_food_halal', 'sel.js_food_veg', 'sel.js_food_none', 'sel.js_access_none', 'sel.js_loc_confirmed', 'sel.js_loc_choose', 'sel.js_loc_searching', 'sel.js_loc_notfound', 'sel.js_end_confirmed', 'sel.js_end_type', 'sel.js_end_notfound', 'sel.js_my_location', 'sel.js_thinking', 'sel.js_ai_unavailable', 'sel.js_ai_down', 'sel.js_geo_unsupported', 'sel.js_geo_getting', 'sel.js_geo_failed', 'sel.js_need_pref', 'sel.js_need_date', 'sel.origin_status', 'sel.ai_btn', 'sel.ai_btn_hide']); ?>;
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, function (char) {
@@ -628,29 +641,29 @@ function renderAnalysisRows(rows) {
 
 function budgetLevel(pref) {
   const perDay = Number(pref.budget_per_day || 0);
-  if (perDay <= 0) return "Not enough budget data";
-  if (perDay < 100) return `Limited (${formatRm(perDay)} per day estimate)`;
-  if (perDay < 250) return `Moderate (${formatRm(perDay)} per day estimate)`;
-  return `Comfortable (${formatRm(perDay)} per day estimate)`;
+  if (perDay <= 0) return T["sel.js_budget_none"];
+  if (perDay < 100) return T["sel.js_budget_limited"].replace("{amount}", formatRm(perDay));
+  if (perDay < 250) return T["sel.js_budget_moderate"].replace("{amount}", formatRm(perDay));
+  return T["sel.js_budget_comfortable"].replace("{amount}", formatRm(perDay));
 }
 
 function activityRule(pref) {
   const pace = String(pref.pace_value || "normal");
-  if (pace === "relaxed") return "Light schedule with longer rest time between stops.";
-  if (pace === "packed") return "Denser schedule with shorter rest time between stops.";
-  return "Balanced schedule based on selected travel pace.";
+  if (pace === "relaxed") return T["sel.js_activity_relaxed"];
+  if (pace === "packed") return T["sel.js_activity_packed"];
+  return T["sel.js_activity_normal"];
 }
 
 function foodRule(pref) {
   const dietary = String(pref.dietary_value || "none");
-  if (dietary === "halal") return "Food places are filtered to halal records where available.";
-  if (dietary === "vegetarian") return "Food places are filtered to vegetarian-friendly records where available.";
-  return "No dietary restriction applied.";
+  if (dietary === "halal") return T["sel.js_food_halal"];
+  if (dietary === "vegetarian") return T["sel.js_food_veg"];
+  return T["sel.js_food_none"];
 }
 
 function accessibilityRule(pref) {
   const text = String(pref.accessibility || "").trim();
-  if (text === "" || text.toLowerCase() === "none") return "No special accessibility restriction";
+  if (text === "" || text.toLowerCase() === "none") return T["sel.js_access_none"];
   return text;
 }
 
@@ -672,28 +685,28 @@ function updatePreferenceSummary() {
   if (analysisGrid) analysisGrid.classList.remove("is-hidden");
 
   summaryBox.innerHTML = renderAnalysisRows([
-    ["Duration", pref.duration],
-    ["Budget", pref.budget],
-    ["Transport", pref.transport],
-    ["Traveller Type", titleCase(pref.traveller_type)],
-    ["Party Size", `${pref.party_size} traveller(s)`],
-    ["Pace", pref.pace],
-    ["Location", pref.location],
-    ["Interests", pref.interests],
-    ["Dietary", pref.dietary],
-    ["Visit Time", pref.visit_time],
+    [T["sel.js_duration"], pref.duration],
+    [T["sel.js_budget"], pref.budget],
+    [T["sel.js_transport"], pref.transport],
+    [T["sel.js_type"], pref.traveller_type_label],
+    [T["sel.js_party"], T["pref.travellers_unit"].replace("{n}", pref.party_size)],
+    [T["sel.js_pace"], pref.pace],
+    [T["sel.js_location"], pref.location],
+    [T["sel.js_interests"], pref.interests],
+    [T["sel.js_dietary"], pref.dietary],
+    [T["sel.js_visit"], pref.visit_time],
   ]);
 
   analysisBox.innerHTML = renderAnalysisRows([
-    ["Traveller Profile", `${pref.pace} ${titleCase(pref.traveller_type)} Traveller`],
-    ["Party Size", `${pref.party_size} traveller(s)`],
-    ["Budget Level", budgetLevel(pref)],
-    ["Route Scope", `${pref.location} first`],
-    ["Activity Rule", activityRule(pref)],
-    ["Transport Rule", `${pref.transport} route mode with daily distance limit`],
-    ["Interest Rule", pref.interests],
-    ["Food Rule", foodRule(pref)],
-    ["Accessibility Rule", accessibilityRule(pref)],
+    [T["sel.js_profile_label"], T["sel.js_profile"].replace("{pace}", pref.pace).replace("{type}", pref.traveller_type_label)],
+    [T["sel.js_party"], T["pref.travellers_unit"].replace("{n}", pref.party_size)],
+    [T["sel.js_budget_level"], budgetLevel(pref)],
+    [T["sel.js_route_scope"], T["sel.js_route_scope_val"].replace("{location}", pref.location)],
+    [T["sel.js_activity_label"], activityRule(pref)],
+    [T["sel.js_transport_label"], T["sel.js_transport_val"].replace("{transport}", pref.transport)],
+    [T["sel.js_interest_label"], pref.interests],
+    [T["sel.js_food_label"], foodRule(pref)],
+    [T["sel.js_access_label"], accessibilityRule(pref)],
   ]);
 }
 
@@ -720,9 +733,9 @@ function clearOriginCoords() {
   lngInput.value = "";
   const originName = originInput.value.trim();
   if (originName === "") {
-    setLocationStatus("Required. Type a place or address and choose a result, use your current location, or ask the assistant to confirm a starting location.", null);
+    setLocationStatus(T["sel.origin_status"], null);
   } else {
-    setLocationStatus("Choose one of the results, or click Generate Itinerary to look the place up automatically.", null);
+    setLocationStatus(T["sel.js_loc_choose"], null);
   }
 }
 
@@ -730,7 +743,7 @@ function fillOrigin(name, lat, lng) {
   document.getElementById("origin_name").value = name;
   document.getElementById("origin_lat").value = lat;
   document.getElementById("origin_lng").value = lng;
-  setLocationStatus("Starting location confirmed with coordinates.", true);
+  setLocationStatus(T["sel.js_loc_confirmed"], true);
 }
 
 // Results appear while the traveller types. They come from OpenStreetMap data through this
@@ -751,7 +764,7 @@ async function geocodeOriginIfNeeded() {
   if (name === "") return false;
 
   try {
-    setLocationStatus("Searching location coordinates...", null);
+    setLocationStatus(T["sel.js_loc_searching"], null);
     const response = await fetch("../api/geo_search.php?q=" + encodeURIComponent(name), { credentials: "same-origin" });
     const data = await response.json();
     const best = data && Array.isArray(data.results) ? data.results[0] : null;
@@ -761,7 +774,7 @@ async function geocodeOriginIfNeeded() {
     }
   } catch (error) {}
 
-  setLocationStatus("Location coordinates not found. Please type a clearer starting point or use my location.", false);
+  setLocationStatus(T["sel.js_loc_notfound"], false);
   return false;
 }
 
@@ -777,7 +790,7 @@ function fillEnd(name, lat, lng) {
   document.getElementById("end_name").value = name;
   document.getElementById("end_lat").value = lat;
   document.getElementById("end_lng").value = lng;
-  setEndStatus("End point confirmed with coordinates.", true);
+  setEndStatus(T["sel.js_end_confirmed"], true);
 }
 
 function endPointInUse() {
@@ -801,12 +814,12 @@ async function geocodeEndIfNeeded() {
   const lat = document.getElementById("end_lat").value.trim();
   const lng = document.getElementById("end_lng").value.trim();
   if (name === "") {
-    setEndStatus("Type where the trip should end, or choose to end at the starting point.", false);
+    setEndStatus(T["sel.js_end_type"], false);
     return false;
   }
   if (lat !== "" && lng !== "") return true;
   try {
-    setEndStatus("Searching location coordinates...", null);
+    setEndStatus(T["sel.js_loc_searching"], null);
     const response = await fetch("../api/geo_search.php?q=" + encodeURIComponent(name), { credentials: "same-origin" });
     const data = await response.json();
     const best = data && Array.isArray(data.results) ? data.results[0] : null;
@@ -815,7 +828,7 @@ async function geocodeEndIfNeeded() {
       return true;
     }
   } catch (error) {}
-  setEndStatus("Location coordinates not found. Please type a clearer end point.", false);
+  setEndStatus(T["sel.js_end_notfound"], false);
   return false;
 }
 
@@ -823,9 +836,9 @@ async function reverseGeocodeCurrentLocation(lat, lng) {
   try {
     const response = await fetch("../api/geo_search.php?lat=" + encodeURIComponent(lat) + "&lng=" + encodeURIComponent(lng), { credentials: "same-origin" });
     const data = await response.json();
-    return data && data.address ? data.address : "My Location";
+    return data && data.address ? data.address : T["sel.js_my_location"];
   } catch (error) {
-    return "My Location";
+    return T["sel.js_my_location"];
   }
 }
 
@@ -848,7 +861,7 @@ async function sendAiQuestion(questionText) {
   const originInput = document.getElementById("origin_name");
 
   appendAiMessage("user", question);
-  appendAiMessage("bot", "Thinking...");
+  appendAiMessage("bot", T["sel.js_thinking"]);
 
   const body = document.getElementById("aiChatBody");
   const thinkingMsg = body ? body.lastElementChild : null;
@@ -866,10 +879,10 @@ async function sendAiQuestion(questionText) {
     });
     const data = await response.json();
     if (thinkingMsg) {
-      thinkingMsg.textContent = data && data.answer ? data.answer : "AI response is unavailable.";
+      thinkingMsg.textContent = data && data.answer ? data.answer : T["sel.js_ai_unavailable"];
     }
   } catch (error) {
-    if (thinkingMsg) thinkingMsg.textContent = "AI service is currently unavailable. Please try again later.";
+    if (thinkingMsg) thinkingMsg.textContent = T["sel.js_ai_down"];
   }
 }
 
@@ -896,7 +909,7 @@ document.addEventListener("DOMContentLoaded", function () {
     endInput.addEventListener("input", function () {
       document.getElementById("end_lat").value = "";
       document.getElementById("end_lng").value = "";
-      setEndStatus("Choose one of the results, or click Generate Itinerary to look the place up automatically.", null);
+      setEndStatus(T["sel.js_loc_choose"], null);
     });
   }
   document.querySelectorAll('input[name="end_mode"]').forEach(function (r) {
@@ -916,10 +929,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (currentLocationBtn) {
     currentLocationBtn.addEventListener("click", function () {
       if (!navigator.geolocation) {
-        setLocationStatus("Current location is not supported by this browser.", false);
+        setLocationStatus(T["sel.js_geo_unsupported"], false);
         return;
       }
-      setLocationStatus("Getting current location...", null);
+      setLocationStatus(T["sel.js_geo_getting"], null);
       navigator.geolocation.getCurrentPosition(
         async position => {
           const lat = position.coords.latitude;
@@ -927,7 +940,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const label = await reverseGeocodeCurrentLocation(lat, lng);
           fillOrigin(label, lat, lng);
         },
-        () => setLocationStatus("Unable to get current location. Please search a starting point manually.", false),
+        () => setLocationStatus(T["sel.js_geo_failed"], false),
         { enableHighAccuracy: true, timeout: 10000 }
       );
     });
@@ -938,7 +951,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const willOpen = aiCard.classList.contains("is-hidden");
       aiCard.classList.toggle("is-hidden", !willOpen);
       aiToggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
-      aiToggle.textContent = willOpen ? "Hide AI Travel Assistant" : "AI Travel Assistant";
+      aiToggle.textContent = willOpen ? T["sel.ai_btn_hide"] : T["sel.ai_btn"];
       if (willOpen) {
         setTimeout(() => aiCard.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
       }
@@ -966,11 +979,11 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
       if (!document.getElementById("preference_id").value) {
-        alert("Please select a saved travel preference first.");
+        alert(T["sel.js_need_pref"]);
         return;
       }
       if (!document.getElementById("start_date").value) {
-        alert("Please select a start date first.");
+        alert(T["sel.js_need_date"]);
         document.getElementById("start_date").focus();
         return;
       }

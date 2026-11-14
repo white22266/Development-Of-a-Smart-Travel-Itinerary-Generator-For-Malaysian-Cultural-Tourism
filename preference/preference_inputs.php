@@ -4,6 +4,8 @@
 // stops per day, party mix, interest weights, accessibility tags, must-see / avoid places).
 // No database and no session here, so they can be tested from the command line.
 
+require_once __DIR__ . '/../config/i18n.php';
+
 const PREF_ACCESS_TAGS = ['avoid_heat', 'avoid_stairs', 'elderly', 'low_walking', 'wheelchair'];
 const PREF_DAY_MIN = '06:00';
 const PREF_DAY_MAX = '23:00';
@@ -28,20 +30,20 @@ function pref_parse_day_window(string $start, string $end): array
     $minutes = [null, null];
     $min = pref_time_to_minutes(PREF_DAY_MIN);
     $max = pref_time_to_minutes(PREF_DAY_MAX);
-    foreach ([['Day start time', trim($start)], ['Day end time', trim($end)]] as $i => [$label, $raw]) {
+    foreach ([[t('pref.f_day_start'), trim($start)], [t('pref.f_day_end'), trim($end)]] as $i => [$label, $raw]) {
         if ($raw === '') continue;
         $m = pref_time_to_minutes($raw);
         if ($m === null) {
-            $errors[] = $label . ' is not a valid time.';
+            $errors[] = t('pref.err_time_invalid', ['field' => $label]);
         } elseif ($m < $min || $m > $max) {
-            $errors[] = $label . ' must be between ' . PREF_DAY_MIN . ' and ' . PREF_DAY_MAX . '.';
+            $errors[] = t('pref.err_time_range', ['field' => $label, 'min' => PREF_DAY_MIN, 'max' => PREF_DAY_MAX]);
         } else {
             $minutes[$i] = $m;
             $out[$i] = sprintf('%02d:%02d:00', intdiv($m, 60), $m % 60);
         }
     }
     if ($minutes[0] !== null && $minutes[1] !== null && $minutes[1] - $minutes[0] < PREF_DAY_MIN_SPAN_MINUTES) {
-        $errors[] = 'The day must end at least 3 hours after it starts.';
+        $errors[] = t('pref.err_day_span');
     }
     return [$out[0], $out[1], $errors];
 }
@@ -52,7 +54,7 @@ function pref_parse_stops(string $value): array
     $value = trim($value);
     if ($value === '') return [null, []];
     if (!ctype_digit($value) || (int)$value < 2 || (int)$value > 8) {
-        return [null, ['Stops per day must be a whole number from 2 to 8.']];
+        return [null, [t('pref.err_stops')]];
     }
     return [(int)$value, []];
 }
@@ -66,13 +68,14 @@ function pref_parse_party(string $adults, string $children, string $seniors): ar
 {
     $raw = ['Adults' => trim($adults), 'Children' => trim($children), 'Seniors' => trim($seniors)];
     if ($raw['Adults'] === '' && $raw['Children'] === '' && $raw['Seniors'] === '') return [null, []];
+    $names = ['Adults' => t('pref.adults'), 'Children' => t('pref.children'), 'Seniors' => t('pref.seniors')];
     $errors = [];
     $n = [];
     foreach ($raw as $label => $value) {
         if ($value === '') {
             $n[$label] = 0;
         } elseif (!ctype_digit($value) || (int)$value > 20) {
-            $errors[] = $label . ' must be a whole number from 0 to 20.';
+            $errors[] = t('pref.err_count', ['field' => $names[$label]]);
             $n[$label] = 0;
         } else {
             $n[$label] = (int)$value;
@@ -80,7 +83,7 @@ function pref_parse_party(string $adults, string $children, string $seniors): ar
     }
     if ($errors) return [null, $errors];
     if ($n['Adults'] + $n['Seniors'] < 1) {
-        return [null, ['At least one adult or senior must be travelling.']];
+        return [null, [t('pref.err_party_min')]];
     }
     return [[
         'adults' => $n['Adults'], 'children' => $n['Children'], 'seniors' => $n['Seniors'],
@@ -132,21 +135,21 @@ function pref_place_ids($posted): array
 function pref_check_place_lists($rawMust, $rawAvoid): array
 {
     $errors = [];
-    foreach (['Places I must see' => $rawMust, 'Places to avoid' => $rawAvoid] as $label => $raw) {
+    foreach ([t('pref.must_label') => $rawMust, t('pref.avoid_label') => $rawAvoid] as $label => $raw) {
         if ($raw === null || $raw === '') continue;
-        if (!is_array($raw)) { $errors[] = $label . ' is invalid.'; continue; }
+        if (!is_array($raw)) { $errors[] = t('pref.err_places_invalid', ['field' => $label]); continue; }
         foreach ($raw as $value) {
             $value = trim((string)$value);
             if ($value !== '' && (!ctype_digit($value) || (int)$value < 1)) {
-                $errors[] = $label . ' contains an invalid place.';
+                $errors[] = t('pref.err_places_contains', ['field' => $label]);
                 break;
             }
         }
     }
     $must = pref_place_ids($rawMust);
     $avoid = pref_place_ids($rawAvoid);
-    if (count($must) > PREF_PLACES_MAX) $errors[] = 'Choose at most ' . PREF_PLACES_MAX . ' places you must see.';
-    if (count($avoid) > PREF_PLACES_MAX) $errors[] = 'Choose at most ' . PREF_PLACES_MAX . ' places to avoid.';
-    if (array_intersect($must, $avoid)) $errors[] = 'A place cannot be both a must-see and a place to avoid.';
+    if (count($must) > PREF_PLACES_MAX) $errors[] = t('pref.err_must_max', ['max' => PREF_PLACES_MAX]);
+    if (count($avoid) > PREF_PLACES_MAX) $errors[] = t('pref.err_avoid_max', ['max' => PREF_PLACES_MAX]);
+    if (array_intersect($must, $avoid)) $errors[] = t('pref.err_both');
     return [$must, $avoid, $errors];
 }

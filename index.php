@@ -2,6 +2,7 @@
 // index.php
 session_start();
 require_once __DIR__ . "/config/db_connect.php";
+require_once __DIR__ . "/config/i18n.php";
 require_once __DIR__ . "/auth/remember_me.php";
 
 if (restore_remembered_login($conn)) {
@@ -14,7 +15,7 @@ if (restore_remembered_login($conn)) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
     <meta charset="UTF-8">
@@ -27,33 +28,31 @@ if (restore_remembered_login($conn)) {
     <div class="main-container">
         <div class="left-panel">
             <div class="brand-mark">ST</div>
-            <div class="entry-kicker">Malaysian Cultural Tourism</div>
+            <div class="entry-kicker"><?php echo te('home.kicker'); ?></div>
             <h1>Smart Travel Itinerary Generator</h1>
             <p>
-                A web-based system developed to support Malaysian cultural tourism by
-                automatically generating structured travel itineraries based on user
-                preferences such as budget, travel duration, and cultural interests.
+                <?php echo te('home.intro'); ?>
             </p>
             <div class="entry-list">
-                <div>Preference-based itinerary generation</div>
-                <div>Route map, cost summary, hotel and food support</div>
-                <div>AI assistant for itinerary refinement with local fallback</div>
+                <div><?php echo te('home.feature1'); ?></div>
+                <div><?php echo te('home.feature2'); ?></div>
+                <div><?php echo te('home.feature3'); ?></div>
             </div>
         </div>
         <div class="right-panel">
-            <h2 class="form-title">Welcome</h2>
+            <div class="lang-switch-wrap" style="text-align:right; margin-bottom:10px;"><?php echo i18n_switcher(); ?></div>
+            <h2 class="form-title"><?php echo te('home.welcome'); ?></h2>
             <p class="form-subtitle">
-                Please login or register first. System features are available only to verified users.
+                <?php echo te('home.subtitle'); ?>
             </p>
 
             <div class="welcome-panel">
                 <p>
-                    Continue to the access page to login as a traveller or admin.
-                    New travellers can create and verify an account before using the system.
+                    <?php echo te('home.panel_text'); ?>
                 </p>
                 <div class="button-row">
-                    <a href="role_select.php" class="btn btn-primary">Start Now</a>
-                    <a href="auth/register.php" class="btn btn-outline">Create Account</a>
+                    <a href="role_select.php" class="btn btn-primary"><?php echo te('home.start'); ?></a>
+                    <a href="auth/register.php" class="btn btn-outline"><?php echo te('home.create'); ?></a>
                 </div>
             </div>
         </div>

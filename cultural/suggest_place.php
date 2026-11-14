@@ -2,6 +2,7 @@
 // cultural/suggest_place.php
 session_start();
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../config/map_assets.php";
 require_once "../services/OsmDataService.php";
 
@@ -16,7 +17,7 @@ if ($travellerId <= 0) {
     exit;
 }
 
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 
 $success = $_SESSION["success_message"] ?? "";
 $errors = $_SESSION["form_errors"] ?? [];
@@ -75,20 +76,20 @@ if ($placeRes) {
 function sug_label($s)
 {
     $s = strtolower(trim((string)$s));
-    if ($s === "pending") return "Pending";
-    if ($s === "approved") return "Approved";
-    if ($s === "rejected") return "Rejected";
+    if ($s === "pending") return t('sug.status_pending');
+    if ($s === "approved") return t('sug.status_approved');
+    if ($s === "rejected") return t('sug.status_rejected');
     return ucfirst($s);
 }
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suggest New Place | Traveller</title>
+    <title><?php echo te('sug.title'); ?> | <?php echo te('role.traveller'); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <?php echo leaflet_tags(); ?>
     <style>
@@ -119,35 +120,36 @@ function sug_label($s)
                 <div class="brand-badge">ST</div>
                 <div class="brand-title">
                     <strong>Smart Travel Itinerary Generator</strong>
-                    <span>Suggest New Content</span>
+                    <span><?php echo te('sug.brand_sub'); ?></span>
                 </div>
             </div>
 
-      <nav class="nav" aria-label="Sidebar Navigation">
-        <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-        <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-        <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-        <a href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-        <a href="../cultural/cultural_guide.php" class="active"><span class="dot"></span> Cultural Guide Presentation</a>
-        <a class="nav-profile-link" href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-        <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+      <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+        <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+        <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+        <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+        <a href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+        <a href="../cultural/cultural_guide.php" class="active"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+        <a class="nav-profile-link" href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+        <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
       </nav>
+            <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
 
             <div class="sidebar-footer">
-                <div class="small">Logged in as:</div>
+                <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
                 <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-                <div class="chip">Role: Traveller</div>
+                <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
             </div>
         </aside>
 
         <main class="content">
             <div class="topbar">
                 <div class="page-title">
-                    <h1>Suggest New Place</h1>
-                    <p>Your submission will be reviewed by admin (Content Validation) before publishing.</p>
+                    <h1><?php echo te('sug.title'); ?></h1>
+                    <p><?php echo te('sug.subtitle'); ?></p>
                 </div>
                 <div class="actions" style="display:flex;gap:10px;flex-wrap:wrap;">
-                    <a class="btn btn-ghost" href="cultural_guide.php">Back</a>
+                    <a class="btn btn-ghost" href="cultural_guide.php"><?php echo te('common.back'); ?></a>
                 </div>
             </div>
 
@@ -170,16 +172,16 @@ function sug_label($s)
                     <form method="post" action="suggest_place_process.php" enctype="multipart/form-data">
                         <div class="grid" style="gap:12px;">
                             <div class="col-6">
-                                <label style="font-size:13px; font-weight:800;">Place Name *</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_name'); ?> *</label><br>
                                 <input type="text" name="name" id="suggestPlaceNameInput" required
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3">
-                                <label style="font-size:13px; font-weight:800;">State *</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_state'); ?> *</label><br>
                                 <select name="state" id="suggestStateSelect" required
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                    <option value="" disabled selected>Choose a state</option>
+                                    <option value="" disabled selected><?php echo te('sug.choose_state'); ?></option>
                                     <?php foreach ($stateOptions as $s): ?>
                                         <option value="<?php echo htmlspecialchars($s); ?>"><?php echo htmlspecialchars($s); ?></option>
                                     <?php endforeach; ?>
@@ -187,122 +189,122 @@ function sug_label($s)
                             </div>
 
                             <div class="col-3">
-                                <label style="font-size:13px; font-weight:800;">District</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_district'); ?></label><br>
                                 <input type="text" name="district" id="suggestDistrictInput"
-                                    placeholder="Filled in from the map"
+                                    placeholder="<?php echo te('sug.district_placeholder'); ?>"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3">
-                                <label style="font-size:13px; font-weight:800;">Category *</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_category'); ?> *</label><br>
                                 <select name="category" id="suggestCategorySelect" required
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                    <option value="" disabled selected>Choose a category</option>
+                                    <option value="" disabled selected><?php echo te('sug.choose_category'); ?></option>
                                     <?php foreach ($categoryOptions as $c): ?>
-                                        <option value="<?php echo htmlspecialchars($c); ?>"><?php echo htmlspecialchars(ucfirst($c)); ?></option>
+                                        <option value="<?php echo htmlspecialchars($c); ?>"><?php echo htmlspecialchars(t_choice('interest', $c)); ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
 
                             <div class="col-12">
-                                <label style="font-size:13px; font-weight:800;">Cultural Description *</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_description'); ?> *</label><br>
                                 <textarea name="description" id="suggestDescriptionInput" rows="4" required
-                                    placeholder="Explain cultural background / heritage significance / local tradition"
+                                    placeholder="<?php echo te('sug.description_placeholder'); ?>"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);"></textarea>
                             </div>
 
                             <div class="col-6">
-                                <label style="font-size:13px; font-weight:800;">Address</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_address'); ?></label><br>
                                 <input type="text" name="address" id="suggestAddressAutocomplete"
-                                    placeholder="Start typing a place or address..."
+                                    placeholder="<?php echo te('sug.address_placeholder'); ?>"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                <div class="meta" style="margin-top:6px;">Type a name or address and choose a result, or pin the place on the map below.</div>
+                                <div class="meta" style="margin-top:6px;"><?php echo te('sug.address_help'); ?></div>
                             </div>
 
                             <div class="col-3">
-                                <label style="font-size:13px; font-weight:800;">Latitude</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_lat'); ?></label><br>
                                 <input type="text" name="latitude" id="suggestLatitudeInput" placeholder="e.g. 1.4927000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3">
-                                <label style="font-size:13px; font-weight:800;">Longitude</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_lng'); ?></label><br>
                                 <input type="text" name="longitude" id="suggestLongitudeInput" placeholder="e.g. 103.7414000"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-12">
-                                <label style="font-size:13px; font-weight:800;">Pin the location on the map *</label>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_pin'); ?> *</label>
                                 <div id="suggestPinMap"></div>
-                                <div class="meta" style="margin-top:6px;">Click the map or drag the marker to correct the exact place location. Latitude and longitude will update automatically.</div>
+                                <div class="meta" style="margin-top:6px;"><?php echo te('sug.pin_help'); ?></div>
                                 <div class="duplicate-warning-box" id="suggestDuplicateBox">
-                                    <strong>Possible duplicate found</strong>
+                                    <strong><?php echo te('sug.dup_title'); ?></strong>
                                     <div id="suggestDuplicateList" style="margin-top:6px;"></div>
                                 </div>
                             </div>
 
                             <div class="col-3">
-                                <label style="font-size:13px; font-weight:800;">Estimated Cost (RM)</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_cost'); ?></label><br>
                                 <input type="number" step="0.01" min="0" name="estimated_cost" value="0.00"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-6">
-                                <label style="font-size:13px; font-weight:800;">Opening Hours</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_hours'); ?></label><br>
                                 <input type="text" name="opening_hours" id="suggestOpeningHoursInput" placeholder="e.g. 09:00 - 17:00"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3 suggest-festival-date-field" style="display:none;">
-                                <label style="font-size:13px; font-weight:800;">Festival Start Date *</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_festival_start'); ?> *</label><br>
                                 <input type="date" name="festival_start_date" id="suggestFestivalStartDateInput"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
                             </div>
 
                             <div class="col-3 suggest-festival-date-field" style="display:none;">
-                                <label style="font-size:13px; font-weight:800;">Festival End Date *</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_festival_end'); ?> *</label><br>
                                 <input type="date" name="festival_end_date" id="suggestFestivalEndDateInput"
                                     style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
-                                <div class="meta" style="margin-top:6px;">Required only for festival records.</div>
+                                <div class="meta" style="margin-top:6px;"><?php echo te('sug.festival_help'); ?></div>
                             </div>
 
                             <!-- CHANGE: Place Image below Opening Hours (as you requested) -->
                             <div class="col-12">
-                                <label style="font-size:13px; font-weight:800;">Place Image (optional)</label><br>
+                                <label style="font-size:13px; font-weight:800;"><?php echo te('sug.f_image'); ?></label><br>
                                 <input type="file" name="image" accept="image/jpeg,image/png,image/webp" style="width:100%; padding:8px;">
-                                <div class="meta">JPG, PNG or WEBP, up to 5 MB. Use a photo you took yourself or one you are allowed to share.</div>
+                                <div class="meta"><?php echo te('sug.image_help'); ?></div>
                             </div>
                         </div>
 
                         <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-                            <button class="btn btn-primary" type="submit">Submit Suggestion</button>
-                            <a class="btn btn-ghost" href="cultural_guide.php">Cancel</a>
+                            <button class="btn btn-primary" type="submit"><?php echo te('sug.submit'); ?></button>
+                            <a class="btn btn-ghost" href="cultural_guide.php"><?php echo te('common.cancel'); ?></a>
                         </div>
                     </form>
 
                     <hr class="sep" style="margin:18px 0;">
 
-                    <h3 style="margin:0 0 6px 0;">My Submissions</h3>
-                    <p class="meta" style="margin:0 0 12px 0;">Check approval status and admin replies (especially when rejected).</p>
+                    <h3 style="margin:0 0 6px 0;"><?php echo te('sug.my_title'); ?></h3>
+                    <p class="meta" style="margin:0 0 12px 0;"><?php echo te('sug.my_meta'); ?></p>
 
                     <div class="table-wrap">
                         <table>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Place</th>
-                                    <th>State</th>
-                                    <th>Category</th>
-                                    <th>Status</th>
-                                    <th>Created</th>
-                                    <th>Reviewed</th>
-                                    <th>Admin Reply</th>
+                                    <th><?php echo te('sug.col_id'); ?></th>
+                                    <th><?php echo te('sug.col_place'); ?></th>
+                                    <th><?php echo te('sug.col_state'); ?></th>
+                                    <th><?php echo te('sug.col_category'); ?></th>
+                                    <th><?php echo te('sug.col_status'); ?></th>
+                                    <th><?php echo te('sug.col_created'); ?></th>
+                                    <th><?php echo te('sug.col_reviewed'); ?></th>
+                                    <th><?php echo te('sug.col_reply'); ?></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php if (count($mySuggestions) === 0): ?>
                                     <tr>
-                                        <td colspan="8">No submissions yet.</td>
+                                        <td colspan="8"><?php echo te('sug.none'); ?></td>
                                     </tr>
                                 <?php else: ?>
                                     <?php foreach ($mySuggestions as $r): ?>
@@ -314,7 +316,7 @@ function sug_label($s)
                                             <td><?php echo (int)$r["suggestion_id"]; ?></td>
                                             <td><strong><?php echo htmlspecialchars($r["name"]); ?></strong></td>
                                             <td><?php echo htmlspecialchars($r["state"]); ?></td>
-                                            <td><?php echo htmlspecialchars($r["category"]); ?></td>
+                                            <td><?php echo htmlspecialchars(t_choice('interest', $r["category"])); ?></td>
                                             <td>
                                                 <span class="badge" style="<?php
                                                                             if ($status === 'approved') echo 'border-color: rgba(16,185,129,.35); font-weight:900;';
@@ -350,6 +352,7 @@ function sug_label($s)
 <script>
 var existingSuggestPlaces = <?php echo json_encode($existingPlaces, JSON_UNESCAPED_UNICODE); ?>;
 var STATE_BY_ISO = <?php echo json_encode(array_flip(OsmDataService::STATE_ISO)); ?>;
+var T = <?php echo i18n_js(['sug.js_match']); ?>;
 
 function toggleSuggestFestivalDates() {
     var category = document.getElementById('suggestCategorySelect');
@@ -456,7 +459,7 @@ function checkSuggestDuplicates() {
     list.innerHTML = matches.map(function(m) {
         var p = m.place;
         return '<div><strong>#' + p.place_id + ' ' + escapeSuggestHtml(p.name) + '</strong> - ' +
-            escapeSuggestHtml([p.district, p.state].filter(Boolean).join(', ')) + ' - ' + m.score + '% match</div>';
+            escapeSuggestHtml([p.district, p.state].filter(Boolean).join(', ')) + ' - ' + T['sug.js_match'].replace('{percent}', m.score) + '</div>';
     }).join('');
 }
 
