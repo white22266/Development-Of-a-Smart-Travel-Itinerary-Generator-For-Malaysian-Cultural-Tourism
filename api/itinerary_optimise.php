@@ -1,9 +1,9 @@
 <?php
 // api/itinerary_optimise.php
 // Puts the stops of every day of the traveller's own itinerary into the order with the least
-// travelling, measured on the road for the trip's transport, and times the days again
-// (see ItineraryRouteOptimiser). The traveller asks for this on the itinerary page, usually
-// after changing stops or hotels.
+// travelling, measured on the road for the trip's transport, and times the days again with the
+// planner's rules (see ItineraryRouteOptimiser); a stop no order can keep is removed. The
+// traveller asks for this on the itinerary page, usually after changing stops or hotels.
 //
 //   POST itinerary_id=<id>
 
@@ -58,5 +58,9 @@ if ($days) {
         . ($report["saved_min"] > 0 ? ", with " . $report["saved_min"] . " min less travelling" : "") . ". Times are up to date.";
 } else {
     $message = "Every day is already in its best order. Times are up to date.";
+}
+if (!empty($report["removed"])) {
+    // A stop that no order can keep within the trip's rules (opening hours, day window, distance) is taken out.
+    $message .= " Removed because no order keeps it within the trip's rules: " . implode("; ", $report["removed"]) . ".";
 }
 itinerary_optimise_reply(["status" => "ok", "message" => $message] + $report);

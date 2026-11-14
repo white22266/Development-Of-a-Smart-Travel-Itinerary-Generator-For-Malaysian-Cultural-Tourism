@@ -40,12 +40,7 @@ putenv('ROUTING_ESTIMATES_ONLY=' . (isset($options['road']) ? '0' : '1'));
 // THE PLANNER PIPELINE. This is the only part that should change when the planner gets a
 // single entry point. It mirrors itinerary/generate_itinerary.php (lines 66-97).
 // =====================================================================================
-require_once __DIR__ . '/../services/StrictFestivalCandidatePoolService.php';
-require_once __DIR__ . '/../services/RuleBasedItineraryPlannerService.php';
-require_once __DIR__ . '/../services/PlannerIntegrityService.php';
-require_once __DIR__ . '/../services/ItineraryTargetRefillService.php';
-require_once __DIR__ . '/../services/ItineraryTargetRebuildService.php';
-require_once __DIR__ . '/../services/ItineraryRouteOptimiser.php';
+require_once __DIR__ . '/../services/ItineraryGenerator.php';
 
 /**
  * Generate one itinerary as the generate page does.
@@ -56,28 +51,8 @@ require_once __DIR__ . '/../services/ItineraryRouteOptimiser.php';
  */
 function runPlannerPipeline(mysqli $conn, int $travellerId, int $preferenceId, array $trip): array
 {
-    $notes = [];
-    StrictFestivalCandidatePoolService::install($conn);   // the page does this for every request
-    try {
-        $planner = new RuleBasedItineraryPlannerService($conn);
-        $itineraryId = $planner->generate($travellerId, $preferenceId, $trip);
-        PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
-        ItineraryTargetRefillService::refill($conn, $travellerId, $itineraryId);
-        ItineraryTargetRebuildService::rebuildShortDays($conn, $travellerId, $itineraryId);
-        PlannerIntegrityService::enforceCumulativeAttractionBudget($conn, $travellerId, $itineraryId);
-
-        $conn->begin_transaction();
-        try {
-            ItineraryRouteOptimiser::optimise($conn, $itineraryId);
-            $conn->commit();
-        } catch (Throwable $e) {
-            $conn->rollback();
-            $notes[] = 'route optimisation skipped: ' . $e->getMessage();
-        }
-        return ['itinerary_id' => $itineraryId, 'notes' => $notes];
-    } finally {
-        $conn->query('DROP TEMPORARY TABLE IF EXISTS cultural_places');
-    }
+    $itineraryId = (new ItineraryGenerator($conn))->generate($travellerId, $preferenceId, $trip);
+    return ['itinerary_id' => $itineraryId, 'notes' => []];
 }
 // =====================================================================================
 

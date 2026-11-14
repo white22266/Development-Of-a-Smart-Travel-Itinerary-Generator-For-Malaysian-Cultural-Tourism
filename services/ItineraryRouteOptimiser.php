@@ -1,241 +1,367 @@
 <?php
 // services/ItineraryRouteOptimiser.php
-// Puts the stops of every day of a saved itinerary into the order with the least travelling,
-// measured on the road for the trip's transport, and times each day again in that order.
+// Puts the stops of a day into the order with the least travelling among the orders that keep
+// every rule of PlannerRules, and times the day again with the profile's rest.
 //
-// The planner does this while it builds a day. This service does it for an itinerary that
-// already exists: at the end of generation, after the steps that add stops to short days,
-// and when a traveller asks for it after changing stops or hotels.
+//   orderDay()  one day, used by ItineraryGenerator while it plans and once more after the
+//               trip is measured on the road
+//   optimise()  every day of a saved itinerary (the "Optimise route" button)
 //
-// What stays as it is: which places are visited and on which day, how long each visit
-// lasts, the break between visits and the time the day starts. Only the order changes, and
-// with it the clock times.
-//
-// The shortest order is not used when another one avoids what it gets wrong: reaching a
-// place while it is closed, an outdoor place in the midday heat for a traveller who asked
-// to avoid heat, or two meals one right after the other.
+// When the road figures make a stop impossible in every order, that stop is dropped; no time
+// that breaks a rule is ever stored, and no time is clamped.
 
 require_once __DIR__ . '/RouteService.php';
-require_once __DIR__ . '/OpeningHours.php';
+require_once __DIR__ . '/PlannerRules.php';
 require_once __DIR__ . '/ItineraryEditService.php';
 require_once __DIR__ . '/ItineraryHotelService.php';
 
-class ItineraryRouteOptimiser
+final class ItineraryRouteOptimiser
 {
-    /** How many of the shortest orders are checked against opening hours. */
+    /** Up to this many stops every order is compared. */
+    private const MAX_EXACT_STOPS = 8;
+    /** Beyond that, how many of RouteService's good orders are checked. */
     private const ORDERS_TO_CHECK = 720;
 
     /**
-     * Reorder and re-time every day, then store the legs and the total cost again.
-     * Call it inside the caller's transaction, if there is one.
+     * The best order of one day's stops.
      *
-     * @return array{days:array<int,array{stops:int,before_min:int,after_min:int,reordered:bool,problems:int}>,
-     *               reordered_days:int[],saved_min:int}
-     *         before_min and after_min are a day's travelling time in the old and the new order;
-     *         problems counts the visits that still start while the place is closed or too hot
+     * @param array{0:float,1:float} $start where the day begins
+     * @param array<int,array>       $stops each with 'place' (a place row) and 'point' [lat, lng]
+     * @param array $day date, first_leg_exempt (true on day 1: the leg from the trip's starting
+     *                   point is not counted by the distance limits), budget (null, or items and
+     *                   km of the rest of the trip plus reserve_km), end (the hotel point or null)
+     * @return array{stops:array,dropped:array,minutes:int,km:float}
+     *         stops: the kept stops in order, each with start, end, km, min (its leg) and wait;
+     *         dropped: stops no order can keep, each with the reason code of its failure;
+     *         minutes and km: the travelling of the kept order (including the leg to the hotel)
+     */
+    public static function orderDay(RouteService $route, array $profile, array $start, array $stops, array $day): array
+    {
+        $stops = array_values($stops);
+        $n = count($stops);
+        if ($n === 0) return ['stops' => [], 'dropped' => [], 'minutes' => 0, 'km' => 0.0];
+
+        $end = $day['end'] ?? null;
+        $seg = static fn(array $a, array $b): array => $route->getSegment((float)$a[0], (float)$a[1], (float)$b[0], (float)$b[1]);
+        $fromStart = [];
+        $between = [];
+        $toEnd = [];
+        foreach ($stops as $j => $stop) {
+            $fromStart[$j] = $seg($start, $stop['point']);
+            $toEnd[$j] = $end !== null ? $seg($stop['point'], $end) : ['distance_km' => 0.0, 'travel_time_min' => 0];
+            foreach ($stops as $i => $other) {
+                if ($i !== $j) $between[$i][$j] = $seg($other['point'], $stop['point']);
+            }
+        }
+
+        $best = null;
+        foreach (self::candidateOrders($route, $start, $stops, $end, $fromStart, $between, $toEnd) as $order) {
+            $planned = self::schedule($order, $stops, $profile, $day, $fromStart, $between, $toEnd);
+            if (count($planned['stops']) === $n) return $planned;
+            if ($best === null || count($planned['stops']) > count($best['stops'])
+                || (count($planned['stops']) === count($best['stops']) && $planned['minutes'] < $best['minutes'])) {
+                $best = $planned;
+            }
+        }
+        return $best;
+    }
+
+    /**
+     * Reorder and re-time every day of a saved itinerary, then store the legs and the total
+     * cost again. Call it inside the caller's transaction.
+     *
+     * @return array{days:array,reordered_days:int[],saved_min:int,removed:string[]}
      */
     public static function optimise(mysqli $conn, int $itineraryId): array
     {
-        $report = ['days' => [], 'reordered_days' => [], 'saved_min' => 0];
+        $report = ['days' => [], 'reordered_days' => [], 'saved_min' => 0, 'removed' => []];
 
-        $metaStmt = $conn->prepare("
-            SELECT i.start_date, i.origin_lat, i.origin_lng, tp.transport_type, tp.accessibility_needs
-            FROM itineraries i
-            LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
-            WHERE i.itinerary_id = ?
-            LIMIT 1
-        ");
-        $metaStmt->bind_param('i', $itineraryId);
-        $metaStmt->execute();
-        $meta = $metaStmt->get_result()->fetch_assoc();
-        $metaStmt->close();
+        $stmt = $conn->prepare("SELECT traveller_id, preference_id, start_date, origin_lat, origin_lng FROM itineraries WHERE itinerary_id = ? LIMIT 1");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $meta = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
         if (!$meta) return $report;
 
-        $itemsStmt = $conn->prepare("
-            SELECT ii.item_id, ii.day_no, ii.item_type, ii.start_time, ii.end_time, ii.travel_time_min,
+        $pref = PlannerRules::loadPreference($conn, (int)$meta['preference_id']) ?? PlannerRules::normalizePreference([]);
+        $origin = self::point($meta['origin_lat'], $meta['origin_lng']);
+        if ($origin !== null) $pref += ['origin_lat' => $origin[0], 'origin_lng' => $origin[1]];
+        $profile = PlannerRules::profile($pref);
+
+        $stmt = $conn->prepare("
+            SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id, ii.item_title, ii.start_time, ii.end_time,
                    COALESCE(ii.item_latitude, cp.latitude) AS latitude,
                    COALESCE(ii.item_longitude, cp.longitude) AS longitude,
-                   cp.opening_hours, cp.category, cp.is_outdoor
+                   cp.state, cp.district, cp.category, cp.name, cp.description, cp.opening_hours,
+                   cp.festival_start_date, cp.festival_end_date, cp.halal_status, cp.is_outdoor, cp.visit_duration_min
             FROM itinerary_items ii
             LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
             WHERE ii.itinerary_id = ?
             ORDER BY ii.day_no, ii.sequence_no, ii.item_id
         ");
-        $itemsStmt->bind_param('i', $itineraryId);
-        $itemsStmt->execute();
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
         $days = [];
-        foreach ($itemsStmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) {
+        foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) {
+            $row['point'] = self::point($row['latitude'], $row['longitude']);
             $days[(int)$row['day_no']][] = $row;
         }
-        $itemsStmt->close();
+        $stmt->close();
 
-        $route = new RouteService((string)($meta['transport_type'] ?? 'car'));
-        $startDate = DateTimeImmutable::createFromFormat('!Y-m-d', (string)$meta['start_date']) ?: null;
-        $avoidHeat = (bool)preg_match('/avoid[_ ]heat/', strtolower((string)($meta['accessibility_needs'] ?? '')));
-        $dayStartPoint = self::point($meta['origin_lat'], $meta['origin_lng']);   // where the coming day starts
-        $changes = [];   // item id => [sequence number, start minute, end minute]
-
-        // One request for the whole trip where the routing server prefers that (see RouteService).
+        $route = new RouteService((string)$profile['transport']);
         $pointsByDay = [];
         foreach ($days as $dayNo => $rows) {
-            foreach ($rows as $row) {
-                $pointsByDay[$dayNo][] = self::point($row['latitude'], $row['longitude']);
-            }
+            foreach ($rows as $row) if ($row['point'] !== null) $pointsByDay[$dayNo][] = $row['point'];
         }
-        if ($pointsByDay && $dayStartPoint !== null) $pointsByDay[array_key_first($pointsByDay)][] = $dayStartPoint;
+        if ($pointsByDay && $origin !== null) $pointsByDay[array_key_first($pointsByDay)][] = $origin;
         $route->preloadTrip($pointsByDay);
 
+        $startDate = (string)$meta['start_date'];
+        $dayStart = $origin;
+        $sequence = [];   // item id => [sequence, start min, end min]
+        $delete = [];
         foreach ($days as $dayNo => $rows) {
             $visits = [];
             $hotel = null;
-            $movable = true;
+            $others = [];
+            $movable = $dayStart !== null;
             foreach ($rows as $row) {
                 $type = strtolower((string)$row['item_type']);
-                $row['point'] = self::point($row['latitude'], $row['longitude']);
-                $row['start_min'] = self::minutes($row['start_time']);
-                $row['end_min'] = self::minutes($row['end_time']);
-                if ($type === 'hotel') {
-                    $hotel = $row;
-                } elseif (in_array($type, ['transport', 'note'], true) || $row['point'] === null || $row['start_min'] === null || $row['end_min'] === null) {
-                    $movable = false;   // a row without a place or a time: leave this day alone
-                } else {
-                    $visits[] = $row;
-                }
+                if ($type === 'hotel') { $hotel = $row; continue; }
+                if ($type === 'note') { $others[] = $row; continue; }
+                // Transport rows and stops without a known place or point are kept as they are: so is their day.
+                if ($type === 'transport' || (int)$row['place_id'] <= 0 || $row['point'] === null || $row['name'] === null) { $movable = false; continue; }
+                $visits[] = $row;
             }
             if (!$movable || !$visits) {
-                $dayStartPoint = self::lastPoint($rows, $hotel) ?? $dayStartPoint;
+                $dayStart = self::lastPoint($rows) ?? $dayStart;
                 continue;
             }
 
-            $plan = self::planDay($route, $dayStartPoint, $visits, $hotel['point'] ?? null, $startDate?->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d'), $avoidHeat);
-            foreach ($plan['order'] as $position => $index) {
-                $changes[(int)$visits[$index]['item_id']] = [$position + 1, $plan['times'][$index][0], $plan['times'][$index][1]];
-            }
-            $lastIndex = $plan['order'][count($plan['order']) - 1];
-            if ($hotel !== null) {
-                $checkIn = ItineraryHotelService::checkInMinute($plan['times'][$lastIndex][1]);
-                $changes[(int)$hotel['item_id']] = [count($visits) + 1, $checkIn, $checkIn + 30];
-            }
-            $dayStartPoint = $hotel['point'] ?? $visits[$lastIndex]['point'];
+            $date = (new DateTimeImmutable($startDate))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
+            $hotelPoint = $hotel['point'] ?? null;
+            $route->preload(array_values(array_filter(array_merge([$dayStart], array_column($visits, 'point'), [$hotelPoint]))));
+            $stops = array_map(static fn(array $row): array => ['place' => self::placeOf($row), 'point' => $row['point'], 'row' => $row], $visits);
+            $before = self::travelMinutes($route, $dayStart, array_column($visits, 'point'), $hotelPoint);
+            $plan = self::orderDay($route, $profile, $dayStart, $stops, [
+                'date' => $date,
+                'first_leg_exempt' => $dayNo === 1 && $dayStart === $origin,
+                'budget' => null,
+                'end' => $hotelPoint,
+            ]);
 
-            $reordered = $plan['order'] !== array_keys($visits);
-            $report['days'][$dayNo] = [
-                'stops' => count($visits),
-                'before_min' => $plan['before_min'],
-                'after_min' => $plan['after_min'],
-                'reordered' => $reordered,
-                'problems' => $plan['problems'],
-            ];
+            $position = 0;
+            $lastEnd = null;
+            foreach ($plan['stops'] as $stop) {
+                $sequence[(int)$stop['row']['item_id']] = [++$position, $stop['start'], $stop['end']];
+                $lastEnd = $stop['end'];
+            }
+            foreach ($others as $row) {
+                $sequence[(int)$row['item_id']] = [++$position, PlannerRules::minutesOf($row['start_time']), PlannerRules::minutesOf($row['end_time'])];
+            }
+            if ($hotel !== null) {
+                $checkIn = ItineraryHotelService::checkInMinute($lastEnd);
+                $sequence[(int)$hotel['item_id']] = [++$position, $checkIn, $checkIn + 30];
+            }
+            foreach ($plan['dropped'] as $stop) {
+                $delete[] = (int)$stop['row']['item_id'];
+                $report['removed'][] = 'Day ' . $dayNo . ': ' . $stop['row']['item_title'] . ' (' . PlannerRules::reasonText((string)$stop['reason']) . ')';
+            }
+
+            $keptIds = array_map(static fn(array $s): int => (int)$s['row']['item_id'], $plan['stops']);
+            $reordered = $keptIds !== array_map(static fn(array $r): int => (int)$r['item_id'], $visits);
+            $report['days'][$dayNo] = ['stops' => count($plan['stops']), 'before_min' => $before, 'after_min' => $plan['minutes'],
+                                       'reordered' => $reordered, 'problems' => count($plan['dropped'])];
             if ($reordered) {
                 $report['reordered_days'][] = $dayNo;
-                $report['saved_min'] += max(0, $plan['before_min'] - $plan['after_min']);
+                $report['saved_min'] += max(0, $before - $plan['minutes']);
             }
+            $last = $plan['stops'] ? $plan['stops'][count($plan['stops']) - 1]['point'] : null;
+            $dayStart = $hotelPoint ?? $last ?? $dayStart;
         }
 
         $update = $conn->prepare("UPDATE itinerary_items SET sequence_no = ?, start_time = ?, end_time = ? WHERE item_id = ? AND itinerary_id = ?");
-        foreach ($changes as $itemId => [$sequenceNo, $startMin, $endMin]) {
-            $startTime = self::sqlTime($startMin);
-            $endTime = self::sqlTime($endMin);
+        foreach ($sequence as $itemId => [$sequenceNo, $startMin, $endMin]) {
+            $startTime = $startMin !== null ? PlannerRules::sqlTime($startMin) : null;
+            $endTime = $endMin !== null ? PlannerRules::sqlTime($endMin) : null;
             $update->bind_param('issii', $sequenceNo, $startTime, $endTime, $itemId, $itineraryId);
             $update->execute();
         }
         $update->close();
+        if ($delete) {
+            $remove = $conn->prepare("DELETE FROM itinerary_items WHERE item_id = ? AND itinerary_id = ?");
+            foreach ($delete as $itemId) {
+                $remove->bind_param('ii', $itemId, $itineraryId);
+                $remove->execute();
+            }
+            $remove->close();
+            ItineraryEditService::resequence($conn, $itineraryId);
+        }
 
-        ItineraryEditService::routes($conn, $itineraryId, $route);
+        self::storeLegs($conn, $itineraryId, $route, $origin);
         ItineraryEditService::total($conn, $itineraryId);
         return $report;
     }
 
-    /**
-     * The best order for one day and the clock times that go with it.
-     *
-     * @param array{0:float,1:float}|null $start where the day begins; without it the first visit stays first
-     * @param array<int,array>            $visits the day's visits in their present order
-     * @param array{0:float,1:float}|null $hotel where the day ends, when a hotel was chosen
-     * @return array{order:int[],times:array<int,array{0:int,1:int}>,problems:int,before_min:int,after_min:int}
-     *         order lists keys of $visits; times gives [start, end] in minutes after midnight per key
-     */
-    private static function planDay(RouteService $route, ?array $start, array $visits, ?array $hotel, ?string $date, bool $avoidHeat): array
+    /** The orders to try, least travelling first (ties: less km, fewer equal categories side by side, the given order). */
+    private static function candidateOrders(RouteService $route, array $start, array $stops, ?array $end, array $fromStart, array $between, array $toEnd): iterable
     {
-        $first = $visits[0];
-
-        // When the day begins and how long the breaks are is read from the clock times, not from
-        // the order of the rows: after an edit the two do not always agree.
-        $byTime = $visits;
-        usort($byTime, static fn(array $a, array $b): int => $a['start_min'] <=> $b['start_min']);
-        $dayStartMin = max(0, $byTime[0]['start_min'] - ($start !== null ? (int)$byTime[0]['travel_time_min'] : 0));
-
-        // The break the day was planned with: the usual gap between two visits, travelling aside.
-        $gaps = [];
-        for ($k = 1, $count = count($byTime); $k < $count; $k++) {
-            $gaps[] = $byTime[$k]['start_min'] - $byTime[$k - 1]['end_min'] - (int)$byTime[$k]['travel_time_min'];
+        $n = count($stops);
+        $labels = array_map(static fn(array $s): string => strtolower((string)($s['place']['category'] ?? '')), $stops);
+        if ($n > self::MAX_EXACT_STOPS) {
+            $points = array_column($stops, 'point');
+            yield range(0, $n - 1);
+            foreach ($route->bestOrders($start, $points, $end, $labels, self::ORDERS_TO_CHECK) as $candidate) yield $candidate['order'];
+            return;
         }
-        sort($gaps);
-        $restMin = $gaps ? max(0, min(180, (int)(round($gaps[intdiv(count($gaps), 2)] / 5) * 5))) : 0;
-
-        $route->preload(array_values(array_filter(array_merge([$start], array_column($visits, 'point'), [$hotel]))));
-
-        // An order as a timetable. problems: visits that start while the place is closed or,
-        // for a traveller avoiding heat, outdoors between 11 am and 4 pm. meals_in_a_row: food
-        // stops that directly follow another food stop.
-        $schedule = static function (array $order) use ($route, $start, $visits, $hotel, $date, $avoidHeat, $dayStartMin, $restMin): array {
-            $clock = $dayStartMin;
-            $from = $start;
-            $travelMin = 0;
-            $problems = 0;
-            $mealsInARow = 0;
-            $wasMeal = false;
-            $times = [];
-            foreach ($order as $index) {
-                $visit = $visits[$index];
-                $leg = $from === null ? 0 : $route->getSegment($from[0], $from[1], $visit['point'][0], $visit['point'][1])['travel_time_min'];
-                $duration = max(15, $visit['end_min'] - $visit['start_min']);
-                $arrival = $clock + $leg;
-                if (!OpeningHours::allows((string)($visit['opening_hours'] ?? ''), $arrival, $date, min(30, $duration))) {
-                    $problems++;
-                } elseif ($avoidHeat && (int)($visit['is_outdoor'] ?? 0) === 1 && $arrival >= 11 * 60 && $arrival <= 16 * 60) {
-                    $problems++;
-                }
-                $isMeal = strtolower((string)$visit['item_type']) === 'food';
-                if ($isMeal && $wasMeal) $mealsInARow++;
-                $wasMeal = $isMeal;
-                $times[$index] = [$arrival, $arrival + $duration];
-                $clock = $arrival + $duration + $restMin;
-                $from = $visit['point'];
-                $travelMin += $leg;
+        $ranked = [];
+        foreach (self::permutations(range(0, $n - 1)) as $order) {
+            $minutes = (int)$fromStart[$order[0]]['travel_time_min'];
+            $km = (float)$fromStart[$order[0]]['distance_km'];
+            $equal = 0;
+            for ($k = 1; $k < $n; $k++) {
+                $leg = $between[$order[$k - 1]][$order[$k]];
+                $minutes += (int)$leg['travel_time_min'];
+                $km += (float)$leg['distance_km'];
+                if ($labels[$order[$k]] !== '' && $labels[$order[$k]] === $labels[$order[$k - 1]]) $equal++;
             }
-            if ($hotel !== null) $travelMin += $route->getSegment($from[0], $from[1], $hotel[0], $hotel[1])['travel_time_min'];
-            return ['order' => $order, 'times' => $times, 'problems' => $problems, 'travel_min' => $travelMin,
-                    'rank' => [$problems, $mealsInARow, $travelMin]];   // compared from left to right, lower is better
-        };
-
-        $present = $schedule(array_keys($visits));
-
-        // Without a known start the first visit is the fixed point the others are ordered from.
-        $anchor = $start ?? $first['point'];
-        $free = $start === null ? array_slice($visits, 1, null, true) : $visits;
-        $points = [];
-        $categories = [];
-        foreach ($free as $index => $visit) {
-            $points[$index] = $visit['point'];
-            $categories[$index] = strtolower((string)($visit['category'] ?? ''));
+            $minutes += (int)$toEnd[$order[$n - 1]]['travel_time_min'];
+            $km += (float)$toEnd[$order[$n - 1]]['distance_km'];
+            $ranked[] = [$minutes, round($km, 2), $equal, $order];
         }
-        // Orders come shortest first, so the first one without any fault is the answer. The
-        // present order stays when no other is better.
-        $best = $present;
-        foreach ($route->bestOrders($anchor, $points, $hotel, $categories, self::ORDERS_TO_CHECK) as $candidate) {
-            $planned = $schedule($start === null ? array_merge([0], $candidate['order']) : $candidate['order']);
-            if ($planned['rank'] < $best['rank']) $best = $planned;
-            if ($planned['rank'][0] === 0 && $planned['rank'][1] === 0) break;
-        }
+        usort($ranked, static fn(array $a, array $b): int => $a <=> $b);
+        foreach ($ranked as $entry) yield $entry[3];
+    }
 
+    /** Every order of the given keys, the given order first. */
+    private static function permutations(array $items): iterable
+    {
+        if (count($items) <= 1) { yield $items; return; }
+        foreach ($items as $index => $first) {
+            $rest = $items;
+            unset($rest[$index]);
+            foreach (self::permutations(array_values($rest)) as $tail) yield array_merge([$first], $tail);
+        }
+    }
+
+    /**
+     * Time an order. A stop that breaks a rule where it falls is left out, and the day goes on
+     * from the stop before it.
+     */
+    private static function schedule(array $order, array $stops, array $profile, array $day, array $fromStart, array $between, array $toEnd): array
+    {
+        $budget = $day['budget'] ?? null;
+        $items = $budget['items'] ?? null;
+        $otherKm = (float)($budget['km'] ?? 0);
+        $clock = (int)$profile['start'];
+        $last = null;
+        $dayKm = 0.0;
+        $keptKm = 0.0;
+        $minutes = 0;
+        $kept = [];
+        $dropped = [];
+        foreach ($order as $index) {
+            $stop = $stops[$index];
+            $leg = $last === null ? $fromStart[$index] : $between[$last][$index];
+            $counts = !($last === null && !empty($day['first_leg_exempt']));
+            $check = PlannerRules::check($stop['place'], [
+                'date' => (string)$day['date'],
+                'arrive' => $clock + (int)$leg['travel_time_min'],
+                'leg_km' => (float)$leg['distance_km'],
+                'leg_counts' => $counts,
+                'day_km' => $dayKm,
+                'trip_items' => $items,
+                'trip_km' => $otherKm + $keptKm,
+                'reserve_km' => (float)($budget['reserve_km'] ?? 0),
+            ], $profile);
+            if (!$check['ok']) {
+                $dropped[] = $stop + ['reason' => $check['reason']];
+                continue;
+            }
+            $stop['start'] = $check['start'];
+            $stop['end'] = $check['end'];
+            $stop['wait'] = $check['wait'];
+            $stop['km'] = round((float)$leg['distance_km'], 2);
+            $stop['min'] = (int)$leg['travel_time_min'];
+            $kept[] = $stop;
+            if ($items !== null) $items[] = ['item_type' => PlannerRules::itemType($stop['place']), 'estimated_cost' => PlannerRules::placeCost($stop['place'])];
+            if ($counts) $dayKm += (float)$leg['distance_km'];
+            $keptKm += (float)$leg['distance_km'];
+            $minutes += (int)$leg['travel_time_min'];
+            $clock = $check['end'] + (int)$profile['rest'];
+            $last = $index;
+        }
+        if ($last !== null) {
+            $minutes += (int)$toEnd[$last]['travel_time_min'];
+            $keptKm += (float)$toEnd[$last]['distance_km'];
+        }
+        return ['stops' => $kept, 'dropped' => $dropped, 'minutes' => $minutes, 'km' => round($keptKm, 2)];
+    }
+
+    /** The place row of an itinerary item, as PlannerRules reads it. */
+    private static function placeOf(array $row): array
+    {
         return [
-            'order' => $best['order'],
-            'times' => $best['times'],
-            'problems' => $best['problems'],
-            'before_min' => $present['travel_min'],
-            'after_min' => $best['travel_min'],
+            'place_id' => (int)$row['place_id'],
+            'name' => (string)$row['name'],
+            'description' => (string)($row['description'] ?? ''),
+            'state' => (string)($row['state'] ?? ''),
+            'district' => (string)($row['district'] ?? ''),
+            'category' => strtolower((string)($row['category'] ?? $row['item_type'])),
+            'latitude' => (float)$row['point'][0],
+            'longitude' => (float)$row['point'][1],
+            'opening_hours' => (string)($row['opening_hours'] ?? ''),
+            'festival_start_date' => $row['festival_start_date'],
+            'festival_end_date' => $row['festival_end_date'],
+            'halal_status' => $row['halal_status'],
+            'is_outdoor' => $row['is_outdoor'],
+            'visit_duration_min' => $row['visit_duration_min'],
         ];
+    }
+
+    /** Store distance and travel time of every leg in the stored order, with the figures the times were planned with. */
+    private static function storeLegs(mysqli $conn, int $itineraryId, RouteService $route, ?array $origin): void
+    {
+        $stmt = $conn->prepare("
+            SELECT ii.item_id, COALESCE(ii.item_latitude, cp.latitude) AS latitude, COALESCE(ii.item_longitude, cp.longitude) AS longitude
+            FROM itinerary_items ii
+            LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+            WHERE ii.itinerary_id = ?
+            ORDER BY ii.day_no, ii.sequence_no, ii.item_id
+        ");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+
+        $update = $conn->prepare("UPDATE itinerary_items SET distance_km = ?, travel_time_min = ? WHERE item_id = ?");
+        $previous = $origin;
+        foreach ($rows as $row) {
+            $here = self::point($row['latitude'], $row['longitude']);
+            $km = null;
+            $minutes = null;
+            if ($previous !== null && $here !== null) {
+                $leg = $route->getSegment($previous[0], $previous[1], $here[0], $here[1]);
+                $km = round((float)$leg['distance_km'], 2);
+                $minutes = (int)$leg['travel_time_min'];
+            }
+            $itemId = (int)$row['item_id'];
+            $update->bind_param('dii', $km, $minutes, $itemId);
+            $update->execute();
+            if ($here !== null) $previous = $here;
+        }
+        $update->close();
+    }
+
+    private static function travelMinutes(RouteService $route, array $start, array $points, ?array $end): int
+    {
+        $minutes = 0;
+        $from = $start;
+        foreach (array_merge($points, $end !== null ? [$end] : []) as $to) {
+            $minutes += (int)$route->getSegment($from[0], $from[1], $to[0], $to[1])['travel_time_min'];
+            $from = $to;
+        }
+        return $minutes;
     }
 
     /** @return array{0:float,1:float}|null */
@@ -245,29 +371,11 @@ class ItineraryRouteOptimiser
         return [(float)$lat, (float)$lng];
     }
 
-    /** Where a day that is left alone ends: at its hotel, otherwise at its last row with a place. */
-    private static function lastPoint(array $rows, ?array $hotel): ?array
+    /** Where a day that is left alone ends: at its last row with a point (the hotel when it has one). */
+    private static function lastPoint(array $rows): ?array
     {
-        if ($hotel !== null && self::point($hotel['latitude'], $hotel['longitude']) !== null) {
-            return self::point($hotel['latitude'], $hotel['longitude']);
-        }
         $last = null;
-        foreach ($rows as $row) {
-            $last = self::point($row['latitude'], $row['longitude']) ?? $last;
-        }
+        foreach ($rows as $row) $last = $row['point'] ?? $last;
         return $last;
-    }
-
-    /** "09:30:00" => 570 */
-    private static function minutes($time): ?int
-    {
-        if (!preg_match('/^(\d{1,2}):(\d{2})/', (string)$time, $m)) return null;
-        return (int)$m[1] * 60 + (int)$m[2];
-    }
-
-    private static function sqlTime(int $minutes): string
-    {
-        $minutes = max(0, min(23 * 60 + 59, $minutes));
-        return sprintf('%02d:%02d:00', intdiv($minutes, 60), $minutes % 60);
     }
 }

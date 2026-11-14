@@ -6,11 +6,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once "../config/db_connect.php";
-require_once "../services/StrictFestivalCandidatePoolService.php";
+require_once "../services/PlannerCandidates.php";
 
-// Planning must never see a festival without valid dates. For this request the place table is
-// shadowed by a pool without them; the permanent place records are not touched.
-StrictFestivalCandidatePoolService::install($conn);
+// A festival without valid dates is never offered (PlannerCandidates::VALID_FESTIVAL_SQL).
+$validFestivalSql = " AND " . PlannerCandidates::VALID_FESTIVAL_SQL;
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -124,7 +123,7 @@ if (!empty($excludeIds)) {
 // Try: same state + same category
 $sql = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
         FROM cultural_places
-        WHERE is_active = 1 AND state = ? AND category = ?$exPh
+        WHERE is_active = 1 AND state = ? AND category = ?$exPh$validFestivalSql
         ORDER BY RAND() LIMIT 10";
 
 $params = array_merge([$state, $category], $exParams);
@@ -143,7 +142,7 @@ if ($stmt) {
 if (empty($candidates) && $state !== '') {
     $sql2 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
              FROM cultural_places
-             WHERE is_active = 1 AND state = ?$exPh
+             WHERE is_active = 1 AND state = ?$exPh$validFestivalSql
              ORDER BY RAND() LIMIT 10";
     $params2 = array_merge([$state], $exParams);
     $types2  = 's' . $exTypes;
@@ -161,7 +160,7 @@ if (empty($candidates) && $state !== '') {
 if (empty($candidates) && $category !== '') {
     $sql3 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
              FROM cultural_places
-             WHERE is_active = 1 AND category = ?$exPh
+             WHERE is_active = 1 AND category = ?$exPh$validFestivalSql
              ORDER BY RAND() LIMIT 10";
     $params3 = array_merge([$category], $exParams);
     $types3  = 's' . $exTypes;

@@ -102,25 +102,70 @@ class AccessibilityNeedsAnalysisService
 
     private function keywordFallback(string $rawText, string $travellerType): array
     {
-        $text = strtolower($rawText);
-        $tags = [];
+        $tags = self::keywordTags($rawText, $travellerType);
+        return [
+            'tags' => $tags,
+            'summary' => $this->summaryFromTags($tags),
+        ];
+    }
 
-        $match = function (array $needles) use ($text): bool {
-            foreach ($needles as $needle) {
-                if ($needle !== '' && str_contains($text, strtolower($needle))) return true;
+    /**
+     * The tags stored after "AI:" in a saved accessibility_needs text, or null when the text
+     * has no such part. "general" means no tag.
+     *
+     * @return string[]|null
+     */
+    public static function storedTags(string $storedText): ?array
+    {
+        $pos = strripos($storedText, 'AI:');
+        if ($pos === false) return null;
+        $tags = [];
+        foreach (explode(',', substr($storedText, $pos + 3)) as $tag) {
+            $tag = strtolower(trim(str_replace([' ', '-'], '_', trim($tag))));
+            if (in_array($tag, self::ALLOWED_TAGS, true) && !in_array($tag, $tags, true)) $tags[] = $tag;
+        }
+        return $tags;
+    }
+
+    /**
+     * Tags read from the traveller's own words by keyword rules, without AI.
+     *
+     * Keywords are matched as whole words. A clause that negates a need ("no wheelchair
+     * needed", "not elderly") gives no tag for it, and neither does "stairs are fine" or
+     * "don't mind the heat". Asking to avoid something ("no stairs") still gives its tag.
+     *
+     * @return string[]
+     */
+    public static function keywordTags(string $rawText, string $travellerType = 'solo'): array
+    {
+        $tags = [];
+        $clauses = preg_split('/[,;.!?\/|]+|\b(?:but|however|although|though)\b/u', strtolower($rawText)) ?: [];
+        $negation = '/\b(?:no|not|never|without|none|nobody|don\'?t|doesn\'?t|isn\'?t|aren\'?t|do not|does not|is not|are not|no need|needn\'?t)\b/u';
+        $noProblem = '/\b(?:fine|ok|okay|no problem|not a problem|not an issue|no issue)\b|\b(?:don\'?t|do not|doesn\'?t|does not|never) mind\b/u';
+
+        // $kind: "need" is negated by a negation before it; "avoid" names what to avoid, so
+        // "no stairs" keeps the tag and only "stairs are fine" or "don't mind stairs" drops it.
+        $match = static function (array $needles, string $kind) use ($clauses, $negation, $noProblem): bool {
+            foreach ($clauses as $clause) {
+                foreach ($needles as $needle) {
+                    if (!preg_match('/\b' . $needle . '\b/u', $clause, $m, PREG_OFFSET_CAPTURE)) continue;
+                    if (preg_match($noProblem, $clause)) continue;
+                    if ($kind === 'need' && preg_match($negation, substr($clause, 0, (int)$m[0][1]))) continue;
+                    return true;
+                }
             }
             return false;
         };
 
-        if ($match(['elderly', 'senior', 'old people', '老人', '长者', '年长'])) $tags[] = 'elderly';
-        if ($match(['wheelchair', 'wheel chair', '轮椅', 'disabled', 'oku'])) $tags[] = 'wheelchair';
-        if ($match(['avoid stairs', 'no stairs', 'less stairs', 'stair', '楼梯', '不要爬楼梯', '避免楼梯'])) $tags[] = 'avoid_stairs';
-        if ($match(['walk less', 'less walking', 'low walking', 'cannot walk', '少走路', '不要走太多', '不方便走路'])) $tags[] = 'low_walking';
-        if ($match(['indoor', '室内', 'shopping mall', 'museum'])) $tags[] = 'indoor_preferred';
-        if ($match(['avoid heat', 'too hot', 'hot weather', 'sun', '怕热', '太热', '避免晒'])) $tags[] = 'avoid_heat';
-        if ($match(['family', 'kids', 'children', 'child', '小孩', '家庭'])) $tags[] = 'family_friendly';
+        if ($match(['elderly', 'seniors?', 'old (?:people|parents?|folks?)', 'aged parents?', 'grand(?:mother|father|parents?)'], 'need')) $tags[] = 'elderly';
+        if ($match(['wheel ?chairs?', 'disabled', 'oku'], 'need')) $tags[] = 'wheelchair';
+        if ($match(['avoid stairs?', 'no stairs?', 'less stairs?', 'stairs?'], 'avoid')) $tags[] = 'avoid_stairs';
+        if ($match(['walk less', 'less walking', 'low walking', 'cannot walk', 'can\'?t walk', 'limited walking', 'walking difficult(?:y|ies)'], 'need')) $tags[] = 'low_walking';
+        if ($match(['indoors?', 'shopping malls?', 'museums?'], 'need')) $tags[] = 'indoor_preferred';
+        if ($match(['avoid (?:the )?heat', 'too hot', 'hot weather', 'heat', 'sun'], 'avoid')) $tags[] = 'avoid_heat';
+        if ($match(['family', 'kids', 'children', 'child', 'toddlers?', 'babies', 'baby'], 'need')) $tags[] = 'family_friendly';
 
-        if ($travellerType === 'family') $tags[] = 'family_friendly';
+        if (strtolower(trim($travellerType)) === 'family') $tags[] = 'family_friendly';
         if (in_array('elderly', $tags, true) || in_array('wheelchair', $tags, true) || in_array('avoid_stairs', $tags, true)) {
             $tags[] = 'low_walking';
             $tags[] = 'rest_buffer';
@@ -128,11 +173,7 @@ class AccessibilityNeedsAnalysisService
         if (in_array('wheelchair', $tags, true)) $tags[] = 'step_free';
         if (in_array('avoid_heat', $tags, true)) $tags[] = 'indoor_preferred';
 
-        $tags = $this->normalizeTags($tags);
-        return [
-            'tags' => $tags,
-            'summary' => $this->summaryFromTags($tags),
-        ];
+        return self::normalizeTags($tags);
     }
 
     private function buildResult(string $rawText, array $tags, string $summary, string $source): array
@@ -163,7 +204,7 @@ class AccessibilityNeedsAnalysisService
         return (bool) preg_match('/[\x{3400}-\x{4DBF}\x{4E00}-\x{9FFF}\x{F900}-\x{FAFF}]/u', $text);
     }
 
-    private function normalizeTags($tags): array
+    private static function normalizeTags($tags): array
     {
         if (!is_array($tags)) return [];
         $clean = [];

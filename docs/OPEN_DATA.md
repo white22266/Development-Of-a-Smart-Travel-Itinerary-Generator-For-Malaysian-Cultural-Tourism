@@ -113,14 +113,17 @@ A day's stops are visited in the order with the least travelling for the trip's 
 
 1. While a trip is planned, places are chosen with estimated travel times (straight line x 1.3
    at a typical speed): hundreds of possible legs are compared, too many to ask a server about.
-2. When the plan is complete, `ItineraryRouteOptimiser` asks the routing server once for the
-   road time between every pair of the trip's points, compares every possible order of each
-   day's stops (up to eight stops; beyond that the order is improved step by step) and times
-   the days again. Car, walking and public transport are measured by OSRM, motorcycles by
-   Valhalla's motorcycle profile, so each way of travelling can end up with its own order.
-3. The shortest order is not used when it reaches a place while it is closed on that weekday,
-   reaches an outdoor place between 11 am and 4 pm for a traveller who asked to avoid heat, or
-   puts two meals one right after the other. The next shortest order without such a fault is.
+2. When the plan is complete, `ItineraryGenerator` asks the routing server once for the road
+   time between every pair of the trip's points, and `ItineraryRouteOptimiser` compares every
+   possible order of each day's stops (up to eight stops; beyond that the order is improved
+   step by step) and times the days again. Car, walking and public transport are measured by
+   OSRM, motorcycles by Valhalla's motorcycle profile, so each way of travelling can end up
+   with its own order.
+3. Only orders that keep every rule of `PlannerRules` are used: the whole visit inside the
+   opening hours of that weekday, the day window, the rest between visits, the distance limit,
+   the budget and the accessibility rules (no outdoor visit between 11 am and 4 pm for a
+   traveller who asked to avoid heat). A stop that no order can keep on the road figures is
+   dropped; at generation one feasible replacement is tried.
 4. A traveller can run the same step again with "Optimise route" on the itinerary page, for
    example after replacing a stop or choosing hotels (a day then ends at its hotel).
 
