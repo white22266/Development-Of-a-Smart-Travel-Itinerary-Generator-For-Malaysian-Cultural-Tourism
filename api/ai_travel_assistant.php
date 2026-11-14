@@ -13,38 +13,31 @@ require_once "../services/WeatherService.php";
 
 header("Content-Type: application/json; charset=utf-8");
 
+$message = trim((string)($_POST["message"] ?? ""));
+assistant_lang(ai_request_language($message));
+$lang = assistant_lang();
+
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
-    http_response_code(401);
-    echo json_encode(["status" => "error", "answer" => "Unauthorized."]);
-    exit;
+    assistant_reply(["status" => "error", "answer" => ai_text("unauthorized", $lang)], 401);
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
 $action = trim((string)($_POST["action"] ?? "chat"));
-$message = trim((string)($_POST["message"] ?? ""));
-if ($action === "chat") {
-    ai_reject_chinese_json($message, "answer");
-}
 
 if ($travellerId <= 0 || $itineraryId <= 0) {
-    http_response_code(400);
-    echo json_encode(["status" => "error", "answer" => "Invalid request."]);
-    exit;
+    assistant_reply(["status" => "error", "answer" => ai_text("invalid_request", $lang)], 400);
 }
 
 $itinerary = load_itinerary($conn, $itineraryId, $travellerId);
 if (!$itinerary) {
-    http_response_code(404);
-    echo json_encode(["status" => "error", "answer" => "Itinerary not found."]);
-    exit;
+    assistant_reply(["status" => "error", "answer" => ai_text("itinerary_not_found", $lang)], 404);
 }
 
 if ($action === "confirm_date") {
     $date = parse_trip_date((string)($_POST["start_date"] ?? ""));
     if (!$date) {
-        echo json_encode(["status" => "error", "answer" => "I could not understand that trip date. Please use a valid date."], JSON_UNESCAPED_SLASHES);
-        exit;
+        assistant_reply(["status" => "error", "answer" => ai_text("date_invalid", $lang)]);
     }
 
     $stmt = $conn->prepare("UPDATE itineraries SET start_date = ? WHERE itinerary_id = ? AND traveller_id = ?");
@@ -52,12 +45,11 @@ if ($action === "confirm_date") {
     $stmt->execute();
     $stmt->close();
 
-    echo json_encode([
+    assistant_reply([
         "status" => "success",
-        "answer" => "Trip start date updated to " . format_display_date($date) . ". Reloading the itinerary with the confirmed date.",
+        "answer" => ai_text("date_updated", $lang, ["date" => format_display_date($date)]),
         "reload" => true,
-    ], JSON_UNESCAPED_SLASHES);
-    exit;
+    ]);
 }
 
 if ($action === "confirm_origin") {
@@ -65,8 +57,7 @@ if ($action === "confirm_origin") {
     $originLat = (float)($_POST["origin_lat"] ?? 0);
     $originLng = (float)($_POST["origin_lng"] ?? 0);
     if ($originName === "" || !is_finite($originLat) || !is_finite($originLng) || $originLat == 0.0 || $originLng == 0.0) {
-        echo json_encode(["status" => "error", "answer" => "I could not confirm that starting location. Please choose a valid map location."], JSON_UNESCAPED_SLASHES);
-        exit;
+        assistant_reply(["status" => "error", "answer" => ai_text("origin_invalid", $lang)]);
     }
 
     $stmt = $conn->prepare("UPDATE itineraries SET origin_name = ?, origin_lat = ?, origin_lng = ? WHERE itinerary_id = ? AND traveller_id = ?");
@@ -74,17 +65,15 @@ if ($action === "confirm_origin") {
     $stmt->execute();
     $stmt->close();
 
-    echo json_encode([
+    assistant_reply([
         "status" => "success",
-        "answer" => "Starting location updated to " . $originName . ". Reloading the itinerary with the confirmed origin.",
+        "answer" => ai_text("origin_updated", $lang, ["name" => $originName]),
         "reload" => true,
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
+    ]);
 }
 
 if ($message === "") {
-    echo json_encode(["status" => "error", "answer" => "Please type a question or trip detail."], JSON_UNESCAPED_SLASHES);
-    exit;
+    assistant_reply(["status" => "error", "answer" => ai_text("empty_question_or_detail", $lang)]);
 }
 
 $items = load_itinerary_items($conn, $itineraryId);
@@ -99,7 +88,7 @@ if ($parsedDate && safe_is_explicit_date_update_message($message) && !same_trip_
         "type" => "update_start_date",
         "start_date" => $parsedDate,
         "label" => format_display_date($parsedDate),
-        "summary" => "Update this itinerary start date to " . format_display_date($parsedDate),
+        "summary" => ai_text("pending_date_summary", $lang, ["date" => format_display_date($parsedDate)]),
     ];
 }
 
@@ -108,7 +97,7 @@ if ($parsedOrigin !== "" && safe_is_explicit_origin_update_message($message) && 
         "type" => "update_origin",
         "origin_name" => $parsedOrigin,
         "label" => $parsedOrigin,
-        "summary" => "Update starting location to " . $parsedOrigin,
+        "summary" => ai_text("pending_origin_summary", $lang, ["name" => $parsedOrigin]),
     ];
 }
 
@@ -116,30 +105,28 @@ $pendingAction = $pendingActions[0] ?? null;
 
 if (safe_is_weather_question($message)) {
     $weatherDate = $parsedDate ?: (string)($itinerary["start_date"] ?? "");
-    $answer = build_weather_answer($items, $weatherDate);
+    $answer = build_weather_answer($items, $weatherDate, $lang);
     if ($pendingAction) {
-        $answer .= "\n\nI detected " . describe_pending_action($pendingAction) . ". Please confirm if this is correct.";
+        $answer .= "\n\n" . ai_text("detected_confirm_weather", $lang, ["what" => describe_pending_action($pendingAction, $lang)]);
     }
     log_ai_chat($conn, $itineraryId, $travellerId, $message, $answer);
-    echo json_encode([
+    assistant_reply([
         "status" => "success",
         "answer" => $answer,
         "pending_action" => $pendingAction,
         "pending_actions" => $pendingActions,
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
+    ]);
 }
 
 if ($pendingAction) {
-    $answer = "I detected " . describe_pending_action($pendingAction) . ". Click the confirmation button to update the itinerary. I will not save it until you confirm.";
+    $answer = ai_text("detected_confirm", $lang, ["what" => describe_pending_action($pendingAction, $lang)]);
     log_ai_chat($conn, $itineraryId, $travellerId, $message, $answer);
-    echo json_encode([
+    assistant_reply([
         "status" => "success",
         "answer" => $answer,
         "pending_action" => $pendingAction,
         "pending_actions" => $pendingActions,
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
+    ]);
 }
 
 $context = [
@@ -176,24 +163,41 @@ $context = [
 ];
 
 $assistant = new AiTravelAssistantService();
-$result = $assistant->answer($message, $context);
+$result = $assistant->answer($message, $context, $lang);
 
 // The service's answer is safe to show to the traveller even when the model failed.
 $answer = trim((string)($result["answer"] ?? ""));
 if ($answer === "") {
-    $answer = "The travel assistant could not prepare an answer. Please try again.";
+    $answer = ai_text("model_invalid", $lang);
 }
 
 // No secondary parsing of $answer here. The old logic parsed dates/origins from the AI's own explanation,
 // which caused false confirmation buttons for already saved start dates and starting locations.
 log_ai_chat($conn, $itineraryId, $travellerId, $message, $answer);
 
-echo json_encode([
+assistant_reply([
     "status" => "success",
     "answer" => $answer,
     "pending_action" => null,
     "pending_actions" => [],
-], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+]);
+
+/** The language of this request; set once at the start. */
+function assistant_lang(?string $set = null): string
+{
+    static $lang = "en";
+    if ($set !== null) $lang = in_array($set, AI_LANGUAGES, true) ? $set : "en";
+    return $lang;
+}
+
+function assistant_reply(array $payload, int $httpStatus = 200): never
+{
+    http_response_code($httpStatus);
+    $payload["lang"] = assistant_lang();
+    $payload["ui"] = ai_ui_labels(assistant_lang());
+    echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    exit;
+}
 
 function load_itinerary(mysqli $conn, int $itineraryId, int $travellerId): ?array
 {
@@ -425,43 +429,44 @@ function safe_extract_origin_name(string $message): string
     return "";
 }
 
-function describe_pending_action(array $action): string
+function describe_pending_action(array $action, string $lang = "en"): string
 {
     if (($action["type"] ?? "") === "update_origin") {
-        return "your starting location as " . ($action["label"] ?? $action["origin_name"] ?? "");
+        return ai_text("describe_origin", $lang, ["name" => $action["label"] ?? $action["origin_name"] ?? ""]);
     }
-    return "your trip start date as " . ($action["label"] ?? $action["start_date"] ?? "");
+    return ai_text("describe_date", $lang, ["date" => $action["label"] ?? $action["start_date"] ?? ""]);
 }
 
 /**
  * The forecast for the trip date at the first stop, or today's when that date has no forecast
  * yet. Written from the forecast itself, so the language model cannot change the numbers.
  */
-function build_weather_answer(array $items, string $date): string
+function build_weather_answer(array $items, string $date, string $lang = "en"): string
 {
     $point = first_weather_point($items);
     if (!$point) {
-        return "I cannot check weather because this itinerary does not have a usable place coordinate yet.";
+        return ai_text("weather_no_point", $lang);
     }
 
     $days = WeatherService::daily((float)$point["latitude"], (float)$point["longitude"]);
     if (!$days) {
-        return "I could not reach the weather service right now. You can still plan normally, but check weather again before travelling.";
+        return ai_text("weather_unreachable", $lang);
     }
 
+    // WeatherService::describe() and advice() write English sentences.
     $target = parse_trip_date($date);
     if ($target && isset($days[$target])) {
         $day = $days[$target];
-        return "Forecast for " . format_display_date($target) . " near " . $point["title"] . ": "
+        return ai_text("weather_forecast_for", $lang, ["date" => format_display_date($target), "place" => $point["title"]]) . " "
             . WeatherService::describe($day) . " " . WeatherService::advice($day) . " (" . WeatherService::CREDIT . ")";
     }
 
     $today = reset($days);
-    $answer = "Today near " . $point["title"] . ": " . WeatherService::describe($today) . " " . WeatherService::advice($today);
+    $answer = ai_text("weather_today_near", $lang, ["place" => $point["title"]]) . " " . WeatherService::describe($today) . " " . WeatherService::advice($today);
     if ($target) {
-        $answer .= $target > array_key_last($days)
-            ? " There is no forecast for " . format_display_date($target) . " yet: forecasts reach 16 days ahead, so ask again closer to the date."
-            : " " . format_display_date($target) . " is in the past, so there is no forecast for it.";
+        $answer .= " " . ($target > array_key_last($days)
+            ? ai_text("weather_too_far", $lang, ["date" => format_display_date($target)])
+            : ai_text("weather_past", $lang, ["date" => format_display_date($target)]));
     }
     return $answer . " (" . WeatherService::CREDIT . ")";
 }

@@ -23,9 +23,10 @@ class OllamaClient
     /**
      * Send one system + user message pair and return the reply.
      *
-     * Options: num_ctx, num_predict, temperature, timeout (seconds), keep_alive, format ('json').
+     * Options: num_ctx, num_predict, temperature, timeout (seconds, at least 2), keep_alive, format ('json').
+     * When the server refused a connection, later calls fail at once for a few seconds.
      *
-     * @return array{ok: bool, text: string, done_reason: string, error: string, timed_out: bool}
+     * @return array{ok: bool, text: string, done_reason: string, error: string, timed_out: bool, unreachable: bool}
      *   On failure `error` holds the technical reason for the log; never show it to travellers.
      */
     public function chat(string $system, string $user, array $options = []): array
@@ -35,7 +36,7 @@ class OllamaClient
         }
 
         $timeout = (int)($options['timeout'] ?? self::setting('OLLAMA_TIMEOUT', 60));
-        $timeout = max(5, min(300, $timeout));
+        $timeout = max(2, min(300, $timeout));
         $connectTimeout = max(1, min(10, (int)self::setting('OLLAMA_CONNECT_TIMEOUT', 3)));
         $numCtx = (int)($options['num_ctx'] ?? self::setting('OLLAMA_NUM_CTX', 4096));
 
@@ -63,6 +64,11 @@ class OllamaClient
         }
 
         $url = str_ends_with($this->baseUrl, '/api') ? $this->baseUrl . '/chat' : $this->baseUrl . '/api/chat';
+
+        // The server refused a connection a moment ago: answer at once instead of waiting again.
+        if ($this->recentlyUnreachable()) {
+            return self::failure("Ollama at {$this->baseUrl} was unreachable a moment ago; not retrying yet.", false, true);
+        }
         $start = microtime(true);
 
         $ch = curl_init($url);
@@ -86,7 +92,14 @@ class OllamaClient
 
         if ($raw === false || $curlError !== '') {
             $timedOut = $curlErrno === CURLE_OPERATION_TIMEDOUT;
-            return self::failure("Request to {$url} failed after {$seconds}s: {$curlError}", $timedOut);
+            // Refused, or no answer within the connect timeout: the server is not running.
+            $unreachable = $curlErrno === CURLE_COULDNT_CONNECT
+                || ($timedOut && $seconds <= $connectTimeout + 0.5);
+            if ($unreachable) {
+                $this->markUnreachable();
+                $timedOut = false;
+            }
+            return self::failure("Request to {$url} failed after {$seconds}s: {$curlError}", $timedOut, $unreachable);
         }
 
         $json = json_decode((string)$raw, true);
@@ -111,7 +124,27 @@ class OllamaClient
             'done_reason' => strtolower((string)($json['done_reason'] ?? '')),
             'error' => '',
             'timed_out' => false,
+            'unreachable' => false,
         ];
+    }
+
+    /** Seconds a refused connection is remembered (OLLAMA_DOWN_RETRY_SECONDS, default 20). */
+    private function downMarkerFile(): string
+    {
+        return rtrim(sys_get_temp_dir(), '\/') . DIRECTORY_SEPARATOR . 'ollama_down_' . md5($this->baseUrl) . '.flag';
+    }
+
+    private function recentlyUnreachable(): bool
+    {
+        $file = $this->downMarkerFile();
+        $retry = max(0, (int)self::setting('OLLAMA_DOWN_RETRY_SECONDS', 20));
+        $mtime = @filemtime($file);
+        return $retry > 0 && $mtime !== false && (time() - $mtime) < $retry;
+    }
+
+    private function markUnreachable(): void
+    {
+        @touch($this->downMarkerFile());
     }
 
     /**
@@ -126,8 +159,8 @@ class OllamaClient
         return ($value === false || trim((string)$value) === '') ? $default : $value;
     }
 
-    private static function failure(string $error, bool $timedOut = false): array
+    private static function failure(string $error, bool $timedOut = false, bool $unreachable = false): array
     {
-        return ['ok' => false, 'text' => '', 'done_reason' => '', 'error' => $error, 'timed_out' => $timedOut];
+        return ['ok' => false, 'text' => '', 'done_reason' => '', 'error' => $error, 'timed_out' => $timedOut, 'unreachable' => $unreachable];
     }
 }

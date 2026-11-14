@@ -10,20 +10,21 @@ require_once "../services/AiTravelAssistantService.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
+$message = trim((string)($_POST["message"] ?? ""));
+$lang = ai_request_language($message);
+
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     http_response_code(401);
-    echo json_encode(['status' => 'error', 'answer' => 'Unauthorized']);
+    echo json_encode(['status' => 'error', 'answer' => ai_text('unauthorized', $lang), 'lang' => $lang], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
-$message = trim((string)($_POST["message"] ?? ""));
-ai_reject_chinese_json($message, "answer");
 
 if ($travellerId <= 0 || $itineraryId <= 0) {
     http_response_code(400);
-    echo json_encode(['status' => 'error', 'answer' => 'Invalid request.']);
+    echo json_encode(['status' => 'error', 'answer' => ai_text('invalid_request', $lang), 'lang' => $lang], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -42,7 +43,7 @@ $stmt->close();
 
 if (!$it) {
     http_response_code(404);
-    echo json_encode(['status' => 'error', 'answer' => 'Itinerary not found.']);
+    echo json_encode(['status' => 'error', 'answer' => ai_text('itinerary_not_found', $lang), 'lang' => $lang], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -105,7 +106,7 @@ $context = [
 ];
 
 $assistant = new AiTravelAssistantService();
-$result = $assistant->answer($message, $context);
+$result = $assistant->answer($message, $context, $lang);
 
 try {
     $answer = (string)($result["answer"] ?? "");

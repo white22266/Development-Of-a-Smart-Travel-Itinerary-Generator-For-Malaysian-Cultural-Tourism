@@ -3,7 +3,9 @@
 // The page provides the panel markup:
 //   <div class="ai-chat-panel" id="aiChatPanel" data-itinerary-id="123" data-missing-info='["start date"]'>
 // Messages are routed to one of three endpoints; nothing is saved until the traveller
-// presses a confirmation button on a card.
+// presses a confirmation button on a card. Messages may be in English, Malay or Chinese.
+// Each reply carries its language ('lang') and the card labels in that language ('ui',
+// from config/ai_chat_text.php); confirm requests send the language back.
 
 const AI_CHAT_TIMEOUT_MS = 90000;
 
@@ -16,12 +18,19 @@ const AI_ENDPOINTS = {
 
 const CLOCK_TIME = /\b\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/i;
 const TIMETABLE_WORDS = /\b(?:re-?arrange|reschedule|re-?time|new\s+timetable|timetable|schedule)\b/i;
-const START_AT_TIME = /\b(?:start|begin)(?:\s+time)?\s*(?:at|from|to)?\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/i;
+const START_AT_TIME = /\b(?:start|begin)(?:\s+time)?(?:\s+(?:the\s+)?day\s*\d{1,2}|\s+(?:the|my|each|every)\s+days?)?\s*(?:at|from|to)?\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/i;
 const CHANGE_START_TIME = /\b(?:change|set|move|update)\s+(?:the\s+|my\s+)?(?:start(?:ing)?\s+)?time\b/i;
 const ORIGIN_WORDS = /\b(?:start(?:ing)?\s+(?:location|point)|staring\s+(?:location|point)|origin|start(?:ing)?\s+from|staring\s+from|depart(?:ing)?\s+from|leav(?:e|ing)\s+from)\b/i;
 const DATE_WORDS = /\b(?:start\s+date|travel\s+date|trip\s+date|travel\s+on|go\s+on|visit\s+on|arrive\s+on|depart\s+on|date)\b|\b\d{4}[\/\-.]\d{1,2}[\/\-.]\d{1,2}\b|\b\d{1,2}[\/\-.]\d{1,2}[\/\-.]\d{4}\b|\b\d{1,2}\s*[a-zA-Z]+\s*\d{4}\b|\b[a-zA-Z]+\s*\d{1,2}\s*\d{4}\b/i;
 const WEATHER_WORDS = /\b(?:weather|forecast|rain|raining|rainy|temperature|hot|humid|storm|umbrella)\b/i;
 const HOTEL_WORDS = /\b(?:hotels?|accommodation|stays?|rooms?|sleep|overnight|check\s*-?in|place\s+to\s+stay)\b/i;
+// Malay and Chinese words for the same routes (Chinese has no word boundaries).
+const HOTEL_WORDS_OTHER = /\b(?:penginapan|bilik|bermalam|homestay|tempat\s+tinggal)\b|酒店|住宿|旅馆|民宿|宾馆|过夜/i;
+const WEATHER_WORDS_OTHER = /\b(?:cuaca|hujan|ramalan)\b|天气|下雨|气温|预报/i;
+const DATE_WORDS_OTHER = /\btarikh\b|日期|\d{1,2}\s*月\s*\d{1,2}\s*[日号]/i;
+const ORIGIN_WORDS_OTHER = /\b(?:lokasi\s+(?:permulaan|mula)|titik\s+mula|bertolak\s+dari)\b|出发地|起点/i;
+const TIMETABLE_OTHER = /\b(?:mula|mulakan|bermula)\b.*\bpukul\s*\d|(?:\d{1,2}|[一二三四五六七八九十]{1,3})\s*[点點](?:半|\d{1,2}分?)?\s*(?:开始|出发)/i;
+const EDIT_WORDS_OTHER = /\b(?:tukar|tukarkan|ganti|gantikan|tambah|tambahkan|buang|padam|keluarkan|pindah|pindahkan|alih|alihkan|rancang\s+semula|susun\s+semula|tak\s+(?:nak|mahu)|tidak\s+mahu)\b|换成|换掉|换一个|替换|改成|改为|改到|更换|加一个|加个|添加|增加|新增|删除|删掉|去掉|不要去|不想去|移到|挪到|调到|搬到|重新安排|重新规划|重新排|排序|顺路/i;
 const EDIT_WORDS = /\b(?:replace|change|swap|switch|modify|substitute|regenerate|replan|reroute|remove|delete|skip|drop|add|include|instead|alternatives?|another\s+(?:place|stop)|more\s+(?:places?|stops?)|new\s+(?:place|stop)|extra\s+(?:place|stop)|dislike|don'?t\s+(?:want|like)|do\s+not\s+(?:want|like)|too\s+(?:far|expensive|crowded|tiring)|cheaper|lower\s+cost|reduce\s+cost|save\s+money|budget\s+friendly|fill|empty\s+(?:day|slot)|improve)\b/i;
 
 /**
@@ -32,17 +41,35 @@ const EDIT_WORDS = /\b(?:replace|change|swap|switch|modify|substitute|regenerate
  * - chat: everything else, including date/origin updates, which ai_travel_assistant detects.
  */
 function detectChatRoute(text) {
-    const hotel = HOTEL_WORDS.test(text);
-    const timetable = !hotel && CLOCK_TIME.test(text)
-        && (TIMETABLE_WORDS.test(text) || START_AT_TIME.test(text) || CHANGE_START_TIME.test(text));
+    const hotel = HOTEL_WORDS.test(text) || HOTEL_WORDS_OTHER.test(text);
+    const timetable = !hotel && ((CLOCK_TIME.test(text)
+        && (TIMETABLE_WORDS.test(text) || START_AT_TIME.test(text) || CHANGE_START_TIME.test(text)))
+        || TIMETABLE_OTHER.test(text));
     if (timetable) return 'timetable';
     if (hotel) return 'hotel';
 
-    const origin = ORIGIN_WORDS.test(text);
-    const date = DATE_WORDS.test(text);
-    const weather = WEATHER_WORDS.test(text);
-    if (!origin && !date && !weather && EDIT_WORDS.test(text)) return 'edit';
+    const origin = ORIGIN_WORDS.test(text) || ORIGIN_WORDS_OTHER.test(text);
+    const date = DATE_WORDS.test(text) || DATE_WORDS_OTHER.test(text);
+    const weather = WEATHER_WORDS.test(text) || WEATHER_WORDS_OTHER.test(text);
+    if (!origin && !date && !weather && (EDIT_WORDS.test(text) || EDIT_WORDS_OTHER.test(text))) return 'edit';
     return 'chat';
+}
+
+// Language and labels of the last reply (see config/ai_chat_text.php).
+let aiLang = 'en';
+let aiUi = {};
+
+function rememberAiLanguage(data) {
+    if (!data) return;
+    if (data.lang) aiLang = String(data.lang);
+    if (data.ui && typeof data.ui === 'object') aiUi = data.ui;
+}
+
+/** A label in the reply's language; English text keeps the more specific wording. */
+function aiLabel(key, english, vars) {
+    let text = (aiLang !== 'en' && aiUi[key]) ? String(aiUi[key]) : english;
+    Object.keys(vars || {}).forEach(name => { text = text.split('{' + name + '}').join(String(vars[name])); });
+    return text;
 }
 
 function aiChatPanel() {
@@ -126,7 +153,7 @@ async function postAiForm(url, fields) {
 
 function aiErrorText(e, networkMessage) {
     return e && e.name === 'AbortError'
-        ? 'The assistant took too long to respond. Please try again.'
+        ? aiLabel('too_slow', 'The assistant took too long to respond. Please try again.')
         : networkMessage;
 }
 
@@ -141,7 +168,7 @@ async function sendAiMessage(event) {
 
     addAiMessage('user', text);
     clearAiPendingCards();
-    const loading = addAiMessage('bot', 'Writing answer...');
+    const loading = addAiMessage('bot', aiLabel('writing', 'Writing answer...'));
 
     const route = detectChatRoute(text);
     const endpoint = route === 'hotel' ? AI_ENDPOINTS.hotel
@@ -154,7 +181,8 @@ async function sendAiMessage(event) {
             itinerary_id: aiItineraryId(),
             message: text,
         });
-        if (loading) loading.textContent = cleanAiText(data.answer || data.message || 'The assistant could not answer this request.');
+        rememberAiLanguage(data);
+        if (loading) loading.textContent = cleanAiText(data.answer || data.message || aiLabel('no_answer', 'The assistant could not answer this request.'));
 
         if (data.pending_actions && data.pending_actions.length) {
             const firstAction = data.pending_actions[0];
@@ -170,7 +198,7 @@ async function sendAiMessage(event) {
             renderChangeCards(loading, data.proposals);
         }
     } catch (e) {
-        if (loading) loading.textContent = aiErrorText(e, 'Network error. Please try again.');
+        if (loading) loading.textContent = aiErrorText(e, aiLabel('network_error', 'Network error. Please try again.'));
     }
 }
 
@@ -201,19 +229,19 @@ function renderPendingAction(container, action) {
 
     let title, summary, buttonText, onClick;
     if (action.type === 'update_origin') {
-        title = 'Confirm starting location';
+        title = aiLabel('confirm_location_title', 'Confirm starting location');
         summary = action.summary || ('Update starting location to ' + (action.label || action.origin_name));
-        buttonText = 'Confirm Location';
+        buttonText = aiLabel('confirm_location', 'Confirm Location');
         onClick = button => confirmTripOrigin(action.origin_name || action.label || '', button);
     } else if (action.type === 'retime_itinerary') {
-        title = 'Confirm timetable change';
+        title = aiLabel('confirm_timetable_title', 'Confirm timetable change');
         summary = action.summary || ('Rearrange timetable to start from ' + (action.label || action.start_time));
-        buttonText = 'Confirm Timetable';
+        buttonText = aiLabel('confirm_timetable', 'Confirm Timetable');
         onClick = button => confirmItineraryRetiming(action.start_time || '', button);
     } else {
-        title = 'Confirm trip date';
+        title = aiLabel('confirm_date_title', 'Confirm trip date');
         summary = action.summary || ('Update itinerary start date to ' + action.label);
-        buttonText = 'Confirm Date';
+        buttonText = aiLabel('confirm_date', 'Confirm Date');
         onClick = button => confirmTripDate(action.start_date, button, action.next_action || null);
     }
 
@@ -227,10 +255,10 @@ function renderHotelCards(container, hotels) {
     hotels.slice(0, 3).forEach(hotel => {
         const price = Number(hotel.price_per_night || 0);
         const meta = (hotel.kind_label || 'Hotel') + (hotel.stars ? ', ' + Number(hotel.stars) + '-star' : '')
-            + ' - about RM ' + price.toFixed(0) + '/night (estimate)'
-            + (hotel.distance_km ? ' - ' + Number(hotel.distance_km).toFixed(1) + ' km away' : '')
+            + ' - ' + (aiLang === 'en' ? 'about ' : '') + 'RM ' + price.toFixed(0) + aiLabel('per_night', '/night (estimate)')
+            + (hotel.distance_km ? ' - ' + Number(hotel.distance_km).toFixed(1) + ' ' + aiLabel('km_away', 'km away') : '')
             + (hotel.address ? ' - ' + hotel.address : '');
-        container.appendChild(makeAiCard('hotel', hotel.name || 'Hotel', [meta], 'Confirm Hotel',
+        container.appendChild(makeAiCard('hotel', hotel.name || 'Hotel', [meta], aiLabel('confirm_hotel', 'Confirm Hotel'),
             button => confirmHotel(Number(hotel.hotel_id || 0), button)));
     });
     scrollAiChatToBottom();
@@ -243,13 +271,14 @@ function renderChangeCards(container, proposals) {
         const place = proposal.new_place || {};
         const isAdd = proposal.proposal_type === 'add' || !Number(proposal.item_id || 0);
         const title = isAdd
-            ? 'Day ' + proposal.day_no + ': add new stop'
-            : 'Day ' + proposal.day_no + ' stop ' + proposal.sequence_no + ': ' + (proposal.current_title || 'Current stop');
-        const meta = (isAdd ? 'Add ' : 'Replace with ') + (place.name || 'new place')
+            ? aiLabel('day_add_stop', 'Day {day}: add new stop', { day: proposal.day_no })
+            : aiLabel('day_stop', 'Day {day} stop {stop}: {title}',
+                { day: proposal.day_no, stop: proposal.sequence_no, title: proposal.current_title || 'Current stop' });
+        const meta = (isAdd ? aiLabel('add_prefix', 'Add ') : aiLabel('replace_prefix', 'Replace with ')) + (place.name || 'new place')
             + ' - ' + (place.category || 'place') + ' - RM ' + Number(place.estimated_cost || 0).toFixed(2);
         const reason = proposal.reason || 'Suggested from the cultural places database';
         container.appendChild(makeAiCard(isAdd ? 'add' : 'change', title, [meta, reason],
-            isAdd ? 'Confirm Add' : 'Confirm Change',
+            isAdd ? aiLabel('confirm_add', 'Confirm Add') : aiLabel('confirm_change', 'Confirm Change'),
             button => isAdd
                 ? confirmItineraryAdd(Number(proposal.day_no || 0), Number(place.place_id || 0), button)
                 : confirmItineraryChange(Number(proposal.item_id || 0), Number(place.place_id || 0), button)));
@@ -263,19 +292,19 @@ function renderChangeCards(container, proposals) {
  */
 async function runAiConfirm(button, progressText, url, fields, messages) {
     if (button) button.disabled = true;
-    const loading = addAiMessage('bot', progressText);
+    const loading = addAiMessage('bot', aiLabel('saving', progressText));
     try {
-        const data = await postAiForm(url, Object.assign({ itinerary_id: aiItineraryId() }, fields));
+        const data = await postAiForm(url, Object.assign({ itinerary_id: aiItineraryId(), lang: aiLang }, fields));
         if (data.status === 'success') {
-            if (loading) loading.textContent = cleanAiText(data.answer || data.message || messages.success);
+            if (loading) loading.textContent = cleanAiText(data.answer || data.message || aiLabel('saved', messages.success));
             clearAiPendingCards();
             return data;
         }
         if (button) button.disabled = false;
-        if (loading) loading.textContent = cleanAiText(data.answer || data.message || messages.failure);
+        if (loading) loading.textContent = cleanAiText(data.answer || data.message || aiLabel('save_failed', messages.failure));
     } catch (e) {
         if (button) button.disabled = false;
-        if (loading) loading.textContent = aiErrorText(e, messages.network);
+        if (loading) loading.textContent = aiErrorText(e, aiLabel('network_error', messages.network));
     }
     return null;
 }
@@ -316,7 +345,7 @@ async function confirmTripOrigin(originName, button) {
         place = await geocodeOriginName(originName);
     } catch (e) {
         if (button) button.disabled = false;
-        addAiMessage('bot', 'Could not find coordinates for that location. Try a clearer city, hotel, landmark, or address.');
+        addAiMessage('bot', aiLabel('location_not_found', 'Could not find coordinates for that location. Try a clearer city, hotel, landmark, or address.'));
         return;
     }
     const data = await runAiConfirm(button, 'Saving starting location...', AI_ENDPOINTS.chat,

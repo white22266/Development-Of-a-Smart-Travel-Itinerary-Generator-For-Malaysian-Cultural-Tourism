@@ -6,30 +6,33 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once "../config/db_connect.php";
+require_once "../config/ai_language_guard.php";
 require_once "../services/AiTravelAssistantService.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
+$message = trim((string)($_POST["message"] ?? ""));
+$lang = ai_request_language($message);
+
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     http_response_code(401);
-    echo json_encode(['status' => 'error', 'answer' => 'Please log in again before using the travel assistant.']);
+    echo json_encode(['status' => 'error', 'answer' => ai_text('pre_login', $lang), 'lang' => $lang], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $preferenceId = (int)($_POST["preference_id"] ?? 0);
-$message = trim((string)($_POST["message"] ?? ""));
 $startDate = trim((string)($_POST["start_date"] ?? ""));
 $originName = trim((string)($_POST["origin_name"] ?? ""));
 
 if ($travellerId <= 0) {
     http_response_code(400);
-    echo json_encode(['status' => 'error', 'answer' => 'Please log in again before planning your trip.']);
+    echo json_encode(['status' => 'error', 'answer' => ai_text('pre_login_plan', $lang), 'lang' => $lang], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
 if ($message === '') {
-    echo json_encode(['status' => 'error', 'answer' => 'Please ask about your start date, starting location, selected preference, or route readiness.']);
+    echo json_encode(['status' => 'error', 'answer' => ai_text('pre_ask_about', $lang), 'lang' => $lang], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -50,12 +53,13 @@ if ($preferenceId > 0) {
     }
 }
 
-$quickReply = pre_generation_rule_reply($message, is_array($preference) ? $preference : [], $startDate, $originName);
+$quickReply = pre_generation_rule_reply($message, is_array($preference) ? $preference : [], $startDate, $originName, $lang);
 if ($quickReply !== null) {
     echo json_encode([
         'status' => 'success',
         'answer' => $quickReply,
         'source' => 'pre_generation_rule',
+        'lang' => $lang,
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
 }
@@ -82,49 +86,59 @@ $context = [
 // Pass the traveller's actual message only. The service's answer is safe to show even
 // when status is 'error' (for example when the model is busy).
 $assistant = new AiTravelAssistantService();
-$result = $assistant->answer($message, $context);
+$result = $assistant->answer($message, $context, $lang);
 unset($result["source"]);
 
 echo json_encode($result, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 
-function pre_generation_rule_reply(string $message, array $preference, string $startDate, string $originName): ?string
+function pre_generation_rule_reply(string $message, array $preference, string $startDate, string $originName, string $lang = 'en'): ?string
 {
+    if (preg_match('/^(?:你好|您好|嗨|哈喽)[\s\p{P}]*$/u', trim($message))) {
+        return ai_text('pre_hello', $lang);
+    }
+    if ($lang === 'zh') {
+        return null;   // the patterns below read English (and a few Malay greetings)
+    }
+
     $normalized = normalize_pre_generation_text($message);
 
     if ($normalized === '') {
-        return 'Please ask about your start date, starting location, selected preference, or route readiness.';
+        return ai_text('pre_ask_about', $lang);
     }
 
-    if (preg_match('/^(hi|hello|hey|yo|hai|helo|good morning|good afternoon|good evening)$/i', $normalized)) {
-        return 'Hello. I can help you check your selected preference, choose a starting location, review route readiness, and confirm what is needed before generating the itinerary.';
+    if (preg_match('/^(hi|hello|hey|yo|hai|helo|good morning|good afternoon|good evening|selamat pagi|selamat petang|selamat malam|salam)$/i', $normalized)) {
+        return ai_text('pre_hello', $lang);
+    }
+    if ($lang !== 'en') {
+        return null;
     }
 
     if (preg_match('/\b(?:what\s+is\s+your\s+model|which\s+model|model\s+name|are\s+you\s+ollama|are\s+you\s+ai|who\s+are\s+you)\b/i', $normalized)) {
-        return 'I am the Smart Travel Assistant for this itinerary generator. I help with preference checks, starting location, route readiness, and pre-generation planning guidance.';
+        return ai_text('pre_identity', $lang);
     }
 
     if (preg_match('/\b(?:what\s+(?:can|could)\s+you\s+do|what\s+u\s+can\s+do|what\s+you\s+can\s+do|how\s+can\s+you\s+help|help\s+me|your\s+features)\b/i', $normalized)) {
-        return 'I can explain your selected preference, suggest a starting location, check route readiness, review cost and travel time considerations, and tell you what to confirm before clicking Generate Itinerary.';
+        return ai_text('pre_can_do', $lang);
     }
 
     if (preg_match('/\b(?:why\s+(?:do\s+)?you\s+keep\s+repeat|why\s+repeat|keep\s+repeating|same\s+answer|repeat\s+just\s+now)\b/i', $normalized)) {
-        return 'That happened because your earlier message was interpreted as a preference-readiness check. Ask me a specific item such as starting location, start date, route readiness, cost, or what to confirm before generation.';
+        return ai_text('pre_repeat', $lang);
     }
 
     if (preg_match('/^(then|next|continue|more|go on|and then|what next|so)$/i', $normalized)) {
-        return 'Next, confirm your start date and starting location. After that, you can click Generate Itinerary and let the system rules create the official plan.';
+        return ai_text('pre_next', $lang);
     }
 
     if (is_starting_location_prompt($normalized)) {
-        return build_pre_generation_starting_location_reply($preference, $originName);
+        return build_pre_generation_starting_location_reply($preference, $originName, $lang);
     }
 
     if (is_confirmation_prompt($normalized)) {
-        return build_pre_generation_confirmation_reply($preference, $startDate, $originName);
+        return build_pre_generation_confirmation_reply($preference, $startDate, $originName, $lang);
     }
 
     if (is_preference_check_prompt($normalized)) {
-        return build_pre_generation_readiness_reply($preference, $startDate, $originName);
+        return build_pre_generation_readiness_reply($preference, $startDate, $originName, $lang);
     }
 
     return null;
@@ -149,54 +163,54 @@ function is_preference_check_prompt(string $normalized): bool
     return (bool)preg_match('/\b(?:explain\s+whether\s+my\s+selected\s+preference|selected\s+preference\s+(?:suitable|ready|complete)|preference\s+(?:suitable|ready|complete)|suitable\s+for\s+generating\s+an\s+itinerary|check\s+(?:my\s+)?preference)\b/i', $normalized);
 }
 
-function build_pre_generation_starting_location_reply(array $preference, string $originName): string
+function build_pre_generation_starting_location_reply(array $preference, string $originName, string $lang = 'en'): string
 {
     if (is_meaningful_value($originName)) {
-        return 'Use ' . clean_short_value($originName) . ' as the starting location if that is where the traveller will begin the trip. If not, update it before generating so route time and cost are more accurate.';
+        return ai_text('pre_use_origin', $lang, ['name' => clean_short_value($originName)]);
     }
 
     $district = first_meaningful_preference_value($preference, ['preferred_districts']);
     $state = first_meaningful_preference_value($preference, ['preferred_states']);
-    $area = is_meaningful_value($district) ? $district : (is_meaningful_value($state) ? $state : 'the selected destination area');
+    $area = is_meaningful_value($district) ? $district : (is_meaningful_value($state) ? $state : ai_text('pre_area_fallback', $lang));
 
-    return 'Choose a central and easy-to-reach point in ' . clean_short_value($area) . ', such as the hotel, main bus terminal, train station, or town centre. Confirm it before generating the itinerary.';
+    return ai_text('pre_choose_origin', $lang, ['area' => clean_short_value($area)]);
 }
 
-function build_pre_generation_confirmation_reply(array $preference, string $startDate, string $originName): string
+function build_pre_generation_confirmation_reply(array $preference, string $startDate, string $originName, string $lang = 'en'): string
 {
-    $missing = pre_generation_missing_items($preference, $startDate, $originName);
+    $missing = pre_generation_missing_items($preference, $startDate, $originName, $lang);
     if (empty($missing)) {
-        return 'Before clicking Generate Itinerary, confirm the start date, starting location, budget, transport type, travel days, destination area, and interests. Your preference looks ready, but the official itinerary will still be generated by system rules.';
+        return ai_text('pre_confirm_ready', $lang);
     }
 
-    return 'Before clicking Generate Itinerary, complete these missing items: ' . implode(', ', array_slice($missing, 0, 5)) . '. This helps the system calculate route order, time, and cost more accurately.';
+    return ai_text('pre_confirm_missing', $lang, ['items' => implode(', ', array_slice($missing, 0, 5))]);
 }
 
-function build_pre_generation_readiness_reply(array $preference, string $startDate, string $originName): string
+function build_pre_generation_readiness_reply(array $preference, string $startDate, string $originName, string $lang = 'en'): string
 {
-    $missing = pre_generation_missing_items($preference, $startDate, $originName);
+    $missing = pre_generation_missing_items($preference, $startDate, $originName, $lang);
     if (empty($missing)) {
-        return 'Your selected preference looks suitable for itinerary generation. Confirm the start date and starting location one more time, then use Generate Itinerary to create the official plan.';
+        return ai_text('pre_ready', $lang);
     }
 
-    return 'Your selected preference is not fully ready yet. Please complete ' . implode(', ', array_slice($missing, 0, 5)) . ' before generating the itinerary.';
+    return ai_text('pre_not_ready', $lang, ['items' => implode(', ', array_slice($missing, 0, 5))]);
 }
 
-function pre_generation_missing_items(array $preference, string $startDate, string $originName): array
+function pre_generation_missing_items(array $preference, string $startDate, string $originName, string $lang = 'en'): array
 {
     $missing = [];
 
-    if (!is_meaningful_value($startDate)) $missing[] = 'start date';
-    if (!is_meaningful_value($originName)) $missing[] = 'starting location';
-    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['trip_days']))) $missing[] = 'travel days';
-    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['budget', 'budget_tier']))) $missing[] = 'budget';
-    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['transport_type']))) $missing[] = 'transport type';
+    if (!is_meaningful_value($startDate)) $missing[] = ai_text('missing_start_date', $lang);
+    if (!is_meaningful_value($originName)) $missing[] = ai_text('missing_origin', $lang);
+    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['trip_days']))) $missing[] = ai_text('missing_days', $lang);
+    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['budget', 'budget_tier']))) $missing[] = ai_text('missing_budget', $lang);
+    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['transport_type']))) $missing[] = ai_text('missing_transport', $lang);
 
     $state = first_meaningful_preference_value($preference, ['preferred_states']);
     $district = first_meaningful_preference_value($preference, ['preferred_districts']);
-    if (!is_meaningful_value($state) && !is_meaningful_value($district)) $missing[] = 'destination state or district';
+    if (!is_meaningful_value($state) && !is_meaningful_value($district)) $missing[] = ai_text('missing_area', $lang);
 
-    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['interests']))) $missing[] = 'travel interests';
+    if (!is_meaningful_value(first_meaningful_preference_value($preference, ['interests']))) $missing[] = ai_text('missing_interests', $lang);
 
     return array_values(array_unique($missing));
 }

@@ -3,6 +3,9 @@
 // Itinerary editor for the chat: proposes one replacement, addition or timetable change from the
 // cultural places database, and saves it only when the traveller presses a confirmation button.
 // Every proposal and every confirmation passes ItineraryRuleValidationService first.
+// Requests may be in English, Malay or Chinese. The local model reads the request first
+// (ItineraryEditIntentService); when it is not running or gives no valid intent, the regular
+// expressions below handle English requests; otherwise the traveller is asked to say it again.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -12,240 +15,400 @@ require_once "../config/ai_language_guard.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/ItineraryEditService.php";
 require_once "../services/ItineraryRuleValidationService.php";
+require_once "../services/ItineraryEditIntentService.php";
 
 header("Content-Type: application/json; charset=utf-8");
 
+$message = trim((string)($_POST["message"] ?? ""));
+editor_lang(ai_request_language($message));
+
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
-    http_response_code(401);
-    echo json_encode(["status" => "error", "answer" => "Unauthorized."]);
-    exit;
+    editor_reply(["status" => "error", "answer" => ai_text("unauthorized", editor_lang())], 401);
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
 $action = trim((string)($_POST["action"] ?? "recommend"));
-$message = trim((string)($_POST["message"] ?? ""));
-if ($action === "recommend") {
-    ai_reject_chinese_json($message, "answer");
-}
+$lang = editor_lang();
 
 if ($travellerId <= 0 || $itineraryId <= 0) {
-    http_response_code(400);
-    echo json_encode(["status" => "error", "answer" => "Invalid itinerary editor request."]);
-    exit;
+    editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_request", $lang)], 400);
 }
 
 $itinerary = load_itinerary($conn, $itineraryId, $travellerId);
 if (!$itinerary) {
-    http_response_code(404);
-    echo json_encode(["status" => "error", "answer" => "Itinerary not found."]);
-    exit;
+    editor_reply(["status" => "error", "answer" => ai_text("itinerary_not_found", $lang)], 404);
 }
 
 if ($action === "confirm") {
     $itemId = (int)($_POST["item_id"] ?? 0);
     $placeId = (int)($_POST["place_id"] ?? 0);
     if ($itemId <= 0 || $placeId <= 0) {
-        echo json_encode(["status" => "error", "answer" => "Invalid replacement selection."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_replacement", $lang)]);
     }
 
     $item = load_item($conn, $itineraryId, $itemId);
     $place = load_place($conn, $placeId);
     if (!$item || !$place) {
-        echo json_encode(["status" => "error", "answer" => "Replacement item or place was not found."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_replacement_not_found", $lang)]);
     }
 
     $check = ItineraryRuleValidationService::validatePlaceChange($conn, $travellerId, $itineraryId, $placeId, (int)$item["day_no"], $itemId);
     if (!$check["ok"]) {
-        echo json_encode(["status" => "error", "answer" => $check["message"]], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        exit;
+        editor_reply(["status" => "error", "answer" => $check["message"]]);
     }
 
     $ok = ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
     if (!$ok) {
-        echo json_encode(["status" => "error", "answer" => "Could not update the itinerary item."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_update_failed", $lang)]);
     }
 
     ItineraryEditService::routes($conn, $itineraryId);
     ItineraryEditService::total($conn, $itineraryId);
 
-    echo json_encode([
+    editor_reply([
         "status" => "success",
-        "answer" => "Itinerary updated. The route and cost summary have been recalculated.",
+        "answer" => ai_text("edit_updated", $lang),
         "updated_item" => [
             "item_id" => $itemId,
             "place_id" => $placeId,
             "name" => $place["name"],
         ],
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
+    ]);
 }
 
 if ($action === "confirm_add") {
     $dayNo = (int)($_POST["day_no"] ?? 0);
     $placeId = (int)($_POST["place_id"] ?? 0);
     if ($dayNo <= 0 || $placeId <= 0 || $dayNo > (int)$itinerary["total_days"]) {
-        echo json_encode(["status" => "error", "answer" => "Invalid add-place selection."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_add", $lang)]);
     }
 
     $place = load_place($conn, $placeId);
     if (!$place) {
-        echo json_encode(["status" => "error", "answer" => "Selected place was not found."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_place_not_found", $lang)]);
     }
 
     $check = ItineraryRuleValidationService::validatePlaceChange($conn, $travellerId, $itineraryId, $placeId, $dayNo, 0);
     if (!$check["ok"]) {
-        echo json_encode(["status" => "error", "answer" => $check["message"]], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        exit;
+        editor_reply(["status" => "error", "answer" => $check["message"]]);
     }
 
     $ok = apply_addition($conn, $itineraryId, $dayNo, $place);
     if (!$ok) {
-        echo json_encode(["status" => "error", "answer" => "Could not add this place into the itinerary."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_add_failed", $lang)]);
     }
 
     ItineraryEditService::routes($conn, $itineraryId);
     ItineraryEditService::total($conn, $itineraryId);
 
-    echo json_encode([
+    editor_reply([
         "status" => "success",
-        "answer" => "Place added. The route and cost summary have been recalculated.",
+        "answer" => ai_text("edit_added", $lang),
         "added_place" => [
             "day_no" => $dayNo,
             "place_id" => $placeId,
             "name" => $place["name"],
         ],
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
+    ]);
 }
 
-$requestedStartTime = extract_requested_start_time($message);
 if ($action === "confirm_retime") {
     $startTime = normalize_requested_start_time((string)($_POST["start_time"] ?? ""));
     if ($startTime === null) {
-        echo json_encode(["status" => "error", "answer" => "Invalid timetable start time. Please use a time such as 9:00 AM."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_time", $lang)]);
     }
 
     $ok = retime_itinerary_days($conn, $itineraryId, $startTime);
     if (!$ok) {
-        echo json_encode(["status" => "error", "answer" => "Could not rearrange the timetable because this itinerary has no scheduled places."]);
-        exit;
+        editor_reply(["status" => "error", "answer" => ai_text("edit_retime_failed", $lang)]);
     }
 
     ItineraryEditService::total($conn, $itineraryId);
-    echo json_encode([
+    editor_reply([
         "status" => "success",
-        "answer" => "Timetable rearranged to start from " . display_time_label($startTime) . ". The existing rule-based route places were kept; only the schedule time was updated.",
+        "answer" => ai_text("edit_retimed", $lang, ["time" => display_time_label($startTime)]),
         "reload" => true,
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
+    ]);
 }
 
-if ($action === "recommend" && $requestedStartTime !== null && is_timetable_rearrange_request($message)) {
-    $label = display_time_label($requestedStartTime);
-    echo json_encode([
-        "status" => "success",
-        "answer" => "I detected a timetable change request, not a starting location change. I can rearrange this itinerary to start from {$label} while keeping the current rule-based route places. Nothing will be saved until you confirm.",
-        "pending_action" => [
-            "type" => "retime_itinerary",
-            "start_time" => $requestedStartTime,
-            "label" => $label,
-            "summary" => "Rearrange timetable to start from {$label}. Places stay based on your saved preference and rule-based itinerary logic.",
-        ],
-        "pending_actions" => [[
-            "type" => "retime_itinerary",
-            "start_time" => $requestedStartTime,
-            "label" => $label,
-            "summary" => "Rearrange timetable to start from {$label}. Places stay based on your saved preference and rule-based itinerary logic.",
-        ]],
-        "source" => "local_rule",
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
+// ---------------------------------------------------------------- a chat message: work out the change
+if ($message === "") {
+    editor_reply(["status" => "success", "answer" => ai_text("edit_clarify", $lang), "proposals" => [], "source" => "clarify"]);
 }
 
 $items = load_editable_items($conn, $itineraryId);
+$totalDays = max(1, (int)($itinerary["total_days"] ?? 1));
 
-// An explicit replace request ("change day 2 stop 1 to X") is never treated as an add request.
-if (!is_replace_request($message) && is_add_or_regenerate_request($message)) {
-    $additions = build_addition_proposals($conn, $travellerId, $itinerary, $items, $message);
-    echo json_encode([
-        "status" => "success",
-        "answer" => empty($additions)
-            ? "I could not find a place that can be added to that day under your itinerary rules (state, travel pace, opening hours and distance). Try another day or a different kind of place."
-            : build_local_addition_answer($additions),
-        "proposals" => $additions,
-        "source" => "local_rule",
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+// 1. The local model.
+$intentService = new ItineraryEditIntentService();
+$intent = $intentService->detect($message, $items, $totalDays, $lang);
+$modelDown = $intent === null && in_array($intentService->lastFailure(), ["unreachable", "timeout", "model_error"], true);
+if ($intent !== null && $intent["action"] !== "none") {
+    handle_model_intent($conn, $travellerId, $itinerary, $items, $message, $intent, $lang);
+}
+
+// 2. The regular expressions, for English requests they recognise.
+if ($lang === "en" && regex_sees_edit_request($message)) {
+    run_regex_editor($conn, $travellerId, $itinerary, $items, $message, $lang);
+}
+
+// 3. Neither understood it: ask again, in the traveller's language.
+$answer = ai_text("edit_clarify", $lang);
+if ($modelDown && $lang !== "en") {
+    $answer .= " " . ai_text("edit_model_down", $lang);
+}
+editor_reply(["status" => "success", "answer" => $answer, "proposals" => [], "source" => $modelDown ? "clarify_model_down" : "clarify"]);
+
+// ================================================================ replies
+
+/** The language of this request; set once at the start. */
+function editor_lang(?string $set = null): string
+{
+    static $lang = "en";
+    if ($set !== null) $lang = in_array($set, AI_LANGUAGES, true) ? $set : "en";
+    return $lang;
+}
+
+function editor_reply(array $payload, int $httpStatus = 200): never
+{
+    http_response_code($httpStatus);
+    $payload["lang"] = editor_lang();
+    $payload["ui"] = ai_ui_labels(editor_lang());
+    echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
 }
 
-if (empty($items)) {
-    echo json_encode(["status" => "success", "answer" => "There are no editable itinerary stops yet. Ask me to add places for a specific day, for example: add a museum on day 2.", "proposals" => []]);
-    exit;
-}
-
-$reference = parse_stop_reference($message);
-$target = select_target_item($items, $message, $reference);
-if ($target === null) {
-    echo json_encode([
-        "status" => "success",
-        "answer" => describe_missing_stop($items, $reference),
-        "proposals" => [],
-        "source" => "local_rule",
-    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    exit;
-}
-
-$usedPlaceIds = array_values(array_filter(array_map(fn($item) => (int)($item["place_id"] ?? 0), $items)));
-$requestedName = extract_requested_replacement_name($message);
-
-if ($requestedName !== "") {
-    // The traveller named the new place: offer exactly that place or explain why not.
-    $outcome = find_requested_place_by_name($conn, $travellerId, $itinerary, $target, $requestedName, $usedPlaceIds);
-    if ($outcome["place"] === null) {
-        echo json_encode(["status" => "success", "answer" => $outcome["message"], "proposals" => [], "source" => "local_rule"], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        exit;
+/** Act on a validated model intent. Replace, add and retime use the same paths as the rules below. */
+function handle_model_intent(mysqli $conn, int $travellerId, array $itinerary, array $items, string $message, array $intent, string $lang): never
+{
+    $target = null;
+    foreach ($items as $item) {
+        if ((int)$item["item_id"] === (int)($intent["stop_id"] ?? 0)) $target = $item;
     }
-    $newPlace = $outcome["place"];
-    $reason = "matches the place you asked for";
-} else {
-    $newPlace = find_alternative_place($conn, $travellerId, $itinerary, $target, $usedPlaceIds, $message);
-    if ($newPlace === null) {
-        echo json_encode([
+    // The model's English wish ("cheaper") lets the rules see wishes written in any language.
+    $wishText = trim($message . " " . (string)($intent["wish"] ?? ""));
+
+    switch ($intent["action"]) {
+        case "replace":
+            reply_replacement($conn, $travellerId, $itinerary, $items, $target, $wishText, (string)($intent["place_name"] ?? ""), (string)($intent["category"] ?? ""), "model");
+
+        case "add":
+            if ((string)($intent["place_name"] ?? "") !== "") {
+                reply_named_addition($conn, $travellerId, $itinerary, $items, $intent);
+            }
+            $additions = build_addition_proposals($conn, $travellerId, $itinerary, $items, $wishText, $intent["day"], (string)($intent["category"] ?? ""));
+            reply_additions($additions, "model");
+
+        case "retime":
+            if ($target !== null) {
+                reply_not_available($intent, $target, $lang);
+            }
+            $note = ((int)$itinerary["total_days"] > 1 && $intent["day"] !== null) ? ai_text("edit_retime_all_days", $lang) : "";
+            reply_retime_pending($intent["time"] . ":00", "model", $note);
+
+        default:   // remove, move, regenerate_day, optimise
+            reply_not_available($intent, $target, $lang);
+    }
+}
+
+/** The existing rule-based editor for English requests. */
+function run_regex_editor(mysqli $conn, int $travellerId, array $itinerary, array $items, string $message, string $lang): never
+{
+    $requestedStartTime = extract_requested_start_time($message);
+    if ($requestedStartTime !== null && is_timetable_rearrange_request($message)) {
+        reply_retime_pending($requestedStartTime, "local_rule");
+    }
+
+    // An explicit replace request ("change day 2 stop 1 to X") is never treated as an add request.
+    if (!is_replace_request($message) && is_add_or_regenerate_request($message)) {
+        reply_additions(build_addition_proposals($conn, $travellerId, $itinerary, $items, $message), "local_rule");
+    }
+
+    if (empty($items)) {
+        editor_reply(["status" => "success", "answer" => ai_text("edit_no_stops", $lang), "proposals" => []]);
+    }
+
+    $reference = parse_stop_reference($message);
+    $target = select_target_item($items, $message, $reference);
+    if ($target === null) {
+        editor_reply([
             "status" => "success",
-            "answer" => "I could not find a replacement for " . $target["item_title"] . " that fits your itinerary rules (state, opening hours, travel time and distance). Try asking for a different kind of place.",
+            "answer" => describe_missing_stop($items, $reference),
             "proposals" => [],
             "source" => "local_rule",
-        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        exit;
+        ]);
     }
-    $reason = build_replacement_reason($target, $newPlace);
+    reply_replacement($conn, $travellerId, $itinerary, $items, $target, $message, extract_requested_replacement_name($message), null, "local_rule");
 }
 
-$proposal = [
-    "item_id" => (int)$target["item_id"],
-    "current_title" => (string)$target["item_title"],
-    "day_no" => (int)$target["day_no"],
-    "sequence_no" => (int)$target["sequence_no"],
-    "current_category" => (string)($target["category"] ?? $target["item_type"]),
-    "new_place" => format_place($newPlace),
-    "reason" => $reason,
-];
+/** Does the English request look like any change the rules can handle? */
+function regex_sees_edit_request(string $message): bool
+{
+    if (extract_requested_start_time($message) !== null && is_timetable_rearrange_request($message)) return true;
+    if (is_replace_request($message) || is_add_or_regenerate_request($message)) return true;
+    $reference = parse_stop_reference($message);
+    if ($reference["day"] > 0 || $reference["stop"] > 0) return true;
+    // The other change words of EDIT_WORDS in assets/trip_ai_chat.js.
+    return (bool)preg_match('/\b(?:change|modify|regenerate|replan|reroute|alternatives?|another\s+(?:place|stop)|dislike|don\'?t\s+(?:want|like)|do\s+not\s+(?:want|like)|too\s+(?:far|expensive|crowded|tiring)|cheaper|lower\s+cost|reduce\s+cost|save\s+money|budget\s+friendly|improve)\b/i', $message);
+}
 
-// The answer is built from the proposal itself, so the text always matches the confirmation card.
-echo json_encode([
-    "status" => "success",
-    "answer" => build_local_editor_answer($proposal),
-    "proposals" => [$proposal],
-    "source" => "local_rule",
-], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+/**
+ * Offer one replacement for $target: the named place, or the best alternative of the wanted
+ * category. $categoryOverride null = read the category from the message, "" = keep the stop's own.
+ */
+function reply_replacement(mysqli $conn, int $travellerId, array $itinerary, array $items, ?array $target, string $message, string $requestedName, ?string $categoryOverride, string $source): never
+{
+    $lang = editor_lang();
+    if ($target === null) {
+        editor_reply(["status" => "success", "answer" => ai_text("edit_clarify", $lang), "proposals" => [], "source" => $source]);
+    }
+    $usedPlaceIds = array_values(array_filter(array_map(fn($item) => (int)($item["place_id"] ?? 0), $items)));
+
+    if ($requestedName !== "") {
+        // The traveller named the new place: offer exactly that place or explain why not.
+        $outcome = find_requested_place_by_name($conn, $travellerId, $itinerary, $target, $requestedName, $usedPlaceIds);
+        if ($outcome["place"] === null) {
+            editor_reply(["status" => "success", "answer" => $outcome["message"], "proposals" => [], "source" => $source]);
+        }
+        $newPlace = $outcome["place"];
+        $reason = ai_text("reason_requested", $lang);
+    } else {
+        $newPlace = find_alternative_place($conn, $travellerId, $itinerary, $target, $usedPlaceIds, $message, $categoryOverride);
+        if ($newPlace === null) {
+            editor_reply([
+                "status" => "success",
+                "answer" => ai_text("edit_replace_none", $lang, ["title" => $target["item_title"]]),
+                "proposals" => [],
+                "source" => $source,
+            ]);
+        }
+        $reason = build_replacement_reason($target, $newPlace);
+    }
+
+    $proposal = [
+        "item_id" => (int)$target["item_id"],
+        "current_title" => (string)$target["item_title"],
+        "day_no" => (int)$target["day_no"],
+        "sequence_no" => (int)$target["sequence_no"],
+        "current_category" => (string)($target["category"] ?? $target["item_type"]),
+        "new_place" => format_place($newPlace),
+        "reason" => $reason,
+    ];
+
+    // The answer is built from the proposal itself, so the text always matches the confirmation card.
+    editor_reply([
+        "status" => "success",
+        "answer" => build_local_editor_answer($proposal),
+        "proposals" => [$proposal],
+        "source" => $source,
+    ]);
+}
+
+function reply_additions(array $additions, string $source): never
+{
+    $lang = editor_lang();
+    editor_reply([
+        "status" => "success",
+        "answer" => empty($additions) ? ai_text("edit_add_none", $lang) : build_local_addition_answer($additions),
+        "proposals" => $additions,
+        "source" => $source,
+    ]);
+}
+
+/** Add the place the traveller named, after the same rule check the confirm step uses. */
+function reply_named_addition(mysqli $conn, int $travellerId, array $itinerary, array $items, array $intent): never
+{
+    $totalDays = max(1, (int)($itinerary["total_days"] ?? 1));
+    $dayNo = $intent["day"] !== null ? (int)$intent["day"] : requested_day_no("", $totalDays, $items);
+    $slot = ["item_id" => 0, "place_id" => 0, "day_no" => $dayNo, "district" => "", "state" => ""];
+    $usedPlaceIds = array_values(array_filter(array_map(fn($item) => (int)($item["place_id"] ?? 0), $items)));
+
+    $outcome = find_requested_place_by_name($conn, $travellerId, $itinerary, $slot, (string)$intent["place_name"], $usedPlaceIds, $items);
+    if ($outcome["place"] === null) {
+        editor_reply(["status" => "success", "answer" => $outcome["message"], "proposals" => [], "source" => "model"]);
+    }
+    $existingDayCount = count(array_filter($items, fn($item) => (int)$item["day_no"] === $dayNo));
+    reply_additions([addition_proposal($outcome["place"], $dayNo, $existingDayCount, ai_text("reason_requested", editor_lang()))], "model");
+}
+
+/** A whole-trip timetable change, waiting for the Confirm Timetable button. */
+function reply_retime_pending(string $startTime, string $source, string $note = ""): never
+{
+    $lang = editor_lang();
+    $label = display_time_label($startTime);
+    $pending = [
+        "type" => "retime_itinerary",
+        "start_time" => $startTime,
+        "label" => $label,
+        "summary" => ai_text("edit_retime_summary", $lang, ["time" => $label]),
+    ];
+    editor_reply([
+        "status" => "success",
+        "answer" => ai_text("edit_retime_detected", $lang, ["time" => $label]) . ($note !== "" ? " " . $note : ""),
+        "pending_action" => $pending,
+        "pending_actions" => [$pending],
+        "source" => $source,
+    ]);
+}
+
+/**
+ * Remove, move, regenerate a day, optimise, or retime one stop: understood, but the chat cannot
+ * carry these out yet. The pending action has the shape of the others plus "available": false,
+ * and the page shows no confirm button for it.
+ */
+function reply_not_available(array $intent, ?array $target, string $lang): never
+{
+    $title = $target !== null ? (string)$target["item_title"] : "";
+    $day = (int)($intent["day"] ?? 0);
+    switch ($intent["action"]) {
+        case "remove":
+            $type = "remove_stop";
+            $what = ai_text("what_remove", $lang, ["title" => $title, "day" => $day]);
+            break;
+        case "move":
+            $type = "move_stop";
+            $position = $intent["position"] !== null ? ai_text("what_move_position", $lang, ["position" => $intent["position"]]) : "";
+            $what = ai_text("what_move", $lang, ["title" => $title, "day" => $day, "position" => $position]);
+            break;
+        case "regenerate_day":
+            $type = "regenerate_day";
+            $what = ai_text("what_regenerate_day", $lang, ["day" => $day]);
+            break;
+        case "optimise":
+            $type = "optimise_route";
+            $what = $day > 0 ? ai_text("what_optimise_day", $lang, ["day" => $day]) : ai_text("what_optimise_trip", $lang);
+            break;
+        default:
+            $type = "retime_stop";
+            $what = ai_text("what_retime_stop", $lang, ["title" => $title, "time" => (string)$intent["time"]]);
+    }
+
+    $pending = [
+        "type" => $type,
+        "available" => false,
+        "day_no" => $intent["day"],
+        "item_id" => $intent["stop_id"],
+        "position" => $intent["position"],
+        "start_time" => $intent["time"],
+        "category" => $intent["category"],
+        "place_name" => $intent["place_name"],
+        "wish" => $intent["wish"],
+        "label" => $what,
+        "summary" => ai_text("pending_not_available", $lang),
+        "intent" => $intent,
+    ];
+    editor_reply([
+        "status" => "success",
+        "answer" => ai_text("edit_not_available", $lang, ["what" => $what]),
+        "pending_action" => $pending,
+        "pending_actions" => [$pending],
+        "proposals" => [],
+        "source" => "model",
+    ]);
+}
+
+// ================================================================ data and rules
 
 function load_itinerary(mysqli $conn, int $itineraryId, int $travellerId): ?array
 {
@@ -387,12 +550,14 @@ function describe_missing_stop(array $items, array $reference): string
     $day = $reference['day'];
     $stop = $reference['stop'];
     $dayItems = array_values(array_filter($items, fn($item) => $day <= 0 || (int)$item["day_no"] === $day));
+    $lang = editor_lang();
     if ($day > 0 && empty($dayItems)) {
-        return "Day {$day} has no places that can be changed. Ask me to add a place on day {$day} instead.";
+        return ai_text("edit_day_empty", $lang, ["day" => $day]);
     }
     $count = count($dayItems);
-    $where = $day > 0 ? "Day {$day}" : "This itinerary";
-    return "{$where} has {$count} " . ($count === 1 ? "stop" : "stops") . ", so there is no stop {$stop}. Please check the stop number.";
+    return $day > 0
+        ? ai_text("edit_no_such_stop_day", $lang, ["day" => $day, "count" => $count, "stop" => $stop])
+        : ai_text("edit_no_such_stop_trip", $lang, ["count" => $count, "stop" => $stop]);
 }
 
 /** "replace", "change ... to", "swap" etc.: a request to change an existing stop. */
@@ -431,11 +596,13 @@ function extract_requested_replacement_name(string $message): string
  *
  * @return array{place: ?array, message: string}
  */
-function find_requested_place_by_name(mysqli $conn, int $travellerId, array $itinerary, array $target, string $name, array $usedPlaceIds): array
+function find_requested_place_by_name(mysqli $conn, int $travellerId, array $itinerary, array $target, string $name, array $usedPlaceIds, ?array $stateItems = null): array
 {
-    $states = itinerary_states($itinerary, [$target]);
+    $lang = editor_lang();
+    $isAdd = (int)($target["item_id"] ?? 0) === 0;   // a new stop on $target["day_no"]
+    $states = itinerary_states($itinerary, $stateItems ?? [$target]);
     if (empty($states)) {
-        return ["place" => null, "message" => "I could not tell which state this itinerary covers, so I cannot look up \"{$name}\"."];
+        return ["place" => null, "message" => ai_text("name_no_state", $lang, ["name" => $name])];
     }
     $statePlaceholders = implode(",", array_fill(0, count($states), "?"));
     $like = '%' . addcslashes($name, '%_\\') . '%';
@@ -462,24 +629,24 @@ function find_requested_place_by_name(mysqli $conn, int $travellerId, array $iti
 
     $stateText = implode(", ", $states);
     if (empty($matches)) {
-        if ($stateText === "") $stateText = "this itinerary's states";
-        return ["place" => null, "message" => "I could not find \"{$name}\" among the cultural places in {$stateText}. Please check the name, or ask for a kind of place instead (for example: a museum)."];
+        if ($stateText === "") $stateText = ai_text("name_states_fallback", $lang);
+        return ["place" => null, "message" => ai_text("name_not_found", $lang, ["name" => $name, "states" => $stateText])];
     }
 
     $lastReason = "";
     foreach ($matches as $place) {
-        if ((int)$place["place_id"] === (int)$target["place_id"]) {
-            return ["place" => null, "message" => $place["name"] . " is already this stop."];
+        if (!$isAdd && (int)$place["place_id"] === (int)$target["place_id"]) {
+            return ["place" => null, "message" => ai_text("name_already_this_stop", $lang, ["name" => $place["name"]])];
         }
         if (in_array((int)$place["place_id"], $usedPlaceIds, true)) {
-            $lastReason = $place["name"] . " is already in your itinerary.";
+            $lastReason = ai_text("name_already_in_trip", $lang, ["name" => $place["name"]]);
             continue;
         }
         $check = ItineraryRuleValidationService::validatePlaceChange($conn, $travellerId, (int)$itinerary["itinerary_id"], (int)$place["place_id"], (int)$target["day_no"], (int)$target["item_id"]);
         if ($check["ok"]) {
             return ["place" => $place, "message" => ""];
         }
-        $lastReason = $place["name"] . " cannot replace this stop: " . $check["message"];
+        $lastReason = ai_text($isAdd ? "name_cannot_add" : "name_cannot_replace", $lang, ["name" => $place["name"], "reason" => $check["message"]]);
     }
     return ["place" => null, "message" => $lastReason];
 }
@@ -521,11 +688,12 @@ function preferred_category_from_message(string $message): string
  * the stop's own category), nearest district first. Candidates are checked with the same rules the
  * confirm step uses, so the traveller is never offered a change that cannot be saved.
  */
-function find_alternative_place(mysqli $conn, int $travellerId, array $itinerary, array $target, array $usedPlaceIds, string $message): ?array
+function find_alternative_place(mysqli $conn, int $travellerId, array $itinerary, array $target, array $usedPlaceIds, string $message, ?string $categoryOverride = null): ?array
 {
     $state = (string)($target["state"] ?? "");
     $district = (string)($target["district"] ?? "");
-    $requestedCategory = preferred_category_from_message($message);
+    // The model's category when it gave one ("" = none asked for); otherwise read the message.
+    $requestedCategory = $categoryOverride ?? preferred_category_from_message($message);
     $category = $requestedCategory !== "" ? $requestedCategory : strtolower((string)($target["category"] ?? ""));
     $excludeIds = array_values(array_unique(array_filter(array_merge($usedPlaceIds, [(int)($target["place_id"] ?? 0)]))));
     $wantsCheaper = (bool)preg_match('/\b(?:cheap|cheaper|cost|budget|expensive|save money)\b/i', $message);
@@ -605,28 +773,35 @@ function format_place(array $place): array
 
 function build_replacement_reason(array $target, array $place): string
 {
+    $lang = editor_lang();
     $parts = [];
     if (($target["district"] ?? "") !== "" && ($target["district"] ?? "") === ($place["district"] ?? "")) {
-        $parts[] = "same district";
+        $parts[] = ai_text("reason_same_district", $lang);
     }
     if (($target["category"] ?? "") === ($place["category"] ?? "")) {
-        $parts[] = "same category";
+        $parts[] = ai_text("reason_same_category", $lang);
     }
     $newCost = (float)($place["entrance_fee"] ?? $place["estimated_cost"] ?? 0);
     $oldCost = (float)($target["estimated_cost"] ?? 0);
-    if ($newCost < $oldCost) $parts[] = "lower cost";
-    if (!empty($place["opening_hours"])) $parts[] = "has opening hours";
-    return !empty($parts) ? implode(", ", $parts) : "better alternative from the place database";
+    if ($newCost < $oldCost) $parts[] = ai_text("reason_lower_cost", $lang);
+    if (!empty($place["opening_hours"])) $parts[] = ai_text("reason_opening_hours", $lang);
+    return !empty($parts) ? implode(ai_text("reason_list_separator", $lang), $parts) : ai_text("reason_better", $lang);
 }
 
 function build_local_editor_answer(array $proposal): string
 {
+    $lang = editor_lang();
     $place = $proposal["new_place"];
     $cost = (float)($place["estimated_cost"] ?? 0);
-    return "Day " . $proposal["day_no"] . " stop " . $proposal["sequence_no"] . ": replace " . $proposal["current_title"]
-        . " with " . $place["name"] . " (" . ($place["category"] ?? "place") . ", "
-        . ($cost > 0 ? "RM " . number_format($cost, 2) : "free entry") . "). Reason: " . $proposal["reason"] . ".\n"
-        . "Nothing has been saved yet. Click Confirm Change to apply it.";
+    return ai_text("edit_replace_answer", $lang, [
+        "day" => $proposal["day_no"],
+        "stop" => $proposal["sequence_no"],
+        "current" => $proposal["current_title"],
+        "new" => $place["name"],
+        "category" => ($place["category"] ?? "") !== "" ? $place["category"] : ai_text("edit_place_word", $lang),
+        "cost" => $cost > 0 ? "RM " . number_format($cost, 2) : ai_text("edit_free_entry", $lang),
+        "reason" => $proposal["reason"],
+    ]);
 }
 
 /** "add a place on day 2", "fill my day", "more places", "another stop": a request to add stops. */
@@ -680,16 +855,20 @@ function allowed_states_for_addition(array $itinerary, array $items, string $mes
     return $states;
 }
 
-function build_addition_proposals(mysqli $conn, int $travellerId, array $itinerary, array $items, string $message): array
+/**
+ * $dayOverride / $categoryOverride come from the model's intent; null means read them from the
+ * message as before ("" category = any kind of place).
+ */
+function build_addition_proposals(mysqli $conn, int $travellerId, array $itinerary, array $items, string $message, ?int $dayOverride = null, ?string $categoryOverride = null): array
 {
     $totalDays = max(1, (int)($itinerary["total_days"] ?? 1));
-    $dayNo = requested_day_no($message, $totalDays, $items);
+    $dayNo = ($dayOverride !== null && $dayOverride >= 1 && $dayOverride <= $totalDays) ? $dayOverride : requested_day_no($message, $totalDays, $items);
     $states = allowed_states_for_addition($itinerary, $items, $message);
     if (empty($states)) return [];
 
     $existingDayCount = count(array_filter($items, fn($item) => (int)$item["day_no"] === $dayNo));
     $usedPlaceIds = array_values(array_filter(array_map(fn($item) => (int)($item["place_id"] ?? 0), $items)));
-    $category = preferred_category_from_message($message);
+    $category = $categoryOverride ?? preferred_category_from_message($message);
     $festivalSql = festival_date_filter((string)($itinerary["start_date"] ?? ""), $totalDays);
 
     $params = $states;
@@ -748,20 +927,26 @@ function build_addition_proposals(mysqli $conn, int $travellerId, array $itinera
     foreach ($candidates as $place) {
         $check = ItineraryRuleValidationService::validatePlaceChange($conn, $travellerId, (int)$itinerary["itinerary_id"], (int)$place["place_id"], $dayNo, 0);
         if (!$check["ok"]) continue;
-        return [[
-            "proposal_type" => "add",
-            "item_id" => 0,
-            "current_title" => "Add new stop",
-            "day_no" => $dayNo,
-            "sequence_no" => $existingDayCount + 1,
-            "current_category" => "",
-            "new_place" => format_place($place),
-            "reason" => $anchor !== null
-                ? "close to " . $anchor["title"] . " (" . $anchor["source"] . ")"
-                : "highly rated place in " . $place["state"],
-        ]];
+        $reason = $anchor !== null
+            ? ai_text("reason_close_to", editor_lang(), ["title" => $anchor["title"], "source" => $anchor["source"]])
+            : ai_text("reason_highly_rated", editor_lang(), ["state" => $place["state"]]);
+        return [addition_proposal($place, $dayNo, $existingDayCount, $reason)];
     }
     return [];
+}
+
+function addition_proposal(array $place, int $dayNo, int $existingDayCount, string $reason): array
+{
+    return [
+        "proposal_type" => "add",
+        "item_id" => 0,
+        "current_title" => ai_text("edit_add_stop_title", editor_lang()),
+        "day_no" => $dayNo,
+        "sequence_no" => $existingDayCount + 1,
+        "current_category" => "",
+        "new_place" => format_place($place),
+        "reason" => $reason,
+    ];
 }
 
 function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?array
@@ -770,7 +955,7 @@ function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?a
 
     // If the requested day already has places, continue from its last real stop.
     $queries[] = [
-        "source" => "last place in this day",
+        "source" => ai_text("anchor_last_place_day", editor_lang()),
         "sql" => "
             SELECT ii.item_title AS title,
                    COALESCE(ii.item_latitude, cp.latitude) AS latitude,
@@ -787,7 +972,7 @@ function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?a
     if ($dayNo > 1) {
         // For an empty day, start from previous night's hotel when available.
         $queries[] = [
-            "source" => "previous night hotel",
+            "source" => ai_text("anchor_prev_hotel", editor_lang()),
             "sql" => "
                 SELECT ii.item_title AS title,
                        ii.item_latitude AS latitude,
@@ -802,7 +987,7 @@ function addition_anchor_for_day(mysqli $conn, int $itineraryId, int $dayNo): ?a
 
         // Fallback: previous day's last stop.
         $queries[] = [
-            "source" => "previous day last place",
+            "source" => ai_text("anchor_prev_last", editor_lang()),
             "sql" => "
                 SELECT ii.item_title AS title,
                        COALESCE(ii.item_latitude, cp.latitude) AS latitude,
@@ -858,10 +1043,11 @@ function place_distance_from_anchor(array $place, array $anchor): float
 
 function build_local_addition_answer(array $proposals): string
 {
-    $lines = ["I found places that can be added. Nothing has been saved yet; click Confirm Add to update the itinerary."];
+    $lang = editor_lang();
+    $lines = [ai_text("edit_add_intro", $lang)];
     foreach ($proposals as $proposal) {
         $place = $proposal["new_place"];
-        $lines[] = "Day " . $proposal["day_no"] . ": add " . $place["name"] . " (" . $place["district"] . ", " . $place["state"] . ").";
+        $lines[] = ai_text("edit_add_line", $lang, ["day" => $proposal["day_no"], "place" => $place["name"], "district" => $place["district"], "state" => $place["state"]]);
     }
     return implode("\n", $lines);
 }
@@ -883,7 +1069,7 @@ function is_timetable_rearrange_request(string $message): bool
 {
     if (preg_match('/\b(?:hotels?|accommodation|check\s*-?in)\b/i', $message)) return false;
     return (bool)preg_match('/\b(?:re-?arrange|reschedule|re-?time|new\s+timetable|timetable|schedule)\b/i', $message)
-        || (bool)preg_match('/\b(?:start|begin)(?:\s+time)?\s*(?:at|from|to)?\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/i', $message)
+        || (bool)preg_match('/\b(?:start|begin)(?:\s+time)?(?:\s+(?:the\s+)?day\s*\d{1,2}|\s+(?:the|my|each|every)\s+days?)?\s*(?:at|from|to)?\s*\d{1,2}(?:[:.]\d{2})?\s*(?:am|pm)\b/i', $message)
         || (bool)preg_match('/\b(?:change|set|move|update)\s+(?:the\s+|my\s+)?(?:start(?:ing)?\s+)?time\b/i', $message);
 }
 

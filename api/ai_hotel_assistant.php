@@ -17,25 +17,36 @@ require_once "../services/AiTravelAssistantService.php";
 
 header("Content-Type: application/json; charset=utf-8");
 
+/** The language of this request; set once at the start. */
+function hotel_assistant_lang(?string $set = null): string
+{
+    static $lang = "en";
+    if ($set !== null) $lang = in_array($set, AI_LANGUAGES, true) ? $set : "en";
+    return $lang;
+}
+
 function hotel_assistant_reply(array $payload, int $httpStatus = 200): never
 {
     http_response_code($httpStatus);
+    $payload["lang"] = hotel_assistant_lang();
+    $payload["ui"] = ai_ui_labels(hotel_assistant_lang());
     echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
 }
 
+$message = trim((string)($_POST["message"] ?? ""));
+$lang = hotel_assistant_lang(ai_request_language($message));
+
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
-    hotel_assistant_reply(["status" => "error", "answer" => "Unauthorized."], 401);
+    hotel_assistant_reply(["status" => "error", "answer" => ai_text("unauthorized", $lang)], 401);
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
 $action = trim((string)($_POST["action"] ?? "recommend"));
-$message = trim((string)($_POST["message"] ?? ""));
-ai_reject_chinese_json($message, "answer");
 
 if (!in_array($action, ["recommend", "confirm_hotel"], true) || $travellerId <= 0 || $itineraryId <= 0) {
-    hotel_assistant_reply(["status" => "error", "answer" => "Invalid hotel assistant request."], 400);
+    hotel_assistant_reply(["status" => "error", "answer" => ai_text("hotel_invalid_request", $lang)], 400);
 }
 
 $stmt = $conn->prepare("
@@ -51,7 +62,7 @@ $stmt->execute();
 $itinerary = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 if (!$itinerary) {
-    hotel_assistant_reply(["status" => "error", "answer" => "Itinerary not found."], 404);
+    hotel_assistant_reply(["status" => "error", "answer" => ai_text("itinerary_not_found", $lang)], 404);
 }
 
 $tripDays = max(1, (int)$itinerary["total_days"]);
@@ -63,11 +74,11 @@ $hotelService = new HotelRecommendationService($conn);
 // ---------------------------------------------------------------- save the hotel the traveller confirmed
 if ($action === "confirm_hotel") {
     if ($tripDays < 2) {
-        hotel_assistant_reply(["status" => "error", "answer" => "A one-day trip has no night to book a hotel for."]);
+        hotel_assistant_reply(["status" => "error", "answer" => ai_text("hotel_one_day", $lang)]);
     }
     $hotel = $hotelService->find((int)($_POST["hotel_id"] ?? 0), $roomBudget);
     if ($hotel === null) {
-        hotel_assistant_reply(["status" => "error", "answer" => "That hotel is no longer in the list. Please ask for hotel suggestions again and choose another one."]);
+        hotel_assistant_reply(["status" => "error", "answer" => ai_text("hotel_gone", $lang)]);
     }
 
     try {
@@ -78,11 +89,11 @@ if ($action === "confirm_hotel") {
     } catch (Throwable $e) {
         $conn->rollback();
         error_log("Hotel confirmation failed: " . $e->getMessage());
-        hotel_assistant_reply(["status" => "error", "answer" => "Could not save the selected hotel. Please try again."], 500);
+        hotel_assistant_reply(["status" => "error", "answer" => ai_text("hotel_save_failed", $lang)], 500);
     }
     hotel_assistant_reply([
         "status" => "success",
-        "answer" => "Hotel confirmed: " . $hotel["name"] . ". It is now in the itinerary, the route and the cost summary.",
+        "answer" => ai_text("hotel_confirmed", $lang, ["name" => $hotel["name"]]),
         "hotel_nights_saved" => $saved["nights"],
         "reload" => true,
     ]);
@@ -126,7 +137,7 @@ $hotels = array_slice(hotel_assistant_apply_wishes($hotels, $message, $askedMax)
 if (!$hotels) {
     hotel_assistant_reply([
         "status" => "success",
-        "answer" => "I could not find a place to stay that matches near your last stop. Try a higher price limit, or ask again without one.",
+        "answer" => ai_text("hotel_none", $lang),
         "hotels" => [],
         "source" => "local_fallback",
     ]);
@@ -146,7 +157,7 @@ $context = [
         "This reply recommends exactly one hotel: the one in recommended_hotel. Do not name any other hotel.",
         "Use its name, type, estimated price and distance exactly as given; do not invent a rating.",
         "The price is a planning estimate, not an offer. Say so once.",
-        "Do not say the hotel is booked or saved. Tell the user to click Confirm Hotel if they want to add it.",
+        ai_text("hotel_rule_confirm", $lang),
     ],
     "itinerary" => [
         "title" => $itinerary["title"],
@@ -161,13 +172,17 @@ $context = [
 ];
 
 $top = $hotels[0];
-$fallbackAnswer = "Suggested: " . $top["name"] . " (" . strtolower($top["kind_label"]) . "), about RM " . number_format($top["price_per_night"], 0) . " per night"
-    . ($top["distance_km"] !== null ? ", " . number_format($top["distance_km"], 1) . " km from your last stop" : "") . "."
-    . ($budgetForSearch > 0 ? " Your room budget is about RM " . number_format($budgetForSearch, 0) . " per night." : "")
-    . " Prices are planning estimates. Look through the options below and click Confirm Hotel to add one to the itinerary.";
+$fallbackAnswer = ai_text("hotel_suggested", $lang, [
+        "name" => $top["name"],
+        "kind" => strtolower($top["kind_label"]),
+        "price" => number_format($top["price_per_night"], 0),
+        "distance" => $top["distance_km"] !== null ? ai_text("hotel_distance", $lang, ["km" => number_format($top["distance_km"], 1)]) : "",
+    ])
+    . ($budgetForSearch > 0 ? " " . ai_text("hotel_room_budget", $lang, ["price" => number_format($budgetForSearch, 0)]) : "")
+    . " " . ai_text("hotel_fallback_tail", $lang);
 
 $assistant = new AiTravelAssistantService();
-$result = $assistant->answer($message !== "" ? $message : "Recommend a suitable hotel for this itinerary.", $context);
+$result = $assistant->answer($message !== "" ? $message : ai_text("hotel_default_question", $lang), $context, $lang);
 $answer = trim((string)($result["answer"] ?? ""));
 $source = (string)($result["source"] ?? "local_fallback");
 // The first card under the answer is this hotel: an answer about another one would mislead.
@@ -176,15 +191,19 @@ if (($result["status"] ?? "") !== "success" || $answer === "" || stripos($answer
     $source = "local_fallback";
 }
 // However the answer was worded, the traveller must be told what kind of price this is.
-if (stripos($answer, "estimate") === false) {
-    $answer .= " Prices are planning estimates, not offers.";
+if (mb_stripos($answer, ai_text("hotel_estimate_word", $lang)) === false) {
+    $answer .= " " . ai_text("hotel_estimate_note", $lang);
 }
 $others = array_slice($hotels, 1, 2);
 if ($others) {
-    $answer .= "\n\nOther options nearby: " . implode("; ", array_map(
-        static fn(array $h): string => $h["name"] . " (" . strtolower($h["kind_label"]) . ", about RM " . number_format($h["price_per_night"], 0) . ")",
+    $answer .= "\n\n" . ai_text("hotel_others", $lang, ["list" => implode("; ", array_map(
+        static fn(array $h): string => ai_text("hotel_other_item", $lang, [
+            "name" => $h["name"],
+            "kind" => strtolower($h["kind_label"]),
+            "price" => number_format($h["price_per_night"], 0),
+        ]),
         $others
-    )) . ".";
+    ))]);
 }
 
 hotel_assistant_reply(["status" => "success", "answer" => $answer, "hotels" => $hotels, "source" => $source]);
