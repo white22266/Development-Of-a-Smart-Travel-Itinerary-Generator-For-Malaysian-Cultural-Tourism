@@ -11,7 +11,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once "../config/db_connect.php";
-require_once "../services/ItineraryRouteOptimiser.php";
+require_once "../services/ItineraryEditService.php";
 
 header("Content-Type: application/json; charset=utf-8");
 
@@ -41,12 +41,10 @@ if (!$found) {
     itinerary_optimise_reply(["status" => "error", "message" => "Itinerary not found"], 404);
 }
 
-$conn->begin_transaction();
+// One transaction of its own (ItineraryEditService::optimise()): a failure changes nothing.
 try {
-    $report = ItineraryRouteOptimiser::optimise($conn, $itineraryId);
-    $conn->commit();
+    $report = ItineraryEditService::optimise($conn, $itineraryId)["report"];
 } catch (Throwable $e) {
-    $conn->rollback();
     error_log("itinerary_optimise: " . $e->getMessage());
     itinerary_optimise_reply(["status" => "error", "message" => "The route could not be optimised. Nothing was changed."], 500);
 }

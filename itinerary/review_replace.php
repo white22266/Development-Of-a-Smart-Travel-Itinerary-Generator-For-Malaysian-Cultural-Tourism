@@ -1,247 +1,107 @@
 <?php
 // itinerary/review_replace.php
-// AJAX endpoint for the itinerary review page: finds a replacement place for one stop.
-// Nothing is saved here; the review page saves all changes through review_confirm_nightly.php.
+// AJAX endpoint for the itinerary review page: the next replacement for one stop or meal.
+// The options come from ItineraryEditService::suggestReplacements(): places that keep every
+// rule of the trip in that position, best first by the planner's own score. Nothing is saved
+// here; the review page saves its changes through review_confirm_nightly.php, which checks
+// them again.
+//
+//   POST itinerary_id, item_id, offset (options already shown), exclude_place_ids (comma list:
+//        places pending as replacements of other stops on the page)
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once "../config/db_connect.php";
-require_once "../services/PlannerCandidates.php";
-
-// A festival without valid dates is never offered (PlannerCandidates::VALID_FESTIVAL_SQL).
-$validFestivalSql = " AND " . PlannerCandidates::VALID_FESTIVAL_SQL;
+require_once "../services/ItineraryEditService.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
-// Auth guard
-if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
-    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
+function review_replace_reply(array $payload): never
+{
+    echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
+}
+
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
+    review_replace_reply(['status' => 'error', 'message' => 'Unauthorized']);
 }
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
+session_write_close();   // the search can take a moment: do not hold up the traveller's other requests
 
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
+$itemId = (int)($_POST["item_id"] ?? 0);
+$offset = max(0, (int)($_POST["offset"] ?? 0));
+$exclude = array_values(array_filter(array_map('intval', explode(',', (string)($_POST["exclude_place_ids"] ?? ''))), static fn($x) => $x > 0));
+if ($itineraryId <= 0) review_replace_reply(['status' => 'error', 'message' => 'Invalid itinerary ID']);
+if ($itemId <= 0) review_replace_reply(['status' => 'error', 'message' => 'Invalid item ID']);
 
-if ($itineraryId <= 0) {
-    echo json_encode(['status' => 'error', 'message' => 'Invalid itinerary ID']);
-    exit;
-}
-
-// Verify ownership
-$own = $conn->prepare("SELECT itinerary_id FROM itineraries WHERE itinerary_id = ? AND traveller_id = ? LIMIT 1");
-$own->bind_param("ii", $itineraryId, $travellerId);
-$own->execute();
-if (!$own->get_result()->fetch_assoc()) {
-    echo json_encode(['status' => 'error', 'message' => 'Itinerary not found']);
-    exit;
-}
-$own->close();
-
-function item_type_from_category(string $category): string
-{
-    $cat = strtolower(trim($category));
-    if ($cat === "food") return "food";
-    if ($cat === "festival") return "festival";
-    return "attraction";
-}
-
-function table_has_column(mysqli $conn, string $table, string $column): bool
-{
-    $table = $conn->real_escape_string($table);
-    $column = $conn->real_escape_string($column);
-    $res = $conn->query("SHOW COLUMNS FROM `$table` LIKE '$column'");
-    return ($res && $res->num_rows > 0);
-}
-
-$itemId   = (int)($_POST["item_id"]   ?? 0);
-$dayNo    = (int)($_POST["day_no"]    ?? 1);
-$state    = trim((string)($_POST["state"]    ?? ""));
-$category = trim((string)($_POST["category"] ?? ""));
-
-if ($itemId <= 0) {
-    echo json_encode(['status' => 'error', 'message' => 'Invalid item ID']);
-    exit;
-}
-
-// Load the current item to know what to exclude
-$curStmt = $conn->prepare("SELECT place_id FROM itinerary_items WHERE item_id = ? AND itinerary_id = ? LIMIT 1");
-$curStmt->bind_param("ii", $itemId, $itineraryId);
-$curStmt->execute();
-$curRow = $curStmt->get_result()->fetch_assoc();
-$curStmt->close();
-$currentPlaceId = (int)($curRow["place_id"] ?? 0);
-
-// Get all place_ids already in this itinerary (to avoid duplicates)
-$usedRes = $conn->prepare("SELECT DISTINCT place_id FROM itinerary_items WHERE itinerary_id = ? AND place_id IS NOT NULL");
-$usedRes->bind_param("i", $itineraryId);
-$usedRes->execute();
-$usedResult = $usedRes->get_result();
-$usedRes->close();
-$usedIds = [];
-while ($r = $usedResult->fetch_assoc()) {
-    $pid = (int)$r["place_id"];
-    if ($pid > 0) $usedIds[] = $pid;
-}
-
-// Load preference for scoring
-$prefStmt = $conn->prepare("
-    SELECT tp.budget, tp.interests, tp.transport_type
+$stmt = $conn->prepare("
+    SELECT tp.budget, tp.interests
     FROM itineraries i
     LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
-    WHERE i.itinerary_id = ? LIMIT 1
+    WHERE i.itinerary_id = ? AND i.traveller_id = ?
+    LIMIT 1
 ");
-$prefStmt->bind_param("i", $itineraryId);
-$prefStmt->execute();
-$pref = $prefStmt->get_result()->fetch_assoc();
-$prefStmt->close();
+$stmt->bind_param("ii", $itineraryId, $travellerId);
+$stmt->execute();
+$pref = $stmt->get_result()->fetch_assoc();
+$stmt->close();
+if (!$pref) review_replace_reply(['status' => 'error', 'message' => 'Itinerary not found']);
 
-$budget    = (float)($pref["budget"]   ?? 0);
-$interests = strtolower((string)($pref["interests"] ?? ""));
-$interestArr = array_filter(array_map('trim', explode(',', $interests)));
-
-// ---- Find replacement candidates ----
-// Strategy: same state + same/similar category, not already used, not current item
-$candidates = [];
-$hasEntranceFeeCol = table_has_column($conn, "cultural_places", "entrance_fee");
-$feeSelect = $hasEntranceFeeCol ? ", entrance_fee" : "";
-
-// Build exclude list
-$excludeIds = $usedIds;
-if ($currentPlaceId > 0 && !in_array($currentPlaceId, $excludeIds)) {
-    $excludeIds[] = $currentPlaceId;
+$result = ItineraryEditService::suggestReplacements($conn, $itineraryId, $itemId, 1, $offset, $exclude);
+if (!$result['ok']) {
+    review_replace_reply(['status' => 'error', 'code' => $result['code'], 'message' => $result['message']]);
+}
+$best = $result['options'][0] ?? null;
+if ($best === null) {
+    review_replace_reply([
+        'status' => 'error',
+        'code' => 'NONE',
+        'message' => $offset > 0
+            ? 'No further option fits this ' . ($result['kind'] === 'meal' ? $result['slot'] : 'stop') . '. Try Another starts again from the best one.'
+            : $result['message'],
+        'offset' => $offset,
+        'more' => false,
+    ]);
 }
 
-$exPh    = '';
-$exTypes = '';
-$exParams = [];
-if (!empty($excludeIds)) {
-    $exPh    = " AND place_id NOT IN (" . implode(',', array_fill(0, count($excludeIds), '?')) . ")";
-    $exTypes = str_repeat('i', count($excludeIds));
-    $exParams = $excludeIds;
-}
-
-// Try: same state + same category
-$sql = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
-        FROM cultural_places
-        WHERE is_active = 1 AND state = ? AND category = ?$exPh$validFestivalSql
-        ORDER BY RAND() LIMIT 10";
-
-$params = array_merge([$state, $category], $exParams);
-$types  = 'ss' . $exTypes;
-
-$stmt = $conn->prepare($sql);
-if ($stmt) {
-    $stmt->bind_param($types, ...$params);
-    $stmt->execute();
-    $res = $stmt->get_result();
-    while ($r = $res->fetch_assoc()) $candidates[] = $r;
-    $stmt->close();
-}
-
-// Fallback 1: same state, any category
-if (empty($candidates) && $state !== '') {
-    $sql2 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
-             FROM cultural_places
-             WHERE is_active = 1 AND state = ?$exPh$validFestivalSql
-             ORDER BY RAND() LIMIT 10";
-    $params2 = array_merge([$state], $exParams);
-    $types2  = 's' . $exTypes;
-    $stmt2   = $conn->prepare($sql2);
-    if ($stmt2) {
-        $stmt2->bind_param($types2, ...$params2);
-        $stmt2->execute();
-        $res2 = $stmt2->get_result();
-        while ($r = $res2->fetch_assoc()) $candidates[] = $r;
-        $stmt2->close();
-    }
-}
-
-// Fallback 2: any state, same category
-if (empty($candidates) && $category !== '') {
-    $sql3 = "SELECT place_id, name, state, district, category, latitude, longitude, estimated_cost{$feeSelect}, opening_hours, rating
-             FROM cultural_places
-             WHERE is_active = 1 AND category = ?$exPh$validFestivalSql
-             ORDER BY RAND() LIMIT 10";
-    $params3 = array_merge([$category], $exParams);
-    $types3  = 's' . $exTypes;
-    $stmt3   = $conn->prepare($sql3);
-    if ($stmt3) {
-        $stmt3->bind_param($types3, ...$params3);
-        $stmt3->execute();
-        $res3 = $stmt3->get_result();
-        while ($r = $res3->fetch_assoc()) $candidates[] = $r;
-        $stmt3->close();
-    }
-}
-
-if (empty($candidates)) {
-    echo json_encode(['status' => 'error', 'message' => 'No replacement found. All similar places are already in your itinerary.']);
-    exit;
-}
-
-// ---- Score candidates ----
-// Score = W_category * cat_match + W_budget * budget_fit + W_rating * rating_score
-$W_CATEGORY = 0.40;
-$W_BUDGET   = 0.30;
-$W_RATING   = 0.30;
-
-$maxCost = max(array_map(fn($c) => (float)($c["estimated_cost"] ?? 0), $candidates) ?: [1]);
-
-foreach ($candidates as &$c) {
-    $cat         = strtolower(trim((string)($c["category"] ?? "")));
-    $cost        = (float)($c["estimated_cost"] ?? 0);
-    $rating      = (float)($c["rating"] ?? 0);
-
-    $catScore    = in_array($cat, $interestArr, true) ? 1.0 : 0.3;
-    $budgetScore = ($budget > 0 && $cost > 0) ? (($cost <= $budget) ? max(0.2, 1 - $cost / $budget) : 0.0) : 1.0;
-    $ratingScore = ($rating > 0) ? min(1.0, $rating / 5.0) : 0.5;
-
-    $c["_score"]  = $W_CATEGORY * $catScore + $W_BUDGET * $budgetScore + $W_RATING * $ratingScore;
-    $c["_cat_s"]  = (int)round($catScore * 100);
-    $c["_bud_s"]  = (int)round($budgetScore * 100);
-    $c["_rat_s"]  = (int)round($ratingScore * 100);
-    $c["_pct"]    = (int)round($c["_score"] * 100);
-}
-unset($c);
-
-// Sort by score descending
-usort($candidates, fn($a, $b) => $b["_score"] <=> $a["_score"]);
-$best = $candidates[0];
-
-$newTitle = (string)($best["name"] ?? "");
-$newCost  = $hasEntranceFeeCol && array_key_exists("entrance_fee", $best)
-    ? max(0.0, (float)($best["entrance_fee"] ?? 0))
-    : (float)($best["estimated_cost"] ?? 0);
-$newPid   = (int)($best["place_id"] ?? 0);
-$newCategory = (string)($best["category"] ?? "");
-$newItemType = item_type_from_category($newCategory);
-$districtNote = !empty($best["district"]) ? " | District: " . $best["district"] : "";
-$newNotes = "State: " . ($best["state"] ?? "") . $districtNote . " | Category: " . $newCategory;
-
-// ---- Match label ----
-$pct = $best["_pct"];
-[$matchLabel, $matchColor] = match(true) {
+// The match bars of the review page, worked out as on the page (a display measure only; the
+// order of the options is the planner's).
+$interests = array_filter(array_map('trim', explode(',', strtolower((string)($pref['interests'] ?? '')))));
+$budget = (float)($pref['budget'] ?? 0);
+$catScore = in_array(strtolower((string)$best['category']), $interests, true) ? 1.0 : 0.3;
+$cost = (float)$best['cost'];
+$budgetScore = ($budget > 0 && $cost > 0) ? (($cost <= $budget) ? max(0.2, 1 - $cost / $budget) : 0.0) : 1.0;
+$ratingScore = (float)$best['rating'] > 0 ? min(1.0, (float)$best['rating'] / 5.0) : 0.5;
+$pct = (int)round((0.40 * $catScore + 0.30 * $budgetScore + 0.30 * $ratingScore) * 100);
+[$matchLabel, $matchColor] = match (true) {
     $pct >= 85 => ['Excellent Match', 'success'],
-    $pct >= 70 => ['Good Match',      'primary'],
-    $pct >= 50 => ['Fair Match',      'warning'],
-    default    => ['Low Match',       'danger'],
+    $pct >= 70 => ['Good Match', 'primary'],
+    $pct >= 50 => ['Fair Match', 'warning'],
+    default => ['Low Match', 'danger'],
 };
 
-echo json_encode([
-    'status'       => 'success',
-    'place_id'     => $newPid,
-    'new_title'    => $newTitle,
-    'new_cost'     => $newCost,
-    'new_state'    => $best["state"] ?? "",
-    'new_district' => $best["district"] ?? "",
-    'new_category' => $newCategory,
-    'new_item_type' => $newItemType,
-    'new_notes'    => $newNotes,
-    'new_opening_hours' => $best["opening_hours"] ?? "",
-    'match_pct'    => $pct,
-    'match_label'  => $matchLabel,
-    'match_color'  => $matchColor,
-    'cat_score'    => $best["_cat_s"],
-    'budget_score' => $best["_bud_s"],
-    'rating_score' => $best["_rat_s"],
+review_replace_reply([
+    'status' => 'success',
+    'kind' => $result['kind'],
+    'slot' => $result['slot'] ?? null,
+    'offset' => $offset,
+    'more' => (bool)$result['more'],
+    'place_id' => (int)$best['place_id'],
+    'new_title' => (string)$best['name'],
+    'new_cost' => (float)$best['cost'],
+    'new_state' => (string)$best['state'],
+    'new_district' => (string)$best['district'],
+    'new_category' => (string)$best['category'],
+    'new_item_type' => (string)$best['item_type'],
+    'new_opening_hours' => (string)$best['opening_hours'],
+    'new_start' => (string)$best['start'],
+    'new_end' => (string)$best['end'],
+    'reasons' => $best['reasons'],
+    'match_pct' => $pct,
+    'match_label' => $matchLabel,
+    'match_color' => $matchColor,
+    'cat_score' => (int)round($catScore * 100),
+    'budget_score' => (int)round($budgetScore * 100),
+    'rating_score' => (int)round($ratingScore * 100),
 ]);

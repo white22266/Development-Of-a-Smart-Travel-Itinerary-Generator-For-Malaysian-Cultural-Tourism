@@ -18,6 +18,14 @@
 // inside its window, between two visits, at a suitable place or as a break that says so.
 // WEATHER warns about outdoor stops on very wet days of scenarios with a forecast override.
 //
+// Edit scenarios (<base>__edits): the base scenario is generated, then changed through
+// ItineraryEditService as the review page and the AI editor change it (replace a stop with the
+// first suggestion, remove a stop, move a stop to another day, add a feasible place, plan a day
+// again with more of one category and less of another, the nearest lodging as the hotel of
+// night 1, optimise), and every check below is run again on the result. Then changes that
+// break a rule (a place closed that day, on the avoid list, already in the trip, in another
+// state) must be refused and leave every row as it was (REFUSE).
+//
 // Test database only: in Git Bash
 //   DB_NAME=travel_itinerary_db_ctest /c/xampp/php/php.exe tools/check_planner.php
 // Exit code: 0 no violation, 1 at least one violation, 2 refused to run.
@@ -42,11 +50,14 @@ if (isset($options['help'])) {
 putenv('ROUTING_ESTIMATES_ONLY=' . (isset($options['road']) ? '0' : '1'));
 
 // =====================================================================================
-// THE PLANNER PIPELINE. The only call into the planner: ItineraryGenerator::generate(), with
+// THE PLANNER PIPELINE. The only calls into the planner: ItineraryGenerator::generate(), with
 // the same trip fields as itinerary/generate_itinerary.php passes (the end point only when
-// the traveller chose one).
+// the traveller chose one), and in the edit scenarios the operations of ItineraryEditService
+// (runEditSequence()). Their results are never used to decide what is right.
 // =====================================================================================
 require_once __DIR__ . '/../services/ItineraryGenerator.php';
+require_once __DIR__ . '/../services/ItineraryEditService.php';
+require_once __DIR__ . '/../services/HotelRecommendationService.php';
 
 /**
  * Generate one itinerary as the generate page does.
@@ -370,6 +381,18 @@ const SCENARIOS = [
     ],
 ];
 
+/** The base scenarios that also run as edit scenarios (<base>__edits). */
+const EDIT_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal', 'penang_group_transit_packed_festival',
+                    'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid'];
+
+/** Every scenario: the fixed ones and the edit scenarios built on EDIT_BASES. */
+function allScenarios(): array
+{
+    $all = SCENARIOS;
+    foreach (EDIT_BASES as $base) $all[$base . '__edits'] = SCENARIOS[$base] + ['edits' => true];
+    return $all;
+}
+
 const TEST_EMAIL = 'planner-check@example.test';
 
 // ---------------------------------------------------------------------------------------
@@ -392,14 +415,14 @@ foreach ([$pipelineConn, $checkConn] as $c) {
     }
 }
 
-$selected = SCENARIOS;
+$selected = allScenarios();
 if (isset($options['scenario'])) {
     $name = (string)$options['scenario'];
-    if (!isset(SCENARIOS[$name])) {
-        fwrite(STDERR, "Unknown scenario \"{$name}\". Scenarios: " . implode(', ', array_keys(SCENARIOS)) . "\n");
+    if (!isset($selected[$name])) {
+        fwrite(STDERR, "Unknown scenario \"{$name}\". Scenarios: " . implode(', ', array_keys($selected)) . "\n");
         exit(2);
     }
-    $selected = [$name => SCENARIOS[$name]];
+    $selected = [$name => $selected[$name]];
 }
 
 set_time_limit(0);
@@ -625,6 +648,7 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
         foreach ($out['notes'] as $note) {
             $result['findings'][] = finding('OPTIMISE', 'warning', $name, null, null, $note);
         }
+        if (!empty($scenario['edits'])) runEditSequence($pipelineConn, $checkConn, $out['itinerary_id'], $preferenceId, $scenario, $name, $result);
         checkItinerary($checkConn, $out['itinerary_id'], $scenario, $name, $result);
     } catch (Throwable $e) {
         $result['findings'][] = finding('GENERATE', 'violation', $name, null, null, get_class($e) . ': ' . $e->getMessage());
@@ -633,6 +657,262 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     if (!$keep) deleteScenarioData($checkConn, $travellerId, $preferenceId);
     $result['seconds'] = round(microtime(true) - $t0, 1);
     return $result;
+}
+
+// ---------------------------------------------------------------------------------------
+// Edit scenarios
+// ---------------------------------------------------------------------------------------
+
+/** The visit rows of an itinerary by day, in order: item_id, place_id, category. */
+function editVisits(mysqli $conn, int $itineraryId): array
+{
+    $stmt = $conn->prepare("SELECT ii.item_id, ii.day_no, ii.place_id, ii.item_title, LOWER(COALESCE(cp.category, ii.item_type)) AS category,
+                                   COALESCE(ii.item_latitude, cp.latitude) AS lat, COALESCE(ii.item_longitude, cp.longitude) AS lng
+                            FROM itinerary_items ii LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+                            WHERE ii.itinerary_id = ? AND ii.meal_slot IS NULL AND ii.item_type IN ('attraction','food','festival')
+                            ORDER BY ii.day_no, ii.sequence_no, ii.item_id");
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $days = [];
+    foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $r) $days[(int)$r['day_no']][] = $r;
+    $stmt->close();
+    return $days;
+}
+
+/** Every stored row of an itinerary and its total, to compare before and after a refused change. */
+function editSnapshot(mysqli $conn, int $itineraryId): string
+{
+    $stmt = $conn->prepare('SELECT * FROM itinerary_items WHERE itinerary_id = ? ORDER BY item_id');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    $stmt = $conn->prepare('SELECT total_estimated_cost, selected_hotel_id, selected_hotel_nights FROM itineraries WHERE itinerary_id = ?');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $meta = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+    return json_encode([$rows, $meta]);
+}
+
+/** Places of the trip's area (or outside it) that are active, have coordinates and are not in the itinerary. */
+function editPlaces(mysqli $conn, int $itineraryId, array $states, bool $inside, string $extra = ''): array
+{
+    $sql = "SELECT place_id, name, state, category, opening_hours, latitude, longitude FROM cultural_places
+            WHERE is_active = 1 AND latitude IS NOT NULL AND longitude IS NOT NULL
+              AND place_id NOT IN (SELECT place_id FROM itinerary_items WHERE itinerary_id = ? AND place_id IS NOT NULL) {$extra}";
+    $types = 'i';
+    $args = [$itineraryId];
+    if ($states) {
+        $sql .= ' AND LOWER(state) ' . ($inside ? '' : 'NOT ') . 'IN (' . implode(',', array_fill(0, count($states), '?')) . ')';
+        $types .= str_repeat('s', count($states));
+        $args = array_merge($args, $states);
+    }
+    $stmt = $conn->prepare($sql . ' ORDER BY place_id');
+    $stmt->bind_param($types, ...$args);
+    $stmt->execute();
+    $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    return $rows;
+}
+
+/**
+ * Change a generated itinerary through ItineraryEditService as the pages do, then try changes
+ * that break a rule. The checks of checkItinerary() then judge the result.
+ */
+function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array &$scenario, string $name, array &$result): void
+{
+    $add = static function (string $code, string $severity, ?int $day, ?string $stop, string $detail) use (&$result, $name): void {
+        $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
+    };
+    $shapeOk = static function (string $step, $r) use ($add): bool {
+        foreach (['ok', 'status', 'code', 'message', 'days'] as $key) {
+            if (!is_array($r) || !array_key_exists($key, $r)) { $add('EDIT', 'violation', null, null, "{$step}: result without \"{$key}\""); return false; }
+        }
+        if ($r['ok'] !== ($r['status'] === 'done') || ($r['ok'] && $r['code'] !== null) || (!$r['ok'] && !is_string($r['code']))) {
+            $add('EDIT', 'violation', null, null, "{$step}: ok, status and code disagree");
+        }
+        return true;
+    };
+    $done = [];
+    $note = static function (string $step, array $r) use (&$done, $add, $shapeOk): bool {
+        if (!$shapeOk($step, $r)) return false;
+        $done[$step] = $r['ok'] ? 'done' : 'refused ' . $r['code'];
+        if (!$r['ok']) $add('EDIT', 'warning', null, null, "{$step} refused ({$r['code']}): {$r['message']}");
+        return (bool)$r['ok'];
+    };
+    $pref = $scenario['pref'];
+    $target = (int)(intendedProfile($pref)['target']);
+    $musts = array_flip($scenario['resolved']['must'] ?? []);
+    $free = static fn(array $v): bool => !isset($musts[(int)$v['place_id']]);
+    $states = array_map('strtolower', csv($pref['preferred_states']));
+    $tripDays = (int)$pref['trip_days'];
+
+    // 1. Replace a stop of day 1 with the first suggestion: it must be done, in the same position.
+    $days = editVisits($c, $id);
+    $candidates = array_values(array_filter($days[1] ?? [], $free));
+    $stop = $candidates[1] ?? $candidates[0] ?? null;
+    if ($stop !== null) {
+        $position = array_search((int)$stop['item_id'], array_map(static fn($v) => (int)$v['item_id'], $days[1]), true);
+        $s = ItineraryEditService::suggestReplacements($p, $id, (int)$stop['item_id'], 1, 0);
+        if ($shapeOk('suggest', $s) && $s['ok'] && !empty($s['options'])) {
+            $placeId = (int)$s['options'][0]['place_id'];
+            $r = ItineraryEditService::replaceStop($p, $id, (int)$stop['item_id'], $placeId);
+            if ($note('replace', $r)) {
+                $after = editVisits($c, $id)[1] ?? [];
+                if ((int)($after[$position]['item_id'] ?? 0) !== (int)$stop['item_id'] || (int)($after[$position]['place_id'] ?? 0) !== $placeId) {
+                    $add('EDIT', 'violation', 1, (string)$stop['item_title'], 'the replacement did not keep the position of the stop');
+                }
+            } else {
+                $add('EDIT', 'violation', 1, (string)$stop['item_title'], 'the first suggestion was refused when chosen: ' . $r['message']);
+            }
+        } else {
+            $add('EDIT', 'warning', 1, (string)$stop['item_title'], 'no replacement suggested');
+        }
+    }
+
+    // 2. Remove a stop from the day with the most stops (one that the rules let go).
+    $days = editVisits($c, $id);
+    uksort($days, static fn($a, $b) => [count($days[$b]), $b] <=> [count($days[$a]), $a]);
+    $removedDay = null;
+    foreach ($days as $d => $visits) {
+        if (count($visits) < 2) continue;
+        foreach (array_reverse(array_filter($visits, $free)) as $v) {
+            $r = ItineraryEditService::removeStop($p, $id, (int)$v['item_id']);
+            $shapeOk('remove', $r);
+            if ($r['ok']) { $removedDay = (int)$d; $done['remove'] = 'done'; break 2; }
+        }
+    }
+    if ($removedDay === null) $add('EDIT', 'warning', null, null, 'no stop could be removed');
+
+    // 3. Move a stop from another day to a day with room.
+    $days = editVisits($c, $id);
+    $moved = false;
+    for ($to = 1; $to <= $tripDays && !$moved; $to++) {
+        if (count($days[$to] ?? []) >= $target) continue;
+        foreach ($days as $from => $visits) {
+            if ($from === $to || count($visits) < 2) continue;
+            foreach (array_filter($visits, $free) as $v) {
+                $r = ItineraryEditService::moveStop($p, $id, (int)$v['item_id'], $to);
+                $shapeOk('move', $r);
+                if ($r['ok']) { $moved = true; $done['move'] = "day {$from} to day {$to}"; break 2; }
+            }
+        }
+    }
+    if (!$moved) $add('EDIT', 'warning', null, null, 'no stop could be moved to another day');
+
+    // 4. Add a feasible place to a day with room: the first nearby place the service accepts.
+    $days = editVisits($c, $id);
+    $added = false;
+    for ($d = 1; $d <= $tripDays && !$added; $d++) {
+        if (count($days[$d] ?? []) >= $target || !($days[$d] ?? [])) continue;
+        $last = $days[$d][count($days[$d]) - 1];
+        $places = editPlaces($c, $id, $states, true);
+        usort($places, static fn($a, $b) => haversineKm((float)$last['lat'], (float)$last['lng'], (float)$a['latitude'], (float)$a['longitude'])
+            <=> haversineKm((float)$last['lat'], (float)$last['lng'], (float)$b['latitude'], (float)$b['longitude']));
+        foreach (array_slice($places, 0, 40) as $place) {
+            $check = ItineraryEditService::canAdd($p, $id, $d, (int)$place['place_id']);
+            if (!$check['ok']) continue;
+            $r = ItineraryEditService::addStop($p, $id, $d, (int)$place['place_id']);
+            if (!$note('add', $r)) $add('EDIT', 'violation', $d, (string)$place['name'], 'canAdd() said yes, addStop() refused: ' . $r['message']);
+            $added = true;
+            break;
+        }
+    }
+    if (!$added) $add('EDIT', 'warning', null, null, 'no feasible place could be added');
+
+    // 5. Plan the last day again with more of one interest and less of another.
+    $interests = csv($pref['interests']);
+    $more = $interests[1] ?? $interests[0];
+    $less = $interests[0];
+    if ($note('regenerate', ItineraryEditService::regenerateDay($p, $id, $tripDays, ['more' => [$more], 'less' => $more === $less ? [] : [$less]]))) {
+        // CATEGORY judges that day by the weights asked for: more = loved (3), less = a little (1).
+        $scenario['day_weights'][$tripDays] = [$more => 3] + ($more === $less ? [] : [$less => 1]);
+    }
+
+    // 6. The nearest lodging to the last stop of day 1 as the hotel of night 1.
+    if ($tripDays >= 2) {
+        $days = editVisits($c, $id);
+        $last = ($days[1] ?? []) ? $days[1][count($days[1]) - 1] : null;
+        $lodging = null;
+        if ($last !== null) {
+            $best = INF;
+            foreach ($c->query('SELECT lodging_id, latitude, longitude FROM lodgings WHERE is_active = 1 AND latitude IS NOT NULL AND longitude IS NOT NULL') as $l) {
+                $km = haversineKm((float)$last['lat'], (float)$last['lng'], (float)$l['latitude'], (float)$l['longitude']);
+                if ($km < $best) { $best = $km; $lodging = (int)$l['lodging_id']; }
+            }
+        }
+        $hotel = $lodging !== null ? (new HotelRecommendationService($p))->find($lodging, 0.0) : null;
+        if ($hotel === null) {
+            $add('EDIT', 'warning', 1, null, 'no lodging found for night 1');
+        } else {
+            $r = ItineraryEditService::setHotels($p, $id, [1 => $hotel]);
+            if ($note('hotel', $r) && !empty($r['refused_nights'])) {
+                $add('EDIT', 'warning', 2, null, 'hotel of night 1 not saved: ' . implode(' ', array_column($r['refused_nights'], 1)));
+            }
+        }
+    }
+
+    // 7. Optimise the route.
+    $note('optimise', ItineraryEditService::optimise($p, $id));
+    $result['info']['edits'] = $done;
+
+    // REFUSE: each change below breaks a rule, so it must be refused and change no row.
+    $refuse = static function (string $what, int $itemId, int $placeId, ?array $codes) use ($p, $c, $id, $add, &$result): void {
+        $before = editSnapshot($c, $id);
+        $r = ItineraryEditService::replaceStop($p, $id, $itemId, $placeId);
+        $result['info']['refusals'][$what] = $r['ok'] ? 'done' : (string)$r['code'];
+        if ($r['ok']) {
+            $add('REFUSE', 'violation', null, null, "{$what}: the change was made (place {$placeId})");
+        } elseif ($codes !== null && !in_array($r['code'], $codes, true)) {
+            $add('REFUSE', 'violation', null, null, "{$what}: refused with {$r['code']}, expected " . implode(' or ', $codes));
+        }
+        if (editSnapshot($c, $id) !== $before) $add('REFUSE', 'violation', null, null, "{$what}: rows changed although the change was refused");
+    };
+    $days = editVisits($c, $id);
+    $all = array_merge(...array_values($days ?: [[]]));
+    $first = array_values(array_filter($all, $free))[0] ?? null;
+    if ($first === null) return;
+
+    // A place closed all day on the stop's date.
+    $closedTried = false;
+    foreach ($days as $d => $visits) {
+        $date = (new DateTimeImmutable((string)$scenario['trip']['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
+        $weekday = date('l', strtotime($date));
+        // Not food or festival places, nor places to avoid: no other rule may refuse them first.
+        foreach (editPlaces($c, $id, $states, true, "AND opening_hours LIKE '%{$weekday}: Closed%' AND LOWER(category) NOT IN ('food','festival')") as $place) {
+            if (openingRanges((string)$place['opening_hours'], $date) !== [] || in_array((int)$place['place_id'], $scenario['resolved']['avoid'] ?? [], true)) continue;
+            $v = array_values(array_filter($visits, $free))[0] ?? null;
+            if ($v === null) continue;
+            $refuse("closed on {$date}", (int)$v['item_id'], (int)$place['place_id'], ['CLOSED']);
+            $closedTried = true;
+            break 2;
+        }
+    }
+    if (!$closedTried) $result['info']['refuse_closed'] = 'no place of the area is closed on a trip date';
+
+    // A place on the avoid list: one the service would accept, then added to the list.
+    $s = ItineraryEditService::suggestReplacements($p, $id, (int)$first['item_id'], 1, 0);
+    $avoid = (int)($s['options'][0]['place_id'] ?? 0);
+    if ($avoid > 0) {
+        $stmt = $c->prepare("INSERT INTO traveller_preference_places (preference_id, place_id, wish) VALUES (?, ?, 'avoid')");
+        $stmt->bind_param('ii', $preferenceId, $avoid);
+        $stmt->execute();
+        $stmt->close();
+        $scenario['resolved']['avoid'][] = $avoid;
+        $refuse('on the avoid list', (int)$first['item_id'], $avoid, ['AVOID']);
+    }
+
+    // A place already in the itinerary.
+    $other = null;
+    foreach ($all as $v) if ((int)$v['item_id'] !== (int)$first['item_id']) { $other = $v; break; }
+    if ($other !== null) $refuse('already in the itinerary', (int)$first['item_id'], (int)$other['place_id'], ['DUPLICATE']);
+
+    // A place in a state the traveller did not choose.
+    if ($states) {
+        $outside = editPlaces($c, $id, $states, false, "AND LOWER(category) <> 'festival'")[0] ?? null;
+        if ($outside !== null) $refuse('in another state', (int)$first['item_id'], (int)$outside['place_id'], ['STATE']);
+    }
 }
 
 function finding(string $code, string $severity, string $scenario, ?int $day, ?string $stop, string $detail): array
@@ -904,6 +1184,12 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             $previous = $point;
             if (!$isMeal && $dayNo === $tripDays && $end !== null) $lastVisit = ['title' => $title, 'end' => $end, 'point' => $point];
         }
+        // A hotel night: the next day starts at the hotel, and its first leg is measured from there.
+        foreach ($items as $h) {
+            if ((int)$h['day_no'] === $dayNo && strtolower((string)$h['item_type']) === 'hotel' && $h['item_latitude'] !== null && $h['item_longitude'] !== null) {
+                $previous = [(float)$h['item_latitude'], (float)$h['item_longitude']];
+            }
+        }
         $dayKmByDay[$dayNo] = $dayKm;
         if ($dayKm > $profile['hard_km']) {
             $add('DISTANCE', 'violation', $dayNo, null, sprintf('day travels %.1f km, hard limit %.1f km (recommended %.1f)', $dayKm, $profile['hard_km'], $profile['day_km']));
@@ -937,11 +1223,12 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
 
         // CATEGORY: more visits of one category than its interest weight allows (a little 1,
         // like 2, love 3) only where the stop says category variety was relaxed (or must-see).
+        // A day planned again with more or less of a category is judged by the weights asked for.
         if (csv($pref['interests']) !== ['food']) {
             $perCategory = [];
             foreach ($dayVisits as $dv) $perCategory[strtolower((string)($dv['category'] ?? ''))][] = $dv;
             foreach ($perCategory as $c => $list) {
-                $limit = (int)($scenario['weights'][$c] ?? 2);
+                $limit = (int)($scenario['day_weights'][$dayNo][$c] ?? $scenario['weights'][$c] ?? 2);
                 if (count($list) <= $limit) continue;
                 $explained = count(array_filter($list, static fn($dv) => str_contains((string)$dv['notes'], 'relaxed to fill the day') || str_contains((string)$dv['notes'], 'must-see')));
                 if ($explained < count($list) - $limit) {

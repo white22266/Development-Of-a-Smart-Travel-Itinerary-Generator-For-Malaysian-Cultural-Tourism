@@ -10,6 +10,7 @@
 //   travellerRatings() what the traveller rated before, per category and per place
 //   mealPool()         the food places of a pool, where lunch and dinner may be planned
 //   mealPlaces()       that pool for a saved preference (the "Optimise route" button)
+//   editPool()         the places a change to a saved itinerary may bring in (ItineraryEditService)
 //
 // Meal places come from cultural_places (category food) only. The table food_places is not
 // used: its rows have no place_id, no halal or dietary data and no link to ratings or the
@@ -110,6 +111,20 @@ final class PlannerCandidates
         $states = array_values((array)($pref['states'] ?? []));
         if ($states) $where[] = 'state IN (' . implode(',', array_fill(0, count($states), '?')) . ')';
         return self::mealPool(array_filter(self::query($conn, $where, $states), static fn(array $place): bool =>
+            !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
+    }
+
+    /**
+     * The places a change to a saved itinerary may bring in, narrowed as the generator narrows
+     * its pool: not on the avoid list, not rated LEARN_DROP_AT or lower by the traveller (a
+     * must-see place stays wanted), and keeping every rule of PlannerRules::placeReason().
+     */
+    public static function editPool(mysqli $conn, array $pref, array $profile, int $travellerId): array
+    {
+        $low = self::travellerRatings($conn, $travellerId, PlannerRules::LEARN_DROP_AT)['low'];
+        foreach ((array)($pref['must_places'] ?? []) as $id) unset($low[(int)$id]);
+        $skip = array_flip((array)($pref['avoid_places'] ?? [])) + $low;
+        return array_values(array_filter(self::load($conn, $pref), static fn(array $place): bool =>
             !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
     }
 

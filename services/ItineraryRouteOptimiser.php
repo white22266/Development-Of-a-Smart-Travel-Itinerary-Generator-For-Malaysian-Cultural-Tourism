@@ -84,8 +84,46 @@ final class ItineraryRouteOptimiser
     }
 
     /**
+     * Time one day's stops in the given order, exactly as orderDay() times each order it tries
+     * (the same schedule() and so ItineraryDayBuilder::fit()). Used by ItineraryEditService,
+     * which keeps the order the traveller asked for.
+     *
+     * @param array $day as for orderDay(), plus meal_choice (slot => choice, see
+     *                   ItineraryDayBuilder::fit())
+     * @return array{stops:array,dropped:array,minutes:int,km:float} as orderDay()
+     */
+    public static function timeInOrder(RouteService $route, array $profile, array $start, array $stops, array $day): array
+    {
+        $stops = array_values($stops);
+        if (!$stops) return ['stops' => [], 'dropped' => [], 'minutes' => 0, 'km' => 0.0];
+        $end = $day['end'] ?? null;
+        if ($end === null && isset($day['finish'])) {
+            $end = $day['finish'];
+            $day['finish_counts'] = true;
+        }
+        $seg = static fn(array $a, array $b): array => $route->getSegment((float)$a[0], (float)$a[1], (float)$b[0], (float)$b[1]);
+        $fromStart = [];
+        $between = [];
+        $toEnd = [];
+        $n = count($stops);
+        foreach ($stops as $j => $stop) {
+            $fromStart[$j] = $seg($start, $stop['point']);
+            $toEnd[$j] = $end !== null ? $seg($stop['point'], $end) : ['distance_km' => 0.0, 'travel_time_min' => 0];
+            if ($j > 0) $between[$j - 1][$j] = $seg($stops[$j - 1]['point'], $stop['point']);
+        }
+        // A stop left out is followed by a leg from the stop before it.
+        for ($i = 0; $i < $n; $i++) {
+            for ($j = $i + 2; $j < $n; $j++) $between[$i][$j] = $seg($stops[$i]['point'], $stops[$j]['point']);
+        }
+        $day['start'] = $start;
+        $mealIndex = ItineraryDayBuilder::mealIndex((array)($day['meal_pool'] ?? []), (float)$profile['meal_radius_km']);
+        return self::schedule($route, $mealIndex, range(0, $n - 1), $stops, $profile, $day, $fromStart, $between, $toEnd);
+    }
+
+    /**
      * Reorder and re-time every day of a saved itinerary, then store the legs and the total
-     * cost again. Call it inside the caller's transaction.
+     * cost again. Call it inside the caller's transaction (ItineraryEditService::optimise()
+     * runs it in one of its own).
      *
      * @return array{days:array,reordered_days:int[],saved_min:int,removed:string[]}
      */
@@ -112,7 +150,7 @@ final class ItineraryRouteOptimiser
 
         $mealSelect = $profile['meals'] ? 'ii.meal_slot' : 'NULL AS meal_slot';
         $stmt = $conn->prepare("
-            SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, {$mealSelect}, ii.place_id, ii.item_title, ii.start_time, ii.end_time,
+            SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, {$mealSelect}, ii.place_id, ii.item_title, ii.start_time, ii.end_time, ii.notes,
                    COALESCE(ii.item_latitude, cp.latitude) AS latitude,
                    COALESCE(ii.item_longitude, cp.longitude) AS longitude,
                    cp.state, cp.district, cp.category, cp.name, cp.description, cp.opening_hours,
@@ -189,6 +227,16 @@ final class ItineraryRouteOptimiser
             $before = self::travelMinutes($route, $dayStart, $storedPoints, $hotelPoint ?? $dayFinish);
             $otherMeals = [];
             foreach ($oldMealPlaces as $d => $ids) if ($d !== $dayNo) $otherMeals += $ids;
+            // A meal the traveller chose is kept while it still fits the new order.
+            $mealChoice = [];
+            foreach ($oldMeals as $row) {
+                if (!str_contains((string)($row['notes'] ?? ''), ItineraryDayBuilder::MEAL_CHOSEN)) continue;
+                $chosenPlace = null;
+                if ((int)$row['place_id'] > 0 && $row['point'] !== null && $row['name'] !== null) {
+                    $chosenPlace = self::placeOf($row) + ['category' => 'food'];
+                }
+                $mealChoice[(string)$row['meal_slot']] = ['place' => $chosenPlace, 'strict' => false];
+            }
             $plan = self::orderDay($route, $profile, $dayStart, $stops, [
                 'date' => $date,
                 'first_leg_exempt' => $dayNo === 1 && $dayStart === $origin,
@@ -197,6 +245,7 @@ final class ItineraryRouteOptimiser
                 'finish' => $dayFinish,
                 'meal_pool' => $mealPool,
                 'used' => $mealUsed + $otherMeals,
+                'meal_choice' => $mealChoice,
             ]);
 
             $position = 0;
@@ -363,6 +412,7 @@ final class ItineraryRouteOptimiser
                 'trip_km' => $otherKm + $keptKm,
                 'reserve_km' => (float)($budget['reserve_km'] ?? 0),
                 'meal_used' => $mealUsed,
+                'meal_choice' => (array)($day['meal_choice'] ?? []),
                 'finish' => !empty($day['finish_counts']) ? [(float)$toEnd[$index]['distance_km'], (int)$toEnd[$index]['travel_time_min']] : null,
             ], $leg);
             if (!$fit['ok']) {

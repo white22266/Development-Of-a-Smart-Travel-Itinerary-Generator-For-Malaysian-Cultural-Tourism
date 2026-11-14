@@ -1,7 +1,12 @@
 <?php
 // itinerary/review_confirm_nightly.php
-// Saves what the traveller decided on the review page: stops removed, stops replaced and,
-// if they picked any, a hotel for each night.
+// Saves what the traveller decided on the review page: stops replaced, stops removed and, if
+// they picked any, a hotel for each night. Every change goes through ItineraryEditService,
+// which judges it by the planner's rules and times the day again; a change that would break a
+// rule is not made, and the reply says which and why. The other changes are saved.
+//
+// Reply: status success, applied (changes made), hotel_nights_saved, refused: list of
+// {item_id, night, action (replace|remove|hotel), code, message}.
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -10,7 +15,6 @@ if (session_status() === PHP_SESSION_NONE) {
 require_once "../config/db_connect.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
-require_once "../services/ItineraryHotelService.php";
 require_once "../services/ItineraryEditService.php";
 
 header('Content-Type: application/json; charset=utf-8');
@@ -67,32 +71,40 @@ foreach ($hotelSelections as $nightNo => $selection) {
     if ($found !== null) $hotelByNight[(int)$nightNo] = $found;
 }
 
-$conn->begin_transaction();
+$refused = [];
+$applied = 0;
 try {
+    // Replacements first, while every stop is still where the page showed it.
     foreach ($replacements as $itemIdRaw => $replacement) {
         $itemId = (int)$itemIdRaw;
-        $placeId = is_array($replacement) ? (int)($replacement['place_id'] ?? 0) : (int)$replacement;
-        if ($itemId <= 0 || $placeId <= 0 || in_array($itemId, $rejectedIds, true)) continue;
-        ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
+        // place_id 0 asks for a meal break without a place; the service accepts it only for a meal row.
+        $placeId = is_array($replacement) ? (int)($replacement['place_id'] ?? -1) : (int)$replacement;
+        if ($itemId <= 0 || $placeId < 0 || in_array($itemId, $rejectedIds, true)) continue;
+        $result = ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
+        if ($result['ok']) $applied++;
+        else $refused[] = ['item_id' => $itemId, 'night' => null, 'action' => 'replace', 'code' => $result['code'], 'message' => $result['message']];
     }
-
-    if ($rejectedIds) {
-        $placeholders = implode(',', array_fill(0, count($rejectedIds), '?'));
-        $delete = $conn->prepare("DELETE FROM itinerary_items WHERE item_id IN ({$placeholders}) AND itinerary_id = ?");
-        $params = array_merge($rejectedIds, [$itineraryId]);
-        $delete->bind_param(str_repeat('i', count($params)), ...$params);
-        $delete->execute();
-        $delete->close();
+    foreach ($rejectedIds as $itemId) {
+        $result = ItineraryEditService::removeStop($conn, $itineraryId, (int)$itemId);
+        if ($result['ok']) $applied++;
+        else $refused[] = ['item_id' => (int)$itemId, 'night' => null, 'action' => 'remove', 'code' => $result['code'], 'message' => $result['message']];
     }
-
-    $saved = ItineraryHotelService::saveNights($conn, $itineraryId, $totalDays, $hotelByNight);
-    ItineraryEditService::refresh($conn, $itineraryId);
-
-    $conn->commit();
-    echo json_encode(['status' => 'success', 'hotel_nights_saved' => $saved['nights']]);
+    // The hotels last: each day after a hotel night then starts from that hotel.
+    $hotels = ItineraryEditService::setHotels($conn, $itineraryId, $hotelByNight);
+    if (!$hotels['ok']) {
+        $refused[] = ['item_id' => null, 'night' => null, 'action' => 'hotel', 'code' => $hotels['code'], 'message' => $hotels['message']];
+    }
+    foreach ((array)($hotels['refused_nights'] ?? []) as $nightNo => [$code, $text]) {
+        $refused[] = ['item_id' => null, 'night' => (int)$nightNo, 'action' => 'hotel', 'code' => $code, 'message' => $text];
+    }
+    echo json_encode([
+        'status' => 'success',
+        'applied' => $applied,
+        'hotel_nights_saved' => (int)($hotels['nights'] ?? 0),
+        'refused' => $refused,
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 } catch (Throwable $e) {
-    $conn->rollback();
     error_log('Review confirm failed: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['status' => 'error', 'message' => 'Could not save review changes.']);
+    echo json_encode(['status' => 'error', 'message' => 'Could not save all review changes. Changes made before the problem are kept; please check the itinerary.']);
 }

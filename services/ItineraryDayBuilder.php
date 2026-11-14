@@ -181,9 +181,13 @@ final class ItineraryDayBuilder
      *
      * @param array|null $rejections when given, counts why candidates failed (at the last level)
      * @param bool       $must       the pool holds must-see places: no soft preference applies
+     * @param bool       $everyLevel go on through every relax level: the candidates of the first
+     *                               level with any come first, then those only a later level allows
+     *                               (for lists of alternatives; the planner itself takes the first)
      */
-    public function ranked(array $pool, array $day, array $state, int $limit = 1, ?array &$rejections = null, bool $must = false): array
+    public function ranked(array $pool, array $day, array $state, int $limit = 1, ?array &$rejections = null, bool $must = false, bool $everyLevel = false): array
     {
+        $collected = [];
         $date = (string)$day['date'];
         $legCounts = !$state['first_leg'];
         $finish = $day['finish'] ?? null;
@@ -191,7 +195,7 @@ final class ItineraryDayBuilder
         for ($level = $must ? self::LAST_LEVEL : 0; $level <= self::LAST_LEVEL; $level++) {
             $found = [];
             foreach ($pool as $index => $place) {
-                if (isset($state['used'][(int)$place['place_id']])) continue;
+                if (isset($state['used'][(int)$place['place_id']]) || isset($collected[(int)$place['place_id']])) continue;
                 if (!isset($evaluated[$index])) {
                     $seg = $this->route->getSegment((float)$state['point'][0], (float)$state['point'][1], (float)$place['latitude'], (float)$place['longitude']);
                     $evaluated[$index] = [$seg, null];
@@ -266,10 +270,12 @@ final class ItineraryDayBuilder
                     // after the relax note, so a cut note keeps both
                     if ($note !== null) array_splice($found[0]['reasons'], (int)$found[0]['level'] > 0 ? 1 : 0, 0, [$note]);
                 }
-                return array_slice($found, 0, max(1, $limit));
+                if (!$everyLevel) return array_slice($found, 0, max(1, $limit));
+                foreach ($found as $f) $collected[(int)$f['place']['place_id']] = $f;
+                if (count($collected) >= $limit) break;
             }
         }
-        return [];
+        return array_slice(array_values($collected), 0, max(1, $limit));
     }
 
     /** The soft preferences of a relax level. */
@@ -397,7 +403,11 @@ final class ItineraryDayBuilder
      *                  (false only for the first leg of day 1); day_km; trip_km; reserve_km;
      *                  optional for check(): used and trip_items; meal_used (place_id => true:
      *                  places no meal may use); finish (null, or [km, min] from the place to
-     *                  the trip's end point when that leg is a rule)
+     *                  the trip's end point when that leg is a rule); meal_choice (optional,
+     *                  slot => ['place' => a food place row, or null for a break without a
+     *                  place, 'strict' => bool]: the meal the traveller chose. Strict: only
+     *                  that meal may be had; otherwise it is tried first and the usual choice
+     *                  follows when it no longer fits)
      * @param array|null $leg the leg from $at['point'] to the place, when already known
      * @return array ok, reason, start, end, wait; km and min (the leg into the visit, from the
      *         meal place when a meal comes first); meals (the meals before the visit: slot,
@@ -451,10 +461,20 @@ final class ItineraryDayBuilder
 
             $chosen = null;
             $reason = 'MEAL';
-            $options = array_filter([
+            $usual = static fn(): array => array_filter([
                 self::mealAtPlace($route, $profile, $mealIndex, $slotName, $from, $point, $leg, (int)$after, (string)$at['date'], $exclude),
                 self::mealBreak($profile, $slotName, (int)$after),
             ]);
+            $choice = $at['meal_choice'][$slotName] ?? null;
+            if (is_array($choice)) {
+                $wanted = !empty($choice['place'])
+                    ? self::mealAtPlace($route, $profile, self::mealIndex([$choice['place']], (float)$profile['meal_radius_km']), $slotName, $from, $point, $leg, (int)$after, (string)$at['date'], $exclude)
+                    : self::mealBreak($profile, $slotName, (int)$after);
+                if ($wanted !== null) $wanted['chosen'] = true;
+                $options = array_merge($wanted !== null ? [$wanted] : [], !empty($choice['strict']) ? [] : $usual());
+            } else {
+                $options = $usual();
+            }
             foreach ($options as $meal) {
                 $into = $meal['point'] !== null ? $seg($meal['point'], $point) : $leg;
                 $again = $time($meal['end'] + (int)$into['travel_time_min'], $into, true, $dayKm + $meal['km'], $mealKm + $meal['km']);
@@ -564,6 +584,9 @@ final class ItineraryDayBuilder
         return $out;
     }
 
+    /** The words in a meal row's notes that mark a meal the traveller chose (ItineraryEditService keeps it). */
+    public const MEAL_CHOSEN = 'you chose';
+
     /** The title stored with a meal row: the place's name, or "Lunch break" / "Dinner break". */
     public static function mealTitle(array $meal): string
     {
@@ -575,9 +598,17 @@ final class ItineraryDayBuilder
     {
         $slot = (string)$meal['slot'];
         $minutes = (int)$meal['end'] - (int)$meal['start'];
-        if ($meal['place'] === null) {
+        if ($meal['place'] === null && !empty($meal['chosen'])) {
+            $text = 'Meal: ' . $slot . ' | Reason: Time kept free for ' . $slot . ' (' . $minutes . ' min), as ' . self::MEAL_CHOSEN . ' a break without a set place.';
+        } elseif ($meal['place'] === null) {
             $text = 'Meal: ' . $slot . ' | Reason: Time kept free for ' . $slot . ' (' . $minutes . ' min). No suitable food place within '
                 . rtrim(rtrim(number_format((float)$profile['meal_radius_km'], 1), '0'), '.') . ' km of your stops is open for the whole meal, so eat near your last stop.';
+        } elseif (!empty($meal['chosen'])) {
+            $place = $meal['place'];
+            $diet = match ((string)$profile['dietary']) { 'halal' => '; marked halal', 'vegetarian' => '; vegetarian', default => '' };
+            $text = 'State: ' . $place['state'] . ' | District: ' . (($place['district'] ?? '') !== '' ? $place['district'] : '-')
+                . ' | Category: food | Meal: ' . $slot . ' | Reason: ' . ucfirst($slot) . ' at the food place ' . self::MEAL_CHOSEN . ' ('
+                . number_format((float)$meal['detour'], 1) . ' km extra)' . $diet . '; open for the whole meal; the cost is part of the daily meal estimate';
         } else {
             $place = $meal['place'];
             $diet = match ((string)$profile['dietary']) { 'halal' => '; marked halal', 'vegetarian' => '; vegetarian', default => '' };

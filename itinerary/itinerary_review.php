@@ -1,10 +1,14 @@
 <?php
 // itinerary/itinerary_review.php
 // Post-generation review: users accept/remove/preview replacements, select hotel, then confirm changes.
+// Visits can be kept, removed or replaced; a meal (lunch or dinner) can be replaced by another
+// food place or a break; note rows are shown as information only. Every change is checked on
+// the server by ItineraryEditService when the review is confirmed.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 require_once "../config/db_connect.php";
+require_once "../services/PlannerRules.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -42,9 +46,10 @@ $interests     = strtolower((string)($it["interests"] ?? ""));
 $preferredStates = (string)($it["preferred_states"] ?? "");
 
 // ---- Load all itinerary items with place details ----
+$mealSlotSelect = PlannerRules::hasColumn($conn, 'itinerary_items', 'meal_slot') ? 'ii.meal_slot' : 'NULL AS meal_slot';
 $stmt = $conn->prepare("
-    SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id,
-           ii.item_title, ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
+    SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id, {$mealSlotSelect},
+           ii.item_title, ii.start_time, ii.end_time, ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
            cp.latitude, cp.longitude, cp.address, cp.category, cp.state, cp.district,
            cp.opening_hours, cp.description, cp.rating
     FROM itinerary_items ii
@@ -129,12 +134,27 @@ function js_arg($value): string
     );
 }
 
+/** What a row is on this page: a visit, a meal (lunch or dinner), a hotel night or a note. */
+function reviewItemKind(array $item): string
+{
+    $type = strtolower((string)($item['item_type'] ?? ''));
+    if ($type === 'hotel') return 'hotel';
+    if ($type === 'note' || $type === 'transport') return 'note';
+    if (($item['meal_slot'] ?? null) !== null) return 'meal';
+    return 'visit';
+}
+
+/** "09:30:00" => "09:30", or "" */
+function reviewClock(?string $time): string
+{
+    return preg_match('/^(\d{1,2}):(\d{2})/', (string)$time, $m) ? sprintf('%02d:%02d', (int)$m[1], (int)$m[2]) : '';
+}
+
 function reviewLastSchedulableStop(array $items): ?array
 {
     $last = null;
     foreach ($items as $item) {
-        $type = strtolower((string)($item['item_type'] ?? ''));
-        if (in_array($type, ['hotel', 'transport', 'note'], true)) {
+        if (reviewItemKind($item) !== 'visit') {
             continue;
         }
         $last = $item;
@@ -524,6 +544,21 @@ $totalNights = max(0, $totalDays - 1);
         .badge-heritage   { background:#fef3c7; color:#92400e; }
         .badge-culture    { background:#ede9fe; color:#5b21b6; }
         .badge-nature     { background:#dcfce7; color:#15803d; }
+        .badge-note       { background:#f1f5f9; color:#475569; }
+        /* A note row explains a day (a free day, a must-see place not scheduled): information only. */
+        .place-card.note-card { border-style: dashed; border-color: rgba(15,23,42,0.18); background:#f8fafc; }
+        .review-refused {
+            display:none;
+            border:1.5px solid #f59e0b;
+            background:#fffbeb;
+            border-radius:10px;
+            padding:14px 16px;
+            margin: 0 0 16px;
+            font-size:13px;
+            color:#78350f;
+        }
+        .review-refused.visible { display:block; }
+        .review-refused ul { margin:8px 0 10px 18px; padding:0; }
         .pending-change-note {
             display: inline-block;
             margin-top: 8px;
@@ -732,12 +767,75 @@ $totalNights = max(0, $totalDays - 1);
                     <div style="font-weight:900; color:<?php echo $col; ?>; font-size:15px;">Day <?php echo $d; ?></div>
                     <?php if ($dateStr): ?><div style="font-size:12px; color:#64748b;"><?php echo $dateStr; ?></div><?php endif; ?>
                 </div>
+                <?php $visitCount = count(array_filter($items, static fn($i) => reviewItemKind($i) === 'visit')); ?>
                 <div style="margin-left:auto; font-size:12px; color:#64748b;" id="day-<?php echo $d; ?>-count">
-                    <?php echo count($items); ?> place<?php echo count($items) > 1 ? 's' : ''; ?>
+                    <?php echo $visitCount; ?> place<?php echo $visitCount === 1 ? '' : 's'; ?>
                 </div>
             </div>
 
             <?php foreach ($items as $idx => $item):
+                $kind = reviewItemKind($item);
+                if ($kind === 'note' || $kind === 'hotel'):
+                    $info = extractReasonSelected($item['notes'] ?? '');
+                    if ($info === '') $info = (string)($item['notes'] ?? '');
+            ?>
+            <div class="place-card note-card" data-kind="<?php echo $kind; ?>" data-day="<?php echo $d; ?>">
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <span class="type-badge badge-<?php echo $kind; ?>"><?php echo $kind === 'hotel' ? 'Hotel' : 'Note'; ?></span>
+                    <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
+                </div>
+                <?php if ($info !== ''): ?>
+                <div class="place-meta" style="margin-top:4px;"><?php echo htmlspecialchars($info); ?></div>
+                <?php endif; ?>
+            </div>
+            <?php
+                    continue;
+                endif;
+                if ($kind === 'meal'):
+                    $slotLabel = ucfirst((string)$item['meal_slot']);
+                    $mealFrom = reviewClock($item['start_time'] ?? null);
+                    $mealTo = reviewClock($item['end_time'] ?? null);
+            ?>
+            <div class="place-card accepted meal-card"
+                 id="card-<?php echo (int)$item['item_id']; ?>"
+                 data-item-id="<?php echo (int)$item['item_id']; ?>"
+                 data-day="<?php echo $d; ?>"
+                 data-kind="meal"
+                 data-slot="<?php echo htmlspecialchars((string)$item['meal_slot']); ?>"
+                 data-place-id="<?php echo (int)($item['place_id'] ?? 0); ?>"
+                 data-title="<?php echo htmlspecialchars($item['item_title'] ?? ''); ?>"
+                 data-status="accepted">
+                <div class="place-card-top">
+                    <div style="flex:1;">
+                        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                            <span class="type-badge badge-food"><?php echo htmlspecialchars($slotLabel); ?></span>
+                            <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
+                        </div>
+                        <div class="place-meta place-time" style="margin-top:3px;"><?php if ($mealFrom !== ''): ?>Planned <?php echo $mealFrom . '-' . $mealTo; ?><?php endif; ?></div>
+                        <div class="place-meta place-meta-main">
+                            <?php if ((int)($item['place_id'] ?? 0) > 0): ?>
+                                <?php if (!empty($item['state'])): ?>Location: <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?> &middot; <?php endif; ?>
+                                <?php if (!empty($item['opening_hours'])): ?>Hours: <?php echo htmlspecialchars($item['opening_hours']); ?> &middot; <?php endif; ?>
+                            <?php else: ?>
+                                A break without a set place &middot;
+                            <?php endif; ?>
+                            Part of the daily meal estimate
+                        </div>
+                        <?php $mealReason = extractReasonSelected($item['notes'] ?? ''); ?>
+                        <?php if ($mealReason !== ''): ?>
+                        <div class="place-meta" style="margin-top:4px;"><strong>Why here:</strong> <?php echo htmlspecialchars($mealReason); ?></div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="place-actions">
+                        <button type="button" class="btn-replace" style="grid-column:3;" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
+                        <span class="review-status" id="status-<?php echo (int)$item['item_id']; ?>"><?php echo htmlspecialchars($slotLabel); ?> planned</span>
+                    </div>
+                </div>
+                <div class="replacement-result" id="replacement-<?php echo (int)$item['item_id']; ?>"></div>
+            </div>
+            <?php
+                    continue;
+                endif;
                 $score = computeMatchScore($item, $interestArr, $budget);
                 $typeClass = 'badge-' . strtolower($item['item_type'] ?? 'attraction');
                 $barColor = match($score['color']) {
@@ -751,6 +849,7 @@ $totalNights = max(0, $totalDays - 1);
                  id="card-<?php echo (int)$item['item_id']; ?>"
                  data-item-id="<?php echo (int)$item['item_id']; ?>"
                  data-day="<?php echo $d; ?>"
+                 data-kind="visit"
                  data-place-id="<?php echo (int)($item['place_id'] ?? 0); ?>"
                  data-state="<?php echo htmlspecialchars($item['state'] ?? ''); ?>"
                  data-category="<?php echo htmlspecialchars($item['category'] ?? $item['item_type'] ?? ''); ?>"
@@ -765,6 +864,8 @@ $totalNights = max(0, $totalDays - 1);
                             </span>
                             <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
                         </div>
+                        <?php $visitFrom = reviewClock($item['start_time'] ?? null); $visitTo = reviewClock($item['end_time'] ?? null); ?>
+                        <div class="place-meta place-time" style="margin-top:3px;"><?php if ($visitFrom !== ''): ?>Planned <?php echo $visitFrom . '-' . $visitTo; ?><?php endif; ?></div>
                         <div class="place-meta place-meta-main">
                             <?php if (!empty($item['state'])): ?>
                                 Location: <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
@@ -789,7 +890,7 @@ $totalNights = max(0, $totalDays - 1);
                     <div class="place-actions">
                         <button type="button" class="btn-accept" onclick="acceptPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-accept-<?php echo (int)$item['item_id']; ?>">Keep</button>
                         <button type="button" class="btn-reject" onclick="rejectPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-reject-<?php echo (int)$item['item_id']; ?>">Remove</button>
-                        <button type="button" class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>, <?php echo $d; ?>, <?php echo js_arg($item['state'] ?? ''); ?>, <?php echo js_arg($item['category'] ?? $item['item_type'] ?? ''); ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
+                        <button type="button" class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
                         <span class="review-status" id="status-<?php echo (int)$item['item_id']; ?>">Kept</span>
                     </div>
                 </div>
@@ -905,6 +1006,16 @@ $totalNights = max(0, $totalDays - 1);
             <?php endif; ?>
         </div>
 
+        <div class="review-refused" id="review-refused" role="status" aria-live="polite">
+            <strong>Some changes were not saved, because they would break a rule of your trip:</strong>
+            <ul id="review-refused-list"></ul>
+            <div>Everything else was saved, and the times of the changed days were planned again.</div>
+            <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
+                <a href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>" class="btn btn-primary">View Trip</a>
+                <a href="itinerary_review.php?itinerary_id=<?php echo $itineraryId; ?>" class="btn btn-ghost">Review Again</a>
+            </div>
+        </div>
+
         <div class="confirm-bar">
             <div class="confirm-stats">
                 <strong id="stat-accepted">0</strong> kept &middot;
@@ -951,17 +1062,20 @@ const replacementMap = {}; // item_id -> selected replacement place payload, sav
 const hotelSelections = {}; // night_no -> selected hotel payload, saved only on Confirm
 const hotelResultState = {}; // night_no -> lazy-load/collapse state
 const originalCards = {};
+const replaceOffsets = {}; // item_id -> options already shown for it (Try Another shows the next)
 
 // Initialise all as accepted
 <?php foreach ($days as $d => $items): ?>
 <?php foreach ($items as $item): ?>
+<?php if (reviewItemKind($item) === 'visit'): ?>
 itemStatus[<?php echo (int)$item['item_id']; ?>] = 'accepted';
+<?php endif; ?>
 <?php endforeach; ?>
 <?php endforeach; ?>
 
 updateStats();
 
-document.querySelectorAll('.place-card').forEach(card => {
+document.querySelectorAll('.place-card[data-item-id]').forEach(card => {
     originalCards[card.dataset.itemId] = {
         html: card.innerHTML,
         state: card.dataset.state || '',
@@ -977,7 +1091,7 @@ function acceptPlace(itemId) {
     card.classList.remove('rejected', 'replacing', 'replacement-pending');
     card.classList.add('accepted', 'kept');
     card.dataset.status = 'accepted';
-    itemStatus[itemId] = 'accepted';
+    if (card.dataset.kind === 'visit') itemStatus[itemId] = 'accepted';
     const status = document.getElementById('status-' + itemId);
     if (status) status.textContent = replacementMap[itemId] ? '✔ Replacement kept' : '✔ Kept';
     const replacement = document.getElementById('replacement-' + itemId);
@@ -1005,14 +1119,25 @@ function rejectPlace(itemId) {
 }
 
 // ---- Replace (AJAX) ----
-async function replacePlace(itemId, day, state, category) {
+// The server offers the best place that keeps every rule of the trip in this position
+// (review_replace.php); Try Another asks for the next one. Places pending for other stops are
+// not offered again. A meal is offered other food places, or a break without a place.
+function pendingPlaceIds(exceptItemId) {
+    return Object.entries(replacementMap)
+        .filter(([id, r]) => Number(id) !== Number(exceptItemId) && Number(r.place_id || 0) > 0)
+        .map(([, r]) => Number(r.place_id));
+}
+
+async function replacePlace(itemId, next = false) {
     const card = document.getElementById('card-' + itemId);
     const btn  = document.getElementById('btn-replace-' + itemId);
     const rep  = document.getElementById('replacement-' + itemId);
     if (!card || !btn || !rep) return;
+    const isMeal = card.dataset.kind === 'meal';
+    const offset = next ? (replaceOffsets[itemId] ?? -1) + 1 : 0;
 
     card.classList.add('replacing');
-    card.classList.remove('accepted', 'rejected', 'replacement-pending');
+    card.classList.remove('accepted', 'rejected', 'replacement-pending', 'kept');
     card.dataset.status = 'replacing';
     const status = document.getElementById('status-' + itemId);
     if (status) status.textContent = 'Finding replacement...';
@@ -1021,23 +1146,32 @@ async function replacePlace(itemId, day, state, category) {
     rep.innerHTML = '';
     rep.classList.remove('visible');
 
+    const settle = (label) => {
+        card.classList.remove('replacing');
+        card.classList.add('accepted');
+        card.dataset.status = 'accepted';
+        if (!isMeal) itemStatus[itemId] = 'accepted';
+        if (status) status.textContent = label;
+    };
+
     try {
         const resp = await fetch('review_replace.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({
                 itinerary_id: ITINERARY_ID,
-                item_id:      itemId,
-                day_no:       day,
-                state:        state,
-                category:     category,
+                item_id: itemId,
+                offset: offset,
+                exclude_place_ids: pendingPlaceIds(itemId).join(','),
             })
         });
         const data = await parseJsonResponse(resp);
 
         if (data.status === 'success') {
+            replaceOffsets[itemId] = offset;
             replacementMap[itemId] = {
                 place_id: data.place_id,
+                meal: isMeal,
                 title: data.new_title,
                 cost: data.new_cost,
                 state: data.new_state || '',
@@ -1049,67 +1183,80 @@ async function replacePlace(itemId, day, state, category) {
             const titleEl = card.querySelector('.place-title');
             if (titleEl) titleEl.textContent = data.new_title;
             card.dataset.placeId = data.place_id;
-            card.dataset.state = data.new_state || state;
-            card.dataset.category = data.new_category || category;
             card.dataset.title = data.new_title || '';
+            if (!isMeal) {
+                card.dataset.state = data.new_state || card.dataset.state;
+                card.dataset.category = data.new_category || card.dataset.category;
+            }
+            const timeEl = card.querySelector('.place-time');
+            if (timeEl) timeEl.textContent = data.new_start ? 'Planned ' + data.new_start + '-' + data.new_end + ' (times are set again when you confirm)' : '';
 
             const metaMain = card.querySelector('.place-meta-main');
             if (metaMain) {
                 const location = [data.new_district, data.new_state].filter(Boolean).join(', ');
                 const opening = data.new_opening_hours ? ' | Hours: ' + data.new_opening_hours : '';
-                const costText = parseFloat(data.new_cost || 0) > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free';
+                const costText = isMeal
+                    ? (Number(data.place_id) > 0 ? ' | Part of the daily meal estimate' : 'A break without a set place | Part of the daily meal estimate')
+                    : (parseFloat(data.new_cost || 0) > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free');
                 metaMain.textContent = [location, opening, costText].filter(Boolean).join('');
             }
-            const badge = card.querySelector('.type-badge');
-            if (badge && data.new_item_type) {
-                badge.textContent = data.new_item_type.charAt(0).toUpperCase() + data.new_item_type.slice(1);
-                badge.className = 'type-badge badge-' + data.new_item_type;
+            if (!isMeal) {
+                const badge = card.querySelector('.type-badge');
+                if (badge && data.new_item_type) {
+                    badge.textContent = data.new_item_type.charAt(0).toUpperCase() + data.new_item_type.slice(1);
+                    badge.className = 'type-badge badge-' + data.new_item_type;
+                }
+                updateCardMatch(card, data);
             }
-            updateCardMatch(card, data);
 
+            const why = Array.isArray(data.reasons) && data.reasons.length ? escHtml(data.reasons.slice(0, 3).join('; ')) : '';
+            const matchLine = isMeal ? '' : `
+                <div style="margin-top:8px; display:flex; align-items:center; gap:8px;">
+                    <span class="match-badge badge-${data.match_color}">${data.match_label}</span>
+                    <span style="font-weight:900; font-size:13px;">${data.match_pct}% match</span>
+                </div>`;
             rep.innerHTML = `
                 <div style="font-weight:800; color:#d97706; margin-bottom:4px;">Replacement pending</div>
                 <div style="font-weight:700;">${escHtml(data.new_title)}</div>
                 <div style="font-size:11px; color:#64748b; margin-top:3px;">
-                    ${data.new_state ? escHtml(data.new_state) : ''}
-                    ${data.new_cost > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free'}
+                    ${data.new_start ? 'Planned ' + escHtml(data.new_start) + '-' + escHtml(data.new_end) : ''}
+                    ${data.new_state ? ' | ' + escHtml(data.new_state) : ''}
+                    ${isMeal ? '' : (data.new_cost > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free')}
                 </div>
-                <div style="margin-top:8px; display:flex; align-items:center; gap:8px;">
-                    <span class="match-badge badge-${data.match_color}">${data.match_label}</span>
-                    <span style="font-weight:900; font-size:13px;">${data.match_pct}% match</span>
-                </div>
-                <span class="pending-change-note">Pending: saved only after Confirm</span>
-                <div style="margin-top:8px; display:flex; gap:8px;">
+                ${why ? `<div style="font-size:11px; color:#64748b; margin-top:3px;">Why: ${why}</div>` : ''}
+                ${matchLine}
+                <span class="pending-change-note">Pending: saved only after Confirm, when the rules of your trip are checked again</span>
+                <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
                     <button type="button" class="btn-accept" onclick="acceptPlace(${itemId})">Keep Replacement</button>
-                    <button type="button" class="btn-reject" onclick="rejectPlace(${itemId})">Remove</button>
-                    <button type="button" class="btn-replace" onclick="replacePlace(${itemId}, ${day}, '${escJs(data.new_state || state)}', '${escJs(data.new_category || category)}')">Try Another</button>
+                    ${isMeal ? `<button type="button" class="btn-reject" onclick="undoReplacement(${itemId})">Keep Original</button>`
+                             : `<button type="button" class="btn-reject" onclick="rejectPlace(${itemId})">Remove</button>`}
+                    ${data.more ? `<button type="button" class="btn-replace" onclick="replacePlace(${itemId}, true)">Try Another</button>` : ''}
                 </div>
+                ${data.more ? '' : '<div style="font-size:11px; color:#64748b; margin-top:6px;">This is the last option that fits this ' + (isMeal ? 'meal' : 'stop') + '.</div>'}
             `;
             rep.classList.add('visible');
 
             card.classList.remove('replacing');
             card.classList.add('accepted', 'replacement-pending');
             card.dataset.status = 'accepted';
-            itemStatus[itemId] = 'accepted';
+            if (!isMeal) itemStatus[itemId] = 'accepted';
             if (status) status.textContent = 'Replacement pending';
         } else {
+            delete replaceOffsets[itemId];
             rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: ' + escHtml(data.message || 'No replacement found.') + '</div>';
             rep.classList.add('visible');
-            card.classList.remove('replacing');
-            card.classList.add('accepted');
-            card.dataset.status = 'accepted';
-            itemStatus[itemId] = 'accepted';
-            delete replacementMap[itemId];
-            if (status) status.textContent = 'Kept';
+            if (replacementMap[itemId]) {
+                card.classList.add('replacement-pending');
+                settle('Replacement pending');
+                rep.innerHTML += '<span class="pending-change-note">The replacement shown above is still pending.</span>';
+            } else {
+                settle(isMeal ? 'Planned' : 'Kept');
+            }
         }
     } catch(e) {
         rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: Network error. Please try again.</div>';
         rep.classList.add('visible');
-        card.classList.remove('replacing');
-        card.classList.add('accepted');
-        card.dataset.status = 'accepted';
-        itemStatus[itemId] = 'accepted';
-        if (status) status.textContent = 'Kept';
+        settle(replacementMap[itemId] ? 'Replacement pending' : (isMeal ? 'Planned' : 'Kept'));
     }
 
     btn.disabled = false;
@@ -1117,9 +1264,27 @@ async function replacePlace(itemId, day, state, category) {
     updateStats();
 }
 
+/** Back to the card as generated, without its pending replacement. */
+function undoReplacement(itemId) {
+    const card = document.getElementById('card-' + itemId);
+    const original = originalCards[itemId];
+    if (!card || !original) return;
+    card.innerHTML = original.html;
+    card.dataset.state = original.state;
+    card.dataset.category = original.category;
+    card.dataset.placeId = original.placeId;
+    card.classList.remove('rejected', 'replacing', 'replacement-pending', 'kept');
+    card.classList.add('accepted');
+    card.dataset.status = 'accepted';
+    delete replacementMap[itemId];
+    delete replaceOffsets[itemId];
+    if (card.dataset.kind === 'visit') itemStatus[itemId] = 'accepted';
+    updateStats();
+}
+
 // ---- Hotel suggestions ----
 function currentLastKeptStopForDay(dayNo) {
-    const cards = Array.from(document.querySelectorAll(`.place-card[data-day="${dayNo}"]`))
+    const cards = Array.from(document.querySelectorAll(`.place-card[data-kind="visit"][data-day="${dayNo}"]`))
         .filter(card => card.dataset.status !== 'rejected');
     if (cards.length === 0) return null;
     const last = cards[cards.length - 1];
@@ -1293,7 +1458,7 @@ function toggleBreakdown(itemId) {
 
 // ---- Reset all ----
 function resetAll() {
-    document.querySelectorAll('.place-card').forEach(card => {
+    document.querySelectorAll('.place-card[data-item-id]').forEach(card => {
         const itemId = parseInt(card.dataset.itemId);
         if (originalCards[itemId]) {
             card.innerHTML = originalCards[itemId].html;
@@ -1304,13 +1469,12 @@ function resetAll() {
         card.classList.remove('rejected', 'replacing', 'replacement-pending', 'kept');
         card.classList.add('accepted');
         card.dataset.status = 'accepted';
-        itemStatus[itemId] = 'accepted';
+        if (card.dataset.kind === 'visit') itemStatus[itemId] = 'accepted';
         const rep = document.getElementById('replacement-' + itemId);
         if (rep) { rep.classList.remove('visible'); rep.innerHTML = ''; }
-        const status = document.getElementById('status-' + itemId);
-        if (status) status.textContent = 'Kept';
     });
     Object.keys(replacementMap).forEach(k => delete replacementMap[k]);
+    Object.keys(replaceOffsets).forEach(k => delete replaceOffsets[k]);
     Object.keys(hotelSelections).forEach(k => delete hotelSelections[k]);
     Object.keys(hotelResultState).forEach(k => delete hotelResultState[k]);
     document.querySelectorAll('.hotel-results').forEach(el => {
@@ -1334,6 +1498,7 @@ function updateStats() {
             if (replacementMap[id]) replaced++;
         } else if (s === 'rejected') rejected++;
     });
+    Object.entries(replacementMap).forEach(([id, r]) => { if (r.meal) replaced++; });
     document.getElementById('stat-accepted').textContent = accepted;
     document.getElementById('stat-rejected').textContent = rejected;
     const replacedEl = document.getElementById('stat-replaced');
@@ -1368,21 +1533,33 @@ function updateCardMatch(card, data) {
 }
 
 // ---- Confirm review ----
+// Every day keeps at least one stop (the server refuses to empty a day as well). The server
+// checks each change against the rules of the trip; one it cannot make is listed with its reason.
 async function confirmReview() {
     const btn = document.getElementById('btn-confirm');
+    const restore = () => { btn.disabled = false; btn.innerHTML = 'Confirm &amp; View Trip'; };
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner"></span> Saving...';
 
     const rejectedIds = Object.entries(itemStatus)
         .filter(([id, s]) => s === 'rejected')
         .map(([id]) => parseInt(id));
-    const keptCount = Object.values(itemStatus).filter(s => s === 'accepted').length;
-    if (keptCount <= 0) {
-        alert('Please keep at least one place before confirming the itinerary.');
-        btn.disabled = false;
-        btn.innerHTML = 'Confirm & View Trip';
+    const emptied = [];
+    document.querySelectorAll('.day-section').forEach(section => {
+        const visits = Array.from(section.querySelectorAll('.place-card[data-kind="visit"]'));
+        if (visits.length > 0 && visits.every(card => itemStatus[card.dataset.itemId] === 'rejected')) {
+            emptied.push(visits[0].dataset.day);
+        }
+    });
+    if (emptied.length > 0) {
+        alert('Please keep at least one stop on Day ' + emptied.join(', Day ') + '. Replace a stop instead of removing every stop of a day.');
+        restore();
         return;
     }
+    const replacements = {};
+    Object.entries(replacementMap).forEach(([id, r]) => {
+        if (itemStatus[id] !== 'rejected') replacements[id] = { place_id: Number(r.place_id || 0) };
+    });
 
     try {
         const resp = await fetch('review_confirm_nightly.php', {
@@ -1391,24 +1568,50 @@ async function confirmReview() {
             body: new URLSearchParams({
                 itinerary_id: ITINERARY_ID,
                 rejected_ids: rejectedIds.join(','),
-                replacements_json: JSON.stringify(replacementMap),
+                replacements_json: JSON.stringify(replacements),
                 hotel_selections_json: JSON.stringify(hotelSelections),
             })
         });
         const data = await parseJsonResponse(resp);
 
         if (data.status === 'success') {
-            window.location.href = 'itinerary_view.php?itinerary_id=' + ITINERARY_ID;
+            const refused = Array.isArray(data.refused) ? data.refused : [];
+            if (refused.length === 0) {
+                window.location.href = 'itinerary_view.php?itinerary_id=' + ITINERARY_ID;
+                return;
+            }
+            const list = document.getElementById('review-refused-list');
+            if (list) {
+                list.innerHTML = refused.map(r => {
+                    const card = r.item_id ? document.getElementById('card-' + r.item_id) : null;
+                    const what = r.action === 'hotel' ? (r.night ? 'Hotel for night ' + r.night : 'Hotels')
+                        : (r.action === 'remove' ? 'Removing ' : 'Replacing ') + (card ? (originalCards[r.item_id] ? titleFromHtml(originalCards[r.item_id].html) : card.dataset.title) : 'a stop');
+                    return '<li><strong>' + escHtml(what) + ':</strong> ' + escHtml(r.message || 'not allowed by the rules of the trip.') + '</li>';
+                }).join('');
+            }
+            const panel = document.getElementById('review-refused');
+            if (panel) {
+                panel.classList.add('visible');
+                panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            btn.disabled = true;
+            btn.innerHTML = 'Saved';
         } else {
             alert('Error: ' + (data.message || 'Could not save review.'));
-            btn.disabled = false;
-            btn.innerHTML = 'Confirm & View Trip';
+            restore();
         }
     } catch(e) {
         alert('Network error. Please try again.');
-        btn.disabled = false;
-        btn.innerHTML = 'Confirm & View Trip';
+        restore();
     }
+}
+
+/** The stop's title as the card showed it when the page was loaded. */
+function titleFromHtml(html) {
+    const box = document.createElement('div');
+    box.innerHTML = html;
+    const title = box.querySelector('.place-title');
+    return title ? title.textContent.trim() : 'a stop';
 }
 
 // ---- HTML escape helper ----

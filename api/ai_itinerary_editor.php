@@ -2,7 +2,8 @@
 // api/ai_itinerary_editor.php
 // Itinerary editor for the chat: proposes one replacement, addition or timetable change from the
 // cultural places database, and saves it only when the traveller presses a confirmation button.
-// Every proposal and every confirmation passes ItineraryRuleValidationService first.
+// Every proposal is checked with ItineraryRuleValidationService, and every confirmation is made by
+// ItineraryEditService, which judges it by the planner's rules and times the day again.
 // Requests may be in English, Malay or Chinese. The local model reads the request first
 // (ItineraryEditIntentService); when it is not running or gives no valid intent, the regular
 // expressions below handle English requests; otherwise the traveller is asked to say it again.
@@ -53,18 +54,11 @@ if ($action === "confirm") {
         editor_reply(["status" => "error", "answer" => ai_text("edit_replacement_not_found", $lang)]);
     }
 
-    $check = ItineraryRuleValidationService::validatePlaceChange($conn, $travellerId, $itineraryId, $placeId, (int)$item["day_no"], $itemId);
-    if (!$check["ok"]) {
-        editor_reply(["status" => "error", "answer" => $check["message"]]);
+    // Judged and saved by the planner's rules: the day is timed again, or nothing changes.
+    $result = ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
+    if (!$result["ok"]) {
+        editor_reply(["status" => "error", "answer" => $result["message"]]);
     }
-
-    $ok = ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
-    if (!$ok) {
-        editor_reply(["status" => "error", "answer" => ai_text("edit_update_failed", $lang)]);
-    }
-
-    ItineraryEditService::routes($conn, $itineraryId);
-    ItineraryEditService::total($conn, $itineraryId);
 
     editor_reply([
         "status" => "success",
@@ -89,18 +83,11 @@ if ($action === "confirm_add") {
         editor_reply(["status" => "error", "answer" => ai_text("edit_place_not_found", $lang)]);
     }
 
-    $check = ItineraryRuleValidationService::validatePlaceChange($conn, $travellerId, $itineraryId, $placeId, $dayNo, 0);
-    if (!$check["ok"]) {
-        editor_reply(["status" => "error", "answer" => $check["message"]]);
+    // Added where it keeps every rule with the least travelling, and the day timed again.
+    $result = ItineraryEditService::addStop($conn, $itineraryId, $dayNo, $placeId);
+    if (!$result["ok"]) {
+        editor_reply(["status" => "error", "answer" => $result["message"]]);
     }
-
-    $ok = apply_addition($conn, $itineraryId, $dayNo, $place);
-    if (!$ok) {
-        editor_reply(["status" => "error", "answer" => ai_text("edit_add_failed", $lang)]);
-    }
-
-    ItineraryEditService::routes($conn, $itineraryId);
-    ItineraryEditService::total($conn, $itineraryId);
 
     editor_reply([
         "status" => "success",
@@ -119,12 +106,13 @@ if ($action === "confirm_retime") {
         editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_time", $lang)]);
     }
 
-    $ok = retime_itinerary_days($conn, $itineraryId, $startTime);
-    if (!$ok) {
-        editor_reply(["status" => "error", "answer" => ai_text("edit_retime_failed", $lang)]);
+    // Every day starts at the new time and is timed again by the planner's rules, or nothing changes.
+    [$hour, $minute] = array_map("intval", explode(":", $startTime));
+    $result = ItineraryEditService::retimeTrip($conn, $itineraryId, $hour * 60 + $minute);
+    if (!$result["ok"]) {
+        editor_reply(["status" => "error", "answer" => $result["message"]]);
     }
 
-    ItineraryEditService::total($conn, $itineraryId);
     editor_reply([
         "status" => "success",
         "answer" => ai_text("edit_retimed", $lang, ["time" => display_time_label($startTime)]),
@@ -1052,14 +1040,6 @@ function build_local_addition_answer(array $proposals): string
     return implode("\n", $lines);
 }
 
-function item_type_from_category(string $category): string
-{
-    $cat = strtolower(trim($category));
-    if ($cat === "food") return "food";
-    if ($cat === "festival") return "festival";
-    return "attraction";
-}
-
 /**
  * An explicit request to restart the days at a clock time, e.g. "start at 9.30am",
  * "rearrange the timetable to 8am", "change the start time to 10am". Same rule as
@@ -1117,168 +1097,4 @@ function display_time_label(string $sqlTime): string
 {
     $dt = DateTime::createFromFormat("H:i:s", $sqlTime);
     return $dt ? $dt->format("g:i A") : $sqlTime;
-}
-
-function retime_itinerary_days(mysqli $conn, int $itineraryId, string $startTime): bool
-{
-    $stmt = $conn->prepare("
-        SELECT item_id, day_no, sequence_no, item_type, start_time, end_time, travel_time_min
-        FROM itinerary_items
-        WHERE itinerary_id = ?
-        ORDER BY day_no, sequence_no, item_id
-    ");
-    if (!$stmt) return false;
-    $stmt->bind_param("i", $itineraryId);
-    $stmt->execute();
-    $res = $stmt->get_result();
-    $byDay = [];
-    while ($row = $res->fetch_assoc()) {
-        $byDay[(int)$row["day_no"]][] = $row;
-    }
-    $stmt->close();
-    if (empty($byDay)) return false;
-
-    $update = $conn->prepare("UPDATE itinerary_items SET start_time = ?, end_time = ? WHERE item_id = ? AND itinerary_id = ?");
-    if (!$update) return false;
-
-    $startMin = sql_time_to_minutes($startTime);
-    if ($startMin === null) return false;
-    $updated = 0;
-
-    foreach ($byDay as $rows) {
-        $cursor = $startMin;
-        $prevOldEnd = null;
-        $prevNewEnd = null;
-        $hotelRows = [];
-
-        foreach ($rows as $row) {
-            $itemType = strtolower((string)$row["item_type"]);
-            if ($itemType === "hotel") {
-                $hotelRows[] = $row;
-                continue;
-            }
-            if (in_array($itemType, ["note", "transport"], true)) {
-                continue;
-            }
-
-            $oldStart = sql_time_to_minutes($row["start_time"] ?? null);
-            $oldEnd = sql_time_to_minutes($row["end_time"] ?? null);
-            $duration = estimate_item_duration_minutes($row);
-
-            if ($prevNewEnd !== null) {
-                $travel = max(0, (int)($row["travel_time_min"] ?? 0));
-                $gap = estimate_old_schedule_gap($prevOldEnd, $oldStart, $travel);
-                $cursor = $prevNewEnd + $travel + $gap;
-            }
-
-            $newStart = $cursor;
-            $newEnd = $newStart + $duration;
-            $newStartSql = sql_time_from_minutes($newStart);
-            $newEndSql = sql_time_from_minutes($newEnd);
-            $itemId = (int)$row["item_id"];
-            $update->bind_param("ssii", $newStartSql, $newEndSql, $itemId, $itineraryId);
-            $update->execute();
-            $updated++;
-
-            $prevOldEnd = $oldEnd;
-            $prevNewEnd = $newEnd;
-        }
-
-        foreach ($hotelRows as $hotel) {
-            $travel = max(0, (int)($hotel["travel_time_min"] ?? 0));
-            $hotelStart = max(20 * 60, ($prevNewEnd ?? $startMin) + $travel + 30);
-            $hotelEnd = $hotelStart + 30;
-            $newStartSql = sql_time_from_minutes($hotelStart);
-            $newEndSql = sql_time_from_minutes($hotelEnd);
-            $itemId = (int)$hotel["item_id"];
-            $update->bind_param("ssii", $newStartSql, $newEndSql, $itemId, $itineraryId);
-            $update->execute();
-            $updated++;
-        }
-    }
-
-    $update->close();
-    return $updated > 0;
-}
-
-function estimate_item_duration_minutes(array $row): int
-{
-    $oldStart = sql_time_to_minutes($row["start_time"] ?? null);
-    $oldEnd = sql_time_to_minutes($row["end_time"] ?? null);
-    if ($oldStart !== null && $oldEnd !== null && $oldEnd > $oldStart) {
-        return max(30, min(240, $oldEnd - $oldStart));
-    }
-    $type = strtolower((string)($row["item_type"] ?? ""));
-    if ($type === "food") return 60;
-    if ($type === "festival") return 120;
-    return 90;
-}
-
-function estimate_old_schedule_gap(?int $prevOldEnd, ?int $oldStart, int $travelMinutes): int
-{
-    if ($prevOldEnd !== null && $oldStart !== null && $oldStart > $prevOldEnd) {
-        return max(15, min(120, $oldStart - $prevOldEnd - max(0, $travelMinutes)));
-    }
-    return 45;
-}
-
-function sql_time_from_minutes(int $minutes): string
-{
-    $minutes = max(0, min(23 * 60 + 30, $minutes));
-    return sprintf("%02d:%02d:00", intdiv($minutes, 60), $minutes % 60);
-}
-
-function sql_time_to_minutes(?string $time): ?int
-{
-    if (!$time || !preg_match('/^(\d{1,2}):(\d{2})/', $time, $m)) return null;
-    return ((int)$m[1] * 60) + (int)$m[2];
-}
-
-function apply_addition(mysqli $conn, int $itineraryId, int $dayNo, array $place): bool
-{
-    $seqStmt = $conn->prepare("SELECT COALESCE(MAX(sequence_no),0) AS max_seq FROM itinerary_items WHERE itinerary_id = ? AND day_no = ? AND item_type <> 'hotel'");
-    if (!$seqStmt) return false;
-    $seqStmt->bind_param("ii", $itineraryId, $dayNo);
-    $seqStmt->execute();
-    $seqRow = $seqStmt->get_result()->fetch_assoc();
-    $seqStmt->close();
-    $sequenceNo = (int)($seqRow["max_seq"] ?? 0) + 1;
-
-    $timeStmt = $conn->prepare("SELECT end_time FROM itinerary_items WHERE itinerary_id = ? AND day_no = ? AND item_type <> 'hotel' AND end_time IS NOT NULL ORDER BY sequence_no DESC LIMIT 1");
-    if (!$timeStmt) return false;
-    $timeStmt->bind_param("ii", $itineraryId, $dayNo);
-    $timeStmt->execute();
-    $timeRow = $timeStmt->get_result()->fetch_assoc();
-    $timeStmt->close();
-
-    // Start after the day's last stop. The rule check before saving already guarantees it ends in time.
-    $lastEnd = sql_time_to_minutes($timeRow["end_time"] ?? null);
-    $startMin = $lastEnd !== null ? $lastEnd + 30 : 9 * 60;
-    $duration = max(45, min(180, (int)($place["visit_duration_min"] ?? 90)));
-    $startTime = sql_time_from_minutes($startMin);
-    $endTime = sql_time_from_minutes($startMin + $duration);
-
-    $placeId = (int)$place["place_id"];
-    $itemType = item_type_from_category((string)$place["category"]);
-    $cost = array_key_exists("entrance_fee", $place)
-        ? max(0.0, (float)$place["entrance_fee"])
-        : max(0.0, (float)($place["estimated_cost"] ?? 0));
-    $lat = $place["latitude"] !== null ? (float)$place["latitude"] : null;
-    $lng = $place["longitude"] !== null ? (float)$place["longitude"] : null;
-    $districtNote = !empty($place["district"]) ? " | District: " . $place["district"] : "";
-    $notes = "State: " . ($place["state"] ?? "") . $districtNote . " | Category: " . ($place["category"] ?? "");
-
-    $conn->query("UPDATE itinerary_items SET sequence_no = sequence_no + 1 WHERE itinerary_id = " . (int)$itineraryId . " AND day_no = " . (int)$dayNo . " AND item_type = 'hotel' AND sequence_no >= " . (int)$sequenceNo);
-
-    $stmt = $conn->prepare("
-        INSERT INTO itinerary_items
-            (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, item_latitude, item_longitude, start_time, end_time, estimated_cost, notes)
-        VALUES
-            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ");
-    if (!$stmt) return false;
-    $stmt->bind_param("iiisisddssds", $itineraryId, $dayNo, $sequenceNo, $itemType, $placeId, $place["name"], $lat, $lng, $startTime, $endTime, $cost, $notes);
-    $ok = $stmt->execute();
-    $stmt->close();
-    return $ok;
 }

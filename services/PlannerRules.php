@@ -125,6 +125,14 @@ final class PlannerRules
         'ROOM' => 'no room left on the days it can be visited',
         'MEAL' => 'would leave no time for lunch or dinner',
         'UNAVAILABLE' => 'not an active place with map coordinates',
+        // Reasons of ItineraryEditService: a change to a stored itinerary.
+        'AVOID' => 'on your list of places to avoid',
+        'DAY_FULL' => 'the day already has its planned number of stops',
+        'LAST_STOP' => 'it is the last stop of its day',
+        'NOT_FOUND' => 'not found in this itinerary',
+        'NOT_EDITABLE' => 'this row cannot be changed this way',
+        'LOCKED' => 'the day holds a row the planner cannot re-time',
+        'NO_CHANGE' => 'nothing would change',
     ];
 
     /**

@@ -564,8 +564,8 @@ final class ItineraryGenerator
                 arsort($rejections);
                 $main = array_key_first($rejections);
                 $why = $main !== null ? 'most places were ' . PlannerRules::reasonText((string)$main) : 'no place is left in the chosen area';
-                $this->storeNote($itineraryId, (int)$dayNo, ++$sequence, 'Free day: no suitable stop found',
-                    'Reason: No stop fits your preferences on this day (' . $why . '). Use it as free time, or replace it with a place of your choice.', $profile);
+                [$noteTitle, $noteText] = self::freeDayNote($why);
+                $this->storeNote($itineraryId, (int)$dayNo, ++$sequence, $noteTitle, $noteText, $profile);
             }
             foreach ($this->mustMissed as $missed) {
                 if ((int)$missed['day'] !== (int)$dayNo) continue;
@@ -577,6 +577,21 @@ final class ItineraryGenerator
         $insert->close();
         if ($mealInsert !== null) $mealInsert->close();
         return $itineraryId;
+    }
+
+    /** The title of the note row of a day without stops (ItineraryEditService finds the note by it). */
+    public const FREE_DAY_TITLE = 'Free day: no suitable stop found';
+
+    /**
+     * Title and notes of the note row of a day without stops, written here and by
+     * ItineraryEditService when an edit leaves a day empty.
+     *
+     * @return array{0:string,1:string}
+     */
+    public static function freeDayNote(string $why): array
+    {
+        return [self::FREE_DAY_TITLE,
+            'Reason: No stop fits your preferences on this day (' . $why . '). Use it as free time, or replace it with a place of your choice.'];
     }
 
     /** A note row: no place, the day window as its time, no cost. */
