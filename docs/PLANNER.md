@@ -37,8 +37,8 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
 3. Must-see places get their days first (see Must-see and avoid).
 4. Day by day, `ItineraryDayBuilder::build()` fills the day and
    `ItineraryRouteOptimiser::orderDay()` orders it, using estimated travel figures.
-5. When a routing server answers, the whole trip is measured once on the road and every day is
-   ordered and timed again. A stop that no order can keep is dropped, and one feasible
+5. When a routing server answers, the whole trip is measured once on the road (one request, see
+   How road figures are asked for) and every day is ordered and timed again. A stop that no order can keep is dropped, and one feasible
    replacement is tried.
 6. Everything is stored in one transaction and the total is written by
    `ItineraryEditService::total()`. A failure saves nothing.
@@ -254,6 +254,41 @@ Valhalla when they answer. With `ROUTING_ESTIMATES_ONLY=1`, or when the server d
 the estimates are stored (`method` is `estimate`). Hotel prices are estimates, and entrance fees
 and visit lengths of imported places are typical values. `docs/OPEN_DATA.md` has the details.
 
+## How road figures are asked for
+
+Every request to a public routing server costs time: `OpenDataHttp` spaces requests to one host
+(`HOST_INTERVAL`, 1.1 s for the FOSSGIS servers), and the public OSRM server holds a second
+"table" request (every pair of a set of points) within about ten seconds back for that long. A
+"route" request (the legs of a chain of points) is not held back. So the planner asks in
+batches, never per candidate, and keeps to these rules (`RouteService`):
+
+- Candidates are screened and ranked on the figures at hand: the legs stored with the
+  itinerary (`RouteService::seed()`, no request), road figures measured earlier in the same
+  operation, and estimates for the rest. Only the few that will be shown or stored are then
+  measured on the road, together, with the legs of their day: `RouteService::measureLegs()`
+  strings the legs into as few route requests as it can (at most `MAX_ROUTE_POINTS` points
+  each). A candidate that looked feasible on the estimates but fails on the road figures gives
+  way to the next one.
+- An edit (`ItineraryEditService::plan()`) times the days it touches on the figures at hand,
+  measures the legs those days need that are not known (stops in order, the meal places on
+  the way, the hotel or the end point), and times them again; a second request follows only for
+  legs the new timing needs (a meal moved to another place). At most `MAX_REQUESTS` (2)
+  requests per operation, each waiting at most `ROUTE_TIMEOUT` (5) seconds. A change to one day
+  asks about that day and the day whose start it moves, not the whole trip.
+- Setting a day's start moves no stop and asks nothing (`setDayStart()`, `retimeTrip()`).
+- Generation and the route optimiser ask for one table for the whole trip
+  (`RouteService::preloadTrip()`): the stops, hotels, start and end point, and, while there is
+  room (`MAX_TABLE_POINTS`, 50), the meal places; those left out are estimated. A day whose stop
+  has to be replaced after the road figures adds one route request. Their timeout is 8 seconds
+  (`ItineraryGenerator::ROUTE_TIMEOUT`, `ItineraryRouteOptimiser::ROUTE_TIMEOUT`). A motorcycle
+  trip's table of more than ten points comes from OSRM's car profile.
+- The figures a day is timed with are the ones stored with it (`ItineraryEditService::routes()`
+  with the operation's route service makes no request), so a stored plan keeps every rule on
+  its stored figures. A slow or silent server never makes an operation fail: it goes on with
+  estimates.
+- `RouteService::requestCount()` counts the requests made, or with `ROUTING_ESTIMATES_ONLY` those
+  that would have been made, and the planner check judges every operation by it (`REQUESTS`).
+
 ## The planner check: `tools/check_planner.php`
 
 It saves fixed preferences for a test traveller (`TEST_EMAIL`), generates an itinerary from each
@@ -269,7 +304,9 @@ DB_NAME=travel_itinerary_db_ctest /c/xampp/php/php.exe tools/check_planner.php
 Options: `--scenario=<name>` runs one scenario, `--keep` keeps the generated itineraries,
 `--json` gives machine-readable output, `--road` allows real routing (the public servers).
 Without `--road` it sets `ROUTING_ESTIMATES_ONLY=1` and makes no request. Exit code 0 means no
-violation, 1 at least one violation. A warning does not fail the run.
+violation, 1 at least one violation. A warning does not fail the run. The column `REQ` shows the
+most routing requests one call made in the scenario, and `PLAN` a fingerprint of the stored plan,
+to see whether a change altered any plan.
 
 The scenarios are the entries of the `SCENARIOS` constant, plus `<base>__edits` for each name in
 `EDIT_BASES`: the base is generated, then changed through `ItineraryEditService` (replace,
@@ -296,6 +333,7 @@ Finding codes. A violation fails the run; a warning is only reported.
 | `LEARN`, `WEIGHTS`, `WINDOW` | warnings: ratings not reflected, interest weights not reflected, a widened window not used |
 | `FINISH` | the end point is not stored, or cannot be reached in time or distance |
 | `BUDGET` | the stored total differs from the total recomputed from the items, or paid attractions exceed their share; a total over the budget is a warning |
+| `REQUESTS` | generation or an edit made more routing requests than `REQUEST_LIMITS` allows (counted also offline) |
 | `EDIT`, `REFUSE`, `DAY_START`, `OPTIMISE` | an edit result is malformed or broke the stop's position (a refused edit is a warning); a change that had to be refused was made or changed rows; a stored day start was lost; the optimiser step reported a note (warning) |
 
 To extend it: add an entry to `SCENARIOS` (a `pref` and a `trip`, with optional `weights`, `must`, `avoid` and `ratings` keys,

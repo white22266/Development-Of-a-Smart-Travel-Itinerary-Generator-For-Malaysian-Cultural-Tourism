@@ -17,6 +17,8 @@
 // counts visits only, and MEAL checks that a day whose visits span a meal window has that meal
 // inside its window, between two visits, at a suitable place or as a break that says so.
 // WEATHER warns about outdoor stops on very wet days of scenarios with a forecast override.
+// REQUESTS counts the routing requests of generation and of every edit (RouteService counts
+// them, also those it would have made offline) against REQUEST_LIMITS.
 //
 // Edit scenarios (<base>__edits): the base scenario is generated, then changed through
 // ItineraryEditService as the review page and the AI editor change it (replace a stop with the
@@ -386,6 +388,16 @@ const SCENARIOS = [
     ],
 ];
 
+/**
+ * Routing requests each call of the planner may make (REQUESTS): an edit measures the legs it
+ * needs in at most two route requests; setting a day's start moves no stop and asks nothing;
+ * generation and the optimiser ask for one table per trip (generation with --road one more per
+ * day that had to be repaired; the optimiser two more when it left a day without stops). Planning
+ * the rainy day again is one day planned again. A refused change may still measure (refuse).
+ */
+const REQUEST_LIMITS = ['generate' => 1, 'suggest' => 2, 'replace' => 2, 'remove' => 2, 'move' => 2, 'can_add' => 2, 'add' => 2,
+                        'regenerate' => 2, 'day_start' => 0, 'hotel' => 2, 'optimise' => 1, 'replan_rain' => 2, 'refuse' => 2];
+
 /** The base scenarios that also run as edit scenarios (<base>__edits). */
 const EDIT_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal', 'penang_group_transit_packed_festival',
                     'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid'];
@@ -648,13 +660,16 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     addPreferenceInputs($checkConn, $preferenceId, $scenario['weights'] ?? [], $places['must'], $places['avoid']);
     setTestRatings($checkConn, $travellerId, $places['ratings']);
     try {
-        $out = runPlannerPipeline($pipelineConn, $travellerId, $preferenceId, $scenario['trip']);
+        // One table request per trip; with real routing one more per day that had to be repaired.
+        $generateLimit = REQUEST_LIMITS['generate'] + (getenv('ROUTING_ESTIMATES_ONLY') === '1' ? 0 : (int)$scenario['pref']['trip_days']);
+        $out = counted('generate', $generateLimit, fn() => runPlannerPipeline($pipelineConn, $travellerId, $preferenceId, $scenario['trip']), $result);
         $result['itinerary_id'] = $out['itinerary_id'];
         foreach ($out['notes'] as $note) {
             $result['findings'][] = finding('OPTIMISE', 'warning', $name, null, null, $note);
         }
         if (!empty($scenario['edits'])) runEditSequence($pipelineConn, $checkConn, $out['itinerary_id'], $preferenceId, $scenario, $name, $result);
         checkItinerary($checkConn, $out['itinerary_id'], $scenario, $name, $result);
+        $result['info']['plan'] = planFingerprint($checkConn, $out['itinerary_id']);
     } catch (Throwable $e) {
         $result['findings'][] = finding('GENERATE', 'violation', $name, null, null, get_class($e) . ': ' . $e->getMessage());
     }
@@ -739,6 +754,10 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         }
         return true;
     };
+    // Every call of the edit service counts its routing requests (REQUESTS).
+    $req = static function (string $op, callable $call, ?callable $limit = null) use (&$result) {
+        return counted($op, $limit ?? REQUEST_LIMITS[$op], $call, $result);
+    };
     $done = [];
     $note = static function (string $step, array $r) use (&$done, $add, $shapeOk): bool {
         if (!$shapeOk($step, $r)) return false;
@@ -759,10 +778,10 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     $stop = $candidates[1] ?? $candidates[0] ?? null;
     if ($stop !== null) {
         $position = array_search((int)$stop['item_id'], array_map(static fn($v) => (int)$v['item_id'], $days[1]), true);
-        $s = ItineraryEditService::suggestReplacements($p, $id, (int)$stop['item_id'], 1, 0);
+        $s = $req('suggest', fn() => ItineraryEditService::suggestReplacements($p, $id, (int)$stop['item_id'], 1, 0));
         if ($shapeOk('suggest', $s) && $s['ok'] && !empty($s['options'])) {
             $placeId = (int)$s['options'][0]['place_id'];
-            $r = ItineraryEditService::replaceStop($p, $id, (int)$stop['item_id'], $placeId);
+            $r = $req('replace', fn() => ItineraryEditService::replaceStop($p, $id, (int)$stop['item_id'], $placeId));
             if ($note('replace', $r)) {
                 $after = editVisits($c, $id)[1] ?? [];
                 if ((int)($after[$position]['item_id'] ?? 0) !== (int)$stop['item_id'] || (int)($after[$position]['place_id'] ?? 0) !== $placeId) {
@@ -783,7 +802,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     foreach ($days as $d => $visits) {
         if (count($visits) < 2) continue;
         foreach (array_reverse(array_filter($visits, $free)) as $v) {
-            $r = ItineraryEditService::removeStop($p, $id, (int)$v['item_id']);
+            $r = $req('remove', fn() => ItineraryEditService::removeStop($p, $id, (int)$v['item_id']));
             $shapeOk('remove', $r);
             if ($r['ok']) { $removedDay = (int)$d; $done['remove'] = 'done'; break 2; }
         }
@@ -798,7 +817,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         foreach ($days as $from => $visits) {
             if ($from === $to || count($visits) < 2) continue;
             foreach (array_filter($visits, $free) as $v) {
-                $r = ItineraryEditService::moveStop($p, $id, (int)$v['item_id'], $to);
+                $r = $req('move', fn() => ItineraryEditService::moveStop($p, $id, (int)$v['item_id'], $to));
                 $shapeOk('move', $r);
                 if ($r['ok']) { $moved = true; $done['move'] = "day {$from} to day {$to}"; break 2; }
             }
@@ -816,9 +835,9 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         usort($places, static fn($a, $b) => haversineKm((float)$last['lat'], (float)$last['lng'], (float)$a['latitude'], (float)$a['longitude'])
             <=> haversineKm((float)$last['lat'], (float)$last['lng'], (float)$b['latitude'], (float)$b['longitude']));
         foreach (array_slice($places, 0, 40) as $place) {
-            $check = ItineraryEditService::canAdd($p, $id, $d, (int)$place['place_id']);
+            $check = $req('can_add', fn() => ItineraryEditService::canAdd($p, $id, $d, (int)$place['place_id']));
             if (!$check['ok']) continue;
-            $r = ItineraryEditService::addStop($p, $id, $d, (int)$place['place_id']);
+            $r = $req('add', fn() => ItineraryEditService::addStop($p, $id, $d, (int)$place['place_id']));
             if (!$note('add', $r)) $add('EDIT', 'violation', $d, (string)$place['name'], 'canAdd() said yes, addStop() refused: ' . $r['message']);
             $added = true;
             break;
@@ -830,7 +849,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     $interests = csv($pref['interests']);
     $more = $interests[1] ?? $interests[0];
     $less = $interests[0];
-    if ($note('regenerate', ItineraryEditService::regenerateDay($p, $id, $tripDays, ['more' => [$more], 'less' => $more === $less ? [] : [$less]]))) {
+    if ($note('regenerate', $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $tripDays, ['more' => [$more], 'less' => $more === $less ? [] : [$less]])))) {
         // CATEGORY judges that day by the weights asked for: more = loved (3), less = a little (1).
         $scenario['day_weights'][$tripDays] = [$more => 3] + ($more === $less ? [] : [$less => 1]);
     }
@@ -854,7 +873,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
             $add('DAY_START', 'violation', $startDay, null, "after {$after}: the day begins " . hm($first) . ', before its stored start ' . hm($wantedStart));
         }
     };
-    $dayStartSet = $note('day_start', ItineraryEditService::setDayStart($p, $id, $startDay, $wantedStart));
+    $dayStartSet = $note('day_start', $req('day_start', fn() => ItineraryEditService::setDayStart($p, $id, $startDay, $wantedStart)));
     if ($dayStartSet) $keepsStart('setting it');
 
     // 6. The nearest lodging to the last stop of day 1 as the hotel of night 1.
@@ -873,7 +892,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         if ($hotel === null) {
             $add('EDIT', 'warning', 1, null, 'no lodging found for night 1');
         } else {
-            $r = ItineraryEditService::setHotels($p, $id, [1 => $hotel]);
+            $r = $req('hotel', fn() => ItineraryEditService::setHotels($p, $id, [1 => $hotel]));
             if ($note('hotel', $r) && !empty($r['refused_nights'])) {
                 $add('EDIT', 'warning', 2, null, 'hotel of night 1 not saved: ' . implode(' ', array_column($r['refused_nights'], 1)));
             }
@@ -886,23 +905,25 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     if ($dayStartSet) {
         $days = editVisits($c, $id);
         $stop = array_values(array_filter($days[$startDay] ?? [], $free))[0] ?? null;
-        $s = $stop !== null ? ItineraryEditService::suggestReplacements($p, $id, (int)$stop['item_id'], 1, 0) : null;
+        $s = $stop !== null ? $req('suggest', fn() => ItineraryEditService::suggestReplacements($p, $id, (int)$stop['item_id'], 1, 0)) : null;
         if ($s !== null && $shapeOk('suggest_day_start', $s) && $s['ok'] && !empty($s['options'])) {
-            if ($note('replace_day_start', ItineraryEditService::replaceStop($p, $id, (int)$stop['item_id'], (int)$s['options'][0]['place_id']))) {
+            if ($note('replace_day_start', $req('replace', fn() => ItineraryEditService::replaceStop($p, $id, (int)$stop['item_id'], (int)$s['options'][0]['place_id'])))) {
                 $keepsStart('an edit on the day');
             }
         } else {
             $add('EDIT', 'warning', $startDay, null, 'no replacement suggested on the day with its own start');
         }
         // 6c. The same day planned again (no more or less: it is judged by the trip's weights again).
-        if ($note('regenerate_day_start', ItineraryEditService::regenerateDay($p, $id, $startDay))) {
+        if ($note('regenerate_day_start', $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $startDay)))) {
             unset($scenario['day_weights'][$startDay]);
             $keepsStart('planning the day again');
         }
     }
 
     // 7. Optimise the route.
-    $note('optimise', ItineraryEditService::optimise($p, $id));
+    // A day the optimiser left without stops is timed again by the edit service: up to its two requests more.
+    $note('optimise', $req('optimise', fn() => ItineraryEditService::optimise($p, $id),
+        static fn(): int => REQUEST_LIMITS['optimise'] + (count(array_filter(editVisits($c, $id))) < $tripDays ? REQUEST_LIMITS['regenerate'] : 0)));
     if ($dayStartSet) $keepsStart('the optimiser');
 
     // 8. Re-plan a rainy day: day 1 with an 85% chance of rain (a forecast override). From 80%
@@ -910,7 +931,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     // outdoor stop the planner explains ("chance of rain" in its notes) or a must-see is a warning.
     $rainDate = (string)$scenario['trip']['start_date'];
     $rainChance = 85;
-    $r = ItineraryEditService::replanRainyDays($p, $id, [$rainDate => $rainChance]);
+    $r = $req('replan_rain', fn() => ItineraryEditService::replanRainyDays($p, $id, [$rainDate => $rainChance]));   // one rainy day: one day planned again
     if ($note('replan_rain', $r)) {
         if (($r['changes'][1]['status'] ?? '') !== 'done') {
             $add('RAIN', 'violation', 1, null, 'day 1 at ' . $rainChance . '% was not planned again: ' . ($r['changes'][1]['message'] ?? 'no result for the day'));
@@ -939,7 +960,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     // REFUSE: each change below breaks a rule, so it must be refused and change no row.
     $refuse = static function (string $what, int $itemId, int $placeId, ?array $codes) use ($p, $c, $id, $add, &$result): void {
         $before = editSnapshot($c, $id);
-        $r = ItineraryEditService::replaceStop($p, $id, $itemId, $placeId);
+        $r = counted('refuse', REQUEST_LIMITS['refuse'], fn() => ItineraryEditService::replaceStop($p, $id, $itemId, $placeId), $result);
         $result['info']['refusals'][$what] = $r['ok'] ? 'done' : (string)$r['code'];
         if ($r['ok']) {
             $add('REFUSE', 'violation', null, null, "{$what}: the change was made (place {$placeId})");
@@ -971,7 +992,7 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     if (!$closedTried) $result['info']['refuse_closed'] = 'no place of the area is closed on a trip date';
 
     // A place on the avoid list: one the service would accept, then added to the list.
-    $s = ItineraryEditService::suggestReplacements($p, $id, (int)$first['item_id'], 1, 0);
+    $s = $req('suggest', fn() => ItineraryEditService::suggestReplacements($p, $id, (int)$first['item_id'], 1, 0));
     $avoid = (int)($s['options'][0]['place_id'] ?? 0);
     if ($avoid > 0) {
         $stmt = $c->prepare("INSERT INTO traveller_preference_places (preference_id, place_id, wish) VALUES (?, ?, 'avoid')");
@@ -1006,6 +1027,42 @@ function storedDayStarts(mysqli $conn, int $itineraryId): array
     foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) $out[(int)$row['day_no']] = toMinutes($row['start_time']);
     $stmt->close();
     return $out;
+}
+
+/**
+ * Run one call of the planner and count its routing requests (RouteService counts them, also
+ * those it would have made when ROUTING_ESTIMATES_ONLY keeps it offline). More than its limit
+ * is a REQUESTS violation: with the public servers every request costs a second or more, and
+ * a second table request about ten. $limit may be a function, asked after the call.
+ */
+function counted(string $op, $limit, callable $call, array &$result)
+{
+    RouteService::resetRequestCount();
+    $out = $call();
+    $made = RouteService::requestCount();
+    $max = is_callable($limit) ? (int)$limit() : (int)$limit;
+    $result['info']['requests'][$op] = max($result['info']['requests'][$op] ?? 0, $made);
+    if ($made > $max) {
+        $result['findings'][] = finding('REQUESTS', 'violation', (string)$result['scenario'], null, null, "{$op}: {$made} routing request(s), at most {$max}");
+    }
+    return $out;
+}
+
+/** A short fingerprint of the stored plan (rows without their ids, and the total), to compare two runs. */
+function planFingerprint(mysqli $conn, int $itineraryId): string
+{
+    $stmt = $conn->prepare('SELECT day_no, sequence_no, item_type, meal_slot, place_id, item_title, start_time, end_time, estimated_cost, distance_km, travel_time_min, notes
+                            FROM itinerary_items WHERE itinerary_id = ? ORDER BY day_no, sequence_no, item_id');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $rows = $stmt->get_result()->fetch_all(MYSQLI_NUM);
+    $stmt->close();
+    $stmt = $conn->prepare('SELECT total_estimated_cost FROM itineraries WHERE itinerary_id = ?');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $total = $stmt->get_result()->fetch_row()[0] ?? null;
+    $stmt->close();
+    return substr(sha1(json_encode([$rows, $total])), 0, 10);
 }
 
 function finding(string $code, string $severity, string $scenario, ?int $day, ?string $stop, string $detail): array
@@ -1716,12 +1773,12 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     }
 
     echo "Planner check on {$dbName}, routing: " . ($road ? 'road (public servers allowed)' : 'estimates only, no network') . "\n\n";
-    printf("%-46s %4s %5s %5s %6s %5s %5s %8s %7s\n", 'SCENARIO', 'DAYS', 'STOPS', 'MEALS', 'BREAKS', 'VIOL', 'WARN', 'NO_HOURS', 'SECONDS');
+    printf("%-46s %4s %5s %5s %6s %5s %5s %8s %7s %4s %-10s\n", 'SCENARIO', 'DAYS', 'STOPS', 'MEALS', 'BREAKS', 'VIOL', 'WARN', 'NO_HOURS', 'SECONDS', 'REQ', 'PLAN');
     foreach ($results as $r) {
         $v = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'violation'));
         $w = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'warning'));
-        printf("%-46s %4d %5d %5d %6d %5d %5d %8d %7.1f\n", $r['scenario'], $r['days'], $r['stops'], $r['info']['meals_at_places'] ?? 0, $r['info']['meal_breaks'] ?? 0,
-            $v, $w, $r['info']['no_usable_hours'] ?? 0, $r['seconds']);
+        printf("%-46s %4d %5d %5d %6d %5d %5d %8d %7.1f %4d %-10s\n", $r['scenario'], $r['days'], $r['stops'], $r['info']['meals_at_places'] ?? 0, $r['info']['meal_breaks'] ?? 0,
+            $v, $w, $r['info']['no_usable_hours'] ?? 0, $r['seconds'], max([0] + (array)($r['info']['requests'] ?? [])), $r['info']['plan'] ?? '-');
     }
 
     foreach (['violation' => 'VIOLATIONS', 'warning' => 'WARNINGS'] as $severity => $heading) {
@@ -1755,5 +1812,10 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     $meals = array_sum(array_map(static fn($r) => $r['info']['meals_at_places'] ?? 0, $results));
     $breaks = array_sum(array_map(static fn($r) => $r['info']['meal_breaks'] ?? 0, $results));
     echo "INFO: {$meals} meal(s) at a food place, {$breaks} meal break(s) without a place (STOPS counts visits only).\n";
+    $most = [];
+    foreach ($results as $r) foreach ((array)($r['info']['requests'] ?? []) as $op => $n) $most[$op] = max($most[$op] ?? 0, $n);
+    ksort($most);
+    echo 'INFO: most routing requests of one call (limit): ' . implode(', ', array_map(static fn($op, $n) => "{$op} {$n} (" . REQUEST_LIMITS[$op] . ')', array_keys($most), $most)) . ".\n";
+    echo "INFO: REQ is the most routing requests of one call in the scenario, PLAN a fingerprint of the stored plan.\n";
     echo "Test traveller {$after['traveller_id']} after the run: {$after['itineraries']} itinerary(ies), {$after['preferences']} preference(s), {$after['ratings']} rating(s).\n";
 }

@@ -24,6 +24,14 @@
 // a hotel choice, the optimiser, planning the day again) then starts it there instead of at
 // the start of the preference's day window. The end of the day and every other rule stay.
 //
+// Road figures: the legs stored with the trip are the figures at hand. A change is screened on
+// them (estimates for the rest); the legs the days it touches need are then measured on the
+// road together, in one route request (a second only for legs the new timing needs), and the
+// days timed again: at most MAX_REQUESTS per operation, ROUTE_TIMEOUT seconds each, estimates
+// when the server does not answer. Suggestions and positions are measured in a batch, never
+// one by one. Setting a day's start asks nothing. The figures a plan was timed with are the
+// ones stored (routes() with the operation's route service). See docs/PLANNER.md.
+//
 // Every operation returns a result of one shape:
 //   ['ok' => bool, 'status' => 'done'|'refused', 'code' => null|reason code
 //    (PlannerRules::REASONS), 'message' => one sentence for the traveller, 'days' => the days
@@ -47,6 +55,17 @@ class ItineraryEditService
     /** Ranked candidates timed with the whole trip per option wanted (at least SUGGEST_MIN_TRIED in all). */
     private const SUGGEST_LOOKAHEAD = 6;
     private const SUGGEST_MIN_TRIED = 40;
+    /**
+     * Road figures (see "How road figures are asked for" in docs/PLANNER.md): an operation
+     * makes at most this many routing requests, waits at most ROUTE_TIMEOUT seconds for each,
+     * and goes on with estimates when the server is slow or does not answer.
+     */
+    private const MAX_REQUESTS = 2;
+    private const ROUTE_TIMEOUT = 5;
+    /** Options screened on the estimates and measured on the road together, beyond those wanted. */
+    private const SUGGEST_SPARE = 2;
+    /** Positions of a stop measured on the road together when addStop() or moveStop() choose the position. */
+    private const POSITIONS_MEASURED = 3;
     /** Why a day is empty, in the generator's "Free day" note, when an edit left it so. */
     private const EMPTIED = 'its stops were removed or moved';
 
@@ -86,6 +105,7 @@ class ItineraryEditService
         if ($kind !== 'visit') return self::refused('NOT_EDITABLE', 'Only a visit or a meal can be replaced.');
         if ($ctx['days'][$dayNo]['locked']) return self::refused('LOCKED', 'Day ' . $dayNo . ' holds a row the planner cannot re-time, so its stops cannot be replaced here.');
 
+        $ctx['budget_from'] = $ctx['route']->requestsMade();   // a loaded itinerary may be used again: this call has its own budget
         $stops = self::visits($ctx)[$dayNo];
         $target = $stops[$index];
         $used = self::usedPlaces($ctx) + $exclude;   // the stop's own place is in it: not offered again
@@ -95,15 +115,37 @@ class ItineraryEditService
         $ignored = null;
         $ranked = $builder->ranked($ctx['pool'], $dayCtx, $state, max(self::SUGGEST_MIN_TRIED, $want * self::SUGGEST_LOOKAHEAD), $ignored, false, true);
 
+        // Candidates are screened on the figures at hand (the stored legs, estimates for the
+        // rest), best first. Those that pass are measured on the road together, in one
+        // request, and timed again; one that fails then gives way to the next. Once the
+        // requests are used up, the figures at hand decide.
         $options = [];
-        foreach ($ranked as $candidate) {
-            $days = self::visits($ctx);
-            $days[$dayNo][$index] = self::stopOf($candidate['place'], (int)$target['item_id'], $candidate['tier'], $candidate['reasons'], (bool)$candidate['must']);
-            $plan = self::plan($ctx, $days, [$dayNo]);
-            if (!$plan['ok']) continue;
-            $timed = $plan['plans'][$dayNo]['stops'][$index];
-            $options[] = self::option($candidate['place'], $timed, $candidate['score'], $candidate['reasons']);
-            if (count($options) >= $want) break;
+        $next = 0;
+        $count = count($ranked);
+        while (count($options) < $want && $next < $count) {
+            $room = self::requestsLeft($ctx) > 0;
+            $size = $want - count($options) + ($room ? self::SUGGEST_SPARE : 0);
+            $short = [];
+            while ($next < $count && count($short) < $size) {
+                $candidate = $ranked[$next++];
+                $days = self::visits($ctx);
+                $days[$dayNo][$index] = self::stopOf($candidate['place'], (int)$target['item_id'], $candidate['tier'], $candidate['reasons'], (bool)$candidate['must']);
+                $timed = self::timeDays($ctx, $days, [$dayNo], []);
+                if ($timed['result']['ok']) $short[] = [$candidate, $days, $timed];
+            }
+            if (!$short) break;
+            $measured = 0;
+            if ($room) {
+                $legs = [];
+                foreach ($short as [, $days, $timed]) array_push($legs, ...self::unknownLegs($ctx, $days, $timed));
+                $measured = self::measure($ctx, $legs);
+            }
+            foreach ($short as [$candidate, $days, $timed]) {
+                if ($measured > 0) $timed = self::timeDays($ctx, $days, [$dayNo], []);
+                if (!$timed['result']['ok']) continue;
+                $options[] = self::option($candidate['place'], $timed['result']['plans'][$dayNo]['stops'][$index], $candidate['score'], $candidate['reasons']);
+                if (count($options) >= $want) break;
+            }
         }
         $page = array_slice($options, $offset, $limit);
         return self::done($page ? count($page) . ' option(s) fit this stop.' : 'No other place fits this stop under the rules of your trip.', [
@@ -235,14 +277,16 @@ class ItineraryEditService
         $refusedNights = [];
         $nights = 0;
         $retimed = [];
+        $route = null;   // one for every attempt: the road figures and the request budget are shared
         while (true) {
             $conn->begin_transaction();
             try {
-                $before = self::context($conn, $itineraryId, false);
+                $before = self::context($conn, $itineraryId, false, $route);
                 if ($before === null) { $conn->rollback(); return self::refused('NOT_FOUND', 'This itinerary was not found.'); }
+                $route = $before['route'];
                 $oldStarts = self::starts($before, self::visits($before));
                 $saved = ItineraryHotelService::saveNights($conn, $itineraryId, $before['total_days'], $hotelByNight);
-                $ctx = self::context($conn, $itineraryId, false);
+                $ctx = self::context($conn, $itineraryId, false, $route, false);   // the legs of $before stay at hand
                 $plan = self::plan($ctx, self::visits($ctx), [], ['old_starts' => $oldStarts, 'budget' => false]);
                 if (!$plan['ok']) {
                     $conn->rollback();
@@ -319,7 +363,8 @@ class ItineraryEditService
             $message = $startMinute === null
                 ? $what . ' now starts at the start of your day window again (' . self::hm((int)$ctx['profile']['start']) . '), and the times were planned again.'
                 : $what . ' now starts at ' . self::hm($startMinute) . ', and the times were planned again.';
-            return ['days' => self::visits($ctx), 'changed' => $days, 'opts' => ['day_starts' => $starts],
+            // No stop moves, so nothing is asked of the routing server: the stored legs time the day.
+            return ['days' => self::visits($ctx), 'changed' => $days, 'opts' => ['day_starts' => $starts, 'measure' => false],
                     'message' => $message,
                     'extra' => ['day_no' => $dayNo, 'start' => $startMinute !== null ? self::hm($startMinute) : null]];
         });
@@ -493,7 +538,8 @@ class ItineraryEditService
     {
         self::$cache = [];
         self::resequence($conn, $itineraryId);
-        $ctx = self::context($conn, $itineraryId, false);
+        // Called after rows changed without their legs (saveNights()): the stored legs are not trusted.
+        $ctx = self::context($conn, $itineraryId, false, null, false);
         if ($ctx !== null) {
             $days = self::visits($ctx);
             $plan = self::plan($ctx, $days, array_keys($ctx['days']), ['budget' => false, 'best_effort' => true]);
@@ -529,13 +575,17 @@ class ItineraryEditService
     /**
      * Distance and travel time of every leg: from the trip's starting point to the first stop,
      * then from each stop to the next. A new day starts where the last one ended (at the hotel,
-     * if one was chosen). The figures are measured on the road for the trip's transport, with
-     * one request for the whole trip; without an answer from the routing server they are estimates.
+     * if one was chosen). Without $route the figures are measured on the road for the trip's
+     * transport, with one request for the whole trip; without an answer from the routing
+     * server they are estimates.
      *
-     * @param RouteService|null $route a service that already holds the road figures, when the caller has one
+     * @param RouteService|null $route the service the days were timed with: its figures are
+     *                                 stored as they are and nothing is asked, so the stored
+     *                                 legs are the ones every rule was checked on
      */
     public static function routes(mysqli $conn, int $itineraryId, ?RouteService $route = null): void
     {
+        $measure = $route === null;
         $metaStmt = $conn->prepare("
             SELECT tp.transport_type, i.origin_lat, i.origin_lng
             FROM itineraries i
@@ -582,7 +632,7 @@ class ItineraryEditService
                 if ($here !== null) $chain[] = $here;
             }
         }
-        $route->preloadChain($chain);
+        if ($measure) $route->preloadChain($chain);
 
         $update = $conn->prepare("UPDATE itinerary_items SET distance_km = ?, travel_time_min = ? WHERE item_id = ?");
         foreach ($days as $items) {
@@ -801,7 +851,9 @@ class ItineraryEditService
 
     /**
      * Put a stop into a day: at the given position, or at the feasible position with the least
-     * travelling (ties: the later position). Every position is judged on the whole trip.
+     * travelling (ties: the later position). Every position is judged on the whole trip: first
+     * on the figures at hand, then the best few (all, when none fits) on the road, measured
+     * together; a position that fails on the road gives way to the next.
      *
      * @return array{days:array,position:int}|array{refused:array}
      */
@@ -809,18 +861,37 @@ class ItineraryEditService
     {
         $n = count($days[$dayNo]);
         $indexes = $position !== null ? [max(0, min($n, $position - 1))] : range($n, 0);
-        $best = null;
-        $refusal = null;
+        $opts += ['focus' => $focus];
+        $trials = [];
         foreach ($indexes as $i) {
             $trial = $days;
             array_splice($trial[$dayNo], $i, 0, [$stop]);
-            $plan = self::plan($ctx, $trial, $changed, $opts + ['focus' => $focus]);
-            if (!$plan['ok']) { $refusal ??= $plan; continue; }
-            $minutes = (int)$plan['plans'][$dayNo]['minutes'];
-            if ($best === null || $minutes < $best[0]) $best = [$minutes, $trial, $i + 1];
+            $trials[$i] = [$trial, self::timeDays($ctx, $trial, $changed, $opts)];
         }
-        if ($best === null) return ['refused' => $refusal];
-        return ['days' => $best[1], 'position' => $best[2]];
+        $ranking = static function (array $trials) use ($dayNo): array {
+            $ranked = [];
+            foreach ($trials as $i => [, $timed]) {
+                if ($timed['result']['ok']) $ranked[] = [(int)$timed['result']['plans'][$dayNo]['minutes'], count($ranked), $i];
+            }
+            sort($ranked);
+            return array_column($ranked, 2);
+        };
+        $best = $ranking($trials);
+        $short = $best ? array_slice($best, 0, self::POSITIONS_MEASURED) : array_keys($trials);
+        $legs = [];
+        foreach ($short as $i) array_push($legs, ...self::unknownLegs($ctx, $trials[$i][0], $trials[$i][1]));
+        if (self::measure($ctx, $legs) > 0) {
+            foreach ($trials as $i => [$trial]) $trials[$i][1] = self::timeDays($ctx, $trial, $changed, $opts);
+            $best = $ranking($trials);
+        }
+        $refusal = null;
+        foreach ($best as $i) {
+            $plan = self::plan($ctx, $trials[$i][0], $changed, $opts);
+            if ($plan['ok']) return ['days' => $trials[$i][0], 'position' => $i + 1];
+            $refusal ??= $plan;
+        }
+        foreach ($trials as [, $timed]) $refusal ??= $timed['result']['ok'] ? null : $timed['result'];
+        return ['refused' => $refusal ?? self::refused('NO_CHANGE', 'No position of day ' . $dayNo . ' fits this stop.')];
     }
 
     // =====================================================================================
@@ -868,6 +939,7 @@ class ItineraryEditService
     {
         $ctx = self::context($conn, $itineraryId);
         if ($ctx === null) return self::refused('NOT_FOUND', 'This itinerary was not found.');
+        $ctx['budget_from'] = $ctx['route']->requestsMade();   // a loaded itinerary may be used again: this call has its own budget
         $out = $build($ctx);
         if (isset($out['refused'])) return $out['refused'];
         $plan = self::plan($ctx, $out['days'], $out['changed'], (array)($out['opts'] ?? []) + ['focus' => (int)($out['focus'] ?? 0)]);
@@ -876,7 +948,16 @@ class ItineraryEditService
     }
 
     /**
-     * Time the days a change touches (see the head of this file).
+     * Time the days a change touches (see the head of this file), on the road.
+     *
+     * The days are timed on the figures at hand first: the legs stored with the trip, road
+     * figures measured earlier, estimates for the rest. The legs the timed days need that are
+     * not known yet (their stops in order, the meal places on the way, the hotel or the end
+     * point) are then measured on the road in one request, and the days are timed again; a
+     * second request follows only for legs the new timing needs that were not asked for yet
+     * (a meal moved to another place). Without an answer the estimates stay. The figures a
+     * plan is timed with are the ones store() keeps, so a stored plan keeps every rule on its
+     * stored figures.
      *
      * @param array $days    day => stops, for every day of the trip
      * @param int[] $changed the days whose stops changed
@@ -885,29 +966,54 @@ class ItineraryEditService
      *                       budget rule, for a hotel choice), meal_choice (day => slot => choice),
      *                       old_starts (the starting points before the change), best_effort (a
      *                       day that cannot be timed is left as it is instead of refusing), focus
-     *                       (the place the change is about, for the sentence)
+     *                       (the place the change is about, for the sentence), measure (false:
+     *                       no request, the figures at hand only)
      * @return array ok, plans (day => ItineraryRouteOptimiser plan), retimed (days); or a refused
      *         result with day
      */
     private static function plan(array $ctx, array $days, array $changed, array $opts = []): array
     {
+        $timed = self::timeDays($ctx, $days, $changed, $opts);
+        if ($opts['measure'] ?? true) {
+            while (self::requestsLeft($ctx) > 0) {
+                if (self::measure($ctx, self::unknownLegs($ctx, $days, $timed)) === 0) break;
+                $timed = self::timeDays($ctx, $days, $changed, $opts);
+            }
+        }
+        return $timed['result'];
+    }
+
+    /**
+     * Time the days a change touches on the figures the route service holds; no request.
+     *
+     * @return array{result:array,plans:array,timed:int[],starts:array} result as plan() returns
+     *         it; plans: every day timed so far, the one that failed included; timed: every day
+     *         the change touches; starts: where each day starts after the change
+     */
+    private static function timeDays(array $ctx, array $days, array $changed, array $opts): array
+    {
         $profile = $opts['profile'] ?? $ctx['profile'];
         $dayStarts = (array)($opts['day_starts'] ?? $ctx['day_starts']);
         $oldStarts = $opts['old_starts'] ?? self::starts($ctx, self::visits($ctx));
         $newStarts = self::starts($ctx, $days);
-        $plans = [];
+        $toTime = [];
         foreach (array_keys($ctx['days']) as $d) {
-            if (!in_array($d, $changed, true) && self::samePoint($oldStarts[$d]['point'], $newStarts[$d]['point'])) continue;
+            if (in_array($d, $changed, true) || !self::samePoint($oldStarts[$d]['point'], $newStarts[$d]['point'])) $toTime[] = $d;
+        }
+        $plans = [];
+        $tried = [];
+        $frame = ['timed' => $toTime, 'starts' => $newStarts];
+        foreach ($toTime as $d) {
             if (!$days[$d]) {
-                $plans[$d] = ['stops' => [], 'dropped' => [], 'minutes' => 0, 'km' => 0.0];
+                $plans[$d] = $tried[$d] = ['stops' => [], 'dropped' => [], 'minutes' => 0, 'km' => 0.0];
                 continue;
             }
             if ($ctx['days'][$d]['locked'] || $newStarts[$d]['point'] === null) {
                 if (!empty($opts['best_effort'])) continue;
-                return self::refused('LOCKED', 'Day ' . $d . ' holds a row the planner cannot re-time, so this change cannot be made.', ['day' => $d]);
+                return ['result' => self::refused('LOCKED', 'Day ' . $d . ' holds a row the planner cannot re-time, so this change cannot be made.', ['day' => $d]), 'plans' => $tried] + $frame;
             }
             $dayProfile = isset($dayStarts[$d]) ? ['start' => (int)$dayStarts[$d]] + $profile : $profile;
-            $plan = self::timeDay($ctx, $dayProfile, $d, $newStarts[$d], $days[$d], $days, $plans, $opts);
+            $plan = $tried[$d] = self::timeDay($ctx, $dayProfile, $d, $newStarts[$d], $days[$d], $days, $plans, $opts);
             if ($plan['dropped']) {
                 if (!empty($opts['best_effort'])) continue;
                 $stop = $plan['dropped'][0];
@@ -916,7 +1022,7 @@ class ItineraryEditService
                 $message = (int)$stop['place']['place_id'] === (int)($opts['focus'] ?? 0)
                     ? $name . ' does not fit day ' . $d . ': ' . PlannerRules::reasonText($reason) . '.'
                     : 'This change would break a rule on day ' . $d . ': ' . $name . ' (' . PlannerRules::reasonText($reason) . ').';
-                return self::refused($reason, $message, ['day' => $d]);
+                return ['result' => self::refused($reason, $message, ['day' => $d]), 'plans' => $tried] + $frame;
             }
             foreach ((array)($opts['meal_choice'][$d] ?? []) as $slot => $choice) {
                 if (empty($choice['strict'])) continue;
@@ -928,12 +1034,73 @@ class ItineraryEditService
                     }
                 }
                 if (!$had) {
-                    return self::refused('MEAL', 'That ' . $slot . ' does not fit day ' . $d . ': it is not open for the whole meal near your stops, or the day no longer needs a ' . $slot . ' there.', ['day' => $d]);
+                    return ['result' => self::refused('MEAL', 'That ' . $slot . ' does not fit day ' . $d . ': it is not open for the whole meal near your stops, or the day no longer needs a ' . $slot . ' there.', ['day' => $d]),
+                            'plans' => $tried] + $frame;
                 }
             }
             $plans[$d] = $plan;
         }
-        return ['ok' => true, 'plans' => $plans, 'retimed' => array_keys($plans)];
+        return ['result' => ['ok' => true, 'plans' => $plans, 'retimed' => array_keys($plans)], 'plans' => $tried] + $frame;
+    }
+
+    /**
+     * The legs the timed days need that the route service neither knows nor was asked for:
+     * each day's stops in their order to the hotel or the end point first, then the legs via
+     * the meal places of the timing and, on the last day, from each stop to the end point.
+     *
+     * @return array<int,array{0:array,1:array}>
+     */
+    private static function unknownLegs(array $ctx, array $days, array $timed): array
+    {
+        $route = $ctx['route'];
+        $legs = [];
+        $add = static function (?array $from, ?array $to) use (&$legs, $route): void {
+            if ($from === null || $to === null || $route->covers($from, $to)) return;
+            $legs[$from[0] . ',' . $from[1] . '|' . $to[0] . ',' . $to[1]] = [$from, $to];
+        };
+        $ends = [];
+        foreach ($timed['timed'] as $d) {
+            $start = $timed['starts'][$d]['point'];
+            if ($start === null || !$days[$d]) continue;
+            $hotelPoint = $ctx['days'][$d]['hotel']['point'] ?? null;
+            $ends[$d] = $hotelPoint ?? ($d === $ctx['total_days'] ? $ctx['finish'] : null);
+            $previous = $start;
+            foreach ($days[$d] as $s) { $add($previous, $s['point']); $previous = $s['point']; }
+            $add($previous, $ends[$d]);
+        }
+        foreach ($timed['timed'] as $d) {
+            $start = $timed['starts'][$d]['point'];
+            $plan = $timed['plans'][$d] ?? null;
+            if ($start === null || !$plan || !$plan['stops']) continue;
+            $previous = $start;
+            foreach ($plan['stops'] as $s) {
+                foreach ((array)($s['meals'] ?? []) as $meal) {
+                    if ($meal['point'] === null) continue;
+                    $add($previous, $meal['point']);
+                    $previous = $meal['point'];
+                }
+                $add($previous, $s['point']);
+                $previous = $s['point'];
+            }
+            $add($previous, $ends[$d] ?? null);
+            if ($d === $ctx['total_days'] && ($ctx['days'][$d]['hotel']['point'] ?? null) === null && $ctx['finish'] !== null) {
+                foreach ($days[$d] as $s) $add($s['point'], $ctx['finish']);
+            }
+        }
+        return array_values($legs);
+    }
+
+    /** Measure legs on the road within what is left of the operation's requests; returns how many became known. */
+    private static function measure(array $ctx, array $legs): int
+    {
+        $left = self::requestsLeft($ctx);
+        return $legs && $left > 0 ? $ctx['route']->measureLegs($legs, $left) : 0;
+    }
+
+    /** The routing requests the running operation may still make. */
+    private static function requestsLeft(array $ctx): int
+    {
+        return self::MAX_REQUESTS - ($ctx['route']->requestsMade() - (int)($ctx['budget_from'] ?? 0));
     }
 
     /** Time one day's stops in their order with the trip's rules (the generator's timing). */
@@ -942,8 +1109,6 @@ class ItineraryEditService
         $hotelPoint = $ctx['days'][$d]['hotel']['point'] ?? null;
         $choice = self::storedMealChoice($ctx, $d);
         foreach ((array)($opts['meal_choice'][$d] ?? []) as $slot => $c) $choice[$slot] = $c;
-        $points = array_merge([$start['point']], array_column($stops, 'point'), array_filter([$hotelPoint ?? ($d === $ctx['total_days'] ? $ctx['finish'] : null)]));
-        $ctx['route']->preload($points);
         return ItineraryRouteOptimiser::timeInOrder($ctx['route'], $profile, $start['point'], $stops, [
             'date' => $ctx['dates'][$d],
             'first_leg_exempt' => $start['exempt'],
@@ -1136,7 +1301,13 @@ class ItineraryEditService
      * Everything a change is judged with: the itinerary, its preference and planning profile
      * (as the generator builds it), the candidate and meal places, and its rows by day.
      */
-    private static function context(mysqli $conn, int $itineraryId, bool $cached = true): ?array
+    /**
+     * @param RouteService|null $route the route service of the running operation, when it has one
+     * @param bool $seed take the stored legs as figures at hand; false when rows were changed
+     *                   without their legs (ItineraryHotelService::saveNights()), so a stored
+     *                   leg may start at a point that no longer comes before it
+     */
+    private static function context(mysqli $conn, int $itineraryId, bool $cached = true, ?RouteService $route = null, bool $seed = true): ?array
     {
         if ($cached && isset(self::$cache[$itineraryId])) return self::$cache[$itineraryId];
         $stmt = $conn->prepare("SELECT * FROM itineraries WHERE itinerary_id = ? LIMIT 1");
@@ -1211,7 +1382,8 @@ class ItineraryEditService
             'pref' => $pref,
             'profile_input' => $input,
             'profile' => $profile,
-            'route' => new RouteService((string)$profile['transport']),
+            'route' => $route ?? new RouteService((string)$profile['transport']),
+            'budget_from' => 0,   // requests are counted from here (see requestsLeft())
             'pool' => PlannerCandidates::editPool($conn, $pref, $profile, $travellerId),
             'meal_pool' => $mealPool,
             'meal_ids' => array_fill_keys(array_map(static fn(array $p): int => (int)$p['place_id'], $mealPool), true),
@@ -1223,15 +1395,23 @@ class ItineraryEditService
             'days' => $days,
             'day_starts' => array_filter(self::dayStarts($conn, $itineraryId), static fn(int $d): bool => $d >= 1 && $d <= $totalDays, ARRAY_FILTER_USE_KEY),
         ];
-        // The trip's points measured together, as the generator measures them.
-        $pointsByDay = [];
-        foreach ($days as $d => $day) {
-            foreach ($day['visits'] as $v) $pointsByDay[$d][] = $v['point'];
-            if ($day['hotel']['point'] ?? null) $pointsByDay[$d][] = $day['hotel']['point'];
+        // The legs stored with the trip are the figures at hand: nothing is asked for them. A
+        // change measures only the legs it needs that are not among them (plan()).
+        if ($route === null) $ctx['route']->setTimeout(self::ROUTE_TIMEOUT);
+        $seeds = [];
+        $previous = $origin;
+        foreach ($rows as $row) {
+            $here = self::point($row['item_latitude'], $row['item_longitude']);
+            if ($here === null && isset($places[(int)$row['place_id']])) {
+                $here = self::point($places[(int)$row['place_id']]['latitude'], $places[(int)$row['place_id']]['longitude']);
+            }
+            if ($here === null) continue;
+            if ($previous !== null && $row['distance_km'] !== null && $row['travel_time_min'] !== null) {
+                $seeds[] = [$previous, $here, (float)$row['distance_km'], (int)$row['travel_time_min']];
+            }
+            $previous = $here;
         }
-        if ($origin !== null) $pointsByDay[1][] = $origin;
-        if ($ctx['finish'] !== null) $pointsByDay[$totalDays][] = $ctx['finish'];
-        if ($pointsByDay) $ctx['route']->preloadTrip($pointsByDay);
+        if ($seed) $ctx['route']->seed($seeds);
         return self::$cache[$itineraryId] = $ctx;
     }
 
@@ -1486,7 +1666,10 @@ class ItineraryEditService
         if ($before !== null) $near[] = $before;
         $radius = (float)$ctx['profile']['meal_radius_km'];
         $days = self::visits($ctx);
-        $options = [];
+        $ctx['budget_from'] = $ctx['route']->requestsMade();
+        // Every food place near the meal on the figures at hand; the least detours of them
+        // (as many as the page shows, and a few more) measured on the road together.
+        $screened = [];
         foreach ($ctx['meal_pool'] as $place) {
             $id = (int)$place['place_id'];
             if ($id === $current || isset($used[$id])) continue;
@@ -1495,8 +1678,23 @@ class ItineraryEditService
                 if (RouteService::haversineKm((float)$p[0], (float)$p[1], (float)$place['latitude'], (float)$place['longitude']) <= $radius) $close = true;
             }
             if (!$close) continue;
-            $plan = self::plan($ctx, $days, [$dayNo], ['meal_choice' => [$dayNo => [$slot => ['place' => $place, 'strict' => true]]]]);
-            if (!$plan['ok']) continue;
+            $opts = ['meal_choice' => [$dayNo => [$slot => ['place' => $place, 'strict' => true]]]];
+            $timed = self::timeDays($ctx, $days, [$dayNo], $opts);
+            if (!$timed['result']['ok']) continue;
+            $screened[] = [(float)self::plannedMeal($timed['result']['plans'][$dayNo], $slot)['detour'], $id, $place, $opts, $timed];
+        }
+        usort($screened, static fn(array $a, array $b): int => [$a[0], $a[1]] <=> [$b[0], $b[1]]);
+        $shown = $offset + $limit + 1 + self::SUGGEST_SPARE;
+        $legs = [];
+        foreach (array_slice($screened, 0, $shown) as [, , , , $timed]) array_push($legs, ...self::unknownLegs($ctx, $days, $timed));
+        $measured = self::measure($ctx, $legs);
+        $options = [];
+        foreach ($screened as $k => [, $id, $place, $opts, $timed]) {
+            if ($measured > 0 && $k < $shown) {
+                $timed = self::timeDays($ctx, $days, [$dayNo], $opts);
+                if (!$timed['result']['ok']) continue;
+            }
+            $plan = $timed['result'];
             $meal = self::plannedMeal($plan['plans'][$dayNo], $slot);
             $options[] = ['place_id' => $id, 'name' => (string)$place['name'], 'category' => 'food', 'item_type' => 'food',
                 'state' => (string)$place['state'], 'district' => (string)$place['district'], 'address' => (string)($place['address'] ?? ''),

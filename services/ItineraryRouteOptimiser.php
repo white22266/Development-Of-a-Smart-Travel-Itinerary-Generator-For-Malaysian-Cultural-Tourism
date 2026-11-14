@@ -27,6 +27,8 @@ final class ItineraryRouteOptimiser
     private const MAX_EXACT_STOPS = 8;
     /** Beyond that, how many of RouteService's good orders are checked. */
     private const ORDERS_TO_CHECK = 720;
+    /** Seconds the one table request of optimise() may take before the estimates are used. */
+    private const ROUTE_TIMEOUT = 8;
 
     /**
      * The best order of one day's stops.
@@ -169,14 +171,23 @@ final class ItineraryRouteOptimiser
         }
         $stmt->close();
 
+        // One table request for the trip: its visits, hotels, start and end point and, while
+        // there is room, its meal places (the others are estimated). The days are ordered on
+        // these figures and their legs stored with them, so nothing else is asked.
         $route = new RouteService((string)$profile['transport']);
+        $route->setTimeout(self::ROUTE_TIMEOUT);
         $pointsByDay = [];
+        $mealPoints = [];
         foreach ($days as $dayNo => $rows) {
-            foreach ($rows as $row) if ($row['point'] !== null) $pointsByDay[$dayNo][] = $row['point'];
+            foreach ($rows as $row) {
+                if ($row['point'] === null) continue;
+                if ($row['meal_slot'] !== null) $mealPoints[] = $row['point'];
+                else $pointsByDay[$dayNo][] = $row['point'];
+            }
         }
         if ($pointsByDay && $origin !== null) $pointsByDay[array_key_first($pointsByDay)][] = $origin;
         if ($finish !== null && isset($pointsByDay[$lastDay])) $pointsByDay[$lastDay][] = $finish;
-        $route->preloadTrip($pointsByDay);
+        $route->preloadTrip($pointsByDay, $mealPoints);
 
         $startDate = (string)$meta['start_date'];
         // A day with a start time of its own (ItineraryEditService::setDayStart()) starts there.
@@ -219,7 +230,6 @@ final class ItineraryRouteOptimiser
             $date = (new DateTimeImmutable($startDate))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
             $hotelPoint = $hotel['point'] ?? null;
             $dayFinish = $dayNo === $lastDay && $hotelPoint === null ? $finish : null;
-            $route->preload(array_values(array_filter(array_merge([$dayStart], array_column($visits, 'point'), [$hotelPoint ?? $dayFinish]))));
             $musts = array_flip((array)($pref['must_places'] ?? []));
             $stops = array_map(static fn(array $row): array => ['place' => self::placeOf($row), 'point' => $row['point'], 'row' => $row,
                 'must' => isset($musts[(int)$row['place_id']])], $visits);

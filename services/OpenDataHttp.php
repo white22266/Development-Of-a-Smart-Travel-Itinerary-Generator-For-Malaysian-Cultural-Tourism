@@ -56,7 +56,7 @@ class OpenDataHttp
      * GET a JSON document.
      *
      * @param int   $ttl     seconds a cached copy stays fresh (0 = never cache)
-     * @param array $options timeout (s); cache_key; namespace (cache folder, default: the host);
+     * @param array $options timeout (s); connect_timeout (s, default 8); cache_key; namespace (cache folder, default: the host);
      *                       headers (list); stale_ok (default true: serve an expired copy when the
      *                       request fails); validate (callable(array): bool, a response that fails
      *                       it is treated as an error and not cached); retries (how often to try
@@ -187,7 +187,7 @@ class OpenDataHttp
         }
 
         $curlOptions = [
-            CURLOPT_CONNECTTIMEOUT => 8,
+            CURLOPT_CONNECTTIMEOUT => (int)($options['connect_timeout'] ?? 8),
             CURLOPT_TIMEOUT => (int)($options['timeout'] ?? 20),
             CURLOPT_HTTPHEADER => array_merge(['Accept: application/json'], $options['headers'] ?? []),
             CURLOPT_ENCODING => '',

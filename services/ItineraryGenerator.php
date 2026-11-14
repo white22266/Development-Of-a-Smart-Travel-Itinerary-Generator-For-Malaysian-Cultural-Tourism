@@ -13,9 +13,9 @@
 //   3. Day by day, ItineraryDayBuilder fills the day (must-see places first, estimated travel
 //      figures) and ItineraryRouteOptimiser puts it in the order with the least travelling.
 //      With an end point, the last day finishes towards it.
-//   4. When a routing server answers, the trip is measured on the road and every day is
-//      ordered and timed again with the road figures. A stop no order can keep is dropped and
-//      one feasible replacement is tried.
+//   4. When a routing server answers, the trip is measured on the road with one table request
+//      and every day is ordered and timed again with the road figures. A stop no order can
+//      keep is dropped and one feasible replacement is tried, measured with one route request.
 //   5. Everything is stored, and the total written by ItineraryEditService::total().
 //
 // Every day is timed with its lunch and dinner (ItineraryDayBuilder::fit()). A meal is stored
@@ -41,6 +41,8 @@ require_once __DIR__ . '/WeatherService.php';
 
 final class ItineraryGenerator
 {
+    /** Seconds the trip's one table request may take before the plan is stored on estimates. */
+    private const ROUTE_TIMEOUT = 8;
     /** Probe step through the day window when looking for a day a must-see place can be visited. */
     private const MUST_PROBE_STEP_MIN = 60;
     /** Words for a must-see place that no day of the trip allows. */
@@ -117,6 +119,7 @@ final class ItineraryGenerator
             $this->rain = self::forecast($trip, $origin, $startDate, (int)$profile['days']);
 
             $route = new RouteService((string)$profile['transport']);
+            $route->setTimeout(self::ROUTE_TIMEOUT);
             $musts = $this->assignMusts($mustIds, $profile, $route, $startDate);
             $days = $this->planDays($pool, $profile, $route, $startDate, $origin, $finish, $musts);
             $days = $this->measureOnRoad($days, $pool, $profile, $route, $origin, $finish);
@@ -292,13 +295,20 @@ final class ItineraryGenerator
     private function measureOnRoad(array $days, array $pool, array $profile, RouteService $route, array $origin, ?array $finish): array
     {
         $pointsByDay = [];
+        $near = [];
         foreach ($days as $dayNo => $day) {
-            $pointsByDay[$dayNo] = array_merge(array_column($day['stops'], 'point'), self::mealPoints($day['stops']));
+            $pointsByDay[$dayNo] = array_column($day['stops'], 'point');
+            array_push($near, ...self::mealPoints($day['stops']));
         }
         $pointsByDay[1][] = $origin;
         $lastDay = (int)array_key_last($days);
         if ($finish !== null) $pointsByDay[$lastDay][] = $finish;
-        $route->preloadTrip($pointsByDay);
+        // One table request for the whole trip: the stops and, while there is room, the meal
+        // places planned so far and the other meal places near the stops (those left out are
+        // estimated). A second table request would be held back by the public server for
+        // about ten seconds.
+        foreach ($days as $day) array_push($near, ...$this->nearMealPoints($day['stops'], (float)$profile['meal_radius_km']));
+        $route->preloadTrip($pointsByDay, $near);
 
         // Every day is ordered again, also when a day has no road figures: the day before may
         // now end elsewhere. With the same figures as in planning, no stop is lost here.
@@ -309,8 +319,6 @@ final class ItineraryGenerator
             $day['start'] = $start;
             $stops = $day['stops'];
             if ($stops) {
-                $route->preload(array_merge([$start], array_column($stops, 'point'), $this->nearMealPoints($stops, (float)$profile['meal_radius_km']),
-                    $day['finish'] !== null ? [$day['finish']] : []));
                 // Meals may use no place of another day, as planned now.
                 $day['used'] = $this->usedPlaces($days, $dayNo);
                 $outside = $this->budgetOutside($days, $dayNo);
@@ -347,9 +355,16 @@ final class ItineraryGenerator
 
         $candidate = $builder->ranked($pool, $context, $state)[0] ?? null;
         if ($candidate === null) return $plan;
-        $points = array_merge([$context['start']], array_column($plan['stops'], 'point'), [$candidate['point']],
-            $this->nearMealPoints(array_merge($plan['stops'], [$candidate]), (float)$profile['meal_radius_km']), $context['finish'] !== null ? [$context['finish']] : []);
-        if (!$route->preload($points)) return $plan;
+        // The candidate's legs to and from every point of the day, in one route request (not
+        // a table request, which the server would hold back after the trip's table).
+        $legs = [[$context['start'], $candidate['point']]];
+        foreach ($plan['stops'] as $stop) {
+            $legs[] = [$stop['point'], $candidate['point']];
+            $legs[] = [$candidate['point'], $stop['point']];
+        }
+        if ($context['finish'] !== null) $legs[] = [$candidate['point'], $context['finish']];
+        $route->measureLegs($legs);
+        if (!$route->knows($context['start'], $candidate['point'])) return $plan;   // no road figures: the estimates found no better
         $again = ItineraryRouteOptimiser::orderDay($route, $profile, $context['start'], array_merge($plan['stops'], [$candidate]), $context);
         return count($again['stops']) > count($plan['stops']) ? $again : $plan;
     }

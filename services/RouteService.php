@@ -2,12 +2,19 @@
 // services/RouteService.php
 // Distances and travel times between itinerary stops, without any paid API.
 //
-//   getSegment()    distance and time between two points. After one of the preload methods it
-//                   answers with the real road figures; otherwise it estimates from the
-//                   straight-line distance. It never makes a request itself.
-//   preload()       one request for the road distance and time between every pair of a set
-//                   of points; preloadTrip() does it for a whole trip at once.
-//   preloadChain()  one request for the legs of a list of points in a known order.
+//   getSegment()    distance and time between two points: the road figures when they are
+//                   known, otherwise an estimate from the straight-line distance. It never
+//                   makes a request itself.
+//   seed()          figures already at hand (the legs stored with an itinerary): no request.
+//   preload()       one "table" request for every pair of a set of points; preloadTrip() does
+//                   it for a whole trip at once. The public OSRM server holds a second table
+//                   request within about ten seconds back for that long, so the planner asks
+//                   for one table per trip at most (generation and the route optimiser).
+//   measureLegs()   given legs, strung together into as few "route" requests as possible.
+//                   Not held back by the server: the edit operations measure with it.
+//   preloadChain()  the legs of a list of points in a known order (measureLegs()).
+//   requestCount()  the requests made (or, without a server, that would have been made)
+//                   since resetRequestCount(): tools/check_planner.php keeps them in check.
 //   bestOrders()    the orders in which a set of stops can be visited, least travelling first.
 //   roadRoute()     the route through a list of points in order: for each leg its line,
 //                   distance, time, main roads and turn-by-turn steps. Used to draw the map.
@@ -56,6 +63,8 @@ class RouteService
     /** Most points whose pairs are measured in one request: by OSRM, and by the public Valhalla server. */
     private const MAX_TABLE_POINTS = 50;
     private const MAX_VALHALLA_POINTS = 10;
+    /** Most points of one route request to the public Valhalla server. */
+    private const MAX_VALHALLA_ROUTE_POINTS = 20;
 
     /** Up to this many stops every possible order is compared (8 stops: 40,320 orders). */
     private const MAX_EXACT_STOPS = 8;
@@ -63,12 +72,52 @@ class RouteService
     /** @var string car | motorcycle | public_transport | walking */
     private string $transportType;
 
-    /** @var array<string,array{0:float,1:int}> "from|to" => road km and minutes, loaded by preload() */
+    /** @var array<string,array{0:float,1:int}> "from|to" => road km and minutes, from a request or seed() */
     private array $known = [];
+
+    /**
+     * @var array<string,true> "from|to" pairs already asked for, answered or not (with
+     * ROUTING_ESTIMATES_ONLY: that would have been asked for). A pair is never asked twice.
+     */
+    private array $covered = [];
+
+    /** Seconds a request may take before the caller goes on with estimates (connecting: at most 3). */
+    private int $timeout = 15;
+
+    /** Routing requests of this object, and of all objects since resetRequestCount() (made or, without a server, that would have been made). */
+    private int $requestsMade = 0;
+    private static int $requestCount = 0;
 
     public function __construct(string $transportType = 'car')
     {
         $this->transportType = self::normalizeTransportType($transportType);
+    }
+
+    /** How long a request may take. Pages that wait for an answer set a few seconds; the default is 15. */
+    public function setTimeout(int $seconds): void
+    {
+        $this->timeout = max(2, $seconds);
+    }
+
+    /** The routing requests this object made (with ROUTING_ESTIMATES_ONLY: would have made). */
+    public function requestsMade(): int
+    {
+        return $this->requestsMade;
+    }
+
+    /**
+     * The routing requests made since the last resetRequestCount(), by every RouteService, or
+     * with ROUTING_ESTIMATES_ONLY those that would have been made. tools/check_planner.php
+     * counts the requests of each operation with it.
+     */
+    public static function requestCount(): int
+    {
+        return self::$requestCount;
+    }
+
+    public static function resetRequestCount(): void
+    {
+        self::$requestCount = 0;
     }
 
     public static function normalizeTransportType(string $transportType): string
@@ -86,8 +135,9 @@ class RouteService
     }
 
     /**
-     * Distance and travel time between two coordinates: the road figures when preload() has
-     * them, otherwise an estimate from the straight-line distance. Never makes a request.
+     * Distance and travel time between two coordinates: the road figures when they are known
+     * (a preload method, measureLegs() or seed()), otherwise an estimate from the straight-line
+     * distance. Never makes a request.
      *
      * @return array{distance_km: float, travel_time_min: int, method: string} method is road | estimate
      */
@@ -105,26 +155,67 @@ class RouteService
         ];
     }
 
+    /** Whether the road figures of the leg from one point to another are known (measured or seeded). */
+    public function knows(array $from, array $to): bool
+    {
+        return isset($this->known[self::pairKey((float)$from[0], (float)$from[1], (float)$to[0], (float)$to[1])]);
+    }
+
+    /** Whether the leg from one point to another is known or was asked for already. */
+    public function covers(array $from, array $to): bool
+    {
+        $key = self::pairKey((float)$from[0], (float)$from[1], (float)$to[0], (float)$to[1]);
+        return isset($this->known[$key]) || isset($this->covered[$key]);
+    }
+
     /**
-     * Load the road distance and time between every pair of the given points with one request.
-     * getSegment() answers from them afterwards.
+     * Figures already at hand, such as the legs stored with an itinerary: [from, to, km, minutes]
+     * each. getSegment() answers with them, and they are not asked for again. A leg that is
+     * known already keeps its figures.
+     *
+     * @param array<int,array{0:array,1:array,2:float,3:int}> $legs
+     */
+    public function seed(array $legs): void
+    {
+        foreach ($legs as [$from, $to, $km, $minutes]) {
+            if (!self::validCoord((float)$from[0], (float)$from[1]) || !self::validCoord((float)$to[0], (float)$to[1])) continue;
+            $key = self::pairKey((float)$from[0], (float)$from[1], (float)$to[0], (float)$to[1]);
+            if (isset($this->known[$key])) continue;
+            $this->known[$key] = [round((float)$km, 2), (int)$minutes];
+            $this->covered[$key] = true;
+        }
+    }
+
+    /**
+     * Load the road distance and time between every pair of the given points with one request
+     * (a "table" request). getSegment() answers from them afterwards. The public OSRM server
+     * holds a second table request within about ten seconds back for that long, so a page
+     * asks for one table at most and uses measureLegs() for the rest.
      *
      * @param array<int,array{0:float,1:float}> $points [latitude, longitude] pairs
-     * @return bool false when the routing server could not be reached; getSegment() then keeps estimating
+     * @return bool false when the routing server could not be reached (and always with
+     *              ROUTING_ESTIMATES_ONLY); getSegment() then keeps estimating
      */
     public function preload(array $points): bool
     {
         // Sorted, so the same set of points always makes the same request and is found in the cache.
-        if (self::estimatesOnly()) return false;
         $points = array_values(self::distinctPoints($points));
-        if (count($points) < 2 || $this->knowsAll($points)) return true;
+        if (count($points) < 2 || $this->coversAll($points)) return !self::estimatesOnly();
+        $valhalla = $this->transportType === 'motorcycle' && count($points) <= self::MAX_VALHALLA_POINTS;
+        if (!$valhalla && count($points) > self::MAX_TABLE_POINTS) return false;
+
+        $this->counted();
+        foreach ($points as $i => $from) {
+            foreach ($points as $j => $to) {
+                if ($i !== $j) $this->covered[self::pairKey($from[0], $from[1], $to[0], $to[1])] = true;
+            }
+        }
+        if (self::estimatesOnly()) return false;
 
         // [from][to] => [km, seconds], from the engine that also draws this transport's routes
-        $matrix = null;
-        if ($this->transportType === 'motorcycle' && count($points) <= self::MAX_VALHALLA_POINTS) {
-            $matrix = $this->valhallaMatrix($points);
-        }
+        $matrix = $valhalla ? $this->valhallaMatrix($points) : null;
         if ($matrix === null && count($points) <= self::MAX_TABLE_POINTS) {
+            if ($valhalla) $this->counted();
             $matrix = $this->osrmMatrix($points);
         }
         if ($matrix === null) return false;
@@ -142,21 +233,33 @@ class RouteService
     }
 
     /**
-     * Load what a trip of several days needs before its days are worked on one by one: every
-     * pair of points inside a day, and between a day and the day before it (a day starts
-     * where the last one ended).
+     * Load what a trip of several days needs before its days are ordered: every pair of points
+     * inside a day, and between a day and the day before it (a day starts where the last one
+     * ended), with one table request while the points fit into one (MAX_TABLE_POINTS).
+     * $extra points (meal places near the stops) fill the request up to that size; those that
+     * do not fit are left to estimates. Only when the days' own points do not fit are more
+     * requests made, a day at a time with the day before it.
      *
-     * This is for OSRM (car, walking, public transport). Its public server takes fifty points
-     * in one request but makes a client wait about ten seconds before the next, so one request
-     * for the whole trip is the fast way. Nothing is loaded here for a motorcycle: the public
-     * Valhalla server takes ten points at a time and answers at once, so there preload() per
-     * day is the fast way.
+     * For a motorcycle the table of more than ten points comes from OSRM's car profile: one
+     * request instead of one per day from the public Valhalla server, and on Malaysian roads
+     * the two rarely differ.
      *
-     * @param array<int,array<int,array{0:float,1:float}>> $days the points of each day, in day order
+     * @param array<int,array<int,array{0:float,1:float}>> $days  the points of each day, in day order
+     * @param array<int,array{0:float,1:float}>            $extra points worth measuring when there is room
      */
-    public function preloadTrip(array $days): void
+    public function preloadTrip(array $days, array $extra = []): void
     {
-        if ($this->transportType === 'motorcycle') return;
+        $all = [];
+        foreach ($days as $dayPoints) $all += self::distinctPoints($dayPoints);
+        if (count($all) <= self::MAX_TABLE_POINTS) {
+            foreach (self::usablePoints($extra) as $p) {
+                if (count($all) >= self::MAX_TABLE_POINTS) break;
+                $point = [round((float)$p[0], 5), round((float)$p[1], 5)];
+                $all[$point[0] . ',' . $point[1]] = $point;
+            }
+            $this->preload(array_values($all));
+            return;
+        }
 
         $batch = [];
         $dayBefore = [];
@@ -174,37 +277,109 @@ class RouteService
 
     /**
      * Load the road distance and time of each leg of a chain of points (first to second,
-     * second to third, ...) with one request. Cheaper than preload() when only the legs of a
-     * known order are needed, and not slowed down by the server.
+     * second to third, ...): measureLegs() for those legs.
      *
      * @param array<int,array{0:float,1:float}> $points [latitude, longitude] pairs in travelling order
-     * @return bool false when the routing server could not be reached
+     * @return bool false when a leg is still not known (no server answered, or ROUTING_ESTIMATES_ONLY)
      */
     public function preloadChain(array $points): bool
     {
         $points = self::usablePoints($points);
-        $unknown = false;
-        for ($i = 1, $count = count($points); $i < $count; $i++) {
-            if (!isset($this->known[self::pairKey($points[$i - 1][0], $points[$i - 1][1], $points[$i][0], $points[$i][1])])) $unknown = true;
+        $pairs = [];
+        for ($i = 1, $count = count($points); $i < $count; $i++) $pairs[] = [$points[$i - 1], $points[$i]];
+        $this->measureLegs($pairs);
+        foreach ($pairs as [$from, $to]) {
+            if ($from[0] == $to[0] && $from[1] == $to[1]) continue;
+            if (!isset($this->known[self::pairKey((float)$from[0], (float)$from[1], (float)$to[0], (float)$to[1])])) return false;
         }
-        if (!$unknown) return true;
+        return true;
+    }
 
-        $complete = true;
-        // Long chains go in pieces that share their end point with the next piece.
-        for ($offset = 0; $offset < count($points) - 1; $offset += self::MAX_ROUTE_POINTS - 1) {
-            $piece = array_slice($points, $offset, self::MAX_ROUTE_POINTS);
-            $road = $this->roadRoute($piece, false);
-            if ($road === null) {
-                $complete = false;
-                continue;
+    /**
+     * Measure the given legs on the road with as few "route" requests as possible: the legs
+     * are strung together into chains of at most MAX_ROUTE_POINTS points (a leg that does not
+     * start where the chain ends adds a leg between the two, which is measured too). Legs that
+     * are known or were asked for already are left out. Route requests are not held back by
+     * the public server the way a second table request is.
+     *
+     * @param array<int,array{0:array,1:array}> $pairs [from, to] points
+     * @param int $maxRequests at most this many requests; legs beyond them are not asked for
+     * @return int how many of the legs asked for are now known (0 with ROUTING_ESTIMATES_ONLY or when no server answered)
+     */
+    public function measureLegs(array $pairs, int $maxRequests = PHP_INT_MAX): int
+    {
+        // The legs still to ask for, once each, in the order given.
+        $wanted = [];
+        foreach ($pairs as $pair) {
+            [$from, $to] = [$pair[0] ?? null, $pair[1] ?? null];
+            if (!is_array($from) || !is_array($to) || !self::validCoord((float)$from[0], (float)$from[1]) || !self::validCoord((float)$to[0], (float)$to[1])) continue;
+            $from = [round((float)$from[0], 5), round((float)$from[1], 5)];
+            $to = [round((float)$to[0], 5), round((float)$to[1], 5)];
+            if ($from === $to || $this->covers($from, $to)) continue;
+            $wanted[self::pairKey($from[0], $from[1], $to[0], $to[1])] = [$from, $to];
+        }
+        if (!$wanted) return 0;
+
+        // String them together: a leg that starts where the chain ends comes next.
+        $byStart = [];
+        foreach ($wanted as $key => [$from]) $byStart[$from[0] . ',' . $from[1]][] = $key;
+        $chains = [];
+        $chain = [];
+        $left = $wanted;
+        while ($left) {
+            $end = $chain ? $chain[count($chain) - 1] : null;
+            $next = null;
+            if ($end !== null) {
+                foreach ($byStart[$end[0] . ',' . $end[1]] ?? [] as $key) {
+                    if (isset($left[$key])) { $next = $key; break; }
+                }
             }
-            foreach ($road['legs'] as $index => $leg) {
-                [$from, $to] = [$piece[$index], $piece[$index + 1]];
+            if ($next === null) {
+                $next = array_key_first($left);
+                if (count($chain) + 2 > self::MAX_ROUTE_POINTS) { $chains[] = $chain; $chain = []; }
+                $chain[] = $left[$next][0];
+            } elseif (count($chain) + 1 > self::MAX_ROUTE_POINTS) {
+                $chains[] = $chain;
+                $chain = [$left[$next][0]];
+            }
+            $chain[] = $left[$next][1];
+            unset($left[$next]);
+        }
+        $chains[] = $chain;
+
+        $measured = 0;
+        foreach ($chains as $k => $points) {
+            if ($k >= $maxRequests) break;   // the rest stays unknown, and may be asked for later
+            $this->counted();
+            for ($i = 1, $n = count($points); $i < $n; $i++) {
+                $this->covered[self::pairKey($points[$i - 1][0], $points[$i - 1][1], $points[$i][0], $points[$i][1])] = true;
+            }
+            if (self::estimatesOnly()) continue;
+            // Every point is a stop of its own: the route may turn round there.
+            $valhalla = $this->transportType === 'motorcycle' && count($points) <= self::MAX_VALHALLA_ROUTE_POINTS;
+            $legs = $valhalla ? $this->valhallaLegs($points, false) : null;
+            if ($legs === null) {
+                if ($valhalla) $this->counted();
+                $legs = $this->osrmLegs($points, false, true);
+            }
+            if ($legs === null) continue;
+            foreach ($legs as $index => $leg) {
+                [$from, $to] = [$points[$index], $points[$index + 1]];
+                $key = self::pairKey($from[0], $from[1], $to[0], $to[1]);
+                if (isset($this->known[$key])) continue;
                 $walk = $this->shortWalk($from[0], $from[1], $to[0], $to[1], $leg['distance_km']);
-                $this->known[self::pairKey($from[0], $from[1], $to[0], $to[1])] = $walk ?? [$leg['distance_km'], $leg['travel_time_min']];
+                $this->known[$key] = $walk ?? [$leg['distance_km'], $leg['travel_time_min']];
+                if (isset($wanted[$key])) $measured++;
             }
         }
-        return $complete;
+        return $measured;
+    }
+
+    /** One more request of this object, and of the operation being counted. */
+    private function counted(): void
+    {
+        $this->requestsMade++;
+        self::$requestCount++;
     }
 
     /** @return array<string,array{0:float,1:float}> the distinct usable points, keyed and sorted by "lat,lng" */
@@ -339,7 +514,8 @@ class RouteService
         $url = $this->osrmBase() . '/table/v1/' . $this->osrmProfile() . '/' . self::osrmCoordinates($points) . '?annotations=duration,distance';
         $json = OpenDataHttp::getJson($url, 2592000, [   // roads change slowly: 30 days
             'namespace' => 'routes',
-            'timeout' => 15,
+            'timeout' => $this->timeout,
+            'connect_timeout' => min(3, $this->timeout),
             'validate' => static fn(array $j): bool => ($j['code'] ?? '') === 'Ok' && isset($j['durations'], $j['distances']),
         ]);
         if ($json === null) return null;
@@ -362,7 +538,8 @@ class RouteService
         $request = ['sources' => $locations, 'targets' => $locations, 'costing' => 'motorcycle', 'units' => 'kilometers'];
         $json = OpenDataHttp::getJson($base . '/sources_to_targets?' . http_build_query(['json' => json_encode($request)]), 2592000, [
             'namespace' => 'routes',
-            'timeout' => 15,
+            'timeout' => $this->timeout,
+            'connect_timeout' => min(3, $this->timeout),
             'validate' => static fn(array $j): bool => isset($j['sources_to_targets']),
         ]);
         if ($json === null) return null;
@@ -414,6 +591,7 @@ class RouteService
         if (self::estimatesOnly()) return null;
         $points = self::usablePoints($points);
         if (count($points) < 2 || count($points) > self::MAX_ROUTE_POINTS) return null;
+        $this->counted();
 
         // A motorcycle gets its own profile. When that server does not answer, the car route
         // is used: on Malaysian roads the two rarely differ.
@@ -429,13 +607,16 @@ class RouteService
         ];
     }
 
-    private function osrmLegs(array $points, bool $withDetails): ?array
+    /** @param bool $independent each leg on its own: the route may turn round at every point (for measureLegs()) */
+    private function osrmLegs(array $points, bool $withDetails, bool $independent = false): ?array
     {
         $url = $this->osrmBase() . '/route/v1/' . $this->osrmProfile() . '/' . self::osrmCoordinates($points)
-            . '?alternatives=false&overview=false&steps=' . ($withDetails ? 'true&geometries=geojson' : 'false');
+            . '?alternatives=false&overview=false&steps=' . ($withDetails ? 'true&geometries=geojson' : 'false')
+            . ($independent ? '&continue_straight=false' : '');
         $json = OpenDataHttp::getJson($url, 2592000, [
             'namespace' => 'routes',
-            'timeout' => 15,
+            'timeout' => $this->timeout,
+            'connect_timeout' => min(3, $this->timeout),
             'validate' => static fn(array $j): bool => ($j['code'] ?? '') === 'Ok' && isset($j['routes'][0]['legs']),
         ]);
         $route = $json['routes'][0] ?? null;
@@ -475,7 +656,8 @@ class RouteService
         ];
         $json = OpenDataHttp::getJson($base . '/route?' . http_build_query(['json' => json_encode($request)]), 2592000, [
             'namespace' => 'routes',
-            'timeout' => 15,
+            'timeout' => $this->timeout,
+            'connect_timeout' => min(3, $this->timeout),
             'validate' => static fn(array $j): bool => isset($j['trip']['legs']),
         ]);
         $tripLegs = $json['trip']['legs'] ?? null;
@@ -628,12 +810,12 @@ class RouteService
         return array_values(array_filter($points, static fn($p) => is_array($p) && self::validCoord((float)($p[0] ?? 0), (float)($p[1] ?? 0))));
     }
 
-    /** Whether every pair of these points has been loaded already. */
-    private function knowsAll(array $points): bool
+    /** Whether every pair of these points is known or was asked for already. */
+    private function coversAll(array $points): bool
     {
         foreach ($points as $i => $from) {
             foreach ($points as $j => $to) {
-                if ($i !== $j && !isset($this->known[self::pairKey($from[0], $from[1], $to[0], $to[1])])) return false;
+                if ($i !== $j && !$this->covers($from, $to)) return false;
             }
         }
         return true;
