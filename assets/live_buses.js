@@ -37,8 +37,31 @@ var LiveBuses = (function () {
         return vehicle.kind === "train" ? "#7c3aed" : "#1d4ed8";
     }
 
+    // Texts of the page's language (LIVE_BUSES_T, set by the page); the English text is the default.
+    var TXT = (typeof LIVE_BUSES_T !== "undefined" && LIVE_BUSES_T) || {};
+
+    function tr(key, english, vars) {
+        var text = TXT[key] || english;
+        if (vars) Object.keys(vars).forEach(function (name) { text = text.split("{" + name + "}").join(String(vars[name])); });
+        return text;
+    }
+
     function ago(seconds) {
-        return seconds < 90 ? Math.round(seconds) + " s ago" : Math.round(seconds / 60) + " min ago";
+        return seconds < 90
+            ? tr("lb.ago_s", "{n} s ago", { n: Math.round(seconds) })
+            : tr("lb.ago_min", "{n} min ago", { n: Math.round(seconds / 60) });
+    }
+
+    /** The fixed sentences of services/BusTrackingService.php (English) in the page's language. */
+    function serverNote(note) {
+        var known = {
+            "Zoom in to see the buses and trains.": ["lb.n_zoom", note],
+            "No operator publishes live positions for this part of Malaysia yet.": ["lb.n_none_here", note],
+            "The live positions could not be loaded just now.": ["lb.failed", note],
+            "No bus or train is reporting its position in this part of the map right now.": ["lb.n_empty", note],
+            "No part of the map was given.": ["lb.n_nomap", note]
+        };
+        return known[note] ? tr(known[note][0], note) : note;
     }
 
     function create(map, options) {
@@ -85,12 +108,12 @@ var LiveBuses = (function () {
             box.className = "bus-popup";
             box.innerHTML = "<strong>" + esc(vehicle.operator) + (vehicle.route ? " " + esc(vehicle.route) : "") + "</strong>" +
                 (vehicle.name ? "<div>" + esc(vehicle.name) + "</div>" : "") +
-                (vehicle.towards ? "<div>towards " + esc(vehicle.towards) + "</div>" : "") +
+                (vehicle.towards ? "<div>" + esc(tr("lb.towards", "towards {place}", { place: vehicle.towards })) + "</div>" : "") +
                 "<div class=\"muted\">" + (vehicle.speed_kmh !== null && vehicle.speed_kmh !== undefined ? esc(vehicle.speed_kmh) + " km/h &middot; " : "") +
-                    "reported " + esc(ago(vehicle.age_s)) + " &middot; " + esc(vehicle.id) + "</div>";
+                    esc(tr("lb.reported", "reported {ago}", { ago: ago(vehicle.age_s) })) + " &middot; " + esc(vehicle.id) + "</div>";
             var button = document.createElement("button");
             button.type = "button";
-            button.textContent = "Show this route";
+            button.textContent = tr("lb.show_route", "Show this route");
             button.addEventListener("click", function () { showLine(vehicle, button); });
             box.appendChild(button);
             return box;
@@ -108,10 +131,10 @@ var LiveBuses = (function () {
                     lineLayer.addLayer(L.polyline(data.points, { color: "#fff", weight: 8, opacity: 0.85, interactive: false }));
                     lineLayer.addLayer(L.polyline(data.points, { color: colour({ color: data.color, kind: vehicle.kind }), weight: 4, opacity: 0.95 })
                         .bindTooltip((data.route ? data.route + " " : "") + (data.name || ""), { sticky: true }));
-                    button.textContent = "Route shown";
+                    button.textContent = tr("lb.route_shown", "Route shown");
                 })
                 .catch(function () {
-                    button.textContent = "No line is published for this route";
+                    button.textContent = tr("lb.no_line", "No line is published for this route");
                 });
         }
 
@@ -151,11 +174,12 @@ var LiveBuses = (function () {
                     });
                     var count = (data.vehicles || []).length;
                     say(count
-                        ? count + (count === 1 ? " vehicle" : " vehicles") + " in view (" + (data.operators || []).join(", ") + "), positions renewed every half minute. " + data.credit + "."
-                        : (data.note || "No vehicles in view."));
+                        ? tr(count === 1 ? "lb.in_view_one" : "lb.in_view_many", count === 1 ? "{n} vehicle in view ({operators}), positions renewed every half minute." : "{n} vehicles in view ({operators}), positions renewed every half minute.",
+                            { n: count, operators: (data.operators || []).join(", ") }) + " " + data.credit + "."
+                        : (data.note ? serverNote(data.note) : tr("lb.n_empty", "No vehicles in view.")));
                 })
                 .catch(function () {
-                    if (on && mine === loadNo) say("The live positions could not be loaded just now.");
+                    if (on && mine === loadNo) say(tr("lb.failed", "The live positions could not be loaded just now."));
                 });
         }
 
@@ -171,7 +195,7 @@ var LiveBuses = (function () {
             lineLayer.addTo(map);
             map.on("moveend", onMove);
             timer = window.setInterval(function () { if (!document.hidden) load(); }, REFRESH_MS);
-            say("Looking for buses and trains...");
+            say(tr("lb.looking", "Looking for buses and trains..."));
             load();
         }
 

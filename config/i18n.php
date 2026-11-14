@@ -203,6 +203,108 @@ function i18n_cost_label(string $label, string $transportType, ?string $lang = n
     return $label;
 }
 
+/**
+ * The reason of a refused change in the traveller's language: the sentence for a reason code
+ * of PlannerRules::REASONS from config/ai_chat_text.php. English, an empty code or a code
+ * without a translation give null.
+ */
+function i18n_reason(string $code, ?string $lang = null): ?string
+{
+    $lang = $lang ?? i18n_lang();
+    if ($lang === 'en' || $code === '') {
+        return null;
+    }
+    require_once __DIR__ . '/ai_chat_text.php';
+    $key = 'reason_code_' . $code;
+    $text = ai_text($key, $lang);
+    return $text === $key ? null : $text;
+}
+
+/**
+ * A refused change as one sentence: "Not changed: <reason>." in the traveller's language when the
+ * code has a translation, else the English sentence the service wrote ($english).
+ */
+function i18n_refusal(string $code, string $english, ?string $lang = null): string
+{
+    $reason = i18n_reason($code, $lang);
+    return $reason === null ? $english : t('edit.refused', ['reason' => $reason], $lang);
+}
+
+/**
+ * The fixed English phrases of CostEstimationService that end in an amount ("RM 25.00 per person",
+ * "RM 50.00 for 2 traveller(s)") or describe how the cost breakdown was worked out
+ * ("12.0 km x RM 0.60/km x 2 traveller(s)"), in the traveller's language. A text that does not
+ * match one of the fixed phrases comes back unchanged.
+ */
+function i18n_cost_phrase(string $text, ?string $lang = null): string
+{
+    $m = '([\d,]+(?:\.\d+)?)';
+    $patterns = [
+        ['/^RM ' . $m . ' per room$/', 'cost.per_room', ['amount']],
+        ['/^RM ' . $m . ' per person$/', 'cost.per_person', ['amount']],
+        ['/^RM ' . $m . ' for (\d+) room\(s\)$/', 'cost.for_rooms', ['amount', 'n']],
+        ['/^RM ' . $m . ' for (\d+) traveller\(s\)$/', 'cost.for_travellers', ['amount', 'n']],
+        ['/^RM ' . $m . ' per-person place costs x (\d+) traveller\(s\)$/', 'cost.n_attraction', ['amount', 'n']],
+        ['/^' . $m . ' km x RM ' . $m . '\/km x (\d+) traveller\(s\)$/', 'cost.n_km_traveller', ['km', 'rate', 'n']],
+        ['/^' . $m . ' km x RM ' . $m . '\/km x (\d+) vehicle unit\(s\)$/', 'cost.n_km_vehicle', ['km', 'rate', 'n']],
+        ['/^Walking transport cost RM ' . $m . '$/', 'cost.n_walking', ['amount']],
+        ['/^(\d+) selected hotel night item\(s\) x (\d+) room\(s\)$/', 'cost.n_hotel_selected', ['n', 'rooms']],
+        ['/^(\d+) night\(s\) x RM ' . $m . '\/room x (\d+) room\(s\)$/', 'cost.n_hotel_nights', ['nights', 'rate', 'rooms']],
+        ['/^Scheduled food RM ' . $m . '; minimum estimate (\d+) day\(s\) x (\d+) meals x RM ' . $m . ' x (\d+) traveller\(s\)$/', 'cost.n_food_sched', ['amount', 'days', 'meals', 'price', 'n']],
+        ['/^(\d+) day\(s\) x (\d+) meals x RM ' . $m . ' x (\d+) traveller\(s\)$/', 'cost.n_food', ['days', 'meals', 'price', 'n']],
+    ];
+    foreach ($patterns as [$regex, $key, $names]) {
+        if (preg_match($regex, $text, $found)) {
+            return t($key, array_combine($names, array_slice($found, 1)), $lang);
+        }
+    }
+    return $text;
+}
+
+/**
+ * The fixed parts of the note stored with a hotel night or a stop ("State: Johor | District: - |
+ * Category: food | Tier: 1", "Hotel for night 1 of 2 | Hotel | ... | Estimated RM 150.00 per night")
+ * in the traveller's language. The free text from "Reason:" on, place names and addresses stay
+ * as stored.
+ */
+function i18n_stop_note(string $notes, ?string $lang = null): string
+{
+    $reason = '';
+    $pos = strpos($notes, 'Reason:');
+    if ($pos !== false) {
+        $reason = substr($notes, $pos);
+        $notes = rtrim(substr($notes, 0, $pos), ' |');
+    }
+    $kinds = [];
+    foreach (['hotel' => 'Hotel', 'resort' => 'Resort', 'apartment' => 'Serviced apartment', 'chalet' => 'Chalet',
+              'guest_house' => 'Guest house', 'motel' => 'Motel', 'hostel' => 'Hostel'] as $code => $english) {
+        $kinds[$english] = $code;
+    }
+    $parts = $notes === '' ? [] : explode(' | ', $notes);
+    foreach ($parts as $i => $part) {
+        if (preg_match('/^State: (.*)$/', $part, $m)) {
+            $parts[$i] = t('note.state', ['v' => $m[1]], $lang);
+        } elseif (preg_match('/^District: (.*)$/', $part, $m)) {
+            $parts[$i] = t('note.district', ['v' => $m[1]], $lang);
+        } elseif (preg_match('/^Category: (.*)$/', $part, $m)) {
+            $key = 'opt.interest.' . strtolower($m[1]);
+            $label = t($key, [], $lang);
+            $parts[$i] = t('note.category', ['v' => $label === $key ? $m[1] : $label], $lang);
+        } elseif (preg_match('/^Tier: (\d+)$/', $part, $m)) {
+            $parts[$i] = t('note.tier', ['v' => $m[1]], $lang);
+        } elseif (preg_match('/^Meal: (lunch|dinner)$/', $part, $m)) {
+            $parts[$i] = t('note.meal', ['v' => t_choice('itype', $m[1], $lang)], $lang);
+        } elseif (preg_match('/^Hotel for night (\d+) of (\d+)$/', $part, $m)) {
+            $parts[$i] = t('note.hotel_night', ['n' => $m[1], 'total' => $m[2]], $lang);
+        } elseif (preg_match('/^Estimated RM ([\d,]+(?:\.\d+)?) per night$/', $part, $m)) {
+            $parts[$i] = t('note.est_night', ['amount' => $m[1]], $lang);
+        } elseif (isset($kinds[$part])) {
+            $parts[$i] = t_choice('hotelkind', $kinds[$part], $lang);
+        }
+    }
+    $text = implode(' | ', $parts);
+    return $reason === '' ? $text : ($text === '' ? $reason : $text . ' | ' . $reason);
+}
 /** JSON object {key: text} of the given keys in the current language, safe inside <script>. */
 function i18n_js(array $keys): string
 {

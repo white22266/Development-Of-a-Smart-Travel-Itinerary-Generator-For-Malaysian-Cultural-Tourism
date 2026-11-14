@@ -8,6 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
 
@@ -21,7 +22,7 @@ function review_hotels_reply(array $payload, int $httpStatus = 200): never
 }
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
-    review_hotels_reply(['status' => 'error', 'message' => 'Unauthorized'], 401);
+    review_hotels_reply(['status' => 'error', 'message' => t('rv.e_unauthorized')], 401);
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
@@ -31,7 +32,7 @@ $requestedPlaceId = (int)($_GET["place_id"] ?? 0);
 session_write_close();   // nothing more is stored in the session; let the traveller's other requests through
 
 if ($itineraryId <= 0 || $travellerId <= 0) {
-    review_hotels_reply(['status' => 'error', 'message' => 'Invalid itinerary ID'], 422);
+    review_hotels_reply(['status' => 'error', 'message' => t('rv.e_itinerary_id')], 422);
 }
 
 $stmt = $conn->prepare("
@@ -46,7 +47,7 @@ $stmt->execute();
 $itinerary = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 if (!$itinerary) {
-    review_hotels_reply(['status' => 'error', 'message' => 'Itinerary not found'], 404);
+    review_hotels_reply(['status' => 'error', 'message' => t('rv.e_not_found')], 404);
 }
 
 // Search around: a place the traveller is previewing as a replacement, else a given stop,
@@ -93,7 +94,7 @@ if (!$stop) {
     $stop = $findStop("");
 }
 if (!$stop) {
-    review_hotels_reply(['status' => 'empty', 'message' => 'No itinerary stop was found to look for hotels near.', 'hotels' => []]);
+    review_hotels_reply(['status' => 'empty', 'message' => t('rv.h_no_stop'), 'hotels' => []]);
 }
 
 $lat = $stop['latitude'] !== null ? (float)$stop['latitude'] : 0.0;
@@ -120,19 +121,20 @@ $roomBudget = HotelRecommendationService::nightlyRoomBudget(
 
 $hotelService = new HotelRecommendationService($conn);
 $hotels = $hotelService->recommend($lat, $lng, $roomBudget, 15.0, 8);
-$message = 'Places to stay near ' . $lastStop['title'] . '. Prices are planning estimates, not offers.';
+$message = t('rv.h_near', ['title' => $lastStop['title']]);
 if (!$hotels && $state !== '') {
     $hotels = $hotelService->recommendByState($state, $roomBudget, 8);
-    $message = 'Nothing is listed close to this stop, so these are places to stay elsewhere in ' . $state . '. Prices are planning estimates.';
+    $message = t('rv.h_elsewhere', ['state' => $state]);
 }
 if (!$hotels) {
-    review_hotels_reply(['status' => 'empty', 'message' => 'No places to stay are listed near this stop yet.', 'last_stop' => $lastStop, 'hotels' => []]);
+    review_hotels_reply(['status' => 'empty', 'message' => t('rv.h_none'), 'last_stop' => $lastStop, 'hotels' => []]);
 }
 
 // The link for checking the real price carries the night's date when the stop belongs to a day of the trip.
 $firstDay = DateTimeImmutable::createFromFormat('!Y-m-d', (string)($itinerary['start_date'] ?? ''));
 $checkIn = $firstDay && $lastStop['day_no'] > 0 ? $firstDay->modify('+' . ($lastStop['day_no'] - 1) . ' days')->format('Y-m-d') : null;
 foreach ($hotels as &$hotel) {
+    $hotel['kind_label'] = t_choice('hotelkind', (string)($hotel['kind'] ?? 'hotel'));
     $hotel['price_check_url'] = HotelRecommendationService::priceCheckUrl($hotel['name'], $hotel['state'], $checkIn, 1, $partySize, CostEstimationService::roomCount($partySize));
 }
 unset($hotel);

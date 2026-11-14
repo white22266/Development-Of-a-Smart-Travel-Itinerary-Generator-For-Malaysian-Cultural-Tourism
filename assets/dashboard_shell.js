@@ -41,6 +41,13 @@
     var profileLink = sidebar.querySelector(".nav-profile-link");
     var logoutLink = sidebar.querySelector(".nav-logout-link");
 
+    // The two labels of the mobile bar, in the language of the page (the pages set <html lang>).
+    var barLang = (document.documentElement.lang || "en").toLowerCase();
+    var BAR_TEXT = {
+      ms: { toggle: "Togol navigasi", close: "Tutup navigasi" },
+      zh: { toggle: "切换导航", close: "关闭导航" }
+    }[barLang] || { toggle: "Toggle navigation", close: "Close navigation" };
+
     var topbar = document.createElement("header");
     topbar.className = "app-topbar";
     topbar.innerHTML =
@@ -52,7 +59,7 @@
             '<span>' + (pageTitle ? pageTitle.textContent.trim() : "") + '</span>' +
           '</div>' +
         '</div>' +
-        '<button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="Toggle navigation" aria-expanded="false">' +
+        '<button type="button" class="sidebar-toggle" data-sidebar-toggle aria-label="' + BAR_TEXT.toggle + '" aria-expanded="false">' +
           '<span></span><span></span><span></span>' +
         '</button>' +
       '</div>' +
@@ -62,20 +69,24 @@
     if (profileLink) {
       var profile = profileLink.cloneNode(true);
       profile.className = "btn btn-ghost btn-small topbar-profile";
-      profile.innerHTML = '<span class="topbar-action-label">Profile</span>';
+      var profileText = (profile.querySelector(".nav-label") || profile).textContent.replace(/\s+/g, " ").trim() || "Profile";
+      profile.innerHTML = '<span class="topbar-action-label"></span>';
+      profile.firstChild.textContent = profileText;
       actions.appendChild(profile);
     }
     if (logoutLink) {
       var logout = logoutLink.cloneNode(true);
       logout.className = "btn btn-primary btn-small topbar-logout";
-      logout.innerHTML = '<span class="topbar-action-label">Logout</span>';
+      var logoutText = (logout.querySelector(".nav-label") || logout).textContent.replace(/\s+/g, " ").trim() || "Logout";
+      logout.innerHTML = '<span class="topbar-action-label"></span>';
+      logout.firstChild.textContent = logoutText;
       actions.appendChild(logout);
     }
 
     var overlay = document.createElement("button");
     overlay.type = "button";
     overlay.className = "sidebar-overlay";
-    overlay.setAttribute("aria-label", "Close navigation");
+    overlay.setAttribute("aria-label", BAR_TEXT.close);
 
     document.body.insertBefore(topbar, app);
     document.body.insertBefore(overlay, app);

@@ -55,9 +55,15 @@ function detectChatRoute(text) {
     return 'chat';
 }
 
+// A page may hand over the language and card labels of the chat before the first reply
+// (AI_CHAT_BOOT: {lang, ui}, from config/ai_chat_text.php) and its own texts (AI_CHAT_T).
+// Without them the chat starts in English, as before.
+const AI_PAGE_BOOT = (typeof AI_CHAT_BOOT !== 'undefined' && AI_CHAT_BOOT) || {};
+const AI_PAGE_T = (typeof AI_CHAT_T !== 'undefined' && AI_CHAT_T) || {};
+
 // Language and labels of the last reply (see config/ai_chat_text.php).
-let aiLang = 'en';
-let aiUi = {};
+let aiLang = AI_PAGE_BOOT.lang ? String(AI_PAGE_BOOT.lang) : 'en';
+let aiUi = (AI_PAGE_BOOT.ui && typeof AI_PAGE_BOOT.ui === 'object') ? AI_PAGE_BOOT.ui : {};
 
 function rememberAiLanguage(data) {
     if (!data) return;
@@ -444,8 +450,9 @@ document.addEventListener('DOMContentLoaded', () => {
         missing = [];
     }
     if (!Array.isArray(missing) || !missing.length) return;
-    initial.textContent = 'Before this trip is complete, I still need: ' + missing.join(', ')
-        + '. Tell me the missing details here, then confirm the detected information.';
+    const template = AI_PAGE_T['iv.ai_missing']
+        || 'Before this trip is complete, I still need: {list}. Tell me the missing details here, then confirm the detected information.';
+    initial.textContent = template.split('{list}').join(missing.join(AI_PAGE_T['iv.ai_sep'] || ', '));
     panel.classList.add('open');
     const input = document.getElementById('aiChatInput');
     if (input) setTimeout(() => input.focus(), 120);

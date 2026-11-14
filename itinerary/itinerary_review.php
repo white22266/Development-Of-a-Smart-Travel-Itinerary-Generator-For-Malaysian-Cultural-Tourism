@@ -9,12 +9,13 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once "../config/db_connect.php";
 require_once "../services/PlannerRules.php";
+require_once "../config/i18n.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
     exit;
 }
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 $travellerId   = (int)($_SESSION["traveller_id"] ?? 0);
 
 $itineraryId = (int)($_GET["itinerary_id"] ?? 0);
@@ -100,10 +101,10 @@ function computeMatchScore(array $item, array $interests, float $budget): array
 
     // Label
     $label = match(true) {
-        $pct >= 85 => ['Excellent Match', 'success'],
-        $pct >= 70 => ['Good Match',      'primary'],
-        $pct >= 50 => ['Fair Match',      'warning'],
-        default    => ['Low Match',       'danger'],
+        $pct >= 85 => [t('rv.m_excellent'), 'success'],
+        $pct >= 70 => [t('rv.m_good'),      'primary'],
+        $pct >= 50 => [t('rv.m_fair'),      'warning'],
+        default    => [t('rv.m_low'),       'danger'],
     };
 
     return [
@@ -144,6 +145,14 @@ function reviewItemKind(array $item): string
     return 'visit';
 }
 
+/** Label of a stored item type or category (attraction, food, museum ...) in the traveller's language. */
+function reviewTypeLabel(string $type): string
+{
+    $type = strtolower(trim($type));
+    if ($type !== '' && t('opt.itype.' . $type) !== 'opt.itype.' . $type) return t('opt.itype.' . $type);
+    return t_choice('interest', $type !== '' ? $type : 'attraction');
+}
+
 /** "09:30:00" => "09:30", or "" */
 function reviewClock(?string $time): string
 {
@@ -172,11 +181,11 @@ $startDate = $it["start_date"] ?? null;
 $totalNights = max(0, $totalDays - 1);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Review Itinerary - <?php echo htmlspecialchars($it["title"]); ?></title>
+    <title><?php echo te('rv.title'); ?> - <?php echo htmlspecialchars($it["title"]); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <style>
         /* ===== Review page styles ===== */
@@ -702,22 +711,23 @@ $totalNights = max(0, $totalDays - 1);
             <div class="brand-badge">ST</div>
             <div class="brand-title">
                 <strong>Smart Travel Itinerary Generator</strong>
-                <span>Review Itinerary</span>
+                <span><?php echo te('rv.title'); ?></span>
             </div>
         </div>
-        <nav class="nav">
-            <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-            <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-            <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-            <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-            <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-            <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-            <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+        <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+            <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+            <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+            <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+            <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+            <a href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+            <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+            <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
         </nav>
+        <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
         <div class="sidebar-footer">
-            <div class="small">Logged in as:</div>
+            <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
             <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-            <div class="chip">Role: Traveller</div>
+            <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
         </div>
     </aside>
 
@@ -727,28 +737,28 @@ $totalNights = max(0, $totalDays - 1);
         <!-- Review header banner -->
         <div class="review-header">
             <div>
-                <h2>Review Your Generated Itinerary</h2>
-                <p>Check each generated stop before saving the official itinerary. Keep leaves the stop in the plan, Remove deletes it after confirmation, and Replace previews a new database place before saving.</p>
+                <h2><?php echo te('rv.heading'); ?></h2>
+                <p><?php echo te('rv.intro'); ?></p>
             </div>
             <div class="review-summary">
                 <div class="review-pill">
                     <strong><?php echo $totalDays; ?></strong>
-                    <span>Day<?php echo $totalDays > 1 ? 's' : ''; ?></span>
+                    <span><?php echo te($totalDays > 1 ? 'rv.day_many' : 'rv.day_one'); ?></span>
                 </div>
                 <div class="review-pill" style="min-width:180px;">
                     <strong style="font-size:13px; line-height:1.2;"><?php echo htmlspecialchars($it["title"]); ?></strong>
-                    <span>Generated trip</span>
+                    <span><?php echo te('rv.generated'); ?></span>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="toggleAiChat()">AI Chat</button>
+                <button type="button" class="btn btn-primary" onclick="toggleAiChat()"><?php echo te('rv.ai_chat'); ?></button>
             </div>
         </div>
 
         <!-- Legend -->
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; font-size:12px;">
-            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#22c55e;display:inline-block;"></span> Kept</span>
-            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#ef4444;display:inline-block;"></span> Removed after confirm</span>
-            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> Replacement pending</span>
-            <span style="color:#64748b;">Match score = Category (40%) + Budget (30%) + Rating (30%)</span>
+            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#22c55e;display:inline-block;"></span> <?php echo te('rv.kept'); ?></span>
+            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#ef4444;display:inline-block;"></span> <?php echo te('rv.lg_removed'); ?></span>
+            <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#f59e0b;display:inline-block;"></span> <?php echo te('rv.lg_pending'); ?></span>
+            <span style="color:#64748b;"><?php echo te('rv.lg_score'); ?></span>
         </div>
 
         <!-- ===== Day-by-day place review ===== -->
@@ -757,19 +767,19 @@ $totalNights = max(0, $totalDays - 1);
             $dateStr = '';
             if ($startDate) {
                 $ts = strtotime($startDate . ' +' . ($d - 1) . ' days');
-                $dateStr = date('l, d F Y', $ts);
+                $dateStr = i18n_date(date('Y-m-d', $ts), 'long');
             }
         ?>
         <div class="day-section" id="day-section-<?php echo $d; ?>">
             <div class="day-header" style="background:<?php echo $col; ?>12; border-color:<?php echo $col; ?>;">
-                <span style="font-size:20px;">Day</span>
+                <span style="font-size:20px;"><?php echo te('rv.day_one'); ?></span>
                 <div>
-                    <div style="font-weight:900; color:<?php echo $col; ?>; font-size:15px;">Day <?php echo $d; ?></div>
+                    <div style="font-weight:900; color:<?php echo $col; ?>; font-size:15px;"><?php echo te('trip.day', ['n' => $d]); ?></div>
                     <?php if ($dateStr): ?><div style="font-size:12px; color:#64748b;"><?php echo $dateStr; ?></div><?php endif; ?>
                 </div>
                 <?php $visitCount = count(array_filter($items, static fn($i) => reviewItemKind($i) === 'visit')); ?>
                 <div style="margin-left:auto; font-size:12px; color:#64748b;" id="day-<?php echo $d; ?>-count">
-                    <?php echo $visitCount; ?> place<?php echo $visitCount === 1 ? '' : 's'; ?>
+                    <?php echo $visitCount === 1 ? te('rv.place_one') : te('rv.place_many', ['n' => $visitCount]); ?>
                 </div>
             </div>
 
@@ -777,11 +787,11 @@ $totalNights = max(0, $totalDays - 1);
                 $kind = reviewItemKind($item);
                 if ($kind === 'note' || $kind === 'hotel'):
                     $info = extractReasonSelected($item['notes'] ?? '');
-                    if ($info === '') $info = (string)($item['notes'] ?? '');
+                    if ($info === '') $info = i18n_stop_note((string)($item['notes'] ?? ''));
             ?>
             <div class="place-card note-card" data-kind="<?php echo $kind; ?>" data-day="<?php echo $d; ?>">
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <span class="type-badge badge-<?php echo $kind; ?>"><?php echo $kind === 'hotel' ? 'Hotel' : 'Note'; ?></span>
+                    <span class="type-badge badge-<?php echo $kind; ?>"><?php echo $kind === 'hotel' ? te('rv.badge_hotel') : te('rv.badge_note'); ?></span>
                     <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
                 </div>
                 <?php if ($info !== ''): ?>
@@ -792,7 +802,7 @@ $totalNights = max(0, $totalDays - 1);
                     continue;
                 endif;
                 if ($kind === 'meal'):
-                    $slotLabel = ucfirst((string)$item['meal_slot']);
+                    $slotLabel = t_choice('itype', (string)$item['meal_slot']);
                     $mealFrom = reviewClock($item['start_time'] ?? null);
                     $mealTo = reviewClock($item['end_time'] ?? null);
             ?>
@@ -811,24 +821,24 @@ $totalNights = max(0, $totalDays - 1);
                             <span class="type-badge badge-food"><?php echo htmlspecialchars($slotLabel); ?></span>
                             <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
                         </div>
-                        <div class="place-meta place-time" style="margin-top:3px;"><?php if ($mealFrom !== ''): ?>Planned <?php echo $mealFrom . '-' . $mealTo; ?><?php endif; ?></div>
+                        <div class="place-meta place-time" style="margin-top:3px;"><?php if ($mealFrom !== ''): ?><?php echo te('rv.planned', ['from' => $mealFrom, 'to' => $mealTo]); ?><?php endif; ?></div>
                         <div class="place-meta place-meta-main">
                             <?php if ((int)($item['place_id'] ?? 0) > 0): ?>
-                                <?php if (!empty($item['state'])): ?>Location: <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?> &middot; <?php endif; ?>
-                                <?php if (!empty($item['opening_hours'])): ?>Hours: <?php echo htmlspecialchars($item['opening_hours']); ?> &middot; <?php endif; ?>
+                                <?php if (!empty($item['state'])): ?><?php echo te('iv.location'); ?> <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?> &middot; <?php endif; ?>
+                                <?php if (!empty($item['opening_hours'])): ?><?php echo te('iv.hours'); ?> <?php echo htmlspecialchars($item['opening_hours']); ?> &middot; <?php endif; ?>
                             <?php else: ?>
-                                A break without a set place &middot;
+                                <?php echo te('edit.meal_break'); ?> &middot;
                             <?php endif; ?>
-                            Part of the daily meal estimate
+                            <?php echo te('rv.in_meal'); ?>
                         </div>
                         <?php $mealReason = extractReasonSelected($item['notes'] ?? ''); ?>
                         <?php if ($mealReason !== ''): ?>
-                        <div class="place-meta" style="margin-top:4px;"><strong>Why here:</strong> <?php echo htmlspecialchars($mealReason); ?></div>
+                        <div class="place-meta" style="margin-top:4px;"><strong><?php echo te('rv.why_here'); ?></strong> <?php echo htmlspecialchars($mealReason); ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="place-actions">
-                        <button type="button" class="btn-replace" style="grid-column:3;" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
-                        <span class="review-status" id="status-<?php echo (int)$item['item_id']; ?>"><?php echo htmlspecialchars($slotLabel); ?> planned</span>
+                        <button type="button" class="btn-replace" style="grid-column:3;" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>"><?php echo te('edit.replace'); ?></button>
+                        <span class="review-status" id="status-<?php echo (int)$item['item_id']; ?>"><?php echo te('rv.slot_planned', ['slot' => $slotLabel]); ?></span>
                     </div>
                 </div>
                 <div class="replacement-result" id="replacement-<?php echo (int)$item['item_id']; ?>"></div>
@@ -860,38 +870,38 @@ $totalNights = max(0, $totalDays - 1);
                     <div style="flex:1;">
                         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                             <span class="type-badge <?php echo htmlspecialchars($typeClass); ?>">
-                                <?php echo htmlspecialchars(ucfirst($item['item_type'] ?? 'attraction')); ?>
+                                <?php echo htmlspecialchars(reviewTypeLabel((string)($item['item_type'] ?? 'attraction'))); ?>
                             </span>
                             <span class="place-title"><?php echo htmlspecialchars($item['item_title']); ?></span>
                         </div>
                         <?php $visitFrom = reviewClock($item['start_time'] ?? null); $visitTo = reviewClock($item['end_time'] ?? null); ?>
-                        <div class="place-meta place-time" style="margin-top:3px;"><?php if ($visitFrom !== ''): ?>Planned <?php echo $visitFrom . '-' . $visitTo; ?><?php endif; ?></div>
+                        <div class="place-meta place-time" style="margin-top:3px;"><?php if ($visitFrom !== ''): ?><?php echo te('rv.planned', ['from' => $visitFrom, 'to' => $visitTo]); ?><?php endif; ?></div>
                         <div class="place-meta place-meta-main">
                             <?php if (!empty($item['state'])): ?>
-                                Location: <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
+                                <?php echo te('iv.location'); ?> <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
                             <?php endif; ?>
                             <?php if (!empty($item['opening_hours'])): ?>
-                                &middot; Hours: <?php echo htmlspecialchars($item['opening_hours']); ?>
+                                &middot; <?php echo te('iv.hours'); ?> <?php echo htmlspecialchars($item['opening_hours']); ?>
                             <?php endif; ?>
                             <?php if ((float)$item['estimated_cost'] > 0): ?>
                                 &middot; RM <?php echo number_format((float)$item['estimated_cost'], 2); ?>
                             <?php else: ?>
-                                &middot; <span style="color:#16a34a; font-weight:700;">Free</span>
+                                &middot; <span style="color:#16a34a; font-weight:700;"><?php echo te('iv.free'); ?></span>
                             <?php endif; ?>
                         </div>
                         <?php if (!empty($item['address'])): ?>
-                        <div class="place-meta" style="margin-top:2px;">Address: <?php echo htmlspecialchars($item['address']); ?></div>
+                        <div class="place-meta" style="margin-top:2px;"><?php echo te('pdf.address'); ?> <?php echo htmlspecialchars($item['address']); ?></div>
                         <?php endif; ?>
                         <?php $reasonSelected = extractReasonSelected($item['notes'] ?? ''); ?>
                         <?php if ($reasonSelected !== ''): ?>
-                        <div class="place-meta" style="margin-top:4px;"><strong>Reason Selected:</strong> <?php echo htmlspecialchars($reasonSelected); ?></div>
+                        <div class="place-meta" style="margin-top:4px;"><strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars($reasonSelected); ?></div>
                         <?php endif; ?>
                     </div>
                     <div class="place-actions">
-                        <button type="button" class="btn-accept" onclick="acceptPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-accept-<?php echo (int)$item['item_id']; ?>">Keep</button>
-                        <button type="button" class="btn-reject" onclick="rejectPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-reject-<?php echo (int)$item['item_id']; ?>">Remove</button>
-                        <button type="button" class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>">Replace</button>
-                        <span class="review-status" id="status-<?php echo (int)$item['item_id']; ?>">Kept</span>
+                        <button type="button" class="btn-accept" onclick="acceptPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-accept-<?php echo (int)$item['item_id']; ?>"><?php echo te('rv.keep'); ?></button>
+                        <button type="button" class="btn-reject" onclick="rejectPlace(<?php echo (int)$item['item_id']; ?>)" id="btn-reject-<?php echo (int)$item['item_id']; ?>"><?php echo te('edit.remove'); ?></button>
+                        <button type="button" class="btn-replace" onclick="replacePlace(<?php echo (int)$item['item_id']; ?>)" id="btn-replace-<?php echo (int)$item['item_id']; ?>"><?php echo te('edit.replace'); ?></button>
+                        <span class="review-status" id="status-<?php echo (int)$item['item_id']; ?>"><?php echo te('rv.kept'); ?></span>
                     </div>
                 </div>
 
@@ -900,16 +910,16 @@ $totalNights = max(0, $totalDays - 1);
                     <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px; flex-wrap:wrap;">
                         <span class="match-badge badge-<?php echo $score['color']; ?>"><?php echo $score['label']; ?></span>
                         <span class="match-main-pct" style="font-size:13px; font-weight:900; color:<?php echo $barColor; ?>;"><?php echo $score['pct']; ?>%</span>
-                        <span style="font-size:11px; color:#94a3b8;">match</span>
+                        <span style="font-size:11px; color:#94a3b8;"><?php echo te('rv.match_word'); ?></span>
                         <button onclick="toggleBreakdown(<?php echo (int)$item['item_id']; ?>)"
                                 style="background:none; border:none; font-size:11px; color:#6366f1; cursor:pointer; text-decoration:underline;">
-                            details
+                            <?php echo te('rv.details'); ?>
                         </button>
                     </div>
 
                     <!-- Overall bar -->
                     <div class="match-bar-row">
-                        <span class="match-bar-label">Overall</span>
+                        <span class="match-bar-label"><?php echo te('rv.overall'); ?></span>
                         <div class="match-bar-track">
                             <div class="match-bar-fill match-overall-fill" style="width:<?php echo $score['pct']; ?>%; background:<?php echo $barColor; ?>;"></div>
                         </div>
@@ -919,30 +929,30 @@ $totalNights = max(0, $totalDays - 1);
                     <!-- Breakdown (hidden by default) -->
                     <div class="score-breakdown" id="breakdown-<?php echo (int)$item['item_id']; ?>">
                         <div class="match-bar-row">
-                            <span class="match-bar-label">Category (40%)</span>
+                            <span class="match-bar-label"><?php echo te('rv.bar_category'); ?></span>
                             <div class="match-bar-track">
                                 <div class="match-bar-fill" style="width:<?php echo $score['cat_score']; ?>%; background:#6366f1;"></div>
                             </div>
                             <span class="match-bar-pct"><?php echo $score['cat_score']; ?>%</span>
                         </div>
                         <div class="match-bar-row">
-                            <span class="match-bar-label">Budget (30%)</span>
+                            <span class="match-bar-label"><?php echo te('rv.bar_budget'); ?></span>
                             <div class="match-bar-track">
                                 <div class="match-bar-fill" style="width:<?php echo $score['budget_score']; ?>%; background:#22c55e;"></div>
                             </div>
                             <span class="match-bar-pct"><?php echo $score['budget_score']; ?>%</span>
                         </div>
                         <div class="match-bar-row">
-                            <span class="match-bar-label">Rating (30%)</span>
+                            <span class="match-bar-label"><?php echo te('rv.bar_rating'); ?></span>
                             <div class="match-bar-track">
                                 <div class="match-bar-fill" style="width:<?php echo $score['rating_score']; ?>%; background:#f59e0b;"></div>
                             </div>
                             <span class="match-bar-pct"><?php echo $score['rating_score']; ?>%</span>
                         </div>
                         <div style="margin-top:6px; color:#64748b;">
-                            Category: <strong><?php echo htmlspecialchars(ucfirst($item['category'] ?? $item['item_type'] ?? 'N/A')); ?></strong>
-                            &middot; Cost: <strong>RM <?php echo number_format((float)$item['estimated_cost'], 2); ?></strong>
-                            &middot; Rating: <strong><?php echo $item['rating'] > 0 ? number_format((float)$item['rating'], 1) . '/5' : 'N/A'; ?></strong>
+                            <?php echo te('rv.d_category'); ?> <strong><?php echo htmlspecialchars(reviewTypeLabel((string)($item['category'] ?? $item['item_type'] ?? 'attraction'))); ?></strong>
+                            &middot; <?php echo te('rv.d_cost'); ?> <strong>RM <?php echo number_format((float)$item['estimated_cost'], 2); ?></strong>
+                            &middot; <?php echo te('rv.d_rating'); ?> <strong><?php echo $item['rating'] > 0 ? number_format((float)$item['rating'], 1) . '/5' : te('rv.na'); ?></strong>
                         </div>
                     </div>
                 </div>
@@ -958,8 +968,8 @@ $totalNights = max(0, $totalDays - 1);
         <div class="card optional-hotel-card" data-native-hotel-review="1">
             <div class="hotel-toolbar">
                 <div>
-                    <h3 style="margin:0 0 6px;">Optional Hotel Suggestions</h3>
-                    <p class="meta" style="margin:0;">Hotels are loaded only when requested. Suggestions come from OpenStreetMap listings near the last stop you keep for each day; prices are planning estimates.</p>
+                    <h3 style="margin:0 0 6px;"><?php echo te('rv.hotels_title'); ?></h3>
+                    <p class="meta" style="margin:0;"><?php echo te('rv.hotels_intro'); ?></p>
                 </div>
             </div>
 
@@ -968,14 +978,14 @@ $totalNights = max(0, $totalDays - 1);
                 <div class="hotel-night-panel">
                     <div class="hotel-night-head">
                         <div>
-                            <div class="hotel-night-title">No overnight hotel required</div>
+                            <div class="hotel-night-title"><?php echo te('rv.no_overnight'); ?></div>
                             <div class="hotel-night-meta">
-                                This itinerary has only one day. You can still browse nearby accommodation around the final stop, but it will not be saved as an overnight itinerary item.
+                                <?php echo te('rv.one_day_note'); ?>
                             </div>
                         </div>
                         <?php if ($lastOneDayStop): ?>
                         <div class="hotel-night-actions">
-                            <button type="button" class="btn btn-ghost" id="hotel-toggle-night-0" onclick="toggleNightHotels(0, 1, false)">Browse nearby hotels</button>
+                            <button type="button" class="btn btn-ghost" id="hotel-toggle-night-0" onclick="toggleNightHotels(0, 1, false)"><?php echo te('rv.browse_hotels'); ?></button>
                         </div>
                         <?php endif; ?>
                     </div>
@@ -984,20 +994,19 @@ $totalNights = max(0, $totalDays - 1);
             <?php else: ?>
                 <?php for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++):
                     $stop = reviewLastSchedulableStop($days[$nightNo] ?? []);
-                    $stopTitle = $stop ? (string)$stop['item_title'] : "Day {$nightNo} final kept stop";
+                    $stopTitle = $stop ? (string)$stop['item_title'] : t('rv.final_stop', ['day' => $nightNo]);
                 ?>
                 <div class="hotel-night-panel" id="hotel-night-<?php echo $nightNo; ?>" data-night="<?php echo $nightNo; ?>" data-day="<?php echo $nightNo; ?>">
                     <div class="hotel-night-head">
                         <div>
-                            <div class="hotel-night-title">Night <?php echo $nightNo; ?> - after Day <?php echo $nightNo; ?></div>
+                            <div class="hotel-night-title"><?php echo te('rv.night_title', ['n' => $nightNo]); ?></div>
                             <div class="hotel-night-meta">
-                                Suggested near: <strong><?php echo htmlspecialchars($stopTitle); ?></strong>.
-                                Selection is optional and saved only after Confirm.
+                                <?php echo strtr(te('rv.night_meta'), ['{stop}' => '<strong>' . htmlspecialchars($stopTitle) . '</strong>']); ?>
                             </div>
                         </div>
                         <div class="hotel-night-actions">
-                            <button type="button" class="btn btn-ghost" id="hotel-toggle-night-<?php echo $nightNo; ?>" onclick="toggleNightHotels(<?php echo $nightNo; ?>, <?php echo $nightNo; ?>, true)">Load Nearby Hotels</button>
-                            <button type="button" class="btn btn-ghost" onclick="skipHotelNight(<?php echo $nightNo; ?>)">Skip</button>
+                            <button type="button" class="btn btn-ghost" id="hotel-toggle-night-<?php echo $nightNo; ?>" onclick="toggleNightHotels(<?php echo $nightNo; ?>, <?php echo $nightNo; ?>, true)"><?php echo te('rv.load_hotels'); ?></button>
+                            <button type="button" class="btn btn-ghost" onclick="skipHotelNight(<?php echo $nightNo; ?>)"><?php echo te('rv.skip'); ?></button>
                         </div>
                     </div>
                     <div class="hotel-results" id="hotel-results-night-<?php echo $nightNo; ?>"></div>
@@ -1007,26 +1016,26 @@ $totalNights = max(0, $totalDays - 1);
         </div>
 
         <div class="review-refused" id="review-refused" role="status" aria-live="polite">
-            <strong>Some changes were not saved, because they would break a rule of your trip:</strong>
+            <strong><?php echo te('rv.refused_head'); ?></strong>
             <ul id="review-refused-list"></ul>
-            <div>Everything else was saved, and the times of the changed days were planned again.</div>
+            <div><?php echo te('rv.refused_tail'); ?></div>
             <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap;">
-                <a href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>" class="btn btn-primary">View Trip</a>
-                <a href="itinerary_review.php?itinerary_id=<?php echo $itineraryId; ?>" class="btn btn-ghost">Review Again</a>
+                <a href="itinerary_view.php?itinerary_id=<?php echo $itineraryId; ?>" class="btn btn-primary"><?php echo te('rv.view_trip'); ?></a>
+                <a href="itinerary_review.php?itinerary_id=<?php echo $itineraryId; ?>" class="btn btn-ghost"><?php echo te('rv.review_again'); ?></a>
             </div>
         </div>
 
         <div class="confirm-bar">
             <div class="confirm-stats">
-                <strong id="stat-accepted">0</strong> kept &middot;
-                <strong id="stat-rejected">0</strong> removed &middot;
-                <strong id="stat-replaced">0</strong> replacement pending &middot;
-                Hotel nights: <strong id="stat-hotel">None</strong>
+                <strong id="stat-accepted">0</strong> <?php echo te('rv.stat_kept'); ?> &middot;
+                <strong id="stat-rejected">0</strong> <?php echo te('rv.stat_removed'); ?> &middot;
+                <strong id="stat-replaced">0</strong> <?php echo te('rv.stat_pending'); ?> &middot;
+                <?php echo te('rv.stat_hotel'); ?> <strong id="stat-hotel"><?php echo te('rv.none'); ?></strong>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <a href="my_itineraries.php" class="btn btn-ghost">Back to My Itineraries</a>
-                <button type="button" class="btn btn-ghost" onclick="resetAll()">Reset All</button>
-                <button type="button" class="btn btn-primary" id="btn-confirm" onclick="confirmReview()">Confirm &amp; View Trip</button>
+                <a href="my_itineraries.php" class="btn btn-ghost"><?php echo te('rv.back_trips'); ?></a>
+                <button type="button" class="btn btn-ghost" onclick="resetAll()"><?php echo te('rv.reset_all'); ?></button>
+                <button type="button" class="btn btn-primary" id="btn-confirm" onclick="confirmReview()"><?php echo te('rv.confirm_view'); ?></button>
             </div>
         </div>
 
@@ -1035,25 +1044,42 @@ $totalNights = max(0, $totalDays - 1);
 
 </div><!-- /app -->
 
-<button type="button" class="ai-chat-fab" onclick="toggleAiChat()">AI Assistant</button>
+<button type="button" class="ai-chat-fab" onclick="toggleAiChat()"><?php echo te('trip.ai_fab'); ?></button>
 <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite">
     <div class="ai-chat-header">
         <div>
-            <div class="ai-chat-title">AI Chatbot</div>
-            <div class="ai-chat-subtitle">Ask the travel assistant before confirming this itinerary.</div>
+            <div class="ai-chat-title"><?php echo te('rv.ai_title'); ?></div>
+            <div class="ai-chat-subtitle"><?php echo te('rv.ai_sub'); ?></div>
         </div>
-        <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
+        <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="<?php echo te('trip.ai_close'); ?>">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot">Hi, I am your travel assistant. Ask me about this generated itinerary, route order, budget, hotel choice, or places to replace before you confirm.</div>
+        <div class="ai-msg bot"><?php echo te('rv.ai_hello'); ?></div>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
-        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
-        <button type="submit">Send</button>
+        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="<?php echo te('trip.ai_placeholder'); ?>">
+        <button type="submit"><?php echo te('trip.ai_send'); ?></button>
     </form>
 </div>
 
 <script>
+// ---- Texts of this page, in the page's language ----
+const RV = <?php echo i18n_js([
+    'rv.kept', 'rv.repl_kept', 'rv.repl_kept_note', 'rv.lg_removed', 'rv.lg_pending', 'rv.finding', 'rv.finding_btn', 'edit.replace', 'edit.remove',
+    'rv.planned', 'rv.planned_reset', 'iv.hours', 'rv.in_meal', 'edit.meal_break', 'iv.free', 'rv.why_label', 'rv.match_word', 'rv.pending_note',
+    'rv.keep_repl', 'rv.keep_orig', 'rv.try_another', 'rv.last_meal', 'rv.last_stop', 'rv.warning', 'rv.no_repl', 'rv.still_pending', 'rv.err_network',
+    'rv.planned_word', 'rv.fallback_repl', 'rv.fallback_final', 'rv.show_results', 'rv.hide_results', 'rv.loading_hotels', 'rv.no_final_stop',
+    'rv.try_again', 'rv.looking_hotels', 'rv.hotels_failed', 'rv.no_hotels', 'rv.hotels_loaded', 'trip.star', 'trip.km_away', 'rv.unnamed_hotel',
+    'rv.price_about', 'rv.price_none', 'rv.price_source', 'rv.selected_night', 'rv.select_night', 'trip.map', 'rv.website', 'trip.check_price',
+    'trip.check_price_title', 'opt.hotelkind.hotel', 'rv.hotel_read_failed', 'rv.hotel_skipped', 'rv.browse_hotels', 'rv.load_hotels', 'rv.none',
+    'rv.n_selected', 'rv.saving', 'rv.keep_one', 'trip.day', 'rv.refused_hotel_night', 'rv.refused_hotels', 'rv.refused_remove', 'rv.refused_replace',
+    'rv.a_stop', 'rv.not_allowed', 'rv.saved', 'rv.error_prefix', 'rv.save_failed', 'rv.confirm_view', 'rv.writing', 'rv.ai_failed',]); ?>;
+function rt(key, vars) {
+    let text = RV[key] || key;
+    Object.keys(vars || {}).forEach(name => { text = text.split('{' + name + '}').join(String(vars[name])); });
+    return text;
+}
+
 // ---- State ----
 const ITINERARY_ID = <?php echo $itineraryId; ?>;
 const TOTAL_NIGHTS = <?php echo (int)$totalNights; ?>;
@@ -1093,10 +1119,10 @@ function acceptPlace(itemId) {
     card.dataset.status = 'accepted';
     if (card.dataset.kind === 'visit') itemStatus[itemId] = 'accepted';
     const status = document.getElementById('status-' + itemId);
-    if (status) status.textContent = replacementMap[itemId] ? '✔ Replacement kept' : '✔ Kept';
+    if (status) status.textContent = '✔ ' + rt(replacementMap[itemId] ? 'rv.repl_kept' : 'rv.kept');
     const replacement = document.getElementById('replacement-' + itemId);
     if (replacementMap[itemId] && replacement && replacement.classList.contains('visible')) {
-        replacement.innerHTML = '<span class="pending-change-note kept-note">✔ Replacement kept. It is saved when you confirm the itinerary.</span>';
+        replacement.innerHTML = '<span class="pending-change-note kept-note">✔ ' + escHtml(rt('rv.repl_kept_note')) + '</span>';
     }
     updateStats();
 }
@@ -1111,7 +1137,7 @@ function rejectPlace(itemId) {
     itemStatus[itemId] = 'rejected';
     delete replacementMap[itemId];
     const status = document.getElementById('status-' + itemId);
-    if (status) status.textContent = 'Removed after confirm';
+    if (status) status.textContent = rt('rv.lg_removed');
     // Hide replacement result if shown
     const rep = document.getElementById('replacement-' + itemId);
     if (rep) { rep.classList.remove('visible'); rep.innerHTML = ''; }
@@ -1140,9 +1166,9 @@ async function replacePlace(itemId, next = false) {
     card.classList.remove('accepted', 'rejected', 'replacement-pending', 'kept');
     card.dataset.status = 'replacing';
     const status = document.getElementById('status-' + itemId);
-    if (status) status.textContent = 'Finding replacement...';
+    if (status) status.textContent = rt('rv.finding');
     btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span> Finding...';
+    btn.innerHTML = '<span class="spinner"></span> ' + escHtml(rt('rv.finding_btn'));
     rep.innerHTML = '';
     rep.classList.remove('visible');
 
@@ -1189,21 +1215,21 @@ async function replacePlace(itemId, next = false) {
                 card.dataset.category = data.new_category || card.dataset.category;
             }
             const timeEl = card.querySelector('.place-time');
-            if (timeEl) timeEl.textContent = data.new_start ? 'Planned ' + data.new_start + '-' + data.new_end + ' (times are set again when you confirm)' : '';
+            if (timeEl) timeEl.textContent = data.new_start ? rt('rv.planned_reset', { from: data.new_start, to: data.new_end }) : '';
 
             const metaMain = card.querySelector('.place-meta-main');
             if (metaMain) {
                 const location = [data.new_district, data.new_state].filter(Boolean).join(', ');
-                const opening = data.new_opening_hours ? ' | Hours: ' + data.new_opening_hours : '';
+                const opening = data.new_opening_hours ? ' | ' + rt('iv.hours') + ' ' + data.new_opening_hours : '';
                 const costText = isMeal
-                    ? (Number(data.place_id) > 0 ? ' | Part of the daily meal estimate' : 'A break without a set place | Part of the daily meal estimate')
-                    : (parseFloat(data.new_cost || 0) > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free');
+                    ? (Number(data.place_id) > 0 ? ' | ' + rt('rv.in_meal') : rt('edit.meal_break') + ' | ' + rt('rv.in_meal'))
+                    : (parseFloat(data.new_cost || 0) > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | ' + rt('iv.free'));
                 metaMain.textContent = [location, opening, costText].filter(Boolean).join('');
             }
             if (!isMeal) {
                 const badge = card.querySelector('.type-badge');
                 if (badge && data.new_item_type) {
-                    badge.textContent = data.new_item_type.charAt(0).toUpperCase() + data.new_item_type.slice(1);
+                    badge.textContent = data.new_item_label || (data.new_item_type.charAt(0).toUpperCase() + data.new_item_type.slice(1));
                     badge.className = 'type-badge badge-' + data.new_item_type;
                 }
                 updateCardMatch(card, data);
@@ -1213,26 +1239,26 @@ async function replacePlace(itemId, next = false) {
             const matchLine = isMeal ? '' : `
                 <div style="margin-top:8px; display:flex; align-items:center; gap:8px;">
                     <span class="match-badge badge-${data.match_color}">${data.match_label}</span>
-                    <span style="font-weight:900; font-size:13px;">${data.match_pct}% match</span>
+                    <span style="font-weight:900; font-size:13px;">${data.match_pct}% ${escHtml(rt('rv.match_word'))}</span>
                 </div>`;
             rep.innerHTML = `
-                <div style="font-weight:800; color:#d97706; margin-bottom:4px;">Replacement pending</div>
+                <div style="font-weight:800; color:#d97706; margin-bottom:4px;">${escHtml(rt('rv.lg_pending'))}</div>
                 <div style="font-weight:700;">${escHtml(data.new_title)}</div>
                 <div style="font-size:11px; color:#64748b; margin-top:3px;">
-                    ${data.new_start ? 'Planned ' + escHtml(data.new_start) + '-' + escHtml(data.new_end) : ''}
+                    ${data.new_start ? escHtml(rt('rv.planned', { from: data.new_start, to: data.new_end })) : ''}
                     ${data.new_state ? ' | ' + escHtml(data.new_state) : ''}
-                    ${isMeal ? '' : (data.new_cost > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | Free')}
+                    ${isMeal ? '' : (data.new_cost > 0 ? ' | RM ' + parseFloat(data.new_cost).toFixed(2) : ' | ' + escHtml(rt('iv.free')))}
                 </div>
-                ${why ? `<div style="font-size:11px; color:#64748b; margin-top:3px;">Why: ${why}</div>` : ''}
+                ${why ? `<div style="font-size:11px; color:#64748b; margin-top:3px;">${escHtml(rt('rv.why_label'))} ${why}</div>` : ''}
                 ${matchLine}
-                <span class="pending-change-note">Pending: saved only after Confirm, when the rules of your trip are checked again</span>
+                <span class="pending-change-note">${escHtml(rt('rv.pending_note'))}</span>
                 <div style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;">
-                    <button type="button" class="btn-accept" onclick="acceptPlace(${itemId})">Keep Replacement</button>
-                    ${isMeal ? `<button type="button" class="btn-reject" onclick="undoReplacement(${itemId})">Keep Original</button>`
-                             : `<button type="button" class="btn-reject" onclick="rejectPlace(${itemId})">Remove</button>`}
-                    ${data.more ? `<button type="button" class="btn-replace" onclick="replacePlace(${itemId}, true)">Try Another</button>` : ''}
+                    <button type="button" class="btn-accept" onclick="acceptPlace(${itemId})">${escHtml(rt('rv.keep_repl'))}</button>
+                    ${isMeal ? `<button type="button" class="btn-reject" onclick="undoReplacement(${itemId})">${escHtml(rt('rv.keep_orig'))}</button>`
+                             : `<button type="button" class="btn-reject" onclick="rejectPlace(${itemId})">${escHtml(rt('edit.remove'))}</button>`}
+                    ${data.more ? `<button type="button" class="btn-replace" onclick="replacePlace(${itemId}, true)">${escHtml(rt('rv.try_another'))}</button>` : ''}
                 </div>
-                ${data.more ? '' : '<div style="font-size:11px; color:#64748b; margin-top:6px;">This is the last option that fits this ' + (isMeal ? 'meal' : 'stop') + '.</div>'}
+                ${data.more ? '' : '<div style="font-size:11px; color:#64748b; margin-top:6px;">' + escHtml(rt(isMeal ? 'rv.last_meal' : 'rv.last_stop')) + '</div>'}
             `;
             rep.classList.add('visible');
 
@@ -1240,27 +1266,27 @@ async function replacePlace(itemId, next = false) {
             card.classList.add('accepted', 'replacement-pending');
             card.dataset.status = 'accepted';
             if (!isMeal) itemStatus[itemId] = 'accepted';
-            if (status) status.textContent = 'Replacement pending';
+            if (status) status.textContent = rt('rv.lg_pending');
         } else {
             delete replaceOffsets[itemId];
-            rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: ' + escHtml(data.message || 'No replacement found.') + '</div>';
+            rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">' + escHtml(rt('rv.warning')) + ' ' + escHtml(data.message || rt('rv.no_repl')) + '</div>';
             rep.classList.add('visible');
             if (replacementMap[itemId]) {
                 card.classList.add('replacement-pending');
-                settle('Replacement pending');
-                rep.innerHTML += '<span class="pending-change-note">The replacement shown above is still pending.</span>';
+                settle(rt('rv.lg_pending'));
+                rep.innerHTML += '<span class="pending-change-note">' + escHtml(rt('rv.still_pending')) + '</span>';
             } else {
-                settle(isMeal ? 'Planned' : 'Kept');
+                settle(rt(isMeal ? 'rv.planned_word' : 'rv.kept'));
             }
         }
     } catch(e) {
-        rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">Warning: Network error. Please try again.</div>';
+        rep.innerHTML = '<div style="color:#ef4444; font-weight:700;">' + escHtml(rt('rv.warning')) + ' ' + escHtml(rt('rv.err_network')) + '</div>';
         rep.classList.add('visible');
-        settle(replacementMap[itemId] ? 'Replacement pending' : (isMeal ? 'Planned' : 'Kept'));
+        settle(replacementMap[itemId] ? rt('rv.lg_pending') : rt(isMeal ? 'rv.planned_word' : 'rv.kept'));
     }
 
     btn.disabled = false;
-    btn.innerHTML = 'Replace';
+    btn.textContent = rt('edit.replace');
     updateStats();
 }
 
@@ -1293,13 +1319,13 @@ function currentLastKeptStopForDay(dayNo) {
         return {
             itemId: 0,
             placeId: parseInt(replacementMap[itemId].place_id || '0', 10),
-            title: replacementMap[itemId].title || last.querySelector('.place-title')?.textContent?.trim() || 'replacement stop',
+            title: replacementMap[itemId].title || last.querySelector('.place-title')?.textContent?.trim() || rt('rv.fallback_repl'),
         };
     }
     return {
         itemId,
         placeId: parseInt(last.dataset.placeId || '0', 10),
-        title: last.dataset.title || last.querySelector('.place-title')?.textContent?.trim() || 'final stop',
+        title: last.dataset.title || last.querySelector('.place-title')?.textContent?.trim() || rt('rv.fallback_final'),
     };
 }
 
@@ -1320,12 +1346,12 @@ function toggleNightHotels(nightNo, dayNo, allowSelect) {
     const state = hotelResultState[nightNo] || {};
     if (state.loaded && target.classList.contains('open')) {
         target.classList.remove('open');
-        setHotelToggleLabel(nightNo, 'Show results');
+        setHotelToggleLabel(nightNo, rt('rv.show_results'));
         return;
     }
     if (state.loaded) {
         target.classList.add('open');
-        setHotelToggleLabel(nightNo, 'Hide results');
+        setHotelToggleLabel(nightNo, rt('rv.hide_results'));
         return;
     }
     loadNightHotels(nightNo, dayNo, allowSelect);
@@ -1337,15 +1363,15 @@ async function loadNightHotels(nightNo, dayNo, allowSelect) {
 
     const stop = currentLastKeptStopForDay(dayNo);
     target.classList.add('open');
-    setHotelToggleLabel(nightNo, 'Loading hotels...', true);
+    setHotelToggleLabel(nightNo, rt('rv.loading_hotels'), true);
     if (!stop || (!stop.itemId && !stop.placeId)) {
-        target.innerHTML = '<div class="hotel-message">No kept final stop is available for this day. Keep at least one place first.</div>';
+        target.innerHTML = '<div class="hotel-message">' + escHtml(rt('rv.no_final_stop')) + '</div>';
         hotelResultState[nightNo] = { loaded: false, dayNo, allowSelect };
-        setHotelToggleLabel(nightNo, 'Try again');
+        setHotelToggleLabel(nightNo, rt('rv.try_again'));
         return;
     }
 
-    target.innerHTML = '<div class="hotel-message"><span class="spinner" style="border-color:rgba(15,23,42,.22);border-top-color:#0f172a;"></span> Looking for places to stay nearby...</div>';
+    target.innerHTML = '<div class="hotel-message"><span class="spinner" style="border-color:rgba(15,23,42,.22);border-top-color:#0f172a;"></span> ' + escHtml(rt('rv.looking_hotels')) + '</div>';
 
     try {
         const params = new URLSearchParams({
@@ -1357,11 +1383,11 @@ async function loadNightHotels(nightNo, dayNo, allowSelect) {
         const data = await parseJsonResponse(resp);
         renderNightHotels(nightNo, data, allowSelect);
         hotelResultState[nightNo] = { loaded: data.status === 'success', dayNo, allowSelect };
-        setHotelToggleLabel(nightNo, data.status === 'success' ? 'Hide results' : 'Try again');
+        setHotelToggleLabel(nightNo, data.status === 'success' ? rt('rv.hide_results') : rt('rv.try_again'));
     } catch (e) {
-        target.innerHTML = '<div class="hotel-message" style="color:#b91c1c;">Hotel suggestions could not be loaded. Please try again.</div>';
+        target.innerHTML = '<div class="hotel-message" style="color:#b91c1c;">' + escHtml(rt('rv.hotels_failed')) + '</div>';
         hotelResultState[nightNo] = { loaded: false, dayNo, allowSelect };
-        setHotelToggleLabel(nightNo, 'Try again');
+        setHotelToggleLabel(nightNo, rt('rv.try_again'));
     }
     const btn = hotelToggleButton(nightNo);
     if (btn) btn.disabled = false;
@@ -1375,35 +1401,35 @@ function renderNightHotels(nightNo, data, allowSelect) {
 
     const hotels = Array.isArray(data.hotels) ? data.hotels : [];
     if (data.status !== 'success' || hotels.length === 0) {
-        target.innerHTML = '<div class="hotel-message">' + escHtml(data.message || 'No places to stay were found near this stop.') + '</div>';
+        target.innerHTML = '<div class="hotel-message">' + escHtml(data.message || rt('rv.no_hotels')) + '</div>';
         return;
     }
 
-    let html = '<div class="hotel-message">' + escHtml(data.message || 'Hotel suggestions loaded.') + '</div><div class="hotel-grid">';
+    let html = '<div class="hotel-message">' + escHtml(data.message || rt('rv.hotels_loaded')) + '</div><div class="hotel-grid">';
     hotels.forEach((hotel, idx) => {
         const hotelId = Number(hotel.hotel_id || 0);
         const selected = hotelSelections[nightNo] && Number(hotelSelections[nightNo].hotel_id || 0) === hotelId;
         const price = Number(hotel.price_per_night || 0);
         const distance = hotel.distance_km !== undefined && hotel.distance_km !== null ? Number(hotel.distance_km) : null;
         const details = [
-            (hotel.kind_label || 'Hotel') + (hotel.stars ? ', ' + Number(hotel.stars) + '-star' : ''),
+            (hotel.kind_label || rt('opt.hotelkind.hotel')) + (hotel.stars ? ', ' + rt('trip.star', { n: Number(hotel.stars) }) : ''),
             hotel.address || '',
-            distance !== null && !Number.isNaN(distance) ? distance.toFixed(1) + ' km away' : '',
+            distance !== null && !Number.isNaN(distance) ? rt('trip.km_away', { n: distance.toFixed(1) }) : '',
         ].filter(Boolean).join(' | ');
         const payload = escHtml(JSON.stringify(hotel));
 
         html += `
             <div class="hotel-result-card ${selected ? 'selected' : ''}" id="hotel-night-${nightNo}-card-${idx}">
-                <div class="hotel-name-rv">${escHtml(hotel.name || 'Unnamed hotel')}</div>
+                <div class="hotel-name-rv">${escHtml(hotel.name || rt('rv.unnamed_hotel'))}</div>
                 <div class="hotel-meta-rv">${escHtml(details)}</div>
-                <div class="hotel-price-rv">${price > 0 ? 'About RM ' + price.toFixed(0) + ' / night' : 'Price not available'}</div>
-                <span class="hotel-price-source">Planning estimate</span>
-                ${selected ? '<span class="hotel-selected-note">Selected for this night</span>' : ''}
+                <div class="hotel-price-rv">${escHtml(price > 0 ? rt('rv.price_about', { n: price.toFixed(0) }) : rt('rv.price_none'))}</div>
+                <span class="hotel-price-source">${escHtml(rt('rv.price_source'))}</span>
+                ${selected ? '<span class="hotel-selected-note">' + escHtml(rt('rv.selected_night')) + '</span>' : ''}
                 <div class="hotel-card-actions">
-                    ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">Select for Night ${nightNo}</button>` : ''}
-                    ${hotel.map_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.map_url)}" target="_blank" rel="noopener">Map</a>` : ''}
-                    ${hotel.website ? `<a class="btn btn-ghost" href="${escHtml(hotel.website)}" target="_blank" rel="noopener noreferrer">Website</a>` : ''}
-                    ${hotel.price_check_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.price_check_url)}" target="_blank" rel="noopener noreferrer" title="Opens a search for this place on Booking.com">Check price</a>` : ''}
+                    ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">${escHtml(rt('rv.select_night', { n: nightNo }))}</button>` : ''}
+                    ${hotel.map_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.map_url)}" target="_blank" rel="noopener">${escHtml(rt('trip.map'))}</a>` : ''}
+                    ${hotel.website ? `<a class="btn btn-ghost" href="${escHtml(hotel.website)}" target="_blank" rel="noopener noreferrer">${escHtml(rt('rv.website'))}</a>` : ''}
+                    ${hotel.price_check_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.price_check_url)}" target="_blank" rel="noopener noreferrer" title="${escHtml(rt('trip.check_price_title'))}">${escHtml(rt('trip.check_price'))}</a>` : ''}
                 </div>
             </div>
         `;
@@ -1417,7 +1443,7 @@ function selectNightHotel(nightNo, idx, hotelJson) {
     try {
         hotel = JSON.parse(hotelJson || '{}');
     } catch (e) {
-        alert('Could not read this hotel selection. Please reload suggestions.');
+        alert(rt('rv.hotel_read_failed'));
         return;
     }
     hotelSelections[nightNo] = hotel;
@@ -1430,7 +1456,7 @@ function selectNightHotel(nightNo, idx, hotelJson) {
             if (!selectedCard.querySelector('.hotel-selected-note')) {
                 const note = document.createElement('span');
                 note.className = 'hotel-selected-note';
-                note.textContent = 'Selected for this night';
+                note.textContent = rt('rv.selected_night');
                 selectedCard.appendChild(note);
             }
         }
@@ -1443,10 +1469,10 @@ function skipHotelNight(nightNo) {
     const target = document.getElementById('hotel-results-night-' + nightNo);
     if (target) {
         target.classList.add('open');
-        target.innerHTML = '<div class="hotel-message">Hotel skipped for this night. Nothing will be saved unless you select a hotel later.</div>';
+        target.innerHTML = '<div class="hotel-message">' + escHtml(rt('rv.hotel_skipped')) + '</div>';
     }
     hotelResultState[nightNo] = { loaded: true, dayNo: nightNo, allowSelect: true };
-    setHotelToggleLabel(nightNo, 'Hide results');
+    setHotelToggleLabel(nightNo, rt('rv.hide_results'));
     updateStats();
 }
 
@@ -1483,7 +1509,7 @@ function resetAll() {
     });
     document.querySelectorAll('[id^="hotel-toggle-night-"]').forEach(btn => {
         btn.disabled = false;
-        btn.textContent = btn.id === 'hotel-toggle-night-0' ? 'Browse nearby hotels' : 'Load Nearby Hotels';
+        btn.textContent = btn.id === 'hotel-toggle-night-0' ? rt('rv.browse_hotels') : rt('rv.load_hotels');
     });
     updateStats();
 }
@@ -1504,7 +1530,7 @@ function updateStats() {
     const replacedEl = document.getElementById('stat-replaced');
     if (replacedEl) replacedEl.textContent = replaced;
     const hotelCount = Object.keys(hotelSelections).length;
-    document.getElementById('stat-hotel').textContent = hotelCount > 0 ? hotelCount + ' selected' : 'None';
+    document.getElementById('stat-hotel').textContent = hotelCount > 0 ? rt('rv.n_selected', { n: hotelCount }) : rt('rv.none');
 }
 
 function updateCardMatch(card, data) {
@@ -1537,9 +1563,9 @@ function updateCardMatch(card, data) {
 // checks each change against the rules of the trip; one it cannot make is listed with its reason.
 async function confirmReview() {
     const btn = document.getElementById('btn-confirm');
-    const restore = () => { btn.disabled = false; btn.innerHTML = 'Confirm &amp; View Trip'; };
+    const restore = () => { btn.disabled = false; btn.textContent = rt('rv.confirm_view'); };
     btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span> Saving...';
+    btn.innerHTML = '<span class="spinner"></span> ' + escHtml(rt('rv.saving'));
 
     const rejectedIds = Object.entries(itemStatus)
         .filter(([id, s]) => s === 'rejected')
@@ -1552,7 +1578,7 @@ async function confirmReview() {
         }
     });
     if (emptied.length > 0) {
-        alert('Please keep at least one stop on Day ' + emptied.join(', Day ') + '. Replace a stop instead of removing every stop of a day.');
+        alert(rt('rv.keep_one', { days: emptied.map(day => rt('trip.day', { n: day })).join(', ') }));
         restore();
         return;
     }
@@ -1584,9 +1610,10 @@ async function confirmReview() {
             if (list) {
                 list.innerHTML = refused.map(r => {
                     const card = r.item_id ? document.getElementById('card-' + r.item_id) : null;
-                    const what = r.action === 'hotel' ? (r.night ? 'Hotel for night ' + r.night : 'Hotels')
-                        : (r.action === 'remove' ? 'Removing ' : 'Replacing ') + (card ? (originalCards[r.item_id] ? titleFromHtml(originalCards[r.item_id].html) : card.dataset.title) : 'a stop');
-                    return '<li><strong>' + escHtml(what) + ':</strong> ' + escHtml(r.message || 'not allowed by the rules of the trip.') + '</li>';
+                    const title = card ? (originalCards[r.item_id] ? titleFromHtml(originalCards[r.item_id].html) : card.dataset.title) : rt('rv.a_stop');
+                    const what = r.action === 'hotel' ? (r.night ? rt('rv.refused_hotel_night', { n: r.night }) : rt('rv.refused_hotels'))
+                        : rt(r.action === 'remove' ? 'rv.refused_remove' : 'rv.refused_replace', { title: title });
+                    return '<li><strong>' + escHtml(what) + ':</strong> ' + escHtml(r.message || rt('rv.not_allowed')) + '</li>';
                 }).join('');
             }
             const panel = document.getElementById('review-refused');
@@ -1595,13 +1622,13 @@ async function confirmReview() {
                 panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
             btn.disabled = true;
-            btn.innerHTML = 'Saved';
+            btn.textContent = rt('rv.saved');
         } else {
-            alert('Error: ' + (data.message || 'Could not save review.'));
+            alert(rt('rv.error_prefix', { message: data.message || rt('rv.save_failed') }));
             restore();
         }
     } catch(e) {
-        alert('Network error. Please try again.');
+        alert(rt('rv.err_network'));
         restore();
     }
 }
@@ -1611,7 +1638,7 @@ function titleFromHtml(html) {
     const box = document.createElement('div');
     box.innerHTML = html;
     const title = box.querySelector('.place-title');
-    return title ? title.textContent.trim() : 'a stop';
+    return title ? title.textContent.trim() : rt('rv.a_stop');
 }
 
 // ---- HTML escape helper ----
@@ -1664,7 +1691,7 @@ async function sendAiMessage(event) {
     if (!text) return;
     input.value = '';
     addAiMessage('user', text);
-    const loading = addAiMessage('bot', 'Writing answer...');
+    const loading = addAiMessage('bot', rt('rv.writing'));
     try {
         const resp = await fetch('ai_chat.php', {
             method: 'POST',
@@ -1672,9 +1699,9 @@ async function sendAiMessage(event) {
             body: new URLSearchParams({ itinerary_id: ITINERARY_ID, message: text }),
         });
         const data = await parseJsonResponse(resp);
-        if (loading) loading.textContent = data.answer || data.message || 'AI assistant could not answer this request.';
+        if (loading) loading.textContent = data.answer || data.message || rt('rv.ai_failed');
     } catch (e) {
-        if (loading) loading.textContent = 'Network error. Please try again.';
+        if (loading) loading.textContent = rt('rv.err_network');
     }
 }
 

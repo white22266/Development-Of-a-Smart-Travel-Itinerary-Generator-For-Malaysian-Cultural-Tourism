@@ -11,13 +11,14 @@ require_once "../config/map_assets.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/CalendarExportService.php";
 require_once "../config/i18n.php";
+require_once "../config/ai_chat_text.php";
 require_once "../services/ItineraryEditService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
     exit;
 }
-$travellerName = $_SESSION["traveller_name"] ?? "Traveller";
+$travellerName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 $travellerId   = (int)($_SESSION["traveller_id"] ?? 0);
 
 $itineraryId = (int)($_GET["itinerary_id"] ?? 0);
@@ -153,15 +154,19 @@ function minutesToTime(int $min): string
 
 function activitySuggestion(string $type, string $category): string
 {
-    $map = [
-        'food' => 'Enjoy local cuisine', 'hotel' => 'Check in & rest',
-        'festival' => 'Join cultural festival', 'museum' => 'Explore exhibits',
-        'heritage' => 'Explore heritage site', 'culture' => 'Experience local culture',
-        'nature' => 'Explore nature & scenery', 'shopping' => 'Browse local markets',
-        'attraction' => 'Visit & explore',
-    ];
+    $known = ['food', 'hotel', 'festival', 'museum', 'heritage', 'culture', 'nature', 'shopping', 'attraction'];
     $key = strtolower($category ?: $type);
-    return $map[$key] ?? $map[$type] ?? 'Visit & explore';
+    if (in_array($key, $known, true)) return t('iv.act_' . $key);
+    if (in_array($type, $known, true)) return t('iv.act_' . $type);
+    return t('iv.act_attraction');
+}
+
+/** Label of an item type on the timetable: a stored type such as attraction or food, else a category. */
+function itineraryTypeLabel(string $type): string
+{
+    $type = strtolower(trim($type));
+    if ($type !== '' && t('opt.itype.' . $type) !== 'opt.itype.' . $type) return t('opt.itype.' . $type);
+    return t_choice('interest', $type !== '' ? $type : 'attraction');
 }
 
 function extractReasonSelected(?string $notes): string
@@ -186,7 +191,7 @@ $jsItineraryData = [];
 foreach ($timetables as $d => $items) {
     $jsItineraryData[$d] = array_map(fn($item) => [
         'item_id'      => (int)$item['item_id'],
-        'title'        => !empty($item['meal_slot']) && $item['latitude'] !== null ? ucfirst((string)$item['meal_slot']) . ': ' . $item['item_title'] : $item['item_title'],
+        'title'        => !empty($item['meal_slot']) && $item['latitude'] !== null ? t_choice('itype', (string)$item['meal_slot']) . ': ' . $item['item_title'] : $item['item_title'],
         'type'         => $item['item_type'],
         'category'     => $item['category'] ?? '',
         'lat'          => $item['latitude']  !== null ? (float)$item['latitude']  : null,
@@ -195,9 +200,9 @@ foreach ($timetables as $d => $items) {
         'state'        => $item['state'] ?? '',
         'district'     => $item['district'] ?? '',
         'cost'         => (float)($item['estimated_cost'] ?? 0),
-        'cost_label'   => !empty($item['meal_slot']) ? 'In the daily meal estimate' : ((float)($item['estimated_cost'] ?? 0) > 0
-            ? CostEstimationService::itemCostLabel((string)($item['item_type'] ?? ''), (float)$item['estimated_cost'], $partySize)['whole_label']
-            : 'Free'),
+        'cost_label'   => !empty($item['meal_slot']) ? t('iv.in_meal_estimate') : ((float)($item['estimated_cost'] ?? 0) > 0
+            ? i18n_cost_phrase(CostEstimationService::itemCostLabel((string)($item['item_type'] ?? ''), (float)$item['estimated_cost'], $partySize)['whole_label'])
+            : t('iv.free')),
         'dist_km'      => $item['distance_km'] !== null ? (float)$item['distance_km'] : null,
         'travel_min'   => $item['_travel_min'],
         'start_fmt'    => $item['_start_fmt'],
@@ -233,13 +238,13 @@ $costBreakdown = $costService->calculate($allCostItems, $totalDistanceKm, $tierD
 $selectedHotelCount = count(array_filter($allCostItems, fn($item) => strtolower((string)($item["item_type"] ?? "")) === "hotel"));
 $missingInfo = [];
 if (empty($startDate)) {
-    $missingInfo[] = "Start Date";
+    $missingInfo[] = t('trip.start_date');
 }
 if ($originName === "" || $originLat === null || $originLng === null || (float)$originLat == 0.0 || (float)$originLng == 0.0) {
-    $missingInfo[] = "Starting Location";
+    $missingInfo[] = t('iv.miss_origin');
 }
 if ($totalDays > 1 && $selectedHotelCount === 0) {
-    $missingInfo[] = "Confirmed Hotel";
+    $missingInfo[] = t('iv.miss_hotel');
 }
 $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?: "[]";
 
@@ -275,11 +280,11 @@ $editConfig = json_encode([
 ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?: "{}";
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo i18n_lang(); ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($it["title"]); ?> - Itinerary View</title>
+    <title><?php echo htmlspecialchars($it["title"]); ?> - <?php echo te('iv.title'); ?></title>
     <link rel="stylesheet" href="../assets/dashboard_style.css?v=20260617j">
     <link rel="stylesheet" href="../assets/trip_ai_chat.css?v=20261022">
     <?php echo leaflet_tags(); ?>
@@ -723,22 +728,23 @@ $editConfig = json_encode([
             <div class="brand-badge">ST</div>
             <div class="brand-title">
                 <strong>Smart Travel Itinerary Generator</strong>
-                <span>Itinerary View</span>
+                <span><?php echo te('iv.title'); ?></span>
             </div>
         </div>
-        <nav class="nav">
-            <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> Dashboard</a>
-            <a href="../preference/preference_form.php"><span class="dot"></span> Traveller Preference Analyzer</a>
-            <a href="../itinerary/select_preference.php"><span class="dot"></span> Smart Itinerary Generator</a>
-            <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> Cost Estimation and Trip Summary</a>
-            <a href="../cultural/cultural_guide.php"><span class="dot"></span> Cultural Guide Presentation</a>
-            <a href="../auth/profile/profile.php"><span class="dot"></span> Profile</a>
-            <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
+        <nav class="nav" aria-label="<?php echo te('nav.aria'); ?>">
+            <a href="../traveller/traveller_dashboard.php"><span class="dot"></span> <?php echo te('nav.dashboard'); ?></a>
+            <a href="../preference/preference_form.php"><span class="dot"></span> <?php echo te('nav.preference'); ?></a>
+            <a href="../itinerary/select_preference.php"><span class="dot"></span> <?php echo te('nav.generator'); ?></a>
+            <a class="active" href="../itinerary/my_itineraries.php"><span class="dot"></span> <?php echo te('nav.trips'); ?></a>
+            <a href="../cultural/cultural_guide.php"><span class="dot"></span> <?php echo te('nav.guide'); ?></a>
+            <a href="../auth/profile/profile.php"><span class="dot"></span> <?php echo te('nav.profile'); ?></a>
+            <a href="../auth/logout.php"><span class="dot"></span> <?php echo te('nav.logout'); ?></a>
         </nav>
+        <div class="lang-switch-wrap" style="margin:12px 14px;"><?php echo i18n_switcher(); ?></div>
         <div class="sidebar-footer">
-            <div class="small">Logged in as:</div>
+            <div class="small"><?php echo te('nav.logged_in_as'); ?></div>
             <div style="margin-top:6px; font-weight:800;"><?php echo htmlspecialchars($travellerName); ?></div>
-            <div class="chip">Role: Traveller</div>
+            <div class="chip"><?php echo te('nav.role_traveller'); ?></div>
         </div>
     </aside>
 
@@ -750,16 +756,16 @@ $editConfig = json_encode([
             <div class="page-title">
                 <h1><?php echo htmlspecialchars($it["title"]); ?></h1>
                 <p class="meta">
-                    <?php echo $totalDays; ?> day<?php echo $totalDays > 1 ? 's' : ''; ?> &middot;
-                    <?php if ($startDate): ?>Starting <?php echo date('d M Y', strtotime($startDate)); ?> &middot;<?php endif; ?>
-                    <span style="text-transform:capitalize;"><?php echo htmlspecialchars(str_replace('_', ' ', $transportType)); ?></span>
+                    <?php echo $totalDays > 1 ? te('iv.days_many', ['n' => $totalDays]) : te('iv.days_one'); ?> &middot;
+                    <?php if ($startDate): ?><?php echo te('iv.starting', ['date' => i18n_date((string)$startDate, 'short')]); ?> &middot;<?php endif; ?>
+                    <span><?php echo htmlspecialchars(t_choice('transport', $transportType)); ?></span>
                 </p>
             </div>
             <div class="actions">
-                <a class="btn btn-ghost" href="my_itineraries.php">Back</a>
-                <a class="btn btn-ghost" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>">Export PDF</a>
-                <a class="btn btn-ghost" href="export_ics.php?itinerary_id=<?php echo $itineraryId; ?>">Add to calendar (.ics)</a>
-                <a class="btn btn-primary" href="trip_summary.php?itinerary_id=<?php echo $itineraryId; ?>">Trip Summary</a>
+                <a class="btn btn-ghost" href="my_itineraries.php"><?php echo te('common.back'); ?></a>
+                <a class="btn btn-ghost" href="export_pdf.php?itinerary_id=<?php echo $itineraryId; ?>"><?php echo te('trip.export_pdf'); ?></a>
+                <a class="btn btn-ghost" href="export_ics.php?itinerary_id=<?php echo $itineraryId; ?>"><?php echo te('iv.add_calendar'); ?></a>
+                <a class="btn btn-primary" href="trip_summary.php?itinerary_id=<?php echo $itineraryId; ?>"><?php echo te('trip.title'); ?></a>
             </div>
         </div>
 
@@ -770,19 +776,19 @@ $editConfig = json_encode([
             <div>
                 <div class="card" style="padding:16px;">
                     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-                        <h3 style="margin:0;">Route Map</h3>
+                        <h3 style="margin:0;"><?php echo te('iv.route_map'); ?></h3>
                         <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                            <span class="weather-chip" id="weatherChip">Weather: --</span>
-                            <button type="button" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" id="locateButton">My Location</button>
+                            <span class="weather-chip" id="weatherChip"><?php echo te('im.wx_none'); ?></span>
+                            <button type="button" class="btn btn-ghost" style="font-size:12px; padding:6px 12px;" id="locateButton"><?php echo te('iv.my_location'); ?></button>
                         </div>
                     </div>
 
                     <!-- Transport mode switcher -->
                     <div class="transport-bar" id="transportBar">
-                        <button type="button" class="transport-btn <?php echo $transportType==='car'              ? 'active' : ''; ?>" data-mode="car">Car</button>
-                        <button type="button" class="transport-btn <?php echo $transportType==='motorcycle'       ? 'active' : ''; ?>" data-mode="motorcycle">Motorcycle</button>
-                        <button type="button" class="transport-btn <?php echo $transportType==='public_transport' ? 'active' : ''; ?>" data-mode="public_transport">Public Transport</button>
-                        <button type="button" class="transport-btn <?php echo $transportType==='walking'          ? 'active' : ''; ?>" data-mode="walking">Walk</button>
+                        <button type="button" class="transport-btn <?php echo $transportType==='car'              ? 'active' : ''; ?>" data-mode="car"><?php echo te('opt.transport.car'); ?></button>
+                        <button type="button" class="transport-btn <?php echo $transportType==='motorcycle'       ? 'active' : ''; ?>" data-mode="motorcycle"><?php echo te('opt.transport.motorcycle'); ?></button>
+                        <button type="button" class="transport-btn <?php echo $transportType==='public_transport' ? 'active' : ''; ?>" data-mode="public_transport"><?php echo te('opt.transport.public_transport'); ?></button>
+                        <button type="button" class="transport-btn <?php echo $transportType==='walking'          ? 'active' : ''; ?>" data-mode="walking"><?php echo te('iv.walk'); ?></button>
                     </div>
 
                     <!-- Day legend -->
@@ -793,68 +799,63 @@ $editConfig = json_encode([
                               style="color:<?php echo $col; ?>; border-color:<?php echo $col; ?>; background:<?php echo $col; ?>18;"
                               data-map-day="<?php echo $d; ?>">
                             <span class="legend-dot" style="background:<?php echo $col; ?>;"></span>
-                            Day <?php echo $d; ?>
+                            <?php echo te('trip.day', ['n' => $d]); ?>
                         </span>
                         <?php endfor; ?>
                         <?php if ($totalDays > 1): ?>
                         <span class="legend-item" data-map-day="0" style="color:#0f172a; border-color:#0f172a; background:#0f172a10;">
-                            <span class="legend-dot" style="background:#0f172a;"></span> All days
+                            <span class="legend-dot" style="background:#0f172a;"></span> <?php echo te('iv.all_days'); ?>
                         </span>
                         <?php endif; ?>
                     </div>
 
                     <div class="map-wrap">
                         <div id="map"></div>
-                        <button type="button" class="map-fullscreen-btn" id="mapFullscreenButton">Full screen</button>
+                        <button type="button" class="map-fullscreen-btn" id="mapFullscreenButton"><?php echo te('iv.fullscreen'); ?></button>
                         <div id="mapErrorPanel" class="map-error-panel" role="alert">
                             <div class="map-error-card">
-                                <strong>The map could not be loaded.</strong>
+                                <strong><?php echo te('iv.map_error_title'); ?></strong>
                                 <div id="mapErrorText">
-                                    The map library did not arrive. Check the internet connection and reload the page.
-                                    The timetable below is complete without the map.
+                                    <?php echo te('iv.map_error_text'); ?>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="routeNotice" class="map-route-notice"></div>
                     <div id="routeSummary" class="route-summary"></div>
-                    <div class="map-legend" aria-label="Lines on the map">
-                        <span><i></i>by road or rail</span>
-                        <span><i class="walk"></i>on foot</span>
-                        <span><i class="estimate"></i>no route data, estimated</span>
-                        <span><i class="problem"></i>road problem</span>
+                    <div class="map-legend" aria-label="<?php echo te('iv.legend_aria'); ?>">
+                        <span><i></i><?php echo te('iv.lg_road'); ?></span>
+                        <span><i class="walk"></i><?php echo te('iv.lg_walk'); ?></span>
+                        <span><i class="estimate"></i><?php echo te('iv.lg_estimate'); ?></span>
+                        <span><i class="problem"></i><?php echo te('iv.lg_problem'); ?></span>
                     </div>
                     <div class="map-tools">
                         <button type="button" class="btn btn-ghost" id="optimiseButton"
-                                title="Puts the stops of every day into the order with the least travelling and updates the times">Optimise route</button>
+                                title="<?php echo te('iv.optimise_title'); ?>"><?php echo te('iv.optimise'); ?></button>
                         <button type="button" class="btn btn-ghost" id="conditionsButton"
-                                title="Traffic, closed roads, weather warnings and fires on this day's route, as they are now">Road conditions now</button>
+                                title="<?php echo te('iv.conditions_title'); ?>"><?php echo te('iv.conditions'); ?></button>
                         <button type="button" class="btn btn-ghost" id="busesButton"
-                                title="Where the buses and trains are right now, from the operators' open data">Live buses</button>
+                                title="<?php echo te('iv.buses_title'); ?>"><?php echo te('iv.buses'); ?></button>
                     </div>
                     <div id="liveBusStatus" class="live-bus-status" aria-live="polite"></div>
                     <div id="roadConditions" class="road-conditions" aria-live="polite"></div>
 
                     <div class="info-box" style="margin-top:10px;">
-                        <strong>How to read this map:</strong>
-                        The numbered pins are the day's stops in order, "S" is where the day starts and "H" is a hotel; the arrows show the way of travel.
-                        Day 1 starts from your starting location; a later day starts where the day before ended.
-                        Choosing another way of travelling redraws the route without changing the saved itinerary.
-                        "Optimise route" puts each day's stops into the order with the least travelling for the trip's own transport and updates the times.
-                        "Live buses" shows where the buses and trains are now; it is on by itself for public transport, and pressing a bus shows its route.
-                        Map and routes: OpenStreetMap contributors. Weather data by Open-Meteo.com.
+                        <strong><?php echo te('iv.map_help_head'); ?></strong>
+                        <?php echo te('iv.map_help'); ?>
+                        <?php echo te('iv.map_credit'); ?>
                     </div>
                 </div>
 
                 <div class="card" style="padding:16px; margin-top:18px;">
                     <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start; flex-wrap:wrap;">
                         <div>
-                            <h3 style="margin:0;">Trip Summary &amp; Cost</h3>
-                            <p class="meta" style="margin:4px 0 0;">Map, schedule, and full budget estimate are combined on this page.</p>
+                            <h3 style="margin:0;"><?php echo te('iv.summary_cost'); ?></h3>
+                            <p class="meta" style="margin:4px 0 0;"><?php echo te('iv.summary_note'); ?></p>
                         </div>
                         <?php if ($budget > 0): ?>
                             <strong class="<?php echo $costBreakdown["within_budget"] ? "budget-ok" : "budget-over"; ?>">
-                                <?php echo $costBreakdown["within_budget"] ? "Within Budget" : "Over Budget"; ?>
+                                <?php echo te($costBreakdown["within_budget"] ? 'trip.within' : 'trip.over'); ?>
                                 <?php echo " RM " . number_format(abs((float)$costBreakdown["budget_difference"]), 2); ?>
                             </strong>
                         <?php endif; ?>
@@ -862,19 +863,19 @@ $editConfig = json_encode([
 
                     <div class="summary-grid">
                         <div class="summary-card">
-                            <div class="summary-label">Days</div>
+                            <div class="summary-label"><?php echo te('iv.s_days'); ?></div>
                             <div class="summary-value"><?php echo $totalDays; ?></div>
                         </div>
                         <div class="summary-card">
-                            <div class="summary-label">Places</div>
+                            <div class="summary-label"><?php echo te('iv.s_places'); ?></div>
                             <div class="summary-value"><?php echo $totalPlaces; ?></div>
                         </div>
                         <div class="summary-card">
-                            <div class="summary-label">Distance</div>
+                            <div class="summary-label"><?php echo te('iv.s_distance'); ?></div>
                             <div class="summary-value"><?php echo number_format($totalDistanceKm, 1); ?> km</div>
                         </div>
                         <div class="summary-card">
-                            <div class="summary-label">Total Estimate</div>
+                            <div class="summary-label"><?php echo te('pdf.m_total'); ?></div>
                             <div class="summary-value">RM <?php echo number_format((float)$costBreakdown["total_cost"], 2); ?></div>
                         </div>
                     </div>
@@ -883,8 +884,8 @@ $editConfig = json_encode([
                         <?php foreach ($costBreakdown["breakdown"] as $row): ?>
                             <div class="cost-mini">
                                 <strong>RM <?php echo number_format((float)$row["amount"], 2); ?></strong>
-                                <span><?php echo htmlspecialchars($row["label"]); ?></span>
-                                <span><?php echo htmlspecialchars($row["note"]); ?></span>
+                                <span><?php echo htmlspecialchars(i18n_cost_label((string)$row["label"], $transportType)); ?></span>
+                                <span><?php echo htmlspecialchars(i18n_cost_phrase((string)$row["note"])); ?></span>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -895,10 +896,10 @@ $editConfig = json_encode([
         <!-- ===== Timetable Section ===== -->
         <div class="card" style="margin-top:18px; padding:16px;">
             <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
-                <h3 style="margin:0;">Daily Itinerary Schedule</h3>
+                <h3 style="margin:0;"><?php echo te('pdf.h_daily'); ?></h3>
                 <span class="meta" style="font-size:12px;" id="transitModeLabel">
-                    Transport: <strong id="transitModeName"><?php echo htmlspecialchars(str_replace('_', ' ', ucfirst($transportType))); ?></strong>
-                    &middot; Click <strong>"Show Route"</strong> between stops for the road distance, time and directions.
+                    <?php echo te('iv.transport_prefix'); ?> <strong id="transitModeName"><?php echo htmlspecialchars($transportType === 'walking' ? t('iv.walk') : t_choice('transport', $transportType)); ?></strong>
+                    &middot; <?php echo strtr(te('iv.route_hint'), ['{button}' => '<strong>&quot;' . te('iv.show_route') . '&quot;</strong>']); ?>
                 </span>
             </div>
 
@@ -918,14 +919,14 @@ $editConfig = json_encode([
                     $dateLabel = '';
                     if ($startDate) {
                         $ts = strtotime($startDate . ' +' . ($d - 1) . ' days');
-                        $dateLabel = ' | ' . date('d M', $ts);
+                        $dateLabel = ' | ' . i18n_date(date('Y-m-d', $ts), 'short');
                     }
                 ?>
                 <button type="button" class="day-tab <?php echo $d === 1 ? 'active' : ''; ?>"
                         id="tab-<?php echo $d; ?>"
                         style="<?php echo $d === 1 ? "background:{$col}; border-color:{$col};" : ''; ?>"
                         data-day-tab="<?php echo $d; ?>">
-                    Day <?php echo $d; ?><?php echo $dateLabel; ?>
+                    <?php echo te('trip.day', ['n' => $d]); ?><?php echo htmlspecialchars($dateLabel); ?>
                 </button>
                 <?php endfor; ?>
             </div>
@@ -936,7 +937,7 @@ $editConfig = json_encode([
                 $dateStr = '';
                 if ($startDate) {
                     $ts = strtotime($startDate . ' +' . ($d - 1) . ' days');
-                    $dateStr = date('l, d F Y', $ts);
+                    $dateStr = i18n_date(date('Y-m-d', $ts), 'long');
                 }
                 $schedule = $timetables[$d] ?? [];
             ?>
@@ -948,10 +949,10 @@ $editConfig = json_encode([
                         <?php echo $d; ?>
                     </div>
                     <div>
-                        <div class="day-box-title">Day <?php echo $d; ?></div>
+                        <div class="day-box-title"><?php echo te('trip.day', ['n' => $d]); ?></div>
                         <?php if ($dateStr): ?><div class="day-box-date"><?php echo $dateStr; ?></div><?php endif; ?>
                         <div class="day-box-note">
-                            <?php echo $d === 1 ? 'Starts from your starting location' : 'Starts where the day before ended'; ?>
+                            <?php echo te($d === 1 ? 'iv.day_starts_origin' : 'iv.day_starts_prev'); ?>
                         </div>
                     </div>
                 </div>
@@ -999,17 +1000,17 @@ $editConfig = json_encode([
                 </div>
 
                 <?php if (empty($schedule)): ?>
-                    <p class="meta">No places scheduled for this day.</p>
+                    <p class="meta"><?php echo te('iv.no_places'); ?></p>
                 <?php else: ?>
                 <div class="table-scroll mobile-card-table-wrap">
                 <table class="timetable mobile-card-table">
                     <thead>
                         <tr>
-                            <th style="width:90px;">Time</th>
+                            <th style="width:90px;"><?php echo te('trip.col_time'); ?></th>
                             <th style="width:30px;">#</th>
-                            <th>Place &amp; Activity</th>
-                            <th style="width:80px;">Type</th>
-                            <th style="width:80px;">Cost (RM)</th>
+                            <th><?php echo te('pdf.col_place_act'); ?></th>
+                            <th style="width:80px;"><?php echo te('trip.col_type'); ?></th>
+                            <th style="width:80px;"><?php echo te('trip.col_cost'); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1021,9 +1022,9 @@ $editConfig = json_encode([
                                     break;
                                 }
                             }
-                            $dayStartName = $originName !== '' ? $originName : 'Starting location';
+                            $dayStartName = $originName !== '' ? $originName : t('iv.starting_location');
                             if ($d > 1) {
-                                $dayStartName = 'Where the day before ended';
+                                $dayStartName = t('iv.prev_ended');
                                 $before = array_filter($timetables[$d - 1] ?? [], static fn($row) => $row['latitude'] !== null && $row['longitude'] !== null);
                                 $hotelsBefore = array_filter($before, static fn($row) => strtolower((string)$row['item_type']) === 'hotel');
                                 $endedAt = $hotelsBefore ? end($hotelsBefore) : ($before ? end($before) : null);
@@ -1037,36 +1038,36 @@ $editConfig = json_encode([
                         ?>
                         <?php if ($showOriginRow): ?>
                         <tr data-leg-to="<?php echo (int)$firstTravelItem['item_id']; ?>">
-                            <td data-label="Time">
+                            <td data-label="<?php echo te('trip.col_time'); ?>">
                                 <div style="font-weight:800; font-size:12px;">
                                     <?php echo (int)($firstTravelItem['_travel_min'] ?? 0) > 0
                                         ? minutesToTime((int)$firstTravelItem['_start_min'] - (int)$firstTravelItem['_travel_min'])
-                                        : 'Before ' . $firstTravelItem['_start_fmt']; ?>
+                                        : t('trip.before', ['time' => $firstTravelItem['_start_fmt']]); ?>
                                 </div>
-                                <div style="font-size:10.5px; color:#94a3b8;">depart</div>
+                                <div style="font-size:10.5px; color:#94a3b8;"><?php echo te('iv.depart'); ?></div>
                             </td>
-                            <td data-label="#" style="font-weight:800; color:#64748b;">Start</td>
-                            <td data-label="Place & Activity">
+                            <td data-label="#" style="font-weight:800; color:#64748b;"><?php echo te('trip.start'); ?></td>
+                            <td data-label="<?php echo te('pdf.col_place_act'); ?>">
                                 <div style="font-weight:700;">
                                     <?php echo htmlspecialchars($dayStartName); ?>
                                 </div>
                                 <div style="font-size:11px; color:#64748b; margin-top:2px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                                    <span>Travel to <?php echo htmlspecialchars($firstTravelItem['item_title']); ?></span>
+                                    <span><?php echo te('trip.travel_to', ['name' => (string)$firstTravelItem['item_title']]); ?></span>
                                     <!-- The planner's estimate; the map script replaces it with the road figures -->
                                     <span class="leg-est">
                                         <?php if ((int)$firstTravelItem['_travel_min'] > 0): ?>
-                                            ~<?php echo (int)$firstTravelItem['_travel_min']; ?> min
+                                            ~<?php echo te('trip.min', ['n' => (int)$firstTravelItem['_travel_min']]); ?>
                                         <?php endif; ?>
                                         <?php if ((float)($firstTravelItem['distance_km'] ?? 0) > 0): ?>
                                             &middot; <?php echo number_format((float)$firstTravelItem['distance_km'], 1); ?> km
                                         <?php endif; ?>
                                     </span>
-                                    <button type="button" class="transit-summary-btn" data-leg-toggle="<?php echo (int)$firstTravelItem['item_id']; ?>">Show Route</button>
+                                    <button type="button" class="transit-summary-btn" data-leg-toggle="<?php echo (int)$firstTravelItem['item_id']; ?>"><?php echo te('iv.show_route'); ?></button>
                                 </div>
                                 <div class="transit-detail"></div>
                             </td>
-                            <td data-label="Type"><span class="type-badge">Origin</span></td>
-                            <td data-label="Cost (RM)"><span style="color:#94a3b8;">Free</span></td>
+                            <td data-label="<?php echo te('trip.col_type'); ?>"><span class="type-badge"><?php echo te('trip.origin'); ?></span></td>
+                            <td data-label="<?php echo te('trip.col_cost'); ?>"><span style="color:#94a3b8;"><?php echo te('iv.free'); ?></span></td>
                         </tr>
                         <?php endif; ?>
                         <?php foreach ($schedule as $idx => $item):
@@ -1075,9 +1076,9 @@ $editConfig = json_encode([
                             $isHotel = strtolower((string)($item['item_type'] ?? '')) === 'hotel';
                             $mealSlot = (string)($item['meal_slot'] ?? '');
                             $hasPoint = $item['latitude'] !== null && $item['longitude'] !== null;
-                            if ($mealSlot !== '' && !$hasPoint) $activity = 'Time kept free for ' . $mealSlot;
+                            if ($mealSlot !== '' && !$hasPoint) $activity = t('pdf.meal_free', ['slot' => mb_strtolower(t_choice('itype', $mealSlot))]);
                             // Numbered like the map's markers: a row without a place has none.
-                            $displayLabel = $isHotel ? 'Stay' : ($hasPoint ? (string)(++$displayNo) : '-');
+                            $displayLabel = $isHotel ? t('trip.stay') : ($hasPoint ? (string)(++$displayNo) : '-');
                         ?>
 
                         <?php if ($idx > 0 && $hasPoint): ?>
@@ -1086,11 +1087,11 @@ $editConfig = json_encode([
                             <td class="mobile-empty" colspan="5">
                                 <div class="transit-row-inner">
                                     <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                                        <button type="button" class="transit-summary-btn" data-leg-toggle="<?php echo (int)$item['item_id']; ?>">Show Route</button>
+                                        <button type="button" class="transit-summary-btn" data-leg-toggle="<?php echo (int)$item['item_id']; ?>"><?php echo te('iv.show_route'); ?></button>
                                         <!-- The planner's estimate; the map script replaces it with the road figures -->
                                         <span class="leg-est" style="font-size:11.5px; color:#64748b;">
                                             <?php if ($item['_travel_min'] > 0): ?>
-                                                ~<?php echo (int)$item['_travel_min']; ?> min
+                                                ~<?php echo te('trip.min', ['n' => (int)$item['_travel_min']]); ?>
                                                 <?php if ((float)($item['distance_km'] ?? 0) > 0): ?>
                                                     &middot; <?php echo number_format((float)$item['distance_km'], 1); ?> km
                                                 <?php endif; ?>
@@ -1108,12 +1109,12 @@ $editConfig = json_encode([
                             data-lat="<?php echo htmlspecialchars((string)($item['latitude'] ?? '')); ?>"
                             data-lng="<?php echo htmlspecialchars((string)($item['longitude'] ?? '')); ?>"
                             style="cursor:pointer;">
-                            <td data-label="Time">
+                            <td data-label="<?php echo te('trip.col_time'); ?>">
                                 <div style="font-weight:800; font-size:12px;"><?php echo $item['_start_fmt']; ?></div>
-                                <div style="font-size:10.5px; color:#94a3b8;">to <?php echo $item['_end_fmt']; ?></div>
+                                <div style="font-size:10.5px; color:#94a3b8;"><?php echo te('iv.to_time', ['time' => $item['_end_fmt']]); ?></div>
                             </td>
                             <td data-label="#" style="font-weight:800; color:<?php echo $isHotel ? '#64748b' : $col; ?>;"><?php echo htmlspecialchars($displayLabel); ?></td>
-                            <td data-label="Place & Activity">
+                            <td data-label="<?php echo te('pdf.col_place_act'); ?>">
                                 <div style="font-weight:700;"><?php echo htmlspecialchars($item['item_title']); ?></div>
                                 <div style="font-size:11px; color:#64748b; margin-top:2px;">
                                     <?php echo $activity; ?>
@@ -1125,22 +1126,22 @@ $editConfig = json_encode([
                                 <?php if ($mapLinks): ?>
                                 <div style="font-size:10.5px; margin-top:3px; display:flex; gap:10px; flex-wrap:wrap;">
                                     <?php foreach ($mapLinks as $linkLabel => $link): ?>
-                                    <a href="<?php echo htmlspecialchars($link['href']); ?>"<?php echo $link['external'] ? ' target="_blank" rel="noopener"' : ''; ?> onclick="event.stopPropagation();"><?php echo htmlspecialchars($linkLabel); ?></a>
+                                    <a href="<?php echo htmlspecialchars($link['href']); ?>"<?php echo $link['external'] ? ' target="_blank" rel="noopener"' : ''; ?> onclick="event.stopPropagation();"><?php echo htmlspecialchars($linkLabel === 'Open in maps app' ? t('iv.open_maps_app') : $linkLabel); ?></a>
                                     <?php endforeach; ?>
                                 </div>
                                 <?php endif; ?>
                                 <?php if (!empty($item['opening_hours'])): ?>
-                                <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">Hours: <?php echo htmlspecialchars($item['opening_hours']); ?></div>
+                                <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;"><?php echo te('iv.hours'); ?> <?php echo htmlspecialchars($item['opening_hours']); ?></div>
                                 <?php endif; ?>
                                 <?php if (!empty($item['state'])): ?>
                                 <div style="font-size:10.5px; color:#94a3b8; margin-top:2px;">
-                                    Location: <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
+                                    <?php echo te('iv.location'); ?> <?php echo htmlspecialchars($item['district'] ? $item['district'] . ', ' . $item['state'] : $item['state']); ?>
                                 </div>
                                 <?php endif; ?>
                                 <?php $reasonSelected = extractReasonSelected($item['notes'] ?? ''); ?>
                                 <?php if ($reasonSelected !== '' && !$isHotel): ?>
                                 <div style="font-size:10.5px; color:#475569; margin-top:4px;">
-                                    <strong>Reason Selected:</strong> <?php echo htmlspecialchars($reasonSelected); ?>
+                                    <strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars($reasonSelected); ?>
                                 </div>
                                 <?php endif; ?>
                                 <?php
@@ -1162,20 +1163,20 @@ $editConfig = json_encode([
                                 </div>
                                 <?php endif; ?>
                             </td>
-                            <td data-label="Type">
+                            <td data-label="<?php echo te('trip.col_type'); ?>">
                                 <span class="type-badge <?php echo htmlspecialchars($typeBadgeClass); ?>">
-                                    <?php echo htmlspecialchars($isHotel ? 'Hotel / Check-in' : ($mealSlot !== '' ? ucfirst($mealSlot) : ucfirst($item['item_type'] ?? 'attraction'))); ?>
+                                    <?php echo htmlspecialchars($isHotel ? t('trip.hotel_checkin') : ($mealSlot !== '' ? t_choice('itype', $mealSlot) : itineraryTypeLabel((string)($item['item_type'] ?? 'attraction')))); ?>
                                 </span>
                             </td>
-                            <td data-label="Cost (RM)" style="font-weight:700;">
+                            <td data-label="<?php echo te('trip.col_cost'); ?>" style="font-weight:700;">
                                 <?php if ($mealSlot !== ''): ?>
-                                    <span style="color:#94a3b8; font-weight:400;">In the daily meal estimate</span>
+                                    <span style="color:#94a3b8; font-weight:400;"><?php echo te('iv.in_meal_estimate'); ?></span>
                                 <?php elseif ((float)($item['estimated_cost'] ?? 0) > 0): ?>
                                     <?php $costLabel = CostEstimationService::itemCostLabel((string)($item['item_type'] ?? ''), (float)$item['estimated_cost'], $partySize); ?>
-                                    <div><?php echo htmlspecialchars($costLabel['whole_label']); ?></div>
-                                    <div style="font-size:10.5px; color:#64748b; font-weight:400; margin-top:2px;"><?php echo htmlspecialchars($costLabel['unit_label']); ?></div>
+                                    <div><?php echo htmlspecialchars(i18n_cost_phrase((string)$costLabel['whole_label'])); ?></div>
+                                    <div style="font-size:10.5px; color:#64748b; font-weight:400; margin-top:2px;"><?php echo htmlspecialchars(i18n_cost_phrase((string)$costLabel['unit_label'])); ?></div>
                                 <?php else: ?>
-                                    <span style="color:#94a3b8;">Free</span>
+                                    <span style="color:#94a3b8;"><?php echo te('iv.free'); ?></span>
                                 <?php endif; ?>
                             </td>
                         </tr>
@@ -1192,7 +1193,7 @@ $editConfig = json_encode([
                 }
                 ?>
                 <div style="margin-top:10px; text-align:right; font-size:13px; font-weight:800; color:#4f46e5;">
-                    Day <?php echo $d; ?> scheduled places, whole party: RM <?php echo number_format($dayTotal, 2); ?>
+                    <?php echo te('iv.day_total', ['day' => $d, 'amount' => number_format($dayTotal, 2)]); ?>
                 </div>
                 <?php endif; ?>
             </div>
@@ -1202,25 +1203,30 @@ $editConfig = json_encode([
     </main>
 </div>
 
-<button type="button" class="ai-chat-fab" onclick="toggleAiChat()">AI Assistant</button>
+<button type="button" class="ai-chat-fab" onclick="toggleAiChat()"><?php echo te('trip.ai_fab'); ?></button>
 <div class="ai-chat-panel" id="aiChatPanel" aria-live="polite" data-itinerary-id="<?php echo (int)$itineraryId; ?>" data-missing-info="<?php echo htmlspecialchars($missingInfoJson, ENT_QUOTES); ?>">
     <div class="ai-chat-header">
         <div>
-            <div class="ai-chat-title">AI Travel Assistant</div>
-            <div class="ai-chat-subtitle">Chat about weather, hotels, dates, route changes, cost, or trip details.</div>
+            <div class="ai-chat-title"><?php echo te('iv.ai_title'); ?></div>
+            <div class="ai-chat-subtitle"><?php echo te('iv.ai_sub'); ?></div>
         </div>
-        <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="Close AI chat">&times;</button>
+        <button type="button" class="ai-chat-close" onclick="toggleAiChat()" aria-label="<?php echo te('trip.ai_close'); ?>">&times;</button>
     </div>
     <div class="ai-chat-body" id="aiChatBody">
-        <div class="ai-msg bot" id="aiInitialMessage">Hi, tell me what you need for this trip. I can discuss hotels, weather, dates, route changes, cost, and place suggestions. I will only save changes after you click a confirmation button.</div>
+        <div class="ai-msg bot" id="aiInitialMessage"><?php echo te('iv.ai_hello'); ?></div>
     </div>
     <form class="ai-chat-form" onsubmit="sendAiMessage(event)">
-        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="Type your message to the AI chatbot...">
-        <button type="submit">Send</button>
+        <input id="aiChatInput" type="text" maxlength="700" autocomplete="off" placeholder="<?php echo te('trip.ai_placeholder'); ?>">
+        <button type="submit"><?php echo te('trip.ai_send'); ?></button>
     </form>
 </div>
 
-<script src="../assets/trip_ai_chat.js?v=20261117a"></script>
+<script>
+// What assets/trip_ai_chat.js needs: the chat's language with its card labels, and its own texts.
+const AI_CHAT_BOOT = <?php echo json_encode(['lang' => i18n_lang(), 'ui' => ai_ui_labels(i18n_lang())], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?: '{}'; ?>;
+const AI_CHAT_T = <?php echo i18n_js(['iv.ai_missing', 'iv.ai_sep']); ?>;
+</script>
+<script src="../assets/trip_ai_chat.js?v=20261118a"></script>
 <script>
 // What assets/itinerary_edit.js needs: the endpoints and its texts in the page's language.
 const ITINERARY_EDIT = <?php echo $editConfig; ?>;
@@ -1239,10 +1245,35 @@ const DAYS_DATA = <?php echo $jsDays; ?>;
 const DAY_COLORS = <?php echo $jsColorsJson; ?>;
 const START_TRANSPORT = <?php echo $jsTransport; ?>;
 const START_DATE = <?php echo json_encode($startDate ?: null); ?>;
+// The texts the map script and the live bus layer write, in the page's language.
+const ITINERARY_MAP_T = <?php echo i18n_js([
+    'trip.min', 'trip.day', 'opt.transport.car', 'opt.transport.motorcycle', 'opt.transport.public_transport', 'iv.walk', 'iv.free',
+    'iv.starting_location', 'iv.my_location', 'iv.show_route', 'iv.optimise', 'iv.optimising', 'iv.fullscreen', 'iv.fullscreen_close',
+    'iv.buses', 'iv.buses_hide',
+    'im.by_car', 'im.by_motorcycle', 'im.by_public', 'im.on_foot', 'im.h_min', 'im.hotel', 'im.stop',
+    'im.k_bus', 'im.k_train', 'im.k_ferry', 'im.k_cable_car', 'im.k_ride',
+    'im.leg_transit', 'im.about', 'im.estimate', 'im.start_hotel', 'im.start_prev', 'im.loading_route', 'im.all_n_days', 'im.road_total',
+    'im.time_estimated', 'im.route_missing', 'im.distance', 'im.time', 'im.via', 'im.walk_to', 'im.from_to', 'im.arrives', 'im.typical',
+    'im.timetables', 'im.no_timetable', 'im.short_walk', 'im.open_osm', 'im.hide_route', 'im.loading_leg', 'im.leg_missing',
+    'im.wx_none', 'im.wx_prefix', 'im.wx_no_forecast', 'im.wx_chip', 'im.wx_chip_rain', 'im.wx_describe', 'im.wx_describe_rain',
+    'im.wx_adv_wet', 'im.wx_adv_hot', 'im.wx_adv_good', 'im.wx_credit', 'im.wx_n_start', 'im.wx_n_nostop', 'im.wx_n_past', 'im.wx_n_down', 'im.wx_n_from',
+    'im.wx_clear', 'im.wx_mainly_clear', 'im.wx_partly_cloudy', 'im.wx_overcast', 'im.wx_fog', 'im.wx_light_drizzle', 'im.wx_drizzle',
+    'im.wx_heavy_drizzle', 'im.wx_freezing_drizzle', 'im.wx_light_rain', 'im.wx_rain', 'im.wx_heavy_rain', 'im.wx_freezing_rain',
+    'im.wx_light_snow', 'im.wx_snow', 'im.wx_heavy_snow', 'im.wx_snow_grains', 'im.wx_light_showers', 'im.wx_showers', 'im.wx_heavy_showers',
+    'im.wx_snow_showers', 'im.wx_thunderstorm', 'im.wx_thunderstorm_hail', 'im.wx_unknown',
+    'im.geo_unsupported', 'im.geo_denied', 'im.list_sep', 'im.list_and', 'im.opt_saved', 'im.opt_one', 'im.opt_many', 'im.opt_best',
+    'im.opt_removed', 'im.opt_failed',
+    'im.rc_loading', 'im.rc_failed', 'im.rc_now', 'im.rc_none', 'im.rc_checked', 'im.rc_not_forecast', 'im.rc_area', 'im.rc_state',
+    'im.rc_route', 'im.rc_away', 'im.rc_flood',
+]); ?>;
+const LIVE_BUSES_T = <?php echo i18n_js([
+    'lb.ago_s', 'lb.ago_min', 'lb.towards', 'lb.reported', 'lb.show_route', 'lb.route_shown', 'lb.no_line', 'lb.in_view_one', 'lb.in_view_many',
+    'lb.failed', 'lb.looking', 'lb.n_zoom', 'lb.n_none_here', 'lb.n_empty', 'lb.n_nomap',
+]); ?>;
 </script>
-<script src="../assets/live_buses.js?v=20261112a"></script>
-<script src="../assets/itinerary_map.js?v=20261112e"></script>
-  <script src="../assets/dashboard_shell.js?v=20260617c"></script>
+<script src="../assets/live_buses.js?v=20261118a"></script>
+<script src="../assets/itinerary_map.js?v=20261118a"></script>
+  <script src="../assets/dashboard_shell.js?v=20260618a"></script>
 </body>
 </html>
 

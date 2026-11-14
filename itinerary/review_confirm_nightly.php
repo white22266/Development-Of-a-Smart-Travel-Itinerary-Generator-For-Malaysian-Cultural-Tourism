@@ -13,6 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
 require_once "../services/ItineraryEditService.php";
@@ -21,14 +22,14 @@ header('Content-Type: application/json; charset=utf-8');
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     http_response_code(401);
-    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
+    echo json_encode(['status' => 'error', 'message' => t('rv.e_unauthorized')]);
     exit;
 }
 
 $travellerId = (int)($_SESSION["traveller_id"] ?? 0);
 $itineraryId = (int)($_POST["itinerary_id"] ?? 0);
 if ($itineraryId <= 0) {
-    echo json_encode(['status' => 'error', 'message' => 'Invalid itinerary ID']);
+    echo json_encode(['status' => 'error', 'message' => t('rv.e_itinerary_id')]);
     exit;
 }
 
@@ -44,7 +45,7 @@ $own->execute();
 $itinerary = $own->get_result()->fetch_assoc();
 $own->close();
 if (!$itinerary) {
-    echo json_encode(['status' => 'error', 'message' => 'Itinerary not found']);
+    echo json_encode(['status' => 'error', 'message' => t('rv.e_not_found')]);
     exit;
 }
 
@@ -82,20 +83,22 @@ try {
         if ($itemId <= 0 || $placeId < 0 || in_array($itemId, $rejectedIds, true)) continue;
         $result = ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
         if ($result['ok']) $applied++;
-        else $refused[] = ['item_id' => $itemId, 'night' => null, 'action' => 'replace', 'code' => $result['code'], 'message' => $result['message']];
+        else $refused[] = ['item_id' => $itemId, 'night' => null, 'action' => 'replace', 'code' => $result['code'], 'message' => i18n_refusal((string)$result['code'], (string)$result['message'])];
     }
     foreach ($rejectedIds as $itemId) {
         $result = ItineraryEditService::removeStop($conn, $itineraryId, (int)$itemId);
         if ($result['ok']) $applied++;
-        else $refused[] = ['item_id' => (int)$itemId, 'night' => null, 'action' => 'remove', 'code' => $result['code'], 'message' => $result['message']];
+        else $refused[] = ['item_id' => (int)$itemId, 'night' => null, 'action' => 'remove', 'code' => $result['code'], 'message' => i18n_refusal((string)$result['code'], (string)$result['message'])];
     }
     // The hotels last: each day after a hotel night then starts from that hotel.
     $hotels = ItineraryEditService::setHotels($conn, $itineraryId, $hotelByNight);
     if (!$hotels['ok']) {
-        $refused[] = ['item_id' => null, 'night' => null, 'action' => 'hotel', 'code' => $hotels['code'], 'message' => $hotels['message']];
+        $refused[] = ['item_id' => null, 'night' => null, 'action' => 'hotel', 'code' => $hotels['code'], 'message' => i18n_refusal((string)$hotels['code'], (string)$hotels['message'])];
     }
     foreach ((array)($hotels['refused_nights'] ?? []) as $nightNo => [$code, $text]) {
-        $refused[] = ['item_id' => null, 'night' => (int)$nightNo, 'action' => 'hotel', 'code' => $code, 'message' => $text];
+        $reason = i18n_reason((string)$code);
+        $refused[] = ['item_id' => null, 'night' => (int)$nightNo, 'action' => 'hotel', 'code' => $code,
+            'message' => $reason === null ? $text : t('rv.hotel_night_refused', ['night' => (int)$nightNo, 'reason' => $reason])];
     }
     echo json_encode([
         'status' => 'success',
@@ -106,5 +109,5 @@ try {
 } catch (Throwable $e) {
     error_log('Review confirm failed: ' . $e->getMessage());
     http_response_code(500);
-    echo json_encode(['status' => 'error', 'message' => 'Could not save all review changes. Changes made before the problem are kept; please check the itinerary.']);
+    echo json_encode(['status' => 'error', 'message' => t('rv.e_save_failed')]);
 }

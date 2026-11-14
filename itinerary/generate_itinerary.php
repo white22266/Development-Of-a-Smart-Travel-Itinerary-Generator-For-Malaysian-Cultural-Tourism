@@ -4,6 +4,7 @@
 session_start();
 
 require_once "../config/db_connect.php";
+require_once "../config/i18n.php";
 require_once "../services/ItineraryGenerator.php";
 
 if (
@@ -29,7 +30,7 @@ $preferenceId = (int)($_POST["preference_id"] ?? 0);
 $redirectTarget = "select_preference.php" . ($preferenceId > 0 ? "?preference_id=" . $preferenceId : "");
 
 if ($preferenceId <= 0) {
-    $_SESSION["form_errors"] = ["Please select a saved preference first."];
+    $_SESSION["form_errors"] = [t('rv.g_pick_pref')];
     header("Location: " . $redirectTarget);
     exit;
 }
@@ -47,13 +48,13 @@ $endLng = $endOther ? (float)($_POST["end_lng"] ?? 0) : 0.0;
 $errors = [];
 $dt = DateTime::createFromFormat("Y-m-d", $startDate);
 if (!$dt || $dt->format("Y-m-d") !== $startDate) {
-    $errors[] = "Please confirm a valid Start Date before generating the itinerary.";
+    $errors[] = t('rv.g_start_date');
 }
 if ($originName === "" || $originLat == 0.0 || $originLng == 0.0 || !is_finite($originLat) || !is_finite($originLng)) {
-    $errors[] = "Please confirm a Starting Location with map coordinates before generating the itinerary.";
+    $errors[] = t('rv.g_origin');
 }
 if ($endOther && ($endName === "" || $endLat == 0.0 || $endLng == 0.0 || !is_finite($endLat) || !is_finite($endLng))) {
-    $errors[] = "Please confirm an End Location with map coordinates, or choose to end the trip at the starting point.";
+    $errors[] = t('rv.g_end');
 }
 
 if (!empty($errors)) {
