@@ -45,6 +45,8 @@ final class ItineraryGenerator
     private const ROUTE_TIMEOUT = 8;
     /** Probe step through the day window when looking for a day a must-see place can be visited. */
     private const MUST_PROBE_STEP_MIN = 60;
+    /** Candidates measured and tried for each stop dropped on the road figures (replace()). */
+    private const REPLACE_CANDIDATES = 3;
     /** Words for a must-see place that no day of the trip allows. */
     private const MUST_REASONS = [
         'FESTIVAL_DAY' => 'the festival is not on during the trip',
@@ -344,29 +346,51 @@ final class ItineraryGenerator
         return $days;
     }
 
-    /** After a stop was dropped on the road figures: try one feasible replacement. */
+    /**
+     * After stops were dropped on the road figures: as many of the builder's next candidates
+     * as stops were dropped take their place. The best REPLACE_CANDIDATES per dropped stop are
+     * measured together in one route request (not a table request, which the server would hold
+     * back after the trip's table). Each is tried in every order (orderDay()) and kept only when
+     * the day then keeps all its stops; a candidate that does not fit gives way to the next.
+     */
     private function replace(array $plan, array $pool, array $profile, RouteService $route, ItineraryDayBuilder $builder, array $days, array $context): array
     {
         $used = $this->usedPlaces($days, (int)$context['day_no']);   // advance() adds the kept stops and their meals
         foreach ($plan['dropped'] as $stop) $used[(int)$stop['place']['place_id']] = true;
         $context['used'] = $used;
-        $state = ItineraryDayBuilder::startState($context, $profile);
-        foreach ($plan['stops'] as $stop) $state = ItineraryDayBuilder::advance($state, $stop, $profile);
-
-        $candidate = $builder->ranked($pool, $context, $state)[0] ?? null;
-        if ($candidate === null) return $plan;
-        // The candidate's legs to and from every point of the day, in one route request (not
-        // a table request, which the server would hold back after the trip's table).
-        $legs = [[$context['start'], $candidate['point']]];
-        foreach ($plan['stops'] as $stop) {
-            $legs[] = [$stop['point'], $candidate['point']];
-            $legs[] = [$candidate['point'], $stop['point']];
+        $missing = count($plan['dropped']);
+        $measured = false;
+        while ($missing > 0) {
+            $state = ItineraryDayBuilder::startState($context, $profile);
+            foreach ($plan['stops'] as $stop) $state = ItineraryDayBuilder::advance($state, $stop, $profile);
+            $candidates = $builder->ranked($pool, $context, $state, self::REPLACE_CANDIDATES * $missing);
+            if (!$candidates) break;
+            if (!$measured) {
+                // The candidates' legs to and from every point of the day.
+                $measured = true;
+                $legs = [];
+                foreach ($candidates as $candidate) {
+                    $legs[] = [$context['start'], $candidate['point']];
+                    foreach ($plan['stops'] as $stop) {
+                        $legs[] = [$stop['point'], $candidate['point']];
+                        $legs[] = [$candidate['point'], $stop['point']];
+                    }
+                    if ($context['finish'] !== null) $legs[] = [$candidate['point'], $context['finish']];
+                }
+                $route->measureLegs($legs, 1);
+            }
+            $better = null;
+            foreach ($candidates as $candidate) {
+                $context['used'][(int)$candidate['place']['place_id']] = true;   // tried once
+                if (!$route->knows($context['start'], $candidate['point'])) continue;   // no road figures: the estimates found no better
+                $again = ItineraryRouteOptimiser::orderDay($route, $profile, $context['start'], array_merge($plan['stops'], [$candidate]), $context);
+                if (!$again['dropped']) { $better = $again; break; }
+            }
+            if ($better === null) break;
+            $plan = $better;
+            $missing--;
         }
-        if ($context['finish'] !== null) $legs[] = [$candidate['point'], $context['finish']];
-        $route->measureLegs($legs);
-        if (!$route->knows($context['start'], $candidate['point'])) return $plan;   // no road figures: the estimates found no better
-        $again = ItineraryRouteOptimiser::orderDay($route, $profile, $context['start'], array_merge($plan['stops'], [$candidate]), $context);
-        return count($again['stops']) > count($plan['stops']) ? $again : $plan;
+        return $plan;
     }
 
     /** A must-see place counts as missed only when no day holds it in the end. */

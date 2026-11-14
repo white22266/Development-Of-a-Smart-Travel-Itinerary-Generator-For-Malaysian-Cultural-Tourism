@@ -38,8 +38,9 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
 4. Day by day, `ItineraryDayBuilder::build()` fills the day and
    `ItineraryRouteOptimiser::orderDay()` orders it, using estimated travel figures.
 5. When a routing server answers, the whole trip is measured once on the road (one request, see
-   How road figures are asked for) and every day is ordered and timed again. A stop that no order can keep is dropped, and one feasible
-   replacement is tried.
+   How road figures are asked for) and every day is ordered and timed again. A stop that no order can keep is dropped, and the
+   builder's next candidates take its place (`REPLACE_CANDIDATES`, 3 per dropped stop, measured together in one route request;
+   a candidate that does not fit in any order gives way to the next).
 6. Everything is stored in one transaction and the total is written by
    `ItineraryEditService::total()`. A failure saves nothing.
 
@@ -62,6 +63,7 @@ is `PlannerRules::REASONS`).
 | Leg from the starting point on day 1 | not counted by the distance limits | `leg_counts` in `check()` |
 | Visit length | 30 to 240 min, 90 when unknown; at most 120 for a family, 105 for elderly or low walking | `VISIT_MIN`, `VISIT_MAX`, `VISIT_DEFAULT`, `VISIT_MAX_FAMILY`, `VISIT_MAX_CAREFUL` |
 | Opening hours | the whole visit inside the opening hours of that weekday; reasons `CLOSED`, `OPEN_HOURS`, `DAY_END` | `OpeningHours::earliestStart()` |
+| Hours written as words | a text without clock times is read as approximate hours: office hours Mon-Fri 09:00-17:00; lunch hours 11:00-15:00; meal hours 11:00-15:00 and 18:00-22:00; morning (or daytime) to evening 08:00-20:00; evening or night without morning or daytime 17:00-23:59; daytime 08:00-18:00; morning 06:00-12:00; business or shop hours 10:00-22:00 (first match wins). "Open area", "Exterior viewing", "Verify before visit" and other texts stay unknown and allow any time | `OpeningHours::DESCRIBED` |
 | Waiting for opening | at most 60 min; time spent on a meal is not waiting | `MAX_WAIT_MIN` |
 | Avoid heat | an outdoor visit must be over by 11:00 or begin after 16:00 | `HEAT_FROM` (660), `HEAT_UNTIL` (960) |
 | Elderly | no outdoor visit longer than 150 min | `ELDERLY_LONG_VISIT_MIN` |
@@ -269,6 +271,15 @@ batches, never per candidate, and keeps to these rules (`RouteService`):
   strings the legs into as few route requests as it can (at most `MAX_ROUTE_POINTS` points
   each). A candidate that looked feasible on the estimates but fails on the road figures gives
   way to the next one.
+- Planning a day again (`regenerateDay()`, also behind `replanRainyDays()` and the AI editor) plans
+  the new day on the figures at hand, measures it once (its stops in order, the meal places of
+  that timing, every other pair of its points, the legs to the end of the day and to the next
+  day), orders it again on those figures in every order, and lets a stop that no longer fits
+  give way to the builder's next candidates (`SETTLE_CANDIDATES`, 3, measured together in the
+  second request); a must-see place of the day is tried in every position. The present day
+  stays as it is only when the new day would lose a must-see place, have no stop, or make
+  another day break a rule; the refusal names the rule and carries `worse` (`must`, `empty`,
+  `next_day`). `settleDay()` has the steps.
 - An edit (`ItineraryEditService::plan()`) times the days it touches on the figures at hand,
   measures the legs those days need that are not known (stops in order, the meal places on
   the way, the hotel or the end point), and times them again; a second request follows only for
@@ -301,12 +312,22 @@ right, so it stays a fair judge. It refuses to run on a database whose name does
 DB_NAME=travel_itinerary_db_ctest /c/xampp/php/php.exe tools/check_planner.php
 ```
 
-Options: `--scenario=<name>` runs one scenario, `--keep` keeps the generated itineraries,
+Options: `--scenario=<name>` runs one scenario, `--pass=default` or `--pass=skew` runs only one of
+the two passes (below), `--keep` keeps the generated itineraries,
 `--json` gives machine-readable output, `--road` allows real routing (the public servers).
 Without `--road` it sets `ROUTING_ESTIMATES_ONLY=1` and makes no request. Exit code 0 means no
 violation, 1 at least one violation. A warning does not fail the run. The column `REQ` shows the
 most routing requests one call made in the scenario, and `PLAN` a fingerprint of the stored plan,
 to see whether a change altered any plan.
+
+Without `--road` there are two passes. The first runs every scenario on estimates, where the
+figures a day is planned with and the figures it is stored with are the same. The second runs
+the edit scenarios again (`<scenario>@skew`) with the test switch `ROUTING_TEST_SKEW=1`: with
+`ROUTING_ESTIMATES_ONLY` set, every leg the planner measures then gets "road" figures that
+differ from the estimates (distance and time each scaled by a factor of 0.8 to 1.6 fixed per
+pair of points, `RouteService::skewed()`), while planning still sees the estimates. Every check
+must hold there too. The hours the check reads for `OPEN_HOURS` include hours written as words,
+from its own copy of the table above (`DESCRIBED_HOURS`).
 
 The scenarios are the entries of the `SCENARIOS` constant, plus `<base>__edits` for each name in
 `EDIT_BASES`: the base is generated, then changed through `ItineraryEditService` (replace,
@@ -334,7 +355,7 @@ Finding codes. A violation fails the run; a warning is only reported.
 | `FINISH` | the end point is not stored, or cannot be reached in time or distance |
 | `BUDGET` | the stored total differs from the total recomputed from the items, or paid attractions exceed their share; a total over the budget is a warning |
 | `REQUESTS` | generation or an edit made more routing requests than `REQUEST_LIMITS` allows (counted also offline) |
-| `EDIT`, `REFUSE`, `DAY_START`, `OPTIMISE` | an edit result is malformed or broke the stop's position (a refused edit is a warning); a change that had to be refused was made or changed rows; a stored day start was lost; the optimiser step reported a note (warning) |
+| `EDIT`, `REFUSE`, `DAY_START`, `OPTIMISE` | an edit result is malformed or broke the stop's position (a refused edit is a warning; planning a day again refused on a rule of its own new plan, without `worse`, is a violation); a change that had to be refused was made or changed rows; a stored day start was lost; the optimiser step reported a note (warning) |
 
 To extend it: add an entry to `SCENARIOS` (a `pref` and a `trip`, with optional `weights`, `must`, `avoid` and `ratings` keys,
 the `trip` keys `end_name`, `end_lat` and `end_lng` for an end point, and `forecast` for a rain

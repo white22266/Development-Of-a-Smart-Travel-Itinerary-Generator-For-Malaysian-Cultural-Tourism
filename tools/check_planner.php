@@ -12,6 +12,13 @@
 //   php tools/check_planner.php --keep              keep the generated itineraries
 //   php tools/check_planner.php --json              machine-readable output
 //   php tools/check_planner.php --road              allow real road routing (public OSRM/Valhalla)
+//   php tools/check_planner.php --pass=skew         only the second pass (see below); --pass=default only the first
+//
+// Two passes without --road. The first runs every scenario on estimates. The second runs the
+// edit scenarios again with ROUTING_TEST_SKEW=1 (services/RouteService.php): every leg the
+// planner measures then gets "road" figures that differ from the estimates it plans with (each
+// pair of points scaled by its own factor of 0.8 to 1.6), as real routing does. Every check must
+// hold on the stored plans there too. Its scenarios are named <scenario>@skew.
 //
 // Meal rows (itinerary_items.meal_slot set) are judged as lunch or dinner, not as stops: STOPS
 // counts visits only, and MEAL checks that a day whose visits span a meal window has that meal
@@ -45,9 +52,9 @@ if (PHP_SAPI !== 'cli') {
 define('CSRF_DISABLE_AUTO_VERIFY', true);
 define('CSRF_DISABLE_AUTO_INJECTION', true);
 
-$options = getopt('', ['scenario:', 'keep', 'json', 'road', 'help']);
+$options = getopt('', ['scenario:', 'keep', 'json', 'road', 'pass:', 'help']);
 if (isset($options['help'])) {
-    echo "Usage: php tools/check_planner.php [--scenario=<name>] [--keep] [--json] [--road]\n";
+    echo "Usage: php tools/check_planner.php [--scenario=<name>] [--keep] [--json] [--road] [--pass=default|skew]\n";
     exit(0);
 }
 
@@ -55,6 +62,13 @@ if (isset($options['help'])) {
 // distance and time from the straight line. Set before the environment file is read, which
 // keeps a variable that is already set.
 putenv('ROUTING_ESTIMATES_ONLY=' . (isset($options['road']) ? '0' : '1'));
+putenv('ROUTING_TEST_SKEW=0');
+
+/** Whether legs the planner measures get figures other than its estimates: real routing, or the skewed second pass. */
+function measuredFigures(): bool
+{
+    return getenv('ROUTING_ESTIMATES_ONLY') !== '1' || getenv('ROUTING_TEST_SKEW') === '1';
+}
 
 // =====================================================================================
 // THE PLANNER PIPELINE. The only calls into the planner: ItineraryGenerator::generate(), with
@@ -174,6 +188,23 @@ const EARLIEST_START = 360;
 const LATEST_END = 1380;
 /** WEATHER warns about an outdoor stop on a day with at least this chance of rain. */
 const RAIN_WARN_AT = 80;
+
+/**
+ * Opening hours written as words, without clock times: approximate hours, taken from the
+ * task that introduced them (not from services/OpeningHours.php). [pattern, unless pattern,
+ * ranges in minutes, weekdays (0 = Monday) or null for every day]; the first match wins. Any
+ * other text ("Open area", "Exterior viewing", "Verify before visit") stays unknown.
+ */
+const DESCRIBED_HOURS = [
+    ['/office hours/', null, [[9 * 60, 17 * 60]], [0, 1, 2, 3, 4]],
+    ['/lunch hours/', null, [[11 * 60, 15 * 60]], null],
+    ['/meal hours/', null, [[11 * 60, 15 * 60], [18 * 60, 22 * 60]], null],
+    ['/(morning|daytime|day time) to evening/', null, [[8 * 60, 20 * 60]], null],
+    ['/\b(evening|night)\b/', '/morning|daytime|day time/', [[17 * 60, 23 * 60 + 59]], null],
+    ['/daytime|day time/', null, [[8 * 60, 18 * 60]], null],
+    ['/\bmorning\b/', null, [[6 * 60, 12 * 60]], null],
+    ['/(business|shop) hours/', null, [[10 * 60, 22 * 60]], null],
+];
 
 // ---------------------------------------------------------------------------------------
 // Scenarios. Origins are real city centres or transport hubs of the chosen area.
@@ -379,6 +410,21 @@ const SCENARIOS = [
             'day_start_time' => '18:00:00'],
         'trip' => ['start_date' => '2026-12-11', 'origin_name' => 'Dutch Square (Stadthuys)', 'origin_lat' => 2.1942, 'origin_lng' => 102.2489],
     ],
+    // ---- Planning a day again on road figures that differ from the estimates ---------------
+    // Optional keys: 'regenerate_must_day' (more and less for planning the day of the first
+    // must-see place again) and 'rain_every_day' (a chance of rain for every day of the trip,
+    // after which every day is planned again for the rain).
+    'kl_family_car_must_opens_late_end_klia' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'family', 'party_size' => 4,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '',
+            'day_start_time' => '09:00:00', 'day_end_time' => '19:00:00'],
+        'must' => [['name' => 'Art House Gallery Museum of Ethnic Arts']],   // opens 10:30, after the day starts
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865,
+                   'end_name' => 'KLIA Terminal 1', 'end_lat' => 2.7456, 'end_lng' => 101.7072],
+        'regenerate_must_day' => ['more' => ['museum'], 'less' => ['culture']],
+        'rain_every_day' => 95,
+    ],
     'penang_solo_walking_end_only_morning' => [
         'pref' => ['trip_days' => 1, 'budget' => 300, 'budget_tier' => 'normal', 'transport_type' => 'walking', 'traveller_type' => 'solo', 'party_size' => 1,
             'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
@@ -400,7 +446,7 @@ const REQUEST_LIMITS = ['generate' => 1, 'suggest' => 2, 'replace' => 2, 'remove
 
 /** The base scenarios that also run as edit scenarios (<base>__edits). */
 const EDIT_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal', 'penang_group_transit_packed_festival',
-                    'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid'];
+                    'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid', 'kl_family_car_must_opens_late_end_klia'];
 
 /** Every scenario: the fixed ones and the edit scenarios built on EDIT_BASES. */
 function allScenarios(): array
@@ -446,8 +492,19 @@ set_time_limit(0);
 $roadRouting = isset($options['road']);
 $travellerId = ensureTestTraveller($checkConn);
 $results = [];
-foreach ($selected as $name => $scenario) {
-    $results[] = runScenario($pipelineConn, $checkConn, $travellerId, $name, $scenario, isset($options['keep']));
+$pass = (string)($options['pass'] ?? 'both');
+if ($pass !== 'skew') {
+    foreach ($selected as $name => $scenario) {
+        $results[] = runScenario($pipelineConn, $checkConn, $travellerId, $name, $scenario, isset($options['keep']));
+    }
+}
+// The second pass: the edit scenarios again, with road figures that differ from the estimates.
+if ($pass !== 'default' && !$roadRouting) {
+    putenv('ROUTING_TEST_SKEW=1');
+    foreach ($selected as $name => $scenario) {
+        if (!empty($scenario['edits'])) $results[] = runScenario($pipelineConn, $checkConn, $travellerId, $name . '@skew', $scenario, isset($options['keep']));
+    }
+    putenv('ROUTING_TEST_SKEW=0');
 }
 $after = testTravellerCounts($checkConn, $travellerId);
 report($results, $dbName, isset($options['road']), isset($options['json']), $after);
@@ -661,7 +718,7 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     setTestRatings($checkConn, $travellerId, $places['ratings']);
     try {
         // One table request per trip; with real routing one more per day that had to be repaired.
-        $generateLimit = REQUEST_LIMITS['generate'] + (getenv('ROUTING_ESTIMATES_ONLY') === '1' ? 0 : (int)$scenario['pref']['trip_days']);
+        $generateLimit = REQUEST_LIMITS['generate'] + (measuredFigures() ? (int)$scenario['pref']['trip_days'] : 0);
         $out = counted('generate', $generateLimit, fn() => runPlannerPipeline($pipelineConn, $travellerId, $preferenceId, $scenario['trip']), $result);
         $result['itinerary_id'] = $out['itinerary_id'];
         foreach ($out['notes'] as $note) {
@@ -765,6 +822,14 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         if (!$r['ok']) $add('EDIT', 'warning', null, null, "{$step} refused ({$r['code']}): {$r['message']}");
         return (bool)$r['ok'];
     };
+    // Planning a day again may be refused only when the new day would be worse than the present
+    // one in a way the result states ('worse': a must-see place lost, no stop, another day
+    // broken), or when the day cannot be planned at all. A refusal on a rule of the new day's
+    // own stops means the planner did not settle the day it chose (a violation).
+    $regenerateRefused = static function (string $step, int $day, array $r) use ($add): void {
+        if (($r['status'] ?? '') === 'done' || !empty($r['worse']) || in_array($r['code'] ?? '', ['NOT_FOUND', 'LOCKED'], true)) return;
+        $add('EDIT', 'violation', $day, null, "{$step}: planning day {$day} again was refused on a rule of its own new plan (" . ($r['code'] ?? '?') . '): ' . ($r['message'] ?? ''));
+    };
     $pref = $scenario['pref'];
     $target = (int)(intendedProfile($pref)['target']);
     $musts = array_flip($scenario['resolved']['must'] ?? []);
@@ -849,9 +914,32 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     $interests = csv($pref['interests']);
     $more = $interests[1] ?? $interests[0];
     $less = $interests[0];
-    if ($note('regenerate', $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $tripDays, ['more' => [$more], 'less' => $more === $less ? [] : [$less]])))) {
+    $r = $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $tripDays, ['more' => [$more], 'less' => $more === $less ? [] : [$less]]));
+    $regenerateRefused('regenerate', $tripDays, $r);
+    if ($note('regenerate', $r)) {
         // CATEGORY judges that day by the weights asked for: more = loved (3), less = a little (1).
         $scenario['day_weights'][$tripDays] = [$more => 3] + ($more === $less ? [] : [$less => 1]);
+    }
+
+    // 5a. The day of the first must-see place planned again (scenario key regenerate_must_day).
+    if (isset($scenario['regenerate_must_day']) && $musts) {
+        $mustDay = null;
+        foreach (editVisits($c, $id) as $d => $visits) {
+            foreach ($visits as $v) if (isset($musts[(int)$v['place_id']]) && $mustDay === null) $mustDay = (int)$d;
+        }
+        if ($mustDay === null) {
+            $add('EDIT', 'warning', null, null, 'regenerate_must_day: no must-see place is in the trip');
+        } else {
+            $opts = $scenario['regenerate_must_day'];
+            $r = $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $mustDay, $opts));
+            $regenerateRefused('regenerate_must_day', $mustDay, $r);
+            if ($note('regenerate_must_day', $r)) {
+                $scenario['day_weights'][$mustDay] = array_fill_keys($opts['more'] ?? [], 3) + array_fill_keys($opts['less'] ?? [], 1);
+                $stillThere = false;
+                foreach (editVisits($c, $id)[$mustDay] ?? [] as $v) $stillThere = $stillThere || isset($musts[(int)$v['place_id']]);
+                if (!$stillThere) $add('MUST', 'violation', $mustDay, null, 'planning the day again lost its must-see place');
+            }
+        }
     }
 
     // 5b. A start of its own for the day after the first night (day 1 of a one-day trip), 30
@@ -914,7 +1002,9 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
             $add('EDIT', 'warning', $startDay, null, 'no replacement suggested on the day with its own start');
         }
         // 6c. The same day planned again (no more or less: it is judged by the trip's weights again).
-        if ($note('regenerate_day_start', $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $startDay)))) {
+        $r = $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $startDay));
+        $regenerateRefused('regenerate_day_start', $startDay, $r);
+        if ($note('regenerate_day_start', $r)) {
             unset($scenario['day_weights'][$startDay]);
             $keepsStart('planning the day again');
         }
@@ -932,7 +1022,9 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     $rainDate = (string)$scenario['trip']['start_date'];
     $rainChance = 85;
     $r = $req('replan_rain', fn() => ItineraryEditService::replanRainyDays($p, $id, [$rainDate => $rainChance]));   // one rainy day: one day planned again
+    $regenerateRefused('replan_rain', 1, (array)($r['changes'][1] ?? []));
     if ($note('replan_rain', $r)) {
+        if (($r['changes'][1]['status'] ?? '') === 'done') unset($scenario['day_weights'][1]);   // planned with the trip's weights again
         if (($r['changes'][1]['status'] ?? '') !== 'done') {
             $add('RAIN', 'violation', 1, null, 'day 1 at ' . $rainChance . '% was not planned again: ' . ($r['changes'][1]['message'] ?? 'no result for the day'));
         }
@@ -954,6 +1046,22 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
                 $add('RAIN', 'violation', 1, (string)$row['item_title'], "outdoor stop on a day at {$rainChance}% while {$indoorLeft} indoor place(s) of the area are not in the trip");
             }
         }
+    }
+
+    // 8b. Rain on every day (scenario key rain_every_day): every day planned again for it, with
+    // the requests of one day planned again per rainy day.
+    if (isset($scenario['rain_every_day'])) {
+        $forecast = [];
+        for ($d = 1; $d <= $tripDays; $d++) {
+            $forecast[(new DateTimeImmutable((string)$scenario['trip']['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d')] = (int)$scenario['rain_every_day'];
+        }
+        $r = $req('replan_rain', fn() => ItineraryEditService::replanRainyDays($p, $id, $forecast), static fn(): int => REQUEST_LIMITS['replan_rain'] * $tripDays);
+        $note('replan_rain_every_day', $r);
+        foreach ((array)($r['changes'] ?? []) as $d => $change) {
+            $regenerateRefused('replan_rain_every_day', (int)$d, (array)$change);
+            if (($change['status'] ?? '') === 'done') unset($scenario['day_weights'][(int)$d]);
+        }
+        $scenario['trip']['forecast'] = $forecast + (array)($scenario['trip']['forecast'] ?? []);
     }
     $result['info']['edits'] = $done;
 
@@ -1647,6 +1755,13 @@ function openingRanges(string $text, string $date): ?array
     }
     if ($ranges) return $ranges;
     if (str_contains($text, 'closed') && !preg_match('/\d/', $text)) return [];
+    if (preg_match('/\d/', $text)) return null;
+    // Hours written as words (approximations, the table of DESCRIBED_HOURS): the first that matches.
+    $weekday = (int)date('N', strtotime($date)) - 1;
+    foreach (DESCRIBED_HOURS as [$pattern, $unless, $hours, $weekdays]) {
+        if (!preg_match($pattern, $text) || ($unless !== null && preg_match($unless, $text))) continue;
+        return $weekdays === null || in_array($weekday, $weekdays, true) ? $hours : [];
+    }
     return null;
 }
 

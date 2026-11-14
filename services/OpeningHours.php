@@ -8,7 +8,8 @@
 //   Sunday, 9 am–9 pm | Monday, Closed | ...             the same, as some sources write it
 //   Daily 11:00-22:00; verify current hours                the same hours every day
 //   Usually 10:00 AM - 10:00 PM
-//   Open area / Verify before visit / Meal hours vary      nothing to check: the visit is allowed
+//   Evening to late night; vendor hours vary             words only: approximate hours (DESCRIBED)
+//   Open area / Verify before visit                       nothing to check: the visit is allowed
 //
 // Two reading rules:
 //   - A start time without AM/PM takes the marker of the end time ("9:00 - 11:00 PM" opens at
@@ -18,6 +19,25 @@
 class OpeningHours
 {
     private const DAYS = ['mon' => 0, 'tue' => 1, 'wed' => 2, 'thu' => 3, 'fri' => 4, 'sat' => 5, 'sun' => 6];
+
+    /**
+     * Hours written as words, read when a text has no clock times: APPROXIMATIONS made from the
+     * description, not published hours. The first rule whose pattern matches (and whose unless
+     * pattern does not) gives the ranges, in minutes after midnight; days limits a rule to those
+     * weekdays (0 = Monday), so without a date it cannot be checked. Any other text ("Open
+     * area", "Exterior viewing", "Verify before visit", "Outside prayer times") stays unknown.
+     * tools/check_planner.php holds the same table in its own reader.
+     */
+    private const DESCRIBED = [
+        'office'   => ['pattern' => '/\boffice hours\b/', 'ranges' => [[540, 1020]], 'days' => [0, 1, 2, 3, 4]],   // Mon-Fri 09:00-17:00
+        'lunch'    => ['pattern' => '/\blunch hours\b/', 'ranges' => [[660, 900]]],                              // 11:00-15:00
+        'meal'     => ['pattern' => '/\bmeal hours\b/', 'ranges' => [[660, 900], [1080, 1320]]],                 // 11:00-15:00, 18:00-22:00
+        'morning_to_evening' => ['pattern' => '/\b(morning|day\s*time)\s+to\s+evening\b/', 'ranges' => [[480, 1200]]],  // 08:00-20:00
+        'evening'  => ['pattern' => '/\b(evening|night)\b/', 'unless' => '/\bmorning\b|\bday\s*time\b/', 'ranges' => [[1020, 1439]]],  // 17:00-23:59
+        'daytime'  => ['pattern' => '/\bday\s*time\b/', 'ranges' => [[480, 1080]]],                            // 08:00-18:00
+        'morning'  => ['pattern' => '/\bmorning\b/', 'ranges' => [[360, 720]]],                                  // 06:00-12:00
+        'business' => ['pattern' => '/\b(business|shop) hours\b/', 'ranges' => [[600, 1320]]],                    // 10:00-22:00
+    ];
 
     private const RANGE = '/(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?\s*(?:-|–|—|to)\s*(\d{1,2})(?:[:.](\d{2}))?\s*(am|pm)?/u';
 
@@ -110,10 +130,10 @@ class OpeningHours
                 $lastHours = trim($m[3]);
             }
         }
-        if (!$perDay) return self::parse($text);
+        if (!$perDay) return self::parse($text, $weekday);
 
         if ($weekday >= 0) {
-            if (isset($perDay[$weekday])) return self::parse($perDay[$weekday]);
+            if (isset($perDay[$weekday])) return self::parse($perDay[$weekday], $weekday);
             // A weekday the list leaves out is closed, unless the list was cut off (its last
             // entry has no hours): then the missing days are unknown.
             return $lastHours === '' ? null : [];
@@ -122,8 +142,8 @@ class OpeningHours
         return count($perDay) === 7 && count(array_unique($perDay)) === 1 ? self::parse(reset($perDay)) : null;
     }
 
-    /** The hours in one piece of text that applies to a single day. */
-    private static function parse(string $text): ?array
+    /** The hours in one piece of text that applies to a single day ($weekday 0 = Monday, -1 unknown). */
+    private static function parse(string $text, int $weekday = -1): ?array
     {
         $text = str_replace(['a.m.', 'p.m.', 'a.m', 'p.m'], ['am', 'pm', 'am', 'pm'], $text);
         if (preg_match('/24\s*(hours|hrs|\/\s*7)|always open|open always/u', $text)) return [[0, 2880]];
@@ -147,6 +167,19 @@ class OpeningHours
         }
         if ($ranges) return $ranges;
         if (str_contains($text, 'closed') && !preg_match('/\d/', $text)) return [];
+        if (preg_match('/\d/', $text)) return null;
+        return self::described($text, $weekday);
+    }
+
+    /** Approximate hours from a description without clock times (DESCRIBED), or null. */
+    private static function described(string $text, int $weekday): ?array
+    {
+        foreach (self::DESCRIBED as $rule) {
+            if (!preg_match($rule['pattern'], $text) || (isset($rule['unless']) && preg_match($rule['unless'], $text))) continue;
+            if (!isset($rule['days'])) return $rule['ranges'];
+            if ($weekday < 0) return null;   // differs between weekdays: not checkable without a date
+            return in_array($weekday, $rule['days'], true) ? $rule['ranges'] : [];
+        }
         return null;
     }
 

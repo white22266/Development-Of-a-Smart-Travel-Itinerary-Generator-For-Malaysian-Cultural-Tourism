@@ -27,6 +27,11 @@
 // To use your own, set ROUTING_CAR_URL, ROUTING_FOOT_URL and ROUTING_VALHALLA_URL in .env.
 // ROUTING_ESTIMATES_ONLY=1 makes no request at all: every figure is then an estimate. The
 // planner check (tools/check_planner.php) sets it so its runs are offline and repeatable.
+// ROUTING_TEST_SKEW=1, only together with ROUTING_ESTIMATES_ONLY=1, is a test switch: a leg that
+// would have been measured gets "road" figures that differ from the estimate, the distance and
+// the time each scaled by a factor between SKEW_LOW and SKEW_HIGH that is fixed for each pair of
+// points (skewed()). Planning still sees the plain estimates, so the planner check can test what
+// happens when the road figures differ from the figures a day was planned with. No request.
 
 require_once __DIR__ . '/OpenDataHttp.php';
 
@@ -65,6 +70,10 @@ class RouteService
     private const MAX_VALHALLA_POINTS = 10;
     /** Most points of one route request to the public Valhalla server. */
     private const MAX_VALHALLA_ROUTE_POINTS = 20;
+
+    /** ROUTING_TEST_SKEW: the range of the factor a skewed leg's distance and time are scaled by. */
+    private const SKEW_LOW = 0.8;
+    private const SKEW_HIGH = 1.6;
 
     /** Up to this many stops every possible order is compared (8 stops: 40,320 orders). */
     private const MAX_EXACT_STOPS = 8;
@@ -210,7 +219,15 @@ class RouteService
                 if ($i !== $j) $this->covered[self::pairKey($from[0], $from[1], $to[0], $to[1])] = true;
             }
         }
-        if (self::estimatesOnly()) return false;
+        if (self::estimatesOnly()) {
+            if (!self::testSkew()) return false;
+            foreach ($points as $i => $from) {
+                foreach ($points as $j => $to) {
+                    if ($i !== $j) $this->known[self::pairKey($from[0], $from[1], $to[0], $to[1])] ??= $this->skewed($from, $to);
+                }
+            }
+            return true;
+        }
 
         // [from][to] => [km, seconds], from the engine that also draws this transport's routes
         $matrix = $valhalla ? $this->valhallaMatrix($points) : null;
@@ -354,7 +371,16 @@ class RouteService
             for ($i = 1, $n = count($points); $i < $n; $i++) {
                 $this->covered[self::pairKey($points[$i - 1][0], $points[$i - 1][1], $points[$i][0], $points[$i][1])] = true;
             }
-            if (self::estimatesOnly()) continue;
+            if (self::estimatesOnly()) {
+                if (!self::testSkew()) continue;
+                for ($i = 1, $n = count($points); $i < $n; $i++) {
+                    $key = self::pairKey($points[$i - 1][0], $points[$i - 1][1], $points[$i][0], $points[$i][1]);
+                    if (isset($this->known[$key]) || $points[$i - 1] === $points[$i]) continue;
+                    $this->known[$key] = $this->skewed($points[$i - 1], $points[$i]);
+                    if (isset($wanted[$key])) $measured++;
+                }
+                continue;
+            }
             // Every point is a stop of its own: the route may turn round there.
             $valhalla = $this->transportType === 'motorcycle' && count($points) <= self::MAX_VALHALLA_ROUTE_POINTS;
             $legs = $valhalla ? $this->valhallaLegs($points, false) : null;
@@ -786,6 +812,32 @@ class RouteService
     private static function estimatesOnly(): bool
     {
         return in_array(strtolower(trim((string)getenv('ROUTING_ESTIMATES_ONLY'))), ['1', 'true', 'yes'], true);
+    }
+
+    /** Whether the test switch ROUTING_TEST_SKEW is set (it acts only with ROUTING_ESTIMATES_ONLY). */
+    private static function testSkew(): bool
+    {
+        return in_array(strtolower(trim((string)getenv('ROUTING_TEST_SKEW'))), ['1', 'true', 'yes'], true);
+    }
+
+    /**
+     * ROUTING_TEST_SKEW: the "road" figures of a leg, [km, minutes]: the estimate with its
+     * distance and its time each scaled by a factor between SKEW_LOW and SKEW_HIGH taken from a
+     * hash of the pair, so the same leg always gets the same figures and the two directions of
+     * a leg may differ, as real roads do.
+     *
+     * @return array{0:float,1:int}
+     */
+    private function skewed(array $from, array $to): array
+    {
+        $estimate = $this->getSegment((float)$from[0], (float)$from[1], (float)$to[0], (float)$to[1]);
+        $hash = crc32(self::pairKey((float)$from[0], (float)$from[1], (float)$to[0], (float)$to[1]));
+        $span = self::SKEW_HIGH - self::SKEW_LOW;
+        $kmFactor = self::SKEW_LOW + $span * (($hash & 0xffff) / 0xffff);
+        $minFactor = self::SKEW_LOW + $span * ((($hash >> 16) & 0xffff) / 0xffff);
+        $km = (float)$estimate['distance_km'] * $kmFactor;
+        $walk = $this->shortWalk((float)$from[0], (float)$from[1], (float)$to[0], (float)$to[1], $km);
+        return $walk ?? [round($km, 2), max(1, (int)ceil((int)$estimate['travel_time_min'] * $minFactor))];
     }
 
     private function osrmBase(): string

@@ -66,6 +66,9 @@ class ItineraryEditService
     private const SUGGEST_SPARE = 2;
     /** Positions of a stop measured on the road together when addStop() or moveStop() choose the position. */
     private const POSITIONS_MEASURED = 3;
+    /** A day planned again: rounds of settling it on the road figures at most, and candidates tried for a stop that gave way. */
+    private const SETTLE_ROUNDS = 12;
+    private const SETTLE_CANDIDATES = 3;
     /** Why a day is empty, in the generator's "Free day" note, when an edit left it so. */
     private const EMPTIED = 'its stops were removed or moved';
 
@@ -251,12 +254,17 @@ class ItineraryEditService
 
     /**
      * Plan one day again. The other days and their places stay as they are and are not used
-     * again; the must-see places of the day are kept.
+     * again; the must-see places of the day are kept. The new day is planned on the figures at
+     * hand, measured on the road and settled on those figures (settleDay()): a stop that no
+     * longer fits gives way to the next candidate, so the day ends feasible whenever one
+     * exists. The present day stays as it is only when the new day would lose a must-see
+     * place, have no stop, or make another day break a rule (the refusal names the rule and
+     * carries 'worse').
      *
      * @param array $options more (categories to see more of: they become interests loved),
      *                       less (categories to see less of: weight "a little"), forecast
      *                       (Y-m-d => chance of rain) or rain (chance of rain for this day)
-     * @return array result + stops (the number of visits the day now has)
+     * @return array result + stops (the number of visits the day now has); a refusal + day, worse
      */
     public static function regenerateDay(mysqli $conn, int $itineraryId, int $dayNo, array $options = []): array
     {
@@ -447,7 +455,7 @@ class ItineraryEditService
      *
      * @param array|null $forecast Y-m-d => chance of rain; null: forecast()
      * @return array result + rainy (day => chance), changes (day => status, code, message,
-     *         rain, removed (names), added (names))
+     *         rain, worse (why a kept day was kept, see settleDay()), removed (names), added (names))
      */
     public static function replanRainyDays(mysqli $conn, int $itineraryId, ?array $forecast = null, int $threshold = ItineraryDayBuilder::RAIN_PREFER): array
     {
@@ -478,7 +486,7 @@ class ItineraryEditService
             $after = self::dayTitles($conn, $itineraryId, $d);
             $removed = array_values(array_diff_key($before, $after));
             $added = array_values(array_diff_key($after, $before));
-            $changes[$d] = ['status' => $r['status'], 'code' => $r['code'], 'message' => $r['message'], 'rain' => $chance,
+            $changes[$d] = ['status' => $r['status'], 'code' => $r['code'], 'message' => $r['message'], 'rain' => $chance, 'worse' => $r['worse'] ?? null,
                             'removed' => $removed, 'added' => $added];
             if ($r['ok']) {
                 $retimed = array_merge($retimed, (array)$r['days']);
@@ -488,7 +496,7 @@ class ItineraryEditService
                         : 'the same places fit best, times planned again.');
             } else {
                 $firstRefusal ??= $r;
-                $sentences[] = 'Day ' . $d . ' (' . $chance . '% chance of rain) was kept: ' . lcfirst((string)$r['message']);
+                $sentences[] = 'Day ' . $d . ' (' . $chance . '% chance of rain) was kept: ' . lcfirst((string)preg_replace('/^Day \d+ was kept as it is: /', '', (string)$r['message']));
             }
         }
         $extra = ['rainy' => $rainy, 'changes' => $changes];
@@ -818,35 +826,186 @@ class ItineraryEditService
         $pool = array_values(array_filter($ctx['pool'], static fn(array $p): bool => !isset($mustIds[(int)$p['place_id']])));
         $builder = new ItineraryDayBuilder($profile, $ctx['route'], $ctx['meal_pool']);
         $built = $builder->build($pool, $dayCtx);
-        foreach ($built['unplaced'] as $id => $reason) {
-            $name = (string)($ctx['places'][$id]['name'] ?? ('Place #' . $id));
-            return ['refused' => self::refused((string)$reason, 'Day ' . $dayNo . ' cannot be planned again without losing the must-see place ' . $name . ' (' . PlannerRules::reasonText((string)$reason) . ').')];
+        // A must-see place the builder found no slot for on the figures at hand is still tried
+        // in every order once the day is measured (settleDay()); only then may it be lost.
+        $stops = $built['stops'];
+        foreach ($musts as $m) {
+            if (!isset($built['unplaced'][(int)$m['place']['place_id']])) continue;
+            $stops[] = ['place' => $m['place'], 'point' => $m['point'], 'must' => true, 'tier' => 1, 'reasons' => ['on your must-see list']];
         }
-        $ordered = ItineraryRouteOptimiser::orderDay($ctx['route'], $profile, $start['point'], $built['stops'], $dayCtx + [
-            'end' => $hotelPoint, 'meal_pool' => $ctx['meal_pool'], 'budget' => $budget + ['reserve_km' => 0.0],
-        ]);
-
-        // Rows are kept for places the day already had; the others are new.
-        $rowsByPlace = [];
-        foreach ($days[$dayNo] as $s) $rowsByPlace[(int)$s['place']['place_id']] = (int)$s['item_id'];
-        $newStops = [];
-        $kept = [];
-        foreach ($ordered['stops'] as $s) {
-            $id = (int)$s['place']['place_id'];
-            $itemId = $rowsByPlace[$id] ?? null;
-            if ($itemId !== null) $kept[$itemId] = true;
-            $newStops[] = self::stopOf($s['place'], $itemId, (int)$s['tier'], (array)$s['reasons'], (bool)($s['must'] ?? false));
-        }
-        $deleted = array_values(array_filter(array_values($rowsByPlace), static fn(int $id): bool => !isset($kept[$id])));
+        // change() times the settled day once more on exactly these figures: no request there.
+        $opts = ['notes_profile' => $profile, 'measure' => false];
+        $settled = self::settleDay($ctx, $days, $dayNo, $stops, $pool, $builder, $dayCtx, $profile, $opts);
+        if (isset($settled['refused'])) return $settled;
+        $newStops = $settled['stops'];
+        $keptRows = array_filter(array_map(static fn(array $s): int => (int)($s['item_id'] ?? 0), $newStops));
+        $deleted = array_values(array_filter(array_map(static fn(array $s): int => (int)$s['item_id'], $days[$dayNo]),
+            static fn(int $id): bool => !in_array($id, $keptRows, true)));
         $days[$dayNo] = $newStops;
-        $rejections = $built['rejections'];
-        arsort($rejections);
-        $main = array_key_first($rejections);
-        $why = $main !== null ? 'most places were ' . PlannerRules::reasonText((string)$main) : 'no place is left in the chosen area';
-        return ['days' => $days, 'changed' => [$dayNo], 'deleted' => $deleted,
-                'opts' => ['why_empty' => $why, 'notes_profile' => $profile],
+        return ['days' => $days, 'changed' => [$dayNo], 'deleted' => $deleted, 'opts' => $opts,
                 'message' => 'Day ' . $dayNo . ' was planned again with ' . count($newStops) . ' stop(s).',
                 'extra' => ['stops' => count($newStops)]];
+    }
+
+    /**
+     * Settle a day planned again on the figures at hand, so that the day change() stores keeps
+     * every rule on the figures it is stored with:
+     *   1. the new day is measured on the road once (its stops in the planned order, the meal
+     *      places of that timing, every other pair of its points and the legs to the next day),
+     *   2. it is ordered again on those figures, trying every order (orderDay()); a stop no
+     *      order can keep gives way,
+     *   3. the next candidates of the day builder (SETTLE_CANDIDATES, measured together in one
+     *      more request while one is left) take the place of the stops that gave way,
+     *   4. the legs the final timing needs that are still unknown (meal places) are measured
+     *      while a request is left, and the day is settled again on them.
+     * Every step is checked with the edit service's own timing (timeDays()) on the figures at
+     * hand. The present day stays as it is, with a refusal that names the rule, when the new day
+     * would lose a must-see place the present day holds, would have no stop at all, or would
+     * make the next day break a rule; the refusal then carries 'worse' (must, empty, next_day).
+     *
+     * @param array $stops the builder's stops (place, point, must, tier, reasons)
+     * @return array{stops:array}|array{refused:array} stops: the day in order, as stopOf() makes them
+     */
+    private static function settleDay(array $ctx, array $days, int $dayNo, array $stops, array $pool, ItineraryDayBuilder $builder, array $dayCtx, array $profile, array $opts): array
+    {
+        $route = $ctx['route'];
+        $start = $dayCtx['start'];
+        $end = $ctx['days'][$dayNo]['hotel']['point'] ?? $dayCtx['finish'];
+        $rowsByPlace = [];
+        foreach ($days[$dayNo] as $s) $rowsByPlace[(int)$s['place']['place_id']] = (int)$s['item_id'];
+        $asRows = static function (array $ordered) use ($rowsByPlace): array {
+            return array_map(static fn(array $s): array => self::stopOf($s['place'], $rowsByPlace[(int)$s['place']['place_id']] ?? null,
+                (int)($s['tier'] ?? 1), (array)($s['reasons'] ?? []), !empty($s['must'])), array_values($ordered));
+        };
+        $nextDay = $dayNo < $ctx['total_days'] && ($ctx['days'][$dayNo]['hotel']['point'] ?? null) === null ? $dayNo + 1 : null;
+        $nextFirst = $nextDay !== null ? ($days[$nextDay][0]['point'] ?? null) : null;
+        // Every leg an order of these stops can use: from the start, between two stops, to the
+        // end of the day and to the next day's first stop.
+        $pairs = static function (array $points) use ($start, $end, $nextFirst): array {
+            $legs = [];
+            foreach ($points as $p) {
+                $legs[] = [$start, $p];
+                foreach ($points as $q) if ($q !== $p) $legs[] = [$p, $q];
+                if ($end !== null) $legs[] = [$p, $end];
+                if ($nextFirst !== null) $legs[] = [$p, $nextFirst];
+            }
+            return $legs;
+        };
+        $mustLost = static function (array $stop, string $reason) use ($dayNo): array {
+            return ['refused' => self::refused($reason, 'Day ' . $dayNo . ' was kept as it is: planned again it would lose the must-see place '
+                . $stop['place']['name'] . ' (' . PlannerRules::reasonText($reason) . ').', ['day' => $dayNo, 'worse' => 'must'])];
+        };
+        if ($start === null) return ['refused' => self::refused('LOCKED', 'Day ' . $dayNo . ' has no starting point, so it cannot be planned again.')];
+
+        // 1. The day as planned, timed on the figures at hand, then measured in one request.
+        $frame = self::timingFrame($ctx, $dayNo, $days, $opts);
+        $ordered = ItineraryRouteOptimiser::orderDay($route, $profile, $start, $stops, $frame);
+        $trial = $days;
+        $trial[$dayNo] = $asRows($ordered['stops'] ?: $stops);
+        $legs = self::unknownLegs($ctx, $trial, self::timeDays($ctx, $trial, [$dayNo], $opts));
+        array_push($legs, ...$pairs(array_column($stops, 'point')));
+        self::measure($ctx, $legs, 1);
+
+        $wanted = count($stops);
+        $given = [];            // place_id => true: stops that gave way and candidates that failed
+        $candidatesAsked = false;
+        $kept = [];
+        for ($round = 0; $round < self::SETTLE_ROUNDS; $round++) {
+            // 2. Every order on the figures at hand; a stop no order keeps gives way.
+            $ordered = ItineraryRouteOptimiser::orderDay($route, $profile, $start, $stops, $frame);
+            foreach ($ordered['dropped'] as $s) {
+                if (!empty($s['must'])) return $mustLost($s, (string)$s['reason']);
+                $given[(int)$s['place']['place_id']] = true;
+            }
+            $kept = $ordered['stops'];
+            $trial = $days;
+            $trial[$dayNo] = $asRows($kept);
+            $timed = self::timeDays($ctx, $trial, [$dayNo], $opts);
+            if (!$timed['result']['ok']) {
+                $failed = (int)($timed['result']['day'] ?? 0);
+                $drop = $timed['plans'][$dayNo]['dropped'][0] ?? null;
+                if ($failed !== $dayNo || $drop === null) {
+                    return ['refused' => self::refused((string)$timed['result']['code'], 'Day ' . $dayNo . ' was kept as it is: planned again, it would make another day break a rule. '
+                        . $timed['result']['message'], ['day' => $failed, 'worse' => 'next_day'])];
+                }
+                // The edit timing and the order disagree about this stop (a meal kept from the
+                // present day): it gives way too.
+                if (!empty($drop['must'])) return $mustLost($drop, (string)$drop['reason']);
+                $given[(int)$drop['place']['place_id']] = true;
+                $stops = array_values(array_filter($kept, static fn(array $s): bool => (int)$s['place']['place_id'] !== (int)$drop['place']['place_id']));
+                continue;
+            }
+
+            // 3. Stops that gave way: the builder's next candidates, as generation repairs a day.
+            if (count($kept) < $wanted) {
+                $day = $dayCtx;
+                $day['used'] = (array)$dayCtx['used'] + $given;
+                $state = ItineraryDayBuilder::startState($day, $profile);
+                foreach ($kept as $s) $state = ItineraryDayBuilder::advance($state, $s, $profile);
+                $candidates = $builder->ranked($pool, $day, $state, self::SETTLE_CANDIDATES);
+                if ($candidates && !$candidatesAsked && self::requestsLeft($ctx) > 0) {
+                    $candidatesAsked = true;
+                    $legs = [];
+                    foreach ($candidates as $c) array_push($legs, ...$pairs(array_merge(array_column($kept, 'point'), [$c['point']])));
+                    self::measure($ctx, $legs, 1);
+                }
+                $filled = false;
+                foreach ($candidates as $c) {
+                    $try = ItineraryRouteOptimiser::orderDay($route, $profile, $start, array_merge($kept, [$c]), $frame);
+                    if (!$try['dropped']) {
+                        $tryDays = $days;
+                        $tryDays[$dayNo] = $asRows($try['stops']);
+                        if (self::timeDays($ctx, $tryDays, [$dayNo], $opts)['result']['ok']) {
+                            $stops = $try['stops'];
+                            $filled = true;
+                            break;
+                        }
+                    }
+                    $given[(int)$c['place']['place_id']] = true;
+                }
+                if ($filled) continue;
+                $wanted = count($kept);   // no candidate fits: the day keeps the stops it has
+            }
+
+            // 4. Legs of the final timing still unknown (meal places): measured while a request is left.
+            if (self::measure($ctx, self::unknownLegs($ctx, $trial, $timed)) > 0) {
+                $stops = $kept;
+                continue;
+            }
+            return $kept ? ['stops' => $asRows($kept)] : self::emptyDay($dayNo, $given);
+        }
+        // Out of rounds: the last day timed above is kept only when it still fits.
+        $trial[$dayNo] = $asRows($kept);
+        if ($kept && self::timeDays($ctx, $trial, [$dayNo], $opts)['result']['ok']) return ['stops' => $trial[$dayNo]];
+        return $kept ? ['refused' => self::refused('NO_CHANGE', 'Day ' . $dayNo . ' was kept as it is: no new plan for it settled on the road figures.', ['day' => $dayNo, 'worse' => 'empty'])]
+                     : self::emptyDay($dayNo, $given);
+    }
+
+    /** The refusal for a day that, planned again, would have no stop. */
+    private static function emptyDay(int $dayNo, array $given): array
+    {
+        $why = $given ? 'no stop of the new day fits on the road figures' : 'no place fits the day';
+        return ['refused' => self::refused('NO_CHANGE', 'Day ' . $dayNo . ' was kept as it is: planned again it would have no stop (' . $why . ').',
+            ['day' => $dayNo, 'worse' => 'empty'])];
+    }
+
+    /** What a day is ordered and timed with by this service (timeDay()), for orderDay(). */
+    private static function timingFrame(array $ctx, int $d, array $days, array $opts, array $plans = []): array
+    {
+        $start = self::starts($ctx, $days)[$d];
+        $hotelPoint = $ctx['days'][$d]['hotel']['point'] ?? null;
+        $choice = self::storedMealChoice($ctx, $d);
+        foreach ((array)($opts['meal_choice'][$d] ?? []) as $slot => $c) $choice[$slot] = $c;
+        return [
+            'date' => $ctx['dates'][$d],
+            'first_leg_exempt' => $start['exempt'],
+            'budget' => ($opts['budget'] ?? true) ? self::budgetOutside($ctx, $d, $days, $plans) + ['reserve_km' => 0.0] : null,
+            'end' => $hotelPoint,
+            'finish' => $d === $ctx['total_days'] && $hotelPoint === null ? $ctx['finish'] : null,
+            'meal_pool' => $ctx['meal_pool'],
+            'used' => self::usedOutside($ctx, $d, $days, $plans),
+            'meal_choice' => $choice,
+        ];
     }
 
     /**
@@ -1090,10 +1249,10 @@ class ItineraryEditService
         return array_values($legs);
     }
 
-    /** Measure legs on the road within what is left of the operation's requests; returns how many became known. */
-    private static function measure(array $ctx, array $legs): int
+    /** Measure legs on the road within what is left of the operation's requests (at most $cap of them); returns how many became known. */
+    private static function measure(array $ctx, array $legs, int $cap = PHP_INT_MAX): int
     {
-        $left = self::requestsLeft($ctx);
+        $left = min($cap, self::requestsLeft($ctx));
         return $legs && $left > 0 ? $ctx['route']->measureLegs($legs, $left) : 0;
     }
 
