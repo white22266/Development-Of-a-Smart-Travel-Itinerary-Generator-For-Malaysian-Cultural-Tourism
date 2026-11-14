@@ -172,6 +172,7 @@ preference only.
 | 80 percent or more | outdoor places are tried only when no indoor place of the same relaxation level is feasible | `RAIN_INDOOR_FIRST` |
 
 A place counts as outdoor when `is_outdoor` = 1 or its category is nature
+For this soft preference only, a culture or heritage place whose name says it stands in the open (statue, square, fountain, park, beach, bridge, monument and similar words, `PlannerRules::OUTDOOR_NAME`) also counts as outdoor, because many older rows have no outdoor flag. The hard rules for heat and for elderly travellers use the stored flag alone.
 (`PlannerRules::isOutdoor()`). Must-see places are not changed by the weather.
 
 ## Meals

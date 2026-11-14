@@ -489,10 +489,19 @@ final class PlannerRules
         return 2 * 6371000.0 * asin(min(1.0, sqrt($h)));
     }
 
+    /** Words in a place name that mean it stands in the open; used only by isOutdoor(). */
+    private const OUTDOOR_NAME = '/\b(statue|fountain|waterfall|air terjun|beach|pantai|lighthouse|rumah api|viewpoint|lookout|bridge|jambatan|square|dataran|monument|tugu|clock tower|street art|mural|pintu gerbang|esplanade|waterfront|jetty|jeti|park|gardens?|lake|tasik|caves?|gua|trail)\b/i';
+
     /** A place is outdoor when it is marked so or is a nature place (for the weather rule). */
     public static function isOutdoor(array $place): bool
     {
-        return (int)($place['is_outdoor'] ?? 0) === 1 || strtolower((string)($place['category'] ?? '')) === 'nature';
+        if ((int)($place['is_outdoor'] ?? 0) === 1) return true;
+        $category = strtolower((string)($place['category'] ?? ''));
+        if ($category === 'nature') return true;
+        // Many older rows have no outdoor flag. For the weather preference, which is a soft rule,
+        // a culture or heritage place whose name says it stands in the open counts as outdoor too.
+        return in_array($category, ['culture', 'heritage'], true)
+            && preg_match(self::OUTDOOR_NAME, (string)($place['name'] ?? '')) === 1;
     }
 
     /**
