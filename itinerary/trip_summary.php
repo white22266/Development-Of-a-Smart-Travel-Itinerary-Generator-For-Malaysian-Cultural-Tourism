@@ -6,6 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once "../config/db_connect.php";
 require_once "../config/i18n.php";
+require_once "../config/ai_chat_text.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
 
@@ -797,7 +798,12 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
             <button type="submit"><?php echo te('trip.ai_send'); ?></button>
         </form>
     </div>
-    <script src="../assets/trip_ai_chat.js?v=20261112b"></script>
+    <script>
+    // What assets/trip_ai_chat.js needs: the chat's language with its card labels, and its own texts.
+    const AI_CHAT_BOOT = <?php echo json_encode(['lang' => i18n_lang(), 'ui' => ai_ui_labels(i18n_lang())], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?: '{}'; ?>;
+    const AI_CHAT_T = <?php echo i18n_js(['iv.ai_missing', 'iv.ai_sep']); ?>;
+    </script>
+    <script src="../assets/trip_ai_chat.js?v=20261118a"></script>
     <script>
         const ITINERARY_ID = <?php echo (int)$itineraryId; ?>;
         const COST_CHART_LABELS = <?php echo json_encode($chartLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;

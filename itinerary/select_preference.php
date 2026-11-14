@@ -29,7 +29,8 @@ $partySizeSql = $hasPartySizeCol ? ", party_size" : "";
 
 $stmt = $conn->prepare("
   SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type{$partySizeSql}, travel_pace,
-         dietary_preference, preferred_visit_time, accessibility_needs, interests, preferred_states, preferred_districts, created_at
+         dietary_preference, preferred_visit_time, accessibility_needs, accessibility_tags,
+         day_start_time, day_end_time, stops_per_day, adults, children, seniors, interests, preferred_states, preferred_districts, created_at
   FROM traveller_preferences
   WHERE traveller_id = ?
   ORDER BY preference_id DESC
@@ -42,6 +43,43 @@ while ($row = $res->fetch_assoc()) {
   $preferences[] = $row;
 }
 $stmt->close();
+
+// Interest weights and must-see / avoid places of every saved preference of this traveller.
+$prefWeights = [];
+$prefPlaces = [];
+$wRes = $conn->prepare("
+  SELECT tpi.preference_id, ti.interest_code, tpi.weight
+  FROM traveller_preference_interests tpi
+  JOIN travel_interests ti ON ti.interest_id = tpi.interest_id
+  JOIN traveller_preferences tp ON tp.preference_id = tpi.preference_id
+  WHERE tp.traveller_id = ?
+");
+if ($wRes) {
+  $wRes->bind_param("i", $travellerId);
+  $wRes->execute();
+  $wr = $wRes->get_result();
+  while ($row = $wr->fetch_assoc()) {
+    $prefWeights[(int)$row["preference_id"]][strtolower((string)$row["interest_code"])] = (int)$row["weight"];
+  }
+  $wRes->close();
+}
+$pRes = $conn->prepare("
+  SELECT tpp.preference_id, tpp.wish, cp.name
+  FROM traveller_preference_places tpp
+  JOIN cultural_places cp ON cp.place_id = tpp.place_id
+  JOIN traveller_preferences tp ON tp.preference_id = tpp.preference_id
+  WHERE tp.traveller_id = ?
+  ORDER BY cp.name
+");
+if ($pRes) {
+  $pRes->bind_param("i", $travellerId);
+  $pRes->execute();
+  $pr = $pRes->get_result();
+  while ($row = $pr->fetch_assoc()) {
+    $prefPlaces[(int)$row["preference_id"]][(string)$row["wish"]][] = (string)$row["name"];
+  }
+  $pRes->close();
+}
 
 $requestedPreferenceId = (int)($_GET["preference_id"] ?? ($_SESSION["last_preference_id"] ?? 0));
 $preselectedPreferenceId = 0;
@@ -108,6 +146,49 @@ function pref_short_label(array $pref): string {
   ]);
 }
 
+/** Interests with their weight; the default weight (2, "like") is left out. */
+function pref_interest_summary(?string $csv, array $weights): string {
+  $parts = array_values(array_filter(array_map("trim", explode(",", (string)$csv))));
+  if (empty($parts)) return "-";
+  return implode(", ", array_map(function ($part) use ($weights) {
+    $label = pref_choice_label("interest", $part);
+    $w = (int)($weights[strtolower($part)] ?? 2);
+    if ($w >= 1 && $w <= 3 && $w !== 2) {
+      return t('pref.sum_interest_weight', ['interest' => $label, 'level' => t_choice("weight", (string)$w)]);
+    }
+    return $label;
+  }, $parts));
+}
+
+/** Stored accessibility tags and the free-text note as one line; "" when both are empty. */
+function pref_access_summary(array $pref): string {
+  $tags = array_values(array_filter(array_map("trim", explode(",", (string)($pref["accessibility_tags"] ?? "")))));
+  $line = implode(", ", array_map(fn($tag) => t_choice("access", $tag), $tags));
+  $note = trim((string)($pref["accessibility_needs"] ?? ""));
+  if ($note !== "" && strtolower($note) !== "none") {
+    $line = $line === "" ? $note : $line . " - " . t('pref.sum_access_note', ['note' => $note]);
+  }
+  return $line;
+}
+
+function pref_schedule_summary(array $pref): string {
+  $start = substr(trim((string)($pref["day_start_time"] ?? "")), 0, 5);
+  $end = substr(trim((string)($pref["day_end_time"] ?? "")), 0, 5);
+  if ($start !== "" && $end !== "") return t('pref.sum_schedule_range', ['start' => $start, 'end' => $end]);
+  if ($start !== "") return t('pref.sum_schedule_from', ['start' => $start]);
+  if ($end !== "") return t('pref.sum_schedule_until', ['end' => $end]);
+  return "";
+}
+
+function pref_mix_summary(array $pref): string {
+  $parts = [];
+  foreach (["adults" => 'pref.sum_adults', "children" => 'pref.sum_children', "seniors" => 'pref.sum_seniors'] as $col => $key) {
+    $value = $pref[$col] ?? null;
+    if ($value !== null && $value !== "" && (int)$value > 0) $parts[] = t($key, ['n' => (int)$value]);
+  }
+  return implode(", ", $parts);
+}
+
 $preferencePayload = [];
 foreach ($preferences as $pref) {
   $pid = (int)$pref["preference_id"];
@@ -134,8 +215,13 @@ foreach ($preferences as $pref) {
     "visit_time" => pref_choice_label("visit", (string)($pref["preferred_visit_time"] ?? "any")),
     "visit_time_value" => strtolower((string)($pref["preferred_visit_time"] ?? "any")),
     "location" => pref_location_label($pref),
-    "interests" => pref_list_label((string)($pref["interests"] ?? "")),
-    "accessibility" => trim((string)($pref["accessibility_needs"] ?? "")) !== "" ? trim((string)$pref["accessibility_needs"]) : "None",
+    "interests" => pref_interest_summary((string)($pref["interests"] ?? ""), $prefWeights[$pid] ?? []),
+    "accessibility" => pref_access_summary($pref),
+    "schedule" => pref_schedule_summary($pref),
+    "stops" => ($pref["stops_per_day"] ?? null) !== null && $pref["stops_per_day"] !== "" ? (string)(int)$pref["stops_per_day"] : "",
+    "mix" => pref_mix_summary($pref),
+    "must_places" => implode(", ", $prefPlaces[$pid]["must"] ?? []),
+    "avoid_places" => implode(", ", $prefPlaces[$pid]["avoid"] ?? []),
   ];
 }
 ?>
@@ -612,7 +698,7 @@ foreach ($preferences as $pref) {
 const preferenceData = <?php echo json_encode($preferencePayload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 const preselectedPreferenceId = <?php echo (int)$preselectedPreferenceId; ?>;
 const fromPreferenceSaved = <?php echo $fromPreferenceSaved ? "true" : "false"; ?>;
-const T = <?php echo i18n_js(['pref.travellers_unit', 'sel.js_duration', 'sel.js_budget', 'sel.js_transport', 'sel.js_type', 'sel.js_party', 'sel.js_pace', 'sel.js_location', 'sel.js_interests', 'sel.js_dietary', 'sel.js_visit', 'sel.js_profile_label', 'sel.js_profile', 'sel.js_budget_level', 'sel.js_route_scope', 'sel.js_route_scope_val', 'sel.js_activity_label', 'sel.js_transport_label', 'sel.js_transport_val', 'sel.js_interest_label', 'sel.js_food_label', 'sel.js_access_label', 'sel.js_budget_none', 'sel.js_budget_limited', 'sel.js_budget_moderate', 'sel.js_budget_comfortable', 'sel.js_activity_relaxed', 'sel.js_activity_packed', 'sel.js_activity_normal', 'sel.js_food_halal', 'sel.js_food_veg', 'sel.js_food_none', 'sel.js_access_none', 'sel.js_loc_confirmed', 'sel.js_loc_choose', 'sel.js_loc_searching', 'sel.js_loc_notfound', 'sel.js_end_confirmed', 'sel.js_end_type', 'sel.js_end_notfound', 'sel.js_my_location', 'sel.js_thinking', 'sel.js_ai_unavailable', 'sel.js_ai_down', 'sel.js_geo_unsupported', 'sel.js_geo_getting', 'sel.js_geo_failed', 'sel.js_need_pref', 'sel.js_need_date', 'sel.origin_status', 'sel.ai_btn', 'sel.ai_btn_hide']); ?>;
+const T = <?php echo i18n_js(['pref.travellers_unit', 'sel.js_duration', 'sel.js_budget', 'sel.js_transport', 'sel.js_type', 'sel.js_party', 'sel.js_pace', 'sel.js_location', 'sel.js_interests', 'sel.js_dietary', 'sel.js_visit', 'sel.js_profile_label', 'sel.js_profile', 'sel.js_budget_level', 'sel.js_route_scope', 'sel.js_route_scope_val', 'sel.js_activity_label', 'sel.js_transport_label', 'sel.js_transport_val', 'sel.js_interest_label', 'sel.js_food_label', 'sel.js_access_label', 'sel.js_budget_none', 'sel.js_budget_limited', 'sel.js_budget_moderate', 'sel.js_budget_comfortable', 'sel.js_activity_relaxed', 'sel.js_activity_packed', 'sel.js_activity_normal', 'sel.js_food_halal', 'sel.js_food_veg', 'sel.js_food_none', 'sel.js_access_none', 'sel.js_schedule', 'sel.js_stops', 'sel.js_mix', 'sel.js_access_summary', 'sel.js_must', 'sel.js_avoid', 'sel.js_loc_confirmed', 'sel.js_loc_choose', 'sel.js_loc_searching', 'sel.js_loc_notfound', 'sel.js_end_confirmed', 'sel.js_end_type', 'sel.js_end_notfound', 'sel.js_my_location', 'sel.js_thinking', 'sel.js_ai_unavailable', 'sel.js_ai_down', 'sel.js_geo_unsupported', 'sel.js_geo_getting', 'sel.js_geo_failed', 'sel.js_need_pref', 'sel.js_need_date', 'sel.origin_status', 'sel.ai_btn', 'sel.ai_btn_hide']); ?>;
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, function (char) {
@@ -664,8 +750,7 @@ function foodRule(pref) {
 
 function accessibilityRule(pref) {
   const text = String(pref.accessibility || "").trim();
-  if (text === "" || text.toLowerCase() === "none") return T["sel.js_access_none"];
-  return text;
+  return text === "" ? T["sel.js_access_none"] : text;
 }
 
 function updatePreferenceSummary() {
@@ -696,7 +781,13 @@ function updatePreferenceSummary() {
     [T["sel.js_interests"], pref.interests],
     [T["sel.js_dietary"], pref.dietary],
     [T["sel.js_visit"], pref.visit_time],
-  ]);
+    [T["sel.js_schedule"], pref.schedule],
+    [T["sel.js_stops"], pref.stops],
+    [T["sel.js_mix"], pref.mix],
+    [T["sel.js_access_summary"], String(pref.accessibility || "").trim()],
+    [T["sel.js_must"], pref.must_places],
+    [T["sel.js_avoid"], pref.avoid_places],
+  ].filter(row => String(row[1] || "").trim() !== ""));
 
   analysisBox.innerHTML = renderAnalysisRows([
     [T["sel.js_profile_label"], T["sel.js_profile"].replace("{pace}", pref.pace).replace("{type}", pref.traveller_type_label)],

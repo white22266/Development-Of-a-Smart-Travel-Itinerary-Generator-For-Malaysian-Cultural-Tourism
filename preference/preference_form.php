@@ -587,7 +587,12 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 <div class="summary-item"><strong><?php echo te('pref.interests_heading'); ?></strong><span id="summaryInterests">-</span></div>
                 <div class="summary-item"><strong><?php echo te('pref.state_label'); ?></strong><span id="summaryState"><?php echo te('opt.any_state'); ?></span></div>
                 <div class="summary-item"><strong><?php echo te('pref.district_label'); ?></strong><span id="summaryDistrict"><?php echo te('opt.any_district'); ?></span></div>
+                <div class="summary-item" id="summaryRowSchedule" style="display:none;"><strong><?php echo te('pref.sum_schedule'); ?></strong><span id="summarySchedule">-</span></div>
+                <div class="summary-item" id="summaryRowStops" style="display:none;"><strong><?php echo te('pref.stops_label'); ?></strong><span id="summaryStops">-</span></div>
+                <div class="summary-item" id="summaryRowMix" style="display:none;"><strong><?php echo te('pref.sum_mix'); ?></strong><span id="summaryMix">-</span></div>
                 <div class="summary-item"><strong><?php echo te('pref.sum_access'); ?></strong><span id="summaryAccessibility">-</span></div>
+                <div class="summary-item" id="summaryRowMust" style="display:none;"><strong><?php echo te('pref.must_label'); ?></strong><span id="summaryMust">-</span></div>
+                <div class="summary-item" id="summaryRowAvoid" style="display:none;"><strong><?php echo te('pref.avoid_label'); ?></strong><span id="summaryAvoid">-</span></div>
               </div>
             </div>
 
@@ -608,7 +613,7 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 <script>
 (function () {
   var stateDistricts = <?php echo $districtsJson; ?>;
-  var T = <?php echo i18n_js(['pref.any_district', 'pref.district_hint_off', 'pref.district_hint_in', 'pref.days_unit', 'pref.travellers_unit', 'pref.js_select_interest', 'pref.js_max_places', 'pref.js_search_unavailable', 'pref.js_no_places', 'pref.js_family_help', 'pref.js_group_help', 'opt.any_state', 'opt.any_district', 'common.remove']); ?>;
+  var T = <?php echo i18n_js(['pref.any_district', 'pref.district_hint_off', 'pref.district_hint_in', 'pref.days_unit', 'pref.travellers_unit', 'pref.js_select_interest', 'pref.js_max_places', 'pref.js_search_unavailable', 'pref.js_no_places', 'pref.js_family_help', 'pref.js_group_help', 'pref.sum_schedule_from', 'pref.sum_schedule_until', 'pref.sum_schedule_range', 'pref.sum_adults', 'pref.sum_children', 'pref.sum_seniors', 'pref.sum_interest_weight', 'pref.sum_access_note', 'opt.any_state', 'opt.any_district', 'common.remove']); ?>;
 
   var stateSel    = document.getElementById('preferred_state');
   var distSel     = document.getElementById('preferred_district');
@@ -848,10 +853,50 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     var pace = selectedText(document.querySelector('[name="travel_pace"]')) || '-';
     var dietary = selectedText(document.querySelector('[name="dietary_preference"]')) || '-';
     var visitTime = selectedText(document.querySelector('[name="preferred_visit_time"]')) || '-';
-    var accessibility = document.querySelector('[name="accessibility_needs"]').value || '-';
-    var interests = Array.prototype.map.call(document.querySelectorAll('[name="interests[]"]:checked'), function(el) {
+    var accessNote = document.querySelector('[name="accessibility_needs"]').value.trim();
+    var accessTags = Array.prototype.map.call(document.querySelectorAll('[name="access_tags[]"]:checked'), function(el) {
       return el.parentNode.textContent.trim();
+    });
+    var accessibility = accessTags.join(', ');
+    if (accessNote !== '') {
+      accessibility = accessibility === '' ? accessNote : accessibility + ' - ' + T['pref.sum_access_note'].replace('{note}', accessNote);
+    }
+    if (accessibility === '') accessibility = '-';
+    var interests = Array.prototype.map.call(document.querySelectorAll('[name="interests[]"]:checked'), function(el) {
+      var name = el.parentNode.textContent.trim();
+      var row = el.closest('.interest-row');
+      var weightSel = row ? row.querySelector('select') : null;
+      if (weightSel && weightSel.value !== '' && weightSel.value !== '2') {
+        return T['pref.sum_interest_weight'].replace('{interest}', name).replace('{level}', selectedText(weightSel));
+      }
+      return name;
     }).join(', ') || '-';
+    var dayStart = document.querySelector('[name="day_start_time"]').value;
+    var dayEnd = document.querySelector('[name="day_end_time"]').value;
+    var schedule = '';
+    if (dayStart !== '' && dayEnd !== '') schedule = T['pref.sum_schedule_range'].replace('{start}', dayStart).replace('{end}', dayEnd);
+    else if (dayStart !== '') schedule = T['pref.sum_schedule_from'].replace('{start}', dayStart);
+    else if (dayEnd !== '') schedule = T['pref.sum_schedule_until'].replace('{end}', dayEnd);
+    var stops = document.querySelector('[name="stops_per_day"]').value.trim();
+    var mixParts = [];
+    [['adults', 'pref.sum_adults'], ['children', 'pref.sum_children'], ['seniors', 'pref.sum_seniors']].forEach(function (m) {
+      var el = document.getElementById(m[0]);
+      if (el && el.value !== '' && parseInt(el.value, 10) > 0) mixParts.push(T[m[1]].replace('{n}', el.value));
+    });
+    function placeNames(wish) {
+      return Array.prototype.map.call(document.querySelectorAll('.place-picker[data-wish="' + wish + '"] .place-chip'), function (chip) {
+        return chip.firstChild ? chip.firstChild.textContent.trim() : '';
+      }).filter(function (n) { return n !== ''; }).join(', ');
+    }
+    function setOptionalRow(name, text) {
+      document.getElementById('summaryRow' + name).style.display = text === '' ? 'none' : '';
+      document.getElementById('summary' + name).textContent = text;
+    }
+    setOptionalRow('Schedule', schedule);
+    setOptionalRow('Stops', stops);
+    setOptionalRow('Mix', mixParts.join(', '));
+    setOptionalRow('Must', placeNames('must'));
+    setOptionalRow('Avoid', placeNames('avoid'));
     document.getElementById('summaryDays').textContent = T['pref.days_unit'].replace('{n}', days);
     document.getElementById('summaryBudget').textContent = budget === '-' ? '-' : 'RM ' + budget;
     document.getElementById('summaryBudgetTier').textContent = budgetTier;
