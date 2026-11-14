@@ -14,8 +14,8 @@ Two things are optional and off until they are set up: real public transport con
 |---|---|---|---|
 | Map pictures (tiles) | OpenStreetMap | ODbL | bottom corner of every map |
 | Places, opening hours, phone, website | OpenStreetMap (Overpass API) | ODbL | place page, "Sources" |
-| Place descriptions | Wikipedia, English (found through Wikidata) | CC BY-SA 4.0 | place page, "Sources", with a link to the article |
-| Place photos | Wikimedia Commons | per photo (CC BY, CC BY-SA, public domain) | place page, "Sources": author, licence, link |
+| Place descriptions | Wikipedia, English (found through Wikidata) | CC BY-SA 4.0 | place page, "Sources", with a link to the article; itinerary PDF, credits table |
+| Place photos | Wikimedia Commons | per photo (CC BY, CC BY-SA, public domain) | place page, "Sources": author, licence, link; itinerary PDF: under each photo and in the credits table |
 | Hotels and other lodging | OpenStreetMap | ODbL | "from OpenStreetMap listings" |
 | Address search, "what is here" | Photon, then Nominatim (OpenStreetMap data) | ODbL | - |
 | Routes by car and on foot, order of the stops | OSRM on OpenStreetMap data (FOSSGIS servers) | ODbL | map info box |
@@ -36,6 +36,9 @@ The credits are part of the licences. Keep them when changing a page.
 1. Run the migrations in `database/migrations/` on the database (they can be run again safely).
 2. In `.env`, set `OPEN_DATA_CONTACT` to a web address or e-mail address. The open services
    ask every application to say who runs it; it is sent with each request to them.
+   It matters most for Wikimedia, whose published limits are 10 requests a minute for an
+   application that gives no contact and 200 for one that does. Without it, photo downloads
+   are the first thing to be refused.
 3. Fill the place and lodging tables for the first time:
 
    ```bash
@@ -94,6 +97,12 @@ and photos from Wikidata, Wikipedia and Wikimedia Commons, and then:
   can say "same place" (the existing place is linked and completed by the next sync) or
   publish it as a new place.
 - **Lodging** goes into the `lodgings` table, which hotel suggestions are answered from.
+- **Photos** are saved in `uploads/places/`, never linked from Wikimedia's servers. The job
+  takes a resized copy: 1280 pixels wide, or the next smaller width Wikimedia keeps (960, 500,
+  330, 250) when the original is smaller than that. Wikimedia asks for this, and it limits
+  downloads of original files much more tightly. When it answers "slow down" all the same,
+  the job does not wait: the place is saved without its photo, the log says so, and the next
+  run adds the photo.
 
 Running the job again never creates duplicates. Answers from the open services are cached in
 `storage/cache/`, so a second run within a few days makes almost no requests.
@@ -180,7 +189,10 @@ These services are free because each application uses them lightly. `services/Op
 is the only place that calls them: it caches every answer on disk, waits between two requests
 to the same server (one a second for Nominatim, OSRM, Valhalla, Transitous and Wikimedia), asks
 for many items in one request where the service allows it, and waits when a server says "slow
-down". Do not call the services from anywhere else.
+down". A file download (a photo, the list of fires) is not worth that wait: after a refusal,
+nothing more is downloaded from that server until the pause it asked for is over (five minutes
+when it names none, longer after each further refusal), and the caller goes on without the
+file. Do not call the services from anywhere else.
 
 To stop depending on the public routing servers, run your own and set `ROUTING_CAR_URL`,
 `ROUTING_FOOT_URL` (OSRM) and `ROUTING_VALHALLA_URL` in `.env`.

@@ -102,9 +102,22 @@ class WikimediaService
     }
 
     /**
+     * The widths Wikimedia keeps resized copies of a photo in (mediawiki.org, "Common thumbnail
+     * sizes"), without the ones that are too small to show a place (20 to 120 pixels).
+     */
+    private const PHOTO_WIDTHS = [250, 330, 500, 960, 1280, 1920, 3840];
+
+    /**
      * Wikimedia Commons photos: where to download a web-sized copy, and what attribution needs.
      *
+     * The address is that of a resized copy whenever there is one. A photo narrower than $width
+     * comes back from the API as the original file, so it is asked for again at the next smaller
+     * standard width. Wikimedia wants clients to take resized copies, and it limits downloads
+     * of original files far more tightly. Only a photo narrower than the smallest width in
+     * PHOTO_WIDTHS keeps the address of its original.
+     *
      * @param string[] $fileNames with or without the "File:" prefix
+     * @param int      $width     the widest copy wanted, one of PHOTO_WIDTHS
      * @return array<string,array{download_url:string,page_url:string,mime:string,license:string,artist:string}>
      *         keyed by the file name as given; files that are not photos are left out
      */
@@ -118,12 +131,54 @@ class WikimediaService
         $titles = array_values(array_unique($given));
         sort($titles);
 
+        $found = self::imageInfo($titles, $width);
+
+        $narrower = [];
+        foreach ($found as $title => $image) {
+            if ($image['resized']) continue;
+            $step = self::widthBelow($image['width']);
+            if ($step !== null) $narrower[$step][] = $title;
+        }
+        ksort($narrower);
+        foreach ($narrower as $step => $stepTitles) {
+            foreach (self::imageInfo($stepTitles, $step) as $title => $image) {
+                if ($image['resized']) $found[$title] = $image;
+            }
+        }
+
+        $out = [];
+        foreach ($given as $fileName => $title) {
+            if (!isset($found[$title])) continue;
+            $image = $found[$title];
+            unset($image['width'], $image['resized']);
+            $out[$fileName] = $image;
+        }
+        return $out;
+    }
+
+    /** The widest standard width that is narrower than a photo of $originalWidth pixels, or null. */
+    private static function widthBelow(int $originalWidth): ?int
+    {
+        $narrower = array_filter(self::PHOTO_WIDTHS, static fn(int $step): bool => $step < $originalWidth);
+        return $narrower ? max($narrower) : null;
+    }
+
+    /**
+     * Ask Commons about photos, 40 per request.
+     *
+     * @param string[] $titles with the "File:" prefix
+     * @return array<string,array{download_url:string,page_url:string,mime:string,license:string,artist:string,width:int,resized:bool}>
+     *         keyed by the title as asked for. width is that of the original file; resized is
+     *         false when download_url is the original file itself and not a resized copy
+     */
+    private static function imageInfo(array $titles, int $width): array
+    {
         $found = [];
         foreach (array_chunk($titles, 40) as $chunk) {
             $url = 'https://commons.wikimedia.org/w/api.php?' . http_build_query([
                 'action' => 'query',
                 'prop' => 'imageinfo',
-                'iiprop' => 'url|mime|extmetadata',
+                'iiprop' => 'url|mime|size|extmetadata',
                 'iiurlwidth' => $width,
                 'titles' => implode('|', $chunk),
                 'format' => 'json',
@@ -140,24 +195,24 @@ class WikimediaService
                 if (!in_array($mime, ['image/jpeg', 'image/png', 'image/webp'], true)) continue;
                 $meta = $info['extmetadata'] ?? [];
                 $artist = html_entity_decode(strip_tags((string)($meta['Artist']['value'] ?? '')), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                $original = (string)($info['url'] ?? '');
+                $download = (string)($info['thumburl'] ?? $original);
                 $pages[(string)$page['title']] = [
-                    'download_url' => (string)($info['thumburl'] ?? $info['url'] ?? ''),
+                    'download_url' => $download,
                     'page_url' => (string)($info['descriptionurl'] ?? ''),
                     'mime' => $mime,
                     'license' => trim(strip_tags((string)($meta['LicenseShortName']['value'] ?? ''))),
                     'artist' => mb_substr(trim((string)preg_replace('/\s+/u', ' ', $artist)), 0, 200),
+                    'width' => (int)($info['width'] ?? 0),
+                    // The API answers with the original file when the photo is not wider than asked for.
+                    'resized' => $download !== '' && parse_url($download, PHP_URL_PATH) !== parse_url($original, PHP_URL_PATH),
                 ];
             }
             foreach (self::resolvedTitles($query, $chunk) as $title => $final) {
                 if (isset($pages[$final])) $found[$title] = $pages[$final];
             }
         }
-
-        $out = [];
-        foreach ($given as $fileName => $title) {
-            if (isset($found[$title])) $out[$fileName] = $found[$title];
-        }
-        return $out;
+        return $found;
     }
 
     /** "en:A Famosa" (the OSM wikipedia tag) -> ['en', 'A Famosa']. */

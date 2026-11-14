@@ -77,6 +77,9 @@ class PlaceSyncService
     private array $summaries = [];
     /** @var array<string,array> Commons photos for the state being synced, by file name */
     private array $images = [];
+    /** Photos that exist but could not be downloaded since this object was made. A later sync adds them. */
+    private int $photosLeft = 0;
+    private string $photoProblem = '';
     /** @var array<string,array<string,string>> state => lowercased district name => district name as stored */
     private array $districtNames = [];
     /** @var array<string,bool> "place_id:field" of automatic changes an admin undid */
@@ -108,6 +111,7 @@ class PlaceSyncService
         }
         $stats = ['osm_places' => 0, 'linked' => 0, 'fields_filled' => 0, 'staged' => 0, 'published' => 0, 'duplicates' => 0, 'lodgings' => 0];
         $runId = $this->startRun($state);
+        $photosLeftBefore = $this->photosLeft;
 
         try {
             ($this->log)("[{$state}] reading visitor places from OpenStreetMap...");
@@ -150,9 +154,11 @@ class PlaceSyncService
                 }
                 $candidateId = $this->saveCandidate($state, $candidate);
                 if ($candidateId !== null && $candidate['duplicate_of'] === null && $candidate['score'] >= $this->autoPublishMin) {
+                    $leftBefore = $this->photosLeft;
                     if ($this->publishCandidate($candidateId, null) !== null) {
                         $stats['published']++;
-                        ($this->log)("  published ({$candidate['score']}): {$candidate['name']}");
+                        $note = $this->photosLeft > $leftBefore ? '  [photo not downloaded yet]' : '';
+                        ($this->log)("  published ({$candidate['score']}): {$candidate['name']}{$note}");
                     }
                 }
             }
@@ -160,7 +166,13 @@ class PlaceSyncService
                 $stats['published'] = count(array_filter($candidates, fn($c) => $c['duplicate_of'] === null && $c['score'] >= $this->autoPublishMin));
             }
 
-
+            $left = $this->photosLeft - $photosLeftBefore;
+            if ($left > 0) {
+                ($this->log)(sprintf(
+                    '  %d %s not downloaded; a later sync adds %s. Reason: %s',
+                    $left, $left === 1 ? 'photo was' : 'photos were', $left === 1 ? 'it' : 'them', $this->photoProblem
+                ));
+            }
 
             $stats['lodgings'] = $this->syncLodging($state);
             $this->finishRun($runId, 'done', $stats, null);
@@ -796,6 +808,16 @@ class PlaceSyncService
     }
 
     /**
+     * How many photos exist but could not be downloaded since this object was made, for example
+     * because Wikimedia asked for a pause. The places are published without them, and the next
+     * sync adds each photo to its place.
+     */
+    public function photosLeft(): int
+    {
+        return $this->photosLeft;
+    }
+
+    /**
      * Turn a staged candidate into a place. Used for automatic publishing and by the admin page.
      *
      * @param array $overrides name, category, district as corrected by an admin
@@ -1023,6 +1045,10 @@ class PlaceSyncService
         $temporary = "{$directory}/{$base}.download";
 
         $mime = OpenDataHttp::downloadFile($url, $temporary);
+        if ($mime === null) {
+            $this->photosLeft++;
+            $this->photoProblem = OpenDataHttp::lastError();
+        }
         $extension = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'][$mime ?? ''] ?? null;
         if ($extension === null || @getimagesize($temporary) === false) {
             @unlink($temporary);

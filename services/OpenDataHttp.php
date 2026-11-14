@@ -25,6 +25,12 @@ class OpenDataHttp
     private const WIKIMEDIA_INTERVAL = 1.0;
     private const DEFAULT_INTERVAL = 0.2;
 
+    /** A refused download is waited out on the spot only when the server asks for no more than this many seconds. */
+    private const SHORT_PAUSE = 15;
+    /** Seconds a host is left alone after refusing a download without saying for how long; doubled each time, up to the maximum. */
+    private const PAUSE_DEFAULT = 300;
+    private const PAUSE_MAX = 3600;
+
     private static string $lastError = '';
 
     /** @var array<string,true> servers that did not answer during this PHP request */
@@ -34,7 +40,7 @@ class OpenDataHttp
     /**
      * Background jobs can afford to wait: when a service answers "slow down" (HTTP 429 or 503)
      * they wait as long as it asks and try again. Page requests never wait; they fall back to
-     * a cached copy.
+     * a cached copy. Downloads never wait long either way: see downloadFile().
      */
     public static function setPatient(bool $patient): void
     {
@@ -113,6 +119,12 @@ class OpenDataHttp
     /**
      * Download a binary file (an image) to $target. Returns the MIME type on success.
      * The caller decides which hosts are allowed.
+     *
+     * A download is never worth a long wait: the caller can go on without the file and fetch
+     * it another day. So when the server answers "slow down" (HTTP 429 or 503), the host is
+     * left alone until the pause it asked for is over. Until then every download from it fails
+     * at once, in other PHP requests too. Only a pause of a few seconds is waited out on the
+     * spot, and only by a background job.
      */
     public static function downloadFile(string $url, string $target, int $maxBytes = 8000000): ?string
     {
@@ -121,12 +133,31 @@ class OpenDataHttp
             self::$lastError = 'PHP cURL extension is not enabled.';
             return null;
         }
-        [$body, $code, $error, $mime] = self::send($url, [CURLOPT_CONNECTTIMEOUT => 10, CURLOPT_TIMEOUT => 60], self::$patient ? 2 : 0);
+        $host = (string)parse_url($url, PHP_URL_HOST);
+        $until = self::pausedUntil($host);
+        if ($until > time()) {
+            self::$lastError = "{$host} asked for a pause until " . date('H:i', $until) . '; nothing is downloaded from it before then.';
+            return null;
+        }
+
+        for ($attempt = 0; ; $attempt++) {
+            [$body, $code, $error, $mime, $retryAfter] = self::send($url, [CURLOPT_CONNECTTIMEOUT => 10, CURLOPT_TIMEOUT => 60], 0);
+            if ($code !== 429 && $code !== 503) break;
+            if ($attempt === 0 && self::$patient && $retryAfter !== null && $retryAfter <= self::SHORT_PAUSE) {
+                sleep(max(1, $retryAfter));
+                continue;
+            }
+            $until = self::pauseHost($host, $retryAfter);
+            self::$lastError = "{$host} answered HTTP {$code} (slow down); nothing is downloaded from it until " . date('H:i', $until) . '.';
+            error_log('OpenDataHttp: ' . self::$lastError);
+            return null;
+        }
 
         if (!is_string($body) || $code !== 200) {
             self::$lastError = "Download failed for {$url}: HTTP {$code} {$error}";
             return null;
         }
+        self::forgetPause($host);
         if (strlen($body) < 500 || strlen($body) > $maxBytes) {
             self::$lastError = "Download for {$url} has an unexpected size (" . strlen($body) . " bytes).";
             return null;
@@ -204,7 +235,8 @@ class OpenDataHttp
     /**
      * One HTTPS request, repeated when the server asks this client to slow down.
      *
-     * @return array{0: string|false, 1: int, 2: string, 3: string} body, HTTP status, cURL error, content type
+     * @return array{0: string|false, 1: int, 2: string, 3: string, 4: ?int} body, HTTP status, cURL error,
+     *         content type, and the pause the server asked for in seconds (null when it named none)
      */
     private static function send(string $url, array $curlOptions, int $retries): array
     {
@@ -233,7 +265,7 @@ class OpenDataHttp
             curl_close($ch);
 
             if (!in_array($code, [429, 503], true) || $attempt >= $retries) {
-                return [$body, $code, $error, $type];
+                return [$body, $code, $error, $type, self::retryAfterSeconds($retryAfter)];
             }
             $wait = self::retryDelay($retryAfter, $attempt);
             error_log("OpenDataHttp: {$host} answered HTTP {$code}; waiting {$wait}s before trying again.");
@@ -244,13 +276,18 @@ class OpenDataHttp
     /** Seconds to wait before a retry: what the server asked for, kept between 5 and 120. */
     private static function retryDelay(?string $retryAfter, int $attempt): int
     {
-        $seconds = 20 * ($attempt + 1);
-        if ($retryAfter !== null && ctype_digit($retryAfter)) {
-            $seconds = (int)$retryAfter;
-        } elseif ($retryAfter !== null && ($time = strtotime($retryAfter)) !== false) {
-            $seconds = $time - time();
-        }
+        $seconds = self::retryAfterSeconds($retryAfter) ?? 20 * ($attempt + 1);
         return max(5, min(120, $seconds));
+    }
+
+    /** The pause a Retry-After header asks for, in seconds. The header holds a number of seconds or a date. */
+    private static function retryAfterSeconds(?string $header): ?int
+    {
+        $header = trim((string)$header);
+        if ($header === '') return null;
+        if (ctype_digit($header)) return (int)$header;
+        $time = strtotime($header);
+        return $time !== false ? max(0, $time - time()) : null;
     }
 
     /** Wait until this host may be called again. Works across concurrent PHP requests. */
@@ -271,6 +308,49 @@ class OpenDataHttp
             flock($handle, LOCK_UN);
         }
         fclose($handle);
+    }
+
+    // ------------------------------------------------------------------ pauses after a refused download
+
+    /** Unix time until which nothing is to be downloaded from $host (0: it may be asked now). */
+    private static function pausedUntil(string $host): int
+    {
+        return self::pauseState($host)[0];
+    }
+
+    /**
+     * $host refused a download. It is left alone for as long as it asked. When it named no
+     * time: for five minutes, and twice as long after each further refusal, an hour at most.
+     *
+     * @return int Unix time at which a download from $host may be tried again
+     */
+    private static function pauseHost(string $host, ?int $retryAfter): int
+    {
+        $refusals = self::pauseState($host)[1];
+        $seconds = $retryAfter ?? min(self::PAUSE_MAX, self::PAUSE_DEFAULT * 2 ** min($refusals, 8));
+        $until = time() + max(self::SHORT_PAUSE, min(86400, $seconds));
+        @file_put_contents(self::pauseFile($host), $until . ' ' . ($refusals + 1), LOCK_EX);
+        return $until;
+    }
+
+    /** A download from $host worked: its next refusal starts with the shortest pause again. */
+    private static function forgetPause(string $host): void
+    {
+        $file = self::pauseFile($host);
+        if (is_file($file)) @unlink($file);
+    }
+
+    /** @return array{0:int,1:int} end of the pause as Unix time, and how often the host refused in a row */
+    private static function pauseState(string $host): array
+    {
+        $file = self::pauseFile($host);
+        $parts = is_file($file) ? explode(' ', trim((string)@file_get_contents($file))) : [];
+        return [(int)($parts[0] ?? 0), (int)($parts[1] ?? 0)];
+    }
+
+    private static function pauseFile(string $host): string
+    {
+        return self::cacheDir('throttle') . '/' . preg_replace('/[^a-z0-9.-]/i', '_', $host) . '.pause';
     }
 
     private static function intervalFor(string $host): float

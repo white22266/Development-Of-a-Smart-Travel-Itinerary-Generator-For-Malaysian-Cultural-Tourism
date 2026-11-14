@@ -89,6 +89,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $verb = $verbs[$action] ?? "updated";
     if ($done > 0) {
         $_SESSION["success_message"] = $done . ($done === 1 ? " item " : " items ") . $verb . ".";
+        $photosLeft = $sync->photosLeft();
+        if ($photosLeft > 0) {
+            $_SESSION["success_message"] .= " " . $photosLeft . ($photosLeft === 1 ? " photo" : " photos")
+                . " could not be downloaded just now; the next sync adds " . ($photosLeft === 1 ? "it" : "them") . ".";
+        }
     }
     if ($failed > 0) {
         $_SESSION["form_errors"] = [$failed . ($failed === 1 ? " item" : " items") . " could not be " . $verb . ". It may have been handled already; details are in the server log."];
