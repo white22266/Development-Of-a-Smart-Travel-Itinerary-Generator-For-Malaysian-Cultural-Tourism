@@ -179,6 +179,8 @@ final class ItineraryRouteOptimiser
         $route->preloadTrip($pointsByDay);
 
         $startDate = (string)$meta['start_date'];
+        // A day with a start time of its own (ItineraryEditService::setDayStart()) starts there.
+        $dayStarts = ItineraryEditService::dayStarts($conn, $itineraryId);
         $dayStart = $origin;
         $sequence = [];   // item id => [sequence, start min, end min]
         $delete = [];
@@ -237,7 +239,8 @@ final class ItineraryRouteOptimiser
                 }
                 $mealChoice[(string)$row['meal_slot']] = ['place' => $chosenPlace, 'strict' => false];
             }
-            $plan = self::orderDay($route, $profile, $dayStart, $stops, [
+            $dayProfile = isset($dayStarts[$dayNo]) ? ['start' => $dayStarts[$dayNo]] + $profile : $profile;
+            $plan = self::orderDay($route, $dayProfile, $dayStart, $stops, [
                 'date' => $date,
                 'first_leg_exempt' => $dayNo === 1 && $dayStart === $origin,
                 'budget' => null,

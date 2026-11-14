@@ -15,6 +15,11 @@
 //   time       'HH:MM' (24-hour), or null
 //   position   int wanted position in the day (1 = first), or null
 //   wish       string free wishes in a few words ("fewer temples, more food"), or null
+//   more       list of self::CATEGORIES the traveller wants more of ("more food"), may be empty
+//   less       list of self::CATEGORIES the traveller wants less of ("fewer temples"), may be empty
+//              Both are read from the message and the model's wish by moreLess() (English,
+//              Malay, Chinese); only when that finds nothing are the model's own lists used.
+//              A category named in both lists is dropped from both.
 //   language   'en' | 'ms' | 'zh', the detected language of the message
 //   source     'model'
 
@@ -24,6 +29,17 @@ class ItineraryEditIntentService
 {
     public const ACTIONS = ['replace', 'add', 'remove', 'retime', 'move', 'regenerate_day', 'optimise', 'none'];
     public const CATEGORIES = ['museum', 'heritage', 'culture', 'food', 'nature', 'shopping', 'festival'];
+
+    /** Words that name a category, in English, Malay and Chinese. */
+    private const CATEGORY_WORDS = [
+        'food' => ['food', 'food place', 'restaurant', 'eat', 'makan', 'makanan', 'tempat makan', '美食', '吃', '餐厅', '小吃'],
+        'museum' => ['museum', 'gallery', 'muzium', 'galeri', '博物馆', '美术馆'],
+        'nature' => ['nature', 'park', 'beach', 'alam semula jadi', 'semula jadi', 'taman', 'pantai', '自然', '公园', '海滩'],
+        'shopping' => ['shopping', 'mall', 'membeli-belah', 'membeli belah', '购物', '商场'],
+        'heritage' => ['heritage', 'historic site', 'temple', 'mosque', 'church', 'warisan', 'kuil', 'masjid', '古迹', '寺庙', '遗产'],
+        'culture' => ['culture', 'cultural place', 'budaya', '文化'],
+        'festival' => ['festival', 'perayaan', 'pesta', '节日', '节庆'],
+    ];
 
     private OllamaClient $ollama;
     private string $lastFailure = '';
@@ -75,7 +91,7 @@ class ItineraryEditIntentService
         $reply = $this->ollama->chat(self::systemPrompt(), $user, [
             'format' => 'json',
             'temperature' => 0,
-            'num_predict' => 160,
+            'num_predict' => 200,
             'timeout' => (int)OllamaClient::setting('OLLAMA_INTENT_TIMEOUT', 20),
         ]);
         if (!$reply['ok']) {
@@ -154,6 +170,8 @@ class ItineraryEditIntentService
             'time' => null,
             'position' => null,
             'wish' => null,
+            'more' => [],
+            'less' => [],
         ];
         if ($action === 'none') {
             return $intent;
@@ -319,6 +337,7 @@ class ItineraryEditIntentService
         $intent['time'] = $time;
         $intent['position'] = $position;
         $intent['wish'] = $wish;
+        [$intent['more'], $intent['less']] = self::wantedLists($data, $message, $wish);
         return $intent;
     }
 
@@ -328,7 +347,7 @@ class ItineraryEditIntentService
         return <<<PROMPT
 You read a traveller's request about their saved trip and answer with ONE JSON object.
 The request may be in English, Malay or Chinese.
-Keys: "action", "day", "stop_no", "stop_name", "stop_id", "category", "place_name", "time", "position", "wish".
+Keys: "action", "day", "stop_no", "stop_name", "stop_id", "category", "place_name", "time", "position", "wish", "more", "less".
 action, exactly one of:
 - "replace": swap an existing stop for another place
 - "add": add a new stop
@@ -349,6 +368,8 @@ place_name: the name of a specific new place the traveller asks for, else null.
 time: the clock time the traveller asks for, 24-hour "HH:MM" (9am = "09:00", pukul 2.30 petang = "14:30", 下午3点 = "15:00"), else null. Never copy a time from the itinerary list.
 position: the wanted position within the day (1 = first; "last" = number of stops that day + 1 when moving to the end), else null.
 wish: other wishes in a few English words, such as "cheaper" or "fewer temples, more food", else null.
+more: list of categories the traveller wants more of, such as ["food"], else [].
+less: list of categories the traveller wants fewer of, such as ["heritage"] for fewer temples, else [].
 Use null for anything not said.
 
 Examples for this itinerary:
@@ -369,7 +390,7 @@ Request: 第一天早上9点开始
 Request: move Jalan Alor to day 1
 {"action":"move","day":1,"stop_no":null,"stop_name":"Jalan Alor","stop_id":880005,"category":null,"place_name":null,"time":null,"position":null,"wish":null}
 Request: rancang semula hari 2, kurang kuil, lebih banyak makanan
-{"action":"regenerate_day","day":2,"stop_no":null,"stop_name":null,"stop_id":null,"category":null,"place_name":null,"time":null,"position":null,"wish":"fewer temples, more food"}
+{"action":"regenerate_day","day":2,"stop_no":null,"stop_name":null,"stop_id":null,"category":null,"place_name":null,"time":null,"position":null,"wish":"fewer temples, more food","more":["food"],"less":["heritage"]}
 Request: 第一天的路线太绕了，帮我重新排序
 {"action":"optimise","day":1,"stop_no":null,"stop_name":null,"stop_id":null,"category":null,"place_name":null,"time":null,"position":null,"wish":null}
 Request: how far is Batu Caves from the hotel?
@@ -384,15 +405,7 @@ PROMPT;
      */
     private static function categoryWord(string $text, bool $whole): ?string
     {
-        static $words = [
-            'food' => ['food', 'food place', 'restaurant', 'eat', 'makan', 'makanan', 'tempat makan', '美食', '吃', '餐厅', '小吃'],
-            'museum' => ['museum', 'gallery', 'muzium', 'galeri', '博物馆', '美术馆'],
-            'nature' => ['nature', 'park', 'beach', 'alam semula jadi', 'semula jadi', 'taman', 'pantai', '自然', '公园', '海滩'],
-            'shopping' => ['shopping', 'mall', 'membeli-belah', 'membeli belah', '购物', '商场'],
-            'heritage' => ['heritage', 'historic site', 'temple', 'mosque', 'church', 'warisan', 'kuil', 'masjid', '古迹', '寺庙', '遗产'],
-            'culture' => ['culture', 'cultural place', 'budaya', '文化'],
-            'festival' => ['festival', 'perayaan', 'pesta', '节日', '节庆'],
-        ];
+        $words = self::CATEGORY_WORDS;
         $text = mb_strtolower(trim($text), 'UTF-8');
         if ($whole) {
             $text = preg_replace('/^(?:a|an|the|some|satu|sebuah|一个|一家|一些)\s*/u', '', $text) ?? $text;
@@ -406,6 +419,91 @@ PROMPT;
                 }
             }
         }
+        return null;
+    }
+
+    /**
+     * The more and less lists of an intent: read from the message and the model's English
+     * wish; the model's own "more" and "less" only when neither names any. Each list holds
+     * categories of self::CATEGORIES, at most once; one named in both is dropped from both.
+     *
+     * @return array{0:string[],1:string[]}
+     */
+    private static function wantedLists(array $data, string $message, ?string $wish): array
+    {
+        [$more, $less] = self::moreLess(trim($message . ' ; ' . (string)$wish));
+        if (!$more && !$less) {
+            $more = self::categoryList($data['more'] ?? null);
+            $less = self::categoryList($data['less'] ?? null);
+        }
+        $both = array_intersect($more, $less);
+        return [array_values(array_diff($more, $both)), array_values(array_diff($less, $both))];
+    }
+
+    /** A list from the model: known categories only (unknown entries are left out), each once. */
+    private static function categoryList($value): array
+    {
+        if (is_string($value)) $value = [$value];
+        if (!is_array($value)) return [];
+        $out = [];
+        foreach (array_slice($value, 0, 7) as $item) {
+            if (!is_string($item)) continue;
+            $item = strtolower(trim($item));
+            if (!in_array($item, self::CATEGORIES, true)) $item = (string)self::categoryWord($item, true);
+            if ($item !== '' && !in_array($item, $out, true)) $out[] = $item;
+        }
+        return $out;
+    }
+
+    /**
+     * The categories a text asks more and less of: "fewer temples, more food", "kurang muzium,
+     * lebih banyak makanan", "少一点博物馆，多一点美食". Each clause is read on its own; the
+     * nearest more or less word before a category word decides (in Chinese also one right after
+     * it, as in "博物馆少一点").
+     *
+     * @return array{0:string[],1:string[]}
+     */
+    public static function moreLess(string $text): array
+    {
+        $more = [];
+        $less = [];
+        $text = mb_strtolower($text, 'UTF-8');
+        $moreWords = '/(?<![a-z])(?:more|extra|lebih(?:\s+banyak)?|tambah(?:kan)?\s+lagi|banyakkan)(?![a-z])|多一?[点些個个]?|更多|增加/u';
+        $lessWords = '/(?<![a-z])(?:fewer|less|no\s+more|kurang(?:kan)?|sedikit|tak\s+(?:nak|mahu)\s+banyak)(?![a-z])|少一?[点些]?|减少|不要那么多|别那么多/u';
+        $clauses = preg_split('/[,;.!?，。；！？、]|(?<![a-z])(?:and|but|dan|tetapi|tapi)(?![a-z])|和|但是?|还有/u', $text) ?: [$text];
+        foreach ($clauses as $clause) {
+            foreach (self::CATEGORY_WORDS as $category => $words) {
+                foreach ($words as $word) {
+                    $at = self::wordOffset($clause, $word);
+                    if ($at === null) continue;
+                    $before = substr($clause, 0, $at);
+                    $kind = null;
+                    $moreAt = preg_match_all($moreWords, $before, $mm, PREG_OFFSET_CAPTURE) ? max(array_map(static fn($x) => $x[1] + strlen($x[0]), $mm[0])) : -1;
+                    $lessAt = preg_match_all($lessWords, $before, $lm, PREG_OFFSET_CAPTURE) ? max(array_map(static fn($x) => $x[1] + strlen($x[0]), $lm[0])) : -1;
+                    if ($lessAt >= 0 && $lessAt >= $moreAt) $kind = 'less';
+                    elseif ($moreAt >= 0) $kind = 'more';
+                    if ($kind === null && preg_match('/\p{Han}/u', $word)) {
+                        $after = substr($clause, $at + strlen($word), 9);
+                        if (preg_match('/^(?:少一?[点些]|少)/u', $after)) $kind = 'less';
+                        elseif (preg_match('/^(?:多一?[点些]|多)/u', $after)) $kind = 'more';
+                    }
+                    if ($kind === 'more' && !in_array($category, $more, true)) $more[] = $category;
+                    if ($kind === 'less' && !in_array($category, $less, true)) $less[] = $category;
+                    break;
+                }
+            }
+        }
+        return [$more, $less];
+    }
+
+    /** Byte offset of a category word in a text (a whole word, plural allowed), or null. */
+    private static function wordOffset(string $text, string $word): ?int
+    {
+        if (preg_match('/\p{Han}/u', $word)) {
+            $at = strpos($text, $word);
+            return $at === false ? null : $at;
+        }
+        if (preg_match('/(?<![a-z])' . preg_quote($word, '/') . 's?(?![a-z])/u', $text, $m, PREG_OFFSET_CAPTURE)) return (int)$m[0][1];
         return null;
     }
 

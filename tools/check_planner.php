@@ -22,7 +22,12 @@
 // ItineraryEditService as the review page and the AI editor change it (replace a stop with the
 // first suggestion, remove a stop, move a stop to another day, add a feasible place, plan a day
 // again with more of one category and less of another, the nearest lodging as the hotel of
-// night 1, optimise), and every check below is run again on the result. Then changes that
+// night 1, optimise), and every check below is run again on the result. A day is given a start
+// of its own (ItineraryEditService::setDayStart()); it must survive the hotel choice, an edit
+// on that day, planning that day again and the optimiser (DAY_START), and START and WAIT judge
+// that day from it. Day 1 is then planned again for an 85% chance of rain (a forecast
+// override): no outdoor stop may stay while indoor places of the area are left (RAIN; a
+// warning when the planner explains it or none is left). Then changes that
 // break a rule (a place closed that day, on the avoid list, already in the trip, in another
 // state) must be refused and leave every row as it was (REFUSE).
 //
@@ -830,6 +835,28 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         $scenario['day_weights'][$tripDays] = [$more => 3] + ($more === $less ? [] : [$less => 1]);
     }
 
+    // 5b. A start of its own for the day after the first night (day 1 of a one-day trip), 30
+    // minutes after the day window opens. It must survive the hotel choice, an edit on that
+    // day, planning the day again and the optimiser; START and WAIT then judge the day from it.
+    $startDay = $tripDays >= 2 ? 2 : 1;
+    $wantedStart = (int)intendedProfile($pref)['start'] + 30;
+    $keepsStart = static function (string $after) use ($c, $id, $startDay, $wantedStart, $add): void {
+        $stored = storedDayStarts($c, $id)[$startDay] ?? null;
+        if ($stored !== $wantedStart) {
+            $add('DAY_START', 'violation', $startDay, null, "after {$after}: stored start " . ($stored === null ? 'none' : hm($stored)) . ', expected ' . hm($wantedStart));
+        }
+        $stmt = $c->prepare("SELECT MIN(start_time) FROM itinerary_items WHERE itinerary_id = ? AND day_no = ? AND item_type IN ('attraction','food','festival')");
+        $stmt->bind_param('ii', $id, $startDay);
+        $stmt->execute();
+        $first = toMinutes($stmt->get_result()->fetch_row()[0] ?? null);
+        $stmt->close();
+        if ($first !== null && $first < $wantedStart) {
+            $add('DAY_START', 'violation', $startDay, null, "after {$after}: the day begins " . hm($first) . ', before its stored start ' . hm($wantedStart));
+        }
+    };
+    $dayStartSet = $note('day_start', ItineraryEditService::setDayStart($p, $id, $startDay, $wantedStart));
+    if ($dayStartSet) $keepsStart('setting it');
+
     // 6. The nearest lodging to the last stop of day 1 as the hotel of night 1.
     if ($tripDays >= 2) {
         $days = editVisits($c, $id);
@@ -853,8 +880,60 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         }
     }
 
+    if ($dayStartSet) $keepsStart('the hotel choice');
+
+    // 6b. An edit on the day with its own start: its first free stop replaced by the first suggestion.
+    if ($dayStartSet) {
+        $days = editVisits($c, $id);
+        $stop = array_values(array_filter($days[$startDay] ?? [], $free))[0] ?? null;
+        $s = $stop !== null ? ItineraryEditService::suggestReplacements($p, $id, (int)$stop['item_id'], 1, 0) : null;
+        if ($s !== null && $shapeOk('suggest_day_start', $s) && $s['ok'] && !empty($s['options'])) {
+            if ($note('replace_day_start', ItineraryEditService::replaceStop($p, $id, (int)$stop['item_id'], (int)$s['options'][0]['place_id']))) {
+                $keepsStart('an edit on the day');
+            }
+        } else {
+            $add('EDIT', 'warning', $startDay, null, 'no replacement suggested on the day with its own start');
+        }
+        // 6c. The same day planned again (no more or less: it is judged by the trip's weights again).
+        if ($note('regenerate_day_start', ItineraryEditService::regenerateDay($p, $id, $startDay))) {
+            unset($scenario['day_weights'][$startDay]);
+            $keepsStart('planning the day again');
+        }
+    }
+
     // 7. Optimise the route.
     $note('optimise', ItineraryEditService::optimise($p, $id));
+    if ($dayStartSet) $keepsStart('the optimiser');
+
+    // 8. Re-plan a rainy day: day 1 with an 85% chance of rain (a forecast override). From 80%
+    // no outdoor stop may stay on it while an indoor place of the area could be visited; an
+    // outdoor stop the planner explains ("chance of rain" in its notes) or a must-see is a warning.
+    $rainDate = (string)$scenario['trip']['start_date'];
+    $rainChance = 85;
+    $r = ItineraryEditService::replanRainyDays($p, $id, [$rainDate => $rainChance]);
+    if ($note('replan_rain', $r)) {
+        if (($r['changes'][1]['status'] ?? '') !== 'done') {
+            $add('RAIN', 'violation', 1, null, 'day 1 at ' . $rainChance . '% was not planned again: ' . ($r['changes'][1]['message'] ?? 'no result for the day'));
+        }
+        $scenario['trip']['forecast'][$rainDate] = $rainChance;   // WEATHER judges the day with it too
+        $stmt = $c->prepare("SELECT ii.item_title, ii.place_id, ii.notes, cp.is_outdoor, LOWER(cp.category) AS category
+                             FROM itinerary_items ii JOIN cultural_places cp ON cp.place_id = ii.place_id
+                             WHERE ii.itinerary_id = ? AND ii.day_no = 1 AND ii.meal_slot IS NULL AND ii.item_type IN ('attraction','food','festival')");
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        $indoorLeft = count(editPlaces($c, $id, $states, true, "AND COALESCE(is_outdoor, 0) = 0 AND LOWER(category) NOT IN ('nature','festival')"));
+        foreach ($rows as $row) {
+            if ((int)$row['is_outdoor'] !== 1 && $row['category'] !== 'nature') continue;
+            $explained = isset($musts[(int)$row['place_id']]) || str_contains((string)$row['notes'], 'chance of rain');
+            if ($explained || $indoorLeft === 0) {
+                $add('RAIN', 'warning', 1, (string)$row['item_title'], "outdoor stop kept on a day at {$rainChance}%" . ($explained ? ' (explained in its notes, or a must-see)' : ' (no indoor place left in the area)'));
+            } else {
+                $add('RAIN', 'violation', 1, (string)$row['item_title'], "outdoor stop on a day at {$rainChance}% while {$indoorLeft} indoor place(s) of the area are not in the trip");
+            }
+        }
+    }
     $result['info']['edits'] = $done;
 
     // REFUSE: each change below breaks a rule, so it must be refused and change no row.
@@ -915,6 +994,20 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     }
 }
 
+/** The stored start of each day of an itinerary (table itinerary_days): day => minutes; none without the table. */
+function storedDayStarts(mysqli $conn, int $itineraryId): array
+{
+    $res = $conn->query("SHOW TABLES LIKE 'itinerary_days'");
+    if (!$res || $res->num_rows === 0) return [];
+    $stmt = $conn->prepare('SELECT day_no, start_time FROM itinerary_days WHERE itinerary_id = ? AND start_time IS NOT NULL');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $out = [];
+    foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) $out[(int)$row['day_no']] = toMinutes($row['start_time']);
+    $stmt->close();
+    return $out;
+}
+
 function finding(string $code, string $severity, string $scenario, ?int $day, ?string $stop, string $detail): array
 {
     return ['code' => $code, 'severity' => $severity, 'scenario' => $scenario, 'day' => $day, 'stop' => $stop, 'detail' => $detail];
@@ -953,6 +1046,8 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     $pref = $scenario['pref'];
     $profile = intendedProfile($pref);
     $tripDays = (int)$pref['trip_days'];
+    // A day with a start time of its own (ItineraryEditService::setDayStart()) is judged from it.
+    $storedStarts = storedDayStarts($conn, $itineraryId);
     $add = static function (string $code, string $severity, ?int $day, ?string $stop, string $detail) use (&$result, $name): void {
         $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
     };
@@ -1006,6 +1101,9 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
 
     foreach ($timeline as $dayNo => $dayRows) {
         $date = (new DateTimeImmutable((string)$it['start_date']))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
+        $dayStartMin = $storedStarts[$dayNo] ?? $profile['start'];
+        $dayStartSource = isset($storedStarts[$dayNo]) ? 'start stored for the day' : $profile['window_source'];
+        if (isset($storedStarts[$dayNo]) && $storedStarts[$dayNo] < EARLIEST_START) $add('START', 'violation', $dayNo, null, 'stored day start ' . hm($storedStarts[$dayNo]) . ' before ' . hm(EARLIEST_START));
         $prevEnd = null;
         $prevWasMeal = false;
         $dayKm = 0.0;
@@ -1038,12 +1136,12 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                     }
                 }
                 // START and HARD_END: meal rows lie inside the day window too.
-                if ($start < $profile['start']) $add('START', 'violation', $dayNo, $title, 'starts ' . hm($start) . ', earliest ' . hm($profile['start']) . " ({$profile['window_source']})");
+                if ($start < $dayStartMin) $add('START', 'violation', $dayNo, $title, 'starts ' . hm($start) . ', earliest ' . hm($dayStartMin) . " ({$dayStartSource})");
                 if ($end > $profile['hard_end']) $add('HARD_END', 'violation', $dayNo, $title, 'ends ' . hm($end) . ', latest ' . hm($profile['hard_end']));
                 // WAIT: a visit starts at most MAX_WAIT_MIN after it can be reached; after a meal no rest is due.
                 if (!$isMeal && $travel !== null) {
-                    $reach = ($prevEnd === null ? $profile['start'] : $prevEnd + ($prevWasMeal ? 0 : $profile['rest'])) + $travel;
-                    $wait = $start - max($reach, $profile['start']);
+                    $reach = ($prevEnd === null ? $dayStartMin : $prevEnd + ($prevWasMeal ? 0 : $profile['rest'])) + $travel;
+                    $wait = $start - max($reach, $dayStartMin);
                     if ($wait > MAX_WAIT_MIN) $add('WAIT', 'violation', $dayNo, $title, "waits {$wait} min for opening, at most " . MAX_WAIT_MIN);
                 }
                 // DURATION

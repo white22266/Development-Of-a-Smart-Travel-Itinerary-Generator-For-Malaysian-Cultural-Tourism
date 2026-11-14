@@ -224,11 +224,28 @@ function makeAiCard(variant, titleText, lines, buttonText, onClick) {
     return card;
 }
 
+// Changes the itinerary editor confirms through ItineraryEditService (an action marked
+// available: false gets no button).
+const AI_EDIT_ACTIONS = ['remove_stop', 'move_stop', 'regenerate_day', 'optimise_route'];
+
 function renderPendingAction(container, action) {
-    if (!container || !action || !['update_start_date', 'update_origin', 'retime_itinerary'].includes(action.type)) return;
+    if (!container || !action || action.available === false) return;
+    if (!['update_start_date', 'update_origin', 'retime_itinerary'].concat(AI_EDIT_ACTIONS).includes(action.type)) return;
 
     let title, summary, buttonText, onClick;
-    if (action.type === 'update_origin') {
+    if (AI_EDIT_ACTIONS.includes(action.type)) {
+        const kind = { remove_stop: 'remove', move_stop: 'move', regenerate_day: 'regenerate', optimise_route: 'optimise' }[action.type];
+        const english = {
+            remove: ['Confirm removing a stop', 'Confirm Remove'],
+            move: ['Confirm moving a stop', 'Confirm Move'],
+            regenerate: ['Confirm planning a day again', 'Confirm Re-plan'],
+            optimise: ['Confirm a shorter route', 'Confirm Optimise'],
+        }[kind];
+        title = aiLabel('confirm_' + kind + '_title', english[0]);
+        summary = action.summary || action.label || '';
+        buttonText = aiLabel('confirm_' + kind, english[1]);
+        onClick = button => confirmItineraryEdit(action, button);
+    } else if (action.type === 'update_origin') {
         title = aiLabel('confirm_location_title', 'Confirm starting location');
         summary = action.summary || ('Update starting location to ' + (action.label || action.origin_name));
         buttonText = aiLabel('confirm_location', 'Confirm Location');
@@ -237,7 +254,7 @@ function renderPendingAction(container, action) {
         title = aiLabel('confirm_timetable_title', 'Confirm timetable change');
         summary = action.summary || ('Rearrange timetable to start from ' + (action.label || action.start_time));
         buttonText = aiLabel('confirm_timetable', 'Confirm Timetable');
-        onClick = button => confirmItineraryRetiming(action.start_time || '', button);
+        onClick = button => confirmItineraryRetiming(action.start_time || '', button, Number(action.day_no || 0));
     } else {
         title = aiLabel('confirm_date_title', 'Confirm trip date');
         summary = action.summary || ('Update itinerary start date to ' + action.label);
@@ -354,11 +371,12 @@ async function confirmTripOrigin(originName, button) {
     if (data) reloadSoon();
 }
 
-async function confirmItineraryRetiming(startTime, button = null) {
+/** A new start time for every day (dayNo 0) or for one day; the start is kept by later changes. */
+async function confirmItineraryRetiming(startTime, button = null, dayNo = 0) {
     startTime = String(startTime || '').trim();
     if (!startTime) return;
     const data = await runAiConfirm(button, 'Rearranging timetable with the confirmed start time...', AI_ENDPOINTS.edit,
-        { action: 'confirm_retime', start_time: startTime },
+        { action: 'confirm_retime', start_time: startTime, day_no: String(dayNo > 0 ? dayNo : 0) },
         { success: 'Timetable updated. Reloading...', failure: 'Could not rearrange this timetable.', network: 'Network error while rearranging timetable. Please try again.' });
     if (data) reloadSoon();
 }
@@ -376,6 +394,33 @@ async function confirmItineraryAdd(dayNo, placeId, button = null) {
     const data = await runAiConfirm(button, 'Adding the place and recalculating route and cost...', AI_ENDPOINTS.edit,
         { action: 'confirm_add', day_no: String(dayNo), place_id: String(placeId) },
         { success: 'Place added. Reloading...', failure: 'Could not add this place.', network: 'Network error while adding place. Please try again.' });
+    if (data) reloadSoon();
+}
+
+/** Remove, move, plan a day again or optimise, as the editor proposed it; the server judges it by the rules. */
+async function confirmItineraryEdit(action, button = null) {
+    let fields;
+    if (action.type === 'remove_stop') {
+        if (!Number(action.item_id || 0)) return;
+        fields = { action: 'confirm_remove', item_id: String(Number(action.item_id)) };
+    } else if (action.type === 'move_stop') {
+        if (!Number(action.item_id || 0) || !Number(action.day_no || 0)) return;
+        fields = { action: 'confirm_move', item_id: String(Number(action.item_id)), day_no: String(Number(action.day_no)) };
+        if (Number(action.position || 0) > 0) fields.position = String(Number(action.position));
+    } else if (action.type === 'regenerate_day') {
+        if (!Number(action.day_no || 0)) return;
+        fields = {
+            action: 'confirm_regenerate', day_no: String(Number(action.day_no)),
+            more: (Array.isArray(action.more) ? action.more : []).join(','),
+            less: (Array.isArray(action.less) ? action.less : []).join(','),
+        };
+    } else if (action.type === 'optimise_route') {
+        fields = { action: 'confirm_optimise' };
+    } else {
+        return;
+    }
+    const data = await runAiConfirm(button, 'Saving the change and timing the days again...', AI_ENDPOINTS.edit, fields,
+        { success: 'Itinerary changed. Reloading...', failure: 'Could not apply this itinerary change.', network: 'Network error while saving itinerary change. Please try again.' });
     if (data) reloadSoon();
 }
 

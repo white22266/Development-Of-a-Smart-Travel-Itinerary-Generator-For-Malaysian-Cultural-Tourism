@@ -71,7 +71,7 @@ final class PlannerRules
      */
     private const SHORT_WINDOW_MIN = 240;
     private const WIDENED_WINDOW_MIN = 480;
-    private const EARLIEST_START = 360;    // 06:00
+    public const EARLIEST_START = 360;     // 06:00 (also the earliest day start an edit may store)
     private const LATEST_END = 1380;       // 23:00
 
     /**
@@ -133,6 +133,7 @@ final class PlannerRules
         'NOT_EDITABLE' => 'this row cannot be changed this way',
         'LOCKED' => 'the day holds a row the planner cannot re-time',
         'NO_CHANGE' => 'nothing would change',
+        'EARLY_START' => 'earlier than the earliest start of a day (06:00)',
     ];
 
     /**

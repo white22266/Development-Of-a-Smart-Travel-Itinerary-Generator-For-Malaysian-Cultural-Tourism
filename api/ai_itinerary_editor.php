@@ -1,7 +1,8 @@
 <?php
 // api/ai_itinerary_editor.php
-// Itinerary editor for the chat: proposes one replacement, addition or timetable change from the
-// cultural places database, and saves it only when the traveller presses a confirmation button.
+// Itinerary editor for the chat: proposes one replacement, addition, removal, move, a day planned
+// again (with more or less of some categories), a shorter route, or a new start time for one day
+// or every day, and saves it only when the traveller presses a confirmation button.
 // Every proposal is checked with ItineraryRuleValidationService, and every confirmation is made by
 // ItineraryEditService, which judges it by the planner's rules and times the day again.
 // Requests may be in English, Malay or Chinese. The local model reads the request first
@@ -57,7 +58,7 @@ if ($action === "confirm") {
     // Judged and saved by the planner's rules: the day is timed again, or nothing changes.
     $result = ItineraryEditService::replaceStop($conn, $itineraryId, $itemId, $placeId);
     if (!$result["ok"]) {
-        editor_reply(["status" => "error", "answer" => $result["message"]]);
+        editor_refusal($result);
     }
 
     editor_reply([
@@ -86,7 +87,7 @@ if ($action === "confirm_add") {
     // Added where it keeps every rule with the least travelling, and the day timed again.
     $result = ItineraryEditService::addStop($conn, $itineraryId, $dayNo, $placeId);
     if (!$result["ok"]) {
-        editor_reply(["status" => "error", "answer" => $result["message"]]);
+        editor_refusal($result);
     }
 
     editor_reply([
@@ -102,22 +103,93 @@ if ($action === "confirm_add") {
 
 if ($action === "confirm_retime") {
     $startTime = normalize_requested_start_time((string)($_POST["start_time"] ?? ""));
-    if ($startTime === null) {
+    $dayNo = editor_int($_POST["day_no"] ?? "0");
+    if ($startTime === null || $dayNo === null || $dayNo < 0 || $dayNo > (int)$itinerary["total_days"]) {
         editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_time", $lang)]);
     }
 
-    // Every day starts at the new time and is timed again by the planner's rules, or nothing changes.
+    // The start is stored (the whole trip, or one day) and the day(s) timed again by the
+    // planner's rules, or nothing changes. Later re-timings keep it.
     [$hour, $minute] = array_map("intval", explode(":", $startTime));
-    $result = ItineraryEditService::retimeTrip($conn, $itineraryId, $hour * 60 + $minute);
+    $result = ItineraryEditService::setDayStart($conn, $itineraryId, $dayNo > 0 ? $dayNo : null, $hour * 60 + $minute);
     if (!$result["ok"]) {
-        editor_reply(["status" => "error", "answer" => $result["message"]]);
+        editor_refusal($result);
     }
 
+    $label = display_time_label($startTime);
     editor_reply([
         "status" => "success",
-        "answer" => ai_text("edit_retimed", $lang, ["time" => display_time_label($startTime)]),
+        "answer" => $dayNo > 0 ? ai_text("edit_done_day_start", $lang, ["day" => $dayNo, "time" => $label]) : ai_text("edit_done_trip_start", $lang, ["time" => $label]),
         "reload" => true,
     ]);
+}
+
+if ($action === "confirm_remove") {
+    $itemId = editor_int($_POST["item_id"] ?? "");
+    $item = $itemId !== null && $itemId > 0 ? load_item($conn, $itineraryId, $itemId) : null;
+    if (!$item) {
+        editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_request", $lang)]);
+    }
+    $result = ItineraryEditService::removeStop($conn, $itineraryId, $itemId);
+    if (!$result["ok"]) {
+        editor_refusal($result);
+    }
+    editor_reply([
+        "status" => "success",
+        "answer" => ai_text("edit_done_removed", $lang, ["title" => (string)$item["item_title"], "day" => (int)$item["day_no"]]),
+        "reload" => true,
+    ]);
+}
+
+if ($action === "confirm_move") {
+    $itemId = editor_int($_POST["item_id"] ?? "");
+    $toDay = editor_int($_POST["day_no"] ?? "");
+    $position = editor_int($_POST["position"] ?? "");
+    $item = $itemId !== null && $itemId > 0 ? load_item($conn, $itineraryId, $itemId) : null;
+    if (!$item || $toDay === null || $toDay < 1 || $toDay > (int)$itinerary["total_days"] || ($position !== null && ($position < 1 || $position > 50))) {
+        editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_request", $lang)]);
+    }
+    $result = ItineraryEditService::moveStop($conn, $itineraryId, $itemId, $toDay, $position);
+    if (!$result["ok"]) {
+        editor_refusal($result);
+    }
+    editor_reply([
+        "status" => "success",
+        "answer" => ai_text("edit_done_moved", $lang, ["title" => (string)$item["item_title"], "day" => $toDay, "position" => (int)($result["position"] ?? 0)]),
+        "reload" => true,
+    ]);
+}
+
+if ($action === "confirm_regenerate") {
+    $dayNo = editor_int($_POST["day_no"] ?? "");
+    $more = editor_categories((string)($_POST["more"] ?? ""));
+    $less = editor_categories((string)($_POST["less"] ?? ""));
+    if ($dayNo === null || $dayNo < 1 || $dayNo > (int)$itinerary["total_days"] || $more === null || $less === null) {
+        editor_reply(["status" => "error", "answer" => ai_text("edit_invalid_request", $lang)]);
+    }
+    $result = ItineraryEditService::regenerateDay($conn, $itineraryId, $dayNo, ["more" => $more, "less" => $less]);
+    if (!$result["ok"]) {
+        editor_refusal($result);
+    }
+    editor_reply([
+        "status" => "success",
+        "answer" => ai_text("edit_done_regenerated", $lang, ["day" => $dayNo, "stops" => (int)($result["stops"] ?? 0)]),
+        "reload" => true,
+    ]);
+}
+
+if ($action === "confirm_optimise") {
+    $result = ItineraryEditService::optimise($conn, $itineraryId);
+    if (!$result["ok"]) {
+        editor_refusal($result);
+    }
+    $report = (array)($result["report"] ?? []);
+    $days = (array)($report["reordered_days"] ?? []);
+    $answer = $days ? ai_text("edit_done_optimised", $lang, ["days" => implode(", ", $days)]) : ai_text("edit_done_optimised_same", $lang);
+    if (!empty($report["removed"])) {
+        $answer .= " " . ai_text("edit_done_optimised_removed", $lang, ["list" => implode("; ", (array)$report["removed"])]);
+    }
+    editor_reply(["status" => "success", "answer" => $answer, "reload" => true]);
 }
 
 // ---------------------------------------------------------------- a chat message: work out the change
@@ -190,12 +262,18 @@ function handle_model_intent(mysqli $conn, int $travellerId, array $itinerary, a
 
         case "retime":
             if ($target !== null) {
-                reply_not_available($intent, $target, $lang);
+                reply_retime_stop($intent, $target, $lang);
             }
-            $note = ((int)$itinerary["total_days"] > 1 && $intent["day"] !== null) ? ai_text("edit_retime_all_days", $lang) : "";
-            reply_retime_pending($intent["time"] . ":00", "model", $note);
+            $day = ((int)$itinerary["total_days"] > 1 && $intent["day"] !== null) ? (int)$intent["day"] : 0;
+            reply_retime_pending($intent["time"] . ":00", "model", "", $day);
 
-        default:   // remove, move, regenerate_day, optimise
+        case "remove":
+        case "move":
+        case "regenerate_day":
+        case "optimise":
+            reply_change_pending($intent, $target, $lang);
+
+        default:
             reply_not_available($intent, $target, $lang);
     }
 }
@@ -205,7 +283,8 @@ function run_regex_editor(mysqli $conn, int $travellerId, array $itinerary, arra
 {
     $requestedStartTime = extract_requested_start_time($message);
     if ($requestedStartTime !== null && is_timetable_rearrange_request($message)) {
-        reply_retime_pending($requestedStartTime, "local_rule");
+        $day = parse_stop_reference($message)["day"];
+        reply_retime_pending($requestedStartTime, "local_rule", "", ($day >= 1 && $day <= (int)$itinerary["total_days"] && (int)$itinerary["total_days"] > 1) ? $day : 0);
     }
 
     // An explicit replace request ("change day 2 stop 1 to X") is never treated as an add request.
@@ -320,20 +399,26 @@ function reply_named_addition(mysqli $conn, int $travellerId, array $itinerary, 
     reply_additions([addition_proposal($outcome["place"], $dayNo, $existingDayCount, ai_text("reason_requested", editor_lang()))], "model");
 }
 
-/** A whole-trip timetable change, waiting for the Confirm Timetable button. */
-function reply_retime_pending(string $startTime, string $source, string $note = ""): never
+/** A timetable change, waiting for the Confirm Timetable button: every day, or day $dayNo (> 0). */
+function reply_retime_pending(string $startTime, string $source, string $note = "", int $dayNo = 0): never
 {
     $lang = editor_lang();
     $label = display_time_label($startTime);
     $pending = [
         "type" => "retime_itinerary",
         "start_time" => $startTime,
+        "day_no" => $dayNo > 0 ? $dayNo : null,
         "label" => $label,
-        "summary" => ai_text("edit_retime_summary", $lang, ["time" => $label]),
+        "summary" => $dayNo > 0
+            ? ai_text("edit_retime_day_summary", $lang, ["day" => $dayNo, "time" => $label])
+            : ai_text("edit_retime_summary", $lang, ["time" => $label]),
     ];
+    $answer = $dayNo > 0
+        ? ai_text("edit_retime_day_detected", $lang, ["day" => $dayNo, "time" => $label])
+        : ai_text("edit_retime_detected", $lang, ["time" => $label]);
     editor_reply([
         "status" => "success",
-        "answer" => ai_text("edit_retime_detected", $lang, ["time" => $label]) . ($note !== "" ? " " . $note : ""),
+        "answer" => $answer . ($note !== "" ? " " . $note : ""),
         "pending_action" => $pending,
         "pending_actions" => [$pending],
         "source" => $source,
@@ -341,8 +426,120 @@ function reply_retime_pending(string $startTime, string $source, string $note = 
 }
 
 /**
- * Remove, move, regenerate a day, optimise, or retime one stop: understood, but the chat cannot
- * carry these out yet. The pending action has the shape of the others plus "available": false,
+ * Remove, move, plan a day again or optimise: a change waiting for its confirm button. The
+ * confirm step (confirm_remove, confirm_move, confirm_regenerate, confirm_optimise) makes it
+ * through ItineraryEditService, which judges it by the planner's rules.
+ */
+function reply_change_pending(array $intent, ?array $target, string $lang): never
+{
+    $title = $target !== null ? (string)$target["item_title"] : "";
+    $day = (int)($intent["day"] ?? 0);
+    $pending = ["available" => true, "day_no" => $intent["day"], "item_id" => $intent["stop_id"], "intent" => $intent];
+    switch ($intent["action"]) {
+        case "remove":
+            $what = ai_text("what_remove", $lang, ["title" => $title, "day" => $day]);
+            $pending += ["type" => "remove_stop", "summary" => ai_text("pending_remove_summary", $lang, ["title" => $title, "day" => $day])];
+            break;
+        case "move":
+            $position = $intent["position"] !== null ? ai_text("what_move_position", $lang, ["position" => $intent["position"]]) : "";
+            $what = ai_text("what_move", $lang, ["title" => $title, "day" => $day, "position" => $position]);
+            $pending += ["type" => "move_stop", "position" => $intent["position"],
+                         "summary" => ai_text("pending_move_summary", $lang, ["title" => $title, "day" => $day, "position" => $position])];
+            break;
+        case "regenerate_day":
+            $more = array_values((array)($intent["more"] ?? []));
+            $less = array_values((array)($intent["less"] ?? []));
+            $wishes = ($more ? ai_text("what_more", $lang, ["list" => category_list_text($more, $lang)]) : "")
+                . ($less ? ai_text("what_less", $lang, ["list" => category_list_text($less, $lang)]) : "");
+            $what = ai_text("what_regenerate_day", $lang, ["day" => $day]) . $wishes;
+            $pending += ["type" => "regenerate_day", "more" => $more, "less" => $less,
+                         "summary" => ai_text("pending_regenerate_summary", $lang, ["day" => $day, "wishes" => $wishes])];
+            break;
+        default:   // optimise: the optimiser orders every day; each stop stays on its day
+            $pending += ["type" => "optimise_route", "summary" => ai_text("pending_optimise_summary", $lang)];
+            editor_reply([
+                "status" => "success",
+                "answer" => ai_text("edit_optimise_offer", $lang),
+                "pending_action" => $pending,
+                "pending_actions" => [$pending],
+                "proposals" => [],
+                "source" => "model",
+            ]);
+    }
+    $pending["label"] = $what;
+    editor_reply([
+        "status" => "success",
+        "answer" => ai_text("edit_confirm_offer", $lang, ["what" => $what]),
+        "pending_action" => $pending,
+        "pending_actions" => [$pending],
+        "proposals" => [],
+        "source" => "model",
+    ]);
+}
+
+/**
+ * Retiming a single stop: the rules time each stop from the one before it, so a stop cannot be
+ * pinned to a clock time. The answer offers moving the stop or changing the day's start.
+ */
+function reply_retime_stop(array $intent, array $target, string $lang): never
+{
+    editor_reply([
+        "status" => "success",
+        "answer" => ai_text("edit_retime_stop_offer", $lang, [
+            "title" => (string)$target["item_title"],
+            "day" => (int)$target["day_no"],
+            "time" => (string)($intent["time"] ?? "09:00"),
+        ]),
+        "proposals" => [],
+        "source" => "model",
+    ]);
+}
+
+/** Category codes as words of the language: "museums, food places". */
+function category_list_text(array $categories, string $lang): string
+{
+    return implode(ai_text("list_separator", $lang), array_map(fn($c) => ai_text("cat_" . $c, $lang), $categories));
+}
+
+/** A refused change in the traveller's language, with its reason; nothing was changed. */
+function editor_refusal(array $result): never
+{
+    $lang = editor_lang();
+    $code = (string)($result["code"] ?? "");
+    if ($lang === "en" && (string)($result["message"] ?? "") !== "") {
+        $answer = ai_text("edit_refused_detail", "en", ["message" => (string)$result["message"]]);
+    } else {
+        $key = "reason_code_" . $code;
+        $reason = ai_text($key, $lang);
+        if ($reason === $key) $reason = ai_text("reason_code_other", $lang);
+        $answer = ai_text("edit_refused", $lang, ["reason" => $reason]);
+    }
+    editor_reply(["status" => "error", "answer" => $answer, "code" => $code !== "" ? $code : null]);
+}
+
+/** A whole number from a form field: null when empty or absent, -1 when not a whole number. */
+function editor_int($value): ?int
+{
+    $value = trim((string)$value);
+    if ($value === "") return null;
+    return preg_match('/^\d{1,9}$/', $value) ? (int)$value : -1;
+}
+
+/** Comma-separated categories of the planner's list; null when one is unknown. */
+function editor_categories(string $value): ?array
+{
+    $out = [];
+    foreach (array_filter(array_map("trim", explode(",", strtolower($value))), "strlen") as $category) {
+        if (!in_array($category, PlannerRules::VALID_INTERESTS, true)) return null;
+        if (!in_array($category, $out, true)) $out[] = $category;
+    }
+    return $out;
+}
+
+/**
+ * An action the chat cannot carry out (none at present: remove, move, regenerate_day and
+ * optimise have their confirm steps, and a single-stop retime is answered by
+ * reply_retime_stop()). The pending action has the shape of the others plus "available": false,
  * and the page shows no confirm button for it.
  */
 function reply_not_available(array $intent, ?array $target, string $lang): never

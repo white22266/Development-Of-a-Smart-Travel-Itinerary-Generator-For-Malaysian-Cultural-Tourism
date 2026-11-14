@@ -19,6 +19,11 @@
 // not stops: they are placed again whenever their day is re-timed. A meal the traveller chose
 // (replaceStop() on a meal row) is marked in its notes and kept while it still fits.
 //
+// A day may have a start time of its own (table itinerary_days, migration
+// 20261117_itinerary_days.sql, set with setDayStart()): every re-timing of that day (an edit,
+// a hotel choice, the optimiser, planning the day again) then starts it there instead of at
+// the start of the preference's day window. The end of the day and every other rule stay.
+//
 // Every operation returns a result of one shape:
 //   ['ok' => bool, 'status' => 'done'|'refused', 'code' => null|reason code
 //    (PlannerRules::REASONS), 'message' => one sentence for the traveller, 'days' => the days
@@ -33,6 +38,7 @@ require_once __DIR__ . '/ItineraryDayBuilder.php';
 require_once __DIR__ . '/ItineraryRouteOptimiser.php';
 require_once __DIR__ . '/ItineraryHotelService.php';
 require_once __DIR__ . '/ItineraryGenerator.php';
+require_once __DIR__ . '/WeatherService.php';
 
 class ItineraryEditService
 {
@@ -84,7 +90,7 @@ class ItineraryEditService
         $target = $stops[$index];
         $used = self::usedPlaces($ctx) + $exclude;   // the stop's own place is in it: not offered again
         [$state, $dayCtx] = self::stateBefore($ctx, $dayNo, $stops, $index, $used);
-        $builder = new ItineraryDayBuilder($ctx['profile'], $ctx['route'], $ctx['meal_pool']);
+        $builder = new ItineraryDayBuilder(self::dayProfile($ctx, $dayNo), $ctx['route'], $ctx['meal_pool']);
         $want = $offset + $limit + 1;
         $ignored = null;
         $ranked = $builder->ranked($ctx['pool'], $dayCtx, $state, max(self::SUGGEST_MIN_TRIED, $want * self::SUGGEST_LOOKAHEAD), $ignored, false, true);
@@ -267,19 +273,184 @@ class ItineraryEditService
 
     /**
      * Start every day at $startMinute (minutes after midnight) instead of the start of the
-     * day window, and time every day again. Refused when a stop would then break a rule.
+     * day window, and time every day again. The start is stored for every day, so later
+     * re-timings keep it (setDayStart() for the whole trip). Refused when a stop would then
+     * break a rule.
      */
     public static function retimeTrip(mysqli $conn, int $itineraryId, int $startMinute): array
     {
-        return self::change($conn, $itineraryId, static function (array $ctx) use ($startMinute): array {
-            $profile = $ctx['profile'];
-            if ($startMinute < 0 || $startMinute + PlannerRules::MAX_WAIT_MIN > (int)$profile['end']) {
-                return ['refused' => self::refused('DAY_END', 'A day starting at ' . self::hm($startMinute) . ' leaves no time before the end of your day at ' . self::hm((int)$profile['end']) . '.')];
+        return self::setDayStart($conn, $itineraryId, null, $startMinute);
+    }
+
+    /**
+     * Store the time day $dayNo starts (null: every day of the trip) and time the day(s) again
+     * from it. $startMinute null removes the stored start: the day starts at the start of the
+     * preference's day window again. The day's end and every other rule stay as they are; a
+     * start that leaves no room for the day's stops is refused with the reason, and nothing
+     * is stored.
+     *
+     * @return array result + day_no (null: every day), start ('HH:MM' or null)
+     */
+    public static function setDayStart(mysqli $conn, int $itineraryId, ?int $dayNo, ?int $startMinute): array
+    {
+        return self::change($conn, $itineraryId, static function (array $ctx) use ($dayNo, $startMinute): array {
+            if (!self::hasDayTable($ctx['conn'])) {
+                return ['refused' => self::refused('UNAVAILABLE', 'Day start times cannot be stored on this database yet.')];
             }
-            $profile['start'] = $startMinute;
-            return ['days' => self::visits($ctx), 'changed' => array_keys($ctx['days']), 'opts' => ['profile' => $profile],
-                    'message' => 'Every day now starts at ' . self::hm($startMinute) . ', and all times were planned again.'];
+            if ($dayNo !== null && ($dayNo < 1 || $dayNo > $ctx['total_days'])) {
+                return ['refused' => self::refused('NOT_FOUND', 'The trip has no day ' . $dayNo . '.')];
+            }
+            $end = (int)$ctx['profile']['end'];
+            if ($startMinute !== null) {
+                if ($startMinute < PlannerRules::EARLIEST_START) {
+                    return ['refused' => self::refused('EARLY_START', 'A day cannot start before ' . self::hm(PlannerRules::EARLIEST_START) . '.')];
+                }
+                if ($startMinute + PlannerRules::MAX_WAIT_MIN > $end) {
+                    return ['refused' => self::refused('DAY_END', 'A day starting at ' . self::hm($startMinute) . ' leaves no time before the end of your day at ' . self::hm($end) . '.')];
+                }
+            }
+            $days = $dayNo === null ? array_keys($ctx['days']) : [$dayNo];
+            $starts = $ctx['day_starts'];
+            foreach ($days as $d) {
+                if ($startMinute === null) unset($starts[$d]);
+                else $starts[$d] = $startMinute;
+            }
+            $what = $dayNo === null ? 'Every day' : 'Day ' . $dayNo;
+            $message = $startMinute === null
+                ? $what . ' now starts at the start of your day window again (' . self::hm((int)$ctx['profile']['start']) . '), and the times were planned again.'
+                : $what . ' now starts at ' . self::hm($startMinute) . ', and the times were planned again.';
+            return ['days' => self::visits($ctx), 'changed' => $days, 'opts' => ['day_starts' => $starts],
+                    'message' => $message,
+                    'extra' => ['day_no' => $dayNo, 'start' => $startMinute !== null ? self::hm($startMinute) : null]];
         });
+    }
+
+    /**
+     * The stored start of each day: day => minutes after midnight. A day without one is left
+     * out; a database without the table gives an empty list.
+     */
+    public static function dayStarts(mysqli $conn, int $itineraryId): array
+    {
+        if (!self::hasDayTable($conn)) return [];
+        $stmt = $conn->prepare("SELECT day_no, start_time FROM itinerary_days WHERE itinerary_id = ? AND start_time IS NOT NULL ORDER BY day_no");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $out = [];
+        foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) {
+            $minute = PlannerRules::minutesOf($row['start_time']);
+            if ($minute !== null) $out[(int)$row['day_no']] = $minute;
+        }
+        $stmt->close();
+        return $out;
+    }
+
+    /**
+     * The forecast chance of rain (percent) of the trip's dates inside the forecast horizon
+     * (today and the 15 days after it). As the generator asks it: once for the trip, at its
+     * starting point (without one: the first stop). A date without a figure is left out;
+     * nothing is asked when no trip date lies inside the horizon. Never throws.
+     *
+     * @return array<string,int> Y-m-d => chance of rain
+     */
+    public static function forecast(mysqli $conn, int $itineraryId): array
+    {
+        $stmt = $conn->prepare("SELECT start_date, total_days, origin_lat, origin_lng FROM itineraries WHERE itinerary_id = ? LIMIT 1");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $meta = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        if (!$meta || empty($meta['start_date'])) return [];
+        $zone = new DateTimeZone('Asia/Kuala_Lumpur');
+        $today = (new DateTimeImmutable('today', $zone))->format('Y-m-d');
+        $horizon = (new DateTimeImmutable('today', $zone))->modify('+15 days')->format('Y-m-d');
+        $dates = [];
+        for ($d = 1; $d <= max(1, (int)$meta['total_days']); $d++) {
+            $date = (new DateTimeImmutable((string)$meta['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
+            if ($date >= $today && $date <= $horizon) $dates[] = $date;
+        }
+        if (!$dates) return [];
+
+        $point = self::point($meta['origin_lat'] ?? null, $meta['origin_lng'] ?? null);
+        if ($point === null) {
+            $stmt = $conn->prepare("
+                SELECT COALESCE(ii.item_latitude, cp.latitude) AS lat, COALESCE(ii.item_longitude, cp.longitude) AS lng
+                FROM itinerary_items ii LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+                WHERE ii.itinerary_id = ? AND ii.item_type IN ('attraction','food','festival')
+                ORDER BY ii.day_no, ii.sequence_no, ii.item_id
+            ");
+            $stmt->bind_param('i', $itineraryId);
+            $stmt->execute();
+            foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) {
+                $point = self::point($row['lat'], $row['lng']);
+                if ($point !== null) break;
+            }
+            $stmt->close();
+        }
+        if ($point === null) return [];
+        try {
+            return WeatherService::rainChances($point[0], $point[1], $dates);
+        } catch (Throwable $e) {
+            return [];
+        }
+    }
+
+    /**
+     * Plan again every day whose chance of rain is $threshold percent or more, with the
+     * forecast (the day builder then prefers indoor places, and from 80 percent tries them
+     * first). The other days stay as they are. Each day is planned in a transaction of its
+     * own: a day that cannot be planned again keeps its stops, and the others are still done.
+     *
+     * @param array|null $forecast Y-m-d => chance of rain; null: forecast()
+     * @return array result + rainy (day => chance), changes (day => status, code, message,
+     *         rain, removed (names), added (names))
+     */
+    public static function replanRainyDays(mysqli $conn, int $itineraryId, ?array $forecast = null, int $threshold = ItineraryDayBuilder::RAIN_PREFER): array
+    {
+        $stmt = $conn->prepare("SELECT start_date, total_days FROM itineraries WHERE itinerary_id = ? LIMIT 1");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $meta = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        if (!$meta) return self::refused('NOT_FOUND', 'This itinerary was not found.');
+        $forecast ??= self::forecast($conn, $itineraryId);
+
+        $rainy = [];
+        for ($d = 1; $d <= max(1, (int)$meta['total_days']); $d++) {
+            $date = (new DateTimeImmutable((string)$meta['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
+            if (isset($forecast[$date]) && is_numeric($forecast[$date]) && (int)$forecast[$date] >= $threshold) $rainy[$d] = (int)$forecast[$date];
+        }
+        if (!$rainy) {
+            return self::done('No day of the trip has a forecast chance of rain of ' . $threshold . '% or more, so nothing was changed.', ['rainy' => [], 'changes' => []]);
+        }
+
+        $changes = [];
+        $retimed = [];
+        $sentences = [];
+        $firstRefusal = null;
+        foreach ($rainy as $d => $chance) {
+            $before = self::dayTitles($conn, $itineraryId, $d);
+            $r = self::regenerateDay($conn, $itineraryId, $d, ['forecast' => $forecast]);
+            $after = self::dayTitles($conn, $itineraryId, $d);
+            $removed = array_values(array_diff_key($before, $after));
+            $added = array_values(array_diff_key($after, $before));
+            $changes[$d] = ['status' => $r['status'], 'code' => $r['code'], 'message' => $r['message'], 'rain' => $chance,
+                            'removed' => $removed, 'added' => $added];
+            if ($r['ok']) {
+                $retimed = array_merge($retimed, (array)$r['days']);
+                $sentences[] = 'Day ' . $d . ' (' . $chance . '% chance of rain): '
+                    . ($removed || $added
+                        ? ($removed ? implode(', ', $removed) . ' out' : '') . ($removed && $added ? '; ' : '') . ($added ? implode(', ', $added) . ' in' : '') . '.'
+                        : 'the same places fit best, times planned again.');
+            } else {
+                $firstRefusal ??= $r;
+                $sentences[] = 'Day ' . $d . ' (' . $chance . '% chance of rain) was kept: ' . lcfirst((string)$r['message']);
+            }
+        }
+        $extra = ['rainy' => $rainy, 'changes' => $changes];
+        if (count(array_filter($changes, static fn(array $c): bool => $c['status'] === 'done')) === 0) {
+            return self::refused((string)$firstRefusal['code'], implode(' ', $sentences), $extra);
+        }
+        return self::done(implode(' ', $sentences), ['days' => array_values(array_unique($retimed))] + $extra);
     }
 
     /**
@@ -570,6 +741,7 @@ class ItineraryEditService
         }
         $profile = PlannerRules::profile(['interests' => $interests, 'interest_weights' => $weights] + $ctx['profile_input']);
         $profile['meals'] = $ctx['profile']['meals'];
+        $profile = self::dayProfile($ctx, $dayNo, $profile);
 
         $days = self::visits($ctx);
         $musts = array_values(array_filter($days[$dayNo], static fn(array $s): bool => $s['must']));
@@ -678,6 +850,7 @@ class ItineraryEditService
                 return $plan;
             }
             $newIds = self::store($conn, $ctx, $out['days'], $plan, (array)($out['deleted'] ?? []), $opts);
+            if (isset($opts['day_starts'])) self::saveDayStarts($conn, $itineraryId, (int)$ctx['total_days'], (array)$opts['day_starts']);
             $conn->commit();
         } catch (Throwable $e) {
             $conn->rollback();
@@ -707,7 +880,8 @@ class ItineraryEditService
      *
      * @param array $days    day => stops, for every day of the trip
      * @param int[] $changed the days whose stops changed
-     * @param array $opts    profile (timing profile instead of the trip's), budget (false: no
+     * @param array $opts    profile (timing profile instead of the trip's), day_starts (day =>
+     *                       start minute, instead of the stored ones), budget (false: no
      *                       budget rule, for a hotel choice), meal_choice (day => slot => choice),
      *                       old_starts (the starting points before the change), best_effort (a
      *                       day that cannot be timed is left as it is instead of refusing), focus
@@ -718,6 +892,7 @@ class ItineraryEditService
     private static function plan(array $ctx, array $days, array $changed, array $opts = []): array
     {
         $profile = $opts['profile'] ?? $ctx['profile'];
+        $dayStarts = (array)($opts['day_starts'] ?? $ctx['day_starts']);
         $oldStarts = $opts['old_starts'] ?? self::starts($ctx, self::visits($ctx));
         $newStarts = self::starts($ctx, $days);
         $plans = [];
@@ -731,7 +906,8 @@ class ItineraryEditService
                 if (!empty($opts['best_effort'])) continue;
                 return self::refused('LOCKED', 'Day ' . $d . ' holds a row the planner cannot re-time, so this change cannot be made.', ['day' => $d]);
             }
-            $plan = self::timeDay($ctx, $profile, $d, $newStarts[$d], $days[$d], $days, $plans, $opts);
+            $dayProfile = isset($dayStarts[$d]) ? ['start' => (int)$dayStarts[$d]] + $profile : $profile;
+            $plan = self::timeDay($ctx, $dayProfile, $d, $newStarts[$d], $days[$d], $days, $plans, $opts);
             if ($plan['dropped']) {
                 if (!empty($opts['best_effort'])) continue;
                 $stop = $plan['dropped'][0];
@@ -816,7 +992,6 @@ class ItineraryEditService
             VALUES (?,?,?,'food',?,?,?,?,?,?,?,0.00,?,?,?)
         ") : null;
         $setSequence = $conn->prepare("UPDATE itinerary_items SET sequence_no = ?, start_time = ?, end_time = ? WHERE item_id = ? AND itinerary_id = ?");
-        $windowStart = PlannerRules::sqlTime((int)$profile['start']);
         $windowEnd = PlannerRules::sqlTime((int)$profile['end']);
 
         // A meal keeps its row (and so its id) while its day still has that meal.
@@ -924,7 +1099,8 @@ class ItineraryEditService
                     INSERT INTO itinerary_items (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, start_time, end_time, estimated_cost, notes)
                     VALUES (?,?,?,?,NULL,?,?,?,0.00,?)
                 ");
-                $insertNote->bind_param('iiisssss', $id, $d, $sequence, $type, $noteTitle, $windowStart, $windowEnd, $noteText);
+                $dayStart = PlannerRules::sqlTime((int)(($opts['day_starts'] ?? $ctx['day_starts'])[$d] ?? $profile['start']));
+                $insertNote->bind_param('iiisssss', $id, $d, $sequence, $type, $noteTitle, $dayStart, $windowEnd, $noteText);
                 $insertNote->execute();
                 $insertNote->close();
             }
@@ -1045,6 +1221,7 @@ class ItineraryEditService
             'total_days' => $totalDays,
             'dates' => $dates,
             'days' => $days,
+            'day_starts' => array_filter(self::dayStarts($conn, $itineraryId), static fn(int $d): bool => $d >= 1 && $d <= $totalDays, ARRAY_FILTER_USE_KEY),
         ];
         // The trip's points measured together, as the generator measures them.
         $pointsByDay = [];
@@ -1056,6 +1233,55 @@ class ItineraryEditService
         if ($ctx['finish'] !== null) $pointsByDay[$totalDays][] = $ctx['finish'];
         if ($pointsByDay) $ctx['route']->preloadTrip($pointsByDay);
         return self::$cache[$itineraryId] = $ctx;
+    }
+
+    /** The timing profile of one day: $profile (default the trip's) starting at the day's stored start. */
+    private static function dayProfile(array $ctx, int $d, ?array $profile = null): array
+    {
+        $profile ??= $ctx['profile'];
+        if (isset($ctx['day_starts'][$d])) $profile['start'] = (int)$ctx['day_starts'][$d];
+        return $profile;
+    }
+
+    /** Whether the per-day table of migration 20261117_itinerary_days.sql exists. */
+    private static function hasDayTable(mysqli $conn): bool
+    {
+        return PlannerRules::hasColumn($conn, 'itinerary_days', 'start_time');
+    }
+
+    /** Store the start of every day of the trip: day => minute; a day left out has none. */
+    private static function saveDayStarts(mysqli $conn, int $itineraryId, int $totalDays, array $starts): void
+    {
+        $stmt = $conn->prepare("
+            INSERT INTO itinerary_days (itinerary_id, day_no, start_time) VALUES (?, ?, ?)
+            ON DUPLICATE KEY UPDATE start_time = VALUES(start_time)
+        ");
+        for ($d = 1; $d <= $totalDays; $d++) {
+            $time = isset($starts[$d]) ? PlannerRules::sqlTime((int)$starts[$d]) : null;
+            $stmt->bind_param('iis', $itineraryId, $d, $time);
+            $stmt->execute();
+        }
+        $stmt->close();
+        // Rows of days the trip no longer has.
+        $drop = $conn->prepare("DELETE FROM itinerary_days WHERE itinerary_id = ? AND day_no > ?");
+        $drop->bind_param('ii', $itineraryId, $totalDays);
+        $drop->execute();
+        $drop->close();
+    }
+
+    /** The visits of one stored day: place_id => name. */
+    private static function dayTitles(mysqli $conn, int $itineraryId, int $dayNo): array
+    {
+        $meal = PlannerRules::hasColumn($conn, 'itinerary_items', 'meal_slot') ? ' AND meal_slot IS NULL' : '';
+        $stmt = $conn->prepare("SELECT place_id, item_title FROM itinerary_items
+                                WHERE itinerary_id = ? AND day_no = ? AND place_id IS NOT NULL AND item_type IN ('attraction','food','festival'){$meal}
+                                ORDER BY sequence_no, item_id");
+        $stmt->bind_param('ii', $itineraryId, $dayNo);
+        $stmt->execute();
+        $out = [];
+        foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) $out[(int)$row['place_id']] = (string)$row['item_title'];
+        $stmt->close();
+        return $out;
     }
 
     /** A stop as the planner's timing reads it, with the row it belongs to (null: a new row). */
@@ -1218,11 +1444,12 @@ class ItineraryEditService
             'musts' => [],
             'finish' => $dayNo === $ctx['total_days'] && $hotelPoint === null ? $ctx['finish'] : null,
         ];
-        $state = ItineraryDayBuilder::startState($dayCtx, $ctx['profile']);
+        $profile = self::dayProfile($ctx, $dayNo);
+        $state = ItineraryDayBuilder::startState($dayCtx, $profile);
         $prefix = array_values(array_filter(array_slice($stops, 0, $index)));
         if ($prefix && $start['point'] !== null) {
-            $timed = self::timeDay($ctx, $ctx['profile'], $dayNo, $start, $prefix, $days, [], ['budget' => false]);
-            foreach ($timed['stops'] as $s) $state = ItineraryDayBuilder::advance($state, $s, $ctx['profile']);
+            $timed = self::timeDay($ctx, $profile, $dayNo, $start, $prefix, $days, [], ['budget' => false]);
+            foreach ($timed['stops'] as $s) $state = ItineraryDayBuilder::advance($state, $s, $profile);
         }
         return [$state, $dayCtx];
     }
@@ -1234,7 +1461,7 @@ class ItineraryEditService
         $start = self::starts($ctx, self::visits($ctx))[$dayNo];
         if ($start['point'] === null || $ctx['days'][$dayNo]['locked']) return $fallback;
         [$state, $dayCtx] = self::stateBefore($ctx, $dayNo, $stops, $index, self::usedOutside($ctx, $dayNo, self::visits($ctx), []));
-        $builder = new ItineraryDayBuilder($ctx['profile'], $ctx['route'], $ctx['meal_pool']);
+        $builder = new ItineraryDayBuilder(self::dayProfile($ctx, $dayNo), $ctx['route'], $ctx['meal_pool']);
         $ignored = null;
         $ranked = $builder->ranked([$place], $dayCtx, $state, 1, $ignored, false, true);
         if (!$ranked) return $fallback;

@@ -10,6 +10,8 @@ require_once "../config/db_connect.php";
 require_once "../config/map_assets.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/CalendarExportService.php";
+require_once "../config/i18n.php";
+require_once "../services/ItineraryEditService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -240,6 +242,37 @@ if ($totalDays > 1 && $selectedHotelCount === 0) {
     $missingInfo[] = "Confirmed Hotel";
 }
 $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?: "[]";
+
+// ---- Edit controls (assets/itinerary_edit.js, api/itinerary_edit.php). This page shows only
+// the signed-in traveller's own itineraries, so the controls are always the owner's.
+$editPref = PlannerRules::loadPreference($conn, (int)$it["preference_id"]) ?? PlannerRules::normalizePreference([]);
+$editUsualStart = (int)PlannerRules::profile($editPref)["start"];
+$editDayStarts = ItineraryEditService::dayStarts($conn, $itineraryId);
+$editHm = static fn(int $m): string => sprintf("%02d:%02d", intdiv($m, 60), $m % 60);
+$editCategories = PlannerRules::VALID_INTERESTS;
+// Re-plan rainy days: offered when the forecast gives RAIN_PREFER percent or more on a trip day.
+$editRainy = [];
+foreach (ItineraryEditService::forecast($conn, $itineraryId) as $rainDate => $rainChance) {
+    if ((int)$rainChance < ItineraryDayBuilder::RAIN_PREFER || !$startDate) continue;
+    $rainDay = (int)round((strtotime($rainDate) - strtotime((string)$startDate)) / 86400) + 1;
+    if ($rainDay >= 1 && $rainDay <= $totalDays) $editRainy[$rainDay] = (int)$rainChance;
+}
+ksort($editRainy);
+// The visits of each day in order (meal, note and hotel rows are not visits): for Move up and down.
+$editVisitIds = [];
+foreach ($days as $d => $dayItems) {
+    foreach ($dayItems as $row) {
+        if (!empty($row["meal_slot"]) || $row["place_id"] === null) continue;
+        if (!in_array(strtolower((string)$row["item_type"]), ["attraction", "food", "festival"], true)) continue;
+        $editVisitIds[$d][] = (int)$row["item_id"];
+    }
+}
+$editConfig = json_encode([
+    "itineraryId" => $itineraryId,
+    "endpoint" => "../api/itinerary_edit.php",
+    "search" => "../api/place_search.php",
+    "states" => implode(",", array_map("strval", (array)($editPref["states"] ?? []))),
+], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?: "{}";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -644,6 +677,41 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
         }
 
         .table-scroll { overflow-x: auto; }
+
+        /* ===== Edit controls (assets/itinerary_edit.js) ===== */
+        .ed-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; align-items: center; cursor: default; }
+        .ed-btn {
+            font-size: 11px; font-weight: 700; padding: 4px 9px; min-height: 28px;
+            border-radius: 8px; border: 1px solid rgba(15,23,42,0.15); background: #fff; color: #334155; cursor: pointer;
+        }
+        .ed-btn:hover:not(:disabled) { border-color: #4f46e5; color: #4f46e5; }
+        .ed-btn:disabled { opacity: .4; cursor: default; }
+        .ed-btn.ed-primary { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+        .ed-btn.ed-primary:hover:not(:disabled) { background: #4338ca; color: #fff; }
+        .ed-btn.ed-danger:hover:not(:disabled) { border-color: #dc2626; color: #dc2626; }
+        .ed-panel { flex-basis: 100%; border: 1px solid #e2e8f0; border-radius: 10px; background: #f8fafc; padding: 8px 10px; font-size: 12px; }
+        .ed-panel[hidden] { display: none; }
+        .ed-option { display: flex; gap: 8px; justify-content: space-between; align-items: center; padding: 6px 0; border-top: 1px solid #e2e8f0; }
+        .ed-option:first-child { border-top: 0; }
+        .ed-option-meta { font-size: 11px; color: #64748b; }
+        .ed-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+        .ed-msg { flex-basis: 100%; font-size: 11.5px; color: #475569; }
+        .ed-msg:empty { display: none; }
+        .ed-msg.err { color: #b91c1c; }
+        .ed-msg.ok { color: #166534; }
+        .day-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: -4px 0 12px; font-size: 12px; }
+        .day-tools label, .ed-panel label { font-weight: 700; color: #334155; display: inline-flex; gap: 6px; align-items: center; }
+        .day-tools input[type=time], .ed-panel select, .ed-panel input[type=search] {
+            font-size: 12px; padding: 4px 6px; min-height: 28px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff;
+        }
+        .ed-notice { margin-bottom: 12px; padding: 8px 12px; border-radius: 10px; background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; font-size: 12.5px; }
+        .ed-notice[hidden] { display: none; }
+        .trip-tools { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; font-size: 12px; color: #475569; }
+        @media (max-width: 640px) {
+            .ed-btn { min-height: 36px; padding: 6px 11px; }
+            .day-tools input[type=time], .ed-panel select, .ed-panel input[type=search] { min-height: 36px; }
+            .ed-panel input[type=search] { flex: 1 1 100%; }
+        }
     </style>
 </head>
 <body>
@@ -834,6 +902,15 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                 </span>
             </div>
 
+            <div class="ed-notice" id="editNotice" role="status" hidden></div>
+            <?php if ($editRainy): ?>
+            <div class="trip-tools ed-actions" data-ed-trip>
+                <button type="button" class="ed-btn ed-primary" data-ed="replan_rain"><?php echo te('edit.replan_rain'); ?></button>
+                <span><?php echo te('edit.rain_hint', ['days' => implode(', ', array_map(static fn($d, $c) => t('edit.rain_day_chance', ['day' => $d, 'chance' => $c]), array_keys($editRainy), $editRainy))]); ?></span>
+                <div class="ed-msg" aria-live="polite"></div>
+            </div>
+            <?php endif; ?>
+
             <!-- Day tabs -->
             <div class="day-tabs" id="dayTabs">
                 <?php for ($d = 1; $d <= $totalDays; $d++):
@@ -877,6 +954,48 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                             <?php echo $d === 1 ? 'Starts from your starting location' : 'Starts where the day before ended'; ?>
                         </div>
                     </div>
+                </div>
+
+                <!-- Edit this day: its start, a new place, planned again -->
+                <?php $dayStartValue = $editHm($editDayStarts[$d] ?? $editUsualStart); ?>
+                <div class="day-tools ed-actions" data-ed-day="<?php echo $d; ?>">
+                    <label><?php echo te('edit.day_start'); ?>
+                        <input type="time" step="300" value="<?php echo htmlspecialchars($dayStartValue); ?>" data-ed-start>
+                    </label>
+                    <button type="button" class="ed-btn" data-ed="set_day_start"><?php echo te('edit.day_start_set'); ?></button>
+                    <?php if (isset($editDayStarts[$d])): ?>
+                    <button type="button" class="ed-btn" data-ed="clear_day_start"><?php echo te('edit.day_start_usual', ['time' => $editHm($editUsualStart)]); ?></button>
+                    <?php endif; ?>
+                    <button type="button" class="ed-btn" data-ed="add_open"><?php echo te('edit.add_place'); ?></button>
+                    <button type="button" class="ed-btn" data-ed="regen_open"><?php echo te('edit.regenerate'); ?></button>
+                    <div class="ed-panel" data-ed-panel="add" hidden>
+                        <div class="ed-row">
+                            <input type="search" maxlength="80" autocomplete="off" placeholder="<?php echo te('edit.search_placeholder'); ?>" aria-label="<?php echo te('edit.search_placeholder'); ?>" data-ed-search>
+                        </div>
+                        <div data-ed-results></div>
+                    </div>
+                    <div class="ed-panel" data-ed-panel="regen" hidden>
+                        <div class="ed-row">
+                            <label><?php echo te('edit.more_of'); ?>
+                                <select data-ed-more>
+                                    <option value=""><?php echo te('edit.no_choice'); ?></option>
+                                    <?php foreach ($editCategories as $category): ?>
+                                    <option value="<?php echo htmlspecialchars($category); ?>"><?php echo htmlspecialchars(t_choice('interest', $category)); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </label>
+                            <label><?php echo te('edit.less_of'); ?>
+                                <select data-ed-less>
+                                    <option value=""><?php echo te('edit.no_choice'); ?></option>
+                                    <?php foreach ($editCategories as $category): ?>
+                                    <option value="<?php echo htmlspecialchars($category); ?>"><?php echo htmlspecialchars(t_choice('interest', $category)); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </label>
+                            <button type="button" class="ed-btn ed-primary" data-ed="regenerate_day"><?php echo te('edit.regenerate_go'); ?></button>
+                        </div>
+                    </div>
+                    <div class="ed-msg" aria-live="polite"></div>
                 </div>
 
                 <?php if (empty($schedule)): ?>
@@ -1024,6 +1143,24 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                                     <strong>Reason Selected:</strong> <?php echo htmlspecialchars($reasonSelected); ?>
                                 </div>
                                 <?php endif; ?>
+                                <?php
+                                    // Replace, Remove, Move up and down for a visit; Replace only for a meal; nothing for notes and hotels.
+                                    $editPos = array_search((int)$item['item_id'], $editVisitIds[$d] ?? [], true);
+                                    $editKind = $mealSlot !== '' ? 'meal' : ($editPos !== false ? 'visit' : null);
+                                ?>
+                                <?php if ($editKind !== null): ?>
+                                <div class="ed-actions" data-ed-item="<?php echo (int)$item['item_id']; ?>" data-ed-day="<?php echo $d; ?>"
+                                     data-ed-pos="<?php echo $editPos !== false ? $editPos + 1 : 0; ?>" data-ed-title="<?php echo htmlspecialchars((string)$item['item_title']); ?>">
+                                    <button type="button" class="ed-btn" data-ed="replace_open"><?php echo te('edit.replace'); ?></button>
+                                    <?php if ($editKind === 'visit'): ?>
+                                    <button type="button" class="ed-btn ed-danger" data-ed="remove"><?php echo te('edit.remove'); ?></button>
+                                    <button type="button" class="ed-btn" data-ed="move_up"<?php echo $editPos === 0 ? ' disabled' : ''; ?>><?php echo te('edit.move_up'); ?></button>
+                                    <button type="button" class="ed-btn" data-ed="move_down"<?php echo $editPos === count($editVisitIds[$d]) - 1 ? ' disabled' : ''; ?>><?php echo te('edit.move_down'); ?></button>
+                                    <?php endif; ?>
+                                    <div class="ed-panel" data-ed-panel="replace" hidden></div>
+                                    <div class="ed-msg" aria-live="polite"></div>
+                                </div>
+                                <?php endif; ?>
                             </td>
                             <td data-label="Type">
                                 <span class="type-badge <?php echo htmlspecialchars($typeBadgeClass); ?>">
@@ -1083,7 +1220,17 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
     </form>
 </div>
 
-<script src="../assets/trip_ai_chat.js?v=20261112b"></script>
+<script src="../assets/trip_ai_chat.js?v=20261117a"></script>
+<script>
+// What assets/itinerary_edit.js needs: the endpoints and its texts in the page's language.
+const ITINERARY_EDIT = <?php echo $editConfig; ?>;
+const ITINERARY_EDIT_T = <?php echo i18n_js([
+    'edit.loading', 'edit.suggest_none', 'edit.more_options', 'edit.choose', 'edit.planned_at', 'edit.saving', 'edit.reloading',
+    'edit.confirm_remove', 'edit.confirm_regenerate', 'edit.confirm_replan', 'edit.err_network', 'edit.search_hint', 'edit.no_results',
+    'edit.add', 'edit.err_time', 'edit.meal_break',
+]); ?>;
+</script>
+<script src="../assets/itinerary_edit.js?v=20261117a"></script>
 <script>
 // What assets/itinerary_map.js draws.
 const ITINERARY_ID = <?php echo $itineraryId; ?>;
