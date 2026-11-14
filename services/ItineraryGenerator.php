@@ -645,7 +645,7 @@ final class ItineraryGenerator
             VALUES (?,?,?,?,NULL,?,?,?,0.00,?)
         ");
         if (!$stmt) throw new RuntimeException('Unable to save itinerary item.');
-        $notes = mb_strlen($notes) <= 255 ? $notes : mb_substr($notes, 0, 252) . '...';
+        $notes = mb_strlen($notes) <= 1000 ? $notes : mb_substr($notes, 0, 997) . '...';
         $stmt->bind_param('iiisssss', $itineraryId, $dayNo, $sequence, $type, $title, $startTime, $endTime, $notes);
         $stmt->execute();
         $stmt->close();

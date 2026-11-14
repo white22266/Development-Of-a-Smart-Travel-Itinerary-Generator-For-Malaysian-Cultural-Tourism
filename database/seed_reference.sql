@@ -40,5 +40,6 @@ INSERT IGNORE INTO `schema_migrations` (`file_name`) VALUES
   ('20261112_drop_google_hotel_cache.sql'),
   ('20261115_planner_inputs.sql'),
   ('20261116_meal_slots.sql'),
-  ('20261117_itinerary_days.sql');
+  ('20261117_itinerary_days.sql'),
+  ('20261118_longer_item_notes.sql');
 

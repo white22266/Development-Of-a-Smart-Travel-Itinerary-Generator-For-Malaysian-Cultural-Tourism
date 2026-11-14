@@ -390,7 +390,7 @@ final class ItineraryDayBuilder
         $text = 'State: ' . $place['state'] . ' | District: ' . (($place['district'] ?? '') !== '' ? $place['district'] : '-')
             . ' | Category: ' . $place['category'] . ' | Tier: ' . (int)$stop['tier']
             . ' | Reason: ' . $tierText . ($reasons !== '' ? '; ' . $reasons : '');
-        return mb_strlen($text) <= 255 ? $text : mb_substr($text, 0, 252) . '...';
+        return mb_strlen($text) <= 1000 ? $text : mb_substr($text, 0, 997) . '...';
     }
 
     /**
@@ -616,7 +616,7 @@ final class ItineraryDayBuilder
                 . ' | Category: food | Meal: ' . $slot . ' | Reason: ' . ucfirst($slot) . ' at the food place with the least detour between your stops ('
                 . number_format((float)$meal['detour'], 1) . ' km extra)' . $diet . '; open for the whole meal; the cost is part of the daily meal estimate';
         }
-        return mb_strlen($text) <= 255 ? $text : mb_substr($text, 0, 252) . '...';
+        return mb_strlen($text) <= 1000 ? $text : mb_substr($text, 0, 997) . '...';
     }
 
     private static function travellerSuitability(array $place, string $travellerType): int

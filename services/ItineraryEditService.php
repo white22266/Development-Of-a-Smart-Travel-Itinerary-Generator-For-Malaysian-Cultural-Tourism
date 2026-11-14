@@ -1418,7 +1418,7 @@ class ItineraryEditService
                 [$noteTitle, $noteText] = ItineraryGenerator::freeDayNote((string)($opts['why_empty'] ?? self::EMPTIED));
                 $sequence++;
                 $type = 'note';
-                $noteText = mb_strlen($noteText) <= 255 ? $noteText : mb_substr($noteText, 0, 252) . '...';
+                $noteText = mb_strlen($noteText) <= 1000 ? $noteText : mb_substr($noteText, 0, 997) . '...';
                 $insertNote = $conn->prepare("
                     INSERT INTO itinerary_items (itinerary_id, day_no, sequence_no, item_type, place_id, item_title, start_time, end_time, estimated_cost, notes)
                     VALUES (?,?,?,?,NULL,?,?,?,0.00,?)
@@ -1935,7 +1935,7 @@ class ItineraryEditService
     {
         $notes = preg_replace('/; also your (?:lunch|dinner)/', '', $notes) ?? $notes;
         if ($foodMeal !== null && str_contains($notes, 'Reason:')) $notes .= '; also your ' . $foodMeal;
-        return mb_strlen($notes) <= 255 ? $notes : mb_substr($notes, 0, 252) . '...';
+        return mb_strlen($notes) <= 1000 ? $notes : mb_substr($notes, 0, 997) . '...';
     }
 
     private static function samePoint(?array $a, ?array $b): bool

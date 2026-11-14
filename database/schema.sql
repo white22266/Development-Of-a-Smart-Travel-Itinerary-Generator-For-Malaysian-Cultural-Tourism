@@ -193,7 +193,7 @@ CREATE TABLE `itinerary_items` (
   `estimated_cost` decimal(10,2) DEFAULT 0.00,
   `distance_km` decimal(8,2) DEFAULT NULL,
   `travel_time_min` int(11) DEFAULT NULL,
-  `notes` varchar(255) DEFAULT NULL,
+  `notes` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`item_id`),
   KEY `idx_itinerary_day` (`itinerary_id`,`day_no`,`sequence_no`),
   KEY `idx_item_place` (`place_id`),
