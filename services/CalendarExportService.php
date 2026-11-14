@@ -10,7 +10,8 @@ class CalendarExportService
     /**
      * iCalendar text for one itinerary, or "" when the itinerary does not exist.
      * Stops of type note or transport are skipped, and so is any stop without a date or times.
-     * Hotel stops that have times are exported like any other stop.
+     * Hotel stops that have times are exported like any other stop. A meal row becomes
+     * "Lunch: <place>" (or "Lunch break" without a location when it has no place).
      */
     public static function buildForItinerary(mysqli $conn, int $itineraryId): string
     {
@@ -28,9 +29,12 @@ class CalendarExportService
         $coordSelect = $hasCoords
             ? "COALESCE(ii.item_latitude, cp.latitude) AS latitude, COALESCE(ii.item_longitude, cp.longitude) AS longitude"
             : "cp.latitude, cp.longitude";
+        // Lunch and dinner rows (migration 20261116_meal_slots.sql)
+        $c3 = $conn->query("SHOW COLUMNS FROM itinerary_items LIKE 'meal_slot'");
+        $mealSelect = ($c3 && $c3->num_rows > 0) ? "ii.meal_slot" : "NULL AS meal_slot";
 
         $stmt = $conn->prepare("
-            SELECT ii.item_id, ii.day_no, ii.item_type, ii.item_title, ii.start_time, ii.end_time,
+            SELECT ii.item_id, ii.day_no, ii.item_type, {$mealSelect}, ii.item_title, ii.start_time, ii.end_time,
                    ii.estimated_cost, ii.notes, {$coordSelect}, cp.name AS place_name, cp.address
             FROM itinerary_items ii
             LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
@@ -94,7 +98,10 @@ class CalendarExportService
                 $title = trim((string)($r["item_title"] ?? ""));
                 if ($title === "") $title = "Stop";
                 $location = trim((string)($r["place_name"] ?? ""));
-                if ($location === "") $location = $title;
+                // A meal: "Lunch: <place>", or a break without a place and so without a location.
+                $meal = trim((string)($r["meal_slot"] ?? ""));
+                if ($meal !== "" && $location !== "") $title = ucfirst($meal) . ": " . $title;
+                if ($location === "" && $meal === "") $location = $title;
                 $address = trim((string)($r["address"] ?? ""));
                 if ($address !== "") $location .= ", " . $address;
 
@@ -109,7 +116,7 @@ class CalendarExportService
                 $lines[] = "DTSTART;TZID=" . self::TZID . ":" . $dtStart;
                 $lines[] = "DTEND;TZID=" . self::TZID . ":" . $dtEnd;
                 $lines[] = "SUMMARY:" . self::esc($title);
-                $lines[] = "LOCATION:" . self::esc($location);
+                if ($location !== "") $lines[] = "LOCATION:" . self::esc($location);
                 if (self::validCoord($r["latitude"] ?? null, $r["longitude"] ?? null)) {
                     $lines[] = "GEO:" . self::coord($r["latitude"]) . ";" . self::coord($r["longitude"]);
                 }

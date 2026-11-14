@@ -48,9 +48,12 @@ $hasItemCoords = ($itemLatCheck && $itemLatCheck->num_rows > 0) && ($itemLngChec
 $itemCoordSelect = $hasItemCoords
     ? "COALESCE(ii.item_latitude, cp.latitude) AS latitude, COALESCE(ii.item_longitude, cp.longitude) AS longitude"
     : "cp.latitude, cp.longitude";
+// Lunch and dinner rows (migration 20261116_meal_slots.sql)
+$mealSlotCheck = $conn->query("SHOW COLUMNS FROM itinerary_items LIKE 'meal_slot'");
+$mealSlotSelect = ($mealSlotCheck && $mealSlotCheck->num_rows > 0) ? "ii.meal_slot" : "NULL AS meal_slot";
 
 $stmt = $conn->prepare("
-    SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id,
+    SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, {$mealSlotSelect}, ii.place_id,
            ii.item_title, ii.estimated_cost, ii.distance_km, ii.travel_time_min,
            ii.start_time, ii.end_time, ii.notes,
            {$itemCoordSelect}, cp.address, cp.category, cp.state, {$districtJoinCol},
@@ -107,7 +110,7 @@ function buildTimetable(array $items, string $transportType): array
         } elseif ($item["distance_km"] !== null && (float)$item["distance_km"] > 0) {
             $travelMin = (int)ceil(((float)$item["distance_km"] / $speed) * 60);
             if ($transportType === 'public_transport') $travelMin = (int)ceil($travelMin * 1.4);
-        } elseif ($i > 0) {
+        } elseif ($i > 0 && $item["latitude"] !== null) {   // a row without a place (a meal break) has no leg
             $travelMin = ($transportType === 'walking') ? 20 : 15;
         }
         $cursor = $dbStartMin ?? ($cursor + $travelMin);
@@ -181,7 +184,7 @@ $jsItineraryData = [];
 foreach ($timetables as $d => $items) {
     $jsItineraryData[$d] = array_map(fn($item) => [
         'item_id'      => (int)$item['item_id'],
-        'title'        => $item['item_title'],
+        'title'        => !empty($item['meal_slot']) && $item['latitude'] !== null ? ucfirst((string)$item['meal_slot']) . ': ' . $item['item_title'] : $item['item_title'],
         'type'         => $item['item_type'],
         'category'     => $item['category'] ?? '',
         'lat'          => $item['latitude']  !== null ? (float)$item['latitude']  : null,
@@ -190,9 +193,9 @@ foreach ($timetables as $d => $items) {
         'state'        => $item['state'] ?? '',
         'district'     => $item['district'] ?? '',
         'cost'         => (float)($item['estimated_cost'] ?? 0),
-        'cost_label'   => (float)($item['estimated_cost'] ?? 0) > 0
+        'cost_label'   => !empty($item['meal_slot']) ? 'In the daily meal estimate' : ((float)($item['estimated_cost'] ?? 0) > 0
             ? CostEstimationService::itemCostLabel((string)($item['item_type'] ?? ''), (float)$item['estimated_cost'], $partySize)['whole_label']
-            : 'Free',
+            : 'Free'),
         'dist_km'      => $item['distance_km'] !== null ? (float)$item['distance_km'] : null,
         'travel_min'   => $item['_travel_min'],
         'start_fmt'    => $item['_start_fmt'],
@@ -213,7 +216,7 @@ $totalDistanceKm = 0.0;
 foreach ($days as $dayItems) {
     foreach ($dayItems as $item) {
         $totalCost += (float)($item['estimated_cost'] ?? 0);
-        if (strtolower((string)($item['item_type'] ?? '')) !== 'hotel') {
+        if (strtolower((string)($item['item_type'] ?? '')) !== 'hotel' && empty($item['meal_slot'])) {
             $totalPlaces++;
         }
         $allCostItems[] = $item;
@@ -951,10 +954,14 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                             $typeBadgeClass = 'badge-' . strtolower($item['item_type'] ?? 'attraction');
                             $activity = activitySuggestion($item['item_type'] ?? 'attraction', $item['category'] ?? '');
                             $isHotel = strtolower((string)($item['item_type'] ?? '')) === 'hotel';
-                            $displayLabel = $isHotel ? 'Stay' : (string)(++$displayNo);
+                            $mealSlot = (string)($item['meal_slot'] ?? '');
+                            $hasPoint = $item['latitude'] !== null && $item['longitude'] !== null;
+                            if ($mealSlot !== '' && !$hasPoint) $activity = 'Time kept free for ' . $mealSlot;
+                            // Numbered like the map's markers: a row without a place has none.
+                            $displayLabel = $isHotel ? 'Stay' : ($hasPoint ? (string)(++$displayNo) : '-');
                         ?>
 
-                        <?php if ($idx > 0): ?>
+                        <?php if ($idx > 0 && $hasPoint): ?>
                         <!-- ===== The leg from the stop before ===== -->
                         <tr class="transit-row" data-leg-to="<?php echo (int)$item['item_id']; ?>">
                             <td class="mobile-empty" colspan="5">
@@ -1020,11 +1027,13 @@ $missingInfoJson = json_encode(array_values($missingInfo), JSON_UNESCAPED_UNICOD
                             </td>
                             <td data-label="Type">
                                 <span class="type-badge <?php echo htmlspecialchars($typeBadgeClass); ?>">
-                                    <?php echo htmlspecialchars($isHotel ? 'Hotel / Check-in' : ucfirst($item['item_type'] ?? 'attraction')); ?>
+                                    <?php echo htmlspecialchars($isHotel ? 'Hotel / Check-in' : ($mealSlot !== '' ? ucfirst($mealSlot) : ucfirst($item['item_type'] ?? 'attraction'))); ?>
                                 </span>
                             </td>
                             <td data-label="Cost (RM)" style="font-weight:700;">
-                                <?php if ((float)($item['estimated_cost'] ?? 0) > 0): ?>
+                                <?php if ($mealSlot !== ''): ?>
+                                    <span style="color:#94a3b8; font-weight:400;">In the daily meal estimate</span>
+                                <?php elseif ((float)($item['estimated_cost'] ?? 0) > 0): ?>
                                     <?php $costLabel = CostEstimationService::itemCostLabel((string)($item['item_type'] ?? ''), (float)$item['estimated_cost'], $partySize); ?>
                                     <div><?php echo htmlspecialchars($costLabel['whole_label']); ?></div>
                                     <div style="font-size:10.5px; color:#64748b; font-weight:400; margin-top:2px;"><?php echo htmlspecialchars($costLabel['unit_label']); ?></div>

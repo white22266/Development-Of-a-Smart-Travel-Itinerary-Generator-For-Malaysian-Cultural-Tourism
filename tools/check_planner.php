@@ -13,6 +13,11 @@
 //   php tools/check_planner.php --json              machine-readable output
 //   php tools/check_planner.php --road              allow real road routing (public OSRM/Valhalla)
 //
+// Meal rows (itinerary_items.meal_slot set) are judged as lunch or dinner, not as stops: STOPS
+// counts visits only, and MEAL checks that a day whose visits span a meal window has that meal
+// inside its window, between two visits, at a suitable place or as a break that says so.
+// WEATHER warns about outdoor stops on very wet days of scenarios with a forecast override.
+//
 // Test database only: in Git Bash
 //   DB_NAME=travel_itinerary_db_ctest /c/xampp/php/php.exe tools/check_planner.php
 // Exit code: 0 no violation, 1 at least one violation, 2 refused to run.
@@ -137,6 +142,20 @@ const EAST_FROM_LNG = 108.0;
 const LOW_RATING = 2;
 /** WEIGHTS is judged only when both categories have at least this many places per trip day in the chosen area. */
 const WEIGHT_PLACES_PER_DAY = 4;
+/** The rules of the task that added meals and the weather (migration 20261116_meal_slots.sql). */
+/** Meal windows: earliest and latest start of lunch and dinner; meal length per pace; radius of a meal place per transport (road km). */
+const MEAL_WINDOWS = ['lunch' => [690, 840], 'dinner' => [1080, 1230]];   // 11:30-14:00, 18:00-20:30
+const MEAL_MIN = ['relaxed' => 75, 'normal' => 60, 'packed' => 45];
+const MEAL_RADIUS_KM = ['walking' => 1.0, 'public_transport' => 2.0, 'car' => 5.0, 'motorcycle' => 5.0];
+/** Longest wait for a place to open (time spent on a meal is not waiting). */
+const MAX_WAIT_MIN = 60;
+/** Only a day start or only a day end given, and the window shorter than 4 h: the other side moves to make it 8 h, inside 06:00-23:00. */
+const SHORT_WINDOW_MIN = 240;
+const WIDENED_WINDOW_MIN = 480;
+const EARLIEST_START = 360;
+const LATEST_END = 1380;
+/** WEATHER warns about an outdoor stop on a day with at least this chance of rain. */
+const RAIN_WARN_AT = 80;
 
 // ---------------------------------------------------------------------------------------
 // Scenarios. Origins are real city centres or transport hubs of the chosen area.
@@ -297,6 +316,58 @@ const SCENARIOS = [
                       ['name' => 'Masjid India', 'rating' => 5]],
         'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
     ],
+
+    // ---- Meals, weather and three rule repairs (migration 20261116_meal_slots.sql) --------
+    // Optional trip key 'forecast' (date => chance of rain 0 to 100): the planner's forecast
+    // override, so no weather service is asked.
+    'johor_couple_car_relaxed_meals_at_places' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'relaxed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,culture,museum', 'preferred_states' => 'Johor', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'JB Sentral', 'origin_lat' => 1.4628, 'origin_lng' => 103.7650],
+    ],
+    'kl_couple_car_rain_indoor_first' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'nature,museum,culture,heritage', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865,
+                   'forecast' => ['2026-12-05' => 85, '2026-12-06' => 65]],
+    ],
+    'pahang_couple_car_rain_highlands' => [
+        'pref' => ['trip_days' => 1, 'budget' => 800, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'nature,culture', 'preferred_states' => 'Pahang', 'preferred_districts' => 'Cameron Highlands'],
+        'trip' => ['start_date' => '2026-12-14', 'origin_name' => 'Tanah Rata town centre', 'origin_lat' => 4.4700, 'origin_lng' => 101.3770,
+                   'forecast' => ['2026-12-14' => 90]],
+    ],
+    'kl_solo_car_early_start_wait_limit' => [
+        'pref' => ['trip_days' => 1, 'budget' => 600, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'museum,culture,heritage', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '',
+            'day_start_time' => '06:30:00'],
+        'trip' => ['start_date' => '2026-12-08', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'kl_couple_car_packed_heritage_loved_culture_little' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'packed', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,culture,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'weights' => ['heritage' => 3, 'culture' => 1],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'melaka_solo_car_start_only_evening' => [
+        'pref' => ['trip_days' => 1, 'budget' => 400, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,culture,shopping', 'preferred_states' => 'Melaka', 'preferred_districts' => '',
+            'day_start_time' => '18:00:00'],
+        'trip' => ['start_date' => '2026-12-11', 'origin_name' => 'Dutch Square (Stadthuys)', 'origin_lat' => 2.1942, 'origin_lng' => 102.2489],
+    ],
+    'penang_solo_walking_end_only_morning' => [
+        'pref' => ['trip_days' => 1, 'budget' => 300, 'budget_tier' => 'normal', 'transport_type' => 'walking', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,culture', 'preferred_states' => 'Penang', 'preferred_districts' => '',
+            'day_end_time' => '11:00:00'],
+        'trip' => ['start_date' => '2026-12-09', 'origin_name' => 'Komtar bus hub, George Town', 'origin_lat' => 5.4145, 'origin_lng' => 100.3292],
+    ],
 ];
 
 const TEST_EMAIL = 'planner-check@example.test';
@@ -449,7 +520,7 @@ function setTestRatings(mysqli $conn, int $travellerId, array $ratings): void
 /** The place_ids of the visit stops of an itinerary, in visiting order. */
 function storedStops(mysqli $conn, int $itineraryId): array
 {
-    $stmt = $conn->prepare("SELECT place_id FROM itinerary_items WHERE itinerary_id = ? AND place_id IS NOT NULL AND item_type IN ('attraction','food','festival') ORDER BY day_no, sequence_no");
+    $stmt = $conn->prepare("SELECT place_id FROM itinerary_items WHERE itinerary_id = ? AND place_id IS NOT NULL AND item_type IN ('attraction','food','festival') AND meal_slot IS NULL ORDER BY day_no, sequence_no");
     $stmt->bind_param('i', $itineraryId);
     $stmt->execute();
     $ids = array_map(static fn($r) => (int)$r[0], $stmt->get_result()->fetch_all());
@@ -606,10 +677,15 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
         $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
     };
 
-    $visits = array_values(array_filter($items, static fn($i) => in_array(strtolower((string)$i['item_type']), ['attraction', 'food', 'festival'], true)));
+    // Visits are the stops; a meal row (meal_slot set) is lunch or dinner, not a stop.
+    $isMealRow = static fn(array $i): bool => ($i['meal_slot'] ?? null) !== null;
+    $visits = array_values(array_filter($items, static fn($i) => !$isMealRow($i) && in_array(strtolower((string)$i['item_type']), ['attraction', 'food', 'festival'], true)));
+    $mealRows = array_values(array_filter($items, $isMealRow));
     $result['stops'] = count($visits);
     $result['info']['stored_total_rm'] = (float)$it['total_estimated_cost'];
     $result['info']['no_usable_hours'] = 0;
+    $result['info']['meals_at_places'] = count(array_filter($mealRows, static fn($m) => $m['place_id'] !== null));
+    $result['info']['meal_breaks'] = count($mealRows) - $result['info']['meals_at_places'];
 
     // DAYS and STOPS
     $byDay = [];
@@ -624,9 +700,9 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
         if ($d < 1 || $d > $tripDays) $add('DAYS', 'violation', $d, null, "stop on day {$d} outside the trip of {$tripDays} day(s)");
     }
 
-    // DUPLICATE
+    // DUPLICATE: no place twice in the trip, neither as a visit nor as a meal place.
     $seen = [];
-    foreach ($visits as $v) {
+    foreach (array_merge($visits, $mealRows) as $v) {
         if ($v['place_id'] === null) continue;
         $pid = (int)$v['place_id'];
         if (isset($seen[$pid])) $add('DUPLICATE', 'violation', (int)$v['day_no'], $v['item_title'], "place {$pid} also on day {$seen[$pid]}");
@@ -641,57 +717,76 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     $dayKmByDay = [];
     $lastVisit = null;
 
-    foreach ($byDay as $dayNo => $dayVisits) {
+    // Each day in stored order, visits and meal rows together.
+    $timeline = [];
+    foreach (array_merge($visits, $mealRows) as $row) $timeline[(int)$row['day_no']][] = $row;
+    ksort($timeline);
+    foreach ($timeline as &$rows) usort($rows, static fn($a, $b) => [(int)$a['sequence_no'], (int)$a['item_id']] <=> [(int)$b['sequence_no'], (int)$b['item_id']]);
+    unset($rows);
+
+    foreach ($timeline as $dayNo => $dayRows) {
         $date = (new DateTimeImmutable((string)$it['start_date']))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
         $prevEnd = null;
+        $prevWasMeal = false;
         $dayKm = 0.0;
-        foreach ($dayVisits as $k => $v) {
+        $slotsSeen = [];
+        $visitIndex = 0;
+        foreach ($dayRows as $k => $v) {
+            $isMeal = $isMealRow($v);
             $title = (string)$v['item_title'];
             $start = toMinutes($v['start_time']);
             $end = toMinutes($v['end_time']);
             $isFirstOfTrip = $dayNo === 1 && $k === 0;
             $travel = $v['travel_time_min'] !== null ? (int)$v['travel_time_min'] : null;
             $km = $v['distance_km'] !== null ? (float)$v['distance_km'] : null;
+            $hasPoint = $v['item_latitude'] !== null || $v['place_lat'] !== null;
             $point = [(float)($v['item_latitude'] ?? $v['place_lat']), (float)($v['item_longitude'] ?? $v['place_lng'])];
             $category = strtolower((string)($v['category'] ?? $v['item_type']));
 
-            // TIME_ORDER
+            // TIME_ORDER (visits and meals: no overlap, and the gap holds the leg)
             if ($start === null || $end === null) {
                 $add('TIME_ORDER', 'violation', $dayNo, $title, 'missing start or end time');
             } else {
                 if ($end <= $start) $add('TIME_ORDER', 'violation', $dayNo, $title, 'ends ' . hm($end) . ' not after start ' . hm($start));
                 if ($prevEnd !== null) {
                     $gap = $start - $prevEnd;
-                    if ($gap < 0) $add('TIME_ORDER', 'violation', $dayNo, $title, 'starts ' . hm($start) . ' before the previous stop ends ' . hm($prevEnd));
+                    if ($gap < 0) $add('TIME_ORDER', 'violation', $dayNo, $title, 'starts ' . hm($start) . ' before the previous row ends ' . hm($prevEnd));
                     elseif ($travel !== null && $gap < $travel) $add('TIME_ORDER', 'violation', $dayNo, $title, "gap {$gap} min shorter than its travel time {$travel} min");
-                    elseif ($travel !== null && $gap - $travel < $profile['rest']) {
+                    // A meal stands in for the rest between two visits.
+                    elseif (!$isMeal && !$prevWasMeal && $travel !== null && $gap - $travel < $profile['rest']) {
                         $add('REST', 'warning', $dayNo, $title, 'rest ' . ($gap - $travel) . " min, planned rest {$profile['rest']} min");
                     }
                 }
-                // START and HARD_END
+                // START and HARD_END: meal rows lie inside the day window too.
                 if ($start < $profile['start']) $add('START', 'violation', $dayNo, $title, 'starts ' . hm($start) . ', earliest ' . hm($profile['start']) . " ({$profile['window_source']})");
                 if ($end > $profile['hard_end']) $add('HARD_END', 'violation', $dayNo, $title, 'ends ' . hm($end) . ', latest ' . hm($profile['hard_end']));
+                // WAIT: a visit starts at most MAX_WAIT_MIN after it can be reached; after a meal no rest is due.
+                if (!$isMeal && $travel !== null) {
+                    $reach = ($prevEnd === null ? $profile['start'] : $prevEnd + ($prevWasMeal ? 0 : $profile['rest'])) + $travel;
+                    $wait = $start - max($reach, $profile['start']);
+                    if ($wait > MAX_WAIT_MIN) $add('WAIT', 'violation', $dayNo, $title, "waits {$wait} min for opening, at most " . MAX_WAIT_MIN);
+                }
                 // DURATION
                 $length = $end - $start;
-                if ($length > 0 && ($length < VISIT_MIN || $length > $profile['visit_max'])) {
+                if (!$isMeal && $length > 0 && ($length < VISIT_MIN || $length > $profile['visit_max'])) {
                     $add('DURATION', 'violation', $dayNo, $title, "visit {$length} min, allowed " . VISIT_MIN . "-{$profile['visit_max']} min");
                 }
-                // OPEN_HOURS
-                $ranges = openingRanges((string)($v['opening_hours'] ?? ''), $date);
-                if ($ranges === null) {
+                // OPEN_HOURS (also a meal place, for the whole meal)
+                $ranges = $v['place_id'] !== null ? openingRanges((string)($v['opening_hours'] ?? ''), $date) : null;
+                if ($v['place_id'] !== null && $ranges === null) {
                     $result['info']['no_usable_hours']++;
-                } elseif ($end > $start) {
+                } elseif ($ranges !== null && $end > $start) {
                     $inside = false;
                     foreach ($ranges as [$open, $close]) {
                         if ($start >= $open && $end <= $close) $inside = true;
                     }
                     if (!$inside) {
                         $text = $ranges === [] ? 'closed all day' : implode(', ', array_map(static fn($r) => hm($r[0]) . '-' . hm($r[1]), $ranges));
-                        $add('OPEN_HOURS', 'violation', $dayNo, $title, 'visit ' . hm($start) . '-' . hm($end) . ' on ' . date('D', strtotime($date)) . " {$date}, open {$text}");
+                        $add('OPEN_HOURS', 'violation', $dayNo, $title, ($isMeal ? 'meal ' : 'visit ') . hm($start) . '-' . hm($end) . ' on ' . date('D', strtotime($date)) . " {$date}, open {$text}");
                     }
                 }
                 // ACCESS: heat
-                if (hasNeed($tags, ['avoid_heat']) && (int)($v['is_outdoor'] ?? 0) === 1) {
+                if (!$isMeal && hasNeed($tags, ['avoid_heat']) && (int)($v['is_outdoor'] ?? 0) === 1) {
                     if ($start >= HEAT_FROM && $start <= HEAT_TO) {
                         $add('ACCESS', 'violation', $dayNo, $title, 'outdoor stop for avoid-heat traveller arrives ' . hm($start) . ' (11:00-16:00)');
                     } elseif ($start < HEAT_FROM && $end > HEAT_FROM) {
@@ -701,37 +796,79 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 $prevEnd = max($prevEnd ?? $end, $end);
             }
 
-            // ACCESS: step-free and elderly
-            $text = (string)$v['place_name'] . ' ' . (string)$v['description'] . ' ' . $category;
-            if (hasNeed($tags, ['wheelchair', 'avoid_stairs', 'step_free']) && preg_match(STEP_FREE_BLOCKED, $text, $m)) {
-                $add('ACCESS', 'violation', $dayNo, $title, "step-free traveller sent to a place described with \"{$m[0]}\"");
-            }
-            if (hasNeed($tags, ['elderly']) && (int)($v['is_outdoor'] ?? 0) === 1 && (int)($v['visit_duration_min'] ?? 90) > ELDERLY_LONG_VISIT_MIN) {
-                $add('ACCESS', 'violation', $dayNo, $title, "long outdoor place ({$v['visit_duration_min']} min) for an elderly traveller");
-            }
-
-            // DIETARY
-            if ($category === 'food' || strtolower((string)$v['item_type']) === 'food') {
-                if ($pref['dietary_preference'] === 'halal' && (int)($v['halal_status'] ?? 0) !== 1) {
-                    $add('DIETARY', 'violation', $dayNo, $title, 'food stop not marked halal');
+            // MEAL: the row of a meal
+            if ($isMeal) {
+                $slot = (string)$v['meal_slot'];
+                [$wOpen, $wClose] = MEAL_WINDOWS[$slot] ?? [0, 0];
+                if (isset($slotsSeen[$slot])) $add('MEAL', 'violation', $dayNo, $title, "a second {$slot} row on the day");
+                $slotsSeen[$slot] = true;
+                if ($start !== null && ($start < $wOpen || $start > $wClose)) $add('MEAL', 'violation', $dayNo, $title, "{$slot} starts " . hm($start) . ', window ' . hm($wOpen) . '-' . hm($wClose));
+                if ($start !== null && $end !== null && $end - $start !== $profile['meal_min']) $add('MEAL', 'violation', $dayNo, $title, ($end - $start) . " min {$slot}, the pace gives {$profile['meal_min']} min");
+                if (strtolower((string)$v['item_type']) !== 'food') $add('MEAL', 'violation', $dayNo, $title, 'meal row not of item_type food');
+                if ((float)$v['estimated_cost'] != 0.0) $add('MEAL', 'violation', $dayNo, $title, 'meal row has a cost of its own: the three meals a day are already in the total');
+                if (!str_contains((string)$v['notes'], 'Reason:')) $add('MEAL', 'violation', $dayNo, $title, 'meal row without a "Reason:" line');
+                $visitsBefore = $visitIndex;
+                $visitsAfter = count(array_filter(array_slice($dayRows, $k + 1), static fn($r) => !$isMealRow($r)));
+                if ($visitsBefore === 0 || $visitsAfter === 0) $add('MEAL', 'violation', $dayNo, $title, "{$slot} not between two visits");
+                if ($v['place_id'] === null) {
+                    // A break without a place: time only.
+                    if ($hasPoint || $km !== null || $travel !== null) $add('MEAL', 'violation', $dayNo, $title, 'meal break without a place has coordinates or a leg');
+                    if (!str_contains((string)$v['notes'], 'kept free')) $add('MEAL', 'violation', $dayNo, $title, 'meal break does not say the time is kept free for a meal');
+                    $prevWasMeal = true;
+                    continue;   // no point: the next leg starts from the stop before
                 }
+                // A meal place: suits the dietary preference, near the stop before or after it.
+                if ($category !== 'food') $add('MEAL', 'violation', $dayNo, $title, "meal place of category {$category}");
+                if ($pref['dietary_preference'] === 'halal' && (int)($v['halal_status'] ?? 0) !== 1) $add('DIETARY', 'violation', $dayNo, $title, 'meal place not marked halal');
                 if ($pref['dietary_preference'] === 'vegetarian' && !preg_match('/vegetarian|vegan/i', (string)$v['place_name'] . ' ' . (string)$v['description'])) {
-                    $add('DIETARY', 'violation', $dayNo, $title, 'food stop not described as vegetarian or vegan');
+                    $add('DIETARY', 'violation', $dayNo, $title, 'meal place not described as vegetarian or vegan');
+                }
+                $next = null;
+                foreach (array_slice($dayRows, $k + 1) as $r) {
+                    if (!$isMealRow($r)) { $next = [(float)($r['item_latitude'] ?? $r['place_lat']), (float)($r['item_longitude'] ?? $r['place_lng'])]; break; }
+                }
+                $near = haversineKm($previous[0], $previous[1], $point[0], $point[1]);
+                if ($next !== null) $near = min($near, haversineKm($point[0], $point[1], $next[0], $next[1]));
+                $radius = MEAL_RADIUS_KM[$pref['transport_type']];
+                if ($near > $radius) $add('MEAL', 'violation', $dayNo, $title, sprintf('meal place %.2f km from the stops before and after it (straight line), radius %.1f km', $near, $radius));
+            } else {
+                $visitIndex++;
+            }
+            $prevWasMeal = $isMeal;
+
+            if (!$isMeal) {
+                // ACCESS: step-free and elderly
+                $text = (string)$v['place_name'] . ' ' . (string)$v['description'] . ' ' . $category;
+                if (hasNeed($tags, ['wheelchair', 'avoid_stairs', 'step_free']) && preg_match(STEP_FREE_BLOCKED, $text, $m)) {
+                    $add('ACCESS', 'violation', $dayNo, $title, "step-free traveller sent to a place described with \"{$m[0]}\"");
+                }
+                if (hasNeed($tags, ['elderly']) && (int)($v['is_outdoor'] ?? 0) === 1 && (int)($v['visit_duration_min'] ?? 90) > ELDERLY_LONG_VISIT_MIN) {
+                    $add('ACCESS', 'violation', $dayNo, $title, "long outdoor place ({$v['visit_duration_min']} min) for an elderly traveller");
+                }
+
+                // DIETARY
+                if ($category === 'food' || strtolower((string)$v['item_type']) === 'food') {
+                    if ($pref['dietary_preference'] === 'halal' && (int)($v['halal_status'] ?? 0) !== 1) {
+                        $add('DIETARY', 'violation', $dayNo, $title, 'food stop not marked halal');
+                    }
+                    if ($pref['dietary_preference'] === 'vegetarian' && !preg_match('/vegetarian|vegan/i', (string)$v['place_name'] . ' ' . (string)$v['description'])) {
+                        $add('DIETARY', 'violation', $dayNo, $title, 'food stop not described as vegetarian or vegan');
+                    }
+                }
+
+                // FESTIVAL
+                if ($category === 'festival' || strtolower((string)$v['item_type']) === 'festival') {
+                    $fs = (string)($v['festival_start_date'] ?? '');
+                    $fe = (string)($v['festival_end_date'] ?? '');
+                    if ($fs === '' || $fe === '' || $fs === '0000-00-00' || $fe === '0000-00-00') {
+                        $add('FESTIVAL', 'violation', $dayNo, $title, 'festival without dates scheduled');
+                    } elseif ($date < $fs || $date > $fe) {
+                        $add('FESTIVAL', 'violation', $dayNo, $title, "scheduled {$date}, festival runs {$fs} to {$fe}");
+                    }
                 }
             }
 
-            // FESTIVAL
-            if ($category === 'festival' || strtolower((string)$v['item_type']) === 'festival') {
-                $fs = (string)($v['festival_start_date'] ?? '');
-                $fe = (string)($v['festival_end_date'] ?? '');
-                if ($fs === '' || $fe === '' || $fs === '0000-00-00' || $fe === '0000-00-00') {
-                    $add('FESTIVAL', 'violation', $dayNo, $title, 'festival without dates scheduled');
-                } elseif ($date < $fs || $date > $fe) {
-                    $add('FESTIVAL', 'violation', $dayNo, $title, "scheduled {$date}, festival runs {$fs} to {$fe}");
-                }
-            }
-
-            // REGION
+            // REGION (visits and meal places)
             $stopEast = $v['state'] !== null ? in_array(strtolower((string)$v['state']), EAST_STATES, true) : $point[1] >= EAST_FROM_LNG;
             if ($states && !in_array(strtolower((string)$v['state']), $states, true)) {
                 $add('REGION', 'violation', $dayNo, $title, 'in ' . ($v['state'] ?? 'unknown state') . ', chosen ' . $pref['preferred_states']);
@@ -740,7 +877,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 $add('REGION', 'violation', $dayNo, $title, 'in ' . ($stopEast ? 'East' : 'Peninsular') . ' Malaysia, trip starts in ' . ($originEast ? 'East' : 'Peninsular') . ' Malaysia');
             }
 
-            // LEGS
+            // LEGS (visits and meal places: every row with a point)
             $straight = haversineKm($previous[0], $previous[1], $point[0], $point[1]);
             if ($km === null || $travel === null) {
                 $add('LEGS', 'violation', $dayNo, $title, 'leg distance or travel time missing');
@@ -758,14 +895,14 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 }
             }
 
-            // DISTANCE
+            // DISTANCE (the legs to and from a meal place count)
             if (!$isFirstOfTrip && $km !== null) {
                 $dayKm += $km;
                 $legLimit = LEG_LIMIT_KM[$pref['transport_type']];
                 if ($km > $legLimit) $add('DISTANCE', 'violation', $dayNo, $title, sprintf('one leg of %.1f km, plausible at most %.0f km by %s', $km, $legLimit, $pref['transport_type']));
             }
             $previous = $point;
-            if ($dayNo === $tripDays && $end !== null) $lastVisit = ['title' => $title, 'end' => $end, 'point' => $point];
+            if (!$isMeal && $dayNo === $tripDays && $end !== null) $lastVisit = ['title' => $title, 'end' => $end, 'point' => $point];
         }
         $dayKmByDay[$dayNo] = $dayKm;
         if ($dayKm > $profile['hard_km']) {
@@ -773,12 +910,71 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
         } elseif ($dayKm > $profile['day_km']) {
             $add('DISTANCE', 'warning', $dayNo, null, sprintf('day travels %.1f km, recommended %.1f km', $dayKm, $profile['day_km']));
         }
+
+        // MEAL: a day whose visits span a meal window has that meal. The traveller is out across
+        // the window when a visit ends by its latest start and a later visit ends after it; the
+        // meal is then a meal row starting inside the window, or a food-place visit starting there.
+        $dayVisits = $byDay[$dayNo] ?? [];
+        foreach (MEAL_WINDOWS as $slot => [$wOpen, $wClose]) {
+            $endedBefore = false;
+            $spans = false;
+            foreach ($dayVisits as $dv) {
+                $e = toMinutes($dv['end_time']);
+                if ($e === null) continue;
+                if ($endedBefore && $e > $wClose) $spans = true;
+                if ($e <= $wClose) $endedBefore = true;
+            }
+            if (!$spans) continue;
+            $had = false;
+            foreach ($dayRows as $r) {
+                $s = toMinutes($r['start_time']);
+                if ($s === null || $s < $wOpen || $s > $wClose) continue;
+                if (($r['meal_slot'] ?? null) === $slot) $had = true;
+                if (!$isMealRow($r) && strtolower((string)($r['category'] ?? '')) === 'food') $had = true;
+            }
+            if (!$had) $add('MEAL', 'violation', $dayNo, null, "the visits span the {$slot} window " . hm($wOpen) . '-' . hm($wClose) . ", but no {$slot} starts inside it");
+        }
+
+        // CATEGORY: more visits of one category than its interest weight allows (a little 1,
+        // like 2, love 3) only where the stop says category variety was relaxed (or must-see).
+        if (csv($pref['interests']) !== ['food']) {
+            $perCategory = [];
+            foreach ($dayVisits as $dv) $perCategory[strtolower((string)($dv['category'] ?? ''))][] = $dv;
+            foreach ($perCategory as $c => $list) {
+                $limit = (int)($scenario['weights'][$c] ?? 2);
+                if (count($list) <= $limit) continue;
+                $explained = count(array_filter($list, static fn($dv) => str_contains((string)$dv['notes'], 'relaxed to fill the day') || str_contains((string)$dv['notes'], 'must-see')));
+                if ($explained < count($list) - $limit) {
+                    $add('CATEGORY', 'violation', $dayNo, null, sprintf('%d "%s" visits, limit %d by its weight, only %d say variety was relaxed', count($list), $c, $limit, $explained));
+                }
+            }
+        }
+
+        // WEATHER: an outdoor stop on a day with a forecast chance of rain of RAIN_WARN_AT percent or more.
+        $rain = $scenario['trip']['forecast'][$date] ?? null;
+        if ($rain !== null && (int)$rain >= RAIN_WARN_AT) {
+            foreach ($dayVisits as $dv) {
+                if ((int)($dv['is_outdoor'] ?? 0) === 1 || strtolower((string)($dv['category'] ?? '')) === 'nature') {
+                    $add('WEATHER', 'warning', $dayNo, (string)$dv['item_title'], "outdoor stop on a day with {$rain}% chance of rain");
+                }
+            }
+        }
+    }
+
+    // WINDOW: a short window that the repair widened is used beyond its old end or start.
+    if ($profile['window_widened'] !== null && $visits) {
+        [$oldStart, $oldEnd] = $profile['window_widened'];
+        $outside = false;
+        foreach ($visits as $v) {
+            if (toMinutes($v['start_time']) < $oldStart || toMinutes($v['end_time']) > $oldEnd) $outside = true;
+        }
+        if (!$outside) $add('WINDOW', 'warning', null, null, 'the widened day window is not used: every visit lies in ' . hm($oldStart) . '-' . hm($oldEnd));
     }
 
     // AVOID, MUST, RATED and LEARN: the traveller's own place choices and ratings.
     $resolved = $scenario['resolved'] ?? ['must' => [], 'avoid' => [], 'ratings' => []];
     $visitIds = array_map(static fn($v) => (int)$v['place_id'], array_filter($visits, static fn($v) => $v['place_id'] !== null));
-    foreach ($visits as $v) {
+    foreach (array_merge($visits, array_filter($mealRows, static fn($m) => $m['place_id'] !== null)) as $v) {
         $pid = (int)($v['place_id'] ?? 0);
         if (in_array($pid, $resolved['avoid'], true)) $add('AVOID', 'violation', (int)$v['day_no'], (string)$v['item_title'], 'a place to avoid is in the itinerary');
         if (isset($resolved['ratings'][$pid]) && $resolved['ratings'][$pid] <= LOW_RATING && !in_array($pid, $resolved['must'], true)) {
@@ -890,6 +1086,12 @@ function intendedProfile(array $pref): array
     $explicitEnd = toMinutes($pref['day_end_time'] ?? null);
     $start = $explicitStart ?? $window['start'];
     $hardEnd = $explicitEnd ?? ($careful ? min($window['hard_end'], CAREFUL_HARD_END) : $window['hard_end']);
+    $widened = null;   // the short window before the repair, when the repair applies
+    if (($explicitStart === null) !== ($explicitEnd === null) && $hardEnd - $start < SHORT_WINDOW_MIN) {
+        $widened = [$start, $hardEnd];
+        if ($explicitStart !== null) $hardEnd = min(LATEST_END, $start + WIDENED_WINDOW_MIN);
+        else $start = max(EARLIEST_START, $hardEnd - WIDENED_WINDOW_MIN);
+    }
     $dayKm = DAILY_DISTANCE_KM[$pref['transport_type']][$pace];
     if (hasNeed($tags, ['low_walking', 'wheelchair', 'elderly'])) $dayKm *= CAREFUL_DISTANCE_FACTOR;
     $visitMax = VISIT_MAX;
@@ -905,6 +1107,8 @@ function intendedProfile(array $pref): array
         'day_km' => $dayKm,
         'hard_km' => max($dayKm * HARD_DISTANCE_FACTOR, $dayKm + HARD_DISTANCE_EXTRA_KM),
         'visit_max' => $visitMax,
+        'meal_min' => MEAL_MIN[$pace],
+        'window_widened' => $widened,
     ];
 }
 
@@ -1127,11 +1331,12 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     }
 
     echo "Planner check on {$dbName}, routing: " . ($road ? 'road (public servers allowed)' : 'estimates only, no network') . "\n\n";
-    printf("%-46s %4s %5s %5s %5s %8s %7s\n", 'SCENARIO', 'DAYS', 'STOPS', 'VIOL', 'WARN', 'NO_HOURS', 'SECONDS');
+    printf("%-46s %4s %5s %5s %6s %5s %5s %8s %7s\n", 'SCENARIO', 'DAYS', 'STOPS', 'MEALS', 'BREAKS', 'VIOL', 'WARN', 'NO_HOURS', 'SECONDS');
     foreach ($results as $r) {
         $v = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'violation'));
         $w = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'warning'));
-        printf("%-46s %4d %5d %5d %5d %8d %7.1f\n", $r['scenario'], $r['days'], $r['stops'], $v, $w, $r['info']['no_usable_hours'] ?? 0, $r['seconds']);
+        printf("%-46s %4d %5d %5d %6d %5d %5d %8d %7.1f\n", $r['scenario'], $r['days'], $r['stops'], $r['info']['meals_at_places'] ?? 0, $r['info']['meal_breaks'] ?? 0,
+            $v, $w, $r['info']['no_usable_hours'] ?? 0, $r['seconds']);
     }
 
     foreach (['violation' => 'VIOLATIONS', 'warning' => 'WARNINGS'] as $severity => $heading) {
@@ -1162,5 +1367,8 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     printf("  %-12s %10d %9d\n", 'ALL', $sumV, $sumW);
     $noHours = array_sum(array_map(static fn($r) => $r['info']['no_usable_hours'] ?? 0, $results));
     echo "\nINFO: {$noHours} stop(s) at places without usable opening hours (not checked for OPEN_HOURS).\n";
+    $meals = array_sum(array_map(static fn($r) => $r['info']['meals_at_places'] ?? 0, $results));
+    $breaks = array_sum(array_map(static fn($r) => $r['info']['meal_breaks'] ?? 0, $results));
+    echo "INFO: {$meals} meal(s) at a food place, {$breaks} meal break(s) without a place (STOPS counts visits only).\n";
     echo "Test traveller {$after['traveller_id']} after the run: {$after['itineraries']} itinerary(ies), {$after['preferences']} preference(s), {$after['ratings']} rating(s).\n";
 }

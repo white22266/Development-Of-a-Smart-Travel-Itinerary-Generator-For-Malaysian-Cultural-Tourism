@@ -61,8 +61,29 @@ final class PlannerRules
     private const ELDERLY_LONG_VISIT_MIN = 150;
     private const STEP_FREE_BLOCKED = '/gunung|mountain|hill|cave|stairs|waterfall|trail|hiking/i';
 
-    /** Longest wait for a place to open. */
-    private const MAX_WAIT_MIN = 120;
+    /** Longest wait for a place to open. Time spent on a meal is not waiting. */
+    public const MAX_WAIT_MIN = 60;
+
+    /**
+     * An explicit day window: when only its start or only its end is given and the window would
+     * be shorter than SHORT_WINDOW_MIN, the side not given moves so that the window is
+     * WIDENED_WINDOW_MIN long, kept inside EARLIEST_START .. LATEST_END.
+     */
+    private const SHORT_WINDOW_MIN = 240;
+    private const WIDENED_WINDOW_MIN = 480;
+    private const EARLIEST_START = 360;    // 06:00
+    private const LATEST_END = 1380;       // 23:00
+
+    /**
+     * Meals. A meal starts inside its window (minutes after midnight, earliest and latest start)
+     * and lasts MEAL_MIN of the pace. A day gets a meal when one of its visits ends at or before
+     * the latest start and a later visit ends after it: the traveller is out across the window.
+     * The meal is then taken between two visits, at a food place within MEAL_RADIUS_KM (road km)
+     * of the stop before or the stop after it, or as a break without a place.
+     */
+    public const MEAL_WINDOWS = ['lunch' => [690, 840], 'dinner' => [1080, 1230]];   // 11:30-14:00, 18:00-20:30
+    private const MEAL_MIN = ['relaxed' => 75, 'normal' => 60, 'packed' => 45];
+    private const MEAL_RADIUS_KM = ['walking' => 1.0, 'public_transport' => 2.0, 'car' => 5.0, 'motorcycle' => 5.0];
 
     /**
      * Learning from the traveller's own ratings: per category, (average - 3) / 2 x LEARN_MAX_POINTS,
@@ -102,6 +123,7 @@ final class PlannerRules
         'BUDGET' => 'over the budget',
         'FINISH' => 'too late or too far to reach the end point of the trip',
         'ROOM' => 'no room left on the days it can be visited',
+        'MEAL' => 'would leave no time for lunch or dinner',
         'UNAVAILABLE' => 'not an active place with map coordinates',
     ];
 
@@ -254,9 +276,16 @@ final class PlannerRules
         $careful = $family || $has('elderly', 'low_walking');
 
         [$start, $end] = self::VISIT_WINDOW[(string)$pref['preferred_visit_time']];
-        if (isset($pref['day_start_min'])) $start = (int)$pref['day_start_min'];
-        if (isset($pref['day_end_min'])) $end = (int)$pref['day_end_min'];
+        $givenStart = isset($pref['day_start_min']);
+        $givenEnd = isset($pref['day_end_min']);
+        if ($givenStart) $start = (int)$pref['day_start_min'];
+        if ($givenEnd) $end = (int)$pref['day_end_min'];
         elseif ($careful) $end = min($end, self::CAREFUL_LATEST_END);
+        // Only one side given and the window too short: the other side moves.
+        if ($givenStart !== $givenEnd && $end - $start < self::SHORT_WINDOW_MIN) {
+            if ($givenStart) $end = min(self::LATEST_END, $start + self::WIDENED_WINDOW_MIN);
+            else $start = max(self::EARLIEST_START, $end - self::WIDENED_WINDOW_MIN);
+        }
 
         $dayKm = self::DAILY_DISTANCE_KM[$transport][$pace] ?? 45.0;
         if ($has('low_walking', 'wheelchair', 'elderly')) $dayKm *= self::CAREFUL_DISTANCE_FACTOR;
@@ -305,7 +334,24 @@ final class PlannerRules
             'budget_tier' => (string)$pref['budget_tier'],
             'hotel_rate' => (float)$tier['hotel'],
             'meal_price' => (float)$tier['meal'],
+            'meal_min' => self::MEAL_MIN[$pace],
+            'meal_radius_km' => self::MEAL_RADIUS_KM[$transport] ?? 5.0,
         ];
+    }
+
+    /** A place is outdoor when it is marked so or is a nature place (for the weather rule). */
+    public static function isOutdoor(array $place): bool
+    {
+        return (int)($place['is_outdoor'] ?? 0) === 1 || strtolower((string)($place['category'] ?? '')) === 'nature';
+    }
+
+    /**
+     * Most visits of one category on one day before category variety is relaxed: the interest
+     * weight (1 a little, 2 like, 3 love); 2 for a category without a weight.
+     */
+    public static function categoryLimit(array $profile, string $category): int
+    {
+        return max(1, min(3, (int)($profile['interest_weights'][strtolower($category)] ?? 2)));
     }
 
     /** How long a visit to this place lasts for this traveller. */

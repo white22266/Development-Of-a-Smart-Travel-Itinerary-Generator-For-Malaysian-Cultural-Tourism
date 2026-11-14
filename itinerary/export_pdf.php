@@ -167,9 +167,13 @@ $districtCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'
 $hasDistrict = ($districtCheck && $districtCheck->num_rows > 0);
 $districtSelect = $hasDistrict ? "cp.district" : "NULL AS district";
 
+// Lunch and dinner rows (migration 20261116_meal_slots.sql)
+$mealSlotCheck = $conn->query("SHOW COLUMNS FROM itinerary_items LIKE 'meal_slot'");
+$mealSlotSelect = ($mealSlotCheck && $mealSlotCheck->num_rows > 0) ? "ii.meal_slot" : "NULL AS meal_slot";
+
 $stmt = $conn->prepare("
     SELECT
-        ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id,
+        ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, {$mealSlotSelect}, ii.place_id,
         ii.item_title, ii.start_time, ii.end_time, ii.estimated_cost,
         ii.notes, ii.distance_km, ii.travel_time_min,
         cp.latitude, cp.longitude, cp.address, cp.opening_hours,
@@ -370,13 +374,15 @@ foreach ($days as $dayNo => $items) {
         $html .= "<tr>";
         $html .= "<td>" . esc($time) . "</td>";
         $html .= "<td>" . (int)$item["sequence_no"] . "</td>";
-        $html .= "<td><strong>" . esc($item["item_title"]) . "</strong><br><span class='muted'>" . esc(activity_text((string)$item["item_type"], $category)) . "</span>";
+        $mealSlot = (string)($item["meal_slot"] ?? "");
+        $activity = $mealSlot !== "" && empty($item["place_id"]) ? "Time kept free for " . $mealSlot : activity_text((string)$item["item_type"], $category);
+        $html .= "<td><strong>" . esc($item["item_title"]) . "</strong><br><span class='muted'>" . esc($activity) . "</span>";
         if (!empty($item["address"])) $html .= "<br><span class='muted'>" . esc($item["address"]) . "</span>";
         $reason = extract_reason_selected($item["notes"] ?? "");
         if ($reason !== "" && strtolower((string)($item["item_type"] ?? "")) !== "hotel") $html .= "<br><span class='muted'><strong>Reason Selected:</strong> " . esc($reason) . "</span>";
         $html .= "</td>";
-        $html .= "<td><span class='tag'>" . esc(ucfirst($category)) . "</span></td>";
-        $html .= "<td>" . esc(fmt_rm($item["estimated_cost"] ?? 0)) . "</td>";
+        $html .= "<td><span class='tag'>" . esc(ucfirst($mealSlot !== "" ? $mealSlot : $category)) . "</span></td>";
+        $html .= "<td>" . esc($mealSlot !== "" ? "In meal estimate" : fmt_rm($item["estimated_cost"] ?? 0)) . "</td>";
         $html .= "<td>" . esc($travel) . "</td>";
         $html .= "</tr>";
     }
@@ -389,6 +395,7 @@ $html .= "<h2>Place Details</h2>";
 $credits = [];   // place_id => what the credits table at the end says about it
 foreach ($days as $dayNo => $items) {
     foreach ($items as $item) {
+        if (!empty($item["meal_slot"]) && empty($item["place_id"])) continue;   // a meal break has no place to describe
         $img = image_to_data_uri($item["image_src"] ?? "");
         $category = strtolower((string)($item["category"] ?: $item["item_type"]));
         $html .= "<div class='place-card'>";

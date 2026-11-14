@@ -62,6 +62,29 @@ class WeatherService
         return $days;
     }
 
+    /**
+     * The daily chance of rain (0 to 100) at a place for those of the given dates (Y-m-d) that
+     * lie inside the forecast horizon and have a figure. A date without one is left out; a
+     * failed request gives an empty list and never throws, so planning goes on without it.
+     *
+     * @param string[] $dates
+     * @return array<string,int> date => chance of rain in percent
+     */
+    public static function rainChances(float $lat, float $lng, array $dates): array
+    {
+        try {
+            $daily = self::daily($lat, $lng);
+        } catch (Throwable $e) {
+            return [];
+        }
+        $out = [];
+        foreach ($dates as $date) {
+            $chance = $daily[(string)$date]['rain_chance'] ?? null;
+            if ($chance !== null) $out[(string)$date] = max(0, min(100, (int)$chance));
+        }
+        return $out;
+    }
+
     /** The forecast for one date (Y-m-d) at a place, or null when there is none (yet). */
     public static function forDate(float $lat, float $lng, string $date): ?array
     {

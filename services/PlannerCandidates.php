@@ -8,8 +8,15 @@
 //   byIds()            given places (the must-see list) wherever they are, so a place that cannot
 //                      be used can be named with its reason
 //   travellerRatings() what the traveller rated before, per category and per place
+//   mealPool()         the food places of a pool, where lunch and dinner may be planned
+//   mealPlaces()       that pool for a saved preference (the "Optimise route" button)
+//
+// Meal places come from cultural_places (category food) only. The table food_places is not
+// used: its rows have no place_id, no halal or dietary data and no link to ratings or the
+// avoid list, so the planner's rules could not be applied to them.
 
 require_once __DIR__ . '/RouteService.php';
+require_once __DIR__ . '/PlannerRules.php';
 
 final class PlannerCandidates
 {
@@ -79,6 +86,31 @@ final class PlannerCandidates
         $stmt->close();
         foreach ($sums as $category => [$sum, $n]) $out['categories'][$category] = ['avg' => $sum / $n, 'count' => $n];
         return $out;
+    }
+
+    /**
+     * The food places of a candidate pool. The pool must already be narrowed the way the
+     * generator narrows it (avoid list, low ratings, PlannerRules::placeReason(), which holds
+     * the dietary rule), so every place here may be a meal place.
+     */
+    public static function mealPool(array $pool): array
+    {
+        return array_values(array_filter($pool, static fn(array $place): bool => strtolower((string)$place['category']) === 'food'));
+    }
+
+    /**
+     * The meal places for a saved preference: food places in its states, not on its avoid list,
+     * not rated LEARN_DROP_AT or lower by the traveller, and keeping every rule of
+     * PlannerRules::placeReason() (dietary included).
+     */
+    public static function mealPlaces(mysqli $conn, array $pref, array $profile, int $travellerId): array
+    {
+        $skip = array_flip((array)($pref['avoid_places'] ?? [])) + self::travellerRatings($conn, $travellerId, PlannerRules::LEARN_DROP_AT)['low'];
+        $where = ['is_active = 1', 'latitude IS NOT NULL', 'longitude IS NOT NULL', "LOWER(TRIM(COALESCE(category, ''))) = 'food'"];
+        $states = array_values((array)($pref['states'] ?? []));
+        if ($states) $where[] = 'state IN (' . implode(',', array_fill(0, count($states), '?')) . ')';
+        return self::mealPool(array_filter(self::query($conn, $where, $states), static fn(array $place): bool =>
+            !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
     }
 
     private static function query(mysqli $conn, array $where, array $states): array

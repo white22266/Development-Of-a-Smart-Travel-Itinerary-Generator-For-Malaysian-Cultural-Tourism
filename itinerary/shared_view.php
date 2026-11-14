@@ -42,8 +42,12 @@ $coordSelect = $hasItemCoords
     ? "COALESCE(ii.item_latitude, cp.latitude) AS latitude, COALESCE(ii.item_longitude, cp.longitude) AS longitude"
     : "cp.latitude, cp.longitude";
 
+// Lunch and dinner rows (migration 20261116_meal_slots.sql)
+$mealSlotCheck = $conn->query("SHOW COLUMNS FROM itinerary_items LIKE 'meal_slot'");
+$mealSlotSelect = ($mealSlotCheck && $mealSlotCheck->num_rows > 0) ? "ii.meal_slot" : "NULL AS meal_slot";
+
 $itemsStmt = $conn->prepare("
-    SELECT ii.day_no, ii.sequence_no, ii.item_type, ii.item_title, ii.start_time, ii.end_time,
+    SELECT ii.day_no, ii.sequence_no, ii.item_type, {$mealSlotSelect}, ii.item_title, ii.start_time, ii.end_time,
            ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
            {$coordSelect}, cp.state{$districtJoinCol}, cp.category, cp.address, cp.opening_hours
     FROM itinerary_items ii
@@ -151,8 +155,8 @@ function time_label($s): string { return $s ? date("g:i A", strtotime($s)) : "-"
                                 </div>
                                 <?php endif; ?>
                             </td>
-                            <td><?php echo h(ucfirst($item["item_type"] ?? "attraction")); ?></td>
-                            <td>RM <?php echo number_format((float)$item["estimated_cost"], 2); ?></td>
+                            <td><?php echo h(!empty($item["meal_slot"]) ? ucfirst((string)$item["meal_slot"]) : ucfirst($item["item_type"] ?? "attraction")); ?></td>
+                            <td><?php echo !empty($item["meal_slot"]) ? "In meal estimate" : "RM " . number_format((float)$item["estimated_cost"], 2); ?></td>
                             <td>
                                 <?php echo $item["travel_time_min"] !== null ? (int)$item["travel_time_min"] . " min" : "-"; ?>
                                 <?php if ($item["distance_km"] !== null): ?> / <?php echo number_format((float)$item["distance_km"], 1); ?> km<?php endif; ?>
