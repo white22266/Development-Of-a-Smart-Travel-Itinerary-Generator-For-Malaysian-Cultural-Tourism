@@ -92,7 +92,37 @@ OQL;
         return self::run($query, 'lodging_' . $iso, $ttl);
     }
 
-    private static function run(string $query, string $cacheKey, int $ttl): ?array
+    /**
+     * Public transport stops of one state, in ONE request: rail (stations, halts, tram stops,
+     * LRT / MRT / monorail / KTM stations), bus (bus stops and bus stations) and ferry terminals.
+     * Stops without a name are kept (many bus stops have none).
+     *
+     * @return array<int,array>|null normalised elements (name may be ''), or null when every Overpass server failed
+     */
+    public static function transitStops(string $state, int $ttl = 518400): ?array
+    {
+        $iso = self::STATE_ISO[$state] ?? null;
+        if ($iso === null) {
+            self::$lastError = "Unknown state: {$state}";
+            return null;
+        }
+        $query = <<<OQL
+[out:json][timeout:240];
+area["ISO3166-2"="{$iso}"]->.a;
+(
+  nwr(area.a)["railway"~"^(station|halt|tram_stop)$"];
+  nwr(area.a)["station"~"^(light_rail|subway|monorail|train)$"];
+  nwr(area.a)["public_transport"="station"]["train"="yes"];
+  nwr(area.a)["highway"="bus_stop"];
+  nwr(area.a)["amenity"="bus_station"];
+  nwr(area.a)["amenity"="ferry_terminal"];
+);
+out center tags;
+OQL;
+        return self::run($query, 'transit_' . $iso, $ttl, true);
+    }
+
+    private static function run(string $query, string $cacheKey, int $ttl, bool $keepUnnamed = false): ?array
     {
         self::$lastError = '';
         self::$lastNote = '';
@@ -125,7 +155,7 @@ OQL;
                         self::$lastNote = 'the server that answered has OpenStreetMap data from ' . substr((string)$json['osm3s']['timestamp_osm_base'], 0, 10)
                             . " ({$days} days old); run the sync again later for the current data";
                     }
-                    return self::normaliseAll($json['elements']);
+                    return self::normaliseAll($json['elements'], $keepUnnamed);
                 }
                 self::$lastError = OpenDataHttp::lastError();
             }
@@ -133,7 +163,7 @@ OQL;
 
         // Every server failed: an expired copy is still better than nothing.
         $stale = OpenDataHttp::cachedJson('overpass', $cacheKey);
-        return ($stale !== null && $whole($stale)) ? self::normaliseAll($stale['elements']) : null;
+        return ($stale !== null && $whole($stale)) ? self::normaliseAll($stale['elements'], $keepUnnamed) : null;
     }
 
     /** How old the OpenStreetMap data behind an answer is, in days. 0 when the answer does not say. */
@@ -144,7 +174,7 @@ OQL;
     }
 
     /** @return array<int,array{ref:string,name:string,names:string[],lat:float,lng:float,tags:array}> */
-    private static function normaliseAll(array $elements): array
+    private static function normaliseAll(array $elements, bool $keepUnnamed = false): array
     {
         $out = [];
         foreach ($elements as $element) {
@@ -152,7 +182,7 @@ OQL;
             $name = trim((string)($tags['name'] ?? ''));
             $lat = $element['lat'] ?? $element['center']['lat'] ?? null;
             $lng = $element['lon'] ?? $element['center']['lon'] ?? null;
-            if ($name === '' || $lat === null || $lng === null) continue;
+            if (($name === '' && !$keepUnnamed) || $lat === null || $lng === null) continue;
             $out[] = [
                 'ref' => $element['type'] . '/' . $element['id'],
                 'name' => $name,
