@@ -196,6 +196,31 @@ for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++) {
         for ($k = $nightRuns[$nightNo][0]; $k < $nightNo; $k++) $nightRuns[$k][1] = $nightNo;
     }
 }
+
+// ---- Versions of the plan (api/itinerary_versions.php): the same trip planned in another style ----
+// A version is reviewed through the plan it belongs to; the comparison shows the plan under review
+// and its versions side by side (ItineraryEditService::versionSummary()).
+$versionsReady = ItineraryEditService::hasVersions($conn);
+if ($versionsReady && $it['version_of'] !== null) {
+    header("Location: itinerary_review.php?itinerary_id=" . (int)$it['version_of'] . "#versions");
+    exit;
+}
+$versionRows = $versionsReady ? ItineraryEditService::versionList($conn, $itineraryId) : [];
+$stylesMade = array_merge(array_column($versionRows, 'plan_style'), $versionsReady && $it['plan_style'] !== null ? [(string)$it['plan_style']] : []);
+$compare = [];
+if ($versionRows) {
+    $first = ItineraryEditService::versionSummary($conn, $itineraryId);
+    if ($first !== null) $compare[] = $first + ['first' => true];
+    foreach ($versionRows as $v) {
+        $summary = ItineraryEditService::versionSummary($conn, (int)$v['itinerary_id']);
+        if ($summary !== null) $compare[] = $summary + ['first' => false];
+    }
+}
+$styleNames = ['relaxed' => t('rv.style_relaxed'), 'budget' => t('rv.style_budget'), 'interest' => t('rv.style_interest')];
+$styleNotes = ['relaxed' => t('rv.style_relaxed_note'), 'budget' => t('rv.style_budget_note'), 'interest' => t('rv.style_interest_note')];
+$styleLabel = static fn(?string $style): string => $styleNames[(string)$style] ?? t('rv.style_standard');
+$minutesLabel = static fn(int $min): string => $min >= 60 ? t('rv.cmp_hours_min', ['h' => intdiv($min, 60), 'm' => $min % 60]) : t('rv.cmp_min', ['m' => $min]);
+$clock = static fn(?int $m): string => $m === null ? '-' : sprintf('%02d:%02d', intdiv($m, 60), $m % 60);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo i18n_lang(); ?>">
@@ -237,6 +262,24 @@ for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++) {
         }
         .review-pill strong { display:block; color:#001a4d; font-size:18px; line-height:1; }
         .review-pill span { display:block; margin-top:4px; color:#64748b; font-size:11px; font-weight:700; }
+
+        /* ===== Versions of the plan ===== */
+        .versions-card { background:#fff; border:1px solid rgba(15,23,42,0.08); border-radius:12px; padding:16px 18px; margin-bottom:16px; }
+        .versions-card h3 { margin:0 0 4px; color:#001a4d; font-size:17px; }
+        .versions-card .meta { margin:0 0 12px; color:#52627d; font-size:12.5px; line-height:1.45; }
+        .versions-actions { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+        .versions-actions .btn small { display:block; font-weight:600; font-size:10.5px; opacity:.8; }
+        .versions-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+        .versions-table { border-collapse:collapse; width:100%; min-width:520px; font-size:12px; }
+        .versions-table th, .versions-table td { border-top:1px solid rgba(15,23,42,0.08); padding:7px 8px; text-align:left; vertical-align:top; }
+        .versions-table thead th { border-top:none; color:#001a4d; font-size:13px; }
+        .versions-table tbody th { color:#64748b; font-weight:700; width:150px; }
+        .versions-table .v-ok { color:#15803d; font-weight:700; }
+        .versions-table .v-over { color:#b91c1c; font-weight:700; }
+        .versions-table .v-day { display:block; margin-bottom:3px; }
+        .versions-table .v-day b { color:#334155; }
+        .hotel-budget-ok { display:inline-block; margin-top:4px; font-size:11px; font-weight:800; color:#15803d; }
+        .hotel-budget-over { display:inline-block; margin-top:4px; font-size:11px; font-weight:800; color:#b91c1c; }
 
         /* ===== Place card ===== */
         .place-card {
@@ -770,6 +813,92 @@ for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++) {
             </div>
         </div>
 
+        <?php if ($versionsReady): ?>
+        <!-- Versions of the plan: the same trip in another style, side by side -->
+        <section class="versions-card" id="versions" aria-labelledby="versions-title">
+            <h3 id="versions-title"><?php echo te('rv.versions_title'); ?></h3>
+            <p class="meta"><?php echo te('rv.versions_intro'); ?></p>
+            <div class="versions-actions">
+                <?php foreach (PlannerRules::STYLES as $style):
+                    $made = in_array($style, $stylesMade, true);
+                    $full = count($versionRows) >= ItineraryGenerator::MAX_VERSIONS;
+                ?>
+                <button type="button" class="btn btn-ghost" data-style="<?php echo $style; ?>" data-label="<?php echo htmlspecialchars($styleLabel($style)); ?>"
+                        onclick="makeVersion(this)" <?php echo ($made || $full) ? 'disabled' : ''; ?>>
+                    <?php echo te('rv.version_make', ['style' => $styleLabel($style)]); ?>
+                    <small><?php echo htmlspecialchars($styleNotes[$style] ?? ''); ?></small>
+                </button>
+                <?php endforeach; ?>
+            </div>
+            <?php if ($compare): ?>
+            <div class="versions-scroll">
+                <table class="versions-table">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <?php foreach ($compare as $v): ?>
+                            <th scope="col"><?php echo $v['first'] ? te('rv.style_this', ['style' => $styleLabel($v['style'])]) : htmlspecialchars($styleLabel($v['style'])); ?></th>
+                            <?php endforeach; ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><?php echo te('rv.cmp_stops'); ?></th>
+                            <?php foreach ($compare as $v): ?>
+                            <td><?php echo htmlspecialchars(implode(' / ', array_map(static fn(array $d): string => (string)$d['stops'], $v['days']))); ?> (<?php echo (int)$v['stops']; ?>)</td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <th scope="row"><?php echo te('rv.cmp_hours'); ?></th>
+                            <?php foreach ($compare as $v): ?>
+                            <td><?php foreach ($v['days'] as $dn => $d): ?><span class="v-day"><b><?php echo te('trip.day', ['n' => $dn]); ?></b> <?php echo $clock($d['first']); ?>-<?php echo $clock($d['last']); ?></span><?php endforeach; ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <th scope="row"><?php echo te('rv.cmp_travel'); ?></th>
+                            <?php foreach ($compare as $v): ?>
+                            <td><?php echo htmlspecialchars($minutesLabel((int)$v['travel_min'])); ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <th scope="row"><?php echo te('rv.cmp_cost'); ?></th>
+                            <?php foreach ($compare as $v): ?>
+                            <td>RM <?php echo number_format((float)$v['total'], 2); ?><br>
+                                <?php if ((float)$v['budget'] <= 0): ?><?php echo te('rv.cmp_no_budget'); ?>
+                                <?php elseif ((float)$v['over_by'] > 0): ?><span class="v-over"><?php echo te('rv.cmp_over', ['n' => number_format((float)$v['over_by'], 2)]); ?></span>
+                                <?php else: ?><span class="v-ok"><?php echo te('rv.cmp_within', ['n' => number_format((float)$v['budget'] - (float)$v['total'], 2)]); ?></span><?php endif; ?>
+                            </td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <th scope="row"><?php echo te('rv.cmp_interest'); ?></th>
+                            <?php foreach ($compare as $v): ?>
+                            <td><?php echo te('rv.cmp_interest_n', ['n' => (int)$v['interest_stops'], 'total' => (int)$v['stops'], 'loved' => (int)$v['loved_stops']]); ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <th scope="row"><?php echo te('rv.cmp_places'); ?></th>
+                            <?php foreach ($compare as $v): ?>
+                            <td><?php foreach ($v['days'] as $dn => $d): ?><span class="v-day"><b><?php echo te('trip.day', ['n' => $dn]); ?>:</b> <?php echo $d['places'] ? htmlspecialchars(implode(', ', $d['places'])) : te('rv.cmp_free_day'); ?></span><?php endforeach; ?></td>
+                            <?php endforeach; ?>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <?php foreach ($compare as $v): ?>
+                            <td>
+                                <button type="button" class="btn <?php echo $v['first'] ? 'btn-ghost' : 'btn-primary'; ?>" data-version="<?php echo (int)$v['itinerary_id']; ?>"
+                                        data-label="<?php echo htmlspecialchars($v['first'] ? t('rv.style_this', ['style' => $styleLabel($v['style'])]) : $styleLabel($v['style'])); ?>"
+                                        onclick="useVersion(this)"><?php echo $v['first'] ? te('rv.version_keep') : te('rv.version_use'); ?></button>
+                            </td>
+                            <?php endforeach; ?>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <?php endif; ?>
+        </section>
+        <?php endif; ?>
+
         <!-- Legend -->
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:18px; font-size:12px;">
             <span style="display:flex; align-items:center; gap:5px;"><span style="width:12px;height:12px;border-radius:50%;background:#22c55e;display:inline-block;"></span> <?php echo te('rv.kept'); ?></span>
@@ -1097,7 +1226,8 @@ const RV = <?php echo i18n_js([
     'rv.price_about', 'rv.price_none', 'rv.price_source', 'rv.selected_night', 'rv.select_night', 'trip.map', 'rv.website', 'trip.check_price',
     'trip.check_price_title', 'opt.hotelkind.hotel', 'rv.hotel_read_failed', 'rv.hotel_skipped', 'rv.browse_hotels', 'rv.load_hotels', 'rv.none',
     'rv.n_selected', 'rv.saving', 'rv.keep_one', 'trip.day', 'rv.refused_hotel_night', 'rv.refused_hotels', 'rv.refused_remove', 'rv.refused_replace',
-    'rv.a_stop', 'rv.not_allowed', 'rv.saved', 'rv.error_prefix', 'rv.save_failed', 'rv.confirm_view', 'rv.writing', 'rv.ai_failed',]); ?>;
+    'rv.a_stop', 'rv.not_allowed', 'rv.saved', 'rv.error_prefix', 'rv.save_failed', 'rv.confirm_view', 'rv.writing', 'rv.ai_failed',
+    'rv.version_making', 'rv.version_failed', 'rv.version_use_confirm', 'rv.version_using', 'rv.hotel_budget_kept', 'rv.hotel_run_over',]); ?>;
 function rt(key, vars) {
     let text = RV[key] || key;
     Object.keys(vars || {}).forEach(name => { text = text.split('{' + name + '}').join(String(vars[name])); });
@@ -1405,6 +1535,10 @@ async function loadNightHotels(nightNo, dayNo, allowSelect) {
             item_id: stop.itemId || '',
             place_id: stop.itemId ? '' : (stop.placeId || ''),
             night: nightNo || '',
+            // The run of nights at one base, and the hotels chosen for other nights: the budget mark counts them.
+            nights: nightNo ? runOf(nightNo).join('-') : '',
+            chosen: Object.entries(hotelSelections).filter(([n]) => Number(n) !== Number(nightNo))
+                .map(([n, h]) => n + ':' + Number(h.hotel_id || 0)).join(','),
         });
         const resp = await fetch('review_hotels.php?' + params.toString(), { method: 'GET' });
         const data = await parseJsonResponse(resp);
@@ -1451,6 +1585,8 @@ function renderNightHotels(nightNo, data, allowSelect) {
                 <div class="hotel-meta-rv">${escHtml(details)}</div>
                 <div class="hotel-price-rv">${escHtml(price > 0 ? rt('rv.price_about', { n: price.toFixed(0) }) : rt('rv.price_none'))}</div>
                 <span class="hotel-price-source">${escHtml(rt('rv.price_source'))}</span>
+                ${hotel.budget_label ? '<span class="' + (hotel.budget && hotel.budget.within ? 'hotel-budget-ok' : 'hotel-budget-over') + '">' + escHtml(hotel.budget_label) + '</span>' : ''}
+                ${hotel.budget_run && !hotel.budget_run.within ? '<span class="hotel-budget-over">' + escHtml(rt('rv.hotel_run_over', { from: runOf(nightNo)[0], to: runOf(nightNo)[1], n: Number(hotel.budget_run.over_by || 0).toFixed(0) })) + '</span>' : ''}
                 ${selected ? '<span class="hotel-selected-note">' + escHtml(rt('rv.selected_night')) + '</span>' : ''}
                 <div class="hotel-card-actions">
                     ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">${escHtml(rt('rv.select_night', { n: nightNo }))}</button>` : ''}
@@ -1641,18 +1777,28 @@ async function confirmReview() {
         if (itemStatus[id] !== 'rejected') replacements[id] = { place_id: Number(r.place_id || 0) };
     });
 
+    const post = async fields => parseJsonResponse(await fetch('review_confirm_nightly.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(Object.assign({ itinerary_id: ITINERARY_ID }, fields)),
+    }));
     try {
-        const resp = await fetch('review_confirm_nightly.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams({
-                itinerary_id: ITINERARY_ID,
-                rejected_ids: rejectedIds.join(','),
-                replacements_json: JSON.stringify(replacements),
-                hotel_selections_json: JSON.stringify(hotelSelections),
-            })
+        const data = await post({
+            rejected_ids: rejectedIds.join(','),
+            replacements_json: JSON.stringify(replacements),
+            hotel_selections_json: JSON.stringify(hotelSelections),
         });
-        const data = await parseJsonResponse(resp);
+        // The hotels would put the trip over the budget: nothing of them was saved. The dialog
+        // states the amount; saving them anyway posts the hotels again with the confirmation.
+        if (data.status === 'success' && data.hotel_budget) {
+            if (window.confirm(data.hotel_budget.message)) {
+                const again = await post({ rejected_ids: '', replacements_json: '{}', hotel_selections_json: JSON.stringify(hotelSelections), confirm_over_budget: '1' });
+                if (again.status !== 'success') throw new Error(again.message || 'not saved');
+                data.refused = (Array.isArray(data.refused) ? data.refused : []).concat(Array.isArray(again.refused) ? again.refused : []);
+            } else {
+                data.refused = (Array.isArray(data.refused) ? data.refused : []).concat([{ item_id: null, night: null, action: 'hotel', code: 'HOTEL_BUDGET', message: rt('rv.hotel_budget_kept') }]);
+            }
+        }
 
         if (data.status === 'success') {
             const refused = Array.isArray(data.refused) ? data.refused : [];
@@ -1693,6 +1839,60 @@ function titleFromHtml(html) {
     box.innerHTML = html;
     const title = box.querySelector('.place-title');
     return title ? title.textContent.trim() : rt('rv.a_stop');
+}
+
+// ---- Versions of the plan (api/itinerary_versions.php) ----
+const VERSIONS_URL = '../api/itinerary_versions.php';
+const VERSIONS_TOKEN = <?php echo json_encode(csrf_token()); ?>;
+
+async function postVersions(fields) {
+    const resp = await fetch(VERSIONS_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(Object.assign({ itinerary_id: ITINERARY_ID, csrf_token: VERSIONS_TOKEN }, fields)),
+    });
+    return parseJsonResponse(resp);
+}
+
+/** Plan the trip again in one style; the page is loaded again to show the comparison. */
+async function makeVersion(button) {
+    const label = button.dataset.label || '';
+    const buttons = document.querySelectorAll('.versions-actions button');
+    buttons.forEach(b => { b.dataset.wasDisabled = b.disabled ? '1' : ''; b.disabled = true; });
+    const original = button.innerHTML;
+    button.innerHTML = '<span class="spinner" style="border-color:rgba(15,23,42,.22);border-top-color:#0f172a;"></span> ' + escHtml(rt('rv.version_making', { style: label }));
+    try {
+        const data = await postVersions({ action: 'create', style: button.dataset.style || '' });
+        if (data.ok) {
+            window.location.href = 'itinerary_review.php?itinerary_id=' + ITINERARY_ID + '#versions';
+            return;
+        }
+        alert(rt('rv.version_failed', { reason: data.display || data.message || '' }));
+    } catch (e) {
+        alert(rt('rv.err_network'));
+    }
+    button.innerHTML = original;
+    buttons.forEach(b => { b.disabled = b.dataset.wasDisabled === '1'; });
+}
+
+/** Make one version the itinerary under review; the other versions are removed. */
+async function useVersion(button) {
+    if (!window.confirm(rt('rv.version_use_confirm', { style: button.dataset.label || '' }))) return;
+    const text = button.textContent;
+    button.disabled = true;
+    button.textContent = rt('rv.version_using');
+    try {
+        const data = await postVersions({ action: 'choose', version_id: button.dataset.version || '' });
+        if (data.ok) {
+            window.location.href = 'itinerary_review.php?itinerary_id=' + Number(data.itinerary_id || ITINERARY_ID);
+            return;
+        }
+        alert(rt('rv.version_failed', { reason: data.display || data.message || '' }));
+    } catch (e) {
+        alert(rt('rv.err_network'));
+    }
+    button.disabled = false;
+    button.textContent = text;
 }
 
 // ---- HTML escape helper ----

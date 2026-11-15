@@ -120,6 +120,46 @@ final class PlannerRules
     public const BUDGET_MARGIN = 0.10;
     private const MEALS_PER_DAY = 3;
 
+    /**
+     * A trip with more points of its own than this (start, stops, bases and end point) is measured
+     * with route requests along its legs instead of one table: a table of every pair of them (and
+     * of the meal places that fill it up to RouteService's 50 points) was too slow for the public
+     * server (the 5-day Penang and Kuala Lumpur trip waited 8 seconds for it). Generation and the
+     * route optimiser both keep to it.
+     */
+    public const LONG_TRIP_POINTS = 20;
+
+    /**
+     * Styles of a plan (an alternative version of a trip, ItineraryGenerator option style). A
+     * style changes the target, the day window and the weights of the day search; it never
+     * changes a hard rule, and the budget style only makes the budget rule stricter.
+     *   relaxed   one stop fewer a day than the pace gives (never under STYLE_RELAXED_MIN_STOPS,
+     *             never more than the pace gives), and the day ends STYLE_RELAXED_END_EARLIER
+     *             minutes earlier (the window keeps at least STYLE_RELAXED_MIN_WINDOW minutes)
+     *   budget    a free place scores STYLE_BUDGET_FREE_POINTS (instead of 10), a paid place loses
+     *             STYLE_BUDGET_COST_POINTS per RM a person (at most STYLE_BUDGET_COST_MAX), a
+     *             travelling minute costs STYLE_BUDGET_TRAVEL_FACTOR times as much (km cost money),
+     *             and the paid places take at most STYLE_BUDGET_PAID_SHARE of what the budget rule
+     *             leaves them
+     *   interest  the points of an interest match are multiplied by STYLE_INTEREST_FACTOR, and the
+     *             points of category variety (new category, repeated category, the day before's
+     *             theme) by STYLE_INTEREST_VARIETY_FACTOR
+     */
+    public const STYLES = ['relaxed', 'budget', 'interest'];
+    public const STYLE_RELAXED_STOPS_LESS = 1;
+    public const STYLE_RELAXED_MIN_STOPS = 2;
+    public const STYLE_RELAXED_END_EARLIER = 60;
+    public const STYLE_RELAXED_MIN_WINDOW = 180;
+    public const STYLE_BUDGET_FREE_POINTS = 25.0;
+    public const STYLE_BUDGET_COST_POINTS = 0.5;
+    public const STYLE_BUDGET_COST_MAX = 20.0;
+    public const STYLE_BUDGET_TRAVEL_FACTOR = 1.5;
+    public const STYLE_BUDGET_PAID_SHARE = 0.5;
+    public const STYLE_INTEREST_FACTOR = 2.0;
+    public const STYLE_INTEREST_VARIETY_FACTOR = 0.5;
+    /** The points of a free place without a style (ItineraryDayBuilder::score()). */
+    public const FREE_POINTS = 10.0;
+
     /** East Malaysia; everything else is Peninsular. A point without a state is east from this longitude. */
     private const EAST_STATES = ['sabah', 'sarawak', 'labuan'];
     private const EAST_FROM_LNG = 108.0;
@@ -174,6 +214,10 @@ final class PlannerRules
         // Public transport and the traveller's limit on places of worship.
         'TRANSIT' => 'too far from public transport (no stop within 1.5 km)',
         'WORSHIP' => 'over your limit for places of worship',
+        // The hotel choice and the alternative versions of a plan.
+        'HOTEL_BUDGET' => 'the hotel would put the trip over the budget',
+        'VERSION_LIMIT' => 'the trip already has its three versions',
+        'VERSION_EXISTS' => 'a version in this style already exists',
     ];
 
     /**
@@ -389,8 +433,24 @@ final class PlannerRules
         $originRegion = null;
         if (isset($pref['origin_lat'], $pref['origin_lng'])) $originRegion = self::region(null, (float)$pref['origin_lng']);
 
+        // The style of a version (STYLES): its target and day window here, its weights below.
+        $style = in_array($pref['style'] ?? null, self::STYLES, true) ? (string)$pref['style'] : null;
+        $target = isset($pref['stops_per_day']) ? max(1, (int)$pref['stops_per_day']) : self::PACE_TARGET[$pace];
+        if ($style === 'relaxed') {
+            $target = min($target, max(self::STYLE_RELAXED_MIN_STOPS, $target - self::STYLE_RELAXED_STOPS_LESS));
+            $end = max($start + self::STYLE_RELAXED_MIN_WINDOW, $end - self::STYLE_RELAXED_END_EARLIER);
+        }
+
         return [
-            'target' => isset($pref['stops_per_day']) ? max(1, (int)$pref['stops_per_day']) : self::PACE_TARGET[$pace],
+            'style' => $style,
+            // Weights of the style (ItineraryDayBuilder): 1 and the usual points without one.
+            'interest_factor' => $style === 'interest' ? self::STYLE_INTEREST_FACTOR : 1.0,
+            'variety_factor' => $style === 'interest' ? self::STYLE_INTEREST_VARIETY_FACTOR : 1.0,
+            'free_points' => $style === 'budget' ? self::STYLE_BUDGET_FREE_POINTS : self::FREE_POINTS,
+            'cost_points' => $style === 'budget' ? self::STYLE_BUDGET_COST_POINTS : 0.0,
+            'travel_factor' => $style === 'budget' ? self::STYLE_BUDGET_TRAVEL_FACTOR : 1.0,
+            'paid_share' => $style === 'budget' ? self::STYLE_BUDGET_PAID_SHARE : 1.0,
+            'target' => $target,
             'rest' => self::PACE_REST_MIN[$pace] + ($careful ? self::REST_EXTRA_CAREFUL : 0) + ($type === 'group' ? self::REST_EXTRA_GROUP : 0),
             'start' => $start,
             'end' => $end,
@@ -925,7 +985,11 @@ final class PlannerRules
         $total = self::projectedTotal($profile, $items, $km);
         $paid = (float)$total['attraction_cost'];
         $essentials = (float)$total['total_cost'] - $paid;
-        if ($paid + $essentials * (1 + self::BUDGET_MARGIN) <= (float)$profile['budget'] + 0.005) return true;
+        // The budget style (STYLE_BUDGET_PAID_SHARE) gives the paid places only a share of what
+        // the rule leaves them; a share of 1 is the rule itself. Either way it only grows stricter.
+        $room = (float)$profile['budget'] - $essentials * (1 + self::BUDGET_MARGIN);
+        $share = max(0.0, min(1.0, (float)($profile['paid_share'] ?? 1.0)));
+        if ($room >= -0.005 && $paid <= $room * $share + 0.005) return true;
         // Over the budget: a free place is still added while nothing with a price is planned.
         if ($addedCost > 0) return false;
         foreach ($items as $item) {

@@ -3,6 +3,7 @@
 session_start();
 require_once "../config/db_connect.php";
 require_once "../config/i18n.php";
+require_once "../services/ItineraryEditService.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -30,6 +31,9 @@ if (!$exists) {
     header("Location: my_itineraries.php");
     exit;
 }
+
+// Its versions that were never chosen go with it (ON DELETE CASCADE too; removed first, explicitly).
+ItineraryEditService::dropVersions($conn, $itineraryId);
 
 // Delete itinerary (itinerary_items will be deleted via ON DELETE CASCADE)
 $del = $conn->prepare("DELETE FROM itineraries WHERE itinerary_id = ? AND traveller_id = ? LIMIT 1");

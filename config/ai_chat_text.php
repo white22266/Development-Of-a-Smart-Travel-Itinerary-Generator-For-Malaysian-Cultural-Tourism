@@ -513,6 +513,9 @@ if (!function_exists('ai_chat_text_table')) {
             'reason_code_EARLY_START' => ['en' => 'a day cannot start before 06:00', 'ms' => 'hari tidak boleh bermula sebelum 06:00', 'zh' => '一天不能早于 06:00 开始'],
             'reason_code_TRANSIT' => ['en' => 'the place is too far from public transport (more than 1.5 km from a stop)', 'ms' => 'tempat itu terlalu jauh dari pengangkutan awam (lebih 1.5 km dari hentian)', 'zh' => '这个地点离公共交通太远（距车站超过 1.5 公里）'],
             'reason_code_WORSHIP' => ['en' => 'it would go over your limit for places of worship', 'ms' => 'ia akan melebihi had tempat ibadat yang anda pilih', 'zh' => '会超出你设定的宗教场所数量'],
+            'reason_code_HOTEL_BUDGET' => ['en' => 'the hotel would put the trip over your budget', 'ms' => 'hotel itu akan menyebabkan perjalanan melebihi bajet anda', 'zh' => '这家酒店会让行程超出你的预算'],
+            'reason_code_VERSION_LIMIT' => ['en' => 'this trip already has its three versions to compare', 'ms' => 'perjalanan ini sudah ada tiga versi untuk dibandingkan', 'zh' => '这个行程已经有三个可比较的版本'],
+            'reason_code_VERSION_EXISTS' => ['en' => 'a version in this style already exists', 'ms' => 'versi dengan gaya ini sudah ada', 'zh' => '这种风格的版本已经存在'],
             'reason_code_other' => ['en' => 'it would break a rule of your trip', 'ms' => 'ia akan melanggar peraturan perjalanan anda', 'zh' => '会违反你的行程规则'],
 
             // ------------------------------------------------------------ travel assistant (dates, origin, weather)
@@ -622,6 +625,31 @@ if (!function_exists('ai_chat_text_table')) {
                 'en' => 'Hotel confirmed: {name}. It is now in the itinerary, the route and the cost summary.',
                 'ms' => 'Hotel disahkan: {name}. Ia kini dalam jadual perjalanan, laluan dan ringkasan kos.',
                 'zh' => '酒店已确认：{name}。它现在已加入行程、路线和费用汇总。',
+            ],
+            'hotel_over_budget' => [
+                'en' => 'With {name} for every night the trip would cost RM {total}, RM {over} over your budget of RM {budget}, so it was not saved. Press Confirm Hotel again to save it anyway, or ask for a cheaper place.',
+                'ms' => 'Dengan {name} untuk setiap malam, perjalanan akan berharga RM {total}, iaitu RM {over} melebihi bajet anda RM {budget}, jadi ia tidak disimpan. Tekan Sahkan Hotel sekali lagi untuk menyimpannya juga, atau minta tempat yang lebih murah.',
+                'zh' => '每晚都住 {name} 的话，行程费用将为 RM {total}，超出你的预算 RM {budget} 共 RM {over}，所以没有保存。如仍要保存，请再按一次“确认酒店”，或者让我推荐更便宜的住处。',
+            ],
+            'hotel_saved_over' => [
+                'en' => 'Your trip is now RM {over} over budget.',
+                'ms' => 'Perjalanan anda kini melebihi bajet sebanyak RM {over}.',
+                'zh' => '你的行程现在超出预算 RM {over}。',
+            ],
+            'hotel_nights_refused' => [
+                'en' => 'It was not saved for night(s) {nights}: from there a day of the trip would break a rule.',
+                'ms' => 'Ia tidak disimpan untuk malam {nights}: dari situ satu hari perjalanan akan melanggar peraturan.',
+                'zh' => '第 {nights} 晚没有保存：从那里出发，行程中的某一天会违反规则。',
+            ],
+            'hotel_budget_first' => [
+                'en' => 'The places that keep your trip within budget are listed first.',
+                'ms' => 'Tempat yang mengekalkan perjalanan anda dalam bajet disenaraikan dahulu.',
+                'zh' => '能让行程保持在预算内的住处排在前面。',
+            ],
+            'hotel_budget_none' => [
+                'en' => 'None of these places keeps your trip within budget: even the first would put it RM {over} over.',
+                'ms' => 'Tiada tempat ini yang mengekalkan perjalanan anda dalam bajet: yang pertama pun akan melebihi RM {over}.',
+                'zh' => '这些住处都无法让行程保持在预算内：即使第一家也会超出 RM {over}。',
             ],
             'hotel_none' => [
                 'en' => 'I could not find a place to stay that matches near your last stop. Try a higher price limit, or ask again without one.',

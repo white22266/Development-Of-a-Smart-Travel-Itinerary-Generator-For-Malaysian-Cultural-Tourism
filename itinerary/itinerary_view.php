@@ -39,6 +39,8 @@ $stmt->execute();
 $it = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 if (!$it) { header("Location: my_itineraries.php"); exit; }
+// A version of a plan that was not chosen is compared on the review page of its plan, not shown here.
+if (($it['version_of'] ?? null) !== null) { header("Location: itinerary_review.php?itinerary_id=" . (int)$it['version_of'] . "#versions"); exit; }
 $originName = trim((string)($it['origin_name'] ?? ''));
 // The base of each day (where the night after it is spent), for a trip planned with bases.
 $viewBases = ItineraryEditService::dayBases($conn, $itineraryId);

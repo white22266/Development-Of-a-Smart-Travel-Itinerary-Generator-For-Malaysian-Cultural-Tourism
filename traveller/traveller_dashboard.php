@@ -3,6 +3,10 @@
 session_start();
 require_once "../config/db_connect.php";
 require_once "../config/i18n.php";
+require_once "../services/PlannerRules.php";
+
+// A version of a plan (migration 20261122_itinerary_versions.sql) is no trip of its own until it is chosen.
+$notVersion = PlannerRules::hasColumn($conn, "itineraries", "version_of") ? " AND version_of IS NULL" : "";
 
 // Access control aligned with login_process.php
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
@@ -24,7 +28,7 @@ $userName = $_SESSION["traveller_name"] ?? t('common.traveller_default');
 
 // 1) Trips Generated (all itineraries)
 $kpiTripsGenerated = 0;
-$stmt = $conn->prepare("SELECT COUNT(*) AS c FROM itineraries WHERE traveller_id = ?");
+$stmt = $conn->prepare("SELECT COUNT(*) AS c FROM itineraries WHERE traveller_id = ?{$notVersion}");
 $stmt->bind_param("i", $travellerId);
 $stmt->execute();
 $kpiTripsGenerated = (int)($stmt->get_result()->fetch_assoc()["c"] ?? 0);
@@ -63,7 +67,7 @@ $recentItineraries = [];
 $stmt = $conn->prepare("
   SELECT itinerary_id, title, total_days, created_at
   FROM itineraries
-  WHERE traveller_id = ?
+  WHERE traveller_id = ?{$notVersion}
   ORDER BY created_at DESC, itinerary_id DESC
   LIMIT 4
 ");

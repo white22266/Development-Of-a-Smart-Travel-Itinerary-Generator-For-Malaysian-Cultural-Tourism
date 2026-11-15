@@ -6,7 +6,13 @@
 // rule is not made, and the reply says which and why. The other changes are saved.
 //
 // Reply: status success, applied (changes made), hotel_nights_saved, refused: list of
-// {item_id, night, action (replace|remove|hotel), code, message}.
+// {item_id, night, action (replace|remove|hotel), code, message}, and hotel_budget when the
+// hotels would put the trip over the budget: {total, budget, over_by, message}. Nothing of the
+// hotels is saved then; the page asks the traveller and posts the hotels again with
+// confirm_over_budget=1 (and no replacements or removals), which saves them anyway.
+//
+// Confirming the review removes the versions of the plan that were not chosen
+// (ItineraryEditService::dropVersions()).
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -58,6 +64,8 @@ if (!is_array($replacements)) $replacements = [];
 
 $hotelSelections = json_decode((string)($_POST['hotel_selections_json'] ?? ''), true);
 if (!is_array($hotelSelections)) $hotelSelections = [];
+// The traveller saw the amount over the budget in the page's dialog and chose to save the hotels anyway.
+$overBudgetConfirmed = (string)($_POST['confirm_over_budget'] ?? '') === '1';
 
 // Only the id of each chosen hotel is taken from the browser. Its name, location and price
 // are read from the lodging list here, with the same budget the suggestions were made with.
@@ -91,8 +99,14 @@ try {
         else $refused[] = ['item_id' => (int)$itemId, 'night' => null, 'action' => 'remove', 'code' => $result['code'], 'message' => i18n_refusal((string)$result['code'], (string)$result['message'])];
     }
     // The hotels last: each day after a hotel night then starts from that hotel.
-    $hotels = ItineraryEditService::setHotels($conn, $itineraryId, $hotelByNight);
-    if (!$hotels['ok']) {
+    $hotels = ItineraryEditService::setHotels($conn, $itineraryId, $hotelByNight, $overBudgetConfirmed);
+    $hotelBudget = null;
+    if (!$hotels['ok'] && $hotels['code'] === 'HOTEL_BUDGET') {
+        $hotelBudget = [
+            'total' => (float)$hotels['total'], 'budget' => (float)$hotels['budget'], 'over_by' => (float)$hotels['over_by'],
+            'message' => t('rv.hotel_budget_confirm', ['total' => number_format((float)$hotels['total'], 2), 'over' => number_format((float)$hotels['over_by'], 2), 'budget' => number_format((float)$hotels['budget'], 2)]),
+        ];
+    } elseif (!$hotels['ok']) {
         $refused[] = ['item_id' => null, 'night' => null, 'action' => 'hotel', 'code' => $hotels['code'], 'message' => i18n_refusal((string)$hotels['code'], (string)$hotels['message'])];
     }
     foreach ((array)($hotels['refused_nights'] ?? []) as $nightNo => [$code, $text]) {
@@ -100,11 +114,15 @@ try {
         $refused[] = ['item_id' => null, 'night' => (int)$nightNo, 'action' => 'hotel', 'code' => $code,
             'message' => $reason === null ? $text : t('rv.hotel_night_refused', ['night' => (int)$nightNo, 'reason' => $reason])];
     }
+    // The versions that were not chosen go now: the plan under review is the one confirmed.
+    ItineraryEditService::dropVersions($conn, $itineraryId);
     echo json_encode([
         'status' => 'success',
         'applied' => $applied,
         'hotel_nights_saved' => (int)($hotels['nights'] ?? 0),
         'refused' => $refused,
+        'hotel_budget' => $hotelBudget,
+        'over_by' => (float)($hotels['over_by'] ?? 0),
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 } catch (Throwable $e) {
     error_log('Review confirm failed: ' . $e->getMessage());

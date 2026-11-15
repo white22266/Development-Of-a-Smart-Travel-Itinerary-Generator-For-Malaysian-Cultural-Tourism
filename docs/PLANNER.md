@@ -23,7 +23,9 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
 `api/itinerary_edit.php`, `api/itinerary_optimise.php`, `api/ai_itinerary_editor.php`,
 `api/ai_hotel_assistant.php`, `itinerary/itinerary_review.php`, `itinerary/review_replace.php`,
 `itinerary/review_confirm_nightly.php` and `itinerary/itinerary_view.php` call
-`ItineraryEditService`.
+`ItineraryEditService`. `api/itinerary_versions.php` calls `ItineraryGenerator::createVersion()`
+(a version of a plan in another style, see Versions of a plan) and
+`ItineraryEditService::chooseVersion()`.
 
 ## Flow of `generate()`
 
@@ -196,7 +198,23 @@ Paid places may take what the budget leaves after the essentials plus a margin o
 `BUDGET_MARGIN` (10 percent) on them. When the essentials alone are over the budget, only free
 places are added. A budget of 0 means no limit. The rule only grows stricter as items are
 added, so a plan that keeps it keeps it in any order of its stops. `projectedTotal()` computes
-the total exactly as `ItineraryEditService::total()` stores it.
+the total exactly as `ItineraryEditService::total()` stores it. The budget style of a version
+(below) gives the paid places only `STYLE_BUDGET_PAID_SHARE` (half) of what the rule leaves them
+(profile key `paid_share`; 1 without a style), which is stricter still.
+
+A hotel is a choice of the traveller, not of the planner, so the rule above does not decide it:
+`ItineraryEditService::setHotels()` times the days with the hotels, and when the stored total is
+then over the budget it saves nothing and answers `HOTEL_BUDGET` with `total`, `budget` and
+`over_by`, unless the call carries the confirmation (`$overBudgetConfirmed`): then the hotels are
+saved and the answer states the amount over (the pages show "Over Budget"). Choosing no hotel is
+never refused for it. `ItineraryEditService::hotelBudget()` marks hotel suggestions with the same
+total: the stored items with the hotel rows of the nights it would cover in place of the stored
+ones, and the stored km with the legs to and from the hotel estimated (no request). The review
+page (`itinerary/review_hotels.php`, for the night and for the run of nights at one base, with the
+hotels the page chose for other nights) and the chat's hotel assistant (every night) list the
+hotels inside the budget first. The review page asks the confirmation in a dialog that states the
+amount; in the chat, confirming the same hotel a second time after the answer named the amount is
+the confirmation.
 
 ## The day search
 
@@ -425,9 +443,94 @@ text is cut to 255 characters.
 day's lunch and dinner. Among them the one with the least travelling wins; among orders that
 cannot keep every stop, the one keeping the most must-see places wins. A stop no order can keep
 is dropped with its reason code. A time that breaks a rule is never stored and never clamped.
-`optimise()` does the same for a saved itinerary (the "Optimise route" button) through
-`ItineraryEditService::reorderTrip()`: one table request, every day ordered from where it starts
-to its night, stored as an edit stores it.
+
+`optimise()` does the same for a saved itinerary (the "Optimise route" button,
+`api/itinerary_optimise.php`, and the action `optimise` of `api/itinerary_edit.php`) through
+`ItineraryEditService::reorderTrip()`:
+
+1. For every day the day search runs with the stored base and group, the other days' places used
+   and the day's must-see places kept, on the figures at hand (as `regenerateDay()` runs it); the
+   places it would take that are not stops of the day already (its stops, then its spares) stand
+   by, `OPTIMISE_CANDIDATES` (3) a day.
+2. One request: a table of the trip's points (visits, hotels and bases, start and end point, then
+   while there is room the standby places and the meal places), or, for a trip of more than
+   `PlannerRules::LONG_TRIP_POINTS` (20) points of its own, no table but one route request along
+   the legs of each day's best order on the figures at hand, the legs from each stop to the day's
+   end and the standby places' legs (what does not fit in it stays on the figures at hand).
+3. Every day is ordered on those figures from where it starts to its night. A must-see place is
+   never dropped for a better order: when no order keeps it, the stored order is timed again, and
+   when that fails too the day stays as it was (`kept_days`). A stop no order keeps gives way to
+   the standby places, best first: each must pass `placeRefusal()`, the traveller's limit on places
+   of worship, and `orderDay()` in every order with the budget rule (`timingFrame()` with the
+   budget); the first that fits takes the stop's place, so the day keeps its number of stops when
+   a place fits. A new stop's notes are judged after the kept stops (`relevel()`), and its rain
+   notes are written for its visit as timed.
+4. The days are stored as an edit stores them; a day that is not timed again (kept, or holding a
+   row the planner cannot time) keeps its rows and its stored legs. A day left without stops gets
+   the "Free day" note.
+5. When the new distances put the trip over the budget, nothing is deleted for it: the report has
+   `total`, `budget` and `over_by`, and the pages' Over Budget state shows it.
+
+The report: `days` (per day stops, minutes before and after, reordered, problems, replaced,
+not_replaced), `reordered_days`, `saved_min`, `replaced` (day, old, new, reason), `not_replaced`
+(day, old, reason), `removed` (both, as sentences), `kept_days`, `total`, `budget`, `over_by`,
+`long_trip`. `ItineraryEditService::optimiseSentence()` words it with the keys `optm.*` of `lang/`:
+the days in a shorter order, what was replaced (old by new), what was removed without a
+replacement, a day kept as it was, and the amount over the budget. The optimiser makes one routing
+request (the REQUESTS limit of the check).
+
+## Versions of a plan
+
+After generation the review page offers "Compare other versions" (`itinerary/itinerary_review.php`,
+`api/itinerary_versions.php`). A version is the same trip (preference, start date, starting point,
+end point, `stay_at_start`) planned again by `ItineraryGenerator::generate()` with the trip option
+`style`, made by `ItineraryGenerator::createVersion()` on request: one at a time (a lock per
+itinerary), one per style, at most `ItineraryGenerator::MAX_VERSIONS` (3). The style changes the
+target, the day window and the weights of the day search (`PlannerRules::profile()`, the
+`STYLE_*` constants of `PlannerRules`); it never changes a hard rule, so every version keeps every
+rule above.
+
+| Style | What changes | Numbers |
+|---|---|---|
+| `relaxed` | stops a day and the end of the day window | the pace's target less `STYLE_RELAXED_STOPS_LESS` (1), never under `STYLE_RELAXED_MIN_STOPS` (2) and never more than the pace gives; the window ends `STYLE_RELAXED_END_EARLIER` (60) minutes earlier, keeping at least `STYLE_RELAXED_MIN_WINDOW` (180) minutes |
+| `budget` | the weight on cost, and the paid places' share of the budget | a free place scores `STYLE_BUDGET_FREE_POINTS` (25, instead of 10); a paid place loses `STYLE_BUDGET_COST_POINTS` (0.5) per RM a person, at most `STYLE_BUDGET_COST_MAX` (20); a travelling minute costs `STYLE_BUDGET_TRAVEL_FACTOR` (1.5) times `TRAVEL_PRICE` (km cost money); the paid places take at most `STYLE_BUDGET_PAID_SHARE` (half) of what the budget rule leaves them |
+| `interest` | the weight of interests and of variety | the points of an interest match times `STYLE_INTEREST_FACTOR` (2: 30, 50, 70 for a little, like, love; a type asked for more of counts as loved), the points of category variety (new category +10, repeated beyond its limit -12, the day before's theme -15) times `STYLE_INTEREST_VARIETY_FACTOR` (0.5); the limits and relax levels of variety stay, so it is relaxed only where the notes say so |
+
+The weights go through the day builder's helpers (`interestPoints()`, `varietyPoints()`,
+`costPoints()`, `travelPrice()`), which `score()`, `placeValue()` (so the trip layout) and the
+search's bound `most()` all read, so the bound still covers every score term.
+
+What is stored: a version is an itinerary of its own (its rows, days, bases and total) with
+`itineraries.version_of` set to the itinerary it is a version of and `plan_style` set to its
+style (migration `20261122_itinerary_versions.sql`; `version_of` has a foreign key with ON DELETE
+CASCADE). A row with `version_of` set is no trip of the traveller's: "My itineraries" and the
+dashboard counts leave it out, and `itinerary/itinerary_view.php` sends it to the review page of
+its plan. `ItineraryEditService::context()` reads `plan_style`, so a chosen version keeps its
+style in every later edit.
+
+- "Use this version" (`ItineraryEditService::chooseVersion()`): the version's `version_of` becomes
+  NULL, and the itinerary under review goes with its other versions; one transaction.
+- Confirming the review (`itinerary/review_confirm_nightly.php`) and deleting the itinerary
+  (`itinerary/itinerary_delete.php`, and the foreign key) remove the versions that were not chosen
+  (`dropVersions()`).
+- Versions older than a day that were never chosen are removed when the traveller next generates
+  (`pruneVersions()`, from `itinerary/generate_itinerary.php`).
+
+The comparison (`ItineraryEditService::versionSummary()`, built on the server when the page
+loads, one column per plan) shows per version the stops per day, each day's first start and last
+end (visits and meals), the total travelling minutes (every stored leg), the stored total against
+the budget, how many stops match the traveller's interests (and how many of them an interest
+loved), and the places of each day by name.
+
+`api/itinerary_versions.php` (POST, the login, role, ownership and CSRF handling of
+`api/itinerary_edit.php`): `itinerary_id` (the itinerary under review, not a version), `action`
+`create` with `style` (`relaxed`, `budget`, `interest`) or `choose` with `version_id` (a version of
+it, or the itinerary itself to keep it and remove the versions). The answer: `ok`, `status`
+(`done` or `refused`), `code` (`VERSION_LIMIT`, `VERSION_EXISTS`, `NOT_FOUND`, `UNAVAILABLE`,
+`NO_CHANGE` while another version is planned), `message`, `display` (the page's language), and
+`version_id` and `versions` for create, `itinerary_id` (the one that remains) for choose. A
+request that is not allowed or not valid gets status `error`: 401 not signed in, 405 not POST,
+403 token, 400 action or style not on the list, 404 not the traveller's itinerary.
 
 ## Edit operations
 
@@ -452,7 +555,8 @@ moved (a hotel chosen) is timed again too. Every operation returns
 | `setDayStart()`, `retimeTrip()` | `set_day_start` |
 | `optimise()` | `optimise` |
 | `replanRainyDays()` (days with an hour inside the day window at `RAIN_PREFER` percent or more, `rainInWindow()`, planned with the hourly values) | `replan_rain` |
-| `setHotels()` (a hotel is where its night is spent: the day before ends there, the day after starts there; a night whose hotel would break either day is not saved) | the hotel pages and the hotel assistant |
+| `setHotels()` (a hotel is where its night is spent: the day before ends there, the day after starts there; a night whose hotel would break either day is not saved; over the budget refused with `HOTEL_BUDGET` unless confirmed, see Budget rule) | the hotel pages and the hotel assistant |
+| `chooseVersion()`, `dropVersions()`, `pruneVersions()` (see Versions of a plan) | `api/itinerary_versions.php` (`choose`), the review and delete pages, generation |
 
 Refusal codes that the edit service itself returns (the words are in `PlannerRules::REASONS`; the
 rule codes of `check()` can be returned too):
@@ -475,6 +579,8 @@ rule codes of `check()` can be returned too):
 | `DIETARY` | the chosen meal place is not among the food places the trip may use |
 | `TRANSIT` | for a traveller by public transport: the place has no stop within 1500 m (not for a must-see place) |
 | `WORSHIP` | the place of worship goes over the traveller's limit (none, or one a day), or the change puts more places of worship into a day at its limit (not for a must-see place) |
+| `HOTEL_BUDGET` | the hotels would put the stored total over the budget (with `total`, `budget`, `over_by`); saved only with the confirmation |
+| `VERSION_LIMIT`, `VERSION_EXISTS` | the itinerary already has its three versions; a version in this style exists already |
 
 The AI assistant (`services/ItineraryEditIntentService.php`) reads an edit request in English,
 Malay or Chinese with the local Ollama model and falls back to regular expressions. It only
@@ -529,15 +635,17 @@ batches, never per candidate, and keeps to these rules (`RouteService`):
   requests per operation, each waiting at most `ROUTE_TIMEOUT` (5) seconds. A change to one day
   asks about that day and the day whose start it moves, not the whole trip.
 - Setting a day's start moves no stop and asks nothing (`setDayStart()`, `retimeTrip()`).
-- A trip of more than `ItineraryGenerator::LONG_TRIP_POINTS` (20) points of its own (start,
+- A trip of more than `PlannerRules::LONG_TRIP_POINTS` (20) points of its own (start,
   stops, bases, end point) is measured along its planned legs with route requests
   (`measureLegs()`: the days join at their bases, one chain of up to 60 points a request), and
   each day is timed in its planned order on them; a day that loses a stop is ordered again and
-  repaired as below.
-- Otherwise generation, and always the route optimiser, ask for one table for the whole trip
+  repaired as below. The route optimiser asks no table for such a trip either: one route request
+  along each day's best order, the legs to the day's end and its standby places' legs (What the
+  optimiser does).
+- Otherwise generation and the route optimiser ask for one table for the whole trip
   (`RouteService::preloadTrip()`): the stops, bases, hotels, start and end point, and, while there is
-  room (`MAX_TABLE_POINTS`, 50), the meal places (also those near the bases); those left out are estimated. A day whose stop
-  has to be replaced after the road figures adds one route request. Their timeout is 8 seconds
+  room (`MAX_TABLE_POINTS`, 50), the optimiser's standby places and the meal places (also those near the bases); those left out are estimated. A day whose stop
+  has to be replaced after the road figures adds one route request in generation. Their timeout is 8 seconds
   (`ItineraryGenerator::ROUTE_TIMEOUT`, `ItineraryRouteOptimiser::ROUTE_TIMEOUT`). A motorcycle
   trip's table of more than ten points comes from OSRM's car profile.
 - The figures a day is timed with are the ones stored with it (`ItineraryEditService::routes()`
@@ -579,7 +687,17 @@ from its own copy of the table above (`DESCRIBED_HOURS`).
 The scenarios are the entries of the `SCENARIOS` constant, plus `<base>__edits` for each name in
 `EDIT_BASES`: the base is generated, then changed through `ItineraryEditService` (replace,
 remove, move, add, plan a day again, a day start of its own, a hotel, a rainy day, optimise), the
-checks run again, and changes that must be refused are tried.
+checks run again, and changes that must be refused are tried; last the dearest hotel is tried
+against the budget (`HOTEL_BUDGET`). `<base>__versions` for each name in `VERSION_BASES`
+(`kl_couple_car_normal`, `sabah_family_motorcycle_normal`): the base is generated, a version in
+each style is made and judged, a fourth is tried, and one is chosen (`VERSIONS`).
+`<base>__optimise@skew` for each name in `OPTIMISE_FRESH_BASES` (second pass only): the base is
+planned on estimates and stored without its legs, as a plan stored while no routing server
+answered, and the optimiser then meets the skewed figures for every leg, as a real table answer
+replaces stored figures; the three bases are chosen so that a stop gives way and is replaced
+(`sabah_family_motorcycle_normal`), a stop gives way with no place to take it
+(`kl_selangor_family_transit_tight`), and a long trip ends over its budget
+(`perak_solo_motorcycle_packed_7days_tight`).
 
 Finding codes. A violation fails the run; a warning is only reported.
 
@@ -612,7 +730,9 @@ Finding codes. A violation fails the run; a warning is only reported.
 | `FINISH` | the end point is not stored, or cannot be reached in time or distance |
 | `BUDGET` | the stored total differs from the total recomputed from the items, or paid attractions exceed their share; a total over the budget is a warning |
 | `REQUESTS` | generation or an edit made more routing requests than `REQUEST_LIMITS` allows (counted also offline) |
-| `EDIT`, `REFUSE`, `DAY_START`, `OPTIMISE` | an edit result is malformed or broke the stop's position (a refused edit is a warning; planning a day again refused on a rule of its own new plan, without `worse`, is a violation); a change that had to be refused was made or changed rows; a stored day start was lost; the optimiser step reported a note (warning) |
+| `EDIT`, `REFUSE`, `DAY_START`, `OPTIMISE` | an edit result is malformed or broke the stop's position (a refused edit is a warning; planning a day again refused on a rule of its own new plan, without `worse`, is a violation); a change that had to be refused was made or changed rows; a stored day start was lost; after the optimiser a day has fewer stops than the answer's stops not replaced allow, a day reported kept changed, or the trip is over the budget and the answer does not state the amount (violations; a stop removed without a replacement while one of the ten nearest places still fits the day by `canAdd()` is a warning) |
+| `HOTEL_BUDGET` | the dearest lodging within 15 km of night 1's base, for every night: when it puts the trip over the budget it must be refused with `HOTEL_BUDGET`, the amount in the answer and no row changed; with the confirmation it must be saved, the answer state the amount and the stored total be over the budget; when it keeps the trip inside the budget the total must stay inside |
+| `VERSIONS` | a version in each style is made (the generation limit of `REQUESTS`) and judged by every check (a relaxed version by its own target and day end, a budget version with paid places within half the attraction share); relaxed has more stops than the plan as generated or a visit after its earlier day end; budget costs more than the plan as generated; versions not marked as versions of the plan, or more than one itinerary of its own; a fourth version made or changing rows; choosing one does not leave exactly one itinerary |
 
 The scenarios `kl_couple_car_stay_at_start` (the `trip` key `stay_at_start`),
 `penang_kl_couple_car_5days_two_states` (two states some 300 km apart: a move between areas) and

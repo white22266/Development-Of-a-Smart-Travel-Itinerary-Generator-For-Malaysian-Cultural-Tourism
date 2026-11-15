@@ -155,4 +155,34 @@ foreach ($hotels as &$hotel) {
 }
 unset($hotel);
 
+// The budget: whether the trip stays inside it with each hotel for the night (and, when the night
+// belongs to a run of nights at one base, for the whole run: GET nights=first-last), with the
+// hotels the page chose for other nights (GET chosen=night:hotel_id,...) and the stored ones for
+// the rest, computed as the stored total is (ItineraryEditService::hotelBudget()). The hotels
+// inside the budget come first, each group in its own order.
+if ($nightNo >= 1 && $nightNo < (int)$itinerary['total_days']) {
+    $others = [];
+    foreach (explode(',', (string)($_GET['chosen'] ?? '')) as $pair) {
+        if (!preg_match('/^(\d{1,3}):(\d{1,10})$/', trim($pair), $m) || (int)$m[1] === $nightNo) continue;
+        $found = $hotelService->find((int)$m[2], $roomBudget);
+        if ($found !== null) $others[(int)$m[1]] = $found;
+    }
+    $run = [$nightNo];
+    if (preg_match('/^(\d{1,3})-(\d{1,3})$/', (string)($_GET['nights'] ?? ''), $m) && (int)$m[1] <= $nightNo && (int)$m[2] >= $nightNo) {
+        $run = range((int)$m[1], min((int)$m[2], (int)$itinerary['total_days'] - 1));
+    }
+    $one = ItineraryEditService::hotelBudget($conn, $itineraryId, [$nightNo], $hotels, $others);
+    $all = count($run) > 1 ? ItineraryEditService::hotelBudget($conn, $itineraryId, $run, $hotels, array_diff_key($others, array_flip($run))) : $one;
+    foreach ($hotels as $k => &$hotel) {
+        $hotel['budget'] = $one[$k] ?? null;
+        $hotel['budget_run'] = count($run) > 1 ? ($all[$k] ?? null) : null;
+        $hotel['budget_label'] = $hotel['budget'] === null || (float)$hotel['budget']['budget'] <= 0 ? ''
+            : ($hotel['budget']['within'] ? t('rv.hotel_within') : t('rv.hotel_over', ['n' => number_format((float)$hotel['budget']['over_by'], 0)]));
+    }
+    unset($hotel);
+    $order = array_keys($hotels);
+    usort($order, static fn(int $a, int $b): int => [empty($hotels[$a]['budget']['within']) ? 1 : 0, $a] <=> [empty($hotels[$b]['budget']['within']) ? 1 : 0, $b]);
+    $hotels = array_map(static fn(int $k): array => $hotels[$k], $order);
+}
+
 review_hotels_reply(['status' => 'success', 'message' => $message, 'last_stop' => $lastStop, 'hotels' => $hotels]);

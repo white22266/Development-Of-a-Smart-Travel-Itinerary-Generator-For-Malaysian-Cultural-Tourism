@@ -64,13 +64,6 @@ final class ItineraryGenerator
 {
     /** Seconds the trip's one table request may take before the plan is stored on estimates. */
     private const ROUTE_TIMEOUT = 8;
-    /**
-     * A trip with more points of its own than this (start, stops, bases and end point) is measured
-     * with route requests along its planned legs instead of one table: a table of every pair of
-     * them (and of the meal places that fill it up to RouteService's 50 points) was too slow for
-     * the public server (the 5-day Penang and Kuala Lumpur trip waited 8 seconds for it).
-     */
-    private const LONG_TRIP_POINTS = 20;
     /** Probe step through the day window when looking for a day a must-see place can be visited. */
     private const MUST_PROBE_STEP_MIN = 60;
     /** The search's next places measured and tried for each stop dropped on the road figures (replace()). */
@@ -129,6 +122,11 @@ final class ItineraryGenerator
             }
         }
         $stayAtStart = !empty($trip['stay_at_start']);
+        // A version of a trip (createVersion()): the same trip planned in a style of
+        // PlannerRules::STYLES, stored as a version of the first itinerary.
+        $style = isset($trip['style']) && $trip['style'] !== null ? (string)$trip['style'] : null;
+        if ($style !== null && !in_array($style, PlannerRules::STYLES, true)) throw new RuntimeException('Unknown plan style.');
+        $versionOf = isset($trip['version_of']) ? max(0, (int)$trip['version_of']) : 0;
         $this->mustMissed = [];
 
         $this->conn->begin_transaction();
@@ -140,6 +138,7 @@ final class ItineraryGenerator
                 'origin_lat' => $origin[0],
                 'origin_lng' => $origin[1],
                 'learned' => PlannerRules::learnedPoints($ratings['categories']),
+                'style' => $style,
             ]);
 
             $loaded = PlannerCandidates::load($this->conn, $pref);
@@ -180,7 +179,7 @@ final class ItineraryGenerator
             $days = $this->measureOnRoad($days, $profile, $route, $builder);
             $this->settleMusts($days, $musts);
 
-            $itineraryId = $this->store($travellerId, $preferenceId, $pref, $profile, $startDate, $originName, $origin, $endName, $finish, $stayAtStart, $days);
+            $itineraryId = $this->store($travellerId, $preferenceId, $pref, $profile, $startDate, $originName, $origin, $endName, $finish, $stayAtStart, $days, $versionOf);
             ItineraryEditService::total($this->conn, $itineraryId);
 
             $this->conn->commit();
@@ -189,6 +188,68 @@ final class ItineraryGenerator
             $this->conn->rollback();
             throw $e;
         }
+    }
+
+    /** At most this many versions of one itinerary exist at a time (createVersion()). */
+    public const MAX_VERSIONS = 3;
+
+    /**
+     * Plan the trip of an itinerary again in another style (PlannerRules::STYLES) and store it as
+     * a version of it (itineraries.version_of, plan_style): the same preference, start date,
+     * starting point, end point and stay_at_start, generated exactly as generate() does. One
+     * version per style, at most MAX_VERSIONS; a version itself has no versions. The caller
+     * checks that the itinerary is the traveller's.
+     *
+     * @return array{ok:bool,status:string,code:?string,message:string,version_id?:int}
+     */
+    public function createVersion(int $travellerId, int $itineraryId, string $style): array
+    {
+        $refused = static fn(string $code, string $message): array => ['ok' => false, 'status' => 'refused', 'code' => $code, 'message' => $message];
+        if (!in_array($style, PlannerRules::STYLES, true)) return $refused('NOT_EDITABLE', 'This style of plan is not known.');
+        if (!PlannerRules::hasColumn($this->conn, 'itineraries', 'version_of')) return $refused('UNAVAILABLE', 'Versions of a plan cannot be stored on this database yet.');
+        $stmt = $this->conn->prepare('SELECT * FROM itineraries WHERE itinerary_id = ? AND traveller_id = ? LIMIT 1');
+        $stmt->bind_param('ii', $itineraryId, $travellerId);
+        $stmt->execute();
+        $first = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        if (!$first || $first['version_of'] !== null) return $refused('NOT_FOUND', 'This itinerary was not found.');
+        // One version at a time per itinerary: a second request while one is planned is refused.
+        $lock = 'itinerary_version_' . $itineraryId;
+        $got = $this->conn->query("SELECT GET_LOCK('" . $this->conn->real_escape_string($lock) . "', 0)")->fetch_row()[0] ?? 0;
+        if ((int)$got !== 1) return $refused('NO_CHANGE', 'A version of this trip is being planned already.');
+        try {
+            return $this->planVersion($travellerId, $itineraryId, $style, $first, $refused);
+        } finally {
+            $this->conn->query("DO RELEASE_LOCK('" . $this->conn->real_escape_string($lock) . "')");
+        }
+    }
+
+    /** createVersion() under its lock. */
+    private function planVersion(int $travellerId, int $itineraryId, string $style, array $first, callable $refused): array
+    {
+        $stmt = $this->conn->prepare('SELECT plan_style FROM itineraries WHERE version_of = ?');
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $styles = array_map(static fn(array $r): string => (string)$r['plan_style'], $stmt->get_result()->fetch_all(MYSQLI_ASSOC));
+        $stmt->close();
+        if (count($styles) >= self::MAX_VERSIONS) return $refused('VERSION_LIMIT', 'This trip already has ' . self::MAX_VERSIONS . ' versions to compare.');
+        if (in_array($style, $styles, true) || (string)($first['plan_style'] ?? '') === $style) {
+            return $refused('VERSION_EXISTS', 'A version in this style already exists.');
+        }
+        $trip = [
+            'start_date' => (string)$first['start_date'],
+            'origin_name' => (string)$first['origin_name'],
+            'origin_lat' => (float)$first['origin_lat'],
+            'origin_lng' => (float)$first['origin_lng'],
+            'style' => $style,
+            'version_of' => $itineraryId,
+        ];
+        if (!empty($first['end_name']) && $first['end_lat'] !== null && $first['end_lng'] !== null) {
+            $trip += ['end_name' => (string)$first['end_name'], 'end_lat' => (float)$first['end_lat'], 'end_lng' => (float)$first['end_lng']];
+        }
+        if (!empty($first['stay_at_start'])) $trip['stay_at_start'] = true;
+        $id = $this->generate($travellerId, (int)$first['preference_id'], $trip);
+        return ['ok' => true, 'status' => 'done', 'code' => null, 'message' => 'The ' . $style . ' version of the trip was planned.', 'version_id' => $id];
     }
 
     /** day => Y-m-d of a trip. */
@@ -419,11 +480,11 @@ final class ItineraryGenerator
         foreach ($pointsByDay as $points) {
             foreach ($points as $p) $own[round((float)$p[0], 5) . ',' . round((float)$p[1], 5)] = true;
         }
-        // A long trip (more than LONG_TRIP_POINTS points of its own) is too big for a quick
+        // A long trip (more than PlannerRules::LONG_TRIP_POINTS points of its own) is too big for a quick
         // table: its planned legs (each day's chain of stops, meal places and the way to its
         // base or end point) are measured with route requests instead, and each day is timed in
         // its planned order on them (an order the estimates found best).
-        $inOrder = count($own) > self::LONG_TRIP_POINTS;
+        $inOrder = count($own) > PlannerRules::LONG_TRIP_POINTS;
         if ($inOrder) {
             $route->measureLegs(self::plannedLegs($days));
         } else {
@@ -719,7 +780,7 @@ final class ItineraryGenerator
     }
 
     private function store(int $travellerId, int $preferenceId, array $pref, array $profile, string $startDate, string $originName, array $origin,
-                           string $endName, ?array $finish, bool $stayAtStart, array $days): int
+                           string $endName, ?array $finish, bool $stayAtStart, array $days, int $versionOf = 0): int
     {
         $title = self::title($pref);
         $tripDays = (int)$profile['days'];
@@ -735,6 +796,20 @@ final class ItineraryGenerator
             $columns[] = 'stay_at_start';
             $types .= 'i';
             $values[] = $stayAtStart ? 1 : 0;
+        }
+        // The style of the plan and, for a version, the itinerary it is a version of
+        // (migration 20261122_itinerary_versions.sql).
+        if (PlannerRules::hasColumn($this->conn, 'itineraries', 'plan_style')) {
+            $columns[] = 'plan_style';
+            $types .= 's';
+            $values[] = $profile['style'];
+            if ($versionOf > 0) {
+                $columns[] = 'version_of';
+                $types .= 'i';
+                $values[] = $versionOf;
+            }
+        } elseif ($profile['style'] !== null) {
+            throw new RuntimeException('Versions of a plan cannot be stored on this database yet.');
         }
         $stmt = $this->conn->prepare('INSERT INTO itineraries (' . implode(', ', $columns) . ', total_estimated_cost) VALUES ('
             . implode(',', array_fill(0, count($columns), '?')) . ', 0.00)');

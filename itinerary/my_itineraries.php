@@ -4,6 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once "../config/db_connect.php";
 require_once "../config/i18n.php";
+require_once "../services/PlannerRules.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -19,13 +20,15 @@ $success = $_SESSION["success_message"] ?? "";
 $errors  = $_SESSION["form_errors"] ?? [];
 unset($_SESSION["success_message"], $_SESSION["form_errors"]);
 
+// A version of a plan (migration 20261122_itinerary_versions.sql) is no trip of its own until it is chosen.
+$notVersion = PlannerRules::hasColumn($conn, "itineraries", "version_of") ? " AND i.version_of IS NULL" : "";
 $stmt = $conn->prepare("
   SELECT i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost,
          COALESCE(SUM(CASE WHEN ii.item_type NOT IN ('hotel','origin') THEN 1 ELSE 0 END), 0) AS place_count,
          GROUP_CONCAT(DISTINCT CASE WHEN ii.item_type = 'hotel' THEN ii.item_title END SEPARATOR ', ') AS selected_hotels
   FROM itineraries i
   LEFT JOIN itinerary_items ii ON ii.itinerary_id = i.itinerary_id
-  WHERE i.traveller_id = ?
+  WHERE i.traveller_id = ?{$notVersion}
   GROUP BY i.itinerary_id, i.title, i.start_date, i.total_days, i.total_estimated_cost
   ORDER BY i.itinerary_id DESC
 ");

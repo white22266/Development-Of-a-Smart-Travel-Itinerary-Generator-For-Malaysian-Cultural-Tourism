@@ -286,10 +286,16 @@ class ItineraryEditService
      * there; both are timed again. A night whose hotel would make either day break a rule is not
      * saved; the others are.
      *
+     * The budget: when the hotels put the stored total (total(), with the days timed again) over
+     * the budget, nothing is saved and the answer is HOTEL_BUDGET with the amount (total,
+     * budget, over_by), unless $overBudgetConfirmed: then the hotels are saved and the answer
+     * states the amount over (over_by). Choosing no hotel at all is never refused for it.
+     *
      * @param array<int,array> $hotelByNight night => a hotel as HotelRecommendationService returns it
-     * @return array result + nights (saved), refused_nights (night => [code, message])
+     * @return array result + nights (saved), refused_nights (night => [code, message]), total,
+     *         budget, over_by
      */
-    public static function setHotels(mysqli $conn, int $itineraryId, array $hotelByNight): array
+    public static function setHotels(mysqli $conn, int $itineraryId, array $hotelByNight, bool $overBudgetConfirmed = false): array
     {
         self::$cache = [];
         $refusedNights = [];
@@ -320,6 +326,16 @@ class ItineraryEditService
                     continue;
                 }
                 self::store($conn, $ctx, self::visits($ctx), $plan, [], []);
+                // The budget, on the total as stored (inside this transaction).
+                $money = self::budgetState($conn, $itineraryId);
+                if ($hotelByNight && $money['over_by'] > 0 && !$overBudgetConfirmed) {
+                    $conn->rollback();
+                    self::$cache = [];
+                    return self::refused('HOTEL_BUDGET', 'With ' . (count($hotelByNight) === 1 ? 'this hotel' : 'these hotels') . ' the trip would cost RM '
+                        . number_format($money['total'], 2) . ', RM ' . number_format($money['over_by'], 2) . ' over your budget of RM '
+                        . number_format($money['budget'], 2) . '. Nothing was saved; confirm to save ' . (count($hotelByNight) === 1 ? 'it' : 'them') . ' anyway.',
+                        $money + ['nights' => 0, 'refused_nights' => $refusedNights]);
+                }
                 $conn->commit();
                 $nights = (int)$saved['nights'];
                 $retimed = $plan['retimed'];
@@ -333,7 +349,9 @@ class ItineraryEditService
         self::$cache = [];
         $message = $nights . ' hotel night(s) saved' . ($retimed ? '; day(s) ' . implode(', ', $retimed) . ' timed again to and from the hotel.' : '.');
         if ($refusedNights) $message .= ' ' . implode(' ', array_column($refusedNights, 1));
-        return self::done($message, ['days' => $retimed, 'nights' => $nights, 'refused_nights' => $refusedNights]);
+        $money = self::budgetState($conn, $itineraryId);
+        if ($money['over_by'] > 0) $message .= ' The trip is now RM ' . number_format($money['over_by'], 2) . ' over your budget of RM ' . number_format($money['budget'], 2) . '.';
+        return self::done($message, ['days' => $retimed, 'nights' => $nights, 'refused_nights' => $refusedNights] + $money);
     }
 
     /**
@@ -613,7 +631,9 @@ class ItineraryEditService
 
     /**
      * Reorder and re-time every day (the "Optimise route" button), in a transaction of its
-     * own; a day the optimiser left without stops gets the "Free day" note.
+     * own; a day the optimiser left without stops gets the "Free day" note. The message names
+     * what was replaced, what could not be, a day kept as it was and the amount over the budget
+     * (optimiseSentence()).
      *
      * @return array result + report (ItineraryRouteOptimiser::optimise())
      */
@@ -630,32 +650,120 @@ class ItineraryEditService
             throw $e;
         }
         self::$cache = [];
-        return self::done('The route was optimised.', ['days' => array_keys($report['days']), 'report' => $report]);
+        return self::done(self::optimiseSentence($report, [self::class, 'optimiseText']), ['days' => array_keys($report['days']), 'report' => $report]);
     }
+
+    /** One English sentence of OPTIMISE_TEXT with its variables. */
+    public static function optimiseText(string $key, array $vars = []): string
+    {
+        $text = self::OPTIMISE_TEXT[$key] ?? $key;
+        foreach ($vars as $name => $value) $text = str_replace('{' . $name . '}', (string)$value, $text);
+        return $text;
+    }
+
+    /** The English sentences of optimiseSentence(); the pages use the keys optm.* of lang/. */
+    private const OPTIMISE_TEXT = [
+        'optm.done_one' => 'Day {days} is now in a shorter order{saved}.',
+        'optm.done_many' => 'Days {days} are now in a shorter order{saved}.',
+        'optm.saved' => ', with {n} min less travelling',
+        'optm.best' => 'Every day is already in its best order.',
+        'optm.times' => 'Times are up to date.',
+        'optm.replaced' => 'Replaced, because no order keeps them within the trip\'s rules: {list}.',
+        'optm.replaced_item' => 'day {day}: {old} by {new}',
+        'optm.not_replaced' => 'Removed without a replacement, because no order and no other place fits: {list}.',
+        'optm.removed_item' => 'day {day}: {old}',
+        'optm.kept_day' => 'Day {day} was kept as it was: no order keeps its must-see place {name}.',
+        'optm.over_budget' => 'The trip now comes to RM {total}, RM {over} over your budget.',
+        'optm.list_sep' => ', ',
+        'optm.list_and' => ' and ',
+    ];
+
+    /**
+     * What the optimiser did, in one paragraph: the days in a shorter order, the stops replaced
+     * (old by new), those removed without a replacement, the days kept as they were and the
+     * amount over the budget.
+     *
+     * @param callable(string,array):string $t a translator: key of OPTIMISE_TEXT, variables
+     */
+    public static function optimiseSentence(array $report, callable $t): string
+    {
+        $days = (array)($report['reordered_days'] ?? []);
+        $parts = [];
+        if ($days) {
+            $list = count($days) === 1 ? (string)$days[0] : implode($t('optm.list_sep', []), array_slice($days, 0, -1)) . $t('optm.list_and', []) . end($days);
+            $saved = (int)($report['saved_min'] ?? 0) > 0 ? $t('optm.saved', ['n' => (int)$report['saved_min']]) : '';
+            $parts[] = $t(count($days) === 1 ? 'optm.done_one' : 'optm.done_many', ['days' => $list, 'saved' => $saved]);
+        } else {
+            $parts[] = $t('optm.best', []);
+        }
+        $replaced = array_map(static fn(array $r): string => $t('optm.replaced_item', ['day' => $r['day'], 'old' => $r['old'], 'new' => $r['new']]), (array)($report['replaced'] ?? []));
+        if ($replaced) $parts[] = $t('optm.replaced', ['list' => implode('; ', $replaced)]);
+        $lost = array_map(static fn(array $r): string => $t('optm.removed_item', ['day' => $r['day'], 'old' => $r['old']]), (array)($report['not_replaced'] ?? []));
+        if ($lost) $parts[] = $t('optm.not_replaced', ['list' => implode('; ', $lost)]);
+        foreach ((array)($report['kept_days'] ?? []) as $d => $name) $parts[] = $t('optm.kept_day', ['day' => $d, 'name' => $name]);
+        if ((float)($report['over_by'] ?? 0) > 0) {
+            $parts[] = $t('optm.over_budget', ['total' => number_format((float)$report['total'], 2), 'over' => number_format((float)$report['over_by'], 2)]);
+        }
+        $parts[] = $t('optm.times', []);
+        return implode(' ', $parts);
+    }
+
+    /** Places the day search offers for each day, measured with the trip, in case a stop gives way (reorderTrip()). */
+    private const OPTIMISE_CANDIDATES = 3;
 
     /**
      * Reorder and re-time every day of an itinerary with the least travelling that keeps every
      * rule (ItineraryRouteOptimiser::optimise(), the "Optimise route" button). Call it inside the
-     * caller's transaction. One table request for the trip (its visits, hotels and bases, start
-     * and end point and, while there is room, its meal places); every day is then ordered on
-     * those figures from where it starts to its night (orderDay()), a stop no order keeps is
-     * removed, and the days are stored as an edit stores them (meals placed again, the dinner
-     * near the base, the hotel time); a day left without stops gets the "Free day" note. A day
-     * that holds a row the planner cannot time is left as it is.
+     * caller's transaction.
      *
-     * @return array{days:array,reordered_days:int[],saved_min:int,removed:string[]}
+     *   1. For every day, the day search with the stored base and group (as regenerateDay() runs
+     *      it) names the places it would take (OPTIMISE_CANDIDATES): they stand by for a stop that
+     *      gives way, and are measured with the trip.
+     *   2. One request: a table of the trip's points (visits, hotels and bases, start and end
+     *      point, then while there is room the candidates and the meal places), or for a long trip
+     *      (more than PlannerRules::LONG_TRIP_POINTS points of its own) one route request along
+     *      the legs of each day's best order, the legs to its end and the candidates' legs; the
+     *      rest stays on the figures at hand.
+     *   3. Every day is ordered on those figures from where it starts to its night (orderDay()).
+     *      A must-see place is never dropped for a better order: when no order keeps it, the
+     *      stored order is timed again, and when that fails too the day stays as it was. A stop
+     *      no order keeps gives way to the candidates, each tried in every order and taken only
+     *      inside the budget rule and the traveller's limit on places of worship.
+     *   4. The days are stored as an edit stores them (meals placed again, the dinner near the
+     *      base, the hotel time); a day left without stops gets the "Free day" note. A day that
+     *      holds a row the planner cannot time, or that was kept, is left as it was (its legs
+     *      too). When the new distances put the trip over the budget nothing is deleted: the
+     *      report says by how much (over_by).
+     *
+     * @return array{days:array,reordered_days:int[],saved_min:int,removed:string[],replaced:array,
+     *               not_replaced:array,kept_days:array,total:float,budget:float,over_by:float,long_trip:bool}
+     *         days: day => stops, before_min, after_min, reordered, problems (stops that gave
+     *         way), replaced, not_replaced (counts); replaced: [day, old, new, reason]; not_replaced:
+     *         [day, old, reason]; kept_days: day => the must-see place no order keeps
      */
     public static function reorderTrip(mysqli $conn, int $itineraryId): array
     {
-        $report = ['days' => [], 'reordered_days' => [], 'saved_min' => 0, 'removed' => []];
+        $report = ['days' => [], 'reordered_days' => [], 'saved_min' => 0, 'removed' => [], 'replaced' => [], 'not_replaced' => [],
+                   'kept_days' => [], 'total' => 0.0, 'budget' => 0.0, 'over_by' => 0.0, 'long_trip' => false];
         self::$cache = [];
         $ctx = self::context($conn, $itineraryId, false);
         if ($ctx === null) return $report;
         $route = $ctx['route'];
         $route->setTimeout(ItineraryRouteOptimiser::ROUTE_TIMEOUT);
         $days = self::visits($ctx);
+        $starts = self::starts($ctx, $days);
+        $usable = static fn(int $d): bool => $days[$d] && !$ctx['days'][$d]['locked'] && $starts[$d]['point'] !== null;
+
+        // 1. The day search's places for every day, before anything is measured.
+        $standby = [];
+        foreach (array_keys($ctx['days']) as $d) {
+            if ($usable($d)) $standby[$d] = self::standbyPlaces($ctx, $days, $d);
+        }
+
+        // 2. One request for the trip.
         $pointsByDay = [];
         $mealPoints = [];
+        $own = [];
         foreach ($ctx['days'] as $d => $day) {
             $pointsByDay[$d] = array_column($days[$d], 'point');
             foreach ($day['meals'] as $m) if (($p = self::point($m['item_latitude'], $m['item_longitude'])) !== null) $mealPoints[] = $p;
@@ -664,33 +772,193 @@ class ItineraryEditService
         }
         if ($ctx['origin'] !== null) $pointsByDay[1][] = $ctx['origin'];
         if ($ctx['finish'] !== null) $pointsByDay[$ctx['total_days']][] = $ctx['finish'];
-        $route->preloadTrip($pointsByDay, $mealPoints);
-
-        $deleted = [];
-        foreach (array_keys($ctx['days']) as $d) {
-            $start = self::starts($ctx, $days)[$d];
-            if (!$days[$d] || $ctx['days'][$d]['locked'] || $start['point'] === null) continue;
-            $frame = self::timingFrame($ctx, $d, $days, ['budget' => false]);
-            $before = self::travelMinutes($route, $start['point'], array_column($days[$d], 'point'), $frame['end'] ?? $frame['finish']);
-            $ordered = ItineraryRouteOptimiser::orderDay($route, self::dayProfile($ctx, $d), $start['point'], $days[$d], $frame);
-            $keptIds = array_map(static fn(array $s): int => (int)$s['item_id'], $ordered['stops']);
-            $reordered = $keptIds !== array_map(static fn(array $s): int => (int)$s['item_id'], $days[$d]);
-            foreach ($ordered['dropped'] as $stop) {
-                $deleted[] = (int)$stop['item_id'];
-                $report['removed'][] = 'Day ' . $d . ': ' . $stop['row']['item_title'] . ' (' . PlannerRules::reasonText((string)$stop['reason']) . ')';
+        foreach ($pointsByDay as $points) foreach ($points as $p) $own[round((float)$p[0], 5) . ',' . round((float)$p[1], 5)] = true;
+        $candidatePoints = [];
+        foreach ($standby as [, $list]) foreach ($list as $c) $candidatePoints[] = $c['point'];
+        $report['long_trip'] = count($own) > PlannerRules::LONG_TRIP_POINTS;
+        if ($report['long_trip']) {
+            // A long trip asks for no large table: one route request along the legs that matter.
+            $legs = [];
+            $candidateLegs = [];
+            foreach (array_keys($ctx['days']) as $d) {
+                if (!$usable($d)) continue;
+                $start = $starts[$d]['point'];
+                $frame = self::timingFrame($ctx, $d, $days, ['budget' => false]);
+                $end = $frame['end'] ?? $frame['finish'];
+                $best = ItineraryRouteOptimiser::orderDay($route, self::dayProfile($ctx, $d), $start, $days[$d], $frame);
+                $from = $start;
+                foreach (array_merge($best['stops'], $best['dropped']) as $s) { $legs[] = [$from, $s['point']]; $from = $s['point']; }
+                if ($end !== null) {
+                    $legs[] = [$from, $end];
+                    foreach ($days[$d] as $s) $legs[] = [$s['point'], $end];
+                }
+                foreach ($standby[$d][1] ?? [] as $c) {
+                    $candidateLegs[] = [$start, $c['point']];
+                    foreach ($days[$d] as $s) { $candidateLegs[] = [$s['point'], $c['point']]; $candidateLegs[] = [$c['point'], $s['point']]; }
+                    if ($end !== null) $candidateLegs[] = [$c['point'], $end];
+                }
             }
-            $report['days'][$d] = ['stops' => count($ordered['stops']), 'before_min' => $before, 'after_min' => (int)$ordered['minutes'],
-                                   'reordered' => $reordered, 'problems' => count($ordered['dropped'])];
+            $route->measureLegs(array_merge($legs, $candidateLegs), 1);
+        } else {
+            $route->preloadTrip($pointsByDay, array_merge($candidatePoints, $mealPoints));
+        }
+
+        // 3. Every day ordered on those figures; a stop that gives way is replaced where a place fits.
+        $deleted = [];
+        $plans = [];        // day => its new order (for the budget and the meal places of the days after it)
+        $kept = [];         // days left as they were
+        $newStops = [];     // day => true: a new place came in (its rain notes are written again)
+        foreach (array_keys($ctx['days']) as $d) {
+            if (!$usable($d)) continue;
+            $start = self::starts($ctx, $days)[$d];
+            $profile = self::dayProfile($ctx, $d);
+            $frame = self::timingFrame($ctx, $d, $days, ['budget' => false], $plans);
+            $before = self::travelMinutes($route, $start['point'], array_column($days[$d], 'point'), $frame['end'] ?? $frame['finish']);
+            $ordered = ItineraryRouteOptimiser::orderDay($route, $profile, $start['point'], $days[$d], $frame);
+            $mustLost = array_values(array_filter($ordered['dropped'], static fn(array $s): bool => !empty($s['must'])));
+            if ($mustLost) {
+                // No order keeps the must-see place: the stored order, timed again, or the day as it was.
+                $inOrder = ItineraryRouteOptimiser::timeInOrder($route, $profile, $start['point'], $days[$d], $frame + ['first_leg_exempt' => $start['exempt']]);
+                if ($inOrder['dropped']) {
+                    $kept[$d] = true;
+                    $report['kept_days'][$d] = (string)$mustLost[0]['place']['name'];
+                    $report['days'][$d] = ['stops' => count($days[$d]), 'before_min' => $before, 'after_min' => $before, 'reordered' => false,
+                                           'problems' => 0, 'replaced' => 0, 'not_replaced' => 0];
+                    continue;
+                }
+                $ordered = $inOrder;
+            }
+            $stops = $ordered['stops'];
+            $wanted = count($days[$d]);
+            $fills = [];
+            if ($ordered['dropped'] && isset($standby[$d])) {
+                [$dayCtx, $list] = $standby[$d];
+                $budgetFrame = self::timingFrame($ctx, $d, $days, ['budget' => true], $plans);
+                $builder = new ItineraryDayBuilder($profile, $route, $ctx['meal_pool']);
+                $taken = self::usedOutside($ctx, $d, $days, $plans);
+                foreach ($days[$d] as $s) $taken[(int)$s['place']['place_id']] = true;
+                foreach ($list as $c) {
+                    if (count($stops) >= $wanted) break;
+                    $id = (int)$c['place']['place_id'];
+                    if (isset($taken[$id]) || PlannerRules::twinIn($profile, $id, $taken) !== null) continue;
+                    if (self::placeRefusal($ctx, $c['place'], $id, null) !== null) continue;
+                    $c = $builder->relevel($c, $dayCtx, $stops);
+                    if (self::worshipRefusal($ctx, array_merge($stops, [$c]), $d) !== null) continue;
+                    // In every order, inside the budget rule.
+                    $try = ItineraryRouteOptimiser::orderDay($route, $profile, $start['point'], array_merge($stops, [$c]), $budgetFrame);
+                    if ($try['dropped']) continue;
+                    $stops = $try['stops'];
+                    $ordered = ['dropped' => $ordered['dropped']] + $try;
+                    $fills[] = $c;
+                    $taken[$id] = true;
+                }
+            }
+            foreach ($ordered['dropped'] as $k => $stop) {
+                $deleted[] = (int)$stop['item_id'];
+                $reason = PlannerRules::reasonText((string)$stop['reason']);
+                $report['removed'][] = 'Day ' . $d . ': ' . $stop['row']['item_title'] . ' (' . $reason . ')';
+                if (isset($fills[$k])) {
+                    $report['replaced'][] = ['day' => $d, 'old' => (string)$stop['row']['item_title'], 'new' => (string)$fills[$k]['place']['name'], 'reason' => (string)$stop['reason']];
+                } else {
+                    $report['not_replaced'][] = ['day' => $d, 'old' => (string)$stop['row']['item_title'], 'reason' => (string)$stop['reason']];
+                }
+            }
+            $oldIds = array_map(static fn(array $s): int => (int)$s['item_id'], $days[$d]);
+            $newIds = array_map(static fn(array $s): int => (int)($s['item_id'] ?? 0), $stops);
+            $reordered = $newIds !== $oldIds;
+            $report['days'][$d] = ['stops' => count($stops), 'before_min' => $before, 'after_min' => (int)$ordered['minutes'], 'reordered' => $reordered,
+                                   'problems' => count($ordered['dropped']), 'replaced' => min(count($fills), count($ordered['dropped'])),
+                                   'not_replaced' => max(0, count($ordered['dropped']) - count($fills))];
             if ($reordered) {
                 $report['reordered_days'][] = $d;
                 $report['saved_min'] += max(0, $before - (int)$ordered['minutes']);
             }
-            $days[$d] = array_map(static fn(array $s): array => array_intersect_key($s, array_flip(['place', 'point', 'must', 'item_id', 'row', 'set_place', 'tier', 'reasons'])), $ordered['stops']);
+            // The stops in their new order: a stored stop keeps its row, a new place gets one.
+            $days[$d] = array_map(static function (array $s): array {
+                if (!empty($s['item_id'])) return array_intersect_key($s, array_flip(['place', 'point', 'must', 'item_id', 'row', 'set_place', 'tier', 'reasons']));
+                return self::stopOf($s['place'], null, (int)($s['tier'] ?? 1), (array)($s['reasons'] ?? []), false);
+            }, $stops);
+            if ($fills) $newStops[$d] = true;
+            $plans[$d] = $ordered;
         }
-        $plan = self::plan($ctx, $days, array_keys($ctx['days']), ['budget' => false, 'best_effort' => true, 'measure' => false]);
-        self::store($conn, $ctx, $days, $plan, $deleted, ['why_empty' => 'no order keeps its stops within the rules']);
+        $timed = array_values(array_filter(array_keys($ctx['days']), static fn(int $d): bool => !isset($kept[$d])));
+        // Rain notes of a new stop are written for its visit as timed (no forecast is asked here).
+        $rainDay = array_map(static fn(): array => ['rain' => null, 'rain_hours' => null], $newStops);
+        $plan = self::plan($ctx, $days, $timed, ['budget' => false, 'best_effort' => true, 'measure' => false, 'rain_day' => $rainDay]);
+        if (empty($plan['ok'])) {
+            // Only a rule of the whole change can refuse a best-effort timing: nothing is stored then.
+            self::$cache = [];
+            $nothing = ['days' => [], 'reordered_days' => [], 'saved_min' => 0, 'removed' => [], 'replaced' => [], 'not_replaced' => [], 'kept_days' => []];
+            return self::budgetState($conn, $itineraryId) + $nothing + $report;
+        }
+        // A day that is not timed again keeps its rows and its stored legs.
+        $legs = [];
+        foreach (array_keys($ctx['days']) as $d) {
+            if (isset($plan['plans'][$d])) continue;
+            foreach (array_merge($ctx['days'][$d]['visits'], $ctx['days'][$d]['meals'], $ctx['days'][$d]['notes']) as $row) {
+                $r = $row['row'] ?? $row;
+                if (isset($r['item_id'])) $legs[(int)$r['item_id']] = [$r['distance_km'], $r['travel_time_min']];
+            }
+            if ($ctx['days'][$d]['hotel'] !== null) $legs[(int)$ctx['days'][$d]['hotel']['item_id']] = [$ctx['days'][$d]['hotel']['distance_km'], $ctx['days'][$d]['hotel']['travel_time_min']];
+        }
+        self::store($conn, $ctx, $days, $plan, $deleted, ['why_empty' => 'no order keeps its stops within the rules', 'rain_day' => $rainDay]);
+        if ($legs) {
+            $update = $conn->prepare("UPDATE itinerary_items SET distance_km = ?, travel_time_min = ? WHERE item_id = ? AND itinerary_id = ?");
+            foreach ($legs as $itemId => [$km, $min]) {
+                $km = $km !== null ? (float)$km : null;
+                $min = $min !== null ? (int)$min : null;
+                $update->bind_param('diii', $km, $min, $itemId, $itineraryId);
+                $update->execute();
+            }
+            $update->close();
+            self::total($conn, $itineraryId);
+        }
+        $report = self::budgetState($conn, $itineraryId) + $report;
         self::$cache = [];
         return $report;
+    }
+
+    /**
+     * The places the day search would take for a day (reorderTrip()): the search with the stored
+     * base and group, the other days' places used, the day's must-see places kept, on the figures
+     * at hand; its stops and its next places (spares) that are not stops of the day already, best
+     * first, at most OPTIMISE_CANDIDATES.
+     *
+     * @return array{0:array,1:array} the day as the builder reads it, and the places (stops of the search)
+     */
+    private static function standbyPlaces(array $ctx, array $days, int $d): array
+    {
+        $profile = self::dayProfile($ctx, $d);
+        $start = self::starts($ctx, $days)[$d];
+        $budget = self::budgetOutside($ctx, $d, $days, []);
+        $musts = array_values(array_filter($days[$d], static fn(array $s): bool => $s['must']));
+        $dayCtx = [
+            'day_no' => $d,
+            'date' => $ctx['dates'][$d],
+            'rain' => null,
+            'rain_hours' => null,
+            'start' => $start['point'],
+            'first_leg_exempt' => $start['exempt'],
+            'used' => self::usedOutside($ctx, $d, $days, []),
+            'trip_items' => $budget['items'],
+            'trip_km' => $budget['km'],
+            'reserve_km' => 0.0,
+            'previous_theme' => self::previousTheme($days, $d),
+            'musts' => array_map(static fn(array $s): array => $s['place'], $musts),
+        ] + self::dayEnd($ctx, $d);
+        $mustIds = PlannerRules::withTwins($profile, array_map(static fn(array $s): int => (int)$s['place']['place_id'], $musts));
+        $pool = array_values(array_filter($ctx['pool'], static fn(array $p): bool => !isset($mustIds[(int)$p['place_id']])));
+        $built = (new ItineraryDayBuilder($profile, $ctx['route'], $ctx['meal_pool']))->search($pool, $dayCtx);
+        $here = [];
+        foreach ($days[$d] as $s) $here[(int)$s['place']['place_id']] = true;
+        $out = [];
+        foreach (array_merge($built['stops'], $built['spares']) as $c) {
+            $id = (int)$c['place']['place_id'];
+            if (!empty($c['must']) || isset($here[$id]) || isset($out[$id]) || PlannerRules::twinIn($profile, $id, $here) !== null) continue;
+            $out[$id] = $c;
+            if (count($out) >= self::OPTIMISE_CANDIDATES) break;
+        }
+        return [$dayCtx, array_values($out)];
     }
 
     /** Minutes of travelling from $start through the points to $end. */
@@ -846,6 +1114,25 @@ class ItineraryEditService
     /** Total estimated cost of the trip for the whole party. */
     public static function total(mysqli $conn, int $itineraryId): void
     {
+        $meta = self::costMeta($conn, $itineraryId);
+        if ($meta === null) return;
+        $itemsStmt = $conn->prepare("SELECT item_type, estimated_cost, distance_km FROM itinerary_items WHERE itinerary_id = ?");
+        $itemsStmt->bind_param('i', $itineraryId);
+        $itemsStmt->execute();
+        $items = $itemsStmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $itemsStmt->close();
+        $totalDistanceKm = array_sum(array_map(static fn($item) => (float)($item['distance_km'] ?? 0), $items));
+        $total = self::costOf($meta, $items, $totalDistanceKm);
+
+        $update = $conn->prepare("UPDATE itineraries SET total_estimated_cost = ? WHERE itinerary_id = ?");
+        $update->bind_param('di', $total, $itineraryId);
+        $update->execute();
+        $update->close();
+    }
+
+    /** What total() prices a trip with: its days, transport, budget, tier and party; null when it does not exist. */
+    private static function costMeta(mysqli $conn, int $itineraryId): ?array
+    {
         $stmt = $conn->prepare("
             SELECT i.total_days, tp.transport_type, tp.budget, tp.budget_tier, tp.traveller_type, tp.party_size
             FROM itineraries i
@@ -857,30 +1144,261 @@ class ItineraryEditService
         $stmt->execute();
         $meta = $stmt->get_result()->fetch_assoc();
         $stmt->close();
-        if (!$meta) return;
+        return $meta ?: null;
+    }
 
-        $itemsStmt = $conn->prepare("SELECT item_type, estimated_cost, distance_km FROM itinerary_items WHERE itinerary_id = ?");
-        $itemsStmt->bind_param('i', $itineraryId);
-        $itemsStmt->execute();
-        $items = $itemsStmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        $itemsStmt->close();
-        $totalDistanceKm = array_sum(array_map(static fn($item) => (float)($item['distance_km'] ?? 0), $items));
-
+    /** The total of these items (item_type, estimated_cost) and km, exactly as total() stores it. */
+    private static function costOf(array $meta, array $items, float $totalDistanceKm): float
+    {
         $transportType = (string)($meta['transport_type'] ?? 'car');
         $totalDays = (int)($meta['total_days'] ?? 1);
         $budget = (float)($meta['budget'] ?? 0);
         $travellerType = (string)($meta['traveller_type'] ?? 'solo');
         $partySize = CostEstimationService::resolvePartySize($travellerType, isset($meta['party_size']) ? (int)$meta['party_size'] : null);
         $tierDefaults = CostEstimationService::budgetTierDefaults(strtolower((string)($meta['budget_tier'] ?? 'normal')), $budget, $totalDays, $partySize);
-
         $costService = new CostEstimationService($transportType, $totalDays, $budget, $travellerType, $partySize);
         $breakdown = $costService->calculate($items, $totalDistanceKm, $tierDefaults['hotel'], 3, $tierDefaults['meal']);
-        $total = (float)($breakdown['total_cost'] ?? 0);
+        return (float)($breakdown['total_cost'] ?? 0);
+    }
 
-        $update = $conn->prepare("UPDATE itineraries SET total_estimated_cost = ? WHERE itinerary_id = ?");
-        $update->bind_param('di', $total, $itineraryId);
-        $update->execute();
-        $update->close();
+    /**
+     * The stored total against the budget: total, budget (0: none), over_by (0 when within).
+     *
+     * @return array{total:float,budget:float,over_by:float}
+     */
+    public static function budgetState(mysqli $conn, int $itineraryId): array
+    {
+        $stmt = $conn->prepare("SELECT i.total_estimated_cost, tp.budget FROM itineraries i LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id WHERE i.itinerary_id = ? LIMIT 1");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $row = $stmt->get_result()->fetch_assoc() ?: [];
+        $stmt->close();
+        $total = round((float)($row['total_estimated_cost'] ?? 0), 2);
+        $budget = round((float)($row['budget'] ?? 0), 2);
+        return ['total' => $total, 'budget' => $budget, 'over_by' => $budget > 0 && $total > $budget + 0.005 ? round($total - $budget, 2) : 0.0];
+    }
+
+    /**
+     * Whether the trip stays inside the budget with each of these hotels for the given nights
+     * (the other nights keep their stored hotel, or the one in $others), for marking hotel
+     * suggestions. The total is computed as total() stores it: the items with the hotel rows of
+     * those nights in place of the stored ones, and the stored km with the legs to and from the
+     * hotel estimated (the leg from the day's last row with a place to the hotel, and from the
+     * hotel to the next day's first). No routing request is made.
+     *
+     * @param int[]             $nights night numbers the hotel would cover (night N = after day N)
+     * @param array<int,array>  $hotels hotels as HotelRecommendationService returns them
+     * @param array<int,array>  $others night => hotel chosen on the page but not saved yet
+     * @return array<int,array{total:float,budget:float,over_by:float,within:bool}> by the keys of $hotels
+     */
+    public static function hotelBudget(mysqli $conn, int $itineraryId, array $nights, array $hotels, array $others = []): array
+    {
+        $meta = self::costMeta($conn, $itineraryId);
+        if ($meta === null) return [];
+        $totalDays = max(1, (int)$meta['total_days']);
+        $stmt = $conn->prepare("SELECT ii.day_no, ii.item_type, ii.estimated_cost, ii.distance_km,
+                                       COALESCE(ii.item_latitude, cp.latitude) AS lat, COALESCE(ii.item_longitude, cp.longitude) AS lng
+                                FROM itinerary_items ii LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+                                WHERE ii.itinerary_id = ? ORDER BY ii.day_no, ii.sequence_no, ii.item_id");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        $nights = array_values(array_filter(array_map('intval', $nights), static fn(int $n): bool => $n >= 1 && $n < $totalDays));
+        $route = new RouteService((string)($meta['transport_type'] ?? 'car'));
+        $budget = (float)($meta['budget'] ?? 0);
+        $out = [];
+        foreach ($hotels as $key => $hotel) {
+            $chosen = [];
+            foreach ($others as $n => $h) if (is_array($h) && (int)$n >= 1 && (int)$n < $totalDays) $chosen[(int)$n] = $h;
+            foreach ($nights as $n) $chosen[$n] = $hotel;
+            $items = [];
+            $km = 0.0;
+            $lastPoint = [];   // day => the point of its last row with a place, not the hotel
+            $firstRow = [];    // day => [point, stored km] of its first row with a place
+            foreach ($rows as $r) {
+                $d = (int)$r['day_no'];
+                $type = strtolower((string)$r['item_type']);
+                $point = self::point($r['lat'], $r['lng']);
+                if ($type === 'hotel' && isset($chosen[$d])) continue;   // replaced below
+                $items[] = ['item_type' => $type, 'estimated_cost' => (float)$r['estimated_cost']];
+                $km += (float)($r['distance_km'] ?? 0);
+                if ($point === null || $type === 'hotel') continue;
+                $lastPoint[$d] = $point;
+                $firstRow[$d] ??= [$point, (float)($r['distance_km'] ?? 0)];
+            }
+            foreach ($chosen as $n => $h) {
+                $items[] = ['item_type' => 'hotel', 'estimated_cost' => max(0.0, (float)($h['price_per_night'] ?? 0))];
+                $at = self::point($h['latitude'] ?? null, $h['longitude'] ?? null);
+                if ($at === null) continue;
+                if (isset($lastPoint[$n])) $km += (float)$route->getSegment($lastPoint[$n][0], $lastPoint[$n][1], $at[0], $at[1])['distance_km'];
+                if (isset($firstRow[$n + 1])) {
+                    [$p, $stored] = $firstRow[$n + 1];
+                    $km += (float)$route->getSegment($at[0], $at[1], $p[0], $p[1])['distance_km'] - $stored;
+                }
+            }
+            $total = round(self::costOf($meta, $items, max(0.0, $km)), 2);
+            $over = $budget > 0 && $total > $budget + 0.005 ? round($total - $budget, 2) : 0.0;
+            $out[$key] = ['total' => $total, 'budget' => round($budget, 2), 'over_by' => $over, 'within' => $over <= 0];
+        }
+        return $out;
+    }
+
+    // =====================================================================================
+    // Versions of a plan (ItineraryGenerator::createVersion(), migration
+    // 20261122_itinerary_versions.sql): itineraries with version_of set are not trips of their
+    // own until one is chosen. The caller checks that the itinerary is the traveller's.
+    // =====================================================================================
+
+    /** Whether the database can store versions (the columns of migration 20261122_itinerary_versions.sql). */
+    public static function hasVersions(mysqli $conn): bool
+    {
+        return PlannerRules::hasColumn($conn, 'itineraries', 'version_of');
+    }
+
+    /**
+     * The versions of an itinerary, oldest first: itinerary_id, plan_style, created_at.
+     *
+     * @return array<int,array{itinerary_id:int,plan_style:string,created_at:string}>
+     */
+    public static function versionList(mysqli $conn, int $itineraryId): array
+    {
+        if (!self::hasVersions($conn)) return [];
+        $stmt = $conn->prepare('SELECT itinerary_id, plan_style, created_at FROM itineraries WHERE version_of = ? ORDER BY itinerary_id');
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $out = array_map(static fn(array $r): array => ['itinerary_id' => (int)$r['itinerary_id'], 'plan_style' => (string)$r['plan_style'], 'created_at' => (string)$r['created_at']],
+            $stmt->get_result()->fetch_all(MYSQLI_ASSOC));
+        $stmt->close();
+        return $out;
+    }
+
+    /**
+     * Make one version the itinerary under review: it is no version any more, and the itinerary
+     * it was a version of goes with its other versions. $versionId equal to $itineraryId keeps
+     * the first plan and removes the versions. One transaction.
+     *
+     * @return array result + itinerary_id (the one that remains)
+     */
+    public static function chooseVersion(mysqli $conn, int $itineraryId, int $versionId): array
+    {
+        if (!self::hasVersions($conn)) return self::refused('UNAVAILABLE', 'Versions of a plan cannot be stored on this database yet.');
+        if ($versionId === $itineraryId) {
+            self::dropVersions($conn, $itineraryId);
+            return self::done('The first plan is kept; its other versions were removed.', ['itinerary_id' => $itineraryId]);
+        }
+        $conn->begin_transaction();
+        try {
+            $stmt = $conn->prepare('SELECT itinerary_id FROM itineraries WHERE itinerary_id = ? AND version_of = ? LIMIT 1 FOR UPDATE');
+            $stmt->bind_param('ii', $versionId, $itineraryId);
+            $stmt->execute();
+            $found = $stmt->get_result()->fetch_assoc();
+            $stmt->close();
+            if (!$found) { $conn->rollback(); return self::refused('NOT_FOUND', 'This version was not found.'); }
+            $stmt = $conn->prepare('UPDATE itineraries SET version_of = NULL WHERE itinerary_id = ?');
+            $stmt->bind_param('i', $versionId);
+            $stmt->execute();
+            $stmt->close();
+            // The other versions, then the first plan.
+            foreach (['DELETE FROM itineraries WHERE version_of = ?', 'DELETE FROM itineraries WHERE itinerary_id = ?'] as $sql) {
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param('i', $itineraryId);
+                $stmt->execute();
+                $stmt->close();
+            }
+            $conn->commit();
+        } catch (Throwable $e) {
+            $conn->rollback();
+            throw $e;
+        }
+        self::$cache = [];
+        return self::done('This version is now your itinerary; the other versions were removed.', ['itinerary_id' => $versionId]);
+    }
+
+    /** Remove every version of an itinerary that was not chosen (the review was confirmed, or the itinerary deleted). */
+    public static function dropVersions(mysqli $conn, int $itineraryId): int
+    {
+        if (!self::hasVersions($conn)) return 0;
+        $stmt = $conn->prepare('DELETE FROM itineraries WHERE version_of = ?');
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $n = $stmt->affected_rows;
+        $stmt->close();
+        return max(0, (int)$n);
+    }
+
+    /** Remove a traveller's versions older than $hours that were never chosen (run when the traveller generates). */
+    public static function pruneVersions(mysqli $conn, int $travellerId, int $hours = 24): int
+    {
+        if (!self::hasVersions($conn)) return 0;
+        $stmt = $conn->prepare('DELETE FROM itineraries WHERE traveller_id = ? AND version_of IS NOT NULL AND created_at < (NOW() - INTERVAL ? HOUR)');
+        $stmt->bind_param('ii', $travellerId, $hours);
+        $stmt->execute();
+        $n = $stmt->affected_rows;
+        $stmt->close();
+        return max(0, (int)$n);
+    }
+
+    /**
+     * What the comparison of versions shows of one itinerary: its style, per day the stops,
+     * the first start and the last end (visits and meals) and the places by name, the total
+     * travelling minutes (every stored leg), the stored total against the budget, and how many
+     * stops match the traveller's interests (and how many of them an interest loved).
+     *
+     * @return array{itinerary_id:int,style:?string,days:array,stops:int,travel_min:int,total:float,budget:float,
+     *               over_by:float,interest_stops:int,loved_stops:int}|null
+     */
+    public static function versionSummary(mysqli $conn, int $itineraryId): ?array
+    {
+        $stmt = $conn->prepare('SELECT total_days, preference_id' . (self::hasVersions($conn) ? ', plan_style' : ', NULL AS plan_style') . ' FROM itineraries WHERE itinerary_id = ? LIMIT 1');
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $meta = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        if (!$meta) return null;
+        $pref = PlannerRules::loadPreference($conn, (int)$meta['preference_id']) ?? PlannerRules::normalizePreference([]);
+        $interests = array_fill_keys((array)$pref['interests'], true);
+        $weights = (array)$pref['interest_weights'];
+        $meal = PlannerRules::hasColumn($conn, 'itinerary_items', 'meal_slot') ? 'ii.meal_slot' : 'NULL AS meal_slot';
+        $stmt = $conn->prepare("SELECT ii.day_no, ii.item_type, {$meal}, ii.place_id, ii.item_title, ii.start_time, ii.end_time, ii.travel_time_min,
+                                       LOWER(COALESCE(cp.category, '')) AS category
+                                FROM itinerary_items ii LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
+                                WHERE ii.itinerary_id = ? ORDER BY ii.day_no, ii.sequence_no, ii.item_id");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $rows = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        $days = [];
+        for ($d = 1; $d <= max(1, (int)$meta['total_days']); $d++) $days[$d] = ['stops' => 0, 'first' => null, 'last' => null, 'places' => []];
+        $travel = 0;
+        $matching = 0;
+        $loved = 0;
+        $stops = 0;
+        foreach ($rows as $r) {
+            $d = (int)$r['day_no'];
+            if (!isset($days[$d])) continue;
+            $type = strtolower((string)$r['item_type']);
+            $travel += (int)($r['travel_time_min'] ?? 0);
+            $isMeal = $r['meal_slot'] !== null;
+            $isVisit = !$isMeal && in_array($type, ['attraction', 'food', 'festival'], true) && (int)$r['place_id'] > 0;
+            if ($isVisit || $isMeal) {
+                $start = PlannerRules::minutesOf($r['start_time']);
+                $end = PlannerRules::minutesOf($r['end_time']);
+                if ($start !== null) $days[$d]['first'] = $days[$d]['first'] === null ? $start : min($days[$d]['first'], $start);
+                if ($end !== null) $days[$d]['last'] = $days[$d]['last'] === null ? $end : max($days[$d]['last'], $end);
+            }
+            if (!$isVisit) continue;
+            $days[$d]['stops']++;
+            $days[$d]['places'][] = (string)$r['item_title'];
+            $stops++;
+            if (isset($interests[(string)$r['category']])) {
+                $matching++;
+                if ((int)($weights[(string)$r['category']] ?? 2) === 3) $loved++;
+            }
+        }
+        $money = self::budgetState($conn, $itineraryId);
+        return ['itinerary_id' => $itineraryId, 'style' => $meta['plan_style'] !== null ? (string)$meta['plan_style'] : null, 'days' => $days,
+                'stops' => $stops, 'travel_min' => $travel, 'interest_stops' => $matching, 'loved_stops' => $loved] + $money;
     }
 
     // =====================================================================================
@@ -1712,7 +2230,8 @@ class ItineraryEditService
         $pref = PlannerRules::loadPreference($conn, (int)$meta['preference_id']) ?? PlannerRules::normalizePreference([]);
         $origin = self::point($meta['origin_lat'] ?? null, $meta['origin_lng'] ?? null);
         $ratings = PlannerCandidates::travellerRatings($conn, $travellerId, PlannerRules::LEARN_DROP_AT);
-        $input = $pref + ['learned' => PlannerRules::learnedPoints($ratings['categories'])];
+        // The style the itinerary was planned in (a chosen version): every change keeps it.
+        $input = $pref + ['learned' => PlannerRules::learnedPoints($ratings['categories']), 'style' => $meta['plan_style'] ?? null];
         if ($origin !== null) $input += ['origin_lat' => $origin[0], 'origin_lng' => $origin[1]];
         $profile = PlannerRules::profile($input);
         $profile['meals'] = PlannerRules::hasColumn($conn, 'itinerary_items', 'meal_slot');

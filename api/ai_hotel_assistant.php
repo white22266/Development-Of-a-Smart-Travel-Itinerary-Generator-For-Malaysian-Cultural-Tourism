@@ -2,13 +2,17 @@
 // api/ai_hotel_assistant.php
 // The hotel part of the travel assistant: suggests places to stay near the last stop of an
 // itinerary, and saves the one the traveller confirms. Suggestions come from the local lodging
-// list; the language model only words the answer.
+// list; the language model only words the answer. The budget is checked as on the review page:
+// the suggestions that keep the trip inside the budget come first, and a hotel that puts it over
+// is saved (ItineraryEditService::setHotels()) only when the traveller confirms it a second time
+// after being told by how much.
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
 require_once "../config/db_connect.php";
 require_once "../config/ai_language_guard.php";
+require_once "../config/i18n.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
 require_once "../services/ItineraryHotelService.php";
@@ -81,20 +85,47 @@ if ($action === "confirm_hotel") {
         hotel_assistant_reply(["status" => "error", "answer" => ai_text("hotel_gone", $lang)]);
     }
 
+    // The same check as the review page (ItineraryEditService::setHotels()): a hotel that puts the
+    // trip over the budget is not saved, and the answer says by how much. Confirming the same
+    // hotel again in this chat is the traveller's explicit confirmation: then it is saved anyway.
+    $warned = (int)($_SESSION["hotel_budget_warned"][$itineraryId] ?? 0);
+    $confirmed = $warned > 0 && $warned === (int)$hotel["hotel_id"];
     try {
-        $conn->begin_transaction();
-        $saved = ItineraryHotelService::saveNights($conn, $itineraryId, $tripDays, array_fill(1, $tripDays - 1, $hotel));
-        ItineraryEditService::refresh($conn, $itineraryId);
-        $conn->commit();
+        $saved = ItineraryEditService::setHotels($conn, $itineraryId, array_fill(1, $tripDays - 1, $hotel), $confirmed);
     } catch (Throwable $e) {
-        $conn->rollback();
         error_log("Hotel confirmation failed: " . $e->getMessage());
         hotel_assistant_reply(["status" => "error", "answer" => ai_text("hotel_save_failed", $lang)], 500);
     }
+    if (!$saved["ok"] && $saved["code"] === "HOTEL_BUDGET") {
+        $_SESSION["hotel_budget_warned"][$itineraryId] = (int)$hotel["hotel_id"];
+        hotel_assistant_reply([
+            "status" => "error",
+            "code" => "HOTEL_BUDGET",
+            "answer" => ai_text("hotel_over_budget", $lang, [
+                "name" => $hotel["name"],
+                "over" => number_format((float)$saved["over_by"], 2),
+                "total" => number_format((float)$saved["total"], 2),
+                "budget" => number_format((float)$saved["budget"], 2),
+            ]),
+            "over_by" => (float)$saved["over_by"],
+        ]);
+    }
+    unset($_SESSION["hotel_budget_warned"][$itineraryId]);
+    if (!$saved["ok"]) {
+        hotel_assistant_reply(["status" => "error", "code" => $saved["code"], "answer" => i18n_refusal((string)$saved["code"], (string)$saved["message"], $lang)]);
+    }
+    $answer = ai_text("hotel_confirmed", $lang, ["name" => $hotel["name"]]);
+    if ((float)($saved["over_by"] ?? 0) > 0) {
+        $answer .= " " . ai_text("hotel_saved_over", $lang, ["over" => number_format((float)$saved["over_by"], 2)]);
+    }
+    if (!empty($saved["refused_nights"])) {
+        $answer .= " " . ai_text("hotel_nights_refused", $lang, ["nights" => implode(", ", array_keys($saved["refused_nights"]))]);
+    }
     hotel_assistant_reply([
         "status" => "success",
-        "answer" => ai_text("hotel_confirmed", $lang, ["name" => $hotel["name"]]),
+        "answer" => $answer,
         "hotel_nights_saved" => $saved["nights"],
+        "over_by" => (float)($saved["over_by"] ?? 0),
         "reload" => true,
     ]);
 }
@@ -132,7 +163,21 @@ if (!$hotels) {
     $state = trim(explode(",", (string)($lastStop["state"] ?? $itinerary["preferred_states"] ?? ""))[0]);
     if ($state !== "") $hotels = $hotelService->recommendByState($state, $budgetForSearch, 12);
 }
-$hotels = array_slice(hotel_assistant_apply_wishes($hotels, $message, $askedMax), 0, 5);
+$hotels = hotel_assistant_apply_wishes($hotels, $message, $askedMax);
+// The budget, as the review page marks it: whether the trip stays inside it with each hotel for
+// every night (ItineraryEditService::hotelBudget()); those inside it come first.
+$budgetNote = "";
+if ($hotels && $tripDays >= 2 && (float)($itinerary["budget"] ?? 0) > 0) {
+    $marks = ItineraryEditService::hotelBudget($conn, $itineraryId, range(1, $tripDays - 1), $hotels);
+    foreach ($hotels as $k => &$h) $h["budget"] = $marks[$k] ?? null;
+    unset($h);
+    $order = array_keys($hotels);
+    usort($order, static fn(int $a, int $b): int => [empty($hotels[$a]["budget"]["within"]) ? 1 : 0, $a] <=> [empty($hotels[$b]["budget"]["within"]) ? 1 : 0, $b]);
+    $hotels = array_map(static fn(int $k): array => $hotels[$k], $order);
+    $budgetNote = !empty($hotels[0]["budget"]["within"]) ? ai_text("hotel_budget_first", $lang)
+        : ai_text("hotel_budget_none", $lang, ["over" => number_format((float)($hotels[0]["budget"]["over_by"] ?? 0), 2)]);
+}
+$hotels = array_slice($hotels, 0, 5);
 
 if (!$hotels) {
     hotel_assistant_reply([
@@ -150,6 +195,7 @@ $options = array_map(static fn(array $h): array => [
     "address" => $h["address"],
     "estimated_price_per_night_rm" => $h["price_per_night"],
     "distance_from_last_stop_km" => $h["distance_km"],
+    "trip_within_budget_with_it" => isset($h["budget"]) ? (bool)$h["budget"]["within"] : null,
 ], $hotels);
 
 $context = [
@@ -205,6 +251,8 @@ if ($others) {
         $others
     ))]);
 }
+
+if ($budgetNote !== "") $answer .= "\n\n" . $budgetNote;
 
 hotel_assistant_reply(["status" => "success", "answer" => $answer, "hotels" => $hotels, "source" => $source]);
 

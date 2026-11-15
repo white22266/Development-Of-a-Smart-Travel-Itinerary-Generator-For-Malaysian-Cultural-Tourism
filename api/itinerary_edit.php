@@ -14,7 +14,8 @@
 //                                                           categories, type:<type> or group:<group> of
 //                                                           PlaceTypeClassifier, PlannerRules::wishTokens())
 //     set_day_start   day_no (0: every day), start_time (HH:MM, empty: back to the usual start) -> setDayStart()
-//     optimise        -                                 -> optimise()
+//     optimise        -                                 -> optimise() (display names what was replaced,
+//                                                           what could not be, and the amount over the budget)
 //     replan_rain     -                                 -> replanRainyDays() with the forecast
 //
 // The answer is the service's result as JSON (ok, status done|refused, code, message, days,
@@ -179,6 +180,9 @@ if ($lang !== 'en') {
         $reason = ai_text($key, $lang);
         if ($reason === $key) $reason = ai_text('reason_code_other', $lang);
         $display = t('edit.refused', ['reason' => $reason]);
+    } elseif ($action === 'optimise') {
+        // What was reordered, replaced and removed, and the amount over the budget.
+        $display = ItineraryEditService::optimiseSentence((array)($result['report'] ?? []), static fn(string $key, array $vars = []): string => t($key, $vars));
     } elseif ($action === 'suggest') {
         $display = $result['options'] ? t('edit.suggest_found', ['count' => count($result['options'])]) : t('edit.suggest_none');
     } elseif ($action === 'replan_rain') {

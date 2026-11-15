@@ -36,6 +36,13 @@
 // of worship (worship_limit), which only must-see places may exceed.
 // REQUESTS counts the routing requests of generation and of every edit (RouteService counts
 // them, also those it would have made offline) against REQUEST_LIMITS.
+// OPTIMISE judges the optimiser: a day keeps its number of stops except those the answer names as
+// not replaced, no must-see place is lost, and an amount over the budget is stated; the fresh-
+// figures scenarios (<base>__optimise@skew, OPTIMISE_FRESH_BASES) make it meet figures that differ
+// from the plan's. HOTEL_BUDGET tries the dearest hotel near the base against the budget (refused
+// without the confirmation, saved and over the budget with it). VERSIONS judges the versions of a
+// plan (<base>__versions, VERSION_BASES): every check on each style, the style's own rules, the
+// marking, a fourth version refused and the choice of one.
 //
 // Edit scenarios (<base>__edits): the base scenario is generated, then changed through
 // ItineraryEditService as the review page and the AI editor change it (replace a stop with the
@@ -745,11 +752,47 @@ const EDIT_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal', 'p
                     'kl_selangor_couple_car_must_twin', 'kl_couple_car_stay_at_start', 'penang_kl_couple_car_5days_two_states',
                     'kl_couple_transit_dense_stops'];
 
-/** Every scenario: the fixed ones and the edit scenarios built on EDIT_BASES. */
+/**
+ * The base scenarios that also run as version scenarios (<base>__versions): the base is generated,
+ * then a version in each style (STYLES) is made through ItineraryGenerator::createVersion() and
+ * judged by every check, with the style's own rules below (VERSIONS).
+ */
+const VERSION_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal'];
+
+/**
+ * The styles of a version (docs/PLANNER.md, "Versions of a plan"), written out here on their own:
+ * relaxed has one stop fewer a day than the pace gives (never under 2, never more than the pace
+ * gives) and a day window that ends 60 minutes earlier (keeping at least 180 minutes); budget
+ * gives its paid places at most half of the attraction share of the budget.
+ */
+const STYLES = ['relaxed', 'budget', 'interest'];
+const RELAXED_STOPS_LESS = 1;
+const RELAXED_MIN_STOPS = 2;
+const RELAXED_END_EARLIER_MIN = 60;
+const RELAXED_MIN_WINDOW = 180;
+const BUDGET_STYLE_PAID_SHARE = 0.5;
+const MAX_VERSIONS = 3;
+
+/**
+ * The base scenarios that also run as fresh-figures optimiser scenarios (<base>__optimise, in the
+ * skew pass only): the base is generated on estimates and stored without its legs, as a plan
+ * stored while no routing server answered; the optimiser then meets road figures that differ
+ * from the plan's (ROUTING_TEST_SKEW, every leg new, as a real table answer replaces the stored
+ * figures). OPTIMISE: a day keeps its number of stops unless the answer names the stops no order
+ * and no other place could keep; MUST: no must-see place is lost (checkOptimised()).
+ */
+// Chosen so that the fresh figures make one stop give way and be replaced (Sabah), make one give
+// way with no place to replace it (Kuala Lumpur and Selangor by public transport), and put a long
+// trip over its budget (Perak, 7 days: no large table).
+const OPTIMISE_FRESH_BASES = ['sabah_family_motorcycle_normal', 'kl_selangor_family_transit_tight', 'perak_solo_motorcycle_packed_7days_tight'];
+
+/** Every scenario: the fixed ones and the edit and version scenarios built on EDIT_BASES and VERSION_BASES. */
 function allScenarios(): array
 {
     $all = SCENARIOS + MORE_SCENARIOS;
     foreach (EDIT_BASES as $base) $all[$base . '__edits'] = $all[$base] + ['edits' => true];
+    foreach (VERSION_BASES as $base) $all[$base . '__versions'] = $all[$base] + ['versions' => true];
+    foreach (OPTIMISE_FRESH_BASES as $base) $all[$base . '__optimise'] = $all[$base] + ['optimise_fresh' => true];
     return $all;
 }
 
@@ -792,14 +835,16 @@ $results = [];
 $pass = (string)($options['pass'] ?? 'both');
 if ($pass !== 'skew') {
     foreach ($selected as $name => $scenario) {
+        if (!empty($scenario['optimise_fresh'])) continue;   // the skew pass only
         $results[] = runScenario($pipelineConn, $checkConn, $travellerId, $name, $scenario, isset($options['keep']));
     }
 }
-// The second pass: the edit scenarios again, with road figures that differ from the estimates.
+// The second pass: the edit scenarios again, with road figures that differ from the estimates,
+// and the fresh-figures optimiser scenarios.
 if ($pass !== 'default' && !$roadRouting) {
     putenv('ROUTING_TEST_SKEW=1');
     foreach ($selected as $name => $scenario) {
-        if (!empty($scenario['edits'])) $results[] = runScenario($pipelineConn, $checkConn, $travellerId, $name . '@skew', $scenario, isset($options['keep']));
+        if (!empty($scenario['edits']) || !empty($scenario['optimise_fresh'])) $results[] = runScenario($pipelineConn, $checkConn, $travellerId, $name . '@skew', $scenario, isset($options['keep']));
     }
     putenv('ROUTING_TEST_SKEW=0');
 }
@@ -1044,7 +1089,14 @@ function resolveScenarioPlaces(mysqli $pipelineConn, mysqli $checkConn, int $tra
 
 function deleteScenarioData(mysqli $conn, int $travellerId, int $preferenceId): void
 {
-    // Items and share links go with their itinerary (ON DELETE CASCADE).
+    // Items and share links go with their itinerary (ON DELETE CASCADE); versions first.
+    $res = $conn->query("SHOW COLUMNS FROM itineraries LIKE 'version_of'");
+    if ($res && $res->num_rows > 0) {
+        $stmt = $conn->prepare('DELETE FROM itineraries WHERE traveller_id = ? AND preference_id = ? AND version_of IS NOT NULL');
+        $stmt->bind_param('ii', $travellerId, $preferenceId);
+        $stmt->execute();
+        $stmt->close();
+    }
     $stmt = $conn->prepare('DELETE FROM itineraries WHERE traveller_id = ? AND preference_id = ?');
     $stmt->bind_param('ii', $travellerId, $preferenceId);
     $stmt->execute();
@@ -1074,6 +1126,9 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     addPreferenceInputs($checkConn, $preferenceId, $scenario['weights'] ?? [], $places['must'], $places['avoid']);
     setTestRatings($checkConn, $travellerId, $places['ratings']);
     try {
+        // A fresh-figures optimiser scenario plans on estimates (as without a routing server).
+        $fresh = !empty($scenario['optimise_fresh']);
+        if ($fresh) putenv('ROUTING_TEST_SKEW=0');
         // One table request per trip; with real routing one more per day that had to be repaired.
         $generateLimit = REQUEST_LIMITS['generate'] + (measuredFigures() ? (int)$scenario['pref']['trip_days'] : 0);
         $tGenerate = microtime(true);
@@ -1081,14 +1136,22 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
         // The time of planning alone (generation), reported for the 7-day scenarios (PLAN_SECONDS).
         $result['plan_seconds'] = round(microtime(true) - $tGenerate, 2);
         $result['itinerary_id'] = $out['itinerary_id'];
+        if ($fresh) {
+            putenv('ROUTING_TEST_SKEW=1');
+            runFreshOptimise($pipelineConn, $checkConn, $out['itinerary_id'], $scenario, $name, $result);
+        }
         foreach ($out['notes'] as $note) {
             $result['findings'][] = finding('OPTIMISE', 'warning', $name, null, null, $note);
         }
         if (isset($places['twin'])) runTwinSteps($pipelineConn, $checkConn, $out['itinerary_id'], $scenario, $name, $result);
         if (!empty($scenario['refuse_worship']) || !empty($scenario['refuse_transit'])) runRuleRefusals($pipelineConn, $checkConn, $out['itinerary_id'], $scenario, $result);
-        if (!empty($scenario['edits'])) runEditSequence($pipelineConn, $checkConn, $out['itinerary_id'], $preferenceId, $scenario, $name, $result);
+        if (!empty($scenario['edits'])) {
+            runEditSequence($pipelineConn, $checkConn, $out['itinerary_id'], $preferenceId, $scenario, $name, $result);
+            runHotelBudget($pipelineConn, $checkConn, $out['itinerary_id'], $scenario, $name, $result);
+        }
         checkItinerary($checkConn, $out['itinerary_id'], $scenario, $name, $result);
         $result['info']['plan'] = planFingerprint($checkConn, $out['itinerary_id']);
+        if (!empty($scenario['versions'])) runVersionSteps($pipelineConn, $checkConn, $travellerId, $preferenceId, $out['itinerary_id'], $scenario, $name, $generateLimit, $result);
         // PLAN: a generation scenario on estimates, against the plan recorded before the trip layout.
         if (empty($scenario['edits']) && isset(RECORDED_PLANS[$name]) && !measuredFigures()) {
             [$stops, $km] = RECORDED_PLANS[$name];
@@ -1450,8 +1513,11 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
 
     // 7. Optimise the route.
     // A day the optimiser left without stops is timed again by the edit service: up to its two requests more.
-    $note('optimise', $req('optimise', fn() => ItineraryEditService::optimise($p, $id),
-        static fn(): int => REQUEST_LIMITS['optimise'] + (count(array_filter(editVisits($c, $id))) < $tripDays ? REQUEST_LIMITS['regenerate'] : 0)));
+    $beforeOptimise = editVisits($c, $id);
+    $r = $req('optimise', fn() => ItineraryEditService::optimise($p, $id),
+        static fn(): int => REQUEST_LIMITS['optimise'] + (count(array_filter(editVisits($c, $id))) < $tripDays ? REQUEST_LIMITS['regenerate'] : 0));
+    $note('optimise', $r);
+    if ($r['ok']) checkOptimised($p, $c, $id, $beforeOptimise, $musts, (array)($r['report'] ?? []), $states, $add, $result, (string)$r['message'], (float)$pref['budget']);
     if ($dayStartSet) $keepsStart('the optimiser');
 
     // 8. Re-plan a rainy day: day 1 with an 85% chance of rain (a forecast override). From 80%
@@ -1560,6 +1626,247 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
     if ($states) {
         $outside = editPlaces($c, $id, $states, false, "AND LOWER(category) <> 'festival'")[0] ?? null;
         if ($outside !== null) $refuse('in another state', (int)$first['item_id'], (int)$outside['place_id'], ['STATE']);
+    }
+}
+
+/** The stored total of an itinerary (committed). */
+function storedTotal(mysqli $conn, int $itineraryId): float
+{
+    $stmt = $conn->prepare('SELECT total_estimated_cost FROM itineraries WHERE itinerary_id = ?');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $total = (float)($stmt->get_result()->fetch_row()[0] ?? 0);
+    $stmt->close();
+    return $total;
+}
+
+/**
+ * OPTIMISE and MUST after the optimiser: a day keeps its number of stops, except for the stops the
+ * answer names as not replaced (no order and no other place fits); a day the answer reports kept
+ * as it was keeps them all; every must-see place planned before is still planned. A day that
+ * names a stop it could not replace while one of the ten places nearest its last stop still fits
+ * it (ItineraryEditService::canAdd()) is a warning. When the trip is over the budget afterwards, the
+ * answer states the amount (over_by and the message).
+ */
+function checkOptimised(mysqli $p, mysqli $c, int $id, array $before, array $musts, array $report, array $states, callable $add, array &$result, string $message = '', float $budget = 0.0): void
+{
+    $after = editVisits($c, $id);
+    // Over the budget after the new distances: nothing is deleted for it, and the answer says by how much.
+    $total = storedTotal($c, $id);
+    if ($budget > 0 && $total > $budget + MONEY_SLACK) {
+        $over = round($total - $budget, 2);
+        if (abs((float)($report['over_by'] ?? 0) - $over) > MONEY_SLACK || !str_contains($message, number_format($over, 2))) {
+            $add('OPTIMISE', 'violation', null, null, sprintf('the trip is RM %.2f over the budget after the optimiser, but the answer does not say so: %s', $over, $message));
+        }
+    }
+    $placed = static function (array $days): array {
+        $ids = [];
+        foreach ($days as $visits) foreach ($visits as $v) $ids[(int)$v['place_id']] = (string)$v['item_title'];
+        return $ids;
+    };
+    $was = $placed($before);
+    $now = $placed($after);
+    foreach (array_keys($musts) as $m) {
+        if (isset($was[$m]) && !isset($now[$m])) $add('MUST', 'violation', null, $was[$m], 'the optimiser dropped a must-see place');
+    }
+    $notReplaced = [];
+    foreach ((array)($report['not_replaced'] ?? []) as $r) $notReplaced[(int)$r['day']] = ($notReplaced[(int)$r['day']] ?? 0) + 1;
+    $kept = (array)($report['kept_days'] ?? []);
+    $result['info']['optimise'] = ['replaced' => count((array)($report['replaced'] ?? [])), 'not_replaced' => array_sum($notReplaced), 'kept_days' => array_keys($kept)];
+    foreach ($before as $d => $visits) {
+        $lost = count($visits) - count($after[$d] ?? []);
+        if (isset($kept[$d]) && $lost !== 0) $add('OPTIMISE', 'violation', (int)$d, null, 'the day was reported kept as it was, but its stops changed');
+        if ($lost <= 0) continue;
+        $named = $notReplaced[(int)$d] ?? 0;
+        if ($lost > $named) {
+            $add('OPTIMISE', 'violation', (int)$d, null, "the day lost {$lost} stop(s); the answer names {$named} that could not be replaced");
+            continue;
+        }
+        $last = ($after[$d] ?? []) ? $after[$d][count($after[$d]) - 1] : $visits[count($visits) - 1];
+        $places = editPlaces($c, $id, $states, true);
+        usort($places, static fn($a, $b) => haversineKm((float)$last['lat'], (float)$last['lng'], (float)$a['latitude'], (float)$a['longitude'])
+            <=> haversineKm((float)$last['lat'], (float)$last['lng'], (float)$b['latitude'], (float)$b['longitude']));
+        foreach (array_slice($places, 0, 10) as $place) {
+            $check = counted('can_add', REQUEST_LIMITS['can_add'], fn() => ItineraryEditService::canAdd($p, $id, (int)$d, (int)$place['place_id']), $result);
+            if (!$check['ok']) continue;
+            $add('OPTIMISE', 'warning', (int)$d, (string)$place['name'], 'a stop was removed without a replacement, but this place still fits the day');
+            break;
+        }
+    }
+}
+
+/**
+ * The optimiser on fresh road figures (scenario key optimise_fresh, OPTIMISE_FRESH_BASES): the plan
+ * was stored on estimates; its legs are cleared, so no stored figure stands in for the road, and
+ * the optimiser is run with the skewed figures of the second pass (ROUTING_TEST_SKEW). It must
+ * keep to its request limit, keep every must-see place and keep each day's number of stops
+ * except for the stops it names as not replaced (checkOptimised()).
+ */
+function runFreshOptimise(mysqli $p, mysqli $c, int $id, array $scenario, string $name, array &$result): void
+{
+    $add = static function (string $code, string $severity, ?int $day, ?string $stop, string $detail) use (&$result, $name): void {
+        $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
+    };
+    $before = editVisits($c, $id);
+    $stmt = $c->prepare('UPDATE itinerary_items SET distance_km = NULL, travel_time_min = NULL WHERE itinerary_id = ?');
+    $stmt->bind_param('i', $id);
+    $stmt->execute();
+    $stmt->close();
+    $tripDays = (int)$scenario['pref']['trip_days'];
+    $r = counted('optimise', static fn(): int => REQUEST_LIMITS['optimise'] + (count(array_filter(editVisits($c, $id))) < $tripDays ? REQUEST_LIMITS['regenerate'] : 0),
+        fn() => ItineraryEditService::optimise($p, $id), $result);
+    if (!$r['ok']) { $add('OPTIMISE', 'violation', null, null, "the optimiser was refused ({$r['code']}): {$r['message']}"); return; }
+    $musts = array_flip($scenario['resolved']['must'] ?? []);
+    $states = array_map('strtolower', csv($scenario['pref']['preferred_states']));
+    checkOptimised($p, $c, $id, $before, $musts, (array)($r['report'] ?? []), $states, $add, $result, (string)$r['message'], (float)$scenario['pref']['budget']);
+    $result['info']['edits'] = ['optimise' => 'done: ' . $r['message']];
+}
+
+/**
+ * HOTEL_BUDGET: the dearest lodging within 15 km of the base of night 1 (else of day 1's last stop),
+ * for every night. When it puts the trip over the budget, setHotels() must refuse it with
+ * HOTEL_BUDGET, name the amount and change no row; with the confirmation it must be saved, say the
+ * amount over, and the stored total is then over the budget (the pages show "Over Budget"). When
+ * even that hotel keeps the trip inside the budget it may be saved, and the total must stay inside.
+ */
+function runHotelBudget(mysqli $p, mysqli $c, int $id, array $scenario, string $name, array &$result): void
+{
+    $pref = $scenario['pref'];
+    $tripDays = (int)$pref['trip_days'];
+    $budget = (float)$pref['budget'];
+    if ($tripDays < 2 || $budget <= 0) return;
+    $add = static function (string $code, string $severity, ?int $day, ?string $stop, string $detail) use (&$result, $name): void {
+        $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
+    };
+    $bases = storedBases($c, $id);
+    $anchor = isset($bases[1]) ? [$bases[1][1], $bases[1][2]] : null;
+    if ($anchor === null) {
+        $day1 = editVisits($c, $id)[1] ?? [];
+        if ($day1) $anchor = [(float)$day1[count($day1) - 1]['lat'], (float)$day1[count($day1) - 1]['lng']];
+    }
+    if ($anchor === null) return;
+    $service = new HotelRecommendationService($p);
+    $dear = null;
+    $span = 0.14;   // degrees: more than the 15 km of the review page's search around a base
+    $stmt = $c->prepare('SELECT lodging_id, latitude, longitude FROM lodgings WHERE is_active = 1 AND latitude BETWEEN ? AND ? AND longitude BETWEEN ? AND ?');
+    $south = $anchor[0] - $span; $north = $anchor[0] + $span; $west = $anchor[1] - $span; $east = $anchor[1] + $span;
+    $stmt->bind_param('dddd', $south, $north, $west, $east);
+    $stmt->execute();
+    foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $l) {
+        if (haversineKm($anchor[0], $anchor[1], (float)$l['latitude'], (float)$l['longitude']) > 15.0) continue;
+        $h = $service->find((int)$l['lodging_id'], 0.0);
+        if ($h !== null && ($dear === null || [$h['price_per_night'], -$h['hotel_id']] > [$dear['price_per_night'], -$dear['hotel_id']])) $dear = $h;
+    }
+    $stmt->close();
+    if ($dear === null) { $result['info']['hotel_budget'] = 'no lodging within 15 km of the base of night 1'; return; }
+    $hotels = array_fill(1, $tripDays - 1, $dear);
+    $before = editSnapshot($c, $id);
+    $r = counted('hotel', REQUEST_LIMITS['hotel'], fn() => ItineraryEditService::setHotels($p, $id, $hotels), $result);
+    if ($r['ok']) {
+        $result['info']['hotel_budget'] = sprintf('RM %.0f a night keeps the trip inside the budget', $dear['price_per_night']);
+        if (storedTotal($c, $id) > $budget + MONEY_SLACK) $add('HOTEL_BUDGET', 'violation', null, $dear['name'], 'a hotel that puts the trip over the budget was saved without the confirmation');
+        return;
+    }
+    if ($r['code'] !== 'HOTEL_BUDGET') {
+        $add('EDIT', 'warning', null, $dear['name'], "the dearest hotel was refused with {$r['code']}: {$r['message']}");
+        return;
+    }
+    if (editSnapshot($c, $id) !== $before) $add('HOTEL_BUDGET', 'violation', null, $dear['name'], 'rows changed although the hotel was refused');
+    $over = (float)($r['over_by'] ?? 0);
+    if ($over <= 0 || !str_contains((string)$r['message'], number_format($over, 2))) {
+        $add('HOTEL_BUDGET', 'violation', null, $dear['name'], 'the refusal does not state the amount over the budget: ' . $r['message']);
+    }
+    $r2 = counted('hotel', REQUEST_LIMITS['hotel'], fn() => ItineraryEditService::setHotels($p, $id, $hotels, true), $result);
+    if (!$r2['ok']) {
+        $add('HOTEL_BUDGET', 'violation', null, $dear['name'], "with the confirmation the hotel was still refused ({$r2['code']}): {$r2['message']}");
+        return;
+    }
+    $total = storedTotal($c, $id);
+    if ($total <= $budget + MONEY_SLACK && (int)$r2['nights'] > 0) {
+        $add('HOTEL_BUDGET', 'violation', null, $dear['name'], sprintf('saved with the confirmation, but the stored total RM %.2f is not over the budget RM %.2f', $total, $budget));
+    }
+    if ((int)$r2['nights'] > 0 && (float)($r2['over_by'] ?? 0) <= 0) $add('HOTEL_BUDGET', 'violation', null, $dear['name'], 'the answer does not state the amount over the budget');
+    $result['info']['hotel_budget'] = sprintf('RM %.0f a night: refused, RM %.2f over; saved with the confirmation (%d night(s)), total RM %.2f', $dear['price_per_night'], $over, (int)$r2['nights'], $total);
+}
+
+/**
+ * VERSIONS: a version in each style (STYLES) of the generated itinerary, made as the review page
+ * makes it (ItineraryGenerator::createVersion(), the generation limit of REQUESTS), judged by every
+ * check of checkItinerary() with the style's own rules; relaxed has no more stops than the plan as
+ * generated and every visit ends by its earlier day end; budget costs no more than the plan as
+ * generated. The versions are marked as versions of it (not trips of their own), a fourth is
+ * refused and changes nothing, and choosing one leaves exactly one itinerary.
+ */
+function runVersionSteps(mysqli $p, mysqli $c, int $travellerId, int $preferenceId, int $id, array $scenario, string $name, int $generateLimit, array &$result): void
+{
+    $add = static function (string $code, string $severity, ?int $day, ?string $stop, string $detail) use (&$result, $name): void {
+        $result['findings'][] = finding($code, $severity, $name, $day, $stop, $detail);
+    };
+    $rows = static function () use ($c, $travellerId, $preferenceId): array {
+        $stmt = $c->prepare('SELECT itinerary_id, version_of, plan_style FROM itineraries WHERE traveller_id = ? AND preference_id = ? ORDER BY itinerary_id');
+        $stmt->bind_param('ii', $travellerId, $preferenceId);
+        $stmt->execute();
+        $out = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        return $out;
+    };
+    $visitsOf = static fn(int $itinerary): array => array_merge([], ...array_values(editVisits($c, $itinerary)));
+    $baseStops = count($visitsOf($id));
+    $baseTotal = storedTotal($c, $id);
+    $profile = intendedProfile($scenario['pref']);
+    $relaxedEnd = max($profile['start'] + RELAXED_MIN_WINDOW, $profile['hard_end'] - RELAXED_END_EARLIER_MIN);
+    $lastEnd = static function (int $itinerary) use ($c): ?int {
+        $stmt = $c->prepare("SELECT MAX(end_time) FROM itinerary_items WHERE itinerary_id = ? AND meal_slot IS NULL AND item_type IN ('attraction','food','festival')");
+        $stmt->bind_param('i', $itinerary);
+        $stmt->execute();
+        $end = toMinutes($stmt->get_result()->fetch_row()[0] ?? null);
+        $stmt->close();
+        return $end;
+    };
+    $result['info']['versions']['first'] = ['stops' => $baseStops, 'total_rm' => $baseTotal, 'last_end' => ($e = $lastEnd($id)) !== null ? hm($e) : null];
+    $generator = new ItineraryGenerator($p);
+    $made = [];
+    foreach (STYLES as $style) {
+        $r = counted('version', $generateLimit, fn() => $generator->createVersion($travellerId, $id, $style), $result);
+        if (!$r['ok']) { $add('VERSIONS', 'violation', null, null, "{$style}: not made ({$r['code']}): {$r['message']}"); continue; }
+        $vid = (int)$r['version_id'];
+        $made[$style] = $vid;
+        $sub = ['scenario' => $name . '/' . $style, 'findings' => [], 'info' => [], 'stops' => 0];
+        checkItinerary($c, $vid, ['style' => $style] + $scenario, $name . '/' . $style, $sub);
+        array_push($result['findings'], ...$sub['findings']);
+        $stops = count($visitsOf($vid));
+        $total = storedTotal($c, $vid);
+        $end = $lastEnd($vid);
+        $result['info']['versions'][$style] = ['stops' => $stops, 'total_rm' => $total, 'last_end' => $end !== null ? hm($end) : null];
+        if ($style === 'relaxed') {
+            if ($stops > $baseStops) $add('VERSIONS', 'violation', null, null, "relaxed: {$stops} stops, the plan as generated has {$baseStops}");
+            if ($end !== null && $end > $relaxedEnd) $add('VERSIONS', 'violation', null, null, 'relaxed: a visit ends ' . hm($end) . ', after the earlier day end ' . hm($relaxedEnd));
+        }
+        if ($style === 'budget' && $total > $baseTotal + MONEY_SLACK) {
+            $add('VERSIONS', 'violation', null, null, sprintf('budget: RM %.2f, the plan as generated costs RM %.2f', $total, $baseTotal));
+        }
+    }
+    // Versions are marked as versions of the first plan: one trip of the traveller's own.
+    $all = $rows();
+    $own = array_values(array_filter($all, static fn(array $r): bool => $r['version_of'] === null));
+    $marked = array_values(array_filter($all, static fn(array $r): bool => (int)$r['version_of'] === $id));
+    if (count($own) !== 1 || (int)$own[0]['itinerary_id'] !== $id) $add('VERSIONS', 'violation', null, null, count($own) . ' itineraries of their own while versions exist, expected 1');
+    if (count($marked) !== count($made)) $add('VERSIONS', 'violation', null, null, count($marked) . ' rows marked as versions, ' . count($made) . ' made');
+    // A fourth version is refused and changes nothing.
+    if (count($made) === MAX_VERSIONS) {
+        $r = counted('version', $generateLimit, fn() => $generator->createVersion($travellerId, $id, STYLES[0]), $result);
+        if ($r['ok']) $add('VERSIONS', 'violation', null, null, 'a fourth version was made');
+        elseif ($r['code'] !== 'VERSION_LIMIT') $add('VERSIONS', 'violation', null, null, "a fourth version was refused with {$r['code']}, expected VERSION_LIMIT");
+        if (count($rows()) !== count($all)) $add('VERSIONS', 'violation', null, null, 'the refused fourth version changed the rows');
+    }
+    // Choosing one leaves exactly one itinerary: that version, a trip of its own.
+    $chosen = $made['budget'] ?? ($made ? reset($made) : null);
+    if ($chosen === null) return;
+    $r = ItineraryEditService::chooseVersion($p, $id, $chosen);
+    if (!$r['ok']) { $add('VERSIONS', 'violation', null, null, "choosing a version was refused ({$r['code']}): {$r['message']}"); return; }
+    $left = $rows();
+    if (count($left) !== 1 || (int)$left[0]['itinerary_id'] !== $chosen || $left[0]['version_of'] !== null) {
+        $add('VERSIONS', 'violation', null, null, 'after choosing a version ' . count($left) . ' itinerary row(s) are left: ' . json_encode($left));
     }
 }
 
@@ -1692,6 +1999,11 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
 
     $pref = $scenario['pref'];
     $profile = intendedProfile($pref);
+    // A relaxed version is judged by its own target and day window (VERSIONS).
+    if (($scenario['style'] ?? null) === 'relaxed') {
+        $profile['target'] = min($profile['target'], max(RELAXED_MIN_STOPS, $profile['target'] - RELAXED_STOPS_LESS));
+        $profile['hard_end'] = max($profile['start'] + RELAXED_MIN_WINDOW, $profile['hard_end'] - RELAXED_END_EARLIER_MIN);
+    }
     $tripDays = (int)$pref['trip_days'];
     // A day with a start time of its own (ItineraryEditService::setDayStart()) is judged from it.
     $storedStarts = storedDayStarts($conn, $itineraryId);
@@ -2341,6 +2653,10 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     if ($paid > $cost['attraction_budget'] + BUDGET_SPLIT_SLACK) {
         $add('BUDGET', 'violation', null, null, sprintf('paid attractions RM %.2f for the party, attraction share of the budget RM %.2f', $paid, $cost['attraction_budget']));
     }
+    // A budget version gives its paid places at most half of that share (VERSIONS).
+    if (($scenario['style'] ?? null) === 'budget' && $budget > 0 && $paid > max(0.0, $cost['attraction_budget']) * BUDGET_STYLE_PAID_SHARE + BUDGET_SPLIT_SLACK) {
+        $add('VERSIONS', 'violation', null, null, sprintf('budget version: paid attractions RM %.2f, more than half of the attraction share RM %.2f', $paid, $cost['attraction_budget']));
+    }
 }
 
 /**
@@ -2847,7 +3163,7 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     $most = [];
     foreach ($results as $r) foreach ((array)($r['info']['requests'] ?? []) as $op => $n) $most[$op] = max($most[$op] ?? 0, $n);
     ksort($most);
-    echo 'INFO: most routing requests of one call (limit): ' . implode(', ', array_map(static fn($op, $n) => "{$op} {$n} (" . REQUEST_LIMITS[$op] . ')', array_keys($most), $most)) . ".\n";
+    echo 'INFO: most routing requests of one call (limit): ' . implode(', ', array_map(static fn($op, $n) => "{$op} {$n} (" . (REQUEST_LIMITS[$op] ?? REQUEST_LIMITS['generate']) . ')', array_keys($most), $most)) . ".\n";
     $planTimes = [];
     foreach ($results as $r) {
         if ((int)$r['days'] === 7 && isset($r['plan_seconds']) && !str_contains((string)$r['scenario'], '__edits')) $planTimes[] = $r['scenario'] . ' ' . number_format((float)$r['plan_seconds'], 2) . ' s';

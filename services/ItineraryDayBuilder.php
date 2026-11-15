@@ -245,7 +245,7 @@ final class ItineraryDayBuilder
         $ranked = [];
         foreach ($places as $place) {
             $seg = $this->route->getSegment((float)$anchor[0], (float)$anchor[1], (float)$place['latitude'], (float)$place['longitude']);
-            $ranked[] = [$this->layoutValue($place) - 2 * self::TRAVEL_PRICE * (int)$seg['travel_time_min'], -(int)$place['place_id'], $place];
+            $ranked[] = [$this->layoutValue($place) - 2 * $this->travelPrice() * (int)$seg['travel_time_min'], -(int)$place['place_id'], $place];
         }
         usort($ranked, static fn(array $a, array $b): int => [$b[0], $b[1]] <=> [$a[0], $a[1]]);
         return array_column(array_slice($ranked, 0, $limit), 2);
@@ -463,6 +463,36 @@ final class ItineraryDayBuilder
     }
 
     /**
+     * The weights of the plan's style (PlannerRules::STYLES, profile keys interest_factor,
+     * variety_factor, free_points, cost_points, travel_factor); without a style the usual
+     * numbers. most() and score() read the same helpers, so the search's bound covers them.
+     */
+    private function travelPrice(): float
+    {
+        return self::TRAVEL_PRICE * (float)($this->profile['travel_factor'] ?? 1.0);
+    }
+
+    private function interestPoints(int $weight): float
+    {
+        return (float)(self::INTEREST_POINTS[$weight] ?? self::INTEREST_POINTS[2]) * (float)($this->profile['interest_factor'] ?? 1.0);
+    }
+
+    /** The variety points: [a category new to the day, a category repeated beyond its limit, the day before's theme]. */
+    private function varietyPoints(): array
+    {
+        $f = (float)($this->profile['variety_factor'] ?? 1.0);
+        return [10.0 * $f, -12.0 * $f, -15.0 * $f];
+    }
+
+    /** The points of a place's price: free_points for a free place, minus cost_points per RM a person (at most STYLE_BUDGET_COST_MAX) for a paid one. */
+    private function costPoints(array $place): float
+    {
+        $cost = PlannerRules::placeCost($place);
+        if ($cost <= 0) return (float)($this->profile['free_points'] ?? PlannerRules::FREE_POINTS);
+        return -min(PlannerRules::STYLE_BUDGET_COST_MAX, $cost * (float)($this->profile['cost_points'] ?? 0.0));
+    }
+
+    /**
      * The most a stop can add to a day after the partial day's $state on a day without rain: its
      * score()['value'] with the slot-free terms (placeValue()), category variety and the day
      * before's theme as score() reckons them, the preferred visit time at its best for a visit
@@ -477,14 +507,15 @@ final class ItineraryDayBuilder
         $category = strtolower((string)$place['category']);
         $most = $this->placeValue($place) + self::timeFitMost($place, (string)$p['visit_time'], (int)$state['clock']);
         $same = (int)($state['categories'][$category] ?? 0);
-        if ($same === 0) $most += 10;
-        elseif ($same >= PlannerRules::categoryLimit($p, $category) && !$p['food_only']) $most -= 12;
+        [$newCategory, $repeated, $themePoints] = $this->varietyPoints();
+        if ($same === 0) $most += $newCategory;
+        elseif ($same >= PlannerRules::categoryLimit($p, $category) && !$p['food_only']) $most += $repeated;
         $theme = $day['previous_theme'] ?? null;
-        if ($theme !== null && $category === $theme && !$p['food_only']) $most -= 15;
+        if ($theme !== null && $category === $theme && !$p['food_only']) $most += $themePoints;
         $from = $state['point'];
         $seg = $this->route->getSegment((float)$from[0], (float)$from[1], (float)$place['latitude'], (float)$place['longitude']);
         $most -= self::relaxPrice($this->minLevel($place, $state, (float)$seg['distance_km'], !$state['first_leg']));
-        if ($legBound) $most -= self::TRAVEL_PRICE * (int)$seg['travel_time_min'];
+        if ($legBound) $most -= $this->travelPrice() * (int)$seg['travel_time_min'];
         return $most;
     }
 
@@ -554,7 +585,7 @@ final class ItineraryDayBuilder
             return null;
         }
         $scored = $this->score($place, $state, $day, (float)$seg['distance_km'], $check, $level, $must);
-        $gain = $scored['value'] - self::TRAVEL_PRICE * ((int)$check['min'] + (int)$check['meal_min'])
+        $gain = $scored['value'] - $this->travelPrice() * ((int)$check['min'] + (int)$check['meal_min'])
             - self::IDLE_PRICE * ((int)$check['wait'] + (int)$check['idle']);
         $stop = self::stopFrom($place, $check, $scored, $level, $must);
         $ids = array_map(static fn(array $s): int => (int)$s['place']['place_id'], $node['stops']);
@@ -582,9 +613,9 @@ final class ItineraryDayBuilder
         if (!empty($day['night']) && $finish !== null) {
             $close = self::fit($this->route, $this->profile, $this->mealIndex, self::basePlace($finish), $this->slotOf($state, $day, $finish, $state['trip_items']));
             if (!$close['ok']) return null;
-            $value -= self::TRAVEL_PRICE * ((int)$close['min'] + (int)$close['meal_min']);
+            $value -= $this->travelPrice() * ((int)$close['min'] + (int)$close['meal_min']);
         } elseif ($finish !== null) {
-            $value -= self::TRAVEL_PRICE * (int)$this->route->getSegment((float)$state['point'][0], (float)$state['point'][1], (float)$finish[0], (float)$finish[1])['travel_time_min'];
+            $value -= $this->travelPrice() * (int)$this->route->getSegment((float)$state['point'][0], (float)$state['point'][1], (float)$finish[0], (float)$finish[1])['travel_time_min'];
         }
         $ids = array_map(static fn(array $s): int => (int)$s['place']['place_id'], $node['stops']);
         sort($ids);
@@ -658,13 +689,13 @@ final class ItineraryDayBuilder
         $category = strtolower((string)$place['category']);
         $value = 0.0;
         $weight = $this->interestWeight($place);
-        if ($weight !== null) $value += self::INTEREST_POINTS[$weight] ?? self::INTEREST_POINTS[2];
+        if ($weight !== null) $value += $this->interestPoints($weight);
         if (isset($p['less_types'][(string)PlannerRules::typeOf($place)])) $value -= self::TYPE_LESS_POINTS;
         if (PlannerRules::transitReach($place) === 'walk' && ($p['transport'] ?? '') === 'public_transport') $value -= PlannerRules::TRANSIT_WALK_POINTS;
         if ($p['districts'] && in_array(strtolower((string)$place['district']), $p['districts'], true)) $value += 12;
         $value += (float)($p['learned'][$category]['points'] ?? 0);
         $value += self::travellerSuitability($place, !empty($p['family']) ? 'family' : (string)$p['traveller_type']);
-        if (PlannerRules::placeCost($place) <= 0) $value += 10;
+        $value += $this->costPoints($place);
         $rating = max((float)($place['avg_rating'] ?? 0), (float)($place['rating'] ?? 0));
         if ($rating > 0) $value += min(8.0, ($rating / 5) * 8);
         return $this->values[$id] = $value;
@@ -959,7 +990,7 @@ final class ItineraryDayBuilder
         $districtMatch = $p['districts'] && in_array(strtolower((string)$place['district']), $p['districts'], true);
         $type = (string)PlannerRules::typeOf($place);
         if ($interestMatch) {
-            $score += self::INTEREST_POINTS[$weight] ?? self::INTEREST_POINTS[2];
+            $score += $this->interestPoints($weight);
             $reasons[] = 'interest match';
             if (isset($p['more_types'][$type])) $reasons[] = 'a kind of place you asked for more of';
             elseif ($weight === 3) $reasons[] = 'an interest you love';
@@ -992,17 +1023,19 @@ final class ItineraryDayBuilder
         $score += $timeFit;
         if ($timeFit > 0) $reasons[] = 'preferred visit time fit';
 
-        if (PlannerRules::placeCost($place) <= 0) { $score += 10; $reasons[] = 'free place supports budget'; }
-        else { $reasons[] = 'fits the trip budget'; }
+        $score += $this->costPoints($place);
+        if (PlannerRules::placeCost($place) <= 0) $reasons[] = 'free place supports budget';
+        else $reasons[] = 'fits the trip budget';
 
         $rating = max((float)($place['avg_rating'] ?? 0), (float)($place['rating'] ?? 0));
         if ($rating > 0) { $score += min(8.0, ($rating / 5) * 8); $reasons[] = 'rating considered'; }
 
         $same = (int)($state['categories'][$category] ?? 0);
-        if ($same === 0) { $score += 10; $reasons[] = 'adds category diversity'; }
-        elseif ($same >= PlannerRules::categoryLimit($p, $category) && !$p['food_only']) { $score -= 12; $reasons[] = 'category repeated'; }
+        [$newCategory, $repeated, $themePoints] = $this->varietyPoints();
+        if ($same === 0) { $score += $newCategory; $reasons[] = 'adds category diversity'; }
+        elseif ($same >= PlannerRules::categoryLimit($p, $category) && !$p['food_only']) { $score += $repeated; $reasons[] = 'category repeated'; }
         $theme = $day['previous_theme'] ?? null;
-        if ($theme !== null && $category === $theme && !$p['food_only']) { $score -= 15; $reasons[] = "repeats the previous day's theme"; }
+        if ($theme !== null && $category === $theme && !$p['food_only']) { $score += $themePoints; $reasons[] = "repeats the previous day's theme"; }
         // The value the day search adds up: the terms so far; the travelling and waiting below
         // are priced by the search itself (TRAVEL_PRICE, IDLE_PRICE).
         $value = $score - self::relaxPrice($level);

@@ -79,6 +79,8 @@ try {
     if (!empty($_POST["stay_at_start"])) {
         $trip["stay_at_start"] = true;
     }
+    // Versions of earlier plans older than a day that were never chosen are removed now.
+    ItineraryEditService::pruneVersions($conn, $travellerId);
     $itineraryId = (new ItineraryGenerator($conn))->generate($travellerId, $preferenceId, $trip);
 
     if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {
