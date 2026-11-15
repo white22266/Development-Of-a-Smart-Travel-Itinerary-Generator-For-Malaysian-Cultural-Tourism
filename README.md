@@ -19,13 +19,24 @@ For travellers:
 - A preference form: budget and budget tier, transport (car, motorcycle, public transport,
   walking), traveller type, adults, children and seniors, pace, day start and end time, stops
   per day, interests with weights, dietary needs, accessibility tick boxes, states and
-  districts, and places to see or to avoid.
-- A starting point, with an optional end point for the trip.
-- A generated itinerary with lunch and dinner rows, road times and distances, weather-aware
-  choices on rainy days, and a note where a day or a must-see place could not be planned.
-- Editing a saved itinerary: replace, remove, move or add a stop, plan a day again, set a day's
-  start time, re-plan rainy days, optimise the route, choose a hotel for each night. A change
-  that breaks a rule is refused with the reason.
+  districts, how many places of worship (none, or at most one a day), and places to see or to
+  avoid.
+- A starting point, with an optional end point for the trip, and a tick box "I am staying at the
+  starting point".
+- A generated itinerary. The trip is laid out first: places are grouped into areas, each night
+  has a base, and each day tours one area and returns to its base for dinner. It has lunch and
+  dinner rows, road times and distances (longer in the rush hour in the big cities), weather-aware
+  choices by the hour, public holiday notes, and a note where a day or a must-see place could not
+  be planned. Times are in five minutes. Opening hours that had to be assumed are marked, mosques
+  keep clear of the Friday prayers, and a traveller by public transport gets only places within
+  reach of a stop, with the walk counted in the ride.
+- Editing a saved itinerary: replace, remove, move or add a stop, plan a day again (with more or
+  less of a category or of a kind of place, such as temples or museums), set a day's start time,
+  re-plan rainy days, optimise the route (a stop that cannot be kept is replaced where a place
+  fits), choose a hotel for each night (checked against the budget, with a confirmation when it
+  goes over). A change that breaks a rule is refused with the reason.
+- Versions of a plan: after generating, compare the same trip planned in a relaxed, a budget
+  and an interest style, and use the one you like.
 - An AI assistant that understands edit requests in English, Malay and Chinese (local Ollama
   model, with a fallback that needs no model).
 - Map with routes, live buses and trains, road conditions, and map app links for each stop.
@@ -35,10 +46,13 @@ For travellers:
 
 For admins:
 
-- A dashboard, the cultural knowledge base, and users (`admin/`).
+- A dashboard, the cultural knowledge base (each place has a type, which the admin can set), and
+  users (`admin/`).
 - Pending place suggestions and reports, with analysis by the local AI model.
 - Open Data Imports: places found by the place sync wait here for review, with automatic
   changes that can be undone and possible duplicates.
+- Public Holidays: the holidays of each year, for the whole country or chosen states, entered
+  from the official announcement (no free source has them). The planner uses them.
 
 ## Requirements
 
@@ -64,7 +78,7 @@ For admins:
    - `OPEN_DATA_CONTACT` (a web address or e-mail address that open services ask for),
      `PLACE_SYNC_AUTO_PUBLISH_MIN`
    - `ROUTING_CAR_URL`, `ROUTING_FOOT_URL`, `ROUTING_VALHALLA_URL`, and the optional
-     `ROUTING_ESTIMATES_ONLY`
+     `ROUTING_ESTIMATES_ONLY` (and `ROUTING_TEST_SKEW`, for the planner check only)
    - `TRANSIT_API_URL`, `TOMTOM_API_KEY`, `TOMTOM_MONTHLY_LIMIT` (optional)
 
    `SECURITY_SETUP.md` explains the settings file and CSRF protection.
@@ -108,19 +122,45 @@ For admins:
    score at least `PLACE_SYNC_AUTO_PUBLISH_MIN`; with it every new place waits for review on the
    admin page *Open Data Imports*. The run takes a long time for all states and caches what it
    downloads in `storage/cache/`.
-7. Optional, local AI: install Ollama, run `ollama pull qwen2.5:3b` and keep
+7. Give the places a type and load the public transport stops (new database, after step 6):
+
+   ```
+   C:\xampp\php\php.exe tools\classify_places.php
+   C:\xampp\php\php.exe tools\sync_transit_stops.php --all
+   ```
+
+   The first sets `place_type` for every place (`--missing` only for places without one). The
+   second reads the stops from OpenStreetMap, one request per state, and measures the distance
+   from every place to its nearest stop; add `--dry-run` to see without saving. Both refuse a
+   database whose name does not end in `_ctest` unless `--confirm=<database name>` is added, as
+   `migrate.php` does. Without the stops no place counts as out of reach of public transport;
+   without types the planner falls back on the category.
+   Then enter the public holidays of the year on the admin page *Public Holidays*.
+8. Optional, local AI: install Ollama, run `ollama pull qwen2.5:3b` and keep
    `OLLAMA_BASE_URL` on `127.0.0.1`. Without it the AI answers are unavailable; planning and
    editing still work.
-8. Open `http://localhost/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/`.
+9. Open `http://localhost/Development-Of-a-Smart-Travel-Itinerary-Generator-For-Malaysian-Cultural-Tourism/`.
 
 ### The weekly place sync
 
-`tools\sync_places_weekly.bat` runs the place sync for every state with `--no-publish` through
-`C:\xampp\php\php.exe`, from the folder it sits in, and appends the output to a dated log,
+`tools\sync_places_weekly.bat` works from the folder it sits in, through `C:\xampp\php\php.exe`,
+on the database named in `.env`, and appends the output to a dated log,
 `storage\logs\sync_places_<date>.log` (the folder is created when missing and is ignored by
-git). It works on the database named in `.env`, and it only stages new places for review: an
-admin publishes them on *Open Data Imports*. Fields that were missing on existing places are
-filled in, and each change is listed there and can be undone.
+git). Every run:
+
+1. runs the place sync for every state with `--no-publish`. It only stages new places for
+   review: an admin publishes them on *Open Data Imports*. Fields that were missing on existing
+   places are filled in, and each change is listed there and can be undone;
+2. runs `tools\classify_places.php --missing`, so new places get a type;
+3. on the first run of each month, runs `tools\sync_transit_stops.php --all`. Stops change
+   slowly. The script takes the month from the date and keeps the month of the last stop sync in
+   `storage\logs\transit_stops_month.txt`, so a run later in the month does not repeat it, and a
+   month whose run failed is tried again on the next run.
+
+The two tools refuse a database whose name does not end in `_ctest` unless `--confirm=<name>` is
+given. The script reads `DB_NAME` (that line only) from `.env`, or takes it from the environment
+when it is set there, and passes it as `--confirm`. When it finds no `DB_NAME` it writes that to
+the log and stops without running anything.
 
 To run it every Sunday at 03:00, register it once in Windows Task Scheduler (run this in a
 command prompt as the user who owns the site):
@@ -137,10 +177,14 @@ Remove it with `schtasks /Delete /TN "Smart Travel place sync"`. The task does n
 - The planner: with the test copy of the database,
   `DB_NAME=travel_itinerary_db_ctest C:\xampp\php\php.exe tools\check_planner.php` in Git Bash
   (in PowerShell set `$env:DB_NAME = 'travel_itinerary_db_ctest'` first). It generates fixed
-  scenarios and checks the stored plans against the rules. It refuses to run on a database whose
-  name does not end in `_ctest`, and makes no network request unless `--road` is given.
-  `docs/PLANNER.md` explains each check code.
+  scenarios and checks the stored plans against the rules, then the edit scenarios again with
+  road figures that differ from the estimates (`ROUTING_TEST_SKEW=1`, set by the tool). It
+  refuses to run on a database whose name does not end in `_ctest`, and makes no network request
+  unless `--road` is given. `docs/PLANNER.md` explains each check code.
 - Migrations: `C:\xampp\php\php.exe tools\migrate.php --status`.
+- Place types and stops: `tools\classify_places.php --dry-run` and
+  `tools\sync_transit_stops.php --all --dry-run` change nothing; on the test copy they run
+  without `--confirm`.
 
 Keep a separate copy of the database named `travel_itinerary_db_ctest` for every test.
 
@@ -148,8 +192,8 @@ Keep a separate copy of the database named `travel_itinerary_db_ctest` for every
 
 | Document | What it is |
 |---|---|
-| `docs/PLANNER.md` | How a plan is made: rules, numbers, edit operations, the planner check |
-| `docs/OPEN_DATA.md` | Data sources and licences, the place sync, routing, live transport, estimates |
+| `docs/PLANNER.md` | How a plan is made: trip layout, rules, numbers, the day search, versions, edit operations, the planner check |
+| `docs/OPEN_DATA.md` | Data sources and licences, the place sync, place types, transport stops, public holidays, routing, live transport, estimates |
 | `SECURITY_SETUP.md` | The settings file, credentials and CSRF |
 | `AGENTS.md` | Short notes and project rules for coding agents (`CLAUDE.md` imports it) |
 | `DEVELOPER_HANDOVER_REPORT.md`, `CHANGES_DOCUMENTATION.md`, `SV_MODULE_COMPLIANCE_AUDIT.md`, `Tutorial_Readme_SmartTravelItineraryGenerator.txt` | Historical documents from the final-year project. They describe the earlier system, which still used Google Maps, and are kept unchanged. Where they disagree with this page, `docs/PLANNER.md` or `docs/OPEN_DATA.md`, those win |

@@ -29,30 +29,44 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
 
 ## Flow of `generate()`
 
+The order in which a trip is planned. Each step is one block of `ItineraryGenerator::generate()`;
+the sections below explain the steps.
+
 1. `PlannerRules::loadPreference()` reads the saved preference with its interest weights and its
-   must-see and avoid places. `PlannerRules::profile()` turns it into the planning profile. The
+   must-see and avoid places. `PlannerRules::profile()` turns it into the planning profile; the
+   trip option `style` (a version of a plan) changes the profile (see Versions of a plan). The
    traveller's own ratings add a small adjustment per category (see Learning).
 2. `PlannerCandidates::load()` loads the active places that have coordinates, inside the chosen
    states when states were chosen. A festival is a candidate only when both its dates are known
-   and in order (`VALID_FESTIVAL_SQL`). Places on the avoid list, and places the traveller rated
-   `LEARN_DROP_AT` or lower, are removed. The place rules that do not depend on the time slot
-   (`PlannerRules::placeReason()`) narrow the pool once, and so do the rules of a place's kind
-   (`PlannerCandidates::usable()`): for a traveller by public transport a place no stop reaches
-   (`TRANSIT`), for a traveller who wants no place of worship a place of worship (`WORSHIP`).
-   Neither applies to a must-see place.
-3. Must-see places: the days each can be visited on, and the budget (see Must-see and avoid).
-4. `TripLayout::plan()` lays the trip out (see Trip layout): the base of every night, the area of
+   and in order (`VALID_FESTIVAL_SQL`). Places on the avoid list, places the traveller rated
+   `LEARN_DROP_AT` or lower, and the twins of an avoided or a must-see place are removed. The
+   place rules that do not depend on the time slot (`PlannerRules::placeReason()`) narrow the pool
+   once, and so do the rules of a place's kind (`PlannerCandidates::usable()`): for a traveller by
+   public transport a place no stop reaches (`TRANSIT`), for a traveller who wants no place of
+   worship a place of worship (`WORSHIP`). Neither applies to a must-see place.
+3. The meal pool (food places of the pool), the chance of rain per date for the starting point
+   (see Weather), a `RouteService` for the transport, and the calendar: `PlannerRules::loadCalendar()`
+   reads the public holidays the admin keeps for the years of the trip.
+4. Must-see places: the days each can be visited on, and the budget (see Must-see and avoid).
+5. For a traveller by public transport, `PlannerRules::applyTransitAccess()` gives the route
+   service the walk between every place and its nearest stop, so a ride includes the walks.
+6. `TripLayout::plan()` lays the trip out (see Trip layout): the base of every night, the area of
    every day and the group of places each day draws from first. A must-see place goes to the day
    of its group.
-5. Day by day, `ItineraryDayBuilder::search()` finds the best day (see The day search) and
-   `ItineraryRouteOptimiser::orderDay()` orders it, using estimated travel figures. Day d + 1
-   starts at the base of night d; a day followed by a night ends at its base (see The base rule).
-6. When a routing server answers, the whole trip is measured once on the road (one request, see
-   How road figures are asked for; the bases are among its points) and every day is ordered and timed again. A stop that no order can keep is dropped, and the
-   search's next places (its spares) take its place (`REPLACE_CANDIDATES`, 3 per dropped stop, measured together in one route request;
-   a candidate that does not fit in any order gives way to the next).
-7. Everything is stored in one transaction, the base and group of each day in `itinerary_days`,
-   and the total is written by `ItineraryEditService::total()`. A failure saves nothing.
+7. The chance of rain by the hour, once for each base (see Weather).
+8. Day by day, `ItineraryDayBuilder::search()` finds the best day (see The day search) and
+   `ItineraryRouteOptimiser::orderDay()` orders it, using estimated travel figures. Day 1 starts at
+   the starting point and day d + 1 at the base of night d; a day followed by a night ends at its
+   base (see The base rule). A must-see place that found no room moves to a later day on which it
+   can be visited.
+9. When a routing server answers, the whole trip is measured once on the road (a table, or route
+   requests for a long trip; see How road figures are asked for) and every day is ordered and
+   timed again. A stop that no order can keep is dropped, and the search's next places (its spares)
+   take its place (`REPLACE_CANDIDATES`, 3 per dropped stop, measured together in one route
+   request; a candidate that does not fit in any order gives way to the next).
+10. Everything is stored in one transaction: the rows, the base and group of each day and the day
+    notes of public holidays in `itinerary_days`, and the total, written by
+    `ItineraryEditService::total()`. A failure saves nothing.
 
 ## Trip layout
 
@@ -71,7 +85,8 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
   state" and nothing more; places the bases leave uncovered form the next round's areas
   (`AREA_ROUNDS`, 3). Every place then belongs to the nearest base within the radius. A place is
   weighed as the day search would value it (`ItineraryDayBuilder::layoutValue()`): outside the
-  preferred districts less the price of relax level 3 (20), outside the interests less that of level 4 (30).
+  preferred districts less the price of relax level 3, outside the interests less that of level 4
+  (see Relaxation levels).
 - **Which areas, how many days.** The area of a must-see place is always used, and so is the
   best area of every state the traveller chose (what it offers over the whole trip, less the way
   there from the start), while there are days. Then each further day goes where it adds most
@@ -86,8 +101,8 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
   that puts a must-see place outside its possible dates comes last.
 - **Day groups.** An area of k days splits its places into k groups by bearing around its base:
   k arcs of about the same value. Each group goes to a date of the area so that as much of it as
-  possible is open that day (weekday hours, festival dates) and, from `RAIN_PREFER` (60) percent
-  rain, wet dates get the groups with more indoor value (`RAIN_GROUP_SHARE`). A must-see place
+  possible is open that day (weekday hours, festival dates) and, from `RAIN_PREFER` percent
+  rain (see Weather), wet dates get the groups with more indoor value (`RAIN_GROUP_SHARE`, 0.5). A must-see place
   decides the date of its group (a date it can be visited on).
 
 The base, the group's bearings (`group_from`, `group_to`) and the area radius (`area_km`) of
@@ -100,12 +115,12 @@ the base of its area, though no night follows it.
   chosen, else at the base of night d.
 - A day followed by a night ends at that night's hotel or base: every stop must leave time to be
   back by the end of the day window and distance to get back inside the hard daily limit (the
-  leg back counts), reason `BASE`; the last day ends at the end point as before (`FINISH`).
+  leg back counts), reason `BASE`; the last day ends at the end point (`FINISH`).
 - The first leg of day 1, and the first leg of the day the trip moves to another area (its base
   differs from the base of the day before), is not counted by the distance limits; its time
   counts.
 - A day followed by a night has a dinner: on the way when the traveller is still out across the
-  dinner window (as before), otherwise near the base: at a suitable food place within the meal
+  dinner window, otherwise near the base: at a suitable food place within the meal
   radius of the base, open for the whole meal and with time to be back, with the least detour
   on the way back, or as a dinner break at the base. Waiting there for the window is rest. Only a
   day window that cannot hold the dinner (18:00 plus the meal length after its end) has none.
@@ -116,9 +131,11 @@ the base of its area, though no night follows it.
   `ItineraryDayBuilder::fit()` with the base as the place times this end of the day
   (`closeDay()`); a day whose end does not fit gives up its last stop.
 - A hotel row begins when the traveller arrives there after the last stop (and the dinner at a
-  place, when there is one): `ItineraryHotelService::checkInMinute()`, no longer at a fixed 20:00.
-- Itineraries planned before bases (no base stored) keep the old behaviour: a day starts where
-  the day before ended or at the hotel, and a hotel is only a cost.
+  place, when there is one): `ItineraryHotelService::checkInMinute()` (20:00 only for a day with
+  no timed row), and lasts 30 minutes.
+- Itineraries stored before bases (no base in `itinerary_days`) are not under the base rule: a
+  day starts at the hotel of the night before when one was chosen, else at the last stop of the
+  day before, and no return to a base or dinner near it is required.
 
 ## Hard rules
 
@@ -140,7 +157,7 @@ is `PlannerRules::REASONS`).
 | Visit length | 30 to 240 min, 90 when unknown; at most 120 for a family, 105 for elderly or low walking | `VISIT_MIN`, `VISIT_MAX`, `VISIT_DEFAULT`, `VISIT_MAX_FAMILY`, `VISIT_MAX_CAREFUL` |
 | Opening hours | the whole visit inside the opening hours of that weekday; a place without usable hours has assumed hours (see Rules about time); reasons `CLOSED`, `OPEN_HOURS`, `DAY_END` | `PlannerRules::hoursOn()`, `OpeningHours::placeRanges()` |
 | Office hours | a text read as office hours is closed on the rest days of the place's state (Friday and Saturday in Kedah, Kelantan and Terengganu, else Saturday and Sunday) and on public holidays there | `OpeningHours::placeRanges()`, `PlannerCalendar::dayInfo()` |
-| Friday prayers | a mosque (`place_type` mosque, or hours that say "outside prayer times") takes no visit that overlaps 12:15-14:45 on a Friday; reason `PRAYER` | `PlannerRules::prayerBreak()` |
+| Friday prayers | a mosque (`place_type` mosque, or hours that say "outside prayer times") takes no visit that overlaps the prayer break of a Friday (see Rules about time); reason `PRAYER` | `PlannerRules::prayerBreak()`, `PRAYER_TEXT` |
 | Five-minute times | every visit and meal starts on a multiple of five minutes (rounded up) | `PlannerRules::TIME_STEP` |
 | Peak hours | the minutes of every leg (the way back included) are its measured or estimated minutes times `PlannerCalendar::peakFactor()` for the date, the minute it leaves and its point of departure; the stored time is the adjusted one | `PlannerRules::peakMinutes()` |
 | Hours written as words | a text without clock times is read as approximate hours: office hours Mon-Fri 09:00-17:00; lunch hours 11:00-15:00; meal hours 11:00-15:00 and 18:00-22:00; morning (or daytime) to evening 08:00-20:00; evening or night without morning or daytime 17:00-23:59; daytime 08:00-18:00; morning 06:00-12:00; business or shop hours 10:00-22:00 (first match wins). "Open area", "Exterior viewing", "Verify before visit" and other texts give no usable hours: the hours are assumed | `OpeningHours::DESCRIBED` |
@@ -158,7 +175,7 @@ is `PlannerRules::REASONS`).
 | Budget | see below | `BUDGET_MARGIN` |
 | No duplicates | a place appears once in a trip | reason `DUPLICATE` |
 | One landmark, one row | two rows of the same landmark never share a trip (below) | reason `SAME_LANDMARK`, `PlannerRules::SAME_LANDMARK` |
-| Public transport reach | for a traveller by public transport a place more than 1500 m (straight line) from its nearest stop, or with none within about 5 km, is no candidate and no meal place; a must-see place is still planned, with the note that the last stretch needs a taxi or e-hailing; a place never measured (`transit_checked_at` NULL) counts as before | reason `TRANSIT`, `TRANSIT_NEAR_M` (500), `TRANSIT_WALK_M` (1500), `PlannerRules::transitReach()` |
+| Public transport reach | for a traveller by public transport a place more than `TRANSIT_WALK_M` (1500 m, straight line) from its nearest stop, or with none within about 5 km (`TransitStopService::BOX_DEGREES`), is no candidate and no meal place; a must-see place is still planned, with the note that the last stretch needs a taxi or e-hailing; a place never measured (`transit_checked_at` NULL) counts as before | reason `TRANSIT`, `TRANSIT_NEAR_M` (500), `TRANSIT_WALK_M`, `PlannerRules::transitReach()` |
 | Rides by public transport | a ride (more than 1 km of road) takes the walk from its point of departure to the stop, the wait (`RouteService::TRANSIT_ACCESS_MIN`, 10), the ride and the walk from the stop: a walk is the straight-line metres x 1.3 at 5 km/h; a point that is no measured place (start, base, hotel) 300 m; the last stretch to a place no stop reaches by taxi, 5 min plus the metres (5 km without a stop) x 1.3 at 30 km/h | `PlannerRules::transitAccessMinutes()`, `applyTransitAccess()`, `RouteService::setTransitAccess()` |
 | Places of worship | the traveller's choice "Places of worship" (`traveller_preferences.worship_limit`, migration `20261121_worship_limit.sql`): at most one a day, or none; must-see places are still planned and count towards the limit | reason `WORSHIP`, `PlannerRules::worshipReason()`, `breaksWorshipCap()` |
 
@@ -218,7 +235,7 @@ the confirmation.
 
 ## The day search
 
-`ItineraryDayBuilder::search()` replaces the old greedy choice. It looks for the set and order of
+`ItineraryDayBuilder::search()` chooses a day. It looks for the set and order of
 stops with the highest value that keeps every hard rule, with at most the target number of stops
 and as many as the rules allow: finished days are compared by must-see places, then by stops,
 then by value (ties by place ids, so the result is deterministic).
@@ -238,8 +255,8 @@ then by value (ties by place ids, so the result is deterministic).
   price of the way there and back from the base; a second search adds the 40 best other places of
   the area, and its day is taken when it ranks higher (must-see places, stops, value), so nothing
   good is lost.
-- From `RAIN_INDOOR_FIRST` (80) percent during its visit an outdoor place is a next stop only when
-  no indoor place of the same level is.
+- From `RAIN_INDOOR_FIRST` percent during its visit (see Weather) an outdoor place is a next stop
+  only when no indoor place of the same level is.
 - Work saved without changing the result: a child that cannot reach the 12th best child found so
   far (its value at best: `most()`, on a day without rain, with the estimate of the direct leg
   while every figure is an estimate and the transport is not public transport) is not timed; the
@@ -250,8 +267,8 @@ then by value (ties by place ids, so the result is deterministic).
 - It returns its next-best days (`alternatives`, 3) and the places it would take next (`spares`),
   which the repair step of generation and `regenerateDay()` try when a stop gives way; a spare
   taken into a day is given its relax level as that day sees it (`relevel()`).
-- A 7-day trip plans in about 0.6 to 1.7 seconds without routing (planner check, the line "planning
-  time" of its INFO; the second, wider search of each day doubles the work).
+- The planner check prints the planning time of its 7-day scenarios (the INFO line "planning
+  time", generation alone, without routing). The second, wider search of each day doubles the work.
 
 `check()` stays the one feasibility check and `fit()` the one timing (a visit, or with the base
 as the place the end of the day).
@@ -293,7 +310,7 @@ as the place the end of the day).
   | other or no type | by category: culture and heritage 09:00-18:00, museum 09:00-17:00, nature 07:00-19:00, food and shopping 10:00-22:00, festival its dates only, any other as culture |
 
 - **Friday prayers.** `PlannerRules::prayerBreak()` blocks the break of `PlannerCalendar::dayInfo()`
-  (12:15-14:45 on a Friday) for a mosque; a visit that fails only on it gives `PRAYER`.
+  (`FRIDAY_PRAYER`: 12:15-14:45 on a Friday) for a mosque; a visit that fails only on it gives `PRAYER`.
 - **Rest days and public holidays.** Office hours close on the rest days of the place's state and
   on its public holidays. `PlannerRules::loadCalendar()` calls `PlannerCalendar::loadHolidays()`
   (when it exists) for each year a trip touches, in generation and in every edit. A trip date
@@ -322,8 +339,8 @@ is deterministic. Its terms:
   `WORSHIP_PER_DAY` (2) places of worship and `SAME_TYPE_PER_DAY` (2) stops of one type a day
   (`other` has no limit; a type asked for less of: 1), `PlannerRules::breaksTypeVariety()`. A
   soft preference with its own relax level (below). A trip of food only is exempt.
-- Public transport: a place 500 to 1500 m from its stop loses `TRANSIT_WALK_POINTS` (6) and its
-  notes say "a walk of about N min from the nearest stop (M m)"; the walk is in the ride's minutes.
+- Public transport: a place farther than `TRANSIT_NEAR_M` from its stop (and within
+  `TRANSIT_WALK_M`) loses `TRANSIT_WALK_POINTS` (6) and its notes say "a walk of about N min from the nearest stop (M m)"; the walk is in the ride's minutes.
 - Wishes of a day planned again by place type: a type (or group) asked for more of counts as an
   interest loved (35 points, passes the interest step); one asked for less of loses
   `TYPE_LESS_POINTS` (12) and has a limit of one that day.
@@ -379,8 +396,8 @@ forecast nothing changes. Weather is a soft preference only.
 | 80 percent or more | outdoor places are tried only when no indoor place of the same relaxation level is feasible | `RAIN_INDOOR_FIRST` |
 
 The note names the hours: "90% chance of rain 13:00-17:00: indoor place preferred", or
-"outdoor although 85% chance of rain 14:00-15:00: no indoor place fits" (without hourly values
-"... chance of rain forecast ..." as before). The hours are those of the visit as finally timed
+"outdoor although 85% chance of rain 14:00-15:00: no indoor place fits" (a date without hourly
+values says "... chance of rain forecast ..." and names no hours). The hours are those of the visit as finally timed
 (`ItineraryDayBuilder::rainNotesAt()`, when the day is stored): ordering the day may move a
 visit after the search chose it, and a visit moved to drier hours loses the note.
 
@@ -454,9 +471,10 @@ is dropped with its reason code. A time that breaks a rule is never stored and n
    by, `OPTIMISE_CANDIDATES` (3) a day.
 2. One request: a table of the trip's points (visits, hotels and bases, start and end point, then
    while there is room the standby places and the meal places), or, for a trip of more than
-   `PlannerRules::LONG_TRIP_POINTS` (20) points of its own, no table but one route request along
-   the legs of each day's best order on the figures at hand, the legs from each stop to the day's
-   end and the standby places' legs (what does not fit in it stays on the figures at hand).
+   `PlannerRules::LONG_TRIP_POINTS` (20) points of its own, no table but one route request
+   (`measureLegs()` with a limit of 1) along the legs of each day's best order, the legs from each
+   stop to the day's end and the standby places' legs (what does not fit in it stays on the
+   figures at hand).
 3. Every day is ordered on those figures from where it starts to its night. A must-see place is
    never dropped for a better order: when no order keeps it, the stored order is timed again, and
    when that fails too the day stays as it was (`kept_days`). A stop no order keeps gives way to
@@ -477,7 +495,7 @@ not_replaced), `reordered_days`, `saved_min`, `replaced` (day, old, new, reason)
 `long_trip`. `ItineraryEditService::optimiseSentence()` words it with the keys `optm.*` of `lang/`:
 the days in a shorter order, what was replaced (old by new), what was removed without a
 replacement, a day kept as it was, and the amount over the budget. The optimiser makes one routing
-request (the REQUESTS limit of the check).
+request (the `optimise` entry of `REQUEST_LIMITS` in the check).
 
 ## Versions of a plan
 
@@ -577,7 +595,7 @@ rule codes of `check()` can be returned too):
 | `DAY_END` | the chosen day start leaves no time before the end of the day |
 | `MEAL` | the chosen meal does not fit |
 | `DIETARY` | the chosen meal place is not among the food places the trip may use |
-| `TRANSIT` | for a traveller by public transport: the place has no stop within 1500 m (not for a must-see place) |
+| `TRANSIT` | for a traveller by public transport: the place has no stop within `TRANSIT_WALK_M` (not for a must-see place) |
 | `WORSHIP` | the place of worship goes over the traveller's limit (none, or one a day), or the change puts more places of worship into a day at its limit (not for a must-see place) |
 | `HOTEL_BUDGET` | the hotels would put the stored total over the budget (with `total`, `budget`, `over_by`); saved only with the confirmation |
 | `VERSION_LIMIT`, `VERSION_EXISTS` | the itinerary already has its three versions; a version in this style exists already |
@@ -723,7 +741,7 @@ Finding codes. A violation fails the run; a warning is only reported.
 | `CATEGORY` | too many visits of one category without a note that variety was relaxed |
 | `MEAL` | a meal row or a missing meal is wrong (window, length, item type, cost, reason, place, radius; a dinner after the last visit only on a day followed by a night, near its base) |
 | `WEATHER`, `RAIN` | an outdoor stop on a day at 80 percent rain or more (warning); by the hour (`forecast_hours`), an outdoor stop overlapping hours at 80 percent or more while indoor places were left (warning; with `outdoor_dry_hours` a violation unless its notes say no indoor place fits); after planning a rainy day again, an outdoor stop stayed while indoor places were left |
-| `TRANSIT` | on a public transport trip: a stop at a place no stop reaches within 1500 m without the note about the last stretch, a meal at such a place, a ride to a place 500 to 1500 m from its stop shorter than the walk; a missing note about the walk is a warning. On estimates `PEAK` checks every ride's walks exactly (own copy `TRANSIT_*`) |
+| `TRANSIT` | on a public transport trip: a stop at a place no stop reaches within `TRANSIT_WALK_M` without the note about the last stretch, a meal at such a place, a ride to a place beyond `TRANSIT_NEAR_M` from its stop shorter than the walk; a missing note about the walk is a warning. On estimates `PEAK` checks every ride's walks exactly (own copy `TRANSIT_*`) |
 | `TYPE` | more than two places of worship or two stops of one type in a day (one of a type asked for less of, `day_type_limits`) without the note that type variety was relaxed (or must-see); the traveller's limit on places of worship exceeded by a place that is no must-see place |
 | `AVOID`, `RATED`, `MUST` | an avoided or low-rated place in the trip, or the same landmark as an avoided place; a must-see place neither planned nor named in a note |
 | `LEARN`, `WEIGHTS`, `WINDOW` | warnings: ratings not reflected, interest weights not reflected, a widened window not used |
