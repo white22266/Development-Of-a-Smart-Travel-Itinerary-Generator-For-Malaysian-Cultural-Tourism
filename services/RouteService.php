@@ -49,8 +49,9 @@ class RouteService
     private const ROAD_FACTOR = 1.3;
 
     /**
-     * Public transport without a timetable to ask: a hop up to this many km is walked, and a
-     * ride takes this many minutes more than the driving, for reaching the stop and waiting.
+     * Public transport without a timetable to ask: a hop up to this many km is walked; a ride
+     * takes the wait at the stop (TRANSIT_ACCESS_MIN) more than the ride itself, and the walks
+     * between each end and its stop (setTransitAccess(), PlannerRules::applyTransitAccess()).
      */
     public const TRANSIT_WALK_KM = 1.0;
     private const TRANSIT_ACCESS_MIN = 10;
@@ -90,6 +91,13 @@ class RouteService
      */
     private array $covered = [];
 
+    /**
+     * Public transport: "lat,lng" (rounded to 5 places) => minutes between that point and its
+     * stop, and the minutes of any other point (setTransitAccess()). Unset: no walk is added.
+     */
+    private array $access = [];
+    private ?int $accessDefault = null;
+
     /** Seconds a request may take before the caller goes on with estimates (connecting: at most 3). */
     private int $timeout = 15;
 
@@ -100,6 +108,26 @@ class RouteService
     public function __construct(string $transportType = 'car')
     {
         $this->transportType = self::normalizeTransportType($transportType);
+    }
+
+    /**
+     * Public transport: the minutes between points and their stops ("lat,lng" rounded to 5
+     * places => minutes), and the minutes of a point not listed. A ride then takes the walk
+     * from its point of departure to the stop, the wait, the ride and the walk to its point.
+     * Call it before the first figure is asked for: figures already known keep their minutes.
+     */
+    public function setTransitAccess(array $minutesByPoint, int $otherPoint): void
+    {
+        if ($this->transportType !== 'public_transport') return;
+        $this->access = array_map('intval', $minutesByPoint);
+        $this->accessDefault = max(0, $otherPoint);
+    }
+
+    /** The minutes between a point and its stop for a ride (0 without setTransitAccess()). */
+    public function accessMinutes(float $lat, float $lng): int
+    {
+        if ($this->accessDefault === null) return 0;
+        return $this->access[round($lat, 5) . ',' . round($lng, 5)] ?? $this->accessDefault;
     }
 
     /** How long a request may take. Pages that wait for an answer set a few seconds; the default is 15. */
@@ -159,9 +187,15 @@ class RouteService
         $roadKm = self::haversineKm($lat1, $lng1, $lat2, $lng2) * self::ROAD_FACTOR;
         return [
             'distance_km'     => round($roadKm, 2),
-            'travel_time_min' => $this->minutesFor($roadKm),
+            'travel_time_min' => $this->minutesFor($roadKm, [$lat1, $lng1], [$lat2, $lng2]),
             'method'          => 'estimate',
         ];
+    }
+
+    /** Whether any road figure is known (measured or seeded): until then every figure is an estimate. */
+    public function hasKnownFigures(): bool
+    {
+        return $this->known !== [];
     }
 
     /** Whether the road figures of the leg from one point to another are known (measured or seeded). */
@@ -241,7 +275,7 @@ class RouteService
             foreach ($points as $j => $to) {
                 if ($i === $j || !isset($matrix[$i][$j])) continue;   // not set: no road between the two
                 [$km, $seconds] = $matrix[$i][$j];
-                $minutes = $this->transportType === 'public_transport' ? $this->minutesFor($km) : (int)ceil($seconds / 60.0);
+                $minutes = $this->transportType === 'public_transport' ? $this->minutesFor($km, $from, $to) : (int)ceil($seconds / 60.0);
                 $walk = $this->shortWalk($from[0], $from[1], $to[0], $to[1], $km);
                 $this->known[self::pairKey($from[0], $from[1], $to[0], $to[1])] = $walk ?? [round($km, 2), $minutes];
             }
@@ -649,9 +683,10 @@ class RouteService
         if (!is_array($route) || count($route['legs']) !== count($points) - 1) return null;
 
         $legs = [];
-        foreach ($route['legs'] as $leg) {
+        foreach ($route['legs'] as $index => $leg) {
             $km = (float)($leg['distance'] ?? 0) / 1000.0;
-            $minutes = $this->transportType === 'public_transport' ? $this->minutesFor($km) : (int)ceil((float)($leg['duration'] ?? 0) / 60.0);
+            $minutes = $this->transportType === 'public_transport'
+                ? $this->minutesFor($km, $points[$index], $points[$index + 1]) : (int)ceil((float)($leg['duration'] ?? 0) / 60.0);
             $entry = ['distance_km' => round($km, 2), 'travel_time_min' => $minutes];
             if ($withDetails) {
                 $entry['via'] = trim((string)($leg['summary'] ?? ''));
@@ -797,12 +832,18 @@ class RouteService
         return 6371.0 * 2 * atan2(sqrt($a), sqrt(max(0.0, 1 - $a)));
     }
 
-    /** Minutes needed for a road distance at the usual speed of this transport type. */
-    private function minutesFor(float $roadKm): int
+    /**
+     * Minutes needed for a road distance at the usual speed of this transport type. A ride by
+     * public transport between two points adds the wait and the walks between each point and
+     * its stop (setTransitAccess()).
+     */
+    private function minutesFor(float $roadKm, ?array $from = null, ?array $to = null): int
     {
         if ($this->transportType === 'public_transport') {
             if ($roadKm <= self::TRANSIT_WALK_KM) return (int)ceil($roadKm / self::SPEED_MAP['walking'] * 60);
-            return (int)ceil($roadKm / self::SPEED_MAP['public_transport'] * 60) + self::TRANSIT_ACCESS_MIN;
+            $walks = ($from !== null ? $this->accessMinutes((float)$from[0], (float)$from[1]) : 0)
+                + ($to !== null ? $this->accessMinutes((float)$to[0], (float)$to[1]) : 0);
+            return (int)ceil($roadKm / self::SPEED_MAP['public_transport'] * 60) + self::TRANSIT_ACCESS_MIN + $walks;
         }
         $speed = self::SPEED_MAP[$this->transportType] ?? 60;
         return (int)ceil(($roadKm / $speed) * 60);

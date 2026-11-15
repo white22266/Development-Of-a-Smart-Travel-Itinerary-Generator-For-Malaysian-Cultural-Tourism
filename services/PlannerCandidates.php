@@ -114,7 +114,7 @@ final class PlannerCandidates
         $states = array_values((array)($pref['states'] ?? []));
         if ($states) $where[] = 'state IN (' . implode(',', array_fill(0, count($states), '?')) . ')';
         return self::mealPool(array_filter(self::query($conn, $where, $states), static fn(array $place): bool =>
-            !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
+            !isset($skip[(int)$place['place_id']]) && self::usable($place, $profile)));
     }
 
     /**
@@ -128,8 +128,21 @@ final class PlannerCandidates
         $low = self::travellerRatings($conn, $travellerId, PlannerRules::LEARN_DROP_AT)['low'];
         foreach ((array)($pref['must_places'] ?? []) as $id) unset($low[(int)$id]);
         $skip = PlannerRules::withTwins($profile, (array)($pref['avoid_places'] ?? [])) + $low;
+        $must = array_fill_keys(array_map('intval', (array)($pref['must_places'] ?? [])), true);
         return array_values(array_filter($loaded ?? self::load($conn, $pref), static fn(array $place): bool =>
-            !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
+            !isset($skip[(int)$place['place_id']]) && (isset($must[(int)$place['place_id']]) ? PlannerRules::placeReason($place, $profile) === null : self::usable($place, $profile))));
+    }
+
+    /**
+     * Whether a place may be a candidate (not a must-see place, which is planned under the hard
+     * rules only): the rules of PlannerRules::placeReason(), reachable by public transport for
+     * a traveller who uses it (PlannerRules::transitReason()), and not a place of worship when
+     * the traveller wants none (PlannerRules::worshipReason()).
+     */
+    public static function usable(array $place, array $profile): bool
+    {
+        return PlannerRules::placeReason($place, $profile) === null && PlannerRules::transitReason($place, $profile) === null
+            && PlannerRules::worshipReason($place, $profile) === null;
     }
 
     /**
@@ -148,8 +161,13 @@ final class PlannerCandidates
         // The finer type (migration 20261119_place_types.sql): the rules read it for assumed
         // opening hours and the Friday prayers (OpeningHours, PlannerRules::isMosque()).
         $type = PlannerRules::hasColumn($conn, 'cultural_places', 'place_type') ? 'place_type' : 'NULL AS place_type';
+        // Public transport (migration 20261119_transit_stops.sql): metres to the nearest stop and
+        // whether the place was measured (PlannerRules::transitReach()); without the columns
+        // every place counts as never measured.
+        $transit = PlannerRules::hasColumn($conn, 'cultural_places', 'nearest_stop_m')
+            ? 'nearest_stop_m, nearest_rail_m, transit_checked_at' : 'NULL AS nearest_stop_m, NULL AS nearest_rail_m, NULL AS transit_checked_at';
         $sql = "
-            SELECT place_id, state, district, category, {$type}, name, description, address, latitude, longitude,
+            SELECT place_id, state, district, category, {$type}, {$transit}, name, description, address, latitude, longitude,
                    opening_hours, festival_start_date, festival_end_date, estimated_cost, entrance_fee, is_free,
                    halal_status, is_outdoor, visit_duration_min, best_time_to_visit, dress_code_required,
                    avg_rating, rating

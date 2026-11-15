@@ -18,12 +18,19 @@
 //                     planner reads them (known, office hours, assumed), the Friday prayers at a
 //                     mosque, rush-hour travel times; every visit and meal starts on a multiple
 //                     of TIME_STEP minutes
+//   transitReach(), transitReason(), applyTransitAccess()  public transport: which places a
+//                     stop reaches, and the walks of every ride (RouteService::setTransitAccess())
+//   typeOf(), breaksTypeVariety(), worshipReason(), breaksWorshipCap(), wishTokens()  place
+//                     types: variety by type, the traveller's limit on places of worship, the
+//                     wishes of a day planned again
 
 require_once __DIR__ . '/OpeningHours.php';
 require_once __DIR__ . '/PlannerCalendar.php';
 require_once __DIR__ . '/CostEstimationService.php';
 require_once __DIR__ . '/AccessibilityNeedsAnalysisService.php';
 require_once __DIR__ . '/PlaceNameMatcher.php';
+require_once __DIR__ . '/PlaceTypeClassifier.php';
+require_once __DIR__ . '/RouteService.php';
 
 final class PlannerRules
 {
@@ -164,7 +171,47 @@ final class PlannerRules
         'LOCKED' => 'the day holds a row the planner cannot re-time',
         'NO_CHANGE' => 'nothing would change',
         'EARLY_START' => 'earlier than the earliest start of a day (06:00)',
+        // Public transport and the traveller's limit on places of worship.
+        'TRANSIT' => 'too far from public transport (no stop within 1.5 km)',
+        'WORSHIP' => 'over your limit for places of worship',
     ];
+
+    /**
+     * Public transport (cultural_places.nearest_stop_m: straight-line metres to the nearest stop
+     * of any kind, NULL when none lies within about 5 km; transit_checked_at NULL: never
+     * measured). Within TRANSIT_NEAR_M a place is reachable; up to TRANSIT_WALK_M it is reachable
+     * with a walk, which costs TRANSIT_WALK_POINTS; beyond, or without a stop, it is not
+     * reachable: no candidate, and a must-see place gets the note that the last stretch needs a
+     * taxi or e-hailing. A place never measured counts as today (no walk, reachable).
+     *
+     * The minutes of a ride (RouteService) are the walk from the place of departure to its stop,
+     * RouteService's wait, the ride and the walk from the stop to the place. A walk is its
+     * straight line times ROAD_FACTOR at WALK_KMH; a point without a measured stop (the starting
+     * point, a base or hotel that is no place) has TRANSIT_ASSUMED_M. The last stretch by taxi is
+     * TAXI_WAIT_MIN plus the straight line times ROAD_FACTOR at TAXI_KMH (TRANSIT_NO_STOP_M when
+     * no stop lies within about 5 km).
+     */
+    public const TRANSIT_NEAR_M = 500;
+    public const TRANSIT_WALK_M = 1500;
+    public const TRANSIT_ASSUMED_M = 300;
+    public const TRANSIT_NO_STOP_M = 5000;
+    public const TRANSIT_WALK_POINTS = 6;
+    private const WALK_KMH = 5.0;
+    private const TAXI_KMH = 30.0;
+    private const TAXI_WAIT_MIN = 5;
+    private const ACCESS_ROAD_FACTOR = 1.3;
+
+    /**
+     * Place types (PlaceTypeClassifier::TYPES): at most WORSHIP_PER_DAY stops of the worship
+     * group and SAME_TYPE_PER_DAY stops of one type in a day (a soft preference, relaxed at its
+     * own level, ItineraryDayBuilder). A type the traveller asked for less of has a limit of 1.
+     * The traveller's own choice (traveller_preferences.worship_limit: 'one' or 'none') is a
+     * hard rule; a must-see place is still scheduled.
+     */
+    public const WORSHIP_PER_DAY = 2;
+    public const SAME_TYPE_PER_DAY = 2;
+    /** Types without a same-type limit: no real kind of place. */
+    private const UNLIMITED_TYPES = ['other'];
 
     /**
      * A saved preference, normalised, or null when it does not exist (or is not the traveller's).
@@ -174,7 +221,7 @@ final class PlannerRules
     public static function loadPreference(mysqli $conn, int $preferenceId, ?int $travellerId = null): ?array
     {
         $optional = array_values(array_filter(
-            ['day_start_time', 'day_end_time', 'stops_per_day', 'adults', 'children', 'seniors', 'accessibility_tags'],
+            ['day_start_time', 'day_end_time', 'stops_per_day', 'adults', 'children', 'seniors', 'accessibility_tags', 'worship_limit'],
             static fn(string $column): bool => self::hasColumn($conn, 'traveller_preferences', $column)
         ));
         $sql = "
@@ -282,6 +329,8 @@ final class PlannerRules
             'interest_weights' => $weights,
             'must_places' => $ids('must_places'),
             'avoid_places' => $ids('avoid_places'),
+            // Places of worship (migration 20261121_worship_limit.sql): null, 'one' or 'none'.
+            'worship_limit' => in_array($row['worship_limit'] ?? null, ['one', 'none'], true) ? (string)$row['worship_limit'] : null,
         ];
     }
 
@@ -377,6 +426,12 @@ final class PlannerRules
             'meal_radius_km' => self::MEAL_RADIUS_KM[$transport] ?? 5.0,
             // The trip's twin groups (sameLandmarks()), passed in by whoever loaded the candidates.
             'twins' => (array)($pref['twins'] ?? []),
+            // Places of worship a day as a hard rule: null (no limit), 1 or 0 (worship_limit).
+            'worship_cap' => match ($pref['worship_limit'] ?? null) { 'one' => 1, 'none' => 0, default => null },
+            // Wishes of a day planned again (ItineraryEditService::regenerateDay()): place types
+            // the traveller wants more or less of, type => true (a group gives all its types).
+            'more_types' => self::typeSet((array)($pref['more_types'] ?? [])),
+            'less_types' => self::typeSet((array)($pref['less_types'] ?? [])),
         ];
     }
 
@@ -514,7 +569,7 @@ final class PlannerRules
     }
 
     /** Words in a place name that mean it stands in the open; used only by isOutdoor(). */
-    private const OUTDOOR_NAME = '/\b(statue|fountain|waterfall|air terjun|beach|pantai|lighthouse|rumah api|viewpoint|lookout|bridge|jambatan|square|dataran|monument|tugu|clock tower|street art|mural|pintu gerbang|esplanade|waterfront|jetty|jeti|park|gardens?|lake|tasik|caves?|gua|trail)\b/i';
+    private const OUTDOOR_NAME = '/\b(statue|fountain|waterfall|air terjun|beach|pantai|lighthouse|rumah api|viewpoint|lookout|bridge|jambatan|square|dataran|monument|tugu|clock tower|street art|murals?|pintu gerbang|esplanade|waterfront|jetty|jeti|park|gardens?|lake|tasik|caves?|gua|trail)\b/i';
 
     /** A place is outdoor when it is marked so or is a nature place (for the weather rule). */
     public static function isOutdoor(array $place): bool
@@ -526,6 +581,185 @@ final class PlannerRules
         // a culture or heritage place whose name says it stands in the open counts as outdoor too.
         return in_array($category, ['culture', 'heritage'], true)
             && preg_match(self::OUTDOOR_NAME, (string)($place['name'] ?? '')) === 1;
+    }
+
+    // ---------------------------------------------------------------- public transport
+
+    /**
+     * How a place is reached by public transport: 'near' (a stop within TRANSIT_NEAR_M), 'walk'
+     * (within TRANSIT_WALK_M), 'none' (no stop within it, or none within about 5 km) or
+     * 'unknown' (never measured: treated as before, reachable without a walk).
+     */
+    public static function transitReach(array $place): string
+    {
+        if (!array_key_exists('transit_checked_at', $place) || $place['transit_checked_at'] === null || $place['transit_checked_at'] === '') return 'unknown';
+        $metres = $place['nearest_stop_m'] ?? null;
+        if ($metres === null || $metres === '') return 'none';
+        $metres = (float)$metres;
+        if ($metres <= self::TRANSIT_NEAR_M) return 'near';
+        return $metres <= self::TRANSIT_WALK_M ? 'walk' : 'none';
+    }
+
+    /** TRANSIT for a traveller by public transport and a place no stop reaches; else null. Not for a must-see place. */
+    public static function transitReason(array $place, array $profile): ?string
+    {
+        return ($profile['transport'] ?? '') === 'public_transport' && self::transitReach($place) === 'none' ? 'TRANSIT' : null;
+    }
+
+    /**
+     * Minutes between a place and its stop for a ride: the walk (none for a place never
+     * measured), or for a place no stop reaches the last stretch by taxi.
+     */
+    public static function transitAccessMinutes(array $place): int
+    {
+        $reach = self::transitReach($place);
+        if ($reach === 'unknown') return 0;
+        if ($reach === 'none') {
+            $metres = isset($place['nearest_stop_m']) && $place['nearest_stop_m'] !== null && $place['nearest_stop_m'] !== '' ? (float)$place['nearest_stop_m'] : (float)self::TRANSIT_NO_STOP_M;
+            return self::TAXI_WAIT_MIN + (int)ceil($metres / 1000.0 * self::ACCESS_ROAD_FACTOR / self::TAXI_KMH * 60);
+        }
+        return self::walkMinutes((float)$place['nearest_stop_m']);
+    }
+
+    /** Minutes of a walk of this many straight-line metres (ACCESS_ROAD_FACTOR at WALK_KMH). */
+    public static function walkMinutes(float $metres): int
+    {
+        return (int)ceil($metres / 1000.0 * self::ACCESS_ROAD_FACTOR / self::WALK_KMH * 60);
+    }
+
+    /**
+     * Give a route service of a public transport trip the minutes between each place's point
+     * and its stop (RouteService::setTransitAccess()); every other point gets the walk of
+     * TRANSIT_ASSUMED_M. Nothing changes for another transport.
+     */
+    public static function applyTransitAccess(RouteService $route, array $profile, array $places): void
+    {
+        if (($profile['transport'] ?? '') !== 'public_transport') return;
+        $minutes = [];
+        foreach ($places as $place) {
+            if (!isset($place['latitude'], $place['longitude'])) continue;
+            $key = round((float)$place['latitude'], 5) . ',' . round((float)$place['longitude'], 5);
+            $m = self::transitAccessMinutes($place);
+            $minutes[$key] = isset($minutes[$key]) ? min($minutes[$key], $m) : $m;
+        }
+        $route->setTransitAccess($minutes, self::walkMinutes((float)self::TRANSIT_ASSUMED_M));
+    }
+
+    /**
+     * The words a stop's notes carry about public transport: the walk from the nearest stop
+     * (500 to 1500 m), or that the last stretch needs a taxi; null otherwise.
+     */
+    public static function transitNote(array $place, array $profile): ?string
+    {
+        if (($profile['transport'] ?? '') !== 'public_transport') return null;
+        $reach = self::transitReach($place);
+        if ($reach === 'walk') {
+            return 'a walk of about ' . self::walkMinutes((float)$place['nearest_stop_m']) . ' min from the nearest stop (' . (int)round((float)$place['nearest_stop_m']) . ' m)';
+        }
+        if ($reach === 'none') return self::TAXI_NOTE;
+        return null;
+    }
+
+    /** The note of a must-see place no public transport stop reaches. */
+    public const TAXI_NOTE = 'the last stretch needs a taxi or e-hailing: no public transport stop within 1.5 km';
+
+    // ---------------------------------------------------------------- place types
+
+    /** A place's type (PlaceTypeClassifier::TYPES), or null when it has none. */
+    public static function typeOf(array $place): ?string
+    {
+        $type = strtolower(trim((string)($place['place_type'] ?? '')));
+        return $type !== '' && PlaceTypeClassifier::isValid($type) ? $type : null;
+    }
+
+    /** A place's type group (worship, history, ...), or null without a type. */
+    public static function typeGroupOf(array $place): ?string
+    {
+        $type = self::typeOf($place);
+        return $type !== null ? PlaceTypeClassifier::groupOf($type) : null;
+    }
+
+    /** Whether a place is a place of worship (its type is of the worship group). */
+    public static function isWorship(array $place): bool
+    {
+        return self::typeGroupOf($place) === 'worship';
+    }
+
+    /** WORSHIP for a place of worship when the traveller wants none; else null. Not for a must-see place. */
+    public static function worshipReason(array $place, array $profile): ?string
+    {
+        return ($profile['worship_cap'] ?? null) === 0 && self::isWorship($place) ? 'WORSHIP' : null;
+    }
+
+    /** Most stops of this type in a day before type variety is relaxed (null: no limit). */
+    public static function typeLimit(array $profile, string $type): ?int
+    {
+        if (in_array($type, self::UNLIMITED_TYPES, true)) return null;
+        return isset($profile['less_types'][$type]) ? 1 : self::SAME_TYPE_PER_DAY;
+    }
+
+    /**
+     * Whether one more stop of this place breaks type variety, given the day's counts (type =>
+     * stops, group => stops). A trip of food only is exempt, as from category variety.
+     */
+    public static function breaksTypeVariety(array $place, array $types, array $groups, array $profile): bool
+    {
+        if (!empty($profile['food_only'])) return false;
+        $type = self::typeOf($place);
+        if ($type === null) return false;
+        if (PlaceTypeClassifier::groupOf($type) === 'worship' && (int)($groups['worship'] ?? 0) >= self::WORSHIP_PER_DAY) return true;
+        $limit = self::typeLimit($profile, $type);
+        return $limit !== null && (int)($types[$type] ?? 0) >= $limit;
+    }
+
+    /** Whether one more place of worship breaks the traveller's own limit, given the day's worship stops. */
+    public static function breaksWorshipCap(array $place, int $worshipStops, array $profile): bool
+    {
+        $cap = $profile['worship_cap'] ?? null;
+        return $cap !== null && self::isWorship($place) && $worshipStops >= (int)$cap;
+    }
+
+    /**
+     * Wish tokens of a day planned again, as type => true: "type:<type>" gives that type,
+     * "group:<group>" every type of the group. Anything else is left out.
+     */
+    public static function typeSet(array $tokens): array
+    {
+        $out = [];
+        foreach ($tokens as $token) {
+            $token = strtolower(trim((string)$token));
+            if (str_starts_with($token, 'type:') && PlaceTypeClassifier::isValid(substr($token, 5))) {
+                $out[substr($token, 5)] = true;
+            } elseif (str_starts_with($token, 'group:')) {
+                foreach (PlaceTypeClassifier::TYPES as $type => [, $group]) if ($group === substr($token, 6)) $out[$type] = true;
+            } elseif (PlaceTypeClassifier::isValid($token)) {
+                $out[$token] = true;   // a type given as itself (a key of more_types)
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * A list of wishes for a day planned again: categories (PlannerRules::VALID_INTERESTS),
+     * "type:<type>" and "group:<group>" of PlaceTypeClassifier, from a list or a comma-separated
+     * text. Null when one is unknown; each once, in the order given.
+     */
+    public static function wishTokens($value): ?array
+    {
+        if (is_string($value)) $value = explode(',', $value);
+        if (!is_array($value)) return null;
+        $out = [];
+        foreach ($value as $token) {
+            if (!is_string($token)) return null;
+            $token = strtolower(trim($token));
+            if ($token === '') continue;
+            $ok = in_array($token, self::VALID_INTERESTS, true)
+                || (str_starts_with($token, 'type:') && PlaceTypeClassifier::isValid(substr($token, 5)))
+                || (str_starts_with($token, 'group:') && isset(PlaceTypeClassifier::GROUPS[substr($token, 6)]));
+            if (!$ok) return null;
+            if (!in_array($token, $out, true)) $out[] = $token;
+        }
+        return $out;
     }
 
     /**
@@ -761,7 +995,28 @@ final class PlannerRules
      */
     public static function hoursOn(array $place, string $date): ?array
     {
-        return OpeningHours::placeRanges($place, $date);
+        $id = (int)($place['place_id'] ?? 0);
+        if (self::$memo === null || $id <= 0) return OpeningHours::placeRanges($place, $date);
+        $key = 'h' . $id . '|' . $date;
+        if (!array_key_exists($key, self::$memo)) self::$memo[$key] = OpeningHours::placeRanges($place, $date);
+        return self::$memo[$key];
+    }
+
+    /**
+     * While a day search runs (ItineraryDayBuilder::search(), memoStart() .. memoEnd()), the
+     * hours and the Friday prayers of a place on a date are worked out once: nothing they depend
+     * on (the place row, the holidays) changes during a search. Null outside a search.
+     */
+    private static ?array $memo = null;
+
+    public static function memoStart(): void
+    {
+        self::$memo = [];
+    }
+
+    public static function memoEnd(): void
+    {
+        self::$memo = null;
     }
 
     /** A mosque for the Friday prayers: place_type mosque, or hours that say "outside prayer times". */
@@ -773,6 +1028,16 @@ final class PlannerRules
 
     /** The times a mosque takes no visit on a date: the Friday prayers (PlannerCalendar), as [[from, to]], or []. */
     public static function prayerBreak(array $place, string $date): array
+    {
+        $id = (int)($place['place_id'] ?? 0);
+        if (self::$memo === null || $id <= 0) return self::prayerTimes($place, $date);
+        $key = 'p' . $id . '|' . $date;
+        if (!array_key_exists($key, self::$memo)) self::$memo[$key] = self::prayerTimes($place, $date);
+        return self::$memo[$key];
+    }
+
+    /** prayerBreak() worked out. */
+    private static function prayerTimes(array $place, string $date): array
     {
         if (!self::isMosque($place)) return [];
         try {

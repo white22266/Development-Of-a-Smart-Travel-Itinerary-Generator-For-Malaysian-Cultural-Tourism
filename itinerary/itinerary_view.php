@@ -261,13 +261,18 @@ $editUsualStart = (int)PlannerRules::profile($editPref)["start"];
 $editDayStarts = ItineraryEditService::dayStarts($conn, $itineraryId);
 $editHm = static fn(int $m): string => sprintf("%02d:%02d", intdiv($m, 60), $m % 60);
 $editCategories = PlannerRules::VALID_INTERESTS;
-// Re-plan rainy days: offered when the forecast gives RAIN_PREFER percent or more on a trip day.
-$editRainy = [];
-foreach (ItineraryEditService::forecast($conn, $itineraryId) as $rainDate => $rainChance) {
-    if ((int)$rainChance < ItineraryDayBuilder::RAIN_PREFER || !$startDate) continue;
-    $rainDay = (int)round((strtotime($rainDate) - strtotime((string)$startDate)) / 86400) + 1;
-    if ($rainDay >= 1 && $rainDay <= $totalDays) $editRainy[$rainDay] = (int)$rainChance;
+// The wishes for planning a day again: the categories, then the place types by their group
+// (type:<type>, group:<group>; PlannerRules::wishTokens()), with the labels of lang/ (ptype.*).
+$editWishGroups = [t('edit.wish_categories') => array_combine($editCategories, array_map(static fn($c) => t_choice('interest', $c), $editCategories))];
+foreach (PlaceTypeClassifier::grouped() as $editGroup => $editTypes) {
+    $editGroupLabel = t('ptype.group.' . $editGroup);
+    $editOptions = ['group:' . $editGroup => t('edit.wish_group_all', ['group' => $editGroupLabel])];
+    foreach (array_keys($editTypes) as $editType) $editOptions['type:' . $editType] = t('ptype.' . $editType);
+    $editWishGroups[$editGroupLabel] = $editOptions;
 }
+// Re-plan rainy days: offered when some hour inside a day's window has RAIN_PREFER percent or
+// more (the forecast by the hour, ItineraryEditService::rainInWindow()).
+$editRainy = array_filter(ItineraryEditService::rainInWindow($conn, $itineraryId), static fn(int $chance): bool => $chance >= ItineraryDayBuilder::RAIN_PREFER);
 ksort($editRainy);
 // The visits of each day in order (meal, note and hotel rows are not visits): for Move up and down.
 $editVisitIds = [];
@@ -1017,22 +1022,20 @@ $editConfig = json_encode([
                     </div>
                     <div class="ed-panel" data-ed-panel="regen" hidden>
                         <div class="ed-row">
-                            <label><?php echo te('edit.more_of'); ?>
-                                <select data-ed-more>
+                            <?php foreach (['more' => te('edit.more_of'), 'less' => te('edit.less_of')] as $editWish => $editWishLabel): ?>
+                            <label><?php echo $editWishLabel; ?>
+                                <select data-ed-<?php echo $editWish; ?>>
                                     <option value=""><?php echo te('edit.no_choice'); ?></option>
-                                    <?php foreach ($editCategories as $category): ?>
-                                    <option value="<?php echo htmlspecialchars($category); ?>"><?php echo htmlspecialchars(t_choice('interest', $category)); ?></option>
+                                    <?php foreach ($editWishGroups as $editGroupLabel => $editOptions): ?>
+                                    <optgroup label="<?php echo htmlspecialchars($editGroupLabel); ?>">
+                                        <?php foreach ($editOptions as $editValue => $editLabel): ?>
+                                        <option value="<?php echo htmlspecialchars($editValue); ?>"><?php echo htmlspecialchars($editLabel); ?></option>
+                                        <?php endforeach; ?>
+                                    </optgroup>
                                     <?php endforeach; ?>
                                 </select>
                             </label>
-                            <label><?php echo te('edit.less_of'); ?>
-                                <select data-ed-less>
-                                    <option value=""><?php echo te('edit.no_choice'); ?></option>
-                                    <?php foreach ($editCategories as $category): ?>
-                                    <option value="<?php echo htmlspecialchars($category); ?>"><?php echo htmlspecialchars(t_choice('interest', $category)); ?></option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </label>
+                            <?php endforeach; ?>
                             <button type="button" class="ed-btn ed-primary" data-ed="regenerate_day"><?php echo te('edit.regenerate_go'); ?></button>
                         </div>
                     </div>

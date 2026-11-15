@@ -91,6 +91,21 @@ function pref_parse_party(string $adults, string $children, string $seniors): ar
     ], []];
 }
 
+/** The choices for places of worship ('' = no preference): at most one a day, or none. */
+const PREF_WORSHIP_LIMITS = ['one', 'none'];
+
+/**
+ * Places of worship: blank is no preference (null), otherwise 'one' (at most one a day) or
+ * 'none'. Returns [value|null, errors].
+ */
+function pref_parse_worship_limit(string $value): array
+{
+    $value = strtolower(trim($value));
+    if ($value === '') return [null, []];
+    if (!in_array($value, PREF_WORSHIP_LIMITS, true)) return [null, [t('pref.err_worship')]];
+    return [$value, []];
+}
+
 /** Interest weight 1 (a little), 2 (like), 3 (love). Blank means the default 2; null when invalid. */
 function pref_parse_weight($value): ?int
 {

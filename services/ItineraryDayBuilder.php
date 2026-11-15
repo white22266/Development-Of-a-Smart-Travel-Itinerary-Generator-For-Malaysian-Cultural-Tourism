@@ -19,12 +19,22 @@
 // its rush-hour minutes (PlannerRules::peakMinutes()), opening hours as PlannerRules::hoursOn().
 //
 // Soft preferences: a stop that keeps them all is level 0. A stop that only a relaxed level
-// allows costs RELAX_PRICE per level and says so in its notes:
+// allows costs the price of its level (RELAX_PRICES) and says so in its notes, with every
+// lower step it actually breaks:
 //
-//   level 1  category variety relaxed
-//   level 2  preferred districts relaxed as well
-//   level 3  interest match relaxed as well
-//   level 4  the recommended daily distance relaxed as well (never the hard limit)
+//   level 1  category variety relaxed                                            10 points
+//   level 2  place type variety relaxed as well (PlannerRules::WORSHIP_PER_DAY,
+//            SAME_TYPE_PER_DAY)                                                   15
+//   level 3  preferred districts relaxed as well                                 20
+//   level 4  interest match relaxed as well                                      30
+//   level 5  the recommended daily distance relaxed as well (never the hard limit) 40
+//
+// Public transport: a place no stop reaches is no candidate (PlannerCandidates::usable()); a
+// place 500 to 1500 m from its stop costs PlannerRules::TRANSIT_WALK_POINTS and its notes name
+// the walk; the walks are part of every ride's minutes (RouteService::setTransitAccess()). The
+// traveller's own limit on places of worship is a hard rule of the day (WORSHIP); must-see
+// places still to come count towards it. Types asked for more of count as an interest loved,
+// types asked for less of lose TYPE_LESS_POINTS and have a limit of one a day.
 //
 // Hard rules (opening hours, the day window, rest, distance limit, budget, accessibility,
 // dietary, festival dates, states, the way back to the base) are never relaxed. The budget is a
@@ -51,9 +61,12 @@
 // open for the whole meal, or as a dinner break at the base. Waiting for the dinner window there
 // is rest, not waiting.
 //
-// Weather (the day's chance of rain, when known): from RAIN_PREFER percent outdoor places
-// lose score and indoor places gain; from RAIN_INDOOR_FIRST percent outdoor places are tried
-// only when no indoor place of the same relax level is feasible (ranked()). Never a hard rule.
+// Weather, by the hour (the day's 24 chances of rain, 'rain_hours', or its one chance for every
+// hour, 'rain'): a stop is judged by the hours of its own visit, so its value depends on when
+// it is visited. From RAIN_PREFER percent in those hours an outdoor place loses score and an
+// indoor place gains; from RAIN_INDOOR_FIRST percent an outdoor place is a next stop only when
+// no indoor place of the same relax level is (ranked(), rainFilter()). The note names the hours.
+// Never a hard rule.
 
 require_once __DIR__ . '/PlannerRules.php';
 require_once __DIR__ . '/RouteService.php';
@@ -63,11 +76,16 @@ final class ItineraryDayBuilder
 {
     public const RELAXED = [
         1 => 'category variety relaxed to fill the day',
-        2 => 'preferred districts relaxed to fill the day',
-        3 => 'interest relaxed to fill the day',
-        4 => 'recommended daily distance relaxed to fill the day',
+        2 => 'place type variety relaxed to fill the day',
+        3 => 'preferred districts relaxed to fill the day',
+        4 => 'interest relaxed to fill the day',
+        5 => 'recommended daily distance relaxed to fill the day',
     ];
-    private const LAST_LEVEL = 4;
+    private const LAST_LEVEL = 5;
+    /** The price of each relax level in the day search (see the head of this file). */
+    private const RELAX_PRICES = [0 => 0, 1 => 10, 2 => 15, 3 => 20, 4 => 30, 5 => 40];
+    /** A type the traveller asked for less of (a day planned again) loses these points. */
+    private const TYPE_LESS_POINTS = 12;
     /**
      * Score of an interest match by weight (1 a little, 2 like, 3 love). Weight 2 scores what
      * every interest scored before weights existed; one step is 10 points, more than twice the
@@ -85,11 +103,12 @@ final class ItineraryDayBuilder
      * The day search. A travelling minute costs TRAVEL_PRICE points: 25 minutes cost what one
      * interest weight step gives (10 points), so a much better place is worth a short detour but
      * not a long one. A minute of waiting costs IDLE_PRICE (the old waiting penalty, minutes / 6).
-     * A relaxed soft preference costs RELAX_PRICE per level. The search keeps BEAM_WIDTH partial
+     * A relaxed soft preference costs the price of its level (RELAX_PRICES). The search keeps BEAM_WIDTH partial
      * days per number of stops and looks at SEARCH_CANDIDATES places per round (the group first).
      */
     public const TRAVEL_PRICE = 0.4;
     public const IDLE_PRICE = 1 / 6;
+    /** The price of relax level 1; relaxPrice() gives every level. */
     public const RELAX_PRICE = 10;
     private const BEAM_WIDTH = 12;
     private const SEARCH_CANDIDATES = 40;
@@ -101,6 +120,20 @@ final class ItineraryDayBuilder
     private array $mealIndex;
     /** place_id => placeValue(), worked out once per builder. */
     private array $values = [];
+    /**
+     * One search(): the partial days already extended ("ids in order>place_id" => [child or
+     * null, reason]); the second, wider search meets the same partial days again. Each is
+     * deterministic for its day, so its result is taken again.
+     */
+    private array $memo = [];
+    /** One search(): true when the budget cannot bind this day (budgetSlack()), so check() need not test it. */
+    private bool $slack = false;
+    /**
+     * During one search() only (null otherwise): the way to a meal place and the meal's start
+     * after a partial day, by route service, slot, date, minute, point and place (mealAtPlace()).
+     * No figure changes during a search.
+     */
+    private static ?array $mealMemo = null;
 
     /** @param array $mealPool the food places meals may use (PlannerCandidates::mealPool()) */
     public function __construct(array $profile, RouteService $route, array $mealPool = [])
@@ -152,12 +185,24 @@ final class ItineraryDayBuilder
             else $others[] = $place;
         }
         $own = $this->preselect($own, $anchor, self::SEARCH_CANDIDATES);
-        $best = $this->beam(array_merge($musts, $own), $musts, $day);
-        // The best other places of the area are always tried too; the wider day is kept only
-        // when it ranks higher (must-see places, stops, value), so the group stays first.
-        if ($others) {
-            $wider = $this->beam(array_merge($musts, $own, $this->preselect($others, $anchor, self::SEARCH_CANDIDATES)), $musts, $day);
-            if (self::rank($wider) > self::rank($best)) $best = $wider;
+        $others = $others ? $this->preselect($others, $anchor, self::SEARCH_CANDIDATES) : [];
+        $this->memo = [];
+        $this->slack = $this->budgetSlack(array_merge($musts, $own, $others), $day);
+        self::$mealMemo = [];
+        PlannerRules::memoStart();
+        try {
+            $best = $this->beam(array_merge($musts, $own), $musts, $day);
+            // The best other places of the area are always tried too; the wider day is kept only
+            // when it ranks higher (must-see places, stops, value), so the group stays first.
+            if ($others) {
+                $wider = $this->beam(array_merge($musts, $own, $others), $musts, $day);
+                if (self::rank($wider) > self::rank($best)) $best = $wider;
+            }
+        } finally {
+            $this->memo = [];
+            $this->slack = false;
+            self::$mealMemo = null;
+            PlannerRules::memoEnd();
         }
         $placed = [];
         foreach ($best['stops'] as $stop) $placed[(int)$stop['place']['place_id']] = true;
@@ -168,6 +213,30 @@ final class ItineraryDayBuilder
         $best['spares'] = array_values(array_filter($best['spares'], static fn(array $s): bool => !isset($placed[(int)$s['place']['place_id']])));
         $best['unplaced'] = $unplaced;
         return $best;
+    }
+
+    /**
+     * Whether the budget cannot bind a day: the budget rule holds even with the day's whole
+     * target of stops at the dearest candidate's price, counted as food (the costlier side of the
+     * rule), and the most the day can travel (its hard km, the longest first leg, which the
+     * limits may leave uncounted, and the km held back). The rule only grows stricter as items
+     * and km are added (PlannerRules::budgetAllows()), so then every stop of the day keeps it.
+     */
+    private function budgetSlack(array $candidates, array $day): bool
+    {
+        $p = $this->profile;
+        if ((float)$p['budget'] <= 0) return true;
+        $dearest = 0.0;
+        $farthest = 0.0;
+        $start = $day['start'];
+        foreach ($candidates as $c) {
+            $dearest = max($dearest, PlannerRules::placeCost($c));
+            $farthest = max($farthest, (float)$this->route->getSegment((float)$start[0], (float)$start[1], (float)$c['latitude'], (float)$c['longitude'])['distance_km']);
+        }
+        $items = (array)($day['trip_items'] ?? []);
+        for ($i = 0; $i < max(1, (int)$p['target']); $i++) $items[] = ['item_type' => 'food', 'estimated_cost' => $dearest];
+        $km = (float)($day['trip_km'] ?? 0) + (float)($day['reserve_km'] ?? 0) + (float)$p['hard_km'] + $farthest + 1.0;
+        return PlannerRules::budgetAllows($p, $items, $km, $dearest);
     }
 
     /** The places worth a look for a day: the best by value less the price of the way there and back. */
@@ -205,16 +274,31 @@ final class ItineraryDayBuilder
         $rejections = [];
         $list = [];
         foreach ($candidates as $place) $list[(int)$place['place_id']] ??= $place;
+        // A child that could not reach the BEAM_WIDTH-th best child found so far is never in the
+        // beam, so it is not timed (most()). Not on a day with rain: the weather rule compares
+        // siblings. While every figure is an estimate (no road figure known) and the transport is
+        // not public transport, a stop's travelling is at least the estimate of the direct leg
+        // (a meal on the way adds to it), so that much is taken off the bound too.
+        $prune = !self::hasRain($day);
+        $legBound = $prune && !$this->route->hasKnownFigures() && ($this->profile['transport'] ?? '') !== 'public_transport';
         for ($depth = 1; $depth <= $target; $depth++) {
             $children = [];
             foreach ($beam as $node) {
+                $floor = $prune ? self::beamFloor($children) : null;
                 $mustLeft = array_filter($mustIds, static fn(array $m): bool => !isset($node['state']['used'][(int)$m['place_id']]));
                 // The rest of the day is kept for the must-see places still to come.
                 $onlyMusts = count($mustLeft) >= $target - count($node['stops']);
                 $grown = [];
+                // The traveller's limit on places of worship counts the must-see places still to come.
+                $worshipAhead = count(array_filter($mustLeft, static fn(array $m): bool => PlannerRules::isWorship($m)));
                 foreach ($list as $id => $place) {
                     $isMust = isset($mustIds[$id]);
                     if (isset($node['state']['used'][$id]) || ($onlyMusts && !$isMust)) continue;
+                    if ($floor !== null && !$isMust && [(int)$node['musts'], (float)$node['value'] + $this->most($place, $node['state'], $day, $legBound)] < $floor) continue;
+                    if (!$isMust && PlannerRules::breaksWorshipCap($place, (int)($node['state']['groups']['worship'] ?? 0) + $worshipAhead, $this->profile)) {
+                        if ($depth === 1) $rejections['WORSHIP'] = ($rejections['WORSHIP'] ?? 0) + 1;
+                        continue;
+                    }
                     $child = $this->extend($node, $place, $day, $isMust, $isMust ? [] : array_values($mustLeft), $rejections, $depth === 1);
                     if ($child !== null) $grown[] = $child;
                 }
@@ -256,34 +340,165 @@ final class ItineraryDayBuilder
     }
 
     /**
-     * Weather: from RAIN_INDOOR_FIRST percent an outdoor place is a next stop only when no indoor
-     * place of the same relax level is (must-see places are not changed by the weather). The
-     * stops say so in their notes.
+     * Weather by the hour: from RAIN_INDOOR_FIRST percent during its visit an outdoor place is a
+     * next stop only when no indoor place of the same relax level is (must-see places are not
+     * changed by the weather). The stops say so in their notes, with the hours.
      */
     private static function rainFilter(array $children, array $day): array
     {
-        $rain = self::rainOf($day);
-        if ($rain === null || $rain < self::RAIN_PREFER) return $children;
+        if (!self::hasRain($day)) return $children;
         $indoorAt = [];
-        foreach ($children as $c) {
+        $rainOf = [];
+        foreach ($children as $i => $c) {
             $last = $c['stops'][count($c['stops']) - 1];
+            $rainOf[$i] = self::rainAt($day, (int)$last['start'], (int)$last['end']);
             if (empty($last['must']) && !PlannerRules::isOutdoor($last['place'])) $indoorAt[(int)$last['level']] = true;
         }
         $out = [];
-        foreach ($children as $c) {
+        foreach ($children as $i => $c) {
             $k = count($c['stops']) - 1;
             $last = $c['stops'][$k];
-            if (!empty($last['must'])) { $out[] = $c; continue; }
+            $rain = $rainOf[$i];
+            if (!empty($last['must']) || $rain === null || $rain['max'] < self::RAIN_PREFER) { $out[] = $c; continue; }
             $outdoor = PlannerRules::isOutdoor($last['place']);
-            if ($outdoor && $rain >= self::RAIN_INDOOR_FIRST && isset($indoorAt[(int)$last['level']])) continue;
+            if ($outdoor && $rain['max'] >= self::RAIN_INDOOR_FIRST && isset($indoorAt[(int)$last['level']])) continue;
             $note = $outdoor
-                ? ($rain >= self::RAIN_INDOOR_FIRST ? 'outdoor although ' . $rain . '% chance of rain: no indoor place fits' : null)
-                : $rain . '% chance of rain forecast: indoor place preferred';
-            // after the relax note, so a cut note keeps both
-            if ($note !== null) array_splice($c['stops'][$k]['reasons'], (int)$last['level'] > 0 ? 1 : 0, 0, [$note]);
+                ? ($rain['max'] >= self::RAIN_INDOOR_FIRST ? self::rainNote($rain, false) : null)
+                : self::rainNote($rain, true);
+            if ($note !== null) self::insertNote($c['stops'][$k]['reasons'], $note);
             $out[] = $c;
         }
         return $out;
+    }
+
+    /** A note after the relax notes at the head of a stop's reasons, so a cut note keeps both. */
+    private static function insertNote(array &$reasons, string $note): void
+    {
+        $at = 0;
+        while (isset($reasons[$at]) && in_array($reasons[$at], self::RELAXED, true)) $at++;
+        array_splice($reasons, $at, 0, [$note]);
+    }
+
+    /** Whether the day has a chance of rain at all: hourly values or one for the day. */
+    private static function hasRain(array $day): bool
+    {
+        return (isset($day['rain_hours']) && is_array($day['rain_hours']) && count($day['rain_hours']) === 24)
+            || (isset($day['rain']) && is_numeric($day['rain']));
+    }
+
+    /**
+     * The chance of rain during a visit from $start to $end (minutes): the highest chance of the
+     * hours it overlaps, and the first and last minute of the hours inside it at RAIN_PREFER
+     * percent or more (from, to), from the day's hourly values; with only a chance for the day,
+     * that chance for every hour (hours false). Null when no forecast is known.
+     *
+     * @return array{max:int,from:?int,to:?int,hours:bool}|null
+     */
+    public static function rainAt(array $day, int $start, int $end): ?array
+    {
+        $hours = $day['rain_hours'] ?? null;
+        if (is_array($hours) && count($hours) === 24) {
+            $hours = array_values($hours);
+            $max = 0;
+            $from = $to = null;
+            $last = max($start, $end - 1);
+            for ($h = max(0, intdiv($start, 60)); $h <= min(23, intdiv($last, 60)); $h++) {
+                $chance = max(0, min(100, (int)$hours[$h]));
+                $max = max($max, $chance);
+                if ($chance >= self::RAIN_PREFER) {
+                    $from ??= $h * 60;
+                    $to = ($h + 1) * 60;
+                }
+            }
+            return ['max' => $max, 'from' => $from, 'to' => $to, 'hours' => true];
+        }
+        $rain = self::rainOf($day);
+        return $rain === null ? null : ['max' => $rain, 'from' => null, 'to' => null, 'hours' => false];
+    }
+
+    /**
+     * The reasons of a stop with its rain note for the visit as finally timed ($start to $end):
+     * the order of the day may have moved the visit after the search chose it. A stop whose
+     * choice the rain changed (a note with "chance of rain") gets the note again for the hours
+     * of its visit now: an indoor place in hours at RAIN_PREFER percent or more, an outdoor
+     * place in hours at RAIN_INDOOR_FIRST percent or more; none when its hours are drier now.
+     *
+     * @param array $day rain and rain_hours as the day search read them
+     */
+    public static function rainNotesAt(array $reasons, array $place, array $day, int $start, int $end): array
+    {
+        $kept = array_values(array_filter($reasons, static fn($r): bool => !str_contains((string)$r, 'chance of rain')));
+        if (count($kept) === count($reasons)) return $reasons;
+        $rain = self::rainAt($day, $start, $end);
+        if ($rain === null) return $kept;
+        $outdoor = PlannerRules::isOutdoor($place);
+        if (!$outdoor && $rain['max'] >= self::RAIN_PREFER) self::insertNote($kept, self::rainNote($rain, true));
+        if ($outdoor && $rain['max'] >= self::RAIN_INDOOR_FIRST) self::insertNote($kept, self::rainNote($rain, false));
+        return $kept;
+    }
+
+    /** The note of a stop chosen for the rain: an indoor place preferred, or outdoor although no indoor place fits. */
+    private static function rainNote(array $rain, bool $indoor): string
+    {
+        $chance = (int)$rain['max'];
+        if (!empty($rain['hours']) && $rain['from'] !== null) {
+            $span = self::clock((int)$rain['from']) . '-' . self::clock((int)$rain['to']);
+            return $indoor ? $chance . '% chance of rain ' . $span . ': indoor place preferred'
+                           : 'outdoor although ' . $chance . '% chance of rain ' . $span . ': no indoor place fits';
+        }
+        return $indoor ? $chance . '% chance of rain forecast: indoor place preferred'
+                       : 'outdoor although ' . $chance . '% chance of rain: no indoor place fits';
+    }
+
+    /** "13:00" for minutes after midnight (24:00 for the end of the day). */
+    private static function clock(int $minutes): string
+    {
+        return sprintf('%02d:%02d', intdiv($minutes, 60), $minutes % 60);
+    }
+
+    /** The price of a relax level in the day search. */
+    public static function relaxPrice(int $level): float
+    {
+        return (float)(self::RELAX_PRICES[max(0, min(self::LAST_LEVEL, $level))]);
+    }
+
+    /**
+     * The most a stop can add to a day after the partial day's $state on a day without rain: its
+     * score()['value'] with the slot-free terms (placeValue()), category variety and the day
+     * before's theme as score() reckons them, the preferred visit time at its best for a visit
+     * that starts no earlier than the partial day's clock (timeFitMost()), less the price of the
+     * relax level it needs; with $legBound less the price of the direct leg's
+     * estimated minutes (its travelling is at least that). Its travelling and waiting only lower
+     * its gain further.
+     */
+    private function most(array $place, array $state, array $day, bool $legBound): float
+    {
+        $p = $this->profile;
+        $category = strtolower((string)$place['category']);
+        $most = $this->placeValue($place) + self::timeFitMost($place, (string)$p['visit_time'], (int)$state['clock']);
+        $same = (int)($state['categories'][$category] ?? 0);
+        if ($same === 0) $most += 10;
+        elseif ($same >= PlannerRules::categoryLimit($p, $category) && !$p['food_only']) $most -= 12;
+        $theme = $day['previous_theme'] ?? null;
+        if ($theme !== null && $category === $theme && !$p['food_only']) $most -= 15;
+        $from = $state['point'];
+        $seg = $this->route->getSegment((float)$from[0], (float)$from[1], (float)$place['latitude'], (float)$place['longitude']);
+        $most -= self::relaxPrice($this->minLevel($place, $state, (float)$seg['distance_km'], !$state['first_leg']));
+        if ($legBound) $most -= self::TRAVEL_PRICE * (int)$seg['travel_time_min'];
+        return $most;
+    }
+
+    /**
+     * [musts, value] of the BEAM_WIDTH-th best of the children found so far (one per key), or
+     * null while there are fewer: a child ranking below it can never be in the beam.
+     */
+    private static function beamFloor(array $children): ?array
+    {
+        if (count($children) < self::BEAM_WIDTH) return null;
+        $ranks = [];
+        foreach ($children as $c) $ranks[] = [(int)$c['musts'], round((float)$c['value'], 6)];
+        rsort($ranks);
+        return $ranks[self::BEAM_WIDTH - 1];
     }
 
     private static function nodeRank(array $node): array
@@ -303,20 +518,39 @@ final class ItineraryDayBuilder
      */
     private function extend(array $node, array $place, array $day, bool $must, array $mustLeft, array &$rejections, bool $count): ?array
     {
+        $key = implode(',', array_map(static fn(array $s): int => (int)$s['place']['place_id'], $node['stops'])) . '>' . (int)$place['place_id'];
+        if (array_key_exists($key, $this->memo)) {
+            [$child, $reason] = $this->memo[$key];
+            if ($child === null && $count && $reason !== null) $rejections[$reason] = ($rejections[$reason] ?? 0) + 1;
+            return $child;
+        }
+        $failed = null;
+        $child = $this->grow($node, $place, $day, $must, $mustLeft, $failed);
+        if ($child === null && $count && $failed !== null) $rejections[$failed] = ($rejections[$failed] ?? 0) + 1;
+        $this->memo[$key] = [$child, $failed];
+        return $child;
+    }
+
+    /** extend() without the memo: the new partial day, or null with $failed the reason. */
+    private function grow(array $node, array $place, array $day, bool $must, array $mustLeft, ?string &$failed): ?array
+    {
         $state = $node['state'];
         $point = [(float)$place['latitude'], (float)$place['longitude']];
         $seg = $this->route->getSegment((float)$state['point'][0], (float)$state['point'][1], $point[0], $point[1]);
         $legCounts = !$state['first_leg'];
         $level = 0;
         if (!$must) {
-            while ($level < self::LAST_LEVEL && !$this->softAllows($place, $level, $state, (float)$seg['distance_km'], $legCounts)) $level++;
+            $level = $this->minLevel($place, $state, (float)$seg['distance_km'], $legCounts);
         }
-        // Must-see places still to come have first call on the budget.
-        $items = $state['trip_items'];
-        foreach ($mustLeft as $m) $items[] = ['item_type' => PlannerRules::itemType($m), 'estimated_cost' => PlannerRules::placeCost($m)];
+        // Must-see places still to come have first call on the budget (not tested when it cannot bind, budgetSlack()).
+        $items = null;
+        if (!$this->slack) {
+            $items = $state['trip_items'];
+            foreach ($mustLeft as $m) $items[] = ['item_type' => PlannerRules::itemType($m), 'estimated_cost' => PlannerRules::placeCost($m)];
+        }
         $check = self::fit($this->route, $this->profile, $this->mealIndex, $place, $this->slotOf($state, $day, $point, $items), $seg);
         if (!$check['ok']) {
-            if ($count) $rejections[$check['reason']] = ($rejections[$check['reason']] ?? 0) + 1;
+            $failed = (string)$check['reason'];
             return null;
         }
         $scored = $this->score($place, $state, $day, (float)$seg['distance_km'], $check, $level, $must);
@@ -364,7 +598,7 @@ final class ItineraryDayBuilder
     }
 
     /** What fit() reads about the day so far, for the next stop at $point. */
-    private function slotOf(array $state, array $day, array $point, array $items): array
+    private function slotOf(array $state, array $day, array $point, ?array $items): array
     {
         $finish = $day['finish'] ?? null;
         $toFinish = $finish !== null ? $this->route->getSegment((float)$point[0], (float)$point[1], (float)$finish[0], (float)$finish[1]) : null;
@@ -423,7 +657,10 @@ final class ItineraryDayBuilder
         $p = $this->profile;
         $category = strtolower((string)$place['category']);
         $value = 0.0;
-        if (in_array($category, $p['interests'], true)) $value += self::INTEREST_POINTS[(int)($p['interest_weights'][$category] ?? 2)] ?? self::INTEREST_POINTS[2];
+        $weight = $this->interestWeight($place);
+        if ($weight !== null) $value += self::INTEREST_POINTS[$weight] ?? self::INTEREST_POINTS[2];
+        if (isset($p['less_types'][(string)PlannerRules::typeOf($place)])) $value -= self::TYPE_LESS_POINTS;
+        if (PlannerRules::transitReach($place) === 'walk' && ($p['transport'] ?? '') === 'public_transport') $value -= PlannerRules::TRANSIT_WALK_POINTS;
         if ($p['districts'] && in_array(strtolower((string)$place['district']), $p['districts'], true)) $value += 12;
         $value += (float)($p['learned'][$category]['points'] ?? 0);
         $value += self::travellerSuitability($place, !empty($p['family']) ? 'family' : (string)$p['traveller_type']);
@@ -443,10 +680,31 @@ final class ItineraryDayBuilder
     {
         $p = $this->profile;
         $level = 0;
-        if (!in_array(strtolower((string)$place['category']), $p['interests'], true)) $level = 3;
-        elseif ($p['districts'] && !in_array(strtolower((string)$place['district']), $p['districts'], true)) $level = 2;
-        return $this->placeValue($place) - self::RELAX_PRICE * $level;
+        if ($this->interestWeight($place) === null) $level = 4;
+        elseif ($p['districts'] && !in_array(strtolower((string)$place['district']), $p['districts'], true)) $level = 3;
+        return $this->placeValue($place) - self::relaxPrice($level);
     }
+
+    /**
+     * The interest weight a place matches (1 a little, 2 like, 3 love), or null when it matches
+     * no interest: its category's weight, or 3 for a type the traveller asked for more of.
+     */
+    private function interestWeight(array $place): ?int
+    {
+        $id = (int)($place['place_id'] ?? 0);
+        if ($id > 0 && array_key_exists($id, $this->weights)) return $this->weights[$id];
+        $p = $this->profile;
+        $type = PlannerRules::typeOf($place);
+        $category = strtolower((string)$place['category']);
+        if ($type !== null && isset($p['more_types'][$type])) $weight = 3;
+        elseif (!in_array($category, $p['interests'], true)) $weight = null;
+        else $weight = max(1, min(3, (int)($p['interest_weights'][$category] ?? 2)));
+        if ($id > 0) $this->weights[$id] = $weight;
+        return $weight;
+    }
+
+    /** place_id => interestWeight(), worked out once per builder. */
+    private array $weights = [];
 
     /** Why a must-see place found no slot in a day: at the day's start, or else at its end. */
     private function mustReason(array $place, array $day, array $endState): string
@@ -473,6 +731,8 @@ final class ItineraryDayBuilder
             'trip_items' => (array)($day['trip_items'] ?? []),
             'trip_km' => (float)($day['trip_km'] ?? 0),
             'categories' => [],
+            'types' => [],        // place type => visits (PlannerRules::typeOf())
+            'groups' => [],       // type group => visits
             'prev_end' => null,   // end of the last visit
             'meals' => [],        // slot => true once lunch or dinner is had
         ];
@@ -497,6 +757,12 @@ final class ItineraryDayBuilder
         $state['trip_items'][] = ['item_type' => PlannerRules::itemType($place), 'estimated_cost' => PlannerRules::placeCost($place)];
         $state['used'][(int)$place['place_id']] = true;
         $state['categories'][$category] = ($state['categories'][$category] ?? 0) + 1;
+        $type = PlannerRules::typeOf($place);
+        if ($type !== null) {
+            $state['types'][$type] = ($state['types'][$type] ?? 0) + 1;
+            $group = PlaceTypeClassifier::groupOf($type);
+            $state['groups'][$group] = ($state['groups'][$group] ?? 0) + 1;
+        }
         $state['point'] = $stop['point'];
         $state['clock'] = (int)$stop['end'] + (int)$profile['rest'];
         return $state;
@@ -523,6 +789,11 @@ final class ItineraryDayBuilder
             $found = [];
             foreach ($pool as $index => $place) {
                 if (isset($state['used'][(int)$place['place_id']]) || isset($collected[(int)$place['place_id']])) continue;
+                // The traveller's limit on places of worship (a hard rule; not for a must-see place).
+                if (!$must && PlannerRules::breaksWorshipCap($place, (int)($state['groups']['worship'] ?? 0), $this->profile)) {
+                    if ($rejections !== null && $level === self::LAST_LEVEL) $rejections['WORSHIP'] = ($rejections['WORSHIP'] ?? 0) + 1;
+                    continue;
+                }
                 if (!isset($evaluated[$index])) {
                     $seg = $this->route->getSegment((float)$state['point'][0], (float)$state['point'][1], (float)$place['latitude'], (float)$place['longitude']);
                     $evaluated[$index] = [$seg, null];
@@ -575,29 +846,32 @@ final class ItineraryDayBuilder
                     'score' => $scored['score'],
                     'base' => $scored['base'],
                     'reasons' => $scored['reasons'],
+                    // The chance of rain during this visit (by the hour), for the weather rule below.
+                    'rain' => $must ? null : self::rainAt($day, (int)$check['start'], (int)$check['end']),
                 ];
             }
             if ($found) {
                 $byScore = static fn(string $key): Closure => static fn(array $a, array $b): int =>
                     [$b[$key], $a['place']['place_id']] <=> [$a[$key], $b['place']['place_id']];
-                $rain = $must ? null : self::rainOf($day);
                 $plain = $found;
                 usort($plain, $byScore('base'));
-                if ($rain !== null && $rain >= self::RAIN_INDOOR_FIRST) {
+                // From RAIN_INDOOR_FIRST percent during its visit an outdoor place comes only once
+                // no indoor place of this level is left.
+                $wet = static fn(array $f, int $at): bool => $f['rain'] !== null && (int)$f['rain']['max'] >= $at;
+                if (array_filter($found, static fn(array $f): bool => PlannerRules::isOutdoor($f['place']) && $wet($f, self::RAIN_INDOOR_FIRST))) {
                     $indoor = array_values(array_filter($found, static fn(array $f): bool => !PlannerRules::isOutdoor($f['place'])));
-                    if ($indoor) $found = $indoor;   // outdoor places only once no indoor place of this level is left
+                    if ($indoor) $found = array_values(array_filter($found, static fn(array $f): bool => !PlannerRules::isOutdoor($f['place']) || !$wet($f, self::RAIN_INDOOR_FIRST)));
                 }
                 usort($found, $byScore('score'));
-                if ($rain !== null && $rain >= self::RAIN_PREFER) {
-                    $note = null;
-                    if ((int)$found[0]['place']['place_id'] !== (int)$plain[0]['place']['place_id']) {
-                        $note = $rain . '% chance of rain forecast: indoor place preferred';
-                    } elseif ($rain >= self::RAIN_INDOOR_FIRST && PlannerRules::isOutdoor($found[0]['place'])) {
-                        $note = 'outdoor although ' . $rain . '% chance of rain: no indoor place fits';
-                    }
-                    // after the relax note, so a cut note keeps both
-                    if ($note !== null) array_splice($found[0]['reasons'], (int)$found[0]['level'] > 0 ? 1 : 0, 0, [$note]);
+                $top = $found[0];
+                $note = null;
+                if ($wet($top, self::RAIN_PREFER) && !PlannerRules::isOutdoor($top['place']) && (int)$top['place']['place_id'] !== (int)$plain[0]['place']['place_id']) {
+                    $note = self::rainNote($top['rain'], true);
+                } elseif ($wet($top, self::RAIN_INDOOR_FIRST) && PlannerRules::isOutdoor($top['place'])) {
+                    $note = self::rainNote($top['rain'], false);
                 }
+                if ($note !== null) self::insertNote($found[0]['reasons'], $note);
+                foreach ($found as $i => $f) unset($found[$i]['rain']);
                 if (!$everyLevel) return array_slice($found, 0, max(1, $limit));
                 foreach ($found as $f) $collected[(int)$f['place']['place_id']] = $f;
                 if (count($collected) >= $limit) break;
@@ -619,23 +893,50 @@ final class ItineraryDayBuilder
         $place = $stop['place'];
         $leg = $this->route->getSegment((float)$state['point'][0], (float)$state['point'][1], (float)$place['latitude'], (float)$place['longitude']);
         $level = 0;
-        while ($level < self::LAST_LEVEL && !$this->softAllows($place, $level, $state, (float)$leg['distance_km'], !$state['first_leg'])) $level++;
+        $level = $this->minLevel($place, $state, (float)$leg['distance_km'], !$state['first_leg']);
         $level = max($level, (int)($stop['level'] ?? 0));
         $reasons = array_values(array_filter((array)($stop['reasons'] ?? []), static fn($r): bool => !in_array($r, self::RELAXED, true)));
-        if ($level > 0) array_unshift($reasons, self::RELAXED[$level]);
+        array_unshift($reasons, ...$this->relaxNotes($place, $level, $state));
         return ['level' => $level, 'reasons' => $reasons] + $stop;
     }
 
-    /** The soft preferences of a relax level. */
+    /**
+     * The relax notes of a stop taken at $level after the day's $state: the note of its level
+     * first, then category and type variety when the stop breaks them at a higher level (so the
+     * notes name every soft preference the stop relaxed).
+     */
+    private function relaxNotes(array $place, int $level, array $state): array
+    {
+        if ($level <= 0) return [];
+        $p = $this->profile;
+        $notes = [self::RELAXED[$level]];
+        $category = strtolower((string)$place['category']);
+        if ($level > 2 && PlannerRules::breaksTypeVariety($place, (array)($state['types'] ?? []), (array)($state['groups'] ?? []), $p)) $notes[] = self::RELAXED[2];
+        if ($level > 1 && !$p['food_only'] && ($state['categories'][$category] ?? 0) >= PlannerRules::categoryLimit($p, $category)) $notes[] = self::RELAXED[1];
+        return $notes;
+    }
+
+    /** The soft preferences of a relax level: those of the levels above it (minLevel() is the lowest level that allows the place). */
     private function softAllows(array $place, int $level, array $state, float $legKm, bool $legCounts): bool
     {
-        $category = strtolower((string)$place['category']);
+        return $this->minLevel($place, $state, $legKm, $legCounts) <= $level;
+    }
+
+    /**
+     * The lowest relax level whose soft preferences allow the place after the day's $state: the
+     * highest step it breaks (1 category variety, 2 type variety, 3 preferred districts, 4
+     * interest, 5 the recommended daily distance), 0 when it breaks none.
+     */
+    private function minLevel(array $place, array $state, float $legKm, bool $legCounts): int
+    {
         $p = $this->profile;
-        if ($level < 1 && !$p['food_only'] && ($state['categories'][$category] ?? 0) >= PlannerRules::categoryLimit($p, $category)) return false;
-        if ($level < 2 && $p['districts'] && !in_array(strtolower((string)$place['district']), $p['districts'], true)) return false;
-        if ($level < 3 && !in_array($category, $p['interests'], true)) return false;
-        if ($level < 4 && $legCounts && (float)$state['day_km'] + $legKm > (float)$p['day_km']) return false;
-        return true;
+        if ($legCounts && (float)$state['day_km'] + $legKm > (float)$p['day_km']) return 5;
+        if ($this->interestWeight($place) === null) return 4;
+        if ($p['districts'] && !in_array(strtolower((string)$place['district']), $p['districts'], true)) return 3;
+        if (PlannerRules::breaksTypeVariety($place, (array)($state['types'] ?? []), (array)($state['groups'] ?? []), $p)) return 2;
+        $category = strtolower((string)$place['category']);
+        if (!$p['food_only'] && ($state['categories'][$category] ?? 0) >= PlannerRules::categoryLimit($p, $category)) return 1;
+        return 0;
     }
 
     /**
@@ -644,7 +945,7 @@ final class ItineraryDayBuilder
      * @return array{score:float,base:float,value:float,tier:int,reasons:string[]} base: the score
      *         without the weather; value: what the stop adds to the value of the day in the day
      *         search (score() without nearness, detour and waiting, which the search prices as
-     *         minutes, less RELAX_PRICE per relaxed level, with the weather)
+     *         minutes, less the price of its relax level, with the weather)
      */
     private function score(array $place, array $state, array $day, float $legKm, array $check, int $level, bool $must = false): array
     {
@@ -653,15 +954,25 @@ final class ItineraryDayBuilder
         $reasons = [];
         $category = strtolower((string)$place['category']);
 
-        $interestMatch = in_array($category, $p['interests'], true);
+        $weight = $this->interestWeight($place);
+        $interestMatch = $weight !== null;
         $districtMatch = $p['districts'] && in_array(strtolower((string)$place['district']), $p['districts'], true);
+        $type = (string)PlannerRules::typeOf($place);
         if ($interestMatch) {
-            $weight = (int)($p['interest_weights'][$category] ?? 2);
             $score += self::INTEREST_POINTS[$weight] ?? self::INTEREST_POINTS[2];
             $reasons[] = 'interest match';
-            if ($weight === 3) $reasons[] = 'an interest you love';
+            if (isset($p['more_types'][$type])) $reasons[] = 'a kind of place you asked for more of';
+            elseif ($weight === 3) $reasons[] = 'an interest you love';
         }
+        if (isset($p['less_types'][$type])) { $score -= self::TYPE_LESS_POINTS; $reasons[] = 'a kind of place you asked for less of'; }
         if ($districtMatch) { $score += 12; $reasons[] = 'in a preferred district'; }
+        // Public transport: a walk of 500 to 1500 m from the stop costs points; a must-see place
+        // no stop reaches says that the last stretch needs a taxi.
+        $transit = PlannerRules::transitNote($place, $p);
+        if ($transit !== null) {
+            if (PlannerRules::transitReach($place) === 'walk') $score -= PlannerRules::TRANSIT_WALK_POINTS;
+            $reasons[] = $transit;
+        }
 
         // Learned from the traveller's own ratings: small, and only between places that already
         // passed every rule and every soft preference of this level.
@@ -694,7 +1005,7 @@ final class ItineraryDayBuilder
         if ($theme !== null && $category === $theme && !$p['food_only']) { $score -= 15; $reasons[] = "repeats the previous day's theme"; }
         // The value the day search adds up: the terms so far; the travelling and waiting below
         // are priced by the search itself (TRAVEL_PRICE, IDLE_PRICE).
-        $value = $score - self::RELAX_PRICE * $level;
+        $value = $score - self::relaxPrice($level);
 
         $near = max(0.0, 14 - min(14.0, $legKm));
         if ($near > 0) { $score += $near; $reasons[] = 'near previous stop'; }
@@ -703,15 +1014,16 @@ final class ItineraryDayBuilder
         if ((int)$check['wait'] > 0) { $score -= (int)$check['wait'] / 6; $reasons[] = 'waits ' . (int)$check['wait'] . ' min for opening'; }
         if ((int)($check['idle'] ?? 0) > 0) $score -= (int)$check['idle'] / 6;
         if (!empty($check['food_meal'])) $reasons[] = 'also your ' . $check['food_meal'];
-        if ($level > 0) array_unshift($reasons, self::RELAXED[$level]);   // first, so a cut note keeps it
+        array_unshift($reasons, ...$this->relaxNotes($place, $level, $state));   // first, so a cut note keeps them
         if ($must) array_unshift($reasons, 'on your must-see list');
 
+        // Weather by the hour: the chance of rain during this visit.
         $base = $score;
-        $rain = $must ? null : self::rainOf($day);
+        $rain = $must ? null : (self::rainAt($day, (int)$check['start'], (int)$check['end'])['max'] ?? null);
         if ($rain !== null && $rain >= self::RAIN_PREFER) {
-            $wet = PlannerRules::isOutdoor($place) ? -self::RAIN_OUTDOOR_POINTS : self::RAIN_INDOOR_POINTS;
-            $score += $wet;
-            $value += $wet;
+            $weather = PlannerRules::isOutdoor($place) ? -self::RAIN_OUTDOOR_POINTS : self::RAIN_INDOOR_POINTS;
+            $score += $weather;
+            $value += $weather;
         }
 
         $hasDistricts = (bool)$p['districts'];
@@ -1003,11 +1315,19 @@ final class ItineraryDayBuilder
             // Not a place of the trip, nor the same landmark as one (PlannerRules::sameLandmarks()).
             if (isset($exclude[$id]) || PlannerRules::twinIn($profile, $id, $exclude) !== null) continue;
             $here = [(float)$place['latitude'], (float)$place['longitude']];
-            $in = self::peak($profile, $route->getSegment((float)$from[0], (float)$from[1], $here[0], $here[1]), $date, $after, $from);
+            // The way in and the start of the meal do not depend on the next visit: during a
+            // search the same ones are asked for every candidate after a partial day (mealMemo).
+            $memoKey = self::$mealMemo !== null ? spl_object_id($route) . '|' . $slot . '|' . $date . '|' . $after . '|' . $from[0] . ',' . $from[1] . '|' . $id : null;
+            if ($memoKey !== null && isset(self::$mealMemo[$memoKey])) {
+                [$in, $arrive, $start] = self::$mealMemo[$memoKey];
+            } else {
+                $in = self::peak($profile, $route->getSegment((float)$from[0], (float)$from[1], $here[0], $here[1]), $date, $after, $from);
+                $arrive = $after + (int)$in['travel_time_min'];
+                $start = OpeningHours::earliestIn(PlannerRules::hoursOn($place, $date), max($arrive, $open), $length, min((int)$profile['end'], $close + $length), [], PlannerRules::TIME_STEP);
+                if ($memoKey !== null) self::$mealMemo[$memoKey] = [$in, $arrive, $start];
+            }
             $out = $route->getSegment($here[0], $here[1], (float)$to[0], (float)$to[1]);
             if ((float)$in['distance_km'] > $radius && (float)$out['distance_km'] > $radius) continue;
-            $arrive = $after + (int)$in['travel_time_min'];
-            $start = OpeningHours::earliestIn(PlannerRules::hoursOn($place, $date), max($arrive, $open), $length, min((int)$profile['end'], $close + $length), [], PlannerRules::TIME_STEP);
             if ($start === null || $start - $arrive > (int)$profile['rest'] + PlannerRules::MAX_WAIT_MIN) continue;
             $detour = (float)$in['distance_km'] + (float)$out['distance_km'] - (float)$direct['distance_km'];
             $rank = [round($detour, 3), $id];
@@ -1133,6 +1453,18 @@ final class ItineraryDayBuilder
             'group' => in_array($category, ['culture', 'museum', 'shopping', 'nature', 'food'], true) && !$narrow ? 10 : 2,
             default => $outdoor ? 6 : 5,
         };
+    }
+
+    /** The most timeFit() gives a visit that starts at $earliest or later. */
+    private static function timeFitMost(array $place, string $visitTime, int $earliest): int
+    {
+        $category = strtolower((string)$place['category']);
+        $best = strtolower((string)($place['best_time_to_visit'] ?? ''));
+        if ($visitTime !== 'any' && str_contains($best, $visitTime)) return 8;
+        if ($category === 'nature' && $earliest < 11 * 60) return 8;
+        if ($category === 'museum' && $earliest <= 16 * 60) return 8;
+        if ($category === 'shopping' || $category === 'food') return 6;
+        return 0;
     }
 
     private static function timeFit(array $place, string $visitTime, int $startMin): int

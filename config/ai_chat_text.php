@@ -511,6 +511,8 @@ if (!function_exists('ai_chat_text_table')) {
             'reason_code_LOCKED' => ['en' => 'the day holds a row the planner cannot re-time', 'ms' => 'hari itu mempunyai baris yang tidak boleh dijadualkan semula oleh perancang', 'zh' => '那一天有规划器无法重新安排时间的项目'],
             'reason_code_NO_CHANGE' => ['en' => 'nothing would change', 'ms' => 'tiada apa yang akan berubah', 'zh' => '不会有任何变化'],
             'reason_code_EARLY_START' => ['en' => 'a day cannot start before 06:00', 'ms' => 'hari tidak boleh bermula sebelum 06:00', 'zh' => '一天不能早于 06:00 开始'],
+            'reason_code_TRANSIT' => ['en' => 'the place is too far from public transport (more than 1.5 km from a stop)', 'ms' => 'tempat itu terlalu jauh dari pengangkutan awam (lebih 1.5 km dari hentian)', 'zh' => '这个地点离公共交通太远（距车站超过 1.5 公里）'],
+            'reason_code_WORSHIP' => ['en' => 'it would go over your limit for places of worship', 'ms' => 'ia akan melebihi had tempat ibadat yang anda pilih', 'zh' => '会超出你设定的宗教场所数量'],
             'reason_code_other' => ['en' => 'it would break a rule of your trip', 'ms' => 'ia akan melanggar peraturan perjalanan anda', 'zh' => '会违反你的行程规则'],
 
             // ------------------------------------------------------------ travel assistant (dates, origin, weather)

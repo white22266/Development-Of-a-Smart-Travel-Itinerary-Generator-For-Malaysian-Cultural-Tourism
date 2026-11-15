@@ -101,6 +101,8 @@ $oldWeights   = is_array($old["interest_weight"] ?? null) ? $old["interest_weigh
 $oldDayStart  = (string)($old["day_start_time"] ?? "");
 $oldDayEnd    = (string)($old["day_end_time"] ?? "");
 $oldStops     = (string)($old["stops_per_day"] ?? "");
+$oldWorship   = (string)($old["worship_limit"] ?? "");
+$worshipOptions = ['' => t('opt.worship.any'), 'one' => t('opt.worship.one'), 'none' => t('opt.worship.none')];
 $oldAdults    = (string)($old["adults"] ?? "");
 $oldChildren  = (string)($old["children"] ?? "");
 $oldSeniors   = (string)($old["seniors"] ?? "");
@@ -471,6 +473,17 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
 
               <div style="height:12px;"></div>
 
+              <label style="font-size:13px; font-weight:700;" for="worship_limit"><?php echo te('pref.worship_label'); ?></label>
+              <select name="worship_limit" id="worship_limit"
+                style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10); margin-top:6px; font-size:13px;">
+                <?php foreach ($worshipOptions as $k => $v): ?>
+                  <option value="<?php echo htmlspecialchars((string)$k); ?>" <?php echo $oldWorship === (string)$k ? 'selected' : ''; ?>><?php echo htmlspecialchars($v); ?></option>
+                <?php endforeach; ?>
+              </select>
+              <div class="field-help"><?php echo te('pref.worship_help'); ?></div>
+
+              <div style="height:12px;"></div>
+
               <label style="font-size:13px; font-weight:700;"><?php echo te('pref.access_label'); ?></label>
               <input type="text" name="accessibility_needs" maxlength="120"
                 placeholder="<?php echo te('pref.access_placeholder'); ?>"
@@ -589,7 +602,8 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
                 <div class="summary-item"><strong><?php echo te('pref.district_label'); ?></strong><span id="summaryDistrict"><?php echo te('opt.any_district'); ?></span></div>
                 <div class="summary-item" id="summaryRowSchedule" style="display:none;"><strong><?php echo te('pref.sum_schedule'); ?></strong><span id="summarySchedule">-</span></div>
                 <div class="summary-item" id="summaryRowStops" style="display:none;"><strong><?php echo te('pref.stops_label'); ?></strong><span id="summaryStops">-</span></div>
-                <div class="summary-item" id="summaryRowMix" style="display:none;"><strong><?php echo te('pref.sum_mix'); ?></strong><span id="summaryMix">-</span></div>
+                <div class="summary-item" id="summaryRowWorship" style="display:none;"><strong><?php echo te('pref.worship_label'); ?></strong><span id="summaryWorship">-</span></div>
+                <div class="summary-item" id="summaryRowMix"style="display:none;"><strong><?php echo te('pref.sum_mix'); ?></strong><span id="summaryMix">-</span></div>
                 <div class="summary-item"><strong><?php echo te('pref.sum_access'); ?></strong><span id="summaryAccessibility">-</span></div>
                 <div class="summary-item" id="summaryRowMust" style="display:none;"><strong><?php echo te('pref.must_label'); ?></strong><span id="summaryMust">-</span></div>
                 <div class="summary-item" id="summaryRowAvoid" style="display:none;"><strong><?php echo te('pref.avoid_label'); ?></strong><span id="summaryAvoid">-</span></div>
@@ -894,6 +908,8 @@ $districtsJson = json_encode($stateDistricts, JSON_UNESCAPED_UNICODE);
     }
     setOptionalRow('Schedule', schedule);
     setOptionalRow('Stops', stops);
+    var worshipSel = document.querySelector('[name="worship_limit"]');
+    setOptionalRow('Worship', worshipSel && worshipSel.value !== '' ? selectedText(worshipSel) : '');
     setOptionalRow('Mix', mixParts.join(', '));
     setOptionalRow('Must', placeNames('must'));
     setOptionalRow('Avoid', placeNames('avoid'));

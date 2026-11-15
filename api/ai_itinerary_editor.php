@@ -14,6 +14,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 require_once "../config/db_connect.php";
 require_once "../config/ai_language_guard.php";
+require_once "../config/i18n.php";   // the labels of place types (ptype.*) in the chat
 require_once "../services/CostEstimationService.php";
 require_once "../services/ItineraryEditService.php";
 require_once "../services/ItineraryRuleValidationService.php";
@@ -498,7 +499,12 @@ function reply_retime_stop(array $intent, array $target, string $lang): never
 /** Category codes as words of the language: "museums, food places". */
 function category_list_text(array $categories, string $lang): string
 {
-    return implode(ai_text("list_separator", $lang), array_map(fn($c) => ai_text("cat_" . $c, $lang), $categories));
+    return implode(ai_text("list_separator", $lang), array_map(static function (string $c) use ($lang): string {
+        // A place type or group (type:<type>, group:<group>) by its label in the traveller's language.
+        if (str_starts_with($c, "type:")) return t("ptype." . substr($c, 5), [], $lang);
+        if (str_starts_with($c, "group:")) return t("ptype.group." . substr($c, 6), [], $lang);
+        return ai_text("cat_" . $c, $lang);
+    }, $categories));
 }
 
 /** A refused change in the traveller's language, with its reason; nothing was changed. */
@@ -525,15 +531,10 @@ function editor_int($value): ?int
     return preg_match('/^\d{1,9}$/', $value) ? (int)$value : -1;
 }
 
-/** Comma-separated categories of the planner's list; null when one is unknown. */
+/** Comma-separated wishes (categories, type:<type>, group:<group>: PlannerRules::wishTokens()); null when one is unknown. */
 function editor_categories(string $value): ?array
 {
-    $out = [];
-    foreach (array_filter(array_map("trim", explode(",", strtolower($value))), "strlen") as $category) {
-        if (!in_array($category, PlannerRules::VALID_INTERESTS, true)) return null;
-        if (!in_array($category, $out, true)) $out[] = $category;
-    }
-    return $out;
+    return strlen($value) > 500 ? null : PlannerRules::wishTokens($value);
 }
 
 /**

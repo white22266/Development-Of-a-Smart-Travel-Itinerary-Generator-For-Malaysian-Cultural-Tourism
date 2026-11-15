@@ -265,9 +265,13 @@ class ItineraryEditService
      * place, have no stop, or make another day break a rule (the refusal names the rule and
      * carries 'worse').
      *
-     * @param array $options more (categories to see more of: they become interests loved),
-     *                       less (categories to see less of: weight "a little"), forecast
-     *                       (Y-m-d => chance of rain) or rain (chance of rain for this day)
+     * @param array $options more and less (wishes, PlannerRules::wishTokens(): a category to see
+     *                       more of becomes an interest loved, one to see less of is liked "a
+     *                       little"; "type:<type>" and "group:<group>" of PlaceTypeClassifier:
+     *                       a type to see more of counts as an interest loved, one to see less
+     *                       of loses points and is visited at most once that day), forecast
+     *                       (Y-m-d => chance of rain for the whole day, or 24 chances by the
+     *                       hour) or rain (the same for this day)
      * @return array result + stops (the number of visits the day now has); a refusal + day, worse
      */
     public static function regenerateDay(mysqli $conn, int $itineraryId, int $dayNo, array $options = []): array
@@ -407,14 +411,107 @@ class ItineraryEditService
     }
 
     /**
-     * The forecast chance of rain (percent) of the trip's dates inside the forecast horizon
-     * (today and the 15 days after it). As the generator asks it: once for the trip, at its
-     * starting point (without one: the first stop). A date without a figure is left out;
-     * nothing is asked when no trip date lies inside the horizon. Never throws.
+     * The forecast chance of rain of the trip's dates inside the forecast horizon (today and the
+     * 15 days after it): by the hour (24 chances) where WeatherService::rainHours() has them, as
+     * the generator asks it, once for each base of the trip with the dates of its days (a day
+     * without a base: at the starting point); a date without hourly values has its chance for
+     * the day (rainChances(), once at the starting point, without one the first stop), which
+     * counts for every hour. A date without a figure is left out; nothing is asked when no trip
+     * date lies inside the horizon. Never throws.
      *
-     * @return array<string,int> Y-m-d => chance of rain
+     * @return array<string,int|int[]> Y-m-d => 24 chances by the hour, or one chance for the day
      */
     public static function forecast(mysqli $conn, int $itineraryId): array
+    {
+        try {
+            $hourly = self::hourlyForecast($conn, $itineraryId);
+        } catch (Throwable $e) {
+            $hourly = [];
+        }
+        $daily = self::dailyForecast($conn, $itineraryId, array_keys($hourly));
+        return $hourly + $daily;
+    }
+
+    /**
+     * The highest chance of rain inside each day's window (its stored start, else the start of
+     * the preference's window, to the end of the window), for the days of the trip that have a
+     * forecast: day => percent. A chance for the whole day counts for every hour.
+     *
+     * @param array|null $forecast as forecast() returns it; null: forecast()
+     * @return array<int,int>
+     */
+    public static function rainInWindow(mysqli $conn, int $itineraryId, ?array $forecast = null): array
+    {
+        $stmt = $conn->prepare("SELECT start_date, total_days, preference_id FROM itineraries WHERE itinerary_id = ? LIMIT 1");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $meta = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        if (!$meta || empty($meta['start_date'])) return [];
+        $forecast ??= self::forecast($conn, $itineraryId);
+        if (!$forecast) return [];
+        $profile = PlannerRules::profile(PlannerRules::loadPreference($conn, (int)$meta['preference_id']) ?? PlannerRules::normalizePreference([]));
+        $starts = self::dayStarts($conn, $itineraryId);
+        $out = [];
+        for ($d = 1; $d <= max(1, (int)$meta['total_days']); $d++) {
+            $date = (new DateTimeImmutable((string)$meta['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
+            if (!isset($forecast[$date])) continue;
+            $rain = self::rainOfDay($forecast[$date]);
+            $at = ItineraryDayBuilder::rainAt($rain, (int)($starts[$d] ?? $profile['start']), (int)$profile['end']);
+            if ($at !== null) $out[$d] = (int)$at['max'];
+        }
+        return $out;
+    }
+
+    /** A forecast value (one chance for the day, or 24 by the hour) as the day builder reads it: rain or rain_hours. */
+    private static function rainOfDay($value): array
+    {
+        if (is_array($value) && count($value) === 24) {
+            return ['rain' => max(array_map('intval', $value)), 'rain_hours' => array_map(static fn($h): int => max(0, min(100, (int)$h)), array_values($value))];
+        }
+        return ['rain' => is_numeric($value) ? max(0, min(100, (int)$value)) : null, 'rain_hours' => null];
+    }
+
+    /** The chance of rain by the hour of the trip's dates inside the horizon: once for each base (forecast()). */
+    private static function hourlyForecast(mysqli $conn, int $itineraryId): array
+    {
+        $stmt = $conn->prepare("SELECT start_date, total_days, origin_lat, origin_lng FROM itineraries WHERE itinerary_id = ? LIMIT 1");
+        $stmt->bind_param('i', $itineraryId);
+        $stmt->execute();
+        $meta = $stmt->get_result()->fetch_assoc();
+        $stmt->close();
+        if (!$meta || empty($meta['start_date'])) return [];
+        $zone = new DateTimeZone('Asia/Kuala_Lumpur');
+        $today = (new DateTimeImmutable('today', $zone))->format('Y-m-d');
+        $horizon = (new DateTimeImmutable('today', $zone))->modify('+15 days')->format('Y-m-d');
+        $bases = self::dayBases($conn, $itineraryId);
+        $origin = self::point($meta['origin_lat'] ?? null, $meta['origin_lng'] ?? null);
+        $byPoint = [];
+        for ($d = 1; $d <= max(1, (int)$meta['total_days']); $d++) {
+            $date = (new DateTimeImmutable((string)$meta['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
+            if ($date < $today || $date > $horizon) continue;
+            $point = $bases[$d]['point'] ?? $origin;
+            if ($point === null) continue;
+            $key = round($point[0], 5) . ',' . round($point[1], 5);
+            $byPoint[$key]['point'] = $point;
+            $byPoint[$key]['dates'][] = $date;
+        }
+        $out = [];
+        foreach ($byPoint as $group) {
+            foreach (WeatherService::rainHours($group['point'][0], $group['point'][1], $group['dates']) as $date => $hours) {
+                if (is_array($hours) && count($hours) === 24) $out[$date] = array_map('intval', array_values($hours));
+            }
+        }
+        return $out;
+    }
+
+    /**
+     * The chance of rain for the day of the trip's dates inside the horizon that are not in
+     * $skip: once for the trip, at its starting point (without one: the first stop).
+     *
+     * @return array<string,int>
+     */
+    private static function dailyForecast(mysqli $conn, int $itineraryId, array $skip = []): array
     {
         $stmt = $conn->prepare("SELECT start_date, total_days, origin_lat, origin_lng FROM itineraries WHERE itinerary_id = ? LIMIT 1");
         $stmt->bind_param('i', $itineraryId);
@@ -428,7 +525,7 @@ class ItineraryEditService
         $dates = [];
         for ($d = 1; $d <= max(1, (int)$meta['total_days']); $d++) {
             $date = (new DateTimeImmutable((string)$meta['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
-            if ($date >= $today && $date <= $horizon) $dates[] = $date;
+            if ($date >= $today && $date <= $horizon && !in_array($date, $skip, true)) $dates[] = $date;
         }
         if (!$dates) return [];
 
@@ -457,14 +554,17 @@ class ItineraryEditService
     }
 
     /**
-     * Plan again every day whose chance of rain is $threshold percent or more, with the
-     * forecast (the day builder then prefers indoor places, and from 80 percent tries them
-     * first). The other days stay as they are. Each day is planned in a transaction of its
-     * own: a day that cannot be planned again keeps its stops, and the others are still done.
+     * Plan again every day on which some hour inside the day's window has a chance of rain of
+     * $threshold percent or more (rainInWindow()), with the forecast by the hour (the day
+     * builder then judges each stop by the hours of its visit: indoor places preferred, and from
+     * 80 percent tried first). The other days stay as they are. Each day is planned in a
+     * transaction of its own: a day that cannot be planned again keeps its stops, and the
+     * others are still done.
      *
-     * @param array|null $forecast Y-m-d => chance of rain; null: forecast()
-     * @return array result + rainy (day => chance), changes (day => status, code, message,
-     *         rain, worse (why a kept day was kept, see settleDay()), removed (names), added (names))
+     * @param array|null $forecast Y-m-d => chance of rain for the day, or 24 chances by the hour; null: forecast()
+     * @return array result + rainy (day => highest chance in its window), changes (day => status,
+     *         code, message, rain, worse (why a kept day was kept, see settleDay()), removed
+     *         (names), added (names))
      */
     public static function replanRainyDays(mysqli $conn, int $itineraryId, ?array $forecast = null, int $threshold = ItineraryDayBuilder::RAIN_PREFER): array
     {
@@ -476,11 +576,7 @@ class ItineraryEditService
         if (!$meta) return self::refused('NOT_FOUND', 'This itinerary was not found.');
         $forecast ??= self::forecast($conn, $itineraryId);
 
-        $rainy = [];
-        for ($d = 1; $d <= max(1, (int)$meta['total_days']); $d++) {
-            $date = (new DateTimeImmutable((string)$meta['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
-            if (isset($forecast[$date]) && is_numeric($forecast[$date]) && (int)$forecast[$date] >= $threshold) $rainy[$d] = (int)$forecast[$date];
-        }
+        $rainy = array_filter(self::rainInWindow($conn, $itineraryId, $forecast), static fn(int $chance): bool => $chance >= $threshold);
         if (!$rainy) {
             return self::done('No day of the trip has a forecast chance of rain of ' . $threshold . '% or more, so nothing was changed.', ['rainy' => [], 'changes' => []]);
         }
@@ -871,20 +967,26 @@ class ItineraryEditService
         if ($ctx['days'][$dayNo]['locked']) return ['refused' => self::refused('LOCKED', 'Day ' . $dayNo . ' holds a row the planner cannot re-time, so it cannot be planned again.')];
 
         // More of a category: it becomes an interest that is loved. Less: liked only a little.
+        // A place type or group (type:<type>, group:<group>): more counts as an interest loved,
+        // less loses points and is visited at most once that day (ItineraryDayBuilder).
         $pref = $ctx['pref'];
         $interests = (array)$pref['interests'];
         $weights = (array)$pref['interest_weights'];
+        $moreTypes = $lessTypes = [];
         foreach ((array)($options['more'] ?? []) as $category) {
             $category = strtolower(trim((string)$category));
+            if (str_starts_with($category, 'type:') || str_starts_with($category, 'group:')) { $moreTypes[] = $category; continue; }
             if (!in_array($category, PlannerRules::VALID_INTERESTS, true)) continue;
             if (!in_array($category, $interests, true)) $interests[] = $category;
             $weights[$category] = 3;
         }
         foreach ((array)($options['less'] ?? []) as $category) {
             $category = strtolower(trim((string)$category));
+            if (str_starts_with($category, 'type:') || str_starts_with($category, 'group:')) { $lessTypes[] = $category; continue; }
             if (in_array($category, $interests, true)) $weights[$category] = 1;
         }
-        $profile = PlannerRules::profile(['interests' => $interests, 'interest_weights' => $weights] + $ctx['profile_input']);
+        $profile = PlannerRules::profile(['interests' => $interests, 'interest_weights' => $weights,
+            'more_types' => $moreTypes, 'less_types' => $lessTypes] + $ctx['profile_input']);
         $profile['meals'] = $ctx['profile']['meals'];
         $profile = self::dayProfile($ctx, $dayNo, $profile);
 
@@ -893,12 +995,14 @@ class ItineraryEditService
         $mustIds = array_fill_keys(array_map(static fn(array $s): int => (int)$s['place']['place_id'], $musts), true);
         $start = self::starts($ctx, $days)[$dayNo];
         $date = $ctx['dates'][$dayNo];
-        $rain = $options['rain'] ?? ($options['forecast'][$date] ?? null);
+        // Rain: one chance for the day (every hour), or 24 by the hour.
+        $rain = self::rainOfDay($options['rain'] ?? ($options['forecast'][$date] ?? null));
         $budget = self::budgetOutside($ctx, $dayNo, $days, []);
         $dayCtx = [
             'day_no' => $dayNo,
             'date' => $date,
-            'rain' => is_numeric($rain) ? max(0, min(100, (int)$rain)) : null,
+            'rain' => $rain['rain'],
+            'rain_hours' => $rain['rain_hours'],
             'start' => $start['point'],
             'first_leg_exempt' => $start['exempt'],
             'used' => self::usedOutside($ctx, $dayNo, $days, []),
@@ -922,7 +1026,7 @@ class ItineraryEditService
             $stops[] = ['place' => $m['place'], 'point' => $m['point'], 'must' => true, 'tier' => 1, 'reasons' => ['on your must-see list']];
         }
         // change() times the settled day once more on exactly these figures: no request there.
-        $opts = ['notes_profile' => $profile, 'measure' => false];
+        $opts = ['notes_profile' => $profile, 'measure' => false, 'rain_day' => [$dayNo => ['rain' => $dayCtx['rain'], 'rain_hours' => $dayCtx['rain_hours']]]];
         $settled = self::settleDay($ctx, $days, $dayNo, $stops, $built['spares'], $dayCtx, $profile, $opts);
         if (isset($settled['refused'])) return $settled;
         $newStops = $settled['stops'];
@@ -1262,6 +1366,9 @@ class ItineraryEditService
                 $plans[$d] = $tried[$d] = ['stops' => [], 'dropped' => [], 'minutes' => 0, 'km' => 0.0];
                 continue;
             }
+            // The traveller's limit on places of worship, on the days whose stops changed.
+            $worship = in_array($d, $changed, true) ? self::worshipRefusal($ctx, $days[$d], $d) : null;
+            if ($worship !== null) return ['result' => $worship, 'plans' => $tried] + $frame;
             if ($ctx['days'][$d]['locked'] || $newStarts[$d]['point'] === null) {
                 if (!empty($opts['best_effort'])) continue;
                 return ['result' => self::refused('LOCKED', 'Day ' . $d . ' holds a row the planner cannot re-time, so this change cannot be made.', ['day' => $d]), 'plans' => $tried] + $frame;
@@ -1452,8 +1559,12 @@ class ItineraryEditService
                 $endTime = PlannerRules::sqlTime((int)$stop['end']);
                 $lastEnd = (int)$stop['end'];
                 $lastPoint = $stop['point'];
-                $notes = $stop['reasons'] !== null
-                    ? ItineraryDayBuilder::notes(['place' => $place, 'tier' => $stop['tier'], 'reasons' => $stop['reasons'], 'food_meal' => $stop['food_meal']], $notesProfile)
+                // A day planned again in the rain: its rain notes name the hours of the visit as timed now.
+                $reasons = $stop['reasons'] !== null && isset($opts['rain_day'][$d])
+                    ? ItineraryDayBuilder::rainNotesAt((array)$stop['reasons'], $place, $opts['rain_day'][$d], (int)$stop['start'], (int)$stop['end'])
+                    : $stop['reasons'];
+                $notes = $reasons !== null
+                    ? ItineraryDayBuilder::notes(['place' => $place, 'tier' => $stop['tier'], 'reasons' => $reasons, 'food_meal' => $stop['food_meal']], $notesProfile)
                     : self::retagFoodMeal((string)($stop['row']['notes'] ?? ''), $stop['food_meal']);
                 $type = PlannerRules::itemType($place);
                 $placeId = (int)$place['place_id'];
@@ -1688,6 +1799,8 @@ class ItineraryEditService
         // The legs stored with the trip are the figures at hand: nothing is asked for them. A
         // change measures only the legs it needs that are not among them (plan()).
         if ($route === null) $ctx['route']->setTimeout(self::ROUTE_TIMEOUT);
+        // Public transport: every ride takes the walks between its points and their stops.
+        PlannerRules::applyTransitAccess($ctx['route'], $profile, array_merge($loaded, array_values($places)));
         // The holidays the admin keeps (office hours, peak hours) for the years of the trip.
         PlannerRules::loadCalendar($conn, $dates);
         // A stored leg carries its peak-hour factor (PlannerRules::peakMinutes()); the figure at
@@ -1984,7 +2097,29 @@ class ItineraryEditService
         }
         $reason = PlannerRules::placeReason($place, $ctx['profile']);
         if ($reason !== null) return self::refused($reason, $name . ' cannot be used: ' . PlannerRules::reasonText($reason) . '.');
+        // Not for a must-see place: one no public transport stop reaches (for a traveller who
+        // uses it), and a place of worship for a traveller who wants none.
+        if (!self::isMust($ctx, $placeId)) {
+            $reason = PlannerRules::transitReason($place, $ctx['profile']) ?? PlannerRules::worshipReason($place, $ctx['profile']);
+            if ($reason !== null) return self::refused($reason, $name . ' cannot be used: ' . PlannerRules::reasonText($reason) . '.');
+        }
         return null;
+    }
+
+    /**
+     * WORSHIP when a change puts more places of worship that are not must-see places into a day
+     * than it had, and the day then holds more than the traveller's limit (worship_limit); null
+     * otherwise. A must-see place is always kept.
+     */
+    private static function worshipRefusal(array $ctx, array $stops, int $d): ?array
+    {
+        $cap = $ctx['profile']['worship_cap'] ?? null;
+        if ($cap === null) return null;
+        $count = static fn(array $list, bool $freeOnly): int => count(array_filter($list, static fn(array $s): bool =>
+            PlannerRules::isWorship($s['place']) && (!$freeOnly || empty($s['must']))));
+        $before = $count($ctx['days'][$d]['visits'] ?? [], true);
+        if ($count($stops, true) <= $before || $count($stops, false) <= (int)$cap) return null;
+        return self::refused('WORSHIP', 'Day ' . $d . ' would have more places of worship than you asked for (' . ((int)$cap === 0 ? 'none' : 'at most ' . (int)$cap . ' a day') . ').', ['day' => $d]);
     }
 
     private static function loadPlace(array $ctx, int $placeId): ?array
@@ -2104,7 +2239,26 @@ class ItineraryEditService
             && !array_intersect($reasons, ItineraryDayBuilder::RELAXED)) {
             array_unshift($reasons, ItineraryDayBuilder::RELAXED[1]);
         }
+        // Type variety the same way: the day's other stops already hold the type's limit (or two places of worship).
+        $others = array_values(array_filter($stops, static fn($s, $i): bool => $i !== $index && is_array($s) && isset($s['place']), ARRAY_FILTER_USE_BOTH));
+        if (self::breaksTypeVariety($ctx, $place, $others) && !in_array(ItineraryDayBuilder::RELAXED[2], $reasons, true)) {
+            array_unshift($reasons, ItineraryDayBuilder::RELAXED[2]);
+        }
         return ['tier' => (int)$ranked[0]['tier'], 'reasons' => $reasons];
+    }
+
+    /** Whether a place breaks type variety in a day whose other stops are $others (PlannerRules::breaksTypeVariety()). */
+    private static function breaksTypeVariety(array $ctx, array $place, array $others): bool
+    {
+        $types = $groups = [];
+        foreach ($others as $s) {
+            $type = PlannerRules::typeOf($s['place']);
+            if ($type === null) continue;
+            $types[$type] = ($types[$type] ?? 0) + 1;
+            $group = PlaceTypeClassifier::groupOf($type);
+            $groups[$group] = ($groups[$group] ?? 0) + 1;
+        }
+        return PlannerRules::breaksTypeVariety($place, $types, $groups, $ctx['profile']);
     }
 
     /**
@@ -2113,6 +2267,17 @@ class ItineraryEditService
      */
     private static function varietyNote(array $ctx, array $stop, array $others): array
     {
+        // Place type variety (two of a type, two places of worship) first, then category variety.
+        if (self::breaksTypeVariety($ctx, $stop['place'], $others)) {
+            $note = ItineraryDayBuilder::RELAXED[2];
+            if ($stop['reasons'] !== null) {
+                if (!in_array($note, (array)$stop['reasons'], true)) array_unshift($stop['reasons'], $note);
+            } elseif (isset($stop['row']['notes']) && !str_contains((string)$stop['row']['notes'], $note)) {
+                $notes = (string)$stop['row']['notes'];
+                $at = strpos($notes, 'Reason: ');
+                $stop['row']['notes'] = $at === false ? $notes . ' | Reason: ' . $note : substr($notes, 0, $at + 8) . $note . '; ' . substr($notes, $at + 8);
+            }
+        }
         $category = strtolower((string)$stop['place']['category']);
         $same = count(array_filter($others, static fn(array $s): bool => strtolower((string)$s['place']['category']) === $category));
         if ($ctx['profile']['food_only'] || $same < PlannerRules::categoryLimit($ctx['profile'], $category)) return $stop;

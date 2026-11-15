@@ -15,15 +15,20 @@
 //   time       'HH:MM' (24-hour), or null
 //   position   int wanted position in the day (1 = first), or null
 //   wish       string free wishes in a few words ("fewer temples, more food"), or null
-//   more       list of self::CATEGORIES the traveller wants more of ("more food"), may be empty
-//   less       list of self::CATEGORIES the traveller wants less of ("fewer temples"), may be empty
-//              Both are read from the message and the model's wish by moreLess() (English,
-//              Malay, Chinese); only when that finds nothing are the model's own lists used.
-//              A category named in both lists is dropped from both.
+//   more       wishes the traveller wants more of ("more food", "more museums"), may be empty
+//   less       wishes the traveller wants less of ("fewer temples"), may be empty
+//              A wish is a category of self::CATEGORIES, "type:<type>" or "group:<group>" of
+//              PlaceTypeClassifier (temple, mosque, church, gallery, market, mall, beach,
+//              waterfall, park, cave, palace, fort, village, heritage street, food street and
+//              the like, self::TYPE_WORDS; a word for a kind of place wins over the category it
+//              lies in). Both are read from the message and the model's wish by moreLess()
+//              (English, Malay, Chinese); only when that finds nothing are the model's own lists
+//              used. A wish named in both lists is dropped from both.
 //   language   'en' | 'ms' | 'zh', the detected language of the message
 //   source     'model'
 
 require_once __DIR__ . '/OllamaClient.php';
+require_once __DIR__ . '/PlaceTypeClassifier.php';
 
 class ItineraryEditIntentService
 {
@@ -39,6 +44,33 @@ class ItineraryEditIntentService
         'heritage' => ['heritage', 'historic site', 'temple', 'mosque', 'church', 'warisan', 'kuil', 'masjid', '古迹', '寺庙', '遗产'],
         'culture' => ['culture', 'cultural place', 'budaya', '文化'],
         'festival' => ['festival', 'perayaan', 'pesta', '节日', '节庆'],
+    ];
+
+    /**
+     * Words that name a kind of place (a type or a group of PlaceTypeClassifier), in English,
+     * Malay and Chinese, for the more and less lists: [wishes, words]. "Temple" is every kind of
+     * temple. The longest word found wins, so "food street" is a food street, not food.
+     */
+    private const TYPE_WORDS = [
+        [['type:hindu_temple', 'type:chinese_temple', 'type:buddhist_temple', 'type:sikh_temple'], ['temple', 'kuil', 'tokong', '寺庙', '庙宇', '寺', '庙']],
+        [['type:mosque'], ['mosque', 'masjid', '清真寺']],
+        [['type:church'], ['church', 'churches', 'gereja', '教堂']],
+        [['group:worship'], ['places of worship', 'place of worship', 'religious places', 'religious sites', 'tempat ibadat', 'rumah ibadat', '宗教场所']],
+        [['type:gallery'], ['gallery', 'galleries', 'galeri', '美术馆', '画廊', '艺术馆']],
+        [['type:market'], ['market', 'night market', 'pasar', 'pasar malam', '市场', '夜市', '巴刹']],
+        [['type:mall'], ['mall', 'shopping mall', 'shopping centre', 'pusat beli-belah', 'pusat membeli-belah', '商场', '购物中心']],
+        [['type:beach'], ['beach', 'beaches', 'pantai', '海滩', '沙滩']],
+        [['type:waterfall'], ['waterfall', 'air terjun', '瀑布']],
+        [['type:park'], ['park', 'garden', 'taman', '公园', '花园']],
+        [['type:cave'], ['cave', 'gua', '洞穴', '山洞']],
+        [['type:palace'], ['palace', 'istana', '皇宫', '宫殿', '王宫']],
+        [['type:fort'], ['fort', 'fortress', 'kubu', '城堡', '古堡', '堡垒']],
+        [['type:memorial'], ['monument', 'memorial', 'tugu', '纪念碑']],
+        [['type:cultural_village'], ['cultural village', 'village', 'kampung budaya', 'kampung', '文化村', '村庄']],
+        [['type:heritage_street'], ['heritage street', 'old street', 'jalan warisan', '老街', '古街']],
+        [['type:food_street'], ['food street', 'hawker centre', 'hawker center', 'hawker', 'medan selera', '美食街', '小贩中心']],
+        [['type:hill'], ['hill', 'bukit', '山丘']],
+        [['type:island'], ['island', 'pulau', '岛屿', '海岛']],
     ];
 
     private OllamaClient $ollama;
@@ -368,8 +400,8 @@ place_name: the name of a specific new place the traveller asks for, else null.
 time: the clock time the traveller asks for, 24-hour "HH:MM" (9am = "09:00", pukul 2.30 petang = "14:30", 下午3点 = "15:00"), else null. Never copy a time from the itinerary list.
 position: the wanted position within the day (1 = first; "last" = number of stops that day + 1 when moving to the end), else null.
 wish: other wishes in a few English words, such as "cheaper" or "fewer temples, more food", else null.
-more: list of categories the traveller wants more of, such as ["food"], else [].
-less: list of categories the traveller wants fewer of, such as ["heritage"] for fewer temples, else [].
+more: list of categories or kinds of place the traveller wants more of, such as ["food"] or ["beach"], else [].
+less: list of categories or kinds of place the traveller wants fewer of, such as ["temple"] for fewer temples, else [].
 Use null for anything not said.
 
 Examples for this itinerary:
@@ -390,7 +422,7 @@ Request: 第一天早上9点开始
 Request: move Jalan Alor to day 1
 {"action":"move","day":1,"stop_no":null,"stop_name":"Jalan Alor","stop_id":880005,"category":null,"place_name":null,"time":null,"position":null,"wish":null}
 Request: rancang semula hari 2, kurang kuil, lebih banyak makanan
-{"action":"regenerate_day","day":2,"stop_no":null,"stop_name":null,"stop_id":null,"category":null,"place_name":null,"time":null,"position":null,"wish":"fewer temples, more food","more":["food"],"less":["heritage"]}
+{"action":"regenerate_day","day":2,"stop_no":null,"stop_name":null,"stop_id":null,"category":null,"place_name":null,"time":null,"position":null,"wish":"fewer temples, more food","more":["food"],"less":["temple"]}
 Request: 第一天的路线太绕了，帮我重新排序
 {"action":"optimise","day":1,"stop_no":null,"stop_name":null,"stop_id":null,"category":null,"place_name":null,"time":null,"position":null,"wish":null}
 Request: how far is Batu Caves from the hotel?
@@ -423,15 +455,18 @@ PROMPT;
     }
 
     /**
-     * The more and less lists of an intent: read from the message and the model's English
-     * wish; the model's own "more" and "less" only when neither names any. Each list holds
-     * categories of self::CATEGORIES, at most once; one named in both is dropped from both.
+     * The more and less lists of an intent: read from the message; from the model's English
+     * wish only when the message names none (the traveller's own words win over the model's
+     * translation, which may read 清真寺 as "temples"); the model's own "more" and "less" only
+     * when neither names any. Each list holds wishes (a category, type:<type> or group:<group>),
+     * at most once; one named in both is dropped from both.
      *
      * @return array{0:string[],1:string[]}
      */
     private static function wantedLists(array $data, string $message, ?string $wish): array
     {
-        [$more, $less] = self::moreLess(trim($message . ' ; ' . (string)$wish));
+        [$more, $less] = self::moreLess(trim($message));
+        if (!$more && !$less && $wish !== null) [$more, $less] = self::moreLess($wish);
         if (!$more && !$less) {
             $more = self::categoryList($data['more'] ?? null);
             $less = self::categoryList($data['less'] ?? null);
@@ -440,7 +475,10 @@ PROMPT;
         return [array_values(array_diff($more, $both)), array_values(array_diff($less, $both))];
     }
 
-    /** A list from the model: known categories only (unknown entries are left out), each once. */
+    /**
+     * A list from the model: known wishes only (unknown entries are left out), each once: a
+     * category, type:<type> or group:<group>, or a word for one (a kind of place first).
+     */
     private static function categoryList($value): array
     {
         if (is_string($value)) $value = [$value];
@@ -448,11 +486,45 @@ PROMPT;
         $out = [];
         foreach (array_slice($value, 0, 7) as $item) {
             if (!is_string($item)) continue;
-            $item = strtolower(trim($item));
-            if (!in_array($item, self::CATEGORIES, true)) $item = (string)self::categoryWord($item, true);
-            if ($item !== '' && !in_array($item, $out, true)) $out[] = $item;
+            $item = mb_strtolower(trim($item), 'UTF-8');
+            if (in_array($item, self::CATEGORIES, true) || self::isTypeWish($item)) {
+                $wishes = [$item];
+            } else {
+                $wishes = self::typeWord($item) ?? array_filter([(string)self::categoryWord($item, true)]);
+            }
+            foreach ($wishes as $wish) if (!in_array($wish, $out, true)) $out[] = $wish;
         }
         return $out;
+    }
+
+    /** Whether a text is a wish for a type or a group of PlaceTypeClassifier ("type:mosque", "group:worship"). */
+    private static function isTypeWish(string $text): bool
+    {
+        return (str_starts_with($text, 'type:') && PlaceTypeClassifier::isValid(substr($text, 5)))
+            || (str_starts_with($text, 'group:') && isset(PlaceTypeClassifier::GROUPS[substr($text, 6)]));
+    }
+
+    /** The wishes a word for a kind of place names ("temples", "air terjun", "清真寺"), or null. */
+    private static function typeWord(string $text): ?array
+    {
+        $text = preg_replace('/^(?:a|an|the|some|satu|sebuah|一个|一家|一些)\s*/u', '', mb_strtolower(trim($text), 'UTF-8')) ?? $text;
+        foreach (self::TYPE_WORDS as [$wishes, $words]) {
+            foreach ($words as $word) {
+                if ($text === $word || $text === $word . 's') return $wishes;
+            }
+        }
+        return null;
+    }
+
+    /** Every word of TYPE_WORDS with its wishes, the longest first: [word, wishes]. */
+    private static function typeWordList(): array
+    {
+        static $list = null;
+        if ($list !== null) return $list;
+        $list = [];
+        foreach (self::TYPE_WORDS as [$wishes, $words]) foreach ($words as $word) $list[] = [$word, $wishes];
+        usort($list, static fn(array $a, array $b): int => [strlen($b[0]), $a[0]] <=> [strlen($a[0]), $b[0]]);
+        return $list;
     }
 
     /**
@@ -471,29 +543,57 @@ PROMPT;
         $moreWords = '/(?<![a-z])(?:more|extra|lebih(?:\s+banyak)?|tambah(?:kan)?\s+lagi|banyakkan)(?![a-z])|多一?[点些個个]?|更多|增加/u';
         $lessWords = '/(?<![a-z])(?:fewer|less|no\s+more|kurang(?:kan)?|sedikit|tak\s+(?:nak|mahu)\s+banyak)(?![a-z])|少一?[点些]?|减少|不要那么多|别那么多/u';
         $clauses = preg_split('/[,;.!?，。；！？、]|(?<![a-z])(?:and|but|dan|tetapi|tapi)(?![a-z])|和|但是?|还有/u', $text) ?: [$text];
+        // Whether the words before a match (or, in Chinese, right after it) ask for more or less.
+        $kindAt = static function (string $clause, int $at, string $word) use ($moreWords, $lessWords): ?string {
+            $before = substr($clause, 0, $at);
+            $kind = null;
+            $moreAt = preg_match_all($moreWords, $before, $mm, PREG_OFFSET_CAPTURE) ? max(array_map(static fn($x) => $x[1] + strlen($x[0]), $mm[0])) : -1;
+            $lessAt = preg_match_all($lessWords, $before, $lm, PREG_OFFSET_CAPTURE) ? max(array_map(static fn($x) => $x[1] + strlen($x[0]), $lm[0])) : -1;
+            if ($lessAt >= 0 && $lessAt >= $moreAt) $kind = 'less';
+            elseif ($moreAt >= 0) $kind = 'more';
+            if ($kind === null && preg_match('/\p{Han}/u', $word)) {
+                $after = substr($clause, $at + strlen($word), 9);
+                if (preg_match('/^(?:少一?[点些]|少)/u', $after)) $kind = 'less';
+                elseif (preg_match('/^(?:多一?[点些]|多)/u', $after)) $kind = 'more';
+            }
+            return $kind;
+        };
+        $add = static function (?string $kind, array $wishes) use (&$more, &$less): void {
+            foreach ($wishes as $wish) {
+                if ($kind === 'more' && !in_array($wish, $more, true)) $more[] = $wish;
+                if ($kind === 'less' && !in_array($wish, $less, true)) $less[] = $wish;
+            }
+        };
         foreach ($clauses as $clause) {
+            // Kinds of place first, the longest word first; a word found is blanked out, so the
+            // category it lies in ("food" in "food street") is not read again.
+            foreach (self::typeWordList() as [$word, $wishes]) {
+                $found = self::wordMatch($clause, $word);
+                if ($found === null) continue;
+                $add($kindAt($clause, $found[0], $word), $wishes);
+                $clause = substr_replace($clause, str_repeat(' ', $found[1]), $found[0], $found[1]);
+            }
             foreach (self::CATEGORY_WORDS as $category => $words) {
                 foreach ($words as $word) {
                     $at = self::wordOffset($clause, $word);
                     if ($at === null) continue;
-                    $before = substr($clause, 0, $at);
-                    $kind = null;
-                    $moreAt = preg_match_all($moreWords, $before, $mm, PREG_OFFSET_CAPTURE) ? max(array_map(static fn($x) => $x[1] + strlen($x[0]), $mm[0])) : -1;
-                    $lessAt = preg_match_all($lessWords, $before, $lm, PREG_OFFSET_CAPTURE) ? max(array_map(static fn($x) => $x[1] + strlen($x[0]), $lm[0])) : -1;
-                    if ($lessAt >= 0 && $lessAt >= $moreAt) $kind = 'less';
-                    elseif ($moreAt >= 0) $kind = 'more';
-                    if ($kind === null && preg_match('/\p{Han}/u', $word)) {
-                        $after = substr($clause, $at + strlen($word), 9);
-                        if (preg_match('/^(?:少一?[点些]|少)/u', $after)) $kind = 'less';
-                        elseif (preg_match('/^(?:多一?[点些]|多)/u', $after)) $kind = 'more';
-                    }
-                    if ($kind === 'more' && !in_array($category, $more, true)) $more[] = $category;
-                    if ($kind === 'less' && !in_array($category, $less, true)) $less[] = $category;
+                    $add($kindAt($clause, $at, $word), [$category]);
                     break;
                 }
             }
         }
         return [$more, $less];
+    }
+
+    /** Byte offset and length of a word in a text (a whole word, plural allowed), or null. */
+    private static function wordMatch(string $text, string $word): ?array
+    {
+        if (preg_match('/\p{Han}/u', $word)) {
+            $at = strpos($text, $word);
+            return $at === false ? null : [$at, strlen($word)];
+        }
+        if (preg_match('/(?<![a-z])' . preg_quote($word, '/') . '(?:e?s)?(?![a-z])/u', $text, $m, PREG_OFFSET_CAPTURE)) return [(int)$m[0][1], strlen($m[0][0])];
+        return null;
     }
 
     /** Byte offset of a category word in a text (a whole word, plural allowed), or null. */

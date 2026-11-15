@@ -129,6 +129,10 @@ if (strlen($accessibilityNeeds) > 120) $errors[] = t('pref.err_access_len');
 [$dayStart, $dayEnd, $dayErrors] = pref_parse_day_window((string)($_POST["day_start_time"] ?? ""), (string)($_POST["day_end_time"] ?? ""));
 [$stopsPerDay, $stopsErrors] = pref_parse_stops((string)($_POST["stops_per_day"] ?? ""));
 $errors = array_merge($errors, $dayErrors, $stopsErrors);
+// Places of worship (migration 20261121_worship_limit.sql): stored only where the column exists.
+[$worshipLimit, $worshipErrors] = pref_parse_worship_limit((string)($_POST["worship_limit"] ?? ""));
+$errors = array_merge($errors, $worshipErrors);
+$hasWorshipLimit = pref_column_exists($conn, "traveller_preferences", "worship_limit");
 
 $tickedTags = $_POST["access_tags"] ?? [];
 if (!is_array($tickedTags)) $tickedTags = [];
@@ -197,6 +201,7 @@ if (!empty($errors)) {
         "interests" => $interests, "preferred_states" => $statesStr, "preferred_districts" => $districtsStr,
         "day_start_time" => (string)($_POST["day_start_time"] ?? ""), "day_end_time" => (string)($_POST["day_end_time"] ?? ""),
         "stops_per_day" => (string)($_POST["stops_per_day"] ?? ""),
+        "worship_limit" => (string)($_POST["worship_limit"] ?? ""),
         "adults" => (string)($_POST["adults"] ?? ""), "children" => (string)($_POST["children"] ?? ""),
         "seniors" => (string)($_POST["seniors"] ?? ""),
         "interest_weight" => $interestWeights, "access_tags" => array_values($tickedTags),
@@ -235,6 +240,13 @@ try {
     $stmt->execute();
     $newPrefId = (int)$stmt->insert_id;
     $stmt->close();
+
+    if ($hasWorshipLimit && $worshipLimit !== null) {
+        $stmt = $conn->prepare("UPDATE traveller_preferences SET worship_limit = ? WHERE preference_id = ?");
+        $stmt->bind_param("si", $worshipLimit, $newPrefId);
+        $stmt->execute();
+        $stmt->close();
+    }
 
     save_preference_junctions($conn, $newPrefId, is_array($interests) ? $interests : [], array_filter(array_map("trim", explode(",", $statesStr))), $interestWeights);
 

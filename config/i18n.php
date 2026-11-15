@@ -333,6 +333,10 @@ function i18n_reason_tables(): array
         'preferred districts relaxed to fill the day' => 'note.r_relax2',
         'interest relaxed to fill the day' => 'note.r_relax3',
         'recommended daily distance relaxed to fill the day' => 'note.r_relax4',
+        'place type variety relaxed to fill the day' => 'note.r_relax_type',
+        'the last stretch needs a taxi or e-hailing: no public transport stop within 1.5 km' => 'note.r_transit_taxi',
+        'a kind of place you asked for more of' => 'rvw.type_more',
+        'a kind of place you asked for less of' => 'rvw.type_less',
         'selected district and interest match' => 'note.r_tier1',
         'selected district' => 'note.r_tier2a',
         'interest relaxed' => 'note.r_tier2b',
@@ -390,6 +394,8 @@ function i18n_reason_tables(): array
         'closed on the days of the trip' => 'note.w_must_closed',
         'no place is left in the chosen area' => 'note.w_none_left',
         'its stops were removed or moved' => 'note.w_emptied',
+        'too far from public transport (no stop within 1.5 km)' => 'note.w_transit',
+        'over your limit for places of worship' => 'note.w_worship',
     ];
     $m = '([\d,]+(?:\.\d+)?)';
     $patterns = [
@@ -398,6 +404,9 @@ function i18n_reason_tables(): array
         ['/^also your (lunch|dinner)$/', 'rvw.also_meal', ['meal']],
         ['/^(\d+)% chance of rain forecast: indoor place preferred$/', 'rvw.rain_indoor', ['n']],
         ['/^outdoor although (\d+)% chance of rain: no indoor place fits$/', 'rvw.rain_outdoor', ['n']],
+        ['/^(\d+)% chance of rain (\d{2}:\d{2})-(\d{2}:\d{2}): indoor place preferred$/', 'rvw.rain_indoor_hours', ['n', 'from', 'to']],
+        ['/^outdoor although (\d+)% chance of rain (\d{2}:\d{2})-(\d{2}:\d{2}): no indoor place fits$/', 'rvw.rain_outdoor_hours', ['n', 'from', 'to']],
+        ['/^a walk of about (\d+) min from the nearest stop \((\d+) m\)$/', 'rvw.transit_walk', ['n', 'm']],
         ['/^(Lunch|Dinner) at the food place with the least detour between your stops \(' . $m . ' km extra\)$/', 'note.p_meal_least', ['slot', 'km']],
         ['/^(Lunch|Dinner) at the food place you chose \(' . $m . ' km extra\)$/', 'note.p_meal_chosen', ['slot', 'km']],
         ['/^Time kept free for (lunch|dinner) \((\d+) min\), as you chose a break without a set place\.$/', 'note.p_free_chosen', ['meal', 'n']],

@@ -10,7 +10,9 @@
 //     remove          item_id                           -> removeStop()
 //     add             day_no, place_id, [position]      -> addStop()
 //     move            item_id, to_day, [to_position]    -> moveStop()
-//     regenerate_day  day_no, [more], [less]            -> regenerateDay() (more/less: comma-separated categories)
+//     regenerate_day  day_no, [more], [less]            -> regenerateDay() (more/less: comma-separated wishes:
+//                                                           categories, type:<type> or group:<group> of
+//                                                           PlaceTypeClassifier, PlannerRules::wishTokens())
 //     set_day_start   day_no (0: every day), start_time (HH:MM, empty: back to the usual start) -> setDayStart()
 //     optimise        -                                 -> optimise()
 //     replan_rain     -                                 -> replanRainyDays() with the forecast
@@ -63,16 +65,17 @@ function itinerary_edit_int(string $name, bool $required, int $min, int $max): ?
     return $value;
 }
 
-/** Comma-separated categories of the planner's list (PlannerRules::VALID_INTERESTS). */
+/**
+ * Comma-separated wishes for a day planned again: categories of the planner's list
+ * (PlannerRules::VALID_INTERESTS), "type:<type>" and "group:<group>" of PlaceTypeClassifier
+ * (PlannerRules::wishTokens()). Anything else is a bad request.
+ */
 function itinerary_edit_categories(string $name): array
 {
     $raw = $_POST[$name] ?? '';
-    if (!is_string($raw)) itinerary_edit_error('edit.err_invalid', 400);
-    $out = [];
-    foreach (array_filter(array_map('trim', explode(',', strtolower($raw))), 'strlen') as $category) {
-        if (!in_array($category, PlannerRules::VALID_INTERESTS, true)) itinerary_edit_error('edit.err_invalid', 400);
-        if (!in_array($category, $out, true)) $out[] = $category;
-    }
+    if (!is_string($raw) || strlen($raw) > 500) itinerary_edit_error('edit.err_invalid', 400);
+    $out = PlannerRules::wishTokens($raw);
+    if ($out === null) itinerary_edit_error('edit.err_invalid', 400);
     return $out;
 }
 

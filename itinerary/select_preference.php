@@ -26,11 +26,14 @@ if ($colRes && $colRes->num_rows > 0) {
   $hasPartySizeCol = true;
 }
 $partySizeSql = $hasPartySizeCol ? ", party_size" : "";
+// Places of worship (migration 20261121_worship_limit.sql), when the column exists.
+$colRes = $conn->query("SHOW COLUMNS FROM traveller_preferences LIKE 'worship_limit'");
+$worshipSql = $colRes && $colRes->num_rows > 0 ? ", worship_limit" : ", NULL AS worship_limit";
 
 $stmt = $conn->prepare("
   SELECT preference_id, trip_days, budget, budget_tier, transport_type, traveller_type{$partySizeSql}, travel_pace,
          dietary_preference, preferred_visit_time, accessibility_needs, accessibility_tags,
-         day_start_time, day_end_time, stops_per_day, adults, children, seniors, interests, preferred_states, preferred_districts, created_at
+         day_start_time, day_end_time, stops_per_day, adults, children, seniors{$worshipSql}, interests, preferred_states, preferred_districts, created_at
   FROM traveller_preferences
   WHERE traveller_id = ?
   ORDER BY preference_id DESC
@@ -220,6 +223,7 @@ foreach ($preferences as $pref) {
     "schedule" => pref_schedule_summary($pref),
     "stops" => ($pref["stops_per_day"] ?? null) !== null && $pref["stops_per_day"] !== "" ? (string)(int)$pref["stops_per_day"] : "",
     "mix" => pref_mix_summary($pref),
+    "worship" => (string)($pref["worship_limit"] ?? "") !== "" ? t_choice("worship", (string)$pref["worship_limit"]) : "",
     "must_places" => implode(", ", $prefPlaces[$pid]["must"] ?? []),
     "avoid_places" => implode(", ", $prefPlaces[$pid]["avoid"] ?? []),
   ];
@@ -702,7 +706,7 @@ foreach ($preferences as $pref) {
 const preferenceData = <?php echo json_encode($preferencePayload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 const preselectedPreferenceId = <?php echo (int)$preselectedPreferenceId; ?>;
 const fromPreferenceSaved = <?php echo $fromPreferenceSaved ? "true" : "false"; ?>;
-const T = <?php echo i18n_js(['pref.travellers_unit', 'sel.js_duration', 'sel.js_budget', 'sel.js_transport', 'sel.js_type', 'sel.js_party', 'sel.js_pace', 'sel.js_location', 'sel.js_interests', 'sel.js_dietary', 'sel.js_visit', 'sel.js_profile_label', 'sel.js_profile', 'sel.js_budget_level', 'sel.js_route_scope', 'sel.js_route_scope_val', 'sel.js_activity_label', 'sel.js_transport_label', 'sel.js_transport_val', 'sel.js_interest_label', 'sel.js_food_label', 'sel.js_access_label', 'sel.js_budget_none', 'sel.js_budget_limited', 'sel.js_budget_moderate', 'sel.js_budget_comfortable', 'sel.js_activity_relaxed', 'sel.js_activity_packed', 'sel.js_activity_normal', 'sel.js_food_halal', 'sel.js_food_veg', 'sel.js_food_none', 'sel.js_access_none', 'sel.js_schedule', 'sel.js_stops', 'sel.js_mix', 'sel.js_access_summary', 'sel.js_must', 'sel.js_avoid', 'sel.js_loc_confirmed', 'sel.js_loc_choose', 'sel.js_loc_searching', 'sel.js_loc_notfound', 'sel.js_end_confirmed', 'sel.js_end_type', 'sel.js_end_notfound', 'sel.js_my_location', 'sel.js_thinking', 'sel.js_ai_unavailable', 'sel.js_ai_down', 'sel.js_geo_unsupported', 'sel.js_geo_getting', 'sel.js_geo_failed', 'sel.js_need_pref', 'sel.js_need_date', 'sel.origin_status', 'sel.ai_btn', 'sel.ai_btn_hide']); ?>;
+const T = <?php echo i18n_js(['pref.travellers_unit', 'sel.js_duration', 'sel.js_budget', 'sel.js_transport', 'sel.js_type', 'sel.js_party', 'sel.js_pace', 'sel.js_location', 'sel.js_interests', 'sel.js_dietary', 'sel.js_visit', 'sel.js_profile_label', 'sel.js_profile', 'sel.js_budget_level', 'sel.js_route_scope', 'sel.js_route_scope_val', 'sel.js_activity_label', 'sel.js_transport_label', 'sel.js_transport_val', 'sel.js_interest_label', 'sel.js_food_label', 'sel.js_access_label', 'sel.js_budget_none', 'sel.js_budget_limited', 'sel.js_budget_moderate', 'sel.js_budget_comfortable', 'sel.js_activity_relaxed', 'sel.js_activity_packed', 'sel.js_activity_normal', 'sel.js_food_halal', 'sel.js_food_veg', 'sel.js_food_none', 'sel.js_access_none', 'sel.js_schedule', 'sel.js_stops', 'sel.js_worship', 'sel.js_mix', 'sel.js_access_summary', 'sel.js_must', 'sel.js_avoid', 'sel.js_loc_confirmed', 'sel.js_loc_choose', 'sel.js_loc_searching', 'sel.js_loc_notfound', 'sel.js_end_confirmed', 'sel.js_end_type', 'sel.js_end_notfound', 'sel.js_my_location', 'sel.js_thinking', 'sel.js_ai_unavailable', 'sel.js_ai_down', 'sel.js_geo_unsupported', 'sel.js_geo_getting', 'sel.js_geo_failed', 'sel.js_need_pref', 'sel.js_need_date', 'sel.origin_status', 'sel.ai_btn', 'sel.ai_btn_hide']); ?>;
 
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, function (char) {
@@ -787,6 +791,7 @@ function updatePreferenceSummary() {
     [T["sel.js_visit"], pref.visit_time],
     [T["sel.js_schedule"], pref.schedule],
     [T["sel.js_stops"], pref.stops],
+    [T["sel.js_worship"], pref.worship],
     [T["sel.js_mix"], pref.mix],
     [T["sel.js_access_summary"], String(pref.accessibility || "").trim()],
     [T["sel.js_must"], pref.must_places],

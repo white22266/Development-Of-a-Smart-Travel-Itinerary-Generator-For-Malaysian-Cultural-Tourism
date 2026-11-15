@@ -23,7 +23,17 @@
 // Meal rows (itinerary_items.meal_slot set) are judged as lunch or dinner, not as stops: STOPS
 // counts visits only, and MEAL checks that a day whose visits span a meal window has that meal
 // inside its window, between two visits, at a suitable place or as a break that says so.
-// WEATHER warns about outdoor stops on very wet days of scenarios with a forecast override.
+// WEATHER warns about outdoor stops on very wet days of scenarios with a forecast override, and
+// by the hour (trip key forecast_hours) about an outdoor stop that overlaps hours at 80 percent
+// or more while indoor places were left; in a scenario with outdoor_dry_hours such a stop is a
+// violation unless its notes say that no indoor place fits.
+// TRANSIT judges public transport trips: no stop at a place more than 1.5 km from a stop (or
+// with none) unless its notes say the last stretch needs a taxi, no meal at such a place, and a
+// ride to a place 500 to 1500 m from its stop carries the walk. On estimates PEAK also checks
+// the walks of every ride exactly (TRANSIT_* copies below).
+// TYPE judges place types: at most two places of worship and two stops of one type a day unless
+// the notes say type variety was relaxed (or must-see), and the traveller's own limit on places
+// of worship (worship_limit), which only must-see places may exceed.
 // REQUESTS counts the routing requests of generation and of every edit (RouteService counts
 // them, also those it would have made offline) against REQUEST_LIMITS.
 //
@@ -42,7 +52,7 @@
 //
 // DUPLICATE also fails when two places of a trip are one landmark under two names, and AVOID when
 // a stop is the same landmark as a place to avoid, both by sameLandmarkJudged(): its own distance
-// and word comparison, not the planner's. The scenario kl_couple_car_must_twin forces the case: the
+// and word comparison, not the planner's. The scenario kl_selangor_couple_car_must_twin forces the case: the
 // twin of a must-see place that the plan would otherwise visit must stay out, and adding it must be
 // refused with SAME_LANDMARK (runTwinSteps()).
 //
@@ -203,6 +213,33 @@ const LATEST_END = 1380;
 /** WEATHER warns about an outdoor stop on a day with at least this chance of rain. */
 const RAIN_WARN_AT = 80;
 /**
+ * Public transport (TRANSIT), from the task that introduced it: a place within TRANSIT_NEAR_M
+ * (straight line) of a stop is reachable, up to TRANSIT_WALK_M with a walk, beyond (or with no
+ * stop within about 5 km, nearest_stop_m NULL) not: only a must-see place whose notes say the
+ * last stretch needs a taxi. A place never measured (transit_checked_at NULL) counts as before.
+ * A ride takes the walk from its point to the stop, the wait (TRANSIT_ACCESS_MIN), the ride and
+ * the walk from the stop: a walk is its metres times ACCESS_ROAD_FACTOR at WALK_KMH (a point
+ * that is no measured place: TRANSIT_ASSUMED_M), the stretch by taxi TAXI_WAIT_MIN plus the
+ * metres (TRANSIT_NO_STOP_M without a stop) times ACCESS_ROAD_FACTOR at TAXI_KMH.
+ */
+const TRANSIT_NEAR_M = 500;
+const TRANSIT_WALK_M = 1500;
+const TRANSIT_ASSUMED_M = 300;
+const TRANSIT_NO_STOP_M = 5000;
+const ACCESS_ROAD_FACTOR = 1.3;
+const WALK_KMH = 5.0;
+const TAXI_KMH = 30.0;
+const TAXI_WAIT_MIN = 5;
+/**
+ * Place types (TYPE), from the task that introduced them: at most WORSHIP_PER_DAY places of
+ * worship (these types) and SAME_TYPE_PER_DAY stops of one type a day ('other' is no type), a
+ * type the traveller asked for less of once; the traveller's own limit: 'one' a day or 'none'.
+ */
+const WORSHIP_TYPES = ['mosque', 'hindu_temple', 'chinese_temple', 'buddhist_temple', 'church', 'sikh_temple', 'other_worship'];
+const WORSHIP_PER_DAY = 2;
+const SAME_TYPE_PER_DAY = 2;
+const TYPE_UNLIMITED = ['other'];
+/**
  * Bases (migration 20261119_trip_bases.sql), from the task that introduced them: a day followed
  * by a night ends at the base of that night (or its hotel) by the end of the day window, the leg
  * back counted in the day's distance; the next day starts there. The day the trip moves to
@@ -216,33 +253,35 @@ const BASE_MOVED_KM = 0.5;
 const BASE_SAME_KM = 0.05;
 const HOTEL_LATE_MIN = 60;
 /**
- * PLAN: the plan of each generation scenario on estimates after the layout was tuned and the
- * rules about time were added (the first pass of the run that introduced them; before that the
- * plans recorded at commit e598fae, before the trip layout): stops and km of the whole trip (tripKm()). A new plan with fewer stops,
+ * PLAN: the plan of each generation scenario on estimates after the place data were cleaned and
+ * public transport reach, place types and rain by the hour were added (the first pass of the
+ * run that introduced them; before that the plans after the layout tuning and the rules about
+ * time): stops and km of the whole trip (tripKm()). A new plan with fewer stops,
  * or with more than PLAN_KM_SHARE more km and at least PLAN_KM_EXTRA more, is a warning.
  */
 const PLAN_KM_SHARE = 0.25;
 const PLAN_KM_EXTRA = 5.0;
 const RECORDED_PLANS = [
-    'kl_couple_car_normal' => [12, 23.7], 'melaka_solo_walking_relaxed_tight' => [3, 1.2],
-    'penang_group_transit_packed_festival' => [11, 64.8], 'sabah_family_motorcycle_normal' => [12, 104.0],
-    'johor_solo_car_halal_food_evening' => [3, 38.3], 'johor_couple_car_packed_districts' => [15, 179.3],
-    'kedah_couple_transit_vegetarian' => [3, 2.0], 'selangor_couple_car_elderly_wheelchair' => [9, 38.1],
-    'no_state_group_car_7days_generous' => [28, 74.8], 'perak_solo_motorcycle_packed_7days_tight' => [28, 180.1],
-    'pahang_solo_walking_packed_evening_district' => [3, 2.4], 'kl_selangor_family_transit_tight' => [11, 20.3],
-    'sarawak_solo_transit_evening' => [3, 0.6], 'kl_family_car_packed_explicit_window_3_stops' => [6, 14.7],
-    'melaka_couple_with_child_and_senior' => [8, 41.5], 'selangor_solo_car_tags_column' => [6, 27.5],
-    'kl_couple_car_museum_loved_heritage_little' => [8, 12.6], 'kl_couple_car_must_and_avoid' => [12, 43.8],
-    'penang_group_transit_must_festival' => [11, 30.4], 'kl_solo_car_end_at_klia' => [7, 12.8],
-    'melaka_solo_walking_end_at_ayer_keroh' => [3, 1.8], 'kl_couple_car_learns_from_ratings' => [8, 19.3],
-    'johor_couple_car_relaxed_meals_at_places' => [6, 37.3], 'kl_couple_car_rain_indoor_first' => [8, 17.7],
-    'pahang_couple_car_rain_highlands' => [4, 17.4], 'kl_solo_car_early_start_wait_limit' => [4, 19.9],
-    'kl_couple_car_packed_heritage_loved_culture_little' => [10, 27.5], 'melaka_solo_car_start_only_evening' => [2, 0.8],
-    'kl_family_car_must_opens_late_end_klia' => [8, 12.0], 'penang_solo_walking_end_only_morning' => [2, 1.6],
-    'kl_couple_car_must_twin' => [11, 22.3], 'kl_couple_car_stay_at_start' => [12, 27.7],
-    'penang_kl_couple_car_5days_two_states' => [19, 433.3], 'pahang_couple_car_7days_large_state' => [28, 359.0],
-    'kl_couple_car_peak_monday' => [4, 6.3], 'kl_couple_car_peak_sunday' => [4, 4.7], 'kl_solo_car_friday_mosque' => [4, 10.0],
-    'johor_solo_car_office_rest_day' => [8, 290.3], 'johor_solo_car_holiday_note' => [8, 290.3],
+    'kl_couple_car_normal' => [12, 21.4], 'melaka_solo_walking_relaxed_tight' => [3, 1.2], 'penang_group_transit_packed_festival' => [10, 62.7],
+    'sabah_family_motorcycle_normal' => [12, 104.0], 'johor_solo_car_halal_food_evening' => [3, 38.3],
+    'johor_couple_car_packed_districts' => [15, 179.3], 'kedah_couple_transit_vegetarian' => [3, 1.8],
+    'selangor_couple_car_elderly_wheelchair' => [9, 38.1], 'no_state_group_car_7days_generous' => [28, 79.5],
+    'perak_solo_motorcycle_packed_7days_tight' => [28, 174.1], 'pahang_solo_walking_packed_evening_district' => [3, 2.4],
+    'kl_selangor_family_transit_tight' => [10, 21.0], 'sarawak_solo_transit_evening' => [3, 0.6],
+    'kl_family_car_packed_explicit_window_3_stops' => [6, 19.1], 'melaka_couple_with_child_and_senior' => [8, 41.1],
+    'selangor_solo_car_tags_column' => [6, 27.5], 'kl_couple_car_museum_loved_heritage_little' => [8, 16.7],
+    'kl_couple_car_must_and_avoid' => [12, 46.8], 'penang_group_transit_must_festival' => [11, 41.2], 'kl_solo_car_end_at_klia' => [7, 12.9],
+    'melaka_solo_walking_end_at_ayer_keroh' => [3, 1.8], 'kl_couple_car_learns_from_ratings' => [8, 16.0],
+    'johor_couple_car_relaxed_meals_at_places' => [6, 37.3], 'kl_couple_car_rain_indoor_first' => [8, 18.2],
+    'pahang_couple_car_rain_highlands' => [4, 14.9], 'kl_solo_car_early_start_wait_limit' => [4, 20.2],
+    'kl_couple_car_packed_heritage_loved_culture_little' => [10, 31.4], 'melaka_solo_car_start_only_evening' => [2, 0.8],
+    'kl_family_car_must_opens_late_end_klia' => [8, 13.4], 'penang_solo_walking_end_only_morning' => [2, 1.6],
+    'kl_selangor_couple_car_must_twin' => [11, 80.5], 'kl_couple_car_stay_at_start' => [12, 25.1],
+    'penang_kl_couple_car_5days_two_states' => [19, 430.0], 'pahang_couple_car_7days_large_state' => [28, 352.3],
+    'kl_couple_car_peak_monday' => [4, 4.2], 'kl_couple_car_peak_sunday' => [4, 4.7], 'kl_solo_car_friday_mosque' => [4, 10.0],
+    'johor_solo_car_office_rest_day' => [8, 290.3], 'johor_solo_car_holiday_note' => [8, 290.3], 'kl_couple_transit_dense_stops' => [8, 22.3],
+    'sabah_solo_transit_sparse_stops' => [8, 25.7], 'kl_couple_car_worship_one_a_day' => [8, 23.8], 'kl_couple_car_worship_none' => [8, 18.6],
+    'kl_couple_car_rain_afternoon_hours' => [4, 6.6],
 ];
 
 /**
@@ -551,16 +590,20 @@ const SCENARIOS = [
     // the must-see place the twin must stay out (DUPLICATE), and adding it to the must-see
     // place's day, or putting it in place of a stop of another day, must be refused with
     // SAME_LANDMARK and change no row (REFUSE, runTwinSteps()).
-    'kl_couple_car_must_twin' => [
-        // The preference of kl_couple_car_normal, whose plan visits "Bangunan Sultan Abdul Samad"
-        // and has lunch at "Menara Kuala Lumpur": with the other row of each as a must-see place,
-        // neither may come back (the second one as a meal place).
+    'kl_selangor_couple_car_must_twin' => [
+        // The place data clean-up of 2026-11-15 left one pair of rows of one landmark active:
+        // "Forest Research Institute Malaysia (FRIM)" (Selangor) and "FRIM Museum" (Kuala Lumpur,
+        // 13 m apart). The same preference without places visits FRIM Museum; with FRIM as a
+        // must-see place it may not. The traveller stays near FRIM (stay_at_start); the preferred
+        // districts keep the trip there. (Before the clean-up: "Sultan Abdul Samad Building" and
+        // "Bangunan Sultan Abdul Samad" in Kuala Lumpur, kl_couple_car_must_twin.)
         'pref' => ['trip_days' => 3, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
             'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
-            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
-        'must' => [['name' => 'Sultan Abdul Samad Building'], ['name' => 'KL Tower (Menara Kuala Lumpur)']],
-        'twin' => ['name' => 'Bangunan Sultan Abdul Samad'],
-        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+            'interests' => 'nature,museum,culture', 'preferred_states' => 'Selangor,Kuala Lumpur', 'preferred_districts' => 'Petaling Jaya,Kepong'],
+        'weights' => ['nature' => 3],
+        'must' => [['name' => 'Forest Research Institute Malaysia (FRIM)']],
+        'twin' => ['name' => 'FRIM Museum'],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'Kepong, near FRIM', 'origin_lat' => 3.2360, 'origin_lng' => 101.6340, 'stay_at_start' => true],
         'regenerate_must_day' => ['more' => ['heritage'], 'less' => ['museum']],
     ],
     // ---- Where the traveller sleeps: bases, day groups and the day search ---------------------
@@ -570,6 +613,7 @@ const SCENARIOS = [
             'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
             'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
         'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865, 'stay_at_start' => true],
+        'regenerate_types' => ['more' => ['type:museum'], 'less' => ['group:worship']],
     ],
     'penang_kl_couple_car_5days_two_states' => [
         'pref' => ['trip_days' => 5, 'budget' => 4000, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
@@ -639,19 +683,73 @@ const SCENARIOS = [
  * day that had to be repaired; the optimiser two more when it left a day without stops). Planning
  * the rainy day again is one day planned again. A refused change may still measure (refuse).
  */
+// Further scenarios (place types, public transport and rain by the hour) are appended below
+// SCENARIOS as MORE_SCENARIOS, so their keys are listed in one place:
+//   pref worship_limit ('one' or 'none'), refuse_worship (a place of worship in place of a stop
+//   must be refused with WORSHIP), refuse_transit (a place no stop reaches in place of a stop
+//   must be refused with TRANSIT), trip forecast_hours (date => 24 chances of rain),
+//   outdoor_dry_hours (an outdoor stop over the wet hours is a violation unless explained),
+//   regenerate_types (edit scenarios: the last day planned again with these type wishes).
+const MORE_SCENARIOS = [
+    'kl_couple_transit_dense_stops' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1200, 'budget_tier' => 'normal', 'transport_type' => 'public_transport', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum,shopping', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'sabah_solo_transit_sparse_stops' => [
+        // Kota Kinabalu: 35 of the 62 places within 30 km have no stop within 1.5 km. The must-see
+        // cultural village is 2 km from its stop: planned, with the note about a taxi.
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'public_transport', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,nature,museum', 'preferred_states' => 'Sabah', 'preferred_districts' => ''],
+        'must' => [['name' => 'Kampung Gipsi Sabah Cultural Village']],
+        'musts_planned' => true,
+        'refuse_transit' => true,
+        'trip' => ['start_date' => '2026-12-08', 'origin_name' => 'Padang Merdeka, Kota Kinabalu', 'origin_lat' => 5.9804, 'origin_lng' => 116.0735],
+    ],
+    'kl_couple_car_worship_one_a_day' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '', 'worship_limit' => 'one'],
+        'weights' => ['culture' => 3, 'heritage' => 3],
+        'must' => [['name' => 'Thean Hou Temple']],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'kl_couple_car_worship_none' => [
+        'pref' => ['trip_days' => 2, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '', 'worship_limit' => 'none'],
+        'weights' => ['culture' => 3, 'heritage' => 3],
+        'must' => [['name' => 'National Mosque of Malaysia']],
+        'refuse_worship' => true,
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'kl_couple_car_rain_afternoon_hours' => [
+        // 90 percent from 13:00 to 17:00 only, dry otherwise: the outdoor stops belong in the morning.
+        'pref' => ['trip_days' => 1, 'budget' => 800, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'nature,culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'outdoor_dry_hours' => true,
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865,
+                   'forecast_hours' => ['2026-12-07' => [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 90, 90, 90, 90, 10, 10, 10, 10, 10, 10, 10]]],
+    ],
+];
+
 const REQUEST_LIMITS = ['generate' => 1, 'suggest' => 2, 'replace' => 2, 'remove' => 2, 'move' => 2, 'can_add' => 2, 'add' => 2,
                         'regenerate' => 2, 'day_start' => 0, 'hotel' => 2, 'optimise' => 1, 'replan_rain' => 2, 'refuse' => 2];
 
 /** The base scenarios that also run as edit scenarios (<base>__edits). */
 const EDIT_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal', 'penang_group_transit_packed_festival',
                     'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid', 'kl_family_car_must_opens_late_end_klia',
-                    'kl_couple_car_must_twin', 'kl_couple_car_stay_at_start', 'penang_kl_couple_car_5days_two_states'];
+                    'kl_selangor_couple_car_must_twin', 'kl_couple_car_stay_at_start', 'penang_kl_couple_car_5days_two_states',
+                    'kl_couple_transit_dense_stops'];
 
 /** Every scenario: the fixed ones and the edit scenarios built on EDIT_BASES. */
 function allScenarios(): array
 {
-    $all = SCENARIOS;
-    foreach (EDIT_BASES as $base) $all[$base . '__edits'] = SCENARIOS[$base] + ['edits' => true];
+    $all = SCENARIOS + MORE_SCENARIOS;
+    foreach (EDIT_BASES as $base) $all[$base . '__edits'] = $all[$base] + ['edits' => true];
     return $all;
 }
 
@@ -771,7 +869,56 @@ function createPreference(mysqli $conn, int $travellerId, array $p): int
     $stmt->execute();
     $id = (int)$stmt->insert_id;
     $stmt->close();
+    // Places of worship (migration 20261121_worship_limit.sql).
+    if (isset($p['worship_limit'])) {
+        $stmt = $conn->prepare('UPDATE traveller_preferences SET worship_limit = ? WHERE preference_id = ?');
+        $limit = (string)$p['worship_limit'];
+        $stmt->bind_param('si', $limit, $id);
+        $stmt->execute();
+        $stmt->close();
+    }
     return $id;
+}
+
+/**
+ * REFUSE for the rules of a place's kind (scenario keys refuse_worship, refuse_transit): a place
+ * of worship for a traveller who wants none, a place no stop reaches for a traveller by public
+ * transport, put in place of the first stop that is no must-see place, must be refused with
+ * WORSHIP or TRANSIT and change no row.
+ */
+function runRuleRefusals(mysqli $p, mysqli $c, int $id, array $scenario, array &$result): void
+{
+    $name = $result['scenario'];
+    $states = array_map('strtolower', csv($scenario['pref']['preferred_states']));
+    $musts = array_fill_keys($scenario['resolved']['must'] ?? [], true);
+    $first = null;
+    foreach (editVisits($c, $id) as $visits) {
+        foreach ($visits as $v) if (!isset($musts[(int)$v['place_id']])) { $first = $v; break 2; }
+    }
+    if ($first === null) return;
+    $cases = [];
+    if (!empty($scenario['refuse_worship'])) {
+        $cases['a place of worship'] = ["AND place_type IN ('" . implode("','", WORSHIP_TYPES) . "') AND LOWER(category) NOT IN ('festival')", 'WORSHIP'];
+    }
+    if (!empty($scenario['refuse_transit'])) {
+        $cases['a place no stop reaches'] = ['AND transit_checked_at IS NOT NULL AND (nearest_stop_m IS NULL OR nearest_stop_m > ' . TRANSIT_WALK_M . ") AND LOWER(category) NOT IN ('festival')", 'TRANSIT'];
+    }
+    foreach ($cases as $what => [$extra, $code]) {
+        $place = null;
+        foreach (editPlaces($c, $id, $states, true, $extra) as $row) {
+            if (!isset($musts[(int)$row['place_id']])) { $place = $row; break; }
+        }
+        if ($place === null) {
+            $result['findings'][] = finding('SETUP', 'violation', $name, null, null, "no {$what} to try a refusal with");
+            continue;
+        }
+        $before = editSnapshot($c, $id);
+        $r = counted('refuse', REQUEST_LIMITS['refuse'], fn() => ItineraryEditService::replaceStop($p, $id, (int)$first['item_id'], (int)$place['place_id']), $result);
+        $result['info']['refusals'][$what] = $r['ok'] ? 'done' : (string)$r['code'];
+        if ($r['ok']) $result['findings'][] = finding('REFUSE', 'violation', $name, null, null, "{$what}: the change was made (place {$place['place_id']})");
+        elseif ($r['code'] !== $code) $result['findings'][] = finding('REFUSE', 'violation', $name, null, null, "{$what}: refused with {$r['code']}, expected {$code}");
+        if (editSnapshot($c, $id) !== $before) $result['findings'][] = finding('REFUSE', 'violation', $name, null, null, "{$what}: rows changed although the change was refused");
+    }
 }
 
 /** Interest weights and must-see / avoid places of a preference, stored as the preference form stores them. */
@@ -929,12 +1076,16 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     try {
         // One table request per trip; with real routing one more per day that had to be repaired.
         $generateLimit = REQUEST_LIMITS['generate'] + (measuredFigures() ? (int)$scenario['pref']['trip_days'] : 0);
+        $tGenerate = microtime(true);
         $out = counted('generate', $generateLimit, fn() => runPlannerPipeline($pipelineConn, $travellerId, $preferenceId, $scenario['trip']), $result);
+        // The time of planning alone (generation), reported for the 7-day scenarios (PLAN_SECONDS).
+        $result['plan_seconds'] = round(microtime(true) - $tGenerate, 2);
         $result['itinerary_id'] = $out['itinerary_id'];
         foreach ($out['notes'] as $note) {
             $result['findings'][] = finding('OPTIMISE', 'warning', $name, null, null, $note);
         }
         if (isset($places['twin'])) runTwinSteps($pipelineConn, $checkConn, $out['itinerary_id'], $scenario, $name, $result);
+        if (!empty($scenario['refuse_worship']) || !empty($scenario['refuse_transit'])) runRuleRefusals($pipelineConn, $checkConn, $out['itinerary_id'], $scenario, $result);
         if (!empty($scenario['edits'])) runEditSequence($pipelineConn, $checkConn, $out['itinerary_id'], $preferenceId, $scenario, $name, $result);
         checkItinerary($checkConn, $out['itinerary_id'], $scenario, $name, $result);
         $result['info']['plan'] = planFingerprint($checkConn, $out['itinerary_id']);
@@ -1191,6 +1342,23 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         $scenario['day_weights'][$tripDays] = [$more => 3] + ($more === $less ? [] : [$less => 1]);
     }
 
+    // 5c. The last day planned again with wishes by place type (scenario key regenerate_types):
+    // TYPE then judges that day with a limit of one for every type asked for less of.
+    if (isset($scenario['regenerate_types'])) {
+        $opts = $scenario['regenerate_types'];
+        $r = $req('regenerate', fn() => ItineraryEditService::regenerateDay($p, $id, $tripDays, $opts));
+        $regenerateRefused('regenerate_types', $tripDays, $r);
+        if ($note('regenerate_types', $r)) {
+            unset($scenario['day_weights'][$tripDays]);   // the trip's weights again
+            $lessTypes = [];
+            foreach ((array)($opts['less'] ?? []) as $wish) {
+                if (str_starts_with($wish, 'type:')) $lessTypes[] = substr($wish, 5);
+                if ($wish === 'group:worship') array_push($lessTypes, ...WORSHIP_TYPES);
+            }
+            $scenario['day_type_limits'][$tripDays] = array_fill_keys($lessTypes, 1);
+        }
+    }
+
     // 5a. The day of the first must-see place planned again (scenario key regenerate_must_day).
     if (isset($scenario['regenerate_must_day']) && $musts) {
         $mustDay = null;
@@ -1358,7 +1526,9 @@ function runEditSequence(mysqli $p, mysqli $c, int $id, int $preferenceId, array
         $date = (new DateTimeImmutable((string)$scenario['trip']['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
         $weekday = date('l', strtotime($date));
         // Not food or festival places, nor places to avoid: no other rule may refuse them first.
-        foreach (editPlaces($c, $id, $states, true, "AND opening_hours LIKE '%{$weekday}: Closed%' AND LOWER(category) NOT IN ('food','festival')") as $place) {
+        // On a public transport trip not a place no stop reaches either (TRANSIT would refuse it first).
+        $reachable = $scenario['pref']['transport_type'] === 'public_transport' ? ' AND (transit_checked_at IS NULL OR nearest_stop_m <= ' . TRANSIT_WALK_M . ')' : '';
+        foreach (editPlaces($c, $id, $states, true, "AND opening_hours LIKE '%{$weekday}: Closed%' AND LOWER(category) NOT IN ('food','festival')" . $reachable) as $place) {
             if (openingRanges((string)$place['opening_hours'], $date) !== [] || in_array((int)$place['place_id'], $scenario['resolved']['avoid'] ?? [], true)) continue;
             $v = array_values(array_filter($visits, $free))[0] ?? null;
             if ($v === null) continue;
@@ -1509,7 +1679,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     $stmt = $conn->prepare('
         SELECT ii.*, cp.name AS place_name, cp.description, cp.state, cp.district, cp.category, cp.place_type, cp.opening_hours,
                cp.festival_start_date, cp.festival_end_date, cp.halal_status, cp.is_outdoor, cp.visit_duration_min,
-               cp.latitude AS place_lat, cp.longitude AS place_lng
+               cp.latitude AS place_lat, cp.longitude AS place_lng, cp.nearest_stop_m, cp.transit_checked_at
         FROM itinerary_items ii
         LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
         WHERE ii.itinerary_id = ?
@@ -1592,6 +1762,11 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     $originEast = (float)$it['origin_lng'] >= EAST_FROM_LNG;
     $previous = $originPoint;
     $tags = $profile['tags'];
+    // Public transport: the minutes between a point and its stop, and the walks of a ride.
+    $transit = $pref['transport_type'] === 'public_transport';
+    $access = $transit ? transitAccessTable($conn) : [];
+    $walks = static fn(array $from, array $to, float $km): int => $transit && $km > TRANSIT_WALK_KM ? accessAt($access, $from) + accessAt($access, $to) : 0;
+    $mustIds = array_fill_keys(array_map('intval', $scenario['resolved']['must'] ?? []), true);
     $dayKmByDay = [];
     $lastVisit = null;
 
@@ -1807,7 +1982,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 if ($km < $kmLow || $km > $kmHigh) {
                     $add('LEGS', 'violation', $dayNo, $title, sprintf('stored %.2f km, straight line from the previous point %.2f km (allowed %.2f-%.2f)', $km, $straight, max(0, $kmLow), $kmHigh));
                 }
-                $nominal = nominalMinutes($pref['transport_type'], $km);
+                $nominal = nominalMinutes($pref['transport_type'], $km, $walks($previous, $point, $km));
                 $minLow = (int)floor(LEG_MIN_LOW * $nominal) - 2;
                 $minHigh = (int)ceil(LEG_MIN_HIGH * $nominal) + 15;
                 if ($travel < $minLow || $travel > $minHigh) {
@@ -1828,6 +2003,23 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                                 $scenario['first_leg_peak'] ? 'expected and is missing' : 'not expected but applied'));
                         }
                     }
+                }
+            }
+
+            // TRANSIT: on a public transport trip no stop or meal lies at a place no stop reaches
+            // (beyond TRANSIT_WALK_M, or none), unless the stop's notes say the last stretch needs a
+            // taxi; a ride to a place TRANSIT_NEAR_M to TRANSIT_WALK_M from its stop carries the walk.
+            if ($transit && $v['place_id'] !== null) {
+                $reach = transitReachJudged($v['transit_checked_at'] ?? null, $v['nearest_stop_m'] ?? null);
+                if ($reach === 'none' && ($isMeal || !str_contains((string)$v['notes'], 'taxi or e-hailing'))) {
+                    $add('TRANSIT', 'violation', $dayNo, $title, ($isMeal ? 'meal place' : 'stop') . ' with no public transport stop within ' . TRANSIT_WALK_M . ' m'
+                        . ($isMeal ? '' : ' and no note about the last stretch'));
+                }
+                if ($reach === 'walk' && $km !== null && $travel !== null && $km > TRANSIT_WALK_KM && $travel < walkMinutesJudged((float)$v['nearest_stop_m'])) {
+                    $add('TRANSIT', 'violation', $dayNo, $title, sprintf('ride of %d min to a place %d m from its stop: shorter than the walk of %d min', $travel, (int)$v['nearest_stop_m'], walkMinutesJudged((float)$v['nearest_stop_m'])));
+                }
+                if ($reach === 'walk' && !$isMeal && !str_contains((string)$v['notes'], 'walk of about')) {
+                    $add('TRANSIT', 'warning', $dayNo, $title, 'stop ' . (int)$v['nearest_stop_m'] . ' m from its stop without a note about the walk');
                 }
             }
 
@@ -1859,7 +2051,8 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             if ($lastVisitRow !== null) {
                 $vFrom = [(float)($lastVisitRow['item_latitude'] ?? $lastVisitRow['place_lat']), (float)($lastVisitRow['item_longitude'] ?? $lastVisitRow['place_lng'])];
                 $vStraight = haversineKm($vFrom[0], $vFrom[1], $night[0], $night[1]);
-                $vNominal = nominalMinutes($pref['transport_type'], measuredFigures() ? LEG_KM_LOW * $vStraight : $vStraight * ROAD_FACTOR);
+                $vKm = measuredFigures() ? LEG_KM_LOW * $vStraight : $vStraight * ROAD_FACTOR;
+                $vNominal = nominalMinutes($pref['transport_type'], $vKm, $walks($vFrom, $night, $vKm));
                 $vBack = measuredFigures() ? max(0, (int)floor(LEG_MIN_LOW * $vNominal) - 2) : $vNominal;
                 $vLeaves = (int)toMinutes($lastVisitRow['end_time']);
                 if ($vLeaves + $vBack > $profile['hard_end']) {
@@ -1937,6 +2130,62 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 $explained = count(array_filter($list, static fn($dv) => str_contains((string)$dv['notes'], 'relaxed to fill the day') || str_contains((string)$dv['notes'], 'must-see')));
                 if ($explained < count($list) - $limit) {
                     $add('CATEGORY', 'violation', $dayNo, null, sprintf('%d "%s" visits, limit %d by its weight, only %d say variety was relaxed', count($list), $c, $limit, $explained));
+                }
+            }
+        }
+
+        // TYPE: at most WORSHIP_PER_DAY places of worship and SAME_TYPE_PER_DAY stops of one type
+        // a day (a type asked for less of when the day was planned again: one), beyond that only
+        // where the stop says type variety was relaxed (or must-see); the traveller's own limit on
+        // places of worship, which only must-see places may exceed.
+        $worship = array_values(array_filter($dayVisits, static fn($dv) => in_array(strtolower((string)($dv['place_type'] ?? '')), WORSHIP_TYPES, true)));
+        if (csv($pref['interests']) !== ['food']) {
+            $explainedType = static fn(array $list): int => count(array_filter($list, static fn($dv) => str_contains((string)$dv['notes'], 'type variety relaxed') || str_contains((string)$dv['notes'], 'must-see')));
+            if (count($worship) > WORSHIP_PER_DAY && $explainedType($worship) < count($worship) - WORSHIP_PER_DAY) {
+                $add('TYPE', 'violation', $dayNo, null, sprintf('%d places of worship, at most %d, only %d say type variety was relaxed', count($worship), WORSHIP_PER_DAY, $explainedType($worship)));
+            }
+            $perType = [];
+            foreach ($dayVisits as $dv) {
+                $t = strtolower(trim((string)($dv['place_type'] ?? '')));
+                if ($t !== '' && !in_array($t, TYPE_UNLIMITED, true)) $perType[$t][] = $dv;
+            }
+            foreach ($perType as $t => $list) {
+                $limit = (int)($scenario['day_type_limits'][$dayNo][$t] ?? SAME_TYPE_PER_DAY);
+                if (count($list) > $limit && $explainedType($list) < count($list) - $limit) {
+                    $add('TYPE', 'violation', $dayNo, null, sprintf('%d "%s" stops, at most %d, only %d say type variety was relaxed', count($list), $t, $limit, $explainedType($list)));
+                }
+            }
+        }
+        $cap = match ($pref['worship_limit'] ?? null) { 'one' => 1, 'none' => 0, default => null };
+        if ($cap !== null) {
+            $free = count(array_filter($worship, static fn($dv) => !isset($mustIds[(int)$dv['place_id']])));
+            if ($free > 0 && count($worship) > $cap) {
+                $add('TYPE', 'violation', $dayNo, null, sprintf('%d places of worship (%d not must-see), the traveller asked for %s', count($worship), $free, $cap === 0 ? 'none' : 'at most one a day'));
+            }
+        }
+
+        // WEATHER by the hour (trip key forecast_hours): an outdoor stop that overlaps hours at
+        // RAIN_WARN_AT percent or more while indoor places of the area were left (a warning; with
+        // outdoor_dry_hours a violation unless its notes say no indoor place fits).
+        $hours = $scenario['trip']['forecast_hours'][$date] ?? null;
+        if (is_array($hours) && count($hours) === 24) {
+            $indoorLeft = null;
+            foreach ($dayVisits as $dv) {
+                if ((int)($dv['is_outdoor'] ?? 0) !== 1 && strtolower((string)($dv['category'] ?? '')) !== 'nature') continue;
+                if (isset($mustIds[(int)$dv['place_id']])) continue;
+                $s0 = toMinutes($dv['start_time']);
+                $e0 = toMinutes($dv['end_time']);
+                if ($s0 === null || $e0 === null) continue;
+                $wettest = 0;
+                for ($h = intdiv($s0, 60); $h <= min(23, intdiv(max($s0, $e0 - 1), 60)); $h++) $wettest = max($wettest, (int)$hours[$h]);
+                if ($wettest < RAIN_WARN_AT) continue;
+                $indoorLeft ??= count(editPlaces($conn, $itineraryId, $states, true, "AND COALESCE(is_outdoor, 0) = 0 AND LOWER(category) NOT IN ('nature','festival','food')"));
+                if ($indoorLeft === 0) continue;
+                $explained = str_contains((string)$dv['notes'], 'no indoor place fits');
+                if (!empty($scenario['outdoor_dry_hours']) && !$explained) {
+                    $add('WEATHER', 'violation', $dayNo, (string)$dv['item_title'], sprintf('outdoor stop %s-%s overlaps hours at %d%% chance of rain while %d indoor place(s) were left', hm($s0), hm($e0), $wettest, $indoorLeft));
+                } else {
+                    $add('WEATHER', 'warning', $dayNo, (string)$dv['item_title'], sprintf('outdoor stop %s-%s overlaps hours at %d%% chance of rain while %d indoor place(s) were left%s', hm($s0), hm($e0), $wettest, $indoorLeft, $explained ? ' (explained in its notes)' : ''));
                 }
             }
         }
@@ -2033,7 +2282,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             $straight = haversineKm($lastVisit['point'][0], $lastVisit['point'][1], $endPoint[0], $endPoint[1]);
             // Estimates: the road is 1.3 x the straight line (RS); on real roads only a lower bound is sure.
             $roadKm = $GLOBALS['roadRouting'] ? LEG_KM_LOW * $straight : $straight * ROAD_FACTOR;
-            $nominal = nominalMinutes($pref['transport_type'], $roadKm);
+            $nominal = nominalMinutes($pref['transport_type'], $roadKm, $walks($lastVisit['point'], $endPoint, $roadKm));
             $minutes = $GLOBALS['roadRouting'] ? max(0, (int)floor(LEG_MIN_LOW * $nominal) - 2) : $nominal;
             if ($lastVisit['end'] + $minutes > $profile['hard_end']) {
                 $add('FINISH', 'violation', $tripDays, $lastVisit['title'], sprintf('last visit ends %s, %d min to the end point, day ends %s', hm($lastVisit['end']), $minutes, hm($profile['hard_end'])));
@@ -2352,14 +2601,57 @@ function clockMinutes(int $hour, int $minute, string $ampm): ?int
     return $hour * 60 + $minute;
 }
 
-/** Minutes a leg of this many road km takes at the usual speed of the transport. */
-function nominalMinutes(string $transport, float $km): int
+/**
+ * Minutes a leg of this many road km takes at the usual speed of the transport; a ride by
+ * public transport also takes the wait and $walks, the minutes between its ends and their stops.
+ */
+function nominalMinutes(string $transport, float $km, int $walks = 0): int
 {
     if ($transport === 'public_transport') {
         if ($km <= TRANSIT_WALK_KM) return (int)ceil($km / SPEED_KMH['walking'] * 60);
-        return (int)ceil($km / SPEED_KMH['public_transport'] * 60) + TRANSIT_ACCESS_MIN;
+        return (int)ceil($km / SPEED_KMH['public_transport'] * 60) + TRANSIT_ACCESS_MIN + $walks;
     }
     return (int)ceil($km / SPEED_KMH[$transport] * 60);
+}
+
+/** How a place is reached by public transport (TRANSIT_*): near, walk, none, or unknown (never measured). */
+function transitReachJudged($checkedAt, $metres): string
+{
+    if ($checkedAt === null || $checkedAt === '') return 'unknown';
+    if ($metres === null || $metres === '') return 'none';
+    if ((float)$metres <= TRANSIT_NEAR_M) return 'near';
+    return (float)$metres <= TRANSIT_WALK_M ? 'walk' : 'none';
+}
+
+/** Minutes of a walk of this many straight-line metres. */
+function walkMinutesJudged(float $metres): int
+{
+    return (int)ceil($metres / 1000.0 * ACCESS_ROAD_FACTOR / WALK_KMH * 60);
+}
+
+/** "lat,lng" (5 places) => minutes between the point of an active place and its stop: the walk, the taxi stretch, or 0 when never measured. */
+function transitAccessTable(mysqli $conn): array
+{
+    static $table = null;
+    if ($table !== null) return $table;
+    $table = [];
+    foreach ($conn->query('SELECT latitude, longitude, nearest_stop_m, transit_checked_at FROM cultural_places WHERE is_active = 1 AND latitude IS NOT NULL AND longitude IS NOT NULL') as $r) {
+        $reach = transitReachJudged($r['transit_checked_at'], $r['nearest_stop_m']);
+        $minutes = match ($reach) {
+            'unknown' => 0,
+            'none' => TAXI_WAIT_MIN + (int)ceil((float)($r['nearest_stop_m'] ?? TRANSIT_NO_STOP_M) / 1000.0 * ACCESS_ROAD_FACTOR / TAXI_KMH * 60),
+            default => walkMinutesJudged((float)$r['nearest_stop_m']),
+        };
+        $key = round((float)$r['latitude'], 5) . ',' . round((float)$r['longitude'], 5);
+        $table[$key] = isset($table[$key]) ? min($table[$key], $minutes) : $minutes;
+    }
+    return $table;
+}
+
+/** The minutes between a point and its stop: a place's (transitAccessTable()), else the walk of TRANSIT_ASSUMED_M. */
+function accessAt(array $table, array $point): int
+{
+    return $table[round((float)$point[0], 5) . ',' . round((float)$point[1], 5)] ?? walkMinutesJudged((float)TRANSIT_ASSUMED_M);
 }
 
 /**
@@ -2556,6 +2848,11 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     foreach ($results as $r) foreach ((array)($r['info']['requests'] ?? []) as $op => $n) $most[$op] = max($most[$op] ?? 0, $n);
     ksort($most);
     echo 'INFO: most routing requests of one call (limit): ' . implode(', ', array_map(static fn($op, $n) => "{$op} {$n} (" . REQUEST_LIMITS[$op] . ')', array_keys($most), $most)) . ".\n";
+    $planTimes = [];
+    foreach ($results as $r) {
+        if ((int)$r['days'] === 7 && isset($r['plan_seconds']) && !str_contains((string)$r['scenario'], '__edits')) $planTimes[] = $r['scenario'] . ' ' . number_format((float)$r['plan_seconds'], 2) . ' s';
+    }
+    if ($planTimes) echo 'INFO: planning time (generation alone) of the 7-day scenarios: ' . implode(', ', $planTimes) . ".\n";
     echo "INFO: REQ is the most routing requests of one call in the scenario, PLAN a fingerprint of the stored plan.\n";
     echo "Test traveller {$after['traveller_id']} after the run: {$after['itineraries']} itinerary(ies), {$after['preferences']} preference(s), {$after['ratings']} rating(s).\n";
 }

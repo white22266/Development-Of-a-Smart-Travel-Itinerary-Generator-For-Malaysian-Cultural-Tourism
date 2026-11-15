@@ -34,10 +34,18 @@
 // (place_id, coordinates and the leg to it) or as a break without a place (no place, no
 // coordinates, no leg). Meal rows cost 0.00: the cost model already reserves three meals a day
 // (CostEstimationService::calculate()), so a meal is never counted twice.
-// The chance of rain is asked once per trip, for the starting point (WeatherService), unless
-// the trip options carry a forecast override or ROUTING_ESTIMATES_ONLY is set; the layout gives
-// rainy dates the groups with more indoor places and the day search prefers indoor places on
-// a wet day. Without a forecast nothing changes.
+// The chance of rain per day is asked once per trip, for the starting point
+// (WeatherService::rainChances()), and the chance of rain by the hour once for each base of the
+// trip (rainHours()), unless the trip options carry a forecast override (forecast: a chance per
+// day, which counts for every hour; forecast_hours: 24 chances per day) or ROUTING_ESTIMATES_ONLY
+// is set. The layout gives rainy dates the groups with more indoor places (the day as a whole);
+// the day search judges each stop by the hours of its own visit. Without a forecast nothing
+// changes.
+//
+// Public transport: a place no stop reaches within 1.5 km is no candidate (a must-see place is
+// still planned, with a note about the last stretch); every ride takes the walks to and from its
+// stops (PlannerRules::applyTransitAccess()). A traveller who wants no place of worship gets
+// none but the must-see places.
 //
 // All of it runs in one transaction: a failure saves nothing. A day for which nothing is
 // feasible is stored with a short note row, and so is a must-see place that could not be
@@ -79,6 +87,8 @@ final class ItineraryGenerator
     /** The food places meals may use, and the chance of rain per date (Y-m-d => percent). */
     private array $mealPool = [];
     private array $rain = [];
+    /** day => 24 chances of rain by the hour, for the day search (rainByHour()). */
+    private array $rainHours = [];
 
     public function __construct(mysqli $conn)
     {
@@ -92,7 +102,9 @@ final class ItineraryGenerator
      *        the end fields are optional: without them the trip ends where its last stop is;
      *        stay_at_start (optional): the traveller sleeps at the starting point every night;
      *        forecast (optional, for checks and tests) replaces the weather forecast: date
-     *        (Y-m-d) => chance of rain 0 to 100
+     *        (Y-m-d) => chance of rain 0 to 100, for every hour of that day;
+     *        forecast_hours (optional, for checks and tests): date => 24 chances of rain, one
+     *        per hour from 00:00; it wins over forecast for its dates
      * @return int the new itinerary_id
      * @throws RuntimeException with a message for the traveller when the input is not usable
      */
@@ -138,8 +150,10 @@ final class ItineraryGenerator
             // rated low are not candidates; a must-see place stays wanted even if rated low.
             // The twins of an avoided or a must-see place go with it: the must-see place wins.
             $skip = PlannerRules::withTwins($profile, (array)$pref['avoid_places']) + PlannerRules::withTwins($profile, $mustIds) + $ratings['low'];
+            // Not a candidate either: a place no public transport stop reaches for a traveller
+            // who uses it, and a place of worship for one who wants none (PlannerCandidates::usable()).
             $pool = array_values(array_filter($loaded, static fn(array $place): bool =>
-                !isset($skip[(int)$place['place_id']]) && PlannerRules::placeReason($place, $profile) === null));
+                !isset($skip[(int)$place['place_id']]) && PlannerCandidates::usable($place, $profile)));
             // Meals are planned only where they can be stored (migration 20261116_meal_slots.sql).
             $profile['meals'] = PlannerRules::hasColumn($this->conn, 'itinerary_items', 'meal_slot');
             $this->mealPool = $profile['meals'] ? PlannerCandidates::mealPool($pool) : [];
@@ -152,12 +166,15 @@ final class ItineraryGenerator
             // The holidays the admin keeps, for the office-hours rule, the peak hours and the day notes.
             PlannerRules::loadCalendar($this->conn, $dates);
             $musts = $this->mustCandidates($mustIds, $profile, $dates);
+            // Public transport: every ride takes the walks between its points and their stops.
+            PlannerRules::applyTransitAccess($route, $profile, array_merge($loaded, array_values($musts['places'])));
             $mustInput = [];
             foreach ($musts['places'] as $id => $place) $mustInput[$id] = ['place' => $place, 'feasible' => $musts['feasible'][$id]];
             $layout = TripLayout::plan($pool, $mustInput, $profile, static fn(array $place): float => $builder->layoutValue($place), $route, [
                     'origin' => $origin, 'origin_name' => $originName, 'finish' => $finish, 'dates' => $dates,
                     'rain' => $this->rain, 'stay_at_start' => $stayAtStart,
                 ]);
+            $this->rainHours = self::rainByHour($trip, $layout['days'], $dates);
             $pending = $this->mustDays($musts, $layout, $profile);
             $days = $this->planDays($pool, $profile, $route, $builder, $dates, $origin, $finish, $layout['days'], $musts, $pending);
             $days = $this->measureOnRoad($days, $profile, $route, $builder);
@@ -318,6 +335,7 @@ final class ItineraryGenerator
                 + self::where($layout, $dayNo, $total, $origin, $finish);
             $context['previous_theme'] = $theme;
             $context['musts'] = $pending[$dayNo] ?? [];
+            $context['rain_hours'] = $this->rainHours[$dayNo] ?? null;
             $built = $builder->search($pool, $context);
             $plan = ItineraryRouteOptimiser::orderDay($route, $profile, $context['start'], $built['stops'], self::frame($context));
             // The search's day keeps every rule in its own order, so ordering never loses a stop here.
@@ -628,6 +646,13 @@ final class ItineraryGenerator
     private static function forecast(array $trip, array $origin, string $startDate, int $days): array
     {
         $dates = array_values(self::dates($startDate, $days));
+        // Only hourly values given: the day as a whole is its wettest hour (for the layout).
+        if (!isset($trip['forecast']) && isset($trip['forecast_hours']) && is_array($trip['forecast_hours'])) {
+            $trip['forecast'] = [];
+            foreach ($trip['forecast_hours'] as $date => $hours) {
+                if (is_array($hours) && count($hours) === 24) $trip['forecast'][$date] = max(array_map('intval', $hours));
+            }
+        }
         if (isset($trip['forecast']) && is_array($trip['forecast'])) {
             $out = [];
             foreach ($dates as $date) {
@@ -637,6 +662,49 @@ final class ItineraryGenerator
         }
         if (in_array(strtolower(trim((string)getenv('ROUTING_ESTIMATES_ONLY'))), ['1', 'true', 'yes'], true)) return [];
         return WeatherService::rainChances($origin[0], $origin[1], $dates);
+    }
+
+    /**
+     * The chance of rain by the hour of each day: the trip's forecast_hours override when given,
+     * else (without the daily override and when not offline) one request
+     * (WeatherService::rainHours()) for each base of the trip with the dates of its days. A day
+     * without hourly values keeps its chance for the day (every hour), or none.
+     *
+     * @param array $layoutDays day => layout day (TripLayout::plan(), with its base)
+     * @return array<int,int[]> day => 24 chances of rain
+     */
+    private static function rainByHour(array $trip, array $layoutDays, array $dates): array
+    {
+        $out = [];
+        $valid = static function ($hours): ?array {
+            if (!is_array($hours) || count($hours) !== 24) return null;
+            $hours = array_values($hours);
+            foreach ($hours as $h) if (!is_numeric($h)) return null;
+            return array_map(static fn($h): int => max(0, min(100, (int)$h)), $hours);
+        };
+        if (isset($trip['forecast_hours']) && is_array($trip['forecast_hours'])) {
+            foreach ($dates as $d => $date) {
+                $hours = $valid($trip['forecast_hours'][$date] ?? null);
+                if ($hours !== null) $out[$d] = $hours;
+            }
+            return $out;
+        }
+        if (isset($trip['forecast']) && is_array($trip['forecast'])) return [];   // the daily override counts for every hour
+        if (in_array(strtolower(trim((string)getenv('ROUTING_ESTIMATES_ONLY'))), ['1', 'true', 'yes'], true)) return [];
+        $byBase = [];
+        foreach ($layoutDays as $d => $day) {
+            $key = round((float)$day['base']['lat'], 5) . ',' . round((float)$day['base']['lng'], 5);
+            $byBase[$key]['point'] = [(float)$day['base']['lat'], (float)$day['base']['lng']];
+            $byBase[$key]['days'][$d] = $dates[$d];
+        }
+        foreach ($byBase as $base) {
+            $hours = WeatherService::rainHours($base['point'][0], $base['point'][1], array_values($base['days']));
+            foreach ($base['days'] as $d => $date) {
+                $h = $valid($hours[$date] ?? null);
+                if ($h !== null) $out[$d] = $h;
+            }
+        }
+        return $out;
     }
 
     private static function mainCategory(array $stops): ?string
@@ -723,6 +791,8 @@ final class ItineraryGenerator
                 $cost = PlannerRules::placeCost($place);
                 $km = round((float)$stop['km'], 2);
                 $minutes = (int)$stop['min'];
+                // The rain note names the hours of the visit as finally timed (the order may have moved it).
+                $stop['reasons'] = ItineraryDayBuilder::rainNotesAt((array)$stop['reasons'], $place, $day, (int)$stop['start'], (int)$stop['end']);
                 $notes = ItineraryDayBuilder::notes($stop, $profile);
                 $insert->bind_param('iiisisddssddis', $itineraryId, $dayNo, $sequence, $type, $placeId, $itemTitle, $lat, $lng,
                     $startTime, $endTime, $cost, $km, $minutes, $notes);
