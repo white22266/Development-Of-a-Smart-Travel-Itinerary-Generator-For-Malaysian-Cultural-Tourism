@@ -56,6 +56,13 @@ final class ItineraryGenerator
 {
     /** Seconds the trip's one table request may take before the plan is stored on estimates. */
     private const ROUTE_TIMEOUT = 8;
+    /**
+     * A trip with more points of its own than this (start, stops, bases and end point) is measured
+     * with route requests along its planned legs instead of one table: a table of every pair of
+     * them (and of the meal places that fill it up to RouteService's 50 points) was too slow for
+     * the public server (the 5-day Penang and Kuala Lumpur trip waited 8 seconds for it).
+     */
+    private const LONG_TRIP_POINTS = 20;
     /** Probe step through the day window when looking for a day a must-see place can be visited. */
     private const MUST_PROBE_STEP_MIN = 60;
     /** The search's next places measured and tried for each stop dropped on the road figures (replace()). */
@@ -142,10 +149,12 @@ final class ItineraryGenerator
             $route->setTimeout(self::ROUTE_TIMEOUT);
             $builder = new ItineraryDayBuilder($profile, $route, $this->mealPool);
             $dates = self::dates($startDate, (int)$profile['days']);
+            // The holidays the admin keeps, for the office-hours rule, the peak hours and the day notes.
+            PlannerRules::loadCalendar($this->conn, $dates);
             $musts = $this->mustCandidates($mustIds, $profile, $dates);
             $mustInput = [];
             foreach ($musts['places'] as $id => $place) $mustInput[$id] = ['place' => $place, 'feasible' => $musts['feasible'][$id]];
-            $layout = TripLayout::plan($pool, $mustInput, $profile, static fn(array $place): float => $builder->placeValue($place), $route, [
+            $layout = TripLayout::plan($pool, $mustInput, $profile, static fn(array $place): float => $builder->layoutValue($place), $route, [
                     'origin' => $origin, 'origin_name' => $originName, 'finish' => $finish, 'dates' => $dates,
                     'rain' => $this->rain, 'stay_at_start' => $stayAtStart,
                 ]);
@@ -388,16 +397,29 @@ final class ItineraryGenerator
             if ($day['trip_finish'] !== null) $pointsByDay[$dayNo][] = $day['trip_finish'];
             array_push($near, ...self::mealPoints($day));
         }
-        // One table request for the whole trip: the stops, the bases and, while there is room,
-        // the meal places planned so far and the other meal places near the stops and bases
-        // (those left out are estimated). A second table request would be held back by the
-        // public server for about ten seconds.
-        foreach ($days as $day) {
-            $points = array_column($day['stops'], 'point');
-            if ($day['end'] !== null) $points[] = $day['end'];
-            array_push($near, ...$this->nearMealPoints($points, (float)$profile['meal_radius_km']));
+        $own = [];
+        foreach ($pointsByDay as $points) {
+            foreach ($points as $p) $own[round((float)$p[0], 5) . ',' . round((float)$p[1], 5)] = true;
         }
-        $route->preloadTrip($pointsByDay, $near);
+        // A long trip (more than LONG_TRIP_POINTS points of its own) is too big for a quick
+        // table: its planned legs (each day's chain of stops, meal places and the way to its
+        // base or end point) are measured with route requests instead, and each day is timed in
+        // its planned order on them (an order the estimates found best).
+        $inOrder = count($own) > self::LONG_TRIP_POINTS;
+        if ($inOrder) {
+            $route->measureLegs(self::plannedLegs($days));
+        } else {
+            // One table request for the whole trip: the stops, the bases and, while there is
+            // room, the meal places planned so far and the other meal places near the stops and
+            // bases (those left out are estimated). A second table request would be held back by
+            // the public server for about ten seconds.
+            foreach ($days as $day) {
+                $points = array_column($day['stops'], 'point');
+                if ($day['end'] !== null) $points[] = $day['end'];
+                array_push($near, ...$this->nearMealPoints($points, (float)$profile['meal_radius_km']));
+            }
+            $route->preloadTrip($pointsByDay, $near);
+        }
 
         // Every day is ordered again on the road figures. With the same figures as in planning,
         // no stop is lost here.
@@ -411,7 +433,8 @@ final class ItineraryGenerator
                 $day['trip_km'] = $outside['km'];
                 $day['reserve_km'] = 0.0;
                 $day['budget'] = $outside + ['reserve_km' => 0.0];
-                $plan = ItineraryRouteOptimiser::orderDay($route, $profile, $day['start'], $day['stops'], self::frame($day));
+                $plan = $inOrder ? ItineraryRouteOptimiser::timeInOrder($route, $profile, $day['start'], $day['stops'], self::frame($day)) : null;
+                if ($plan === null || $plan['dropped']) $plan = ItineraryRouteOptimiser::orderDay($route, $profile, $day['start'], $day['stops'], self::frame($day));
                 if ($plan['dropped']) {
                     foreach ($plan['dropped'] as $stop) {
                         if (!empty($stop['must'])) {
@@ -534,6 +557,39 @@ final class ItineraryGenerator
             }
         }
         return $used;
+    }
+
+    /**
+     * The legs of the trip as planned, day by day: from the day's start through its meal places
+     * and stops, the dinner near the base, to its base or the end point. Consecutive days join
+     * at the base, so measureLegs() strings them into one chain (MAX_ROUTE_POINTS points a request).
+     *
+     * @return array<int,array{0:array,1:array}>
+     */
+    private static function plannedLegs(array $days): array
+    {
+        $legs = [];
+        foreach ($days as $day) {
+            $from = $day['start'];
+            foreach ($day['stops'] as $stop) {
+                foreach ((array)($stop['meals'] ?? []) as $meal) {
+                    if ($meal['point'] === null) continue;
+                    $legs[] = [$from, $meal['point']];
+                    $from = $meal['point'];
+                }
+                $legs[] = [$from, $stop['point']];
+                $from = $stop['point'];
+            }
+            foreach ((array)($day['close']['meals'] ?? []) as $meal) {
+                if ($meal['point'] === null) continue;
+                $legs[] = [$from, $meal['point']];
+                $from = $meal['point'];
+            }
+            $to = $day['end'] ?? $day['trip_finish'];
+            if ($to !== null && $day['stops']) $legs[] = [$from, $to];
+            // The day's start is where the next chain begins: at the base it was planned to end at.
+        }
+        return $legs;
     }
 
     /** The points of the meal places planned for a day. */
@@ -701,11 +757,13 @@ final class ItineraryGenerator
     private function storeBases(int $itineraryId, array $days): void
     {
         if (!PlannerRules::hasColumn($this->conn, 'itinerary_days', 'base_lat')) return;
+        // The day note (migration 20261120_day_notes.sql): the public holiday of the day.
+        $withNote = PlannerRules::hasColumn($this->conn, 'itinerary_days', 'day_note');
         $stmt = $this->conn->prepare("
-            INSERT INTO itinerary_days (itinerary_id, day_no, base_name, base_lat, base_lng, group_from, group_to, area_km)
-            VALUES (?,?,?,?,?,?,?,?)
+            INSERT INTO itinerary_days (itinerary_id, day_no, base_name, base_lat, base_lng, group_from, group_to, area_km" . ($withNote ? ', day_note' : '') . ")
+            VALUES (?,?,?,?,?,?,?,?" . ($withNote ? ',?' : '') . ")
             ON DUPLICATE KEY UPDATE base_name = VALUES(base_name), base_lat = VALUES(base_lat), base_lng = VALUES(base_lng),
-                group_from = VALUES(group_from), group_to = VALUES(group_to), area_km = VALUES(area_km)
+                group_from = VALUES(group_from), group_to = VALUES(group_to), area_km = VALUES(area_km)" . ($withNote ? ', day_note = VALUES(day_note)' : '') . "
         ");
         foreach ($days as $dayNo => $day) {
             $layout = $day['layout'];
@@ -716,10 +774,29 @@ final class ItineraryGenerator
             $to = $layout['sector'][1] ?? null;
             $km = (float)$layout['radius'];
             $dayNo = (int)$dayNo;
-            $stmt->bind_param('iisddiid', $itineraryId, $dayNo, $name, $lat, $lng, $from, $to, $km);
+            if ($withNote) {
+                $note = self::dayNote($day);
+                $stmt->bind_param('iisddiids', $itineraryId, $dayNo, $name, $lat, $lng, $from, $to, $km, $note);
+            } else {
+                $stmt->bind_param('iisddiid', $itineraryId, $dayNo, $name, $lat, $lng, $from, $to, $km);
+            }
             $stmt->execute();
         }
         $stmt->close();
+    }
+
+    /**
+     * The note of a day: the public holidays of its date in the state of the day (its first
+     * stop's state, else its area's), with the warning that opening hours may differ; null when
+     * the date is no holiday there.
+     */
+    public static function dayNote(array $day): ?string
+    {
+        $state = (string)($day['stops'][0]['place']['state'] ?? '');
+        if ($state === '') $state = (string)($day['layout']['state'] ?? '');
+        $names = PlannerRules::holidaysOn((string)$day['date'], $state !== '' ? $state : null);
+        if (!$names) return null;
+        return mb_substr('Public holiday: ' . implode(' and ', $names) . '. Opening hours may differ.', 0, 255);
     }
 
     /** The title of the note row of a day without stops (ItineraryEditService finds the note by it). */

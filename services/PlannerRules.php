@@ -14,8 +14,13 @@
 //   learnedPoints()   the small score adjustment per category from the traveller's own ratings
 //   sameLandmarks()   the twin groups of a trip's candidates: rows that are one landmark under
 //                     two names; check() then keeps a trip to one row of each group
+//   hoursOn(), prayerBreak(), peakMinutes()  the rules about time: a place's hours as the
+//                     planner reads them (known, office hours, assumed), the Friday prayers at a
+//                     mosque, rush-hour travel times; every visit and meal starts on a multiple
+//                     of TIME_STEP minutes
 
 require_once __DIR__ . '/OpeningHours.php';
+require_once __DIR__ . '/PlannerCalendar.php';
 require_once __DIR__ . '/CostEstimationService.php';
 require_once __DIR__ . '/AccessibilityNeedsAnalysisService.php';
 require_once __DIR__ . '/PlaceNameMatcher.php';
@@ -66,6 +71,12 @@ final class PlannerRules
 
     /** Longest wait for a place to open. Time spent on a meal is not waiting. */
     public const MAX_WAIT_MIN = 60;
+
+    /** Every visit and meal starts on a multiple of this many minutes (rounded up). */
+    public const TIME_STEP = 5;
+
+    /** Words in a place's hours that mark it as a mosque for the Friday prayers (with place_type mosque). */
+    private const PRAYER_TEXT = '/outside prayer times/i';
 
     /**
      * An explicit day window: when only its start or only its end is given and the window would
@@ -134,6 +145,7 @@ final class PlannerRules
         'DAY_DISTANCE' => 'over the daily distance limit',
         'CLOSED' => 'closed that day',
         'OPEN_HOURS' => 'not open for the whole visit at the planned time',
+        'PRAYER' => 'a mosque during the Friday prayers (12:15 to 14:45)',
         'HEAT' => 'outdoors in the midday heat',
         'DAY_END' => 'would end after the latest end of the day',
         'WAIT' => 'would wait too long for opening',
@@ -619,30 +631,35 @@ final class PlannerRules
             if ((float)($slot['day_km'] ?? 0) + $legKm > (float)$profile['hard_km']) return $fail('DAY_DISTANCE');
         }
 
-        // Time: the earliest start inside the day window and the opening hours, waiting for opening if needed.
+        // Time: the earliest start inside the day window and the opening hours (known, office
+        // hours on working days, or assumed: hoursOn()), outside the Friday prayers at a mosque,
+        // on a multiple of TIME_STEP, waiting for opening if needed.
         $visit = self::visitMinutes($place, $profile);
         $arrive = max((int)$slot['arrive'], (int)$profile['start']);
         $end = (int)$profile['end'];
-        $hours = (string)($place['opening_hours'] ?? '');
-        if ($profile['avoid_heat'] && (int)($place['is_outdoor'] ?? 0) === 1) {
-            // Either over by 11:00 or begun after 16:00.
-            $start = OpeningHours::earliestStart($hours, $date, $arrive, $visit, min($end, self::HEAT_FROM));
-            $start ??= OpeningHours::earliestStart($hours, $date, max($arrive, self::HEAT_UNTIL + 1), $visit, $end);
-            if ($start === null) {
-                return $fail(OpeningHours::earliestStart($hours, $date, $arrive, $visit, $end) !== null ? 'HEAT' : self::timeReason($hours, $date, $arrive, $visit, $end));
-            }
-        } else {
-            $start = OpeningHours::earliestStart($hours, $date, $arrive, $visit, $end);
-            if ($start === null) return $fail(self::timeReason($hours, $date, $arrive, $visit, $end));
+        $ranges = self::hoursOn($place, $date);
+        $prayer = self::prayerBreak($place, $date);
+        $find = static fn(int $from, int $latest, array $blocked): ?int => OpeningHours::earliestIn($ranges, $from, $visit, $latest, $blocked, self::TIME_STEP);
+        $heat = $profile['avoid_heat'] && (int)($place['is_outdoor'] ?? 0) === 1;
+        // Either over by 11:00 or begun after 16:00 for a traveller who avoids the heat.
+        $within = static fn(array $blocked): ?int => $heat
+            ? ($find($arrive, min($end, self::HEAT_FROM), $blocked) ?? $find(max($arrive, self::HEAT_UNTIL + 1), $end, $blocked))
+            : $find($arrive, $end, $blocked);
+        $start = $within($prayer);
+        if ($start === null) {
+            if ($prayer && $within([]) !== null) return $fail('PRAYER');
+            if ($heat && $find($arrive, $end, []) !== null) return $fail('HEAT');
+            return $fail(self::timeReason($ranges, $arrive, $visit, $end));
         }
         if ($start - $arrive > self::MAX_WAIT_MIN) return $fail('WAIT');
 
         // From this stop the end of the day must be reached inside the day window and inside the
         // hard daily distance (that leg counts): the trip's end point on the last day, the base of
-        // the night on a day followed by a night.
+        // the night on a day followed by a night. The leg leaves when the visit ends (peak hours).
         if (isset($slot['finish_min'])) {
             $code = (string)($slot['finish_code'] ?? 'FINISH');
-            if ($start + $visit + (int)$slot['finish_min'] > $end) return $fail($code);
+            $back = self::peakMinutes((int)$slot['finish_min'], $date, $start + $visit, [(float)($place['latitude'] ?? 0), (float)($place['longitude'] ?? 0)], (string)$profile['transport']);
+            if ($start + $visit + $back > $end) return $fail($code);
             $counted = (float)($slot['day_km'] ?? 0) + (!empty($slot['leg_counts']) ? $legKm : 0.0);
             if ($counted + (float)($slot['finish_km'] ?? 0) > (float)$profile['hard_km']) return $fail($code);
         }
@@ -738,9 +755,88 @@ final class PlannerRules
         return (int)$m[1] * 60 + (int)$m[2];
     }
 
-    private static function timeReason(string $hours, string $date, int $arrive, int $visit, int $end): string
+    /**
+     * When a place is open on a date for the planner (OpeningHours::placeRanges()): its hours,
+     * office hours closed on rest days and holidays, assumed hours when the text gives none.
+     */
+    public static function hoursOn(array $place, string $date): ?array
     {
-        $ranges = OpeningHours::rangesOn($hours, $date);
+        return OpeningHours::placeRanges($place, $date);
+    }
+
+    /** A mosque for the Friday prayers: place_type mosque, or hours that say "outside prayer times". */
+    public static function isMosque(array $place): bool
+    {
+        return strtolower(trim((string)($place['place_type'] ?? ''))) === 'mosque'
+            || preg_match(self::PRAYER_TEXT, (string)($place['opening_hours'] ?? '')) === 1;
+    }
+
+    /** The times a mosque takes no visit on a date: the Friday prayers (PlannerCalendar), as [[from, to]], or []. */
+    public static function prayerBreak(array $place, string $date): array
+    {
+        if (!self::isMosque($place)) return [];
+        try {
+            $break = PlannerCalendar::dayInfo($date, null)['friday_prayer'];
+        } catch (Throwable $e) {
+            return [];
+        }
+        return $break !== null ? [[(int)$break[0], (int)$break[1]]] : [];
+    }
+
+    /** Minutes rounded up to a multiple of TIME_STEP. */
+    public static function roundUp(int $minutes): int
+    {
+        return (int)(ceil($minutes / self::TIME_STEP) * self::TIME_STEP);
+    }
+
+    /**
+     * Peak hours: the minutes of a leg that leaves at $depart (minutes after midnight) from
+     * $from on $date, the measured or estimated minutes times PlannerCalendar::peakFactor()
+     * (rounded; 1.0 outside the rush hours of a working day in a metropolitan area). The
+     * minute of departure is the end of the visit or meal before the leg, or the day's start.
+     * A factor above 1 rounds so that unpeak() gives the minutes back exactly.
+     */
+    public static function peakMinutes(int $minutes, string $date, int $depart, array $from, string $transport): int
+    {
+        $factor = self::peakFactor($date, $depart, $from, $transport);
+        return $factor > 1.0 && $minutes > 0 ? (int)round($minutes * $factor) : $minutes;
+    }
+
+    /** The minutes of a leg before peakMinutes() (for legs stored with their factor). */
+    public static function unpeak(int $minutes, string $date, int $depart, array $from, string $transport): int
+    {
+        $factor = self::peakFactor($date, $depart, $from, $transport);
+        return $factor > 1.0 && $minutes > 0 ? (int)round($minutes / $factor) : $minutes;
+    }
+
+    private static function peakFactor(string $date, int $depart, array $from, string $transport): float
+    {
+        if ($date === '' || !isset($from[0], $from[1])) return 1.0;
+        // The state only adds state holidays to the working-day test; the boxes lie in states with a Saturday-Sunday weekend.
+        return PlannerCalendar::peakFactor($date, $depart, (float)$from[0], (float)$from[1], $transport, null);
+    }
+
+    /** Read the public holidays the admin keeps for every year these dates touch (PlannerCalendar::loadHolidays(), when it exists). */
+    public static function loadCalendar(mysqli $conn, array $dates): void
+    {
+        if (!method_exists('PlannerCalendar', 'loadHolidays')) return;
+        $years = [];
+        foreach ($dates as $date) if (preg_match('/^(\d{4})-/', (string)$date, $m)) $years[(int)$m[1]] = true;
+        foreach (array_keys($years) as $year) PlannerCalendar::loadHolidays($conn, $year);
+    }
+
+    /** The public holidays of a date in a state (PlannerCalendar::dayInfo()), by name; [] when none or the date is not readable. */
+    public static function holidaysOn(string $date, ?string $state): array
+    {
+        try {
+            return (array)PlannerCalendar::dayInfo($date, $state !== null && trim($state) !== '' ? $state : null)['holiday'];
+        } catch (Throwable $e) {
+            return [];
+        }
+    }
+
+    private static function timeReason(?array $ranges, int $arrive, int $visit, int $end): string
+    {
         if ($ranges === []) return 'CLOSED';
         if ($ranges === null || $arrive + $visit > $end) return 'DAY_END';
         return 'OPEN_HOURS';

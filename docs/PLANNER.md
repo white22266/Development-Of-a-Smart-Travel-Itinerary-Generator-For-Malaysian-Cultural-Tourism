@@ -62,9 +62,11 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
   2 x 1.3 (a return trip to the edge of the area is one recommended day; 17.3 km by car at a
   normal pace), at least `MIN_RADIUS_KM` (1.5). Best place first, a place joins the first area
   whose first place lies within the radius, else it starts one; the base of an area is the most
-  central of its 12 best places (least value-weighted distance to the others), named after its
-  district and state; places the bases leave uncovered form the next round's areas
-  (`AREA_ROUNDS`, 3). Every place then belongs to the nearest base within the radius.
+  central of its 12 best places (least value-weighted distance to the others), named "district,
+  state" and nothing more; places the bases leave uncovered form the next round's areas
+  (`AREA_ROUNDS`, 3). Every place then belongs to the nearest base within the radius. A place is
+  weighed as the day search would value it (`ItineraryDayBuilder::layoutValue()`): outside the
+  preferred districts less 2 x `RELAX_PRICE`, outside the interests less 3 x `RELAX_PRICE`.
 - **Which areas, how many days.** The area of a must-see place is always used, and so is the
   best area of every state the traveller chose (what it offers over the whole trip, less the way
   there from the start), while there are days. Then each further day goes where it adds most
@@ -101,6 +103,10 @@ the base of its area, though no night follows it.
   radius of the base, open for the whole meal and with time to be back, with the least detour
   on the way back, or as a dinner break at the base. Waiting there for the window is rest. Only a
   day window that cannot hold the dinner (18:00 plus the meal length after its end) has none.
+  A dinner near the base is not touring: the visits and the way back (the arrival at the dinner
+  place or at the base) stay inside the day window, but the dinner may begin after the return
+  and end after the window; it still begins by 20:30. A dinner on the way, between visits, stays
+  inside the window.
   `ItineraryDayBuilder::fit()` with the base as the place times this end of the day
   (`closeDay()`); a day whose end does not fit gives up its last stop.
 - A hotel row begins when the traveller arrives there after the last stop (and the dinner at a
@@ -126,8 +132,12 @@ is `PlannerRules::REASONS`).
 | Longest single leg | walking 8, public transport 60, car and motorcycle 150 km | `LEG_LIMIT_KM` |
 | Leg from the starting point on day 1 | not counted by the distance limits | `leg_counts` in `check()` |
 | Visit length | 30 to 240 min, 90 when unknown; at most 120 for a family, 105 for elderly or low walking | `VISIT_MIN`, `VISIT_MAX`, `VISIT_DEFAULT`, `VISIT_MAX_FAMILY`, `VISIT_MAX_CAREFUL` |
-| Opening hours | the whole visit inside the opening hours of that weekday; reasons `CLOSED`, `OPEN_HOURS`, `DAY_END` | `OpeningHours::earliestStart()` |
-| Hours written as words | a text without clock times is read as approximate hours: office hours Mon-Fri 09:00-17:00; lunch hours 11:00-15:00; meal hours 11:00-15:00 and 18:00-22:00; morning (or daytime) to evening 08:00-20:00; evening or night without morning or daytime 17:00-23:59; daytime 08:00-18:00; morning 06:00-12:00; business or shop hours 10:00-22:00 (first match wins). "Open area", "Exterior viewing", "Verify before visit" and other texts stay unknown and allow any time | `OpeningHours::DESCRIBED` |
+| Opening hours | the whole visit inside the opening hours of that weekday; a place without usable hours has assumed hours (see Rules about time); reasons `CLOSED`, `OPEN_HOURS`, `DAY_END` | `PlannerRules::hoursOn()`, `OpeningHours::placeRanges()` |
+| Office hours | a text read as office hours is closed on the rest days of the place's state (Friday and Saturday in Kedah, Kelantan and Terengganu, else Saturday and Sunday) and on public holidays there | `OpeningHours::placeRanges()`, `PlannerCalendar::dayInfo()` |
+| Friday prayers | a mosque (`place_type` mosque, or hours that say "outside prayer times") takes no visit that overlaps 12:15-14:45 on a Friday; reason `PRAYER` | `PlannerRules::prayerBreak()` |
+| Five-minute times | every visit and meal starts on a multiple of five minutes (rounded up) | `PlannerRules::TIME_STEP` |
+| Peak hours | the minutes of every leg (the way back included) are its measured or estimated minutes times `PlannerCalendar::peakFactor()` for the date, the minute it leaves and its point of departure; the stored time is the adjusted one | `PlannerRules::peakMinutes()` |
+| Hours written as words | a text without clock times is read as approximate hours: office hours Mon-Fri 09:00-17:00; lunch hours 11:00-15:00; meal hours 11:00-15:00 and 18:00-22:00; morning (or daytime) to evening 08:00-20:00; evening or night without morning or daytime 17:00-23:59; daytime 08:00-18:00; morning 06:00-12:00; business or shop hours 10:00-22:00 (first match wins). "Open area", "Exterior viewing", "Verify before visit" and other texts give no usable hours: the hours are assumed | `OpeningHours::DESCRIBED` |
 | Waiting for opening | at most 60 min; time spent on a meal is not waiting | `MAX_WAIT_MIN` |
 | Avoid heat | an outdoor visit must be over by 11:00 or begin after 16:00 | `HEAT_FROM` (660), `HEAT_UNTIL` (960) |
 | Elderly | no outdoor visit longer than 150 min | `ELDERLY_LONG_VISIT_MIN` |
@@ -199,18 +209,65 @@ then by value (ties by place ids, so the result is deterministic).
   first, then value) and extends each with every candidate; every survivor whose end fits
   (`fit()` with the base, or the end point) is a finished day. Places for the rest of the day are
   kept for must-see places still to come, and they have first call on the budget.
-- Candidates: the day's own group, at most `SEARCH_CANDIDATES` (40) by value less the price of the
-  way there and back from the base; only when that day falls short of the target are the 40 best
-  other places of the area added, so nothing good is lost.
+- Candidates: the day's own group, at most `SEARCH_CANDIDATES` (40) by `layoutValue()` less the
+  price of the way there and back from the base; a second search adds the 40 best other places of
+  the area, and its day is taken when it ranks higher (must-see places, stops, value), so nothing
+  good is lost.
 - From `RAIN_INDOOR_FIRST` (80) percent an outdoor place is a next stop only when no indoor place
   of the same level is.
 - It returns its next-best days (`alternatives`, 3) and the places it would take next (`spares`),
   which the repair step of generation and `regenerateDay()` try when a stop gives way; a spare
   taken into a day is given its relax level as that day sees it (`relevel()`).
-- A 7-day trip plans in about one second without routing (planner check, `SECONDS`).
+- A 7-day trip plans in 1.5 to 4 seconds without routing (planner check, `SECONDS`; the second, wider search of each day doubles the work).
 
 `check()` stays the one feasibility check and `fit()` the one timing (a visit, or with the base
 as the place the end of the day).
+
+## Rules about time
+
+- **Five-minute times.** `check()`, the meals and the dinner near the base start on a multiple of
+  `TIME_STEP` (5) minutes, rounded up (`OpeningHours::earliestIn()` with a step). Visit and meal
+  lengths are multiples of five, so the ends are too.
+- **Peak hours.** `PlannerRules::peakMinutes()`: the leg's minutes times
+  `PlannerCalendar::peakFactor()` (07:00-09:30 and 17:00-19:30 on a working day, leaving from
+  inside the Klang Valley, George Town and Butterworth or Johor Bahru boxes; car 1.5, motorcycle
+  1.2, public transport 1.3, walking 1.0), rounded. A leg leaves at the end of the visit, meal or
+  hotel row before it on its day, or at the day's start. No state is passed, so only national
+  holidays end a working day for it. The leg back to the base that `check()` tests (`BASE`,
+  `FINISH`) leaves when the visit ends. Stored legs carry the factor: `ItineraryEditService`
+  takes it off the stored minutes when it seeds them (`PlannerRules::unpeak()`, exact because the
+  factor is above 1 and the product is rounded), and `routes()` puts it on again for the hour each
+  leg then leaves.
+- **Assumed opening hours.** A place whose text gives usable hours on no weekday has the hours of
+  its type (`OpeningHours::ASSUMED`), else of its category (`ASSUMED_BY_CATEGORY`). They are a hard
+  rule like known hours. The stop's notes (and a meal place's) say "opening hours assumed (...):
+  check before you go", and the itinerary and review pages and the suggestions show them as
+  "09:00-17:00 (assumed)" (`OpeningHours::shown()`).
+
+  | Type | Assumed hours |
+  |---|---|
+  | mosque, Hindu, Chinese and Buddhist temple, church, Sikh temple, other worship | 08:00-18:00 |
+  | museum, gallery, palace, cultural village, cultural centre | 09:00-17:00 |
+  | memorial, fort, historic building, historic site, mausoleum | 09:00-18:00 |
+  | heritage street | 09:00-21:00 |
+  | market | 08:00-18:00 |
+  | mall, restaurant, food street | 10:00-22:00 |
+  | cafe | 08:00-22:00 |
+  | park, beach, waterfall, cave, hill, island, lake or river, forest | 07:00-19:00 |
+  | wildlife and zoo | 09:00-17:00 |
+  | viewpoint or tower | 09:00-21:00 |
+  | festival | none: its dates only |
+  | other or no type | by category: culture and heritage 09:00-18:00, museum 09:00-17:00, nature 07:00-19:00, food and shopping 10:00-22:00, festival its dates only, any other as culture |
+
+- **Friday prayers.** `PlannerRules::prayerBreak()` blocks the break of `PlannerCalendar::dayInfo()`
+  (12:15-14:45 on a Friday) for a mosque; a visit that fails only on it gives `PRAYER`.
+- **Rest days and public holidays.** Office hours close on the rest days of the place's state and
+  on its public holidays. `PlannerRules::loadCalendar()` calls `PlannerCalendar::loadHolidays()`
+  (when it exists) for each year a trip touches, in generation and in every edit. A trip date
+  that is a public holiday in the state of that day (its first stop's state, else its area's)
+  gets the day note "Public holiday: <name>. Opening hours may differ." in
+  `itinerary_days.day_note` (migration `20261120_day_notes.sql`), shown under the day's heading on
+  `itinerary/itinerary_view.php` (`ItineraryEditService::dayBases()`, `note`).
 
 ## Soft preferences and scoring
 
@@ -421,7 +478,12 @@ batches, never per candidate, and keeps to these rules (`RouteService`):
   requests per operation, each waiting at most `ROUTE_TIMEOUT` (5) seconds. A change to one day
   asks about that day and the day whose start it moves, not the whole trip.
 - Setting a day's start moves no stop and asks nothing (`setDayStart()`, `retimeTrip()`).
-- Generation and the route optimiser ask for one table for the whole trip
+- A trip of more than `ItineraryGenerator::LONG_TRIP_POINTS` (20) points of its own (start,
+  stops, bases, end point) is measured along its planned legs with route requests
+  (`measureLegs()`: the days join at their bases, one chain of up to 60 points a request), and
+  each day is timed in its planned order on them; a day that loses a stop is ordered again and
+  repaired as below.
+- Otherwise generation, and always the route optimiser, ask for one table for the whole trip
   (`RouteService::preloadTrip()`): the stops, bases, hotels, start and end point, and, while there is
   room (`MAX_TABLE_POINTS`, 50), the meal places (also those near the bases); those left out are estimated. A day whose stop
   has to be replaced after the road figures adds one route request. Their timeout is 8 seconds
@@ -474,14 +536,18 @@ Finding codes. A violation fails the run; a warning is only reported.
 |---|---|
 | `GENERATE`, `SETUP` | generation failed or stored nothing; the scenario's setup failed |
 | `DAYS`, `STOPS` | a day without a visit or a stop outside the trip's days; more stops than the target (violation) or fewer (warning) |
-| `BASE` | a day without a stored base; a day after a night whose first leg does not start at that night's hotel or base; a day followed by a night that cannot be back there by the end of its window or inside the hard daily distance with the leg back; with `stay_at_start` a base away from the starting point, or the choice not stored |
+| `BASE` | a day without a stored base; a day after a night whose first leg does not start at that night's hotel or base; a day followed by a night whose last visit cannot be back there by the end of its window or inside the hard daily distance with the leg back; with `stay_at_start` a base away from the starting point, or the choice not stored |
 | `HOTEL_TIME` | a hotel row that begins before the traveller can have arrived from the last row with a place, or more than `HOTEL_LATE_MIN` (60) minutes after |
 | `DINNER` | a day followed by a night without a dinner (a dinner row, or a food visit starting in the dinner window), or with two; not judged when the day window cannot hold the dinner |
-| `PLAN` | warning: a generation scenario (estimates) has fewer stops than the plan recorded before the trip layout, or more than 25 percent and 5 km more (`RECORDED_PLANS`, `PLAN_KM_SHARE`, `PLAN_KM_EXTRA`); the km of a trip are its stored legs plus the way back to the base after each night without a hotel row (`tripKm()`) |
+| `ROUND` | a visit or meal that does not start and end on a multiple of five minutes |
+| `PEAK` | on estimates: a stored leg time that is not the estimate times the rush-hour factor of the hour it leaves (own copy `PEAK_*`, slack `PEAK_SLACK_MIN` 2 min); in `first_leg_peak` scenarios the factor missing on the working day or applied on the Sunday |
+| `PRAYER` | a mosque visit on a Friday that overlaps 12:15-14:45 |
+| `HOLIDAY` | a public holiday of a trip date (`FIXED_HOLIDAYS`, the scenario's `holidays`, the table `public_holidays`) without its day note, or a holiday note on another date |
+| `PLAN` | warning: a generation scenario (estimates) has fewer stops than its recorded plan (recorded after the layout tuning and the rules about time), or more than 25 percent and 5 km more (`RECORDED_PLANS`, `PLAN_KM_SHARE`, `PLAN_KM_EXTRA`); the km of a trip are its stored legs plus the way back to the base after each night without a hotel row (`tripKm()`) |
 | `DUPLICATE` | a place twice in a trip, or one landmark under two names (its own rule: within 150 m with the same words or all words of the shorter name, at least two, in the other; or within 60 m with a Dice score of 0.7 or more; Malay words read as English, `TWIN_*`) |
 | `START`, `HARD_END`, `TIME_ORDER` | a visit before the day start or after the latest end; missing or reversed times; a gap shorter than the travel time |
 | `REST` | the rest between visits is shorter than planned (warning) |
-| `WAIT`, `DURATION`, `OPEN_HOURS` | waiting over 60 min; a visit shorter than 30 min or longer than allowed; a visit outside opening hours |
+| `WAIT`, `DURATION`, `OPEN_HOURS` | waiting over 60 min; a visit shorter than 30 min or longer than allowed; a visit outside opening hours (office hours closed on rest days and holidays, assumed hours by its own copy `ASSUMED_HOURS`) |
 | `ACCESS` | the heat, step-free or elderly rule broken (a visit that only runs into the heat window is a warning) |
 | `DIETARY`, `FESTIVAL`, `REGION` | the dietary, festival date, state or region rule broken |
 | `LEGS`, `DISTANCE` | a stored distance or time that does not fit the straight line or the speed (a day after a night measured from its hotel or base); a leg or a day over its limit (a day over the recommended km is a warning; the first leg of day 1 and of the day the trip moves to another area, towards the new base, are not counted) |
@@ -498,7 +564,12 @@ Finding codes. A violation fails the run; a warning is only reported.
 The scenarios `kl_couple_car_stay_at_start` (the `trip` key `stay_at_start`),
 `penang_kl_couple_car_5days_two_states` (two states some 300 km apart: a move between areas) and
 `pahang_couple_car_7days_large_state` cover the trip layout; the first two also run as edit
-scenarios. `KM` in the table is `tripKm()`.
+scenarios. `kl_couple_car_peak_monday` and `kl_couple_car_peak_sunday` (the same day trip from
+08:00 on a working day and on a Sunday), `kl_solo_car_friday_mosque` (an afternoon window on a
+Friday with a mosque as a must-see place), `johor_solo_car_office_rest_day` (an office-hours
+museum on a Sunday and a Monday) and `johor_solo_car_holiday_note` (a holiday handed in with
+`PlannerCalendar::setHolidays()`) cover the rules about time (scenario keys `first_leg_peak`,
+`musts_planned`, `holidays`). `KM` in the table is `tripKm()`.
 
 To extend it: add an entry to `SCENARIOS` (a `pref` and a `trip`, with optional `weights`, `must`, `avoid` and `ratings` keys,
 the `trip` keys `end_name`, `end_lat` and `end_lng` for an end point, `stay_at_start`, and `forecast` for a rain

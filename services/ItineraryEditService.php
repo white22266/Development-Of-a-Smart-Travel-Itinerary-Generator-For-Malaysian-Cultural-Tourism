@@ -246,6 +246,7 @@ class ItineraryEditService
                 }
             }
             array_splice($days[$fromDay], $index, 1);
+            if ($toDay !== $fromDay) $stop = self::varietyNote($ctx, $stop, $days[$toDay]);
             $changed = array_values(array_unique([$fromDay, $toDay]));
             $layout = self::placeInDay($ctx, $days, $toDay, $stop, $toPosition, $changed, ['why_empty' => self::EMPTIED]);
             if (isset($layout['refused'])) return $layout;
@@ -666,7 +667,7 @@ class ItineraryEditService
     {
         $measure = $route === null;
         $metaStmt = $conn->prepare("
-            SELECT tp.transport_type, i.origin_lat, i.origin_lng, i.total_days
+            SELECT tp.transport_type, i.origin_lat, i.origin_lng, i.total_days, i.start_date, i.preference_id
             FROM itineraries i
             LEFT JOIN traveller_preferences tp ON tp.preference_id = i.preference_id
             WHERE i.itinerary_id = ?
@@ -680,7 +681,7 @@ class ItineraryEditService
 
         $route ??= new RouteService((string)($meta['transport_type'] ?? 'car'));
         $itemsStmt = $conn->prepare("
-            SELECT ii.item_id, ii.day_no, ii.item_type,
+            SELECT ii.item_id, ii.day_no, ii.item_type, ii.start_time, ii.end_time,
                    COALESCE(ii.item_latitude, cp.latitude) AS latitude,
                    COALESCE(ii.item_longitude, cp.longitude) AS longitude
             FROM itinerary_items ii
@@ -702,6 +703,12 @@ class ItineraryEditService
             $days[(int)$item['day_no']][] = [(int)$item['item_id'], $here];
         }
         $itemsStmt->close();
+        // Peak hours: each leg is stored with the factor of the hour it leaves (as the day was timed).
+        $transport = (string)($meta['transport_type'] ?? 'car');
+        $dayStart = (int)PlannerRules::profile(PlannerRules::loadPreference($conn, (int)$meta['preference_id']) ?? PlannerRules::normalizePreference([]))['start'];
+        $departs = self::departures($itemRows, self::dayStarts($conn, $itineraryId), $dayStart);
+        $dateOf = static fn(int $d): string => $meta['start_date'] !== null
+            ? (new DateTimeImmutable((string)$meta['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d') : '';
 
         $previous = null;
         if ($meta['origin_lat'] !== null && $meta['origin_lng'] !== null && RouteService::validCoord((float)$meta['origin_lat'], (float)$meta['origin_lng'])) {
@@ -730,7 +737,7 @@ class ItineraryEditService
                 if ($previous !== null && $here !== null) {
                     $segment = $route->getSegment($previous[0], $previous[1], $here[0], $here[1]);
                     $distanceKm = (float)$segment['distance_km'];
-                    $travelMin = (int)$segment['travel_time_min'];
+                    $travelMin = PlannerRules::peakMinutes((int)$segment['travel_time_min'], $dateOf((int)$dayNo), $departs[$itemId] ?? $dayStart, $previous, $transport);
                 }
                 $update->bind_param('dii', $distanceKm, $travelMin, $itemId);
                 $update->execute();
@@ -1532,8 +1539,9 @@ class ItineraryEditService
                 if ($close !== null) {
                     $checkIn = ItineraryHotelService::checkInMinute((int)$close['arrive']);
                 } else {
-                    $leg = $lastPoint !== null && $hotel['point'] !== null
-                        ? (int)$ctx['route']->getSegment($lastPoint[0], $lastPoint[1], $hotel['point'][0], $hotel['point'][1])['travel_time_min'] : 0;
+                    $leg = $lastPoint !== null && $hotel['point'] !== null && $lastEnd !== null
+                        ? PlannerRules::peakMinutes((int)$ctx['route']->getSegment($lastPoint[0], $lastPoint[1], $hotel['point'][0], $hotel['point'][1])['travel_time_min'],
+                            (string)$ctx['dates'][$d], $lastEnd, $lastPoint, (string)$profile['transport']) : 0;
                     $checkIn = ItineraryHotelService::checkInMinute($lastEnd, $leg);
                 }
                 $hotelStart = PlannerRules::sqlTime($checkIn);
@@ -1680,6 +1688,12 @@ class ItineraryEditService
         // The legs stored with the trip are the figures at hand: nothing is asked for them. A
         // change measures only the legs it needs that are not among them (plan()).
         if ($route === null) $ctx['route']->setTimeout(self::ROUTE_TIMEOUT);
+        // The holidays the admin keeps (office hours, peak hours) for the years of the trip.
+        PlannerRules::loadCalendar($conn, $dates);
+        // A stored leg carries its peak-hour factor (PlannerRules::peakMinutes()); the figure at
+        // hand is the leg without it (unpeak(), exact), so a re-timing applies it again at the
+        // hour the leg then leaves.
+        $departs = self::departures($rows, $ctx['day_starts'], (int)$profile['start']);
         $seeds = [];
         $previous = $origin;
         $nights = self::nightBases($bases, $rows, $totalDays);
@@ -1696,12 +1710,37 @@ class ItineraryEditService
             }
             if ($here === null) continue;
             if ($previous !== null && $row['distance_km'] !== null && $row['travel_time_min'] !== null) {
-                $seeds[] = [$previous, $here, (float)$row['distance_km'], (int)$row['travel_time_min']];
+                $minutes = PlannerRules::unpeak((int)$row['travel_time_min'], $dates[$d] ?? '', $departs[(int)$row['item_id']] ?? (int)$profile['start'], $previous, (string)$profile['transport']);
+                $seeds[] = [$previous, $here, (float)$row['distance_km'], $minutes];
             }
             $previous = $here;
         }
         if ($seed) $ctx['route']->seed($seeds);
         return self::$cache[$itineraryId] = $ctx;
+    }
+
+    /**
+     * The minute each row's leg leaves, for peak hours (PlannerRules::peakMinutes()): the end of
+     * the visit, meal or hotel row before it on its day, or the day's start for its first row,
+     * exactly as ItineraryDayBuilder::fit() times the leg. Note rows do not count.
+     *
+     * @param array $rows itinerary rows (item_id, day_no, item_type, end_time) in stored order
+     * @return array<int,int> item_id => minutes after midnight
+     */
+    private static function departures(array $rows, array $dayStarts, int $defaultStart): array
+    {
+        $out = [];
+        $day = null;
+        $prevEnd = null;
+        foreach ($rows as $row) {
+            $d = (int)$row['day_no'];
+            if ($d !== $day) { $day = $d; $prevEnd = null; }
+            if (strtolower((string)$row['item_type']) === 'note') continue;
+            $out[(int)$row['item_id']] = $prevEnd ?? (int)($dayStarts[$d] ?? $defaultStart);
+            $end = PlannerRules::minutesOf($row['end_time'] ?? null);
+            if ($end !== null) $prevEnd = $end;
+        }
+        return $out;
     }
 
     /** The timing profile of one day: $profile (default the trip's) starting at the day's stored start. */
@@ -1835,13 +1874,15 @@ class ItineraryEditService
 
     /**
      * The stored base of each day (itinerary_days): day => name, point, sector ([from, to]
-     * bearings or null) and area_km. Empty without the columns or for an itinerary planned
+     * bearings or null), area_km and note (the day note of migration 20261120_day_notes.sql: the
+     * public holiday of the day, or null). Empty without the columns or for an itinerary planned
      * before bases.
      */
     public static function dayBases(mysqli $conn, int $itineraryId): array
     {
         if (!PlannerRules::hasColumn($conn, 'itinerary_days', 'base_lat')) return [];
-        $stmt = $conn->prepare("SELECT day_no, base_name, base_lat, base_lng, group_from, group_to, area_km FROM itinerary_days
+        $note = PlannerRules::hasColumn($conn, 'itinerary_days', 'day_note') ? 'day_note' : 'NULL AS day_note';
+        $stmt = $conn->prepare("SELECT day_no, base_name, base_lat, base_lng, group_from, group_to, area_km, {$note} FROM itinerary_days
                                 WHERE itinerary_id = ? AND base_lat IS NOT NULL AND base_lng IS NOT NULL ORDER BY day_no");
         $stmt->bind_param('i', $itineraryId);
         $stmt->execute();
@@ -1854,6 +1895,7 @@ class ItineraryEditService
                 'point' => $point,
                 'sector' => $row['group_from'] !== null && $row['group_to'] !== null ? [(int)$row['group_from'], (int)$row['group_to']] : null,
                 'area_km' => $row['area_km'] !== null ? (float)$row['area_km'] : null,
+                'note' => $row['day_note'] !== null && trim((string)$row['day_note']) !== '' ? (string)$row['day_note'] : null,
             ];
         }
         $stmt->close();
@@ -2050,7 +2092,39 @@ class ItineraryEditService
         $ignored = null;
         $ranked = $builder->ranked([$place], $dayCtx, $state, 1, $ignored, false, true);
         if (!$ranked) return $fallback;
-        return ['tier' => (int)$ranked[0]['tier'], 'reasons' => (array)$ranked[0]['reasons']];
+        $reasons = (array)$ranked[0]['reasons'];
+        // Category variety is judged on the whole day, also the stops after the new one: when
+        // they already hold the category's limit, the new stop says that variety was relaxed.
+        $category = strtolower((string)$place['category']);
+        $same = 0;
+        foreach ($stops as $i => $s) {
+            if ($i !== $index && is_array($s) && isset($s['place']) && strtolower((string)$s['place']['category']) === $category) $same++;
+        }
+        if (!$ctx['profile']['food_only'] && $same >= PlannerRules::categoryLimit($ctx['profile'], $category)
+            && !array_intersect($reasons, ItineraryDayBuilder::RELAXED)) {
+            array_unshift($reasons, ItineraryDayBuilder::RELAXED[1]);
+        }
+        return ['tier' => (int)$ranked[0]['tier'], 'reasons' => $reasons];
+    }
+
+    /**
+     * A stop moved into a day whose other stops already hold its category's limit says that
+     * category variety was relaxed (its notes stay true).
+     */
+    private static function varietyNote(array $ctx, array $stop, array $others): array
+    {
+        $category = strtolower((string)$stop['place']['category']);
+        $same = count(array_filter($others, static fn(array $s): bool => strtolower((string)$s['place']['category']) === $category));
+        if ($ctx['profile']['food_only'] || $same < PlannerRules::categoryLimit($ctx['profile'], $category)) return $stop;
+        $note = ItineraryDayBuilder::RELAXED[1];
+        if ($stop['reasons'] !== null) {
+            if (!array_intersect((array)$stop['reasons'], ItineraryDayBuilder::RELAXED)) array_unshift($stop['reasons'], $note);
+        } elseif (isset($stop['row']['notes']) && !str_contains((string)$stop['row']['notes'], 'relaxed to fill the day')) {
+            $notes = (string)$stop['row']['notes'];
+            $at = strpos($notes, 'Reason: ');
+            $stop['row']['notes'] = $at === false ? $notes . ' | Reason: ' . $note : substr($notes, 0, $at + 8) . $note . '; ' . substr($notes, $at + 8);
+        }
+        return $stop;
     }
 
     /** Meal options for a meal row: food places by least detour, then a break without a place. */
@@ -2107,7 +2181,7 @@ class ItineraryEditService
             $meal = self::plannedMeal($plan['plans'][$dayNo], $slot);
             $options[] = ['place_id' => $id, 'name' => (string)$place['name'], 'category' => 'food', 'item_type' => 'food',
                 'state' => (string)$place['state'], 'district' => (string)$place['district'], 'address' => (string)($place['address'] ?? ''),
-                'opening_hours' => (string)($place['opening_hours'] ?? ''), 'cost' => 0.0, 'rating' => (float)max((float)($place['avg_rating'] ?? 0), (float)($place['rating'] ?? 0)),
+                'opening_hours' => OpeningHours::shown($place), 'cost' => 0.0, 'rating' => (float)max((float)($place['avg_rating'] ?? 0), (float)($place['rating'] ?? 0)),
                 'start' => self::hm((int)$meal['start']), 'end' => self::hm((int)$meal['end']), 'score' => null,
                 'detour_km' => round((float)$meal['detour'], 2),
                 'reasons' => [ucfirst($slot) . ' ' . number_format((float)$meal['detour'], 1) . ' km off your route, open for the whole meal']];
@@ -2155,7 +2229,7 @@ class ItineraryEditService
             'state' => (string)$place['state'],
             'district' => (string)$place['district'],
             'address' => (string)($place['address'] ?? ''),
-            'opening_hours' => (string)($place['opening_hours'] ?? ''),
+            'opening_hours' => OpeningHours::shown($place),
             'cost' => PlannerRules::placeCost($place),
             'rating' => (float)max((float)($place['avg_rating'] ?? 0), (float)($place['rating'] ?? 0)),
             'start' => self::hm((int)$timed['start']),

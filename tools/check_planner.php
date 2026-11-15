@@ -46,6 +46,14 @@
 // twin of a must-see place that the plan would otherwise visit must stay out, and adding it must be
 // refused with SAME_LANDMARK (runTwinSteps()).
 //
+// The rules about time have their own copies below (TIME_STEP, ASSUMED_HOURS, REST_DAYS_FRI_SAT,
+// FIXED_HOLIDAYS, FRIDAY_PRAYER, PEAK_*): ROUND (five-minute times), OPEN_HOURS with office hours
+// and assumed hours, PRAYER (no mosque visit across the Friday prayers), PEAK (on estimates the
+// stored minutes of every leg are the estimate times the rush-hour factor of the hour it leaves)
+// and HOLIDAY (a public holiday of a trip date carries the day note). A dinner near the base
+// after the last visit may end after the day window (HARD_END, BASE judge the visits and the
+// way back).
+//
 // Test database only: in Git Bash
 //   DB_NAME=travel_itinerary_db_ctest /c/xampp/php/php.exe tools/check_planner.php
 // Exit code: 0 no violation, 1 at least one violation, 2 refused to run.
@@ -208,26 +216,33 @@ const BASE_MOVED_KM = 0.5;
 const BASE_SAME_KM = 0.05;
 const HOTEL_LATE_MIN = 60;
 /**
- * PLAN: the plan of each generation scenario before the trip layout (bases, day groups and the
- * day search) was introduced, on estimates (the first pass of the run at commit e598fae with
- * this tool's scenarios): stops and km of the whole trip (tripKm()). A new plan with fewer stops,
+ * PLAN: the plan of each generation scenario on estimates after the layout was tuned and the
+ * rules about time were added (the first pass of the run that introduced them; before that the
+ * plans recorded at commit e598fae, before the trip layout): stops and km of the whole trip (tripKm()). A new plan with fewer stops,
  * or with more than PLAN_KM_SHARE more km and at least PLAN_KM_EXTRA more, is a warning.
  */
 const PLAN_KM_SHARE = 0.25;
 const PLAN_KM_EXTRA = 5.0;
 const RECORDED_PLANS = [
-    'kl_couple_car_normal' => [12, 13.4], 'melaka_solo_walking_relaxed_tight' => [3, 3.3], 'penang_group_transit_packed_festival' => [12, 40.0],
-    'sabah_family_motorcycle_normal' => [12, 80.9], 'johor_solo_car_halal_food_evening' => [3, 47.6], 'johor_couple_car_packed_districts' => [15, 133.9],
-    'kedah_couple_transit_vegetarian' => [3, 0.7], 'selangor_couple_car_elderly_wheelchair' => [9, 22.6], 'no_state_group_car_7days_generous' => [28, 45.4],
-    'perak_solo_motorcycle_packed_7days_tight' => [28, 126.7], 'pahang_solo_walking_packed_evening_district' => [3, 4.4],
-    'kl_selangor_family_transit_tight' => [12, 15.6], 'sarawak_solo_transit_evening' => [3, 0.6], 'kl_family_car_packed_explicit_window_3_stops' => [6, 14.7],
-    'melaka_couple_with_child_and_senior' => [8, 88.1], 'selangor_solo_car_tags_column' => [6, 16.7], 'kl_couple_car_museum_loved_heritage_little' => [8, 17.3],
-    'kl_couple_car_must_and_avoid' => [12, 41.2], 'penang_group_transit_must_festival' => [12, 37.7], 'kl_solo_car_end_at_klia' => [7, 10.7],
-    'melaka_solo_walking_end_at_ayer_keroh' => [3, 1.8], 'kl_couple_car_learns_from_ratings' => [8, 23.7], 'johor_couple_car_relaxed_meals_at_places' => [6, 8.5],
-    'kl_couple_car_rain_indoor_first' => [8, 10.4], 'pahang_couple_car_rain_highlands' => [4, 17.4], 'kl_solo_car_early_start_wait_limit' => [4, 8.0],
-    'kl_couple_car_packed_heritage_loved_culture_little' => [10, 17.4], 'melaka_solo_car_start_only_evening' => [2, 0.8],
-    'kl_family_car_must_opens_late_end_klia' => [8, 12.2], 'penang_solo_walking_end_only_morning' => [2, 1.3], 'kl_couple_car_must_twin' => [11, 30.5],
-    'kl_couple_car_stay_at_start' => [12, 13.4], 'penang_kl_couple_car_5days_two_states' => [20, 67.7], 'pahang_couple_car_7days_large_state' => [28, 316.3],
+    'kl_couple_car_normal' => [12, 23.7], 'melaka_solo_walking_relaxed_tight' => [3, 1.2],
+    'penang_group_transit_packed_festival' => [11, 64.8], 'sabah_family_motorcycle_normal' => [12, 104.0],
+    'johor_solo_car_halal_food_evening' => [3, 38.3], 'johor_couple_car_packed_districts' => [15, 179.3],
+    'kedah_couple_transit_vegetarian' => [3, 2.0], 'selangor_couple_car_elderly_wheelchair' => [9, 38.1],
+    'no_state_group_car_7days_generous' => [28, 74.8], 'perak_solo_motorcycle_packed_7days_tight' => [28, 180.1],
+    'pahang_solo_walking_packed_evening_district' => [3, 2.4], 'kl_selangor_family_transit_tight' => [11, 20.3],
+    'sarawak_solo_transit_evening' => [3, 0.6], 'kl_family_car_packed_explicit_window_3_stops' => [6, 14.7],
+    'melaka_couple_with_child_and_senior' => [8, 41.5], 'selangor_solo_car_tags_column' => [6, 27.5],
+    'kl_couple_car_museum_loved_heritage_little' => [8, 12.6], 'kl_couple_car_must_and_avoid' => [12, 43.8],
+    'penang_group_transit_must_festival' => [11, 30.4], 'kl_solo_car_end_at_klia' => [7, 12.8],
+    'melaka_solo_walking_end_at_ayer_keroh' => [3, 1.8], 'kl_couple_car_learns_from_ratings' => [8, 19.3],
+    'johor_couple_car_relaxed_meals_at_places' => [6, 37.3], 'kl_couple_car_rain_indoor_first' => [8, 17.7],
+    'pahang_couple_car_rain_highlands' => [4, 17.4], 'kl_solo_car_early_start_wait_limit' => [4, 19.9],
+    'kl_couple_car_packed_heritage_loved_culture_little' => [10, 27.5], 'melaka_solo_car_start_only_evening' => [2, 0.8],
+    'kl_family_car_must_opens_late_end_klia' => [8, 12.0], 'penang_solo_walking_end_only_morning' => [2, 1.6],
+    'kl_couple_car_must_twin' => [11, 22.3], 'kl_couple_car_stay_at_start' => [12, 27.7],
+    'penang_kl_couple_car_5days_two_states' => [19, 433.3], 'pahang_couple_car_7days_large_state' => [28, 359.0],
+    'kl_couple_car_peak_monday' => [4, 6.3], 'kl_couple_car_peak_sunday' => [4, 4.7], 'kl_solo_car_friday_mosque' => [4, 10.0],
+    'johor_solo_car_office_rest_day' => [8, 290.3], 'johor_solo_car_holiday_note' => [8, 290.3],
 ];
 
 /**
@@ -262,6 +277,47 @@ const DESCRIBED_HOURS = [
     ['/\bmorning\b/', null, [[6 * 60, 12 * 60]], null],
     ['/(business|shop) hours/', null, [[10 * 60, 22 * 60]], null],
 ];
+
+/**
+ * The rules about time, from the task that introduced them (not from the planner's files).
+ * Every visit and meal starts (and, visit lengths being multiples of five, ends) on a multiple
+ * of TIME_STEP minutes (ROUND).
+ */
+const TIME_STEP = 5;
+/**
+ * Assumed opening hours (OPEN_HOURS): a place whose text gives usable hours on no weekday is
+ * open only in these hours, by its place_type, else ('other' or none) by its category; a
+ * festival (null) keeps its dates only. Minutes after midnight.
+ */
+const ASSUMED_HOURS = [
+    'mosque' => [[480, 1080]], 'hindu_temple' => [[480, 1080]], 'chinese_temple' => [[480, 1080]], 'buddhist_temple' => [[480, 1080]],
+    'church' => [[480, 1080]], 'sikh_temple' => [[480, 1080]], 'other_worship' => [[480, 1080]],
+    'museum' => [[540, 1020]], 'gallery' => [[540, 1020]], 'palace' => [[540, 1020]], 'cultural_village' => [[540, 1020]], 'cultural_centre' => [[540, 1020]],
+    'memorial' => [[540, 1080]], 'fort' => [[540, 1080]], 'historic_building' => [[540, 1080]], 'historic_site' => [[540, 1080]], 'mausoleum' => [[540, 1080]],
+    'heritage_street' => [[540, 1260]], 'market' => [[480, 1080]], 'mall' => [[600, 1320]],
+    'food_street' => [[600, 1320]], 'restaurant' => [[600, 1320]], 'cafe' => [[480, 1320]],
+    'park' => [[420, 1140]], 'beach' => [[420, 1140]], 'waterfall' => [[420, 1140]], 'cave' => [[420, 1140]], 'hill' => [[420, 1140]],
+    'island' => [[420, 1140]], 'lake_river' => [[420, 1140]], 'forest' => [[420, 1140]], 'wildlife' => [[540, 1020]],
+    'viewpoint' => [[540, 1260]], 'festival' => null,
+];
+const ASSUMED_BY_CATEGORY = ['culture' => [[540, 1080]], 'heritage' => [[540, 1080]], 'museum' => [[540, 1020]], 'nature' => [[420, 1140]],
+                             'food' => [[600, 1320]], 'shopping' => [[600, 1320]], 'festival' => null];
+/** Office hours (DESCRIBED_HOURS 'office hours') are closed on the rest days of the place's state and on its public holidays. ISO weekdays. */
+const REST_DAYS_FRI_SAT = ['kedah', 'kelantan', 'terengganu'];
+/** The public holidays on the same date every year: [month-day, name, states or null for all]. */
+const FIXED_HOLIDAYS = [['01-01', "New Year's Day", 'not:johor,kedah,kelantan,perlis,terengganu'], ['05-01', 'Labour Day', null],
+                        ['08-31', 'National Day', null], ['09-16', 'Malaysia Day', null], ['12-25', 'Christmas Day', null]];
+/** PRAYER: a mosque (place_type mosque, or hours "outside prayer times") takes no visit overlapping 12:15-14:45 on a Friday. */
+const FRIDAY_PRAYER = [735, 885];
+/**
+ * PEAK: a leg leaving (the end of the row before it, or the day's start) in a rush hour of a
+ * working day from inside a metropolitan box takes its minutes times the factor of the transport.
+ * Judged on estimates only: the stored minutes are the estimate from the stored km times the factor.
+ */
+const PEAK_WINDOWS = [[420, 570], [1020, 1170]];   // 07:00-09:30, 17:00-19:30
+const PEAK_BOXES = [[2.80, 3.45, 101.30, 101.90], [5.25, 5.50, 100.17, 100.48], [1.40, 1.60, 103.55, 103.92]];   // Klang Valley, George Town and Butterworth, Johor Bahru
+const PEAK_FACTORS = ['car' => 1.5, 'motorcycle' => 1.2, 'public_transport' => 1.3, 'walking' => 1.0];
+const PEAK_SLACK_MIN = 2;
 
 // ---------------------------------------------------------------------------------------
 // Scenarios. Origins are real city centres or transport hubs of the chosen area.
@@ -526,6 +582,53 @@ const SCENARIOS = [
             'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
             'interests' => 'nature,culture,heritage', 'preferred_states' => 'Pahang', 'preferred_districts' => ''],
         'trip' => ['start_date' => '2026-12-12', 'origin_name' => 'Kuantan city centre', 'origin_lat' => 3.8077, 'origin_lng' => 103.3260],
+    ],
+    // ---- Rules about time: peak hours, the Friday prayers, office hours, holidays ---------------
+    // Optional keys: 'first_leg_peak' (true: the first leg of day 1 must carry the car's rush-hour
+    // factor; false: it must not), 'musts_planned' (every must-see place must be a visit, not
+    // only a note), 'holidays' (date => [[name, states or null]]: handed to the planner with
+    // PlannerCalendar::setHolidays() and judged from this copy).
+    'kl_couple_car_peak_monday' => [
+        'pref' => ['trip_days' => 1, 'budget' => 800, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '', 'day_start_time' => '08:00:00'],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+        'first_leg_peak' => true,
+    ],
+    'kl_couple_car_peak_sunday' => [
+        'pref' => ['trip_days' => 1, 'budget' => 800, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => '', 'day_start_time' => '08:00:00'],
+        'trip' => ['start_date' => '2026-12-06', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+        'first_leg_peak' => false,
+    ],
+    'kl_solo_car_friday_mosque' => [
+        // An afternoon window from 12:00 on a Friday: the mosque must wait until the prayers are over.
+        'pref' => ['trip_days' => 1, 'budget' => 600, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'afternoon', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'must' => [['name' => 'National Mosque of Malaysia']],
+        'musts_planned' => true,
+        'trip' => ['start_date' => '2026-12-11', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
+    ],
+    'johor_solo_car_office_rest_day' => [
+        // Kota Tinggi Museum keeps office hours: closed on Sunday (Johor rests on Saturday and Sunday), open on Monday.
+        'pref' => ['trip_days' => 2, 'budget' => 800, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,museum,nature', 'preferred_states' => 'Johor', 'preferred_districts' => ''],
+        'must' => [['name' => 'Kota Tinggi Museum']],
+        'musts_planned' => true,
+        'trip' => ['start_date' => '2026-12-06', 'origin_name' => 'Kota Tinggi town', 'origin_lat' => 1.7381, 'origin_lng' => 103.8999],
+    ],
+    'johor_solo_car_holiday_note' => [
+        // A Johor holiday on the Monday: the office-hours museum moves to Tuesday, and Monday carries the day note.
+        'pref' => ['trip_days' => 2, 'budget' => 800, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'solo', 'party_size' => 1,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'heritage,museum,nature', 'preferred_states' => 'Johor', 'preferred_districts' => ''],
+        'must' => [['name' => 'Kota Tinggi Museum']],
+        'musts_planned' => true,
+        'holidays' => ['2026-12-07' => [['Planner Check Holiday', ['Johor']]]],
+        'trip' => ['start_date' => '2026-12-07', 'origin_name' => 'Kota Tinggi town', 'origin_lat' => 1.7381, 'origin_lng' => 103.8999],
     ],
 ];
 
@@ -810,6 +913,10 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
     $result = ['scenario' => $name, 'itinerary_id' => null, 'days' => (int)$scenario['pref']['trip_days'], 'stops' => 0,
                'findings' => [], 'info' => [], 'seconds' => 0.0];
     $t0 = microtime(true);
+    // The scenario's holidays are handed to the planner (an input, like the forecast override).
+    $holidayYears = [];
+    foreach ((array)($scenario['holidays'] ?? []) as $date => $list) $holidayYears[(int)substr((string)$date, 0, 4)][$date] = $list;
+    foreach ($holidayYears as $year => $list) PlannerCalendar::setHolidays($year, $list);
     // Every scenario starts from a traveller without ratings; the baseline is planned that way too.
     setTestRatings($checkConn, $travellerId, []);
     $places = resolveScenarioPlaces($pipelineConn, $checkConn, $travellerId, $scenario);
@@ -847,6 +954,7 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
         $result['findings'][] = finding('GENERATE', 'violation', $name, null, null, get_class($e) . ': ' . $e->getMessage());
     }
     setTestRatings($checkConn, $travellerId, []);
+    foreach (array_keys($holidayYears) as $year) PlannerCalendar::setHolidays($year, null);
     if (!$keep) deleteScenarioData($checkConn, $travellerId, $preferenceId);
     $result['seconds'] = round(microtime(true) - $t0, 1);
     return $result;
@@ -1399,7 +1507,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     }
 
     $stmt = $conn->prepare('
-        SELECT ii.*, cp.name AS place_name, cp.description, cp.state, cp.district, cp.category, cp.opening_hours,
+        SELECT ii.*, cp.name AS place_name, cp.description, cp.state, cp.district, cp.category, cp.place_type, cp.opening_hours,
                cp.festival_start_date, cp.festival_end_date, cp.halal_status, cp.is_outdoor, cp.visit_duration_min,
                cp.latitude AS place_lat, cp.longitude AS place_lng
         FROM itinerary_items ii
@@ -1515,6 +1623,12 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             $hasPoint = $v['item_latitude'] !== null || $v['place_lat'] !== null;
             $point = [(float)($v['item_latitude'] ?? $v['place_lat']), (float)($v['item_longitude'] ?? $v['place_lng'])];
             $category = strtolower((string)($v['category'] ?? $v['item_type']));
+            // A dinner after the last visit of a day followed by a night is eaten near the base:
+            // it may end after the day window (it still starts inside the dinner window, MEAL).
+            $isNearBaseDinner = $isMeal && (string)$v['meal_slot'] === 'dinner' && $visitIndex > 0 && isset($nightPoint[$dayNo])
+                && !array_filter(array_slice($dayRows, $k + 1), static fn($r) => !$isMealRow($r));
+            // PEAK: the leg into this row leaves when the row before it ends, or at the day's start.
+            $departAt = $prevEnd ?? $dayStartMin;
             // The first leg of the day the trip moves to another area, from the base of the night
             // before towards the new base, is not counted either (BASE_MOVED_KM).
             $isMove = $k === 0 && $dayNo > 1 && isset($bases[$dayNo - 1], $bases[$dayNo])
@@ -1553,7 +1667,9 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 }
                 // START and HARD_END: meal rows lie inside the day window too.
                 if ($start < $dayStartMin) $add('START', 'violation', $dayNo, $title, 'starts ' . hm($start) . ', earliest ' . hm($dayStartMin) . " ({$dayStartSource})");
-                if ($end > $profile['hard_end']) $add('HARD_END', 'violation', $dayNo, $title, 'ends ' . hm($end) . ', latest ' . hm($profile['hard_end']));
+                if ($end > $profile['hard_end'] && !$isNearBaseDinner) $add('HARD_END', 'violation', $dayNo, $title, 'ends ' . hm($end) . ', latest ' . hm($profile['hard_end']));
+                // ROUND: visits and meals start and end on a multiple of five minutes.
+                if ($start % TIME_STEP !== 0 || $end % TIME_STEP !== 0) $add('ROUND', 'violation', $dayNo, $title, ($isMeal ? 'meal ' : 'visit ') . hm($start) . '-' . hm($end) . ' not on a multiple of ' . TIME_STEP . ' minutes');
                 // WAIT: a visit starts at most MAX_WAIT_MIN after it can be reached; after a meal no rest is due.
                 if (!$isMeal && $travel !== null) {
                     $reach = ($prevEnd === null ? $dayStartMin : $prevEnd + ($prevWasMeal ? 0 : $profile['rest'])) + $travel;
@@ -1565,8 +1681,9 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 if (!$isMeal && $length > 0 && ($length < VISIT_MIN || $length > $profile['visit_max'])) {
                     $add('DURATION', 'violation', $dayNo, $title, "visit {$length} min, allowed " . VISIT_MIN . "-{$profile['visit_max']} min");
                 }
-                // OPEN_HOURS (also a meal place, for the whole meal)
-                $ranges = $v['place_id'] !== null ? openingRanges((string)($v['opening_hours'] ?? ''), $date) : null;
+                // OPEN_HOURS (also a meal place, for the whole meal): known hours, office hours on
+                // working days only, assumed hours for a text without usable hours (hoursJudged()).
+                $ranges = $v['place_id'] !== null ? hoursJudged($conn, $v, $date, $scenario) : null;
                 if ($v['place_id'] !== null && $ranges === null) {
                     $result['info']['no_usable_hours']++;
                 } elseif ($ranges !== null && $end > $start) {
@@ -1578,6 +1695,12 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                         $text = $ranges === [] ? 'closed all day' : implode(', ', array_map(static fn($r) => hm($r[0]) . '-' . hm($r[1]), $ranges));
                         $add('OPEN_HOURS', 'violation', $dayNo, $title, ($isMeal ? 'meal ' : 'visit ') . hm($start) . '-' . hm($end) . ' on ' . date('D', strtotime($date)) . " {$date}, open {$text}");
                     }
+                }
+                // PRAYER: no visit to a mosque overlaps the Friday prayers.
+                if (!$isMeal && $v['place_id'] !== null && (int)date('N', strtotime($date)) === 5 && $end > $start
+                    && (strtolower((string)($v['place_type'] ?? '')) === 'mosque' || preg_match('/outside prayer times/i', (string)($v['opening_hours'] ?? '')))
+                    && $start < FRIDAY_PRAYER[1] && $end > FRIDAY_PRAYER[0]) {
+                    $add('PRAYER', 'violation', $dayNo, $title, 'mosque visit ' . hm($start) . '-' . hm($end) . ' on a Friday overlaps the prayers ' . hm(FRIDAY_PRAYER[0]) . '-' . hm(FRIDAY_PRAYER[1]));
                 }
                 // ACCESS: heat
                 if (!$isMeal && hasNeed($tags, ['avoid_heat']) && (int)($v['is_outdoor'] ?? 0) === 1) {
@@ -1690,6 +1813,22 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 if ($travel < $minLow || $travel > $minHigh) {
                     $add('LEGS', 'violation', $dayNo, $title, "stored {$travel} min for {$km} km, nominal {$nominal} min (allowed {$minLow}-{$minHigh})");
                 }
+                // PEAK (estimates only): the stored minutes are the estimate times the rush-hour
+                // factor of the hour the leg leaves; the first leg of day 1 as the scenario expects.
+                if (!measuredFigures()) {
+                    $factor = peakFactorJudged($conn, $pref['transport_type'], $date, $departAt, $previous, $scenario);
+                    $expected = $factor > 1.0 ? (int)round($nominal * $factor) : $nominal;
+                    if (abs($travel - $expected) > PEAK_SLACK_MIN) {
+                        $add('PEAK', 'violation', $dayNo, $title, sprintf('stored %d min, leaving %s: estimate %d min x %.1f = %d min', $travel, hm($departAt), $nominal, $factor, $expected));
+                    }
+                    if ($isFirstOfTrip && isset($scenario['first_leg_peak'])) {
+                        $peaked = $travel >= (int)round($nominal * PEAK_FACTORS[$pref['transport_type']]) - PEAK_SLACK_MIN && $travel > $nominal;
+                        if ($scenario['first_leg_peak'] !== $peaked) {
+                            $add('PEAK', 'violation', $dayNo, $title, sprintf('first leg %d min for an estimate of %d min, leaving %s: the rush-hour factor was %s', $travel, $nominal, hm($departAt),
+                                $scenario['first_leg_peak'] ? 'expected and is missing' : 'not expected but applied'));
+                        }
+                    }
+                }
             }
 
             // DISTANCE (the legs to and from a meal place count)
@@ -1713,9 +1852,19 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             $nominal = nominalMinutes($pref['transport_type'], $backKm);
             $backMin = measuredFigures() ? max(0, (int)floor(LEG_MIN_LOW * $nominal) - 2) : $nominal;
             $leaves = (int)toMinutes($lastRow['end_time']);
-            // BASE: back by the end of the day window, the leg back inside the hard daily distance.
-            if ($leaves + $backMin > $profile['hard_end']) {
-                $add('BASE', 'violation', $dayNo, (string)$lastRow['item_title'], sprintf('leaves %s, %d min back to where the night is spent, day ends %s', hm($leaves), $backMin, hm($profile['hard_end'])));
+            // BASE: back by the end of the day window from the last visit (a dinner near the base
+            // after the return may end later), the leg back inside the hard daily distance.
+            $lastVisitRow = null;
+            foreach ($dayRows as $r) if (!$isMealRow($r) && toMinutes($r['end_time']) !== null) $lastVisitRow = $r;
+            if ($lastVisitRow !== null) {
+                $vFrom = [(float)($lastVisitRow['item_latitude'] ?? $lastVisitRow['place_lat']), (float)($lastVisitRow['item_longitude'] ?? $lastVisitRow['place_lng'])];
+                $vStraight = haversineKm($vFrom[0], $vFrom[1], $night[0], $night[1]);
+                $vNominal = nominalMinutes($pref['transport_type'], measuredFigures() ? LEG_KM_LOW * $vStraight : $vStraight * ROAD_FACTOR);
+                $vBack = measuredFigures() ? max(0, (int)floor(LEG_MIN_LOW * $vNominal) - 2) : $vNominal;
+                $vLeaves = (int)toMinutes($lastVisitRow['end_time']);
+                if ($vLeaves + $vBack > $profile['hard_end']) {
+                    $add('BASE', 'violation', $dayNo, (string)$lastVisitRow['item_title'], sprintf('leaves %s, %d min back to where the night is spent, day ends %s', hm($vLeaves), $vBack, hm($profile['hard_end'])));
+                }
             }
             if ($dayKm + $backKm > $profile['hard_km']) {
                 $add('BASE', 'violation', $dayNo, null, sprintf('day travels %.1f km with the way back to where the night is spent, hard limit %.1f km', $dayKm + $backKm, $profile['hard_km']));
@@ -1845,6 +1994,27 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             if ($placeName !== '' && (str_contains((string)$n['item_title'], $placeName) || str_contains((string)$n['notes'], $placeName))) $named = true;
         }
         if (!$named) $add('MUST', 'violation', null, $placeName, 'must-see place neither in the itinerary nor named in a note row');
+        elseif (!empty($scenario['musts_planned'])) $add('MUST', 'violation', null, $placeName, 'must-see place only named in a note, but the scenario has a day it can be visited on');
+    }
+
+    // HOLIDAY: a trip date that is a public holiday in the state of that day (its first stop's
+    // state) carries a day note naming the holiday and saying that opening hours may differ;
+    // other dates carry no holiday note.
+    $dayNotes = storedDayNotes($conn, $itineraryId);
+    if ($dayNotes !== null) {
+        foreach ($byDay as $d => $dayVisits) {
+            $date = (new DateTimeImmutable((string)$it['start_date']))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
+            $names = holidaysJudged($conn, $scenario, $date, (string)($dayVisits[0]['state'] ?? ''));
+            $note = (string)($dayNotes[$d] ?? '');
+            if ($names) {
+                foreach ($names as $holiday) {
+                    if (!str_contains($note, $holiday)) $add('HOLIDAY', 'violation', $d, null, "{$date} is {$holiday}, but the day note does not name it (\"{$note}\")");
+                }
+                if (!str_contains(strtolower($note), 'opening hours may differ')) $add('HOLIDAY', 'violation', $d, null, "the holiday note of {$date} does not say that opening hours may differ");
+            } elseif (stripos($note, 'holiday') !== false) {
+                $add('HOLIDAY', 'violation', $d, null, "{$date} is no public holiday there, but the day note says \"{$note}\"");
+            }
+        }
     }
     $liked = array_filter($resolved['ratings'], static fn($r) => $r >= 4);
     if ($liked) {
@@ -2087,6 +2257,91 @@ function openingRanges(string $text, string $date): ?array
         return $weekdays === null || in_array($weekday, $weekdays, true) ? $hours : [];
     }
     return null;
+}
+
+/**
+ * When a place row (opening_hours, place_type, category, state) is open on a date by the rules
+ * about time: office hours only on the working days of its state that are no public holiday
+ * there; a text with usable hours on no weekday by ASSUMED_HOURS (type), else
+ * ASSUMED_BY_CATEGORY; null for a festival without usable hours (its dates only).
+ */
+function hoursJudged(mysqli $conn, array $row, string $date, array $scenario): ?array
+{
+    $text = (string)($row['opening_hours'] ?? '');
+    $lower = strtolower(trim($text));
+    if ($lower !== '' && !preg_match('/\d/', $lower) && !str_contains($lower, '|') && preg_match('/office hours/', $lower)) {
+        $state = strtolower(trim((string)($row['state'] ?? '')));
+        $rest = in_array($state, REST_DAYS_FRI_SAT, true) ? [5, 6] : [6, 7];
+        if (in_array((int)date('N', strtotime($date)), $rest, true) || holidaysJudged($conn, $scenario, $date, $state)) return [];
+        return [[9 * 60, 17 * 60]];
+    }
+    $usable = false;
+    for ($i = 0; $i < 7 && !$usable; $i++) $usable = openingRanges($text, date('Y-m-d', strtotime('2026-11-16 +' . $i . ' days'))) !== null;
+    if ($usable) return openingRanges($text, $date);
+    $type = strtolower(trim((string)($row['place_type'] ?? '')));
+    if ($type !== '' && $type !== 'other' && array_key_exists($type, ASSUMED_HOURS)) return ASSUMED_HOURS[$type];
+    $category = strtolower(trim((string)($row['category'] ?? '')));
+    return array_key_exists($category, ASSUMED_BY_CATEGORY) ? ASSUMED_BY_CATEGORY[$category] : ASSUMED_BY_CATEGORY['culture'];
+}
+
+/**
+ * The public holidays of a date in a state ('' or null: the national ones only): FIXED_HOLIDAYS,
+ * the scenario's own 'holidays', and the rows of the table public_holidays that the admin keeps.
+ *
+ * @return string[] names
+ */
+function holidaysJudged(mysqli $conn, array $scenario, string $date, ?string $state): array
+{
+    static $table = null;
+    if ($table === null) {
+        $table = [];
+        $res = $conn->query("SHOW TABLES LIKE 'public_holidays'");
+        if ($res && $res->num_rows > 0) {
+            foreach ($conn->query('SELECT holiday_date, name, states FROM public_holidays') as $h) {
+                $table[(string)$h['holiday_date']][] = [(string)$h['name'], $h['states'] !== null && trim((string)$h['states']) !== '' ? array_map('trim', explode(',', (string)$h['states'])) : null];
+            }
+        }
+    }
+    $state = strtolower(trim((string)$state));
+    $entries = array_merge($table[$date] ?? [], (array)($scenario['holidays'][$date] ?? []));
+    foreach (FIXED_HOLIDAYS as [$monthDay, $name, $states]) {
+        if (substr($date, 5) !== $monthDay) continue;
+        if ($states === null) $entries[] = [$name, null];
+        elseif ($state !== '' && !in_array($state, explode(',', substr($states, 4)), true)) $entries[] = [$name, [$state]];
+    }
+    $names = [];
+    foreach ($entries as [$name, $states]) {
+        if ($states === null || ($state !== '' && in_array($state, array_map('strtolower', (array)$states), true))) $names[$name] = true;
+    }
+    return array_keys($names);
+}
+
+/** The rush-hour factor of a leg (PEAK_*): a working day (Monday to Friday, no national holiday), a rush hour, a start inside a box. */
+function peakFactorJudged(mysqli $conn, string $transport, string $date, int $depart, array $from, array $scenario): float
+{
+    $factor = PEAK_FACTORS[$transport] ?? 1.0;
+    if ($factor <= 1.0) return 1.0;
+    $inWindow = false;
+    foreach (PEAK_WINDOWS as [$a, $b]) if ($depart >= $a && $depart < $b) $inWindow = true;
+    $inBox = false;
+    foreach (PEAK_BOXES as [$south, $north, $west, $east]) if ($from[0] >= $south && $from[0] <= $north && $from[1] >= $west && $from[1] <= $east) $inBox = true;
+    if (!$inWindow || !$inBox) return 1.0;
+    if ((int)date('N', strtotime($date)) >= 6 || holidaysJudged($conn, $scenario, $date, null)) return 1.0;
+    return $factor;
+}
+
+/** The day notes of an itinerary (itinerary_days.day_note): day => note; null without the column. */
+function storedDayNotes(mysqli $conn, int $itineraryId): ?array
+{
+    $res = $conn->query("SHOW COLUMNS FROM itinerary_days LIKE 'day_note'");
+    if (!$res || $res->num_rows === 0) return null;
+    $stmt = $conn->prepare('SELECT day_no, day_note FROM itinerary_days WHERE itinerary_id = ?');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $out = [];
+    foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) $out[(int)$row['day_no']] = (string)($row['day_note'] ?? '');
+    $stmt->close();
+    return $out;
 }
 
 function clockMinutes(int $hour, int $minute, string $ampm): ?int

@@ -11,8 +11,10 @@
 //      radius is the transport's recommended daily distance over 2 x ROAD_FACTOR (a return trip
 //      to the edge of the area is one recommended day), at least MIN_RADIUS_KM. The base of an
 //      area is the most central of its best places (the one with the least value-weighted
-//      distance to the others), named after its district and state; every place then belongs to
-//      the nearest base within the radius.
+//      distance to the others), named "district, state"; every place then belongs to the
+//      nearest base within the radius. A place is valued as the day search would value it
+//      (ItineraryDayBuilder::layoutValue(): a place outside the preferred districts or interests
+//      less the price of that relax level).
 //   2. Which areas and how many days. The area of a must-see place is always used, and so is
 //      the best area of each state the traveller chose (while there are days). Then day by day:
 //      a day goes where it adds most value: one more day in an area used already (the value of
@@ -112,6 +114,7 @@ final class TripLayout
                 $group = $groups[$g];
                 $days[$day] = [
                     'region' => $r,
+                    'state' => (string)$region['state'],
                     'base' => $region['base'],
                     'sector' => $group['sector'],
                     'radius' => round($radius, 2),
@@ -188,17 +191,13 @@ final class TripLayout
             if ($nearest !== null) $regions[$nearest[1]]['members'][] = $id;
         }
         $regions = array_values(array_filter($regions, static fn(array $r): bool => $r['members'] !== []));
-        // Names: district and state of the base place; a name used twice also names the place.
-        $names = [];
+        // Names: "district, state" of the base place, and nothing more (the state alone when the
+        // district is missing or is the state).
         foreach ($regions as $i => $region) {
             $p = $members[$region['base_id']]['place'];
             $district = trim((string)($p['district'] ?? ''));
             $state = trim((string)($p['state'] ?? ''));
-            $names[$i] = $district !== '' && strcasecmp($district, $state) !== 0 ? $district . ', ' . $state : ($state !== '' ? $state : (string)$p['name']);
-        }
-        $counts = array_count_values($names);
-        foreach ($regions as $i => $region) {
-            $name = $counts[$names[$i]] > 1 ? $names[$i] . ' (near ' . $members[$region['base_id']]['place']['name'] . ')' : $names[$i];
+            $name = $district !== '' && strcasecmp($district, $state) !== 0 ? $district . ', ' . $state : ($state !== '' ? $state : (string)$p['name']);
             $regions[$i]['base'] = ['name' => mb_substr($name, 0, 255), 'lat' => $region['point'][0], 'lng' => $region['point'][1]];
         }
         return $regions;
@@ -422,7 +421,7 @@ final class TripLayout
     {
         $festival = PlannerRules::festivalDates($place);
         if ($festival !== null && ($date < $festival[0] || $date > $festival[1])) return false;
-        return OpeningHours::rangesOn((string)($place['opening_hours'] ?? ''), $date) !== [];
+        return PlannerRules::hoursOn($place, $date) !== [];
     }
 
     /** Straight-line km (an equirectangular approximation: these distances are short). */

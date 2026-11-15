@@ -49,11 +49,13 @@ $preferredStates = (string)($it["preferred_states"] ?? "");
 
 // ---- Load all itinerary items with place details ----
 $mealSlotSelect = PlannerRules::hasColumn($conn, 'itinerary_items', 'meal_slot') ? 'ii.meal_slot' : 'NULL AS meal_slot';
+// The place type (migration 20261119_place_types.sql), for opening hours the planner assumed.
+$placeTypeSelect = PlannerRules::hasColumn($conn, 'cultural_places', 'place_type') ? 'cp.place_type' : 'NULL AS place_type';
 $stmt = $conn->prepare("
     SELECT ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, ii.place_id, {$mealSlotSelect},
            ii.item_title, ii.start_time, ii.end_time, ii.estimated_cost, ii.distance_km, ii.travel_time_min, ii.notes,
            cp.latitude, cp.longitude, cp.address, cp.category, cp.state, cp.district,
-           cp.opening_hours, cp.description, cp.rating
+           cp.opening_hours, {$placeTypeSelect}, cp.description, cp.rating
     FROM itinerary_items ii
     LEFT JOIN cultural_places cp ON cp.place_id = ii.place_id
     WHERE ii.itinerary_id = ?
@@ -66,6 +68,8 @@ $stmt->close();
 
 $days = [];
 while ($r = $res->fetch_assoc()) {
+    // The hours of a place as the planner reads them: assumed hours are marked "(assumed)".
+    if ($r['place_id'] !== null) $r['opening_hours'] = OpeningHours::shown($r);
     $days[(int)$r["day_no"]][] = $r;
 }
 $totalDays = (int)$it["total_days"];

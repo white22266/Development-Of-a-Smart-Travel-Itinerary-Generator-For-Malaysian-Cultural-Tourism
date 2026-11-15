@@ -145,8 +145,11 @@ final class PlannerCandidates
 
     private static function query(mysqli $conn, array $where, array $states): array
     {
+        // The finer type (migration 20261119_place_types.sql): the rules read it for assumed
+        // opening hours and the Friday prayers (OpeningHours, PlannerRules::isMosque()).
+        $type = PlannerRules::hasColumn($conn, 'cultural_places', 'place_type') ? 'place_type' : 'NULL AS place_type';
         $sql = "
-            SELECT place_id, state, district, category, name, description, address, latitude, longitude,
+            SELECT place_id, state, district, category, {$type}, name, description, address, latitude, longitude,
                    opening_hours, festival_start_date, festival_end_date, estimated_cost, entrance_fee, is_free,
                    halal_status, is_outdoor, visit_duration_min, best_time_to_visit, dress_code_required,
                    avg_rating, rating

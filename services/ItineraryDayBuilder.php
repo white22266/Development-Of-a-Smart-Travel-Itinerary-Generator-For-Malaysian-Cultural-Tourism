@@ -12,8 +12,11 @@
 // would take next (alternatives, spares) for the repair step and for planning a day again.
 //
 // The candidates: the day's group (the places of its sector around the base, TripLayout) first,
-// at most SEARCH_CANDIDATES of them by value less the price of the way there and back; only when
-// that day falls short of the target are the best other places of the area added.
+// at most SEARCH_CANDIDATES of them by value less the price of the way there and back (a place
+// outside the preferred districts or interests valued after its relax price, layoutValue());
+// a second search adds the best other places of the area, and its day is taken when it ranks
+// higher. Times: every visit and meal starts on a multiple of five minutes, every leg takes
+// its rush-hour minutes (PlannerRules::peakMinutes()), opening hours as PlannerRules::hoursOn().
 //
 // Soft preferences: a stop that keeps them all is level 0. A stop that only a relaxed level
 // allows costs RELAX_PRICE per level and says so in its notes:
@@ -150,7 +153,9 @@ final class ItineraryDayBuilder
         }
         $own = $this->preselect($own, $anchor, self::SEARCH_CANDIDATES);
         $best = $this->beam(array_merge($musts, $own), $musts, $day);
-        if (count($best['stops']) < (int)$this->profile['target'] && $others) {
+        // The best other places of the area are always tried too; the wider day is kept only
+        // when it ranks higher (must-see places, stops, value), so the group stays first.
+        if ($others) {
             $wider = $this->beam(array_merge($musts, $own, $this->preselect($others, $anchor, self::SEARCH_CANDIDATES)), $musts, $day);
             if (self::rank($wider) > self::rank($best)) $best = $wider;
         }
@@ -171,7 +176,7 @@ final class ItineraryDayBuilder
         $ranked = [];
         foreach ($places as $place) {
             $seg = $this->route->getSegment((float)$anchor[0], (float)$anchor[1], (float)$place['latitude'], (float)$place['longitude']);
-            $ranked[] = [$this->placeValue($place) - 2 * self::TRAVEL_PRICE * (int)$seg['travel_time_min'], -(int)$place['place_id'], $place];
+            $ranked[] = [$this->layoutValue($place) - 2 * self::TRAVEL_PRICE * (int)$seg['travel_time_min'], -(int)$place['place_id'], $place];
         }
         usort($ranked, static fn(array $a, array $b): int => [$b[0], $b[1]] <=> [$a[0], $a[1]]);
         return array_column(array_slice($ranked, 0, $limit), 2);
@@ -426,6 +431,21 @@ final class ItineraryDayBuilder
         $rating = max((float)($place['avg_rating'] ?? 0), (float)($place['rating'] ?? 0));
         if ($rating > 0) $value += min(8.0, ($rating / 5) * 8);
         return $this->values[$id] = $value;
+    }
+
+    /**
+     * What a place is worth to the trip layout (TripLayout weighs areas and groups by it): its
+     * placeValue() less the price of the relax level the day search would need to take it, so a
+     * place outside the preferred districts (level 2) or interests (level 3) counts as the
+     * search counts it, not at full value.
+     */
+    public function layoutValue(array $place): float
+    {
+        $p = $this->profile;
+        $level = 0;
+        if (!in_array(strtolower((string)$place['category']), $p['interests'], true)) $level = 3;
+        elseif ($p['districts'] && !in_array(strtolower((string)$place['district']), $p['districts'], true)) $level = 2;
+        return $this->placeValue($place) - self::RELAX_PRICE * $level;
     }
 
     /** Why a must-see place found no slot in a day: at the day's start, or else at its end. */
@@ -707,6 +727,15 @@ final class ItineraryDayBuilder
         return isset($day['rain']) && is_numeric($day['rain']) ? max(0, min(100, (int)$day['rain'])) : null;
     }
 
+    /** The words that start the note of a stop whose opening hours were assumed (OpeningHours::ASSUMED). */
+    public const ASSUMED_NOTE = 'opening hours assumed';
+
+    /** "opening hours assumed (09:00-17:00): check before you go". */
+    public static function assumedNote(array $place): string
+    {
+        return self::ASSUMED_NOTE . ' (' . OpeningHours::assumedText($place) . '): check before you go';
+    }
+
     /** The notes stored with a stop: the format the itinerary pages read ("Reason:" ...). */
     public static function notes(array $stop, array $profile): string
     {
@@ -720,8 +749,9 @@ final class ItineraryDayBuilder
             }
             : ((int)$stop['tier'] === 1 ? 'interest match within the selected area' : 'nearest available place within the selected area');
         // Whether a food visit is the meal is known only once the day is timed in its final order.
-        $reasons = array_filter((array)$stop['reasons'], static fn($r): bool => !str_starts_with((string)$r, 'also your '));
+        $reasons = array_filter((array)$stop['reasons'], static fn($r): bool => !str_starts_with((string)$r, 'also your ') && !str_starts_with((string)$r, self::ASSUMED_NOTE));
         if (!empty($stop['food_meal'])) $reasons[] = 'also your ' . $stop['food_meal'];
+        if (OpeningHours::isAssumed($place)) $reasons[] = self::assumedNote($place);
         $reasons = implode('; ', array_values(array_unique(array_filter(array_diff($reasons, ['interest match', 'in a preferred district'])))));
         $text = 'State: ' . $place['state'] . ' | District: ' . (($place['district'] ?? '') !== '' ? $place['district'] : '-')
             . ' | Category: ' . $place['category'] . ' | Tier: ' . (int)$stop['tier']
@@ -763,6 +793,8 @@ final class ItineraryDayBuilder
         $fail = static fn(string $reason): array => ['ok' => false, 'reason' => $reason, 'start' => 0, 'end' => 0, 'wait' => 0];
         $point = [(float)$place['latitude'], (float)$place['longitude']];
         $seg = static fn(array $a, array $b): array => $route->getSegment((float)$a[0], (float)$a[1], (float)$b[0], (float)$b[1]);
+        $date = (string)$at['date'];
+        // $leg stays the leg as measured or estimated; peak() gives its minutes at the hour it leaves.
         $leg ??= $seg($at['point'], $point);
         $time = static function (int $arrive, array $leg, bool $counts, float $dayKm, float $extraKm) use ($place, $at, $profile): array {
             $slot = [
@@ -785,7 +817,10 @@ final class ItineraryDayBuilder
         };
 
         $dayKm = (float)($at['day_km'] ?? 0);
-        $check = $time((int)$at['clock'] + (int)$leg['travel_time_min'], $leg, (bool)($at['leg_counts'] ?? true), $dayKm, 0.0);
+        // The leg leaves when the visit before it ended (the day's start for the first leg).
+        $direct = self::peak($profile, $leg, $date, (int)($at['prev_end'] ?? $at['clock']), $at['point']);
+        $check = $time((int)$at['clock'] + (int)$direct['travel_time_min'], $direct, (bool)($at['leg_counts'] ?? true), $dayKm, 0.0);
+        $used = $direct;   // the leg into the visit as timed
         $meals = [];
         $mealKm = 0.0;
         $mealMin = 0;
@@ -809,13 +844,13 @@ final class ItineraryDayBuilder
             $chosen = null;
             $reason = 'MEAL';
             $usual = static fn(): array => array_filter([
-                self::mealAtPlace($route, $profile, $mealIndex, $slotName, $from, $point, $leg, (int)$after, (string)$at['date'], $exclude),
+                self::mealAtPlace($route, $profile, $mealIndex, $slotName, $from, $point, $leg, (int)$after, $date, $exclude),
                 self::mealBreak($profile, $slotName, (int)$after),
             ]);
             $choice = $at['meal_choice'][$slotName] ?? null;
             if (is_array($choice)) {
                 $wanted = !empty($choice['place'])
-                    ? self::mealAtPlace($route, $profile, self::mealIndex([$choice['place']], (float)$profile['meal_radius_km']), $slotName, $from, $point, $leg, (int)$after, (string)$at['date'], $exclude)
+                    ? self::mealAtPlace($route, $profile, self::mealIndex([$choice['place']], (float)$profile['meal_radius_km']), $slotName, $from, $point, $leg, (int)$after, $date, $exclude)
                     : self::mealBreak($profile, $slotName, (int)$after);
                 if ($wanted !== null) $wanted['chosen'] = true;
                 $options = array_merge($wanted !== null ? [$wanted] : [], !empty($choice['strict']) ? [] : $usual());
@@ -823,13 +858,15 @@ final class ItineraryDayBuilder
                 $options = $usual();
             }
             foreach ($options as $meal) {
-                $into = $meal['point'] !== null ? $seg($meal['point'], $point) : $leg;
+                // After the meal the leg into the visit leaves when the meal ends.
+                $base = $meal['point'] !== null ? $seg($meal['point'], $point) : $leg;
+                $into = self::peak($profile, $base, $date, (int)$meal['end'], $meal['point'] ?? $from);
                 $again = $time($meal['end'] + (int)$into['travel_time_min'], $into, true, $dayKm + $meal['km'], $mealKm + $meal['km']);
-                if ($again['ok']) { $chosen = [$meal, $into, $again]; break; }
+                if ($again['ok']) { $chosen = [$meal, $base, $into, $again]; break; }
                 $reason = (string)$again['reason'];
             }
             if ($chosen === null) return $fail($reason);
-            [$meal, $leg, $check] = $chosen;
+            [$meal, $leg, $used, $check] = $chosen;
             $meals[] = $meal;
             $mealKm += $meal['km'];
             $mealMin += $meal['min'];
@@ -843,8 +880,8 @@ final class ItineraryDayBuilder
         }
         if (!$check['ok']) return $fail((string)$check['reason']);
         return $check + [
-            'km' => round((float)$leg['distance_km'], 2),
-            'min' => (int)$leg['travel_time_min'],
+            'km' => round((float)$used['distance_km'], 2),
+            'min' => (int)$used['travel_time_min'],
             'meals' => $meals,
             'meal_km' => round($mealKm, 2),
             'meal_min' => $mealMin,
@@ -872,6 +909,7 @@ final class ItineraryDayBuilder
         $code = (string)($at['finish_code'] ?? 'BASE');
         $fail = static fn(string $reason): array => ['ok' => false, 'reason' => $reason, 'start' => 0, 'end' => 0, 'wait' => 0];
         $point = [(float)$base['latitude'], (float)$base['longitude']];
+        $date = (string)$at['date'];
         $leg ??= $route->getSegment((float)$at['point'][0], (float)$at['point'][1], $point[0], $point[1]);
         $after = $at['prev_end'] ?? null;
         $done = static fn(int $arrive, array $into, array $meals, float $mealKm, int $mealMin): array => [
@@ -880,6 +918,8 @@ final class ItineraryDayBuilder
             'meals' => $meals, 'meal_km' => round($mealKm, 2), 'meal_min' => $mealMin, 'idle' => 0, 'food_meal' => null, 'arrive' => $arrive,
         ];
         if ($after === null) return $done((int)$at['clock'], ['distance_km' => 0.0, 'travel_time_min' => 0], [], 0.0, 0);
+        // The way back leaves when the last visit ends (peak hours).
+        $leg = self::peak($profile, $leg, $date, (int)$after, $at['point']);
         $dayKm = (float)($at['day_km'] ?? 0);
         $end = (int)$profile['end'];
         $hard = (float)$profile['hard_km'];
@@ -891,19 +931,24 @@ final class ItineraryDayBuilder
             if ($arrive > $end || $dayKm + (float)$leg['distance_km'] > $hard) return $fail($code);
             return $done($arrive, $leg, [], 0.0, 0);
         }
+        // A dinner near the base is not touring: the traveller is back in the base's area by the
+        // end of the day window, and the dinner begins by the latest start of its window; it may
+        // end after the day window.
         $exclude = (array)($at['meal_used'] ?? []);
-        $atPlace = static function (array $index) use ($route, $profile, $point, $at, $after, $leg, $open, $close, $length, $end, $dayKm, $hard, $exclude): ?array {
+        $atPlace = static function (array $index) use ($route, $profile, $point, $at, $after, $leg, $open, $close, $length, $end, $dayKm, $hard, $exclude, $date): ?array {
             $radius = (float)$profile['meal_radius_km'];
             $best = null;
             foreach (self::nearMeals($index, [$point]) as $id => $place) {
                 if (isset($exclude[$id]) || PlannerRules::twinIn($profile, $id, $exclude) !== null) continue;
                 $here = [(float)$place['latitude'], (float)$place['longitude']];
-                $in = $route->getSegment((float)$at['point'][0], (float)$at['point'][1], $here[0], $here[1]);
-                $out = $route->getSegment($here[0], $here[1], $point[0], $point[1]);
-                if ((float)$out['distance_km'] > $radius) continue;
+                $in = self::peak($profile, $route->getSegment((float)$at['point'][0], (float)$at['point'][1], $here[0], $here[1]), $date, (int)$after, $at['point']);
+                $outBase = $route->getSegment($here[0], $here[1], $point[0], $point[1]);
+                if ((float)$outBase['distance_km'] > $radius) continue;
                 $arrive = (int)$after + (int)$in['travel_time_min'];
-                $start = OpeningHours::earliestStart((string)($place['opening_hours'] ?? ''), (string)$at['date'], max($arrive, $open), $length, min($end, $close + $length));
-                if ($start === null || $start + $length + (int)$out['travel_time_min'] > $end) continue;
+                if ($arrive > $end) continue;
+                $start = OpeningHours::earliestIn(PlannerRules::hoursOn($place, $date), max($arrive, $open), $length, $close + $length, [], PlannerRules::TIME_STEP);
+                if ($start === null) continue;
+                $out = self::peak($profile, $outBase, $date, $start + $length, $here);
                 if ($dayKm + (float)$in['distance_km'] + (float)$out['distance_km'] > $hard) continue;
                 $detour = (float)$in['distance_km'] + (float)$out['distance_km'] - (float)$leg['distance_km'];
                 $rank = [round($detour, 3), $id];
@@ -916,10 +961,10 @@ final class ItineraryDayBuilder
             }
             return $best !== null ? [$best[1], $best[2]] : null;
         };
-        $atBase = static function () use ($after, $leg, $open, $close, $length, $end, $dayKm, $hard): ?array {
+        $atBase = static function () use ($after, $leg, $open, $close, $end, $dayKm, $hard, $length): ?array {
             $arrive = (int)$after + (int)$leg['travel_time_min'];
-            $start = max($arrive, $open);
-            if ($start > $close || $start + $length > $end || $dayKm + (float)$leg['distance_km'] > $hard) return null;
+            $start = PlannerRules::roundUp(max($arrive, $open));
+            if ($arrive > $end || $start > $close || $dayKm + (float)$leg['distance_km'] > $hard) return null;
             return [['slot' => 'dinner', 'place' => null, 'point' => null, 'start' => $start, 'end' => $start + $length, 'km' => 0.0, 'min' => 0,
                      'idle' => $start - $arrive, 'detour' => 0.0, 'at_base' => true], $leg];
         };
@@ -958,11 +1003,11 @@ final class ItineraryDayBuilder
             // Not a place of the trip, nor the same landmark as one (PlannerRules::sameLandmarks()).
             if (isset($exclude[$id]) || PlannerRules::twinIn($profile, $id, $exclude) !== null) continue;
             $here = [(float)$place['latitude'], (float)$place['longitude']];
-            $in = $route->getSegment((float)$from[0], (float)$from[1], $here[0], $here[1]);
+            $in = self::peak($profile, $route->getSegment((float)$from[0], (float)$from[1], $here[0], $here[1]), $date, $after, $from);
             $out = $route->getSegment($here[0], $here[1], (float)$to[0], (float)$to[1]);
             if ((float)$in['distance_km'] > $radius && (float)$out['distance_km'] > $radius) continue;
             $arrive = $after + (int)$in['travel_time_min'];
-            $start = OpeningHours::earliestStart((string)($place['opening_hours'] ?? ''), $date, max($arrive, $open), $length, min((int)$profile['end'], $close + $length));
+            $start = OpeningHours::earliestIn(PlannerRules::hoursOn($place, $date), max($arrive, $open), $length, min((int)$profile['end'], $close + $length), [], PlannerRules::TIME_STEP);
             if ($start === null || $start - $arrive > (int)$profile['rest'] + PlannerRules::MAX_WAIT_MIN) continue;
             $detour = (float)$in['distance_km'] + (float)$out['distance_km'] - (float)$direct['distance_km'];
             $rank = [round($detour, 3), $id];
@@ -976,11 +1021,19 @@ final class ItineraryDayBuilder
         return $best[1] ?? null;
     }
 
+    /** A leg with its minutes at the hour it leaves from $from (PlannerRules::peakMinutes(): peak hours). */
+    private static function peak(array $profile, array $leg, string $date, int $depart, ?array $from): array
+    {
+        if ($from === null) return $leg;
+        $minutes = PlannerRules::peakMinutes((int)$leg['travel_time_min'], $date, $depart, $from, (string)($profile['transport'] ?? 'car'));
+        return $minutes === (int)$leg['travel_time_min'] ? $leg : ['travel_time_min' => $minutes] + $leg;
+    }
+
     /** A meal break without a place, right where the traveller is; null when it cannot be had. */
     private static function mealBreak(array $profile, string $slot, int $after): ?array
     {
         [$open, $close] = PlannerRules::MEAL_WINDOWS[$slot];
-        $start = max($after, $open);
+        $start = PlannerRules::roundUp(max($after, $open));
         $end = $start + (int)$profile['meal_min'];
         if ($start > $close || $end > (int)$profile['end'] || $start - $after > (int)$profile['rest'] + PlannerRules::MAX_WAIT_MIN) return null;
         return ['slot' => $slot, 'place' => null, 'point' => null, 'start' => $start, 'end' => $end, 'km' => 0.0, 'min' => 0,
@@ -1063,6 +1116,7 @@ final class ItineraryDayBuilder
                 . ' | Category: food | Meal: ' . $slot . ' | Reason: ' . ucfirst($slot) . ' at the food place with the least detour between your stops ('
                 . number_format((float)$meal['detour'], 1) . ' km extra)' . $diet . '; open for the whole meal; the cost is part of the daily meal estimate';
         }
+        if ($meal['place'] !== null && OpeningHours::isAssumed($meal['place'])) $text .= '; ' . self::assumedNote($meal['place']);
         return mb_strlen($text) <= 1000 ? $text : mb_substr($text, 0, 997) . '...';
     }
 
