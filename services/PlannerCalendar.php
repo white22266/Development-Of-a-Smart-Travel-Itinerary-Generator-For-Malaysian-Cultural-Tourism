@@ -3,14 +3,13 @@
 // The calendar facts the itinerary planner needs: public holidays, each state's weekend, the
 // Friday prayer break and rush-hour factors for travel times. All static, no database.
 //
-// Public holidays come from Nager.Date (https://date.nager.at, free, no key, open source), one
-// request per year, cached for a month through OpenDataHttp. NOTE: when this was written the
-// service answered "204 No Content" for Malaysia (MY is not among its AvailableCountries), so
-// holidays() is empty in practice. Callers must work without it; fixedHolidays() lists the
-// national holidays that fall on the same date every year, for a caller that wants a baseline.
-// Nothing here makes a request when ROUTING_ESTIMATES_ONLY is set (offline).
+// Public holidays: no free service lists Malaysia's (Nager.Date has none), and most of them move
+// every year (Chinese New Year, Hari Raya, Wesak, Deepavali, Awal Muharram, the Prophet's
+// birthday, state rulers' birthdays). So the admin enters them from the official announcement
+// (admin/admin_holidays.php, table public_holidays) and loadHolidays() reads them. Only the few
+// holidays with a fixed date come from a rule, fixedHolidays(). Without loadHolidays() the
+// planner sees the fixed ones only. This class makes no network request.
 
-require_once __DIR__ . '/OpenDataHttp.php';
 require_once __DIR__ . '/OsmDataService.php';   // STATE_ISO only
 
 class PlannerCalendar
@@ -59,19 +58,19 @@ class PlannerCalendar
 
     private const STATE_ALIASES = ['pulau pinang' => 'Penang', 'penang island' => 'Penang', 'wp kuala lumpur' => 'Kuala Lumpur', 'kl' => 'Kuala Lumpur'];
 
-    private const HOLIDAY_TTL = 2592000;   // a month
-    private const NONE_TTL = 86400;        // a year the service has nothing for is asked again after a day
+    /** States that do not observe New Year's Day on 1 January. */
+    private const NO_NEW_YEAR_STATES = ['Johor', 'Kedah', 'Kelantan', 'Perlis', 'Terengganu'];
 
     /** @var array<int,array> holidays handed in with setHolidays() */
     private static array $override = [];
-    /** @var array<int,array> holidays already read in this PHP run */
-    private static array $memo = [];
+    /** @var array<int,array> holidays read from public_holidays, by year */
+    private static array $loaded = [];
 
     // ------------------------------------------------------------------ holidays
 
     /**
-     * The public holidays of Malaysia in a year. Empty when the service cannot be reached, has
-     * nothing for Malaysia, or the mode is offline; never throws.
+     * The public holidays of Malaysia in a year: the fixed ones, the ones read by loadHolidays()
+     * and anything handed in with setHolidays(), merged. Never throws, makes no request.
      *
      * @return array<string,array<int,array{0:string,1:?string[]}>> date (Y-m-d) => list of
      *         [name, states]; states is null for a national holiday, otherwise the state names
@@ -79,40 +78,53 @@ class PlannerCalendar
      */
     public static function holidays(int $year): array
     {
-        if (isset(self::$override[$year])) return self::$override[$year];
-        if (isset(self::$memo[$year])) return self::$memo[$year];
-        if (self::offline()) return [];   // not remembered: the mode may change
-
-        $result = [];
-        try {
-            $flag = OpenDataHttp::cachePath('date.nager.at', "MY_{$year}_none.flag");
-            if (is_file($flag) && (time() - (int)filemtime($flag)) < self::NONE_TTL) {
-                return self::$memo[$year] = [];
+        $out = self::fixedHolidays($year);
+        foreach ([self::$loaded[$year] ?? [], self::$override[$year] ?? []] as $extra) {
+            foreach ($extra as $date => $list) {
+                foreach ($list as $entry) {
+                    foreach ($out[$date] ?? [] as $have) {
+                        if ($have[0] === $entry[0]) continue 2;   // same name on the same day: once
+                    }
+                    $out[$date][] = $entry;
+                }
             }
-            $json = OpenDataHttp::getJson(
-                "https://date.nager.at/api/v3/PublicHolidays/{$year}/MY",
-                self::HOLIDAY_TTL,
-                [
-                    'timeout' => 8,
-                    // a list of holidays, each with a date
-                    'validate' => static fn(array $j): bool => $j !== [] && isset($j[0]['date']),
-                ]
-            );
-            if ($json === null) {
-                // HTTP 204 means "no data for this country": do not ask again for a day.
-                if (str_contains(OpenDataHttp::lastError(), 'HTTP 204')) @touch($flag);
-            } else {
-                $result = self::parseNager($json);
-            }
-        } catch (Throwable $e) {
-            $result = [];
         }
-        return self::$memo[$year] = $result;
+        ksort($out);
+        return $out;
     }
 
     /**
-     * Hand in the holidays of a year instead of asking the service (tests, the planner check).
-     * Same shape as holidays() returns. Pass null to remove it again.
+     * Read the holidays of a year from the table public_holidays and remember them. A second call
+     * for the same year does nothing. A missing table or a failed query leaves the year with the
+     * fixed holidays only (and is not remembered, so a later call may try again).
+     */
+    public static function loadHolidays(mysqli $conn, int $year): void
+    {
+        if (isset(self::$loaded[$year])) return;
+        try {
+            $exists = $conn->query("SHOW TABLES LIKE 'public_holidays'");
+            if (!$exists || $exists->num_rows === 0) return;
+            $stmt = $conn->prepare('SELECT holiday_date, name, states FROM public_holidays WHERE holiday_date BETWEEN ? AND ? ORDER BY holiday_date, name');
+            if (!$stmt) return;
+            $from = sprintf('%04d-01-01', $year);
+            $to = sprintf('%04d-12-31', $year);
+            $stmt->bind_param('ss', $from, $to);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            $out = [];
+            while ($row = $res->fetch_assoc()) {
+                $out[(string)$row['holiday_date']][] = [(string)$row['name'], self::parseStates($row['states'])];
+            }
+            $stmt->close();
+            self::$loaded[$year] = $out;
+        } catch (Throwable $e) {
+            // leave the year unloaded
+        }
+    }
+
+    /**
+     * Hand in the holidays of a year (tests, the planner check), merged into holidays(). Same
+     * shape as holidays() returns. Pass null to remove it again.
      *
      * @param array<string,array<int,array{0:string,1:?string[]}>>|null $holidays
      */
@@ -126,47 +138,102 @@ class PlannerCalendar
     }
 
     /**
-     * The national holidays that fall on the same date every year (no lunar or Islamic
-     * calendar involved): a baseline for when holidays() is empty. Hari Raya, Chinese New Year,
-     * Wesak, Deepavali, Awal Muharram, Maulidur Rasul and the Agong's birthday are not here.
+     * The holidays that fall on the same date every year (no lunar or Islamic calendar involved):
+     * Labour Day, National Day, Malaysia Day and Christmas Day in the whole country, and New
+     * Year's Day in the states that observe it (all but Johor, Kedah, Kelantan, Perlis and
+     * Terengganu). Nothing else is a rule: Hari Raya, Chinese New Year, Wesak, Deepavali, Awal
+     * Muharram, Maulidur Rasul and the rulers' birthdays are entered by the admin.
      *
      * @return array<string,array<int,array{0:string,1:?string[]}>>
      */
     public static function fixedHolidays(int $year): array
     {
-        $fixed = ['01-01' => "New Year's Day", '05-01' => 'Labour Day', '08-31' => 'National Day',
-                  '09-16' => 'Malaysia Day', '12-25' => 'Christmas Day'];
-        $out = [];
-        foreach ($fixed as $md => $name) $out["{$year}-{$md}"][] = [$name, null];
+        $newYearStates = array_values(array_diff(array_keys(OsmDataService::STATE_ISO), self::NO_NEW_YEAR_STATES));
+        $out = ["{$year}-01-01" => [["New Year's Day", $newYearStates]]];
+        foreach (['05-01' => 'Labour Day', '08-31' => 'National Day', '09-16' => 'Malaysia Day', '12-25' => 'Christmas Day'] as $md => $name) {
+            $out["{$year}-{$md}"][] = [$name, null];
+        }
         return $out;
     }
 
-    /** @return array<string,array<int,array{0:string,1:?string[]}>> */
-    private static function parseNager(array $rows): array
+    /** The state names the holiday table accepts (OsmDataService::STATE_ISO). @return string[] */
+    public static function knownStates(): array
     {
-        $byIso = array_flip(OsmDataService::STATE_ISO);
-        $out = [];
-        foreach ($rows as $row) {
-            if (!is_array($row) || !isset($row['date'], $row['name'])) continue;
-            // Nager also lists "Bank", "School" or "Optional" days; only public holidays count.
-            if (isset($row['types']) && is_array($row['types']) && !in_array('Public', $row['types'], true)) continue;
+        return array_keys(OsmDataService::STATE_ISO);
+    }
 
-            $states = null;
-            $counties = $row['counties'] ?? null;
-            if (is_array($counties) && $counties) {
-                $states = [];
-                foreach ($counties as $code) {
-                    $code = strtoupper(trim((string)$code));
-                    if (preg_match('/^\d{2}$/', $code)) $code = 'MY-' . $code;
-                    if (isset($byIso[$code])) $states[] = $byIso[$code];
-                }
-                $states = array_values(array_unique($states));
-                if (!$states) $states = null;   // codes we cannot read: treat as national rather than lose it
+    /**
+     * Validate and store one holiday in public_holidays (the admin page uses this).
+     *
+     * @param ?string[] $states null or empty: the whole country; otherwise state names as in knownStates()
+     * @return string '' when stored, otherwise the reason it was refused
+     */
+    public static function addHoliday(mysqli $conn, string $date, string $name, ?array $states, int $adminId): string
+    {
+        $d = DateTimeImmutable::createFromFormat('!Y-m-d', $date);
+        if ($d === false || $d->format('Y-m-d') !== $date) return 'Enter a real date.';
+        $name = trim((string)preg_replace('/\s+/u', ' ', $name));
+        $len = mb_strlen($name);
+        if ($len < 2 || $len > 120) return 'The name must be 2 to 120 characters.';
+
+        $stored = null;
+        if ($states) {
+            $known = self::knownStates();
+            $clean = [];
+            foreach ($states as $s) {
+                if (!is_string($s) || !in_array($s, $known, true)) return 'Unknown state name.';
+                $clean[$s] = true;
             }
-            $out[(string)$row['date']][] = [(string)$row['name'], $states];
+            // keep the order of knownStates() so the same selection always reads the same
+            $stored = implode(',', array_values(array_intersect($known, array_keys($clean))));
+            if (count($clean) === count($known)) $stored = null;   // every state: the whole country
         }
-        ksort($out);
-        return $out;
+
+        $stmt = $conn->prepare('SELECT 1 FROM public_holidays WHERE holiday_date = ? AND name = ? LIMIT 1');
+        $stmt->bind_param('ss', $date, $name);
+        $stmt->execute();
+        $dup = $stmt->get_result()->num_rows > 0;
+        $stmt->close();
+        if ($dup) return 'That holiday is already in the list.';
+
+        $adminOrNull = $adminId > 0 ? $adminId : null;
+        $stmt = $conn->prepare('INSERT INTO public_holidays (holiday_date, name, states, created_by_admin_id) VALUES (?, ?, ?, ?)');
+        $stmt->bind_param('sssi', $date, $name, $stored, $adminOrNull);
+        try {
+            $ok = $stmt->execute();
+            $err = $stmt->error;
+        } catch (mysqli_sql_exception $e) {
+            $ok = false;
+            $err = $e->getMessage();
+        }
+        $stmt->close();
+        unset(self::$loaded[(int)$d->format('Y')]);   // read again next time
+        return $ok ? '' : 'Could not save the holiday: ' . $err;
+    }
+
+    /** Delete one entered holiday by id. Returns whether a row was removed. */
+    public static function deleteHoliday(mysqli $conn, int $id): bool
+    {
+        $stmt = $conn->prepare('DELETE FROM public_holidays WHERE holiday_id = ?');
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $n = $stmt->affected_rows;
+        $stmt->close();
+        self::$loaded = [];
+        return $n > 0;
+    }
+
+    /** @return ?string[] null (whole country) for an empty value, otherwise the known state names in it */
+    private static function parseStates($value): ?array
+    {
+        if ($value === null || trim((string)$value) === '') return null;
+        $known = self::knownStates();
+        $states = [];
+        foreach (explode(',', (string)$value) as $s) {
+            $s = trim($s);
+            if (in_array($s, $known, true)) $states[] = $s;
+        }
+        return $states ?: null;   // nothing readable: national rather than lose it
     }
 
     // ------------------------------------------------------------------ days

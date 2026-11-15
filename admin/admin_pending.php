@@ -85,6 +85,7 @@ $stmt->close();
                 <a href="../admin/admin_cultural_kb.php"><span class="dot"></span> State Cultural Knowledge Base</a>
                 <a class="active" href="../admin/admin_pending.php"><span class="dot"></span> Content Validation</a>
                 <a href="../admin/admin_place_imports.php"><span class="dot"></span> Open Data Imports</a>
+                <a href="../admin/admin_holidays.php"><span class="dot"></span> Public Holidays</a>
                 <a href="../admin/user_manage/index.php"><span class="dot"></span> User Management</a>
                 <a href="../admin/admin_reports.php"><span class="dot"></span> Reports</a>
                 <a href="../auth/logout.php"><span class="dot"></span> Logout</a>
