@@ -41,5 +41,12 @@ INSERT IGNORE INTO `schema_migrations` (`file_name`) VALUES
   ('20261115_planner_inputs.sql'),
   ('20261116_meal_slots.sql'),
   ('20261117_itinerary_days.sql'),
-  ('20261118_longer_item_notes.sql');
+  ('20261118_longer_item_notes.sql'),
+  ('20261119_place_types.sql'),
+  ('20261119_transit_stops.sql'),
+  ('20261119_trip_bases.sql'),
+  ('20261120_day_notes.sql'),
+  ('20261120_public_holidays.sql'),
+  ('20261121_worship_limit.sql'),
+  ('20261122_itinerary_versions.sql');
 

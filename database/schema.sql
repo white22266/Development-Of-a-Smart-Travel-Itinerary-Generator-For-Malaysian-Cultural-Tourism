@@ -111,10 +111,16 @@ CREATE TABLE `cultural_places` (
   `created_by_admin_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  `nearest_stop_m` int(11) DEFAULT NULL,
+  `nearest_rail_m` int(11) DEFAULT NULL,
+  `transit_checked_at` datetime DEFAULT NULL,
+  `place_type` varchar(30) DEFAULT NULL,
+  `place_type_source` enum('rule','admin') DEFAULT NULL,
   PRIMARY KEY (`place_id`),
   KEY `idx_state_category` (`state`,`category`),
   KEY `fk_place_admin` (`created_by_admin_id`),
   KEY `idx_cultural_festival_dates` (`category`,`festival_start_date`,`festival_end_date`),
+  KEY `idx_cultural_places_type` (`place_type`),
   CONSTRAINT `fk_place_admin` FOREIGN KEY (`created_by_admin_id`) REFERENCES `admins` (`admin_id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -157,12 +163,17 @@ CREATE TABLE `itineraries` (
   `end_name` varchar(255) DEFAULT NULL,
   `end_lat` decimal(10,7) DEFAULT NULL,
   `end_lng` decimal(10,7) DEFAULT NULL,
+  `stay_at_start` tinyint(1) NOT NULL DEFAULT 0,
+  `plan_style` varchar(16) DEFAULT NULL,
+  `version_of` int(11) DEFAULT NULL,
   PRIMARY KEY (`itinerary_id`),
   KEY `fk_it_traveller` (`traveller_id`),
   KEY `fk_it_pref` (`preference_id`),
   KEY `idx_itinerary_selected_hotel` (`selected_hotel_id`),
+  KEY `idx_itinerary_version_of` (`version_of`),
   CONSTRAINT `fk_it_pref` FOREIGN KEY (`preference_id`) REFERENCES `traveller_preferences` (`preference_id`),
-  CONSTRAINT `fk_it_traveller` FOREIGN KEY (`traveller_id`) REFERENCES `travellers` (`traveller_id`) ON DELETE CASCADE
+  CONSTRAINT `fk_it_traveller` FOREIGN KEY (`traveller_id`) REFERENCES `travellers` (`traveller_id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_itinerary_version_of` FOREIGN KEY (`version_of`) REFERENCES `itineraries` (`itinerary_id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Table itinerary_days
@@ -170,6 +181,13 @@ CREATE TABLE `itinerary_days` (
   `itinerary_id` int(11) NOT NULL,
   `day_no` int(11) NOT NULL,
   `start_time` time DEFAULT NULL,
+  `base_name` varchar(255) DEFAULT NULL,
+  `base_lat` decimal(10,7) DEFAULT NULL,
+  `base_lng` decimal(10,7) DEFAULT NULL,
+  `group_from` smallint(6) DEFAULT NULL,
+  `group_to` smallint(6) DEFAULT NULL,
+  `area_km` decimal(6,2) DEFAULT NULL,
+  `day_note` varchar(255) DEFAULT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`itinerary_id`,`day_no`),
   CONSTRAINT `fk_itinerary_days_itinerary` FOREIGN KEY (`itinerary_id`) REFERENCES `itineraries` (`itinerary_id`) ON DELETE CASCADE
@@ -309,6 +327,19 @@ CREATE TABLE `place_sync_runs` (
   KEY `idx_sync_runs_state` (`state`,`started_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- Table public_holidays
+CREATE TABLE `public_holidays` (
+  `holiday_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `holiday_date` date NOT NULL,
+  `name` varchar(120) NOT NULL,
+  `states` varchar(255) DEFAULT NULL,
+  `created_by_admin_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`holiday_id`),
+  UNIQUE KEY `uq_public_holidays_date_name` (`holiday_date`,`name`),
+  KEY `idx_public_holidays_date` (`holiday_date`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Table ratings_reviews
 CREATE TABLE `ratings_reviews` (
   `review_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -360,6 +391,23 @@ CREATE TABLE `shared_itineraries` (
   UNIQUE KEY `uq_share_token` (`share_token`),
   KEY `idx_share_itinerary` (`itinerary_id`),
   CONSTRAINT `fk_shared_itinerary` FOREIGN KEY (`itinerary_id`) REFERENCES `itineraries` (`itinerary_id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Table transit_stops
+CREATE TABLE `transit_stops` (
+  `stop_id` int(11) NOT NULL AUTO_INCREMENT,
+  `osm_type` enum('node','way','relation') NOT NULL,
+  `osm_id` bigint(20) NOT NULL,
+  `name` varchar(200) NOT NULL DEFAULT '',
+  `kind` enum('rail','bus','ferry') NOT NULL,
+  `latitude` decimal(10,7) NOT NULL,
+  `longitude` decimal(10,7) NOT NULL,
+  `state` varchar(60) NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`stop_id`),
+  UNIQUE KEY `uq_transit_osm` (`osm_type`,`osm_id`),
+  KEY `idx_transit_lat_lng` (`latitude`,`longitude`),
+  KEY `idx_transit_state_kind` (`state`,`kind`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Table travel_interests
@@ -429,6 +477,7 @@ CREATE TABLE `traveller_preferences` (
   `children` tinyint(3) unsigned DEFAULT NULL,
   `seniors` tinyint(3) unsigned DEFAULT NULL,
   `accessibility_tags` varchar(120) DEFAULT NULL,
+  `worship_limit` enum('one','none') DEFAULT NULL,
   PRIMARY KEY (`preference_id`),
   KEY `fk_pref_traveller` (`traveller_id`),
   CONSTRAINT `fk_pref_traveller` FOREIGN KEY (`traveller_id`) REFERENCES `travellers` (`traveller_id`) ON DELETE CASCADE
