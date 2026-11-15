@@ -39,7 +39,8 @@ $stmt->execute();
 $it = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 
-if (!$it) {
+// A version of a plan that was not chosen is no itinerary of its own (version_of is set): treated as not found.
+if (!$it || ($it['version_of'] ?? null) !== null) {
     header("Location: my_itineraries.php");
     exit;
 }
@@ -548,7 +549,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                 <div class="cost-row">
                                     <div>
                                         <div class="cost-label"><?php echo htmlspecialchars(i18n_cost_label((string)$item['label'], $transportType)); ?></div>
-                                        <div class="cost-note"><?php echo htmlspecialchars($item['note']); ?></div>
+                                        <div class="cost-note"><?php echo htmlspecialchars(i18n_cost_phrase((string)$item['note'])); ?></div>
                                     </div>
                                     <div class="cost-amount">RM <?php echo number_format($item['amount'], 2); ?></div>
                                 </div>
@@ -697,7 +698,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                                     <?php endif; ?>
                                                 </td>
                                                 <td data-label="<?php echo te('trip.col_place'); ?>">
-                                                    <strong><?php echo htmlspecialchars($r["item_title"]); ?></strong>
+                                                    <strong><?php echo htmlspecialchars(i18n_item_title((string)$r["item_title"])); ?></strong>
                                                     <?php if (!empty($r["state"])): ?>
                                                         <div style="font-size:11px;color:var(--muted);">
                                                             <?php echo htmlspecialchars($r["state"]); ?>
@@ -712,7 +713,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
                                                     <?php $reasonSelected = extractReasonSelected($r["notes"] ?? ""); ?>
                                                     <?php if ($reasonSelected !== "" && !$isHotel): ?>
                                                         <div style="font-size:11px;color:#475569;margin-top:4px;">
-                                                            <strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars($reasonSelected); ?>
+                                                            <strong><?php echo te('trip.reason'); ?></strong> <?php echo htmlspecialchars(i18n_reason_text($reasonSelected)); ?>
                                                         </div>
                                                     <?php endif; ?>
                                                 </td>

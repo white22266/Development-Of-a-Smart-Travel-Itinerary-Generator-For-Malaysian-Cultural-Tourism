@@ -131,7 +131,7 @@ if ($nightNo >= 1 && $nightNo < (int)$itinerary['total_days']) {
 }
 if ($base !== null) {
     $hotels = $hotelService->recommend($base['point'][0], $base['point'][1], $roomBudget, 15.0, 8);
-    $message = 'Places to stay near ' . $base['name'] . ', where night ' . $nightNo . ' is planned.';
+    $message = t('rv.h_base_near', ['base' => $base['name'], 'n' => $nightNo]);
     $lastStop['day_no'] = $nightNo;
     $lastStop['base'] = ['name' => $base['name'], 'latitude' => $base['point'][0], 'longitude' => $base['point'][1]];
 } else {

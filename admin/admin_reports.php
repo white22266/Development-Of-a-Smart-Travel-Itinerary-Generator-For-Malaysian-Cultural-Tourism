@@ -178,6 +178,8 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
     $hasSelectedHotel = column_exists($conn, "itineraries", "selected_hotel_id");
 
     $itDate = date_filter_sql($conn, "i", $from, $to);
+    // An unchosen version of a plan (version_of is set) is no itinerary of its own: every count and list through $itDate leaves it out.
+    if (column_exists($conn, "itineraries", "version_of")) $itDate .= " AND i.version_of IS NULL";
     $tpDate = $hasPreferences && column_exists($conn, "traveller_preferences", "created_at") ? date_filter_sql($conn, "tp", $from, $to) : "";
     $cpDistrict = $hasDistrict ? "cp.district" : "''";
     $priceExpr = "COALESCE(NULLIF(cp.entrance_fee, 0), cp.estimated_cost, 0)";
@@ -411,7 +413,7 @@ function build_report(mysqli $conn, string $type, string $from, string $to, stri
         $kpis = [
             ["label" => "AI Questions", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "Selected period"],
             ["label" => "Assistant Responses", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "AI replies recorded"],
-            ["label" => "Itinerary Questions", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a INNER JOIN itineraries i ON i.itinerary_id=a.itinerary_id WHERE i.title IS NOT NULL AND i.title <> ''$aiDate") : 0, "note" => "Questions linked to real itineraries"],
+            ["label" => "Itinerary Questions", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(*) FROM ai_chat_logs a INNER JOIN itineraries i ON i.itinerary_id=a.itinerary_id WHERE i.title IS NOT NULL AND i.title <> ''$aiDate" . (column_exists($conn, "itineraries", "version_of") ? " AND i.version_of IS NULL" : "") . "") : 0, "note" => "Questions linked to real itineraries"],
             ["label" => "Active AI Users", "value" => $hasAiLogs ? scalar_query($conn, "SELECT COUNT(DISTINCT traveller_id) FROM ai_chat_logs a WHERE 1=1$aiDate") : 0, "note" => "Travellers using AI"],
         ];
         $sections[] = section("AI Question Intent Summary", ["Intent", "Total"], $intentRows);

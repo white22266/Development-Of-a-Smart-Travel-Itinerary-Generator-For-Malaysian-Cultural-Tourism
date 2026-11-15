@@ -26,7 +26,8 @@ $stmt->execute();
 $it = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 
-if (!$it) {
+// A version of a plan that was not chosen is no itinerary of its own (version_of is set): treated as not found.
+if (!$it || ($it['version_of'] ?? null) !== null) {
     http_response_code(404);
     echo t('shr.not_found');
     exit;

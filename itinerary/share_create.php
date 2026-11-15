@@ -17,13 +17,14 @@ if ($travellerId <= 0 || $itineraryId <= 0) {
     exit;
 }
 
-$own = $conn->prepare("SELECT itinerary_id FROM itineraries WHERE itinerary_id = ? AND traveller_id = ? LIMIT 1");
+$own = $conn->prepare("SELECT * FROM itineraries WHERE itinerary_id = ? AND traveller_id = ? LIMIT 1");
 $own->bind_param("ii", $itineraryId, $travellerId);
 $own->execute();
 $exists = $own->get_result()->fetch_assoc();
 $own->close();
 
-if (!$exists) {
+// A version of a plan that was not chosen is no itinerary of its own (version_of is set): treated as not found.
+if (!$exists || ($exists['version_of'] ?? null) !== null) {
     header("Location: my_itineraries.php");
     exit;
 }

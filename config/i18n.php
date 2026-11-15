@@ -396,6 +396,9 @@ function i18n_reason_tables(): array
         'its stops were removed or moved' => 'note.w_emptied',
         'too far from public transport (no stop within 1.5 km)' => 'note.w_transit',
         'over your limit for places of worship' => 'note.w_worship',
+        'the same landmark as a place already in the itinerary' => 'note.w_same_landmark',
+        'a mosque during the Friday prayers (12:15 to 14:45)' => 'note.w_prayer',
+        'too late or too far to get back to where you stay that night' => 'note.w_base',
     ];
     $m = '([\d,]+(?:\.\d+)?)';
     $patterns = [
@@ -414,6 +417,10 @@ function i18n_reason_tables(): array
         ['/^No stop fits your preferences on this day \((.+)\)\. Use it as free time, or replace it with a place of your choice\.$/', 'note.p_free_day', ['why']],
         ['/^(.+) could not be scheduled \((.+)\)\. Visit it at another time, or change the trip dates or preferences\.$/', 'note.p_must_missed', ['name', 'reason']],
         ['/^most places were (.+)$/', 'note.p_most', ['reason']],
+        ['/^opening hours assumed \((.+)\): check before you go$/', 'rvw.assumed', ['hours']],
+        ['/^Time kept free for (lunch|dinner) \((\d+) min\) where you stay tonight: no food place within ' . $m . ' km of it is open for the whole meal, so eat near your base\.$/', 'note.p_free_base', ['meal', 'n', 'km']],
+        ['/^(Lunch|Dinner) near where you stay tonight, at the food place with the least detour on the way back \(' . $m . ' km extra\)$/', 'note.p_meal_base', ['slot', 'km']],
+        ['/^the same landmark as (.+), also on your must-see list$/', 'note.p_same_landmark', ['name']],
         ['/^day (\d+) origin transfer distance allowed$/', 'note.p_old_origin', ['n']],
     ];
     $tables = ['exact' => $exact, 'words' => $words, 'patterns' => $patterns];
@@ -429,6 +436,9 @@ function i18n_reason_word(string $word, ?string $lang = null): string
     }
     if (preg_match('/^most places were (.+)$/', $word, $m)) {
         return t('note.p_most', ['reason' => i18n_reason_word($m[1], $lang)], $lang);
+    }
+    if (preg_match('/^the same landmark as (.+), also on your must-see list$/', $word, $m)) {
+        return t('note.p_same_landmark', ['name' => $m[1]], $lang);
     }
     return $word;
 }
@@ -508,6 +518,36 @@ function i18n_item_title(string $title, ?string $lang = null): string
         return t('note.title_must_missed', ['name' => $m[1]], $lang);
     }
     return $title;
+}
+
+/**
+ * The note of a day (itinerary_days.day_note) in the traveller's language: "Public holiday: <names>.
+ * Opening hours may differ." The holiday names stay as stored. Any other note, and English, come back unchanged.
+ */
+function i18n_day_note(string $note, ?string $lang = null): string
+{
+    $lang = $lang ?? i18n_lang();
+    if ($lang === 'en') {
+        return $note;
+    }
+    if (preg_match('/^Public holiday: (.+)\. Opening hours may differ\.$/s', $note, $m)) {
+        return t('note.day_holiday', ['names' => $m[1]], $lang);
+    }
+    return $note;
+}
+
+/**
+ * Opening hours as OpeningHours::shown() writes them ("09:00-17:00 (assumed)") in the traveller's language:
+ * only the mark changes. English and hours without the mark come back unchanged.
+ */
+function i18n_hours(string $hours, ?string $lang = null): string
+{
+    $lang = $lang ?? i18n_lang();
+    $mark = ' (assumed)';
+    if ($lang === 'en' || !str_ends_with($hours, $mark)) {
+        return $hours;
+    }
+    return substr($hours, 0, -strlen($mark)) . ' ' . t('iv.assumed', [], $lang);
 }
 
 /** JSON object {key: text} of the given keys in the current language, safe inside <script>. */

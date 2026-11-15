@@ -48,8 +48,12 @@ $kpiPendingSubmissions = $resPending->fetch_assoc()['total'] ?? 0;
 $resRecords = $conn->query("SELECT COUNT(*) AS total FROM cultural_places WHERE is_active = 1");
 $kpiCulturalItems = $resRecords->fetch_assoc()['total'] ?? 0;
 
+// An unchosen version of a plan (itineraries.version_of is set) is no itinerary of its own: left out of every count and list.
+$versionColumn = $conn->query("SHOW COLUMNS FROM itineraries LIKE 'version_of'");
+$notVersion = ($versionColumn && $versionColumn->num_rows > 0) ? " AND i.version_of IS NULL" : "";
+
 // Generated itineraries: core admin visibility requested by supervisor
-$resItineraries = $conn->query("SELECT COUNT(*) AS total FROM itineraries");
+$resItineraries = $conn->query("SELECT COUNT(*) AS total FROM itineraries i WHERE 1=1{$notVersion}");
 $kpiTotalItineraries = $resItineraries->fetch_assoc()['total'] ?? 0;
 
 // Popular states from generated itinerary items
@@ -57,8 +61,9 @@ $popularStates = [];
 $popularSql = "
   SELECT cp.state, COUNT(*) AS total
   FROM itinerary_items ii
+  JOIN itineraries i ON i.itinerary_id = ii.itinerary_id
   JOIN cultural_places cp ON cp.place_id = ii.place_id
-  WHERE cp.state IS NOT NULL AND cp.state <> ''
+  WHERE cp.state IS NOT NULL AND cp.state <> ''{$notVersion}
   GROUP BY cp.state
   ORDER BY total DESC
   LIMIT 5
@@ -70,7 +75,7 @@ if ($resPopular) {
 
 // 4. Fetch Recent Activity: Display the last 3 generated itineraries
 $recentActivities = [];
-$activitySql = "SELECT title, created_at FROM itineraries ORDER BY created_at DESC LIMIT 3";
+$activitySql = "SELECT i.title, i.created_at FROM itineraries i WHERE 1=1{$notVersion} ORDER BY i.created_at DESC LIMIT 3";
 $resActivity = $conn->query($activitySql);
 while ($row = $resActivity->fetch_assoc()) {
   $recentActivities[] = [
@@ -120,6 +125,7 @@ $itinerarySql = "
          t.full_name AS traveller_name
   FROM itineraries i
   LEFT JOIN travellers t ON t.traveller_id = i.traveller_id
+  WHERE 1=1{$notVersion}
   ORDER BY i.created_at DESC, i.itinerary_id DESC
   LIMIT 8
 ";
@@ -132,8 +138,9 @@ $popularPlaces = [];
 $popularPlaceSql = "
   SELECT cp.name, cp.state, cp.category, COUNT(*) AS total_used
   FROM itinerary_items ii
+  JOIN itineraries i ON i.itinerary_id = ii.itinerary_id
   JOIN cultural_places cp ON cp.place_id = ii.place_id
-  WHERE ii.place_id IS NOT NULL
+  WHERE ii.place_id IS NOT NULL{$notVersion}
   GROUP BY cp.place_id, cp.name, cp.state, cp.category
   ORDER BY total_used DESC
   LIMIT 8

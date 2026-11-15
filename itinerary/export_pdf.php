@@ -10,6 +10,7 @@ require_once "../config/db_connect.php";
 require_once "../config/i18n.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
+require_once "../services/OpeningHours.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
     header("Location: ../auth/login.php?role=traveller");
@@ -182,7 +183,8 @@ $stmt->bind_param("ii", $itineraryId, $travellerId);
 $stmt->execute();
 $it = $stmt->get_result()->fetch_assoc();
 $stmt->close();
-if (!$it) {
+// A version of a plan that was not chosen is no itinerary of its own (version_of is set): treated as not found.
+if (!$it || ($it['version_of'] ?? null) !== null) {
     header("Location: my_itineraries.php");
     exit;
 }
@@ -195,12 +197,16 @@ $districtSelect = $hasDistrict ? "cp.district" : "NULL AS district";
 $mealSlotCheck = $conn->query("SHOW COLUMNS FROM itinerary_items LIKE 'meal_slot'");
 $mealSlotSelect = ($mealSlotCheck && $mealSlotCheck->num_rows > 0) ? "ii.meal_slot" : "NULL AS meal_slot";
 
+// The place type (migration 20261119_place_types.sql): opening hours the planner assumed are marked "(assumed)".
+$placeTypeCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'place_type'");
+$placeTypeSelect = ($placeTypeCheck && $placeTypeCheck->num_rows > 0) ? "cp.place_type" : "NULL AS place_type";
+
 $stmt = $conn->prepare("
     SELECT
         ii.item_id, ii.day_no, ii.sequence_no, ii.item_type, {$mealSlotSelect}, ii.place_id,
         ii.item_title, ii.start_time, ii.end_time, ii.estimated_cost,
         ii.notes, ii.distance_km, ii.travel_time_min,
-        cp.latitude, cp.longitude, cp.address, cp.opening_hours,
+        cp.latitude, cp.longitude, cp.address, cp.opening_hours, {$placeTypeSelect},
         cp.category, cp.state, {$districtSelect},
         cp.description, cp.visit_duration_min, cp.halal_status,
         cp.best_time_to_visit, cp.dress_code_required,
@@ -223,6 +229,7 @@ $lastPlace = null;
 $totalDistanceKm = 0.0;
 while ($row = $res->fetch_assoc()) {
     $d = (int)$row["day_no"];
+    if ($row["place_id"] !== null) $row["opening_hours"] = i18n_hours(OpeningHours::shown($row), $pdfLang);
     if (!isset($days[$d])) $days[$d] = [];
     $days[$d][] = $row;
     $allItems[] = $row;
@@ -232,6 +239,23 @@ while ($row = $res->fetch_assoc()) {
     }
 }
 ksort($days);
+
+// The note of each day (a public holiday) and the base of each day, when the trip was planned with them (migration 20261119_trip_bases.sql).
+$dayNotes = [];
+$dayBaseNames = [];
+$baseCheck = $conn->query("SHOW COLUMNS FROM itinerary_days LIKE 'base_name'");
+if ($baseCheck && $baseCheck->num_rows > 0) {
+    $noteCheck = $conn->query("SHOW COLUMNS FROM itinerary_days LIKE 'day_note'");
+    $noteSelect = ($noteCheck && $noteCheck->num_rows > 0) ? "day_note" : "NULL AS day_note";
+    $dayStmt = $conn->prepare("SELECT day_no, base_name, {$noteSelect} FROM itinerary_days WHERE itinerary_id = ?");
+    $dayStmt->bind_param("i", $itineraryId);
+    $dayStmt->execute();
+    foreach ($dayStmt->get_result()->fetch_all(MYSQLI_ASSOC) as $dayRow) {
+        if (trim((string)($dayRow["day_note"] ?? "")) !== "") $dayNotes[(int)$dayRow["day_no"]] = (string)$dayRow["day_note"];
+        if (trim((string)($dayRow["base_name"] ?? "")) !== "") $dayBaseNames[(int)$dayRow["day_no"]] = (string)$dayRow["base_name"];
+    }
+    $dayStmt->close();
+}
 
 $tripDays = max(1, (int)($it["total_days"] ?? count($days)));
 $budget = (float)($it["budget"] ?? 0);
@@ -388,6 +412,16 @@ foreach ($days as $dayNo => $items) {
     }
     $dayCost = $perDayBreakdown[$dayNo]["attraction_cost"] ?? 0;
     $html .= "<div class='day-title'>" . esc(pdf_t("trip.day", ["n" => (int)$dayNo])) . ($dayDate ? " | " . esc($dayDate) : "") . " | " . esc(pdf_t("pdf.day_cost", ["cost" => fmt_rm($dayCost)])) . "</div>";
+    // Where the night after the day is spent (its hotel, else the base of the day) and the note of the day.
+    $nightAt = "";
+    if ((int)$dayNo < $tripDays) {
+        foreach (array_reverse($items) as $nightRow) {
+            if (strtolower((string)($nightRow["item_type"] ?? "")) === "hotel") { $nightAt = (string)$nightRow["item_title"]; break; }
+        }
+        if ($nightAt === "") $nightAt = $dayBaseNames[(int)$dayNo] ?? "";
+    }
+    if ($nightAt !== "") $html .= "<div class='muted'>" . esc(pdf_t("iv.night_at", ["name" => $nightAt])) . "</div>";
+    if (isset($dayNotes[(int)$dayNo])) $html .= "<div class='muted'>" . esc(i18n_day_note($dayNotes[(int)$dayNo], $pdfLang)) . "</div>";
     $html .= "<table><tr><th style='width:70px;'>" . esc(pdf_t("trip.col_time")) . "</th><th style='width:25px;'>#</th><th>" . esc(pdf_t("pdf.col_place_act")) . "</th><th style='width:70px;'>" . esc(pdf_t("trip.col_type")) . "</th><th style='width:60px;'>" . esc(pdf_t("pdf.col_cost")) . "</th><th style='width:72px;'>" . esc(pdf_t("trip.col_travel")) . "</th></tr>";
     foreach ($items as $item) {
         $time = fmt_time($item["start_time"] ?? "") . " - " . fmt_time($item["end_time"] ?? "");

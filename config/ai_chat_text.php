@@ -516,6 +516,8 @@ if (!function_exists('ai_chat_text_table')) {
             'reason_code_HOTEL_BUDGET' => ['en' => 'the hotel would put the trip over your budget', 'ms' => 'hotel itu akan menyebabkan perjalanan melebihi bajet anda', 'zh' => '这家酒店会让行程超出你的预算'],
             'reason_code_VERSION_LIMIT' => ['en' => 'this trip already has its three versions to compare', 'ms' => 'perjalanan ini sudah ada tiga versi untuk dibandingkan', 'zh' => '这个行程已经有三个可比较的版本'],
             'reason_code_VERSION_EXISTS' => ['en' => 'a version in this style already exists', 'ms' => 'versi dengan gaya ini sudah ada', 'zh' => '这种风格的版本已经存在'],
+            'reason_code_PRAYER' => ['en' => 'a mosque would be visited during the Friday prayers (12:15 to 14:45)', 'ms' => 'sebuah masjid akan dilawati semasa solat Jumaat (12:15 hingga 14:45)', 'zh' => '会在周五聚礼时段（12:15 至 14:45）参观清真寺'],
+            'reason_code_BASE' => ['en' => 'it would be too late or too far to get back to where you stay that night', 'ms' => 'ia terlalu lewat atau terlalu jauh untuk pulang ke tempat penginapan anda pada malam itu', 'zh' => '会太晚或太远，来不及回到当晚的住处'],
             'reason_code_other' => ['en' => 'it would break a rule of your trip', 'ms' => 'ia akan melanggar peraturan perjalanan anda', 'zh' => '会违反你的行程规则'],
 
             // ------------------------------------------------------------ travel assistant (dates, origin, weather)

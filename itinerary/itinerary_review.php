@@ -69,7 +69,7 @@ $stmt->close();
 $days = [];
 while ($r = $res->fetch_assoc()) {
     // The hours of a place as the planner reads them: assumed hours are marked "(assumed)".
-    if ($r['place_id'] !== null) $r['opening_hours'] = OpeningHours::shown($r);
+    if ($r['place_id'] !== null) $r['opening_hours'] = i18n_hours(OpeningHours::shown($r));
     $days[(int)$r["day_no"]][] = $r;
 }
 $totalDays = (int)$it["total_days"];
@@ -959,7 +959,7 @@ $clock = static fn(?int $m): string => $m === null ? '-' : sprintf('%02d:%02d', 
                  data-kind="meal"
                  data-slot="<?php echo htmlspecialchars((string)$item['meal_slot']); ?>"
                  data-place-id="<?php echo (int)($item['place_id'] ?? 0); ?>"
-                 data-title="<?php echo htmlspecialchars($item['item_title'] ?? ''); ?>"
+                 data-title="<?php echo htmlspecialchars(i18n_item_title((string)($item['item_title'] ?? ''))); ?>"
                  data-status="accepted">
                 <div class="place-card-top">
                     <div style="flex:1;">
@@ -1009,7 +1009,7 @@ $clock = static fn(?int $m): string => $m === null ? '-' : sprintf('%02d:%02d', 
                  data-place-id="<?php echo (int)($item['place_id'] ?? 0); ?>"
                  data-state="<?php echo htmlspecialchars($item['state'] ?? ''); ?>"
                  data-category="<?php echo htmlspecialchars($item['category'] ?? $item['item_type'] ?? ''); ?>"
-                 data-title="<?php echo htmlspecialchars($item['item_title'] ?? ''); ?>"
+                 data-title="<?php echo htmlspecialchars(i18n_item_title((string)($item['item_title'] ?? ''))); ?>"
                  data-status="accepted">
 
                 <div class="place-card-top">
@@ -1148,9 +1148,9 @@ $clock = static fn(?int $m): string => $m === null ? '-' : sprintf('%02d:%02d', 
                             <div class="hotel-night-title"><?php echo te('rv.night_title', ['n' => $nightNo]); ?></div>
                             <div class="hotel-night-meta">
                                 <?php if (isset($reviewBases[$nightNo])): ?>
-                                    Night at <strong><?php echo htmlspecialchars($reviewBases[$nightNo]['name']); ?></strong>: suggestions are near this base.
+                                    <?php echo strtr(te('rv.base_night'), ['{base}' => '<strong>' . htmlspecialchars($reviewBases[$nightNo]['name']) . '</strong>']); ?>
                                     <?php if ($nightRuns[$nightNo][1] > $nightRuns[$nightNo][0]): ?>
-                                        Nights <?php echo (int)$nightRuns[$nightNo][0]; ?> to <?php echo (int)$nightRuns[$nightNo][1]; ?> are spent at the same base.
+                                        <?php echo te('rv.base_run', ['a' => (int)$nightRuns[$nightNo][0], 'b' => (int)$nightRuns[$nightNo][1]]); ?>
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <?php echo strtr(te('rv.night_meta'), ['{stop}' => '<strong>' . htmlspecialchars($stopTitle) . '</strong>']); ?>
@@ -1227,7 +1227,7 @@ const RV = <?php echo i18n_js([
     'trip.check_price_title', 'opt.hotelkind.hotel', 'rv.hotel_read_failed', 'rv.hotel_skipped', 'rv.browse_hotels', 'rv.load_hotels', 'rv.none',
     'rv.n_selected', 'rv.saving', 'rv.keep_one', 'trip.day', 'rv.refused_hotel_night', 'rv.refused_hotels', 'rv.refused_remove', 'rv.refused_replace',
     'rv.a_stop', 'rv.not_allowed', 'rv.saved', 'rv.error_prefix', 'rv.save_failed', 'rv.confirm_view', 'rv.writing', 'rv.ai_failed',
-    'rv.version_making', 'rv.version_failed', 'rv.version_use_confirm', 'rv.version_using', 'rv.hotel_budget_kept', 'rv.hotel_run_over',]); ?>;
+    'rv.version_making', 'rv.version_failed', 'rv.version_use_confirm', 'rv.version_using', 'rv.hotel_budget_kept', 'rv.hotel_run_over', 'rv.use_run', 'rv.chosen_with',]); ?>;
 function rt(key, vars) {
     let text = RV[key] || key;
     Object.keys(vars || {}).forEach(name => { text = text.split('{' + name + '}').join(String(vars[name])); });
@@ -1590,7 +1590,7 @@ function renderNightHotels(nightNo, data, allowSelect) {
                 ${selected ? '<span class="hotel-selected-note">' + escHtml(rt('rv.selected_night')) + '</span>' : ''}
                 <div class="hotel-card-actions">
                     ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">${escHtml(rt('rv.select_night', { n: nightNo }))}</button>` : ''}
-                    ${allowSelect && runOf(nightNo)[1] > runOf(nightNo)[0] ? `<button type="button" class="btn btn-ghost" data-hotel="${payload}" onclick="selectRunHotel(${nightNo}, ${idx}, this.dataset.hotel)">${escHtml('Use for nights ' + runOf(nightNo)[0] + ' to ' + runOf(nightNo)[1])}</button>` : ''}
+                    ${allowSelect && runOf(nightNo)[1] > runOf(nightNo)[0] ? `<button type="button" class="btn btn-ghost" data-hotel="${payload}" onclick="selectRunHotel(${nightNo}, ${idx}, this.dataset.hotel)">${escHtml(rt('rv.use_run', { a: runOf(nightNo)[0], b: runOf(nightNo)[1] }))}</button>` : ''}
                     ${hotel.map_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.map_url)}" target="_blank" rel="noopener">${escHtml(rt('trip.map'))}</a>` : ''}
                     ${hotel.website ? `<a class="btn btn-ghost" href="${escHtml(hotel.website)}" target="_blank" rel="noopener noreferrer">${escHtml(rt('rv.website'))}</a>` : ''}
                     ${hotel.price_check_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.price_check_url)}" target="_blank" rel="noopener noreferrer" title="${escHtml(rt('trip.check_price_title'))}">${escHtml(rt('trip.check_price'))}</a>` : ''}
@@ -1646,7 +1646,7 @@ function selectRunHotel(nightNo, idx, hotelJson) {
         const target = document.getElementById('hotel-results-night-' + n);
         if (target) {
             target.classList.add('open');
-            target.innerHTML = '<div class="hotel-message">' + escHtml('Chosen with night ' + nightNo + ': ' + (hotel.name || '')) + '</div>';
+            target.innerHTML = '<div class="hotel-message">' + escHtml(rt('rv.chosen_with', { n: nightNo, hotel: hotel.name || '' })) + '</div>';
         }
         hotelResultState[n] = { loaded: true, dayNo: n, allowSelect: true };
         setHotelToggleLabel(n, rt('rv.hide_results'));

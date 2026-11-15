@@ -624,9 +624,9 @@ foreach ($preferences as $pref) {
                 <?php echo te('sel.origin_status'); ?>
               </div>
               <label style="display:flex; gap:8px; align-items:center; font-weight:400; margin-top:8px;">
-                <input type="checkbox" name="stay_at_start" id="stay_at_start" value="1"> I am staying at the starting point
+                <input type="checkbox" name="stay_at_start" id="stay_at_start" value="1"> <?php echo te('sel.stay_at_start'); ?>
               </label>
-              <div class="field-help">Every night is then spent at the starting point, and each day returns there. Leave it unticked to let the planner choose where you stay.</div>
+              <div class="field-help"><?php echo te('sel.stay_at_start_help'); ?></div>
             </div>
 
             <div class="field-group" id="endPointField">

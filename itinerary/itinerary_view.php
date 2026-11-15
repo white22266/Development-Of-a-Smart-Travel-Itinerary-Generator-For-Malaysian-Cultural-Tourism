@@ -80,7 +80,7 @@ $stmt->close();
 $days = [];
 while ($r = $res->fetch_assoc()) {
     // The hours of a place as the planner reads them: assumed hours are marked "(assumed)".
-    if ($r['place_id'] !== null) $r['opening_hours'] = OpeningHours::shown($r);
+    if ($r['place_id'] !== null) $r['opening_hours'] = i18n_hours(OpeningHours::shown($r));
     $days[(int)$r["day_no"]][] = $r;
 }
 $totalDays     = (int)$it["total_days"];
@@ -977,9 +977,9 @@ $editConfig = json_encode([
                                 if ($startHotel !== null && $startHotel !== '') {
                                     echo htmlspecialchars(t('iv.day_starts_hotel', ['name' => $startHotel]));
                                 } elseif ($d === 1 && $originName !== '' && $viewBases) {
-                                    echo htmlspecialchars('Starts at ' . $originName . '.');
+                                    echo htmlspecialchars(t('iv.starts_at', ['name' => $originName]));
                                 } elseif ($d > 1 && isset($viewBases[$d - 1])) {
-                                    echo htmlspecialchars('Starts at ' . $viewBases[$d - 1]['name'] . ', where you spent the night.');
+                                    echo htmlspecialchars(t('iv.starts_base', ['base' => $viewBases[$d - 1]['name']]));
                                 } else {
                                     echo te($d === 1 ? 'iv.day_starts_origin' : 'iv.day_starts_prev');
                                 }
@@ -996,10 +996,10 @@ $editConfig = json_encode([
                             }
                         ?>
                         <?php if ($nightAt !== null && $nightAt !== ''): ?>
-                        <div class="day-box-note"><?php echo htmlspecialchars('Night at ' . $nightAt . '.'); ?></div>
+                        <div class="day-box-note"><?php echo htmlspecialchars(t('iv.night_at', ['name' => $nightAt])); ?></div>
                         <?php endif; ?>
                         <?php if (!empty($viewBases[$d]['note'])): ?>
-                        <div class="day-box-note"><?php echo htmlspecialchars((string)$viewBases[$d]['note']); ?></div>
+                        <div class="day-box-note"><?php echo htmlspecialchars(i18n_day_note((string)$viewBases[$d]['note'])); ?></div>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -1196,7 +1196,7 @@ $editConfig = json_encode([
                                 ?>
                                 <?php if ($editKind !== null): ?>
                                 <div class="ed-actions" data-ed-item="<?php echo (int)$item['item_id']; ?>" data-ed-day="<?php echo $d; ?>"
-                                     data-ed-pos="<?php echo $editPos !== false ? $editPos + 1 : 0; ?>" data-ed-title="<?php echo htmlspecialchars((string)$item['item_title']); ?>">
+                                     data-ed-pos="<?php echo $editPos !== false ? $editPos + 1 : 0; ?>" data-ed-title="<?php echo htmlspecialchars(i18n_item_title((string)$item['item_title'])); ?>">
                                     <button type="button" class="ed-btn" data-ed="replace_open"><?php echo te('edit.replace'); ?></button>
                                     <?php if ($editKind === 'visit'): ?>
                                     <button type="button" class="ed-btn ed-danger" data-ed="remove"><?php echo te('edit.remove'); ?></button>
