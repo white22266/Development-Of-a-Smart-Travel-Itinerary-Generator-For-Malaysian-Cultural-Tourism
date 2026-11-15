@@ -18,6 +18,7 @@ require_once __DIR__ . '/WikimediaService.php';
 require_once __DIR__ . '/GeocodingService.php';
 require_once __DIR__ . '/PlaceNameMatcher.php';
 require_once __DIR__ . '/OpeningHoursConverter.php';
+require_once __DIR__ . '/PlaceTypeClassifier.php';
 
 class PlaceSyncService
 {
@@ -817,6 +818,24 @@ class PlaceSyncService
         return $this->photosLeft;
     }
 
+    /** Give a new place its finer type (source 'rule'). Skipped while the migration 20261119_place_types is not applied. */
+    private function storePlaceType(int $placeId, string $name, ?string $description, string $category, string $osmKind): void
+    {
+        static $hasColumn = null;
+        if ($hasColumn === null) {
+            $res = $this->conn->query("SHOW COLUMNS FROM cultural_places LIKE 'place_type_source'");
+            $hasColumn = $res && $res->num_rows > 0;
+        }
+        if (!$hasColumn) return;
+        [$type] = PlaceTypeClassifier::classify([
+            'name' => $name, 'description' => (string)$description, 'category' => $category, 'osm_kind' => $osmKind,
+        ]);
+        $stmt = $this->conn->prepare("UPDATE cultural_places SET place_type = ?, place_type_source = 'rule' WHERE place_id = ?");
+        $stmt->bind_param('si', $type, $placeId);
+        $stmt->execute();
+        $stmt->close();
+    }
+
     /**
      * Turn a staged candidate into a place. Used for automatic publishing and by the admin page.
      *
@@ -884,6 +903,8 @@ class PlaceSyncService
             );
             $source->execute();
             $source->close();
+
+            $this->storePlaceType($placeId, $name, $p['description'] ?? null, $category, (string)($p['kind'] ?? ''));
 
             $done = $this->conn->prepare("
                 UPDATE place_import_candidates

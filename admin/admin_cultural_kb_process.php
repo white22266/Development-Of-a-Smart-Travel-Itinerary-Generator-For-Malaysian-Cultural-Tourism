@@ -3,6 +3,7 @@
 session_start();
 require_once "../config/db_connect.php";
 require_once "../services/DuplicatePlaceService.php";
+require_once "../services/PlaceTypeClassifier.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
     header("Location: ../auth/login.php?role=admin");
@@ -91,6 +92,32 @@ function normalize_optional_date(string $value): ?string
     if ($value === "") return null;
     $dt = DateTime::createFromFormat("Y-m-d", $value);
     return ($dt && $dt->format("Y-m-d") === $value) ? $value : null;
+}
+
+/**
+ * Store the type of a place. A type chosen in the form is kept with source 'admin'. With no choice,
+ * a type an admin set earlier stays, and any other place gets the classifier's answer (source 'rule').
+ */
+function save_place_type(mysqli $conn, int $placeId, string $chosen, string $name, ?string $description, string $category): void
+{
+    if (!table_has_column($conn, "cultural_places", "place_type")
+        || !table_has_column($conn, "cultural_places", "place_type_source")) {
+        return;
+    }
+
+    if (PlaceTypeClassifier::isValid($chosen)) {
+        $stmt = $conn->prepare("UPDATE cultural_places SET place_type = ?, place_type_source = 'admin' WHERE place_id = ?");
+        $stmt->bind_param("si", $chosen, $placeId);
+    } else {
+        [$type] = PlaceTypeClassifier::classify(["name" => $name, "description" => (string)$description, "category" => $category]);
+        $stmt = $conn->prepare("
+            UPDATE cultural_places SET place_type = ?, place_type_source = 'rule'
+            WHERE place_id = ? AND (place_type_source IS NULL OR place_type_source <> 'admin')
+        ");
+        $stmt->bind_param("si", $type, $placeId);
+    }
+    $stmt->execute();
+    $stmt->close();
 }
 
 function update_festival_dates(mysqli $conn, int $placeId, string $category, ?string $startDate, ?string $endDate): void
@@ -382,6 +409,7 @@ if ($action === "create" || $action === "update") {
     if ($visitDurationMin <= 0) $visitDurationMin = 90;
     $isActive = (int)($_POST["is_active"] ?? 1);
     $isActive = ($isActive === 0) ? 0 : 1;
+    $placeTypeInput = trim($_POST["place_type"] ?? "");
     // --- NEW: handle remove checkbox + pasted URL ---
     $removeImage = (int)($_POST["remove_image"] ?? 0) === 1;
     $imageUrlInput = trim($_POST["image_url"] ?? "");
@@ -464,6 +492,7 @@ if ($action === "create" || $action === "update") {
         if ($newPlaceId > 0) {
             update_supervisor_place_fields($conn, $newPlaceId, $cost, $halalStatus, $visitDurationMin);
             update_festival_dates($conn, $newPlaceId, $category, $festivalStartDate, $festivalEndDate);
+            save_place_type($conn, $newPlaceId, $placeTypeInput, $name, $description, $category);
         }
 
         back("Place added successfully.");
@@ -539,6 +568,7 @@ if ($action === "create" || $action === "update") {
     $stmt->close();
     update_supervisor_place_fields($conn, $placeId, $cost, $halalStatus, $visitDurationMin);
     update_festival_dates($conn, $placeId, $category, $festivalStartDate, $festivalEndDate);
+    save_place_type($conn, $placeId, $placeTypeInput, $name, $description, $category);
 
     back("Place updated successfully.");
 }

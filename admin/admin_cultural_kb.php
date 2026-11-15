@@ -5,6 +5,7 @@ require_once "../config/db_connect.php";
 require_once "../config/map_assets.php";
 require_once "../services/OsmDataService.php";
 require_once "../services/DuplicatePlaceService.php";
+require_once "../services/PlaceTypeClassifier.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "admin") {
     header("Location: ../auth/login.php?role=admin");
@@ -421,6 +422,24 @@ $stmt->close();
                                         </option>
                                     <?php endforeach; ?>
                                 </select>
+                            </div>
+
+                            <div class="col-3">
+                                <label style="font-size:13px; font-weight:800;">Type</label><br>
+                                <select name="place_type" id="adminPlaceTypeSelect"
+                                    style="width:100%; padding:10px 12px; border-radius:12px; border:1px solid rgba(15,23,42,0.10);">
+                                    <option value="">Automatic (decided from the name)</option>
+                                    <?php foreach (PlaceTypeClassifier::grouped() as $typeGroup => $typeList): ?>
+                                        <optgroup label="<?php echo htmlspecialchars(PlaceTypeClassifier::GROUPS[$typeGroup]); ?>">
+                                            <?php foreach ($typeList as $typeKey => $typeLabel): ?>
+                                                <option value="<?php echo htmlspecialchars($typeKey); ?>" <?php echo (($editRow["place_type_source"] ?? "") === "admin" && ($editRow["place_type"] ?? "") === $typeKey) ? "selected" : ""; ?>>
+                                                    <?php echo htmlspecialchars($typeLabel); ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </optgroup>
+                                    <?php endforeach; ?>
+                                </select>
+                                <div class="meta" style="margin-top:6px;"><?php echo !empty($editRow["place_type"]) ? "Now: " . htmlspecialchars(PlaceTypeClassifier::labelOf((string)$editRow["place_type"])) . ". " : ""; ?>A type chosen here is kept when places are classified again.</div>
                             </div>
 
                             <div class="col-3">
