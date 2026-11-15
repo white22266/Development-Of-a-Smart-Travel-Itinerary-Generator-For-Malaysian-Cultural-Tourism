@@ -804,7 +804,7 @@ foreach ($costBreakdown["breakdown"] as $costItem) {
     const AI_CHAT_BOOT = <?php echo json_encode(['lang' => i18n_lang(), 'ui' => ai_ui_labels(i18n_lang())], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?: '{}'; ?>;
     const AI_CHAT_T = <?php echo i18n_js(['iv.ai_missing', 'iv.ai_sep']); ?>;
     </script>
-    <script src="../assets/trip_ai_chat.js?v=20261118a"></script>
+    <script src="../assets/trip_ai_chat.js?v=20261123a"></script>
     <script>
         const ITINERARY_ID = <?php echo (int)$itineraryId; ?>;
         const COST_CHART_LABELS = <?php echo json_encode($chartLabels, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;

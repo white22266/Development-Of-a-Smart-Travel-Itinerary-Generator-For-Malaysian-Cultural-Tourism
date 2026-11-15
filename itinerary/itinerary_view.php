@@ -1271,7 +1271,7 @@ $editConfig = json_encode([
 const AI_CHAT_BOOT = <?php echo json_encode(['lang' => i18n_lang(), 'ui' => ai_ui_labels(i18n_lang())], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?: '{}'; ?>;
 const AI_CHAT_T = <?php echo i18n_js(['iv.ai_missing', 'iv.ai_sep']); ?>;
 </script>
-<script src="../assets/trip_ai_chat.js?v=20261118a"></script>
+<script src="../assets/trip_ai_chat.js?v=20261123a"></script>
 <script>
 // What assets/itinerary_edit.js needs: the endpoints and its texts in the page's language.
 const ITINERARY_EDIT = <?php echo $editConfig; ?>;

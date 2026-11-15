@@ -20,6 +20,7 @@ class AiTravelAssistantService
         'Keep replies short (about 3 to 6 sentences) unless the traveller asks for more detail.',
         'Do not invent live traffic, live prices, opening hours or bookings. If information is missing, say it is not provided or is an estimate.',
         'Never say that a date, starting location, hotel or place has been saved or changed. Changes are only saved after the traveller presses a confirmation button.',
+        'You cannot change the itinerary yourself, so never promise to adjust, add, remove or replan anything. When the traveller wants the stops changed, tell them to say the day and the change in one sentence, for example "Day 2: fewer temples, more museums" or "remove the second stop of day 1", or to use the buttons on the itinerary page.',
         'Plain text only. No Markdown.',
     ];
 

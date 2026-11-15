@@ -55,13 +55,15 @@ class ItineraryHotelService
     /**
      * When the hotel row of a day starts, in minutes after midnight: when the traveller arrives,
      * the end of the last row before it plus the way there (ItineraryEditService times it again
-     * with the day: the arrival at the base after the last stop and the dinner). At most 23:29,
+     * with the day: the arrival at the base after the last stop and the dinner). At most 23:25,
      * so the half-hour row stays inside the day; 20:00 when the day has no timed row.
      */
     public static function checkInMinute(?int $lastEndMin, int $travelMin = 0): int
     {
         if ($lastEndMin === null) return 20 * 60;
-        return max(0, min(23 * 60 + 29, $lastEndMin + max(0, $travelMin)));
+        // On a five-minute mark, like every other row of the day.
+        $arrival = max(0, $lastEndMin + max(0, $travelMin));
+        return min(23 * 60 + 25, (int)(ceil($arrival / 5) * 5));
     }
 
     /** The hotel goes last on the day before the night. */

@@ -1864,7 +1864,10 @@ async function makeVersion(button) {
     try {
         const data = await postVersions({ action: 'create', style: button.dataset.style || '' });
         if (data.ok) {
-            window.location.href = 'itinerary_review.php?itinerary_id=' + ITINERARY_ID + '#versions';
+            // The address may differ from the present one only by its fragment, which would not load the
+            // page again: set the fragment, then reload.
+            window.location.hash = 'versions';
+            window.location.reload();
             return;
         }
         alert(rt('rv.version_failed', { reason: data.display || data.message || '' }));

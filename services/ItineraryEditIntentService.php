@@ -206,7 +206,16 @@ class ItineraryEditIntentService
             'less' => [],
         ];
         if ($action === 'none') {
-            return $intent;
+            // A wish such as "fewer temples, more museums on day 3" asks for that day to be planned
+            // again, even when the model saw no action in the sentence.
+            [$wishMore, $wishLess] = self::moreLess($message);
+            $wishDay = ($wishMore || $wishLess) ? self::dayInMessage($message, $totalDays) : null;
+            if ($wishDay === null) {
+                return $intent;
+            }
+            $action = 'regenerate_day';
+            $intent['action'] = $action;
+            $data['day'] = $wishDay;
         }
 
         // Numbers may come back as numbers or numeric strings; anything else is invalid.
@@ -527,6 +536,22 @@ PROMPT;
         return $list;
     }
 
+    /** The day a message names ("day 3", "hari ke-2", "第三天") when it lies inside the trip; null otherwise. */
+    private static function dayInMessage(string $message, int $totalDays): ?int
+    {
+        $day = null;
+        if (preg_match('/(?<![a-z])(?:day|hari)\s*(?:ke-?\s*)?(\d{1,2})(?!\d)/iu', $message, $m)) {
+            $day = (int)$m[1];
+        } elseif (preg_match('/第\s*([一二三四五六七八九十]|\d{1,2})\s*天/u', $message, $m)) {
+            $numerals = ['一' => 1, '二' => 2, '三' => 3, '四' => 4, '五' => 5, '六' => 6, '七' => 7, '八' => 8, '九' => 9, '十' => 10];
+            $day = ctype_digit($m[1]) ? (int)$m[1] : ($numerals[$m[1]] ?? null);
+        }
+        if ($day === null && $totalDays === 1) {
+            $day = 1;
+        }
+        return ($day !== null && $day >= 1 && $day <= $totalDays) ? $day : null;
+    }
+
     /**
      * The categories a text asks more and less of: "fewer temples, more food", "kurang muzium,
      * lebih banyak makanan", "少一点博物馆，多一点美食". Each clause is read on its own; the
@@ -540,7 +565,7 @@ PROMPT;
         $more = [];
         $less = [];
         $text = mb_strtolower($text, 'UTF-8');
-        $moreWords = '/(?<![a-z])(?:more|extra|lebih(?:\s+banyak)?|tambah(?:kan)?\s+lagi|banyakkan)(?![a-z])|多一?[点些個个]?|更多|增加/u';
+        $moreWords = '/(?<![a-z])(?:more|extra|lebih(?:kan)?(?:\s+banyak)?|tambah(?:kan)?(?:\s+lagi)?|banyakkan|perbanyak(?:kan)?)(?![a-z])|多一?[点些個个]?|更多|增加/u';
         $lessWords = '/(?<![a-z])(?:fewer|less|no\s+more|kurang(?:kan)?|sedikit|tak\s+(?:nak|mahu)\s+banyak)(?![a-z])|少一?[点些]?|减少|不要那么多|别那么多/u';
         $clauses = preg_split('/[,;.!?，。；！？、]|(?<![a-z])(?:and|but|dan|tetapi|tapi)(?![a-z])|和|但是?|还有/u', $text) ?: [$text];
         // Whether the words before a match (or, in Chinese, right after it) ask for more or less.

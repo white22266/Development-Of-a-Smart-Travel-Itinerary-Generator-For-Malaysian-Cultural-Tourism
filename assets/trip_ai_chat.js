@@ -33,6 +33,11 @@ const TIMETABLE_OTHER = /\b(?:mula|mulakan|bermula)\b.*\bpukul\s*\d|(?:\d{1,2}|[
 const EDIT_WORDS_OTHER = /\b(?:tukar|tukarkan|ganti|gantikan|tambah|tambahkan|buang|padam|keluarkan|pindah|pindahkan|alih|alihkan|rancang\s+semula|susun\s+semula|tak\s+(?:nak|mahu)|tidak\s+mahu)\b|换成|换掉|换一个|替换|改成|改为|改到|更换|加一个|加个|添加|增加|新增|删除|删掉|去掉|不要去|不想去|移到|挪到|调到|搬到|重新安排|重新规划|重新排|排序|顺路/i;
 const EDIT_WORDS = /\b(?:replace|change|swap|switch|modify|substitute|regenerate|replan|reroute|remove|delete|skip|drop|add|include|instead|alternatives?|another\s+(?:place|stop)|more\s+(?:places?|stops?)|new\s+(?:place|stop)|extra\s+(?:place|stop)|dislike|don'?t\s+(?:want|like)|do\s+not\s+(?:want|like)|too\s+(?:far|expensive|crowded|tiring)|cheaper|lower\s+cost|reduce\s+cost|save\s+money|budget\s+friendly|fill|empty\s+(?:day|slot)|improve)\b/i;
 
+// A wish for a named day ("day 3: fewer temples, more museums", "第三天少排寺庙，多排博物馆") asks for
+// that day to be planned again, so it goes to the editor as well.
+const WISH_DAY = /\bday\s*\d{1,2}\b|\bhari\s*(?:ke-?\s*)?\d{1,2}\b|第\s*(?:[一二三四五六七八九十]|\d{1,2})\s*天/i;
+const WISH_WORDS = /\b(?:fewer|less)\s+[a-z]{3,}s\b|\bmore\s+(?:museums?|temples?|mosques?|churches|galleries|markets?|malls?|beaches|parks?|waterfalls?|caves?|palaces?|forts?|villages?|food|nature|culture|heritage|shopping|festivals?)\b|\b(?:kurangkan|lebihkan|banyakkan|perbanyak(?:kan)?)\b|少排|多排|少去|多去|少安排|多安排|少一?[点些]|多一?[点些]|减少|增加|更多|更少/i;
+
 /**
  * Decide which endpoint should handle a message.
  * - timetable: an explicit request to restart the day at a clock time ("start at 9.30am").
@@ -51,7 +56,8 @@ function detectChatRoute(text) {
     const origin = ORIGIN_WORDS.test(text) || ORIGIN_WORDS_OTHER.test(text);
     const date = DATE_WORDS.test(text) || DATE_WORDS_OTHER.test(text);
     const weather = WEATHER_WORDS.test(text) || WEATHER_WORDS_OTHER.test(text);
-    if (!origin && !date && !weather && (EDIT_WORDS.test(text) || EDIT_WORDS_OTHER.test(text))) return 'edit';
+    const wish = WISH_DAY.test(text) && WISH_WORDS.test(text);
+    if (!origin && !date && !weather && (wish || EDIT_WORDS.test(text) || EDIT_WORDS_OTHER.test(text))) return 'edit';
     return 'chat';
 }
 
