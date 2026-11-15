@@ -9,16 +9,25 @@
 //      1 or 2, are never candidates. The twin groups of the candidates (one landmark under two
 //      names, PlannerRules::sameLandmarks()) are worked out once: a trip holds one row of each,
 //      a must-see place keeps its twins out, and so does a place to avoid.
-//   2. Must-see places are given their days first: each only on a day where it can be visited
-//      under every hard rule, places near each other on the same day, and all of them counted
-//      in the budget before any other stop.
-//   3. Day by day, ItineraryDayBuilder fills the day (must-see places first, estimated travel
-//      figures) and ItineraryRouteOptimiser puts it in the order with the least travelling.
-//      With an end point, the last day finishes towards it.
-//   4. When a routing server answers, the trip is measured on the road with one table request
+//   2. Must-see places: the days each can be visited on under every hard rule that does not
+//      depend on the other stops, and all of them counted in the budget before any other stop.
+//   3. TripLayout lays the trip out: the base of every night (the starting point with
+//      stay_at_start, otherwise the bases of the areas the trip tours), the area of every day
+//      and the group of places each day draws from first. A must-see place goes to the day of
+//      its group.
+//   4. Day by day, ItineraryDayBuilder::search() finds the best day (estimated travel figures)
+//      and ItineraryRouteOptimiser puts it in the order with the least travelling. Day d + 1
+//      starts at the base of night d; a day followed by a night ends at its base (BASE: the
+//      leg back counts in the day's distance, the traveller is back by the end of the day
+//      window, and the day has a dinner, near the base when not on the way). The first leg of
+//      day 1, and of the day the trip moves to another area, is not counted by the distance
+//      limits. With an end point, the last day finishes towards it.
+//   5. When a routing server answers, the trip is measured on the road with one table request
 //      and every day is ordered and timed again with the road figures. A stop no order can
-//      keep is dropped and one feasible replacement is tried, measured with one route request.
-//   5. Everything is stored, and the total written by ItineraryEditService::total().
+//      keep is dropped and the search's next places (spares) are tried in its place, measured
+//      with one route request.
+//   6. Everything is stored (the base and group of each day in itinerary_days), and the total
+//      written by ItineraryEditService::total().
 //
 // Every day is timed with its lunch and dinner (ItineraryDayBuilder::fit()). A meal is stored
 // as an itinerary row of item_type 'food' with meal_slot 'lunch' or 'dinner': at a food place
@@ -26,8 +35,9 @@
 // coordinates, no leg). Meal rows cost 0.00: the cost model already reserves three meals a day
 // (CostEstimationService::calculate()), so a meal is never counted twice.
 // The chance of rain is asked once per trip, for the starting point (WeatherService), unless
-// the trip options carry a forecast override or ROUTING_ESTIMATES_ONLY is set; the day
-// builder prefers indoor places on a wet day. Without a forecast nothing changes.
+// the trip options carry a forecast override or ROUTING_ESTIMATES_ONLY is set; the layout gives
+// rainy dates the groups with more indoor places and the day search prefers indoor places on
+// a wet day. Without a forecast nothing changes.
 //
 // All of it runs in one transaction: a failure saves nothing. A day for which nothing is
 // feasible is stored with a short note row, and so is a must-see place that could not be
@@ -40,6 +50,7 @@ require_once __DIR__ . '/ItineraryRouteOptimiser.php';
 require_once __DIR__ . '/ItineraryEditService.php';
 require_once __DIR__ . '/RouteService.php';
 require_once __DIR__ . '/WeatherService.php';
+require_once __DIR__ . '/TripLayout.php';
 
 final class ItineraryGenerator
 {
@@ -47,7 +58,7 @@ final class ItineraryGenerator
     private const ROUTE_TIMEOUT = 8;
     /** Probe step through the day window when looking for a day a must-see place can be visited. */
     private const MUST_PROBE_STEP_MIN = 60;
-    /** Candidates measured and tried for each stop dropped on the road figures (replace()). */
+    /** The search's next places measured and tried for each stop dropped on the road figures (replace()). */
     private const REPLACE_CANDIDATES = 3;
     /** Words for a must-see place that no day of the trip allows. */
     private const MUST_REASONS = [
@@ -69,8 +80,10 @@ final class ItineraryGenerator
 
     /**
      * @param array{start_date:string,origin_name:string,origin_lat:float,origin_lng:float,
-     *              end_name?:string,end_lat?:float,end_lng?:float,forecast?:array<string,int>} $trip
+     *              end_name?:string,end_lat?:float,end_lng?:float,stay_at_start?:bool,
+     *              forecast?:array<string,int>} $trip
      *        the end fields are optional: without them the trip ends where its last stop is;
+     *        stay_at_start (optional): the traveller sleeps at the starting point every night;
      *        forecast (optional, for checks and tests) replaces the weather forecast: date
      *        (Y-m-d) => chance of rain 0 to 100
      * @return int the new itinerary_id
@@ -96,6 +109,7 @@ final class ItineraryGenerator
                 throw new RuntimeException('Please confirm an End Location with map coordinates, or choose to end the trip at the starting point.');
             }
         }
+        $stayAtStart = !empty($trip['stay_at_start']);
         $this->mustMissed = [];
 
         $this->conn->begin_transaction();
@@ -126,12 +140,21 @@ final class ItineraryGenerator
 
             $route = new RouteService((string)$profile['transport']);
             $route->setTimeout(self::ROUTE_TIMEOUT);
-            $musts = $this->assignMusts($mustIds, $profile, $route, $startDate);
-            $days = $this->planDays($pool, $profile, $route, $startDate, $origin, $finish, $musts);
-            $days = $this->measureOnRoad($days, $pool, $profile, $route, $origin, $finish);
+            $builder = new ItineraryDayBuilder($profile, $route, $this->mealPool);
+            $dates = self::dates($startDate, (int)$profile['days']);
+            $musts = $this->mustCandidates($mustIds, $profile, $dates);
+            $mustInput = [];
+            foreach ($musts['places'] as $id => $place) $mustInput[$id] = ['place' => $place, 'feasible' => $musts['feasible'][$id]];
+            $layout = TripLayout::plan($pool, $mustInput, $profile, static fn(array $place): float => $builder->placeValue($place), $route, [
+                    'origin' => $origin, 'origin_name' => $originName, 'finish' => $finish, 'dates' => $dates,
+                    'rain' => $this->rain, 'stay_at_start' => $stayAtStart,
+                ]);
+            $pending = $this->mustDays($musts, $layout, $profile);
+            $days = $this->planDays($pool, $profile, $route, $builder, $dates, $origin, $finish, $layout['days'], $musts, $pending);
+            $days = $this->measureOnRoad($days, $profile, $route, $builder);
             $this->settleMusts($days, $musts);
 
-            $itineraryId = $this->store($travellerId, $preferenceId, $pref, $profile, $startDate, $originName, $origin, $endName, $finish, $days);
+            $itineraryId = $this->store($travellerId, $preferenceId, $pref, $profile, $startDate, $originName, $origin, $endName, $finish, $stayAtStart, $days);
             ItineraryEditService::total($this->conn, $itineraryId);
 
             $this->conn->commit();
@@ -142,27 +165,29 @@ final class ItineraryGenerator
         }
     }
 
-    /**
-     * Give each must-see place a day. A place goes only on a day where a visit fits every rule
-     * that does not depend on the other stops (state, region, festival dates, opening hours,
-     * day window, accessibility), only while all must-see places together keep the budget, and
-     * only while the day has room. Places with the fewest possible days go first; a place goes
-     * to the day of a must-see place near it, otherwise to a day without one.
-     *
-     * @return array{days:array<int,array>,feasible:array<int,int[]>,places:array<int,array>}
-     */
-    private function assignMusts(array $mustIds, array $profile, RouteService $route, string $startDate): array
+    /** day => Y-m-d of a trip. */
+    private static function dates(string $startDate, int $days): array
     {
-        $out = ['days' => [], 'feasible' => [], 'places' => []];
+        $out = [];
+        for ($d = 1; $d <= $days; $d++) $out[$d] = (new DateTimeImmutable($startDate))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
+        return $out;
+    }
+
+    /**
+     * The must-see places that can be planned: each with the days where a visit fits every rule
+     * that does not depend on the other stops (state, region, festival dates, opening hours,
+     * day window, accessibility), and only while all of them together keep the budget (the
+     * places with the fewest possible days first). The others are noted with their reason.
+     *
+     * @return array{feasible:array<int,int[]>,places:array<int,array>}
+     */
+    private function mustCandidates(array $mustIds, array $profile, array $dates): array
+    {
+        $out = ['feasible' => [], 'places' => []];
         if (!$mustIds) return $out;
         $rows = [];
         foreach (PlannerCandidates::byIds($this->conn, $mustIds) as $row) $rows[(int)$row['place_id']] = $row;
         $names = $this->placeNames($mustIds);
-
-        $totalDays = (int)$profile['days'];
-        $dates = [];
-        for ($d = 1; $d <= $totalDays; $d++) $dates[$d] = (new DateTimeImmutable($startDate))->modify('+' . ($d - 1) . ' days')->format('Y-m-d');
-
         foreach ($mustIds as $id) {
             $name = $names[$id] ?? ('Place #' . $id);
             if (!isset($rows[$id])) { $this->mustMissed[$id] = ['name' => $name, 'reason' => 'UNAVAILABLE', 'day' => 1]; continue; }
@@ -190,12 +215,10 @@ final class ItineraryGenerator
             $out['feasible'][$id] = $feasible;
             $out['places'][$id] = $place;
         }
-
         $order = array_keys($out['places']);
         usort($order, static fn(int $a, int $b): int => [count($out['feasible'][$a]), $a] <=> [count($out['feasible'][$b]), $b]);
         $items = [];
-        $reserveKm = $totalDays * (float)$profile['day_km'];
-        $nearKm = (float)$profile['day_km'] / 2;
+        $reserveKm = count($dates) * (float)$profile['day_km'];
         foreach ($order as $id) {
             $place = $out['places'][$id];
             $item = ['item_type' => PlannerRules::itemType($place), 'estimated_cost' => PlannerRules::placeCost($place)];
@@ -204,29 +227,43 @@ final class ItineraryGenerator
                 unset($out['places'][$id]);
                 continue;
             }
-            $open = array_values(array_filter($out['feasible'][$id], fn(int $d): bool => count($out['days'][$d] ?? []) < (int)$profile['target']));
-            if (!$open) {
-                $this->mustMissed[$id] = ['name' => (string)$place['name'], 'reason' => 'ROOM', 'day' => $out['feasible'][$id][0]];
-                unset($out['places'][$id]);
-                continue;
-            }
-            $near = null;
-            $nearest = INF;
-            foreach ($open as $d) {
-                foreach ($out['days'][$d] ?? [] as $other) {
-                    $km = (float)$route->getSegment((float)$place['latitude'], (float)$place['longitude'], (float)$other['latitude'], (float)$other['longitude'])['distance_km'];
-                    if ($km < $nearest) { $nearest = $km; $near = $d; }
-                }
-            }
-            $empty = null;
-            foreach ($open as $d) {
-                if (empty($out['days'][$d])) { $empty = $d; break; }
-            }
-            $day = ($near !== null && $nearest <= $nearKm) ? $near : ($empty ?? $near ?? $open[0]);
-            $out['days'][$day][] = $place;
             $items[] = $item;
         }
         return $out;
+    }
+
+    /**
+     * The day of each must-see place: the day of its group (TripLayout), else another day of its
+     * area, else any day, always a day it can be visited on and with room (at most the target
+     * number of stops). Places with the fewest possible days go first.
+     *
+     * @return array<int,array> day => must-see place rows
+     */
+    private function mustDays(array $musts, array $layout, array $profile): array
+    {
+        $order = array_keys($musts['places']);
+        usort($order, static fn(int $a, int $b): int => [count($musts['feasible'][$a]), $a] <=> [count($musts['feasible'][$b]), $b]);
+        $pending = [];
+        foreach ($order as $id) {
+            $feasible = $musts['feasible'][$id];
+            $own = $layout['must_days'][$id] ?? null;
+            $region = $own !== null ? $layout['days'][$own]['region'] : null;
+            $choices = array_merge(
+                $own !== null && in_array($own, $feasible, true) ? [$own] : [],
+                array_values(array_filter($feasible, static fn(int $d): bool => $region !== null && $layout['days'][$d]['region'] === $region)),
+                $feasible
+            );
+            $day = null;
+            foreach ($choices as $d) {
+                if (count($pending[$d] ?? []) < (int)$profile['target']) { $day = $d; break; }
+            }
+            if ($day === null) {
+                $this->mustMissed[$id] = ['name' => (string)$musts['places'][$id]['name'], 'reason' => 'ROOM', 'day' => $feasible[0]];
+                continue;
+            }
+            $pending[$day][] = $musts['places'][$id];
+        }
+        return $pending;
     }
 
     /** Why a place cannot be visited at any time of a day on its own (null: it can). */
@@ -255,13 +292,11 @@ final class ItineraryGenerator
     }
 
     /** Plan and order every day with estimated travel figures. */
-    private function planDays(array $pool, array $profile, RouteService $route, string $startDate, array $origin, ?array $finish, array $musts): array
+    private function planDays(array $pool, array $profile, RouteService $route, ItineraryDayBuilder $builder, array $dates, array $origin, ?array $finish,
+                              array $layout, array $musts, array $pending): array
     {
-        $builder = new ItineraryDayBuilder($profile, $route, $this->mealPool);
         $total = (int)$profile['days'];
-        $pending = $musts['days'];
         $days = [];
-        $start = $origin;
         $theme = null;
         for ($dayNo = 1; $dayNo <= $total; $dayNo++) {
             // Must-see places of the days still to come keep their share of the budget.
@@ -270,14 +305,14 @@ final class ItineraryGenerator
                 if ($d <= $dayNo) continue;
                 foreach ($places as $place) $later[] = ['item_type' => PlannerRules::itemType($place), 'estimated_cost' => PlannerRules::placeCost($place)];
             }
-            $context = $this->dayContext($days, $dayNo, $startDate, $start, $profile, ($total - $dayNo) * (float)$profile['day_km'], $later);
+            $context = $this->dayContext($days, $dayNo, $dates[$dayNo], $profile, ($total - $dayNo) * (float)$profile['day_km'], $later)
+                + self::where($layout, $dayNo, $total, $origin, $finish);
             $context['previous_theme'] = $theme;
             $context['musts'] = $pending[$dayNo] ?? [];
-            $context['finish'] = $dayNo === $total ? $finish : null;
-            $built = $builder->build($pool, $context);
-            $plan = ItineraryRouteOptimiser::orderDay($route, $profile, $start, $built['stops'], $context + ['end' => null]);
-            // The builder's order keeps every rule, so ordering never loses a stop here.
-            $days[$dayNo] = $context + ['stops' => $plan['stops'], 'rejections' => $built['rejections']];
+            $built = $builder->search($pool, $context);
+            $plan = ItineraryRouteOptimiser::orderDay($route, $profile, $context['start'], $built['stops'], self::frame($context));
+            // The search's day keeps every rule in its own order, so ordering never loses a stop here.
+            $days[$dayNo] = $context + ['stops' => $plan['stops'], 'close' => $plan['close'], 'rejections' => $built['rejections'], 'spares' => $built['spares']];
 
             // A must-see place that found no slot moves to a later day where it can be visited.
             foreach ($built['unplaced'] as $id => $reason) {
@@ -292,45 +327,83 @@ final class ItineraryGenerator
                 }
                 if (!$moved) $this->mustMissed[$id] = ['name' => (string)$place['name'], 'reason' => $reason, 'day' => $dayNo];
             }
-            if ($plan['stops']) {
-                $start = $plan['stops'][count($plan['stops']) - 1]['point'];
-                $theme = self::mainCategory($plan['stops']);
-            }
+            if ($plan['stops']) $theme = self::mainCategory($plan['stops']);
         }
         return $days;
+    }
+
+    /**
+     * Where a day starts and ends, from the layout: day 1 at the starting point, a later day at
+     * the base of the night before; a day followed by a night ends at its own base (a rule:
+     * BASE), the last day at the trip's end point when it has one (FINISH). The first leg is not
+     * counted on day 1 and on the day the trip moves to another area.
+     */
+    private static function where(array $layout, int $dayNo, int $total, array $origin, ?array $finish): array
+    {
+        $here = $layout[$dayNo];
+        $base = [(float)$here['base']['lat'], (float)$here['base']['lng']];
+        $night = $dayNo < $total;
+        $start = $dayNo === 1 ? $origin : [(float)$layout[$dayNo - 1]['base']['lat'], (float)$layout[$dayNo - 1]['base']['lng']];
+        return [
+            'start' => $start,
+            'first_leg_exempt' => $dayNo === 1 || $layout[$dayNo - 1]['region'] !== $here['region'],
+            'layout' => $here,
+            'base' => $base,
+            'group' => $here['group'],
+            'night' => $night,
+            'end' => $night ? $base : null,
+            'trip_finish' => $dayNo === $total ? $finish : null,
+            // For the day search: where the day must end in time.
+            'finish' => $night ? $base : ($dayNo === $total ? $finish : null),
+            'finish_code' => $night ? 'BASE' : 'FINISH',
+        ];
+    }
+
+    /** What ItineraryRouteOptimiser::orderDay() reads about a day. */
+    private static function frame(array $day): array
+    {
+        return [
+            'date' => $day['date'],
+            'first_leg_exempt' => $day['first_leg_exempt'],
+            'budget' => $day['budget'],
+            'end' => $day['end'],
+            'night' => $day['night'],
+            'finish' => $day['trip_finish'],
+            'meal_pool' => $day['meal_pool'],
+            'used' => $day['used'],
+        ];
     }
 
     /**
      * Measure the planned trip on the road and order and time each day again with those
      * figures. Without an answer from the routing server the estimates stay.
      */
-    private function measureOnRoad(array $days, array $pool, array $profile, RouteService $route, array $origin, ?array $finish): array
+    private function measureOnRoad(array $days, array $profile, RouteService $route, ItineraryDayBuilder $builder): array
     {
         $pointsByDay = [];
         $near = [];
         foreach ($days as $dayNo => $day) {
-            $pointsByDay[$dayNo] = array_column($day['stops'], 'point');
-            array_push($near, ...self::mealPoints($day['stops']));
+            $pointsByDay[$dayNo] = array_merge([$day['start']], array_column($day['stops'], 'point'));
+            if ($day['end'] !== null) $pointsByDay[$dayNo][] = $day['end'];
+            if ($day['trip_finish'] !== null) $pointsByDay[$dayNo][] = $day['trip_finish'];
+            array_push($near, ...self::mealPoints($day));
         }
-        $pointsByDay[1][] = $origin;
-        $lastDay = (int)array_key_last($days);
-        if ($finish !== null) $pointsByDay[$lastDay][] = $finish;
-        // One table request for the whole trip: the stops and, while there is room, the meal
-        // places planned so far and the other meal places near the stops (those left out are
-        // estimated). A second table request would be held back by the public server for
-        // about ten seconds.
-        foreach ($days as $day) array_push($near, ...$this->nearMealPoints($day['stops'], (float)$profile['meal_radius_km']));
+        // One table request for the whole trip: the stops, the bases and, while there is room,
+        // the meal places planned so far and the other meal places near the stops and bases
+        // (those left out are estimated). A second table request would be held back by the
+        // public server for about ten seconds.
+        foreach ($days as $day) {
+            $points = array_column($day['stops'], 'point');
+            if ($day['end'] !== null) $points[] = $day['end'];
+            array_push($near, ...$this->nearMealPoints($points, (float)$profile['meal_radius_km']));
+        }
         $route->preloadTrip($pointsByDay, $near);
 
-        // Every day is ordered again, also when a day has no road figures: the day before may
-        // now end elsewhere. With the same figures as in planning, no stop is lost here.
-        $builder = new ItineraryDayBuilder($profile, $route, $this->mealPool);
-        $start = $origin;
+        // Every day is ordered again on the road figures. With the same figures as in planning,
+        // no stop is lost here.
         foreach (array_keys($days) as $dayNo) {
             $day = $days[$dayNo];
-            $day['start'] = $start;
-            $stops = $day['stops'];
-            if ($stops) {
+            if ($day['stops']) {
                 // Meals may use no place of another day, as planned now.
                 $day['used'] = $this->usedPlaces($days, $dayNo);
                 $outside = $this->budgetOutside($days, $dayNo);
@@ -338,67 +411,59 @@ final class ItineraryGenerator
                 $day['trip_km'] = $outside['km'];
                 $day['reserve_km'] = 0.0;
                 $day['budget'] = $outside + ['reserve_km' => 0.0];
-                $day['end'] = null;
-                $plan = ItineraryRouteOptimiser::orderDay($route, $profile, $start, $stops, $day);
+                $plan = ItineraryRouteOptimiser::orderDay($route, $profile, $day['start'], $day['stops'], self::frame($day));
                 if ($plan['dropped']) {
                     foreach ($plan['dropped'] as $stop) {
                         if (!empty($stop['must'])) {
                             $this->mustMissed[(int)$stop['place']['place_id']] = ['name' => (string)$stop['place']['name'], 'reason' => (string)$stop['reason'], 'day' => $dayNo];
                         }
                     }
-                    $plan = $this->replace($plan, $pool, $profile, $route, $builder, $days, $day);
+                    $plan = $this->replace($plan, $profile, $route, $builder, $days, $day);
                 }
                 $day['stops'] = $plan['stops'];
+                $day['close'] = $plan['close'];
             }
             $days[$dayNo] = $day;
-            if ($day['stops']) $start = $day['stops'][count($day['stops']) - 1]['point'];
         }
         return $days;
     }
 
     /**
-     * After stops were dropped on the road figures: as many of the builder's next candidates
-     * as stops were dropped take their place. The best REPLACE_CANDIDATES per dropped stop are
-     * measured together in one route request (not a table request, which the server would hold
-     * back after the trip's table). Each is tried in every order (orderDay()) and kept only when
-     * the day then keeps all its stops; a candidate that does not fit gives way to the next.
+     * After stops were dropped on the road figures: as many of the search's next places
+     * (spares) as stops were dropped take their place. The best REPLACE_CANDIDATES per dropped
+     * stop are measured together in one route request (not a table request, which the server
+     * would hold back after the trip's table). Each is tried in every order (orderDay()) and kept
+     * only when the day then keeps all its stops; a candidate that does not fit gives way to
+     * the next.
      */
-    private function replace(array $plan, array $pool, array $profile, RouteService $route, ItineraryDayBuilder $builder, array $days, array $context): array
+    private function replace(array $plan, array $profile, RouteService $route, ItineraryDayBuilder $builder, array $days, array $context): array
     {
-        $used = $this->usedPlaces($days, (int)$context['day_no']);   // advance() adds the kept stops and their meals
+        $used = $this->usedPlaces($days);
         foreach ($plan['dropped'] as $stop) $used[(int)$stop['place']['place_id']] = true;
-        $context['used'] = $used;
+        $end = $context['end'] ?? $context['trip_finish'];
+        $spares = array_values(array_filter((array)$context['spares'], static fn(array $s): bool =>
+            !isset($used[(int)$s['place']['place_id']]) && PlannerRules::twinIn($profile, (int)$s['place']['place_id'], $used) === null));
         $missing = count($plan['dropped']);
-        $measured = false;
-        while ($missing > 0) {
-            $state = ItineraryDayBuilder::startState($context, $profile);
-            foreach ($plan['stops'] as $stop) $state = ItineraryDayBuilder::advance($state, $stop, $profile);
-            $candidates = $builder->ranked($pool, $context, $state, self::REPLACE_CANDIDATES * $missing);
-            if (!$candidates) break;
-            if (!$measured) {
-                // The candidates' legs to and from every point of the day.
-                $measured = true;
-                $legs = [];
-                foreach ($candidates as $candidate) {
-                    $legs[] = [$context['start'], $candidate['point']];
-                    foreach ($plan['stops'] as $stop) {
-                        $legs[] = [$stop['point'], $candidate['point']];
-                        $legs[] = [$candidate['point'], $stop['point']];
-                    }
-                    if ($context['finish'] !== null) $legs[] = [$candidate['point'], $context['finish']];
-                }
-                $route->measureLegs($legs, 1);
+        $candidates = array_slice($spares, 0, self::REPLACE_CANDIDATES * $missing);
+        if (!$candidates) return $plan;
+        // The candidates' legs to and from every point of the day.
+        $legs = [];
+        foreach ($candidates as $candidate) {
+            $legs[] = [$context['start'], $candidate['point']];
+            foreach ($plan['stops'] as $stop) {
+                $legs[] = [$stop['point'], $candidate['point']];
+                $legs[] = [$candidate['point'], $stop['point']];
             }
-            $better = null;
-            foreach ($candidates as $candidate) {
-                $context['used'][(int)$candidate['place']['place_id']] = true;   // tried once
-                if (!$route->knows($context['start'], $candidate['point'])) continue;   // no road figures: the estimates found no better
-                $again = ItineraryRouteOptimiser::orderDay($route, $profile, $context['start'], array_merge($plan['stops'], [$candidate]), $context);
-                if (!$again['dropped']) { $better = $again; break; }
-            }
-            if ($better === null) break;
-            $plan = $better;
-            $missing--;
+            if ($end !== null) $legs[] = [$candidate['point'], $end];
+        }
+        $route->measureLegs($legs, 1);
+        foreach ($candidates as $candidate) {
+            if ($missing <= 0) break;
+            if (!$route->knows($context['start'], $candidate['point'])) continue;   // no road figures: the estimates found no better
+            // Its notes as this day sees it (category variety after the kept stops).
+            $candidate = $builder->relevel($candidate, $context, $plan['stops']);
+            $again = ItineraryRouteOptimiser::orderDay($route, $profile, $context['start'], array_merge($plan['stops'], [$candidate]), self::frame($context));
+            if (!$again['dropped']) { $plan = $again; $missing--; }
         }
         return $plan;
     }
@@ -417,19 +482,16 @@ final class ItineraryGenerator
         }
     }
 
-    /** What a day is planned with: its date and start, the places used and the rest of the trip for the budget. */
-    private function dayContext(array $days, int $dayNo, string $startDate, array $start, array $profile, float $reserveKm, array $laterItems = []): array
+    /** What a day is planned with: its date, the places used and the rest of the trip for the budget. */
+    private function dayContext(array $days, int $dayNo, string $date, array $profile, float $reserveKm, array $laterItems = []): array
     {
         $outside = $this->budgetOutside($days, $dayNo);
         $outside['items'] = array_merge($outside['items'], $laterItems);
-        $date = (new DateTimeImmutable($startDate))->modify('+' . ($dayNo - 1) . ' days')->format('Y-m-d');
         return [
             'day_no' => $dayNo,
             'date' => $date,
             'rain' => $this->rain[$date] ?? null,
             'meal_pool' => $this->mealPool,
-            'start' => $start,
-            'first_leg_exempt' => $dayNo === 1,
             'used' => $this->usedPlaces($days),
             'trip_items' => $outside['items'],
             'trip_km' => $outside['km'],
@@ -438,7 +500,7 @@ final class ItineraryGenerator
         ];
     }
 
-    /** The items and km of every day except one, for the budget. */
+    /** The items and km of every day except one, for the budget (the way back to the base included). */
     private function budgetOutside(array $days, int $exceptDay): array
     {
         $items = [];
@@ -450,6 +512,7 @@ final class ItineraryGenerator
                 $items[] = ['item_type' => PlannerRules::itemType($stop['place']), 'estimated_cost' => PlannerRules::placeCost($stop['place'])];
                 $km += (float)$stop['km'] + (float)($stop['meal_km'] ?? 0);
             }
+            if (!empty($day['close'])) $km += (float)$day['close']['km'] + (float)$day['close']['meal_km'];
         }
         return ['items' => $items, 'km' => $km];
     }
@@ -466,33 +529,37 @@ final class ItineraryGenerator
                     if ($meal['place'] !== null) $used[(int)$meal['place']['place_id']] = true;
                 }
             }
+            foreach ($day['close']['meals'] ?? [] as $meal) {
+                if ($meal['place'] !== null) $used[(int)$meal['place']['place_id']] = true;
+            }
         }
         return $used;
     }
 
-    /** The points of the meal places planned with these stops. */
-    private static function mealPoints(array $stops): array
+    /** The points of the meal places planned for a day. */
+    private static function mealPoints(array $day): array
     {
         $points = [];
-        foreach ($stops as $stop) {
+        foreach ($day['stops'] as $stop) {
             foreach ($stop['meals'] ?? [] as $meal) if ($meal['point'] !== null) $points[] = $meal['point'];
         }
+        foreach ($day['close']['meals'] ?? [] as $meal) if ($meal['point'] !== null) $points[] = $meal['point'];
         return $points;
     }
 
-    /** Meal places within the meal radius (straight line) of these stops, so the road figures cover them. */
-    private function nearMealPoints(array $stops, float $radiusKm): array
+    /** Meal places within the meal radius (straight line) of these points, so the road figures cover them. */
+    private function nearMealPoints(array $points, float $radiusKm): array
     {
-        $points = [];
+        $out = [];
         foreach ($this->mealPool as $place) {
-            foreach ($stops as $stop) {
-                if (RouteService::haversineKm((float)$stop['point'][0], (float)$stop['point'][1], (float)$place['latitude'], (float)$place['longitude']) <= $radiusKm) {
-                    $points[] = [(float)$place['latitude'], (float)$place['longitude']];
+            foreach ($points as $point) {
+                if (RouteService::haversineKm((float)$point[0], (float)$point[1], (float)$place['latitude'], (float)$place['longitude']) <= $radiusKm) {
+                    $out[] = [(float)$place['latitude'], (float)$place['longitude']];
                     break;
                 }
             }
         }
-        return array_slice($points, 0, 20);
+        return array_slice($out, 0, 20);
     }
 
     /**
@@ -504,8 +571,7 @@ final class ItineraryGenerator
      */
     private static function forecast(array $trip, array $origin, string $startDate, int $days): array
     {
-        $dates = [];
-        for ($d = 0; $d < $days; $d++) $dates[] = (new DateTimeImmutable($startDate))->modify('+' . $d . ' days')->format('Y-m-d');
+        $dates = array_values(self::dates($startDate, $days));
         if (isset($trip['forecast']) && is_array($trip['forecast'])) {
             $out = [];
             foreach ($dates as $date) {
@@ -528,30 +594,28 @@ final class ItineraryGenerator
         return array_key_first($counts);
     }
 
-    private function store(int $travellerId, int $preferenceId, array $pref, array $profile, string $startDate, string $originName, array $origin, string $endName, ?array $finish, array $days): int
+    private function store(int $travellerId, int $preferenceId, array $pref, array $profile, string $startDate, string $originName, array $origin,
+                           string $endName, ?array $finish, bool $stayAtStart, array $days): int
     {
         $title = self::title($pref);
         $tripDays = (int)$profile['days'];
+        $columns = ['traveller_id', 'preference_id', 'title', 'start_date', 'total_days', 'origin_name', 'origin_lat', 'origin_lng'];
+        $types = 'iissisdd';
+        $values = [$travellerId, $preferenceId, $title, $startDate, $tripDays, $originName, $origin[0], $origin[1]];
         if ($finish !== null && PlannerRules::hasColumn($this->conn, 'itineraries', 'end_lat')) {
-            $stmt = $this->conn->prepare("
-                INSERT INTO itineraries
-                    (traveller_id, preference_id, title, start_date, total_days, origin_name, origin_lat, origin_lng,
-                     end_name, end_lat, end_lng, total_estimated_cost)
-                VALUES (?,?,?,?,?,?,?,?,?,?,?,0.00)
-            ");
-            if (!$stmt) throw new RuntimeException('Unable to create itinerary.');
-            $endName = mb_substr($endName, 0, 255);
-            $stmt->bind_param('iissisddsdd', $travellerId, $preferenceId, $title, $startDate, $tripDays, $originName, $origin[0], $origin[1],
-                $endName, $finish[0], $finish[1]);
-        } else {
-            $stmt = $this->conn->prepare("
-                INSERT INTO itineraries
-                    (traveller_id, preference_id, title, start_date, total_days, origin_name, origin_lat, origin_lng, total_estimated_cost)
-                VALUES (?,?,?,?,?,?,?,?,0.00)
-            ");
-            if (!$stmt) throw new RuntimeException('Unable to create itinerary.');
-            $stmt->bind_param('iissisdd', $travellerId, $preferenceId, $title, $startDate, $tripDays, $originName, $origin[0], $origin[1]);
+            array_push($columns, 'end_name', 'end_lat', 'end_lng');
+            $types .= 'sdd';
+            array_push($values, mb_substr($endName, 0, 255), $finish[0], $finish[1]);
         }
+        if (PlannerRules::hasColumn($this->conn, 'itineraries', 'stay_at_start')) {
+            $columns[] = 'stay_at_start';
+            $types .= 'i';
+            $values[] = $stayAtStart ? 1 : 0;
+        }
+        $stmt = $this->conn->prepare('INSERT INTO itineraries (' . implode(', ', $columns) . ', total_estimated_cost) VALUES ('
+            . implode(',', array_fill(0, count($columns), '?')) . ', 0.00)');
+        if (!$stmt) throw new RuntimeException('Unable to create itinerary.');
+        $stmt->bind_param($types, ...$values);
         $stmt->execute();
         $itineraryId = (int)$stmt->insert_id;
         $stmt->close();
@@ -571,26 +635,26 @@ final class ItineraryGenerator
                  start_time, end_time, estimated_cost, distance_km, travel_time_min, notes)
             VALUES (?,?,?,'food',?,?,?,?,?,?,?,0.00,?,?,?)
         ") : null;
+        $storeMeal = function (array $meal, int $dayNo, int $sequence) use ($mealInsert, $itineraryId, $profile): void {
+            $slot = (string)$meal['slot'];
+            $mealPlaceId = $meal['place'] !== null ? (int)$meal['place']['place_id'] : null;
+            $mealTitle = mb_substr(ItineraryDayBuilder::mealTitle($meal), 0, 150);
+            $mealLat = $meal['point'][0] ?? null;
+            $mealLng = $meal['point'][1] ?? null;
+            $mealStart = PlannerRules::sqlTime((int)$meal['start']);
+            $mealEnd = PlannerRules::sqlTime((int)$meal['end']);
+            // A break without a place adds time only: no leg.
+            $mealKm = $meal['place'] !== null ? round((float)$meal['km'], 2) : null;
+            $mealMin = $meal['place'] !== null ? (int)$meal['min'] : null;
+            $mealNotes = ItineraryDayBuilder::mealNotes($meal, $profile);
+            $mealInsert->bind_param('iiisisddssdis', $itineraryId, $dayNo, $sequence, $slot, $mealPlaceId, $mealTitle, $mealLat, $mealLng,
+                $mealStart, $mealEnd, $mealKm, $mealMin, $mealNotes);
+            $mealInsert->execute();
+        };
         foreach ($days as $dayNo => $day) {
             $sequence = 0;
             foreach ($day['stops'] as $stop) {
-                foreach ($mealInsert !== null ? ($stop['meals'] ?? []) : [] as $meal) {
-                    $sequence++;
-                    $slot = (string)$meal['slot'];
-                    $mealPlaceId = $meal['place'] !== null ? (int)$meal['place']['place_id'] : null;
-                    $mealTitle = mb_substr(ItineraryDayBuilder::mealTitle($meal), 0, 150);
-                    $mealLat = $meal['point'][0] ?? null;
-                    $mealLng = $meal['point'][1] ?? null;
-                    $mealStart = PlannerRules::sqlTime((int)$meal['start']);
-                    $mealEnd = PlannerRules::sqlTime((int)$meal['end']);
-                    // A break without a place adds time only: no leg.
-                    $mealKm = $meal['place'] !== null ? round((float)$meal['km'], 2) : null;
-                    $mealMin = $meal['place'] !== null ? (int)$meal['min'] : null;
-                    $mealNotes = ItineraryDayBuilder::mealNotes($meal, $profile);
-                    $mealInsert->bind_param('iiisisddssdis', $itineraryId, $dayNo, $sequence, $slot, $mealPlaceId, $mealTitle, $mealLat, $mealLng,
-                        $mealStart, $mealEnd, $mealKm, $mealMin, $mealNotes);
-                    $mealInsert->execute();
-                }
+                foreach ($mealInsert !== null ? ($stop['meals'] ?? []) : [] as $meal) $storeMeal($meal, (int)$dayNo, ++$sequence);
                 $place = $stop['place'];
                 $sequence++;
                 $type = PlannerRules::itemType($place);
@@ -608,6 +672,8 @@ final class ItineraryGenerator
                     $startTime, $endTime, $cost, $km, $minutes, $notes);
                 $insert->execute();
             }
+            // The dinner near the base, after the last visit.
+            foreach ($mealInsert !== null ? ($day['close']['meals'] ?? []) : [] as $meal) $storeMeal($meal, (int)$dayNo, ++$sequence);
             if ($sequence === 0) {
                 $rejections = (array)($day['rejections'] ?? []);
                 arsort($rejections);
@@ -627,7 +693,33 @@ final class ItineraryGenerator
         }
         $insert->close();
         if ($mealInsert !== null) $mealInsert->close();
+        $this->storeBases($itineraryId, $days);
         return $itineraryId;
+    }
+
+    /** The base and group of every day (itinerary_days, migration 20261119_trip_bases.sql). */
+    private function storeBases(int $itineraryId, array $days): void
+    {
+        if (!PlannerRules::hasColumn($this->conn, 'itinerary_days', 'base_lat')) return;
+        $stmt = $this->conn->prepare("
+            INSERT INTO itinerary_days (itinerary_id, day_no, base_name, base_lat, base_lng, group_from, group_to, area_km)
+            VALUES (?,?,?,?,?,?,?,?)
+            ON DUPLICATE KEY UPDATE base_name = VALUES(base_name), base_lat = VALUES(base_lat), base_lng = VALUES(base_lng),
+                group_from = VALUES(group_from), group_to = VALUES(group_to), area_km = VALUES(area_km)
+        ");
+        foreach ($days as $dayNo => $day) {
+            $layout = $day['layout'];
+            $name = mb_substr((string)$layout['base']['name'], 0, 255);
+            $lat = (float)$layout['base']['lat'];
+            $lng = (float)$layout['base']['lng'];
+            $from = $layout['sector'][0] ?? null;
+            $to = $layout['sector'][1] ?? null;
+            $km = (float)$layout['radius'];
+            $dayNo = (int)$dayNo;
+            $stmt->bind_param('iisddiid', $itineraryId, $dayNo, $name, $lat, $lng, $from, $to, $km);
+            $stmt->execute();
+        }
+        $stmt->close();
     }
 
     /** The title of the note row of a day without stops (ItineraryEditService finds the note by it). */

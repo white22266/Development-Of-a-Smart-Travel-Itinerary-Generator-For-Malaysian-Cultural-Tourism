@@ -1,7 +1,8 @@
 <?php
 // itinerary/review_hotels.php
-// Hotel suggestions near a stop of an itinerary, for the review page. They come from the
-// local lodging list (see HotelRecommendationService); prices are planning estimates.
+// Hotel suggestions for a night of an itinerary, for the review page: around the base of that
+// night (GET night) when the itinerary was planned with bases, otherwise near a stop. They come
+// from the local lodging list (see HotelRecommendationService); prices are planning estimates.
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -11,6 +12,7 @@ require_once "../config/db_connect.php";
 require_once "../config/i18n.php";
 require_once "../services/CostEstimationService.php";
 require_once "../services/HotelRecommendationService.php";
+require_once "../services/ItineraryEditService.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -120,8 +122,22 @@ $roomBudget = HotelRecommendationService::nightlyRoomBudget(
 );
 
 $hotelService = new HotelRecommendationService($conn);
-$hotels = $hotelService->recommend($lat, $lng, $roomBudget, 15.0, 8);
-$message = t('rv.h_near', ['title' => $lastStop['title']]);
+// A night of an itinerary planned with bases is spent at the base of its day: the hotels are
+// searched around it (ItineraryEditService::dayBases()), else around the stop as before.
+$base = null;
+$nightNo = (int)($_GET["night"] ?? 0);
+if ($nightNo >= 1 && $nightNo < (int)$itinerary['total_days']) {
+    $base = ItineraryEditService::dayBases($conn, $itineraryId)[$nightNo] ?? null;
+}
+if ($base !== null) {
+    $hotels = $hotelService->recommend($base['point'][0], $base['point'][1], $roomBudget, 15.0, 8);
+    $message = 'Places to stay near ' . $base['name'] . ', where night ' . $nightNo . ' is planned.';
+    $lastStop['day_no'] = $nightNo;
+    $lastStop['base'] = ['name' => $base['name'], 'latitude' => $base['point'][0], 'longitude' => $base['point'][1]];
+} else {
+    $hotels = $hotelService->recommend($lat, $lng, $roomBudget, 15.0, 8);
+    $message = t('rv.h_near', ['title' => $lastStop['title']]);
+}
 if (!$hotels && $state !== '') {
     $hotels = $hotelService->recommendByState($state, $roomBudget, 8);
     $message = t('rv.h_elsewhere', ['state' => $state]);

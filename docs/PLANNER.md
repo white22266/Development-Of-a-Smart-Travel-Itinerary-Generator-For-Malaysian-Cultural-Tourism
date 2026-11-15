@@ -13,8 +13,9 @@ turn an edit request into a call of the edit service.
 |---|---|
 | `services/PlannerRules.php` | Every rule once: loads and normalises a preference, builds the profile, the one feasibility check `check()` with reason codes, the budget rule, learning from ratings |
 | `services/PlannerCandidates.php` | The one query for usable places, the traveller's ratings, the meal pool, the pool for edits |
-| `services/ItineraryDayBuilder.php` | Fills one day: scores candidates, relaxes soft preferences, places meals, times a day (`fit()`) |
-| `services/ItineraryRouteOptimiser.php` | Finds the order of a day's stops with the least travelling that still keeps every rule |
+| `services/TripLayout.php` | Lays a trip out: where each night is spent (bases), which area each day tours, the group of places each day draws from first |
+| `services/ItineraryDayBuilder.php` | Finds the best day (`search()`), scores and values candidates, places meals, times a day and its end (`fit()`) |
+| `services/ItineraryRouteOptimiser.php` | Finds the order of a day's stops with the least travelling that still keeps every rule; `optimise()` reorders a stored trip |
 | `services/ItineraryGenerator.php` | The single entry point `generate()`; one transaction; stores the rows |
 | `services/ItineraryEditService.php` | The one place that changes a stored itinerary |
 
@@ -34,15 +35,78 @@ Entry points: `itinerary/generate_itinerary.php` calls `ItineraryGenerator::gene
    and in order (`VALID_FESTIVAL_SQL`). Places on the avoid list, and places the traveller rated
    `LEARN_DROP_AT` or lower, are removed. The place rules that do not depend on the time slot
    (`PlannerRules::placeReason()`) narrow the pool once.
-3. Must-see places get their days first (see Must-see and avoid).
-4. Day by day, `ItineraryDayBuilder::build()` fills the day and
-   `ItineraryRouteOptimiser::orderDay()` orders it, using estimated travel figures.
-5. When a routing server answers, the whole trip is measured once on the road (one request, see
-   How road figures are asked for) and every day is ordered and timed again. A stop that no order can keep is dropped, and the
-   builder's next candidates take its place (`REPLACE_CANDIDATES`, 3 per dropped stop, measured together in one route request;
+3. Must-see places: the days each can be visited on, and the budget (see Must-see and avoid).
+4. `TripLayout::plan()` lays the trip out (see Trip layout): the base of every night, the area of
+   every day and the group of places each day draws from first. A must-see place goes to the day
+   of its group.
+5. Day by day, `ItineraryDayBuilder::search()` finds the best day (see The day search) and
+   `ItineraryRouteOptimiser::orderDay()` orders it, using estimated travel figures. Day d + 1
+   starts at the base of night d; a day followed by a night ends at its base (see The base rule).
+6. When a routing server answers, the whole trip is measured once on the road (one request, see
+   How road figures are asked for; the bases are among its points) and every day is ordered and timed again. A stop that no order can keep is dropped, and the
+   search's next places (its spares) take its place (`REPLACE_CANDIDATES`, 3 per dropped stop, measured together in one route request;
    a candidate that does not fit in any order gives way to the next).
-6. Everything is stored in one transaction and the total is written by
-   `ItineraryEditService::total()`. A failure saves nothing.
+7. Everything is stored in one transaction, the base and group of each day in `itinerary_days`,
+   and the total is written by `ItineraryEditService::total()`. A failure saves nothing.
+
+## Trip layout
+
+`services/TripLayout.php`, before any day is planned. Deterministic and offline (estimates).
+
+- **Stay at the starting point.** The option `stay_at_start` (the tick box "I am staying at the
+  starting point" on `itinerary/select_preference.php`, stored in `itineraries.stay_at_start`)
+  makes the starting point the base of every night; its area is every candidate within the area
+  radius of it.
+- **Areas.** Otherwise the candidates and must-see places are grouped into areas that can each
+  be toured from one base. The radius (straight line) is the recommended daily distance over
+  2 x 1.3 (a return trip to the edge of the area is one recommended day; 17.3 km by car at a
+  normal pace), at least `MIN_RADIUS_KM` (1.5). Best place first, a place joins the first area
+  whose first place lies within the radius, else it starts one; the base of an area is the most
+  central of its 12 best places (least value-weighted distance to the others), named after its
+  district and state; places the bases leave uncovered form the next round's areas
+  (`AREA_ROUNDS`, 3). Every place then belongs to the nearest base within the radius.
+- **Which areas, how many days.** The area of a must-see place is always used, and so is the
+  best area of every state the traveller chose (what it offers over the whole trip, less the way
+  there from the start), while there are days. Then each further day goes where it adds most
+  value: one more day in an area already used (the value of its next "target" best places), or a
+  new area (the value of its best places less `TRAVEL_PRICE` per minute the move adds to the
+  route). So an area gets days in proportion to what it offers this traveller, at least one;
+  there are never more areas than days; a move longer than `TRANSFER_MAX_SHARE` (half) of the day
+  window is not made unless the area must be used.
+- **Order.** The areas go in the order with the least travelling from the starting point (to the
+  end point when there is one); every order is compared up to `MAX_EXACT` (7) areas, and an order
+  that puts a must-see place outside its possible dates comes last.
+- **Day groups.** An area of k days splits its places into k groups by bearing around its base:
+  k arcs of about the same value. Each group goes to a date of the area so that as much of it as
+  possible is open that day (weekday hours, festival dates) and, from `RAIN_PREFER` (60) percent
+  rain, wet dates get the groups with more indoor value (`RAIN_GROUP_SHARE`). A must-see place
+  decides the date of its group (a date it can be visited on).
+
+The base, the group's bearings (`group_from`, `group_to`) and the area radius (`area_km`) of
+each day are stored in `itinerary_days` (migration `20261119_trip_bases.sql`); the last day keeps
+the base of its area, though no night follows it.
+
+## The base rule
+
+- Day 1 starts at the starting point; day d + 1 starts at the hotel of night d when one was
+  chosen, else at the base of night d.
+- A day followed by a night ends at that night's hotel or base: every stop must leave time to be
+  back by the end of the day window and distance to get back inside the hard daily limit (the
+  leg back counts), reason `BASE`; the last day ends at the end point as before (`FINISH`).
+- The first leg of day 1, and the first leg of the day the trip moves to another area (its base
+  differs from the base of the day before), is not counted by the distance limits; its time
+  counts.
+- A day followed by a night has a dinner: on the way when the traveller is still out across the
+  dinner window (as before), otherwise near the base: at a suitable food place within the meal
+  radius of the base, open for the whole meal and with time to be back, with the least detour
+  on the way back, or as a dinner break at the base. Waiting there for the window is rest. Only a
+  day window that cannot hold the dinner (18:00 plus the meal length after its end) has none.
+  `ItineraryDayBuilder::fit()` with the base as the place times this end of the day
+  (`closeDay()`); a day whose end does not fit gives up its last stop.
+- A hotel row begins when the traveller arrives there after the last stop (and the dinner at a
+  place, when there is one): `ItineraryHotelService::checkInMinute()`, no longer at a fixed 20:00.
+- Itineraries planned before bases (no base stored) keep the old behaviour: a day starts where
+  the day before ended or at the hotel, and a hotel is only a cost.
 
 ## Hard rules
 
@@ -73,6 +137,8 @@ is `PlannerRules::REASONS`).
 | States | when states were chosen, a place must be in one of them | `STATE` |
 | Peninsular or East Malaysia | with no state chosen, a place must be in the same region as the starting point (Sabah, Sarawak and Labuan are east; for a point without a state, longitude 108 and above is east) | `EAST_STATES`, `EAST_FROM_LNG` |
 | End point | on the last day each stop must leave time and distance to reach it | reason `FINISH` |
+| Base of the night | on a day followed by a night each stop must leave time and distance to get back to its hotel or base; the day ends there with a dinner | reason `BASE`, `closeDay()` |
+| Moving to another area | the first leg of that day is not counted by the distance limits | `first_leg_exempt` |
 | Budget | see below | `BUDGET_MARGIN` |
 | No duplicates | a place appears once in a trip | reason `DUPLICATE` |
 | One landmark, one row | two rows of the same landmark never share a trip (below) | reason `SAME_LANDMARK`, `PlannerRules::SAME_LANDMARK` |
@@ -115,10 +181,42 @@ places are added. A budget of 0 means no limit. The rule only grows stricter as 
 added, so a plan that keeps it keeps it in any order of its stops. `projectedTotal()` computes
 the total exactly as `ItineraryEditService::total()` stores it.
 
+## The day search
+
+`ItineraryDayBuilder::search()` replaces the old greedy choice. It looks for the set and order of
+stops with the highest value that keeps every hard rule, with at most the target number of stops
+and as many as the rules allow: finished days are compared by must-see places, then by stops,
+then by value (ties by place ids, so the result is deterministic).
+
+- Value of a day = the sum of its stops' values (`score()['value']`: the terms below except
+  nearness, detour and waiting, with the weather) less `TRAVEL_PRICE` (0.4) points per travelling
+  minute (every leg: from the start, between stops, to and from meals, and back to the base) and
+  `IDLE_PRICE` (1/6) per minute of waiting. 25 travelling minutes cost what one interest weight
+  step gives (10 points).
+- A stop that only a relaxed level allows costs `RELAX_PRICE` (10) points per level and says so in
+  its notes.
+- The beam keeps the `BEAM_WIDTH` (12) best partial days per number of stops (must-see places
+  first, then value) and extends each with every candidate; every survivor whose end fits
+  (`fit()` with the base, or the end point) is a finished day. Places for the rest of the day are
+  kept for must-see places still to come, and they have first call on the budget.
+- Candidates: the day's own group, at most `SEARCH_CANDIDATES` (40) by value less the price of the
+  way there and back from the base; only when that day falls short of the target are the 40 best
+  other places of the area added, so nothing good is lost.
+- From `RAIN_INDOOR_FIRST` (80) percent an outdoor place is a next stop only when no indoor place
+  of the same level is.
+- It returns its next-best days (`alternatives`, 3) and the places it would take next (`spares`),
+  which the repair step of generation and `regenerateDay()` try when a stop gives way; a spare
+  taken into a day is given its relax level as that day sees it (`relevel()`).
+- A 7-day trip plans in about one second without routing (planner check, `SECONDS`).
+
+`check()` stays the one feasibility check and `fit()` the one timing (a visit, or with the base
+as the place the end of the day).
+
 ## Soft preferences and scoring
 
-`ItineraryDayBuilder::score()` scores the candidates, and they are tried best first; one that
-breaks `check()` is passed over for the next. The score is deterministic. Its terms:
+`ItineraryDayBuilder::score()` scores a candidate; `ranked()` (suggestions, the score of a place
+the traveller chose) tries them best first, and the day search adds up their values. The score
+is deterministic. Its terms:
 
 - Interest match by weight 1, 2, 3 (a little, like, love) = 15, 25, 35 points
   (`INTEREST_POINTS`). An interest with no weight counts as 2.
@@ -136,9 +234,9 @@ breaks `check()` is passed over for the next. The score is deterministic. Its te
 
 ### Relaxation levels
 
-When no candidate is left for the next stop, soft preferences are relaxed one level at a time
-(`ItineraryDayBuilder::RELAXED`). Hard rules are never relaxed. A stop chosen at a relaxed level
-says so in its notes.
+A candidate is taken at the lowest level its soft preferences allow
+(`ItineraryDayBuilder::RELAXED`); each level above 0 costs `RELAX_PRICE` in the day search.
+Hard rules are never relaxed. A stop chosen at a relaxed level says so in its notes.
 
 | Level | Relaxed |
 |---|---|
@@ -186,7 +284,10 @@ its visits ends at or before the latest start of the window and a later visit en
 The meal is taken between two visits, at a food place within `MEAL_RADIUS_KM` road km of the
 stop before or after it (walking 1, public transport 2, car and motorcycle 5), choosing the
 least detour, or as a break without a place. A food-place visit that starts inside a meal
-window is that meal. The meal stands in for the rest between the two visits.
+window is that meal. The meal stands in for the rest between the two visits. A day followed by
+a night that has no dinner by its last visit has it near the base (see The base rule): a meal
+row after the last visit, at a food place within the meal radius of the base or as a dinner
+break; with a hotel, a dinner break comes after the hotel row.
 
 Meals are stored as `itinerary_items` rows with `item_type` = food and `meal_slot` = lunch or
 dinner, at cost 0.00, because the cost model already reserves three meals a day. Meal places
@@ -196,11 +297,13 @@ come only from `cultural_places` with category food; the table `food_places` is 
 
 - Avoid: a place on the traveller's avoid list is never a candidate, and an edit that brings it
   in is refused with `AVOID`.
-- Must-see: `ItineraryGenerator` gives each must-see place a day where it can be visited under
-  every hard rule, probing the day window every `MUST_PROBE_STEP_MIN` (60) minutes. Places near
-  each other go on the same day, and all are counted in the budget before any other stop. The
-  day builder tries them before any other stop with every soft preference relaxed and every hard
-  rule kept, and keeps room in the day for the ones still to come. A must-see place that cannot
+- Must-see: `ItineraryGenerator` finds the days each must-see place can be visited on under
+  every hard rule, probing the day window every `MUST_PROBE_STEP_MIN` (60) minutes, and counts
+  them all in the budget before any other stop. The area of a must-see place is always used and
+  the place goes to the day of its group (else another day of its area, else any day it can be
+  visited on, with room). The day search counts must-see places before value, with every soft
+  preference relaxed and every hard rule kept, and keeps room in the day for the ones still to
+  come. A must-see place that cannot
   be scheduled is stored as a note row ("Must-see place not scheduled") with the reason.
 
 ## End point
@@ -225,8 +328,9 @@ text is cut to 255 characters.
 day's lunch and dinner. Among them the one with the least travelling wins; among orders that
 cannot keep every stop, the one keeping the most must-see places wins. A stop no order can keep
 is dropped with its reason code. A time that breaks a rule is never stored and never clamped.
-`optimise()` does the same for a saved itinerary (the "Optimise route" button); a day then ends
-at its hotel when one was chosen.
+`optimise()` does the same for a saved itinerary (the "Optimise route" button) through
+`ItineraryEditService::reorderTrip()`: one table request, every day ordered from where it starts
+to its night, stored as an edit stores it.
 
 ## Edit operations
 
@@ -234,7 +338,10 @@ at its hotel when one was chosen.
 one transaction, is judged by `PlannerRules`, and re-times the days it touches with the
 generator's own timing. A change that would break a hard rule is refused and leaves every row as
 it was. A day may have a stored start time (table `itinerary_days`, migration
-`20261117_itinerary_days.sql`) that every re-timing of that day keeps. Every operation returns
+`20261117_itinerary_days.sql`) that every re-timing of that day keeps. Every re-timing keeps the
+base rule: a day after a night starts at its hotel or base, a day followed by a night ends there
+with its dinner, and a change that would break it is refused (`BASE`, `MEAL`). A day whose end
+moved (a hotel chosen) is timed again too. Every operation returns
 `ok`, `status` (`done` or `refused`), `code`, `message` and the re-timed `days`.
 
 | Operation | Action in `api/itinerary_edit.php` |
@@ -244,11 +351,11 @@ it was. A day may have a stored start time (table `itinerary_days`, migration
 | `removeStop()` | `remove` |
 | `addStop()`, `canAdd()` | `add` |
 | `moveStop()` | `move` |
-| `regenerateDay()` (more of one category, less of another, optional rain) | `regenerate_day` |
+| `regenerateDay()` (more of one category, less of another, optional rain; the day search with the stored base and group) | `regenerate_day` |
 | `setDayStart()`, `retimeTrip()` | `set_day_start` |
 | `optimise()` | `optimise` |
 | `replanRainyDays()` (days at `RAIN_PREFER` percent or more) | `replan_rain` |
-| `setHotels()` (a night whose hotel would break the next day is not saved) | the hotel pages and the hotel assistant |
+| `setHotels()` (a hotel is where its night is spent: the day before ends there, the day after starts there; a night whose hotel would break either day is not saved) | the hotel pages and the hotel assistant |
 
 Refusal codes that the edit service itself returns (the words are in `PlannerRules::REASONS`; the
 rule codes of `check()` can be returned too):
@@ -302,7 +409,7 @@ batches, never per candidate, and keeps to these rules (`RouteService`):
   the new day on the figures at hand, measures it once (its stops in order, the meal places of
   that timing, every other pair of its points, the legs to the end of the day and to the next
   day), orders it again on those figures in every order, and lets a stop that no longer fits
-  give way to the builder's next candidates (`SETTLE_CANDIDATES`, 3, measured together in the
+  give way to the day search's next places (`SETTLE_CANDIDATES`, 3, measured together in the
   second request); a must-see place of the day is tried in every position. The present day
   stays as it is only when the new day would lose a must-see place, have no stop, or make
   another day break a rule; the refusal names the rule and carries `worse` (`must`, `empty`,
@@ -315,8 +422,8 @@ batches, never per candidate, and keeps to these rules (`RouteService`):
   asks about that day and the day whose start it moves, not the whole trip.
 - Setting a day's start moves no stop and asks nothing (`setDayStart()`, `retimeTrip()`).
 - Generation and the route optimiser ask for one table for the whole trip
-  (`RouteService::preloadTrip()`): the stops, hotels, start and end point, and, while there is
-  room (`MAX_TABLE_POINTS`, 50), the meal places; those left out are estimated. A day whose stop
+  (`RouteService::preloadTrip()`): the stops, bases, hotels, start and end point, and, while there is
+  room (`MAX_TABLE_POINTS`, 50), the meal places (also those near the bases); those left out are estimated. A day whose stop
   has to be replaced after the road figures adds one route request. Their timeout is 8 seconds
   (`ItineraryGenerator::ROUTE_TIMEOUT`, `ItineraryRouteOptimiser::ROUTE_TIMEOUT`). A motorcycle
   trip's table of more than ten points comes from OSRM's car profile.
@@ -367,15 +474,19 @@ Finding codes. A violation fails the run; a warning is only reported.
 |---|---|
 | `GENERATE`, `SETUP` | generation failed or stored nothing; the scenario's setup failed |
 | `DAYS`, `STOPS` | a day without a visit or a stop outside the trip's days; more stops than the target (violation) or fewer (warning) |
+| `BASE` | a day without a stored base; a day after a night whose first leg does not start at that night's hotel or base; a day followed by a night that cannot be back there by the end of its window or inside the hard daily distance with the leg back; with `stay_at_start` a base away from the starting point, or the choice not stored |
+| `HOTEL_TIME` | a hotel row that begins before the traveller can have arrived from the last row with a place, or more than `HOTEL_LATE_MIN` (60) minutes after |
+| `DINNER` | a day followed by a night without a dinner (a dinner row, or a food visit starting in the dinner window), or with two; not judged when the day window cannot hold the dinner |
+| `PLAN` | warning: a generation scenario (estimates) has fewer stops than the plan recorded before the trip layout, or more than 25 percent and 5 km more (`RECORDED_PLANS`, `PLAN_KM_SHARE`, `PLAN_KM_EXTRA`); the km of a trip are its stored legs plus the way back to the base after each night without a hotel row (`tripKm()`) |
 | `DUPLICATE` | a place twice in a trip, or one landmark under two names (its own rule: within 150 m with the same words or all words of the shorter name, at least two, in the other; or within 60 m with a Dice score of 0.7 or more; Malay words read as English, `TWIN_*`) |
 | `START`, `HARD_END`, `TIME_ORDER` | a visit before the day start or after the latest end; missing or reversed times; a gap shorter than the travel time |
 | `REST` | the rest between visits is shorter than planned (warning) |
 | `WAIT`, `DURATION`, `OPEN_HOURS` | waiting over 60 min; a visit shorter than 30 min or longer than allowed; a visit outside opening hours |
 | `ACCESS` | the heat, step-free or elderly rule broken (a visit that only runs into the heat window is a warning) |
 | `DIETARY`, `FESTIVAL`, `REGION` | the dietary, festival date, state or region rule broken |
-| `LEGS`, `DISTANCE` | a stored distance or time that does not fit the straight line or the speed; a leg or a day over its limit (a day over the recommended km is a warning) |
+| `LEGS`, `DISTANCE` | a stored distance or time that does not fit the straight line or the speed (a day after a night measured from its hotel or base); a leg or a day over its limit (a day over the recommended km is a warning; the first leg of day 1 and of the day the trip moves to another area, towards the new base, are not counted) |
 | `CATEGORY` | too many visits of one category without a note that variety was relaxed |
-| `MEAL` | a meal row or a missing meal is wrong (window, length, item type, cost, reason, place, radius) |
+| `MEAL` | a meal row or a missing meal is wrong (window, length, item type, cost, reason, place, radius; a dinner after the last visit only on a day followed by a night, near its base) |
 | `WEATHER`, `RAIN` | an outdoor stop on a day at 80 percent rain or more (warning); after planning a rainy day again, an outdoor stop stayed while indoor places were left |
 | `AVOID`, `RATED`, `MUST` | an avoided or low-rated place in the trip, or the same landmark as an avoided place; a must-see place neither planned nor named in a note |
 | `LEARN`, `WEIGHTS`, `WINDOW` | warnings: ratings not reflected, interest weights not reflected, a widened window not used |
@@ -384,8 +495,13 @@ Finding codes. A violation fails the run; a warning is only reported.
 | `REQUESTS` | generation or an edit made more routing requests than `REQUEST_LIMITS` allows (counted also offline) |
 | `EDIT`, `REFUSE`, `DAY_START`, `OPTIMISE` | an edit result is malformed or broke the stop's position (a refused edit is a warning; planning a day again refused on a rule of its own new plan, without `worse`, is a violation); a change that had to be refused was made or changed rows; a stored day start was lost; the optimiser step reported a note (warning) |
 
+The scenarios `kl_couple_car_stay_at_start` (the `trip` key `stay_at_start`),
+`penang_kl_couple_car_5days_two_states` (two states some 300 km apart: a move between areas) and
+`pahang_couple_car_7days_large_state` cover the trip layout; the first two also run as edit
+scenarios. `KM` in the table is `tripKm()`.
+
 To extend it: add an entry to `SCENARIOS` (a `pref` and a `trip`, with optional `weights`, `must`, `avoid` and `ratings` keys,
-the `trip` keys `end_name`, `end_lat` and `end_lng` for an end point, and `forecast` for a rain
+the `trip` keys `end_name`, `end_lat` and `end_lng` for an end point, `stay_at_start`, and `forecast` for a rain
 override; copy an existing
 entry), and add its name to `EDIT_BASES` for an edit run. When a rule changes in
 `PlannerRules`, change the matching constant at the top of the tool and the check in

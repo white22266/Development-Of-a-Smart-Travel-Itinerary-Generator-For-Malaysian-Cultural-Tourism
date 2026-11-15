@@ -139,6 +139,7 @@ final class PlannerRules
         'WAIT' => 'would wait too long for opening',
         'BUDGET' => 'over the budget',
         'FINISH' => 'too late or too far to reach the end point of the trip',
+        'BASE' => 'too late or too far to get back to where you stay that night',
         'ROOM' => 'no room left on the days it can be visited',
         'MEAL' => 'would leave no time for lunch or dinner',
         'UNAVAILABLE' => 'not an active place with map coordinates',
@@ -370,7 +371,9 @@ final class PlannerRules
     /**
      * Pairs of place rows that are the same landmark (SAME_LANDMARK). The names are weighed
      * against the names of all the given places (PlaceNameMatcher), so give the trip's whole
-     * candidate set at once.
+     * candidate set at once; two rows of one state are also weighed against the names of that
+     * state alone, and the higher similarity counts. So a pair found in a trip of one state
+     * ("Plaza Tugu Negara", 0.9 against Kuala Lumpur names) is found in a trip of every state too.
      *
      * @param array $places place rows with place_id, name, latitude, longitude
      * @return array<int,array{a:array,b:array,metres:float,similarity:float}> a has the lower place_id
@@ -387,6 +390,10 @@ final class PlannerRules
         $list = array_values($rows);
         usort($list, static fn(array $a, array $b): int => [(float)$a['latitude'], (int)$a['place_id']] <=> [(float)$b['latitude'], (int)$b['place_id']]);
         $matcher = new PlaceNameMatcher(array_map(static fn(array $p): string => (string)($p['name'] ?? ''), $list));
+        $byState = [];
+        foreach ($list as $p) $byState[strtolower(trim((string)($p['state'] ?? '')))][] = (string)($p['name'] ?? '');
+        $stateMatchers = [];
+        $stateOf = static fn(array $p): string => strtolower(trim((string)($p['state'] ?? '')));
         $reach = max(array_column(self::SAME_LANDMARK, 0));
         $latReach = $reach / 111000.0;   // a degree of latitude is at least 110.5 km
         $pairs = [];
@@ -397,6 +404,11 @@ final class PlannerRules
                 $metres = self::metres($list[$i], $list[$j]);
                 if ($metres > $reach) continue;
                 $similarity = $matcher->similarity((string)($list[$i]['name'] ?? ''), (string)($list[$j]['name'] ?? ''));
+                $state = $stateOf($list[$i]);
+                if (!self::isSameLandmark($metres, $similarity) && $state !== '' && $state === $stateOf($list[$j]) && count($byState[$state]) < count($list)) {
+                    $stateMatchers[$state] ??= new PlaceNameMatcher($byState[$state]);
+                    $similarity = max($similarity, $stateMatchers[$state]->similarity((string)($list[$i]['name'] ?? ''), (string)($list[$j]['name'] ?? '')));
+                }
                 if (!self::isSameLandmark($metres, $similarity)) continue;
                 [$a, $b] = (int)$list[$i]['place_id'] < (int)$list[$j]['place_id'] ? [$list[$i], $list[$j]] : [$list[$j], $list[$i]];
                 $pairs[] = ['a' => $a, 'b' => $b, 'metres' => round($metres, 1), 'similarity' => round($similarity, 4)];
@@ -581,7 +593,10 @@ final class PlannerRules
      *   trip_items  optional: the other planned items (item_type, estimated_cost) for the
      *               budget; without it the budget is not checked
      *   trip_km     km of all other planned legs;  reserve_km  km held back for legs not planned yet
-     *   finish_km, finish_min  optional, last day only: the leg from the place to the trip's end point
+     *   finish_km, finish_min  optional: the leg from the place to where the day must end in time
+     *               and inside the hard daily distance: the trip's end point on the last day, the
+     *               base (or hotel) of the night on a day followed by a night
+     *   finish_code optional: the reason when that leg breaks the rule (FINISH, default, or BASE)
      *
      * @return array{ok:bool,reason:?string,start:int,end:int,wait:int}
      */
@@ -622,12 +637,14 @@ final class PlannerRules
         }
         if ($start - $arrive > self::MAX_WAIT_MIN) return $fail('WAIT');
 
-        // The last day: from this stop the trip's end point must be reached inside the day window
-        // and inside the hard daily distance (the leg to the end point counts).
+        // From this stop the end of the day must be reached inside the day window and inside the
+        // hard daily distance (that leg counts): the trip's end point on the last day, the base of
+        // the night on a day followed by a night.
         if (isset($slot['finish_min'])) {
-            if ($start + $visit + (int)$slot['finish_min'] > $end) return $fail('FINISH');
+            $code = (string)($slot['finish_code'] ?? 'FINISH');
+            if ($start + $visit + (int)$slot['finish_min'] > $end) return $fail($code);
             $counted = (float)($slot['day_km'] ?? 0) + (!empty($slot['leg_counts']) ? $legKm : 0.0);
-            if ($counted + (float)($slot['finish_km'] ?? 0) > (float)$profile['hard_km']) return $fail('FINISH');
+            if ($counted + (float)($slot['finish_km'] ?? 0) > (float)$profile['hard_km']) return $fail($code);
         }
 
         if (array_key_exists('trip_items', $slot) && $slot['trip_items'] !== null) {

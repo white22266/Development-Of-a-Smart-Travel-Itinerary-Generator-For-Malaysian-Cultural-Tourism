@@ -75,6 +75,10 @@ try {
     if ($endOther) {
         $trip += ["end_name" => $endName, "end_lat" => $endLat, "end_lng" => $endLng];
     }
+    // "I am staying at the starting point": the starting point is the base of every night.
+    if (!empty($_POST["stay_at_start"])) {
+        $trip["stay_at_start"] = true;
+    }
     $itineraryId = (new ItineraryGenerator($conn))->generate($travellerId, $preferenceId, $trip);
 
     if (isset($_SESSION["ai_preference_drafts"][$travellerId][$preferenceId])) {

@@ -40,6 +40,8 @@ $it = $stmt->get_result()->fetch_assoc();
 $stmt->close();
 if (!$it) { header("Location: my_itineraries.php"); exit; }
 $originName = trim((string)($it['origin_name'] ?? ''));
+// The base of each day (where the night after it is spent), for a trip planned with bases.
+$viewBases = ItineraryEditService::dayBases($conn, $itineraryId);
 
 // Load all itinerary items with place details
 $dcCheck = $conn->query("SHOW COLUMNS FROM cultural_places LIKE 'district'");
@@ -960,11 +962,31 @@ $editConfig = json_encode([
                                         if (strtolower((string)($prevRow['item_type'] ?? '')) === 'hotel') { $startHotel = (string)$prevRow['item_title']; break; }
                                     }
                                 }
-                                echo $startHotel !== null && $startHotel !== ''
-                                    ? htmlspecialchars(t('iv.day_starts_hotel', ['name' => $startHotel]))
-                                    : te($d === 1 ? 'iv.day_starts_origin' : 'iv.day_starts_prev');
+                                // Without a hotel, a trip planned with bases starts the day at the base of the night before.
+                                if ($startHotel !== null && $startHotel !== '') {
+                                    echo htmlspecialchars(t('iv.day_starts_hotel', ['name' => $startHotel]));
+                                } elseif ($d === 1 && $originName !== '' && $viewBases) {
+                                    echo htmlspecialchars('Starts at ' . $originName . '.');
+                                } elseif ($d > 1 && isset($viewBases[$d - 1])) {
+                                    echo htmlspecialchars('Starts at ' . $viewBases[$d - 1]['name'] . ', where you spent the night.');
+                                } else {
+                                    echo te($d === 1 ? 'iv.day_starts_origin' : 'iv.day_starts_prev');
+                                }
                             ?>
                         </div>
+                        <?php
+                            // Where the night after this day is spent: its hotel, else the base of the day.
+                            $nightAt = null;
+                            if ($d < $totalDays) {
+                                foreach (array_reverse($timetables[$d] ?? []) as $row) {
+                                    if (strtolower((string)($row['item_type'] ?? '')) === 'hotel') { $nightAt = (string)$row['item_title']; break; }
+                                }
+                                $nightAt ??= $viewBases[$d]['name'] ?? null;
+                            }
+                        ?>
+                        <?php if ($nightAt !== null && $nightAt !== ''): ?>
+                        <div class="day-box-note"><?php echo htmlspecialchars('Night at ' . $nightAt . '.'); ?></div>
+                        <?php endif; ?>
                     </div>
                 </div>
 

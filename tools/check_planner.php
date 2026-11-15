@@ -194,6 +194,41 @@ const EARLIEST_START = 360;
 const LATEST_END = 1380;
 /** WEATHER warns about an outdoor stop on a day with at least this chance of rain. */
 const RAIN_WARN_AT = 80;
+/**
+ * Bases (migration 20261119_trip_bases.sql), from the task that introduced them: a day followed
+ * by a night ends at the base of that night (or its hotel) by the end of the day window, the leg
+ * back counted in the day's distance; the next day starts there. The day the trip moves to
+ * another area (its base is more than BASE_MOVED_KM from the base of the day before) starts at
+ * the base of the night before, and that first leg, towards the new base, is not counted by the
+ * distance limits, as the first leg of day 1 is not. A hotel row begins when the traveller can
+ * have arrived, at most HOTEL_LATE_MIN later. A stay at the starting point has every base within
+ * BASE_SAME_KM of it.
+ */
+const BASE_MOVED_KM = 0.5;
+const BASE_SAME_KM = 0.05;
+const HOTEL_LATE_MIN = 60;
+/**
+ * PLAN: the plan of each generation scenario before the trip layout (bases, day groups and the
+ * day search) was introduced, on estimates (the first pass of the run at commit e598fae with
+ * this tool's scenarios): stops and km of the whole trip (tripKm()). A new plan with fewer stops,
+ * or with more than PLAN_KM_SHARE more km and at least PLAN_KM_EXTRA more, is a warning.
+ */
+const PLAN_KM_SHARE = 0.25;
+const PLAN_KM_EXTRA = 5.0;
+const RECORDED_PLANS = [
+    'kl_couple_car_normal' => [12, 13.4], 'melaka_solo_walking_relaxed_tight' => [3, 3.3], 'penang_group_transit_packed_festival' => [12, 40.0],
+    'sabah_family_motorcycle_normal' => [12, 80.9], 'johor_solo_car_halal_food_evening' => [3, 47.6], 'johor_couple_car_packed_districts' => [15, 133.9],
+    'kedah_couple_transit_vegetarian' => [3, 0.7], 'selangor_couple_car_elderly_wheelchair' => [9, 22.6], 'no_state_group_car_7days_generous' => [28, 45.4],
+    'perak_solo_motorcycle_packed_7days_tight' => [28, 126.7], 'pahang_solo_walking_packed_evening_district' => [3, 4.4],
+    'kl_selangor_family_transit_tight' => [12, 15.6], 'sarawak_solo_transit_evening' => [3, 0.6], 'kl_family_car_packed_explicit_window_3_stops' => [6, 14.7],
+    'melaka_couple_with_child_and_senior' => [8, 88.1], 'selangor_solo_car_tags_column' => [6, 16.7], 'kl_couple_car_museum_loved_heritage_little' => [8, 17.3],
+    'kl_couple_car_must_and_avoid' => [12, 41.2], 'penang_group_transit_must_festival' => [12, 37.7], 'kl_solo_car_end_at_klia' => [7, 10.7],
+    'melaka_solo_walking_end_at_ayer_keroh' => [3, 1.8], 'kl_couple_car_learns_from_ratings' => [8, 23.7], 'johor_couple_car_relaxed_meals_at_places' => [6, 8.5],
+    'kl_couple_car_rain_indoor_first' => [8, 10.4], 'pahang_couple_car_rain_highlands' => [4, 17.4], 'kl_solo_car_early_start_wait_limit' => [4, 8.0],
+    'kl_couple_car_packed_heritage_loved_culture_little' => [10, 17.4], 'melaka_solo_car_start_only_evening' => [2, 0.8],
+    'kl_family_car_must_opens_late_end_klia' => [8, 12.2], 'penang_solo_walking_end_only_morning' => [2, 1.3], 'kl_couple_car_must_twin' => [11, 30.5],
+    'kl_couple_car_stay_at_start' => [12, 13.4], 'penang_kl_couple_car_5days_two_states' => [20, 67.7], 'pahang_couple_car_7days_large_state' => [28, 316.3],
+];
 
 /**
  * The same landmark under two names (DUPLICATE), judged by sameLandmarkJudged() on its own
@@ -472,6 +507,26 @@ const SCENARIOS = [
         'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865],
         'regenerate_must_day' => ['more' => ['heritage'], 'less' => ['museum']],
     ],
+    // ---- Where the traveller sleeps: bases, day groups and the day search ---------------------
+    // Optional trip key 'stay_at_start' (bool): the starting point is the base of every night.
+    'kl_couple_car_stay_at_start' => [
+        'pref' => ['trip_days' => 3, 'budget' => 1500, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,museum', 'preferred_states' => 'Kuala Lumpur', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'KL Sentral', 'origin_lat' => 3.1340, 'origin_lng' => 101.6865, 'stay_at_start' => true],
+    ],
+    'penang_kl_couple_car_5days_two_states' => [
+        'pref' => ['trip_days' => 5, 'budget' => 4000, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'culture,heritage,food', 'preferred_states' => 'Penang,Kuala Lumpur', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-05', 'origin_name' => 'Komtar bus hub, George Town', 'origin_lat' => 5.4145, 'origin_lng' => 100.3292],
+    ],
+    'pahang_couple_car_7days_large_state' => [
+        'pref' => ['trip_days' => 7, 'budget' => 5000, 'budget_tier' => 'normal', 'transport_type' => 'car', 'traveller_type' => 'couple', 'party_size' => 2,
+            'travel_pace' => 'normal', 'dietary_preference' => 'none', 'preferred_visit_time' => 'any', 'accessibility_needs' => '',
+            'interests' => 'nature,culture,heritage', 'preferred_states' => 'Pahang', 'preferred_districts' => ''],
+        'trip' => ['start_date' => '2026-12-12', 'origin_name' => 'Kuantan city centre', 'origin_lat' => 3.8077, 'origin_lng' => 103.3260],
+    ],
 ];
 
 /**
@@ -487,7 +542,7 @@ const REQUEST_LIMITS = ['generate' => 1, 'suggest' => 2, 'replace' => 2, 'remove
 /** The base scenarios that also run as edit scenarios (<base>__edits). */
 const EDIT_BASES = ['kl_couple_car_normal', 'sabah_family_motorcycle_normal', 'penang_group_transit_packed_festival',
                     'johor_couple_car_relaxed_meals_at_places', 'kl_couple_car_must_and_avoid', 'kl_family_car_must_opens_late_end_klia',
-                    'kl_couple_car_must_twin'];
+                    'kl_couple_car_must_twin', 'kl_couple_car_stay_at_start', 'penang_kl_couple_car_5days_two_states'];
 
 /** Every scenario: the fixed ones and the edit scenarios built on EDIT_BASES. */
 function allScenarios(): array
@@ -776,6 +831,18 @@ function runScenario(mysqli $pipelineConn, mysqli $checkConn, int $travellerId, 
         if (!empty($scenario['edits'])) runEditSequence($pipelineConn, $checkConn, $out['itinerary_id'], $preferenceId, $scenario, $name, $result);
         checkItinerary($checkConn, $out['itinerary_id'], $scenario, $name, $result);
         $result['info']['plan'] = planFingerprint($checkConn, $out['itinerary_id']);
+        // PLAN: a generation scenario on estimates, against the plan recorded before the trip layout.
+        if (empty($scenario['edits']) && isset(RECORDED_PLANS[$name]) && !measuredFigures()) {
+            [$stops, $km] = RECORDED_PLANS[$name];
+            $result['info']['recorded'] = ['stops' => $stops, 'km' => $km];
+            if ($result['stops'] < $stops) {
+                $result['findings'][] = finding('PLAN', 'warning', $name, null, null, "{$result['stops']} stops, the recorded plan had {$stops}");
+            }
+            $newKm = (float)($result['info']['km'] ?? 0);
+            if ($newKm > $km * (1 + PLAN_KM_SHARE) && $newKm - $km >= PLAN_KM_EXTRA) {
+                $result['findings'][] = finding('PLAN', 'warning', $name, null, null, sprintf('%.1f km, the recorded plan had %.1f km', $newKm, $km));
+            }
+        }
     } catch (Throwable $e) {
         $result['findings'][] = finding('GENERATE', 'violation', $name, null, null, get_class($e) . ': ' . $e->getMessage());
     }
@@ -1251,6 +1318,48 @@ function counted(string $op, $limit, callable $call, array &$result)
     return $out;
 }
 
+/**
+ * The stored base of each day (table itinerary_days, migration 20261119_trip_bases.sql): day =>
+ * [name, lat, lng]; none without the columns or for a day without a base.
+ */
+function storedBases(mysqli $conn, int $itineraryId): array
+{
+    $res = $conn->query("SHOW COLUMNS FROM itinerary_days LIKE 'base_lat'");
+    if (!$res || $res->num_rows === 0) return [];
+    $stmt = $conn->prepare('SELECT day_no, base_name, base_lat, base_lng FROM itinerary_days WHERE itinerary_id = ? AND base_lat IS NOT NULL AND base_lng IS NOT NULL');
+    $stmt->bind_param('i', $itineraryId);
+    $stmt->execute();
+    $out = [];
+    foreach ($stmt->get_result()->fetch_all(MYSQLI_ASSOC) as $row) $out[(int)$row['day_no']] = [(string)$row['base_name'], (float)$row['base_lat'], (float)$row['base_lng']];
+    $stmt->close();
+    return $out;
+}
+
+/**
+ * Kilometres of the whole trip: every stored leg, plus the way back to the base after a day
+ * followed by a night that has no hotel row (not stored as a leg; estimated here as the
+ * straight line times ROAD_FACTOR, so plans with and without bases compare).
+ */
+function tripKm(mysqli $conn, int $itineraryId, array $items, int $tripDays): float
+{
+    $km = 0.0;
+    $last = [];
+    $hotelDays = [];
+    foreach ($items as $i) {
+        $km += (float)($i['distance_km'] ?? 0);
+        $d = (int)$i['day_no'];
+        if (strtolower((string)$i['item_type']) === 'hotel') { $hotelDays[$d] = true; continue; }
+        $lat = $i['item_latitude'] ?? $i['place_lat'] ?? null;
+        $lng = $i['item_longitude'] ?? $i['place_lng'] ?? null;
+        if ($lat !== null && $lng !== null) $last[$d] = [(float)$lat, (float)$lng];
+    }
+    foreach (storedBases($conn, $itineraryId) as $d => [, $lat, $lng]) {
+        if ($d >= $tripDays || isset($hotelDays[$d]) || !isset($last[$d])) continue;
+        $km += haversineKm($last[$d][0], $last[$d][1], $lat, $lng) * ROAD_FACTOR;
+    }
+    return round($km, 1);
+}
+
 /** A short fingerprint of the stored plan (rows without their ids, and the total), to compare two runs. */
 function planFingerprint(mysqli $conn, int $itineraryId): string
 {
@@ -1321,6 +1430,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     $result['info']['no_usable_hours'] = 0;
     $result['info']['meals_at_places'] = count(array_filter($mealRows, static fn($m) => $m['place_id'] !== null));
     $result['info']['meal_breaks'] = count($mealRows) - $result['info']['meals_at_places'];
+    $result['info']['km'] = tripKm($conn, $itineraryId, $items, (int)$scenario['pref']['trip_days']);
 
     // DAYS and STOPS
     $byDay = [];
@@ -1355,6 +1465,19 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
         }
         $placed[] = $v;
     }
+
+    // Where each night is spent: the hotel row of the day, else the stored base of the day.
+    $bases = storedBases($conn, $itineraryId);
+    $hotelRows = [];
+    foreach ($items as $h) {
+        if (strtolower((string)$h['item_type']) === 'hotel' && $h['item_latitude'] !== null && $h['item_longitude'] !== null) $hotelRows[(int)$h['day_no']] = $h;
+    }
+    $nightPoint = [];
+    for ($d = 1; $d < $tripDays; $d++) {
+        if (isset($hotelRows[$d])) $nightPoint[$d] = [(float)$hotelRows[$d]['item_latitude'], (float)$hotelRows[$d]['item_longitude']];
+        elseif (isset($bases[$d])) $nightPoint[$d] = [$bases[$d][1], $bases[$d][2]];
+    }
+    checkBases($conn, $it, $scenario, $bases, $tripDays, $add);
 
     $states = array_map('strtolower', csv($pref['preferred_states']));
     $originPoint = [(float)$it['origin_lat'], (float)$it['origin_lng']];
@@ -1392,6 +1515,27 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             $hasPoint = $v['item_latitude'] !== null || $v['place_lat'] !== null;
             $point = [(float)($v['item_latitude'] ?? $v['place_lat']), (float)($v['item_longitude'] ?? $v['place_lng'])];
             $category = strtolower((string)($v['category'] ?? $v['item_type']));
+            // The first leg of the day the trip moves to another area, from the base of the night
+            // before towards the new base, is not counted either (BASE_MOVED_KM).
+            $isMove = $k === 0 && $dayNo > 1 && isset($bases[$dayNo - 1], $bases[$dayNo])
+                && haversineKm($bases[$dayNo - 1][1], $bases[$dayNo - 1][2], $bases[$dayNo][1], $bases[$dayNo][2]) > BASE_MOVED_KM;
+            if ($isMove) {
+                $toNew = haversineKm((float)($v['item_latitude'] ?? $v['place_lat']), (float)($v['item_longitude'] ?? $v['place_lng']), $bases[$dayNo][1], $bases[$dayNo][2]);
+                $toOld = haversineKm((float)($v['item_latitude'] ?? $v['place_lat']), (float)($v['item_longitude'] ?? $v['place_lng']), $bases[$dayNo - 1][1], $bases[$dayNo - 1][2]);
+                $isMove = $toNew < $toOld;
+                if ($isMove) $result['info']['moves'] = ($result['info']['moves'] ?? 0) + 1;
+            }
+            // BASE: a day after a night starts where the night was spent.
+            if ($k === 0 && $dayNo > 1 && isset($nightPoint[$dayNo - 1]) && $km !== null) {
+                $from = $nightPoint[$dayNo - 1];
+                $here = [(float)($v['item_latitude'] ?? $v['place_lat']), (float)($v['item_longitude'] ?? $v['place_lng'])];
+                if ($v['item_latitude'] !== null || $v['place_lat'] !== null) {
+                    $straight = haversineKm($from[0], $from[1], $here[0], $here[1]);
+                    if ($km < LEG_KM_LOW * $straight - 0.05) {
+                        $add('BASE', 'violation', $dayNo, $title, sprintf('first leg %.2f km, but the night before was spent %.2f km away (straight line)', $km, $straight));
+                    }
+                }
+            }
 
             // TIME_ORDER (visits and meals: no overlap, and the gap holds the leg)
             if ($start === null || $end === null) {
@@ -1459,7 +1603,9 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 if (!str_contains((string)$v['notes'], 'Reason:')) $add('MEAL', 'violation', $dayNo, $title, 'meal row without a "Reason:" line');
                 $visitsBefore = $visitIndex;
                 $visitsAfter = count(array_filter(array_slice($dayRows, $k + 1), static fn($r) => !$isMealRow($r)));
-                if ($visitsBefore === 0 || $visitsAfter === 0) $add('MEAL', 'violation', $dayNo, $title, "{$slot} not between two visits");
+                // A dinner after the last visit is the dinner near the base of a day followed by a night.
+                $nearBase = $slot === 'dinner' && $visitsBefore > 0 && $visitsAfter === 0 && isset($nightPoint[$dayNo]);
+                if (($visitsBefore === 0 || $visitsAfter === 0) && !$nearBase) $add('MEAL', 'violation', $dayNo, $title, "{$slot} not between two visits");
                 if ($v['place_id'] === null) {
                     // A break without a place: time only.
                     if ($hasPoint || $km !== null || $travel !== null) $add('MEAL', 'violation', $dayNo, $title, 'meal break without a place has coordinates or a leg');
@@ -1477,6 +1623,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
                 foreach (array_slice($dayRows, $k + 1) as $r) {
                     if (!$isMealRow($r)) { $next = [(float)($r['item_latitude'] ?? $r['place_lat']), (float)($r['item_longitude'] ?? $r['place_lng'])]; break; }
                 }
+                if ($next === null && $nearBase) $next = $nightPoint[$dayNo];
                 $near = haversineKm($previous[0], $previous[1], $point[0], $point[1]);
                 if ($next !== null) $near = min($near, haversineKm($point[0], $point[1], $next[0], $next[1]));
                 $radius = MEAL_RADIUS_KM[$pref['transport_type']];
@@ -1546,7 +1693,7 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             }
 
             // DISTANCE (the legs to and from a meal place count)
-            if (!$isFirstOfTrip && $km !== null) {
+            if (!$isFirstOfTrip && !$isMove && $km !== null) {
                 $dayKm += $km;
                 $legLimit = LEG_LIMIT_KM[$pref['transport_type']];
                 if ($km > $legLimit) $add('DISTANCE', 'violation', $dayNo, $title, sprintf('one leg of %.1f km, plausible at most %.0f km by %s', $km, $legLimit, $pref['transport_type']));
@@ -1554,10 +1701,48 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
             $previous = $point;
             if (!$isMeal && $dayNo === $tripDays && $end !== null) $lastVisit = ['title' => $title, 'end' => $end, 'point' => $point];
         }
-        // A hotel night: the next day starts at the hotel, and its first leg is measured from there.
-        foreach ($items as $h) {
-            if ((int)$h['day_no'] === $dayNo && strtolower((string)$h['item_type']) === 'hotel' && $h['item_latitude'] !== null && $h['item_longitude'] !== null) {
-                $previous = [(float)$h['item_latitude'], (float)$h['item_longitude']];
+        // A night: the next day starts at its hotel, else at its base, and its first leg is measured from there.
+        $lastRow = null;   // the last visit or meal at a place: where the traveller leaves for the night
+        foreach ($dayRows as $r) if ($r['place_id'] !== null && toMinutes($r['end_time']) !== null) $lastRow = $r;
+        if (isset($nightPoint[$dayNo]) && $lastRow !== null) {
+            $night = $nightPoint[$dayNo];
+            $from = [(float)($lastRow['item_latitude'] ?? $lastRow['place_lat']), (float)($lastRow['item_longitude'] ?? $lastRow['place_lng'])];
+            $straight = haversineKm($from[0], $from[1], $night[0], $night[1]);
+            // Estimates: the road is 1.3 x the straight line (RS); on real roads only a lower bound is sure.
+            $backKm = measuredFigures() ? LEG_KM_LOW * $straight : $straight * ROAD_FACTOR;
+            $nominal = nominalMinutes($pref['transport_type'], $backKm);
+            $backMin = measuredFigures() ? max(0, (int)floor(LEG_MIN_LOW * $nominal) - 2) : $nominal;
+            $leaves = (int)toMinutes($lastRow['end_time']);
+            // BASE: back by the end of the day window, the leg back inside the hard daily distance.
+            if ($leaves + $backMin > $profile['hard_end']) {
+                $add('BASE', 'violation', $dayNo, (string)$lastRow['item_title'], sprintf('leaves %s, %d min back to where the night is spent, day ends %s', hm($leaves), $backMin, hm($profile['hard_end'])));
+            }
+            if ($dayKm + $backKm > $profile['hard_km']) {
+                $add('BASE', 'violation', $dayNo, null, sprintf('day travels %.1f km with the way back to where the night is spent, hard limit %.1f km', $dayKm + $backKm, $profile['hard_km']));
+            }
+            // HOTEL_TIME: the hotel row begins when the traveller can have arrived, not hours later.
+            if (isset($hotelRows[$dayNo])) {
+                $h = $hotelRows[$dayNo];
+                $arrive = $leaves + ($h['travel_time_min'] !== null ? (int)$h['travel_time_min'] : $backMin);
+                $hs = toMinutes($h['start_time']);
+                if ($hs === null || $hs < $arrive - 1) {
+                    $add('HOTEL_TIME', 'violation', $dayNo, (string)$h['item_title'], 'hotel row begins ' . ($hs === null ? 'without a time' : hm($hs)) . ', the traveller arrives ' . hm($arrive) . ' at the earliest');
+                } elseif ($hs > $arrive + HOTEL_LATE_MIN) {
+                    $add('HOTEL_TIME', 'violation', $dayNo, (string)$h['item_title'], 'hotel row begins ' . hm($hs) . ', the traveller arrives ' . hm($arrive));
+                }
+            }
+        }
+        if (isset($nightPoint[$dayNo])) $previous = $nightPoint[$dayNo];
+        // DINNER: a day followed by a night has one dinner, unless the dinner window does not fit into the day window.
+        if (isset($nightPoint[$dayNo]) && ($byDay[$dayNo] ?? []) && MEAL_WINDOWS['dinner'][0] + $profile['meal_min'] <= $profile['hard_end']) {
+            $dinners = count(array_filter($dayRows, static fn($r) => ($r['meal_slot'] ?? null) === 'dinner'));
+            $foodDinner = false;
+            foreach ($byDay[$dayNo] as $dv) {
+                $s0 = toMinutes($dv['start_time']);
+                if (strtolower((string)($dv['category'] ?? '')) === 'food' && $s0 !== null && $s0 >= MEAL_WINDOWS['dinner'][0] && $s0 <= MEAL_WINDOWS['dinner'][1]) $foodDinner = true;
+            }
+            if ($dinners > 1 || ($dinners === 0 && !$foodDinner)) {
+                $add('DINNER', 'violation', $dayNo, null, "{$dinners} dinner row(s) on a day followed by a night" . ($foodDinner ? ' (and a food visit in the dinner window)' : ''));
             }
         }
         $dayKmByDay[$dayNo] = $dayKm;
@@ -1737,6 +1922,25 @@ function checkItinerary(mysqli $conn, int $itineraryId, array $scenario, string 
     if ($paid > $cost['attraction_budget'] + BUDGET_SPLIT_SLACK) {
         $add('BUDGET', 'violation', null, null, sprintf('paid attractions RM %.2f for the party, attraction share of the budget RM %.2f', $paid, $cost['attraction_budget']));
     }
+}
+
+/**
+ * BASE for the whole trip: every day of an itinerary planned with bases has one, and a traveller
+ * staying at the starting point has every base there.
+ */
+function checkBases(mysqli $conn, array $it, array $scenario, array $bases, int $tripDays, callable $add): void
+{
+    $res = $conn->query("SHOW COLUMNS FROM itinerary_days LIKE 'base_lat'");
+    if (!$res || $res->num_rows === 0) return;
+    for ($d = 1; $d <= $tripDays; $d++) {
+        if (!isset($bases[$d])) { $add('BASE', 'violation', $d, null, 'no base stored for the day'); continue; }
+        if ($d < $tripDays && trim($bases[$d][0]) === '') $add('BASE', 'violation', $d, null, 'the base of the night has no name');
+        if (!empty($scenario['trip']['stay_at_start'])) {
+            $km = haversineKm((float)$it['origin_lat'], (float)$it['origin_lng'], $bases[$d][1], $bases[$d][2]);
+            if ($km > BASE_SAME_KM) $add('BASE', 'violation', $d, null, sprintf('the traveller stays at the starting point, but the base of the day is %.2f km from it', $km));
+        }
+    }
+    if (!empty($scenario['trip']['stay_at_start']) && (int)($it['stay_at_start'] ?? 0) !== 1) $add('BASE', 'violation', null, null, 'the choice to stay at the starting point is not stored');
 }
 
 /** The numbers the planner is meant to use for these preferences. */
@@ -2054,11 +2258,11 @@ function report(array $results, string $dbName, bool $road, bool $json, array $a
     }
 
     echo "Planner check on {$dbName}, routing: " . ($road ? 'road (public servers allowed)' : 'estimates only, no network') . "\n\n";
-    printf("%-46s %4s %5s %5s %6s %5s %5s %8s %7s %4s %-10s\n", 'SCENARIO', 'DAYS', 'STOPS', 'MEALS', 'BREAKS', 'VIOL', 'WARN', 'NO_HOURS', 'SECONDS', 'REQ', 'PLAN');
+    printf("%-46s %4s %5s %7s %5s %6s %5s %5s %8s %7s %4s %-10s\n", 'SCENARIO', 'DAYS', 'STOPS', 'KM', 'MEALS', 'BREAKS', 'VIOL', 'WARN', 'NO_HOURS', 'SECONDS', 'REQ', 'PLAN');
     foreach ($results as $r) {
         $v = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'violation'));
         $w = count(array_filter($r['findings'], static fn($f) => $f['severity'] === 'warning'));
-        printf("%-46s %4d %5d %5d %6d %5d %5d %8d %7.1f %4d %-10s\n", $r['scenario'], $r['days'], $r['stops'], $r['info']['meals_at_places'] ?? 0, $r['info']['meal_breaks'] ?? 0,
+        printf("%-46s %4d %5d %7.1f %5d %6d %5d %5d %8d %7.1f %4d %-10s\n", $r['scenario'], $r['days'], $r['stops'], $r['info']['km'] ?? 0, $r['info']['meals_at_places'] ?? 0, $r['info']['meal_breaks'] ?? 0,
             $v, $w, $r['info']['no_usable_hours'] ?? 0, $r['seconds'], max([0] + (array)($r['info']['requests'] ?? [])), $r['info']['plan'] ?? '-');
     }
 

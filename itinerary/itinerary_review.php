@@ -9,6 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once "../config/db_connect.php";
 require_once "../services/PlannerRules.php";
+require_once "../services/ItineraryEditService.php";
 require_once "../config/i18n.php";
 
 if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true || ($_SESSION["role"] ?? "") !== "traveller") {
@@ -179,6 +180,18 @@ $dayColors = [
 
 $startDate = $it["start_date"] ?? null;
 $totalNights = max(0, $totalDays - 1);
+// Where each night is spent (the base of its day, ItineraryEditService::dayBases()), and the runs
+// of consecutive nights at the same base: one hotel choice can be applied to all of them.
+$reviewBases = ItineraryEditService::dayBases($conn, $itineraryId);
+$nightRuns = [];
+for ($nightNo = 1; $nightNo <= $totalNights; $nightNo++) {
+    $key = isset($reviewBases[$nightNo]) ? $reviewBases[$nightNo]['name'] . '|' . implode(',', $reviewBases[$nightNo]['point']) : null;
+    $prevKey = isset($reviewBases[$nightNo - 1]) && $nightNo > 1 ? $reviewBases[$nightNo - 1]['name'] . '|' . implode(',', $reviewBases[$nightNo - 1]['point']) : null;
+    $nightRuns[$nightNo] = ($key !== null && $key === $prevKey) ? [$nightRuns[$nightNo - 1][0], $nightNo] : [$nightNo, $nightNo];
+    if ($nightRuns[$nightNo][0] < $nightNo) {
+        for ($k = $nightRuns[$nightNo][0]; $k < $nightNo; $k++) $nightRuns[$k][1] = $nightNo;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo i18n_lang(); ?>">
@@ -1001,7 +1014,14 @@ $totalNights = max(0, $totalDays - 1);
                         <div>
                             <div class="hotel-night-title"><?php echo te('rv.night_title', ['n' => $nightNo]); ?></div>
                             <div class="hotel-night-meta">
-                                <?php echo strtr(te('rv.night_meta'), ['{stop}' => '<strong>' . htmlspecialchars($stopTitle) . '</strong>']); ?>
+                                <?php if (isset($reviewBases[$nightNo])): ?>
+                                    Night at <strong><?php echo htmlspecialchars($reviewBases[$nightNo]['name']); ?></strong>: suggestions are near this base.
+                                    <?php if ($nightRuns[$nightNo][1] > $nightRuns[$nightNo][0]): ?>
+                                        Nights <?php echo (int)$nightRuns[$nightNo][0]; ?> to <?php echo (int)$nightRuns[$nightNo][1]; ?> are spent at the same base.
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <?php echo strtr(te('rv.night_meta'), ['{stop}' => '<strong>' . htmlspecialchars($stopTitle) . '</strong>']); ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="hotel-night-actions">
@@ -1083,6 +1103,8 @@ function rt(key, vars) {
 // ---- State ----
 const ITINERARY_ID = <?php echo $itineraryId; ?>;
 const TOTAL_NIGHTS = <?php echo (int)$totalNights; ?>;
+// night => [first, last] night of the run of consecutive nights at the same base
+const NIGHT_RUNS = <?php echo json_encode((object)$nightRuns); ?>;
 const itemStatus   = {}; // item_id -> 'accepted' | 'rejected'
 const replacementMap = {}; // item_id -> selected replacement place payload, saved only on Confirm
 const hotelSelections = {}; // night_no -> selected hotel payload, saved only on Confirm
@@ -1378,6 +1400,7 @@ async function loadNightHotels(nightNo, dayNo, allowSelect) {
             itinerary_id: ITINERARY_ID,
             item_id: stop.itemId || '',
             place_id: stop.itemId ? '' : (stop.placeId || ''),
+            night: nightNo || '',
         });
         const resp = await fetch('review_hotels.php?' + params.toString(), { method: 'GET' });
         const data = await parseJsonResponse(resp);
@@ -1427,6 +1450,7 @@ function renderNightHotels(nightNo, data, allowSelect) {
                 ${selected ? '<span class="hotel-selected-note">' + escHtml(rt('rv.selected_night')) + '</span>' : ''}
                 <div class="hotel-card-actions">
                     ${allowSelect ? `<button type="button" class="btn btn-primary" data-hotel="${payload}" onclick="selectNightHotel(${nightNo}, ${idx}, this.dataset.hotel)">${escHtml(rt('rv.select_night', { n: nightNo }))}</button>` : ''}
+                    ${allowSelect && runOf(nightNo)[1] > runOf(nightNo)[0] ? `<button type="button" class="btn btn-ghost" data-hotel="${payload}" onclick="selectRunHotel(${nightNo}, ${idx}, this.dataset.hotel)">${escHtml('Use for nights ' + runOf(nightNo)[0] + ' to ' + runOf(nightNo)[1])}</button>` : ''}
                     ${hotel.map_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.map_url)}" target="_blank" rel="noopener">${escHtml(rt('trip.map'))}</a>` : ''}
                     ${hotel.website ? `<a class="btn btn-ghost" href="${escHtml(hotel.website)}" target="_blank" rel="noopener noreferrer">${escHtml(rt('rv.website'))}</a>` : ''}
                     ${hotel.price_check_url ? `<a class="btn btn-ghost" href="${escHtml(hotel.price_check_url)}" target="_blank" rel="noopener noreferrer" title="${escHtml(rt('trip.check_price_title'))}">${escHtml(rt('trip.check_price'))}</a>` : ''}
@@ -1460,6 +1484,32 @@ function selectNightHotel(nightNo, idx, hotelJson) {
                 selectedCard.appendChild(note);
             }
         }
+    }
+    updateStats();
+}
+
+/** The run of consecutive nights at the same base that a night belongs to: [first, last]. */
+function runOf(nightNo) {
+    const run = NIGHT_RUNS[nightNo] || NIGHT_RUNS[String(nightNo)];
+    return Array.isArray(run) ? run.map(Number) : [nightNo, nightNo];
+}
+
+/** One hotel for every night of the run: each of those nights then starts and ends there. */
+function selectRunHotel(nightNo, idx, hotelJson) {
+    selectNightHotel(nightNo, idx, hotelJson);
+    const hotel = hotelSelections[nightNo];
+    if (!hotel) return;
+    const [first, last] = runOf(nightNo);
+    for (let n = first; n <= last; n++) {
+        if (n === nightNo) continue;
+        hotelSelections[n] = hotel;
+        const target = document.getElementById('hotel-results-night-' + n);
+        if (target) {
+            target.classList.add('open');
+            target.innerHTML = '<div class="hotel-message">' + escHtml('Chosen with night ' + nightNo + ': ' + (hotel.name || '')) + '</div>';
+        }
+        hotelResultState[n] = { loaded: true, dayNo: n, allowSelect: true };
+        setHotelToggleLabel(n, rt('rv.hide_results'));
     }
     updateStats();
 }
