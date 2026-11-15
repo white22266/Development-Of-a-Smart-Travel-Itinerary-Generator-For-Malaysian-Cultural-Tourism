@@ -85,6 +85,60 @@ class WeatherService
         return $out;
     }
 
+    /**
+     * The chance of rain for each hour of the given dates (Y-m-d) at a place, from Open-Meteo's
+     * hourly precipitation_probability in local (Asia/Kuala_Lumpur) time. A date outside the
+     * forecast horizon, or one without a whole day of figures, is left out. A failed request
+     * gives an empty list and never throws. With ROUTING_ESTIMATES_ONLY (offline) no request
+     * is made at all.
+     *
+     * @param string[] $dates
+     * @return array<string,int[]> date => 24 whole numbers (index 0 = 00:00 to 00:59), each 0 to 100
+     */
+    public static function rainHours(float $lat, float $lng, array $dates): array
+    {
+        if (self::offline() || !$dates) return [];
+        try {
+            $url = 'https://api.open-meteo.com/v1/forecast?' . http_build_query([
+                'latitude' => round($lat, 2),    // same rounding as daily(): nearby stops share the cache
+                'longitude' => round($lng, 2),
+                'hourly' => 'precipitation_probability',
+                'timezone' => 'Asia/Kuala_Lumpur',
+                'forecast_days' => 16,
+            ]);
+            $json = OpenDataHttp::getJson($url, 10800, [   // 3 hours, as daily()
+                'timeout' => 8,
+                'validate' => static fn(array $j): bool => isset($j['hourly']['time'], $j['hourly']['precipitation_probability']),
+            ]);
+            $times = $json['hourly']['time'] ?? null;
+            $values = $json['hourly']['precipitation_probability'] ?? null;
+            if (!is_array($times) || !is_array($values)) return [];
+
+            $byDate = [];
+            foreach ($times as $i => $stamp) {
+                if (!is_string($stamp) || !preg_match('/^(\d{4}-\d{2}-\d{2})T(\d{2}):/', $stamp, $m)) continue;
+                if (!isset($values[$i]) || !is_numeric($values[$i])) continue;   // a missing hour spoils the day
+                $byDate[$m[1]][(int)$m[2]] = max(0, min(100, (int)round((float)$values[$i])));
+            }
+            $out = [];
+            foreach ($dates as $date) {
+                $hours = $byDate[(string)$date] ?? null;
+                if ($hours === null || count($hours) !== 24) continue;
+                ksort($hours);
+                $out[(string)$date] = array_values($hours);
+            }
+            return $out;
+        } catch (Throwable $e) {
+            return [];
+        }
+    }
+
+    /** Whether ROUTING_ESTIMATES_ONLY is set: the planner check runs offline and no service may then make a request. */
+    private static function offline(): bool
+    {
+        return in_array(strtolower(trim((string)getenv('ROUTING_ESTIMATES_ONLY'))), ['1', 'true', 'yes'], true);
+    }
+
     /** The forecast for one date (Y-m-d) at a place, or null when there is none (yet). */
     public static function forDate(float $lat, float $lng, string $date): ?array
     {
